@@ -1,330 +1,6 @@
 {
   "components": {
     "schemas": {
-      "AccountsCreateResult": {
-        "additionalProperties": false,
-        "description": "Accounts create result schema exposed by Claw Router.",
-        "properties": {
-          "code": {
-            "description": "Business response code.",
-            "type": "string"
-          },
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/OpenPlatformAccountResponse"
-              }
-            ],
-            "description": "Data field on accounts create result."
-          },
-          "msg": {
-            "description": "Human-readable response message.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "code"
-        ],
-        "type": "object",
-        "x-operation-id": "accounts.create"
-      },
-      "AccountsDeleteResult": {
-        "additionalProperties": false,
-        "description": "Accounts delete result schema exposed by Claw Router.",
-        "properties": {
-          "code": {
-            "description": "Business response code.",
-            "type": "string"
-          },
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/OpenPlatformAccountResponse"
-              }
-            ],
-            "description": "Data field on accounts delete result."
-          },
-          "msg": {
-            "description": "Human-readable response message.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "code"
-        ],
-        "type": "object",
-        "x-operation-id": "accounts.delete"
-      },
-      "AccountsEntriesCreateResult": {
-        "additionalProperties": false,
-        "description": "Accounts entries create result schema exposed by Claw Router.",
-        "properties": {
-          "code": {
-            "description": "Business response code.",
-            "type": "string"
-          },
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/OpenPlatformEntryResponse"
-              }
-            ],
-            "description": "Data field on accounts entries create result."
-          },
-          "msg": {
-            "description": "Human-readable response message.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "code"
-        ],
-        "type": "object",
-        "x-operation-id": "accounts.entries.create"
-      },
-      "AccountsEntriesDeleteResult": {
-        "additionalProperties": false,
-        "description": "Accounts entries delete result schema exposed by Claw Router.",
-        "properties": {
-          "code": {
-            "description": "Business response code.",
-            "type": "string"
-          },
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/OpenPlatformEntryResponse"
-              }
-            ],
-            "description": "Data field on accounts entries delete result."
-          },
-          "msg": {
-            "description": "Human-readable response message.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "code"
-        ],
-        "type": "object",
-        "x-operation-id": "accounts.entries.delete"
-      },
-      "AccountsEntriesListResult": {
-        "additionalProperties": false,
-        "description": "Accounts entries list result schema exposed by Claw Router.",
-        "properties": {
-          "code": {
-            "description": "Business response code.",
-            "type": "string"
-          },
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/OpenPlatformEntryListResponse"
-              }
-            ],
-            "description": "Data field on accounts entries list result."
-          },
-          "msg": {
-            "description": "Human-readable response message.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "code"
-        ],
-        "type": "object",
-        "x-operation-id": "accounts.entries.list"
-      },
-      "AccountsEntriesUpdateResult": {
-        "additionalProperties": false,
-        "description": "Accounts entries update result schema exposed by Claw Router.",
-        "properties": {
-          "code": {
-            "description": "Business response code.",
-            "type": "string"
-          },
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/OpenPlatformEntryResponse"
-              }
-            ],
-            "description": "Data field on accounts entries update result."
-          },
-          "msg": {
-            "description": "Human-readable response message.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "code"
-        ],
-        "type": "object",
-        "x-operation-id": "accounts.entries.update"
-      },
-      "AccountsListResult": {
-        "additionalProperties": false,
-        "description": "Accounts list result schema exposed by Claw Router.",
-        "properties": {
-          "code": {
-            "description": "Business response code.",
-            "type": "string"
-          },
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/OpenPlatformAccountListResponse"
-              }
-            ],
-            "description": "Data field on accounts list result."
-          },
-          "msg": {
-            "description": "Human-readable response message.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "code"
-        ],
-        "type": "object",
-        "x-operation-id": "accounts.list"
-      },
-      "AccountsPayBindingsCreateResult": {
-        "additionalProperties": false,
-        "description": "Accounts pay bindings create result schema exposed by Claw Router.",
-        "properties": {
-          "code": {
-            "description": "Business response code.",
-            "type": "string"
-          },
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/OpenPlatformPayBindingResponse"
-              }
-            ],
-            "description": "Data field on accounts pay bindings create result."
-          },
-          "msg": {
-            "description": "Human-readable response message.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "code"
-        ],
-        "type": "object",
-        "x-operation-id": "accounts.payBindings.create"
-      },
-      "AccountsPayBindingsDeleteResult": {
-        "additionalProperties": false,
-        "description": "Accounts pay bindings delete result schema exposed by Claw Router.",
-        "properties": {
-          "code": {
-            "description": "Business response code.",
-            "type": "string"
-          },
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/OpenPlatformPayBindingResponse"
-              }
-            ],
-            "description": "Data field on accounts pay bindings delete result."
-          },
-          "msg": {
-            "description": "Human-readable response message.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "code"
-        ],
-        "type": "object",
-        "x-operation-id": "accounts.payBindings.delete"
-      },
-      "AccountsPayBindingsListResult": {
-        "additionalProperties": false,
-        "description": "Accounts pay bindings list result schema exposed by Claw Router.",
-        "properties": {
-          "code": {
-            "description": "Business response code.",
-            "type": "string"
-          },
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/OpenPlatformPayBindingListResponse"
-              }
-            ],
-            "description": "Data field on accounts pay bindings list result."
-          },
-          "msg": {
-            "description": "Human-readable response message.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "code"
-        ],
-        "type": "object",
-        "x-operation-id": "accounts.payBindings.list"
-      },
-      "AccountsRetrieveResult": {
-        "additionalProperties": false,
-        "description": "Accounts retrieve result schema exposed by Claw Router.",
-        "properties": {
-          "code": {
-            "description": "Business response code.",
-            "type": "string"
-          },
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/OpenPlatformAccountResponse"
-              }
-            ],
-            "description": "Data field on accounts retrieve result."
-          },
-          "msg": {
-            "description": "Human-readable response message.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "code"
-        ],
-        "type": "object",
-        "x-operation-id": "accounts.retrieve"
-      },
-      "AccountsUpdateResult": {
-        "additionalProperties": false,
-        "description": "Accounts update result schema exposed by Claw Router.",
-        "properties": {
-          "code": {
-            "description": "Business response code.",
-            "type": "string"
-          },
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/OpenPlatformAccountResponse"
-              }
-            ],
-            "description": "Data field on accounts update result."
-          },
-          "msg": {
-            "description": "Human-readable response message.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "code"
-        ],
-        "type": "object",
-        "x-operation-id": "accounts.update"
-      },
       "AdjustmentsListResult": {
         "additionalProperties": false,
         "description": "Adjustments list result schema exposed by Claw Router.",
@@ -6832,6 +6508,186 @@
         ],
         "type": "object"
       },
+      "AdminChannelGroupRouteExplainIssue": {
+        "additionalProperties": false,
+        "description": "Admin channel group route explain issue schema exposed by Claw Router.",
+        "properties": {
+          "code": {
+            "description": "Code field on admin channel group route explain issue.",
+            "enum": [
+              "group.disabled",
+              "group.account_count.empty",
+              "group.resource_access.empty",
+              "group.bindings.empty",
+              "group.bindings.no_active_healthy_member",
+              "group.bindings.no_resource_overlap",
+              "group.bindings.missing_scope_metadata"
+            ],
+            "type": "string"
+          },
+          "details": {
+            "description": "Details field on admin channel group route explain issue.",
+            "items": {
+              "description": "Details field on admin channel group route explain issue.",
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 200,
+            "type": "array"
+          },
+          "severity": {
+            "description": "Severity field on admin channel group route explain issue.",
+            "enum": [
+              "blocking",
+              "warning",
+              "info"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "severity",
+          "details"
+        ],
+        "type": "object"
+      },
+      "AdminChannelGroupRouteExplainResponse": {
+        "additionalProperties": false,
+        "description": "Admin channel group route explain response schema exposed by Claw Router.",
+        "name": "AdminChannelGroupRouteExplainResponse",
+        "properties": {
+          "activeHealthyBindingCount": {
+            "description": "Active healthy binding count field on admin channel group route explain response.",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "apiScope": {
+            "description": "Api scope field on admin channel group route explain response.",
+            "items": {
+              "description": "Api scope field on admin channel group route explain response.",
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 200,
+            "type": "array"
+          },
+          "capabilities": {
+            "description": "Capabilities field on admin channel group route explain response.",
+            "items": {
+              "description": "Capabilities field on admin channel group route explain response.",
+              "maxLength": 64,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 32,
+            "type": "array"
+          },
+          "configuredResourceAccessCount": {
+            "description": "Configured resource access count field on admin channel group route explain response.",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "configuredResourceGroupAccessCount": {
+            "description": "Configured resource group access count field on admin channel group route explain response.",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "effectiveResourceCodes": {
+            "description": "Effective resource codes field on admin channel group route explain response.",
+            "items": {
+              "description": "Effective resource codes field on admin channel group route explain response.",
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 200,
+            "type": "array"
+          },
+          "issueCodes": {
+            "description": "Issue codes field on admin channel group route explain response.",
+            "items": {
+              "description": "Issue codes field on admin channel group route explain response.",
+              "enum": [
+                "group.disabled",
+                "group.account_count.empty",
+                "group.resource_access.empty",
+                "group.bindings.empty",
+                "group.bindings.no_active_healthy_member",
+                "group.bindings.no_resource_overlap",
+                "group.bindings.missing_scope_metadata"
+              ],
+              "type": "string"
+            },
+            "maxItems": 32,
+            "type": "array"
+          },
+          "issues": {
+            "description": "Issues field on admin channel group route explain response.",
+            "items": {
+              "$ref": "#/components/schemas/AdminChannelGroupRouteExplainIssue"
+            },
+            "maxItems": 32,
+            "type": "array"
+          },
+          "ready": {
+            "description": "Ready field on admin channel group route explain response.",
+            "type": "boolean"
+          },
+          "resourceCodes": {
+            "description": "Resource codes field on admin channel group route explain response.",
+            "items": {
+              "description": "Resource codes field on admin channel group route explain response.",
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 200,
+            "type": "array"
+          },
+          "resourceGroupCodes": {
+            "description": "Resource group codes field on admin channel group route explain response.",
+            "items": {
+              "description": "Resource group codes field on admin channel group route explain response.",
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 200,
+            "type": "array"
+          },
+          "routableBindingCount": {
+            "description": "Routable binding count field on admin channel group route explain response.",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "source": {
+            "description": "Explains persisted backend routing configuration, not the full runtime selector.",
+            "enum": [
+              "backend_config"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "source",
+          "ready",
+          "issueCodes",
+          "issues",
+          "resourceCodes",
+          "resourceGroupCodes",
+          "effectiveResourceCodes",
+          "configuredResourceAccessCount",
+          "configuredResourceGroupAccessCount",
+          "apiScope",
+          "capabilities",
+          "activeHealthyBindingCount",
+          "routableBindingCount"
+        ],
+        "type": "object"
+      },
       "AdminChannelGroupUpdateRequest": {
         "additionalProperties": false,
         "description": "Admin channel group update request schema exposed by Claw Router.",
@@ -13237,6 +13093,408 @@
         },
         "type": "object"
       },
+      "AdminRuntimeRouteExplainCandidate": {
+        "additionalProperties": false,
+        "description": "Admin runtime route explain candidate schema exposed by Claw Router.",
+        "properties": {
+          "apiCode": {
+            "description": "Api code field on admin runtime route explain candidate.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "catalogKey": {
+            "description": "Catalog key field on admin runtime route explain candidate.",
+            "maxLength": 128,
+            "nullable": true,
+            "type": "string"
+          },
+          "channelGroupCode": {
+            "description": "Channel group code field on admin runtime route explain candidate.",
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "channelGroupId": {
+            "description": "Channel group id field on admin runtime route explain candidate.",
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string"
+          },
+          "channelId": {
+            "description": "Channel id field on admin runtime route explain candidate.",
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string"
+          },
+          "credentialId": {
+            "description": "Credential id field on admin runtime route explain candidate.",
+            "maxLength": 128,
+            "nullable": true,
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string"
+          },
+          "credentialRotation": {
+            "description": "Credential rotation field on admin runtime route explain candidate.",
+            "maxLength": 64,
+            "nullable": true,
+            "type": "string"
+          },
+          "kind": {
+            "description": "Kind field on admin runtime route explain candidate.",
+            "enum": [
+              "model",
+              "channel"
+            ],
+            "type": "string"
+          },
+          "policyId": {
+            "description": "Policy id field on admin runtime route explain candidate.",
+            "maxLength": 128,
+            "nullable": true,
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string"
+          },
+          "pricingPlanCode": {
+            "description": "Pricing plan code field on admin runtime route explain candidate.",
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "providerCode": {
+            "description": "Provider code field on admin runtime route explain candidate.",
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "providerModel": {
+            "description": "Provider model field on admin runtime route explain candidate.",
+            "maxLength": 128,
+            "nullable": true,
+            "type": "string"
+          },
+          "regionCode": {
+            "description": "Region code field on admin runtime route explain candidate.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "requestedModel": {
+            "description": "Requested model field on admin runtime route explain candidate.",
+            "maxLength": 128,
+            "nullable": true,
+            "type": "string"
+          },
+          "ruleId": {
+            "description": "Rule id field on admin runtime route explain candidate.",
+            "maxLength": 128,
+            "nullable": true,
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string"
+          },
+          "timeoutMs": {
+            "description": "Timeout ms field on admin runtime route explain candidate.",
+            "maximum": 86400000,
+            "minimum": 0,
+            "nullable": true,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "kind",
+          "providerCode",
+          "channelId",
+          "channelGroupId",
+          "channelGroupCode",
+          "pricingPlanCode",
+          "policyId",
+          "ruleId",
+          "apiCode",
+          "catalogKey",
+          "requestedModel",
+          "providerModel",
+          "regionCode",
+          "credentialId",
+          "credentialRotation",
+          "timeoutMs"
+        ],
+        "type": "object"
+      },
+      "AdminRuntimeRouteExplainIssue": {
+        "additionalProperties": false,
+        "description": "Admin runtime route explain issue schema exposed by Claw Router.",
+        "properties": {
+          "code": {
+            "description": "Code field on admin runtime route explain issue.",
+            "enum": [
+              "route.unavailable",
+              "pricing.unavailable"
+            ],
+            "type": "string"
+          },
+          "message": {
+            "description": "Message field on admin runtime route explain issue.",
+            "maxLength": 2048,
+            "minLength": 1,
+            "type": "string"
+          },
+          "severity": {
+            "description": "Severity field on admin runtime route explain issue.",
+            "enum": [
+              "blocking",
+              "warning",
+              "info"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "severity",
+          "message"
+        ],
+        "type": "object"
+      },
+      "AdminRuntimeRouteExplainRequest": {
+        "additionalProperties": false,
+        "description": "Admin runtime route explain request schema exposed by Claw Router.",
+        "name": "AdminRuntimeRouteExplainRequest",
+        "properties": {
+          "apiCode": {
+            "description": "API endpoint code used for route and channel scope matching.",
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9._:-]+$",
+            "type": "string"
+          },
+          "apiKeyId": {
+            "description": "API key id whose owner scope and route group are used by the runtime selector.",
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string"
+          },
+          "billingMeter": {
+            "description": "Billing meter used by pricing readiness checks.",
+            "maxLength": 64,
+            "minLength": 1,
+            "pattern": "^[a-z0-9_]+$",
+            "type": "string"
+          },
+          "capability": {
+            "description": "Runtime routing capability to evaluate. Defaults to chat.",
+            "enum": [
+              "chat",
+              "image",
+              "audio",
+              "music",
+              "video",
+              "embedding",
+              "rerank",
+              "network"
+            ],
+            "type": "string"
+          },
+          "catalogKey": {
+            "description": "Optional model catalog key. When present the runtime selector explains model route planning.",
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9._:/-]+$",
+            "type": "string"
+          },
+          "channelGroupId": {
+            "description": "Optional channel group id. Defaults to the API key's bound group.",
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string"
+          },
+          "model": {
+            "description": "Requested model or provider-native model identifier.",
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9._:/-]+$",
+            "type": "string"
+          },
+          "resourceCode": {
+            "description": "Requested resource code, such as api.openai.chat_completions.",
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9._:-]+$",
+            "type": "string"
+          },
+          "routeKey": {
+            "description": "Non-model route key used when catalogKey is absent.",
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9._:-]+$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "apiKeyId"
+        ],
+        "type": "object"
+      },
+      "AdminRuntimeRouteExplainResponse": {
+        "additionalProperties": false,
+        "description": "Admin runtime route explain response schema exposed by Claw Router.",
+        "name": "AdminRuntimeRouteExplainResponse",
+        "properties": {
+          "apiCode": {
+            "description": "Api code field on admin runtime route explain response.",
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "apiKeyId": {
+            "description": "Api key id field on admin runtime route explain response.",
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string"
+          },
+          "billingMeter": {
+            "description": "Billing meter field on admin runtime route explain response.",
+            "maxLength": 64,
+            "minLength": 1,
+            "type": "string"
+          },
+          "blockedReasons": {
+            "description": "Blocked reasons field on admin runtime route explain response.",
+            "items": {
+              "$ref": "#/components/schemas/AdminRuntimeRouteExplainIssue"
+            },
+            "maxItems": 32,
+            "type": "array"
+          },
+          "candidateCount": {
+            "description": "Candidate count field on admin runtime route explain response.",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "capability": {
+            "description": "Capability field on admin runtime route explain response.",
+            "enum": [
+              "chat",
+              "image",
+              "audio",
+              "music",
+              "video",
+              "embedding",
+              "rerank",
+              "network"
+            ],
+            "type": "string"
+          },
+          "catalogKey": {
+            "description": "Catalog key field on admin runtime route explain response.",
+            "maxLength": 128,
+            "nullable": true,
+            "type": "string"
+          },
+          "channelGroupId": {
+            "description": "Channel group id field on admin runtime route explain response.",
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string"
+          },
+          "groupCode": {
+            "description": "Group code field on admin runtime route explain response.",
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "model": {
+            "description": "Model field on admin runtime route explain response.",
+            "maxLength": 128,
+            "nullable": true,
+            "type": "string"
+          },
+          "policyId": {
+            "description": "Policy id field on admin runtime route explain response.",
+            "maxLength": 128,
+            "nullable": true,
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string"
+          },
+          "policySnapshotVersion": {
+            "description": "Policy snapshot version field on admin runtime route explain response.",
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "pricingPlanCode": {
+            "description": "Pricing plan code field on admin runtime route explain response.",
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "ready": {
+            "description": "Ready field on admin runtime route explain response.",
+            "type": "boolean"
+          },
+          "resourceCode": {
+            "description": "Resource code field on admin runtime route explain response.",
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "ruleId": {
+            "description": "Rule id field on admin runtime route explain response.",
+            "maxLength": 128,
+            "nullable": true,
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string"
+          },
+          "selectedCandidates": {
+            "description": "Selected candidates field on admin runtime route explain response.",
+            "items": {
+              "$ref": "#/components/schemas/AdminRuntimeRouteExplainCandidate"
+            },
+            "maxItems": 64,
+            "type": "array"
+          },
+          "source": {
+            "description": "Explains the live runtime ProviderRouteSelector decision for one request shape.",
+            "enum": [
+              "runtime_selector"
+            ],
+            "type": "string"
+          },
+          "warnings": {
+            "description": "Warnings field on admin runtime route explain response.",
+            "items": {
+              "$ref": "#/components/schemas/AdminRuntimeRouteExplainIssue"
+            },
+            "maxItems": 32,
+            "type": "array"
+          }
+        },
+        "required": [
+          "source",
+          "ready",
+          "resourceCode",
+          "catalogKey",
+          "model",
+          "apiCode",
+          "capability",
+          "billingMeter",
+          "apiKeyId",
+          "channelGroupId",
+          "groupCode",
+          "pricingPlanCode",
+          "candidateCount",
+          "selectedCandidates",
+          "blockedReasons",
+          "warnings",
+          "policyId",
+          "ruleId",
+          "policySnapshotVersion"
+        ],
+        "type": "object"
+      },
       "AdminServiceNodeCreateRequest": {
         "additionalProperties": false,
         "description": "Admin service node create request schema exposed by Claw Router.",
@@ -18234,6 +18492,33 @@
         "type": "object",
         "x-operation-id": "channelGroups.list"
       },
+      "ChannelGroupsRouteExplainRetrieveResult": {
+        "additionalProperties": false,
+        "description": "Channel groups route explain retrieve result schema exposed by Claw Router.",
+        "properties": {
+          "code": {
+            "description": "Business response code.",
+            "type": "string"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AdminChannelGroupRouteExplainResponse"
+              }
+            ],
+            "description": "Data field on channel groups route explain retrieve result."
+          },
+          "msg": {
+            "description": "Human-readable response message.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "x-operation-id": "channelGroups.routeExplain.retrieve"
+      },
       "ChannelGroupsUpdateResult": {
         "additionalProperties": false,
         "description": "Channel groups update result schema exposed by Claw Router.",
@@ -22956,33 +23241,6 @@
           }
         ]
       },
-      "ManifestsListResult": {
-        "additionalProperties": false,
-        "description": "Manifests list result schema exposed by Claw Router.",
-        "properties": {
-          "code": {
-            "description": "Business response code.",
-            "type": "string"
-          },
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/OpenPlatformManifestListResponse"
-              }
-            ],
-            "description": "Data field on manifests list result."
-          },
-          "msg": {
-            "description": "Human-readable response message.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "code"
-        ],
-        "type": "object",
-        "x-operation-id": "manifests.list"
-      },
       "MarketingReferralStatsListResult": {
         "additionalProperties": false,
         "description": "Marketing referral stats list result schema exposed by Claw Router.",
@@ -26428,761 +26686,6 @@
         "properties": {},
         "type": "object"
       },
-      "OpenPlatformAccountCreateRequest": {
-        "additionalProperties": false,
-        "description": "Open platform account create request schema exposed by Claw Router.",
-        "name": "OpenPlatformAccountCreateRequest",
-        "properties": {
-          "appId": {
-            "description": "App id field on open platform account create request.",
-            "maxLength": 128,
-            "nullable": true,
-            "type": "string"
-          },
-          "appSecret": {
-            "description": "App secret field on open platform account create request.",
-            "maxLength": 4096,
-            "nullable": true,
-            "type": "string"
-          },
-          "encodingAesKey": {
-            "description": "Encoding aes key field on open platform account create request.",
-            "maxLength": 4096,
-            "nullable": true,
-            "type": "string"
-          },
-          "key": {
-            "description": "Key field on open platform account create request.",
-            "maxLength": 128,
-            "minLength": 1,
-            "pattern": "^[a-z0-9][a-z0-9._:-]*$",
-            "type": "string"
-          },
-          "name": {
-            "description": "Name field on open platform account create request.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "provider": {
-            "description": "Provider field on open platform account create request.",
-            "enum": [
-              "wechat",
-              "alipay",
-              "douyin",
-              "baidu",
-              "kuaishou",
-              "feishu"
-            ],
-            "type": "string"
-          },
-          "token": {
-            "description": "Token field on open platform account create request.",
-            "maxLength": 4096,
-            "nullable": true,
-            "type": "string"
-          },
-          "type": {
-            "description": "Type field on open platform account create request.",
-            "enum": [
-              "official_account",
-              "mini_app",
-              "life_account",
-              "bot"
-            ],
-            "type": "string"
-          }
-        },
-        "required": [
-          "key",
-          "name",
-          "provider",
-          "type"
-        ],
-        "type": "object"
-      },
-      "OpenPlatformAccountItem": {
-        "additionalProperties": false,
-        "description": "Open platform account item schema exposed by Claw Router.",
-        "properties": {
-          "aesKeyRef": {
-            "description": "Aes key ref field on open platform account item.",
-            "maxLength": 256,
-            "nullable": true,
-            "type": "string"
-          },
-          "appId": {
-            "description": "App id field on open platform account item.",
-            "maxLength": 128,
-            "nullable": true,
-            "type": "string"
-          },
-          "createdAt": {
-            "description": "Created at field on open platform account item.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "defaultEntryId": {
-            "description": "Default entry id field on open platform account item.",
-            "maxLength": 128,
-            "nullable": true,
-            "type": "string"
-          },
-          "id": {
-            "description": "Id field on open platform account item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "key": {
-            "description": "Key field on open platform account item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "pattern": "^[a-z0-9][a-z0-9._:-]*$",
-            "type": "string"
-          },
-          "name": {
-            "description": "Name field on open platform account item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "provider": {
-            "description": "Provider field on open platform account item.",
-            "enum": [
-              "wechat",
-              "alipay",
-              "douyin",
-              "baidu",
-              "kuaishou",
-              "feishu"
-            ],
-            "type": "string"
-          },
-          "qrDefault": {
-            "description": "Qr default field on open platform account item.",
-            "type": "boolean"
-          },
-          "secretRef": {
-            "description": "Secret ref field on open platform account item.",
-            "maxLength": 256,
-            "nullable": true,
-            "type": "string"
-          },
-          "status": {
-            "description": "Status field on open platform account item.",
-            "enum": [
-              "active",
-              "inactive"
-            ],
-            "type": "string"
-          },
-          "tokenRef": {
-            "description": "Token ref field on open platform account item.",
-            "maxLength": 256,
-            "nullable": true,
-            "type": "string"
-          },
-          "type": {
-            "description": "Type field on open platform account item.",
-            "enum": [
-              "official_account",
-              "mini_app",
-              "life_account",
-              "bot"
-            ],
-            "type": "string"
-          },
-          "updatedAt": {
-            "description": "Updated at field on open platform account item.",
-            "maxLength": 64,
-            "type": "string"
-          }
-        },
-        "required": [
-          "id",
-          "key",
-          "name",
-          "provider",
-          "qrDefault",
-          "status",
-          "type"
-        ],
-        "type": "object"
-      },
-      "OpenPlatformAccountListResponse": {
-        "additionalProperties": false,
-        "description": "Open platform account list response schema exposed by Claw Router.",
-        "name": "OpenPlatformAccountListResponse",
-        "properties": {
-          "items": {
-            "description": "Items field on open platform account list response.",
-            "items": {
-              "$ref": "#/components/schemas/OpenPlatformAccountItem"
-            },
-            "type": "array"
-          }
-        },
-        "required": [
-          "items"
-        ],
-        "type": "object"
-      },
-      "OpenPlatformAccountResponse": {
-        "additionalProperties": false,
-        "description": "Open platform account response schema exposed by Claw Router.",
-        "name": "OpenPlatformAccountResponse",
-        "properties": {
-          "item": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/OpenPlatformAccountItem"
-              }
-            ],
-            "description": "Item field on open platform account response."
-          }
-        },
-        "required": [
-          "item"
-        ],
-        "type": "object"
-      },
-      "OpenPlatformAccountUpdateRequest": {
-        "additionalProperties": false,
-        "description": "Open platform account update request schema exposed by Claw Router.",
-        "name": "OpenPlatformAccountUpdateRequest",
-        "properties": {
-          "appId": {
-            "description": "App id field on open platform account update request.",
-            "maxLength": 128,
-            "nullable": true,
-            "type": "string"
-          },
-          "appSecret": {
-            "description": "App secret field on open platform account update request.",
-            "maxLength": 4096,
-            "nullable": true,
-            "type": "string"
-          },
-          "defaultEntryId": {
-            "description": "Default entry id field on open platform account update request.",
-            "maxLength": 128,
-            "nullable": true,
-            "type": "string"
-          },
-          "encodingAesKey": {
-            "description": "Encoding aes key field on open platform account update request.",
-            "maxLength": 4096,
-            "nullable": true,
-            "type": "string"
-          },
-          "name": {
-            "description": "Name field on open platform account update request.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "qrDefault": {
-            "description": "Qr default field on open platform account update request.",
-            "type": "boolean"
-          },
-          "status": {
-            "description": "Status field on open platform account update request.",
-            "enum": [
-              "active",
-              "inactive"
-            ],
-            "type": "string"
-          },
-          "token": {
-            "description": "Token field on open platform account update request.",
-            "maxLength": 4096,
-            "nullable": true,
-            "type": "string"
-          }
-        },
-        "required": [],
-        "type": "object"
-      },
-      "OpenPlatformEntryCreateRequest": {
-        "additionalProperties": false,
-        "description": "Open platform entry create request schema exposed by Claw Router.",
-        "name": "OpenPlatformEntryCreateRequest",
-        "properties": {
-          "key": {
-            "description": "Key field on open platform entry create request.",
-            "maxLength": 128,
-            "minLength": 1,
-            "pattern": "^[a-z0-9][a-z0-9._:-]*$",
-            "type": "string"
-          },
-          "type": {
-            "description": "Type field on open platform entry create request.",
-            "enum": [
-              "url",
-              "qr",
-              "mini_app_url"
-            ],
-            "type": "string"
-          },
-          "url": {
-            "description": "Url field on open platform entry create request.",
-            "maxLength": 1024,
-            "minLength": 1,
-            "type": "string"
-          }
-        },
-        "required": [
-          "key",
-          "type",
-          "url"
-        ],
-        "type": "object"
-      },
-      "OpenPlatformEntryItem": {
-        "additionalProperties": false,
-        "description": "Open platform entry item schema exposed by Claw Router.",
-        "properties": {
-          "accountId": {
-            "description": "Account id field on open platform entry item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "createdAt": {
-            "description": "Created at field on open platform entry item.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "id": {
-            "description": "Id field on open platform entry item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "key": {
-            "description": "Key field on open platform entry item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "pattern": "^[a-z0-9][a-z0-9._:-]*$",
-            "type": "string"
-          },
-          "status": {
-            "description": "Status field on open platform entry item.",
-            "enum": [
-              "active",
-              "inactive"
-            ],
-            "type": "string"
-          },
-          "type": {
-            "description": "Type field on open platform entry item.",
-            "enum": [
-              "url",
-              "qr",
-              "mini_app_url"
-            ],
-            "type": "string"
-          },
-          "updatedAt": {
-            "description": "Updated at field on open platform entry item.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "url": {
-            "description": "Url field on open platform entry item.",
-            "maxLength": 1024,
-            "minLength": 1,
-            "type": "string"
-          }
-        },
-        "required": [
-          "id",
-          "accountId",
-          "key",
-          "type",
-          "url",
-          "status"
-        ],
-        "type": "object"
-      },
-      "OpenPlatformEntryListResponse": {
-        "additionalProperties": false,
-        "description": "Open platform entry list response schema exposed by Claw Router.",
-        "name": "OpenPlatformEntryListResponse",
-        "properties": {
-          "items": {
-            "description": "Items field on open platform entry list response.",
-            "items": {
-              "$ref": "#/components/schemas/OpenPlatformEntryItem"
-            },
-            "type": "array"
-          }
-        },
-        "required": [
-          "items"
-        ],
-        "type": "object"
-      },
-      "OpenPlatformEntryResponse": {
-        "additionalProperties": false,
-        "description": "Open platform entry response schema exposed by Claw Router.",
-        "name": "OpenPlatformEntryResponse",
-        "properties": {
-          "item": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/OpenPlatformEntryItem"
-              }
-            ],
-            "description": "Item field on open platform entry response."
-          }
-        },
-        "required": [
-          "item"
-        ],
-        "type": "object"
-      },
-      "OpenPlatformEntryUpdateRequest": {
-        "additionalProperties": false,
-        "description": "Open platform entry update request schema exposed by Claw Router.",
-        "name": "OpenPlatformEntryUpdateRequest",
-        "properties": {
-          "key": {
-            "description": "Key field on open platform entry update request.",
-            "maxLength": 128,
-            "minLength": 1,
-            "pattern": "^[a-z0-9][a-z0-9._:-]*$",
-            "type": "string"
-          },
-          "status": {
-            "description": "Status field on open platform entry update request.",
-            "enum": [
-              "active",
-              "inactive"
-            ],
-            "type": "string"
-          },
-          "type": {
-            "description": "Type field on open platform entry update request.",
-            "enum": [
-              "url",
-              "qr",
-              "mini_app_url"
-            ],
-            "type": "string"
-          },
-          "url": {
-            "description": "Url field on open platform entry update request.",
-            "maxLength": 1024,
-            "minLength": 1,
-            "type": "string"
-          }
-        },
-        "required": [],
-        "type": "object"
-      },
-      "OpenPlatformManifestItem": {
-        "additionalProperties": false,
-        "description": "Open platform manifest item schema exposed by Claw Router.",
-        "properties": {
-          "id": {
-            "description": "Id field on open platform manifest item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "key": {
-            "description": "Key field on open platform manifest item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "provider": {
-            "description": "Provider field on open platform manifest item.",
-            "enum": [
-              "wechat",
-              "alipay",
-              "douyin",
-              "baidu",
-              "kuaishou",
-              "feishu"
-            ],
-            "type": "string"
-          },
-          "status": {
-            "description": "Status field on open platform manifest item.",
-            "enum": [
-              "active",
-              "inactive"
-            ],
-            "type": "string"
-          },
-          "type": {
-            "description": "Type field on open platform manifest item.",
-            "enum": [
-              "official_account",
-              "mini_app",
-              "life_account",
-              "bot"
-            ],
-            "type": "string"
-          },
-          "version": {
-            "description": "Version field on open platform manifest item.",
-            "maxLength": 64,
-            "minLength": 1,
-            "type": "string"
-          }
-        },
-        "required": [
-          "id",
-          "key",
-          "provider",
-          "type",
-          "version",
-          "status"
-        ],
-        "type": "object"
-      },
-      "OpenPlatformManifestListResponse": {
-        "additionalProperties": false,
-        "description": "Open platform manifest list response schema exposed by Claw Router.",
-        "name": "OpenPlatformManifestListResponse",
-        "properties": {
-          "items": {
-            "description": "Items field on open platform manifest list response.",
-            "items": {
-              "$ref": "#/components/schemas/OpenPlatformManifestItem"
-            },
-            "type": "array"
-          }
-        },
-        "required": [
-          "items"
-        ],
-        "type": "object"
-      },
-      "OpenPlatformPayBindingCreateRequest": {
-        "additionalProperties": false,
-        "description": "Open platform pay binding create request schema exposed by Claw Router.",
-        "name": "OpenPlatformPayBindingCreateRequest",
-        "properties": {
-          "mode": {
-            "description": "Mode field on open platform pay binding create request.",
-            "enum": [
-              "direct",
-              "cashier",
-              "escrow"
-            ],
-            "type": "string"
-          },
-          "paymentAccountId": {
-            "description": "Payment account id field on open platform pay binding create request.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "paymentChannelId": {
-            "description": "Payment channel id field on open platform pay binding create request.",
-            "maxLength": 128,
-            "nullable": true,
-            "type": "string"
-          },
-          "scene": {
-            "description": "Scene field on open platform pay binding create request.",
-            "enum": [
-              "official_account",
-              "mini_app",
-              "h5",
-              "app"
-            ],
-            "type": "string"
-          }
-        },
-        "required": [
-          "paymentAccountId",
-          "scene",
-          "mode"
-        ],
-        "type": "object"
-      },
-      "OpenPlatformPayBindingItem": {
-        "additionalProperties": false,
-        "description": "Open platform pay binding item schema exposed by Claw Router.",
-        "properties": {
-          "accountId": {
-            "description": "Account id field on open platform pay binding item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "createdAt": {
-            "description": "Created at field on open platform pay binding item.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "id": {
-            "description": "Id field on open platform pay binding item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "mode": {
-            "description": "Mode field on open platform pay binding item.",
-            "enum": [
-              "direct",
-              "cashier",
-              "escrow"
-            ],
-            "type": "string"
-          },
-          "paymentAccountId": {
-            "description": "Payment account id field on open platform pay binding item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "paymentChannelId": {
-            "description": "Payment channel id field on open platform pay binding item.",
-            "maxLength": 128,
-            "nullable": true,
-            "type": "string"
-          },
-          "scene": {
-            "description": "Scene field on open platform pay binding item.",
-            "enum": [
-              "official_account",
-              "mini_app",
-              "h5",
-              "app"
-            ],
-            "type": "string"
-          },
-          "status": {
-            "description": "Status field on open platform pay binding item.",
-            "enum": [
-              "active",
-              "inactive"
-            ],
-            "type": "string"
-          },
-          "updatedAt": {
-            "description": "Updated at field on open platform pay binding item.",
-            "maxLength": 64,
-            "type": "string"
-          }
-        },
-        "required": [
-          "id",
-          "accountId",
-          "paymentAccountId",
-          "scene",
-          "mode",
-          "status"
-        ],
-        "type": "object"
-      },
-      "OpenPlatformPayBindingListResponse": {
-        "additionalProperties": false,
-        "description": "Open platform pay binding list response schema exposed by Claw Router.",
-        "name": "OpenPlatformPayBindingListResponse",
-        "properties": {
-          "items": {
-            "description": "Items field on open platform pay binding list response.",
-            "items": {
-              "$ref": "#/components/schemas/OpenPlatformPayBindingItem"
-            },
-            "type": "array"
-          }
-        },
-        "required": [
-          "items"
-        ],
-        "type": "object"
-      },
-      "OpenPlatformPayBindingResponse": {
-        "additionalProperties": false,
-        "description": "Open platform pay binding response schema exposed by Claw Router.",
-        "name": "OpenPlatformPayBindingResponse",
-        "properties": {
-          "item": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/OpenPlatformPayBindingItem"
-              }
-            ],
-            "description": "Item field on open platform pay binding response."
-          }
-        },
-        "required": [
-          "item"
-        ],
-        "type": "object"
-      },
-      "OpenPlatformProviderItem": {
-        "additionalProperties": false,
-        "description": "Open platform provider item schema exposed by Claw Router.",
-        "properties": {
-          "id": {
-            "description": "Id field on open platform provider item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "name": {
-            "description": "Name field on open platform provider item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "provider": {
-            "description": "Provider field on open platform provider item.",
-            "enum": [
-              "wechat",
-              "alipay",
-              "douyin",
-              "baidu",
-              "kuaishou",
-              "feishu"
-            ],
-            "type": "string"
-          },
-          "status": {
-            "description": "Status field on open platform provider item.",
-            "enum": [
-              "active",
-              "inactive"
-            ],
-            "type": "string"
-          }
-        },
-        "required": [
-          "id",
-          "provider",
-          "name",
-          "status"
-        ],
-        "type": "object"
-      },
-      "OpenPlatformProviderListResponse": {
-        "additionalProperties": false,
-        "description": "Open platform provider list response schema exposed by Claw Router.",
-        "name": "OpenPlatformProviderListResponse",
-        "properties": {
-          "items": {
-            "description": "Items field on open platform provider list response.",
-            "items": {
-              "$ref": "#/components/schemas/OpenPlatformProviderItem"
-            },
-            "type": "array"
-          }
-        },
-        "required": [
-          "items"
-        ],
-        "type": "object"
-      },
       "OrdersEventsListResult": {
         "additionalProperties": false,
         "description": "Orders events list result schema exposed by Claw Router.",
@@ -29575,33 +29078,6 @@
         "type": "object",
         "x-operation-id": "providerWalletAccounts.list"
       },
-      "ProvidersListResult": {
-        "additionalProperties": false,
-        "description": "Providers list result schema exposed by Claw Router.",
-        "properties": {
-          "code": {
-            "description": "Business response code.",
-            "type": "string"
-          },
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/OpenPlatformProviderListResponse"
-              }
-            ],
-            "description": "Data field on providers list result."
-          },
-          "msg": {
-            "description": "Human-readable response message.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "code"
-        ],
-        "type": "object",
-        "x-operation-id": "providers.list"
-      },
       "RateLimitBucketsListResult": {
         "additionalProperties": false,
         "description": "Rate limit buckets list result schema exposed by Claw Router.",
@@ -30168,6 +29644,33 @@
         ],
         "type": "object",
         "x-operation-id": "riskEvents.list"
+      },
+      "RouteExplainCreateResult": {
+        "additionalProperties": false,
+        "description": "Route explain create result schema exposed by Claw Router.",
+        "properties": {
+          "code": {
+            "description": "Business response code.",
+            "type": "string"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AdminRuntimeRouteExplainResponse"
+              }
+            ],
+            "description": "Data field on route explain create result."
+          },
+          "msg": {
+            "description": "Human-readable response message.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "x-operation-id": "routeExplain.create"
       },
       "RouteRulesCreateResult": {
         "additionalProperties": false,
@@ -35414,6 +34917,100 @@
         ]
       }
     },
+    "/backend/v3/api/ai/channel_groups/{channelGroupId}/route_explain": {
+      "get": {
+        "description": "List group route explain. Reads ai_channel_group, ai_channel_group_member, ai_channel_group_resource, ai_channel, ai_provider. Writes none. File targets none.",
+        "operationId": "channelGroups.routeExplain.retrieve",
+        "parameters": [
+          {
+            "description": "Channel group id path parameter.",
+            "in": "path",
+            "name": "channelGroupId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChannelGroupsRouteExplainRetrieveResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          },
+          "default": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Error response."
+          }
+        },
+        "security": [
+          {
+            "AccessToken": [],
+            "AuthToken": []
+          }
+        ],
+        "summary": "List group route explain",
+        "tags": [
+          "ai"
+        ],
+        "x-contract-kind": "read",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "ai_channel_group",
+          "ai_channel_group_member",
+          "ai_channel_group_resource",
+          "ai_channel",
+          "ai_provider"
+        ],
+        "x-route-scope": "admin",
+        "x-sdk-domain": "intelligence",
+        "x-sdkwork-domain": "intelligence",
+        "x-sdkwork-resource": "channelGroups.routeExplain",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts",
+        "x-write-tables": []
+      }
+    },
     "/backend/v3/api/ai/model_mappings": {
       "get": {
         "description": "List model mappings. Reads ai_model_mapping_rule, ai_model_mapping_rule_binding, ai_model_mapping_rule_item. Writes none. File targets none.",
@@ -37762,6 +37359,105 @@
           "ai_resource_group_item",
           "ops_audit_log"
         ]
+      }
+    },
+    "/backend/v3/api/ai/route_explain": {
+      "post": {
+        "description": "List runtime route explain. Reads ai_api_key, ai_channel_group, ai_channel_group_member, ai_model_provider_route, ai_provider_route, ai_routing_policy, ai_routing_rule, ai_model_pricing, ai_pricing_plan. Writes none. File targets none.",
+        "operationId": "routeExplain.create",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdminRuntimeRouteExplainRequest"
+              }
+            }
+          },
+          "description": "Typed request payload for list runtime route explain.",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RouteExplainCreateResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          },
+          "default": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Error response."
+          }
+        },
+        "security": [
+          {
+            "AccessToken": [],
+            "AuthToken": []
+          }
+        ],
+        "summary": "List runtime route explain",
+        "tags": [
+          "ai"
+        ],
+        "x-contract-kind": "action",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "ai_api_key",
+          "ai_channel_group",
+          "ai_channel_group_member",
+          "ai_model_provider_route",
+          "ai_provider_route",
+          "ai_routing_policy",
+          "ai_routing_rule",
+          "ai_model_pricing",
+          "ai_pricing_plan"
+        ],
+        "x-route-scope": "admin",
+        "x-sdk-domain": "intelligence",
+        "x-sdkwork-domain": "intelligence",
+        "x-sdkwork-resource": "routeExplain",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts",
+        "x-write-tables": []
       }
     },
     "/backend/v3/api/audit/commerce_events": {
@@ -51594,1448 +51290,6 @@
         ]
       }
     },
-    "/backend/v3/api/open_platform/accounts": {
-      "get": {
-        "description": "List open platform accounts. Reads open_platform_account. Writes none. File targets none.",
-        "operationId": "accounts.list",
-        "parameters": [
-          {
-            "description": "Provider query parameter.",
-            "in": "query",
-            "name": "provider",
-            "required": false,
-            "schema": {
-              "enum": [
-                "wechat",
-                "alipay",
-                "douyin",
-                "baidu",
-                "kuaishou",
-                "feishu"
-              ],
-              "type": "string"
-            }
-          },
-          {
-            "description": "Type query parameter.",
-            "in": "query",
-            "name": "type",
-            "required": false,
-            "schema": {
-              "enum": [
-                "official_account",
-                "mini_app",
-                "life_account",
-                "bot"
-              ],
-              "type": "string"
-            }
-          },
-          {
-            "description": "Status query parameter.",
-            "in": "query",
-            "name": "status",
-            "required": false,
-            "schema": {
-              "enum": [
-                "active",
-                "inactive"
-              ],
-              "type": "string"
-            }
-          },
-          {
-            "description": "Page query parameter.",
-            "in": "query",
-            "name": "page",
-            "required": false,
-            "schema": {
-              "format": "int64",
-              "pattern": "^[1-9][0-9]*$",
-              "type": "string",
-              "x-sdkwork-int64-string": true,
-              "x-sdkwork-rust-type": "i64"
-            }
-          },
-          {
-            "description": "Page size query parameter.",
-            "in": "query",
-            "name": "page_size",
-            "required": false,
-            "schema": {
-              "format": "int64",
-              "pattern": "^[1-9][0-9]*$",
-              "type": "string",
-              "x-sdkwork-int64-string": true,
-              "x-sdkwork-rust-type": "i64"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AccountsListResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "List open platform accounts",
-        "tags": [
-          "openPlatform"
-        ],
-        "x-contract-kind": "read",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "open_platform_account"
-        ],
-        "x-route-scope": "admin",
-        "x-sdk-domain": "platform",
-        "x-sdkwork-domain": "platform",
-        "x-sdkwork-resource": "accounts",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts",
-        "x-write-tables": []
-      },
-      "post": {
-        "description": "Create open platform account. Reads open_platform_account. Writes open_platform_account, ops_audit_log. File targets none.",
-        "operationId": "accounts.create",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/OpenPlatformAccountCreateRequest"
-              }
-            }
-          },
-          "description": "Typed request payload for create open platform account.",
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AccountsCreateResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "Create open platform account",
-        "tags": [
-          "openPlatform"
-        ],
-        "x-contract-kind": "create",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "open_platform_account"
-        ],
-        "x-route-scope": "admin",
-        "x-sdk-domain": "platform",
-        "x-sdkwork-domain": "platform",
-        "x-sdkwork-resource": "accounts",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts",
-        "x-write-tables": [
-          "open_platform_account",
-          "ops_audit_log"
-        ]
-      }
-    },
-    "/backend/v3/api/open_platform/accounts/{accountId}": {
-      "delete": {
-        "description": "Delete open platform account. Reads open_platform_account. Writes open_platform_account, ops_audit_log. File targets none.",
-        "operationId": "accounts.delete",
-        "parameters": [
-          {
-            "description": "Account id path parameter.",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AccountsDeleteResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "Delete open platform account",
-        "tags": [
-          "openPlatform"
-        ],
-        "x-contract-kind": "delete",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "open_platform_account"
-        ],
-        "x-route-scope": "admin",
-        "x-sdk-domain": "platform",
-        "x-sdkwork-domain": "platform",
-        "x-sdkwork-resource": "accounts",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts",
-        "x-write-tables": [
-          "open_platform_account",
-          "ops_audit_log"
-        ]
-      },
-      "get": {
-        "description": "Retrieve open platform account. Reads open_platform_account. Writes none. File targets none.",
-        "operationId": "accounts.retrieve",
-        "parameters": [
-          {
-            "description": "Account id path parameter.",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AccountsRetrieveResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "Retrieve open platform account",
-        "tags": [
-          "openPlatform"
-        ],
-        "x-contract-kind": "read",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "open_platform_account"
-        ],
-        "x-route-scope": "admin",
-        "x-sdk-domain": "platform",
-        "x-sdkwork-domain": "platform",
-        "x-sdkwork-resource": "accounts",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts",
-        "x-write-tables": []
-      },
-      "patch": {
-        "description": "Update open platform account. Reads open_platform_account. Writes open_platform_account, ops_audit_log. File targets none.",
-        "operationId": "accounts.update",
-        "parameters": [
-          {
-            "description": "Account id path parameter.",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/OpenPlatformAccountUpdateRequest"
-              }
-            }
-          },
-          "description": "Typed request payload for update open platform account.",
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AccountsUpdateResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "Update open platform account",
-        "tags": [
-          "openPlatform"
-        ],
-        "x-contract-kind": "update",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "open_platform_account"
-        ],
-        "x-route-scope": "admin",
-        "x-sdk-domain": "platform",
-        "x-sdkwork-domain": "platform",
-        "x-sdkwork-resource": "accounts",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts",
-        "x-write-tables": [
-          "open_platform_account",
-          "ops_audit_log"
-        ]
-      }
-    },
-    "/backend/v3/api/open_platform/accounts/{accountId}/entries": {
-      "get": {
-        "description": "List open platform account entries. Reads open_platform_account, open_platform_entry. Writes none. File targets none.",
-        "operationId": "accounts.entries.list",
-        "parameters": [
-          {
-            "description": "Account id path parameter.",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AccountsEntriesListResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "List open platform account entries",
-        "tags": [
-          "openPlatform"
-        ],
-        "x-contract-kind": "read",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "open_platform_account",
-          "open_platform_entry"
-        ],
-        "x-route-scope": "admin",
-        "x-sdk-domain": "platform",
-        "x-sdkwork-domain": "platform",
-        "x-sdkwork-resource": "accounts.entries",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts",
-        "x-write-tables": []
-      },
-      "post": {
-        "description": "Create open platform account entry. Reads open_platform_account, open_platform_entry. Writes open_platform_entry, ops_audit_log. File targets none.",
-        "operationId": "accounts.entries.create",
-        "parameters": [
-          {
-            "description": "Account id path parameter.",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/OpenPlatformEntryCreateRequest"
-              }
-            }
-          },
-          "description": "Typed request payload for create open platform account entry.",
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AccountsEntriesCreateResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "Create open platform account entry",
-        "tags": [
-          "openPlatform"
-        ],
-        "x-contract-kind": "create",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "open_platform_account",
-          "open_platform_entry"
-        ],
-        "x-route-scope": "admin",
-        "x-sdk-domain": "platform",
-        "x-sdkwork-domain": "platform",
-        "x-sdkwork-resource": "accounts.entries",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts",
-        "x-write-tables": [
-          "open_platform_entry",
-          "ops_audit_log"
-        ]
-      }
-    },
-    "/backend/v3/api/open_platform/accounts/{accountId}/entries/{entryId}": {
-      "delete": {
-        "description": "Delete open platform account entry. Reads open_platform_account, open_platform_entry. Writes open_platform_entry, open_platform_account, ops_audit_log. File targets none.",
-        "operationId": "accounts.entries.delete",
-        "parameters": [
-          {
-            "description": "Account id path parameter.",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "Entry id path parameter.",
-            "in": "path",
-            "name": "entryId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AccountsEntriesDeleteResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "Delete open platform account entry",
-        "tags": [
-          "openPlatform"
-        ],
-        "x-contract-kind": "delete",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "open_platform_account",
-          "open_platform_entry"
-        ],
-        "x-route-scope": "admin",
-        "x-sdk-domain": "platform",
-        "x-sdkwork-domain": "platform",
-        "x-sdkwork-resource": "accounts.entries",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts",
-        "x-write-tables": [
-          "open_platform_entry",
-          "open_platform_account",
-          "ops_audit_log"
-        ]
-      },
-      "patch": {
-        "description": "Update open platform account entry. Reads open_platform_account, open_platform_entry. Writes open_platform_entry, open_platform_account, ops_audit_log. File targets none.",
-        "operationId": "accounts.entries.update",
-        "parameters": [
-          {
-            "description": "Account id path parameter.",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "Entry id path parameter.",
-            "in": "path",
-            "name": "entryId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/OpenPlatformEntryUpdateRequest"
-              }
-            }
-          },
-          "description": "Typed request payload for update open platform account entry.",
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AccountsEntriesUpdateResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "Update open platform account entry",
-        "tags": [
-          "openPlatform"
-        ],
-        "x-contract-kind": "update",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "open_platform_account",
-          "open_platform_entry"
-        ],
-        "x-route-scope": "admin",
-        "x-sdk-domain": "platform",
-        "x-sdkwork-domain": "platform",
-        "x-sdkwork-resource": "accounts.entries",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts",
-        "x-write-tables": [
-          "open_platform_entry",
-          "open_platform_account",
-          "ops_audit_log"
-        ]
-      }
-    },
-    "/backend/v3/api/open_platform/accounts/{accountId}/pay_bindings": {
-      "get": {
-        "description": "List open platform account pay bindings. Reads open_platform_account, open_platform_pay_binding. Writes none. File targets none.",
-        "operationId": "accounts.payBindings.list",
-        "parameters": [
-          {
-            "description": "Account id path parameter.",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AccountsPayBindingsListResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "List open platform account pay bindings",
-        "tags": [
-          "openPlatform"
-        ],
-        "x-contract-kind": "read",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "open_platform_account",
-          "open_platform_pay_binding"
-        ],
-        "x-route-scope": "admin",
-        "x-sdk-domain": "platform",
-        "x-sdkwork-domain": "platform",
-        "x-sdkwork-resource": "accounts.payBindings",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts",
-        "x-write-tables": []
-      },
-      "post": {
-        "description": "Create open platform account pay binding. Reads open_platform_account, open_platform_pay_binding. Writes open_platform_pay_binding, ops_audit_log. File targets none.",
-        "operationId": "accounts.payBindings.create",
-        "parameters": [
-          {
-            "description": "Account id path parameter.",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/OpenPlatformPayBindingCreateRequest"
-              }
-            }
-          },
-          "description": "Typed request payload for create open platform account pay binding.",
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AccountsPayBindingsCreateResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "Create open platform account pay binding",
-        "tags": [
-          "openPlatform"
-        ],
-        "x-contract-kind": "create",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "open_platform_account",
-          "open_platform_pay_binding"
-        ],
-        "x-route-scope": "admin",
-        "x-sdk-domain": "platform",
-        "x-sdkwork-domain": "platform",
-        "x-sdkwork-resource": "accounts.payBindings",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts",
-        "x-write-tables": [
-          "open_platform_pay_binding",
-          "ops_audit_log"
-        ]
-      }
-    },
-    "/backend/v3/api/open_platform/accounts/{accountId}/pay_bindings/{bindingId}": {
-      "delete": {
-        "description": "Delete open platform account pay binding. Reads open_platform_account, open_platform_pay_binding. Writes open_platform_pay_binding, ops_audit_log. File targets none.",
-        "operationId": "accounts.payBindings.delete",
-        "parameters": [
-          {
-            "description": "Account id path parameter.",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "Binding id path parameter.",
-            "in": "path",
-            "name": "bindingId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AccountsPayBindingsDeleteResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "Delete open platform account pay binding",
-        "tags": [
-          "openPlatform"
-        ],
-        "x-contract-kind": "delete",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "open_platform_account",
-          "open_platform_pay_binding"
-        ],
-        "x-route-scope": "admin",
-        "x-sdk-domain": "platform",
-        "x-sdkwork-domain": "platform",
-        "x-sdkwork-resource": "accounts.payBindings",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts",
-        "x-write-tables": [
-          "open_platform_pay_binding",
-          "ops_audit_log"
-        ]
-      }
-    },
-    "/backend/v3/api/open_platform/manifests": {
-      "get": {
-        "description": "List open platform manifests. Reads open_platform_manifest. Writes none. File targets none.",
-        "operationId": "manifests.list",
-        "parameters": [
-          {
-            "description": "Provider query parameter.",
-            "in": "query",
-            "name": "provider",
-            "required": false,
-            "schema": {
-              "enum": [
-                "wechat",
-                "alipay",
-                "douyin",
-                "baidu",
-                "kuaishou",
-                "feishu"
-              ],
-              "type": "string"
-            }
-          },
-          {
-            "description": "Type query parameter.",
-            "in": "query",
-            "name": "type",
-            "required": false,
-            "schema": {
-              "enum": [
-                "official_account",
-                "mini_app",
-                "life_account",
-                "bot"
-              ],
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManifestsListResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "List open platform manifests",
-        "tags": [
-          "openPlatform"
-        ],
-        "x-contract-kind": "read",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "open_platform_manifest"
-        ],
-        "x-route-scope": "admin",
-        "x-sdk-domain": "platform",
-        "x-sdkwork-domain": "platform",
-        "x-sdkwork-resource": "manifests",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts",
-        "x-write-tables": []
-      }
-    },
-    "/backend/v3/api/open_platform/providers": {
-      "get": {
-        "description": "List open platform providers. Reads open_platform_provider. Writes none. File targets none.",
-        "operationId": "providers.list",
-        "parameters": [
-          {
-            "description": "Status query parameter.",
-            "in": "query",
-            "name": "status",
-            "required": false,
-            "schema": {
-              "enum": [
-                "active",
-                "inactive"
-              ],
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProvidersListResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "List open platform providers",
-        "tags": [
-          "openPlatform"
-        ],
-        "x-contract-kind": "read",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "open_platform_provider"
-        ],
-        "x-route-scope": "admin",
-        "x-sdk-domain": "platform",
-        "x-sdkwork-domain": "platform",
-        "x-sdkwork-resource": "providers",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts",
-        "x-write-tables": []
-      }
-    },
     "/backend/v3/api/orders": {
       "get": {
         "description": "Standard appbase commerce API for orders.list; no legacy billing compatibility route is exposed. Reads commerce_order, commerce_order_item, commerce_order_amount_breakdown, commerce_order_address_snapshot, commerce_order_event, commerce_order_cancellation, commerce_payment_intent, commerce_payment_attempt, commerce_fulfillment_order, commerce_refund. Writes none. File targets none.",
@@ -53074,6 +51328,36 @@
             "required": false,
             "schema": {
               "maxLength": 32,
+              "type": "string"
+            }
+          },
+          {
+            "description": "Cursor query parameter.",
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "schema": {
+              "maxLength": 256,
+              "type": "string"
+            }
+          },
+          {
+            "description": "Sort query parameter.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "schema": {
+              "maxLength": 128,
+              "type": "string"
+            }
+          },
+          {
+            "description": "Q query parameter.",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "schema": {
+              "maxLength": 256,
               "type": "string"
             }
           }
@@ -60243,6 +58527,36 @@
             "required": false,
             "schema": {
               "maxLength": 32,
+              "type": "string"
+            }
+          },
+          {
+            "description": "Cursor query parameter.",
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "schema": {
+              "maxLength": 256,
+              "type": "string"
+            }
+          },
+          {
+            "description": "Sort query parameter.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "schema": {
+              "maxLength": 128,
+              "type": "string"
+            }
+          },
+          {
+            "description": "Q query parameter.",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "schema": {
+              "maxLength": 256,
               "type": "string"
             }
           }
@@ -69944,10 +68258,6 @@
     {
       "description": "messaging operations exposed by Claw Router.",
       "name": "messaging"
-    },
-    {
-      "description": "openPlatform operations exposed by Claw Router.",
-      "name": "openPlatform"
     },
     {
       "description": "platform operations exposed by Claw Router.",

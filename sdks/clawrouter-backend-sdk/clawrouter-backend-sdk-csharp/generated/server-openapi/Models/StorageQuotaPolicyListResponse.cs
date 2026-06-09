@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class StorageQuotaPolicyListResponse
     {
-        public List<StorageQuotaPolicy>? Items { get; set; }
-        public string? RequestId { get; set; }
+        public List<StorageQuotaPolicy> Items { get; set; }
+        public string RequestId { get; set; }
     }
 }

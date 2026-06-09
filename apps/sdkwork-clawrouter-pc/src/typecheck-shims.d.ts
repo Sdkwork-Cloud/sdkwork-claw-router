@@ -110,6 +110,56 @@ declare module '@sdkwork/appbase-backend-sdk' {
         };
       };
       apiKeys: SdkworkAppbaseBackendApiKeysResource;
+      oauth: {
+        accountLinks: SdkworkAppbaseBackendCrudResource;
+        callbackEvents: SdkworkAppbaseBackendListResource;
+        claimMappings: SdkworkAppbaseBackendCrudResource;
+        clients: SdkworkAppbaseBackendCrudResource;
+        diagnosticRuns: SdkworkAppbaseBackendListResource & {
+          create(input?: Record<string, unknown>): Promise<SdkworkAppbaseBackendSdkResponse>;
+          retrieve(id: string): Promise<SdkworkAppbaseBackendSdkResponse>;
+        };
+        flowConfigs: SdkworkAppbaseBackendCrudResource;
+        grants: SdkworkAppbaseBackendListResource & {
+          delete(id: string): Promise<SdkworkAppbaseBackendSdkResponse>;
+        };
+        integrations: SdkworkAppbaseBackendCrudResource;
+        operationalResources: SdkworkAppbaseBackendCrudResource & {
+          publishes: {
+            create(resourceId: string, input?: Record<string, unknown>): Promise<SdkworkAppbaseBackendSdkResponse>;
+          };
+        };
+        operatorPlatforms: SdkworkAppbaseBackendCrudResource & {
+          preAuthorizations: {
+            create(operatorPlatformId: string, input?: Record<string, unknown>): Promise<SdkworkAppbaseBackendSdkResponse>;
+          };
+        };
+        policies: SdkworkAppbaseBackendCrudResource;
+        providerCatalog: SdkworkAppbaseBackendListResource;
+        resourceAccounts: SdkworkAppbaseBackendCrudResource & {
+          authorizationRefreshes: {
+            create(resourceAccountId: string, input?: Record<string, unknown>): Promise<SdkworkAppbaseBackendSdkResponse>;
+          };
+          miniProgramLoginChecks: {
+            create(resourceAccountId: string, input?: Record<string, unknown>): Promise<SdkworkAppbaseBackendSdkResponse>;
+          };
+          verifications: {
+            create(resourceAccountId: string, input?: Record<string, unknown>): Promise<SdkworkAppbaseBackendSdkResponse>;
+          };
+        };
+        resourceAuthorizations: SdkworkAppbaseBackendCrudResource;
+        scopeProfiles: SdkworkAppbaseBackendCrudResource;
+        secrets: SdkworkAppbaseBackendListResource & {
+          create(input?: Record<string, unknown>): Promise<SdkworkAppbaseBackendSdkResponse>;
+        };
+        surfaces: SdkworkAppbaseBackendCrudResource;
+        tenantBindings: SdkworkAppbaseBackendCrudResource;
+        webhookConfigs: SdkworkAppbaseBackendCrudResource & {
+          verifications: {
+            create(webhookConfigId: string, input?: Record<string, unknown>): Promise<SdkworkAppbaseBackendSdkResponse>;
+          };
+        };
+      };
       users: SdkworkAppbaseBackendCrudResource;
     };
 
@@ -1329,136 +1379,6 @@ declare module '@sdkwork/generation-pc-react/react' {
     config: SdkworkGenerationAssetConfig,
     updates: Partial<SdkworkGenerationVideoModeConfig>,
   ): SdkworkGenerationAssetConfig;
-}
-
-declare module '@sdkwork/platform' {
-  export type PlatformAccountStatus = 'active' | 'inactive';
-  export type PlatformEntryStatus = 'active' | 'inactive';
-  export type PlatformEntryType = 'mini_app_url' | 'qr' | 'url';
-  export type PlatformPayMode = 'cashier' | 'direct' | 'escrow';
-  export type PlatformPayScene = 'app' | 'h5' | 'mini_app' | 'official_account';
-  export type PlatformProvider = 'alipay' | 'baidu' | 'douyin' | 'feishu' | 'kuaishou' | 'wechat';
-}
-
-declare module '@sdkwork/open-platform-admin-pc-react' {
-  import type { ReactNode } from 'react';
-  import type {
-    PlatformAccountStatus,
-    PlatformEntryStatus,
-    PlatformEntryType,
-    PlatformPayMode,
-    PlatformPayScene,
-    PlatformProvider,
-  } from '@sdkwork/platform';
-
-  export interface SdkworkOpenPlatformAdminBackendClient {
-    openPlatform: {
-      accounts: {
-        create(input: SdkworkOpenPlatformAdminAccountInput): Promise<unknown>;
-        delete(accountId: string): Promise<unknown>;
-        entries: {
-          create(accountId: string, input: SdkworkOpenPlatformAdminEntryInput): Promise<unknown>;
-          delete(accountId: string, entryId: string): Promise<unknown>;
-          list(accountId: string): Promise<unknown>;
-          update(accountId: string, entryId: string, input: SdkworkOpenPlatformAdminEntryUpdateInput): Promise<unknown>;
-        };
-        list(params?: SdkworkOpenPlatformAdminAccountListParams): Promise<unknown>;
-        payBindings: {
-          create(accountId: string, input: SdkworkOpenPlatformAdminPayBindingInput): Promise<unknown>;
-          delete(accountId: string, bindingId: string): Promise<unknown>;
-          list(accountId: string): Promise<unknown>;
-        };
-        retrieve(accountId: string): Promise<unknown>;
-        update(accountId: string, input: SdkworkOpenPlatformAdminAccountUpdateInput): Promise<unknown>;
-      };
-      manifests?: {
-        list(params?: Record<string, unknown>): Promise<unknown>;
-      };
-      providers?: {
-        list(params?: Record<string, unknown>): Promise<unknown>;
-      };
-    };
-  }
-
-  export type SdkworkOpenPlatformAdminAccountType = 'mini_app' | 'official_account';
-
-  export interface SdkworkOpenPlatformAdminAccountInput {
-    aesKeyRef?: string | null;
-    appId?: string | null;
-    key: string;
-    name: string;
-    provider: PlatformProvider;
-    secretRef?: string | null;
-    tokenRef?: string | null;
-    type: SdkworkOpenPlatformAdminAccountType;
-  }
-
-  export interface SdkworkOpenPlatformAdminAccountUpdateInput {
-    aesKeyRef?: string | null;
-    appId?: string | null;
-    defaultEntryId?: string | null;
-    name?: string;
-    qrDefault?: boolean;
-    secretRef?: string | null;
-    status?: PlatformAccountStatus;
-    tokenRef?: string | null;
-  }
-
-  export interface SdkworkOpenPlatformAdminAccountListParams {
-    provider?: PlatformProvider;
-    status?: PlatformAccountStatus;
-    type?: SdkworkOpenPlatformAdminAccountType;
-  }
-
-  export interface SdkworkOpenPlatformAdminEntryInput {
-    key: string;
-    type: PlatformEntryType;
-    url: string;
-  }
-
-  export interface SdkworkOpenPlatformAdminEntryUpdateInput {
-    key?: string;
-    status?: PlatformEntryStatus;
-    type?: PlatformEntryType;
-    url?: string;
-  }
-
-  export interface SdkworkOpenPlatformAdminPayBindingInput {
-    mode: PlatformPayMode;
-    paymentAccountId: string;
-    paymentChannelId?: string | null;
-    scene: PlatformPayScene;
-  }
-
-  export interface SdkworkOpenPlatformAdminDashboard {
-    accounts: unknown[];
-    entriesByAccountId: Record<string, unknown[]>;
-    payBindingsByAccountId: Record<string, unknown[]>;
-    summary: Record<string, number>;
-  }
-
-  export interface SdkworkOpenPlatformAdminService {
-    getDashboard(): Promise<SdkworkOpenPlatformAdminDashboard>;
-    refreshDashboard(): Promise<SdkworkOpenPlatformAdminDashboard>;
-  }
-
-  export interface SdkworkOpenPlatformAdminController {
-    bootstrap(): Promise<unknown>;
-    getState(): unknown;
-    refresh(): Promise<unknown>;
-    service: SdkworkOpenPlatformAdminService;
-    subscribe(listener: () => void): () => void;
-  }
-
-  export function createSdkworkOpenPlatformAdminController(options: {
-    service: SdkworkOpenPlatformAdminService;
-  }): SdkworkOpenPlatformAdminController;
-  export function createSdkworkOpenPlatformAdminService(options: {
-    backendClient: SdkworkOpenPlatformAdminBackendClient;
-  }): SdkworkOpenPlatformAdminService;
-  export function SdkworkOpenPlatformAdminPage(props: {
-    controller: SdkworkOpenPlatformAdminController;
-  }): ReactNode;
 }
 
 declare module '@sdkwork/appbase-pc-react' {

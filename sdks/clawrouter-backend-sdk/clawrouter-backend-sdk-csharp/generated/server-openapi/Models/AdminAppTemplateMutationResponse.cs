@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminAppTemplateMutationResponse
     {
-        public AdminAppTemplateItemResponse? Item { get; set; }
+        public AdminAppTemplateItemResponse Item { get; set; }
     }
 }

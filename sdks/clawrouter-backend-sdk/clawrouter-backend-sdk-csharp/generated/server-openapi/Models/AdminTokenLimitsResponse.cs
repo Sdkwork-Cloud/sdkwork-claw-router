@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminTokenLimitsResponse
     {
-        public List<AdminRateLimitItem>? Items { get; set; }
+        public List<AdminRateLimitItem> Items { get; set; }
     }
 }

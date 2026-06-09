@@ -60,6 +60,26 @@ class FrontendContractGuardian:
             "storage_usage_counter",
             "storage_usage_ledger",
             "storage_usage_snapshot",
+            "iam_oauth_account_link",
+            "iam_oauth_authorization_state",
+            "iam_oauth_callback_event",
+            "iam_oauth_claim_mapping",
+            "iam_oauth_client",
+            "iam_oauth_diagnostic_run",
+            "iam_oauth_flow_config",
+            "iam_oauth_grant",
+            "iam_oauth_integration",
+            "iam_oauth_operational_resource",
+            "iam_oauth_operator_platform",
+            "iam_oauth_policy",
+            "iam_oauth_provider_catalog",
+            "iam_oauth_resource_account",
+            "iam_oauth_resource_authorization",
+            "iam_oauth_scope_profile",
+            "iam_oauth_secret",
+            "iam_oauth_surface",
+            "iam_oauth_tenant_binding",
+            "iam_oauth_webhook_config",
             "upload_completion_attempt",
             "upload_part",
             "upload_presign_grant",
@@ -455,11 +475,12 @@ class FrontendContractGuardian:
             if isinstance(table, dict) and isinstance(table.get("table"), str)
         }
 
+        contract = self._load_contract()
+        dependency_owned_routes = self._dependency_owned_contract_routes(contract)
         for route in sorted(actual_routes):
-            if route not in routes:
+            if route not in routes and route not in dependency_owned_routes:
                 messages.append(f"frontend route missing from schema manifest: {route}")
 
-        contract = self._load_contract()
         contract_routes = contract.get("routes", [])
         if not isinstance(contract_routes, list):
             return FrontendContractResult(ok=False, messages=["frontend field contracts routes must be a list"])
@@ -477,12 +498,13 @@ class FrontendContractGuardian:
             if not isinstance(item, dict) or not isinstance(item.get("route"), str):
                 continue
             route = item["route"]
+            dependency_owned = self._is_dependency_owned_contract_route(item)
             if route not in actual_routes:
                 messages.append(f"frontend contract route is not in portal App.tsx: {route}")
 
             route_tables = self._manifest_route_tables(routes.get(route))
             for table in self._string_list(item.get("required_tables")):
-                if table not in route_tables and table not in self.APPBASE_REQUIRED_TABLES:
+                if table not in route_tables and table not in self.APPBASE_REQUIRED_TABLES and not dependency_owned:
                     messages.append(f"route {route} requires table {table}")
 
             required_columns = item.get("required_columns", {})
@@ -492,6 +514,8 @@ class FrontendContractGuardian:
 
             for table, columns in required_columns.items():
                 if not isinstance(table, str):
+                    continue
+                if table in self.APPBASE_REQUIRED_TABLES or dependency_owned:
                     continue
                 metadata = by_table.get(table)
                 if metadata is None:
@@ -1101,6 +1125,8 @@ class FrontendContractGuardian:
 
             manifest_route = manifest_routes.get(route)
             if not isinstance(manifest_route, dict):
+                if self._is_dependency_owned_classification_route(entry):
+                    messages.extend(self._check_dependency_owned_route_classification(entry, contract, operation_items))
                 continue
 
             expected_scope = manifest_route.get("route_scope")
@@ -1116,6 +1142,82 @@ class FrontendContractGuardian:
             elif delivery_kind == "local_developer_tool_api":
                 messages.extend(self._check_local_tool_route_classification(entry, browser_tool_endpoint_sources))
 
+        return messages
+
+    def _dependency_owned_contract_routes(self, contract: dict[str, Any]) -> set[str]:
+        routes = contract.get("routes", [])
+        if not isinstance(routes, list):
+            return set()
+        return {
+            route
+            for item in routes
+            if isinstance(item, dict)
+            and self._is_dependency_owned_contract_route(item)
+            and isinstance((route := item.get("route")), str)
+        }
+
+    def _is_dependency_owned_contract_route(self, item: dict[str, Any]) -> bool:
+        return item.get("dependency_owned") is True and isinstance(item.get("dependency_sdk_family"), str)
+
+    def _is_dependency_owned_classification_route(self, item: dict[str, Any]) -> bool:
+        return item.get("dependency_owned") is True and isinstance(item.get("dependency_sdk_family"), str)
+
+    def _check_dependency_owned_route_classification(
+        self,
+        entry: dict[str, Any],
+        contract: dict[str, Any],
+        frontend_operations: list[dict[str, Any]],
+    ) -> list[str]:
+        route = entry["route"]
+        messages: list[str] = []
+        api_surface = entry.get("api_surface")
+        dependency_sdk_family = entry.get("dependency_sdk_family")
+        if api_surface not in {"app", "backend"}:
+            messages.append(f"dependency-owned route {route} must declare api_surface app or backend")
+            return messages
+        if not isinstance(dependency_sdk_family, str) or not dependency_sdk_family:
+            messages.append(f"dependency-owned route {route} must declare dependency_sdk_family")
+            return messages
+
+        contract_routes = [
+            item
+            for item in contract.get("routes", [])
+            if isinstance(item, dict) and item.get("route") == route
+        ]
+        if not contract_routes:
+            messages.append(f"dependency-owned route {route} must declare a field contract route")
+            return messages
+
+        if not any(
+            self._is_dependency_owned_contract_route(item)
+            and item.get("dependency_sdk_family") == dependency_sdk_family
+            for item in contract_routes
+        ):
+            messages.append(
+                f"dependency-owned route {route} contract must declare dependency_sdk_family {dependency_sdk_family}"
+            )
+
+        operation_routes = {route, *self._string_list(entry.get("operation_routes"))}
+        matching_operations = [
+            operation
+            for operation in frontend_operations
+            if operation.get("route") in operation_routes and operation.get("api_surface") == api_surface
+        ]
+        if not matching_operations:
+            messages.append(
+                f"dependency-owned route {route} must declare at least one {api_surface} frontend operation contract"
+            )
+            return messages
+
+        expected_client = "getClawRouterAppSdkClient" if api_surface == "app" else "getClawRouterBackendSdkClient"
+        if not any(
+            self._operation_uses_allowed_sdk_client_boundary(operation, expected_client)
+            for operation in matching_operations
+            if isinstance(operation.get("source"), str)
+        ):
+            messages.append(
+                f"dependency-owned route {route} must use dependency SDK boundary {dependency_sdk_family}"
+            )
         return messages
 
     def _check_sdk_backed_route_classification(

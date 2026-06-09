@@ -60,9 +60,9 @@ const client = new SdkworkBackendClient({
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.integration` - integration API
+- `client.commerce` - commerce API
 - `client.mcp` - mcp API
 - `client.messaging` - messaging API
-- `client.openPlatform` - open_platform API
 - `client.platform` - platform API
 - `client.prompts` - prompts API
 - `client.serviceProviders` - service_providers API
@@ -123,6 +123,21 @@ const result = await client.iam.apiKeys.delete(apiKeyId);
 const result = await client.integration.channels.list();
 ```
 
+### commerce
+
+```typescript
+// List inventory ledger entries
+const params = {
+  sku_id: 'sku_id',
+  warehouse_id: 'warehouse_id',
+  source_type: 'source_type',
+  source_id: 'source_id',
+  page: 'page',
+  page_size: 'page_size',
+};
+const result = await client.commerce.inventory.ledgerEntries.list(params);
+```
+
 ### mcp
 
 ```typescript
@@ -152,16 +167,6 @@ const params = {
   provider_code: 'provider_code',
 };
 const result = await client.messaging.providerAccounts.list(params);
-```
-
-### open_platform
-
-```typescript
-// List open platform providers
-const params = {
-  status: 'active',
-};
-const result = await client.openPlatform.providers.list(params);
 ```
 
 ### platform

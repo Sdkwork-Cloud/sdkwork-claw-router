@@ -1,6 +1,6 @@
 use std::sync::Arc;
 
-use crate::api::{AgentsApi, AiApi, ChatApi, ContentApi, EcosystemApi, IamApi, MemoryApi, NotificationApi, PlatformApi, SystemApi, CommerceApi, RuntimeApi, SdkReferenceApi};
+use crate::api::{AgentsApi, AiApi, AuthApi, ChatApi, ContentApi, EcosystemApi, IamApi, MemoryApi, NotificationApi, PlatformApi, RuntimeApi, SdkReferenceApi, SystemApi};
 use crate::http::{SdkworkConfig, SdkworkError, SdkworkHttpClient};
 
 #[derive(Clone)]
@@ -18,12 +18,6 @@ impl SdkworkAppClient {
     pub fn new_with_base_url(base_url: impl Into<String>) -> Result<Self, SdkworkError> {
         Self::new(SdkworkConfig::new(base_url))
     }
-
-    pub fn set_api_key(&self, api_key: impl Into<String>) -> &Self {
-        self.http.set_api_key(api_key);
-        self
-    }
-
     pub fn set_auth_token(&self, token: impl Into<String>) -> &Self {
         self.http.set_auth_token(token);
         self
@@ -49,6 +43,10 @@ impl SdkworkAppClient {
 
     pub fn ai(&self) -> AiApi {
             AiApi::new(Arc::clone(&self.http))
+        }
+
+    pub fn auth(&self) -> AuthApi {
+            AuthApi::new(Arc::clone(&self.http))
         }
 
     pub fn chat(&self) -> ChatApi {
@@ -79,19 +77,15 @@ impl SdkworkAppClient {
             PlatformApi::new(Arc::clone(&self.http))
         }
 
-    pub fn system(&self) -> SystemApi {
-            SystemApi::new(Arc::clone(&self.http))
-        }
-
-    pub fn commerce(&self) -> CommerceApi {
-            CommerceApi::new(Arc::clone(&self.http))
-        }
-
     pub fn runtime(&self) -> RuntimeApi {
             RuntimeApi::new(Arc::clone(&self.http))
         }
 
     pub fn sdk_reference(&self) -> SdkReferenceApi {
             SdkReferenceApi::new(Arc::clone(&self.http))
+        }
+
+    pub fn system(&self) -> SystemApi {
+            SystemApi::new(Arc::clone(&self.http))
         }
 }

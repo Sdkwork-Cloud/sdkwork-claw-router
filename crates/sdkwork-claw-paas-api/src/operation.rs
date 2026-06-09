@@ -1,4 +1,5 @@
 use serde::{Deserialize, Serialize};
+use std::str::FromStr;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]
@@ -123,56 +124,73 @@ impl<'de> Deserialize<'de> for PaasOperation {
         D: serde::Deserializer<'de>,
     {
         let value = String::deserialize(deserializer)?;
-        Self::from_str(value.as_str())
-            .ok_or_else(|| serde::de::Error::custom(format!("unknown PaaS operation: {value}")))
+        value
+            .parse()
+            .map_err(|_| serde::de::Error::custom(format!("unknown PaaS operation: {value}")))
+    }
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub struct PaasOperationParseError;
+
+impl FromStr for PaasOperation {
+    type Err = PaasOperationParseError;
+
+    fn from_str(value: &str) -> Result<Self, Self::Err> {
+        paas_operation_from_str(value).ok_or(PaasOperationParseError)
     }
 }
 
 impl PaasOperation {
+    #[allow(clippy::should_implement_trait)]
     pub fn from_str(value: &str) -> Option<Self> {
-        Some(match value {
-            "ocr.general_text" => Self::OcrGeneralText,
-            "ocr.document_text" => Self::OcrDocumentText,
-            "ocr.id_card" => Self::OcrIdCard,
-            "ocr.bank_card" => Self::OcrBankCard,
-            "ocr.business_license" => Self::OcrBusinessLicense,
-            "ocr.invoice" => Self::OcrInvoice,
-            "face.compare.one_to_one" => Self::FaceCompareOneToOne,
-            "face.compare.one_to_many" => Self::FaceCompareOneToMany,
-            "face.compare.quality_check" => Self::FaceCompareQualityCheck,
-            "face.liveness.detection" => Self::FaceLivenessDetection,
-            "face.liveness.id_verification" => Self::FaceLivenessIdVerification,
-            "face.liveness.video" => Self::FaceLivenessVideo,
-            "document.layout_analysis" => Self::DocumentLayoutAnalysis,
-            "document.table_extraction" => Self::DocumentTableExtraction,
-            "document.key_value_extraction" => Self::DocumentKeyValueExtraction,
-            "document.parse" => Self::DocumentParse,
-            "certificate.id_card" => Self::CertificateIdCard,
-            "certificate.passport" => Self::CertificatePassport,
-            "certificate.driver_license" => Self::CertificateDriverLicense,
-            "certificate.business_license" => Self::CertificateBusinessLicense,
-            "certificate.vat_invoice" => Self::CertificateVatInvoice,
-            "certificate.receipt" => Self::CertificateReceipt,
-            "speech.asr_short_audio" => Self::SpeechAsrShortAudio,
-            "speech.recording_file" => Self::SpeechRecordingFile,
-            "speech.realtime_asr" => Self::SpeechRealtimeAsr,
-            "content.text_moderation" => Self::ContentTextModeration,
-            "content.image_moderation" => Self::ContentImageModeration,
-            "content.audio_moderation" => Self::ContentAudioModeration,
-            "content.video_moderation" => Self::ContentVideoModeration,
-            "address.parse" => Self::AddressParse,
-            "phone.attribution" => Self::PhoneAttribution,
-            "express.track" => Self::ExpressTrack,
-            "logistics.status" => Self::LogisticsStatus,
-            "notification.sms_send" => Self::SmsSend,
-            "notification.sms_template" => Self::SmsTemplate,
-            "notification.otp_send" => Self::OtpSend,
-            "notification.delivery_receipt" => Self::DeliveryReceipt,
-            "object_storage.upload" => Self::ObjectStorageUpload,
-            "object_storage.signed_url" => Self::ObjectStorageSignedUrl,
-            "object_storage.bucket_policy" => Self::ObjectStorageBucketPolicy,
-            "object_storage.lifecycle_rule" => Self::ObjectStorageLifecycleRule,
-            _ => return None,
-        })
+        paas_operation_from_str(value)
     }
+}
+
+fn paas_operation_from_str(value: &str) -> Option<PaasOperation> {
+    Some(match value {
+        "ocr.general_text" => PaasOperation::OcrGeneralText,
+        "ocr.document_text" => PaasOperation::OcrDocumentText,
+        "ocr.id_card" => PaasOperation::OcrIdCard,
+        "ocr.bank_card" => PaasOperation::OcrBankCard,
+        "ocr.business_license" => PaasOperation::OcrBusinessLicense,
+        "ocr.invoice" => PaasOperation::OcrInvoice,
+        "face.compare.one_to_one" => PaasOperation::FaceCompareOneToOne,
+        "face.compare.one_to_many" => PaasOperation::FaceCompareOneToMany,
+        "face.compare.quality_check" => PaasOperation::FaceCompareQualityCheck,
+        "face.liveness.detection" => PaasOperation::FaceLivenessDetection,
+        "face.liveness.id_verification" => PaasOperation::FaceLivenessIdVerification,
+        "face.liveness.video" => PaasOperation::FaceLivenessVideo,
+        "document.layout_analysis" => PaasOperation::DocumentLayoutAnalysis,
+        "document.table_extraction" => PaasOperation::DocumentTableExtraction,
+        "document.key_value_extraction" => PaasOperation::DocumentKeyValueExtraction,
+        "document.parse" => PaasOperation::DocumentParse,
+        "certificate.id_card" => PaasOperation::CertificateIdCard,
+        "certificate.passport" => PaasOperation::CertificatePassport,
+        "certificate.driver_license" => PaasOperation::CertificateDriverLicense,
+        "certificate.business_license" => PaasOperation::CertificateBusinessLicense,
+        "certificate.vat_invoice" => PaasOperation::CertificateVatInvoice,
+        "certificate.receipt" => PaasOperation::CertificateReceipt,
+        "speech.asr_short_audio" => PaasOperation::SpeechAsrShortAudio,
+        "speech.recording_file" => PaasOperation::SpeechRecordingFile,
+        "speech.realtime_asr" => PaasOperation::SpeechRealtimeAsr,
+        "content.text_moderation" => PaasOperation::ContentTextModeration,
+        "content.image_moderation" => PaasOperation::ContentImageModeration,
+        "content.audio_moderation" => PaasOperation::ContentAudioModeration,
+        "content.video_moderation" => PaasOperation::ContentVideoModeration,
+        "address.parse" => PaasOperation::AddressParse,
+        "phone.attribution" => PaasOperation::PhoneAttribution,
+        "express.track" => PaasOperation::ExpressTrack,
+        "logistics.status" => PaasOperation::LogisticsStatus,
+        "notification.sms_send" => PaasOperation::SmsSend,
+        "notification.sms_template" => PaasOperation::SmsTemplate,
+        "notification.otp_send" => PaasOperation::OtpSend,
+        "notification.delivery_receipt" => PaasOperation::DeliveryReceipt,
+        "object_storage.upload" => PaasOperation::ObjectStorageUpload,
+        "object_storage.signed_url" => PaasOperation::ObjectStorageSignedUrl,
+        "object_storage.bucket_policy" => PaasOperation::ObjectStorageBucketPolicy,
+        "object_storage.lifecycle_rule" => PaasOperation::ObjectStorageLifecycleRule,
+        _ => return None,
+    })
 }

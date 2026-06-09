@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class RoutingChannelsResponse
     {
-        public List<RoutingChannelItem>? Items { get; set; }
+        public List<RoutingChannelItem> Items { get; set; }
     }
 }

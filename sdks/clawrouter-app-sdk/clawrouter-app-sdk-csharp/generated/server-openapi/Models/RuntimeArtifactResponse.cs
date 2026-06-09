@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class RuntimeArtifactResponse
     {
-        public RuntimeArtifactItem? Item { get; set; }
+        public RuntimeArtifactItem Item { get; set; }
     }
 }

@@ -123,6 +123,31 @@ async fn admin_user_route_serves_appbase_backend_iam_users_from_store() {
 }
 
 #[tokio::test]
+async fn admin_user_route_normalizes_user_list_query_at_request_boundary() {
+    let store = Arc::new(TestAdminUserStore::default());
+    let router = sdkwork_claw_product::api::admin_user_router_with_store(
+        store.clone(),
+        Arc::new(TestHasher),
+        Arc::new(TestSecretGenerator),
+    );
+
+    let response = router
+        .oneshot(signed_request(
+            "GET",
+            "/backend/v3/api/iam/users?page_size=20&q=%20owner%20",
+            "",
+        ))
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let queries = store.list_queries.lock().unwrap();
+    assert_eq!(1, queries.len());
+    assert_eq!(Some("owner".to_owned()), queries[0].q);
+    assert_eq!(20, queries[0].page_size);
+}
+
+#[tokio::test]
 async fn admin_user_route_creates_updates_adjusts_and_deletes() {
     let store = Arc::new(TestAdminUserStore::default());
     let router = sdkwork_claw_product::api::admin_user_router_with_store(
@@ -284,6 +309,7 @@ async fn json_payload(response: axum::response::Response) -> Value {
 #[derive(Default)]
 struct TestAdminUserStore {
     commands: Mutex<Vec<&'static str>>,
+    list_queries: Mutex<Vec<ListAdminUsersQuery>>,
     missing_api_key_user: bool,
 }
 
@@ -294,6 +320,7 @@ impl AdminUserStore for TestAdminUserStore {
     ) -> AdminUserCommandFuture<'a, Vec<AdminUserItem>> {
         Box::pin(async move {
             assert_eq!(10, query.subject.tenant_id);
+            self.list_queries.lock().unwrap().push(query);
             Ok(vec![base_user()])
         })
     }
@@ -324,7 +351,9 @@ impl AdminUserStore for TestAdminUserStore {
             Ok(AdminUserItem {
                 id: 31,
                 email: command.email,
+                display_name: command.username.clone(),
                 username: command.username,
+                mobile: String::new(),
                 role: "user".to_owned(),
                 group: "standard".to_owned(),
                 balance: "$10.00".to_owned(),
@@ -332,6 +361,7 @@ impl AdminUserStore for TestAdminUserStore {
                 last_active: "-".to_owned(),
                 last_used: "-".to_owned(),
                 created_at: "2026-04-29 09:00:00".to_owned(),
+                updated_at: "2026-04-29 09:00:00".to_owned(),
             })
         })
     }
@@ -400,6 +430,8 @@ fn base_user() -> AdminUserItem {
         id: 30,
         email: "owner@example.com".to_owned(),
         username: "owner".to_owned(),
+        display_name: "Owner".to_owned(),
+        mobile: "+15555550100".to_owned(),
         role: "admin".to_owned(),
         group: "standard".to_owned(),
         balance: "$25.50".to_owned(),
@@ -407,6 +439,7 @@ fn base_user() -> AdminUserItem {
         last_active: "2026-04-29 09:00:00".to_owned(),
         last_used: "2026-04-29 09:05:00".to_owned(),
         created_at: "2026-04-01 08:00:00".to_owned(),
+        updated_at: "2026-04-29 09:00:00".to_owned(),
     }
 }
 

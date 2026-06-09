@@ -23,10 +23,11 @@ import (
 func main() {
     cfg := sdkhttp.NewDefaultConfig("http://localhost:18082")
     client := github.com/sdkwork/clawrouter-app-sdk.NewSdkworkAppClientWithConfig(cfg)
-    client.SetApiKey("your-api-key")
+    client.SetAuthToken("your-auth-token")
+client.SetAccessToken("your-access-token")
 
     // Use the SDK
-    result, err := client.Ai.ChannelGroupsList()
+    result, err := client.Auth.SessionsCurrentRetrieve()
     if err != nil {
         panic(err)
     }
@@ -34,32 +35,13 @@ func main() {
 }
 ```
 
-## Authentication Modes (Mutually Exclusive)
+## Authentication
 
-Choose exactly one mode for the same client instance.
-
-### Mode A: API Key
-
-```go
-cfg := sdkhttp.NewDefaultConfig("http://localhost:18082")
-client := github.com/sdkwork/clawrouter-app-sdk.NewSdkworkAppClientWithConfig(cfg)
-client.SetApiKey("your-api-key")
-// Sends: Access-Token: <apiKey>
+```text
+Authorization: Bearer <authToken>
+Access-Token: <accessToken>
 ```
 
-### Mode B: Dual Token
-
-```go
-cfg := sdkhttp.NewDefaultConfig("http://localhost:18082")
-client := github.com/sdkwork/clawrouter-app-sdk.NewSdkworkAppClientWithConfig(cfg)
-client.SetAuthToken("your-auth-token")
-client.SetAccessToken("your-access-token")
-// Sends:
-// Authorization: Bearer <authToken>
-// Access-Token: <accessToken>
-```
-
-> Do not call `SetApiKey(...)` together with `SetAuthToken(...)` + `SetAccessToken(...)` on the same client.
 
 ## Configuration (Non-Auth)
 
@@ -75,6 +57,7 @@ client.SetHeader("X-Custom-Header", "value")
 
 - `client.Agents` - agents API
 - `client.Ai` - ai API
+- `client.Auth` - auth API
 - `client.Chat` - chat API
 - `client.Content` - content API
 - `client.Ecosystem` - ecosystem API
@@ -82,10 +65,9 @@ client.SetHeader("X-Custom-Header", "value")
 - `client.Memory` - memory API
 - `client.Notification` - notification API
 - `client.Platform` - platform API
-- `client.System` - system API
-- `client.Commerce` - commerce API
 - `client.Runtime` - runtime API
 - `client.SdkReference` - sdk_reference API
+- `client.System` - system API
 
 ## Usage Examples
 
@@ -110,6 +92,17 @@ fmt.Println(result)
 ```go
 // List groups
 result, err := client.Ai.ChannelGroupsList()
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### auth
+
+```go
+// Retrieve current IAM session
+result, err := client.Auth.SessionsCurrentRetrieve()
 if err != nil {
     panic(err)
 }
@@ -207,32 +200,6 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### system
-
-```go
-// Retrieve public site runtime branding settings
-params := map[string]interface{}{
-    "tenant_code": "tenant_code",
-    "organization_code": "organization_code",
-}
-result, err := client.System.SiteRuntimeRetrieve(params)
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### commerce
-
-```go
-// Recharges Settings Retrieve
-result, err := client.Commerce.RechargesSettingsRetrieve()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
 ### runtime
 
 ```go
@@ -284,10 +251,21 @@ if err != nil {
 fmt.Println(result)
 ```
 
+### system
+
+```go
+// Retrieve public IAM verification policy
+result, err := client.System.IamVerificationPolicyRetrieve()
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
 ## Error Handling
 
 ```go
-_, err := client.Ai.ChannelGroupsList()
+_, err := client.Auth.SessionsCurrentRetrieve()
 if err != nil {
     // Handle error
     fmt.Println("Error:", err)

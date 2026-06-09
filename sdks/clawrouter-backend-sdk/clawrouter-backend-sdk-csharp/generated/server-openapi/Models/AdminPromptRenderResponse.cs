@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminPromptRenderResponse
     {
-        public string? Rendered { get; set; }
+        public string Rendered { get; set; }
     }
 }

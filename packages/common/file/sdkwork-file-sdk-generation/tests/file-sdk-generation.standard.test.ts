@@ -7,6 +7,7 @@ import { spawnSync } from "node:child_process";
 import { SDKWORK_FILE_APP_OPENAPI, SDKWORK_FILE_BACKEND_OPENAPI } from "../../sdkwork-file-api-contracts/src/index";
 import { SDKWORK_FILE_STANDARD } from "../../sdkwork-file-contracts/src/index";
 import {
+  SDKWORK_FILE_SDK_ARTIFACT_ROOT,
   SDKWORK_FILE_SDK_GENERATION_MANIFEST_VERSION,
   SDKWORK_FILE_SDK_GENERATION_TARGETS,
   createNodeFileSdkArtifactHost,
@@ -74,7 +75,10 @@ describe("SDKWork file SDK generation manifest", () => {
     expect(validateFileSdkGenerationStandard()).toEqual([]);
 
     for (const target of SDKWORK_FILE_SDK_GENERATION_TARGETS) {
-      expect(target.generatedPackageRoot).toMatch(/^sdks\/file-(app|backend)-sdk\/file-(app|backend)-sdk-typescript$/);
+      expect(target.generatedPackageRoot).toMatch(
+        /^packages\/common\/file\/sdkwork-file-sdk-generation\/generated\/sdks\/file-(app|backend)-sdk\/file-(app|backend)-sdk-typescript$/,
+      );
+      expect(target.generatedPackageRoot).not.toMatch(/^sdks\//);
       expect(target.generatedPackageRoot).not.toContain("local");
       expect(target.generatedPackageRoot).not.toContain("fork");
       expect(target.transportPolicy).toBe("generated-sdk-only");
@@ -110,17 +114,17 @@ describe("SDKWork file SDK generation manifest", () => {
     const secondPlan = createFileSdkArtifactWritePlan();
 
     expect(firstPlan).toEqual(secondPlan);
-    expect(firstPlan.rootDir).toBe("sdks");
+    expect(firstPlan.rootDir).toBe(SDKWORK_FILE_SDK_ARTIFACT_ROOT);
     expect(firstPlan.files.map((file) => file.path)).toEqual([
-      "sdks/file-app-sdk/.sdkwork-assembly.json",
-      "sdks/file-app-sdk/README.md",
-      "sdks/file-app-sdk/openapi/file-app-sdk.openapi.json",
-      "sdks/file-app-sdk/openapi/file-app-sdk.sdkgen.json",
-      "sdks/file-backend-sdk/.sdkwork-assembly.json",
-      "sdks/file-backend-sdk/README.md",
-      "sdks/file-backend-sdk/openapi/file-backend-sdk.openapi.json",
-      "sdks/file-backend-sdk/openapi/file-backend-sdk.sdkgen.json",
-      "sdks/file-sdk-generation-manifest.json",
+      `${SDKWORK_FILE_SDK_ARTIFACT_ROOT}/file-app-sdk/.sdkwork-assembly.json`,
+      `${SDKWORK_FILE_SDK_ARTIFACT_ROOT}/file-app-sdk/README.md`,
+      `${SDKWORK_FILE_SDK_ARTIFACT_ROOT}/file-app-sdk/openapi/file-app-sdk.openapi.json`,
+      `${SDKWORK_FILE_SDK_ARTIFACT_ROOT}/file-app-sdk/openapi/file-app-sdk.sdkgen.json`,
+      `${SDKWORK_FILE_SDK_ARTIFACT_ROOT}/file-backend-sdk/.sdkwork-assembly.json`,
+      `${SDKWORK_FILE_SDK_ARTIFACT_ROOT}/file-backend-sdk/README.md`,
+      `${SDKWORK_FILE_SDK_ARTIFACT_ROOT}/file-backend-sdk/openapi/file-backend-sdk.openapi.json`,
+      `${SDKWORK_FILE_SDK_ARTIFACT_ROOT}/file-backend-sdk/openapi/file-backend-sdk.sdkgen.json`,
+      `${SDKWORK_FILE_SDK_ARTIFACT_ROOT}/file-sdk-generation-manifest.json`,
     ]);
 
     for (const file of firstPlan.files) {
@@ -130,7 +134,7 @@ describe("SDKWork file SDK generation manifest", () => {
       expect(file.content).not.toContain("presigned_url");
     }
 
-    const appAssembly = JSON.parse(readPlannedFile(firstPlan, "sdks/file-app-sdk/.sdkwork-assembly.json"));
+    const appAssembly = JSON.parse(readPlannedFile(firstPlan, `${SDKWORK_FILE_SDK_ARTIFACT_ROOT}/file-app-sdk/.sdkwork-assembly.json`));
     expect(appAssembly).toEqual(
       expect.objectContaining({
         generationInputSpec: "openapi/file-app-sdk.openapi.json",
@@ -150,11 +154,11 @@ describe("SDKWork file SDK generation manifest", () => {
       },
     ]);
 
-    const manifest = JSON.parse(readPlannedFile(firstPlan, "sdks/file-sdk-generation-manifest.json"));
+    const manifest = JSON.parse(readPlannedFile(firstPlan, `${SDKWORK_FILE_SDK_ARTIFACT_ROOT}/file-sdk-generation-manifest.json`));
     expect(manifest.generatedAtPolicy).toBe("deterministic");
     expect(manifest.files).toHaveLength(8);
     expect(manifest.files[0]).toEqual({
-      path: "sdks/file-app-sdk/.sdkwork-assembly.json",
+      path: `${SDKWORK_FILE_SDK_ARTIFACT_ROOT}/file-app-sdk/.sdkwork-assembly.json`,
       sha256: firstPlan.files[0].sha256,
       surface: "app",
     });

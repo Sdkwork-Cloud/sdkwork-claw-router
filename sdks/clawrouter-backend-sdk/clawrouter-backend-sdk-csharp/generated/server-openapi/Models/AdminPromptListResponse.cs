@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminPromptListResponse
     {
-        public List<AdminPromptItem>? Items { get; set; }
+        public List<AdminPromptItem> Items { get; set; }
     }
 }

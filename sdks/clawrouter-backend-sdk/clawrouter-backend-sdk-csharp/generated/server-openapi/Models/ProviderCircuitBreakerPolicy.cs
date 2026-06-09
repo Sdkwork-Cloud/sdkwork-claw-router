@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class ProviderCircuitBreakerPolicy
     {
-        public int? FailureThreshold { get; set; }
+        public int FailureThreshold { get; set; }
     }
 }

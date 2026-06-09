@@ -7,6 +7,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
     public class AdminAppConfig
     {
         public AdminAppPortalConfig? Portal { get; set; }
-        public AdminAppConfigStandard? Standard { get; set; }
+        public AdminAppConfigStandard Standard { get; set; }
     }
 }

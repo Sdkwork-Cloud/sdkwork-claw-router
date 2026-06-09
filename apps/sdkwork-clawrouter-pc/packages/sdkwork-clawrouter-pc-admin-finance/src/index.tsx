@@ -20,7 +20,7 @@ type FinanceAdminTab =
   | 'auditEvents';
 type FinanceAdminGroup = string;
 
-const DEFAULT_PAGE_PARAMS = { page: '1', pageSize: '100' };
+const DEFAULT_PAGE_PARAMS = { page: 1, pageSize: 100 };
 const DEFAULT_FINANCE_SECTION_ID: FinanceAdminTab = 'orderRevenueReport';
 
 type FinanceAdminProps = {

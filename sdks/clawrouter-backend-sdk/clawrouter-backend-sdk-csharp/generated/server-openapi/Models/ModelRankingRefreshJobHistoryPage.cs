@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class ModelRankingRefreshJobHistoryPage
     {
-        public List<ModelRankingRefreshJobItem>? Items { get; set; }
+        public List<ModelRankingRefreshJobItem> Items { get; set; }
     }
 }

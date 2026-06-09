@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminUsagePair
     {
-        public double? Today { get; set; }
-        public double? Total { get; set; }
+        public double Today { get; set; }
+        public double Total { get; set; }
     }
 }

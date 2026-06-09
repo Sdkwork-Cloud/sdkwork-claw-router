@@ -23,38 +23,20 @@ using SDKwork.Common.Core;
 
 var config = new SdkConfig("http://localhost:18082");
 var client = new SdkworkAppClient(config);
-client.SetApiKey("your-api-key");
+client.SetAuthToken("your-auth-token");
+client.SetAccessToken("your-access-token");
 
-var result = await client.Ai.ChannelGroupsListAsync();
+var result = await client.Auth.SessionsCurrentRetrieveAsync();
 Console.WriteLine(result);
 ```
 
-## Authentication Modes (Mutually Exclusive)
+## Authentication
 
-Choose exactly one mode for the same client instance.
-
-### Mode A: API Key
-
-```csharp
-var config = new SdkConfig("http://localhost:18082");
-var client = new SdkworkAppClient(config);
-client.SetApiKey("your-api-key");
-// Sends: Access-Token: <apiKey>
+```text
+Authorization: Bearer <authToken>
+Access-Token: <accessToken>
 ```
 
-### Mode B: Dual Token
-
-```csharp
-var config = new SdkConfig("http://localhost:18082");
-var client = new SdkworkAppClient(config);
-client.SetAuthToken("your-auth-token");
-client.SetAccessToken("your-access-token");
-// Sends:
-// Authorization: Bearer <authToken>
-// Access-Token: <accessToken>
-```
-
-> Do not call `SetApiKey(...)` together with `SetAuthToken(...)` + `SetAccessToken(...)` on the same client.
 
 ## Configuration (Non-Auth)
 
@@ -70,6 +52,7 @@ client.SetHeader("X-Custom-Header", "value");
 
 - `client.Agents` - agents API
 - `client.Ai` - ai API
+- `client.Auth` - auth API
 - `client.Chat` - chat API
 - `client.Content` - content API
 - `client.Ecosystem` - ecosystem API
@@ -77,10 +60,9 @@ client.SetHeader("X-Custom-Header", "value");
 - `client.Memory` - memory API
 - `client.Notification` - notification API
 - `client.Platform` - platform API
-- `client.System` - system API
-- `client.Commerce` - commerce API
 - `client.Runtime` - runtime API
 - `client.SdkReference` - sdk_reference API
+- `client.System` - system API
 
 ## Usage Examples
 
@@ -103,6 +85,14 @@ Console.WriteLine(result);
 ```csharp
 // List groups
 var result = await client.Ai.ChannelGroupsListAsync();
+Console.WriteLine(result);
+```
+
+### auth
+
+```csharp
+// Retrieve current IAM session
+var result = await client.Auth.SessionsCurrentRetrieveAsync();
 Console.WriteLine(result);
 ```
 
@@ -179,27 +169,6 @@ var result = await client.Platform.AppsStoreCategoriesListAsync();
 Console.WriteLine(result);
 ```
 
-### system
-
-```csharp
-// Retrieve public site runtime branding settings
-var query = new Dictionary<string, object>
-{
-    ["tenant_code"] = "ok",
-    ["organization_code"] = "ok",
-};
-var result = await client.System.SiteRuntimeRetrieveAsync(query);
-Console.WriteLine(result);
-```
-
-### commerce
-
-```csharp
-// Recharges Settings Retrieve
-var result = await client.Commerce.RechargesSettingsRetrieveAsync();
-Console.WriteLine(result);
-```
-
 ### runtime
 
 ```csharp
@@ -232,12 +201,20 @@ var result = await client.SdkReference.ArchivesCreateAsync(body);
 Console.WriteLine(result);
 ```
 
+### system
+
+```csharp
+// Retrieve public IAM verification policy
+var result = await client.System.IamVerificationPolicyRetrieveAsync();
+Console.WriteLine(result);
+```
+
 ## Error Handling
 
 ```csharp
 try
 {
-    await client.Ai.ChannelGroupsListAsync();
+    await client.Auth.SessionsCurrentRetrieveAsync();
 }
 catch (HttpRequestException ex)
 {
@@ -268,7 +245,7 @@ This SDK includes cross-platform publish scripts in `bin/`:
 .\bin\publish.ps1 --action publish --channel test --dry-run
 ```
 
-> Set `NUGET_API_KEY` for release (or `NUGET_TEST_API_KEY` for test channel).
+> Configure NuGet registry credentials before release publish.
 
 ## License
 

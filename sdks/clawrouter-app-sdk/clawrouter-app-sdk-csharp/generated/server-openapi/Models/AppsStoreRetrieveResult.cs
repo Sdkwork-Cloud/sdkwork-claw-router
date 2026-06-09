@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class AppsStoreRetrieveResult
     {
-        public string? Code { get; set; }
+        public string Code { get; set; }
         public AppDetailResponse? Data { get; set; }
         public string? Msg { get; set; }
     }

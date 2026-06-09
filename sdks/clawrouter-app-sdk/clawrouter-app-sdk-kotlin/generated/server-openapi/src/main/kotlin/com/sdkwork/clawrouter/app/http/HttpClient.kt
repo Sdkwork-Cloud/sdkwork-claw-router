@@ -22,10 +22,6 @@ class HttpClient(
     timeoutMs: Int = 30000,
     defaultHeaders: Map<String, String> = emptyMap()
 ) {
-    companion object {
-        private const val API_KEY_HEADER = "Access-Token"
-        private const val API_KEY_USE_BEARER = false
-    }
 
     private val client: OkHttpClient = OkHttpClient.Builder()
         .connectTimeout(timeoutMs.toLong(), TimeUnit.MILLISECONDS)
@@ -44,28 +40,10 @@ class HttpClient(
     init {
         headers.putAll(defaultHeaders)
     }
-
-    fun setApiKey(apiKey: String) {
-        headers[API_KEY_HEADER] = if (API_KEY_USE_BEARER) "Bearer $apiKey" else apiKey
-        if (!API_KEY_HEADER.equals("Authorization", ignoreCase = true)) {
-            headers.remove("Authorization")
-        }
-        if (!API_KEY_HEADER.equals("Access-Token", ignoreCase = true)) {
-            headers.remove("Access-Token")
-        }
-    }
-
     fun setAuthToken(token: String) {
-        if (!API_KEY_HEADER.equals("Authorization", ignoreCase = true)) {
-            headers.remove(API_KEY_HEADER)
-        }
         headers["Authorization"] = "Bearer $token"
     }
-
     fun setAccessToken(token: String) {
-        if (!API_KEY_HEADER.equals("Access-Token", ignoreCase = true)) {
-            headers.remove(API_KEY_HEADER)
-        }
         headers["Access-Token"] = token
     }
 
@@ -81,8 +59,8 @@ class HttpClient(
         return urlBuilder.build()
     }
 
-    private fun mergeHeaders(requestHeaders: Map<String, String>? = null): Headers {
-        val merged = headers.toMutableMap()
+    private fun mergeHeaders(requestHeaders: Map<String, String>? = null, skipAuth: Boolean = false): Headers {
+        val merged = if (!skipAuth) headers.toMutableMap() else mutableMapOf()
         requestHeaders?.forEach { (key, value) ->
             if (key.isNotBlank()) {
                 merged[key] = value
@@ -185,11 +163,12 @@ class HttpClient(
         body: Any? = null,
         params: Map<String, Any>? = null,
         requestHeaders: Map<String, String>? = null,
-        contentType: String? = null
+        contentType: String? = null,
+        skipAuth: Boolean = false
     ): Any? {
         val requestBuilder = Request.Builder()
             .url(buildUrl(path, params))
-            .headers(mergeHeaders(requestHeaders))
+            .headers(mergeHeaders(requestHeaders, skipAuth))
 
         val requestBody = if (body == null) null else createRequestBody(body, contentType)
         val request = requestBuilder
@@ -211,13 +190,14 @@ class HttpClient(
         params: Map<String, Any>? = null,
         requestHeaders: Map<String, String>? = null,
         contentType: String? = null,
-        typeReference: TypeReference<T>
+        typeReference: TypeReference<T>,
+        skipAuth: Boolean = false
     ): Sequence<T> {
         return sequence {
             val requestBody = if (body == null) null else createRequestBody(body, contentType)
             val request = Request.Builder()
                 .url(buildUrl(path, params))
-                .headers(mergeHeaders(requestHeaders))
+                .headers(mergeHeaders(requestHeaders, skipAuth))
                 .addHeader("Accept", "text/event-stream")
                 .method(method, requestBody)
                 .build()

@@ -17,6 +17,6 @@ namespace Sdkwork.ClawRouter.App.Models
         public bool? ReviewRequired { get; set; }
         public Dictionary<string, string>? SensitivityPolicy { get; set; }
         public string? SpaceType { get; set; }
-        public string? Title { get; set; }
+        public string Title { get; set; }
     }
 }

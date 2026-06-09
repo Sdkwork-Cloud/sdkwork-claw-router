@@ -188,10 +188,9 @@ struct RechargeSettingsUpdateRequest {
 }
 
 #[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
 struct ExchangeRuleListQueryRequest {
-    #[serde(rename = "source_asset_type", alias = "sourceAssetType")]
     source_asset_type: Option<String>,
-    #[serde(rename = "target_asset_type", alias = "targetAssetType")]
     target_asset_type: Option<String>,
     status: Option<String>,
 }
@@ -199,9 +198,7 @@ struct ExchangeRuleListQueryRequest {
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "camelCase")]
 struct ExchangeRuleMutationRequest {
-    #[serde(alias = "source_asset_type")]
     source_asset_type: Option<String>,
-    #[serde(alias = "target_asset_type")]
     target_asset_type: Option<String>,
     rate: Option<Value>,
     status: Option<String>,

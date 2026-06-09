@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class RateLimitsIpCreateResult
     {
-        public string? Code { get; set; }
+        public string Code { get; set; }
         public AdminRateLimitMutationResponse? Data { get; set; }
         public string? Msg { get; set; }
     }

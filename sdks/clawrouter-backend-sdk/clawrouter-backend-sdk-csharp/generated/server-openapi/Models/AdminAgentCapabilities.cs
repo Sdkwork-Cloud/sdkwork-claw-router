@@ -6,8 +6,8 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminAgentCapabilities
     {
-        public string? McpServerCount { get; set; }
-        public bool? MemoryEnabled { get; set; }
-        public string? SkillBindingCount { get; set; }
+        public string McpServerCount { get; set; }
+        public bool MemoryEnabled { get; set; }
+        public string SkillBindingCount { get; set; }
     }
 }

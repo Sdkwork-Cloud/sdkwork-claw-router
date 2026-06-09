@@ -11,7 +11,8 @@ import {
 type InventoryAdminTab = 'stocks' | 'reservations' | 'ledger';
 type InventoryAdminGroup = string;
 
-const DEFAULT_PAGE_PARAMS = { page: '1', pageSize: '100' };
+const DEFAULT_PAGE_PARAMS = { page: 1, pageSize: 100 };
+const DEFAULT_INT64_PAGE_PARAMS = { page: '1', pageSize: '100' };
 const DEFAULT_INVENTORY_SECTION_ID: InventoryAdminTab = 'stocks';
 
 type InventoryAdminProps = {
@@ -63,7 +64,7 @@ function buildInventorySections(t: ReturnType<typeof useTranslation>['t']): Admi
       description: t('admin.commerce.inventory.ledger.desc', 'Immutable stock movement audit entries.'),
       icon: <Boxes className="h-4 w-4" />,
       group: t('admin.commerce.inventory.group.inventory', 'Inventory'),
-      load: () => listInventoryLedgerEntries(DEFAULT_PAGE_PARAMS),
+      load: () => listInventoryLedgerEntries(DEFAULT_INT64_PAGE_PARAMS),
       columns: [
         { key: 'id', label: t('admin.col.id', 'ID') },
         { key: 'skuId', label: t('admin.col.sku', 'SKU') },

@@ -45,6 +45,10 @@ fn sqlite_model_ranking_refresh_records_normalized_audit_trigger_type() {
     let sql = compact_sql(SQLITE_MODEL_RANKING_REFRESH_STORE);
 
     assert!(
+        sql.contains("INSERT INTO ops_job_execution (id, uuid, tenant_id, organization_id"),
+        "SQLite audit writer must assign explicit ids for the installed BIGINT primary key"
+    );
+    assert!(
         sql.contains("fn normalize_trigger_type(value: i64) -> i64"),
         "SQLite audit writer must normalize trigger_type from the worker command"
     );
@@ -74,4 +78,18 @@ fn sqlite_model_ranking_refresh_records_runtime_audit_payload_fields() {
             "SQLite audit payload must contain runtime field `{expected}`"
         );
     }
+}
+
+#[test]
+fn sqlite_model_ranking_refresh_writes_explicit_snapshot_ids() {
+    let sql = compact_sql(SQLITE_MODEL_RANKING_REFRESH_STORE);
+
+    assert!(
+        sql.contains("INSERT INTO ai_model_rank_snapshot (id, uuid, tenant_id, organization_id"),
+        "SQLite ranking refresh must assign explicit ids for the installed BIGINT primary key"
+    );
+    assert!(
+        sql.contains(".bind(next_claw_runtime_id(\"ai_model_rank_snapshot\")?)"),
+        "SQLite ranking refresh must generate snapshot ids through the Claw runtime id generator"
+    );
 }

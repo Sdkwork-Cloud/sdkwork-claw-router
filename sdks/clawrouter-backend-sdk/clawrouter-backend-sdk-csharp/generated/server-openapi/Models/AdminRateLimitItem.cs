@@ -11,7 +11,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? ChannelGroup { get; set; }
         public string? ChannelGroupId { get; set; }
         public string? ChannelGroupName { get; set; }
-        public string? Id { get; set; }
+        public string Id { get; set; }
         public string? KeyPrefix { get; set; }
         public string? Model { get; set; }
         public int? Rpd { get; set; }

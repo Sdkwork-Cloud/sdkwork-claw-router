@@ -17,22 +17,16 @@ use sha2::{Digest, Sha256};
 
 use crate::api::request_id::{generate_server_request_id, RequestIdError};
 use crate::api::response::PlusApiResult;
-use crate::application::{
-    default_desktop_cache_manager, EntityUuidGenerator, PasswordHasher, RuntimeCacheManager,
-    AUTH_QR_CACHE_NAMESPACE,
-};
+use crate::application::{EntityUuidGenerator, PasswordHasher};
 use crate::domain::DomainError;
 use crate::ports::{
-    ActiveAppSession, AdminAuthSettings, AdminAuthSettingsStore, AdminOpenPlatformStore,
-    AdminOpenPlatformSubject, AppAuthPasswordResetCodeCommand, AppAuthPasswordResetCommand,
-    AppAuthRegistrationCommand, AppAuthStore, AppAuthUserCredential,
+    ActiveAppSession, AdminAuthSettings, AdminAuthSettingsStore, AppAuthPasswordResetCodeCommand,
+    AppAuthPasswordResetCommand, AppAuthRegistrationCommand, AppAuthStore, AppAuthUserCredential,
     AppAuthVerificationCodeCommand, AppAuthVerificationCodeLookup, AppSessionEventStore,
     AppSessionRecord, AppSessionUserRecord, DebugVerificationCodeSender,
-    FindOpenPlatformQrDefaultEntryQuery, GetAdminAuthSettingsScopeQuery, LoadActiveAppSessionQuery,
-    OpenPlatformQrDefaultEntryItem, RecordAppSecurityEventCommand,
-    RecordAppSessionIssuedEventCommand, ResolveAppSessionOrganizationQuery,
-    RevokeAppSessionCommand, RotateAppSessionTokensCommand, VerificationCodeDeliveryRequest,
-    VerificationCodeSender,
+    GetAdminAuthSettingsScopeQuery, LoadActiveAppSessionQuery, RecordAppSessionIssuedEventCommand,
+    ResolveAppSessionOrganizationQuery, RevokeAppSessionCommand, RotateAppSessionTokensCommand,
+    VerificationCodeDeliveryRequest, VerificationCodeSender,
 };
 
 const APP_ID: &str = "sdkwork-claw-router";
@@ -51,12 +45,8 @@ const MAX_TENANT_CODE_LENGTH: usize = 64;
 const MAX_ORGANIZATION_CODE_LENGTH: usize = 64;
 const MAX_ORGANIZATION_ID_LENGTH: usize = 128;
 const MAX_DEVICE_NAME_LENGTH: usize = 128;
-const MAX_OPEN_PLATFORM_ID_LENGTH: usize = 128;
-const MAX_QR_USER_AGENT_LENGTH: usize = 256;
 const VERIFICATION_CODE_TTL_SECONDS: i64 = 300;
 const PASSWORD_RESET_CODE_TTL_SECONDS: i64 = 900;
-const LOGIN_QR_CODE_TTL_SECONDS: i64 = 300;
-const INVALID_QR_AUTH_SESSION_MESSAGE: &str = "Invalid or expired QR auth session";
 const LOCAL_DEBUG_VERIFICATION_CODE: &str = "666666";
 const AUTHORIZATION_HEADER: &str = "authorization";
 const ACCESS_TOKEN_HEADER: &str = "Access-Token";
@@ -65,14 +55,12 @@ const ACCESS_TOKEN_HEADER: &str = "Access-Token";
 struct AppAuthState {
     auth_store: Arc<dyn AppAuthStore + Send + Sync>,
     auth_settings_store: Option<Arc<dyn AdminAuthSettingsStore + Send + Sync>>,
-    open_platform_store: Option<Arc<dyn AdminOpenPlatformStore + Send + Sync>>,
     event_store: Arc<dyn AppSessionEventStore + Send + Sync>,
     verification_code_sender: Arc<dyn VerificationCodeSender + Send + Sync>,
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
     trusted_subject_config: TrustedSubjectConfig,
     app_session_config: AppSessionConfig,
     password_hasher: Arc<dyn PasswordHasher + Send + Sync>,
-    cache_manager: RuntimeCacheManager,
     expose_debug_code: bool,
 }
 
@@ -159,7 +147,6 @@ struct IamOauthSessionCreateRequest {
 }
 
 #[derive(Debug, Deserialize)]
-#[serde(rename_all = "camelCase")]
 struct IamOauthAuthorizationUrlQuery {
     provider: String,
     redirect_uri: String,
@@ -172,130 +159,6 @@ struct IamOauthAuthorizationUrlQuery {
 struct IamRuntimeSettingsQuery {
     tenant_code: Option<String>,
     organization_code: Option<String>,
-}
-
-#[derive(Debug, Deserialize)]
-#[serde(rename_all = "camelCase")]
-struct OpenPlatformQrAuthSessionCreateRequest {
-    purpose: Option<String>,
-}
-
-#[derive(Debug, Deserialize)]
-#[serde(rename_all = "camelCase")]
-struct OpenPlatformQrAuthScanCreateRequest {
-    scan_source: String,
-    account_id: Option<String>,
-    entry_id: Option<String>,
-    external_user_id: Option<String>,
-    ip_hash: Option<String>,
-    user_agent: Option<String>,
-}
-
-#[derive(Debug, Deserialize)]
-#[serde(rename_all = "camelCase")]
-struct OpenPlatformQrAuthPasswordCreateRequest {
-    username: String,
-    password: String,
-    confirm_password: Option<String>,
-    email: Option<String>,
-    phone: Option<String>,
-    channel: Option<String>,
-    verification_code: Option<String>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-struct OpenPlatformQrAuthQrContentResponse {
-    content: String,
-    mode: String,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-struct OpenPlatformQrAuthSessionResponse {
-    id: String,
-    session_key: String,
-    purpose: String,
-    default_account_id: Option<String>,
-    default_entry_id: Option<String>,
-    default_provider: Option<String>,
-    default_account_type: Option<String>,
-    qr_content: OpenPlatformQrAuthQrContentResponse,
-    fallback_url: String,
-    status: String,
-    scanned_at: Option<String>,
-    completed_at: Option<String>,
-    expires_at: String,
-    created_at: String,
-    updated_at: String,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    session: Option<IamSessionResponse>,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    token: Option<IamSessionResponse>,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    user_info: Option<IamUserResponse>,
-}
-
-#[derive(Debug, Serialize)]
-#[serde(rename_all = "camelCase")]
-struct OpenPlatformQrAuthScanResponse {
-    id: String,
-    session_id: String,
-    session_key: String,
-    account_id: Option<String>,
-    entry_id: Option<String>,
-    external_user_id: Option<String>,
-    scan_source: String,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    ip_hash: Option<String>,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    user_agent: Option<String>,
-    created_at: String,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-struct OpenPlatformQrAuthChallenge {
-    status: String,
-    session_key: String,
-    #[serde(default = "default_qr_auth_purpose")]
-    purpose: String,
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    qr_content: Option<OpenPlatformQrAuthQrContentResponse>,
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    fallback_url: Option<String>,
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    default_account_id: Option<String>,
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    default_entry_id: Option<String>,
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    default_provider: Option<String>,
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    default_account_type: Option<String>,
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    scan_source: Option<String>,
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    external_user_id: Option<String>,
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    ip_hash: Option<String>,
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    user_agent: Option<String>,
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    scanned_at: Option<i64>,
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    completed_at: Option<i64>,
-    #[serde(default)]
-    updated_at: i64,
-    created_at: i64,
-    expire_time: i64,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    session: Option<IamSessionResponse>,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    user_info: Option<IamUserResponse>,
-}
-
-fn default_qr_auth_purpose() -> String {
-    "login".to_owned()
 }
 
 #[derive(Debug, Serialize)]
@@ -451,7 +314,7 @@ pub fn app_auth_router_with_store(
     app_session_config: AppSessionConfig,
     password_hasher: Arc<dyn PasswordHasher + Send + Sync>,
 ) -> Router {
-    app_auth_router_with_store_auth_settings_store_cache_and_verification_sender(
+    app_auth_router_with_store_auth_settings_store_and_verification_sender(
         auth_store,
         None,
         event_store,
@@ -459,8 +322,6 @@ pub fn app_auth_router_with_store(
         trusted_subject_config,
         app_session_config,
         password_hasher,
-        None,
-        default_desktop_cache_manager(),
         Arc::new(DebugVerificationCodeSender),
         true,
     )
@@ -489,30 +350,6 @@ pub fn app_auth_router_with_store_and_verification_sender(
     )
 }
 
-pub fn app_auth_router_with_store_and_cache_manager(
-    auth_store: Arc<dyn AppAuthStore + Send + Sync>,
-    event_store: Arc<dyn AppSessionEventStore + Send + Sync>,
-    entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
-    trusted_subject_config: TrustedSubjectConfig,
-    app_session_config: AppSessionConfig,
-    password_hasher: Arc<dyn PasswordHasher + Send + Sync>,
-    cache_manager: RuntimeCacheManager,
-) -> Router {
-    app_auth_router_with_store_auth_settings_store_cache_and_verification_sender(
-        auth_store,
-        None,
-        event_store,
-        entity_uuid_generator,
-        trusted_subject_config,
-        app_session_config,
-        password_hasher,
-        None,
-        cache_manager,
-        Arc::new(DebugVerificationCodeSender),
-        true,
-    )
-}
-
 pub fn app_auth_router_with_store_auth_settings_store_and_verification_sender(
     auth_store: Arc<dyn AppAuthStore + Send + Sync>,
     auth_settings_store: Option<Arc<dyn AdminAuthSettingsStore + Send + Sync>>,
@@ -524,81 +361,22 @@ pub fn app_auth_router_with_store_auth_settings_store_and_verification_sender(
     verification_code_sender: Arc<dyn VerificationCodeSender + Send + Sync>,
     expose_debug_code: bool,
 ) -> Router {
-    app_auth_router_with_store_auth_settings_store_cache_and_verification_sender(
-        auth_store,
-        auth_settings_store,
-        event_store,
-        entity_uuid_generator,
-        trusted_subject_config,
-        app_session_config,
-        password_hasher,
-        None,
-        default_desktop_cache_manager(),
-        verification_code_sender,
-        expose_debug_code,
-    )
-}
-
-pub fn app_auth_router_with_store_auth_settings_store_cache_and_verification_sender(
-    auth_store: Arc<dyn AppAuthStore + Send + Sync>,
-    auth_settings_store: Option<Arc<dyn AdminAuthSettingsStore + Send + Sync>>,
-    event_store: Arc<dyn AppSessionEventStore + Send + Sync>,
-    entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
-    trusted_subject_config: TrustedSubjectConfig,
-    app_session_config: AppSessionConfig,
-    password_hasher: Arc<dyn PasswordHasher + Send + Sync>,
-    open_platform_store: Option<Arc<dyn AdminOpenPlatformStore + Send + Sync>>,
-    cache_manager: RuntimeCacheManager,
-    verification_code_sender: Arc<dyn VerificationCodeSender + Send + Sync>,
-    expose_debug_code: bool,
-) -> Router {
     app_auth_routes_with_state(AppAuthState {
         auth_store,
         auth_settings_store,
-        open_platform_store,
         event_store,
         verification_code_sender,
         entity_uuid_generator,
         trusted_subject_config,
         app_session_config,
         password_hasher,
-        cache_manager,
         expose_debug_code,
     })
-}
-
-pub fn app_auth_router_with_store_auth_settings_store_open_platform_store_cache_and_verification_sender(
-    auth_store: Arc<dyn AppAuthStore + Send + Sync>,
-    auth_settings_store: Option<Arc<dyn AdminAuthSettingsStore + Send + Sync>>,
-    open_platform_store: Option<Arc<dyn AdminOpenPlatformStore + Send + Sync>>,
-    event_store: Arc<dyn AppSessionEventStore + Send + Sync>,
-    entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
-    trusted_subject_config: TrustedSubjectConfig,
-    app_session_config: AppSessionConfig,
-    password_hasher: Arc<dyn PasswordHasher + Send + Sync>,
-    cache_manager: RuntimeCacheManager,
-    verification_code_sender: Arc<dyn VerificationCodeSender + Send + Sync>,
-    expose_debug_code: bool,
-) -> Router {
-    app_auth_router_with_store_auth_settings_store_cache_and_verification_sender(
-        auth_store,
-        auth_settings_store,
-        event_store,
-        entity_uuid_generator,
-        trusted_subject_config,
-        app_session_config,
-        password_hasher,
-        open_platform_store,
-        cache_manager,
-        verification_code_sender,
-        expose_debug_code,
-    )
 }
 
 pub fn app_sessions_router_with_store(
     auth_store: Option<Arc<dyn AppAuthStore + Send + Sync>>,
     auth_settings_store: Option<Arc<dyn AdminAuthSettingsStore + Send + Sync>>,
-    open_platform_store: Option<Arc<dyn AdminOpenPlatformStore + Send + Sync>>,
     event_store: Arc<dyn AppSessionEventStore + Send + Sync>,
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
     trusted_subject_config: TrustedSubjectConfig,
@@ -608,14 +386,12 @@ pub fn app_sessions_router_with_store(
     app_session_routes().with_state(AppAuthState {
         auth_store: auth_store.unwrap_or_else(|| Arc::new(UnconfiguredAppAuthStore)),
         auth_settings_store,
-        open_platform_store,
         event_store,
         verification_code_sender: Arc::new(DebugVerificationCodeSender),
         entity_uuid_generator,
         trusted_subject_config,
         app_session_config,
         password_hasher,
-        cache_manager: default_desktop_cache_manager(),
         expose_debug_code: true,
     })
 }
@@ -623,7 +399,6 @@ pub fn app_sessions_router_with_store(
 pub fn app_sessions_router_with_store_and_verification_sender(
     auth_store: Option<Arc<dyn AppAuthStore + Send + Sync>>,
     auth_settings_store: Option<Arc<dyn AdminAuthSettingsStore + Send + Sync>>,
-    open_platform_store: Option<Arc<dyn AdminOpenPlatformStore + Send + Sync>>,
     event_store: Arc<dyn AppSessionEventStore + Send + Sync>,
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
     trusted_subject_config: TrustedSubjectConfig,
@@ -635,42 +410,36 @@ pub fn app_sessions_router_with_store_and_verification_sender(
     app_session_routes().with_state(AppAuthState {
         auth_store: auth_store.unwrap_or_else(|| Arc::new(UnconfiguredAppAuthStore)),
         auth_settings_store,
-        open_platform_store,
         event_store,
         verification_code_sender,
         entity_uuid_generator,
         trusted_subject_config,
         app_session_config,
         password_hasher,
-        cache_manager: default_desktop_cache_manager(),
         expose_debug_code,
     })
 }
 
-pub fn app_public_auth_router_with_store_auth_settings_store_cache_and_verification_sender(
+pub fn app_public_auth_router_with_store_auth_settings_store_and_verification_sender(
     auth_store: Option<Arc<dyn AppAuthStore + Send + Sync>>,
     auth_settings_store: Option<Arc<dyn AdminAuthSettingsStore + Send + Sync>>,
-    open_platform_store: Option<Arc<dyn AdminOpenPlatformStore + Send + Sync>>,
     event_store: Arc<dyn AppSessionEventStore + Send + Sync>,
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
     trusted_subject_config: TrustedSubjectConfig,
     app_session_config: AppSessionConfig,
     password_hasher: Arc<dyn PasswordHasher + Send + Sync>,
-    cache_manager: RuntimeCacheManager,
     verification_code_sender: Arc<dyn VerificationCodeSender + Send + Sync>,
     expose_debug_code: bool,
 ) -> Router {
     app_public_auth_routes_with_state(AppAuthState {
         auth_store: auth_store.unwrap_or_else(|| Arc::new(UnconfiguredAppAuthStore)),
         auth_settings_store,
-        open_platform_store,
         event_store,
         verification_code_sender,
         entity_uuid_generator,
         trusted_subject_config,
         app_session_config,
         password_hasher,
-        cache_manager,
         expose_debug_code,
     })
 }
@@ -692,22 +461,6 @@ fn app_public_auth_routes_with_state(state: AppAuthState) -> Router {
 
 fn app_public_auth_routes() -> Router<AppAuthState> {
     Router::new()
-        .route(
-            "/app/v3/api/open_platform/qr_auth/sessions",
-            post(create_qr_auth_session),
-        )
-        .route(
-            "/app/v3/api/open_platform/qr_auth/sessions/{session_key}",
-            get(retrieve_qr_auth_session),
-        )
-        .route(
-            "/app/v3/api/open_platform/qr_auth/sessions/{session_key}/scans",
-            post(create_qr_auth_scan),
-        )
-        .route(
-            "/app/v3/api/open_platform/qr_auth/sessions/{session_key}/passwords",
-            post(create_qr_auth_password),
-        )
         .route("/app/v3/api/auth/registrations", post(create_registration))
         .route(
             "/app/v3/api/auth/verification_codes",
@@ -795,1033 +548,6 @@ async fn create_session(
         )
             .into_response(),
     }
-}
-
-async fn create_qr_auth_session(
-    State(state): State<AppAuthState>,
-    headers: HeaderMap,
-    Json(request): Json<OpenPlatformQrAuthSessionCreateRequest>,
-) -> Response {
-    match create_qr_auth_session_inner(state, headers, request).await {
-        Ok(response) => Json(PlusApiResult::success(response)).into_response(),
-        Err(error) => auth_error_response(error),
-    }
-}
-
-async fn create_qr_auth_session_inner(
-    state: AppAuthState,
-    headers: HeaderMap,
-    request: OpenPlatformQrAuthSessionCreateRequest,
-) -> Result<OpenPlatformQrAuthSessionResponse, AppSessionCreateError> {
-    ensure_qr_login_enabled(&state).await?;
-    let purpose = normalize_qr_auth_purpose(request.purpose.as_deref())?;
-    let session_key = state
-        .entity_uuid_generator
-        .generate_entity_uuid()
-        .map_err(|error| AppSessionCreateError::System(error.to_string()))?;
-    let now = current_unix_seconds();
-    let expire_time = now.checked_add(LOGIN_QR_CODE_TTL_SECONDS).ok_or_else(|| {
-        AppSessionCreateError::System("QR auth session expiration overflowed".to_owned())
-    })?;
-    let fallback_url = qr_auth_fallback_url(&headers, &session_key, &purpose);
-    let default_entry = resolve_open_platform_qr_default_entry(&state, &headers).await?;
-    let qr_selection = resolve_open_platform_qr_content(
-        default_entry.as_ref(),
-        &fallback_url,
-        &session_key,
-        &purpose,
-    );
-    let (qr_content, fallback_reason) = match qr_selection {
-        Ok(value) => (value, None),
-        Err(reason) => (
-            OpenPlatformQrAuthQrContentResponse {
-                content: fallback_url.clone(),
-                mode: "fallback_url".to_owned(),
-            },
-            Some(reason),
-        ),
-    };
-    let account = default_entry.as_ref().map(|entry| &entry.account);
-    let entry = default_entry.as_ref().map(|entry| &entry.entry);
-    let challenge = OpenPlatformQrAuthChallenge {
-        status: "pending".to_owned(),
-        session_key: session_key.clone(),
-        purpose: purpose.clone(),
-        qr_content: Some(qr_content),
-        fallback_url: Some(fallback_url),
-        default_account_id: account.map(|account| account.id.to_string()),
-        default_entry_id: entry.map(|entry| entry.id.to_string()),
-        default_provider: account.map(|account| account.provider.clone()),
-        default_account_type: account.map(|account| account.account_type.clone()),
-        scan_source: None,
-        external_user_id: None,
-        ip_hash: None,
-        user_agent: None,
-        scanned_at: None,
-        completed_at: None,
-        updated_at: now,
-        created_at: now,
-        expire_time,
-        session: None,
-        user_info: None,
-    };
-    state
-        .cache_manager
-        .set_json(
-            AUTH_QR_CACHE_NAMESPACE,
-            &session_key,
-            serde_json::to_value(&challenge)
-                .map_err(|error| AppSessionCreateError::System(error.to_string()))?,
-        )
-        .await
-        .map_err(|error| AppSessionCreateError::System(error.to_string()))?;
-    record_qr_security_event(
-        &state,
-        "qr_auth.session.created",
-        serde_json::json!({
-            "sessionKeyHash": sha256_hex(&session_key),
-            "purpose": &challenge.purpose,
-            "qrMode": challenge.qr_content.as_ref().map(|content| content.mode.as_str()),
-            "defaultAccountId": challenge.default_account_id.as_deref(),
-            "defaultEntryId": challenge.default_entry_id.as_deref(),
-            "defaultProvider": challenge.default_provider.as_deref(),
-            "defaultAccountType": challenge.default_account_type.as_deref(),
-            "expiresAt": expire_time,
-        }),
-    )
-    .await?;
-    if let Some(reason) = fallback_reason {
-        record_qr_security_event(
-            &state,
-            "qr_auth.session.fallback",
-            serde_json::json!({
-                "sessionKeyHash": sha256_hex(&session_key),
-                "reason": reason,
-                "defaultAccountId": challenge.default_account_id.as_deref(),
-                "defaultEntryId": challenge.default_entry_id.as_deref(),
-            }),
-        )
-        .await?;
-    }
-    Ok(qr_auth_session_response(challenge))
-}
-
-async fn retrieve_qr_auth_session(
-    State(state): State<AppAuthState>,
-    Path(session_key): Path<String>,
-) -> Response {
-    match retrieve_qr_auth_session_inner(state, session_key).await {
-        Ok(response) => Json(PlusApiResult::success(response)).into_response(),
-        Err(error) => auth_error_response(error),
-    }
-}
-
-async fn retrieve_qr_auth_session_inner(
-    state: AppAuthState,
-    session_key: String,
-) -> Result<OpenPlatformQrAuthSessionResponse, AppSessionCreateError> {
-    let session_key = normalize_required_field("sessionKey", &session_key, 128)?;
-    let challenge = load_qr_login_challenge_for_retrieve(&state, &session_key).await?;
-    Ok(qr_auth_session_response(challenge))
-}
-
-async fn create_qr_auth_scan(
-    State(state): State<AppAuthState>,
-    Path(session_key): Path<String>,
-    Json(request): Json<OpenPlatformQrAuthScanCreateRequest>,
-) -> Response {
-    match create_qr_auth_scan_inner(state, session_key, request).await {
-        Ok(response) => Json(PlusApiResult::success(response)).into_response(),
-        Err(error) => auth_error_response(error),
-    }
-}
-
-async fn create_qr_auth_scan_inner(
-    state: AppAuthState,
-    session_key: String,
-    request: OpenPlatformQrAuthScanCreateRequest,
-) -> Result<OpenPlatformQrAuthScanResponse, AppSessionCreateError> {
-    ensure_qr_login_enabled(&state).await?;
-    let session_key = normalize_required_field("sessionKey", &session_key, 128)?;
-    let mut challenge = load_qr_login_challenge(&state, &session_key).await?;
-    if qr_auth_status_is_terminal(&challenge.status) {
-        return Err(AppSessionCreateError::BadRequest(
-            "QR auth session is already completed".to_owned(),
-        ));
-    }
-
-    let scan_source = normalize_qr_auth_scan_source(&request.scan_source)?;
-    let requested_account_id =
-        normalize_optional_open_platform_id("accountId", request.account_id.as_deref())?;
-    let requested_entry_id =
-        normalize_optional_open_platform_id("entryId", request.entry_id.as_deref())?;
-    if requested_account_id.is_some() && challenge.default_account_id.is_none() {
-        return Err(AppSessionCreateError::BadRequest(
-            "accountId is not bound to this QR auth session".to_owned(),
-        ));
-    }
-    if requested_entry_id.is_some() && challenge.default_entry_id.is_none() {
-        return Err(AppSessionCreateError::BadRequest(
-            "entryId is not bound to this QR auth session".to_owned(),
-        ));
-    }
-    let account_id = requested_account_id.or_else(|| challenge.default_account_id.clone());
-    let entry_id = requested_entry_id.or_else(|| challenge.default_entry_id.clone());
-    let external_user_id =
-        normalize_optional_open_platform_id("externalUserId", request.external_user_id.as_deref())?;
-    let ip_hash = normalize_optional_sha256_hash("ipHash", request.ip_hash.as_deref())?;
-    let user_agent = normalize_optional_user_agent(request.user_agent.as_deref())?;
-
-    ensure_qr_scanner_metadata_matches(
-        "accountId",
-        account_id.as_deref(),
-        challenge.default_account_id.as_deref(),
-    )?;
-    ensure_qr_scanner_metadata_matches(
-        "entryId",
-        entry_id.as_deref(),
-        challenge.default_entry_id.as_deref(),
-    )?;
-    ensure_qr_scanner_metadata_matches(
-        "scanSource",
-        Some(scan_source.as_str()),
-        challenge.scan_source.as_deref(),
-    )?;
-    ensure_qr_scanner_metadata_matches(
-        "externalUserId",
-        external_user_id.as_deref(),
-        challenge.external_user_id.as_deref(),
-    )?;
-    ensure_qr_scanner_metadata_matches("ipHash", ip_hash.as_deref(), challenge.ip_hash.as_deref())?;
-    ensure_qr_scanner_metadata_matches(
-        "userAgent",
-        user_agent.as_deref(),
-        challenge.user_agent.as_deref(),
-    )?;
-
-    let now = current_unix_seconds();
-    let already_scanned = challenge.status == "scanned" && challenge.scanned_at.is_some();
-    let metadata_changed = challenge.scan_source.as_deref() != Some(scan_source.as_str())
-        || external_user_id
-            .as_deref()
-            .is_some_and(|value| challenge.external_user_id.as_deref() != Some(value))
-        || ip_hash
-            .as_deref()
-            .is_some_and(|value| challenge.ip_hash.as_deref() != Some(value))
-        || user_agent
-            .as_deref()
-            .is_some_and(|value| challenge.user_agent.as_deref() != Some(value));
-
-    if !already_scanned || metadata_changed {
-        challenge.status = "scanned".to_owned();
-        challenge.scan_source = Some(scan_source.clone());
-        if external_user_id.is_some() {
-            challenge.external_user_id = external_user_id.clone();
-        }
-        if ip_hash.is_some() {
-            challenge.ip_hash = ip_hash.clone();
-        }
-        if user_agent.is_some() {
-            challenge.user_agent = user_agent.clone();
-        }
-        challenge.scanned_at = challenge.scanned_at.or(Some(now));
-        challenge.updated_at = now;
-        state
-            .cache_manager
-            .set_json(
-                AUTH_QR_CACHE_NAMESPACE,
-                &session_key,
-                serde_json::to_value(&challenge)
-                    .map_err(|error| AppSessionCreateError::System(error.to_string()))?,
-            )
-            .await
-            .map_err(|error| AppSessionCreateError::System(error.to_string()))?;
-        record_qr_security_event(
-            &state,
-            "qr_auth.session.scanned",
-            serde_json::json!({
-                "sessionKeyHash": sha256_hex(&session_key),
-                "purpose": &challenge.purpose,
-                "scanSource": &scan_source,
-                "accountId": account_id.as_deref(),
-                "entryId": entry_id.as_deref(),
-                "externalUserIdHash": external_user_id.as_deref().map(sha256_hex),
-                "ipHash": ip_hash.as_deref(),
-                "userAgentHash": user_agent.as_deref().map(sha256_hex),
-            }),
-        )
-        .await?;
-    }
-
-    Ok(qr_auth_scan_response(
-        &challenge,
-        account_id,
-        entry_id,
-        external_user_id,
-        ip_hash,
-        user_agent,
-    ))
-}
-
-async fn create_qr_auth_password(
-    State(state): State<AppAuthState>,
-    headers: HeaderMap,
-    Path(session_key): Path<String>,
-    Json(request): Json<OpenPlatformQrAuthPasswordCreateRequest>,
-) -> Response {
-    match create_qr_auth_password_inner(state, headers, session_key, request).await {
-        Ok(response) => Json(PlusApiResult::success(response)).into_response(),
-        Err(error) => auth_error_response(error),
-    }
-}
-
-async fn create_qr_auth_password_inner(
-    state: AppAuthState,
-    headers: HeaderMap,
-    session_key: String,
-    request: OpenPlatformQrAuthPasswordCreateRequest,
-) -> Result<OpenPlatformQrAuthSessionResponse, AppSessionCreateError> {
-    ensure_qr_login_enabled(&state).await?;
-    let session_key = normalize_required_field("sessionKey", &session_key, 128)?;
-    let mut challenge = load_qr_login_challenge(&state, &session_key).await?;
-    if challenge.status == "completed" || challenge.status == "confirmed" {
-        return Ok(qr_auth_session_response(challenge));
-    }
-    if challenge.status != "scanned" {
-        return Err(AppSessionCreateError::BadRequest(
-            "QR auth password completion requires a recorded scan".to_owned(),
-        ));
-    }
-
-    let session = if challenge.purpose == "register" {
-        create_registration_inner(
-            state.clone(),
-            headers,
-            IamRegistrationCreateRequest {
-                username: request.username,
-                password: request.password,
-                confirm_password: request.confirm_password,
-                email: request.email,
-                phone: request.phone,
-                channel: request.channel,
-                verification_code: request.verification_code,
-                tenant_code: None,
-                organization_code: None,
-            },
-        )
-        .await?
-    } else {
-        create_session_inner(
-            state.clone(),
-            headers,
-            IamSessionCreateRequest {
-                grant_type: Some("password".to_owned()),
-                username: Some(request.username),
-                password: Some(request.password),
-                email: None,
-                phone: None,
-                code: None,
-                tenant_code: None,
-                organization_code: None,
-            },
-        )
-        .await?
-    };
-
-    let now = current_unix_seconds();
-    let session_id = session.session_id.clone();
-    let session_id_hash = sha256_hex(&session_id);
-    let tenant_id = parse_unix_id(&session.context.tenant_id);
-    let user_id = parse_unix_id(&session.context.user_id);
-    let user_id_text = session.context.user_id.clone();
-    challenge.status = "completed".to_owned();
-    challenge.completed_at = Some(now);
-    challenge.updated_at = now;
-    challenge.user_info = Some(session.user.clone());
-    challenge.session = Some(session);
-    state
-        .cache_manager
-        .set_json(
-            AUTH_QR_CACHE_NAMESPACE,
-            &session_key,
-            serde_json::to_value(&challenge)
-                .map_err(|error| AppSessionCreateError::System(error.to_string()))?,
-        )
-        .await
-        .map_err(|error| AppSessionCreateError::System(error.to_string()))?;
-    record_qr_security_event_with_actor(
-        &state,
-        "qr_auth.session.completed",
-        tenant_id,
-        user_id,
-        Some(session_id),
-        serde_json::json!({
-            "sessionKeyHash": sha256_hex(&session_key),
-            "purpose": &challenge.purpose,
-            "scanSource": challenge.scan_source.as_deref(),
-            "defaultAccountId": challenge.default_account_id.as_deref(),
-            "defaultEntryId": challenge.default_entry_id.as_deref(),
-            "externalUserIdHash": challenge.external_user_id.as_deref().map(sha256_hex),
-            "sessionIdHash": session_id_hash,
-            "userId": user_id_text,
-        }),
-    )
-    .await?;
-    Ok(qr_auth_session_response(challenge))
-}
-
-fn append_qr_query_param(url: &mut String, key: &str, value: &str) {
-    let separator = if url.contains('?') { '&' } else { '?' };
-    url.push(separator);
-    url.push_str(&percent_encode_qr_url_component(key));
-    url.push('=');
-    url.push_str(&percent_encode_qr_url_component(value));
-}
-
-fn public_origin(headers: &HeaderMap) -> String {
-    if let Some(origin) = public_origin_from_env() {
-        return origin;
-    }
-    let host = optional_header_value(headers, "x-forwarded-host")
-        .or_else(|| optional_header_value(headers, "host"))
-        .and_then(normalize_public_host)
-        .unwrap_or_else(|| "localhost".to_owned());
-    let scheme = optional_header_value(headers, "x-forwarded-proto")
-        .and_then(normalize_public_scheme)
-        .unwrap_or_else(|| "https".to_owned());
-    format!("{scheme}://{host}")
-}
-
-fn optional_header_value<'a>(headers: &'a HeaderMap, name: &str) -> Option<&'a str> {
-    headers
-        .get(name)
-        .and_then(|value| value.to_str().ok())
-        .map(str::trim)
-        .filter(|value| !value.is_empty())
-}
-
-fn public_origin_from_env() -> Option<String> {
-    for name in ["SDKWORK_CLAW_PUBLIC_ORIGIN", "PORTAL_PUBLIC_ORIGIN"] {
-        let Ok(value) = std::env::var(name) else {
-            continue;
-        };
-        if let Some(origin) = normalize_public_origin(&value) {
-            return Some(origin);
-        }
-    }
-    None
-}
-
-fn normalize_public_origin(value: &str) -> Option<String> {
-    let mut value = value.trim();
-    if let Some(stripped) = value.strip_suffix('/') {
-        value = stripped;
-    }
-    if value.is_empty() || !value.bytes().all(|byte| (0x21..=0x7e).contains(&byte)) {
-        return None;
-    }
-    let (scheme, host) = if let Some(host) = value.strip_prefix("https://") {
-        ("https", host)
-    } else if let Some(host) = value.strip_prefix("http://") {
-        ("http", host)
-    } else {
-        return None;
-    };
-    let host = normalize_public_host(host)?;
-    Some(format!("{scheme}://{host}"))
-}
-
-fn normalize_public_host(value: &str) -> Option<String> {
-    let value = value.trim();
-    if value.is_empty() || !value.bytes().all(|byte| (0x21..=0x7e).contains(&byte)) {
-        return None;
-    }
-    if value.bytes().any(|byte| {
-        matches!(
-            byte,
-            b',' | b'/'
-                | b'\\'
-                | b'?'
-                | b'#'
-                | b'@'
-                | b'%'
-                | b'"'
-                | b'\''
-                | b'<'
-                | b'>'
-                | b'`'
-                | b'|'
-                | b';'
-                | b'='
-                | b'&'
-        )
-    }) {
-        return None;
-    }
-    if let Some(address) = value.strip_prefix('[') {
-        let (address, rest) = address.split_once(']')?;
-        if address.is_empty()
-            || !address
-                .bytes()
-                .all(|byte| byte.is_ascii_hexdigit() || matches!(byte, b':' | b'.'))
-        {
-            return None;
-        }
-        if rest.is_empty() {
-            return Some(value.to_owned());
-        }
-        let port = rest.strip_prefix(':')?;
-        return validate_public_host_port(port).map(|()| value.to_owned());
-    }
-    if value.contains('[') || value.contains(']') {
-        return None;
-    }
-    let (host, port) = match value.rsplit_once(':') {
-        Some((host, port)) if !host.contains(':') => (host, Some(port)),
-        Some(_) => return None,
-        None => (value, None),
-    };
-    validate_public_host_name(host)?;
-    if let Some(port) = port {
-        validate_public_host_port(port)?;
-    }
-    Some(value.to_owned())
-}
-
-fn validate_public_host_name(value: &str) -> Option<()> {
-    if value.is_empty()
-        || !value
-            .bytes()
-            .all(|byte| byte.is_ascii_alphanumeric() || matches!(byte, b'-' | b'.'))
-    {
-        return None;
-    }
-    for label in value.split('.') {
-        if label.is_empty() || label.starts_with('-') || label.ends_with('-') {
-            return None;
-        }
-    }
-    Some(())
-}
-
-fn validate_public_host_port(value: &str) -> Option<()> {
-    if value.is_empty() || !value.bytes().all(|byte| byte.is_ascii_digit()) {
-        return None;
-    }
-    let port = value.parse::<u16>().ok()?;
-    if port == 0 {
-        return None;
-    }
-    Some(())
-}
-
-fn normalize_public_scheme(value: &str) -> Option<String> {
-    match value.trim() {
-        "http" => Some("http".to_owned()),
-        "https" => Some("https".to_owned()),
-        _ => None,
-    }
-}
-
-fn normalize_qr_auth_purpose(value: Option<&str>) -> Result<String, AppSessionCreateError> {
-    match value
-        .map(str::trim)
-        .filter(|value| !value.is_empty())
-        .unwrap_or("login")
-    {
-        "login" => Ok("login".to_owned()),
-        "register" => Ok("register".to_owned()),
-        _ => Err(AppSessionCreateError::BadRequest(
-            "purpose must be login or register".to_owned(),
-        )),
-    }
-}
-
-fn normalize_qr_auth_scan_source(value: &str) -> Result<String, AppSessionCreateError> {
-    let normalized = value.trim().replace('-', "_").to_ascii_lowercase();
-    match normalized.as_str() {
-        "app" | "browser" | "mini_app" | "official_account" | "webhook" => Ok(normalized),
-        _ => Err(AppSessionCreateError::BadRequest(
-            "scanSource must be app, browser, mini_app, official_account, or webhook".to_owned(),
-        )),
-    }
-}
-
-fn normalize_optional_open_platform_id(
-    field_name: &str,
-    value: Option<&str>,
-) -> Result<Option<String>, AppSessionCreateError> {
-    let Some(value) = value.map(str::trim).filter(|value| !value.is_empty()) else {
-        return Ok(None);
-    };
-    if value.chars().count() > MAX_OPEN_PLATFORM_ID_LENGTH
-        || !value
-            .bytes()
-            .all(|byte| byte.is_ascii_alphanumeric() || matches!(byte, b'_' | b'-' | b'.' | b':'))
-    {
-        return Err(AppSessionCreateError::BadRequest(format!(
-            "{field_name} must be {MAX_OPEN_PLATFORM_ID_LENGTH} characters or fewer and use letters, digits, underscore, hyphen, dot, or colon"
-        )));
-    }
-    Ok(Some(value.to_owned()))
-}
-
-fn normalize_optional_user_agent(
-    value: Option<&str>,
-) -> Result<Option<String>, AppSessionCreateError> {
-    let Some(value) = value.map(str::trim).filter(|value| !value.is_empty()) else {
-        return Ok(None);
-    };
-    if value.chars().count() > MAX_QR_USER_AGENT_LENGTH
-        || !value.bytes().all(|byte| (0x20..=0x7e).contains(&byte))
-    {
-        return Err(AppSessionCreateError::BadRequest(format!(
-            "userAgent must be {MAX_QR_USER_AGENT_LENGTH} printable ASCII characters or fewer"
-        )));
-    }
-    Ok(Some(value.to_owned()))
-}
-
-fn normalize_optional_sha256_hash(
-    field_name: &str,
-    value: Option<&str>,
-) -> Result<Option<String>, AppSessionCreateError> {
-    let Some(value) = value.map(str::trim).filter(|value| !value.is_empty()) else {
-        return Ok(None);
-    };
-    if value.len() != 64 || !value.bytes().all(|byte| byte.is_ascii_hexdigit()) {
-        return Err(AppSessionCreateError::BadRequest(format!(
-            "{field_name} must be a SHA-256 hex hash"
-        )));
-    }
-    Ok(Some(value.to_ascii_lowercase()))
-}
-
-fn ensure_qr_scanner_metadata_matches(
-    field_name: &str,
-    requested: Option<&str>,
-    existing: Option<&str>,
-) -> Result<(), AppSessionCreateError> {
-    if let (Some(requested), Some(existing)) = (requested, existing) {
-        if requested != existing {
-            return Err(AppSessionCreateError::BadRequest(format!(
-                "{field_name} does not match QR login scanner"
-            )));
-        }
-    }
-    Ok(())
-}
-
-async fn record_qr_security_event(
-    state: &AppAuthState,
-    event_type: &str,
-    detail: serde_json::Value,
-) -> Result<(), AppSessionCreateError> {
-    record_qr_security_event_with_actor(state, event_type, Some(0), None, None, detail).await
-}
-
-async fn record_qr_security_event_with_actor(
-    state: &AppAuthState,
-    event_type: &str,
-    tenant_id: Option<i64>,
-    user_id: Option<i64>,
-    session_id: Option<String>,
-    detail: serde_json::Value,
-) -> Result<(), AppSessionCreateError> {
-    let security_event_id = generate_session_event_uuid(state)?;
-    state
-        .event_store
-        .record_app_security_event(RecordAppSecurityEventCommand {
-            security_event_id,
-            tenant_id,
-            user_id,
-            session_id,
-            event_type: event_type.to_owned(),
-            severity: "info".to_owned(),
-            detail_json: detail.to_string(),
-            created_at: current_unix_seconds().to_string(),
-        })
-        .await
-        .map_err(|error| AppSessionCreateError::System(error.to_string()))
-}
-
-async fn resolve_open_platform_qr_default_entry(
-    state: &AppAuthState,
-    headers: &HeaderMap,
-) -> Result<Option<OpenPlatformQrDefaultEntryItem>, AppSessionCreateError> {
-    let Some(store) = state.open_platform_store.as_ref() else {
-        return Ok(None);
-    };
-    let subject = open_platform_subject_from_headers_or_default(headers);
-    store
-        .find_qr_default_entry(FindOpenPlatformQrDefaultEntryQuery {
-            subject,
-            provider: None,
-            account_type: None,
-        })
-        .await
-        .map_err(|error| AppSessionCreateError::System(error.to_string()))
-}
-
-fn open_platform_subject_from_headers_or_default(headers: &HeaderMap) -> AdminOpenPlatformSubject {
-    TrustedRequestSubject::from_headers(headers)
-        .map(|subject| AdminOpenPlatformSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            operator_id: subject.operator_id,
-            operator_type: subject.operator_type,
-        })
-        .unwrap_or(AdminOpenPlatformSubject {
-            tenant_id: 10,
-            organization_id: 20,
-            operator_id: 0,
-            operator_type: 0,
-        })
-}
-
-fn resolve_open_platform_qr_content(
-    default_entry: Option<&OpenPlatformQrDefaultEntryItem>,
-    fallback_url: &str,
-    session_key: &str,
-    purpose: &str,
-) -> Result<OpenPlatformQrAuthQrContentResponse, String> {
-    let Some(default_entry) = default_entry else {
-        return Ok(OpenPlatformQrAuthQrContentResponse {
-            content: fallback_url.to_owned(),
-            mode: "fallback_url".to_owned(),
-        });
-    };
-    let account = &default_entry.account;
-    let entry = &default_entry.entry;
-    let content = add_qr_auth_session_context(
-        &entry.url,
-        session_key,
-        purpose,
-        Some(account.id.to_string().as_str()),
-        Some(entry.id.to_string().as_str()),
-    );
-    match account.account_type.as_str() {
-        "official_account" => {
-            if entry.entry_type != "url" && entry.entry_type != "qr" {
-                return Err("official account default entry must be url or qr".to_owned());
-            }
-            validate_official_account_entry_url(&content)?;
-            Ok(OpenPlatformQrAuthQrContentResponse {
-                content,
-                mode: "official_account_entry".to_owned(),
-            })
-        }
-        "mini_app" => {
-            if entry.entry_type != "mini_app_url" {
-                return Err("mini app default entry must be mini_app_url".to_owned());
-            }
-            validate_mini_app_entry_url(&account.provider, &content)?;
-            Ok(OpenPlatformQrAuthQrContentResponse {
-                content,
-                mode: "mini_app_url".to_owned(),
-            })
-        }
-        _ => Err("default QR account must be official_account or mini_app".to_owned()),
-    }
-}
-
-fn add_qr_auth_session_context(
-    entry_url: &str,
-    session_key: &str,
-    purpose: &str,
-    account_id: Option<&str>,
-    entry_id: Option<&str>,
-) -> String {
-    let mut url = remove_qr_auth_reserved_query_params(entry_url.trim());
-    append_qr_query_param(&mut url, "session_key", session_key);
-    append_qr_query_param(&mut url, "purpose", purpose);
-    if let Some(account_id) = account_id {
-        append_qr_query_param(&mut url, "account_id", account_id);
-    }
-    if let Some(entry_id) = entry_id {
-        append_qr_query_param(&mut url, "entry_id", entry_id);
-    }
-    url
-}
-
-fn remove_qr_auth_reserved_query_params(value: &str) -> String {
-    let (url, fragment) = match value.find('#') {
-        Some(index) => (&value[..index], Some(&value[index..])),
-        None => (value, None),
-    };
-    let Some(query_start) = url.find('?') else {
-        return value.to_owned();
-    };
-    let base = &url[..query_start];
-    let query = &url[query_start + 1..];
-    let kept = query
-        .split('&')
-        .filter(|part| {
-            let name = part.split_once('=').map(|(name, _)| name).unwrap_or(part);
-            !is_qr_auth_reserved_query_param(name)
-        })
-        .collect::<Vec<_>>();
-    let mut cleaned = base.to_owned();
-    if !kept.is_empty() {
-        cleaned.push('?');
-        cleaned.push_str(&kept.join("&"));
-    }
-    if let Some(fragment) = fragment {
-        cleaned.push_str(fragment);
-    }
-    cleaned
-}
-
-fn is_qr_auth_reserved_query_param(name: &str) -> bool {
-    matches!(
-        name,
-        "session_key" | "purpose" | "account_id" | "entry_id" | "scan_source"
-    )
-}
-
-fn qr_auth_fallback_url(headers: &HeaderMap, session_key: &str, purpose: &str) -> String {
-    let mut url = format!(
-        "{}/auth/qr/{}",
-        public_origin(headers),
-        percent_encode_qr_url_component(session_key)
-    );
-    append_qr_query_param(&mut url, "session_key", session_key);
-    append_qr_query_param(&mut url, "purpose", purpose);
-    append_qr_query_param(&mut url, "scan_source", "browser");
-    url
-}
-
-fn percent_encode_qr_url_component(value: &str) -> String {
-    let mut encoded = String::with_capacity(value.len());
-    for byte in value.bytes() {
-        match byte {
-            b'A'..=b'Z' | b'a'..=b'z' | b'0'..=b'9' | b'-' | b'_' | b'.' | b'~' => {
-                encoded.push(byte as char)
-            }
-            _ => encoded.push_str(&format!("%{byte:02X}")),
-        }
-    }
-    encoded
-}
-
-fn validate_official_account_entry_url(value: &str) -> Result<(), String> {
-    validate_common_qr_entry_url(value)?;
-    if !value.starts_with("https://") {
-        return Err("official account entry URL must use https".to_owned());
-    }
-    Ok(())
-}
-
-fn validate_mini_app_entry_url(provider: &str, value: &str) -> Result<(), String> {
-    validate_common_qr_entry_url(value)?;
-    let allowed: &[&str] = match provider {
-        "wechat" => &[
-            "weixin://dl/business/",
-            "https://wxaurl.cn",
-            "https://wxmpurl.cn",
-        ],
-        "alipay" => &["alipays://platformapi/startapp"],
-        "douyin" => &[
-            "snssdk1128://microapp",
-            "snssdk2329://microapp",
-            "https://v.douyin.com",
-        ],
-        "baidu" => &["baiduboxapp://", "https://smartprogram.baidu.com"],
-        "kuaishou" => &["kwai://miniapp", "https://m.kuaishou.com"],
-        "feishu" => &["https://applink.feishu.cn/client/mini_program"],
-        _ => return Err("mini app provider is not supported".to_owned()),
-    };
-    if allowed.iter().any(|prefix| value.starts_with(prefix)) {
-        Ok(())
-    } else {
-        Err("mini app URL does not match provider URL rules".to_owned())
-    }
-}
-
-fn validate_common_qr_entry_url(value: &str) -> Result<(), String> {
-    let value = value.trim();
-    if value.is_empty() || value.chars().count() > 2048 {
-        return Err("QR entry URL must be between 1 and 2048 characters".to_owned());
-    }
-    if !value.bytes().all(|byte| (0x21..=0x7e).contains(&byte)) {
-        return Err("QR entry URL must use printable ASCII without spaces".to_owned());
-    }
-    if value.contains('#') {
-        return Err("QR entry URL must not contain a fragment".to_owned());
-    }
-    if let Some(authority_start) = value.find("://").map(|index| index + 3) {
-        let authority_end = value[authority_start..]
-            .find(['/', '?'])
-            .map(|index| authority_start + index)
-            .unwrap_or(value.len());
-        if value[authority_start..authority_end].contains('@') {
-            return Err("QR entry URL must not contain user info".to_owned());
-        }
-    }
-    Ok(())
-}
-
-fn qr_auth_session_response(
-    challenge: OpenPlatformQrAuthChallenge,
-) -> OpenPlatformQrAuthSessionResponse {
-    let status = standard_qr_auth_status(&challenge.status).to_owned();
-    let fallback_url = challenge
-        .fallback_url
-        .clone()
-        .unwrap_or_else(|| format!("/auth/qr/{}", challenge.session_key));
-    let qr_content =
-        challenge
-            .qr_content
-            .clone()
-            .unwrap_or_else(|| OpenPlatformQrAuthQrContentResponse {
-                content: fallback_url.clone(),
-                mode: "fallback_url".to_owned(),
-            });
-    OpenPlatformQrAuthSessionResponse {
-        id: format!("qr_auth_session_{}", challenge.session_key),
-        session_key: challenge.session_key,
-        purpose: challenge.purpose,
-        default_account_id: challenge.default_account_id,
-        default_entry_id: challenge.default_entry_id,
-        default_provider: challenge.default_provider,
-        default_account_type: challenge.default_account_type,
-        qr_content,
-        fallback_url,
-        status,
-        scanned_at: challenge.scanned_at.map(unix_seconds_to_api_time),
-        completed_at: challenge.completed_at.map(unix_seconds_to_api_time),
-        expires_at: unix_seconds_to_api_time(challenge.expire_time),
-        created_at: unix_seconds_to_api_time(challenge.created_at),
-        updated_at: unix_seconds_to_api_time(if challenge.updated_at > 0 {
-            challenge.updated_at
-        } else {
-            challenge.created_at
-        }),
-        token: challenge.session.clone(),
-        session: challenge.session,
-        user_info: challenge.user_info,
-    }
-}
-
-fn qr_auth_scan_response(
-    challenge: &OpenPlatformQrAuthChallenge,
-    account_id: Option<String>,
-    entry_id: Option<String>,
-    external_user_id: Option<String>,
-    ip_hash: Option<String>,
-    user_agent: Option<String>,
-) -> OpenPlatformQrAuthScanResponse {
-    let created_at = challenge.scanned_at.unwrap_or_else(current_unix_seconds);
-    OpenPlatformQrAuthScanResponse {
-        id: format!("qr_auth_scan_{}_{}", challenge.session_key, created_at),
-        session_id: format!("qr_auth_session_{}", challenge.session_key),
-        session_key: challenge.session_key.clone(),
-        account_id,
-        entry_id,
-        external_user_id,
-        scan_source: challenge
-            .scan_source
-            .clone()
-            .unwrap_or_else(|| "browser".to_owned()),
-        ip_hash,
-        user_agent,
-        created_at: unix_seconds_to_api_time(created_at),
-    }
-}
-
-fn standard_qr_auth_status(status: &str) -> &'static str {
-    match status {
-        "confirmed" | "completed" => "completed",
-        "failed" => "cancelled",
-        "expired" => "expired",
-        "scanned" | "passwordRequired" | "bindRequired" => "scanned",
-        _ => "pending",
-    }
-}
-
-fn qr_auth_status_is_terminal(status: &str) -> bool {
-    matches!(
-        status,
-        "completed" | "cancelled" | "expired" | "failed" | "confirmed"
-    )
-}
-
-async fn load_qr_login_challenge_for_retrieve(
-    state: &AppAuthState,
-    session_key: &str,
-) -> Result<OpenPlatformQrAuthChallenge, AppSessionCreateError> {
-    let mut challenge = load_qr_login_challenge_value(state, session_key).await?;
-    if challenge.expire_time <= current_unix_seconds() {
-        expire_qr_login_challenge(state, &challenge).await?;
-        challenge.status = "expired".to_owned();
-    }
-    Ok(challenge)
-}
-
-async fn load_qr_login_challenge(
-    state: &AppAuthState,
-    session_key: &str,
-) -> Result<OpenPlatformQrAuthChallenge, AppSessionCreateError> {
-    let challenge = load_qr_login_challenge_value(state, session_key).await?;
-    if challenge.expire_time <= current_unix_seconds() {
-        expire_qr_login_challenge(state, &challenge).await?;
-        return Err(AppSessionCreateError::BadRequest(
-            INVALID_QR_AUTH_SESSION_MESSAGE.to_owned(),
-        ));
-    }
-    Ok(challenge)
-}
-
-async fn load_qr_login_challenge_value(
-    state: &AppAuthState,
-    session_key: &str,
-) -> Result<OpenPlatformQrAuthChallenge, AppSessionCreateError> {
-    let Some(value) = state
-        .cache_manager
-        .get_json(AUTH_QR_CACHE_NAMESPACE, session_key)
-        .await
-        .map_err(|error| AppSessionCreateError::System(error.to_string()))?
-    else {
-        return Err(AppSessionCreateError::BadRequest(
-            INVALID_QR_AUTH_SESSION_MESSAGE.to_owned(),
-        ));
-    };
-    let challenge: OpenPlatformQrAuthChallenge = serde_json::from_value(value)
-        .map_err(|error| AppSessionCreateError::System(error.to_string()))?;
-    if challenge.session_key != session_key {
-        state
-            .cache_manager
-            .delete_key(AUTH_QR_CACHE_NAMESPACE, session_key)
-            .await
-            .map_err(|error| AppSessionCreateError::System(error.to_string()))?;
-        return Err(AppSessionCreateError::BadRequest(
-            INVALID_QR_AUTH_SESSION_MESSAGE.to_owned(),
-        ));
-    }
-    Ok(challenge)
-}
-
-async fn expire_qr_login_challenge(
-    state: &AppAuthState,
-    challenge: &OpenPlatformQrAuthChallenge,
-) -> Result<(), AppSessionCreateError> {
-    state
-        .cache_manager
-        .delete_key(AUTH_QR_CACHE_NAMESPACE, &challenge.session_key)
-        .await
-        .map_err(|error| AppSessionCreateError::System(error.to_string()))?;
-    record_qr_security_event(
-        state,
-        "qr_auth.session.expired",
-        serde_json::json!({
-            "sessionKeyHash": sha256_hex(&challenge.session_key),
-            "purpose": &challenge.purpose,
-            "defaultAccountId": challenge.default_account_id.as_deref(),
-            "defaultEntryId": challenge.default_entry_id.as_deref(),
-            "expireTime": challenge.expire_time,
-        }),
-    )
-    .await
 }
 
 async fn auth_settings_for_scope(
@@ -1987,19 +713,6 @@ async fn ensure_verification_code_allowed(
         _ => Err(AppSessionCreateError::BadRequest(
             "scene must be LOGIN, REGISTER, or RESET_PASSWORD".to_owned(),
         )),
-    }
-}
-
-async fn ensure_qr_login_enabled(
-    state: &AppAuthState,
-) -> Result<AdminAuthSettings, AppSessionCreateError> {
-    let settings = default_auth_settings(state).await?;
-    if settings.qr_login_enabled {
-        Ok(settings)
-    } else {
-        Err(AppSessionCreateError::BadRequest(
-            "QR login is not enabled".to_owned(),
-        ))
     }
 }
 
@@ -3695,10 +2408,7 @@ fn civil_from_days(days_since_unix_epoch: i64) -> (i64, i64, i64) {
 
 #[cfg(test)]
 mod tests {
-    use super::{
-        normalize_public_host, normalize_public_origin, unix_seconds_to_api_time,
-        verification_code_for_mode,
-    };
+    use super::{unix_seconds_to_api_time, verification_code_for_mode};
 
     #[test]
     fn auth_api_time_uses_utc_iso8601_format() {
@@ -3727,66 +2437,5 @@ mod tests {
         assert!(first.chars().all(|character| character.is_ascii_digit()));
         assert_ne!(first, second);
         assert_ne!("666666", first);
-    }
-
-    #[test]
-    fn public_host_accepts_only_url_authority_safe_hosts() {
-        for value in [
-            "example.test",
-            "example.test:8443",
-            "localhost",
-            "127.0.0.1:3000",
-            "[::1]:3000",
-        ] {
-            assert_eq!(Some(value.to_owned()), normalize_public_host(value));
-        }
-
-        for value in [
-            "",
-            "example.test/path",
-            "example.test?next=https://evil.test",
-            "example.test#fragment",
-            "trusted.example.test@evil.example.test",
-            "example.test%2fevil",
-            "example.test, evil.test",
-            "-example.test",
-            "example..test",
-            "example.test:0",
-            "example.test:notaport",
-            "2001:db8::1",
-        ] {
-            assert_eq!(None, normalize_public_host(value), "{value}");
-        }
-    }
-
-    #[test]
-    fn public_origin_accepts_only_http_https_origins() {
-        assert_eq!(
-            Some("https://example.test".to_owned()),
-            normalize_public_origin("https://example.test/")
-        );
-        assert_eq!(
-            Some("http://localhost:3000".to_owned()),
-            normalize_public_origin(" http://localhost:3000 ")
-        );
-        assert_eq!(
-            Some("https://[::1]:8443".to_owned()),
-            normalize_public_origin("https://[::1]:8443")
-        );
-
-        for value in [
-            "",
-            "javascript:alert(1)",
-            "https://example.test/path",
-            "https://example.test?next=https://evil.test",
-            "https://example.test#fragment",
-            "https://user@example.test",
-            "https://example.test@evil.test",
-            "https://example.test%2fevil",
-            "ftp://example.test",
-            "https://",
-        ] {
-            assert_eq!(None, normalize_public_origin(value), "{value}");
-        }
     }
 }

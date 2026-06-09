@@ -2,6 +2,7 @@ use sha2::{Digest, Sha256};
 use sqlx::{PgPool, Postgres, Row, Transaction};
 
 use crate::domain::DomainError;
+use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
 use crate::infrastructure::sql::sql_model_rankings::{
     add_seconds_to_timestamp, normalize_iso_timestamp, period_code,
 };
@@ -175,15 +176,16 @@ async fn record_model_ranking_refresh_audit(
     sqlx::query(
         r#"
         INSERT INTO ops_job_execution
-            (uuid, tenant_id, organization_id, status, metadata, job_name, job_type, trigger_type,
+            (id, uuid, tenant_id, organization_id, status, metadata, job_name, job_type, trigger_type,
              started_at, ended_at, duration_ms, execution_status, processed_count, success_count,
              failure_count, failure_reason, payload)
         VALUES
-            ($1, $2, $3, 1, $4::jsonb, $5, $6, $7,
-             $8::timestamp AT TIME ZONE 'UTC', $9::timestamp AT TIME ZONE 'UTC',
-             $10, $11, $12, $13, $14, $15, $16::jsonb)
+            ($1, $2, $3, $4, 1, $5::jsonb, $6, $7, $8,
+             $9::timestamp AT TIME ZONE 'UTC', $10::timestamp AT TIME ZONE 'UTC',
+             $11, $12, $13, $14, $15, $16, $17::jsonb)
         "#,
     )
+    .bind(next_claw_runtime_id("ops_job_execution")?)
     .bind(stable_uuid(
         "job",
         &[
@@ -458,19 +460,19 @@ async fn upsert_ranking_snapshot(
     sqlx::query(
         r#"
         INSERT INTO ai_model_rank_snapshot
-            (uuid, tenant_id, organization_id, source_type, source_version, status, created_at, updated_at,
+            (id, uuid, tenant_id, organization_id, source_type, source_version, status, created_at, updated_at,
              rebuild_version, metadata, snapshot_date, snapshot_period, rank_scope, model_id, catalog_key,
              model, vendor_code, region_code, vendor_name_snapshot, modality, rank_no, previous_rank_no,
              base_volume, cost_indicator, context_size_text, is_new, color_token, pricing_text, license_type,
              strengths, request_count, token_count, cost_amount, currency, latency_p50_ms, latency_p95_ms,
              success_rate, win_rate, trend_score, rank_payload)
         VALUES
-            ($1, $2, $3, 'analytics-worker', 1, 1, $4::timestamp AT TIME ZONE 'UTC', $4::timestamp AT TIME ZONE 'UTC',
-             0, $5::jsonb, $6::date, $7, $8, $9, $10,
-             $11, $12, $13, $14, $15, $16, $17,
-             $18, $19, $20, $21, $22, $23, $24,
-             '[]'::jsonb, $25, $26, $27, $28, 0, 0,
-             1.000000, $29, $30, $31::jsonb)
+            ($1, $2, $3, $4, 'analytics-worker', 1, 1, $5::timestamp AT TIME ZONE 'UTC', $5::timestamp AT TIME ZONE 'UTC',
+             0, $6::jsonb, $7::date, $8, $9, $10, $11,
+             $12, $13, $14, $15, $16, $17, $18,
+             $19, $20, $21, $22, $23, $24, $25,
+             '[]'::jsonb, $26, $27, $28, $29, 0, 0,
+             1.000000, $30, $31, $32::jsonb)
         ON CONFLICT (tenant_id, organization_id, snapshot_date, snapshot_period, rank_scope, vendor_code, region_code, catalog_key) DO UPDATE SET
             source_type = excluded.source_type,
             source_version = excluded.source_version,
@@ -505,6 +507,7 @@ async fn upsert_ranking_snapshot(
             rank_payload = excluded.rank_payload
         "#,
     )
+    .bind(next_claw_runtime_id("ai_model_rank_snapshot")?)
     .bind(stable_uuid(
         "rank",
         &[

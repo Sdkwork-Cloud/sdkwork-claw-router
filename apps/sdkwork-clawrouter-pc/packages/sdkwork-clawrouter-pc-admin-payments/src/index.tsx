@@ -82,10 +82,10 @@ type PaymentProviderOption = PaymentProviderAccountSelectOption & {
   supportedCurrencies: readonly string[];
 };
 
-type PaymentProviderCode = PaymentProviderAccountMutationInput['providerCode'];
-type PaymentProviderEnvironment = PaymentProviderAccountMutationInput['environment'];
-type PaymentProviderAccountStatus = PaymentProviderAccountMutationInput['status'];
-type PaymentProviderAccountRole = NonNullable<PaymentProviderAccountMutationInput['accountRole']>;
+type PaymentProviderCode = 'wechat_pay' | 'alipay' | 'paypal' | 'stripe' | 'apple_pay' | 'google_pay';
+type PaymentProviderEnvironment = 'sandbox' | 'production';
+type PaymentProviderAccountStatus = 'active' | 'inactive' | 'disabled';
+type PaymentProviderAccountRole = 'merchant' | 'service_provider';
 type PaymentProviderCredentialProfile = {
   credentialMode: PaymentProviderCredentialMode;
   descriptionFallback: string;
@@ -113,7 +113,7 @@ type PaymentProviderCredentialFileUploadProps = {
   uploadLabel?: string;
 };
 
-const DEFAULT_PAGE_PARAMS = { page: '1', pageSize: '100' };
+const DEFAULT_PAGE_PARAMS = { page: 1, pageSize: 100 };
 const DEFAULT_PAYMENTS_SECTION_ID: PaymentsAdminTab = 'providerAccounts';
 const DEFAULT_COUNTRY_CODE = 'US';
 const DEFAULT_CURRENCY_CODE = 'USD';
@@ -455,7 +455,7 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
 
   const loadPaymentProviderOptions = useCallback(async () => {
     try {
-      const response = await backendPaymentsProvidersList(DEFAULT_PAGE_PARAMS);
+      const response = await backendPaymentsProvidersList();
       const options = readPaymentProviderCodeOptions(response);
       setPaymentProviderCodeOptions(options);
       setProviderAccountForm((current) => {
@@ -655,7 +655,7 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
       description: t('admin.commerce.payments.providers.desc', 'Domestic and international provider definitions such as WeChat Pay, Alipay, PayPal, Stripe, Apple Pay, and Google Pay.'),
       icon: <CreditCard className="h-4 w-4" />,
       group: t('admin.commerce.payments.group.providerSetup', 'Provider Setup'),
-      load: () => backendPaymentsProvidersList(DEFAULT_PAGE_PARAMS),
+      load: () => backendPaymentsProvidersList(),
       columns: [
         { key: 'providerCode', label: t('admin.col.provider', 'Provider') },
         { key: 'displayName', label: t('admin.col.name', 'Name') },
@@ -742,7 +742,7 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
       description: t('admin.commerce.payments.methods.desc', 'Payment methods exposed to checkout, membership purchase, recharge, and wallet flows.'),
       icon: <CreditCard className="h-4 w-4" />,
       group: t('admin.commerce.payments.group.providerSetup', 'Provider Setup'),
-      load: () => backendPaymentsMethodsList(DEFAULT_PAGE_PARAMS),
+      load: () => backendPaymentsMethodsList(),
       columns: [
         { key: 'methodCode', label: t('admin.col.method', 'Method') },
         { key: 'displayName', label: t('admin.col.name', 'Name') },
@@ -761,7 +761,7 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
       description: t('admin.commerce.payments.channels.desc', 'Country, currency, scene, and provider-account routing channels.'),
       icon: <CreditCard className="h-4 w-4" />,
       group: t('admin.commerce.payments.group.providerSetup', 'Provider Setup'),
-      load: () => backendPaymentsChannelsList(DEFAULT_PAGE_PARAMS),
+      load: () => backendPaymentsChannelsList(),
       columns: [
         { key: 'channelNo', label: t('admin.col.channel', 'Channel') },
         { key: 'methodCode', label: t('admin.col.method', 'Method') },
@@ -782,7 +782,7 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
       description: t('admin.commerce.payments.routeRules.desc', 'Payment route rules by market, method, currency, priority, and fallback.'),
       icon: <ShieldCheck className="h-4 w-4" />,
       group: t('admin.commerce.payments.group.providerSetup', 'Provider Setup'),
-      load: () => backendPaymentsRouteRulesList(DEFAULT_PAGE_PARAMS),
+      load: () => backendPaymentsRouteRulesList(),
       columns: [
         { key: 'ruleNo', label: t('admin.col.rule', 'Rule') },
         { key: 'methodCode', label: t('admin.col.method', 'Method') },

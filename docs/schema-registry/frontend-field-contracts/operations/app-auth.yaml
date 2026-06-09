@@ -790,37 +790,36 @@ frontend_operations:
 - route: /auth/oauth/callback/:provider
   source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
   operation: getOAuthAuthorizationUrl
-  operation_id: oauthAuthorizationUrls.retrieve
-  kind: read
+  operation_id: oauth.authorizationUrls.create
+  kind: create
   api_surface: app
-  api_method: GET
-  api_path: /app/v3/api/auth/oauth_authorization_urls
-  sdk_domain: auth
+  api_method: POST
+  api_path: /app/v3/api/oauth/authorization_urls
+  sdk_domain: iam
   summary: Retrieve OAuth authorization URL
   description: Returns an OAuth provider authorization URL using standardized app auth configuration.
   read_sources:
   - iam_user_identity
-  query_parameters:
-  - name: provider
-    in: query
-    required: true
-    schema:
-      type: string
-  - name: redirect_uri
-    in: query
-    required: true
-    schema:
-      type: string
-  - name: state
-    in: query
-    required: false
-    schema:
-      type: string
-  - name: scope
-    in: query
-    required: false
-    schema:
-      type: string
+  request_schema:
+    name: IamOauthAuthorizationUrlCreateRequest
+    required:
+    - providerCode
+    - redirectUri
+    properties:
+      providerCode:
+        type: string
+        minLength: 1
+        maxLength: 64
+      redirectUri:
+        type: string
+        minLength: 1
+        maxLength: 2048
+      state:
+        type: string
+        maxLength: 1024
+      scope:
+        type: string
+        maxLength: 2048
   response_schema:
     name: IamOauthAuthorizationUrlResponse
     required:
@@ -833,12 +832,12 @@ frontend_operations:
 - route: /auth/oauth/callback/:provider
   source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
   operation: signInWithOAuth
-  operation_id: oauthSessions.create
+  operation_id: oauth.sessions.create
   kind: create
   api_surface: app
   api_method: POST
-  api_path: /app/v3/api/auth/oauth_sessions
-  sdk_domain: auth
+  api_path: /app/v3/api/oauth/sessions
+  sdk_domain: iam
   summary: Create OAuth IAM session
   description: Exchanges an OAuth authorization code for the same dual-token IAM session payload used by password login.
   read_sources:

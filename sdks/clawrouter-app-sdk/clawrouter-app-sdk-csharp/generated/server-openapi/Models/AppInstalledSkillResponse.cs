@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class AppInstalledSkillResponse
     {
-        public AppInstalledSkillItem? Item { get; set; }
+        public AppInstalledSkillItem Item { get; set; }
     }
 }

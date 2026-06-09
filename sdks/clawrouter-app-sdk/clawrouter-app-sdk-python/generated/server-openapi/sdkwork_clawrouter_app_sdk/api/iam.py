@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, ApiKeysUpdateResult, CreateApiKeyRequest, UpdateApiKeyRequest, UpdateSettingsRequest, UsersSettingsRetrieveResult, UsersSettingsUpdateResult
+from ..models import ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, ApiKeysUpdateResult, CreateApiKeyRequest, DepartmentAssignmentsListResult, DepartmentsListResult, DepartmentsTreeRetrieveResult, OrganizationMembershipsListResult, OrganizationsListResult, OrganizationsTreeRetrieveResult, PositionAssignmentsListResult, PositionsListResult, RoleBindingsListResult, UpdateApiKeyRequest, UpdateSettingsRequest, UsersCurrentRetrieveResult, UsersSettingsRetrieveResult, UsersSettingsUpdateResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -71,6 +71,116 @@ def serialize_path_primitive(value: Any) -> str:
     return str(value)
 
 
+def build_query_string(parameters: List[Dict[str, Any]]) -> str:
+    pairs: List[str] = []
+    for parameter in parameters:
+        append_serialized_parameter(pairs, parameter)
+    return '&'.join(pairs)
+
+
+def append_serialized_parameter(pairs: List[str], parameter: Dict[str, Any]) -> None:
+    value = parameter.get('value')
+    if value is None:
+        return
+
+    name = str(parameter.get('name') or '')
+    allow_reserved = bool(parameter.get('allow_reserved'))
+    content_type = parameter.get('content_type')
+    if content_type:
+        import json
+
+        pairs.append(f"{encode_query_component(name)}={encode_query_value(json.dumps(value, separators=(',', ':')), allow_reserved)}")
+        return
+
+    style = str(parameter.get('style') or 'form')
+    explode = bool(parameter.get('explode'))
+    if style == 'deepObject':
+        append_deep_object_parameter(pairs, name, value, allow_reserved)
+        return
+    if isinstance(value, (list, tuple)):
+        append_array_parameter(pairs, name, value, style, explode, allow_reserved)
+        return
+    if isinstance(value, dict):
+        append_object_parameter(pairs, name, value, style, explode, allow_reserved)
+        return
+
+    pairs.append(f"{encode_query_component(name)}={encode_query_value(serialize_primitive(value), allow_reserved)}")
+
+
+def append_array_parameter(
+    pairs: List[str],
+    name: str,
+    value: Any,
+    style: str,
+    explode: bool,
+    allow_reserved: bool,
+) -> None:
+    values = [serialize_primitive(item) for item in value if item is not None]
+    if not values:
+        return
+
+    if style == 'form' and explode:
+        for item in values:
+            pairs.append(f"{encode_query_component(name)}={encode_query_value(item, allow_reserved)}")
+        return
+
+    pairs.append(f"{encode_query_component(name)}={encode_query_value(','.join(values), allow_reserved)}")
+
+
+def append_object_parameter(
+    pairs: List[str],
+    name: str,
+    value: Dict[str, Any],
+    style: str,
+    explode: bool,
+    allow_reserved: bool,
+) -> None:
+    entries = [(key, entry_value) for key, entry_value in value.items() if entry_value is not None]
+    if not entries:
+        return
+
+    if style == 'form' and explode:
+        for key, entry_value in entries:
+            pairs.append(f"{encode_query_component(str(key))}={encode_query_value(serialize_primitive(entry_value), allow_reserved)}")
+        return
+
+    serialized = ','.join(
+        item
+        for key, entry_value in entries
+        for item in (str(key), serialize_primitive(entry_value))
+    )
+    pairs.append(f"{encode_query_component(name)}={encode_query_value(serialized, allow_reserved)}")
+
+
+def append_deep_object_parameter(pairs: List[str], name: str, value: Any, allow_reserved: bool) -> None:
+    if not isinstance(value, dict):
+        pairs.append(f"{encode_query_component(name)}={encode_query_value(serialize_primitive(value), allow_reserved)}")
+        return
+
+    for key, entry_value in value.items():
+        if entry_value is None:
+            continue
+        pairs.append(f"{encode_query_component(f'{name}[{key}]')}={encode_query_value(serialize_primitive(entry_value), allow_reserved)}")
+
+
+def serialize_primitive(value: Any) -> str:
+    if isinstance(value, dict):
+        import json
+
+        return json.dumps(value, separators=(',', ':'))
+    return str(value)
+
+
+def encode_query_component(value: str) -> str:
+    from urllib.parse import quote
+
+    return quote(value, safe='')
+
+
+def encode_query_value(value: str, allow_reserved: bool) -> str:
+    from urllib.parse import quote
+
+    return quote(value, safe=':/?#[]@!$&\'()*+,;=' if allow_reserved else '')
 
 def build_request_headers(headers: Dict[str, Dict[str, Any]], cookies: Optional[Dict[str, Dict[str, Any]]] = None) -> Optional[Dict[str, str]]:
     request_headers: Dict[str, str] = {}
@@ -133,6 +243,13 @@ class IamApi:
     def __init__(self, client: HttpClient):
         self._client = client
         self.api_keys = IamApiKeysApi(client)
+        self.department_assignments = IamDepartmentAssignmentsApi(client)
+        self.departments = IamDepartmentsApi(client)
+        self.organization_memberships = IamOrganizationMembershipsApi(client)
+        self.organizations = IamOrganizationsApi(client)
+        self.position_assignments = IamPositionAssignmentsApi(client)
+        self.positions = IamPositionsApi(client)
+        self.role_bindings = IamRoleBindingsApi(client)
         self.users = IamUsersApi(client)
 
 
@@ -165,13 +282,216 @@ class IamApiKeysApi:
         """Update key"""
         return self._client.patch(f"/app/v3/api/iam/api_keys/{serialize_path_parameter(api_key_id, {'name': 'apiKeyId', 'style': 'simple', 'explode': False})}", json=body)
 
+class IamDepartmentAssignmentsApi:
+    """iam iam.department_assignments API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, organization_id: Optional[str] = None, department_id: Optional[str] = None, user_id: Optional[str] = None, scope_id: Optional[str] = None, status: Optional[str] = None, q: Optional[str] = None, page: Optional[int] = None, page_size: Optional[int] = None) -> DepartmentAssignmentsListResult:
+        """List current IAM department assignments"""
+        query = build_query_string([
+            {'name': 'organization_id', 'value': organization_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'department_id', 'value': department_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'user_id', 'value': user_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'scope_id', 'value': scope_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'q', 'value': q, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/app/v3/api/iam/department_assignments", query))
+
+class IamDepartmentsApi:
+    """iam iam.departments API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.tree = IamDepartmentsTreeApi(client)
+
+
+    def list(self, organization_id: Optional[str] = None, department_id: Optional[str] = None, user_id: Optional[str] = None, scope_id: Optional[str] = None, status: Optional[str] = None, q: Optional[str] = None, page: Optional[int] = None, page_size: Optional[int] = None) -> DepartmentsListResult:
+        """List current IAM departments"""
+        query = build_query_string([
+            {'name': 'organization_id', 'value': organization_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'department_id', 'value': department_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'user_id', 'value': user_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'scope_id', 'value': scope_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'q', 'value': q, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/app/v3/api/iam/departments", query))
+
+class IamDepartmentsTreeApi:
+    """iam iam.departments.tree API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def retrieve(self, organization_id: Optional[str] = None, department_id: Optional[str] = None, user_id: Optional[str] = None, scope_id: Optional[str] = None, status: Optional[str] = None, q: Optional[str] = None, page: Optional[int] = None, page_size: Optional[int] = None) -> DepartmentsTreeRetrieveResult:
+        """Retrieve current IAM department tree"""
+        query = build_query_string([
+            {'name': 'organization_id', 'value': organization_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'department_id', 'value': department_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'user_id', 'value': user_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'scope_id', 'value': scope_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'q', 'value': q, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/app/v3/api/iam/departments/tree", query))
+
+class IamOrganizationMembershipsApi:
+    """iam iam.organization_memberships API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, organization_id: Optional[str] = None, department_id: Optional[str] = None, user_id: Optional[str] = None, scope_id: Optional[str] = None, status: Optional[str] = None, q: Optional[str] = None, page: Optional[int] = None, page_size: Optional[int] = None) -> OrganizationMembershipsListResult:
+        """List current IAM organization memberships"""
+        query = build_query_string([
+            {'name': 'organization_id', 'value': organization_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'department_id', 'value': department_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'user_id', 'value': user_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'scope_id', 'value': scope_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'q', 'value': q, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/app/v3/api/iam/organization_memberships", query))
+
+class IamOrganizationsApi:
+    """iam iam.organizations API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.tree = IamOrganizationsTreeApi(client)
+
+
+    def list(self, organization_id: Optional[str] = None, department_id: Optional[str] = None, user_id: Optional[str] = None, scope_id: Optional[str] = None, status: Optional[str] = None, q: Optional[str] = None, page: Optional[int] = None, page_size: Optional[int] = None) -> OrganizationsListResult:
+        """List current IAM organizations"""
+        query = build_query_string([
+            {'name': 'organization_id', 'value': organization_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'department_id', 'value': department_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'user_id', 'value': user_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'scope_id', 'value': scope_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'q', 'value': q, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/app/v3/api/iam/organizations", query))
+
+class IamOrganizationsTreeApi:
+    """iam iam.organizations.tree API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def retrieve(self, organization_id: Optional[str] = None, department_id: Optional[str] = None, user_id: Optional[str] = None, scope_id: Optional[str] = None, status: Optional[str] = None, q: Optional[str] = None, page: Optional[int] = None, page_size: Optional[int] = None) -> OrganizationsTreeRetrieveResult:
+        """Retrieve current IAM organization tree"""
+        query = build_query_string([
+            {'name': 'organization_id', 'value': organization_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'department_id', 'value': department_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'user_id', 'value': user_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'scope_id', 'value': scope_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'q', 'value': q, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/app/v3/api/iam/organizations/tree", query))
+
+class IamPositionAssignmentsApi:
+    """iam iam.position_assignments API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, organization_id: Optional[str] = None, department_id: Optional[str] = None, user_id: Optional[str] = None, scope_id: Optional[str] = None, status: Optional[str] = None, q: Optional[str] = None, page: Optional[int] = None, page_size: Optional[int] = None) -> PositionAssignmentsListResult:
+        """List current IAM position assignments"""
+        query = build_query_string([
+            {'name': 'organization_id', 'value': organization_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'department_id', 'value': department_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'user_id', 'value': user_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'scope_id', 'value': scope_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'q', 'value': q, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/app/v3/api/iam/position_assignments", query))
+
+class IamPositionsApi:
+    """iam iam.positions API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, organization_id: Optional[str] = None, department_id: Optional[str] = None, user_id: Optional[str] = None, scope_id: Optional[str] = None, status: Optional[str] = None, q: Optional[str] = None, page: Optional[int] = None, page_size: Optional[int] = None) -> PositionsListResult:
+        """List current IAM positions"""
+        query = build_query_string([
+            {'name': 'organization_id', 'value': organization_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'department_id', 'value': department_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'user_id', 'value': user_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'scope_id', 'value': scope_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'q', 'value': q, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/app/v3/api/iam/positions", query))
+
+class IamRoleBindingsApi:
+    """iam iam.role_bindings API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, organization_id: Optional[str] = None, department_id: Optional[str] = None, user_id: Optional[str] = None, scope_id: Optional[str] = None, status: Optional[str] = None, q: Optional[str] = None, page: Optional[int] = None, page_size: Optional[int] = None) -> RoleBindingsListResult:
+        """List current IAM role bindings"""
+        query = build_query_string([
+            {'name': 'organization_id', 'value': organization_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'department_id', 'value': department_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'user_id', 'value': user_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'scope_id', 'value': scope_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'q', 'value': q, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/app/v3/api/iam/role_bindings", query))
+
 class IamUsersApi:
     """iam iam.users API client."""
 
     def __init__(self, client: HttpClient):
         self._client = client
+        self.current = IamUsersCurrentApi(client)
         self.settings = IamUsersSettingsApi(client)
 
+
+class IamUsersCurrentApi:
+    """iam iam.users.current API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def retrieve(self) -> UsersCurrentRetrieveResult:
+        """Retrieve current IAM user"""
+        return self._client.get(f"/app/v3/api/iam/users/current")
 
 class IamUsersSettingsApi:
     """iam iam.users.settings API client."""

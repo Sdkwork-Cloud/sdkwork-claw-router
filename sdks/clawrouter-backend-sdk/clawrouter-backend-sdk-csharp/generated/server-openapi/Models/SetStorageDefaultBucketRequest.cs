@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class SetStorageDefaultBucketRequest
     {
-        public string? BucketId { get; set; }
-        public string? Reason { get; set; }
+        public string BucketId { get; set; }
+        public string Reason { get; set; }
     }
 }

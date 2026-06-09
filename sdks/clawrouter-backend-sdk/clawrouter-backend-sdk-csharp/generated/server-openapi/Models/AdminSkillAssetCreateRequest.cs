@@ -8,7 +8,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
     {
         public string? AltText { get; set; }
         public string? ArtifactId { get; set; }
-        public MediaResource? Asset { get; set; }
+        public MediaResource Asset { get; set; }
         public int? AssetType { get; set; }
         public string? DurationSeconds { get; set; }
         public string? FileSize { get; set; }

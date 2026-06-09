@@ -2082,6 +2082,54 @@ async fn database_config_router_serves_appbase_backend_iam_from_real_sql_runtime
 }
 
 #[tokio::test]
+async fn database_config_router_serves_appbase_backend_iam_oauth_from_real_sql_runtime() {
+    let database_url = unique_sqlite_url();
+    let pool = create_sqlite_pool(&database_url).await;
+    create_schema(&pool).await;
+    seed_catalog(&pool).await;
+    seed_admin_users(&pool).await;
+    seed_admin_oauth_provider_catalog(&pool).await;
+    pool.close().await;
+
+    let router = configured_router_from_database_config(
+        DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
+        Some(api_key_security_config()),
+        Some(trusted_subject_config()),
+        Some(app_session_config()),
+    )
+    .await
+    .unwrap();
+
+    let provider_catalog_payload = request_json(
+        router.clone(),
+        signed_request(
+            "GET",
+            "/backend/v3/api/iam/oauth/provider_catalog",
+            Body::empty(),
+        ),
+    )
+    .await;
+
+    assert_eq!("2000", provider_catalog_payload["code"]);
+    assert_eq!(
+        "provider-real", provider_catalog_payload["data"]["items"][0]["providerCatalogId"],
+        "database configured admin runtime must serve real appbase OAuth provider catalog rows"
+    );
+    assert_eq!(
+        "wechat_mp",
+        provider_catalog_payload["data"]["items"][0]["providerCode"]
+    );
+    assert_eq!(
+        "WeChat Mini Program",
+        provider_catalog_payload["data"]["items"][0]["providerName"]
+    );
+    assert!(
+        !provider_catalog_payload.to_string().contains("demo"),
+        "backend OAuth provider catalog route must not expose demo data"
+    );
+}
+
+#[tokio::test]
 async fn database_config_router_serves_signed_subject_admin_dashboard_overview() {
     let database_url = unique_sqlite_url();
     let pool = create_sqlite_pool(&database_url).await;
@@ -5949,6 +5997,36 @@ async fn seed_admin_finance(pool: &SqlitePool) {
         r#"INSERT INTO commerce_usage_settlement
             (id, uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, settlement_no, account_id, account_ledger_entry_id, order_id, payment_id, asset_type, direction, amount, points, tokens, currency, settlement_status, settled_at)
             VALUES (1400, 'settlement-1400', 10, 20, 1, 1, '2026-04-29 10:00:00', '2026-04-29 10:00:00', 0, 'settlement-1400', 'account-400', 'ledger-1000', 900, 910, 'points', 'debit', '88.25', 0, 12000, 'USD', 1, '2026-04-29 10:00:00')"#,
+    ] {
+        sqlx::query(statement).execute(pool).await.unwrap();
+    }
+}
+
+async fn seed_admin_oauth_provider_catalog(pool: &SqlitePool) {
+    for statement in [
+        r#"CREATE TABLE iam_oauth_provider_catalog (
+            id TEXT PRIMARY KEY,
+            uuid TEXT NOT NULL,
+            owner_tenant_id TEXT NOT NULL DEFAULT '0',
+            provider_code TEXT NOT NULL,
+            provider_family TEXT NOT NULL,
+            provider_name TEXT NOT NULL,
+            provider_display_name TEXT NOT NULL,
+            region_group TEXT NOT NULL,
+            protocol_family TEXT NOT NULL,
+            supported_surface_kinds_json TEXT NOT NULL DEFAULT '[]',
+            supported_resource_account_kinds_json TEXT NOT NULL DEFAULT '[]',
+            supported_access_modes_json TEXT NOT NULL DEFAULT '[]',
+            supports_pkce INTEGER NOT NULL DEFAULT 0,
+            supports_state INTEGER NOT NULL DEFAULT 1,
+            status TEXT NOT NULL,
+            sort_order INTEGER NOT NULL DEFAULT 0,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL
+        )"#,
+        r#"INSERT INTO iam_oauth_provider_catalog
+            (id, uuid, owner_tenant_id, provider_code, provider_family, provider_name, provider_display_name, region_group, protocol_family, supported_surface_kinds_json, supported_resource_account_kinds_json, supported_access_modes_json, supports_pkce, supports_state, status, sort_order, created_at, updated_at)
+            VALUES ('provider-real', 'provider-real', '0', 'wechat_mp', 'mini_program', 'WeChat Mini Program', 'WeChat Mini Program', 'china', 'oauth2', '["mini_program"]', '["mini_program"]', '["self_managed"]', 0, 1, 'active', 1, '2026-06-01 00:00:00', '2026-06-02 00:00:00')"#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }

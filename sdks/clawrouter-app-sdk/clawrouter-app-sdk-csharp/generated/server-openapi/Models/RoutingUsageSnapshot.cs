@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class RoutingUsageSnapshot
     {
-        public List<RoutingUsageData>? ChartData { get; set; }
-        public List<RoutingModelStats>? ModelStats { get; set; }
+        public List<RoutingUsageData> ChartData { get; set; }
+        public List<RoutingModelStats> ModelStats { get; set; }
     }
 }

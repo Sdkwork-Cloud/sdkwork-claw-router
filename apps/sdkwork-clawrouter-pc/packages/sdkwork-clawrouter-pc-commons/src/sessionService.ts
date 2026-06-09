@@ -14,7 +14,7 @@ import {
 export async function createAppSession(
   options: SdkworkAppbaseAppSdkClientOptions = {},
 ): Promise<StoredAppSessionToken | null> {
-  const result = await getSdkworkAppbaseAppSdkClient(options).auth.sessions.current.retrieve();
+  const result = await getSdkworkAppbaseAppSdkClient(options).auth.sessions.create({});
   const stored = storeAppSessionFromResult(result);
   resetClawRouterSdkClients();
   resetClawRouterIamRuntime();

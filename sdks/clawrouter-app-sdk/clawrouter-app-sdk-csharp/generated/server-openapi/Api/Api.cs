@@ -7,6 +7,7 @@ namespace Sdkwork.ClawRouter.App.Api
     {
         public static AgentsApi? Agents { get; set; }
         public static AiApi? Ai { get; set; }
+        public static AuthApi? Auth { get; set; }
         public static ChatApi? Chat { get; set; }
         public static ContentApi? Content { get; set; }
         public static EcosystemApi? Ecosystem { get; set; }
@@ -14,9 +15,8 @@ namespace Sdkwork.ClawRouter.App.Api
         public static MemoryApi? Memory { get; set; }
         public static NotificationApi? Notification { get; set; }
         public static PlatformApi? Platform { get; set; }
-        public static SystemApi? System { get; set; }
-        public static CommerceApi? Commerce { get; set; }
         public static RuntimeApi? Runtime { get; set; }
         public static SdkReferenceApi? SdkReference { get; set; }
+        public static SystemApi? System { get; set; }
     }
 }

@@ -17,38 +17,22 @@ use clawrouter_app_sdk::{SdkworkAppClient, SdkworkConfig};
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = SdkworkAppClient::new(SdkworkConfig::new("http://localhost:18082"))?;
-    client.set_api_key("your-api-key");
+    client.set_auth_token("your-auth-token");
+client.set_access_token("your-access-token");
 
-    let result = client.ai().channel_groups_list().await?;
+    let result = client.auth().sessions_current_retrieve().await?;
     println!("{result:?}");
     Ok(())
 }
 ```
 
-## Authentication Modes (Mutually Exclusive)
+## Authentication
 
-Choose exactly one mode for the same client instance.
-
-### Mode A: API Key
-
-```rust
-let client = SdkworkAppClient::new(SdkworkConfig::new("http://localhost:18082"))?;
-client.set_api_key("your-api-key");
-// Sends: Access-Token: <apiKey>
+```text
+Authorization: Bearer <authToken>
+Access-Token: <accessToken>
 ```
 
-### Mode B: Dual Token
-
-```rust
-let client = SdkworkAppClient::new(SdkworkConfig::new("http://localhost:18082"))?;
-client.set_auth_token("your-auth-token");
-client.set_access_token("your-access-token");
-// Sends:
-// Authorization: Bearer <authToken>
-// Access-Token: <accessToken>
-```
-
-> Do not call `set_api_key(...)` together with `set_auth_token(...)` + `set_access_token(...)` on the same client.
 
 ## Configuration (Non-Auth)
 
@@ -61,6 +45,7 @@ client.set_header("X-Custom-Header", "value");
 
 - `client.agents()` - agents API
 - `client.ai()` - ai API
+- `client.auth()` - auth API
 - `client.chat()` - chat API
 - `client.content()` - content API
 - `client.ecosystem()` - ecosystem API
@@ -68,10 +53,9 @@ client.set_header("X-Custom-Header", "value");
 - `client.memory()` - memory API
 - `client.notification()` - notification API
 - `client.platform()` - platform API
-- `client.system()` - system API
-- `client.commerce()` - commerce API
 - `client.runtime()` - runtime API
 - `client.sdk_reference()` - sdk_reference API
+- `client.system()` - system API
 
 ## Usage Examples
 
@@ -93,6 +77,14 @@ println!("{result:?}");
 ```rust
 // List groups
 let result = client.ai().channel_groups_list().await?;
+println!("{result:?}");
+```
+
+### auth
+
+```rust
+// Retrieve current IAM session
+let result = client.auth().sessions_current_retrieve().await?;
 println!("{result:?}");
 ```
 
@@ -166,26 +158,6 @@ let result = client.platform().apps_store_categories_list().await?;
 println!("{result:?}");
 ```
 
-### system
-
-```rust
-use std::collections::HashMap;
-// Retrieve public site runtime branding settings
-let mut query = HashMap::new();
-query.insert("tenant_code".to_string(), serde_json::json!("ok"));
-query.insert("organization_code".to_string(), serde_json::json!("ok"));
-let result = client.system().site_runtime_retrieve(Some(&query)).await?;
-println!("{result:?}");
-```
-
-### commerce
-
-```rust
-// Recharges Settings Retrieve
-let result = client.commerce().recharges_settings_retrieve().await?;
-println!("{result:?}");
-```
-
 ### runtime
 
 ```rust
@@ -218,6 +190,14 @@ let result = client.sdk_reference().archives_create(&body).await?;
 println!("{result:?}");
 ```
 
+### system
+
+```rust
+// Retrieve public IAM verification policy
+let result = client.system().iam_verification_policy_retrieve().await?;
+println!("{result:?}");
+```
+
 ## Error Handling
 
 ```rust
@@ -227,7 +207,7 @@ use clawrouter_app_sdk::{SdkworkAppClient, SdkworkConfig};
 let client = SdkworkAppClient::new(SdkworkConfig::new("http://localhost:18082"))?;
 
 let outcome: Result<(), _> = async {
-    client.ai().channel_groups_list().await?;
+    client.auth().sessions_current_retrieve().await?;
     Ok(())
 }.await;
 

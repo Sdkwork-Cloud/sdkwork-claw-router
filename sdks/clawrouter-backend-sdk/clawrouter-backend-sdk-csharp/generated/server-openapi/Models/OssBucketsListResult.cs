@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class OssBucketsListResult
     {
-        public string? Code { get; set; }
+        public string Code { get; set; }
         public StorageBucketListResponse? Data { get; set; }
         public string? Msg { get; set; }
     }

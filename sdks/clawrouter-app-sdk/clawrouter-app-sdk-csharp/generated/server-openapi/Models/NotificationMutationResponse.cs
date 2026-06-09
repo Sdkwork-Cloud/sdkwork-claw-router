@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class NotificationMutationResponse
     {
-        public string? State { get; set; }
-        public bool? Updated { get; set; }
+        public string State { get; set; }
+        public bool Updated { get; set; }
     }
 }

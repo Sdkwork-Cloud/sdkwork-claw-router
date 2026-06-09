@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class StorageProviderListResponse
     {
-        public List<StorageProviderConfig>? Items { get; set; }
-        public string? RequestId { get; set; }
+        public List<StorageProviderConfig> Items { get; set; }
+        public string RequestId { get; set; }
     }
 }

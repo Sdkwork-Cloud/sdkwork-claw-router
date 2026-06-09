@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminMonitorPerformanceResponse
     {
-        public List<AdminMonitorPerformanceItem>? Items { get; set; }
+        public List<AdminMonitorPerformanceItem> Items { get; set; }
     }
 }

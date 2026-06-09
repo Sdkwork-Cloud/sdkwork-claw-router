@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class CacheInstancesDeleteResult
     {
-        public string? Code { get; set; }
+        public string Code { get; set; }
         public AdminCacheOperationResponse? Data { get; set; }
         public string? Msg { get; set; }
     }

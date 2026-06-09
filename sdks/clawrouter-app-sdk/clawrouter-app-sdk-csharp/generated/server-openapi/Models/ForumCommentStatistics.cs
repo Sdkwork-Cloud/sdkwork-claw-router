@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class ForumCommentStatistics
     {
-        public string? TotalComments { get; set; }
+        public string TotalComments { get; set; }
     }
 }

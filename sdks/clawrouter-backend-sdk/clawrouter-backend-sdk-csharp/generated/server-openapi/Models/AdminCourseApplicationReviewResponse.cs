@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminCourseApplicationReviewResponse
     {
-        public AdminCourseApplicationItem? Item { get; set; }
+        public AdminCourseApplicationItem Item { get; set; }
     }
 }

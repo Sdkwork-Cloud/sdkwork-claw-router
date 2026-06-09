@@ -17,7 +17,6 @@ struct AdminCacheState {
 }
 
 #[derive(Debug, Default, Deserialize)]
-#[serde(rename_all = "camelCase")]
 struct CacheKeyListQuery {
     limit: Option<usize>,
     cursor: Option<String>,

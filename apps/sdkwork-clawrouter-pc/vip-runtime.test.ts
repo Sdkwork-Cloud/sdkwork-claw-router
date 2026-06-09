@@ -128,7 +128,7 @@ test("VIP purchase page remains a dedicated product module backed by standard me
     assert.doesNotMatch(routeClassification, pattern);
   }
 
-  assert.match(workspace, /sdkwork-appbase\/packages\/common\/commerce\/\*/);
+  assert.match(workspace, /sdkwork-commerce\/packages\/common\/commerce\/\*/);
 });
 
 test("VIP service preserves product purchase APIs while using generated app SDK membership paths", () => {
@@ -182,11 +182,11 @@ test("VIP service preserves product purchase APIs while using generated app SDK 
 
   assert.match(indexSource, /export \{ VipView, VipPurchasePage, VipPurchaseModal \} from '\.\/VipView'/);
 
-  assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.current\.retrieve\(\)/);
-  assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.packageGroups\.list/);
-  assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.packageGroups\.packages\.list/);
-  assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.purchases\.create/);
-  assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.system\.promotions\.codes\.redemptions\.create/);
+  assert.match(serviceSource, /getSdkworkCommerceService\(\)\.memberships\.current\.retrieve\(\)/);
+  assert.match(serviceSource, /getSdkworkCommerceService\(\)\.memberships\.packageGroups\.list/);
+  assert.match(serviceSource, /getSdkworkCommerceService\(\)\.memberships\.packageGroups\.packages\.list/);
+  assert.match(serviceSource, /getSdkworkCommerceService\(\)\.memberships\.purchases\.create/);
+  assert.match(serviceSource, /getSdkworkCommerceService\(\)\.promotions\.codes\.redemptions\.create/);
   assert.doesNotMatch(serviceSource, /commerce\.coupons/);
   assert.doesNotMatch(serviceSource, /fetch\(/);
   assert.doesNotMatch(serviceSource, /axios/);
@@ -219,7 +219,7 @@ test("VIP public page skips current membership and current user requests when no
                     id: 101,
                     name: "Monthly Lite",
                     planName: "Lite member",
-                    price: "19.90",
+                    priceAmount: "19.90",
                     durationDays: 30,
                   },
                 ],
@@ -256,7 +256,7 @@ test("VIP page localizes public tab, package, and feature copy", () => {
   ]) {
     assert.match(viewSource, new RegExp(escapeRegExp(marker)));
   }
-  assert.doesNotMatch(viewSource, /璺?u);
+  assert.doesNotMatch(viewSource, /[\u4e00-\u9fff]/u);
 
   for (const marker of [
     "vip.title",
@@ -421,9 +421,7 @@ test("VIP points purchase modal uses current user avatar with localized fallback
 
   for (const staleCopy of [
     "Click a package to refresh the payment code",
-    "鐐瑰嚮濂楅鍒锋柊鏀粯鐮?,
     "Credit rules",
-    " 绉垎瑙勫垯",
   ]) {
     assert.doesNotMatch(i18nSource, new RegExp(escapeRegExp(staleCopy)));
   }
@@ -442,16 +440,16 @@ test("VIP points purchase agreement copy uses configurable site branding instead
     assert.match(viewSource, new RegExp(escapeRegExp(marker)));
   }
 
+  const chineseAgreement = '"vip.pointsPurchase.agreement": "\u300a{{brandName}}\u4ed8\u8d39\u670d\u52a1\u534f\u8bae\uff08\u542b\u81ea\u52a8\u7eed\u8d39\u6761\u6b3e\uff09\u300b"';
   for (const marker of [
     '"vip.pointsPurchase.agreement": "{{brandName}} Paid Service Agreement (including auto-renewal terms)"',
-    '"vip.pointsPurchase.agreement": "銆妠{brandName}}浠樿垂鏈嶅姟鍗忚锛堝惈鑷姩缁垂鏉℃锛夈€?',
+    chineseAgreement,
   ]) {
     assert.match(i18nSource, new RegExp(escapeRegExp(marker)));
   }
 
   for (const retiredBrandName of [
     "Bangzhao",
-    "姒滄嫑",
     "vip.pointsPurchase.brand",
   ]) {
     assert.doesNotMatch(i18nSource, new RegExp(escapeRegExp(retiredBrandName)));
@@ -556,11 +554,10 @@ test("membership console package owns direct membership purchase and a professio
     assert.doesNotMatch(source, new RegExp(escapeRegExp(retiredMarker)));
   }
 
-  assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.current\.retrieve\(\)/);
-  assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.packageGroups\.list/);
-  assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.benefits\.list/);
-  assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.packages\.list/);
-  assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.purchases\.create/);
+  assert.match(serviceSource, /getSdkworkCommerceService\(\)\.memberships\.current\.retrieve\(\)/);
+  assert.match(serviceSource, /getSdkworkCommerceService\(\)\.memberships\.packageGroups\.list/);
+  assert.match(serviceSource, /getSdkworkCommerceService\(\)\.memberships\.packageGroups\.packages\.list/);
+  assert.match(serviceSource, /getSdkworkCommerceService\(\)\.memberships\.purchases\.create/);
   assert.doesNotMatch(serviceSource, /fetch\(/);
   assert.doesNotMatch(serviceSource, /axios/);
   assert.doesNotMatch(serviceSource, /billing\(\)\.vip|\/billing\/vip|\/vip/);
@@ -582,7 +579,7 @@ test("VIP catalog uses the generated app SDK standard membership package group p
                 id: 2,
                 name: "Yearly purchase",
                 description: "Yearly membership packages",
-                sortWeight: 20,
+                sortOrder: 20,
               },
             ],
           },
@@ -599,9 +596,9 @@ test("VIP catalog uses the generated app SDK standard membership package group p
                 durationDays: 365,
                 name: "Yearly Premium",
                 planName: "Premium member",
-                price: "199.00",
+                priceAmount: "199.00",
                 recommended: true,
-                sortWeight: 10,
+                sortOrder: 10,
                 tags: ["yearly", "premium"],
               },
             ],
@@ -645,17 +642,17 @@ test("VIP catalog loads tabs from generated app SDK membership package groups", 
                 id: 1,
                 name: "Monthly purchase",
                 description: "Monthly membership packages",
-                sortWeight: 10,
+                sortOrder: 10,
                 packages: [
                   {
                     id: 303,
                     name: "Monthly Advanced",
                     planName: "Advanced member",
-                    price: "69.90",
-                    originalPrice: "129.00",
-                    pointAmount: 45000,
+                    priceAmount: "69.90",
+                    originalPriceAmount: "129.00",
+                    pointsPerMonth: 45000,
                     durationDays: 30,
-                    sortWeight: 30,
+                    sortOrder: 30,
                     recommended: true,
                     tags: ["monthly", "advanced", "recommended"],
                   },
@@ -665,17 +662,17 @@ test("VIP catalog loads tabs from generated app SDK membership package groups", 
                 id: 2,
                 name: "Yearly purchase",
                 description: "Yearly membership packages",
-                sortWeight: 20,
+                sortOrder: 20,
                 packages: [
                   {
                     id: 403,
                     name: "Yearly Advanced",
                     planName: "Advanced member",
-                    price: "699.00",
-                    originalPrice: "999.00",
-                    pointAmount: 540000,
+                    priceAmount: "699.00",
+                    originalPriceAmount: "999.00",
+                    pointsPerMonth: 540000,
                     durationDays: 365,
-                    sortWeight: 30,
+                    sortOrder: 30,
                     recommended: true,
                     tags: ["yearly", "advanced", "recommended"],
                   },
@@ -762,7 +759,7 @@ test("VIP catalog keeps renderable packages when API prices are not purchaseable
   );
 });
 
-test("VIP catalog falls back to preview packages when membership groups cannot be read", async () => {
+test("VIP catalog fails closed when membership groups cannot be read", async () => {
   await withMembershipSdkResponses(
     (path) => {
       if (path === "/app/v3/api/memberships/current") {
@@ -777,14 +774,73 @@ test("VIP catalog falls back to preview packages when membership groups cannot b
       return { code: "2000", data: { items: [] } };
     },
     async () => {
-      const catalog = await VipService.fetchVipCatalog();
-
-      assert.equal(catalog.groups.length > 0, true);
-      assert.equal(catalog.groups[0]?.packages.length > 0, true);
-      assert.equal(catalog.groups[0]?.packages[0]?.isPreview, true);
-      assert.equal(catalog.groups[0]?.packages[0]?.isPurchasable, false);
+      await assert.rejects(
+        () => VipService.fetchVipCatalog(),
+        /membership package groups unavailable/,
+      );
     },
   );
+});
+
+test("VIP service does not fabricate preview packages or read duplicate response field names", () => {
+  const serviceSource = readPortalFile("./packages/sdkwork-clawrouter-pc-vip/src/vipService.ts");
+
+  for (const forbidden of [
+    "createFallbackVipCatalog",
+    "createPreviewVipPackages",
+    "monthly-preview",
+    "annual-preview",
+    "isPreview: true",
+    "request_no",
+    "order_no",
+    "order_id",
+    "payment_intent_id",
+    "payment_status",
+    "order_status",
+    "provider_code",
+    "payment_method",
+    "payment_product",
+    "next_action",
+    "payment_id",
+    "redemption_no",
+    "plan_id",
+    "plan_name",
+    "expires_at",
+    "package_group_id",
+    "group_id",
+    "group_no",
+    "group_name",
+    "sort_weight",
+    "package_id",
+    "package_no",
+    "price_amount",
+    "original_price_amount",
+    "sku_id",
+    "currency_code",
+    "duration_days",
+    "recurrence_cycle",
+    "points_per_month",
+    "qr_code_payload",
+    "cashier_url",
+    "'orderNo'",
+    "'orderId'",
+    "'paymentIntentId'",
+    "'paymentStatus'",
+    "'orderStatus'",
+    "'redemptionNo'",
+    "'state'",
+    "'msg'",
+    "'groupName'",
+    "'packageGroupNo'",
+    "'packageName'",
+    "'planNo'",
+    "'billingCycle'",
+    "'price'",
+    "'originalPrice'",
+    "'pointAmount'",
+  ]) {
+    assert.doesNotMatch(serviceSource, new RegExp(escapeRegExp(forbidden)));
+  }
 });
 
 test("VIP purchase uses idempotent generated app SDK membership purchase path", async () => {
@@ -1108,8 +1164,8 @@ test("membership service fails closed for malformed packages and blank purchase 
 test("OpenAPI and generated SDK expose standard membership APIs and reject billing VIP aliases", () => {
   const appOpenapi = readPortalFile("../../generated/openapi/clawrouter-app-openapi.json");
   const backendOpenapi = readPortalFile("../../generated/openapi/clawrouter-backend-openapi.json");
-  const appCommerceSdk = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/commerce.ts");
-  const backendCommerceSdk = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/api/commerce.ts");
+  const appCommerceSdk = readPortalFile("../../../sdkwork-commerce/sdks/sdkwork-commerce-app-sdk/sdkwork-commerce-app-sdk-typescript/generated/server-openapi/src/api/commerce.ts");
+  const backendMembershipsSdk = readPortalFile("../../../sdkwork-commerce/sdks/sdkwork-commerce-backend-sdk/sdkwork-commerce-backend-sdk-typescript/generated/server-openapi/src/api/memberships.ts");
 
   for (const path of [
     "/app/v3/api/memberships/current",
@@ -1156,28 +1212,17 @@ test("OpenAPI and generated SDK expose standard membership APIs and reject billi
   assert.doesNotMatch(appOpenapi, /"qrCodeContent"/);
   assert.doesNotMatch(appOpenapi, /"paymentUrl"/);
 
-  const commerceOperationResponseSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/types/commerce-operation-response.ts");
   for (const marker of [
-    "import type { MediaResource } from './media-resource';",
-    "paymentId?: string | null",
-    "qrCode?: MediaResource",
-    "qrCodePayload?: string | null",
-  ]) {
-    assert.match(commerceOperationResponseSource, new RegExp(escapeRegExp(marker)));
-  }
-  assert.doesNotMatch(commerceOperationResponseSource, /qrCodeImageUrl/);
-
-  for (const marker of [
-    "class CommerceMembershipsEntitlementsApi",
-    "class CommerceMembershipsMembersApi",
-    "class CommerceMembershipsPackagesApi",
-    "class CommerceMembershipsPlansApi",
+    "class MembershipsEntitlementsApi",
+    "class MembershipsMembersApi",
+    "class MembershipsPackagesApi",
+    "class MembershipsPlansApi",
     "backendApiPath(`/memberships/entitlements`)",
     "backendApiPath(`/memberships/members`)",
     "backendApiPath(`/memberships/packages`)",
     "backendApiPath(`/memberships/plans`)",
   ]) {
-    assert.match(backendCommerceSdk, new RegExp(escapeRegExp(marker)));
+    assert.match(backendMembershipsSdk, new RegExp(escapeRegExp(marker)));
   }
 
   for (const retiredToken of [
@@ -1189,7 +1234,7 @@ test("OpenAPI and generated SDK expose standard membership APIs and reject billi
     assert.doesNotMatch(appOpenapi, new RegExp(escapeRegExp(retiredToken)));
     assert.doesNotMatch(backendOpenapi, new RegExp(escapeRegExp(retiredToken)));
     assert.doesNotMatch(appCommerceSdk, new RegExp(escapeRegExp(retiredToken)));
-    assert.doesNotMatch(backendCommerceSdk, new RegExp(escapeRegExp(retiredToken)));
+    assert.doesNotMatch(backendMembershipsSdk, new RegExp(escapeRegExp(retiredToken)));
   }
 });
 

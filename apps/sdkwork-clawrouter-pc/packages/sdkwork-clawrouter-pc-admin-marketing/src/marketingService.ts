@@ -6,9 +6,8 @@ import {
   readRequiredString,
   type ApiRecord,
 } from 'sdkwork-clawrouter-pc-commons/runtime';
-import { getSdkworkCommerceService } from '@sdkwork/commerce-service';
 
-type BackendCommerceService = ReturnType<typeof getSdkworkCommerceService>['admin'];
+type BackendCommerceService = ReturnType<typeof getClawRouterBackendSdkClient>['commerce'];
 
 export interface ReferralStat {
   id: string;
@@ -30,77 +29,77 @@ export class MarketingService {
 export async function backendPromotionOffersList(
   params?: Parameters<BackendCommerceService['promotions']['offers']['management']['list']>[0],
 ) {
-  const result = await getSdkworkCommerceService().admin.promotions.offers.management.list(params);
+  const result = await getClawRouterBackendSdkClient().commerce.promotions.offers.management.list(params);
   return readRequiredPromotionItems(result, 'Promotion offer records are required');
 }
 
 export async function backendPromotionCouponStocksList(
   params?: Parameters<BackendCommerceService['promotions']['couponStocks']['list']>[0],
 ) {
-  const result = await getSdkworkCommerceService().admin.promotions.couponStocks.list(params);
+  const result = await getClawRouterBackendSdkClient().commerce.promotions.couponStocks.list(params);
   return readRequiredPromotionItems(result, 'Promotion coupon stock records are required');
 }
 
 export async function backendPromotionCodesList(
   params?: Parameters<BackendCommerceService['promotions']['codes']['list']>[0],
 ) {
-  const result = await getSdkworkCommerceService().admin.promotions.codes.list(params);
+  const result = await getClawRouterBackendSdkClient().commerce.promotions.codes.list(params);
   return readRequiredPromotionItems(result, 'Promotion code records are required');
 }
 
 export async function backendPromotionDiscountApplicationsList(
   params?: Parameters<BackendCommerceService['promotions']['discountApplications']['list']>[0],
 ) {
-  const result = await getSdkworkCommerceService().admin.promotions.discountApplications.list(params);
+  const result = await getClawRouterBackendSdkClient().commerce.promotions.discountApplications.list(params);
   return readRequiredPromotionItems(result, 'Promotion discount application records are required');
 }
 
 export async function backendPromotionDiscountAllocationsList(
   params?: Parameters<BackendCommerceService['promotions']['discountAllocations']['list']>[0],
 ) {
-  const result = await getSdkworkCommerceService().admin.promotions.discountAllocations.list(params);
+  const result = await getClawRouterBackendSdkClient().commerce.promotions.discountAllocations.list(params);
   return readRequiredPromotionItems(result, 'Promotion discount allocation records are required');
 }
 
 export async function backendPromotionCodeRedemptionsList(
   params?: Parameters<BackendCommerceService['promotions']['codes']['redemptions']['list']>[0],
 ) {
-  const result = await getSdkworkCommerceService().admin.promotions.codes.redemptions.list(params);
+  const result = await getClawRouterBackendSdkClient().commerce.promotions.codes.redemptions.list(params);
   return readRequiredPromotionItems(result, 'Promotion code redemption records are required');
 }
 
 export async function backendPromotionUserCouponsList(
   params?: Parameters<BackendCommerceService['promotions']['userCoupons']['management']['list']>[0],
 ) {
-  const result = await getSdkworkCommerceService().admin.promotions.userCoupons.management.list(params);
+  const result = await getClawRouterBackendSdkClient().commerce.promotions.userCoupons.management.list(params);
   return readRequiredPromotionItems(result, 'Promotion user coupon records are required');
 }
 
 export async function backendPromotionCouponLedgerEntriesList(
   params?: Parameters<BackendCommerceService['promotions']['couponLedgerEntries']['list']>[0],
 ) {
-  const result = await getSdkworkCommerceService().admin.promotions.couponLedgerEntries.list(params);
+  const result = await getClawRouterBackendSdkClient().commerce.promotions.couponLedgerEntries.list(params);
   return readRequiredPromotionItems(result, 'Promotion coupon ledger records are required');
 }
 
 export async function backendPromotionBudgetLedgerEntriesList(
   params?: Parameters<BackendCommerceService['promotions']['budgetLedgerEntries']['list']>[0],
 ) {
-  const result = await getSdkworkCommerceService().admin.promotions.budgetLedgerEntries.list(params);
+  const result = await getClawRouterBackendSdkClient().commerce.promotions.budgetLedgerEntries.list(params);
   return readRequiredPromotionItems(result, 'Promotion budget ledger records are required');
 }
 
 export async function backendPromotionExternalBindingsList(
   params?: Parameters<BackendCommerceService['promotions']['externalBindings']['list']>[0],
 ) {
-  const result = await getSdkworkCommerceService().admin.promotions.externalBindings.list(params);
+  const result = await getClawRouterBackendSdkClient().commerce.promotions.externalBindings.list(params);
   return readRequiredPromotionItems(result, 'Promotion external binding records are required');
 }
 
 export async function backendPromotionEventsList(
   params?: Parameters<BackendCommerceService['promotions']['events']['list']>[0],
 ) {
-  const result = await getSdkworkCommerceService().admin.promotions.events.list(params);
+  const result = await getClawRouterBackendSdkClient().commerce.promotions.events.list(params);
   return readRequiredPromotionItems(result, 'Promotion event records are required');
 }
 

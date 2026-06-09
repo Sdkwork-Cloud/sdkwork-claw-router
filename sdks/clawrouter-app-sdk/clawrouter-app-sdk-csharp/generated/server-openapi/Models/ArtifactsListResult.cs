@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class ArtifactsListResult
     {
-        public string? Code { get; set; }
+        public string Code { get; set; }
         public RuntimeArtifactListResponse? Data { get; set; }
         public string? Msg { get; set; }
     }

@@ -7,6 +7,7 @@ import {
   readRequiredApiItems,
   readRequiredApiItem,
   requiredSafePathSegment,
+  readRecordArray,
   readRequiredNonNegativeNumber,
   readRequiredNumber,
   readRequiredString,
@@ -17,6 +18,7 @@ import {
 import type {
   AdminChannelGroupCreateRequest,
   AdminChannelGroupUpdateRequest,
+  AdminRuntimeRouteExplainRequest,
 } from '@sdkwork/clawrouter-backend-sdk';
 
 export type GroupPriceReferenceMode = 'multiplier' | 'official_price';
@@ -140,6 +142,203 @@ export interface GroupChannelOption {
   healthStatus: 'active' | 'error';
 }
 
+export type GroupRoutePreflightSeverity = 'blocking' | 'warning' | 'info';
+
+export type GroupRoutePreflightIssueCode =
+  | 'group.disabled'
+  | 'group.account_count.empty'
+  | 'group.resource_access.empty'
+  | 'group.bindings.empty'
+  | 'group.bindings.no_active_healthy_member'
+  | 'group.bindings.no_resource_overlap'
+  | 'group.bindings.missing_scope_metadata';
+
+export interface GroupRoutePreflightIssue {
+  code: GroupRoutePreflightIssueCode;
+  severity: GroupRoutePreflightSeverity;
+  messageKey: string;
+  details?: string[];
+}
+
+export interface GroupRoutePreflightResult {
+  ready: boolean;
+  issueCodes: GroupRoutePreflightIssueCode[];
+  issues: GroupRoutePreflightIssue[];
+  resourceCodes: string[];
+  resourceGroupCodes: string[];
+  configuredResourceAccessCount: number;
+  apiScope: string[];
+  capabilities: string[];
+  activeHealthyBindingCount: number;
+}
+
+export interface GroupRouteExplainResult extends GroupRoutePreflightResult {
+  source: 'backend_config';
+  effectiveResourceCodes: string[];
+  configuredResourceGroupAccessCount: number;
+  routableBindingCount: number;
+}
+
+export type GroupRuntimeRouteCapability =
+  | 'chat'
+  | 'image'
+  | 'audio'
+  | 'music'
+  | 'video'
+  | 'embedding'
+  | 'rerank'
+  | 'network';
+
+export type GroupRuntimeRouteExplainIssueCode =
+  | 'route.unavailable'
+  | 'pricing.unavailable';
+
+export interface GroupRuntimeRouteExplainRequest {
+  apiKeyId: string;
+  channelGroupId?: string;
+  resourceCode?: string;
+  catalogKey?: string;
+  model?: string;
+  apiCode?: string;
+  capability?: GroupRuntimeRouteCapability;
+  billingMeter?: string;
+  routeKey?: string;
+}
+
+export interface GroupRuntimeRouteExplainIssue {
+  code: GroupRuntimeRouteExplainIssueCode;
+  severity: GroupRoutePreflightSeverity;
+  message: string;
+}
+
+export interface GroupRuntimeRouteExplainCandidate {
+  kind: 'model' | 'channel';
+  providerCode: string;
+  channelId: string;
+  channelGroupId: string;
+  channelGroupCode: string;
+  pricingPlanCode: string;
+  policyId: string | null;
+  ruleId: string | null;
+  apiCode: string;
+  catalogKey: string | null;
+  requestedModel: string | null;
+  providerModel: string | null;
+  regionCode: string;
+  credentialId: string | null;
+  credentialRotation: string | null;
+  timeoutMs: number | null;
+}
+
+export interface GroupRuntimeRouteExplainResult {
+  source: 'runtime_selector';
+  ready: boolean;
+  resourceCode: string;
+  catalogKey: string | null;
+  model: string | null;
+  apiCode: string;
+  capability: GroupRuntimeRouteCapability;
+  billingMeter: string;
+  apiKeyId: string;
+  channelGroupId: string;
+  groupCode: string;
+  pricingPlanCode: string;
+  candidateCount: number;
+  selectedCandidates: GroupRuntimeRouteExplainCandidate[];
+  blockedReasons: GroupRuntimeRouteExplainIssue[];
+  warnings: GroupRuntimeRouteExplainIssue[];
+  policyId: string | null;
+  ruleId: string | null;
+  policySnapshotVersion: string;
+}
+
+export interface GroupRoutePreflightBinding {
+  resourceCodes?: readonly string[];
+  apiScope?: readonly string[];
+  capabilities?: readonly string[];
+  status: GroupChannelBindingData['status'];
+  healthStatus: GroupChannelBindingData['healthStatus'];
+}
+
+const routePreflightMessageKeys: Record<GroupRoutePreflightIssueCode, string> = {
+  'group.disabled': 'admin.group.routePreflight.issue.groupDisabled',
+  'group.account_count.empty': 'admin.group.routePreflight.issue.zeroAvailableAccounts',
+  'group.resource_access.empty': 'admin.group.routePreflight.issue.emptyResourceAccess',
+  'group.bindings.empty': 'admin.group.routePreflight.issue.emptyBindings',
+  'group.bindings.no_active_healthy_member': 'admin.group.routePreflight.issue.noActiveHealthyMember',
+  'group.bindings.no_resource_overlap': 'admin.group.routePreflight.issue.noResourceOverlap',
+  'group.bindings.missing_scope_metadata': 'admin.group.routePreflight.issue.missingScopeMetadata',
+};
+
+export function buildGroupRoutePreflight(
+  group: Pick<GroupData, 'resourceCodes' | 'resourceGroupCodes' | 'status' | 'accountCount'>,
+  bindings: readonly GroupRoutePreflightBinding[],
+): GroupRoutePreflightResult {
+  const issues: GroupRoutePreflightIssue[] = [];
+  const resourceCodes = normalizePreflightStringList(group.resourceCodes);
+  const resourceGroupCodes = normalizePreflightStringList(group.resourceGroupCodes);
+  const activeHealthyBindings = bindings.filter(
+    binding => binding.status === 'active' && binding.healthStatus === 'active',
+  );
+  const activeHealthyBindingResourceCodes = activeHealthyBindings
+    .map(binding => normalizePreflightStringList(binding.resourceCodes));
+  const apiScope = normalizePreflightStringList(
+    activeHealthyBindings.flatMap(binding => binding.apiScope ?? []),
+  );
+  const capabilities = normalizePreflightStringList(
+    activeHealthyBindings.flatMap(binding => binding.capabilities ?? []),
+  );
+
+  if (group.status !== 'active') {
+    issues.push(createGroupRoutePreflightIssue('group.disabled', 'blocking'));
+  }
+  if (group.accountCount.available <= 0) {
+    issues.push(createGroupRoutePreflightIssue('group.account_count.empty', 'blocking'));
+  }
+  if (resourceCodes.length === 0 && resourceGroupCodes.length === 0) {
+    issues.push(createGroupRoutePreflightIssue('group.resource_access.empty', 'blocking'));
+  }
+  if (bindings.length === 0) {
+    issues.push(createGroupRoutePreflightIssue('group.bindings.empty', 'blocking'));
+  } else if (activeHealthyBindings.length === 0) {
+    issues.push(createGroupRoutePreflightIssue('group.bindings.no_active_healthy_member', 'blocking'));
+  }
+
+  const explicitBindingResourceCodes = activeHealthyBindingResourceCodes
+    .filter(bindingResourceCodes => bindingResourceCodes.length > 0);
+  if (
+    resourceCodes.length > 0
+    && explicitBindingResourceCodes.length > 0
+    && !explicitBindingResourceCodes.some(bindingResourceCodes => hasAnyOverlap(resourceCodes, bindingResourceCodes))
+  ) {
+    issues.push(createGroupRoutePreflightIssue(
+      'group.bindings.no_resource_overlap',
+      'warning',
+      resourceCodes,
+    ));
+  }
+  if (
+    activeHealthyBindings.some(binding => (
+      normalizePreflightStringList(binding.apiScope).length === 0
+      && normalizePreflightStringList(binding.capabilities).length === 0
+    ))
+  ) {
+    issues.push(createGroupRoutePreflightIssue('group.bindings.missing_scope_metadata', 'warning'));
+  }
+
+  return {
+    ready: issues.every(issue => issue.severity !== 'blocking'),
+    issueCodes: issues.map(issue => issue.code),
+    issues,
+    resourceCodes,
+    resourceGroupCodes,
+    configuredResourceAccessCount: resourceCodes.length + resourceGroupCodes.length,
+    apiScope,
+    capabilities,
+    activeHealthyBindingCount: activeHealthyBindings.length,
+  };
+}
+
 export class GroupService {
   static async fetchGroups(): Promise<GroupData[]> {
     const result = await getClawRouterBackendSdkClient().ai.channelGroups.list();
@@ -182,6 +381,25 @@ export class GroupService {
       .map(normalizeGroupChannelBinding);
   }
 
+  static async fetchGroupRouteExplain(groupId: string): Promise<GroupRouteExplainResult> {
+    const channelGroupId = requiredSafePathSegment(groupId, 'channelGroupId');
+    const result = await getClawRouterBackendSdkClient().ai.channelGroups.routeExplain.retrieve(
+      channelGroupId,
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to fetch group route explain');
+    return normalizeGroupRouteExplain(readApiRecord(result));
+  }
+
+  static async fetchRuntimeRouteExplain(
+    request: GroupRuntimeRouteExplainRequest,
+  ): Promise<GroupRuntimeRouteExplainResult> {
+    const result = await getClawRouterBackendSdkClient().ai.routeExplain.create(
+      toRuntimeRouteExplainRequest(request),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to fetch runtime route explain');
+    return normalizeRuntimeRouteExplain(readApiRecord(result));
+  }
+
   static async replaceGroupChannelBindings(
     groupId: string,
     items: GroupChannelBindingInput[],
@@ -216,6 +434,28 @@ export class GroupService {
     return readRequiredApiItems(result, 'Failed to fetch AI resources')
       .map(normalizeAiResourceOption);
   }
+}
+
+function normalizePreflightStringList(values: readonly string[] | undefined): string[] {
+  return Array.from(new Set((values ?? []).map(value => value.trim()).filter(Boolean)));
+}
+
+function hasAnyOverlap(left: readonly string[], right: readonly string[]): boolean {
+  const rightCodes = new Set(right);
+  return left.some(value => rightCodes.has(value));
+}
+
+function createGroupRoutePreflightIssue(
+  code: GroupRoutePreflightIssueCode,
+  severity: GroupRoutePreflightSeverity,
+  details?: string[],
+): GroupRoutePreflightIssue {
+  return {
+    code,
+    severity,
+    messageKey: routePreflightMessageKeys[code],
+    details,
+  };
 }
 
 function toCreateGroupRequest(group: GroupCreateInput): ChannelGroupCreateRequestWithResourceAccess {
@@ -312,6 +552,25 @@ function toReplaceChannelBindingsRequest(
   };
 }
 
+function toRuntimeRouteExplainRequest(
+  request: GroupRuntimeRouteExplainRequest,
+): AdminRuntimeRouteExplainRequest {
+  return pruneUndefined({
+    apiKeyId: requiredText(request.apiKeyId, 'apiKeyId'),
+    channelGroupId: optionalText(request.channelGroupId),
+    resourceCode: optionalText(request.resourceCode),
+    catalogKey: optionalText(request.catalogKey),
+    model: optionalText(request.model),
+    apiCode: optionalText(request.apiCode),
+    capability:
+      request.capability === undefined
+        ? undefined
+        : readRuntimeRouteCapability(request.capability),
+    billingMeter: optionalText(request.billingMeter),
+    routeKey: optionalText(request.routeKey),
+  });
+}
+
 function toCapacityRequest(total: number): { total: number } | undefined {
   const normalized = optionalPositiveInteger(total, 'capacity.total');
   return normalized === undefined ? undefined : { total: normalized };
@@ -353,6 +612,11 @@ function requiredText(value: string, fieldName: string): string {
     throw new Error(`${fieldName} is required`);
   }
   return normalized;
+}
+
+function optionalText(value: string | undefined): string | undefined {
+  const normalized = value?.trim();
+  return normalized ? normalized : undefined;
 }
 
 function optionalPositiveNumber(value: number | undefined, fieldName: string): number | undefined {
@@ -481,6 +745,159 @@ function normalizeGroupChannelBinding(value: unknown): GroupChannelBindingData {
   };
 }
 
+function normalizeGroupRouteExplain(value: unknown): GroupRouteExplainResult {
+  const item = readRequiredRecord(value, 'Group route explain record is required');
+  const source = readRequiredString(item, 'source', 'Group route explain source is required');
+  if (source !== 'backend_config') {
+    throw new Error(`Unsupported group route explain source: ${source}`);
+  }
+  const issues = readRecordArray(item, 'issues').map(normalizeGroupRouteExplainIssue);
+  const issueCodes = readStringArray(item, 'issueCodes')
+    .map(readRoutePreflightIssueCode);
+  return {
+    source,
+    ready: readBoolean(item, 'ready'),
+    issueCodes,
+    issues,
+    resourceCodes: readStringArray(item, 'resourceCodes'),
+    resourceGroupCodes: readStringArray(item, 'resourceGroupCodes'),
+    effectiveResourceCodes: readStringArray(item, 'effectiveResourceCodes'),
+    configuredResourceAccessCount: readRequiredNonNegativeInteger(
+      item,
+      'configuredResourceAccessCount',
+      'Group route explain configured resource access count is required',
+    ),
+    configuredResourceGroupAccessCount: readRequiredNonNegativeInteger(
+      item,
+      'configuredResourceGroupAccessCount',
+      'Group route explain configured resource group access count is required',
+    ),
+    apiScope: readStringArray(item, 'apiScope'),
+    capabilities: readStringArray(item, 'capabilities'),
+    activeHealthyBindingCount: readRequiredNonNegativeInteger(
+      item,
+      'activeHealthyBindingCount',
+      'Group route explain active healthy binding count is required',
+    ),
+    routableBindingCount: readRequiredNonNegativeInteger(
+      item,
+      'routableBindingCount',
+      'Group route explain routable binding count is required',
+    ),
+  };
+}
+
+function normalizeGroupRouteExplainIssue(value: unknown): GroupRoutePreflightIssue {
+  const item = readRequiredRecord(value, 'Group route explain issue record is required');
+  const code = readRoutePreflightIssueCode(
+    readRequiredString(item, 'code', 'Group route explain issue code is required'),
+  );
+  const severity = readRoutePreflightSeverity(
+    readRequiredString(item, 'severity', 'Group route explain issue severity is required'),
+  );
+  return createGroupRoutePreflightIssue(code, severity, readStringArray(item, 'details'));
+}
+
+function normalizeRuntimeRouteExplain(value: unknown): GroupRuntimeRouteExplainResult {
+  const item = readRequiredRecord(value, 'Runtime route explain record is required');
+  const source = readRequiredString(item, 'source', 'Runtime route explain source is required');
+  if (source !== 'runtime_selector') {
+    throw new Error(`Unsupported runtime route explain source: ${source}`);
+  }
+  return {
+    source,
+    ready: readBoolean(item, 'ready'),
+    resourceCode: readRequiredString(item, 'resourceCode', 'Runtime route explain resource code is required'),
+    catalogKey: readNullableString(item, 'catalogKey'),
+    model: readNullableString(item, 'model'),
+    apiCode: readRequiredString(item, 'apiCode', 'Runtime route explain API code is required'),
+    capability: readRuntimeRouteCapability(
+      readRequiredString(item, 'capability', 'Runtime route explain capability is required'),
+    ),
+    billingMeter: readRequiredString(item, 'billingMeter', 'Runtime route explain billing meter is required'),
+    apiKeyId: readRequiredString(item, 'apiKeyId', 'Runtime route explain API key id is required'),
+    channelGroupId: readRequiredString(
+      item,
+      'channelGroupId',
+      'Runtime route explain channel group id is required',
+    ),
+    groupCode: readRequiredString(item, 'groupCode', 'Runtime route explain group code is required'),
+    pricingPlanCode: readRequiredString(
+      item,
+      'pricingPlanCode',
+      'Runtime route explain pricing plan code is required',
+    ),
+    candidateCount: readRequiredNonNegativeInteger(
+      item,
+      'candidateCount',
+      'Runtime route explain candidate count is required',
+    ),
+    selectedCandidates: readRecordArray(item, 'selectedCandidates').map(normalizeRuntimeRouteExplainCandidate),
+    blockedReasons: readRecordArray(item, 'blockedReasons').map(normalizeRuntimeRouteExplainIssue),
+    warnings: readRecordArray(item, 'warnings').map(normalizeRuntimeRouteExplainIssue),
+    policyId: readNullableString(item, 'policyId'),
+    ruleId: readNullableString(item, 'ruleId'),
+    policySnapshotVersion: readRequiredString(
+      item,
+      'policySnapshotVersion',
+      'Runtime route explain policy snapshot version is required',
+    ),
+  };
+}
+
+function normalizeRuntimeRouteExplainCandidate(value: unknown): GroupRuntimeRouteExplainCandidate {
+  const item = readRequiredRecord(value, 'Runtime route explain candidate record is required');
+  return {
+    kind: readRuntimeRouteCandidateKind(
+      readRequiredString(item, 'kind', 'Runtime route explain candidate kind is required'),
+    ),
+    providerCode: readRequiredString(
+      item,
+      'providerCode',
+      'Runtime route explain candidate provider code is required',
+    ),
+    channelId: readRequiredString(item, 'channelId', 'Runtime route explain candidate channel id is required'),
+    channelGroupId: readRequiredString(
+      item,
+      'channelGroupId',
+      'Runtime route explain candidate channel group id is required',
+    ),
+    channelGroupCode: readRequiredString(
+      item,
+      'channelGroupCode',
+      'Runtime route explain candidate channel group code is required',
+    ),
+    pricingPlanCode: readRequiredString(
+      item,
+      'pricingPlanCode',
+      'Runtime route explain candidate pricing plan code is required',
+    ),
+    policyId: readNullableString(item, 'policyId'),
+    ruleId: readNullableString(item, 'ruleId'),
+    apiCode: readRequiredString(item, 'apiCode', 'Runtime route explain candidate API code is required'),
+    catalogKey: readNullableString(item, 'catalogKey'),
+    requestedModel: readNullableString(item, 'requestedModel'),
+    providerModel: readNullableString(item, 'providerModel'),
+    regionCode: readString(item, 'regionCode'),
+    credentialId: readNullableString(item, 'credentialId'),
+    credentialRotation: readNullableString(item, 'credentialRotation'),
+    timeoutMs: readNullableNonNegativeInteger(item, 'timeoutMs'),
+  };
+}
+
+function normalizeRuntimeRouteExplainIssue(value: unknown): GroupRuntimeRouteExplainIssue {
+  const item = readRequiredRecord(value, 'Runtime route explain issue record is required');
+  return {
+    code: readRuntimeRouteExplainIssueCode(
+      readRequiredString(item, 'code', 'Runtime route explain issue code is required'),
+    ),
+    severity: readRuntimeRouteExplainSeverity(
+      readRequiredString(item, 'severity', 'Runtime route explain issue severity is required'),
+    ),
+    message: readRequiredString(item, 'message', 'Runtime route explain issue message is required'),
+  };
+}
+
 function normalizeGroupChannelOption(value: unknown): GroupChannelOption {
   const item = readRequiredRecord(value, 'Channel record is required');
   const id = readRequiredString(item, 'id', 'Channel id is required');
@@ -543,6 +960,57 @@ function readRequiredRecord(value: unknown, message: string): ApiRecord {
   return value;
 }
 
+function readRoutePreflightIssueCode(value: string): GroupRoutePreflightIssueCode {
+  if (value in routePreflightMessageKeys) {
+    return value as GroupRoutePreflightIssueCode;
+  }
+  throw new Error(`Unsupported group route explain issue code: ${value}`);
+}
+
+function readRoutePreflightSeverity(value: string): GroupRoutePreflightSeverity {
+  if (value === 'blocking' || value === 'warning' || value === 'info') {
+    return value;
+  }
+  throw new Error(`Unsupported group route explain issue severity: ${value}`);
+}
+
+function readRuntimeRouteCapability(value: string): GroupRuntimeRouteCapability {
+  if (
+    value === 'chat'
+    || value === 'image'
+    || value === 'audio'
+    || value === 'music'
+    || value === 'video'
+    || value === 'embedding'
+    || value === 'rerank'
+    || value === 'network'
+  ) {
+    return value;
+  }
+  throw new Error(`Unsupported runtime route explain capability: ${value}`);
+}
+
+function readRuntimeRouteCandidateKind(value: string): GroupRuntimeRouteExplainCandidate['kind'] {
+  if (value === 'model' || value === 'channel') {
+    return value;
+  }
+  throw new Error(`Unsupported runtime route explain candidate kind: ${value}`);
+}
+
+function readRuntimeRouteExplainIssueCode(value: string): GroupRuntimeRouteExplainIssueCode {
+  if (value === 'route.unavailable' || value === 'pricing.unavailable') {
+    return value;
+  }
+  throw new Error(`Unsupported runtime route explain issue code: ${value}`);
+}
+
+function readRuntimeRouteExplainSeverity(value: string): GroupRoutePreflightSeverity {
+  if (value === 'blocking' || value === 'warning' || value === 'info') {
+    return value;
+  }
+  throw new Error(`Unsupported runtime route explain issue severity: ${value}`);
+}
+
 function readRequiredNestedRecord(record: ApiRecord, key: string, message: string): ApiRecord {
   return readRequiredRecord(record[key], message);
 }
@@ -574,6 +1042,22 @@ function readNullableNumber(record: ApiRecord, key: string): number | null {
     return Number.isFinite(parsed) ? parsed : null;
   }
   return null;
+}
+
+function readNullableNonNegativeInteger(record: ApiRecord, key: string): number | null {
+  const value = record[key];
+  if (value === null || value === undefined || value === '') {
+    return null;
+  }
+  const parsed = typeof value === 'number'
+    ? value
+    : typeof value === 'string'
+      ? Number(value.trim())
+      : Number.NaN;
+  if (!Number.isFinite(parsed) || parsed < 0 || !Number.isInteger(parsed)) {
+    return null;
+  }
+  return parsed;
 }
 
 function readPriceReferenceMode(item: ApiRecord): GroupPriceReferenceMode {

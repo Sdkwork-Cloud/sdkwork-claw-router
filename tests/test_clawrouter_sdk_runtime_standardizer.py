@@ -143,6 +143,94 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
             }
             self.assertEqual(set(), touched)
 
+    def test_syncs_typescript_package_root_from_generated_server_openapi(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            base = self.write_minimal_typescript_sdk(
+                root,
+                "clawrouter-backend-sdk",
+                "@sdkwork/clawrouter-backend-sdk",
+            )
+            generated = base / "generated" / "server-openapi"
+            (generated / ".sdkwork").mkdir(parents=True, exist_ok=True)
+            (generated / "src" / "api").mkdir(parents=True, exist_ok=True)
+            (generated / "src" / "types").mkdir(parents=True, exist_ok=True)
+            (generated / "custom").mkdir(parents=True, exist_ok=True)
+            (generated / "package.json").write_text(
+                json.dumps(
+                    {
+                        "name": "@sdkwork/clawrouter-backend-sdk",
+                        "version": "0.1.0",
+                        "private": True,
+                        "scripts": {"build": "node custom/build-runtime.mjs"},
+                    }
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            (generated / "README.md").write_text("fresh sdk readme\n", encoding="utf-8")
+            (generated / "sdkwork-sdk.json").write_text(
+                json.dumps({"language": "typescript", "sdkType": "backend"}) + "\n",
+                encoding="utf-8",
+            )
+            (generated / ".sdkwork" / "sdkwork-generator-manifest.json").write_text(
+                json.dumps(
+                    {
+                        "generator": "@sdkwork/sdk-generator",
+                        "generatedFiles": [
+                            {"path": "src/sdk.ts"},
+                            {"path": "src/api/index.ts"},
+                            {"path": "src/types/index.ts"},
+                        ],
+                    }
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            (generated / "src" / "sdk.ts").write_text(
+                "export class SdkworkBackendClient {}\n",
+                encoding="utf-8",
+            )
+            (generated / "src" / "api" / "index.ts").write_text(
+                "export * from './platform';\n",
+                encoding="utf-8",
+            )
+            (generated / "src" / "types" / "index.ts").write_text(
+                "export type { PlatformResult } from './platform-result';\n",
+                encoding="utf-8",
+            )
+            (generated / "src" / "types" / "platform-result.ts").write_text(
+                "export interface PlatformResult { ok: boolean; }\n",
+                encoding="utf-8",
+            )
+            (base / ".sdkwork").mkdir(parents=True, exist_ok=True)
+            (base / "src" / "api").mkdir(parents=True, exist_ok=True)
+            (base / "src" / "types").mkdir(parents=True, exist_ok=True)
+            (base / ".sdkwork" / "sdkwork-generator-manifest.json").write_text(
+                json.dumps({"generator": "@sdkwork/sdk-generator", "generatedFiles": [{"path": "src/api/legacy-provider.ts"}]})
+                + "\n",
+                encoding="utf-8",
+            )
+            (base / "src" / "api" / "legacy-provider.ts").write_text("legacy provider\n", encoding="utf-8")
+            (base / "src" / "types" / "legacy-provider-account.ts").write_text(
+                "export interface LegacyProviderAccount {}\n",
+                encoding="utf-8",
+            )
+            (base / "src" / "sdk.ts").write_text("legacyProvider\n", encoding="utf-8")
+
+            self.standardizer(root, ("clawrouter-backend-sdk",)).run()
+
+            self.assertFalse((base / "src" / "api" / "legacy-provider.ts").exists())
+            self.assertFalse((base / "src" / "types" / "legacy-provider-account.ts").exists())
+            self.assertEqual(
+                "export class SdkworkBackendClient {}\n",
+                (base / "src" / "sdk.ts").read_text(encoding="utf-8"),
+            )
+            self.assertIn("fresh sdk readme", (base / "README.md").read_text(encoding="utf-8"))
+            package = json.loads((base / "package.json").read_text(encoding="utf-8"))
+            self.assertFalse(package.get("private", False))
+            self.assertEqual("node custom/build-runtime.mjs", package["scripts"]["build"])
+
     def test_standardizes_app_multipart_methods_to_request_dto_body(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

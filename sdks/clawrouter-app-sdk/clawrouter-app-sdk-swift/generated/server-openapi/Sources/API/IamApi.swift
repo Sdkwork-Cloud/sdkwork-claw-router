@@ -33,6 +33,146 @@ public class IamApi {
         return try await client.patch(ApiPaths.appPath("/iam/api_keys/\(serializePathParameter(apiKeyId, PathParameterSpec(name: "apiKeyId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ApiKeysUpdateResult.self)
     }
 
+    /// List current IAM department assignments
+    public func departmentAssignmentsList(organizationId: String? = nil, departmentId: String? = nil, userId: String? = nil, scopeId: String? = nil, status: String? = nil, q: String? = nil, page: Int? = nil, pageSize: Int? = nil) async throws -> DepartmentAssignmentsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "organization_id", value: organizationId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "department_id", value: departmentId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "user_id", value: userId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "scope_id", value: scopeId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "q", value: q, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/iam/department_assignments"), query), responseType: DepartmentAssignmentsListResult.self)
+    }
+
+    /// List current IAM departments
+    public func departmentsList(organizationId: String? = nil, departmentId: String? = nil, userId: String? = nil, scopeId: String? = nil, status: String? = nil, q: String? = nil, page: Int? = nil, pageSize: Int? = nil) async throws -> DepartmentsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "organization_id", value: organizationId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "department_id", value: departmentId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "user_id", value: userId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "scope_id", value: scopeId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "q", value: q, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/iam/departments"), query), responseType: DepartmentsListResult.self)
+    }
+
+    /// Retrieve current IAM department tree
+    public func departmentsTreeRetrieve(organizationId: String? = nil, departmentId: String? = nil, userId: String? = nil, scopeId: String? = nil, status: String? = nil, q: String? = nil, page: Int? = nil, pageSize: Int? = nil) async throws -> DepartmentsTreeRetrieveResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "organization_id", value: organizationId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "department_id", value: departmentId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "user_id", value: userId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "scope_id", value: scopeId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "q", value: q, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/iam/departments/tree"), query), responseType: DepartmentsTreeRetrieveResult.self)
+    }
+
+    /// List current IAM organization memberships
+    public func organizationMembershipsList(organizationId: String? = nil, departmentId: String? = nil, userId: String? = nil, scopeId: String? = nil, status: String? = nil, q: String? = nil, page: Int? = nil, pageSize: Int? = nil) async throws -> OrganizationMembershipsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "organization_id", value: organizationId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "department_id", value: departmentId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "user_id", value: userId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "scope_id", value: scopeId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "q", value: q, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/iam/organization_memberships"), query), responseType: OrganizationMembershipsListResult.self)
+    }
+
+    /// List current IAM organizations
+    public func organizationsList(organizationId: String? = nil, departmentId: String? = nil, userId: String? = nil, scopeId: String? = nil, status: String? = nil, q: String? = nil, page: Int? = nil, pageSize: Int? = nil) async throws -> OrganizationsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "organization_id", value: organizationId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "department_id", value: departmentId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "user_id", value: userId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "scope_id", value: scopeId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "q", value: q, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/iam/organizations"), query), responseType: OrganizationsListResult.self)
+    }
+
+    /// Retrieve current IAM organization tree
+    public func organizationsTreeRetrieve(organizationId: String? = nil, departmentId: String? = nil, userId: String? = nil, scopeId: String? = nil, status: String? = nil, q: String? = nil, page: Int? = nil, pageSize: Int? = nil) async throws -> OrganizationsTreeRetrieveResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "organization_id", value: organizationId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "department_id", value: departmentId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "user_id", value: userId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "scope_id", value: scopeId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "q", value: q, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/iam/organizations/tree"), query), responseType: OrganizationsTreeRetrieveResult.self)
+    }
+
+    /// List current IAM position assignments
+    public func positionAssignmentsList(organizationId: String? = nil, departmentId: String? = nil, userId: String? = nil, scopeId: String? = nil, status: String? = nil, q: String? = nil, page: Int? = nil, pageSize: Int? = nil) async throws -> PositionAssignmentsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "organization_id", value: organizationId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "department_id", value: departmentId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "user_id", value: userId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "scope_id", value: scopeId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "q", value: q, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/iam/position_assignments"), query), responseType: PositionAssignmentsListResult.self)
+    }
+
+    /// List current IAM positions
+    public func positionsList(organizationId: String? = nil, departmentId: String? = nil, userId: String? = nil, scopeId: String? = nil, status: String? = nil, q: String? = nil, page: Int? = nil, pageSize: Int? = nil) async throws -> PositionsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "organization_id", value: organizationId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "department_id", value: departmentId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "user_id", value: userId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "scope_id", value: scopeId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "q", value: q, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/iam/positions"), query), responseType: PositionsListResult.self)
+    }
+
+    /// List current IAM role bindings
+    public func roleBindingsList(organizationId: String? = nil, departmentId: String? = nil, userId: String? = nil, scopeId: String? = nil, status: String? = nil, q: String? = nil, page: Int? = nil, pageSize: Int? = nil) async throws -> RoleBindingsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "organization_id", value: organizationId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "department_id", value: departmentId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "user_id", value: userId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "scope_id", value: scopeId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "q", value: q, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/iam/role_bindings"), query), responseType: RoleBindingsListResult.self)
+    }
+
+    /// Retrieve current IAM user
+    public func usersCurrentRetrieve() async throws -> UsersCurrentRetrieveResult? {
+        return try await client.get(ApiPaths.appPath("/iam/users/current"), responseType: UsersCurrentRetrieveResult.self)
+    }
+
     /// List settings
     public func usersSettingsRetrieve() async throws -> UsersSettingsRetrieveResult? {
         return try await client.get(ApiPaths.appPath("/iam/users/settings"), responseType: UsersSettingsRetrieveResult.self)
@@ -118,6 +258,107 @@ public class IamApi {
         value.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? value
     }
 
+    private struct QueryParameterSpec {
+        let name: String
+        let value: Any?
+        let style: String
+        let explode: Bool
+        let allowReserved: Bool
+        let contentType: String?
+    }
+
+    private func buildQueryString(_ parameters: [QueryParameterSpec]) -> String {
+        var pairs: [String] = []
+        for parameter in parameters {
+            appendSerializedParameter(&pairs, parameter)
+        }
+        return pairs.joined(separator: "&")
+    }
+
+    private func appendSerializedParameter(_ pairs: inout [String], _ parameter: QueryParameterSpec) {
+        guard let value = parameter.value else { return }
+        if let contentType = parameter.contentType, !contentType.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            let data = (try? JSONSerialization.data(withJSONObject: value, options: [])) ?? Data(String(describing: value).utf8)
+            let json = String(data: data, encoding: .utf8) ?? String(describing: value)
+            pairs.append("\(urlEncode(parameter.name))=\(encodeQueryValue(json, allowReserved: parameter.allowReserved))")
+            return
+        }
+
+        let style = parameter.style.isEmpty ? "form" : parameter.style
+        if style == "deepObject", let object = value as? [String: Any] {
+            appendDeepObjectParameter(&pairs, name: parameter.name, values: object, allowReserved: parameter.allowReserved)
+        } else if let array = value as? [Any] {
+            appendArrayParameter(&pairs, name: parameter.name, values: array, style: style, explode: parameter.explode, allowReserved: parameter.allowReserved)
+        } else if let object = value as? [String: Any] {
+            appendObjectParameter(&pairs, name: parameter.name, values: object, style: style, explode: parameter.explode, allowReserved: parameter.allowReserved)
+        } else {
+            pairs.append("\(urlEncode(parameter.name))=\(encodeQueryValue(String(describing: value), allowReserved: parameter.allowReserved))")
+        }
+    }
+
+    private func appendArrayParameter(
+        _ pairs: inout [String],
+        name: String,
+        values: [Any],
+        style: String,
+        explode: Bool,
+        allowReserved: Bool
+    ) {
+        let serialized = values.map { String(describing: $0) }
+        guard !serialized.isEmpty else { return }
+        if style == "form" && explode {
+            for item in serialized {
+                pairs.append("\(urlEncode(name))=\(encodeQueryValue(item, allowReserved: allowReserved))")
+            }
+            return
+        }
+        pairs.append("\(urlEncode(name))=\(encodeQueryValue(serialized.joined(separator: ","), allowReserved: allowReserved))")
+    }
+
+    private func appendObjectParameter(
+        _ pairs: inout [String],
+        name: String,
+        values: [String: Any],
+        style: String,
+        explode: Bool,
+        allowReserved: Bool
+    ) {
+        var serialized: [String] = []
+        for (key, value) in values {
+            if style == "form" && explode {
+                pairs.append("\(urlEncode(key))=\(encodeQueryValue(String(describing: value), allowReserved: allowReserved))")
+            } else {
+                serialized.append(key)
+                serialized.append(String(describing: value))
+            }
+        }
+        if !serialized.isEmpty {
+            pairs.append("\(urlEncode(name))=\(encodeQueryValue(serialized.joined(separator: ","), allowReserved: allowReserved))")
+        }
+    }
+
+    private func appendDeepObjectParameter(_ pairs: inout [String], name: String, values: [String: Any], allowReserved: Bool) {
+        for (key, value) in values {
+            pairs.append("\(urlEncode("\(name)[\(key)]"))=\(encodeQueryValue(String(describing: value), allowReserved: allowReserved))")
+        }
+    }
+
+    private func encodeQueryValue(_ value: String, allowReserved: Bool) -> String {
+        var encoded = urlEncode(value)
+        if !allowReserved { return encoded }
+        [
+            "%3A": ":", "%2F": "/", "%3F": "?", "%23": "#",
+            "%5B": "[", "%5D": "]", "%40": "@", "%21": "!",
+            "%24": "$", "%26": "&", "%27": "'", "%28": "(",
+            "%29": ")", "%2A": "*", "%2B": "+", "%2C": ",",
+            "%3B": ";", "%3D": "=",
+        ].forEach { encoded = encoded.replacingOccurrences(of: $0.key, with: $0.value) }
+        return encoded
+    }
+
+    private func urlEncode(_ value: String) -> String {
+        value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? value
+    }
 
     private struct HeaderParameterSpec {
         let value: Any?

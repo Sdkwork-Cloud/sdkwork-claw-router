@@ -215,7 +215,7 @@ async fn app_runtime_lists_invocations_events_and_artifacts_for_trusted_subject(
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/app/v3/api/runtime/invocations?conversationId=chat-conversation-1&page=1&pageSize=20")
+                .uri("/app/v3/api/runtime/invocations?conversation_id=chat-conversation-1&page=1&page_size=20")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
@@ -817,7 +817,7 @@ async fn app_runtime_stream_reconnect_on_another_node_uses_shared_stream_bus_wit
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/app/v3/api/runtime/invocations/runtime-invocation-1/events/stream?afterEventNo=1")
+                .uri("/app/v3/api/runtime/invocations/runtime-invocation-1/events/stream?after_event_no=1")
                 .header("accept", "text/event-stream")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
@@ -1177,7 +1177,7 @@ async fn app_runtime_stream_reconnect_after_terminal_event_does_not_restart_prov
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/app/v3/api/runtime/invocations/runtime-invocation-1/events/stream?afterEventNo=1")
+                .uri("/app/v3/api/runtime/invocations/runtime-invocation-1/events/stream?after_event_no=1")
                 .header("accept", "text/event-stream")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())

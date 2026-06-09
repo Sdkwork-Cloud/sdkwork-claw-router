@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminServiceNodeStatusUpdateRequest
     {
-        public string? Status { get; set; }
+        public string Status { get; set; }
     }
 }

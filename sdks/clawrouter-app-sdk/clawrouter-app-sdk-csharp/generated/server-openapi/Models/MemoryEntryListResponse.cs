@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class MemoryEntryListResponse
     {
-        public List<MemoryEntryItem>? Items { get; set; }
+        public List<MemoryEntryItem> Items { get; set; }
     }
 }

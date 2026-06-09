@@ -1,6 +1,6 @@
 import {
-  createIdempotencyParams,
   createClientOperationToken,
+  ensureSdkworkApiSuccess,
   hasStoredPortalSession,
   isRecord,
   readApiItems,
@@ -11,7 +11,7 @@ import {
   type ApiRecord,
   type ClawRouterMediaResource,
 } from 'sdkwork-clawrouter-pc-commons/runtime';
-import { getSdkworkCommerceService } from '@sdkwork/commerce-service';
+import { getClawRouterAppSdkClient } from 'sdkwork-clawrouter-pc-commons/sdk-clients';
 
 export interface VipPackageGroup {
   id: string;
@@ -43,7 +43,6 @@ export interface VipPackage {
   features: VipPackageFeature[];
   isPopular?: boolean;
   isRecommended?: boolean;
-  isPreview?: boolean;
   isPurchasable: boolean;
   badge?: string;
 }
@@ -103,25 +102,19 @@ export class VipService {
 
     const summary = readVipSummaryResult(summaryResult);
     if (groupsResult.status !== 'fulfilled') {
-      return createFallbackVipCatalog(summary);
+      throw groupsResult.reason instanceof Error
+        ? groupsResult.reason
+        : new Error('vip.errors.packageGroupsLoadError');
     }
 
-    let rawGroups: unknown[];
-    try {
-      rawGroups = readRequiredApiItems(groupsResult.value, 'vip.errors.packageGroupsLoadError');
-    } catch {
-      return createFallbackVipCatalog(summary);
-    }
+    ensureSdkworkApiSuccess(groupsResult.value, 'vip.errors.packageGroupsLoadError');
+    const rawGroups = readRequiredApiItems(groupsResult.value, 'vip.errors.packageGroupsLoadError');
 
     const groups = (await Promise.all(
       rawGroups.map((rawGroup, index) => normalizeVipPackageGroup(rawGroup, index)),
     ))
       .filter((group): group is VipPackageGroup => group !== null)
       .sort((a, b) => a.sortOrder - b.sortOrder || compareText(a.name, b.name) || compareText(a.id, b.id));
-
-    if (groups.length === 0) {
-      return createFallbackVipCatalog(summary);
-    }
 
     return { groups, summary };
   }
@@ -133,23 +126,20 @@ export class VipService {
       },
     );
     const data = readApiRecord(result);
-    const requestNo = readFirstString(
-      data,
-      ['requestNo', 'request_no', 'orderNo', 'order_no', 'orderId', 'order_id', 'paymentIntentId', 'payment_intent_id', 'id'],
-    );
+    const requestNo = readString(data, 'requestNo').trim();
     if (!requestNo) {
       throw new Error('VIP purchase request number is required');
     }
-    const status = readFirstString(data, ['status', 'paymentStatus', 'payment_status', 'orderStatus', 'order_status']) || 'accepted';
+    const status = readString(data, 'status').trim() || 'accepted';
     const success = readPurchaseAccepted(data, status);
     if (!success) {
       throw new Error('VIP purchase was not accepted');
     }
-    const providerCode = readFirstString(data, ['providerCode', 'provider_code']);
-    const paymentMethod = readFirstString(data, ['paymentMethod', 'payment_method']);
-    const paymentProduct = readFirstString(data, ['paymentProduct', 'payment_product']);
-    const nextAction = readPurchaseNextAction(readFirstString(data, ['nextAction', 'next_action']));
-    const paymentId = readFirstString(data, ['paymentId', 'payment_id', 'paymentIntentId', 'payment_intent_id']);
+    const providerCode = readFirstString(data, ['providerCode']);
+    const paymentMethod = readFirstString(data, ['paymentMethod']);
+    const paymentProduct = readFirstString(data, ['paymentProduct']);
+    const nextAction = readPurchaseNextAction(readFirstString(data, ['nextAction']));
+    const paymentId = readFirstString(data, ['paymentId']);
     const qrCodePayload = readStandardQrCodePayload(data, 'VIP');
     const cashierUrl = readStandardCashierUrl(data, 'VIP', qrCodePayload);
     const qrCode = readMediaResource(data.qrCode);
@@ -181,13 +171,13 @@ export class VipService {
       },
     );
     const data = readApiRecord(result);
-    const requestNo = readFirstString(data, ['requestNo', 'request_no', 'redemptionNo', 'redemption_no', 'id']);
-    const status = readFirstString(data, ['status', 'state']) || 'accepted';
+    const requestNo = readString(data, 'requestNo').trim();
+    const status = readString(data, 'status').trim() || 'accepted';
     const success = readPurchaseAccepted(data, status);
     if (!success) {
       throw new Error('VIP membership redeem was not accepted');
     }
-    const message = readFirstString(data, ['msg', 'message']);
+    const message = readFirstString(data, ['message']);
     return {
       success,
       requestNo: requestNo || createClientOperationToken('vip-membership-redemption-result'),
@@ -197,44 +187,38 @@ export class VipService {
   }
 }
 
-type AppCommerceService = ReturnType<typeof getSdkworkCommerceService>;
+type AppCommerceService = ReturnType<typeof getClawRouterAppSdkClient>['commerce'];
 
 async function appMembershipsPackageGroupsList(params?: Parameters<AppCommerceService['memberships']['packageGroups']['list']>[0]) {
-  return getSdkworkCommerceService().memberships.packageGroups.list(params);
+  return getClawRouterAppSdkClient().commerce.memberships.packageGroups.list(params);
 }
 
 async function appMembershipsPackageGroupsPackagesList(
   packageGroupId: string,
   params?: Parameters<AppCommerceService['memberships']['packageGroups']['packages']['list']>[1],
 ) {
-  return getSdkworkCommerceService().memberships.packageGroups.packages.list(packageGroupId, params);
+  return getClawRouterAppSdkClient().commerce.memberships.packageGroups.packages.list(packageGroupId, params);
 }
 
 async function appMembershipsCurrentRetrieve() {
-  return getSdkworkCommerceService().memberships.current.retrieve();
+  return getClawRouterAppSdkClient().commerce.memberships.current.retrieve();
 }
 
 async function appMembershipsPurchasesCreate(body: Parameters<AppCommerceService['memberships']['purchases']['create']>[0]) {
-  return getSdkworkCommerceService().memberships.purchases.create(
-    body,
-    createIdempotencyParams('app-vip-purchase-create'),
-  );
+  return getClawRouterAppSdkClient().commerce.memberships.purchases.create(body);
 }
 
 async function appPromotionCodeRedemptionsCreate(body: Parameters<AppCommerceService['promotions']['codes']['redemptions']['create']>[0]) {
-  return getSdkworkCommerceService().promotions.codes.redemptions.create(
-    body,
-    createIdempotencyParams('app-vip-membership-redemption-create'),
-  );
+  return getClawRouterAppSdkClient().commerce.promotions.codes.redemptions.create(body);
 }
 
 function normalizeVipSummary(value: ApiRecord): VipSummary {
   return {
-    currentPlanId: readString(value, 'planId') || readString(value, 'plan_id') || null,
-    currentPlanName: readString(value, 'planName') || readString(value, 'plan_name') || null,
+    currentPlanId: readString(value, 'planId') || null,
+    currentPlanName: readString(value, 'planName') || null,
     status: readString(value, 'status') || 'inactive',
-    expiresAt: readString(value, 'expiresAt') || readString(value, 'expires_at') || null,
-    pointsBalance: readOptionalNumber(value, 'pointsBalance', 'points_balance') ?? 0,
+    expiresAt: readString(value, 'expiresAt') || null,
+    pointsBalance: readOptionalNumber(value, 'pointsBalance') ?? 0,
   };
 }
 
@@ -257,12 +241,11 @@ async function normalizeVipPackageGroup(value: unknown, index: number): Promise<
   const item = value;
   const groupId = readFirstString(
     item,
-    ['id', 'packageGroupId', 'package_group_id', 'groupId', 'group_id', 'groupNo', 'group_no'],
+    ['id'],
   ) || `vip-group-${index + 1}`;
-  const name = readFirstString(item, ['name', 'groupName', 'group_name'])
-    || getFallbackGroupName(groupId, index);
-  const embeddedPackageItems = readOptionalApiItems(item, ['packages', 'items', 'records', 'list']);
-  const packageItems = embeddedPackageItems ?? await fetchPackageGroupPackages(groupId).catch(() => []);
+  const name = readFirstString(item, ['name']) || `VIP packages ${index + 1}`;
+  const embeddedPackageItems = readOptionalApiItems(item, ['packages']);
+  const packageItems = embeddedPackageItems ?? await fetchPackageGroupPackages(groupId);
   const packages = packageItems
     .map((rawPackage, packageIndex) => ({
       package: normalizeVipPackage(rawPackage, groupId, packageIndex),
@@ -278,17 +261,18 @@ async function normalizeVipPackageGroup(value: unknown, index: number): Promise<
 
   return {
     id: groupId,
-    groupNo: readFirstString(item, ['groupNo', 'group_no', 'packageGroupNo', 'package_group_no', 'code']) || groupId,
+    groupNo: readFirstString(item, ['groupNo']) || groupId,
     name,
-    description: readFirstString(item, ['description', 'summary']) || undefined,
-    discount: readFirstString(item, ['discount', 'badge', 'label']) || undefined,
-    sortOrder: readFirstNumber(item, ['sortOrder', 'sort_order', 'sortWeight', 'sort_weight'], index),
-    packages: packages.length > 0 ? packages : createPreviewVipPackages(groupId, index),
+    description: readFirstString(item, ['description']) || undefined,
+    discount: readFirstString(item, ['discount']) || undefined,
+    sortOrder: readFirstNumber(item, ['sortOrder'], index),
+    packages,
   };
 }
 
 async function fetchPackageGroupPackages(groupId: string): Promise<unknown[]> {
   const result = await appMembershipsPackageGroupsPackagesList(groupId);
+  ensureSdkworkApiSuccess(result, 'vip.errors.packagesLoadError');
   return readRequiredApiItems(result, 'vip.errors.packagesLoadError');
 }
 
@@ -297,41 +281,41 @@ function normalizeVipPackage(value: unknown, groupIdOverride?: string, index = 0
     return null;
   }
   const item = value;
-  const groupId = groupIdOverride || readFirstString(item, ['package_group_id', 'packageGroupId']) || inferGroupId(item);
-  const packageId = readFirstString(item, ['id', 'packageId', 'package_id', 'packageNo', 'package_no'])
+  const groupId = groupIdOverride || readFirstString(item, ['packageGroupId']) || inferGroupId(item);
+  const packageId = readFirstString(item, ['id'])
     || `${groupId}-package-${index + 1}`;
-  const packageName = readFirstString(item, ['name', 'packageName', 'package_name']);
-  const planName = readFirstString(item, ['planName', 'plan_name']);
-  const planId = readFirstString(item, ['planId', 'plan_id', 'planNo', 'plan_no'])
+  const packageName = readFirstString(item, ['name']);
+  const planName = readFirstString(item, ['planName']);
+  const planId = readFirstString(item, ['planId'])
     || inferPlanId(item)
     || normalizePlanName(planName)
     || packageId;
   const recommended = readOptionalBoolean(item, 'recommended') ?? isRecommendedPlan(planId);
-  const recurrenceCycle = readFirstString(item, ['recurrenceCycle', 'recurrence_cycle', 'billingCycle', 'billing_cycle'])
+  const recurrenceCycle = readFirstString(item, ['recurrenceCycle'])
     || inferRecurrenceCycle(item);
-  const price = readDisplayMoneyString(item, ['priceAmount', 'price_amount', 'price']);
+  const price = readDisplayMoneyString(item, ['priceAmount']);
   const originalPriceAmount = readOptionalMoneyString(
     item,
-    ['originalPriceAmount', 'original_price_amount', 'originalPrice', 'original_price'],
+    ['originalPriceAmount'],
   );
 
   return {
     id: packageId,
-    packageNo: readFirstString(item, ['packageNo', 'package_no', 'code', 'id']) || packageId,
+    packageNo: readFirstString(item, ['packageNo']) || packageId,
     groupId,
     planId,
     planName: packageName || planName || getPlanName(planId),
-    skuId: readFirstString(item, ['skuId', 'sku_id']) || packageId,
+    skuId: readFirstString(item, ['skuId']) || packageId,
     priceAmount: price.amount,
     originalPriceAmount,
-    currencyCode: readFirstString(item, ['currencyCode', 'currency_code']) || 'CNY',
-    durationDays: readFirstNonNegativeNumberOrFallback(item, ['durationDays', 'duration_days'], 30),
+    currencyCode: readFirstString(item, ['currencyCode']) || 'CNY',
+    durationDays: readFirstNonNegativeNumberOrFallback(item, ['durationDays'], 30),
     durationUnit: inferDurationUnit(item),
     recurrenceCycle,
     status: readFirstString(item, ['status']) || 'active',
-    pointsPerMonth: readOptionalNumber(item, 'pointsPerMonth', 'points_per_month', 'pointAmount', 'point_amount'),
-    maxImages: readOptionalNumber(item, 'maxImages', 'max_images'),
-    maxVideos: readFirstString(item, ['maxVideos', 'max_videos']) || undefined,
+    pointsPerMonth: readOptionalNumber(item, 'pointsPerMonth'),
+    maxImages: readOptionalNumber(item, 'maxImages'),
+    maxVideos: readFirstString(item, ['maxVideos']) || undefined,
     features: buildDefaultFeatures(planId),
     isPopular: readOptionalBoolean(item, 'popular') ?? recommended ?? isPopularPlan(planId),
     isRecommended: recommended,
@@ -341,14 +325,14 @@ function normalizeVipPackage(value: unknown, groupIdOverride?: string, index = 0
 }
 
 function readPackageSortOrder(value: unknown): number {
-  return isRecord(value) ? readFirstNumber(value, ['sortOrder', 'sort_order', 'sortWeight', 'sort_weight'], 0) : 0;
+  return isRecord(value) ? readFirstNumber(value, ['sortOrder'], 0) : 0;
 }
 
 function inferGroupId(item: ApiRecord): string {
-  const recurrenceCycle = readFirstString(item, ['recurrenceCycle', 'recurrence_cycle']) || 'one_time';
+  const recurrenceCycle = readFirstString(item, ['recurrenceCycle']) || 'one_time';
   let durationDays = 365;
   try {
-    durationDays = readFirstNonNegativeNumber(item, ['durationDays', 'duration_days'], 'Duration days is required');
+    durationDays = readFirstNonNegativeNumber(item, ['durationDays'], 'Duration days is required');
   } catch {
     durationDays = 365;
   }
@@ -365,7 +349,7 @@ function inferGroupId(item: ApiRecord): string {
 function inferDurationUnit(item: ApiRecord): string {
   let durationDays = 30;
   try {
-    durationDays = readFirstNonNegativeNumber(item, ['durationDays', 'duration_days'], 'Duration days is required');
+    durationDays = readFirstNonNegativeNumber(item, ['durationDays'], 'Duration days is required');
   } catch {
     durationDays = 30;
   }
@@ -379,7 +363,7 @@ function inferRecurrenceCycle(item: ApiRecord): string {
   const tags = readStringArray(item, 'tags').map((tag) => tag.toLowerCase());
   if (tags.includes('yearly') || tags.includes('annual')) return 'yearly';
   if (tags.includes('monthly')) return 'monthly';
-  const durationDays = readOptionalNumber(item, 'durationDays', 'duration_days') ?? 0;
+  const durationDays = readOptionalNumber(item, 'durationDays') ?? 0;
   if (durationDays >= 300) return 'yearly';
   if (durationDays >= 25 && durationDays <= 35) return 'monthly';
   return 'one_time';
@@ -429,74 +413,6 @@ function buildDefaultFeatures(planId: string): VipPackageFeature[] {
   ];
 }
 
-function createFallbackVipCatalog(summary: VipSummary | null): VipCatalog {
-  return {
-    summary,
-    groups: [
-      {
-        id: 'monthly-preview',
-        groupNo: 'monthly-preview',
-        name: 'Monthly VIP',
-        description: undefined,
-        sortOrder: 10,
-        packages: createPreviewVipPackages('monthly-preview', 0),
-      },
-      {
-        id: 'annual-preview',
-        groupNo: 'annual-preview',
-        name: 'Annual VIP',
-        description: undefined,
-        discount: 'vip.badges.bestValue',
-        sortOrder: 20,
-        packages: createPreviewVipPackages('annual-preview', 1),
-      },
-    ],
-  };
-}
-
-function createPreviewVipPackages(groupId: string, index: number): VipPackage[] {
-  const normalizedGroupId = groupId.toLowerCase();
-  const annual = normalizedGroupId.includes('annual') || normalizedGroupId.includes('year');
-  const planId = annual ? 'premium' : 'standard';
-  const durationDays = annual ? 365 : 30;
-  const recurrenceCycle = annual ? 'yearly' : 'monthly';
-  const priceAmount = annual ? '199.00' : '29.90';
-  return [
-    {
-      id: `${groupId}-preview-${index + 1}`,
-      packageNo: `${groupId}-preview-${index + 1}`,
-      groupId,
-      planId,
-      planName: getPlanName(planId),
-      skuId: `${groupId}-preview-sku-${index + 1}`,
-      priceAmount,
-      currencyCode: 'CNY',
-      durationDays,
-      durationUnit: annual ? 'year' : 'month',
-      recurrenceCycle,
-      status: 'preview',
-      pointsPerMonth: annual ? 200000 : 20000,
-      features: buildDefaultFeatures(planId),
-      isPopular: annual,
-      isRecommended: true,
-      isPreview: true,
-      isPurchasable: false,
-      badge: annual ? 'vip.badges.bestValue' : 'vip.badges.recommended',
-    },
-  ];
-}
-
-function getFallbackGroupName(groupId: string, index: number): string {
-  const normalizedGroupId = groupId.toLowerCase();
-  if (normalizedGroupId.includes('annual') || normalizedGroupId.includes('year')) {
-    return 'Annual VIP';
-  }
-  if (normalizedGroupId.includes('month')) {
-    return 'Monthly VIP';
-  }
-  return `VIP packages ${index + 1}`;
-}
-
 function requiredText(value: string, fieldName: string): string {
   const normalized = value.trim();
   if (!normalized) throw new Error(`${fieldName} is required`);
@@ -536,7 +452,7 @@ function readPurchaseAccepted(item: ApiRecord, status: string): boolean {
 }
 
 function readStandardQrCodePayload(item: ApiRecord, scopeLabel: string): string {
-  const value = readFirstString(item, ['qrCodePayload', 'qr_code_payload', 'cashierUrl', 'cashier_url']);
+  const value = readFirstString(item, ['qrCodePayload', 'cashierUrl']);
   if (!value) {
     return '';
   }
@@ -547,7 +463,7 @@ function readStandardQrCodePayload(item: ApiRecord, scopeLabel: string): string 
 }
 
 function readStandardCashierUrl(item: ApiRecord, scopeLabel: string, fallbackUrl = ''): string {
-  const value = readFirstString(item, ['cashierUrl', 'cashier_url']) || fallbackUrl;
+  const value = readFirstString(item, ['cashierUrl']) || fallbackUrl;
   if (!value) {
     return '';
   }
@@ -558,7 +474,7 @@ function readStandardCashierUrl(item: ApiRecord, scopeLabel: string, fallbackUrl
 }
 
 function readStandardRequestPaymentPayload(item: ApiRecord): string {
-  const value = item.requestPaymentPayload ?? item.request_payment_payload;
+  const value = item.requestPaymentPayload;
   if (value === undefined || value === null || value === '') {
     return '';
   }
@@ -592,7 +508,7 @@ function inferPlanId(item: ApiRecord): string {
   const knownPlan = tags.find((tag) => ['free', 'basic', 'standard', 'advanced', 'premium', 'pro', 'enterprise'].includes(tag));
   if (knownPlan) return knownPlan;
 
-  const normalizedPlanName = normalizePlanName(readFirstString(item, ['planName', 'plan_name']));
+  const normalizedPlanName = normalizePlanName(readFirstString(item, ['planName']));
   if (normalizedPlanName.endsWith('-member')) {
     return normalizedPlanName.slice(0, -'-member'.length);
   }

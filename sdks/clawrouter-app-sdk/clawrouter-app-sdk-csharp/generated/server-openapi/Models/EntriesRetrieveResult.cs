@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class EntriesRetrieveResult
     {
-        public string? Code { get; set; }
+        public string Code { get; set; }
         public MemoryEntryItem? Data { get; set; }
         public string? Msg { get; set; }
     }

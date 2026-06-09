@@ -145,6 +145,13 @@ function readAdminMessagingSource(): string {
   );
 }
 
+function readAdminOAuthSource(): string {
+  return readFileSync(
+    new URL("./packages/sdkwork-clawrouter-pc-admin-oauth/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+}
+
 function readAdminServiceProviderSource(): string {
   return readFileSync(
     new URL("./packages/sdkwork-clawrouter-pc-admin-service-provider/src/index.tsx", import.meta.url),
@@ -270,14 +277,6 @@ function readAdminRateLimitSource(): string {
 
 function readAdminGroupSource(): string {
   return readFileSync(new URL("./packages/sdkwork-clawrouter-pc-admin-group/src/index.tsx", import.meta.url), "utf8");
-}
-
-function readAdminWechatOfficialSource(): string {
-  return readFileSync(new URL("./packages/sdkwork-clawrouter-pc-admin-wechat-official-account/src/index.tsx", import.meta.url), "utf8");
-}
-
-function readAdminWechatMiniSource(): string {
-  return readFileSync(new URL("./packages/sdkwork-clawrouter-pc-admin-wechat-mini-program/src/index.tsx", import.meta.url), "utf8");
 }
 
 function readAdminAppCenterSource(): string {
@@ -437,8 +436,7 @@ test("admin routed pages use compact 5px chrome and avoid duplicate page title h
   const inventorySource = readAdminInventorySource();
   const messagingSource = readAdminMessagingSource();
   const serviceProviderSource = readAdminServiceProviderSource();
-  const wechatOfficialSource = readAdminWechatOfficialSource();
-  const wechatMiniSource = readAdminWechatMiniSource();
+  const oauthSource = readAdminOAuthSource();
   const appCenterSource = readAdminAppCenterSource();
   const announcementSource = readFileSync(new URL("./packages/sdkwork-clawrouter-pc-admin-announcement/src/index.tsx", import.meta.url), "utf8");
 
@@ -463,6 +461,7 @@ test("admin routed pages use compact 5px chrome and avoid duplicate page title h
     ["inventory admin", inventorySource],
     ["messaging admin", messagingSource],
     ["service provider admin", serviceProviderSource],
+    ["OAuth admin", oauthSource],
   ] as const) {
     assertAdminResourceCenterHasNoPageHeaderProps(source, label);
   }
@@ -490,10 +489,7 @@ test("admin routed pages use compact 5px chrome and avoid duplicate page title h
   assert.doesNotMatch(groupSource, /flex h-full min-h-0 w-full flex-col gap-6 overflow-hidden/);
   assert.doesNotMatch(monitorSource, /flex h-full min-h-0 w-full flex-col gap-6 overflow-hidden/);
   assert.doesNotMatch(messagingSource, /h-\[calc\(100vh-/);
-  assert.doesNotMatch(wechatOfficialSource, /admin\.openPlatform\.wechatOfficial\.title/);
-  assert.doesNotMatch(wechatOfficialSource, /admin\.openPlatform\.wechatOfficial\.subtitle/);
-  assert.doesNotMatch(wechatMiniSource, /admin\.openPlatform\.wechatMini\.title/);
-  assert.doesNotMatch(wechatMiniSource, /admin\.openPlatform\.wechatMini\.subtitle/);
+  assert.doesNotMatch(oauthSource, /admin\.oauth\.(?:title|description)/);
   assert.doesNotMatch(appCenterSource, /<h2[\s\S]*admin\.app\.title/);
   assert.doesNotMatch(appCenterSource, /admin\.app\.subtitle/);
 });
@@ -642,26 +638,44 @@ test("admin runtime region settings use generated backend SDK and default to Chi
   );
 });
 
-test("admin open platform account management is reachable from admin navigation", () => {
+test("admin OAuth account management is reachable from admin navigation", () => {
   const appSource = readFileSync(new URL("./src/App.tsx", import.meta.url), "utf8");
   const adminModuleRegistrySource = readAdminModuleRegistrySource();
   const i18nSource = readI18nSource();
+  const oauthSource = readAdminOAuthSource();
+  const oauthServiceSource = readFileSync(
+    new URL("./packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts", import.meta.url),
+    "utf8",
+  );
   const packageJson = JSON.parse(readFileSync(new URL("./package.json", import.meta.url), "utf8")) as {
     dependencies: Record<string, string>;
   };
 
-  assert.equal(packageJson.dependencies["sdkwork-clawrouter-pc-admin-open-platform"], "workspace:*");
-  assert.doesNotMatch(appSource, /const OpenPlatformAdmin = lazyRoute\(\(\) => import\('sdkwork-clawrouter-pc-admin-open-platform'\), 'OpenPlatformAdmin'\);/);
-  assert.match(appSource, /const WechatOfficialAccountAdmin = lazyRoute<AdminSectionRouteProps>\(\(\) => import\('sdkwork-clawrouter-pc-admin-wechat-official-account'\), 'WechatOfficialAccountAdmin'\);/);
-  assert.match(appSource, /const WechatMiniProgramAdmin = lazyRoute<AdminSectionRouteProps>\(\(\) => import\('sdkwork-clawrouter-pc-admin-wechat-mini-program'\), 'WechatMiniProgramAdmin'\);/);
-  assert.match(appSource, /<Route path="open-platform" element=\{<Navigate to="\/admin\/open-platform\/official-accounts\/accounts" replace \/>} \/>/);
-  assert.match(adminModuleRegistrySource, /path:\s*'\/admin\/open-platform\/official-accounts\/accounts'/);
-  assert.match(adminModuleRegistrySource, /labelKey:\s*'admin\.menu\.openPlatformOfficialAccountAccounts'/);
-  assert.match(adminModuleRegistrySource, /path:\s*'\/admin\/open-platform\/mini-programs\/accounts'/);
-  assert.match(adminModuleRegistrySource, /labelKey:\s*'admin\.menu\.openPlatformMiniProgramAccounts'/);
-  assert.doesNotMatch(adminModuleRegistrySource, /path:\s*'\/admin\/open-platform',\s*labelKey:\s*'admin\.menu\.openPlatform'/);
-  assert.match(i18nSource, /"admin\.menu\.openPlatformOfficialAccounts":\s*"WeChat Official Accounts"/);
-  assert.match(i18nSource, /"admin\.menu\.openPlatformMiniPrograms":\s*"WeChat Mini Programs"/);
+  assert.equal(packageJson.dependencies["sdkwork-clawrouter-pc-admin-oauth"], "workspace:*");
+  assert.match(appSource, /const OAuthAdmin = lazyRoute\(\(\) => import\('sdkwork-clawrouter-pc-admin-oauth'\), 'OAuthAdmin'\);/);
+  assert.match(appSource, /<Route path="oauth" element=\{<Navigate to="\/admin\/oauth\/overview" replace \/>} \/>/);
+  assert.match(appSource, /<Route path="oauth\/resource-accounts\/official-accounts" element=\{<OAuthAdmin sectionId="officialAccounts" \/>} \/>/);
+  assert.match(appSource, /<Route path="oauth\/resource-accounts\/mini-programs" element=\{<OAuthAdmin sectionId="miniPrograms" \/>} \/>/);
+  assert.match(appSource, /<Route path="oauth\/login\/mini-programs" element=\{<OAuthAdmin sectionId="miniProgramLogin" \/>} \/>/);
+  assert.match(adminModuleRegistrySource, /id:\s*'oauth'/);
+  assert.match(adminModuleRegistrySource, /path:\s*'\/admin\/oauth\/resource-accounts\/official-accounts'/);
+  assert.match(adminModuleRegistrySource, /labelKey:\s*'admin\.menu\.oauth\.officialAccounts'/);
+  assert.match(adminModuleRegistrySource, /path:\s*'\/admin\/oauth\/resource-accounts\/mini-programs'/);
+  assert.match(adminModuleRegistrySource, /labelKey:\s*'admin\.menu\.oauth\.miniPrograms'/);
+  assert.match(i18nSource, /"admin\.menu\.oauth\.officialAccounts":\s*"Official Accounts"/);
+  assert.match(i18nSource, /"admin\.menu\.oauth\.miniPrograms":\s*"Mini Programs"/);
+  assert.match(oauthSource, /WeChat Official Account/);
+  assert.match(oauthSource, /WeChat Mini Program/);
+  assert.match(oauthSource, /Alipay Mini Program/);
+  assert.match(oauthSource, /Self-managed account or operator-authorized account/);
+  assert.match(oauthSource, /Self-managed AppID\/AppSecret or component platform authorization/);
+  assert.match(oauthServiceSource, /getSdkworkAppbaseBackendSdkClient/);
+  assert.match(oauthServiceSource, /iam\.oauth\.resourceAccounts/);
+  assert.match(oauthServiceSource, /iam\.oauth\.operatorPlatforms/);
+  assert.match(oauthServiceSource, /iam\.oauth\.resourceAuthorizations/);
+  assert.doesNotMatch(oauthServiceSource, /\bfetch\s*\(/);
+  assert.doesNotMatch(oauthServiceSource, /\baxios\b/);
+  assert.doesNotMatch(oauthServiceSource, /\/backend\/v3\/api/);
 });
 
 test("admin site settings fills blank filing fields with default compliance information", async () => {

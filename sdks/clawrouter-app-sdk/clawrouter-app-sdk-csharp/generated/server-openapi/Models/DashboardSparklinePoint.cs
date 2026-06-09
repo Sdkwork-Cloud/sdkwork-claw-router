@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class DashboardSparklinePoint
     {
-        public double? Value { get; set; }
+        public double Value { get; set; }
     }
 }

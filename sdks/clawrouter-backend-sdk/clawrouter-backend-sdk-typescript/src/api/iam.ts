@@ -1,22 +1,8 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { AdminApiKeyCreateRequest, AdminUserUpdateRequest, ApiKeysCreateResult, ApiKeysDeleteResult, UsersUpdateResult } from '../types';
+import type { AdminApiKeyCreateRequest, ApiKeysCreateResult, ApiKeysDeleteResult } from '../types';
 
-
-export class IamUsersApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Update user */
-  async update(body: AdminUserUpdateRequest): Promise<UsersUpdateResult> {
-    return this.client.put<UsersUpdateResult>(backendApiPath(`/iam/users`), body, undefined, undefined, 'application/json');
-  }
-}
 
 export interface IamApiKeysCreateParams {
   idempotencyKey: string;
@@ -50,12 +36,10 @@ export class IamApiKeysApi {
 export class IamApi {
   private client: HttpClient;
   public readonly apiKeys: IamApiKeysApi;
-  public readonly users: IamUsersApi;
 
   constructor(client: HttpClient) {
     this.client = client;
     this.apiKeys = new IamApiKeysApi(client);
-    this.users = new IamUsersApi(client);
   }
 
 }

@@ -48,7 +48,8 @@ impl ProviderAdapterRouteResolver for InvocationProviderAdapterResolver {
             ProviderInvocationMode::DirectHttp => None,
             ProviderInvocationMode::InternalHttpAdapter(route) => Some(InvocationAdapterTarget {
                 provider_code: route.provider_code.clone(),
-                endpoint_key: route
+                endpoint_key: invocation
+                    .resource
                     .endpoint_key
                     .clone()
                     .unwrap_or_else(|| invocation.resource.route_key.clone()),

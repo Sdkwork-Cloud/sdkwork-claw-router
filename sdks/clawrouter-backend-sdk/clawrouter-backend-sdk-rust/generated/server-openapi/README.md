@@ -45,20 +45,18 @@ client.set_header("X-Custom-Header", "value");
 
 - `client.agents()` - agents API
 - `client.ai()` - ai API
-- `client.commerce()` - commerce API
 - `client.content()` - content API
 - `client.ecosystem()` - ecosystem API
 - `client.iam()` - iam API
 - `client.integration()` - integration API
 - `client.mcp()` - mcp API
 - `client.messaging()` - messaging API
-- `client.open_platform()` - open_platform API
 - `client.platform()` - platform API
-- `client.system()` - system API
 - `client.prompts()` - prompts API
 - `client.service_providers()` - service_providers API
 - `client.sites()` - sites API
 - `client.storage()` - storage API
+- `client.system()` - system API
 
 ## Usage Examples
 
@@ -83,14 +81,6 @@ println!("{result:?}");
 ```rust
 // List groups
 let result = client.ai().channel_groups_list().await?;
-println!("{result:?}");
-```
-
-### commerce
-
-```rust
-// Commerce Reports Payment Reconciliation Retrieve
-let result = client.commerce().reports_payment_reconciliation_retrieve().await?;
 println!("{result:?}");
 ```
 
@@ -160,30 +150,11 @@ let result = client.messaging().provider_accounts_list(Some(&query)).await?;
 println!("{result:?}");
 ```
 
-### open_platform
-
-```rust
-use std::collections::HashMap;
-// List open platform providers
-let mut query = HashMap::new();
-query.insert("status".to_string(), serde_json::json!("active"));
-let result = client.open_platform().providers_list(Some(&query)).await?;
-println!("{result:?}");
-```
-
 ### platform
 
 ```rust
 // List app categories
 let result = client.platform().apps_categories_list().await?;
-println!("{result:?}");
-```
-
-### system
-
-```rust
-// Retrieve IAM auth runtime settings
-let result = client.system().auth_settings_retrieve().await?;
 println!("{result:?}");
 ```
 
@@ -237,6 +208,14 @@ println!("{result:?}");
 ```rust
 // List storage providers
 let result = client.storage().oss_providers_list().await?;
+println!("{result:?}");
+```
+
+### system
+
+```rust
+// Retrieve IAM auth runtime settings
+let result = client.system().auth_settings_retrieve().await?;
 println!("{result:?}");
 ```
 

@@ -154,7 +154,7 @@ async fn app_memory_lists_spaces_and_entries_for_trusted_subject() {
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/app/v3/api/memory/spaces?page=1&pageSize=20")
+                .uri("/app/v3/api/memory/spaces?page=1&page_size=20")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),

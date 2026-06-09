@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminPromptVersionListResponse
     {
-        public List<AdminPromptVersionItem>? Items { get; set; }
+        public List<AdminPromptVersionItem> Items { get; set; }
     }
 }

@@ -1842,6 +1842,67 @@ class FrontendContractGuardianTest(unittest.TestCase):
 
             self.assertTrue(result.ok, result.messages)
 
+    def test_accepts_dependency_owned_appbase_oauth_admin_route_without_product_schema_manifest(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_app(root, '<Route path="/admin/oauth" element={<OAuthAdmin />} />')
+            self.write_manifest(root, {"routes": {}, "tables": []})
+            self.write_contract(
+                root,
+                """
+                frontend_operations:
+                  - route: /admin/oauth
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+                    operation: listOAuthProviderCatalog
+                    operation_id: iam.oauth.providerCatalog.list
+                    kind: read
+                    api_surface: backend
+                    api_method: GET
+                    api_path: /backend/v3/api/iam/oauth/provider_catalog
+                    sdk_domain: appbase
+                    openapi_exposed: false
+                    read_sources: [iam_oauth_provider_catalog]
+                routes:
+                  - route: /admin/oauth
+                    dependency_owned: true
+                    dependency_sdk_family: sdkwork-appbase-backend-sdk
+                    required_tables: [iam_oauth_provider_catalog]
+                """,
+            )
+            self.write_route_classification(
+                root,
+                """
+                schema: sdkwork-claw-router-frontend-route-classification
+                source: apps/sdkwork-clawrouter-pc/src/App.tsx
+                routes:
+                  - route: /admin/oauth
+                    package: sdkwork-clawrouter-pc-admin-oauth
+                    owner: appbase-iam
+                    route_scope: admin
+                    delivery_kind: sdk_backed_business_runtime
+                    dependency_owned: true
+                    dependency_sdk_family: sdkwork-appbase-backend-sdk
+                    api_surface: backend
+                    evidence:
+                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+                """,
+            )
+            self.write_portal_source(
+                root,
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
+                """
+                import { getSdkworkAppbaseBackendSdkClient } from 'sdkwork-clawrouter-pc-commons/sdk-clients';
+
+                export async function listOAuthProviderCatalog() {
+                  return getSdkworkAppbaseBackendSdkClient().iam.oauth.providerCatalog.list();
+                }
+                """,
+            )
+
+            result = FrontendContractGuardian(root=root).run()
+
+            self.assertTrue(result.ok, result.messages)
+
     def test_default_contract_path_prefers_modular_index_over_stale_snapshot(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

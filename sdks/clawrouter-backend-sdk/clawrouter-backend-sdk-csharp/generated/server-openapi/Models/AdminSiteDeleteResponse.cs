@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminSiteDeleteResponse
     {
-        public bool? Deleted { get; set; }
+        public bool Deleted { get; set; }
     }
 }

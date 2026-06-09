@@ -128,12 +128,12 @@ async fn database_config_app_startup_worker_auto_refreshes_rankings_and_records_
     sqlx::query(
         r#"
         INSERT INTO ai_usage_fact
-            (uuid, tenant_id, organization_id, user_id, request_id, status, metadata,
+            (id, uuid, tenant_id, organization_id, user_id, request_id, status, metadata,
              catalog_key, model, modality, usage_type, billing_meter_code, request_count,
              prompt_tokens, completion_tokens, total_tokens, billable_quantity, cost_amount,
              currency, pricing_snapshot, occurred_at)
         VALUES
-            ('usage-app-startup-ranking', 0, 0, 30, 'app-startup-ranking-request', 1, '{}',
+            (9001, 'usage-app-startup-ranking', 0, 0, 30, 'app-startup-ranking-request', 1, '{}',
              ?, ?, 1, 1, 'llm_input_token', 11,
              800, 400, 1200, '1200', '2.500000',
              'USD', '{"source":"app-startup-test"}', strftime('%Y-%m-%dT%H:%M:%SZ', 'now', '-1 day'))
@@ -162,7 +162,7 @@ async fn database_config_app_startup_worker_auto_refreshes_rankings_and_records_
 
     let payload = request_json(
         router,
-        "/app/v3/api/ai/model_rankings?rankScope=commercial-default&limit=5",
+        "/app/v3/api/ai/model_rankings?rank_scope=commercial-default&limit=5",
     )
     .await;
     assert_eq!("2000", payload["code"]);

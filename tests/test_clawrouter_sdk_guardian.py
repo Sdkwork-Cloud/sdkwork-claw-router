@@ -384,6 +384,27 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
                 result.messages,
             )
 
+    def test_accepts_sdk_workspace_support_directories(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_sdk(root, "clawrouter-app-sdk", "@sdkwork/clawrouter-app-sdk", "app", "SdkworkAppClient", "/app/v3/api")
+            self.write_sdk(
+                root,
+                "clawrouter-backend-sdk",
+                "@sdkwork/clawrouter-backend-sdk",
+                "backend",
+                "SdkworkBackendClient",
+                "/backend/v3/api",
+            )
+            self.write_portal_sdk_boundary(root)
+            (root / "sdks" / "test").mkdir(parents=True)
+            (root / "sdks" / "_shared").mkdir(parents=True)
+            (root / "sdks" / "_route-manifests" / "app-api").mkdir(parents=True)
+
+            result = ClawRouterSdkGuardian(root=root).run()
+
+            self.assertTrue(result.ok, result.messages)
+
     def test_reports_sdk_family_without_official_multilanguage_generation_matrix(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -787,11 +808,11 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "clawrouter-app-sdk openapi/clawrouter-app-sdk.openapi.json must stay synchronized with generated/openapi/clawrouter-app-openapi.json",
+                "clawrouter-app-sdk openapi/clawrouter-app-sdk.openapi.json must stay synchronized with owner-only generated/openapi/clawrouter-app-openapi.json",
                 result.messages,
             )
             self.assertIn(
-                "clawrouter-backend-sdk openapi/clawrouter-backend-sdk.openapi.json must stay synchronized with generated/openapi/clawrouter-backend-openapi.json",
+                "clawrouter-backend-sdk openapi/clawrouter-backend-sdk.openapi.json must stay synchronized with owner-only generated/openapi/clawrouter-backend-openapi.json",
                 result.messages,
             )
 

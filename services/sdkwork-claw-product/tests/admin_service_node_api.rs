@@ -23,7 +23,7 @@ async fn admin_service_node_routes_support_full_crud() {
         .clone()
         .oneshot(signed_request(
             "GET",
-            "/backend/v3/api/system/service_nodes?search=shanghai&status=enabled",
+            "/backend/v3/api/system/service_nodes?q=shanghai&status=enabled",
             None,
         ))
         .await
@@ -210,14 +210,14 @@ async fn admin_service_node_routes_reject_invalid_management_inputs() {
         .clone()
         .oneshot(signed_request(
             "GET",
-            "/backend/v3/api/system/service_nodes?search=bad%0Aterm&status=enabled",
+            "/backend/v3/api/system/service_nodes?q=bad%0Aterm&status=enabled",
             None,
         ))
         .await
         .unwrap();
     assert_eq!(StatusCode::BAD_REQUEST, bad_search.status());
     assert_eq!(
-        "search must be visible text and at most 128 characters",
+        "q must be visible text and at most 128 characters",
         json_payload(bad_search).await["msg"]
     );
 
@@ -268,6 +268,16 @@ async fn admin_service_node_routes_reject_invalid_management_inputs() {
         "status must be changed through status endpoint",
         json_payload(status_on_update).await["msg"]
     );
+}
+
+#[test]
+fn admin_service_node_list_query_exposes_only_standard_q_search_param() {
+    let source = include_str!("../src/api/admin_service_node.rs");
+
+    assert!(source.contains("struct AdminServiceNodeListQuery"));
+    assert!(source.contains("q: Option<String>"));
+    assert!(!source.contains("search: Option<String>"));
+    assert!(!source.contains("query.q.or(query.search)"));
 }
 
 fn signed_request(method: &str, path: &str, body: Option<Value>) -> Request<Body> {

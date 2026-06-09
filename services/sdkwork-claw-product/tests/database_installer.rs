@@ -111,6 +111,15 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
     for table in commerce_database_tables() {
         assert_table_exists(&pool, table).await;
     }
+    for table in [
+        "iam_oauth_provider_catalog",
+        "iam_oauth_flow_config",
+        "iam_oauth_resource_account",
+        "iam_oauth_webhook_config",
+        "iam_oauth_diagnostic_run",
+    ] {
+        assert_table_exists(&pool, table).await;
+    }
     assert_sqlite_index_exists(&pool, "idx_ai_model_public_rank_desc").await;
     assert_sqlite_index_exists(&pool, "idx_ai_model_catalog_search").await;
     assert_sqlite_index_exists(&pool, "idx_ai_model_rank_snapshot_latest_scope").await;
@@ -126,6 +135,10 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
     assert_sqlite_index_exists(&pool, "uk_plus_user_agent_skill").await;
     assert_sqlite_index_exists(&pool, "uk_ai_runtime_usage_link_agent_scope").await;
     assert_sqlite_index_exists(&pool, "idx_commerce_order_owner_status_created_at").await;
+    assert_sqlite_index_exists(&pool, "uk_iam_oauth_provider_catalog_owner_code").await;
+    assert_sqlite_index_exists(&pool, "idx_iam_oauth_flow_config_surface").await;
+    assert_sqlite_index_exists(&pool, "idx_iam_oauth_resource_account_readiness").await;
+    assert_sqlite_index_exists(&pool, "uk_iam_oauth_webhook_config_public").await;
     assert_sqlite_columns_absent(&pool, "ai_model", &["region_code"]).await;
     assert_sqlite_columns_absent(&pool, "ai_model_capability", &["region_code"]).await;
     assert_sqlite_columns_absent(&pool, "ai_model_vendor", &["region_code"]).await;
@@ -719,6 +732,8 @@ async fn sqlite_installed_admin_user_store_lists_iam_bootstrap_admin_without_plu
                 operator_id: 1,
                 operator_type: 1,
             },
+            q: None,
+            page_size: 200,
         })
         .await
         .unwrap();
@@ -732,6 +747,74 @@ async fn sqlite_installed_admin_user_store_lists_iam_bootstrap_admin_without_plu
     assert_eq!("admin", admin.role);
     assert_eq!("admin", admin.group);
     assert_eq!("active", admin.status);
+}
+
+#[tokio::test]
+async fn sqlite_admin_user_store_lists_registered_tenant_users_outside_current_org() {
+    let pool = repair_sqlite_pool().await;
+    sqlx::query(
+        r#"
+        INSERT INTO iam_user
+            (id, tenant_id, username, display_name, email, phone, avatar_media_resource_id, avatar_object_blob_id, avatar_resource_snapshot, status, created_at, updated_at)
+        VALUES
+            ('2', '10', 'registered-cross-org', 'Registered Cross Org', 'registered-cross-org@example.com', '', 'media-registered-cross-org-avatar', 'iam-user-avatar:registered-cross-org', '{"kind":"image","source":"provider_asset","uri":"iam-user-avatar:registered-cross-org"}', 'active', '2026-05-17T09:00:00Z', '2026-05-17T09:00:00Z')
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO iam_organization_membership
+            (id, tenant_id, organization_id, user_id, membership_kind, display_name, is_primary, status, joined_at, created_at, updated_at)
+        VALUES
+            ('member-2-registered', '10', '21', '2', 'owner', 'Registered Cross Org', 1, 'active', '2026-05-17T09:00:00Z', '2026-05-17T09:00:00Z', '2026-05-17T09:00:00Z')
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    let store = SqliteAdminUserStore::new(pool.clone());
+    let users = store
+        .list_users(ListAdminUsersQuery {
+            subject: AdminUserSubject {
+                tenant_id: 10,
+                organization_id: 20,
+                operator_id: 1,
+                operator_type: 1,
+            },
+            q: None,
+            page_size: 200,
+        })
+        .await
+        .unwrap();
+
+    let registered = users
+        .iter()
+        .find(|user| user.id == 2)
+        .expect("registered tenant user must be visible even before being added to the current organization");
+    assert_eq!("registered-cross-org", registered.username);
+    assert_eq!("registered-cross-org@example.com", registered.email);
+    assert_eq!("user", registered.role);
+    assert_eq!("standard", registered.group);
+
+    let matched_users = store
+        .list_users(ListAdminUsersQuery {
+            subject: AdminUserSubject {
+                tenant_id: 10,
+                organization_id: 20,
+                operator_id: 1,
+                operator_type: 1,
+            },
+            q: Some("registered-cross-org@example.com".to_owned()),
+            page_size: 20,
+        })
+        .await
+        .unwrap();
+
+    assert_eq!(1, matched_users.len());
+    assert_eq!("registered-cross-org", matched_users[0].username);
 }
 
 #[tokio::test]

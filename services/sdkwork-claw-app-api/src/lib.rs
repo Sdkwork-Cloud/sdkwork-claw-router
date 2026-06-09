@@ -28,9 +28,9 @@ use sdkwork_claw_product::infrastructure::sql::installer::{
     log_bootstrap_admin_report, DatabaseInstallError, DatabaseInstaller,
 };
 use sdkwork_claw_product::infrastructure::sql::postgres::{
-    PostgresAdminAuthSettingsStore, PostgresAdminOpenPlatformStore, PostgresAppAgentRegistryStore,
-    PostgresAppAgentRunStore, PostgresAppAgentSessionStore, PostgresAppAuthStore,
-    PostgresAppChatStore, PostgresAppGatewayTracesReadStore, PostgresAppGenerationHistoryReadStore,
+    PostgresAdminAuthSettingsStore, PostgresAppAgentRegistryStore, PostgresAppAgentRunStore,
+    PostgresAppAgentSessionStore, PostgresAppAuthStore, PostgresAppChatStore,
+    PostgresAppGatewayTracesReadStore, PostgresAppGenerationHistoryReadStore,
     PostgresAppIamDirectoryReadStore, PostgresAppMemoryStore, PostgresAppNotificationStore,
     PostgresAppProvidersReadStore, PostgresAppRoutingChannelCommandStore,
     PostgresAppRoutingReadStore, PostgresAppRoutingStrategyStore, PostgresAppRuntimeStore,
@@ -43,18 +43,18 @@ use sdkwork_claw_product::infrastructure::sql::postgres::{
     PostgresVerificationDeliveryConfigStore, PostgresVerificationDeliveryQueueSender,
 };
 use sdkwork_claw_product::infrastructure::sql::sqlite::{
-    SqlCatalogLoadError, SqliteAdminAuthSettingsStore, SqliteAdminOpenPlatformStore,
-    SqliteAppAgentRegistryStore, SqliteAppAgentRunStore, SqliteAppAgentSessionStore,
-    SqliteAppAuthStore, SqliteAppChatStore, SqliteAppGatewayTracesReadStore,
-    SqliteAppGenerationHistoryReadStore, SqliteAppIamDirectoryReadStore, SqliteAppMemoryStore,
-    SqliteAppNotificationStore, SqliteAppProvidersReadStore, SqliteAppRoutingChannelCommandStore,
-    SqliteAppRoutingReadStore, SqliteAppRoutingStrategyStore, SqliteAppRuntimeStore,
-    SqliteAppSessionEventStore, SqliteAppSkillsReadStore, SqliteAppStoreReadStore,
-    SqliteAppUserProfileReadStore, SqliteCourseStore, SqliteDashboardOverviewReadStore,
-    SqliteForumStore, SqliteGatewayApiKeyCommandStore, SqliteModelRankingRefreshStore,
-    SqliteModelRankingsReadStore, SqlitePaymentCallbackStore, SqlitePaymentIntentRuntimeStore,
-    SqlitePricingCatalogLoader, SqliteSettingsStore, SqliteSettlementsDashboardReadStore,
-    SqliteSiteSettingsStore, SqliteUsageLogsReadStore, SqliteVerificationDeliveryConfigStore,
+    SqlCatalogLoadError, SqliteAdminAuthSettingsStore, SqliteAppAgentRegistryStore,
+    SqliteAppAgentRunStore, SqliteAppAgentSessionStore, SqliteAppAuthStore, SqliteAppChatStore,
+    SqliteAppGatewayTracesReadStore, SqliteAppGenerationHistoryReadStore,
+    SqliteAppIamDirectoryReadStore, SqliteAppMemoryStore, SqliteAppNotificationStore,
+    SqliteAppProvidersReadStore, SqliteAppRoutingChannelCommandStore, SqliteAppRoutingReadStore,
+    SqliteAppRoutingStrategyStore, SqliteAppRuntimeStore, SqliteAppSessionEventStore,
+    SqliteAppSkillsReadStore, SqliteAppStoreReadStore, SqliteAppUserProfileReadStore,
+    SqliteCourseStore, SqliteDashboardOverviewReadStore, SqliteForumStore,
+    SqliteGatewayApiKeyCommandStore, SqliteModelRankingRefreshStore, SqliteModelRankingsReadStore,
+    SqlitePaymentCallbackStore, SqlitePaymentIntentRuntimeStore, SqlitePricingCatalogLoader,
+    SqliteSettingsStore, SqliteSettlementsDashboardReadStore, SqliteSiteSettingsStore,
+    SqliteUsageLogsReadStore, SqliteVerificationDeliveryConfigStore,
     SqliteVerificationDeliveryQueueSender,
 };
 use sdkwork_claw_product::infrastructure::{
@@ -63,13 +63,13 @@ use sdkwork_claw_product::infrastructure::{
 use sdkwork_claw_product::ports::ChatCompletionStreamRelay;
 use sdkwork_claw_product::ports::PricingCatalog;
 use sdkwork_claw_product::ports::{
-    AdminAuthSettingsStore, AdminOpenPlatformStore, AppAgentRegistryStore, AppAgentRunStore,
-    AppAgentSessionStore, AppAuthStore, AppChatStore, AppGatewayTracesReadStore,
-    AppGenerationHistoryReadStore, AppIamDirectoryReadStore, AppMemoryStore, AppNotificationStore,
-    AppProvidersReadStore, AppRoutingChannelCommandStore, AppRoutingReadStore,
-    AppRoutingStrategyStore, AppRuntimeStore, AppSessionEventStore, AppSkillsCommandStore,
-    AppSkillsReadStore, AppStoreReadStore, AppUserProfileReadStore, CourseApplicationCommandStore,
-    CourseReadStore, DashboardOverviewReadStore, ForumCommentCommandStore, ForumCommentReadStore,
+    AdminAuthSettingsStore, AppAgentRegistryStore, AppAgentRunStore, AppAgentSessionStore,
+    AppAuthStore, AppChatStore, AppGatewayTracesReadStore, AppGenerationHistoryReadStore,
+    AppIamDirectoryReadStore, AppMemoryStore, AppNotificationStore, AppProvidersReadStore,
+    AppRoutingChannelCommandStore, AppRoutingReadStore, AppRoutingStrategyStore, AppRuntimeStore,
+    AppSessionEventStore, AppSkillsCommandStore, AppSkillsReadStore, AppStoreReadStore,
+    AppUserProfileReadStore, CourseApplicationCommandStore, CourseReadStore,
+    DashboardOverviewReadStore, ForumCommentCommandStore, ForumCommentReadStore,
     ForumFeedCommandStore, ForumFeedReadStore, GatewayApiKeyCommandStore,
     GatewayApiKeyManagementReadStore, ModelRankingRefreshOutcome, ModelRankingRefreshRunStatus,
     ModelRankingRefreshStore, ModelRankingsCacheInvalidation, ModelRankingsReadModelStore,
@@ -120,7 +120,6 @@ type AppRoutingStore = Arc<dyn AppRoutingReadStore + Send + Sync>;
 type AppRoutingStrategyRuntimeStore = Arc<dyn AppRoutingStrategyStore + Send + Sync>;
 type AppAuthRuntimeStore = Arc<dyn AppAuthStore + Send + Sync>;
 type AppAuthSettingsRuntimeStore = Arc<dyn AdminAuthSettingsStore + Send + Sync>;
-type AppOpenPlatformRuntimeStore = Arc<dyn AdminOpenPlatformStore + Send + Sync>;
 type AppSiteSettingsRuntimeStore = Arc<dyn SiteSettingsStore + Send + Sync>;
 type AppSessionAuditStore = Arc<dyn AppSessionEventStore + Send + Sync>;
 type AppVerificationCodeSender = Arc<dyn VerificationCodeSender + Send + Sync>;
@@ -264,7 +263,6 @@ pub fn router_with_api_key_management_read_store_command_store_and_api_key_secur
         None,
         None,
         None,
-        None,
         api_key_hasher_from_config(&api_key_security_config)?,
         api_key_secret_codec_from_config(&api_key_security_config)?,
         Arc::new(OsApiKeySecretGenerator),
@@ -388,7 +386,6 @@ fn router_with_app_session_event_store_auth_settings_store_and_config_inner(
     .merge(app_sessions_router(
         None,
         app_auth_settings_store,
-        None,
         app_session_event_store,
         Arc::new(OsApiKeySecretGenerator),
         trusted_subject_config,
@@ -449,7 +446,6 @@ fn router_with_api_key_management_store_and_database_status(
     app_session_event_store: AppSessionAuditStore,
     app_auth_store: Option<AppAuthRuntimeStore>,
     app_auth_settings_store: Option<AppAuthSettingsRuntimeStore>,
-    app_open_platform_store: Option<AppOpenPlatformRuntimeStore>,
     app_site_settings_store: Option<AppSiteSettingsRuntimeStore>,
     api_key_hasher: ApiKeyHasher,
     _api_key_secret_codec: ApiKeyCodec,
@@ -510,7 +506,6 @@ fn router_with_api_key_management_store_and_database_status(
     let app_session_router = app_sessions_router(
         app_auth_store.clone(),
         app_auth_settings_store.clone(),
-        app_open_platform_store.clone(),
         Arc::clone(&app_session_event_store),
         Arc::clone(&entity_uuid_generator),
         trusted_subject_config,
@@ -980,7 +975,6 @@ fn merge_commerce_foundation_router(
 fn app_sessions_router(
     app_auth_store: Option<AppAuthRuntimeStore>,
     app_auth_settings_store: Option<AppAuthSettingsRuntimeStore>,
-    app_open_platform_store: Option<AppOpenPlatformRuntimeStore>,
     app_session_event_store: AppSessionAuditStore,
     entity_uuid_generator: EntityUuidGen,
     trusted_subject_config: TrustedSubjectConfig,
@@ -992,7 +986,6 @@ fn app_sessions_router(
     let app_public_auth_router = app_public_auth_router(
         app_auth_store.clone(),
         app_auth_settings_store.clone(),
-        app_open_platform_store.clone(),
         Arc::clone(&app_session_event_store),
         Arc::clone(&entity_uuid_generator),
         trusted_subject_config.clone(),
@@ -1004,7 +997,6 @@ fn app_sessions_router(
     sdkwork_claw_product::api::app_sessions_router_with_store_and_verification_sender(
         app_auth_store,
         app_auth_settings_store,
-        app_open_platform_store,
         app_session_event_store,
         entity_uuid_generator,
         trusted_subject_config,
@@ -1019,7 +1011,6 @@ fn app_sessions_router(
 fn app_public_auth_router(
     app_auth_store: Option<AppAuthRuntimeStore>,
     app_auth_settings_store: Option<AppAuthSettingsRuntimeStore>,
-    app_open_platform_store: Option<AppOpenPlatformRuntimeStore>,
     app_session_event_store: AppSessionAuditStore,
     entity_uuid_generator: EntityUuidGen,
     trusted_subject_config: TrustedSubjectConfig,
@@ -1028,16 +1019,14 @@ fn app_public_auth_router(
     verification_code_sender: AppVerificationCodeSender,
     expose_debug_verification_code: bool,
 ) -> Router {
-    sdkwork_claw_product::api::app_public_auth_router_with_store_auth_settings_store_cache_and_verification_sender(
+    sdkwork_claw_product::api::app_public_auth_router_with_store_auth_settings_store_and_verification_sender(
         app_auth_store,
         app_auth_settings_store,
-        app_open_platform_store,
         app_session_event_store,
         entity_uuid_generator,
         trusted_subject_config,
         app_session_config,
         password_hasher,
-        sdkwork_claw_product::application::default_desktop_cache_manager(),
         verification_code_sender,
         expose_debug_verification_code,
     )
@@ -1222,11 +1211,6 @@ pub async fn router_with_sqlite_product_catalog(
         Arc::new(SqliteAppRoutingChannelCommandStore::new(pool.clone()));
     let app_auth_settings_store = Arc::new(SqliteAdminAuthSettingsStore::new(pool.clone()));
     let app_site_settings_store = Arc::new(SqliteSiteSettingsStore::new(pool.clone()));
-    let app_open_platform_store =
-        Arc::new(SqliteAdminOpenPlatformStore::with_api_key_secret_codec(
-            pool.clone(),
-            api_key_secret_codec.clone(),
-        ));
     let appbase_foundation_router =
         sdkwork_commerce_http::app_commerce_foundation_router_with_sqlite_pool(pool.clone());
     let appbase_wallet_router =
@@ -1248,7 +1232,6 @@ pub async fn router_with_sqlite_product_catalog(
         Arc::new(SqliteAppSessionEventStore::new(pool.clone())),
         Some(Arc::new(SqliteAppAuthStore::new(pool.clone()))),
         Some(app_auth_settings_store),
-        Some(app_open_platform_store),
         Some(app_site_settings_store),
         api_key_hasher,
         api_key_secret_codec,
@@ -1366,11 +1349,6 @@ pub async fn router_with_postgres_product_catalog(
         Arc::new(PostgresAppRoutingChannelCommandStore::new(pool.clone()));
     let app_auth_settings_store = Arc::new(PostgresAdminAuthSettingsStore::new(pool.clone()));
     let app_site_settings_store = Arc::new(PostgresSiteSettingsStore::new(pool.clone()));
-    let app_open_platform_store =
-        Arc::new(PostgresAdminOpenPlatformStore::with_api_key_secret_codec(
-            pool.clone(),
-            api_key_secret_codec.clone(),
-        ));
     let appbase_foundation_router =
         sdkwork_commerce_http::app_commerce_foundation_router_with_postgres_pool(pool.clone());
     let appbase_wallet_router =
@@ -1392,7 +1370,6 @@ pub async fn router_with_postgres_product_catalog(
         Arc::new(PostgresAppSessionEventStore::new(pool.clone())),
         Some(Arc::new(PostgresAppAuthStore::new(pool.clone()))),
         Some(app_auth_settings_store),
-        Some(app_open_platform_store),
         Some(app_site_settings_store),
         api_key_hasher,
         api_key_secret_codec,
@@ -1553,12 +1530,6 @@ pub async fn router_with_sqlite_shared_runtime(
         Arc::new(SqliteAppSessionEventStore::new(pool.clone())),
         Some(Arc::new(SqliteAppAuthStore::new(pool.clone()))),
         Some(Arc::new(SqliteAdminAuthSettingsStore::new(pool.clone()))),
-        Some(Arc::new(
-            SqliteAdminOpenPlatformStore::with_api_key_secret_codec(
-                pool.clone(),
-                api_key_secret_codec.clone(),
-            ),
-        )),
         Some(Arc::new(SqliteSiteSettingsStore::new(pool.clone()))),
         api_key_hasher,
         api_key_secret_codec,
@@ -1721,12 +1692,6 @@ pub async fn router_with_postgres_shared_runtime(
         Arc::new(PostgresAppSessionEventStore::new(pool.clone())),
         Some(Arc::new(PostgresAppAuthStore::new(pool.clone()))),
         Some(Arc::new(PostgresAdminAuthSettingsStore::new(pool.clone()))),
-        Some(Arc::new(
-            PostgresAdminOpenPlatformStore::with_api_key_secret_codec(
-                pool.clone(),
-                api_key_secret_codec.clone(),
-            ),
-        )),
         Some(Arc::new(PostgresSiteSettingsStore::new(pool.clone()))),
         api_key_hasher,
         api_key_secret_codec,
@@ -2081,12 +2046,6 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 Arc::new(SqliteAppSessionEventStore::new(pool.clone())),
                 Some(Arc::new(SqliteAppAuthStore::new(pool.clone()))),
                 Some(Arc::new(SqliteAdminAuthSettingsStore::new(pool.clone()))),
-                Some(Arc::new(
-                    SqliteAdminOpenPlatformStore::with_api_key_secret_codec(
-                        pool.clone(),
-                        api_key_secret_codec.clone(),
-                    ),
-                )),
                 Some(Arc::new(SqliteSiteSettingsStore::new(pool.clone()))),
                 api_key_hasher,
                 api_key_secret_codec,
@@ -2271,12 +2230,6 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 Arc::new(PostgresAppSessionEventStore::new(pool.clone())),
                 Some(Arc::new(PostgresAppAuthStore::new(pool.clone()))),
                 Some(Arc::new(PostgresAdminAuthSettingsStore::new(pool.clone()))),
-                Some(Arc::new(
-                    PostgresAdminOpenPlatformStore::with_api_key_secret_codec(
-                        pool.clone(),
-                        api_key_secret_codec.clone(),
-                    ),
-                )),
                 Some(Arc::new(PostgresSiteSettingsStore::new(pool.clone()))),
                 api_key_hasher,
                 api_key_secret_codec,

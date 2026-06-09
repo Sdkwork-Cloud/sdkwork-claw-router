@@ -522,7 +522,7 @@ fn runtime_database_url(
         return Ok(url);
     }
 
-    match declared_engine.as_deref() {
+    match declared_engine {
         Some("postgresql") => structured_postgres_url(database, config_path),
         Some("sqlite") => Err(
             "runtime config [database].url is required when [database].engine is sqlite"

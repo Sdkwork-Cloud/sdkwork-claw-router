@@ -11,7 +11,9 @@ import {
   CreditCard,
   Crown,
   Database,
+  FileKey2,
   FileText,
+  Fingerprint,
   FolderOpen,
   Globe2,
   GraduationCap,
@@ -28,6 +30,7 @@ import {
   Package,
   PackageCheck,
   PlaySquare,
+  Plug,
   Server,
   Settings,
   ShieldAlert,
@@ -39,6 +42,7 @@ import {
   TrendingUp,
   UserCog,
   Users,
+  Webhook,
   Wrench,
   type LucideIcon,
 } from 'lucide-react';
@@ -46,6 +50,7 @@ import {
 export type AdminModuleId =
   | 'home'
   | 'appCenter'
+  | 'oauth'
   | 'courseCenter'
   | 'productCenter'
   | 'transactionCenter'
@@ -109,7 +114,14 @@ export const ADMIN_MODULES: AdminModuleDef[] = [
     nameKey: 'admin.header.appCenter',
     icon: Package,
     defaultPath: '/admin/app',
-    pathPrefixes: ['/admin/app', '/admin/open-platform'],
+    pathPrefixes: ['/admin/app'],
+  }),
+  moduleBlock({
+    id: 'oauth',
+    nameKey: 'admin.header.oauth',
+    icon: KeyRound,
+    defaultPath: '/admin/oauth/overview',
+    pathPrefixes: ['/admin/oauth'],
   }),
   moduleBlock({
     id: 'courseCenter',
@@ -231,15 +243,42 @@ export const ADMIN_MODULE_MENUS: AdminModuleMenu[] = [
     items: [
       itemBlock({ path: '/admin/app', labelKey: 'admin.menu.appStore', icon: Package }),
     ],
+    groups: [],
+  },
+  {
+    moduleId: 'oauth',
     groups: [
-      groupBlock('admin.menu.openPlatformOfficialAccounts', [
-        itemBlock({ path: '/admin/open-platform/official-accounts/accounts', labelKey: 'admin.menu.openPlatformOfficialAccountAccounts', icon: MessageCircle, iconColor: 'text-emerald-500' }),
-        itemBlock({ path: '/admin/open-platform/official-accounts/menus', labelKey: 'admin.menu.openPlatformOfficialAccountMenus', icon: ClipboardList, iconColor: 'text-teal-500' }),
-        itemBlock({ path: '/admin/open-platform/official-accounts/messages', labelKey: 'admin.menu.openPlatformOfficialAccountMessages', icon: Megaphone, iconColor: 'text-amber-500' }),
+      groupBlock('admin.menu.oauth.workspace', [
+        itemBlock({ path: '/admin/oauth/overview', labelKey: 'admin.menu.oauth.overview', icon: LayoutDashboard, iconColor: 'text-blue-500' }),
+        itemBlock({ path: '/admin/oauth/login', labelKey: 'admin.menu.oauth.login', icon: Fingerprint, iconColor: 'text-indigo-500' }),
+        itemBlock({ path: '/admin/oauth/login/mini-programs', labelKey: 'admin.menu.oauth.miniProgramLogin', icon: Smartphone, iconColor: 'text-cyan-500' }),
       ]),
-      groupBlock('admin.menu.openPlatformMiniPrograms', [
-        itemBlock({ path: '/admin/open-platform/mini-programs/accounts', labelKey: 'admin.menu.openPlatformMiniProgramAccounts', icon: Smartphone, iconColor: 'text-cyan-500' }),
-        itemBlock({ path: '/admin/open-platform/mini-programs/urls', labelKey: 'admin.menu.openPlatformMiniProgramUrls', icon: Link2, iconColor: 'text-sky-500' }),
+      groupBlock('admin.menu.oauth.configuration', [
+        itemBlock({ path: '/admin/oauth/provider-catalog', labelKey: 'admin.menu.oauth.providerCatalog', icon: Globe2, iconColor: 'text-blue-500' }),
+        itemBlock({ path: '/admin/oauth/integrations', labelKey: 'admin.menu.oauth.integrations', icon: Plug, iconColor: 'text-emerald-500' }),
+        itemBlock({ path: '/admin/oauth/clients', labelKey: 'admin.menu.oauth.clients', icon: KeyRound, iconColor: 'text-amber-500' }),
+        itemBlock({ path: '/admin/oauth/secrets', labelKey: 'admin.menu.oauth.secrets', icon: ShieldCheck, iconColor: 'text-red-500' }),
+        itemBlock({ path: '/admin/oauth/surfaces', labelKey: 'admin.menu.oauth.surfaces', icon: Smartphone, iconColor: 'text-cyan-500' }),
+        itemBlock({ path: '/admin/oauth/flow-configs', labelKey: 'admin.menu.oauth.flowConfigs', icon: Settings, iconColor: 'text-violet-500' }),
+        itemBlock({ path: '/admin/oauth/scope-profiles', labelKey: 'admin.menu.oauth.scopeProfiles', icon: ClipboardList, iconColor: 'text-teal-500' }),
+        itemBlock({ path: '/admin/oauth/claim-mappings', labelKey: 'admin.menu.oauth.claimMappings', icon: ArrowRightLeft, iconColor: 'text-indigo-500' }),
+        itemBlock({ path: '/admin/oauth/policies', labelKey: 'admin.menu.oauth.policies', icon: ShieldAlert, iconColor: 'text-orange-500' }),
+        itemBlock({ path: '/admin/oauth/tenant-bindings', labelKey: 'admin.menu.oauth.tenantBindings', icon: Link2, iconColor: 'text-sky-500' }),
+      ]),
+      groupBlock('admin.menu.oauth.resourceAccess', [
+        itemBlock({ path: '/admin/oauth/operator-platforms', labelKey: 'admin.menu.oauth.operatorPlatforms', icon: Store, iconColor: 'text-violet-500' }),
+        itemBlock({ path: '/admin/oauth/resource-accounts', labelKey: 'admin.menu.oauth.resourceAccounts', icon: UserCog, iconColor: 'text-blue-500' }),
+        itemBlock({ path: '/admin/oauth/resource-accounts/official-accounts', labelKey: 'admin.menu.oauth.officialAccounts', icon: MessageCircle, iconColor: 'text-emerald-500' }),
+        itemBlock({ path: '/admin/oauth/resource-accounts/mini-programs', labelKey: 'admin.menu.oauth.miniPrograms', icon: Smartphone, iconColor: 'text-cyan-500' }),
+        itemBlock({ path: '/admin/oauth/resource-authorizations', labelKey: 'admin.menu.oauth.resourceAuthorizations', icon: ShieldCheck, iconColor: 'text-amber-500' }),
+        itemBlock({ path: '/admin/oauth/webhooks', labelKey: 'admin.menu.oauth.webhooks', icon: Webhook, iconColor: 'text-pink-500' }),
+        itemBlock({ path: '/admin/oauth/operational-resources', labelKey: 'admin.menu.oauth.operationalResources', icon: Server, iconColor: 'text-slate-500' }),
+      ]),
+      groupBlock('admin.menu.oauth.identityRuntime', [
+        itemBlock({ path: '/admin/oauth/account-links', labelKey: 'admin.menu.oauth.accountLinks', icon: Link2, iconColor: 'text-blue-500' }),
+        itemBlock({ path: '/admin/oauth/grants', labelKey: 'admin.menu.oauth.grants', icon: FileKey2, iconColor: 'text-amber-500' }),
+        itemBlock({ path: '/admin/oauth/callback-diagnostics', labelKey: 'admin.menu.oauth.callbackDiagnostics', icon: Activity, iconColor: 'text-red-500' }),
+        itemBlock({ path: '/admin/oauth/diagnostic-runs', labelKey: 'admin.menu.oauth.diagnosticRuns', icon: ClipboardList, iconColor: 'text-teal-500' }),
       ]),
     ],
   },

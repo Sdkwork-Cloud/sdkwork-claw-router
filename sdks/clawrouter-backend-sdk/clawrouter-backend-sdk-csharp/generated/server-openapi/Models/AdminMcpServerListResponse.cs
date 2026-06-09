@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminMcpServerListResponse
     {
-        public List<AdminMcpServerItem>? Items { get; set; }
+        public List<AdminMcpServerItem> Items { get; set; }
     }
 }

@@ -8,7 +8,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
     {
         public string? Count { get; set; }
         public string? CourseId { get; set; }
-        public string? Id { get; set; }
+        public string Id { get; set; }
         public string? ReactionType { get; set; }
         public string? ReactionValue { get; set; }
         public string? Status { get; set; }

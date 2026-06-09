@@ -12,228 +12,6 @@ List<dynamic>? _sdkworkAsList(dynamic value) {
   return value is List ? value : null;
 }
 
-class AccountsCurrentSummaryRetrieveResult {
-  final String code;
-  final CommerceStandardResourceResponse? data;
-  final String? msg;
-
-  AccountsCurrentSummaryRetrieveResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory AccountsCurrentSummaryRetrieveResult.fromJson(Map<String, dynamic> json) {
-    return AccountsCurrentSummaryRetrieveResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('AccountsCurrentSummaryRetrieveResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardResourceResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class AddressesCreateResult {
-  final String code;
-  final CommerceOperationResponse? data;
-  final String? msg;
-
-  AddressesCreateResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory AddressesCreateResult.fromJson(Map<String, dynamic> json) {
-    return AddressesCreateResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('AddressesCreateResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceOperationResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class AddressesDefaultSelectionCreateResult {
-  final String code;
-  final CommerceOperationResponse? data;
-  final String? msg;
-
-  AddressesDefaultSelectionCreateResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory AddressesDefaultSelectionCreateResult.fromJson(Map<String, dynamic> json) {
-    return AddressesDefaultSelectionCreateResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('AddressesDefaultSelectionCreateResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceOperationResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class AddressesDeleteResult {
-  final String code;
-  final CommerceOperationResponse? data;
-  final String? msg;
-
-  AddressesDeleteResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory AddressesDeleteResult.fromJson(Map<String, dynamic> json) {
-    return AddressesDeleteResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('AddressesDeleteResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceOperationResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class AddressesListResult {
-  final String code;
-  final CommerceStandardCollectionResponse? data;
-  final String? msg;
-
-  AddressesListResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory AddressesListResult.fromJson(Map<String, dynamic> json) {
-    return AddressesListResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('AddressesListResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class AddressesUpdateResult {
-  final String code;
-  final CommerceOperationResponse? data;
-  final String? msg;
-
-  AddressesUpdateResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory AddressesUpdateResult.fromJson(Map<String, dynamic> json) {
-    return AddressesUpdateResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('AddressesUpdateResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceOperationResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
 class AgentCapabilities {
   final String mcpServerCount;
   final bool memoryEnabled;
@@ -4169,216 +3947,180 @@ class ArtifactsListResult {
   }
 }
 
-class BillingHistoryCollectionResponse {
-  final List<Map<String, dynamic>> items;
+class AuthRuntimeSettingsResponse {
+  final String leftRailMode;
+  final List<String> loginMethods;
+  final bool oauthLoginEnabled;
+  final List<String> oauthProviders;
+  final String? oauthRegion;
+  final bool qrLoginEnabled;
+  final String qrLoginType;
+  final List<String> recoveryMethods;
+  final List<String> registerMethods;
+  final AuthVerificationPolicy verificationPolicy;
 
-  BillingHistoryCollectionResponse({
-    required this.items
+  AuthRuntimeSettingsResponse({
+    required this.leftRailMode,
+    required this.loginMethods,
+    required this.oauthLoginEnabled,
+    required this.oauthProviders,
+    this.oauthRegion,
+    required this.qrLoginEnabled,
+    required this.qrLoginType,
+    required this.recoveryMethods,
+    required this.registerMethods,
+    required this.verificationPolicy
   });
 
-  factory BillingHistoryCollectionResponse.fromJson(Map<String, dynamic> json) {
-    return BillingHistoryCollectionResponse(
-      items: (() {
-        final list = _sdkworkAsList(json['items']);
+  factory AuthRuntimeSettingsResponse.fromJson(Map<String, dynamic> json) {
+    return AuthRuntimeSettingsResponse(
+      leftRailMode: (() {
+        final value = json['leftRailMode']?.toString();
+        if (value == null) {
+          throw FormatException('AuthRuntimeSettingsResponse.leftRailMode is required');
+        }
+        return value;
+      })(),
+      loginMethods: (() {
+        final list = _sdkworkAsList(json['loginMethods']);
         if (list == null) {
-          throw FormatException('BillingHistoryCollectionResponse.items is required');
+          throw FormatException('AuthRuntimeSettingsResponse.loginMethods is required');
         }
         return list
-            .map((item) => _sdkworkAsMap(item))
-            .whereType<Map<String, dynamic>>()
+            .map((item) => item?.toString())
+            .whereType<String>()
             .toList();
+      })(),
+      oauthLoginEnabled: (() {
+        final value = json['oauthLoginEnabled'];
+        if (value is! bool) {
+          throw FormatException('AuthRuntimeSettingsResponse.oauthLoginEnabled is required');
+        }
+        return value;
+      })(),
+      oauthProviders: (() {
+        final list = _sdkworkAsList(json['oauthProviders']);
+        if (list == null) {
+          throw FormatException('AuthRuntimeSettingsResponse.oauthProviders is required');
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      oauthRegion: json['oauthRegion']?.toString(),
+      qrLoginEnabled: (() {
+        final value = json['qrLoginEnabled'];
+        if (value is! bool) {
+          throw FormatException('AuthRuntimeSettingsResponse.qrLoginEnabled is required');
+        }
+        return value;
+      })(),
+      qrLoginType: (() {
+        final value = json['qrLoginType']?.toString();
+        if (value == null) {
+          throw FormatException('AuthRuntimeSettingsResponse.qrLoginType is required');
+        }
+        return value;
+      })(),
+      recoveryMethods: (() {
+        final list = _sdkworkAsList(json['recoveryMethods']);
+        if (list == null) {
+          throw FormatException('AuthRuntimeSettingsResponse.recoveryMethods is required');
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      registerMethods: (() {
+        final list = _sdkworkAsList(json['registerMethods']);
+        if (list == null) {
+          throw FormatException('AuthRuntimeSettingsResponse.registerMethods is required');
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      verificationPolicy: (() {
+        final map = _sdkworkAsMap(json['verificationPolicy']);
+        if (map == null) {
+          throw FormatException('AuthRuntimeSettingsResponse.verificationPolicy is required');
+        }
+        return AuthVerificationPolicy.fromJson(map);
       })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'items': items.map((item) => item).toList(),
+      'leftRailMode': leftRailMode,
+      'loginMethods': loginMethods.map((item) => item).toList(),
+      'oauthLoginEnabled': oauthLoginEnabled,
+      'oauthProviders': oauthProviders.map((item) => item).toList(),
+      'oauthRegion': oauthRegion,
+      'qrLoginEnabled': qrLoginEnabled,
+      'qrLoginType': qrLoginType,
+      'recoveryMethods': recoveryMethods.map((item) => item).toList(),
+      'registerMethods': registerMethods.map((item) => item).toList(),
+      'verificationPolicy': verificationPolicy.toJson(),
     };
   }
 }
 
-class BillingHistoryListResult {
-  final String code;
-  final BillingHistoryCollectionResponse? data;
-  final String? msg;
+class AuthVerificationPolicy {
+  final bool emailCodeLoginEnabled;
+  final bool emailRegistrationVerificationRequired;
+  final bool phoneCodeLoginEnabled;
+  final bool phoneRegistrationVerificationRequired;
 
-  BillingHistoryListResult({
-    required this.code,
-    this.data,
-    this.msg
+  AuthVerificationPolicy({
+    required this.emailCodeLoginEnabled,
+    required this.emailRegistrationVerificationRequired,
+    required this.phoneCodeLoginEnabled,
+    required this.phoneRegistrationVerificationRequired
   });
 
-  factory BillingHistoryListResult.fromJson(Map<String, dynamic> json) {
-    return BillingHistoryListResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('BillingHistoryListResult.code is required');
+  factory AuthVerificationPolicy.fromJson(Map<String, dynamic> json) {
+    return AuthVerificationPolicy(
+      emailCodeLoginEnabled: (() {
+        final value = json['emailCodeLoginEnabled'];
+        if (value is! bool) {
+          throw FormatException('AuthVerificationPolicy.emailCodeLoginEnabled is required');
         }
         return value;
       })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : BillingHistoryCollectionResponse.fromJson(map);
+      emailRegistrationVerificationRequired: (() {
+        final value = json['emailRegistrationVerificationRequired'];
+        if (value is! bool) {
+          throw FormatException('AuthVerificationPolicy.emailRegistrationVerificationRequired is required');
+        }
+        return value;
       })(),
-      msg: json['msg']?.toString()
+      phoneCodeLoginEnabled: (() {
+        final value = json['phoneCodeLoginEnabled'];
+        if (value is! bool) {
+          throw FormatException('AuthVerificationPolicy.phoneCodeLoginEnabled is required');
+        }
+        return value;
+      })(),
+      phoneRegistrationVerificationRequired: (() {
+        final value = json['phoneRegistrationVerificationRequired'];
+        if (value is! bool) {
+          throw FormatException('AuthVerificationPolicy.phoneRegistrationVerificationRequired is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class CartCurrentRetrieveResult {
-  final String code;
-  final CommerceStandardResourceResponse? data;
-  final String? msg;
-
-  CartCurrentRetrieveResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory CartCurrentRetrieveResult.fromJson(Map<String, dynamic> json) {
-    return CartCurrentRetrieveResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('CartCurrentRetrieveResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardResourceResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class CartItemsCreateResult {
-  final String code;
-  final CommerceOperationResponse? data;
-  final String? msg;
-
-  CartItemsCreateResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory CartItemsCreateResult.fromJson(Map<String, dynamic> json) {
-    return CartItemsCreateResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('CartItemsCreateResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceOperationResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class CartItemsDeleteResult {
-  final String code;
-  final CommerceOperationResponse? data;
-  final String? msg;
-
-  CartItemsDeleteResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory CartItemsDeleteResult.fromJson(Map<String, dynamic> json) {
-    return CartItemsDeleteResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('CartItemsDeleteResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceOperationResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class CartItemsUpdateResult {
-  final String code;
-  final CommerceOperationResponse? data;
-  final String? msg;
-
-  CartItemsUpdateResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory CartItemsUpdateResult.fromJson(Map<String, dynamic> json) {
-    return CartItemsUpdateResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('CartItemsUpdateResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceOperationResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
+      'emailCodeLoginEnabled': emailCodeLoginEnabled,
+      'emailRegistrationVerificationRequired': emailRegistrationVerificationRequired,
+      'phoneCodeLoginEnabled': phoneCodeLoginEnabled,
+      'phoneRegistrationVerificationRequired': phoneRegistrationVerificationRequired,
     };
   }
 }
@@ -5063,154 +4805,6 @@ class ChatTurnResponseRequest {
   }
 }
 
-class CheckoutSessionsCreateResult {
-  final String code;
-  final CommerceOperationResponse? data;
-  final String? msg;
-
-  CheckoutSessionsCreateResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory CheckoutSessionsCreateResult.fromJson(Map<String, dynamic> json) {
-    return CheckoutSessionsCreateResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('CheckoutSessionsCreateResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceOperationResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class CheckoutSessionsOrdersCreateResult {
-  final String code;
-  final CommerceOperationResponse? data;
-  final String? msg;
-
-  CheckoutSessionsOrdersCreateResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory CheckoutSessionsOrdersCreateResult.fromJson(Map<String, dynamic> json) {
-    return CheckoutSessionsOrdersCreateResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('CheckoutSessionsOrdersCreateResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceOperationResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class CheckoutSessionsQuotesCreateResult {
-  final String code;
-  final CommerceOperationResponse? data;
-  final String? msg;
-
-  CheckoutSessionsQuotesCreateResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory CheckoutSessionsQuotesCreateResult.fromJson(Map<String, dynamic> json) {
-    return CheckoutSessionsQuotesCreateResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('CheckoutSessionsQuotesCreateResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceOperationResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class CheckoutSessionsRetrieveResult {
-  final String code;
-  final CommerceStandardResourceResponse? data;
-  final String? msg;
-
-  CheckoutSessionsRetrieveResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory CheckoutSessionsRetrieveResult.fromJson(Map<String, dynamic> json) {
-    return CheckoutSessionsRetrieveResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('CheckoutSessionsRetrieveResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardResourceResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
 class CommentsCreateResult {
   final String code;
   final ForumCommentItem? data;
@@ -5614,1431 +5208,6 @@ class CommentsStatisticsListResult {
       'code': code,
       'data': data?.toJson(),
       'msg': msg,
-    };
-  }
-}
-
-class CommerceMembershipPurchaseRequest {
-  final String? couponId;
-  final String packageId;
-
-  CommerceMembershipPurchaseRequest({
-    this.couponId,
-    required this.packageId
-  });
-
-  factory CommerceMembershipPurchaseRequest.fromJson(Map<String, dynamic> json) {
-    return CommerceMembershipPurchaseRequest(
-      couponId: json['couponId']?.toString(),
-      packageId: (() {
-        final value = json['packageId']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceMembershipPurchaseRequest.packageId is required');
-        }
-        return value;
-      })()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'couponId': couponId,
-      'packageId': packageId,
-    };
-  }
-}
-
-class CommerceOperationResponse {
-  final String? paymentId;
-  final MediaResource? qrCode;
-  final String? qrCodePayload;
-  final String requestNo;
-  final String status;
-  final bool success;
-
-  CommerceOperationResponse({
-    this.paymentId,
-    this.qrCode,
-    this.qrCodePayload,
-    required this.requestNo,
-    required this.status,
-    required this.success
-  });
-
-  factory CommerceOperationResponse.fromJson(Map<String, dynamic> json) {
-    return CommerceOperationResponse(
-      paymentId: json['paymentId']?.toString(),
-      qrCode: (() {
-        final map = _sdkworkAsMap(json['qrCode']);
-        return map == null ? null : MediaResource.fromJson(map);
-      })(),
-      qrCodePayload: json['qrCodePayload']?.toString(),
-      requestNo: (() {
-        final value = json['requestNo']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceOperationResponse.requestNo is required');
-        }
-        return value;
-      })(),
-      status: (() {
-        final value = json['status']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceOperationResponse.status is required');
-        }
-        return value;
-      })(),
-      success: (() {
-        final value = json['success'];
-        if (value is! bool) {
-          throw FormatException('CommerceOperationResponse.success is required');
-        }
-        return value;
-      })()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'paymentId': paymentId,
-      'qrCode': qrCode?.toJson(),
-      'qrCodePayload': qrCodePayload,
-      'requestNo': requestNo,
-      'status': status,
-      'success': success,
-    };
-  }
-}
-
-class CommercePaymentAttemptCreateRequest {
-  final String? clientRequestNo;
-  final String methodCode;
-  final String? note;
-  final String? providerCode;
-  final String? returnUrl;
-
-  CommercePaymentAttemptCreateRequest({
-    this.clientRequestNo,
-    required this.methodCode,
-    this.note,
-    this.providerCode,
-    this.returnUrl
-  });
-
-  factory CommercePaymentAttemptCreateRequest.fromJson(Map<String, dynamic> json) {
-    return CommercePaymentAttemptCreateRequest(
-      clientRequestNo: json['clientRequestNo']?.toString(),
-      methodCode: (() {
-        final value = json['methodCode']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentAttemptCreateRequest.methodCode is required');
-        }
-        return value;
-      })(),
-      note: json['note']?.toString(),
-      providerCode: json['providerCode']?.toString(),
-      returnUrl: json['returnUrl']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'clientRequestNo': clientRequestNo,
-      'methodCode': methodCode,
-      'note': note,
-      'providerCode': providerCode,
-      'returnUrl': returnUrl,
-    };
-  }
-}
-
-class CommercePaymentAttemptItem {
-  final String amount;
-  final String attemptNo;
-  final String createdAt;
-  final String currencyCode;
-  final String? externalTradeNo;
-  final String id;
-  final String intentId;
-  final String? methodCode;
-  final String? paidAt;
-  final String providerCode;
-  final String status;
-  final String? updatedAt;
-
-  CommercePaymentAttemptItem({
-    required this.amount,
-    required this.attemptNo,
-    required this.createdAt,
-    required this.currencyCode,
-    this.externalTradeNo,
-    required this.id,
-    required this.intentId,
-    this.methodCode,
-    this.paidAt,
-    required this.providerCode,
-    required this.status,
-    this.updatedAt
-  });
-
-  factory CommercePaymentAttemptItem.fromJson(Map<String, dynamic> json) {
-    return CommercePaymentAttemptItem(
-      amount: (() {
-        final value = json['amount']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentAttemptItem.amount is required');
-        }
-        return value;
-      })(),
-      attemptNo: (() {
-        final value = json['attemptNo']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentAttemptItem.attemptNo is required');
-        }
-        return value;
-      })(),
-      createdAt: (() {
-        final value = json['createdAt']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentAttemptItem.createdAt is required');
-        }
-        return value;
-      })(),
-      currencyCode: (() {
-        final value = json['currencyCode']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentAttemptItem.currencyCode is required');
-        }
-        return value;
-      })(),
-      externalTradeNo: json['externalTradeNo']?.toString(),
-      id: (() {
-        final value = json['id']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentAttemptItem.id is required');
-        }
-        return value;
-      })(),
-      intentId: (() {
-        final value = json['intentId']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentAttemptItem.intentId is required');
-        }
-        return value;
-      })(),
-      methodCode: json['methodCode']?.toString(),
-      paidAt: json['paidAt']?.toString(),
-      providerCode: (() {
-        final value = json['providerCode']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentAttemptItem.providerCode is required');
-        }
-        return value;
-      })(),
-      status: (() {
-        final value = json['status']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentAttemptItem.status is required');
-        }
-        return value;
-      })(),
-      updatedAt: json['updatedAt']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'amount': amount,
-      'attemptNo': attemptNo,
-      'createdAt': createdAt,
-      'currencyCode': currencyCode,
-      'externalTradeNo': externalTradeNo,
-      'id': id,
-      'intentId': intentId,
-      'methodCode': methodCode,
-      'paidAt': paidAt,
-      'providerCode': providerCode,
-      'status': status,
-      'updatedAt': updatedAt,
-    };
-  }
-}
-
-class CommercePaymentAttemptResponse {
-  final CommercePaymentAttemptItem item;
-
-  CommercePaymentAttemptResponse({
-    required this.item
-  });
-
-  factory CommercePaymentAttemptResponse.fromJson(Map<String, dynamic> json) {
-    return CommercePaymentAttemptResponse(
-      item: (() {
-        final map = _sdkworkAsMap(json['item']);
-        if (map == null) {
-          throw FormatException('CommercePaymentAttemptResponse.item is required');
-        }
-        return CommercePaymentAttemptItem.fromJson(map);
-      })()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'item': item.toJson(),
-    };
-  }
-}
-
-class CommercePaymentIntentCreateRequest {
-  final String amount;
-  final String? checkoutSessionId;
-  final String? clientRequestNo;
-  final String currencyCode;
-  final String methodCode;
-  final String? note;
-  final String orderId;
-  final String subjectType;
-
-  CommercePaymentIntentCreateRequest({
-    required this.amount,
-    this.checkoutSessionId,
-    this.clientRequestNo,
-    required this.currencyCode,
-    required this.methodCode,
-    this.note,
-    required this.orderId,
-    required this.subjectType
-  });
-
-  factory CommercePaymentIntentCreateRequest.fromJson(Map<String, dynamic> json) {
-    return CommercePaymentIntentCreateRequest(
-      amount: (() {
-        final value = json['amount']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentIntentCreateRequest.amount is required');
-        }
-        return value;
-      })(),
-      checkoutSessionId: json['checkoutSessionId']?.toString(),
-      clientRequestNo: json['clientRequestNo']?.toString(),
-      currencyCode: (() {
-        final value = json['currencyCode']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentIntentCreateRequest.currencyCode is required');
-        }
-        return value;
-      })(),
-      methodCode: (() {
-        final value = json['methodCode']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentIntentCreateRequest.methodCode is required');
-        }
-        return value;
-      })(),
-      note: json['note']?.toString(),
-      orderId: (() {
-        final value = json['orderId']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentIntentCreateRequest.orderId is required');
-        }
-        return value;
-      })(),
-      subjectType: (() {
-        final value = json['subjectType']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentIntentCreateRequest.subjectType is required');
-        }
-        return value;
-      })()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'amount': amount,
-      'checkoutSessionId': checkoutSessionId,
-      'clientRequestNo': clientRequestNo,
-      'currencyCode': currencyCode,
-      'methodCode': methodCode,
-      'note': note,
-      'orderId': orderId,
-      'subjectType': subjectType,
-    };
-  }
-}
-
-class CommercePaymentIntentItem {
-  final String amount;
-  final String? checkoutSessionId;
-  final String createdAt;
-  final String currencyCode;
-  final String id;
-  final String intentNo;
-  final String? methodCode;
-  final String orderId;
-  final String? providerCode;
-  final String status;
-  final String subjectType;
-  final String updatedAt;
-
-  CommercePaymentIntentItem({
-    required this.amount,
-    this.checkoutSessionId,
-    required this.createdAt,
-    required this.currencyCode,
-    required this.id,
-    required this.intentNo,
-    this.methodCode,
-    required this.orderId,
-    this.providerCode,
-    required this.status,
-    required this.subjectType,
-    required this.updatedAt
-  });
-
-  factory CommercePaymentIntentItem.fromJson(Map<String, dynamic> json) {
-    return CommercePaymentIntentItem(
-      amount: (() {
-        final value = json['amount']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentIntentItem.amount is required');
-        }
-        return value;
-      })(),
-      checkoutSessionId: json['checkoutSessionId']?.toString(),
-      createdAt: (() {
-        final value = json['createdAt']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentIntentItem.createdAt is required');
-        }
-        return value;
-      })(),
-      currencyCode: (() {
-        final value = json['currencyCode']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentIntentItem.currencyCode is required');
-        }
-        return value;
-      })(),
-      id: (() {
-        final value = json['id']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentIntentItem.id is required');
-        }
-        return value;
-      })(),
-      intentNo: (() {
-        final value = json['intentNo']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentIntentItem.intentNo is required');
-        }
-        return value;
-      })(),
-      methodCode: json['methodCode']?.toString(),
-      orderId: (() {
-        final value = json['orderId']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentIntentItem.orderId is required');
-        }
-        return value;
-      })(),
-      providerCode: json['providerCode']?.toString(),
-      status: (() {
-        final value = json['status']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentIntentItem.status is required');
-        }
-        return value;
-      })(),
-      subjectType: (() {
-        final value = json['subjectType']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentIntentItem.subjectType is required');
-        }
-        return value;
-      })(),
-      updatedAt: (() {
-        final value = json['updatedAt']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentIntentItem.updatedAt is required');
-        }
-        return value;
-      })()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'amount': amount,
-      'checkoutSessionId': checkoutSessionId,
-      'createdAt': createdAt,
-      'currencyCode': currencyCode,
-      'id': id,
-      'intentNo': intentNo,
-      'methodCode': methodCode,
-      'orderId': orderId,
-      'providerCode': providerCode,
-      'status': status,
-      'subjectType': subjectType,
-      'updatedAt': updatedAt,
-    };
-  }
-}
-
-class CommercePaymentIntentResponse {
-  final CommercePaymentIntentItem item;
-
-  CommercePaymentIntentResponse({
-    required this.item
-  });
-
-  factory CommercePaymentIntentResponse.fromJson(Map<String, dynamic> json) {
-    return CommercePaymentIntentResponse(
-      item: (() {
-        final map = _sdkworkAsMap(json['item']);
-        if (map == null) {
-          throw FormatException('CommercePaymentIntentResponse.item is required');
-        }
-        return CommercePaymentIntentItem.fromJson(map);
-      })()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'item': item.toJson(),
-    };
-  }
-}
-
-class CommercePaymentMethodItem {
-  final List<String> checkoutScenes;
-  final String createdAt;
-  final String displayName;
-  final String id;
-  final String methodCode;
-  final String methodType;
-  final String? providerCode;
-  final String sortOrder;
-  final String status;
-  final String updatedAt;
-
-  CommercePaymentMethodItem({
-    required this.checkoutScenes,
-    required this.createdAt,
-    required this.displayName,
-    required this.id,
-    required this.methodCode,
-    required this.methodType,
-    this.providerCode,
-    required this.sortOrder,
-    required this.status,
-    required this.updatedAt
-  });
-
-  factory CommercePaymentMethodItem.fromJson(Map<String, dynamic> json) {
-    return CommercePaymentMethodItem(
-      checkoutScenes: (() {
-        final list = _sdkworkAsList(json['checkoutScenes']);
-        if (list == null) {
-          throw FormatException('CommercePaymentMethodItem.checkoutScenes is required');
-        }
-        return list
-            .map((item) => item?.toString())
-            .whereType<String>()
-            .toList();
-      })(),
-      createdAt: (() {
-        final value = json['createdAt']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentMethodItem.createdAt is required');
-        }
-        return value;
-      })(),
-      displayName: (() {
-        final value = json['displayName']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentMethodItem.displayName is required');
-        }
-        return value;
-      })(),
-      id: (() {
-        final value = json['id']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentMethodItem.id is required');
-        }
-        return value;
-      })(),
-      methodCode: (() {
-        final value = json['methodCode']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentMethodItem.methodCode is required');
-        }
-        return value;
-      })(),
-      methodType: (() {
-        final value = json['methodType']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentMethodItem.methodType is required');
-        }
-        return value;
-      })(),
-      providerCode: json['providerCode']?.toString(),
-      sortOrder: (() {
-        final value = json['sortOrder']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentMethodItem.sortOrder is required');
-        }
-        return value;
-      })(),
-      status: (() {
-        final value = json['status']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentMethodItem.status is required');
-        }
-        return value;
-      })(),
-      updatedAt: (() {
-        final value = json['updatedAt']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentMethodItem.updatedAt is required');
-        }
-        return value;
-      })()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'checkoutScenes': checkoutScenes.map((item) => item).toList(),
-      'createdAt': createdAt,
-      'displayName': displayName,
-      'id': id,
-      'methodCode': methodCode,
-      'methodType': methodType,
-      'providerCode': providerCode,
-      'sortOrder': sortOrder,
-      'status': status,
-      'updatedAt': updatedAt,
-    };
-  }
-}
-
-class CommercePaymentMethodListResponse {
-  final List<CommercePaymentMethodItem> items;
-  final String page;
-  final String pageSize;
-  final String total;
-
-  CommercePaymentMethodListResponse({
-    required this.items,
-    required this.page,
-    required this.pageSize,
-    required this.total
-  });
-
-  factory CommercePaymentMethodListResponse.fromJson(Map<String, dynamic> json) {
-    return CommercePaymentMethodListResponse(
-      items: (() {
-        final list = _sdkworkAsList(json['items']);
-        if (list == null) {
-          throw FormatException('CommercePaymentMethodListResponse.items is required');
-        }
-        return list
-            .map((item) => (() {
-        final map = _sdkworkAsMap(item);
-        return map == null ? null : CommercePaymentMethodItem.fromJson(map);
-      })())
-            .whereType<CommercePaymentMethodItem>()
-            .toList();
-      })(),
-      page: (() {
-        final value = json['page']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentMethodListResponse.page is required');
-        }
-        return value;
-      })(),
-      pageSize: (() {
-        final value = json['pageSize']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentMethodListResponse.pageSize is required');
-        }
-        return value;
-      })(),
-      total: (() {
-        final value = json['total']?.toString();
-        if (value == null) {
-          throw FormatException('CommercePaymentMethodListResponse.total is required');
-        }
-        return value;
-      })()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'items': items.map((item) => item.toJson()).toList(),
-      'page': page,
-      'pageSize': pageSize,
-      'total': total,
-    };
-  }
-}
-
-class CommerceRechargeCheckoutStatusResponse {
-  final String amount;
-  final String cashierUrl;
-  final String createdAt;
-  final String currencyCode;
-  final String expiresAt;
-  final String nextAction;
-  final String orderNo;
-  final String orderStatus;
-  final String outTradeNo;
-  final String paidAt;
-  final String paymentMethod;
-  final String paymentProduct;
-  final String paymentStatus;
-  final String points;
-  final String providerCode;
-  final String qrCodePayload;
-  final String rechargeStatus;
-  final Map<String, dynamic>? requestPaymentPayload;
-  final String status;
-
-  CommerceRechargeCheckoutStatusResponse({
-    required this.amount,
-    required this.cashierUrl,
-    required this.createdAt,
-    required this.currencyCode,
-    required this.expiresAt,
-    required this.nextAction,
-    required this.orderNo,
-    required this.orderStatus,
-    required this.outTradeNo,
-    required this.paidAt,
-    required this.paymentMethod,
-    required this.paymentProduct,
-    required this.paymentStatus,
-    required this.points,
-    required this.providerCode,
-    required this.qrCodePayload,
-    required this.rechargeStatus,
-    this.requestPaymentPayload,
-    required this.status
-  });
-
-  factory CommerceRechargeCheckoutStatusResponse.fromJson(Map<String, dynamic> json) {
-    return CommerceRechargeCheckoutStatusResponse(
-      amount: (() {
-        final value = json['amount']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeCheckoutStatusResponse.amount is required');
-        }
-        return value;
-      })(),
-      cashierUrl: (() {
-        final value = json['cashierUrl']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeCheckoutStatusResponse.cashierUrl is required');
-        }
-        return value;
-      })(),
-      createdAt: (() {
-        final value = json['createdAt']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeCheckoutStatusResponse.createdAt is required');
-        }
-        return value;
-      })(),
-      currencyCode: (() {
-        final value = json['currencyCode']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeCheckoutStatusResponse.currencyCode is required');
-        }
-        return value;
-      })(),
-      expiresAt: (() {
-        final value = json['expiresAt']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeCheckoutStatusResponse.expiresAt is required');
-        }
-        return value;
-      })(),
-      nextAction: (() {
-        final value = json['nextAction']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeCheckoutStatusResponse.nextAction is required');
-        }
-        return value;
-      })(),
-      orderNo: (() {
-        final value = json['orderNo']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeCheckoutStatusResponse.orderNo is required');
-        }
-        return value;
-      })(),
-      orderStatus: (() {
-        final value = json['orderStatus']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeCheckoutStatusResponse.orderStatus is required');
-        }
-        return value;
-      })(),
-      outTradeNo: (() {
-        final value = json['outTradeNo']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeCheckoutStatusResponse.outTradeNo is required');
-        }
-        return value;
-      })(),
-      paidAt: (() {
-        final value = json['paidAt']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeCheckoutStatusResponse.paidAt is required');
-        }
-        return value;
-      })(),
-      paymentMethod: (() {
-        final value = json['paymentMethod']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeCheckoutStatusResponse.paymentMethod is required');
-        }
-        return value;
-      })(),
-      paymentProduct: (() {
-        final value = json['paymentProduct']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeCheckoutStatusResponse.paymentProduct is required');
-        }
-        return value;
-      })(),
-      paymentStatus: (() {
-        final value = json['paymentStatus']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeCheckoutStatusResponse.paymentStatus is required');
-        }
-        return value;
-      })(),
-      points: (() {
-        final value = json['points']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeCheckoutStatusResponse.points is required');
-        }
-        return value;
-      })(),
-      providerCode: (() {
-        final value = json['providerCode']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeCheckoutStatusResponse.providerCode is required');
-        }
-        return value;
-      })(),
-      qrCodePayload: (() {
-        final value = json['qrCodePayload']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeCheckoutStatusResponse.qrCodePayload is required');
-        }
-        return value;
-      })(),
-      rechargeStatus: (() {
-        final value = json['rechargeStatus']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeCheckoutStatusResponse.rechargeStatus is required');
-        }
-        return value;
-      })(),
-      requestPaymentPayload: (() {
-        final map = _sdkworkAsMap(json['requestPaymentPayload']);
-        if (map == null) {
-          return null;
-        }
-        final result = <String, String>{};
-        map.forEach((key, item) {
-          final deserialized = item?.toString();
-          if (deserialized is String) {
-            result[key] = deserialized;
-          }
-        });
-        return result;
-      })(),
-      status: (() {
-        final value = json['status']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeCheckoutStatusResponse.status is required');
-        }
-        return value;
-      })()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'amount': amount,
-      'cashierUrl': cashierUrl,
-      'createdAt': createdAt,
-      'currencyCode': currencyCode,
-      'expiresAt': expiresAt,
-      'nextAction': nextAction,
-      'orderNo': orderNo,
-      'orderStatus': orderStatus,
-      'outTradeNo': outTradeNo,
-      'paidAt': paidAt,
-      'paymentMethod': paymentMethod,
-      'paymentProduct': paymentProduct,
-      'paymentStatus': paymentStatus,
-      'points': points,
-      'providerCode': providerCode,
-      'qrCodePayload': qrCodePayload,
-      'rechargeStatus': rechargeStatus,
-      'requestPaymentPayload': requestPaymentPayload?.map((key, item) => MapEntry(key, item)),
-      'status': status,
-    };
-  }
-}
-
-class CommerceRechargeOrderCreateRequest {
-  final String amount;
-  final String? clientRequestNo;
-  final String currencyCode;
-  final String? packageId;
-  final String source;
-
-  CommerceRechargeOrderCreateRequest({
-    required this.amount,
-    this.clientRequestNo,
-    required this.currencyCode,
-    this.packageId,
-    required this.source
-  });
-
-  factory CommerceRechargeOrderCreateRequest.fromJson(Map<String, dynamic> json) {
-    return CommerceRechargeOrderCreateRequest(
-      amount: (() {
-        final value = json['amount']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeOrderCreateRequest.amount is required');
-        }
-        return value;
-      })(),
-      clientRequestNo: json['clientRequestNo']?.toString(),
-      currencyCode: (() {
-        final value = json['currencyCode']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeOrderCreateRequest.currencyCode is required');
-        }
-        return value;
-      })(),
-      packageId: json['packageId']?.toString(),
-      source: (() {
-        final value = json['source']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeOrderCreateRequest.source is required');
-        }
-        return value;
-      })()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'amount': amount,
-      'clientRequestNo': clientRequestNo,
-      'currencyCode': currencyCode,
-      'packageId': packageId,
-      'source': source,
-    };
-  }
-}
-
-class CommerceRechargeOrderCreateResponse {
-  final String amount;
-  final String cashierUrl;
-  final String currencyCode;
-  final String nextAction;
-  final String orderNo;
-  final String paymentMethod;
-  final String paymentProduct;
-  final String points;
-  final String providerCode;
-  final String qrCodePayload;
-  final Map<String, dynamic>? requestPaymentPayload;
-  final String status;
-  final bool success;
-
-  CommerceRechargeOrderCreateResponse({
-    required this.amount,
-    required this.cashierUrl,
-    required this.currencyCode,
-    required this.nextAction,
-    required this.orderNo,
-    required this.paymentMethod,
-    required this.paymentProduct,
-    required this.points,
-    required this.providerCode,
-    required this.qrCodePayload,
-    this.requestPaymentPayload,
-    required this.status,
-    required this.success
-  });
-
-  factory CommerceRechargeOrderCreateResponse.fromJson(Map<String, dynamic> json) {
-    return CommerceRechargeOrderCreateResponse(
-      amount: (() {
-        final value = json['amount']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeOrderCreateResponse.amount is required');
-        }
-        return value;
-      })(),
-      cashierUrl: (() {
-        final value = json['cashierUrl']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeOrderCreateResponse.cashierUrl is required');
-        }
-        return value;
-      })(),
-      currencyCode: (() {
-        final value = json['currencyCode']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeOrderCreateResponse.currencyCode is required');
-        }
-        return value;
-      })(),
-      nextAction: (() {
-        final value = json['nextAction']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeOrderCreateResponse.nextAction is required');
-        }
-        return value;
-      })(),
-      orderNo: (() {
-        final value = json['orderNo']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeOrderCreateResponse.orderNo is required');
-        }
-        return value;
-      })(),
-      paymentMethod: (() {
-        final value = json['paymentMethod']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeOrderCreateResponse.paymentMethod is required');
-        }
-        return value;
-      })(),
-      paymentProduct: (() {
-        final value = json['paymentProduct']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeOrderCreateResponse.paymentProduct is required');
-        }
-        return value;
-      })(),
-      points: (() {
-        final value = json['points']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeOrderCreateResponse.points is required');
-        }
-        return value;
-      })(),
-      providerCode: (() {
-        final value = json['providerCode']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeOrderCreateResponse.providerCode is required');
-        }
-        return value;
-      })(),
-      qrCodePayload: (() {
-        final value = json['qrCodePayload']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeOrderCreateResponse.qrCodePayload is required');
-        }
-        return value;
-      })(),
-      requestPaymentPayload: (() {
-        final map = _sdkworkAsMap(json['requestPaymentPayload']);
-        if (map == null) {
-          return null;
-        }
-        final result = <String, String>{};
-        map.forEach((key, item) {
-          final deserialized = item?.toString();
-          if (deserialized is String) {
-            result[key] = deserialized;
-          }
-        });
-        return result;
-      })(),
-      status: (() {
-        final value = json['status']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeOrderCreateResponse.status is required');
-        }
-        return value;
-      })(),
-      success: (() {
-        final value = json['success'];
-        if (value is! bool) {
-          throw FormatException('CommerceRechargeOrderCreateResponse.success is required');
-        }
-        return value;
-      })()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'amount': amount,
-      'cashierUrl': cashierUrl,
-      'currencyCode': currencyCode,
-      'nextAction': nextAction,
-      'orderNo': orderNo,
-      'paymentMethod': paymentMethod,
-      'paymentProduct': paymentProduct,
-      'points': points,
-      'providerCode': providerCode,
-      'qrCodePayload': qrCodePayload,
-      'requestPaymentPayload': requestPaymentPayload?.map((key, item) => MapEntry(key, item)),
-      'status': status,
-      'success': success,
-    };
-  }
-}
-
-class CommerceRechargePackageItem {
-  final String bonusPoints;
-  final String currencyCode;
-  final String grantAmount;
-  final String id;
-  final String? name;
-  final String? packageNo;
-  final String points;
-  final String priceAmount;
-  final String? skuId;
-  final String? status;
-  final String? updatedAt;
-
-  CommerceRechargePackageItem({
-    required this.bonusPoints,
-    required this.currencyCode,
-    required this.grantAmount,
-    required this.id,
-    this.name,
-    this.packageNo,
-    required this.points,
-    required this.priceAmount,
-    this.skuId,
-    this.status,
-    this.updatedAt
-  });
-
-  factory CommerceRechargePackageItem.fromJson(Map<String, dynamic> json) {
-    return CommerceRechargePackageItem(
-      bonusPoints: (() {
-        final value = json['bonusPoints']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargePackageItem.bonusPoints is required');
-        }
-        return value;
-      })(),
-      currencyCode: (() {
-        final value = json['currencyCode']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargePackageItem.currencyCode is required');
-        }
-        return value;
-      })(),
-      grantAmount: (() {
-        final value = json['grantAmount']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargePackageItem.grantAmount is required');
-        }
-        return value;
-      })(),
-      id: (() {
-        final value = json['id']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargePackageItem.id is required');
-        }
-        return value;
-      })(),
-      name: json['name']?.toString(),
-      packageNo: json['packageNo']?.toString(),
-      points: (() {
-        final value = json['points']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargePackageItem.points is required');
-        }
-        return value;
-      })(),
-      priceAmount: (() {
-        final value = json['priceAmount']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargePackageItem.priceAmount is required');
-        }
-        return value;
-      })(),
-      skuId: json['skuId']?.toString(),
-      status: json['status']?.toString(),
-      updatedAt: json['updatedAt']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'bonusPoints': bonusPoints,
-      'currencyCode': currencyCode,
-      'grantAmount': grantAmount,
-      'id': id,
-      'name': name,
-      'packageNo': packageNo,
-      'points': points,
-      'priceAmount': priceAmount,
-      'skuId': skuId,
-      'status': status,
-      'updatedAt': updatedAt,
-    };
-  }
-}
-
-class CommerceRechargePackageListResponse {
-  final List<CommerceRechargePackageItem> items;
-
-  CommerceRechargePackageListResponse({
-    required this.items
-  });
-
-  factory CommerceRechargePackageListResponse.fromJson(Map<String, dynamic> json) {
-    return CommerceRechargePackageListResponse(
-      items: (() {
-        final list = _sdkworkAsList(json['items']);
-        if (list == null) {
-          throw FormatException('CommerceRechargePackageListResponse.items is required');
-        }
-        return list
-            .map((item) => (() {
-        final map = _sdkworkAsMap(item);
-        return map == null ? null : CommerceRechargePackageItem.fromJson(map);
-      })())
-            .whereType<CommerceRechargePackageItem>()
-            .toList();
-      })()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'items': items.map((item) => item.toJson()).toList(),
-    };
-  }
-}
-
-class CommerceRechargeSettingsResponse {
-  final String baseCurrencyCode;
-  final String basePointsPerCny;
-  final Map<String, String> currencyToCnyRates;
-  final Map<String, Map<String, Map<String, dynamic>>>? previewExamples;
-
-  CommerceRechargeSettingsResponse({
-    required this.baseCurrencyCode,
-    required this.basePointsPerCny,
-    required this.currencyToCnyRates,
-    this.previewExamples
-  });
-
-  factory CommerceRechargeSettingsResponse.fromJson(Map<String, dynamic> json) {
-    return CommerceRechargeSettingsResponse(
-      baseCurrencyCode: (() {
-        final value = json['baseCurrencyCode']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeSettingsResponse.baseCurrencyCode is required');
-        }
-        return value;
-      })(),
-      basePointsPerCny: (() {
-        final value = json['basePointsPerCny']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceRechargeSettingsResponse.basePointsPerCny is required');
-        }
-        return value;
-      })(),
-      currencyToCnyRates: (() {
-        final map = _sdkworkAsMap(json['currencyToCnyRates']);
-        if (map == null) {
-          throw FormatException('CommerceRechargeSettingsResponse.currencyToCnyRates is required');
-        }
-        final result = <String, String>{};
-        map.forEach((key, item) {
-          final deserialized = item?.toString();
-          if (deserialized is String) {
-            result[key] = deserialized;
-          }
-        });
-        return result;
-      })(),
-      previewExamples: (() {
-        final map = _sdkworkAsMap(json['previewExamples']);
-        if (map == null) {
-          return null;
-        }
-        final result = <String, Map<String, Map<String, dynamic>>>{};
-        map.forEach((key, item) {
-          final deserialized = (() {
-        final map = _sdkworkAsMap(item);
-        if (map == null) {
-          return null;
-        }
-        final result = <String, Map<String, dynamic>>{};
-        map.forEach((key, nestedItem) {
-          final deserialized = _sdkworkAsMap(nestedItem);
-          if (deserialized is Map<String, dynamic>) {
-            result[key] = deserialized;
-          }
-        });
-        return result;
-      })();
-          if (deserialized is Map<String, Map<String, dynamic>>) {
-            result[key] = deserialized;
-          }
-        });
-        return result;
-      })()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'baseCurrencyCode': baseCurrencyCode,
-      'basePointsPerCny': basePointsPerCny,
-      'currencyToCnyRates': currencyToCnyRates.map((key, item) => MapEntry(key, item)),
-      'previewExamples': previewExamples?.map((key, item) => MapEntry(key, item.map((key, nestedItem) => MapEntry(key, nestedItem)))),
-    };
-  }
-}
-
-class CommerceStandardCollectionResponse {
-  final List<Map<String, dynamic>> items;
-  final String page;
-  final String pageSize;
-  final String total;
-
-  CommerceStandardCollectionResponse({
-    required this.items,
-    required this.page,
-    required this.pageSize,
-    required this.total
-  });
-
-  factory CommerceStandardCollectionResponse.fromJson(Map<String, dynamic> json) {
-    return CommerceStandardCollectionResponse(
-      items: (() {
-        final list = _sdkworkAsList(json['items']);
-        if (list == null) {
-          throw FormatException('CommerceStandardCollectionResponse.items is required');
-        }
-        return list
-            .map((item) => _sdkworkAsMap(item))
-            .whereType<Map<String, dynamic>>()
-            .toList();
-      })(),
-      page: (() {
-        final value = json['page']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceStandardCollectionResponse.page is required');
-        }
-        return value;
-      })(),
-      pageSize: (() {
-        final value = json['pageSize']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceStandardCollectionResponse.pageSize is required');
-        }
-        return value;
-      })(),
-      total: (() {
-        final value = json['total']?.toString();
-        if (value == null) {
-          throw FormatException('CommerceStandardCollectionResponse.total is required');
-        }
-        return value;
-      })()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'items': items.map((item) => item).toList(),
-      'page': page,
-      'pageSize': pageSize,
-      'total': total,
-    };
-  }
-}
-
-class CommerceStandardCommandRequest {
-  final String? clientRequestNo;
-  final Map<String, dynamic>? metadata;
-  final String? note;
-
-  CommerceStandardCommandRequest({
-    this.clientRequestNo,
-    this.metadata,
-    this.note
-  });
-
-  factory CommerceStandardCommandRequest.fromJson(Map<String, dynamic> json) {
-    return CommerceStandardCommandRequest(
-      clientRequestNo: json['clientRequestNo']?.toString(),
-      metadata: (() {
-        final map = _sdkworkAsMap(json['metadata']);
-        if (map == null) {
-          return null;
-        }
-        final result = <String, String>{};
-        map.forEach((key, item) {
-          final deserialized = item?.toString();
-          if (deserialized is String) {
-            result[key] = deserialized;
-          }
-        });
-        return result;
-      })(),
-      note: json['note']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'clientRequestNo': clientRequestNo,
-      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
-      'note': note,
-    };
-  }
-}
-
-class CommerceStandardResourceResponse {
-  final Map<String, dynamic> item;
-
-  CommerceStandardResourceResponse({
-    required this.item
-  });
-
-  factory CommerceStandardResourceResponse.fromJson(Map<String, dynamic> json) {
-    return CommerceStandardResourceResponse(
-      item: (() {
-        final map = _sdkworkAsMap(json['item']);
-        if (map == null) {
-          throw FormatException('CommerceStandardResourceResponse.item is required');
-        }
-        return map;
-      })()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'item': item,
     };
   }
 }
@@ -9716,6 +7885,117 @@ class DeleteApiKeyResponse {
   }
 }
 
+class DepartmentAssignmentsListResult {
+  final String code;
+  final IamDepartmentAssignmentListResponse? data;
+  final String? msg;
+
+  DepartmentAssignmentsListResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory DepartmentAssignmentsListResult.fromJson(Map<String, dynamic> json) {
+    return DepartmentAssignmentsListResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('DepartmentAssignmentsListResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : IamDepartmentAssignmentListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class DepartmentsListResult {
+  final String code;
+  final IamDepartmentListResponse? data;
+  final String? msg;
+
+  DepartmentsListResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory DepartmentsListResult.fromJson(Map<String, dynamic> json) {
+    return DepartmentsListResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('DepartmentsListResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : IamDepartmentListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class DepartmentsTreeRetrieveResult {
+  final String code;
+  final IamDepartmentTreeResponse? data;
+  final String? msg;
+
+  DepartmentsTreeRetrieveResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory DepartmentsTreeRetrieveResult.fromJson(Map<String, dynamic> json) {
+    return DepartmentsTreeRetrieveResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('DepartmentsTreeRetrieveResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : IamDepartmentTreeResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
 class DocumentationCreateResult {
   final String code;
   final SdkReferenceDocumentationResponse? data;
@@ -11645,80 +9925,6 @@ class ForumReplyCommentRequest {
   }
 }
 
-class FulfillmentsListResult {
-  final String code;
-  final CommerceStandardCollectionResponse? data;
-  final String? msg;
-
-  FulfillmentsListResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory FulfillmentsListResult.fromJson(Map<String, dynamic> json) {
-    return FulfillmentsListResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('FulfillmentsListResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class FulfillmentsRetrieveResult {
-  final String code;
-  final CommerceStandardResourceResponse? data;
-  final String? msg;
-
-  FulfillmentsRetrieveResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory FulfillmentsRetrieveResult.fromJson(Map<String, dynamic> json) {
-    return FulfillmentsRetrieveResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('FulfillmentsRetrieveResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardResourceResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
 class GatewayTrace {
   final String channel;
   final String duration;
@@ -12080,6 +10286,2171 @@ class GenerationListResult {
   }
 }
 
+class IamAppContext {
+  final String appId;
+  final String authLevel;
+  final List<String> dataScope;
+  final String deploymentMode;
+  final String environment;
+  final String? organizationId;
+  final List<String> permissionScope;
+  final String sessionId;
+  final String tenantId;
+  final String userId;
+
+  IamAppContext({
+    required this.appId,
+    required this.authLevel,
+    required this.dataScope,
+    required this.deploymentMode,
+    required this.environment,
+    this.organizationId,
+    required this.permissionScope,
+    required this.sessionId,
+    required this.tenantId,
+    required this.userId
+  });
+
+  factory IamAppContext.fromJson(Map<String, dynamic> json) {
+    return IamAppContext(
+      appId: (() {
+        final value = json['appId']?.toString();
+        if (value == null) {
+          throw FormatException('IamAppContext.appId is required');
+        }
+        return value;
+      })(),
+      authLevel: (() {
+        final value = json['authLevel']?.toString();
+        if (value == null) {
+          throw FormatException('IamAppContext.authLevel is required');
+        }
+        return value;
+      })(),
+      dataScope: (() {
+        final list = _sdkworkAsList(json['dataScope']);
+        if (list == null) {
+          throw FormatException('IamAppContext.dataScope is required');
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      deploymentMode: (() {
+        final value = json['deploymentMode']?.toString();
+        if (value == null) {
+          throw FormatException('IamAppContext.deploymentMode is required');
+        }
+        return value;
+      })(),
+      environment: (() {
+        final value = json['environment']?.toString();
+        if (value == null) {
+          throw FormatException('IamAppContext.environment is required');
+        }
+        return value;
+      })(),
+      organizationId: json['organizationId']?.toString(),
+      permissionScope: (() {
+        final list = _sdkworkAsList(json['permissionScope']);
+        if (list == null) {
+          throw FormatException('IamAppContext.permissionScope is required');
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      sessionId: (() {
+        final value = json['sessionId']?.toString();
+        if (value == null) {
+          throw FormatException('IamAppContext.sessionId is required');
+        }
+        return value;
+      })(),
+      tenantId: (() {
+        final value = json['tenantId']?.toString();
+        if (value == null) {
+          throw FormatException('IamAppContext.tenantId is required');
+        }
+        return value;
+      })(),
+      userId: (() {
+        final value = json['userId']?.toString();
+        if (value == null) {
+          throw FormatException('IamAppContext.userId is required');
+        }
+        return value;
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'appId': appId,
+      'authLevel': authLevel,
+      'dataScope': dataScope.map((item) => item).toList(),
+      'deploymentMode': deploymentMode,
+      'environment': environment,
+      'organizationId': organizationId,
+      'permissionScope': permissionScope.map((item) => item).toList(),
+      'sessionId': sessionId,
+      'tenantId': tenantId,
+      'userId': userId,
+    };
+  }
+}
+
+class IamCurrentSessionUpdateRequest {
+  final String? deviceName;
+  final String? organizationCode;
+  final String? organizationId;
+
+  IamCurrentSessionUpdateRequest({
+    this.deviceName,
+    this.organizationCode,
+    this.organizationId
+  });
+
+  factory IamCurrentSessionUpdateRequest.fromJson(Map<String, dynamic> json) {
+    return IamCurrentSessionUpdateRequest(
+      deviceName: json['deviceName']?.toString(),
+      organizationCode: json['organizationCode']?.toString(),
+      organizationId: json['organizationId']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'deviceName': deviceName,
+      'organizationCode': organizationCode,
+      'organizationId': organizationId,
+    };
+  }
+}
+
+class IamDepartmentAssignmentItem {
+  final String assignmentKind;
+  final String createdAt;
+  final String departmentId;
+  final String effectiveFrom;
+  final String effectiveTo;
+  final String id;
+  final bool isPrimary;
+  final String organizationId;
+  final String organizationMembershipId;
+  final String status;
+  final String tenantId;
+  final String updatedAt;
+  final String userId;
+
+  IamDepartmentAssignmentItem({
+    required this.assignmentKind,
+    required this.createdAt,
+    required this.departmentId,
+    required this.effectiveFrom,
+    required this.effectiveTo,
+    required this.id,
+    required this.isPrimary,
+    required this.organizationId,
+    required this.organizationMembershipId,
+    required this.status,
+    required this.tenantId,
+    required this.updatedAt,
+    required this.userId
+  });
+
+  factory IamDepartmentAssignmentItem.fromJson(Map<String, dynamic> json) {
+    return IamDepartmentAssignmentItem(
+      assignmentKind: (() {
+        final value = json['assignmentKind']?.toString();
+        if (value == null) {
+          throw FormatException('IamDepartmentAssignmentItem.assignmentKind is required');
+        }
+        return value;
+      })(),
+      createdAt: (() {
+        final value = json['createdAt']?.toString();
+        if (value == null) {
+          throw FormatException('IamDepartmentAssignmentItem.createdAt is required');
+        }
+        return value;
+      })(),
+      departmentId: (() {
+        final value = json['departmentId']?.toString();
+        if (value == null) {
+          throw FormatException('IamDepartmentAssignmentItem.departmentId is required');
+        }
+        return value;
+      })(),
+      effectiveFrom: (() {
+        final value = json['effectiveFrom']?.toString();
+        if (value == null) {
+          throw FormatException('IamDepartmentAssignmentItem.effectiveFrom is required');
+        }
+        return value;
+      })(),
+      effectiveTo: (() {
+        final value = json['effectiveTo']?.toString();
+        if (value == null) {
+          throw FormatException('IamDepartmentAssignmentItem.effectiveTo is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('IamDepartmentAssignmentItem.id is required');
+        }
+        return value;
+      })(),
+      isPrimary: (() {
+        final value = json['isPrimary'];
+        if (value is! bool) {
+          throw FormatException('IamDepartmentAssignmentItem.isPrimary is required');
+        }
+        return value;
+      })(),
+      organizationId: (() {
+        final value = json['organizationId']?.toString();
+        if (value == null) {
+          throw FormatException('IamDepartmentAssignmentItem.organizationId is required');
+        }
+        return value;
+      })(),
+      organizationMembershipId: (() {
+        final value = json['organizationMembershipId']?.toString();
+        if (value == null) {
+          throw FormatException('IamDepartmentAssignmentItem.organizationMembershipId is required');
+        }
+        return value;
+      })(),
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('IamDepartmentAssignmentItem.status is required');
+        }
+        return value;
+      })(),
+      tenantId: (() {
+        final value = json['tenantId']?.toString();
+        if (value == null) {
+          throw FormatException('IamDepartmentAssignmentItem.tenantId is required');
+        }
+        return value;
+      })(),
+      updatedAt: (() {
+        final value = json['updatedAt']?.toString();
+        if (value == null) {
+          throw FormatException('IamDepartmentAssignmentItem.updatedAt is required');
+        }
+        return value;
+      })(),
+      userId: (() {
+        final value = json['userId']?.toString();
+        if (value == null) {
+          throw FormatException('IamDepartmentAssignmentItem.userId is required');
+        }
+        return value;
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'assignmentKind': assignmentKind,
+      'createdAt': createdAt,
+      'departmentId': departmentId,
+      'effectiveFrom': effectiveFrom,
+      'effectiveTo': effectiveTo,
+      'id': id,
+      'isPrimary': isPrimary,
+      'organizationId': organizationId,
+      'organizationMembershipId': organizationMembershipId,
+      'status': status,
+      'tenantId': tenantId,
+      'updatedAt': updatedAt,
+      'userId': userId,
+    };
+  }
+}
+
+class IamDepartmentAssignmentListResponse {
+  final List<IamDepartmentAssignmentItem> items;
+
+  IamDepartmentAssignmentListResponse({
+    required this.items
+  });
+
+  factory IamDepartmentAssignmentListResponse.fromJson(Map<String, dynamic> json) {
+    return IamDepartmentAssignmentListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          throw FormatException('IamDepartmentAssignmentListResponse.items is required');
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : IamDepartmentAssignmentItem.fromJson(map);
+      })())
+            .whereType<IamDepartmentAssignmentItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class IamDepartmentItem {
+  final String code;
+  final String createdAt;
+  final String id;
+  final String name;
+  final String organizationId;
+  final String? parentDepartmentId;
+  final String path;
+  final String status;
+  final String tenantId;
+  final String updatedAt;
+
+  IamDepartmentItem({
+    required this.code,
+    required this.createdAt,
+    required this.id,
+    required this.name,
+    required this.organizationId,
+    this.parentDepartmentId,
+    required this.path,
+    required this.status,
+    required this.tenantId,
+    required this.updatedAt
+  });
+
+  factory IamDepartmentItem.fromJson(Map<String, dynamic> json) {
+    return IamDepartmentItem(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('IamDepartmentItem.code is required');
+        }
+        return value;
+      })(),
+      createdAt: (() {
+        final value = json['createdAt']?.toString();
+        if (value == null) {
+          throw FormatException('IamDepartmentItem.createdAt is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('IamDepartmentItem.id is required');
+        }
+        return value;
+      })(),
+      name: (() {
+        final value = json['name']?.toString();
+        if (value == null) {
+          throw FormatException('IamDepartmentItem.name is required');
+        }
+        return value;
+      })(),
+      organizationId: (() {
+        final value = json['organizationId']?.toString();
+        if (value == null) {
+          throw FormatException('IamDepartmentItem.organizationId is required');
+        }
+        return value;
+      })(),
+      parentDepartmentId: json['parentDepartmentId']?.toString(),
+      path: (() {
+        final value = json['path']?.toString();
+        if (value == null) {
+          throw FormatException('IamDepartmentItem.path is required');
+        }
+        return value;
+      })(),
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('IamDepartmentItem.status is required');
+        }
+        return value;
+      })(),
+      tenantId: (() {
+        final value = json['tenantId']?.toString();
+        if (value == null) {
+          throw FormatException('IamDepartmentItem.tenantId is required');
+        }
+        return value;
+      })(),
+      updatedAt: (() {
+        final value = json['updatedAt']?.toString();
+        if (value == null) {
+          throw FormatException('IamDepartmentItem.updatedAt is required');
+        }
+        return value;
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'createdAt': createdAt,
+      'id': id,
+      'name': name,
+      'organizationId': organizationId,
+      'parentDepartmentId': parentDepartmentId,
+      'path': path,
+      'status': status,
+      'tenantId': tenantId,
+      'updatedAt': updatedAt,
+    };
+  }
+}
+
+class IamDepartmentListResponse {
+  final List<IamDepartmentItem> items;
+
+  IamDepartmentListResponse({
+    required this.items
+  });
+
+  factory IamDepartmentListResponse.fromJson(Map<String, dynamic> json) {
+    return IamDepartmentListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          throw FormatException('IamDepartmentListResponse.items is required');
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : IamDepartmentItem.fromJson(map);
+      })())
+            .whereType<IamDepartmentItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class IamDepartmentTreeItem {
+  final List<Map<String, dynamic>> children;
+  final String code;
+  final String createdAt;
+  final String id;
+  final String name;
+  final String organizationId;
+  final String? parentDepartmentId;
+  final String path;
+  final String status;
+  final String tenantId;
+  final String updatedAt;
+
+  IamDepartmentTreeItem({
+    required this.children,
+    required this.code,
+    required this.createdAt,
+    required this.id,
+    required this.name,
+    required this.organizationId,
+    this.parentDepartmentId,
+    required this.path,
+    required this.status,
+    required this.tenantId,
+    required this.updatedAt
+  });
+
+  factory IamDepartmentTreeItem.fromJson(Map<String, dynamic> json) {
+    return IamDepartmentTreeItem(
+      children: (() {
+        final list = _sdkworkAsList(json['children']);
+        if (list == null) {
+          throw FormatException('IamDepartmentTreeItem.children is required');
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, nestedItem) {
+          final deserialized = nestedItem?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })())
+            .whereType<Map<String, dynamic>>()
+            .toList();
+      })(),
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('IamDepartmentTreeItem.code is required');
+        }
+        return value;
+      })(),
+      createdAt: (() {
+        final value = json['createdAt']?.toString();
+        if (value == null) {
+          throw FormatException('IamDepartmentTreeItem.createdAt is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('IamDepartmentTreeItem.id is required');
+        }
+        return value;
+      })(),
+      name: (() {
+        final value = json['name']?.toString();
+        if (value == null) {
+          throw FormatException('IamDepartmentTreeItem.name is required');
+        }
+        return value;
+      })(),
+      organizationId: (() {
+        final value = json['organizationId']?.toString();
+        if (value == null) {
+          throw FormatException('IamDepartmentTreeItem.organizationId is required');
+        }
+        return value;
+      })(),
+      parentDepartmentId: json['parentDepartmentId']?.toString(),
+      path: (() {
+        final value = json['path']?.toString();
+        if (value == null) {
+          throw FormatException('IamDepartmentTreeItem.path is required');
+        }
+        return value;
+      })(),
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('IamDepartmentTreeItem.status is required');
+        }
+        return value;
+      })(),
+      tenantId: (() {
+        final value = json['tenantId']?.toString();
+        if (value == null) {
+          throw FormatException('IamDepartmentTreeItem.tenantId is required');
+        }
+        return value;
+      })(),
+      updatedAt: (() {
+        final value = json['updatedAt']?.toString();
+        if (value == null) {
+          throw FormatException('IamDepartmentTreeItem.updatedAt is required');
+        }
+        return value;
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'children': children.map((item) => item.map((key, nestedItem) => MapEntry(key, nestedItem))).toList(),
+      'code': code,
+      'createdAt': createdAt,
+      'id': id,
+      'name': name,
+      'organizationId': organizationId,
+      'parentDepartmentId': parentDepartmentId,
+      'path': path,
+      'status': status,
+      'tenantId': tenantId,
+      'updatedAt': updatedAt,
+    };
+  }
+}
+
+class IamDepartmentTreeResponse {
+  final List<IamDepartmentTreeItem> items;
+
+  IamDepartmentTreeResponse({
+    required this.items
+  });
+
+  factory IamDepartmentTreeResponse.fromJson(Map<String, dynamic> json) {
+    return IamDepartmentTreeResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          throw FormatException('IamDepartmentTreeResponse.items is required');
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : IamDepartmentTreeItem.fromJson(map);
+      })())
+            .whereType<IamDepartmentTreeItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class IamOauthAuthorizationUrlResponse {
+  final String authUrl;
+
+  IamOauthAuthorizationUrlResponse({
+    required this.authUrl
+  });
+
+  factory IamOauthAuthorizationUrlResponse.fromJson(Map<String, dynamic> json) {
+    return IamOauthAuthorizationUrlResponse(
+      authUrl: (() {
+        final value = json['authUrl']?.toString();
+        if (value == null) {
+          throw FormatException('IamOauthAuthorizationUrlResponse.authUrl is required');
+        }
+        return value;
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'authUrl': authUrl,
+    };
+  }
+}
+
+class IamOauthSessionCreateRequest {
+  final String code;
+  final String? deviceId;
+  final String? deviceType;
+  final String provider;
+  final String? state;
+
+  IamOauthSessionCreateRequest({
+    required this.code,
+    this.deviceId,
+    this.deviceType,
+    required this.provider,
+    this.state
+  });
+
+  factory IamOauthSessionCreateRequest.fromJson(Map<String, dynamic> json) {
+    return IamOauthSessionCreateRequest(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('IamOauthSessionCreateRequest.code is required');
+        }
+        return value;
+      })(),
+      deviceId: json['deviceId']?.toString(),
+      deviceType: json['deviceType']?.toString(),
+      provider: (() {
+        final value = json['provider']?.toString();
+        if (value == null) {
+          throw FormatException('IamOauthSessionCreateRequest.provider is required');
+        }
+        return value;
+      })(),
+      state: json['state']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'deviceId': deviceId,
+      'deviceType': deviceType,
+      'provider': provider,
+      'state': state,
+    };
+  }
+}
+
+class IamOrganizationItem {
+  final String code;
+  final String createdAt;
+  final String id;
+  final String name;
+  final String? parentId;
+  final String path;
+  final String status;
+  final String tenantId;
+  final String updatedAt;
+
+  IamOrganizationItem({
+    required this.code,
+    required this.createdAt,
+    required this.id,
+    required this.name,
+    this.parentId,
+    required this.path,
+    required this.status,
+    required this.tenantId,
+    required this.updatedAt
+  });
+
+  factory IamOrganizationItem.fromJson(Map<String, dynamic> json) {
+    return IamOrganizationItem(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('IamOrganizationItem.code is required');
+        }
+        return value;
+      })(),
+      createdAt: (() {
+        final value = json['createdAt']?.toString();
+        if (value == null) {
+          throw FormatException('IamOrganizationItem.createdAt is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('IamOrganizationItem.id is required');
+        }
+        return value;
+      })(),
+      name: (() {
+        final value = json['name']?.toString();
+        if (value == null) {
+          throw FormatException('IamOrganizationItem.name is required');
+        }
+        return value;
+      })(),
+      parentId: json['parentId']?.toString(),
+      path: (() {
+        final value = json['path']?.toString();
+        if (value == null) {
+          throw FormatException('IamOrganizationItem.path is required');
+        }
+        return value;
+      })(),
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('IamOrganizationItem.status is required');
+        }
+        return value;
+      })(),
+      tenantId: (() {
+        final value = json['tenantId']?.toString();
+        if (value == null) {
+          throw FormatException('IamOrganizationItem.tenantId is required');
+        }
+        return value;
+      })(),
+      updatedAt: (() {
+        final value = json['updatedAt']?.toString();
+        if (value == null) {
+          throw FormatException('IamOrganizationItem.updatedAt is required');
+        }
+        return value;
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'createdAt': createdAt,
+      'id': id,
+      'name': name,
+      'parentId': parentId,
+      'path': path,
+      'status': status,
+      'tenantId': tenantId,
+      'updatedAt': updatedAt,
+    };
+  }
+}
+
+class IamOrganizationListResponse {
+  final List<IamOrganizationItem> items;
+
+  IamOrganizationListResponse({
+    required this.items
+  });
+
+  factory IamOrganizationListResponse.fromJson(Map<String, dynamic> json) {
+    return IamOrganizationListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          throw FormatException('IamOrganizationListResponse.items is required');
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : IamOrganizationItem.fromJson(map);
+      })())
+            .whereType<IamOrganizationItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class IamOrganizationMembershipItem {
+  final String id;
+  final String joinedAt;
+  final String leftAt;
+  final String organizationId;
+  final String remark;
+  final String roleCode;
+  final String status;
+  final String tenantId;
+  final String userId;
+
+  IamOrganizationMembershipItem({
+    required this.id,
+    required this.joinedAt,
+    required this.leftAt,
+    required this.organizationId,
+    required this.remark,
+    required this.roleCode,
+    required this.status,
+    required this.tenantId,
+    required this.userId
+  });
+
+  factory IamOrganizationMembershipItem.fromJson(Map<String, dynamic> json) {
+    return IamOrganizationMembershipItem(
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('IamOrganizationMembershipItem.id is required');
+        }
+        return value;
+      })(),
+      joinedAt: (() {
+        final value = json['joinedAt']?.toString();
+        if (value == null) {
+          throw FormatException('IamOrganizationMembershipItem.joinedAt is required');
+        }
+        return value;
+      })(),
+      leftAt: (() {
+        final value = json['leftAt']?.toString();
+        if (value == null) {
+          throw FormatException('IamOrganizationMembershipItem.leftAt is required');
+        }
+        return value;
+      })(),
+      organizationId: (() {
+        final value = json['organizationId']?.toString();
+        if (value == null) {
+          throw FormatException('IamOrganizationMembershipItem.organizationId is required');
+        }
+        return value;
+      })(),
+      remark: (() {
+        final value = json['remark']?.toString();
+        if (value == null) {
+          throw FormatException('IamOrganizationMembershipItem.remark is required');
+        }
+        return value;
+      })(),
+      roleCode: (() {
+        final value = json['roleCode']?.toString();
+        if (value == null) {
+          throw FormatException('IamOrganizationMembershipItem.roleCode is required');
+        }
+        return value;
+      })(),
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('IamOrganizationMembershipItem.status is required');
+        }
+        return value;
+      })(),
+      tenantId: (() {
+        final value = json['tenantId']?.toString();
+        if (value == null) {
+          throw FormatException('IamOrganizationMembershipItem.tenantId is required');
+        }
+        return value;
+      })(),
+      userId: (() {
+        final value = json['userId']?.toString();
+        if (value == null) {
+          throw FormatException('IamOrganizationMembershipItem.userId is required');
+        }
+        return value;
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'id': id,
+      'joinedAt': joinedAt,
+      'leftAt': leftAt,
+      'organizationId': organizationId,
+      'remark': remark,
+      'roleCode': roleCode,
+      'status': status,
+      'tenantId': tenantId,
+      'userId': userId,
+    };
+  }
+}
+
+class IamOrganizationMembershipListResponse {
+  final List<IamOrganizationMembershipItem> items;
+
+  IamOrganizationMembershipListResponse({
+    required this.items
+  });
+
+  factory IamOrganizationMembershipListResponse.fromJson(Map<String, dynamic> json) {
+    return IamOrganizationMembershipListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          throw FormatException('IamOrganizationMembershipListResponse.items is required');
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : IamOrganizationMembershipItem.fromJson(map);
+      })())
+            .whereType<IamOrganizationMembershipItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class IamOrganizationTreeItem {
+  final List<Map<String, dynamic>> children;
+  final String code;
+  final String createdAt;
+  final String id;
+  final String name;
+  final String? parentId;
+  final String path;
+  final String status;
+  final String tenantId;
+  final String updatedAt;
+
+  IamOrganizationTreeItem({
+    required this.children,
+    required this.code,
+    required this.createdAt,
+    required this.id,
+    required this.name,
+    this.parentId,
+    required this.path,
+    required this.status,
+    required this.tenantId,
+    required this.updatedAt
+  });
+
+  factory IamOrganizationTreeItem.fromJson(Map<String, dynamic> json) {
+    return IamOrganizationTreeItem(
+      children: (() {
+        final list = _sdkworkAsList(json['children']);
+        if (list == null) {
+          throw FormatException('IamOrganizationTreeItem.children is required');
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, nestedItem) {
+          final deserialized = nestedItem?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })())
+            .whereType<Map<String, dynamic>>()
+            .toList();
+      })(),
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('IamOrganizationTreeItem.code is required');
+        }
+        return value;
+      })(),
+      createdAt: (() {
+        final value = json['createdAt']?.toString();
+        if (value == null) {
+          throw FormatException('IamOrganizationTreeItem.createdAt is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('IamOrganizationTreeItem.id is required');
+        }
+        return value;
+      })(),
+      name: (() {
+        final value = json['name']?.toString();
+        if (value == null) {
+          throw FormatException('IamOrganizationTreeItem.name is required');
+        }
+        return value;
+      })(),
+      parentId: json['parentId']?.toString(),
+      path: (() {
+        final value = json['path']?.toString();
+        if (value == null) {
+          throw FormatException('IamOrganizationTreeItem.path is required');
+        }
+        return value;
+      })(),
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('IamOrganizationTreeItem.status is required');
+        }
+        return value;
+      })(),
+      tenantId: (() {
+        final value = json['tenantId']?.toString();
+        if (value == null) {
+          throw FormatException('IamOrganizationTreeItem.tenantId is required');
+        }
+        return value;
+      })(),
+      updatedAt: (() {
+        final value = json['updatedAt']?.toString();
+        if (value == null) {
+          throw FormatException('IamOrganizationTreeItem.updatedAt is required');
+        }
+        return value;
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'children': children.map((item) => item.map((key, nestedItem) => MapEntry(key, nestedItem))).toList(),
+      'code': code,
+      'createdAt': createdAt,
+      'id': id,
+      'name': name,
+      'parentId': parentId,
+      'path': path,
+      'status': status,
+      'tenantId': tenantId,
+      'updatedAt': updatedAt,
+    };
+  }
+}
+
+class IamOrganizationTreeResponse {
+  final List<IamOrganizationTreeItem> items;
+
+  IamOrganizationTreeResponse({
+    required this.items
+  });
+
+  factory IamOrganizationTreeResponse.fromJson(Map<String, dynamic> json) {
+    return IamOrganizationTreeResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          throw FormatException('IamOrganizationTreeResponse.items is required');
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : IamOrganizationTreeItem.fromJson(map);
+      })())
+            .whereType<IamOrganizationTreeItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class IamPasswordResetCreateRequest {
+  final String account;
+  final String code;
+  final String? confirmPassword;
+  final String newPassword;
+
+  IamPasswordResetCreateRequest({
+    required this.account,
+    required this.code,
+    this.confirmPassword,
+    required this.newPassword
+  });
+
+  factory IamPasswordResetCreateRequest.fromJson(Map<String, dynamic> json) {
+    return IamPasswordResetCreateRequest(
+      account: (() {
+        final value = json['account']?.toString();
+        if (value == null) {
+          throw FormatException('IamPasswordResetCreateRequest.account is required');
+        }
+        return value;
+      })(),
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('IamPasswordResetCreateRequest.code is required');
+        }
+        return value;
+      })(),
+      confirmPassword: json['confirmPassword']?.toString(),
+      newPassword: (() {
+        final value = json['newPassword']?.toString();
+        if (value == null) {
+          throw FormatException('IamPasswordResetCreateRequest.newPassword is required');
+        }
+        return value;
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'account': account,
+      'code': code,
+      'confirmPassword': confirmPassword,
+      'newPassword': newPassword,
+    };
+  }
+}
+
+class IamPasswordResetRequestCreateRequest {
+  final String account;
+  final String channel;
+
+  IamPasswordResetRequestCreateRequest({
+    required this.account,
+    required this.channel
+  });
+
+  factory IamPasswordResetRequestCreateRequest.fromJson(Map<String, dynamic> json) {
+    return IamPasswordResetRequestCreateRequest(
+      account: (() {
+        final value = json['account']?.toString();
+        if (value == null) {
+          throw FormatException('IamPasswordResetRequestCreateRequest.account is required');
+        }
+        return value;
+      })(),
+      channel: (() {
+        final value = json['channel']?.toString();
+        if (value == null) {
+          throw FormatException('IamPasswordResetRequestCreateRequest.channel is required');
+        }
+        return value;
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'account': account,
+      'channel': channel,
+    };
+  }
+}
+
+class IamPasswordResetRequestResponse {
+  final String? debugCode;
+  final String? expiresAt;
+  final String? requestId;
+
+  IamPasswordResetRequestResponse({
+    this.debugCode,
+    this.expiresAt,
+    this.requestId
+  });
+
+  factory IamPasswordResetRequestResponse.fromJson(Map<String, dynamic> json) {
+    return IamPasswordResetRequestResponse(
+      debugCode: json['debugCode']?.toString(),
+      expiresAt: json['expiresAt']?.toString(),
+      requestId: json['requestId']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'debugCode': debugCode,
+      'expiresAt': expiresAt,
+      'requestId': requestId,
+    };
+  }
+}
+
+class IamPositionAssignmentItem {
+  final String createdAt;
+  final String departmentAssignmentId;
+  final String effectiveFrom;
+  final String effectiveTo;
+  final String id;
+  final bool isPrimary;
+  final String organizationId;
+  final String positionId;
+  final String status;
+  final String tenantId;
+  final String updatedAt;
+  final String userId;
+
+  IamPositionAssignmentItem({
+    required this.createdAt,
+    required this.departmentAssignmentId,
+    required this.effectiveFrom,
+    required this.effectiveTo,
+    required this.id,
+    required this.isPrimary,
+    required this.organizationId,
+    required this.positionId,
+    required this.status,
+    required this.tenantId,
+    required this.updatedAt,
+    required this.userId
+  });
+
+  factory IamPositionAssignmentItem.fromJson(Map<String, dynamic> json) {
+    return IamPositionAssignmentItem(
+      createdAt: (() {
+        final value = json['createdAt']?.toString();
+        if (value == null) {
+          throw FormatException('IamPositionAssignmentItem.createdAt is required');
+        }
+        return value;
+      })(),
+      departmentAssignmentId: (() {
+        final value = json['departmentAssignmentId']?.toString();
+        if (value == null) {
+          throw FormatException('IamPositionAssignmentItem.departmentAssignmentId is required');
+        }
+        return value;
+      })(),
+      effectiveFrom: (() {
+        final value = json['effectiveFrom']?.toString();
+        if (value == null) {
+          throw FormatException('IamPositionAssignmentItem.effectiveFrom is required');
+        }
+        return value;
+      })(),
+      effectiveTo: (() {
+        final value = json['effectiveTo']?.toString();
+        if (value == null) {
+          throw FormatException('IamPositionAssignmentItem.effectiveTo is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('IamPositionAssignmentItem.id is required');
+        }
+        return value;
+      })(),
+      isPrimary: (() {
+        final value = json['isPrimary'];
+        if (value is! bool) {
+          throw FormatException('IamPositionAssignmentItem.isPrimary is required');
+        }
+        return value;
+      })(),
+      organizationId: (() {
+        final value = json['organizationId']?.toString();
+        if (value == null) {
+          throw FormatException('IamPositionAssignmentItem.organizationId is required');
+        }
+        return value;
+      })(),
+      positionId: (() {
+        final value = json['positionId']?.toString();
+        if (value == null) {
+          throw FormatException('IamPositionAssignmentItem.positionId is required');
+        }
+        return value;
+      })(),
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('IamPositionAssignmentItem.status is required');
+        }
+        return value;
+      })(),
+      tenantId: (() {
+        final value = json['tenantId']?.toString();
+        if (value == null) {
+          throw FormatException('IamPositionAssignmentItem.tenantId is required');
+        }
+        return value;
+      })(),
+      updatedAt: (() {
+        final value = json['updatedAt']?.toString();
+        if (value == null) {
+          throw FormatException('IamPositionAssignmentItem.updatedAt is required');
+        }
+        return value;
+      })(),
+      userId: (() {
+        final value = json['userId']?.toString();
+        if (value == null) {
+          throw FormatException('IamPositionAssignmentItem.userId is required');
+        }
+        return value;
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'createdAt': createdAt,
+      'departmentAssignmentId': departmentAssignmentId,
+      'effectiveFrom': effectiveFrom,
+      'effectiveTo': effectiveTo,
+      'id': id,
+      'isPrimary': isPrimary,
+      'organizationId': organizationId,
+      'positionId': positionId,
+      'status': status,
+      'tenantId': tenantId,
+      'updatedAt': updatedAt,
+      'userId': userId,
+    };
+  }
+}
+
+class IamPositionAssignmentListResponse {
+  final List<IamPositionAssignmentItem> items;
+
+  IamPositionAssignmentListResponse({
+    required this.items
+  });
+
+  factory IamPositionAssignmentListResponse.fromJson(Map<String, dynamic> json) {
+    return IamPositionAssignmentListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          throw FormatException('IamPositionAssignmentListResponse.items is required');
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : IamPositionAssignmentItem.fromJson(map);
+      })())
+            .whereType<IamPositionAssignmentItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class IamPositionItem {
+  final String code;
+  final String createdAt;
+  final String departmentId;
+  final String id;
+  final String name;
+  final String organizationId;
+  final String positionKind;
+  final String rankLevel;
+  final String status;
+  final String tenantId;
+  final String updatedAt;
+
+  IamPositionItem({
+    required this.code,
+    required this.createdAt,
+    required this.departmentId,
+    required this.id,
+    required this.name,
+    required this.organizationId,
+    required this.positionKind,
+    required this.rankLevel,
+    required this.status,
+    required this.tenantId,
+    required this.updatedAt
+  });
+
+  factory IamPositionItem.fromJson(Map<String, dynamic> json) {
+    return IamPositionItem(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('IamPositionItem.code is required');
+        }
+        return value;
+      })(),
+      createdAt: (() {
+        final value = json['createdAt']?.toString();
+        if (value == null) {
+          throw FormatException('IamPositionItem.createdAt is required');
+        }
+        return value;
+      })(),
+      departmentId: (() {
+        final value = json['departmentId']?.toString();
+        if (value == null) {
+          throw FormatException('IamPositionItem.departmentId is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('IamPositionItem.id is required');
+        }
+        return value;
+      })(),
+      name: (() {
+        final value = json['name']?.toString();
+        if (value == null) {
+          throw FormatException('IamPositionItem.name is required');
+        }
+        return value;
+      })(),
+      organizationId: (() {
+        final value = json['organizationId']?.toString();
+        if (value == null) {
+          throw FormatException('IamPositionItem.organizationId is required');
+        }
+        return value;
+      })(),
+      positionKind: (() {
+        final value = json['positionKind']?.toString();
+        if (value == null) {
+          throw FormatException('IamPositionItem.positionKind is required');
+        }
+        return value;
+      })(),
+      rankLevel: (() {
+        final value = json['rankLevel']?.toString();
+        if (value == null) {
+          throw FormatException('IamPositionItem.rankLevel is required');
+        }
+        return value;
+      })(),
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('IamPositionItem.status is required');
+        }
+        return value;
+      })(),
+      tenantId: (() {
+        final value = json['tenantId']?.toString();
+        if (value == null) {
+          throw FormatException('IamPositionItem.tenantId is required');
+        }
+        return value;
+      })(),
+      updatedAt: (() {
+        final value = json['updatedAt']?.toString();
+        if (value == null) {
+          throw FormatException('IamPositionItem.updatedAt is required');
+        }
+        return value;
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'createdAt': createdAt,
+      'departmentId': departmentId,
+      'id': id,
+      'name': name,
+      'organizationId': organizationId,
+      'positionKind': positionKind,
+      'rankLevel': rankLevel,
+      'status': status,
+      'tenantId': tenantId,
+      'updatedAt': updatedAt,
+    };
+  }
+}
+
+class IamPositionListResponse {
+  final List<IamPositionItem> items;
+
+  IamPositionListResponse({
+    required this.items
+  });
+
+  factory IamPositionListResponse.fromJson(Map<String, dynamic> json) {
+    return IamPositionListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          throw FormatException('IamPositionListResponse.items is required');
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : IamPositionItem.fromJson(map);
+      })())
+            .whereType<IamPositionItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class IamRegistrationCreateRequest {
+  final String? channel;
+  final String? confirmPassword;
+  final String? email;
+  final String? organizationCode;
+  final String password;
+  final String? phone;
+  final String? tenantCode;
+  final String username;
+  final String? verificationCode;
+
+  IamRegistrationCreateRequest({
+    this.channel,
+    this.confirmPassword,
+    this.email,
+    this.organizationCode,
+    required this.password,
+    this.phone,
+    this.tenantCode,
+    required this.username,
+    this.verificationCode
+  });
+
+  factory IamRegistrationCreateRequest.fromJson(Map<String, dynamic> json) {
+    return IamRegistrationCreateRequest(
+      channel: json['channel']?.toString(),
+      confirmPassword: json['confirmPassword']?.toString(),
+      email: json['email']?.toString(),
+      organizationCode: json['organizationCode']?.toString(),
+      password: (() {
+        final value = json['password']?.toString();
+        if (value == null) {
+          throw FormatException('IamRegistrationCreateRequest.password is required');
+        }
+        return value;
+      })(),
+      phone: json['phone']?.toString(),
+      tenantCode: json['tenantCode']?.toString(),
+      username: (() {
+        final value = json['username']?.toString();
+        if (value == null) {
+          throw FormatException('IamRegistrationCreateRequest.username is required');
+        }
+        return value;
+      })(),
+      verificationCode: json['verificationCode']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'channel': channel,
+      'confirmPassword': confirmPassword,
+      'email': email,
+      'organizationCode': organizationCode,
+      'password': password,
+      'phone': phone,
+      'tenantCode': tenantCode,
+      'username': username,
+      'verificationCode': verificationCode,
+    };
+  }
+}
+
+class IamRoleBindingItem {
+  final String conditionJson;
+  final String createdAt;
+  final String effect;
+  final String id;
+  final String principalId;
+  final String principalKind;
+  final String roleId;
+  final String scopeId;
+  final String scopeKind;
+  final String status;
+  final String tenantId;
+  final String updatedAt;
+
+  IamRoleBindingItem({
+    required this.conditionJson,
+    required this.createdAt,
+    required this.effect,
+    required this.id,
+    required this.principalId,
+    required this.principalKind,
+    required this.roleId,
+    required this.scopeId,
+    required this.scopeKind,
+    required this.status,
+    required this.tenantId,
+    required this.updatedAt
+  });
+
+  factory IamRoleBindingItem.fromJson(Map<String, dynamic> json) {
+    return IamRoleBindingItem(
+      conditionJson: (() {
+        final value = json['conditionJson']?.toString();
+        if (value == null) {
+          throw FormatException('IamRoleBindingItem.conditionJson is required');
+        }
+        return value;
+      })(),
+      createdAt: (() {
+        final value = json['createdAt']?.toString();
+        if (value == null) {
+          throw FormatException('IamRoleBindingItem.createdAt is required');
+        }
+        return value;
+      })(),
+      effect: (() {
+        final value = json['effect']?.toString();
+        if (value == null) {
+          throw FormatException('IamRoleBindingItem.effect is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('IamRoleBindingItem.id is required');
+        }
+        return value;
+      })(),
+      principalId: (() {
+        final value = json['principalId']?.toString();
+        if (value == null) {
+          throw FormatException('IamRoleBindingItem.principalId is required');
+        }
+        return value;
+      })(),
+      principalKind: (() {
+        final value = json['principalKind']?.toString();
+        if (value == null) {
+          throw FormatException('IamRoleBindingItem.principalKind is required');
+        }
+        return value;
+      })(),
+      roleId: (() {
+        final value = json['roleId']?.toString();
+        if (value == null) {
+          throw FormatException('IamRoleBindingItem.roleId is required');
+        }
+        return value;
+      })(),
+      scopeId: (() {
+        final value = json['scopeId']?.toString();
+        if (value == null) {
+          throw FormatException('IamRoleBindingItem.scopeId is required');
+        }
+        return value;
+      })(),
+      scopeKind: (() {
+        final value = json['scopeKind']?.toString();
+        if (value == null) {
+          throw FormatException('IamRoleBindingItem.scopeKind is required');
+        }
+        return value;
+      })(),
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('IamRoleBindingItem.status is required');
+        }
+        return value;
+      })(),
+      tenantId: (() {
+        final value = json['tenantId']?.toString();
+        if (value == null) {
+          throw FormatException('IamRoleBindingItem.tenantId is required');
+        }
+        return value;
+      })(),
+      updatedAt: (() {
+        final value = json['updatedAt']?.toString();
+        if (value == null) {
+          throw FormatException('IamRoleBindingItem.updatedAt is required');
+        }
+        return value;
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'conditionJson': conditionJson,
+      'createdAt': createdAt,
+      'effect': effect,
+      'id': id,
+      'principalId': principalId,
+      'principalKind': principalKind,
+      'roleId': roleId,
+      'scopeId': scopeId,
+      'scopeKind': scopeKind,
+      'status': status,
+      'tenantId': tenantId,
+      'updatedAt': updatedAt,
+    };
+  }
+}
+
+class IamRoleBindingListResponse {
+  final List<IamRoleBindingItem> items;
+
+  IamRoleBindingListResponse({
+    required this.items
+  });
+
+  factory IamRoleBindingListResponse.fromJson(Map<String, dynamic> json) {
+    return IamRoleBindingListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          throw FormatException('IamRoleBindingListResponse.items is required');
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : IamRoleBindingItem.fromJson(map);
+      })())
+            .whereType<IamRoleBindingItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class IamRuntimeRetrieveResult {
+  final String code;
+  final AuthRuntimeSettingsResponse? data;
+  final String? msg;
+
+  IamRuntimeRetrieveResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory IamRuntimeRetrieveResult.fromJson(Map<String, dynamic> json) {
+    return IamRuntimeRetrieveResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('IamRuntimeRetrieveResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AuthRuntimeSettingsResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class IamSessionCreateRequest {
+  final String? code;
+  final String? deviceId;
+  final String? deviceName;
+  final String? deviceType;
+  final String? email;
+  final String? grantType;
+  final String? name;
+  final String? organizationCode;
+  final String? password;
+  final String? phone;
+  final String? subject;
+  final String? tenantCode;
+  final String? username;
+
+  IamSessionCreateRequest({
+    this.code,
+    this.deviceId,
+    this.deviceName,
+    this.deviceType,
+    this.email,
+    this.grantType,
+    this.name,
+    this.organizationCode,
+    this.password,
+    this.phone,
+    this.subject,
+    this.tenantCode,
+    this.username
+  });
+
+  factory IamSessionCreateRequest.fromJson(Map<String, dynamic> json) {
+    return IamSessionCreateRequest(
+      code: json['code']?.toString(),
+      deviceId: json['deviceId']?.toString(),
+      deviceName: json['deviceName']?.toString(),
+      deviceType: json['deviceType']?.toString(),
+      email: json['email']?.toString(),
+      grantType: json['grantType']?.toString(),
+      name: json['name']?.toString(),
+      organizationCode: json['organizationCode']?.toString(),
+      password: json['password']?.toString(),
+      phone: json['phone']?.toString(),
+      subject: json['subject']?.toString(),
+      tenantCode: json['tenantCode']?.toString(),
+      username: json['username']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'deviceId': deviceId,
+      'deviceName': deviceName,
+      'deviceType': deviceType,
+      'email': email,
+      'grantType': grantType,
+      'name': name,
+      'organizationCode': organizationCode,
+      'password': password,
+      'phone': phone,
+      'subject': subject,
+      'tenantCode': tenantCode,
+      'username': username,
+    };
+  }
+}
+
+class IamSessionRefreshRequest {
+  final String? refreshToken;
+
+  IamSessionRefreshRequest({
+    this.refreshToken
+  });
+
+  factory IamSessionRefreshRequest.fromJson(Map<String, dynamic> json) {
+    return IamSessionRefreshRequest(
+      refreshToken: json['refreshToken']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'refreshToken': refreshToken,
+    };
+  }
+}
+
+class IamSessionResponse {
+  final String accessToken;
+  final String authToken;
+  final IamAppContext context;
+  final String? expiresAt;
+  final String? refreshToken;
+  final String? sessionId;
+  final IamUserResponse user;
+
+  IamSessionResponse({
+    required this.accessToken,
+    required this.authToken,
+    required this.context,
+    this.expiresAt,
+    this.refreshToken,
+    this.sessionId,
+    required this.user
+  });
+
+  factory IamSessionResponse.fromJson(Map<String, dynamic> json) {
+    return IamSessionResponse(
+      accessToken: (() {
+        final value = json['accessToken']?.toString();
+        if (value == null) {
+          throw FormatException('IamSessionResponse.accessToken is required');
+        }
+        return value;
+      })(),
+      authToken: (() {
+        final value = json['authToken']?.toString();
+        if (value == null) {
+          throw FormatException('IamSessionResponse.authToken is required');
+        }
+        return value;
+      })(),
+      context: (() {
+        final map = _sdkworkAsMap(json['context']);
+        if (map == null) {
+          throw FormatException('IamSessionResponse.context is required');
+        }
+        return IamAppContext.fromJson(map);
+      })(),
+      expiresAt: json['expiresAt']?.toString(),
+      refreshToken: json['refreshToken']?.toString(),
+      sessionId: json['sessionId']?.toString(),
+      user: (() {
+        final map = _sdkworkAsMap(json['user']);
+        if (map == null) {
+          throw FormatException('IamSessionResponse.user is required');
+        }
+        return IamUserResponse.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'accessToken': accessToken,
+      'authToken': authToken,
+      'context': context.toJson(),
+      'expiresAt': expiresAt,
+      'refreshToken': refreshToken,
+      'sessionId': sessionId,
+      'user': user.toJson(),
+    };
+  }
+}
+
+class IamUserResponse {
+  final MediaResource avatar;
+  final String displayName;
+  final String email;
+  final String id;
+  final bool isVerified;
+  final String language;
+  final String lastLogin;
+  final String lastLoginIp;
+  final String passwordLastChanged;
+  final String phone;
+  final String registeredAt;
+  final String status;
+  final String thirdPartyBound;
+  final bool twoFactorEnabled;
+  final String username;
+
+  IamUserResponse({
+    required this.avatar,
+    required this.displayName,
+    required this.email,
+    required this.id,
+    required this.isVerified,
+    required this.language,
+    required this.lastLogin,
+    required this.lastLoginIp,
+    required this.passwordLastChanged,
+    required this.phone,
+    required this.registeredAt,
+    required this.status,
+    required this.thirdPartyBound,
+    required this.twoFactorEnabled,
+    required this.username
+  });
+
+  factory IamUserResponse.fromJson(Map<String, dynamic> json) {
+    return IamUserResponse(
+      avatar: (() {
+        final map = _sdkworkAsMap(json['avatar']);
+        if (map == null) {
+          throw FormatException('IamUserResponse.avatar is required');
+        }
+        return MediaResource.fromJson(map);
+      })(),
+      displayName: (() {
+        final value = json['displayName']?.toString();
+        if (value == null) {
+          throw FormatException('IamUserResponse.displayName is required');
+        }
+        return value;
+      })(),
+      email: (() {
+        final value = json['email']?.toString();
+        if (value == null) {
+          throw FormatException('IamUserResponse.email is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('IamUserResponse.id is required');
+        }
+        return value;
+      })(),
+      isVerified: (() {
+        final value = json['isVerified'];
+        if (value is! bool) {
+          throw FormatException('IamUserResponse.isVerified is required');
+        }
+        return value;
+      })(),
+      language: (() {
+        final value = json['language']?.toString();
+        if (value == null) {
+          throw FormatException('IamUserResponse.language is required');
+        }
+        return value;
+      })(),
+      lastLogin: (() {
+        final value = json['lastLogin']?.toString();
+        if (value == null) {
+          throw FormatException('IamUserResponse.lastLogin is required');
+        }
+        return value;
+      })(),
+      lastLoginIp: (() {
+        final value = json['lastLoginIp']?.toString();
+        if (value == null) {
+          throw FormatException('IamUserResponse.lastLoginIp is required');
+        }
+        return value;
+      })(),
+      passwordLastChanged: (() {
+        final value = json['passwordLastChanged']?.toString();
+        if (value == null) {
+          throw FormatException('IamUserResponse.passwordLastChanged is required');
+        }
+        return value;
+      })(),
+      phone: (() {
+        final value = json['phone']?.toString();
+        if (value == null) {
+          throw FormatException('IamUserResponse.phone is required');
+        }
+        return value;
+      })(),
+      registeredAt: (() {
+        final value = json['registeredAt']?.toString();
+        if (value == null) {
+          throw FormatException('IamUserResponse.registeredAt is required');
+        }
+        return value;
+      })(),
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('IamUserResponse.status is required');
+        }
+        return value;
+      })(),
+      thirdPartyBound: (() {
+        final value = json['thirdPartyBound']?.toString();
+        if (value == null) {
+          throw FormatException('IamUserResponse.thirdPartyBound is required');
+        }
+        return value;
+      })(),
+      twoFactorEnabled: (() {
+        final value = json['twoFactorEnabled'];
+        if (value is! bool) {
+          throw FormatException('IamUserResponse.twoFactorEnabled is required');
+        }
+        return value;
+      })(),
+      username: (() {
+        final value = json['username']?.toString();
+        if (value == null) {
+          throw FormatException('IamUserResponse.username is required');
+        }
+        return value;
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'avatar': avatar.toJson(),
+      'displayName': displayName,
+      'email': email,
+      'id': id,
+      'isVerified': isVerified,
+      'language': language,
+      'lastLogin': lastLogin,
+      'lastLoginIp': lastLoginIp,
+      'passwordLastChanged': passwordLastChanged,
+      'phone': phone,
+      'registeredAt': registeredAt,
+      'status': status,
+      'thirdPartyBound': thirdPartyBound,
+      'twoFactorEnabled': twoFactorEnabled,
+      'username': username,
+    };
+  }
+}
+
 class IamVerificationCodeCreateRequest {
   final String scene;
   final String target;
@@ -12240,6 +12611,43 @@ class IamVerificationCodeVerifyResponse {
     return <String, dynamic>{
       'valid': valid,
       'verified': verified,
+    };
+  }
+}
+
+class IamVerificationPolicyRetrieveResult {
+  final String code;
+  final AuthVerificationPolicy? data;
+  final String? msg;
+
+  IamVerificationPolicyRetrieveResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory IamVerificationPolicyRetrieveResult.fromJson(Map<String, dynamic> json) {
+    return IamVerificationPolicyRetrieveResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('IamVerificationPolicyRetrieveResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AuthVerificationPolicy.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
     };
   }
 }
@@ -12489,117 +12897,6 @@ class InvocationsSubmitResult {
       data: (() {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : RuntimeInvocationResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class InvoicesCreateResult {
-  final String code;
-  final CommerceOperationResponse? data;
-  final String? msg;
-
-  InvoicesCreateResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory InvoicesCreateResult.fromJson(Map<String, dynamic> json) {
-    return InvoicesCreateResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('InvoicesCreateResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceOperationResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class InvoicesListResult {
-  final String code;
-  final CommerceStandardCollectionResponse? data;
-  final String? msg;
-
-  InvoicesListResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory InvoicesListResult.fromJson(Map<String, dynamic> json) {
-    return InvoicesListResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('InvoicesListResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class InvoicesRetrieveResult {
-  final String code;
-  final CommerceStandardResourceResponse? data;
-  final String? msg;
-
-  InvoicesRetrieveResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory InvoicesRetrieveResult.fromJson(Map<String, dynamic> json) {
-    return InvoicesRetrieveResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('InvoicesRetrieveResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardResourceResponse.fromJson(map);
       })(),
       msg: json['msg']?.toString()
     );
@@ -12923,700 +13220,6 @@ class MediaResource {
       'url': url,
       'variants': variants?.map((item) => item.toJson()).toList(),
       'width': width,
-    };
-  }
-}
-
-class MembershipsBenefitsListResult {
-  final String code;
-  final CommerceStandardCollectionResponse? data;
-  final String? msg;
-
-  MembershipsBenefitsListResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory MembershipsBenefitsListResult.fromJson(Map<String, dynamic> json) {
-    return MembershipsBenefitsListResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('MembershipsBenefitsListResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class MembershipsCurrentRetrieveResult {
-  final String code;
-  final CommerceStandardResourceResponse? data;
-  final String? msg;
-
-  MembershipsCurrentRetrieveResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory MembershipsCurrentRetrieveResult.fromJson(Map<String, dynamic> json) {
-    return MembershipsCurrentRetrieveResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('MembershipsCurrentRetrieveResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardResourceResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class MembershipsCurrentStatusRetrieveResult {
-  final String code;
-  final CommerceStandardResourceResponse? data;
-  final String? msg;
-
-  MembershipsCurrentStatusRetrieveResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory MembershipsCurrentStatusRetrieveResult.fromJson(Map<String, dynamic> json) {
-    return MembershipsCurrentStatusRetrieveResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('MembershipsCurrentStatusRetrieveResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardResourceResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class MembershipsPackageGroupsListResult {
-  final String code;
-  final CommerceStandardCollectionResponse? data;
-  final String? msg;
-
-  MembershipsPackageGroupsListResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory MembershipsPackageGroupsListResult.fromJson(Map<String, dynamic> json) {
-    return MembershipsPackageGroupsListResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('MembershipsPackageGroupsListResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class MembershipsPackageGroupsPackagesListResult {
-  final String code;
-  final CommerceStandardCollectionResponse? data;
-  final String? msg;
-
-  MembershipsPackageGroupsPackagesListResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory MembershipsPackageGroupsPackagesListResult.fromJson(Map<String, dynamic> json) {
-    return MembershipsPackageGroupsPackagesListResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('MembershipsPackageGroupsPackagesListResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class MembershipsPackageGroupsRetrieveResult {
-  final String code;
-  final CommerceStandardResourceResponse? data;
-  final String? msg;
-
-  MembershipsPackageGroupsRetrieveResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory MembershipsPackageGroupsRetrieveResult.fromJson(Map<String, dynamic> json) {
-    return MembershipsPackageGroupsRetrieveResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('MembershipsPackageGroupsRetrieveResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardResourceResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class MembershipsPackagesListResult {
-  final String code;
-  final CommerceStandardCollectionResponse? data;
-  final String? msg;
-
-  MembershipsPackagesListResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory MembershipsPackagesListResult.fromJson(Map<String, dynamic> json) {
-    return MembershipsPackagesListResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('MembershipsPackagesListResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class MembershipsPackagesRetrieveResult {
-  final String code;
-  final CommerceStandardResourceResponse? data;
-  final String? msg;
-
-  MembershipsPackagesRetrieveResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory MembershipsPackagesRetrieveResult.fromJson(Map<String, dynamic> json) {
-    return MembershipsPackagesRetrieveResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('MembershipsPackagesRetrieveResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardResourceResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class MembershipsPlansListResult {
-  final String code;
-  final CommerceStandardCollectionResponse? data;
-  final String? msg;
-
-  MembershipsPlansListResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory MembershipsPlansListResult.fromJson(Map<String, dynamic> json) {
-    return MembershipsPlansListResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('MembershipsPlansListResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class MembershipsPointsBalanceRetrieveResult {
-  final String code;
-  final CommerceStandardResourceResponse? data;
-  final String? msg;
-
-  MembershipsPointsBalanceRetrieveResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory MembershipsPointsBalanceRetrieveResult.fromJson(Map<String, dynamic> json) {
-    return MembershipsPointsBalanceRetrieveResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('MembershipsPointsBalanceRetrieveResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardResourceResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class MembershipsPointsDailyRewardsCreateRequest {
-
-
-  MembershipsPointsDailyRewardsCreateRequest();
-
-  factory MembershipsPointsDailyRewardsCreateRequest.fromJson(Map<String, dynamic> json) {
-    return MembershipsPointsDailyRewardsCreateRequest();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
-class MembershipsPointsDailyRewardsCreateResult {
-  final String code;
-  final CommerceStandardResourceResponse? data;
-  final String? msg;
-
-  MembershipsPointsDailyRewardsCreateResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory MembershipsPointsDailyRewardsCreateResult.fromJson(Map<String, dynamic> json) {
-    return MembershipsPointsDailyRewardsCreateResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('MembershipsPointsDailyRewardsCreateResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardResourceResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class MembershipsPointsDailyRewardsStatusRetrieveResult {
-  final String code;
-  final CommerceStandardResourceResponse? data;
-  final String? msg;
-
-  MembershipsPointsDailyRewardsStatusRetrieveResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory MembershipsPointsDailyRewardsStatusRetrieveResult.fromJson(Map<String, dynamic> json) {
-    return MembershipsPointsDailyRewardsStatusRetrieveResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('MembershipsPointsDailyRewardsStatusRetrieveResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardResourceResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class MembershipsPointsHistoryListResult {
-  final String code;
-  final CommerceStandardCollectionResponse? data;
-  final String? msg;
-
-  MembershipsPointsHistoryListResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory MembershipsPointsHistoryListResult.fromJson(Map<String, dynamic> json) {
-    return MembershipsPointsHistoryListResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('MembershipsPointsHistoryListResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class MembershipsPrivilegesSpeedUpsCreateRequest {
-
-
-  MembershipsPrivilegesSpeedUpsCreateRequest();
-
-  factory MembershipsPrivilegesSpeedUpsCreateRequest.fromJson(Map<String, dynamic> json) {
-    return MembershipsPrivilegesSpeedUpsCreateRequest();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
-class MembershipsPrivilegesSpeedUpsCreateResult {
-  final String code;
-  final CommerceOperationResponse? data;
-  final String? msg;
-
-  MembershipsPrivilegesSpeedUpsCreateResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory MembershipsPrivilegesSpeedUpsCreateResult.fromJson(Map<String, dynamic> json) {
-    return MembershipsPrivilegesSpeedUpsCreateResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('MembershipsPrivilegesSpeedUpsCreateResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceOperationResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class MembershipsPrivilegesUsageRetrieveResult {
-  final String code;
-  final CommerceStandardResourceResponse? data;
-  final String? msg;
-
-  MembershipsPrivilegesUsageRetrieveResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory MembershipsPrivilegesUsageRetrieveResult.fromJson(Map<String, dynamic> json) {
-    return MembershipsPrivilegesUsageRetrieveResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('MembershipsPrivilegesUsageRetrieveResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardResourceResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class MembershipsPurchasesCreateResult {
-  final String code;
-  final CommerceOperationResponse? data;
-  final String? msg;
-
-  MembershipsPurchasesCreateResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory MembershipsPurchasesCreateResult.fromJson(Map<String, dynamic> json) {
-    return MembershipsPurchasesCreateResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('MembershipsPurchasesCreateResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceOperationResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class MembershipsPurchasesRenewResult {
-  final String code;
-  final CommerceOperationResponse? data;
-  final String? msg;
-
-  MembershipsPurchasesRenewResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory MembershipsPurchasesRenewResult.fromJson(Map<String, dynamic> json) {
-    return MembershipsPurchasesRenewResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('MembershipsPurchasesRenewResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceOperationResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class MembershipsPurchasesUpgradeResult {
-  final String code;
-  final CommerceOperationResponse? data;
-  final String? msg;
-
-  MembershipsPurchasesUpgradeResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory MembershipsPurchasesUpgradeResult.fromJson(Map<String, dynamic> json) {
-    return MembershipsPurchasesUpgradeResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('MembershipsPurchasesUpgradeResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceOperationResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
     };
   }
 }
@@ -15222,29 +14825,29 @@ class NotificationsResponse {
   }
 }
 
-class OrdersCancellationsCreateResult {
+class OauthAuthorizationUrlsRetrieveResult {
   final String code;
-  final CommerceOperationResponse? data;
+  final IamOauthAuthorizationUrlResponse? data;
   final String? msg;
 
-  OrdersCancellationsCreateResult({
+  OauthAuthorizationUrlsRetrieveResult({
     required this.code,
     this.data,
     this.msg
   });
 
-  factory OrdersCancellationsCreateResult.fromJson(Map<String, dynamic> json) {
-    return OrdersCancellationsCreateResult(
+  factory OauthAuthorizationUrlsRetrieveResult.fromJson(Map<String, dynamic> json) {
+    return OauthAuthorizationUrlsRetrieveResult(
       code: (() {
         final value = json['code']?.toString();
         if (value == null) {
-          throw FormatException('OrdersCancellationsCreateResult.code is required');
+          throw FormatException('OauthAuthorizationUrlsRetrieveResult.code is required');
         }
         return value;
       })(),
       data: (() {
         final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceOperationResponse.fromJson(map);
+        return map == null ? null : IamOauthAuthorizationUrlResponse.fromJson(map);
       })(),
       msg: json['msg']?.toString()
     );
@@ -15259,29 +14862,29 @@ class OrdersCancellationsCreateResult {
   }
 }
 
-class OrdersEventsListResult {
+class OauthSessionsCreateResult {
   final String code;
-  final CommerceStandardCollectionResponse? data;
+  final IamSessionResponse? data;
   final String? msg;
 
-  OrdersEventsListResult({
+  OauthSessionsCreateResult({
     required this.code,
     this.data,
     this.msg
   });
 
-  factory OrdersEventsListResult.fromJson(Map<String, dynamic> json) {
-    return OrdersEventsListResult(
+  factory OauthSessionsCreateResult.fromJson(Map<String, dynamic> json) {
+    return OauthSessionsCreateResult(
       code: (() {
         final value = json['code']?.toString();
         if (value == null) {
-          throw FormatException('OrdersEventsListResult.code is required');
+          throw FormatException('OauthSessionsCreateResult.code is required');
         }
         return value;
       })(),
       data: (() {
         final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
+        return map == null ? null : IamSessionResponse.fromJson(map);
       })(),
       msg: json['msg']?.toString()
     );
@@ -15296,29 +14899,29 @@ class OrdersEventsListResult {
   }
 }
 
-class OrdersListResult {
+class OrganizationMembershipsListResult {
   final String code;
-  final CommerceStandardCollectionResponse? data;
+  final IamOrganizationMembershipListResponse? data;
   final String? msg;
 
-  OrdersListResult({
+  OrganizationMembershipsListResult({
     required this.code,
     this.data,
     this.msg
   });
 
-  factory OrdersListResult.fromJson(Map<String, dynamic> json) {
-    return OrdersListResult(
+  factory OrganizationMembershipsListResult.fromJson(Map<String, dynamic> json) {
+    return OrganizationMembershipsListResult(
       code: (() {
         final value = json['code']?.toString();
         if (value == null) {
-          throw FormatException('OrdersListResult.code is required');
+          throw FormatException('OrganizationMembershipsListResult.code is required');
         }
         return value;
       })(),
       data: (() {
         final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
+        return map == null ? null : IamOrganizationMembershipListResponse.fromJson(map);
       })(),
       msg: json['msg']?.toString()
     );
@@ -15333,29 +14936,29 @@ class OrdersListResult {
   }
 }
 
-class OrdersRetrieveResult {
+class OrganizationsListResult {
   final String code;
-  final CommerceStandardResourceResponse? data;
+  final IamOrganizationListResponse? data;
   final String? msg;
 
-  OrdersRetrieveResult({
+  OrganizationsListResult({
     required this.code,
     this.data,
     this.msg
   });
 
-  factory OrdersRetrieveResult.fromJson(Map<String, dynamic> json) {
-    return OrdersRetrieveResult(
+  factory OrganizationsListResult.fromJson(Map<String, dynamic> json) {
+    return OrganizationsListResult(
       code: (() {
         final value = json['code']?.toString();
         if (value == null) {
-          throw FormatException('OrdersRetrieveResult.code is required');
+          throw FormatException('OrganizationsListResult.code is required');
         }
         return value;
       })(),
       data: (() {
         final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardResourceResponse.fromJson(map);
+        return map == null ? null : IamOrganizationListResponse.fromJson(map);
       })(),
       msg: json['msg']?.toString()
     );
@@ -15370,29 +14973,29 @@ class OrdersRetrieveResult {
   }
 }
 
-class PaymentsAttemptsRetrieveResult {
+class OrganizationsTreeRetrieveResult {
   final String code;
-  final CommercePaymentAttemptResponse? data;
+  final IamOrganizationTreeResponse? data;
   final String? msg;
 
-  PaymentsAttemptsRetrieveResult({
+  OrganizationsTreeRetrieveResult({
     required this.code,
     this.data,
     this.msg
   });
 
-  factory PaymentsAttemptsRetrieveResult.fromJson(Map<String, dynamic> json) {
-    return PaymentsAttemptsRetrieveResult(
+  factory OrganizationsTreeRetrieveResult.fromJson(Map<String, dynamic> json) {
+    return OrganizationsTreeRetrieveResult(
       code: (() {
         final value = json['code']?.toString();
         if (value == null) {
-          throw FormatException('PaymentsAttemptsRetrieveResult.code is required');
+          throw FormatException('OrganizationsTreeRetrieveResult.code is required');
         }
         return value;
       })(),
       data: (() {
         final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommercePaymentAttemptResponse.fromJson(map);
+        return map == null ? null : IamOrganizationTreeResponse.fromJson(map);
       })(),
       msg: json['msg']?.toString()
     );
@@ -15407,29 +15010,29 @@ class PaymentsAttemptsRetrieveResult {
   }
 }
 
-class PaymentsIntentsAttemptsCreateResult {
+class PasswordResetRequestsCreateResult {
   final String code;
-  final CommercePaymentAttemptResponse? data;
+  final IamPasswordResetRequestResponse? data;
   final String? msg;
 
-  PaymentsIntentsAttemptsCreateResult({
+  PasswordResetRequestsCreateResult({
     required this.code,
     this.data,
     this.msg
   });
 
-  factory PaymentsIntentsAttemptsCreateResult.fromJson(Map<String, dynamic> json) {
-    return PaymentsIntentsAttemptsCreateResult(
+  factory PasswordResetRequestsCreateResult.fromJson(Map<String, dynamic> json) {
+    return PasswordResetRequestsCreateResult(
       code: (() {
         final value = json['code']?.toString();
         if (value == null) {
-          throw FormatException('PaymentsIntentsAttemptsCreateResult.code is required');
+          throw FormatException('PasswordResetRequestsCreateResult.code is required');
         }
         return value;
       })(),
       data: (() {
         final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommercePaymentAttemptResponse.fromJson(map);
+        return map == null ? null : IamPasswordResetRequestResponse.fromJson(map);
       })(),
       msg: json['msg']?.toString()
     );
@@ -15444,29 +15047,29 @@ class PaymentsIntentsAttemptsCreateResult {
   }
 }
 
-class PaymentsIntentsCreateResult {
+class PasswordResetsCreateResult {
   final String code;
-  final CommercePaymentIntentResponse? data;
+  final NoData? data;
   final String? msg;
 
-  PaymentsIntentsCreateResult({
+  PasswordResetsCreateResult({
     required this.code,
     this.data,
     this.msg
   });
 
-  factory PaymentsIntentsCreateResult.fromJson(Map<String, dynamic> json) {
-    return PaymentsIntentsCreateResult(
+  factory PasswordResetsCreateResult.fromJson(Map<String, dynamic> json) {
+    return PasswordResetsCreateResult(
       code: (() {
         final value = json['code']?.toString();
         if (value == null) {
-          throw FormatException('PaymentsIntentsCreateResult.code is required');
+          throw FormatException('PasswordResetsCreateResult.code is required');
         }
         return value;
       })(),
       data: (() {
         final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommercePaymentIntentResponse.fromJson(map);
+        return map == null ? null : NoData.fromJson(map);
       })(),
       msg: json['msg']?.toString()
     );
@@ -15481,29 +15084,29 @@ class PaymentsIntentsCreateResult {
   }
 }
 
-class PaymentsIntentsRetrieveResult {
+class PositionAssignmentsListResult {
   final String code;
-  final CommercePaymentIntentResponse? data;
+  final IamPositionAssignmentListResponse? data;
   final String? msg;
 
-  PaymentsIntentsRetrieveResult({
+  PositionAssignmentsListResult({
     required this.code,
     this.data,
     this.msg
   });
 
-  factory PaymentsIntentsRetrieveResult.fromJson(Map<String, dynamic> json) {
-    return PaymentsIntentsRetrieveResult(
+  factory PositionAssignmentsListResult.fromJson(Map<String, dynamic> json) {
+    return PositionAssignmentsListResult(
       code: (() {
         final value = json['code']?.toString();
         if (value == null) {
-          throw FormatException('PaymentsIntentsRetrieveResult.code is required');
+          throw FormatException('PositionAssignmentsListResult.code is required');
         }
         return value;
       })(),
       data: (() {
         final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommercePaymentIntentResponse.fromJson(map);
+        return map == null ? null : IamPositionAssignmentListResponse.fromJson(map);
       })(),
       msg: json['msg']?.toString()
     );
@@ -15518,29 +15121,29 @@ class PaymentsIntentsRetrieveResult {
   }
 }
 
-class PaymentsMethodsListResult {
+class PositionsListResult {
   final String code;
-  final CommercePaymentMethodListResponse? data;
+  final IamPositionListResponse? data;
   final String? msg;
 
-  PaymentsMethodsListResult({
+  PositionsListResult({
     required this.code,
     this.data,
     this.msg
   });
 
-  factory PaymentsMethodsListResult.fromJson(Map<String, dynamic> json) {
-    return PaymentsMethodsListResult(
+  factory PositionsListResult.fromJson(Map<String, dynamic> json) {
+    return PositionsListResult(
       code: (() {
         final value = json['code']?.toString();
         if (value == null) {
-          throw FormatException('PaymentsMethodsListResult.code is required');
+          throw FormatException('PositionsListResult.code is required');
         }
         return value;
       })(),
       data: (() {
         final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommercePaymentMethodListResponse.fromJson(map);
+        return map == null ? null : IamPositionListResponse.fromJson(map);
       })(),
       msg: json['msg']?.toString()
     );
@@ -15637,589 +15240,6 @@ class ProblemDetail {
   }
 }
 
-class PromotionCodeRedemptionRequest {
-  final String? clientRequestNo;
-  final String code;
-  final String? note;
-  final String? scene;
-  final String? source;
-
-  PromotionCodeRedemptionRequest({
-    this.clientRequestNo,
-    required this.code,
-    this.note,
-    this.scene,
-    this.source
-  });
-
-  factory PromotionCodeRedemptionRequest.fromJson(Map<String, dynamic> json) {
-    return PromotionCodeRedemptionRequest(
-      clientRequestNo: json['clientRequestNo']?.toString(),
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('PromotionCodeRedemptionRequest.code is required');
-        }
-        return value;
-      })(),
-      note: json['note']?.toString(),
-      scene: json['scene']?.toString(),
-      source: json['source']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'clientRequestNo': clientRequestNo,
-      'code': code,
-      'note': note,
-      'scene': scene,
-      'source': source,
-    };
-  }
-}
-
-class PromotionCommandRequest {
-  final String? clientRequestNo;
-  final Map<String, dynamic>? metadata;
-  final String? note;
-
-  PromotionCommandRequest({
-    this.clientRequestNo,
-    this.metadata,
-    this.note
-  });
-
-  factory PromotionCommandRequest.fromJson(Map<String, dynamic> json) {
-    return PromotionCommandRequest(
-      clientRequestNo: json['clientRequestNo']?.toString(),
-      metadata: (() {
-        final map = _sdkworkAsMap(json['metadata']);
-        if (map == null) {
-          return null;
-        }
-        final result = <String, String>{};
-        map.forEach((key, item) {
-          final deserialized = item?.toString();
-          if (deserialized is String) {
-            result[key] = deserialized;
-          }
-        });
-        return result;
-      })(),
-      note: json['note']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'clientRequestNo': clientRequestNo,
-      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
-      'note': note,
-    };
-  }
-}
-
-class PromotionCouponWalletItem {
-  final String claimSource;
-  final String claimedAt;
-  final String? codeId;
-  final String couponNo;
-  final String currencyCode;
-  final String? discountType;
-  final String expiresAt;
-  final String? faceValueMinor;
-  final String id;
-  final String? lockExpiresAt;
-  final String? lockedAt;
-  final String offerId;
-  final String? redeemedAt;
-  final String? returnedAt;
-  final String? sourceCodeLast4;
-  final String status;
-  final String stockId;
-  final String validFrom;
-
-  PromotionCouponWalletItem({
-    required this.claimSource,
-    required this.claimedAt,
-    this.codeId,
-    required this.couponNo,
-    required this.currencyCode,
-    this.discountType,
-    required this.expiresAt,
-    this.faceValueMinor,
-    required this.id,
-    this.lockExpiresAt,
-    this.lockedAt,
-    required this.offerId,
-    this.redeemedAt,
-    this.returnedAt,
-    this.sourceCodeLast4,
-    required this.status,
-    required this.stockId,
-    required this.validFrom
-  });
-
-  factory PromotionCouponWalletItem.fromJson(Map<String, dynamic> json) {
-    return PromotionCouponWalletItem(
-      claimSource: (() {
-        final value = json['claimSource']?.toString();
-        if (value == null) {
-          throw FormatException('PromotionCouponWalletItem.claimSource is required');
-        }
-        return value;
-      })(),
-      claimedAt: (() {
-        final value = json['claimedAt']?.toString();
-        if (value == null) {
-          throw FormatException('PromotionCouponWalletItem.claimedAt is required');
-        }
-        return value;
-      })(),
-      codeId: json['codeId']?.toString(),
-      couponNo: (() {
-        final value = json['couponNo']?.toString();
-        if (value == null) {
-          throw FormatException('PromotionCouponWalletItem.couponNo is required');
-        }
-        return value;
-      })(),
-      currencyCode: (() {
-        final value = json['currencyCode']?.toString();
-        if (value == null) {
-          throw FormatException('PromotionCouponWalletItem.currencyCode is required');
-        }
-        return value;
-      })(),
-      discountType: json['discountType']?.toString(),
-      expiresAt: (() {
-        final value = json['expiresAt']?.toString();
-        if (value == null) {
-          throw FormatException('PromotionCouponWalletItem.expiresAt is required');
-        }
-        return value;
-      })(),
-      faceValueMinor: json['faceValueMinor']?.toString(),
-      id: (() {
-        final value = json['id']?.toString();
-        if (value == null) {
-          throw FormatException('PromotionCouponWalletItem.id is required');
-        }
-        return value;
-      })(),
-      lockExpiresAt: json['lockExpiresAt']?.toString(),
-      lockedAt: json['lockedAt']?.toString(),
-      offerId: (() {
-        final value = json['offerId']?.toString();
-        if (value == null) {
-          throw FormatException('PromotionCouponWalletItem.offerId is required');
-        }
-        return value;
-      })(),
-      redeemedAt: json['redeemedAt']?.toString(),
-      returnedAt: json['returnedAt']?.toString(),
-      sourceCodeLast4: json['sourceCodeLast4']?.toString(),
-      status: (() {
-        final value = json['status']?.toString();
-        if (value == null) {
-          throw FormatException('PromotionCouponWalletItem.status is required');
-        }
-        return value;
-      })(),
-      stockId: (() {
-        final value = json['stockId']?.toString();
-        if (value == null) {
-          throw FormatException('PromotionCouponWalletItem.stockId is required');
-        }
-        return value;
-      })(),
-      validFrom: (() {
-        final value = json['validFrom']?.toString();
-        if (value == null) {
-          throw FormatException('PromotionCouponWalletItem.validFrom is required');
-        }
-        return value;
-      })()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'claimSource': claimSource,
-      'claimedAt': claimedAt,
-      'codeId': codeId,
-      'couponNo': couponNo,
-      'currencyCode': currencyCode,
-      'discountType': discountType,
-      'expiresAt': expiresAt,
-      'faceValueMinor': faceValueMinor,
-      'id': id,
-      'lockExpiresAt': lockExpiresAt,
-      'lockedAt': lockedAt,
-      'offerId': offerId,
-      'redeemedAt': redeemedAt,
-      'returnedAt': returnedAt,
-      'sourceCodeLast4': sourceCodeLast4,
-      'status': status,
-      'stockId': stockId,
-      'validFrom': validFrom,
-    };
-  }
-}
-
-class PromotionOperationResponse {
-  final String? paymentId;
-  final MediaResource? qrCode;
-  final String? qrCodePayload;
-  final String requestNo;
-  final String status;
-  final bool success;
-
-  PromotionOperationResponse({
-    this.paymentId,
-    this.qrCode,
-    this.qrCodePayload,
-    required this.requestNo,
-    required this.status,
-    required this.success
-  });
-
-  factory PromotionOperationResponse.fromJson(Map<String, dynamic> json) {
-    return PromotionOperationResponse(
-      paymentId: json['paymentId']?.toString(),
-      qrCode: (() {
-        final map = _sdkworkAsMap(json['qrCode']);
-        return map == null ? null : MediaResource.fromJson(map);
-      })(),
-      qrCodePayload: json['qrCodePayload']?.toString(),
-      requestNo: (() {
-        final value = json['requestNo']?.toString();
-        if (value == null) {
-          throw FormatException('PromotionOperationResponse.requestNo is required');
-        }
-        return value;
-      })(),
-      status: (() {
-        final value = json['status']?.toString();
-        if (value == null) {
-          throw FormatException('PromotionOperationResponse.status is required');
-        }
-        return value;
-      })(),
-      success: (() {
-        final value = json['success'];
-        if (value is! bool) {
-          throw FormatException('PromotionOperationResponse.success is required');
-        }
-        return value;
-      })()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'paymentId': paymentId,
-      'qrCode': qrCode?.toJson(),
-      'qrCodePayload': qrCodePayload,
-      'requestNo': requestNo,
-      'status': status,
-      'success': success,
-    };
-  }
-}
-
-class PromotionUserCouponWalletListResponse {
-  final List<PromotionCouponWalletItem> items;
-
-  PromotionUserCouponWalletListResponse({
-    required this.items
-  });
-
-  factory PromotionUserCouponWalletListResponse.fromJson(Map<String, dynamic> json) {
-    return PromotionUserCouponWalletListResponse(
-      items: (() {
-        final list = _sdkworkAsList(json['items']);
-        if (list == null) {
-          throw FormatException('PromotionUserCouponWalletListResponse.items is required');
-        }
-        return list
-            .map((item) => (() {
-        final map = _sdkworkAsMap(item);
-        return map == null ? null : PromotionCouponWalletItem.fromJson(map);
-      })())
-            .whereType<PromotionCouponWalletItem>()
-            .toList();
-      })()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'items': items.map((item) => item.toJson()).toList(),
-    };
-  }
-}
-
-class PromotionsCodesRedemptionsCreateResult {
-  final String code;
-  final PromotionOperationResponse? data;
-  final String? msg;
-
-  PromotionsCodesRedemptionsCreateResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory PromotionsCodesRedemptionsCreateResult.fromJson(Map<String, dynamic> json) {
-    return PromotionsCodesRedemptionsCreateResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('PromotionsCodesRedemptionsCreateResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : PromotionOperationResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class PromotionsDiscountApplicationsCreateResult {
-  final String code;
-  final PromotionOperationResponse? data;
-  final String? msg;
-
-  PromotionsDiscountApplicationsCreateResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory PromotionsDiscountApplicationsCreateResult.fromJson(Map<String, dynamic> json) {
-    return PromotionsDiscountApplicationsCreateResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('PromotionsDiscountApplicationsCreateResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : PromotionOperationResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class PromotionsDiscountApplicationsReleaseResult {
-  final String code;
-  final PromotionOperationResponse? data;
-  final String? msg;
-
-  PromotionsDiscountApplicationsReleaseResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory PromotionsDiscountApplicationsReleaseResult.fromJson(Map<String, dynamic> json) {
-    return PromotionsDiscountApplicationsReleaseResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('PromotionsDiscountApplicationsReleaseResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : PromotionOperationResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class PromotionsDiscountApplicationsReversalsCreateResult {
-  final String code;
-  final PromotionOperationResponse? data;
-  final String? msg;
-
-  PromotionsDiscountApplicationsReversalsCreateResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory PromotionsDiscountApplicationsReversalsCreateResult.fromJson(Map<String, dynamic> json) {
-    return PromotionsDiscountApplicationsReversalsCreateResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('PromotionsDiscountApplicationsReversalsCreateResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : PromotionOperationResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class PromotionsDiscountApplicationsSettleResult {
-  final String code;
-  final PromotionOperationResponse? data;
-  final String? msg;
-
-  PromotionsDiscountApplicationsSettleResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory PromotionsDiscountApplicationsSettleResult.fromJson(Map<String, dynamic> json) {
-    return PromotionsDiscountApplicationsSettleResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('PromotionsDiscountApplicationsSettleResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : PromotionOperationResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class PromotionsUserCouponsClaimsCreateResult {
-  final String code;
-  final PromotionOperationResponse? data;
-  final String? msg;
-
-  PromotionsUserCouponsClaimsCreateResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory PromotionsUserCouponsClaimsCreateResult.fromJson(Map<String, dynamic> json) {
-    return PromotionsUserCouponsClaimsCreateResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('PromotionsUserCouponsClaimsCreateResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : PromotionOperationResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class PromotionsUserCouponsWalletListResult {
-  final String code;
-  final PromotionUserCouponWalletListResponse? data;
-  final String? msg;
-
-  PromotionsUserCouponsWalletListResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory PromotionsUserCouponsWalletListResult.fromJson(Map<String, dynamic> json) {
-    return PromotionsUserCouponsWalletListResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('PromotionsUserCouponsWalletListResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : PromotionUserCouponWalletListResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
 class RankingVendorOption {
   final String code;
   final String label;
@@ -16298,29 +15318,29 @@ class RankingVendorOptionsResponse {
   }
 }
 
-class RechargesOrdersCreateResult {
+class RegistrationsCreateResult {
   final String code;
-  final CommerceRechargeOrderCreateResponse? data;
+  final IamSessionResponse? data;
   final String? msg;
 
-  RechargesOrdersCreateResult({
+  RegistrationsCreateResult({
     required this.code,
     this.data,
     this.msg
   });
 
-  factory RechargesOrdersCreateResult.fromJson(Map<String, dynamic> json) {
-    return RechargesOrdersCreateResult(
+  factory RegistrationsCreateResult.fromJson(Map<String, dynamic> json) {
+    return RegistrationsCreateResult(
       code: (() {
         final value = json['code']?.toString();
         if (value == null) {
-          throw FormatException('RechargesOrdersCreateResult.code is required');
+          throw FormatException('RegistrationsCreateResult.code is required');
         }
         return value;
       })(),
       data: (() {
         final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceRechargeOrderCreateResponse.fromJson(map);
+        return map == null ? null : IamSessionResponse.fromJson(map);
       })(),
       msg: json['msg']?.toString()
     );
@@ -16335,214 +15355,29 @@ class RechargesOrdersCreateResult {
   }
 }
 
-class RechargesOrdersRetrieveResult {
+class RoleBindingsListResult {
   final String code;
-  final CommerceRechargeCheckoutStatusResponse? data;
+  final IamRoleBindingListResponse? data;
   final String? msg;
 
-  RechargesOrdersRetrieveResult({
+  RoleBindingsListResult({
     required this.code,
     this.data,
     this.msg
   });
 
-  factory RechargesOrdersRetrieveResult.fromJson(Map<String, dynamic> json) {
-    return RechargesOrdersRetrieveResult(
+  factory RoleBindingsListResult.fromJson(Map<String, dynamic> json) {
+    return RoleBindingsListResult(
       code: (() {
         final value = json['code']?.toString();
         if (value == null) {
-          throw FormatException('RechargesOrdersRetrieveResult.code is required');
+          throw FormatException('RoleBindingsListResult.code is required');
         }
         return value;
       })(),
       data: (() {
         final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceRechargeCheckoutStatusResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class RechargesPackagesListResult {
-  final String code;
-  final CommerceRechargePackageListResponse? data;
-  final String? msg;
-
-  RechargesPackagesListResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory RechargesPackagesListResult.fromJson(Map<String, dynamic> json) {
-    return RechargesPackagesListResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('RechargesPackagesListResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceRechargePackageListResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class RechargesSettingsRetrieveResult {
-  final String code;
-  final CommerceRechargeSettingsResponse? data;
-  final String? msg;
-
-  RechargesSettingsRetrieveResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory RechargesSettingsRetrieveResult.fromJson(Map<String, dynamic> json) {
-    return RechargesSettingsRetrieveResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('RechargesSettingsRetrieveResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceRechargeSettingsResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class RefundsCreateResult {
-  final String code;
-  final CommerceOperationResponse? data;
-  final String? msg;
-
-  RefundsCreateResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory RefundsCreateResult.fromJson(Map<String, dynamic> json) {
-    return RefundsCreateResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('RefundsCreateResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceOperationResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class RefundsListResult {
-  final String code;
-  final CommerceStandardCollectionResponse? data;
-  final String? msg;
-
-  RefundsListResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory RefundsListResult.fromJson(Map<String, dynamic> json) {
-    return RefundsListResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('RefundsListResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class RefundsRetrieveResult {
-  final String code;
-  final CommerceStandardResourceResponse? data;
-  final String? msg;
-
-  RefundsRetrieveResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory RefundsRetrieveResult.fromJson(Map<String, dynamic> json) {
-    return RefundsRetrieveResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('RefundsRetrieveResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardResourceResponse.fromJson(map);
+        return map == null ? null : IamRoleBindingListResponse.fromJson(map);
       })(),
       msg: json['msg']?.toString()
     );
@@ -18752,6 +17587,191 @@ class SdkReferenceDocumentationResponse {
   }
 }
 
+class SessionsCreateResult {
+  final String code;
+  final IamSessionResponse? data;
+  final String? msg;
+
+  SessionsCreateResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory SessionsCreateResult.fromJson(Map<String, dynamic> json) {
+    return SessionsCreateResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('SessionsCreateResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : IamSessionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class SessionsCurrentDeleteResult {
+  final String code;
+  final NoData? data;
+  final String? msg;
+
+  SessionsCurrentDeleteResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory SessionsCurrentDeleteResult.fromJson(Map<String, dynamic> json) {
+    return SessionsCurrentDeleteResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('SessionsCurrentDeleteResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : NoData.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class SessionsCurrentRetrieveResult {
+  final String code;
+  final IamSessionResponse? data;
+  final String? msg;
+
+  SessionsCurrentRetrieveResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory SessionsCurrentRetrieveResult.fromJson(Map<String, dynamic> json) {
+    return SessionsCurrentRetrieveResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('SessionsCurrentRetrieveResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : IamSessionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class SessionsCurrentUpdateResult {
+  final String code;
+  final IamSessionResponse? data;
+  final String? msg;
+
+  SessionsCurrentUpdateResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory SessionsCurrentUpdateResult.fromJson(Map<String, dynamic> json) {
+    return SessionsCurrentUpdateResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('SessionsCurrentUpdateResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : IamSessionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class SessionsRefreshResult {
+  final String code;
+  final IamSessionResponse? data;
+  final String? msg;
+
+  SessionsRefreshResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory SessionsRefreshResult.fromJson(Map<String, dynamic> json) {
+    return SessionsRefreshResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('SessionsRefreshResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : IamSessionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
 class SettingsDataResponse {
   final String language;
   final SettingsNotifications notifications;
@@ -18850,43 +17870,6 @@ class SettingsNotifications {
       'apiMonitor': apiMonitor,
       'billReminder': billReminder,
       'quotaWarning': quotaWarning,
-    };
-  }
-}
-
-class ShipmentsRetrieveResult {
-  final String code;
-  final CommerceStandardResourceResponse? data;
-  final String? msg;
-
-  ShipmentsRetrieveResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory ShipmentsRetrieveResult.fromJson(Map<String, dynamic> json) {
-    return ShipmentsRetrieveResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('ShipmentsRetrieveResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardResourceResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
     };
   }
 }
@@ -20758,6 +19741,43 @@ class UsersCurrentCommentsListResult {
   }
 }
 
+class UsersCurrentRetrieveResult {
+  final String code;
+  final IamUserResponse? data;
+  final String? msg;
+
+  UsersCurrentRetrieveResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory UsersCurrentRetrieveResult.fromJson(Map<String, dynamic> json) {
+    return UsersCurrentRetrieveResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('UsersCurrentRetrieveResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : IamUserResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
 class UsersCurrentSkillsListResult {
   final String code;
   final AppInstalledSkillsResponse? data;
@@ -20929,228 +19949,6 @@ class VerificationCodesVerifyResult {
       data: (() {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : IamVerificationCodeVerifyResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class WalletAccountsListResult {
-  final String code;
-  final CommerceStandardCollectionResponse? data;
-  final String? msg;
-
-  WalletAccountsListResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory WalletAccountsListResult.fromJson(Map<String, dynamic> json) {
-    return WalletAccountsListResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('WalletAccountsListResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class WalletExchangeRateRetrieveResult {
-  final String code;
-  final CommerceStandardResourceResponse? data;
-  final String? msg;
-
-  WalletExchangeRateRetrieveResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory WalletExchangeRateRetrieveResult.fromJson(Map<String, dynamic> json) {
-    return WalletExchangeRateRetrieveResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('WalletExchangeRateRetrieveResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardResourceResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class WalletLedgerEntriesListResult {
-  final String code;
-  final CommerceStandardCollectionResponse? data;
-  final String? msg;
-
-  WalletLedgerEntriesListResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory WalletLedgerEntriesListResult.fromJson(Map<String, dynamic> json) {
-    return WalletLedgerEntriesListResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('WalletLedgerEntriesListResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class WalletOverviewRetrieveResult {
-  final String code;
-  final CommerceStandardResourceResponse? data;
-  final String? msg;
-
-  WalletOverviewRetrieveResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory WalletOverviewRetrieveResult.fromJson(Map<String, dynamic> json) {
-    return WalletOverviewRetrieveResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('WalletOverviewRetrieveResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardResourceResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class WalletPointsExchangeRulesListResult {
-  final String code;
-  final CommerceStandardCollectionResponse? data;
-  final String? msg;
-
-  WalletPointsExchangeRulesListResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory WalletPointsExchangeRulesListResult.fromJson(Map<String, dynamic> json) {
-    return WalletPointsExchangeRulesListResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('WalletPointsExchangeRulesListResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
-      })(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'msg': msg,
-    };
-  }
-}
-
-class WalletTokensRetrieveResult {
-  final String code;
-  final CommerceStandardResourceResponse? data;
-  final String? msg;
-
-  WalletTokensRetrieveResult({
-    required this.code,
-    this.data,
-    this.msg
-  });
-
-  factory WalletTokensRetrieveResult.fromJson(Map<String, dynamic> json) {
-    return WalletTokensRetrieveResult(
-      code: (() {
-        final value = json['code']?.toString();
-        if (value == null) {
-          throw FormatException('WalletTokensRetrieveResult.code is required');
-        }
-        return value;
-      })(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardResourceResponse.fromJson(map);
       })(),
       msg: json['msg']?.toString()
     );

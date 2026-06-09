@@ -108,7 +108,7 @@ class FrontendOperationAudit:
     GENERATIONS_API_PATH_PREFIXES = (
         "/app/v3/api/generations",
     )
-    APPBASE_APP_DEPENDENCY_DOMAINS = frozenset({"auth", "iam"})
+    APPBASE_APP_DEPENDENCY_DOMAINS = frozenset({"auth", "iam", "appbase"})
     APPBASE_APP_SERVICE_CLIENT = "getSdkworkAppbaseAppSdkClient"
     APPBASE_BACKEND_SERVICE_CLIENT = "getSdkworkAppbaseBackendSdkClient"
     APPBASE_APP_SERVICE_PATTERN = re.compile(r"\bgetSdkworkAppbaseAppSdkClient\s*\(")
@@ -137,10 +137,6 @@ class FrontendOperationAudit:
     )
     APPBASE_IAM_CONTROLLER_OPERATIONS = (
         "bootstrap",
-        "callbackLoginQrCode",
-        "checkLoginQrCodeStatus",
-        "confirmLoginQrCode",
-        "generateLoginQrCode",
         "getOAuthAuthorizationUrl",
         "register",
         "requestPasswordReset",
@@ -701,9 +697,9 @@ class FrontendOperationAudit:
         api_method = source_operation.get("api_method")
         if not isinstance(api_path, str) or not isinstance(api_method, str):
             return False
-        return (
-            api_surface == "backend"
-            and (api_method.upper(), api_path) in self.APPBASE_BACKEND_DEPENDENCY_OPERATIONS
+        return api_surface == "backend" and (
+            (api_method.upper(), api_path) in self.APPBASE_BACKEND_DEPENDENCY_OPERATIONS
+            or api_path.startswith("/backend/v3/api/iam/oauth/")
         )
 
     def _sdk_boundary_error_message(

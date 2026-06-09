@@ -25,8 +25,8 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? Runtime { get; set; }
         public int? SortWeight { get; set; }
         public string? SourceAppId { get; set; }
-        public string? TemplateCode { get; set; }
-        public string? TemplateName { get; set; }
+        public string TemplateCode { get; set; }
+        public string TemplateName { get; set; }
         public string? TemplateNo { get; set; }
         public string? TemplateType { get; set; }
         public Dictionary<string, string>? VariableSchema { get; set; }

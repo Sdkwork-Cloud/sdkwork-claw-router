@@ -6,8 +6,8 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class AgentRunCreateRequest
     {
-        public string? AgentId { get; set; }
-        public string? AgentVersionId { get; set; }
+        public string AgentId { get; set; }
+        public string AgentVersionId { get; set; }
         public string? ExecutionMode { get; set; }
         public string? InputMessage { get; set; }
         public string? MemorySpaceId { get; set; }

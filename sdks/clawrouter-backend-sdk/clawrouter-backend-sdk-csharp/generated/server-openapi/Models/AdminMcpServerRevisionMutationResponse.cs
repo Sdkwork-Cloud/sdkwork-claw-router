@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminMcpServerRevisionMutationResponse
     {
-        public AdminMcpServerRevisionItem? Item { get; set; }
+        public AdminMcpServerRevisionItem Item { get; set; }
     }
 }

@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class RoutingUsageListResult
     {
-        public string? Code { get; set; }
+        public string Code { get; set; }
         public RoutingUsageSnapshot? Data { get; set; }
         public string? Msg { get; set; }
     }

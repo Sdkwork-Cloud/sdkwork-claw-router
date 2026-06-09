@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminApiKeyCreateResponse
     {
-        public AdminApiKeyItem? Key { get; set; }
-        public string? RawKey { get; set; }
+        public AdminApiKeyItem Key { get; set; }
+        public string RawKey { get; set; }
     }
 }

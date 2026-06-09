@@ -974,3 +974,33 @@ frontend_operations:
   - commerce_membership
   - ops_audit_log
   response_schema: *id002
+- route: /admin/memberships
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+  operation: fetchMembershipAdminPlans
+  operation_scope: app_shell
+  operation_id: memberships.admin.plans.fetch
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/memberships/plans
+  openapi_exposed: false
+  sdk_domain: commerce
+  read_sources:
+  - commerce_membership_plan
+- route: /admin/memberships
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+  operation: createMembershipAdminPlan
+  operation_scope: app_shell
+  operation_id: memberships.admin.plans.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/memberships/plans
+  openapi_exposed: false
+  sdk_domain: commerce
+  read_sources:
+  - commerce_membership_plan
+  write_tables:
+  - commerce_membership_plan
+  - commerce_membership_entitlement
+  - ops_audit_log

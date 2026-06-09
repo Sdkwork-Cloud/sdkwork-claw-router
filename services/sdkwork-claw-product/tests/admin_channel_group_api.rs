@@ -294,6 +294,128 @@ async fn admin_channel_group_route_lists_and_replaces_channel_bindings() {
 }
 
 #[tokio::test]
+async fn admin_channel_group_route_explain_reports_backend_config_readiness() {
+    let store = Arc::new(TestChannelGroupStore::with_items_and_bindings(
+        vec![channel_group_item(
+            10,
+            "standard",
+            "Standard",
+            "active",
+            2,
+            vec!["api.openai.chat".to_owned()],
+            vec!["api.openai.chat_completions".to_owned()],
+        )],
+        vec![
+            channel_binding_item(1, 10, 3001, "OpenAI primary", "openai", 10, 80, "active"),
+            channel_binding_item(
+                2,
+                10,
+                3002,
+                "OpenRouter backup",
+                "openrouter",
+                20,
+                30,
+                "disabled",
+            ),
+        ],
+    ));
+    let router = sdkwork_claw_product::api::admin_channel_group_router_with_store(
+        store,
+        Arc::new(TestUuidGenerator),
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/backend/v3/api/ai/channel_groups/10/route_explain")
+                .internal_trusted_subject(10, 20, 30)
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let payload = json_payload(response).await;
+    assert_eq!("2000", payload["code"]);
+    assert_eq!("backend_config", payload["data"]["source"]);
+    assert_eq!(true, payload["data"]["ready"]);
+    assert_eq!(2, payload["data"]["configuredResourceAccessCount"]);
+    assert_eq!(1, payload["data"]["configuredResourceGroupAccessCount"]);
+    assert_eq!(1, payload["data"]["activeHealthyBindingCount"]);
+    assert_eq!(1, payload["data"]["routableBindingCount"]);
+    assert_eq!(
+        serde_json::json!(["api.openai.chat"]),
+        payload["data"]["resourceGroupCodes"]
+    );
+    assert_eq!(
+        serde_json::json!(["api.openai.chat_completions"]),
+        payload["data"]["resourceCodes"]
+    );
+    assert_eq!(
+        serde_json::json!(["api.openai.chat_completions"]),
+        payload["data"]["effectiveResourceCodes"]
+    );
+    assert_eq!(
+        serde_json::json!(["openai.chat_completions"]),
+        payload["data"]["apiScope"]
+    );
+    assert_eq!(serde_json::json!(["llm"]), payload["data"]["capabilities"]);
+    assert_eq!(serde_json::json!([]), payload["data"]["issueCodes"]);
+    assert_eq!(serde_json::json!([]), payload["data"]["issues"]);
+}
+
+#[tokio::test]
+async fn admin_channel_group_route_explain_reports_blocking_backend_config_issues() {
+    let store = Arc::new(TestChannelGroupStore::with_items_and_bindings(
+        vec![channel_group_item(
+            11,
+            "blocked",
+            "Blocked",
+            "disabled",
+            0,
+            Vec::new(),
+            Vec::new(),
+        )],
+        Vec::new(),
+    ));
+    let router = sdkwork_claw_product::api::admin_channel_group_router_with_store(
+        store,
+        Arc::new(TestUuidGenerator),
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/backend/v3/api/ai/channel_groups/11/route_explain")
+                .internal_trusted_subject(10, 20, 30)
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let payload = json_payload(response).await;
+    assert_eq!(false, payload["data"]["ready"]);
+    assert_eq!(
+        serde_json::json!([
+            "group.disabled",
+            "group.account_count.empty",
+            "group.resource_access.empty",
+            "group.bindings.empty"
+        ]),
+        payload["data"]["issueCodes"]
+    );
+    assert_eq!(4, payload["data"]["issues"].as_array().unwrap().len());
+    for issue in payload["data"]["issues"].as_array().unwrap() {
+        assert_eq!("blocking", issue["severity"]);
+    }
+}
+
+#[tokio::test]
 async fn admin_channel_group_route_invalidates_routing_cache_after_successful_binding_mutation() {
     let store = Arc::new(TestChannelGroupStore::with_bindings(vec![
         channel_binding_item(1, 10, 3001, "OpenAI primary", "openai", 10, 80, "active"),
@@ -490,6 +612,17 @@ struct TestChannelGroupStore {
 impl TestChannelGroupStore {
     fn with_bindings(bindings: Vec<AdminChannelGroupChannelBindingItem>) -> Self {
         Self {
+            bindings: Mutex::new(bindings),
+            ..Self::default()
+        }
+    }
+
+    fn with_items_and_bindings(
+        items: Vec<AdminChannelGroupItem>,
+        bindings: Vec<AdminChannelGroupChannelBindingItem>,
+    ) -> Self {
+        Self {
+            items: Mutex::new(items),
             bindings: Mutex::new(bindings),
             ..Self::default()
         }
@@ -722,13 +855,47 @@ fn channel_binding_item(
         provider_code: provider_code.to_owned(),
         provider_name: provider_code.to_owned(),
         channel_code: format!("{provider_code}-{channel_id}"),
-        resource_codes: Vec::new(),
-        api_scope: Vec::new(),
-        capabilities: Vec::new(),
+        resource_codes: vec!["api.openai.chat_completions".to_owned()],
+        api_scope: vec!["openai.chat_completions".to_owned()],
+        capabilities: vec!["llm".to_owned()],
         priority,
         weight,
         status: status.to_owned(),
         health_status: "active".to_owned(),
+        deleted_at: None,
+    }
+}
+
+fn channel_group_item(
+    id: i64,
+    group_code: &str,
+    group_name: &str,
+    status: &str,
+    account_available: i64,
+    resource_group_codes: Vec<String>,
+    resource_codes: Vec<String>,
+) -> AdminChannelGroupItem {
+    AdminChannelGroupItem {
+        id,
+        uuid: format!("group-{id}"),
+        tenant_id: 10,
+        organization_id: 20,
+        group_code: group_code.to_owned(),
+        group_name: group_name.to_owned(),
+        provider_code: "openai".to_owned(),
+        price_reference_mode: "multiplier".to_owned(),
+        rate_multiplier: 1.0,
+        official_price_multiplier: 1.0,
+        group_type: "public".to_owned(),
+        resource_group_codes,
+        resource_codes,
+        account_available,
+        account_total: account_available,
+        capacity_used: 0.0,
+        capacity_total: 100.0,
+        usage_today: 0.0,
+        usage_total: 0.0,
+        status: status.to_owned(),
         deleted_at: None,
     }
 }

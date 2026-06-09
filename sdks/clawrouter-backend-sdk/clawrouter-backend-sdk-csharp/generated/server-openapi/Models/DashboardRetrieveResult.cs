@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class DashboardRetrieveResult
     {
-        public string? Code { get; set; }
+        public string Code { get; set; }
         public ServiceProviderDashboardResponse? Data { get; set; }
         public string? Msg { get; set; }
     }

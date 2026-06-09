@@ -19,6 +19,9 @@ import type {
   AdminApiKeyCreateRequest,
 } from '@sdkwork/clawrouter-backend-sdk';
 
+const DEFAULT_USER_LIST_PAGE_SIZE = 200;
+const MAX_USER_LIST_PAGE_SIZE = 500;
+
 export interface UserListItem {
   id: string;
   email: string;
@@ -72,16 +75,25 @@ export type UserAdminTableData = {
   apiKeysLoadError: Error | null;
 };
 
+export type UserListQuery = {
+  q?: string;
+  pageSize?: number;
+};
+
 type UserAdminTableDataLoaders = {
   fetchUsers?: typeof UserService.fetchUsers;
   fetchApiKeysMap?: typeof UserService.fetchApiKeysMap;
 };
 
 type AppbaseOperationCommand = Record<string, unknown>;
+type AppbaseBackendClient = ReturnType<typeof getSdkworkAppbaseBackendSdkClient>;
+type IamUsersListParams = Parameters<AppbaseBackendClient['iam']['users']['list']>[0];
 
 export class UserService {
-  static async fetchUsers(): Promise<UserListItem[]> {
-    const result = await getSdkworkAppbaseBackendSdkClient().iam.users.list();
+  static async fetchUsers(query: UserListQuery = {}): Promise<UserListItem[]> {
+    const result = await getSdkworkAppbaseBackendSdkClient().iam.users.list(
+      toListUsersParams(query),
+    );
     ensureSdkworkApiSuccess(result, 'admin.user.errors.fetchUsersFallback');
     return readRequiredApiItems(result, 'admin.user.errors.fetchUsersFallback')
       .map(normalizeUser);
@@ -142,12 +154,14 @@ export class UserService {
   }
 
   static loadAdminTableData(
-    loaders: UserAdminTableDataLoaders = {},
+    queryOrLoaders: UserListQuery | UserAdminTableDataLoaders = {},
+    maybeLoaders: UserAdminTableDataLoaders = {},
   ): Promise<UserAdminTableData> {
+    const { query, loaders } = splitLoadAdminTableDataArgs(queryOrLoaders, maybeLoaders);
     const fetchUsers = loaders.fetchUsers ?? UserService.fetchUsers;
     const fetchApiKeysMap = loaders.fetchApiKeysMap ?? UserService.fetchApiKeysMap;
 
-    return fetchUsers().then(async (users) => {
+    return fetchUsers(query).then(async (users) => {
       try {
         const apiKeysMap = await fetchApiKeysMap();
         return {
@@ -164,6 +178,41 @@ export class UserService {
       }
     });
   }
+}
+
+function splitLoadAdminTableDataArgs(
+  queryOrLoaders: UserListQuery | UserAdminTableDataLoaders,
+  maybeLoaders: UserAdminTableDataLoaders,
+): { query: UserListQuery; loaders: UserAdminTableDataLoaders } {
+  if (isUserAdminTableDataLoaders(queryOrLoaders)) {
+    return {
+      query: {},
+      loaders: queryOrLoaders,
+    };
+  }
+  return {
+    query: queryOrLoaders,
+    loaders: maybeLoaders,
+  };
+}
+
+function isUserAdminTableDataLoaders(value: UserListQuery | UserAdminTableDataLoaders): value is UserAdminTableDataLoaders {
+  return 'fetchUsers' in value || 'fetchApiKeysMap' in value;
+}
+
+function toListUsersParams(query: UserListQuery): IamUsersListParams {
+  const q = optionalText(query.q);
+  return {
+    pageSize: normalizeUserListPageSize(query.pageSize),
+    ...(q ? { q } : {}),
+  };
+}
+
+function normalizeUserListPageSize(value: number | undefined): number {
+  if (!value || !Number.isFinite(value) || value < 1) {
+    return DEFAULT_USER_LIST_PAGE_SIZE;
+  }
+  return Math.min(Math.trunc(value), MAX_USER_LIST_PAGE_SIZE);
 }
 
 function toCreateUserRequest(user: UserCreateInput): AppbaseOperationCommand {

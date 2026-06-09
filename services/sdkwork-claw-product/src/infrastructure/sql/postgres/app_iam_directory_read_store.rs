@@ -155,10 +155,14 @@ SELECT
     COALESCE(CAST(a.created_at AS TEXT), '') AS created_at,
     COALESCE(CAST(a.updated_at AS TEXT), '') AS updated_at
 FROM iam_position_assignment a
+JOIN iam_position p
+  ON CAST(p.tenant_id AS TEXT) = CAST(a.tenant_id AS TEXT)
+ AND CAST(p.organization_id AS TEXT) = CAST(a.organization_id AS TEXT)
+ AND CAST(p.id AS TEXT) = CAST(a.position_id AS TEXT)
 WHERE CAST(a.tenant_id AS TEXT) = $1
   AND CAST(a.user_id AS TEXT) = $2
   AND ($3 = '' OR CAST(a.organization_id AS TEXT) = $3)
-  AND ($4 = '' OR CAST(a.position_id AS TEXT) = $4)
+  AND ($4 = '' OR CAST(p.department_id AS TEXT) = $4)
   AND ($5 = 'all' OR LOWER(CAST(a.status AS TEXT)) = LOWER($5) OR ($5 = 'active' AND CAST(a.status AS TEXT) = '1'))
 ORDER BY a.created_at DESC NULLS LAST, a.id ASC
 LIMIT 500

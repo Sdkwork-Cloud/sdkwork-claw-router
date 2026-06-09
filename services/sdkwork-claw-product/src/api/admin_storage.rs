@@ -92,16 +92,12 @@ struct AdminStorageQuery {
 struct CreateStorageProviderRequest {
     provider_code: String,
     provider_type: String,
-    #[serde(alias = "endpoint")]
     endpoint_url: Option<String>,
     region: Option<String>,
     credential_ref: String,
     path_style_enabled: Option<bool>,
-    #[serde(alias = "multipart")]
     supports_multipart: Option<bool>,
-    #[serde(alias = "lifecycle")]
     supports_lifecycle: Option<bool>,
-    #[serde(alias = "objectLock")]
     supports_object_lock: Option<bool>,
 }
 
@@ -121,16 +117,12 @@ struct CreateStorageBucketRequest {
     bucket_region: Option<String>,
     data_residency_region: Option<String>,
     object_key_prefix: Option<String>,
-    #[serde(alias = "storageClass")]
     default_storage_class: Option<String>,
-    #[serde(alias = "encryption")]
     default_encryption_mode: Option<String>,
     kms_key_ref: Option<String>,
-    #[serde(alias = "versioning")]
     versioning_enabled: Option<bool>,
     object_lock_enabled: Option<bool>,
     lifecycle_enabled: Option<bool>,
-    #[serde(alias = "blockPublicAccess")]
     public_access_blocked: Option<bool>,
 }
 

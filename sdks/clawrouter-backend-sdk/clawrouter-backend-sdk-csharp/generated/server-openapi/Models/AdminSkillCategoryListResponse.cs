@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminSkillCategoryListResponse
     {
-        public List<AdminSkillCategoryItem>? Items { get; set; }
+        public List<AdminSkillCategoryItem> Items { get; set; }
     }
 }

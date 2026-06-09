@@ -15,7 +15,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? FileName { get; set; }
         public int? Height { get; set; }
         public string? Id { get; set; }
-        public string? Kind { get; set; }
+        public string Kind { get; set; }
         public Dictionary<string, string>? Metadata { get; set; }
         public string? MimeType { get; set; }
         public string? ObjectBlobId { get; set; }
@@ -24,7 +24,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public MediaResource? Poster { get; set; }
         public string? PublicUrl { get; set; }
         public string? SizeBytes { get; set; }
-        public string? Source { get; set; }
+        public string Source { get; set; }
         public List<MediaResource>? Thumbnails { get; set; }
         public string? Title { get; set; }
         public string? Uri { get; set; }

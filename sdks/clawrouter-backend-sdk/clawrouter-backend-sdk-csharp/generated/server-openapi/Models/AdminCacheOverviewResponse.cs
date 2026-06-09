@@ -6,8 +6,8 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminCacheOverviewResponse
     {
-        public List<AdminCacheInstance>? Instances { get; set; }
-        public List<AdminCacheNamespacePolicy>? NamespacePolicies { get; set; }
-        public AdminCacheSummary? Summary { get; set; }
+        public List<AdminCacheInstance> Instances { get; set; }
+        public List<AdminCacheNamespacePolicy> NamespacePolicies { get; set; }
+        public AdminCacheSummary Summary { get; set; }
     }
 }

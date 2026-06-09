@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class ChatTurnCreateResponse
     {
-        public List<ChatMessageItem>? Messages { get; set; }
-        public ChatTurnItem? Turn { get; set; }
+        public List<ChatMessageItem> Messages { get; set; }
+        public ChatTurnItem Turn { get; set; }
     }
 }

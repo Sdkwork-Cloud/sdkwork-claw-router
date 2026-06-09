@@ -473,11 +473,14 @@ class SdkRuntimeStandardizer:
         updated: list[Path] = []
         for sdk_family in self.sdk_directories:
             family = self.root / "sdks" / sdk_family
-            base = family / SDK_TYPESCRIPT_DIRECTORIES[sdk_family] / "generated" / "server-openapi"
-            if not base.is_dir():
-                raise FileNotFoundError(f"generated SDK directory is missing: {base}")
-            updated.extend(self._standardize_sdk_family(sdk_family, family, base))
-            updated.extend(self._standardize_sdk(sdk_family, base))
+            typescript_base = family / SDK_TYPESCRIPT_DIRECTORIES[sdk_family]
+            generated_base = typescript_base / "generated" / "server-openapi"
+            if generated_base.is_dir():
+                updated.extend(self._sync_typescript_package_root_from_generated(sdk_family, typescript_base, generated_base))
+            elif not typescript_base.is_dir():
+                raise FileNotFoundError(f"generated SDK directory is missing: {generated_base}")
+            updated.extend(self._standardize_sdk_family(sdk_family, family, typescript_base))
+            updated.extend(self._standardize_sdk(sdk_family, typescript_base))
         return updated
 
     def sync_openapi_snapshots(self) -> list[Path]:
@@ -921,8 +924,8 @@ class SdkRuntimeStandardizer:
                 "generationState": "materialized",
                 "releaseState": "not_published",
                 "generatedPath": typescript_generated_path,
-                "packagePath": typescript_generated_path,
-                "manifestPath": f"{typescript_generated_path}/package.json",
+                "packagePath": typescript_directory,
+                "manifestPath": f"{typescript_directory}/package.json",
                 "name": package_name,
                 "version": version,
                 "description": SDK_DESCRIPTIONS[sdk_family],
@@ -937,9 +940,22 @@ class SdkRuntimeStandardizer:
                 },
                 "packages": [
                     {
-                        "layer": "generated",
+                        "layer": "generated-output",
                         "packagePath": typescript_generated_path,
                         "manifestPath": f"{typescript_generated_path}/package.json",
+                        "name": package_name,
+                        "version": version,
+                        "description": f"{SDK_DESCRIPTIONS[sdk_family]} generator-owned transport output",
+                        "entrypoints": {
+                            "main": "./dist/index.cjs",
+                            "module": "./dist/index.js",
+                            "types": "./dist/index.d.ts",
+                        },
+                    },
+                    {
+                        "layer": "package",
+                        "packagePath": typescript_directory,
+                        "manifestPath": f"{typescript_directory}/package.json",
                         "name": package_name,
                         "version": version,
                         "description": SDK_DESCRIPTIONS[sdk_family],
@@ -1391,6 +1407,120 @@ class SdkRuntimeStandardizer:
             "});\n"
         )
 
+    def _sync_typescript_package_root_from_generated(
+        self,
+        sdk_family: str,
+        package_root: Path,
+        generated_root: Path,
+    ) -> list[Path]:
+        updated: list[Path] = []
+        generated_manifest = self._read_json_or_none(
+            generated_root / ".sdkwork" / "sdkwork-generator-manifest.json"
+        )
+        generated_paths = self._manifest_generated_paths(generated_manifest)
+        if not generated_paths:
+            return updated
+
+        generated_paths.update(
+            {
+                "CHANGELOG.md",
+                "LICENSE",
+                "README.md",
+                "package.json",
+                "sdkwork-sdk.json",
+                "tsconfig.json",
+            }
+        )
+        for relative_path in sorted(generated_paths):
+            if not self._is_typescript_package_sync_path(relative_path):
+                continue
+            source = generated_root / relative_path
+            target = package_root / relative_path
+            if not source.is_file():
+                continue
+            target.parent.mkdir(parents=True, exist_ok=True)
+            if not target.is_file() or target.read_bytes() != source.read_bytes():
+                shutil.copyfile(source, target)
+                updated.append(target)
+
+        for control_file in (
+            "sdkwork-generator-changes.json",
+            "sdkwork-generator-manifest.json",
+            "sdkwork-generator-report.json",
+        ):
+            source_control = generated_root / ".sdkwork" / control_file
+            target_control = package_root / ".sdkwork" / control_file
+            if source_control.is_file():
+                target_control.parent.mkdir(parents=True, exist_ok=True)
+                if not target_control.is_file() or target_control.read_bytes() != source_control.read_bytes():
+                    shutil.copyfile(source_control, target_control)
+                    updated.append(target_control)
+
+        updated.extend(self._remove_stale_typescript_package_generated_artifacts(package_root, generated_paths))
+        return updated
+
+    def _manifest_generated_paths(self, manifest: dict[str, Any] | None) -> set[str]:
+        if not self._is_sdk_generator_manifest(manifest):
+            return set()
+        generated_files = manifest.get("generatedFiles")
+        if not isinstance(generated_files, list):
+            return set()
+        paths: set[str] = set()
+        for entry in generated_files:
+            if not isinstance(entry, dict):
+                continue
+            raw_path = entry.get("path")
+            if not isinstance(raw_path, str):
+                continue
+            normalized = raw_path.replace("\\", "/").lstrip("/")
+            if normalized and ".." not in Path(normalized).parts:
+                paths.add(normalized)
+        return paths
+
+    def _is_typescript_package_sync_path(self, relative_path: str) -> bool:
+        if relative_path.startswith("src/"):
+            return relative_path.endswith(".ts")
+        if relative_path.startswith("bin/"):
+            return Path(relative_path).suffix in {".mjs", ".ps1", ".sh", ".bat"}
+        if relative_path.startswith("custom/"):
+            return relative_path in {"custom/build-runtime.mjs", "custom/README.md"}
+        return relative_path in {
+            "CHANGELOG.md",
+            "LICENSE",
+            "README.md",
+            "package.json",
+            "sdkwork-sdk.json",
+            "tsconfig.json",
+        }
+
+    def _remove_stale_typescript_package_generated_artifacts(
+        self,
+        package_root: Path,
+        generated_paths: set[str],
+    ) -> list[Path]:
+        updated: list[Path] = []
+        for directory in (package_root / "src" / "api", package_root / "src" / "types"):
+            if not directory.is_dir():
+                continue
+            for source_path in sorted(directory.glob("*.ts")):
+                relative_path = source_path.relative_to(package_root).as_posix()
+                if relative_path in generated_paths:
+                    continue
+                source_path.unlink()
+                updated.append(source_path)
+                stem = source_path.stem
+                dist_relative_dir = directory.relative_to(package_root)
+                for stale_path in (
+                    package_root / "dist" / dist_relative_dir / f"{stem}.js",
+                    package_root / "dist" / dist_relative_dir / f"{stem}.cjs",
+                    package_root / "dist" / dist_relative_dir / f"{stem}.d.ts",
+                    package_root / "dist" / dist_relative_dir / f"{stem}.d.ts.map",
+                ):
+                    if stale_path.exists():
+                        stale_path.unlink()
+                        updated.append(stale_path)
+        return updated
+
     def _standardize_sdk(self, sdk_family: str, base: Path) -> list[Path]:
         updated: list[Path] = []
         package_path = base / "package.json"
@@ -1400,6 +1530,7 @@ class SdkRuntimeStandardizer:
         if not isinstance(scripts, dict):
             scripts = {}
             package["scripts"] = scripts
+        package.pop("private", None)
         scripts["build"] = "node custom/build-runtime.mjs"
         scripts["dev"] = "node custom/build-runtime.mjs"
         scripts["prepublishOnly"] = "npm run build"

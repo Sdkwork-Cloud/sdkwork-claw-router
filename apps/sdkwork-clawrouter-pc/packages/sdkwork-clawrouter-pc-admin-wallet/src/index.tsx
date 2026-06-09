@@ -12,7 +12,7 @@ import {
 type WalletAdminTab = 'rechargeOrders' | 'walletAccounts' | 'walletLedger' | 'exchangeRules';
 type WalletAdminGroup = string;
 
-const DEFAULT_PAGE_PARAMS = { page: '1', pageSize: '100' };
+const DEFAULT_PAGE_PARAMS = { page: 1, pageSize: 100 };
 const DEFAULT_WALLET_SECTION_ID: WalletAdminTab = 'walletAccounts';
 
 type WalletAdminProps = {
@@ -88,7 +88,7 @@ function buildWalletSections(t: ReturnType<typeof useTranslation>['t']): AdminRe
       description: t('admin.commerce.wallet.exchangeRules.desc', 'Wallet and point exchange rules for commercial balance conversion.'),
       icon: <Wallet className="h-4 w-4" />,
       group: t('admin.commerce.wallet.group.wallet', 'Wallet') as WalletAdminGroup,
-      load: () => backendWalletExchangeRulesList(DEFAULT_PAGE_PARAMS),
+      load: () => backendWalletExchangeRulesList(),
       columns: [
         { key: 'rule_no', label: t('admin.col.rule', 'Rule') },
         { key: 'source_currency', label: t('admin.col.source', 'Source') },

@@ -185,9 +185,7 @@ struct AdminModelCatalogSyncRequest {
 }
 
 #[derive(Debug, Deserialize)]
-#[serde(rename_all = "camelCase")]
 struct AdminModelMappingsQuery {
-    #[serde(rename = "binding_type")]
     binding_type: Option<String>,
     vendor_code: Option<String>,
     channel_id: Option<Value>,

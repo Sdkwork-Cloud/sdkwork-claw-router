@@ -5,6 +5,7 @@ public class SdkworkAppClient {
     private let httpClient: HttpClient
     public let agents: AgentsApi
     public let ai: AiApi
+    public let auth: AuthApi
     public let chat: ChatApi
     public let content: ContentApi
     public let ecosystem: EcosystemApi
@@ -12,15 +13,15 @@ public class SdkworkAppClient {
     public let memory: MemoryApi
     public let notification: NotificationApi
     public let platform: PlatformApi
-    public let system: SystemApi
-    public let commerce: CommerceApi
     public let runtime: RuntimeApi
     public let sdkReference: SdkReferenceApi
+    public let system: SystemApi
 
     public init(baseURL: String) {
         self.httpClient = HttpClient(baseURL: baseURL)
         self.agents = AgentsApi(client: httpClient)
         self.ai = AiApi(client: httpClient)
+        self.auth = AuthApi(client: httpClient)
         self.chat = ChatApi(client: httpClient)
         self.content = ContentApi(client: httpClient)
         self.ecosystem = EcosystemApi(client: httpClient)
@@ -28,16 +29,16 @@ public class SdkworkAppClient {
         self.memory = MemoryApi(client: httpClient)
         self.notification = NotificationApi(client: httpClient)
         self.platform = PlatformApi(client: httpClient)
-        self.system = SystemApi(client: httpClient)
-        self.commerce = CommerceApi(client: httpClient)
         self.runtime = RuntimeApi(client: httpClient)
         self.sdkReference = SdkReferenceApi(client: httpClient)
+        self.system = SystemApi(client: httpClient)
     }
 
     public init(config: SdkConfig) {
         self.httpClient = HttpClient(config: config)
         self.agents = AgentsApi(client: httpClient)
         self.ai = AiApi(client: httpClient)
+        self.auth = AuthApi(client: httpClient)
         self.chat = ChatApi(client: httpClient)
         self.content = ContentApi(client: httpClient)
         self.ecosystem = EcosystemApi(client: httpClient)
@@ -45,17 +46,10 @@ public class SdkworkAppClient {
         self.memory = MemoryApi(client: httpClient)
         self.notification = NotificationApi(client: httpClient)
         self.platform = PlatformApi(client: httpClient)
-        self.system = SystemApi(client: httpClient)
-        self.commerce = CommerceApi(client: httpClient)
         self.runtime = RuntimeApi(client: httpClient)
         self.sdkReference = SdkReferenceApi(client: httpClient)
+        self.system = SystemApi(client: httpClient)
     }
-
-    public func setApiKey(_ apiKey: String) -> SdkworkAppClient {
-        httpClient.setApiKey(apiKey)
-        return self
-    }
-
     public func setAuthToken(_ token: String) -> SdkworkAppClient {
         httpClient.setAuthToken(token)
         return self

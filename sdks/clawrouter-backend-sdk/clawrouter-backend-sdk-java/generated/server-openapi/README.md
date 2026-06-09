@@ -63,20 +63,18 @@ client.getHttpClient().setHeader("X-Custom-Header", "value");
 
 - `client.getAgents()` - agents API
 - `client.getAi()` - ai API
-- `client.getCommerce()` - commerce API
 - `client.getContent()` - content API
 - `client.getEcosystem()` - ecosystem API
 - `client.getIam()` - iam API
 - `client.getIntegration()` - integration API
 - `client.getMcp()` - mcp API
 - `client.getMessaging()` - messaging API
-- `client.getOpenPlatform()` - open_platform API
 - `client.getPlatform()` - platform API
-- `client.getSystem()` - system API
 - `client.getPrompts()` - prompts API
 - `client.getServiceProviders()` - service_providers API
 - `client.getSites()` - sites API
 - `client.getStorage()` - storage API
+- `client.getSystem()` - system API
 
 ## Usage Examples
 
@@ -100,14 +98,6 @@ System.out.println(result);
 ```java
 // List groups
 ChannelGroupsListResult result = client.getAi().channelGroupsList();
-System.out.println(result);
-```
-
-### commerce
-
-```java
-// Commerce Reports Payment Reconciliation Retrieve
-CommerceReportsPaymentReconciliationRetrieveResult result = client.getCommerce().reportsPaymentReconciliationRetrieve();
 System.out.println(result);
 ```
 
@@ -175,29 +165,11 @@ ProviderAccountsListResult result = client.getMessaging().providerAccountsList(p
 System.out.println(result);
 ```
 
-### open_platform
-
-```java
-// List open platform providers
-Map<String, Object> params = new LinkedHashMap<>();
-params.put("status", "active");
-ProvidersListResult result = client.getOpenPlatform().providersList(params);
-System.out.println(result);
-```
-
 ### platform
 
 ```java
 // List app categories
 AppsCategoriesListResult result = client.getPlatform().appsCategoriesList();
-System.out.println(result);
-```
-
-### system
-
-```java
-// Retrieve IAM auth runtime settings
-AuthSettingsRetrieveResult result = client.getSystem().authSettingsRetrieve();
 System.out.println(result);
 ```
 
@@ -248,6 +220,14 @@ System.out.println(result);
 ```java
 // List storage providers
 OssProvidersListResult result = client.getStorage().ossProvidersList();
+System.out.println(result);
+```
+
+### system
+
+```java
+// Retrieve IAM auth runtime settings
+AuthSettingsRetrieveResult result = client.getSystem().authSettingsRetrieve();
 System.out.println(result);
 ```
 

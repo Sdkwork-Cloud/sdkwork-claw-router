@@ -8,9 +8,9 @@ import { ContentApi, createContentApi } from './api/content';
 import { EcosystemApi, createEcosystemApi } from './api/ecosystem';
 import { IamApi, createIamApi } from './api/iam';
 import { IntegrationApi, createIntegrationApi } from './api/integration';
+import { CommerceApi, createCommerceApi } from './api/commerce';
 import { McpApi, createMcpApi } from './api/mcp';
 import { MessagingApi, createMessagingApi } from './api/messaging';
-import { OpenPlatformApi, createOpenPlatformApi } from './api/open-platform';
 import { PlatformApi, createPlatformApi } from './api/platform';
 import { PromptsApi, createPromptsApi } from './api/prompts';
 import { ServiceProvidersApi, createServiceProvidersApi } from './api/service-providers';
@@ -27,9 +27,9 @@ export class SdkworkBackendClient {
   public readonly ecosystem: EcosystemApi;
   public readonly iam: IamApi;
   public readonly integration: IntegrationApi;
+  public readonly commerce: CommerceApi;
   public readonly mcp: McpApi;
   public readonly messaging: MessagingApi;
-  public readonly openPlatform: OpenPlatformApi;
   public readonly platform: PlatformApi;
   public readonly prompts: PromptsApi;
   public readonly serviceProviders: ServiceProvidersApi;
@@ -51,11 +51,11 @@ export class SdkworkBackendClient {
 
     this.integration = createIntegrationApi(this.httpClient);
 
+    this.commerce = createCommerceApi(this.httpClient);
+
     this.mcp = createMcpApi(this.httpClient);
 
     this.messaging = createMessagingApi(this.httpClient);
-
-    this.openPlatform = createOpenPlatformApi(this.httpClient);
 
     this.platform = createPlatformApi(this.httpClient);
 

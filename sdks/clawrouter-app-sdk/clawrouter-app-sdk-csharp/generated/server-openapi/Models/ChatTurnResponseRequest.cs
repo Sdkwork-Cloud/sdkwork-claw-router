@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class ChatTurnResponseRequest
     {
-        public string? Message { get; set; }
+        public string Message { get; set; }
         public Dictionary<string, string>? Metadata { get; set; }
         public string? Model { get; set; }
         public string? Provider { get; set; }

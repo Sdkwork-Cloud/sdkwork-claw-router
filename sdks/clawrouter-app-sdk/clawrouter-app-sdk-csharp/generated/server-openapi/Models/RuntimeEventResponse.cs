@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class RuntimeEventResponse
     {
-        public RuntimeEventItem? Item { get; set; }
+        public RuntimeEventItem Item { get; set; }
     }
 }

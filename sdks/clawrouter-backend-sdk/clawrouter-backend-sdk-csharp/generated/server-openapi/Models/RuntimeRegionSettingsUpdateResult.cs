@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class RuntimeRegionSettingsUpdateResult
     {
-        public string? Code { get; set; }
+        public string Code { get; set; }
         public AdminRuntimeRegionSettingsResponse? Data { get; set; }
         public string? Msg { get; set; }
     }

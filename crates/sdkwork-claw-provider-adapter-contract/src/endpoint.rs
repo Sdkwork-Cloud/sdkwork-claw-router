@@ -1,8 +1,9 @@
 use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[derive(Debug, Clone, Default, Serialize, Deserialize, PartialEq, Eq)]
 #[serde(rename_all = "snake_case")]
 pub enum AdapterInvocationShape {
+    #[default]
     SyncJson,
     AsyncTaskStart,
     AsyncTaskQuery,
@@ -14,25 +15,14 @@ pub enum AdapterInvocationShape {
     HealthProbe,
 }
 
-impl Default for AdapterInvocationShape {
-    fn default() -> Self {
-        Self::SyncJson
-    }
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[derive(Debug, Clone, Default, Serialize, Deserialize, PartialEq, Eq)]
 #[serde(rename_all = "snake_case")]
 pub enum AdapterEndpointRuntimeState {
+    #[default]
     RuntimeAvailable,
     DefinitionOnly,
     Planned,
     Deprecated,
-}
-
-impl Default for AdapterEndpointRuntimeState {
-    fn default() -> Self {
-        Self::RuntimeAvailable
-    }
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]

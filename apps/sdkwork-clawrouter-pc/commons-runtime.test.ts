@@ -58,6 +58,7 @@ import {
   isReferenceSidebarGroupCollapsed,
   toggleReferenceSidebarGroup,
 } from "./packages/sdkwork-clawrouter-pc-commons/src/reference-sidebar-groups.ts";
+import { readAdminResourceCollectionMeta } from "./packages/sdkwork-clawrouter-pc-commons/src/components/AdminResourceCenter.tsx";
 import { generateCodeSnippets } from "./packages/sdkwork-clawrouter-pc-core/src/index.ts";
 
 const originalCryptoDescriptor = Object.getOwnPropertyDescriptor(globalThis, "crypto");
@@ -388,6 +389,94 @@ test("portal notification service fetches console announcements without frontend
   assert.doesNotMatch(serviceSource, /appId:\s*DEFAULT_NOTIFICATION_APP_ID/u);
   assert.ok(navbarSource.includes("service={notificationService}"));
   assert.ok(navbarSource.includes("const notificationService = useMemo(() => createPortalNotificationService(), [])"));
+});
+
+test("portal notification and commerce dependency SDK facades expose component-compatible structural adapters", () => {
+  const notificationSource = readFileSync(
+    new URL("./packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts", import.meta.url),
+    "utf8",
+  );
+  const sdkClientsSource = readFileSync(
+    new URL("./packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts", import.meta.url),
+    "utf8",
+  );
+
+  for (const marker of [
+    "export type PortalNotificationClient = ClawRouterAppSdkClient & SdkworkNotificationGeneratedClient;",
+    "listNotifications: client.notification.list.bind(client.notification)",
+    "acknowledge: client.notification.acknowledge",
+    "popupSeen: client.notification.popupSeen",
+  ]) {
+    assert.ok(notificationSource.includes(marker), `missing notification client facade marker: ${marker}`);
+  }
+
+  for (const marker of [
+    "type BackendCommerceDependencyOverlay =",
+    "BackendCommerceResourceMap",
+    "createBackendCommerceCanonicalFacade(commerce: BackendCommerceDependencyOverlay)",
+    "return attachReadOnlyProperty(client, 'commerce', composedCommerce) as unknown as ClawRouterBackendSdkClient;",
+  ]) {
+    assert.ok(sdkClientsSource.includes(marker), `missing commerce backend facade marker: ${marker}`);
+  }
+
+  assert.doesNotMatch(
+    sdkClientsSource,
+    /TCommerce extends SdkworkBackendClient\['commerce'\] & SdkworkCommerceGeneratedBackendClient/,
+  );
+});
+
+test("iam directory app operations keep one canonical params shape before the appbase SDK boundary", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts", import.meta.url),
+    "utf8",
+  );
+
+  for (const marker of [
+    "organization_id?:",
+    "department_id?:",
+    "user_id?:",
+    "scope_id?:",
+    "page_size?:",
+    "params.pageSize ?? params.page_size",
+  ]) {
+    assert.doesNotMatch(source, new RegExp(marker.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+  }
+
+  for (const marker of [
+    "organizationId?: string;",
+    "departmentId?: string;",
+    "userId?: string;",
+    "scopeId?: string;",
+    "pageSize?: number;",
+    "...(params.q ? { q: params.q } : {})",
+  ]) {
+    assert.ok(source.includes(marker), `missing canonical IAM directory params marker: ${marker}`);
+  }
+});
+
+test("runtime stream URL uses standard lower snake case query parameters", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-clawrouter-pc-commons/src/runtime.ts", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /\?after_event_no=/);
+  assert.doesNotMatch(source, /\?afterEventNo=/);
+});
+
+test("admin resource center collection metadata reads only the canonical pageSize field", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-clawrouter-pc-commons/src/components/AdminResourceCenter.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.deepEqual(
+    readAdminResourceCollectionMeta({ data: { total: 42, page: 2, pageSize: 20 } }),
+    { total: 42, page: 2, pageSize: 20 },
+  );
+  assert.equal(readAdminResourceCollectionMeta({ data: { total: 42, page: 2, page_size: 20 } }), null);
+  assert.doesNotMatch(source, /pageSize\s*\?\?\s*data\.page_size/);
+  assert.doesNotMatch(source, /data\.page_size/);
 });
 
 test("portal css stabilizes navbar notification dropdown empty state dimensions", () => {

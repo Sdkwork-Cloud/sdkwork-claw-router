@@ -4,8 +4,9 @@ use serde_json::Value;
 
 use super::{
     DispatchMode, Invocation, InvocationDispatchResponse, InvocationError, InvocationErrorKind,
-    InvocationFuture, InvocationInterceptor, StickyMode, StickyRouteConstraint,
+    InvocationFuture, InvocationInterceptor, InvocationSurface, StickyMode, StickyRouteConstraint,
 };
+use crate::domain::AiRouteModelRequirement;
 use crate::ports::{
     StickyObjectRouteBinding, StickyObjectRouteLookup, StickyObjectRouteUpsert, StickyRouteStore,
 };
@@ -153,7 +154,10 @@ impl InvocationInterceptor for StickyCommitInterceptor {
                     .requested_model_catalog_key
                     .clone()
                     .or_else(|| Some(invocation.resource.route_key.clone())),
-                provider_model: account.provider_model.clone(),
+                provider_model: account
+                    .provider_model
+                    .clone()
+                    .or_else(|| sticky_provider_model_fallback(invocation)),
                 region_code: Some(account.region_code.clone()),
                 sticky_scope,
                 meter_code: invocation
@@ -168,6 +172,19 @@ impl InvocationInterceptor for StickyCommitInterceptor {
             })
         })
     }
+}
+
+fn sticky_provider_model_fallback(invocation: &Invocation) -> Option<String> {
+    if invocation.resource.surface == InvocationSurface::OpenAiCompatible
+        && invocation.resource.model_requirement == AiRouteModelRequirement::Ignored
+    {
+        return invocation
+            .resource
+            .requested_model_catalog_key
+            .clone()
+            .or_else(|| Some(invocation.resource.route_key.clone()));
+    }
+    None
 }
 
 fn apply_sticky_binding(invocation: &mut Invocation, binding: StickyObjectRouteBinding) {

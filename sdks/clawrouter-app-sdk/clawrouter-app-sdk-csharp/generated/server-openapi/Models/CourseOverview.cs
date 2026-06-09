@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class CourseOverview
     {
-        public CourseOverviewSource? Source { get; set; }
-        public CourseOverviewStats? Stats { get; set; }
+        public CourseOverviewSource Source { get; set; }
+        public CourseOverviewStats Stats { get; set; }
     }
 }

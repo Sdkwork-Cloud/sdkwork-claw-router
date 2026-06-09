@@ -21,7 +21,7 @@ use sqlx::SqlitePool;
 type HmacSha256 = Hmac<Sha256>;
 
 static SQLITE_DB_COUNTER: AtomicU64 = AtomicU64::new(0);
-const SEEDED_SQLITE_TEMPLATE_REVISION: &str = "v12";
+const SEEDED_SQLITE_TEMPLATE_REVISION: &str = "v13";
 const SQLITE_TEMPLATE_LOCK_RETRY_INITIAL_MILLIS: u64 = 10;
 const SQLITE_TEMPLATE_LOCK_RETRY_MAX_MILLIS: u64 = 100;
 
@@ -316,6 +316,8 @@ async fn seeded_sqlite_template_current(template_path: &Path) -> bool {
         && sqlite_template_contains_current_channel_schema(&pool).await
         && sqlite_template_contains_current_model_mapping_schema(&pool).await
         && sqlite_template_contains_current_gateway_api_key_group_schema(&pool).await
+        && sqlite_template_contains_current_iam_membership_schema(&pool).await
+        && sqlite_template_contains_current_provider_object_route_schema(&pool).await
         && sqlite_template_contains_gateway_key_hash(&pool, expected_key_hash.as_str()).await;
     pool.close().await;
     valid
@@ -354,8 +356,9 @@ async fn sqlite_template_contains_seed_catalog(pool: &SqlitePool) -> bool {
 }
 
 async fn sqlite_template_contains_current_channel_schema(pool: &SqlitePool) -> bool {
-    match sqlx::query_scalar::<_, i64>(
-        r#"
+    matches!(
+        sqlx::query_scalar::<_, i64>(
+            r#"
         SELECT COUNT(1)
         FROM pragma_table_info('ai_channel')
         WHERE name IN (
@@ -367,18 +370,17 @@ async fn sqlite_template_contains_current_channel_schema(pool: &SqlitePool) -> b
             'site_channel_role'
         )
         "#,
+        )
+        .fetch_one(pool)
+        .await,
+        Ok(6)
     )
-    .fetch_one(pool)
-    .await
-    {
-        Ok(6) => true,
-        _ => false,
-    }
 }
 
 async fn sqlite_template_contains_current_model_mapping_schema(pool: &SqlitePool) -> bool {
-    match sqlx::query_scalar::<_, i64>(
-        r#"
+    matches!(
+        sqlx::query_scalar::<_, i64>(
+            r#"
         SELECT COUNT(1)
         FROM sqlite_master
         WHERE type = 'table'
@@ -386,15 +388,13 @@ async fn sqlite_template_contains_current_model_mapping_schema(pool: &SqlitePool
               'ai_model_mapping_rule',
               'ai_model_mapping_rule_binding',
               'ai_model_mapping_rule_item'
-          )
+        )
         "#,
+        )
+        .fetch_one(pool)
+        .await,
+        Ok(3)
     )
-    .fetch_one(pool)
-    .await
-    {
-        Ok(3) => true,
-        _ => false,
-    }
 }
 
 async fn sqlite_template_contains_current_gateway_api_key_group_schema(pool: &SqlitePool) -> bool {
@@ -433,6 +433,103 @@ async fn sqlite_template_contains_current_gateway_api_key_group_schema(pool: &Sq
     .fetch_one(pool)
     .await;
     matches!((required_column_count, seed_binding_count), (Ok(12), Ok(1)))
+}
+
+async fn sqlite_template_contains_current_iam_membership_schema(pool: &SqlitePool) -> bool {
+    let required_column_count = sqlx::query_scalar::<_, i64>(
+        r#"
+        SELECT COUNT(1)
+        FROM pragma_table_info('iam_organization_membership')
+        WHERE name IN (
+            'id',
+            'tenant_id',
+            'organization_id',
+            'user_id',
+            'membership_kind',
+            'display_name',
+            'is_primary',
+            'status',
+            'joined_at',
+            'left_at',
+            'remark',
+            'created_at',
+            'updated_at'
+        )
+        "#,
+    )
+    .fetch_one(pool)
+    .await;
+    let admin_membership_count = sqlx::query_scalar::<_, i64>(
+        r#"
+        SELECT COUNT(1)
+        FROM iam_organization_membership
+        WHERE tenant_id = '10'
+          AND organization_id = '20'
+          AND user_id = '1'
+          AND status = 'active'
+          AND LOWER(COALESCE(membership_kind, '')) = 'admin'
+        "#,
+    )
+    .fetch_one(pool)
+    .await;
+    matches!(
+        (required_column_count, admin_membership_count),
+        (Ok(13), Ok(1))
+    )
+}
+
+async fn sqlite_template_contains_current_provider_object_route_schema(pool: &SqlitePool) -> bool {
+    let required_column_count = sqlx::query_scalar::<_, i64>(
+        r#"
+        SELECT COUNT(1)
+        FROM pragma_table_info('ai_provider_object_route')
+        WHERE name IN (
+            'id',
+            'uuid',
+            'tenant_id',
+            'organization_id',
+            'data_scope',
+            'status',
+            'created_at',
+            'updated_at',
+            'version',
+            'deleted_at',
+            'deleted_by',
+            'metadata',
+            'api_key_id',
+            'channel_group_id',
+            'object_type',
+            'object_id',
+            'object_key_hash',
+            'parent_object_type',
+            'parent_object_id',
+            'provider_code',
+            'channel_id',
+            'vendor_code',
+            'api_code',
+            'catalog_key',
+            'provider_model',
+            'region_code',
+            'sticky_scope',
+            'expires_at',
+            'last_seen_at'
+        )
+        "#,
+    )
+    .fetch_one(pool)
+    .await;
+    let unique_index_count = sqlx::query_scalar::<_, i64>(
+        r#"
+        SELECT COUNT(1)
+        FROM sqlite_master
+        WHERE type = 'index'
+          AND name = 'uk_ai_provider_object_route_object'
+          AND tbl_name = 'ai_provider_object_route'
+        "#,
+    )
+    .fetch_one(pool)
+    .await;
+    matches!((required_column_count, unique_index_count), (Ok(29), Ok(1)))
 }
 
 async fn sqlite_template_contains_gateway_key_hash(pool: &SqlitePool, expected: &str) -> bool {
@@ -1514,6 +1611,49 @@ async fn create_schema(pool: &SqlitePool) -> anyhow::Result<()> {
             status INTEGER NOT NULL,
             deleted_at TEXT
         )"#,
+        r#"CREATE TABLE ai_provider_object_route (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER NOT NULL DEFAULT 0,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            api_key_id INTEGER,
+            channel_group_id INTEGER,
+            object_type TEXT NOT NULL,
+            object_id TEXT NOT NULL,
+            object_key_hash TEXT NOT NULL,
+            parent_object_type TEXT,
+            parent_object_id TEXT,
+            provider_code TEXT,
+            channel_id INTEGER NOT NULL,
+            vendor_code TEXT,
+            api_code TEXT,
+            catalog_key TEXT,
+            provider_model TEXT,
+            region_code TEXT,
+            sticky_scope TEXT,
+            expires_at TEXT,
+            last_seen_at TEXT
+        )"#,
+        r#"CREATE UNIQUE INDEX uk_ai_provider_object_route_uuid
+            ON ai_provider_object_route (uuid)"#,
+        r#"CREATE UNIQUE INDEX uk_ai_provider_object_route_object
+            ON ai_provider_object_route (tenant_id, organization_id, object_type, object_id)"#,
+        r#"CREATE INDEX idx_ai_provider_object_route_fast
+            ON ai_provider_object_route (tenant_id, organization_id, object_key_hash, status, id)"#,
+        r#"CREATE INDEX idx_ai_provider_object_route_parent
+            ON ai_provider_object_route (tenant_id, organization_id, parent_object_type, parent_object_id, status, id)"#,
+        r#"CREATE INDEX idx_ai_provider_object_route_channel
+            ON ai_provider_object_route (tenant_id, organization_id, channel_group_id, channel_id, status, id)"#,
+        r#"CREATE INDEX idx_ai_provider_object_route_expiry
+            ON ai_provider_object_route (tenant_id, organization_id, expires_at, status, id)"#,
         r#"CREATE TABLE iam_gateway_api_key (
             id INTEGER PRIMARY KEY,
             tenant_id INTEGER NOT NULL,
@@ -2691,6 +2831,88 @@ mod tests {
 
         assert_eq!(10_i64, row.get::<i64, _>("channel_group_id"));
         assert_eq!("standard-group", row.get::<String, _>("channel_group_code"));
+    }
+
+    #[tokio::test]
+    async fn seeded_sqlite_catalog_contains_admin_iam_membership_fixture() {
+        let catalog = seeded_sqlite_catalog().await.unwrap();
+        let pool = catalog.open_pool().await.unwrap();
+
+        let row = sqlx::query(
+            r#"
+            SELECT id, tenant_id, organization_id, user_id, membership_kind, status
+            FROM iam_organization_membership
+            WHERE tenant_id = '10'
+              AND organization_id = '20'
+              AND user_id = '1'
+              AND status = 'active'
+              AND LOWER(COALESCE(membership_kind, '')) = 'admin'
+            "#,
+        )
+        .fetch_one(&pool)
+        .await
+        .unwrap();
+
+        assert_eq!("member-1-admin", row.get::<String, _>("id"));
+        assert_eq!("10", row.get::<String, _>("tenant_id"));
+        assert_eq!("20", row.get::<String, _>("organization_id"));
+        assert_eq!("1", row.get::<String, _>("user_id"));
+        assert_eq!("admin", row.get::<String, _>("membership_kind"));
+        assert_eq!("active", row.get::<String, _>("status"));
+    }
+
+    #[tokio::test]
+    async fn seeded_sqlite_catalog_contains_route_scoped_sticky_object_route_schema() {
+        let catalog = seeded_sqlite_catalog().await.unwrap();
+        let pool = catalog.open_pool().await.unwrap();
+
+        let required_column_count = sqlx::query_scalar::<_, i64>(
+            r#"
+            SELECT COUNT(1)
+            FROM pragma_table_info('ai_provider_object_route')
+            WHERE name IN (
+                'id',
+                'uuid',
+                'tenant_id',
+                'organization_id',
+                'status',
+                'api_key_id',
+                'channel_group_id',
+                'object_type',
+                'object_id',
+                'object_key_hash',
+                'parent_object_type',
+                'parent_object_id',
+                'provider_code',
+                'channel_id',
+                'vendor_code',
+                'api_code',
+                'catalog_key',
+                'provider_model',
+                'region_code',
+                'sticky_scope',
+                'last_seen_at'
+            )
+            "#,
+        )
+        .fetch_one(&pool)
+        .await
+        .unwrap();
+        let unique_index_count = sqlx::query_scalar::<_, i64>(
+            r#"
+            SELECT COUNT(1)
+            FROM sqlite_master
+            WHERE type = 'index'
+              AND name = 'uk_ai_provider_object_route_object'
+              AND tbl_name = 'ai_provider_object_route'
+            "#,
+        )
+        .fetch_one(&pool)
+        .await
+        .unwrap();
+
+        assert_eq!(21_i64, required_column_count);
+        assert_eq!(1_i64, unique_index_count);
     }
 
     #[tokio::test]

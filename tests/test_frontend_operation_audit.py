@@ -252,7 +252,9 @@ class FrontendOperationAuditTest(unittest.TestCase):
 
             self.assertTrue(result.ok, result.messages)
 
-    def test_extracts_appbase_iam_runtime_auth_controller_factory_operations(self) -> None:
+    def test_extracts_appbase_iam_runtime_auth_controller_factory_operations_without_legacy_provider_login(
+        self,
+    ) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             source = self.write_file(
@@ -280,8 +282,10 @@ class FrontendOperationAuditTest(unittest.TestCase):
             self.assertIn("signOut", operations)
             self.assertIn("getOAuthAuthorizationUrl", operations)
             self.assertIn("verifyCode", operations)
-            self.assertIn("generateLoginQrCode", operations)
-            self.assertIn("checkLoginQrCodeStatus", operations)
+            self.assertNotIn("generateLoginQrCode", operations)
+            self.assertNotIn("checkLoginQrCodeStatus", operations)
+            self.assertNotIn("confirmLoginQrCode", operations)
+            self.assertNotIn("callbackLoginQrCode", operations)
 
     def test_reports_unregistered_service_operation(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -1065,6 +1069,45 @@ class FrontendOperationAuditTest(unittest.TestCase):
 
             self.assertTrue(result.ok, result.messages)
 
+    def test_accepts_appbase_backend_oauth_sdk_client_as_dependency_boundary(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_file(
+                root,
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/oauthAdminService.ts",
+                """
+                import { getSdkworkAppbaseBackendSdkClient } from 'sdkwork-clawrouter-pc-commons/sdk-clients';
+
+                export async function listOAuthProviderCatalog(): Promise<unknown> {
+                  return getSdkworkAppbaseBackendSdkClient().iam.oauth.providerCatalog.list();
+                }
+                """,
+            )
+            self.write_contract(
+                root,
+                """
+                routes:
+                  - route: /admin/oauth
+                    dependency_owned: true
+                    dependency_sdk_family: sdkwork-appbase-backend-sdk
+                    required_tables: [iam_oauth_provider_catalog]
+                frontend_operations:
+                  - route: /admin/oauth
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/oauthAdminService.ts
+                    operation: listOAuthProviderCatalog
+                    kind: read
+                    api_surface: backend
+                    api_method: GET
+                    api_path: /backend/v3/api/iam/oauth/provider_catalog
+                    sdk_domain: appbase
+                    read_sources: [iam_oauth_provider_catalog]
+                """,
+            )
+
+            result = FrontendOperationAudit(root=root).validate()
+
+            self.assertTrue(result.ok, result.messages)
+
     def test_accepts_commerce_app_shell_operation_inferred_from_dependency_path(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -1142,17 +1185,17 @@ class FrontendOperationAuditTest(unittest.TestCase):
 
             self.assertTrue(result.ok, result.messages)
 
-    def test_accepts_platform_backend_operation_through_clawrouter_backend_sdk(self) -> None:
+    def test_accepts_appbase_backend_oauth_dependency_operation_without_product_sdk_namespace(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/demo/src/openPlatformService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/oauthAdminService.ts",
                 """
-                import { getClawRouterBackendSdkClient } from 'sdkwork-clawrouter-pc-commons/runtime';
+                import { getSdkworkAppbaseBackendSdkClient } from 'sdkwork-clawrouter-pc-commons/sdk-clients';
 
-                export async function retrieveOpenPlatformAccount(accountId: string): Promise<unknown> {
-                  return getClawRouterBackendSdkClient().openPlatform.accounts.retrieve(accountId);
+                export async function listOAuthResourceAccounts(): Promise<unknown> {
+                  return getSdkworkAppbaseBackendSdkClient().iam.oauth.resourceAccounts.list();
                 }
                 """,
             )
@@ -1160,18 +1203,21 @@ class FrontendOperationAuditTest(unittest.TestCase):
                 root,
                 """
                 routes:
-                  - route: /admin/open-platform
-                    required_tables: [open_platform_account]
+                  - route: /admin/oauth
+                    dependency_owned: true
+                    dependency_sdk_family: sdkwork-appbase-backend-sdk
+                    required_tables: [iam_oauth_resource_account]
                 frontend_operations:
-                  - route: /admin/open-platform
-                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/openPlatformService.ts
-                    operation: retrieveOpenPlatformAccount
+                  - route: /admin/oauth
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/oauthAdminService.ts
+                    operation: listOAuthResourceAccounts
                     kind: read
                     api_surface: backend
                     api_method: GET
-                    api_path: /backend/v3/api/open_platform/accounts/{accountId}
-                    sdk_domain: platform
-                    read_sources: [open_platform_account]
+                    api_path: /backend/v3/api/iam/oauth/resource_accounts
+                    sdk_domain: appbase
+                    openapi_exposed: false
+                    read_sources: [iam_oauth_resource_account]
                 """,
             )
 

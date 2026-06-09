@@ -3,6 +3,7 @@ use sdkwork_claw_provider_adapter_contract::AdapterRouteStatus;
 use crate::config::{ProviderAdapterLookup, ProviderAdapterRouteConfig};
 
 #[derive(Debug, Clone, PartialEq, Eq)]
+#[allow(clippy::large_enum_variant)]
 pub enum ProviderInvocationMode {
     DirectHttp,
     InternalHttpAdapter(ProviderAdapterRouteConfig),
@@ -85,7 +86,7 @@ impl ProviderAdapterRegistry {
                     route.capability.as_deref(),
                     lookup.capability,
                     allow_metadata_fallback,
-                ) || !optional_matches(
+                ) || !endpoint_key_matches(
                     route.endpoint_key.as_deref(),
                     lookup.endpoint_key,
                     allow_metadata_fallback,
@@ -120,6 +121,52 @@ fn optional_matches(configured: Option<&str>, lookup: Option<&str>, allow_missin
             .unwrap_or(allow_missing),
         None => true,
     }
+}
+
+fn endpoint_key_matches(
+    configured: Option<&str>,
+    lookup: Option<&str>,
+    allow_exact_path_alias: bool,
+) -> bool {
+    match configured {
+        Some(configured) => lookup
+            .map(|lookup| {
+                value_eq(configured, lookup)
+                    || (allow_exact_path_alias && endpoint_key_alias_eq(configured, lookup))
+            })
+            .unwrap_or(allow_exact_path_alias),
+        None => true,
+    }
+}
+
+fn endpoint_key_alias_eq(configured: &str, lookup: &str) -> bool {
+    let configured = endpoint_key_aliases(configured);
+    let lookup = endpoint_key_aliases(lookup);
+    configured
+        .iter()
+        .any(|configured| lookup.iter().any(|lookup| configured == lookup))
+}
+
+fn endpoint_key_aliases(value: &str) -> Vec<String> {
+    let value = value.trim().to_ascii_lowercase();
+    let suffix = value.rsplit('.').next().unwrap_or(value.as_str());
+    let mut aliases = vec![canonical_endpoint_key(value.as_str())];
+    let suffix = canonical_endpoint_key(suffix);
+    if aliases.first() != Some(&suffix) {
+        aliases.push(suffix);
+    }
+    aliases
+}
+
+fn canonical_endpoint_key(value: &str) -> String {
+    value
+        .replace("_to_", "2")
+        .replace("-to-", "2")
+        .replace(".to.", "2")
+        .replace("/to/", "2")
+        .chars()
+        .filter(|character| character.is_ascii_alphanumeric())
+        .collect()
 }
 
 fn path_match_score(pattern: &str, path: &str) -> Option<i32> {

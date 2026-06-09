@@ -31,41 +31,23 @@ public class Main {
     public static void main(String[] args) throws Exception {
         Types.SdkConfig config = new Types.SdkConfig("http://localhost:18082");
         SdkworkAppClient client = new SdkworkAppClient(config);
-        client.setApiKey("your-api-key");
+        client.setAuthToken("your-auth-token");
+client.setAccessToken("your-access-token");
 
         // Use the SDK
-        ChannelGroupsListResult result = client.getAi().channelGroupsList();
+        SessionsCurrentRetrieveResult result = client.getAuth().sessionsCurrentRetrieve();
         System.out.println(result);
     }
 }
 ```
 
-## Authentication Modes (Mutually Exclusive)
+## Authentication
 
-Choose exactly one mode for the same client instance.
-
-### Mode A: API Key
-
-```java
-Types.SdkConfig config = new Types.SdkConfig("http://localhost:18082");
-SdkworkAppClient client = new SdkworkAppClient(config);
-client.setApiKey("your-api-key");
-// Sends: Access-Token: <apiKey>
+```text
+Authorization: Bearer <authToken>
+Access-Token: <accessToken>
 ```
 
-### Mode B: Dual Token
-
-```java
-Types.SdkConfig config = new Types.SdkConfig("http://localhost:18082");
-SdkworkAppClient client = new SdkworkAppClient(config);
-client.setAuthToken("your-auth-token");
-client.setAccessToken("your-access-token");
-// Sends:
-// Authorization: Bearer <authToken>
-// Access-Token: <accessToken>
-```
-
-> Do not call `setApiKey(...)` together with `setAuthToken(...)` + `setAccessToken(...)` on the same client.
 
 ## Configuration (Non-Auth)
 
@@ -81,6 +63,7 @@ client.getHttpClient().setHeader("X-Custom-Header", "value");
 
 - `client.getAgents()` - agents API
 - `client.getAi()` - ai API
+- `client.getAuth()` - auth API
 - `client.getChat()` - chat API
 - `client.getContent()` - content API
 - `client.getEcosystem()` - ecosystem API
@@ -88,10 +71,9 @@ client.getHttpClient().setHeader("X-Custom-Header", "value");
 - `client.getMemory()` - memory API
 - `client.getNotification()` - notification API
 - `client.getPlatform()` - platform API
-- `client.getSystem()` - system API
-- `client.getCommerce()` - commerce API
 - `client.getRuntime()` - runtime API
 - `client.getSdkReference()` - sdk_reference API
+- `client.getSystem()` - system API
 
 ## Usage Examples
 
@@ -112,6 +94,14 @@ System.out.println(result);
 ```java
 // List groups
 ChannelGroupsListResult result = client.getAi().channelGroupsList();
+System.out.println(result);
+```
+
+### auth
+
+```java
+// Retrieve current IAM session
+SessionsCurrentRetrieveResult result = client.getAuth().sessionsCurrentRetrieve();
 System.out.println(result);
 ```
 
@@ -182,25 +172,6 @@ AppsStoreCategoriesListResult result = client.getPlatform().appsStoreCategoriesL
 System.out.println(result);
 ```
 
-### system
-
-```java
-// Retrieve public site runtime branding settings
-Map<String, Object> params = new LinkedHashMap<>();
-params.put("tenant_code", "ok");
-params.put("organization_code", "ok");
-SiteRuntimeRetrieveResult result = client.getSystem().siteRuntimeRetrieve(params);
-System.out.println(result);
-```
-
-### commerce
-
-```java
-// Recharges Settings Retrieve
-RechargesSettingsRetrieveResult result = client.getCommerce().rechargesSettingsRetrieve();
-System.out.println(result);
-```
-
 ### runtime
 
 ```java
@@ -229,11 +200,19 @@ ArchivesCreateResult result = client.getSdkReference().archivesCreate(body);
 System.out.println(result);
 ```
 
+### system
+
+```java
+// Retrieve public IAM verification policy
+IamVerificationPolicyRetrieveResult result = client.getSystem().iamVerificationPolicyRetrieve();
+System.out.println(result);
+```
+
 ## Error Handling
 
 ```java
 try {
-    ChannelGroupsListResult result = client.getAi().channelGroupsList();
+    SessionsCurrentRetrieveResult result = client.getAuth().sessionsCurrentRetrieve();
     System.out.println(result);
 } catch (Exception e) {
     System.err.println("Error: " + e.getMessage());

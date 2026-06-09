@@ -61,6 +61,196 @@ func (a *IamApi) ApiKeysUpdate(apiKeyId string, body sdktypes.UpdateApiKeyReques
     return decodeResult[sdktypes.ApiKeysUpdateResult](raw)
 }
 
+// List current IAM department assignments
+func (a *IamApi) DepartmentAssignmentsList(organizationId *string, departmentId *string, userId *string, scopeId *string, status *string, q *string, page *int, pageSize *int) (sdktypes.DepartmentAssignmentsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "organization_id", Value: func() interface{} { if organizationId == nil { return nil }; return *organizationId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "department_id", Value: func() interface{} { if departmentId == nil { return nil }; return *departmentId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "user_id", Value: func() interface{} { if userId == nil { return nil }; return *userId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "scope_id", Value: func() interface{} { if scopeId == nil { return nil }; return *scopeId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "q", Value: func() interface{} { if q == nil { return nil }; return *q }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(AppApiPath("/iam/department_assignments"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.DepartmentAssignmentsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.DepartmentAssignmentsListResult](raw)
+}
+
+// List current IAM departments
+func (a *IamApi) DepartmentsList(organizationId *string, departmentId *string, userId *string, scopeId *string, status *string, q *string, page *int, pageSize *int) (sdktypes.DepartmentsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "organization_id", Value: func() interface{} { if organizationId == nil { return nil }; return *organizationId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "department_id", Value: func() interface{} { if departmentId == nil { return nil }; return *departmentId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "user_id", Value: func() interface{} { if userId == nil { return nil }; return *userId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "scope_id", Value: func() interface{} { if scopeId == nil { return nil }; return *scopeId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "q", Value: func() interface{} { if q == nil { return nil }; return *q }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(AppApiPath("/iam/departments"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.DepartmentsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.DepartmentsListResult](raw)
+}
+
+// Retrieve current IAM department tree
+func (a *IamApi) DepartmentsTreeRetrieve(organizationId *string, departmentId *string, userId *string, scopeId *string, status *string, q *string, page *int, pageSize *int) (sdktypes.DepartmentsTreeRetrieveResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "organization_id", Value: func() interface{} { if organizationId == nil { return nil }; return *organizationId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "department_id", Value: func() interface{} { if departmentId == nil { return nil }; return *departmentId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "user_id", Value: func() interface{} { if userId == nil { return nil }; return *userId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "scope_id", Value: func() interface{} { if scopeId == nil { return nil }; return *scopeId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "q", Value: func() interface{} { if q == nil { return nil }; return *q }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(AppApiPath("/iam/departments/tree"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.DepartmentsTreeRetrieveResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.DepartmentsTreeRetrieveResult](raw)
+}
+
+// List current IAM organization memberships
+func (a *IamApi) OrganizationMembershipsList(organizationId *string, departmentId *string, userId *string, scopeId *string, status *string, q *string, page *int, pageSize *int) (sdktypes.OrganizationMembershipsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "organization_id", Value: func() interface{} { if organizationId == nil { return nil }; return *organizationId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "department_id", Value: func() interface{} { if departmentId == nil { return nil }; return *departmentId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "user_id", Value: func() interface{} { if userId == nil { return nil }; return *userId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "scope_id", Value: func() interface{} { if scopeId == nil { return nil }; return *scopeId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "q", Value: func() interface{} { if q == nil { return nil }; return *q }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(AppApiPath("/iam/organization_memberships"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.OrganizationMembershipsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.OrganizationMembershipsListResult](raw)
+}
+
+// List current IAM organizations
+func (a *IamApi) OrganizationsList(organizationId *string, departmentId *string, userId *string, scopeId *string, status *string, q *string, page *int, pageSize *int) (sdktypes.OrganizationsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "organization_id", Value: func() interface{} { if organizationId == nil { return nil }; return *organizationId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "department_id", Value: func() interface{} { if departmentId == nil { return nil }; return *departmentId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "user_id", Value: func() interface{} { if userId == nil { return nil }; return *userId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "scope_id", Value: func() interface{} { if scopeId == nil { return nil }; return *scopeId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "q", Value: func() interface{} { if q == nil { return nil }; return *q }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(AppApiPath("/iam/organizations"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.OrganizationsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.OrganizationsListResult](raw)
+}
+
+// Retrieve current IAM organization tree
+func (a *IamApi) OrganizationsTreeRetrieve(organizationId *string, departmentId *string, userId *string, scopeId *string, status *string, q *string, page *int, pageSize *int) (sdktypes.OrganizationsTreeRetrieveResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "organization_id", Value: func() interface{} { if organizationId == nil { return nil }; return *organizationId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "department_id", Value: func() interface{} { if departmentId == nil { return nil }; return *departmentId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "user_id", Value: func() interface{} { if userId == nil { return nil }; return *userId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "scope_id", Value: func() interface{} { if scopeId == nil { return nil }; return *scopeId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "q", Value: func() interface{} { if q == nil { return nil }; return *q }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(AppApiPath("/iam/organizations/tree"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.OrganizationsTreeRetrieveResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.OrganizationsTreeRetrieveResult](raw)
+}
+
+// List current IAM position assignments
+func (a *IamApi) PositionAssignmentsList(organizationId *string, departmentId *string, userId *string, scopeId *string, status *string, q *string, page *int, pageSize *int) (sdktypes.PositionAssignmentsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "organization_id", Value: func() interface{} { if organizationId == nil { return nil }; return *organizationId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "department_id", Value: func() interface{} { if departmentId == nil { return nil }; return *departmentId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "user_id", Value: func() interface{} { if userId == nil { return nil }; return *userId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "scope_id", Value: func() interface{} { if scopeId == nil { return nil }; return *scopeId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "q", Value: func() interface{} { if q == nil { return nil }; return *q }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(AppApiPath("/iam/position_assignments"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.PositionAssignmentsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PositionAssignmentsListResult](raw)
+}
+
+// List current IAM positions
+func (a *IamApi) PositionsList(organizationId *string, departmentId *string, userId *string, scopeId *string, status *string, q *string, page *int, pageSize *int) (sdktypes.PositionsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "organization_id", Value: func() interface{} { if organizationId == nil { return nil }; return *organizationId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "department_id", Value: func() interface{} { if departmentId == nil { return nil }; return *departmentId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "user_id", Value: func() interface{} { if userId == nil { return nil }; return *userId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "scope_id", Value: func() interface{} { if scopeId == nil { return nil }; return *scopeId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "q", Value: func() interface{} { if q == nil { return nil }; return *q }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(AppApiPath("/iam/positions"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.PositionsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PositionsListResult](raw)
+}
+
+// List current IAM role bindings
+func (a *IamApi) RoleBindingsList(organizationId *string, departmentId *string, userId *string, scopeId *string, status *string, q *string, page *int, pageSize *int) (sdktypes.RoleBindingsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "organization_id", Value: func() interface{} { if organizationId == nil { return nil }; return *organizationId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "department_id", Value: func() interface{} { if departmentId == nil { return nil }; return *departmentId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "user_id", Value: func() interface{} { if userId == nil { return nil }; return *userId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "scope_id", Value: func() interface{} { if scopeId == nil { return nil }; return *scopeId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "q", Value: func() interface{} { if q == nil { return nil }; return *q }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(AppApiPath("/iam/role_bindings"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.RoleBindingsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.RoleBindingsListResult](raw)
+}
+
+// Retrieve current IAM user
+func (a *IamApi) UsersCurrentRetrieve() (sdktypes.UsersCurrentRetrieveResult, error) {
+    raw, err := a.client.Get(AppApiPath("/iam/users/current"), nil, nil)
+    if err != nil {
+        var zero sdktypes.UsersCurrentRetrieveResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.UsersCurrentRetrieveResult](raw)
+}
+
 // List settings
 func (a *IamApi) UsersSettingsRetrieve() (sdktypes.UsersSettingsRetrieveResult, error) {
     raw, err := a.client.Get(AppApiPath("/iam/users/settings"), nil, nil)
@@ -185,6 +375,127 @@ func PathPrefix(name string, style string) string {
     }
     return ""
 }
+type QueryParameterSpec struct {
+    Name          string
+    Value         interface{}
+    Style         string
+    Explode       bool
+    AllowReserved bool
+    ContentType   string
+}
+
+func BuildQueryString(parameters []QueryParameterSpec) string {
+    pairs := make([]string, 0)
+    for _, parameter := range parameters {
+        AppendSerializedParameter(&pairs, parameter)
+    }
+    return strings.Join(pairs, "&")
+}
+
+func AppendSerializedParameter(pairs *[]string, parameter QueryParameterSpec) {
+    if parameter.Value == nil {
+        return
+    }
+
+    if parameter.ContentType != "" {
+        encoded, _ := json.Marshal(parameter.Value)
+        *pairs = append(*pairs, url.QueryEscape(parameter.Name)+"="+EncodeQueryValue(string(encoded), parameter.AllowReserved))
+        return
+    }
+
+    style := parameter.Style
+    if style == "" {
+        style = "form"
+    }
+
+    switch value := parameter.Value.(type) {
+    case []string:
+        AppendArrayParameter(pairs, parameter.Name, stringSliceToInterface(value), style, parameter.Explode, parameter.AllowReserved)
+    case []int:
+        AppendArrayParameter(pairs, parameter.Name, intSliceToInterface(value), style, parameter.Explode, parameter.AllowReserved)
+    case []interface{}:
+        AppendArrayParameter(pairs, parameter.Name, value, style, parameter.Explode, parameter.AllowReserved)
+    case map[string]int:
+        AppendObjectParameter(pairs, parameter.Name, intMapToInterface(value), style, parameter.Explode, parameter.AllowReserved)
+    case map[string]string:
+        AppendObjectParameter(pairs, parameter.Name, stringMapToInterface(value), style, parameter.Explode, parameter.AllowReserved)
+    case map[string]interface{}:
+        if style == "deepObject" {
+            AppendDeepObjectParameter(pairs, parameter.Name, value, parameter.AllowReserved)
+        } else {
+            AppendObjectParameter(pairs, parameter.Name, value, style, parameter.Explode, parameter.AllowReserved)
+        }
+    default:
+        *pairs = append(*pairs, url.QueryEscape(parameter.Name)+"="+EncodeQueryValue(fmt.Sprint(value), parameter.AllowReserved))
+    }
+}
+
+func AppendArrayParameter(pairs *[]string, name string, value []interface{}, style string, explode bool, allowReserved bool) {
+    values := make([]string, 0, len(value))
+    for _, item := range value {
+        if item != nil {
+            values = append(values, fmt.Sprint(item))
+        }
+    }
+    if len(values) == 0 {
+        return
+    }
+    if style == "form" && explode {
+        for _, item := range values {
+            *pairs = append(*pairs, url.QueryEscape(name)+"="+EncodeQueryValue(item, allowReserved))
+        }
+        return
+    }
+    *pairs = append(*pairs, url.QueryEscape(name)+"="+EncodeQueryValue(strings.Join(values, ","), allowReserved))
+}
+
+func AppendObjectParameter(pairs *[]string, name string, value map[string]interface{}, style string, explode bool, allowReserved bool) {
+    entries := make([]string, 0, len(value)*2)
+    for key, item := range value {
+        if item == nil {
+            continue
+        }
+        if style == "form" && explode {
+            *pairs = append(*pairs, url.QueryEscape(key)+"="+EncodeQueryValue(fmt.Sprint(item), allowReserved))
+            continue
+        }
+        entries = append(entries, key, fmt.Sprint(item))
+    }
+    if len(entries) == 0 {
+        return
+    }
+    if !(style == "form" && explode) {
+        *pairs = append(*pairs, url.QueryEscape(name)+"="+EncodeQueryValue(strings.Join(entries, ","), allowReserved))
+    }
+}
+
+func AppendDeepObjectParameter(pairs *[]string, name string, value map[string]interface{}, allowReserved bool) {
+    for key, item := range value {
+        if item == nil {
+            continue
+        }
+        *pairs = append(*pairs, url.QueryEscape(fmt.Sprintf("%s[%s]", name, key))+"="+EncodeQueryValue(fmt.Sprint(item), allowReserved))
+    }
+}
+
+func EncodeQueryValue(value string, allowReserved bool) string {
+    encoded := url.QueryEscape(value)
+    if !allowReserved {
+        return encoded
+    }
+    replacements := map[string]string{
+        "%3A": ":", "%2F": "/", "%3F": "?", "%23": "#",
+        "%5B": "[", "%5D": "]", "%40": "@", "%21": "!",
+        "%24": "$", "%26": "&", "%27": "'", "%28": "(",
+        "%29": ")", "%2A": "*", "%2B": "+", "%2C": ",",
+        "%3B": ";", "%3D": "=",
+    }
+    for escaped, reserved := range replacements {
+        encoded = strings.ReplaceAll(encoded, escaped, reserved)
+    }
+    return encoded
+}
+
 
 type ParameterSpec struct {
     Value       interface{}

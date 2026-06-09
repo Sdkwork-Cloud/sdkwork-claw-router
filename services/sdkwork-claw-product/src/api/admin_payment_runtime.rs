@@ -23,7 +23,6 @@ where
 }
 
 #[derive(Debug, Deserialize)]
-#[serde(rename_all = "camelCase")]
 struct PaymentRuntimeSnapshotQuery {
     environment: Option<String>,
 }

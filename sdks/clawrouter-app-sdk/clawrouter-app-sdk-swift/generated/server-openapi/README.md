@@ -8,7 +8,7 @@ Add to `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/sdkwork/app-sdk-swift", from: "0.1.0")
+    .package(url: "https://github.com/sdkwork/ClawRouterAppSdk", from: "0.1.0")
 ]
 ```
 
@@ -20,39 +20,21 @@ import SDKworkCommon
 
 let config = SdkConfig(baseUrl: "http://localhost:18082")
 let client = SdkworkAppClient(config: config)
-client.setApiKey("your-api-key")
+client.setAuthToken("your-auth-token")
+client.setAccessToken("your-access-token")
 
 // Use the SDK
-let result = try await client.ai.channelGroupsList()
+let result = try await client.auth.sessionsCurrentRetrieve()
 print(result)
 ```
 
-## Authentication Modes (Mutually Exclusive)
+## Authentication
 
-Choose exactly one mode for the same client instance.
-
-### Mode A: API Key
-
-```swift
-let config = SdkConfig(baseUrl: "http://localhost:18082")
-let client = SdkworkAppClient(config: config)
-client.setApiKey("your-api-key")
-// Sends: Access-Token: <apiKey>
+```text
+Authorization: Bearer <authToken>
+Access-Token: <accessToken>
 ```
 
-### Mode B: Dual Token
-
-```swift
-let config = SdkConfig(baseUrl: "http://localhost:18082")
-let client = SdkworkAppClient(config: config)
-client.setAuthToken("your-auth-token")
-client.setAccessToken("your-access-token")
-// Sends:
-// Authorization: Bearer <authToken>
-// Access-Token: <accessToken>
-```
-
-> Do not call `setApiKey(...)` together with `setAuthToken(...)` + `setAccessToken(...)` on the same client.
 
 ## Configuration (Non-Auth)
 
@@ -68,6 +50,7 @@ client.setHeader("X-Custom-Header", value: "value")
 
 - `client.agents` - agents API
 - `client.ai` - ai API
+- `client.auth` - auth API
 - `client.chat` - chat API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
@@ -75,10 +58,9 @@ client.setHeader("X-Custom-Header", value: "value")
 - `client.memory` - memory API
 - `client.notification` - notification API
 - `client.platform` - platform API
-- `client.system` - system API
-- `client.commerce` - commerce API
 - `client.runtime` - runtime API
 - `client.sdkReference` - sdk_reference API
+- `client.system` - system API
 
 ## Usage Examples
 
@@ -100,6 +82,14 @@ print(result)
 ```swift
 // List groups
 let result = try await client.ai.channelGroupsList()
+print(result)
+```
+
+### auth
+
+```swift
+// Retrieve current IAM session
+let result = try await client.auth.sessionsCurrentRetrieve()
 print(result)
 ```
 
@@ -173,26 +163,6 @@ let result = try await client.platform.appsStoreCategoriesList()
 print(result)
 ```
 
-### system
-
-```swift
-// Retrieve public site runtime branding settings
-let params: [String: Any] = [
-    "tenant_code": "ok",
-    "organization_code": "ok"
-]
-let result = try await client.system.siteRuntimeRetrieve(params: params)
-print(result)
-```
-
-### commerce
-
-```swift
-// Recharges Settings Retrieve
-let result = try await client.commerce.rechargesSettingsRetrieve()
-print(result)
-```
-
 ### runtime
 
 ```swift
@@ -223,11 +193,19 @@ let result = try await client.sdkReference.archivesCreate(body: body)
 print(result)
 ```
 
+### system
+
+```swift
+// Retrieve public IAM verification policy
+let result = try await client.system.iamVerificationPolicyRetrieve()
+print(result)
+```
+
 ## Error Handling
 
 ```swift
 do {
-    try await client.ai.channelGroupsList()
+    try await client.auth.sessionsCurrentRetrieve()
 } catch {
     print("Error: \(error)")
 }

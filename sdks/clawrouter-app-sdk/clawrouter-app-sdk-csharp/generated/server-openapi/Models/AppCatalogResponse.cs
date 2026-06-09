@@ -6,10 +6,10 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class AppCatalogResponse
     {
-        public bool? HasNextPage { get; set; }
-        public List<AppCatalogItem>? Items { get; set; }
-        public int? Page { get; set; }
-        public int? PageSize { get; set; }
-        public string? Total { get; set; }
+        public bool HasNextPage { get; set; }
+        public List<AppCatalogItem> Items { get; set; }
+        public int Page { get; set; }
+        public int PageSize { get; set; }
+        public string Total { get; set; }
     }
 }

@@ -1,0 +1,10 @@
+pub(crate) const DEFAULT_IAM_TENANT_ID: &str = "10";
+pub(crate) const DEFAULT_IAM_TENANT_CODE: &str = "default";
+pub(crate) const DEFAULT_IAM_TENANT_NAME: &str = "Default Tenant";
+pub(crate) const DEFAULT_IAM_ORGANIZATION_ID: &str = "20";
+pub(crate) const DEFAULT_IAM_ORGANIZATION_CODE: &str = "root";
+pub(crate) const DEFAULT_IAM_ORGANIZATION_NAME: &str = "Root Organization";
+pub(crate) const DEFAULT_IAM_ORGANIZATION_PATH: &str = "/20";
+pub(crate) const DEFAULT_BOOTSTRAP_ADMIN_USERNAME: &str = "admin";
+pub(crate) const DEFAULT_BOOTSTRAP_ADMIN_DISPLAY_NAME: &str = "Administrator";
+pub(crate) const DEFAULT_BOOTSTRAP_ADMIN_EMAIL: &str = "admin@sdkwork.com";

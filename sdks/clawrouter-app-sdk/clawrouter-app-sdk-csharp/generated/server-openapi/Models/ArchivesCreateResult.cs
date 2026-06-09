@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class ArchivesCreateResult
     {
-        public string? Code { get; set; }
+        public string Code { get; set; }
         public SdkReferenceArchiveResponse? Data { get; set; }
         public string? Msg { get; set; }
     }

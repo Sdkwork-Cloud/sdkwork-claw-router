@@ -57,20 +57,18 @@ client.SetHeader("X-Custom-Header", "value")
 
 - `client.Agents` - agents API
 - `client.Ai` - ai API
-- `client.Commerce` - commerce API
 - `client.Content` - content API
 - `client.Ecosystem` - ecosystem API
 - `client.Iam` - iam API
 - `client.Integration` - integration API
 - `client.Mcp` - mcp API
 - `client.Messaging` - messaging API
-- `client.OpenPlatform` - open_platform API
 - `client.Platform` - platform API
-- `client.System` - system API
 - `client.Prompts` - prompts API
 - `client.ServiceProviders` - service_providers API
 - `client.Sites` - sites API
 - `client.Storage` - storage API
+- `client.System` - system API
 
 ## Usage Examples
 
@@ -98,17 +96,6 @@ fmt.Println(result)
 ```go
 // List groups
 result, err := client.Ai.ChannelGroupsList()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### commerce
-
-```go
-// Commerce Reports Payment Reconciliation Retrieve
-result, err := client.Commerce.ReportsPaymentReconciliationRetrieve()
 if err != nil {
     panic(err)
 }
@@ -199,36 +186,11 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### open_platform
-
-```go
-// List open platform providers
-params := map[string]interface{}{
-    "status": "active",
-}
-result, err := client.OpenPlatform.ProvidersList(params)
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
 ### platform
 
 ```go
 // List app categories
 result, err := client.Platform.AppsCategoriesList()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### system
-
-```go
-// Retrieve IAM auth runtime settings
-result, err := client.System.AuthSettingsRetrieve()
 if err != nil {
     panic(err)
 }
@@ -294,6 +256,17 @@ fmt.Println(result)
 ```go
 // List storage providers
 result, err := client.Storage.OssProvidersList()
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### system
+
+```go
+// Retrieve IAM auth runtime settings
+result, err := client.System.AuthSettingsRetrieve()
 if err != nil {
     panic(err)
 }

@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class ProviderSecretsDeleteResult
     {
-        public string? Code { get; set; }
+        public string Code { get; set; }
         public AdminDeleteResponse? Data { get; set; }
         public string? Msg { get; set; }
     }

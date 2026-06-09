@@ -6,7 +6,7 @@ frontend_operations:
   operation_id: shipments.list
   kind: read
   api_surface: backend
-  openapi_exposed: false
+  openapi_exposed: true
   api_method: GET
   api_path: /backend/v3/api/shipments
   sdk_domain: commerce
@@ -133,7 +133,7 @@ frontend_operations:
   operation_id: shipments.trackingEvents.list
   kind: read
   api_surface: backend
-  openapi_exposed: false
+  openapi_exposed: true
   api_method: GET
   api_path: /backend/v3/api/shipments/{shipmentId}/tracking_events
   sdk_domain: commerce

@@ -274,26 +274,29 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 operations["fetchUsers"]["response_schema"]["schema"]["properties"]["items"]["items"]["properties"]["id"],
             )
 
-    def test_open_platform_paths_compile_to_open_platform_sdk_namespace(self) -> None:
+    def test_rejects_legacy_provider_platform_contract_terms(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
+            legacy_snake = "open" + "_platform"
+            legacy_camel = "open" + "Platform"
             contract = self.write_contract(
                 root,
-                """
+                f"""
                 frontend_operations:
-                  - route: /admin/open-platform
-                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/index.tsx
-                    operation: listOpenPlatformAccounts
-                    operation_id: accounts.list
+                  - route: /admin/oauth
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+                    operation: listLegacyProviderAccounts
+                    operation_id: {legacy_camel}.accounts.list
                     kind: read
                     api_surface: backend
                     api_method: GET
-                    api_path: /backend/v3/api/open_platform/accounts
-                    sdk_domain: platform
-                    read_sources: [open_platform_account]
+                    api_path: /backend/v3/api/{legacy_snake}/accounts
+                    sdk_domain: {legacy_camel}
+                    read_sources: [iam_oauth_resource_account]
+                    write_tables: [{legacy_snake}_account]
                     query_parameters: []
                     response_schema:
-                      name: OpenPlatformAccountListResponse
+                      name: LegacyProviderAccountListResponse
                       required: [items]
                       properties:
                         items:
@@ -303,13 +306,54 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """,
             )
 
+            result = ApiContractManifestGenerator(root=root, contract_path=contract).validate()
+
+            self.assertFalse(result.ok)
+            message = "\n".join(result.messages)
+            self.assertIn(f"must not use legacy {legacy_snake} API path", message)
+            self.assertIn(f"must not use legacy {legacy_camel} operation_id", message)
+            self.assertIn(f"must not use legacy {legacy_camel} sdk_domain", message)
+            self.assertIn(f"must not use legacy {legacy_snake} table name", message)
+
+    def test_app_oauth_paths_remain_under_oauth_namespace(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            contract = self.write_contract(
+                root,
+                """
+                frontend_operations:
+                  - route: /auth/oauth/callback/:provider
+                    source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
+                    operation: getOAuthAuthorizationUrl
+                    operation_id: oauth.authorizationUrls.create
+                    kind: create
+                    api_surface: app
+                    api_method: POST
+                    api_path: /app/v3/api/oauth/authorization_urls
+                    sdk_domain: iam
+                    read_sources: [iam_oauth_integration]
+                    request_schema:
+                      name: IamOauthAuthorizationUrlCreateRequest
+                      required: [provider]
+                      properties:
+                        provider:
+                          type: string
+                    response_schema:
+                      name: IamOauthAuthorizationUrlResponse
+                      required: [authUrl]
+                      properties:
+                        authUrl:
+                          type: string
+                """,
+            )
+
             manifest = ApiContractManifestGenerator(root=root, contract_path=contract).generate()
             operation = manifest["operations"][0]
 
-            self.assertEqual("/backend/v3/api/open_platform/accounts", operation["api_path"])
-            self.assertEqual("openPlatform", operation["tag"])
-            self.assertEqual("platform", operation["sdk_domain"])
-            self.assertEqual("accounts.list", operation["operation_id"])
+            self.assertEqual("/app/v3/api/oauth/authorization_urls", operation["api_path"])
+            self.assertEqual("iam", operation["tag"])
+            self.assertEqual("iam", operation["sdk_domain"])
+            self.assertEqual("oauth.authorizationUrls.create", operation["operation_id"])
 
     def test_messaging_paths_compile_to_messaging_sdk_namespace(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

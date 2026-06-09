@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class SpacesListResult
     {
-        public string? Code { get; set; }
+        public string Code { get; set; }
         public MemorySpaceListResponse? Data { get; set; }
         public string? Msg { get; set; }
     }

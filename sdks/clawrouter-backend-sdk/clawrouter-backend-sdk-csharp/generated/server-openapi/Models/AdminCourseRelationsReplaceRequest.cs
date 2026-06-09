@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminCourseRelationsReplaceRequest
     {
-        public List<Dictionary<string, object>>? Items { get; set; }
+        public List<Dictionary<string, object>> Items { get; set; }
     }
 }

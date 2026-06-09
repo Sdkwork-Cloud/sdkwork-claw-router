@@ -498,7 +498,7 @@ export function readAdminResourceCollectionMeta(value: unknown): AdminResourceCo
   }
   const total = readFiniteNumber(data.total);
   const page = readFiniteNumber(data.page);
-  const pageSize = readFiniteNumber(data.pageSize ?? data.page_size);
+  const pageSize = readFiniteNumber(data.pageSize);
   if (total === null || page === null || pageSize === null) {
     return null;
   }

@@ -50,20 +50,18 @@ client.setHeader("X-Custom-Header", value: "value")
 
 - `client.agents` - agents API
 - `client.ai` - ai API
-- `client.commerce` - commerce API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.integration` - integration API
 - `client.mcp` - mcp API
 - `client.messaging` - messaging API
-- `client.openPlatform` - open_platform API
 - `client.platform` - platform API
-- `client.system` - system API
 - `client.prompts` - prompts API
 - `client.serviceProviders` - service_providers API
 - `client.sites` - sites API
 - `client.storage` - storage API
+- `client.system` - system API
 
 ## Usage Examples
 
@@ -88,14 +86,6 @@ print(result)
 ```swift
 // List groups
 let result = try await client.ai.channelGroupsList()
-print(result)
-```
-
-### commerce
-
-```swift
-// Commerce Reports Payment Reconciliation Retrieve
-let result = try await client.commerce.reportsPaymentReconciliationRetrieve()
 print(result)
 ```
 
@@ -165,30 +155,11 @@ let result = try await client.messaging.providerAccountsList(params: params)
 print(result)
 ```
 
-### open_platform
-
-```swift
-// List open platform providers
-let params: [String: Any] = [
-    "status": "active"
-]
-let result = try await client.openPlatform.providersList(params: params)
-print(result)
-```
-
 ### platform
 
 ```swift
 // List app categories
 let result = try await client.platform.appsCategoriesList()
-print(result)
-```
-
-### system
-
-```swift
-// Retrieve IAM auth runtime settings
-let result = try await client.system.authSettingsRetrieve()
 print(result)
 ```
 
@@ -242,6 +213,14 @@ print(result)
 ```swift
 // List storage providers
 let result = try await client.storage.ossProvidersList()
+print(result)
+```
+
+### system
+
+```swift
+// Retrieve IAM auth runtime settings
+let result = try await client.system.authSettingsRetrieve()
 print(result)
 ```
 

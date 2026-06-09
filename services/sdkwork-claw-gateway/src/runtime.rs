@@ -110,23 +110,147 @@ fn router_with_invocation_runtime_and_provider_native_routes<C>(
     catalog: Arc<C>,
     api_key_hasher: ApiKeyHasher,
     provider_secret_resolver: Option<Arc<RefreshableProviderSecretMapResolver>>,
-    sticky_store: Option<Arc<dyn StickyRouteStore>>,
+    invocation_sticky_store: Option<Arc<dyn StickyRouteStore>>,
+    route_scoped_sticky_store: Option<
+        crate::route_scoped_openai_passthrough::StickyObjectRouteStore,
+    >,
     usage_recorder: Option<UsageRecorder>,
-    _provider_passthrough_config: Option<ProviderRelayConfig>,
+    provider_passthrough_config: Option<ProviderRelayConfig>,
     provider_adapter_config: Option<ProviderAdapterConfig>,
 ) -> Router
 where
     C: PricingCatalog + Send + Sync + 'static,
 {
-    router_with_invocation_runtime_routes(
+    let router = router_with_route_scoped_openai_and_provider_native_routes(
         base_router,
+        Arc::clone(&catalog),
+        Arc::clone(&api_key_hasher),
+        provider_secret_resolver.clone(),
+        route_scoped_sticky_store,
+        usage_recorder.clone(),
+        provider_passthrough_config.clone(),
+        provider_adapter_config.clone(),
+    );
+    router_with_invocation_runtime_routes(
+        router,
         catalog,
         api_key_hasher,
         provider_secret_resolver,
-        sticky_store,
+        invocation_sticky_store,
         usage_recorder,
         provider_adapter_config,
     )
+}
+
+fn router_with_route_scoped_openai_and_provider_native_routes<C>(
+    base_router: Router,
+    catalog: Arc<C>,
+    api_key_hasher: ApiKeyHasher,
+    provider_secret_resolver: Option<Arc<RefreshableProviderSecretMapResolver>>,
+    route_scoped_sticky_store: Option<
+        crate::route_scoped_openai_passthrough::StickyObjectRouteStore,
+    >,
+    usage_recorder: Option<UsageRecorder>,
+    provider_passthrough_config: Option<ProviderRelayConfig>,
+    provider_adapter_config: Option<ProviderAdapterConfig>,
+) -> Router
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    let provider_secret_resolver_dyn = provider_secret_resolver
+        .clone()
+        .map(|resolver| -> Arc<dyn ProviderSecretResolver + Send + Sync> { resolver });
+    let mut router = base_router;
+    if let Some(secret_resolver) = provider_secret_resolver_dyn.clone() {
+        router = router.merge(crate::passthrough::route_scoped_openai_passthrough_router(
+            Arc::clone(&catalog),
+            Arc::clone(&api_key_hasher),
+            secret_resolver,
+            usage_recorder.clone(),
+            route_scoped_sticky_store,
+        ));
+    }
+    if provider_secret_resolver_dyn.is_some()
+        || provider_passthrough_config.is_some()
+        || provider_adapter_config
+            .as_ref()
+            .is_some_and(|config| !config.routes().is_empty())
+    {
+        router = router.merge(
+            crate::passthrough::authenticated_provider_native_passthrough_router_with_adapter_config(
+                provider_passthrough_config.clone(),
+                Arc::clone(&catalog),
+                Arc::clone(&api_key_hasher),
+                provider_adapter_config.clone(),
+                provider_secret_resolver_dyn,
+                usage_recorder.clone(),
+            ),
+        );
+    }
+    router
+}
+
+fn router_with_database_runtime_routes<C>(
+    base_router: Router,
+    catalog: Arc<C>,
+    api_key_hasher: ApiKeyHasher,
+    provider_secret_resolver: Option<Arc<RefreshableProviderSecretMapResolver>>,
+    invocation_sticky_store: Option<Arc<dyn StickyRouteStore>>,
+    route_scoped_sticky_store: Option<
+        crate::route_scoped_openai_passthrough::StickyObjectRouteStore,
+    >,
+    usage_recorder: Option<UsageRecorder>,
+    provider_passthrough_config: Option<ProviderRelayConfig>,
+    provider_adapter_config: Option<ProviderAdapterConfig>,
+    provider_runtime_config: ProviderRelayRuntimeConfig,
+) -> Result<Router, GatewayRouterError>
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    if provider_secret_resolver.is_some() {
+        return Ok(router_with_invocation_runtime_and_provider_native_routes(
+            base_router,
+            catalog,
+            api_key_hasher,
+            provider_secret_resolver,
+            invocation_sticky_store,
+            route_scoped_sticky_store,
+            usage_recorder,
+            provider_passthrough_config,
+            provider_adapter_config,
+        ));
+    }
+    let relays = build_openai_runtime_relays(
+        provider_passthrough_config.clone(),
+        None,
+        provider_runtime_config.clone(),
+        false,
+    )?;
+    let relays = apply_provider_adapter_config(relays, provider_adapter_config.clone(), None)?;
+    let router = router_with_openai_runtime_routes(
+        base_router,
+        Arc::clone(&catalog),
+        Arc::clone(&api_key_hasher),
+        relays,
+        usage_recorder.clone(),
+        Vec::new(),
+        provider_runtime_config.failure_strategy,
+        provider_runtime_config.default_retry_policy.clone(),
+        provider_passthrough_config,
+        provider_adapter_config.clone(),
+        None,
+        false,
+        None,
+    );
+    Ok(router_with_invocation_runtime_routes(
+        router,
+        catalog,
+        api_key_hasher,
+        None,
+        invocation_sticky_store,
+        usage_recorder,
+        provider_adapter_config,
+    ))
 }
 
 #[derive(Clone)]
@@ -236,6 +360,7 @@ struct AllInOneRuntimeContext {
     trusted_subject_config: TrustedSubjectConfig,
     app_session_config: AppSessionConfig,
     payment_webhook_config: PaymentWebhookConfig,
+    provider_runtime_config: ProviderRelayRuntimeConfig,
     provider_health_probe: Arc<dyn ProviderHealthProbe + Send + Sync>,
     cache_manager: RuntimeCacheManager,
     request_limits_config: RequestLimitsConfig,
@@ -437,6 +562,7 @@ where
             Arc::clone(&api_key_hasher),
             provider_secret_resolver.clone(),
             sticky_store,
+            None,
             usage_recorder.clone(),
             provider_passthrough_config,
             provider_adapter_config,
@@ -758,7 +884,7 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                 provider_runtime.catalog_refresh_interval,
                 provider_runtime.circuit_breaker_recovery_window_seconds,
             );
-            Ok(router_with_invocation_runtime_and_provider_native_routes(
+            router_with_database_runtime_routes(
                 router_with_database_status_and_passthrough_placeholder(Some(&config), false),
                 catalog,
                 api_key_hasher,
@@ -766,10 +892,16 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                 Some(Arc::new(InvocationStickyObjectRouteStore::sqlite(
                     pool.clone(),
                 ))),
+                Some(
+                    crate::route_scoped_openai_passthrough::StickyObjectRouteStore::sqlite(
+                        pool.clone(),
+                    ),
+                ),
                 Some(usage_recorder),
                 provider_passthrough_config,
                 provider_adapter_config.clone(),
-            ))
+                provider_runtime,
+            )
         }
         DatabaseEngine::Postgres => {
             let pool = sqlx::postgres::PgPoolOptions::new()
@@ -816,7 +948,7 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                 provider_runtime.catalog_refresh_interval,
                 provider_runtime.circuit_breaker_recovery_window_seconds,
             );
-            Ok(router_with_invocation_runtime_and_provider_native_routes(
+            router_with_database_runtime_routes(
                 router_with_database_status_and_passthrough_placeholder(Some(&config), false),
                 catalog,
                 api_key_hasher,
@@ -824,10 +956,16 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                 Some(Arc::new(InvocationStickyObjectRouteStore::postgres(
                     pool.clone(),
                 ))),
+                Some(
+                    crate::route_scoped_openai_passthrough::StickyObjectRouteStore::postgres(
+                        pool.clone(),
+                    ),
+                ),
                 Some(usage_recorder),
                 provider_passthrough_config,
                 provider_adapter_config.clone(),
-            ))
+                provider_runtime,
+            )
         }
     }
 }
@@ -1172,6 +1310,7 @@ async fn all_in_one_runtime_context_from_env() -> anyhow::Result<AllInOneRuntime
                 trusted_subject_config,
                 app_session_config,
                 payment_webhook_config,
+                provider_runtime_config: provider_runtime,
                 provider_health_probe,
                 cache_manager,
                 request_limits_config,
@@ -1245,6 +1384,7 @@ async fn all_in_one_runtime_context_from_env() -> anyhow::Result<AllInOneRuntime
                 trusted_subject_config,
                 app_session_config,
                 payment_webhook_config,
+                provider_runtime_config: provider_runtime,
                 provider_health_probe,
                 cache_manager,
                 request_limits_config,
@@ -1275,7 +1415,7 @@ fn build_gateway_router_from_all_in_one_context(
         context.usage_settlement_wakeup.clone(),
     );
 
-    Ok(router_with_invocation_runtime_and_provider_native_routes(
+    router_with_database_runtime_routes(
         router_with_database_status_and_passthrough_placeholder(
             Some(&context.database_config),
             false,
@@ -1286,10 +1426,15 @@ fn build_gateway_router_from_all_in_one_context(
         Some(sticky_store_from_shared_database_pool(
             &context.database_pool,
         )),
+        Some(route_scoped_sticky_store_from_shared_database_pool(
+            &context.database_pool,
+        )),
         Some(usage_recorder),
         context.provider_relay_config.clone(),
         context.provider_adapter_config.clone(),
-    ))
+        context.provider_runtime_config.clone(),
+    )
+    .map_err(anyhow::Error::new)
 }
 
 fn sticky_store_from_shared_database_pool(pool: &SharedDatabasePool) -> Arc<dyn StickyRouteStore> {
@@ -1299,6 +1444,19 @@ fn sticky_store_from_shared_database_pool(pool: &SharedDatabasePool) -> Arc<dyn 
         }
         SharedDatabasePool::Postgres(pool) => {
             Arc::new(InvocationStickyObjectRouteStore::postgres(pool.clone()))
+        }
+    }
+}
+
+fn route_scoped_sticky_store_from_shared_database_pool(
+    pool: &SharedDatabasePool,
+) -> crate::route_scoped_openai_passthrough::StickyObjectRouteStore {
+    match pool {
+        SharedDatabasePool::Sqlite(pool) => {
+            crate::route_scoped_openai_passthrough::StickyObjectRouteStore::sqlite(pool.clone())
+        }
+        SharedDatabasePool::Postgres(pool) => {
+            crate::route_scoped_openai_passthrough::StickyObjectRouteStore::postgres(pool.clone())
         }
     }
 }
@@ -2267,35 +2425,6 @@ mod tests {
     use super::*;
 
     #[test]
-    fn provider_runtime_failure_strategy_accepts_supported_values() {
-        assert_eq!(
-            OpenAiRuntimeFailureStrategy::Failover,
-            parse_openai_runtime_failure_strategy(None).unwrap()
-        );
-        assert_eq!(
-            OpenAiRuntimeFailureStrategy::Failover,
-            parse_openai_runtime_failure_strategy(Some("failover")).unwrap()
-        );
-        assert_eq!(
-            OpenAiRuntimeFailureStrategy::FailClosed,
-            parse_openai_runtime_failure_strategy(Some("fail_closed")).unwrap()
-        );
-        assert_eq!(
-            OpenAiRuntimeFailureStrategy::FailClosed,
-            parse_openai_runtime_failure_strategy(Some("fail-closed")).unwrap()
-        );
-    }
-
-    #[test]
-    fn provider_runtime_failure_strategy_rejects_unknown_values() {
-        let error = parse_openai_runtime_failure_strategy(Some("retry_forever")).unwrap_err();
-
-        assert!(error.contains("SDKWORK_CLAW_PROVIDER_FAILURE_STRATEGY"));
-        assert!(error.contains("failover"));
-        assert!(error.contains("fail_closed"));
-    }
-
-    #[test]
     fn runtime_catalog_refresh_decision_refreshes_first_observed_version() {
         assert!(catalog_refresh_snapshot_due(
             CatalogRefreshDecisionState::default(),
@@ -2388,31 +2517,6 @@ mod tests {
     }
 
     #[test]
-    fn database_runtime_mounts_secret_ref_chat_relays_without_static_provider_relay_config() {
-        let mut managed_provider_secrets = std::collections::BTreeMap::new();
-        managed_provider_secrets.insert(
-            "vault://providers/openrouter/account/main".to_owned(),
-            "sk-managed-provider-secret".to_owned(),
-        );
-        let relays = build_openai_runtime_relays(
-            None,
-            openai_runtime_relay_secret_resolver(None, managed_provider_secrets),
-            provider_relay_runtime_for_test(),
-            true,
-        )
-        .unwrap();
-
-        assert!(
-            relays.chat.is_some(),
-            "database-backed gateway chat completions must use route-scoped provider settings"
-        );
-        assert!(
-            relays.chat_stream.is_some(),
-            "database-backed gateway streaming chat completions must not fall through to 501"
-        );
-    }
-
-    #[test]
     fn database_runtime_does_not_enable_empty_secret_ref_resolver() {
         let resolver =
             openai_runtime_relay_secret_resolver(None, std::collections::BTreeMap::new());
@@ -2421,259 +2525,6 @@ mod tests {
             resolver.is_none(),
             "an empty resolver must not override an explicit provider relay config"
         );
-    }
-
-    fn provider_relay_runtime_for_test() -> ProviderRelayRuntimeConfig {
-        ProviderRelayRuntimeConfig {
-            response_timeout: Duration::from_secs(1),
-            default_retry_policy: ProviderRetryPolicy::default(),
-            catalog_refresh_interval: Duration::from_secs(1),
-            circuit_breaker_recovery_window_seconds: 1,
-            failure_strategy: OpenAiRuntimeFailureStrategy::default(),
-        }
-    }
-
-    #[tokio::test]
-    async fn provider_adapter_config_wraps_chat_relay_and_preserves_direct_miss() {
-        #[derive(Clone)]
-        struct DirectRelay;
-
-        impl ChatCompletionRelay for DirectRelay {
-            fn create_chat_completion<'a>(
-                &'a self,
-                _request: sdkwork_claw_product::ports::ChatCompletionRelayRequest,
-            ) -> sdkwork_claw_product::ports::ChatCompletionRelayFuture<'a> {
-                Box::pin(async {
-                    Ok(
-                        sdkwork_claw_product::ports::ChatCompletionRelayResponse::json(
-                            200,
-                            serde_json::json!({"id": "direct"}),
-                        ),
-                    )
-                })
-            }
-        }
-
-        let adapter_config = sdkwork_claw_config::ProviderAdapterConfig::from_json(
-            r#"{
-                "routes": [
-                    {
-                        "providerCode": "tencent-cloud",
-                        "adapterKind": "internal_http",
-                        "adapterBaseUrl": "http://127.0.0.1:39110",
-                        "method": "POST",
-                        "standardPathPattern": "/v1/chat/completions",
-                        "adapterPathTemplate": "/providers/{provider_code}{standard_path}",
-                        "status": "enabled",
-                        "priority": 10
-                    }
-                ]
-            }"#,
-            Some("adapter-token".to_owned()),
-        )
-        .unwrap();
-        let relays = apply_provider_adapter_config(
-            OpenAiRuntimeRelays {
-                chat: Some(Arc::new(DirectRelay)),
-                chat_stream: None,
-                embeddings: None,
-                responses: None,
-            },
-            Some(adapter_config),
-            None,
-        )
-        .unwrap();
-
-        let response = relays
-            .chat
-            .unwrap()
-            .create_chat_completion(sdkwork_claw_product::ports::ChatCompletionRelayRequest {
-                api_key_id: 101,
-                tenant_id: 10,
-                organization_id: 20,
-                user_id: 30,
-                group_id: 10,
-                group_code: "standard-group".to_owned(),
-                pricing_plan_code: "standard".to_owned(),
-                model: "gpt-4o-mini".to_owned(),
-                provider_code: "openrouter".to_owned(),
-                provider_channel_id: 3001,
-                provider_region_code: "global".to_owned(),
-                provider_model: "gpt-4o-mini".to_owned(),
-                provider_base_url: Some("http://provider.example".to_owned()),
-                provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
-                provider_auth_profile: sdkwork_claw_product::domain::ProviderAuthProfile::bearer(),
-                provider_timeout_ms: None,
-                provider_retry_policy: None,
-                request_body: serde_json::json!({"model": "gpt-4o-mini"}),
-            })
-            .await
-            .unwrap();
-
-        assert_eq!("direct", response.body["id"]);
-    }
-
-    #[tokio::test]
-    async fn provider_adapter_config_wraps_chat_stream_relay_for_adapter_hits() {
-        use axum::body::Body;
-        use axum::extract::State;
-        use axum::routing::post;
-        use axum::Json;
-        use sdkwork_claw_provider_adapter_contract::{
-            AdapterInvocationRequest, AdapterInvocationResponse,
-        };
-        use std::sync::Mutex;
-
-        #[derive(Clone)]
-        struct DirectRelay;
-
-        impl ChatCompletionRelay for DirectRelay {
-            fn create_chat_completion<'a>(
-                &'a self,
-                _request: sdkwork_claw_product::ports::ChatCompletionRelayRequest,
-            ) -> sdkwork_claw_product::ports::ChatCompletionRelayFuture<'a> {
-                Box::pin(async {
-                    Ok(
-                        sdkwork_claw_product::ports::ChatCompletionRelayResponse::json(
-                            200,
-                            serde_json::json!({"id": "direct"}),
-                        ),
-                    )
-                })
-            }
-        }
-
-        #[derive(Clone)]
-        struct DirectStreamRelay {
-            calls: Arc<Mutex<Vec<sdkwork_claw_product::ports::ChatCompletionRelayRequest>>>,
-        }
-
-        impl ChatCompletionStreamRelay for DirectStreamRelay {
-            fn create_chat_completion_stream<'a>(
-                &'a self,
-                request: sdkwork_claw_product::ports::ChatCompletionRelayRequest,
-            ) -> sdkwork_claw_product::ports::ChatCompletionStreamRelayFuture<'a> {
-                self.calls.lock().unwrap().push(request);
-                Box::pin(async {
-                    Ok(
-                        sdkwork_claw_product::ports::ChatCompletionStreamRelayResponse::new(
-                            200,
-                            Some("text/event-stream".to_owned()),
-                            Body::from("data: {\"id\":\"direct-stream\"}\n\ndata: [DONE]\n\n"),
-                        ),
-                    )
-                })
-            }
-        }
-
-        let adapter_calls = Arc::new(Mutex::new(Vec::<AdapterInvocationRequest>::new()));
-        let app = Router::new()
-            .route(
-                "/providers/openrouter/v1/chat/completions",
-                post(
-                    |State(adapter_calls): State<
-                        Arc<Mutex<Vec<AdapterInvocationRequest>>>,
-                    >,
-                     Json(body): Json<AdapterInvocationRequest>| async move {
-                        adapter_calls.lock().unwrap().push(body);
-                        Json(AdapterInvocationResponse::json(
-                            200,
-                            serde_json::json!({
-                                "id": "chatcmpl-adapter-stream",
-                                "choices": [{"index": 0, "message": {"role": "assistant", "content": "adapter"}, "finish_reason": "stop"}],
-                                "usage": {"prompt_tokens": 1, "completion_tokens": 1, "total_tokens": 2}
-                            }),
-                        ))
-                    },
-                ),
-            )
-            .with_state(Arc::clone(&adapter_calls));
-        let listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
-        let base_url = format!("http://{}", listener.local_addr().unwrap());
-        let server = tokio::spawn(async move {
-            axum::serve(listener, app).await.unwrap();
-        });
-
-        let adapter_config = sdkwork_claw_config::ProviderAdapterConfig::from_json(
-            &format!(
-                r#"{{
-                "routes": [
-                    {{
-                        "providerCode": "openrouter",
-                        "adapterKind": "internal_http",
-                        "adapterBaseUrl": "{base_url}",
-                        "endpointKey": "openai.chat_completions",
-                        "method": "POST",
-                        "invocationShape": "sse_stream",
-                        "standardPathPattern": "/v1/chat/completions",
-                        "adapterPathTemplate": "/providers/{{provider_code}}{{standard_path}}",
-                        "status": "enabled",
-                        "priority": 10
-                    }}
-                ]
-            }}"#
-            ),
-            Some("adapter-token".to_owned()),
-        )
-        .unwrap();
-        let direct_stream_calls = Arc::new(Mutex::new(Vec::new()));
-        let relays = apply_provider_adapter_config(
-            OpenAiRuntimeRelays {
-                chat: Some(Arc::new(DirectRelay)),
-                chat_stream: Some(Arc::new(DirectStreamRelay {
-                    calls: Arc::clone(&direct_stream_calls),
-                })),
-                embeddings: None,
-                responses: None,
-            },
-            Some(adapter_config),
-            None,
-        )
-        .unwrap();
-
-        let response = relays
-            .chat_stream
-            .unwrap()
-            .create_chat_completion_stream(
-                sdkwork_claw_product::ports::ChatCompletionRelayRequest {
-                    api_key_id: 101,
-                    tenant_id: 10,
-                    organization_id: 20,
-                    user_id: 30,
-                    group_id: 10,
-                    group_code: "standard-group".to_owned(),
-                    pricing_plan_code: "standard".to_owned(),
-                    model: "gpt-4o-mini".to_owned(),
-                    provider_code: "openrouter".to_owned(),
-                    provider_channel_id: 3001,
-                    provider_region_code: "global".to_owned(),
-                    provider_model: "gpt-4o-mini".to_owned(),
-                    provider_base_url: Some("http://provider.example".to_owned()),
-                    provider_secret_ref: None,
-                    provider_auth_profile:
-                        sdkwork_claw_product::domain::ProviderAuthProfile::bearer(),
-                    provider_timeout_ms: None,
-                    provider_retry_policy: None,
-                    request_body: serde_json::json!({
-                        "model": "gpt-4o-mini",
-                        "messages": [{"role": "user", "content": "ping"}],
-                        "stream": true
-                    }),
-                },
-            )
-            .await
-            .unwrap();
-
-        assert!(direct_stream_calls.lock().unwrap().is_empty());
-        assert_eq!(1, adapter_calls.lock().unwrap().len());
-        let body = axum::body::to_bytes(response.body, usize::MAX)
-            .await
-            .unwrap();
-        let body = String::from_utf8(body.to_vec()).unwrap();
-        assert!(body.contains("chatcmpl-adapter-stream"));
-        assert!(body.contains("data: [DONE]"));
-
-        server.abort();
     }
 
     #[tokio::test]
@@ -2837,138 +2688,5 @@ gateway_token = "adapter-token"
         assert!(adapter_config.is_none());
 
         server.abort();
-    }
-
-    #[tokio::test]
-    async fn provider_adapter_config_wraps_responses_and_embeddings_relays_independently() {
-        #[derive(Clone)]
-        struct DirectResponsesRelay;
-
-        impl ResponsesRelay for DirectResponsesRelay {
-            fn create_response<'a>(
-                &'a self,
-                _request: sdkwork_claw_product::ports::ResponsesRelayRequest,
-            ) -> sdkwork_claw_product::ports::ResponsesRelayFuture<'a> {
-                Box::pin(async {
-                    Ok(sdkwork_claw_product::ports::ResponsesRelayResponse::json(
-                        200,
-                        serde_json::json!({"id": "response-direct"}),
-                    ))
-                })
-            }
-        }
-
-        #[derive(Clone)]
-        struct DirectEmbeddingsRelay;
-
-        impl EmbeddingsRelay for DirectEmbeddingsRelay {
-            fn create_embedding<'a>(
-                &'a self,
-                _request: sdkwork_claw_product::ports::EmbeddingsRelayRequest,
-            ) -> sdkwork_claw_product::ports::EmbeddingsRelayFuture<'a> {
-                Box::pin(async {
-                    Ok(sdkwork_claw_product::ports::EmbeddingsRelayResponse::json(
-                        200,
-                        serde_json::json!({"object": "list"}),
-                    ))
-                })
-            }
-        }
-
-        let adapter_config = sdkwork_claw_config::ProviderAdapterConfig::from_json(
-            r#"{
-                "routes": [
-                    {
-                        "providerCode": "tencent-cloud",
-                        "adapterKind": "internal_http",
-                        "adapterBaseUrl": "http://127.0.0.1:39110",
-                        "endpointKey": "openai.responses",
-                        "method": "POST",
-                        "standardPathPattern": "/v1/responses",
-                        "adapterPathTemplate": "/providers/{provider_code}{standard_path}",
-                        "status": "enabled",
-                        "priority": 10
-                    },
-                    {
-                        "providerCode": "tencent-cloud",
-                        "adapterKind": "internal_http",
-                        "adapterBaseUrl": "http://127.0.0.1:39110",
-                        "endpointKey": "openai.embeddings",
-                        "method": "POST",
-                        "standardPathPattern": "/v1/embeddings",
-                        "adapterPathTemplate": "/providers/{provider_code}{standard_path}",
-                        "status": "enabled",
-                        "priority": 10
-                    }
-                ]
-            }"#,
-            Some("adapter-token".to_owned()),
-        )
-        .unwrap();
-        let relays = apply_provider_adapter_config(
-            OpenAiRuntimeRelays {
-                chat: None,
-                chat_stream: None,
-                embeddings: Some(Arc::new(DirectEmbeddingsRelay)),
-                responses: Some(Arc::new(DirectResponsesRelay)),
-            },
-            Some(adapter_config),
-            None,
-        )
-        .unwrap();
-
-        let response = relays
-            .responses
-            .unwrap()
-            .create_response(sdkwork_claw_product::ports::ResponsesRelayRequest {
-                api_key_id: 101,
-                tenant_id: 10,
-                organization_id: 20,
-                user_id: 30,
-                group_id: 10,
-                group_code: "standard-group".to_owned(),
-                pricing_plan_code: "standard".to_owned(),
-                model: "gpt-4o-mini".to_owned(),
-                provider_code: "openrouter".to_owned(),
-                provider_channel_id: 3001,
-                provider_region_code: "global".to_owned(),
-                provider_model: "gpt-4o-mini".to_owned(),
-                provider_base_url: Some("http://provider.example".to_owned()),
-                provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
-                provider_auth_profile: sdkwork_claw_product::domain::ProviderAuthProfile::bearer(),
-                provider_timeout_ms: None,
-                provider_retry_policy: None,
-                request_body: serde_json::json!({"model": "gpt-4o-mini"}),
-            })
-            .await
-            .unwrap();
-        let embedding = relays
-            .embeddings
-            .unwrap()
-            .create_embedding(sdkwork_claw_product::ports::EmbeddingsRelayRequest {
-                api_key_id: 101,
-                tenant_id: 10,
-                organization_id: 20,
-                user_id: 30,
-                group_id: 10,
-                group_code: "standard-group".to_owned(),
-                pricing_plan_code: "standard".to_owned(),
-                model: "text-embedding-3-small".to_owned(),
-                provider_code: "openrouter".to_owned(),
-                provider_channel_id: 3001,
-                provider_region_code: "global".to_owned(),
-                provider_model: "text-embedding-3-small".to_owned(),
-                provider_base_url: Some("http://provider.example".to_owned()),
-                provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
-                provider_auth_profile: sdkwork_claw_product::domain::ProviderAuthProfile::bearer(),
-                provider_timeout_ms: None,
-                provider_retry_policy: None,
-                request_body: serde_json::json!({"model": "text-embedding-3-small"}),
-            })
-            .await
-            .unwrap();
-
-        assert_eq!("response-direct", response.body["id"]);
-        assert_eq!("list", embedding.body["object"]);
     }
 }

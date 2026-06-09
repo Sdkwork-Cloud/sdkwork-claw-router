@@ -11,7 +11,7 @@ export async function* streamRuntimeInvocationEvents(
   afterEventNo = 0,
 ): AsyncIterable<RuntimeStreamEvent> {
   const eventCursor = Number.isFinite(afterEventNo) && afterEventNo > 0
-    ? `?afterEventNo=${Math.trunc(afterEventNo)}`
+    ? `?after_event_no=${Math.trunc(afterEventNo)}`
     : '';
   const runtimeInvocationEventStreamPath = `/runtime/invocations/${encodeURIComponent(invocationId)}/events/stream${eventCursor}`;
   yield* client.http.streamJson<RuntimeStreamEvent>(

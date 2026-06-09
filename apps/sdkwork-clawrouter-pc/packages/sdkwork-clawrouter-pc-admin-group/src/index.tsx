@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { AdminTableShell, AiResourceSelectorModal, BottomPagination, BusinessStateTableRow, ConfirmDialog } from 'sdkwork-clawrouter-pc-commons';
 import { Plus, Search, Trash2, Edit, ChevronDown, ChevronLeft, ChevronRight, RefreshCw, ArrowUpDown, LayoutGrid, X, Link2, Save, Coins, Info } from 'lucide-react';
-import { GroupService, type GroupAiResourceOption, type GroupChannelBindingData, type GroupChannelBindingInput, type GroupChannelOption, type GroupData, type GroupResourceGroupOption } from './groupService';
+import { GroupService, buildGroupRoutePreflight, type GroupAiResourceOption, type GroupChannelBindingData, type GroupChannelBindingInput, type GroupChannelOption, type GroupData, type GroupResourceGroupOption, type GroupRouteExplainResult } from './groupService';
 import { createGroupInputFromForm, createGroupUpdateInputFromForm } from './groupForm';
 import { useTranslation } from 'react-i18next';
 
@@ -54,6 +54,8 @@ export function GroupAdmin() {
   const [bindingLoading, setBindingLoading] = useState(false);
   const [bindingSaving, setBindingSaving] = useState(false);
   const [bindingError, setBindingError] = useState<string | null>(null);
+  const [routeExplain, setRouteExplain] = useState<GroupRouteExplainResult | null>(null);
+  const [routeExplainError, setRouteExplainError] = useState<string | null>(null);
   const [bindingSearchQuery, setBindingSearchQuery] = useState('');
   const [isChannelPickerOpen, setIsChannelPickerOpen] = useState(false);
   const [pickerSearchQuery, setPickerSearchQuery] = useState('');
@@ -234,18 +236,26 @@ export function GroupAdmin() {
     setChannelBindings([]);
     setChannelOptions([]);
     setBindingDraft({});
+    setRouteExplain(null);
+    setRouteExplainError(null);
     setBindingSearchQuery('');
     setIsChannelPickerOpen(false);
     setPickerSearchQuery('');
     setPickerSelection({});
     try {
-      const [channels, bindings] = await Promise.all([
+      const [channels, bindings, explain] = await Promise.all([
         GroupService.fetchAssignableChannels(),
         GroupService.fetchGroupChannelBindings(group.id),
+        GroupService.fetchGroupRouteExplain(group.id).then(
+          value => ({ value, error: null }),
+          error => ({ value: null, error }),
+        ),
       ]);
       setChannelOptions(channels);
       setChannelBindings(bindings);
       setBindingDraft(bindingsToDraft(bindings));
+      setRouteExplain(explain.value);
+      setRouteExplainError(explain.error ? t('admin.group.routePreflight.backendExplainUnavailable') : null);
     } catch (error) {
       setBindingError(error instanceof Error ? error.message : t('admin.group.channelBindings.errors.load'));
     } finally {
@@ -261,6 +271,8 @@ export function GroupAdmin() {
     setChannelBindings([]);
     setChannelOptions([]);
     setBindingDraft({});
+    setRouteExplain(null);
+    setRouteExplainError(null);
     setBindingError(null);
     setBindingSearchQuery('');
     setIsChannelPickerOpen(false);
@@ -385,7 +397,7 @@ export function GroupAdmin() {
     .length;
   const channelOptionById = new Map(channelOptions.map(channel => [channel.id, channel]));
   const bindingByChannelId = new Map(channelBindings.map(binding => [binding.channelId, binding]));
-  const visibleBindingRows = Object.values(bindingDraft)
+  const routePreflightBindingRows = Object.values(bindingDraft)
     .map(draft => {
       const persisted = bindingByChannelId.get(draft.channelId);
       const option = channelOptionById.get(draft.channelId);
@@ -404,6 +416,11 @@ export function GroupAdmin() {
         healthStatus: persisted?.healthStatus ?? option?.healthStatus ?? 'active',
       };
     })
+    .sort((left, right) => {
+      const priority = left.priority - right.priority;
+      return priority !== 0 ? priority : right.weight - left.weight;
+    });
+  const visibleBindingRows = routePreflightBindingRows
     .filter(row => matchesChannelSearch(bindingSearchQuery, [
       row.channelName,
       row.channelCode,
@@ -412,11 +429,11 @@ export function GroupAdmin() {
       ...row.resourceCodes,
       ...row.apiScope,
       ...row.capabilities,
-    ]))
-    .sort((left, right) => {
-      const priority = left.priority - right.priority;
-      return priority !== 0 ? priority : right.weight - left.weight;
-    });
+    ]));
+  const routePreflight = channelBindingTarget
+    ? buildGroupRoutePreflight(channelBindingTarget, routePreflightBindingRows)
+    : null;
+  const routePreflightSummary = routeExplain ?? routePreflight;
   const pickerChannelOptions = channelOptions
     .filter(channel => matchesChannelSearch(pickerSearchQuery, [
       channel.name,
@@ -875,6 +892,67 @@ export function GroupAdmin() {
                 {t('admin.group.channelBindings.add')}
               </button>
             </div>
+
+            {routePreflight && routePreflightSummary && (
+              <div
+                data-admin-group-route-preflight
+                className={`border-b px-5 py-3 text-sm ${
+                  routePreflightSummary.ready
+                    ? 'border-emerald-200 bg-emerald-50 text-emerald-800 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-200'
+                    : 'border-amber-200 bg-amber-50 text-amber-800 dark:border-amber-500/20 dark:bg-amber-500/10 dark:text-amber-200'
+                }`}
+              >
+                <div className="flex flex-col gap-2 lg:flex-row lg:items-start lg:justify-between">
+                  <div className="min-w-0">
+                    <div className="font-medium">{t('admin.group.routePreflight.title')}</div>
+                    <div className="mt-1 flex flex-wrap gap-2 text-[11px] leading-4 opacity-80">
+                      <span>{t('admin.group.routePreflight.localOnly')}</span>
+                      <span>
+                        {routeExplain?.source === 'backend_config'
+                          ? t('admin.group.routePreflight.backendConfigExplain')
+                          : t('admin.group.routePreflight.backendExplainUnavailable')}
+                      </span>
+                    </div>
+                    <div className="mt-1 text-xs leading-5 opacity-90">
+                      {routePreflightSummary.ready
+                        ? t('admin.group.routePreflight.ready', {
+                          bindings: routePreflightSummary.activeHealthyBindingCount,
+                          resources: routeExplain?.configuredResourceAccessCount ?? routePreflight.configuredResourceAccessCount,
+                        })
+                        : t('admin.group.routePreflight.blocked', {
+                          bindings: routePreflightSummary.activeHealthyBindingCount,
+                          resources: routeExplain?.configuredResourceAccessCount ?? routePreflight.configuredResourceAccessCount,
+                        })}
+                    </div>
+                    {routeExplain && (
+                      <div className="mt-1 text-xs leading-5 opacity-90">
+                        {t('admin.group.routePreflight.backendRoutable', {
+                          bindings: routeExplain.routableBindingCount,
+                          resources: routeExplain.effectiveResourceCodes.length,
+                        })}
+                      </div>
+                    )}
+                    {routeExplainError && (
+                      <div className="mt-1 text-xs leading-5 opacity-80">
+                        {routeExplainError}
+                      </div>
+                    )}
+                  </div>
+                  {routePreflightSummary.issues.length > 0 && (
+                    <div className="flex max-w-3xl flex-wrap gap-2">
+                      {routePreflightSummary.issues.map(issue => (
+                        <span
+                          key={issue.code}
+                          className="rounded-full border border-current/20 bg-white/60 px-2.5 py-1 text-xs font-medium dark:bg-black/10"
+                        >
+                          {t(issue.messageKey)}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
 
             <div className="min-h-0 flex-1 overflow-auto">
               {bindingLoading ? (

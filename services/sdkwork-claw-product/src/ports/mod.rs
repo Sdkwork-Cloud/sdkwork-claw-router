@@ -19,7 +19,6 @@ mod admin_messaging_store;
 mod admin_model_rate_limit_store;
 mod admin_model_store;
 mod admin_monitor_read_store;
-mod admin_open_platform_store;
 mod admin_prompt_store;
 mod admin_provider_secret_store;
 mod admin_record_store;
@@ -219,19 +218,6 @@ pub use admin_model_store::{
 pub use admin_monitor_read_store::{
     AdminMonitorAlert, AdminMonitorNode, AdminMonitorPerformanceDatum, AdminMonitorQuery,
     AdminMonitorReadFuture, AdminMonitorReadStore, AdminMonitorSubject,
-};
-pub use admin_open_platform_store::{
-    AdminOpenPlatformAccountItem, AdminOpenPlatformCommandFuture, AdminOpenPlatformEntryItem,
-    AdminOpenPlatformManifestItem, AdminOpenPlatformPayBindingItem, AdminOpenPlatformProviderItem,
-    AdminOpenPlatformStore, AdminOpenPlatformSubject, CreateAdminOpenPlatformAccountCommand,
-    CreateAdminOpenPlatformEntryCommand, CreateAdminOpenPlatformPayBindingCommand,
-    DeleteAdminOpenPlatformAccountCommand, DeleteAdminOpenPlatformEntryCommand,
-    DeleteAdminOpenPlatformPayBindingCommand, FindOpenPlatformQrDefaultEntryQuery,
-    GetAdminOpenPlatformAccountQuery, ListAdminOpenPlatformAccountsQuery,
-    ListAdminOpenPlatformEntriesQuery, ListAdminOpenPlatformManifestsQuery,
-    ListAdminOpenPlatformPayBindingsQuery, ListAdminOpenPlatformProvidersQuery,
-    OpenPlatformQrDefaultEntryItem, UpdateAdminOpenPlatformAccountCommand,
-    UpdateAdminOpenPlatformEntryCommand,
 };
 pub use admin_prompt_store::{
     AdminPromptBindingItem, AdminPromptCommandFuture, AdminPromptItem, AdminPromptStore,

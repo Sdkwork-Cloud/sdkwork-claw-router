@@ -52,20 +52,18 @@ client.SetHeader("X-Custom-Header", "value");
 
 - `client.Agents` - agents API
 - `client.Ai` - ai API
-- `client.Commerce` - commerce API
 - `client.Content` - content API
 - `client.Ecosystem` - ecosystem API
 - `client.Iam` - iam API
 - `client.Integration` - integration API
 - `client.Mcp` - mcp API
 - `client.Messaging` - messaging API
-- `client.OpenPlatform` - open_platform API
 - `client.Platform` - platform API
-- `client.System` - system API
 - `client.Prompts` - prompts API
 - `client.ServiceProviders` - service_providers API
 - `client.Sites` - sites API
 - `client.Storage` - storage API
+- `client.System` - system API
 
 ## Usage Examples
 
@@ -91,14 +89,6 @@ Console.WriteLine(result);
 ```csharp
 // List groups
 var result = await client.Ai.ChannelGroupsListAsync();
-Console.WriteLine(result);
-```
-
-### commerce
-
-```csharp
-// Commerce Reports Payment Reconciliation Retrieve
-var result = await client.Commerce.ReportsPaymentReconciliationRetrieveAsync();
 Console.WriteLine(result);
 ```
 
@@ -170,31 +160,11 @@ var result = await client.Messaging.ProviderAccountsListAsync(query);
 Console.WriteLine(result);
 ```
 
-### open_platform
-
-```csharp
-// List open platform providers
-var query = new Dictionary<string, object>
-{
-    ["status"] = "active",
-};
-var result = await client.OpenPlatform.ProvidersListAsync(query);
-Console.WriteLine(result);
-```
-
 ### platform
 
 ```csharp
 // List app categories
 var result = await client.Platform.AppsCategoriesListAsync();
-Console.WriteLine(result);
-```
-
-### system
-
-```csharp
-// Retrieve IAM auth runtime settings
-var result = await client.System.AuthSettingsRetrieveAsync();
 Console.WriteLine(result);
 ```
 
@@ -251,6 +221,14 @@ Console.WriteLine(result);
 ```csharp
 // List storage providers
 var result = await client.Storage.OssProvidersListAsync();
+Console.WriteLine(result);
+```
+
+### system
+
+```csharp
+// Retrieve IAM auth runtime settings
+var result = await client.System.AuthSettingsRetrieveAsync();
 Console.WriteLine(result);
 ```
 

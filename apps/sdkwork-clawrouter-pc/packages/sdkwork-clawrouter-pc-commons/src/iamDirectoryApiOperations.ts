@@ -1,19 +1,14 @@
 import { getSdkworkAppbaseAppSdkClient } from './sdk-clients.ts';
 
 export interface IamDirectoryListParams {
-  organization_id?: string;
   organizationId?: string;
-  department_id?: string;
   departmentId?: string;
-  user_id?: string;
   userId?: string;
-  scope_id?: string;
   scopeId?: string;
   status?: string;
   q?: string;
   cursor?: string;
   page?: number;
-  page_size?: number;
   pageSize?: number;
   sort?: string;
 }
@@ -66,11 +61,10 @@ function normalizeIamDirectoryListParams(params: IamDirectoryListParams | undefi
   if (!params) {
     return undefined;
   }
-  const pageSize = params.pageSize ?? params.page_size;
   return {
     ...(params.cursor ? { cursor: params.cursor } : {}),
     ...(params.page !== undefined ? { page: params.page } : {}),
-    ...(pageSize !== undefined ? { pageSize } : {}),
+    ...(params.pageSize !== undefined ? { pageSize: params.pageSize } : {}),
     ...(params.q ? { q: params.q } : {}),
     ...(params.sort ? { sort: params.sort } : {}),
   };

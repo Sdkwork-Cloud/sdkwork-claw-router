@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class AppChannelGroupListResponse
     {
-        public List<AppChannelGroup>? Items { get; set; }
+        public List<AppChannelGroup> Items { get; set; }
     }
 }

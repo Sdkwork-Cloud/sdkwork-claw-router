@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class GenerationHistoryResponse
     {
-        public List<GenerationHistoryItem>? Items { get; set; }
+        public List<GenerationHistoryItem> Items { get; set; }
     }
 }

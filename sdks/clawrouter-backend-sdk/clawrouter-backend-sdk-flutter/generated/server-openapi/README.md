@@ -46,20 +46,18 @@ client.setHeader('X-Custom-Header', 'value');
 
 - `client.agents` - agents API
 - `client.ai` - ai API
-- `client.commerce` - commerce API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.integration` - integration API
 - `client.mcp` - mcp API
 - `client.messaging` - messaging API
-- `client.openPlatform` - open_platform API
 - `client.platform` - platform API
-- `client.system` - system API
 - `client.prompts` - prompts API
 - `client.serviceProviders` - service_providers API
 - `client.sites` - sites API
 - `client.storage` - storage API
+- `client.system` - system API
 
 ## Usage Examples
 
@@ -82,13 +80,6 @@ print(result);
 ```dart
 // List groups
 final result = await client.ai.channelGroupsList();
-print(result);
-```
-
-### commerce
-```dart
-// Commerce Reports Payment Reconciliation Retrieve
-final result = await client.commerce.reportsPaymentReconciliationRetrieve();
 print(result);
 ```
 
@@ -152,27 +143,10 @@ final result = await client.messaging.providerAccountsList(params);
 print(result);
 ```
 
-### open_platform
-```dart
-// List open platform providers
-final params = <String, dynamic>{
-  'status': 'active',
-};
-final result = await client.openPlatform.providersList(params);
-print(result);
-```
-
 ### platform
 ```dart
 // List app categories
 final result = await client.platform.appsCategoriesList();
-print(result);
-```
-
-### system
-```dart
-// Retrieve IAM auth runtime settings
-final result = await client.system.authSettingsRetrieve();
 print(result);
 ```
 
@@ -222,6 +196,13 @@ print(result);
 ```dart
 // List storage providers
 final result = await client.storage.ossProvidersList();
+print(result);
+```
+
+### system
+```dart
+// Retrieve IAM auth runtime settings
+final result = await client.system.authSettingsRetrieve();
 print(result);
 ```
 

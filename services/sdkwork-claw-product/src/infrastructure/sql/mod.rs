@@ -6,6 +6,7 @@ pub mod catalog;
 pub(crate) mod course_seed;
 pub(crate) mod dashboard_overview_metrics;
 pub(crate) mod forum_seed;
+pub(crate) mod iam_seed_defaults;
 pub mod installer;
 pub(crate) mod model_catalog_import;
 pub(crate) mod model_modality;

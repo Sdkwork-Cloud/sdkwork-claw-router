@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class RuntimeArtifactCreateRequest
     {
-        public string? ArtifactType { get; set; }
+        public string ArtifactType { get; set; }
         public Dictionary<string, string>? ContentJson { get; set; }
         public string? ContentText { get; set; }
         public Dictionary<string, string>? Metadata { get; set; }

@@ -90,6 +90,13 @@ class ClawRouterSdkGuardian:
         r"\b(?:interface|type|class|enum)\s+NoData\b",
         flags=re.MULTILINE,
     )
+    SDK_WORKSPACE_SUPPORT_DIRECTORIES = frozenset(
+        {
+            "_route-manifests",
+            "_shared",
+            "test",
+        }
+    )
 
     APP_MODEL_CATALOG_PRIVATE_ITEM_FIELDS = ("lowestUpstreamCostUnitPrice",)
     APP_MODEL_CATALOG_PRIVATE_AVAILABILITY_FIELDS = (
@@ -141,7 +148,11 @@ class ClawRouterSdkGuardian:
             return []
 
         expected = {item.family_directory for item in self.EXPECTED}
-        actual = {item.name for item in self.sdk_root.iterdir() if item.is_dir()}
+        actual = {
+            item.name
+            for item in self.sdk_root.iterdir()
+            if item.is_dir() and item.name not in self.SDK_WORKSPACE_SUPPORT_DIRECTORIES
+        }
         return [
             f"unexpected generated SDK family is present: {self.sdk_root / family_directory}"
             for family_directory in sorted(actual - expected)

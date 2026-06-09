@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class MediaChecksum
     {
-        public string? Algorithm { get; set; }
-        public string? Value { get; set; }
+        public string Algorithm { get; set; }
+        public string Value { get; set; }
     }
 }

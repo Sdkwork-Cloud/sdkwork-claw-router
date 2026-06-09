@@ -6,6 +6,7 @@ use sha2::{Digest, Sha256};
 use sqlx::PgPool;
 
 use crate::domain::DomainError;
+use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
 use crate::ports::{
     GatewayRequestTraceCommand, GatewayUsageRecordCommand, GatewayUsageRecordFuture,
     GatewayUsageRecorder,
@@ -16,7 +17,7 @@ const SETTLEMENT_PENDING: i64 = 0;
 
 const UPSERT_TRACE: &str = r#"
 INSERT INTO ai_request_trace
-    (uuid, tenant_id, organization_id, user_id, request_id, trace_id, status, attempt_no,
+    (id, uuid, tenant_id, organization_id, user_id, request_id, trace_id, status, attempt_no,
      api_key_id, api_key_name_snapshot, channel_group_id, channel_group_snapshot,
      owner_type, owner_id, channel_id, channel_name_snapshot, requested_model,
      requested_model_catalog_key, provider_model, provider_native_model,
@@ -24,9 +25,9 @@ INSERT INTO ai_request_trace
      prompt_tokens, cached_tokens, completion_tokens, total_tokens, latency_ms, ttft_ms,
      provider_error_code, error_type, error_message_masked, metadata, user_agent_hash)
 VALUES
-    ($1, $2, $3, $4, $5, $6, 1, 1, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16,
-     $17, $18, $19, $20, $21, $22, $23, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, $24, $25, $26, $27, $28,
-     $29, $30, $31, $32, $33, $34::jsonb, $35)
+    ($1, $2, $3, $4, $5, $6, $7, 1, 1, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17,
+     $18, $19, $20, $21, $22, $23, $24, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, $25, $26, $27, $28,
+     $29, $30, $31, $32, $33, $34, $35::jsonb, $36)
 ON CONFLICT (tenant_id, organization_id, request_id, attempt_no) DO UPDATE SET
     trace_id = excluded.trace_id,
     api_key_id = excluded.api_key_id,
@@ -71,7 +72,7 @@ WHERE NOT EXISTS (
 
 const UPSERT_USAGE_FACT: &str = r#"
 INSERT INTO ai_usage_fact
-    (uuid, tenant_id, organization_id, user_id, request_id, trace_id, status,
+    (id, uuid, tenant_id, organization_id, user_id, request_id, trace_id, status,
      api_key_id, api_key_name_snapshot, channel_group_id, channel_group_snapshot,
      owner_type, owner_id, catalog_key, requested_model_catalog_key, model, provider_native_model,
      region_code, channel_id, modality, usage_type, billing_meter_code,
@@ -82,11 +83,11 @@ INSERT INTO ai_usage_fact
      official_reference_amount, upstream_cost_amount, customer_charge_amount, cost_amount,
      currency, pricing_plan_code, pricing_snapshot, occurred_at, settlement_status)
 VALUES
-    ($1, $2, $3, $4, $5, $6, 1, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16,
-     $17, $18, $19, $20, $21, $22::numeric, $23, $24, $25, $26, $27, $28, $29, $30, $31,
-     $32::numeric, $33::numeric, $34::numeric, $35::numeric, $36::numeric, $37::numeric,
-     $38::numeric, $39::numeric, $40::numeric, $41::numeric, $42::numeric, $43::numeric,
-     $44, $45, $46::jsonb, CURRENT_TIMESTAMP, $47)
+    ($1, $2, $3, $4, $5, $6, $7, 1, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17,
+     $18, $19, $20, $21, $22, $23::numeric, $24, $25, $26, $27, $28, $29, $30, $31, $32,
+     $33::numeric, $34::numeric, $35::numeric, $36::numeric, $37::numeric, $38::numeric,
+     $39::numeric, $40::numeric, $41::numeric, $42::numeric, $43::numeric, $44::numeric,
+     $45, $46, $47::jsonb, CURRENT_TIMESTAMP, $48)
 ON CONFLICT (tenant_id, organization_id, request_id, usage_type) DO UPDATE SET
     trace_id = excluded.trace_id,
     api_key_id = excluded.api_key_id,
@@ -174,6 +175,7 @@ async fn upsert_trace(
     let metadata = trace_metadata_json(command);
     let user_agent_hash = user_agent_hash(command);
     sqlx::query(UPSERT_TRACE)
+        .bind(next_claw_runtime_id("ai_request_trace")?)
         .bind(trace_uuid(command))
         .bind(command.tenant_id)
         .bind(command.organization_id)
@@ -220,6 +222,7 @@ async fn upsert_usage_fact(
     command: &GatewayUsageRecordCommand,
 ) -> Result<(), DomainError> {
     sqlx::query(UPSERT_USAGE_FACT)
+        .bind(next_claw_runtime_id("ai_usage_fact")?)
         .bind(usage_uuid(command))
         .bind(command.tenant_id)
         .bind(command.organization_id)

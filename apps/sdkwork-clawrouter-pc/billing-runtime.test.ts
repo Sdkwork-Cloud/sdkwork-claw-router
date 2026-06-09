@@ -369,7 +369,7 @@ test("recharge order service no longer exposes a frontend cancellation path for 
   assert.doesNotMatch(rechargeServiceSource, /static async cancelRechargeOrder/);
   assert.doesNotMatch(rechargeServiceSource, /commerce\.orders\.cancellations\.create/);
   assert.match(checkoutServiceSource, /appOrdersCancellationsCreate/);
-  assert.match(checkoutServiceSource, /commerce\.orders\.cancellations\.create/);
+  assert.match(checkoutServiceSource, /getSdkworkCommerceService\(\)\.orders\.cancellations\.create/);
 });
 
 test("console recharge page matches the product recharge reference layout", () => {
@@ -547,6 +547,65 @@ test("checkout status fails closed for malformed recharge order records", async 
       );
     },
   );
+});
+
+test("billing frontend services read the canonical app SDK requestPaymentPayload field only", () => {
+  for (const relativePath of [
+    "./packages/sdkwork-clawrouter-pc-console-recharge/src/rechargeService.ts",
+    "./packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts",
+    "./packages/sdkwork-clawrouter-pc-vip/src/vipService.ts",
+  ]) {
+    const source = readPortalFile(relativePath);
+
+    assert.match(source, /requestPaymentPayload/);
+    assert.doesNotMatch(source, /request_payment_payload/);
+    assert.doesNotMatch(source, /hasSnakeCase/);
+    assert.doesNotMatch(source, /hasCamelCase/);
+  }
+});
+
+test("billing frontend services read generated SDK camelCase response fields only", () => {
+  for (const relativePath of [
+    "./packages/sdkwork-clawrouter-pc-console-recharge/src/rechargeService.ts",
+    "./packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts",
+  ]) {
+    const source = readPortalFile(relativePath);
+    for (const forbidden of [
+      "provider_code",
+      "payment_method",
+      "payment_product",
+      "next_action",
+      "cashier_url",
+      "qr_code_payload",
+      "price_amount",
+      "currency_code",
+      "bonus_points",
+      "grant_amount",
+      "history_type",
+      "source_type",
+      "history_no",
+      "asset_type",
+      "points_delta",
+      "reference_no",
+      "source_id",
+      "related_order_no",
+      "occurred_at",
+      "created_at",
+      "total_amount",
+      "order_no",
+      "request_no",
+      "payment_status",
+      "pay_status",
+      "order_status",
+      "recharge_status",
+      "grant_status",
+      "out_trade_no",
+      "external_trade_no",
+      "paid_at",
+    ]) {
+      assert.doesNotMatch(source, new RegExp(escapeRegExp(forbidden)));
+    }
+  }
 });
 
 function checkoutStatusResponse(): Record<string, unknown> {

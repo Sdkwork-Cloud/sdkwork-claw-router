@@ -30,7 +30,6 @@ struct AdminServiceNodeState {
 #[derive(Debug, Deserialize)]
 struct AdminServiceNodeListQuery {
     q: Option<String>,
-    search: Option<String>,
     status: Option<String>,
 }
 
@@ -227,7 +226,7 @@ fn build_list_query(
 ) -> Result<ListAdminServiceNodesQuery, Response> {
     Ok(ListAdminServiceNodesQuery {
         subject,
-        search: optional_visible_text(query.q.or(query.search), "search", MAX_TEXT_LEN)?,
+        search: optional_visible_text(query.q, "q", MAX_TEXT_LEN)?,
         status: optional_status(query.status)?,
     })
 }

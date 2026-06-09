@@ -39,14 +39,13 @@ struct AppAgentRegistryState {
 }
 
 #[derive(Debug, Deserialize)]
-#[serde(rename_all = "camelCase")]
 struct AppAgentRegistryListQuery {
+    #[serde(default)]
     q: Option<String>,
+    #[serde(default)]
     page: Option<i64>,
-    #[serde(rename = "pageSize")]
-    page_size_camel: Option<i64>,
-    #[serde(rename = "page_size")]
-    page_size_snake: Option<i64>,
+    #[serde(default, rename = "page_size")]
+    page_size: Option<i64>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -322,7 +321,7 @@ fn required_subject(
 
 fn normalize_query(query: AppAgentRegistryListQuery) -> Result<AppAgentRegistryQuery, String> {
     let page_no = normalize_optional_positive_i64(query.page, "page")?;
-    let requested_page_size = query.page_size_snake.or(query.page_size_camel);
+    let requested_page_size = query.page_size;
     let page_size = normalize_optional_positive_i64(requested_page_size, "pageSize")?;
     if page_size.unwrap_or(1) > MAX_PAGE_SIZE {
         return Err(format!("pageSize must be at most {MAX_PAGE_SIZE}"));

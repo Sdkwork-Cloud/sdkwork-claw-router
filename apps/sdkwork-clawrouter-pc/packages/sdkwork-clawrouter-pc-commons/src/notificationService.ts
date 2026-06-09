@@ -4,8 +4,9 @@ import {
   readBoolean,
   readString,
 } from './api-result.ts';
-import { getClawRouterAppSdkClient } from './sdk-clients.ts';
+import { getClawRouterAppSdkClient, type ClawRouterAppSdkClient } from './sdk-clients.ts';
 import type {
+  SdkworkNotificationGeneratedClient,
   SdkworkNotificationItem,
   SdkworkNotificationService,
 } from '@sdkwork/notification-pc-react';
@@ -14,7 +15,7 @@ const DEFAULT_NOTIFICATION_APP_ID = 'claw-router';
 const DEFAULT_NOTIFICATION_PAGE = 1;
 const DEFAULT_NOTIFICATION_PAGE_SIZE = 50;
 
-type PortalNotificationClient = ReturnType<typeof getClawRouterAppSdkClient>;
+export type PortalNotificationClient = ClawRouterAppSdkClient & SdkworkNotificationGeneratedClient;
 
 export interface NotificationItem {
   actionUrl: string | null;
@@ -71,7 +72,15 @@ export function createPortalNotificationService(
 }
 
 export function getPortalNotificationClient(): PortalNotificationClient {
-  return getClawRouterAppSdkClient();
+  const client = getClawRouterAppSdkClient();
+  const notification = client.notification as ClawRouterAppSdkClient['notification'] &
+    Partial<SdkworkNotificationGeneratedClient['notification']>;
+  Object.assign(notification, {
+    listNotifications: client.notification.list.bind(client.notification),
+    acknowledge: client.notification.acknowledge,
+    popupSeen: client.notification.popupSeen,
+  });
+  return client as unknown as PortalNotificationClient;
 }
 
 export function getPortalNotificationAppId(): string {

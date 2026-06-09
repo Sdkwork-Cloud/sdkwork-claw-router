@@ -1115,9 +1115,7 @@ function getDurationText(pkg: VipPackage, t: TranslationFunction): string {
 
 function getPurchaseButtonText(pkg: VipPackage, t: TranslationFunction): string {
   if (!pkg.isPurchasable) {
-    return pkg.isPreview
-      ? t('vip.previewOnly', 'Preview only')
-      : t('vip.purchaseUnavailableShort', 'Unavailable');
+    return t('vip.purchaseUnavailableShort', 'Unavailable');
   }
   if (pkg.recurrenceCycle.includes('yearly') || pkg.durationDays >= 300) {
     return t('vip.buyAnnual', 'Buy annual plan');

@@ -55,20 +55,18 @@ val client = SdkworkBackendClient(config)
 
 - `client.agents` - agents API
 - `client.ai` - ai API
-- `client.commerce` - commerce API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.integration` - integration API
 - `client.mcp` - mcp API
 - `client.messaging` - messaging API
-- `client.openPlatform` - open_platform API
 - `client.platform` - platform API
-- `client.system` - system API
 - `client.prompts` - prompts API
 - `client.serviceProviders` - service_providers API
 - `client.sites` - sites API
 - `client.storage` - storage API
+- `client.system` - system API
 
 ## Usage Examples
 
@@ -93,14 +91,6 @@ println(result)
 ```kotlin
 // List groups
 val result = client.ai.channelGroupsList()
-println(result)
-```
-
-### commerce
-
-```kotlin
-// Commerce Reports Payment Reconciliation Retrieve
-val result = client.commerce.reportsPaymentReconciliationRetrieve()
 println(result)
 ```
 
@@ -170,30 +160,11 @@ val result = client.messaging.providerAccountsList(params)
 println(result)
 ```
 
-### open_platform
-
-```kotlin
-// List open platform providers
-val params = linkedMapOf<String, Any>(
-    "status" to "active"
-)
-val result = client.openPlatform.providersList(params)
-println(result)
-```
-
 ### platform
 
 ```kotlin
 // List app categories
 val result = client.platform.appsCategoriesList()
-println(result)
-```
-
-### system
-
-```kotlin
-// Retrieve IAM auth runtime settings
-val result = client.system.authSettingsRetrieve()
 println(result)
 ```
 
@@ -247,6 +218,14 @@ println(result)
 ```kotlin
 // List storage providers
 val result = client.storage.ossProvidersList()
+println(result)
+```
+
+### system
+
+```kotlin
+// Retrieve IAM auth runtime settings
+val result = client.system.authSettingsRetrieve()
 println(result)
 ```
 

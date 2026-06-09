@@ -1,7 +1,7 @@
 use std::future::Future;
 use std::pin::Pin;
 
-use serde::{Deserialize, Serialize};
+use serde::Serialize;
 
 use crate::domain::DomainResult;
 
@@ -15,24 +15,15 @@ pub struct AppIamDirectorySubject {
     pub user_id: i64,
 }
 
-#[derive(Debug, Clone, Default, Deserialize, PartialEq, Eq)]
-#[serde(rename_all = "camelCase")]
+#[derive(Debug, Clone, Default, PartialEq, Eq)]
 pub struct AppIamDirectoryQuery {
-    #[serde(default, alias = "organization_id")]
     pub organization_id: Option<String>,
-    #[serde(default, alias = "department_id")]
     pub department_id: Option<String>,
-    #[serde(default, alias = "user_id")]
     pub user_id: Option<String>,
-    #[serde(default, alias = "scope_id")]
     pub scope_id: Option<String>,
-    #[serde(default)]
     pub status: Option<String>,
-    #[serde(default)]
     pub q: Option<String>,
-    #[serde(default)]
     pub page: Option<i64>,
-    #[serde(default, alias = "page_size")]
     pub page_size: Option<i64>,
 }
 

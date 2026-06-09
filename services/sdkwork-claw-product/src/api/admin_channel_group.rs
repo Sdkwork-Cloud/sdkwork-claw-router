@@ -159,6 +159,32 @@ struct AdminChannelGroupChannelBindingListResponse {
 
 #[derive(Debug, Serialize)]
 #[serde(rename_all = "camelCase")]
+struct AdminChannelGroupRouteExplainResponse {
+    source: &'static str,
+    ready: bool,
+    issue_codes: Vec<String>,
+    issues: Vec<AdminChannelGroupRouteExplainIssueResponse>,
+    resource_codes: Vec<String>,
+    resource_group_codes: Vec<String>,
+    effective_resource_codes: Vec<String>,
+    configured_resource_access_count: usize,
+    configured_resource_group_access_count: usize,
+    api_scope: Vec<String>,
+    capabilities: Vec<String>,
+    active_healthy_binding_count: usize,
+    routable_binding_count: usize,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct AdminChannelGroupRouteExplainIssueResponse {
+    code: &'static str,
+    severity: &'static str,
+    details: Vec<String>,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
 struct AdminChannelGroupItemResponse {
     id: String,
     group_code: String,
@@ -228,6 +254,10 @@ pub fn admin_channel_group_router_with_store(
         .route(
             "/backend/v3/api/ai/channel_groups/{channelGroupId}",
             patch(update_channel_group).delete(delete_channel_group),
+        )
+        .route(
+            "/backend/v3/api/ai/channel_groups/{channelGroupId}/route_explain",
+            get(fetch_channel_group_route_explain),
         )
         .route(
             "/backend/v3/api/ai/channel_groups/{channelGroupId}/channel_bindings",
@@ -324,6 +354,50 @@ async fn replace_channel_group_channel_bindings(
         Err(error) if error.is_conflict() => conflict_response(error),
         Err(error) => channel_group_system_response(
             "channel group channel binding command store is unavailable",
+            error,
+        ),
+    }
+}
+
+async fn fetch_channel_group_route_explain(
+    State(state): State<AdminChannelGroupState>,
+    headers: HeaderMap,
+    Path(group_id): Path<String>,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let group_id = match parse_positive_id(&group_id, "channel group id") {
+        Ok(group_id) => group_id,
+        Err(message) => return bad_request(message),
+    };
+
+    let group = match state
+        .store
+        .list_channel_groups(ListAdminChannelGroupsQuery { subject })
+        .await
+    {
+        Ok(items) => match items.into_iter().find(|item| item.id == group_id) {
+            Some(item) => item,
+            None => return not_found_response("channel group was not found"),
+        },
+        Err(error) => {
+            return channel_group_system_response("channel group read model is unavailable", error);
+        }
+    };
+
+    match state
+        .store
+        .list_channel_bindings(ListAdminChannelGroupChannelBindingsQuery { subject, group_id })
+        .await
+    {
+        Ok(bindings) => Json(PlusApiResult::success(build_channel_group_route_explain(
+            &group, &bindings,
+        )))
+        .into_response(),
+        Err(error) => channel_group_system_response(
+            "channel group channel binding read model is unavailable",
             error,
         ),
     }
@@ -881,6 +955,206 @@ fn parse_positive_id(value: &str, field_name: &str) -> Result<i64, String> {
         return Err(format!("{field_name} must be a positive integer"));
     }
     Ok(id)
+}
+
+fn build_channel_group_route_explain(
+    group: &AdminChannelGroupItem,
+    bindings: &[AdminChannelGroupChannelBindingItem],
+) -> AdminChannelGroupRouteExplainResponse {
+    let resource_codes = normalize_explain_string_list(&group.resource_codes);
+    let resource_group_codes = normalize_explain_string_list(&group.resource_group_codes);
+    let active_healthy_bindings = bindings
+        .iter()
+        .filter(|binding| binding.status == "active" && binding.health_status == "active")
+        .collect::<Vec<_>>();
+    let active_healthy_binding_resource_codes = active_healthy_bindings
+        .iter()
+        .map(|binding| normalize_explain_string_list(&binding.resource_codes))
+        .collect::<Vec<_>>();
+    let api_scope = normalize_explain_string_list(
+        &active_healthy_bindings
+            .iter()
+            .flat_map(|binding| binding.api_scope.iter().cloned())
+            .collect::<Vec<_>>(),
+    );
+    let capabilities = normalize_explain_string_list(
+        &active_healthy_bindings
+            .iter()
+            .flat_map(|binding| binding.capabilities.iter().cloned())
+            .collect::<Vec<_>>(),
+    );
+    let effective_resource_codes = resolve_effective_explain_resource_codes(
+        &resource_codes,
+        &active_healthy_binding_resource_codes,
+    );
+    let routable_binding_count =
+        count_routable_explain_bindings(&resource_codes, &active_healthy_binding_resource_codes);
+    let issues = build_channel_group_route_explain_issues(
+        group,
+        bindings,
+        &resource_codes,
+        &resource_group_codes,
+        &active_healthy_bindings,
+        &active_healthy_binding_resource_codes,
+    );
+    let configured_resource_access_count = resource_codes.len() + resource_group_codes.len();
+    let configured_resource_group_access_count = resource_group_codes.len();
+
+    AdminChannelGroupRouteExplainResponse {
+        source: "backend_config",
+        ready: issues.iter().all(|issue| issue.severity != "blocking"),
+        issue_codes: issues.iter().map(|issue| issue.code.to_owned()).collect(),
+        issues,
+        resource_codes,
+        resource_group_codes: resource_group_codes.clone(),
+        effective_resource_codes,
+        configured_resource_access_count,
+        configured_resource_group_access_count,
+        api_scope,
+        capabilities,
+        active_healthy_binding_count: active_healthy_bindings.len(),
+        routable_binding_count,
+    }
+}
+
+fn build_channel_group_route_explain_issues(
+    group: &AdminChannelGroupItem,
+    bindings: &[AdminChannelGroupChannelBindingItem],
+    resource_codes: &[String],
+    resource_group_codes: &[String],
+    active_healthy_bindings: &[&AdminChannelGroupChannelBindingItem],
+    active_healthy_binding_resource_codes: &[Vec<String>],
+) -> Vec<AdminChannelGroupRouteExplainIssueResponse> {
+    let mut issues = Vec::new();
+
+    if group.status != "active" {
+        issues.push(channel_group_route_explain_issue(
+            "group.disabled",
+            "blocking",
+            Vec::new(),
+        ));
+    }
+    if group.account_available <= 0 {
+        issues.push(channel_group_route_explain_issue(
+            "group.account_count.empty",
+            "blocking",
+            Vec::new(),
+        ));
+    }
+    if resource_codes.is_empty() && resource_group_codes.is_empty() {
+        issues.push(channel_group_route_explain_issue(
+            "group.resource_access.empty",
+            "blocking",
+            Vec::new(),
+        ));
+    }
+    if bindings.is_empty() {
+        issues.push(channel_group_route_explain_issue(
+            "group.bindings.empty",
+            "blocking",
+            Vec::new(),
+        ));
+    } else if active_healthy_bindings.is_empty() {
+        issues.push(channel_group_route_explain_issue(
+            "group.bindings.no_active_healthy_member",
+            "blocking",
+            Vec::new(),
+        ));
+    }
+
+    let explicit_binding_resource_codes = active_healthy_binding_resource_codes
+        .iter()
+        .filter(|binding_resource_codes| !binding_resource_codes.is_empty())
+        .collect::<Vec<_>>();
+    if !resource_codes.is_empty()
+        && !explicit_binding_resource_codes.is_empty()
+        && !explicit_binding_resource_codes
+            .iter()
+            .any(|binding_resource_codes| {
+                has_any_explain_overlap(resource_codes, binding_resource_codes)
+            })
+    {
+        issues.push(channel_group_route_explain_issue(
+            "group.bindings.no_resource_overlap",
+            "warning",
+            resource_codes.to_vec(),
+        ));
+    }
+    if active_healthy_bindings.iter().any(|binding| {
+        normalize_explain_string_list(&binding.api_scope).is_empty()
+            && normalize_explain_string_list(&binding.capabilities).is_empty()
+    }) {
+        issues.push(channel_group_route_explain_issue(
+            "group.bindings.missing_scope_metadata",
+            "warning",
+            Vec::new(),
+        ));
+    }
+
+    issues
+}
+
+fn channel_group_route_explain_issue(
+    code: &'static str,
+    severity: &'static str,
+    details: Vec<String>,
+) -> AdminChannelGroupRouteExplainIssueResponse {
+    AdminChannelGroupRouteExplainIssueResponse {
+        code,
+        severity,
+        details,
+    }
+}
+
+fn resolve_effective_explain_resource_codes(
+    group_resource_codes: &[String],
+    binding_resource_codes: &[Vec<String>],
+) -> Vec<String> {
+    let mut effective = Vec::new();
+    let mut seen = std::collections::BTreeSet::new();
+    for binding_codes in binding_resource_codes {
+        for code in binding_codes {
+            if (group_resource_codes.is_empty() || group_resource_codes.contains(code))
+                && seen.insert(code.clone())
+            {
+                effective.push(code.clone());
+            }
+        }
+    }
+    effective
+}
+
+fn count_routable_explain_bindings(
+    group_resource_codes: &[String],
+    binding_resource_codes: &[Vec<String>],
+) -> usize {
+    binding_resource_codes
+        .iter()
+        .filter(|resource_codes| {
+            resource_codes.is_empty()
+                || group_resource_codes.is_empty()
+                || has_any_explain_overlap(group_resource_codes, resource_codes)
+        })
+        .count()
+}
+
+fn has_any_explain_overlap(left: &[String], right: &[String]) -> bool {
+    right.iter().any(|value| left.contains(value))
+}
+
+fn normalize_explain_string_list(values: &[String]) -> Vec<String> {
+    let mut normalized = Vec::new();
+    let mut seen = std::collections::BTreeSet::new();
+    for value in values {
+        let value = value.trim();
+        if value.is_empty() {
+            continue;
+        }
+        if seen.insert(value.to_owned()) {
+            normalized.push(value.to_owned());
+        }
+    }
+    normalized
 }
 
 fn build_create_command(

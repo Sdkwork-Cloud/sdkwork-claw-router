@@ -403,12 +403,12 @@ async fn insert_usage_fact_for_model(pool: &sqlx::SqlitePool, model: &InstalledM
     sqlx::query(
         r#"
         INSERT INTO ai_usage_fact
-            (uuid, tenant_id, organization_id, user_id, request_id, status, metadata,
+            (id, uuid, tenant_id, organization_id, user_id, request_id, status, metadata,
              catalog_key, model, modality, usage_type, billing_meter_code, request_count,
              prompt_tokens, completion_tokens, total_tokens, billable_quantity, cost_amount,
              currency, pricing_snapshot, occurred_at)
         VALUES
-            ('usage-model-ranking-e2e', 10, 20, 30, 'model-ranking-e2e-request', 1, '{}',
+            (9001, 'usage-model-ranking-e2e', 10, 20, 30, 'model-ranking-e2e-request', 1, '{}',
              ?, ?, 1, 1, 'llm_input_token', 7,
              700, 300, 1000, '1000', '1.250000',
              'USD', '{"source":"migration-test"}', strftime('%Y-%m-%dT%H:%M:%SZ', 'now', '-1 day'))

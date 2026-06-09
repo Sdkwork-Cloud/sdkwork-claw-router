@@ -21,12 +21,7 @@ client.setAuthToken('your-auth-token');
 client.setAccessToken('your-access-token');
 
 // Use the SDK
-final body = IamVerificationCodeCreateRequest(
-  scene: 'LOGIN',
-  target: 'target',
-  verifyType: 'EMAIL',
-);
-final result = await client.auth.verificationCodesCreate(body);
+final result = await client.auth.sessionsCurrentRetrieve();
 print(result);
 ```
 
@@ -49,7 +44,6 @@ client.setHeader('X-Custom-Header', 'value');
 
 ## API Modules
 
-- `client.commerce` - commerce API
 - `client.agents` - agents API
 - `client.ai` - ai API
 - `client.auth` - auth API
@@ -60,18 +54,11 @@ client.setHeader('X-Custom-Header', 'value');
 - `client.memory` - memory API
 - `client.notification` - notification API
 - `client.platform` - platform API
-- `client.system` - system API
 - `client.runtime` - runtime API
 - `client.sdkReference` - sdk_reference API
+- `client.system` - system API
 
 ## Usage Examples
-
-### commerce
-```dart
-// Accounts Current Summary Retrieve
-final result = await client.commerce.accountsCurrentSummaryRetrieve();
-print(result);
-```
 
 ### agents
 ```dart
@@ -94,13 +81,8 @@ print(result);
 
 ### auth
 ```dart
-// Create verification code
-final body = IamVerificationCodeCreateRequest(
-  scene: 'LOGIN',
-  target: 'target',
-  verifyType: 'EMAIL',
-);
-final result = await client.auth.verificationCodesCreate(body);
+// Retrieve current IAM session
+final result = await client.auth.sessionsCurrentRetrieve();
 print(result);
 ```
 
@@ -167,16 +149,6 @@ final result = await client.platform.appsStoreCategoriesList();
 print(result);
 ```
 
-### system
-```dart
-// Promotion User Coupons Wallet List
-final params = <String, dynamic>{
-  'status': 'status',
-};
-final result = await client.system.promotionsUserCouponsWalletList(params);
-print(result);
-```
-
 ### runtime
 ```dart
 // List runtime invocations
@@ -205,16 +177,18 @@ final result = await client.sdkReference.archivesCreate(body);
 print(result);
 ```
 
+### system
+```dart
+// Retrieve public IAM verification policy
+final result = await client.system.iamVerificationPolicyRetrieve();
+print(result);
+```
+
 ## Error Handling
 
 ```dart
 try {
-  final body = IamVerificationCodeCreateRequest(
-    scene: 'LOGIN',
-    target: 'target',
-    verifyType: 'EMAIL',
-  );
-  final result = await client.auth.verificationCodesCreate(body);
+  final result = await client.auth.sessionsCurrentRetrieve();
   print(result);
 } catch (e) {
   print('Error: $e');

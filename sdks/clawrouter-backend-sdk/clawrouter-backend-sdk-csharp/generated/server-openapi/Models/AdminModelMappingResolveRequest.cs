@@ -10,7 +10,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? ChannelId { get; set; }
         public string? ProviderAccountCode { get; set; }
         public string? ProviderAccountId { get; set; }
-        public string? SourceModel { get; set; }
+        public string SourceModel { get; set; }
         public string? VendorCode { get; set; }
     }
 }

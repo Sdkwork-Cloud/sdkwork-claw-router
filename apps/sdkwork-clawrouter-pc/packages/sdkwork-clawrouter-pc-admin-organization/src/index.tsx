@@ -63,10 +63,15 @@ type OrganizationDialog =
   | { kind: 'permission'; mode: 'edit'; target: PermissionRecord }
   | { kind: 'rolePermission'; mode: 'create'; target?: undefined };
 
+type OrganizationDialogSubmitResult =
+  | { kind: 'organization'; item: OrganizationRecord }
+  | { kind: 'department'; item: DepartmentRecord }
+  | null;
+
 type AssignmentDrawerState = 'departmentAssignments' | 'positionAssignments';
 type AuthorizationDrawerState = 'roles' | 'rolePermissions' | 'roleBindings';
-type ChooseUserModalState = { organizationId: string } | null;
 type ChooseUserSelectionMode = 'single' | 'multiple';
+type ChooseUserModalState = { organizationId: string; departmentId?: string; selectionMode?: ChooseUserSelectionMode } | null;
 type ConfirmDependency = { count: number; label: string };
 type ConfirmTargetBase = { id: string; label: string; dependencies?: ConfirmDependency[]; blocked?: boolean };
 type ConfirmTarget =
@@ -473,9 +478,10 @@ export function OrganizationAdmin() {
     setBusy(true);
     setActionError(null);
     try {
-      await submitDialog(dialog, form, activeOrganizationIdForRelations, activeDepartmentIdForRelations);
+      const submitResult = await submitDialog(dialog, form, activeOrganizationIdForRelations, activeDepartmentIdForRelations);
       setDialog(null);
       await loadDirectory();
+      setCreatedDirectorySelection(submitResult);
     } catch (error) {
       setActionError(getErrorMessage(error, t('admin.organization.errors.actionFailed', 'Action failed')));
     } finally {
@@ -483,23 +489,41 @@ export function OrganizationAdmin() {
     }
   };
 
-  async function handleChooseUser(user: UserRecord): Promise<void> {
-    if (!chooseUserModal) {
+  function setCreatedDirectorySelection(result: OrganizationDialogSubmitResult): void {
+    if (!result) {
       return;
     }
+    if (result.kind === 'organization') {
+      setActiveOrganizationId(result.item.id);
+      setActiveDepartmentId('');
+      setExpandedDirectoryNodeIds((current) => expandDirectoryNode(current, `organization:${result.item.id}`));
+      return;
+    }
+    setActiveOrganizationId(result.item.organizationId);
+    setActiveDepartmentId(result.item.id);
+    setExpandedDirectoryNodeIds((current) => {
+      const withOrganization = expandDirectoryNode(current, `organization:${result.item.organizationId}`);
+      const withParentDepartment = result.item.parentDepartmentId
+        ? expandDirectoryPath(withOrganization, combinedDirectoryTree, `department:${result.item.parentDepartmentId}`)
+        : withOrganization;
+      return expandDirectoryNode(withParentDepartment, `department:${result.item.id}`);
+    });
+  }
+
+  async function handleChooseUsers(users: UserRecord[]): Promise<void> {
+    if (!chooseUserModal || users.length === 0) {
+      return;
+    }
+    const targetDepartmentId = chooseUserModal.departmentId;
     setBusy(true);
     setActionError(null);
     try {
-      await OrganizationService.createMembership({
-        organizationId: chooseUserModal.organizationId,
-        userId: user.id,
-        displayName: user.displayName,
-        username: user.username,
-        email: user.email,
-        mobile: user.mobile,
-        memberKind: 'member',
-        status: 'active',
-      });
+      await Promise.all(users.map(async (user) => {
+        const membership = await ensureOrganizationMemberForUser(user, chooseUserModal.organizationId, directory.memberships);
+        if (targetDepartmentId) {
+          await ensureDepartmentAssignmentForMember(targetDepartmentId, membership, directory.departmentAssignments);
+        }
+      }));
       setChooseUserModal(null);
       await loadDirectory();
     } catch (error) {
@@ -667,7 +691,7 @@ export function OrganizationAdmin() {
                         onSelect: () => {
                           handleDirectoryNodeSelect(node);
                           setActiveTab('members');
-                          setChooseUserModal({ organizationId: node.organizationId });
+                          setChooseUserModal({ organizationId: node.organizationId, departmentId: node.nodeKind === 'department' ? node.departmentId : undefined });
                         },
                       } : null,
                       department && isActiveRecord(department) ? {
@@ -929,12 +953,15 @@ export function OrganizationAdmin() {
 
       {chooseUserModal ? (
         <ChooseUserModal
-          existingMembers={membersForActiveOrganization}
+          departmentAssignments={directory.departmentAssignments}
+          existingMembers={directory.memberships}
           isBusy={busy}
           lookups={lookups}
           onCancel={() => setChooseUserModal(null)}
-          onChoose={handleChooseUser}
+          onChooseUsers={handleChooseUsers}
           organizationId={chooseUserModal.organizationId}
+          targetDepartmentId={chooseUserModal.departmentId}
+          selectionMode={chooseUserModal.selectionMode ?? 'multiple'}
           t={t}
           users={directory.users}
         />
@@ -1315,7 +1342,7 @@ function MembersTab({
                 <td className="px-4 py-3 text-slate-600 dark:text-slate-300">{memberUserAddress(member, lookups)}</td>
                 <td className="px-4 py-3 text-slate-600 dark:text-slate-300">{memberUserGender(member, lookups, t)}</td>
                 <td className="px-4 py-3">{member.memberKind}</td>
-                <td className="px-4 py-3"><StatusPill status={member.status} /></td>
+                <td className="px-4 py-3"><StatusPill status={member.status} t={t} /></td>
                 <td className="px-4 py-3 text-slate-500">{member.joinedAt || '-'}</td>
                 <td className="px-4 py-3 text-right">
                   <div className="flex justify-end gap-2">
@@ -1412,7 +1439,7 @@ function PositionsTab({
                 </td>
                 <td className="px-4 py-3 text-slate-600 dark:text-slate-300">{formatDepartmentLabel(position.departmentId, lookups)}</td>
                 <td className="px-4 py-3 tabular-nums">{position.rankLevel}</td>
-                <td className="px-4 py-3"><StatusPill status={position.status} /></td>
+                <td className="px-4 py-3"><StatusPill status={position.status} t={t} /></td>
                 <td className="px-4 py-3 text-right">
                   <div className="flex justify-end gap-2">
                     <TextButton label={t('common.actions.edit', 'Edit')} onClick={() => onEdit(position)} />
@@ -1468,8 +1495,8 @@ function AssignmentDrawer({
     : <SmallButton label={t('admin.organization.actions.assign', 'Assign')} onClick={onAddPositionAssignment} disabled={!canAddPositionAssignment} />;
 
   return (
-    <div className="fixed inset-0 z-40 flex justify-end bg-slate-950/40 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label={title}>
-      <div className="flex h-full w-full max-w-3xl flex-col bg-white shadow-2xl dark:bg-[#171717]">
+    <div className="fixed inset-0 z-[70] flex justify-end bg-slate-950/40 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label={title} onClick={onClose}>
+      <div className="flex h-full w-full max-w-3xl flex-col bg-white shadow-2xl dark:bg-[#171717]" onClick={(event) => event.stopPropagation()}>
         <div className="flex shrink-0 items-center justify-between gap-3 border-b border-slate-200 px-5 py-4 dark:border-white/10">
           <div className="min-w-0">
             <div className="text-sm font-semibold text-slate-950 dark:text-white">{title}</div>
@@ -1508,7 +1535,7 @@ function AssignmentDrawer({
                       </td>
                       <td className="px-4 py-3 text-slate-600 dark:text-slate-300">{formatDepartmentLabel(assignment.departmentId, lookups)}</td>
                       <td className="px-4 py-3">{assignment.role}</td>
-                      <td className="px-4 py-3"><StatusPill status={assignment.status} /></td>
+                      <td className="px-4 py-3"><StatusPill status={assignment.status} t={t} /></td>
                       <td className="px-4 py-3 text-right">
                         <div className="flex justify-end gap-2">
                           <TextButton label={t('common.actions.edit', 'Edit')} onClick={() => onEditDepartmentAssignment(assignment)} />
@@ -1542,7 +1569,7 @@ function AssignmentDrawer({
                     <tr key={assignment.id} className="hover:bg-slate-50 dark:hover:bg-white/5">
                       <td className="px-4 py-3">{formatPositionLabel(assignment.positionId, lookups)}</td>
                       <td className="px-4 py-3">{formatMemberLabel(assignment.membershipId, assignment.userId, lookups)}</td>
-                      <td className="px-4 py-3"><StatusPill status={assignment.status} /></td>
+                      <td className="px-4 py-3"><StatusPill status={assignment.status} t={t} /></td>
                       <td className="px-4 py-3 text-slate-500">{assignment.startedAt || '-'}</td>
                       <td className="px-4 py-3 text-right">
                         <div className="flex justify-end gap-2">
@@ -1705,8 +1732,8 @@ function AuthorizationDrawer({
       : <SmallButton label={t('admin.organization.actions.bindRole', 'Bind')} onClick={onBindRole} disabled={!canBindRole} />;
 
   return (
-    <div className="fixed inset-0 z-40 flex justify-end bg-slate-950/40 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label={title}>
-      <div className="flex h-full w-full max-w-5xl flex-col overflow-hidden border-l border-slate-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#171717]">
+    <div className="fixed inset-0 z-[70] flex justify-end bg-slate-950/40 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label={title} onClick={onClose}>
+      <div className="flex h-full w-full max-w-5xl flex-col overflow-hidden border-l border-slate-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#171717]" onClick={(event) => event.stopPropagation()}>
         <div className="flex items-start justify-between gap-4 border-b border-slate-200 px-5 py-4 dark:border-white/10">
           <div>
             <div className="flex items-center gap-2 text-sm font-semibold text-slate-900 dark:text-white">
@@ -1749,7 +1776,7 @@ function AuthorizationDrawer({
                       <div className="font-medium text-slate-900 dark:text-white">{role.name}</div>
                       <div className="text-xs text-slate-500">{role.code || role.id}</div>
                     </td>
-                    <td className="px-4 py-3"><StatusPill status={role.status} /></td>
+                    <td className="px-4 py-3"><StatusPill status={role.status} t={t} /></td>
                     <td className="px-4 py-3 text-slate-600 dark:text-slate-300">{role.description || '-'}</td>
                     <td className="px-4 py-3 text-right">
                       <div className="flex justify-end gap-2">
@@ -1824,7 +1851,7 @@ function AuthorizationDrawer({
                     </td>
                     <td className="px-4 py-3 text-slate-600 dark:text-slate-300">{formatRoleLabel(binding.roleId, lookups)}</td>
                     <td className="px-4 py-3 text-slate-500">{formatRoleBindingScopeLabel(binding, lookups)}</td>
-                    <td className="px-4 py-3"><StatusPill status={binding.status} /></td>
+                    <td className="px-4 py-3"><StatusPill status={binding.status} t={t} /></td>
                     <td className="px-4 py-3 text-right"><TextButton label={t('common.actions.delete', 'Delete')} onClick={() => onDeleteBinding(binding)} danger /></td>
                   </tr>
                 ))}
@@ -1883,37 +1910,47 @@ function ListQueryControl({
 }
 
 function ChooseUserModal({
+  departmentAssignments,
   existingMembers,
   isBusy,
   lookups,
   onCancel,
-  onChoose,
-  onChooseMany,
+  onChooseUsers,
   organizationId,
-  selectionMode = 'single',
+  selectionMode = 'multiple',
+  targetDepartmentId,
   t,
   users,
 }: {
+  departmentAssignments: DepartmentAssignmentRecord[];
   existingMembers: OrganizationMemberRecord[];
   isBusy: boolean;
   lookups: DirectoryLookups;
   onCancel: () => void;
-  onChoose: (user: UserRecord) => void | Promise<void>;
-  onChooseMany?: (users: UserRecord[]) => void | Promise<void>;
+  onChooseUsers: (users: UserRecord[]) => void | Promise<void>;
   organizationId: string;
   selectionMode?: ChooseUserSelectionMode;
+  targetDepartmentId?: string;
   t: TranslationFunction;
   users: UserRecord[];
 }) {
+  const [queryInput, setQueryInput] = useState('');
   const [query, setQuery] = useState('');
   const [selectedUserIds, setSelectedUserIds] = useState<Set<string>>(() => new Set());
   const normalizedQuery = query.trim().toLowerCase();
-  const availableUsers = availableUsersForMembership(users, existingMembers, organizationId);
+  const availableUsers = availableUsersForMembership(users, existingMembers, organizationId, departmentAssignments, targetDepartmentId);
   const visibleUsers = filterBySearchWithLabels(availableUsers, normalizedQuery, userSearchLabels);
-  const isMultipleSelection = selectionMode === 'multiple';
+
+  function handleUserQuerySubmit(event?: FormEvent<HTMLFormElement>): void {
+    event?.preventDefault();
+    setQuery(queryInput);
+  }
 
   function toggleSelectedUser(userId: string): void {
     setSelectedUserIds((current) => {
+      if (selectionMode === 'single') {
+        return current.has(userId) ? new Set<string>() : new Set<string>([userId]);
+      }
       const nextSelectedUserIds = new Set(current);
       if (nextSelectedUserIds.has(userId)) {
         nextSelectedUserIds.delete(userId);
@@ -1926,16 +1963,12 @@ function ChooseUserModal({
 
   async function handleChooseSelectedUsers(): Promise<void> {
     const selectedUsers = availableUsers.filter((user) => selectedUserIds.has(user.id));
-    if (onChooseMany) {
-      await onChooseMany(selectedUsers);
-      return;
-    }
-    await Promise.all(selectedUsers.map(onChoose));
+    await onChooseUsers(selectedUsers);
   }
 
   return (
-    <div className="fixed inset-0 z-40 flex items-center justify-center bg-slate-950/40 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label={t('admin.organization.chooseUser.title', 'Choose user')}>
-      <div className="flex h-[min(760px,calc(100vh-48px))] w-full max-w-5xl flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#171717]">
+    <div className="fixed inset-0 z-[70] flex items-center justify-center bg-slate-950/40 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label={t('admin.organization.chooseUser.title', 'Choose user')}>
+      <div className="flex h-[min(760px,calc(100vh-48px))] w-full max-w-[min(1280px,calc(100vw-32px))] flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#171717]">
         <div className="flex shrink-0 items-center justify-between gap-4 border-b border-slate-200 px-5 py-4 dark:border-white/10">
           <div className="min-w-0">
             <div className="text-sm font-semibold text-slate-950 dark:text-white">{t('admin.organization.chooseUser.title', 'Choose user')}</div>
@@ -1948,48 +1981,54 @@ function ChooseUserModal({
           </button>
         </div>
         <div className="flex shrink-0 items-center gap-3 border-b border-slate-200 px-5 py-3 dark:border-white/10">
-          <div className="relative w-full sm:w-[360px]">
-            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
-            <input
-              aria-label={t('admin.organization.search.users', 'Search users...')}
-              className="h-10 w-full rounded-lg border border-slate-200 bg-white py-2 pl-9 pr-3 text-sm text-slate-900 shadow-sm outline-none transition-colors placeholder:text-slate-500 focus:border-blue-500 dark:border-white/10 dark:bg-[#1e1e1e] dark:text-white"
-              onChange={(event) => setQuery(event.target.value)}
-              placeholder={t('admin.organization.search.users', 'Search users...')}
-              type="search"
-              value={query}
-            />
-          </div>
+          <form className="flex w-full items-center gap-2 sm:w-[420px]" onSubmit={handleUserQuerySubmit}>
+            <div className="relative min-w-0 flex-1">
+              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+              <input
+                aria-label={t('admin.organization.search.users', 'Search users...')}
+                className="h-10 w-full rounded-lg border border-slate-200 bg-white py-2 pl-9 pr-3 text-sm text-slate-900 shadow-sm outline-none transition-colors placeholder:text-slate-500 focus:border-blue-500 dark:border-white/10 dark:bg-[#1e1e1e] dark:text-white"
+                onChange={(event) => setQueryInput(event.target.value)}
+                placeholder={t('admin.organization.search.users', 'Search users...')}
+                type="search"
+                value={queryInput}
+              />
+            </div>
+            <button
+              type="submit"
+              className="inline-flex h-10 shrink-0 items-center justify-center rounded-lg bg-blue-600 px-4 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700"
+            >
+              {t('common.actions.query', 'Query')}
+            </button>
+          </form>
         </div>
-        <div className="min-h-0 flex-1 overflow-auto">
-          <table className="w-full min-w-[1080px] text-left text-sm">
+        <div className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden">
+          <table className="w-full min-w-0 table-fixed text-left text-sm">
             <thead className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-xs font-semibold text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
               <tr>
-                {isMultipleSelection ? <th className="w-10 px-4 py-3">{t('admin.organization.chooseUser.selection', 'Selection')}</th> : null}
+                <th className="w-24 px-4 py-3 whitespace-nowrap">{t('admin.organization.chooseUser.selection', 'Selection')}</th>
                 <th className="px-4 py-3">{t('admin.organization.columns.member', 'Member')}</th>
                 <th className="px-4 py-3">{t('admin.organization.columns.contact', 'Contact')}</th>
                 <th className="px-4 py-3">{t('admin.organization.columns.region', 'Region')}</th>
                 <th className="px-4 py-3">{t('admin.organization.columns.address', 'Address')}</th>
                 <th className="px-4 py-3">{t('admin.organization.columns.gender', 'Gender')}</th>
                 <th className="px-4 py-3">{t('admin.organization.columns.status', 'Status')}</th>
-                <th className="px-4 py-3 text-right">{t('admin.organization.columns.actions', 'Actions')}</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200 dark:divide-white/5">
               {visibleUsers.length === 0 ? (
-                <BusinessStateTableRow colSpan={isMultipleSelection ? 8 : 7} kind="empty" title={t('admin.organization.chooseUser.empty', 'No users available')} />
+                <BusinessStateTableRow colSpan={7} kind="empty" title={t('admin.organization.chooseUser.empty', 'No users available')} />
               ) : visibleUsers.map((user) => (
-                <tr key={user.id} className="hover:bg-slate-50 dark:hover:bg-white/5">
-                  {isMultipleSelection ? (
-                    <td className="px-4 py-3">
-                      <input
-                        type="checkbox"
-                        aria-label={formatUserLabel(user.id, lookups)}
-                        checked={selectedUserIds.has(user.id)}
-                        className="h-4 w-4 rounded border-slate-300 text-blue-600"
-                        onChange={() => toggleSelectedUser(user.id)}
-                      />
-                    </td>
-                  ) : null}
+                <tr key={user.id} className={`cursor-pointer ${selectedUserIds.has(user.id) ? 'bg-blue-50/80 dark:bg-blue-500/10' : 'hover:bg-slate-50 dark:hover:bg-white/5'}`} onClick={() => toggleSelectedUser(user.id)}>
+                  <td className="px-4 py-3">
+                    <input
+                      type="checkbox"
+                      aria-label={formatUserLabel(user.id, lookups)}
+                      checked={selectedUserIds.has(user.id)}
+                      className="h-4 w-4 rounded border-slate-300 text-blue-600"
+                      onClick={(event) => event.stopPropagation()}
+                      onChange={() => toggleSelectedUser(user.id)}
+                    />
+                  </td>
                   <td className="px-4 py-3">
                     <div className="font-medium text-slate-900 dark:text-white">{user.displayName || user.username || user.id}</div>
                     <div className="text-xs text-slate-500">{formatUserLabel(user.id, lookups)}</div>
@@ -2001,22 +2040,22 @@ function ChooseUserModal({
                   <td className="px-4 py-3 text-slate-600 dark:text-slate-300">{formatUserRegion(user)}</td>
                   <td className="px-4 py-3 text-slate-600 dark:text-slate-300">{user.address || '-'}</td>
                   <td className="px-4 py-3 text-slate-600 dark:text-slate-300">{formatUserGender(user, t)}</td>
-                  <td className="px-4 py-3"><StatusPill status={user.status} /></td>
-                  <td className="px-4 py-3 text-right">
-                    {isMultipleSelection ? null : <HeaderButton label={t('admin.organization.actions.selectUser', 'Select')} onClick={() => onChoose(user)} disabled={isBusy} />}
-                  </td>
+                  <td className="px-4 py-3"><StatusPill status={user.status} t={t} /></td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-        <div className="flex shrink-0 justify-end gap-2 border-t border-slate-200 px-5 py-4 dark:border-white/10">
-          {isMultipleSelection ? (
+        <div className="flex shrink-0 items-center justify-between gap-3 border-t border-slate-200 px-5 py-4 dark:border-white/10">
+          <div className="text-sm font-medium text-slate-600 dark:text-slate-300">
+            {t('admin.organization.chooseUser.selectedCount', '{{count}} selected', { count: selectedUserIds.size })}
+          </div>
+          <div className="flex items-center gap-2">
+            <button type="button" onClick={onCancel} disabled={isBusy} className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-60 dark:border-white/10 dark:text-slate-200 dark:hover:bg-white/5">
+              {t('common.actions.cancel', 'Cancel')}
+            </button>
             <HeaderButton label={t('admin.organization.chooseUser.confirmSelection', 'Add selected')} onClick={handleChooseSelectedUsers} disabled={isBusy || selectedUserIds.size === 0} variant="primary" />
-          ) : null}
-          <button type="button" onClick={onCancel} disabled={isBusy} className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-60 dark:border-white/10 dark:text-slate-200 dark:hover:bg-white/5">
-            {t('common.actions.cancel', 'Cancel')}
-          </button>
+          </div>
         </div>
       </div>
     </div>
@@ -2585,13 +2624,115 @@ function availableUsersForMembership(
   users: UserRecord[],
   existingMembers: OrganizationMemberRecord[],
   organizationId: string | null | undefined,
+  departmentAssignments: DepartmentAssignmentRecord[] = [],
+  targetDepartmentId?: string | null,
 ): UserRecord[] {
-  const blockedUserIds = new Set(
-    existingMembers
-      .filter((item) => item.organizationId === organizationId && isActiveRecord(item) && item.userId)
+  const blockedUserIds = targetDepartmentId
+    ? activeDepartmentAssignmentUserIds(departmentAssignments, targetDepartmentId)
+    : new Set(
+      existingMembers
+        .filter((item) => item.organizationId === organizationId && isActiveRecord(item) && item.userId)
+        .map((item) => item.userId),
+    );
+  return users.filter((item) => !blockedUserIds.has(item.id));
+}
+
+async function ensureOrganizationMemberForUser(
+  user: UserRecord,
+  organizationId: string,
+  existingMemberships: OrganizationMemberRecord[],
+): Promise<OrganizationMemberRecord> {
+  const activeMembership = findOrganizationMembershipForUser(existingMemberships, organizationId, user.id, { activeOnly: true });
+  if (activeMembership) {
+    return activeMembership;
+  }
+
+  const inactiveMemberMembership = findOrganizationMembershipForUser(existingMemberships, organizationId, user.id, { memberKind: 'member' });
+  if (inactiveMemberMembership) {
+    return OrganizationService.updateMembership(inactiveMemberMembership.id, {
+      displayName: user.displayName,
+      email: user.email,
+      mobile: user.mobile,
+      memberKind: 'member',
+      status: 'active',
+    });
+  }
+
+  return OrganizationService.createMembership({
+    organizationId,
+    userId: user.id,
+    displayName: user.displayName,
+    username: user.username,
+    email: user.email,
+    mobile: user.mobile,
+    memberKind: 'member',
+    status: 'active',
+  });
+}
+
+async function ensureDepartmentAssignmentForMember(
+  departmentId: string,
+  membership: OrganizationMemberRecord,
+  existingAssignments: DepartmentAssignmentRecord[],
+): Promise<void> {
+  const existingAssignment = findDepartmentAssignmentForMember(existingAssignments, departmentId, membership, 'member');
+  if (existingAssignment && isActiveRecord(existingAssignment)) {
+    return;
+  }
+  if (existingAssignment) {
+    await OrganizationService.updateDepartmentAssignment(existingAssignment.id, { status: 'active' });
+    return;
+  }
+  await OrganizationService.createDepartmentAssignment({
+    departmentId,
+    membershipId: membership.id,
+    role: 'member',
+    status: 'active',
+  });
+}
+
+function findOrganizationMembershipForUser(
+  memberships: OrganizationMemberRecord[],
+  organizationId: string,
+  userId: string,
+  options: { activeOnly?: boolean; memberKind?: string } = {},
+): OrganizationMemberRecord | null {
+  const normalizedMemberKind = options.memberKind?.trim().toLowerCase();
+  return memberships.find((item) => {
+    if (item.organizationId !== organizationId || item.userId !== userId) {
+      return false;
+    }
+    if (options.activeOnly && !isActiveRecord(item)) {
+      return false;
+    }
+    if (normalizedMemberKind && item.memberKind.trim().toLowerCase() !== normalizedMemberKind) {
+      return false;
+    }
+    return true;
+  }) ?? null;
+}
+
+function findDepartmentAssignmentForMember(
+  assignments: DepartmentAssignmentRecord[],
+  departmentId: string,
+  membership: OrganizationMemberRecord,
+  role: string,
+): DepartmentAssignmentRecord | null {
+  const normalizedRole = role.trim().toLowerCase();
+  return assignments.find((item) => item.departmentId === departmentId
+    && (item.membershipId === membership.id || Boolean(membership.userId && item.userId === membership.userId))
+    && item.role.trim().toLowerCase() === normalizedRole) ?? null;
+}
+
+function activeDepartmentAssignmentUserIds(
+  assignments: DepartmentAssignmentRecord[],
+  departmentId: string,
+): Set<string> {
+  return new Set(
+    assignments
+      .filter((item) => item.departmentId === departmentId && isActiveRecord(item) && item.userId)
       .map((item) => item.userId),
   );
-  return users.filter((item) => !blockedUserIds.has(item.id));
 }
 
 function availableDepartmentAssignmentMemberOptions(
@@ -2859,31 +3000,33 @@ function appendSecondaryLabel(primary: string, secondary: string): string {
   return secondary && secondary !== primary ? `${primary} (${secondary})` : primary;
 }
 
-async function submitDialog(dialog: OrganizationDialog, form: FormData, activeOrganizationId: string, activeDepartmentId: string): Promise<void> {
+async function submitDialog(dialog: OrganizationDialog, form: FormData, activeOrganizationId: string, activeDepartmentId: string): Promise<OrganizationDialogSubmitResult> {
   if (dialog.kind === 'organization') {
     const input = readOrganizationCommand(form);
+    let item: OrganizationRecord;
     if (dialog.mode === 'edit') {
-      await OrganizationService.updateOrganization(dialog.target.id, input);
+      item = await OrganizationService.updateOrganization(dialog.target.id, input);
     } else {
-      await OrganizationService.createOrganization(input);
+      item = await OrganizationService.createOrganization(input);
     }
-    return;
+    return { kind: 'organization', item };
   }
   if (dialog.kind === 'department') {
     const input = readDepartmentCommand(form, activeOrganizationId);
+    let item: DepartmentRecord;
     if (dialog.mode === 'edit') {
-      await OrganizationService.updateDepartment(dialog.target.id, input);
+      item = await OrganizationService.updateDepartment(dialog.target.id, input);
     } else {
-      await OrganizationService.createDepartment(input);
+      item = await OrganizationService.createDepartment(input);
     }
-    return;
+    return { kind: 'department', item };
   }
   if (dialog.kind === 'membership') {
     const input = readMembershipUpdateCommand(form, activeOrganizationId);
     if (dialog.mode === 'edit') {
       await OrganizationService.updateMembership(dialog.target.id, input);
     }
-    return;
+    return null;
   }
   if (dialog.kind === 'departmentAssignment') {
     const input = readDepartmentAssignmentCommand(form, activeDepartmentId);
@@ -2892,7 +3035,7 @@ async function submitDialog(dialog: OrganizationDialog, form: FormData, activeOr
     } else {
       await OrganizationService.createDepartmentAssignment(input);
     }
-    return;
+    return null;
   }
   if (dialog.kind === 'position') {
     const input = readPositionCommand(form, activeOrganizationId);
@@ -2901,7 +3044,7 @@ async function submitDialog(dialog: OrganizationDialog, form: FormData, activeOr
     } else {
       await OrganizationService.createPosition(input);
     }
-    return;
+    return null;
   }
   if (dialog.kind === 'positionAssignment') {
     const input = readPositionAssignmentCommand(form);
@@ -2910,7 +3053,7 @@ async function submitDialog(dialog: OrganizationDialog, form: FormData, activeOr
     } else {
       await OrganizationService.createPositionAssignment(input);
     }
-    return;
+    return null;
   }
   if (dialog.kind === 'role') {
     const input = readRoleCommand(form);
@@ -2919,11 +3062,11 @@ async function submitDialog(dialog: OrganizationDialog, form: FormData, activeOr
     } else {
       await OrganizationService.createRole(input);
     }
-    return;
+    return null;
   }
   if (dialog.kind === 'roleBinding') {
     await OrganizationService.bindRole(readRoleBindingCommand(form, activeOrganizationId, activeDepartmentId));
-    return;
+    return null;
   }
   if (dialog.kind === 'permission') {
     const input = readPermissionCommand(form);
@@ -2932,9 +3075,10 @@ async function submitDialog(dialog: OrganizationDialog, form: FormData, activeOr
     } else {
       await OrganizationService.createPermission(input);
     }
-    return;
+    return null;
   }
   await OrganizationService.grantRolePermission(requiredFormText(form, 'roleId'), requiredFormText(form, 'permissionId'));
+  return null;
 }
 
 async function deleteTarget(target: ConfirmTarget): Promise<void> {
@@ -3573,13 +3717,30 @@ function CheckField({ defaultChecked, label, name }: { defaultChecked?: boolean;
   );
 }
 
-function StatusPill({ status }: { status: string }) {
-  const active = status === 'active' || status === 'enabled';
+function StatusPill({ status, t }: { status: string; t: TranslationFunction }) {
+  const normalizedStatus = status.trim().toLowerCase();
+  const active = normalizedStatus === 'active' || normalizedStatus === 'enabled';
   return (
     <span className={`inline-flex items-center rounded-full px-2 py-0.5 text-[11px] font-semibold ${active ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300' : 'bg-slate-100 text-slate-600 dark:bg-white/10 dark:text-slate-300'}`}>
-      {status || '-'}
+      {formatStatusLabel(status, t)}
     </span>
   );
+}
+
+function formatStatusLabel(status: string, t: TranslationFunction): string {
+  const normalizedStatus = status.trim().toLowerCase();
+  if (!normalizedStatus) {
+    return '-';
+  }
+  return t(`admin.organization.status.${normalizedStatus}`, fallbackStatusLabel(normalizedStatus));
+}
+
+function fallbackStatusLabel(status: string): string {
+  return status
+    .split(/[_\s-]+/)
+    .filter(Boolean)
+    .map((part) => `${part.charAt(0).toUpperCase()}${part.slice(1)}`)
+    .join(' ');
 }
 
 function SmallButton({ disabled, label, onClick }: { disabled?: boolean; label: string; onClick: () => void }) {

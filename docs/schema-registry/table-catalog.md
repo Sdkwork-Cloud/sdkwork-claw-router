@@ -2,9 +2,9 @@
 
 生成来源：`docs/schema-registry/sdkwork-claw-router.tables.yaml`
 source: docs/schema-registry/sdkwork-claw-router.tables.yaml
-表总数：329
-table-count: 329
-本项目生成表：221
+表总数：324
+table-count: 324
+本项目生成表：216
 
 本文列出当前应用 schema registry 中登记的全部数据库表，并给出中文业务说明。`generated = no` 表示物理结构由外部系统或 Java 兼容实体拥有，当前应用只登记和读取契约。
 
@@ -16,7 +16,7 @@ table-count: 329
 | `commerce` | 85 | 交易、计费与结算 |
 | `content` | 30 | 内容、文档与对象存储 |
 | `iam` | 32 | 身份、访问与安全 |
-| `integration` | 19 | 外部集成与服务商 |
+| `integration` | 14 | 外部集成与服务商 |
 | `legacy` | 24 | Java Plus 兼容 |
 | `messaging` | 15 | 消息触达 |
 | `ops` | 14 | 运维治理 |
@@ -280,11 +280,6 @@ table-count: 329
 | 表名 | 说明 | profile | write_owner | generated |
 | --- | --- | --- | --- | --- |
 | `integration_provider_account` | 外部集成与服务商的供应商账号凭证引用，记录 供应商账号。 | `provider_account_secret_ref` | `integration-service` | yes |
-| `open_platform_provider` | 外部集成与服务商的字典主数据，记录 供应商。 | `dictionary_entity` | `open-platform-service` | yes |
-| `open_platform_manifest` | 外部集成与服务商的字典主数据，记录 清单。 | `dictionary_entity` | `open-platform-service` | yes |
-| `open_platform_account` | 外部集成与服务商的凭证引用配置，记录 账户。 | `credential_ref` | `open-platform-service` | yes |
-| `open_platform_entry` | 外部集成与服务商的租户级主数据，记录 入口。 | `tenant_entity` | `open-platform-service` | yes |
-| `open_platform_pay_binding` | 外部集成与服务商的关系绑定，记录 支付绑定。 | `relation_entity` | `open-platform-service` | yes |
 | `integration_proxy` | 外部集成与服务商的凭证引用配置，记录 代理。 | `credential_ref` | `provider-service` | yes |
 | `integration_webhook_endpoint` | 外部集成与服务商的Webhook 配置，记录 Webhook 端点。 | `webhook` | `webhook-service` | yes |
 | `integration_service_provider` | 外部集成与服务商的服务商主体，记录 服务商。 | `commercial_provider_subject` | `service-provider-service` | yes |

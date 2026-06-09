@@ -5,6 +5,7 @@ mod admin_announcement;
 mod admin_api_key_rate_limit;
 mod admin_app;
 mod admin_appbase_backend_iam;
+mod admin_appbase_backend_iam_oauth;
 mod admin_auth_settings;
 mod admin_cache;
 mod admin_catalog;
@@ -22,11 +23,11 @@ mod admin_model_catalog;
 mod admin_model_command;
 mod admin_model_rate_limit;
 mod admin_monitor;
-mod admin_open_platform;
 mod admin_payment_runtime;
 mod admin_prompts;
 mod admin_provider_secret;
 mod admin_record;
+mod admin_route_explain;
 mod admin_runtime_region_settings;
 mod admin_service_node;
 mod admin_service_provider;
@@ -48,6 +49,7 @@ mod app_forum;
 mod app_gateway;
 mod app_generation_history;
 mod app_iam_directory;
+mod app_iam_directory_query;
 mod app_memory;
 mod app_models;
 mod app_notification;
@@ -90,6 +92,7 @@ pub use admin_app::admin_app_router_with_store_and_json_body_limit;
 pub use admin_appbase_backend_iam::{
     admin_appbase_backend_iam_directory_router_with_read_store, AdminAppbaseBackendIamSqlReadStore,
 };
+pub use admin_appbase_backend_iam_oauth::admin_appbase_backend_iam_oauth_router_with_read_store;
 pub use admin_auth_settings::admin_auth_settings_router_with_store;
 pub use admin_cache::admin_cache_router_with_manager;
 pub use admin_catalog::admin_catalog_router_with_store;
@@ -108,13 +111,13 @@ pub use admin_model_catalog::admin_model_catalog_router_with_api_key_hasher;
 pub use admin_model_command::admin_model_management_router_with_store;
 pub use admin_model_rate_limit::admin_model_rate_limit_router_with_store;
 pub use admin_monitor::admin_monitor_router_with_read_store;
-pub use admin_open_platform::admin_open_platform_router_with_store;
 pub use admin_payment_runtime::{
     admin_payment_runtime_router, admin_payment_runtime_router_with_snapshot_store,
 };
 pub use admin_prompts::admin_prompt_router_with_store;
 pub use admin_provider_secret::admin_provider_secret_router_with_store;
 pub use admin_record::admin_record_router_with_store;
+pub use admin_route_explain::admin_route_explain_router;
 pub use admin_runtime_region_settings::admin_runtime_region_settings_router_with_store;
 pub use admin_service_node::admin_service_node_router_with_store;
 pub use admin_service_provider::admin_service_provider_router_with_store;
@@ -134,12 +137,9 @@ pub use app_agents::app_agent_registry_router_with_store;
 pub use app_api_keys::app_api_key_router;
 pub use app_api_keys::app_api_key_router_with_read_store_and_command_store;
 pub use app_auth::{
-    app_auth_router_with_store, app_auth_router_with_store_and_cache_manager,
-    app_auth_router_with_store_and_verification_sender,
+    app_auth_router_with_store, app_auth_router_with_store_and_verification_sender,
     app_auth_router_with_store_auth_settings_store_and_verification_sender,
-    app_auth_router_with_store_auth_settings_store_cache_and_verification_sender,
-    app_auth_router_with_store_auth_settings_store_open_platform_store_cache_and_verification_sender,
-    app_public_auth_router_with_store_auth_settings_store_cache_and_verification_sender,
+    app_public_auth_router_with_store_auth_settings_store_and_verification_sender,
     app_sessions_router_with_store, app_sessions_router_with_store_and_verification_sender,
 };
 pub use app_chat::app_chat_router;

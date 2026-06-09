@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class AgentRunStepListResponse
     {
-        public List<AgentRunStepItem>? Items { get; set; }
+        public List<AgentRunStepItem> Items { get; set; }
     }
 }

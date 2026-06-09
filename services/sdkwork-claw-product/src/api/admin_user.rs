@@ -3,7 +3,7 @@ use std::sync::Arc;
 use std::time::{SystemTime, UNIX_EPOCH};
 
 use axum::body::Bytes;
-use axum::extract::{Path, State};
+use axum::extract::{Path, Query, State};
 use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::{delete, get, patch, post};
@@ -30,6 +30,8 @@ const MAX_USERNAME_LEN: usize = 168;
 const MAX_EMAIL_LEN: usize = 255;
 const MAX_GROUP_LEN: usize = 64;
 const MAX_API_KEY_NAME_LEN: usize = 128;
+const DEFAULT_USERS_PAGE_SIZE: i64 = 200;
+const MAX_USERS_PAGE_SIZE: i64 = 500;
 
 #[derive(Clone)]
 struct AdminUserState {
@@ -95,6 +97,14 @@ struct CreateApiKeyRequest {
     name: Option<String>,
 }
 
+#[derive(Debug, Deserialize)]
+struct UsersListQuery {
+    #[serde(default)]
+    q: Option<String>,
+    #[serde(default)]
+    page_size: Option<i64>,
+}
+
 pub fn admin_user_router_with_store(
     store: Arc<dyn AdminUserStore + Send + Sync>,
     api_key_hasher: Arc<dyn ApiKeySecretHasher + Send + Sync>,
@@ -140,15 +150,26 @@ pub fn admin_user_router_with_store(
         })
 }
 
-async fn fetch_users(State(state): State<AdminUserState>, headers: HeaderMap) -> Response {
+async fn fetch_users(
+    State(state): State<AdminUserState>,
+    Query(query): Query<UsersListQuery>,
+    headers: HeaderMap,
+) -> Response {
     let subject = match resolve_subject(&headers) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
 
+    let q = normalize_query_text(query.q.as_deref());
+    let page_size = normalize_users_page_size(query.page_size);
+
     match state
         .store
-        .list_users(ListAdminUsersQuery { subject })
+        .list_users(ListAdminUsersQuery {
+            subject,
+            q,
+            page_size,
+        })
         .await
     {
         Ok(items) => Json(PlusApiResult::success(AdminUserListResponse { items })).into_response(),
@@ -565,6 +586,20 @@ fn resolve_subject(headers: &HeaderMap) -> Result<AdminUserSubject, Response> {
             )
                 .into_response()
         })
+}
+
+fn normalize_query_text(value: Option<&str>) -> Option<String> {
+    value
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+        .map(|value| value.chars().take(128).collect::<String>())
+}
+
+fn normalize_users_page_size(value: Option<i64>) -> i64 {
+    match value {
+        Some(value) if value > 0 => value.min(MAX_USERS_PAGE_SIZE),
+        _ => DEFAULT_USERS_PAGE_SIZE,
+    }
 }
 
 fn api_key_map(items: Vec<AdminUserApiKeyItem>) -> BTreeMap<String, Vec<AdminUserApiKeyItem>> {

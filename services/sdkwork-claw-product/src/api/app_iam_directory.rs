@@ -7,6 +7,7 @@ use axum::routing::get;
 use axum::{Json, Router};
 use sdkwork_claw_http::TrustedRequestSubject;
 
+use crate::api::app_iam_directory_query::AppIamDirectoryHttpQuery;
 use crate::api::response::PlusApiResult;
 use crate::ports::{
     AppIamDepartmentAssignmentItem, AppIamDepartmentItem, AppIamDepartmentTreeItem,
@@ -145,13 +146,14 @@ fn app_iam_directory_router_with_state(
 
 async fn list_organizations(
     State(state): State<AppIamDirectoryState>,
-    Query(query): Query<AppIamDirectoryQuery>,
+    Query(query): Query<AppIamDirectoryHttpQuery>,
     headers: HeaderMap,
 ) -> Response {
     let subject = match iam_directory_subject(&headers, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
+    let query = query.into_port_query();
     match state.read_store.list_organizations(subject, query).await {
         Ok(items) => Json(PlusApiResult::success(AppIamDirectoryItems::new(items))).into_response(),
         Err(error) => app_iam_directory_read_model_error(error),
@@ -160,13 +162,14 @@ async fn list_organizations(
 
 async fn retrieve_organization_tree(
     State(state): State<AppIamDirectoryState>,
-    Query(query): Query<AppIamDirectoryQuery>,
+    Query(query): Query<AppIamDirectoryHttpQuery>,
     headers: HeaderMap,
 ) -> Response {
     let subject = match iam_directory_subject(&headers, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
+    let query = query.into_port_query();
     match state
         .read_store
         .retrieve_organization_tree(subject, query)
@@ -179,13 +182,14 @@ async fn retrieve_organization_tree(
 
 async fn list_organization_memberships(
     State(state): State<AppIamDirectoryState>,
-    Query(query): Query<AppIamDirectoryQuery>,
+    Query(query): Query<AppIamDirectoryHttpQuery>,
     headers: HeaderMap,
 ) -> Response {
     let subject = match iam_directory_subject(&headers, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
+    let query = query.into_port_query();
     match state
         .read_store
         .list_organization_memberships(subject, query)
@@ -198,13 +202,14 @@ async fn list_organization_memberships(
 
 async fn list_departments(
     State(state): State<AppIamDirectoryState>,
-    Query(query): Query<AppIamDirectoryQuery>,
+    Query(query): Query<AppIamDirectoryHttpQuery>,
     headers: HeaderMap,
 ) -> Response {
     let subject = match iam_directory_subject(&headers, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
+    let query = query.into_port_query();
     match state.read_store.list_departments(subject, query).await {
         Ok(items) => Json(PlusApiResult::success(AppIamDirectoryItems::new(items))).into_response(),
         Err(error) => app_iam_directory_read_model_error(error),
@@ -213,13 +218,14 @@ async fn list_departments(
 
 async fn retrieve_department_tree(
     State(state): State<AppIamDirectoryState>,
-    Query(query): Query<AppIamDirectoryQuery>,
+    Query(query): Query<AppIamDirectoryHttpQuery>,
     headers: HeaderMap,
 ) -> Response {
     let subject = match iam_directory_subject(&headers, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
+    let query = query.into_port_query();
     match state
         .read_store
         .retrieve_department_tree(subject, query)
@@ -232,13 +238,14 @@ async fn retrieve_department_tree(
 
 async fn list_department_assignments(
     State(state): State<AppIamDirectoryState>,
-    Query(query): Query<AppIamDirectoryQuery>,
+    Query(query): Query<AppIamDirectoryHttpQuery>,
     headers: HeaderMap,
 ) -> Response {
     let subject = match iam_directory_subject(&headers, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
+    let query = query.into_port_query();
     match state
         .read_store
         .list_department_assignments(subject, query)
@@ -251,13 +258,14 @@ async fn list_department_assignments(
 
 async fn list_positions(
     State(state): State<AppIamDirectoryState>,
-    Query(query): Query<AppIamDirectoryQuery>,
+    Query(query): Query<AppIamDirectoryHttpQuery>,
     headers: HeaderMap,
 ) -> Response {
     let subject = match iam_directory_subject(&headers, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
+    let query = query.into_port_query();
     match state.read_store.list_positions(subject, query).await {
         Ok(items) => Json(PlusApiResult::success(AppIamDirectoryItems::new(items))).into_response(),
         Err(error) => app_iam_directory_read_model_error(error),
@@ -266,13 +274,14 @@ async fn list_positions(
 
 async fn list_position_assignments(
     State(state): State<AppIamDirectoryState>,
-    Query(query): Query<AppIamDirectoryQuery>,
+    Query(query): Query<AppIamDirectoryHttpQuery>,
     headers: HeaderMap,
 ) -> Response {
     let subject = match iam_directory_subject(&headers, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
+    let query = query.into_port_query();
     match state
         .read_store
         .list_position_assignments(subject, query)
@@ -285,13 +294,14 @@ async fn list_position_assignments(
 
 async fn list_role_bindings(
     State(state): State<AppIamDirectoryState>,
-    Query(query): Query<AppIamDirectoryQuery>,
+    Query(query): Query<AppIamDirectoryHttpQuery>,
     headers: HeaderMap,
 ) -> Response {
     let subject = match iam_directory_subject(&headers, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
+    let query = query.into_port_query();
     match state.read_store.list_role_bindings(subject, query).await {
         Ok(items) => Json(PlusApiResult::success(AppIamDirectoryItems::new(items))).into_response(),
         Err(error) => app_iam_directory_read_model_error(error),

@@ -255,16 +255,20 @@ test("admin user search is applied by clicking query and can refresh current dat
 
   assert.match(source, /const \[searchDraft, setSearchDraft\] = useState\(''\);/);
   assert.match(source, /const \[appliedSearch, setAppliedSearch\] = useState\(''\);/);
-  assert.match(source, /const normalizedSearch = appliedSearch\.trim\(\)\.toLowerCase\(\);/);
+  assert.match(source, /const loadUsers = async \(searchText = appliedSearch\) => \{/);
+  assert.match(source, /const normalizedSearchText = searchText\.trim\(\);/);
+  assert.match(source, /UserService\.loadAdminTableData\(\{\s*q: normalizedSearchText \|\| undefined,\s*pageSize: 200,\s*\}\)/s);
+  assert.match(source, /setAppliedSearch\(normalizedSearchText\);/);
   assert.match(source, /onChange=\{\(event\) => setSearchDraft\(event\.target\.value\)\}/);
   assert.match(source, /value=\{searchDraft\}/);
   assert.match(source, /data-admin-user-query-action/);
-  assert.match(source, /onClick=\{\(\) => setAppliedSearch\(searchDraft\)\}/);
+  assert.match(source, /onClick=\{\(\) => \{ void loadUsers\(searchDraft\); \}\}/);
   assert.match(source, /t\('admin\.user\.index\.actions\.query', 'Query'\)/);
   assert.match(source, /data-admin-user-refresh-action/);
-  assert.match(source, /onClick=\{\(\) => \{ void loadUsers\(\); \}\}/);
+  assert.match(source, /onClick=\{\(\) => \{ void loadUsers\(appliedSearch\); \}\}/);
   assert.match(source, /t\('admin\.user\.index\.actions\.refresh', 'Refresh'\)/);
-  assert.doesNotMatch(source, /const normalizedSearch = search\.trim\(\)\.toLowerCase\(\);/);
+  assert.doesNotMatch(source, /const visibleUsers/);
+  assert.doesNotMatch(source, /users\.filter/);
 });
 
 test("admin user static copy is translated through i18n keys", () => {
@@ -466,6 +470,35 @@ test("admin user table keeps professional optional profile fields from appbase u
   );
 });
 
+test("admin user list sends remote search and bounded page size through the appbase backend SDK", async () => {
+  await withBackendSdkResponse(
+    {
+      code: "2000",
+      data: {
+        items: [
+          {
+            id: "9007199254740993",
+            email: "owner@example.com",
+            username: "owner",
+            displayName: "Owner",
+            status: "active",
+          },
+        ],
+      },
+    },
+    async (captured) => {
+      const users = await UserService.fetchUsers({ q: " owner@example.com ", pageSize: 20 });
+
+      assert.equal(users[0].id, "9007199254740993");
+      assert.equal(
+        captured[0].url,
+        "https://appbase.example.com/backend/v3/api/iam/users?page_size=20&q=owner%40example.com",
+      );
+      assert.equal(captured[0].method, "GET");
+    },
+  );
+});
+
 test("admin user table fills the available admin viewport", () => {
   const source = readFileSync(
     new URL("./packages/sdkwork-clawrouter-pc-admin-user/src/index.tsx", import.meta.url),
@@ -541,6 +574,47 @@ test("admin user initial table load preserves users when API key prefetch fails"
   assert.deepEqual(result.users, users);
   assert.deepEqual(result.apiKeysMap, {});
   assert.match(result.apiKeysLoadError?.message ?? "", /admin\.user\.errors\.fetchApiKeysFallback/);
+});
+
+test("admin user initial table load passes query params to the user list loader", async () => {
+  const users = [
+    {
+      id: "9007199254740993",
+      email: "owner@example.com",
+      username: "owner",
+      displayName: "Owner",
+      mobile: "",
+      gender: "",
+      country: "",
+      province: "",
+      city: "",
+      district: "",
+      address: "",
+      role: "admin",
+      group: "standard",
+      balance: "0.00",
+      status: "active" as const,
+      lastActive: "2026-05-05T09:00:00Z",
+      lastUsed: "2026-05-05T09:00:00Z",
+      createdAt: "2026-05-05T08:00:00Z",
+      updatedAt: "2026-05-05T09:00:00Z",
+    },
+  ];
+  const seenQueries: unknown[] = [];
+
+  const result = await UserService.loadAdminTableData(
+    { q: "owner@example.com", pageSize: 20 },
+    {
+      fetchUsers: async (query) => {
+        seenQueries.push(query);
+        return users;
+      },
+      fetchApiKeysMap: async () => ({}),
+    },
+  );
+
+  assert.deepEqual(result.users, users);
+  assert.deepEqual(seenQueries, [{ q: "owner@example.com", pageSize: 20 }]);
 });
 
 test("admin user initial table load still fails when the users request fails", async () => {

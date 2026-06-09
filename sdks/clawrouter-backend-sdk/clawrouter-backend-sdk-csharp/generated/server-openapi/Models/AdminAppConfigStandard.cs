@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminAppConfigStandard
     {
-        public string? AppKey { get; set; }
+        public string AppKey { get; set; }
     }
 }

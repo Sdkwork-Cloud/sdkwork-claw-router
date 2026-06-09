@@ -356,9 +356,9 @@ importers:
       sdkwork-clawrouter-pc-admin-monitor:
         specifier: workspace:*
         version: link:packages/sdkwork-clawrouter-pc-admin-monitor
-      sdkwork-clawrouter-pc-admin-open-platform:
+      sdkwork-clawrouter-pc-admin-oauth:
         specifier: workspace:*
-        version: link:packages/sdkwork-clawrouter-pc-admin-open-platform
+        version: link:packages/sdkwork-clawrouter-pc-admin-oauth
       sdkwork-clawrouter-pc-admin-orders:
         specifier: workspace:*
         version: link:packages/sdkwork-clawrouter-pc-admin-orders
@@ -398,12 +398,6 @@ importers:
       sdkwork-clawrouter-pc-admin-wallet:
         specifier: workspace:*
         version: link:packages/sdkwork-clawrouter-pc-admin-wallet
-      sdkwork-clawrouter-pc-admin-wechat-mini-program:
-        specifier: workspace:*
-        version: link:packages/sdkwork-clawrouter-pc-admin-wechat-mini-program
-      sdkwork-clawrouter-pc-admin-wechat-official-account:
-        specifier: workspace:*
-        version: link:packages/sdkwork-clawrouter-pc-admin-wechat-official-account
       sdkwork-clawrouter-pc-api-reference:
         specifier: workspace:*
         version: link:packages/sdkwork-clawrouter-pc-api-reference
@@ -491,6 +485,12 @@ importers:
       sdkwork-clawrouter-pc-vip:
         specifier: workspace:*
         version: link:packages/sdkwork-clawrouter-pc-vip
+      sdkwork-commerce-app-sdk-generated-typescript:
+        specifier: workspace:*
+        version: link:../../../sdkwork-commerce/sdks/sdkwork-commerce-app-sdk/sdkwork-commerce-app-sdk-typescript/generated/server-openapi
+      sdkwork-commerce-backend-sdk-generated-typescript:
+        specifier: workspace:*
+        version: link:../../../sdkwork-commerce/sdks/sdkwork-commerce-backend-sdk/sdkwork-commerce-backend-sdk-typescript/generated/server-openapi
       sdkwork-commerce-pc-admin-product:
         specifier: workspace:*
         version: link:../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-admin-product
@@ -750,8 +750,6 @@ importers:
         specifier: ^6.0.2
         version: 6.0.2
 
-  ../../../sdkwork-appbase/packages/pc-react/integration/sdkwork-open-platform-admin-pc-react: {}
-
   ../../../sdkwork-appbase/packages/pc-react/notification/sdkwork-notification-pc-react:
     dependencies:
       lucide-react:
@@ -847,6 +845,38 @@ importers:
       '@sdkwork/commerce-sdk-ports':
         specifier: workspace:*
         version: link:../sdkwork-commerce-sdk-ports
+
+  ../../../sdkwork-commerce/sdks/sdkwork-commerce-app-sdk/sdkwork-commerce-app-sdk-typescript/generated/server-openapi:
+    dependencies:
+      '@sdkwork/sdk-common':
+        specifier: ^1.0.2
+        version: 1.0.3
+    devDependencies:
+      '@types/node':
+        specifier: ^20.0.0
+        version: 20.19.39
+      rollup:
+        specifier: ^4.0.0
+        version: 4.60.1
+      typescript:
+        specifier: ^5.3.0
+        version: 5.8.3
+
+  ../../../sdkwork-commerce/sdks/sdkwork-commerce-backend-sdk/sdkwork-commerce-backend-sdk-typescript/generated/server-openapi:
+    dependencies:
+      '@sdkwork/sdk-common':
+        specifier: ^1.0.2
+        version: 1.0.3
+    devDependencies:
+      '@types/node':
+        specifier: ^20.0.0
+        version: 20.19.39
+      rollup:
+        specifier: ^4.0.0
+        version: 4.60.1
+      typescript:
+        specifier: ^5.3.0
+        version: 5.8.3
 
   ../../../sdkwork-core/sdkwork-core-pc-react:
     dependencies:
@@ -1443,14 +1473,8 @@ importers:
         specifier: workspace:*
         version: link:../sdkwork-clawrouter-pc-commons
 
-  packages/sdkwork-clawrouter-pc-admin-open-platform:
+  packages/sdkwork-clawrouter-pc-admin-oauth:
     dependencies:
-      '@sdkwork/open-platform-admin-pc-react':
-        specifier: workspace:*
-        version: link:../../../../../sdkwork-appbase/packages/pc-react/integration/sdkwork-open-platform-admin-pc-react
-      '@sdkwork/platform':
-        specifier: workspace:*
-        version: link:../../../../../sdkwork-appbase/packages/common/integration/sdkwork-platform
       sdkwork-clawrouter-pc-commons:
         specifier: workspace:*
         version: link:../sdkwork-clawrouter-pc-commons
@@ -1536,18 +1560,6 @@ importers:
         specifier: workspace:*
         version: link:../sdkwork-clawrouter-pc-commons
 
-  packages/sdkwork-clawrouter-pc-admin-wechat-mini-program:
-    dependencies:
-      sdkwork-clawrouter-pc-commons:
-        specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
-
-  packages/sdkwork-clawrouter-pc-admin-wechat-official-account:
-    dependencies:
-      sdkwork-clawrouter-pc-commons:
-        specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
-
   packages/sdkwork-clawrouter-pc-api-reference:
     dependencies:
       sdkwork-clawrouter-pc-commons:
@@ -1594,6 +1606,9 @@ importers:
       '@sdkwork/clawrouter-open-sdk':
         specifier: workspace:*
         version: link:../../../../sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript/generated/server-openapi
+      '@sdkwork/commerce-service':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-commerce/packages/common/commerce/sdkwork-commerce-service
       '@sdkwork/drive-app-sdk':
         specifier: workspace:*
         version: link:../../../../../sdkwork-drive/sdks/sdkwork-drive-app-sdk/sdkwork-drive-app-sdk-typescript
@@ -1609,6 +1624,12 @@ importers:
       '@sdkwork/sdk-common':
         specifier: ^1.0.2
         version: 1.0.2
+      sdkwork-commerce-app-sdk-generated-typescript:
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-commerce/sdks/sdkwork-commerce-app-sdk/sdkwork-commerce-app-sdk-typescript/generated/server-openapi
+      sdkwork-commerce-backend-sdk-generated-typescript:
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-commerce/sdks/sdkwork-commerce-backend-sdk/sdkwork-commerce-backend-sdk-typescript/generated/server-openapi
       sdkwork-generations-app-sdk-generated-typescript:
         specifier: workspace:*
         version: link:../../../../../sdkwork-generations/sdks/sdkwork-generations-app-sdk/sdkwork-generations-app-sdk-typescript/generated/server-openapi

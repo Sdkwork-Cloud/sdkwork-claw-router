@@ -9,6 +9,7 @@ type SdkworkAppClient struct {
     http *sdkhttp.Client
     Agents *api.AgentsApi
     Ai *api.AiApi
+    Auth *api.AuthApi
     Chat *api.ChatApi
     Content *api.ContentApi
     Ecosystem *api.EcosystemApi
@@ -16,10 +17,9 @@ type SdkworkAppClient struct {
     Memory *api.MemoryApi
     Notification *api.NotificationApi
     Platform *api.PlatformApi
-    System *api.SystemApi
-    Commerce *api.CommerceApi
     Runtime *api.RuntimeApi
     SdkReference *api.SdkReferenceApi
+    System *api.SystemApi
 }
 
 func NewSdkworkAppClient(baseURL string) *SdkworkAppClient {
@@ -33,6 +33,7 @@ func NewSdkworkAppClientWithConfig(config sdkhttp.Config) *SdkworkAppClient {
         http: client,
         Agents: api.NewAgentsApi(client),
         Ai: api.NewAiApi(client),
+        Auth: api.NewAuthApi(client),
         Chat: api.NewChatApi(client),
         Content: api.NewContentApi(client),
         Ecosystem: api.NewEcosystemApi(client),
@@ -40,16 +41,10 @@ func NewSdkworkAppClientWithConfig(config sdkhttp.Config) *SdkworkAppClient {
         Memory: api.NewMemoryApi(client),
         Notification: api.NewNotificationApi(client),
         Platform: api.NewPlatformApi(client),
-        System: api.NewSystemApi(client),
-        Commerce: api.NewCommerceApi(client),
         Runtime: api.NewRuntimeApi(client),
         SdkReference: api.NewSdkReferenceApi(client),
+        System: api.NewSystemApi(client),
     }
-}
-
-func (c *SdkworkAppClient) SetApiKey(apiKey string) *SdkworkAppClient {
-    c.http.SetApiKey(apiKey)
-    return c
 }
 
 func (c *SdkworkAppClient) SetAuthToken(token string) *SdkworkAppClient {

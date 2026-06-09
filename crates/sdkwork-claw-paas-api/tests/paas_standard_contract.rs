@@ -71,13 +71,13 @@ fn default_registry_loads_builtin_provider_plugins_by_routing_key() {
 
 #[test]
 fn builtin_provider_plugins_are_componentized_by_provider_family() {
-    let baidu = BaiduPaasProviderPlugin::default().metadata();
+    let baidu = BaiduPaasProviderPlugin.metadata();
     assert_eq!("sdkwork.paas.baidu", baidu.plugin_id);
     assert_eq!("baidu", baidu.provider_family);
     assert_eq!(vec!["baidu", "baidu-cloud"], baidu.provider_codes);
     assert_eq!(vec!["api_key", "ak_sk"], baidu.credential_kinds);
 
-    let alibaba = AlibabaPaasProviderPlugin::default().metadata();
+    let alibaba = AlibabaPaasProviderPlugin.metadata();
     assert_eq!("sdkwork.paas.alibaba", alibaba.plugin_id);
     assert_eq!("alibaba", alibaba.provider_family);
     assert_eq!(
@@ -86,7 +86,7 @@ fn builtin_provider_plugins_are_componentized_by_provider_family() {
     );
     assert_eq!(vec!["access_key"], alibaba.credential_kinds);
 
-    let tencent = TencentPaasProviderPlugin::default().metadata();
+    let tencent = TencentPaasProviderPlugin.metadata();
     assert_eq!("sdkwork.paas.tencent", tencent.plugin_id);
     assert_eq!("tencent", tencent.provider_family);
     assert_eq!(vec!["tencent", "tencent-cloud"], tencent.provider_codes);

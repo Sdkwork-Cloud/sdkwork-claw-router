@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class VersionsCreateResult
     {
-        public string? Code { get; set; }
+        public string Code { get; set; }
         public AdminPromptVersionMutationResponse? Data { get; set; }
         public string? Msg { get; set; }
     }

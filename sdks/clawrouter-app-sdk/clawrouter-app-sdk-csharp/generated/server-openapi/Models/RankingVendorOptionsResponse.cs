@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class RankingVendorOptionsResponse
     {
-        public List<RankingVendorOption>? Items { get; set; }
+        public List<RankingVendorOption> Items { get; set; }
     }
 }

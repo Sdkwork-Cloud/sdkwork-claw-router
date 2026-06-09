@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AnalyticsAdminOverviewRetrieveResult
     {
-        public string? Code { get; set; }
+        public string Code { get; set; }
         public AdminAnalyticsOverviewResponse? Data { get; set; }
         public string? Msg { get; set; }
     }

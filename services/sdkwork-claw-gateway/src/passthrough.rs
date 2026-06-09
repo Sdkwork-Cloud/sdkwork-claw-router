@@ -210,7 +210,7 @@ where
     })
 }
 
-pub fn route_scoped_openai_passthrough_router<C>(
+pub(crate) fn route_scoped_openai_passthrough_router<C>(
     catalog: Arc<C>,
     api_key_hasher: Arc<dyn ApiKeySecretHasher + Send + Sync>,
     secret_resolver: Arc<dyn ProviderSecretResolver + Send + Sync>,

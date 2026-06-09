@@ -38,13 +38,11 @@ struct AppMemoryState {
 }
 
 #[derive(Debug, Deserialize)]
-#[serde(rename_all = "camelCase")]
 struct AppMemoryListQuery {
+    #[serde(default)]
     page: Option<i64>,
-    #[serde(rename = "pageSize")]
-    page_size_camel: Option<i64>,
-    #[serde(rename = "page_size")]
-    page_size_snake: Option<i64>,
+    #[serde(default)]
+    page_size: Option<i64>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -479,12 +477,7 @@ fn required_subject(
 
 fn normalize_page(query: AppMemoryListQuery) -> (i64, i64) {
     let page = query.page.unwrap_or(1).max(1);
-    let page_size = query
-        .page_size_snake
-        .or(query.page_size_camel)
-        .unwrap_or(30)
-        .max(1)
-        .min(MAX_PAGE_SIZE);
+    let page_size = query.page_size.unwrap_or(30).max(1).min(MAX_PAGE_SIZE);
     (page, page_size)
 }
 

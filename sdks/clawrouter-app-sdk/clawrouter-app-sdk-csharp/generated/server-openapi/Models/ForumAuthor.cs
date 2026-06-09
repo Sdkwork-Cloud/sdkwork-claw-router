@@ -8,8 +8,8 @@ namespace Sdkwork.ClawRouter.App.Models
     {
         public MediaResource? Avatar { get; set; }
         public string? Bio { get; set; }
-        public string? Id { get; set; }
-        public bool? IsFollowing { get; set; }
-        public string? Name { get; set; }
+        public string Id { get; set; }
+        public bool IsFollowing { get; set; }
+        public string Name { get; set; }
     }
 }

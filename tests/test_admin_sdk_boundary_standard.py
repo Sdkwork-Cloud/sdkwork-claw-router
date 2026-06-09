@@ -143,7 +143,6 @@ class AdminSdkBoundaryStandardTest(unittest.TestCase):
             ".commerce.",
             ".ecosystem.",
             ".iam.",
-            ".openPlatform.",
             ".serviceProviders.",
         )
         for namespace in forbidden_business_namespaces:

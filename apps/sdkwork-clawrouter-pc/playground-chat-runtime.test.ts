@@ -205,6 +205,15 @@ test("chat playground persists conversations through the app Chat SDK instead of
   assert.match(operationsSource, /client\.runtime\.invocations\.create/);
 });
 
+test("chat runtime stream envelope reads only generated SDK camelCase fields", () => {
+  const source = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/components/chat/chatService.ts");
+
+  assert.doesNotMatch(source, /\['eventType', 'event_type'\]/);
+  assert.doesNotMatch(source, /\['errorMessageMasked', 'error_message_masked'\]/);
+  assert.doesNotMatch(source, /event\.payload_json/);
+  assert.doesNotMatch(source, /event\.event_no/);
+});
+
 test("chat session reconciliation treats successful remote session list as authoritative", async () => {
   await withMockLocalStorage(() => {
     const scope = "authoritative-remote";

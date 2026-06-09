@@ -9,20 +9,18 @@ type SdkworkBackendClient struct {
     http *sdkhttp.Client
     Agents *api.AgentsApi
     Ai *api.AiApi
-    Commerce *api.CommerceApi
     Content *api.ContentApi
     Ecosystem *api.EcosystemApi
     Iam *api.IamApi
     Integration *api.IntegrationApi
     Mcp *api.McpApi
     Messaging *api.MessagingApi
-    OpenPlatform *api.OpenPlatformApi
     Platform *api.PlatformApi
-    System *api.SystemApi
     Prompts *api.PromptsApi
     ServiceProviders *api.ServiceProvidersApi
     Sites *api.SitesApi
     Storage *api.StorageApi
+    System *api.SystemApi
 }
 
 func NewSdkworkBackendClient(baseURL string) *SdkworkBackendClient {
@@ -36,20 +34,18 @@ func NewSdkworkBackendClientWithConfig(config sdkhttp.Config) *SdkworkBackendCli
         http: client,
         Agents: api.NewAgentsApi(client),
         Ai: api.NewAiApi(client),
-        Commerce: api.NewCommerceApi(client),
         Content: api.NewContentApi(client),
         Ecosystem: api.NewEcosystemApi(client),
         Iam: api.NewIamApi(client),
         Integration: api.NewIntegrationApi(client),
         Mcp: api.NewMcpApi(client),
         Messaging: api.NewMessagingApi(client),
-        OpenPlatform: api.NewOpenPlatformApi(client),
         Platform: api.NewPlatformApi(client),
-        System: api.NewSystemApi(client),
         Prompts: api.NewPromptsApi(client),
         ServiceProviders: api.NewServiceProvidersApi(client),
         Sites: api.NewSitesApi(client),
         Storage: api.NewStorageApi(client),
+        System: api.NewSystemApi(client),
     }
 }
 

@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminAiModelsResponse
     {
-        public List<AdminAiModelItem>? Items { get; set; }
+        public List<AdminAiModelItem> Items { get; set; }
     }
 }

@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminCourseEngagementCollectionResponse
     {
-        public List<AdminCourseEngagementItem>? Items { get; set; }
+        public List<AdminCourseEngagementItem> Items { get; set; }
     }
 }

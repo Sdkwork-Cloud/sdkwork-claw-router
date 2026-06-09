@@ -1,5 +1,4 @@
 import {
-  createIdempotencyParams,
   ensureSdkworkApiSuccess,
   isRecord,
   readApiItem,
@@ -9,7 +8,7 @@ import {
   readString,
   type ApiRecord,
 } from 'sdkwork-clawrouter-pc-commons/runtime';
-import { getSdkworkCommerceService } from '@sdkwork/commerce-service';
+import { getClawRouterAppSdkClient } from 'sdkwork-clawrouter-pc-commons/sdk-clients';
 
 export interface MembershipSummary {
   membershipNo: string;
@@ -190,7 +189,7 @@ export class MembershipService {
   }
 
   static async fetchMembershipPackages(): Promise<MembershipPackage[]> {
-    const result = await appMembershipsPackagesList({ page: '1', pageSize: '100', status: 'active' });
+    const result = await appMembershipsPackagesList({ status: 'active' });
     ensureSdkworkApiSuccess(result, 'console.memberships.errors.packagesFallback');
     return readRequiredApiItems(result, 'console.memberships.errors.packagesFallback')
       .map((item, index) => normalizeMembershipPackage(item, null, index))
@@ -220,94 +219,81 @@ export class MembershipService {
   }
 }
 
-type AppCommerceService = ReturnType<typeof getSdkworkCommerceService>;
+type AppCommerceService = ReturnType<typeof getClawRouterAppSdkClient>['commerce'];
 
 export async function appMembershipsCurrentRetrieve() {
-  return getSdkworkCommerceService().memberships.current.retrieve();
+  return getClawRouterAppSdkClient().commerce.memberships.current.retrieve();
 }
 
 export async function appMembershipsCurrentStatusRetrieve() {
-  return getSdkworkCommerceService().memberships.current.status.retrieve();
+  return getClawRouterAppSdkClient().commerce.memberships.current.status.retrieve();
 }
 
 export async function appMembershipsPlansList() {
-  return getSdkworkCommerceService().memberships.plans.list();
+  return getClawRouterAppSdkClient().commerce.memberships.plans.list();
 }
 
-export async function appMembershipsBenefitsList(params?: Parameters<AppCommerceService['memberships']['benefits']['list']>[0]) {
-  return getSdkworkCommerceService().memberships.benefits.list(params);
+export async function appMembershipsBenefitsList() {
+  return getClawRouterAppSdkClient().commerce.memberships.benefits.list();
 }
 
 export async function appMembershipsPackageGroupsList(params?: Parameters<AppCommerceService['memberships']['packageGroups']['list']>[0]) {
-  return getSdkworkCommerceService().memberships.packageGroups.list(params);
+  return getClawRouterAppSdkClient().commerce.memberships.packageGroups.list(params);
 }
 
 export async function appMembershipsPackageGroupsRetrieve(packageGroupId: string) {
-  return getSdkworkCommerceService().memberships.packageGroups.retrieve(packageGroupId);
+  return getClawRouterAppSdkClient().commerce.memberships.packageGroups.retrieve(packageGroupId);
 }
 
 export async function appMembershipsPackageGroupsPackagesList(
   packageGroupId: string,
   params?: Parameters<AppCommerceService['memberships']['packageGroups']['packages']['list']>[1],
 ) {
-  return getSdkworkCommerceService().memberships.packageGroups.packages.list(packageGroupId, params);
+  return getClawRouterAppSdkClient().commerce.memberships.packageGroups.packages.list(packageGroupId, params);
 }
 
 export async function appMembershipsPackagesList(params?: Parameters<AppCommerceService['memberships']['packages']['list']>[0]) {
-  return getSdkworkCommerceService().memberships.packages.list(params);
+  return getClawRouterAppSdkClient().commerce.memberships.packages.list(params);
 }
 
 export async function appMembershipsPackagesRetrieve(packageId: string) {
-  return getSdkworkCommerceService().memberships.packages.retrieve(packageId);
+  return getClawRouterAppSdkClient().commerce.memberships.packages.retrieve(packageId);
 }
 
 export async function appMembershipsPurchasesCreate(body: Parameters<AppCommerceService['memberships']['purchases']['create']>[0]) {
-  return getSdkworkCommerceService().memberships.purchases.create(
-    body,
-    createIdempotencyParams('app-membership-purchase-create'),
-  );
+  return getClawRouterAppSdkClient().commerce.memberships.purchases.create(body);
 }
 
 export async function appMembershipsPurchasesRenew(body: Parameters<AppCommerceService['memberships']['purchases']['renew']>[0]) {
-  return getSdkworkCommerceService().memberships.purchases.renew(
-    body,
-    createIdempotencyParams('app-membership-purchase-renew'),
-  );
+  return getClawRouterAppSdkClient().commerce.memberships.purchases.renew(body);
 }
 
 export async function appMembershipsPurchasesUpgrade(body: Parameters<AppCommerceService['memberships']['purchases']['upgrade']>[0]) {
-  return getSdkworkCommerceService().memberships.purchases.upgrade(
-    body,
-    createIdempotencyParams('app-membership-purchase-upgrade'),
-  );
+  return getClawRouterAppSdkClient().commerce.memberships.purchases.upgrade(body);
 }
 
 export async function appMembershipsPointsBalanceRetrieve() {
-  return getSdkworkCommerceService().memberships.points.balance.retrieve();
+  return getClawRouterAppSdkClient().commerce.memberships.points.balance.retrieve();
 }
 
 export async function appMembershipsPointsHistoryList(params?: Parameters<AppCommerceService['memberships']['points']['history']['list']>[0]) {
-  return getSdkworkCommerceService().memberships.points.history.list(params);
+  return getClawRouterAppSdkClient().commerce.memberships.points.history.list(params);
 }
 
 export async function appMembershipsPointsDailyRewardsCreate() {
-  return getSdkworkCommerceService().memberships.points.dailyRewards.create(
-    undefined,
-  );
+  return getClawRouterAppSdkClient().commerce.memberships.points.dailyRewards.create({});
 }
 
 export async function appMembershipsPointsDailyRewardsStatusRetrieve() {
-  return getSdkworkCommerceService().memberships.points.dailyRewards.status.retrieve();
+  return getClawRouterAppSdkClient().commerce.memberships.points.dailyRewards.status.retrieve();
 }
 
 export async function appMembershipsPrivilegesUsageRetrieve() {
-  return getSdkworkCommerceService().memberships.privileges.usage.retrieve();
+  return getClawRouterAppSdkClient().commerce.memberships.privileges.usage.retrieve();
 }
 
 export async function appMembershipsPrivilegesSpeedUpsCreate() {
-  return getSdkworkCommerceService().memberships.privileges.speedUps.create(
-    undefined,
-  );
+  return getClawRouterAppSdkClient().commerce.memberships.privileges.speedUps.create({});
 }
 
 function createEmptyPointsBalance(): MembershipPointsBalance {
@@ -339,18 +325,12 @@ function readOptionalMembershipSummaryResult(result: PromiseSettledResult<unknow
 
 async function readMembershipPackageGroupsResult(result: PromiseSettledResult<unknown>): Promise<MembershipPackageGroup[]> {
   if (result.status !== 'fulfilled') {
-    return createPackageCatalogFallback();
+    throw result.reason instanceof Error
+      ? result.reason
+      : new Error('console.memberships.errors.packageGroupsFallback');
   }
-  try {
-    ensureSdkworkApiSuccess(result.value, 'console.memberships.errors.packageGroupsFallback');
-    return await normalizeMembershipPackageGroups(result.value);
-  } catch (error) {
-    const fallbackGroups = await tryCreatePackageCatalogFallback();
-    if (fallbackGroups.length > 0) {
-      return fallbackGroups;
-    }
-    throw error;
-  }
+  ensureSdkworkApiSuccess(result.value, 'console.memberships.errors.packageGroupsFallback');
+  return await normalizeMembershipPackageGroups(result.value);
 }
 
 function readOptionalListResult<T>(
@@ -405,9 +385,9 @@ async function normalizeMembershipPackageGroups(result: unknown): Promise<Member
       .map((item, index) => normalizeMembershipPackageGroupRecord(item, index))
       .filter(isMembershipPackageGroupRecord)
       .map(async ({ record, index }) => {
-        const groupId = readFirstString(record, ['id', 'packageGroupId', 'package_group_id', 'groupId', 'group_id', 'groupNo', 'group_no'])
+        const groupId = readFirstString(record, ['id'])
           || `group-${index + 1}`;
-        const embeddedPackages = readOptionalApiItems(record, ['packages', 'items', 'records', 'list']);
+        const embeddedPackages = readOptionalApiItems(record, ['packages']);
         const packageLoadResult = embeddedPackages
           ? { items: embeddedPackages, failed: false }
           : await fetchPackageGroupPackagesSafely(groupId);
@@ -419,11 +399,11 @@ async function normalizeMembershipPackageGroups(result: unknown): Promise<Member
         return {
           group: {
             id: groupId,
-            groupNo: readFirstString(record, ['groupNo', 'group_no', 'packageGroupNo', 'package_group_no', 'code']) || groupId,
-            name: readFirstString(record, ['name', 'groupName', 'group_name']) || groupId,
-            description: readFirstString(record, ['description', 'summary']) || null,
+            groupNo: readFirstString(record, ['groupNo']) || groupId,
+            name: readFirstString(record, ['name']) || groupId,
+            description: readFirstString(record, ['description']) || null,
             status: readFirstString(record, ['status']) || 'active',
-            sortOrder: readFirstNumber(record, ['sortOrder', 'sort_order', 'sortWeight', 'sort_weight'], index),
+            sortOrder: readFirstNumber(record, ['sortOrder'], index),
             packages,
           },
           packageLoadFailed: packageLoadResult.failed,
@@ -431,22 +411,15 @@ async function normalizeMembershipPackageGroups(result: unknown): Promise<Member
       }),
   );
 
-  let groups = groupEntries
+  const groups = groupEntries
     .map((entry) => entry.group)
     .sort(compareMembershipPackageGroups);
-
-  if (groups.length > 0 && groupEntries.some((entry) => entry.packageLoadFailed)) {
-    const catalogPackages = await tryFetchMembershipPackages();
-    if (catalogPackages.length > 0) {
-      groups = mergeCatalogPackagesIntoGroups(groups, catalogPackages);
-    }
-  }
 
   if (groups.length > 0) {
     return groups;
   }
 
-  return createPackageCatalogFallback();
+  return [];
 }
 
 async function fetchPackageGroupPackagesSafely(packageGroupId: string): Promise<{ items: unknown[]; failed: boolean }> {
@@ -461,75 +434,6 @@ async function fetchPackageGroupPackagesSafely(packageGroupId: string): Promise<
       failed: true,
     };
   }
-}
-
-async function tryFetchMembershipPackages(): Promise<MembershipPackage[]> {
-  try {
-    return await MembershipService.fetchMembershipPackages();
-  } catch {
-    return [];
-  }
-}
-
-async function tryCreatePackageCatalogFallback(): Promise<MembershipPackageGroup[]> {
-  try {
-    return await createPackageCatalogFallback();
-  } catch {
-    return [];
-  }
-}
-
-async function createPackageCatalogFallback(): Promise<MembershipPackageGroup[]> {
-  const packages = await MembershipService.fetchMembershipPackages();
-  return packages.length > 0
-    ? [createUngroupedPackageGroup(packages)]
-    : [];
-}
-
-function createUngroupedPackageGroup(packages: MembershipPackage[]): MembershipPackageGroup {
-  return {
-    id: 'ungrouped',
-    groupNo: 'ungrouped',
-    name: 'console.memberships.groups.ungroupedName',
-    description: null,
-    status: 'active',
-    sortOrder: 0,
-    packages,
-  };
-}
-
-function mergeCatalogPackagesIntoGroups(
-  groups: MembershipPackageGroup[],
-  catalogPackages: MembershipPackage[],
-): MembershipPackageGroup[] {
-  const groupsById = new Map(groups.map((group) => [group.id, group]));
-  const packagesByGroupId = new Map<string, MembershipPackage[]>();
-  const ungroupedPackages: MembershipPackage[] = [];
-
-  for (const pkg of catalogPackages) {
-    const groupId = pkg.packageGroupId;
-    if (groupId && groupsById.has(groupId)) {
-      const groupPackages = packagesByGroupId.get(groupId) ?? [];
-      groupPackages.push(pkg);
-      packagesByGroupId.set(groupId, groupPackages);
-    } else {
-      ungroupedPackages.push(pkg);
-    }
-  }
-
-  const nextGroups = groups.map((group) => {
-    if (group.packages.length > 0) {
-      return group;
-    }
-    const fallbackPackages = packagesByGroupId.get(group.id) ?? [];
-    return fallbackPackages.length > 0
-      ? { ...group, packages: [...fallbackPackages].sort(compareMembershipPackages) }
-      : group;
-  });
-
-  return ungroupedPackages.length > 0
-    ? [...nextGroups, createUngroupedPackageGroup(ungroupedPackages)].sort(compareMembershipPackageGroups)
-    : nextGroups.sort(compareMembershipPackageGroups);
 }
 
 async function fetchPackageGroupPackages(packageGroupId: string): Promise<unknown[]> {
@@ -556,12 +460,12 @@ function normalizeNullableMembershipSummary(result: unknown): MembershipSummary 
 
 function normalizeMembershipSummary(value: ApiRecord): MembershipSummary {
   return {
-    membershipNo: firstRequiredString(value, ['membershipNo', 'membership_no'], 'Membership number is required'),
-    planId: firstRequiredString(value, ['planId', 'plan_id', 'planNo', 'plan_no'], 'Membership plan id is required'),
-    planName: readFirstString(value, ['planName', 'plan_name', 'name']) || null,
+    membershipNo: firstRequiredString(value, ['membershipNo'], 'Membership number is required'),
+    planId: firstRequiredString(value, ['planId'], 'Membership plan id is required'),
+    planName: readFirstString(value, ['planName']) || null,
     status: readFirstString(value, ['status']) || 'active',
-    startsAt: readFirstString(value, ['startsAt', 'starts_at', 'createdAt', 'created_at']) || null,
-    expiresAt: readFirstString(value, ['expiresAt', 'expires_at', 'expireAt', 'expire_at']) || null,
+    startsAt: readFirstString(value, ['startsAt']) || null,
+    expiresAt: readFirstString(value, ['expiresAt']) || null,
   };
 }
 
@@ -570,27 +474,26 @@ function normalizeMembershipPackage(value: unknown, packageGroupIdOverride: stri
     return null;
   }
   const item = value;
-  const packageId = readFirstString(item, ['id', 'packageId', 'package_id'])
-    || readFirstString(item, ['packageNo', 'package_no', 'code'])
+  const packageId = readFirstString(item, ['id'])
     || `package-${index + 1}`;
-  const planName = readFirstString(item, ['planName', 'plan_name', 'name', 'packageName', 'package_name']);
-  const planId = readFirstString(item, ['planId', 'plan_id', 'planNo', 'plan_no'])
+  const planName = readFirstString(item, ['planName']) || readFirstString(item, ['name']);
+  const planId = readFirstString(item, ['planId'])
     || normalizePlanName(planName)
     || packageId;
   const status = readFirstString(item, ['status']) || 'active';
-  const price = readDisplayMoneyString(item, ['priceAmount', 'price_amount', 'price']);
+  const price = readDisplayMoneyString(item, ['priceAmount']);
 
   return {
     id: packageId,
-    packageNo: readFirstString(item, ['packageNo', 'package_no', 'code', 'id']) || packageId,
-    packageGroupId: packageGroupIdOverride || readFirstString(item, ['packageGroupId', 'package_group_id', 'groupId', 'group_id']) || null,
+    packageNo: readFirstString(item, ['packageNo']) || packageId,
+    packageGroupId: packageGroupIdOverride || readFirstString(item, ['packageGroupId']) || null,
     planId,
     planName: planName || planId,
-    skuId: readFirstString(item, ['skuId', 'sku_id']) || packageId,
+    skuId: readFirstString(item, ['skuId']) || packageId,
     priceAmount: price.amount,
-    currencyCode: readFirstString(item, ['currencyCode', 'currency_code']) || 'CNY',
-    durationDays: readFirstNonNegativeNumberOrFallback(item, ['durationDays', 'duration_days'], 0),
-    recurrenceCycle: readFirstString(item, ['recurrenceCycle', 'recurrence_cycle', 'billingCycle', 'billing_cycle']) || 'one_time',
+    currencyCode: readFirstString(item, ['currencyCode']) || 'CNY',
+    durationDays: readFirstNonNegativeNumberOrFallback(item, ['durationDays'], 0),
+    recurrenceCycle: readFirstString(item, ['recurrenceCycle']) || 'one_time',
     status,
     isPurchasable: isPositiveIntegerId(packageId) && price.isPurchasable && normalizeStatus(status) === 'active',
   };
@@ -602,13 +505,13 @@ function isMembershipPackage(value: MembershipPackage | null): value is Membersh
 
 function normalizeMembershipBenefit(value: unknown): MembershipBenefit {
   const item = readRequiredRecord(value, 'Membership benefit record is required');
-  const code = firstRequiredString(item, ['entitlementCode', 'entitlement_code', 'code', 'id'], 'Membership benefit code is required');
+  const code = firstRequiredString(item, ['entitlementCode'], 'Membership benefit code is required');
   return {
     code,
-    name: readFirstString(item, ['name', 'title', 'label']) || code,
-    quotaAmount: readFirstString(item, ['quotaAmount', 'quota_amount', 'quota', 'amount']) || '-',
-    quotaPeriod: readFirstString(item, ['quotaPeriod', 'quota_period', 'period']) || null,
-    resetPolicy: readFirstString(item, ['resetPolicy', 'reset_policy']) || null,
+    name: readFirstString(item, ['name']) || code,
+    quotaAmount: readFirstString(item, ['quotaAmount']) || '-',
+    quotaPeriod: readFirstString(item, ['quotaPeriod']) || null,
+    resetPolicy: readFirstString(item, ['resetPolicy']) || null,
     status: readFirstString(item, ['status']) || 'active',
   };
 }
@@ -623,9 +526,9 @@ function normalizePointsBalance(result: unknown): MembershipPointsBalance {
     return { ...EMPTY_POINTS_BALANCE };
   }
   return {
-    balance: readFirstNumber(item, ['balance', 'points', 'pointsBalance', 'points_balance', 'availableCredits', 'available_credits'], 0),
+    balance: readFirstNumber(item, ['balance'], 0),
     status: readFirstString(item, ['status']) || 'active',
-    updatedAt: readFirstString(item, ['updatedAt', 'updated_at', 'occurredAt', 'occurred_at']) || null,
+    updatedAt: readFirstString(item, ['updatedAt']) || null,
   };
 }
 
@@ -633,16 +536,16 @@ function normalizePointsHistoryItem(value: unknown): MembershipPointsHistoryItem
   if (!isRecord(value)) {
     return null;
   }
-  const id = readFirstString(value, ['id', 'historyNo', 'history_no', 'recordNo', 'record_no'])
-    || readFirstString(value, ['occurredAt', 'occurred_at', 'createdAt', 'created_at']);
+  const id = readFirstString(value, ['id'])
+    || readFirstString(value, ['occurredAt']);
   if (!id) {
     return null;
   }
   return {
     id,
-    title: readFirstString(value, ['title', 'name', 'type', 'sourceType', 'source_type']) || id,
-    amount: readFirstString(value, ['amount', 'points', 'delta', 'pointAmount', 'point_amount']) || '0',
-    occurredAt: readFirstString(value, ['occurredAt', 'occurred_at', 'createdAt', 'created_at']) || null,
+    title: readFirstString(value, ['title']) || id,
+    amount: readFirstString(value, ['amount']) || '0',
+    occurredAt: readFirstString(value, ['occurredAt']) || null,
     status: readFirstString(value, ['status']) || 'success',
   };
 }
@@ -656,15 +559,15 @@ function normalizeDailyRewardStatus(result: unknown): MembershipDailyRewardStatu
   if (Object.keys(item).length === 0) {
     return { ...EMPTY_DAILY_REWARD };
   }
-  const claimedToday = readOptionalBoolean(item, 'claimedToday', 'claimed_today', 'claimed') ?? false;
-  const available = readOptionalBoolean(item, 'available', 'canClaim', 'can_claim', 'claimable')
+  const claimedToday = readOptionalBoolean(item, 'claimedToday') ?? false;
+  const available = readOptionalBoolean(item, 'available')
     ?? (!claimedToday && normalizeStatus(readFirstString(item, ['status'])) === 'available');
   return {
     available,
     claimedToday,
-    rewardPoints: readFirstNumber(item, ['rewardPoints', 'reward_points', 'points', 'amount'], 0),
+    rewardPoints: readFirstNumber(item, ['rewardPoints'], 0),
     status: readFirstString(item, ['status']) || (available ? 'available' : 'unavailable'),
-    nextAvailableAt: readFirstString(item, ['nextAvailableAt', 'next_available_at', 'availableAt', 'available_at']) || null,
+    nextAvailableAt: readFirstString(item, ['nextAvailableAt']) || null,
   };
 }
 
@@ -675,8 +578,8 @@ function normalizePrivilegeUsage(result: unknown): MembershipPrivilegeUsage {
     .concat(readApiItems(result).filter(isRecord))
     .map(normalizePrivilegeUsageItem)
     .filter(isMembershipPrivilegeUsageItem);
-  const speedUpRemaining = readFirstNumber(item, ['speedUpRemaining', 'speed_up_remaining', 'remainingSpeedUps', 'remaining_speed_ups'], 0);
-  const speedUpAvailable = readOptionalBoolean(item, 'speedUpAvailable', 'speed_up_available', 'canSpeedUp', 'can_speed_up')
+  const speedUpRemaining = readFirstNumber(item, ['speedUpRemaining'], 0);
+  const speedUpAvailable = readOptionalBoolean(item, 'speedUpAvailable')
     ?? speedUpRemaining > 0;
   return {
     speedUpAvailable,
@@ -686,18 +589,18 @@ function normalizePrivilegeUsage(result: unknown): MembershipPrivilegeUsage {
 }
 
 function normalizePrivilegeUsageItem(value: ApiRecord): MembershipPrivilegeUsageItem | null {
-  const code = readFirstString(value, ['code', 'entitlementCode', 'entitlement_code', 'usageNo', 'usage_no', 'id']);
+  const code = readFirstString(value, ['code']);
   if (!code) {
     return null;
   }
-  const quota = readFirstString(value, ['quotaAmount', 'quota_amount', 'quota', 'limit']) || '-';
-  const used = readFirstString(value, ['usedAmount', 'used_amount', 'used']) || '0';
+  const quota = readFirstString(value, ['quotaAmount']) || '-';
+  const used = readFirstString(value, ['usedAmount']) || '0';
   return {
     code,
-    name: readFirstString(value, ['name', 'title', 'label']) || code,
+    name: readFirstString(value, ['name']) || code,
     used,
     quota,
-    remaining: readFirstString(value, ['balanceAfter', 'balance_after', 'remaining']) || calculateRemaining(quota, used),
+    remaining: readFirstString(value, ['balanceAfter']) || calculateRemaining(quota, used),
     status: readFirstString(value, ['status']) || 'active',
   };
 }
@@ -711,7 +614,7 @@ async function createMembershipPackageAction(
   action: (body: Parameters<AppCommerceService['memberships']['purchases']['create']>[0]) => Promise<unknown>,
 ): Promise<MembershipActionResult> {
   const result = await action({
-    packageId: String(requiredPositiveIntegerId(packageId, 'packageId')),
+    packageId: requiredPositiveIntegerId(packageId, 'packageId'),
   });
   return normalizeMembershipActionResult(result, 'Membership purchase request number is required');
 }
@@ -720,17 +623,17 @@ function normalizeMembershipActionResult(result: unknown, missingRequestMessage:
   const data = readApiItem(result) ?? readApiRecord(result);
   const requestNo = readFirstString(
     data,
-    ['requestNo', 'request_no', 'orderNo', 'order_no', 'orderId', 'order_id', 'paymentIntentId', 'payment_intent_id', 'id'],
+    ['requestNo'],
   );
   if (!requestNo) {
     throw new Error(missingRequestMessage);
   }
-  const status = readFirstString(data, ['status', 'paymentStatus', 'payment_status', 'orderStatus', 'order_status']) || 'accepted';
+  const status = readFirstString(data, ['status']) || 'accepted';
   const success = readOperationAccepted(data, status);
   if (!success) {
     throw new Error('Membership operation was not accepted');
   }
-  const rewardPoints = readOptionalNumber(data, 'rewardPoints', 'reward_points', 'points', 'amount');
+  const rewardPoints = readOptionalNumber(data, 'rewardPoints');
   return {
     success,
     requestNo,

@@ -683,8 +683,10 @@ async fn import_vendor_modalities(
     modality_ids: &BTreeMap<String, i64>,
 ) -> Result<(), sqlx::Error> {
     for item in catalog_vendor_modality_projections(catalog) {
-        let row_id =
-            stable_catalog_id("sdk-vendor-modality", &[&item.vendor_code, &item.modality_code]);
+        let row_id = stable_catalog_id(
+            "sdk-vendor-modality",
+            &[&item.vendor_code, &item.modality_code],
+        );
         sqlx::query(
             r#"
             INSERT INTO ai_vendor_modality
@@ -731,8 +733,10 @@ async fn import_vendor_api_endpoints(
     endpoint_ids: &BTreeMap<String, i64>,
 ) -> Result<(), sqlx::Error> {
     for item in catalog_vendor_api_endpoint_projections(catalog) {
-        let row_id =
-            stable_catalog_id("sdk-vendor-endpoint", &[&item.vendor_code, &item.endpoint_code]);
+        let row_id = stable_catalog_id(
+            "sdk-vendor-endpoint",
+            &[&item.vendor_code, &item.endpoint_code],
+        );
         sqlx::query(
             r#"
             INSERT INTO ai_vendor_api_endpoint
@@ -884,8 +888,10 @@ async fn import_model_api_endpoints(
     endpoint_ids: &BTreeMap<String, i64>,
 ) -> Result<(), sqlx::Error> {
     for item in catalog_model_api_endpoint_projections(catalog) {
-        let row_id =
-            stable_catalog_id("sdk-model-endpoint", &[&item.catalog_key, &item.endpoint_code]);
+        let row_id = stable_catalog_id(
+            "sdk-model-endpoint",
+            &[&item.catalog_key, &item.endpoint_code],
+        );
         sqlx::query(
             r#"
             INSERT INTO ai_model_api_endpoint

@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminChannelGroupChannelBindingsReplaceRequest
     {
-        public List<AdminChannelGroupChannelBindingInput>? Items { get; set; }
+        public List<AdminChannelGroupChannelBindingInput> Items { get; set; }
     }
 }

@@ -7,8 +7,8 @@ namespace Sdkwork.ClawRouter.Backend.Models
     public class AdminAiResourceGroupCreateRequest
     {
         public string? Description { get; set; }
-        public string? GroupCode { get; set; }
-        public string? GroupName { get; set; }
+        public string GroupCode { get; set; }
+        public string GroupName { get; set; }
         public string? GroupType { get; set; }
         public List<AdminAiResourceGroupMemberInput>? Members { get; set; }
         public string? SelectionMode { get; set; }

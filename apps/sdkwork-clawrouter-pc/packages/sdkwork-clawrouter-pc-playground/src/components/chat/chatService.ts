@@ -876,23 +876,19 @@ function readRuntimeFailureEventMessage(event: unknown): string {
   if (!isRecord(event)) {
     return '';
   }
-  const eventType = readFirstString(event, ['eventType', 'event_type']).toLowerCase();
+  const eventType = readFirstString(event, ['eventType']).toLowerCase();
   if (eventType !== 'runtime.failed') {
     return '';
   }
-  const directMessage = readFirstString(event, ['errorMessageMasked', 'error_message_masked']);
+  const directMessage = readFirstString(event, ['errorMessageMasked']);
   if (directMessage) {
     return directMessage;
   }
-  const payload = isRecord(event.payloadJson)
-    ? event.payloadJson
-    : isRecord(event.payload_json)
-      ? event.payload_json
-      : null;
+  const payload = isRecord(event.payloadJson) ? event.payloadJson : null;
   if (!payload) {
     return RUNTIME_STREAM_FAILED_MESSAGE;
   }
-  return readFirstString(payload, ['errorMessageMasked', 'error_message_masked', 'message', 'error'])
+  return readFirstString(payload, ['errorMessageMasked', 'message', 'error'])
     || RUNTIME_STREAM_FAILED_MESSAGE;
 }
 
@@ -900,7 +896,7 @@ function readRuntimeCancellationEvent(event: unknown): boolean {
   if (!isRecord(event)) {
     return false;
   }
-  const eventType = readFirstString(event, ['eventType', 'event_type']).toLowerCase();
+  const eventType = readFirstString(event, ['eventType']).toLowerCase();
   return eventType === 'runtime.cancelled';
 }
 
@@ -908,7 +904,7 @@ function readRuntimeEventNo(event: unknown): number {
   if (!isRecord(event)) {
     return 0;
   }
-  const rawEventNo = event.eventNo ?? event.event_no;
+  const rawEventNo = event.eventNo;
   const eventNo = typeof rawEventNo === 'number'
     ? rawEventNo
     : typeof rawEventNo === 'string'

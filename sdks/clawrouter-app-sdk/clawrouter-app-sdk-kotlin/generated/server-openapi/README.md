@@ -27,40 +27,22 @@ import kotlinx.coroutines.runBlocking
 fun main() = runBlocking {
     val config = SdkConfig(baseUrl = "http://localhost:18082")
     val client = SdkworkAppClient(config)
-    client.setApiKey("your-api-key")
+    client.setAuthToken("your-auth-token")
+client.setAccessToken("your-access-token")
 
     // Use the SDK
-    val result = client.ai.channelGroupsList()
+    val result = client.auth.sessionsCurrentRetrieve()
     println(result)
 }
 ```
 
-## Authentication Modes (Mutually Exclusive)
+## Authentication
 
-Choose exactly one mode for the same client instance.
-
-### Mode A: API Key
-
-```kotlin
-val config = SdkConfig(baseUrl = "http://localhost:18082")
-val client = SdkworkAppClient(config)
-client.setApiKey("your-api-key")
-// Sends: Access-Token: <apiKey>
+```text
+Authorization: Bearer <authToken>
+Access-Token: <accessToken>
 ```
 
-### Mode B: Dual Token
-
-```kotlin
-val config = SdkConfig(baseUrl = "http://localhost:18082")
-val client = SdkworkAppClient(config)
-client.setAuthToken("your-auth-token")
-client.setAccessToken("your-access-token")
-// Sends:
-// Authorization: Bearer <authToken>
-// Access-Token: <accessToken>
-```
-
-> Do not call `setApiKey(...)` together with `setAuthToken(...)` + `setAccessToken(...)` on the same client.
 
 ## Configuration (Non-Auth)
 
@@ -73,6 +55,7 @@ val client = SdkworkAppClient(config)
 
 - `client.agents` - agents API
 - `client.ai` - ai API
+- `client.auth` - auth API
 - `client.chat` - chat API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
@@ -80,10 +63,9 @@ val client = SdkworkAppClient(config)
 - `client.memory` - memory API
 - `client.notification` - notification API
 - `client.platform` - platform API
-- `client.system` - system API
-- `client.commerce` - commerce API
 - `client.runtime` - runtime API
 - `client.sdkReference` - sdk_reference API
+- `client.system` - system API
 
 ## Usage Examples
 
@@ -105,6 +87,14 @@ println(result)
 ```kotlin
 // List groups
 val result = client.ai.channelGroupsList()
+println(result)
+```
+
+### auth
+
+```kotlin
+// Retrieve current IAM session
+val result = client.auth.sessionsCurrentRetrieve()
 println(result)
 ```
 
@@ -178,26 +168,6 @@ val result = client.platform.appsStoreCategoriesList()
 println(result)
 ```
 
-### system
-
-```kotlin
-// Retrieve public site runtime branding settings
-val params = linkedMapOf<String, Any>(
-    "tenant_code" to "ok",
-    "organization_code" to "ok"
-)
-val result = client.system.siteRuntimeRetrieve(params)
-println(result)
-```
-
-### commerce
-
-```kotlin
-// Recharges Settings Retrieve
-val result = client.commerce.rechargesSettingsRetrieve()
-println(result)
-```
-
 ### runtime
 
 ```kotlin
@@ -243,6 +213,14 @@ val result = client.sdkReference.archivesCreate(body)
 println(result)
 ```
 
+### system
+
+```kotlin
+// Retrieve public IAM verification policy
+val result = client.system.iamVerificationPolicyRetrieve()
+println(result)
+```
+
 ## Error Handling
 
 ```kotlin
@@ -250,7 +228,7 @@ import kotlinx.coroutines.runBlocking
 
 fun main() = runBlocking {
     try {
-        val result = client.ai.channelGroupsList()
+        val result = client.auth.sessionsCurrentRetrieve()
         println(result)
     } catch (e: Exception) {
         println("Error: ${e.message}")

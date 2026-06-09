@@ -3,15 +3,15 @@ frontend_operations:
 - route: /admin/orders
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
   operation: backendRefundsList
-  operation_id: refunds.management.list
+  operation_id: refunds.list
   kind: read
   api_surface: backend
-  openapi_exposed: false
+  openapi_exposed: true
   api_method: GET
-  api_path: /backend/v3/api/refunds/management
+  api_path: /backend/v3/api/refunds
   sdk_domain: commerce
-  summary: Refunds Management List
-  description: Standard appbase commerce API for refunds.management.list; no legacy billing compatibility route is exposed.
+  summary: Refunds List
+  description: Standard appbase commerce API for refunds.list; no legacy billing compatibility route is exposed.
   read_sources:
   - commerce_refund
   - commerce_refund_item
@@ -97,15 +97,15 @@ frontend_operations:
 - route: /admin/orders
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
   operation: backendRefundsRetrieve
-  operation_id: refunds.management.retrieve
+  operation_id: refunds.retrieve
   kind: read
   api_surface: backend
-  openapi_exposed: false
+  openapi_exposed: true
   api_method: GET
-  api_path: /backend/v3/api/refunds/management/{refundId}
+  api_path: /backend/v3/api/refunds/{refundId}
   sdk_domain: commerce
-  summary: Refunds Management Retrieve
-  description: Standard appbase commerce API for refunds.management.retrieve; no legacy billing compatibility route is exposed.
+  summary: Refunds Retrieve
+  description: Standard appbase commerce API for refunds.retrieve; no legacy billing compatibility route is exposed.
   read_sources:
   - commerce_refund
   - commerce_refund_item

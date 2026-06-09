@@ -1,11 +1,14 @@
 use std::collections::{BTreeMap, BTreeSet};
 use std::fmt::{Display, Formatter};
 
-use sdkwork_iam_storage_sqlx::{DEFAULT_IAM_ORGANIZATION_ID, DEFAULT_IAM_TENANT_ID};
 use serde::Deserialize;
 use serde_json::Value;
 use sha2::{Digest, Sha256};
 use sqlx::{PgPool, Row, SqlitePool};
+
+use crate::infrastructure::sql::iam_seed_defaults::{
+    DEFAULT_IAM_ORGANIZATION_ID, DEFAULT_IAM_TENANT_ID,
+};
 
 const MANIFEST_JSON: &str = include_str!("../../../../../data/ai-routing/install-manifest.json");
 const CORE_RESOURCES_JSON: &str =

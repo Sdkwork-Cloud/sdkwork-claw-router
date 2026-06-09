@@ -20,13 +20,6 @@ import {
   type SdkworkDriveAppClient,
 } from '@sdkwork/drive-app-sdk';
 import {
-  configureSdkworkCommerceServiceProvider,
-  configureSdkworkCommerceSessionTokenProvider,
-  createSdkworkCommerceService,
-  type CommerceAppSdkClient,
-  type CommerceBackendSdkClient,
-} from '@sdkwork/commerce-service';
-import {
   SdkworkAppClient as SdkworkCommerceAppClient,
   type SdkworkAppConfig as SdkworkCommerceAppConfig,
 } from 'sdkwork-commerce-app-sdk-generated-typescript';
@@ -187,8 +180,83 @@ export interface ClawRouterAiSdkClientOptions {
   timeout?: number;
 }
 
-export type ClawRouterAppSdkClient = SdkworkAppClient;
-export type ClawRouterBackendSdkClient = SdkworkBackendClient;
+export type ClawRouterAppSdkClient = SdkworkAppClient & {
+  readonly commerce: SdkworkCommerceAppClient;
+};
+type PublicSdkResource<TResource> = TResource extends (...args: infer TArgs) => infer TResult
+  ? (...args: TArgs) => TResult
+  : TResource extends object
+    ? { readonly [K in keyof TResource]: PublicSdkResource<TResource[K]> }
+    : TResource;
+type CommerceBackendSdkPublicResource = PublicSdkResource<SdkworkCommerceGeneratedBackendClient>;
+type BackendCommerceResourceMap = PublicSdkResource<SdkworkBackendClient['commerce']> & CommerceBackendSdkPublicResource;
+type BackendCommerceDependencyOverlay = BackendCommerceResourceMap & {
+  readonly orders: BackendCommerceResourceMap['orders'] & {
+    readonly list: CommerceBackendSdkPublicResource['orders']['management']['list'];
+    readonly retrieve: CommerceBackendSdkPublicResource['orders']['management']['retrieve'];
+    readonly events: BackendCommerceResourceMap['orders']['events'] & {
+      readonly list: CommerceBackendSdkPublicResource['orders']['events']['management']['list'];
+    };
+  };
+  readonly refunds: BackendCommerceResourceMap['refunds'] & {
+    readonly list: CommerceBackendSdkPublicResource['refunds']['management']['list'];
+    readonly retrieve: CommerceBackendSdkPublicResource['refunds']['management']['retrieve'];
+  };
+  readonly fulfillments: BackendCommerceResourceMap['fulfillments'] & {
+    readonly list: CommerceBackendSdkPublicResource['fulfillments']['management']['list'];
+    readonly retrieve: CommerceBackendSdkPublicResource['fulfillments']['management']['retrieve'];
+  };
+  readonly invoices: BackendCommerceResourceMap['invoices'] & {
+    readonly list: CommerceBackendSdkPublicResource['invoices']['management']['list'];
+    readonly retrieve: CommerceBackendSdkPublicResource['invoices']['management']['retrieve'];
+  };
+  readonly inventory: BackendCommerceResourceMap['inventory'];
+  readonly memberships: BackendCommerceResourceMap['memberships'] & {
+    readonly plans: BackendCommerceResourceMap['memberships']['plans'] & {
+      readonly list: CommerceBackendSdkPublicResource['memberships']['plans']['management']['list'];
+    };
+    readonly packages: BackendCommerceResourceMap['memberships']['packages'] & {
+      readonly list: CommerceBackendSdkPublicResource['memberships']['packages']['management']['list'];
+    };
+    readonly packageGroups: BackendCommerceResourceMap['memberships']['packageGroups'] & {
+      readonly list: CommerceBackendSdkPublicResource['memberships']['packageGroups']['management']['list'];
+    };
+  };
+  readonly payments: BackendCommerceResourceMap['payments'] & {
+    readonly methods: BackendCommerceResourceMap['payments']['methods'] & {
+      readonly list: CommerceBackendSdkPublicResource['payments']['methods']['management']['list'];
+    };
+  };
+  readonly recharges: BackendCommerceResourceMap['recharges'] & {
+    readonly orders: BackendCommerceResourceMap['recharges']['orders'] & {
+      readonly list: CommerceBackendSdkPublicResource['recharges']['orders']['management']['list'];
+      readonly retrieve: CommerceBackendSdkPublicResource['recharges']['orders']['management']['retrieve'];
+    };
+    readonly packages: BackendCommerceResourceMap['recharges']['packages'] & {
+      readonly list: CommerceBackendSdkPublicResource['recharges']['packages']['management']['list'];
+    };
+    readonly settings: BackendCommerceResourceMap['recharges']['settings'] & {
+      readonly retrieve: CommerceBackendSdkPublicResource['recharges']['settings']['management']['retrieve'];
+    };
+  };
+  readonly wallet: BackendCommerceResourceMap['wallet'] & {
+    readonly accounts: BackendCommerceResourceMap['wallet']['accounts'] & {
+      readonly list: CommerceBackendSdkPublicResource['wallet']['accounts']['management']['list'];
+    };
+    readonly ledgerEntries: BackendCommerceResourceMap['wallet']['ledgerEntries'] & {
+      readonly list: CommerceBackendSdkPublicResource['wallet']['ledgerEntries']['management']['list'];
+    };
+    readonly exchangeRules: BackendCommerceResourceMap['wallet']['exchangeRules'] & {
+      readonly list: CommerceBackendSdkPublicResource['wallet']['exchangeRules']['management']['list'];
+    };
+    readonly adjustments: BackendCommerceResourceMap['wallet']['adjustments'] & {
+      readonly create: CommerceBackendSdkPublicResource['wallet']['adjustments']['management']['create'];
+    };
+  };
+};
+export type ClawRouterBackendSdkClient = Omit<SdkworkBackendClient, 'commerce'> & {
+  readonly commerce: BackendCommerceDependencyOverlay;
+};
 export type SdkworkAppbaseAppSdkClient = SdkworkAppbaseAppClient;
 export type SdkworkAppbaseBackendSdkClient = SdkworkAppbaseBackendClient;
 export type SdkworkGenerationsAppSdkClient = SdkworkGenerationsAppClient;
@@ -242,8 +310,8 @@ const SESSION_AUTH_ERROR_MESSAGES = [
   'unauthorized',
 ];
 
-let appClient: SdkworkAppClient | null = null;
-let backendClient: SdkworkBackendClient | null = null;
+let appClient: ClawRouterAppSdkClient | null = null;
+let backendClient: ClawRouterBackendSdkClient | null = null;
 let appbaseAppClient: SdkworkAppbaseAppClient | null = null;
 let appbaseBackendClient: SdkworkAppbaseBackendClient | null = null;
 let generationsAppClient: SdkworkGenerationsAppClient | null = null;
@@ -255,12 +323,24 @@ let aiClientSessionKey: string | undefined;
 let clawRouterGlobalTokenManager: AuthTokenManager | null = null;
 let portalSessionAuthRedirectTarget: string | null = null;
 
-export function createClawRouterAppSdkClient(options: ClawRouterAppSdkClientOptions = {}): SdkworkAppClient {
-  return attachClawRouterSdkSessionAuthBoundary(new SdkworkAppClient(buildAppConfig(options)));
+export function createClawRouterAppSdkClient(options: ClawRouterAppSdkClientOptions = {}): ClawRouterAppSdkClient {
+  const client = attachClawRouterSdkSessionAuthBoundary(new SdkworkAppClient(buildAppConfig(options)));
+  return attachCommerceAppSdkDependency(client, createSdkworkCommerceAppSdkClient({
+    appBaseUrl: options.appBaseUrl,
+    platform: options.platform,
+    tokenManager: options.tokenManager,
+    timeout: options.timeout,
+  }));
 }
 
-export function createClawRouterBackendSdkClient(options: ClawRouterBackendSdkClientOptions = {}): SdkworkBackendClient {
-  return attachClawRouterSdkSessionAuthBoundary(new SdkworkBackendClient(buildBackendConfig(options)));
+export function createClawRouterBackendSdkClient(options: ClawRouterBackendSdkClientOptions = {}): ClawRouterBackendSdkClient {
+  const client = attachClawRouterSdkSessionAuthBoundary(new SdkworkBackendClient(buildBackendConfig(options)));
+  return attachCommerceBackendSdkDependency(client, createSdkworkCommerceBackendSdkClient({
+    backendBaseUrl: options.backendBaseUrl,
+    platform: options.platform,
+    tokenManager: options.tokenManager,
+    timeout: options.timeout,
+  }));
 }
 
 export function createSdkworkAppbaseAppSdkClient(
@@ -305,7 +385,7 @@ export function createClawRouterAiSdkClient(options: ClawRouterAiSdkClientOption
   return new SdkworkAiClient(buildAiConfig(options));
 }
 
-export function getClawRouterAppSdkClient(options: ClawRouterAppSdkClientOptions = {}): SdkworkAppClient {
+export function getClawRouterAppSdkClient(options: ClawRouterAppSdkClientOptions = {}): ClawRouterAppSdkClient {
   if (hasRuntimeOverrides(options)) {
     return createClawRouterAppSdkClient(options);
   }
@@ -319,7 +399,7 @@ export function getClawRouterAppSdkClient(options: ClawRouterAppSdkClientOptions
   return appClient;
 }
 
-export function getClawRouterBackendSdkClient(options: ClawRouterBackendSdkClientOptions = {}): SdkworkBackendClient {
+export function getClawRouterBackendSdkClient(options: ClawRouterBackendSdkClientOptions = {}): ClawRouterBackendSdkClient {
   if (hasRuntimeOverrides(options)) {
     return createClawRouterBackendSdkClient(options);
   }
@@ -748,10 +828,7 @@ function buildDriveAppConfig(options: SdkworkDriveAppSdkClientOptions): SdkworkD
 function buildCommerceAppConfig(options: SdkworkCommerceAppSdkClientOptions): SdkworkCommerceAppConfig {
   return {
     baseUrl: normalizeGeneratedSdkBaseUrl(
-      options.appBaseUrl
-      ?? readClawRouterRuntimeEnv('VITE_SDKWORK_COMMERCE_APP_API_BASE_URL')
-      ?? readClawRouterRuntimeEnv('VITE_CLAWROUTER_APP_API_BASE_URL')
-      ?? APP_API_PREFIX,
+      resolveRequiredCommerceAppBaseUrl(options),
       APP_API_PREFIX,
     ),
     platform: options.platform ?? 'web',
@@ -760,21 +837,41 @@ function buildCommerceAppConfig(options: SdkworkCommerceAppSdkClientOptions): Sd
   };
 }
 
+export function resolveRequiredCommerceAppBaseUrl(options: SdkworkCommerceAppSdkClientOptions): string {
+  return options.appBaseUrl
+    ?? readClawRouterRuntimeEnv('VITE_SDKWORK_COMMERCE_APP_API_BASE_URL')
+    ?? deriveDependencySurfaceBaseUrl('PORTAL_PUBLIC_SDK_BASE_URL', APP_API_PREFIX)
+    ?? APP_API_PREFIX;
+}
+
 function buildCommerceBackendConfig(
   options: SdkworkCommerceBackendSdkClientOptions,
 ): SdkworkCommerceBackendConfig {
   return {
     baseUrl: normalizeGeneratedSdkBaseUrl(
-      options.backendBaseUrl
-      ?? readClawRouterRuntimeEnv('VITE_SDKWORK_COMMERCE_BACKEND_API_BASE_URL')
-      ?? readClawRouterRuntimeEnv('VITE_CLAWROUTER_BACKEND_API_BASE_URL')
-      ?? BACKEND_API_PREFIX,
+      resolveRequiredCommerceBackendBaseUrl(options),
       BACKEND_API_PREFIX,
     ),
     platform: options.platform ?? 'web-admin',
     tokenManager: resolveClawRouterSdkTokenManager(options.tokenManager),
     timeout: options.timeout,
   };
+}
+
+export function resolveRequiredCommerceBackendBaseUrl(options: SdkworkCommerceBackendSdkClientOptions): string {
+  return options.backendBaseUrl
+    ?? readClawRouterRuntimeEnv('VITE_SDKWORK_COMMERCE_BACKEND_API_BASE_URL')
+    ?? deriveDependencySurfaceBaseUrl('PORTAL_PUBLIC_SDK_BASE_URL', BACKEND_API_PREFIX)
+    ?? BACKEND_API_PREFIX;
+}
+
+function deriveDependencySurfaceBaseUrl(rootEnvName: string, apiPrefix: string): string | undefined {
+  const root = readClawRouterRuntimeEnv(rootEnvName)?.replace(/\/+$/g, '');
+  if (!root) {
+    return undefined;
+  }
+  const prefix = apiPrefix.startsWith('/') ? apiPrefix : `/${apiPrefix}`;
+  return `${root}${prefix}`;
 }
 
 function buildAiConfig(options: ClawRouterAiSdkClientOptions): SdkworkAiConfig {
@@ -869,32 +966,91 @@ function readInjectedAiSdkClient(): ClawRouterAiSdkClient | undefined {
   return (globalThis as ClawRouterSdkRuntimeHost).__SDKWORK_CLAW_ROUTER_AI_SDK_CLIENT__ ?? undefined;
 }
 
-export function wrapCommerceBackendSdkClient(
-  client: SdkworkCommerceGeneratedBackendClient,
-): CommerceBackendSdkClient {
-  return {
-    commerce: client,
-  } as unknown as CommerceBackendSdkClient;
+function attachCommerceAppSdkDependency(
+  client: SdkworkAppClient,
+  commerceClient: SdkworkCommerceAppClient,
+): ClawRouterAppSdkClient {
+  return attachReadOnlyProperty(client, 'commerce', commerceClient) as ClawRouterAppSdkClient;
 }
 
-export function wrapCommerceAppSdkClient(client: SdkworkCommerceAppClient): CommerceAppSdkClient {
-  return {
-    commerce: createCommerceResourceOverlay(client.commerce, {
-      payments: client.payments,
-      promotions: client.promotions,
-      wallet: client.wallet,
-    }),
-  } as unknown as CommerceAppSdkClient;
+function attachCommerceBackendSdkDependency(
+  client: SdkworkBackendClient,
+  commerceClient: SdkworkCommerceGeneratedBackendClient,
+): ClawRouterBackendSdkClient {
+  const overlay = createCommerceResourceOverlay(client.commerce, commerceClient) as unknown as BackendCommerceDependencyOverlay;
+  const composedCommerce = createBackendCommerceCanonicalFacade(overlay);
+  return attachReadOnlyProperty(client, 'commerce', composedCommerce) as unknown as ClawRouterBackendSdkClient;
 }
 
-function createCommerceResourceOverlay(primary: unknown, fallback: unknown): unknown {
+function createBackendCommerceCanonicalFacade(commerce: BackendCommerceDependencyOverlay): BackendCommerceDependencyOverlay {
+  const facade = commerce as BackendCommerceDependencyOverlay & Record<string, unknown>;
+  attachManagementAlias(facade.orders, 'list');
+  attachManagementAlias(facade.orders, 'retrieve');
+  attachManagementAlias(facade.orders.events, 'list');
+  attachManagementAlias(facade.refunds, 'list');
+  attachManagementAlias(facade.refunds, 'retrieve');
+  attachManagementAlias(facade.fulfillments, 'list');
+  attachManagementAlias(facade.fulfillments, 'retrieve');
+  attachManagementAlias(facade.invoices, 'list');
+  attachManagementAlias(facade.invoices, 'retrieve');
+  attachManagementAlias(facade.payments.methods, 'list');
+  attachManagementAlias(facade.memberships.plans, 'list');
+  attachManagementAlias(facade.memberships.packages, 'list');
+  attachManagementAlias(facade.memberships.packageGroups, 'list');
+  attachManagementAlias(facade.recharges.packages, 'list');
+  attachManagementAlias(facade.recharges.settings, 'retrieve');
+  attachManagementAlias(facade.recharges.orders, 'list');
+  attachManagementAlias(facade.recharges.orders, 'retrieve');
+  attachManagementAlias(facade.wallet.accounts, 'list');
+  attachManagementAlias(facade.wallet.ledgerEntries, 'list');
+  attachManagementAlias(facade.wallet.exchangeRules, 'list');
+  attachManagementAlias(facade.wallet.adjustments, 'create');
+  return commerce;
+}
+
+function attachManagementAlias(resource: unknown, methodName: string): void {
+  if (!isCommerceObjectResource(resource)) {
+    return;
+  }
+  const record = resource as Record<string, unknown>;
+  if (typeof record[methodName] === 'function') {
+    return;
+  }
+  const management = record.management;
+  if (!isCommerceObjectResource(management)) {
+    return;
+  }
+  const method = (management as Record<string, unknown>)[methodName];
+  if (typeof method !== 'function') {
+    return;
+  }
+  attachReadOnlyProperty(record, methodName, method.bind(management));
+}
+
+function attachReadOnlyProperty<TTarget extends object, TKey extends PropertyKey, TValue>(
+  target: TTarget,
+  key: TKey,
+  value: TValue,
+): TTarget & { readonly [K in TKey]: TValue } {
+  Object.defineProperty(target, key, {
+    configurable: true,
+    enumerable: true,
+    value,
+  });
+  return target as TTarget & { readonly [K in TKey]: TValue };
+}
+
+function createCommerceResourceOverlay<TPrimary, TFallback>(primary: TPrimary, fallback: TFallback): TPrimary & TFallback {
   if (!isCommerceObjectResource(primary) || !isCommerceObjectResource(fallback)) {
-    return primary ?? fallback;
+    return (primary ?? fallback) as TPrimary & TFallback;
   }
 
   const cache = new Map<PropertyKey, unknown>();
   return new Proxy(Object.create(null) as Record<PropertyKey, unknown>, {
-    get(_target, property) {
+    get(target, property) {
+      if (property in target) {
+        return target[property];
+      }
       if (cache.has(property)) {
         return cache.get(property);
       }
@@ -909,10 +1065,12 @@ function createCommerceResourceOverlay(primary: unknown, fallback: unknown): unk
       cache.set(property, value);
       return value;
     },
-    has(_target, property) {
-      return hasCommerceResourceProperty(primary, property) || hasCommerceResourceProperty(fallback, property);
+    has(target, property) {
+      return property in target
+        || hasCommerceResourceProperty(primary, property)
+        || hasCommerceResourceProperty(fallback, property);
     },
-  });
+  }) as TPrimary & TFallback;
 }
 
 function isCommerceObjectResource(value: unknown): value is object {
@@ -926,12 +1084,3 @@ function readCommerceResourceProperty(value: object, property: PropertyKey): unk
 function hasCommerceResourceProperty(value: object, property: PropertyKey): boolean {
   return property in value;
 }
-
-configureSdkworkCommerceServiceProvider(() =>
-  createSdkworkCommerceService({
-    appClient: wrapCommerceAppSdkClient(getSdkworkCommerceAppSdkClient()),
-    backendClient: wrapCommerceBackendSdkClient(getSdkworkCommerceBackendSdkClient()),
-  }),
-);
-
-configureSdkworkCommerceSessionTokenProvider(readStoredAuthTokens);

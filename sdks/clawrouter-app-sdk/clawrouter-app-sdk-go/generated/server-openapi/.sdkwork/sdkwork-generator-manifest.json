@@ -18,16 +18,16 @@
       "sha256": "80c893be9105d6490b88f53cb550320a35c0f0b243647acb2829fc18b7657fb0"
     },
     {
+      "path": "api/auth.go",
+      "sha256": "daab4a1a45433ab71ad4be794687dd3b5194501bbe54fece98a596d8ab911955"
+    },
+    {
       "path": "api/base.go",
       "sha256": "1f5f1447891bf21355c2314998d97a3176978a9f410ad40e9f1e415e7b0852f5"
     },
     {
       "path": "api/chat.go",
       "sha256": "70623ed5fb1d4c2c0c2d3484f9a2486dec6f3a76da124e93cf55d3a4d01a0069"
-    },
-    {
-      "path": "api/commerce.go",
-      "sha256": "5bc7473a3fb9a8d60e6e4d0d8bd28e90de718029aa40ca4df1fcdfcba1a9e814"
     },
     {
       "path": "api/content.go",
@@ -43,7 +43,7 @@
     },
     {
       "path": "api/iam.go",
-      "sha256": "2301c929b35c24f8b81ecc15fc5b52db6b5f8702dbb2ada0daa82c83a0c63beb"
+      "sha256": "f7137020f6ca24a1ac39ee87ca9ef28c283f1ff8fa02725ac886854da28e7598"
     },
     {
       "path": "api/memory.go",
@@ -71,7 +71,7 @@
     },
     {
       "path": "api/system.go",
-      "sha256": "0891259dbf2144460cd18e8dd823acd852f0f4137e8a81e007168bb105887885"
+      "sha256": "79b6e58b25eb8d5cc895e807089cdbb07e527b1c500a4770c2a7384415247223"
     },
     {
       "path": "bin/publish-core.mjs",
@@ -99,7 +99,7 @@
     },
     {
       "path": "http/client.go",
-      "sha256": "8eb80a7718afbcbe5f83dcee1c4e5be529a8bba1707204e79d583dfe79a959c6"
+      "sha256": "5574d28592e72078ae744ce20c0930fa7825b32ab3e2b18ed3de16652df50b0e"
     },
     {
       "path": "http/doc.go",
@@ -111,11 +111,11 @@
     },
     {
       "path": "README.md",
-      "sha256": "55accb96b0312c099cc3be71c359092e4241421ac58f321e992dc23871a688b0"
+      "sha256": "52d1d2165b7d0129ce3db100c1ede2754d932b89c92ca1657f3c0b384ca8b205"
     },
     {
       "path": "sdk.go",
-      "sha256": "f38da4e110bf61648157465747ed42a430a6f7a5bb7b09d7839891cf23372656"
+      "sha256": "644d741c4b7441dbdd6d60eb7eeb9323c8f000b1f612a23c09eb064d67ca11b3"
     },
     {
       "path": "sdkwork-sdk.json",
@@ -374,6 +374,14 @@
       "sha256": "5e17031ec5048efbafd00aed6d2eaafc29253ed210701ed4bc0eddbbfcd2b0c6"
     },
     {
+      "path": "types/auth_runtime_settings_response.go",
+      "sha256": "6b9ff0a92089fb60aeb9f5898b85c584066c08b141f6b97b371d4fc3092690fd"
+    },
+    {
+      "path": "types/auth_verification_policy.go",
+      "sha256": "212077ebf53254ec4cc01e6eca7483943705d9a2cde135dea5bc92ebba8eee6d"
+    },
+    {
       "path": "types/channel_groups_list_result.go",
       "sha256": "4f0324cd8023a1b2b2f7e03a804499ba4ae89754a23c50f206f78b8ec49e001c"
     },
@@ -460,10 +468,6 @@
     {
       "path": "types/comments_statistics_list_result.go",
       "sha256": "38dc181b48a23a024fc22164526376696254feee317cf304f5a6945b072c722a"
-    },
-    {
-      "path": "types/commerce_recharge_settings_response.go",
-      "sha256": "bf6f73154e4caa07d35056bc95b45da67b0eda4444cdae4c3a59b9b5d770032d"
     },
     {
       "path": "types/common.go",
@@ -608,6 +612,18 @@
     {
       "path": "types/delete_api_key_response.go",
       "sha256": "828221155a818b251b03d9fc6a71b9171f41d1d748052188c09dcbe02c22905d"
+    },
+    {
+      "path": "types/department_assignments_list_result.go",
+      "sha256": "a07451dde795f5e8f58730f47a8c97808910b2e535e8e9e55d40605035deb1b5"
+    },
+    {
+      "path": "types/departments_list_result.go",
+      "sha256": "62127580f0faf7adc2bc345545b699b43ef48f6812f0b281c1931ac34995b131"
+    },
+    {
+      "path": "types/departments_tree_retrieve_result.go",
+      "sha256": "c062bd4ee10fb63403d889235fb628e187a3ff1f1d21d333130a5412bd300640"
     },
     {
       "path": "types/doc.go",
@@ -786,6 +802,150 @@
       "sha256": "abf65b12fa3eb868fc95475654b01291fd813031044818d03ae20b27dbf137c7"
     },
     {
+      "path": "types/iam_app_context.go",
+      "sha256": "2b12d63f82c0a09d210dbf86fbf7f289a1fdc6e79c3e131c7b50b616f3a7da80"
+    },
+    {
+      "path": "types/iam_current_session_update_request.go",
+      "sha256": "744e27c74e054b027bfac12e2b628ea1bf2a4e7e4c4c8d8c4e6b65c3e06c5447"
+    },
+    {
+      "path": "types/iam_department_assignment_item.go",
+      "sha256": "31fd66a5cc44b170e6a750019d520fa54be5cb9f3cb4dca04112f769f63a6d93"
+    },
+    {
+      "path": "types/iam_department_assignment_list_response.go",
+      "sha256": "d890cc3e15f3d22b628ff5031ce0242d06572ee7d7577b1cca2697569ca4345a"
+    },
+    {
+      "path": "types/iam_department_item.go",
+      "sha256": "2953a1730809abd58053255c1b3fc46c3384692611d55a9c4cf3a7e3dca9ae00"
+    },
+    {
+      "path": "types/iam_department_list_response.go",
+      "sha256": "4a627e6ae8ac3446919a6f987d239dad95e361fda6ca87b10676d711735d26c0"
+    },
+    {
+      "path": "types/iam_department_tree_item.go",
+      "sha256": "15c8be9fd526684934bd1933e725e873757c7aa18924ea8abd13f2796cd4989c"
+    },
+    {
+      "path": "types/iam_department_tree_response.go",
+      "sha256": "9775640d92f0421230e4694e43d1c0c254626108d22a865da1bd3fb8669e2a23"
+    },
+    {
+      "path": "types/iam_oauth_authorization_url_response.go",
+      "sha256": "d0fb29b591eb459b270cd61d71082d617da011a4d72ffdd48b21ff4e810c7a94"
+    },
+    {
+      "path": "types/iam_oauth_session_create_request.go",
+      "sha256": "28e4faf1107a8d4429a29f1bce959a5c101d4daf8fca2670d71285baf0c3216c"
+    },
+    {
+      "path": "types/iam_organization_item.go",
+      "sha256": "296837f207530bb618073ac88a3f258d4223e8772c9dd257f9e2bd09518d4574"
+    },
+    {
+      "path": "types/iam_organization_list_response.go",
+      "sha256": "16ed07ff17f9d302967d0680e3f999ae3516435edcdb3c5ef8a4a1e67bf61a26"
+    },
+    {
+      "path": "types/iam_organization_membership_item.go",
+      "sha256": "9b0058fad4609a96bd668eec35cc2ce631bff2732fb69c4cfbce40708bfbd24a"
+    },
+    {
+      "path": "types/iam_organization_membership_list_response.go",
+      "sha256": "42f12fc7ff75e655c731790c06895df7ae6ba62b13da54ceb9e788e55a29c163"
+    },
+    {
+      "path": "types/iam_organization_tree_item.go",
+      "sha256": "f2cf02bc2c50fdaf24de63abb26304704285289649cff793ad84cbe935382be6"
+    },
+    {
+      "path": "types/iam_organization_tree_response.go",
+      "sha256": "0bf3252c3a4462a502acd3981c14bdc51a720a307293a545d2f5a0ca8c006890"
+    },
+    {
+      "path": "types/iam_password_reset_create_request.go",
+      "sha256": "f447943c74c50a194375ce129c7cef581f33413d1702842c2cb6a0db18cb2d64"
+    },
+    {
+      "path": "types/iam_password_reset_request_create_request.go",
+      "sha256": "aa6901fb86d137f38c83e950b610103aaedfa0b4f045ea5032c87bcb99fa7212"
+    },
+    {
+      "path": "types/iam_password_reset_request_response.go",
+      "sha256": "1f2a3175368b5a8b272737ec8806bf2fccd004c6dc742352411b447d30a66119"
+    },
+    {
+      "path": "types/iam_position_assignment_item.go",
+      "sha256": "4b0a971b66b26a6945dd2452cba59335ba80310ea9007a88ea79666a299701d2"
+    },
+    {
+      "path": "types/iam_position_assignment_list_response.go",
+      "sha256": "be66c1ddb911b8aa8b1c9e020a8943406a0cc9bf45a3eef223af1f722fc8f77f"
+    },
+    {
+      "path": "types/iam_position_item.go",
+      "sha256": "b637e85efe413ef4d46ee3b2eaff02057df4eca2d522b45f07fff7457b25f713"
+    },
+    {
+      "path": "types/iam_position_list_response.go",
+      "sha256": "d405d2598d4adca395fbf68e795fbf5e842ddbb45d9731e9dcb964c6de46a037"
+    },
+    {
+      "path": "types/iam_registration_create_request.go",
+      "sha256": "320172ccf7368bede24f2001183e914eea8394f2a52394a183600797cdf12fc5"
+    },
+    {
+      "path": "types/iam_role_binding_item.go",
+      "sha256": "ee7c1208e493ec2604f8703ce6f0425a4b39a872ff1d9d7fead332437a75b757"
+    },
+    {
+      "path": "types/iam_role_binding_list_response.go",
+      "sha256": "388fdc2d6e1dee6071f3d5eacb8c0f0ef260ff8d8751f53f86c46b53c73b2a17"
+    },
+    {
+      "path": "types/iam_runtime_retrieve_result.go",
+      "sha256": "c4a913462ccb3829513cd9b0f45a93ccc46968db75d03b563e0daac10e17ec43"
+    },
+    {
+      "path": "types/iam_session_create_request.go",
+      "sha256": "064e670e3bb9fd6907bb73789e43b6683f5b6b30745b6ca26b722c9b3189aaed"
+    },
+    {
+      "path": "types/iam_session_refresh_request.go",
+      "sha256": "ab3d8dd7a4c046cf49cfd47286907cef7b3272f9dc43414db11cd81610df21ed"
+    },
+    {
+      "path": "types/iam_session_response.go",
+      "sha256": "19a5ccc704776ba7d7e0a422d1e595eca4e088d47ea82ba8942f11825e8b0f4b"
+    },
+    {
+      "path": "types/iam_user_response.go",
+      "sha256": "5cebf1441ae127d4f52901b2b169b5635de8fd384931d4eba4b552a04fa53065"
+    },
+    {
+      "path": "types/iam_verification_code_create_request.go",
+      "sha256": "0552ce20e2fac2c1f0b8d99662a7c7ab7037fb61df2264aba4a2828ed6f4a8b2"
+    },
+    {
+      "path": "types/iam_verification_code_response.go",
+      "sha256": "43f1c6434a0ad2afcfb65eee2a3a36bbcb4ea4b6d3a7e15f8dc082e87a37e9dc"
+    },
+    {
+      "path": "types/iam_verification_code_verify_request.go",
+      "sha256": "c25f21279a042fcd3b1d66516ce64e67a40504f46d3457679024230c7be150f0"
+    },
+    {
+      "path": "types/iam_verification_code_verify_response.go",
+      "sha256": "31b38d4bc99c6a3e462093637694e936eaa1d5b83888f70da9d89c19d074b279"
+    },
+    {
+      "path": "types/iam_verification_policy_retrieve_result.go",
+      "sha256": "40f01fa6b8c6871ab516a98d5dfb74787cb866da811c05e091652c3d9036a395"
+    },
+    {
       "path": "types/invocation_event_streams_list_result.go",
       "sha256": "edfa490d5e7bbf0ab6ae314b0ad388d627129dd8afc651f26f6d7edfc7d9c306"
     },
@@ -942,32 +1102,44 @@
       "sha256": "d9329bdcb8cb25654ef037090cb4d03fd4075c06e6dbc1fb98a8f5af04cfd32e"
     },
     {
+      "path": "types/oauth_authorization_urls_retrieve_result.go",
+      "sha256": "35307156ba23b45e7f89fc03619ca2fefd14ec71c08a630ed0c6094165c31ede"
+    },
+    {
+      "path": "types/oauth_sessions_create_result.go",
+      "sha256": "fe342e1c33a0f6c56c84abc7995800e9c32aca07a4b6d0127e32dae25603974a"
+    },
+    {
+      "path": "types/organization_memberships_list_result.go",
+      "sha256": "6b737e1b03ce82d7cb177a27dd3542ae785d308edcd1717e58f39c87868c27a0"
+    },
+    {
+      "path": "types/organizations_list_result.go",
+      "sha256": "5273c31ecfa58788acabfe1330fc2daa25acc1e91d21e0e4289332ac3f26fbe4"
+    },
+    {
+      "path": "types/organizations_tree_retrieve_result.go",
+      "sha256": "14fe1e1def79c2945dd57aed8713b1f1b71883cfef3da0c8b05f364fed2d2e23"
+    },
+    {
+      "path": "types/password_reset_requests_create_result.go",
+      "sha256": "6f3c4e736faeebe15a7e8beac799a2912f084521256869a260f34eb5d17c1784"
+    },
+    {
+      "path": "types/password_resets_create_result.go",
+      "sha256": "7525b16a2cc031b0e51024e29d2d5fbc27fe8d70dff2c9e474de318b6b4b34e2"
+    },
+    {
+      "path": "types/position_assignments_list_result.go",
+      "sha256": "89ca8a48faa38368a6278e5205ce903d521f4a970e134478bf3aac532945e153"
+    },
+    {
+      "path": "types/positions_list_result.go",
+      "sha256": "9b69fc64c8bd467013f2d3a3023bbb393ae42cec10cb301a84c664d793b7959b"
+    },
+    {
       "path": "types/problem_detail.go",
       "sha256": "ade6f96bd7c3388ab933b0d029c65228071e56c4e314c6c3a5f07d83fba775e7"
-    },
-    {
-      "path": "types/promotion_command_request.go",
-      "sha256": "d4a249b2dfe449432bdafddc3709f40679b7d5950cc69ec200d1b80976200697"
-    },
-    {
-      "path": "types/promotion_operation_response.go",
-      "sha256": "763fa75ca069612427e2fe478c169f6a73d504ec33e14a80650b45ac383526ae"
-    },
-    {
-      "path": "types/promotions_discount_applications_create_result.go",
-      "sha256": "671b274a77069f3dbb434f3b2c31a3361d85991caf0ca700fdc295187b655404"
-    },
-    {
-      "path": "types/promotions_discount_applications_release_result.go",
-      "sha256": "0a81f8006e61a3e7d3da3463a6ffcae8e59057f7ba839a47fa98371b7f58d3f5"
-    },
-    {
-      "path": "types/promotions_discount_applications_reversals_create_result.go",
-      "sha256": "1e1dc8d5ca344f1584eb0e3a8c3bedcc8cd97698e0a890a827bfc45bd2efb579"
-    },
-    {
-      "path": "types/promotions_discount_applications_settle_result.go",
-      "sha256": "5278dcfdacf2cc145644c632fa0e52eaa6c1da128440ece7d8e28229520a18b8"
     },
     {
       "path": "types/ranking_vendor_option.go",
@@ -978,8 +1150,12 @@
       "sha256": "22a74f36cd7abcabdb3651755965d048efe587622451a103b9ce4be6a2ae8bc5"
     },
     {
-      "path": "types/recharges_settings_retrieve_result.go",
-      "sha256": "94a948c992137dda6e365386a22a943e6a13caa30d44cb454f0a61126f2ec311"
+      "path": "types/registrations_create_result.go",
+      "sha256": "cc9b75e868f0be2337731f9951420fc6402272fcf56014cb4c3e383b9567d729"
+    },
+    {
+      "path": "types/role_bindings_list_result.go",
+      "sha256": "cca7d4ff55ded717cdc750d4b0f10f25b229342c9d0f7df2149ef89d08a4d4b7"
     },
     {
       "path": "types/routing_api_key_item.go",
@@ -1110,6 +1286,26 @@
       "sha256": "575ea8f5834598d56b43b57c81c7573a57cd04f99329cf48cd5d4b0b51e4a6c7"
     },
     {
+      "path": "types/sessions_create_result.go",
+      "sha256": "9e3200d8cf8ec82a12755b2b253d1017081e5f8aa5510c433ee1bd38281215d7"
+    },
+    {
+      "path": "types/sessions_current_delete_result.go",
+      "sha256": "f602c4d11e105d6f666f02cd6cc7fef02b225eeda4f10ca966cc18e984fa9eca"
+    },
+    {
+      "path": "types/sessions_current_retrieve_result.go",
+      "sha256": "6c970eaefdbef21ce775dc1894ad3f13a640b961a5084527de71b0cd199a82da"
+    },
+    {
+      "path": "types/sessions_current_update_result.go",
+      "sha256": "5229f892e2021ce1e93b1cad57aff7efb35a3ee7999eaf8dfaa1c554b53332ed"
+    },
+    {
+      "path": "types/sessions_refresh_result.go",
+      "sha256": "7b949afb06a6ea3501858cd2b18fcd2ae9ef5071ef4d56e79643b7c16419ae3c"
+    },
+    {
       "path": "types/settings_data_response.go",
       "sha256": "0a63266fce59880853b7714b61201441d898a5b127d1f879cf84ecd5108ed384"
     },
@@ -1226,6 +1422,10 @@
       "sha256": "61af9e81855aaf756be906bc08a9318bdb22ef5e2c7b228a49ee9c153d3da1ba"
     },
     {
+      "path": "types/users_current_retrieve_result.go",
+      "sha256": "7fa327e6038f5f2cb2ddc0a19b0cd337bf7a76d56e8f1604c09c4648665eca91"
+    },
+    {
       "path": "types/users_current_skills_list_result.go",
       "sha256": "7bf60a0dc2d7488e1077ab2bf5f45ec7c18b8e0dc993a76073a1323abbdd5b29"
     },
@@ -1236,6 +1436,14 @@
     {
       "path": "types/users_settings_update_result.go",
       "sha256": "a020eba61b9cce00cc7035dfb8121fc67201908029adaef8e618ced42a9a7273"
+    },
+    {
+      "path": "types/verification_codes_create_result.go",
+      "sha256": "b54e7cc66d32480705d4a5ee673af2f4f8752936d04f1955d7d8902123db552f"
+    },
+    {
+      "path": "types/verification_codes_verify_result.go",
+      "sha256": "812e53d82b36059d8143fcf0e50b7768162e1bef393a68abed0c22f2f8ac6d61"
     }
   ],
   "scaffoldFiles": [

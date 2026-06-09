@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import PromotionCommandRequest, PromotionsDiscountApplicationsCreateResult, PromotionsDiscountApplicationsReleaseResult, PromotionsDiscountApplicationsReversalsCreateResult, PromotionsDiscountApplicationsSettleResult, SiteRuntimeRetrieveResult
+from ..models import IamRuntimeRetrieveResult, IamVerificationPolicyRetrieveResult, SiteRuntimeRetrieveResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -8,67 +8,6 @@ def _append_query_string(path: str, raw_query_string: str) -> str:
         return path
     separator = '&' if '?' in path else '?'
     return f"{path}{separator}{query}"
-
-def serialize_path_parameter(value: Any, spec: Dict[str, Any]) -> str:
-    if value is None:
-        return ''
-
-    style = str(spec.get('style') or 'simple')
-    name = str(spec.get('name') or '')
-    explode = bool(spec.get('explode'))
-    if isinstance(value, (list, tuple)):
-        return serialize_path_array(name, value, style, explode)
-    if isinstance(value, dict):
-        return serialize_path_object(name, value, style, explode)
-    return path_prefix(name, style) + encode_path_value(serialize_path_primitive(value))
-
-
-def serialize_path_array(name: str, values: Any, style: str, explode: bool) -> str:
-    serialized = [encode_path_value(serialize_path_primitive(item)) for item in values if item is not None]
-    if not serialized:
-        return path_prefix(name, style)
-    if style == 'matrix':
-        return ''.join(f";{name}={item}" for item in serialized) if explode else f";{name}={','.join(serialized)}"
-    return path_prefix(name, style) + ('.' if explode else ',').join(serialized)
-
-
-def serialize_path_object(name: str, value: Dict[str, Any], style: str, explode: bool) -> str:
-    entries = [(key, entry_value) for key, entry_value in value.items() if entry_value is not None]
-    if not entries:
-        return path_prefix(name, style)
-    if style == 'matrix':
-        if explode:
-            return ''.join(f";{encode_path_value(str(key))}={encode_path_value(serialize_path_primitive(entry_value))}" for key, entry_value in entries)
-        serialized = ','.join(item for key, entry_value in entries for item in (encode_path_value(str(key)), encode_path_value(serialize_path_primitive(entry_value))))
-        return f";{name}={serialized}"
-    if explode:
-        separator = '.' if style == 'label' else ','
-        serialized = separator.join(f"{encode_path_value(str(key))}={encode_path_value(serialize_path_primitive(entry_value))}" for key, entry_value in entries)
-    else:
-        serialized = ','.join(item for key, entry_value in entries for item in (encode_path_value(str(key)), encode_path_value(serialize_path_primitive(entry_value))))
-    return path_prefix(name, style) + serialized
-
-
-def path_prefix(name: str, style: str) -> str:
-    if style == 'label':
-        return '.'
-    if style == 'matrix':
-        return f";{name}"
-    return ''
-
-
-def encode_path_value(value: str) -> str:
-    from urllib.parse import quote
-
-    return quote(value, safe='')
-
-
-def serialize_path_primitive(value: Any) -> str:
-    if isinstance(value, dict):
-        import json
-
-        return json.dumps(value, separators=(',', ':'))
-    return str(value)
 
 
 def build_query_string(parameters: List[Dict[str, Any]]) -> str:
@@ -182,59 +121,6 @@ def encode_query_value(value: str, allow_reserved: bool) -> str:
 
     return quote(value, safe=':/?#[]@!$&\'()*+,;=' if allow_reserved else '')
 
-def build_request_headers(headers: Dict[str, Dict[str, Any]], cookies: Optional[Dict[str, Dict[str, Any]]] = None) -> Optional[Dict[str, str]]:
-    request_headers: Dict[str, str] = {}
-    for name, parameter in headers.items():
-        serialized = serialize_parameter_value(parameter)
-        if serialized is not None:
-            request_headers[name] = serialized
-
-    cookie_header = build_cookie_header(cookies or {})
-    if cookie_header:
-        request_headers['Cookie'] = (
-            f"{request_headers['Cookie']}; {cookie_header}"
-            if 'Cookie' in request_headers
-            else cookie_header
-        )
-
-    return request_headers or None
-
-
-def build_cookie_header(cookies: Dict[str, Dict[str, Any]]) -> Optional[str]:
-    from urllib.parse import quote
-
-    pairs: List[str] = []
-    for name, parameter in cookies.items():
-        serialized = serialize_parameter_value(parameter)
-        if serialized is not None:
-            pairs.append(f"{quote(str(name), safe='')}={quote(serialized, safe='')}")
-    return '; '.join(pairs) if pairs else None
-
-
-def serialize_parameter_value(parameter: Optional[Dict[str, Any]]) -> Optional[str]:
-    value = None if parameter is None else parameter.get('value')
-    if value is None:
-        return None
-    if parameter and parameter.get('content_type'):
-        import json
-
-        return json.dumps(value, separators=(',', ':'))
-    if isinstance(value, (list, tuple)):
-        return ','.join(serialize_header_primitive(item) for item in value if item is not None)
-    if isinstance(value, dict):
-        return serialize_header_object(value, bool(parameter and parameter.get('explode')))
-    return serialize_header_primitive(value)
-
-
-def serialize_header_object(value: Dict[str, Any], explode: bool) -> str:
-    entries = [(key, entry_value) for key, entry_value in value.items() if entry_value is not None]
-    if explode:
-        return ','.join(f"{key}={serialize_header_primitive(entry_value)}" for key, entry_value in entries)
-    return ','.join(item for key, entry_value in entries for item in (str(key), serialize_header_primitive(entry_value)))
-
-
-def serialize_header_primitive(value: Any) -> str:
-    return str(value)
 
 
 class SystemApi:
@@ -242,72 +128,44 @@ class SystemApi:
 
     def __init__(self, client: HttpClient):
         self._client = client
-        self.promotions = SystemPromotionsApi(client)
+        self.iam = SystemIamApi(client)
         self.site = SystemSiteApi(client)
 
 
-class SystemPromotionsApi:
-    """system system.promotions API client."""
+class SystemIamApi:
+    """system system.iam API client."""
 
     def __init__(self, client: HttpClient):
         self._client = client
-        self.discount_applications = SystemPromotionsDiscountApplicationsApi(client)
+        self.runtime = SystemIamRuntimeApi(client)
+        self.verification_policy = SystemIamVerificationPolicyApi(client)
 
 
-class SystemPromotionsDiscountApplicationsApi:
-    """system system.promotions.discount_applications API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-        self.reversals = SystemPromotionsDiscountApplicationsReversalsApi(client)
-
-
-    def create(self, body: PromotionCommandRequest, idempotency_key: str) -> PromotionsDiscountApplicationsCreateResult:
-        """Promotion Discount Application Create"""
-        request_headers = build_request_headers(
-            {
-                'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/app/v3/api/promotions/discount_applications", json=body, headers=request_headers)
-
-    def release(self, application_id: str, body: PromotionCommandRequest, idempotency_key: str) -> PromotionsDiscountApplicationsReleaseResult:
-        """Promotion Discount Application Release"""
-        request_headers = build_request_headers(
-            {
-                'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/app/v3/api/promotions/discount_applications/{serialize_path_parameter(application_id, {'name': 'applicationId', 'style': 'simple', 'explode': False})}/releases", json=body, headers=request_headers)
-
-    def settle(self, application_id: str, body: PromotionCommandRequest, idempotency_key: str) -> PromotionsDiscountApplicationsSettleResult:
-        """Promotion Discount Application Settle"""
-        request_headers = build_request_headers(
-            {
-                'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/app/v3/api/promotions/discount_applications/{serialize_path_parameter(application_id, {'name': 'applicationId', 'style': 'simple', 'explode': False})}/settlements", json=body, headers=request_headers)
-
-class SystemPromotionsDiscountApplicationsReversalsApi:
-    """system system.promotions.discount_applications.reversals API client."""
+class SystemIamRuntimeApi:
+    """system system.iam.runtime API client."""
 
     def __init__(self, client: HttpClient):
         self._client = client
 
 
-    def create(self, body: PromotionCommandRequest, idempotency_key: str) -> PromotionsDiscountApplicationsReversalsCreateResult:
-        """Promotion Discount Application Reversal Create"""
-        request_headers = build_request_headers(
-            {
-                'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/app/v3/api/promotions/discount_applications/reversals", json=body, headers=request_headers)
+    def retrieve(self, tenant_code: Optional[str] = None, organization_code: Optional[str] = None) -> IamRuntimeRetrieveResult:
+        """Retrieve public IAM runtime settings"""
+        query = build_query_string([
+            {'name': 'tenant_code', 'value': tenant_code, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'organization_code', 'value': organization_code, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/app/v3/api/system/iam/runtime", query))
+
+class SystemIamVerificationPolicyApi:
+    """system system.iam.verification_policy API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def retrieve(self) -> IamVerificationPolicyRetrieveResult:
+        """Retrieve public IAM verification policy"""
+        return self._client.get(f"/app/v3/api/system/iam/verification_policy")
 
 class SystemSiteApi:
     """system system.site API client."""

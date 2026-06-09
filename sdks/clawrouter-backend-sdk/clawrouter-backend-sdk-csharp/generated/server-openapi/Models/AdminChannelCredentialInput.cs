@@ -7,7 +7,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
     public class AdminChannelCredentialInput
     {
         public string? ApiKey { get; set; }
-        public string? BaseUrl { get; set; }
+        public string BaseUrl { get; set; }
         public string? Name { get; set; }
         public string? Priority { get; set; }
         public string? SecretRef { get; set; }

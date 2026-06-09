@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class ModelsRefreshResult
     {
-        public string? Code { get; set; }
+        public string Code { get; set; }
         public AdminModelCatalogSyncResponse? Data { get; set; }
         public string? Msg { get; set; }
     }

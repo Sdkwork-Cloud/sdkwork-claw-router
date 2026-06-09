@@ -1113,6 +1113,48 @@ public struct ArtifactsListResult: Codable {
     }
 }
 
+public struct AuthRuntimeSettingsResponse: Codable {
+    public let leftRailMode: String?
+    public let loginMethods: [String]?
+    public let oauthLoginEnabled: Bool?
+    public let oauthProviders: [String]?
+    public let oauthRegion: String?
+    public let qrLoginEnabled: Bool?
+    public let qrLoginType: String?
+    public let recoveryMethods: [String]?
+    public let registerMethods: [String]?
+    public let verificationPolicy: AuthVerificationPolicy?
+
+
+    public init(leftRailMode: String? = nil, loginMethods: [String]? = nil, oauthLoginEnabled: Bool? = nil, oauthProviders: [String]? = nil, oauthRegion: String? = nil, qrLoginEnabled: Bool? = nil, qrLoginType: String? = nil, recoveryMethods: [String]? = nil, registerMethods: [String]? = nil, verificationPolicy: AuthVerificationPolicy? = nil) {
+        self.leftRailMode = leftRailMode
+        self.loginMethods = loginMethods
+        self.oauthLoginEnabled = oauthLoginEnabled
+        self.oauthProviders = oauthProviders
+        self.oauthRegion = oauthRegion
+        self.qrLoginEnabled = qrLoginEnabled
+        self.qrLoginType = qrLoginType
+        self.recoveryMethods = recoveryMethods
+        self.registerMethods = registerMethods
+        self.verificationPolicy = verificationPolicy
+    }
+}
+
+public struct AuthVerificationPolicy: Codable {
+    public let emailCodeLoginEnabled: Bool?
+    public let emailRegistrationVerificationRequired: Bool?
+    public let phoneCodeLoginEnabled: Bool?
+    public let phoneRegistrationVerificationRequired: Bool?
+
+
+    public init(emailCodeLoginEnabled: Bool? = nil, emailRegistrationVerificationRequired: Bool? = nil, phoneCodeLoginEnabled: Bool? = nil, phoneRegistrationVerificationRequired: Bool? = nil) {
+        self.emailCodeLoginEnabled = emailCodeLoginEnabled
+        self.emailRegistrationVerificationRequired = emailRegistrationVerificationRequired
+        self.phoneCodeLoginEnabled = phoneCodeLoginEnabled
+        self.phoneRegistrationVerificationRequired = phoneRegistrationVerificationRequired
+    }
+}
+
 public struct ChannelGroupsListResult: Codable {
     public let code: String?
     public let data: AppChannelGroupListResponse?
@@ -1468,21 +1510,6 @@ public struct CommentsStatisticsListResult: Codable {
         self.code = code
         self.data = data
         self.msg = msg
-    }
-}
-
-public struct CommerceRechargeSettingsResponse: Codable {
-    public let baseCurrencyCode: String?
-    public let basePointsPerCny: String?
-    public let currencyToCnyRates: [String: String]?
-    public let previewExamples: [String: [String: [String: Any]]]?
-
-
-    public init(baseCurrencyCode: String? = nil, basePointsPerCny: String? = nil, currencyToCnyRates: [String: String]? = nil, previewExamples: [String: [String: [String: Any]]]? = nil) {
-        self.baseCurrencyCode = baseCurrencyCode
-        self.basePointsPerCny = basePointsPerCny
-        self.currencyToCnyRates = currencyToCnyRates
-        self.previewExamples = previewExamples
     }
 }
 
@@ -2166,6 +2193,45 @@ public struct DeleteApiKeyResponse: Codable {
     }
 }
 
+public struct DepartmentAssignmentsListResult: Codable {
+    public let code: String?
+    public let data: IamDepartmentAssignmentListResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: IamDepartmentAssignmentListResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct DepartmentsListResult: Codable {
+    public let code: String?
+    public let data: IamDepartmentListResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: IamDepartmentListResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct DepartmentsTreeRetrieveResult: Codable {
+    public let code: String?
+    public let data: IamDepartmentTreeResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: IamDepartmentTreeResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
 public struct DocumentationCreateResult: Codable {
     public let code: String?
     public let data: SdkReferenceDocumentationResponse?
@@ -2823,6 +2889,654 @@ public struct GenerationListResult: Codable {
     }
 }
 
+public struct IamAppContext: Codable {
+    public let appId: String?
+    public let authLevel: String?
+    public let dataScope: [String]?
+    public let deploymentMode: String?
+    public let environment: String?
+    public let organizationId: String?
+    public let permissionScope: [String]?
+    public let sessionId: String?
+    public let tenantId: String?
+    public let userId: String?
+
+
+    public init(appId: String? = nil, authLevel: String? = nil, dataScope: [String]? = nil, deploymentMode: String? = nil, environment: String? = nil, organizationId: String? = nil, permissionScope: [String]? = nil, sessionId: String? = nil, tenantId: String? = nil, userId: String? = nil) {
+        self.appId = appId
+        self.authLevel = authLevel
+        self.dataScope = dataScope
+        self.deploymentMode = deploymentMode
+        self.environment = environment
+        self.organizationId = organizationId
+        self.permissionScope = permissionScope
+        self.sessionId = sessionId
+        self.tenantId = tenantId
+        self.userId = userId
+    }
+}
+
+public struct IamCurrentSessionUpdateRequest: Codable {
+    public let deviceName: String?
+    public let organizationCode: String?
+    public let organizationId: String?
+
+
+    public init(deviceName: String? = nil, organizationCode: String? = nil, organizationId: String? = nil) {
+        self.deviceName = deviceName
+        self.organizationCode = organizationCode
+        self.organizationId = organizationId
+    }
+}
+
+public struct IamDepartmentAssignmentItem: Codable {
+    public let assignmentKind: String?
+    public let createdAt: String?
+    public let departmentId: String?
+    public let effectiveFrom: String?
+    public let effectiveTo: String?
+    public let id: String?
+    public let isPrimary: Bool?
+    public let organizationId: String?
+    public let organizationMembershipId: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+    public let userId: String?
+
+
+    public init(assignmentKind: String? = nil, createdAt: String? = nil, departmentId: String? = nil, effectiveFrom: String? = nil, effectiveTo: String? = nil, id: String? = nil, isPrimary: Bool? = nil, organizationId: String? = nil, organizationMembershipId: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil, userId: String? = nil) {
+        self.assignmentKind = assignmentKind
+        self.createdAt = createdAt
+        self.departmentId = departmentId
+        self.effectiveFrom = effectiveFrom
+        self.effectiveTo = effectiveTo
+        self.id = id
+        self.isPrimary = isPrimary
+        self.organizationId = organizationId
+        self.organizationMembershipId = organizationMembershipId
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+        self.userId = userId
+    }
+}
+
+public struct IamDepartmentAssignmentListResponse: Codable {
+    public let items: [IamDepartmentAssignmentItem]?
+
+
+    public init(items: [IamDepartmentAssignmentItem]? = nil) {
+        self.items = items
+    }
+}
+
+public struct IamDepartmentItem: Codable {
+    public let code: String?
+    public let createdAt: String?
+    public let id: String?
+    public let name: String?
+    public let organizationId: String?
+    public let parentDepartmentId: String?
+    public let path: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(code: String? = nil, createdAt: String? = nil, id: String? = nil, name: String? = nil, organizationId: String? = nil, parentDepartmentId: String? = nil, path: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.code = code
+        self.createdAt = createdAt
+        self.id = id
+        self.name = name
+        self.organizationId = organizationId
+        self.parentDepartmentId = parentDepartmentId
+        self.path = path
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct IamDepartmentListResponse: Codable {
+    public let items: [IamDepartmentItem]?
+
+
+    public init(items: [IamDepartmentItem]? = nil) {
+        self.items = items
+    }
+}
+
+public struct IamDepartmentTreeItem: Codable {
+    public let children: [[String: String]]?
+    public let code: String?
+    public let createdAt: String?
+    public let id: String?
+    public let name: String?
+    public let organizationId: String?
+    public let parentDepartmentId: String?
+    public let path: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(children: [[String: String]]? = nil, code: String? = nil, createdAt: String? = nil, id: String? = nil, name: String? = nil, organizationId: String? = nil, parentDepartmentId: String? = nil, path: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.children = children
+        self.code = code
+        self.createdAt = createdAt
+        self.id = id
+        self.name = name
+        self.organizationId = organizationId
+        self.parentDepartmentId = parentDepartmentId
+        self.path = path
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct IamDepartmentTreeResponse: Codable {
+    public let items: [IamDepartmentTreeItem]?
+
+
+    public init(items: [IamDepartmentTreeItem]? = nil) {
+        self.items = items
+    }
+}
+
+public struct IamOauthAuthorizationUrlResponse: Codable {
+    public let authUrl: String?
+
+
+    public init(authUrl: String? = nil) {
+        self.authUrl = authUrl
+    }
+}
+
+public struct IamOauthSessionCreateRequest: Codable {
+    public let code: String?
+    public let deviceId: String?
+    public let deviceType: String?
+    public let provider: String?
+    public let state: String?
+
+
+    public init(code: String? = nil, deviceId: String? = nil, deviceType: String? = nil, provider: String? = nil, state: String? = nil) {
+        self.code = code
+        self.deviceId = deviceId
+        self.deviceType = deviceType
+        self.provider = provider
+        self.state = state
+    }
+}
+
+public struct IamOrganizationItem: Codable {
+    public let code: String?
+    public let createdAt: String?
+    public let id: String?
+    public let name: String?
+    public let parentId: String?
+    public let path: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(code: String? = nil, createdAt: String? = nil, id: String? = nil, name: String? = nil, parentId: String? = nil, path: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.code = code
+        self.createdAt = createdAt
+        self.id = id
+        self.name = name
+        self.parentId = parentId
+        self.path = path
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct IamOrganizationListResponse: Codable {
+    public let items: [IamOrganizationItem]?
+
+
+    public init(items: [IamOrganizationItem]? = nil) {
+        self.items = items
+    }
+}
+
+public struct IamOrganizationMembershipItem: Codable {
+    public let id: String?
+    public let joinedAt: String?
+    public let leftAt: String?
+    public let organizationId: String?
+    public let remark: String?
+    public let roleCode: String?
+    public let status: String?
+    public let tenantId: String?
+    public let userId: String?
+
+
+    public init(id: String? = nil, joinedAt: String? = nil, leftAt: String? = nil, organizationId: String? = nil, remark: String? = nil, roleCode: String? = nil, status: String? = nil, tenantId: String? = nil, userId: String? = nil) {
+        self.id = id
+        self.joinedAt = joinedAt
+        self.leftAt = leftAt
+        self.organizationId = organizationId
+        self.remark = remark
+        self.roleCode = roleCode
+        self.status = status
+        self.tenantId = tenantId
+        self.userId = userId
+    }
+}
+
+public struct IamOrganizationMembershipListResponse: Codable {
+    public let items: [IamOrganizationMembershipItem]?
+
+
+    public init(items: [IamOrganizationMembershipItem]? = nil) {
+        self.items = items
+    }
+}
+
+public struct IamOrganizationTreeItem: Codable {
+    public let children: [[String: String]]?
+    public let code: String?
+    public let createdAt: String?
+    public let id: String?
+    public let name: String?
+    public let parentId: String?
+    public let path: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(children: [[String: String]]? = nil, code: String? = nil, createdAt: String? = nil, id: String? = nil, name: String? = nil, parentId: String? = nil, path: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.children = children
+        self.code = code
+        self.createdAt = createdAt
+        self.id = id
+        self.name = name
+        self.parentId = parentId
+        self.path = path
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct IamOrganizationTreeResponse: Codable {
+    public let items: [IamOrganizationTreeItem]?
+
+
+    public init(items: [IamOrganizationTreeItem]? = nil) {
+        self.items = items
+    }
+}
+
+public struct IamPasswordResetCreateRequest: Codable {
+    public let account: String?
+    public let code: String?
+    public let confirmPassword: String?
+    public let newPassword: String?
+
+
+    public init(account: String? = nil, code: String? = nil, confirmPassword: String? = nil, newPassword: String? = nil) {
+        self.account = account
+        self.code = code
+        self.confirmPassword = confirmPassword
+        self.newPassword = newPassword
+    }
+}
+
+public struct IamPasswordResetRequestCreateRequest: Codable {
+    public let account: String?
+    public let channel: String?
+
+
+    public init(account: String? = nil, channel: String? = nil) {
+        self.account = account
+        self.channel = channel
+    }
+}
+
+public struct IamPasswordResetRequestResponse: Codable {
+    public let debugCode: String?
+    public let expiresAt: String?
+    public let requestId: String?
+
+
+    public init(debugCode: String? = nil, expiresAt: String? = nil, requestId: String? = nil) {
+        self.debugCode = debugCode
+        self.expiresAt = expiresAt
+        self.requestId = requestId
+    }
+}
+
+public struct IamPositionAssignmentItem: Codable {
+    public let createdAt: String?
+    public let departmentAssignmentId: String?
+    public let effectiveFrom: String?
+    public let effectiveTo: String?
+    public let id: String?
+    public let isPrimary: Bool?
+    public let organizationId: String?
+    public let positionId: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+    public let userId: String?
+
+
+    public init(createdAt: String? = nil, departmentAssignmentId: String? = nil, effectiveFrom: String? = nil, effectiveTo: String? = nil, id: String? = nil, isPrimary: Bool? = nil, organizationId: String? = nil, positionId: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil, userId: String? = nil) {
+        self.createdAt = createdAt
+        self.departmentAssignmentId = departmentAssignmentId
+        self.effectiveFrom = effectiveFrom
+        self.effectiveTo = effectiveTo
+        self.id = id
+        self.isPrimary = isPrimary
+        self.organizationId = organizationId
+        self.positionId = positionId
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+        self.userId = userId
+    }
+}
+
+public struct IamPositionAssignmentListResponse: Codable {
+    public let items: [IamPositionAssignmentItem]?
+
+
+    public init(items: [IamPositionAssignmentItem]? = nil) {
+        self.items = items
+    }
+}
+
+public struct IamPositionItem: Codable {
+    public let code: String?
+    public let createdAt: String?
+    public let departmentId: String?
+    public let id: String?
+    public let name: String?
+    public let organizationId: String?
+    public let positionKind: String?
+    public let rankLevel: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(code: String? = nil, createdAt: String? = nil, departmentId: String? = nil, id: String? = nil, name: String? = nil, organizationId: String? = nil, positionKind: String? = nil, rankLevel: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.code = code
+        self.createdAt = createdAt
+        self.departmentId = departmentId
+        self.id = id
+        self.name = name
+        self.organizationId = organizationId
+        self.positionKind = positionKind
+        self.rankLevel = rankLevel
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct IamPositionListResponse: Codable {
+    public let items: [IamPositionItem]?
+
+
+    public init(items: [IamPositionItem]? = nil) {
+        self.items = items
+    }
+}
+
+public struct IamRegistrationCreateRequest: Codable {
+    public let channel: String?
+    public let confirmPassword: String?
+    public let email: String?
+    public let organizationCode: String?
+    public let password: String?
+    public let phone: String?
+    public let tenantCode: String?
+    public let username: String?
+    public let verificationCode: String?
+
+
+    public init(channel: String? = nil, confirmPassword: String? = nil, email: String? = nil, organizationCode: String? = nil, password: String? = nil, phone: String? = nil, tenantCode: String? = nil, username: String? = nil, verificationCode: String? = nil) {
+        self.channel = channel
+        self.confirmPassword = confirmPassword
+        self.email = email
+        self.organizationCode = organizationCode
+        self.password = password
+        self.phone = phone
+        self.tenantCode = tenantCode
+        self.username = username
+        self.verificationCode = verificationCode
+    }
+}
+
+public struct IamRoleBindingItem: Codable {
+    public let conditionJson: String?
+    public let createdAt: String?
+    public let effect: String?
+    public let id: String?
+    public let principalId: String?
+    public let principalKind: String?
+    public let roleId: String?
+    public let scopeId: String?
+    public let scopeKind: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(conditionJson: String? = nil, createdAt: String? = nil, effect: String? = nil, id: String? = nil, principalId: String? = nil, principalKind: String? = nil, roleId: String? = nil, scopeId: String? = nil, scopeKind: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.conditionJson = conditionJson
+        self.createdAt = createdAt
+        self.effect = effect
+        self.id = id
+        self.principalId = principalId
+        self.principalKind = principalKind
+        self.roleId = roleId
+        self.scopeId = scopeId
+        self.scopeKind = scopeKind
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct IamRoleBindingListResponse: Codable {
+    public let items: [IamRoleBindingItem]?
+
+
+    public init(items: [IamRoleBindingItem]? = nil) {
+        self.items = items
+    }
+}
+
+public struct IamRuntimeRetrieveResult: Codable {
+    public let code: String?
+    public let data: AuthRuntimeSettingsResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: AuthRuntimeSettingsResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct IamSessionCreateRequest: Codable {
+    public let code: String?
+    public let deviceId: String?
+    public let deviceName: String?
+    public let deviceType: String?
+    public let email: String?
+    public let grantType: String?
+    public let name: String?
+    public let organizationCode: String?
+    public let password: String?
+    public let phone: String?
+    public let subject: String?
+    public let tenantCode: String?
+    public let username: String?
+
+
+    public init(code: String? = nil, deviceId: String? = nil, deviceName: String? = nil, deviceType: String? = nil, email: String? = nil, grantType: String? = nil, name: String? = nil, organizationCode: String? = nil, password: String? = nil, phone: String? = nil, subject: String? = nil, tenantCode: String? = nil, username: String? = nil) {
+        self.code = code
+        self.deviceId = deviceId
+        self.deviceName = deviceName
+        self.deviceType = deviceType
+        self.email = email
+        self.grantType = grantType
+        self.name = name
+        self.organizationCode = organizationCode
+        self.password = password
+        self.phone = phone
+        self.subject = subject
+        self.tenantCode = tenantCode
+        self.username = username
+    }
+}
+
+public struct IamSessionRefreshRequest: Codable {
+    public let refreshToken: String?
+
+
+    public init(refreshToken: String? = nil) {
+        self.refreshToken = refreshToken
+    }
+}
+
+public struct IamSessionResponse: Codable {
+    public let accessToken: String?
+    public let authToken: String?
+    public let context: IamAppContext?
+    public let expiresAt: String?
+    public let refreshToken: String?
+    public let sessionId: String?
+    public let user: IamUserResponse?
+
+
+    public init(accessToken: String? = nil, authToken: String? = nil, context: IamAppContext? = nil, expiresAt: String? = nil, refreshToken: String? = nil, sessionId: String? = nil, user: IamUserResponse? = nil) {
+        self.accessToken = accessToken
+        self.authToken = authToken
+        self.context = context
+        self.expiresAt = expiresAt
+        self.refreshToken = refreshToken
+        self.sessionId = sessionId
+        self.user = user
+    }
+}
+
+public struct IamUserResponse: Codable {
+    public let avatar: MediaResource?
+    public let displayName: String?
+    public let email: String?
+    public let id: String?
+    public let isVerified: Bool?
+    public let language: String?
+    public let lastLogin: String?
+    public let lastLoginIp: String?
+    public let passwordLastChanged: String?
+    public let phone: String?
+    public let registeredAt: String?
+    public let status: String?
+    public let thirdPartyBound: String?
+    public let twoFactorEnabled: Bool?
+    public let username: String?
+
+
+    public init(avatar: MediaResource? = nil, displayName: String? = nil, email: String? = nil, id: String? = nil, isVerified: Bool? = nil, language: String? = nil, lastLogin: String? = nil, lastLoginIp: String? = nil, passwordLastChanged: String? = nil, phone: String? = nil, registeredAt: String? = nil, status: String? = nil, thirdPartyBound: String? = nil, twoFactorEnabled: Bool? = nil, username: String? = nil) {
+        self.avatar = avatar
+        self.displayName = displayName
+        self.email = email
+        self.id = id
+        self.isVerified = isVerified
+        self.language = language
+        self.lastLogin = lastLogin
+        self.lastLoginIp = lastLoginIp
+        self.passwordLastChanged = passwordLastChanged
+        self.phone = phone
+        self.registeredAt = registeredAt
+        self.status = status
+        self.thirdPartyBound = thirdPartyBound
+        self.twoFactorEnabled = twoFactorEnabled
+        self.username = username
+    }
+}
+
+public struct IamVerificationCodeCreateRequest: Codable {
+    public let scene: String?
+    public let target: String?
+    public let verifyType: String?
+
+
+    public init(scene: String? = nil, target: String? = nil, verifyType: String? = nil) {
+        self.scene = scene
+        self.target = target
+        self.verifyType = verifyType
+    }
+}
+
+public struct IamVerificationCodeResponse: Codable {
+    public let codeId: String?
+    public let deliveryRequestId: String?
+    public let expiresAt: String?
+
+
+    public init(codeId: String? = nil, deliveryRequestId: String? = nil, expiresAt: String? = nil) {
+        self.codeId = codeId
+        self.deliveryRequestId = deliveryRequestId
+        self.expiresAt = expiresAt
+    }
+}
+
+public struct IamVerificationCodeVerifyRequest: Codable {
+    public let code: String?
+    public let codeId: String?
+    public let scene: String?
+    public let target: String?
+    public let verifyType: String?
+
+
+    public init(code: String? = nil, codeId: String? = nil, scene: String? = nil, target: String? = nil, verifyType: String? = nil) {
+        self.code = code
+        self.codeId = codeId
+        self.scene = scene
+        self.target = target
+        self.verifyType = verifyType
+    }
+}
+
+public struct IamVerificationCodeVerifyResponse: Codable {
+    public let valid: Bool?
+    public let verified: Bool?
+
+
+    public init(valid: Bool? = nil, verified: Bool? = nil) {
+        self.valid = valid
+        self.verified = verified
+    }
+}
+
+public struct IamVerificationPolicyRetrieveResult: Codable {
+    public let code: String?
+    public let data: AuthVerificationPolicy?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: AuthVerificationPolicy? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
 public struct InvocationEventStreamsListResult: Codable {
     public let code: String?
     public let data: RuntimeEventListResponse?
@@ -3465,6 +4179,123 @@ public struct NotificationsResponse: Codable {
     }
 }
 
+public struct OauthAuthorizationUrlsRetrieveResult: Codable {
+    public let code: String?
+    public let data: IamOauthAuthorizationUrlResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: IamOauthAuthorizationUrlResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct OauthSessionsCreateResult: Codable {
+    public let code: String?
+    public let data: IamSessionResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: IamSessionResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct OrganizationMembershipsListResult: Codable {
+    public let code: String?
+    public let data: IamOrganizationMembershipListResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: IamOrganizationMembershipListResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct OrganizationsListResult: Codable {
+    public let code: String?
+    public let data: IamOrganizationListResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: IamOrganizationListResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct OrganizationsTreeRetrieveResult: Codable {
+    public let code: String?
+    public let data: IamOrganizationTreeResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: IamOrganizationTreeResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct PasswordResetRequestsCreateResult: Codable {
+    public let code: String?
+    public let data: IamPasswordResetRequestResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: IamPasswordResetRequestResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct PasswordResetsCreateResult: Codable {
+    public let code: String?
+    public let data: NoData?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: NoData? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct PositionAssignmentsListResult: Codable {
+    public let code: String?
+    public let data: IamPositionAssignmentListResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: IamPositionAssignmentListResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct PositionsListResult: Codable {
+    public let code: String?
+    public let data: IamPositionListResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: IamPositionListResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
 public struct ProblemDetail: Codable {
     public let code: String?
     public let detail: String?
@@ -3490,90 +4321,6 @@ public struct ProblemDetail: Codable {
     }
 }
 
-public struct PromotionCommandRequest: Codable {
-    public let clientRequestNo: String?
-    public let metadata: [String: String]?
-    public let note: String?
-
-
-    public init(clientRequestNo: String? = nil, metadata: [String: String]? = nil, note: String? = nil) {
-        self.clientRequestNo = clientRequestNo
-        self.metadata = metadata
-        self.note = note
-    }
-}
-
-public struct PromotionOperationResponse: Codable {
-    public let paymentId: String?
-    public let qrCode: MediaResource?
-    public let qrCodePayload: String?
-    public let requestNo: String?
-    public let status: String?
-    public let success: Bool?
-
-
-    public init(paymentId: String? = nil, qrCode: MediaResource? = nil, qrCodePayload: String? = nil, requestNo: String? = nil, status: String? = nil, success: Bool? = nil) {
-        self.paymentId = paymentId
-        self.qrCode = qrCode
-        self.qrCodePayload = qrCodePayload
-        self.requestNo = requestNo
-        self.status = status
-        self.success = success
-    }
-}
-
-public struct PromotionsDiscountApplicationsCreateResult: Codable {
-    public let code: String?
-    public let data: PromotionOperationResponse?
-    public let msg: String?
-
-
-    public init(code: String? = nil, data: PromotionOperationResponse? = nil, msg: String? = nil) {
-        self.code = code
-        self.data = data
-        self.msg = msg
-    }
-}
-
-public struct PromotionsDiscountApplicationsReleaseResult: Codable {
-    public let code: String?
-    public let data: PromotionOperationResponse?
-    public let msg: String?
-
-
-    public init(code: String? = nil, data: PromotionOperationResponse? = nil, msg: String? = nil) {
-        self.code = code
-        self.data = data
-        self.msg = msg
-    }
-}
-
-public struct PromotionsDiscountApplicationsReversalsCreateResult: Codable {
-    public let code: String?
-    public let data: PromotionOperationResponse?
-    public let msg: String?
-
-
-    public init(code: String? = nil, data: PromotionOperationResponse? = nil, msg: String? = nil) {
-        self.code = code
-        self.data = data
-        self.msg = msg
-    }
-}
-
-public struct PromotionsDiscountApplicationsSettleResult: Codable {
-    public let code: String?
-    public let data: PromotionOperationResponse?
-    public let msg: String?
-
-
-    public init(code: String? = nil, data: PromotionOperationResponse? = nil, msg: String? = nil) {
-        self.code = code
-        self.data = data
-        self.msg = msg
-    }
-}
-
 public struct RankingVendorOption: Codable {
     public let code: String?
     public let label: String?
@@ -3596,13 +4343,26 @@ public struct RankingVendorOptionsResponse: Codable {
     }
 }
 
-public struct RechargesSettingsRetrieveResult: Codable {
+public struct RegistrationsCreateResult: Codable {
     public let code: String?
-    public let data: CommerceRechargeSettingsResponse?
+    public let data: IamSessionResponse?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: CommerceRechargeSettingsResponse? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: IamSessionResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct RoleBindingsListResult: Codable {
+    public let code: String?
+    public let data: IamRoleBindingListResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: IamRoleBindingListResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
         self.msg = msg
@@ -4249,6 +5009,71 @@ public struct SdkReferenceDocumentationResponse: Codable {
     }
 }
 
+public struct SessionsCreateResult: Codable {
+    public let code: String?
+    public let data: IamSessionResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: IamSessionResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct SessionsCurrentDeleteResult: Codable {
+    public let code: String?
+    public let data: NoData?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: NoData? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct SessionsCurrentRetrieveResult: Codable {
+    public let code: String?
+    public let data: IamSessionResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: IamSessionResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct SessionsCurrentUpdateResult: Codable {
+    public let code: String?
+    public let data: IamSessionResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: IamSessionResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct SessionsRefreshResult: Codable {
+    public let code: String?
+    public let data: IamSessionResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: IamSessionResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
 public struct SettingsDataResponse: Codable {
     public let language: String?
     public let notifications: SettingsNotifications?
@@ -4780,6 +5605,19 @@ public struct UsersCurrentCommentsListResult: Codable {
     }
 }
 
+public struct UsersCurrentRetrieveResult: Codable {
+    public let code: String?
+    public let data: IamUserResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: IamUserResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
 public struct UsersCurrentSkillsListResult: Codable {
     public let code: String?
     public let data: AppInstalledSkillsResponse?
@@ -4813,6 +5651,32 @@ public struct UsersSettingsUpdateResult: Codable {
 
 
     public init(code: String? = nil, data: UpdateSettingsResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct VerificationCodesCreateResult: Codable {
+    public let code: String?
+    public let data: IamVerificationCodeResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: IamVerificationCodeResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct VerificationCodesVerifyResult: Codable {
+    public let code: String?
+    public let data: IamVerificationCodeVerifyResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: IamVerificationCodeVerifyResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
         self.msg = msg

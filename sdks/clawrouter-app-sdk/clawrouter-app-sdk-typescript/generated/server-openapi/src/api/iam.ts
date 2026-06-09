@@ -1,8 +1,68 @@
 import { appApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, ApiKeysUpdateResult, CreateApiKeyRequest, DepartmentAssignmentsListResult, DepartmentsListResult, DepartmentsTreeRetrieveResult, OrganizationMembershipsListResult, OrganizationsListResult, OrganizationsTreeRetrieveResult, PositionAssignmentsListResult, PositionsListResult, RoleBindingsListResult, UpdateApiKeyRequest, UpdateSettingsRequest, UsersCurrentRetrieveResult, UsersSettingsRetrieveResult, UsersSettingsUpdateResult } from '../types';
+import type { ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, ApiKeysUpdateResult, CreateApiKeyRequest, DepartmentAssignmentsListResult, DepartmentsListResult, DepartmentsTreeRetrieveResult, IamCurrentSessionUpdateRequest, IamOauthAuthorizationUrlCreateRequest, IamOauthSessionCreateRequest, IamPasswordResetCreateRequest, IamPasswordResetRequestCreateRequest, IamRegistrationCreateRequest, IamSessionCreateRequest, IamSessionRefreshRequest, IamVerificationCodeCreateRequest, IamVerificationCodeVerifyRequest, OauthAuthorizationUrlsCreateResult, OauthSessionsCreateResult, OrganizationMembershipsListResult, OrganizationsListResult, OrganizationsTreeRetrieveResult, PasswordResetRequestsCreateResult, PasswordResetsCreateResult, PositionAssignmentsListResult, PositionsListResult, RegistrationsCreateResult, RoleBindingsListResult, SessionsCreateResult, SessionsCurrentDeleteResult, SessionsCurrentRetrieveResult, SessionsCurrentUpdateResult, SessionsRefreshResult, UpdateApiKeyRequest, UpdateSettingsRequest, UsersCurrentRetrieveResult, UsersSettingsRetrieveResult, UsersSettingsUpdateResult, VerificationCodesCreateResult, VerificationCodesVerifyResult } from '../types';
 
+
+export class IamOauthSessionsApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Create OAuth IAM session */
+  async create(body: IamOauthSessionCreateRequest): Promise<OauthSessionsCreateResult> {
+    return this.client.post<OauthSessionsCreateResult>(appApiPath(`/oauth/sessions`), body, undefined, undefined, 'application/json');
+  }
+}
+
+export class IamOauthAuthorizationUrlsApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Retrieve OAuth authorization URL */
+  async create(body: IamOauthAuthorizationUrlCreateRequest): Promise<OauthAuthorizationUrlsCreateResult> {
+    return this.client.post<OauthAuthorizationUrlsCreateResult>(appApiPath(`/oauth/authorization_urls`), body, undefined, undefined, 'application/json');
+  }
+}
+
+export class IamOauthApi {
+  private client: HttpClient;
+  public readonly authorizationUrls: IamOauthAuthorizationUrlsApi;
+  public readonly sessions: IamOauthSessionsApi;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+    this.authorizationUrls = new IamOauthAuthorizationUrlsApi(client);
+    this.sessions = new IamOauthSessionsApi(client);
+  }
+
+}
+
+export class IamVerificationCodesApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Create verification code */
+  async create(body: IamVerificationCodeCreateRequest): Promise<VerificationCodesCreateResult> {
+    return this.client.post<VerificationCodesCreateResult>(appApiPath(`/iam/verification_codes`), body, undefined, undefined, 'application/json');
+  }
+
+/** Verify verification code */
+  async verify(body: IamVerificationCodeVerifyRequest): Promise<VerificationCodesVerifyResult> {
+    return this.client.post<VerificationCodesVerifyResult>(appApiPath(`/iam/verification_codes/verify`), body, undefined, undefined, 'application/json');
+  }
+}
 
 export class IamUsersSettingsApi {
   private client: HttpClient;
@@ -50,6 +110,51 @@ export class IamUsersApi {
 
 }
 
+export class IamSessionsCurrentApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Delete current IAM session */
+  async delete(): Promise<SessionsCurrentDeleteResult> {
+    return this.client.delete<SessionsCurrentDeleteResult>(appApiPath(`/iam/sessions/current`));
+  }
+
+/** Retrieve current IAM session */
+  async retrieve(): Promise<SessionsCurrentRetrieveResult> {
+    return this.client.get<SessionsCurrentRetrieveResult>(appApiPath(`/iam/sessions/current`));
+  }
+
+/** Update current IAM session */
+  async update(body: IamCurrentSessionUpdateRequest): Promise<SessionsCurrentUpdateResult> {
+    return this.client.patch<SessionsCurrentUpdateResult>(appApiPath(`/iam/sessions/current`), body, undefined, undefined, 'application/json');
+  }
+}
+
+export class IamSessionsApi {
+  private client: HttpClient;
+  public readonly current: IamSessionsCurrentApi;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+    this.current = new IamSessionsCurrentApi(client);
+  }
+
+
+/** Create IAM session */
+  async create(body: IamSessionCreateRequest): Promise<SessionsCreateResult> {
+    return this.client.post<SessionsCreateResult>(appApiPath(`/iam/sessions`), body, undefined, undefined, 'application/json');
+  }
+
+/** Refresh IAM session */
+  async refresh(body: IamSessionRefreshRequest): Promise<SessionsRefreshResult> {
+    return this.client.post<SessionsRefreshResult>(appApiPath(`/iam/sessions/refresh`), body, undefined, undefined, 'application/json');
+  }
+}
+
 export interface IamRoleBindingsListParams {
   organizationId?: string;
   departmentId?: string;
@@ -82,6 +187,20 @@ export class IamRoleBindingsApi {
       { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
     ]);
     return this.client.get<RoleBindingsListResult>(appendQueryString(appApiPath(`/iam/role_bindings`), query));
+  }
+}
+
+export class IamRegistrationsApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Create IAM registration */
+  async create(body: IamRegistrationCreateRequest): Promise<RegistrationsCreateResult> {
+    return this.client.post<RegistrationsCreateResult>(appApiPath(`/iam/registrations`), body, undefined, undefined, 'application/json');
   }
 }
 
@@ -152,6 +271,34 @@ export class IamPositionAssignmentsApi {
       { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
     ]);
     return this.client.get<PositionAssignmentsListResult>(appendQueryString(appApiPath(`/iam/position_assignments`), query));
+  }
+}
+
+export class IamPasswordResetsApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Create password reset */
+  async create(body: IamPasswordResetCreateRequest): Promise<PasswordResetsCreateResult> {
+    return this.client.post<PasswordResetsCreateResult>(appApiPath(`/iam/password_resets`), body, undefined, undefined, 'application/json');
+  }
+}
+
+export class IamPasswordResetRequestsApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Create password reset request */
+  async create(body: IamPasswordResetRequestCreateRequest): Promise<PasswordResetRequestsCreateResult> {
+    return this.client.post<PasswordResetRequestsCreateResult>(appApiPath(`/iam/password_reset_requests`), body, undefined, undefined, 'application/json');
   }
 }
 
@@ -415,10 +562,16 @@ export class IamApi {
   public readonly departments: IamDepartmentsApi;
   public readonly organizationMemberships: IamOrganizationMembershipsApi;
   public readonly organizations: IamOrganizationsApi;
+  public readonly passwordResetRequests: IamPasswordResetRequestsApi;
+  public readonly passwordResets: IamPasswordResetsApi;
   public readonly positionAssignments: IamPositionAssignmentsApi;
   public readonly positions: IamPositionsApi;
+  public readonly registrations: IamRegistrationsApi;
   public readonly roleBindings: IamRoleBindingsApi;
+  public readonly sessions: IamSessionsApi;
   public readonly users: IamUsersApi;
+  public readonly verificationCodes: IamVerificationCodesApi;
+  public readonly oauth: IamOauthApi;
 
   constructor(client: HttpClient) {
     this.client = client;
@@ -427,10 +580,16 @@ export class IamApi {
     this.departments = new IamDepartmentsApi(client);
     this.organizationMemberships = new IamOrganizationMembershipsApi(client);
     this.organizations = new IamOrganizationsApi(client);
+    this.passwordResetRequests = new IamPasswordResetRequestsApi(client);
+    this.passwordResets = new IamPasswordResetsApi(client);
     this.positionAssignments = new IamPositionAssignmentsApi(client);
     this.positions = new IamPositionsApi(client);
+    this.registrations = new IamRegistrationsApi(client);
     this.roleBindings = new IamRoleBindingsApi(client);
+    this.sessions = new IamSessionsApi(client);
     this.users = new IamUsersApi(client);
+    this.verificationCodes = new IamVerificationCodesApi(client);
+    this.oauth = new IamOauthApi(client);
   }
 
 }

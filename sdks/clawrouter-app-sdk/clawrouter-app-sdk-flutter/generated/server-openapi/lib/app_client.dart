@@ -1,6 +1,5 @@
 import 'package:sdkwork_common_flutter/sdkwork_common_flutter.dart';
 import 'src/http/client.dart';
-import 'src/api/commerce.dart';
 import 'src/api/agents.dart';
 import 'src/api/ai.dart';
 import 'src/api/auth.dart';
@@ -11,14 +10,13 @@ import 'src/api/iam.dart';
 import 'src/api/memory.dart';
 import 'src/api/notification.dart';
 import 'src/api/platform.dart';
-import 'src/api/system.dart';
 import 'src/api/runtime.dart';
 import 'src/api/sdk_reference.dart';
+import 'src/api/system.dart';
 
 class SdkworkAppClient {
   final HttpClient _httpClient;
 
-  late final CommerceApi commerce;
   late final AgentsApi agents;
   late final AiApi ai;
   late final AuthApi auth;
@@ -29,14 +27,13 @@ class SdkworkAppClient {
   late final MemoryApi memory;
   late final NotificationApi notification;
   late final PlatformApi platform;
-  late final SystemApi system;
   late final RuntimeApi runtime;
   late final SdkReferenceApi sdkReference;
+  late final SystemApi system;
 
   SdkworkAppClient({
     required SdkConfig config,
   }) : _httpClient = HttpClient(config: config) {
-    commerce = CommerceApi(_httpClient);
     agents = AgentsApi(_httpClient);
     ai = AiApi(_httpClient);
     auth = AuthApi(_httpClient);
@@ -47,9 +44,9 @@ class SdkworkAppClient {
     memory = MemoryApi(_httpClient);
     notification = NotificationApi(_httpClient);
     platform = PlatformApi(_httpClient);
-    system = SystemApi(_httpClient);
     runtime = RuntimeApi(_httpClient);
     sdkReference = SdkReferenceApi(_httpClient);
+    system = SystemApi(_httpClient);
   }
 
   factory SdkworkAppClient.withBaseUrl({

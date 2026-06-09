@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class NotificationsResponse
     {
-        public List<NotificationItem>? Items { get; set; }
+        public List<NotificationItem> Items { get; set; }
     }
 }

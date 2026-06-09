@@ -1,12 +1,11 @@
 import {
-  createIdempotencyParams,
   createClientOperationToken,
   isRecord,
   readRequiredApiItems,
   readString,
   type ApiRecord,
 } from 'sdkwork-clawrouter-pc-commons/runtime';
-import { getSdkworkCommerceService } from '@sdkwork/commerce-service';
+import { getClawRouterAppSdkClient } from 'sdkwork-clawrouter-pc-commons/sdk-clients';
 
 export interface SettlementChartData {
   day: string;
@@ -54,8 +53,8 @@ export class SettlementsService {
   }> {
     const query = toSettlementDashboardQueryParams(params);
     const [ledgerResult, invoiceResult] = await Promise.all([
-      appWalletLedgerEntriesList({ page: '1', pageSize: String(SETTLEMENT_LEDGER_PAGE_SIZE) }),
-      appInvoicesList({ page: '1', pageSize: String(SETTLEMENT_INVOICE_PAGE_SIZE) }),
+      appWalletLedgerEntriesList({ page: 1, pageSize: SETTLEMENT_LEDGER_PAGE_SIZE }),
+      appInvoicesList({ page: 1, pageSize: SETTLEMENT_INVOICE_PAGE_SIZE }),
     ]);
     const ledgerEntries = readRequiredApiItems(ledgerResult, 'Settlement ledger entries are required')
       .map((item) => readRequiredRecord(item, 'Settlement ledger entry is required'));
@@ -85,22 +84,22 @@ function boundedSettlementYear(value: number): number {
   return Math.min(MAX_SETTLEMENT_DASHBOARD_YEAR, Math.max(MIN_SETTLEMENT_DASHBOARD_YEAR, year));
 }
 
-type AppCommerceService = ReturnType<typeof getSdkworkCommerceService>;
+type AppCommerceService = ReturnType<typeof getClawRouterAppSdkClient>['commerce'];
 
 export async function appInvoicesList(params?: Parameters<AppCommerceService['invoices']['list']>[0]) {
-  return getSdkworkCommerceService().invoices.list(params);
+  return getClawRouterAppSdkClient().commerce.invoices.list(params);
 }
 
 export async function appInvoicesRetrieve(invoiceId: string) {
-  return getSdkworkCommerceService().invoices.retrieve(invoiceId);
+  return getClawRouterAppSdkClient().commerce.invoices.retrieve(invoiceId);
 }
 
 export async function appInvoicesCreate(body: Parameters<AppCommerceService['invoices']['create']>[0]) {
-  return getSdkworkCommerceService().invoices.create(body, createIdempotencyParams('app-invoice-create'));
+  return getClawRouterAppSdkClient().commerce.invoices.create(body);
 }
 
 export async function appWalletLedgerEntriesList(params?: Parameters<AppCommerceService['wallet']['ledgerEntries']['list']>[0]) {
-  return getSdkworkCommerceService().wallet.ledgerEntries.list(params);
+  return getClawRouterAppSdkClient().commerce.wallet.ledgerEntries.list(params);
 }
 
 export async function fetchSettlementDashboard(params?: { year?: string | number }) {

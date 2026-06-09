@@ -21,7 +21,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? PermissionMode { get; set; }
         public string? Provider { get; set; }
         public Dictionary<string, string>? RequestJson { get; set; }
-        public string? Runtime { get; set; }
+        public string Runtime { get; set; }
         public string? SandboxPolicy { get; set; }
         public string? Status { get; set; }
         public bool? Streaming { get; set; }

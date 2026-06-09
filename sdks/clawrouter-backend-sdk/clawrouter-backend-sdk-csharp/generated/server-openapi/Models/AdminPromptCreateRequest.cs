@@ -8,8 +8,8 @@ namespace Sdkwork.ClawRouter.Backend.Models
     {
         public string? CategoryId { get; set; }
         public string? Description { get; set; }
-        public string? Name { get; set; }
-        public string? PromptKey { get; set; }
+        public string Name { get; set; }
+        public string PromptKey { get; set; }
         public string? PromptType { get; set; }
         public List<string>? Tags { get; set; }
         public string? Visibility { get; set; }

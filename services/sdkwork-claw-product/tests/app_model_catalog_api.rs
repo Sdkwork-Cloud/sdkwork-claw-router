@@ -730,7 +730,7 @@ async fn app_model_catalog_route_rejects_non_standard_query_parameters() {
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/app/v3/api/ai/models?vendorCode=openai&billingMeter=llm_input_token&searchQuery=gpt")
+                .uri("/app/v3/api/ai/models?vendor_code=openai&billing_meter=llm_input_token&search_query=gpt")
                 .body(Body::empty())
                 .unwrap(),
         )

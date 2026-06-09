@@ -34,7 +34,7 @@ pub use invocation_router::{
 #[rustfmt::skip]
 pub use openai_passthrough_routes::{openai_compatible_passthrough_paths, openai_method_passthrough_paths, stored_chat_completion_passthrough_paths};
 #[rustfmt::skip]
-pub use passthrough::{provider_native_passthrough_providers, router_with_provider_passthrough_and_adapter_config, router_with_provider_passthrough_config};
+pub use passthrough::{authenticated_provider_native_passthrough_router_with_adapter_config, provider_native_passthrough_providers, router_with_provider_passthrough_and_adapter_config, router_with_provider_passthrough_config};
 #[rustfmt::skip]
 pub use runtime::{
     router_from_env, router_with_database_and_api_key_config,

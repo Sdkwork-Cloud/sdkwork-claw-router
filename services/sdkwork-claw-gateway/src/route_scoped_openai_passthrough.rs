@@ -745,17 +745,66 @@ impl RouteScopedOpenAiPassthroughRuntime {
             None => body,
         };
         let started_at = Instant::now();
-        let response = forward_provider_passthrough_to_target(
-            &self.client,
-            clone_route_scoped_request_parts(parts),
-            body,
-            &target,
-            upstream_uri,
-        )
-        .await
-        .map_err(RouteScopedOpenAiPassthroughError::relay_failed)?;
+        let response = self
+            .forward_openai_to_target_with_retry(parts, body, &target, upstream_uri, &route)
+            .await?;
         let latency_ms = i64::try_from(started_at.elapsed().as_millis()).unwrap_or(i64::MAX);
         Ok((route, response, latency_ms))
+    }
+
+    async fn forward_openai_to_target_with_retry(
+        &self,
+        parts: &RequestParts,
+        body: Bytes,
+        target: &ProviderPassthroughTarget,
+        upstream_uri: Uri,
+        route: &RouteScopedOpenAiPassthroughTarget,
+    ) -> Result<Response, RouteScopedOpenAiPassthroughError> {
+        let retry_policy = route_scoped_retry_policy(route);
+        let mut last_error = None;
+        for attempt in 1..=retry_policy.max_attempts {
+            match forward_provider_passthrough_to_target(
+                &self.client,
+                clone_route_scoped_request_parts(parts),
+                body.clone(),
+                target,
+                upstream_uri.clone(),
+            )
+            .await
+            {
+                Ok(response) => {
+                    if attempt < retry_policy.max_attempts
+                        && retry_policy.is_retryable_status(response.status().as_u16())
+                    {
+                        if retry_policy.backoff_ms > 0 {
+                            tokio::time::sleep(std::time::Duration::from_millis(
+                                retry_policy.backoff_ms,
+                            ))
+                            .await;
+                        }
+                        continue;
+                    }
+                    return Ok(response);
+                }
+                Err(error) => {
+                    last_error = Some(error);
+                    if attempt < retry_policy.max_attempts {
+                        if retry_policy.backoff_ms > 0 {
+                            tokio::time::sleep(std::time::Duration::from_millis(
+                                retry_policy.backoff_ms,
+                            ))
+                            .await;
+                        }
+                        continue;
+                    }
+                }
+            }
+        }
+        Err(RouteScopedOpenAiPassthroughError::relay_failed(
+            last_error.unwrap_or_else(|| {
+                "OpenAI-compatible passthrough failed after retry attempts".to_owned()
+            }),
+        ))
     }
 }
 
@@ -775,11 +824,28 @@ fn route_scoped_should_try_next_response(
     is_last_route: bool,
 ) -> bool {
     failure_strategy.should_try_next_route(is_last_route)
-        && route_scoped_retry_policy(route).is_retryable_status(response.status().as_u16())
+        && route_scoped_failover_retry_policy(route).is_retryable_status(response.status().as_u16())
 }
 
 fn route_scoped_retry_policy(route: &RouteScopedOpenAiPassthroughTarget) -> ProviderRetryPolicy {
+    route
+        .retry_policy
+        .clone()
+        .unwrap_or_else(route_scoped_single_attempt_retry_policy)
+}
+
+fn route_scoped_failover_retry_policy(
+    route: &RouteScopedOpenAiPassthroughTarget,
+) -> ProviderRetryPolicy {
     route.retry_policy.clone().unwrap_or_default()
+}
+
+fn route_scoped_single_attempt_retry_policy() -> ProviderRetryPolicy {
+    ProviderRetryPolicy {
+        max_attempts: 1,
+        retryable_status_codes: Vec::new(),
+        backoff_ms: 0,
+    }
 }
 
 fn build_route_scoped_openai_usage_context(
@@ -823,7 +889,7 @@ fn route_scoped_openai_usage_endpoint(
     method: &Method,
     path: &str,
 ) -> Option<OpenAiInvocationEndpoint> {
-    if method == Method::POST && path == "/v1/completions" {
+    if method == Method::POST && (path == "/v1/chat/completions" || path == "/v1/completions") {
         return Some(OpenAiInvocationEndpoint::ChatCompletions);
     }
     None

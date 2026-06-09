@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class StorageProviderMutationResponse
     {
-        public StorageProviderConfig? Provider { get; set; }
-        public string? RequestId { get; set; }
+        public StorageProviderConfig Provider { get; set; }
+        public string RequestId { get; set; }
     }
 }

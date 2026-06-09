@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminFirewallMutationResponse
     {
-        public AdminFirewallItem? Item { get; set; }
+        public AdminFirewallItem Item { get; set; }
     }
 }

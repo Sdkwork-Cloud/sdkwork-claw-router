@@ -1,6 +1,5 @@
 import {
   createClientOperationToken,
-  createIdempotencyParams,
   isRecord,
   normalizeRechargeSettings,
   readApiRecord,
@@ -9,7 +8,7 @@ import {
   readString,
   type ApiRecord,
 } from 'sdkwork-clawrouter-pc-commons/runtime';
-import { getSdkworkCommerceService } from '@sdkwork/commerce-service';
+import { getClawRouterAppSdkClient } from 'sdkwork-clawrouter-pc-commons/sdk-clients';
 
 export interface RechargePackage {
   id: string;
@@ -66,7 +65,7 @@ export interface BillingHistoryItem {
 
 export class RechargeService {
   static async fetchPackages(): Promise<RechargePackage[]> {
-    const result = await appRechargesPackagesList({ page: '1', pageSize: '100', status: 'active' });
+    const result = await appRechargesPackagesList({ status: 'active' });
     return readRequiredApiItems(result, 'console.recharge.errors.packagesFallback')
       .map(normalizeRechargePackage);
   }
@@ -80,8 +79,8 @@ export class RechargeService {
 
   static async fetchBillingHistory(params: { type?: BillingHistoryType } = {}): Promise<BillingHistoryItem[]> {
     const result = await appBillingHistoryList({
-      page: '1',
-      pageSize: '100',
+      page: 1,
+      pageSize: 100,
       ...(params.type ? { type: params.type } : {}),
     });
     const missingIdMessage = params.type === 'recharge'
@@ -118,62 +117,55 @@ export class RechargeService {
       throw new Error('Recharge order number is required');
     }
     const requestPaymentPayload = readRechargeRequestPaymentPayload(data);
+    const providerCode = readFirstOptionalString(data, ['providerCode']);
+    const paymentMethod = readFirstOptionalString(data, ['paymentMethod']);
+    const paymentProduct = readFirstOptionalString(data, ['paymentProduct']);
+    const nextAction = readFirstOptionalString(data, ['nextAction']);
+    const cashierUrl = readFirstOptionalString(data, ['cashierUrl']);
+    const qrCodePayload = readFirstOptionalString(data, ['qrCodePayload']);
     return {
       success,
       orderNo,
-      ...(readFirstOptionalString(data, ['providerCode', 'provider_code']) ? {
-        providerCode: readFirstOptionalString(data, ['providerCode', 'provider_code']),
-      } : {}),
-      ...(readFirstOptionalString(data, ['paymentMethod', 'payment_method']) ? {
-        paymentMethod: readFirstOptionalString(data, ['paymentMethod', 'payment_method']),
-      } : {}),
-      ...(readFirstOptionalString(data, ['paymentProduct', 'payment_product']) ? {
-        paymentProduct: readFirstOptionalString(data, ['paymentProduct', 'payment_product']),
-      } : {}),
-      ...(readFirstOptionalString(data, ['nextAction', 'next_action']) ? {
-        nextAction: readNextActionValue(readFirstOptionalString(data, ['nextAction', 'next_action']) ?? ''),
-      } : {}),
-      ...(readFirstOptionalString(data, ['cashierUrl', 'cashier_url']) ? {
-        cashierUrl: readFirstOptionalString(data, ['cashierUrl', 'cashier_url']),
-      } : {}),
-      ...(readFirstOptionalString(data, ['qrCodePayload', 'qr_code_payload']) ? {
-        qrCodePayload: readFirstOptionalString(data, ['qrCodePayload', 'qr_code_payload']),
-      } : {}),
+      ...(providerCode ? { providerCode } : {}),
+      ...(paymentMethod ? { paymentMethod } : {}),
+      ...(paymentProduct ? { paymentProduct } : {}),
+      ...(nextAction ? { nextAction: readNextActionValue(nextAction) } : {}),
+      ...(cashierUrl ? { cashierUrl } : {}),
+      ...(qrCodePayload ? { qrCodePayload } : {}),
       ...(requestPaymentPayload !== undefined ? { requestPaymentPayload } : {}),
     };
   }
 }
 
-type AppCommerceService = ReturnType<typeof getSdkworkCommerceService>;
+type AppCommerceService = ReturnType<typeof getClawRouterAppSdkClient>['commerce'];
 
 export async function listCatalogCategories(params?: Parameters<AppCommerceService['catalog']['categories']['list']>[0]) {
-  return getSdkworkCommerceService().catalog.categories.list(params);
+  return getClawRouterAppSdkClient().commerce.catalog.categories.list(params);
 }
 
 export async function listCatalogProducts(params?: Parameters<AppCommerceService['catalog']['products']['list']>[0]) {
-  return getSdkworkCommerceService().catalog.products.list(params);
+  return getClawRouterAppSdkClient().commerce.catalog.products.list(params);
 }
 
 export async function retrieveCatalogProduct(productId: string) {
-  return getSdkworkCommerceService().catalog.products.retrieve(productId);
+  return getClawRouterAppSdkClient().commerce.catalog.products.retrieve(productId);
 }
 
 export async function retrieveCatalogSku(skuId: string) {
-  return getSdkworkCommerceService().catalog.skus.retrieve(skuId);
+  return getClawRouterAppSdkClient().commerce.catalog.skus.retrieve(skuId);
 }
 
 export async function appRechargesPackagesList(params?: Parameters<AppCommerceService['recharges']['packages']['list']>[0]) {
-  return getSdkworkCommerceService().recharges.packages.list(params);
+  return getClawRouterAppSdkClient().commerce.recharges.packages.list(params);
 }
 
 export async function appRechargesSettingsRetrieve() {
-  return getSdkworkCommerceService().recharges.settings.retrieve();
+  return getClawRouterAppSdkClient().commerce.recharges.settings.retrieve();
 }
 
 export async function appRechargesOrdersCreate(body: Parameters<AppCommerceService['recharges']['orders']['create']>[0]) {
-  return getSdkworkCommerceService().recharges.orders.create(
+  return getClawRouterAppSdkClient().commerce.recharges.orders.create(
     body,
-    createIdempotencyParams('app-recharge-order-create'),
   );
 }
 
@@ -181,7 +173,7 @@ type BillingHistorySdkParams = Parameters<AppCommerceService['billing']['history
 
 export async function appBillingHistoryList(params?: BillingHistorySdkParams & { type?: BillingHistoryType }) {
   const { type, ...rest } = params ?? {};
-  return getSdkworkCommerceService().billing.history.list({
+  return getClawRouterAppSdkClient().commerce.billing.history.list({
     ...rest,
     ...(type ? { type_: type } : {}),
   });
@@ -202,49 +194,49 @@ function createCommerceRequestNo(scope: string): string {
 function normalizeRechargePackage(value: unknown): RechargePackage {
   const item = readRequiredRecord(value, 'Recharge package record is required');
   return {
-    id: firstRequiredString(item, ['id', 'packageNo', 'package_no'], 'Recharge package id is required'),
+    id: firstRequiredString(item, ['id', 'packageNo'], 'Recharge package id is required'),
     priceAmount: firstMoneyString(
       item,
-      ['priceAmount', 'price_amount'],
+      ['priceAmount'],
       'Recharge package money amount is required',
       'Recharge package money amount must be a money string',
     ),
     currencyCode: requiredCurrencyCode(
-      readFirstOptionalString(item, ['currencyCode', 'currency_code']) || 'CNY',
+      readFirstOptionalString(item, ['currencyCode']) || 'CNY',
     ),
-    bonusPoints: readOptionalNonNegativeNumber(item, ['bonusPoints', 'bonus_points']),
-    grantAmount: readOptionalNonNegativeNumber(item, ['grantAmount', 'grant_amount', 'points']),
-    points: readOptionalNonNegativeNumber(item, ['points', 'grantAmount', 'grant_amount']),
+    bonusPoints: readOptionalNonNegativeNumber(item, ['bonusPoints']),
+    grantAmount: readOptionalNonNegativeNumber(item, ['grantAmount', 'points']),
+    points: readOptionalNonNegativeNumber(item, ['points', 'grantAmount']),
   };
 }
 
 function normalizeBillingHistoryItem(value: unknown, missingIdMessage: string): BillingHistoryItem {
   const item = readRequiredRecord(value, 'Billing history record is required');
-  const type = firstRequiredString(item, ['type', 'historyType', 'history_type'], 'Billing history type is required');
+  const type = firstRequiredString(item, ['type', 'historyType'], 'Billing history type is required');
   if (type !== 'redeem' && type !== 'recharge') {
     throw new Error(`Unsupported billing history type: ${type}`);
   }
-  const paymentMethod = readFirstOptionalString(item, ['paymentMethod', 'payment_method']);
-  const sourceType = readFirstOptionalString(item, ['sourceType', 'source_type']);
+  const paymentMethod = readFirstOptionalString(item, ['paymentMethod']);
+  const sourceType = readFirstOptionalString(item, ['sourceType']);
   const method = paymentMethod || sourceType || 'billing';
   return {
     id: firstRequiredString(item, ['id'], missingIdMessage),
-    historyNo: firstRequiredString(item, ['historyNo', 'history_no'], 'Billing history number is required'),
+    historyNo: firstRequiredString(item, ['historyNo'], 'Billing history number is required'),
     type,
     direction: readFirstOptionalString(item, ['direction']) || 'credit',
-    assetType: readFirstOptionalString(item, ['assetType', 'asset_type']) || 'points',
+    assetType: readFirstOptionalString(item, ['assetType']) || 'points',
     amount: firstBillingMoneyString(item, ['amount'], 'Billing history amount is required', 'Billing history amount must be a money string'),
-    currencyCode: readFirstOptionalString(item, ['currencyCode', 'currency_code']),
-    pointsDelta: firstOptionalNumber(item, ['pointsDelta', 'points_delta']) ?? 0,
+    currencyCode: readFirstOptionalString(item, ['currencyCode']),
+    pointsDelta: firstOptionalNumber(item, ['pointsDelta']) ?? 0,
     status: firstRequiredString(item, ['status'], 'Billing history status is required'),
     title: readFirstOptionalString(item, ['title']) || (type === 'recharge' ? 'Recharge' : 'Redeem'),
-    referenceNo: readFirstOptionalString(item, ['referenceNo', 'reference_no']),
+    referenceNo: readFirstOptionalString(item, ['referenceNo']),
     method: requiredText(method, 'method'),
     sourceType,
-    sourceId: readFirstOptionalString(item, ['sourceId', 'source_id']),
-    relatedOrderNo: readFirstOptionalString(item, ['relatedOrderNo', 'related_order_no']),
+    sourceId: readFirstOptionalString(item, ['sourceId']),
+    relatedOrderNo: readFirstOptionalString(item, ['relatedOrderNo']),
     paymentMethod,
-    occurredAt: firstRequiredString(item, ['occurredAt', 'occurred_at', 'createdAt', 'created_at'], 'Billing history occurrence time is required'),
+    occurredAt: firstRequiredString(item, ['occurredAt', 'createdAt'], 'Billing history occurrence time is required'),
   };
 }
 
@@ -327,12 +319,10 @@ function readNextActionValue(value: string): RechargeOrderNextAction {
 }
 
 function readRechargeRequestPaymentPayload(item: ApiRecord): string | null | undefined {
-  const hasCamelCase = Object.prototype.hasOwnProperty.call(item, 'requestPaymentPayload');
-  const hasSnakeCase = Object.prototype.hasOwnProperty.call(item, 'request_payment_payload');
-  if (!hasCamelCase && !hasSnakeCase) {
+  if (!Object.prototype.hasOwnProperty.call(item, 'requestPaymentPayload')) {
     return undefined;
   }
-  const value = hasCamelCase ? item.requestPaymentPayload : item.request_payment_payload;
+  const value = item.requestPaymentPayload;
   if (value === null || value === '') {
     return null;
   }

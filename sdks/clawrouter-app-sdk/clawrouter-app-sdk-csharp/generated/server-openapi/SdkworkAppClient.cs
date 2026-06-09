@@ -11,6 +11,7 @@ namespace Sdkwork.ClawRouter.App
 
         public AgentsApi Agents { get; }
         public AiApi Ai { get; }
+        public AuthApi Auth { get; }
         public ChatApi Chat { get; }
         public ContentApi Content { get; }
         public EcosystemApi Ecosystem { get; }
@@ -18,16 +19,16 @@ namespace Sdkwork.ClawRouter.App
         public MemoryApi Memory { get; }
         public NotificationApi Notification { get; }
         public PlatformApi Platform { get; }
-        public SystemApi System { get; }
-        public CommerceApi Commerce { get; }
         public RuntimeApi Runtime { get; }
         public SdkReferenceApi SdkReference { get; }
+        public SystemApi System { get; }
 
         public SdkworkAppClient(string baseUrl)
         {
             _httpClient = new SdkHttpClient(baseUrl);
             Agents = new AgentsApi(_httpClient);
             Ai = new AiApi(_httpClient);
+            Auth = new AuthApi(_httpClient);
             Chat = new ChatApi(_httpClient);
             Content = new ContentApi(_httpClient);
             Ecosystem = new EcosystemApi(_httpClient);
@@ -35,10 +36,9 @@ namespace Sdkwork.ClawRouter.App
             Memory = new MemoryApi(_httpClient);
             Notification = new NotificationApi(_httpClient);
             Platform = new PlatformApi(_httpClient);
-            System = new SystemApi(_httpClient);
-            Commerce = new CommerceApi(_httpClient);
             Runtime = new RuntimeApi(_httpClient);
             SdkReference = new SdkReferenceApi(_httpClient);
+            System = new SystemApi(_httpClient);
         }
 
         public SdkworkAppClient(SdkConfig config)
@@ -46,6 +46,7 @@ namespace Sdkwork.ClawRouter.App
             _httpClient = new SdkHttpClient(config);
             Agents = new AgentsApi(_httpClient);
             Ai = new AiApi(_httpClient);
+            Auth = new AuthApi(_httpClient);
             Chat = new ChatApi(_httpClient);
             Content = new ContentApi(_httpClient);
             Ecosystem = new EcosystemApi(_httpClient);
@@ -53,18 +54,10 @@ namespace Sdkwork.ClawRouter.App
             Memory = new MemoryApi(_httpClient);
             Notification = new NotificationApi(_httpClient);
             Platform = new PlatformApi(_httpClient);
-            System = new SystemApi(_httpClient);
-            Commerce = new CommerceApi(_httpClient);
             Runtime = new RuntimeApi(_httpClient);
             SdkReference = new SdkReferenceApi(_httpClient);
+            System = new SystemApi(_httpClient);
         }
-
-        public SdkworkAppClient SetApiKey(string apiKey)
-        {
-            _httpClient.SetApiKey(apiKey);
-            return this;
-        }
-
         public SdkworkAppClient SetAuthToken(string token)
         {
             _httpClient.SetAuthToken(token);

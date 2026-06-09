@@ -13,7 +13,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? CredentialRotation { get; set; }
         public List<AdminChannelCredentialInput>? Credentials { get; set; }
         public string? ExpiresAt { get; set; }
-        public string? Id { get; set; }
+        public string Id { get; set; }
         public string? Name { get; set; }
         public string? Protocol { get; set; }
         public List<string>? ResourceCodes { get; set; }

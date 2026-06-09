@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminMonitorAlertsResponse
     {
-        public List<AdminMonitorAlertItem>? Items { get; set; }
+        public List<AdminMonitorAlertItem> Items { get; set; }
     }
 }

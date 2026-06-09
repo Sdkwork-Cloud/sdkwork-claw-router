@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminProviderSecretMutationResponse
     {
-        public AdminProviderSecretItem? Item { get; set; }
+        public AdminProviderSecretItem Item { get; set; }
     }
 }

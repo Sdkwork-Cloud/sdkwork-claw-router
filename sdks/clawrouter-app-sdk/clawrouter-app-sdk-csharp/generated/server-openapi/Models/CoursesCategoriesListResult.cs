@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class CoursesCategoriesListResult
     {
-        public string? Code { get; set; }
+        public string Code { get; set; }
         public List<CourseCategoryItem>? Data { get; set; }
         public string? Msg { get; set; }
     }

@@ -257,7 +257,7 @@ async fn app_agent_run_routes_list_detail_steps_and_complete_run() {
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/app/v3/api/agents/sessions/agent-session-1/runs?page=1&pageSize=20")
+                .uri("/app/v3/api/agents/sessions/agent-session-1/runs?page=1&page_size=20")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),

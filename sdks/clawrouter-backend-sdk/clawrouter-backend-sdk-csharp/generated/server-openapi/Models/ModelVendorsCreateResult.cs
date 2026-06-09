@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class ModelVendorsCreateResult
     {
-        public string? Code { get; set; }
+        public string Code { get; set; }
         public AdminModelVendorMutationResponse? Data { get; set; }
         public string? Msg { get; set; }
     }

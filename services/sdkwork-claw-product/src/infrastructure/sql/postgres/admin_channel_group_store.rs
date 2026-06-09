@@ -7,6 +7,7 @@ use crate::domain::{DomainError, DomainResult};
 use crate::infrastructure::sql::routing_config_change::{
     record_postgres_ai_routing_config_change, AiRoutingConfigChange,
 };
+use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
 use crate::ports::{
     AdminChannelGroupChannelBindingItem, AdminChannelGroupCommandFuture, AdminChannelGroupItem,
     AdminChannelGroupStore, AdminChannelGroupSubject, CreateAdminChannelGroupCommand,
@@ -612,12 +613,13 @@ async fn replace_channel_bindings(
             requested_status,
             RESOURCE_ACCESS_SOURCE_CHANNEL_BINDING,
         );
+        let binding_id = next_claw_runtime_id("ai_channel_group_member")?;
         sqlx::query(
             r#"
             INSERT INTO ai_channel_group_member
-                (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, channel_group_id, channel_id, priority, weight, metadata)
+                (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, channel_group_id, channel_id, priority, weight, metadata, id)
             VALUES
-                ($1, $2, $3, 1, $4, $5::timestamptz, $6::timestamptz, 0, $7, $8, $9, $10, $11::jsonb)
+                ($1, $2, $3, 1, $4, $5::timestamptz, $6::timestamptz, 0, $7, $8, $9, $10, $11::jsonb, $12)
             ON CONFLICT(tenant_id, organization_id, channel_group_id, channel_id)
             DO UPDATE SET
                 status = excluded.status,
@@ -641,6 +643,7 @@ async fn replace_channel_bindings(
         .bind(item.priority)
         .bind(item.weight)
         .bind(metadata)
+        .bind(binding_id)
         .execute(&mut **tx)
         .await
         .map_err(|error| store_error("failed to upsert channel group channel binding", error))?;
@@ -1007,13 +1010,14 @@ async fn upsert_group_resource_access(
     let resource_hash = digest_hex(&format!("{source}:{access_code}"));
     let persisted_status = relationship_status_for_group(group_status, 1);
     let metadata = relationship_metadata_for_group(group_status, 1, source);
+    let resource_access_id = next_claw_runtime_id("ai_channel_group_resource")?;
     sqlx::query(
         r#"
         INSERT INTO ai_channel_group_resource
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, channel_group_id, resource_id, resource_code, resource_group_id, resource_group_code, grant_type, priority)
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, channel_group_id, resource_id, resource_code, resource_group_id, resource_group_code, grant_type, priority, id)
         VALUES
             ($1, $2, $3, 1, $4, $5::timestamptz, $6::timestamptz, 0, $7::jsonb, $8,
-                $9, $10, $11, $12, 'allow', $13)
+                $9, $10, $11, $12, 'allow', $13, $14)
         ON CONFLICT(tenant_id, organization_id, channel_group_id, resource_code, resource_group_code)
         DO UPDATE SET
             status = excluded.status,
@@ -1041,6 +1045,7 @@ async fn upsert_group_resource_access(
     .bind(resource_group_id)
     .bind(resource_group_code)
     .bind(priority)
+    .bind(resource_access_id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to upsert channel group resource", error))?;
@@ -1152,12 +1157,13 @@ async fn insert_channel_group(
     let (pricing_plan_id, pricing_plan_code) = pricing_plan
         .map(|(id, code)| (Some(*id), Some(code.as_str())))
         .unwrap_or((None, None));
+    let id = next_claw_runtime_id("ai_channel_group")?;
     sqlx::query_scalar(
         r#"
         INSERT INTO ai_channel_group
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, group_name, group_code, description, provider_code, group_type, environment, pricing_plan_id, pricing_plan_code, rate_multiplier, price_reference_mode, official_price_multiplier, billing_type, capacity_limit, allowed_origin, metadata)
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, group_name, group_code, description, provider_code, group_type, environment, pricing_plan_id, pricing_plan_code, rate_multiplier, price_reference_mode, official_price_multiplier, billing_type, capacity_limit, allowed_origin, metadata, id)
         VALUES
-            ($1, $2, $3, 1, $4, $5::timestamptz, $6::timestamptz, 0, $7, $8, '', $9, $10, 1, $11, $12, $13::numeric, $14, $15::numeric, $16, $17, '{}'::jsonb, '{}'::jsonb)
+            ($1, $2, $3, 1, $4, $5::timestamptz, $6::timestamptz, 0, $7, $8, '', $9, $10, 1, $11, $12, $13::numeric, $14, $15::numeric, $16, $17, '{}'::jsonb, '{}'::jsonb, $18)
         RETURNING id
         "#,
     )
@@ -1178,6 +1184,7 @@ async fn insert_channel_group(
     .bind(decimal_string(command.official_price_multiplier))
     .bind(default_billing_type_code())
     .bind(command.capacity_total.round() as i64)
+    .bind(id)
     .fetch_one(&mut **tx)
     .await
     .map_err(|error| store_error("failed to create channel group", error))
@@ -1484,12 +1491,13 @@ async fn upsert_pricing_plan_binding(
         return Ok(());
     }
 
+    let pricing_binding_id = next_claw_runtime_id("ai_pricing_plan_binding")?;
     sqlx::query(
         r#"
         INSERT INTO ai_pricing_plan_binding
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, pricing_plan_id, pricing_plan_code, subject_type, subject_id, subject_code, binding_source, multiplier_override, priority, effective_from)
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, pricing_plan_id, pricing_plan_code, subject_type, subject_id, subject_code, binding_source, multiplier_override, priority, effective_from, id)
         VALUES
-            ($1, $2, $3, 1, 1, $4::timestamptz, $5::timestamptz, 0, $6, $7, $8, $9, $10, 1, $11::numeric, 1, $12::timestamptz)
+            ($1, $2, $3, 1, 1, $4::timestamptz, $5::timestamptz, 0, $6, $7, $8, $9, $10, 1, $11::numeric, 1, $12::timestamptz, $13)
         "#,
     )
     .bind(binding_uuid)
@@ -1504,6 +1512,7 @@ async fn upsert_pricing_plan_binding(
     .bind(group_code)
     .bind(decimal_string(rate_multiplier))
     .bind(requested_at)
+    .bind(pricing_binding_id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to create channel group pricing binding", error))?;
@@ -1602,12 +1611,13 @@ async fn insert_audit_log(
     target_id: i64,
     change_summary: serde_json::Value,
 ) -> DomainResult<()> {
+    let id = next_claw_runtime_id("ops_audit_log")?;
     sqlx::query(
         r#"
         INSERT INTO ops_audit_log
-            (uuid, tenant_id, organization_id, action, target_type, target_id, request_id, operator_id, operator_type, change_summary)
+            (uuid, tenant_id, organization_id, action, target_type, target_id, request_id, operator_id, operator_type, change_summary, id)
         VALUES
-            ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10::jsonb)
+            ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10::jsonb, $11)
         "#,
     )
     .bind(audit_log_uuid)
@@ -1620,6 +1630,7 @@ async fn insert_audit_log(
     .bind(operator_id)
     .bind(operator_type)
     .bind(change_summary.to_string())
+    .bind(id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to write channel group audit log", error))?;
@@ -1640,12 +1651,13 @@ async fn insert_config_snapshot(
 ) -> DomainResult<()> {
     let payload = payload.to_string();
     let snapshot_no = format!("access-group-{target_id}-{action}-{snapshot_uuid}");
+    let id = next_claw_runtime_id("ops_config_snapshot")?;
     sqlx::query(
         r#"
         INSERT INTO ops_config_snapshot
-            (uuid, tenant_id, organization_id, user_id, request_id, status, snapshot_no, config_scope, config_type, source_table, source_ids, config_payload, config_hash, published_at, published_by)
+            (uuid, tenant_id, organization_id, user_id, request_id, status, snapshot_no, config_scope, config_type, source_table, source_ids, config_payload, config_hash, published_at, published_by, id)
         VALUES
-            ($1, $2, $3, $4, $5, 1, $6, $7, $8, 'ai_channel_group', $9::jsonb, $10::jsonb, $11, $12::timestamptz, $13)
+            ($1, $2, $3, $4, $5, 1, $6, $7, $8, 'ai_channel_group', $9::jsonb, $10::jsonb, $11, $12::timestamptz, $13, $14)
         "#,
     )
     .bind(snapshot_uuid)
@@ -1661,6 +1673,7 @@ async fn insert_config_snapshot(
     .bind(digest_hex(&payload))
     .bind(requested_at)
     .bind(operator_id)
+    .bind(id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to write channel group config snapshot", error))?;

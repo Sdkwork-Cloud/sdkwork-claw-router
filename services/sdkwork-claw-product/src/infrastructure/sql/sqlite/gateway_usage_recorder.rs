@@ -6,6 +6,7 @@ use sha2::{Digest, Sha256};
 use sqlx::SqlitePool;
 
 use crate::domain::DomainError;
+use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
 use crate::ports::{
     GatewayRequestTraceCommand, GatewayUsageRecordCommand, GatewayUsageRecordFuture,
     GatewayUsageRecorder,
@@ -57,7 +58,7 @@ async fn upsert_trace(
     sqlx::query(
         r#"
         INSERT INTO ai_request_trace
-            (uuid, tenant_id, organization_id, user_id, request_id, trace_id, status, attempt_no,
+            (id, uuid, tenant_id, organization_id, user_id, request_id, trace_id, status, attempt_no,
              api_key_id, api_key_name_snapshot, channel_group_id, channel_group_snapshot,
              owner_type, owner_id, channel_id, channel_name_snapshot, requested_model,
              requested_model_catalog_key, provider_model, provider_native_model,
@@ -65,7 +66,7 @@ async fn upsert_trace(
              prompt_tokens, cached_tokens, completion_tokens, total_tokens, latency_ms, ttft_ms,
              provider_error_code, error_type, error_message_masked, metadata, user_agent_hash)
         VALUES
-            (?, ?, ?, ?, ?, ?, 1, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
+            (?, ?, ?, ?, ?, ?, ?, 1, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
              strftime('%Y-%m-%dT%H:%M:%SZ', 'now'), strftime('%Y-%m-%dT%H:%M:%SZ', 'now'), ?, ?, ?, ?, ?,
              ?, ?, ?, ?, ?, ?, ?)
         ON CONFLICT (tenant_id, organization_id, request_id, attempt_no) DO UPDATE SET
@@ -110,6 +111,7 @@ async fn upsert_trace(
         )
         "#,
     )
+    .bind(next_claw_runtime_id("ai_request_trace")?)
     .bind(trace_uuid(command))
     .bind(command.tenant_id)
     .bind(command.organization_id)
@@ -158,7 +160,7 @@ async fn upsert_usage_fact(
     sqlx::query(
         r#"
         INSERT INTO ai_usage_fact
-            (uuid, tenant_id, organization_id, user_id, request_id, trace_id, status,
+            (id, uuid, tenant_id, organization_id, user_id, request_id, trace_id, status,
              api_key_id, api_key_name_snapshot, channel_group_id, channel_group_snapshot,
              owner_type, owner_id, catalog_key, requested_model_catalog_key, model,
              provider_native_model, region_code, channel_id, modality, usage_type, billing_meter_code,
@@ -169,7 +171,7 @@ async fn upsert_usage_fact(
              official_reference_amount, upstream_cost_amount, customer_charge_amount, cost_amount,
              currency, pricing_plan_code, pricing_snapshot, occurred_at, settlement_status)
         VALUES
-            (?, ?, ?, ?, ?, ?, 1,
+            (?, ?, ?, ?, ?, ?, ?, 1,
              ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
              ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
              ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
@@ -221,6 +223,7 @@ async fn upsert_usage_fact(
         WHERE ai_usage_fact.settlement_status = 0
         "#,
     )
+    .bind(next_claw_runtime_id("ai_usage_fact")?)
     .bind(usage_uuid(command))
     .bind(command.tenant_id)
     .bind(command.organization_id)

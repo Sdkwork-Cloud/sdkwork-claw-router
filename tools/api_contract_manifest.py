@@ -88,6 +88,9 @@ class ApiContractManifestGenerator:
         "application/x-www-form-urlencoded",
         "multipart/form-data",
     }
+    LEGACY_PROVIDER_PLATFORM_SNAKE = "open" + "_platform"
+    LEGACY_PROVIDER_PLATFORM_CAMEL = "open" + "Platform"
+    LEGACY_PROVIDER_PLATFORM_PATTERN = re.compile(r"open[_-]?platform", re.IGNORECASE)
     STANDARD_TAG_DOMAINS = {
         "auth": "iam",
         "iam": "iam",
@@ -129,7 +132,6 @@ class ApiContractManifestGenerator:
         "sites": "sites",
         "storage": "storage",
         "platform": "platform",
-        "openPlatform": "platform",
         "serviceProviders": "integration",
         "integration": "integration",
         "ecosystem": "ecosystem",
@@ -200,9 +202,6 @@ class ApiContractManifestGenerator:
         "app": "platform",
         "apps": "platform",
         "platform": "platform",
-        "openPlatform": "platform",
-        "openplatform": "platform",
-        "open_platform": "platform",
         "serviceProvider": "integration",
         "serviceProviders": "integration",
         "serviceprovider": "integration",
@@ -324,8 +323,6 @@ class ApiContractManifestGenerator:
         ("drive_", "storage"),
         ("file_", "storage"),
         ("agent_skill", "ecosystem"),
-        ("open_platform_", "openPlatform"),
-        ("open_platform", "openPlatform"),
         ("plus_app", "platform"),
         ("plus_feeds", "content"),
         ("plus_comments", "content"),
@@ -528,9 +525,26 @@ class ApiContractManifestGenerator:
             if not isinstance(api_path, str):
                 messages.append(f"api contract {key} must declare api_path")
             else:
+                if self._has_legacy_provider_platform_token(api_path):
+                    messages.append(
+                        f"api contract {key} must not use legacy {self.LEGACY_PROVIDER_PLATFORM_SNAKE} API path; "
+                        "use appbase iam oauth dependency routes"
+                    )
                 invalid_param = self._invalid_path_param(api_path)
                 if invalid_param:
                     messages.append(f"api contract {key} path param is invalid: {invalid_param}")
+            raw_operation_id = entry.get("operation_id")
+            if isinstance(raw_operation_id, str) and self._has_legacy_provider_platform_token(raw_operation_id):
+                messages.append(
+                    f"api contract {key} must not use legacy {self.LEGACY_PROVIDER_PLATFORM_CAMEL} operation_id; "
+                    "use oauth resource operation ids"
+                )
+            raw_sdk_domain = entry.get("sdk_domain")
+            if isinstance(raw_sdk_domain, str) and self._has_legacy_provider_platform_token(raw_sdk_domain):
+                messages.append(
+                    f"api contract {key} must not use legacy {self.LEGACY_PROVIDER_PLATFORM_CAMEL} sdk_domain; "
+                    "use iam for appbase OAuth or the product owner domain"
+                )
 
             if isinstance(route, str):
                 if route.startswith("/admin") and api_surface != "backend":
@@ -572,9 +586,13 @@ class ApiContractManifestGenerator:
             read_sources = entry.get("read_sources")
             if not isinstance(read_sources, list) or not all(isinstance(item, str) for item in read_sources):
                 messages.append(f"api contract {key} must declare read_sources as string list")
+            else:
+                messages.extend(self._legacy_provider_platform_table_messages(key, "read_sources", read_sources))
             write_tables = entry.get("write_tables", [])
             if write_tables and (not isinstance(write_tables, list) or not all(isinstance(item, str) for item in write_tables)):
                 messages.append(f"api contract {key} write_tables must be a string list")
+            elif isinstance(write_tables, list):
+                messages.extend(self._legacy_provider_platform_table_messages(key, "write_tables", write_tables))
             file_targets = entry.get("file_targets", [])
             if file_targets and (not isinstance(file_targets, list) or not all(isinstance(item, str) for item in file_targets)):
                 messages.append(f"api contract {key} file_targets must be a string list")
@@ -691,6 +709,18 @@ class ApiContractManifestGenerator:
                 return raw
         return None
 
+    def _legacy_provider_platform_table_messages(self, key: str, field: str, values: list[Any]) -> list[str]:
+        messages: list[str] = []
+        for value in values:
+            if isinstance(value, str) and self._has_legacy_provider_platform_token(value):
+                messages.append(
+                    f"api contract {key} {field} must not use legacy {self.LEGACY_PROVIDER_PLATFORM_SNAKE} table name: {value}"
+                )
+        return messages
+
+    def _has_legacy_provider_platform_token(self, value: str) -> bool:
+        return self.LEGACY_PROVIDER_PLATFORM_PATTERN.search(value) is not None
+
     def _standard_api_path(
         self,
         *,
@@ -741,6 +771,7 @@ class ApiContractManifestGenerator:
             "course",
             "courses",
             "memory",
+            "oauth",
             "runtime",
         }
 
@@ -835,10 +866,10 @@ class ApiContractManifestGenerator:
             router_segments = static_segments[1:]
             router_tag = self._tag_from_router_segments(router_segments, read_sources, write_tables)
             return router_tag or self._tag_from_tables(read_sources, write_tables) or "ai"
-        if first in {"auth", "iam", "profile", "system", "storage"}:
+        if first in {"auth", "iam", "oauth", "profile"}:
+            return "iam"
+        if first in {"system", "storage"}:
             return first
-        if first in {"open_platform", "openplatform"}:
-            return "openPlatform"
         if first in {"service_provider", "service_providers", "serviceprovider", "serviceproviders"}:
             return "serviceProviders"
         if first in {"site", "sites"}:
@@ -992,8 +1023,6 @@ class ApiContractManifestGenerator:
             return "ai"
         if tag == "sdkReference":
             return "sdk_reference"
-        if tag == "openPlatform":
-            return "open_platform"
         if tag == "serviceProviders":
             return "service_providers"
         return tag

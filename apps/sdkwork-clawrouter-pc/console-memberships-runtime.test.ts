@@ -67,12 +67,12 @@ test("console membership service loads the complete app SDK membership overview"
         return {
           code: "2000",
           data: {
-            membership_no: "MEM-2026-001",
-            plan_id: "501",
-            plan_name: "Pro",
+            membershipNo: "MEM-2026-001",
+            planId: "501",
+            planName: "Pro",
             status: "active",
-            starts_at: "2026-05-21T00:00:00Z",
-            expires_at: "2027-05-21T00:00:00Z",
+            startsAt: "2026-05-21T00:00:00Z",
+            expiresAt: "2027-05-21T00:00:00Z",
           },
         };
       }
@@ -83,10 +83,10 @@ test("console membership service loads the complete app SDK membership overview"
             items: [
               {
                 id: 2,
-                group_no: "annual",
+                groupNo: "annual",
                 name: "Annual packages",
                 description: "Yearly billing",
-                sort_weight: 20,
+                sortOrder: 20,
                 status: "active",
               },
             ],
@@ -100,15 +100,15 @@ test("console membership service loads the complete app SDK membership overview"
             items: [
               {
                 id: 401,
-                package_no: "vip-pro-year",
-                package_group_id: 2,
-                plan_id: "501",
-                plan_name: "Pro",
-                sku_id: "sku-pro-year",
-                price_amount: "199.00",
-                currency_code: "CNY",
-                duration_days: "365",
-                recurrence_cycle: "yearly",
+                packageNo: "vip-pro-year",
+                packageGroupId: 2,
+                planId: "501",
+                planName: "Pro",
+                skuId: "sku-pro-year",
+                priceAmount: "199.00",
+                currencyCode: "CNY",
+                durationDays: "365",
+                recurrenceCycle: "yearly",
                 status: "active",
               },
             ],
@@ -121,11 +121,11 @@ test("console membership service loads the complete app SDK membership overview"
           data: {
             items: [
               {
-                entitlement_code: "fast_lane",
+                entitlementCode: "fast_lane",
                 name: "Fast lane",
-                quota_amount: "100",
-                quota_period: "month",
-                reset_policy: "calendar_month",
+                quotaAmount: "100",
+                quotaPeriod: "month",
+                resetPolicy: "calendar_month",
                 status: "active",
               },
             ],
@@ -144,7 +144,7 @@ test("console membership service loads the complete app SDK membership overview"
                 id: "points-1",
                 title: "Daily reward",
                 amount: "50",
-                occurred_at: "2026-05-21T01:02:03Z",
+                occurredAt: "2026-05-21T01:02:03Z",
                 status: "success",
               },
             ],
@@ -152,22 +152,22 @@ test("console membership service loads the complete app SDK membership overview"
         };
       }
       if (path === "/app/v3/api/memberships/points/daily_rewards/status") {
-        return { code: "2000", data: { item: { available: true, reward_points: "50", status: "available" } } };
+        return { code: "2000", data: { item: { available: true, rewardPoints: "50", status: "available" } } };
       }
       if (path === "/app/v3/api/memberships/privileges/usage") {
         return {
           code: "2000",
           data: {
             item: {
-              speed_up_available: true,
-              speed_up_remaining: "3",
+              speedUpAvailable: true,
+              speedUpRemaining: "3",
               items: [
                 {
                   code: "fast_lane",
                   name: "Fast lane",
-                  used_amount: "4",
-                  quota_amount: "100",
-                  balance_after: "96",
+                  usedAmount: "4",
+                  quotaAmount: "100",
+                  balanceAfter: "96",
                 },
               ],
             },
@@ -220,7 +220,7 @@ test("console membership service keeps overview loaded when optional panels are 
             items: [
               {
                 id: 2,
-                group_no: "annual",
+                groupNo: "annual",
                 name: "Annual packages",
                 status: "active",
               },
@@ -235,15 +235,15 @@ test("console membership service keeps overview loaded when optional panels are 
             items: [
               {
                 id: 401,
-                package_no: "vip-pro-year",
-                package_group_id: 2,
-                plan_id: "501",
-                plan_name: "Pro",
-                sku_id: "sku-pro-year",
-                price_amount: "199.00",
-                currency_code: "CNY",
-                duration_days: "365",
-                recurrence_cycle: "yearly",
+                packageNo: "vip-pro-year",
+                packageGroupId: 2,
+                planId: "501",
+                planName: "Pro",
+                skuId: "sku-pro-year",
+                priceAmount: "199.00",
+                currencyCode: "CNY",
+                durationDays: "365",
+                recurrenceCycle: "yearly",
                 status: "active",
               },
             ],
@@ -269,7 +269,7 @@ test("console membership service keeps overview loaded when optional panels are 
   );
 });
 
-test("console membership service falls back to the package catalog when group package loading fails", async () => {
+test("console membership service keeps package groups empty when group package loading fails", async () => {
   await withMembershipSdkResponses(
     (path) => {
       if (path === "/app/v3/api/memberships/current") {
@@ -282,7 +282,7 @@ test("console membership service falls back to the package catalog when group pa
             items: [
               {
                 id: 2,
-                group_no: "annual",
+                groupNo: "annual",
                 name: "Annual packages",
                 status: "active",
               },
@@ -293,28 +293,6 @@ test("console membership service falls back to the package catalog when group pa
       if (path === "/app/v3/api/memberships/package_groups/2/packages") {
         return { code: "2000", data: {} };
       }
-      if (path === "/app/v3/api/memberships/packages") {
-        return {
-          code: "2000",
-          data: {
-            items: [
-              {
-                id: 401,
-                package_no: "vip-pro-year",
-                package_group_id: 2,
-                plan_id: "501",
-                plan_name: "Pro",
-                sku_id: "sku-pro-year",
-                price_amount: "199.00",
-                currency_code: "CNY",
-                duration_days: "365",
-                recurrence_cycle: "yearly",
-                status: "active",
-              },
-            ],
-          },
-        };
-      }
       return { code: "2000", data: { items: [] } };
     },
     async (captured) => {
@@ -322,9 +300,8 @@ test("console membership service falls back to the package catalog when group pa
 
       assert.equal(overview.packageGroups.length, 1);
       assert.equal(overview.packageGroups[0]?.id, "2");
-      assert.equal(overview.packageGroups[0]?.packages.length, 1);
-      assert.equal(overview.packageGroups[0]?.packages[0]?.id, "401");
-      assert.ok(captured.some((request) => requestPath(request.url) === "/app/v3/api/memberships/packages"));
+      assert.deepEqual(overview.packageGroups[0]?.packages, []);
+      assert.ok(!captured.some((request) => requestPath(request.url) === "/app/v3/api/memberships/packages"));
     },
   );
 });
@@ -333,7 +310,7 @@ test("console membership service exposes purchase, renew, upgrade, reward, and s
   await withMembershipSdkResponses(
     (path) => {
       if (path === "/app/v3/api/memberships/points/daily_rewards") {
-        return { code: "2000", data: { item: { requestNo: "daily-reward-1", success: true, status: "accepted", reward_points: "50" } } };
+        return { code: "2000", data: { item: { requestNo: "daily-reward-1", success: true, status: "accepted", rewardPoints: "50" } } };
       }
       if (path === "/app/v3/api/memberships/privileges/speed_ups") {
         return { code: "2000", data: { requestNo: "speed-up-1", success: true, status: "accepted" } };
@@ -360,9 +337,9 @@ test("console membership service exposes purchase, renew, upgrade, reward, and s
         "/app/v3/api/memberships/points/daily_rewards",
         "/app/v3/api/memberships/privileges/speed_ups",
       ]);
-      assert.deepEqual(JSON.parse(captured[0]?.body ?? "{}"), { packageId: 401 });
-      assert.deepEqual(JSON.parse(captured[1]?.body ?? "{}"), { packageId: 401 });
-      assert.deepEqual(JSON.parse(captured[2]?.body ?? "{}"), { packageId: 402 });
+      assert.deepEqual(JSON.parse(captured[0]?.body ?? "{}"), { packageId: "401" });
+      assert.deepEqual(JSON.parse(captured[1]?.body ?? "{}"), { packageId: "401" });
+      assert.deepEqual(JSON.parse(captured[2]?.body ?? "{}"), { packageId: "402" });
     },
   );
 });
@@ -431,13 +408,57 @@ test("console membership page uses dedicated i18n keys and renders the complete 
   assert.doesNotMatch(source, /console\.commerce\./);
   assert.doesNotMatch(serviceSource, /fetch\(/);
   assert.doesNotMatch(serviceSource, /axios/);
-  assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.packageGroups\.list/);
-  assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.packageGroups\.packages\.list/);
-  assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.packages\.list/);
-  assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.purchases\.create/);
-  assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.points\.dailyRewards\.create/);
-  assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.privileges\.speedUps\.create/);
+  assert.match(serviceSource, /getSdkworkCommerceService\(\)\.memberships\.packageGroups\.list/);
+  assert.match(serviceSource, /getSdkworkCommerceService\(\)\.memberships\.packageGroups\.packages\.list/);
+  assert.match(serviceSource, /getSdkworkCommerceService\(\)\.memberships\.packages\.list/);
+  assert.match(serviceSource, /getSdkworkCommerceService\(\)\.memberships\.purchases\.create/);
+  assert.match(serviceSource, /getSdkworkCommerceService\(\)\.memberships\.points\.dailyRewards\.create/);
+  assert.match(serviceSource, /getSdkworkCommerceService\(\)\.memberships\.privileges\.speedUps\.create/);
+  assert.doesNotMatch(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce/);
+  assert.doesNotMatch(serviceSource, /tryFetchMembershipPackages|mergeCatalogPackagesIntoGroups|createPackageCatalogFallback|createUngroupedPackageGroup/);
   assert.doesNotMatch(packageJson, /"sdkwork-clawrouter-pc-vip": "workspace:\*"/);
+});
+
+test("console membership service reads only canonical generated SDK response fields", () => {
+  const serviceSource = readPortalFile("./packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts");
+  const forbiddenMarkers = [
+    "membership_no",
+    "plan_id",
+    "plan_name",
+    "starts_at",
+    "expires_at",
+    "group_no",
+    "sort_weight",
+    "package_no",
+    "package_group_id",
+    "sku_id",
+    "price_amount",
+    "currency_code",
+    "duration_days",
+    "recurrence_cycle",
+    "entitlement_code",
+    "quota_amount",
+    "quota_period",
+    "reset_policy",
+    "occurred_at",
+    "reward_points",
+    "speed_up_available",
+    "speed_up_remaining",
+    "used_amount",
+    "balance_after",
+    "orderNo",
+    "orderId",
+    "paymentIntentId",
+    "paymentStatus",
+    "orderStatus",
+    "planNo",
+    "packageName",
+    "billingCycle",
+  ];
+
+  for (const marker of forbiddenMarkers) {
+    assert.doesNotMatch(serviceSource, new RegExp(escapeRegExp(marker)), `${marker} must not be read as a response compatibility alias`);
+  }
 });
 
 test("console membership page uses the available console content width", () => {
@@ -504,8 +525,15 @@ test("console membership schema contract covers the complete overview service su
     assert.match(contract, new RegExp(`interface: ${interfaceName}\\b`));
   }
 
-  for (const fieldName of ["planName", "packageGroupId", "isPurchasable"]) {
-    assert.match(contract, new RegExp(`\\n  - ${fieldName}\\b`));
+  const membershipSummaryContract = interfaceContractBlock(contract, "MembershipSummary");
+  const membershipPackageContract = interfaceContractBlock(contract, "MembershipPackage");
+
+  for (const fieldName of ["planName"]) {
+    assert.match(membershipSummaryContract, new RegExp(`\\n      - ${fieldName}\\b`));
+  }
+
+  for (const fieldName of ["packageGroupId", "isPurchasable"]) {
+    assert.match(membershipPackageContract, new RegExp(`\\n      - ${fieldName}\\b`));
   }
 
   for (const operationName of [
@@ -526,4 +554,11 @@ function requestPath(url: string | undefined): string {
 
 function escapeRegExp(value: string): string {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function interfaceContractBlock(contract: string, interfaceName: string): string {
+  const pattern = new RegExp(`\\n  - route: [\\s\\S]*?\\n    interface: ${escapeRegExp(interfaceName)}\\b[\\s\\S]*?(?=\\n  - route: |\\n[a-z_]+:|$)`);
+  const match = contract.match(pattern);
+  assert.ok(match, `${interfaceName} contract block is required`);
+  return match[0] ?? "";
 }

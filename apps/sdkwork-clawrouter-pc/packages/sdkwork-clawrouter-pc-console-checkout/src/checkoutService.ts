@@ -5,7 +5,7 @@ import {
   readString,
   type ApiRecord,
 } from 'sdkwork-clawrouter-pc-commons/runtime';
-import { getSdkworkCommerceService } from '@sdkwork/commerce-service';
+import { getClawRouterAppSdkClient } from 'sdkwork-clawrouter-pc-commons/sdk-clients';
 
 export type CheckoutStatusValue = 'pending' | 'success' | 'failed' | 'expired' | 'refunding' | 'refunded';
 export type CheckoutPaymentMethod = 'wechat' | 'alipay' | 'card';
@@ -41,64 +41,62 @@ export class CheckoutService {
   }
 }
 
-type AppCommerceService = ReturnType<typeof getSdkworkCommerceService>;
+type AppCommerceService = ReturnType<typeof getClawRouterAppSdkClient>['commerce'];
 
 export async function appAddressesList(params?: Parameters<AppCommerceService['addresses']['list']>[0]) {
-  return getSdkworkCommerceService().addresses.list(params);
+  return getClawRouterAppSdkClient().commerce.addresses.list(params);
 }
 
 export async function appAddressesCreate(body: Parameters<AppCommerceService['addresses']['create']>[0]) {
-  return getSdkworkCommerceService().addresses.create(body, createIdempotencyParams('app-address-create'));
+  return getClawRouterAppSdkClient().commerce.addresses.create(body);
 }
 
 export async function appAddressesUpdate(addressId: string, body: Parameters<AppCommerceService['addresses']['update']>[1]) {
-  return getSdkworkCommerceService().addresses.update(addressId, body, createIdempotencyParams('app-address-update'));
+  return getClawRouterAppSdkClient().commerce.addresses.update(addressId, body);
 }
 
 export async function appAddressesDelete(addressId: string) {
-  return getSdkworkCommerceService().addresses.delete(addressId, createIdempotencyParams('app-address-delete'));
+  return getClawRouterAppSdkClient().commerce.addresses.delete(addressId);
 }
 
 export async function appAddressesDefaultSelectionCreate(addressId: string) {
-  return getSdkworkCommerceService().addresses.defaultSelection.create(
+  return getClawRouterAppSdkClient().commerce.addresses.defaultSelection.create(
     addressId,
     { clientRequestNo: createIdempotencyParams('app-address-default-selection').idempotencyKey, metadata: {} },
-    createIdempotencyParams('app-address-default-selection'),
   );
 }
 
 export async function appCartCurrentRetrieve() {
-  return getSdkworkCommerceService().cart.current.retrieve();
+  return getClawRouterAppSdkClient().commerce.cart.current.retrieve();
 }
 
 export async function appCartItemsCreate(body: Parameters<AppCommerceService['cart']['items']['create']>[0]) {
-  return getSdkworkCommerceService().cart.items.create(body, createIdempotencyParams('app-cart-item-create'));
+  return getClawRouterAppSdkClient().commerce.cart.items.create(body);
 }
 
 export async function appCartItemsUpdate(cartItemId: string, body: Parameters<AppCommerceService['cart']['items']['update']>[1]) {
-  return getSdkworkCommerceService().cart.items.update(cartItemId, body, createIdempotencyParams('app-cart-item-update'));
+  return getClawRouterAppSdkClient().commerce.cart.items.update(cartItemId, body);
 }
 
 export async function appCartItemsDelete(cartItemId: string) {
-  return getSdkworkCommerceService().cart.items.delete(cartItemId, createIdempotencyParams('app-cart-item-delete'));
+  return getClawRouterAppSdkClient().commerce.cart.items.delete(cartItemId);
 }
 
 export async function appCheckoutSessionsCreate(body: Parameters<AppCommerceService['checkout']['sessions']['create']>[0]) {
-  return getSdkworkCommerceService().checkout.sessions.create(body, createIdempotencyParams('app-checkout-session-create'));
+  return getClawRouterAppSdkClient().commerce.checkout.sessions.create(body);
 }
 
 export async function appCheckoutSessionsRetrieve(checkoutSessionId: string) {
-  return getSdkworkCommerceService().checkout.sessions.retrieve(checkoutSessionId);
+  return getClawRouterAppSdkClient().commerce.checkout.sessions.retrieve(checkoutSessionId);
 }
 
 export async function appCheckoutSessionsOrdersCreate(
   checkoutSessionId: string,
   body: Parameters<AppCommerceService['checkout']['sessions']['orders']['create']>[1],
 ) {
-  return getSdkworkCommerceService().checkout.sessions.orders.create(
+  return getClawRouterAppSdkClient().commerce.checkout.sessions.orders.create(
     checkoutSessionId,
     body,
-    createIdempotencyParams('app-checkout-session-order-create'),
   );
 }
 
@@ -106,97 +104,93 @@ export async function appCheckoutSessionsQuotesCreate(
   checkoutSessionId: string,
   body: Parameters<AppCommerceService['checkout']['sessions']['quotes']['create']>[1],
 ) {
-  return getSdkworkCommerceService().checkout.sessions.quotes.create(
+  return getClawRouterAppSdkClient().commerce.checkout.sessions.quotes.create(
     checkoutSessionId,
     body,
-    createIdempotencyParams('app-checkout-session-quote-create'),
   );
 }
 
 export async function appOrdersList(params?: Parameters<AppCommerceService['orders']['list']>[0]) {
-  return getSdkworkCommerceService().orders.list(params);
+  return getClawRouterAppSdkClient().commerce.orders.list(params);
 }
 
 export async function appOrdersRetrieve(orderId: string) {
-  return getSdkworkCommerceService().orders.retrieve(orderId);
+  return getClawRouterAppSdkClient().commerce.orders.retrieve(orderId);
 }
 
-export async function appOrdersEventsList(orderId: string, params?: Parameters<AppCommerceService['orders']['events']['list']>[1]) {
-  return getSdkworkCommerceService().orders.events.list(orderId, params);
+export async function appOrdersEventsList(orderId: string) {
+  return getClawRouterAppSdkClient().commerce.orders.events.list(orderId);
 }
 
 export async function appOrdersCancellationsCreate(
   orderId: string,
   body: Parameters<AppCommerceService['orders']['cancellations']['create']>[1],
 ) {
-  return getSdkworkCommerceService().orders.cancellations.create(
+  return getClawRouterAppSdkClient().commerce.orders.cancellations.create(
     orderId,
     body,
-    createIdempotencyParams('app-order-cancellation-create'),
   );
 }
 
-export async function appPaymentsMethodsList(params?: Parameters<AppCommerceService['payments']['methods']['list']>[0]) {
-  return getSdkworkCommerceService().payments.methods.list(params);
+export async function appPaymentsMethodsList() {
+  return getClawRouterAppSdkClient().commerce.payments.methods.list();
 }
 
 export async function appPaymentsIntentsCreate(body: Parameters<AppCommerceService['payments']['intents']['create']>[0]) {
-  return getSdkworkCommerceService().payments.intents.create(body, createIdempotencyParams('app-payment-intent-create'));
+  return getClawRouterAppSdkClient().commerce.payments.intents.create(body);
 }
 
 export async function appPaymentsIntentsRetrieve(paymentIntentId: string) {
-  return getSdkworkCommerceService().payments.intents.retrieve(paymentIntentId);
+  return getClawRouterAppSdkClient().commerce.payments.intents.retrieve(paymentIntentId);
 }
 
 export async function appPaymentsIntentsAttemptsCreate(
   paymentIntentId: string,
   body: Parameters<AppCommerceService['payments']['intents']['attempts']['create']>[1],
 ) {
-  return getSdkworkCommerceService().payments.intents.attempts.create(
+  return getClawRouterAppSdkClient().commerce.payments.intents.attempts.create(
     paymentIntentId,
     body,
-    createIdempotencyParams('app-payment-intent-attempt-create'),
   );
 }
 
 export async function appPaymentsAttemptsRetrieve(paymentAttemptId: string) {
-  return getSdkworkCommerceService().payments.attempts.retrieve(paymentAttemptId);
+  return getClawRouterAppSdkClient().commerce.payments.attempts.retrieve(paymentAttemptId);
 }
 
 export async function appRechargesOrdersRetrieve(orderId: string) {
-  return getSdkworkCommerceService().recharges.orders.retrieve(orderId);
+  return getClawRouterAppSdkClient().commerce.recharges.orders.retrieve(orderId);
 }
 
 export async function appRefundsList(params?: Parameters<AppCommerceService['refunds']['list']>[0]) {
-  return getSdkworkCommerceService().refunds.list(params);
+  return getClawRouterAppSdkClient().commerce.refunds.list(params);
 }
 
 export async function appRefundsCreate(body: Parameters<AppCommerceService['refunds']['create']>[0]) {
-  return getSdkworkCommerceService().refunds.create(body, createIdempotencyParams('app-refund-create'));
+  return getClawRouterAppSdkClient().commerce.refunds.create(body);
 }
 
 export async function appRefundsRetrieve(refundId: string) {
-  return getSdkworkCommerceService().refunds.retrieve(refundId);
+  return getClawRouterAppSdkClient().commerce.refunds.retrieve(refundId);
 }
 
 export async function appFulfillmentsList(params?: Parameters<AppCommerceService['fulfillments']['list']>[0]) {
-  return getSdkworkCommerceService().fulfillments.list(params);
+  return getClawRouterAppSdkClient().commerce.fulfillments.list(params);
 }
 
 export async function appFulfillmentsRetrieve(fulfillmentId: string) {
-  return getSdkworkCommerceService().fulfillments.retrieve(fulfillmentId);
+  return getClawRouterAppSdkClient().commerce.fulfillments.retrieve(fulfillmentId);
 }
 
 export async function appShipmentsRetrieve(shipmentId: string) {
-  return getSdkworkCommerceService().shipments.retrieve(shipmentId);
+  return getClawRouterAppSdkClient().commerce.shipments.retrieve(shipmentId);
 }
 
 export async function appPromotionDiscountApplicationsCreate(
   body: Parameters<AppCommerceService['promotions']['discountApplications']['create']>[0],
 ) {
-  return getSdkworkCommerceService().promotions.discountApplications.create(
+  return getClawRouterAppSdkClient().commerce.promotions.discountApplications.create(
     body,
-    createIdempotencyParams('app-promotion-discount-application-create'),
   );
 }
 
@@ -204,10 +198,9 @@ export async function appPromotionDiscountApplicationsSettle(
   applicationId: string,
   body: Parameters<AppCommerceService['promotions']['discountApplications']['settle']>[1],
 ) {
-  return getSdkworkCommerceService().promotions.discountApplications.settle(
+  return getClawRouterAppSdkClient().commerce.promotions.discountApplications.settle(
     applicationId,
     body,
-    createIdempotencyParams('app-promotion-discount-application-settle'),
   );
 }
 
@@ -215,19 +208,17 @@ export async function appPromotionDiscountApplicationsRelease(
   applicationId: string,
   body: Parameters<AppCommerceService['promotions']['discountApplications']['release']>[1],
 ) {
-  return getSdkworkCommerceService().promotions.discountApplications.release(
+  return getClawRouterAppSdkClient().commerce.promotions.discountApplications.release(
     applicationId,
     body,
-    createIdempotencyParams('app-promotion-discount-application-release'),
   );
 }
 
 export async function appPromotionDiscountApplicationReversalsCreate(
   body: Parameters<AppCommerceService['promotions']['discountApplications']['reversals']['create']>[0],
 ) {
-  return getSdkworkCommerceService().promotions.discountApplications.reversals.create(
+  return getClawRouterAppSdkClient().commerce.promotions.discountApplications.reversals.create(
     body,
-    createIdempotencyParams('app-promotion-discount-application-reversal-create'),
   );
 }
 
@@ -256,26 +247,27 @@ function readCommerceResourceRecord(result: unknown, message: string): ApiRecord
 function normalizeCheckoutStatus(item: ApiRecord, fallbackOrderNo: string): CheckoutStatus {
   const amount = readFirstMoneyString(
     item,
-    ['amount', 'priceAmount', 'price_amount', 'totalAmount', 'total_amount'],
+    ['amount', 'priceAmount', 'totalAmount'],
     'Checkout amount is required',
     'Checkout amount must be a money string',
   );
-  const orderNo = readFirstString(item, ['orderNo', 'order_no', 'requestNo', 'request_no', 'id']) || fallbackOrderNo;
-  const paymentStatus = readCheckoutStatusValue(readFirstString(item, ['paymentStatus', 'payment_status', 'payStatus', 'pay_status', 'status']));
-  const orderStatus = readCheckoutStatusValue(readFirstString(item, ['orderStatus', 'order_status', 'status']));
-  const rechargeStatus = readCheckoutStatusValue(readFirstString(item, ['rechargeStatus', 'recharge_status', 'grantStatus', 'grant_status', 'status']));
-  const status = readCheckoutStatusValue(readFirstString(item, ['status', 'paymentStatus', 'payment_status']));
-  const providerCode = readFirstString(item, ['providerCode', 'provider_code']) || readCheckoutProviderCode(readFirstString(item, ['paymentMethod', 'payment_method', 'method']));
-  const paymentMethod = readCheckoutPaymentMethod(readFirstString(item, ['paymentMethod', 'payment_method', 'method']));
-  const paymentProduct = readCheckoutPaymentProduct(readFirstString(item, ['paymentProduct', 'payment_product']), paymentMethod);
-  const nextAction = readCheckoutNextAction(readFirstString(item, ['nextAction', 'next_action']));
+  const paymentMethodValue = readFirstString(item, ['paymentMethod', 'method']);
+  const orderNo = readFirstString(item, ['orderNo', 'requestNo', 'id']) || fallbackOrderNo;
+  const paymentStatus = readCheckoutStatusValue(readFirstString(item, ['paymentStatus', 'payStatus', 'status']));
+  const orderStatus = readCheckoutStatusValue(readFirstString(item, ['orderStatus', 'status']));
+  const rechargeStatus = readCheckoutStatusValue(readFirstString(item, ['rechargeStatus', 'grantStatus', 'status']));
+  const status = readCheckoutStatusValue(readFirstString(item, ['status', 'paymentStatus']));
+  const providerCode = readFirstString(item, ['providerCode']) || readCheckoutProviderCode(paymentMethodValue);
+  const paymentMethod = readCheckoutPaymentMethod(paymentMethodValue);
+  const paymentProduct = readCheckoutPaymentProduct(readFirstString(item, ['paymentProduct']), paymentMethod);
+  const nextAction = readCheckoutNextAction(readFirstString(item, ['nextAction']));
   const cashierUrl = readCheckoutCashierUrl(item, nextAction);
   const requestPaymentPayload = readCheckoutRequestPaymentPayload(item);
   return {
     orderNo,
-    outTradeNo: readFirstString(item, ['outTradeNo', 'out_trade_no', 'externalTradeNo', 'external_trade_no']),
+    outTradeNo: readFirstString(item, ['outTradeNo', 'externalTradeNo']),
     amount,
-    points: readFirstNonNegativeNumber(item, ['points', 'grantAmount', 'grant_amount'], 'Checkout points are required'),
+    points: readFirstNonNegativeNumber(item, ['points', 'grantAmount'], 'Checkout points are required'),
     providerCode,
     paymentMethod,
     paymentProduct,
@@ -283,9 +275,9 @@ function normalizeCheckoutStatus(item: ApiRecord, fallbackOrderNo: string): Chec
     paymentStatus,
     rechargeStatus,
     status,
-    createdAt: readFirstString(item, ['createdAt', 'created_at']) || '-',
-    expiresAt: readFirstString(item, ['expiresAt', 'expires_at']) || '-',
-    paidAt: readFirstString(item, ['paidAt', 'paid_at']),
+    createdAt: readFirstString(item, ['createdAt']) || '-',
+    expiresAt: readFirstString(item, ['expiresAt']) || '-',
+    paidAt: readFirstString(item, ['paidAt']),
     nextAction,
     cashierUrl,
     qrCodePayload: readCheckoutQrCodePayload(item, nextAction, cashierUrl),
@@ -394,7 +386,7 @@ function readCheckoutNextAction(value: string): CheckoutNextAction {
 }
 
 function readCheckoutCashierUrl(item: ApiRecord, nextAction: CheckoutNextAction): string {
-  const payload = readFirstString(item, ['cashierUrl', 'cashier_url', 'qrCodePayload', 'qr_code_payload']);
+  const payload = readFirstString(item, ['cashierUrl', 'qrCodePayload']);
   if (nextAction === 'scan_qr' || nextAction === 'open_url') {
     if (!payload) {
       throw new Error('Checkout cashierUrl is required for scan_qr and open_url payments');
@@ -407,7 +399,7 @@ function readCheckoutCashierUrl(item: ApiRecord, nextAction: CheckoutNextAction)
 }
 
 function readCheckoutQrCodePayload(item: ApiRecord, nextAction: CheckoutNextAction, cashierUrl: string): string {
-  const payload = readFirstString(item, ['qrCodePayload', 'qr_code_payload']) || cashierUrl;
+  const payload = readFirstString(item, ['qrCodePayload']) || cashierUrl;
   if (nextAction !== 'scan_qr') {
     return payload;
   }
@@ -421,12 +413,10 @@ function readCheckoutQrCodePayload(item: ApiRecord, nextAction: CheckoutNextActi
 }
 
 function readCheckoutRequestPaymentPayload(item: ApiRecord): string | null | undefined {
-  const hasCamelCase = Object.prototype.hasOwnProperty.call(item, 'requestPaymentPayload');
-  const hasSnakeCase = Object.prototype.hasOwnProperty.call(item, 'request_payment_payload');
-  if (!hasCamelCase && !hasSnakeCase) {
+  if (!Object.prototype.hasOwnProperty.call(item, 'requestPaymentPayload')) {
     return undefined;
   }
-  const value = hasCamelCase ? item.requestPaymentPayload : item.request_payment_payload;
+  const value = item.requestPaymentPayload;
   if (value === null || value === '') {
     return null;
   }

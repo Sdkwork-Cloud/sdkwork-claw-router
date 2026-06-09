@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminAiResourceGroupMutationResponse
     {
-        public AdminAiResourceGroupItem? Item { get; set; }
+        public AdminAiResourceGroupItem Item { get; set; }
     }
 }

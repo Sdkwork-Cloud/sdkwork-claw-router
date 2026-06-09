@@ -6,11 +6,11 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class RuntimeArtifactItem
     {
-        public string? ArtifactType { get; set; }
+        public string ArtifactType { get; set; }
         public string? ContentText { get; set; }
-        public string? CreatedAt { get; set; }
-        public string? Id { get; set; }
-        public string? InvocationId { get; set; }
+        public string CreatedAt { get; set; }
+        public string Id { get; set; }
+        public string InvocationId { get; set; }
         public string? MimeType { get; set; }
         public string? Name { get; set; }
         public MediaResource? Resource { get; set; }

@@ -12,6 +12,7 @@ use serde::Deserialize;
 use serde_json::{json, Value};
 use sqlx::{PgPool, Row, SqlitePool};
 
+use crate::api::app_iam_directory_query::AppIamDirectoryHttpQuery;
 use crate::api::response::PlusApiResult;
 use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
 use crate::ports::{
@@ -132,19 +133,19 @@ struct AdminAppbaseBackendIamState {
 #[derive(Debug, Clone, Default, Deserialize)]
 #[serde(rename_all = "camelCase")]
 struct DepartmentCommandRequest {
-    #[serde(default, alias = "organization_id")]
+    #[serde(default)]
     organization_id: Option<String>,
-    #[serde(default, alias = "parent_department_id")]
+    #[serde(default)]
     parent_department_id: Option<String>,
     #[serde(default)]
     code: Option<String>,
     #[serde(default)]
     name: Option<String>,
-    #[serde(default, alias = "department_kind")]
+    #[serde(default)]
     department_kind: Option<String>,
-    #[serde(default, alias = "cost_center_code")]
+    #[serde(default)]
     cost_center_code: Option<String>,
-    #[serde(default, alias = "manager_membership_id")]
+    #[serde(default)]
     manager_membership_id: Option<String>,
     #[serde(default)]
     status: Option<String>,
@@ -343,13 +344,14 @@ pub fn admin_appbase_backend_iam_directory_router_with_read_store(
 
 async fn list_organizations(
     State(state): State<AdminAppbaseBackendIamState>,
-    Query(query): Query<AppIamDirectoryQuery>,
+    Query(query): Query<AppIamDirectoryHttpQuery>,
     headers: HeaderMap,
 ) -> Response {
     let subject = match directory_subject(&headers) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
+    let query = query.into_port_query();
     match state
         .directory_store
         .list_organizations(Some(subject), query)
@@ -362,13 +364,14 @@ async fn list_organizations(
 
 async fn retrieve_organization_tree(
     State(state): State<AdminAppbaseBackendIamState>,
-    Query(query): Query<AppIamDirectoryQuery>,
+    Query(query): Query<AppIamDirectoryHttpQuery>,
     headers: HeaderMap,
 ) -> Response {
     let subject = match directory_subject(&headers) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
+    let query = query.into_port_query();
     match state
         .directory_store
         .retrieve_organization_tree(Some(subject), query)
@@ -438,13 +441,14 @@ async fn delete_organization(
 
 async fn list_organization_memberships(
     State(state): State<AdminAppbaseBackendIamState>,
-    Query(query): Query<AppIamDirectoryQuery>,
+    Query(query): Query<AppIamDirectoryHttpQuery>,
     headers: HeaderMap,
 ) -> Response {
     let subject = match directory_subject(&headers) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
+    let query = query.into_port_query();
     match state
         .directory_store
         .list_organization_memberships(Some(subject), query)
@@ -491,13 +495,14 @@ async fn update_organization_membership(
 
 async fn list_departments(
     State(state): State<AdminAppbaseBackendIamState>,
-    Query(query): Query<AppIamDirectoryQuery>,
+    Query(query): Query<AppIamDirectoryHttpQuery>,
     headers: HeaderMap,
 ) -> Response {
     let subject = match directory_subject(&headers) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
+    let query = query.into_port_query();
     match state
         .directory_store
         .list_departments(Some(subject), query)
@@ -510,13 +515,14 @@ async fn list_departments(
 
 async fn retrieve_department_tree(
     State(state): State<AdminAppbaseBackendIamState>,
-    Query(query): Query<AppIamDirectoryQuery>,
+    Query(query): Query<AppIamDirectoryHttpQuery>,
     headers: HeaderMap,
 ) -> Response {
     let subject = match directory_subject(&headers) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
+    let query = query.into_port_query();
     match state
         .directory_store
         .retrieve_department_tree(Some(subject), query)
@@ -632,13 +638,14 @@ async fn delete_department(
 
 async fn list_department_assignments(
     State(state): State<AdminAppbaseBackendIamState>,
-    Query(query): Query<AppIamDirectoryQuery>,
+    Query(query): Query<AppIamDirectoryHttpQuery>,
     headers: HeaderMap,
 ) -> Response {
     let subject = match directory_subject(&headers) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
+    let query = query.into_port_query();
     match state
         .directory_store
         .list_department_assignments(Some(subject), query)
@@ -680,13 +687,14 @@ async fn update_department_assignment(
 
 async fn list_positions(
     State(state): State<AdminAppbaseBackendIamState>,
-    Query(query): Query<AppIamDirectoryQuery>,
+    Query(query): Query<AppIamDirectoryHttpQuery>,
     headers: HeaderMap,
 ) -> Response {
     let subject = match directory_subject(&headers) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
+    let query = query.into_port_query();
     match state
         .directory_store
         .list_positions(Some(subject), query)
@@ -750,13 +758,14 @@ async fn delete_position(
 
 async fn list_position_assignments(
     State(state): State<AdminAppbaseBackendIamState>,
-    Query(query): Query<AppIamDirectoryQuery>,
+    Query(query): Query<AppIamDirectoryHttpQuery>,
     headers: HeaderMap,
 ) -> Response {
     let subject = match directory_subject(&headers) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
+    let query = query.into_port_query();
     match state
         .directory_store
         .list_position_assignments(Some(subject), query)
@@ -798,13 +807,14 @@ async fn update_position_assignment(
 
 async fn list_role_bindings(
     State(state): State<AdminAppbaseBackendIamState>,
-    Query(query): Query<AppIamDirectoryQuery>,
+    Query(query): Query<AppIamDirectoryHttpQuery>,
     headers: HeaderMap,
 ) -> Response {
     let subject = match directory_subject(&headers) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
+    let query = query.into_port_query();
     match state
         .directory_store
         .list_role_bindings(Some(subject), query)
@@ -841,13 +851,14 @@ async fn delete_role_binding(
 
 async fn list_roles(
     State(state): State<AdminAppbaseBackendIamState>,
-    Query(query): Query<AppIamDirectoryQuery>,
+    Query(query): Query<AppIamDirectoryHttpQuery>,
     headers: HeaderMap,
 ) -> Response {
     let subject = match directory_subject(&headers) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
+    let query = query.into_port_query();
     match state.sql_read_store.list_roles(subject, &query).await {
         Ok(items) => ok_items(items),
         Err(error) => sql_read_model_error("roles", error),
@@ -907,13 +918,14 @@ async fn delete_role(
 
 async fn list_permissions(
     State(state): State<AdminAppbaseBackendIamState>,
-    Query(query): Query<AppIamDirectoryQuery>,
+    Query(query): Query<AppIamDirectoryHttpQuery>,
     headers: HeaderMap,
 ) -> Response {
     let subject = match directory_subject(&headers) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
+    let query = query.into_port_query();
     match state
         .sql_read_store
         .list_permissions(subject, None, &query)
@@ -927,13 +939,14 @@ async fn list_permissions(
 async fn list_role_permissions(
     State(state): State<AdminAppbaseBackendIamState>,
     Path(role_id): Path<String>,
-    Query(query): Query<AppIamDirectoryQuery>,
+    Query(query): Query<AppIamDirectoryHttpQuery>,
     headers: HeaderMap,
 ) -> Response {
     let subject = match directory_subject(&headers) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
+    let query = query.into_port_query();
     match state
         .sql_read_store
         .list_permissions(subject, Some(role_id.as_str()), &query)
@@ -1284,10 +1297,6 @@ fn normalize_department_kind(
     Ok(value)
 }
 
-fn generated_department_code(name: &str, department_id: &str) -> String {
-    generated_entity_code(name, department_id)
-}
-
 fn generated_entity_code(name: &str, fallback_code: &str) -> String {
     let code = generated_code_base(name);
     if code.is_empty() {
@@ -1323,20 +1332,20 @@ async fn unique_sqlite_organization_code(
     name: &str,
     _organization_id: &str,
 ) -> Result<String, AdminAppbaseBackendIamCommandError> {
-    let Some(_) = requested_code else {
-        let generated = generated_entity_code(name, "organization");
-        let base_code = normalize_required_text(Some(generated.as_str()), "code")?;
-        return unique_sqlite_code(
-            pool,
-            "iam_organization",
-            tenant_id,
-            None,
-            base_code.as_str(),
-        )
-        .await;
-    };
-    let base_code = normalize_required_text(requested_code, "code")?;
-    Ok(base_code)
+    let generated = requested_code
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+        .map(str::to_owned)
+        .unwrap_or_else(|| generated_entity_code(name, "organization"));
+    let base_code = normalize_required_text(Some(generated.as_str()), "code")?;
+    unique_sqlite_code(
+        pool,
+        "iam_organization",
+        tenant_id,
+        None,
+        base_code.as_str(),
+    )
+    .await
 }
 
 async fn unique_postgres_organization_code(
@@ -1346,20 +1355,20 @@ async fn unique_postgres_organization_code(
     name: &str,
     _organization_id: &str,
 ) -> Result<String, AdminAppbaseBackendIamCommandError> {
-    let Some(_) = requested_code else {
-        let generated = generated_entity_code(name, "organization");
-        let base_code = normalize_required_text(Some(generated.as_str()), "code")?;
-        return unique_postgres_code(
-            pool,
-            "iam_organization",
-            tenant_id,
-            None,
-            base_code.as_str(),
-        )
-        .await;
-    };
-    let base_code = normalize_required_text(requested_code, "code")?;
-    Ok(base_code)
+    let generated = requested_code
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+        .map(str::to_owned)
+        .unwrap_or_else(|| generated_entity_code(name, "organization"));
+    let base_code = normalize_required_text(Some(generated.as_str()), "code")?;
+    unique_postgres_code(
+        pool,
+        "iam_organization",
+        tenant_id,
+        None,
+        base_code.as_str(),
+    )
+    .await
 }
 
 async fn unique_sqlite_department_code(
@@ -1370,20 +1379,20 @@ async fn unique_sqlite_department_code(
     name: &str,
     _department_id: &str,
 ) -> Result<String, AdminAppbaseBackendIamCommandError> {
-    let Some(_) = requested_code else {
-        let generated = generated_entity_code(name, "department");
-        let base_code = normalize_required_text(Some(generated.as_str()), "code")?;
-        return unique_sqlite_code(
-            pool,
-            "iam_department",
-            tenant_id,
-            Some(organization_id),
-            base_code.as_str(),
-        )
-        .await;
-    };
-    let base_code = normalize_required_text(requested_code, "code")?;
-    Ok(base_code)
+    let generated = requested_code
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+        .map(str::to_owned)
+        .unwrap_or_else(|| generated_entity_code(name, "department"));
+    let base_code = normalize_required_text(Some(generated.as_str()), "code")?;
+    unique_sqlite_code(
+        pool,
+        "iam_department",
+        tenant_id,
+        Some(organization_id),
+        base_code.as_str(),
+    )
+    .await
 }
 
 async fn unique_postgres_department_code(
@@ -1394,20 +1403,68 @@ async fn unique_postgres_department_code(
     name: &str,
     _department_id: &str,
 ) -> Result<String, AdminAppbaseBackendIamCommandError> {
-    let Some(_) = requested_code else {
-        let generated = generated_entity_code(name, "department");
-        let base_code = normalize_required_text(Some(generated.as_str()), "code")?;
-        return unique_postgres_code(
-            pool,
-            "iam_department",
-            tenant_id,
-            Some(organization_id),
-            base_code.as_str(),
-        )
-        .await;
-    };
-    let base_code = normalize_required_text(requested_code, "code")?;
-    Ok(base_code)
+    let generated = requested_code
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+        .map(str::to_owned)
+        .unwrap_or_else(|| generated_entity_code(name, "department"));
+    let base_code = normalize_required_text(Some(generated.as_str()), "code")?;
+    unique_postgres_code(
+        pool,
+        "iam_department",
+        tenant_id,
+        Some(organization_id),
+        base_code.as_str(),
+    )
+    .await
+}
+
+async fn unique_sqlite_position_code(
+    pool: &SqlitePool,
+    tenant_id: i64,
+    organization_id: &str,
+    requested_code: Option<&str>,
+    name: &str,
+    _position_id: &str,
+) -> Result<String, AdminAppbaseBackendIamCommandError> {
+    let generated = requested_code
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+        .map(str::to_owned)
+        .unwrap_or_else(|| generated_entity_code(name, "position"));
+    let base_code = normalize_required_text(Some(generated.as_str()), "code")?;
+    unique_sqlite_code(
+        pool,
+        "iam_position",
+        tenant_id,
+        Some(organization_id),
+        base_code.as_str(),
+    )
+    .await
+}
+
+async fn unique_postgres_position_code(
+    pool: &PgPool,
+    tenant_id: i64,
+    organization_id: &str,
+    requested_code: Option<&str>,
+    name: &str,
+    _position_id: &str,
+) -> Result<String, AdminAppbaseBackendIamCommandError> {
+    let generated = requested_code
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+        .map(str::to_owned)
+        .unwrap_or_else(|| generated_entity_code(name, "position"));
+    let base_code = normalize_required_text(Some(generated.as_str()), "code")?;
+    unique_postgres_code(
+        pool,
+        "iam_position",
+        tenant_id,
+        Some(organization_id),
+        base_code.as_str(),
+    )
+    .await
 }
 
 async fn unique_sqlite_code(
@@ -1851,7 +1908,7 @@ async fn create_postgres_department(
             created_at,
             updated_at
         )
-        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12::timestamptz, $13::timestamptz)
         "#,
     )
     .bind(department_id.as_str())
@@ -2092,7 +2149,7 @@ async fn update_postgres_department(
             manager_membership_id = COALESCE($6, manager_membership_id),
             status = $7,
             path = $8,
-            updated_at = $9
+            updated_at = $9::timestamptz
         WHERE tenant_id::text = $10
           AND id::text = $11
         "#,
@@ -2153,7 +2210,7 @@ async fn delete_postgres_department(
         r#"
         UPDATE iam_department
         SET status = 'archived',
-            updated_at = $1
+            updated_at = $1::timestamptz
         WHERE tenant_id::text = $2
           AND id::text = $3
         "#,
@@ -2164,6 +2221,59 @@ async fn delete_postgres_department(
     .execute(pool)
     .await?;
     Ok(result.rows_affected() > 0)
+}
+
+async fn create_sqlite_creator_organization_membership(
+    pool: &SqlitePool,
+    subject: AppIamDirectorySubject,
+    organization_id: &str,
+    now: &str,
+) -> Result<(), AdminAppbaseBackendIamCommandError> {
+    ensure_sqlite_table(pool, "iam_organization_membership").await?;
+    let id = next_iam_command_id("appbase backend IAM organization creator membership")?;
+    sqlx::query(
+        r#"
+        INSERT OR IGNORE INTO iam_organization_membership
+            (id, tenant_id, organization_id, user_id, membership_kind, display_name, is_primary, status, joined_at, created_at, updated_at)
+        VALUES (?1, ?2, ?3, ?4, 'admin', NULL, 1, 'active', ?5, ?5, ?5)
+        "#,
+    )
+    .bind(id.as_str())
+    .bind(subject.tenant_id.to_string())
+    .bind(organization_id)
+    .bind(subject.user_id.to_string())
+    .bind(now)
+    .execute(pool)
+    .await
+    .map_err(command_sql_error)?;
+    Ok(())
+}
+
+async fn create_postgres_creator_organization_membership(
+    pool: &PgPool,
+    subject: AppIamDirectorySubject,
+    organization_id: &str,
+    now: &str,
+) -> Result<(), AdminAppbaseBackendIamCommandError> {
+    ensure_postgres_table(pool, "iam_organization_membership").await?;
+    let id = next_iam_command_id("appbase backend IAM organization creator membership")?;
+    sqlx::query(
+        r#"
+        INSERT INTO iam_organization_membership
+            (id, tenant_id, organization_id, user_id, membership_kind, display_name, is_primary, status, joined_at, created_at, updated_at)
+        VALUES ($1, $2, $3, $4, 'admin', NULL, 1, 'active', $5::timestamptz, $5::timestamptz, $5::timestamptz)
+        ON CONFLICT (tenant_id, organization_id, user_id, membership_kind) DO NOTHING
+        "#,
+    )
+    .bind(id.as_str())
+    .bind(subject.tenant_id.to_string())
+    .bind(organization_id)
+    .bind(subject.user_id.to_string())
+    .bind(now)
+    .execute(pool)
+    .await
+    .map_err(command_sql_error)?;
+    Ok(())
 }
 
 async fn ensure_sqlite_department_table(
@@ -2433,9 +2543,7 @@ fn department_path(parent_path: Option<&str>, department_id: &str) -> String {
 
 fn command_sql_error(error: sqlx::Error) -> AdminAppbaseBackendIamCommandError {
     if is_unique_violation(&error) {
-        AdminAppbaseBackendIamCommandError::Conflict(
-            "department code already exists in this organization".to_owned(),
-        )
+        AdminAppbaseBackendIamCommandError::Conflict("IAM record already exists".to_owned())
     } else {
         AdminAppbaseBackendIamCommandError::from(error)
     }
@@ -2458,6 +2566,7 @@ async fn execute_sqlite_command(
     match command {
         IamBackendCommand::CreateOrganization => {
             ensure_sqlite_table(pool, "iam_organization").await?;
+            ensure_sqlite_table(pool, "iam_organization_membership").await?;
             let id = next_iam_command_id("appbase backend IAM organization")?;
             let name = command_required_text(&body, &["name"], "name")?;
             let code = unique_sqlite_organization_code(
@@ -2500,6 +2609,8 @@ async fn execute_sqlite_command(
             .execute(pool)
             .await
             .map_err(command_sql_error)?;
+            create_sqlite_creator_organization_membership(pool, subject, id.as_str(), now.as_str())
+                .await?;
             Ok(json!({ "item": {
                 "id": id,
                 "tenantId": subject.tenant_id.to_string(),
@@ -2761,8 +2872,15 @@ async fn execute_sqlite_command(
             }
             let id = next_iam_command_id("appbase backend IAM position")?;
             let name = command_required_text(&body, &["name"], "name")?;
-            let code = command_optional_text(&body, &["code"], "code")?
-                .unwrap_or_else(|| generated_department_code(name.as_str(), id.as_str()));
+            let code = unique_sqlite_position_code(
+                pool,
+                subject.tenant_id,
+                organization_id.as_str(),
+                command_text(&body, &["code"]).as_deref(),
+                name.as_str(),
+                id.as_str(),
+            )
+            .await?;
             let rank_level = command_i64(&body, &["rankLevel"], 0);
             let status = normalize_status(command_text(&body, &["status"]).as_deref(), "active")?;
             sqlx::query(
@@ -3197,6 +3315,7 @@ async fn execute_postgres_command(
     match command {
         IamBackendCommand::CreateOrganization => {
             ensure_postgres_table(pool, "iam_organization").await?;
+            ensure_postgres_table(pool, "iam_organization_membership").await?;
             let id = next_iam_command_id("appbase backend IAM organization")?;
             let name = command_required_text(&body, &["name"], "name")?;
             let code = unique_postgres_organization_code(
@@ -3238,6 +3357,13 @@ async fn execute_postgres_command(
             .execute(pool)
             .await
             .map_err(command_sql_error)?;
+            create_postgres_creator_organization_membership(
+                pool,
+                subject,
+                id.as_str(),
+                now.as_str(),
+            )
+            .await?;
             Ok(json!({ "item": {
                 "id": id,
                 "tenantId": subject.tenant_id.to_string(),
@@ -3502,8 +3628,15 @@ async fn execute_postgres_command(
             }
             let id = next_iam_command_id("appbase backend IAM position")?;
             let name = command_required_text(&body, &["name"], "name")?;
-            let code = command_optional_text(&body, &["code"], "code")?
-                .unwrap_or_else(|| generated_department_code(name.as_str(), id.as_str()));
+            let code = unique_postgres_position_code(
+                pool,
+                subject.tenant_id,
+                organization_id.as_str(),
+                command_text(&body, &["code"]).as_deref(),
+                name.as_str(),
+                id.as_str(),
+            )
+            .await?;
             let rank_level = command_i64(&body, &["rankLevel"], 0);
             let status = normalize_status(command_text(&body, &["status"]).as_deref(), "active")?;
             sqlx::query(

@@ -24,7 +24,6 @@ struct AppSettlementsDashboardState {
 }
 
 #[derive(Debug, Deserialize)]
-#[serde(rename_all = "camelCase")]
 struct AppSettlementsDashboardQuery {
     year: Option<i64>,
 }

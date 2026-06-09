@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class ChatMessageListResponse
     {
-        public List<ChatMessageItem>? Items { get; set; }
+        public List<ChatMessageItem> Items { get; set; }
     }
 }

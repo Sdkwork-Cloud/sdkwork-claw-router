@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class AgentItemResponse
     {
-        public AgentItem? Item { get; set; }
+        public AgentItem Item { get; set; }
     }
 }

@@ -510,6 +510,11 @@ fn catalog_with_encoded_image_model_and_hashed_api_key(key_hash: String) -> InMe
         key_hash,
         "http://provider-proxy.internal/openrouter",
     );
+    catalog.add_vendor(ModelVendorDefinition::new(
+        "openrouter",
+        ModelVendor::Custom,
+        "OpenRouter",
+    ));
     catalog.add_model(
         AiModel::new(
             "gpt-4o-mini+latest",

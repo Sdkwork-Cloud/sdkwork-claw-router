@@ -42,7 +42,7 @@ const body = {
   tenantCode: 'tenantCode',
   username: 'username',
 };
-const result = await client.auth.sessions.create(body);
+const result = await client.iam.sessions.create(body);
 ```
 
 ## Authentication
@@ -71,14 +71,12 @@ const client = new SdkworkAppClient({
 
 - `client.agents` - agents API
 - `client.ai` - ai API
-- `client.auth` - auth API
 - `client.chat` - chat API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.memory` - memory API
 - `client.notification` - notification API
-- `client.openPlatform` - open_platform API
 - `client.platform` - platform API
 - `client.runtime` - runtime API
 - `client.sdkReference` - sdk_reference API
@@ -104,28 +102,6 @@ const result = await client.agents.agentDefinitions.list(params);
 ```typescript
 // List groups
 const result = await client.ai.channelGroups.list();
-```
-
-### auth
-
-```typescript
-// Create IAM session
-const body = {
-  code: 'code',
-  deviceId: 'deviceId',
-  deviceName: 'deviceName',
-  deviceType: 'deviceType',
-  email: 'email',
-  grantType: 'password',
-  name: 'name',
-  organizationCode: 'organizationCode',
-  password: 'password',
-  phone: 'phone',
-  subject: 'subject',
-  tenantCode: 'tenantCode',
-  username: 'username',
-};
-const result = await client.auth.sessions.create(body);
 ```
 
 ### chat
@@ -156,8 +132,23 @@ const result = await client.ecosystem.skills.categories.list();
 ### iam
 
 ```typescript
-// List keys
-const result = await client.iam.apiKeys.list();
+// Create IAM session
+const body = {
+  code: 'code',
+  deviceId: 'deviceId',
+  deviceName: 'deviceName',
+  deviceType: 'deviceType',
+  email: 'email',
+  grantType: 'password',
+  name: 'name',
+  organizationCode: 'organizationCode',
+  password: 'password',
+  phone: 'phone',
+  subject: 'subject',
+  tenantCode: 'tenantCode',
+  username: 'username',
+};
+const result = await client.iam.sessions.create(body);
 ```
 
 ### memory
@@ -182,16 +173,6 @@ const params = {
   page_size: 4,
 };
 const result = await client.notification.list(params);
-```
-
-### open_platform
-
-```typescript
-// Create open platform QR auth session
-const body = {
-  purpose: 'login',
-};
-const result = await client.openPlatform.qrAuth.sessions.create(body);
 ```
 
 ### platform
@@ -283,7 +264,7 @@ try {
     tenantCode: 'tenantCode',
     username: 'username',
   };
-  const result = await client.auth.sessions.create(body);
+  const result = await client.iam.sessions.create(body);
 } catch (error) {
   if (error instanceof AuthenticationError) {
     console.error('Authentication failed:', error.message);

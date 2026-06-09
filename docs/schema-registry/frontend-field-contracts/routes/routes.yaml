@@ -234,8 +234,16 @@ routes:
   - iam_security_event
   - iam_audit_event
   - ops_config_snapshot
-  - open_platform_account
-  - open_platform_entry
+  - iam_oauth_provider_catalog
+  - iam_oauth_integration
+  - iam_oauth_client
+  - iam_oauth_surface
+  - iam_oauth_flow_config
+  - iam_oauth_policy
+  - iam_oauth_tenant_binding
+  - iam_oauth_authorization_state
+  - iam_oauth_account_link
+  - iam_oauth_grant
   required_columns:
     iam_user:
     - tenant_id
@@ -303,24 +311,64 @@ routes:
     - config_payload
     - published_at
     - created_at
-    open_platform_account:
-    - uuid
-    - tenant_id
-    - organization_id
-    - provider
-    - account_type
-    - name
-    - account_key
-    - app_id
-    - qr_default
+    iam_oauth_provider_catalog:
+    - provider_code
+    - provider_family
+    - protocol_profile
+    - supported_surfaces
+    - supported_grant_types
     - status
-    open_platform_entry:
-    - uuid
+    iam_oauth_integration:
     - tenant_id
-    - organization_id
-    - account_id
-    - entry_type
-    - entry_url
+    - provider_code
+    - integration_key
+    - ownership_mode
+    - status
+    iam_oauth_client:
+    - integration_id
+    - surface_id
+    - client_identifier_ref
+    - status
+    iam_oauth_surface:
+    - tenant_id
+    - surface_type
+    - runtime_channel
+    - redirect_uri
+    - status
+    iam_oauth_flow_config:
+    - integration_id
+    - surface_id
+    - flow_type
+    - grant_type
+    - status
+    iam_oauth_policy:
+    - tenant_id
+    - policy_scope
+    - login_enabled
+    - account_linking_enabled
+    - status
+    iam_oauth_tenant_binding:
+    - tenant_id
+    - integration_id
+    - status
+    iam_oauth_authorization_state:
+    - tenant_id
+    - state_hash
+    - flow_type
+    - surface_type
+    - expires_at
+    - status
+    iam_oauth_account_link:
+    - tenant_id
+    - user_id
+    - provider_code
+    - external_subject_hash
+    - status
+    iam_oauth_grant:
+    - tenant_id
+    - user_id
+    - provider_code
+    - grant_type
     - status
 - route: /auth/register
   required_tables:
@@ -1389,6 +1437,7 @@ routes:
     - request_id
 - route: /admin/group
   required_tables:
+  - ai_api_key
   - ai_channel_group
   - ai_channel_group_metric_snapshot
   - ai_pricing_plan
@@ -1401,6 +1450,12 @@ routes:
   - ai_resource_group
   - ai_resource_group_item
   - ai_resource
+  - ai_model
+  - ai_model_pricing
+  - ai_model_provider_route
+  - ai_provider_route
+  - ai_routing_policy
+  - ai_routing_rule
   - ai_provider
   - ai_channel
   - ops_audit_log
@@ -1573,59 +1628,6 @@ routes:
   - content_course
   - content_course_relation
   - content_reaction
-- route: /admin/open-platform
-  required_tables:
-  - open_platform_provider
-  - open_platform_manifest
-  - open_platform_account
-  - open_platform_entry
-  - open_platform_pay_binding
-  - ops_audit_log
-  required_columns:
-    open_platform_provider:
-    - uuid
-    - tenant_id
-    - organization_id
-    - provider
-    - name
-    - status
-    open_platform_manifest:
-    - uuid
-    - tenant_id
-    - organization_id
-    - provider
-    - account_type
-    - manifest_key
-    - version
-    - status
-    open_platform_account:
-    - uuid
-    - tenant_id
-    - organization_id
-    - provider
-    - account_type
-    - name
-    - account_key
-    - app_id
-    - qr_default
-    - status
-    open_platform_entry:
-    - uuid
-    - tenant_id
-    - organization_id
-    - account_id
-    - entry_type
-    - entry_url
-    - status
-    open_platform_pay_binding:
-    - uuid
-    - tenant_id
-    - organization_id
-    - account_id
-    - payment_account_id
-    - scene
-    - mode
-    - status
 - route: /admin/skill
   required_tables:
   - plus_agent_skill
@@ -2686,62 +2688,6 @@ routes:
   - commerce_payment_attempt
   - commerce_exchange_rule
   - ops_audit_log
-- route: /admin/open-platform/official-accounts
-  required_tables:
-  - open_platform_provider
-  - open_platform_manifest
-  - open_platform_account
-  - open_platform_entry
-  - open_platform_pay_binding
-  - ops_audit_log
-- route: /admin/open-platform/official-accounts/accounts
-  required_tables:
-  - open_platform_provider
-  - open_platform_manifest
-  - open_platform_account
-  - open_platform_entry
-  - open_platform_pay_binding
-  - ops_audit_log
-- route: /admin/open-platform/official-accounts/menus
-  required_tables:
-  - open_platform_provider
-  - open_platform_manifest
-  - open_platform_account
-  - open_platform_entry
-  - open_platform_pay_binding
-  - ops_audit_log
-- route: /admin/open-platform/official-accounts/messages
-  required_tables:
-  - open_platform_provider
-  - open_platform_manifest
-  - open_platform_account
-  - open_platform_entry
-  - open_platform_pay_binding
-  - ops_audit_log
-- route: /admin/open-platform/mini-programs
-  required_tables:
-  - open_platform_provider
-  - open_platform_manifest
-  - open_platform_account
-  - open_platform_entry
-  - open_platform_pay_binding
-  - ops_audit_log
-- route: /admin/open-platform/mini-programs/accounts
-  required_tables:
-  - open_platform_provider
-  - open_platform_manifest
-  - open_platform_account
-  - open_platform_entry
-  - open_platform_pay_binding
-  - ops_audit_log
-- route: /admin/open-platform/mini-programs/urls
-  required_tables:
-  - open_platform_provider
-  - open_platform_manifest
-  - open_platform_account
-  - open_platform_entry
-  - open_platform_pay_binding
-  - ops_audit_log
 - route: /admin/service-providers
   required_tables:
   - integration_service_provider
@@ -3092,3 +3038,603 @@ routes:
   - plus_invitation_code
   - plus_invitation_relation
   - ops_referral_stat_snapshot
+- route: /admin/oauth
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  required_tables:
+  - iam_oauth_provider_catalog
+  - iam_oauth_integration
+  - iam_oauth_client
+  - iam_oauth_secret
+  - iam_oauth_surface
+  - iam_oauth_flow_config
+  - iam_oauth_scope_profile
+  - iam_oauth_claim_mapping
+  - iam_oauth_policy
+  - iam_oauth_tenant_binding
+  - iam_oauth_operator_platform
+  - iam_oauth_resource_account
+  - iam_oauth_resource_authorization
+  - iam_oauth_webhook_config
+  - iam_oauth_operational_resource
+  - iam_oauth_account_link
+  - iam_oauth_grant
+  - iam_oauth_callback_event
+  - iam_oauth_diagnostic_run
+  - ops_audit_log
+- route: /admin/oauth/overview
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  required_tables:
+  - iam_oauth_provider_catalog
+  - iam_oauth_integration
+  - iam_oauth_client
+  - iam_oauth_secret
+  - iam_oauth_surface
+  - iam_oauth_flow_config
+  - iam_oauth_scope_profile
+  - iam_oauth_claim_mapping
+  - iam_oauth_policy
+  - iam_oauth_tenant_binding
+  - iam_oauth_operator_platform
+  - iam_oauth_resource_account
+  - iam_oauth_resource_authorization
+  - iam_oauth_webhook_config
+  - iam_oauth_operational_resource
+  - iam_oauth_account_link
+  - iam_oauth_grant
+  - iam_oauth_callback_event
+  - iam_oauth_diagnostic_run
+  - ops_audit_log
+- route: /admin/oauth/login
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  required_tables:
+  - iam_oauth_provider_catalog
+  - iam_oauth_integration
+  - iam_oauth_client
+  - iam_oauth_secret
+  - iam_oauth_surface
+  - iam_oauth_flow_config
+  - iam_oauth_scope_profile
+  - iam_oauth_claim_mapping
+  - iam_oauth_policy
+  - iam_oauth_tenant_binding
+  - iam_oauth_operator_platform
+  - iam_oauth_resource_account
+  - iam_oauth_resource_authorization
+  - iam_oauth_webhook_config
+  - iam_oauth_operational_resource
+  - iam_oauth_account_link
+  - iam_oauth_grant
+  - iam_oauth_callback_event
+  - iam_oauth_diagnostic_run
+  - ops_audit_log
+- route: /admin/oauth/login/mini-programs
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  required_tables:
+  - iam_oauth_provider_catalog
+  - iam_oauth_integration
+  - iam_oauth_client
+  - iam_oauth_secret
+  - iam_oauth_surface
+  - iam_oauth_flow_config
+  - iam_oauth_scope_profile
+  - iam_oauth_claim_mapping
+  - iam_oauth_policy
+  - iam_oauth_tenant_binding
+  - iam_oauth_operator_platform
+  - iam_oauth_resource_account
+  - iam_oauth_resource_authorization
+  - iam_oauth_webhook_config
+  - iam_oauth_operational_resource
+  - iam_oauth_account_link
+  - iam_oauth_grant
+  - iam_oauth_callback_event
+  - iam_oauth_diagnostic_run
+  - ops_audit_log
+- route: /admin/oauth/provider-catalog
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  required_tables:
+  - iam_oauth_provider_catalog
+  - iam_oauth_integration
+  - iam_oauth_client
+  - iam_oauth_secret
+  - iam_oauth_surface
+  - iam_oauth_flow_config
+  - iam_oauth_scope_profile
+  - iam_oauth_claim_mapping
+  - iam_oauth_policy
+  - iam_oauth_tenant_binding
+  - iam_oauth_operator_platform
+  - iam_oauth_resource_account
+  - iam_oauth_resource_authorization
+  - iam_oauth_webhook_config
+  - iam_oauth_operational_resource
+  - iam_oauth_account_link
+  - iam_oauth_grant
+  - iam_oauth_callback_event
+  - iam_oauth_diagnostic_run
+  - ops_audit_log
+- route: /admin/oauth/integrations
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  required_tables:
+  - iam_oauth_provider_catalog
+  - iam_oauth_integration
+  - iam_oauth_client
+  - iam_oauth_secret
+  - iam_oauth_surface
+  - iam_oauth_flow_config
+  - iam_oauth_scope_profile
+  - iam_oauth_claim_mapping
+  - iam_oauth_policy
+  - iam_oauth_tenant_binding
+  - iam_oauth_operator_platform
+  - iam_oauth_resource_account
+  - iam_oauth_resource_authorization
+  - iam_oauth_webhook_config
+  - iam_oauth_operational_resource
+  - iam_oauth_account_link
+  - iam_oauth_grant
+  - iam_oauth_callback_event
+  - iam_oauth_diagnostic_run
+  - ops_audit_log
+- route: /admin/oauth/clients
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  required_tables:
+  - iam_oauth_provider_catalog
+  - iam_oauth_integration
+  - iam_oauth_client
+  - iam_oauth_secret
+  - iam_oauth_surface
+  - iam_oauth_flow_config
+  - iam_oauth_scope_profile
+  - iam_oauth_claim_mapping
+  - iam_oauth_policy
+  - iam_oauth_tenant_binding
+  - iam_oauth_operator_platform
+  - iam_oauth_resource_account
+  - iam_oauth_resource_authorization
+  - iam_oauth_webhook_config
+  - iam_oauth_operational_resource
+  - iam_oauth_account_link
+  - iam_oauth_grant
+  - iam_oauth_callback_event
+  - iam_oauth_diagnostic_run
+  - ops_audit_log
+- route: /admin/oauth/secrets
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  required_tables:
+  - iam_oauth_provider_catalog
+  - iam_oauth_integration
+  - iam_oauth_client
+  - iam_oauth_secret
+  - iam_oauth_surface
+  - iam_oauth_flow_config
+  - iam_oauth_scope_profile
+  - iam_oauth_claim_mapping
+  - iam_oauth_policy
+  - iam_oauth_tenant_binding
+  - iam_oauth_operator_platform
+  - iam_oauth_resource_account
+  - iam_oauth_resource_authorization
+  - iam_oauth_webhook_config
+  - iam_oauth_operational_resource
+  - iam_oauth_account_link
+  - iam_oauth_grant
+  - iam_oauth_callback_event
+  - iam_oauth_diagnostic_run
+  - ops_audit_log
+- route: /admin/oauth/surfaces
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  required_tables:
+  - iam_oauth_provider_catalog
+  - iam_oauth_integration
+  - iam_oauth_client
+  - iam_oauth_secret
+  - iam_oauth_surface
+  - iam_oauth_flow_config
+  - iam_oauth_scope_profile
+  - iam_oauth_claim_mapping
+  - iam_oauth_policy
+  - iam_oauth_tenant_binding
+  - iam_oauth_operator_platform
+  - iam_oauth_resource_account
+  - iam_oauth_resource_authorization
+  - iam_oauth_webhook_config
+  - iam_oauth_operational_resource
+  - iam_oauth_account_link
+  - iam_oauth_grant
+  - iam_oauth_callback_event
+  - iam_oauth_diagnostic_run
+  - ops_audit_log
+- route: /admin/oauth/flow-configs
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  required_tables:
+  - iam_oauth_provider_catalog
+  - iam_oauth_integration
+  - iam_oauth_client
+  - iam_oauth_secret
+  - iam_oauth_surface
+  - iam_oauth_flow_config
+  - iam_oauth_scope_profile
+  - iam_oauth_claim_mapping
+  - iam_oauth_policy
+  - iam_oauth_tenant_binding
+  - iam_oauth_operator_platform
+  - iam_oauth_resource_account
+  - iam_oauth_resource_authorization
+  - iam_oauth_webhook_config
+  - iam_oauth_operational_resource
+  - iam_oauth_account_link
+  - iam_oauth_grant
+  - iam_oauth_callback_event
+  - iam_oauth_diagnostic_run
+  - ops_audit_log
+- route: /admin/oauth/scope-profiles
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  required_tables:
+  - iam_oauth_provider_catalog
+  - iam_oauth_integration
+  - iam_oauth_client
+  - iam_oauth_secret
+  - iam_oauth_surface
+  - iam_oauth_flow_config
+  - iam_oauth_scope_profile
+  - iam_oauth_claim_mapping
+  - iam_oauth_policy
+  - iam_oauth_tenant_binding
+  - iam_oauth_operator_platform
+  - iam_oauth_resource_account
+  - iam_oauth_resource_authorization
+  - iam_oauth_webhook_config
+  - iam_oauth_operational_resource
+  - iam_oauth_account_link
+  - iam_oauth_grant
+  - iam_oauth_callback_event
+  - iam_oauth_diagnostic_run
+  - ops_audit_log
+- route: /admin/oauth/claim-mappings
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  required_tables:
+  - iam_oauth_provider_catalog
+  - iam_oauth_integration
+  - iam_oauth_client
+  - iam_oauth_secret
+  - iam_oauth_surface
+  - iam_oauth_flow_config
+  - iam_oauth_scope_profile
+  - iam_oauth_claim_mapping
+  - iam_oauth_policy
+  - iam_oauth_tenant_binding
+  - iam_oauth_operator_platform
+  - iam_oauth_resource_account
+  - iam_oauth_resource_authorization
+  - iam_oauth_webhook_config
+  - iam_oauth_operational_resource
+  - iam_oauth_account_link
+  - iam_oauth_grant
+  - iam_oauth_callback_event
+  - iam_oauth_diagnostic_run
+  - ops_audit_log
+- route: /admin/oauth/policies
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  required_tables:
+  - iam_oauth_provider_catalog
+  - iam_oauth_integration
+  - iam_oauth_client
+  - iam_oauth_secret
+  - iam_oauth_surface
+  - iam_oauth_flow_config
+  - iam_oauth_scope_profile
+  - iam_oauth_claim_mapping
+  - iam_oauth_policy
+  - iam_oauth_tenant_binding
+  - iam_oauth_operator_platform
+  - iam_oauth_resource_account
+  - iam_oauth_resource_authorization
+  - iam_oauth_webhook_config
+  - iam_oauth_operational_resource
+  - iam_oauth_account_link
+  - iam_oauth_grant
+  - iam_oauth_callback_event
+  - iam_oauth_diagnostic_run
+  - ops_audit_log
+- route: /admin/oauth/tenant-bindings
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  required_tables:
+  - iam_oauth_provider_catalog
+  - iam_oauth_integration
+  - iam_oauth_client
+  - iam_oauth_secret
+  - iam_oauth_surface
+  - iam_oauth_flow_config
+  - iam_oauth_scope_profile
+  - iam_oauth_claim_mapping
+  - iam_oauth_policy
+  - iam_oauth_tenant_binding
+  - iam_oauth_operator_platform
+  - iam_oauth_resource_account
+  - iam_oauth_resource_authorization
+  - iam_oauth_webhook_config
+  - iam_oauth_operational_resource
+  - iam_oauth_account_link
+  - iam_oauth_grant
+  - iam_oauth_callback_event
+  - iam_oauth_diagnostic_run
+  - ops_audit_log
+- route: /admin/oauth/operator-platforms
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  required_tables:
+  - iam_oauth_provider_catalog
+  - iam_oauth_integration
+  - iam_oauth_client
+  - iam_oauth_secret
+  - iam_oauth_surface
+  - iam_oauth_flow_config
+  - iam_oauth_scope_profile
+  - iam_oauth_claim_mapping
+  - iam_oauth_policy
+  - iam_oauth_tenant_binding
+  - iam_oauth_operator_platform
+  - iam_oauth_resource_account
+  - iam_oauth_resource_authorization
+  - iam_oauth_webhook_config
+  - iam_oauth_operational_resource
+  - iam_oauth_account_link
+  - iam_oauth_grant
+  - iam_oauth_callback_event
+  - iam_oauth_diagnostic_run
+  - ops_audit_log
+- route: /admin/oauth/resource-accounts
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  required_tables:
+  - iam_oauth_provider_catalog
+  - iam_oauth_integration
+  - iam_oauth_client
+  - iam_oauth_secret
+  - iam_oauth_surface
+  - iam_oauth_flow_config
+  - iam_oauth_scope_profile
+  - iam_oauth_claim_mapping
+  - iam_oauth_policy
+  - iam_oauth_tenant_binding
+  - iam_oauth_operator_platform
+  - iam_oauth_resource_account
+  - iam_oauth_resource_authorization
+  - iam_oauth_webhook_config
+  - iam_oauth_operational_resource
+  - iam_oauth_account_link
+  - iam_oauth_grant
+  - iam_oauth_callback_event
+  - iam_oauth_diagnostic_run
+  - ops_audit_log
+- route: /admin/oauth/resource-accounts/official-accounts
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  required_tables:
+  - iam_oauth_provider_catalog
+  - iam_oauth_integration
+  - iam_oauth_client
+  - iam_oauth_secret
+  - iam_oauth_surface
+  - iam_oauth_flow_config
+  - iam_oauth_scope_profile
+  - iam_oauth_claim_mapping
+  - iam_oauth_policy
+  - iam_oauth_tenant_binding
+  - iam_oauth_operator_platform
+  - iam_oauth_resource_account
+  - iam_oauth_resource_authorization
+  - iam_oauth_webhook_config
+  - iam_oauth_operational_resource
+  - iam_oauth_account_link
+  - iam_oauth_grant
+  - iam_oauth_callback_event
+  - iam_oauth_diagnostic_run
+  - ops_audit_log
+- route: /admin/oauth/resource-accounts/mini-programs
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  required_tables:
+  - iam_oauth_provider_catalog
+  - iam_oauth_integration
+  - iam_oauth_client
+  - iam_oauth_secret
+  - iam_oauth_surface
+  - iam_oauth_flow_config
+  - iam_oauth_scope_profile
+  - iam_oauth_claim_mapping
+  - iam_oauth_policy
+  - iam_oauth_tenant_binding
+  - iam_oauth_operator_platform
+  - iam_oauth_resource_account
+  - iam_oauth_resource_authorization
+  - iam_oauth_webhook_config
+  - iam_oauth_operational_resource
+  - iam_oauth_account_link
+  - iam_oauth_grant
+  - iam_oauth_callback_event
+  - iam_oauth_diagnostic_run
+  - ops_audit_log
+- route: /admin/oauth/resource-authorizations
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  required_tables:
+  - iam_oauth_provider_catalog
+  - iam_oauth_integration
+  - iam_oauth_client
+  - iam_oauth_secret
+  - iam_oauth_surface
+  - iam_oauth_flow_config
+  - iam_oauth_scope_profile
+  - iam_oauth_claim_mapping
+  - iam_oauth_policy
+  - iam_oauth_tenant_binding
+  - iam_oauth_operator_platform
+  - iam_oauth_resource_account
+  - iam_oauth_resource_authorization
+  - iam_oauth_webhook_config
+  - iam_oauth_operational_resource
+  - iam_oauth_account_link
+  - iam_oauth_grant
+  - iam_oauth_callback_event
+  - iam_oauth_diagnostic_run
+  - ops_audit_log
+- route: /admin/oauth/webhooks
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  required_tables:
+  - iam_oauth_provider_catalog
+  - iam_oauth_integration
+  - iam_oauth_client
+  - iam_oauth_secret
+  - iam_oauth_surface
+  - iam_oauth_flow_config
+  - iam_oauth_scope_profile
+  - iam_oauth_claim_mapping
+  - iam_oauth_policy
+  - iam_oauth_tenant_binding
+  - iam_oauth_operator_platform
+  - iam_oauth_resource_account
+  - iam_oauth_resource_authorization
+  - iam_oauth_webhook_config
+  - iam_oauth_operational_resource
+  - iam_oauth_account_link
+  - iam_oauth_grant
+  - iam_oauth_callback_event
+  - iam_oauth_diagnostic_run
+  - ops_audit_log
+- route: /admin/oauth/operational-resources
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  required_tables:
+  - iam_oauth_provider_catalog
+  - iam_oauth_integration
+  - iam_oauth_client
+  - iam_oauth_secret
+  - iam_oauth_surface
+  - iam_oauth_flow_config
+  - iam_oauth_scope_profile
+  - iam_oauth_claim_mapping
+  - iam_oauth_policy
+  - iam_oauth_tenant_binding
+  - iam_oauth_operator_platform
+  - iam_oauth_resource_account
+  - iam_oauth_resource_authorization
+  - iam_oauth_webhook_config
+  - iam_oauth_operational_resource
+  - iam_oauth_account_link
+  - iam_oauth_grant
+  - iam_oauth_callback_event
+  - iam_oauth_diagnostic_run
+  - ops_audit_log
+- route: /admin/oauth/account-links
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  required_tables:
+  - iam_oauth_provider_catalog
+  - iam_oauth_integration
+  - iam_oauth_client
+  - iam_oauth_secret
+  - iam_oauth_surface
+  - iam_oauth_flow_config
+  - iam_oauth_scope_profile
+  - iam_oauth_claim_mapping
+  - iam_oauth_policy
+  - iam_oauth_tenant_binding
+  - iam_oauth_operator_platform
+  - iam_oauth_resource_account
+  - iam_oauth_resource_authorization
+  - iam_oauth_webhook_config
+  - iam_oauth_operational_resource
+  - iam_oauth_account_link
+  - iam_oauth_grant
+  - iam_oauth_callback_event
+  - iam_oauth_diagnostic_run
+  - ops_audit_log
+- route: /admin/oauth/grants
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  required_tables:
+  - iam_oauth_provider_catalog
+  - iam_oauth_integration
+  - iam_oauth_client
+  - iam_oauth_secret
+  - iam_oauth_surface
+  - iam_oauth_flow_config
+  - iam_oauth_scope_profile
+  - iam_oauth_claim_mapping
+  - iam_oauth_policy
+  - iam_oauth_tenant_binding
+  - iam_oauth_operator_platform
+  - iam_oauth_resource_account
+  - iam_oauth_resource_authorization
+  - iam_oauth_webhook_config
+  - iam_oauth_operational_resource
+  - iam_oauth_account_link
+  - iam_oauth_grant
+  - iam_oauth_callback_event
+  - iam_oauth_diagnostic_run
+  - ops_audit_log
+- route: /admin/oauth/callback-diagnostics
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  required_tables:
+  - iam_oauth_provider_catalog
+  - iam_oauth_integration
+  - iam_oauth_client
+  - iam_oauth_secret
+  - iam_oauth_surface
+  - iam_oauth_flow_config
+  - iam_oauth_scope_profile
+  - iam_oauth_claim_mapping
+  - iam_oauth_policy
+  - iam_oauth_tenant_binding
+  - iam_oauth_operator_platform
+  - iam_oauth_resource_account
+  - iam_oauth_resource_authorization
+  - iam_oauth_webhook_config
+  - iam_oauth_operational_resource
+  - iam_oauth_account_link
+  - iam_oauth_grant
+  - iam_oauth_callback_event
+  - iam_oauth_diagnostic_run
+  - ops_audit_log
+- route: /admin/oauth/diagnostic-runs
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  required_tables:
+  - iam_oauth_provider_catalog
+  - iam_oauth_integration
+  - iam_oauth_client
+  - iam_oauth_secret
+  - iam_oauth_surface
+  - iam_oauth_flow_config
+  - iam_oauth_scope_profile
+  - iam_oauth_claim_mapping
+  - iam_oauth_policy
+  - iam_oauth_tenant_binding
+  - iam_oauth_operator_platform
+  - iam_oauth_resource_account
+  - iam_oauth_resource_authorization
+  - iam_oauth_webhook_config
+  - iam_oauth_operational_resource
+  - iam_oauth_account_link
+  - iam_oauth_grant
+  - iam_oauth_callback_event
+  - iam_oauth_diagnostic_run
+  - ops_audit_log

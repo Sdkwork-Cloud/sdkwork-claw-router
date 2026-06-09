@@ -2,6 +2,7 @@ use sha2::{Digest, Sha256};
 use sqlx::{Postgres, Sqlite, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
+use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
 
 pub(crate) const AI_ROUTING_CONFIG_SCOPE: &str = "routing";
 const GLOBAL_ROUTING_CONFIG_TENANT_ID: i64 = 0;
@@ -95,13 +96,14 @@ async fn bump_sqlite_ai_routing_config_version(
     organization_id: i64,
 ) -> DomainResult<i64> {
     let uuid = config_version_uuid(tenant_id, organization_id, config_scope);
+    let id = next_claw_runtime_id("ai_config_version")?;
     sqlx::query(
         r#"
         INSERT INTO ai_config_version
             (uuid, tenant_id, organization_id, status, config_scope, config_version,
-             changed_object_type, changed_object_id, published_at, created_at, updated_at)
+             changed_object_type, changed_object_id, published_at, created_at, updated_at, id)
         VALUES
-            (?, ?, ?, 1, ?, 1, ?, ?, ?, ?, ?)
+            (?, ?, ?, 1, ?, 1, ?, ?, ?, ?, ?, ?)
         ON CONFLICT(tenant_id, organization_id, config_scope)
         DO UPDATE SET
             config_version = ai_config_version.config_version + 1,
@@ -122,6 +124,7 @@ async fn bump_sqlite_ai_routing_config_version(
     .bind(change.requested_at)
     .bind(change.requested_at)
     .bind(change.requested_at)
+    .bind(id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to bump AI routing config version", error))?;
@@ -151,13 +154,14 @@ async fn bump_postgres_ai_routing_config_version(
     organization_id: i64,
 ) -> DomainResult<i64> {
     let uuid = config_version_uuid(tenant_id, organization_id, config_scope);
+    let id = next_claw_runtime_id("ai_config_version")?;
     sqlx::query_scalar(
         r#"
         INSERT INTO ai_config_version
             (uuid, tenant_id, organization_id, status, config_scope, config_version,
-             changed_object_type, changed_object_id, published_at, created_at, updated_at)
+             changed_object_type, changed_object_id, published_at, created_at, updated_at, id)
         VALUES
-            ($1, $2, $3, 1, $4, 1, $5, $6, $7::timestamptz, $8::timestamptz, $9::timestamptz)
+            ($1, $2, $3, 1, $4, 1, $5, $6, $7::timestamptz, $8::timestamptz, $9::timestamptz, $10)
         ON CONFLICT(tenant_id, organization_id, config_scope)
         DO UPDATE SET
             config_version = ai_config_version.config_version + 1,
@@ -179,6 +183,7 @@ async fn bump_postgres_ai_routing_config_version(
     .bind(change.requested_at)
     .bind(change.requested_at)
     .bind(change.requested_at)
+    .bind(id)
     .fetch_one(&mut **tx)
     .await
     .map_err(|error| store_error("failed to bump AI routing config version", error))
@@ -202,14 +207,15 @@ async fn insert_sqlite_ai_routing_config_change_event(
         change.changed_object_id,
         change.request_id,
     );
+    let id = next_claw_runtime_id("ai_config_change_event")?;
     sqlx::query(
         r#"
         INSERT INTO ai_config_change_event
             (uuid, tenant_id, organization_id, user_id, request_id, payload_hash, status,
              config_scope, changed_object_type, changed_object_id, config_version,
-             event_status, event_payload, published_at, created_at)
+             event_status, event_payload, published_at, created_at, id)
         VALUES
-            (?, ?, ?, ?, ?, ?, 1, ?, ?, ?, ?, 'pending', ?, ?, ?)
+            (?, ?, ?, ?, ?, ?, 1, ?, ?, ?, ?, 'pending', ?, ?, ?, ?)
         "#,
     )
     .bind(uuid)
@@ -225,6 +231,7 @@ async fn insert_sqlite_ai_routing_config_change_event(
     .bind(event_payload_json)
     .bind(change.requested_at)
     .bind(change.requested_at)
+    .bind(id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to write AI routing config change event", error))?;
@@ -249,15 +256,16 @@ async fn insert_postgres_ai_routing_config_change_event(
         change.changed_object_id,
         change.request_id,
     );
+    let id = next_claw_runtime_id("ai_config_change_event")?;
     sqlx::query(
         r#"
         INSERT INTO ai_config_change_event
             (uuid, tenant_id, organization_id, user_id, request_id, payload_hash, status,
              config_scope, changed_object_type, changed_object_id, config_version,
-             event_status, event_payload, published_at, created_at)
+             event_status, event_payload, published_at, created_at, id)
         VALUES
             ($1, $2, $3, $4, $5, $6, 1, $7, $8, $9, $10, 'pending',
-             $11::jsonb, $12::timestamptz, $13::timestamptz)
+             $11::jsonb, $12::timestamptz, $13::timestamptz, $14)
         "#,
     )
     .bind(uuid)
@@ -273,6 +281,7 @@ async fn insert_postgres_ai_routing_config_change_event(
     .bind(event_payload_json)
     .bind(change.requested_at)
     .bind(change.requested_at)
+    .bind(id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to write AI routing config change event", error))?;

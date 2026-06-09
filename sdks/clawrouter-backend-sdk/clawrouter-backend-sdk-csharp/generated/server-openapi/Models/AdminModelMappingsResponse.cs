@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminModelMappingsResponse
     {
-        public List<AdminModelMappingRule>? Items { get; set; }
+        public List<AdminModelMappingRule> Items { get; set; }
     }
 }

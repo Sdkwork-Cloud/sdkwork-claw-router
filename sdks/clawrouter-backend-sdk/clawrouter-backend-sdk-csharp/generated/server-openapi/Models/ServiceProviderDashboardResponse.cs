@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class ServiceProviderDashboardResponse
     {
-        public Dictionary<string, object>? Item { get; set; }
+        public Dictionary<string, object> Item { get; set; }
     }
 }

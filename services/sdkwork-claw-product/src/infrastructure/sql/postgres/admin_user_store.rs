@@ -13,8 +13,6 @@ use crate::ports::{
     UpdateAdminUserCommand,
 };
 
-const USER_STATUS_ACTIVE: i32 = 1;
-const USER_STATUS_BANNED: i32 = 0;
 const API_KEY_STATUS_ACTIVE: i32 = 1;
 const API_KEY_STATUS_REVOKED: i32 = 4;
 const TARGET_TYPE_USER: i32 = 61;
@@ -337,28 +335,40 @@ impl AdminUserStore for PostgresAdminUserStore {
 }
 
 async fn list_users(pool: &PgPool, query: ListAdminUsersQuery) -> DomainResult<Vec<AdminUserItem>> {
+    let search = search_like_pattern(query.q.as_deref());
+    let page_size = normalized_page_size(query.page_size);
     let rows = sqlx::query(
         r#"
         SELECT
             u.id::bigint AS id,
             COALESCE(u.email, '') AS email,
             COALESCE(NULLIF(u.username, ''), u.email, 'user-' || u.id::text) AS username,
+            COALESCE(NULLIF(u.display_name, ''), NULLIF(u.username, ''), u.email, 'user-' || u.id::text) AS display_name,
+            COALESCE(u.phone, '') AS mobile,
             COALESCE(NULLIF(m.membership_kind, ''), 'user') AS role_code,
             COALESCE(NULLIF(m.membership_kind, ''), 'standard') AS group_code,
             COALESCE(a.available_amount, '0')::text AS balance,
-            CASE LOWER(COALESCE(u.status, ''))
-                WHEN 'active' THEN 1
-                ELSE 0
-            END AS user_status,
+            LOWER(COALESCE(NULLIF(u.status, ''), 'inactive')) AS user_status,
             COALESCE(le.last_active, u.updated_at, u.created_at)::text AS last_active,
             COALESCE(k.last_used_at::text, '') AS last_used,
-            COALESCE(u.created_at::text, '') AS created_at
+            COALESCE(u.created_at::text, '') AS created_at,
+            COALESCE(u.updated_at::text, '') AS updated_at
         FROM iam_user u
-        JOIN iam_organization_membership m
+        LEFT JOIN (
+            SELECT tenant_id,
+                   organization_id,
+                   user_id,
+                   COALESCE(
+                       MAX(CASE WHEN LOWER(COALESCE(membership_kind, '')) LIKE '%admin%' THEN membership_kind END),
+                       MIN(membership_kind)
+                   ) AS membership_kind
+            FROM iam_organization_membership
+            WHERE organization_id = $1
+              AND status = 'active'
+            GROUP BY tenant_id, organization_id, user_id
+        ) m
           ON m.tenant_id = u.tenant_id
          AND m.user_id = u.id
-         AND m.organization_id = $1
-         AND m.status = 'active'
         LEFT JOIN LATERAL (
             SELECT account.id, account.available_amount
             FROM commerce_account account
@@ -388,8 +398,16 @@ async fn list_users(pool: &PgPool, query: ListAdminUsersQuery) -> DomainResult<V
         ) k ON k.user_id = u.id::bigint
         WHERE u.tenant_id = $10
           AND LOWER(COALESCE(u.status, '')) IN ('active', 'banned', 'disabled', 'inactive')
+          AND (
+              $11 IS NULL
+              OR LOWER(COALESCE(u.email, '')) LIKE $12
+              OR LOWER(COALESCE(u.username, '')) LIKE $13
+              OR LOWER(COALESCE(u.display_name, '')) LIKE $14
+              OR LOWER(COALESCE(u.phone, '')) LIKE $15
+              OR u.id::text LIKE $16
+          )
         ORDER BY u.created_at DESC NULLS LAST, u.id::bigint DESC
-        LIMIT 500
+        LIMIT $17
         "#,
     )
     .bind(query.subject.organization_id.to_string())
@@ -402,6 +420,13 @@ async fn list_users(pool: &PgPool, query: ListAdminUsersQuery) -> DomainResult<V
     .bind(query.subject.tenant_id)
     .bind(query.subject.organization_id)
     .bind(query.subject.tenant_id.to_string())
+    .bind(search.as_deref())
+    .bind(search.as_deref())
+    .bind(search.as_deref())
+    .bind(search.as_deref())
+    .bind(search.as_deref())
+    .bind(search.as_deref())
+    .bind(page_size)
     .fetch_all(pool)
     .await
     .map_err(|error| store_error("failed to list admin users", error))?;
@@ -1054,22 +1079,32 @@ async fn load_user_by_id(
             u.id::bigint AS id,
             COALESCE(u.email, '') AS email,
             COALESCE(NULLIF(u.username, ''), u.email, 'user-' || u.id::text) AS username,
+            COALESCE(NULLIF(u.display_name, ''), NULLIF(u.username, ''), u.email, 'user-' || u.id::text) AS display_name,
+            COALESCE(u.phone, '') AS mobile,
             COALESCE(NULLIF(m.membership_kind, ''), 'user') AS role_code,
             COALESCE(NULLIF(m.membership_kind, ''), 'standard') AS group_code,
             COALESCE(a.available_amount, '0')::text AS balance,
-            CASE LOWER(COALESCE(u.status, ''))
-                WHEN 'active' THEN 1
-                ELSE 0
-            END AS user_status,
+            LOWER(COALESCE(NULLIF(u.status, ''), 'inactive')) AS user_status,
             COALESCE(le.last_active, u.updated_at, u.created_at)::text AS last_active,
             COALESCE(k.last_used_at::text, '') AS last_used,
-            COALESCE(u.created_at::text, '') AS created_at
+            COALESCE(u.created_at::text, '') AS created_at,
+            COALESCE(u.updated_at::text, '') AS updated_at
         FROM iam_user u
-        JOIN iam_organization_membership m
+        LEFT JOIN (
+            SELECT tenant_id,
+                   organization_id,
+                   user_id,
+                   COALESCE(
+                       MAX(CASE WHEN LOWER(COALESCE(membership_kind, '')) LIKE '%admin%' THEN membership_kind END),
+                       MIN(membership_kind)
+                   ) AS membership_kind
+            FROM iam_organization_membership
+            WHERE organization_id = $1
+              AND status = 'active'
+            GROUP BY tenant_id, organization_id, user_id
+        ) m
           ON m.tenant_id = u.tenant_id
          AND m.user_id = u.id
-         AND m.organization_id = $1
-         AND m.status = 'active'
         LEFT JOIN LATERAL (
             SELECT account.id, account.available_amount
             FROM commerce_account account
@@ -1197,13 +1232,16 @@ fn user_from_row(row: sqlx::postgres::PgRow) -> DomainResult<AdminUserItem> {
         id: integer_cell(&row, "id"),
         email: row.try_get("email").map_err(row_error)?,
         username: row.try_get("username").map_err(row_error)?,
+        display_name: row.try_get("display_name").map_err(row_error)?,
+        mobile: row.try_get("mobile").map_err(row_error)?,
         role: role_label(&role_code),
         group,
         balance: balance_label(&balance)?,
-        status: user_status_label(required_integer_cell(&row, "user_status", "user")?)?,
+        status: user_status_label(row.try_get("user_status").map_err(row_error)?)?,
         last_active: timestamp_label(row.try_get("last_active").ok()),
         last_used: timestamp_label(row.try_get("last_used").ok()),
         created_at: timestamp_label(row.try_get("created_at").ok()),
+        updated_at: timestamp_label(row.try_get("updated_at").ok()),
     })
 }
 
@@ -1256,10 +1294,12 @@ fn user_status_code(status: &str) -> &'static str {
     }
 }
 
-fn user_status_label(status: i64) -> DomainResult<String> {
-    match status {
-        value if value == i64::from(USER_STATUS_ACTIVE) => Ok("active".to_owned()),
-        value if value == i64::from(USER_STATUS_BANNED) => Ok("banned".to_owned()),
+fn user_status_label(status: String) -> DomainResult<String> {
+    match status.as_str() {
+        "active" => Ok("active".to_owned()),
+        "banned" => Ok("banned".to_owned()),
+        "disabled" => Ok("disabled".to_owned()),
+        "inactive" => Ok("inactive".to_owned()),
         value => Err(DomainError::new(format!(
             "invalid admin user status from database row: {value}"
         ))),
@@ -1296,6 +1336,17 @@ fn timestamp_label(value: Option<String>) -> String {
         .map(|value| value.trim().to_owned())
         .filter(|value| !value.is_empty())
         .unwrap_or_else(|| "-".to_owned())
+}
+
+fn search_like_pattern(value: Option<&str>) -> Option<String> {
+    value
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+        .map(|value| format!("%{}%", value.to_ascii_lowercase()))
+}
+
+fn normalized_page_size(value: i64) -> i64 {
+    value.clamp(1, 500)
 }
 
 fn integer_cell(row: &sqlx::postgres::PgRow, column: &str) -> i64 {

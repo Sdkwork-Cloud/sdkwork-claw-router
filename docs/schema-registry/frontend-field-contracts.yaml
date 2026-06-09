@@ -1,7 +1,7 @@
+schema: sdkwork-claw-router-frontend-field-contracts
 rule: every actual portal route must be backed by explicit schema tables; page-critical fields must map to generated columns or Java-owned physical columns.
 version: 0.1.0
 source: apps/sdkwork-clawrouter-pc/src/App.tsx
-schema: sdkwork-claw-router-frontend-field-contracts
 x_response_entities:
   admin_announcement_item:
     name: AdminAnnouncementItem
@@ -6025,6 +6025,182 @@ frontend_models:
       - status
     data_sources:
       - ai_resource
+  - route: /admin/group
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts
+    interface: GroupRoutePreflightIssue
+    fields:
+      - code
+      - severity
+      - messageKey
+      - details
+    data_sources:
+      - ai_channel_group
+      - ai_channel_group_member
+      - ai_channel_group_resource
+      - ai_channel
+  - route: /admin/group
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts
+    interface: GroupRoutePreflightResult
+    fields:
+      - ready
+      - issueCodes
+      - issues
+      - issues.code
+      - issues.severity
+      - issues.messageKey
+      - issues.details
+      - resourceCodes
+      - resourceGroupCodes
+      - configuredResourceAccessCount
+      - apiScope
+      - capabilities
+      - activeHealthyBindingCount
+    data_sources:
+      - ai_channel_group
+      - ai_channel_group_member
+      - ai_channel_group_resource
+      - ai_channel
+  - route: /admin/group
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts
+    interface: GroupRouteExplainResult
+    fields:
+      - source
+      - effectiveResourceCodes
+      - configuredResourceGroupAccessCount
+      - routableBindingCount
+    data_sources:
+      - ai_channel_group
+      - ai_channel_group_member
+      - ai_channel_group_resource
+      - ai_channel
+      - ai_provider
+  - route: /admin/group
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts
+    interface: GroupRoutePreflightBinding
+    fields:
+      - resourceCodes
+      - apiScope
+      - capabilities
+      - status
+      - healthStatus
+    data_sources:
+      - ai_channel_group_member
+      - ai_channel
+  - route: /admin/group
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts
+    interface: GroupRuntimeRouteExplainRequest
+    fields:
+      - apiKeyId
+      - channelGroupId
+      - resourceCode
+      - catalogKey
+      - model
+      - apiCode
+      - capability
+      - billingMeter
+      - routeKey
+    data_sources:
+      - ai_api_key
+      - ai_channel_group
+      - ai_resource
+      - ai_model
+      - ai_model_pricing
+  - route: /admin/group
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts
+    interface: GroupRuntimeRouteExplainIssue
+    fields:
+      - code
+      - severity
+      - message
+    data_sources:
+      - ai_provider_route
+      - ai_model_provider_route
+      - ai_model_pricing
+      - ai_routing_policy
+      - ai_routing_rule
+  - route: /admin/group
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts
+    interface: GroupRuntimeRouteExplainCandidate
+    fields:
+      - kind
+      - providerCode
+      - channelId
+      - channelGroupId
+      - channelGroupCode
+      - pricingPlanCode
+      - policyId
+      - ruleId
+      - apiCode
+      - catalogKey
+      - requestedModel
+      - providerModel
+      - regionCode
+      - credentialId
+      - credentialRotation
+      - timeoutMs
+    data_sources:
+      - ai_channel_group
+      - ai_channel
+      - ai_provider_route
+      - ai_model_provider_route
+      - ai_routing_policy
+      - ai_routing_rule
+      - ai_pricing_plan
+  - route: /admin/group
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts
+    interface: GroupRuntimeRouteExplainResult
+    fields:
+      - source
+      - ready
+      - resourceCode
+      - catalogKey
+      - model
+      - apiCode
+      - capability
+      - billingMeter
+      - apiKeyId
+      - channelGroupId
+      - groupCode
+      - pricingPlanCode
+      - candidateCount
+      - selectedCandidates
+      - selectedCandidates.kind
+      - selectedCandidates.providerCode
+      - selectedCandidates.channelId
+      - selectedCandidates.channelGroupId
+      - selectedCandidates.channelGroupCode
+      - selectedCandidates.pricingPlanCode
+      - selectedCandidates.policyId
+      - selectedCandidates.ruleId
+      - selectedCandidates.apiCode
+      - selectedCandidates.catalogKey
+      - selectedCandidates.requestedModel
+      - selectedCandidates.providerModel
+      - selectedCandidates.regionCode
+      - selectedCandidates.credentialId
+      - selectedCandidates.credentialRotation
+      - selectedCandidates.timeoutMs
+      - blockedReasons
+      - blockedReasons.code
+      - blockedReasons.severity
+      - blockedReasons.message
+      - warnings
+      - warnings.code
+      - warnings.severity
+      - warnings.message
+      - policyId
+      - ruleId
+      - policySnapshotVersion
+    data_sources:
+      - ai_api_key
+      - ai_channel_group
+      - ai_channel_group_member
+      - ai_model_provider_route
+      - ai_provider_route
+      - ai_routing_policy
+      - ai_routing_rule
+      - ai_model_pricing
+      - ai_pricing_plan
   - route: /admin/marketing/referrals
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts
     interface: ReferralStat
@@ -7034,158 +7210,24 @@ frontend_models:
     data_sources:
       - ops_gateway_instance
       - ops_gateway_heartbeat
-  - route: /admin/open-platform/mini-programs/accounts
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
-    interface: WechatMiniProgramItem
+  - route: /admin/oauth
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    interface: OAuthListParams
     fields:
-      - id
-      - key
-      - name
+      - page
+      - pageSize
+      - providerCode
       - status
-      - qrDefault
-      - defaultEntryId
-      - appId
-      - hasAppSecret
-      - hasToken
-      - hasEncodingAesKey
-      - createdAt
-      - updatedAt
+      - surface
+      - resourceAccountKind
+      - ownerMode
+      - q
     data_sources:
-      - open_platform_account
-  - route: /admin/open-platform/mini-programs/urls
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
-    interface: WechatMiniProgramEntryItem
-    fields:
-      - id
-      - accountId
-      - key
-      - type
-      - url
-      - status
-      - createdAt
-      - updatedAt
-    data_sources:
-      - open_platform_entry
-  - route: /admin/open-platform/mini-programs/accounts
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
-    interface: WechatMiniProgramInput
-    fields:
-      - key
-      - name
-      - appId
-      - appSecret
-      - token
-      - encodingAesKey
-    data_sources:
-      - open_platform_account
-  - route: /admin/open-platform/mini-programs/accounts
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
-    interface: WechatMiniProgramUpdateInput
-    fields:
-      - name
-      - status
-      - qrDefault
-      - defaultEntryId
-      - appId
-      - appSecret
-      - token
-      - encodingAesKey
-    data_sources:
-      - open_platform_account
-  - route: /admin/open-platform/mini-programs/urls
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
-    interface: WechatMiniProgramEntryInput
-    fields:
-      - key
-      - url
-    data_sources:
-      - open_platform_entry
-  - route: /admin/open-platform/mini-programs/urls
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
-    interface: WechatMiniProgramEntryUpdateInput
-    fields:
-      - key
-      - url
-      - status
-    data_sources:
-      - open_platform_entry
-  - route: /admin/open-platform/official-accounts/accounts
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
-    interface: WechatOfficialAccountItem
-    fields:
-      - id
-      - key
-      - name
-      - status
-      - qrDefault
-      - defaultEntryId
-      - appId
-      - hasAppSecret
-      - hasToken
-      - hasEncodingAesKey
-      - createdAt
-      - updatedAt
-    data_sources:
-      - open_platform_account
-  - route: /admin/open-platform/official-accounts/menus
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
-    interface: WechatOfficialEntryItem
-    fields:
-      - id
-      - accountId
-      - key
-      - type
-      - url
-      - status
-      - createdAt
-      - updatedAt
-    data_sources:
-      - open_platform_entry
-  - route: /admin/open-platform/official-accounts/accounts
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
-    interface: WechatOfficialAccountInput
-    fields:
-      - key
-      - name
-      - appId
-      - appSecret
-      - token
-      - encodingAesKey
-    data_sources:
-      - open_platform_account
-  - route: /admin/open-platform/official-accounts/accounts
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
-    interface: WechatOfficialAccountUpdateInput
-    fields:
-      - name
-      - status
-      - qrDefault
-      - defaultEntryId
-      - appId
-      - appSecret
-      - token
-      - encodingAesKey
-    data_sources:
-      - open_platform_account
-  - route: /admin/open-platform/official-accounts/menus
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
-    interface: WechatOfficialEntryInput
-    fields:
-      - key
-      - type
-      - url
-    data_sources:
-      - open_platform_entry
-  - route: /admin/open-platform/official-accounts/menus
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
-    interface: WechatOfficialEntryUpdateInput
-    fields:
-      - key
-      - type
-      - url
-      - status
-    data_sources:
-      - open_platform_entry
+      - iam_oauth_provider_catalog
+      - iam_oauth_integration
+      - iam_oauth_client
+      - iam_oauth_surface
+      - iam_oauth_resource_account
   - route: /admin/organization
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
     interface: OrganizationTreeNode
@@ -12944,33 +12986,24 @@ frontend_operations:
   - route: /auth/oauth/callback/:provider
     source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
     operation: getOAuthAuthorizationUrl
-    operation_id: oauthAuthorizationUrls.retrieve
-    kind: read
+    operation_id: oauth.authorizationUrls.create
+    kind: create
     api_surface: app
-    api_method: GET
-    api_path: /app/v3/api/auth/oauth_authorization_urls
-    sdk_domain: auth
+    api_method: POST
+    api_path: /app/v3/api/oauth/authorization_urls
+    sdk_domain: iam
     summary: Retrieve OAuth authorization URL
     description: Returns an OAuth provider authorization URL using standardized app auth configuration.
     read_sources:
       - iam_user_identity
-    query_parameters:
-      - name: provider
-        in: query
-        required: true
-        schema: { type: string }
-      - name: redirect_uri
-        in: query
-        required: true
-        schema: { type: string }
-      - name: state
-        in: query
-        required: false
-        schema: { type: string }
-      - name: scope
-        in: query
-        required: false
-        schema: { type: string }
+    request_schema:
+      name: IamOauthAuthorizationUrlCreateRequest
+      required: [providerCode, redirectUri]
+      properties:
+        providerCode: { type: string, minLength: 1, maxLength: 64 }
+        redirectUri: { type: string, minLength: 1, maxLength: 2048 }
+        state: { type: string, maxLength: 1024 }
+        scope: { type: string, maxLength: 2048 }
     response_schema:
       name: IamOauthAuthorizationUrlResponse
       required: [authUrl]
@@ -12979,12 +13012,12 @@ frontend_operations:
   - route: /auth/oauth/callback/:provider
     source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
     operation: signInWithOAuth
-    operation_id: oauthSessions.create
+    operation_id: oauth.sessions.create
     kind: create
     api_surface: app
     api_method: POST
-    api_path: /app/v3/api/auth/oauth_sessions
-    sdk_domain: auth
+    api_path: /app/v3/api/oauth/sessions
+    sdk_domain: iam
     summary: Create OAuth IAM session
     description: Exchanges an OAuth authorization code for the same dual-token IAM session payload used by password login.
     read_sources:
@@ -21625,221 +21658,6 @@ frontend_operations:
           type: array
           maxItems: 100
           items: { type: string, minLength: 1, maxLength: 128 }
-  - route: /auth/login
-    source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
-    operation: generateLoginQrCode
-    operation_id: qrAuth.sessions.create
-    kind: create
-    api_surface: app
-    api_method: POST
-    api_path: /app/v3/api/open_platform/qr_auth/sessions
-    sdk_domain: platform
-    summary: Create open platform QR auth session
-    description: Creates a short-lived QR auth session. Without a default open platform account the QR content is a normal fallback URL that any scanner can open and complete with password login or registration; configured official-account and
-      mini-app defaults return their bound entry URLs with session context.
-    request_body_required: true
-    request_schema:
-      name: OpenPlatformQrAuthSessionCreateRequest
-      required: [purpose]
-      properties:
-        purpose: { type: string, enum: [login, register] }
-    read_sources:
-      - iam_security_event
-      - open_platform_account
-      - open_platform_entry
-    write_tables:
-      - iam_security_event
-    response_schema:
-      name: OpenPlatformQrAuthSessionResponse
-      required: [id, sessionKey, purpose, qrContent, fallbackUrl, status, expiresAt, createdAt, updatedAt]
-      properties:
-        id: { type: string, minLength: 1, maxLength: 160 }
-        sessionKey: { type: string, minLength: 1, maxLength: 128 }
-        purpose: { type: string, enum: [login, register] }
-        defaultAccountId: { type: string, nullable: true, maxLength: 128 }
-        defaultEntryId: { type: string, nullable: true, maxLength: 128 }
-        defaultProvider: { type: string, nullable: true, enum: [wechat, alipay, douyin, baidu, kuaishou, feishu] }
-        defaultAccountType: { type: string, nullable: true, enum: [official_account, mini_app] }
-        qrContent:
-          type: object
-          additionalProperties: false
-          required: [content, mode]
-          properties:
-            content: { type: string, minLength: 1, maxLength: 2048 }
-            mode: { type: string, enum: [fallback_url, official_account_entry, mini_app_url] }
-        fallbackUrl: { type: string, minLength: 1, maxLength: 2048 }
-        status: { type: string, enum: [pending, scanned, completed, expired, cancelled] }
-        scannedAt: { type: string, nullable: true, maxLength: 64 }
-        completedAt: { type: string, nullable: true, maxLength: 64 }
-        expiresAt: { type: string, maxLength: 64 }
-        createdAt: { type: string, maxLength: 64 }
-        updatedAt: { type: string, maxLength: 64 }
-        session:
-          $ref: '#/components/schemas/IamSessionResponse'
-        token:
-          $ref: '#/components/schemas/IamSessionResponse'
-        userInfo:
-          $ref: '#/components/schemas/IamUserResponse'
-  - route: /auth/login
-    source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
-    operation: checkLoginQrCodeStatus
-    operation_id: qrAuth.sessions.retrieve
-    kind: read
-    api_surface: app
-    api_method: GET
-    api_path: /app/v3/api/open_platform/qr_auth/sessions/{sessionKey}
-    sdk_domain: platform
-    summary: Retrieve open platform QR auth session
-    description: Retrieves the current QR auth session status. Desktop login pages poll this endpoint and receive the IAM session when password, webhook, or external platform completion succeeds.
-    query_parameters: []
-    path_parameters:
-      - name: sessionKey
-        required: true
-        schema: { type: string, minLength: 1, maxLength: 128 }
-    read_sources:
-      - iam_session
-      - iam_user
-      - iam_security_event
-    response_schema:
-      name: OpenPlatformQrAuthSessionResponse
-      required: [id, sessionKey, purpose, qrContent, fallbackUrl, status, expiresAt, createdAt, updatedAt]
-      properties:
-        id: { type: string, minLength: 1, maxLength: 160 }
-        sessionKey: { type: string, minLength: 1, maxLength: 128 }
-        purpose: { type: string, enum: [login, register] }
-        defaultAccountId: { type: string, nullable: true, maxLength: 128 }
-        defaultEntryId: { type: string, nullable: true, maxLength: 128 }
-        defaultProvider: { type: string, nullable: true, enum: [wechat, alipay, douyin, baidu, kuaishou, feishu] }
-        defaultAccountType: { type: string, nullable: true, enum: [official_account, mini_app] }
-        qrContent:
-          type: object
-          additionalProperties: false
-          required: [content, mode]
-          properties:
-            content: { type: string, minLength: 1, maxLength: 2048 }
-            mode: { type: string, enum: [fallback_url, official_account_entry, mini_app_url] }
-        fallbackUrl: { type: string, minLength: 1, maxLength: 2048 }
-        status: { type: string, enum: [pending, scanned, completed, expired, cancelled] }
-        scannedAt: { type: string, nullable: true, maxLength: 64 }
-        completedAt: { type: string, nullable: true, maxLength: 64 }
-        expiresAt: { type: string, maxLength: 64 }
-        createdAt: { type: string, maxLength: 64 }
-        updatedAt: { type: string, maxLength: 64 }
-        session:
-          $ref: '#/components/schemas/IamSessionResponse'
-        token:
-          $ref: '#/components/schemas/IamSessionResponse'
-        userInfo:
-          $ref: '#/components/schemas/IamUserResponse'
-  - route: /auth/login
-    source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
-    operation: callbackLoginQrCode
-    operation_id: qrAuth.sessions.scans.create
-    kind: create
-    api_surface: app
-    api_method: POST
-    api_path: /app/v3/api/open_platform/qr_auth/sessions/{sessionKey}/scans
-    sdk_domain: platform
-    summary: Record open platform QR auth scan
-    description: Records the scanner source and optional platform binding for a QR auth session. This endpoint never accepts raw OpenID; platform identifiers must be hashed or provider-neutral external IDs.
-    path_parameters:
-      - name: sessionKey
-        required: true
-        schema: { type: string, minLength: 1, maxLength: 128 }
-    read_sources:
-      - iam_security_event
-    write_tables:
-      - iam_security_event
-    request_schema:
-      name: OpenPlatformQrAuthScanCreateRequest
-      required: [scanSource]
-      properties:
-        scanSource: { type: string, enum: [app, browser, mini_app, official_account, webhook] }
-        accountId: { type: string, maxLength: 128 }
-        entryId: { type: string, maxLength: 128 }
-        externalUserId: { type: string, maxLength: 128 }
-        ipHash: {type: string, minLength: 64, maxLength: 64, pattern: '^[A-Fa-f0-9]{64}$'}
-        userAgent: { type: string, maxLength: 256 }
-    response_schema:
-      name: OpenPlatformQrAuthScanResponse
-      required: [id, sessionId, sessionKey, scanSource, createdAt]
-      properties:
-        id: { type: string, minLength: 1, maxLength: 160 }
-        sessionId: { type: string, minLength: 1, maxLength: 160 }
-        sessionKey: { type: string, minLength: 1, maxLength: 128 }
-        accountId: { type: string, nullable: true, maxLength: 128 }
-        entryId: { type: string, nullable: true, maxLength: 128 }
-        externalUserId: { type: string, nullable: true, maxLength: 128 }
-        scanSource: { type: string, enum: [app, browser, mini_app, official_account, webhook] }
-        ipHash: { type: string, maxLength: 64 }
-        userAgent: { type: string, maxLength: 256 }
-        createdAt: { type: string, maxLength: 64 }
-  - route: /auth/login
-    source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
-    operation: confirmLoginQrCode
-    operation_id: qrAuth.sessions.passwords.create
-    kind: create
-    api_surface: app
-    api_method: POST
-    api_path: /app/v3/api/open_platform/qr_auth/sessions/{sessionKey}/passwords
-    sdk_domain: platform
-    summary: Complete open platform QR auth by password
-    description: Completes a scanned QR auth session with password login or password registration according to the session purpose, then exposes the issued IAM session to the polling desktop login page.
-    path_parameters:
-      - name: sessionKey
-        required: true
-        schema: { type: string, minLength: 1, maxLength: 128 }
-    read_sources:
-      - iam_session
-      - iam_user
-      - iam_credential
-      - iam_security_event
-    write_tables:
-      - iam_session
-      - iam_audit_event
-      - iam_security_event
-    request_schema:
-      name: OpenPlatformQrAuthPasswordCreateRequest
-      required: [username, password]
-      properties:
-        username: { type: string, minLength: 1, maxLength: 128 }
-        password: { type: string, minLength: 1, maxLength: 128 }
-        confirmPassword: { type: string, maxLength: 128 }
-        email: { type: string, maxLength: 256 }
-        phone: { type: string, maxLength: 32 }
-        channel: { type: string, enum: [EMAIL, PHONE] }
-        verificationCode: { type: string, maxLength: 32 }
-    response_schema:
-      name: OpenPlatformQrAuthSessionResponse
-      required: [id, sessionKey, purpose, qrContent, fallbackUrl, status, expiresAt, createdAt, updatedAt]
-      properties:
-        id: { type: string, minLength: 1, maxLength: 160 }
-        sessionKey: { type: string, minLength: 1, maxLength: 128 }
-        purpose: { type: string, enum: [login, register] }
-        defaultAccountId: { type: string, nullable: true, maxLength: 128 }
-        defaultEntryId: { type: string, nullable: true, maxLength: 128 }
-        defaultProvider: { type: string, nullable: true, enum: [wechat, alipay, douyin, baidu, kuaishou, feishu] }
-        defaultAccountType: { type: string, nullable: true, enum: [official_account, mini_app] }
-        qrContent:
-          type: object
-          additionalProperties: false
-          required: [content, mode]
-          properties:
-            content: { type: string, minLength: 1, maxLength: 2048 }
-            mode: { type: string, enum: [fallback_url, official_account_entry, mini_app_url] }
-        fallbackUrl: { type: string, minLength: 1, maxLength: 2048 }
-        status: { type: string, enum: [pending, scanned, completed, expired, cancelled] }
-        scannedAt: { type: string, nullable: true, maxLength: 64 }
-        completedAt: { type: string, nullable: true, maxLength: 64 }
-        expiresAt: { type: string, maxLength: 64 }
-        createdAt: { type: string, maxLength: 64 }
-        updatedAt: { type: string, maxLength: 64 }
-        session:
-          $ref: '#/components/schemas/IamSessionResponse'
-        token:
-          $ref: '#/components/schemas/IamSessionResponse'
-        userInfo:
-          $ref: '#/components/schemas/IamUserResponse'
   - route: /playground
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
     operation: listRuntimeInvocations
@@ -23147,6 +22965,227 @@ frontend_operations:
               weight: { type: integer, minimum: 0, maximum: 1000000 }
               status: { type: string, enum: [active, disabled] }
               healthStatus: { type: string, enum: [active, error] }
+  - route: /admin/group
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts
+    operation: fetchGroupRouteExplain
+    operation_id: channelGroups.routeExplain.retrieve
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/ai/channel_groups/{channelGroupId}/route_explain
+    path_params:
+      - channelGroupId
+    read_sources:
+      - ai_channel_group
+      - ai_channel_group_member
+      - ai_channel_group_resource
+      - ai_channel
+      - ai_provider
+    query_parameters: []
+    response_schema:
+      name: AdminChannelGroupRouteExplainResponse
+      type: object
+      additionalProperties: false
+      required: [source, ready, issueCodes, issues, resourceCodes, resourceGroupCodes, effectiveResourceCodes, configuredResourceAccessCount, configuredResourceGroupAccessCount, apiScope, capabilities, activeHealthyBindingCount, routableBindingCount]
+      properties:
+        source:
+          type: string
+          enum: [backend_config]
+          description: Explains persisted backend routing configuration, not the full runtime selector.
+        ready: { type: boolean }
+        issueCodes:
+          type: array
+          maxItems: 32
+          items: { type: string, enum: [group.disabled, group.account_count.empty, group.resource_access.empty, group.bindings.empty, group.bindings.no_active_healthy_member, group.bindings.no_resource_overlap, group.bindings.missing_scope_metadata] }
+        issues:
+          type: array
+          maxItems: 32
+          items:
+            name: AdminChannelGroupRouteExplainIssue
+            type: object
+            additionalProperties: false
+            required: [code, severity, details]
+            properties:
+              code: { type: string, enum: [group.disabled, group.account_count.empty, group.resource_access.empty, group.bindings.empty, group.bindings.no_active_healthy_member, group.bindings.no_resource_overlap, group.bindings.missing_scope_metadata] }
+              severity: { type: string, enum: [blocking, warning, info] }
+              details:
+                type: array
+                maxItems: 200
+                items: { type: string, minLength: 1, maxLength: 128 }
+        resourceCodes:
+          type: array
+          maxItems: 200
+          items: { type: string, minLength: 1, maxLength: 128 }
+        resourceGroupCodes:
+          type: array
+          maxItems: 200
+          items: { type: string, minLength: 1, maxLength: 128 }
+        effectiveResourceCodes:
+          type: array
+          maxItems: 200
+          items: { type: string, minLength: 1, maxLength: 128 }
+        configuredResourceAccessCount: { type: integer, minimum: 0 }
+        configuredResourceGroupAccessCount: { type: integer, minimum: 0 }
+        apiScope:
+          type: array
+          maxItems: 200
+          items: { type: string, minLength: 1, maxLength: 128 }
+        capabilities:
+          type: array
+          maxItems: 32
+          items: { type: string, minLength: 1, maxLength: 64 }
+        activeHealthyBindingCount: { type: integer, minimum: 0 }
+        routableBindingCount: { type: integer, minimum: 0 }
+  - route: /admin/group
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts
+    operation: fetchRuntimeRouteExplain
+    operation_id: routeExplain.create
+    kind: action
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/ai/route_explain
+    read_sources:
+      - ai_api_key
+      - ai_channel_group
+      - ai_channel_group_member
+      - ai_model_provider_route
+      - ai_provider_route
+      - ai_routing_policy
+      - ai_routing_rule
+      - ai_model_pricing
+      - ai_pricing_plan
+    request_schema:
+      name: AdminRuntimeRouteExplainRequest
+      type: object
+      additionalProperties: false
+      required: [apiKeyId]
+      properties:
+        apiKeyId:
+          type: string
+          minLength: 1
+          maxLength: 128
+          pattern: ^[1-9][0-9]*$
+          description: API key id whose owner scope and route group are used by the runtime selector.
+        channelGroupId:
+          type: string
+          minLength: 1
+          maxLength: 128
+          pattern: ^[1-9][0-9]*$
+          description: Optional channel group id. Defaults to the API key's bound group.
+        resourceCode:
+          type: string
+          minLength: 1
+          maxLength: 128
+          pattern: ^[A-Za-z0-9._:-]+$
+          description: Requested resource code, such as api.openai.chat_completions.
+        catalogKey:
+          type: string
+          minLength: 1
+          maxLength: 128
+          pattern: ^[A-Za-z0-9._:/-]+$
+          description: Optional model catalog key. When present the runtime selector explains model route planning.
+        model:
+          type: string
+          minLength: 1
+          maxLength: 128
+          pattern: ^[A-Za-z0-9._:/-]+$
+          description: Requested model or provider-native model identifier.
+        apiCode:
+          type: string
+          minLength: 1
+          maxLength: 128
+          pattern: ^[A-Za-z0-9._:-]+$
+          description: API endpoint code used for route and channel scope matching.
+        capability:
+          type: string
+          enum: [chat, image, audio, music, video, embedding, rerank, network]
+          description: Runtime routing capability to evaluate. Defaults to chat.
+        billingMeter:
+          type: string
+          minLength: 1
+          maxLength: 64
+          pattern: ^[a-z0-9_]+$
+          description: Billing meter used by pricing readiness checks.
+        routeKey:
+          type: string
+          minLength: 1
+          maxLength: 128
+          pattern: ^[A-Za-z0-9._:-]+$
+          description: Non-model route key used when catalogKey is absent.
+    response_schema:
+      name: AdminRuntimeRouteExplainResponse
+      type: object
+      additionalProperties: false
+      required: [source, ready, resourceCode, catalogKey, model, apiCode, capability, billingMeter, apiKeyId, channelGroupId, groupCode, pricingPlanCode, candidateCount, selectedCandidates, blockedReasons, warnings, policyId, ruleId, policySnapshotVersion]
+      properties:
+        source:
+          type: string
+          enum: [runtime_selector]
+          description: Explains the live runtime ProviderRouteSelector decision for one request shape.
+        ready: { type: boolean }
+        resourceCode: { type: string, minLength: 1, maxLength: 128 }
+        catalogKey: { type: [string, 'null'], maxLength: 128 }
+        model: { type: [string, 'null'], maxLength: 128 }
+        apiCode: { type: string, minLength: 1, maxLength: 128 }
+        capability: { type: string, enum: [chat, image, audio, music, video, embedding, rerank, network] }
+        billingMeter: { type: string, minLength: 1, maxLength: 64 }
+        apiKeyId: { type: string, minLength: 1, maxLength: 128, pattern: '^[1-9][0-9]*$' }
+        channelGroupId: { type: string, minLength: 1, maxLength: 128, pattern: '^[1-9][0-9]*$' }
+        groupCode: { type: string, minLength: 1, maxLength: 128 }
+        pricingPlanCode: { type: string, minLength: 1, maxLength: 128 }
+        candidateCount: { type: integer, minimum: 0 }
+        selectedCandidates:
+          type: array
+          maxItems: 64
+          items:
+            name: AdminRuntimeRouteExplainCandidate
+            type: object
+            additionalProperties: false
+            required: [kind, providerCode, channelId, channelGroupId, channelGroupCode, pricingPlanCode, policyId, ruleId, apiCode, catalogKey, requestedModel, providerModel, regionCode, credentialId, credentialRotation, timeoutMs]
+            properties:
+              kind: { type: string, enum: [model, channel] }
+              providerCode: { type: string, minLength: 1, maxLength: 128 }
+              channelId: { type: string, minLength: 1, maxLength: 128, pattern: '^[1-9][0-9]*$' }
+              channelGroupId: { type: string, minLength: 1, maxLength: 128, pattern: '^[1-9][0-9]*$' }
+              channelGroupCode: { type: string, minLength: 1, maxLength: 128 }
+              pricingPlanCode: { type: string, minLength: 1, maxLength: 128 }
+              policyId: { type: [string, 'null'], maxLength: 128, pattern: '^[1-9][0-9]*$' }
+              ruleId: { type: [string, 'null'], maxLength: 128, pattern: '^[1-9][0-9]*$' }
+              apiCode: { type: string, maxLength: 128 }
+              catalogKey: { type: [string, 'null'], maxLength: 128 }
+              requestedModel: { type: [string, 'null'], maxLength: 128 }
+              providerModel: { type: [string, 'null'], maxLength: 128 }
+              regionCode: { type: string, maxLength: 64 }
+              credentialId: { type: [string, 'null'], maxLength: 128, pattern: '^[1-9][0-9]*$' }
+              credentialRotation: { type: [string, 'null'], maxLength: 64 }
+              timeoutMs: { type: [integer, 'null'], minimum: 0, maximum: 86400000 }
+        blockedReasons:
+          type: array
+          maxItems: 32
+          items:
+            name: AdminRuntimeRouteExplainIssue
+            type: object
+            additionalProperties: false
+            required: [code, severity, message]
+            properties:
+              code: { type: string, enum: [route.unavailable, pricing.unavailable] }
+              severity: { type: string, enum: [blocking, warning, info] }
+              message: { type: string, minLength: 1, maxLength: 2048 }
+        warnings:
+          type: array
+          maxItems: 32
+          items:
+            name: AdminRuntimeRouteExplainIssue
+            type: object
+            additionalProperties: false
+            required: [code, severity, message]
+            properties:
+              code: { type: string, enum: [route.unavailable, pricing.unavailable] }
+              severity: { type: string, enum: [blocking, warning, info] }
+              message: { type: string, minLength: 1, maxLength: 2048 }
+        policyId: { type: [string, 'null'], maxLength: 128, pattern: '^[1-9][0-9]*$' }
+        ruleId: { type: [string, 'null'], maxLength: 128, pattern: '^[1-9][0-9]*$' }
+        policySnapshotVersion: { type: string, minLength: 1, maxLength: 128 }
   - route: /admin/group
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts
     operation: replaceGroupChannelBindings
@@ -27038,7 +27077,7 @@ frontend_operations:
     operation_id: fulfillments.list
     kind: read
     api_surface: backend
-    openapi_exposed: false
+    openapi_exposed: true
     api_method: GET
     api_path: /backend/v3/api/fulfillments
     sdk_domain: commerce
@@ -28795,18 +28834,48 @@ frontend_operations:
             status: { type: string, nullable: true, maxLength: 64 }
             createdAt: { type: string, nullable: true, maxLength: 64 }
             updatedAt: { type: string, nullable: true, maxLength: 64 }
+  - route: /admin/memberships
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: fetchMembershipAdminPlans
+    operation_scope: app_shell
+    operation_id: memberships.admin.plans.fetch
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/memberships/plans
+    openapi_exposed: false
+    sdk_domain: commerce
+    read_sources:
+      - commerce_membership_plan
+  - route: /admin/memberships
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: createMembershipAdminPlan
+    operation_scope: app_shell
+    operation_id: memberships.admin.plans.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/memberships/plans
+    openapi_exposed: false
+    sdk_domain: commerce
+    read_sources:
+      - commerce_membership_plan
+    write_tables:
+      - commerce_membership_plan
+      - commerce_membership_entitlement
+      - ops_audit_log
   - route: /admin/orders
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
     operation: backendOrdersList
-    operation_id: orders.management.list
+    operation_id: orders.list
     kind: read
     api_surface: backend
-    openapi_exposed: false
+    openapi_exposed: true
     api_method: GET
-    api_path: /backend/v3/api/orders/management
+    api_path: /backend/v3/api/orders
     sdk_domain: commerce
-    summary: Orders Management List
-    description: Standard appbase commerce API for orders.management.list; no legacy billing compatibility route is exposed.
+    summary: Orders List
+    description: Standard appbase commerce API for orders.list; no legacy billing compatibility route is exposed.
     read_sources:
       - commerce_order
       - commerce_order_item
@@ -28854,15 +28923,15 @@ frontend_operations:
   - route: /admin/orders
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
     operation: backendOrdersRetrieve
-    operation_id: orders.management.retrieve
+    operation_id: orders.retrieve
     kind: read
     api_surface: backend
-    openapi_exposed: false
+    openapi_exposed: true
     api_method: GET
-    api_path: /backend/v3/api/orders/management/{orderId}
+    api_path: /backend/v3/api/orders/{orderId}
     sdk_domain: commerce
-    summary: Orders Management Retrieve
-    description: Standard appbase commerce API for orders.management.retrieve; no legacy billing compatibility route is exposed.
+    summary: Orders Retrieve
+    description: Standard appbase commerce API for orders.retrieve; no legacy billing compatibility route is exposed.
     read_sources:
       - commerce_order
       - commerce_order_item
@@ -28975,7 +29044,7 @@ frontend_operations:
     operation_id: orders.events.list
     kind: read
     api_surface: backend
-    openapi_exposed: false
+    openapi_exposed: true
     api_method: GET
     api_path: /backend/v3/api/orders/{orderId}/events
     sdk_domain: commerce
@@ -30354,15 +30423,15 @@ frontend_operations:
   - route: /admin/orders
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
     operation: backendRefundsList
-    operation_id: refunds.management.list
+    operation_id: refunds.list
     kind: read
     api_surface: backend
-    openapi_exposed: false
+    openapi_exposed: true
     api_method: GET
-    api_path: /backend/v3/api/refunds/management
+    api_path: /backend/v3/api/refunds
     sdk_domain: commerce
-    summary: Refunds Management List
-    description: Standard appbase commerce API for refunds.management.list; no legacy billing compatibility route is exposed.
+    summary: Refunds List
+    description: Standard appbase commerce API for refunds.list; no legacy billing compatibility route is exposed.
     read_sources:
       - commerce_refund
       - commerce_refund_item
@@ -30406,15 +30475,15 @@ frontend_operations:
   - route: /admin/orders
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
     operation: backendRefundsRetrieve
-    operation_id: refunds.management.retrieve
+    operation_id: refunds.retrieve
     kind: read
     api_surface: backend
-    openapi_exposed: false
+    openapi_exposed: true
     api_method: GET
-    api_path: /backend/v3/api/refunds/management/{refundId}
+    api_path: /backend/v3/api/refunds/{refundId}
     sdk_domain: commerce
-    summary: Refunds Management Retrieve
-    description: Standard appbase commerce API for refunds.management.retrieve; no legacy billing compatibility route is exposed.
+    summary: Refunds Retrieve
+    description: Standard appbase commerce API for refunds.retrieve; no legacy billing compatibility route is exposed.
     read_sources:
       - commerce_refund
       - commerce_refund_item
@@ -30656,7 +30725,7 @@ frontend_operations:
     operation_id: shipments.list
     kind: read
     api_surface: backend
-    openapi_exposed: false
+    openapi_exposed: true
     api_method: GET
     api_path: /backend/v3/api/shipments
     sdk_domain: commerce
@@ -30733,7 +30802,7 @@ frontend_operations:
     operation_id: shipments.trackingEvents.list
     kind: read
     api_surface: backend
-    openapi_exposed: false
+    openapi_exposed: true
     api_method: GET
     api_path: /backend/v3/api/shipments/{shipmentId}/tracking_events
     sdk_domain: commerce
@@ -34507,6 +34576,829 @@ frontend_operations:
     write_tables:
       - iam_role_permission
       - ops_audit_log
+  - route: /admin/oauth/provider-catalog
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: listOAuthProviderCatalog
+    operation_scope: app_shell
+    operation_id: iam.oauth.providerCatalog.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/iam/oauth/provider_catalog
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_provider_catalog
+  - route: /admin/oauth/integrations
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: listOAuthIntegrations
+    operation_scope: app_shell
+    operation_id: iam.oauth.integrations.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/iam/oauth/integrations
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_integration
+  - route: /admin/oauth/integrations
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: createOAuthIntegration
+    operation_scope: app_shell
+    operation_id: iam.oauth.integrations.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/oauth/integrations
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_integration
+    write_tables:
+      - iam_oauth_integration
+      - ops_audit_log
+  - route: /admin/oauth/integrations
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: updateOAuthIntegration
+    operation_scope: app_shell
+    operation_id: iam.oauth.integrations.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/iam/oauth/integrations/{integrationId}
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_integration
+    write_tables:
+      - iam_oauth_integration
+      - ops_audit_log
+  - route: /admin/oauth/clients
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: listOAuthClients
+    operation_scope: app_shell
+    operation_id: iam.oauth.clients.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/iam/oauth/clients
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_client
+  - route: /admin/oauth/clients
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: createOAuthClient
+    operation_scope: app_shell
+    operation_id: iam.oauth.clients.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/oauth/clients
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_client
+    write_tables:
+      - iam_oauth_client
+      - ops_audit_log
+  - route: /admin/oauth/clients
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: updateOAuthClient
+    operation_scope: app_shell
+    operation_id: iam.oauth.clients.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/iam/oauth/clients/{oauthClientId}
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_client
+    write_tables:
+      - iam_oauth_client
+      - ops_audit_log
+  - route: /admin/oauth/secrets
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: listOAuthSecrets
+    operation_scope: app_shell
+    operation_id: iam.oauth.secrets.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/iam/oauth/secrets
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_secret
+  - route: /admin/oauth/secrets
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: createOAuthSecret
+    operation_scope: app_shell
+    operation_id: iam.oauth.secrets.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/oauth/secrets
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_secret
+    write_tables:
+      - iam_oauth_secret
+      - ops_audit_log
+  - route: /admin/oauth/surfaces
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: listOAuthSurfaces
+    operation_scope: app_shell
+    operation_id: iam.oauth.surfaces.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/iam/oauth/surfaces
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_surface
+  - route: /admin/oauth/surfaces
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: createOAuthSurface
+    operation_scope: app_shell
+    operation_id: iam.oauth.surfaces.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/oauth/surfaces
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_surface
+    write_tables:
+      - iam_oauth_surface
+      - ops_audit_log
+  - route: /admin/oauth/surfaces
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: updateOAuthSurface
+    operation_scope: app_shell
+    operation_id: iam.oauth.surfaces.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/iam/oauth/surfaces/{surfaceId}
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_surface
+    write_tables:
+      - iam_oauth_surface
+      - ops_audit_log
+  - route: /admin/oauth/flow-configs
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: listOAuthFlowConfigs
+    operation_scope: app_shell
+    operation_id: iam.oauth.flowConfigs.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/iam/oauth/flow_configs
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_flow_config
+  - route: /admin/oauth/flow-configs
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: createOAuthFlowConfig
+    operation_scope: app_shell
+    operation_id: iam.oauth.flowConfigs.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/oauth/flow_configs
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_flow_config
+    write_tables:
+      - iam_oauth_flow_config
+      - ops_audit_log
+  - route: /admin/oauth/flow-configs
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: updateOAuthFlowConfig
+    operation_scope: app_shell
+    operation_id: iam.oauth.flowConfigs.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/iam/oauth/flow_configs/{flowConfigId}
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_flow_config
+    write_tables:
+      - iam_oauth_flow_config
+      - ops_audit_log
+  - route: /admin/oauth/scope-profiles
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: listOAuthScopeProfiles
+    operation_scope: app_shell
+    operation_id: iam.oauth.scopeProfiles.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/iam/oauth/scope_profiles
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_scope_profile
+  - route: /admin/oauth/scope-profiles
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: createOAuthScopeProfile
+    operation_scope: app_shell
+    operation_id: iam.oauth.scopeProfiles.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/oauth/scope_profiles
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_scope_profile
+    write_tables:
+      - iam_oauth_scope_profile
+      - ops_audit_log
+  - route: /admin/oauth/scope-profiles
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: updateOAuthScopeProfile
+    operation_scope: app_shell
+    operation_id: iam.oauth.scopeProfiles.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/iam/oauth/scope_profiles/{scopeProfileId}
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_scope_profile
+    write_tables:
+      - iam_oauth_scope_profile
+      - ops_audit_log
+  - route: /admin/oauth/claim-mappings
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: listOAuthClaimMappings
+    operation_scope: app_shell
+    operation_id: iam.oauth.claimMappings.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/iam/oauth/claim_mappings
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_claim_mapping
+  - route: /admin/oauth/claim-mappings
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: createOAuthClaimMapping
+    operation_scope: app_shell
+    operation_id: iam.oauth.claimMappings.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/oauth/claim_mappings
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_claim_mapping
+    write_tables:
+      - iam_oauth_claim_mapping
+      - ops_audit_log
+  - route: /admin/oauth/claim-mappings
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: updateOAuthClaimMapping
+    operation_scope: app_shell
+    operation_id: iam.oauth.claimMappings.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/iam/oauth/claim_mappings/{mappingId}
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_claim_mapping
+    write_tables:
+      - iam_oauth_claim_mapping
+      - ops_audit_log
+  - route: /admin/oauth/policies
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: listOAuthPolicies
+    operation_scope: app_shell
+    operation_id: iam.oauth.policies.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/iam/oauth/policies
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_policy
+  - route: /admin/oauth/policies
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: createOAuthPolicy
+    operation_scope: app_shell
+    operation_id: iam.oauth.policies.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/oauth/policies
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_policy
+    write_tables:
+      - iam_oauth_policy
+      - ops_audit_log
+  - route: /admin/oauth/policies
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: updateOAuthPolicy
+    operation_scope: app_shell
+    operation_id: iam.oauth.policies.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/iam/oauth/policies/{policyId}
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_policy
+    write_tables:
+      - iam_oauth_policy
+      - ops_audit_log
+  - route: /admin/oauth/tenant-bindings
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: listOAuthTenantBindings
+    operation_scope: app_shell
+    operation_id: iam.oauth.tenantBindings.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/iam/oauth/tenant_bindings
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_tenant_binding
+  - route: /admin/oauth/tenant-bindings
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: createOAuthTenantBinding
+    operation_scope: app_shell
+    operation_id: iam.oauth.tenantBindings.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/oauth/tenant_bindings
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_tenant_binding
+    write_tables:
+      - iam_oauth_tenant_binding
+      - ops_audit_log
+  - route: /admin/oauth/tenant-bindings
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: updateOAuthTenantBinding
+    operation_scope: app_shell
+    operation_id: iam.oauth.tenantBindings.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/iam/oauth/tenant_bindings/{bindingId}
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_tenant_binding
+    write_tables:
+      - iam_oauth_tenant_binding
+      - ops_audit_log
+  - route: /admin/oauth/operator-platforms
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: listOAuthOperatorPlatforms
+    operation_scope: app_shell
+    operation_id: iam.oauth.operatorPlatforms.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/iam/oauth/operator_platforms
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_operator_platform
+  - route: /admin/oauth/operator-platforms
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: createOAuthOperatorPlatform
+    operation_scope: app_shell
+    operation_id: iam.oauth.operatorPlatforms.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/oauth/operator_platforms
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_operator_platform
+    write_tables:
+      - iam_oauth_operator_platform
+      - ops_audit_log
+  - route: /admin/oauth/operator-platforms
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: createOAuthOperatorPreAuthorization
+    operation_scope: app_shell
+    operation_id: iam.oauth.operatorPlatforms.preAuthorizations.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/oauth/operator_platforms/{operatorPlatformId}/pre_authorizations
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_operator_platform
+    write_tables:
+      - iam_oauth_operator_platform
+      - ops_audit_log
+  - route: /admin/oauth/resource-accounts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: listOAuthResourceAccounts
+    operation_scope: app_shell
+    operation_id: iam.oauth.resourceAccounts.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/iam/oauth/resource_accounts
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_resource_account
+  - route: /admin/oauth/resource-accounts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: createOAuthResourceAccount
+    operation_scope: app_shell
+    operation_id: iam.oauth.resourceAccounts.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/oauth/resource_accounts
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_resource_account
+    write_tables:
+      - iam_oauth_resource_account
+      - ops_audit_log
+  - route: /admin/oauth/resource-accounts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: updateOAuthResourceAccount
+    operation_scope: app_shell
+    operation_id: iam.oauth.resourceAccounts.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/iam/oauth/resource_accounts/{resourceAccountId}
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_resource_account
+    write_tables:
+      - iam_oauth_resource_account
+      - ops_audit_log
+  - route: /admin/oauth/resource-accounts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: verifyOAuthResourceAccount
+    operation_scope: app_shell
+    operation_id: iam.oauth.resourceAccounts.verifications.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/oauth/resource_accounts/{resourceAccountId}/verifications
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_resource_account
+    write_tables:
+      - iam_oauth_resource_account
+      - ops_audit_log
+  - route: /admin/oauth/login/mini-programs
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: checkOAuthMiniProgramLogin
+    operation_scope: app_shell
+    operation_id: iam.oauth.resourceAccounts.miniProgramLoginChecks.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/oauth/resource_accounts/{resourceAccountId}/mini_program_login_checks
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_resource_account
+    write_tables:
+      - iam_oauth_resource_account
+      - ops_audit_log
+  - route: /admin/oauth/resource-accounts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: refreshOAuthResourceAuthorization
+    operation_scope: app_shell
+    operation_id: iam.oauth.resourceAccounts.authorizationRefreshes.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/oauth/resource_accounts/{resourceAccountId}/authorization_refreshes
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_resource_account
+    write_tables:
+      - iam_oauth_resource_account
+      - ops_audit_log
+  - route: /admin/oauth/resource-authorizations
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: listOAuthResourceAuthorizations
+    operation_scope: app_shell
+    operation_id: iam.oauth.resourceAuthorizations.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/iam/oauth/resource_authorizations
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_resource_authorization
+  - route: /admin/oauth/resource-authorizations
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: createOAuthResourceAuthorization
+    operation_scope: app_shell
+    operation_id: iam.oauth.resourceAuthorizations.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/oauth/resource_authorizations
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_resource_authorization
+    write_tables:
+      - iam_oauth_resource_authorization
+      - ops_audit_log
+  - route: /admin/oauth/resource-authorizations
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: updateOAuthResourceAuthorization
+    operation_scope: app_shell
+    operation_id: iam.oauth.resourceAuthorizations.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/iam/oauth/resource_authorizations/{authorizationId}
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_resource_authorization
+    write_tables:
+      - iam_oauth_resource_authorization
+      - ops_audit_log
+  - route: /admin/oauth/webhooks
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: listOAuthWebhooks
+    operation_scope: app_shell
+    operation_id: iam.oauth.webhookConfigs.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/iam/oauth/webhook_configs
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_webhook_config
+  - route: /admin/oauth/webhooks
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: createOAuthWebhook
+    operation_scope: app_shell
+    operation_id: iam.oauth.webhookConfigs.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/oauth/webhook_configs
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_webhook_config
+    write_tables:
+      - iam_oauth_webhook_config
+      - ops_audit_log
+  - route: /admin/oauth/webhooks
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: updateOAuthWebhook
+    operation_scope: app_shell
+    operation_id: iam.oauth.webhookConfigs.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/iam/oauth/webhook_configs/{webhookConfigId}
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_webhook_config
+    write_tables:
+      - iam_oauth_webhook_config
+      - ops_audit_log
+  - route: /admin/oauth/webhooks
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: verifyOAuthWebhook
+    operation_scope: app_shell
+    operation_id: iam.oauth.webhookConfigs.verifications.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/oauth/webhook_configs/{webhookConfigId}/verifications
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_webhook_config
+    write_tables:
+      - iam_oauth_webhook_config
+      - ops_audit_log
+  - route: /admin/oauth/operational-resources
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: listOAuthOperationalResources
+    operation_scope: app_shell
+    operation_id: iam.oauth.operationalResources.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/iam/oauth/operational_resources
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_operational_resource
+  - route: /admin/oauth/operational-resources
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: createOAuthOperationalResource
+    operation_scope: app_shell
+    operation_id: iam.oauth.operationalResources.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/oauth/operational_resources
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_operational_resource
+    write_tables:
+      - iam_oauth_operational_resource
+      - ops_audit_log
+  - route: /admin/oauth/operational-resources
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: updateOAuthOperationalResource
+    operation_scope: app_shell
+    operation_id: iam.oauth.operationalResources.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/iam/oauth/operational_resources/{resourceId}
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_operational_resource
+    write_tables:
+      - iam_oauth_operational_resource
+      - ops_audit_log
+  - route: /admin/oauth/operational-resources
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: deleteOAuthOperationalResource
+    operation_scope: app_shell
+    operation_id: iam.oauth.operationalResources.delete
+    kind: delete
+    api_surface: backend
+    api_method: DELETE
+    api_path: /backend/v3/api/iam/oauth/operational_resources/{resourceId}
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_operational_resource
+    write_tables:
+      - iam_oauth_operational_resource
+      - ops_audit_log
+  - route: /admin/oauth/operational-resources
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: publishOAuthOperationalResource
+    operation_scope: app_shell
+    operation_id: iam.oauth.operationalResources.publishes.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/oauth/operational_resources/{resourceId}/publishes
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_operational_resource
+    write_tables:
+      - iam_oauth_operational_resource
+      - ops_audit_log
+  - route: /admin/oauth/account-links
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: listOAuthAccountLinks
+    operation_scope: app_shell
+    operation_id: iam.oauth.accountLinks.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/iam/oauth/account_links
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_account_link
+  - route: /admin/oauth/account-links
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: updateOAuthAccountLink
+    operation_scope: app_shell
+    operation_id: iam.oauth.accountLinks.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/iam/oauth/account_links/{accountLinkId}
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_account_link
+    write_tables:
+      - iam_oauth_account_link
+      - ops_audit_log
+  - route: /admin/oauth/grants
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: listOAuthGrants
+    operation_scope: app_shell
+    operation_id: iam.oauth.grants.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/iam/oauth/grants
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_grant
+  - route: /admin/oauth/grants
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: deleteOAuthGrant
+    operation_scope: app_shell
+    operation_id: iam.oauth.grants.delete
+    kind: delete
+    api_surface: backend
+    api_method: DELETE
+    api_path: /backend/v3/api/iam/oauth/grants/{grantId}
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_grant
+    write_tables:
+      - iam_oauth_grant
+      - ops_audit_log
+  - route: /admin/oauth/callback-diagnostics
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: listOAuthCallbackEvents
+    operation_scope: app_shell
+    operation_id: iam.oauth.callbackEvents.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/iam/oauth/callback_events
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_callback_event
+  - route: /admin/oauth/diagnostic-runs
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: listOAuthDiagnosticRuns
+    operation_scope: app_shell
+    operation_id: iam.oauth.diagnosticRuns.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/iam/oauth/diagnostic_runs
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_diagnostic_run
+  - route: /admin/oauth/diagnostic-runs
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: createOAuthDiagnosticRun
+    operation_scope: app_shell
+    operation_id: iam.oauth.diagnosticRuns.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/oauth/diagnostic_runs
+    sdk_domain: appbase
+    openapi_exposed: false
+    read_sources:
+      - iam_oauth_diagnostic_run
+    write_tables:
+      - iam_oauth_diagnostic_run
+      - ops_audit_log
   - route: /admin/channel
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
     operation: fetchChannels
@@ -37548,554 +38440,6 @@ frontend_operations:
       name: AdminMcpBindingMutationResponse
       schema:
         $ref: '#/components/schemas/AdminMcpBindingMutationResponse'
-  - route: /admin/open-platform
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts
-    operation: listOpenPlatformProviders
-    operation_id: providers.list
-    kind: read
-    api_surface: backend
-    api_method: GET
-    api_path: /backend/v3/api/open_platform/providers
-    sdk_domain: platform
-    read_sources:
-      - open_platform_provider
-    query_parameters:
-      - name: status
-        schema: { type: string, enum: [active, inactive] }
-    response_schema:
-      name: OpenPlatformProviderListResponse
-      required: [items]
-      properties:
-        items:
-          type: array
-          items:
-            name: OpenPlatformProviderItem
-            type: object
-            additionalProperties: false
-            required: [id, provider, name, status]
-            properties:
-              id: { type: string, minLength: 1, maxLength: 128 }
-              provider: { type: string, enum: [wechat, alipay, douyin, baidu, kuaishou, feishu] }
-              name: { type: string, minLength: 1, maxLength: 128 }
-              status: { type: string, enum: [active, inactive] }
-  - route: /admin/open-platform
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts
-    operation: listOpenPlatformManifests
-    operation_id: manifests.list
-    kind: read
-    api_surface: backend
-    api_method: GET
-    api_path: /backend/v3/api/open_platform/manifests
-    sdk_domain: platform
-    read_sources:
-      - open_platform_manifest
-    query_parameters:
-      - name: provider
-        schema: { type: string, enum: [wechat, alipay, douyin, baidu, kuaishou, feishu] }
-      - name: type
-        schema: { type: string, enum: [official_account, mini_app, life_account, bot] }
-    response_schema:
-      name: OpenPlatformManifestListResponse
-      required: [items]
-      properties:
-        items:
-          type: array
-          items:
-            name: OpenPlatformManifestItem
-            type: object
-            additionalProperties: false
-            required: [id, key, provider, type, version, status]
-            properties:
-              id: { type: string, minLength: 1, maxLength: 128 }
-              key: { type: string, minLength: 1, maxLength: 128 }
-              provider: { type: string, enum: [wechat, alipay, douyin, baidu, kuaishou, feishu] }
-              type: { type: string, enum: [official_account, mini_app, life_account, bot] }
-              version: { type: string, minLength: 1, maxLength: 64 }
-              status: { type: string, enum: [active, inactive] }
-  - route: /admin/open-platform
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts
-    operation: listOpenPlatformAccounts
-    operation_id: accounts.list
-    kind: read
-    api_surface: backend
-    api_method: GET
-    api_path: /backend/v3/api/open_platform/accounts
-    sdk_domain: platform
-    read_sources:
-      - open_platform_account
-    query_parameters:
-      - name: provider
-        schema: { type: string, enum: [wechat, alipay, douyin, baidu, kuaishou, feishu] }
-      - name: type
-        schema: { type: string, enum: [official_account, mini_app, life_account, bot] }
-      - name: status
-        schema: { type: string, enum: [active, inactive] }
-      - name: page
-        schema: { type: integer, format: int64, minimum: 1 }
-      - name: page_size
-        schema: { type: integer, format: int64, minimum: 1, maximum: 200 }
-    response_schema:
-      name: OpenPlatformAccountListResponse
-      required: [items]
-      properties:
-        items:
-          type: array
-          items:
-            name: OpenPlatformAccountItem
-            type: object
-            additionalProperties: false
-            required: [id, key, name, provider, qrDefault, status, type]
-            properties:
-              id: { type: string, minLength: 1, maxLength: 128 }
-              key: { type: string, minLength: 1, maxLength: 128, pattern: '^[a-z0-9][a-z0-9._:-]*$' }
-              name: { type: string, minLength: 1, maxLength: 128 }
-              provider: { type: string, enum: [wechat, alipay, douyin, baidu, kuaishou, feishu] }
-              type: { type: string, enum: [official_account, mini_app, life_account, bot] }
-              appId: { type: string, nullable: true, maxLength: 128 }
-              secretRef: { type: string, nullable: true, maxLength: 256 }
-              tokenRef: { type: string, nullable: true, maxLength: 256 }
-              aesKeyRef: { type: string, nullable: true, maxLength: 256 }
-              defaultEntryId: { type: string, nullable: true, maxLength: 128 }
-              qrDefault: { type: boolean }
-              status: { type: string, enum: [active, inactive] }
-              createdAt: { type: string, maxLength: 64 }
-              updatedAt: { type: string, maxLength: 64 }
-  - route: /admin/open-platform
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts
-    operation: createOpenPlatformAccount
-    operation_id: accounts.create
-    kind: create
-    api_surface: backend
-    api_method: POST
-    api_path: /backend/v3/api/open_platform/accounts
-    sdk_domain: platform
-    read_sources:
-      - open_platform_account
-    write_tables:
-      - open_platform_account
-      - ops_audit_log
-    request_schema:
-      name: OpenPlatformAccountCreateRequest
-      required: [key, name, provider, type]
-      properties:
-        key: { type: string, minLength: 1, maxLength: 128, pattern: '^[a-z0-9][a-z0-9._:-]*$' }
-        name: { type: string, minLength: 1, maxLength: 128 }
-        provider: { type: string, enum: [wechat, alipay, douyin, baidu, kuaishou, feishu] }
-        type: { type: string, enum: [official_account, mini_app, life_account, bot] }
-        appId: { type: string, nullable: true, maxLength: 128 }
-        appSecret: { type: string, nullable: true, maxLength: 4096 }
-        token: { type: string, nullable: true, maxLength: 4096 }
-        encodingAesKey: { type: string, nullable: true, maxLength: 4096 }
-    response_schema:
-      name: OpenPlatformAccountResponse
-      required: [item]
-      properties:
-        item:
-          name: OpenPlatformAccountItem
-          type: object
-          additionalProperties: false
-          required: [id, key, name, provider, qrDefault, status, type]
-          properties:
-            id: { type: string, minLength: 1, maxLength: 128 }
-            key: { type: string, minLength: 1, maxLength: 128, pattern: '^[a-z0-9][a-z0-9._:-]*$' }
-            name: { type: string, minLength: 1, maxLength: 128 }
-            provider: { type: string, enum: [wechat, alipay, douyin, baidu, kuaishou, feishu] }
-            type: { type: string, enum: [official_account, mini_app, life_account, bot] }
-            appId: { type: string, nullable: true, maxLength: 128 }
-            secretRef: { type: string, nullable: true, maxLength: 256 }
-            tokenRef: { type: string, nullable: true, maxLength: 256 }
-            aesKeyRef: { type: string, nullable: true, maxLength: 256 }
-            defaultEntryId: { type: string, nullable: true, maxLength: 128 }
-            qrDefault: { type: boolean }
-            status: { type: string, enum: [active, inactive] }
-            createdAt: { type: string, maxLength: 64 }
-            updatedAt: { type: string, maxLength: 64 }
-  - route: /admin/open-platform
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts
-    operation: retrieveOpenPlatformAccount
-    operation_id: accounts.retrieve
-    kind: read
-    api_surface: backend
-    api_method: GET
-    api_path: /backend/v3/api/open_platform/accounts/{accountId}
-    sdk_domain: platform
-    read_sources:
-      - open_platform_account
-    query_parameters: []
-    response_schema:
-      name: OpenPlatformAccountResponse
-      required: [item]
-      properties:
-        item:
-          name: OpenPlatformAccountItem
-          type: object
-          additionalProperties: false
-          required: [id, key, name, provider, qrDefault, status, type]
-          properties:
-            id: { type: string, minLength: 1, maxLength: 128 }
-            key: { type: string, minLength: 1, maxLength: 128, pattern: '^[a-z0-9][a-z0-9._:-]*$' }
-            name: { type: string, minLength: 1, maxLength: 128 }
-            provider: { type: string, enum: [wechat, alipay, douyin, baidu, kuaishou, feishu] }
-            type: { type: string, enum: [official_account, mini_app, life_account, bot] }
-            appId: { type: string, nullable: true, maxLength: 128 }
-            secretRef: { type: string, nullable: true, maxLength: 256 }
-            tokenRef: { type: string, nullable: true, maxLength: 256 }
-            aesKeyRef: { type: string, nullable: true, maxLength: 256 }
-            defaultEntryId: { type: string, nullable: true, maxLength: 128 }
-            qrDefault: { type: boolean }
-            status: { type: string, enum: [active, inactive] }
-            createdAt: { type: string, maxLength: 64 }
-            updatedAt: { type: string, maxLength: 64 }
-  - route: /admin/open-platform
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts
-    operation: updateOpenPlatformAccount
-    operation_id: accounts.update
-    kind: update
-    api_surface: backend
-    api_method: PATCH
-    api_path: /backend/v3/api/open_platform/accounts/{accountId}
-    sdk_domain: platform
-    read_sources:
-      - open_platform_account
-    write_tables:
-      - open_platform_account
-      - ops_audit_log
-    request_schema:
-      name: OpenPlatformAccountUpdateRequest
-      required: []
-      properties:
-        name: { type: string, minLength: 1, maxLength: 128 }
-        appId: { type: string, nullable: true, maxLength: 128 }
-        appSecret: { type: string, nullable: true, maxLength: 4096 }
-        token: { type: string, nullable: true, maxLength: 4096 }
-        encodingAesKey: { type: string, nullable: true, maxLength: 4096 }
-        defaultEntryId: { type: string, nullable: true, maxLength: 128 }
-        qrDefault: { type: boolean }
-        status: { type: string, enum: [active, inactive] }
-    response_schema:
-      name: OpenPlatformAccountResponse
-      required: [item]
-      properties:
-        item:
-          name: OpenPlatformAccountItem
-          type: object
-          additionalProperties: false
-          required: [id, key, name, provider, qrDefault, status, type]
-          properties:
-            id: { type: string, minLength: 1, maxLength: 128 }
-            key: { type: string, minLength: 1, maxLength: 128, pattern: '^[a-z0-9][a-z0-9._:-]*$' }
-            name: { type: string, minLength: 1, maxLength: 128 }
-            provider: { type: string, enum: [wechat, alipay, douyin, baidu, kuaishou, feishu] }
-            type: { type: string, enum: [official_account, mini_app, life_account, bot] }
-            appId: { type: string, nullable: true, maxLength: 128 }
-            secretRef: { type: string, nullable: true, maxLength: 256 }
-            tokenRef: { type: string, nullable: true, maxLength: 256 }
-            aesKeyRef: { type: string, nullable: true, maxLength: 256 }
-            defaultEntryId: { type: string, nullable: true, maxLength: 128 }
-            qrDefault: { type: boolean }
-            status: { type: string, enum: [active, inactive] }
-            createdAt: { type: string, maxLength: 64 }
-            updatedAt: { type: string, maxLength: 64 }
-  - route: /admin/open-platform
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts
-    operation: deleteOpenPlatformAccount
-    operation_id: accounts.delete
-    kind: delete
-    api_surface: backend
-    api_method: DELETE
-    api_path: /backend/v3/api/open_platform/accounts/{accountId}
-    sdk_domain: platform
-    read_sources:
-      - open_platform_account
-    write_tables:
-      - open_platform_account
-      - ops_audit_log
-    request_body_required: false
-    response_schema:
-      name: OpenPlatformAccountResponse
-      required: [item]
-      properties:
-        item:
-          name: OpenPlatformAccountItem
-          type: object
-          additionalProperties: false
-          required: [id, key, name, provider, qrDefault, status, type]
-          properties:
-            id: { type: string, minLength: 1, maxLength: 128 }
-            key: { type: string, minLength: 1, maxLength: 128, pattern: '^[a-z0-9][a-z0-9._:-]*$' }
-            name: { type: string, minLength: 1, maxLength: 128 }
-            provider: { type: string, enum: [wechat, alipay, douyin, baidu, kuaishou, feishu] }
-            type: { type: string, enum: [official_account, mini_app, life_account, bot] }
-            appId: { type: string, nullable: true, maxLength: 128 }
-            secretRef: { type: string, nullable: true, maxLength: 256 }
-            tokenRef: { type: string, nullable: true, maxLength: 256 }
-            aesKeyRef: { type: string, nullable: true, maxLength: 256 }
-            defaultEntryId: { type: string, nullable: true, maxLength: 128 }
-            qrDefault: { type: boolean }
-            status: { type: string, enum: [active, inactive] }
-            createdAt: { type: string, maxLength: 64 }
-            updatedAt: { type: string, maxLength: 64 }
-  - route: /admin/open-platform
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts
-    operation: listOpenPlatformAccountEntries
-    operation_id: accounts.entries.list
-    kind: read
-    api_surface: backend
-    api_method: GET
-    api_path: /backend/v3/api/open_platform/accounts/{accountId}/entries
-    sdk_domain: platform
-    read_sources:
-      - open_platform_account
-      - open_platform_entry
-    query_parameters: []
-    response_schema:
-      name: OpenPlatformEntryListResponse
-      required: [items]
-      properties:
-        items:
-          type: array
-          items:
-            name: OpenPlatformEntryItem
-            type: object
-            additionalProperties: false
-            required: [id, accountId, key, type, url, status]
-            properties:
-              id: { type: string, minLength: 1, maxLength: 128 }
-              accountId: { type: string, minLength: 1, maxLength: 128 }
-              key: { type: string, minLength: 1, maxLength: 128, pattern: '^[a-z0-9][a-z0-9._:-]*$' }
-              type: { type: string, enum: [url, qr, mini_app_url] }
-              url: { type: string, minLength: 1, maxLength: 1024 }
-              status: { type: string, enum: [active, inactive] }
-              createdAt: { type: string, maxLength: 64 }
-              updatedAt: { type: string, maxLength: 64 }
-  - route: /admin/open-platform
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts
-    operation: createOpenPlatformAccountEntry
-    operation_id: accounts.entries.create
-    kind: create
-    api_surface: backend
-    api_method: POST
-    api_path: /backend/v3/api/open_platform/accounts/{accountId}/entries
-    sdk_domain: platform
-    read_sources:
-      - open_platform_account
-      - open_platform_entry
-    write_tables:
-      - open_platform_entry
-      - ops_audit_log
-    request_schema:
-      name: OpenPlatformEntryCreateRequest
-      required: [key, type, url]
-      properties:
-        key: { type: string, minLength: 1, maxLength: 128, pattern: '^[a-z0-9][a-z0-9._:-]*$' }
-        type: { type: string, enum: [url, qr, mini_app_url] }
-        url: { type: string, minLength: 1, maxLength: 1024 }
-    response_schema:
-      name: OpenPlatformEntryResponse
-      required: [item]
-      properties:
-        item:
-          name: OpenPlatformEntryItem
-          type: object
-          additionalProperties: false
-          required: [id, accountId, key, type, url, status]
-          properties:
-            id: { type: string, minLength: 1, maxLength: 128 }
-            accountId: { type: string, minLength: 1, maxLength: 128 }
-            key: { type: string, minLength: 1, maxLength: 128, pattern: '^[a-z0-9][a-z0-9._:-]*$' }
-            type: { type: string, enum: [url, qr, mini_app_url] }
-            url: { type: string, minLength: 1, maxLength: 1024 }
-            status: { type: string, enum: [active, inactive] }
-            createdAt: { type: string, maxLength: 64 }
-            updatedAt: { type: string, maxLength: 64 }
-  - route: /admin/open-platform
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts
-    operation: updateOpenPlatformAccountEntry
-    operation_id: accounts.entries.update
-    kind: update
-    api_surface: backend
-    api_method: PATCH
-    api_path: /backend/v3/api/open_platform/accounts/{accountId}/entries/{entryId}
-    sdk_domain: platform
-    read_sources:
-      - open_platform_account
-      - open_platform_entry
-    write_tables:
-      - open_platform_entry
-      - open_platform_account
-      - ops_audit_log
-    request_schema:
-      name: OpenPlatformEntryUpdateRequest
-      required: []
-      properties:
-        key: { type: string, minLength: 1, maxLength: 128, pattern: '^[a-z0-9][a-z0-9._:-]*$' }
-        type: { type: string, enum: [url, qr, mini_app_url] }
-        url: { type: string, minLength: 1, maxLength: 1024 }
-        status: { type: string, enum: [active, inactive] }
-    response_schema:
-      name: OpenPlatformEntryResponse
-      required: [item]
-      properties:
-        item:
-          name: OpenPlatformEntryItem
-          type: object
-          additionalProperties: false
-          required: [id, accountId, key, type, url, status]
-          properties:
-            id: { type: string, minLength: 1, maxLength: 128 }
-            accountId: { type: string, minLength: 1, maxLength: 128 }
-            key: { type: string, minLength: 1, maxLength: 128, pattern: '^[a-z0-9][a-z0-9._:-]*$' }
-            type: { type: string, enum: [url, qr, mini_app_url] }
-            url: { type: string, minLength: 1, maxLength: 1024 }
-            status: { type: string, enum: [active, inactive] }
-            createdAt: { type: string, maxLength: 64 }
-            updatedAt: { type: string, maxLength: 64 }
-  - route: /admin/open-platform
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts
-    operation: deleteOpenPlatformAccountEntry
-    operation_id: accounts.entries.delete
-    kind: delete
-    api_surface: backend
-    api_method: DELETE
-    api_path: /backend/v3/api/open_platform/accounts/{accountId}/entries/{entryId}
-    sdk_domain: platform
-    read_sources:
-      - open_platform_account
-      - open_platform_entry
-    write_tables:
-      - open_platform_entry
-      - open_platform_account
-      - ops_audit_log
-    request_body_required: false
-    response_schema:
-      name: OpenPlatformEntryResponse
-      required: [item]
-      properties:
-        item:
-          name: OpenPlatformEntryItem
-          type: object
-          additionalProperties: false
-          required: [id, accountId, key, type, url, status]
-          properties:
-            id: { type: string, minLength: 1, maxLength: 128 }
-            accountId: { type: string, minLength: 1, maxLength: 128 }
-            key: { type: string, minLength: 1, maxLength: 128, pattern: '^[a-z0-9][a-z0-9._:-]*$' }
-            type: { type: string, enum: [url, qr, mini_app_url] }
-            url: { type: string, minLength: 1, maxLength: 1024 }
-            status: { type: string, enum: [active, inactive] }
-            createdAt: { type: string, maxLength: 64 }
-            updatedAt: { type: string, maxLength: 64 }
-  - route: /admin/open-platform
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts
-    operation: listOpenPlatformAccountPayBindings
-    operation_id: accounts.payBindings.list
-    kind: read
-    api_surface: backend
-    api_method: GET
-    api_path: /backend/v3/api/open_platform/accounts/{accountId}/pay_bindings
-    sdk_domain: platform
-    read_sources:
-      - open_platform_account
-      - open_platform_pay_binding
-    query_parameters: []
-    response_schema:
-      name: OpenPlatformPayBindingListResponse
-      required: [items]
-      properties:
-        items:
-          type: array
-          items:
-            name: OpenPlatformPayBindingItem
-            type: object
-            additionalProperties: false
-            required: [id, accountId, paymentAccountId, scene, mode, status]
-            properties:
-              id: { type: string, minLength: 1, maxLength: 128 }
-              accountId: { type: string, minLength: 1, maxLength: 128 }
-              paymentAccountId: { type: string, minLength: 1, maxLength: 128 }
-              paymentChannelId: { type: string, nullable: true, maxLength: 128 }
-              scene: { type: string, enum: [official_account, mini_app, h5, app] }
-              mode: { type: string, enum: [direct, cashier, escrow] }
-              status: { type: string, enum: [active, inactive] }
-              createdAt: { type: string, maxLength: 64 }
-              updatedAt: { type: string, maxLength: 64 }
-  - route: /admin/open-platform
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts
-    operation: createOpenPlatformAccountPayBinding
-    operation_id: accounts.payBindings.create
-    kind: create
-    api_surface: backend
-    api_method: POST
-    api_path: /backend/v3/api/open_platform/accounts/{accountId}/pay_bindings
-    sdk_domain: platform
-    read_sources:
-      - open_platform_account
-      - open_platform_pay_binding
-    write_tables:
-      - open_platform_pay_binding
-      - ops_audit_log
-    request_schema:
-      name: OpenPlatformPayBindingCreateRequest
-      required: [paymentAccountId, scene, mode]
-      properties:
-        paymentAccountId: { type: string, minLength: 1, maxLength: 128 }
-        paymentChannelId: { type: string, nullable: true, maxLength: 128 }
-        scene: { type: string, enum: [official_account, mini_app, h5, app] }
-        mode: { type: string, enum: [direct, cashier, escrow] }
-    response_schema:
-      name: OpenPlatformPayBindingResponse
-      required: [item]
-      properties:
-        item:
-          name: OpenPlatformPayBindingItem
-          type: object
-          additionalProperties: false
-          required: [id, accountId, paymentAccountId, scene, mode, status]
-          properties:
-            id: { type: string, minLength: 1, maxLength: 128 }
-            accountId: { type: string, minLength: 1, maxLength: 128 }
-            paymentAccountId: { type: string, minLength: 1, maxLength: 128 }
-            paymentChannelId: { type: string, nullable: true, maxLength: 128 }
-            scene: { type: string, enum: [official_account, mini_app, h5, app] }
-            mode: { type: string, enum: [direct, cashier, escrow] }
-            status: { type: string, enum: [active, inactive] }
-            createdAt: { type: string, maxLength: 64 }
-            updatedAt: { type: string, maxLength: 64 }
-  - route: /admin/open-platform
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts
-    operation: deleteOpenPlatformAccountPayBinding
-    operation_id: accounts.payBindings.delete
-    kind: delete
-    api_surface: backend
-    api_method: DELETE
-    api_path: /backend/v3/api/open_platform/accounts/{accountId}/pay_bindings/{bindingId}
-    sdk_domain: platform
-    read_sources:
-      - open_platform_account
-      - open_platform_pay_binding
-    write_tables:
-      - open_platform_pay_binding
-      - ops_audit_log
-    request_body_required: false
-    response_schema:
-      name: OpenPlatformPayBindingResponse
-      required: [item]
-      properties:
-        item:
-          name: OpenPlatformPayBindingItem
-          type: object
-          additionalProperties: false
-          required: [id, accountId, paymentAccountId, scene, mode, status]
-          properties:
-            id: { type: string, minLength: 1, maxLength: 128 }
-            accountId: { type: string, minLength: 1, maxLength: 128 }
-            paymentAccountId: { type: string, minLength: 1, maxLength: 128 }
-            paymentChannelId: { type: string, nullable: true, maxLength: 128 }
-            scene: { type: string, enum: [official_account, mini_app, h5, app] }
-            mode: { type: string, enum: [direct, cashier, escrow] }
-            status: { type: string, enum: [active, inactive] }
-            createdAt: { type: string, maxLength: 64 }
-            updatedAt: { type: string, maxLength: 64 }
   - route: /admin/app
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     operation: fetchApps
@@ -40615,260 +40959,6 @@ frontend_operations:
             status: { type: string, enum: [canceled, completed, created, failed, running] }
             createdAt: { type: string, maxLength: 64 }
         requestId: { type: string, minLength: 1, maxLength: 128 }
-  - route: /admin/memberships
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
-    operation: fetchMembershipAdminPlans
-    operation_scope: app_shell
-    operation_id: memberships.admin.plans.fetch
-    kind: read
-    api_surface: backend
-    api_method: GET
-    api_path: /backend/v3/api/memberships/plans
-    openapi_exposed: false
-    sdk_domain: commerce
-    read_sources:
-      - commerce_membership_plan
-  - route: /admin/memberships
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
-    operation: createMembershipAdminPlan
-    operation_scope: app_shell
-    operation_id: memberships.admin.plans.create
-    kind: create
-    api_surface: backend
-    api_method: POST
-    api_path: /backend/v3/api/memberships/plans
-    openapi_exposed: false
-    sdk_domain: commerce
-    read_sources:
-      - commerce_membership_plan
-    write_tables:
-      - commerce_membership_plan
-      - commerce_membership_entitlement
-      - ops_audit_log
-  - route: /admin/open-platform/mini-programs/accounts
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
-    operation: fetchAccounts
-    operation_scope: app_shell
-    operation_id: openPlatform.wechatMini.accounts.fetch
-    kind: read
-    api_surface: backend
-    api_method: GET
-    api_path: /backend/v3/api/open_platform/accounts
-    openapi_exposed: false
-    sdk_domain: platform
-    read_sources:
-      - open_platform_account
-  - route: /admin/open-platform/mini-programs/accounts
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
-    operation: createAccount
-    operation_scope: app_shell
-    operation_id: openPlatform.wechatMini.accounts.create
-    kind: create
-    api_surface: backend
-    api_method: POST
-    api_path: /backend/v3/api/open_platform/accounts
-    openapi_exposed: false
-    sdk_domain: platform
-    read_sources:
-      - open_platform_account
-    write_tables:
-      - open_platform_account
-      - ops_audit_log
-  - route: /admin/open-platform/mini-programs/accounts
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
-    operation: updateAccount
-    operation_scope: app_shell
-    operation_id: openPlatform.wechatMini.accounts.update
-    kind: update
-    api_surface: backend
-    api_method: PATCH
-    api_path: /backend/v3/api/open_platform/accounts/{accountId}
-    openapi_exposed: false
-    sdk_domain: platform
-    read_sources:
-      - open_platform_account
-    write_tables:
-      - open_platform_account
-      - ops_audit_log
-  - route: /admin/open-platform/mini-programs/urls
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
-    operation: fetchEntries
-    operation_scope: app_shell
-    operation_id: openPlatform.wechatMini.entries.fetch
-    kind: read
-    api_surface: backend
-    api_method: GET
-    api_path: /backend/v3/api/open_platform/accounts/{accountId}/entries
-    openapi_exposed: false
-    sdk_domain: platform
-    read_sources:
-      - open_platform_account
-      - open_platform_entry
-  - route: /admin/open-platform/mini-programs/urls
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
-    operation: createEntry
-    operation_scope: app_shell
-    operation_id: openPlatform.wechatMini.entries.create
-    kind: create
-    api_surface: backend
-    api_method: POST
-    api_path: /backend/v3/api/open_platform/accounts/{accountId}/entries
-    openapi_exposed: false
-    sdk_domain: platform
-    read_sources:
-      - open_platform_account
-      - open_platform_entry
-    write_tables:
-      - open_platform_entry
-      - ops_audit_log
-  - route: /admin/open-platform/mini-programs/urls
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
-    operation: updateEntry
-    operation_scope: app_shell
-    operation_id: openPlatform.wechatMini.entries.update
-    kind: update
-    api_surface: backend
-    api_method: PATCH
-    api_path: /backend/v3/api/open_platform/accounts/{accountId}/entries/{entryId}
-    openapi_exposed: false
-    sdk_domain: platform
-    read_sources:
-      - open_platform_account
-      - open_platform_entry
-    write_tables:
-      - open_platform_entry
-      - open_platform_account
-      - ops_audit_log
-  - route: /admin/open-platform/mini-programs/urls
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
-    operation: deleteEntry
-    operation_scope: app_shell
-    operation_id: openPlatform.wechatMini.entries.delete
-    kind: delete
-    api_surface: backend
-    api_method: DELETE
-    api_path: /backend/v3/api/open_platform/accounts/{accountId}/entries/{entryId}
-    openapi_exposed: false
-    sdk_domain: platform
-    read_sources:
-      - open_platform_account
-      - open_platform_entry
-    write_tables:
-      - open_platform_entry
-      - open_platform_account
-      - ops_audit_log
-  - route: /admin/open-platform/official-accounts/accounts
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
-    operation: fetchAccounts
-    operation_scope: app_shell
-    operation_id: openPlatform.wechatOfficial.accounts.fetch
-    kind: read
-    api_surface: backend
-    api_method: GET
-    api_path: /backend/v3/api/open_platform/accounts
-    openapi_exposed: false
-    sdk_domain: platform
-    read_sources:
-      - open_platform_account
-  - route: /admin/open-platform/official-accounts/accounts
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
-    operation: createAccount
-    operation_scope: app_shell
-    operation_id: openPlatform.wechatOfficial.accounts.create
-    kind: create
-    api_surface: backend
-    api_method: POST
-    api_path: /backend/v3/api/open_platform/accounts
-    openapi_exposed: false
-    sdk_domain: platform
-    read_sources:
-      - open_platform_account
-    write_tables:
-      - open_platform_account
-      - ops_audit_log
-  - route: /admin/open-platform/official-accounts/accounts
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
-    operation: updateAccount
-    operation_scope: app_shell
-    operation_id: openPlatform.wechatOfficial.accounts.update
-    kind: update
-    api_surface: backend
-    api_method: PATCH
-    api_path: /backend/v3/api/open_platform/accounts/{accountId}
-    openapi_exposed: false
-    sdk_domain: platform
-    read_sources:
-      - open_platform_account
-    write_tables:
-      - open_platform_account
-      - ops_audit_log
-  - route: /admin/open-platform/official-accounts/menus
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
-    operation: fetchEntries
-    operation_scope: app_shell
-    operation_id: openPlatform.wechatOfficial.entries.fetch
-    kind: read
-    api_surface: backend
-    api_method: GET
-    api_path: /backend/v3/api/open_platform/accounts/{accountId}/entries
-    openapi_exposed: false
-    sdk_domain: platform
-    read_sources:
-      - open_platform_account
-      - open_platform_entry
-  - route: /admin/open-platform/official-accounts/menus
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
-    operation: createEntry
-    operation_scope: app_shell
-    operation_id: openPlatform.wechatOfficial.entries.create
-    kind: create
-    api_surface: backend
-    api_method: POST
-    api_path: /backend/v3/api/open_platform/accounts/{accountId}/entries
-    openapi_exposed: false
-    sdk_domain: platform
-    read_sources:
-      - open_platform_account
-      - open_platform_entry
-    write_tables:
-      - open_platform_entry
-      - ops_audit_log
-  - route: /admin/open-platform/official-accounts/menus
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
-    operation: updateEntry
-    operation_scope: app_shell
-    operation_id: openPlatform.wechatOfficial.entries.update
-    kind: update
-    api_surface: backend
-    api_method: PATCH
-    api_path: /backend/v3/api/open_platform/accounts/{accountId}/entries/{entryId}
-    openapi_exposed: false
-    sdk_domain: platform
-    read_sources:
-      - open_platform_account
-      - open_platform_entry
-    write_tables:
-      - open_platform_entry
-      - open_platform_account
-      - ops_audit_log
-  - route: /admin/open-platform/official-accounts/menus
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
-    operation: deleteEntry
-    operation_scope: app_shell
-    operation_id: openPlatform.wechatOfficial.entries.delete
-    kind: delete
-    api_surface: backend
-    api_method: DELETE
-    api_path: /backend/v3/api/open_platform/accounts/{accountId}/entries/{entryId}
-    openapi_exposed: false
-    sdk_domain: platform
-    read_sources:
-      - open_platform_account
-      - open_platform_entry
-    write_tables:
-      - open_platform_entry
-      - open_platform_account
-      - ops_audit_log
   - route: /admin/service-providers/dashboard
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-provider/src/serviceProviderService.ts
     operation: backendServiceProviderDashboardRetrieve
@@ -44204,8 +44294,16 @@ routes:
       - iam_security_event
       - iam_audit_event
       - ops_config_snapshot
-      - open_platform_account
-      - open_platform_entry
+      - iam_oauth_provider_catalog
+      - iam_oauth_integration
+      - iam_oauth_client
+      - iam_oauth_surface
+      - iam_oauth_flow_config
+      - iam_oauth_policy
+      - iam_oauth_tenant_binding
+      - iam_oauth_authorization_state
+      - iam_oauth_account_link
+      - iam_oauth_grant
     required_columns:
       iam_user:
         - tenant_id
@@ -44273,24 +44371,64 @@ routes:
         - config_payload
         - published_at
         - created_at
-      open_platform_account:
-        - uuid
-        - tenant_id
-        - organization_id
-        - provider
-        - account_type
-        - name
-        - account_key
-        - app_id
-        - qr_default
+      iam_oauth_provider_catalog:
+        - provider_code
+        - provider_family
+        - protocol_profile
+        - supported_surfaces
+        - supported_grant_types
         - status
-      open_platform_entry:
-        - uuid
+      iam_oauth_integration:
         - tenant_id
-        - organization_id
-        - account_id
-        - entry_type
-        - entry_url
+        - provider_code
+        - integration_key
+        - ownership_mode
+        - status
+      iam_oauth_client:
+        - integration_id
+        - surface_id
+        - client_identifier_ref
+        - status
+      iam_oauth_surface:
+        - tenant_id
+        - surface_type
+        - runtime_channel
+        - redirect_uri
+        - status
+      iam_oauth_flow_config:
+        - integration_id
+        - surface_id
+        - flow_type
+        - grant_type
+        - status
+      iam_oauth_policy:
+        - tenant_id
+        - policy_scope
+        - login_enabled
+        - account_linking_enabled
+        - status
+      iam_oauth_tenant_binding:
+        - tenant_id
+        - integration_id
+        - status
+      iam_oauth_authorization_state:
+        - tenant_id
+        - state_hash
+        - flow_type
+        - surface_type
+        - expires_at
+        - status
+      iam_oauth_account_link:
+        - tenant_id
+        - user_id
+        - provider_code
+        - external_subject_hash
+        - status
+      iam_oauth_grant:
+        - tenant_id
+        - user_id
+        - provider_code
+        - grant_type
         - status
   - route: /auth/register
     required_tables:
@@ -45359,6 +45497,7 @@ routes:
         - request_id
   - route: /admin/group
     required_tables:
+      - ai_api_key
       - ai_channel_group
       - ai_channel_group_metric_snapshot
       - ai_pricing_plan
@@ -45371,6 +45510,12 @@ routes:
       - ai_resource_group
       - ai_resource_group_item
       - ai_resource
+      - ai_model
+      - ai_model_pricing
+      - ai_model_provider_route
+      - ai_provider_route
+      - ai_routing_policy
+      - ai_routing_rule
       - ai_provider
       - ai_channel
       - ops_audit_log
@@ -45543,59 +45688,6 @@ routes:
       - content_course
       - content_course_relation
       - content_reaction
-  - route: /admin/open-platform
-    required_tables:
-      - open_platform_provider
-      - open_platform_manifest
-      - open_platform_account
-      - open_platform_entry
-      - open_platform_pay_binding
-      - ops_audit_log
-    required_columns:
-      open_platform_provider:
-        - uuid
-        - tenant_id
-        - organization_id
-        - provider
-        - name
-        - status
-      open_platform_manifest:
-        - uuid
-        - tenant_id
-        - organization_id
-        - provider
-        - account_type
-        - manifest_key
-        - version
-        - status
-      open_platform_account:
-        - uuid
-        - tenant_id
-        - organization_id
-        - provider
-        - account_type
-        - name
-        - account_key
-        - app_id
-        - qr_default
-        - status
-      open_platform_entry:
-        - uuid
-        - tenant_id
-        - organization_id
-        - account_id
-        - entry_type
-        - entry_url
-        - status
-      open_platform_pay_binding:
-        - uuid
-        - tenant_id
-        - organization_id
-        - account_id
-        - payment_account_id
-        - scene
-        - mode
-        - status
   - route: /admin/skill
     required_tables:
       - plus_agent_skill
@@ -46792,62 +46884,6 @@ routes:
       - commerce_payment_attempt
       - commerce_exchange_rule
       - ops_audit_log
-  - route: /admin/open-platform/official-accounts
-    required_tables:
-      - open_platform_provider
-      - open_platform_manifest
-      - open_platform_account
-      - open_platform_entry
-      - open_platform_pay_binding
-      - ops_audit_log
-  - route: /admin/open-platform/official-accounts/accounts
-    required_tables:
-      - open_platform_provider
-      - open_platform_manifest
-      - open_platform_account
-      - open_platform_entry
-      - open_platform_pay_binding
-      - ops_audit_log
-  - route: /admin/open-platform/official-accounts/menus
-    required_tables:
-      - open_platform_provider
-      - open_platform_manifest
-      - open_platform_account
-      - open_platform_entry
-      - open_platform_pay_binding
-      - ops_audit_log
-  - route: /admin/open-platform/official-accounts/messages
-    required_tables:
-      - open_platform_provider
-      - open_platform_manifest
-      - open_platform_account
-      - open_platform_entry
-      - open_platform_pay_binding
-      - ops_audit_log
-  - route: /admin/open-platform/mini-programs
-    required_tables:
-      - open_platform_provider
-      - open_platform_manifest
-      - open_platform_account
-      - open_platform_entry
-      - open_platform_pay_binding
-      - ops_audit_log
-  - route: /admin/open-platform/mini-programs/accounts
-    required_tables:
-      - open_platform_provider
-      - open_platform_manifest
-      - open_platform_account
-      - open_platform_entry
-      - open_platform_pay_binding
-      - ops_audit_log
-  - route: /admin/open-platform/mini-programs/urls
-    required_tables:
-      - open_platform_provider
-      - open_platform_manifest
-      - open_platform_account
-      - open_platform_entry
-      - open_platform_pay_binding
-      - ops_audit_log
   - route: /admin/service-providers
     required_tables:
       - integration_service_provider
@@ -47418,3 +47454,603 @@ routes:
       - plus_invitation_code
       - plus_invitation_relation
       - ops_referral_stat_snapshot
+  - route: /admin/oauth
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-appbase-backend-sdk
+    required_tables:
+      - iam_oauth_provider_catalog
+      - iam_oauth_integration
+      - iam_oauth_client
+      - iam_oauth_secret
+      - iam_oauth_surface
+      - iam_oauth_flow_config
+      - iam_oauth_scope_profile
+      - iam_oauth_claim_mapping
+      - iam_oauth_policy
+      - iam_oauth_tenant_binding
+      - iam_oauth_operator_platform
+      - iam_oauth_resource_account
+      - iam_oauth_resource_authorization
+      - iam_oauth_webhook_config
+      - iam_oauth_operational_resource
+      - iam_oauth_account_link
+      - iam_oauth_grant
+      - iam_oauth_callback_event
+      - iam_oauth_diagnostic_run
+      - ops_audit_log
+  - route: /admin/oauth/overview
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-appbase-backend-sdk
+    required_tables:
+      - iam_oauth_provider_catalog
+      - iam_oauth_integration
+      - iam_oauth_client
+      - iam_oauth_secret
+      - iam_oauth_surface
+      - iam_oauth_flow_config
+      - iam_oauth_scope_profile
+      - iam_oauth_claim_mapping
+      - iam_oauth_policy
+      - iam_oauth_tenant_binding
+      - iam_oauth_operator_platform
+      - iam_oauth_resource_account
+      - iam_oauth_resource_authorization
+      - iam_oauth_webhook_config
+      - iam_oauth_operational_resource
+      - iam_oauth_account_link
+      - iam_oauth_grant
+      - iam_oauth_callback_event
+      - iam_oauth_diagnostic_run
+      - ops_audit_log
+  - route: /admin/oauth/login
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-appbase-backend-sdk
+    required_tables:
+      - iam_oauth_provider_catalog
+      - iam_oauth_integration
+      - iam_oauth_client
+      - iam_oauth_secret
+      - iam_oauth_surface
+      - iam_oauth_flow_config
+      - iam_oauth_scope_profile
+      - iam_oauth_claim_mapping
+      - iam_oauth_policy
+      - iam_oauth_tenant_binding
+      - iam_oauth_operator_platform
+      - iam_oauth_resource_account
+      - iam_oauth_resource_authorization
+      - iam_oauth_webhook_config
+      - iam_oauth_operational_resource
+      - iam_oauth_account_link
+      - iam_oauth_grant
+      - iam_oauth_callback_event
+      - iam_oauth_diagnostic_run
+      - ops_audit_log
+  - route: /admin/oauth/login/mini-programs
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-appbase-backend-sdk
+    required_tables:
+      - iam_oauth_provider_catalog
+      - iam_oauth_integration
+      - iam_oauth_client
+      - iam_oauth_secret
+      - iam_oauth_surface
+      - iam_oauth_flow_config
+      - iam_oauth_scope_profile
+      - iam_oauth_claim_mapping
+      - iam_oauth_policy
+      - iam_oauth_tenant_binding
+      - iam_oauth_operator_platform
+      - iam_oauth_resource_account
+      - iam_oauth_resource_authorization
+      - iam_oauth_webhook_config
+      - iam_oauth_operational_resource
+      - iam_oauth_account_link
+      - iam_oauth_grant
+      - iam_oauth_callback_event
+      - iam_oauth_diagnostic_run
+      - ops_audit_log
+  - route: /admin/oauth/provider-catalog
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-appbase-backend-sdk
+    required_tables:
+      - iam_oauth_provider_catalog
+      - iam_oauth_integration
+      - iam_oauth_client
+      - iam_oauth_secret
+      - iam_oauth_surface
+      - iam_oauth_flow_config
+      - iam_oauth_scope_profile
+      - iam_oauth_claim_mapping
+      - iam_oauth_policy
+      - iam_oauth_tenant_binding
+      - iam_oauth_operator_platform
+      - iam_oauth_resource_account
+      - iam_oauth_resource_authorization
+      - iam_oauth_webhook_config
+      - iam_oauth_operational_resource
+      - iam_oauth_account_link
+      - iam_oauth_grant
+      - iam_oauth_callback_event
+      - iam_oauth_diagnostic_run
+      - ops_audit_log
+  - route: /admin/oauth/integrations
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-appbase-backend-sdk
+    required_tables:
+      - iam_oauth_provider_catalog
+      - iam_oauth_integration
+      - iam_oauth_client
+      - iam_oauth_secret
+      - iam_oauth_surface
+      - iam_oauth_flow_config
+      - iam_oauth_scope_profile
+      - iam_oauth_claim_mapping
+      - iam_oauth_policy
+      - iam_oauth_tenant_binding
+      - iam_oauth_operator_platform
+      - iam_oauth_resource_account
+      - iam_oauth_resource_authorization
+      - iam_oauth_webhook_config
+      - iam_oauth_operational_resource
+      - iam_oauth_account_link
+      - iam_oauth_grant
+      - iam_oauth_callback_event
+      - iam_oauth_diagnostic_run
+      - ops_audit_log
+  - route: /admin/oauth/clients
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-appbase-backend-sdk
+    required_tables:
+      - iam_oauth_provider_catalog
+      - iam_oauth_integration
+      - iam_oauth_client
+      - iam_oauth_secret
+      - iam_oauth_surface
+      - iam_oauth_flow_config
+      - iam_oauth_scope_profile
+      - iam_oauth_claim_mapping
+      - iam_oauth_policy
+      - iam_oauth_tenant_binding
+      - iam_oauth_operator_platform
+      - iam_oauth_resource_account
+      - iam_oauth_resource_authorization
+      - iam_oauth_webhook_config
+      - iam_oauth_operational_resource
+      - iam_oauth_account_link
+      - iam_oauth_grant
+      - iam_oauth_callback_event
+      - iam_oauth_diagnostic_run
+      - ops_audit_log
+  - route: /admin/oauth/secrets
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-appbase-backend-sdk
+    required_tables:
+      - iam_oauth_provider_catalog
+      - iam_oauth_integration
+      - iam_oauth_client
+      - iam_oauth_secret
+      - iam_oauth_surface
+      - iam_oauth_flow_config
+      - iam_oauth_scope_profile
+      - iam_oauth_claim_mapping
+      - iam_oauth_policy
+      - iam_oauth_tenant_binding
+      - iam_oauth_operator_platform
+      - iam_oauth_resource_account
+      - iam_oauth_resource_authorization
+      - iam_oauth_webhook_config
+      - iam_oauth_operational_resource
+      - iam_oauth_account_link
+      - iam_oauth_grant
+      - iam_oauth_callback_event
+      - iam_oauth_diagnostic_run
+      - ops_audit_log
+  - route: /admin/oauth/surfaces
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-appbase-backend-sdk
+    required_tables:
+      - iam_oauth_provider_catalog
+      - iam_oauth_integration
+      - iam_oauth_client
+      - iam_oauth_secret
+      - iam_oauth_surface
+      - iam_oauth_flow_config
+      - iam_oauth_scope_profile
+      - iam_oauth_claim_mapping
+      - iam_oauth_policy
+      - iam_oauth_tenant_binding
+      - iam_oauth_operator_platform
+      - iam_oauth_resource_account
+      - iam_oauth_resource_authorization
+      - iam_oauth_webhook_config
+      - iam_oauth_operational_resource
+      - iam_oauth_account_link
+      - iam_oauth_grant
+      - iam_oauth_callback_event
+      - iam_oauth_diagnostic_run
+      - ops_audit_log
+  - route: /admin/oauth/flow-configs
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-appbase-backend-sdk
+    required_tables:
+      - iam_oauth_provider_catalog
+      - iam_oauth_integration
+      - iam_oauth_client
+      - iam_oauth_secret
+      - iam_oauth_surface
+      - iam_oauth_flow_config
+      - iam_oauth_scope_profile
+      - iam_oauth_claim_mapping
+      - iam_oauth_policy
+      - iam_oauth_tenant_binding
+      - iam_oauth_operator_platform
+      - iam_oauth_resource_account
+      - iam_oauth_resource_authorization
+      - iam_oauth_webhook_config
+      - iam_oauth_operational_resource
+      - iam_oauth_account_link
+      - iam_oauth_grant
+      - iam_oauth_callback_event
+      - iam_oauth_diagnostic_run
+      - ops_audit_log
+  - route: /admin/oauth/scope-profiles
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-appbase-backend-sdk
+    required_tables:
+      - iam_oauth_provider_catalog
+      - iam_oauth_integration
+      - iam_oauth_client
+      - iam_oauth_secret
+      - iam_oauth_surface
+      - iam_oauth_flow_config
+      - iam_oauth_scope_profile
+      - iam_oauth_claim_mapping
+      - iam_oauth_policy
+      - iam_oauth_tenant_binding
+      - iam_oauth_operator_platform
+      - iam_oauth_resource_account
+      - iam_oauth_resource_authorization
+      - iam_oauth_webhook_config
+      - iam_oauth_operational_resource
+      - iam_oauth_account_link
+      - iam_oauth_grant
+      - iam_oauth_callback_event
+      - iam_oauth_diagnostic_run
+      - ops_audit_log
+  - route: /admin/oauth/claim-mappings
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-appbase-backend-sdk
+    required_tables:
+      - iam_oauth_provider_catalog
+      - iam_oauth_integration
+      - iam_oauth_client
+      - iam_oauth_secret
+      - iam_oauth_surface
+      - iam_oauth_flow_config
+      - iam_oauth_scope_profile
+      - iam_oauth_claim_mapping
+      - iam_oauth_policy
+      - iam_oauth_tenant_binding
+      - iam_oauth_operator_platform
+      - iam_oauth_resource_account
+      - iam_oauth_resource_authorization
+      - iam_oauth_webhook_config
+      - iam_oauth_operational_resource
+      - iam_oauth_account_link
+      - iam_oauth_grant
+      - iam_oauth_callback_event
+      - iam_oauth_diagnostic_run
+      - ops_audit_log
+  - route: /admin/oauth/policies
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-appbase-backend-sdk
+    required_tables:
+      - iam_oauth_provider_catalog
+      - iam_oauth_integration
+      - iam_oauth_client
+      - iam_oauth_secret
+      - iam_oauth_surface
+      - iam_oauth_flow_config
+      - iam_oauth_scope_profile
+      - iam_oauth_claim_mapping
+      - iam_oauth_policy
+      - iam_oauth_tenant_binding
+      - iam_oauth_operator_platform
+      - iam_oauth_resource_account
+      - iam_oauth_resource_authorization
+      - iam_oauth_webhook_config
+      - iam_oauth_operational_resource
+      - iam_oauth_account_link
+      - iam_oauth_grant
+      - iam_oauth_callback_event
+      - iam_oauth_diagnostic_run
+      - ops_audit_log
+  - route: /admin/oauth/tenant-bindings
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-appbase-backend-sdk
+    required_tables:
+      - iam_oauth_provider_catalog
+      - iam_oauth_integration
+      - iam_oauth_client
+      - iam_oauth_secret
+      - iam_oauth_surface
+      - iam_oauth_flow_config
+      - iam_oauth_scope_profile
+      - iam_oauth_claim_mapping
+      - iam_oauth_policy
+      - iam_oauth_tenant_binding
+      - iam_oauth_operator_platform
+      - iam_oauth_resource_account
+      - iam_oauth_resource_authorization
+      - iam_oauth_webhook_config
+      - iam_oauth_operational_resource
+      - iam_oauth_account_link
+      - iam_oauth_grant
+      - iam_oauth_callback_event
+      - iam_oauth_diagnostic_run
+      - ops_audit_log
+  - route: /admin/oauth/operator-platforms
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-appbase-backend-sdk
+    required_tables:
+      - iam_oauth_provider_catalog
+      - iam_oauth_integration
+      - iam_oauth_client
+      - iam_oauth_secret
+      - iam_oauth_surface
+      - iam_oauth_flow_config
+      - iam_oauth_scope_profile
+      - iam_oauth_claim_mapping
+      - iam_oauth_policy
+      - iam_oauth_tenant_binding
+      - iam_oauth_operator_platform
+      - iam_oauth_resource_account
+      - iam_oauth_resource_authorization
+      - iam_oauth_webhook_config
+      - iam_oauth_operational_resource
+      - iam_oauth_account_link
+      - iam_oauth_grant
+      - iam_oauth_callback_event
+      - iam_oauth_diagnostic_run
+      - ops_audit_log
+  - route: /admin/oauth/resource-accounts
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-appbase-backend-sdk
+    required_tables:
+      - iam_oauth_provider_catalog
+      - iam_oauth_integration
+      - iam_oauth_client
+      - iam_oauth_secret
+      - iam_oauth_surface
+      - iam_oauth_flow_config
+      - iam_oauth_scope_profile
+      - iam_oauth_claim_mapping
+      - iam_oauth_policy
+      - iam_oauth_tenant_binding
+      - iam_oauth_operator_platform
+      - iam_oauth_resource_account
+      - iam_oauth_resource_authorization
+      - iam_oauth_webhook_config
+      - iam_oauth_operational_resource
+      - iam_oauth_account_link
+      - iam_oauth_grant
+      - iam_oauth_callback_event
+      - iam_oauth_diagnostic_run
+      - ops_audit_log
+  - route: /admin/oauth/resource-accounts/official-accounts
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-appbase-backend-sdk
+    required_tables:
+      - iam_oauth_provider_catalog
+      - iam_oauth_integration
+      - iam_oauth_client
+      - iam_oauth_secret
+      - iam_oauth_surface
+      - iam_oauth_flow_config
+      - iam_oauth_scope_profile
+      - iam_oauth_claim_mapping
+      - iam_oauth_policy
+      - iam_oauth_tenant_binding
+      - iam_oauth_operator_platform
+      - iam_oauth_resource_account
+      - iam_oauth_resource_authorization
+      - iam_oauth_webhook_config
+      - iam_oauth_operational_resource
+      - iam_oauth_account_link
+      - iam_oauth_grant
+      - iam_oauth_callback_event
+      - iam_oauth_diagnostic_run
+      - ops_audit_log
+  - route: /admin/oauth/resource-accounts/mini-programs
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-appbase-backend-sdk
+    required_tables:
+      - iam_oauth_provider_catalog
+      - iam_oauth_integration
+      - iam_oauth_client
+      - iam_oauth_secret
+      - iam_oauth_surface
+      - iam_oauth_flow_config
+      - iam_oauth_scope_profile
+      - iam_oauth_claim_mapping
+      - iam_oauth_policy
+      - iam_oauth_tenant_binding
+      - iam_oauth_operator_platform
+      - iam_oauth_resource_account
+      - iam_oauth_resource_authorization
+      - iam_oauth_webhook_config
+      - iam_oauth_operational_resource
+      - iam_oauth_account_link
+      - iam_oauth_grant
+      - iam_oauth_callback_event
+      - iam_oauth_diagnostic_run
+      - ops_audit_log
+  - route: /admin/oauth/resource-authorizations
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-appbase-backend-sdk
+    required_tables:
+      - iam_oauth_provider_catalog
+      - iam_oauth_integration
+      - iam_oauth_client
+      - iam_oauth_secret
+      - iam_oauth_surface
+      - iam_oauth_flow_config
+      - iam_oauth_scope_profile
+      - iam_oauth_claim_mapping
+      - iam_oauth_policy
+      - iam_oauth_tenant_binding
+      - iam_oauth_operator_platform
+      - iam_oauth_resource_account
+      - iam_oauth_resource_authorization
+      - iam_oauth_webhook_config
+      - iam_oauth_operational_resource
+      - iam_oauth_account_link
+      - iam_oauth_grant
+      - iam_oauth_callback_event
+      - iam_oauth_diagnostic_run
+      - ops_audit_log
+  - route: /admin/oauth/webhooks
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-appbase-backend-sdk
+    required_tables:
+      - iam_oauth_provider_catalog
+      - iam_oauth_integration
+      - iam_oauth_client
+      - iam_oauth_secret
+      - iam_oauth_surface
+      - iam_oauth_flow_config
+      - iam_oauth_scope_profile
+      - iam_oauth_claim_mapping
+      - iam_oauth_policy
+      - iam_oauth_tenant_binding
+      - iam_oauth_operator_platform
+      - iam_oauth_resource_account
+      - iam_oauth_resource_authorization
+      - iam_oauth_webhook_config
+      - iam_oauth_operational_resource
+      - iam_oauth_account_link
+      - iam_oauth_grant
+      - iam_oauth_callback_event
+      - iam_oauth_diagnostic_run
+      - ops_audit_log
+  - route: /admin/oauth/operational-resources
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-appbase-backend-sdk
+    required_tables:
+      - iam_oauth_provider_catalog
+      - iam_oauth_integration
+      - iam_oauth_client
+      - iam_oauth_secret
+      - iam_oauth_surface
+      - iam_oauth_flow_config
+      - iam_oauth_scope_profile
+      - iam_oauth_claim_mapping
+      - iam_oauth_policy
+      - iam_oauth_tenant_binding
+      - iam_oauth_operator_platform
+      - iam_oauth_resource_account
+      - iam_oauth_resource_authorization
+      - iam_oauth_webhook_config
+      - iam_oauth_operational_resource
+      - iam_oauth_account_link
+      - iam_oauth_grant
+      - iam_oauth_callback_event
+      - iam_oauth_diagnostic_run
+      - ops_audit_log
+  - route: /admin/oauth/account-links
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-appbase-backend-sdk
+    required_tables:
+      - iam_oauth_provider_catalog
+      - iam_oauth_integration
+      - iam_oauth_client
+      - iam_oauth_secret
+      - iam_oauth_surface
+      - iam_oauth_flow_config
+      - iam_oauth_scope_profile
+      - iam_oauth_claim_mapping
+      - iam_oauth_policy
+      - iam_oauth_tenant_binding
+      - iam_oauth_operator_platform
+      - iam_oauth_resource_account
+      - iam_oauth_resource_authorization
+      - iam_oauth_webhook_config
+      - iam_oauth_operational_resource
+      - iam_oauth_account_link
+      - iam_oauth_grant
+      - iam_oauth_callback_event
+      - iam_oauth_diagnostic_run
+      - ops_audit_log
+  - route: /admin/oauth/grants
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-appbase-backend-sdk
+    required_tables:
+      - iam_oauth_provider_catalog
+      - iam_oauth_integration
+      - iam_oauth_client
+      - iam_oauth_secret
+      - iam_oauth_surface
+      - iam_oauth_flow_config
+      - iam_oauth_scope_profile
+      - iam_oauth_claim_mapping
+      - iam_oauth_policy
+      - iam_oauth_tenant_binding
+      - iam_oauth_operator_platform
+      - iam_oauth_resource_account
+      - iam_oauth_resource_authorization
+      - iam_oauth_webhook_config
+      - iam_oauth_operational_resource
+      - iam_oauth_account_link
+      - iam_oauth_grant
+      - iam_oauth_callback_event
+      - iam_oauth_diagnostic_run
+      - ops_audit_log
+  - route: /admin/oauth/callback-diagnostics
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-appbase-backend-sdk
+    required_tables:
+      - iam_oauth_provider_catalog
+      - iam_oauth_integration
+      - iam_oauth_client
+      - iam_oauth_secret
+      - iam_oauth_surface
+      - iam_oauth_flow_config
+      - iam_oauth_scope_profile
+      - iam_oauth_claim_mapping
+      - iam_oauth_policy
+      - iam_oauth_tenant_binding
+      - iam_oauth_operator_platform
+      - iam_oauth_resource_account
+      - iam_oauth_resource_authorization
+      - iam_oauth_webhook_config
+      - iam_oauth_operational_resource
+      - iam_oauth_account_link
+      - iam_oauth_grant
+      - iam_oauth_callback_event
+      - iam_oauth_diagnostic_run
+      - ops_audit_log
+  - route: /admin/oauth/diagnostic-runs
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-appbase-backend-sdk
+    required_tables:
+      - iam_oauth_provider_catalog
+      - iam_oauth_integration
+      - iam_oauth_client
+      - iam_oauth_secret
+      - iam_oauth_surface
+      - iam_oauth_flow_config
+      - iam_oauth_scope_profile
+      - iam_oauth_claim_mapping
+      - iam_oauth_policy
+      - iam_oauth_tenant_binding
+      - iam_oauth_operator_platform
+      - iam_oauth_resource_account
+      - iam_oauth_resource_authorization
+      - iam_oauth_webhook_config
+      - iam_oauth_operational_resource
+      - iam_oauth_account_link
+      - iam_oauth_grant
+      - iam_oauth_callback_event
+      - iam_oauth_diagnostic_run
+      - ops_audit_log

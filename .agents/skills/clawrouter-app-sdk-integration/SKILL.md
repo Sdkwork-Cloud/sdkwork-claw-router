@@ -10,7 +10,7 @@ description: Use when sdkwork-claw-router app/frontend product code must call pr
 Use `@sdkwork/clawrouter-app-sdk` for frontend product-surface calls. The SDK system is selected by contract surface, not by a hard-coded URL prefix.
 The generated package lives at `sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript` and is produced from `generated/openapi/clawrouter-app-openapi.json` by `sdkwork-sdk-generator`.
 
-Do not change `apps/sdkwork-claw-router-portal` UI visual design while doing app SDK integration. Keep app center, skill hub, forum, course, model, billing, and console presentation intact unless the user explicitly asks for a UI change.
+Do not change `apps/sdkwork-clawrouter-pc` UI visual design while doing app SDK integration. Keep app center, skill hub, forum, course, model, billing, and console presentation intact unless the user explicitly asks for a UI change.
 
 ## Hard Rules
 
@@ -54,5 +54,5 @@ python -B -m tools.clawrouter_sdk_guardian
 - No raw fetch or axios path remains in the touched app business path.
 - No manual auth header is added for public app reads.
 - `generated/openapi/clawrouter-app-openapi.json` and `sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript` are regenerated, not manually edited.
-- `apps/sdkwork-claw-router-portal` UI visuals are unchanged unless requested.
+- `apps/sdkwork-clawrouter-pc` UI visuals are unchanged unless requested.
 - `python -B -m tools.schema_quality_gate` passes or any failure is reported with evidence.

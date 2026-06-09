@@ -144,10 +144,11 @@ fn postgres_model_ranking_refresh_records_typed_audit_job_with_json_payload() {
         "2 => 2",
         "_ => 1",
         "INSERT INTO ops_job_execution",
+        "INSERT INTO ops_job_execution (id, uuid, tenant_id, organization_id",
         "job_type, trigger_type",
         "processed_count, success_count",
         "failure_count, failure_reason, payload",
-        "$16::jsonb",
+        "$17::jsonb",
         "\"rankScope\": command.rank_scope",
         "\"attemptCount\": command.attempt_count.max(0)",
         "\"retryCount\": command.retry_count.max(0)",
@@ -155,6 +156,17 @@ fn postgres_model_ranking_refresh_records_typed_audit_job_with_json_payload() {
         "\"alertRecommended\": command.alert_recommended",
         "\"alertSeverity\": command.alert_severity",
         "\"sourceTables\": [\"ai_usage_fact\", \"ai_model\", \"ai_model_rank_snapshot\"]",
+    ] {
+        assert_sql_contains(POSTGRES_MODEL_RANKING_REFRESH_STORE, expected);
+    }
+}
+
+#[test]
+fn postgres_model_ranking_refresh_writes_explicit_snapshot_ids() {
+    for expected in [
+        "INSERT INTO ai_model_rank_snapshot",
+        "INSERT INTO ai_model_rank_snapshot (id, uuid, tenant_id, organization_id",
+        ".bind(next_claw_runtime_id(\"ai_model_rank_snapshot\")?)",
     ] {
         assert_sql_contains(POSTGRES_MODEL_RANKING_REFRESH_STORE, expected);
     }

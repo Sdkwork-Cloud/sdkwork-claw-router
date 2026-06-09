@@ -8,7 +8,7 @@ namespace Sdkwork.ClawRouter.App.Models
     {
         public string? AgentId { get; set; }
         public string? AgentSessionId { get; set; }
-        public string? Message { get; set; }
+        public string Message { get; set; }
         public Dictionary<string, string>? Metadata { get; set; }
         public string? Mode { get; set; }
         public string? Model { get; set; }

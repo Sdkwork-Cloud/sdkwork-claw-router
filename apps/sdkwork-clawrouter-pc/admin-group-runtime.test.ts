@@ -895,6 +895,177 @@ test("admin group service manages channel bindings through generated backend SDK
   );
 });
 
+test("admin group service retrieves backend route explain through generated backend SDK", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? "GET";
+      if (url === "/backend/v3/api/ai/channel_groups/group-1/route_explain" && method === "GET") {
+        return {
+          source: "backend_config",
+          ready: true,
+          issueCodes: [],
+          issues: [],
+          resourceCodes: ["api.openai.chat_completions"],
+          resourceGroupCodes: ["api.openai.chat"],
+          effectiveResourceCodes: ["api.openai.chat_completions"],
+          configuredResourceAccessCount: "2",
+          configuredResourceGroupAccessCount: "1",
+          apiScope: ["openai.chat_completions"],
+          capabilities: ["llm"],
+          activeHealthyBindingCount: "1",
+          routableBindingCount: "1",
+        };
+      }
+      throw new Error(`Unexpected SDK request ${method} ${url}`);
+    },
+    async (captured) => {
+      const explain = await GroupService.fetchGroupRouteExplain("group-1");
+
+      assert.deepEqual(explain, {
+        source: "backend_config",
+        ready: true,
+        issueCodes: [],
+        issues: [],
+        resourceCodes: ["api.openai.chat_completions"],
+        resourceGroupCodes: ["api.openai.chat"],
+        effectiveResourceCodes: ["api.openai.chat_completions"],
+        configuredResourceAccessCount: 2,
+        configuredResourceGroupAccessCount: 1,
+        apiScope: ["openai.chat_completions"],
+        capabilities: ["llm"],
+        activeHealthyBindingCount: 1,
+        routableBindingCount: 1,
+      });
+      assert.deepEqual(
+        captured.map((request) => `${request.method} ${request.url}`),
+        ["GET /backend/v3/api/ai/channel_groups/group-1/route_explain"],
+      );
+      assert.equal(captured[0].headers["x-request-id"], undefined);
+    },
+  );
+});
+
+test("admin group service retrieves runtime route explain through generated backend SDK", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? "GET";
+      if (url === "/backend/v3/api/ai/route_explain" && method === "POST") {
+        return {
+          source: "runtime_selector",
+          ready: true,
+          resourceCode: "api.openai.chat_completions",
+          catalogKey: "openai/gpt-4o-mini",
+          model: "gpt-4o-mini",
+          apiCode: "openai.chat_completions",
+          capability: "chat",
+          billingMeter: "llm_input_token",
+          apiKeyId: "100",
+          channelGroupId: "10",
+          groupCode: "standard-group",
+          pricingPlanCode: "standard",
+          candidateCount: "1",
+          selectedCandidates: [
+            {
+              kind: "model",
+              providerCode: "openrouter",
+              channelId: "3001",
+              channelGroupId: "10",
+              channelGroupCode: "standard-group",
+              pricingPlanCode: "standard",
+              policyId: "200",
+              ruleId: "202",
+              apiCode: "openai.chat_completions",
+              catalogKey: "openai/gpt-4o-mini",
+              requestedModel: "gpt-4o-mini",
+              providerModel: "gpt-4o-mini",
+              regionCode: "global",
+              credentialId: null,
+              credentialRotation: "none",
+              timeoutMs: "30000",
+            },
+          ],
+          blockedReasons: [],
+          warnings: [],
+          policyId: "200",
+          ruleId: "202",
+          policySnapshotVersion: "runtime-catalog-current",
+        };
+      }
+      throw new Error(`Unexpected SDK request ${method} ${url}`);
+    },
+    async (captured) => {
+      const explain = await GroupService.fetchRuntimeRouteExplain({
+        apiKeyId: "100",
+        channelGroupId: "10",
+        resourceCode: "api.openai.chat_completions",
+        catalogKey: "openai/gpt-4o-mini",
+        model: "gpt-4o-mini",
+        apiCode: "openai.chat_completions",
+        capability: "chat",
+        billingMeter: "llm_input_token",
+      });
+
+      assert.deepEqual(explain, {
+        source: "runtime_selector",
+        ready: true,
+        resourceCode: "api.openai.chat_completions",
+        catalogKey: "openai/gpt-4o-mini",
+        model: "gpt-4o-mini",
+        apiCode: "openai.chat_completions",
+        capability: "chat",
+        billingMeter: "llm_input_token",
+        apiKeyId: "100",
+        channelGroupId: "10",
+        groupCode: "standard-group",
+        pricingPlanCode: "standard",
+        candidateCount: 1,
+        selectedCandidates: [
+          {
+            kind: "model",
+            providerCode: "openrouter",
+            channelId: "3001",
+            channelGroupId: "10",
+            channelGroupCode: "standard-group",
+            pricingPlanCode: "standard",
+            policyId: "200",
+            ruleId: "202",
+            apiCode: "openai.chat_completions",
+            catalogKey: "openai/gpt-4o-mini",
+            requestedModel: "gpt-4o-mini",
+            providerModel: "gpt-4o-mini",
+            regionCode: "global",
+            credentialId: null,
+            credentialRotation: "none",
+            timeoutMs: 30000,
+          },
+        ],
+        blockedReasons: [],
+        warnings: [],
+        policyId: "200",
+        ruleId: "202",
+        policySnapshotVersion: "runtime-catalog-current",
+      });
+      assert.deepEqual(
+        captured.map((request) => `${request.method} ${request.url}`),
+        ["POST /backend/v3/api/ai/route_explain"],
+      );
+      assert.deepEqual(JSON.parse(captured[0].body), {
+        apiKeyId: "100",
+        channelGroupId: "10",
+        resourceCode: "api.openai.chat_completions",
+        catalogKey: "openai/gpt-4o-mini",
+        model: "gpt-4o-mini",
+        apiCode: "openai.chat_completions",
+        capability: "chat",
+        billingMeter: "llm_input_token",
+      });
+      assert.equal(captured[0].headers["x-request-id"], undefined);
+      assert.equal(JSON.stringify(explain).includes("secretRef"), false);
+      assert.equal(JSON.stringify(explain).includes("baseUrl"), false);
+    },
+  );
+});
+
 test("admin group channel bindings are scoped by resources instead of direct models", async () => {
   const serviceSource = readFileSync(
     new URL("./packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts", import.meta.url),
@@ -1024,6 +1195,230 @@ test("admin group channel bindings are scoped by resources instead of direct mod
       ]);
     },
   );
+});
+
+test("admin group route preflight explains whether configured pools can route resource API calls", async () => {
+  const groupModule = await import("./packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts");
+
+  assert.equal(typeof groupModule.buildGroupRoutePreflight, "function");
+
+  const buildGroupRoutePreflight = groupModule.buildGroupRoutePreflight as (
+    group: unknown,
+    bindings: unknown[],
+  ) => {
+    ready: boolean;
+    issueCodes: string[];
+    resourceCodes: string[];
+    resourceGroupCodes: string[];
+    configuredResourceAccessCount: number;
+    apiScope: string[];
+    capabilities: string[];
+    activeHealthyBindingCount: number;
+  };
+
+  const readyResult = buildGroupRoutePreflight(
+    {
+      resourceCodes: [" api.openai.chat_completions ", "api.openai.chat_completions"],
+      resourceGroupCodes: [],
+      status: "active",
+      accountCount: { available: 1, total: 1 },
+    },
+    [
+      {
+        resourceCodes: ["api.openai.chat_completions"],
+        apiScope: ["openai.chat_completions"],
+        capabilities: ["llm"],
+        status: "active",
+        healthStatus: "active",
+      },
+    ],
+  );
+
+  assert.equal(readyResult.ready, true);
+  assert.deepEqual(readyResult.issueCodes, []);
+  assert.deepEqual(readyResult.resourceCodes, ["api.openai.chat_completions"]);
+  assert.deepEqual(readyResult.resourceGroupCodes, []);
+  assert.equal(readyResult.configuredResourceAccessCount, 1);
+  assert.deepEqual(readyResult.apiScope, ["openai.chat_completions"]);
+  assert.deepEqual(readyResult.capabilities, ["llm"]);
+  assert.equal(readyResult.activeHealthyBindingCount, 1);
+
+  const resourceGroupOnlyResult = buildGroupRoutePreflight(
+    {
+      resourceCodes: [],
+      resourceGroupCodes: [" api.openai.chat ", "api.openai.chat"],
+      status: "active",
+      accountCount: { available: 1, total: 1 },
+    },
+    [
+      {
+        resourceCodes: ["api.openai.chat_completions"],
+        apiScope: ["openai.chat_completions"],
+        capabilities: ["llm"],
+        status: "active",
+        healthStatus: "active",
+      },
+    ],
+  );
+
+  assert.equal(resourceGroupOnlyResult.ready, true);
+  assert.deepEqual(resourceGroupOnlyResult.resourceCodes, []);
+  assert.deepEqual(resourceGroupOnlyResult.resourceGroupCodes, ["api.openai.chat"]);
+  assert.equal(resourceGroupOnlyResult.configuredResourceAccessCount, 1);
+
+  const emptyResult = buildGroupRoutePreflight(
+    {
+      resourceCodes: [],
+      resourceGroupCodes: [],
+      status: "active",
+      accountCount: { available: 0, total: 0 },
+    },
+    [],
+  );
+
+  assert.equal(emptyResult.ready, false);
+  assert.deepEqual(emptyResult.issueCodes, [
+    "group.account_count.empty",
+    "group.resource_access.empty",
+    "group.bindings.empty",
+  ]);
+
+  const disabledResult = buildGroupRoutePreflight(
+    {
+      resourceCodes: ["api.openai.responses"],
+      resourceGroupCodes: [],
+      status: "active",
+      accountCount: { available: 1, total: 1 },
+    },
+    [
+      {
+        resourceCodes: ["api.openai.responses"],
+        apiScope: ["openai.responses"],
+        capabilities: ["llm"],
+        status: "disabled",
+        healthStatus: "active",
+      },
+      {
+        resourceCodes: ["api.openai.responses"],
+        apiScope: ["openai.responses"],
+        capabilities: ["llm"],
+        status: "active",
+        healthStatus: "error",
+      },
+    ],
+  );
+
+  assert.equal(disabledResult.ready, false);
+  assert.deepEqual(disabledResult.issueCodes, ["group.bindings.no_active_healthy_member"]);
+
+  const mismatchResult = buildGroupRoutePreflight(
+    {
+      resourceCodes: ["api.openai.responses"],
+      resourceGroupCodes: [],
+      status: "active",
+      accountCount: { available: 1, total: 1 },
+    },
+    [
+      {
+        resourceCodes: ["api.google.image_generation"],
+        apiScope: [],
+        capabilities: [],
+        status: "active",
+        healthStatus: "active",
+      },
+    ],
+  );
+
+  assert.equal(mismatchResult.ready, true);
+  assert.deepEqual(mismatchResult.issueCodes, [
+    "group.bindings.no_resource_overlap",
+    "group.bindings.missing_scope_metadata",
+  ]);
+});
+
+test("admin group channel binding drawer surfaces route preflight diagnostics", () => {
+  const serviceSource = readFileSync(
+    new URL("./packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts", import.meta.url),
+    "utf8",
+  );
+  const pageSource = readFileSync(
+    new URL("./packages/sdkwork-clawrouter-pc-admin-group/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+  const messages = readFileSync(
+    new URL("./packages/sdkwork-clawrouter-pc-i18n/src/resources/admin/group-user.ts", import.meta.url),
+    "utf8",
+  );
+
+  for (const expected of [
+    "export interface GroupRoutePreflightIssue",
+    "export interface GroupRoutePreflightResult",
+    "export interface GroupRouteExplainResult",
+    "export function buildGroupRoutePreflight",
+    "fetchGroupRouteExplain",
+  ]) {
+    assert.ok(serviceSource.includes(expected), `missing route preflight service marker: ${expected}`);
+  }
+
+  for (const expected of [
+    "routeExplain",
+    "setRouteExplain",
+    "routePreflightBindingRows",
+    "buildGroupRoutePreflight(channelBindingTarget, routePreflightBindingRows)",
+    "data-admin-group-route-preflight",
+    "admin.group.routePreflight.title",
+    "admin.group.routePreflight.localOnly",
+    "admin.group.routePreflight.backendConfigExplain",
+    "routePreflight.configuredResourceAccessCount",
+    "routeExplain.routableBindingCount",
+    "admin.group.routePreflight.ready",
+    "admin.group.routePreflight.blocked",
+  ]) {
+    assert.ok(pageSource.includes(expected), `missing route preflight page marker: ${expected}`);
+  }
+
+  for (const expected of [
+    "admin.group.routePreflight.localOnly",
+    "admin.group.routePreflight.backendConfigExplain",
+    "admin.group.routePreflight.backendExplainUnavailable",
+    "admin.group.routePreflight.issue.groupDisabled",
+    "admin.group.routePreflight.issue.zeroAvailableAccounts",
+    "admin.group.routePreflight.issue.emptyResourceAccess",
+    "admin.group.routePreflight.issue.emptyBindings",
+    "admin.group.routePreflight.issue.noActiveHealthyMember",
+    "admin.group.routePreflight.issue.noResourceOverlap",
+    "admin.group.routePreflight.issue.missingScopeMetadata",
+  ]) {
+    assert.ok(messages.includes(expected), `missing route preflight i18n marker: ${expected}`);
+  }
+});
+
+test("admin group route preflight connects P0 local diagnostics to P1 backend config explain", () => {
+  const serviceSource = readFileSync(
+    new URL("./packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts", import.meta.url),
+    "utf8",
+  );
+  const pageSource = readFileSync(
+    new URL("./packages/sdkwork-clawrouter-pc-admin-group/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+  const designDoc = readFileSync(
+    new URL("../../docs/superpowers/specs/2026-06-09-api-relay-provider-platform-design.md", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(designDoc, /## P0 Implementation Scope/);
+  assert.match(designDoc, /## P1 Backend Contract/);
+  assert.match(designDoc, /## P2 Platform Capabilities/);
+  assert.match(designDoc, /P0 Implementation Scope[\s\S]*route preflight[\s\S]*P1 Backend Contract[\s\S]*route_explain/i);
+
+  assert.match(serviceSource, /routeExplain/);
+  assert.match(serviceSource, /getClawRouterBackendSdkClient\(\)\.ai\.channelGroups\.routeExplain\.retrieve/);
+  assert.match(pageSource, /GroupService\.fetchGroupRouteExplain/);
+  assert.match(pageSource, /routeExplain\?\.source === 'backend_config'/);
+  assert.ok(pageSource.includes("admin.group.routePreflight.localOnly"));
+  assert.ok(pageSource.includes("admin.group.routePreflight.backendConfigExplain"));
+  assert.ok(!pageSource.includes("admin.group.routePreflight.backendExplainPending"));
 });
 
 test("admin group service rejects invalid command values before calling backend SDK", async () => {

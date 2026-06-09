@@ -50,20 +50,18 @@ client.set_header('X-Custom-Header', 'value')
 
 - `client.agents` - agents API
 - `client.ai` - ai API
-- `client.commerce` - commerce API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.integration` - integration API
 - `client.mcp` - mcp API
 - `client.messaging` - messaging API
-- `client.open_platform` - open_platform API
 - `client.platform` - platform API
-- `client.system` - system API
 - `client.prompts` - prompts API
 - `client.service_providers` - service_providers API
 - `client.sites` - sites API
 - `client.storage` - storage API
+- `client.system` - system API
 
 ## Usage Examples
 
@@ -88,14 +86,6 @@ print(result)
 ```python
 # List groups
 result = client.ai.channel_groups.list()
-print(result)
-```
-
-### commerce
-
-```python
-# Commerce Reports Payment Reconciliation Retrieve
-result = client.commerce.commerce_reports.payment_reconciliation.retrieve()
 print(result)
 ```
 
@@ -165,30 +155,11 @@ result = client.messaging.provider_accounts.list(params)
 print(result)
 ```
 
-### open_platform
-
-```python
-# List open platform providers
-params = {
-    'status': 'active',
-}
-result = client.open_platform.providers.list(params)
-print(result)
-```
-
 ### platform
 
 ```python
 # List app categories
 result = client.platform.apps.categories.list()
-print(result)
-```
-
-### system
-
-```python
-# Retrieve IAM auth runtime settings
-result = client.system.auth.settings.retrieve()
 print(result)
 ```
 
@@ -242,6 +213,14 @@ print(result)
 ```python
 # List storage providers
 result = client.storage.oss.providers.list()
+print(result)
+```
+
+### system
+
+```python
+# Retrieve IAM auth runtime settings
+result = client.system.auth.settings.retrieve()
 print(result)
 ```
 

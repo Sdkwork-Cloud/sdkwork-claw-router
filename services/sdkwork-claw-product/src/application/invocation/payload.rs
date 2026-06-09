@@ -214,36 +214,49 @@ fn query_value(query: &str, key: &str) -> Option<String> {
 }
 
 fn decode_form_value(value: &str) -> String {
-    let mut decoded = String::new();
+    let mut decoded = Vec::with_capacity(value.len());
     let bytes = value.as_bytes();
     let mut index = 0;
     while index < bytes.len() {
         match bytes[index] {
             b'+' => {
-                decoded.push(' ');
+                decoded.push(b' ');
                 index += 1;
             }
             b'%' if index + 2 < bytes.len() => {
                 if let Ok(hex) = std::str::from_utf8(&bytes[index + 1..index + 3]) {
                     if let Ok(byte) = u8::from_str_radix(hex, 16) {
-                        decoded.push(byte as char);
+                        decoded.push(byte);
                         index += 3;
                         continue;
                     }
                 }
-                decoded.push('%');
+                decoded.push(bytes[index]);
                 index += 1;
             }
             byte => {
-                decoded.push(byte as char);
+                decoded.push(byte);
                 index += 1;
             }
         }
     }
-    decoded
+    String::from_utf8(decoded).unwrap_or_else(|_| value.to_owned())
 }
 
 fn non_empty_text(value: &str) -> Option<&str> {
     let value = value.trim();
     (!value.is_empty()).then_some(value)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::query_value_model;
+
+    #[test]
+    fn query_value_model_decodes_utf8_percent_encoded_value() {
+        assert_eq!(
+            Some("openrouter/模型+latest".to_owned()),
+            query_value_model("model=openrouter%2F%E6%A8%A1%E5%9E%8B%2Blatest")
+        );
+    }
 }

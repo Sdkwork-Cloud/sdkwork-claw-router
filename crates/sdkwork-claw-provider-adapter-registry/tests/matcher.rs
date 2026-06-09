@@ -53,6 +53,18 @@ fn tencent_cloud_vidu_route(
     }
 }
 
+fn openrouter_text2video_route(
+    priority: i32,
+    status: AdapterRouteStatus,
+) -> ProviderAdapterRouteConfig {
+    let mut route = vidu_route(priority, status);
+    route.provider_code = "openrouter".to_owned();
+    route.endpoint_key = Some("text2video".to_owned());
+    route.standard_path_pattern = "/v1/videos/text2video".to_owned();
+    route.adapter_path_template = "/providers/{provider_code}{standard_path}".to_owned();
+    route
+}
+
 #[test]
 fn exact_provider_method_and_path_match_returns_internal_adapter_route() {
     let registry = ProviderAdapterRegistry::new(vec![vidu_route(10, AdapterRouteStatus::Enabled)]);
@@ -91,6 +103,27 @@ fn standard_path_lookup_matches_endpoint_route_when_endpoint_key_is_unknown() {
         panic!("expected internal http adapter route");
     };
     assert_eq!(Some("video.start_end2video"), route.endpoint_key.as_deref());
+}
+
+#[test]
+fn standard_path_lookup_allows_endpoint_alias_when_exact_path_matches() {
+    let registry = ProviderAdapterRegistry::new(vec![openrouter_text2video_route(
+        10,
+        AdapterRouteStatus::Enabled,
+    )]);
+
+    let resolution = registry.resolve_standard_path(&ProviderAdapterLookup {
+        provider_code: "openrouter",
+        method: "POST",
+        standard_path: "/v1/videos/text2video",
+        capability: Some("video_generation"),
+        endpoint_key: Some("kling.text_to_video"),
+    });
+
+    let ProviderInvocationMode::InternalHttpAdapter(route) = resolution.mode else {
+        panic!("expected internal http adapter route");
+    };
+    assert_eq!(Some("text2video"), route.endpoint_key.as_deref());
 }
 
 #[test]

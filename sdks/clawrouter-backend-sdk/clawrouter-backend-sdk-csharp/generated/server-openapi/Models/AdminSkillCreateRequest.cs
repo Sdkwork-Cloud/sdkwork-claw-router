@@ -24,7 +24,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? LicenseName { get; set; }
         public string? ManifestUrl { get; set; }
         public string? MarketStatus { get; set; }
-        public string? Name { get; set; }
+        public string Name { get; set; }
         public string? PackageId { get; set; }
         public string? Price { get; set; }
         public string? Provider { get; set; }
@@ -32,7 +32,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? RepositoryUrl { get; set; }
         public string? ReviewStatus { get; set; }
         public string? Runtime { get; set; }
-        public string? SkillKey { get; set; }
+        public string SkillKey { get; set; }
         public string? SourceType { get; set; }
         public string? Summary { get; set; }
         public List<string>? Tags { get; set; }

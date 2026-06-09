@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class UpdateSettingsResponse
     {
-        public bool? Success { get; set; }
+        public bool Success { get; set; }
     }
 }

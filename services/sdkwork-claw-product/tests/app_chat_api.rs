@@ -78,7 +78,7 @@ async fn app_chat_list_conversations_uses_trusted_subject_and_returns_items() {
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/app/v3/api/chat/conversations?page=1&pageSize=20")
+                .uri("/app/v3/api/chat/conversations?page=1&page_size=20")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),

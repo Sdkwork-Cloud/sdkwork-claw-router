@@ -7,7 +7,7 @@ namespace Sdkwork.ClawRouter.App.Models
     public class MemoryEntryCreateRequest
     {
         public string? ConfidenceScore { get; set; }
-        public string? Content { get; set; }
+        public string Content { get; set; }
         public Dictionary<string, string>? ContentJson { get; set; }
         public string? ImportanceScore { get; set; }
         public string? MemoryType { get; set; }

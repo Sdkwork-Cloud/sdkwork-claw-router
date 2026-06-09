@@ -18,38 +18,20 @@ config = SdkConfig(
 )
 
 client = SdkworkAppClient(config)
-client.set_api_key("your-api-key")
-
-# Use the SDK
-result = client.ai.channel_groups.list()
-```
-
-## Authentication Modes (Mutually Exclusive)
-
-Choose exactly one mode for the same client instance.
-
-### Mode A: API Key
-
-```python
-config = SdkConfig(base_url="http://localhost:18082")
-client = SdkworkAppClient(config)
-client.set_api_key("your-api-key")
-# Sends: Access-Token: <apiKey>
-```
-
-### Mode B: Dual Token
-
-```python
-config = SdkConfig(base_url="http://localhost:18082")
-client = SdkworkAppClient(config)
 client.set_auth_token("your-auth-token")
 client.set_access_token("your-access-token")
-# Sends:
-# Authorization: Bearer <authToken>
-# Access-Token: <accessToken>
+
+# Use the SDK
+result = client.auth.sessions.current.retrieve()
 ```
 
-> Do not call `set_api_key(...)` together with `set_auth_token(...)` + `set_access_token(...)` on the same client.
+## Authentication
+
+```text
+Authorization: Bearer <authToken>
+Access-Token: <accessToken>
+```
+
 
 ## Configuration (Non-Auth)
 
@@ -68,6 +50,7 @@ client.set_header('X-Custom-Header', 'value')
 
 - `client.agents` - agents API
 - `client.ai` - ai API
+- `client.auth` - auth API
 - `client.chat` - chat API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
@@ -75,10 +58,9 @@ client.set_header('X-Custom-Header', 'value')
 - `client.memory` - memory API
 - `client.notification` - notification API
 - `client.platform` - platform API
-- `client.system` - system API
-- `client.commerce` - commerce API
 - `client.runtime` - runtime API
 - `client.sdk_reference` - sdk_reference API
+- `client.system` - system API
 
 ## Usage Examples
 
@@ -100,6 +82,14 @@ print(result)
 ```python
 # List groups
 result = client.ai.channel_groups.list()
+print(result)
+```
+
+### auth
+
+```python
+# Retrieve current IAM session
+result = client.auth.sessions.current.retrieve()
 print(result)
 ```
 
@@ -173,26 +163,6 @@ result = client.platform.apps.store.categories.list()
 print(result)
 ```
 
-### system
-
-```python
-# Retrieve public site runtime branding settings
-params = {
-    'tenant_code': 'tenant_code',
-    'organization_code': 'organization_code',
-}
-result = client.system.site.runtime.retrieve(params)
-print(result)
-```
-
-### commerce
-
-```python
-# Recharges Settings Retrieve
-result = client.commerce.recharges.settings.retrieve()
-print(result)
-```
-
 ### runtime
 
 ```python
@@ -238,11 +208,19 @@ result = client.sdk_reference.archives.create(body)
 print(result)
 ```
 
+### system
+
+```python
+# Retrieve public IAM verification policy
+result = client.system.iam.verification_policy.retrieve()
+print(result)
+```
+
 ## Error Handling
 
 ```python
 try:
-    client.ai.channel_groups.list()
+    client.auth.sessions.current.retrieve()
 except Exception as error:
     print(f"Error: {error}")
 ```
@@ -270,7 +248,7 @@ This SDK includes cross-platform publish scripts in `bin/`:
 .\bin\publish.ps1 --action publish --channel test --dry-run
 ```
 
-> Set `PYPI_TOKEN` for release (or `TEST_PYPI_TOKEN` for test channel).
+> Configure Python package registry credentials before release publish.
 
 ## License
 

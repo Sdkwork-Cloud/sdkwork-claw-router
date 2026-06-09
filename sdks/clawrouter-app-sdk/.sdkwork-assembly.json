@@ -62,8 +62,8 @@
       "generationState": "materialized",
       "releaseState": "not_published",
       "generatedPath": "clawrouter-app-sdk-typescript/generated/server-openapi",
-      "packagePath": "clawrouter-app-sdk-typescript/generated/server-openapi",
-      "manifestPath": "clawrouter-app-sdk-typescript/generated/server-openapi/package.json",
+      "packagePath": "clawrouter-app-sdk-typescript",
+      "manifestPath": "clawrouter-app-sdk-typescript/package.json",
       "name": "@sdkwork/clawrouter-app-sdk",
       "version": "0.1.0",
       "description": "SDKWork Claw Router app API SDK",
@@ -78,9 +78,22 @@
       },
       "packages": [
         {
-          "layer": "generated",
+          "layer": "generated-output",
           "packagePath": "clawrouter-app-sdk-typescript/generated/server-openapi",
           "manifestPath": "clawrouter-app-sdk-typescript/generated/server-openapi/package.json",
+          "name": "@sdkwork/clawrouter-app-sdk",
+          "version": "0.1.0",
+          "description": "SDKWork Claw Router app API SDK generator-owned transport output",
+          "entrypoints": {
+            "main": "./dist/index.cjs",
+            "module": "./dist/index.js",
+            "types": "./dist/index.d.ts"
+          }
+        },
+        {
+          "layer": "package",
+          "packagePath": "clawrouter-app-sdk-typescript",
+          "manifestPath": "clawrouter-app-sdk-typescript/package.json",
           "name": "@sdkwork/clawrouter-app-sdk",
           "version": "0.1.0",
           "description": "SDKWork Claw Router app API SDK",

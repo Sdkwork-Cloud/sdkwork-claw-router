@@ -1,8 +1,22 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { AdminAiModelCreateRequest, AdminAiModelUpdateRequest, AdminAiResourceCreateRequest, AdminAiResourceGroupCreateRequest, AdminAiResourceGroupUpdateRequest, AdminAiResourceUpdateRequest, AdminChannelGroupChannelBindingsReplaceRequest, AdminChannelGroupCreateRequest, AdminChannelGroupUpdateRequest, AdminModelCatalogSyncRequest, AdminModelMappingCreateRequest, AdminModelMappingResolveRequest, AdminModelMappingUpdateRequest, AdminModelVendorCreateRequest, AiResourceGroupsCreateResult, AiResourceGroupsDeleteResult, AiResourceGroupsListResult, AiResourceGroupsResourcesListResult, AiResourceGroupsUpdateResult, AiResourcesCreateResult, AiResourcesListResult, AiResourcesUpdateResult, ChannelGroupsChannelBindingsListResult, ChannelGroupsChannelBindingsUpdateResult, ChannelGroupsCreateResult, ChannelGroupsDeleteResult, ChannelGroupsListResult, ChannelGroupsUpdateResult, ModelMappingsCreateResult, ModelMappingsDeleteResult, ModelMappingsListResult, ModelMappingsResolveCreateResult, ModelMappingsUpdateResult, ModelRankingRefreshTriggerRequest, ModelRankingsJobsListResult, ModelRankingsListResult, ModelRankingsRefreshResult, ModelRankingsStatusRetrieveResult, ModelsCreateResult, ModelsDeleteResult, ModelsListResult, ModelsRefreshResult, ModelsUpdateResult, ModelVendorsCreateResult, ModelVendorsListResult } from '../types';
+import type { AdminAiModelCreateRequest, AdminAiModelUpdateRequest, AdminAiResourceCreateRequest, AdminAiResourceGroupCreateRequest, AdminAiResourceGroupUpdateRequest, AdminAiResourceUpdateRequest, AdminChannelGroupChannelBindingsReplaceRequest, AdminChannelGroupCreateRequest, AdminChannelGroupUpdateRequest, AdminModelCatalogSyncRequest, AdminModelMappingCreateRequest, AdminModelMappingResolveRequest, AdminModelMappingUpdateRequest, AdminModelVendorCreateRequest, AdminRuntimeRouteExplainRequest, AiResourceGroupsCreateResult, AiResourceGroupsDeleteResult, AiResourceGroupsListResult, AiResourceGroupsResourcesListResult, AiResourceGroupsUpdateResult, AiResourcesCreateResult, AiResourcesListResult, AiResourcesUpdateResult, ChannelGroupsChannelBindingsListResult, ChannelGroupsChannelBindingsUpdateResult, ChannelGroupsCreateResult, ChannelGroupsDeleteResult, ChannelGroupsListResult, ChannelGroupsRouteExplainRetrieveResult, ChannelGroupsUpdateResult, ModelMappingsCreateResult, ModelMappingsDeleteResult, ModelMappingsListResult, ModelMappingsResolveCreateResult, ModelMappingsUpdateResult, ModelRankingRefreshTriggerRequest, ModelRankingsJobsListResult, ModelRankingsListResult, ModelRankingsRefreshResult, ModelRankingsStatusRetrieveResult, ModelsCreateResult, ModelsDeleteResult, ModelsListResult, ModelsRefreshResult, ModelsUpdateResult, ModelVendorsCreateResult, ModelVendorsListResult, RouteExplainCreateResult } from '../types';
 
+
+export class AiRouteExplainApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** List runtime route explain */
+  async create(body: AdminRuntimeRouteExplainRequest): Promise<RouteExplainCreateResult> {
+    return this.client.post<RouteExplainCreateResult>(backendApiPath(`/ai/route_explain`), body, undefined, undefined, 'application/json');
+  }
+}
 
 export class AiAiResourcesApi {
   private client: HttpClient;
@@ -268,6 +282,20 @@ export class AiModelMappingsApi {
   }
 }
 
+export class AiChannelGroupsRouteExplainApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** List group route explain */
+  async retrieve(channelGroupId: string): Promise<ChannelGroupsRouteExplainRetrieveResult> {
+    return this.client.get<ChannelGroupsRouteExplainRetrieveResult>(backendApiPath(`/ai/channel_groups/${serializePathParameter(channelGroupId, { name: 'channelGroupId', style: 'simple', explode: false })}/route_explain`));
+  }
+}
+
 export class AiChannelGroupsChannelBindingsApi {
   private client: HttpClient;
 
@@ -290,10 +318,12 @@ export class AiChannelGroupsChannelBindingsApi {
 export class AiChannelGroupsApi {
   private client: HttpClient;
   public readonly channelBindings: AiChannelGroupsChannelBindingsApi;
+  public readonly routeExplain: AiChannelGroupsRouteExplainApi;
 
   constructor(client: HttpClient) {
     this.client = client;
     this.channelBindings = new AiChannelGroupsChannelBindingsApi(client);
+    this.routeExplain = new AiChannelGroupsRouteExplainApi(client);
   }
 
 
@@ -327,6 +357,7 @@ export class AiApi {
   public readonly models: AiModelsApi;
   public readonly aiResourceGroups: AiAiResourceGroupsApi;
   public readonly aiResources: AiAiResourcesApi;
+  public readonly routeExplain: AiRouteExplainApi;
 
   constructor(client: HttpClient) {
     this.client = client;
@@ -337,6 +368,7 @@ export class AiApi {
     this.models = new AiModelsApi(client);
     this.aiResourceGroups = new AiAiResourceGroupsApi(client);
     this.aiResources = new AiAiResourcesApi(client);
+    this.routeExplain = new AiRouteExplainApi(client);
   }
 
 }

@@ -189,11 +189,6 @@
     "object_bucket",
     "object_provider",
     "object_tag",
-    "open_platform_account",
-    "open_platform_entry",
-    "open_platform_manifest",
-    "open_platform_pay_binding",
-    "open_platform_provider",
     "ops_alert_event",
     "ops_audit_log",
     "ops_config_snapshot",
@@ -2061,7 +2056,7 @@
         "ops_metric_snapshot"
       ]
     },
-    "/admin/open-platform": {
+    "/admin/oauth": {
       "api_surfaces": [
         "app",
         "backend",
@@ -2070,16 +2065,10 @@
       "required_api_surface": "backend",
       "route_scope": "admin",
       "tables": [
-        "open_platform_account",
-        "open_platform_entry",
-        "open_platform_manifest",
-        "open_platform_pay_binding",
-        "open_platform_provider",
-        "ops_audit_log",
-        "plus_category"
+        "ops_audit_log"
       ]
     },
-    "/admin/open-platform/mini-programs": {
+    "/admin/oauth/account-links": {
       "api_surfaces": [
         "app",
         "backend",
@@ -2088,16 +2077,10 @@
       "required_api_surface": "backend",
       "route_scope": "admin",
       "tables": [
-        "open_platform_account",
-        "open_platform_entry",
-        "open_platform_manifest",
-        "open_platform_pay_binding",
-        "open_platform_provider",
-        "ops_audit_log",
-        "plus_category"
+        "ops_audit_log"
       ]
     },
-    "/admin/open-platform/mini-programs/accounts": {
+    "/admin/oauth/callback-diagnostics": {
       "api_surfaces": [
         "app",
         "backend",
@@ -2106,16 +2089,10 @@
       "required_api_surface": "backend",
       "route_scope": "admin",
       "tables": [
-        "open_platform_account",
-        "open_platform_entry",
-        "open_platform_manifest",
-        "open_platform_pay_binding",
-        "open_platform_provider",
-        "ops_audit_log",
-        "plus_category"
+        "ops_audit_log"
       ]
     },
-    "/admin/open-platform/mini-programs/urls": {
+    "/admin/oauth/clients": {
       "api_surfaces": [
         "app",
         "backend",
@@ -2124,16 +2101,10 @@
       "required_api_surface": "backend",
       "route_scope": "admin",
       "tables": [
-        "open_platform_account",
-        "open_platform_entry",
-        "open_platform_manifest",
-        "open_platform_pay_binding",
-        "open_platform_provider",
-        "ops_audit_log",
-        "plus_category"
+        "ops_audit_log"
       ]
     },
-    "/admin/open-platform/official-accounts": {
+    "/admin/oauth/diagnostic-runs": {
       "api_surfaces": [
         "app",
         "backend",
@@ -2142,16 +2113,10 @@
       "required_api_surface": "backend",
       "route_scope": "admin",
       "tables": [
-        "open_platform_account",
-        "open_platform_entry",
-        "open_platform_manifest",
-        "open_platform_pay_binding",
-        "open_platform_provider",
-        "ops_audit_log",
-        "plus_category"
+        "ops_audit_log"
       ]
     },
-    "/admin/open-platform/official-accounts/accounts": {
+    "/admin/oauth/grants": {
       "api_surfaces": [
         "app",
         "backend",
@@ -2160,16 +2125,10 @@
       "required_api_surface": "backend",
       "route_scope": "admin",
       "tables": [
-        "open_platform_account",
-        "open_platform_entry",
-        "open_platform_manifest",
-        "open_platform_pay_binding",
-        "open_platform_provider",
-        "ops_audit_log",
-        "plus_category"
+        "ops_audit_log"
       ]
     },
-    "/admin/open-platform/official-accounts/menus": {
+    "/admin/oauth/integrations": {
       "api_surfaces": [
         "app",
         "backend",
@@ -2178,16 +2137,10 @@
       "required_api_surface": "backend",
       "route_scope": "admin",
       "tables": [
-        "open_platform_account",
-        "open_platform_entry",
-        "open_platform_manifest",
-        "open_platform_pay_binding",
-        "open_platform_provider",
-        "ops_audit_log",
-        "plus_category"
+        "ops_audit_log"
       ]
     },
-    "/admin/open-platform/official-accounts/messages": {
+    "/admin/oauth/login": {
       "api_surfaces": [
         "app",
         "backend",
@@ -2196,13 +2149,115 @@
       "required_api_surface": "backend",
       "route_scope": "admin",
       "tables": [
-        "open_platform_account",
-        "open_platform_entry",
-        "open_platform_manifest",
-        "open_platform_pay_binding",
-        "open_platform_provider",
-        "ops_audit_log",
-        "plus_category"
+        "ops_audit_log"
+      ]
+    },
+    "/admin/oauth/login/mini-programs": {
+      "api_surfaces": [
+        "app",
+        "backend",
+        "worker"
+      ],
+      "required_api_surface": "backend",
+      "route_scope": "admin",
+      "tables": [
+        "ops_audit_log"
+      ]
+    },
+    "/admin/oauth/operational-resources": {
+      "api_surfaces": [
+        "app",
+        "backend",
+        "worker"
+      ],
+      "required_api_surface": "backend",
+      "route_scope": "admin",
+      "tables": [
+        "ops_audit_log"
+      ]
+    },
+    "/admin/oauth/overview": {
+      "api_surfaces": [
+        "app",
+        "backend",
+        "worker"
+      ],
+      "required_api_surface": "backend",
+      "route_scope": "admin",
+      "tables": [
+        "ops_audit_log"
+      ]
+    },
+    "/admin/oauth/provider-catalog": {
+      "api_surfaces": [
+        "app",
+        "backend",
+        "worker"
+      ],
+      "required_api_surface": "backend",
+      "route_scope": "admin",
+      "tables": [
+        "ops_audit_log"
+      ]
+    },
+    "/admin/oauth/resource-accounts": {
+      "api_surfaces": [
+        "app",
+        "backend",
+        "worker"
+      ],
+      "required_api_surface": "backend",
+      "route_scope": "admin",
+      "tables": [
+        "ops_audit_log"
+      ]
+    },
+    "/admin/oauth/resource-accounts/mini-programs": {
+      "api_surfaces": [
+        "app",
+        "backend",
+        "worker"
+      ],
+      "required_api_surface": "backend",
+      "route_scope": "admin",
+      "tables": [
+        "ops_audit_log"
+      ]
+    },
+    "/admin/oauth/resource-accounts/official-accounts": {
+      "api_surfaces": [
+        "app",
+        "backend",
+        "worker"
+      ],
+      "required_api_surface": "backend",
+      "route_scope": "admin",
+      "tables": [
+        "ops_audit_log"
+      ]
+    },
+    "/admin/oauth/resource-authorizations": {
+      "api_surfaces": [
+        "app",
+        "backend",
+        "worker"
+      ],
+      "required_api_surface": "backend",
+      "route_scope": "admin",
+      "tables": [
+        "ops_audit_log"
+      ]
+    },
+    "/admin/oauth/webhooks": {
+      "api_surfaces": [
+        "app",
+        "backend",
+        "worker"
+      ],
+      "required_api_surface": "backend",
+      "route_scope": "admin",
+      "tables": [
+        "ops_audit_log"
       ]
     },
     "/admin/orders": {
@@ -2397,7 +2452,6 @@
         "commerce_payment_reconciliation_run",
         "commerce_payment_route_rule",
         "commerce_payment_webhook_event",
-        "open_platform_pay_binding",
         "ops_audit_log"
       ]
     },
@@ -2424,7 +2478,6 @@
         "commerce_payment_route_decision",
         "commerce_payment_route_rule",
         "commerce_payment_webhook_event",
-        "open_platform_pay_binding",
         "ops_audit_log"
       ]
     },
@@ -2447,7 +2500,6 @@
         "commerce_payment_reconciliation_run",
         "commerce_payment_route_rule",
         "commerce_payment_webhook_event",
-        "open_platform_pay_binding",
         "ops_audit_log"
       ]
     },
@@ -2469,7 +2521,6 @@
         "commerce_payment_reconciliation_run",
         "commerce_payment_route_rule",
         "commerce_payment_webhook_event",
-        "open_platform_pay_binding",
         "ops_audit_log"
       ]
     },
@@ -2491,7 +2542,6 @@
         "commerce_payment_reconciliation_run",
         "commerce_payment_route_rule",
         "commerce_payment_webhook_event",
-        "open_platform_pay_binding",
         "ops_audit_log"
       ]
     },
@@ -2514,7 +2564,6 @@
         "commerce_payment_reconciliation_run",
         "commerce_payment_route_rule",
         "commerce_payment_webhook_event",
-        "open_platform_pay_binding",
         "ops_audit_log"
       ]
     },
@@ -2538,7 +2587,6 @@
         "commerce_payment_reconciliation_run",
         "commerce_payment_route_rule",
         "commerce_payment_webhook_event",
-        "open_platform_pay_binding",
         "ops_audit_log"
       ]
     },
@@ -2564,7 +2612,6 @@
         "commerce_payment_statement",
         "commerce_payment_statement_item",
         "commerce_payment_webhook_event",
-        "open_platform_pay_binding",
         "ops_audit_log"
       ]
     },
@@ -2587,7 +2634,6 @@
         "commerce_payment_route_decision",
         "commerce_payment_route_rule",
         "commerce_payment_webhook_event",
-        "open_platform_pay_binding",
         "ops_audit_log"
       ]
     },
@@ -2610,7 +2656,6 @@
         "commerce_payment_route_rule",
         "commerce_payment_webhook_delivery",
         "commerce_payment_webhook_event",
-        "open_platform_pay_binding",
         "ops_audit_log"
       ]
     },
@@ -2702,11 +2747,6 @@
         "integration_service_provider",
         "integration_service_provider_closure",
         "integration_service_provider_edge",
-        "open_platform_account",
-        "open_platform_entry",
-        "open_platform_manifest",
-        "open_platform_pay_binding",
-        "open_platform_provider",
         "ops_audit_log",
         "plus_category"
       ]
@@ -2720,11 +2760,6 @@
       "required_api_surface": "backend",
       "route_scope": "admin",
       "tables": [
-        "open_platform_account",
-        "open_platform_entry",
-        "open_platform_manifest",
-        "open_platform_pay_binding",
-        "open_platform_provider",
         "ops_audit_log",
         "plus_category"
       ]
@@ -3390,9 +3425,6 @@
         "messaging_route_rule",
         "messaging_send_request",
         "messaging_template",
-        "open_platform_account",
-        "open_platform_entry",
-        "open_platform_manifest",
         "ops_config_snapshot"
       ]
     },
@@ -4212,17 +4244,17 @@
   },
   "summary": {
     "api_surface_counts": {
-      "app": 212,
-      "backend": 318,
+      "app": 209,
+      "backend": 313,
       "openai_v1": 10,
       "system": 3,
       "worker": 249
     },
     "external_legacy_table_count": 15,
-    "frontend_route_count": 189,
-    "generated_table_count": 221,
+    "frontend_route_count": 198,
+    "generated_table_count": 216,
     "legacy_table_count": 24,
-    "table_count": 329
+    "table_count": 324
   },
   "tables": [
     {
@@ -62751,1262 +62783,6 @@
     },
     {
       "api_surfaces": [
-        "app",
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [
-        {
-          "group": "tenant_entity",
-          "name": "id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "uuid",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "data_scope",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "created_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "updated_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "version",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_by",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "metadata",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "name": "account_key",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "name",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "provider",
-          "source": "explicit",
-          "type": "string(64)"
-        },
-        {
-          "name": "account_type",
-          "source": "explicit",
-          "type": "string(64)"
-        },
-        {
-          "name": "app_id",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "secret_ref",
-          "source": "explicit",
-          "type": "string(256)"
-        },
-        {
-          "name": "token_ref",
-          "source": "explicit",
-          "type": "string(256)"
-        },
-        {
-          "name": "aes_key_ref",
-          "source": "explicit",
-          "type": "string(256)"
-        },
-        {
-          "name": "default_entry_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "qr_default",
-          "source": "explicit",
-          "type": "bool"
-        }
-      ],
-      "common_columns": [
-        {
-          "group": "tenant_entity",
-          "name": "id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "uuid",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "data_scope",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "created_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "updated_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "version",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_by",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "metadata",
-          "source": "common",
-          "type": "common"
-        }
-      ],
-      "compliance_level": "L3",
-      "domain": "integration",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/admin/open-platform",
-        "/auth/login",
-        "/admin/open-platform/official-accounts",
-        "/admin/open-platform/official-accounts/accounts",
-        "/admin/open-platform/official-accounts/menus",
-        "/admin/open-platform/official-accounts/messages",
-        "/admin/open-platform/mini-programs",
-        "/admin/open-platform/mini-programs/accounts",
-        "/admin/open-platform/mini-programs/urls",
-        "/admin/service-providers",
-        "/admin/service-providers/accounts"
-      ],
-      "generated_by_this_project": true,
-      "indexes": [
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "account_key"
-          ],
-          "name": "uk_open_platform_account_tenant_key",
-          "unique": true
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "provider",
-            "account_type",
-            "status",
-            "id"
-          ],
-          "name": "idx_open_platform_account_provider_type_status",
-          "unique": false
-        }
-      ],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "credential_ref",
-      "projection_policy": null,
-      "security": {
-        "audit_required": true,
-        "sensitivity": "SECRET_REF",
-        "stores_secret_plaintext": false
-      },
-      "source_refs": [],
-      "source_tables": [
-        "open_platform_provider"
-      ],
-      "system_of_record": true,
-      "table": "open_platform_account",
-      "unique_constraints": [],
-      "write_owner": "open-platform-service"
-    },
-    {
-      "api_surfaces": [
-        "app",
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [
-        {
-          "group": "tenant_entity",
-          "name": "id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "uuid",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "data_scope",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "created_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "updated_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "version",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_by",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "metadata",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "name": "account_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "entry_key",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "entry_type",
-          "source": "explicit",
-          "type": "string(64)"
-        },
-        {
-          "name": "entry_url",
-          "source": "explicit",
-          "type": "string(1024)"
-        }
-      ],
-      "common_columns": [
-        {
-          "group": "tenant_entity",
-          "name": "id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "uuid",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "data_scope",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "created_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "updated_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "version",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_by",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "metadata",
-          "source": "common",
-          "type": "common"
-        }
-      ],
-      "compliance_level": "L2",
-      "domain": "integration",
-      "foreign_keys": [
-        {
-          "columns": [
-            "account_id"
-          ],
-          "name": "fk_open_platform_entry_account",
-          "references_columns": [
-            "id"
-          ],
-          "references_table": "open_platform_account"
-        }
-      ],
-      "frontend_routes": [
-        "/admin/open-platform",
-        "/auth/login",
-        "/admin/open-platform/official-accounts",
-        "/admin/open-platform/official-accounts/accounts",
-        "/admin/open-platform/official-accounts/menus",
-        "/admin/open-platform/official-accounts/messages",
-        "/admin/open-platform/mini-programs",
-        "/admin/open-platform/mini-programs/accounts",
-        "/admin/open-platform/mini-programs/urls",
-        "/admin/service-providers",
-        "/admin/service-providers/accounts"
-      ],
-      "generated_by_this_project": true,
-      "indexes": [
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "account_id",
-            "entry_key"
-          ],
-          "name": "uk_open_platform_entry_account_key",
-          "unique": true
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "account_id",
-            "status",
-            "id"
-          ],
-          "name": "idx_open_platform_entry_account_status",
-          "unique": false
-        }
-      ],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "tenant_entity",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [
-        "open_platform_account"
-      ],
-      "system_of_record": true,
-      "table": "open_platform_entry",
-      "unique_constraints": [],
-      "write_owner": "open-platform-service"
-    },
-    {
-      "api_surfaces": [
-        "app",
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [
-        {
-          "group": "tenant_entity",
-          "name": "id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "uuid",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "data_scope",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "created_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "updated_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "version",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_by",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "metadata",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "name": "manifest_key",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "provider",
-          "source": "explicit",
-          "type": "string(64)"
-        },
-        {
-          "name": "account_type",
-          "source": "explicit",
-          "type": "string(64)"
-        },
-        {
-          "name": "version",
-          "source": "explicit",
-          "type": "string(32)"
-        },
-        {
-          "name": "capability_schema",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "callback_schema",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "entry_schema",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "sort_order",
-          "source": "explicit",
-          "type": "int32"
-        }
-      ],
-      "common_columns": [
-        {
-          "group": "tenant_entity",
-          "name": "id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "uuid",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "data_scope",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "created_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "updated_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "version",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_by",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "metadata",
-          "source": "common",
-          "type": "common"
-        }
-      ],
-      "compliance_level": "L2",
-      "domain": "integration",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/admin/open-platform",
-        "/auth/login",
-        "/admin/open-platform/official-accounts",
-        "/admin/open-platform/official-accounts/accounts",
-        "/admin/open-platform/official-accounts/menus",
-        "/admin/open-platform/official-accounts/messages",
-        "/admin/open-platform/mini-programs",
-        "/admin/open-platform/mini-programs/accounts",
-        "/admin/open-platform/mini-programs/urls",
-        "/admin/service-providers",
-        "/admin/service-providers/accounts"
-      ],
-      "generated_by_this_project": true,
-      "indexes": [
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "manifest_key"
-          ],
-          "name": "uk_open_platform_manifest_tenant_key",
-          "unique": true
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "provider",
-            "account_type",
-            "status",
-            "sort_order",
-            "id"
-          ],
-          "name": "idx_open_platform_manifest_provider_type",
-          "unique": false
-        }
-      ],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "dictionary_entity",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [
-        "open_platform_provider"
-      ],
-      "system_of_record": true,
-      "table": "open_platform_manifest",
-      "unique_constraints": [],
-      "write_owner": "open-platform-service"
-    },
-    {
-      "api_surfaces": [
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [
-        {
-          "group": "tenant_entity",
-          "name": "id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "uuid",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "data_scope",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "created_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "updated_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "version",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_by",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "metadata",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "name": "account_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "payment_account_id",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "payment_channel_id",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "scene",
-          "source": "explicit",
-          "type": "string(64)"
-        },
-        {
-          "name": "mode",
-          "source": "explicit",
-          "type": "string(64)"
-        }
-      ],
-      "common_columns": [
-        {
-          "group": "tenant_entity",
-          "name": "id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "uuid",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "data_scope",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "created_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "updated_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "version",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_by",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "metadata",
-          "source": "common",
-          "type": "common"
-        }
-      ],
-      "compliance_level": "L2",
-      "domain": "integration",
-      "foreign_keys": [
-        {
-          "columns": [
-            "account_id"
-          ],
-          "name": "fk_open_platform_pay_binding_account",
-          "references_columns": [
-            "id"
-          ],
-          "references_table": "open_platform_account"
-        }
-      ],
-      "frontend_routes": [
-        "/admin/open-platform",
-        "/admin/payments",
-        "/admin/payments/providers",
-        "/admin/payments/provider-accounts",
-        "/admin/payments/methods",
-        "/admin/payments/channels",
-        "/admin/payments/route-rules",
-        "/admin/payments/intents",
-        "/admin/payments/attempts",
-        "/admin/payments/webhook-events",
-        "/admin/payments/reconciliation-runs",
-        "/admin/open-platform/official-accounts",
-        "/admin/open-platform/official-accounts/accounts",
-        "/admin/open-platform/official-accounts/menus",
-        "/admin/open-platform/official-accounts/messages",
-        "/admin/open-platform/mini-programs",
-        "/admin/open-platform/mini-programs/accounts",
-        "/admin/open-platform/mini-programs/urls",
-        "/admin/service-providers",
-        "/admin/service-providers/accounts"
-      ],
-      "generated_by_this_project": true,
-      "indexes": [
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "account_id",
-            "payment_account_id",
-            "scene"
-          ],
-          "name": "uk_open_platform_pay_binding_account_scene",
-          "unique": true
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "account_id",
-            "status",
-            "id"
-          ],
-          "name": "idx_open_platform_pay_binding_account_status",
-          "unique": false
-        }
-      ],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "relation_entity",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [
-        "open_platform_account"
-      ],
-      "system_of_record": true,
-      "table": "open_platform_pay_binding",
-      "unique_constraints": [],
-      "write_owner": "open-platform-service"
-    },
-    {
-      "api_surfaces": [
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [
-        {
-          "group": "tenant_entity",
-          "name": "id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "uuid",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "data_scope",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "created_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "updated_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "version",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_by",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "metadata",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "name": "provider",
-          "source": "explicit",
-          "type": "string(64)"
-        },
-        {
-          "name": "name",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "icon_media_resource_id",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "icon_object_blob_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "icon_resource_snapshot",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "docs_url",
-          "source": "explicit",
-          "type": "string(512)"
-        },
-        {
-          "name": "website_url",
-          "source": "explicit",
-          "type": "string(512)"
-        },
-        {
-          "name": "capabilities",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "sort_order",
-          "source": "explicit",
-          "type": "int32"
-        }
-      ],
-      "common_columns": [
-        {
-          "group": "tenant_entity",
-          "name": "id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "uuid",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "data_scope",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "created_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "updated_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "version",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_by",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "metadata",
-          "source": "common",
-          "type": "common"
-        }
-      ],
-      "compliance_level": "L2",
-      "domain": "integration",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/admin/open-platform",
-        "/admin/open-platform/official-accounts",
-        "/admin/open-platform/official-accounts/accounts",
-        "/admin/open-platform/official-accounts/menus",
-        "/admin/open-platform/official-accounts/messages",
-        "/admin/open-platform/mini-programs",
-        "/admin/open-platform/mini-programs/accounts",
-        "/admin/open-platform/mini-programs/urls",
-        "/admin/service-providers",
-        "/admin/service-providers/accounts"
-      ],
-      "generated_by_this_project": true,
-      "indexes": [
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "provider"
-          ],
-          "name": "uk_open_platform_provider_tenant_provider",
-          "unique": true
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "status",
-            "sort_order",
-            "id"
-          ],
-          "name": "idx_open_platform_provider_status_sort",
-          "unique": false
-        }
-      ],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "dictionary_entity",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "open_platform_provider",
-      "unique_constraints": [],
-      "write_owner": "open-platform-service"
-    },
-    {
-      "api_surfaces": [
         "backend",
         "worker"
       ],
@@ -64524,7 +63300,7 @@
         "/admin/announcement",
         "/admin/marketing",
         "/admin/ratelimit",
-        "/admin/open-platform",
+        "/admin/oauth",
         "/console/wallet",
         "/console/recharge",
         "/console/checkout",
@@ -64566,13 +63342,22 @@
         "/admin/memberships/plans",
         "/admin/memberships/members",
         "/admin/memberships/entitlements",
-        "/admin/open-platform/official-accounts",
-        "/admin/open-platform/official-accounts/accounts",
-        "/admin/open-platform/official-accounts/menus",
-        "/admin/open-platform/official-accounts/messages",
-        "/admin/open-platform/mini-programs",
-        "/admin/open-platform/mini-programs/accounts",
-        "/admin/open-platform/mini-programs/urls",
+        "/admin/oauth/overview",
+        "/admin/oauth/login",
+        "/admin/oauth/login/mini-programs",
+        "/admin/oauth/provider-catalog",
+        "/admin/oauth/integrations",
+        "/admin/oauth/clients",
+        "/admin/oauth/resource-accounts",
+        "/admin/oauth/resource-accounts/official-accounts",
+        "/admin/oauth/resource-accounts/mini-programs",
+        "/admin/oauth/resource-authorizations",
+        "/admin/oauth/webhooks",
+        "/admin/oauth/operational-resources",
+        "/admin/oauth/account-links",
+        "/admin/oauth/grants",
+        "/admin/oauth/callback-diagnostics",
+        "/admin/oauth/diagnostic-runs",
         "/admin/courses",
         "/admin/service-providers",
         "/admin/service-providers/accounts",
@@ -69157,17 +67942,9 @@
         "/courses/:id",
         "/admin/catalog",
         "/admin/app",
-        "/admin/open-platform",
         "/admin/skill",
         "/admin/prompts",
         "/admin/mcp",
-        "/admin/open-platform/official-accounts",
-        "/admin/open-platform/official-accounts/accounts",
-        "/admin/open-platform/official-accounts/menus",
-        "/admin/open-platform/official-accounts/messages",
-        "/admin/open-platform/mini-programs",
-        "/admin/open-platform/mini-programs/accounts",
-        "/admin/open-platform/mini-programs/urls",
         "/admin/service-providers",
         "/admin/service-providers/accounts"
       ],

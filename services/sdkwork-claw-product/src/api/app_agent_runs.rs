@@ -39,13 +39,11 @@ struct AppAgentRunState {
 }
 
 #[derive(Debug, Deserialize)]
-#[serde(rename_all = "camelCase")]
 struct AppAgentRunListQuery {
+    #[serde(default)]
     page: Option<i64>,
-    #[serde(rename = "pageSize")]
-    page_size_camel: Option<i64>,
-    #[serde(rename = "page_size")]
-    page_size_snake: Option<i64>,
+    #[serde(default)]
+    page_size: Option<i64>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -248,8 +246,7 @@ async fn list_runs(
         Ok(value) => value,
         Err(message) => return bad_request(message),
     };
-    let (page, page_size) =
-        normalize_page(query.page, query.page_size_camel, query.page_size_snake);
+    let (page, page_size) = normalize_page(query.page, query.page_size);
     match state
         .store
         .list_runs(subject, session_id, page, page_size)
@@ -345,8 +342,7 @@ async fn list_steps(
         Ok(value) => value,
         Err(message) => return bad_request(message),
     };
-    let (page, page_size) =
-        normalize_page(query.page, query.page_size_camel, query.page_size_snake);
+    let (page, page_size) = normalize_page(query.page, query.page_size);
     match state
         .store
         .list_steps(subject, run_id, page, page_size)
@@ -608,17 +604,9 @@ fn required_subject(
     }
 }
 
-fn normalize_page(
-    page: Option<i64>,
-    page_size_camel: Option<i64>,
-    page_size_snake: Option<i64>,
-) -> (i64, i64) {
+fn normalize_page(page: Option<i64>, page_size: Option<i64>) -> (i64, i64) {
     let page = page.unwrap_or(1).max(1);
-    let page_size = page_size_snake
-        .or(page_size_camel)
-        .unwrap_or(30)
-        .max(1)
-        .min(MAX_PAGE_SIZE);
+    let page_size = page_size.unwrap_or(30).max(1).min(MAX_PAGE_SIZE);
     (page, page_size)
 }
 

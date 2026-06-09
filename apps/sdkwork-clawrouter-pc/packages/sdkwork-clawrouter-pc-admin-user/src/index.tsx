@@ -133,14 +133,19 @@ export function UserAdmin() {
   const [users, setUsers] = useState<UserListItem[]>([]);
   const [apiKeysMap, setApiKeysMap] = useState<Record<string, ApiKeyItem[]>>({});
 
-  const loadUsers = async () => {
+  const loadUsers = async (searchText = appliedSearch) => {
+    const normalizedSearchText = searchText.trim();
     setLoading(true);
     setLoadError(null);
     setApiKeysLoadError(null);
     try {
-      const result = await UserService.loadAdminTableData();
+      const result = await UserService.loadAdminTableData({
+        q: normalizedSearchText || undefined,
+        pageSize: 200,
+      });
       setUsers(result.users);
       setApiKeysMap(result.apiKeysMap);
+      setAppliedSearch(normalizedSearchText);
       setApiKeysLoadError(
         result.apiKeysLoadError
           ? getAdminUserErrorMessage(result.apiKeysLoadError, 'admin.user.errors.fetchApiKeysFallback', 'API keys could not be loaded', t)
@@ -236,29 +241,6 @@ export function UserAdmin() {
     setActiveDropdown(null);
   };
 
-  const normalizedSearch = appliedSearch.trim().toLowerCase();
-  const visibleUsers = normalizedSearch
-    ? users.filter((userItem) =>
-      [
-        userItem.id,
-        userItem.email,
-        userItem.username,
-        userItem.displayName,
-        userItem.mobile,
-        userItem.gender,
-        userItem.country,
-        userItem.province,
-        userItem.city,
-        userItem.district,
-        userItem.address,
-        userItem.role,
-        userItem.group,
-        userItem.status,
-      ]
-        .some((value) => value.toLowerCase().includes(normalizedSearch)),
-    )
-    : users;
-
   return (
     <div className="flex h-full min-h-0 w-full flex-col gap-4 overflow-hidden">
       <div className="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-center sm:justify-between" data-admin-user-toolbar>
@@ -270,7 +252,7 @@ export function UserAdmin() {
               onChange={(event) => setSearchDraft(event.target.value)}
               onKeyDown={(event) => {
                 if (event.key === 'Enter') {
-                  setAppliedSearch(searchDraft);
+                  void loadUsers(searchDraft);
                 }
               }}
               placeholder={t('admin.user.index.searchPlaceholder', 'Search users...')}
@@ -281,7 +263,7 @@ export function UserAdmin() {
           <button
             className="inline-flex h-10 items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-3 text-sm font-medium text-slate-700 shadow-sm transition-colors hover:border-blue-300 hover:text-blue-700 dark:border-white/10 dark:bg-[#1e1e1e] dark:text-slate-200 dark:hover:border-blue-500/40 dark:hover:text-blue-300"
             data-admin-user-query-action
-            onClick={() => setAppliedSearch(searchDraft)}
+            onClick={() => { void loadUsers(searchDraft); }}
             type="button"
           >
             <Search className="h-4 w-4" />
@@ -290,7 +272,7 @@ export function UserAdmin() {
           <button
             className="inline-flex h-10 items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-3 text-sm font-medium text-slate-700 shadow-sm transition-colors hover:border-blue-300 hover:text-blue-700 dark:border-white/10 dark:bg-[#1e1e1e] dark:text-slate-200 dark:hover:border-blue-500/40 dark:hover:text-blue-300"
             data-admin-user-refresh-action
-            onClick={() => { void loadUsers(); }}
+            onClick={() => { void loadUsers(appliedSearch); }}
             type="button"
           >
             <RefreshCw className={`h-4 w-4 ${loading ? 'animate-spin' : ''}`} />
@@ -341,18 +323,18 @@ export function UserAdmin() {
                 colSpan={13}
                 description={loadError}
                 kind="error"
-                onRetry={() => { void loadUsers(); }}
+                onRetry={() => { void loadUsers(appliedSearch); }}
                 retryLabel={t('admin.user.index.text.usersRetry', 'Retry')}
                 title={t('admin.user.index.text.usersLoadError', 'Users could not be loaded')}
               />
-            ) : visibleUsers.length === 0 ? (
+            ) : users.length === 0 ? (
               <BusinessStateTableRow
                 colSpan={13}
                 description={t('admin.user.index.text.usersEmptyDescription', 'Create a user before assigning groups, balances, or API keys.')}
                 kind="empty"
                 title={t('admin.user.index.text.usersEmpty', 'No users found')}
               />
-            ) : visibleUsers.map((userItem) => (
+            ) : users.map((userItem) => (
               <tr className="group transition-colors hover:bg-slate-50 dark:hover:bg-white/5" key={userItem.id}>
                 <td className="px-6 py-4">
                   <div className="flex w-48 items-center gap-3">

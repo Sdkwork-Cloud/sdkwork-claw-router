@@ -6,8 +6,8 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class StorageBucketListResponse
     {
-        public List<StorageBucketConfig>? Items { get; set; }
+        public List<StorageBucketConfig> Items { get; set; }
         public string? NextCursor { get; set; }
-        public string? RequestId { get; set; }
+        public string RequestId { get; set; }
     }
 }

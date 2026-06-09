@@ -116,13 +116,14 @@ export interface SdkworkFileSdkRepositoryMaterializeResult extends SdkworkFileSd
 }
 
 export const SDKWORK_FILE_SDK_GENERATION_MANIFEST_VERSION = "2026.05.file-platform.sdk-generation.v1";
+export const SDKWORK_FILE_SDK_ARTIFACT_ROOT = "packages/common/file/sdkwork-file-sdk-generation/generated/sdks";
 
 export const SDKWORK_FILE_SDK_GENERATION_TARGETS: readonly SdkworkFileSdkGenerationTarget[] = [
   {
     apiPrefix: SDKWORK_FILE_STANDARD.api.appPrefix,
     archiveName: "sdkwork-file-app-sdk-typescript-0.1.0.zip",
     clientName: "SdkworkFileAppClient",
-    generatedPackageRoot: "sdks/file-app-sdk/file-app-sdk-typescript",
+    generatedPackageRoot: `${SDKWORK_FILE_SDK_ARTIFACT_ROOT}/file-app-sdk/file-app-sdk-typescript`,
     generator: "sdkwork-openapi-typescript",
     language: "typescript",
     openapiArtifactName: "sdkwork-file-app-openapi.json",
@@ -136,7 +137,7 @@ export const SDKWORK_FILE_SDK_GENERATION_TARGETS: readonly SdkworkFileSdkGenerat
     apiPrefix: SDKWORK_FILE_STANDARD.api.backendPrefix,
     archiveName: "sdkwork-file-backend-sdk-typescript-0.1.0.zip",
     clientName: "SdkworkFileBackendClient",
-    generatedPackageRoot: "sdks/file-backend-sdk/file-backend-sdk-typescript",
+    generatedPackageRoot: `${SDKWORK_FILE_SDK_ARTIFACT_ROOT}/file-backend-sdk/file-backend-sdk-typescript`,
     generator: "sdkwork-openapi-typescript",
     language: "typescript",
     openapiArtifactName: "sdkwork-file-backend-openapi.json",
@@ -170,7 +171,7 @@ export function createFileSdkOpenApiArtifacts(
 
 export function createFileSdkArtifactWritePlan(
   manifest: SdkworkFileSdkGenerationManifest = createFileSdkGenerationManifest(),
-  rootDir = "sdks",
+  rootDir = SDKWORK_FILE_SDK_ARTIFACT_ROOT,
 ): SdkworkFileSdkArtifactWritePlan {
   const plannedFiles = manifest.targets.flatMap((target) => createTargetArtifactFiles(target, rootDir));
   const hashedFiles = plannedFiles.map((file) => withHash(file));
@@ -547,13 +548,17 @@ function withHash(file: Omit<SdkworkFileSdkArtifactFile, "sha256">): SdkworkFile
 }
 
 function workspaceName(target: SdkworkFileSdkGenerationTarget): string {
-  const [workspace] = target.generatedPackageRoot.replace(/^sdks\//, "").split("/");
+  const [workspace] = target.generatedPackageRoot.replace(new RegExp(`^${escapeRegExp(SDKWORK_FILE_SDK_ARTIFACT_ROOT)}/`), "").split("/");
   return workspace;
 }
 
 function packageRootName(target: SdkworkFileSdkGenerationTarget): string {
-  const [, packageRoot] = target.generatedPackageRoot.replace(/^sdks\//, "").split("/");
+  const [, packageRoot] = target.generatedPackageRoot.replace(new RegExp(`^${escapeRegExp(SDKWORK_FILE_SDK_ARTIFACT_ROOT)}/`), "").split("/");
   return packageRoot;
+}
+
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 function sha256(content: string): string {

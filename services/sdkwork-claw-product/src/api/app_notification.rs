@@ -30,18 +30,14 @@ struct AppNotificationState {
 
 #[derive(Debug, Deserialize)]
 struct NotificationListQuery {
-    #[serde(alias = "appId")]
     app_id: Option<String>,
-    #[serde(alias = "includeArchived")]
     include_archived: Option<bool>,
     page: Option<i64>,
-    #[serde(alias = "pageSize")]
     page_size: Option<i64>,
 }
 
 #[derive(Debug, Deserialize)]
 struct NotificationCommandQuery {
-    #[serde(alias = "appId")]
     app_id: Option<String>,
 }
 

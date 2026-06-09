@@ -17492,6 +17492,96 @@ components:
         updated_at:
           type: string
           format: date-time
+    IamDepartmentAssignmentRecord:
+      type: object
+      x-table: iam_department_assignment
+      x-domain: iam
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          maxLength: 128
+        tenant_id:
+          type: string
+          maxLength: 128
+        organization_id:
+          type: string
+          maxLength: 128
+        organization_membership_id:
+          type: string
+          maxLength: 128
+        department_id:
+          type: string
+          maxLength: 128
+        user_id:
+          type: string
+          maxLength: 128
+        assignment_kind:
+          type: string
+          maxLength: 64
+        is_primary:
+          type: integer
+          format: int32
+        effective_from:
+          type: string
+          format: date-time
+        effective_to:
+          type: string
+          format: date-time
+        status:
+          type: string
+          maxLength: 32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+    IamDepartmentRecord:
+      type: object
+      x-table: iam_department
+      x-domain: iam
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          maxLength: 128
+        tenant_id:
+          type: string
+          maxLength: 128
+        organization_id:
+          type: string
+          maxLength: 128
+        parent_department_id:
+          type: string
+          maxLength: 128
+        code:
+          type: string
+          maxLength: 128
+        name:
+          type: string
+          maxLength: 256
+        department_kind:
+          type: string
+          maxLength: 64
+        path:
+          type: string
+          maxLength: 1024
+        cost_center_code:
+          type: string
+          maxLength: 128
+        manager_membership_id:
+          type: string
+          maxLength: 128
+        status:
+          type: string
+          maxLength: 32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
     IamDeviceRecord:
       type: object
       x-table: iam_device
@@ -18100,9 +18190,9 @@ components:
         updated_at:
           type: string
           format: date-time
-    IamOrganizationMemberRecord:
+    IamOrganizationMembershipRecord:
       type: object
-      x-table: iam_organization_member
+      x-table: iam_organization_membership
       x-domain: iam
       x-generated-by-this-project: true
       properties:
@@ -18118,9 +18208,18 @@ components:
         user_id:
           type: string
           maxLength: 128
-        role_code:
+        membership_kind:
           type: string
           maxLength: 128
+        employee_no:
+          type: string
+          maxLength: 128
+        display_name:
+          type: string
+          maxLength: 128
+        is_primary:
+          type: integer
+          format: int32
         status:
           type: string
           maxLength: 32
@@ -18133,6 +18232,12 @@ components:
         remark:
           type: string
           maxLength: 500
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
     IamOrganizationRecord:
       type: object
       x-table: iam_organization
@@ -18211,6 +18316,129 @@ components:
         policy_json:
           type: object
           additionalProperties: true
+        status:
+          type: string
+          maxLength: 32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+    IamPositionAssignmentRecord:
+      type: object
+      x-table: iam_position_assignment
+      x-domain: iam
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          maxLength: 128
+        tenant_id:
+          type: string
+          maxLength: 128
+        organization_id:
+          type: string
+          maxLength: 128
+        department_assignment_id:
+          type: string
+          maxLength: 128
+        position_id:
+          type: string
+          maxLength: 128
+        user_id:
+          type: string
+          maxLength: 128
+        is_primary:
+          type: integer
+          format: int32
+        effective_from:
+          type: string
+          format: date-time
+        effective_to:
+          type: string
+          format: date-time
+        status:
+          type: string
+          maxLength: 32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+    IamPositionRecord:
+      type: object
+      x-table: iam_position
+      x-domain: iam
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          maxLength: 128
+        tenant_id:
+          type: string
+          maxLength: 128
+        organization_id:
+          type: string
+          maxLength: 128
+        department_id:
+          type: string
+          maxLength: 128
+        code:
+          type: string
+          maxLength: 128
+        name:
+          type: string
+          maxLength: 256
+        position_kind:
+          type: string
+          maxLength: 64
+        rank_level:
+          type: integer
+          format: int32
+        status:
+          type: string
+          maxLength: 32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+    IamRoleBindingRecord:
+      type: object
+      x-table: iam_role_binding
+      x-domain: iam
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          maxLength: 128
+        tenant_id:
+          type: string
+          maxLength: 128
+        role_id:
+          type: string
+          maxLength: 128
+        principal_kind:
+          type: string
+          maxLength: 64
+        principal_id:
+          type: string
+          maxLength: 128
+        scope_kind:
+          type: string
+          maxLength: 64
+        scope_id:
+          type: string
+          maxLength: 128
+        effect:
+          type: string
+          maxLength: 32
+        condition_json:
+          type: string
+          maxLength: 4000
         status:
           type: string
           maxLength: 32
@@ -22737,394 +22965,6 @@ components:
         tag_value:
           type: string
           maxLength: 512
-    OpenPlatformAccountRecord:
-      type: object
-      x-table: open_platform_account
-      x-domain: integration
-      x-generated-by-this-project: true
-      properties:
-        id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        uuid:
-          type: string
-          maxLength: 64
-        tenant_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        organization_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        data_scope:
-          type: string
-          x-db-type: enum_int32
-        status:
-          type: string
-          x-db-type: enum_int32
-        created_at:
-          type: string
-          format: date-time
-        updated_at:
-          type: string
-          format: date-time
-        version:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        deleted_at:
-          type: string
-          format: date-time
-        deleted_by:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        metadata:
-          type: object
-          additionalProperties: true
-        account_key:
-          type: string
-          maxLength: 128
-        name:
-          type: string
-          maxLength: 128
-        provider:
-          type: string
-          maxLength: 64
-        account_type:
-          type: string
-          maxLength: 64
-        app_id:
-          type: string
-          maxLength: 128
-        secret_ref:
-          type: string
-          maxLength: 256
-        token_ref:
-          type: string
-          maxLength: 256
-        aes_key_ref:
-          type: string
-          maxLength: 256
-        default_entry_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        qr_default:
-          type: boolean
-    OpenPlatformEntryRecord:
-      type: object
-      x-table: open_platform_entry
-      x-domain: integration
-      x-generated-by-this-project: true
-      properties:
-        id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        uuid:
-          type: string
-          maxLength: 64
-        tenant_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        organization_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        data_scope:
-          type: string
-          x-db-type: enum_int32
-        status:
-          type: string
-          x-db-type: enum_int32
-        created_at:
-          type: string
-          format: date-time
-        updated_at:
-          type: string
-          format: date-time
-        version:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        deleted_at:
-          type: string
-          format: date-time
-        deleted_by:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        metadata:
-          type: object
-          additionalProperties: true
-        account_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        entry_key:
-          type: string
-          maxLength: 128
-        entry_type:
-          type: string
-          maxLength: 64
-        entry_url:
-          type: string
-          maxLength: 1024
-    OpenPlatformManifestRecord:
-      type: object
-      x-table: open_platform_manifest
-      x-domain: integration
-      x-generated-by-this-project: true
-      properties:
-        id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        uuid:
-          type: string
-          maxLength: 64
-        tenant_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        organization_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        data_scope:
-          type: string
-          x-db-type: enum_int32
-        status:
-          type: string
-          x-db-type: enum_int32
-        created_at:
-          type: string
-          format: date-time
-        updated_at:
-          type: string
-          format: date-time
-        version:
-          type: string
-          maxLength: 32
-        deleted_at:
-          type: string
-          format: date-time
-        deleted_by:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        metadata:
-          type: object
-          additionalProperties: true
-        manifest_key:
-          type: string
-          maxLength: 128
-        provider:
-          type: string
-          maxLength: 64
-        account_type:
-          type: string
-          maxLength: 64
-        capability_schema:
-          type: object
-          additionalProperties: true
-        callback_schema:
-          type: object
-          additionalProperties: true
-        entry_schema:
-          type: object
-          additionalProperties: true
-        sort_order:
-          type: integer
-          format: int32
-    OpenPlatformPayBindingRecord:
-      type: object
-      x-table: open_platform_pay_binding
-      x-domain: integration
-      x-generated-by-this-project: true
-      properties:
-        id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        uuid:
-          type: string
-          maxLength: 64
-        tenant_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        organization_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        data_scope:
-          type: string
-          x-db-type: enum_int32
-        status:
-          type: string
-          x-db-type: enum_int32
-        created_at:
-          type: string
-          format: date-time
-        updated_at:
-          type: string
-          format: date-time
-        version:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        deleted_at:
-          type: string
-          format: date-time
-        deleted_by:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        metadata:
-          type: object
-          additionalProperties: true
-        account_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        payment_account_id:
-          type: string
-          maxLength: 128
-        payment_channel_id:
-          type: string
-          maxLength: 128
-        scene:
-          type: string
-          maxLength: 64
-        mode:
-          type: string
-          maxLength: 64
-    OpenPlatformProviderRecord:
-      type: object
-      x-table: open_platform_provider
-      x-domain: integration
-      x-generated-by-this-project: true
-      properties:
-        id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        uuid:
-          type: string
-          maxLength: 64
-        tenant_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        organization_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        data_scope:
-          type: string
-          x-db-type: enum_int32
-        status:
-          type: string
-          x-db-type: enum_int32
-        created_at:
-          type: string
-          format: date-time
-        updated_at:
-          type: string
-          format: date-time
-        version:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        deleted_at:
-          type: string
-          format: date-time
-        deleted_by:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        metadata:
-          type: object
-          additionalProperties: true
-        provider:
-          type: string
-          maxLength: 64
-        name:
-          type: string
-          maxLength: 128
-        docs_url:
-          type: string
-          maxLength: 512
-        website_url:
-          type: string
-          maxLength: 512
-        capabilities:
-          type: object
-          additionalProperties: true
-        sort_order:
-          type: integer
-          format: int32
-        icon:
-          $ref: '#/components/schemas/MediaResource'
     OpsAlertEventRecord:
       type: object
       x-table: ops_alert_event

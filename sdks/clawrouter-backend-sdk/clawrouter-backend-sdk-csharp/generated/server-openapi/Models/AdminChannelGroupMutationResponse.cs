@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminChannelGroupMutationResponse
     {
-        public AdminChannelGroupItem? Item { get; set; }
+        public AdminChannelGroupItem Item { get; set; }
     }
 }

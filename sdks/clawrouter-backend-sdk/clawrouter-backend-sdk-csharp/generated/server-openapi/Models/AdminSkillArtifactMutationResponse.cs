@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminSkillArtifactMutationResponse
     {
-        public AdminSkillArtifactItem? Item { get; set; }
+        public AdminSkillArtifactItem Item { get; set; }
     }
 }

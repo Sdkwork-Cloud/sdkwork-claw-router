@@ -16,18 +16,18 @@ inputs.
 
 ## Artifact Plan
 
-`createFileSdkArtifactWritePlan()` returns deterministic files for the standard
-SDK family layout:
+`createFileSdkArtifactWritePlan()` returns deterministic files for the file
+package-owned SDK family layout:
 
-- `sdks/file-app-sdk/.sdkwork-assembly.json`
-- `sdks/file-app-sdk/README.md`
-- `sdks/file-app-sdk/openapi/file-app-sdk.openapi.json`
-- `sdks/file-app-sdk/openapi/file-app-sdk.sdkgen.json`
-- `sdks/file-backend-sdk/.sdkwork-assembly.json`
-- `sdks/file-backend-sdk/README.md`
-- `sdks/file-backend-sdk/openapi/file-backend-sdk.openapi.json`
-- `sdks/file-backend-sdk/openapi/file-backend-sdk.sdkgen.json`
-- `sdks/file-sdk-generation-manifest.json`
+- `packages/common/file/sdkwork-file-sdk-generation/generated/sdks/file-app-sdk/.sdkwork-assembly.json`
+- `packages/common/file/sdkwork-file-sdk-generation/generated/sdks/file-app-sdk/README.md`
+- `packages/common/file/sdkwork-file-sdk-generation/generated/sdks/file-app-sdk/openapi/file-app-sdk.openapi.json`
+- `packages/common/file/sdkwork-file-sdk-generation/generated/sdks/file-app-sdk/openapi/file-app-sdk.sdkgen.json`
+- `packages/common/file/sdkwork-file-sdk-generation/generated/sdks/file-backend-sdk/.sdkwork-assembly.json`
+- `packages/common/file/sdkwork-file-sdk-generation/generated/sdks/file-backend-sdk/README.md`
+- `packages/common/file/sdkwork-file-sdk-generation/generated/sdks/file-backend-sdk/openapi/file-backend-sdk.openapi.json`
+- `packages/common/file/sdkwork-file-sdk-generation/generated/sdks/file-backend-sdk/openapi/file-backend-sdk.sdkgen.json`
+- `packages/common/file/sdkwork-file-sdk-generation/generated/sdks/file-sdk-generation-manifest.json`
 
 Every planned file carries a SHA-256 hash and stable content. The plan contains
 no timestamp, no raw HTTP settings, no auth headers, and no local SDK fork path.
@@ -80,7 +80,10 @@ The package also exposes local equivalents:
 does not write files. `write` applies only the deterministic plan and exits with
 code `0` when the plan is materialized. Both commands use the same safe
 materializer, so existing unrelated SDK directories such as `sdks/clawrouter-*`
-are not read, rewritten, or deleted.
+are not read, rewritten, or deleted. The file SDK package does not materialize
+`sdks/file-*` under the ClawRouter application SDK workspace; ClawRouter's
+application-owned `sdks/` tree remains reserved for the three ClawRouter SDK
+families.
 
 ## SDKWork Documentation Contract
 

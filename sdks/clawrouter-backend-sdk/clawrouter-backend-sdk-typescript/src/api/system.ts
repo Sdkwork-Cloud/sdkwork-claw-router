@@ -1,7 +1,7 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { AdminAuthSettingsUpdateRequest, AdminFirewallRuleCreateRequest, AdminIpLimitCreateRequest, AdminModelLimitCreateRequest, AdminRuntimeRegionSettingsUpdateRequest, AdminServiceNodeCreateRequest, AdminServiceNodeStatusUpdateRequest, AdminServiceNodeUpdateRequest, AdminSiteSettingsUpdateRequest, AdminTokenLimitCreateRequest, AnalyticsAdminOverviewRetrieveResult, AuthSettingsRetrieveResult, AuthSettingsUpdateResult, CacheInstancesDeleteResult, CacheInstancesRefreshCreateResult, CacheNamespacesDeleteResult, CacheNamespacesKeysDeleteResult, CacheNamespacesKeysListResult, CacheNamespacesRefreshCreateResult, CacheOverviewRetrieveResult, CacheRefreshCreateResult, DashboardAdminOverviewRetrieveResult, FirewallsRulesCreateResult, FirewallsRulesDeleteResult, FirewallsRulesListResult, InstallationStatusRetrieveResult, MarketingReferralStatsListResult, MonitorAlertsListResult, MonitorNodesListResult, MonitorPerformanceListResult, PromotionsBudgetLedgerEntriesListResult, PromotionsCodesRedemptionsListResult, PromotionsCouponLedgerEntriesListResult, PromotionsEventsListResult, PromotionsExternalBindingsListResult, RateLimitsApiKeysCreateResult, RateLimitsApiKeysListResult, RateLimitsIpCreateResult, RateLimitsIpListResult, RateLimitsModelsCreateResult, RateLimitsModelsListResult, RecordsListResult, RuntimeRegionSettingsRetrieveResult, RuntimeRegionSettingsUpdateResult, ServiceNodesCreateResult, ServiceNodesDeleteResult, ServiceNodesListResult, ServiceNodesStatusUpdateResult, ServiceNodesUpdateResult, SiteSettingsRetrieveResult, SiteSettingsUpdateResult } from '../types';
+import type { AdminAuthSettingsUpdateRequest, AdminFirewallRuleCreateRequest, AdminIpLimitCreateRequest, AdminModelLimitCreateRequest, AdminRuntimeRegionSettingsUpdateRequest, AdminServiceNodeCreateRequest, AdminServiceNodeStatusUpdateRequest, AdminServiceNodeUpdateRequest, AdminSiteSettingsUpdateRequest, AdminTokenLimitCreateRequest, AnalyticsAdminOverviewRetrieveResult, AuthSettingsRetrieveResult, AuthSettingsUpdateResult, CacheInstancesDeleteResult, CacheInstancesRefreshCreateResult, CacheNamespacesDeleteResult, CacheNamespacesKeysDeleteResult, CacheNamespacesKeysListResult, CacheNamespacesRefreshCreateResult, CacheOverviewRetrieveResult, CacheRefreshCreateResult, DashboardAdminOverviewRetrieveResult, FirewallsRulesCreateResult, FirewallsRulesDeleteResult, FirewallsRulesListResult, InstallationStatusRetrieveResult, MarketingReferralStatsListResult, MonitorAlertsListResult, MonitorNodesListResult, MonitorPerformanceListResult, RateLimitsApiKeysCreateResult, RateLimitsApiKeysListResult, RateLimitsIpCreateResult, RateLimitsIpListResult, RateLimitsModelsCreateResult, RateLimitsModelsListResult, RecordsListResult, RuntimeRegionSettingsRetrieveResult, RuntimeRegionSettingsUpdateResult, ServiceNodesCreateResult, ServiceNodesDeleteResult, ServiceNodesListResult, ServiceNodesStatusUpdateResult, ServiceNodesUpdateResult, SiteSettingsRetrieveResult, SiteSettingsUpdateResult } from '../types';
 
 
 export class SystemSiteSettingsApi {
@@ -611,148 +611,8 @@ export class SystemAnalyticsApi {
 
 }
 
-export interface SystemPromotionsExternalBindingsListParams {
-  platform?: string;
-}
-
-export class SystemPromotionsExternalBindingsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Promotion External Bindings List */
-  async list(params?: SystemPromotionsExternalBindingsListParams): Promise<PromotionsExternalBindingsListResult> {
-    const query = buildQueryString([
-      { name: 'platform', value: params?.platform, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<PromotionsExternalBindingsListResult>(appendQueryString(backendApiPath(`/promotions/external_bindings`), query));
-  }
-}
-
-export interface SystemPromotionsEventsListParams {
-  status?: string;
-}
-
-export class SystemPromotionsEventsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Promotion Events List */
-  async list(params?: SystemPromotionsEventsListParams): Promise<PromotionsEventsListResult> {
-    const query = buildQueryString([
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<PromotionsEventsListResult>(appendQueryString(backendApiPath(`/promotions/events`), query));
-  }
-}
-
-export interface SystemPromotionsCouponLedgerEntriesListParams {
-  stockId?: string;
-}
-
-export class SystemPromotionsCouponLedgerEntriesApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Promotion Coupon Ledger Entries List */
-  async list(params?: SystemPromotionsCouponLedgerEntriesListParams): Promise<PromotionsCouponLedgerEntriesListResult> {
-    const query = buildQueryString([
-      { name: 'stock_id', value: params?.stockId, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<PromotionsCouponLedgerEntriesListResult>(appendQueryString(backendApiPath(`/promotions/coupon_ledger_entries`), query));
-  }
-}
-
-export interface SystemPromotionsCodesRedemptionsListParams {
-  page?: string;
-  pageSize?: string;
-  codeStatus?: string;
-}
-
-export class SystemPromotionsCodesRedemptionsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Promotion Coupon Code Redemptions List */
-  async list(params?: SystemPromotionsCodesRedemptionsListParams): Promise<PromotionsCodesRedemptionsListResult> {
-    const query = buildQueryString([
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'code_status', value: params?.codeStatus, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<PromotionsCodesRedemptionsListResult>(appendQueryString(backendApiPath(`/promotions/codes/redemptions`), query));
-  }
-}
-
-export class SystemPromotionsCodesApi {
-  private client: HttpClient;
-  public readonly redemptions: SystemPromotionsCodesRedemptionsApi;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-    this.redemptions = new SystemPromotionsCodesRedemptionsApi(client);
-  }
-
-}
-
-export interface SystemPromotionsBudgetLedgerEntriesListParams {
-  budgetAccountId?: string;
-}
-
-export class SystemPromotionsBudgetLedgerEntriesApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Promotion Budget Ledger Entries List */
-  async list(params?: SystemPromotionsBudgetLedgerEntriesListParams): Promise<PromotionsBudgetLedgerEntriesListResult> {
-    const query = buildQueryString([
-      { name: 'budget_account_id', value: params?.budgetAccountId, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<PromotionsBudgetLedgerEntriesListResult>(appendQueryString(backendApiPath(`/promotions/budget_ledger_entries`), query));
-  }
-}
-
-export class SystemPromotionsApi {
-  private client: HttpClient;
-  public readonly budgetLedgerEntries: SystemPromotionsBudgetLedgerEntriesApi;
-  public readonly codes: SystemPromotionsCodesApi;
-  public readonly couponLedgerEntries: SystemPromotionsCouponLedgerEntriesApi;
-  public readonly events: SystemPromotionsEventsApi;
-  public readonly externalBindings: SystemPromotionsExternalBindingsApi;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-    this.budgetLedgerEntries = new SystemPromotionsBudgetLedgerEntriesApi(client);
-    this.codes = new SystemPromotionsCodesApi(client);
-    this.couponLedgerEntries = new SystemPromotionsCouponLedgerEntriesApi(client);
-    this.events = new SystemPromotionsEventsApi(client);
-    this.externalBindings = new SystemPromotionsExternalBindingsApi(client);
-  }
-
-}
-
 export class SystemApi {
   private client: HttpClient;
-  public readonly promotions: SystemPromotionsApi;
   public readonly analytics: SystemAnalyticsApi;
   public readonly auth: SystemAuthApi;
   public readonly cache: SystemCacheApi;
@@ -769,7 +629,6 @@ export class SystemApi {
 
   constructor(client: HttpClient) {
     this.client = client;
-    this.promotions = new SystemPromotionsApi(client);
     this.analytics = new SystemAnalyticsApi(client);
     this.auth = new SystemAuthApi(client);
     this.cache = new SystemCacheApi(client);

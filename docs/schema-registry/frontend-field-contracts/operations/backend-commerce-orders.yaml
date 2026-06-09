@@ -3,15 +3,15 @@ frontend_operations:
 - route: /admin/orders
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
   operation: backendOrdersList
-  operation_id: orders.management.list
+  operation_id: orders.list
   kind: read
   api_surface: backend
-  openapi_exposed: false
+  openapi_exposed: true
   api_method: GET
-  api_path: /backend/v3/api/orders/management
+  api_path: /backend/v3/api/orders
   sdk_domain: commerce
-  summary: Orders Management List
-  description: Standard appbase commerce API for orders.management.list; no legacy billing compatibility route is exposed.
+  summary: Orders List
+  description: Standard appbase commerce API for orders.list; no legacy billing compatibility route is exposed.
   read_sources:
   - commerce_order
   - commerce_order_item
@@ -101,15 +101,15 @@ frontend_operations:
 - route: /admin/orders
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
   operation: backendOrdersRetrieve
-  operation_id: orders.management.retrieve
+  operation_id: orders.retrieve
   kind: read
   api_surface: backend
-  openapi_exposed: false
+  openapi_exposed: true
   api_method: GET
-  api_path: /backend/v3/api/orders/management/{orderId}
+  api_path: /backend/v3/api/orders/{orderId}
   sdk_domain: commerce
-  summary: Orders Management Retrieve
-  description: Standard appbase commerce API for orders.management.retrieve; no legacy billing compatibility route is exposed.
+  summary: Orders Retrieve
+  description: Standard appbase commerce API for orders.retrieve; no legacy billing compatibility route is exposed.
   read_sources:
   - commerce_order
   - commerce_order_item
@@ -241,7 +241,7 @@ frontend_operations:
   operation_id: orders.events.list
   kind: read
   api_surface: backend
-  openapi_exposed: false
+  openapi_exposed: true
   api_method: GET
   api_path: /backend/v3/api/orders/{orderId}/events
   sdk_domain: commerce

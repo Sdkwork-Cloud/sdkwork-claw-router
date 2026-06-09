@@ -22,37 +22,21 @@ const client = new SdkworkBackendClient({
   timeout: 30000,
 });
 
-// Mode A: API Key (recommended for server-to-server calls)
-client.setApiKey('your-api-key');
+// Authentication
+client.setAuthToken('your-auth-token');
+client.setAccessToken('your-access-token');
 
 // Use the SDK
 const result = await client.ai.channelGroups.list();
 ```
 
-## Authentication Modes (Mutually Exclusive)
+## Authentication
 
-Choose exactly one mode for the same client instance.
-
-### Mode A: API Key
-
-```typescript
-const client = new SdkworkBackendClient({ baseUrl: 'http://localhost:18081' });
-client.setApiKey('your-api-key');
-// Sends: Access-Token: <apiKey>
+```text
+Authorization: Bearer <authToken>
+Access-Token: <accessToken>
 ```
 
-### Mode B: Dual Token
-
-```typescript
-const client = new SdkworkBackendClient({ baseUrl: 'http://localhost:18081' });
-client.setAuthToken('your-auth-token');
-client.setAccessToken('your-access-token');
-// Sends:
-// Authorization: Bearer <authToken>
-// Access-Token: <accessToken>
-```
-
-> Do not call `setApiKey(...)` together with `setAuthToken(...)` + `setAccessToken(...)` on the same client.
 
 ## Configuration (Non-Auth)
 
@@ -72,20 +56,19 @@ const client = new SdkworkBackendClient({
 
 - `client.agents` - agents API
 - `client.ai` - ai API
-- `client.commerce` - commerce API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.integration` - integration API
+- `client.commerce` - commerce API
 - `client.mcp` - mcp API
 - `client.messaging` - messaging API
-- `client.openPlatform` - open_platform API
 - `client.platform` - platform API
-- `client.system` - system API
 - `client.prompts` - prompts API
 - `client.serviceProviders` - service_providers API
 - `client.sites` - sites API
 - `client.oss` - oss API
+- `client.system` - system API
 
 ## Usage Examples
 
@@ -111,13 +94,6 @@ const result = await client.agents.agentDefinitions.list(params);
 const result = await client.ai.channelGroups.list();
 ```
 
-### commerce
-
-```typescript
-// Recharges Settings Retrieve
-const result = await client.commerce.recharges.settings.retrieve();
-```
-
 ### content
 
 ```typescript
@@ -135,14 +111,9 @@ const result = await client.ecosystem.skills.categories.list();
 ### iam
 
 ```typescript
-// Update user
-const body = {
-  group: 'group',
-  id: 'id',
-  status: 'active',
-  username: 'username',
-};
-const result = await client.iam.users.update(body);
+// Delete API key
+const apiKeyId = '1';
+const result = await client.iam.apiKeys.delete(apiKeyId);
 ```
 
 ### integration
@@ -150,6 +121,21 @@ const result = await client.iam.users.update(body);
 ```typescript
 // List channels
 const result = await client.integration.channels.list();
+```
+
+### commerce
+
+```typescript
+// List inventory ledger entries
+const params = {
+  sku_id: 'sku_id',
+  warehouse_id: 'warehouse_id',
+  source_type: 'source_type',
+  source_id: 'source_id',
+  page: 'page',
+  page_size: 'page_size',
+};
+const result = await client.commerce.inventory.ledgerEntries.list(params);
 ```
 
 ### mcp
@@ -183,28 +169,11 @@ const params = {
 const result = await client.messaging.providerAccounts.list(params);
 ```
 
-### open_platform
-
-```typescript
-// List open platform providers
-const params = {
-  status: 'active',
-};
-const result = await client.openPlatform.providers.list(params);
-```
-
 ### platform
 
 ```typescript
 // List app categories
 const result = await client.platform.apps.categories.list();
-```
-
-### system
-
-```typescript
-// Retrieve IAM auth runtime settings
-const result = await client.system.auth.settings.retrieve();
 ```
 
 ### prompts
@@ -256,6 +225,13 @@ const result = await client.sites.siteCatalog.list(params);
 const result = await client.oss.providers.list();
 ```
 
+### system
+
+```typescript
+// Retrieve IAM auth runtime settings
+const result = await client.system.auth.settings.retrieve();
+```
+
 ## Error Handling
 
 ```typescript
@@ -299,7 +275,7 @@ This SDK includes cross-platform publish scripts in `bin/`:
 .\bin\publish.ps1 --action publish --channel test --dry-run
 ```
 
-> Set `NPM_TOKEN` (and optional `NPM_REGISTRY_URL`) before release publish.
+> Configure npm registry credentials before release publish.
 
 ## License
 
@@ -314,42 +290,3 @@ MIT
 - Put hand-written wrappers, adapters, and orchestration in `custom/`.
 - Files scaffolded under `custom/` are created once and preserved across regenerations.
 - If a generated-owned file was modified locally, its previous content is copied to `.sdkwork/manual-backups/` before overwrite or removal.
-
-## SDKWork Documentation Contract
-
-Domain: platform
-Capability: backend-sdk
-Package type: node-package
-Status: standard
-
-### Public API
-
-Public exports are declared in `specs/component.spec.json` under `contracts.publicExports`.
-
-### Required SDK Surface
-
-- None declared in `specs/component.spec.json`.
-
-### Configuration
-
-Configuration keys and runtime entrypoints are declared in `specs/component.spec.json`.
-
-### SaaS/Private/Local Behavior
-
-This module follows the canonical standards linked from `specs/component.spec.json`, including deployment and runtime configuration rules where applicable.
-
-### Security
-
-Do not add secrets, live tokens, manual auth headers, or app-local credential handling to this module.
-
-### Extension Points
-
-Extension points are limited to declared public exports, runtime entrypoints, SDK clients, events, and config keys.
-
-### Verification
-
-- `pnpm build`
-
-### Owner And Status
-
-Owner and lifecycle status are tracked in `specs/component.spec.json`.

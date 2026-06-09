@@ -1,5 +1,4 @@
 import {
-  createIdempotencyParams,
   isRecord,
   normalizeRechargeSettings,
   normalizeCurrencyCode,
@@ -10,9 +9,10 @@ import {
   type ClawRouterMediaResource,
   type ApiRecord,
 } from 'sdkwork-clawrouter-pc-commons/runtime';
-import { getSdkworkCommerceService } from '@sdkwork/commerce-service';
+import { getClawRouterBackendSdkClient } from 'sdkwork-clawrouter-pc-commons/sdk-clients';
 
-type BackendCommerceService = ReturnType<typeof getSdkworkCommerceService>['admin'];
+type BackendCommerceService = ReturnType<typeof getClawRouterBackendSdkClient>['commerce'];
+type RechargeSettingsUpdateInput = Parameters<BackendCommerceService['recharges']['settings']['update']>[0];
 
 export type MembershipsAdminRecord = ApiRecord;
 
@@ -197,176 +197,150 @@ export function moveMembershipAdminPackageGroup(
 }
 
 export async function backendMembershipsPlansList(params?: Parameters<BackendCommerceService['memberships']['plans']['list']>[0]) {
-  return getSdkworkCommerceService().admin.memberships.plans.list(params);
+  return getClawRouterBackendSdkClient().commerce.memberships.plans.list(params);
 }
 
 export async function backendMembershipsPlansCreate(
   body: Parameters<BackendCommerceService['memberships']['plans']['create']>[0],
-  params: Parameters<BackendCommerceService['memberships']['plans']['create']>[1],
 ) {
-  return getSdkworkCommerceService().admin.memberships.plans.create(
-    body,
-    params,
-  );
+  return getClawRouterBackendSdkClient().commerce.memberships.plans.create(body);
 }
 
 export async function backendMembershipsPlansUpdate(
   planId: string,
   body: Parameters<BackendCommerceService['memberships']['plans']['update']>[1],
-  params: Parameters<BackendCommerceService['memberships']['plans']['update']>[2],
 ) {
-  return getSdkworkCommerceService().admin.memberships.plans.update(
+  return getClawRouterBackendSdkClient().commerce.memberships.plans.update(
     planId,
     body,
-    params,
   );
 }
 
 export async function backendMembershipsPlansDelete(
   planId: string,
 ) {
-  return getSdkworkCommerceService().admin.memberships.plans.delete(
+  return getClawRouterBackendSdkClient().commerce.memberships.plans.delete(
     planId,
   );
 }
 
 export async function backendMembershipsPackageGroupsList(params?: Parameters<BackendCommerceService['memberships']['packageGroups']['list']>[0]) {
-  return getSdkworkCommerceService().admin.memberships.packageGroups.list(params);
+  return getClawRouterBackendSdkClient().commerce.memberships.packageGroups.list(params);
 }
 
 export async function backendMembershipsPackageGroupsCreate(
   body: Parameters<BackendCommerceService['memberships']['packageGroups']['create']>[0],
-  params: Parameters<BackendCommerceService['memberships']['packageGroups']['create']>[1],
 ) {
-  return getSdkworkCommerceService().admin.memberships.packageGroups.create(
-    body,
-    params,
-  );
+  return getClawRouterBackendSdkClient().commerce.memberships.packageGroups.create(body);
 }
 
 export async function backendMembershipsPackageGroupsUpdate(
   packageGroupId: string,
   body: Parameters<BackendCommerceService['memberships']['packageGroups']['update']>[1],
-  params: Parameters<BackendCommerceService['memberships']['packageGroups']['update']>[2],
 ) {
-  return getSdkworkCommerceService().admin.memberships.packageGroups.update(
+  return getClawRouterBackendSdkClient().commerce.memberships.packageGroups.update(
     packageGroupId,
     body,
-    params,
   );
 }
 
 export async function backendMembershipsPackageGroupsDelete(
   packageGroupId: string,
 ) {
-  return getSdkworkCommerceService().admin.memberships.packageGroups.delete(
+  return getClawRouterBackendSdkClient().commerce.memberships.packageGroups.delete(
     packageGroupId,
   );
 }
 
 export async function backendMembershipsPackagesList(params?: Parameters<BackendCommerceService['memberships']['packages']['list']>[0]) {
-  return getSdkworkCommerceService().admin.memberships.packages.list(params);
+  return getClawRouterBackendSdkClient().commerce.memberships.packages.list(params);
 }
 
 export async function backendMembershipsPackagesCreate(
   body: Parameters<BackendCommerceService['memberships']['packages']['create']>[0],
-  params: Parameters<BackendCommerceService['memberships']['packages']['create']>[1],
 ) {
-  return getSdkworkCommerceService().admin.memberships.packages.create(
-    body,
-    params,
-  );
+  return getClawRouterBackendSdkClient().commerce.memberships.packages.create(body);
 }
 
 export async function backendMembershipsPackagesUpdate(
   packageId: string,
   body: Parameters<BackendCommerceService['memberships']['packages']['update']>[1],
-  params: Parameters<BackendCommerceService['memberships']['packages']['update']>[2],
 ) {
-  return getSdkworkCommerceService().admin.memberships.packages.update(
+  return getClawRouterBackendSdkClient().commerce.memberships.packages.update(
     packageId,
     body,
-    params,
   );
 }
 
 export async function backendMembershipsPackagesDelete(
   packageId: string,
 ) {
-  return getSdkworkCommerceService().admin.memberships.packages.delete(
+  return getClawRouterBackendSdkClient().commerce.memberships.packages.delete(
     packageId,
   );
 }
 
 export async function backendMembershipsMembersList(params?: Parameters<BackendCommerceService['memberships']['members']['list']>[0]) {
-  return getSdkworkCommerceService().admin.memberships.members.list(params);
+  return getClawRouterBackendSdkClient().commerce.memberships.members.list(params);
 }
 
 export async function backendMembershipsMembersStatusUpdate(
   membershipId: string,
   body: Parameters<BackendCommerceService['memberships']['members']['update']>[1],
-  params: Parameters<BackendCommerceService['memberships']['members']['update']>[2],
 ) {
-  return getSdkworkCommerceService().admin.memberships.members.update(
+  return getClawRouterBackendSdkClient().commerce.memberships.members.update(
     membershipId,
     body,
-    params,
   );
 }
 
 export async function backendMembershipsEntitlementsList(params?: Parameters<BackendCommerceService['memberships']['entitlements']['list']>[0]) {
-  return getSdkworkCommerceService().admin.memberships.entitlements.list(params);
+  return getClawRouterBackendSdkClient().commerce.memberships.entitlements.list(params);
 }
 
 export async function backendMembershipsRechargePackagesList(params?: Parameters<BackendCommerceService['recharges']['packages']['list']>[0]) {
-  return getSdkworkCommerceService().admin.recharges.packages.list(params);
+  return getClawRouterBackendSdkClient().commerce.recharges.packages.list(params);
 }
 
 export async function backendMembershipsRechargePackagesCreate(
   body: Parameters<BackendCommerceService['recharges']['packages']['create']>[0],
-  params: Parameters<BackendCommerceService['recharges']['packages']['create']>[1],
 ) {
-  return getSdkworkCommerceService().admin.recharges.packages.create(
-    body,
-    params,
-  );
+  return getClawRouterBackendSdkClient().commerce.recharges.packages.create(body);
 }
 
 export async function backendMembershipsRechargePackagesUpdate(
   packageId: string,
   body: Parameters<BackendCommerceService['recharges']['packages']['update']>[1],
-  params: Parameters<BackendCommerceService['recharges']['packages']['update']>[2],
 ) {
-  return getSdkworkCommerceService().admin.recharges.packages.update(
+  return getClawRouterBackendSdkClient().commerce.recharges.packages.update(
     packageId,
     body,
-    params,
   );
 }
 
 export async function backendMembershipsRechargePackagesDelete(
   packageId: string,
 ) {
-  return getSdkworkCommerceService().admin.recharges.packages.delete(
+  return getClawRouterBackendSdkClient().commerce.recharges.packages.delete(
     packageId,
   );
 }
 
 export async function backendMembershipsRechargeSettingsRetrieve() {
-  return getSdkworkCommerceService().admin.recharges.settings.retrieve();
+  return getClawRouterBackendSdkClient().commerce.recharges.settings.retrieve();
 }
 
 export async function backendMembershipsRechargeSettingsUpdate(
   body: Parameters<BackendCommerceService['recharges']['settings']['update']>[0],
 ) {
-  return getSdkworkCommerceService().admin.recharges.settings.update(body);
+  return getClawRouterBackendSdkClient().commerce.recharges.settings.update(body);
 }
 
 export async function fetchMembershipAdminPackageCatalog(): Promise<MembershipsAdminPackageCatalog> {
   const [packagesResult, groupsResult, plansResult] = await Promise.all([
-    backendMembershipsPackagesList({ page: '1', pageSize: '200' }),
-    backendMembershipsPackageGroupsList({ page: '1', pageSize: '100' }),
-    backendMembershipsPlansList({ page: '1', pageSize: '100' }),
+    backendMembershipsPackagesList(),
+    backendMembershipsPackageGroupsList(),
+    backendMembershipsPlansList(),
   ]);
 
   const rawPackages = readRequiredApiItems(packagesResult, 'Membership packages could not be loaded');
@@ -379,27 +353,11 @@ export async function fetchMembershipAdminPackageCatalog(): Promise<MembershipsA
       groupMap.set(group.id, group);
     });
 
-  rawPackages.forEach((rawItem, index) => {
-    const pkg = normalizedPackages[index];
-    if (!groupMap.has(pkg.groupId)) {
-      const rawRecord = isRecord(rawItem) ? rawItem : {};
-      const groupRecord = isRecord(rawRecord['package_group'])
-        ? rawRecord['package_group'] as ApiRecord
-        : null;
-      groupMap.set(pkg.groupId, {
-        id: pkg.groupId,
-        code: pkg.groupId,
-        name: groupRecord ? readString(groupRecord, 'name') : pkg.groupId,
-        description: groupRecord ? (readString(groupRecord, 'description') || undefined) : undefined,
-        planId: groupRecord ? (readString(groupRecord, 'plan_id') || undefined) : undefined,
-        billingCycle: groupRecord ? (readString(groupRecord, 'billing_cycle') || readString(groupRecord, 'billingCycle') || inferAdminBillingCycle(pkg.durationDays)) : inferAdminBillingCycle(pkg.durationDays),
-        durationDays: groupRecord ? readInteger(groupRecord, ['duration_days', 'durationDays'], pkg.durationDays) : pkg.durationDays,
-        sortWeight: groupRecord ? readInteger(groupRecord, ['sort_weight', 'sortWeight'], 0) : 0,
-        status: groupRecord ? readString(groupRecord, 'status') : 'active',
-        packageCount: 0,
-      });
+  normalizedPackages.forEach((pkg) => {
+    const group = groupMap.get(pkg.groupId);
+    if (group) {
+      group.packageCount++;
     }
-    groupMap.get(pkg.groupId)!.packageCount++;
   });
 
   const groups = sortMembershipAdminPackageGroups(Array.from(groupMap.values()));
@@ -413,8 +371,8 @@ export async function fetchMembershipAdminPackageCatalog(): Promise<MembershipsA
 
 export async function fetchMembershipAdminPackageGroups(): Promise<MembershipsAdminPackageGroup[]> {
   const [groupsResult, packagesResult] = await Promise.all([
-    backendMembershipsPackageGroupsList({ page: '1', pageSize: '100' }),
-    backendMembershipsPackagesList({ page: '1', pageSize: '200' }),
+    backendMembershipsPackageGroupsList(),
+    backendMembershipsPackagesList(),
   ]);
   const groups = readRequiredApiItems(groupsResult, 'Membership package groups could not be loaded')
     .map(normalizeAdminPackageGroup);
@@ -426,7 +384,7 @@ export async function fetchMembershipAdminPackageGroups(): Promise<MembershipsAd
     });
   return sortMembershipAdminPackageGroups(groups.map((group) => ({
     ...group,
-    packageCount: packageCounts.get(group.id) ?? packageCounts.get(group.code) ?? 0,
+    packageCount: packageCounts.get(group.id) ?? 0,
   })));
 }
 
@@ -435,7 +393,6 @@ export async function createMembershipAdminPackageGroup(
 ): Promise<MembershipsAdminPackageGroup> {
   const result = await backendMembershipsPackageGroupsCreate(
     buildPackageGroupMutationRequest(input),
-    createIdempotencyParams('admin-membership-package-group-create'),
   );
   return normalizeAdminPackageGroup(readRequiredApiItem(result, 'Membership package group could not be created'));
 }
@@ -447,7 +404,6 @@ export async function updateMembershipAdminPackageGroup(
   const result = await backendMembershipsPackageGroupsUpdate(
     requiredMembershipText(packageGroupId, 'packageGroupId'),
     buildPackageGroupMutationRequest(input),
-    createIdempotencyParams('admin-membership-package-group-update'),
   );
   return normalizeAdminPackageGroup(readRequiredApiItem(result, 'Membership package group could not be updated'));
 }
@@ -462,13 +418,14 @@ export async function fetchMembershipAdminPackages(
   params: MembershipsAdminPackagesListParams = {},
 ): Promise<MembershipsAdminPackageItem[]> {
   const result = await backendMembershipsPackagesList({
-    page: '1',
-    pageSize: '200',
-    packageGroupId: params.packageGroupId,
     planId: params.planId,
     status: params.status,
   });
-  return readRequiredApiItems(result, 'Membership packages could not be loaded').map(normalizeAdminPackage);
+  const packages = readRequiredApiItems(result, 'Membership packages could not be loaded').map(normalizeAdminPackage);
+  if (!params.packageGroupId) {
+    return packages;
+  }
+  return packages.filter((item) => item.groupId === params.packageGroupId);
 }
 
 export async function createMembershipAdminPackage(
@@ -476,7 +433,6 @@ export async function createMembershipAdminPackage(
 ): Promise<MembershipsAdminPackageItem> {
   const result = await backendMembershipsPackagesCreate(
     buildPackageMutationRequest(input),
-    createIdempotencyParams('admin-membership-package-create'),
   );
   return normalizeAdminPackage(readRequiredApiItem(result, 'Membership package could not be created'));
 }
@@ -488,7 +444,6 @@ export async function updateMembershipAdminPackage(
   const result = await backendMembershipsPackagesUpdate(
     requiredMembershipText(packageId, 'packageId'),
     buildPackageMutationRequest(input),
-    createIdempotencyParams('admin-membership-package-update'),
   );
   return normalizeAdminPackage(readRequiredApiItem(result, 'Membership package could not be updated'));
 }
@@ -500,14 +455,13 @@ export async function deleteMembershipAdminPackage(packageId: string): Promise<v
 }
 
 export async function fetchMembershipAdminPlans(): Promise<MembershipsAdminPlanItem[]> {
-  const result = await backendMembershipsPlansList({ page: '1', pageSize: '100' });
+  const result = await backendMembershipsPlansList();
   return readRequiredApiItems(result, 'Membership plans could not be loaded').map(normalizeAdminPlan);
 }
 
 export async function createMembershipAdminPlan(input: MembershipsAdminPlanCreateInput): Promise<MembershipsAdminPlanItem> {
   const result = await backendMembershipsPlansCreate(
     buildPlanMutationRequest(input),
-    createIdempotencyParams('admin-membership-plan-create'),
   );
   return normalizeAdminPlan(readRequiredApiItem(result, 'Membership plan could not be created'));
 }
@@ -519,7 +473,6 @@ export async function updateMembershipAdminPlan(
   const result = await backendMembershipsPlansUpdate(
     requiredMembershipText(planId, 'planId'),
     buildPlanMutationRequest(input),
-    createIdempotencyParams('admin-membership-plan-update'),
   );
   return normalizeAdminPlan(readRequiredApiItem(result, 'Membership plan could not be updated'));
 }
@@ -534,8 +487,8 @@ export async function fetchMembershipAdminMembers(
   params: MembershipsAdminMembersListParams = {},
 ): Promise<MembershipsAdminRecord[]> {
   const result = await backendMembershipsMembersList({
-    page: '1',
-    pageSize: '100',
+    page: 1,
+    pageSize: 100,
     userId: params.userId,
     planId: params.planId,
     status: params.status,
@@ -550,7 +503,6 @@ export async function updateMembershipAdminMemberStatus(
   const result = await backendMembershipsMembersStatusUpdate(
     requiredMembershipText(membershipId, 'membershipId'),
     { status: requiredMembershipMemberStatus(input.status) },
-    createIdempotencyParams('admin-membership-member-status-update'),
   );
   return readRequiredApiItem(result, 'Membership status could not be updated');
 }
@@ -559,8 +511,8 @@ export async function fetchMembershipAdminEntitlements(
   params: MembershipsAdminEntitlementsListParams = {},
 ): Promise<MembershipsAdminRecord[]> {
   const result = await backendMembershipsEntitlementsList({
-    page: '1',
-    pageSize: '100',
+    page: 1,
+    pageSize: 100,
     membershipId: params.membershipId,
     planId: params.planId,
     status: params.status,
@@ -569,7 +521,7 @@ export async function fetchMembershipAdminEntitlements(
 }
 
 export async function fetchMembershipAdminRechargePackages(): Promise<MembershipsAdminRechargePackageItem[]> {
-  const result = await backendMembershipsRechargePackagesList({ page: '1', pageSize: '100' });
+  const result = await backendMembershipsRechargePackagesList();
   return readRequiredApiItems(result, 'Recharge packages could not be loaded').map(normalizeAdminRechargePackage);
 }
 
@@ -578,7 +530,6 @@ export async function createMembershipAdminRechargePackage(
 ): Promise<MembershipsAdminRechargePackageItem> {
   const result = await backendMembershipsRechargePackagesCreate(
     buildRechargePackageMutationRequest(input),
-    createIdempotencyParams('admin-membership-recharge-package-create'),
   );
   return normalizeAdminRechargePackage(readRequiredApiItem(result, 'Recharge package could not be created'));
 }
@@ -590,7 +541,6 @@ export async function updateMembershipAdminRechargePackage(
   const result = await backendMembershipsRechargePackagesUpdate(
     requiredMembershipText(packageId, 'packageId'),
     buildRechargePackageMutationRequest(input),
-    createIdempotencyParams('admin-membership-recharge-package-update'),
   );
   return normalizeAdminRechargePackage(readRequiredApiItem(result, 'Recharge package could not be updated'));
 }
@@ -617,37 +567,39 @@ export async function updateMembershipAdminRechargeSettings(
 
 function normalizeAdminPackage(value: unknown): MembershipsAdminPackageItem {
   const item = isRecord(value) ? value as ApiRecord : {} as ApiRecord;
-  const code = readFirstString(item, ['package_no', 'packageNo', 'code']);
+  const code = requireRecordString(item, 'code', 'Membership package code is required');
+  const durationDays = readNumber(item, 'durationDays', 30);
   return {
-    id: readFirstString(item, ['id', 'package_id', 'packageId', 'package_no', 'packageNo', 'code', 'sku_id', 'skuId']) || 'membership-package',
+    id: requireRecordString(item, 'id', 'Membership package id is required'),
     packageNo: code,
-    groupId: readFirstString(item, ['package_group_id', 'packageGroupId', 'group_id', 'groupId']) || inferAdminGroupId(item),
-    planId: readFirstString(item, ['plan_id', 'planId']),
-    skuId: readFirstString(item, ['sku_id', 'skuId']),
-    name: readFirstString(item, ['name', 'package_no', 'packageNo', 'code']),
-    priceAmount: readFirstString(item, ['price_amount', 'priceAmount']) || '0',
-    currencyCode: readFirstString(item, ['currency_code', 'currencyCode']) || 'CNY',
-    durationDays: readInteger(item, ['duration_days', 'durationDays'], 30),
-    recurrenceCycle: readFirstString(item, ['recurrence_cycle', 'recurrenceCycle']) || inferAdminBillingCycle(readInteger(item, ['duration_days', 'durationDays'], 30)),
+    groupId: requireRecordString(item, 'packageGroupId', 'Membership package group id is required'),
+    planId: requireRecordString(item, 'planId', 'Membership package plan id is required'),
+    skuId: readString(item, 'skuId').trim(),
+    name: requireRecordString(item, 'name', 'Membership package name is required'),
+    priceAmount: readString(item, 'priceAmount').trim() || '0',
+    currencyCode: readString(item, 'currencyCode').trim() || 'CNY',
+    durationDays,
+    recurrenceCycle: readString(item, 'recurrenceCycle').trim() || inferAdminBillingCycle(durationDays),
     status: readString(item, 'status') || 'active',
   };
 }
 
 function normalizeAdminPackageGroup(value: unknown): MembershipsAdminPackageGroup {
   const item = isRecord(value) ? value as ApiRecord : {} as ApiRecord;
-  const code = readFirstString(item, ['group_no', 'groupNo', 'code', 'id']);
-  const durationDays = readInteger(item, ['duration_days', 'durationDays'], inferDurationFromBillingCycle(readFirstString(item, ['billing_cycle', 'billingCycle'])));
+  const code = requireRecordString(item, 'code', 'Membership package group code is required');
+  const billingCycle = readString(item, 'billingCycle').trim();
+  const durationDays = readNumber(item, 'durationDays', inferDurationFromBillingCycle(billingCycle));
   return {
-    id: readFirstString(item, ['id', 'package_group_id', 'packageGroupId', 'group_no', 'groupNo', 'code']) || 'membership-package-group',
+    id: requireRecordString(item, 'id', 'Membership package group id is required'),
     code,
-    name: readFirstString(item, ['name', 'group_name', 'groupName', 'code', 'id']),
-    description: readFirstString(item, ['description']) || undefined,
-    planId: readFirstString(item, ['plan_id', 'planId']) || undefined,
-    billingCycle: readFirstString(item, ['billing_cycle', 'billingCycle']) || inferAdminBillingCycle(durationDays),
+    name: requireRecordString(item, 'name', 'Membership package group name is required'),
+    description: readString(item, 'description').trim() || undefined,
+    planId: readString(item, 'planId').trim() || undefined,
+    billingCycle: billingCycle || inferAdminBillingCycle(durationDays),
     durationDays,
-    sortWeight: readInteger(item, ['sort_weight', 'sortWeight'], 0),
-    status: readFirstString(item, ['status']) || 'active',
-    packageCount: readInteger(item, ['package_count', 'packageCount'], 0),
+    sortWeight: readNumber(item, 'sortWeight', 0),
+    status: readString(item, 'status').trim() || 'active',
+    packageCount: readNumber(item, 'packageCount', 0),
   };
 }
 
@@ -675,30 +627,30 @@ function compareMembershipAdminPackageGroups(
 
 function normalizeAdminRechargePackage(value: unknown): MembershipsAdminRechargePackageItem {
   const item = isRecord(value) ? value as ApiRecord : {} as ApiRecord;
-  const priceAmount = readFirstString(item, ['price_amount', 'priceAmount']);
-  const bonusPoints = readInteger(item, ['bonus_points', 'bonusPoints'], 0);
-  const grantAmount = readInteger(item, ['grant_amount', 'grantAmount', 'points'], 0);
+  const id = requireRecordString(item, 'id', 'Recharge package id is required');
+  const bonusPoints = readNumber(item, 'bonusPoints', 0);
+  const grantAmount = readNumber(item, 'grantAmount', readNumber(item, 'points', 0));
   return {
-    id: readFirstString(item, ['id', 'package_id', 'packageId', 'package_no', 'packageNo']) || 'recharge-package',
-    packageNo: readFirstString(item, ['package_no', 'packageNo', 'id']),
-    name: readFirstString(item, ['name', 'title', 'package_no', 'packageNo', 'id']),
-    skuId: readFirstString(item, ['sku_id', 'skuId']),
-    priceAmount: priceAmount || '0',
-    currencyCode: readFirstString(item, ['currency_code', 'currencyCode']) || 'CNY',
+    id,
+    packageNo: readString(item, 'packageNo').trim() || id,
+    name: readString(item, 'name').trim() || id,
+    skuId: readString(item, 'skuId').trim(),
+    priceAmount: readString(item, 'priceAmount').trim() || '0',
+    currencyCode: readString(item, 'currencyCode').trim() || 'CNY',
     bonusPoints,
     grantAmount,
-    points: readInteger(item, ['points'], grantAmount),
-    status: readFirstString(item, ['status']) || 'active',
-    updatedAt: readFirstString(item, ['updated_at', 'updatedAt', 'created_at', 'createdAt']),
+    points: readNumber(item, 'points', grantAmount),
+    status: readString(item, 'status').trim() || 'active',
+    updatedAt: readString(item, 'updatedAt').trim(),
   };
 }
 
 function normalizeAdminRechargeSettings(value: unknown): MembershipsAdminRechargeSettingsItem {
   const item = isRecord(value) ? value as ApiRecord : {} as ApiRecord;
-  const currencyToCnyRates = readRecord(item, ['currencyToCnyRates', 'currency_to_cny_rates']);
+  const currencyToCnyRates = readRecord(item, 'currencyToCnyRates');
   return normalizeRechargeSettings({
-    baseCurrencyCode: readFirstString(item, ['baseCurrencyCode', 'base_currency_code']) || 'CNY',
-    basePointsPerCny: readFirstString(item, ['basePointsPerCny', 'base_points_per_cny']) || '10',
+    baseCurrencyCode: readString(item, 'baseCurrencyCode').trim() || 'CNY',
+    basePointsPerCny: readString(item, 'basePointsPerCny').trim() || '10',
     currencyToCnyRates: Object.fromEntries(
       Object.entries(currencyToCnyRates).map(([currencyCode, rate]) => [currencyCode, String(rate ?? '')]),
     ),
@@ -707,21 +659,20 @@ function normalizeAdminRechargeSettings(value: unknown): MembershipsAdminRecharg
 
 function normalizeAdminPlan(value: unknown): MembershipsAdminPlanItem {
   const item = isRecord(value) ? value as ApiRecord : {} as ApiRecord;
-  const benefitsJson = isRecord(item['benefits_json']) ? item['benefits_json'] as ApiRecord : {};
-  const rawBenefits = readBenefitArray(item, benefitsJson);
+  const rawBenefits = readBenefitArray(item);
   const benefits = rawBenefits.map(normalizeAdminPlanBenefit);
-  const rank = Number(readString(item, 'rank') || readString(benefitsJson, 'rank') || '0');
-  const code = readFirstString(item, ['plan_no', 'planNo', 'level_code', 'levelCode', 'code']);
+  const rank = readNumber(item, 'rank', 0);
+  const code = requireRecordString(item, 'code', 'Membership plan code is required');
   return {
-    id: readFirstString(item, ['id', 'plan_id', 'planId', 'plan_no', 'planNo', 'code']),
-    planNo: readFirstString(item, ['plan_no', 'planNo', 'code']),
-    levelCode: readFirstString(item, ['level_code', 'levelCode', 'code', 'plan_no', 'planNo']),
-    name: readFirstString(item, ['name', 'plan_no', 'planNo', 'code']),
-    rank: Number.isFinite(rank) ? rank : 0,
+    id: requireRecordString(item, 'id', 'Membership plan id is required'),
+    planNo: code,
+    levelCode: code,
+    name: requireRecordString(item, 'name', 'Membership plan name is required'),
+    rank,
     status: readString(item, 'status') || 'active',
     benefitCount: benefits.length,
     benefits,
-    updatedAt: readString(item, 'updated_at') || readString(item, 'updatedAt') || '',
+    updatedAt: readString(item, 'updatedAt').trim(),
   };
 }
 
@@ -863,7 +814,7 @@ function buildRechargePackageMutationRequest(
 
 function buildRechargeSettingsUpdateRequest(
   input: MembershipsAdminRechargeSettingsUpdateInput,
-): MembershipsAdminRechargeSettingsUpdateInput {
+): RechargeSettingsUpdateInput {
   const normalized = normalizeRechargeSettings(input);
   return {
     baseCurrencyCode: normalized.baseCurrencyCode,
@@ -877,50 +828,32 @@ function optionalBoundedText(value: string | undefined): string | undefined {
   return normalized || undefined;
 }
 
-function readRecord(record: ApiRecord, keys: string[]): ApiRecord {
-  for (const key of keys) {
-    const value = record[key];
-    if (isRecord(value)) {
-      return value as ApiRecord;
-    }
-  }
-  return {};
+function readRecord(record: ApiRecord, key: string): ApiRecord {
+  const value = record[key];
+  return isRecord(value) ? value as ApiRecord : {};
 }
 
-function readFirstString(record: ApiRecord, keys: string[]): string {
-  for (const key of keys) {
-    const value = readString(record, key).trim();
-    if (value) {
-      return value;
-    }
-  }
-  return '';
+function readNumber(record: ApiRecord, key: string, fallback: number): number {
+  const raw = record[key];
+  const parsed = typeof raw === 'number'
+    ? raw
+    : typeof raw === 'string'
+      ? Number.parseInt(raw.trim(), 10)
+      : Number.NaN;
+  return Number.isInteger(parsed) ? parsed : fallback;
 }
 
-function readInteger(record: ApiRecord, keys: string[], fallback: number): number {
-  for (const key of keys) {
-    const raw = record[key];
-    const parsed = typeof raw === 'number'
-      ? raw
-      : typeof raw === 'string'
-        ? Number.parseInt(raw.trim(), 10)
-        : Number.NaN;
-    if (Number.isInteger(parsed)) {
-      return parsed;
-    }
+function requireRecordString(record: ApiRecord, key: string, message: string): string {
+  const value = readString(record, key).trim();
+  if (!value) {
+    throw new Error(message);
   }
-  return fallback;
+  return value;
 }
 
-function readBenefitArray(item: ApiRecord, benefitsJson: ApiRecord): unknown[] {
+function readBenefitArray(item: ApiRecord): unknown[] {
   if (Array.isArray(item['benefits'])) {
     return item['benefits'];
-  }
-  if (Array.isArray(benefitsJson['benefits'])) {
-    return benefitsJson['benefits'];
-  }
-  if (Array.isArray(benefitsJson['items'])) {
-    return benefitsJson['items'];
   }
   return [];
 }
@@ -928,39 +861,29 @@ function readBenefitArray(item: ApiRecord, benefitsJson: ApiRecord): unknown[] {
 function normalizeAdminPlanBenefit(value: unknown): MembershipsAdminPlanBenefitInput {
   const item = isRecord(value) ? value as ApiRecord : {};
   return {
-    id: optionalInteger(item, ['id']),
-    name: readFirstString(item, ['name']),
-    benefitKey: readFirstString(item, ['benefitKey', 'benefit_key']) || undefined,
-    type: readFirstString(item, ['type']) || undefined,
-    description: readFirstString(item, ['description']) || undefined,
+    id: optionalInteger(item, 'id'),
+    name: readString(item, 'name').trim(),
+    benefitKey: readString(item, 'benefitKey').trim() || undefined,
+    type: readString(item, 'type').trim() || undefined,
+    description: readString(item, 'description').trim() || undefined,
     icon: readMediaResource(item['icon']),
-    usageLimit: optionalInteger(item, ['usageLimit', 'usage_limit']),
-    usedCount: optionalInteger(item, ['usedCount', 'used_count']),
+    usageLimit: optionalInteger(item, 'usageLimit'),
+    usedCount: optionalInteger(item, 'usedCount'),
     claimed: typeof item['claimed'] === 'boolean' ? item['claimed'] : undefined,
   };
 }
 
-function optionalInteger(record: ApiRecord, keys: string[]): number | undefined {
-  for (const key of keys) {
-    const value = record[key];
-    const parsed = typeof value === 'number'
-      ? value
-      : typeof value === 'string'
-        ? Number.parseInt(value.trim(), 10)
-        : Number.NaN;
-    if (Number.isInteger(parsed)) {
-      return parsed;
-    }
+function optionalInteger(record: ApiRecord, key: string): number | undefined {
+  const value = record[key];
+  const parsed = typeof value === 'number'
+    ? value
+    : typeof value === 'string'
+      ? Number.parseInt(value.trim(), 10)
+      : Number.NaN;
+  if (Number.isInteger(parsed)) {
+    return parsed;
   }
   return undefined;
-}
-
-function inferAdminGroupId(item: ApiRecord): string {
-  const recurrenceCycle = readString(item, 'recurrence_cycle') || readString(item, 'recurrenceCycle') || 'one_time';
-  const durationDays = parseInt(readString(item, 'duration_days') || readString(item, 'durationDays') || '30', 10);
-  if (recurrenceCycle.includes('yearly') || recurrenceCycle.includes('annual') || durationDays >= 300) return 'annual';
-  if (recurrenceCycle.includes('monthly') || (durationDays >= 25 && durationDays <= 35)) return 'monthly';
-  return 'onetime';
 }
 
 function inferAdminBillingCycle(durationDays: number): string {

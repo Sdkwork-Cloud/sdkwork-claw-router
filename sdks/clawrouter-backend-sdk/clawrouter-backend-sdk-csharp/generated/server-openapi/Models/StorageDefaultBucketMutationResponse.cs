@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class StorageDefaultBucketMutationResponse
     {
-        public StorageDefaultBucketConfig? DefaultBucket { get; set; }
-        public string? RequestId { get; set; }
+        public StorageDefaultBucketConfig DefaultBucket { get; set; }
+        public string RequestId { get; set; }
     }
 }

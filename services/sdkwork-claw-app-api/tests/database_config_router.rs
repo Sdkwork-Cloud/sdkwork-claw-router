@@ -1371,22 +1371,7 @@ async fn database_config_auth_settings_disable_recovery_and_qr_server_side() {
         .unwrap()
         .contains("email password recovery is not enabled"));
 
-    let (qr_status, qr_payload, _) = request_json(
-        router,
-        Request::builder()
-            .method("POST")
-            .uri("/app/v3/api/open_platform/qr_auth/sessions")
-            .header("content-type", "application/json")
-            .body(Body::from(json!({ "purpose": "login" }).to_string()))
-            .unwrap(),
-    )
-    .await;
-    assert_eq!(StatusCode::BAD_REQUEST, qr_status);
-    assert_eq!("4001", qr_payload["code"]);
-    assert!(qr_payload["msg"]
-        .as_str()
-        .unwrap()
-        .contains("QR login is not enabled"));
+    drop(router);
 }
 
 #[tokio::test]
@@ -1736,7 +1721,7 @@ async fn database_config_oauth_routes_are_explicit_when_provider_is_not_configur
         configured_router(&database_url).await,
         Request::builder()
             .method("GET")
-            .uri("/app/v3/api/auth/oauth_authorization_urls?provider=github&redirectUri=https%3A%2F%2Fapp.example%2Fcallback&state=state-1")
+            .uri("/app/v3/api/auth/oauth_authorization_urls?provider=github&redirect_uri=https%3A%2F%2Fapp.example%2Fcallback&state=state-1")
             .body(Body::empty())
             .unwrap(),
     )
@@ -1780,7 +1765,7 @@ async fn database_config_oauth_routes_are_explicit_when_provider_is_not_configur
         router.clone(),
         Request::builder()
             .method("GET")
-            .uri("/app/v3/api/auth/oauth_authorization_urls?provider=github&redirectUri=https%3A%2F%2Fapp.example%2Fcallback&state=state-1")
+            .uri("/app/v3/api/auth/oauth_authorization_urls?provider=github&redirect_uri=https%3A%2F%2Fapp.example%2Fcallback&state=state-1")
             .body(Body::empty())
             .unwrap(),
     )

@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class StorageReconciliationRunMutationResponse
     {
-        public StorageReconciliationRun? ReconciliationRun { get; set; }
-        public string? RequestId { get; set; }
+        public StorageReconciliationRun ReconciliationRun { get; set; }
+        public string RequestId { get; set; }
     }
 }

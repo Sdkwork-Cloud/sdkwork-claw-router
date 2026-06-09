@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class SkillsArtifactsRetrieveResult
     {
-        public string? Code { get; set; }
+        public string Code { get; set; }
         public AdminSkillArtifactMutationResponse? Data { get; set; }
         public string? Msg { get; set; }
     }

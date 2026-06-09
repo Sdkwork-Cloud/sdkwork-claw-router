@@ -84,8 +84,25 @@ PRODUCT_ADMIN_APPBASE_BACKEND_IAM = (
     / "api"
     / "admin_appbase_backend_iam.rs"
 )
+PRODUCT_ADMIN_APPBASE_BACKEND_IAM_OAUTH = (
+    ROOT
+    / "services"
+    / "sdkwork-claw-product"
+    / "src"
+    / "api"
+    / "admin_appbase_backend_iam_oauth.rs"
+)
 PRODUCT_ADMIN_USER_API = (
     ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "admin_user.rs"
+)
+PRODUCT_INSTALLER = (
+    ROOT
+    / "services"
+    / "sdkwork-claw-product"
+    / "src"
+    / "infrastructure"
+    / "sql"
+    / "installer.rs"
 )
 BACKEND_IAM_CONTRACT = (
     ROOT
@@ -374,6 +391,96 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
         self.assertNotIn("getClawRouterBackendSdkClient().iam.apiKeys.list", service)
         self.assertNotIn("getClawRouterBackendSdkClient().iam.apiKeys.revoke", service)
         self.assertNotIn("getSdkworkAppbaseBackendSdkClient().iam.apiKeys.revoke", service)
+
+    def test_backend_appbase_iam_oauth_surface_is_verified_same_origin_mounted(self) -> None:
+        manifest = read_json(DEPENDENCY_API_SURFACES)
+        backend_entry = entries_by_sdk_dependency(manifest)[
+            ("clawrouter-backend-sdk", "sdkwork-appbase-backend-sdk")
+        ]
+        coverage = backend_entry["runtimeIntegration"]["mountCoverage"]
+        operation_groups = coverage["operationGroupCoverage"]
+        not_mounted_by_group = {
+            group["group"]: group
+            for group in operation_groups["notMounted"]
+        }
+        verified_by_group = {
+            group["group"]: group
+            for group in operation_groups["verified"]
+        }
+
+        self.assertIn("iam.directory", verified_by_group)
+        self.assertIn("iam.users", verified_by_group)
+        self.assertIn("iam.apiKeys", verified_by_group)
+        self.assertIn("iam.oauth", verified_by_group)
+        self.assertNotIn("iam.oauth", not_mounted_by_group)
+
+        oauth_coverage = verified_by_group["iam.oauth"]
+        self.assertEqual(
+            "getSdkworkAppbaseBackendSdkClient().iamOauth.iam.oauth.*",
+            oauth_coverage["sdkClient"],
+        )
+        for path in [
+            "/backend/v3/api/iam/oauth/provider_catalog",
+            "/backend/v3/api/iam/oauth/flow_configs",
+            "/backend/v3/api/iam/oauth/resource_accounts",
+            "/backend/v3/api/iam/oauth/webhook_configs",
+            "/backend/v3/api/iam/oauth/diagnostic_runs",
+        ]:
+            with self.subTest(oauthPath=path):
+                self.assertIn(path, oauth_coverage["paths"])
+
+        appbase_operations = operation_map(read_json(APPBASE_BACKEND_OPENAPI), "/backend/v3/api")
+        for method, path, operation_id in [
+            ("GET", "/backend/v3/api/iam/oauth/provider_catalog", "iam.oauth.providerCatalog.list"),
+            ("GET", "/backend/v3/api/iam/oauth/flow_configs", "iam.oauth.flowConfigs.list"),
+            ("GET", "/backend/v3/api/iam/oauth/resource_accounts", "iam.oauth.resourceAccounts.list"),
+            ("POST", "/backend/v3/api/iam/oauth/resource_accounts/{}/mini_program_login_checks", "iam.oauth.resourceAccounts.miniProgramLoginChecks.create"),
+            ("GET", "/backend/v3/api/iam/oauth/webhook_configs", "iam.oauth.webhookConfigs.list"),
+            ("GET", "/backend/v3/api/iam/oauth/diagnostic_runs", "iam.oauth.diagnosticRuns.list"),
+        ]:
+            with self.subTest(operationId=operation_id):
+                operation = appbase_operations[(method, path)]
+                self.assertEqual(operation_id, operation["operationId"])
+                self.assertEqual("sdkwork-appbase", operation["x-sdkwork-owner"])
+
+        route_contract_source = read_text(APPBASE_IAM_HTTP / "src" / "sdkwork_appbase_backend_api.rs")
+        self.assertIn("backend_oauth_routes()", route_contract_source)
+        self.assertIn('"/backend/v3/api/iam/oauth/provider_catalog"', route_contract_source)
+        self.assertIn('"/backend/v3/api/iam/oauth/resource_accounts"', route_contract_source)
+        self.assertIn("pub fn build_sdkwork_appbase_backend_api_router() -> Router", route_contract_source)
+        self.assertIn(
+            "pub fn build_sdkwork_appbase_backend_api_router() -> Router {\n    Router::new()\n}",
+            route_contract_source,
+        )
+
+        admin_api_source = read_text(ADMIN_API_LIB)
+        product_oauth_source = read_text(PRODUCT_ADMIN_APPBASE_BACKEND_IAM_OAUTH)
+        installer_source = read_text(PRODUCT_INSTALLER)
+        self.assertIn(
+            "admin_appbase_backend_iam_oauth_router_with_read_store",
+            admin_api_source,
+        )
+        self.assertIn('"/backend/v3/api/iam/oauth/provider_catalog"', product_oauth_source)
+        self.assertIn('"/backend/v3/api/iam/oauth/flow_configs"', product_oauth_source)
+        self.assertIn('"/backend/v3/api/iam/oauth/resource_accounts"', product_oauth_source)
+        self.assertIn('"/backend/v3/api/iam/oauth/webhook_configs"', product_oauth_source)
+        self.assertIn('"/backend/v3/api/iam/oauth/diagnostic_runs"', product_oauth_source)
+        for table in [
+            "iam_oauth_provider_catalog",
+            "iam_oauth_flow_config",
+            "iam_oauth_resource_account",
+            "iam_oauth_webhook_config",
+            "iam_oauth_diagnostic_run",
+        ]:
+            with self.subTest(oauthTable=table):
+                self.assertIn(table, product_oauth_source)
+        self.assertNotIn("demo", product_oauth_source.lower())
+        self.assertNotIn("fixture", product_oauth_source.lower())
+        self.assertIn("iam_initial_migration_sql", installer_source)
+        self.assertIn("appbase_iam_oauth_schema_statement", installer_source)
+        self.assertIn("table.starts_with(\"iam_oauth_\")", installer_source)
+        self.assertIn("apply_sqlite_appbase_iam_oauth_schema", installer_source)
+        self.assertIn("apply_postgres_appbase_iam_oauth_schema", installer_source)
 
     def test_backend_appbase_sdk_config_can_inherit_verified_same_origin_backend_mount(self) -> None:
         manifest = read_json(DEPENDENCY_API_SURFACES)

@@ -6,10 +6,10 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminSiteCreateRequest
     {
-        public string? BaseUrl { get; set; }
+        public string BaseUrl { get; set; }
         public string? CredentialRef { get; set; }
         public string? Description { get; set; }
-        public string? DisplayName { get; set; }
+        public string DisplayName { get; set; }
         public string? DocsUrl { get; set; }
         public List<string>? Domains { get; set; }
         public string? Environment { get; set; }
@@ -18,7 +18,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? OwnerKind { get; set; }
         public string? RegionCode { get; set; }
         public string? SiteCode { get; set; }
-        public string? SiteName { get; set; }
+        public string SiteName { get; set; }
         public string? SiteType { get; set; }
         public string? Status { get; set; }
         public List<string>? VendorCodes { get; set; }

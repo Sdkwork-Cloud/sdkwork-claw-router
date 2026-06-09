@@ -13,9 +13,11 @@ pub struct AdminUserSubject {
     pub operator_type: i32,
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub struct ListAdminUsersQuery {
     pub subject: AdminUserSubject,
+    pub q: Option<String>,
+    pub page_size: i64,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -93,6 +95,8 @@ pub struct AdminUserItem {
     pub id: i64,
     pub email: String,
     pub username: String,
+    pub display_name: String,
+    pub mobile: String,
     pub role: String,
     pub group: String,
     pub balance: String,
@@ -100,6 +104,7 @@ pub struct AdminUserItem {
     pub last_active: String,
     pub last_used: String,
     pub created_at: String,
+    pub updated_at: String,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, serde::Serialize)]

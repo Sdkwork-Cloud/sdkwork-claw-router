@@ -542,7 +542,6 @@ def subject_label(table_name: str) -> str:
         "integration_",
         "messaging_",
         "object_",
-        "open_platform_",
         "ops_",
         "plus_",
         "promotion_",

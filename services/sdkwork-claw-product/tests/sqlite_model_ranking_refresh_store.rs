@@ -635,7 +635,7 @@ async fn create_tables(pool: &SqlitePool) {
     sqlx::query(
         r#"
         CREATE TABLE ai_model_rank_snapshot (
-            id INTEGER PRIMARY KEY,
+            id BIGINT NOT NULL PRIMARY KEY,
             uuid TEXT NOT NULL,
             tenant_id INTEGER NOT NULL,
             organization_id INTEGER NOT NULL,
@@ -678,6 +678,33 @@ async fn create_tables(pool: &SqlitePool) {
             trend_score TEXT,
             rank_payload TEXT,
             UNIQUE (tenant_id, organization_id, snapshot_date, snapshot_period, rank_scope, vendor_code, region_code, catalog_key)
+        )
+        "#,
+    )
+    .execute(pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        CREATE TABLE ops_job_execution (
+            id BIGINT NOT NULL PRIMARY KEY,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            status INTEGER NOT NULL,
+            metadata TEXT,
+            job_name TEXT NOT NULL,
+            job_type INTEGER NOT NULL,
+            trigger_type INTEGER NOT NULL,
+            started_at TEXT NOT NULL,
+            ended_at TEXT NOT NULL,
+            duration_ms INTEGER NOT NULL,
+            execution_status INTEGER NOT NULL,
+            processed_count INTEGER NOT NULL,
+            success_count INTEGER NOT NULL,
+            failure_count INTEGER NOT NULL,
+            failure_reason TEXT,
+            payload TEXT NOT NULL
         )
         "#,
     )

@@ -6,17 +6,17 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class ForumCommentItem
     {
-        public ForumAuthor? Author { get; set; }
-        public string? CommentId { get; set; }
-        public string? Content { get; set; }
-        public string? ContentId { get; set; }
-        public string? ContentType { get; set; }
-        public string? CreatedAt { get; set; }
-        public bool? IsTop { get; set; }
-        public string? Likes { get; set; }
+        public ForumAuthor Author { get; set; }
+        public string CommentId { get; set; }
+        public string Content { get; set; }
+        public string ContentId { get; set; }
+        public string ContentType { get; set; }
+        public string CreatedAt { get; set; }
+        public bool IsTop { get; set; }
+        public string Likes { get; set; }
         public string? ParentId { get; set; }
-        public string? ReplyCount { get; set; }
-        public string? Status { get; set; }
-        public string? UserId { get; set; }
+        public string ReplyCount { get; set; }
+        public string Status { get; set; }
+        public string UserId { get; set; }
     }
 }

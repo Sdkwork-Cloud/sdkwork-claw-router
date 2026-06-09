@@ -191,6 +191,10 @@ test("admin organization UI exposes department, position and authorization admin
 
 test("admin organization keeps the main workspace simple and moves auxiliary assignment operations into dialogs", () => {
   const sourceCode = source("packages/sdkwork-clawrouter-pc-admin-organization/src/index.tsx");
+  const headerSource = source("src/AdminHeader.tsx");
+  const assignmentDrawerSource = sourceSection(sourceCode, "function AssignmentDrawer(", "function AuthorizationTab(");
+  const authorizationDrawerSource = sourceSection(sourceCode, "function AuthorizationDrawer(", "function TableHeader(");
+  const chooseUserModalSource = sourceSection(sourceCode, "function ChooseUserModal(", "function EntityDialog(");
 
   assert.doesNotMatch(sourceCode, /<SummaryStrip\b/);
   assert.doesNotMatch(sourceCode, /function SummaryStrip\(/);
@@ -219,6 +223,16 @@ test("admin organization keeps the main workspace simple and moves auxiliary ass
   assert.match(sourceCode, /onEditPositionAssignment=\{\(target\) => \{[\s\S]*setAssignmentDrawer\(null\);[\s\S]*setDialog\(\{ kind: 'positionAssignment', mode: 'edit', target \}\);[\s\S]*\}\}/);
   assert.match(sourceCode, /if \(dialog\.kind === 'departmentAssignment'\) \{/);
   assert.match(sourceCode, /if \(dialog\.kind === 'positionAssignment'\) \{/);
+  assert.match(assignmentDrawerSource, /onClick=\{onClose\}/);
+  assert.match(assignmentDrawerSource, /onClick=\{\(event\) => event\.stopPropagation\(\)\}/);
+  assert.match(authorizationDrawerSource, /onClick=\{onClose\}/);
+  assert.match(authorizationDrawerSource, /onClick=\{\(event\) => event\.stopPropagation\(\)\}/);
+  assert.match(headerSource, /fixed left-0 right-0 top-0 z-50/);
+  assert.match(assignmentDrawerSource, /fixed inset-0 z-\[70\] flex justify-end/);
+  assert.match(authorizationDrawerSource, /fixed inset-0 z-\[70\] flex justify-end/);
+  assert.match(chooseUserModalSource, /fixed inset-0 z-\[70\] flex items-center justify-center/);
+  assert.doesNotMatch(assignmentDrawerSource, /fixed inset-0 z-40/);
+  assert.doesNotMatch(authorizationDrawerSource, /fixed inset-0 z-40/);
 });
 
 test("admin organization table headers use consistent actions without redundant refresh", () => {
@@ -537,6 +551,7 @@ test("admin organization expands the clicked organization branch before departme
 test("admin organization add member uses a dedicated user chooser instead of raw user id input", () => {
   const sourceCode = source("packages/sdkwork-clawrouter-pc-admin-organization/src/index.tsx");
   const service = source("packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts");
+  const chooseUserModalSource = sourceSection(sourceCode, "function ChooseUserModal(", "function EntityDialog(");
 
   assert.match(service, /export interface UserRecord/);
   assert.match(service, /users: UserRecord\[];/);
@@ -546,31 +561,70 @@ test("admin organization add member uses a dedicated user chooser instead of raw
   assert.match(sourceCode, /users: \[],/);
   assert.match(sourceCode, /usersById: Map<string, UserRecord>;/);
   assert.match(sourceCode, /function formatUserLabel\(userId: string \| null \| undefined, lookups: DirectoryLookups\): string/);
-  assert.match(sourceCode, /type ChooseUserModalState = \{ organizationId: string \} \| null;/);
+  assert.match(sourceCode, /type ChooseUserModalState = \{ organizationId: string; selectionMode\?: ChooseUserSelectionMode \} \| null;/);
   assert.match(sourceCode, /type ChooseUserSelectionMode = 'single' \| 'multiple';/);
   assert.match(sourceCode, /const \[chooseUserModal, setChooseUserModal\] = useState<ChooseUserModalState>\(null\);/);
   assert.match(sourceCode, /function ChooseUserModal\(/);
-  assert.match(sourceCode, /selectionMode = 'single'/);
-  assert.match(sourceCode, /onChoose: \(user: UserRecord\) => void \| Promise<void>;/);
-  assert.match(sourceCode, /onChooseMany\?: \(users: UserRecord\[]\) => void \| Promise<void>;/);
+  assert.match(chooseUserModalSource, /w-full max-w-\[min\(1280px,calc\(100vw-32px\)\)\]/);
+  assert.match(chooseUserModalSource, /className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden"/);
+  assert.match(chooseUserModalSource, /<table className="w-full min-w-0 table-fixed text-left text-sm">/);
+  assert.doesNotMatch(chooseUserModalSource, /min-w-\[1080px\]/);
+  assert.doesNotMatch(chooseUserModalSource, /className="min-h-0 flex-1 overflow-auto"/);
+  assert.match(chooseUserModalSource, /const \[queryInput, setQueryInput\] = useState\(''\);/);
+  assert.match(chooseUserModalSource, /const \[query, setQuery\] = useState\(''\);/);
+  assert.match(chooseUserModalSource, /function handleUserQuerySubmit\(event\?: FormEvent<HTMLFormElement>\): void \{/);
+  assert.match(chooseUserModalSource, /setQuery\(queryInput\);/);
+  assert.match(chooseUserModalSource, /<form className="flex w-full items-center gap-2 sm:w-\[420px\]" onSubmit=\{handleUserQuerySubmit\}>/);
+  assert.match(chooseUserModalSource, /onChange=\{\(event\) => setQueryInput\(event\.target\.value\)\}/);
+  assert.match(chooseUserModalSource, /value=\{queryInput\}/);
+  assert.match(chooseUserModalSource, /<button[\s\S]*type="submit"[\s\S]*\{t\('common\.actions\.query', 'Query'\)\}[\s\S]*<\/button>/);
+  assert.match(sourceCode, /selectionMode = 'multiple'/);
+  assert.match(sourceCode, /onChooseUsers: \(users: UserRecord\[]\) => void \| Promise<void>;/);
   assert.match(sourceCode, /const \[selectedUserIds, setSelectedUserIds\] = useState<Set<string>>\(\(\) => new Set\(\)\);/);
-  assert.match(sourceCode, /const isMultipleSelection = selectionMode === 'multiple';/);
+  assert.doesNotMatch(sourceCode, /const isMultipleSelection = selectionMode === 'multiple';/);
   assert.match(sourceCode, /function toggleSelectedUser\(userId: string\): void/);
+  assert.match(sourceCode, /if \(selectionMode === 'single'\) \{[\s\S]*return current\.has\(userId\) \? new Set<string>\(\) : new Set<string>\(\[userId\]\);[\s\S]*\}/);
   assert.match(sourceCode, /async function handleChooseSelectedUsers\(\): Promise<void>/);
-  assert.match(sourceCode, /if \(onChooseMany\) \{[\s\S]*await onChooseMany\(selectedUsers\);[\s\S]*return;[\s\S]*\}[\s\S]*await Promise\.all\(selectedUsers\.map\(onChoose\)\);/);
+  assert.match(sourceCode, /await onChooseUsers\(selectedUsers\);/);
   assert.match(sourceCode, /type="checkbox"[\s\S]*checked=\{selectedUserIds\.has\(user\.id\)\}/);
+  assert.match(chooseUserModalSource, /<th className="w-24 px-4 py-3 whitespace-nowrap">\{t\('admin\.organization\.chooseUser\.selection', 'Selection'\)\}<\/th>[\s\S]*<th className="px-4 py-3">\{t\('admin\.organization\.columns\.member', 'Member'\)\}<\/th>/);
+  assert.match(chooseUserModalSource, /<tr key=\{user\.id\} className=\{`cursor-pointer/);
+  assert.match(chooseUserModalSource, /onClick=\{\(\) => toggleSelectedUser\(user\.id\)\}/);
+  assert.match(chooseUserModalSource, /onClick=\{\(event\) => event\.stopPropagation\(\)\}/);
+  assert.match(chooseUserModalSource, /selectedUserIds\.has\(user\.id\) \? 'bg-blue-50\/80 dark:bg-blue-500\/10' : 'hover:bg-slate-50 dark:hover:bg-white\/5'/);
+  assert.doesNotMatch(chooseUserModalSource, /admin\.organization\.columns\.actions/);
+  assert.doesNotMatch(chooseUserModalSource, /admin\.organization\.actions\.selectUser/);
+  assert.doesNotMatch(chooseUserModalSource, /<td className="px-4 py-3 text-right">/);
   assert.match(sourceCode, /HeaderButton label=\{t\('admin\.organization\.chooseUser\.confirmSelection', 'Add selected'\)\} onClick=\{handleChooseSelectedUsers\} disabled=\{isBusy \|\| selectedUserIds\.size === 0\} variant="primary"/);
-  assert.match(sourceCode, /colSpan=\{isMultipleSelection \? 8 : 7\}/);
+  assert.match(sourceCode, /t\('admin\.organization\.chooseUser\.selectedCount', '\{\{count\}\} selected', \{ count: selectedUserIds\.size \}\)/);
+  assert.match(sourceCode, /colSpan=\{7\}/);
   assert.match(sourceCode, /function availableUsersForMembership\(/);
   assert.match(sourceCode, /function userSearchLabels\(user: UserRecord\): string\[]/);
-  assert.match(sourceCode, /<ChooseUserModal[\s\S]*existingMembers=\{membersForActiveOrganization\}[\s\S]*onChoose=\{handleChooseUser\}[\s\S]*users=\{directory\.users\}/);
-  assert.match(sourceCode, /async function handleChooseUser\(user: UserRecord\): Promise<void>/);
+  assert.match(sourceCode, /<ChooseUserModal[\s\S]*departmentAssignments=\{directory\.departmentAssignments\}[\s\S]*existingMembers=\{directory\.memberships\}[\s\S]*onChooseUsers=\{handleChooseUsers\}[\s\S]*organizationId=\{chooseUserModal\.organizationId\}[\s\S]*targetDepartmentId=\{chooseUserModal\.departmentId\}[\s\S]*selectionMode=\{chooseUserModal\.selectionMode \?\? 'multiple'\}[\s\S]*users=\{directory\.users\}/);
+  assert.match(sourceCode, /type ChooseUserModalState = \{ organizationId: string; departmentId\?: string; selectionMode\?: ChooseUserSelectionMode \} \| null;/);
+  assert.match(sourceCode, /async function handleChooseUsers\(users: UserRecord\[]\): Promise<void>/);
+  assert.match(sourceCode, /const targetDepartmentId = chooseUserModal\.departmentId;/);
+  assert.match(sourceCode, /const membership = await ensureOrganizationMemberForUser\(user, chooseUserModal\.organizationId, directory\.memberships\);/);
+  assert.match(sourceCode, /if \(targetDepartmentId\) \{[\s\S]*await ensureDepartmentAssignmentForMember\(targetDepartmentId, membership, directory\.departmentAssignments\);[\s\S]*\}/);
+  assert.match(sourceCode, /async function ensureOrganizationMemberForUser\([\s\S]*existingMemberships: OrganizationMemberRecord\[],[\s\S]*\): Promise<OrganizationMemberRecord>/);
+  assert.match(sourceCode, /const activeMembership = findOrganizationMembershipForUser\(existingMemberships, organizationId, user\.id, \{ activeOnly: true \}\);/);
+  assert.match(sourceCode, /const inactiveMemberMembership = findOrganizationMembershipForUser\(existingMemberships, organizationId, user\.id, \{ memberKind: 'member' \}\);/);
+  assert.match(sourceCode, /return OrganizationService\.updateMembership\(inactiveMemberMembership\.id, \{[\s\S]*status: 'active',[\s\S]*\}\);/);
+  assert.match(sourceCode, /async function ensureDepartmentAssignmentForMember\([\s\S]*existingAssignments: DepartmentAssignmentRecord\[],[\s\S]*\): Promise<void>/);
+  assert.match(sourceCode, /const existingAssignment = findDepartmentAssignmentForMember\(existingAssignments, departmentId, membership, 'member'\);/);
+  assert.match(sourceCode, /if \(existingAssignment && isActiveRecord\(existingAssignment\)\) \{[\s\S]*return;[\s\S]*\}/);
+  assert.match(sourceCode, /await OrganizationService\.updateDepartmentAssignment\(existingAssignment\.id, \{ status: 'active' \}\);/);
+  assert.match(sourceCode, /await OrganizationService\.createDepartmentAssignment\(\{[\s\S]*departmentId,[\s\S]*membershipId: membership\.id,[\s\S]*role: 'member',[\s\S]*status: 'active',[\s\S]*\}\);/);
+  assert.match(sourceCode, /function StatusPill\(\{ status, t \}: \{ status: string; t: TranslationFunction \}\)/);
+  assert.match(sourceCode, /function formatStatusLabel\(status: string, t: TranslationFunction\): string/);
+  assert.match(sourceCode, /return t\(`admin\.organization\.status\.\$\{normalizedStatus\}`, fallbackStatusLabel\(normalizedStatus\)\);/);
+  assert.match(chooseUserModalSource, /<StatusPill status=\{user\.status\} t=\{t\} \/>/);
   assert.match(
     sourceCode,
-    /await OrganizationService\.createMembership\(\{[\s\S]*organizationId: chooseUserModal\.organizationId,[\s\S]*userId: user\.id,[\s\S]*displayName: user\.displayName,[\s\S]*username: user\.username,[\s\S]*email: user\.email,[\s\S]*mobile: user\.mobile,[\s\S]*memberKind: 'member',[\s\S]*status: 'active',[\s\S]*\}\);/,
+    /return OrganizationService\.createMembership\(\{[\s\S]*organizationId,[\s\S]*userId: user\.id,[\s\S]*displayName: user\.displayName,[\s\S]*username: user\.username,[\s\S]*email: user\.email,[\s\S]*mobile: user\.mobile,[\s\S]*memberKind: 'member',[\s\S]*status: 'active',[\s\S]*\}\);/,
   );
   assert.match(sourceCode, /onAddMember=\{\(\) => setChooseUserModal\(\{ organizationId: activeOrganizationIdForRelations \}\)\}/);
-  assert.match(sourceCode, /setChooseUserModal\(\{ organizationId: node\.organizationId \}\);/);
+  assert.match(sourceCode, /setChooseUserModal\(\{ organizationId: node\.organizationId, departmentId: node\.nodeKind === 'department' \? node\.departmentId : undefined \}\);/);
   assert.match(
     sourceCode,
     /if \(dialog\.kind === 'membership'\) \{[\s\S]*if \(dialog\.mode !== 'edit' \|\| !target\) \{[\s\S]*return null;[\s\S]*\}[\s\S]*SelectField[\s\S]*name="status"[\s\S]*\}/,
@@ -622,7 +676,7 @@ test("admin organization user records keep professional optional profile fields 
   assert.match(messages, /"admin\.organization\.columns\.gender": "Gender"/);
   assert.match(messages, /"admin\.organization\.columns\.address": "Address"/);
   assert.match(messages, /"admin\.organization\.chooseUser\.title": "Choose user"/);
-  assert.match(messages, /"admin\.organization\.actions\.selectUser": "Select"/);
+  assert.match(messages, /"admin\.organization\.chooseUser\.selectedCount": "\{\{count\}\} selected"/);
 });
 
 test("admin organization UI deactivates members and assignment lifecycle records", () => {
@@ -842,12 +896,17 @@ test("admin organization member creation excludes users that are already active 
 
   assert.match(sourceCode, /function availableUsersForMembership\(/);
   assert.match(sourceCode, /existingMembers: OrganizationMemberRecord\[]/);
-  assert.match(sourceCode, /const blockedUserIds = new Set\(/);
+  assert.match(sourceCode, /departmentAssignments: DepartmentAssignmentRecord\[] = \[],/);
+  assert.match(sourceCode, /targetDepartmentId\?: string \| null,/);
+  assert.match(sourceCode, /const blockedUserIds = targetDepartmentId/);
+  assert.match(sourceCode, /activeDepartmentAssignmentUserIds\(departmentAssignments, targetDepartmentId\)/);
   assert.match(sourceCode, /item\.organizationId === organizationId && isActiveRecord\(item\) && item\.userId/);
   assert.match(
     sourceCode,
-    /const availableUsers = availableUsersForMembership\(users, existingMembers, organizationId\);/,
+    /const availableUsers = availableUsersForMembership\(users, existingMembers, organizationId, departmentAssignments, targetDepartmentId\);/,
   );
+  assert.match(sourceCode, /function activeDepartmentAssignmentUserIds\(/);
+  assert.match(sourceCode, /item\.departmentId === departmentId && isActiveRecord\(item\) && item\.userId/);
   assert.match(sourceCode, /users\.filter\(\(item\) => !blockedUserIds\.has\(item\.id\)\)/);
   assert.doesNotMatch(
     sourceCode,
@@ -982,8 +1041,16 @@ test("admin organization relation forms default to active departments only", () 
   );
   assert.match(
     sourceCode,
-    /await submitDialog\(dialog, form, activeOrganizationIdForRelations, activeDepartmentIdForRelations\);/,
+    /const submitResult = await submitDialog\(dialog, form, activeOrganizationIdForRelations, activeDepartmentIdForRelations\);/,
   );
+  assert.match(sourceCode, /setCreatedDirectorySelection\(submitResult\);/);
+  assert.match(sourceCode, /function setCreatedDirectorySelection\(result: OrganizationDialogSubmitResult\): void/);
+  assert.match(sourceCode, /setActiveOrganizationId\(result\.item\.id\);/);
+  assert.match(sourceCode, /setExpandedDirectoryNodeIds\(\(current\) => expandDirectoryNode\(current, `organization:\$\{result\.item\.id\}`\)\);/);
+  assert.match(sourceCode, /setActiveDepartmentId\(result\.item\.id\);/);
+  assert.match(sourceCode, /const withOrganization = expandDirectoryNode\(current, `organization:\$\{result\.item\.organizationId\}`\);/);
+  assert.match(sourceCode, /expandDirectoryPath\(withOrganization, combinedDirectoryTree, `department:\$\{result\.item\.parentDepartmentId\}`\)/);
+  assert.match(sourceCode, /return expandDirectoryNode\(withParentDepartment, `department:\$\{result\.item\.id\}`\);/);
   assert.match(
     sourceCode,
     /departmentId: optionalFormText\(form, 'departmentId'\),/,
@@ -1246,7 +1313,7 @@ test("admin organization relationship forms use active organization options and 
   );
   assert.match(
     sourceCode,
-    /await submitDialog\(dialog, form, activeOrganizationIdForRelations, activeDepartmentIdForRelations\);/,
+    /const submitResult = await submitDialog\(dialog, form, activeOrganizationIdForRelations, activeDepartmentIdForRelations\);/,
     "submit fallbacks should use the active organization relationship context",
   );
   assert.match(sourceCode, /activeOrganizationIdForRelations=\{activeOrganizationIdForRelations\}/);
@@ -1280,7 +1347,7 @@ test("admin organization role binding table exposes lifecycle status", () => {
   const sourceCode = source("packages/sdkwork-clawrouter-pc-admin-organization/src/index.tsx");
 
   assert.match(sourceCode, /<th className="px-4 py-3">\{t\('admin\.organization\.columns\.status', 'Status'\)\}<\/th>/);
-  assert.match(sourceCode, /<td className="px-4 py-3"><StatusPill status=\{binding\.status\} \/><\/td>/);
+  assert.match(sourceCode, /<td className="px-4 py-3"><StatusPill status=\{binding\.status\} t=\{t\} \/><\/td>/);
   assert.match(sourceCode, /<BusinessStateTableRow colSpan=\{5\} kind="empty" title=\{t\('admin\.organization\.empty\.roleBindings', 'No role bindings'\)\} \/>/);
 }
 );

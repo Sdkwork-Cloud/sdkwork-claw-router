@@ -121,7 +121,7 @@ async fn app_agent_registry_list_and_detail_routes_return_direct_sdk_contracts()
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/app/v3/api/agents?page=1&pageSize=20&q=studio")
+                .uri("/app/v3/api/agents?page=1&page_size=20&q=studio")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
@@ -168,7 +168,7 @@ async fn app_agent_registry_list_and_detail_routes_return_direct_sdk_contracts()
 }
 
 #[tokio::test]
-async fn app_agent_registry_list_route_accepts_standard_snake_case_page_size_query() {
+async fn app_agent_registry_list_route_uses_standard_page_size_query() {
     let store = Arc::new(FixedAppAgentRegistryStore::new());
     let router = sdkwork_claw_product::api::app_agent_registry_router_with_store(
         store.clone(),
@@ -193,6 +193,16 @@ async fn app_agent_registry_list_route_accepts_standard_snake_case_page_size_que
     assert_eq!(Some("studio"), queries[0].keyword.as_deref());
     assert_eq!(Some(2), queries[0].page_no);
     assert_eq!(Some(40), queries[0].page_size);
+}
+
+#[test]
+fn app_agent_registry_list_query_does_not_accept_duplicate_page_size_wire_names() {
+    let source = include_str!("../src/api/app_agents.rs");
+
+    assert!(!source.contains("alias = \"page_size\""));
+    assert!(!source.contains("page_size_camel"));
+    assert!(!source.contains("page_size_snake"));
+    assert!(!source.contains("page_size_legacy"));
 }
 
 #[tokio::test]

@@ -508,8 +508,6 @@ export default defineConfig(({mode}) => {
         { find: '@sdkwork/i18n-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/foundation/sdkwork-i18n-pc-react/src/index.ts') },
         { find: '@sdkwork/notification-pc-react/service', replacement: path.resolve(appbaseRoot, 'packages/pc-react/notification/sdkwork-notification-pc-react/src/notificationService.ts') },
         { find: '@sdkwork/notification-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/notification/sdkwork-notification-pc-react/src/index.ts') },
-        { find: '@sdkwork/open-platform-admin-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/integration/sdkwork-open-platform-admin-pc-react/src/index.ts') },
-        { find: '@sdkwork/platform', replacement: path.resolve(appbaseRoot, 'packages/common/integration/sdkwork-platform/src/index.ts') },
         { find: '@sdkwork/iam-contracts', replacement: path.resolve(appbaseRoot, 'packages/common/iam/sdkwork-iam-contracts/src/index.ts') },
         { find: '@sdkwork/iam-core-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/iam/sdkwork-iam-core-pc-react/src/index.ts') },
         { find: '@sdkwork/iam-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/iam/sdkwork-iam-react/src/index.tsx') },

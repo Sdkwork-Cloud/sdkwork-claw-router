@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class ServersBindingsUpdateResult
     {
-        public string? Code { get; set; }
+        public string Code { get; set; }
         public AdminMcpBindingMutationResponse? Data { get; set; }
         public string? Msg { get; set; }
     }

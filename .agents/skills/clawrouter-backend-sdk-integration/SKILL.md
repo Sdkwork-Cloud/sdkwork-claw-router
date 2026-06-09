@@ -10,7 +10,7 @@ description: Use when sdkwork-claw-router admin/backend frontend code must call 
 Use `@sdkwork/clawrouter-backend-sdk` for every admin and backend management-surface endpoint. The SDK system is selected by contract surface, not by a hard-coded URL prefix.
 The generated package lives at `sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript` and is produced from `generated/openapi/clawrouter-backend-openapi.json` through the SDK family generation script backed by `sdkwork-sdk-generator`.
 
-Do not change `apps/sdkwork-claw-router-portal` UI visual design while doing backend SDK integration. Keep admin console layout, styling, copy, and interaction shape intact unless the user explicitly asks for a UI change.
+Do not change `apps/sdkwork-clawrouter-pc` UI visual design while doing backend SDK integration. Keep admin console layout, styling, copy, and interaction shape intact unless the user explicitly asks for a UI change.
 
 ## Hard Rules
 
@@ -51,5 +51,5 @@ python -B -m tools.clawrouter_sdk_guardian
 - Backend management-surface remote business calls use `@sdkwork/clawrouter-backend-sdk`.
 - No raw fetch or axios path remains in the touched admin/backend business path.
 - `generated/openapi/clawrouter-backend-openapi.json` and `sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript` are regenerated, not manually edited.
-- `apps/sdkwork-claw-router-portal` UI visuals are unchanged.
+- `apps/sdkwork-clawrouter-pc` UI visuals are unchanged.
 - `python -B -m tools.schema_quality_gate` passes or any failure is reported with evidence.

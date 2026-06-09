@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class GatewayTracesResponse
     {
-        public List<GatewayTrace>? Items { get; set; }
+        public List<GatewayTrace> Items { get; set; }
     }
 }

@@ -222,6 +222,54 @@ test("admin membership package groups are sort-weight ordered and movable", asyn
   ]);
 });
 
+test("admin membership service reads canonical commerce SDK response fields only", () => {
+  const membershipsServiceSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts");
+
+  for (const forbiddenResponseAlias of [
+    "package_no",
+    "package_id",
+    "package_group_id",
+    "group_id",
+    "group_no",
+    "group_name",
+    "billing_cycle",
+    "duration_days",
+    "sort_weight",
+    "package_count",
+    "plan_no",
+    "plan_id",
+    "level_code",
+    "sku_id",
+    "price_amount",
+    "currency_code",
+    "recurrence_cycle",
+    "bonus_points",
+    "grant_amount",
+    "updated_at",
+    "created_at",
+    "base_currency_code",
+    "base_points_per_cny",
+    "currency_to_cny_rates",
+    "benefit_key",
+    "usage_limit",
+    "used_count",
+    "benefits_json",
+    "package_group",
+  ]) {
+    assert.doesNotMatch(
+      membershipsServiceSource,
+      new RegExp(`['"]${forbiddenResponseAlias}['"]`),
+      `memberships service must not read legacy response alias ${forbiddenResponseAlias}`,
+    );
+  }
+
+  assert.doesNotMatch(membershipsServiceSource, /inferAdminGroupId\b/, "memberships service must not synthesize package groups from packages");
+  assert.doesNotMatch(membershipsServiceSource, /packageCounts\.get\(group\.code\)/, "package counts must be keyed by canonical group id only");
+  assert.match(membershipsServiceSource, /getSdkworkCommerceService\(\)\.admin\.memberships/, "admin memberships must use the commerce backend service facade");
+  assert.doesNotMatch(membershipsServiceSource, /\bfetch\s*\(/);
+  assert.doesNotMatch(membershipsServiceSource, /\baxios\b/);
+});
+
 function membershipPackageGroup(overrides: Record<string, unknown>) {
   return {
     id: "",

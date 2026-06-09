@@ -2,6 +2,7 @@ use sha2::{Digest, Sha256};
 use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
 use crate::domain::DomainError;
+use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
 use crate::infrastructure::sql::sql_model_rankings::{
     add_seconds_to_timestamp, normalize_iso_timestamp, period_code,
 };
@@ -175,13 +176,14 @@ async fn record_model_ranking_refresh_audit(
     sqlx::query(
         r#"
         INSERT INTO ops_job_execution
-            (uuid, tenant_id, organization_id, status, metadata, job_name, job_type, trigger_type,
+            (id, uuid, tenant_id, organization_id, status, metadata, job_name, job_type, trigger_type,
              started_at, ended_at, duration_ms, execution_status, processed_count, success_count,
              failure_count, failure_reason, payload)
         VALUES
-            (?, ?, ?, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            (?, ?, ?, ?, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         "#,
     )
+    .bind(next_claw_runtime_id("ops_job_execution")?)
     .bind(stable_uuid(
         "job",
         &[
@@ -456,14 +458,14 @@ async fn upsert_ranking_snapshot(
     sqlx::query(
         r#"
         INSERT INTO ai_model_rank_snapshot
-            (uuid, tenant_id, organization_id, source_type, source_version, status, created_at, updated_at,
+            (id, uuid, tenant_id, organization_id, source_type, source_version, status, created_at, updated_at,
              rebuild_version, metadata, snapshot_date, snapshot_period, rank_scope, model_id, catalog_key,
              model, vendor_code, region_code, vendor_name_snapshot, modality, rank_no, previous_rank_no,
              base_volume, cost_indicator, context_size_text, is_new, color_token, pricing_text, license_type,
              strengths, request_count, token_count, cost_amount, currency, latency_p50_ms, latency_p95_ms,
              success_rate, win_rate, trend_score, rank_payload)
         VALUES
-            (?, ?, ?, 'analytics-worker', 1, 1, ?, ?, 0, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
+            (?, ?, ?, ?, 'analytics-worker', 1, 1, ?, ?, 0, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
              ?, ?, ?, ?, ?, ?, ?, '[]', ?, ?, ?, ?, 0, 0, '1.000000', ?, ?, ?)
         ON CONFLICT (tenant_id, organization_id, snapshot_date, snapshot_period, rank_scope, vendor_code, region_code, catalog_key) DO UPDATE SET
             source_type = excluded.source_type,
@@ -499,6 +501,7 @@ async fn upsert_ranking_snapshot(
             rank_payload = excluded.rank_payload
         "#,
     )
+    .bind(next_claw_runtime_id("ai_model_rank_snapshot")?)
     .bind(stable_uuid(
         "rank",
         &[

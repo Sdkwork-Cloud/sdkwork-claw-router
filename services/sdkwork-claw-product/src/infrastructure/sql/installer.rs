@@ -7,6 +7,12 @@ use std::sync::atomic::{AtomicU64, Ordering};
 use std::sync::OnceLock;
 use std::time::{SystemTime, UNIX_EPOCH};
 
+use crate::infrastructure::sql::iam_seed_defaults::{
+    DEFAULT_BOOTSTRAP_ADMIN_DISPLAY_NAME, DEFAULT_BOOTSTRAP_ADMIN_EMAIL,
+    DEFAULT_BOOTSTRAP_ADMIN_USERNAME, DEFAULT_IAM_ORGANIZATION_CODE, DEFAULT_IAM_ORGANIZATION_ID,
+    DEFAULT_IAM_ORGANIZATION_NAME, DEFAULT_IAM_ORGANIZATION_PATH, DEFAULT_IAM_TENANT_CODE,
+    DEFAULT_IAM_TENANT_ID, DEFAULT_IAM_TENANT_NAME,
+};
 use sdkwork_commerce_bootstrap::{
     commerce_experience_seed_manifest, commerce_recharge_package_seeds,
     commerce_recharge_settings_seeds,
@@ -15,12 +21,7 @@ use sdkwork_commerce_core::CommerceServiceError;
 use sdkwork_commerce_storage_sqlx::{
     commerce_database_indexes, commerce_database_tables, commerce_initial_migration_sql,
 };
-use sdkwork_iam_storage_sqlx::{
-    DEFAULT_BOOTSTRAP_ADMIN_DISPLAY_NAME, DEFAULT_BOOTSTRAP_ADMIN_EMAIL,
-    DEFAULT_BOOTSTRAP_ADMIN_USERNAME, DEFAULT_IAM_ORGANIZATION_CODE, DEFAULT_IAM_ORGANIZATION_ID,
-    DEFAULT_IAM_ORGANIZATION_NAME, DEFAULT_IAM_ORGANIZATION_PATH, DEFAULT_IAM_TENANT_CODE,
-    DEFAULT_IAM_TENANT_ID, DEFAULT_IAM_TENANT_NAME,
-};
+use sdkwork_iam_storage_sqlx::{iam_database_tables, iam_initial_migration_sql};
 use sdkwork_models::ModelCatalog;
 use sha2::{Digest, Sha256};
 use sqlx::{PgPool, Postgres, Row, Sqlite, SqlitePool, Transaction};
@@ -99,6 +100,33 @@ static GENERATED_SCHEMA_POSTGRES_TABLE_COLUMNS: OnceLock<
 static GENERATED_SCHEMA_SQLITE_TABLE_COLUMNS: OnceLock<Vec<(String, Vec<SqliteColumnDefinition>)>> =
     OnceLock::new();
 static GENERATED_SCHEMA_SQLITE_INDEX_STATEMENTS: OnceLock<Vec<String>> = OnceLock::new();
+static APPBASE_COMMERCE_SCHEMA_POSTGRES_TABLE_COLUMNS: OnceLock<
+    Vec<(String, Vec<SchemaColumnDefinition>)>,
+> = OnceLock::new();
+static APPBASE_IAM_OAUTH_SCHEMA_INDEX_NAMES: OnceLock<BTreeSet<String>> = OnceLock::new();
+
+const APPBASE_COMMERCE_LEGACY_NOT_NULL_COLUMN_REPAIRS: &[(&str, &str, &str)] = &[
+    (
+        "commerce_product_spu",
+        "sales_status",
+        r#"ALTER TABLE "commerce_product_spu" ALTER COLUMN "sales_status" DROP NOT NULL"#,
+    ),
+    (
+        "commerce_product_sku",
+        "sales_status",
+        r#"ALTER TABLE "commerce_product_sku" ALTER COLUMN "sales_status" DROP NOT NULL"#,
+    ),
+    (
+        "commerce_product_sku",
+        "delivery_mode",
+        r#"ALTER TABLE "commerce_product_sku" ALTER COLUMN "delivery_mode" DROP NOT NULL"#,
+    ),
+    (
+        "commerce_payment_method",
+        "provider",
+        r#"ALTER TABLE "commerce_payment_method" ALTER COLUMN "provider" DROP NOT NULL"#,
+    ),
+];
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 struct DefaultIamPermissionSeed {
@@ -503,18 +531,6 @@ const DEFAULT_IAM_PERMISSION_SEEDS: &[DefaultIamPermissionSeed] = &[
         code: "apps.app_center.manage",
         name: "Manage App Center",
         resource: "apps.app_center",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "apps.open_platform.read",
-        name: "Read open platform",
-        resource: "apps.open_platform",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "apps.open_platform.manage",
-        name: "Manage open platform",
-        resource: "apps.open_platform",
         action: "manage",
     },
     DefaultIamPermissionSeed {
@@ -1772,6 +1788,36 @@ impl DatabaseInstaller {
         };
         changed |= match &self.backend {
             InstallerBackend::Sqlite(pool) => {
+                if !sqlite_appbase_iam_oauth_schema_tables_exist(pool).await?
+                    || !sqlite_appbase_iam_oauth_schema_indexes_exist(pool).await?
+                {
+                    apply_sqlite_appbase_iam_oauth_schema(pool).await?;
+                    true
+                } else {
+                    false
+                }
+            }
+            InstallerBackend::Postgres(pool) => {
+                let mut changed = false;
+                if !postgres_appbase_commerce_schema_tables_exist(pool).await?
+                    || !postgres_appbase_commerce_schema_columns_exist(pool).await?
+                    || !postgres_appbase_commerce_schema_indexes_exist(pool).await?
+                {
+                    apply_postgres_appbase_commerce_schema(pool).await?;
+                    changed = true;
+                }
+                changed |= repair_postgres_appbase_commerce_legacy_constraints(pool).await?;
+                if !postgres_appbase_iam_oauth_schema_tables_exist(pool).await?
+                    || !postgres_appbase_iam_oauth_schema_indexes_exist(pool).await?
+                {
+                    apply_postgres_appbase_iam_oauth_schema(pool).await?;
+                    changed = true;
+                }
+                changed
+            }
+        };
+        changed |= match &self.backend {
+            InstallerBackend::Sqlite(pool) => {
                 ensure_sqlite_bootstrap_admin_recharge_catalog(pool).await?
             }
             InstallerBackend::Postgres(pool) => {
@@ -2546,6 +2592,12 @@ async fn sqlite_status(
     if !sqlite_appbase_commerce_schema_indexes_exist(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
+    if !sqlite_appbase_iam_oauth_schema_tables_exist(pool).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
+    if !sqlite_appbase_iam_oauth_schema_indexes_exist(pool).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
     if bootstrap_admin_options.enabled
         && !sqlite_bootstrap_admin_seed_complete(pool, bootstrap_admin_options.username.as_str())
             .await?
@@ -2687,6 +2739,7 @@ async fn prepare_sqlite_schema_with_catalog_version(
         execute_sqlite_statement(pool, statement.as_str()).await?;
     }
     apply_sqlite_appbase_commerce_schema(pool).await?;
+    apply_sqlite_appbase_iam_oauth_schema(pool).await?;
     record_sqlite_migration_completed(
         pool,
         "schema",
@@ -2755,7 +2808,16 @@ async fn postgres_status(
     if !postgres_appbase_commerce_schema_tables_exist(pool).await? {
         return Ok(InstallationStatus::Corrupt);
     }
+    if !postgres_appbase_commerce_schema_columns_exist(pool).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
     if !postgres_appbase_commerce_schema_indexes_exist(pool).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
+    if !postgres_appbase_iam_oauth_schema_tables_exist(pool).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
+    if !postgres_appbase_iam_oauth_schema_indexes_exist(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
     if bootstrap_admin_options.enabled
@@ -2929,6 +2991,7 @@ async fn prepare_postgres_schema_with_catalog_version(
         execute_postgres_statement(pool, statement.as_str()).await?;
     }
     apply_postgres_appbase_commerce_schema(pool).await?;
+    apply_postgres_appbase_iam_oauth_schema(pool).await?;
     record_postgres_migration_completed(
         pool,
         "schema",
@@ -3065,6 +3128,11 @@ async fn repair_sqlite_installation(
         || !sqlite_appbase_commerce_schema_indexes_exist(pool).await?
     {
         apply_sqlite_appbase_commerce_schema(pool).await?;
+    }
+    if !sqlite_appbase_iam_oauth_schema_tables_exist(pool).await?
+        || !sqlite_appbase_iam_oauth_schema_indexes_exist(pool).await?
+    {
+        apply_sqlite_appbase_iam_oauth_schema(pool).await?;
     }
 
     let catalog = load_install_model_catalog(options)?;
@@ -3298,9 +3366,16 @@ async fn repair_postgres_installation(
     }
 
     if !postgres_appbase_commerce_schema_tables_exist(pool).await?
+        || !postgres_appbase_commerce_schema_columns_exist(pool).await?
         || !postgres_appbase_commerce_schema_indexes_exist(pool).await?
     {
         apply_postgres_appbase_commerce_schema(pool).await?;
+    }
+    repair_postgres_appbase_commerce_legacy_constraints(pool).await?;
+    if !postgres_appbase_iam_oauth_schema_tables_exist(pool).await?
+        || !postgres_appbase_iam_oauth_schema_indexes_exist(pool).await?
+    {
+        apply_postgres_appbase_iam_oauth_schema(pool).await?;
     }
 
     let catalog = load_install_model_catalog(options)?;
@@ -3940,7 +4015,7 @@ async fn upsert_sqlite_bootstrap_admin_recharge_packages(
         sqlx::query(
             r#"
             INSERT INTO commerce_product_spu
-                (id, tenant_id, organization_id, spu_no, title, subtitle, description, product_type, sales_status, visible_surfaces, created_at, updated_at)
+                (id, tenant_id, organization_id, spu_no, title, subtitle, description, product_type, status, visible_surfaces, created_at, updated_at)
             VALUES
                 (?, ?, ?, ?, ?, ?, ?, 'points_recharge', ?, '["app","console","admin"]', ?, ?)
             ON CONFLICT(tenant_id, spu_no) DO UPDATE SET
@@ -3950,7 +4025,7 @@ async fn upsert_sqlite_bootstrap_admin_recharge_packages(
                 subtitle = excluded.subtitle,
                 description = excluded.description,
                 product_type = excluded.product_type,
-                sales_status = excluded.sales_status,
+                status = excluded.status,
                 visible_surfaces = excluded.visible_surfaces,
                 updated_at = excluded.updated_at
             "#,
@@ -3994,7 +4069,7 @@ async fn upsert_sqlite_bootstrap_admin_recharge_packages(
         sqlx::query(
             r#"
             INSERT INTO commerce_product_sku
-                (id, tenant_id, organization_id, spu_id, sku_no, name, title, price_amount, original_price_amount, currency_code, delivery_mode, inventory_tracking, sales_status, spec_json, created_at, updated_at)
+                (id, tenant_id, organization_id, spu_id, sku_no, name, title, price_amount, original_price_amount, currency_code, fulfillment_type, inventory_tracking, status, spec_json, created_at, updated_at)
             VALUES
                 (?, ?, ?, ?, ?, ?, ?, ?, NULL, ?, 'points_credit', 'untracked', ?, ?, ?, ?)
             ON CONFLICT(tenant_id, sku_no) DO UPDATE SET
@@ -4006,9 +4081,9 @@ async fn upsert_sqlite_bootstrap_admin_recharge_packages(
                 price_amount = excluded.price_amount,
                 original_price_amount = excluded.original_price_amount,
                 currency_code = excluded.currency_code,
-                delivery_mode = excluded.delivery_mode,
+                fulfillment_type = excluded.fulfillment_type,
                 inventory_tracking = excluded.inventory_tracking,
-                sales_status = excluded.sales_status,
+                status = excluded.status,
                 spec_json = excluded.spec_json,
                 updated_at = excluded.updated_at
             "#,
@@ -4142,7 +4217,7 @@ async fn upsert_postgres_bootstrap_admin_recharge_packages(
         sqlx::query(
             r#"
             INSERT INTO commerce_product_spu
-                (id, tenant_id, organization_id, spu_no, title, subtitle, description, product_type, sales_status, visible_surfaces, created_at, updated_at)
+                (id, tenant_id, organization_id, spu_no, title, subtitle, description, product_type, status, visible_surfaces, created_at, updated_at)
             VALUES
                 ($1, $2, $3, $4, $5, $6, $7, 'points_recharge', $8, '["app","console","admin"]', $9, $10)
             ON CONFLICT(tenant_id, spu_no) DO UPDATE SET
@@ -4152,7 +4227,7 @@ async fn upsert_postgres_bootstrap_admin_recharge_packages(
                 subtitle = excluded.subtitle,
                 description = excluded.description,
                 product_type = excluded.product_type,
-                sales_status = excluded.sales_status,
+                status = excluded.status,
                 visible_surfaces = excluded.visible_surfaces,
                 updated_at = excluded.updated_at
             "#,
@@ -4196,7 +4271,7 @@ async fn upsert_postgres_bootstrap_admin_recharge_packages(
         sqlx::query(
             r#"
             INSERT INTO commerce_product_sku
-                (id, tenant_id, organization_id, spu_id, sku_no, name, title, price_amount, original_price_amount, currency_code, delivery_mode, inventory_tracking, sales_status, spec_json, created_at, updated_at)
+                (id, tenant_id, organization_id, spu_id, sku_no, name, title, price_amount, original_price_amount, currency_code, fulfillment_type, inventory_tracking, status, spec_json, created_at, updated_at)
             VALUES
                 ($1, $2, $3, $4, $5, $6, $7, $8, NULL, $9, 'points_credit', 'untracked', $10, $11, $12, $13)
             ON CONFLICT(tenant_id, sku_no) DO UPDATE SET
@@ -4208,9 +4283,9 @@ async fn upsert_postgres_bootstrap_admin_recharge_packages(
                 price_amount = excluded.price_amount,
                 original_price_amount = excluded.original_price_amount,
                 currency_code = excluded.currency_code,
-                delivery_mode = excluded.delivery_mode,
+                fulfillment_type = excluded.fulfillment_type,
                 inventory_tracking = excluded.inventory_tracking,
-                sales_status = excluded.sales_status,
+                status = excluded.status,
                 spec_json = excluded.spec_json,
                 updated_at = excluded.updated_at
             "#,
@@ -5254,6 +5329,22 @@ async fn postgres_appbase_commerce_schema_tables_exist(pool: &PgPool) -> Result<
     Ok(string_set(commerce_database_tables()).is_subset(&installed_tables))
 }
 
+async fn postgres_appbase_commerce_schema_columns_exist(
+    pool: &PgPool,
+) -> Result<bool, sqlx::Error> {
+    for (table, expected_columns) in appbase_commerce_schema_postgres_table_columns() {
+        let installed_columns = postgres_existing_columns(pool, &table).await?;
+        let expected_columns = expected_columns
+            .iter()
+            .map(|column| column.name.to_ascii_lowercase())
+            .collect::<BTreeSet<_>>();
+        if !expected_columns.is_subset(&installed_columns) {
+            return Ok(false);
+        }
+    }
+    Ok(true)
+}
+
 async fn sqlite_appbase_commerce_schema_indexes_exist(
     pool: &SqlitePool,
 ) -> Result<bool, sqlx::Error> {
@@ -5282,6 +5373,67 @@ async fn postgres_appbase_commerce_schema_indexes_exist(
     )
     .await?;
     Ok(string_set(commerce_database_indexes()).is_subset(&installed_indexes))
+}
+
+async fn sqlite_appbase_iam_oauth_schema_tables_exist(
+    pool: &SqlitePool,
+) -> Result<bool, sqlx::Error> {
+    let installed_tables = sqlite_string_set(
+        pool,
+        r#"
+        SELECT name
+        FROM sqlite_master
+        WHERE type = 'table'
+        "#,
+    )
+    .await?;
+    Ok(appbase_iam_oauth_table_names().is_subset(&installed_tables))
+}
+
+async fn postgres_appbase_iam_oauth_schema_tables_exist(
+    pool: &PgPool,
+) -> Result<bool, sqlx::Error> {
+    let installed_tables = postgres_string_set(
+        pool,
+        r#"
+        SELECT table_name
+        FROM information_schema.tables
+        WHERE table_schema = current_schema()
+          AND table_type = 'BASE TABLE'
+        "#,
+    )
+    .await?;
+    Ok(appbase_iam_oauth_table_names().is_subset(&installed_tables))
+}
+
+async fn sqlite_appbase_iam_oauth_schema_indexes_exist(
+    pool: &SqlitePool,
+) -> Result<bool, sqlx::Error> {
+    let installed_indexes = sqlite_string_set(
+        pool,
+        r#"
+        SELECT name
+        FROM sqlite_master
+        WHERE type = 'index'
+        "#,
+    )
+    .await?;
+    Ok(appbase_iam_oauth_schema_index_names().is_subset(&installed_indexes))
+}
+
+async fn postgres_appbase_iam_oauth_schema_indexes_exist(
+    pool: &PgPool,
+) -> Result<bool, sqlx::Error> {
+    let installed_indexes = postgres_string_set(
+        pool,
+        r#"
+        SELECT indexname
+        FROM pg_indexes
+        WHERE schemaname = current_schema()
+        "#,
+    )
+    .await?;
+    Ok(appbase_iam_oauth_schema_index_names().is_subset(&installed_indexes))
 }
 
 async fn postgres_generated_schema_indexes_exist(pool: &PgPool) -> Result<bool, sqlx::Error> {
@@ -5317,6 +5469,12 @@ async fn sqlite_refresh_schema_needs_prepare(
         return Ok(true);
     }
     if !sqlite_appbase_commerce_schema_indexes_exist(pool).await? {
+        return Ok(true);
+    }
+    if !sqlite_appbase_iam_oauth_schema_tables_exist(pool).await? {
+        return Ok(true);
+    }
+    if !sqlite_appbase_iam_oauth_schema_indexes_exist(pool).await? {
         return Ok(true);
     }
     let Some(row) = sqlx::query(
@@ -5357,7 +5515,16 @@ async fn postgres_refresh_schema_needs_prepare(
     if !postgres_appbase_commerce_schema_tables_exist(pool).await? {
         return Ok(true);
     }
+    if !postgres_appbase_commerce_schema_columns_exist(pool).await? {
+        return Ok(true);
+    }
     if !postgres_appbase_commerce_schema_indexes_exist(pool).await? {
+        return Ok(true);
+    }
+    if !postgres_appbase_iam_oauth_schema_tables_exist(pool).await? {
+        return Ok(true);
+    }
+    if !postgres_appbase_iam_oauth_schema_indexes_exist(pool).await? {
         return Ok(true);
     }
     let Some(row) = sqlx::query(
@@ -7087,11 +7254,134 @@ async fn apply_postgres_appbase_commerce_schema(pool: &PgPool) -> Result<(), Dat
     for statement in appbase_commerce_postgres_schema_statements() {
         execute_postgres_statement(pool, statement.as_str()).await?;
     }
+    repair_postgres_appbase_commerce_legacy_constraints(pool).await?;
     record_postgres_migration_completed(
         pool,
         "appbase-commerce-schema",
         CURRENT_SCHEMA_VERSION,
         commerce_initial_migration_sql(),
+    )
+    .await?;
+    Ok(())
+}
+
+async fn repair_postgres_appbase_commerce_legacy_constraints(
+    pool: &PgPool,
+) -> Result<bool, sqlx::Error> {
+    let mut changed = false;
+    for (table, column, statement) in APPBASE_COMMERCE_LEGACY_NOT_NULL_COLUMN_REPAIRS {
+        if !postgres_column_is_not_nullable(pool, table, column).await? {
+            continue;
+        }
+        sqlx::query(statement).execute(pool).await?;
+        changed = true;
+    }
+    Ok(changed)
+}
+
+async fn postgres_column_is_not_nullable(
+    pool: &PgPool,
+    table: &str,
+    column: &str,
+) -> Result<bool, sqlx::Error> {
+    let is_nullable: Option<String> = sqlx::query_scalar(
+        r#"
+        SELECT is_nullable
+        FROM information_schema.columns
+        WHERE table_schema = current_schema()
+          AND table_name = $1
+          AND column_name = $2
+        "#,
+    )
+    .bind(table)
+    .bind(column)
+    .fetch_optional(pool)
+    .await?;
+    Ok(is_nullable.as_deref() == Some("NO"))
+}
+
+#[cfg(test)]
+fn postgres_appbase_commerce_legacy_not_null_constraint_repairs() -> Vec<&'static str> {
+    APPBASE_COMMERCE_LEGACY_NOT_NULL_COLUMN_REPAIRS
+        .iter()
+        .map(|(_, _, statement)| *statement)
+        .collect()
+}
+
+fn appbase_iam_oauth_postgres_schema_statements() -> Vec<String> {
+    strip_line_comments(iam_initial_migration_sql())
+        .split(';')
+        .map(str::trim)
+        .filter(|statement| !statement.is_empty())
+        .filter(|statement| appbase_iam_oauth_schema_statement(statement))
+        .map(str::to_owned)
+        .collect()
+}
+
+fn appbase_iam_oauth_sqlite_schema_statements() -> Vec<String> {
+    strip_line_comments(iam_initial_migration_sql())
+        .split(';')
+        .map(str::trim)
+        .filter(|statement| !statement.is_empty())
+        .filter(|statement| appbase_iam_oauth_schema_statement(statement))
+        .map(postgres_statement_to_sqlite)
+        .collect()
+}
+
+fn appbase_iam_oauth_schema_statement(statement: &str) -> bool {
+    if create_table_name(statement)
+        .as_deref()
+        .is_some_and(|table| table.starts_with("iam_oauth_"))
+    {
+        return true;
+    }
+    let Some(index_name) = create_index_name(statement) else {
+        return false;
+    };
+    index_name.starts_with("idx_iam_oauth_") || index_name.starts_with("uk_iam_oauth_")
+}
+
+async fn apply_sqlite_appbase_iam_oauth_schema(
+    pool: &SqlitePool,
+) -> Result<(), DatabaseInstallError> {
+    record_sqlite_migration_started(
+        pool,
+        "appbase-iam-oauth-schema",
+        CURRENT_SCHEMA_VERSION,
+        iam_initial_migration_sql(),
+    )
+    .await?;
+    for statement in appbase_iam_oauth_sqlite_schema_statements() {
+        execute_sqlite_statement(pool, statement.as_str()).await?;
+    }
+    record_sqlite_migration_completed(
+        pool,
+        "appbase-iam-oauth-schema",
+        CURRENT_SCHEMA_VERSION,
+        iam_initial_migration_sql(),
+    )
+    .await?;
+    Ok(())
+}
+
+async fn apply_postgres_appbase_iam_oauth_schema(
+    pool: &PgPool,
+) -> Result<(), DatabaseInstallError> {
+    record_postgres_migration_started(
+        pool,
+        "appbase-iam-oauth-schema",
+        CURRENT_SCHEMA_VERSION,
+        iam_initial_migration_sql(),
+    )
+    .await?;
+    for statement in appbase_iam_oauth_postgres_schema_statements() {
+        execute_postgres_statement(pool, statement.as_str()).await?;
+    }
+    record_postgres_migration_completed(
+        pool,
+        "appbase-iam-oauth-schema",
+        CURRENT_SCHEMA_VERSION,
+        iam_initial_migration_sql(),
     )
     .await?;
     Ok(())
@@ -7114,6 +7404,40 @@ fn generated_schema_index_names() -> BTreeSet<String> {
             postgres_schema_statements()
                 .into_iter()
                 .filter_map(|statement| create_index_name(&statement))
+                .collect()
+        })
+        .clone()
+}
+
+fn appbase_iam_oauth_table_names() -> BTreeSet<String> {
+    iam_database_tables()
+        .into_iter()
+        .filter(|table| table.starts_with("iam_oauth_"))
+        .map(str::to_owned)
+        .collect()
+}
+
+fn appbase_iam_oauth_schema_index_names() -> BTreeSet<String> {
+    APPBASE_IAM_OAUTH_SCHEMA_INDEX_NAMES
+        .get_or_init(|| {
+            appbase_iam_oauth_postgres_schema_statements()
+                .into_iter()
+                .filter_map(|statement| create_index_name(&statement))
+                .collect()
+        })
+        .clone()
+}
+
+fn appbase_commerce_schema_postgres_table_columns() -> Vec<(String, Vec<SchemaColumnDefinition>)> {
+    APPBASE_COMMERCE_SCHEMA_POSTGRES_TABLE_COLUMNS
+        .get_or_init(|| {
+            appbase_commerce_postgres_schema_statements()
+                .into_iter()
+                .filter_map(|statement| {
+                    let table = create_table_name(&statement)?;
+                    let columns = create_table_columns(&statement);
+                    Some((table, columns))
+                })
                 .collect()
         })
         .clone()
@@ -7846,6 +8170,20 @@ mod tests {
             "\"agent_run_step_id_key\" VARCHAR(128) GENERATED ALWAYS AS (COALESCE(agent_run_step_id, '')) STORED",
             postgres_add_column_definition(&column).unwrap(),
             "Postgres schema repair must restore generated columns required by generated unique indexes"
+        );
+    }
+
+    #[test]
+    fn postgres_appbase_commerce_repair_relaxes_retired_not_null_columns() {
+        assert_eq!(
+            vec![
+                r#"ALTER TABLE "commerce_product_spu" ALTER COLUMN "sales_status" DROP NOT NULL"#,
+                r#"ALTER TABLE "commerce_product_sku" ALTER COLUMN "sales_status" DROP NOT NULL"#,
+                r#"ALTER TABLE "commerce_product_sku" ALTER COLUMN "delivery_mode" DROP NOT NULL"#,
+                r#"ALTER TABLE "commerce_payment_method" ALTER COLUMN "provider" DROP NOT NULL"#,
+            ],
+            postgres_appbase_commerce_legacy_not_null_constraint_repairs(),
+            "Postgres appbase commerce repair must preserve legacy columns while allowing canonical status/fulfillment_type writes"
         );
     }
 }

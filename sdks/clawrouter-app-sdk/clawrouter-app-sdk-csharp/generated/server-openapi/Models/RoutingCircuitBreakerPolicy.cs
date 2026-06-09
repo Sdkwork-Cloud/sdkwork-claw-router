@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class RoutingCircuitBreakerPolicy
     {
-        public string? FailureThreshold { get; set; }
+        public string FailureThreshold { get; set; }
     }
 }
