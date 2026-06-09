@@ -1,19 +1,23 @@
 # sdkwork-clawrouter-pc-admin-catalog
 
-Domain: platform
-Capability: router
+Domain: commerce
+Capability: product-admin
 Package type: node-package
-Status: standardizing
+Status: ready
 
 This README is the SDKWork module entrypoint for `sdkwork-clawrouter-pc-admin-catalog`. The machine-readable component contract is `specs/component.spec.json`; canonical standards are under `../../../../../sdkwork-specs/`.
+
+This package is the Claw Router admin adapter for the Commerce-owned product center. It preserves Claw Router admin routes under `/admin/catalog/*` while re-exporting the complete public API from `sdkwork-commerce-pc-admin-product`, including product creation/editing, category management, multi-spec SKU management, category/SKU attributes, store visibility, inventory policy, product detail configuration, and publish-readiness helpers.
 
 ## Public API
 
 - `src/index.tsx`
+- `src/catalogService.ts`
 
 ## Required SDK Surface
 
-- None declared in `specs/component.spec.json`.
+- No generated SDK client is owned by this adapter.
+- Product-center business calls are delegated to `sdkwork-commerce-pc-admin-product` and the Commerce service facade.
 
 ## Configuration
 
@@ -25,7 +29,7 @@ This component follows the deployment and runtime rules referenced by its `canon
 
 ## Security
 
-Do not add secrets, live tokens, manual auth headers, or app-local credential handling to this module. Protected API and SDK access must use the generated SDK or approved service boundary declared in the component contract.
+Do not add secrets, live tokens, manual auth headers, app-local credential handling, raw HTTP, or local SDK forks to this module. Protected API and SDK access must stay inside the Commerce-owned product center package or an approved generated-SDK service boundary.
 
 ## Extension Points
 

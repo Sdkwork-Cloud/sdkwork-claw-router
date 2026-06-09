@@ -553,19 +553,229 @@ declare module 'sdkwork-commerce-pc-admin-product' {
   export type CategoryTreeNode = Record<string, unknown>;
   export type CategoryColumnModel = Record<string, unknown>;
   export type SeedSummary = Record<string, unknown>;
-  export type CommerceProductAdminService = Record<string, unknown>;
-  export type ProductDraftState = Record<string, unknown>;
-  export type ProductSpecGroup = Record<string, unknown>;
-  export type ProductSkuDraft = Record<string, unknown>;
+  export type ProductReadinessSeverity = 'blocker' | 'warning' | 'complete';
+  export type ProductReadinessSection =
+    | 'basic'
+    | 'category'
+    | 'detail'
+    | 'attribute'
+    | 'sku'
+    | 'store'
+    | 'inventory'
+    | 'pricing'
+    | 'publishing';
+  export type ProductInventoryReadinessMode = 'physical' | 'virtual' | 'not_required';
+  export type ProductAttributeValueType = 'text' | 'number' | 'boolean' | 'enum' | 'multi_enum' | 'date' | 'json';
+
+  export interface ProductDetailParameterRow {
+    id: string;
+    label: string;
+    value: string;
+  }
+
+  export interface ProductDetailCustomSection {
+    id: string;
+    title: string;
+    body: string;
+  }
+
+  export interface ProductDetailConfig {
+    mainImageUrl: string;
+    galleryImageUrls: string[];
+    detailImageUrls: string[];
+    videoUrl: string;
+    sellingPoints: string[];
+    parameterRows: ProductDetailParameterRow[];
+    servicePromises: string[];
+    shippingPolicy: string;
+    afterSalePolicy: string;
+    seoTitle: string;
+    seoDescription: string;
+    seoKeywords: string[];
+    shareTitle: string;
+    shareDescription: string;
+    shareImageUrl: string;
+    customSections: ProductDetailCustomSection[];
+  }
+
+  export interface ProductStoreVisibility {
+    visible: boolean;
+    storeIds: string[];
+    channelCodes: string[];
+    primaryStoreId: string;
+  }
+
+  export interface ProductInventoryPolicy {
+    managed: boolean;
+    readinessMode: ProductInventoryReadinessMode;
+    sourceIds: string[];
+    safetyStock: number;
+    allowBackorder: boolean;
+  }
+
+  export interface ProductCategoryAttributeValue {
+    id: string;
+    attributeId: string;
+    attributeNo: string;
+    attributeName: string;
+    valueType: ProductAttributeValueType;
+    value: string;
+    displayValue: string;
+    required: boolean;
+  }
+
+  export interface ProductSkuAttributeValue {
+    id: string;
+    skuDraftId: string;
+    specKey: string;
+    attributeId: string;
+    attributeName: string;
+    valueCode: string;
+    value: string;
+    displayValue: string;
+    required: boolean;
+  }
+
+  export interface ProductReadinessIssue {
+    id: string;
+    section: ProductReadinessSection;
+    severity: ProductReadinessSeverity;
+    message: string;
+    target?: string;
+  }
+
+  export interface ProductReadinessReport {
+    issues: ProductReadinessIssue[];
+    blockers: ProductReadinessIssue[];
+    warnings: ProductReadinessIssue[];
+    completed: number;
+    total: number;
+    publishable: boolean;
+  }
+
+  export interface ProductCommercialSignals {
+    detailComplete: boolean;
+    storeVisible: boolean;
+    skuAttributeComplete: boolean;
+    inventoryReady: boolean;
+    priceComplete: boolean;
+    readinessStatus: 'ready' | 'blocked' | 'draft';
+    readinessLabel: string;
+  }
+
+  export interface ProductSpecValue {
+    id: string;
+    name: string;
+    code?: string;
+    enabled?: boolean;
+  }
+
+  export interface ProductSpecGroup {
+    id: string;
+    name: string;
+    attributeId?: string | null;
+    values: ProductSpecValue[];
+  }
+
+  export interface ProductSkuSpecSelection {
+    groupId: string;
+    groupName: string;
+    valueId: string;
+    valueName: string;
+    valueCode: string;
+  }
+
+  export interface ProductSkuDraft {
+    id: string;
+    backendSkuId?: string;
+    specKey: string;
+    specPath?: string;
+    title: string;
+    skuNo: string;
+    barcode?: string;
+    image?: unknown;
+    priceAmount: string;
+    currencyCode: string;
+    stockQuantity?: number;
+    fulfillmentType?: string;
+    status: 'draft' | 'active' | 'inactive' | 'archived';
+    enabled: boolean;
+    specSelections?: ProductSkuSpecSelection[];
+  }
+
+  export interface ProductParameterDraft {
+    id: string;
+    label: string;
+    value: string;
+  }
+
+  export interface ProductDraftState {
+    title: string;
+    subtitle?: string;
+    description: string;
+    brand?: string;
+    productType: string;
+    spuNo: string;
+    defaultPriceAmount: string;
+    defaultCurrencyCode: string;
+    baseSkuNo?: string;
+    salesUnit?: string;
+    taxCategory?: string;
+    fulfillmentType: string;
+    selectedCategoryIds: string[];
+    shopCategoryIds?: string[];
+    parameters?: ProductParameterDraft[];
+    specGroups?: ProductSpecGroup[];
+    skuDrafts: ProductSkuDraft[];
+    detailConfig?: ProductDetailConfig;
+    storeVisibility?: ProductStoreVisibility;
+    inventoryPolicy?: ProductInventoryPolicy;
+    categoryAttributeValues?: ProductCategoryAttributeValue[];
+    skuAttributeValues?: ProductSkuAttributeValue[];
+    metadata?: Record<string, unknown>;
+  }
+
+  export interface CommerceProductAdminService {
+    listCategories(params?: Record<string, unknown>): Promise<unknown>;
+    createCategory(body: Record<string, unknown>): Promise<unknown>;
+    updateCategory(categoryId: string, body: Record<string, unknown>): Promise<unknown>;
+    deleteCategory(categoryId: string): Promise<unknown>;
+    initializeCategorySeeds(body: Record<string, unknown>): Promise<unknown>;
+    listProducts(params?: Record<string, unknown>): Promise<unknown>;
+    retrieveProduct(productId: string): Promise<unknown>;
+    createProduct(body: Record<string, unknown>): Promise<unknown>;
+    updateProduct(productId: string, body: Record<string, unknown>): Promise<unknown>;
+    deleteProduct(productId: string): Promise<unknown>;
+    listSkus(params?: Record<string, unknown>): Promise<unknown>;
+    createSku(body: Record<string, unknown>): Promise<unknown>;
+    updateSku(skuId: string, body: Record<string, unknown>): Promise<unknown>;
+    deleteSku(skuId: string): Promise<unknown>;
+    listAttributes(params?: Record<string, unknown>): Promise<unknown>;
+    createAttribute(body: Record<string, unknown>): Promise<unknown>;
+    listCategoryAttributes(params?: Record<string, unknown>): Promise<unknown>;
+    createCategoryAttribute(body: Record<string, unknown>): Promise<unknown>;
+    updateCategoryAttribute(bindingId: string, body: Record<string, unknown>): Promise<unknown>;
+    deleteCategoryAttribute(bindingId: string): Promise<unknown>;
+    listPriceLists(params?: Record<string, unknown>): Promise<unknown>;
+    createPriceList(body: Record<string, unknown>): Promise<unknown>;
+  }
 
   export const CATEGORY_SEED_DATASETS: readonly string[];
+  export const DEFAULT_PRODUCT_DETAIL_CONFIG: ProductDetailConfig;
+  export const DEFAULT_STORE_VISIBILITY: ProductStoreVisibility;
+  export const DEFAULT_INVENTORY_POLICY: ProductInventoryPolicy;
 
   export function AttributeManagementPage(): ReactNode;
   export function CatalogAdmin(props?: { sectionId?: string }): ReactNode;
   export function CategoryManagementPage(): ReactNode;
   export function CommerceProductAdmin(props?: { sectionId?: string }): ReactNode;
+  export function ProductAttributeValuePanel(props: Record<string, unknown>): ReactNode;
   export function ProductCreatePage(props?: Record<string, unknown>): ReactNode;
+  export function ProductDetailConfigPanel(props: Record<string, unknown>): ReactNode;
   export function ProductListPage(): ReactNode;
+  export function ProductPublishReadinessPanel(props: { report: ProductReadinessReport }): ReactNode;
+  export function ProductStoreInventoryPanel(props: Record<string, unknown>): ReactNode;
+  export function SkuMatrixCommercialPanel(props: Record<string, unknown>): ReactNode;
   export function SkuManagementPage(): ReactNode;
 
   export function createCommerceProductAdminService(options?: Record<string, unknown>): CommerceProductAdminService;
@@ -588,6 +798,7 @@ declare module 'sdkwork-commerce-pc-admin-product' {
   export function listCommercePriceLists(params?: Record<string, unknown>): Promise<unknown>;
   export function listCommerceProducts(params?: Record<string, unknown>): Promise<unknown>;
   export function listCommerceSkus(params?: Record<string, unknown>): Promise<unknown>;
+  export function retrieveCommerceProduct(productId: string): Promise<unknown>;
   export function updateCommerceCategory(categoryId: string, body: Record<string, unknown>): Promise<unknown>;
   export function updateCommerceCategoryAttribute(bindingId: string, body: Record<string, unknown>): Promise<unknown>;
   export function updateCommerceProduct(productId: string, body: Record<string, unknown>): Promise<unknown>;
@@ -602,10 +813,12 @@ declare module 'sdkwork-commerce-pc-admin-product' {
   export function productTypeLabel(productType: string): string;
   export function readProductCollectionMeta(value: unknown): ProductCollectionMeta | null;
   export function readProductCoverResource(record: ProductRecord): unknown;
+  export function readProductCommercialSignals(record: ProductRecord): ProductCommercialSignals;
   export function readProductRecords(value: unknown): ProductRecord[];
   export function readProductString(record: ProductRecord, keys: string[]): string;
   export function renderProductPageWindow(page: number, totalPages: number): ProductPageWindowItem[];
 
+  export function buildCommercialProductMetadata(draft: ProductDraftState): Record<string, unknown>;
   export function buildProductCreatePayload(draft: ProductDraftState, mode: ProductSubmitMode): Record<string, unknown>;
   export function buildSkuCreatePayloads(
     draft: ProductDraftState,
@@ -629,8 +842,16 @@ declare module 'sdkwork-commerce-pc-admin-product' {
   export function normalizeProductCategoryTree(records: unknown[]): CategoryTreeNode[];
   export function normalizeSelectedCategoryIds(categoryIds: unknown[]): string[];
   export function normalizeSpecGroups(specGroups: ProductSpecGroup[]): ProductSpecGroup[];
+  export function readCommercialProductMetadata(record: ProductRecord): Partial<ProductDraftState>;
   export function readSelectedCategoryPaths(draft: ProductDraftState, tree: CategoryTreeNode[]): unknown[];
   export function validateProductDraft(draft: ProductDraftState): string[];
+
+  export function evaluateProductReadiness(draft: ProductDraftState): ProductReadinessReport;
+  export function isDetailConfigComplete(detailConfig: ProductDetailConfig): boolean;
+  export function isInventoryPolicyReady(productType: string, inventoryPolicy: ProductInventoryPolicy): boolean;
+  export function isPositiveDecimalString(value: string): boolean;
+  export function isProductPublishable(draft: ProductDraftState): boolean;
+  export function isStoreVisibilityReady(storeVisibility: ProductStoreVisibility): boolean;
 
   export function buildCategoryColumns(activePathIds: string[], tree: CategoryTreeNode[]): CategoryColumnModel[];
   export function buildCategoryParentColumns(activePathIds: string[], tree: CategoryTreeNode[]): CategoryColumnModel[];
