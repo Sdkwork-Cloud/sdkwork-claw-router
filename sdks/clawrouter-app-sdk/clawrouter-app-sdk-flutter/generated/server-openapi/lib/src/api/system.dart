@@ -11,28 +11,6 @@ class SystemApi {
 
   SystemApi(this._client);
 
-  /// Retrieve public IAM runtime settings
-  Future<IamRuntimeRetrieveResult?> iamRuntimeRetrieve([String? tenantCode, String? organizationCode]) async {
-    final query = buildQueryString([
-      QueryParameterSpec('tenant_code', tenantCode, 'form', true, false, null),
-      QueryParameterSpec('organization_code', organizationCode, 'form', true, false, null)
-    ]);
-    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.appPath('/system/iam/runtime'), query));
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : IamRuntimeRetrieveResult.fromJson(map);
-    })();
-  }
-
-  /// Retrieve public IAM verification policy
-  Future<IamVerificationPolicyRetrieveResult?> iamVerificationPolicyRetrieve() async {
-    final response = await _client.get(ApiPaths.appPath('/system/iam/verification_policy'));
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : IamVerificationPolicyRetrieveResult.fromJson(map);
-    })();
-  }
-
   /// Retrieve public site runtime branding settings
   Future<SiteRuntimeRetrieveResult?> siteRuntimeRetrieve([String? tenantCode, String? organizationCode]) async {
     final query = buildQueryString([

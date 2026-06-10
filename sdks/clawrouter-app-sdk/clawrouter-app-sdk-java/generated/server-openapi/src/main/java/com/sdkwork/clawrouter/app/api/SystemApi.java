@@ -13,22 +13,6 @@ public class SystemApi {
         this.client = client;
     }
 
-    /** Retrieve public IAM runtime settings */
-    public IamRuntimeRetrieveResult iamRuntimeRetrieve(String tenantCode, String organizationCode) throws Exception {
-        String query = buildQueryString(List.of(
-            new QueryParameterSpec("tenant_code", tenantCode, "form", true, false, null),
-            new QueryParameterSpec("organization_code", organizationCode, "form", true, false, null)
-        ));
-        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/system/iam/runtime"), query));
-        return client.convertValue(raw, new TypeReference<IamRuntimeRetrieveResult>() {});
-    }
-
-    /** Retrieve public IAM verification policy */
-    public IamVerificationPolicyRetrieveResult iamVerificationPolicyRetrieve() throws Exception {
-        Object raw = client.get(ApiPaths.appPath("/system/iam/verification_policy"));
-        return client.convertValue(raw, new TypeReference<IamVerificationPolicyRetrieveResult>() {});
-    }
-
     /** Retrieve public site runtime branding settings */
     public SiteRuntimeRetrieveResult siteRuntimeRetrieve(String tenantCode, String organizationCode) throws Exception {
         String query = buildQueryString(List.of(

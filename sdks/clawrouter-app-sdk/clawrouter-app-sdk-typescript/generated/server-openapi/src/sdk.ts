@@ -13,7 +13,6 @@ import { NotificationApi, createNotificationApi } from './api/notification';
 import { PlatformApi, createPlatformApi } from './api/platform';
 import { RuntimeApi, createRuntimeApi } from './api/runtime';
 import { SdkReferenceApi, createSdkReferenceApi } from './api/sdk-reference';
-import { SystemApi, createSystemApi } from './api/system';
 import { SitesApi, createSitesApi } from './api/sites';
 
 export class SdkworkAppClient {
@@ -30,7 +29,6 @@ export class SdkworkAppClient {
   public readonly platform: PlatformApi;
   public readonly runtime: RuntimeApi;
   public readonly sdkReference: SdkReferenceApi;
-  public readonly system: SystemApi;
   public readonly sites: SitesApi;
 
   constructor(config: SdkworkAppConfig) {
@@ -56,8 +54,6 @@ export class SdkworkAppClient {
     this.runtime = createRuntimeApi(this.httpClient);
 
     this.sdkReference = createSdkReferenceApi(this.httpClient);
-
-    this.system = createSystemApi(this.httpClient);
 
     this.sites = createSitesApi(this.httpClient);
   }

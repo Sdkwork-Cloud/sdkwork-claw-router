@@ -767,12 +767,15 @@ class ApiContractManifestGenerator:
         return bool(segments) and self._normalize_static_segment(segments[0]) in {
             "agent",
             "agents",
+            "auth",
             "chat",
             "course",
             "courses",
+            "iam",
             "memory",
             "oauth",
             "runtime",
+            "system",
         }
 
     def _standard_tag(

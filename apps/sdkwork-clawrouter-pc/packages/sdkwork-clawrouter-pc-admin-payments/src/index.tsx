@@ -455,7 +455,7 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
 
   const loadPaymentProviderOptions = useCallback(async () => {
     try {
-      const response = await backendPaymentsProvidersList();
+      const response = await backendPaymentsProvidersList(DEFAULT_PAGE_PARAMS);
       const options = readPaymentProviderCodeOptions(response);
       setPaymentProviderCodeOptions(options);
       setProviderAccountForm((current) => {
@@ -655,7 +655,7 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
       description: t('admin.commerce.payments.providers.desc', 'Domestic and international provider definitions such as WeChat Pay, Alipay, PayPal, Stripe, Apple Pay, and Google Pay.'),
       icon: <CreditCard className="h-4 w-4" />,
       group: t('admin.commerce.payments.group.providerSetup', 'Provider Setup'),
-      load: () => backendPaymentsProvidersList(),
+      load: () => backendPaymentsProvidersList(DEFAULT_PAGE_PARAMS),
       columns: [
         { key: 'providerCode', label: t('admin.col.provider', 'Provider') },
         { key: 'displayName', label: t('admin.col.name', 'Name') },

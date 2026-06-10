@@ -37,6 +37,11 @@ public class AiApi {
         return try await client.put(ApiPaths.backendPath("/ai/channel_groups/\(serializePathParameter(channelGroupId, PathParameterSpec(name: "channelGroupId", style: "simple", explode: false)))/channel_bindings"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ChannelGroupsChannelBindingsUpdateResult.self)
     }
 
+    /// List group route explain
+    public func channelGroupsRouteExplainRetrieve(channelGroupId: String) async throws -> ChannelGroupsRouteExplainRetrieveResult? {
+        return try await client.get(ApiPaths.backendPath("/ai/channel_groups/\(serializePathParameter(channelGroupId, PathParameterSpec(name: "channelGroupId", style: "simple", explode: false)))/route_explain"), responseType: ChannelGroupsRouteExplainRetrieveResult.self)
+    }
+
     /// List model mappings
     public func modelMappingsList(bindingType: String? = nil, vendorCode: String? = nil, channelId: String? = nil, channelCode: String? = nil, q: String? = nil) async throws -> ModelMappingsListResult? {
         let query = buildQueryString([
@@ -176,6 +181,11 @@ public class AiApi {
     /// Update ai resource
     public func resourcesUpdate(resourceId: String, body: AdminAiResourceUpdateRequest) async throws -> AiResourcesUpdateResult? {
         return try await client.put(ApiPaths.backendPath("/ai/resources/\(serializePathParameter(resourceId, PathParameterSpec(name: "resourceId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: AiResourcesUpdateResult.self)
+    }
+
+    /// List runtime route explain
+    public func routeExplainCreate(body: AdminRuntimeRouteExplainRequest) async throws -> RouteExplainCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/ai/route_explain"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: RouteExplainCreateResult.self)
     }
 
     private struct PathParameterSpec {

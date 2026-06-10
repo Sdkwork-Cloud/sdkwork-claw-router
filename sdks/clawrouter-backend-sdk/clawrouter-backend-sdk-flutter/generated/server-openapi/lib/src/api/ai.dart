@@ -68,6 +68,15 @@ class AiApi {
     })();
   }
 
+  /// List group route explain
+  Future<ChannelGroupsRouteExplainRetrieveResult?> channelGroupsRouteExplainRetrieve(String channelGroupId) async {
+    final response = await _client.get(ApiPaths.backendPath('/ai/channel_groups/${serializePathParameter(channelGroupId, const PathParameterSpec('channelGroupId', 'simple', false))}/route_explain'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : ChannelGroupsRouteExplainRetrieveResult.fromJson(map);
+    })();
+  }
+
   /// List model mappings
   Future<ModelMappingsListResult?> modelMappingsList([String? bindingType, String? vendorCode, String? channelId, String? channelCode, String? q]) async {
     final query = buildQueryString([
@@ -314,6 +323,16 @@ class AiApi {
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AiResourcesUpdateResult.fromJson(map);
+    })();
+  }
+
+  /// List runtime route explain
+  Future<RouteExplainCreateResult?> routeExplainCreate(AdminRuntimeRouteExplainRequest body) async {
+    final payload = body.toJson();
+    final response = await _client.post(ApiPaths.backendPath('/ai/route_explain'), body: payload, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : RouteExplainCreateResult.fromJson(map);
     })();
   }
 }

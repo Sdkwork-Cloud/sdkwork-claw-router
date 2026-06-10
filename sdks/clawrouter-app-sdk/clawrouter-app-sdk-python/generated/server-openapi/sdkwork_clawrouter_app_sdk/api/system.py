@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import IamRuntimeRetrieveResult, IamVerificationPolicyRetrieveResult, SiteRuntimeRetrieveResult
+from ..models import SiteRuntimeRetrieveResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -128,44 +128,8 @@ class SystemApi:
 
     def __init__(self, client: HttpClient):
         self._client = client
-        self.iam = SystemIamApi(client)
         self.site = SystemSiteApi(client)
 
-
-class SystemIamApi:
-    """system system.iam API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-        self.runtime = SystemIamRuntimeApi(client)
-        self.verification_policy = SystemIamVerificationPolicyApi(client)
-
-
-class SystemIamRuntimeApi:
-    """system system.iam.runtime API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-
-
-    def retrieve(self, tenant_code: Optional[str] = None, organization_code: Optional[str] = None) -> IamRuntimeRetrieveResult:
-        """Retrieve public IAM runtime settings"""
-        query = build_query_string([
-            {'name': 'tenant_code', 'value': tenant_code, 'style': 'form', 'explode': True, 'allow_reserved': False},
-            {'name': 'organization_code', 'value': organization_code, 'style': 'form', 'explode': True, 'allow_reserved': False},
-        ])
-        return self._client.get(_append_query_string(f"/app/v3/api/system/iam/runtime", query))
-
-class SystemIamVerificationPolicyApi:
-    """system system.iam.verification_policy API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-
-
-    def retrieve(self) -> IamVerificationPolicyRetrieveResult:
-        """Retrieve public IAM verification policy"""
-        return self._client.get(f"/app/v3/api/system/iam/verification_policy")
 
 class SystemSiteApi:
     """system system.site API client."""

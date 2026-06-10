@@ -11,7 +11,7 @@ import {
   type ApiRecord,
   type ClawRouterMediaResource,
 } from 'sdkwork-clawrouter-pc-commons/runtime';
-import { getClawRouterAppSdkClient } from 'sdkwork-clawrouter-pc-commons/sdk-clients';
+import { getSdkworkCommerceService } from '@sdkwork/commerce-service';
 
 export interface VipPackageGroup {
   id: string;
@@ -187,29 +187,30 @@ export class VipService {
   }
 }
 
-type AppCommerceService = ReturnType<typeof getClawRouterAppSdkClient>['commerce'];
+type CommerceRequestParams = Record<string, unknown>;
+type CommerceRequestBody = Record<string, unknown>;
 
-async function appMembershipsPackageGroupsList(params?: Parameters<AppCommerceService['memberships']['packageGroups']['list']>[0]) {
-  return getClawRouterAppSdkClient().commerce.memberships.packageGroups.list(params);
+async function appMembershipsPackageGroupsList(params?: CommerceRequestParams) {
+  return getSdkworkCommerceService().memberships.packageGroups.list(params);
 }
 
 async function appMembershipsPackageGroupsPackagesList(
   packageGroupId: string,
-  params?: Parameters<AppCommerceService['memberships']['packageGroups']['packages']['list']>[1],
+  params?: CommerceRequestParams,
 ) {
-  return getClawRouterAppSdkClient().commerce.memberships.packageGroups.packages.list(packageGroupId, params);
+  return getSdkworkCommerceService().memberships.packageGroups.packages.list(packageGroupId, params);
 }
 
 async function appMembershipsCurrentRetrieve() {
-  return getClawRouterAppSdkClient().commerce.memberships.current.retrieve();
+  return getSdkworkCommerceService().memberships.current.retrieve();
 }
 
-async function appMembershipsPurchasesCreate(body: Parameters<AppCommerceService['memberships']['purchases']['create']>[0]) {
-  return getClawRouterAppSdkClient().commerce.memberships.purchases.create(body);
+async function appMembershipsPurchasesCreate(body: CommerceRequestBody) {
+  return getSdkworkCommerceService().memberships.purchases.create(body);
 }
 
-async function appPromotionCodeRedemptionsCreate(body: Parameters<AppCommerceService['promotions']['codes']['redemptions']['create']>[0]) {
-  return getClawRouterAppSdkClient().commerce.promotions.codes.redemptions.create(body);
+async function appPromotionCodeRedemptionsCreate(body: CommerceRequestBody) {
+  return getSdkworkCommerceService().promotions.codes.redemptions.create(body);
 }
 
 function normalizeVipSummary(value: ApiRecord): VipSummary {

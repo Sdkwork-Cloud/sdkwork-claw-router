@@ -20,7 +20,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     client.set_auth_token("your-auth-token");
 client.set_access_token("your-access-token");
 
-    let result = client.auth().sessions_current_retrieve().await?;
+    let result = client.ai().channel_groups_list().await?;
     println!("{result:?}");
     Ok(())
 }
@@ -45,7 +45,6 @@ client.set_header("X-Custom-Header", "value");
 
 - `client.agents()` - agents API
 - `client.ai()` - ai API
-- `client.auth()` - auth API
 - `client.chat()` - chat API
 - `client.content()` - content API
 - `client.ecosystem()` - ecosystem API
@@ -77,14 +76,6 @@ println!("{result:?}");
 ```rust
 // List groups
 let result = client.ai().channel_groups_list().await?;
-println!("{result:?}");
-```
-
-### auth
-
-```rust
-// Retrieve current IAM session
-let result = client.auth().sessions_current_retrieve().await?;
 println!("{result:?}");
 ```
 
@@ -193,8 +184,12 @@ println!("{result:?}");
 ### system
 
 ```rust
-// Retrieve public IAM verification policy
-let result = client.system().iam_verification_policy_retrieve().await?;
+use std::collections::HashMap;
+// Retrieve public site runtime branding settings
+let mut query = HashMap::new();
+query.insert("tenant_code".to_string(), serde_json::json!("ok"));
+query.insert("organization_code".to_string(), serde_json::json!("ok"));
+let result = client.system().site_runtime_retrieve(Some(&query)).await?;
 println!("{result:?}");
 ```
 
@@ -207,7 +202,7 @@ use clawrouter_app_sdk::{SdkworkAppClient, SdkworkConfig};
 let client = SdkworkAppClient::new(SdkworkConfig::new("http://localhost:18082"))?;
 
 let outcome: Result<(), _> = async {
-    client.auth().sessions_current_retrieve().await?;
+    client.ai().channel_groups_list().await?;
     Ok(())
 }.await;
 

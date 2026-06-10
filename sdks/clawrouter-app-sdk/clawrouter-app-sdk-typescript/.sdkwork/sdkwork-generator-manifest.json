@@ -6,6 +6,7 @@
     "version": "0.1.0",
     "language": "typescript",
     "sdkType": "app",
+    "protocol": "http",
     "packageName": "@sdkwork/clawrouter-app-sdk"
   },
   "generatedFiles": [
@@ -43,7 +44,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "1c0e68b52aac22048bc0f78cbd83b09d194569598c45c178df498b046d04a64c"
+      "sha256": "eb4bdc35b5f5ab19f21c5733cde3df5b23631ef51d8767c67fe90a10fa119194"
     },
     {
       "path": "sdkwork-sdk.json",
@@ -75,11 +76,11 @@
     },
     {
       "path": "src/api/iam.ts",
-      "sha256": "4a623891bc087e9ac2f0cdf81f229e33bd3cae85801a4e998c3a4ad06c65e4f4"
+      "sha256": "d268567e38f5bbd8de5b961b7be944cb1ace563b0833785ed859eab0b9987462"
     },
     {
       "path": "src/api/index.ts",
-      "sha256": "1939f03d0d4d50122597d63d9d802ed5abefa2df8427a55c0f413962f3c7d35c"
+      "sha256": "844da646d22ea00580b25851fd367ce2a6b3361b313d216a841b21b5b0619ead"
     },
     {
       "path": "src/api/memory.ts",
@@ -110,10 +111,6 @@
       "sha256": "4bd483b1c5c63bed8a6cbfb41bb0e5dd3b498f2d89aceb222d68c04a48607331"
     },
     {
-      "path": "src/api/system.ts",
-      "sha256": "e2e0ecbb6fde14af9571b370446e7906d5ed66dd2426dfad0c1e9eef24cbb680"
-    },
-    {
       "path": "src/auth/index.ts",
       "sha256": "657fc63738bdcd61d83133120732a477dd127448cf2c51229b05d21f5e1f5c04"
     },
@@ -131,7 +128,7 @@
     },
     {
       "path": "src/sdk.ts",
-      "sha256": "51801ee4886842c4347243bf57302a9bae9adab3d16b4f49343d8ba235d2781a"
+      "sha256": "d8f351fc4be03aad660ed6498b180a73eae86175783fa39a40d141e46d38fcb7"
     },
     {
       "path": "src/types/agent-capabilities.ts",
@@ -386,14 +383,6 @@
       "sha256": "19203faf518e2c9c83f5f332997e118f2670886ee567cd9c7440c2c1a81c72e9"
     },
     {
-      "path": "src/types/auth-runtime-settings-response.ts",
-      "sha256": "dc763261084e270bb1c97f6ab71b6085149561121336e7f86d88e1e4416f189e"
-    },
-    {
-      "path": "src/types/auth-verification-policy.ts",
-      "sha256": "e3c61567fdd3f45df580bfa2659ee86153da2c0350a87d07d548849392a868dd"
-    },
-    {
       "path": "src/types/channel-groups-list-result.ts",
       "sha256": "0cda4b65137e01e44f3c08df13102717798dd9dfe695bb3038ca5e1271451df1"
     },
@@ -626,18 +615,6 @@
       "sha256": "b79630c1ea5a613109be99c20a13e01af4dc0c67124754c1a19f6a2b60fe1f23"
     },
     {
-      "path": "src/types/department-assignments-list-result.ts",
-      "sha256": "93e38af15873012ccd20ea7e4aecbc17f8505eaffd17b99fa21f4123be93c9f0"
-    },
-    {
-      "path": "src/types/departments-list-result.ts",
-      "sha256": "036022a13a9ea87ad36832e05a683b683f634f193683b8c1aa3a74cab809dac4"
-    },
-    {
-      "path": "src/types/departments-tree-retrieve-result.ts",
-      "sha256": "d3ef8464777f531c2e51e2ce706de7a59bf411d41394b3a353f53986fd8e4742"
-    },
-    {
       "path": "src/types/documentation-create-result.ts",
       "sha256": "c5aa470a73293474672f860f6deb1eb4989e195787e7f8bc685e661b0be6e8f1"
     },
@@ -810,156 +787,8 @@
       "sha256": "746ca3675cb15a3b1493d67881fb5efc1137b9ebaa69fb82700e2fa0d33334bf"
     },
     {
-      "path": "src/types/iam-app-context.ts",
-      "sha256": "519f8d5316afa307a93b6cc3ea42f2b25b450e3e2a0ce1b56227c8b9aa1988f7"
-    },
-    {
-      "path": "src/types/iam-current-session-update-request.ts",
-      "sha256": "fc5c50f952b9d3f83747988773eaea0e2e9b042bd5a81462be9950d12fab624f"
-    },
-    {
-      "path": "src/types/iam-department-assignment-item.ts",
-      "sha256": "e78314e4e34b61785c3230c3ea24292face8bf0d2f7aed6f62645e6ad7384ef5"
-    },
-    {
-      "path": "src/types/iam-department-assignment-list-response.ts",
-      "sha256": "dd5f88bf6d4b2c51f76dd9bac948ef8c757377b9dc26300b6fe7a00d6de0ded0"
-    },
-    {
-      "path": "src/types/iam-department-item.ts",
-      "sha256": "38a7b17ac65da6f3bdcd38e50b9e3da5d852fa0796670629987f8fd7723b1e06"
-    },
-    {
-      "path": "src/types/iam-department-list-response.ts",
-      "sha256": "2fd61dc373aaf171cc220544ce3cc4e1f37d8ce53b8fbc21cd4bb9dfd9162822"
-    },
-    {
-      "path": "src/types/iam-department-tree-item.ts",
-      "sha256": "3f14eb9b4c42ec69cc86cdc37bb095a3a3503cd6652a8447c6ce4b490c5f5089"
-    },
-    {
-      "path": "src/types/iam-department-tree-response.ts",
-      "sha256": "f8d386c011e646a8d5487d9cf09dc4b6c8f2a5702168ca6ff957457b72ddb370"
-    },
-    {
-      "path": "src/types/iam-oauth-authorization-url-create-request.ts",
-      "sha256": "0813849363720ee836c3e22ba3abf4bc5d76b79a9851a7e2cc6aa0395603d025"
-    },
-    {
-      "path": "src/types/iam-oauth-authorization-url-response.ts",
-      "sha256": "b768963f002ff6e92ee6022b36c3b3e943f87561d1fd343699e08db4d1109a09"
-    },
-    {
-      "path": "src/types/iam-oauth-session-create-request.ts",
-      "sha256": "c2d4d0b47821c03acda1e51adfee05810b45d4be87812c070b218bb4f5d557a9"
-    },
-    {
-      "path": "src/types/iam-organization-item.ts",
-      "sha256": "72b4cd679f91464b31ccf0c4cdc2325e4f55db2a890ee98bfc4e108a4326cdab"
-    },
-    {
-      "path": "src/types/iam-organization-list-response.ts",
-      "sha256": "197f2cb562ca82f4f92e197d102fd771fe164421eef0740ceb0933ae0a432369"
-    },
-    {
-      "path": "src/types/iam-organization-membership-item.ts",
-      "sha256": "9115de863236c6112caa1224948fa35d873220737aee3aa3cc640cf3d4779362"
-    },
-    {
-      "path": "src/types/iam-organization-membership-list-response.ts",
-      "sha256": "ce056773cafcf8162a0d64fe8feb0a56984c8fdede1cc7020dacec9f16d1b915"
-    },
-    {
-      "path": "src/types/iam-organization-tree-item.ts",
-      "sha256": "dad98e4ce943d053f31d3a48cf654b3b2d4bfc7e8a2afc38df39a667cba91d7e"
-    },
-    {
-      "path": "src/types/iam-organization-tree-response.ts",
-      "sha256": "16ad81d6cd4566d561853d543364d2fd4e2e89b543677a78c234717c0efbf2e5"
-    },
-    {
-      "path": "src/types/iam-password-reset-create-request.ts",
-      "sha256": "efffbca5f2c4e220168e1ebc263bbab84dcac094a18307373e605fc93181ed50"
-    },
-    {
-      "path": "src/types/iam-password-reset-request-create-request.ts",
-      "sha256": "03735adf960fc8d0bef72a971607bbd50996adeb10a2c970b82e1232b02cceeb"
-    },
-    {
-      "path": "src/types/iam-password-reset-request-response.ts",
-      "sha256": "0b8eeaefd31cff4c3cdc473a4612fd905fb68e18ead34b82544909e90765c315"
-    },
-    {
-      "path": "src/types/iam-position-assignment-item.ts",
-      "sha256": "8157e7996cb793a6d5fe5323a01cd571d4d4edb7e3fdea40e8e629cee3896f67"
-    },
-    {
-      "path": "src/types/iam-position-assignment-list-response.ts",
-      "sha256": "334aa38d43a454a1346d035c93507682502ecf4fdd75084bdd16fb4478da7061"
-    },
-    {
-      "path": "src/types/iam-position-item.ts",
-      "sha256": "b17551c4c7def25406bf5d3b494d4eb0f9c1a05f55049b96e8ae4cb33052450f"
-    },
-    {
-      "path": "src/types/iam-position-list-response.ts",
-      "sha256": "fb7c2ff0fa280a7773d8edd13ee90b02f42628839d2082d4d97fa8bf6cda0a82"
-    },
-    {
-      "path": "src/types/iam-registration-create-request.ts",
-      "sha256": "8eeafbede8bb47059274dd6528c02f72daa0506af1d6c7a89040a60c6b2e2ee4"
-    },
-    {
-      "path": "src/types/iam-role-binding-item.ts",
-      "sha256": "d6d61dca4dd5dc54c00b0d412a9998256bc91e16d4ff959b770b560f7584b505"
-    },
-    {
-      "path": "src/types/iam-role-binding-list-response.ts",
-      "sha256": "e951d986d8a46858eb11b197d11144a54281d023ec551f1d36ac5ba4974156fb"
-    },
-    {
-      "path": "src/types/iam-runtime-retrieve-result.ts",
-      "sha256": "b105e807d837b22ffb7f9c148ecde078d4d20c0111cb89a81936f64b587b43b9"
-    },
-    {
-      "path": "src/types/iam-session-create-request.ts",
-      "sha256": "92f3dd6011080933c8d2051a91c7dbb63f1f1e8e321d3daa1eb1a5e06b1e14e3"
-    },
-    {
-      "path": "src/types/iam-session-refresh-request.ts",
-      "sha256": "d3456df389d70fd38502566321952ef8fbd4f7d59ed07cf44f9fc887660051c2"
-    },
-    {
-      "path": "src/types/iam-session-response.ts",
-      "sha256": "2217f204cc0a15d0183bfefe09e01fe150a86cec3ec31ecfcb703c555ac781bb"
-    },
-    {
-      "path": "src/types/iam-user-response.ts",
-      "sha256": "4272ef65413c1a4ce5ca003c066bd21ce6abe244e68eb37c63afcd0579bd2cb6"
-    },
-    {
-      "path": "src/types/iam-verification-code-create-request.ts",
-      "sha256": "159466f36712a0ddac56500b99f0cfa67d9a9671e45adfbdc7f0862597076dd8"
-    },
-    {
-      "path": "src/types/iam-verification-code-response.ts",
-      "sha256": "e3064645a8afba3c9f16745acc4a5ff7f88bab049ac87ba475b6f2c9ebf5b031"
-    },
-    {
-      "path": "src/types/iam-verification-code-verify-request.ts",
-      "sha256": "8df1d0497c37fa2028a5727a43399887c4c38c9a83a71965695921cfa6d77732"
-    },
-    {
-      "path": "src/types/iam-verification-code-verify-response.ts",
-      "sha256": "4146e3aa3ccecce034b94c354c859568f5999ada12a81fcbee8939adf6869a5e"
-    },
-    {
-      "path": "src/types/iam-verification-policy-retrieve-result.ts",
-      "sha256": "ff1aea319d7533494ef387d7bc6027f614dc5c5a67d6ef89812114b63ad226f9"
-    },
-    {
       "path": "src/types/index.ts",
-      "sha256": "3c20a9b7aad291097004a1cfc154366818f7eb177a728d63f51ed94d98de7b18"
+      "sha256": "69a725077f18b298ea747bda7fc84bedaf562e68c7fc523d522e57d7c2b8c236"
     },
     {
       "path": "src/types/invocation-event-streams-list-result.ts",
@@ -1114,42 +943,6 @@
       "sha256": "397c554bdc4d064a858e0de009f894316311923757c526179ca43e93592cdac4"
     },
     {
-      "path": "src/types/oauth-authorization-urls-create-result.ts",
-      "sha256": "948430691be55b24eaef5e5f1a901f035b2ba4fa273b95c15e2c8c2c78d60997"
-    },
-    {
-      "path": "src/types/oauth-sessions-create-result.ts",
-      "sha256": "573acc73fd6896276203c675360ee4e0ffd4c585e3106f658d53b9ff6bf2b8ca"
-    },
-    {
-      "path": "src/types/organization-memberships-list-result.ts",
-      "sha256": "1ddaf803346cca85b952105fe14fe31217099cd4385813cc8a50ed56ea98c3e4"
-    },
-    {
-      "path": "src/types/organizations-list-result.ts",
-      "sha256": "4256910d60c2daff62b1a8a243d8b768d3800c6bf836ffcdcca1170038108496"
-    },
-    {
-      "path": "src/types/organizations-tree-retrieve-result.ts",
-      "sha256": "a867fad7ad92c2b5ace56520544833639971bc3390b6a3e077a58372c4b9c664"
-    },
-    {
-      "path": "src/types/password-reset-requests-create-result.ts",
-      "sha256": "489c6860f39b5d5e007b924f41a2e5a703fdb1c96d388d3a24b7c0cd98ee9976"
-    },
-    {
-      "path": "src/types/password-resets-create-result.ts",
-      "sha256": "260d8eeb09975778a2e39cbfaf647f23d1d45d21df46cf09150d806b0eab1875"
-    },
-    {
-      "path": "src/types/position-assignments-list-result.ts",
-      "sha256": "289134c97562bcbe1b989e5ecfb544352f6880a4a8a35058b704be6f28e83a83"
-    },
-    {
-      "path": "src/types/positions-list-result.ts",
-      "sha256": "5a99a07a321026b7e35e9868c9098edb963277ceac2c85e9a282c0930ec8a35e"
-    },
-    {
       "path": "src/types/problem-detail.ts",
       "sha256": "58cfb3d5cb4c7c2977c38da191a620994fe1f317834d5440f2b0fd762af841eb"
     },
@@ -1160,14 +953,6 @@
     {
       "path": "src/types/ranking-vendor-options-response.ts",
       "sha256": "e96909e343f7747d2555efea40c1414c5b52c16dd1cfafaca50157e3c538c858"
-    },
-    {
-      "path": "src/types/registrations-create-result.ts",
-      "sha256": "03f0f54972b19b7ecc3e6f59de2426819c619dad28f78970cd3ffc5d998e45da"
-    },
-    {
-      "path": "src/types/role-bindings-list-result.ts",
-      "sha256": "2de2428dbce5c64f301f2892c791ad6f7a44a8faed3de782b1959ae762e900c3"
     },
     {
       "path": "src/types/routing-api-key-item.ts",
@@ -1298,26 +1083,6 @@
       "sha256": "33aece096357f00d7c5a6d5326d09d4e9498c49bc0c388f56d59f3298ce9a301"
     },
     {
-      "path": "src/types/sessions-create-result.ts",
-      "sha256": "4c9a765702ac1a33291fe50aa9639df578cf0c1f4bcbdf9508cb75ce04b4d520"
-    },
-    {
-      "path": "src/types/sessions-current-delete-result.ts",
-      "sha256": "a049c6c3c39f477b4f28291b4f974ec866742d8aa70d2272972973b5bae83dda"
-    },
-    {
-      "path": "src/types/sessions-current-retrieve-result.ts",
-      "sha256": "271ebb7fb5d7ece76a93fc7aeb25ceab027d49fef275459f5e5c5c9d78bb36a2"
-    },
-    {
-      "path": "src/types/sessions-current-update-result.ts",
-      "sha256": "643a7f44bd5caf82c493d56a28fd67bb927eb381ca7441ea12b542867c851eb6"
-    },
-    {
-      "path": "src/types/sessions-refresh-result.ts",
-      "sha256": "f90f2aa76388eff793d9fec27bfcb94bf222b4c79da2513403bdb49fe9be7937"
-    },
-    {
       "path": "src/types/settings-data-response.ts",
       "sha256": "39e06a94821c2e1a988ffe1aeb97ccfff18e33d3eca2a18ecdf1fd035346edf7"
     },
@@ -1434,10 +1199,6 @@
       "sha256": "85ffbacfff9fdb923f193fedfa93eae63b2f5f5b39910521212e07b2a9566252"
     },
     {
-      "path": "src/types/users-current-retrieve-result.ts",
-      "sha256": "7cdbb38300ab46cef706b341a6c3a4cab9a9e5ca521bbc09a1450c276b159c30"
-    },
-    {
       "path": "src/types/users-current-skills-list-result.ts",
       "sha256": "87e7bf1beac97b5177435ab216f9c9bf3fbb8e25a6f86f19315fbdbae8e348ed"
     },
@@ -1448,14 +1209,6 @@
     {
       "path": "src/types/users-settings-update-result.ts",
       "sha256": "24f1b5f1fe19117e635326f6b635ab9c9f5f95c8d3c724c230f995c4b6615f9c"
-    },
-    {
-      "path": "src/types/verification-codes-create-result.ts",
-      "sha256": "8419fd3b1a69bd595443f39b836a657654cd58023f957c926cc5b81f01c7681b"
-    },
-    {
-      "path": "src/types/verification-codes-verify-result.ts",
-      "sha256": "2b2425ce062c376558b82acb7f3f4f123e48523830e88ba296088a7109030814"
     },
     {
       "path": "tsconfig.json",

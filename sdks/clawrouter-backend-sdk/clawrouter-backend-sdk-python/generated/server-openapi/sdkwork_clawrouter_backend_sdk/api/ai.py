@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import AdminAiModelCreateRequest, AdminAiModelUpdateRequest, AdminAiResourceCreateRequest, AdminAiResourceGroupCreateRequest, AdminAiResourceGroupUpdateRequest, AdminAiResourceUpdateRequest, AdminChannelGroupChannelBindingsReplaceRequest, AdminChannelGroupCreateRequest, AdminChannelGroupUpdateRequest, AdminModelCatalogSyncRequest, AdminModelMappingCreateRequest, AdminModelMappingResolveRequest, AdminModelMappingUpdateRequest, AdminModelVendorCreateRequest, AiResourceGroupsCreateResult, AiResourceGroupsDeleteResult, AiResourceGroupsListResult, AiResourceGroupsResourcesListResult, AiResourceGroupsUpdateResult, AiResourcesCreateResult, AiResourcesListResult, AiResourcesUpdateResult, ChannelGroupsChannelBindingsListResult, ChannelGroupsChannelBindingsUpdateResult, ChannelGroupsCreateResult, ChannelGroupsDeleteResult, ChannelGroupsListResult, ChannelGroupsUpdateResult, ModelMappingsCreateResult, ModelMappingsDeleteResult, ModelMappingsListResult, ModelMappingsResolveCreateResult, ModelMappingsUpdateResult, ModelRankingRefreshTriggerRequest, ModelRankingsJobsListResult, ModelRankingsListResult, ModelRankingsRefreshResult, ModelRankingsStatusRetrieveResult, ModelsCreateResult, ModelsDeleteResult, ModelsListResult, ModelsRefreshResult, ModelsUpdateResult, ModelVendorsCreateResult, ModelVendorsListResult
+from ..models import AdminAiModelCreateRequest, AdminAiModelUpdateRequest, AdminAiResourceCreateRequest, AdminAiResourceGroupCreateRequest, AdminAiResourceGroupUpdateRequest, AdminAiResourceUpdateRequest, AdminChannelGroupChannelBindingsReplaceRequest, AdminChannelGroupCreateRequest, AdminChannelGroupUpdateRequest, AdminModelCatalogSyncRequest, AdminModelMappingCreateRequest, AdminModelMappingResolveRequest, AdminModelMappingUpdateRequest, AdminModelVendorCreateRequest, AdminRuntimeRouteExplainRequest, AiResourceGroupsCreateResult, AiResourceGroupsDeleteResult, AiResourceGroupsListResult, AiResourceGroupsResourcesListResult, AiResourceGroupsUpdateResult, AiResourcesCreateResult, AiResourcesListResult, AiResourcesUpdateResult, ChannelGroupsChannelBindingsListResult, ChannelGroupsChannelBindingsUpdateResult, ChannelGroupsCreateResult, ChannelGroupsDeleteResult, ChannelGroupsListResult, ChannelGroupsRouteExplainRetrieveResult, ChannelGroupsUpdateResult, ModelMappingsCreateResult, ModelMappingsDeleteResult, ModelMappingsListResult, ModelMappingsResolveCreateResult, ModelMappingsUpdateResult, ModelRankingRefreshTriggerRequest, ModelRankingsJobsListResult, ModelRankingsListResult, ModelRankingsRefreshResult, ModelRankingsStatusRetrieveResult, ModelsCreateResult, ModelsDeleteResult, ModelsListResult, ModelsRefreshResult, ModelsUpdateResult, ModelVendorsCreateResult, ModelVendorsListResult, RouteExplainCreateResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -196,6 +196,7 @@ class AiApi:
         self.models = AiModelsApi(client)
         self.ai_resource_groups = AiAiResourceGroupsApi(client)
         self.ai_resources = AiAiResourcesApi(client)
+        self.route_explain = AiRouteExplainApi(client)
 
 
 class AiChannelGroupsApi:
@@ -204,6 +205,7 @@ class AiChannelGroupsApi:
     def __init__(self, client: HttpClient):
         self._client = client
         self.channel_bindings = AiChannelGroupsChannelBindingsApi(client)
+        self.route_explain = AiChannelGroupsRouteExplainApi(client)
 
 
     def list(self) -> ChannelGroupsListResult:
@@ -236,6 +238,17 @@ class AiChannelGroupsChannelBindingsApi:
     def update(self, channel_group_id: str, body: AdminChannelGroupChannelBindingsReplaceRequest) -> ChannelGroupsChannelBindingsUpdateResult:
         """Replace group channel bindings"""
         return self._client.put(f"/backend/v3/api/ai/channel_groups/{serialize_path_parameter(channel_group_id, {'name': 'channelGroupId', 'style': 'simple', 'explode': False})}/channel_bindings", json=body)
+
+class AiChannelGroupsRouteExplainApi:
+    """ai ai.channel_groups.route_explain API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def retrieve(self, channel_group_id: str) -> ChannelGroupsRouteExplainRetrieveResult:
+        """List group route explain"""
+        return self._client.get(f"/backend/v3/api/ai/channel_groups/{serialize_path_parameter(channel_group_id, {'name': 'channelGroupId', 'style': 'simple', 'explode': False})}/route_explain")
 
 class AiModelMappingsApi:
     """ai ai.model_mappings API client."""
@@ -427,3 +440,14 @@ class AiAiResourcesApi:
     def update(self, resource_id: str, body: AdminAiResourceUpdateRequest) -> AiResourcesUpdateResult:
         """Update ai resource"""
         return self._client.put(f"/backend/v3/api/ai/resources/{serialize_path_parameter(resource_id, {'name': 'resourceId', 'style': 'simple', 'explode': False})}", json=body)
+
+class AiRouteExplainApi:
+    """ai ai.route_explain API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def create(self, body: AdminRuntimeRouteExplainRequest) -> RouteExplainCreateResult:
+        """List runtime route explain"""
+        return self._client.post(f"/backend/v3/api/ai/route_explain", json=body)

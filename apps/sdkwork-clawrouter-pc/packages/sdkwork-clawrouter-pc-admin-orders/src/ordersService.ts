@@ -1,87 +1,76 @@
-import { getClawRouterBackendSdkClient } from 'sdkwork-clawrouter-pc-commons/sdk-clients';
+import { getSdkworkCommerceService } from '@sdkwork/commerce-service';
 
-type BackendCommerceService = ReturnType<typeof getClawRouterBackendSdkClient>['commerce'];
 type AdminListInput = {
   page?: number | string;
   pageSize?: number | string;
   [key: string]: unknown;
 };
 type CommerceOperationCommand = Record<string, unknown>;
-type OrderManagementService = BackendCommerceService['orders'];
-type RefundManagementService = BackendCommerceService['refunds'];
-type FulfillmentService = BackendCommerceService['fulfillments'];
-type OrderSdkListParams = NonNullable<Parameters<OrderManagementService['list']>[0]>;
-type RefundSdkListParams = NonNullable<Parameters<RefundManagementService['list']>[0]>;
-type FulfillmentSdkListParams = NonNullable<Parameters<BackendCommerceService['fulfillments']['list']>[0]>;
-type ShipmentSdkListParams = NonNullable<Parameters<BackendCommerceService['shipments']['list']>[0]>;
+type OrderSdkListParams = AdminListInput;
+type RefundSdkListParams = AdminListInput;
+type FulfillmentSdkListParams = AdminListInput;
+type ShipmentSdkListParams = AdminListInput;
+type OrderManagementService = ReturnType<typeof getSdkworkCommerceService>['admin']['orders']['management'];
+type RefundManagementService = ReturnType<typeof getSdkworkCommerceService>['admin']['refunds']['management'];
 type OrderListInput = AdminListInput | OrderSdkListParams;
 type RefundListInput = AdminListInput | RefundSdkListParams;
 type FulfillmentListInput = AdminListInput | FulfillmentSdkListParams;
 type ShipmentListInput = AdminListInput | ShipmentSdkListParams;
 
-export function backendOrdersList(params?: Parameters<OrderManagementService['list']>[0]): Promise<unknown>;
-export function backendOrdersList(params?: AdminListInput): Promise<unknown>;
-export async function backendOrdersList(params?: OrderListInput) {
-  return getClawRouterBackendSdkClient().commerce.orders.list(toSdkListParams<OrderSdkListParams>(params));
+export async function backendOrdersList(params?: Parameters<OrderManagementService['list']>[0]) {
+  return getSdkworkCommerceService().admin.orders.management.list(
+    toSdkListParams<OrderSdkListParams>(params as AdminListInput | undefined),
+  );
 }
 
 export async function backendOrdersRetrieve(orderId: string) {
-  return getClawRouterBackendSdkClient().commerce.orders.retrieve(orderId);
+  return getSdkworkCommerceService().admin.orders.management.retrieve(orderId);
 }
 
 export async function backendOrdersManagementCancel(orderId: string, body: CommerceOperationCommand = {}) {
-  return getClawRouterBackendSdkClient().commerce.orders.management.cancel(orderId, body);
+  return getSdkworkCommerceService().admin.orders.management.cancel(orderId, body);
 }
 
 export async function backendOrdersManagementClose(orderId: string, body: CommerceOperationCommand = {}) {
-  return getClawRouterBackendSdkClient().commerce.orders.management.close(orderId, body);
+  return getSdkworkCommerceService().admin.orders.management.close(orderId, body);
 }
 
-export async function backendOrdersEventsList(orderId: string, params?: Parameters<BackendCommerceService['orders']['events']['list']>[1]) {
-  return getClawRouterBackendSdkClient().commerce.orders.events.management.list(orderId, toSdkListParams(params));
+export async function backendOrdersEventsList(orderId: string, params?: AdminListInput) {
+  return getSdkworkCommerceService().admin.orders.events.management.list(orderId, toSdkListParams(params));
 }
 
-export function backendRefundsList(params?: Parameters<RefundManagementService['list']>[0]): Promise<unknown>;
-export function backendRefundsList(params?: AdminListInput): Promise<unknown>;
-export async function backendRefundsList(params?: RefundListInput) {
-  return getClawRouterBackendSdkClient().commerce.refunds.list(toSdkListParams<RefundSdkListParams>(params));
+export async function backendRefundsList(params?: Parameters<RefundManagementService['list']>[0]) {
+  return getSdkworkCommerceService().admin.refunds.management.list(
+    toSdkListParams<RefundSdkListParams>(params as AdminListInput | undefined),
+  );
 }
 
 export async function backendRefundsRetrieve(refundId: string) {
-  return getClawRouterBackendSdkClient().commerce.refunds.retrieve(refundId);
+  return getSdkworkCommerceService().admin.refunds.management.retrieve(refundId);
 }
 
 export async function backendRefundApprovalCreate(refundId: string, body: CommerceOperationCommand = {}) {
-  void refundId;
-  void body;
-  missingCommerceDependencyOperation('refunds.approvals.create');
+  return getSdkworkCommerceService().admin.refunds.approvals.create(refundId, body);
 }
 
 export async function backendRefundAttemptCreate(refundId: string, body: CommerceOperationCommand = {}) {
-  void refundId;
-  void body;
-  missingCommerceDependencyOperation('refunds.attempts.create');
+  return getSdkworkCommerceService().admin.refunds.attempts.create(refundId, body);
 }
 
-export function backendFulfillmentsList(params?: Parameters<FulfillmentService['list']>[0]): Promise<unknown>;
-export function backendFulfillmentsList(params?: AdminListInput): Promise<unknown>;
 export async function backendFulfillmentsList(params?: FulfillmentListInput) {
-  return getClawRouterBackendSdkClient().commerce.fulfillments.list(toSdkListParams<FulfillmentSdkListParams>(params));
+  return getSdkworkCommerceService().admin.fulfillments.list(toSdkListParams<FulfillmentSdkListParams>(params));
 }
 
 export async function backendFulfillmentCreate(body: CommerceOperationCommand = {}) {
-  void body;
-  missingCommerceDependencyOperation('fulfillments.create');
+  return getSdkworkCommerceService().admin.fulfillments.create(body);
 }
 
 export async function backendFulfillmentUpdate(fulfillmentId: string, body: CommerceOperationCommand = {}) {
-  return getClawRouterBackendSdkClient().commerce.fulfillments.update(fulfillmentId, body);
+  return getSdkworkCommerceService().admin.fulfillments.update(fulfillmentId, body);
 }
 
 export async function backendFulfillmentShipmentCreate(fulfillmentId: string, body: CommerceOperationCommand = {}) {
-  void fulfillmentId;
-  void body;
-  missingCommerceDependencyOperation('fulfillments.shipments.create');
+  return getSdkworkCommerceService().admin.fulfillments.shipments.create(fulfillmentId, body);
 }
 
 export async function backendFulfillmentShipmentUpdate(
@@ -89,10 +78,7 @@ export async function backendFulfillmentShipmentUpdate(
   shipmentId: string,
   body: CommerceOperationCommand = {},
 ) {
-  void fulfillmentId;
-  void shipmentId;
-  void body;
-  missingCommerceDependencyOperation('fulfillments.shipments.update');
+  return getSdkworkCommerceService().admin.fulfillments.shipments.update(fulfillmentId, shipmentId, body);
 }
 
 export async function backendFulfillmentTrackingEventCreate(
@@ -100,26 +86,21 @@ export async function backendFulfillmentTrackingEventCreate(
   shipmentId: string,
   body: CommerceOperationCommand = {},
 ) {
-  void fulfillmentId;
-  void shipmentId;
-  void body;
-  missingCommerceDependencyOperation('fulfillments.trackingEvents.create');
+  return getSdkworkCommerceService().admin.fulfillments.trackingEvents.create(fulfillmentId, shipmentId, body);
 }
 
-export function backendShipmentsList(params?: Parameters<BackendCommerceService['shipments']['list']>[0]): Promise<unknown>;
-export function backendShipmentsList(params?: AdminListInput): Promise<unknown>;
 export async function backendShipmentsList(params?: ShipmentListInput) {
-  return getClawRouterBackendSdkClient().commerce.shipments.list(toSdkListParams<ShipmentSdkListParams>(params));
+  return getSdkworkCommerceService().admin.shipments.list(toSdkListParams<ShipmentSdkListParams>(params));
 }
 
 export async function backendShipmentsRetrieve(shipmentId: string) {
-  return getClawRouterBackendSdkClient().commerce.shipments.management.retrieve(shipmentId);
+  return getSdkworkCommerceService().admin.shipments.management.retrieve(shipmentId);
 }
 
 export async function backendShipmentsTrackingEventsList(
   shipmentId: string,
 ) {
-  return getClawRouterBackendSdkClient().commerce.shipments.trackingEvents.list(shipmentId);
+  return getSdkworkCommerceService().admin.shipments.trackingEvents.list(shipmentId);
 }
 
 function toSdkListParams<T extends object>(params: AdminListInput | T | undefined): T | undefined {
@@ -148,10 +129,4 @@ function normalizeSdkPageNumber(value: unknown, key: string): number {
     throw new Error(`${key} must be a positive integer`);
   }
   return parsed;
-}
-
-function missingCommerceDependencyOperation(operation: string): never {
-  throw new Error(
-    `${operation} is not exposed by sdkwork-commerce backend SDK; update the owning commerce contract and regenerate the dependency SDK before enabling this action.`,
-  );
 }

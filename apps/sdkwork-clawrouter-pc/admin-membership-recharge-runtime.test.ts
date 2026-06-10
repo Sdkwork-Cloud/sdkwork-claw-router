@@ -12,6 +12,7 @@ test("admin member center exposes recharge package and recharge settings mainten
   const membershipsSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-memberships/src/index.tsx");
   const rechargePackagesPageSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-memberships/src/pages/MembershipRechargePackagesPage.tsx");
   const membershipsServiceSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts");
+  const sdkClientsSource = readPortalFile("./packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts");
   const i18nSource = [
     readPortalFile("./packages/sdkwork-clawrouter-pc-i18n/src/resources/admin/core-navigation.ts"),
     readPortalFile("./packages/sdkwork-clawrouter-pc-i18n/src/resources/admin-commerce/memberships.ts"),
@@ -97,15 +98,14 @@ test("admin member center exposes recharge package and recharge settings mainten
 
   assert.match(commerceBackendRechargesSdk, /class RechargesPackagesApi/);
   assert.match(commerceBackendRechargesSdk, /class RechargesSettingsApi/);
-  assert.doesNotMatch(commerceBackendRechargesSdk, /class RechargesPackagesManagementApi/);
   assert.match(commerceBackendRechargesSdk, /backendApiPath\(`\/recharges\/packages`\)/);
   assert.match(commerceBackendRechargesSdk, /backendApiPath\(`\/recharges\/settings`\)/);
-  assert.match(commerceBackendRechargesSdk, /async list\(params\?: RechargesPackagesListParams/);
+  assert.match(sdkClientsSource, /attachCommerceManagementAliases\(readCommerceObject\(recharges\?\.\['packages'\]\), \['list'\]\)/);
+  assert.match(sdkClientsSource, /attachCommerceManagementAliases\(readCommerceObject\(recharges\?\.\['settings'\]\), \['retrieve'\]\)/);
   assert.match(commerceBackendRechargesSdk, /async create\(body: CommerceOperationCommand/);
   assert.match(commerceBackendRechargesSdk, /async update\(packageId: string, body\?: CommerceOperationCommand/);
   assert.match(commerceBackendRechargesSdk, /async delete\(packageId: string/);
-  assert.match(commerceBackendRechargesSdk, /async retrieve\(\)/);
-  assert.match(commerceBackendRechargesSdk, /async update\(body: CommerceOperationCommand/);
+  assert.match(commerceBackendRechargesSdk, /async update\(body\??: CommerceOperationCommand/);
 
   for (const key of [
     "admin.menu.membershipRechargePackages",

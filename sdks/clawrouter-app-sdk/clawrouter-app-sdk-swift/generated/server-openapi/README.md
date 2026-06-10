@@ -24,7 +24,7 @@ client.setAuthToken("your-auth-token")
 client.setAccessToken("your-access-token")
 
 // Use the SDK
-let result = try await client.auth.sessionsCurrentRetrieve()
+let result = try await client.ai.channelGroupsList()
 print(result)
 ```
 
@@ -50,7 +50,6 @@ client.setHeader("X-Custom-Header", value: "value")
 
 - `client.agents` - agents API
 - `client.ai` - ai API
-- `client.auth` - auth API
 - `client.chat` - chat API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
@@ -82,14 +81,6 @@ print(result)
 ```swift
 // List groups
 let result = try await client.ai.channelGroupsList()
-print(result)
-```
-
-### auth
-
-```swift
-// Retrieve current IAM session
-let result = try await client.auth.sessionsCurrentRetrieve()
 print(result)
 ```
 
@@ -196,8 +187,12 @@ print(result)
 ### system
 
 ```swift
-// Retrieve public IAM verification policy
-let result = try await client.system.iamVerificationPolicyRetrieve()
+// Retrieve public site runtime branding settings
+let params: [String: Any] = [
+    "tenant_code": "ok",
+    "organization_code": "ok"
+]
+let result = try await client.system.siteRuntimeRetrieve(params: params)
 print(result)
 ```
 
@@ -205,7 +200,7 @@ print(result)
 
 ```swift
 do {
-    try await client.auth.sessionsCurrentRetrieve()
+    try await client.ai.channelGroupsList()
 } catch {
     print("Error: \(error)")
 }

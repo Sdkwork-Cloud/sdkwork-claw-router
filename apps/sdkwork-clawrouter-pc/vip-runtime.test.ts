@@ -1038,6 +1038,14 @@ test("VIP membership redeem uses idempotent generated app SDK promotion code red
 });
 
 test("membership package listing uses the generated app SDK standard path", async () => {
+  const membershipServiceSource = readPortalFile(
+    "./packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts",
+  );
+  assert.match(
+    membershipServiceSource,
+    /appMembershipsPackagesList\(\{\s*page: 1,\s*pageSize: 100,\s*status: 'active',\s*\}\)/u,
+  );
+
   await withMembershipSdkResponse(
     {
       code: "2000",
@@ -1164,7 +1172,7 @@ test("membership service fails closed for malformed packages and blank purchase 
 test("OpenAPI and generated SDK expose standard membership APIs and reject billing VIP aliases", () => {
   const appOpenapi = readPortalFile("../../generated/openapi/clawrouter-app-openapi.json");
   const backendOpenapi = readPortalFile("../../generated/openapi/clawrouter-backend-openapi.json");
-  const appCommerceSdk = readPortalFile("../../../sdkwork-commerce/sdks/sdkwork-commerce-app-sdk/sdkwork-commerce-app-sdk-typescript/generated/server-openapi/src/api/commerce.ts");
+  const appCommerceMembershipsSdk = readPortalFile("../../../sdkwork-commerce/sdks/sdkwork-commerce-app-sdk/sdkwork-commerce-app-sdk-typescript/generated/server-openapi/src/api/memberships.ts");
   const backendMembershipsSdk = readPortalFile("../../../sdkwork-commerce/sdks/sdkwork-commerce-backend-sdk/sdkwork-commerce-backend-sdk-typescript/generated/server-openapi/src/api/memberships.ts");
 
   for (const path of [
@@ -1187,18 +1195,18 @@ test("OpenAPI and generated SDK expose standard membership APIs and reject billi
   }
 
   for (const marker of [
-    "class CommerceMembershipsCurrentApi",
-    "class CommerceMembershipsPackageGroupsApi",
-    "class CommerceMembershipsPackageGroupsPackagesApi",
-    "class CommerceMembershipsPackagesApi",
-    "class CommerceMembershipsPurchasesApi",
+    "class MembershipsCurrentApi",
+    "class MembershipsPackageGroupsApi",
+    "class MembershipsPackageGroupsPackagesApi",
+    "class MembershipsPackagesApi",
+    "class MembershipsPurchasesApi",
     "appApiPath(`/memberships/current`)",
     "appApiPath(`/memberships/package_groups`)",
     "appApiPath(`/memberships/package_groups/${serializePathParameter(packageGroupId, { name: 'packageGroupId', style: 'simple', explode: false })}/packages`)",
     "appApiPath(`/memberships/packages`)",
     "appApiPath(`/memberships/purchases`)",
   ]) {
-    assert.match(appCommerceSdk, new RegExp(escapeRegExp(marker)));
+    assert.match(appCommerceMembershipsSdk, new RegExp(escapeRegExp(marker)));
   }
 
   for (const marker of [
@@ -1233,7 +1241,7 @@ test("OpenAPI and generated SDK expose standard membership APIs and reject billi
   ]) {
     assert.doesNotMatch(appOpenapi, new RegExp(escapeRegExp(retiredToken)));
     assert.doesNotMatch(backendOpenapi, new RegExp(escapeRegExp(retiredToken)));
-    assert.doesNotMatch(appCommerceSdk, new RegExp(escapeRegExp(retiredToken)));
+    assert.doesNotMatch(appCommerceMembershipsSdk, new RegExp(escapeRegExp(retiredToken)));
     assert.doesNotMatch(backendMembershipsSdk, new RegExp(escapeRegExp(retiredToken)));
   }
 });

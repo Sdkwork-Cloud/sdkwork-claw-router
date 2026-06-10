@@ -27,7 +27,7 @@ func main() {
 client.SetAccessToken("your-access-token")
 
     // Use the SDK
-    result, err := client.Auth.SessionsCurrentRetrieve()
+    result, err := client.Ai.ChannelGroupsList()
     if err != nil {
         panic(err)
     }
@@ -57,7 +57,6 @@ client.SetHeader("X-Custom-Header", "value")
 
 - `client.Agents` - agents API
 - `client.Ai` - ai API
-- `client.Auth` - auth API
 - `client.Chat` - chat API
 - `client.Content` - content API
 - `client.Ecosystem` - ecosystem API
@@ -92,17 +91,6 @@ fmt.Println(result)
 ```go
 // List groups
 result, err := client.Ai.ChannelGroupsList()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### auth
-
-```go
-// Retrieve current IAM session
-result, err := client.Auth.SessionsCurrentRetrieve()
 if err != nil {
     panic(err)
 }
@@ -254,8 +242,12 @@ fmt.Println(result)
 ### system
 
 ```go
-// Retrieve public IAM verification policy
-result, err := client.System.IamVerificationPolicyRetrieve()
+// Retrieve public site runtime branding settings
+params := map[string]interface{}{
+    "tenant_code": "tenant_code",
+    "organization_code": "organization_code",
+}
+result, err := client.System.SiteRuntimeRetrieve(params)
 if err != nil {
     panic(err)
 }
@@ -265,7 +257,7 @@ fmt.Println(result)
 ## Error Handling
 
 ```go
-_, err := client.Auth.SessionsCurrentRetrieve()
+_, err := client.Ai.ChannelGroupsList()
 if err != nil {
     // Handle error
     fmt.Println("Error:", err)

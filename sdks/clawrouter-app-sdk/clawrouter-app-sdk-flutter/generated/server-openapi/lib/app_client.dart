@@ -2,7 +2,6 @@ import 'package:sdkwork_common_flutter/sdkwork_common_flutter.dart';
 import 'src/http/client.dart';
 import 'src/api/agents.dart';
 import 'src/api/ai.dart';
-import 'src/api/auth.dart';
 import 'src/api/chat.dart';
 import 'src/api/content.dart';
 import 'src/api/ecosystem.dart';
@@ -19,7 +18,6 @@ class SdkworkAppClient {
 
   late final AgentsApi agents;
   late final AiApi ai;
-  late final AuthApi auth;
   late final ChatApi chat;
   late final ContentApi content;
   late final EcosystemApi ecosystem;
@@ -36,7 +34,6 @@ class SdkworkAppClient {
   }) : _httpClient = HttpClient(config: config) {
     agents = AgentsApi(_httpClient);
     ai = AiApi(_httpClient);
-    auth = AuthApi(_httpClient);
     chat = ChatApi(_httpClient);
     content = ContentApi(_httpClient);
     ecosystem = EcosystemApi(_httpClient);

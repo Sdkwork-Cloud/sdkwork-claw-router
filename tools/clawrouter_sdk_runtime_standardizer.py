@@ -7,6 +7,11 @@ import re
 from pathlib import Path
 from typing import Any
 
+try:
+    import yaml
+except ImportError:  # pragma: no cover - PyYAML is present in normal SDKWork tooling.
+    yaml = None
+
 
 SDK_DIRECTORIES = ("clawrouter-app-sdk", "clawrouter-backend-sdk", "clawrouter-open-sdk")
 OFFICIAL_SDK_LANGUAGES = (
@@ -209,6 +214,12 @@ SDK_DEPENDENCIES = {
             },
         },
     ],
+}
+SDK_DEPENDENCY_OPERATION_KEY_OVERRIDES = {
+    "sdkwork-appbase-app-sdk": {
+        "POST auth/verification_codes",
+        "POST auth/verification_codes/verify",
+    },
 }
 GENERATED_TEXT_FILE_EXTENSIONS = {
     ".bat",
@@ -581,14 +592,20 @@ class SdkRuntimeStandardizer:
         for dependency in dependencies:
             dependency_routes = self._dependency_operation_keys(dependency)
             if not dependency_routes:
-                continue
-            removed = self._remove_dependency_operations(
+                removed = []
+            else:
+                removed = self._remove_dependency_operations(
+                    payload=payload,
+                    prefix=str(dependency["apiPrefix"]),
+                    dependency_operation_keys=dependency_routes,
+                )
+            removed.extend(self._remove_dependency_domain_operations(
                 payload=payload,
                 prefix=str(dependency["apiPrefix"]),
-                dependency_operation_keys=dependency_routes,
-            )
+                dependency_domain=self._dependency_domain(dependency),
+            ))
             if removed:
-                excluded_by_dependency[str(dependency["workspace"])] = removed
+                excluded_by_dependency[str(dependency["workspace"])] = sorted(set(removed))
 
         if excluded_by_dependency:
             self._prune_unreachable_component_schemas(payload)
@@ -633,14 +650,16 @@ class SdkRuntimeStandardizer:
         if not workspace or not prefix:
             return set()
         authority_path = self._dependency_authority_path(workspace)
-        dependency_payload = self._read_json_or_none(authority_path)
+        dependency_payload = self._read_mapping_or_none(authority_path)
+        operation_keys = set(SDK_DEPENDENCY_OPERATION_KEY_OVERRIDES.get(workspace, set()))
         if dependency_payload is None:
-            return set()
-        return self._operation_keys(dependency_payload, prefix)
+            return operation_keys
+        operation_keys.update(self._operation_keys(dependency_payload, prefix))
+        return operation_keys
 
     def _dependency_authority_path(self, workspace: str) -> Path:
-        appbase_root = self.root / ".sdkwork" / "dependencies" / "sdkwork-appbase"
-        commerce_root = self.root.parent / "sdkwork-commerce"
+        appbase_root = self._dependency_root("sdkwork-appbase")
+        commerce_root = self._dependency_root("sdkwork-commerce")
         mapping = {
             "sdkwork-appbase-app-sdk": appbase_root
             / "sdks"
@@ -653,18 +672,35 @@ class SdkRuntimeStandardizer:
             / "openapi"
             / "sdkwork-appbase-backend-api.openapi.yaml",
             "sdkwork-commerce-app-sdk": commerce_root
+            / "sdks"
+            / "sdkwork-commerce-app-sdk"
+            / "sdkwork-commerce-app-sdk-typescript"
             / "generated"
-            / "openapi"
-            / "commerce-app-api.openapi.json",
+            / "server-openapi"
+            / "source-openapi.json",
             "sdkwork-commerce-backend-sdk": commerce_root
+            / "sdks"
+            / "sdkwork-commerce-backend-sdk"
+            / "sdkwork-commerce-backend-sdk-typescript"
             / "generated"
-            / "openapi"
-            / "commerce-backend-api.openapi.json",
+            / "server-openapi"
+            / "source-openapi.json",
         }
         return mapping.get(
             workspace,
             self.root / ".sdkwork" / "dependencies" / workspace / "openapi.json",
         )
+
+    def _dependency_root(self, dependency_name: str) -> Path:
+        materialized_root = self.root / ".sdkwork" / "dependencies" / dependency_name
+        if materialized_root.exists():
+            return materialized_root
+
+        sibling_root = self.root.parent / dependency_name
+        if sibling_root.exists():
+            return sibling_root
+
+        return materialized_root
 
     def _operation_keys(self, payload: dict[str, Any], prefix: str) -> set[str]:
         operation_keys: set[str] = set()
@@ -707,6 +743,48 @@ class SdkRuntimeStandardizer:
                     continue
                 del path_item[method]
                 removed.append(operation_key)
+            if not any(self._is_openapi_method(str(item).lower()) for item in path_item):
+                del paths[path_key]
+        return sorted(removed)
+
+    def _dependency_domain(self, dependency: dict[str, Any]) -> str | None:
+        workspace = str(dependency.get("workspace") or "")
+        if workspace.startswith("sdkwork-commerce-"):
+            return "commerce"
+        return None
+
+    def _remove_dependency_domain_operations(
+        self,
+        *,
+        payload: dict[str, Any],
+        prefix: str,
+        dependency_domain: str | None,
+    ) -> list[str]:
+        if not dependency_domain:
+            return []
+
+        paths = payload.get("paths")
+        if not isinstance(paths, dict):
+            return []
+
+        removed: list[str] = []
+        for path_key in list(paths.keys()):
+            path_item = paths.get(path_key)
+            route = self._normalized_route(str(path_key), prefix)
+            if route is None or not isinstance(path_item, dict):
+                continue
+            for method in list(path_item.keys()):
+                normalized_method = str(method).lower()
+                operation = path_item.get(method)
+                if not self._is_openapi_method(normalized_method) or not isinstance(operation, dict):
+                    continue
+                domain = operation.get("x-sdkwork-domain") or operation.get("x-sdk-domain")
+                if domain != dependency_domain:
+                    continue
+                del path_item[method]
+                operation_id = str(operation.get("operationId") or "").strip()
+                suffix = f" {operation_id}" if operation_id else ""
+                removed.append(f"{normalized_method.upper()} {route}{suffix}")
             if not any(self._is_openapi_method(str(item).lower()) for item in path_item):
                 del paths[path_key]
         return sorted(removed)
@@ -2190,6 +2268,21 @@ class SdkRuntimeStandardizer:
             return self._read_json(path)
         except RuntimeError:
             return None
+
+    def _read_mapping_or_none(self, path: Path) -> dict[str, Any] | None:
+        payload = self._read_json_or_none(path)
+        if payload is not None:
+            return payload
+
+        if yaml is None:
+            return None
+
+        try:
+            loaded = yaml.safe_load(path.read_text(encoding="utf-8"))
+        except (OSError, yaml.YAMLError):
+            return None
+
+        return loaded if isinstance(loaded, dict) else None
 
     def _write_json(self, path: Path, payload: dict[str, Any]) -> None:
         path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")

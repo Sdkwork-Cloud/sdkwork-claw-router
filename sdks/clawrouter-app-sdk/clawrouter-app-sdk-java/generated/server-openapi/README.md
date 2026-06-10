@@ -35,7 +35,7 @@ public class Main {
 client.setAccessToken("your-access-token");
 
         // Use the SDK
-        SessionsCurrentRetrieveResult result = client.getAuth().sessionsCurrentRetrieve();
+        ChannelGroupsListResult result = client.getAi().channelGroupsList();
         System.out.println(result);
     }
 }
@@ -63,7 +63,6 @@ client.getHttpClient().setHeader("X-Custom-Header", "value");
 
 - `client.getAgents()` - agents API
 - `client.getAi()` - ai API
-- `client.getAuth()` - auth API
 - `client.getChat()` - chat API
 - `client.getContent()` - content API
 - `client.getEcosystem()` - ecosystem API
@@ -94,14 +93,6 @@ System.out.println(result);
 ```java
 // List groups
 ChannelGroupsListResult result = client.getAi().channelGroupsList();
-System.out.println(result);
-```
-
-### auth
-
-```java
-// Retrieve current IAM session
-SessionsCurrentRetrieveResult result = client.getAuth().sessionsCurrentRetrieve();
 System.out.println(result);
 ```
 
@@ -203,8 +194,11 @@ System.out.println(result);
 ### system
 
 ```java
-// Retrieve public IAM verification policy
-IamVerificationPolicyRetrieveResult result = client.getSystem().iamVerificationPolicyRetrieve();
+// Retrieve public site runtime branding settings
+Map<String, Object> params = new LinkedHashMap<>();
+params.put("tenant_code", "ok");
+params.put("organization_code", "ok");
+SiteRuntimeRetrieveResult result = client.getSystem().siteRuntimeRetrieve(params);
 System.out.println(result);
 ```
 
@@ -212,7 +206,7 @@ System.out.println(result);
 
 ```java
 try {
-    SessionsCurrentRetrieveResult result = client.getAuth().sessionsCurrentRetrieve();
+    ChannelGroupsListResult result = client.getAi().channelGroupsList();
     System.out.println(result);
 } catch (Exception e) {
     System.err.println("Error: " + e.getMessage());

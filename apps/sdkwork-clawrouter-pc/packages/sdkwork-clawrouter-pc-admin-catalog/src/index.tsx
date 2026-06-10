@@ -1,11 +1,3 @@
-export {
-  AttributeManagementPage,
-  CatalogAdmin,
-  CategoryManagementPage,
-  CommerceProductAdmin,
-  ProductCreatePage,
-  ProductListPage,
-  SkuManagementPage,
-  createCommerceProductAdminService,
-  createCommerceProductAdminWorkspaceManifest,
-} from "sdkwork-commerce-pc-admin-product";
+export { CatalogAdmin, CommerceProductAdmin } from "sdkwork-commerce-pc-admin-product";
+export * from "sdkwork-commerce-pc-admin-product";
+export * from "./ProductPublishSystem";

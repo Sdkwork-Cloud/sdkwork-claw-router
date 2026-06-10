@@ -64,6 +64,14 @@ namespace Sdkwork.ClawRouter.Backend.Api
         }
 
         /// <summary>
+        /// List group route explain
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ChannelGroupsRouteExplainRetrieveResult?> ChannelGroupsRouteExplainRetrieveAsync(string channelGroupId)
+        {
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.ChannelGroupsRouteExplainRetrieveResult>(ApiPaths.BackendPath($"/ai/channel_groups/{SerializePathParameter(channelGroupId, new PathParameterSpec("channelGroupId", "simple", false))}/route_explain"));
+        }
+
+        /// <summary>
         /// List model mappings
         /// </summary>
         public async Task<Sdkwork.ClawRouter.Backend.Models.ModelMappingsListResult?> ModelMappingsListAsync(string? bindingType = null, string? vendorCode = null, string? channelId = null, string? channelCode = null, string? q = null)
@@ -278,6 +286,14 @@ namespace Sdkwork.ClawRouter.Backend.Api
         public async Task<Sdkwork.ClawRouter.Backend.Models.AiResourcesUpdateResult?> ResourcesUpdateAsync(string resourceId, Sdkwork.ClawRouter.Backend.Models.AdminAiResourceUpdateRequest body)
         {
             return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.AiResourcesUpdateResult>(ApiPaths.BackendPath($"/ai/resources/{SerializePathParameter(resourceId, new PathParameterSpec("resourceId", "simple", false))}"), body, null, null, "application/json");
+        }
+
+        /// <summary>
+        /// List runtime route explain
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.RouteExplainCreateResult?> RouteExplainCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminRuntimeRouteExplainRequest body)
+        {
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.RouteExplainCreateResult>(ApiPaths.BackendPath("/ai/route_explain"), body, null, null, "application/json");
         }
 
         private sealed record PathParameterSpec(string Name, string Style, bool Explode);

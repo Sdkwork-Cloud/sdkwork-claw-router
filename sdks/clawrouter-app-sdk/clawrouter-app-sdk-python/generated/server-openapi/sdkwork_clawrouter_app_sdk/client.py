@@ -1,7 +1,6 @@
 from .http_client import HttpClient, SdkConfig
 from .api.agents import AgentsApi
 from .api.ai import AiApi
-from .api.auth import AuthApi
 from .api.chat import ChatApi
 from .api.content import ContentApi
 from .api.ecosystem import EcosystemApi
@@ -21,7 +20,6 @@ class SdkworkAppClient:
         self._client = HttpClient(config)
         self.agents: AgentsApi
         self.ai: AiApi
-        self.auth: AuthApi
         self.chat: ChatApi
         self.content: ContentApi
         self.ecosystem: EcosystemApi
@@ -36,7 +34,6 @@ class SdkworkAppClient:
         # Initialize API modules
         self.agents = AgentsApi(self._client)
         self.ai = AiApi(self._client)
-        self.auth = AuthApi(self._client)
         self.chat = ChatApi(self._client)
         self.content = ContentApi(self._client)
         self.ecosystem = EcosystemApi(self._client)

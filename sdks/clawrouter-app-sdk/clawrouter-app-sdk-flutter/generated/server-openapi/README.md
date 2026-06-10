@@ -21,7 +21,7 @@ client.setAuthToken('your-auth-token');
 client.setAccessToken('your-access-token');
 
 // Use the SDK
-final result = await client.auth.sessionsCurrentRetrieve();
+final result = await client.ai.channelGroupsList();
 print(result);
 ```
 
@@ -46,7 +46,6 @@ client.setHeader('X-Custom-Header', 'value');
 
 - `client.agents` - agents API
 - `client.ai` - ai API
-- `client.auth` - auth API
 - `client.chat` - chat API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
@@ -76,13 +75,6 @@ print(result);
 ```dart
 // List groups
 final result = await client.ai.channelGroupsList();
-print(result);
-```
-
-### auth
-```dart
-// Retrieve current IAM session
-final result = await client.auth.sessionsCurrentRetrieve();
 print(result);
 ```
 
@@ -179,8 +171,12 @@ print(result);
 
 ### system
 ```dart
-// Retrieve public IAM verification policy
-final result = await client.system.iamVerificationPolicyRetrieve();
+// Retrieve public site runtime branding settings
+final params = <String, dynamic>{
+  'tenant_code': 'ok',
+  'organization_code': 'ok',
+};
+final result = await client.system.siteRuntimeRetrieve(params);
 print(result);
 ```
 
@@ -188,7 +184,7 @@ print(result);
 
 ```dart
 try {
-  final result = await client.auth.sessionsCurrentRetrieve();
+  final result = await client.ai.channelGroupsList();
   print(result);
 } catch (e) {
   print('Error: $e');

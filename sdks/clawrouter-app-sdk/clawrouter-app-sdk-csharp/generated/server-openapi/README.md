@@ -26,7 +26,7 @@ var client = new SdkworkAppClient(config);
 client.SetAuthToken("your-auth-token");
 client.SetAccessToken("your-access-token");
 
-var result = await client.Auth.SessionsCurrentRetrieveAsync();
+var result = await client.Ai.ChannelGroupsListAsync();
 Console.WriteLine(result);
 ```
 
@@ -52,7 +52,6 @@ client.SetHeader("X-Custom-Header", "value");
 
 - `client.Agents` - agents API
 - `client.Ai` - ai API
-- `client.Auth` - auth API
 - `client.Chat` - chat API
 - `client.Content` - content API
 - `client.Ecosystem` - ecosystem API
@@ -85,14 +84,6 @@ Console.WriteLine(result);
 ```csharp
 // List groups
 var result = await client.Ai.ChannelGroupsListAsync();
-Console.WriteLine(result);
-```
-
-### auth
-
-```csharp
-// Retrieve current IAM session
-var result = await client.Auth.SessionsCurrentRetrieveAsync();
 Console.WriteLine(result);
 ```
 
@@ -204,8 +195,13 @@ Console.WriteLine(result);
 ### system
 
 ```csharp
-// Retrieve public IAM verification policy
-var result = await client.System.IamVerificationPolicyRetrieveAsync();
+// Retrieve public site runtime branding settings
+var query = new Dictionary<string, object>
+{
+    ["tenant_code"] = "ok",
+    ["organization_code"] = "ok",
+};
+var result = await client.System.SiteRuntimeRetrieveAsync(query);
 Console.WriteLine(result);
 ```
 
@@ -214,7 +210,7 @@ Console.WriteLine(result);
 ```csharp
 try
 {
-    await client.Auth.SessionsCurrentRetrieveAsync();
+    await client.Ai.ChannelGroupsListAsync();
 }
 catch (HttpRequestException ex)
 {

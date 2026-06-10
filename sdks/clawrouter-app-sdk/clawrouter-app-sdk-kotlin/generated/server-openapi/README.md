@@ -31,7 +31,7 @@ fun main() = runBlocking {
 client.setAccessToken("your-access-token")
 
     // Use the SDK
-    val result = client.auth.sessionsCurrentRetrieve()
+    val result = client.ai.channelGroupsList()
     println(result)
 }
 ```
@@ -55,7 +55,6 @@ val client = SdkworkAppClient(config)
 
 - `client.agents` - agents API
 - `client.ai` - ai API
-- `client.auth` - auth API
 - `client.chat` - chat API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
@@ -87,14 +86,6 @@ println(result)
 ```kotlin
 // List groups
 val result = client.ai.channelGroupsList()
-println(result)
-```
-
-### auth
-
-```kotlin
-// Retrieve current IAM session
-val result = client.auth.sessionsCurrentRetrieve()
 println(result)
 ```
 
@@ -216,8 +207,12 @@ println(result)
 ### system
 
 ```kotlin
-// Retrieve public IAM verification policy
-val result = client.system.iamVerificationPolicyRetrieve()
+// Retrieve public site runtime branding settings
+val params = linkedMapOf<String, Any>(
+    "tenant_code" to "ok",
+    "organization_code" to "ok"
+)
+val result = client.system.siteRuntimeRetrieve(params)
 println(result)
 ```
 
@@ -228,7 +223,7 @@ import kotlinx.coroutines.runBlocking
 
 fun main() = runBlocking {
     try {
-        val result = client.auth.sessionsCurrentRetrieve()
+        val result = client.ai.channelGroupsList()
         println(result)
     } catch (e: Exception) {
         println("Error: ${e.message}")

@@ -108,7 +108,7 @@ const SkillAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-skill'), 
 const PromptsAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-prompts'), 'PromptsAdmin');
 const McpAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-mcp'), 'McpAdmin');
 const ChannelAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-channel'), 'ChannelAdmin');
-const OAuthAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-oauth'), 'OAuthAdmin') as React.LazyExoticComponent<React.ComponentType<AdminSectionRouteProps>>;
+const OAuthAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-oauth'), 'OAuthAdmin');
 const AnnouncementAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-announcement'), 'AnnouncementAdmin');
 const CatalogAdmin = lazyRoute<AdminSectionRouteProps>(() => import('sdkwork-clawrouter-pc-admin-catalog'), 'CatalogAdmin');
 const CourseAdmin = lazyRoute<AdminSectionRouteProps>(() => import('sdkwork-clawrouter-pc-admin-courses'), 'CourseAdmin');
@@ -130,7 +130,7 @@ const ServiceNodesAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-se
 const RuntimeRegionAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-runtime-region'), 'RuntimeRegionAdmin');
 const ClawRouterSiteSettingsPage = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-site'), 'ClawRouterSiteSettingsPage');
 
-function lazyRoute<TProps extends object>(
+function lazyRoute<TProps extends object = Record<string, unknown>>(
   loader: () => Promise<Record<string, unknown>>,
   exportName: string,
 ): React.LazyExoticComponent<React.ComponentType<TProps>> {
@@ -295,31 +295,10 @@ export default function App() {
               <Route path="prompts" element={<PromptsAdmin />} />
               <Route path="mcp" element={<McpAdmin />} />
               <Route path="channel" element={<ChannelAdmin />} />
-              <Route path="oauth" element={<Navigate to="/admin/oauth/overview" replace />} />
-              <Route path="oauth/overview" element={<OAuthAdmin sectionId="overview" />} />
-              <Route path="oauth/login" element={<OAuthAdmin sectionId="login" />} />
-              <Route path="oauth/login/mini-programs" element={<OAuthAdmin sectionId="miniProgramLogin" />} />
-              <Route path="oauth/provider-catalog" element={<OAuthAdmin sectionId="providerCatalog" />} />
-              <Route path="oauth/integrations" element={<OAuthAdmin sectionId="integrations" />} />
-              <Route path="oauth/clients" element={<OAuthAdmin sectionId="clients" />} />
-              <Route path="oauth/secrets" element={<OAuthAdmin sectionId="secrets" />} />
-              <Route path="oauth/surfaces" element={<OAuthAdmin sectionId="surfaces" />} />
-              <Route path="oauth/flow-configs" element={<OAuthAdmin sectionId="flowConfigs" />} />
-              <Route path="oauth/scope-profiles" element={<OAuthAdmin sectionId="scopeProfiles" />} />
-              <Route path="oauth/claim-mappings" element={<OAuthAdmin sectionId="claimMappings" />} />
-              <Route path="oauth/policies" element={<OAuthAdmin sectionId="policies" />} />
-              <Route path="oauth/tenant-bindings" element={<OAuthAdmin sectionId="tenantBindings" />} />
-              <Route path="oauth/operator-platforms" element={<OAuthAdmin sectionId="operatorPlatforms" />} />
-              <Route path="oauth/resource-accounts" element={<OAuthAdmin sectionId="resourceAccounts" />} />
-              <Route path="oauth/resource-accounts/official-accounts" element={<OAuthAdmin sectionId="officialAccounts" />} />
-              <Route path="oauth/resource-accounts/mini-programs" element={<OAuthAdmin sectionId="miniPrograms" />} />
-              <Route path="oauth/resource-authorizations" element={<OAuthAdmin sectionId="resourceAuthorizations" />} />
-              <Route path="oauth/webhooks" element={<OAuthAdmin sectionId="webhooks" />} />
-              <Route path="oauth/operational-resources" element={<OAuthAdmin sectionId="operationalResources" />} />
-              <Route path="oauth/account-links" element={<OAuthAdmin sectionId="accountLinks" />} />
-              <Route path="oauth/grants" element={<OAuthAdmin sectionId="grants" />} />
-              <Route path="oauth/callback-diagnostics" element={<OAuthAdmin sectionId="callbackDiagnostics" />} />
-              <Route path="oauth/diagnostic-runs" element={<OAuthAdmin sectionId="diagnosticRuns" />} />
+              <Route path="oauth" element={<Navigate to="/admin/oauth/login-platforms" replace />} />
+              <Route path="oauth/login-platforms" element={<OAuthAdmin sectionId="oauthLoginPlatforms" />} />
+              <Route path="oauth/official-accounts" element={<OAuthAdmin sectionId="officialAccounts" />} />
+              <Route path="oauth/mini-programs" element={<OAuthAdmin sectionId="miniPrograms" />} />
               <Route path="announcement" element={<AnnouncementAdmin />} />
               <Route path="courses" element={<Navigate to="/admin/courses/dashboard" replace />} />
               <Route path="courses/dashboard" element={<CourseAdmin sectionId="dashboard" />} />

@@ -11,7 +11,6 @@ namespace Sdkwork.ClawRouter.App
 
         public AgentsApi Agents { get; }
         public AiApi Ai { get; }
-        public AuthApi Auth { get; }
         public ChatApi Chat { get; }
         public ContentApi Content { get; }
         public EcosystemApi Ecosystem { get; }
@@ -28,7 +27,6 @@ namespace Sdkwork.ClawRouter.App
             _httpClient = new SdkHttpClient(baseUrl);
             Agents = new AgentsApi(_httpClient);
             Ai = new AiApi(_httpClient);
-            Auth = new AuthApi(_httpClient);
             Chat = new ChatApi(_httpClient);
             Content = new ContentApi(_httpClient);
             Ecosystem = new EcosystemApi(_httpClient);
@@ -46,7 +44,6 @@ namespace Sdkwork.ClawRouter.App
             _httpClient = new SdkHttpClient(config);
             Agents = new AgentsApi(_httpClient);
             Ai = new AiApi(_httpClient);
-            Auth = new AuthApi(_httpClient);
             Chat = new ChatApi(_httpClient);
             Content = new ContentApi(_httpClient);
             Ecosystem = new EcosystemApi(_httpClient);

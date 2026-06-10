@@ -4,7 +4,6 @@ import com.sdkwork.common.core.Types;
 import com.sdkwork.clawrouter.app.http.HttpClient;
 import com.sdkwork.clawrouter.app.api.AgentsApi;
 import com.sdkwork.clawrouter.app.api.AiApi;
-import com.sdkwork.clawrouter.app.api.AuthApi;
 import com.sdkwork.clawrouter.app.api.ChatApi;
 import com.sdkwork.clawrouter.app.api.ContentApi;
 import com.sdkwork.clawrouter.app.api.EcosystemApi;
@@ -20,7 +19,6 @@ public class SdkworkAppClient {
     private final HttpClient httpClient;
     private AgentsApi agents;
     private AiApi ai;
-    private AuthApi auth;
     private ChatApi chat;
     private ContentApi content;
     private EcosystemApi ecosystem;
@@ -36,7 +34,6 @@ public class SdkworkAppClient {
         this.httpClient = new HttpClient(baseUrl);
         this.agents = new AgentsApi(httpClient);
         this.ai = new AiApi(httpClient);
-        this.auth = new AuthApi(httpClient);
         this.chat = new ChatApi(httpClient);
         this.content = new ContentApi(httpClient);
         this.ecosystem = new EcosystemApi(httpClient);
@@ -53,7 +50,6 @@ public class SdkworkAppClient {
         this.httpClient = new HttpClient(config);
         this.agents = new AgentsApi(httpClient);
         this.ai = new AiApi(httpClient);
-        this.auth = new AuthApi(httpClient);
         this.chat = new ChatApi(httpClient);
         this.content = new ContentApi(httpClient);
         this.ecosystem = new EcosystemApi(httpClient);
@@ -72,10 +68,6 @@ public class SdkworkAppClient {
 
     public AiApi getAi() {
         return this.ai;
-    }
-
-    public AuthApi getAuth() {
-        return this.auth;
     }
 
     public ChatApi getChat() {

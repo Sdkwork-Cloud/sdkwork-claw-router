@@ -4,6 +4,8 @@ import type { AdminPieChartItem } from './admin-pie-chart-item';
 
 /** Admin dashboard data response schema exposed by Claw Router. */
 export interface AdminDashboardDataResponse {
+  /** Active users field on admin dashboard data response. */
+  activeUsers: string;
   /** Model distribution field on admin dashboard data response. */
   modelDistribution: AdminPieChartItem[];
   /** Multimodal field on admin dashboard data response. */

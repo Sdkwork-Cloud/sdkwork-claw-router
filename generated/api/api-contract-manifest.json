@@ -14164,7 +14164,9 @@
       "read_sources": [
         "ai_usage_fact",
         "ai_request_trace",
-        "ops_metric_snapshot"
+        "ops_metric_snapshot",
+        "iam_user",
+        "iam_organization_membership"
       ],
       "request_body_required": null,
       "request_id_header": false,
@@ -14174,6 +14176,13 @@
           "additionalProperties": false,
           "name": "AdminDashboardDataResponse",
           "properties": {
+            "activeUsers": {
+              "format": "int64",
+              "pattern": "^[0-9]+$",
+              "type": "string",
+              "x-sdkwork-int64-string": true,
+              "x-sdkwork-rust-type": "i64"
+            },
             "modelDistribution": {
               "items": {
                 "additionalProperties": false,
@@ -14371,6 +14380,7 @@
             }
           },
           "required": [
+            "activeUsers",
             "userConsumption",
             "multimodal",
             "traffic",
@@ -69999,7 +70009,7 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/iam/sessions",
+      "api_path": "/app/v3/api/auth/sessions",
       "api_surface": "app",
       "file_targets": [],
       "idempotency_required": false,
@@ -70034,7 +70044,7 @@
     },
     {
       "api_method": "DELETE",
-      "api_path": "/app/v3/api/iam/sessions/current",
+      "api_path": "/app/v3/api/auth/sessions/current",
       "api_surface": "app",
       "file_targets": [],
       "idempotency_required": false,
@@ -101791,7 +101801,7 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/iam/sessions/current",
+      "api_path": "/app/v3/api/auth/sessions/current",
       "api_surface": "app",
       "description": "Reads the active IAM session and AppContext from the dual-token authentication boundary.",
       "file_targets": [],
@@ -101912,7 +101922,7 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/iam/sessions/refresh",
+      "api_path": "/app/v3/api/auth/sessions/refresh",
       "api_surface": "app",
       "description": "Refreshes the active IAM session using a refresh token and returns a new dual-token payload.",
       "file_targets": [],
@@ -101968,7 +101978,7 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/iam/registrations",
+      "api_path": "/app/v3/api/auth/registrations",
       "api_surface": "app",
       "description": "Registers a tenant-scoped user through email or phone verification and returns the same IAM session payload used by login.",
       "file_targets": [],
@@ -102071,7 +102081,7 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/iam/password_reset_requests",
+      "api_path": "/app/v3/api/auth/password_reset_requests",
       "api_surface": "app",
       "description": "Starts password recovery by issuing an IAM verification challenge through the messaging delivery port.",
       "file_targets": [],
@@ -102155,7 +102165,7 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/iam/password_resets",
+      "api_path": "/app/v3/api/auth/password_resets",
       "api_surface": "app",
       "description": "Completes password recovery using a verified reset code and writes the new credential hash.",
       "file_targets": [],
@@ -102236,7 +102246,7 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/iam/verification_codes",
+      "api_path": "/app/v3/api/auth/verification_codes",
       "api_surface": "app",
       "description": "Creates an IAM verification challenge and sends the code through the messaging SMS or email delivery port.",
       "file_targets": [],
@@ -102334,7 +102344,7 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/iam/sessions",
+      "api_path": "/app/v3/api/auth/sessions",
       "api_surface": "app",
       "description": "Creates a standard SDKWork IAM session for password, email-code, phone-code, or signed session-bridge grants and returns dual auth/access tokens with AppContext.",
       "file_targets": [],
@@ -102649,7 +102659,7 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/iam/sessions",
+      "api_path": "/app/v3/api/auth/sessions",
       "api_surface": "app",
       "file_targets": [],
       "idempotency_required": false,
@@ -102765,7 +102775,7 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/iam/sessions",
+      "api_path": "/app/v3/api/auth/sessions",
       "api_surface": "app",
       "file_targets": [],
       "idempotency_required": false,
@@ -102801,7 +102811,7 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/iam/sessions",
+      "api_path": "/app/v3/api/auth/sessions",
       "api_surface": "app",
       "file_targets": [],
       "idempotency_required": false,
@@ -102836,7 +102846,7 @@
     },
     {
       "api_method": "DELETE",
-      "api_path": "/app/v3/api/iam/sessions/current",
+      "api_path": "/app/v3/api/auth/sessions/current",
       "api_surface": "app",
       "description": "Revokes the active IAM session and clears server-side session state.",
       "file_targets": [],
@@ -102880,7 +102890,7 @@
     },
     {
       "api_method": "PATCH",
-      "api_path": "/app/v3/api/iam/sessions/current",
+      "api_path": "/app/v3/api/auth/sessions/current",
       "api_surface": "app",
       "description": "Updates current session metadata such as active organization without changing the public API shape.",
       "file_targets": [],
@@ -102943,7 +102953,7 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/iam/verification_codes/verify",
+      "api_path": "/app/v3/api/auth/verification_codes/verify",
       "api_surface": "app",
       "description": "Verifies a one-time email or phone code against the IAM verification challenge store.",
       "file_targets": [],

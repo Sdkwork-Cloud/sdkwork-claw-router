@@ -1,4 +1,11 @@
 import { createTokenManager, type AuthTokenManager, type AuthTokens } from '@sdkwork/sdk-common';
+import {
+  type CommerceAppSdkClient,
+  type CommerceBackendSdkClient,
+  configureSdkworkCommerceServiceProvider,
+  createSdkworkCommerceService,
+  type SdkworkCommerceService,
+} from '@sdkwork/commerce-service';
 import { SdkworkAppClient, type SdkworkAppConfig } from '@sdkwork/clawrouter-app-sdk';
 import { SdkworkBackendClient, type SdkworkBackendConfig } from '@sdkwork/clawrouter-backend-sdk';
 import { SdkworkAiClient, type SdkworkAiConfig } from '@sdkwork/clawrouter-open-sdk';
@@ -189,74 +196,71 @@ type PublicSdkResource<TResource> = TResource extends (...args: infer TArgs) => 
     ? { readonly [K in keyof TResource]: PublicSdkResource<TResource[K]> }
     : TResource;
 type CommerceBackendSdkPublicResource = PublicSdkResource<SdkworkCommerceGeneratedBackendClient>;
-type BackendCommerceResourceMap = PublicSdkResource<SdkworkBackendClient['commerce']> & CommerceBackendSdkPublicResource;
-type BackendCommerceDependencyOverlay = BackendCommerceResourceMap & {
-  readonly orders: BackendCommerceResourceMap['orders'] & {
+type BackendCommerceDependencyOverlay = CommerceBackendSdkPublicResource & {
+  readonly orders: CommerceBackendSdkPublicResource['orders'] & {
     readonly list: CommerceBackendSdkPublicResource['orders']['management']['list'];
     readonly retrieve: CommerceBackendSdkPublicResource['orders']['management']['retrieve'];
-    readonly events: BackendCommerceResourceMap['orders']['events'] & {
+    readonly events: CommerceBackendSdkPublicResource['orders']['events'] & {
       readonly list: CommerceBackendSdkPublicResource['orders']['events']['management']['list'];
     };
   };
-  readonly refunds: BackendCommerceResourceMap['refunds'] & {
+  readonly refunds: CommerceBackendSdkPublicResource['refunds'] & {
     readonly list: CommerceBackendSdkPublicResource['refunds']['management']['list'];
     readonly retrieve: CommerceBackendSdkPublicResource['refunds']['management']['retrieve'];
   };
-  readonly fulfillments: BackendCommerceResourceMap['fulfillments'] & {
+  readonly fulfillments: CommerceBackendSdkPublicResource['fulfillments'] & {
     readonly list: CommerceBackendSdkPublicResource['fulfillments']['management']['list'];
     readonly retrieve: CommerceBackendSdkPublicResource['fulfillments']['management']['retrieve'];
   };
-  readonly invoices: BackendCommerceResourceMap['invoices'] & {
+  readonly invoices: CommerceBackendSdkPublicResource['invoices'] & {
     readonly list: CommerceBackendSdkPublicResource['invoices']['management']['list'];
     readonly retrieve: CommerceBackendSdkPublicResource['invoices']['management']['retrieve'];
   };
-  readonly inventory: BackendCommerceResourceMap['inventory'];
-  readonly memberships: BackendCommerceResourceMap['memberships'] & {
-    readonly plans: BackendCommerceResourceMap['memberships']['plans'] & {
+  readonly inventory: CommerceBackendSdkPublicResource['inventory'];
+  readonly memberships: CommerceBackendSdkPublicResource['memberships'] & {
+    readonly plans: CommerceBackendSdkPublicResource['memberships']['plans'] & {
       readonly list: CommerceBackendSdkPublicResource['memberships']['plans']['management']['list'];
     };
-    readonly packages: BackendCommerceResourceMap['memberships']['packages'] & {
+    readonly packages: CommerceBackendSdkPublicResource['memberships']['packages'] & {
       readonly list: CommerceBackendSdkPublicResource['memberships']['packages']['management']['list'];
     };
-    readonly packageGroups: BackendCommerceResourceMap['memberships']['packageGroups'] & {
+    readonly packageGroups: CommerceBackendSdkPublicResource['memberships']['packageGroups'] & {
       readonly list: CommerceBackendSdkPublicResource['memberships']['packageGroups']['management']['list'];
     };
   };
-  readonly payments: BackendCommerceResourceMap['payments'] & {
-    readonly methods: BackendCommerceResourceMap['payments']['methods'] & {
+  readonly payments: CommerceBackendSdkPublicResource['payments'] & {
+    readonly methods: CommerceBackendSdkPublicResource['payments']['methods'] & {
       readonly list: CommerceBackendSdkPublicResource['payments']['methods']['management']['list'];
     };
   };
-  readonly recharges: BackendCommerceResourceMap['recharges'] & {
-    readonly orders: BackendCommerceResourceMap['recharges']['orders'] & {
+  readonly recharges: CommerceBackendSdkPublicResource['recharges'] & {
+    readonly orders: CommerceBackendSdkPublicResource['recharges']['orders'] & {
       readonly list: CommerceBackendSdkPublicResource['recharges']['orders']['management']['list'];
       readonly retrieve: CommerceBackendSdkPublicResource['recharges']['orders']['management']['retrieve'];
     };
-    readonly packages: BackendCommerceResourceMap['recharges']['packages'] & {
+    readonly packages: CommerceBackendSdkPublicResource['recharges']['packages'] & {
       readonly list: CommerceBackendSdkPublicResource['recharges']['packages']['management']['list'];
     };
-    readonly settings: BackendCommerceResourceMap['recharges']['settings'] & {
+    readonly settings: CommerceBackendSdkPublicResource['recharges']['settings'] & {
       readonly retrieve: CommerceBackendSdkPublicResource['recharges']['settings']['management']['retrieve'];
     };
   };
-  readonly wallet: BackendCommerceResourceMap['wallet'] & {
-    readonly accounts: BackendCommerceResourceMap['wallet']['accounts'] & {
+  readonly wallet: CommerceBackendSdkPublicResource['wallet'] & {
+    readonly accounts: CommerceBackendSdkPublicResource['wallet']['accounts'] & {
       readonly list: CommerceBackendSdkPublicResource['wallet']['accounts']['management']['list'];
     };
-    readonly ledgerEntries: BackendCommerceResourceMap['wallet']['ledgerEntries'] & {
+    readonly ledgerEntries: CommerceBackendSdkPublicResource['wallet']['ledgerEntries'] & {
       readonly list: CommerceBackendSdkPublicResource['wallet']['ledgerEntries']['management']['list'];
     };
-    readonly exchangeRules: BackendCommerceResourceMap['wallet']['exchangeRules'] & {
+    readonly exchangeRules: CommerceBackendSdkPublicResource['wallet']['exchangeRules'] & {
       readonly list: CommerceBackendSdkPublicResource['wallet']['exchangeRules']['management']['list'];
     };
-    readonly adjustments: BackendCommerceResourceMap['wallet']['adjustments'] & {
+    readonly adjustments: CommerceBackendSdkPublicResource['wallet']['adjustments'] & {
       readonly create: CommerceBackendSdkPublicResource['wallet']['adjustments']['management']['create'];
     };
   };
 };
-export type ClawRouterBackendSdkClient = Omit<SdkworkBackendClient, 'commerce'> & {
-  readonly commerce: BackendCommerceDependencyOverlay;
-};
+export type ClawRouterBackendSdkClient = SdkworkBackendClient;
 export type SdkworkAppbaseAppSdkClient = SdkworkAppbaseAppClient;
 export type SdkworkAppbaseBackendSdkClient = SdkworkAppbaseBackendClient;
 export type SdkworkGenerationsAppSdkClient = SdkworkGenerationsAppClient;
@@ -323,6 +327,8 @@ let aiClientSessionKey: string | undefined;
 let clawRouterGlobalTokenManager: AuthTokenManager | null = null;
 let portalSessionAuthRedirectTarget: string | null = null;
 
+configureSdkworkCommerceServiceProvider(createClawRouterCommerceService);
+
 export function createClawRouterAppSdkClient(options: ClawRouterAppSdkClientOptions = {}): ClawRouterAppSdkClient {
   const client = attachClawRouterSdkSessionAuthBoundary(new SdkworkAppClient(buildAppConfig(options)));
   return attachCommerceAppSdkDependency(client, createSdkworkCommerceAppSdkClient({
@@ -334,13 +340,7 @@ export function createClawRouterAppSdkClient(options: ClawRouterAppSdkClientOpti
 }
 
 export function createClawRouterBackendSdkClient(options: ClawRouterBackendSdkClientOptions = {}): ClawRouterBackendSdkClient {
-  const client = attachClawRouterSdkSessionAuthBoundary(new SdkworkBackendClient(buildBackendConfig(options)));
-  return attachCommerceBackendSdkDependency(client, createSdkworkCommerceBackendSdkClient({
-    backendBaseUrl: options.backendBaseUrl,
-    platform: options.platform,
-    tokenManager: options.tokenManager,
-    timeout: options.timeout,
-  }));
+  return attachClawRouterSdkSessionAuthBoundary(new SdkworkBackendClient(buildBackendConfig(options)));
 }
 
 export function createSdkworkAppbaseAppSdkClient(
@@ -383,6 +383,28 @@ export function createSdkworkCommerceBackendSdkClient(
 
 export function createClawRouterAiSdkClient(options: ClawRouterAiSdkClientOptions = {}): SdkworkAiClient {
   return new SdkworkAiClient(buildAiConfig(options));
+}
+
+function createClawRouterCommerceService(): SdkworkCommerceService {
+  const service = createSdkworkCommerceService({
+    appClient: wrapCommerceAppSdkClient(getSdkworkCommerceAppSdkClient()),
+    backendClient: wrapCommerceBackendSdkClient(getSdkworkCommerceBackendSdkClient()),
+  });
+  return attachCommerceServiceAliases(service);
+}
+
+function wrapCommerceAppSdkClient(client: SdkworkCommerceAppClient): CommerceAppSdkClient {
+  return {
+    commerce: createAppCommerceCanonicalFacade(client) as unknown as CommerceAppSdkClient['commerce'],
+  };
+}
+
+function wrapCommerceBackendSdkClient(client: SdkworkCommerceBackendSdkClient): CommerceBackendSdkClient {
+  return {
+    commerce: createBackendCommerceCanonicalFacade(
+      client as unknown as BackendCommerceDependencyOverlay,
+    ) as unknown as CommerceBackendSdkClient['commerce'],
+  };
 }
 
 export function getClawRouterAppSdkClient(options: ClawRouterAppSdkClientOptions = {}): ClawRouterAppSdkClient {
@@ -973,24 +995,36 @@ function attachCommerceAppSdkDependency(
   return attachReadOnlyProperty(client, 'commerce', commerceClient) as ClawRouterAppSdkClient;
 }
 
-function attachCommerceBackendSdkDependency(
-  client: SdkworkBackendClient,
-  commerceClient: SdkworkCommerceGeneratedBackendClient,
-): ClawRouterBackendSdkClient {
-  const overlay = createCommerceResourceOverlay(client.commerce, commerceClient) as unknown as BackendCommerceDependencyOverlay;
-  const composedCommerce = createBackendCommerceCanonicalFacade(overlay);
-  return attachReadOnlyProperty(client, 'commerce', composedCommerce) as unknown as ClawRouterBackendSdkClient;
+function createAppCommerceCanonicalFacade(client: SdkworkCommerceAppClient): SdkworkCommerceAppClient {
+  const facade = client as SdkworkCommerceAppClient & Record<string, unknown>;
+  const invoices = readCommerceObject(facade.invoices);
+  if (invoices) {
+    attachNestedCreateAlias(invoices, 'submit', 'submissions');
+    attachNestedCreateAlias(invoices, 'cancel', 'cancellations');
+  }
+  return client;
 }
 
 function createBackendCommerceCanonicalFacade(commerce: BackendCommerceDependencyOverlay): BackendCommerceDependencyOverlay {
   const facade = commerce as BackendCommerceDependencyOverlay & Record<string, unknown>;
+  attachManagementAlias(facade.catalog.spus, 'list');
   attachManagementAlias(facade.orders, 'list');
   attachManagementAlias(facade.orders, 'retrieve');
   attachManagementAlias(facade.orders.events, 'list');
   attachManagementAlias(facade.refunds, 'list');
   attachManagementAlias(facade.refunds, 'retrieve');
+  attachMissingCommerceOperation(facade.refunds, ['approvals', 'create'], 'commerce.refunds.approvals.create');
+  attachMissingCommerceOperation(facade.refunds, ['attempts', 'create'], 'commerce.refunds.attempts.create');
   attachManagementAlias(facade.fulfillments, 'list');
   attachManagementAlias(facade.fulfillments, 'retrieve');
+  attachMissingCommerceOperation(facade.fulfillments, ['create'], 'commerce.fulfillments.create');
+  attachMissingCommerceOperation(facade.fulfillments, ['shipments', 'create'], 'commerce.fulfillments.shipments.create');
+  attachMissingCommerceOperation(facade.fulfillments, ['shipments', 'update'], 'commerce.fulfillments.shipments.update');
+  attachMissingCommerceOperation(
+    facade.fulfillments,
+    ['trackingEvents', 'create'],
+    'commerce.fulfillments.trackingEvents.create',
+  );
   attachManagementAlias(facade.invoices, 'list');
   attachManagementAlias(facade.invoices, 'retrieve');
   attachManagementAlias(facade.payments.methods, 'list');
@@ -1006,6 +1040,62 @@ function createBackendCommerceCanonicalFacade(commerce: BackendCommerceDependenc
   attachManagementAlias(facade.wallet.exchangeRules, 'list');
   attachManagementAlias(facade.wallet.adjustments, 'create');
   return commerce;
+}
+
+function attachCommerceServiceAliases(service: SdkworkCommerceService): SdkworkCommerceService {
+  const admin = service.admin as Record<string, unknown>;
+  const inventory = readCommerceObject(admin.inventory);
+  const memberships = readCommerceObject(admin.memberships);
+  const payments = readCommerceObject(admin.payments);
+  const recharges = readCommerceObject(admin.recharges);
+  const wallet = readCommerceObject(admin.wallet);
+  const invoices = readCommerceObject(admin.invoices);
+  const catalog = readCommerceObject(admin.catalog);
+  const fulfillments = readCommerceObject(admin.fulfillments);
+  const refunds = readCommerceObject(admin.refunds);
+
+  if (inventory && !readCommerceResourceProperty(inventory, 'ledgerEntries')) {
+    const movements = readCommerceResourceProperty(inventory, 'movements');
+    if (movements) {
+      attachReadOnlyProperty(inventory, 'ledgerEntries', movements);
+    }
+  }
+
+  attachCommerceManagementAliases(readCommerceObject(catalog?.['spus']), ['list']);
+  attachCommerceManagementAliases(fulfillments, ['list', 'retrieve']);
+  attachMissingCommerceOperation(fulfillments, ['create'], 'commerce.fulfillments.create');
+  attachMissingCommerceOperation(fulfillments, ['shipments', 'create'], 'commerce.fulfillments.shipments.create');
+  attachMissingCommerceOperation(fulfillments, ['shipments', 'update'], 'commerce.fulfillments.shipments.update');
+  attachMissingCommerceOperation(fulfillments, ['trackingEvents', 'create'], 'commerce.fulfillments.trackingEvents.create');
+  attachMissingCommerceOperation(refunds, ['approvals', 'create'], 'commerce.refunds.approvals.create');
+  attachMissingCommerceOperation(refunds, ['attempts', 'create'], 'commerce.refunds.attempts.create');
+  attachCommerceManagementAliases(readCommerceObject(memberships?.['plans']), ['list']);
+  attachCommerceManagementAliases(readCommerceObject(memberships?.['packages']), ['list']);
+  attachCommerceManagementAliases(readCommerceObject(memberships?.['packageGroups']), ['list']);
+  attachCommerceManagementAliases(readCommerceObject(payments?.['methods']), ['list']);
+  attachCommerceManagementAliases(readCommerceObject(recharges?.['packages']), ['list']);
+  attachCommerceManagementAliases(readCommerceObject(recharges?.['settings']), ['retrieve']);
+  attachCommerceManagementAliases(readCommerceObject(recharges?.['orders']), ['list', 'retrieve']);
+  attachCommerceManagementAliases(readCommerceObject(wallet?.['accounts']), ['list']);
+  attachCommerceManagementAliases(readCommerceObject(wallet?.['ledgerEntries']), ['list']);
+  attachCommerceManagementAliases(readCommerceObject(wallet?.['exchangeRules']), ['list']);
+  attachCommerceManagementAliases(readCommerceObject(wallet?.['adjustments']), ['create']);
+  attachCommerceManagementAliases(invoices, ['list', 'retrieve']);
+
+  return service;
+}
+
+function attachCommerceManagementAliases(
+  resource: Record<string, unknown> | undefined,
+  methodNames: readonly string[],
+): void {
+  for (const methodName of methodNames) {
+    attachManagementAlias(resource, methodName);
+  }
+}
+
+function readCommerceObject(value: unknown): Record<string, unknown> | undefined {
+  return isCommerceObjectResource(value) ? value as Record<string, unknown> : undefined;
 }
 
 function attachManagementAlias(resource: unknown, methodName: string): void {
@@ -1027,6 +1117,56 @@ function attachManagementAlias(resource: unknown, methodName: string): void {
   attachReadOnlyProperty(record, methodName, method.bind(management));
 }
 
+function attachNestedCreateAlias(resource: Record<string, unknown>, methodName: string, nestedResourceName: string): void {
+  if (typeof resource[methodName] === 'function') {
+    return;
+  }
+  const nestedResource = resource[nestedResourceName];
+  if (!isCommerceObjectResource(nestedResource)) {
+    return;
+  }
+  const create = (nestedResource as Record<string, unknown>).create;
+  if (typeof create !== 'function') {
+    return;
+  }
+  attachReadOnlyProperty(resource, methodName, create.bind(nestedResource));
+}
+
+function attachMissingCommerceOperation(
+  resource: unknown,
+  path: readonly string[],
+  operation: string,
+): void {
+  if (!isCommerceObjectResource(resource) || path.length === 0) {
+    return;
+  }
+  const [segment, ...tail] = path;
+  const record = resource as Record<string, unknown>;
+  if (!segment) {
+    return;
+  }
+  if (tail.length === 0) {
+    if (typeof record[segment] !== 'function') {
+      attachReadOnlyProperty(record, segment, createMissingCommerceDependencyOperation(operation));
+    }
+    return;
+  }
+  let child = record[segment];
+  if (!isCommerceObjectResource(child)) {
+    child = {};
+    attachReadOnlyProperty(record, segment, child);
+  }
+  attachMissingCommerceOperation(child, tail, operation);
+}
+
+function createMissingCommerceDependencyOperation(operation: string): () => never {
+  return () => {
+    throw new Error(
+      `${operation} is not exposed by sdkwork-commerce SDK; update the owning commerce contract and regenerate the dependency SDK before enabling this action.`,
+    );
+  };
+}
+
 function attachReadOnlyProperty<TTarget extends object, TKey extends PropertyKey, TValue>(
   target: TTarget,
   key: TKey,
@@ -1040,47 +1180,10 @@ function attachReadOnlyProperty<TTarget extends object, TKey extends PropertyKey
   return target as TTarget & { readonly [K in TKey]: TValue };
 }
 
-function createCommerceResourceOverlay<TPrimary, TFallback>(primary: TPrimary, fallback: TFallback): TPrimary & TFallback {
-  if (!isCommerceObjectResource(primary) || !isCommerceObjectResource(fallback)) {
-    return (primary ?? fallback) as TPrimary & TFallback;
-  }
-
-  const cache = new Map<PropertyKey, unknown>();
-  return new Proxy(Object.create(null) as Record<PropertyKey, unknown>, {
-    get(target, property) {
-      if (property in target) {
-        return target[property];
-      }
-      if (cache.has(property)) {
-        return cache.get(property);
-      }
-
-      const primaryValue = readCommerceResourceProperty(primary, property);
-      const fallbackValue = readCommerceResourceProperty(fallback, property);
-      const value = primaryValue === fallbackValue
-        ? primaryValue
-        : isCommerceObjectResource(primaryValue) && isCommerceObjectResource(fallbackValue)
-        ? createCommerceResourceOverlay(primaryValue, fallbackValue)
-        : primaryValue ?? fallbackValue;
-      cache.set(property, value);
-      return value;
-    },
-    has(target, property) {
-      return property in target
-        || hasCommerceResourceProperty(primary, property)
-        || hasCommerceResourceProperty(fallback, property);
-    },
-  }) as TPrimary & TFallback;
-}
-
 function isCommerceObjectResource(value: unknown): value is object {
   return Boolean(value) && typeof value === 'object';
 }
 
 function readCommerceResourceProperty(value: object, property: PropertyKey): unknown {
   return (value as Record<PropertyKey, unknown>)[property];
-}
-
-function hasCommerceResourceProperty(value: object, property: PropertyKey): boolean {
-  return property in value;
 }

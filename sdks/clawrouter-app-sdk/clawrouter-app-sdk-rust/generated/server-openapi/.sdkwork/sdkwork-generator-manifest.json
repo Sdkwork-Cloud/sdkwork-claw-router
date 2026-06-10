@@ -6,12 +6,13 @@
     "version": "0.1.0",
     "language": "rust",
     "sdkType": "app",
+    "protocol": "http",
     "packageName": "clawrouter-app-sdk"
   },
   "generatedFiles": [
     {
       "path": "bin/publish-core.mjs",
-      "sha256": "affb1f1b5400ac492e94e2d01f3104b8dd38b50329e371265d4f0945f2b0763c"
+      "sha256": "98ad0918a78bfbe22bf8f12fec709b0bed545b9e01edd40f5e4abf31a23378a5"
     },
     {
       "path": "bin/publish.ps1",
@@ -35,7 +36,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "3b3aa93421bea7758e8c82aa14f3f2337951748dd1fe0b811701dfc1820a58ea"
+      "sha256": "f1dc1b298c7d50b92b66948f0dd2b013017b00e47f696c6a8ce64fbfc6be3e74"
     },
     {
       "path": "sdkwork-sdk.json",
@@ -48,10 +49,6 @@
     {
       "path": "src/api/ai.rs",
       "sha256": "a8084c72356ca6832757ce9331242849e17945a8bb119c0708c4700fa728d7c9"
-    },
-    {
-      "path": "src/api/auth.rs",
-      "sha256": "bfcc6176bd5f4d59e7c36102b554985f53f9d85fc3d1274281f86893923acb4a"
     },
     {
       "path": "src/api/base.rs",
@@ -71,7 +68,7 @@
     },
     {
       "path": "src/api/iam.rs",
-      "sha256": "8868e93282f5abee79557e952e6ac89120be858efd14ebf711f40fb41f890b46"
+      "sha256": "62e5caabc0ee811b741a81611691e19b2add43b43f1d878a11fbbe889d68a326"
     },
     {
       "path": "src/api/memory.rs",
@@ -79,7 +76,7 @@
     },
     {
       "path": "src/api/mod.rs",
-      "sha256": "f8fc123d68f3dc45a18a2f712b6a1e10ea42a958f0f596eacfdeee91b5f0696e"
+      "sha256": "c73adbf8c1bbc09d227850874c4346d5e7ec2fbfeee2cf9712fdc8a32151767a"
     },
     {
       "path": "src/api/notification.rs",
@@ -103,11 +100,11 @@
     },
     {
       "path": "src/api/system.rs",
-      "sha256": "fd2f6ddaca1f603eb84944bc790004987271ff833996632bd65341e44950549a"
+      "sha256": "7b3c19857ee43144e195ca12dea1156151181389e725f88866a77fb6af66107a"
     },
     {
       "path": "src/client.rs",
-      "sha256": "9abf23b6eaa4159db4f93284e6d4c4e883d16670307c0a87289752dcd4c26efd"
+      "sha256": "e11d7f10da30eec0f2496d21edd8482564ad053d679b032aa59d0f107e3bc8fc"
     },
     {
       "path": "src/http/client.rs",
@@ -374,14 +371,6 @@
       "sha256": "03fb8dabb66450078aebf7272c3e754efa8e484e757027be8db740a8e3935c64"
     },
     {
-      "path": "src/models/auth_runtime_settings_response.rs",
-      "sha256": "6ff248ac8cae5200c838ed6b8316fe3063aa5df68ba720f201058bf025b9fb6a"
-    },
-    {
-      "path": "src/models/auth_verification_policy.rs",
-      "sha256": "721c79b0b55c4f1c8e00a7e9d7677d9b103ba3436992c7708421b1e7c1d25aea"
-    },
-    {
       "path": "src/models/channel_groups_list_result.rs",
       "sha256": "ebf66d6ec594343d8202a89ed8af2fc08acd491b14057241ed355092938f118f"
     },
@@ -610,18 +599,6 @@
       "sha256": "be982278cf776803cee18799cb2e36906e2b2e1992b54cf54d519ec813d04142"
     },
     {
-      "path": "src/models/department_assignments_list_result.rs",
-      "sha256": "eee5820c22a02b80e6c4b471c23c6d8f3d0a8f27d1bba95e6597fe25e4509742"
-    },
-    {
-      "path": "src/models/departments_list_result.rs",
-      "sha256": "189017226c7630b341d9f6f18ae73ca64fc084b184b757584ec29fdf8c215a11"
-    },
-    {
-      "path": "src/models/departments_tree_retrieve_result.rs",
-      "sha256": "9a156809218a294a1d9b9757fad082133a23e37aad6ffe4855a5ade61a3f11cd"
-    },
-    {
       "path": "src/models/documentation_create_result.rs",
       "sha256": "cd3bdb0de686ddbd34ad7e1e2924adf7cedcf4e2fc91e64795d82f3b77e2c0fe"
     },
@@ -786,150 +763,6 @@
       "sha256": "793546fa3b84ccbdcc0ee6b6fb41c23cd17411999376068568ebe2cd3e4eedbf"
     },
     {
-      "path": "src/models/iam_app_context.rs",
-      "sha256": "d90d1941ad9ca0a5ce28acad6c0ef729d621673e3119703f3ff9e037fab61585"
-    },
-    {
-      "path": "src/models/iam_current_session_update_request.rs",
-      "sha256": "8fd876403437746521bc9d3f281e51f63484c885364c1d8f8958e509112b1ef5"
-    },
-    {
-      "path": "src/models/iam_department_assignment_item.rs",
-      "sha256": "53bfef96e1db48ebef943092fabf27d86ae4fba5e2c52380a94b4343df364d5d"
-    },
-    {
-      "path": "src/models/iam_department_assignment_list_response.rs",
-      "sha256": "826bf59fe3e98f5f38682215a2a88d4faa55268ee82f360ace9c1ff64d570494"
-    },
-    {
-      "path": "src/models/iam_department_item.rs",
-      "sha256": "833ad0d0a94ed9afe45f8507cd2e635a84f8883be59f3caade08e34e0ecf16ad"
-    },
-    {
-      "path": "src/models/iam_department_list_response.rs",
-      "sha256": "e6a6435e35b8eb47386e3b4e08507309b9708efc5c544a47e3f3c17319c6e477"
-    },
-    {
-      "path": "src/models/iam_department_tree_item.rs",
-      "sha256": "f9f5661db8406fa0ff3f73e21f27d7df6fbb75537d46a5d230ee3f3ceb45d9a9"
-    },
-    {
-      "path": "src/models/iam_department_tree_response.rs",
-      "sha256": "15565afab1b5366a2839a0a0ca878a24f7ad7543899cc59592a09bc411c8bf6e"
-    },
-    {
-      "path": "src/models/iam_oauth_authorization_url_response.rs",
-      "sha256": "0737b63be3f1105defd502aba5637959cd1d3853877b40aa74b5a60c9ec976be"
-    },
-    {
-      "path": "src/models/iam_oauth_session_create_request.rs",
-      "sha256": "bc6b954fcafc5505750122a7fee3caf3d9956082d222e478ca162f4cc19d017b"
-    },
-    {
-      "path": "src/models/iam_organization_item.rs",
-      "sha256": "df892629ded5ceac5ccd0d2267279e3ddff1786097d196e606bd71e846680b74"
-    },
-    {
-      "path": "src/models/iam_organization_list_response.rs",
-      "sha256": "9ff96bf92a5d7b13f254e1d131a36b1cb3768ccc609c4d7ccdeba4293f54b5ae"
-    },
-    {
-      "path": "src/models/iam_organization_membership_item.rs",
-      "sha256": "bb3bbfb257083a5b242f2a7e8bb49b0292b38ac94cfce6050e126163f9a11ec0"
-    },
-    {
-      "path": "src/models/iam_organization_membership_list_response.rs",
-      "sha256": "d632722a44acf1d7e60bf8a7db6fb838aa632a88184a920097c3df131a22f3bb"
-    },
-    {
-      "path": "src/models/iam_organization_tree_item.rs",
-      "sha256": "b45c8d8de35414102890f3ae5812966314be86b94e997888046777b566878886"
-    },
-    {
-      "path": "src/models/iam_organization_tree_response.rs",
-      "sha256": "d8d604bdff7082619cf7883096af5693734d74249d85a2e1a7eefb43f4542e27"
-    },
-    {
-      "path": "src/models/iam_password_reset_create_request.rs",
-      "sha256": "50d4f8f02f9336946d5c32c7d7ff78cf3e6a8d17bfb8e662e3271b21b994203c"
-    },
-    {
-      "path": "src/models/iam_password_reset_request_create_request.rs",
-      "sha256": "b0f652d2e0317d5f84d4ee16d329c6d9548324c5564b00e8a5e18c74f3b18b02"
-    },
-    {
-      "path": "src/models/iam_password_reset_request_response.rs",
-      "sha256": "b412e95326361d48b54b70734f531c04074af51cd02cb0b4c7d55d23db1a1a45"
-    },
-    {
-      "path": "src/models/iam_position_assignment_item.rs",
-      "sha256": "8ef0a1686071892cb8f0efc0381fcdb8302dfb3f7419d4fca0dcf906f1016164"
-    },
-    {
-      "path": "src/models/iam_position_assignment_list_response.rs",
-      "sha256": "43a890455cac43688efff599c38c98266b69856d662ca3b7adc870a016e8a41b"
-    },
-    {
-      "path": "src/models/iam_position_item.rs",
-      "sha256": "081ea783dfa974685e342349a2cdc3a6c4f0ef72f1ca3a8a3b4e632dda518e47"
-    },
-    {
-      "path": "src/models/iam_position_list_response.rs",
-      "sha256": "88a52b3f95e21b3e23d830b1d6945403c83431b7aa8faea25b23e4cdf12838b9"
-    },
-    {
-      "path": "src/models/iam_registration_create_request.rs",
-      "sha256": "a7477c567daed38af1838cdd28cff120a678eeda35aac81c768dae82a43e81ae"
-    },
-    {
-      "path": "src/models/iam_role_binding_item.rs",
-      "sha256": "32f3457d72b1853be21ea9e982f2298099dee7ca611db34ad61e041e43603ce4"
-    },
-    {
-      "path": "src/models/iam_role_binding_list_response.rs",
-      "sha256": "441f19855c2c8514afe1b43b3ed7af3408e56da6cc908a4822ae0a2fd8249580"
-    },
-    {
-      "path": "src/models/iam_runtime_retrieve_result.rs",
-      "sha256": "35fb965d08c5248fa6a939e6cde4a46e35d0ef50393e310f4f3c9e1aff81c4c7"
-    },
-    {
-      "path": "src/models/iam_session_create_request.rs",
-      "sha256": "75bbba2748fe62770c34d72f382ea9411cd243a660dc423ae25a2bd4708caafe"
-    },
-    {
-      "path": "src/models/iam_session_refresh_request.rs",
-      "sha256": "f9cc3df483254f3a04f2cb375e763d89ede9872f7116c2ef65624ffd5e0f1763"
-    },
-    {
-      "path": "src/models/iam_session_response.rs",
-      "sha256": "08678aa4ac6b0164fded8359c72355a4dfa8df2d5eb0dac27bf81c8523df4d7e"
-    },
-    {
-      "path": "src/models/iam_user_response.rs",
-      "sha256": "04004c8ac97943450e7125c922053f72228eb1de8fcc69c93df58e9dc8fd9802"
-    },
-    {
-      "path": "src/models/iam_verification_code_create_request.rs",
-      "sha256": "b55a6de36bb7e06871d5491d1b3d90a1de56297281f116423e69e1eacc649c45"
-    },
-    {
-      "path": "src/models/iam_verification_code_response.rs",
-      "sha256": "bad8c4239259dad6ceab601b2c7f5bd89ce2826959b0a0a7aa969a531481b430"
-    },
-    {
-      "path": "src/models/iam_verification_code_verify_request.rs",
-      "sha256": "e969a870569b8e7433c034936974b055f4fe3fb5f6c16859f2652deb0220321f"
-    },
-    {
-      "path": "src/models/iam_verification_code_verify_response.rs",
-      "sha256": "6ee88efdb9a62f6708cf71e31acdc9dcdf8f1cdcc68a9527d31465f9939aa804"
-    },
-    {
-      "path": "src/models/iam_verification_policy_retrieve_result.rs",
-      "sha256": "bde9193b9a73cbc5c3be8e43c274618787f144b19e755a6f87499a71df29f9bc"
-    },
-    {
       "path": "src/models/invocation_event_streams_list_result.rs",
       "sha256": "85bd4dafc1c333e7660b5ee2904e32f7f4dab4913652886ff65907560ecc848c"
     },
@@ -1007,7 +840,7 @@
     },
     {
       "path": "src/models/mod.rs",
-      "sha256": "307d64b9d63d1b8599d59134888c7aaeab4217db1d033965c9d2d4b2d0e0a943"
+      "sha256": "c3abf39303dc5e0913ff14ae48bfe31df31ed8e377ef04470105b068cd76a766"
     },
     {
       "path": "src/models/model_ranking_history_entry.rs",
@@ -1070,42 +903,6 @@
       "sha256": "69610d07a7368f5951cbc8c155fc2e3f7c7e7b1de5936d9b17759b4194d9bba3"
     },
     {
-      "path": "src/models/oauth_authorization_urls_retrieve_result.rs",
-      "sha256": "758a406459e0e81a98908862fe0ae0fb146980fc7a1ad70e157b32968903db90"
-    },
-    {
-      "path": "src/models/oauth_sessions_create_result.rs",
-      "sha256": "f4d2d2fe23c9e392d3211141786ec5bc58409fb8841233cc8d94b55146f093cf"
-    },
-    {
-      "path": "src/models/organization_memberships_list_result.rs",
-      "sha256": "6e412c7c3c2504fcc2cef0c42c7a3e0a242e3455b93ca9f8779a85f4c2bf44c0"
-    },
-    {
-      "path": "src/models/organizations_list_result.rs",
-      "sha256": "3762a8cd058a5a7a167774df8d3522746f88e32a2b53cfc52159c7275440c8fd"
-    },
-    {
-      "path": "src/models/organizations_tree_retrieve_result.rs",
-      "sha256": "a35a65dfe10e5b7ea6acb57128f87e1901e59d020858fd54a3bc0831ffe9e0f2"
-    },
-    {
-      "path": "src/models/password_reset_requests_create_result.rs",
-      "sha256": "35e1bbd9fde4e5a05d934e73df6510160fb5cdec4a2d81f9973663d67e900100"
-    },
-    {
-      "path": "src/models/password_resets_create_result.rs",
-      "sha256": "1ebaca34a67722ce1e3f7ad300fd6293839d743e9497db26e037e5a161aaa7c5"
-    },
-    {
-      "path": "src/models/position_assignments_list_result.rs",
-      "sha256": "10a3b7c77a1315331e93fed9b9154760ffa91861599b022cd168795988452330"
-    },
-    {
-      "path": "src/models/positions_list_result.rs",
-      "sha256": "400e7be328d61debd273f00ba4d82c45a487d2cb0159c81f0a783cc0ed61f849"
-    },
-    {
       "path": "src/models/problem_detail.rs",
       "sha256": "60449d3c8b4cb1103e76fb6d9f27a8b504ba8bbf571f2999475ed5a1b8568479"
     },
@@ -1116,14 +913,6 @@
     {
       "path": "src/models/ranking_vendor_options_response.rs",
       "sha256": "c9d403b098b3a1480c68f6c80ee49a351792130e0ec63318b68c76db9ffb6740"
-    },
-    {
-      "path": "src/models/registrations_create_result.rs",
-      "sha256": "d357baa40d3b6522d809434487bc67acbc1c3a2b82ac5c1e873a14d0830a34cb"
-    },
-    {
-      "path": "src/models/role_bindings_list_result.rs",
-      "sha256": "840600f4bd3ad8636319fde77eb78c782fd47939b99259c397324289f5e88c0d"
     },
     {
       "path": "src/models/routing_api_key_item.rs",
@@ -1254,26 +1043,6 @@
       "sha256": "2e7df6c8152a18d0ee6fd81394c6d581ba7170755fd307ba8f7404660ce576b5"
     },
     {
-      "path": "src/models/sessions_create_result.rs",
-      "sha256": "396b84e6c73a868d131e45387395c604ad43c138e9b3268be4b16f51a3676071"
-    },
-    {
-      "path": "src/models/sessions_current_delete_result.rs",
-      "sha256": "5510b4808c4aed0be099eca9be70543c2a50e7069701364a35bc4e9db83a8308"
-    },
-    {
-      "path": "src/models/sessions_current_retrieve_result.rs",
-      "sha256": "13d8f5d77078ab92a10b583ae1245e5b9e14c081c29e48b5eb40ac0cdabea829"
-    },
-    {
-      "path": "src/models/sessions_current_update_result.rs",
-      "sha256": "d1dcd0c3da5793f2913eeba48324c666dc968ea37dd091957fce3d63137b8f70"
-    },
-    {
-      "path": "src/models/sessions_refresh_result.rs",
-      "sha256": "383d16c22d7c4cf2070bed0022c05cb41fa0d9a2848bbcde35fd7aad70e489c2"
-    },
-    {
       "path": "src/models/settings_data_response.rs",
       "sha256": "1494d925c0f5f3a8c78c5bd96455b95b6d5a53f806b4f0eee598b582b4b716c8"
     },
@@ -1390,10 +1159,6 @@
       "sha256": "e6aa9e7fa125f02ba444e1d8b516d26e7b445a9dd3194469e9a320a5a0ce92a8"
     },
     {
-      "path": "src/models/users_current_retrieve_result.rs",
-      "sha256": "90cda88f269d19ad0eb64ac780f5f60b85cb0ef37fdbfac5f84b907de085d0db"
-    },
-    {
       "path": "src/models/users_current_skills_list_result.rs",
       "sha256": "f6525322e3ebb44397327f1d69def76528da07470cc0cf4e61d12e1dc3d7035d"
     },
@@ -1404,14 +1169,6 @@
     {
       "path": "src/models/users_settings_update_result.rs",
       "sha256": "7bd128bc5298188271a2a778a49223976ed42809c4b7c4a46bcfcfc02e702981"
-    },
-    {
-      "path": "src/models/verification_codes_create_result.rs",
-      "sha256": "83c6415c7fa1b0b592c3a443bbddcafd9b0db7505199f92131478e1d8b9ec374"
-    },
-    {
-      "path": "src/models/verification_codes_verify_result.rs",
-      "sha256": "4aaf82f7e6536e084273226764841459e00297cbc2eed23d2d0aa070b0a03127"
     }
   ],
   "scaffoldFiles": [

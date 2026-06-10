@@ -49,6 +49,12 @@ public class AiApi {
         return client.convertValue(raw, new TypeReference<ChannelGroupsChannelBindingsUpdateResult>() {});
     }
 
+    /** List group route explain */
+    public ChannelGroupsRouteExplainRetrieveResult channelGroupsRouteExplainRetrieve(String channelGroupId) throws Exception {
+        Object raw = client.get(ApiPaths.backendPath("/ai/channel_groups/" + serializePathParameter(channelGroupId, new PathParameterSpec("channelGroupId", "simple", false)) + "/route_explain"));
+        return client.convertValue(raw, new TypeReference<ChannelGroupsRouteExplainRetrieveResult>() {});
+    }
+
     /** List model mappings */
     public ModelMappingsListResult modelMappingsList(String bindingType, String vendorCode, String channelId, String channelCode, String q) throws Exception {
         String query = buildQueryString(List.of(
@@ -212,6 +218,12 @@ public class AiApi {
     public AiResourcesUpdateResult resourcesUpdate(String resourceId, AdminAiResourceUpdateRequest body) throws Exception {
         Object raw = client.put(ApiPaths.backendPath("/ai/resources/" + serializePathParameter(resourceId, new PathParameterSpec("resourceId", "simple", false)) + ""), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<AiResourcesUpdateResult>() {});
+    }
+
+    /** List runtime route explain */
+    public RouteExplainCreateResult routeExplainCreate(AdminRuntimeRouteExplainRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/ai/route_explain"), body, null, null, "application/json");
+        return client.convertValue(raw, new TypeReference<RouteExplainCreateResult>() {});
     }
 
     private record PathParameterSpec(String name, String style, boolean explode) {}

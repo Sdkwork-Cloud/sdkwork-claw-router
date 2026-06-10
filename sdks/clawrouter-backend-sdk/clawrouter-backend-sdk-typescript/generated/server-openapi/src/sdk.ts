@@ -8,7 +8,6 @@ import { ContentApi, createContentApi } from './api/content';
 import { EcosystemApi, createEcosystemApi } from './api/ecosystem';
 import { IamApi, createIamApi } from './api/iam';
 import { IntegrationApi, createIntegrationApi } from './api/integration';
-import { CommerceApi, createCommerceApi } from './api/commerce';
 import { McpApi, createMcpApi } from './api/mcp';
 import { MessagingApi, createMessagingApi } from './api/messaging';
 import { PlatformApi, createPlatformApi } from './api/platform';
@@ -27,7 +26,6 @@ export class SdkworkBackendClient {
   public readonly ecosystem: EcosystemApi;
   public readonly iam: IamApi;
   public readonly integration: IntegrationApi;
-  public readonly commerce: CommerceApi;
   public readonly mcp: McpApi;
   public readonly messaging: MessagingApi;
   public readonly platform: PlatformApi;
@@ -50,8 +48,6 @@ export class SdkworkBackendClient {
     this.iam = createIamApi(this.httpClient);
 
     this.integration = createIntegrationApi(this.httpClient);
-
-    this.commerce = createCommerceApi(this.httpClient);
 
     this.mcp = createMcpApi(this.httpClient);
 

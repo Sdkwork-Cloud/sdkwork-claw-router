@@ -228,7 +228,8 @@ test('appbase-owned app capabilities no longer call the product clawrouter app S
   assert.doesNotMatch(userServiceSource, /getClawRouterAppSdkClient/);
   assert.doesNotMatch(userServiceSource, /@sdkwork\/clawrouter-app-sdk/);
 
-  assert.doesNotMatch(sessionServiceSource, /\.auth\.sessions\.create/);
+  assert.match(sessionServiceSource, /getSdkworkAppbaseAppSdkClient\(options\)\.auth\.sessions\.create/);
+  assert.doesNotMatch(sessionServiceSource, /getClawRouterAppSdkClient\(\)\.auth\.sessions\.create/);
   assert.match(sessionServiceSource, /\.auth\.sessions\.current\.delete/);
   assert.match(portalSessionSource, /\.auth\.sessions\.current\.retrieve/);
   assert.match(portalSessionSource, /\.auth\.sessions\.current\.delete/);

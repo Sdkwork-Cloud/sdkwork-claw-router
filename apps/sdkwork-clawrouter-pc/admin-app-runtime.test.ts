@@ -659,7 +659,7 @@ test("admin app management table fills the available admin viewport", () => {
   );
 });
 
-test("admin layout keeps admin pages inside a fixed viewport shell", () => {
+test("admin layout keeps admin pages inside a fixed viewport shell with dashboard-owned scrolling", () => {
   const layoutSource = readPortalFile("./src/AdminLayout.tsx");
   const dashboardSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-dashboard/src/index.tsx");
 
@@ -680,12 +680,16 @@ test("admin layout keeps admin pages inside a fixed viewport shell", () => {
     /flex-1 flex flex-col bg-slate-50 dark:bg\[#0a0a0a\] min-w-0 overflow-y-auto relative/,
     "admin main content should not create page-level vertical scrolling",
   );
+  assert.match(
+    dashboardSource,
+    /w-full h-full min-h-0 overflow-y-auto custom-scrollbar/,
+    "admin dashboard root must own internal vertical scrolling inside the fixed viewport shell",
+  );
   assert.doesNotMatch(
     dashboardSource,
-    /w-full h-full flex flex-col space-y-4 overflow-y-auto pb-8 custom-scrollbar/,
-    "admin dashboard root must not own vertical scrolling",
+    /admin\.dashboard\.index\.text\.103joek|usage_fact/,
+    "admin dashboard should not render the backend usage_fact aggregate snapshot label",
   );
-  assert.match(dashboardSource, /w-full flex flex-col space-y-4 pb-8/);
 });
 
 test("public app center empty state is localized", () => {

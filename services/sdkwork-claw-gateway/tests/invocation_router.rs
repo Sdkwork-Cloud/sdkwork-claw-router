@@ -748,6 +748,43 @@ async fn invocation_router_dispatches_openai_model_call_through_pipeline() {
 }
 
 #[tokio::test]
+async fn invocation_router_returns_not_found_for_unknown_openai_prefixed_paths_before_auth() {
+    let hasher = hasher();
+    let key_hash = hasher.hash_secret("sk-live-secret").unwrap();
+    let dispatcher = Arc::new(CapturingDispatcher::default());
+    let router =
+        sdkwork_claw_gateway::invocation_router_with_catalog_api_key_hasher_dispatcher_and_secret_resolver(
+            Arc::new(catalog_with_hashed_api_key(key_hash)),
+            hasher,
+            dispatcher.clone(),
+            secret_resolver(),
+        );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/not-openai-standard")
+                .header("content-type", "application/json")
+                .body(Body::from(r#"{"model":"gpt-4o-mini"}"#))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::NOT_FOUND, response.status());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
+    assert_eq!("not_found", payload["error"]["code"]);
+    assert!(
+        dispatcher.calls().is_empty(),
+        "unknown OpenAI-prefixed paths must not enter the invocation pipeline"
+    );
+}
+
+#[tokio::test]
 async fn invocation_router_can_failover_when_primary_secret_is_missing() {
     let hasher = hasher();
     let key_hash = hasher.hash_secret("sk-live-secret").unwrap();

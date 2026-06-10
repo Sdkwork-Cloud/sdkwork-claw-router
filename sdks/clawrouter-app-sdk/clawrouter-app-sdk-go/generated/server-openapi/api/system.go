@@ -17,30 +17,6 @@ func NewSystemApi(client *sdkhttp.Client) *SystemApi {
     return &SystemApi{client: client}
 }
 
-// Retrieve public IAM runtime settings
-func (a *SystemApi) IamRuntimeRetrieve(tenantCode *string, organizationCode *string) (sdktypes.IamRuntimeRetrieveResult, error) {
-    query := BuildQueryString([]QueryParameterSpec{
-        {Name: "tenant_code", Value: func() interface{} { if tenantCode == nil { return nil }; return *tenantCode }(), Style: "form", Explode: true, AllowReserved: false},
-        {Name: "organization_code", Value: func() interface{} { if organizationCode == nil { return nil }; return *organizationCode }(), Style: "form", Explode: true, AllowReserved: false},
-    })
-    raw, err := a.client.Get(AppendQueryString(AppApiPath("/system/iam/runtime"), query), nil, nil)
-    if err != nil {
-        var zero sdktypes.IamRuntimeRetrieveResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.IamRuntimeRetrieveResult](raw)
-}
-
-// Retrieve public IAM verification policy
-func (a *SystemApi) IamVerificationPolicyRetrieve() (sdktypes.IamVerificationPolicyRetrieveResult, error) {
-    raw, err := a.client.Get(AppApiPath("/system/iam/verification_policy"), nil, nil)
-    if err != nil {
-        var zero sdktypes.IamVerificationPolicyRetrieveResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.IamVerificationPolicyRetrieveResult](raw)
-}
-
 // Retrieve public site runtime branding settings
 func (a *SystemApi) SiteRuntimeRetrieve(tenantCode *string, organizationCode *string) (sdktypes.SiteRuntimeRetrieveResult, error) {
     query := BuildQueryString([]QueryParameterSpec{

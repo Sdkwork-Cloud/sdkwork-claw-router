@@ -25,7 +25,7 @@ declare module '@sdkwork/clawrouter-backend-sdk' {
     adjustments: SdkworkClawrouterNestedResource;
     commerceEvents: SdkworkClawrouterNestedResource;
     exchangeRules: SdkworkClawrouterNestedResource;
-    ledgerEntries: SdkworkClawrouterNestedResource;
+    readonly ledgerEntries: SdkworkClawrouterNestedResource;
     management: SdkworkClawrouterNestedResource;
     orderRevenue: SdkworkClawrouterNestedResource;
     paymentReconciliation: SdkworkClawrouterNestedResource;
@@ -62,7 +62,7 @@ declare module '@sdkwork/clawrouter-backend-sdk' {
   }
 
   export interface CommerceInventoryApi {
-    ledgerEntries: SdkworkClawrouterNestedResource;
+    readonly ledgerEntries: SdkworkClawrouterNestedResource;
     reservations: SdkworkClawrouterNestedResource;
   }
 
@@ -244,4 +244,30 @@ declare module '@sdkwork/clawrouter-app-sdk' {
     release: SdkworkClawrouterSdkOperation;
     settle: SdkworkClawrouterSdkOperation;
   }
+}
+
+declare module '@sdkwork/commerce-service' {
+  type SdkworkPortalCommerceOperation = (...args: any[]) => Promise<any>;
+
+  interface SdkworkPortalCommerceResource {
+    [key: string]: any;
+    cancel: SdkworkPortalCommerceOperation;
+    close: SdkworkPortalCommerceOperation;
+    create: SdkworkPortalCommerceOperation;
+    delete: SdkworkPortalCommerceOperation;
+    list: SdkworkPortalCommerceOperation;
+    management: SdkworkPortalCommerceResource;
+    release: SdkworkPortalCommerceOperation;
+    retrieve: SdkworkPortalCommerceOperation;
+    rollback: SdkworkPortalCommerceOperation;
+    settle: SdkworkPortalCommerceOperation;
+    submit: SdkworkPortalCommerceOperation;
+    update: SdkworkPortalCommerceOperation;
+  }
+
+  export interface SdkworkPortalCommerceService extends SdkworkPortalCommerceResource {
+    admin: SdkworkPortalCommerceResource;
+  }
+
+  export function getSdkworkCommerceService(): SdkworkPortalCommerceService;
 }

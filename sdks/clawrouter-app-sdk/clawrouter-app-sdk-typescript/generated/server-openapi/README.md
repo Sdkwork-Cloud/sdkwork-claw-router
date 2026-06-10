@@ -27,22 +27,7 @@ client.setAuthToken('your-auth-token');
 client.setAccessToken('your-access-token');
 
 // Use the SDK
-const body = {
-  code: 'code',
-  deviceId: 'deviceId',
-  deviceName: 'deviceName',
-  deviceType: 'deviceType',
-  email: 'email',
-  grantType: 'password',
-  name: 'name',
-  organizationCode: 'organizationCode',
-  password: 'password',
-  phone: 'phone',
-  subject: 'subject',
-  tenantCode: 'tenantCode',
-  username: 'username',
-};
-const result = await client.iam.sessions.create(body);
+const result = await client.ai.channelGroups.list();
 ```
 
 ## Authentication
@@ -80,7 +65,6 @@ const client = new SdkworkAppClient({
 - `client.platform` - platform API
 - `client.runtime` - runtime API
 - `client.sdkReference` - sdk_reference API
-- `client.system` - system API
 - `client.sites` - sites API
 
 ## Usage Examples
@@ -132,23 +116,8 @@ const result = await client.ecosystem.skills.categories.list();
 ### iam
 
 ```typescript
-// Create IAM session
-const body = {
-  code: 'code',
-  deviceId: 'deviceId',
-  deviceName: 'deviceName',
-  deviceType: 'deviceType',
-  email: 'email',
-  grantType: 'password',
-  name: 'name',
-  organizationCode: 'organizationCode',
-  password: 'password',
-  phone: 'phone',
-  subject: 'subject',
-  tenantCode: 'tenantCode',
-  username: 'username',
-};
-const result = await client.iam.sessions.create(body);
+// List keys
+const result = await client.iam.apiKeys.list();
 ```
 
 ### memory
@@ -225,13 +194,6 @@ const body = {
 const result = await client.sdkReference.archives.create(body);
 ```
 
-### system
-
-```typescript
-// Retrieve public IAM verification policy
-const result = await client.system.iam.verificationPolicy.retrieve();
-```
-
 ### sites
 
 ```typescript
@@ -249,22 +211,7 @@ const result = await client.sites.runtime.retrieve(params);
 import { SdkworkAppClient, NetworkError, TimeoutError, AuthenticationError } from '@sdkwork/clawrouter-app-sdk';
 
 try {
-  const body = {
-    code: 'code',
-    deviceId: 'deviceId',
-    deviceName: 'deviceName',
-    deviceType: 'deviceType',
-    email: 'email',
-    grantType: 'password',
-    name: 'name',
-    organizationCode: 'organizationCode',
-    password: 'password',
-    phone: 'phone',
-    subject: 'subject',
-    tenantCode: 'tenantCode',
-    username: 'username',
-  };
-  const result = await client.iam.sessions.create(body);
+  const result = await client.ai.channelGroups.list();
 } catch (error) {
   if (error instanceof AuthenticationError) {
     console.error('Authentication failed:', error.message);

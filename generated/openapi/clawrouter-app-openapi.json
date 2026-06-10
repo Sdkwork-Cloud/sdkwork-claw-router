@@ -22893,6 +22893,906 @@
         "x-write-tables": []
       }
     },
+    "/app/v3/api/auth/password_reset_requests": {
+      "post": {
+        "description": "Starts password recovery by issuing an IAM verification challenge through the messaging delivery port. Reads iam_user, iam_user_identity. Writes iam_security_event. File targets none.",
+        "operationId": "passwordResetRequests.create",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IamPasswordResetRequestCreateRequest"
+              }
+            }
+          },
+          "description": "Typed request payload for create password reset request.",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PasswordResetRequestsCreateResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          },
+          "default": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Error response."
+          }
+        },
+        "security": [],
+        "summary": "Create password reset request",
+        "tags": [
+          "iam"
+        ],
+        "x-contract-kind": "create",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "iam_user",
+          "iam_user_identity"
+        ],
+        "x-route-scope": "public",
+        "x-sdk-domain": "iam",
+        "x-sdkwork-domain": "iam",
+        "x-sdkwork-resource": "passwordResetRequests",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
+        "x-write-tables": [
+          "iam_security_event"
+        ]
+      }
+    },
+    "/app/v3/api/auth/password_resets": {
+      "post": {
+        "description": "Completes password recovery using a verified reset code and writes the new credential hash. Reads iam_user, iam_credential. Writes iam_credential, iam_security_event, iam_audit_event. File targets none.",
+        "operationId": "passwordResets.create",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IamPasswordResetCreateRequest"
+              }
+            }
+          },
+          "description": "Typed request payload for create password reset.",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PasswordResetsCreateResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          },
+          "default": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Error response."
+          }
+        },
+        "security": [],
+        "summary": "Create password reset",
+        "tags": [
+          "iam"
+        ],
+        "x-contract-kind": "create",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "iam_user",
+          "iam_credential"
+        ],
+        "x-route-scope": "public",
+        "x-sdk-domain": "iam",
+        "x-sdkwork-domain": "iam",
+        "x-sdkwork-resource": "passwordResets",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
+        "x-write-tables": [
+          "iam_credential",
+          "iam_security_event",
+          "iam_audit_event"
+        ]
+      }
+    },
+    "/app/v3/api/auth/registrations": {
+      "post": {
+        "description": "Registers a tenant-scoped user through email or phone verification and returns the same IAM session payload used by login. Reads iam_user, iam_user_identity, iam_credential. Writes iam_user, iam_user_identity, iam_credential, iam_session, iam_security_event, iam_audit_event. File targets none.",
+        "operationId": "registrations.create",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IamRegistrationCreateRequest"
+              }
+            }
+          },
+          "description": "Typed request payload for create iam registration.",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegistrationsCreateResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          },
+          "default": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Error response."
+          }
+        },
+        "security": [],
+        "summary": "Create IAM registration",
+        "tags": [
+          "iam"
+        ],
+        "x-contract-kind": "create",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "iam_user",
+          "iam_user_identity",
+          "iam_credential"
+        ],
+        "x-route-scope": "public",
+        "x-sdk-domain": "iam",
+        "x-sdkwork-domain": "iam",
+        "x-sdkwork-resource": "registrations",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
+        "x-write-tables": [
+          "iam_user",
+          "iam_user_identity",
+          "iam_credential",
+          "iam_session",
+          "iam_security_event",
+          "iam_audit_event"
+        ]
+      }
+    },
+    "/app/v3/api/auth/sessions": {
+      "post": {
+        "description": "Creates a standard SDKWork IAM session for password, email-code, phone-code, or signed session-bridge grants and returns dual auth/access tokens with AppContext. Reads iam_user, iam_credential, iam_session. Writes iam_session, iam_security_event, iam_audit_event. File targets none.",
+        "operationId": "sessions.create",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IamSessionCreateRequest"
+              }
+            }
+          },
+          "description": "Typed request payload for create iam session.",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionsCreateResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          },
+          "default": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Error response."
+          }
+        },
+        "security": [],
+        "summary": "Create IAM session",
+        "tags": [
+          "iam"
+        ],
+        "x-contract-kind": "create",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "iam_user",
+          "iam_credential",
+          "iam_session"
+        ],
+        "x-route-scope": "public",
+        "x-sdk-domain": "iam",
+        "x-sdkwork-domain": "iam",
+        "x-sdkwork-resource": "sessions",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
+        "x-write-tables": [
+          "iam_session",
+          "iam_security_event",
+          "iam_audit_event"
+        ]
+      }
+    },
+    "/app/v3/api/auth/sessions/current": {
+      "delete": {
+        "description": "Revokes the active IAM session and clears server-side session state. Reads iam_session. Writes iam_session, iam_security_event. File targets none.",
+        "operationId": "sessions.current.delete",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionsCurrentDeleteResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          },
+          "default": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Error response."
+          }
+        },
+        "security": [
+          {
+            "AccessToken": [],
+            "AuthToken": []
+          }
+        ],
+        "summary": "Delete current IAM session",
+        "tags": [
+          "iam"
+        ],
+        "x-contract-kind": "delete",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "iam_session"
+        ],
+        "x-route-scope": "public",
+        "x-sdk-domain": "iam",
+        "x-sdkwork-domain": "iam",
+        "x-sdkwork-resource": "sessions.current",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
+        "x-write-tables": [
+          "iam_session",
+          "iam_security_event"
+        ]
+      },
+      "get": {
+        "description": "Reads the active IAM session and AppContext from the dual-token authentication boundary. Reads iam_session, iam_user. Writes none. File targets none.",
+        "operationId": "sessions.current.retrieve",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionsCurrentRetrieveResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          },
+          "default": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Error response."
+          }
+        },
+        "security": [
+          {
+            "AccessToken": [],
+            "AuthToken": []
+          }
+        ],
+        "summary": "Retrieve current IAM session",
+        "tags": [
+          "iam"
+        ],
+        "x-contract-kind": "read",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "iam_session",
+          "iam_user"
+        ],
+        "x-route-scope": "public",
+        "x-sdk-domain": "iam",
+        "x-sdkwork-domain": "iam",
+        "x-sdkwork-resource": "sessions.current",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
+        "x-write-tables": []
+      },
+      "patch": {
+        "description": "Updates current session metadata such as active organization without changing the public API shape. Reads iam_session. Writes iam_session, iam_security_event. File targets none.",
+        "operationId": "sessions.current.update",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IamCurrentSessionUpdateRequest"
+              }
+            }
+          },
+          "description": "Typed request payload for update current iam session.",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionsCurrentUpdateResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          },
+          "default": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Error response."
+          }
+        },
+        "security": [
+          {
+            "AccessToken": [],
+            "AuthToken": []
+          }
+        ],
+        "summary": "Update current IAM session",
+        "tags": [
+          "iam"
+        ],
+        "x-contract-kind": "update",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "iam_session"
+        ],
+        "x-route-scope": "public",
+        "x-sdk-domain": "iam",
+        "x-sdkwork-domain": "iam",
+        "x-sdkwork-resource": "sessions.current",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
+        "x-write-tables": [
+          "iam_session",
+          "iam_security_event"
+        ]
+      }
+    },
+    "/app/v3/api/auth/sessions/refresh": {
+      "post": {
+        "description": "Refreshes the active IAM session using a refresh token and returns a new dual-token payload. Reads iam_session. Writes iam_session, iam_security_event. File targets none.",
+        "operationId": "sessions.refresh",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IamSessionRefreshRequest"
+              }
+            }
+          },
+          "description": "Typed request payload for refresh iam session.",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionsRefreshResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          },
+          "default": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Error response."
+          }
+        },
+        "security": [
+          {
+            "AccessToken": [],
+            "AuthToken": []
+          }
+        ],
+        "summary": "Refresh IAM session",
+        "tags": [
+          "iam"
+        ],
+        "x-contract-kind": "create",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "iam_session"
+        ],
+        "x-route-scope": "public",
+        "x-sdk-domain": "iam",
+        "x-sdkwork-domain": "iam",
+        "x-sdkwork-resource": "sessions",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
+        "x-write-tables": [
+          "iam_session",
+          "iam_security_event"
+        ]
+      }
+    },
+    "/app/v3/api/auth/verification_codes": {
+      "post": {
+        "description": "Creates an IAM verification challenge and sends the code through the messaging SMS or email delivery port. Reads iam_user_identity, iam_verification_scene_policy, messaging_template, messaging_route_rule. Writes iam_verification_challenge, messaging_send_request, messaging_rate_limit_bucket, iam_security_event. File targets none.",
+        "operationId": "verificationCodes.create",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IamVerificationCodeCreateRequest"
+              }
+            }
+          },
+          "description": "Typed request payload for create verification code.",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VerificationCodesCreateResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          },
+          "default": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Error response."
+          }
+        },
+        "security": [],
+        "summary": "Create verification code",
+        "tags": [
+          "iam"
+        ],
+        "x-contract-kind": "create",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "iam_user_identity",
+          "iam_verification_scene_policy",
+          "messaging_template",
+          "messaging_route_rule"
+        ],
+        "x-route-scope": "public",
+        "x-sdk-domain": "iam",
+        "x-sdkwork-domain": "iam",
+        "x-sdkwork-resource": "verificationCodes",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
+        "x-write-tables": [
+          "iam_verification_challenge",
+          "messaging_send_request",
+          "messaging_rate_limit_bucket",
+          "iam_security_event"
+        ]
+      }
+    },
+    "/app/v3/api/auth/verification_codes/verify": {
+      "post": {
+        "description": "Verifies a one-time email or phone code against the IAM verification challenge store. Reads iam_verification_challenge. Writes iam_verification_challenge, iam_verification_attempt, messaging_rate_limit_bucket, iam_security_event. File targets none.",
+        "operationId": "verificationCodes.verify",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IamVerificationCodeVerifyRequest"
+              }
+            }
+          },
+          "description": "Typed request payload for verify verification code.",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VerificationCodesVerifyResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          },
+          "default": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Error response."
+          }
+        },
+        "security": [],
+        "summary": "Verify verification code",
+        "tags": [
+          "iam"
+        ],
+        "x-contract-kind": "create",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "iam_verification_challenge"
+        ],
+        "x-route-scope": "public",
+        "x-sdk-domain": "iam",
+        "x-sdkwork-domain": "iam",
+        "x-sdkwork-resource": "verificationCodes",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
+        "x-write-tables": [
+          "iam_verification_challenge",
+          "iam_verification_attempt",
+          "messaging_rate_limit_bucket",
+          "iam_security_event"
+        ]
+      }
+    },
     "/app/v3/api/billing/history": {
       "get": {
         "description": "Unified app billing history read model for console recharge and redemption records. Reads commerce_billing_history. Writes none. File targets none.",
@@ -30413,186 +31313,6 @@
         "x-write-tables": []
       }
     },
-    "/app/v3/api/iam/password_reset_requests": {
-      "post": {
-        "description": "Starts password recovery by issuing an IAM verification challenge through the messaging delivery port. Reads iam_user, iam_user_identity. Writes iam_security_event. File targets none.",
-        "operationId": "passwordResetRequests.create",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IamPasswordResetRequestCreateRequest"
-              }
-            }
-          },
-          "description": "Typed request payload for create password reset request.",
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PasswordResetRequestsCreateResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [],
-        "summary": "Create password reset request",
-        "tags": [
-          "iam"
-        ],
-        "x-contract-kind": "create",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "iam_user",
-          "iam_user_identity"
-        ],
-        "x-route-scope": "public",
-        "x-sdk-domain": "iam",
-        "x-sdkwork-domain": "iam",
-        "x-sdkwork-resource": "passwordResetRequests",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
-        "x-write-tables": [
-          "iam_security_event"
-        ]
-      }
-    },
-    "/app/v3/api/iam/password_resets": {
-      "post": {
-        "description": "Completes password recovery using a verified reset code and writes the new credential hash. Reads iam_user, iam_credential. Writes iam_credential, iam_security_event, iam_audit_event. File targets none.",
-        "operationId": "passwordResets.create",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IamPasswordResetCreateRequest"
-              }
-            }
-          },
-          "description": "Typed request payload for create password reset.",
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PasswordResetsCreateResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [],
-        "summary": "Create password reset",
-        "tags": [
-          "iam"
-        ],
-        "x-contract-kind": "create",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "iam_user",
-          "iam_credential"
-        ],
-        "x-route-scope": "public",
-        "x-sdk-domain": "iam",
-        "x-sdkwork-domain": "iam",
-        "x-sdkwork-resource": "passwordResets",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
-        "x-write-tables": [
-          "iam_credential",
-          "iam_security_event",
-          "iam_audit_event"
-        ]
-      }
-    },
     "/app/v3/api/iam/position_assignments": {
       "get": {
         "description": "Lists position assignments visible to the current app IAM subject. Reads iam_organization, iam_organization_membership. Writes none. File targets none.",
@@ -30919,101 +31639,6 @@
         "x-write-tables": []
       }
     },
-    "/app/v3/api/iam/registrations": {
-      "post": {
-        "description": "Registers a tenant-scoped user through email or phone verification and returns the same IAM session payload used by login. Reads iam_user, iam_user_identity, iam_credential. Writes iam_user, iam_user_identity, iam_credential, iam_session, iam_security_event, iam_audit_event. File targets none.",
-        "operationId": "registrations.create",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IamRegistrationCreateRequest"
-              }
-            }
-          },
-          "description": "Typed request payload for create iam registration.",
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RegistrationsCreateResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [],
-        "summary": "Create IAM registration",
-        "tags": [
-          "iam"
-        ],
-        "x-contract-kind": "create",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "iam_user",
-          "iam_user_identity",
-          "iam_credential"
-        ],
-        "x-route-scope": "public",
-        "x-sdk-domain": "iam",
-        "x-sdkwork-domain": "iam",
-        "x-sdkwork-resource": "registrations",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
-        "x-write-tables": [
-          "iam_user",
-          "iam_user_identity",
-          "iam_credential",
-          "iam_session",
-          "iam_security_event",
-          "iam_audit_event"
-        ]
-      }
-    },
     "/app/v3/api/iam/role_bindings": {
       "get": {
         "description": "Lists role bindings visible to the current app IAM subject. Reads iam_organization, iam_organization_membership. Writes none. File targets none.",
@@ -31175,446 +31800,6 @@
         "x-sdkwork-resource": "roleBindings",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts",
         "x-write-tables": []
-      }
-    },
-    "/app/v3/api/iam/sessions": {
-      "post": {
-        "description": "Creates a standard SDKWork IAM session for password, email-code, phone-code, or signed session-bridge grants and returns dual auth/access tokens with AppContext. Reads iam_user, iam_credential, iam_session. Writes iam_session, iam_security_event, iam_audit_event. File targets none.",
-        "operationId": "sessions.create",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IamSessionCreateRequest"
-              }
-            }
-          },
-          "description": "Typed request payload for create iam session.",
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SessionsCreateResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [],
-        "summary": "Create IAM session",
-        "tags": [
-          "iam"
-        ],
-        "x-contract-kind": "create",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "iam_user",
-          "iam_credential",
-          "iam_session"
-        ],
-        "x-route-scope": "public",
-        "x-sdk-domain": "iam",
-        "x-sdkwork-domain": "iam",
-        "x-sdkwork-resource": "sessions",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
-        "x-write-tables": [
-          "iam_session",
-          "iam_security_event",
-          "iam_audit_event"
-        ]
-      }
-    },
-    "/app/v3/api/iam/sessions/current": {
-      "delete": {
-        "description": "Revokes the active IAM session and clears server-side session state. Reads iam_session. Writes iam_session, iam_security_event. File targets none.",
-        "operationId": "sessions.current.delete",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SessionsCurrentDeleteResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "Delete current IAM session",
-        "tags": [
-          "iam"
-        ],
-        "x-contract-kind": "delete",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "iam_session"
-        ],
-        "x-route-scope": "public",
-        "x-sdk-domain": "iam",
-        "x-sdkwork-domain": "iam",
-        "x-sdkwork-resource": "sessions.current",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
-        "x-write-tables": [
-          "iam_session",
-          "iam_security_event"
-        ]
-      },
-      "get": {
-        "description": "Reads the active IAM session and AppContext from the dual-token authentication boundary. Reads iam_session, iam_user. Writes none. File targets none.",
-        "operationId": "sessions.current.retrieve",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SessionsCurrentRetrieveResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "Retrieve current IAM session",
-        "tags": [
-          "iam"
-        ],
-        "x-contract-kind": "read",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "iam_session",
-          "iam_user"
-        ],
-        "x-route-scope": "public",
-        "x-sdk-domain": "iam",
-        "x-sdkwork-domain": "iam",
-        "x-sdkwork-resource": "sessions.current",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
-        "x-write-tables": []
-      },
-      "patch": {
-        "description": "Updates current session metadata such as active organization without changing the public API shape. Reads iam_session. Writes iam_session, iam_security_event. File targets none.",
-        "operationId": "sessions.current.update",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IamCurrentSessionUpdateRequest"
-              }
-            }
-          },
-          "description": "Typed request payload for update current iam session.",
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SessionsCurrentUpdateResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "Update current IAM session",
-        "tags": [
-          "iam"
-        ],
-        "x-contract-kind": "update",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "iam_session"
-        ],
-        "x-route-scope": "public",
-        "x-sdk-domain": "iam",
-        "x-sdkwork-domain": "iam",
-        "x-sdkwork-resource": "sessions.current",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
-        "x-write-tables": [
-          "iam_session",
-          "iam_security_event"
-        ]
-      }
-    },
-    "/app/v3/api/iam/sessions/refresh": {
-      "post": {
-        "description": "Refreshes the active IAM session using a refresh token and returns a new dual-token payload. Reads iam_session. Writes iam_session, iam_security_event. File targets none.",
-        "operationId": "sessions.refresh",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IamSessionRefreshRequest"
-              }
-            }
-          },
-          "description": "Typed request payload for refresh iam session.",
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SessionsRefreshResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "Refresh IAM session",
-        "tags": [
-          "iam"
-        ],
-        "x-contract-kind": "create",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "iam_session"
-        ],
-        "x-route-scope": "public",
-        "x-sdk-domain": "iam",
-        "x-sdkwork-domain": "iam",
-        "x-sdkwork-resource": "sessions",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
-        "x-write-tables": [
-          "iam_session",
-          "iam_security_event"
-        ]
       }
     },
     "/app/v3/api/iam/users/current": {
@@ -31871,191 +32056,6 @@
         "x-write-tables": [
           "iam_user_preference",
           "integration_webhook_endpoint"
-        ]
-      }
-    },
-    "/app/v3/api/iam/verification_codes": {
-      "post": {
-        "description": "Creates an IAM verification challenge and sends the code through the messaging SMS or email delivery port. Reads iam_user_identity, iam_verification_scene_policy, messaging_template, messaging_route_rule. Writes iam_verification_challenge, messaging_send_request, messaging_rate_limit_bucket, iam_security_event. File targets none.",
-        "operationId": "verificationCodes.create",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IamVerificationCodeCreateRequest"
-              }
-            }
-          },
-          "description": "Typed request payload for create verification code.",
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/VerificationCodesCreateResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [],
-        "summary": "Create verification code",
-        "tags": [
-          "iam"
-        ],
-        "x-contract-kind": "create",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "iam_user_identity",
-          "iam_verification_scene_policy",
-          "messaging_template",
-          "messaging_route_rule"
-        ],
-        "x-route-scope": "public",
-        "x-sdk-domain": "iam",
-        "x-sdkwork-domain": "iam",
-        "x-sdkwork-resource": "verificationCodes",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
-        "x-write-tables": [
-          "iam_verification_challenge",
-          "messaging_send_request",
-          "messaging_rate_limit_bucket",
-          "iam_security_event"
-        ]
-      }
-    },
-    "/app/v3/api/iam/verification_codes/verify": {
-      "post": {
-        "description": "Verifies a one-time email or phone code against the IAM verification challenge store. Reads iam_verification_challenge. Writes iam_verification_challenge, iam_verification_attempt, messaging_rate_limit_bucket, iam_security_event. File targets none.",
-        "operationId": "verificationCodes.verify",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IamVerificationCodeVerifyRequest"
-              }
-            }
-          },
-          "description": "Typed request payload for verify verification code.",
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/VerificationCodesVerifyResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [],
-        "summary": "Verify verification code",
-        "tags": [
-          "iam"
-        ],
-        "x-contract-kind": "create",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "iam_verification_challenge"
-        ],
-        "x-route-scope": "public",
-        "x-sdk-domain": "iam",
-        "x-sdkwork-domain": "iam",
-        "x-sdkwork-resource": "verificationCodes",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
-        "x-write-tables": [
-          "iam_verification_challenge",
-          "iam_verification_attempt",
-          "messaging_rate_limit_bucket",
-          "iam_security_event"
         ]
       }
     },

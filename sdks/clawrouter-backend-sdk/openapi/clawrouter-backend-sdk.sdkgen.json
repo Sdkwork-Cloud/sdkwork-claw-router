@@ -8160,6 +8160,14 @@
         "description": "Admin dashboard data response schema exposed by Claw Router.",
         "name": "AdminDashboardDataResponse",
         "properties": {
+          "activeUsers": {
+            "description": "Active users field on admin dashboard data response.",
+            "format": "int64",
+            "pattern": "^[0-9]+$",
+            "type": "string",
+            "x-sdkwork-int64-string": true,
+            "x-sdkwork-rust-type": "i64"
+          },
           "modelDistribution": {
             "description": "Model distribution field on admin dashboard data response.",
             "items": {
@@ -8197,6 +8205,7 @@
           }
         },
         "required": [
+          "activeUsers",
           "userConsumption",
           "multimodal",
           "traffic",
@@ -18494,145 +18503,6 @@
         "type": "object",
         "x-operation-id": "channels.verify"
       },
-      "CommerceInventoryLedgerItem": {
-        "additionalProperties": false,
-        "description": "Commerce inventory ledger item schema exposed by Claw Router.",
-        "properties": {
-          "balanceAfter": {
-            "description": "Balance after field on commerce inventory ledger item.",
-            "format": "int64",
-            "pattern": "^[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "businessType": {
-            "description": "Business type field on commerce inventory ledger item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "createdAt": {
-            "description": "Created at field on commerce inventory ledger item.",
-            "maxLength": 64,
-            "minLength": 1,
-            "type": "string"
-          },
-          "direction": {
-            "description": "Direction field on commerce inventory ledger item.",
-            "enum": [
-              "in",
-              "out",
-              "reserve",
-              "release",
-              "deduct"
-            ],
-            "type": "string"
-          },
-          "id": {
-            "description": "Id field on commerce inventory ledger item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "movementNo": {
-            "description": "Movement no field on commerce inventory ledger item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "quantity": {
-            "description": "Quantity field on commerce inventory ledger item.",
-            "format": "int64",
-            "pattern": "^[1-9][0-9]*$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "skuId": {
-            "description": "Sku id field on commerce inventory ledger item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "sourceId": {
-            "description": "Source id field on commerce inventory ledger item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "sourceType": {
-            "description": "Source type field on commerce inventory ledger item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "warehouseId": {
-            "description": "Warehouse id field on commerce inventory ledger item.",
-            "maxLength": 128,
-            "nullable": true,
-            "type": "string"
-          }
-        },
-        "required": [
-          "id",
-          "movementNo",
-          "skuId",
-          "direction",
-          "quantity",
-          "balanceAfter",
-          "businessType",
-          "sourceType",
-          "sourceId",
-          "createdAt"
-        ],
-        "type": "object"
-      },
-      "CommerceInventoryLedgerListResponse": {
-        "additionalProperties": false,
-        "description": "Commerce inventory ledger list response schema exposed by Claw Router.",
-        "name": "CommerceInventoryLedgerListResponse",
-        "properties": {
-          "items": {
-            "description": "Items field on commerce inventory ledger list response.",
-            "items": {
-              "$ref": "#/components/schemas/CommerceInventoryLedgerItem"
-            },
-            "type": "array"
-          },
-          "page": {
-            "description": "Page field on commerce inventory ledger list response.",
-            "format": "int64",
-            "pattern": "^[1-9][0-9]*$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "pageSize": {
-            "description": "Page size field on commerce inventory ledger list response.",
-            "format": "int64",
-            "pattern": "^[1-9][0-9]*$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "total": {
-            "description": "Total field on commerce inventory ledger list response.",
-            "format": "int64",
-            "pattern": "^[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          }
-        },
-        "required": [
-          "items",
-          "total",
-          "page",
-          "pageSize"
-        ],
-        "type": "object"
-      },
       "ContractsListResult": {
         "additionalProperties": false,
         "description": "Contracts list result schema exposed by Claw Router.",
@@ -20068,33 +19938,6 @@
         "type": "object",
         "x-operation-id": "installation.status.retrieve"
       },
-      "InventoryLedgerEntriesListResult": {
-        "additionalProperties": false,
-        "description": "Inventory ledger entries list result schema exposed by Claw Router.",
-        "properties": {
-          "code": {
-            "description": "Business response code.",
-            "type": "string"
-          },
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/CommerceInventoryLedgerListResponse"
-              }
-            ],
-            "description": "Data field on inventory ledger entries list result."
-          },
-          "msg": {
-            "description": "Human-readable response message.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "code"
-        ],
-        "type": "object",
-        "x-operation-id": "inventory.ledgerEntries.list"
-      },
       "JsonNull": {
         "description": "JSON null value.",
         "type": "null"
@@ -20533,33 +20376,6 @@
         ],
         "type": "object",
         "x-operation-id": "members.list"
-      },
-      "MembershipsPlansDeleteResult": {
-        "additionalProperties": false,
-        "description": "Memberships plans delete result schema exposed by Claw Router.",
-        "properties": {
-          "code": {
-            "description": "Business response code.",
-            "type": "string"
-          },
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/AdminDeleteResponse"
-              }
-            ],
-            "description": "Data field on memberships plans delete result."
-          },
-          "msg": {
-            "description": "Human-readable response message.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "code"
-        ],
-        "type": "object",
-        "x-operation-id": "memberships.plans.delete"
       },
       "MessagingCollectionResponse": {
         "additionalProperties": false,
@@ -39189,157 +39005,6 @@
         "x-sdkwork-api-authority": "sdkwork-claw-router.backend"
       }
     },
-    "/backend/v3/api/inventory/ledger_entries": {
-      "get": {
-        "description": "Returns immutable stock movement ledger entries for audit, reconciliation, and operational traceability. Reads commerce_inventory_ledger, commerce_inventory_stock, commerce_product_sku. Writes none. File targets none.",
-        "operationId": "inventory.ledgerEntries.list",
-        "parameters": [
-          {
-            "description": "Sku id query parameter.",
-            "in": "query",
-            "name": "sku_id",
-            "required": false,
-            "schema": {
-              "maxLength": 128,
-              "type": "string"
-            }
-          },
-          {
-            "description": "Warehouse id query parameter.",
-            "in": "query",
-            "name": "warehouse_id",
-            "required": false,
-            "schema": {
-              "maxLength": 128,
-              "type": "string"
-            }
-          },
-          {
-            "description": "Source type query parameter.",
-            "in": "query",
-            "name": "source_type",
-            "required": false,
-            "schema": {
-              "maxLength": 128,
-              "type": "string"
-            }
-          },
-          {
-            "description": "Source id query parameter.",
-            "in": "query",
-            "name": "source_id",
-            "required": false,
-            "schema": {
-              "maxLength": 128,
-              "type": "string"
-            }
-          },
-          {
-            "description": "Page query parameter.",
-            "in": "query",
-            "name": "page",
-            "required": false,
-            "schema": {
-              "format": "int64",
-              "pattern": "^[1-9][0-9]*$",
-              "type": "string",
-              "x-sdkwork-int64-string": true,
-              "x-sdkwork-rust-type": "i64"
-            }
-          },
-          {
-            "description": "Page size query parameter.",
-            "in": "query",
-            "name": "page_size",
-            "required": false,
-            "schema": {
-              "format": "int64",
-              "pattern": "^[1-9][0-9]*$",
-              "type": "string",
-              "x-sdkwork-int64-string": true,
-              "x-sdkwork-rust-type": "i64"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/InventoryLedgerEntriesListResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "List inventory ledger entries",
-        "tags": [
-          "commerce"
-        ],
-        "x-contract-kind": "read",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "commerce_inventory_ledger",
-          "commerce_inventory_stock",
-          "commerce_product_sku"
-        ],
-        "x-route-scope": "admin",
-        "x-sdk-domain": "commerce",
-        "x-sdkwork-domain": "commerce",
-        "x-sdkwork-resource": "inventory.ledgerEntries",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-inventory/src/inventoryService.ts",
-        "x-write-tables": [],
-        "x-sdkwork-owner": "sdkwork-claw-router",
-        "x-sdkwork-api-authority": "sdkwork-claw-router.backend"
-      }
-    },
     "/backend/v3/api/mcp/bindings/{bindingId}": {
       "put": {
         "description": "Updates an MCP binding owner, revision or tool scope, allow/deny policy, priority, enablement, and status. Reads ai_mcp_server, ai_mcp_server_revision, ai_mcp_tool, ai_mcp_binding. Writes ai_mcp_binding, ops_audit_log. File targets none.",
@@ -40819,103 +40484,6 @@
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-mcp/src/mcpService.ts",
         "x-write-tables": [
           "ai_mcp_tool",
-          "ops_audit_log"
-        ],
-        "x-sdkwork-owner": "sdkwork-claw-router",
-        "x-sdkwork-api-authority": "sdkwork-claw-router.backend"
-      }
-    },
-    "/backend/v3/api/memberships/plans/{planId}": {
-      "delete": {
-        "description": "Standard appbase commerce API for memberships.plans.delete; no legacy billing compatibility route is exposed. Reads commerce_membership_plan, commerce_membership_package, commerce_membership. Writes commerce_membership_plan, ops_audit_log. File targets none.",
-        "operationId": "memberships.plans.delete",
-        "parameters": [
-          {
-            "description": "Plan id path parameter.",
-            "in": "path",
-            "name": "planId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MembershipsPlansDeleteResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "Memberships Plans Delete",
-        "tags": [
-          "commerce"
-        ],
-        "x-contract-kind": "delete",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "commerce_membership_plan",
-          "commerce_membership_package",
-          "commerce_membership"
-        ],
-        "x-route-scope": "admin",
-        "x-sdk-domain": "commerce",
-        "x-sdkwork-domain": "commerce",
-        "x-sdkwork-resource": "memberships.plans",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts",
-        "x-write-tables": [
-          "commerce_membership_plan",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -52937,7 +52505,7 @@
     },
     "/backend/v3/api/system/dashboard/admin/overview": {
       "get": {
-        "description": "List dashboard data. Reads ai_usage_fact, ai_request_trace, ops_metric_snapshot. Writes none. File targets none.",
+        "description": "List dashboard data. Reads ai_usage_fact, ai_request_trace, ops_metric_snapshot, iam_user, iam_organization_membership. Writes none. File targets none.",
         "operationId": "dashboard.admin.overview.retrieve",
         "parameters": [],
         "responses": {
@@ -53007,7 +52575,9 @@
         "x-read-sources": [
           "ai_usage_fact",
           "ai_request_trace",
-          "ops_metric_snapshot"
+          "ops_metric_snapshot",
+          "iam_user",
+          "iam_organization_membership"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "system",
@@ -55314,6 +54884,7 @@
       "sdkwork-commerce-backend-sdk": [
         "DELETE memberships/package_groups/{}",
         "DELETE memberships/packages/{}",
+        "DELETE memberships/plans/{} memberships.plans.delete",
         "DELETE payments/provider_accounts/{}",
         "DELETE recharges/packages/{}",
         "GET audit/commerce_events",
@@ -55321,6 +54892,7 @@
         "GET commerce_reports/payment_reconciliation",
         "GET commerce_reports/refunds",
         "GET fulfillments",
+        "GET inventory/ledger_entries inventory.ledgerEntries.list",
         "GET inventory/reservations",
         "GET inventory/stocks",
         "GET invoices",

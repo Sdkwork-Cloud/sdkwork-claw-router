@@ -77,6 +77,16 @@ func (a *AiApi) ChannelGroupsBindingsUpdate(channelGroupId string, body sdktypes
     return decodeResult[sdktypes.ChannelGroupsChannelBindingsUpdateResult](raw)
 }
 
+// List group route explain
+func (a *AiApi) ChannelGroupsRouteExplainRetrieve(channelGroupId string) (sdktypes.ChannelGroupsRouteExplainRetrieveResult, error) {
+    raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/ai/channel_groups/%s/route_explain", SerializePathParameter(channelGroupId, PathParameterSpec{Name: "channelGroupId", Style: "simple", Explode: false}))), nil, nil)
+    if err != nil {
+        var zero sdktypes.ChannelGroupsRouteExplainRetrieveResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.ChannelGroupsRouteExplainRetrieveResult](raw)
+}
+
 // List model mappings
 func (a *AiApi) ModelMappingsList(bindingType *string, vendorCode *string, channelId *string, channelCode *string, q *string) (sdktypes.ModelMappingsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
@@ -336,6 +346,16 @@ func (a *AiApi) ResourcesUpdate(resourceId string, body sdktypes.AdminAiResource
         return zero, err
     }
     return decodeResult[sdktypes.AiResourcesUpdateResult](raw)
+}
+
+// List runtime route explain
+func (a *AiApi) RouteExplainCreate(body sdktypes.AdminRuntimeRouteExplainRequest) (sdktypes.RouteExplainCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath("/ai/route_explain"), body, nil, nil, "application/json")
+    if err != nil {
+        var zero sdktypes.RouteExplainCreateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.RouteExplainCreateResult](raw)
 }
 
 type PathParameterSpec struct {

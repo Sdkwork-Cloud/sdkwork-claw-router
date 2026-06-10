@@ -533,17 +533,16 @@ test("admin commerce packages are split by product, inventory, order, payment, m
       }
     }
     assert.doesNotMatch(viewSource, /sdkwork-clawrouter-pc-commons\/runtime/);
-    if (
-      packageName === "sdkwork-clawrouter-pc-admin-catalog"
-      || packageName === "sdkwork-clawrouter-pc-admin-orders"
-      || packageName === "sdkwork-clawrouter-pc-admin-finance"
-    ) {
-      assert.doesNotMatch(serviceSource, /sdkwork-clawrouter-pc-commons\/runtime/);
-      assert.doesNotMatch(serviceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.catalog/);
-      assert.doesNotMatch(serviceSource, /\bfetch\s*\(|axios|XMLHttpRequest/);
+    if (packageName === "sdkwork-clawrouter-pc-admin-catalog") {
+      assert.match(serviceSource, /sdkwork-commerce-pc-admin-product/);
     } else {
-      assert.match(serviceSource, /sdkwork-clawrouter-pc-commons\/runtime/);
+      assert.match(serviceSource, /getSdkworkCommerceService/);
+      assert.doesNotMatch(
+        serviceSource,
+        /getClawRouterAppSdkClient\(\)\.commerce|getClawRouterBackendSdkClient\(\)\.commerce/,
+      );
     }
+    assert.doesNotMatch(serviceSource, /\bfetch\s*\(|axios|XMLHttpRequest/);
     if (packageName === "sdkwork-clawrouter-pc-admin-wallet") {
       assert.doesNotMatch(viewSource, /rechargePackages/);
       assert.doesNotMatch(serviceSource, /recharges\.packages\.list/);

@@ -3,7 +3,7 @@ use std::sync::Arc;
 use crate::api::paths::app_path;
 use crate::api::paths::append_query_string;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{IamRuntimeRetrieveResult, IamVerificationPolicyRetrieveResult, SiteRuntimeRetrieveResult};
+use crate::models::{SiteRuntimeRetrieveResult};
 
 #[derive(Clone)]
 pub struct SystemApi {
@@ -13,22 +13,6 @@ pub struct SystemApi {
 impl SystemApi {
     pub fn new(client: Arc<SdkworkHttpClient>) -> Self {
         Self { client }
-    }
-
-    /// Retrieve public IAM runtime settings
-    pub async fn iam_runtime_retrieve(&self, tenant_code: Option<&str>, organization_code: Option<&str>) -> Result<IamRuntimeRetrieveResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("tenant_code", tenant_code, "form", true, false, None),
-            QueryParameterSpec::new("organization_code", organization_code, "form", true, false, None),
-        ]);
-        let path = append_query_string(app_path(&"/system/iam/runtime".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Retrieve public IAM verification policy
-    pub async fn iam_verification_policy_retrieve(&self) -> Result<IamVerificationPolicyRetrieveResult, SdkworkError> {
-        let path = app_path(&"/system/iam/verification_policy".to_string());
-        self.client.get(&path, None, None).await
     }
 
     /// Retrieve public site runtime branding settings

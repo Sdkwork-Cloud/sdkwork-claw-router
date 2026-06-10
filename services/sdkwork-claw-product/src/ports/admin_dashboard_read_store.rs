@@ -1,7 +1,7 @@
 use std::future::Future;
 use std::pin::Pin;
 
-use serde::Serialize;
+use serde::{Serialize, Serializer};
 
 use crate::domain::DomainResult;
 
@@ -24,11 +24,20 @@ pub struct AdminDashboardQuery {
 #[derive(Debug, Clone, Default, Serialize, PartialEq)]
 #[serde(rename_all = "camelCase")]
 pub struct AdminDashboardSnapshot {
+    #[serde(serialize_with = "serialize_i64_as_string")]
+    pub active_users: i64,
     pub user_consumption: Vec<AdminPieChartItem>,
     pub multimodal: Vec<AdminPieChartItem>,
     pub traffic: Vec<AdminDashboardTrafficItem>,
     pub model_distribution: Vec<AdminPieChartItem>,
     pub recent_usage: Vec<AdminDashboardRecentUsageItem>,
+}
+
+fn serialize_i64_as_string<S>(value: &i64, serializer: S) -> Result<S::Ok, S::Error>
+where
+    S: Serializer,
+{
+    serializer.serialize_str(&value.to_string())
 }
 
 #[derive(Debug, Clone, Serialize, PartialEq)]

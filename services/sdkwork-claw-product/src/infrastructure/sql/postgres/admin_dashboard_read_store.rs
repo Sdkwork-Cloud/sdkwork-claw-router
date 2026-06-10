@@ -140,6 +140,18 @@ ORDER BY t.started_at DESC NULLS LAST, t.id DESC
 LIMIT 10
 "#;
 
+const LOAD_ACTIVE_USERS: &str = r#"
+SELECT COUNT(DISTINCT u.id) AS active_users
+FROM iam_user u
+JOIN iam_organization_membership m
+  ON m.tenant_id = u.tenant_id
+ AND m.user_id = u.id
+ AND m.organization_id = $2::text
+ AND (LOWER(CAST(m.status AS TEXT)) = 'active' OR CAST(m.status AS TEXT) = '1')
+WHERE u.tenant_id = $1::text
+  AND (LOWER(CAST(u.status AS TEXT)) = 'active' OR CAST(u.status AS TEXT) = '1')
+"#;
+
 #[derive(Debug, Clone)]
 pub struct PostgresAdminDashboardReadStore {
     pool: PgPool,
@@ -155,6 +167,8 @@ impl AdminDashboardReadStore for PostgresAdminDashboardReadStore {
     fn load_dashboard<'a>(&'a self, query: AdminDashboardQuery) -> AdminDashboardReadFuture<'a> {
         Box::pin(async move {
             let subject = query.subject;
+            let active_users =
+                load_active_users(&self.pool, subject.tenant_id, subject.organization_id).await?;
             let user_consumption =
                 load_user_consumption(&self.pool, subject.tenant_id, subject.organization_id)
                     .await?;
@@ -169,6 +183,7 @@ impl AdminDashboardReadStore for PostgresAdminDashboardReadStore {
                 load_recent_usage(&self.pool, subject.tenant_id, subject.organization_id).await?;
 
             Ok(AdminDashboardSnapshot {
+                active_users,
                 user_consumption,
                 multimodal,
                 traffic,
@@ -177,6 +192,19 @@ impl AdminDashboardReadStore for PostgresAdminDashboardReadStore {
             })
         })
     }
+}
+
+async fn load_active_users(
+    pool: &PgPool,
+    tenant_id: i64,
+    organization_id: i64,
+) -> Result<i64, DomainError> {
+    sqlx::query_scalar::<_, i64>(LOAD_ACTIVE_USERS)
+        .bind(tenant_id)
+        .bind(organization_id)
+        .fetch_one(pool)
+        .await
+        .map_err(sql_error)
 }
 
 async fn load_user_consumption(

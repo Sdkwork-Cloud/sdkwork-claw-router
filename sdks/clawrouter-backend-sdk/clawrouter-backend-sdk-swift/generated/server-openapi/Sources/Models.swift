@@ -2025,6 +2025,52 @@ public struct AdminChannelGroupMutationResponse: Codable {
     }
 }
 
+public struct AdminChannelGroupRouteExplainIssue: Codable {
+    public let code: String?
+    public let details: [String]?
+    public let severity: String?
+
+
+    public init(code: String? = nil, details: [String]? = nil, severity: String? = nil) {
+        self.code = code
+        self.details = details
+        self.severity = severity
+    }
+}
+
+public struct AdminChannelGroupRouteExplainResponse: Codable {
+    public let activeHealthyBindingCount: Int?
+    public let apiScope: [String]?
+    public let capabilities: [String]?
+    public let configuredResourceAccessCount: Int?
+    public let configuredResourceGroupAccessCount: Int?
+    public let effectiveResourceCodes: [String]?
+    public let issueCodes: [String]?
+    public let issues: [AdminChannelGroupRouteExplainIssue]?
+    public let ready: Bool?
+    public let resourceCodes: [String]?
+    public let resourceGroupCodes: [String]?
+    public let routableBindingCount: Int?
+    public let source: String?
+
+
+    public init(activeHealthyBindingCount: Int? = nil, apiScope: [String]? = nil, capabilities: [String]? = nil, configuredResourceAccessCount: Int? = nil, configuredResourceGroupAccessCount: Int? = nil, effectiveResourceCodes: [String]? = nil, issueCodes: [String]? = nil, issues: [AdminChannelGroupRouteExplainIssue]? = nil, ready: Bool? = nil, resourceCodes: [String]? = nil, resourceGroupCodes: [String]? = nil, routableBindingCount: Int? = nil, source: String? = nil) {
+        self.activeHealthyBindingCount = activeHealthyBindingCount
+        self.apiScope = apiScope
+        self.capabilities = capabilities
+        self.configuredResourceAccessCount = configuredResourceAccessCount
+        self.configuredResourceGroupAccessCount = configuredResourceGroupAccessCount
+        self.effectiveResourceCodes = effectiveResourceCodes
+        self.issueCodes = issueCodes
+        self.issues = issues
+        self.ready = ready
+        self.resourceCodes = resourceCodes
+        self.resourceGroupCodes = resourceGroupCodes
+        self.routableBindingCount = routableBindingCount
+        self.source = source
+    }
+}
+
 public struct AdminChannelGroupUpdateRequest: Codable {
     public let capacity: [String: Any]?
     public let groupCode: String?
@@ -4215,6 +4261,128 @@ public struct AdminRuntimeRegionSettingsUpdateRequest: Codable {
     }
 }
 
+public struct AdminRuntimeRouteExplainCandidate: Codable {
+    public let apiCode: String?
+    public let catalogKey: String?
+    public let channelGroupCode: String?
+    public let channelGroupId: String?
+    public let channelId: String?
+    public let credentialId: String?
+    public let credentialRotation: String?
+    public let kind: String?
+    public let policyId: String?
+    public let pricingPlanCode: String?
+    public let providerCode: String?
+    public let providerModel: String?
+    public let regionCode: String?
+    public let requestedModel: String?
+    public let ruleId: String?
+    public let timeoutMs: Int?
+
+
+    public init(apiCode: String? = nil, catalogKey: String? = nil, channelGroupCode: String? = nil, channelGroupId: String? = nil, channelId: String? = nil, credentialId: String? = nil, credentialRotation: String? = nil, kind: String? = nil, policyId: String? = nil, pricingPlanCode: String? = nil, providerCode: String? = nil, providerModel: String? = nil, regionCode: String? = nil, requestedModel: String? = nil, ruleId: String? = nil, timeoutMs: Int? = nil) {
+        self.apiCode = apiCode
+        self.catalogKey = catalogKey
+        self.channelGroupCode = channelGroupCode
+        self.channelGroupId = channelGroupId
+        self.channelId = channelId
+        self.credentialId = credentialId
+        self.credentialRotation = credentialRotation
+        self.kind = kind
+        self.policyId = policyId
+        self.pricingPlanCode = pricingPlanCode
+        self.providerCode = providerCode
+        self.providerModel = providerModel
+        self.regionCode = regionCode
+        self.requestedModel = requestedModel
+        self.ruleId = ruleId
+        self.timeoutMs = timeoutMs
+    }
+}
+
+public struct AdminRuntimeRouteExplainIssue: Codable {
+    public let code: String?
+    public let message: String?
+    public let severity: String?
+
+
+    public init(code: String? = nil, message: String? = nil, severity: String? = nil) {
+        self.code = code
+        self.message = message
+        self.severity = severity
+    }
+}
+
+public struct AdminRuntimeRouteExplainRequest: Codable {
+    public let apiCode: String?
+    public let apiKeyId: String?
+    public let billingMeter: String?
+    public let capability: String?
+    public let catalogKey: String?
+    public let channelGroupId: String?
+    public let model: String?
+    public let resourceCode: String?
+    public let routeKey: String?
+
+
+    public init(apiCode: String? = nil, apiKeyId: String? = nil, billingMeter: String? = nil, capability: String? = nil, catalogKey: String? = nil, channelGroupId: String? = nil, model: String? = nil, resourceCode: String? = nil, routeKey: String? = nil) {
+        self.apiCode = apiCode
+        self.apiKeyId = apiKeyId
+        self.billingMeter = billingMeter
+        self.capability = capability
+        self.catalogKey = catalogKey
+        self.channelGroupId = channelGroupId
+        self.model = model
+        self.resourceCode = resourceCode
+        self.routeKey = routeKey
+    }
+}
+
+public struct AdminRuntimeRouteExplainResponse: Codable {
+    public let apiCode: String?
+    public let apiKeyId: String?
+    public let billingMeter: String?
+    public let blockedReasons: [AdminRuntimeRouteExplainIssue]?
+    public let candidateCount: Int?
+    public let capability: String?
+    public let catalogKey: String?
+    public let channelGroupId: String?
+    public let groupCode: String?
+    public let model: String?
+    public let policyId: String?
+    public let policySnapshotVersion: String?
+    public let pricingPlanCode: String?
+    public let ready: Bool?
+    public let resourceCode: String?
+    public let ruleId: String?
+    public let selectedCandidates: [AdminRuntimeRouteExplainCandidate]?
+    public let source: String?
+    public let warnings: [AdminRuntimeRouteExplainIssue]?
+
+
+    public init(apiCode: String? = nil, apiKeyId: String? = nil, billingMeter: String? = nil, blockedReasons: [AdminRuntimeRouteExplainIssue]? = nil, candidateCount: Int? = nil, capability: String? = nil, catalogKey: String? = nil, channelGroupId: String? = nil, groupCode: String? = nil, model: String? = nil, policyId: String? = nil, policySnapshotVersion: String? = nil, pricingPlanCode: String? = nil, ready: Bool? = nil, resourceCode: String? = nil, ruleId: String? = nil, selectedCandidates: [AdminRuntimeRouteExplainCandidate]? = nil, source: String? = nil, warnings: [AdminRuntimeRouteExplainIssue]? = nil) {
+        self.apiCode = apiCode
+        self.apiKeyId = apiKeyId
+        self.billingMeter = billingMeter
+        self.blockedReasons = blockedReasons
+        self.candidateCount = candidateCount
+        self.capability = capability
+        self.catalogKey = catalogKey
+        self.channelGroupId = channelGroupId
+        self.groupCode = groupCode
+        self.model = model
+        self.policyId = policyId
+        self.policySnapshotVersion = policySnapshotVersion
+        self.pricingPlanCode = pricingPlanCode
+        self.ready = ready
+        self.resourceCode = resourceCode
+        self.ruleId = ruleId
+        self.selectedCandidates = selectedCandidates
+        self.source = source
+        self.warnings = warnings
+    }
+}
+
 public struct AdminServiceNodeCreateRequest: Codable {
     public let domain: String?
     public let ip: String?
@@ -6150,6 +6318,19 @@ public struct ChannelGroupsListResult: Codable {
 
 
     public init(code: String? = nil, data: AdminChannelGroupsResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct ChannelGroupsRouteExplainRetrieveResult: Codable {
+    public let code: String?
+    public let data: AdminChannelGroupRouteExplainResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: AdminChannelGroupRouteExplainResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
         self.msg = msg
@@ -8442,6 +8623,19 @@ public struct RiskEventsListResult: Codable {
 
 
     public init(code: String? = nil, data: ServiceProviderCollectionResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct RouteExplainCreateResult: Codable {
+    public let code: String?
+    public let data: AdminRuntimeRouteExplainResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: AdminRuntimeRouteExplainResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
         self.msg = msg

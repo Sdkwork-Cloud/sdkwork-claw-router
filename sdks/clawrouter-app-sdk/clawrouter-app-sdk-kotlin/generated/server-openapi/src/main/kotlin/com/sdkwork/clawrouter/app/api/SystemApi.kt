@@ -8,22 +8,6 @@ import com.sdkwork.clawrouter.app.http.HttpClient
 
 class SystemApi(private val client: HttpClient) {
 
-    /** Retrieve public IAM runtime settings */
-    suspend fun iamRuntimeRetrieve(tenantCode: String? = null, organizationCode: String? = null): IamRuntimeRetrieveResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("tenant_code", tenantCode, "form", true, false, null),
-            QueryParameterSpec("organization_code", organizationCode, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/system/iam/runtime"), query))
-        return client.convertValue(raw, object : TypeReference<IamRuntimeRetrieveResult>() {})
-    }
-
-    /** Retrieve public IAM verification policy */
-    suspend fun iamVerificationPolicyRetrieve(): IamVerificationPolicyRetrieveResult? {
-        val raw = client.get(ApiPaths.appPath("/system/iam/verification_policy"))
-        return client.convertValue(raw, object : TypeReference<IamVerificationPolicyRetrieveResult>() {})
-    }
-
     /** Retrieve public site runtime branding settings */
     suspend fun siteRuntimeRetrieve(tenantCode: String? = null, organizationCode: String? = null): SiteRuntimeRetrieveResult? {
         val query = buildQueryString(listOf(

@@ -9,7 +9,6 @@ type SdkworkAppClient struct {
     http *sdkhttp.Client
     Agents *api.AgentsApi
     Ai *api.AiApi
-    Auth *api.AuthApi
     Chat *api.ChatApi
     Content *api.ContentApi
     Ecosystem *api.EcosystemApi
@@ -33,7 +32,6 @@ func NewSdkworkAppClientWithConfig(config sdkhttp.Config) *SdkworkAppClient {
         http: client,
         Agents: api.NewAgentsApi(client),
         Ai: api.NewAiApi(client),
-        Auth: api.NewAuthApi(client),
         Chat: api.NewChatApi(client),
         Content: api.NewContentApi(client),
         Ecosystem: api.NewEcosystemApi(client),

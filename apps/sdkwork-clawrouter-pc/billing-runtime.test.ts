@@ -369,7 +369,8 @@ test("recharge order service no longer exposes a frontend cancellation path for 
   assert.doesNotMatch(rechargeServiceSource, /static async cancelRechargeOrder/);
   assert.doesNotMatch(rechargeServiceSource, /commerce\.orders\.cancellations\.create/);
   assert.match(checkoutServiceSource, /appOrdersCancellationsCreate/);
-  assert.match(checkoutServiceSource, /getSdkworkCommerceService\(\)\.orders\.cancellations\.create/);
+  assert.match(checkoutServiceSource, /getClawRouterAppSdkClient\(\)\.commerce\.orders\.cancellations\.create/);
+  assert.doesNotMatch(checkoutServiceSource, /getSdkworkCommerceService/);
 });
 
 test("console recharge page matches the product recharge reference layout", () => {

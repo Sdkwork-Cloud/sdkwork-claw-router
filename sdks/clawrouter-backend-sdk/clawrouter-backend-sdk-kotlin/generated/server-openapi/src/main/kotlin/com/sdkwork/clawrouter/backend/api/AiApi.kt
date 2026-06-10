@@ -44,6 +44,12 @@ class AiApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<ChannelGroupsChannelBindingsUpdateResult>() {})
     }
 
+    /** List group route explain */
+    suspend fun channelGroupsRouteExplainRetrieve(channelGroupId: String): ChannelGroupsRouteExplainRetrieveResult? {
+        val raw = client.get(ApiPaths.backendPath("/ai/channel_groups/${serializePathParameter(channelGroupId, PathParameterSpec("channelGroupId", "simple", false))}/route_explain"))
+        return client.convertValue(raw, object : TypeReference<ChannelGroupsRouteExplainRetrieveResult>() {})
+    }
+
     /** List model mappings */
     suspend fun modelMappingsList(bindingType: String? = null, vendorCode: String? = null, channelId: String? = null, channelCode: String? = null, q: String? = null): ModelMappingsListResult? {
         val query = buildQueryString(listOf(
@@ -207,6 +213,12 @@ class AiApi(private val client: HttpClient) {
     suspend fun resourcesUpdate(resourceId: String, body: AdminAiResourceUpdateRequest): AiResourcesUpdateResult? {
         val raw = client.put(ApiPaths.backendPath("/ai/resources/${serializePathParameter(resourceId, PathParameterSpec("resourceId", "simple", false))}"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<AiResourcesUpdateResult>() {})
+    }
+
+    /** List runtime route explain */
+    suspend fun routeExplainCreate(body: AdminRuntimeRouteExplainRequest): RouteExplainCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/ai/route_explain"), body, null, null, "application/json")
+        return client.convertValue(raw, object : TypeReference<RouteExplainCreateResult>() {})
     }
 
     private data class PathParameterSpec(val name: String, val style: String, val explode: Boolean)

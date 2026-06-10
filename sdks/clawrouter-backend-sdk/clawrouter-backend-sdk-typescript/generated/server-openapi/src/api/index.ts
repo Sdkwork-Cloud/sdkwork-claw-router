@@ -6,7 +6,6 @@ export * from './content';
 export * from './ecosystem';
 export * from './iam';
 export * from './integration';
-export * from './commerce';
 export * from './mcp';
 export * from './messaging';
 export * from './platform';

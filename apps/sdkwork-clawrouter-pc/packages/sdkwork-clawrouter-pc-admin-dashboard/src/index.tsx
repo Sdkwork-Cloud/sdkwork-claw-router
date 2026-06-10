@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Key, BarChart2, Users, Coins, Database, Zap, Clock, Activity, Fingerprint, Image, Mic, MessageSquare, ArrowDownRight, ArrowUpRight, ExternalLink, Loader2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Cell, PieChart, Pie, Legend } from 'recharts';
-import { AdminDashboardService, DashboardSummaryCard, PieChartData, RecentUsageTrace, TrafficData } from './dashboardService';
+import { AdminDashboardService, DashboardSummaryCard, DashboardTrafficTimeRange, PieChartData, RecentUsageTrace, TrafficData } from './dashboardService';
 
 import { useTranslation } from 'react-i18next';
 type ChartPayloadEntry = {
@@ -10,7 +10,15 @@ type ChartPayloadEntry = {
   name?: string | number;
   value?: string | number;
   payload?: {
+    name?: string | number;
     value?: string | number;
+    chartValue?: string | number;
+    tokens?: string | number;
+    requests?: string | number;
+    cost?: string | number;
+    chartTokens?: string | number;
+    chartRequests?: string | number;
+    chartCost?: string | number;
   };
 };
 
@@ -24,6 +32,14 @@ type CustomPieLegendProps = {
   payload?: ChartPayloadEntry[];
   unit: '$' | '%';
 };
+
+type DashboardTrendMetric = 'tokens' | 'cost' | 'requests';
+
+const TREND_CHART_DATA_KEYS = {
+  tokens: 'chartTokens',
+  cost: 'chartCost',
+  requests: 'chartRequests',
+} as const;
 
 const SUMMARY_CARD_ICONS = [Users, Database, BarChart2, Coins, Activity, Clock, Key, Zap] as const;
 const SUMMARY_CARD_COLORS = [
@@ -42,7 +58,8 @@ type DashboardChartTab = 'modelDistribution' | 'userConsumption';
 export function DashboardAdmin() {
   const { t } = useTranslation();
   const [chartTab, setChartTab] = useState<DashboardChartTab>('modelDistribution');
-  const [trendMetric, setTrendMetric] = useState<'tokens' | 'cost' | 'requests'>('tokens');
+  const [trafficTimeRange, setTrafficTimeRange] = useState<DashboardTrafficTimeRange>('daily');
+  const [trendMetric, setTrendMetric] = useState<DashboardTrendMetric>('tokens');
   const [chartType, setChartType] = useState<'area' | 'bar'>('area');
 
   const [loading, setLoading] = useState(true);
@@ -53,11 +70,12 @@ export function DashboardAdmin() {
   const [trafficData, setTrafficData] = useState<TrafficData[]>([]);
   const [modelDistribution, setModelDistribution] = useState<PieChartData[]>([]);
   const [recentUsage, setRecentUsage] = useState<RecentUsageTrace[]>([]);
+  const trendChartDataKey = TREND_CHART_DATA_KEYS[trendMetric];
   useEffect(() => {
     let disposed = false;
     setLoading(true);
     setErrorMessage('');
-    AdminDashboardService.fetchDashboardData(t)
+    AdminDashboardService.fetchDashboardData(t, { timeRange: trafficTimeRange })
       .then(data => {
         if (disposed) {
           return;
@@ -89,7 +107,36 @@ export function DashboardAdmin() {
     return () => {
       disposed = true;
     };
-  }, [t]);
+  }, [t, trafficTimeRange]);
+
+  const getTrendMetricLabel = (name: string | number | undefined): string | undefined => {
+    if (name === 'tokens' || name === 'chartTokens') {
+      return t("admin.dashboard.index.text.1rty913", "Token 消耗");
+    }
+    if (name === 'cost' || name === 'chartCost') {
+      return t("admin.dashboard.index.text.3nwvcy", "金额消耗");
+    }
+    if (name === 'requests' || name === 'chartRequests') {
+      return t("admin.dashboard.index.text.1j8nxcs", "API 请求");
+    }
+    return undefined;
+  };
+
+  const readTooltipValue = (entry: ChartPayloadEntry): string | number => {
+    if (entry.name === 'chartTokens') {
+      return entry.payload?.tokens ?? 0;
+    }
+    if (entry.name === 'chartRequests') {
+      return entry.payload?.requests ?? 0;
+    }
+    if (entry.name === 'chartCost') {
+      return entry.payload?.cost ?? 0;
+    }
+    if (entry.name === 'chartValue') {
+      return entry.payload?.value ?? 0;
+    }
+    return entry.value ?? 0;
+  };
 
   const CustomTooltip = ({ active, payload = [], label }: CustomTooltipProps) => {
     if (active && payload.length) {
@@ -101,10 +148,10 @@ export function DashboardAdmin() {
               <div key={index} className="flex items-center gap-2 text-xs">
                 <div className="w-2 h-2 rounded-full" style={{ backgroundColor: entry.color ?? '#64748b' }} />
                 <span className="text-slate-600 dark:text-slate-400">
-                  {entry.name === 'tokens' ? t("admin.dashboard.index.text.1rty913", "Token 消耗") : entry.name === 'cost' ? t("admin.dashboard.index.text.3nwvcy", "金额消耗") : entry.name === 'requests' ? t("admin.dashboard.index.text.1j8nxcs", "API 请求") : String(entry.name ?? '')}
+                  {getTrendMetricLabel(entry.name) ?? String(entry.name === 'chartValue' ? label ?? entry.payload?.name ?? '' : entry.name ?? '')}
                 </span>
                 <span className="font-semibold text-slate-900 dark:text-white ml-auto pl-4">
-                  {entry.name === 'cost' ? `$${Number(entry.value ?? 0).toFixed(2)}` : Number(entry.value ?? 0).toLocaleString()}
+                  {entry.name === 'cost' || entry.name === 'chartCost' ? `$${Number(readTooltipValue(entry)).toFixed(2)}` : Number(readTooltipValue(entry)).toLocaleString()}
                 </span>
               </div>
             ))}
@@ -153,7 +200,8 @@ export function DashboardAdmin() {
   }
 
   return (
-    <div className="w-full flex flex-col space-y-4 pb-8">
+    <div className="w-full h-full min-h-0 overflow-y-auto custom-scrollbar">
+      <div className="flex min-h-full w-full flex-col space-y-4 pb-8">
 
       {/* Top Value Cards (Grid of 8) */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 shrink-0">
@@ -180,12 +228,34 @@ export function DashboardAdmin() {
         <div className="mb-6 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
           <div className="flex items-center gap-4">
             <h3 className="text-base font-bold text-slate-900 dark:text-white whitespace-nowrap">{t("admin.dashboard.index.text.yomhnm", "聚合指标大盘")}</h3>
-            <div className="h-6 w-px bg-slate-200 dark:bg-white/10 hidden lg:block"></div>
-
-            <span className="text-xs text-slate-500 dark:text-slate-400">{t("admin.dashboard.index.text.103joek", "后端 usage_fact 聚合快照")}</span>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
+            <div className="flex bg-slate-100 dark:bg-[#121212] rounded-lg p-1 border border-slate-200 dark:border-white/5">
+              <button
+                onClick={() => setTrafficTimeRange('hourly')}
+                className={`px-2 py-1 rounded text-xs font-medium transition-colors ${trafficTimeRange === 'hourly' ? 'bg-white dark:bg-[#222] text-slate-900 dark:text-white shadow-sm' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'}`}
+              >
+                {t("admin.dashboard.index.timeRange.hourly", "小时")}</button>
+              <button
+                onClick={() => setTrafficTimeRange('daily')}
+                className={`px-2 py-1 rounded text-xs font-medium transition-colors ${trafficTimeRange === 'daily' ? 'bg-white dark:bg-[#222] text-slate-900 dark:text-white shadow-sm' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'}`}
+              >
+                {t("admin.dashboard.index.timeRange.daily", "天")}</button>
+              <button
+                onClick={() => setTrafficTimeRange('weekly')}
+                className={`px-2 py-1 rounded text-xs font-medium transition-colors ${trafficTimeRange === 'weekly' ? 'bg-white dark:bg-[#222] text-slate-900 dark:text-white shadow-sm' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'}`}
+              >
+                {t("admin.dashboard.index.timeRange.weekly", "周")}</button>
+              <button
+                onClick={() => setTrafficTimeRange('monthly')}
+                className={`px-2 py-1 rounded text-xs font-medium transition-colors ${trafficTimeRange === 'monthly' ? 'bg-white dark:bg-[#222] text-slate-900 dark:text-white shadow-sm' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'}`}
+              >
+                {t("admin.dashboard.index.timeRange.monthly", "月")}</button>
+            </div>
+
+            <div className="h-6 w-px bg-slate-200 dark:bg-white/10 hidden sm:block"></div>
+
             {/* Chart Type Toggle */}
             <div className="flex bg-slate-100 dark:bg-[#121212] rounded-lg p-1 border border-slate-200 dark:border-white/5">
               <button
@@ -239,7 +309,7 @@ export function DashboardAdmin() {
                 <Tooltip content={<CustomTooltip />} cursor={{ stroke: 'rgba(150,150,150,0.2)', strokeWidth: 1 }} />
                 <Area
                   type="monotone"
-                  dataKey={trendMetric}
+                  dataKey={trendChartDataKey}
                   stroke={trendMetric === 'cost' ? '#f59e0b' : trendMetric === 'requests' ? '#10b981' : '#3b82f6'}
                   strokeWidth={3}
                   fillOpacity={1}
@@ -253,7 +323,7 @@ export function DashboardAdmin() {
                 <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#888' }} tickFormatter={(val: number) => trendMetric === 'cost' ? `$${val}` : trendMetric === 'tokens' ? `${val/1000}k` : String(val)} />
                 <Tooltip content={<CustomTooltip />} cursor={{ fill: 'rgba(150,150,150,0.1)' }} />
                 <Bar
-                  dataKey={trendMetric}
+                  dataKey={trendChartDataKey}
                   fill={trendMetric === 'cost' ? '#f59e0b' : trendMetric === 'requests' ? '#10b981' : '#3b82f6'}
                   radius={[4, 4, 0, 0]}
                   barSize={24}
@@ -295,7 +365,7 @@ export function DashboardAdmin() {
                   <XAxis type="number" hide />
                   <YAxis dataKey="name" type="category" axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#888' }} width={140} />
                   <Tooltip cursor={{ fill: 'rgba(150,150,150,0.05)' }} content={<CustomTooltip />} />
-                  <Bar dataKey="value" radius={[0, 4, 4, 0]} barSize={14}>
+                  <Bar dataKey="chartValue" radius={[0, 4, 4, 0]} barSize={14}>
                     {modelDistribution.map((entry, index) => (
                       <Cell key={`cell-${index}`} fill={entry.color} />
                     ))}
@@ -312,7 +382,7 @@ export function DashboardAdmin() {
                     innerRadius={65}
                     outerRadius={95}
                     paddingAngle={3}
-                    dataKey="value"
+                    dataKey="chartValue"
                     stroke="none"
                     cornerRadius={4}
                   >
@@ -323,7 +393,7 @@ export function DashboardAdmin() {
                   <Tooltip
                     contentStyle={{ backgroundColor: '#1a1a1a', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.5)' }}
                     itemStyle={{ fontSize: '13px', color: '#fff', fontWeight: 500 }}
-                    formatter={(value) => `$${Number(value ?? 0)}`}
+                    formatter={(_value, _name, item) => `$${Number(item?.payload?.value ?? 0)}`}
                   />
                   <Legend
                     layout="vertical"
@@ -356,7 +426,7 @@ export function DashboardAdmin() {
                   innerRadius={65}
                   outerRadius={95}
                   paddingAngle={3}
-                  dataKey="value"
+                  dataKey="chartValue"
                   stroke="none"
                   cornerRadius={4}
                 >
@@ -367,7 +437,7 @@ export function DashboardAdmin() {
                 <Tooltip
                   contentStyle={{ backgroundColor: '#1a1a1a', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.5)' }}
                   itemStyle={{ fontSize: '13px', color: '#fff', fontWeight: 500 }}
-                  formatter={(value) => `${Number(value ?? 0)}%`}
+                  formatter={(_value, _name, item) => `${Number(item?.payload?.value ?? 0)}%`}
                 />
                 <Legend
                   layout="vertical"
@@ -466,7 +536,7 @@ export function DashboardAdmin() {
           </table>
         </div>
       </div>
-
+      </div>
     </div>
   );
 }

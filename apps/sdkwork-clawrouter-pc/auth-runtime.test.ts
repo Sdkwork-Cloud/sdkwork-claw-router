@@ -659,21 +659,21 @@ test("claw router app auth composes the appbase IAM OAuth dependency SDK without
   assert.doesNotMatch(appSdkTypesSource, new RegExp(`${retiredProviderPlatformSnake.replace("_", "-")}`));
 
   for (const portContractFragment of [
-    "oauthAuthorizationUrls?:",
-    "oauthSessions?:",
+    "oauth?:",
+    "authorizationUrls?:",
+    "sessions?:",
     "passwordResetRequests?:",
     "passwordResets?:",
     "registrations?:",
-    "sessions?:",
     "users?:",
     "current?:",
   ]) {
     assert.match(appbaseIamSdkPortsSource, new RegExp(portContractFragment.replaceAll("?", "\\?")));
   }
-  assert.match(appbaseAuthServiceSource, /client\.auth\.oauthAuthorizationUrls\?\.retrieve/);
-  assert.match(appbaseAuthServiceSource, /client\.auth\.oauthSessions\?\.create/);
-  assert.match(appbaseIamRuntimeSource, /runtime\.service\.auth\.oauthAuthorizationUrls\.retrieve/);
-  assert.match(appbaseIamRuntimeSource, /runtime\.service\.auth\.oauthSessions\.create/);
+  assert.match(appbaseAuthServiceSource, /client\.oauth\?\.authorizationUrls\?\.create/);
+  assert.match(appbaseAuthServiceSource, /client\.oauth\?\.sessions\?\.create/);
+  assert.match(appbaseIamRuntimeSource, /runtime\.service\.oauth\?\.authorizationUrls\?\.create/);
+  assert.match(appbaseIamRuntimeSource, /runtime\.service\.oauth\?\.sessions\?\.create/);
   assert.doesNotMatch(appbaseAuthServiceSource, /loginQrCodes\?\.callback/);
   assert.doesNotMatch(appbaseIamRuntimeSource, /runtime\.service\.auth\.loginQrCodeCallbacks/);
   assert.ok(appOpenApi.components?.schemas?.AuthRuntimeSettingsResponse, "app runtime settings must use public auth schema");
@@ -734,10 +734,12 @@ test("appbase OAuth runtime uses canonical OAuth app resources", () => {
   const authServiceSource = readPortalFile("../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-service.ts");
   const iamRuntimeSource = readPortalFile("../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-iam-runtime.ts");
 
-  assert.match(authServiceSource, /client\.auth\.oauthAuthorizationUrls\?\.retrieve/);
-  assert.match(authServiceSource, /client\.auth\.oauthSessions\?\.create/);
-  assert.match(iamRuntimeSource, /runtime\.service\.auth\.oauthAuthorizationUrls\.retrieve/);
-  assert.match(iamRuntimeSource, /runtime\.service\.auth\.oauthSessions\.create/);
+  assert.match(authServiceSource, /client\.oauth\?\.authorizationUrls\?\.create/);
+  assert.match(authServiceSource, /client\.oauth\?\.sessions\?\.create/);
+  assert.match(iamRuntimeSource, /runtime\.service\.oauth\?\.authorizationUrls\?\.create/);
+  assert.match(iamRuntimeSource, /runtime\.service\.oauth\?\.sessions\?\.create/);
+  assert.doesNotMatch(authServiceSource, /client\.auth\.oauthAuthorizationUrls/);
+  assert.doesNotMatch(authServiceSource, /client\.auth\.oauthSessions/);
   assert.doesNotMatch(authServiceSource, /client\.auth\.loginQrCodeCallbacks/);
   assert.doesNotMatch(authServiceSource, /loginQrCodes\?\.callback/);
   assert.doesNotMatch(iamRuntimeSource, /runtime\.service\.auth\.loginQrCodeCallbacks/);
@@ -962,6 +964,7 @@ test("generated appbase app SDK surface satisfies the IAM SDK port contract", ()
   const sdkSource = readPortalFile("../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/sdk.ts");
   const appSdkAuthSource = readPortalFile("../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/auth.ts");
   const appSdkIamSource = readPortalFile("../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/iam.ts");
+  const appSdkOauthSource = readPortalFile("../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/oauth.ts");
   const appSdkSystemSource = readPortalFile("../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/system.ts");
   const iamSdkPortsSource = readPortalFile("../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-sdk-ports/src/index.ts");
   const authServiceSource = readPortalFile("../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-service.ts");
@@ -969,12 +972,12 @@ test("generated appbase app SDK surface satisfies the IAM SDK port contract", ()
   const retiredProviderPlatformCamel = "open" + "Platform";
 
   for (const portContractFragment of [
-    "oauthAuthorizationUrls?:",
-    "oauthSessions?:",
+    "oauth?:",
+    "authorizationUrls?:",
+    "sessions?:",
     "passwordResetRequests?:",
     "passwordResets?:",
     "registrations?:",
-    "sessions?:",
     "users?:",
     "current?:",
   ]) {
@@ -984,17 +987,18 @@ test("generated appbase app SDK surface satisfies the IAM SDK port contract", ()
   assert.match(authServiceSource, /verificationCodes\?: \{/);
   assert.match(authServiceSource, /client\.messaging\?\.verificationCodes\?\.create/);
   assert.match(authServiceSource, /client\.messaging\?\.verificationCodes\?\.verify/);
-  assert.match(authServiceSource, /client\.auth\.oauthAuthorizationUrls\?\.retrieve/);
-  assert.match(authServiceSource, /client\.auth\.oauthSessions\?\.create/);
-  assert.match(iamRuntimeSource, /runtime\.service\.auth\.oauthAuthorizationUrls\.retrieve/);
-  assert.match(iamRuntimeSource, /runtime\.service\.auth\.oauthSessions\.create/);
+  assert.match(authServiceSource, /client\.oauth\?\.authorizationUrls\?\.create/);
+  assert.match(authServiceSource, /client\.oauth\?\.sessions\?\.create/);
+  assert.match(iamRuntimeSource, /runtime\.service\.oauth\?\.authorizationUrls\?\.create/);
+  assert.match(iamRuntimeSource, /runtime\.service\.oauth\?\.sessions\?\.create/);
 
   for (const sdkSurfaceFragment of [
     "public readonly auth: AuthApi",
     "public readonly system: SystemApi",
     "public readonly iam: IamApi",
-    "public readonly oauthAuthorizationUrls: AuthOauthAuthorizationUrlsApi",
-    "public readonly oauthSessions: AuthOauthSessionsApi",
+    "public readonly oauth: OauthApi",
+    "public readonly authorizationUrls: OauthAuthorizationUrlsApi",
+    "public readonly sessions: OauthSessionsApi",
     "public readonly passwordResetRequests: AuthPasswordResetRequestsApi",
     "public readonly passwordResets: AuthPasswordResetsApi",
     "public readonly registrations: AuthRegistrationsApi",
@@ -1006,7 +1010,10 @@ test("generated appbase app SDK surface satisfies the IAM SDK port contract", ()
     "public readonly users: IamUsersApi",
     "public readonly current: IamUsersCurrentApi",
   ]) {
-    assert.match(`${sdkSource}\n${appSdkAuthSource}\n${appSdkIamSource}\n${appSdkSystemSource}`, new RegExp(sdkSurfaceFragment));
+    assert.match(
+      `${sdkSource}\n${appSdkAuthSource}\n${appSdkIamSource}\n${appSdkOauthSource}\n${appSdkSystemSource}`,
+      new RegExp(sdkSurfaceFragment),
+    );
   }
 
   for (const generatedPathFragment of [
@@ -1022,7 +1029,10 @@ test("generated appbase app SDK surface satisfies the IAM SDK port contract", ()
     /appApiPath\(`\/system\/iam\/runtime`\)/,
     /appApiPath\(`\/system\/iam\/verification_policy`\)/,
   ]) {
-    assert.match(`${appSdkAuthSource}\n${appSdkIamSource}\n${appSdkSystemSource}`, generatedPathFragment);
+    assert.match(
+      `${appSdkAuthSource}\n${appSdkIamSource}\n${appSdkOauthSource}\n${appSdkSystemSource}`,
+      generatedPathFragment,
+    );
   }
   assert.doesNotMatch(appSdkAuthSource, /loginQrCodes/);
   assert.doesNotMatch(appSdkAuthSource, /loginQrCodeCallbacks/);
@@ -1150,16 +1160,6 @@ test("appbase IAM runtime auth service persists sessions before portal redirects
   const runtime = {
     service: {
       auth: {
-        oauthAuthorizationUrls: {
-          retrieve: async () => ({ url: "https://auth.example.test/oauth" }),
-        },
-        oauthSessions: {
-          create: async () => ({
-            accessToken: "oauth-access",
-            authToken: "oauth-auth",
-            refreshToken: "oauth-refresh",
-          }),
-        },
         passwordResetRequests: {
           create: async () => ({}),
         },
@@ -1195,6 +1195,18 @@ test("appbase IAM runtime auth service persists sessions before portal redirects
             accessToken: "refreshed-access",
             authToken: "refreshed-auth",
             refreshToken: "refreshed-refresh",
+          }),
+        },
+      },
+      oauth: {
+        authorizationUrls: {
+          create: async () => ({ url: "https://auth.example.test/oauth" }),
+        },
+        sessions: {
+          create: async () => ({
+            accessToken: "oauth-access",
+            authToken: "oauth-auth",
+            refreshToken: "oauth-refresh",
           }),
         },
       },
@@ -2277,10 +2289,10 @@ test("admin membership level management uses backend SDK memberships plans", () 
   assert.match(membershipsServiceSource, /backendMembershipsPlansCreate/);
   assert.match(membershipsServiceSource, /backendMembershipsPlansUpdate/);
   assert.match(membershipsServiceSource, /backendMembershipsPlansDelete/);
-  assert.match(membershipsServiceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.memberships\.plans\.list/);
-  assert.match(membershipsServiceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.memberships\.plans\.create/);
-  assert.match(membershipsServiceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.memberships\.plans\.update/);
-  assert.match(membershipsServiceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.memberships\.plans\.delete/);
+  assert.match(membershipsServiceSource, /getSdkworkCommerceService\(\)\.admin\.memberships\.plans\.list/);
+  assert.match(membershipsServiceSource, /getSdkworkCommerceService\(\)\.admin\.memberships\.plans\.create/);
+  assert.match(membershipsServiceSource, /getSdkworkCommerceService\(\)\.admin\.memberships\.plans\.update/);
+  assert.match(membershipsServiceSource, /getSdkworkCommerceService\(\)\.admin\.memberships\.plans\.delete/);
   assert.doesNotMatch(membershipsServiceSource, /\bfetch\s*\(/);
   assert.doesNotMatch(membershipsServiceSource, /\baxios\b/);
   assert.doesNotMatch(membershipsServiceSource, /\/backend\/v3\/api/);

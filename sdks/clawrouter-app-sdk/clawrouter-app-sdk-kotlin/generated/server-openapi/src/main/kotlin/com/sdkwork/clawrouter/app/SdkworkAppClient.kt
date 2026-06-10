@@ -4,7 +4,6 @@ import com.sdkwork.common.core.SdkConfig
 import com.sdkwork.clawrouter.app.http.HttpClient
 import com.sdkwork.clawrouter.app.api.AgentsApi
 import com.sdkwork.clawrouter.app.api.AiApi
-import com.sdkwork.clawrouter.app.api.AuthApi
 import com.sdkwork.clawrouter.app.api.ChatApi
 import com.sdkwork.clawrouter.app.api.ContentApi
 import com.sdkwork.clawrouter.app.api.EcosystemApi
@@ -21,7 +20,6 @@ open class SdkworkAppClient {
 
     lateinit var agents: AgentsApi
     lateinit var ai: AiApi
-    lateinit var auth: AuthApi
     lateinit var chat: ChatApi
     lateinit var content: ContentApi
     lateinit var ecosystem: EcosystemApi
@@ -37,7 +35,6 @@ open class SdkworkAppClient {
         this.httpClient = HttpClient(baseUrl)
         agents = AgentsApi(httpClient)
         ai = AiApi(httpClient)
-        auth = AuthApi(httpClient)
         chat = ChatApi(httpClient)
         content = ContentApi(httpClient)
         ecosystem = EcosystemApi(httpClient)
@@ -54,7 +51,6 @@ open class SdkworkAppClient {
         this.httpClient = HttpClient(config)
         agents = AgentsApi(httpClient)
         ai = AiApi(httpClient)
-        auth = AuthApi(httpClient)
         chat = ChatApi(httpClient)
         content = ContentApi(httpClient)
         ecosystem = EcosystemApi(httpClient)

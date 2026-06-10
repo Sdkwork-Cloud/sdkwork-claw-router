@@ -5,7 +5,6 @@ package com.sdkwork.clawrouter.app.api;
 
 import com.sdkwork.clawrouter.app.api.AgentsApi;
 import com.sdkwork.clawrouter.app.api.AiApi;
-import com.sdkwork.clawrouter.app.api.AuthApi;
 import com.sdkwork.clawrouter.app.api.ChatApi;
 import com.sdkwork.clawrouter.app.api.ContentApi;
 import com.sdkwork.clawrouter.app.api.EcosystemApi;

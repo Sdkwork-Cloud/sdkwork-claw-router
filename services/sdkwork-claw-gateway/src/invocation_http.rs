@@ -24,6 +24,15 @@ where
     C: PricingCatalog + Send + Sync + 'static,
 {
     let (parts, body) = request.into_parts();
+    let preclassified_openai = if is_openai_prefixed_path(parts.uri.path()) {
+        match classify_request(&parts.method, &parts.uri) {
+            Ok(classified) => Some(classified),
+            Err(_) => return not_found_response(),
+        }
+    } else {
+        None
+    };
+
     let auth_context = match authenticate_gateway_api_key(
         state.catalog.as_ref(),
         state.api_key_hasher.as_ref(),
@@ -38,9 +47,12 @@ where
         Ok(body) => body,
         Err(error) => return response_from_invocation_error(&error),
     };
-    let classified = match classify_request(&parts.method, &parts.uri) {
-        Ok(classified) => classified,
-        Err(error) => return response_from_invocation_error(&error),
+    let classified = match preclassified_openai {
+        Some(classified) => classified,
+        None => match classify_request(&parts.method, &parts.uri) {
+            Ok(classified) => classified,
+            Err(error) => return response_from_invocation_error(&error),
+        },
     };
     let (classification, invocation_path) = classified;
     let (resource, billing, routing) = classification.into_parts();
@@ -136,6 +148,10 @@ fn classify_request(
     ProviderNativeResourceClassifier::default()
         .classify(&request)
         .map(|classification| (classification, invocation_path))
+}
+
+fn is_openai_prefixed_path(path: &str) -> bool {
+    path == "/v1" || path.starts_with("/v1/")
 }
 
 fn provider_native_parts(path: &str) -> Option<(String, String)> {
@@ -288,6 +304,25 @@ fn response_from_invocation_error(error: &InvocationError) -> Response {
     let body = serde_json::to_vec(&body).unwrap_or_else(|_| b"{}".to_vec());
     let mut response = Response::new(Body::from(body));
     *response.status_mut() = status;
+    response.headers_mut().insert(
+        header::CONTENT_TYPE,
+        HeaderValue::from_static("application/json"),
+    );
+    response
+}
+
+fn not_found_response() -> Response {
+    let body = json!({
+        "error": {
+            "message": "Not found",
+            "type": "invalid_request_error",
+            "param": null,
+            "code": "not_found"
+        }
+    });
+    let body = serde_json::to_vec(&body).unwrap_or_else(|_| b"{}".to_vec());
+    let mut response = Response::new(Body::from(body));
+    *response.status_mut() = StatusCode::NOT_FOUND;
     response.headers_mut().insert(
         header::CONTENT_TYPE,
         HeaderValue::from_static("application/json"),

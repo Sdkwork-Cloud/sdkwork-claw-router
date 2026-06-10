@@ -16,27 +16,6 @@ namespace Sdkwork.ClawRouter.App.Api
         }
 
         /// <summary>
-        /// Retrieve public IAM runtime settings
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.IamRuntimeRetrieveResult?> IamRuntimeRetrieveAsync(string? tenantCode = null, string? organizationCode = null)
-        {
-            var queryString = BuildQueryString(new[]
-            {
-                new QueryParameterSpec("tenant_code", tenantCode, "form", true, false, null),
-                new QueryParameterSpec("organization_code", organizationCode, "form", true, false, null),
-            });
-            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.IamRuntimeRetrieveResult>(ApiPaths.AppendQueryString(ApiPaths.AppPath("/system/iam/runtime"), queryString));
-        }
-
-        /// <summary>
-        /// Retrieve public IAM verification policy
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.IamVerificationPolicyRetrieveResult?> IamVerificationPolicyRetrieveAsync()
-        {
-            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.IamVerificationPolicyRetrieveResult>(ApiPaths.AppPath("/system/iam/verification_policy"));
-        }
-
-        /// <summary>
         /// Retrieve public site runtime branding settings
         /// </summary>
         public async Task<Sdkwork.ClawRouter.App.Models.SiteRuntimeRetrieveResult?> SiteRuntimeRetrieveAsync(string? tenantCode = null, string? organizationCode = null)

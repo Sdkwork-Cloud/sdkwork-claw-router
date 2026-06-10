@@ -22,7 +22,7 @@ client.set_auth_token("your-auth-token")
 client.set_access_token("your-access-token")
 
 # Use the SDK
-result = client.auth.sessions.current.retrieve()
+result = client.ai.channel_groups.list()
 ```
 
 ## Authentication
@@ -50,7 +50,6 @@ client.set_header('X-Custom-Header', 'value')
 
 - `client.agents` - agents API
 - `client.ai` - ai API
-- `client.auth` - auth API
 - `client.chat` - chat API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
@@ -82,14 +81,6 @@ print(result)
 ```python
 # List groups
 result = client.ai.channel_groups.list()
-print(result)
-```
-
-### auth
-
-```python
-# Retrieve current IAM session
-result = client.auth.sessions.current.retrieve()
 print(result)
 ```
 
@@ -211,8 +202,12 @@ print(result)
 ### system
 
 ```python
-# Retrieve public IAM verification policy
-result = client.system.iam.verification_policy.retrieve()
+# Retrieve public site runtime branding settings
+params = {
+    'tenant_code': 'tenant_code',
+    'organization_code': 'organization_code',
+}
+result = client.system.site.runtime.retrieve(params)
 print(result)
 ```
 
@@ -220,7 +215,7 @@ print(result)
 
 ```python
 try:
-    client.auth.sessions.current.retrieve()
+    client.ai.channel_groups.list()
 except Exception as error:
     print(f"Error: {error}")
 ```

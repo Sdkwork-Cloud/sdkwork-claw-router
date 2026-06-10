@@ -11,5 +11,4 @@ export * from './notification';
 export * from './platform';
 export * from './runtime';
 export * from './sdk-reference';
-export * from './system';
 export * from './sites';

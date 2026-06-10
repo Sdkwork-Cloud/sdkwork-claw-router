@@ -3,7 +3,7 @@ use std::sync::Arc;
 use crate::api::paths::backend_path;
 use crate::api::paths::append_query_string;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{AdminAiModelCreateRequest, AdminAiModelUpdateRequest, AdminAiResourceCreateRequest, AdminAiResourceGroupCreateRequest, AdminAiResourceGroupUpdateRequest, AdminAiResourceUpdateRequest, AdminChannelGroupChannelBindingsReplaceRequest, AdminChannelGroupCreateRequest, AdminChannelGroupUpdateRequest, AdminModelCatalogSyncRequest, AdminModelMappingCreateRequest, AdminModelMappingResolveRequest, AdminModelMappingUpdateRequest, AdminModelVendorCreateRequest, AiResourceGroupsCreateResult, AiResourceGroupsDeleteResult, AiResourceGroupsListResult, AiResourceGroupsResourcesListResult, AiResourceGroupsUpdateResult, AiResourcesCreateResult, AiResourcesListResult, AiResourcesUpdateResult, ChannelGroupsChannelBindingsListResult, ChannelGroupsChannelBindingsUpdateResult, ChannelGroupsCreateResult, ChannelGroupsDeleteResult, ChannelGroupsListResult, ChannelGroupsUpdateResult, ModelMappingsCreateResult, ModelMappingsDeleteResult, ModelMappingsListResult, ModelMappingsResolveCreateResult, ModelMappingsUpdateResult, ModelRankingRefreshTriggerRequest, ModelRankingsJobsListResult, ModelRankingsListResult, ModelRankingsRefreshResult, ModelRankingsStatusRetrieveResult, ModelVendorsCreateResult, ModelVendorsListResult, ModelsCreateResult, ModelsDeleteResult, ModelsListResult, ModelsRefreshResult, ModelsUpdateResult};
+use crate::models::{AdminAiModelCreateRequest, AdminAiModelUpdateRequest, AdminAiResourceCreateRequest, AdminAiResourceGroupCreateRequest, AdminAiResourceGroupUpdateRequest, AdminAiResourceUpdateRequest, AdminChannelGroupChannelBindingsReplaceRequest, AdminChannelGroupCreateRequest, AdminChannelGroupUpdateRequest, AdminModelCatalogSyncRequest, AdminModelMappingCreateRequest, AdminModelMappingResolveRequest, AdminModelMappingUpdateRequest, AdminModelVendorCreateRequest, AdminRuntimeRouteExplainRequest, AiResourceGroupsCreateResult, AiResourceGroupsDeleteResult, AiResourceGroupsListResult, AiResourceGroupsResourcesListResult, AiResourceGroupsUpdateResult, AiResourcesCreateResult, AiResourcesListResult, AiResourcesUpdateResult, ChannelGroupsChannelBindingsListResult, ChannelGroupsChannelBindingsUpdateResult, ChannelGroupsCreateResult, ChannelGroupsDeleteResult, ChannelGroupsListResult, ChannelGroupsRouteExplainRetrieveResult, ChannelGroupsUpdateResult, ModelMappingsCreateResult, ModelMappingsDeleteResult, ModelMappingsListResult, ModelMappingsResolveCreateResult, ModelMappingsUpdateResult, ModelRankingRefreshTriggerRequest, ModelRankingsJobsListResult, ModelRankingsListResult, ModelRankingsRefreshResult, ModelRankingsStatusRetrieveResult, ModelVendorsCreateResult, ModelVendorsListResult, ModelsCreateResult, ModelsDeleteResult, ModelsListResult, ModelsRefreshResult, ModelsUpdateResult, RouteExplainCreateResult};
 
 #[derive(Clone)]
 pub struct AiApi {
@@ -49,6 +49,12 @@ impl AiApi {
     pub async fn channel_groups_bindings_update(&self, channel_group_id: &str, body: &AdminChannelGroupChannelBindingsReplaceRequest) -> Result<ChannelGroupsChannelBindingsUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/ai/channel_groups/{}/channel_bindings", serialize_path_parameter(channel_group_id, PathParameterSpec::new("channelGroupId", "simple", false))));
         self.client.put(&path, Some(body), None, None, Some("application/json")).await
+    }
+
+    /// List group route explain
+    pub async fn channel_groups_route_explain_retrieve(&self, channel_group_id: &str) -> Result<ChannelGroupsRouteExplainRetrieveResult, SdkworkError> {
+        let path = backend_path(&format!("/ai/channel_groups/{}/route_explain", serialize_path_parameter(channel_group_id, PathParameterSpec::new("channelGroupId", "simple", false))));
+        self.client.get(&path, None, None).await
     }
 
     /// List model mappings
@@ -214,6 +220,12 @@ impl AiApi {
     pub async fn resources_update(&self, resource_id: &str, body: &AdminAiResourceUpdateRequest) -> Result<AiResourcesUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/ai/resources/{}", serialize_path_parameter(resource_id, PathParameterSpec::new("resourceId", "simple", false))));
         self.client.put(&path, Some(body), None, None, Some("application/json")).await
+    }
+
+    /// List runtime route explain
+    pub async fn route_explain_create(&self, body: &AdminRuntimeRouteExplainRequest) -> Result<RouteExplainCreateResult, SdkworkError> {
+        let path = backend_path(&"/ai/route_explain".to_string());
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
     }
 
 }

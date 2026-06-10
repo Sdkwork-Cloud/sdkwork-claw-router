@@ -1,20 +1,22 @@
-import { getClawRouterBackendSdkClient } from 'sdkwork-clawrouter-pc-commons/sdk-clients';
-type BackendCommerceService = ReturnType<typeof getClawRouterBackendSdkClient>['commerce'];
+import { getSdkworkCommerceService } from '@sdkwork/commerce-service';
 
-export async function listInventoryStocks(params?: Parameters<BackendCommerceService['inventory']['stocks']['list']>[0]) {
-  return getClawRouterBackendSdkClient().commerce.inventory.stocks.list(params);
+type CommerceRequestParams = Record<string, unknown>;
+type CommerceRequestBody = Record<string, unknown>;
+
+export async function listInventoryStocks(params?: CommerceRequestParams) {
+  return getSdkworkCommerceService().admin.inventory.stocks.list(params);
 }
 
-export async function listInventoryReservations(params?: Parameters<BackendCommerceService['inventory']['reservations']['list']>[0]) {
-  return getClawRouterBackendSdkClient().commerce.inventory.reservations.list(params);
+export async function listInventoryReservations(params?: CommerceRequestParams) {
+  return getSdkworkCommerceService().admin.inventory.reservations.list(params);
 }
 
-export async function listInventoryLedgerEntries(params?: Parameters<BackendCommerceService['inventory']['ledgerEntries']['list']>[0]) {
-  return getClawRouterBackendSdkClient().commerce.inventory.ledgerEntries.list(params);
+export async function listInventoryLedgerEntries(params?: CommerceRequestParams) {
+  return getSdkworkCommerceService().admin.inventory.ledgerEntries.list(params);
 }
 
-export async function updateInventoryStock(stockId: string, body: Parameters<BackendCommerceService['inventory']['stocks']['update']>[1]) {
-  return getClawRouterBackendSdkClient().commerce.inventory.stocks.update(
+export async function updateInventoryStock(stockId: string, body: CommerceRequestBody) {
+  return getSdkworkCommerceService().admin.inventory.stocks.update(
     stockId,
     body,
   );

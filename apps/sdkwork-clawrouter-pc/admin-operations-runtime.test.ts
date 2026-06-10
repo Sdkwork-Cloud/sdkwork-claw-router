@@ -316,6 +316,7 @@ function readSchemaManifestSource(): string {
 
 function adminDashboardFixture(overrides: Record<string, unknown> = {}): Record<string, unknown> {
   return {
+    activeUsers: 0,
     userConsumption: [],
     multimodal: [],
     traffic: [],
@@ -379,22 +380,27 @@ function adminAnalyticsFixture(overrides: Record<string, unknown> = {}): Record<
   };
 }
 
+function adminAnalyticsSummaryFixture(overrides: Record<string, unknown> = {}): Record<string, unknown> {
+  return {
+    totalUsers: 0,
+    activeUsers: 0,
+    activeModels: 0,
+    totalRequests: 0,
+    successfulRequests: 0,
+    failedRequests: 0,
+    totalTokens: 0,
+    totalPoints: 0,
+    upstreamCost: 0,
+    averageTokensPerRequest: 0,
+    averagePointsPerRequest: 0,
+    errorRate: 0,
+    ...overrides,
+  };
+}
+
 function emptyAdminAnalyticsFixture(overrides: Record<string, unknown> = {}): Record<string, unknown> {
   return adminAnalyticsFixture({
-    summary: {
-      totalUsers: 0,
-      activeUsers: 0,
-      activeModels: 0,
-      totalRequests: 0,
-      successfulRequests: 0,
-      failedRequests: 0,
-      totalTokens: 0,
-      totalPoints: 0,
-      upstreamCost: 0,
-      averageTokensPerRequest: 0,
-      averagePointsPerRequest: 0,
-      errorRate: 0,
-    },
+    summary: adminAnalyticsSummaryFixture(),
     trend: [],
     userRankings: {
       points: [],
@@ -653,26 +659,36 @@ test("admin OAuth account management is reachable from admin navigation", () => 
 
   assert.equal(packageJson.dependencies["sdkwork-clawrouter-pc-admin-oauth"], "workspace:*");
   assert.match(appSource, /const OAuthAdmin = lazyRoute\(\(\) => import\('sdkwork-clawrouter-pc-admin-oauth'\), 'OAuthAdmin'\);/);
-  assert.match(appSource, /<Route path="oauth" element=\{<Navigate to="\/admin\/oauth\/overview" replace \/>} \/>/);
-  assert.match(appSource, /<Route path="oauth\/resource-accounts\/official-accounts" element=\{<OAuthAdmin sectionId="officialAccounts" \/>} \/>/);
-  assert.match(appSource, /<Route path="oauth\/resource-accounts\/mini-programs" element=\{<OAuthAdmin sectionId="miniPrograms" \/>} \/>/);
-  assert.match(appSource, /<Route path="oauth\/login\/mini-programs" element=\{<OAuthAdmin sectionId="miniProgramLogin" \/>} \/>/);
-  assert.match(adminModuleRegistrySource, /id:\s*'oauth'/);
-  assert.match(adminModuleRegistrySource, /path:\s*'\/admin\/oauth\/resource-accounts\/official-accounts'/);
+  assert.match(appSource, /<Route path="oauth" element=\{<Navigate to="\/admin\/oauth\/login-platforms" replace \/>} \/>/);
+  assert.match(appSource, /<Route path="oauth\/login-platforms" element=\{<OAuthAdmin sectionId="oauthLoginPlatforms" \/>} \/>/);
+  assert.match(appSource, /<Route path="oauth\/official-accounts" element=\{<OAuthAdmin sectionId="officialAccounts" \/>} \/>/);
+  assert.match(appSource, /<Route path="oauth\/mini-programs" element=\{<OAuthAdmin sectionId="miniPrograms" \/>} \/>/);
+  assert.doesNotMatch(appSource, /<Route path="oauth\/overview"/);
+  assert.doesNotMatch(appSource, /<Route path="oauth\/provider-catalog"/);
+  assert.doesNotMatch(appSource, /<Route path="oauth\/resource-accounts"/);
+  assert.doesNotMatch(adminModuleRegistrySource, /id:\s*'oauth'/);
+  assert.match(adminModuleRegistrySource, /id:\s*'operations'[\s\S]*pathPrefixes:\s*\[[^\]]*'\/admin\/oauth'/);
+  assert.match(adminModuleRegistrySource, /moduleId:\s*'operations'[\s\S]*groupBlock\('admin\.menu\.ops\.oauth'/);
+  assert.match(adminModuleRegistrySource, /path:\s*'\/admin\/oauth\/login-platforms'/);
+  assert.match(adminModuleRegistrySource, /labelKey:\s*'admin\.menu\.oauth\.loginPlatforms'/);
+  assert.match(adminModuleRegistrySource, /path:\s*'\/admin\/oauth\/official-accounts'/);
   assert.match(adminModuleRegistrySource, /labelKey:\s*'admin\.menu\.oauth\.officialAccounts'/);
-  assert.match(adminModuleRegistrySource, /path:\s*'\/admin\/oauth\/resource-accounts\/mini-programs'/);
+  assert.match(adminModuleRegistrySource, /path:\s*'\/admin\/oauth\/mini-programs'/);
   assert.match(adminModuleRegistrySource, /labelKey:\s*'admin\.menu\.oauth\.miniPrograms'/);
+  assert.match(i18nSource, /"admin\.menu\.ops\.oauth":\s*"OAuth"/);
+  assert.match(i18nSource, /"admin\.menu\.oauth\.loginPlatforms":\s*"OAuth Login Platform Accounts"/);
   assert.match(i18nSource, /"admin\.menu\.oauth\.officialAccounts":\s*"Official Accounts"/);
   assert.match(i18nSource, /"admin\.menu\.oauth\.miniPrograms":\s*"Mini Programs"/);
-  assert.match(oauthSource, /WeChat Official Account/);
-  assert.match(oauthSource, /WeChat Mini Program/);
-  assert.match(oauthSource, /Alipay Mini Program/);
-  assert.match(oauthSource, /Self-managed account or operator-authorized account/);
-  assert.match(oauthSource, /Self-managed AppID\/AppSecret or component platform authorization/);
+  assert.match(oauthSource, /resourceAccountKind:\s*'open_app'/);
+  assert.match(oauthSource, /resourceAccountKind:\s*'official_account'/);
+  assert.match(oauthSource, /resourceAccountKind:\s*'mini_program'/);
+  assert.match(oauthSource, /buildOAuthResourceAccountPayload/);
+  assert.doesNotMatch(oauthSource, /OAUTH_PLATFORM_BLUEPRINTS/);
+  assert.doesNotMatch(oauthSource, /OAuthOverview/);
   assert.match(oauthServiceSource, /getSdkworkAppbaseBackendSdkClient/);
   assert.match(oauthServiceSource, /iam\.oauth\.resourceAccounts/);
-  assert.match(oauthServiceSource, /iam\.oauth\.operatorPlatforms/);
-  assert.match(oauthServiceSource, /iam\.oauth\.resourceAuthorizations/);
+  assert.doesNotMatch(oauthServiceSource, /iam\.oauth\.operatorPlatforms/);
+  assert.doesNotMatch(oauthServiceSource, /iam\.oauth\.resourceAuthorizations/);
   assert.doesNotMatch(oauthServiceSource, /\bfetch\s*\(/);
   assert.doesNotMatch(oauthServiceSource, /\baxios\b/);
   assert.doesNotMatch(oauthServiceSource, /\/backend\/v3\/api/);
@@ -1048,119 +1064,461 @@ test("admin dashboard service reads generated backend SDK dashboard data", async
   await withBackendSdkFetch(
     (url, init) => {
       assert.equal(init?.method ?? "GET", "GET");
-      assert.equal(url, "/backend/v3/api/system/dashboard/admin/overview");
-      return {
-        userConsumption: [{ name: "Enterprise", value: 80, color: "#2563eb" }],
-        multimodal: [{ name: "image", value: 12, color: "#7c3aed" }],
-        traffic: [{ time: "10:00", tokens: 1200, requests: 12, cost: 0.24 }],
-        modelDistribution: [{ name: "gpt-4o-mini", value: 55, color: "#16a34a" }],
-        recentUsage: [
-          {
-            id: "usage-1",
-            user: "ops@example.com",
-            isApiUser: true,
-            model: "gpt-4o-mini",
-            type: "text",
-            billingMode: "tokens",
-            usageIn: "128",
-            usageOut: 256,
-            time: "2026-05-05T08:00:00Z",
-            status: "success",
-            cost: "0.03",
-          },
-        ],
-      };
+      if (url === "/backend/v3/api/system/dashboard/admin/overview") {
+        return {
+          activeUsers: 1,
+          userConsumption: [{ name: "Enterprise", value: 80, color: "#2563eb" }],
+          multimodal: [{ name: "image", value: 12, color: "#7c3aed" }],
+          traffic: [{ time: "10:00", tokens: 1200, requests: 12, cost: 0.24 }],
+          modelDistribution: [{ name: "gpt-4o-mini", value: 55, color: "#16a34a" }],
+          recentUsage: [
+            {
+              id: "usage-1",
+              user: "ops@example.com",
+              isApiUser: true,
+              model: "gpt-4o-mini",
+              type: "text",
+              billingMode: "tokens",
+              usageIn: "128",
+              usageOut: 256,
+              time: "2026-05-05T08:00:00Z",
+              status: "success",
+              cost: "0.03",
+            },
+          ],
+        };
+      }
+      if (url === "/backend/v3/api/system/analytics/admin/overview?time_range=daily&limit=30") {
+        return adminAnalyticsFixture({
+          summary: adminAnalyticsSummaryFixture({
+            totalUsers: 1,
+            activeUsers: 1,
+            activeModels: 1,
+            totalRequests: 12,
+            successfulRequests: 12,
+            totalTokens: 1200,
+            totalPoints: 0.24,
+            averageTokensPerRequest: 100,
+            averagePointsPerRequest: 0.02,
+          }),
+          trend: [{ time: "10:00", requests: 12, tokens: 1200, points: 0.24, users: 1 }],
+        });
+      }
+      throw new Error(`unexpected SDK URL: ${url}`);
     },
     async (captured) => {
       const result = await AdminDashboardService.fetchDashboardData();
 
-      assert.equal(captured.length, 1);
+      assert.equal(captured.length, 2);
       assert.deepEqual(result.userConsumption.map((item) => item.name), ["Enterprise"]);
       assert.equal(result.traffic[0].tokens, 1200);
       assert.equal(result.recentUsage[0].usageIn, 128);
       assert.equal(result.recentUsage[0].isApiUser, true);
+      assert.ok(captured.some((request) => request.url.includes("time_range=daily")));
     },
   );
 });
 
-test("admin dashboard service derives summary cards from backend snapshot without synthetic traffic", async () => {
+test("admin dashboard service keeps charts initialized and preserves backend dashboard active user count", async () => {
+  await withBackendSdkFetch(
+    (url) => {
+      if (url === "/backend/v3/api/system/dashboard/admin/overview") {
+        return adminDashboardFixture({
+          activeUsers: 0,
+        });
+      }
+      if (url === "/backend/v3/api/system/analytics/admin/overview?time_range=daily&limit=30") {
+        return emptyAdminAnalyticsFixture({
+          summary: adminAnalyticsSummaryFixture({
+            totalUsers: 3,
+            activeUsers: 3,
+          }),
+        });
+      }
+      throw new Error(`unexpected SDK URL: ${url}`);
+    },
+    async () => {
+      const result = await AdminDashboardService.fetchDashboardData();
+
+      assert.equal(result.activeUsers, 0);
+      assert.equal(result.summaryCards[0]?.value, "0");
+      assert.equal(result.summaryCards[1]?.value, "0");
+      assert.equal(result.summaryCards[2]?.value, "0");
+      assert.equal(result.summaryCards[4]?.value, "0");
+      assert.ok(result.traffic.length >= 2, "traffic chart must have initialized points");
+      assert.ok(result.userConsumption.length >= 1, "user consumption chart must have initialized rows");
+      assert.ok(result.modelDistribution.length >= 1, "model distribution chart must have initialized rows");
+      assert.ok(result.multimodal.length >= 1, "multimodal chart must have initialized rows");
+      assert.deepEqual(
+        result.traffic.map((item) => [item.tokens, item.requests, item.cost]),
+        result.traffic.map(() => [0, 0, 0]),
+      );
+      assert.deepEqual(
+        result.traffic.map((item) => [item.chartTokens, item.chartRequests, item.chartCost]),
+        result.traffic.map(() => [0, 0, 0]),
+        "traffic chart display fields must remain truthful when backend has no usage",
+      );
+      assert.deepEqual(
+        result.userConsumption.map((item) => item.value),
+        result.userConsumption.map(() => 0),
+      );
+      assert.deepEqual(
+        result.userConsumption.map((item) => item.chartValue),
+        result.userConsumption.map(() => 1),
+      );
+      assert.deepEqual(
+        result.modelDistribution.map((item) => item.value),
+        result.modelDistribution.map(() => 0),
+      );
+      assert.deepEqual(
+        result.modelDistribution.map((item) => item.chartValue),
+        result.modelDistribution.map(() => 1),
+      );
+      assert.deepEqual(
+        result.multimodal.map((item) => item.value),
+        result.multimodal.map(() => 0),
+      );
+      assert.deepEqual(
+        result.multimodal.map((item) => item.chartValue),
+        result.multimodal.map(() => 1),
+      );
+    },
+  );
+});
+
+test("admin dashboard service loads non-daily traffic from backend analytics time ranges", async () => {
+  await withBackendSdkFetch(
+    (url) => {
+      if (url === "/backend/v3/api/system/dashboard/admin/overview") {
+        return adminDashboardFixture({
+          activeUsers: 3,
+          traffic: [{ time: "2026-05-01", tokens: 10, requests: 1, cost: 0.1 }],
+        });
+      }
+      if (url === "/backend/v3/api/system/analytics/admin/overview?time_range=weekly&limit=26") {
+        return adminAnalyticsFixture({
+          timeRange: "weekly",
+          limit: 26,
+          summary: adminAnalyticsSummaryFixture({
+            totalUsers: 4,
+            activeUsers: 4,
+            activeModels: 2,
+            totalRequests: 30,
+            successfulRequests: 30,
+            totalTokens: 3000,
+            totalPoints: 6,
+            averageTokensPerRequest: 100,
+            averagePointsPerRequest: 0.2,
+          }),
+          trend: [
+            { time: "2026-W20", requests: 12, tokens: 1200, points: 2.4, users: 3 },
+            { time: "2026-W21", requests: 18, tokens: 1800, points: 3.6, users: 4 },
+          ],
+        });
+      }
+      throw new Error(`unexpected SDK URL: ${url}`);
+    },
+    async (captured) => {
+      const result = await AdminDashboardService.fetchDashboardData(undefined, { timeRange: "weekly" });
+
+      assert.deepEqual(result.traffic, [
+        { time: "2026-W20", tokens: 1200, requests: 12, cost: 2.4, chartTokens: 1200, chartRequests: 12, chartCost: 2.4 },
+        { time: "2026-W21", tokens: 1800, requests: 18, cost: 3.6, chartTokens: 1800, chartRequests: 18, chartCost: 3.6 },
+      ]);
+      assert.equal(result.summaryCards[2]?.value, "30");
+      assert.equal(result.summaryCards[3]?.value, "3K");
+      assert.ok(captured.some((request) => request.url.includes("time_range=weekly")));
+    },
+  );
+});
+
+test("admin dashboard summary cards use dashboard IAM users and backend analytics aggregates", async () => {
+  await withBackendSdkFetch(
+    (url) => {
+      if (url === "/backend/v3/api/system/dashboard/admin/overview") {
+        return adminDashboardFixture({
+          activeUsers: 3,
+          userConsumption: [{ name: "Enterprise", value: 80, color: "#2563eb" }],
+          multimodal: [{ name: "text", value: 9, color: "#2563eb" }],
+          traffic: [{ time: "2026-05-01", tokens: 10, requests: 1, cost: 0.1 }],
+          modelDistribution: [{ name: "gpt-4o-mini", value: 7, color: "#16a34a" }],
+          recentUsage: [
+            {
+              id: "usage-1",
+              user: "ops@example.com",
+              isApiUser: true,
+              model: "gpt-4o-mini",
+              type: "text",
+              billingMode: "usage",
+              usageIn: 10,
+              usageOut: 5,
+              usageCount: 1,
+              time: "2026-05-01T10:00:00Z",
+              status: "failed",
+              cost: "0.010000",
+            },
+          ],
+        });
+      }
+      if (url === "/backend/v3/api/system/analytics/admin/overview?time_range=daily&limit=30") {
+        return adminAnalyticsFixture({
+          summary: {
+            totalUsers: "19",
+            activeUsers: "17",
+            activeModels: "11",
+            totalRequests: "1234",
+            successfulRequests: "1200",
+            failedRequests: "34",
+            totalTokens: 987654,
+            totalPoints: 432.1,
+            upstreamCost: 210.5,
+            averageTokensPerRequest: 800.37,
+            averagePointsPerRequest: 0.35,
+            errorRate: 2.76,
+          },
+          trend: [{ time: "2026-05-01", requests: 99, tokens: 8800, points: 12.34, users: 17 }],
+        });
+      }
+      throw new Error(`unexpected SDK URL: ${url}`);
+    },
+    async (captured) => {
+      const result = await AdminDashboardService.fetchDashboardData();
+
+      assert.deepEqual(
+        result.summaryCards.map((card) => card.value),
+        ["3", "11", "1,234", "987.7K", "9", "34", "19", "$0.35"],
+      );
+      assert.deepEqual(
+        result.summaryCards.map((card) => card.detail),
+        [
+          "$432.10 用户消费",
+          "1,234 次模型调用",
+          "1,200 成功 / 34 失败",
+          "累计计费 $432.10",
+          "1 个模态",
+          "2.8% 失败率",
+          "总用户 19",
+          "按 analytics summary 计算",
+        ],
+      );
+      assert.deepEqual(result.traffic, [
+        { time: "2026-05-01", tokens: 8800, requests: 99, cost: 12.34, chartTokens: 8800, chartRequests: 99, chartCost: 12.34 },
+      ]);
+      assert.ok(captured.some((request) => request.url.includes("time_range=daily")));
+    },
+  );
+});
+
+test("admin dashboard active user card preserves backend dashboard IAM active users", async () => {
+  await withBackendSdkFetch(
+    (url) => {
+      if (url === "/backend/v3/api/system/dashboard/admin/overview") {
+        return adminDashboardFixture({
+          activeUsers: 7,
+          userConsumption: [{ name: "active-usage-user", value: 12, color: "#2563eb" }],
+        });
+      }
+      if (url === "/backend/v3/api/system/analytics/admin/overview?time_range=daily&limit=30") {
+        return adminAnalyticsFixture({
+          summary: adminAnalyticsSummaryFixture({
+            totalUsers: 2,
+            activeUsers: 2,
+            activeModels: 1,
+            totalRequests: 5,
+            successfulRequests: 5,
+            totalTokens: 500,
+            totalPoints: 10,
+            averageTokensPerRequest: 100,
+            averagePointsPerRequest: 2,
+          }),
+          trend: [{ time: "2026-05-01", requests: 5, tokens: 500, points: 10, users: 2 }],
+        });
+      }
+      throw new Error(`unexpected SDK URL: ${url}`);
+    },
+    async () => {
+      const result = await AdminDashboardService.fetchDashboardData();
+
+      assert.equal(result.activeUsers, 7);
+      assert.equal(result.summaryCards[0]?.value, "7");
+      assert.equal(result.summaryCards[6]?.value, "2");
+    },
+  );
+});
+
+test("admin dashboard service initializes empty non-daily analytics traffic as real zero data", async () => {
+  await withBackendSdkFetch(
+    (url) => {
+      if (url === "/backend/v3/api/system/dashboard/admin/overview") {
+        return adminDashboardFixture({
+          activeUsers: 3,
+          traffic: [{ time: "2026-05-01", tokens: 10, requests: 1, cost: 0.1 }],
+        });
+      }
+      if (url === "/backend/v3/api/system/analytics/admin/overview?time_range=hourly&limit=24") {
+        return emptyAdminAnalyticsFixture({
+          timeRange: "hourly",
+          limit: 24,
+          trend: [],
+        });
+      }
+      throw new Error(`unexpected SDK URL: ${url}`);
+    },
+    async (captured) => {
+      const result = await AdminDashboardService.fetchDashboardData(undefined, { timeRange: "hourly" });
+
+      assert.ok(result.traffic.length >= 2, "hourly traffic chart must have initialized points");
+      assert.deepEqual(
+        result.traffic.map((item) => [item.tokens, item.requests, item.cost]),
+        result.traffic.map(() => [0, 0, 0]),
+      );
+      assert.deepEqual(
+        result.traffic.map((item) => [item.chartTokens, item.chartRequests, item.chartCost]),
+        result.traffic.map(() => [0, 0, 0]),
+      );
+      assert.equal(result.summaryCards[2]?.value, "0");
+      assert.ok(captured.some((request) => request.url.includes("time_range=hourly")));
+    },
+  );
+});
+
+test("admin dashboard service fails closed when dashboard response omits IAM active users", async () => {
+  await withBackendSdkFetch(
+    (url) => {
+      const request = new URL(url, "http://localhost");
+      if (request.pathname === "/backend/v3/api/system/dashboard/admin/overview") {
+        const response = adminDashboardFixture();
+        delete response.activeUsers;
+        return response;
+      }
+      throw new Error(`unexpected SDK URL: ${url}`);
+    },
+    async (captured) => {
+      await assert.rejects(
+        () => AdminDashboardService.fetchDashboardData(),
+        /Dashboard active users are required/,
+      );
+      assert.deepEqual(
+        captured.map((request) => new URL(request.url, "http://localhost").pathname),
+        ["/backend/v3/api/system/dashboard/admin/overview"],
+      );
+      assert.equal(captured.some((request) => new URL(request.url, "http://localhost").pathname === "/backend/v3/api/iam/users"), false);
+      assert.equal(
+        captured.some((request) => new URL(request.url, "http://localhost").pathname === "/backend/v3/api/iam/organization_memberships"),
+        false,
+      );
+    },
+  );
+});
+
+test("admin dashboard service uses analytics summary and backend snapshot charts without synthetic traffic", async () => {
   const serviceSource = readFileSync(
     new URL("./packages/sdkwork-clawrouter-pc-admin-dashboard/src/dashboardService.ts", import.meta.url),
     "utf8",
   );
   assert.doesNotMatch(serviceSource, /generateTrafficData/);
   assert.doesNotMatch(serviceSource, /Math\.(sin|cos|random)/);
+  assert.match(
+    serviceSource,
+    /chartValue: hasRenderableValue \? item\.value : 1/,
+    "dashboard pie charts should keep a renderable placeholder value without changing business totals",
+  );
 
   await withBackendSdkFetch(
     (url) => {
-      assert.equal(url, "/backend/v3/api/system/dashboard/admin/overview");
-      return {
-        userConsumption: [
-          { name: "alice@example.com", value: 12.5, color: "#2563eb" },
-          { name: "bob@example.com", value: 7.5, color: "#16a34a" },
-        ],
-        multimodal: [
-          { name: "text", value: 3, color: "#2563eb" },
-          { name: "image", value: 2, color: "#7c3aed" },
-        ],
-        traffic: [
-          { time: "2026-05-15", tokens: 1500, requests: 3, cost: 0.12 },
-          { time: "2026-05-16", tokens: 2500, requests: 5, cost: 0.2 },
-        ],
-        modelDistribution: [
-          { name: "gpt-4o-mini", value: 4, color: "#16a34a" },
-          { name: "claude-sonnet", value: 2, color: "#7c3aed" },
-        ],
-        recentUsage: [
-          {
-            id: "usage-1",
-            user: "alice@example.com",
-            isApiUser: true,
-            model: "gpt-4o-mini",
-            type: "text",
-            billingMode: "usage",
-            usageIn: 100,
-            usageOut: 50,
-            usageCount: 2,
-            time: "2026-05-16T08:00:00Z",
-            status: "success",
-            cost: "0.030000",
-          },
-          {
-            id: "usage-2",
-            user: "bob@example.com",
-            isApiUser: false,
-            model: "claude-sonnet",
-            type: "image",
-            billingMode: "usage",
-            usageIn: 10,
-            usageOut: 5,
-            usageCount: 1,
-            time: "2026-05-16T08:01:00Z",
-            status: "failed",
-            cost: "0.010000",
-          },
-        ],
-      };
+      if (url === "/backend/v3/api/system/dashboard/admin/overview") {
+        return {
+          activeUsers: 2,
+          userConsumption: [
+            { name: "alice@example.com", value: 12.5, color: "#2563eb" },
+            { name: "bob@example.com", value: 7.5, color: "#16a34a" },
+          ],
+          multimodal: [
+            { name: "text", value: 3, color: "#2563eb" },
+            { name: "image", value: 2, color: "#7c3aed" },
+          ],
+          traffic: [
+            { time: "2026-05-15", tokens: 1500, requests: 3, cost: 0.12 },
+            { time: "2026-05-16", tokens: 2500, requests: 5, cost: 0.2 },
+          ],
+          modelDistribution: [
+            { name: "gpt-4o-mini", value: 4, color: "#16a34a" },
+            { name: "claude-sonnet", value: 2, color: "#7c3aed" },
+          ],
+          recentUsage: [
+            {
+              id: "usage-1",
+              user: "alice@example.com",
+              isApiUser: true,
+              model: "gpt-4o-mini",
+              type: "text",
+              billingMode: "usage",
+              usageIn: 100,
+              usageOut: 50,
+              usageCount: 2,
+              time: "2026-05-16T08:00:00Z",
+              status: "success",
+              cost: "0.030000",
+            },
+            {
+              id: "usage-2",
+              user: "bob@example.com",
+              isApiUser: false,
+              model: "claude-sonnet",
+              type: "image",
+              billingMode: "usage",
+              usageIn: 10,
+              usageOut: 5,
+              usageCount: 1,
+              time: "2026-05-16T08:01:00Z",
+              status: "failed",
+              cost: "0.010000",
+            },
+          ],
+        };
+      }
+      if (url === "/backend/v3/api/system/analytics/admin/overview?time_range=daily&limit=30") {
+        return adminAnalyticsFixture({
+          summary: adminAnalyticsSummaryFixture({
+            totalUsers: 2,
+            activeUsers: 2,
+            activeModels: 2,
+            totalRequests: 8,
+            successfulRequests: 7,
+            failedRequests: 1,
+            totalTokens: 4000,
+            totalPoints: 20,
+            upstreamCost: 8,
+            averageTokensPerRequest: 500,
+            averagePointsPerRequest: 2.5,
+            errorRate: 12.5,
+          }),
+          trend: [
+            { time: "2026-05-15", tokens: 1500, requests: 3, points: 0.12, users: 2 },
+            { time: "2026-05-16", tokens: 2500, requests: 5, points: 0.2, users: 2 },
+          ],
+        });
+      }
+      throw new Error(`unexpected SDK URL: ${url}`);
     },
     async () => {
       const result = await AdminDashboardService.fetchDashboardData();
 
       assert.deepEqual(result.traffic, [
-        { time: "2026-05-15", tokens: 1500, requests: 3, cost: 0.12 },
-        { time: "2026-05-16", tokens: 2500, requests: 5, cost: 0.2 },
+        { time: "2026-05-15", tokens: 1500, requests: 3, cost: 0.12, chartTokens: 1500, chartRequests: 3, chartCost: 0.12 },
+        { time: "2026-05-16", tokens: 2500, requests: 5, cost: 0.2, chartTokens: 2500, chartRequests: 5, chartCost: 0.2 },
       ]);
       assert.deepEqual(
         result.summaryCards.map((card) => [card.label, card.value, card.detail]),
         [
           ["活跃用户", "2", "$20.00 用户消费"],
-          ["模型覆盖", "2", "6 次模型调用"],
-          ["总请求", "8", "来自后端 traffic 快照"],
-          ["总 Tokens", "4K", "累计计费 $0.32"],
+          ["模型覆盖", "2", "8 次模型调用"],
+          ["总请求", "8", "7 成功 / 1 失败"],
+          ["总 Tokens", "4K", "累计计费 $20.00"],
           ["模态调用", "5", "2 个模态"],
-          ["实时流水", "2", "1 成功 / 1 失败"],
-          ["最近 API 调用", "1", "50.0% API Key"],
-          ["平均单次成本", "$0.04", "按请求数计算"],
+          ["实时流水", "1", "12.5% 失败率"],
+          ["最近 API 调用", "2", "总用户 2"],
+          ["平均单次成本", "$2.50", "按 analytics summary 计算"],
         ],
       );
     },
@@ -1408,7 +1766,7 @@ test("admin finance uses standard commerce management resources without legacy b
   );
 });
 
-test("admin orders exposes real order, refund, fulfillment, and shipment management actions", () => {
+test("admin orders exposes generated and fail-closed order refund fulfillment and shipment actions", () => {
   const source = readAdminOrdersSource();
   const serviceSource = readFileSync(
     new URL("./packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts", import.meta.url),
@@ -1429,6 +1787,8 @@ test("admin orders exposes real order, refund, fulfillment, and shipment managem
     "getSdkworkCommerceService().admin.orders.management.close",
     "getSdkworkCommerceService().admin.refunds.approvals.create",
     "getSdkworkCommerceService().admin.refunds.attempts.create",
+    "getSdkworkCommerceService().admin.fulfillments.create",
+    "getSdkworkCommerceService().admin.fulfillments.update",
     "getSdkworkCommerceService().admin.fulfillments.shipments.create",
     "getSdkworkCommerceService().admin.fulfillments.shipments.update",
     "getSdkworkCommerceService().admin.fulfillments.trackingEvents.create",
@@ -1475,7 +1835,7 @@ test("admin orders exposes real order, refund, fulfillment, and shipment managem
   assert.doesNotMatch(source, /window\.(?:confirm|prompt|alert)/);
   assert.doesNotMatch(source, /confirmOrderAction|readPromptValue|reportOrderActionError/);
   assert.doesNotMatch(source + serviceSource, /\bfetch\s*\(|axios|XMLHttpRequest/);
-  assert.doesNotMatch(source + serviceSource, /getClawRouterBackendSdkClient/);
+  assert.doesNotMatch(serviceSource, /getClawRouterBackendSdkClient\(\)\.commerce/);
 });
 
 test("admin dashboard live traces link to full records and render backend status", () => {
@@ -1489,6 +1849,27 @@ test("admin dashboard live traces link to full records and render backend status
   assert.match(source, /item\.status\.trim\(\)\.toLowerCase\(\) === 'success'/);
   assert.match(source, /item\.status\.trim\(\) \|\| 'unknown'/);
   assert.doesNotMatch(source, /<div className="w-1\.5 h-1\.5 rounded-full bg-emerald-500" \/> 成功/);
+});
+
+test("admin dashboard renders traffic trends through truthful chart fields", () => {
+  const source = readAdminDashboardSource();
+
+  assert.match(source, /const \[trafficTimeRange, setTrafficTimeRange\]/);
+  assert.match(source, /AdminDashboardService\.fetchDashboardData\(t, \{ timeRange: trafficTimeRange \}\)/);
+  assert.match(source, /setTrafficTimeRange\('hourly'\)/);
+  assert.match(source, /setTrafficTimeRange\('daily'\)/);
+  assert.match(source, /setTrafficTimeRange\('weekly'\)/);
+  assert.match(source, /setTrafficTimeRange\('monthly'\)/);
+  assert.match(source, /const TREND_CHART_DATA_KEYS = \{/);
+  assert.match(source, /const trendChartDataKey = TREND_CHART_DATA_KEYS\[trendMetric\]/);
+  assert.match(source, /dataKey=\{trendChartDataKey\}/);
+  assert.doesNotMatch(source, /dataKey=\{trendMetric\}/);
+  assert.match(source, /entry\.name === 'chartTokens'/);
+  assert.match(source, /entry\.name === 'chartRequests'/);
+  assert.match(source, /entry\.name === 'chartCost'/);
+  assert.match(source, /entry\.payload\?\.tokens/);
+  assert.match(source, /entry\.payload\?\.requests/);
+  assert.match(source, /entry\.payload\?\.cost/);
 });
 
 test("admin monitor service reads nodes alerts and performance through backend SDK paths", async () => {
@@ -2105,6 +2486,7 @@ test("admin dashboard lists fail closed when backend returns malformed dashboard
 
 test("admin dashboard lists fail closed when backend omits required top-level dashboard fields", async () => {
   for (const [field, message] of [
+    ["activeUsers", /Dashboard active users are required/],
     ["userConsumption", /Dashboard userConsumption is required/],
     ["multimodal", /Dashboard multimodal is required/],
     ["traffic", /Dashboard traffic is required/],

@@ -7,8 +7,8 @@ import {
   readString,
   type ApiRecord,
 } from 'sdkwork-clawrouter-pc-commons/runtime';
-import { getClawRouterAppSdkClient } from 'sdkwork-clawrouter-pc-commons/sdk-clients';
 import { RechargeService, type BillingHistoryItem } from '../../sdkwork-clawrouter-pc-console-recharge/src/rechargeService.ts';
+import { getSdkworkCommerceService } from '@sdkwork/commerce-service';
 
 export interface CommerceHistoryItem {
   id: string;
@@ -66,46 +66,47 @@ export class WalletService {
   }
 }
 
-type AppCommerceService = ReturnType<typeof getClawRouterAppSdkClient>['commerce'];
+type CommerceRequestParams = Record<string, unknown>;
+type CommerceRequestBody = Record<string, unknown>;
 
-export async function appPromotionUserCouponsList(params?: Parameters<AppCommerceService['promotions']['userCoupons']['wallet']['list']>[0]) {
-  return getClawRouterAppSdkClient().commerce.promotions.userCoupons.wallet.list(params);
+export async function appPromotionUserCouponsList(params?: CommerceRequestParams) {
+  return getSdkworkCommerceService().promotions.userCoupons.wallet.list(params);
 }
 
 export async function appPromotionUserCouponClaimsCreate(
-  body: Parameters<AppCommerceService['promotions']['userCoupons']['claims']['create']>[0],
+  body: CommerceRequestBody,
 ) {
-  return getClawRouterAppSdkClient().commerce.promotions.userCoupons.claims.create(
+  return getSdkworkCommerceService().promotions.userCoupons.claims.create(
     body,
   );
 }
 
 export async function appPromotionCodeRedemptionsCreate(
-  body: Parameters<AppCommerceService['promotions']['codes']['redemptions']['create']>[0],
+  body: CommerceRequestBody,
 ) {
-  return getClawRouterAppSdkClient().commerce.promotions.codes.redemptions.create(
+  return getSdkworkCommerceService().promotions.codes.redemptions.create(
     body,
   );
 }
 
-export async function appWalletAccountsList(params?: Parameters<AppCommerceService['wallet']['accounts']['list']>[0]) {
-  return getClawRouterAppSdkClient().commerce.wallet.accounts.list(params);
+export async function appWalletAccountsList(params?: CommerceRequestParams) {
+  return getSdkworkCommerceService().wallet.accounts.list(params);
 }
 
 export async function appWalletOverviewRetrieve() {
-  return getClawRouterAppSdkClient().commerce.wallet.overview.retrieve();
+  return getSdkworkCommerceService().wallet.overview.retrieve();
 }
 
 export async function appWalletTokensRetrieve() {
-  return getClawRouterAppSdkClient().commerce.wallet.tokens.retrieve();
+  return getSdkworkCommerceService().wallet.tokens.retrieve();
 }
 
 export async function appWalletExchangeRateRetrieve() {
-  return getClawRouterAppSdkClient().commerce.wallet.exchangeRate.retrieve();
+  return getSdkworkCommerceService().wallet.exchangeRate.retrieve();
 }
 
 export async function appWalletPointsExchangeRulesList() {
-  return getClawRouterAppSdkClient().commerce.wallet.points.exchangeRules.list();
+  return getSdkworkCommerceService().wallet.points.exchangeRules.list();
 }
 
 function normalizeRedeemHistoryItem(value: BillingHistoryItem): RedeemHistoryItem {

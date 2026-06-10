@@ -5,7 +5,7 @@ import {
   readString,
   type ApiRecord,
 } from 'sdkwork-clawrouter-pc-commons/runtime';
-import { getClawRouterAppSdkClient } from 'sdkwork-clawrouter-pc-commons/sdk-clients';
+import { getSdkworkCommerceService } from '@sdkwork/commerce-service';
 
 export type CheckoutStatusValue = 'pending' | 'success' | 'failed' | 'expired' | 'refunding' | 'refunded';
 export type CheckoutPaymentMethod = 'wechat' | 'alipay' | 'card';
@@ -41,60 +41,61 @@ export class CheckoutService {
   }
 }
 
-type AppCommerceService = ReturnType<typeof getClawRouterAppSdkClient>['commerce'];
+type CommerceRequestParams = Record<string, unknown>;
+type CommerceRequestBody = Record<string, unknown>;
 
-export async function appAddressesList(params?: Parameters<AppCommerceService['addresses']['list']>[0]) {
-  return getClawRouterAppSdkClient().commerce.addresses.list(params);
+export async function appAddressesList(params?: CommerceRequestParams) {
+  return getSdkworkCommerceService().addresses.list(params);
 }
 
-export async function appAddressesCreate(body: Parameters<AppCommerceService['addresses']['create']>[0]) {
-  return getClawRouterAppSdkClient().commerce.addresses.create(body);
+export async function appAddressesCreate(body: CommerceRequestBody) {
+  return getSdkworkCommerceService().addresses.create(body);
 }
 
-export async function appAddressesUpdate(addressId: string, body: Parameters<AppCommerceService['addresses']['update']>[1]) {
-  return getClawRouterAppSdkClient().commerce.addresses.update(addressId, body);
+export async function appAddressesUpdate(addressId: string, body: CommerceRequestBody) {
+  return getSdkworkCommerceService().addresses.update(addressId, body);
 }
 
 export async function appAddressesDelete(addressId: string) {
-  return getClawRouterAppSdkClient().commerce.addresses.delete(addressId);
+  return getSdkworkCommerceService().addresses.delete(addressId);
 }
 
 export async function appAddressesDefaultSelectionCreate(addressId: string) {
-  return getClawRouterAppSdkClient().commerce.addresses.defaultSelection.create(
+  return getSdkworkCommerceService().addresses.defaultSelection.create(
     addressId,
     { clientRequestNo: createIdempotencyParams('app-address-default-selection').idempotencyKey, metadata: {} },
   );
 }
 
 export async function appCartCurrentRetrieve() {
-  return getClawRouterAppSdkClient().commerce.cart.current.retrieve();
+  return getSdkworkCommerceService().cart.current.retrieve();
 }
 
-export async function appCartItemsCreate(body: Parameters<AppCommerceService['cart']['items']['create']>[0]) {
-  return getClawRouterAppSdkClient().commerce.cart.items.create(body);
+export async function appCartItemsCreate(body: CommerceRequestBody) {
+  return getSdkworkCommerceService().cart.items.create(body);
 }
 
-export async function appCartItemsUpdate(cartItemId: string, body: Parameters<AppCommerceService['cart']['items']['update']>[1]) {
-  return getClawRouterAppSdkClient().commerce.cart.items.update(cartItemId, body);
+export async function appCartItemsUpdate(cartItemId: string, body: CommerceRequestBody) {
+  return getSdkworkCommerceService().cart.items.update(cartItemId, body);
 }
 
 export async function appCartItemsDelete(cartItemId: string) {
-  return getClawRouterAppSdkClient().commerce.cart.items.delete(cartItemId);
+  return getSdkworkCommerceService().cart.items.delete(cartItemId);
 }
 
-export async function appCheckoutSessionsCreate(body: Parameters<AppCommerceService['checkout']['sessions']['create']>[0]) {
-  return getClawRouterAppSdkClient().commerce.checkout.sessions.create(body);
+export async function appCheckoutSessionsCreate(body: CommerceRequestBody) {
+  return getSdkworkCommerceService().checkout.sessions.create(body);
 }
 
 export async function appCheckoutSessionsRetrieve(checkoutSessionId: string) {
-  return getClawRouterAppSdkClient().commerce.checkout.sessions.retrieve(checkoutSessionId);
+  return getSdkworkCommerceService().checkout.sessions.retrieve(checkoutSessionId);
 }
 
 export async function appCheckoutSessionsOrdersCreate(
   checkoutSessionId: string,
-  body: Parameters<AppCommerceService['checkout']['sessions']['orders']['create']>[1],
+  body: CommerceRequestBody,
 ) {
-  return getClawRouterAppSdkClient().commerce.checkout.sessions.orders.create(
+  return getSdkworkCommerceService().checkout.sessions.orders.create(
     checkoutSessionId,
     body,
   );
@@ -102,103 +103,103 @@ export async function appCheckoutSessionsOrdersCreate(
 
 export async function appCheckoutSessionsQuotesCreate(
   checkoutSessionId: string,
-  body: Parameters<AppCommerceService['checkout']['sessions']['quotes']['create']>[1],
+  body: CommerceRequestBody,
 ) {
-  return getClawRouterAppSdkClient().commerce.checkout.sessions.quotes.create(
+  return getSdkworkCommerceService().checkout.sessions.quotes.create(
     checkoutSessionId,
     body,
   );
 }
 
-export async function appOrdersList(params?: Parameters<AppCommerceService['orders']['list']>[0]) {
-  return getClawRouterAppSdkClient().commerce.orders.list(params);
+export async function appOrdersList(params?: CommerceRequestParams) {
+  return getSdkworkCommerceService().orders.list(params);
 }
 
 export async function appOrdersRetrieve(orderId: string) {
-  return getClawRouterAppSdkClient().commerce.orders.retrieve(orderId);
+  return getSdkworkCommerceService().orders.retrieve(orderId);
 }
 
 export async function appOrdersEventsList(orderId: string) {
-  return getClawRouterAppSdkClient().commerce.orders.events.list(orderId);
+  return getSdkworkCommerceService().orders.events.list(orderId);
 }
 
 export async function appOrdersCancellationsCreate(
   orderId: string,
-  body: Parameters<AppCommerceService['orders']['cancellations']['create']>[1],
+  body: CommerceRequestBody,
 ) {
-  return getClawRouterAppSdkClient().commerce.orders.cancellations.create(
+  return getSdkworkCommerceService().orders.cancellations.create(
     orderId,
     body,
   );
 }
 
 export async function appPaymentsMethodsList() {
-  return getClawRouterAppSdkClient().commerce.payments.methods.list();
+  return getSdkworkCommerceService().payments.methods.list();
 }
 
-export async function appPaymentsIntentsCreate(body: Parameters<AppCommerceService['payments']['intents']['create']>[0]) {
-  return getClawRouterAppSdkClient().commerce.payments.intents.create(body);
+export async function appPaymentsIntentsCreate(body: CommerceRequestBody) {
+  return getSdkworkCommerceService().payments.intents.create(body);
 }
 
 export async function appPaymentsIntentsRetrieve(paymentIntentId: string) {
-  return getClawRouterAppSdkClient().commerce.payments.intents.retrieve(paymentIntentId);
+  return getSdkworkCommerceService().payments.intents.retrieve(paymentIntentId);
 }
 
 export async function appPaymentsIntentsAttemptsCreate(
   paymentIntentId: string,
-  body: Parameters<AppCommerceService['payments']['intents']['attempts']['create']>[1],
+  body: CommerceRequestBody,
 ) {
-  return getClawRouterAppSdkClient().commerce.payments.intents.attempts.create(
+  return getSdkworkCommerceService().payments.intents.attempts.create(
     paymentIntentId,
     body,
   );
 }
 
 export async function appPaymentsAttemptsRetrieve(paymentAttemptId: string) {
-  return getClawRouterAppSdkClient().commerce.payments.attempts.retrieve(paymentAttemptId);
+  return getSdkworkCommerceService().payments.attempts.retrieve(paymentAttemptId);
 }
 
 export async function appRechargesOrdersRetrieve(orderId: string) {
-  return getClawRouterAppSdkClient().commerce.recharges.orders.retrieve(orderId);
+  return getSdkworkCommerceService().recharges.orders.retrieve(orderId);
 }
 
-export async function appRefundsList(params?: Parameters<AppCommerceService['refunds']['list']>[0]) {
-  return getClawRouterAppSdkClient().commerce.refunds.list(params);
+export async function appRefundsList(params?: CommerceRequestParams) {
+  return getSdkworkCommerceService().refunds.list(params);
 }
 
-export async function appRefundsCreate(body: Parameters<AppCommerceService['refunds']['create']>[0]) {
-  return getClawRouterAppSdkClient().commerce.refunds.create(body);
+export async function appRefundsCreate(body: CommerceRequestBody) {
+  return getSdkworkCommerceService().refunds.create(body);
 }
 
 export async function appRefundsRetrieve(refundId: string) {
-  return getClawRouterAppSdkClient().commerce.refunds.retrieve(refundId);
+  return getSdkworkCommerceService().refunds.retrieve(refundId);
 }
 
-export async function appFulfillmentsList(params?: Parameters<AppCommerceService['fulfillments']['list']>[0]) {
-  return getClawRouterAppSdkClient().commerce.fulfillments.list(params);
+export async function appFulfillmentsList(params?: CommerceRequestParams) {
+  return getSdkworkCommerceService().fulfillments.list(params);
 }
 
 export async function appFulfillmentsRetrieve(fulfillmentId: string) {
-  return getClawRouterAppSdkClient().commerce.fulfillments.retrieve(fulfillmentId);
+  return getSdkworkCommerceService().fulfillments.retrieve(fulfillmentId);
 }
 
 export async function appShipmentsRetrieve(shipmentId: string) {
-  return getClawRouterAppSdkClient().commerce.shipments.retrieve(shipmentId);
+  return getSdkworkCommerceService().shipments.retrieve(shipmentId);
 }
 
 export async function appPromotionDiscountApplicationsCreate(
-  body: Parameters<AppCommerceService['promotions']['discountApplications']['create']>[0],
+  body: CommerceRequestBody,
 ) {
-  return getClawRouterAppSdkClient().commerce.promotions.discountApplications.create(
+  return getSdkworkCommerceService().promotions.discountApplications.create(
     body,
   );
 }
 
 export async function appPromotionDiscountApplicationsSettle(
   applicationId: string,
-  body: Parameters<AppCommerceService['promotions']['discountApplications']['settle']>[1],
+  body: CommerceRequestBody,
 ) {
-  return getClawRouterAppSdkClient().commerce.promotions.discountApplications.settle(
+  return getSdkworkCommerceService().promotions.discountApplications.settle(
     applicationId,
     body,
   );
@@ -206,18 +207,18 @@ export async function appPromotionDiscountApplicationsSettle(
 
 export async function appPromotionDiscountApplicationsRelease(
   applicationId: string,
-  body: Parameters<AppCommerceService['promotions']['discountApplications']['release']>[1],
+  body: CommerceRequestBody,
 ) {
-  return getClawRouterAppSdkClient().commerce.promotions.discountApplications.release(
+  return getSdkworkCommerceService().promotions.discountApplications.release(
     applicationId,
     body,
   );
 }
 
 export async function appPromotionDiscountApplicationReversalsCreate(
-  body: Parameters<AppCommerceService['promotions']['discountApplications']['reversals']['create']>[0],
+  body: CommerceRequestBody,
 ) {
-  return getClawRouterAppSdkClient().commerce.promotions.discountApplications.reversals.create(
+  return getSdkworkCommerceService().promotions.discountApplications.reversals.create(
     body,
   );
 }

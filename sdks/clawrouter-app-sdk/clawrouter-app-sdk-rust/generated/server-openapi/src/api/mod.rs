@@ -4,8 +4,6 @@ pub mod agents;
 pub use agents::AgentsApi;
 pub mod ai;
 pub use ai::AiApi;
-pub mod auth;
-pub use auth::AuthApi;
 pub mod chat;
 pub use chat::ChatApi;
 pub mod content;

@@ -7677,6 +7677,225 @@ class AdminChannelGroupMutationResponse {
   }
 }
 
+class AdminChannelGroupRouteExplainIssue {
+  final String code;
+  final List<String> details;
+  final String severity;
+
+  AdminChannelGroupRouteExplainIssue({
+    required this.code,
+    required this.details,
+    required this.severity
+  });
+
+  factory AdminChannelGroupRouteExplainIssue.fromJson(Map<String, dynamic> json) {
+    return AdminChannelGroupRouteExplainIssue(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('AdminChannelGroupRouteExplainIssue.code is required');
+        }
+        return value;
+      })(),
+      details: (() {
+        final list = _sdkworkAsList(json['details']);
+        if (list == null) {
+          throw FormatException('AdminChannelGroupRouteExplainIssue.details is required');
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      severity: (() {
+        final value = json['severity']?.toString();
+        if (value == null) {
+          throw FormatException('AdminChannelGroupRouteExplainIssue.severity is required');
+        }
+        return value;
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'details': details.map((item) => item).toList(),
+      'severity': severity,
+    };
+  }
+}
+
+class AdminChannelGroupRouteExplainResponse {
+  final int activeHealthyBindingCount;
+  final List<String> apiScope;
+  final List<String> capabilities;
+  final int configuredResourceAccessCount;
+  final int configuredResourceGroupAccessCount;
+  final List<String> effectiveResourceCodes;
+  final List<String> issueCodes;
+  final List<AdminChannelGroupRouteExplainIssue> issues;
+  final bool ready;
+  final List<String> resourceCodes;
+  final List<String> resourceGroupCodes;
+  final int routableBindingCount;
+  final String source;
+
+  AdminChannelGroupRouteExplainResponse({
+    required this.activeHealthyBindingCount,
+    required this.apiScope,
+    required this.capabilities,
+    required this.configuredResourceAccessCount,
+    required this.configuredResourceGroupAccessCount,
+    required this.effectiveResourceCodes,
+    required this.issueCodes,
+    required this.issues,
+    required this.ready,
+    required this.resourceCodes,
+    required this.resourceGroupCodes,
+    required this.routableBindingCount,
+    required this.source
+  });
+
+  factory AdminChannelGroupRouteExplainResponse.fromJson(Map<String, dynamic> json) {
+    return AdminChannelGroupRouteExplainResponse(
+      activeHealthyBindingCount: (() {
+        final value = json['activeHealthyBindingCount'];
+        if (value is! int) {
+          throw FormatException('AdminChannelGroupRouteExplainResponse.activeHealthyBindingCount is required');
+        }
+        return value;
+      })(),
+      apiScope: (() {
+        final list = _sdkworkAsList(json['apiScope']);
+        if (list == null) {
+          throw FormatException('AdminChannelGroupRouteExplainResponse.apiScope is required');
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      capabilities: (() {
+        final list = _sdkworkAsList(json['capabilities']);
+        if (list == null) {
+          throw FormatException('AdminChannelGroupRouteExplainResponse.capabilities is required');
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      configuredResourceAccessCount: (() {
+        final value = json['configuredResourceAccessCount'];
+        if (value is! int) {
+          throw FormatException('AdminChannelGroupRouteExplainResponse.configuredResourceAccessCount is required');
+        }
+        return value;
+      })(),
+      configuredResourceGroupAccessCount: (() {
+        final value = json['configuredResourceGroupAccessCount'];
+        if (value is! int) {
+          throw FormatException('AdminChannelGroupRouteExplainResponse.configuredResourceGroupAccessCount is required');
+        }
+        return value;
+      })(),
+      effectiveResourceCodes: (() {
+        final list = _sdkworkAsList(json['effectiveResourceCodes']);
+        if (list == null) {
+          throw FormatException('AdminChannelGroupRouteExplainResponse.effectiveResourceCodes is required');
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      issueCodes: (() {
+        final list = _sdkworkAsList(json['issueCodes']);
+        if (list == null) {
+          throw FormatException('AdminChannelGroupRouteExplainResponse.issueCodes is required');
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      issues: (() {
+        final list = _sdkworkAsList(json['issues']);
+        if (list == null) {
+          throw FormatException('AdminChannelGroupRouteExplainResponse.issues is required');
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminChannelGroupRouteExplainIssue.fromJson(map);
+      })())
+            .whereType<AdminChannelGroupRouteExplainIssue>()
+            .toList();
+      })(),
+      ready: (() {
+        final value = json['ready'];
+        if (value is! bool) {
+          throw FormatException('AdminChannelGroupRouteExplainResponse.ready is required');
+        }
+        return value;
+      })(),
+      resourceCodes: (() {
+        final list = _sdkworkAsList(json['resourceCodes']);
+        if (list == null) {
+          throw FormatException('AdminChannelGroupRouteExplainResponse.resourceCodes is required');
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      resourceGroupCodes: (() {
+        final list = _sdkworkAsList(json['resourceGroupCodes']);
+        if (list == null) {
+          throw FormatException('AdminChannelGroupRouteExplainResponse.resourceGroupCodes is required');
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      routableBindingCount: (() {
+        final value = json['routableBindingCount'];
+        if (value is! int) {
+          throw FormatException('AdminChannelGroupRouteExplainResponse.routableBindingCount is required');
+        }
+        return value;
+      })(),
+      source: (() {
+        final value = json['source']?.toString();
+        if (value == null) {
+          throw FormatException('AdminChannelGroupRouteExplainResponse.source is required');
+        }
+        return value;
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'activeHealthyBindingCount': activeHealthyBindingCount,
+      'apiScope': apiScope.map((item) => item).toList(),
+      'capabilities': capabilities.map((item) => item).toList(),
+      'configuredResourceAccessCount': configuredResourceAccessCount,
+      'configuredResourceGroupAccessCount': configuredResourceGroupAccessCount,
+      'effectiveResourceCodes': effectiveResourceCodes.map((item) => item).toList(),
+      'issueCodes': issueCodes.map((item) => item).toList(),
+      'issues': issues.map((item) => item.toJson()).toList(),
+      'ready': ready,
+      'resourceCodes': resourceCodes.map((item) => item).toList(),
+      'resourceGroupCodes': resourceGroupCodes.map((item) => item).toList(),
+      'routableBindingCount': routableBindingCount,
+      'source': source,
+    };
+  }
+}
+
 class AdminChannelGroupUpdateRequest {
   final Map<String, dynamic>? capacity;
   final String? groupCode;
@@ -15459,6 +15678,510 @@ class AdminRuntimeRegionSettingsUpdateRequest {
   }
 }
 
+class AdminRuntimeRouteExplainCandidate {
+  final String apiCode;
+  final String catalogKey;
+  final String channelGroupCode;
+  final String channelGroupId;
+  final String channelId;
+  final String credentialId;
+  final String credentialRotation;
+  final String kind;
+  final String policyId;
+  final String pricingPlanCode;
+  final String providerCode;
+  final String providerModel;
+  final String regionCode;
+  final String requestedModel;
+  final String ruleId;
+  final int timeoutMs;
+
+  AdminRuntimeRouteExplainCandidate({
+    required this.apiCode,
+    required this.catalogKey,
+    required this.channelGroupCode,
+    required this.channelGroupId,
+    required this.channelId,
+    required this.credentialId,
+    required this.credentialRotation,
+    required this.kind,
+    required this.policyId,
+    required this.pricingPlanCode,
+    required this.providerCode,
+    required this.providerModel,
+    required this.regionCode,
+    required this.requestedModel,
+    required this.ruleId,
+    required this.timeoutMs
+  });
+
+  factory AdminRuntimeRouteExplainCandidate.fromJson(Map<String, dynamic> json) {
+    return AdminRuntimeRouteExplainCandidate(
+      apiCode: (() {
+        final value = json['apiCode']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainCandidate.apiCode is required');
+        }
+        return value;
+      })(),
+      catalogKey: (() {
+        final value = json['catalogKey']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainCandidate.catalogKey is required');
+        }
+        return value;
+      })(),
+      channelGroupCode: (() {
+        final value = json['channelGroupCode']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainCandidate.channelGroupCode is required');
+        }
+        return value;
+      })(),
+      channelGroupId: (() {
+        final value = json['channelGroupId']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainCandidate.channelGroupId is required');
+        }
+        return value;
+      })(),
+      channelId: (() {
+        final value = json['channelId']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainCandidate.channelId is required');
+        }
+        return value;
+      })(),
+      credentialId: (() {
+        final value = json['credentialId']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainCandidate.credentialId is required');
+        }
+        return value;
+      })(),
+      credentialRotation: (() {
+        final value = json['credentialRotation']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainCandidate.credentialRotation is required');
+        }
+        return value;
+      })(),
+      kind: (() {
+        final value = json['kind']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainCandidate.kind is required');
+        }
+        return value;
+      })(),
+      policyId: (() {
+        final value = json['policyId']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainCandidate.policyId is required');
+        }
+        return value;
+      })(),
+      pricingPlanCode: (() {
+        final value = json['pricingPlanCode']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainCandidate.pricingPlanCode is required');
+        }
+        return value;
+      })(),
+      providerCode: (() {
+        final value = json['providerCode']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainCandidate.providerCode is required');
+        }
+        return value;
+      })(),
+      providerModel: (() {
+        final value = json['providerModel']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainCandidate.providerModel is required');
+        }
+        return value;
+      })(),
+      regionCode: (() {
+        final value = json['regionCode']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainCandidate.regionCode is required');
+        }
+        return value;
+      })(),
+      requestedModel: (() {
+        final value = json['requestedModel']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainCandidate.requestedModel is required');
+        }
+        return value;
+      })(),
+      ruleId: (() {
+        final value = json['ruleId']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainCandidate.ruleId is required');
+        }
+        return value;
+      })(),
+      timeoutMs: (() {
+        final value = json['timeoutMs'];
+        if (value is! int) {
+          throw FormatException('AdminRuntimeRouteExplainCandidate.timeoutMs is required');
+        }
+        return value;
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'apiCode': apiCode,
+      'catalogKey': catalogKey,
+      'channelGroupCode': channelGroupCode,
+      'channelGroupId': channelGroupId,
+      'channelId': channelId,
+      'credentialId': credentialId,
+      'credentialRotation': credentialRotation,
+      'kind': kind,
+      'policyId': policyId,
+      'pricingPlanCode': pricingPlanCode,
+      'providerCode': providerCode,
+      'providerModel': providerModel,
+      'regionCode': regionCode,
+      'requestedModel': requestedModel,
+      'ruleId': ruleId,
+      'timeoutMs': timeoutMs,
+    };
+  }
+}
+
+class AdminRuntimeRouteExplainIssue {
+  final String code;
+  final String message;
+  final String severity;
+
+  AdminRuntimeRouteExplainIssue({
+    required this.code,
+    required this.message,
+    required this.severity
+  });
+
+  factory AdminRuntimeRouteExplainIssue.fromJson(Map<String, dynamic> json) {
+    return AdminRuntimeRouteExplainIssue(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainIssue.code is required');
+        }
+        return value;
+      })(),
+      message: (() {
+        final value = json['message']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainIssue.message is required');
+        }
+        return value;
+      })(),
+      severity: (() {
+        final value = json['severity']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainIssue.severity is required');
+        }
+        return value;
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'message': message,
+      'severity': severity,
+    };
+  }
+}
+
+class AdminRuntimeRouteExplainRequest {
+  final String? apiCode;
+  final String apiKeyId;
+  final String? billingMeter;
+  final String? capability;
+  final String? catalogKey;
+  final String? channelGroupId;
+  final String? model;
+  final String? resourceCode;
+  final String? routeKey;
+
+  AdminRuntimeRouteExplainRequest({
+    this.apiCode,
+    required this.apiKeyId,
+    this.billingMeter,
+    this.capability,
+    this.catalogKey,
+    this.channelGroupId,
+    this.model,
+    this.resourceCode,
+    this.routeKey
+  });
+
+  factory AdminRuntimeRouteExplainRequest.fromJson(Map<String, dynamic> json) {
+    return AdminRuntimeRouteExplainRequest(
+      apiCode: json['apiCode']?.toString(),
+      apiKeyId: (() {
+        final value = json['apiKeyId']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainRequest.apiKeyId is required');
+        }
+        return value;
+      })(),
+      billingMeter: json['billingMeter']?.toString(),
+      capability: json['capability']?.toString(),
+      catalogKey: json['catalogKey']?.toString(),
+      channelGroupId: json['channelGroupId']?.toString(),
+      model: json['model']?.toString(),
+      resourceCode: json['resourceCode']?.toString(),
+      routeKey: json['routeKey']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'apiCode': apiCode,
+      'apiKeyId': apiKeyId,
+      'billingMeter': billingMeter,
+      'capability': capability,
+      'catalogKey': catalogKey,
+      'channelGroupId': channelGroupId,
+      'model': model,
+      'resourceCode': resourceCode,
+      'routeKey': routeKey,
+    };
+  }
+}
+
+class AdminRuntimeRouteExplainResponse {
+  final String apiCode;
+  final String apiKeyId;
+  final String billingMeter;
+  final List<AdminRuntimeRouteExplainIssue> blockedReasons;
+  final int candidateCount;
+  final String capability;
+  final String catalogKey;
+  final String channelGroupId;
+  final String groupCode;
+  final String model;
+  final String policyId;
+  final String policySnapshotVersion;
+  final String pricingPlanCode;
+  final bool ready;
+  final String resourceCode;
+  final String ruleId;
+  final List<AdminRuntimeRouteExplainCandidate> selectedCandidates;
+  final String source;
+  final List<AdminRuntimeRouteExplainIssue> warnings;
+
+  AdminRuntimeRouteExplainResponse({
+    required this.apiCode,
+    required this.apiKeyId,
+    required this.billingMeter,
+    required this.blockedReasons,
+    required this.candidateCount,
+    required this.capability,
+    required this.catalogKey,
+    required this.channelGroupId,
+    required this.groupCode,
+    required this.model,
+    required this.policyId,
+    required this.policySnapshotVersion,
+    required this.pricingPlanCode,
+    required this.ready,
+    required this.resourceCode,
+    required this.ruleId,
+    required this.selectedCandidates,
+    required this.source,
+    required this.warnings
+  });
+
+  factory AdminRuntimeRouteExplainResponse.fromJson(Map<String, dynamic> json) {
+    return AdminRuntimeRouteExplainResponse(
+      apiCode: (() {
+        final value = json['apiCode']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainResponse.apiCode is required');
+        }
+        return value;
+      })(),
+      apiKeyId: (() {
+        final value = json['apiKeyId']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainResponse.apiKeyId is required');
+        }
+        return value;
+      })(),
+      billingMeter: (() {
+        final value = json['billingMeter']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainResponse.billingMeter is required');
+        }
+        return value;
+      })(),
+      blockedReasons: (() {
+        final list = _sdkworkAsList(json['blockedReasons']);
+        if (list == null) {
+          throw FormatException('AdminRuntimeRouteExplainResponse.blockedReasons is required');
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminRuntimeRouteExplainIssue.fromJson(map);
+      })())
+            .whereType<AdminRuntimeRouteExplainIssue>()
+            .toList();
+      })(),
+      candidateCount: (() {
+        final value = json['candidateCount'];
+        if (value is! int) {
+          throw FormatException('AdminRuntimeRouteExplainResponse.candidateCount is required');
+        }
+        return value;
+      })(),
+      capability: (() {
+        final value = json['capability']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainResponse.capability is required');
+        }
+        return value;
+      })(),
+      catalogKey: (() {
+        final value = json['catalogKey']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainResponse.catalogKey is required');
+        }
+        return value;
+      })(),
+      channelGroupId: (() {
+        final value = json['channelGroupId']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainResponse.channelGroupId is required');
+        }
+        return value;
+      })(),
+      groupCode: (() {
+        final value = json['groupCode']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainResponse.groupCode is required');
+        }
+        return value;
+      })(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainResponse.model is required');
+        }
+        return value;
+      })(),
+      policyId: (() {
+        final value = json['policyId']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainResponse.policyId is required');
+        }
+        return value;
+      })(),
+      policySnapshotVersion: (() {
+        final value = json['policySnapshotVersion']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainResponse.policySnapshotVersion is required');
+        }
+        return value;
+      })(),
+      pricingPlanCode: (() {
+        final value = json['pricingPlanCode']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainResponse.pricingPlanCode is required');
+        }
+        return value;
+      })(),
+      ready: (() {
+        final value = json['ready'];
+        if (value is! bool) {
+          throw FormatException('AdminRuntimeRouteExplainResponse.ready is required');
+        }
+        return value;
+      })(),
+      resourceCode: (() {
+        final value = json['resourceCode']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainResponse.resourceCode is required');
+        }
+        return value;
+      })(),
+      ruleId: (() {
+        final value = json['ruleId']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainResponse.ruleId is required');
+        }
+        return value;
+      })(),
+      selectedCandidates: (() {
+        final list = _sdkworkAsList(json['selectedCandidates']);
+        if (list == null) {
+          throw FormatException('AdminRuntimeRouteExplainResponse.selectedCandidates is required');
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminRuntimeRouteExplainCandidate.fromJson(map);
+      })())
+            .whereType<AdminRuntimeRouteExplainCandidate>()
+            .toList();
+      })(),
+      source: (() {
+        final value = json['source']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRuntimeRouteExplainResponse.source is required');
+        }
+        return value;
+      })(),
+      warnings: (() {
+        final list = _sdkworkAsList(json['warnings']);
+        if (list == null) {
+          throw FormatException('AdminRuntimeRouteExplainResponse.warnings is required');
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminRuntimeRouteExplainIssue.fromJson(map);
+      })())
+            .whereType<AdminRuntimeRouteExplainIssue>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'apiCode': apiCode,
+      'apiKeyId': apiKeyId,
+      'billingMeter': billingMeter,
+      'blockedReasons': blockedReasons.map((item) => item.toJson()).toList(),
+      'candidateCount': candidateCount,
+      'capability': capability,
+      'catalogKey': catalogKey,
+      'channelGroupId': channelGroupId,
+      'groupCode': groupCode,
+      'model': model,
+      'policyId': policyId,
+      'policySnapshotVersion': policySnapshotVersion,
+      'pricingPlanCode': pricingPlanCode,
+      'ready': ready,
+      'resourceCode': resourceCode,
+      'ruleId': ruleId,
+      'selectedCandidates': selectedCandidates.map((item) => item.toJson()).toList(),
+      'source': source,
+      'warnings': warnings.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
 class AdminServiceNodeCreateRequest {
   final String domain;
   final String ip;
@@ -21265,6 +21988,43 @@ class ChannelGroupsListResult {
       data: (() {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminChannelGroupsResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class ChannelGroupsRouteExplainRetrieveResult {
+  final String code;
+  final AdminChannelGroupRouteExplainResponse? data;
+  final String? msg;
+
+  ChannelGroupsRouteExplainRetrieveResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ChannelGroupsRouteExplainRetrieveResult.fromJson(Map<String, dynamic> json) {
+    return ChannelGroupsRouteExplainRetrieveResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('ChannelGroupsRouteExplainRetrieveResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminChannelGroupRouteExplainResponse.fromJson(map);
       })(),
       msg: json['msg']?.toString()
     );
@@ -28489,6 +29249,43 @@ class RiskEventsListResult {
       data: (() {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : ServiceProviderCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class RouteExplainCreateResult {
+  final String code;
+  final AdminRuntimeRouteExplainResponse? data;
+  final String? msg;
+
+  RouteExplainCreateResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory RouteExplainCreateResult.fromJson(Map<String, dynamic> json) {
+    return RouteExplainCreateResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('RouteExplainCreateResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminRuntimeRouteExplainResponse.fromJson(map);
       })(),
       msg: json['msg']?.toString()
     );

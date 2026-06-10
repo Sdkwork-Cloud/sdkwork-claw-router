@@ -8,6 +8,7 @@ const sdksRoot = path.resolve(testDir, '..');
 const appRoot = path.resolve(sdksRoot, '..');
 const appsRoot = path.resolve(appRoot, '..');
 const appbaseRoot = path.join(appsRoot, 'sdkwork-appbase');
+const commerceRoot = path.join(appsRoot, 'sdkwork-commerce');
 
 const dependencyContracts = [
   {
@@ -25,6 +26,23 @@ const dependencyContracts = [
     ),
   },
   {
+    label: 'clawrouter app SDK',
+    sdkFamily: 'clawrouter-app-sdk',
+    prefix: '/app/v3/api',
+    dependencyWorkspace: 'sdkwork-commerce-app-sdk',
+    dependencyDomain: 'commerce',
+    role: 'commerce-app-capability',
+    appbaseAuthority: path.join(
+      commerceRoot,
+      'sdks',
+      'sdkwork-commerce-app-sdk',
+      'sdkwork-commerce-app-sdk-typescript',
+      'generated',
+      'server-openapi',
+      'source-openapi.json',
+    ),
+  },
+  {
     label: 'clawrouter backend SDK',
     sdkFamily: 'clawrouter-backend-sdk',
     prefix: '/backend/v3/api',
@@ -36,6 +54,23 @@ const dependencyContracts = [
       'sdkwork-appbase-backend-sdk',
       'openapi',
       'sdkwork-appbase-backend-api.openapi.yaml',
+    ),
+  },
+  {
+    label: 'clawrouter backend SDK',
+    sdkFamily: 'clawrouter-backend-sdk',
+    prefix: '/backend/v3/api',
+    dependencyWorkspace: 'sdkwork-commerce-backend-sdk',
+    dependencyDomain: 'commerce',
+    role: 'commerce-backend-management-capability',
+    appbaseAuthority: path.join(
+      commerceRoot,
+      'sdks',
+      'sdkwork-commerce-backend-sdk',
+      'sdkwork-commerce-backend-sdk-typescript',
+      'generated',
+      'server-openapi',
+      'source-openapi.json',
     ),
   },
 ];
@@ -99,6 +134,34 @@ function assertNoOperationOverlap(contract, localDocument, appbaseDocument) {
     overlaps,
     [],
     `${contract.label} authority must not regenerate ${contract.dependencyWorkspace} routes.`,
+  );
+}
+
+function assertNoDependencyDomainOperations(contract, localDocument) {
+  if (!contract.dependencyDomain) {
+    return;
+  }
+
+  const violations = [];
+  for (const [pathKey, pathItem] of Object.entries(localDocument.paths ?? {})) {
+    if (!pathKey.startsWith(`${contract.prefix}/`)) {
+      continue;
+    }
+    for (const [method, operation] of Object.entries(pathItem ?? {})) {
+      if (!['get', 'post', 'put', 'patch', 'delete', 'head', 'options', 'trace'].includes(method)) {
+        continue;
+      }
+      const domain = operation?.['x-sdkwork-domain'] ?? operation?.['x-sdk-domain'];
+      if (domain === contract.dependencyDomain) {
+        violations.push(`${method.toUpperCase()} ${pathKey} ${operation?.operationId ?? ''}`.trim());
+      }
+    }
+  }
+
+  assert.deepEqual(
+    violations.sort(),
+    [],
+    `${contract.label} authority must not retain ${contract.dependencyDomain} domain operations owned by ${contract.dependencyWorkspace}.`,
   );
 }
 
@@ -217,6 +280,8 @@ for (const contract of dependencyContracts) {
 
   assertNoOperationOverlap(contract, authority, appbaseAuthority);
   assertNoOperationOverlap(contract, sdkgen, appbaseAuthority);
+  assertNoDependencyDomainOperations(contract, authority);
+  assertNoDependencyDomainOperations(contract, sdkgen);
   assertDependencyMetadata(contract);
   assertGeneratedOutputHasNoDependencySurface(contract, authority, appbaseAuthority);
 }

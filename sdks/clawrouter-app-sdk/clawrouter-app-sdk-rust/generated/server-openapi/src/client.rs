@@ -1,6 +1,6 @@
 use std::sync::Arc;
 
-use crate::api::{AgentsApi, AiApi, AuthApi, ChatApi, ContentApi, EcosystemApi, IamApi, MemoryApi, NotificationApi, PlatformApi, RuntimeApi, SdkReferenceApi, SystemApi};
+use crate::api::{AgentsApi, AiApi, ChatApi, ContentApi, EcosystemApi, IamApi, MemoryApi, NotificationApi, PlatformApi, RuntimeApi, SdkReferenceApi, SystemApi};
 use crate::http::{SdkworkConfig, SdkworkError, SdkworkHttpClient};
 
 #[derive(Clone)]
@@ -43,10 +43,6 @@ impl SdkworkAppClient {
 
     pub fn ai(&self) -> AiApi {
             AiApi::new(Arc::clone(&self.http))
-        }
-
-    pub fn auth(&self) -> AuthApi {
-            AuthApi::new(Arc::clone(&self.http))
         }
 
     pub fn chat(&self) -> ChatApi {

@@ -8,7 +8,6 @@ import com.sdkwork.clawrouter.app.http.HttpClient
 class Api(private val client: HttpClient) {
     val agents: AgentsApi = AgentsApi(client)
     val ai: AiApi = AiApi(client)
-    val auth: AuthApi = AuthApi(client)
     val chat: ChatApi = ChatApi(client)
     val content: ContentApi = ContentApi(client)
     val ecosystem: EcosystemApi = EcosystemApi(client)
