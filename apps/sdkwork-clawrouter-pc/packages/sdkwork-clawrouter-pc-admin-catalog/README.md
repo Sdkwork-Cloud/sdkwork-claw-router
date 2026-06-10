@@ -7,7 +7,7 @@ Status: ready
 
 This README is the SDKWork module entrypoint for `sdkwork-clawrouter-pc-admin-catalog`. The machine-readable component contract is `specs/component.spec.json`; canonical standards are under `../../../../../sdkwork-specs/`.
 
-This package is the Claw Router admin adapter for the Commerce-owned product center. It preserves Claw Router admin routes under `/admin/catalog/*` while re-exporting the public API from `sdkwork-commerce-pc-admin-product`, including product creation/editing, category management, multi-spec SKU management, category/SKU attributes, store visibility, inventory policy, and product detail configuration. Claw Router publish-readiness projections are owned locally by `ProductPublishSystem.ts`.
+This package is the Claw Router admin adapter for the Commerce-owned product center. It preserves Claw Router admin routes under `/admin/catalog/*` while re-exporting the complete public API from `sdkwork-commerce-pc-admin-product`, including product creation/editing, category management, multi-spec SKU management, category/SKU attributes, store visibility, inventory policy, product detail configuration, and publish-readiness helpers. Claw Router publish-readiness projections are owned locally by `ProductPublishSystem.ts`.
 
 ## Public API
 
