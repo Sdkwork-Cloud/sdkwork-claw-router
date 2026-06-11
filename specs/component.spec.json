@@ -145,7 +145,16 @@
     "authority": "Root SDKWork specs remain authoritative. Local specs may extend but must not contradict them.",
     "dependencyPolicy": "Consumers integrate through public package exports, declared runtime entrypoints, generated SDK clients, or documented adapters only.",
     "sdkPolicy": "Generated SDK clients are injected through service/runtime boundaries; reusable UI must not create raw HTTP clients or manual auth headers.",
-    "languagePolicy": "Language-specific packages follow their native manifest and build tools while preserving the same component contract."
+    "languagePolicy": "Language-specific packages follow their native manifest and build tools while preserving the same component contract.",
+    "foundationApiGateway": {
+      "targetApplication": "sdkwork-api-gateway",
+      "targetMode": "shared-gateway",
+      "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
+      "authority": "cargo-workspace",
+      "catalogPolicy": "no-dedicated-gateway-catalog",
+      "productApiPolicy": "sdkwork-claw-router APIs remain product-owned SDKWork API surfaces",
+      "migrationState": "shared-gateway-default"
+    }
   },
   "verification": {
     "commands": [

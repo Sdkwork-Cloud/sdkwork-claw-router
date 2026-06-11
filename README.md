@@ -574,13 +574,13 @@ the root `pnpm dev` entrypoint, installer/catalog startup, Rust services, and
 the portal dev server. Run it directly when you need that coverage:
 
 ```powershell
-pnpm smoke:dev
+pnpm.cmd smoke:dev
 ```
 
 To include the same live dev smoke inside `verify`, opt in explicitly:
 
 ```powershell
-pnpm verify -- --with-edge-dev-smoke
+pnpm.cmd verify -- --with-edge-dev-smoke
 ```
 
 If the local shell sandbox blocks `child_process.spawn`, the smoke prints a
@@ -589,7 +589,7 @@ coverage should make the smoke mandatory:
 
 ```powershell
 $env:CLAWROUTER_EDGE_DEV_SMOKE_REQUIRED="1"
-pnpm verify -- --with-edge-dev-smoke
+pnpm.cmd verify -- --with-edge-dev-smoke
 ```
 
 `CLAWROUTER_VERIFY_EDGE_DEV_SMOKE=1` also opts `verify` into the live dev smoke.
@@ -705,7 +705,7 @@ packaging a commercial release.
 Use strict mode on CI, staging, or release packaging hosts:
 
 ```powershell
-pnpm release:preflight -- --strict --env-file .env.release.local --strict-root-clean
+pnpm.cmd release:preflight -- --strict --env-file .env.release.local --strict-root-clean
 ```
 
 ## Release Environment Contract
@@ -725,6 +725,9 @@ SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL
 Required browser-visible portal runtime variables:
 
 ```text
+PORTAL_PUBLIC_API_BASE_URL
+PORTAL_PUBLIC_APP_API_BASE_URL
+PORTAL_PUBLIC_BACKEND_API_BASE_URL
 PORTAL_PUBLIC_TOOL_API_ENABLED
 ```
 
@@ -732,19 +735,16 @@ Configure either one common browser-visible SDK root or per-surface overrides:
 
 ```text
 PORTAL_PUBLIC_SDK_BASE_URL
-PORTAL_PUBLIC_API_BASE_URL
 PORTAL_PUBLIC_OPEN_API_BASE_URL
-PORTAL_PUBLIC_APP_API_BASE_URL
-PORTAL_PUBLIC_BACKEND_API_BASE_URL
 PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL
 ```
 
 Run strict preflight against the local release env file before packaging:
 
 ```powershell
-pnpm release:env:write -- --check
-pnpm release:env:write
-pnpm release:preflight -- --strict --env-file .env.release.local --strict-root-clean
+pnpm.cmd release:env:write -- --check
+pnpm.cmd release:env:write
+pnpm.cmd release:preflight -- --strict --env-file .env.release.local --strict-root-clean
 ```
 
 `PORTAL_PUBLIC_*` values are intentionally visible to the browser through

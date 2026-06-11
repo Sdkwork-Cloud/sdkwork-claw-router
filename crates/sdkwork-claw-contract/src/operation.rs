@@ -12,4 +12,6 @@ pub struct ContractOperation {
     pub path: String,
     #[serde(rename = "api_surface")]
     pub surface: ApiSurface,
+    #[serde(rename = "sdk_domain", default)]
+    pub sdk_domain: Option<String>,
 }

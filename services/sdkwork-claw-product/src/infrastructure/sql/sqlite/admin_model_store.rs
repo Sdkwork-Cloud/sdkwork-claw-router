@@ -1001,12 +1001,13 @@ async fn insert_vendor(
     tx: &mut Transaction<'_, Sqlite>,
     command: &CreateAdminModelVendorCommand,
 ) -> DomainResult<i64> {
+    let id = next_claw_runtime_id("ai_model_vendor")?;
     sqlx::query(
         r#"
         INSERT INTO ai_model_vendor
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, vendor_code, display_name, description, color_token, sort_order)
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, vendor_code, display_name, description, color_token, sort_order, id)
         VALUES
-            (?, ?, ?, 1, ?, ?, ?, 0, '{}', ?, ?, ?, ?, COALESCE((SELECT MAX(sort_order) + 1 FROM ai_model_vendor), 1))
+            (?, ?, ?, 1, ?, ?, ?, 0, '{}', ?, ?, ?, ?, COALESCE((SELECT MAX(sort_order) + 1 FROM ai_model_vendor), 1), ?)
         "#,
     )
     .bind(&command.vendor_uuid)
@@ -1019,26 +1020,28 @@ async fn insert_vendor(
     .bind(&command.name)
     .bind(&command.description)
     .bind(&command.color)
+    .bind(id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to create model vendor", error))?;
-    last_insert_rowid(tx).await
+    Ok(id)
 }
 
 async fn insert_model_mapping(
     tx: &mut Transaction<'_, Sqlite>,
     command: &CreateAdminModelMappingCommand,
 ) -> DomainResult<i64> {
+    let mapping_id = next_claw_runtime_id("ai_model_mapping_rule")?;
     sqlx::query(
         r#"
         INSERT INTO ai_model_mapping_rule
             (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata,
              source_vendor_id, source_vendor_code, target_vendor_id, target_vendor_code,
-             mapping_mode, match_type, enabled)
+             mapping_mode, match_type, enabled, id)
         VALUES
             (?, ?, ?, 0, 1, ?, ?, 0, '{}',
              ?, ?, ?, ?,
-             ?, ?, ?)
+             ?, ?, ?, ?)
         "#,
     )
     .bind(&command.mapping_uuid)
@@ -1053,10 +1056,10 @@ async fn insert_model_mapping(
     .bind(&command.draft.mapping_mode)
     .bind(&command.draft.match_type)
     .bind(command.draft.enabled)
+    .bind(mapping_id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to create model mapping", error))?;
-    let mapping_id = last_insert_rowid(tx).await?;
     insert_model_mapping_bindings(
         tx,
         command.subject,
@@ -1118,14 +1121,15 @@ async fn insert_model_mapping_binding_row(
     sort_order: i32,
     requested_at: &str,
 ) -> DomainResult<()> {
+    let id = next_claw_runtime_id("ai_model_mapping_rule_binding")?;
     sqlx::query(
         r#"
         INSERT INTO ai_model_mapping_rule_binding
             (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata,
-             rule_id, rule_uuid, binding_type, binding_id, binding_code, binding_name_snapshot, sort_order, enabled)
+             rule_id, rule_uuid, binding_type, binding_id, binding_code, binding_name_snapshot, sort_order, enabled, id)
         VALUES
             (?, ?, ?, 0, 1, ?, ?, 0, '{}',
-             ?, ?, ?, ?, ?, ?, ?, ?)
+             ?, ?, ?, ?, ?, ?, ?, ?, ?)
         "#,
     )
     .bind(binding_uuid)
@@ -1141,6 +1145,7 @@ async fn insert_model_mapping_binding_row(
     .bind(binding.binding_name.as_deref())
     .bind(sort_order)
     .bind(binding.enabled)
+    .bind(id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to create model mapping binding", error))?;
@@ -1185,15 +1190,16 @@ async fn insert_model_mapping_item_row(
     sort_order: i32,
     requested_at: &str,
 ) -> DomainResult<()> {
+    let id = next_claw_runtime_id("ai_model_mapping_rule_item")?;
     sqlx::query(
         r#"
         INSERT INTO ai_model_mapping_rule_item
             (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata,
              rule_id, rule_uuid, source_model, source_catalog_key, target_model, target_catalog_key,
-             target_provider_model, target_provider_native_model, sort_order, enabled)
+             target_provider_model, target_provider_native_model, sort_order, enabled, id)
         VALUES
             (?, ?, ?, 0, 1, ?, ?, 0, '{}',
-             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         "#,
     )
     .bind(item_uuid)
@@ -1211,6 +1217,7 @@ async fn insert_model_mapping_item_row(
     .bind(item.target_provider_native_model.as_deref())
     .bind(sort_order)
     .bind(item.enabled.unwrap_or(true))
+    .bind(id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to create model mapping item", error))?;
@@ -1568,12 +1575,13 @@ async fn insert_model(
     let supported_languages = json_array_text(&command.supported_languages)?;
     let use_cases = json_array_text(&command.use_cases)?;
     let catalog_key = build_model_base_catalog_key(&vendor.code, &command.model);
+    let id = next_claw_runtime_id("ai_model")?;
     sqlx::query(
         r#"
         INSERT INTO ai_model
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, deleted_at, metadata, catalog_key, model, display_name, vendor_id, vendor_code, vendor_name_snapshot, capability, modalities, input_modalities, output_modalities, description, capability_intro, limitations, supported_languages, use_cases, training_data_cutoff, context_tokens, max_output_tokens, supports_streaming, supports_tools, supports_json_schema, api_format, release_stage, shelf_state, routing_state, replacement_model, rank_score)
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, deleted_at, metadata, catalog_key, model, display_name, vendor_id, vendor_code, vendor_name_snapshot, capability, modalities, input_modalities, output_modalities, description, capability_intro, limitations, supported_languages, use_cases, training_data_cutoff, context_tokens, max_output_tokens, supports_streaming, supports_tools, supports_json_schema, api_format, release_stage, shelf_state, routing_state, replacement_model, rank_score, id)
         VALUES
-            (?, ?, ?, 1, 1, ?, ?, 0, NULL, '{}', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            (?, ?, ?, 1, 1, ?, ?, 0, NULL, '{}', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, ?)
         "#,
     )
     .bind(&command.model_uuid)
@@ -1607,10 +1615,11 @@ async fn insert_model(
     .bind(command.shelf_state)
     .bind(command.routing_state)
     .bind(command.replacement_model.as_deref())
+    .bind(id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to create ai model", error))?;
-    last_insert_rowid(tx).await
+    Ok(id)
 }
 
 async fn insert_model_capability(
@@ -1621,12 +1630,13 @@ async fn insert_model_capability(
 ) -> DomainResult<()> {
     let capability_code_text = model_capability_code(&command.model_type);
     let catalog_key = build_model_base_catalog_key(&vendor.code, &command.model);
+    let id = next_claw_runtime_id("ai_model_capability")?;
     sqlx::query(
         r#"
         INSERT INTO ai_model_capability
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, model_id, catalog_key, model, vendor_code, capability, capability_code, modality, input_modalities, output_modalities, supported, schema_version, sort_order)
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, model_id, catalog_key, model, vendor_code, capability, capability_code, modality, input_modalities, output_modalities, supported, schema_version, sort_order, id)
         VALUES
-            (?, ?, ?, 1, 1, ?, ?, 0, '{}', ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, 'v1', 1)
+            (?, ?, ?, 1, 1, ?, ?, 0, '{}', ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, 'v1', 1, ?)
         "#,
     )
     .bind(&command.capability_uuid)
@@ -1643,6 +1653,7 @@ async fn insert_model_capability(
     .bind(modality_code(&command.model_type))
     .bind(json_array_text(&command.input_modalities)?)
     .bind(json_array_text(&command.output_modalities)?)
+    .bind(id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to create model capability", error))?;
@@ -1741,12 +1752,13 @@ async fn insert_region_model_pricing(
         "admin-price",
         &[&command.model_uuid, region_code, meter, price_kind],
     );
+    let id = next_claw_runtime_id("ai_model_pricing")?;
     sqlx::query(
         r#"
         INSERT INTO ai_model_pricing
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, model_id, catalog_key, model, vendor_code, region_code, price_side, pricing_scope, billing_type, billing_mode, billing_meter_code, price_item_type, unit, unit_size, metering_mode, quantity_source, minimum_quantity, quantity_step, included_quantity, unit_price, currency, rounding_mode, min_charge_amount, pricing_formula_mode, price_origin, priority, effective_from)
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, model_id, catalog_key, model, vendor_code, region_code, price_side, pricing_scope, billing_type, billing_mode, billing_meter_code, price_item_type, unit, unit_size, metering_mode, quantity_source, minimum_quantity, quantity_step, included_quantity, unit_price, currency, rounding_mode, min_charge_amount, pricing_formula_mode, price_origin, priority, effective_from, id)
         VALUES
-            (?, ?, ?, 1, 1, ?, ?, 0, '{}', ?, ?, ?, ?, ?, ?, 1, 1, 1, ?, 1, 1, 1, 1, 1, 0, 1, 0, ?, ?, 1, 0, 1, 1, ?, ?)
+            (?, ?, ?, 1, 1, ?, ?, 0, '{}', ?, ?, ?, ?, ?, ?, 1, 1, 1, ?, 1, 1, 1, 1, 1, 0, 1, 0, ?, ?, 1, 0, 1, 1, ?, ?, ?)
         "#,
     )
     .bind(uuid)
@@ -1765,6 +1777,7 @@ async fn insert_region_model_pricing(
     .bind(currency)
     .bind(priority)
     .bind(&command.requested_at)
+    .bind(id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to create regional model pricing", error))?;
@@ -1901,6 +1914,7 @@ async fn upsert_model_catalog_sync_run(
     })
     .to_string();
 
+    let source_insert_id = next_claw_runtime_id("ai_model_catalog_source")?;
     if dry_run {
         let dry_run_metadata = serde_json::json!({
             "source": command.source,
@@ -1916,9 +1930,9 @@ async fn upsert_model_catalog_sync_run(
         sqlx::query(
             r#"
             INSERT INTO ai_model_catalog_source
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, source_code, vendor_code, provider_code, source_name, source_url, source_kind, trust_level, parser_kind, refresh_interval_seconds, last_observed_at, last_success_at, catalog_version, source_hash)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, source_code, vendor_code, provider_code, source_name, source_url, source_kind, trust_level, parser_kind, refresh_interval_seconds, last_observed_at, last_success_at, catalog_version, source_hash, id)
             VALUES
-                (?, ?, ?, 1, 1, ?, ?, 'mixed', NULL, ?, ?, 2, 1, 'manual_refresh', 21600, ?, ?, ?, ?)
+                (?, ?, ?, 1, 1, ?, ?, 'mixed', NULL, ?, ?, 2, 1, 'manual_refresh', 21600, ?, ?, ?, ?, ?)
             ON CONFLICT(tenant_id, organization_id, source_code) DO UPDATE SET
                 updated_at = CURRENT_TIMESTAMP,
                 source_name = excluded.source_name,
@@ -1940,6 +1954,7 @@ async fn upsert_model_catalog_sync_run(
         .bind(Option::<&str>::None)
         .bind(Option::<&str>::None)
         .bind(Option::<&str>::None)
+        .bind(source_insert_id)
         .execute(&mut **tx)
         .await
         .map_err(|error| store_error("failed to upsert model catalog source", error))?;
@@ -1947,9 +1962,9 @@ async fn upsert_model_catalog_sync_run(
         sqlx::query(
             r#"
             INSERT INTO ai_model_catalog_source
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, source_code, vendor_code, provider_code, source_name, source_url, source_kind, trust_level, parser_kind, refresh_interval_seconds, last_observed_at, last_success_at, catalog_version, source_hash)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, source_code, vendor_code, provider_code, source_name, source_url, source_kind, trust_level, parser_kind, refresh_interval_seconds, last_observed_at, last_success_at, catalog_version, source_hash, id)
             VALUES
-                (?, ?, ?, 1, 1, ?, ?, 'mixed', NULL, ?, ?, 2, 1, 'manual_refresh', 21600, ?, ?, ?, ?)
+                (?, ?, ?, 1, 1, ?, ?, 'mixed', NULL, ?, ?, 2, 1, 'manual_refresh', 21600, ?, ?, ?, ?, ?)
             ON CONFLICT(tenant_id, organization_id, source_code) DO UPDATE SET
                 updated_at = CURRENT_TIMESTAMP,
                 metadata = excluded.metadata,
@@ -1975,6 +1990,7 @@ async fn upsert_model_catalog_sync_run(
         .bind(last_success_at)
         .bind(catalog_version)
         .bind(source_hash)
+        .bind(source_insert_id)
         .execute(&mut **tx)
         .await
         .map_err(|error| store_error("failed to upsert model catalog source", error))?;
@@ -2729,12 +2745,13 @@ async fn upsert_model_capability(
     if result.rows_affected() > 0 {
         return Ok(());
     }
+    let id = next_claw_runtime_id("ai_model_capability")?;
     sqlx::query(
         r#"
         INSERT INTO ai_model_capability
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, model_id, catalog_key, model, vendor_code, capability, capability_code, modality, input_modalities, output_modalities, supported, schema_version, sort_order)
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, model_id, catalog_key, model, vendor_code, capability, capability_code, modality, input_modalities, output_modalities, supported, schema_version, sort_order, id)
         VALUES
-            (?, ?, ?, 1, 1, ?, ?, 0, '{}', ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, 'v1', 1)
+            (?, ?, ?, 1, 1, ?, ?, 0, '{}', ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, 'v1', 1, ?)
         "#,
     )
     .bind(&command.capability_uuid)
@@ -2751,6 +2768,7 @@ async fn upsert_model_capability(
     .bind(modality_code(&update.model_type))
     .bind(json_array_text(&update.input_modalities)?)
     .bind(json_array_text(&update.output_modalities)?)
+    .bind(id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to create model capability during update", error))?;
@@ -2882,12 +2900,13 @@ async fn insert_update_region_model_pricing(
             price_kind,
         ],
     );
+    let id = next_claw_runtime_id("ai_model_pricing")?;
     sqlx::query(
         r#"
         INSERT INTO ai_model_pricing
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, model_id, catalog_key, model, vendor_code, region_code, price_side, pricing_scope, billing_type, billing_mode, billing_meter_code, price_item_type, unit, unit_size, metering_mode, quantity_source, minimum_quantity, quantity_step, included_quantity, unit_price, currency, rounding_mode, min_charge_amount, pricing_formula_mode, price_origin, priority, effective_from)
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, model_id, catalog_key, model, vendor_code, region_code, price_side, pricing_scope, billing_type, billing_mode, billing_meter_code, price_item_type, unit, unit_size, metering_mode, quantity_source, minimum_quantity, quantity_step, included_quantity, unit_price, currency, rounding_mode, min_charge_amount, pricing_formula_mode, price_origin, priority, effective_from, id)
         VALUES
-            (?, ?, ?, 1, 1, ?, ?, 0, '{}', ?, ?, ?, ?, ?, ?, 1, 1, 1, ?, 1, 1, 1, 1, 1, 0, 1, 0, ?, ?, 1, 0, 1, 1, ?, ?)
+            (?, ?, ?, 1, 1, ?, ?, 0, '{}', ?, ?, ?, ?, ?, ?, 1, 1, 1, ?, 1, 1, 1, 1, 1, 0, 1, 0, ?, ?, 1, 0, 1, 1, ?, ?, ?)
         "#,
     )
     .bind(uuid)
@@ -2906,6 +2925,7 @@ async fn insert_update_region_model_pricing(
     .bind(currency)
     .bind(priority)
     .bind(&command.requested_at)
+    .bind(id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to replace regional model pricing row", error))?;
@@ -3162,13 +3182,6 @@ async fn find_matching_model_mapping(
     }))
 }
 
-async fn last_insert_rowid(tx: &mut Transaction<'_, Sqlite>) -> DomainResult<i64> {
-    sqlx::query_scalar("SELECT last_insert_rowid()")
-        .fetch_one(&mut **tx)
-        .await
-        .map_err(|error| store_error("failed to read inserted row id", error))
-}
-
 async fn insert_audit_log(
     tx: &mut Transaction<'_, Sqlite>,
     audit_log_uuid: &str,
@@ -3182,12 +3195,13 @@ async fn insert_audit_log(
     target_id: i64,
     change_summary: serde_json::Value,
 ) -> DomainResult<()> {
+    let id = next_claw_runtime_id("ops_audit_log")?;
     sqlx::query(
         r#"
         INSERT INTO ops_audit_log
-            (uuid, tenant_id, organization_id, action, target_type, target_id, request_id, operator_id, operator_type, change_summary)
+            (uuid, tenant_id, organization_id, action, target_type, target_id, request_id, operator_id, operator_type, change_summary, id)
         VALUES
-            (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         "#,
     )
     .bind(audit_log_uuid)
@@ -3200,6 +3214,7 @@ async fn insert_audit_log(
     .bind(operator_id)
     .bind(operator_type)
     .bind(change_summary.to_string())
+    .bind(id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to write admin model audit log", error))?;

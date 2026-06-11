@@ -837,7 +837,7 @@ function installConfigurationCommands(packageItem) {
 
 function nativeBinaryRootForInstallGuide(packageItem) {
   if (packageItem.platform === 'windows') {
-    return `${WINDOWS_INSTALL_ROOT}/bin`;
+    return 'C:/Program Files/sdkwork/router/bin';
   }
   if (packageItem.platform === 'linux' && ['service', 'desktop'].includes(packageItem.deploymentMode)) {
     return '/usr/bin';

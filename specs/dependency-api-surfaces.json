@@ -3,6 +3,15 @@
   "kind": "sdkwork.dependency-api-surfaces",
   "application": "sdkwork-claw-router",
   "description": "Runtime dependency API surface declarations for dependency SDKs consumed by SDKWork Claw Router. sdkDependencies owns generation boundaries; this manifest owns runtime mount/base-url decisions.",
+  "gatewayIntegration": {
+    "targetApplication": "sdkwork-api-gateway",
+    "targetMode": "shared-gateway",
+    "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
+    "authority": "cargo-workspace",
+    "catalogPolicy": "no-dedicated-gateway-catalog",
+    "productApiPolicy": "sdkwork-claw-router APIs remain product-owned SDKWork API surfaces",
+    "migrationState": "shared-gateway-default"
+  },
   "dependencies": [
     {
       "workspace": "sdkwork-appbase-app-sdk",
@@ -12,12 +21,20 @@
       "surface": "app-api",
       "apiPrefix": "/app/v3/api",
       "runtimeIntegration": {
-        "mode": "same-origin-mounted",
-        "sameOriginAllowed": true,
-        "baseUrlEnv": "VITE_SDKWORK_APPBASE_APP_API_BASE_URL",
-        "fallbackBaseUrlEnv": "VITE_CLAWROUTER_APP_API_BASE_URL",
-        "publicBaseUrlEnv": "PORTAL_PUBLIC_APP_API_BASE_URL",
-        "rustRouteContractCrate": {
+        "mode": "external-service",
+        "sameOriginAllowed": false,
+        "targetRuntimeIntegration": {
+          "mode": "shared-gateway",
+          "gatewayApplication": "sdkwork-api-gateway",
+          "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
+          "catalogPolicy": "no-dedicated-gateway-catalog",
+          "migrationCompatibility": "explicit-legacy-product-local-runtime-only"
+        },
+        "requiredBaseUrlEnv": "VITE_SDKWORK_APPBASE_APP_API_BASE_URL",
+        "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
+        "legacyFallbackBaseUrlEnv": "VITE_CLAWROUTER_APP_API_BASE_URL",
+        "legacyPublicBaseUrlEnv": "PORTAL_PUBLIC_APP_API_BASE_URL",
+        "legacyRustRouteContractCrate": {
           "package": "sdkwork_iam_http",
           "path": "../sdkwork-appbase/packages/native-rust/iam/sdkwork-iam-http-rust",
           "routeMetadataExports": [
@@ -25,7 +42,7 @@
           ],
           "executableRouterExport": null
         },
-        "handlerAdapterExports": [
+        "legacyHandlerAdapterExports": [
           {
             "package": "sdkwork_claw_product::api",
             "exports": [
@@ -39,13 +56,11 @@
           }
         ],
         "mountCoverage": {
-          "status": "verified",
+          "status": "not-mounted",
           "evidence": [
-            "services/sdkwork-claw-app-api/src/lib.rs merges app_sessions_router, app_user_profile_router, and app_iam_directory_router in database-backed runtime paths.",
-            "services/sdkwork-claw-product/src/api/app_auth.rs declares /app/v3/api/auth/* and /app/v3/api/system/iam/* handler adapters; appbase-owned OAuth runtime is consumed through sdkwork-appbase app SDK surfaces under /app/v3/api/oauth/*.",
-            "services/sdkwork-claw-product/src/api/app_user_profile.rs declares /app/v3/api/iam/users/current.",
-            "services/sdkwork-claw-product/src/api/app_iam_directory.rs declares appbase IAM directory read routes under /app/v3/api/iam/*.",
-            "sdks/clawrouter-app-sdk/openapi/clawrouter-app-sdk.openapi.json records sdkwork-appbase-app-sdk exclusions so generated Claw Router app SDK stays owner-only."
+            "Default Claw Router app runtime treats appbase app API as a dependency surface served by sdkwork-api-gateway through PORTAL_PUBLIC_SDK_BASE_URL.",
+            "services/sdkwork-claw-app-api/tests/contract_routes.rs verifies the default app router does not locally mount appbase IAM app routes.",
+            "Legacy product-local handler adapters are retained only as explicit migration compatibility and are not the shared-gateway default."
           ]
         }
       }
@@ -60,6 +75,13 @@
       "runtimeIntegration": {
         "mode": "external-service",
         "sameOriginAllowed": false,
+        "targetRuntimeIntegration": {
+          "mode": "shared-gateway",
+          "gatewayApplication": "sdkwork-api-gateway",
+          "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
+          "catalogPolicy": "no-dedicated-gateway-catalog",
+          "migrationCompatibility": "explicit-legacy-product-local-runtime-only"
+        },
         "requiredBaseUrlEnv": "VITE_SDKWORK_COMMERCE_APP_API_BASE_URL",
         "publicBaseUrlEnv": "PORTAL_PUBLIC_COMMERCE_APP_API_BASE_URL",
         "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
@@ -68,6 +90,8 @@
           "evidence": [
             "Commerce app API routes are owned by sdkwork-commerce and consumed through sdkwork-commerce-app-sdk.",
             "Claw Router portal bootstrap derives VITE_SDKWORK_COMMERCE_APP_API_BASE_URL from PORTAL_PUBLIC_SDK_BASE_URL + /app/v3/api when no Commerce-specific override is configured.",
+            "Claw Router app runtime uses product-local contract fallback filtering so Commerce dependency app routes return 404 by default instead of local 501 contract stubs.",
+            "cargo test -p sdkwork-claw-app-api --test contract_routes default_router_does_not_mount_commerce_foundation_routes_locally verifies default app runtime does not locally serve Commerce foundation routes.",
             "No Claw Router runtime mount coverage is declared for Commerce app API handlers."
           ]
         }
@@ -143,13 +167,20 @@
         }
       ],
       "runtimeIntegration": {
-        "mode": "same-origin-mounted",
-        "sameOriginAllowed": true,
-        "baseUrlEnv": "VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL",
-        "fallbackBaseUrlEnv": "VITE_CLAWROUTER_BACKEND_API_BASE_URL",
-        "publicBaseUrlEnv": "PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL",
+        "mode": "external-service",
+        "sameOriginAllowed": false,
+        "targetRuntimeIntegration": {
+          "mode": "shared-gateway",
+          "gatewayApplication": "sdkwork-api-gateway",
+          "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
+          "catalogPolicy": "no-dedicated-gateway-catalog",
+          "migrationCompatibility": "explicit-legacy-product-local-runtime-only"
+        },
+        "requiredBaseUrlEnv": "VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL",
         "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
-        "rustRouteContractCrate": {
+        "legacyFallbackBaseUrlEnv": "VITE_CLAWROUTER_BACKEND_API_BASE_URL",
+        "legacyPublicBaseUrlEnv": "PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL",
+        "legacyRustRouteContractCrate": {
           "package": "sdkwork_iam_http",
           "path": "../sdkwork-appbase/packages/native-rust/iam/sdkwork-iam-http-rust",
           "routeMetadataExports": [
@@ -157,7 +188,7 @@
           ],
           "executableRouterExport": null
         },
-        "handlerAdapterExports": [
+        "legacyHandlerAdapterExports": [
           {
             "package": "sdkwork_claw_product::api",
             "exports": [
@@ -169,63 +200,19 @@
           }
         ],
         "mountCoverage": {
-          "status": "verified",
-          "operationGroupCoverage": {
-            "verified": [
-              {
-                "group": "iam.directory",
-                "paths": [
-                  "/backend/v3/api/iam/organizations",
-                  "/backend/v3/api/iam/departments",
-                  "/backend/v3/api/iam/roles",
-                  "/backend/v3/api/iam/permissions"
-                ],
-                "evidence": "services/sdkwork-claw-product/src/api/admin_appbase_backend_iam.rs and services/sdkwork-claw-admin-api/src/lib.rs mount SQL-backed IAM directory adapters in database-configured admin runtime."
-              },
-              {
-                "group": "iam.users",
-                "paths": [
-                  "/backend/v3/api/iam/users"
-                ],
-                "evidence": "services/sdkwork-claw-product/src/api/admin_user.rs serves appbase backend IAM user aliases from AdminUserStore."
-              },
-              {
-                "group": "iam.apiKeys",
-                "paths": [
-                  "/backend/v3/api/iam/api_keys"
-                ],
-                "evidence": "services/sdkwork-claw-product/src/api/admin_user.rs serves appbase backend IAM API key aliases with Claw Router API key secret ownership for create/delete."
-              },
-              {
-                "group": "iam.oauth",
-                "paths": [
-                  "/backend/v3/api/iam/oauth/provider_catalog",
-                  "/backend/v3/api/iam/oauth/flow_configs",
-                  "/backend/v3/api/iam/oauth/resource_accounts",
-                  "/backend/v3/api/iam/oauth/webhook_configs",
-                  "/backend/v3/api/iam/oauth/diagnostic_runs"
-                ],
-                "sdkClient": "getSdkworkAppbaseBackendSdkClient().iamOauth.iam.oauth.*",
-                "evidence": "services/sdkwork-claw-product/src/api/admin_appbase_backend_iam_oauth.rs serves appbase backend IAM OAuth resources through SQL-backed iam_oauth_* tables; services/sdkwork-claw-admin-api/src/lib.rs mounts it in the database-configured admin runtime; services/sdkwork-claw-product/src/infrastructure/sql/installer.rs applies appbase IAM OAuth SQL tables and indexes from sdkwork_iam_storage_sqlx."
-              }
-            ],
-            "notMounted": [
+          "status": "not-mounted",
+          "legacyOperationGroupCoverage": {
+            "explicitCompatibilityOnly": [
+              "iam.directory",
+              "iam.users",
+              "iam.apiKeys",
+              "iam.oauth"
             ]
           },
           "evidence": [
-            "sdkwork_iam_http backend_routes() is used only as dependency route metadata for appbase backend IAM path coverage; its local/demo backend router is not mounted as Claw Router runtime coverage.",
-            "services/sdkwork-claw-product/src/api/admin_appbase_backend_iam.rs serves backend IAM directory, organization, membership, department, assignment, position, role, permission, role-permission, and role-binding routes through AppIamDirectoryReadStore plus SQLite/Postgres SQL command/read stores with no demo success or 501 command fallback.",
-            "services/sdkwork-claw-product/src/api/admin_appbase_backend_iam_oauth.rs serves backend IAM OAuth provider catalog, integrations, flow configs, resource accounts, resource authorizations, webhooks, operational resources, callback events, and diagnostic runs through real iam_oauth_* SQL tables.",
-            "services/sdkwork-claw-product/src/api/admin_user.rs serves GET/POST/PATCH /backend/v3/api/iam/users and GET/POST/DELETE /backend/v3/api/iam/api_keys through the real AdminUserStore and Claw Router API key secret pipeline.",
-            "services/sdkwork-claw-admin-api/src/lib.rs mounts the SQL-backed appbase backend IAM directory and OAuth adapters only when database-backed stores and the admin subject boundary are configured; the default no-database router does not mount demo IAM routes.",
-            "services/sdkwork-claw-product/src/infrastructure/sql/installer.rs applies appbase IAM OAuth schema statements from sdkwork_iam_storage_sqlx::iam_initial_migration_sql() for iam_oauth_* tables and indexes.",
-            "cargo test -p sdkwork-claw-product --test admin_appbase_backend_iam_api admin_appbase_backend_iam_directory_reads_sql_tables_without_demo_data verifies organization, role, and permission reads from SQL tables with no org_demo data.",
-            "cargo test -p sdkwork-claw-product --test admin_appbase_backend_iam_api admin_appbase_backend_iam_oauth_reads_and_writes_sql_tables_without_demo_data verifies OAuth provider catalog, flow config, resource account, integration command, diagnostic, and delete paths against SQL tables with no demo data.",
-            "cargo test -p sdkwork-claw-product --test admin_user_api admin_user_route_serves_appbase_backend_iam_users_from_store verifies users and API keys are served from AdminUserStore and not local-admin/sk-local demo data.",
-            "cargo test -p sdkwork-claw-admin-api --test contract_routes appbase_backend_iam_routes_are_not_demo_mounted_without_database_runtime verifies the default admin router does not expose demo appbase backend IAM data.",
-            "cargo test -p sdkwork-claw-admin-api --test database_config_router database_config_router_serves_backend_sdk_contract_aliases verifies database-configured admin runtime returns store-backed users and API keys through appbase backend IAM aliases.",
-            "cargo test -p sdkwork-claw-admin-api --test database_config_router database_config_router_serves_appbase_backend_iam_from_real_sql_runtime verifies database-configured admin runtime returns SQL-backed appbase backend IAM organizations, roles, permissions, and role permissions with no org_demo data.",
-            "cargo test -p sdkwork-claw-admin-api --test database_config_router database_config_router_serves_appbase_backend_iam_oauth_from_real_sql_runtime verifies database-configured admin runtime returns SQL-backed appbase backend IAM OAuth provider catalog rows with no demo data."
+            "Default Claw Router backend runtime treats appbase backend IAM API as a dependency surface served by sdkwork-api-gateway through PORTAL_PUBLIC_SDK_BASE_URL.",
+            "services/sdkwork-claw-admin-api/tests/contract_routes.rs verifies the default admin router does not locally mount appbase backend IAM routes.",
+            "Legacy SQL-backed appbase backend IAM adapters are retained only as explicit migration compatibility and are not the shared-gateway default."
           ]
         }
       }
@@ -240,6 +227,13 @@
       "runtimeIntegration": {
         "mode": "external-service",
         "sameOriginAllowed": false,
+        "targetRuntimeIntegration": {
+          "mode": "shared-gateway",
+          "gatewayApplication": "sdkwork-api-gateway",
+          "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
+          "catalogPolicy": "no-dedicated-gateway-catalog",
+          "migrationCompatibility": "explicit-legacy-product-local-runtime-only"
+        },
         "requiredBaseUrlEnv": "VITE_SDKWORK_COMMERCE_BACKEND_API_BASE_URL",
         "publicBaseUrlEnv": "PORTAL_PUBLIC_COMMERCE_BACKEND_API_BASE_URL",
         "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
@@ -248,6 +242,8 @@
           "evidence": [
             "Commerce backend API routes are owned by sdkwork-commerce and consumed through sdkwork-commerce-backend-sdk plus @sdkwork/commerce-service.",
             "Claw Router portal bootstrap derives VITE_SDKWORK_COMMERCE_BACKEND_API_BASE_URL from PORTAL_PUBLIC_SDK_BASE_URL + /backend/v3/api when no Commerce-specific override is configured.",
+            "Claw Router admin runtime uses product-local contract fallback filtering so Commerce dependency backend routes return 404 by default instead of local 501 contract stubs.",
+            "cargo test -p sdkwork-claw-admin-api --test contract_routes default_router_does_not_mount_commerce_backend_routes_locally verifies default admin runtime does not locally serve Commerce backend routes.",
             "No Claw Router runtime mount coverage is declared for Commerce backend API handlers."
           ]
         }

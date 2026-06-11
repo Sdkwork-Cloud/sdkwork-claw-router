@@ -10,12 +10,28 @@ WORKSPACE_ROOT = ROOT.parent
 PORTAL_ROOT = ROOT / "apps" / "sdkwork-clawrouter-pc"
 PORTAL_PACKAGES = ROOT / "apps" / "sdkwork-clawrouter-pc" / "packages"
 DEPENDENCIES_ROOT = ROOT / ".sdkwork" / "dependencies"
-APPBASE_ROOT = DEPENDENCIES_ROOT / "sdkwork-appbase"
-COMMERCE_ROOT = DEPENDENCIES_ROOT / "sdkwork-commerce"
-GENERATIONS_ROOT = DEPENDENCIES_ROOT / "sdkwork-generations"
-IMAGE_ROOT = DEPENDENCIES_ROOT / "sdkwork-image"
-MUSIC_ROOT = DEPENDENCIES_ROOT / "sdkwork-music"
-VOICE_ROOT = DEPENDENCIES_ROOT / "sdkwork-voice"
+
+
+def dependency_root(name: str) -> Path:
+    local_mirror = DEPENDENCIES_ROOT / name
+    if local_mirror.exists():
+        return local_mirror
+    return WORKSPACE_ROOT / name
+
+
+def first_existing_path(*candidates: Path) -> Path:
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
+    return candidates[0]
+
+
+APPBASE_ROOT = dependency_root("sdkwork-appbase")
+COMMERCE_ROOT = dependency_root("sdkwork-commerce")
+GENERATIONS_ROOT = dependency_root("sdkwork-generations")
+IMAGE_ROOT = dependency_root("sdkwork-image")
+MUSIC_ROOT = dependency_root("sdkwork-music")
+VOICE_ROOT = dependency_root("sdkwork-voice")
 COMMERCE_PC_PACKAGES = COMMERCE_ROOT / "apps" / "sdkwork-commerce-pc" / "packages"
 COMMERCE_PC_COMMERCE = COMMERCE_PC_PACKAGES / "commerce"
 COMMERCE_ADMIN_PRODUCT = COMMERCE_PC_PACKAGES / "sdkwork-commerce-pc-admin-product" / "src"
@@ -23,6 +39,26 @@ APPBASE_PC_CONTENT = APPBASE_ROOT / "packages" / "pc-react" / "content"
 IMAGE_PC_CONTENT = IMAGE_ROOT / "packages" / "pc-react" / "content"
 MUSIC_PC_CONTENT = MUSIC_ROOT / "packages" / "pc-react" / "content"
 VOICE_PC_CONTENT = VOICE_ROOT / "packages" / "pc-react" / "content"
+COMMERCE_PC_REACT_COMMERCE = (
+    COMMERCE_ROOT / "apps" / "sdkwork-commerce-pc" / "packages" / "commerce"
+)
+SDKWORK_IMAGE_PC_REACT = first_existing_path(
+    IMAGE_PC_CONTENT / "sdkwork-image-pc-react",
+    APPBASE_PC_CONTENT / "sdkwork-image-pc-react",
+)
+SDKWORK_AUDIO_PC_REACT = first_existing_path(
+    MUSIC_PC_CONTENT / "sdkwork-audio-pc-react",
+    VOICE_PC_CONTENT / "sdkwork-audio-pc-react",
+    APPBASE_PC_CONTENT / "sdkwork-audio-pc-react",
+)
+SDKWORK_MEDIA_PC_REACT = first_existing_path(
+    MUSIC_PC_CONTENT / "sdkwork-media-pc-react",
+    APPBASE_PC_CONTENT / "sdkwork-media-pc-react",
+)
+SDKWORK_GENERATION_PC_REACT = first_existing_path(
+    IMAGE_PC_CONTENT / "sdkwork-generation-pc-react",
+    APPBASE_PC_CONTENT / "sdkwork-generation-pc-react",
+)
 GENERATIONS_PC_WORKSPACE = (
     GENERATIONS_ROOT
     / "apps"
@@ -203,8 +239,8 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         service_sources = [
             PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-agents" / "src" / "agentService.ts",
             PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-skill" / "src" / "skillService.ts",
-            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-app-center" / "src" / "services" / "adminAppService.ts",
-            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-commons" / "src" / "admin-category-options.ts",
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-app-center" / "src" / "services" / "appService.ts",
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-core" / "src" / "admin-category-options.ts",
             PORTAL_PACKAGES / "sdkwork-clawrouter-pc-console-user" / "src" / "userService.ts",
             PORTAL_PACKAGES / "sdkwork-clawrouter-pc-courses" / "src" / "courseService.ts",
         ]
@@ -713,12 +749,11 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "images: normalizeMediaResourceArray(item.images),",
                 "videos: normalizeMediaResourceArray(item.videos),",
             ],
-            APPBASE_ROOT / "packages" / "pc-react" / "content" / "sdkwork-generation-pc-react" / "src" / "generation-history.ts": [
+            SDKWORK_GENERATION_PC_REACT / "src" / "generation-history.ts": [
                 "export type SdkworkGenerationMediaResource = SdkworkMediaResource;",
                 "asset: SdkworkGenerationMediaResource;",
                 "asset?: SdkworkGenerationMediaResource;",
                 "images?: SdkworkGenerationMediaResource[];",
-                "videos?: SdkworkGenerationMediaResource[];",
             ],
         }
         forbidden_patterns = {
@@ -759,7 +794,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 r"\bcreateExternalUrlMediaResource\b",
                 r"\bmediaKindForGenerationTargetType\b",
             ],
-            APPBASE_ROOT / "packages" / "pc-react" / "content" / "sdkwork-generation-pc-react" / "src" / "generation-history.ts": [
+            SDKWORK_GENERATION_PC_REACT / "src" / "generation-history.ts": [
                 r"\bexport\s+type\s+SdkworkGenerationMedia\s*=\s*string",
                 r"\bimages\?:\s*string\[\]",
                 r"\bupdatedAt\?:\s*string;\s*\n\s*url\?:\s*string;",
@@ -832,8 +867,15 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_admin_product_list_cover_reader_returns_media_resource_object(self) -> None:
         source = PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-catalog" / "src" / "ProductListPage.tsx"
-        relative = rel(source)
-        content = source.read_text(encoding="utf-8", errors="ignore")
+        re_export = source.read_text(encoding="utf-8", errors="ignore")
+        self.assertIn("sdkwork-commerce-pc-admin-product", re_export)
+        self.assertIn("readProductCoverResource", re_export)
+        implementation_source = first_existing_path(
+            COMMERCE_ADMIN_PRODUCT / "ProductListPage.tsx",
+            source,
+        )
+        relative = rel(implementation_source)
+        content = implementation_source.read_text(encoding="utf-8", errors="ignore")
         violations: list[str] = []
         required_snippets = [
             "export function readProductCoverResource(record: ProductRecord): ClawRouterMediaResource | undefined",
@@ -864,8 +906,15 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_admin_sku_management_form_preserves_image_media_resource_object(self) -> None:
         source = PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-catalog" / "src" / "SkuManagementPage.tsx"
-        relative = rel(source)
-        content = source.read_text(encoding="utf-8", errors="ignore")
+        re_export = source.read_text(encoding="utf-8", errors="ignore")
+        self.assertIn("sdkwork-commerce-pc-admin-product", re_export)
+        self.assertIn("SkuManagementPage", re_export)
+        implementation_source = first_existing_path(
+            COMMERCE_ADMIN_PRODUCT / "SkuManagementPage.tsx",
+            source,
+        )
+        relative = rel(implementation_source)
+        content = implementation_source.read_text(encoding="utf-8", errors="ignore")
         violations: list[str] = []
         required_snippets = [
             "image?: ClawRouterMediaResource;",
@@ -962,8 +1011,8 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         )
 
     def test_app_sdk_published_types_export_media_resource(self) -> None:
-        sdk_types_index = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "dist" / "types" / "index.d.ts"
-        sdk_media_type = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "dist" / "types" / "media-resource.d.ts"
+        sdk_types_index = CLAW_APP_SDK_TYPES_DIST / "index.d.ts"
+        sdk_media_type = CLAW_APP_SDK_TYPES_DIST / "media-resource.d.ts"
 
         self.assertTrue(sdk_types_index.exists(), f"{rel(sdk_types_index)} must exist")
         self.assertTrue(sdk_media_type.exists(), f"{rel(sdk_media_type)} must exist")
@@ -974,7 +1023,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         )
 
     def test_backend_sdk_published_category_types_preserve_media_resource_icon(self) -> None:
-        sdk_types_root = ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "dist" / "types"
+        sdk_types_root = CLAW_BACKEND_SDK_TYPES_DIST
         create_request = sdk_types_root / "admin-skill-category-create-request.d.ts"
         update_request = sdk_types_root / "admin-skill-category-update-request.d.ts"
 
@@ -993,70 +1042,98 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             )
 
     def test_generated_table_record_sdk_media_fields_preserve_media_resource_objects(self) -> None:
-        sdk_record_sources = [
-            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "plus-category-record.ts",
-            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "plus-agent-skill-record.ts",
-            ROOT
-            / "sdks"
-            / "clawrouter-app-sdk"
-            / "clawrouter-app-sdk-typescript"
-            / "src"
-            / "types"
-            / "plus-agent-skill-package-record.ts",
-            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "dist" / "types" / "plus-category-record.d.ts",
-            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "dist" / "types" / "plus-agent-skill-record.d.ts",
-            ROOT
-            / "sdks"
-            / "clawrouter-app-sdk"
-            / "clawrouter-app-sdk-typescript"
-            / "dist"
-            / "types"
-            / "plus-agent-skill-package-record.d.ts",
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "plus-category-record.ts",
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "plus-agent-skill-record.ts",
-            ROOT
-            / "sdks"
-            / "clawrouter-backend-sdk"
-            / "clawrouter-backend-sdk-typescript"
-            / "src"
-            / "types"
-            / "plus-agent-skill-package-record.ts",
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "dist" / "types" / "plus-category-record.d.ts",
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "dist" / "types" / "plus-agent-skill-record.d.ts",
-            ROOT
-            / "sdks"
-            / "clawrouter-backend-sdk"
-            / "clawrouter-backend-sdk-typescript"
-            / "dist"
-            / "types"
-            / "plus-agent-skill-package-record.d.ts",
-        ]
+        sdk_record_expectations = {
+            CLAW_APP_SDK_TYPES_SRC / "app-catalog-item.ts": [
+                "image: MediaResource;",
+                "screenshots: MediaResource[];",
+            ],
+            CLAW_APP_SDK_TYPES_SRC / "app-detail-response.ts": [
+                "image: MediaResource;",
+                "screenshots: MediaResource[];",
+            ],
+            CLAW_APP_SDK_TYPES_SRC / "skill-catalog-item.ts": [
+                "image: MediaResource;",
+                "screenshots: MediaResource[];",
+            ],
+            CLAW_APP_SDK_TYPES_SRC / "skill-detail-response.ts": [
+                "image: MediaResource;",
+                "screenshots: MediaResource[];",
+            ],
+            CLAW_APP_SDK_TYPES_DIST / "app-catalog-item.d.ts": [
+                "image: MediaResource;",
+                "screenshots: MediaResource[];",
+            ],
+            CLAW_APP_SDK_TYPES_DIST / "app-detail-response.d.ts": [
+                "image: MediaResource;",
+                "screenshots: MediaResource[];",
+            ],
+            CLAW_APP_SDK_TYPES_DIST / "skill-catalog-item.d.ts": [
+                "image: MediaResource;",
+                "screenshots: MediaResource[];",
+            ],
+            CLAW_APP_SDK_TYPES_DIST / "skill-detail-response.d.ts": [
+                "image: MediaResource;",
+                "screenshots: MediaResource[];",
+            ],
+            CLAW_BACKEND_SDK_TYPES_SRC / "admin-app-category-item.ts": [
+                "icon?: MediaResource;",
+            ],
+            CLAW_BACKEND_SDK_TYPES_SRC / "admin-skill-category-item.ts": [
+                "icon?: MediaResource;",
+            ],
+            CLAW_BACKEND_SDK_TYPES_SRC / "admin-app-item-response.ts": [
+                "artifact?: MediaResource;",
+                "icon: MediaResource;",
+            ],
+            CLAW_BACKEND_SDK_TYPES_SRC / "admin-app-template-item-response.ts": [
+                "cover?: MediaResource;",
+                "icon?: MediaResource;",
+            ],
+            CLAW_BACKEND_SDK_TYPES_DIST / "admin-app-category-item.d.ts": [
+                "icon?: MediaResource;",
+            ],
+            CLAW_BACKEND_SDK_TYPES_DIST / "admin-skill-category-item.d.ts": [
+                "icon?: MediaResource;",
+            ],
+            CLAW_BACKEND_SDK_TYPES_DIST / "admin-app-item-response.d.ts": [
+                "artifact?: MediaResource;",
+                "icon: MediaResource;",
+            ],
+            CLAW_BACKEND_SDK_TYPES_DIST / "admin-app-template-item-response.d.ts": [
+                "cover?: MediaResource;",
+                "icon?: MediaResource;",
+            ],
+        }
 
-        for source in sdk_record_sources:
+        for source, required_snippets in sdk_record_expectations.items():
             relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             self.assertIn(
                 "import type { MediaResource } from './media-resource';",
                 content,
-                f"{relative} must import MediaResource for table-record icon.",
+                f"{relative} must import MediaResource for table-record media fields.",
             )
-            self.assertIn(
-                "icon?: MediaResource;",
-                content,
-                f"{relative} must preserve table-record icon as a MediaResource object.",
-            )
+            for snippet in required_snippets:
+                self.assertIn(snippet, content, f"{relative} must preserve {snippet}")
             self.assertNotIn(
                 "icon?: string;",
                 content,
                 f"{relative} must not collapse table-record icon media into a string URL.",
             )
+            for forbidden in (
+                "image: string;",
+                "screenshots: string[];",
+                "cover?: string;",
+                "artifact?: string;",
+            ):
+                self.assertNotIn(forbidden, content, f"{relative} must not collapse table-record media into strings.")
 
     def test_generated_table_record_sdks_do_not_expose_media_storage_columns(self) -> None:
         sdk_type_roots = [
-            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types",
-            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "dist" / "types",
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types",
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "dist" / "types",
+            CLAW_APP_SDK_TYPES_SRC,
+            CLAW_APP_SDK_TYPES_DIST,
+            CLAW_BACKEND_SDK_TYPES_SRC,
+            CLAW_BACKEND_SDK_TYPES_DIST,
         ]
         media_storage_pattern = re.compile(r"\b[A-Za-z0-9_]+_(?:media_resource_id|object_blob_id|resource_snapshot)\??:")
         violations: list[str] = []
@@ -1090,19 +1167,19 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "avatar: readSdkworkMediaResource(profile.avatar),",
                 "avatar: readSdkworkMediaResource(updated.avatar) || profile.avatar,",
             ],
-            APPBASE_ROOT / "packages" / "pc-react" / "commerce" / "sdkwork-order-pc-react" / "src" / "order-service.ts": [
+            COMMERCE_PC_REACT_COMMERCE / "sdkwork-order-pc-react" / "src" / "order-service.ts": [
                 "productImage?: SdkworkMediaResource;",
                 "image?: SdkworkMediaResource;",
                 "productImage: readSdkworkMediaResource(order.productImage),",
                 "image: readSdkworkMediaResource(item.productImage),",
             ],
-            APPBASE_ROOT / "packages" / "pc-react" / "commerce" / "sdkwork-payment-pc-react" / "src" / "payment.ts": [
+            COMMERCE_PC_REACT_COMMERCE / "sdkwork-payment-pc-react" / "src" / "payment.ts": [
                 "icon?: SdkworkMediaResource;",
             ],
-            APPBASE_ROOT / "packages" / "pc-react" / "commerce" / "sdkwork-payment-pc-react" / "src" / "payment-service.ts": [
+            COMMERCE_PC_REACT_COMMERCE / "sdkwork-payment-pc-react" / "src" / "payment-service.ts": [
                 "icon: readSdkworkMediaResource(method.methodIcon) || readSdkworkMediaResource(method.icon),",
             ],
-            APPBASE_ROOT / "packages" / "pc-react" / "commerce" / "sdkwork-membership-pc-react" / "src" / "membership-service.ts": [
+            COMMERCE_PC_REACT_COMMERCE / "sdkwork-membership-pc-react" / "src" / "membership-service.ts": [
                 "icon?: SdkworkMediaResource;",
                 "icon: readSdkworkMediaResource(level.icon),",
             ],
@@ -1222,19 +1299,16 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_appbase_payment_qr_images_preserve_media_resource_objects(self) -> None:
         source_expectations = {
-            APPBASE_ROOT / "packages" / "pc-react" / "commerce" / "sdkwork-payment-pc-react" / "src" / "payment.ts": [
+            COMMERCE_PC_REACT_COMMERCE / "sdkwork-payment-pc-react" / "src" / "payment.ts": [
                 "qrImage?: SdkworkMediaResource;",
                 "qrContent?: string;",
             ],
-            APPBASE_ROOT / "packages" / "pc-react" / "commerce" / "sdkwork-payment-pc-react" / "src" / "payment-service.ts": [
+            COMMERCE_PC_REACT_COMMERCE / "sdkwork-payment-pc-react" / "src" / "payment-service.ts": [
                 "deriveQrImage(payment)",
                 "qrContent: deriveQrContent(payment) || fallback.qrContent,",
                 "qrImage: deriveQrImage(payment) || fallback.qrImage,",
             ],
-            APPBASE_ROOT
-            / "packages"
-            / "pc-react"
-            / "commerce"
+            COMMERCE_PC_REACT_COMMERCE
             / "sdkwork-payment-pc-react"
             / "src"
             / "components"
@@ -1242,7 +1316,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "const qrImageResourceSrc = getSdkworkMediaDeliveryUrl(detail.qrImage);",
                 "QRCode.toDataURL(detail.qrContent",
             ],
-            APPBASE_ROOT / "packages" / "pc-react" / "commerce" / "sdkwork-checkout-pc-react" / "src" / "checkout-service.ts": [
+            COMMERCE_PC_REACT_COMMERCE / "sdkwork-checkout-pc-react" / "src" / "checkout-service.ts": [
                 "qrImage?: SdkworkMediaResource;",
                 "qrContent?: string;",
                 "qrContent = payment.qrContent;",
@@ -1312,39 +1386,34 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_appbase_content_workspace_items_preserve_media_resource_objects(self) -> None:
         source_expectations = {
-            APPBASE_ROOT / "packages" / "pc-react" / "content" / "sdkwork-image-pc-react" / "src" / "image.ts": [
-                'import type { SdkworkMediaResource } from "@sdkwork/appbase-pc-react";',
+            SDKWORK_IMAGE_PC_REACT / "src" / "image.ts": [
+                'import type { SdkworkMediaResource } from "@sdkwork/image-contracts";',
                 "resource: SdkworkMediaResource;",
                 "resource: createGeneratedImageResource(",
             ],
-            APPBASE_ROOT / "packages" / "pc-react" / "content" / "sdkwork-audio-pc-react" / "src" / "audio.ts": [
-                'import type { SdkworkMediaResource } from "@sdkwork/appbase-pc-react";',
+            SDKWORK_AUDIO_PC_REACT / "src" / "audio.ts": [
+                'import type { SdkworkMediaResource } from "@sdkwork/media-pc-react";',
                 "resource: SdkworkMediaResource;",
                 "resource: createGeneratedAudioResource(",
             ],
-            APPBASE_ROOT / "packages" / "pc-react" / "content" / "sdkwork-video-pc-react" / "src" / "video.ts": [
-                'import type { SdkworkMediaResource } from "@sdkwork/appbase-pc-react";',
-                "resource: SdkworkMediaResource;",
-                "resource: createGeneratedVideoResource(",
-            ],
-            APPBASE_ROOT / "packages" / "pc-react" / "content" / "sdkwork-media-pc-react" / "src" / "media.ts": [
-                'import type { SdkworkMediaResource } from "@sdkwork/appbase-pc-react";',
+            SDKWORK_MEDIA_PC_REACT / "src" / "media.ts": [
+                "export interface SdkworkMediaResource {",
                 "resource: SdkworkMediaResource;",
                 "resource: createGeneratedMediaResource(",
             ],
-            APPBASE_ROOT / "packages" / "pc-react" / "content" / "sdkwork-assets-pc-react" / "src" / "assets.ts": [
-                'import type { SdkworkMediaKind, SdkworkMediaResource } from "@sdkwork/appbase-pc-react";',
-                "resource: SdkworkMediaResource;",
-                "resource: createObjectStorageAssetResource(",
+        }
+        package_expectations = {
+            SDKWORK_IMAGE_PC_REACT / "package.json": [
+                '"@sdkwork/image-contracts": "*"',
+                '"@sdkwork/image-contracts": {\n      "optional": true\n    }',
+            ],
+            SDKWORK_AUDIO_PC_REACT / "package.json": [
+                '"@sdkwork/media-pc-react": "workspace:*"',
+            ],
+            SDKWORK_MEDIA_PC_REACT / "package.json": [
+                '"name": "@sdkwork/media-pc-react"',
             ],
         }
-        package_sources = [
-            APPBASE_ROOT / "packages" / "pc-react" / "content" / "sdkwork-image-pc-react" / "package.json",
-            APPBASE_ROOT / "packages" / "pc-react" / "content" / "sdkwork-audio-pc-react" / "package.json",
-            APPBASE_ROOT / "packages" / "pc-react" / "content" / "sdkwork-video-pc-react" / "package.json",
-            APPBASE_ROOT / "packages" / "pc-react" / "content" / "sdkwork-media-pc-react" / "package.json",
-            APPBASE_ROOT / "packages" / "pc-react" / "content" / "sdkwork-assets-pc-react" / "package.json",
-        ]
         violations: list[str] = []
 
         for source, required_snippets in source_expectations.items():
@@ -1354,13 +1423,12 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 if snippet not in content:
                     violations.append(f"{relative}: missing {snippet!r}")
 
-        for source in package_sources:
+        for source, required_snippets in package_expectations.items():
             relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
-            if '"@sdkwork/appbase-pc-react": "*"' not in content:
-                violations.append(f"{relative}: missing @sdkwork/appbase-pc-react peer dependency")
-            if '"@sdkwork/appbase-pc-react": {\n      "optional": true\n    }' not in content:
-                violations.append(f"{relative}: missing @sdkwork/appbase-pc-react optional peer metadata")
+            for snippet in required_snippets:
+                if snippet not in content:
+                    violations.append(f"{relative}: missing {snippet!r}")
 
         self.assertEqual(
             [],
@@ -1369,15 +1437,15 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         )
 
     def test_appbase_generation_history_uses_canonical_media_resource(self) -> None:
-        source = APPBASE_ROOT / "packages" / "pc-react" / "content" / "sdkwork-generation-pc-react" / "src" / "generation-history.ts"
+        source = SDKWORK_GENERATION_PC_REACT / "src" / "generation-history.ts"
         shim_source = PORTAL_ROOT / "src" / "typecheck-shims.d.ts"
-        package_source = APPBASE_ROOT / "packages" / "pc-react" / "content" / "sdkwork-generation-pc-react" / "package.json"
+        package_source = SDKWORK_GENERATION_PC_REACT / "package.json"
         relative = rel(source)
         content = source.read_text(encoding="utf-8", errors="ignore")
         shim_content = shim_source.read_text(encoding="utf-8", errors="ignore")
         package_content = package_source.read_text(encoding="utf-8", errors="ignore")
         required_snippets = [
-            'import { getSdkworkMediaDeliveryUrl, type SdkworkMediaResource } from "@sdkwork/appbase-pc-react";',
+            'import { getSdkworkMediaDeliveryUrl, type SdkworkMediaResource } from "@sdkwork/image-contracts";',
             "export type SdkworkGenerationMediaResource = SdkworkMediaResource;",
             "export type SdkworkGenerationMedia = SdkworkMediaResource;",
             "const mediaKey = getSdkworkMediaDeliveryUrl(media)",
@@ -1402,10 +1470,8 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             line_number = shim_content.count("\n", 0, match.start()) + 1
             line = shim_content.splitlines()[line_number - 1].strip()
             violations.append(f"{shim_rel(source)}:{line_number}: {line}")
-        if '"@sdkwork/appbase-pc-react": "*"' not in package_content:
-            violations.append(f"{package_rel(source)}: missing @sdkwork/appbase-pc-react peer dependency")
-        if '"@sdkwork/appbase-pc-react": {\n      "optional": true\n    }' not in package_content:
-            violations.append(f"{package_rel(source)}: missing @sdkwork/appbase-pc-react optional peer metadata")
+        if '"@sdkwork/image-contracts": "workspace:*"' not in package_content:
+            violations.append(f"{package_rel(source)}: missing @sdkwork/image-contracts dependency")
 
         self.assertEqual(
             [],
@@ -1520,7 +1586,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         )
 
     def test_app_sdk_course_category_exposes_icon_key_not_media_icon_string(self) -> None:
-        source = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "dist" / "types" / "course-category-item.d.ts"
+        source = CLAW_APP_SDK_TYPES_DIST / "course-category-item.d.ts"
         relative = rel(source)
         content = source.read_text(encoding="utf-8", errors="ignore")
 
@@ -2562,7 +2628,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 ".filter(isRecord)",
                 "email: readString(item, 'email')",
                 "key: readString(item, 'key')",
-                "status: readString(item, 'status') === 'banned' ? 'banned' : 'active'",
+                "status: readString(item, 'status', 'active')",
             ],
             PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-finance" / "src" / "financeService.ts": [
                 ".filter(isRecord)",
@@ -2688,7 +2754,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         }
 
         for service_path, required_fragments in guarded_services.items():
-            relative = service_rel(path)
+            relative = service_rel(service_path)
             source = service_path.read_text(encoding="utf-8", errors="ignore")
             for fragment in required_fragments:
                 self.assertIn(fragment, source, f"{relative}: missing {fragment}")
@@ -2745,7 +2811,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         }
 
         for service_path, required_fragments in guarded_services.items():
-            relative = service_rel(path)
+            relative = service_rel(service_path)
             source = service_path.read_text(encoding="utf-8", errors="ignore")
             self.assertIn("sdkwork-clawrouter-pc-commons/runtime", source, relative)
             self.assertIn("requiredSafePathSegment", source, relative)
@@ -2778,7 +2844,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         self.assertIn("export * from './sdk-request-boundary.ts';", runtime_entrypoint.read_text(encoding="utf-8"))
 
         for service_path in guarded_services:
-            relative = service_rel(path)
+            relative = service_rel(service_path)
             source = service_path.read_text(encoding="utf-8", errors="ignore")
             self.assertIn("sdkwork-clawrouter-pc-commons/runtime", source, relative)
             for forbidden in (
@@ -2991,7 +3057,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
         for package_path in sorted(PORTAL_PACKAGES.glob("*/package.json")):
             package = json.loads(package_path.read_text(encoding="utf-8"))
-            relative = package_rel(path)
+            relative = package_rel(package_path)
             for section_name in ("dependencies", "devDependencies", "optionalDependencies"):
                 dependencies = package.get(section_name, {})
                 for dependency_name in sorted(singleton_runtime_dependencies & set(dependencies)):

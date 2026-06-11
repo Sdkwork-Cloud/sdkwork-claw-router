@@ -32,27 +32,19 @@ async fn call(method: Method, uri: &str) -> (StatusCode, Value) {
 }
 
 #[tokio::test]
-async fn app_contract_routes_return_standard_not_implemented_envelope() {
+async fn default_router_does_not_mount_appbase_app_api_key_routes_locally() {
     let cases = [
-        (Method::GET, "/app/v3/api/iam/api_keys", "fetchKeys"),
-        (Method::POST, "/app/v3/api/iam/api_keys", "createKey"),
-        (Method::PATCH, "/app/v3/api/iam/api_keys/key-1", "updateKey"),
-        (
-            Method::DELETE,
-            "/app/v3/api/iam/api_keys/key-1",
-            "deleteKey",
-        ),
+        (Method::GET, "/app/v3/api/iam/api_keys"),
+        (Method::POST, "/app/v3/api/iam/api_keys"),
+        (Method::PATCH, "/app/v3/api/iam/api_keys/key-1"),
+        (Method::DELETE, "/app/v3/api/iam/api_keys/key-1"),
     ];
 
-    for (method, path, operation) in cases {
+    for (method, path) in cases {
         let (status, payload) = call(method, path).await;
 
-        assert_eq!(StatusCode::NOT_IMPLEMENTED, status, "{path}");
-        assert_eq!("5010", payload["code"], "{path}");
-        assert_eq!("Not implemented", payload["msg"], "{path}");
-        assert_eq!(operation, payload["data"]["operation"], "{path}");
-        assert_eq!("app", payload["data"]["apiSurface"], "{path}");
-        assert_eq!(path, payload["data"]["apiPath"], "{path}");
+        assert_eq!(StatusCode::NOT_FOUND, status, "{path}");
+        assert_eq!(Value::Null, payload, "{path}");
     }
 }
 
@@ -117,10 +109,10 @@ async fn app_promotion_code_redemption_route_is_not_product_local_without_appbas
     let body = axum::body::to_bytes(response.into_body(), usize::MAX)
         .await
         .unwrap();
-    let payload: Value = serde_json::from_slice(&body).unwrap();
+    let payload: Value = serde_json::from_slice(&body).unwrap_or(Value::Null);
 
-    assert_eq!(StatusCode::NOT_IMPLEMENTED, status);
-    assert_eq!("5010", payload["code"]);
+    assert_eq!(StatusCode::NOT_FOUND, status);
+    assert_eq!(Value::Null, payload);
 }
 
 fn sdk_reference_request_body() -> String {
@@ -231,10 +223,10 @@ async fn default_router_does_not_serve_appbase_owned_commerce_routes_without_app
         let body = axum::body::to_bytes(response.into_body(), usize::MAX)
             .await
             .unwrap();
-        let payload: Value = serde_json::from_slice(&body).unwrap();
+        let payload: Value = serde_json::from_slice(&body).unwrap_or(Value::Null);
 
-        assert_eq!(StatusCode::NOT_IMPLEMENTED, status, "{path}");
-        assert_eq!("5010", payload["code"], "{path}");
+        assert_eq!(StatusCode::NOT_FOUND, status, "{path}");
+        assert_eq!(Value::Null, payload, "{path}");
     }
 
     for (method, path) in [
@@ -261,14 +253,18 @@ async fn default_router_does_not_serve_appbase_owned_commerce_routes_without_app
 }
 
 #[tokio::test]
-async fn app_user_profile_contract_route_returns_success_envelope() {
-    let (status, payload) = call(Method::GET, "/app/v3/api/iam/users/current").await;
+async fn default_router_does_not_mount_appbase_app_iam_routes_locally() {
+    for path in [
+        "/app/v3/api/iam/users/current",
+        "/app/v3/api/iam/organizations/tree",
+        "/app/v3/api/iam/departments/tree",
+        "/app/v3/api/iam/roles",
+    ] {
+        let (status, payload) = call(Method::GET, path).await;
 
-    assert_eq!(StatusCode::OK, status);
-    assert_eq!("2000", payload["code"]);
-    assert_eq!("SUCCESS", payload["msg"]);
-    assert_eq!("en-US", payload["data"]["language"]);
-    assert_eq!("0", payload["data"]["thirdPartyBound"]);
+        assert_eq!(StatusCode::NOT_FOUND, status, "{path}");
+        assert_eq!(Value::Null, payload, "{path}");
+    }
 }
 
 #[tokio::test]
@@ -282,40 +278,33 @@ async fn app_store_route_is_exposed_by_default_router() {
 }
 
 #[tokio::test]
-async fn app_commerce_foundation_routes_are_exposed_by_default_router() {
+async fn default_router_does_not_mount_commerce_foundation_routes_locally() {
     for path in [
         "/app/v3/api/wallet/exchange_rate",
         "/app/v3/api/payments/attempts/payment-attempt-1",
+        "/app/v3/api/wallet/points/exchanges/rules",
     ] {
         let (status, payload) = call(Method::GET, path).await;
 
-        assert_eq!(StatusCode::NOT_IMPLEMENTED, status, "{path}");
-        assert_eq!("5010", payload["code"], "{path}");
+        assert_eq!(StatusCode::NOT_FOUND, status, "{path}");
+        assert_eq!(Value::Null, payload, "{path}");
     }
-    let (status, payload) = call(Method::GET, "/app/v3/api/wallet/points/exchanges/rules").await;
-    assert_eq!(StatusCode::OK, status);
-    assert_eq!("2000", payload["code"]);
-    assert_eq!(0, payload["data"].as_array().unwrap().len());
 
     let (status, payload) = call(Method::POST, "/app/v3/api/wallet/exchange_rate").await;
-    assert_eq!(StatusCode::METHOD_NOT_ALLOWED, status);
+    assert_eq!(StatusCode::NOT_FOUND, status);
     assert_eq!(Value::Null, payload);
 }
 
 #[tokio::test]
-async fn appbase_vip_routes_are_exposed_by_default_router() {
-    let vip_read_paths = [
+async fn default_router_does_not_mount_commerce_membership_foundation_routes_locally() {
+    for path in [
         "/app/v3/api/memberships/current",
         "/app/v3/api/memberships/packages",
-    ];
-
-    for path in vip_read_paths {
+    ] {
         let (status, payload) = call(Method::GET, path).await;
-        assert_ne!(StatusCode::NOT_FOUND, status, "{path}");
-        assert!(
-            ["2000", "4090"].contains(&payload["code"].as_str().unwrap_or_default()),
-            "{path}: {payload}"
-        );
+
+        assert_eq!(StatusCode::NOT_FOUND, status, "{path}");
+        assert_eq!(Value::Null, payload, "{path}");
     }
 
     for path in ["/app/v3/api/memberships/purchases"] {
@@ -334,13 +323,13 @@ async fn appbase_vip_routes_are_exposed_by_default_router() {
         let body = axum::body::to_bytes(response.into_body(), usize::MAX)
             .await
             .unwrap();
-        let payload: Value = serde_json::from_slice(&body).unwrap();
+        let payload: Value = serde_json::from_slice(&body).unwrap_or(Value::Null);
 
-        assert_eq!(StatusCode::UNAUTHORIZED, status, "{path}");
-        assert_eq!("4010", payload["code"], "{path}");
+        assert_eq!(StatusCode::NOT_FOUND, status, "{path}");
+        assert_eq!(Value::Null, payload, "{path}");
     }
     let (status, payload) = call(Method::POST, "/app/v3/api/memberships/purchases").await;
-    assert_eq!(StatusCode::UNSUPPORTED_MEDIA_TYPE, status);
+    assert_eq!(StatusCode::NOT_FOUND, status);
     assert_eq!(Value::Null, payload);
 }
 

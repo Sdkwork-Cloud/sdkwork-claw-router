@@ -22,6 +22,12 @@ Root SDKWork standards remain authoritative. Local component specs can narrow or
 - [dependency-api-surfaces.json](./dependency-api-surfaces.json) records dependency SDK runtime API
   surface imports, Rust backend route-contract exports, same-origin mount coverage, and explicit
   external-service base URL requirements.
+- Shared foundation API composition targets `sdkwork-api-gateway` through the existing
+  `PORTAL_PUBLIC_SDK_BASE_URL` common SDK root and Cargo workspace/feature evidence. Do not add a
+  standalone gateway catalog for Claw Router dependency API facts.
+- Product-local app/admin routers keep Claw Router-owned API contract fallbacks only; Commerce
+  dependency app/backend routes default to `404` locally and are consumed through the shared
+  gateway or explicit split-deployment base URLs.
 - Consumers should integrate through public exports, runtime entrypoints, SDK clients, or adapters declared in the manifest.
 - Generated SDK language outputs are represented at their SDK family root instead of duplicating local specs in generated folders.
 

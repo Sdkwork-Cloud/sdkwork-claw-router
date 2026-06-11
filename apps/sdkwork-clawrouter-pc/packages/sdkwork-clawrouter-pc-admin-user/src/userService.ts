@@ -263,7 +263,7 @@ function normalizeUser(value: unknown): UserListItem {
   const item = readRequiredRecord(value, 'User record is required');
   return {
     id: readRequiredPositiveInt64String(item, 'id', 'User id is required'),
-    email: readString(item, 'email'),
+    email: readRequiredString(item, 'email', 'User email is required'),
     username: readFirstString(item, ['username', 'userName', 'account']),
     displayName: readFirstString(item, ['displayName', 'name', 'nickname', 'title']),
     mobile: readFirstString(item, ['mobile', 'phone', 'phoneNumber']),
@@ -276,12 +276,20 @@ function normalizeUser(value: unknown): UserListItem {
     role: readString(item, 'role'),
     group: readString(item, 'group'),
     balance: readString(item, 'balance'),
-    status: readString(item, 'status', 'active'),
+    status: readUserStatus(item),
     lastActive: readString(item, 'lastActive'),
     lastUsed: readString(item, 'lastUsed'),
     createdAt: readString(item, 'createdAt'),
     updatedAt: readString(item, 'updatedAt'),
   };
+}
+
+function readUserStatus(item: ApiRecord): UserListItem['status'] {
+  const status = readString(item, 'status').trim();
+  if (status === 'active' || status === 'banned') {
+    return status;
+  }
+  throw new Error(status ? `Unsupported user status: ${status}` : 'User status is required');
 }
 
 function normalizeApiKey(value: unknown): ApiKeyItem {

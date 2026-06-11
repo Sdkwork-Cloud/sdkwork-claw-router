@@ -2,7 +2,7 @@ use axum::extract::{Request, State};
 use axum::http::{header, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::Json;
-use sdkwork_claw_contract::ApiSurface;
+use sdkwork_claw_contract::{matches_path_pattern, ApiSurface};
 use sdkwork_claw_paas_api::standard_paas_service_groups;
 use serde::Serialize;
 
@@ -157,14 +157,21 @@ pub async fn contract_fallback(State(state): State<ServiceState>, request: Reque
     let method = request.method().as_str();
     let path = request.uri().path();
 
-    match manifest.find_operation(surface, method, path) {
-        Some(operation) => (
-            StatusCode::NOT_IMPLEMENTED,
-            Json(PlusErrorEnvelope::not_implemented(operation, surface, path)),
-        )
-            .into_response(),
-        None => StatusCode::NOT_FOUND.into_response(),
-    }
+    let operation_filter = state.contract_operation_filter;
+    let Some(operation) = manifest.operations().iter().find(|operation| {
+        operation.surface == surface
+            && operation.method.eq_ignore_ascii_case(method)
+            && matches_path_pattern(&operation.path, path)
+            && operation_filter.is_none_or(|filter| filter(operation))
+    }) else {
+        return StatusCode::NOT_FOUND.into_response();
+    };
+
+    (
+        StatusCode::NOT_IMPLEMENTED,
+        Json(PlusErrorEnvelope::not_implemented(operation, surface, path)),
+    )
+        .into_response()
 }
 
 fn openapi_json_headers() -> [(header::HeaderName, &'static str); 2] {

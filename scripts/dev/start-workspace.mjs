@@ -26,6 +26,7 @@ const DEFAULT_ADMIN_API_BIND = '127.0.0.1:18081';
 const DEFAULT_APP_API_BIND = '127.0.0.1:18082';
 const DEFAULT_SERVER_BIND = '0.0.0.0:3900';
 const DEFAULT_PORTAL_BIND = '127.0.0.1:3901';
+const DEFAULT_SDKWORK_API_GATEWAY_BIND = '127.0.0.1:3902';
 const DEFAULT_EXTERNAL_SCHEME = 'http';
 const DEFAULT_DEV_DATABASE_RELATIVE_PATH = path.join('target', 'dev', 'clawrouter.sqlite');
 const DEFAULT_MODELS_CATALOG_RELATIVE_PATH = path.join('data', 'sdkwork-models');
@@ -106,6 +107,52 @@ function appendPath(origin, pathSuffix) {
   return `${String(origin).replace(/\/+$/u, '')}${pathSuffix}`;
 }
 
+function sharedFoundationGatewayBaseUrl(settings) {
+  return loopbackUrl(settings.sdkworkApiGatewayBind, '');
+}
+
+function sharedFoundationAppApiBaseUrl(settings) {
+  return appendPath(sharedFoundationGatewayBaseUrl(settings), APP_API_PREFIX);
+}
+
+function sharedFoundationBackendApiBaseUrl(settings) {
+  return appendPath(sharedFoundationGatewayBaseUrl(settings), BACKEND_API_PREFIX);
+}
+
+function withSharedFoundationPortalRuntimeEnv(env, settings) {
+  const sdkBaseUrl = String(
+    env.PORTAL_PUBLIC_SDK_BASE_URL ?? sharedFoundationGatewayBaseUrl(settings),
+  ).trim();
+  const apiBaseUrl = String(env.PORTAL_PUBLIC_API_BASE_URL ?? GATEWAY_API_PREFIX).trim();
+  const openApiBaseUrl = String(
+    env.PORTAL_PUBLIC_OPEN_API_BASE_URL ?? apiBaseUrl,
+  ).trim();
+  const appApiBaseUrl = String(env.PORTAL_PUBLIC_APP_API_BASE_URL ?? APP_API_PREFIX).trim();
+  const backendApiBaseUrl = String(
+    env.PORTAL_PUBLIC_BACKEND_API_BASE_URL ?? BACKEND_API_PREFIX,
+  ).trim();
+  const runtimeEnv = mergePortalPublicRuntimeEnv({
+    ...env,
+    PORTAL_PUBLIC_SDK_BASE_URL: sdkBaseUrl,
+    PORTAL_PUBLIC_API_BASE_URL: apiBaseUrl,
+    PORTAL_PUBLIC_OPEN_API_BASE_URL: openApiBaseUrl,
+    PORTAL_PUBLIC_APP_API_BASE_URL: appApiBaseUrl,
+    PORTAL_PUBLIC_BACKEND_API_BASE_URL: backendApiBaseUrl,
+  });
+
+  return {
+    ...runtimeEnv,
+    VITE_SDKWORK_APPBASE_APP_API_BASE_URL:
+      runtimeEnv.VITE_SDKWORK_APPBASE_APP_API_BASE_URL ?? sharedFoundationAppApiBaseUrl(settings),
+    VITE_SDKWORK_DRIVE_APP_API_BASE_URL:
+      runtimeEnv.VITE_SDKWORK_DRIVE_APP_API_BASE_URL ?? sharedFoundationAppApiBaseUrl(settings),
+    VITE_SDKWORK_GENERATIONS_APP_API_BASE_URL:
+      runtimeEnv.VITE_SDKWORK_GENERATIONS_APP_API_BASE_URL ?? sharedFoundationAppApiBaseUrl(settings),
+    VITE_SDKWORK_GENERATIONS_PC_APP_API_BASE_URL:
+      runtimeEnv.VITE_SDKWORK_GENERATIONS_PC_APP_API_BASE_URL ?? sharedFoundationAppApiBaseUrl(settings),
+  };
+}
+
 function normalizeExternalScheme(value, flagName) {
   const scheme = String(value ?? '').trim().toLowerCase();
   if (scheme !== 'http' && scheme !== 'https') {
@@ -169,6 +216,7 @@ export function parseWorkspaceArgs(argv = []) {
     appApiBind: DEFAULT_APP_API_BIND,
     serverBind: DEFAULT_SERVER_BIND,
     portalBind: DEFAULT_PORTAL_BIND,
+    sdkworkApiGatewayBind: DEFAULT_SDKWORK_API_GATEWAY_BIND,
     externalScheme: DEFAULT_EXTERNAL_SCHEME,
     trustForwardedHeaders: false,
     gatewayForwardUrl: null,
@@ -208,6 +256,10 @@ export function parseWorkspaceArgs(argv = []) {
         break;
       case '--portal-bind':
         settings.portalBind = requireValue(argv, index, arg);
+        index += 1;
+        break;
+      case '--sdkwork-api-gateway-bind':
+        settings.sdkworkApiGatewayBind = requireValue(argv, index, arg);
         index += 1;
         break;
       case '--external-scheme':
@@ -265,6 +317,7 @@ export function parseWorkspaceArgs(argv = []) {
     ['--app-api-bind', settings.appApiBind],
     ['--server-bind', settings.serverBind],
     ['--portal-bind', settings.portalBind],
+    ['--sdkwork-api-gateway-bind', settings.sdkworkApiGatewayBind],
   ]) {
     splitBind(value, flagName);
   }
@@ -351,7 +404,7 @@ function serviceEnv(settings, bindEnvName, bindValue, {
 function portalEnv(settings) {
   const { host, port } = splitBind(settings.portalBind, '--portal-bind');
   return {
-    ...mergePortalPublicRuntimeEnv(process.env),
+    ...withSharedFoundationPortalRuntimeEnv(process.env, settings),
     HOST: host,
     PORT: port,
     OPENAPI_DEV_URL: appendPath(settings.gatewayForwardUrl, '/openapi.json'),
@@ -366,9 +419,9 @@ function portalEnv(settings) {
 function edgeServerEnv(settings) {
   const allInOne = settings.runtimeMode === 'all-in-one';
   return {
-    ...mergePortalPublicRuntimeEnv(serviceEnv(settings, 'SDKWORK_CLAW_SERVER_BIND', settings.serverBind, {
+    ...withSharedFoundationPortalRuntimeEnv(serviceEnv(settings, 'SDKWORK_CLAW_SERVER_BIND', settings.serverBind, {
       startupInstallMode: 'skip',
-    })),
+    }), settings),
     SDKWORK_CLAW_EDGE_SERVER: '1',
     SDKWORK_CLAW_ALL_IN_ONE_RUNTIME: allInOne ? '1' : '0',
     SDKWORK_CLAW_EDGE_GATEWAY_BASE_URL: settings.gatewayForwardUrl,
@@ -385,6 +438,37 @@ function edgeServerEnv(settings) {
     PORTAL_TOOL_API_RATE_LIMIT_WINDOW_SECONDS:
       process.env.PORTAL_TOOL_API_RATE_LIMIT_WINDOW_SECONDS ?? '60',
     PORTAL_TOOL_API_SDK_ARCHIVE_ROOT: process.env.PORTAL_TOOL_API_SDK_ARCHIVE_ROOT ?? '',
+  };
+}
+
+function sdkworkApiGatewayStep(settings, {
+  workspaceRoot,
+  platform,
+}) {
+  const apiGatewayWorkspaceRoot = path.resolve(workspaceRoot, '..', 'sdkwork-api-gateway');
+  return {
+    name: 'sdkwork-api-gateway',
+    command: cargoCommand(platform),
+    args: [
+      'run',
+      '-p',
+      'sdkwork-api-gateway-service',
+      '--bin',
+      'sdkwork-api-gateway',
+      '--',
+      '--config',
+      'config/sdkwork-api-gateway.development.toml.example',
+    ],
+    cwd: apiGatewayWorkspaceRoot,
+    env: {
+      ...process.env,
+      CARGO_TARGET_DIR: process.env.SDKWORK_API_GATEWAY_CARGO_TARGET_DIR
+        ?? path.join(apiGatewayWorkspaceRoot, 'target', 'claw-router-dev'),
+      SDKWORK_API_GATEWAY_BIND: settings.sdkworkApiGatewayBind,
+      SDKWORK_API_GATEWAY_MODE: process.env.SDKWORK_API_GATEWAY_MODE ?? 'split',
+    },
+    shell: false,
+    windowsHide: platform === 'win32',
   };
 }
 
@@ -486,6 +570,7 @@ export function buildWorkspaceCommandPlan(settings, {
     ]
     : [];
   const interactiveRuntimeSteps = [
+    sdkworkApiGatewayStep(settings, { workspaceRoot, platform }),
     {
       name: 'portal',
       command: pnpmCommand(platform),
@@ -523,6 +608,7 @@ export function workspaceBindTargets(settings) {
         { name: 'app-api', bind: settings.appApiBind },
       ]
       : []),
+    { name: 'sdkwork-api-gateway', bind: settings.sdkworkApiGatewayBind },
     { name: 'portal', bind: settings.portalBind },
     { name: 'server', bind: settings.serverBind },
   ].map((target) => {
@@ -642,6 +728,8 @@ Options:
   --app-api-bind <bind>   SDKWORK_CLAW_APP_API_BIND override (default ${DEFAULT_APP_API_BIND})
   --server-bind <bind>    Rust edge server HOST:PORT override (default ${DEFAULT_SERVER_BIND})
   --portal-bind <bind>    Direct portal dev HOST:PORT override (default ${DEFAULT_PORTAL_BIND})
+  --sdkwork-api-gateway-bind <bind>
+                         Managed sdkwork-api-gateway HOST:PORT override (default ${DEFAULT_SDKWORK_API_GATEWAY_BIND})
   --gateway-forward-url <url>
                          Rust edge server target for /v1 and /openapi.json
   --backend-api-forward-url <url>
@@ -666,7 +754,7 @@ function formatCommand(step) {
 }
 
 export function renderWorkspaceDryRun(settings, plan) {
-  const portalRuntimeEnv = resolvePortalPublicRuntimeEnv(process.env);
+  const portalRuntimeEnv = withSharedFoundationPortalRuntimeEnv(process.env, settings);
   if (settings.planFormat === 'json') {
     return [JSON.stringify({
       mode: 'server',
@@ -675,6 +763,8 @@ export function renderWorkspaceDryRun(settings, plan) {
       appApiBind: settings.appApiBind,
       serverBind: settings.serverBind,
       portalBind: settings.portalBind,
+      sdkworkApiGatewayBind: settings.sdkworkApiGatewayBind,
+      sdkworkApiGatewayBaseUrl: sharedFoundationGatewayBaseUrl(settings),
       runtimeMode: settings.runtimeMode,
       modelsCatalogRoot: settings.modelsCatalogRoot,
       externalScheme: settings.externalScheme,
@@ -703,6 +793,7 @@ export function renderWorkspaceDryRun(settings, plan) {
     `  SDKWORK_CLAW_APP_API_BIND=${settings.appApiBind}`,
     `  SDKWORK_CLAW_SERVER_BIND=${settings.serverBind}`,
     `  SDKWORK_CLAW_PORTAL_BIND=${settings.portalBind}`,
+    `  SDKWORK_API_GATEWAY_BIND=${settings.sdkworkApiGatewayBind}`,
     `  PORTAL_PUBLIC_SDK_BASE_URL=${portalRuntimeEnv.PORTAL_PUBLIC_SDK_BASE_URL ?? '(not configured)'}`,
     `  PORTAL_PUBLIC_API_BASE_URL=${portalPublicRuntimeEnvLineValue(portalRuntimeEnv, 'PORTAL_PUBLIC_API_BASE_URL')}`,
     `  PORTAL_PUBLIC_OPEN_API_BASE_URL=${portalPublicRuntimeEnvLineValue(portalRuntimeEnv, 'PORTAL_PUBLIC_OPEN_API_BASE_URL')}`,

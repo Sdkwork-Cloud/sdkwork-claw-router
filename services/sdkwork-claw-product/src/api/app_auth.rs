@@ -1,7 +1,7 @@
 use std::sync::Arc;
 use std::time::{SystemTime, UNIX_EPOCH};
 
-use axum::extract::{Path, Query, State};
+use axum::extract::{Query, State};
 use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::{get, post};
@@ -1391,10 +1391,6 @@ fn next_issued_at_after_session_update(session: &AppSessionRecord) -> Option<i64
 }
 
 fn parse_unix_seconds(value: &str) -> Option<i64> {
-    value.trim().parse::<i64>().ok()
-}
-
-fn parse_unix_id(value: &str) -> Option<i64> {
     value.trim().parse::<i64>().ok()
 }
 

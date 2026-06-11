@@ -4,11 +4,15 @@ use sdkwork_claw_product::infrastructure::sql::installer::{
     DatabaseInstaller, InstallationReport, InstallationStatus, ResetAdminPasswordReport,
 };
 use serde::Serialize;
+use sqlx::postgres::PgPoolOptions;
 use sqlx::sqlite::{SqliteConnectOptions, SqlitePoolOptions};
 use std::error::Error;
 use std::fmt::{Display, Formatter};
 use std::process::ExitCode;
 use std::str::FromStr;
+use std::time::Duration;
+
+const POSTGRES_INSTALLER_POOL_ACQUIRE_TIMEOUT_SECONDS: u64 = 10;
 
 #[tokio::main]
 async fn main() -> ExitCode {
@@ -55,15 +59,68 @@ async fn run_sqlite(config: DatabaseConfig, command: InstallerCommand) -> anyhow
 }
 
 async fn run_postgres(config: DatabaseConfig, command: InstallerCommand) -> anyhow::Result<()> {
-    let pool = sqlx::postgres::PgPoolOptions::new()
-        .max_connections(config.max_connections)
+    let pool = postgres_installer_pool_options(config.max_connections)
         .connect(&config.url)
-        .await?;
+        .await
+        .map_err(|error| {
+            InstallerCliError::DatabaseConnection(database_connection_error_message(
+                DatabaseEngine::Postgres,
+                &config.url,
+                error,
+            ))
+        })?;
     run_command(
         DatabaseInstaller::for_postgres(pool).with_env_options()?,
         command,
     )
     .await
+}
+
+fn postgres_installer_pool_options(max_connections: u32) -> PgPoolOptions {
+    PgPoolOptions::new()
+        .max_connections(max_connections)
+        .acquire_timeout(Duration::from_secs(
+            POSTGRES_INSTALLER_POOL_ACQUIRE_TIMEOUT_SECONDS,
+        ))
+}
+
+fn database_connection_error_message(
+    engine: DatabaseEngine,
+    database_url: &str,
+    error: sqlx::Error,
+) -> String {
+    match engine {
+        DatabaseEngine::Postgres => format!(
+            "PostgreSQL database is not reachable for SDKWORK_CLAW_DATABASE_URL ({}) within {} seconds: {error}. Start the configured PostgreSQL service, fix the host/port/credentials, or run a SQLite dev profile such as pnpm dev:sqlite.",
+            redact_database_url(database_url),
+            POSTGRES_INSTALLER_POOL_ACQUIRE_TIMEOUT_SECONDS
+        ),
+        DatabaseEngine::Sqlite => format!(
+            "SQLite database is not reachable for SDKWORK_CLAW_DATABASE_URL ({}): {error}. Verify the database file path and directory permissions.",
+            redact_database_url(database_url)
+        ),
+    }
+}
+
+fn redact_database_url(database_url: &str) -> String {
+    let Some(scheme_index) = database_url.find("://") else {
+        return database_url.to_owned();
+    };
+    let credentials_start = scheme_index + 3;
+    let Some(at_offset) = database_url[credentials_start..].find('@') else {
+        return database_url.to_owned();
+    };
+    let credentials_end = credentials_start + at_offset;
+    let credentials = &database_url[credentials_start..credentials_end];
+    let Some(colon_offset) = credentials.rfind(':') else {
+        return database_url.to_owned();
+    };
+    let username_end = credentials_start + colon_offset;
+    format!(
+        "{}***{}",
+        &database_url[..=username_end],
+        &database_url[credentials_end..]
+    )
 }
 
 async fn run_command(
@@ -417,6 +474,7 @@ fn installer_error_code(error: &(dyn std::error::Error + 'static), message: &str
         return match cli_error {
             InstallerCliError::MissingDatabaseUrl => "missing_database_url",
             InstallerCliError::InvalidArgument(_) => "invalid_argument",
+            InstallerCliError::DatabaseConnection(_) => "database_error",
         };
     }
     if let Some(installer_error) = error.downcast_ref::<DatabaseInstallError>() {
@@ -426,6 +484,9 @@ fn installer_error_code(error: &(dyn std::error::Error + 'static), message: &str
             DatabaseInstallError::Commerce(_) => "commerce_error",
             DatabaseInstallError::InvalidState(_) => "invalid_state",
         };
+    }
+    if error.downcast_ref::<sqlx::Error>().is_some() {
+        return "database_error";
     }
     if message.contains("SDKWORK_CLAW_DATABASE_URL") {
         "missing_database_url"
@@ -455,6 +516,7 @@ fn installer_error_code(error: &(dyn std::error::Error + 'static), message: &str
 enum InstallerCliError {
     MissingDatabaseUrl,
     InvalidArgument(String),
+    DatabaseConnection(String),
 }
 
 impl Display for InstallerCliError {
@@ -466,6 +528,7 @@ impl Display for InstallerCliError {
                 DatabaseConfig::startup_help_text(runtime_config_profile_from_deployment_mode())
             ),
             Self::InvalidArgument(message) => write!(formatter, "{message}"),
+            Self::DatabaseConnection(message) => write!(formatter, "{message}"),
         }
     }
 }
@@ -664,5 +727,49 @@ mod tests {
             "commerce_error",
             installer_error_code(&error, &error.to_string())
         );
+    }
+
+    #[test]
+    fn installer_error_code_maps_sqlx_pool_timeout_as_database_error() {
+        let error = sqlx::Error::PoolTimedOut;
+
+        assert_eq!(
+            "database_error",
+            installer_error_code(&error, &error.to_string())
+        );
+    }
+
+    #[test]
+    fn postgres_installer_pool_options_use_bounded_acquire_timeout() {
+        let options = postgres_installer_pool_options(10);
+
+        assert_eq!(10, options.get_max_connections());
+        assert_eq!(
+            std::time::Duration::from_secs(POSTGRES_INSTALLER_POOL_ACQUIRE_TIMEOUT_SECONDS),
+            options.get_acquire_timeout()
+        );
+    }
+
+    #[test]
+    fn installer_error_code_maps_cli_database_connection_errors() {
+        let error = InstallerCliError::DatabaseConnection("database unavailable".to_owned());
+
+        assert_eq!(
+            "database_error",
+            installer_error_code(&error, &error.to_string())
+        );
+    }
+
+    #[test]
+    fn postgres_database_connection_message_redacts_password_and_names_fallback() {
+        let message = database_connection_error_message(
+            DatabaseEngine::Postgres,
+            "postgresql://sdkwork_ai_dev:sdkworkdev123@[::1]:5432/sdkwork_ai_dev?sslmode=disable",
+            sqlx::Error::PoolTimedOut,
+        );
+
+        assert!(message.contains("postgresql://sdkwork_ai_dev:***@[::1]:5432"));
+        assert!(!message.contains("sdkworkdev123"));
+        assert!(message.contains("pnpm dev:sqlite"));
     }
 }

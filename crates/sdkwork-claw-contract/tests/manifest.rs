@@ -15,6 +15,17 @@ fn embedded_manifest_finds_exact_app_operation() {
 }
 
 #[test]
+fn embedded_manifest_exposes_sdk_domain_for_runtime_contract_filters() {
+    let manifest = ContractManifest::from_embedded().unwrap();
+
+    let operation = manifest
+        .find_operation(ApiSurface::App, "GET", "/app/v3/api/wallet/exchange_rate")
+        .unwrap();
+
+    assert_eq!(Some("commerce"), operation.sdk_domain.as_deref());
+}
+
+#[test]
 fn embedded_manifest_finds_backend_operation_with_path_parameter() {
     let manifest = ContractManifest::from_embedded().unwrap();
 

@@ -199,14 +199,11 @@ impl CommerceAccountWalletStore for EmptyCommerceAccountWalletStore {
 }
 
 pub fn router() -> Router {
-    merge_commerce_foundation_router(
+    merge_app_sdk_reference_router(
         router_with_database_status(None),
         RequestLimitsConfig::default(),
     )
     .merge(sdkwork_claw_product::api::app_site_settings_router())
-    .merge(sdkwork_claw_product::api::app_user_profile_router())
-    .merge(sdkwork_claw_product::api::app_iam_directory_router())
-    .merge(sdkwork_commerce_membership_sqlx::app_membership_router())
     .merge(sdkwork_claw_product::api::app_payment_callback_router())
     .merge(sdkwork_claw_product::api::payment_aggregate_router())
     .merge(sdkwork_claw_product::api::app_dashboard_overview_router())
@@ -234,11 +231,56 @@ pub fn router() -> Router {
 }
 
 fn router_with_database_status(config: Option<&DatabaseConfig>) -> Router {
-    sdkwork_claw_http::service_router_with_contract_routes_and_database_config(
+    sdkwork_claw_http::service_router_with_filtered_contract_routes_and_database_config(
         SERVICE_NAME,
         sdkwork_claw_http::ApiSurface::App,
         config,
+        product_local_contract_operation,
     )
+}
+
+fn product_local_contract_operation(operation: &sdkwork_claw_http::ContractOperation) -> bool {
+    !matches!(
+        operation.sdk_domain.as_deref(),
+        Some("commerce" | "promotion")
+    ) && !is_commerce_dependency_contract_path(&operation.path)
+        && !is_appbase_dependency_contract_path(&operation.path)
+}
+
+fn is_appbase_dependency_contract_path(path: &str) -> bool {
+    const APPBASE_APP_PREFIXES: &[&str] = &[
+        "/app/v3/api/auth/",
+        "/app/v3/api/iam/",
+        "/app/v3/api/oauth/",
+        "/app/v3/api/system/iam/",
+    ];
+
+    APPBASE_APP_PREFIXES
+        .iter()
+        .any(|prefix| path == prefix.trim_end_matches('/') || path.starts_with(prefix))
+}
+
+fn is_commerce_dependency_contract_path(path: &str) -> bool {
+    const COMMERCE_APP_PREFIXES: &[&str] = &[
+        "/app/v3/api/accounts/",
+        "/app/v3/api/billing/",
+        "/app/v3/api/cart/",
+        "/app/v3/api/catalog/",
+        "/app/v3/api/checkout/",
+        "/app/v3/api/fulfillments",
+        "/app/v3/api/invoices",
+        "/app/v3/api/memberships",
+        "/app/v3/api/orders",
+        "/app/v3/api/payments/",
+        "/app/v3/api/promotions/",
+        "/app/v3/api/recharges/",
+        "/app/v3/api/refunds",
+        "/app/v3/api/wallet/",
+    ];
+
+    COMMERCE_APP_PREFIXES
+        .iter()
+        .any(|prefix| path == prefix.trim_end_matches('/') || path.starts_with(prefix))
 }
 
 pub fn router_with_product_catalog<C>(catalog: Arc<C>) -> Router
@@ -352,7 +394,7 @@ fn router_with_app_session_event_store_auth_settings_store_and_config_inner(
     trusted_subject_config: TrustedSubjectConfig,
     app_session_config: AppSessionConfig,
 ) -> Router {
-    merge_commerce_foundation_router(
+    merge_app_sdk_reference_router(
         router_with_database_status(None),
         RequestLimitsConfig::default(),
     )
@@ -403,7 +445,7 @@ fn router_with_product_catalog_and_database_status<C>(
 where
     C: PricingCatalog + Send + Sync + 'static,
 {
-    merge_commerce_foundation_router(
+    merge_app_sdk_reference_router(
         router_with_database_status(config),
         RequestLimitsConfig::default(),
     )
@@ -959,17 +1001,15 @@ fn router_with_api_key_management_store_and_database_status(
     router
 }
 
-fn merge_commerce_foundation_router(
+fn merge_app_sdk_reference_router(
     router: Router,
     request_limits_config: RequestLimitsConfig,
 ) -> Router {
-    router
-        .merge(sdkwork_commerce_http::app_commerce_foundation_router())
-        .merge(
-            sdkwork_claw_product::api::app_sdk_reference_router_with_json_body_limit(
-                request_limits_config.sdk_reference_json_body_max_bytes(),
-            ),
-        )
+    router.merge(
+        sdkwork_claw_product::api::app_sdk_reference_router_with_json_body_limit(
+            request_limits_config.sdk_reference_json_body_max_bytes(),
+        ),
+    )
 }
 
 fn app_sessions_router(

@@ -212,11 +212,49 @@ pub fn router() -> Router {
 }
 
 fn router_with_database_status(config: Option<&DatabaseConfig>) -> Router {
-    sdkwork_claw_http::service_router_with_contract_routes_and_database_config(
+    sdkwork_claw_http::service_router_with_filtered_contract_routes_and_database_config(
         SERVICE_NAME,
         sdkwork_claw_http::ApiSurface::Backend,
         config,
+        product_local_contract_operation,
     )
+}
+
+fn product_local_contract_operation(operation: &sdkwork_claw_http::ContractOperation) -> bool {
+    operation.sdk_domain.as_deref() != Some("commerce")
+        && !is_commerce_dependency_contract_path(&operation.path)
+        && !is_appbase_dependency_contract_path(&operation.path)
+}
+
+fn is_appbase_dependency_contract_path(path: &str) -> bool {
+    const APPBASE_BACKEND_PREFIXES: &[&str] = &[
+        "/backend/v3/api/iam/",
+        "/backend/v3/api/oauth/",
+        "/backend/v3/api/system/iam/",
+    ];
+
+    APPBASE_BACKEND_PREFIXES
+        .iter()
+        .any(|prefix| path == prefix.trim_end_matches('/') || path.starts_with(prefix))
+}
+
+fn is_commerce_dependency_contract_path(path: &str) -> bool {
+    const COMMERCE_BACKEND_PREFIXES: &[&str] = &[
+        "/backend/v3/api/catalog/",
+        "/backend/v3/api/commerce_reports/",
+        "/backend/v3/api/inventory/",
+        "/backend/v3/api/memberships/",
+        "/backend/v3/api/orders",
+        "/backend/v3/api/payments/",
+        "/backend/v3/api/promotions/",
+        "/backend/v3/api/refunds",
+        "/backend/v3/api/shipments",
+        "/backend/v3/api/wallet/",
+    ];
+
+    COMMERCE_BACKEND_PREFIXES
+        .iter()
+        .any(|prefix| path == prefix.trim_end_matches('/') || path.starts_with(prefix))
 }
 
 pub fn router_with_product_catalog<C>(catalog: Arc<C>) -> Router

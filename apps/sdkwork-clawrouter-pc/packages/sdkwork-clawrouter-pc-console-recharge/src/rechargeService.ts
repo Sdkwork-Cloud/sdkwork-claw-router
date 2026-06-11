@@ -196,22 +196,22 @@ function normalizeRechargePackage(value: unknown): RechargePackage {
     id: firstRequiredString(item, ['id', 'packageNo'], 'Recharge package id is required'),
     priceAmount: firstMoneyString(
       item,
-      ['priceAmount'],
+      ['priceAmount', 'price_amount'],
       'Recharge package money amount is required',
       'Recharge package money amount must be a money string',
     ),
     currencyCode: requiredCurrencyCode(
       readFirstOptionalString(item, ['currencyCode']) || 'CNY',
     ),
-    bonusPoints: readOptionalNonNegativeNumber(item, ['bonusPoints']),
-    grantAmount: readOptionalNonNegativeNumber(item, ['grantAmount', 'points']),
-    points: readOptionalNonNegativeNumber(item, ['points', 'grantAmount']),
+    bonusPoints: readOptionalNonNegativeNumber(item, ['bonusPoints', 'bonus_points']),
+    grantAmount: readOptionalNonNegativeNumber(item, ['grantAmount', 'grant_amount', 'points']),
+    points: readOptionalNonNegativeNumber(item, ['points', 'grantAmount', 'grant_amount']),
   };
 }
 
 function normalizeBillingHistoryItem(value: unknown, missingIdMessage: string): BillingHistoryItem {
   const item = readRequiredRecord(value, 'Billing history record is required');
-  const type = firstRequiredString(item, ['type', 'historyType'], 'Billing history type is required');
+  const type = firstRequiredString(item, ['type', 'historyType', 'history_type'], 'Billing history type is required');
   if (type !== 'redeem' && type !== 'recharge') {
     throw new Error(`Unsupported billing history type: ${type}`);
   }
@@ -220,7 +220,7 @@ function normalizeBillingHistoryItem(value: unknown, missingIdMessage: string): 
   const method = paymentMethod || sourceType || 'billing';
   return {
     id: firstRequiredString(item, ['id'], missingIdMessage),
-    historyNo: firstRequiredString(item, ['historyNo'], 'Billing history number is required'),
+    historyNo: firstRequiredString(item, ['historyNo', 'history_no'], 'Billing history number is required'),
     type,
     direction: readFirstOptionalString(item, ['direction']) || 'credit',
     assetType: readFirstOptionalString(item, ['assetType']) || 'points',
@@ -235,7 +235,7 @@ function normalizeBillingHistoryItem(value: unknown, missingIdMessage: string): 
     sourceId: readFirstOptionalString(item, ['sourceId']),
     relatedOrderNo: readFirstOptionalString(item, ['relatedOrderNo']),
     paymentMethod,
-    occurredAt: firstRequiredString(item, ['occurredAt', 'createdAt'], 'Billing history occurrence time is required'),
+    occurredAt: firstRequiredString(item, ['occurredAt', 'occurred_at', 'createdAt', 'created_at'], 'Billing history occurrence time is required'),
   };
 }
 

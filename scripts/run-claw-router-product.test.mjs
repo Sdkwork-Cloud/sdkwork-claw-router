@@ -110,6 +110,10 @@ function listFilesRecursive(rootDir, suffix) {
   return files;
 }
 
+function readWorkspaceJson(relativePath) {
+  return JSON.parse(readFileSync(path.join(workspaceRoot, relativePath), 'utf8'));
+}
+
 async function runGit(cwd, args) {
   await execFileAsync('git', args, { cwd });
 }
@@ -395,6 +399,75 @@ test('root package exposes pnpm product entrypoints', () => {
   assert.equal(
     rootPackage.scripts['nginx:deploy'],
     'node scripts/configure-nginx.mjs --deploy',
+  );
+});
+
+test('foundation dependency APIs target the shared sdkwork api gateway without a local gateway catalog', () => {
+  const componentSpec = readWorkspaceJson('specs/component.spec.json');
+  const dependencySurfaces = readWorkspaceJson('specs/dependency-api-surfaces.json');
+
+  assert.deepEqual(componentSpec.integration.foundationApiGateway, {
+    targetApplication: 'sdkwork-api-gateway',
+    targetMode: 'shared-gateway',
+    commonSdkRootEnv: 'PORTAL_PUBLIC_SDK_BASE_URL',
+    authority: 'cargo-workspace',
+    catalogPolicy: 'no-dedicated-gateway-catalog',
+    productApiPolicy: 'sdkwork-claw-router APIs remain product-owned SDKWork API surfaces',
+    migrationState: 'shared-gateway-default',
+  });
+
+  assert.deepEqual(dependencySurfaces.gatewayIntegration, {
+    targetApplication: 'sdkwork-api-gateway',
+    targetMode: 'shared-gateway',
+    commonSdkRootEnv: 'PORTAL_PUBLIC_SDK_BASE_URL',
+    authority: 'cargo-workspace',
+    catalogPolicy: 'no-dedicated-gateway-catalog',
+    productApiPolicy: 'sdkwork-claw-router APIs remain product-owned SDKWork API surfaces',
+    migrationState: 'shared-gateway-default',
+  });
+
+  const foundationDependencies = dependencySurfaces.dependencies.filter((dependency) =>
+    /^sdkwork-(appbase|commerce)-/u.test(dependency.workspace)
+  );
+  assert.equal(foundationDependencies.length, 4);
+  for (const dependency of foundationDependencies) {
+    assert.equal(
+      dependency.runtimeIntegration.mode,
+      'external-service',
+      `${dependency.workspace} must not be declared as product-local same-origin mounted by default`,
+    );
+    assert.equal(
+      dependency.runtimeIntegration.sameOriginAllowed,
+      false,
+      `${dependency.workspace} must consume the shared gateway root instead of a product-owned API base URL`,
+    );
+    assert.equal(
+      dependency.runtimeIntegration.commonBaseUrlEnv,
+      'PORTAL_PUBLIC_SDK_BASE_URL',
+      `${dependency.workspace} must derive from the shared sdkwork-api-gateway root by default`,
+    );
+    assert.deepEqual(
+      dependency.runtimeIntegration.targetRuntimeIntegration,
+      {
+        mode: 'shared-gateway',
+        gatewayApplication: 'sdkwork-api-gateway',
+        commonSdkRootEnv: 'PORTAL_PUBLIC_SDK_BASE_URL',
+        catalogPolicy: 'no-dedicated-gateway-catalog',
+        migrationCompatibility: 'explicit-legacy-product-local-runtime-only',
+      },
+      `${dependency.workspace} must declare the shared gateway target state`,
+    );
+  }
+
+  const forbiddenGatewayCatalogs = listFilesRecursive(path.join(workspaceRoot, 'specs'))
+    .map((filePath) => slashPath(path.relative(workspaceRoot, filePath)))
+    .filter((relativePath) =>
+      /(^|\/)(sdkwork-api-gateway-catalog|api-gateway-catalog|gateway-catalog|foundation-api-catalog)\.(json|ya?ml|toml)$/iu.test(relativePath)
+    );
+  assert.deepEqual(
+    forbiddenGatewayCatalogs,
+    [],
+    'Gateway integration must use Cargo workspace metadata and existing SDKWork specs, not a standalone gateway catalog',
   );
 });
 
@@ -1873,15 +1946,20 @@ test('claw router workspace launch plan defaults to all-in-one Rust edge runtime
 
     const settings = module.parseWorkspaceArgs(['--gateway-bind', '0.0.0.0:19080']);
     const plan = module.buildWorkspaceCommandPlan(settings, { workspaceRoot });
+    const managedGatewayStep = plan.steps.find((step) => step.name === 'sdkwork-api-gateway');
+    const portalStep = plan.steps.find((step) => step.name === 'portal');
+    const serverStep = plan.steps.find((step) => step.name === 'server');
 
     assert.equal(settings.serverBind, '0.0.0.0:3900');
     assert.equal(settings.portalBind, '127.0.0.1:3901');
+    assert.equal(settings.sdkworkApiGatewayBind, '127.0.0.1:3902');
     assert.equal(settings.portalDevBind, undefined);
     assert.equal(settings.databaseUrl, defaultDevPostgresDatabaseUrl);
     assert.equal(settings.runtimeMode, 'all-in-one');
     assert.deepEqual(plan.steps.map((step) => step.name), [
       'installer',
       'model-catalog-refresh',
+      'sdkwork-api-gateway',
       'portal',
       'server',
     ]);
@@ -1922,41 +2000,61 @@ test('claw router workspace launch plan defaults to all-in-one Rust edge runtime
       plan.steps[1].env.SDKWORK_MODELS_CATALOG_ROOT,
       path.join(workspaceRoot, 'data', 'sdkwork-models'),
     );
-    assert.deepEqual(plan.steps[2].args, [
+    assert.deepEqual(managedGatewayStep.args, [
+      'run',
+      '-p',
+      'sdkwork-api-gateway-service',
+      '--bin',
+      'sdkwork-api-gateway',
+      '--',
+      '--config',
+      'config/sdkwork-api-gateway.development.toml.example',
+    ]);
+    assert.equal(
+      managedGatewayStep.cwd,
+      path.resolve(workspaceRoot, '..', 'sdkwork-api-gateway'),
+    );
+    assert.equal(managedGatewayStep.env.SDKWORK_API_GATEWAY_BIND, '127.0.0.1:3902');
+    assert.equal(managedGatewayStep.env.SDKWORK_API_GATEWAY_MODE, 'split');
+    assert.deepEqual(portalStep.args, [
       '--dir',
       'apps/sdkwork-clawrouter-pc',
       'browser:dev',
     ]);
-    assert.equal(plan.steps[2].env.PORT, '3901');
-    assert.equal(plan.steps[2].env.SDKWORK_CLAW_PORTAL_BIND, '127.0.0.1:3901');
-    assert.equal(plan.steps[2].env.OPENAPI_DEV_URL, 'http://127.0.0.1:3900/openapi.json');
-    assert.equal(plan.steps[2].env.PORTAL_FORWARDING_ENABLED, undefined);
-    assert.equal(plan.steps[2].env.PORTAL_FORWARD_GATEWAY_BASE_URL, undefined);
-    assert.equal(plan.steps[2].env.PORTAL_FORWARD_BACKEND_API_BASE_URL, undefined);
-    assert.equal(plan.steps[2].env.PORTAL_FORWARD_APP_API_BASE_URL, undefined);
-    assert.equal(plan.steps[2].env.PORTAL_PUBLIC_API_BASE_URL, '/v1');
-    assert.equal(plan.steps[2].env.PORTAL_PUBLIC_OPEN_API_BASE_URL, '/v1');
-    assert.equal(plan.steps[2].env.PORTAL_PUBLIC_BACKEND_API_BASE_URL, '/backend/v3/api');
-    assert.equal(plan.steps[2].env.PORTAL_PUBLIC_APP_API_BASE_URL, '/app/v3/api');
-    assert.equal(plan.steps[2].env.PORTAL_DEV_PROXY_GATEWAY_TARGET, 'http://127.0.0.1:3900');
-    assert.equal(plan.steps[2].env.PORTAL_DEV_PROXY_BACKEND_API_TARGET, 'http://127.0.0.1:3900');
-    assert.equal(plan.steps[2].env.PORTAL_DEV_PROXY_APP_API_TARGET, 'http://127.0.0.1:3900');
-    assert.deepEqual(plan.steps[3].args, [
+    assert.equal(portalStep.env.PORT, '3901');
+    assert.equal(portalStep.env.SDKWORK_CLAW_PORTAL_BIND, '127.0.0.1:3901');
+    assert.equal(portalStep.env.OPENAPI_DEV_URL, 'http://127.0.0.1:3900/openapi.json');
+    assert.equal(portalStep.env.PORTAL_FORWARDING_ENABLED, undefined);
+    assert.equal(portalStep.env.PORTAL_FORWARD_GATEWAY_BASE_URL, undefined);
+    assert.equal(portalStep.env.PORTAL_FORWARD_BACKEND_API_BASE_URL, undefined);
+    assert.equal(portalStep.env.PORTAL_FORWARD_APP_API_BASE_URL, undefined);
+    assert.equal(portalStep.env.PORTAL_PUBLIC_SDK_BASE_URL, 'http://127.0.0.1:3902');
+    assert.equal(portalStep.env.PORTAL_PUBLIC_API_BASE_URL, '/v1');
+    assert.equal(portalStep.env.PORTAL_PUBLIC_OPEN_API_BASE_URL, '/v1');
+    assert.equal(portalStep.env.PORTAL_PUBLIC_BACKEND_API_BASE_URL, '/backend/v3/api');
+    assert.equal(portalStep.env.PORTAL_PUBLIC_APP_API_BASE_URL, '/app/v3/api');
+    assert.equal(portalStep.env.PORTAL_DEV_PROXY_GATEWAY_TARGET, 'http://127.0.0.1:3900');
+    assert.equal(portalStep.env.PORTAL_DEV_PROXY_BACKEND_API_TARGET, 'http://127.0.0.1:3900');
+    assert.equal(portalStep.env.PORTAL_DEV_PROXY_APP_API_TARGET, 'http://127.0.0.1:3900');
+    assert.equal(portalStep.env.VITE_SDKWORK_APPBASE_APP_API_BASE_URL, 'http://127.0.0.1:3902/app/v3/api');
+    assert.equal(portalStep.env.VITE_SDKWORK_DRIVE_APP_API_BASE_URL, 'http://127.0.0.1:3902/app/v3/api');
+    assert.deepEqual(serverStep.args, [
       'run',
       '-p',
       'sdkwork-claw-gateway',
     ]);
-    assert.equal(plan.steps[3].env.SDKWORK_CLAW_EDGE_SERVER, '1');
-    assert.equal(plan.steps[3].env.SDKWORK_CLAW_ALL_IN_ONE_RUNTIME, '1');
-    assert.equal(plan.steps[3].env.SDKWORK_CLAW_SERVER_BIND, '0.0.0.0:3900');
-    assert.equal(plan.steps[3].env.SDKWORK_CLAW_STARTUP_INSTALL_MODE, 'skip');
-    assert.equal(plan.steps[3].env.SDKWORK_CLAW_EDGE_GATEWAY_BASE_URL, 'http://127.0.0.1:3900');
-    assert.equal(plan.steps[3].env.SDKWORK_CLAW_EDGE_BACKEND_API_BASE_URL, 'http://127.0.0.1:3900');
-    assert.equal(plan.steps[3].env.SDKWORK_CLAW_EDGE_APP_API_BASE_URL, 'http://127.0.0.1:3900');
-    assert.equal(plan.steps[3].env.SDKWORK_CLAW_EDGE_PORTAL_BASE_URL, 'http://127.0.0.1:3901');
-    assert.equal(plan.steps[3].env.SDKWORK_CLAW_APP_RUNTIME_GATEWAY_BASE_URL, 'http://127.0.0.1:3900');
+    assert.equal(serverStep.env.SDKWORK_CLAW_EDGE_SERVER, '1');
+    assert.equal(serverStep.env.SDKWORK_CLAW_ALL_IN_ONE_RUNTIME, '1');
+    assert.equal(serverStep.env.SDKWORK_CLAW_SERVER_BIND, '0.0.0.0:3900');
+    assert.equal(serverStep.env.SDKWORK_CLAW_STARTUP_INSTALL_MODE, 'skip');
+    assert.equal(serverStep.env.PORTAL_PUBLIC_SDK_BASE_URL, 'http://127.0.0.1:3902');
+    assert.equal(serverStep.env.SDKWORK_CLAW_EDGE_GATEWAY_BASE_URL, 'http://127.0.0.1:3900');
+    assert.equal(serverStep.env.SDKWORK_CLAW_EDGE_BACKEND_API_BASE_URL, 'http://127.0.0.1:3900');
+    assert.equal(serverStep.env.SDKWORK_CLAW_EDGE_APP_API_BASE_URL, 'http://127.0.0.1:3900');
+    assert.equal(serverStep.env.SDKWORK_CLAW_EDGE_PORTAL_BASE_URL, 'http://127.0.0.1:3901');
+    assert.equal(serverStep.env.SDKWORK_CLAW_APP_RUNTIME_GATEWAY_BASE_URL, 'http://127.0.0.1:3900');
     assert.equal(
-      plan.steps[3].env.SDKWORK_MODELS_CATALOG_ROOT,
+      serverStep.env.SDKWORK_MODELS_CATALOG_ROOT,
       path.join(workspaceRoot, 'data', 'sdkwork-models'),
     );
   });
@@ -2050,16 +2148,20 @@ test('claw router workspace launch plan preserves distributed service topology w
     'gateway',
     'admin-api',
     'app-api',
+    'sdkwork-api-gateway',
     'portal',
     'server',
   ]);
   assert.equal(plan.steps[2].env.SDKWORK_CLAW_GATEWAY_BIND, '0.0.0.0:19080');
   assert.equal(plan.steps[4].env.SDKWORK_CLAW_APP_RUNTIME_GATEWAY_BASE_URL, 'http://127.0.0.1:19080');
-  assert.equal(plan.steps[5].env.PORTAL_DEV_PROXY_GATEWAY_TARGET, 'http://127.0.0.1:19080');
-  assert.equal(plan.steps[5].env.PORTAL_DEV_PROXY_BACKEND_API_TARGET, 'http://127.0.0.1:18081');
-  assert.equal(plan.steps[5].env.PORTAL_DEV_PROXY_APP_API_TARGET, 'http://127.0.0.1:18082');
-  assert.equal(plan.steps[6].env.SDKWORK_CLAW_ALL_IN_ONE_RUNTIME, '0');
-  assert.equal(plan.steps[6].env.SDKWORK_CLAW_EDGE_GATEWAY_BASE_URL, 'http://127.0.0.1:19080');
+  assert.equal(plan.steps[5].env.SDKWORK_API_GATEWAY_BIND, '127.0.0.1:3902');
+  assert.equal(plan.steps[6].env.PORTAL_PUBLIC_SDK_BASE_URL, 'http://127.0.0.1:3902');
+  assert.equal(plan.steps[6].env.PORTAL_DEV_PROXY_GATEWAY_TARGET, 'http://127.0.0.1:19080');
+  assert.equal(plan.steps[6].env.PORTAL_DEV_PROXY_BACKEND_API_TARGET, 'http://127.0.0.1:18081');
+  assert.equal(plan.steps[6].env.PORTAL_DEV_PROXY_APP_API_TARGET, 'http://127.0.0.1:18082');
+  assert.equal(plan.steps[7].env.PORTAL_PUBLIC_SDK_BASE_URL, 'http://127.0.0.1:3902');
+  assert.equal(plan.steps[7].env.SDKWORK_CLAW_ALL_IN_ONE_RUNTIME, '0');
+  assert.equal(plan.steps[7].env.SDKWORK_CLAW_EDGE_GATEWAY_BASE_URL, 'http://127.0.0.1:19080');
 });
 
 test('claw router workspace reports occupied service ports before startup', async () => {

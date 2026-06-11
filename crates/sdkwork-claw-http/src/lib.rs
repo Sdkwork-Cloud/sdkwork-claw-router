@@ -26,5 +26,6 @@ pub use headers::{default_security_headers, redact_http_header};
 pub use router::{
     service_router, service_router_with_contract_routes,
     service_router_with_contract_routes_and_database_config, service_router_with_database_config,
+    service_router_with_filtered_contract_routes_and_database_config, ContractOperationFilter,
 };
-pub use sdkwork_claw_contract::ApiSurface;
+pub use sdkwork_claw_contract::{ApiSurface, ContractOperation};

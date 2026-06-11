@@ -248,27 +248,27 @@ function readCommerceResourceRecord(result: unknown, message: string): ApiRecord
 function normalizeCheckoutStatus(item: ApiRecord, fallbackOrderNo: string): CheckoutStatus {
   const amount = readFirstMoneyString(
     item,
-    ['amount', 'priceAmount', 'totalAmount'],
+    ['amount', 'priceAmount', 'price_amount', 'totalAmount', 'total_amount'],
     'Checkout amount is required',
     'Checkout amount must be a money string',
   );
-  const paymentMethodValue = readFirstString(item, ['paymentMethod', 'method']);
-  const orderNo = readFirstString(item, ['orderNo', 'requestNo', 'id']) || fallbackOrderNo;
+  const paymentMethodValue = readFirstString(item, ['paymentMethod', 'payment_method', 'method']);
+  const orderNo = readFirstString(item, ['orderNo', 'order_no', 'requestNo', 'request_no', 'id']) || fallbackOrderNo;
   const paymentStatus = readCheckoutStatusValue(readFirstString(item, ['paymentStatus', 'payStatus', 'status']));
   const orderStatus = readCheckoutStatusValue(readFirstString(item, ['orderStatus', 'status']));
   const rechargeStatus = readCheckoutStatusValue(readFirstString(item, ['rechargeStatus', 'grantStatus', 'status']));
   const status = readCheckoutStatusValue(readFirstString(item, ['status', 'paymentStatus']));
-  const providerCode = readFirstString(item, ['providerCode']) || readCheckoutProviderCode(paymentMethodValue);
-  const paymentMethod = readCheckoutPaymentMethod(paymentMethodValue);
-  const paymentProduct = readCheckoutPaymentProduct(readFirstString(item, ['paymentProduct']), paymentMethod);
-  const nextAction = readCheckoutNextAction(readFirstString(item, ['nextAction']));
+  const providerCode = readFirstString(item, ['providerCode', 'provider_code']) || readCheckoutProviderCode(paymentMethodValue);
+  const paymentMethod = readCheckoutPaymentMethod(readFirstString(item, ['paymentMethod', 'payment_method', 'method']));
+  const paymentProduct = readCheckoutPaymentProduct(readFirstString(item, ['paymentProduct', 'payment_product']), paymentMethod);
+  const nextAction = readCheckoutNextAction(readFirstString(item, ['nextAction', 'next_action']));
   const cashierUrl = readCheckoutCashierUrl(item, nextAction);
   const requestPaymentPayload = readCheckoutRequestPaymentPayload(item);
   return {
     orderNo,
-    outTradeNo: readFirstString(item, ['outTradeNo', 'externalTradeNo']),
+    outTradeNo: readFirstString(item, ['outTradeNo', 'out_trade_no', 'externalTradeNo', 'external_trade_no']),
     amount,
-    points: readFirstNonNegativeNumber(item, ['points', 'grantAmount'], 'Checkout points are required'),
+    points: readFirstNonNegativeNumber(item, ['points', 'grantAmount', 'grant_amount'], 'Checkout points are required'),
     providerCode,
     paymentMethod,
     paymentProduct,

@@ -66,20 +66,31 @@ async fn unknown_backend_route_still_returns_not_found() {
 }
 
 #[tokio::test]
-async fn appbase_backend_iam_routes_are_not_demo_mounted_without_database_runtime() {
+async fn default_router_does_not_mount_commerce_backend_routes_locally() {
+    for path in [
+        "/backend/v3/api/payments/providers",
+        "/backend/v3/api/commerce_reports/payment_reconciliation",
+    ] {
+        let (status, payload) = call(Method::GET, path).await;
+
+        assert_eq!(StatusCode::NOT_FOUND, status, "{path}");
+        assert_eq!(Value::Null, payload, "{path}");
+    }
+}
+
+#[tokio::test]
+async fn default_router_does_not_mount_appbase_backend_iam_routes_locally() {
     for path in [
         "/backend/v3/api/iam/organizations/tree",
         "/backend/v3/api/iam/departments/tree",
         "/backend/v3/api/iam/roles",
         "/backend/v3/api/iam/permissions",
+        "/backend/v3/api/iam/users",
+        "/backend/v3/api/iam/api_keys",
     ] {
         let (status, payload) = call(Method::GET, path).await;
 
-        assert_ne!(StatusCode::OK, status, "{path}: {payload}");
-        assert_ne!("2000", payload["code"], "{path}");
-        assert!(
-            !payload.to_string().contains("org_demo"),
-            "{path} must not expose appbase demo IAM data: {payload}"
-        );
+        assert_eq!(StatusCode::NOT_FOUND, status, "{path}");
+        assert_eq!(Value::Null, payload, "{path}");
     }
 }

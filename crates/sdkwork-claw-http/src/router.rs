@@ -2,7 +2,7 @@ use std::sync::Arc;
 
 use axum::{routing::get, Router};
 use sdkwork_claw_config::DatabaseConfig;
-use sdkwork_claw_contract::{ApiSurface, ContractManifest};
+use sdkwork_claw_contract::{ApiSurface, ContractManifest, ContractOperation};
 use sdkwork_claw_core::DatabaseHealth;
 
 use crate::contract_routes::{
@@ -13,11 +13,14 @@ use crate::contract_routes::{
 };
 use crate::health::{healthz, readyz};
 
+pub type ContractOperationFilter = fn(&ContractOperation) -> bool;
+
 #[derive(Debug, Clone)]
 pub struct ServiceState {
     pub(crate) service_name: &'static str,
     pub(crate) contract_surface: Option<ApiSurface>,
     pub(crate) contract_manifest: Option<Arc<ContractManifest>>,
+    pub(crate) contract_operation_filter: Option<ContractOperationFilter>,
     pub(crate) database: DatabaseHealth,
 }
 
@@ -29,7 +32,7 @@ pub fn service_router_with_database_config(
     service_name: &'static str,
     database_config: Option<&DatabaseConfig>,
 ) -> Router {
-    base_router().with_state(service_state(service_name, None, database_config))
+    base_router().with_state(service_state(service_name, None, database_config, None))
 }
 
 pub fn service_router_with_contract_routes(
@@ -44,6 +47,34 @@ pub fn service_router_with_contract_routes_and_database_config(
     surface: ApiSurface,
     database_config: Option<&DatabaseConfig>,
 ) -> Router {
+    service_router_with_optional_contract_operation_filter(
+        service_name,
+        surface,
+        database_config,
+        None,
+    )
+}
+
+pub fn service_router_with_filtered_contract_routes_and_database_config(
+    service_name: &'static str,
+    surface: ApiSurface,
+    database_config: Option<&DatabaseConfig>,
+    operation_filter: ContractOperationFilter,
+) -> Router {
+    service_router_with_optional_contract_operation_filter(
+        service_name,
+        surface,
+        database_config,
+        Some(operation_filter),
+    )
+}
+
+fn service_router_with_optional_contract_operation_filter(
+    service_name: &'static str,
+    surface: ApiSurface,
+    database_config: Option<&DatabaseConfig>,
+    operation_filter: Option<ContractOperationFilter>,
+) -> Router {
     let manifest = ContractManifest::from_embedded()
         .expect("embedded ClawRouter API contract manifest must be valid JSON");
     base_router()
@@ -52,6 +83,7 @@ pub fn service_router_with_contract_routes_and_database_config(
             service_name,
             Some((surface, Arc::new(manifest))),
             database_config,
+            operation_filter,
         ))
 }
 
@@ -78,6 +110,7 @@ fn service_state(
     service_name: &'static str,
     contract: Option<(ApiSurface, Arc<ContractManifest>)>,
     database_config: Option<&DatabaseConfig>,
+    contract_operation_filter: Option<ContractOperationFilter>,
 ) -> ServiceState {
     let (contract_surface, contract_manifest) = match contract {
         Some((surface, manifest)) => (Some(surface), Some(manifest)),
@@ -88,6 +121,7 @@ fn service_state(
         service_name,
         contract_surface,
         contract_manifest,
+        contract_operation_filter,
         database: DatabaseHealth::from_config(database_config),
     }
 }

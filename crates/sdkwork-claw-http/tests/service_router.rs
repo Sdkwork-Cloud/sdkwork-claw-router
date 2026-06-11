@@ -1928,7 +1928,7 @@ async fn service_router_exposes_surface_openapi_documents() {
 }
 
 #[tokio::test]
-async fn service_router_surface_openapi_documents_include_appbase_commerce_contracts() {
+async fn service_router_surface_openapi_documents_exclude_commerce_dependency_contracts() {
     let app_payload = fetch_surface_openapi(
         "sdkwork-claw-app-api",
         ApiSurface::App,
@@ -1936,59 +1936,35 @@ async fn service_router_surface_openapi_documents_include_appbase_commerce_contr
     )
     .await;
     for (method, path, operation_id) in [
-        (
-            "get",
-            "/app/v3/api/catalog/products",
-            "catalog.products.list",
-        ),
-        (
-            "get",
-            "/app/v3/api/catalog/skus/{skuId}",
-            "catalog.skus.retrieve",
-        ),
-        ("get", "/app/v3/api/cart/current", "cart.current.retrieve"),
-        (
-            "post",
-            "/app/v3/api/checkout/sessions",
-            "checkout.sessions.create",
-        ),
-        ("get", "/app/v3/api/orders/{orderId}", "orders.retrieve"),
-        (
-            "post",
-            "/app/v3/api/payments/intents",
-            "payments.intents.create",
-        ),
-        ("post", "/app/v3/api/refunds", "refunds.create"),
-        ("get", "/app/v3/api/fulfillments", "fulfillments.list"),
-        (
-            "get",
-            "/app/v3/api/memberships/current",
-            "memberships.current.retrieve",
-        ),
-        (
-            "post",
-            "/app/v3/api/memberships/purchases",
-            "memberships.purchases.create",
-        ),
-        (
-            "post",
-            "/app/v3/api/recharges/orders",
-            "recharges.orders.create",
-        ),
-        ("get", "/app/v3/api/billing/history", "billing.history.list"),
-        (
-            "get",
-            "/app/v3/api/wallet/overview",
-            "wallet.overview.retrieve",
-        ),
-        (
-            "get",
-            "/app/v3/api/wallet/points/exchanges/rules",
-            "wallet.points.exchangeRules.list",
-        ),
-        ("get", "/app/v3/api/invoices", "invoices.list"),
+        ("get", "/app/v3/api/ai/models", "models.list"),
+        ("get", "/app/v3/api/platform/apps/store", "apps.store.list"),
     ] {
         assert_openapi_operation(&app_payload, method, path, operation_id);
+    }
+    for (method, path) in [
+        ("get", "/app/v3/api/catalog/products"),
+        ("get", "/app/v3/api/catalog/skus/{skuId}"),
+        ("get", "/app/v3/api/cart/current"),
+        ("post", "/app/v3/api/checkout/sessions"),
+        ("get", "/app/v3/api/orders/{orderId}"),
+        ("post", "/app/v3/api/payments/intents"),
+        ("post", "/app/v3/api/refunds"),
+        ("get", "/app/v3/api/fulfillments"),
+        ("get", "/app/v3/api/memberships/current"),
+        ("post", "/app/v3/api/memberships/purchases"),
+        ("post", "/app/v3/api/recharges/orders"),
+        ("get", "/app/v3/api/billing/history"),
+        ("get", "/app/v3/api/wallet/overview"),
+        ("get", "/app/v3/api/wallet/points/exchanges/rules"),
+        ("get", "/app/v3/api/invoices"),
+    ] {
+        assert!(
+            app_payload["paths"]
+                .get(path)
+                .and_then(|path_item| path_item.get(method))
+                .is_none(),
+            "runtime app OpenAPI must not expose Commerce dependency operation {method} {path}"
+        );
     }
     assert!(
         app_payload["paths"]
@@ -2004,60 +1980,42 @@ async fn service_router_surface_openapi_documents_include_appbase_commerce_contr
     )
     .await;
     for (method, path, operation_id) in [
-        (
-            "post",
-            "/backend/v3/api/catalog/products",
-            "catalog.products.create",
-        ),
+        ("get", "/backend/v3/api/ai/models", "models.list"),
         (
             "patch",
-            "/backend/v3/api/inventory/stocks/{stockId}",
-            "inventory.stocks.update",
-        ),
-        ("get", "/backend/v3/api/orders", "orders.list"),
-        (
-            "get",
-            "/backend/v3/api/payments/providers",
-            "payments.providers.list",
-        ),
-        (
-            "post",
-            "/backend/v3/api/payments/provider_accounts",
-            "payments.providerAccounts.create",
-        ),
-        (
-            "get",
-            "/backend/v3/api/payments/route_rules",
-            "payments.routeRules.list",
-        ),
-        ("get", "/backend/v3/api/refunds", "refunds.list"),
-        (
-            "get",
-            "/backend/v3/api/shipments/{shipmentId}/tracking_events",
-            "shipments.trackingEvents.list",
-        ),
-        (
-            "post",
-            "/backend/v3/api/memberships/plans",
-            "memberships.plans.create",
-        ),
-        (
-            "get",
-            "/backend/v3/api/wallet/ledger_entries",
-            "wallet.ledgerEntries.list",
-        ),
-        (
-            "get",
-            "/backend/v3/api/promotions/offers",
-            "promotions.offers.management.list",
-        ),
-        (
-            "get",
-            "/backend/v3/api/commerce_reports/payment_reconciliation",
-            "commerceReports.paymentReconciliation.retrieve",
+            "/backend/v3/api/content/announcements/{announcementId}",
+            "announcements.update",
         ),
     ] {
         assert_openapi_operation(&backend_payload, method, path, operation_id);
+    }
+    for (method, path) in [
+        ("post", "/backend/v3/api/catalog/products"),
+        ("patch", "/backend/v3/api/inventory/stocks/{stockId}"),
+        ("get", "/backend/v3/api/orders"),
+        ("get", "/backend/v3/api/payments/providers"),
+        ("post", "/backend/v3/api/payments/provider_accounts"),
+        ("get", "/backend/v3/api/payments/route_rules"),
+        ("get", "/backend/v3/api/refunds"),
+        (
+            "get",
+            "/backend/v3/api/shipments/{shipmentId}/tracking_events",
+        ),
+        ("post", "/backend/v3/api/memberships/plans"),
+        ("get", "/backend/v3/api/wallet/ledger_entries"),
+        ("get", "/backend/v3/api/promotions/offers"),
+        (
+            "get",
+            "/backend/v3/api/commerce_reports/payment_reconciliation",
+        ),
+    ] {
+        assert!(
+            backend_payload["paths"]
+                .get(path)
+                .and_then(|path_item| path_item.get(method))
+                .is_none(),
+            "runtime backend OpenAPI must not expose Commerce dependency operation {method} {path}"
+        );
     }
 }
 

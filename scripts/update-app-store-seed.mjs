@@ -440,8 +440,16 @@ export function buildAppStoreSeedCommandPlan(settings, { workspaceRoot = DEFAULT
   };
 }
 
-async function loadAppStandardInitModule() {
+async function loadAppStandardInitModule({ required = true } = {}) {
   const modulePath = path.join(DEFAULT_APP_STANDARD_TOOLS_ROOT, 'scripts', 'lib', 'sdkwork-app-standard-init-all.mjs');
+  try {
+    await fs.access(modulePath);
+  } catch (error) {
+    if (!required && error?.code === 'ENOENT') {
+      return null;
+    }
+    throw new Error(`sdkwork app standard initializer is missing: ${modulePath}`);
+  }
   return import(pathToFileURL(modulePath).href);
 }
 
@@ -663,9 +671,54 @@ async function syncDatabase(settings, workspaceRoot) {
   };
 }
 
+async function runAppStoreSeedCheckFromCommittedSeeds(settings, { workspaceRoot, plan }) {
+  const appSeed = await readJsonIfExists(plan.appSeedPath);
+  if (!isRecord(appSeed)) {
+    throw new Error(`app store PlusApp seed is missing or invalid: ${plan.appSeedPath}`);
+  }
+  if (appSeed.kind !== 'sdkwork.plus_app.seed') {
+    throw new Error(`app store PlusApp seed has unsupported kind: ${appSeed.kind ?? '(missing)'}`);
+  }
+  if (!Array.isArray(appSeed.apps)) {
+    throw new Error('app store PlusApp seed apps must be an array');
+  }
+
+  const source = isRecord(appSeed.source) ? appSeed.source : {};
+  if (stringValue(source.environment) && stringValue(source.environment) !== settings.environment) {
+    throw new Error(
+      `app store PlusApp seed environment mismatch: expected ${settings.environment} actual ${source.environment}`,
+    );
+  }
+  if (stringValue(source.channel) && stringValue(source.channel) !== settings.channel) {
+    throw new Error(
+      `app store PlusApp seed channel mismatch: expected ${settings.channel} actual ${source.channel}`,
+    );
+  }
+
+  const categorySeed = await updateCategorySeed(settings, workspaceRoot, plan.appSeedPath, plan.categorySeedPath);
+  return {
+    ok: true,
+    mode: 'check',
+    appsRoot: settings.appsRoot,
+    appSeedPath: plan.appSeedPath,
+    categorySeedPath: plan.categorySeedPath,
+    appCount: appSeed.apps.length,
+    categoryCount: categorySeed.categoryCount,
+    initializedManifests: 0,
+    plannedManifests: 0,
+    seedChanged: false,
+    databaseSynced: false,
+    plan,
+    fallback: 'committed-seeds',
+  };
+}
+
 async function runAppStoreSeedUpdate(settings, { workspaceRoot = DEFAULT_WORKSPACE_ROOT } = {}) {
   const plan = buildAppStoreSeedCommandPlan(settings, { workspaceRoot });
-  const initModule = await loadAppStandardInitModule();
+  const initModule = await loadAppStandardInitModule({ required: !settings.check });
+  if (!initModule) {
+    return runAppStoreSeedCheckFromCommittedSeeds(settings, { workspaceRoot, plan });
+  }
 
   const initialization = await initializeMissingAppManifests(settings, initModule);
   const appSeed = await exportAppSeed(settings, initModule, plan.appSeedPath);

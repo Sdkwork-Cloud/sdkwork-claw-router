@@ -5699,12 +5699,13 @@ async fn sqlite_record_failed_catalog_refresh(
 ) -> Result<(), sqlx::Error> {
     let now = current_utc_timestamp_string();
     let failed = failed_catalog_refresh_row(options, catalog_root, catalog_version, error, &now);
+    let id = next_install_runtime_id("ai_model_catalog_sync_run")?;
     sqlx::query(
         r#"
         INSERT INTO ai_model_catalog_sync_run
-            (uuid, tenant_id, organization_id, source_type, source_id, source_version, status, metadata, source_code, vendor_code, provider_code, run_status, started_at, finished_at, observed_at, catalog_version, source_hash, observed_model_count, accepted_count, rejected_count, change_summary, error_message_masked)
+            (uuid, tenant_id, organization_id, source_type, source_id, source_version, status, metadata, source_code, vendor_code, provider_code, run_status, started_at, finished_at, observed_at, catalog_version, source_hash, observed_model_count, accepted_count, rejected_count, change_summary, error_message_masked, id)
         VALUES
-            (?, ?, ?, 'manual_refresh', NULL, 1, 1, ?, ?, 'mixed', NULL, ?, ?, ?, ?, ?, ?, 0, 0, 1, ?, ?)
+            (?, ?, ?, 'manual_refresh', NULL, 1, 1, ?, ?, 'mixed', NULL, ?, ?, ?, ?, ?, ?, 0, 0, 1, ?, ?, ?)
         "#,
     )
     .bind(&failed.uuid)
@@ -5720,6 +5721,7 @@ async fn sqlite_record_failed_catalog_refresh(
     .bind(&failed.source_hash)
     .bind(&failed.change_summary)
     .bind(&failed.error_message_masked)
+    .bind(id)
     .execute(pool)
     .await?;
     Ok(())
@@ -5734,12 +5736,13 @@ async fn postgres_record_failed_catalog_refresh(
 ) -> Result<(), sqlx::Error> {
     let now = current_utc_timestamp_string();
     let failed = failed_catalog_refresh_row(options, catalog_root, catalog_version, error, &now);
+    let id = next_install_runtime_id("ai_model_catalog_sync_run")?;
     sqlx::query(
         r#"
         INSERT INTO ai_model_catalog_sync_run
-            (uuid, tenant_id, organization_id, source_type, source_id, source_version, status, metadata, source_code, vendor_code, provider_code, run_status, started_at, finished_at, observed_at, catalog_version, source_hash, observed_model_count, accepted_count, rejected_count, change_summary, error_message_masked)
+            (uuid, tenant_id, organization_id, source_type, source_id, source_version, status, metadata, source_code, vendor_code, provider_code, run_status, started_at, finished_at, observed_at, catalog_version, source_hash, observed_model_count, accepted_count, rejected_count, change_summary, error_message_masked, id)
         VALUES
-            ($1, $2, $3, 'manual_refresh', NULL, 1, 1, $4::jsonb, $5, 'mixed', NULL, $6, $7::timestamptz, $8::timestamptz, $9::timestamptz, $10, $11, 0, 0, 1, $12::jsonb, $13)
+            ($1, $2, $3, 'manual_refresh', NULL, 1, 1, $4::jsonb, $5, 'mixed', NULL, $6, $7::timestamptz, $8::timestamptz, $9::timestamptz, $10, $11, 0, 0, 1, $12::jsonb, $13, $14)
         "#,
     )
     .bind(&failed.uuid)
@@ -5755,6 +5758,7 @@ async fn postgres_record_failed_catalog_refresh(
     .bind(&failed.source_hash)
     .bind(&failed.change_summary)
     .bind(&failed.error_message_masked)
+    .bind(id)
     .execute(pool)
     .await?;
     Ok(())
