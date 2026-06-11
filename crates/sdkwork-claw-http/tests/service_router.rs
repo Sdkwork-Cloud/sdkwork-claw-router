@@ -102,6 +102,7 @@ async fn service_router_exposes_gateway_openapi_document() {
 }
 
 #[tokio::test]
+#[ignore = "legacy 6-tab taxonomy was replaced by sdkwork-router API capability tabs"]
 async fn service_router_exposes_ordered_openapi_schema_tabs_from_route_config() {
     let response = sdkwork_claw_http::service_router("sdkwork-claw-gateway")
         .oneshot(
@@ -269,6 +270,219 @@ async fn service_router_exposes_ordered_openapi_schema_tabs_from_route_config() 
         "/backend/v3/api/openapi.json",
         payload["tabs"][5]["schemaUrls"][0]
     );
+}
+
+#[tokio::test]
+async fn service_router_exposes_ordered_sdkwork_router_api_schema_tabs() {
+    let response = sdkwork_claw_http::service_router("sdkwork-claw-gateway")
+        .oneshot(
+            Request::builder()
+                .uri("/openapi/schema-tabs.json")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, response.status());
+    assert_eq!(
+        "public, max-age=30, stale-while-revalidate=60",
+        response
+            .headers()
+            .get("cache-control")
+            .unwrap()
+            .to_str()
+            .unwrap()
+    );
+
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
+    assert_eq!(30, payload["cacheTtlSeconds"]);
+
+    let tabs = payload["tabs"].as_array().unwrap();
+    let tab_ids = tabs
+        .iter()
+        .map(|tab| tab["id"].as_str().unwrap())
+        .collect::<Vec<_>>();
+    assert_eq!(
+        vec![
+            "llm-open-api",
+            "image-open-api",
+            "video-open-api",
+            "audio-open-api",
+            "payment-open-api",
+            "iaas-open-api",
+            "paas-open-api",
+            "app-api",
+            "backend-api",
+        ],
+        tab_ids
+    );
+
+    assert_schema_tab(
+        &payload["tabs"][0],
+        "llm-open-api",
+        "LLM Open API",
+        10,
+        "/openapi.json",
+    );
+    assert_json_array_contains(&payload["tabs"][0]["aliases"], "gateway");
+    assert_eq!("llm", payload["tabs"][0]["serviceGroups"][0]["code"]);
+    assert_json_array_contains(
+        &payload["tabs"][0]["serviceGroups"][0]["operations"],
+        "chat_completions",
+    );
+    assert_json_array_contains(
+        &payload["tabs"][0]["serviceGroups"][0]["operations"],
+        "responses",
+    );
+    assert_json_array_contains(
+        &payload["tabs"][0]["serviceGroups"][0]["operations"],
+        "embeddings",
+    );
+
+    assert_schema_tab(
+        &payload["tabs"][1],
+        "image-open-api",
+        "Image Open API",
+        20,
+        "/openapi.json",
+    );
+    assert_eq!(
+        "image_generation",
+        payload["tabs"][1]["serviceGroups"][0]["code"]
+    );
+    assert_json_array_contains(
+        &payload["tabs"][1]["serviceGroups"][0]["operations"],
+        "image_generation",
+    );
+    assert_json_array_contains(
+        &payload["tabs"][1]["serviceGroups"][0]["operations"],
+        "image_edit",
+    );
+
+    assert_schema_tab(
+        &payload["tabs"][2],
+        "video-open-api",
+        "Video Open API",
+        30,
+        "/openapi.json",
+    );
+    assert_eq!(
+        "video_generation",
+        payload["tabs"][2]["serviceGroups"][0]["code"]
+    );
+    assert_json_array_contains(
+        &payload["tabs"][2]["serviceGroups"][0]["providerCodes"],
+        "kling",
+    );
+    assert_json_array_contains(
+        &payload["tabs"][2]["serviceGroups"][0]["providerCodes"],
+        "vidu",
+    );
+
+    assert_schema_tab(
+        &payload["tabs"][3],
+        "audio-open-api",
+        "Audio Open API",
+        40,
+        "/openapi.json",
+    );
+    assert_json_array_contains(&payload["tabs"][3]["aliases"], "voice-open-api");
+    assert_eq!(
+        "audio_generation",
+        payload["tabs"][3]["serviceGroups"][0]["code"]
+    );
+    assert_json_array_contains(
+        &payload["tabs"][3]["serviceGroups"][0]["operations"],
+        "speech",
+    );
+    assert_json_array_contains(
+        &payload["tabs"][3]["serviceGroups"][0]["operations"],
+        "transcription",
+    );
+
+    assert_schema_tab(
+        &payload["tabs"][4],
+        "payment-open-api",
+        "Payment Open API",
+        50,
+        "/payments/v3/openapi.json",
+    );
+    assert_json_array_contains(&payload["tabs"][4]["aliases"], "payment-aggregate");
+
+    assert_schema_tab(
+        &payload["tabs"][5],
+        "iaas-open-api",
+        "IaaS Open API",
+        60,
+        "/cloud/v3/openapi.json",
+    );
+    assert_json_array_contains(&payload["tabs"][5]["aliases"], "cloud-services");
+    assert_eq!(
+        "object_storage",
+        payload["tabs"][5]["serviceGroups"][0]["code"]
+    );
+    assert_json_array_contains(
+        &payload["tabs"][5]["serviceGroups"][0]["providerCodes"],
+        "huawei_obs",
+    );
+    assert_json_array_contains(
+        &payload["tabs"][5]["serviceGroups"][0]["providerCodes"],
+        "volcengine_tos",
+    );
+    assert_json_array_contains(
+        &payload["tabs"][5]["serviceGroups"][0]["operations"],
+        "s3_object_batch_delete",
+    );
+    assert_json_array_contains(
+        &payload["tabs"][5]["serviceGroups"][0]["operations"],
+        "s3_server_side_encryption",
+    );
+    let iaas_service_groups = payload["tabs"][5]["serviceGroups"].as_array().unwrap();
+    assert!(iaas_service_groups
+        .iter()
+        .any(|group| group["code"] == "cloud_compute"));
+    assert!(iaas_service_groups
+        .iter()
+        .any(|group| group["code"] == "container_runtime"));
+    assert!(iaas_service_groups
+        .iter()
+        .any(|group| group["code"] == "deployment_orchestration"));
+
+    assert_schema_tab(
+        &payload["tabs"][6],
+        "paas-open-api",
+        "PaaS Open API",
+        70,
+        "/paas/v3/openapi.json",
+    );
+    assert_json_array_contains(&payload["tabs"][6]["aliases"], "paas-api");
+    assert_eq!("ocr", payload["tabs"][6]["serviceGroups"][0]["code"]);
+    assert!(payload["tabs"][6]["serviceGroups"]
+        .as_array()
+        .unwrap()
+        .iter()
+        .any(|group| group["code"] == "content_moderation"));
+
+    assert_schema_tab(
+        &payload["tabs"][7],
+        "app-api",
+        "App API",
+        80,
+        "/app/v3/api/openapi.json",
+    );
+    assert_json_array_contains(&payload["tabs"][7]["aliases"], "app");
+
+    assert_schema_tab(
+        &payload["tabs"][8],
+        "backend-api",
+        "Backend API",
+        90,
+        "/backend/v3/api/openapi.json",
+    );
+    assert_json_array_contains(&payload["tabs"][8]["aliases"], "backend");
 }
 
 #[tokio::test]
@@ -2283,6 +2497,21 @@ fn assert_json_array_contains(values: &Value, expected: &str) {
             .any(|value| value == expected),
         "expected JSON array to contain {expected}"
     );
+}
+
+fn assert_schema_tab(
+    tab: &Value,
+    expected_id: &str,
+    expected_name: &str,
+    expected_order: i64,
+    expected_schema_url: &str,
+) {
+    assert_eq!(expected_id, tab["id"]);
+    assert_eq!(expected_name, tab["name"]);
+    assert_eq!("available", tab["status"]);
+    assert_eq!(expected_order, tab["order"]);
+    assert_eq!(expected_schema_url, tab["defaultSchemaUrl"]);
+    assert_eq!(expected_schema_url, tab["schemaUrls"][0]);
 }
 
 fn assert_json_array_not_contains(values: &Value, unexpected: &str) {

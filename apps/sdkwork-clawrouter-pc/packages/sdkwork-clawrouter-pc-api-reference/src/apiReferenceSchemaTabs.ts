@@ -1,5 +1,5 @@
 import type { ElementType } from 'react';
-import { Cloud, CreditCard, FileScan, Layout, Server, Settings, Sparkles } from 'lucide-react';
+import { Cloud, CreditCard, FileScan, ImageIcon, Layout, Server, Settings, Sparkles, Video, Volume2 } from 'lucide-react';
 import type {
   ApiParameter,
   ApiReferenceEndpoint,
@@ -28,6 +28,7 @@ import {
 import {
   APP_API_PREFIX,
   BACKEND_API_PREFIX,
+  CLOUD_API_PREFIX,
   OPEN_API_PREFIX,
 } from 'sdkwork-clawrouter-pc-commons/runtime';
 
@@ -37,6 +38,7 @@ export const LEGACY_OPENAPI_URL = '/openapi.json';
 export interface ApiSchemaTab {
   id: string;
   name: string;
+  aliases?: string[];
   order: number;
   schemaUrls: string[];
   defaultSchemaUrl?: string;
@@ -156,8 +158,9 @@ export async function loadApiReferenceSystems(fetchJson: ApiReferenceFetchJson =
     }
     return buildApiReferenceSystemsFromTabs({
       tabs: [{
-        id: 'gateway',
-        name: 'AI聚合API',
+        id: 'llm-open-api',
+        name: 'LLM Open API',
+        aliases: ['gateway'],
         order: 10,
         schemaUrls: [LEGACY_OPENAPI_URL],
         defaultSchemaUrl: LEGACY_OPENAPI_URL,
@@ -214,8 +217,8 @@ export async function buildApiReferenceSystemsFromTabs(
 }
 
 export function getApiSystemDisplayName(system: Pick<ApiSystemData, 'id' | 'name'>): string {
-  if (system.id === 'gateway') {
-    return 'AI聚合API';
+  if (system.id === 'llm-open-api' || system.id === 'gateway') {
+    return 'LLM Open API';
   }
   return system.name;
 }
@@ -226,7 +229,7 @@ export function getDefaultApiReferenceEndpoint(system: ApiSystemData): ApiRefere
     return null;
   }
 
-  if (system.id === 'gateway') {
+  if (system.id === 'llm-open-api' || system.id === 'gateway') {
     const chatCompletionEndpoint = endpoints.find((endpoint) => (
       endpoint.path === '/v1/chat/completions' && endpoint.method.toUpperCase() === 'POST'
     ));
@@ -284,6 +287,7 @@ function normalizeApiSchemaTab(value: unknown): ApiSchemaTab {
   return {
     id,
     name,
+    aliases: stringList(value.aliases),
     order: typeof value.order === 'number' && Number.isFinite(value.order) ? value.order : 0,
     schemaUrls,
     defaultSchemaUrl: typeof value.defaultSchemaUrl === 'string' ? value.defaultSchemaUrl : undefined,
@@ -582,12 +586,15 @@ async function defaultFetchJson(url: string): Promise<unknown> {
 }
 
 function iconForTab(id: string): ElementType {
-  if (id === 'payment-aggregate') return CreditCard;
-  if (id === 'paas-api') return FileScan;
-  if (id === 'cloud-services') return Cloud;
-  if (id === 'backend') return Settings;
-  if (id === 'app') return Layout;
-  if (id === 'gateway') return Sparkles;
+  if (id === 'payment-open-api' || id === 'payment-aggregate') return CreditCard;
+  if (id === 'paas-open-api' || id === 'paas-api') return FileScan;
+  if (id === 'iaas-open-api' || id === 'cloud-services') return Cloud;
+  if (id === 'backend-api' || id === 'backend') return Settings;
+  if (id === 'app-api' || id === 'app') return Layout;
+  if (id === 'image-open-api') return ImageIcon;
+  if (id === 'video-open-api') return Video;
+  if (id === 'audio-open-api' || id === 'voice-open-api') return Volume2;
+  if (id === 'llm-open-api' || id === 'gateway') return Sparkles;
   return Server;
 }
 
@@ -640,14 +647,24 @@ function resolveApiSystemRequestBaseUrl(
   if (contractPrefix) {
     return contractPrefix;
   }
-  if (systemId === 'backend') {
+  if (systemId === 'backend-api' || systemId === 'backend') {
     return BACKEND_API_PREFIX;
   }
-  if (systemId === 'app') {
+  if (systemId === 'app-api' || systemId === 'app') {
     return APP_API_PREFIX;
   }
-  if (systemId === 'gateway') {
+  if (
+    systemId === 'llm-open-api'
+    || systemId === 'image-open-api'
+    || systemId === 'video-open-api'
+    || systemId === 'audio-open-api'
+    || systemId === 'voice-open-api'
+    || systemId === 'gateway'
+  ) {
     return OPEN_API_PREFIX;
+  }
+  if (systemId === 'iaas-open-api' || systemId === 'cloud-services') {
+    return CLOUD_API_PREFIX;
   }
   if (schemaUrl.endsWith('/openapi.json')) {
     return schemaUrl.slice(0, -'/openapi.json'.length) || '';

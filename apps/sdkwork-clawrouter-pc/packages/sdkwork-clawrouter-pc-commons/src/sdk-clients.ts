@@ -47,8 +47,10 @@ export const APP_API_PREFIX = '/app/v3/api';
 export const BACKEND_API_PREFIX = '/backend/v3/api';
 export const OPEN_API_PREFIX = '/v1';
 export const CLOUD_API_PREFIX = '/cloud/v3';
+export const PAYMENT_API_PREFIX = '/payments/v3';
+export const PAAS_API_PREFIX = '/paas/v3';
 
-export type ClawRouterGeneratedSdkType = 'app' | 'backend' | 'ai' | 'cloud-services';
+export type ClawRouterGeneratedSdkType = 'app' | 'backend' | 'ai' | 'payment' | 'iaas' | 'paas';
 
 export interface ClawRouterGeneratedSdkMetadata {
   name: string;
@@ -102,22 +104,85 @@ export const CLAWROUTER_AI_SDK_REFERENCE_METADATA: ClawRouterGeneratedSdkMetadat
   description: 'SDKWork OpenAI-compatible AI API SDK',
 };
 
-export const CLAWROUTER_CLOUD_SERVICES_SDK_REFERENCE_METADATA: ClawRouterGeneratedSdkMetadata = {
+export const CLAWROUTER_LLM_OPEN_API_SDK_REFERENCE_METADATA: ClawRouterGeneratedSdkMetadata = {
+  ...CLAWROUTER_AI_SDK_REFERENCE_METADATA,
+  description: 'SDKWork LLM Open API SDK',
+};
+
+export const CLAWROUTER_IMAGE_OPEN_API_SDK_REFERENCE_METADATA: ClawRouterGeneratedSdkMetadata = {
+  ...CLAWROUTER_AI_SDK_REFERENCE_METADATA,
+  description: 'SDKWork Image Open API SDK',
+};
+
+export const CLAWROUTER_VIDEO_OPEN_API_SDK_REFERENCE_METADATA: ClawRouterGeneratedSdkMetadata = {
+  ...CLAWROUTER_AI_SDK_REFERENCE_METADATA,
+  description: 'SDKWork Video Open API SDK',
+};
+
+export const CLAWROUTER_AUDIO_OPEN_API_SDK_REFERENCE_METADATA: ClawRouterGeneratedSdkMetadata = {
+  ...CLAWROUTER_AI_SDK_REFERENCE_METADATA,
+  description: 'SDKWork Audio Open API SDK',
+};
+
+export const CLAWROUTER_PAYMENT_OPEN_API_SDK_REFERENCE_METADATA: ClawRouterGeneratedSdkMetadata = {
+  name: 'SdkworkPaymentClient',
+  packageName: '@sdkwork/clawrouter-payment-sdk',
+  version: '0.1.0',
+  sdkType: 'payment',
+  apiPrefix: PAYMENT_API_PREFIX,
+  runtimeEnvName: 'VITE_CLAWROUTER_PAYMENT_API_BASE_URL',
+  sourceDir: 'crates/sdkwork-claw-http/specs/payment-aggregate-openapi.json',
+  archiveLanguage: 'typescript',
+  archiveName: 'sdkwork-clawrouter-payment-sdk-typescript-0.1.0.zip',
+  description: 'SDKWork Payment Open API SDK',
+};
+
+export const CLAWROUTER_IAAS_OPEN_API_SDK_REFERENCE_METADATA: ClawRouterGeneratedSdkMetadata = {
   name: 'SdkworkCloudServicesClient',
   packageName: '@sdkwork/clawrouter-cloud-services-sdk',
   version: '0.1.0',
-  sdkType: 'cloud-services',
+  sdkType: 'iaas',
   apiPrefix: CLOUD_API_PREFIX,
   runtimeEnvName: 'VITE_CLAWROUTER_CLOUD_API_BASE_URL',
-  sourceDir: 'sdks/clawrouter-cloud-services-sdk/clawrouter-cloud-services-sdk-typescript',
+  sourceDir: 'crates/sdkwork-claw-http/specs/cloud-services-openapi.json',
   archiveLanguage: 'typescript',
   archiveName: 'sdkwork-clawrouter-cloud-services-sdk-typescript-0.1.0.zip',
+  description: 'SDKWork IaaS Open API SDK',
+};
+
+export const CLAWROUTER_CLOUD_SERVICES_SDK_REFERENCE_METADATA: ClawRouterGeneratedSdkMetadata = {
+  ...CLAWROUTER_IAAS_OPEN_API_SDK_REFERENCE_METADATA,
   description: 'SDKWork S3-compatible cloud services API SDK',
 };
 
+export const CLAWROUTER_PAAS_OPEN_API_SDK_REFERENCE_METADATA: ClawRouterGeneratedSdkMetadata = {
+  name: 'SdkworkPaasClient',
+  packageName: '@sdkwork/clawrouter-paas-sdk',
+  version: '0.1.0',
+  sdkType: 'paas',
+  apiPrefix: PAAS_API_PREFIX,
+  runtimeEnvName: 'VITE_CLAWROUTER_PAAS_API_BASE_URL',
+  sourceDir: 'crates/sdkwork-claw-http/specs/paas-openapi.json',
+  archiveLanguage: 'typescript',
+  archiveName: 'sdkwork-clawrouter-paas-sdk-typescript-0.1.0.zip',
+  description: 'SDKWork PaaS Open API SDK',
+};
+
 export const SDK_SYSTEM_CONFIG = {
-  gateway: CLAWROUTER_AI_SDK_REFERENCE_METADATA,
-  'cloud-services': CLAWROUTER_CLOUD_SERVICES_SDK_REFERENCE_METADATA,
+  'llm-open-api': CLAWROUTER_LLM_OPEN_API_SDK_REFERENCE_METADATA,
+  'image-open-api': CLAWROUTER_IMAGE_OPEN_API_SDK_REFERENCE_METADATA,
+  'video-open-api': CLAWROUTER_VIDEO_OPEN_API_SDK_REFERENCE_METADATA,
+  'audio-open-api': CLAWROUTER_AUDIO_OPEN_API_SDK_REFERENCE_METADATA,
+  'payment-open-api': CLAWROUTER_PAYMENT_OPEN_API_SDK_REFERENCE_METADATA,
+  'iaas-open-api': CLAWROUTER_IAAS_OPEN_API_SDK_REFERENCE_METADATA,
+  'paas-open-api': CLAWROUTER_PAAS_OPEN_API_SDK_REFERENCE_METADATA,
+  'app-api': CLAWROUTER_APP_SDK_REFERENCE_METADATA,
+  'backend-api': CLAWROUTER_BACKEND_SDK_REFERENCE_METADATA,
+  gateway: CLAWROUTER_LLM_OPEN_API_SDK_REFERENCE_METADATA,
+  'cloud-services': CLAWROUTER_IAAS_OPEN_API_SDK_REFERENCE_METADATA,
+  'paas-api': CLAWROUTER_PAAS_OPEN_API_SDK_REFERENCE_METADATA,
+  'payment-aggregate': CLAWROUTER_PAYMENT_OPEN_API_SDK_REFERENCE_METADATA,
+  'voice-open-api': CLAWROUTER_AUDIO_OPEN_API_SDK_REFERENCE_METADATA,
   app: CLAWROUTER_APP_SDK_REFERENCE_METADATA,
   backend: CLAWROUTER_BACKEND_SDK_REFERENCE_METADATA,
 } as const satisfies Record<string, ClawRouterGeneratedSdkMetadata>;

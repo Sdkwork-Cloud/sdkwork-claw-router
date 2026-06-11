@@ -76,16 +76,6 @@ use sdkwork_claw_product::ports::{
     PaymentCallbackStore, ProviderHealthProbe, SettingsStore, SettlementsDashboardReadStore,
     SiteSettingsStore, UnconfiguredProviderHealthProbe, UsageLogsReadStore, VerificationCodeSender,
 };
-use sdkwork_commerce_account::{
-    AccountSummaryQuery, AccountSummarySnapshot, WalletAccountItem, WalletAccountListQuery,
-    WalletOperation, WalletOperationQuery, WalletOverview, WalletTransactionDetailQuery,
-    WalletTransactionItem, WalletTransactionListQuery,
-};
-use sdkwork_commerce_http::{CommerceAccountWalletStore, CommerceWalletFuture};
-use sdkwork_commerce_membership_sqlx::{
-    AppMembershipStore, PostgresCommerceMembershipStore, SqliteCommerceMembershipStore,
-    TimestampMembershipEntityIdGenerator,
-};
 use sqlx::sqlite::{SqliteConnectOptions, SqliteJournalMode, SqlitePoolOptions};
 use sqlx::{PgPool, SqlitePool};
 use std::str::FromStr;
@@ -134,7 +124,6 @@ type ForumFeedReadRuntimeStore = Arc<dyn ForumFeedReadStore + Send + Sync>;
 type ForumFeedCommandRuntimeStore = Arc<dyn ForumFeedCommandStore + Send + Sync>;
 type ForumCommentReadRuntimeStore = Arc<dyn ForumCommentReadStore + Send + Sync>;
 type ForumCommentCommandRuntimeStore = Arc<dyn ForumCommentCommandStore + Send + Sync>;
-type AppMembershipRuntimeStore = Arc<dyn AppMembershipStore + Send + Sync>;
 type DashboardReadStore = Arc<dyn DashboardOverviewReadStore + Send + Sync>;
 type EntityUuidGen = Arc<dyn EntityUuidGenerator + Send + Sync>;
 type PaymentCallbackRuntimeStore = Arc<dyn PaymentCallbackStore + Send + Sync>;
@@ -146,57 +135,6 @@ type AppIamDirectoryStore = Arc<dyn AppIamDirectoryReadStore + Send + Sync>;
 type ProviderHealthProbeRuntime = Arc<dyn ProviderHealthProbe + Send + Sync>;
 type ModelRankingRefreshRuntimeStore = Arc<dyn ModelRankingRefreshStore + Send + Sync>;
 type ModelRankingsRuntimeStore = Arc<dyn ModelRankingsReadModelStore + Send + Sync>;
-
-#[derive(Clone)]
-struct EmptyCommerceAccountWalletStore;
-
-impl CommerceAccountWalletStore for EmptyCommerceAccountWalletStore {
-    fn retrieve_account_summary<'a>(
-        &'a self,
-        query: AccountSummaryQuery,
-    ) -> CommerceWalletFuture<'a, AccountSummarySnapshot> {
-        Box::pin(async move {
-            let mut summary = AccountSummarySnapshot::default();
-            summary.id = query.owner_user_id;
-            Ok(summary)
-        })
-    }
-
-    fn retrieve_wallet_overview<'a>(
-        &'a self,
-        _query: WalletAccountListQuery,
-    ) -> CommerceWalletFuture<'a, WalletOverview> {
-        Box::pin(async { Ok(WalletOverview::new(Vec::new())) })
-    }
-
-    fn list_wallet_accounts<'a>(
-        &'a self,
-        _query: WalletAccountListQuery,
-    ) -> CommerceWalletFuture<'a, Vec<WalletAccountItem>> {
-        Box::pin(async { Ok(Vec::new()) })
-    }
-
-    fn list_wallet_transactions<'a>(
-        &'a self,
-        _query: WalletTransactionListQuery,
-    ) -> CommerceWalletFuture<'a, Vec<WalletTransactionItem>> {
-        Box::pin(async { Ok(Vec::new()) })
-    }
-
-    fn retrieve_wallet_transaction<'a>(
-        &'a self,
-        _query: WalletTransactionDetailQuery,
-    ) -> CommerceWalletFuture<'a, Option<WalletTransactionItem>> {
-        Box::pin(async { Ok(None) })
-    }
-
-    fn retrieve_wallet_operation<'a>(
-        &'a self,
-        _query: WalletOperationQuery,
-    ) -> CommerceWalletFuture<'a, Option<WalletOperation>> {
-        Box::pin(async { Ok(None) })
-    }
-}
 
 pub fn router() -> Router {
     merge_app_sdk_reference_router(
@@ -401,7 +339,6 @@ fn router_with_app_session_event_store_auth_settings_store_and_config_inner(
     .merge(sdkwork_claw_product::api::app_site_settings_router())
     .merge(sdkwork_claw_product::api::app_user_profile_router())
     .merge(sdkwork_claw_product::api::app_iam_directory_router())
-    .merge(sdkwork_commerce_membership_sqlx::app_membership_router())
     .merge(sdkwork_claw_product::api::app_payment_callback_router())
     .merge(sdkwork_claw_product::api::app_dashboard_overview_router())
     .merge(sdkwork_claw_product::api::app_model_rankings_router())
@@ -452,7 +389,6 @@ where
     .merge(sdkwork_claw_product::api::app_site_settings_router())
     .merge(sdkwork_claw_product::api::app_user_profile_router())
     .merge(sdkwork_claw_product::api::app_iam_directory_router())
-    .merge(sdkwork_commerce_membership_sqlx::app_membership_router())
     .merge(sdkwork_claw_product::api::app_payment_callback_router())
     .merge(sdkwork_claw_product::api::app_dashboard_overview_router())
     .merge(sdkwork_claw_product::api::app_model_rankings_router())
@@ -498,15 +434,8 @@ fn router_with_api_key_management_store_and_database_status(
     verification_code_sender: AppVerificationCodeSender,
     expose_debug_verification_code: bool,
     payment_webhook_config: Option<PaymentWebhookConfig>,
-    appbase_foundation_router: Option<Router>,
-    appbase_wallet_router: Option<Router>,
-    appbase_commerce_router: Option<Router>,
-    appbase_recharge_checkout_router: Option<Router>,
-    appbase_billing_history_router: Option<Router>,
-    appbase_invoice_router: Option<Router>,
     app_user_profile_read_store: Option<AppUserProfileStore>,
     app_iam_directory_read_store: Option<AppIamDirectoryStore>,
-    membership_store: Option<AppMembershipRuntimeStore>,
     payment_callback_store: Option<PaymentCallbackRuntimeStore>,
     payment_intent_runtime_store: Option<PaymentIntentAggregateRuntimeStore>,
     dashboard_read_store: Option<DashboardReadStore>,
@@ -567,31 +496,7 @@ fn router_with_api_key_management_store_and_database_status(
             subject_boundary_config.clone(),
             sdkwork_claw_http::app_request_subject_boundary,
         ));
-    let foundation_router = match (appbase_foundation_router, appbase_wallet_router) {
-        (Some(foundation_router), Some(wallet_router)) => foundation_router
-            .merge(wallet_router)
-            .layer(from_fn_with_state(
-                subject_boundary_config.clone(),
-                sdkwork_claw_http::app_request_subject_boundary,
-            )),
-        (Some(foundation_router), None) => foundation_router.layer(from_fn_with_state(
-            subject_boundary_config.clone(),
-            sdkwork_claw_http::app_request_subject_boundary,
-        )),
-        (None, Some(wallet_router)) => sdkwork_commerce_http::app_commerce_foundation_router()
-            .merge(wallet_router)
-            .layer(from_fn_with_state(
-                subject_boundary_config.clone(),
-                sdkwork_claw_http::app_request_subject_boundary,
-            )),
-        (None, None) => sdkwork_commerce_http::app_commerce_foundation_router().merge(
-            sdkwork_commerce_http::app_account_wallet_router_with_store(Arc::new(
-                EmptyCommerceAccountWalletStore,
-            )),
-        ),
-    };
     let mut router = router_with_database_status(config)
-        .merge(foundation_router)
         .merge(
             sdkwork_claw_product::api::app_sdk_reference_router_with_json_body_limit(
                 request_limits_config.sdk_reference_json_body_max_bytes(),
@@ -629,43 +534,6 @@ fn router_with_api_key_management_store_and_database_status(
             ),
         ),
         None => router.merge(sdkwork_claw_product::api::app_iam_directory_router()),
-    };
-    if let Some(appbase_router) = appbase_commerce_router {
-        router = router.merge(appbase_router.layer(from_fn_with_state(
-            subject_boundary_config.clone(),
-            sdkwork_claw_http::optional_app_request_subject_boundary,
-        )));
-    }
-    if let Some(appbase_router) = appbase_recharge_checkout_router {
-        router = router.merge(appbase_router.layer(from_fn_with_state(
-            subject_boundary_config.clone(),
-            sdkwork_claw_http::optional_app_request_subject_boundary,
-        )));
-    }
-    if let Some(appbase_router) = appbase_billing_history_router {
-        router = router.merge(appbase_router.layer(from_fn_with_state(
-            subject_boundary_config.clone(),
-            sdkwork_claw_http::optional_app_request_subject_boundary,
-        )));
-    }
-    if let Some(appbase_router) = appbase_invoice_router {
-        router = router.merge(appbase_router.layer(from_fn_with_state(
-            subject_boundary_config.clone(),
-            sdkwork_claw_http::optional_app_request_subject_boundary,
-        )));
-    }
-    router = match membership_store {
-        Some(store) => router.merge(
-            sdkwork_commerce_membership_sqlx::app_membership_router_with_store(
-                store,
-                Arc::new(TimestampMembershipEntityIdGenerator::default()),
-            )
-            .layer(from_fn_with_state(
-                subject_boundary_config.clone(),
-                sdkwork_claw_http::optional_app_request_subject_boundary,
-            )),
-        ),
-        None => router.merge(sdkwork_commerce_membership_sqlx::app_membership_router()),
     };
     // payment callback router must not use app_request_subject_boundary: providers cannot send app user session headers.
     router = match payment_callback_store {

@@ -48,7 +48,7 @@ const localToolApiEnabled = resolveClawRouterRuntimeBoolean('VITE_TOOL_API_ENABL
 
 export function SdkReference() {
   const { t } = useTranslation();
-  const [activeSystem, setActiveSystem] = useState<SdkReferenceSystem>('gateway');
+  const [activeSystem, setActiveSystem] = useState<SdkReferenceSystem>('llm-open-api');
   const [activeSdkId, setActiveSdkId] = useState<string>('typescript');
   const [activeEndpointId, setActiveEndpointId] = useState<string>('overview');
   const [apiData, setApiData] = useState<SdkReferenceSystemData[]>([]);
@@ -72,7 +72,7 @@ export function SdkReference() {
         setApiData(systems);
         const nextActiveSystem = systems.some((system) => system.id === activeSystem)
           ? activeSystem
-          : systems[0]?.id ?? 'gateway';
+          : systems[0]?.id ?? 'llm-open-api';
         if (nextActiveSystem !== activeSystem) {
           setActiveSystem(nextActiveSystem);
         }

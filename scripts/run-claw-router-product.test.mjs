@@ -471,6 +471,73 @@ test('foundation dependency APIs target the shared sdkwork api gateway without a
   );
 });
 
+test('product app and admin API servers do not keep direct foundation API runtime debts', () => {
+  const dependencySurfaces = readWorkspaceJson('specs/dependency-api-surfaces.json');
+  const dependencySurfaceText = readFileSync(
+    path.join(workspaceRoot, 'specs', 'dependency-api-surfaces.json'),
+    'utf8',
+  );
+
+  assert.doesNotMatch(
+    dependencySurfaceText,
+    /legacy(?:HandlerAdapterExports|RustRouteContractCrate)/u,
+    'shared-gateway migration must not keep product-local legacy adapter exports in dependency-api-surfaces.json',
+  );
+  for (const dependency of dependencySurfaces.dependencies ?? []) {
+    assert.equal(
+      dependency.runtimeIntegration?.mode,
+      'external-service',
+      `${dependency.workspace} must be an external shared-gateway dependency surface`,
+    );
+    assert.equal(
+      dependency.runtimeIntegration?.sameOriginAllowed,
+      false,
+      `${dependency.workspace} must not inherit product-owned same-origin API roots`,
+    );
+  }
+
+  const forbiddenFoundationRuntimeCrates = [
+    'sdkwork_iam_http',
+    'sdkwork_iam_storage_sqlx',
+    'sdkwork_commerce_http',
+    'sdkwork_commerce_membership_sqlx',
+  ];
+  for (const relativePath of [
+    'services/sdkwork-claw-app-api/Cargo.toml',
+    'services/sdkwork-claw-admin-api/Cargo.toml',
+  ]) {
+    const cargoToml = readFileSync(path.join(workspaceRoot, relativePath), 'utf8');
+    for (const crateName of forbiddenFoundationRuntimeCrates) {
+      assert.doesNotMatch(
+        cargoToml,
+        new RegExp(`^${crateName}\\.workspace\\s*=\\s*true`, 'mu'),
+        `${relativePath} must not depend on ${crateName}; foundation API runtime is owned by sdkwork-api-gateway`,
+      );
+    }
+  }
+
+  const forbiddenRuntimeImports = [
+    'sdkwork_commerce_http::',
+    'sdkwork_commerce_membership_sqlx::',
+    'sdkwork_iam_http::',
+    'admin_appbase_backend_iam_directory_router_with_read_store',
+    'admin_appbase_backend_iam_oauth_router_with_read_store',
+  ];
+  for (const relativePath of [
+    'services/sdkwork-claw-app-api/src/lib.rs',
+    'services/sdkwork-claw-admin-api/src/lib.rs',
+  ]) {
+    const source = readFileSync(path.join(workspaceRoot, relativePath), 'utf8');
+    for (const marker of forbiddenRuntimeImports) {
+      assert.equal(
+        source.includes(marker),
+        false,
+        `${relativePath} must not mount or import product-local foundation runtime marker ${marker}`,
+      );
+    }
+  }
+});
+
 test('product sqlite integration tests consume a shared test-support crate instead of path-including installed sqlite helpers', () => {
   const productCargoToml = readFileSync(
     path.join(workspaceRoot, 'services', 'sdkwork-claw-product', 'Cargo.toml'),

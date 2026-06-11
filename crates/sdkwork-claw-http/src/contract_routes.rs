@@ -41,6 +41,8 @@ struct OpenApiSchemaTabsDocument {
 struct OpenApiSchemaTab {
     id: &'static str,
     name: &'static str,
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    aliases: Vec<&'static str>,
     order: u32,
     schema_urls: Vec<&'static str>,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -185,39 +187,125 @@ fn schema_tabs_for_surface(surface: Option<ApiSurface>) -> Vec<OpenApiSchemaTab>
     match surface {
         Some(ApiSurface::App) => vec![app_schema_tab()],
         Some(ApiSurface::Backend) => vec![backend_schema_tab()],
-        Some(ApiSurface::OpenAiV1) => vec![gateway_schema_tab()],
+        Some(ApiSurface::OpenAiV1) => vec![llm_open_api_schema_tab()],
         None => vec![
-            gateway_schema_tab(),
-            payment_aggregate_schema_tab(),
-            paas_api_schema_tab(),
-            cloud_services_schema_tab(),
+            llm_open_api_schema_tab(),
+            image_open_api_schema_tab(),
+            video_open_api_schema_tab(),
+            audio_open_api_schema_tab(),
+            payment_open_api_schema_tab(),
+            iaas_open_api_schema_tab(),
+            paas_open_api_schema_tab(),
             app_schema_tab(),
             backend_schema_tab(),
         ],
     }
 }
 
-fn gateway_schema_tab() -> OpenApiSchemaTab {
+fn llm_open_api_schema_tab() -> OpenApiSchemaTab {
     OpenApiSchemaTab {
-        id: "gateway",
-        name: "AI聚合API",
+        id: "llm-open-api",
+        name: "LLM Open API",
+        aliases: vec!["gateway"],
         order: 10,
         schema_urls: vec![GATEWAY_OPENAPI_PATH],
         default_schema_url: Some(GATEWAY_OPENAPI_PATH),
         cache_ttl_seconds: OPENAPI_SCHEMA_CACHE_TTL_SECONDS,
         status: "available",
         description: Some(
-            "AI aggregation APIs for OpenAI-compatible and provider-compatible model routing.",
+            "LLM routing APIs for OpenAI-compatible chat, responses, embeddings, models, and provider-compatible text generation.",
         ),
-        service_groups: Vec::new(),
+        service_groups: vec![OpenApiSchemaServiceGroup {
+            code: "llm",
+            name: "LLM Routing",
+            description: "OpenAI-compatible LLM routing for chat completions, responses, embeddings, model catalog, and provider-compatible text generation.",
+            provider_codes: vec!["openai", "anthropic", "google", "azure_openai"],
+            operations: vec![
+                "chat_completions",
+                "responses",
+                "embeddings",
+                "models",
+                "provider_messages",
+            ],
+        }],
     }
 }
 
-fn payment_aggregate_schema_tab() -> OpenApiSchemaTab {
+fn image_open_api_schema_tab() -> OpenApiSchemaTab {
     OpenApiSchemaTab {
-        id: "payment-aggregate",
-        name: "支付聚合API",
+        id: "image-open-api",
+        name: "Image Open API",
+        aliases: Vec::new(),
         order: 20,
+        schema_urls: vec![GATEWAY_OPENAPI_PATH],
+        default_schema_url: Some(GATEWAY_OPENAPI_PATH),
+        cache_ttl_seconds: OPENAPI_SCHEMA_CACHE_TTL_SECONDS,
+        status: "available",
+        description: Some(
+            "Image generation APIs for OpenAI-compatible image creation, image editing, and provider-compatible visual generation routes.",
+        ),
+        service_groups: vec![OpenApiSchemaServiceGroup {
+            code: "image_generation",
+            name: "Image Generation",
+            description: "Image generation and editing across OpenAI-compatible and provider-native image APIs.",
+            provider_codes: vec!["openai", "midjourney", "vidu", "volcengine"],
+            operations: vec!["image_generation", "image_edit", "image_variation"],
+        }],
+    }
+}
+
+fn video_open_api_schema_tab() -> OpenApiSchemaTab {
+    OpenApiSchemaTab {
+        id: "video-open-api",
+        name: "Video Open API",
+        aliases: Vec::new(),
+        order: 30,
+        schema_urls: vec![GATEWAY_OPENAPI_PATH],
+        default_schema_url: Some(GATEWAY_OPENAPI_PATH),
+        cache_ttl_seconds: OPENAPI_SCHEMA_CACHE_TTL_SECONDS,
+        status: "available",
+        description: Some(
+            "Video generation APIs for provider-compatible text-to-video, image-to-video, and task lifecycle routes.",
+        ),
+        service_groups: vec![OpenApiSchemaServiceGroup {
+            code: "video_generation",
+            name: "Video Generation",
+            description: "Provider-compatible video generation and task management APIs.",
+            provider_codes: vec!["kling", "vidu", "volcengine"],
+            operations: vec!["video_generation", "video_task_retrieve", "video_task_cancel"],
+        }],
+    }
+}
+
+fn audio_open_api_schema_tab() -> OpenApiSchemaTab {
+    OpenApiSchemaTab {
+        id: "audio-open-api",
+        name: "Audio Open API",
+        aliases: vec!["voice-open-api"],
+        order: 40,
+        schema_urls: vec![GATEWAY_OPENAPI_PATH],
+        default_schema_url: Some(GATEWAY_OPENAPI_PATH),
+        cache_ttl_seconds: OPENAPI_SCHEMA_CACHE_TTL_SECONDS,
+        status: "available",
+        description: Some(
+            "Audio APIs for speech synthesis, transcription, translation, and provider-compatible music generation routes.",
+        ),
+        service_groups: vec![OpenApiSchemaServiceGroup {
+            code: "audio_generation",
+            name: "Audio Generation",
+            description: "Speech, transcription, translation, and music generation APIs.",
+            provider_codes: vec!["openai", "suno"],
+            operations: vec!["speech", "transcription", "translation", "music_generation"],
+        }],
+    }
+}
+
+fn payment_open_api_schema_tab() -> OpenApiSchemaTab {
+    OpenApiSchemaTab {
+        id: "payment-open-api",
+        name: "Payment Open API",
+        aliases: vec!["payment-aggregate"],
+        order: 50,
         schema_urls: vec![PAYMENT_AGGREGATE_OPENAPI_PATH],
         default_schema_url: Some(PAYMENT_AGGREGATE_OPENAPI_PATH),
         cache_ttl_seconds: OPENAPI_SCHEMA_CACHE_TTL_SECONDS,
@@ -225,46 +313,34 @@ fn payment_aggregate_schema_tab() -> OpenApiSchemaTab {
         description: Some(
             "Payment aggregation APIs for unified order, refund, reconciliation, webhook, and provider-native payment channel contracts.",
         ),
-        service_groups: Vec::new(),
+        service_groups: vec![OpenApiSchemaServiceGroup {
+            code: "payment_aggregation",
+            name: "Payment Aggregation",
+            description: "Unified payment intent, refund, reconciliation, webhook, and provider account APIs.",
+            provider_codes: vec!["stripe", "paypal", "wechat_pay", "alipay", "apple_pay"],
+            operations: vec![
+                "payment_intent_create",
+                "payment_intent_confirm",
+                "refund_create",
+                "payment_reconciliation",
+                "payment_webhook",
+            ],
+        }],
     }
 }
 
-fn paas_api_schema_tab() -> OpenApiSchemaTab {
+fn iaas_open_api_schema_tab() -> OpenApiSchemaTab {
     OpenApiSchemaTab {
-        id: "paas-api",
-        name: "PaaS API",
-        order: 30,
-        schema_urls: vec![PAAS_OPENAPI_PATH],
-        default_schema_url: Some(PAAS_OPENAPI_PATH),
-        cache_ttl_seconds: OPENAPI_SCHEMA_CACHE_TTL_SECONDS,
-        status: "available",
-        description: Some(
-            "PaaS aggregation APIs for OCR, face verification, document intelligence, content safety, and provider-compatible cloud service capabilities.",
-        ),
-        service_groups: standard_paas_service_groups()
-            .into_iter()
-            .map(|group| OpenApiSchemaServiceGroup {
-                code: group.code,
-                name: group.name,
-                description: group.description,
-                provider_codes: group.provider_codes,
-                operations: group.operations,
-            })
-            .collect(),
-    }
-}
-
-fn cloud_services_schema_tab() -> OpenApiSchemaTab {
-    OpenApiSchemaTab {
-        id: "cloud-services",
-        name: "基础云服务API",
-        order: 40,
+        id: "iaas-open-api",
+        name: "IaaS Open API",
+        aliases: vec!["cloud-services"],
+        order: 60,
         schema_urls: vec![CLOUD_SERVICES_OPENAPI_PATH],
         default_schema_url: Some(CLOUD_SERVICES_OPENAPI_PATH),
         cache_ttl_seconds: OPENAPI_SCHEMA_CACHE_TTL_SECONDS,
         status: "available",
         description: Some(
-            "Cloud service aggregation APIs for S3-compatible object storage, reusable browser SDK configuration, presigned URL flows, and future cloud infrastructure capabilities.",
+            "IaaS aggregation APIs for S3-compatible object storage, reusable browser SDK configuration, presigned URL flows, compute, containers, and deployment orchestration.",
         ),
         service_groups: vec![
             OpenApiSchemaServiceGroup {
@@ -368,11 +444,38 @@ fn cloud_services_schema_tab() -> OpenApiSchemaTab {
     }
 }
 
+fn paas_open_api_schema_tab() -> OpenApiSchemaTab {
+    OpenApiSchemaTab {
+        id: "paas-open-api",
+        name: "PaaS Open API",
+        aliases: vec!["paas-api"],
+        order: 70,
+        schema_urls: vec![PAAS_OPENAPI_PATH],
+        default_schema_url: Some(PAAS_OPENAPI_PATH),
+        cache_ttl_seconds: OPENAPI_SCHEMA_CACHE_TTL_SECONDS,
+        status: "available",
+        description: Some(
+            "PaaS aggregation APIs for OCR, face verification, document intelligence, content safety, and provider-compatible cloud service capabilities.",
+        ),
+        service_groups: standard_paas_service_groups()
+            .into_iter()
+            .map(|group| OpenApiSchemaServiceGroup {
+                code: group.code,
+                name: group.name,
+                description: group.description,
+                provider_codes: group.provider_codes,
+                operations: group.operations,
+            })
+            .collect(),
+    }
+}
+
 fn app_schema_tab() -> OpenApiSchemaTab {
     OpenApiSchemaTab {
-        id: "app",
+        id: "app-api",
         name: "App API",
-        order: 50,
+        aliases: vec!["app"],
+        order: 80,
         schema_urls: vec![APP_OPENAPI_PATH],
         default_schema_url: Some(APP_OPENAPI_PATH),
         cache_ttl_seconds: OPENAPI_SCHEMA_CACHE_TTL_SECONDS,
@@ -384,9 +487,10 @@ fn app_schema_tab() -> OpenApiSchemaTab {
 
 fn backend_schema_tab() -> OpenApiSchemaTab {
     OpenApiSchemaTab {
-        id: "backend",
+        id: "backend-api",
         name: "Backend API",
-        order: 60,
+        aliases: vec!["backend"],
+        order: 90,
         schema_urls: vec![BACKEND_OPENAPI_PATH],
         default_schema_url: Some(BACKEND_OPENAPI_PATH),
         cache_ttl_seconds: OPENAPI_SCHEMA_CACHE_TTL_SECONDS,

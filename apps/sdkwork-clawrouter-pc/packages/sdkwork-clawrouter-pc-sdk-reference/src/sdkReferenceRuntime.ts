@@ -1,8 +1,9 @@
 import type { ElementType } from 'react';
-import { Cloud, Layout, Server, Settings } from 'lucide-react';
+import { Cloud, CreditCard, FileScan, ImageIcon, Layout, Server, Settings, Sparkles, Video, Volume2 } from 'lucide-react';
 import type {
   ApiCategory,
   ApiCategorySidebarNode,
+  ApiSchemaTab,
   ApiSchemaTabsDocument,
   ApiSystemData as ApiReferenceSystemData,
 } from 'sdkwork-clawrouter-pc-api-reference/apiReferenceSchemaTabs';
@@ -15,11 +16,42 @@ import { readClawRouterRuntimeEnv } from 'sdkwork-clawrouter-pc-commons/runtime'
 import { APP_API_PREFIX, BACKEND_API_PREFIX, CLOUD_API_PREFIX, SDK_SYSTEM_CONFIG } from 'sdkwork-clawrouter-pc-commons/runtime';
 import type { ClawRouterGeneratedSdkMetadata, ClawRouterGeneratedSdkType } from 'sdkwork-clawrouter-pc-commons/runtime';
 
-export type SdkReferenceSystem = 'gateway' | 'cloud-services' | 'app' | 'backend';
+export type SdkReferenceSystem =
+  | 'llm-open-api'
+  | 'image-open-api'
+  | 'video-open-api'
+  | 'audio-open-api'
+  | 'payment-open-api'
+  | 'iaas-open-api'
+  | 'paas-open-api'
+  | 'app-api'
+  | 'backend-api';
 export type GeneratedSdkType = ClawRouterGeneratedSdkType;
 export type GeneratedSdkMetadata = ClawRouterGeneratedSdkMetadata;
 
-const GATEWAY_GENERATED_SDK_DEFAULT_BASE_URL = 'https://api.sdkwork.com';
+type LegacySdkReferenceSystem = 'gateway' | 'cloud-services' | 'paas-api' | 'payment-aggregate' | 'app' | 'backend' | 'voice-open-api';
+
+const OPEN_API_GENERATED_SDK_DEFAULT_BASE_URL = 'https://api.sdkwork.com';
+const SDK_REFERENCE_SYSTEM_IDS = new Set<SdkReferenceSystem>([
+  'llm-open-api',
+  'image-open-api',
+  'video-open-api',
+  'audio-open-api',
+  'payment-open-api',
+  'iaas-open-api',
+  'paas-open-api',
+  'app-api',
+  'backend-api',
+]);
+const LEGACY_SDK_REFERENCE_SYSTEM_ALIASES: Record<LegacySdkReferenceSystem, SdkReferenceSystem> = {
+  gateway: 'llm-open-api',
+  'cloud-services': 'iaas-open-api',
+  'paas-api': 'paas-open-api',
+  'payment-aggregate': 'payment-open-api',
+  app: 'app-api',
+  backend: 'backend-api',
+  'voice-open-api': 'audio-open-api',
+};
 
 export interface SdkReferenceSystemData extends Omit<ApiReferenceSystemData, 'id' | 'icon'> {
   id: SdkReferenceSystem;
@@ -47,33 +79,31 @@ export interface GeneratedSdkToolConfig {
 export async function loadSdkReferenceSystems(): Promise<SdkReferenceSystemData[]> {
   const systems = await loadApiReferenceSystems();
   return systems
-    .filter(isSdkReferenceSystemData)
-    .map((system) => ({
-      ...system,
-      icon: iconForSdkSystem(system.id),
-    }));
+    .map(toSdkReferenceSystemData)
+    .filter((system): system is SdkReferenceSystemData => system !== null);
 }
 
 export async function buildSdkReferenceSystems(
   manifest: ApiSchemaTabsDocument,
   fetchJson: (url: string) => Promise<unknown>,
 ): Promise<SdkReferenceSystemData[]> {
+  const sdkTabs = normalizeSdkReferenceTabs(manifest.tabs);
   const sdkManifest: ApiSchemaTabsDocument = {
     ...manifest,
-    tabs: manifest.tabs.filter((tab) => isSdkReferenceSystemId(tab.id)),
+    tabs: sdkTabs,
   };
   const schemaUrlById = new Map(
     sdkManifest.tabs.map((tab) => [
-      tab.id,
+      tab.id as SdkReferenceSystem,
       tab.defaultSchemaUrl || tab.schemaUrls[0] || defaultSchemaUrlForSystem(tab.id),
     ]),
   );
   const systems = await buildApiReferenceSystemsFromTabs(sdkManifest, fetchJson);
   return systems
-    .filter(isSdkReferenceSystemData)
+    .map(toSdkReferenceSystemData)
+    .filter((system): system is SdkReferenceSystemData => system !== null)
     .map((system) => ({
       ...system,
-      icon: iconForSdkSystem(system.id),
       schemaUrl: schemaUrlById.get(system.id) || defaultSchemaUrlForSystem(system.id),
     }));
 }
@@ -128,15 +158,15 @@ export function buildSdkReferenceSidebarTree(categories: ApiCategory[]): ApiCate
 function resolveGeneratedSdkBaseUrl(system: SdkReferenceSystem): string {
   const sdkMetadata = getGeneratedSdkMetadataForSystem(system);
   const configuredBaseUrl = readClawRouterRuntimeEnv(sdkMetadata.runtimeEnvName)
-    ?? (system === 'gateway' ? readClawRouterRuntimeEnv('VITE_API_BASE_URL') : undefined);
-  if (system === 'gateway') {
-    return stripGatewayOpenAiVersionBaseUrl(configuredBaseUrl ?? GATEWAY_GENERATED_SDK_DEFAULT_BASE_URL);
+    ?? (isOpenCompatibleSdkReferenceSystem(system) ? readClawRouterRuntimeEnv('VITE_API_BASE_URL') : undefined);
+  if (isOpenCompatibleSdkReferenceSystem(system)) {
+    return stripGatewayOpenAiVersionBaseUrl(configuredBaseUrl ?? OPEN_API_GENERATED_SDK_DEFAULT_BASE_URL);
   }
   return configuredBaseUrl ?? sdkMetadata.apiPrefix;
 }
 
 function resolveGeneratedSdkApiPrefix(system: SdkReferenceSystem): string {
-  if (system === 'gateway') {
+  if (isOpenCompatibleSdkReferenceSystem(system)) {
     return '';
   }
   return getGeneratedSdkMetadataForSystem(system).apiPrefix;
@@ -151,7 +181,7 @@ function stripGatewayOpenAiVersionBaseUrl(baseUrl: string): string {
   if (withoutOpenAiVersion) {
     return withoutOpenAiVersion;
   }
-  return readBrowserOrigin() ?? GATEWAY_GENERATED_SDK_DEFAULT_BASE_URL;
+  return readBrowserOrigin() ?? OPEN_API_GENERATED_SDK_DEFAULT_BASE_URL;
 }
 
 function readBrowserOrigin(): string | undefined {
@@ -165,24 +195,67 @@ function readBrowserOrigin(): string | undefined {
   return origin.replace(/\/+$/g, '');
 }
 
-function isSdkReferenceSystemData(system: ApiReferenceSystemData): system is ApiReferenceSystemData & { id: SdkReferenceSystem } {
-  return isSdkReferenceSystemId(system.id);
+function toSdkReferenceSystemData(system: ApiReferenceSystemData): SdkReferenceSystemData | null {
+  const normalizedId = normalizeSdkReferenceSystemId(system.id);
+  if (!normalizedId) {
+    return null;
+  }
+  return {
+    ...system,
+    id: normalizedId,
+    icon: iconForSdkSystem(normalizedId),
+  };
 }
 
-function isSdkReferenceSystemId(system: string): system is SdkReferenceSystem {
-  return system === 'gateway' || system === 'cloud-services' || system === 'app' || system === 'backend';
+function normalizeSdkReferenceTabs(tabs: ApiSchemaTab[]): ApiSchemaTab[] {
+  const tabBySystem = new Map<SdkReferenceSystem, ApiSchemaTab>();
+  tabs.forEach((tab) => {
+    const normalizedId = normalizeSdkReferenceSystemId(tab.id);
+    if (!normalizedId || tabBySystem.has(normalizedId)) {
+      return;
+    }
+    tabBySystem.set(normalizedId, {
+      ...tab,
+      id: normalizedId,
+      aliases: Array.from(new Set([...(tab.aliases ?? []), tab.id].filter((alias) => alias !== normalizedId))),
+    });
+  });
+  return Array.from(tabBySystem.values());
 }
 
 function iconForSdkSystem(system: SdkReferenceSystem): ElementType {
-  if (system === 'cloud-services') return Cloud;
-  if (system === 'backend') return Settings;
-  if (system === 'app') return Layout;
+  if (system === 'llm-open-api') return Sparkles;
+  if (system === 'image-open-api') return ImageIcon;
+  if (system === 'video-open-api') return Video;
+  if (system === 'audio-open-api') return Volume2;
+  if (system === 'payment-open-api') return CreditCard;
+  if (system === 'iaas-open-api') return Cloud;
+  if (system === 'paas-open-api') return FileScan;
+  if (system === 'backend-api') return Settings;
+  if (system === 'app-api') return Layout;
   return Server;
 }
 
 function defaultSchemaUrlForSystem(system: string): string {
-  if (system === 'backend') return `${BACKEND_API_PREFIX}/openapi.json`;
-  if (system === 'app') return `${APP_API_PREFIX}/openapi.json`;
-  if (system === 'cloud-services') return `${CLOUD_API_PREFIX}/openapi.json`;
+  const normalizedId = normalizeSdkReferenceSystemId(system);
+  if (normalizedId === 'backend-api') return `${BACKEND_API_PREFIX}/openapi.json`;
+  if (normalizedId === 'app-api') return `${APP_API_PREFIX}/openapi.json`;
+  if (normalizedId === 'iaas-open-api') return `${CLOUD_API_PREFIX}/openapi.json`;
+  if (normalizedId === 'payment-open-api') return '/payments/v3/openapi.json';
+  if (normalizedId === 'paas-open-api') return '/paas/v3/openapi.json';
   return '/openapi.json';
+}
+
+function normalizeSdkReferenceSystemId(system: string): SdkReferenceSystem | undefined {
+  if (SDK_REFERENCE_SYSTEM_IDS.has(system as SdkReferenceSystem)) {
+    return system as SdkReferenceSystem;
+  }
+  return LEGACY_SDK_REFERENCE_SYSTEM_ALIASES[system as LegacySdkReferenceSystem];
+}
+
+function isOpenCompatibleSdkReferenceSystem(system: SdkReferenceSystem): boolean {
+  return system === 'llm-open-api'
+    || system === 'image-open-api'
+    || system === 'video-open-api'
+    || system === 'audio-open-api';
 }
