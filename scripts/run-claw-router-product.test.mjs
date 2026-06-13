@@ -150,11 +150,6 @@ test('root package exposes pnpm product entrypoints', () => {
     rootPackage.scripts.dev,
     'node scripts/run-claw-router-product.mjs server --dev-env-file .env.postgres',
   );
-  assert.doesNotMatch(
-    rootPackage.scripts.dev,
-    /(^|\s)--env-file(\s|$)/u,
-    'pnpm dev must use --dev-env-file because Node 22 reserves --env-file',
-  );
   assert.equal(
     rootPackage.scripts['dev:sqlite'],
     'node scripts/run-claw-router-product.mjs server -- --database-url sqlite://target/dev/clawrouter.sqlite',
@@ -162,11 +157,6 @@ test('root package exposes pnpm product entrypoints', () => {
   assert.equal(
     rootPackage.scripts['dev:postgres'],
     'node scripts/run-claw-router-product.mjs server --dev-env-file .env.postgres',
-  );
-  assert.doesNotMatch(
-    rootPackage.scripts['dev:postgres'],
-    /(^|\s)--env-file(\s|$)/u,
-    'pnpm dev:postgres must use --dev-env-file because Node 22 reserves --env-file',
   );
   assert.equal(
     rootPackage.scripts.test,
@@ -238,7 +228,7 @@ test('root package exposes pnpm product entrypoints', () => {
   );
   assert.equal(
     rootPackage.scripts['desktop:dev:sqlite'],
-    'node scripts/run-claw-router-product.mjs desktop -- --database-url sqlite://target/dev/clawrouter.sqlite',
+    'node scripts/run-claw-router-product.mjs desktop',
   );
   assert.equal(
     rootPackage.scripts['tauri:dev'],
@@ -246,7 +236,7 @@ test('root package exposes pnpm product entrypoints', () => {
   );
   assert.equal(
     rootPackage.scripts['tauri:dev:sqlite'],
-    'node scripts/run-claw-router-product.mjs desktop -- --database-url sqlite://target/dev/clawrouter.sqlite',
+    'node scripts/run-claw-router-product.mjs desktop',
   );
   assert.equal(
     rootPackage.scripts['service:dev'],
@@ -402,6 +392,17 @@ test('root package exposes pnpm product entrypoints', () => {
   );
 });
 
+test('pnpm dev starts the embedded gateway all-in-one workspace by default', () => {
+  const rootPackage = readWorkspaceJson('package.json');
+
+  assert.match(rootPackage.scripts.dev, /run-claw-router-product\.mjs server/u);
+  assert.match(rootPackage.scripts['dev:sqlite'], /run-claw-router-product\.mjs server/u);
+  assert.match(rootPackage.scripts['dev:postgres'], /run-claw-router-product\.mjs server/u);
+  assert.doesNotMatch(rootPackage.scripts.dev, /client/u);
+  assert.doesNotMatch(rootPackage.scripts['dev:sqlite'], /client/u);
+  assert.doesNotMatch(rootPackage.scripts['dev:postgres'], /client/u);
+});
+
 test('foundation dependency APIs target the shared sdkwork api gateway without a local gateway catalog', () => {
   const componentSpec = readWorkspaceJson('specs/component.spec.json');
   const dependencySurfaces = readWorkspaceJson('specs/dependency-api-surfaces.json');
@@ -453,7 +454,6 @@ test('foundation dependency APIs target the shared sdkwork api gateway without a
         gatewayApplication: 'sdkwork-api-gateway',
         commonSdkRootEnv: 'PORTAL_PUBLIC_SDK_BASE_URL',
         catalogPolicy: 'no-dedicated-gateway-catalog',
-        migrationCompatibility: 'explicit-legacy-product-local-runtime-only',
       },
       `${dependency.workspace} must declare the shared gateway target state`,
     );
@@ -480,8 +480,8 @@ test('product app and admin API servers do not keep direct foundation API runtim
 
   assert.doesNotMatch(
     dependencySurfaceText,
-    /legacy(?:HandlerAdapterExports|RustRouteContractCrate)/u,
-    'shared-gateway migration must not keep product-local legacy adapter exports in dependency-api-surfaces.json',
+    /legacy(?:HandlerAdapterExports|RustRouteContractCrate|FallbackBaseUrlEnv|PublicBaseUrlEnv)/u,
+    'shared-gateway migration must not keep product-local legacy adapter or base-url fallback fields in dependency-api-surfaces.json',
   );
   for (const dependency of dependencySurfaces.dependencies ?? []) {
     assert.equal(
@@ -503,8 +503,8 @@ test('product app and admin API servers do not keep direct foundation API runtim
     'sdkwork_commerce_membership_sqlx',
   ];
   for (const relativePath of [
-    'services/sdkwork-claw-app-api/Cargo.toml',
-    'services/sdkwork-claw-admin-api/Cargo.toml',
+    'services/sdkwork-claw-app/Cargo.toml',
+    'services/sdkwork-claw-admin/Cargo.toml',
   ]) {
     const cargoToml = readFileSync(path.join(workspaceRoot, relativePath), 'utf8');
     for (const crateName of forbiddenFoundationRuntimeCrates) {
@@ -516,6 +516,19 @@ test('product app and admin API servers do not keep direct foundation API runtim
     }
   }
 
+  const rootCargoToml = readFileSync(path.join(workspaceRoot, 'Cargo.toml'), 'utf8');
+  for (const crateName of [
+    'sdkwork_iam_http',
+    'sdkwork_commerce_http',
+    'sdkwork_commerce_account',
+  ]) {
+    assert.doesNotMatch(
+      rootCargoToml,
+      new RegExp(`^${crateName}\\s*=`, 'mu'),
+      `root Cargo.toml must not keep unused ${crateName}; shared foundation API runtime integration belongs to sdkwork-api-gateway`,
+    );
+  }
+
   const forbiddenRuntimeImports = [
     'sdkwork_commerce_http::',
     'sdkwork_commerce_membership_sqlx::',
@@ -523,18 +536,78 @@ test('product app and admin API servers do not keep direct foundation API runtim
     'admin_appbase_backend_iam_directory_router_with_read_store',
     'admin_appbase_backend_iam_oauth_router_with_read_store',
   ];
-  for (const relativePath of [
-    'services/sdkwork-claw-app-api/src/lib.rs',
-    'services/sdkwork-claw-admin-api/src/lib.rs',
-  ]) {
+  const sourceChecks = {
+    'services/sdkwork-claw-app/src/lib.rs': [
+      ...forbiddenRuntimeImports,
+    ],
+    'crates/sdkwork-router-app-api/src/routes.rs': [
+      ...forbiddenRuntimeImports,
+      'app_sessions_router(',
+      'app_public_auth_router(',
+      'app_user_profile_router',
+      'app_iam_directory_router',
+      'app_course_router',
+      'SqliteCourseStore',
+      'PostgresCourseStore',
+      'SqliteAppUserProfileReadStore',
+      'PostgresAppUserProfileReadStore',
+      'SqliteAppSessionEventStore',
+      'PostgresAppSessionEventStore',
+      'SqliteAppAuthStore',
+      'PostgresAppAuthStore',
+      'SqliteAppIamDirectoryReadStore',
+      'PostgresAppIamDirectoryReadStore',
+    ],
+    'services/sdkwork-claw-admin/src/lib.rs': [
+      ...forbiddenRuntimeImports,
+    ],
+    'crates/sdkwork-router-backend-api/src/routes.rs': [
+      ...forbiddenRuntimeImports,
+      'admin_messaging_router_with_store',
+      'admin_user_router_with_store',
+      'SqliteAdminMessagingStore',
+      'PostgresAdminMessagingStore',
+      'SqliteAdminUserStore',
+      'PostgresAdminUserStore',
+    ],
+  };
+  for (const [relativePath, markers] of Object.entries(sourceChecks)) {
     const source = readFileSync(path.join(workspaceRoot, relativePath), 'utf8');
-    for (const marker of forbiddenRuntimeImports) {
+    for (const marker of markers) {
       assert.equal(
         source.includes(marker),
         false,
-        `${relativePath} must not mount or import product-local foundation runtime marker ${marker}`,
+        `${relativePath} must not mount, construct, or import product-local foundation runtime marker ${marker}`,
       );
     }
+  }
+
+  const productFoundationAdapters = listFilesRecursive(
+    path.join(workspaceRoot, 'services', 'sdkwork-claw-product', 'src', 'api'),
+    '.rs',
+  )
+    .map((filePath) => slashPath(path.relative(workspaceRoot, filePath)))
+    .filter((relativePath) => /admin_appbase_backend_iam/u.test(relativePath));
+  assert.deepEqual(
+    productFoundationAdapters,
+    [],
+    'sdkwork-claw-product must not retain product-local appbase backend IAM API adapters; appbase backend IAM is served through sdkwork-api-gateway',
+  );
+
+  const productApiModule = readFileSync(
+    path.join(workspaceRoot, 'services', 'sdkwork-claw-product', 'src', 'api', 'mod.rs'),
+    'utf8',
+  );
+  for (const marker of [
+    'admin_appbase_backend_iam_directory_router_with_read_store',
+    'admin_appbase_backend_iam_oauth_router_with_read_store',
+    'AdminAppbaseBackendIamSqlReadStore',
+  ]) {
+    assert.equal(
+      productApiModule.includes(marker),
+      false,
+      `sdkwork-claw-product api module must not re-export product-local appbase backend IAM adapter ${marker}`,
+    );
   }
 });
 
@@ -623,7 +696,7 @@ test('rust test runner exposes isolated daily-maintenance profiles', async () =>
     appApi.steps.some((step) => step.args.includes('database_config_router')),
     true,
   );
-  assert.equal(appApi.steps[0].args.includes('sdkwork-claw-app-api'), true);
+  assert.equal(appApi.steps[0].args.includes('sdkwork-claw-app'), true);
 
   const gateway = module.buildRustTestPlan(module.parseArgs(['gateway']), {
     env: {},
@@ -661,9 +734,9 @@ test('rust test runner exposes isolated daily-maintenance profiles', async () =>
     '-p',
     'sdkwork-claw-gateway',
     '-p',
-    'sdkwork-claw-admin-api',
+    'sdkwork-claw-admin',
     '-p',
-    'sdkwork-claw-app-api',
+    'sdkwork-claw-app',
     '-p',
     'sdkwork-claw-installer',
   ]);
@@ -1063,8 +1136,8 @@ test('rust test process cleanup scopes Windows stops to repository-local targets
       },
       {
         Id: 2,
-        ProcessName: 'sdkwork-claw-admin-api',
-        Path: path.join(workspaceRoot, 'target-rust-tests', 'quick', 'debug', 'sdkwork-claw-admin-api.exe'),
+        ProcessName: 'sdkwork-claw-admin',
+        Path: path.join(workspaceRoot, 'target-rust-tests', 'quick', 'debug', 'sdkwork-claw-admin.exe'),
       },
       {
         Id: 3,
@@ -1178,7 +1251,7 @@ test('rust target measurement plan covers known slow integration surfaces', asyn
   assert.equal(
     plan.steps.some(
       (step) =>
-        step.packageName === 'sdkwork-claw-admin-api' &&
+        step.packageName === 'sdkwork-claw-admin' &&
         step.testTarget === 'database_config_router',
     ),
     true,
@@ -1334,11 +1407,12 @@ test('installation documentation covers release, source, initialization, usage, 
   assert.ok(zhUsage.includes('SDK 鍖呯増鏈嫭绔嬩簬 Claw Router release 鐗堟湰'));
   assert.ok(enUsage.includes('SDK package versions are independent from Claw Router release versions'));
   */
-  assert.ok(rootReadme.includes('Workspace development commands use PostgreSQL for integration testing.'));
+  assert.ok(rootReadme.includes('Client development commands use `sdkwork-api-gateway` for API integration.'));
+  assert.ok(rootReadme.includes('Explicit product server development commands use PostgreSQL for integration'));
   assert.ok(rootReadme.includes('Desktop packages and first-run local user data use SQLite under `~/.sdkwork/router/data`.'));
   assert.ok(postgresqlIndex.includes('./postgresql-development.md'));
   assert.ok(postgresqlIndex.includes('./postgresql-production.md'));
-  assert.ok(postgresqlIndex.includes('pnpm dev:postgres'));
+  assert.ok(postgresqlIndex.includes('pnpm server:dev:postgres'));
   assert.ok(postgresqlDevelopment.includes('pnpm dev'));
   assert.ok(postgresqlDevelopment.includes('pnpm server:dev'));
   assert.ok(postgresqlDevelopment.includes('pnpm tauri:dev'));
@@ -1347,15 +1421,15 @@ test('installation documentation covers release, source, initialization, usage, 
   assert.ok(postgresqlDevelopment.includes('Copy-Item .env.postgres.example .env.postgres'));
   assert.ok(postgresqlDevelopment.includes('SDKWORK_CLAW_DATABASE_ENGINE=postgresql'));
   assert.ok(!postgresqlDevelopment.includes('SDKWORK_CLAW_DATABASE_PROVIDER=postgresql'));
-  assert.ok(postgresqlDevelopment.includes('pnpm dev:postgres'));
   assert.ok(postgresqlDevelopment.includes('pnpm server:dev:postgres'));
   assert.ok(postgresqlDevelopment.includes('Default local PostgreSQL dev database'));
-  assert.ok(postgresqlDevelopment.includes('Workspace desktop commands (`pnpm desktop:dev` and `pnpm tauri:dev`) start a desktop shell plus the product backend service.'));
-  assert.ok(postgresqlDevelopment.includes('That backend service uses the PostgreSQL integration profile.'));
+  assert.ok(postgresqlDevelopment.includes('Workspace desktop commands are gateway-backed client commands.'));
+  assert.ok(postgresqlDevelopment.includes('Use `pnpm server:dev` for PostgreSQL-backed product server debugging'));
   assert.ok(postgresqlDevelopment.includes('Desktop packages and desktop user data still use SQLite by default.'));
   assert.ok(postgresqlDevelopment.includes('~/.sdkwork/router/data/clawrouter.sqlite'));
   assert.ok(postgresqlIndex.includes('Desktop/runtime local user data remains SQLite by default.'));
-  assert.ok(postgresqlIndex.includes('Workspace desktop development commands use PostgreSQL for the backend service runtime; packaged desktop runtime and desktop-local user data remain SQLite.'));
+  assert.ok(postgresqlIndex.includes('Workspace desktop development commands are gateway-backed client commands; they'));
+  assert.ok(postgresqlIndex.includes('do not start a product backend service. Packaged desktop runtime and'));
   assert.ok(postgresqlIndex.includes('desktop local data profile stores SQLite under `~/.sdkwork/router/data/clawrouter.sqlite`'));
   assert.ok(postgresqlProduction.includes('/etc/sdkwork/router/clawrouter.toml'));
   assert.ok(postgresqlProduction.includes('/etc/sdkwork/router/database.secret'));
@@ -1363,7 +1437,8 @@ test('installation documentation covers release, source, initialization, usage, 
   assert.ok(postgresqlProduction.includes('SDKWORK_CLAW_DATABASE_URL'));
   assert.ok(postgresqlProduction.includes('Desktop local runtime'));
   assert.ok(postgresqlProduction.includes('~/.sdkwork/router/data/clawrouter.sqlite'));
-  assert.ok(enRelease.includes('This desktop SQLite policy is independent from the workspace PostgreSQL development profile used by `pnpm dev`, `pnpm desktop:dev`, and `pnpm tauri:dev` for the backend service runtime.'));
+  assert.ok(enRelease.includes('This desktop SQLite policy is independent from the explicit product server PostgreSQL development profile used by `pnpm server:dev` and `pnpm server:dev:postgres` for the backend service runtime.'));
+  assert.ok(enRelease.includes('Default client commands such as `pnpm dev`, `pnpm desktop:dev`, and `pnpm tauri:dev` run through `sdkwork-api-gateway` and do not start a Claw Router backend service.'));
 
   for (const relativePath of ['README.md', ...requiredDocs]) {
     assertMarkdownLocalLinksExist(relativePath);
@@ -1643,7 +1718,7 @@ test('Rust edge server owns configurable portal CSP connect-src policy', () => {
   assert.ok(!readmeSource.includes('TOOL_API_ENABLED` on the server'));
 });
 
-test('portal env example defaults to same-origin Rust edge API paths', () => {
+test('portal env example defaults to same-origin SDKWork API entrypoint paths', () => {
   const envExample = readFileSync(
     path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', '.env.example'),
     'utf8',
@@ -1697,9 +1772,10 @@ test('claw router product launcher help distinguishes workspace PostgreSQL from 
   ], { cwd: workspaceRoot });
 
   assert.ok(stdout.includes('Database profiles:'));
-  assert.ok(stdout.includes('pnpm desktop:dev / pnpm tauri:dev use PostgreSQL for the backend service runtime.'));
+  assert.ok(stdout.includes('pnpm dev / pnpm desktop:dev / pnpm tauri:dev start sdkwork-api-gateway and the portal only.'));
+  assert.ok(stdout.includes('pnpm server:dev uses the PostgreSQL workspace integration profile for explicit product server debugging.'));
   assert.ok(stdout.includes('Desktop packages and first-run local user data use SQLite under ~/.sdkwork/router/data.'));
-  assert.ok(stdout.includes('Use pnpm desktop:dev:sqlite or pnpm tauri:dev:sqlite to validate desktop local data behavior.'));
+  assert.ok(stdout.includes('Use pnpm server:dev:sqlite to validate explicit product server SQLite behavior.'));
 });
 
 test('claw router product launcher parses dev env file before forwarded workspace arguments', async () => {
@@ -1970,7 +2046,7 @@ test('claw router product launcher loads default PostgreSQL dev profile from wor
   rmSync(fixtureRoot, { recursive: true, force: true });
 });
 
-test('claw router product launcher defaults server and tauri dev to PostgreSQL', async () => {
+test('claw router product launcher defaults explicit server dev to PostgreSQL only', async () => {
   await withIsolatedDevDatabaseEnv(async () => {
     const module = await import(
       pathToFileURL(path.join(workspaceRoot, 'scripts', 'run-claw-router-product.mjs')).href
@@ -1999,10 +2075,100 @@ test('claw router product launcher defaults server and tauri dev to PostgreSQL',
     assert.equal(serverPlan[0].env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS, '10');
     assert.equal(desktopPlan.length, 1);
     assert.equal(desktopPlan[0].label, 'desktop development workspace');
-    assert.equal(desktopPlan[0].env.SDKWORK_CLAW_DATABASE_URL, defaultDevPostgresDatabaseUrl);
-    assert.equal(desktopPlan[0].env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS, '10');
+    assert.equal(desktopPlan[0].env.SDKWORK_CLAW_DATABASE_URL, undefined);
+    assert.equal(desktopPlan[0].env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS, undefined);
     assert.equal(desktopPlan[0].env.SDKWORK_CLAW_DEPLOYMENT_MODE, 'desktop');
   });
+});
+
+test('claw router product launcher keeps explicit client and desktop modes gateway-backed', async () => {
+  await withIsolatedDevDatabaseEnv(async () => {
+    const module = await import(
+      pathToFileURL(path.join(workspaceRoot, 'scripts', 'run-claw-router-product.mjs')).href
+    );
+
+    const clientPlan = module.createClawRouterProductLaunchPlan({
+      workspaceRoot,
+      mode: 'client',
+      install: false,
+      platform: 'linux',
+      env: {},
+      extraArgs: [],
+    });
+    const desktopPlan = module.createClawRouterProductLaunchPlan({
+      workspaceRoot,
+      mode: 'desktop',
+      install: false,
+      platform: 'linux',
+      env: {},
+      extraArgs: [],
+    });
+
+    for (const [expectedLabel, plan] of [
+      ['client development workspace', clientPlan],
+      ['desktop development workspace', desktopPlan],
+    ]) {
+      assert.equal(plan.length, 1);
+      assert.equal(plan[0].label, expectedLabel);
+      assert.deepEqual(plan[0].args.slice(1), ['--client-only']);
+      assert.equal(plan[0].env.SDKWORK_CLAW_DATABASE_URL, undefined);
+      assert.equal(plan[0].env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS, undefined);
+    }
+    assert.equal(desktopPlan[0].env.SDKWORK_CLAW_DEPLOYMENT_MODE, 'desktop');
+  });
+});
+
+test('claw router workspace client-only launch plan starts sdkwork-api-gateway and portal only', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'dev', 'start-workspace.mjs')).href
+  );
+
+  const settings = module.parseWorkspaceArgs(['--client-only']);
+  const plan = module.buildWorkspaceCommandPlan(settings, { workspaceRoot, platform: 'linux' });
+  const managedGatewayStep = plan.steps.find((step) => step.name === 'sdkwork-api-gateway');
+  const portalStep = plan.steps.find((step) => step.name === 'portal');
+
+  assert.equal(settings.runtimeMode, 'client');
+  assert.deepEqual(plan.steps.map((step) => step.name), ['sdkwork-api-gateway', 'portal']);
+  assert.deepEqual(managedGatewayStep.args, [
+    'run',
+    '-p',
+    'sdkwork-api-gateway-service',
+    '--bin',
+    'sdkwork-api-gateway',
+    '--',
+    '--config',
+    'config/sdkwork-api-gateway.development.toml.example',
+  ]);
+  assert.equal(
+    managedGatewayStep.cwd,
+    path.resolve(workspaceRoot, '..', 'sdkwork-api-gateway'),
+  );
+  assert.equal(portalStep.env.PORTAL_PUBLIC_SDK_BASE_URL, 'http://127.0.0.1:3902');
+  assert.equal(portalStep.env.PORTAL_PUBLIC_API_BASE_URL, undefined);
+  assert.equal(portalStep.env.PORTAL_PUBLIC_OPEN_API_BASE_URL, undefined);
+  assert.equal(portalStep.env.PORTAL_PUBLIC_APP_API_BASE_URL, undefined);
+  assert.equal(portalStep.env.PORTAL_PUBLIC_BACKEND_API_BASE_URL, undefined);
+  assert.equal(portalStep.env.PORTAL_DEV_PROXY_GATEWAY_TARGET, 'http://127.0.0.1:3902');
+  assert.equal(portalStep.env.PORTAL_DEV_PROXY_BACKEND_API_TARGET, 'http://127.0.0.1:3902');
+  assert.equal(portalStep.env.PORTAL_DEV_PROXY_APP_API_TARGET, 'http://127.0.0.1:3902');
+  assert.equal(portalStep.env.VITE_CLAWROUTER_OPEN_API_BASE_URL, 'http://127.0.0.1:3902/v1');
+  assert.equal(portalStep.env.VITE_CLAWROUTER_APP_API_BASE_URL, 'http://127.0.0.1:3902/app/v3/api');
+  assert.equal(portalStep.env.VITE_CLAWROUTER_BACKEND_API_BASE_URL, 'http://127.0.0.1:3902/backend/v3/api');
+  assert.equal(portalStep.env.VITE_SDKWORK_APPBASE_APP_API_BASE_URL, 'http://127.0.0.1:3902/app/v3/api');
+  assert.equal(portalStep.env.VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL, 'http://127.0.0.1:3902/backend/v3/api');
+  assert.equal(portalStep.env.VITE_SDKWORK_DRIVE_APP_API_BASE_URL, 'http://127.0.0.1:3902/app/v3/api');
+  assert.equal(plan.steps.some((step) => step.name === 'server'), false);
+  assert.equal(plan.steps.some((step) => step.name === 'gateway'), false);
+  assert.equal(plan.steps.some((step) => step.name === 'admin-api'), false);
+  assert.equal(plan.steps.some((step) => step.name === 'app-api'), false);
+  assert.deepEqual(
+    module.workspaceBindTargets(settings).map((target) => `${target.name} ${target.bind}`),
+    [
+      'sdkwork-api-gateway 127.0.0.1:3902',
+      'portal 127.0.0.1:3901',
+    ],
+  );
 });
 
 test('claw router workspace launch plan defaults to all-in-one Rust edge runtime', async () => {
@@ -2013,7 +2179,6 @@ test('claw router workspace launch plan defaults to all-in-one Rust edge runtime
 
     const settings = module.parseWorkspaceArgs(['--gateway-bind', '0.0.0.0:19080']);
     const plan = module.buildWorkspaceCommandPlan(settings, { workspaceRoot });
-    const managedGatewayStep = plan.steps.find((step) => step.name === 'sdkwork-api-gateway');
     const portalStep = plan.steps.find((step) => step.name === 'portal');
     const serverStep = plan.steps.find((step) => step.name === 'server');
 
@@ -2026,7 +2191,6 @@ test('claw router workspace launch plan defaults to all-in-one Rust edge runtime
     assert.deepEqual(plan.steps.map((step) => step.name), [
       'installer',
       'model-catalog-refresh',
-      'sdkwork-api-gateway',
       'portal',
       'server',
     ]);
@@ -2067,22 +2231,7 @@ test('claw router workspace launch plan defaults to all-in-one Rust edge runtime
       plan.steps[1].env.SDKWORK_MODELS_CATALOG_ROOT,
       path.join(workspaceRoot, 'data', 'sdkwork-models'),
     );
-    assert.deepEqual(managedGatewayStep.args, [
-      'run',
-      '-p',
-      'sdkwork-api-gateway-service',
-      '--bin',
-      'sdkwork-api-gateway',
-      '--',
-      '--config',
-      'config/sdkwork-api-gateway.development.toml.example',
-    ]);
-    assert.equal(
-      managedGatewayStep.cwd,
-      path.resolve(workspaceRoot, '..', 'sdkwork-api-gateway'),
-    );
-    assert.equal(managedGatewayStep.env.SDKWORK_API_GATEWAY_BIND, '127.0.0.1:3902');
-    assert.equal(managedGatewayStep.env.SDKWORK_API_GATEWAY_MODE, 'split');
+    assert.equal(plan.steps.some((step) => step.name === 'sdkwork-api-gateway'), false);
     assert.deepEqual(portalStep.args, [
       '--dir',
       'apps/sdkwork-clawrouter-pc',
@@ -2095,7 +2244,7 @@ test('claw router workspace launch plan defaults to all-in-one Rust edge runtime
     assert.equal(portalStep.env.PORTAL_FORWARD_GATEWAY_BASE_URL, undefined);
     assert.equal(portalStep.env.PORTAL_FORWARD_BACKEND_API_BASE_URL, undefined);
     assert.equal(portalStep.env.PORTAL_FORWARD_APP_API_BASE_URL, undefined);
-    assert.equal(portalStep.env.PORTAL_PUBLIC_SDK_BASE_URL, 'http://127.0.0.1:3902');
+    assert.equal(portalStep.env.PORTAL_PUBLIC_SDK_BASE_URL, 'http://127.0.0.1:3900');
     assert.equal(portalStep.env.PORTAL_PUBLIC_API_BASE_URL, '/v1');
     assert.equal(portalStep.env.PORTAL_PUBLIC_OPEN_API_BASE_URL, '/v1');
     assert.equal(portalStep.env.PORTAL_PUBLIC_BACKEND_API_BASE_URL, '/backend/v3/api');
@@ -2103,8 +2252,9 @@ test('claw router workspace launch plan defaults to all-in-one Rust edge runtime
     assert.equal(portalStep.env.PORTAL_DEV_PROXY_GATEWAY_TARGET, 'http://127.0.0.1:3900');
     assert.equal(portalStep.env.PORTAL_DEV_PROXY_BACKEND_API_TARGET, 'http://127.0.0.1:3900');
     assert.equal(portalStep.env.PORTAL_DEV_PROXY_APP_API_TARGET, 'http://127.0.0.1:3900');
-    assert.equal(portalStep.env.VITE_SDKWORK_APPBASE_APP_API_BASE_URL, 'http://127.0.0.1:3902/app/v3/api');
-    assert.equal(portalStep.env.VITE_SDKWORK_DRIVE_APP_API_BASE_URL, 'http://127.0.0.1:3902/app/v3/api');
+    assert.equal(portalStep.env.VITE_SDKWORK_APPBASE_APP_API_BASE_URL, 'http://127.0.0.1:3900/app/v3/api');
+    assert.equal(portalStep.env.VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL, 'http://127.0.0.1:3900/backend/v3/api');
+    assert.equal(portalStep.env.VITE_SDKWORK_DRIVE_APP_API_BASE_URL, 'http://127.0.0.1:3900/app/v3/api');
     assert.deepEqual(serverStep.args, [
       'run',
       '-p',
@@ -2112,9 +2262,10 @@ test('claw router workspace launch plan defaults to all-in-one Rust edge runtime
     ]);
     assert.equal(serverStep.env.SDKWORK_CLAW_EDGE_SERVER, '1');
     assert.equal(serverStep.env.SDKWORK_CLAW_ALL_IN_ONE_RUNTIME, '1');
+    assert.equal(serverStep.env.SDKWORK_API_GATEWAY_MODE, 'embedded');
     assert.equal(serverStep.env.SDKWORK_CLAW_SERVER_BIND, '0.0.0.0:3900');
     assert.equal(serverStep.env.SDKWORK_CLAW_STARTUP_INSTALL_MODE, 'skip');
-    assert.equal(serverStep.env.PORTAL_PUBLIC_SDK_BASE_URL, 'http://127.0.0.1:3902');
+    assert.equal(serverStep.env.PORTAL_PUBLIC_SDK_BASE_URL, 'http://127.0.0.1:3900');
     assert.equal(serverStep.env.SDKWORK_CLAW_EDGE_GATEWAY_BASE_URL, 'http://127.0.0.1:3900');
     assert.equal(serverStep.env.SDKWORK_CLAW_EDGE_BACKEND_API_BASE_URL, 'http://127.0.0.1:3900');
     assert.equal(serverStep.env.SDKWORK_CLAW_EDGE_APP_API_BASE_URL, 'http://127.0.0.1:3900');
@@ -2123,6 +2274,13 @@ test('claw router workspace launch plan defaults to all-in-one Rust edge runtime
     assert.equal(
       serverStep.env.SDKWORK_MODELS_CATALOG_ROOT,
       path.join(workspaceRoot, 'data', 'sdkwork-models'),
+    );
+    assert.deepEqual(
+      module.workspaceBindTargets(settings).map((target) => `${target.name} ${target.bind}`),
+      [
+        'server 0.0.0.0:3900',
+        'portal 127.0.0.1:3901',
+      ],
     );
   });
 });
@@ -2200,12 +2358,12 @@ test('claw router workspace launch plan resolves split PostgreSQL env fields dir
   });
 });
 
-test('claw router workspace launch plan preserves distributed service topology when requested', async () => {
+test('claw router workspace launch plan preserves internal validation topology when explicitly requested', async () => {
   const module = await import(
     pathToFileURL(path.join(workspaceRoot, 'scripts', 'dev', 'start-workspace.mjs')).href
   );
 
-  const settings = module.parseWorkspaceArgs(['--distributed', '--gateway-bind', '0.0.0.0:19080']);
+  const settings = module.parseWorkspaceArgs(['--internal-distributed', '--gateway-bind', '0.0.0.0:19080']);
   const plan = module.buildWorkspaceCommandPlan(settings, { workspaceRoot });
 
   assert.equal(settings.runtimeMode, 'distributed');
@@ -2238,7 +2396,7 @@ test('claw router workspace reports occupied service ports before startup', asyn
 
   const settings = module.parseWorkspaceArgs([]);
   const unavailable = await module.findUnavailableWorkspaceBinds(settings, async (target) =>
-    !['18082', '3900'].includes(target.port),
+    !['18082', '3900', '3902'].includes(target.port),
   );
 
   assert.deepEqual(
@@ -2247,10 +2405,50 @@ test('claw router workspace reports occupied service ports before startup', asyn
   );
   await assert.rejects(
     () => module.assertWorkspaceBindsAvailable(settings, async (target) =>
-      !['18082', '3900'].includes(target.port),
+      !['18082', '3900', '3902'].includes(target.port),
     ),
     /workspace ports are already in use: server 0\.0\.0\.0:3900/u,
   );
+});
+
+test('claw router workspace terminates Windows child process trees', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'dev', 'start-workspace.mjs')).href
+  );
+  const spawned = [];
+  const child = {
+    pid: 4321,
+    exitCode: null,
+    signalCode: null,
+    killed: false,
+    kill() {
+      child.killed = true;
+      return true;
+    },
+  };
+
+  await module.terminateChildProcess(child, {
+    platform: 'win32',
+    spawnProcess(command, args, options) {
+      spawned.push({ command, args, options });
+      return {
+        once(event, listener) {
+          if (event === 'exit') {
+            listener(0);
+          }
+        },
+      };
+    },
+  });
+
+  assert.deepEqual(spawned, [
+    {
+      command: 'taskkill',
+      args: ['/PID', '4321', '/T', '/F'],
+      options: { stdio: 'ignore', windowsHide: true },
+    },
+  ]);
+  assert.equal(child.killed, false);
 });
 
 test('claw router workspace checks service ports before running installer steps', () => {
@@ -2957,13 +3155,13 @@ test('workspace launch plan exposes explicit forwarded header trust settings', a
   );
 });
 
-test('workspace access output includes portal, openapi, and api route URLs', async () => {
+test('workspace access output includes internal validation topology details only for explicit internal validation mode', async () => {
   const module = await import(
     pathToFileURL(path.join(workspaceRoot, 'scripts', 'dev', 'start-workspace.mjs')).href
   );
 
   const settings = module.parseWorkspaceArgs([
-    '--distributed',
+    '--internal-distributed',
     '--gateway-bind',
     '0.0.0.0:19080',
     '--admin-api-bind',
@@ -2993,6 +3191,7 @@ test('workspace access output includes portal, openapi, and api route URLs', asy
     '[start-workspace]   Direct Portal Gateway OpenAPI Proxy: http://127.0.0.1:3901/openapi.json',
     '[start-workspace]   Direct Portal Admin API OpenAPI Proxy: http://127.0.0.1:3901/backend/v3/api/openapi.json',
     '[start-workspace]   Direct Portal App API OpenAPI Proxy: http://127.0.0.1:3901/app/v3/api/openapi.json',
+    '[start-workspace] Internal Validation Topology',
     '[start-workspace] OpenAPI Schemas',
     '[start-workspace]   Gateway OpenAPI: http://127.0.0.1:19080/openapi.json',
     '[start-workspace]   Admin API OpenAPI: http://127.0.0.1:19081/backend/v3/api/openapi.json',
@@ -3060,6 +3259,7 @@ test('claw router product launcher desktop mode runs install-checked workspace a
   assert.equal(plan[1].command, process.execPath);
   assert.deepEqual(plan[1].args, [
     path.join(workspaceRoot, 'scripts', 'dev', 'start-workspace.mjs'),
+    '--client-only',
   ]);
   assert.equal(plan[1].shell, false);
   assert.equal(plan[1].env.SDKWORK_CLAW_DEPLOYMENT_MODE, 'desktop');
@@ -3152,7 +3352,7 @@ test('production starter supports help, dry-run, and full edge access matrix', a
     help: true,
     dryRun: false,
     initConfigOnly: false,
-    distributed: false,
+    forwardingMode: false,
     deploymentMode: null,
     configFile: null,
     databaseUrl: null,
@@ -3168,7 +3368,7 @@ test('production starter supports help, dry-run, and full edge access matrix', a
     help: false,
     dryRun: true,
     initConfigOnly: false,
-    distributed: false,
+    forwardingMode: false,
     deploymentMode: null,
     configFile: null,
     databaseUrl: null,
@@ -3202,13 +3402,13 @@ test('production starter supports help, dry-run, and full edge access matrix', a
       '--external-scheme',
       'https',
       '--trust-forwarded-headers',
-      '--distributed',
+      '--forwarding-mode',
     ]),
     {
       help: false,
       dryRun: true,
       initConfigOnly: false,
-      distributed: true,
+      forwardingMode: true,
       deploymentMode: 'server',
       configFile: '/etc/sdkwork/router/clawrouter.toml',
       databaseUrl: 'postgresql://sdkwork:secret@db.internal:5432/sdkwork_claw_router',
@@ -3352,7 +3552,21 @@ test('production starter defaults to all-in-one runtime without forwarding targe
   assert.equal(env.SDKWORK_CLAW_APP_RUNTIME_GATEWAY_BASE_URL, 'http://127.0.0.1:12900');
   assert.ok(lines.includes('[start-production] Runtime Mode: all-in-one'));
   assert.equal(lines.includes('[start-production] Edge Forwarding Targets'), false);
-  assert.ok(module.buildStartProductionHelpText().includes('--distributed'));
+  assert.ok(module.buildStartProductionHelpText().includes('--forwarding-mode'));
+  assert.ok(module.buildStartProductionHelpText().includes('Deprecated alias for --forwarding-mode.'));
+});
+
+test('claw router product help does not present distributed dev as a standard workflow example', async () => {
+  const source = readFileSync(
+    path.join(workspaceRoot, 'scripts', 'run-claw-router-product.mjs'),
+    'utf8',
+  );
+
+  assert.equal(
+    source.includes('pnpm server:dev:distributed'),
+    false,
+    'default help examples must not advertise distributed mode as a standard workflow',
+  );
 });
 
 test('production starter resolves OS-standard runtime config locations', async () => {
@@ -5468,7 +5682,7 @@ test('API router product chain is covered from portal services through SDK and R
     readFileSync(path.join(workspaceRoot, 'generated', 'openapi', 'clawrouter-app-openapi.json'), 'utf8'),
   );
   const appApiSource = readFileSync(
-    path.join(workspaceRoot, 'services', 'sdkwork-claw-app-api', 'src', 'lib.rs'),
+    path.join(workspaceRoot, 'crates', 'sdkwork-router-app-api', 'src', 'routes.rs'),
     'utf8',
   );
   const appRoutingReadSource = readFileSync(
@@ -5499,7 +5713,7 @@ test('API router product chain is covered from portal services through SDK and R
     'utf8',
   );
   const appDatabaseTestSource = readFileSync(
-    path.join(workspaceRoot, 'services', 'sdkwork-claw-app-api', 'tests', 'database_config_router.rs'),
+    path.join(workspaceRoot, 'services', 'sdkwork-claw-app', 'tests', 'database_config_router.rs'),
     'utf8',
   );
   const edgeSmokeSource = readFileSync(
@@ -6442,7 +6656,7 @@ test('verification plan can include edge dev server smoke when explicitly reques
     'node --experimental-strip-types apps/sdkwork-clawrouter-pc/vite-config-runtime.test.ts',
   ));
   assert.ok(commandLines.includes('node scripts/smoke-edge-dev-server.mjs'));
-  assert.ok(smokeSource.includes('pnpm dev'));
+  assert.ok(smokeSource.includes('pnpm server:dev'));
   assert.ok(smokeSource.includes('/healthz'));
   assert.ok(smokeSource.includes('/readyz'));
   assert.ok(smokeSource.includes('/openapi.json'));
@@ -6458,7 +6672,7 @@ test('verification plan can include edge dev server smoke when explicitly reques
   assert.ok(smokeSource.includes('PORTAL_PUBLIC_APP_API_BASE_URL=/app/v3/api'));
   assert.ok(
     smokeSource.includes("process.env.CLAWROUTER_EDGE_DEV_SMOKE_TIMEOUT_MS ?? '900000'"),
-    'edge dev smoke default timeout must allow full seed install and five Rust services to start on Windows',
+    'edge dev smoke default timeout must allow full seed install and explicit product server services to start on Windows',
   );
   assert.ok(smokeSource.includes('CLAWROUTER_EDGE_DEV_SMOKE_REQUIRED'));
   assert.ok(smokeSource.includes('[edge-dev-smoke] skipped: ${diagnostic}'));
@@ -7090,18 +7304,18 @@ test('environment and deployment specs document Claw Router runtime config stand
   assert.ok(environmentSpec.includes('password_file = "/etc/sdkwork/router/redis.secret"'));
   assert.ok(environmentSpec.includes('Desktop deployments default to SQLite.'));
   assert.ok(environmentSpec.includes('Desktop/runtime local user data remains SQLite by default'));
-  assert.ok(environmentSpec.includes('Desktop/Tauri development commands that start backend services use the server PostgreSQL development profile by default'));
-  assert.ok(environmentSpec.includes('`pnpm dev`, `pnpm desktop:dev`, and `pnpm tauri:dev` may use PostgreSQL for'));
-  assert.ok(environmentSpec.includes('service runtime and must not be treated as the desktop-local data store.'));
-  assert.ok(environmentSpec.includes('Explicit SQLite development commands, such as `pnpm dev:sqlite` or'));
+  assert.ok(environmentSpec.includes('For SDKWork Claw Router, `pnpm dev`, `pnpm desktop:dev`, and'));
+  assert.ok(environmentSpec.includes('`pnpm tauri:dev` are sdkwork-api-gateway-backed client commands and must not'));
+  assert.ok(environmentSpec.includes('`pnpm server:dev` and'));
+  assert.ok(environmentSpec.includes('`pnpm server:dev:sqlite`, must be named clearly and used only when validating'));
   assert.ok(deploymentSpec.includes('Redis is enabled and required by default for server and container deployments.'));
   assert.ok(deploymentSpec.includes('Desktop packages must keep local user data on SQLite by default.'));
   assert.ok(deploymentSpec.includes('belongs to the launched backend'));
   const desktopArchitectureSpec = readFileSync(path.join(specsRoot, 'DESKTOP_APP_ARCHITECTURE_SPEC.md'), 'utf8');
   assert.ok(desktopArchitectureSpec.includes('Desktop local user data | SQLite'));
-  assert.ok(desktopArchitectureSpec.includes('Service/backend runtime started by desktop development commands | PostgreSQL'));
+  assert.ok(desktopArchitectureSpec.includes('Explicit service/backend runtime started by desktop development commands | PostgreSQL'));
   assert.ok(desktopArchitectureSpec.includes('Desktop/Tauri development commands that start the product service runtime'));
-  assert.ok(desktopArchitectureSpec.includes('MUST` use the server'));
+  assert.ok(desktopArchitectureSpec.includes('must keep product server startup on'));
   const observabilitySpec = readFileSync(path.join(specsRoot, 'OBSERVABILITY_SPEC.md'), 'utf8');
   assert.ok(observabilitySpec.includes('Metric naming:'));
   assert.ok(observabilitySpec.includes('Labels `MUST` be low-cardinality and bounded.'));
@@ -7887,8 +8101,13 @@ test('portal typecheck project does not compile external appbase or UI source', 
   assert.ok(packageTypecheckConfig.exclude.includes('../../../../sdkwork-ui/**'));
   assert.match(
     runtimeTsconfig,
-    /sdkwork-appbase\/packages\/pc-react\/content\/sdkwork-generation-pc-react\/src\/index\.ts/u,
-    'runtime tsconfig keeps source aliases for Vite dev/build',
+    /sdkwork-image\/packages\/pc-react\/content\/sdkwork-generation-pc-react\/src\/index\.ts/u,
+    'runtime tsconfig keeps image-owned generation source aliases for Vite dev/build',
+  );
+  assert.doesNotMatch(
+    runtimeTsconfig,
+    /sdkwork-appbase\/packages\/pc-react\/content\/sdkwork-generation-pc-react/u,
+    'generation PC React is no longer an appbase-owned package fallback',
   );
   for (const [specifier, target] of Object.entries(typecheckConfig.compilerOptions.paths)) {
     assert.ok(
@@ -8004,7 +8223,7 @@ test('standalone portal Vite dev server defaults to direct port 3901', () => {
   assert.match(viteConfig, /strictPort:\s*true/u);
 });
 
-test('standalone portal Vite dev server proxies same-origin API paths to Rust services', () => {
+test('standalone portal Vite dev server proxies same-origin API paths to sdkwork-api-gateway by default', () => {
   const viteConfig = readFileSync(
     path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', 'vite.config.ts'),
     'utf8',

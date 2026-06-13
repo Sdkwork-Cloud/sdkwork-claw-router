@@ -48,7 +48,9 @@ Options:
                   Rust edge server target origin for /backend/v3/api.
   --app-api-forward-url <url>
                   Rust edge server target origin for /app/v3/api.
-  --distributed  Start the edge server in forwarding mode instead of the default all-in-one API runtime.
+  --forwarding-mode
+                  Start the edge server in forwarding mode instead of the default all-in-one API runtime.
+  --distributed  Deprecated alias for --forwarding-mode.
   --deployment-mode <mode>
                   Runtime config profile: server or desktop (default server).
   --config-file <path>
@@ -168,7 +170,7 @@ function parseStartProductionArgs(argv) {
     help: false,
     dryRun: false,
     initConfigOnly: false,
-    distributed: false,
+    forwardingMode: false,
     deploymentMode: null,
     configFile: null,
     databaseUrl: null,
@@ -197,8 +199,9 @@ function parseStartProductionArgs(argv) {
       case '--init-config-only':
         settings.initConfigOnly = true;
         break;
+      case '--forwarding-mode':
       case '--distributed':
-        settings.distributed = true;
+        settings.forwardingMode = true;
         break;
       case '--deployment-mode':
         settings.deploymentMode = normalizeDeploymentMode(requireValue(argv, index, arg), arg);
@@ -226,17 +229,17 @@ function parseStartProductionArgs(argv) {
         break;
       case '--gateway-forward-url':
         settings.gatewayForwardUrl = originUrl(requireValue(argv, index, arg), arg);
-        settings.distributed = true;
+        settings.forwardingMode = true;
         index += 1;
         break;
       case '--backend-api-forward-url':
         settings.backendApiForwardUrl = originUrl(requireValue(argv, index, arg), arg);
-        settings.distributed = true;
+        settings.forwardingMode = true;
         index += 1;
         break;
       case '--app-api-forward-url':
         settings.appApiForwardUrl = originUrl(requireValue(argv, index, arg), arg);
-        settings.distributed = true;
+        settings.forwardingMode = true;
         index += 1;
         break;
       case '--external-scheme':
@@ -917,7 +920,7 @@ function resolveStartProductionEnv(
   const defaultSdkArchiveRoot = path.join(distRoot, 'sdk-archives');
   const serverBind = settings.serverBind ?? baseEnv.SDKWORK_CLAW_SERVER_BIND ?? '0.0.0.0:3900';
   const edgeBaseUrl = edgeAccessBaseUrl({ SDKWORK_CLAW_SERVER_BIND: serverBind });
-  const allInOne = !settings.distributed;
+  const allInOne = !settings.forwardingMode;
   return {
     ...mergePortalPublicRuntimeEnv(baseEnv),
     SDKWORK_CLAW_EDGE_SERVER: '1',
@@ -975,7 +978,7 @@ function buildStartProductionAccessLines(env) {
   const appTarget = env.SDKWORK_CLAW_EDGE_APP_API_BASE_URL ?? 'http://127.0.0.1:18082';
   const allInOne = env.SDKWORK_CLAW_ALL_IN_ONE_RUNTIME !== '0';
   const lines = [
-    `[start-production] Runtime Mode: ${allInOne ? 'all-in-one' : 'distributed'}`,
+    `[start-production] Runtime Mode: ${allInOne ? 'all-in-one' : 'forwarding'}`,
     '[start-production] Edge Server Access',
     `[start-production]   Portal: ${baseUrl}/`,
     `[start-production]   Gateway API: ${baseUrl}/v1`,

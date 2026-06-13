@@ -38,6 +38,9 @@ const DEFAULT_DEV_REDIS_DATABASE = '0';
 const GATEWAY_API_PREFIX = '/v1';
 const BACKEND_API_PREFIX = '/backend/v3/api';
 const APP_API_PREFIX = '/app/v3/api';
+const CLIENT_PUBLIC_RUNTIME_DEFAULTS = Object.freeze({
+  toolApiEnabled: 'false',
+});
 
 function requireValue(argv, index, flag) {
   const value = argv[index + 1];
@@ -107,8 +110,14 @@ function appendPath(origin, pathSuffix) {
   return `${String(origin).replace(/\/+$/u, '')}${pathSuffix}`;
 }
 
-function sharedFoundationGatewayBaseUrl(settings) {
+function managedSdkworkApiGatewayBaseUrl(settings) {
   return loopbackUrl(settings.sdkworkApiGatewayBind, '');
+}
+
+function sharedFoundationGatewayBaseUrl(settings) {
+  return settings.runtimeMode === 'all-in-one'
+    ? loopbackUrl(settings.serverBind, '')
+    : managedSdkworkApiGatewayBaseUrl(settings);
 }
 
 function sharedFoundationAppApiBaseUrl(settings) {
@@ -119,31 +128,53 @@ function sharedFoundationBackendApiBaseUrl(settings) {
   return appendPath(sharedFoundationGatewayBaseUrl(settings), BACKEND_API_PREFIX);
 }
 
-function withSharedFoundationPortalRuntimeEnv(env, settings) {
+function withSharedFoundationPortalRuntimeEnv(env, settings, {
+  productSurfaceMode = 'same-origin',
+} = {}) {
   const sdkBaseUrl = String(
     env.PORTAL_PUBLIC_SDK_BASE_URL ?? sharedFoundationGatewayBaseUrl(settings),
   ).trim();
-  const apiBaseUrl = String(env.PORTAL_PUBLIC_API_BASE_URL ?? GATEWAY_API_PREFIX).trim();
-  const openApiBaseUrl = String(
-    env.PORTAL_PUBLIC_OPEN_API_BASE_URL ?? apiBaseUrl,
-  ).trim();
-  const appApiBaseUrl = String(env.PORTAL_PUBLIC_APP_API_BASE_URL ?? APP_API_PREFIX).trim();
-  const backendApiBaseUrl = String(
-    env.PORTAL_PUBLIC_BACKEND_API_BASE_URL ?? BACKEND_API_PREFIX,
-  ).trim();
-  const runtimeEnv = mergePortalPublicRuntimeEnv({
-    ...env,
-    PORTAL_PUBLIC_SDK_BASE_URL: sdkBaseUrl,
-    PORTAL_PUBLIC_API_BASE_URL: apiBaseUrl,
-    PORTAL_PUBLIC_OPEN_API_BASE_URL: openApiBaseUrl,
-    PORTAL_PUBLIC_APP_API_BASE_URL: appApiBaseUrl,
-    PORTAL_PUBLIC_BACKEND_API_BASE_URL: backendApiBaseUrl,
-  });
+  const runtimeEnvInput = productSurfaceMode === 'shared-gateway'
+    ? {
+        ...env,
+        PORTAL_PUBLIC_SDK_BASE_URL: sdkBaseUrl,
+      }
+    : {
+        ...env,
+        PORTAL_PUBLIC_SDK_BASE_URL: sdkBaseUrl,
+        PORTAL_PUBLIC_API_BASE_URL: String(env.PORTAL_PUBLIC_API_BASE_URL ?? GATEWAY_API_PREFIX).trim(),
+        PORTAL_PUBLIC_OPEN_API_BASE_URL: String(
+          env.PORTAL_PUBLIC_OPEN_API_BASE_URL ?? env.PORTAL_PUBLIC_API_BASE_URL ?? GATEWAY_API_PREFIX,
+        ).trim(),
+        PORTAL_PUBLIC_APP_API_BASE_URL: String(env.PORTAL_PUBLIC_APP_API_BASE_URL ?? APP_API_PREFIX).trim(),
+        PORTAL_PUBLIC_BACKEND_API_BASE_URL: String(
+          env.PORTAL_PUBLIC_BACKEND_API_BASE_URL ?? BACKEND_API_PREFIX,
+        ).trim(),
+      };
+  const runtimeEnv = mergePortalPublicRuntimeEnv(
+    runtimeEnvInput,
+    productSurfaceMode === 'shared-gateway' ? CLIENT_PUBLIC_RUNTIME_DEFAULTS : undefined,
+  );
+  const clawRouterOpenApiBaseUrl = runtimeEnv.VITE_CLAWROUTER_OPEN_API_BASE_URL
+    ?? runtimeEnv.PORTAL_PUBLIC_OPEN_API_BASE_URL
+    ?? runtimeEnv.PORTAL_PUBLIC_API_BASE_URL
+    ?? appendPath(sdkBaseUrl, GATEWAY_API_PREFIX);
+  const clawRouterAppApiBaseUrl = runtimeEnv.VITE_CLAWROUTER_APP_API_BASE_URL
+    ?? runtimeEnv.PORTAL_PUBLIC_APP_API_BASE_URL
+    ?? appendPath(sdkBaseUrl, APP_API_PREFIX);
+  const clawRouterBackendApiBaseUrl = runtimeEnv.VITE_CLAWROUTER_BACKEND_API_BASE_URL
+    ?? runtimeEnv.PORTAL_PUBLIC_BACKEND_API_BASE_URL
+    ?? appendPath(sdkBaseUrl, BACKEND_API_PREFIX);
 
   return {
     ...runtimeEnv,
+    VITE_CLAWROUTER_OPEN_API_BASE_URL: clawRouterOpenApiBaseUrl,
+    VITE_CLAWROUTER_APP_API_BASE_URL: clawRouterAppApiBaseUrl,
+    VITE_CLAWROUTER_BACKEND_API_BASE_URL: clawRouterBackendApiBaseUrl,
     VITE_SDKWORK_APPBASE_APP_API_BASE_URL:
       runtimeEnv.VITE_SDKWORK_APPBASE_APP_API_BASE_URL ?? sharedFoundationAppApiBaseUrl(settings),
+    VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL:
+      runtimeEnv.VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL ?? sharedFoundationBackendApiBaseUrl(settings),
     VITE_SDKWORK_DRIVE_APP_API_BASE_URL:
       runtimeEnv.VITE_SDKWORK_DRIVE_APP_API_BASE_URL ?? sharedFoundationAppApiBaseUrl(settings),
     VITE_SDKWORK_GENERATIONS_APP_API_BASE_URL:
@@ -284,12 +315,16 @@ export function parseWorkspaceArgs(argv = []) {
         settings.explicitForwarding = true;
         index += 1;
         break;
-      case '--distributed':
+      case '--internal-distributed':
         settings.runtimeMode = 'distributed';
         settings.runtimeModeExplicit = true;
         break;
       case '--all-in-one':
         settings.runtimeMode = 'all-in-one';
+        settings.runtimeModeExplicit = true;
+        break;
+      case '--client-only':
+        settings.runtimeMode = 'client';
         settings.runtimeModeExplicit = true;
         break;
       case '--install':
@@ -331,7 +366,12 @@ export function parseWorkspaceArgs(argv = []) {
     settings.runtimeMode = 'distributed';
   }
   const edgeServerOrigin = forwardingOriginFromBind(settings.serverBind, '--server-bind');
-  if (settings.runtimeMode === 'all-in-one') {
+  if (settings.runtimeMode === 'client') {
+    const sdkworkApiGatewayOrigin = sharedFoundationGatewayBaseUrl(settings);
+    settings.gatewayForwardUrl ??= sdkworkApiGatewayOrigin;
+    settings.backendApiForwardUrl ??= sdkworkApiGatewayOrigin;
+    settings.appApiForwardUrl ??= sdkworkApiGatewayOrigin;
+  } else if (settings.runtimeMode === 'all-in-one') {
     settings.gatewayForwardUrl ??= edgeServerOrigin;
     settings.backendApiForwardUrl ??= edgeServerOrigin;
     settings.appApiForwardUrl ??= edgeServerOrigin;
@@ -403,12 +443,16 @@ function serviceEnv(settings, bindEnvName, bindValue, {
 
 function portalEnv(settings) {
   const { host, port } = splitBind(settings.portalBind, '--portal-bind');
+  const isClientMode = settings.runtimeMode === 'client';
   return {
-    ...withSharedFoundationPortalRuntimeEnv(process.env, settings),
+    ...withSharedFoundationPortalRuntimeEnv(process.env, settings, {
+      productSurfaceMode: isClientMode ? 'shared-gateway' : 'same-origin',
+    }),
     HOST: host,
     PORT: port,
     OPENAPI_DEV_URL: appendPath(settings.gatewayForwardUrl, '/openapi.json'),
-    SDKWORK_CLAW_DEPLOYMENT_MODE: 'server',
+    SDKWORK_CLAW_DEPLOYMENT_MODE:
+      process.env.SDKWORK_CLAW_DEPLOYMENT_MODE ?? (isClientMode ? 'web' : 'server'),
     SDKWORK_CLAW_PORTAL_BIND: settings.portalBind,
     PORTAL_DEV_PROXY_GATEWAY_TARGET: settings.gatewayForwardUrl,
     PORTAL_DEV_PROXY_BACKEND_API_TARGET: settings.backendApiForwardUrl,
@@ -424,6 +468,7 @@ function edgeServerEnv(settings) {
     }), settings),
     SDKWORK_CLAW_EDGE_SERVER: '1',
     SDKWORK_CLAW_ALL_IN_ONE_RUNTIME: allInOne ? '1' : '0',
+    ...(allInOne ? { SDKWORK_API_GATEWAY_MODE: 'embedded' } : {}),
     SDKWORK_CLAW_EDGE_GATEWAY_BASE_URL: settings.gatewayForwardUrl,
     SDKWORK_CLAW_EDGE_BACKEND_API_BASE_URL: settings.backendApiForwardUrl,
     SDKWORK_CLAW_EDGE_APP_API_BASE_URL: settings.appApiForwardUrl,
@@ -477,10 +522,12 @@ export function buildWorkspaceCommandPlan(settings, {
   platform = process.platform,
 } = {}) {
   const portalRelativeDir = 'apps/sdkwork-clawrouter-pc';
-  const portalBind = splitBind(settings.portalBind, '--portal-bind');
-  settings.databaseUrl ??= environmentDatabaseConfig().databaseUrl ?? defaultPostgresDatabaseUrl();
-  settings.modelsCatalogRoot = resolveModelsCatalogRoot(settings, workspaceRoot);
-  ensureLocalSqliteDatabaseDirectory(settings, workspaceRoot);
+  splitBind(settings.portalBind, '--portal-bind');
+  if (settings.runtimeMode !== 'client') {
+    settings.databaseUrl ??= environmentDatabaseConfig().databaseUrl ?? defaultPostgresDatabaseUrl();
+    settings.modelsCatalogRoot = resolveModelsCatalogRoot(settings, workspaceRoot);
+    ensureLocalSqliteDatabaseDirectory(settings, workspaceRoot);
+  }
   const steps = [];
 
   if (settings.install) {
@@ -494,6 +541,26 @@ export function buildWorkspaceCommandPlan(settings, {
       windowsHide: platform === 'win32',
       blocking: true,
     });
+  }
+
+  if (settings.runtimeMode === 'client') {
+    steps.push(
+      sdkworkApiGatewayStep(settings, { workspaceRoot, platform }),
+      {
+        name: 'portal',
+        command: pnpmCommand(platform),
+        args: ['--dir', portalRelativeDir, 'browser:dev'],
+        cwd: workspaceRoot,
+        env: portalEnv(settings),
+        shell: shellForPnpm(platform),
+        windowsHide: platform === 'win32',
+      },
+    );
+
+    return {
+      nodeExecutable: process.execPath,
+      steps,
+    };
   }
 
   const blockingRuntimeSteps = [
@@ -545,7 +612,7 @@ export function buildWorkspaceCommandPlan(settings, {
     {
       name: 'admin-api',
       command: cargoCommand(platform),
-      args: ['run', '-p', 'sdkwork-claw-admin-api'],
+      args: ['run', '-p', 'sdkwork-claw-admin'],
       cwd: workspaceRoot,
       env: serviceEnv(settings, 'SDKWORK_CLAW_ADMIN_API_BIND', settings.adminApiBind, {
         startupInstallMode: 'skip',
@@ -556,7 +623,7 @@ export function buildWorkspaceCommandPlan(settings, {
     {
       name: 'app-api',
       command: cargoCommand(platform),
-      args: ['run', '-p', 'sdkwork-claw-app-api'],
+      args: ['run', '-p', 'sdkwork-claw-app'],
       cwd: workspaceRoot,
       env: {
         ...serviceEnv(settings, 'SDKWORK_CLAW_APP_API_BIND', settings.appApiBind, {
@@ -570,7 +637,9 @@ export function buildWorkspaceCommandPlan(settings, {
     ]
     : [];
   const interactiveRuntimeSteps = [
-    sdkworkApiGatewayStep(settings, { workspaceRoot, platform }),
+    ...(settings.runtimeMode === 'all-in-one'
+      ? []
+      : [sdkworkApiGatewayStep(settings, { workspaceRoot, platform })]),
     {
       name: 'portal',
       command: pnpmCommand(platform),
@@ -600,17 +669,24 @@ export function buildWorkspaceCommandPlan(settings, {
 }
 
 export function workspaceBindTargets(settings) {
-  return [
-    ...(settings.runtimeMode === 'distributed'
+  const serviceTargets = settings.runtimeMode === 'client'
+    ? []
+    : settings.runtimeMode === 'distributed'
       ? [
-        { name: 'gateway', bind: settings.gatewayBind },
-        { name: 'admin-api', bind: settings.adminApiBind },
-        { name: 'app-api', bind: settings.appApiBind },
-      ]
-      : []),
-    { name: 'sdkwork-api-gateway', bind: settings.sdkworkApiGatewayBind },
+          { name: 'gateway', bind: settings.gatewayBind },
+          { name: 'admin-api', bind: settings.adminApiBind },
+          { name: 'app-api', bind: settings.appApiBind },
+        ]
+      : [
+          { name: 'server', bind: settings.serverBind },
+        ];
+  const managedSdkworkApiGatewayTargets = settings.runtimeMode === 'all-in-one'
+    ? []
+    : [{ name: 'sdkwork-api-gateway', bind: settings.sdkworkApiGatewayBind }];
+  return [
+    ...serviceTargets,
+    ...managedSdkworkApiGatewayTargets,
     { name: 'portal', bind: settings.portalBind },
-    { name: 'server', bind: settings.serverBind },
   ].map((target) => {
     const { host, port } = splitBind(target.bind, `--${target.name}-bind`);
     return {
@@ -669,6 +745,22 @@ export async function assertWorkspaceBindsAvailable(
 }
 
 export function workspaceAccessLines(settings) {
+  if (settings.runtimeMode === 'client') {
+    return [
+      '[start-workspace] Mode: client (sdkwork-api-gateway)',
+      '[start-workspace] Gateway-backed Client Access',
+      `[start-workspace]   Direct Portal Dev: ${loopbackUrl(settings.portalBind, '/')}`,
+      `[start-workspace]   SDKWork API Gateway: ${sharedFoundationGatewayBaseUrl(settings)}`,
+      `[start-workspace]   Gateway API: ${appendPath(sharedFoundationGatewayBaseUrl(settings), GATEWAY_API_PREFIX)}`,
+      `[start-workspace]   Backend/Admin API: ${appendPath(sharedFoundationGatewayBaseUrl(settings), BACKEND_API_PREFIX)}`,
+      `[start-workspace]   App API: ${appendPath(sharedFoundationGatewayBaseUrl(settings), APP_API_PREFIX)}`,
+      `[start-workspace]   Gateway OpenAPI: ${appendPath(sharedFoundationGatewayBaseUrl(settings), '/openapi.json')}`,
+      '[start-workspace] Health Checks',
+      `[start-workspace]   SDKWork API Gateway Health: ${appendPath(sharedFoundationGatewayBaseUrl(settings), '/healthz')}`,
+      `[start-workspace]   SDKWork API Gateway Ready: ${appendPath(sharedFoundationGatewayBaseUrl(settings), '/readyz')}`,
+    ];
+  }
+
   const edgeAndPortal = [
     `[start-workspace] Mode: server (${settings.runtimeMode})`,
     '[start-workspace] Edge Server Access',
@@ -698,6 +790,7 @@ export function workspaceAccessLines(settings) {
   }
   return [
     ...edgeAndPortal,
+    '[start-workspace] Internal Validation Topology',
     '[start-workspace] OpenAPI Schemas',
     `[start-workspace]   Gateway OpenAPI: ${loopbackUrl(settings.gatewayBind, '/openapi.json')}`,
     `[start-workspace]   Admin API OpenAPI: ${loopbackUrl(settings.adminApiBind, `${BACKEND_API_PREFIX}/openapi.json`)}`,
@@ -719,7 +812,8 @@ export function workspaceAccessLines(settings) {
 export function workspaceHelpText() {
   return `Usage: node scripts/dev/start-workspace.mjs [options]
 
-Starts the all-in-one Rust edge runtime plus the claw router portal dev server.
+Starts the all-in-one Rust edge runtime with an embedded SDKWork API Gateway plus the Claw Router portal dev server.
+Use --client-only to start only the external sdkwork-api-gateway plus the portal dev server.
 
 Options:
   --database-url <url>    Optional shared SDKWORK_CLAW_DATABASE_URL override (default ${defaultPostgresDatabaseUrl()})
@@ -737,7 +831,8 @@ Options:
   --app-api-forward-url <url>
                          Rust edge server target for /app/v3/api
   --all-in-one           Start the default single Rust edge API process
-  --distributed          Start separate gateway/admin/app API services behind the edge server
+  --internal-distributed Start separate gateway/admin/app API services for internal validation only
+  --client-only          Start only sdkwork-api-gateway plus the portal dev server
   --external-scheme <scheme>
                          External request scheme reported upstream: http or https (default ${DEFAULT_EXTERNAL_SCHEME})
   --trust-forwarded-headers
@@ -754,10 +849,13 @@ function formatCommand(step) {
 }
 
 export function renderWorkspaceDryRun(settings, plan) {
-  const portalRuntimeEnv = withSharedFoundationPortalRuntimeEnv(process.env, settings);
+  const isClientMode = settings.runtimeMode === 'client';
+  const portalRuntimeEnv = withSharedFoundationPortalRuntimeEnv(process.env, settings, {
+    productSurfaceMode: isClientMode ? 'shared-gateway' : 'same-origin',
+  });
   if (settings.planFormat === 'json') {
     return [JSON.stringify({
-      mode: 'server',
+      mode: isClientMode ? 'client' : 'server',
       gatewayBind: settings.gatewayBind,
       adminApiBind: settings.adminApiBind,
       appApiBind: settings.appApiBind,
@@ -781,6 +879,33 @@ export function renderWorkspaceDryRun(settings, plan) {
         ...(step.failureHint ? { failureHint: step.failureHint } : {}),
       })),
     }, null, 2)];
+  }
+
+  if (isClientMode) {
+    return [
+      '[start-workspace] client launch settings',
+      '  SDKWORK_CLAW_RUNTIME_MODE=client',
+      `  SDKWORK_CLAW_PORTAL_BIND=${settings.portalBind}`,
+      `  SDKWORK_API_GATEWAY_BIND=${settings.sdkworkApiGatewayBind}`,
+      `  PORTAL_PUBLIC_SDK_BASE_URL=${portalRuntimeEnv.PORTAL_PUBLIC_SDK_BASE_URL ?? '(not configured)'}`,
+      `  PORTAL_PUBLIC_API_BASE_URL=${portalPublicRuntimeEnvLineValue(portalRuntimeEnv, 'PORTAL_PUBLIC_API_BASE_URL')}`,
+      `  PORTAL_PUBLIC_OPEN_API_BASE_URL=${portalPublicRuntimeEnvLineValue(portalRuntimeEnv, 'PORTAL_PUBLIC_OPEN_API_BASE_URL')}`,
+      `  PORTAL_PUBLIC_BACKEND_API_BASE_URL=${portalPublicRuntimeEnvLineValue(portalRuntimeEnv, 'PORTAL_PUBLIC_BACKEND_API_BASE_URL')}`,
+      `  PORTAL_PUBLIC_APP_API_BASE_URL=${portalPublicRuntimeEnvLineValue(portalRuntimeEnv, 'PORTAL_PUBLIC_APP_API_BASE_URL')}`,
+      `  PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL=${portalRuntimeEnv.PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL ?? '(not configured)'}`,
+      `  VITE_CLAWROUTER_OPEN_API_BASE_URL=${portalRuntimeEnv.VITE_CLAWROUTER_OPEN_API_BASE_URL}`,
+      `  VITE_CLAWROUTER_BACKEND_API_BASE_URL=${portalRuntimeEnv.VITE_CLAWROUTER_BACKEND_API_BASE_URL}`,
+      `  VITE_CLAWROUTER_APP_API_BASE_URL=${portalRuntimeEnv.VITE_CLAWROUTER_APP_API_BASE_URL}`,
+      `  PORTAL_DEV_PROXY_GATEWAY_TARGET=${settings.gatewayForwardUrl}`,
+      `  PORTAL_DEV_PROXY_BACKEND_API_TARGET=${settings.backendApiForwardUrl}`,
+      `  PORTAL_DEV_PROXY_APP_API_TARGET=${settings.appApiForwardUrl}`,
+      `  PORTAL_PUBLIC_TOOL_API_ENABLED=${portalRuntimeEnv.PORTAL_PUBLIC_TOOL_API_ENABLED}`,
+      ...workspaceAccessLines(settings),
+      ...plan.steps.flatMap((step) => [
+        `[start-workspace] ${step.name}: ${formatCommand(step)}`,
+        ...(step.failureHint ? [`[start-workspace] ${step.name} failure hint: ${step.failureHint}`] : []),
+      ]),
+    ];
   }
 
   return [
@@ -870,12 +995,65 @@ async function runBlockingStep(step) {
   });
 }
 
-async function stopChildren(children) {
-  for (const child of children) {
-    if (!child.killed) {
-      child.kill('SIGTERM');
-    }
+function childHasExited(child) {
+  return child.exitCode !== null || child.signalCode !== null;
+}
+
+export async function terminateChildProcess(child, {
+  platform = process.platform,
+  spawnProcess = spawn,
+} = {}) {
+  if (!child || childHasExited(child)) {
+    return;
   }
+
+  if (platform === 'win32' && child.pid) {
+    await new Promise((resolve) => {
+      let settled = false;
+      const finish = () => {
+        if (!settled) {
+          settled = true;
+          resolve();
+        }
+      };
+      const fallbackKill = () => {
+        try {
+          child.kill('SIGTERM');
+        } catch {
+          // Process may already be gone.
+        }
+      };
+
+      let killer;
+      try {
+        killer = spawnProcess('taskkill', ['/PID', String(child.pid), '/T', '/F'], {
+          stdio: 'ignore',
+          windowsHide: true,
+        });
+      } catch {
+        fallbackKill();
+        finish();
+        return;
+      }
+
+      killer.once('exit', finish);
+      killer.once('error', () => {
+        fallbackKill();
+        finish();
+      });
+    });
+    return;
+  }
+
+  try {
+    child.kill('SIGTERM');
+  } catch {
+    // Process may already be gone.
+  }
+}
+
+async function stopChildren(children) {
+  await Promise.all(children.map((child) => terminateChildProcess(child)));
 }
 
 async function main() {

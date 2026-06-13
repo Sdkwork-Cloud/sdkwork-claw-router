@@ -202,22 +202,29 @@ Quick portable package initialization on Linux and macOS:
 
 ## Repository Layout
 
-- `services/` - Rust product crates for gateway, app API, admin API, and shared
-  product logic.
-- `apps/sdkwork-clawrouter-pc/` - React portal workspace.
-- `sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/` - generated app API TypeScript SDK.
-- `sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/` - generated backend API TypeScript SDK.
-- `sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript/` - generated OpenAI-compatible gateway TypeScript SDK.
-- `docs/schema-registry/` - table and frontend contract registry.
-- `specs/` - canonical API and database standards.
-- `data/sdkwork-models/` - standalone model catalog submodule mount point for
-  vendor-scoped JSON model facts, pricing data, overlays, and language SDK
-  loaders. See `docs/32-sdkwork-models-standard.md` and
-  `docs/33-sdkwork-models-install-flow.md`.
+This repository follows `../sdkwork-specs/SDKWORK_WORKSPACE_SPEC.md`. The standard project root dictionary is represented by tracked README files:
+
+- `apis/` - authored API contracts, route authority inputs, examples, changelogs, and API validation fixtures.
+- `apps/` - runnable application surfaces. `apps/sdkwork-clawrouter-pc/` is the PC React portal root.
+- `crates/` - authored Rust crates. Rust route crates use `crates/sdkwork-router-<capability>-<surface>/`, including open-api, app-api, and backend-api route packages.
+- `sdks/` - SDK family workspaces, materialized authority OpenAPI, derived generator inputs, generated language SDKs, and SDK evidence.
+- `jobs/` - job schedules, queue bindings, batch descriptors, and maintenance runbooks.
+- `tools/` - reusable guardians, generators, validators, migrations, and operator utilities.
+- `plugins/` - application or runtime plugin source. Agent plugin metadata remains under `.sdkwork/plugins/`.
+- `examples/` - runnable examples, sample configs, and SDK or API usage examples.
+- `configs/` - safe source-controlled config templates, schemas, profiles, and defaults. Runtime private config remains under user-private `.sdkwork` paths.
+- `deployments/` - deployment descriptors, topology examples, release handoff files, and runbooks.
+- `scripts/` - thin command entrypoints for development, verification, generation, packaging, and release workflows.
+- `docs/` - repository documentation, schema registry docs, installation guides, runbooks, and release notes.
+- `tests/` - cross-package, contract, runtime, architecture, and static verification suites.
+
+Additional repository-local directories remain scoped by their README or component specs:
+
+- `packages/` - governed shared TypeScript and React package families only. Rust route/API crates must not live here.
+- `services/` - existing Rust service and host crates used by the product runtime. New router API route crates belong under `crates/`.
+- `data/sdkwork-models/` - standalone model catalog submodule mount point for vendor-scoped JSON model facts, pricing data, overlays, and language SDK loaders. See `docs/32-sdkwork-models-standard.md` and `docs/33-sdkwork-models-install-flow.md`.
 - `generated/` - generated OpenAPI, schema, audit, and manifest outputs.
-- `tools/` - Python guardians and generators.
-- `scripts/` - product launcher, verification runner, and integration runners.
-- `tests/` - Python delivery, contract, runtime, and architecture standards.
+- `specs/` - local component contracts and repository-specific narrowing rules that link back to `../sdkwork-specs/`.
 
 ## Development Commands
 
@@ -344,20 +351,21 @@ as `AdminModelCatalogSyncResponse`. Frontend or application service wrappers
 should preserve the full report, including counts, `snapshotId`, and
 `syncRunId`, instead of collapsing the response to only `vendors` and `models`.
 
-`pnpm dev` / `pnpm server:dev` use the workspace-local
-`data/sdkwork-models` directory as `SDKWORK_MODELS_CATALOG_ROOT` by default and
-run a blocking `refresh-catalog --catalog-root data/sdkwork-models --force`
-step after `ensure`. Local JSON model or pricing edits are therefore imported
-into the dev database on every server-mode startup.
+Explicit product server commands such as `pnpm server:dev` use the
+workspace-local `data/sdkwork-models` directory as
+`SDKWORK_MODELS_CATALOG_ROOT` by default and run a blocking
+`refresh-catalog --catalog-root data/sdkwork-models --force` step after
+`ensure`. Local JSON model or pricing edits are therefore imported into the dev
+database on every server-mode startup. The default client commands
+(`pnpm dev`, `pnpm desktop:dev`, and `pnpm tauri:dev`) do not start the
+Claw Router product server and do not run installer or catalog refresh steps;
+they use `sdkwork-api-gateway` as the API server.
 
 Command intent:
 
-- `pnpm dev` starts the default all-in-one edge development workspace:
-  one Rust edge/API process plus the portal dev server, after ensuring schema
-  installation and refreshing model catalog data from `data/sdkwork-models`.
-- `pnpm dev:distributed` starts the explicit distributed development
-  workspace with separate gateway, admin API, app API, edge, and portal
-  processes.
+- `pnpm dev` starts the gateway-backed client development workspace:
+  `sdkwork-api-gateway` plus the portal dev server. It does not start the
+  Claw Router Rust edge/API process.
 - `pnpm test` runs the launcher/tooling contract tests.
 - `pnpm build` builds production portal assets, builds the generated app
   and backend SDK runtime packages, creates SDK ZIP archives under
@@ -370,18 +378,16 @@ Command intent:
   `.env.release.local` from the release host process environment, runs strict
   `release:preflight`, and then runs the full `verify` gate.
 - `pnpm portal:dev` starts the browser portal only.
-- `pnpm desktop:dev` starts the full install-checked workspace with
-  desktop environment flags. It still uses the workspace PostgreSQL integration
-  profile by default.
+- `pnpm desktop:dev` and `pnpm tauri:dev` start the gateway-backed desktop
+  client workspace: `sdkwork-api-gateway` plus the portal desktop renderer.
+  They do not start a Claw Router product backend service.
 - `pnpm service:dev` starts the full install-checked workspace with
   service-mode environment flags.
-- `pnpm server:dev` starts the all-in-one Rust edge/API process plus the
-  portal dev server.
-- `pnpm server:dev:distributed` starts the legacy multi-process Rust
-  service topology behind the edge server.
-- `pnpm smoke:dev` starts the root `pnpm dev` entrypoint on isolated
-  random local ports, verifies the edge and portal OpenAPI/runtime URLs, and
-  stops the spawned process tree.
+- `pnpm server:dev` explicitly starts the all-in-one Rust edge/API process
+  plus the portal dev server for product server debugging.
+- `pnpm smoke:dev` starts the explicit `pnpm server:dev` entrypoint on
+  isolated random local ports, verifies the edge and portal OpenAPI/runtime
+  URLs, and stops the spawned process tree.
 - `pnpm product:check` runs portal typecheck and production build.
 - `pnpm install:packages:plan` prints the deterministic cross-platform
   install package matrix without building packages or starting services.
@@ -397,15 +403,45 @@ Use the extensionless `pnpm` command in cross-platform examples. On Windows
 shells that block `pnpm.ps1`, call the package-manager shim through your shell
 or adjust the execution policy instead of changing committed scripts.
 
-Workspace development commands use PostgreSQL for integration testing.
-Desktop packages and first-run local user data use SQLite under `~/.sdkwork/router/data`.
+Client development commands use `sdkwork-api-gateway` for API integration.
+Explicit product server development commands use PostgreSQL for integration
+testing unless an explicit SQLite server profile is selected. Desktop packages and first-run local user data use SQLite under `~/.sdkwork/router/data`.
 On Windows, the equivalent path is `%USERPROFILE%/.sdkwork/router/data`.
-Use `pnpm desktop:dev:sqlite` or `pnpm tauri:dev:sqlite` when validating
-desktop local-data behavior from the workspace.
+Use `pnpm server:dev:sqlite` when validating explicit product server SQLite
+behavior from the workspace. `pnpm desktop:dev:sqlite` and
+`pnpm tauri:dev:sqlite` are client-mode aliases and do not start a product
+backend service.
 
-Edge startup prints the browser and API access matrix before launching
-processes. With default ports, the Rust edge server at `3900` is the single
-entrypoint. In default all-in-one mode, `/v1`, `/backend/v3/api`, and
+Client-only startup prints the browser and API access matrix before launching
+processes. This is the gateway-backed client workspace, not the default product
+server topology. With default ports, `sdkwork-api-gateway` listens on `3902`
+and the portal dev server listens on `3901`:
+
+- Direct Portal Dev: `http://127.0.0.1:3901/`
+- SDKWork API Gateway: `http://127.0.0.1:3902/`
+- Gateway/Open API: `http://127.0.0.1:3902/v1`
+- Backend/Admin API: `http://127.0.0.1:3902/backend/v3/api`
+- App API: `http://127.0.0.1:3902/app/v3/api`
+- SDKWork API Gateway Health: `http://127.0.0.1:3902/healthz`
+- SDKWork API Gateway Ready: `http://127.0.0.1:3902/readyz`
+
+The portal dev server proxies same-origin API requests to the managed
+`sdkwork-api-gateway` process:
+
+- Direct Portal Gateway API Proxy: `http://127.0.0.1:3901/v1`
+- Direct Portal Backend/Admin API Proxy:
+  `http://127.0.0.1:3901/backend/v3/api`
+- Direct Portal App API Proxy: `http://127.0.0.1:3901/app/v3/api`
+- Direct Portal Gateway OpenAPI Proxy:
+  `http://127.0.0.1:3901/openapi.json`
+- Direct Portal Admin API OpenAPI Proxy:
+  `http://127.0.0.1:3901/backend/v3/api/openapi.json`
+- Direct Portal App API OpenAPI Proxy:
+  `http://127.0.0.1:3901/app/v3/api/openapi.json`
+
+Explicit `pnpm server:dev` startup prints the product edge access matrix. With
+default ports, the Rust edge server at `3900` is the single product server
+entrypoint. In default all-in-one server mode, `/v1`, `/backend/v3/api`, and
 `/app/v3/api` are dispatched to in-process Rust routers while portal assets
 are served through the portal dev server:
 
@@ -426,21 +462,6 @@ in-process gateway, admin API, app API routers and the portal upstream
 `/healthz` endpoint in all-in-one mode, and returns `503` when any dependency
 is unavailable.
 
-The portal dev server remains available directly:
-
-- Direct Portal Dev: `http://127.0.0.1:3901/`
-- Direct Portal Gateway API Proxy: `http://127.0.0.1:3901/v1`
-- Direct Portal Backend/Admin API Proxy:
-  `http://127.0.0.1:3901/backend/v3/api`
-- Direct Portal App API Proxy: `http://127.0.0.1:3901/app/v3/api`
-- Direct Portal Gateway OpenAPI Proxy:
-  `http://127.0.0.1:3901/openapi.json`
-- Direct Portal Admin API OpenAPI Proxy:
-  `http://127.0.0.1:3901/backend/v3/api/openapi.json`
-- Direct Portal App API OpenAPI Proxy:
-  `http://127.0.0.1:3901/app/v3/api/openapi.json`
-
-Direct gateway/admin/app service ports are only started in distributed mode
 for debugging and external reverse proxy setups:
 
 - Gateway OpenAPI: `http://127.0.0.1:18080/openapi.json`
@@ -451,22 +472,20 @@ for debugging and external reverse proxy setups:
 - Backend/Admin API: `http://127.0.0.1:18081/backend/v3/api`
 - App API: `http://127.0.0.1:18082/app/v3/api`
 
-Use `pnpm server:plan` to print the same URLs and command plan without
-starting processes. Forward bind overrides through `--`, for example:
+Use `pnpm server:plan` to print the explicit product server URLs and command
+plan without starting processes. Forward bind overrides through `--`, for
+example:
 
 ```powershell
-pnpm dev -- --server-bind 0.0.0.0:12900 --portal-bind 0.0.0.0:13900
-pnpm dev:distributed -- --gateway-bind 0.0.0.0:19080 --server-bind 0.0.0.0:12900 --portal-bind 0.0.0.0:13900
+pnpm server:dev -- --server-bind 0.0.0.0:12900 --portal-bind 0.0.0.0:13900
 ```
 
 The Rust edge server forwarding targets default to the edge server itself in
-all-in-one mode. Use `--distributed`, or provide any explicit forwarding URL,
 when the edge server should forward to another host, container network, or
 separate local service process:
 
 ```powershell
-pnpm dev -- --gateway-forward-url http://gateway.internal:18080 --backend-api-forward-url http://admin.internal:18081 --app-api-forward-url http://app.internal:18082
-pnpm dev:distributed -- --gateway-bind 0.0.0.0:19080 --server-bind 0.0.0.0:12900 --portal-bind 0.0.0.0:13900
+pnpm server:dev -- --gateway-forward-url http://gateway.internal:18080 --backend-api-forward-url http://admin.internal:18081 --app-api-forward-url http://app.internal:18082
 ```
 
 Forwarding URLs must be HTTP/HTTPS origins only. The Rust edge server uses
@@ -488,25 +507,24 @@ entrypoint. `PORTAL_PUBLIC_API_BASE_URL`, `PORTAL_PUBLIC_OPEN_API_BASE_URL`,
 remain available as per-surface overrides for split deployments.
 
 Production `pnpm start` defaults to one all-in-one Rust edge/API process
-after `pnpm build` has created the release artifact. Use `--distributed`,
-or provide upstream target controls, when forwarding to separately deployed
-gateway/admin/app services:
+after `pnpm build` has created the release artifact. When forwarding to
+separately deployed gateway/admin/app services, use explicit upstream target
+controls instead of the default integrated topology:
 
 ```powershell
 pnpm start -- --server-bind 0.0.0.0:12900 --gateway-forward-url http://gateway.internal:18080 --backend-api-forward-url http://admin.internal:18081 --app-api-forward-url http://app.internal:18082
-pnpm start -- --distributed --server-bind 0.0.0.0:12900
 ```
 
 Its startup output includes the runtime mode, edge URLs, public browser API
 bases, health checks, and the selected start command source (`release`, `env`,
-or `cargo`). Distributed mode also prints upstream forwarding targets and
-direct OpenAPI/API paths.
+or `cargo`). Forwarding mode also prints upstream forwarding targets and direct
+OpenAPI/API paths.
 
 When the edge server is deployed behind a controlled HTTPS reverse proxy,
 set the reported external scheme explicitly:
 
 ```powershell
-pnpm dev -- --external-scheme https
+pnpm server:dev -- --external-scheme https
 pnpm start -- --external-scheme https
 ```
 
@@ -514,7 +532,7 @@ Only enable trusted forwarded headers when the edge server is not directly
 reachable by clients and every inbound request comes from that controlled proxy:
 
 ```powershell
-pnpm dev -- --external-scheme https --trust-forwarded-headers
+pnpm server:dev -- --external-scheme https --trust-forwarded-headers
 pnpm start -- --external-scheme https --trust-forwarded-headers
 ```
 
@@ -569,9 +587,10 @@ node scripts/verify-claw-router-product.mjs --skip-contract-guardians
 
 Do not use `--skip-contract-guardians` for final delivery.
 
-The live edge dev smoke still exists, but it is opt-in because it launches
-the root `pnpm dev` entrypoint, installer/catalog startup, Rust services, and
-the portal dev server. Run it directly when you need that coverage:
+The live edge dev smoke still exists, but it is opt-in because it launches the
+explicit `pnpm server:dev` entrypoint, installer/catalog startup, Rust services,
+and the portal dev server. Run it directly when you need that product server
+coverage:
 
 ```powershell
 pnpm.cmd smoke:dev

@@ -47,6 +47,7 @@ function defaultDevEnvFileForWorkspace(workspaceRoot) {
 
 function installCandidatesForMode(mode) {
   switch (mode) {
+    case 'client':
     case 'desktop':
     case 'service':
     case 'server':
@@ -161,6 +162,7 @@ function workspaceDevelopmentStep({
   label,
   env,
   extraArgs,
+  clientOnly = false,
   platform,
   nodeCommand,
 }) {
@@ -169,6 +171,7 @@ function workspaceDevelopmentStep({
     command: nodeCommand,
     args: [
       path.join(workspaceRoot, 'scripts', 'dev', 'start-workspace.mjs'),
+      ...(clientOnly ? ['--client-only'] : []),
       ...extraArgs,
     ],
     cwd: workspaceRoot,
@@ -193,7 +196,9 @@ export function createClawRouterProductLaunchPlan({
   const shell = shellForPnpm(platform);
   const nodeCommand = process.execPath;
   const plan = [];
-  const launchEnv = resolveLaunchEnv({ env, workspaceRoot, devEnvFile, extraArgs });
+  const launchEnv = mode === 'client' || mode === 'desktop'
+    ? { ...env }
+    : resolveLaunchEnv({ env, workspaceRoot, devEnvFile, extraArgs });
 
   for (const relativeDir of installCandidatesForMode(mode)) {
     const absoluteDir = path.join(workspaceRoot, relativeDir);
@@ -213,12 +218,24 @@ export function createClawRouterProductLaunchPlan({
   }
 
   switch (mode) {
+    case 'client':
+      plan.push(workspaceDevelopmentStep({
+        workspaceRoot,
+        label: 'client development workspace',
+        env: launchEnv,
+        extraArgs,
+        clientOnly: true,
+        platform,
+        nodeCommand,
+      }));
+      return plan;
     case 'desktop':
       plan.push(workspaceDevelopmentStep({
         workspaceRoot,
         label: 'desktop development workspace',
         env: portalDesktopEnv(launchEnv),
         extraArgs,
+        clientOnly: true,
         platform,
         nodeCommand,
       }));
@@ -282,7 +299,7 @@ export function createClawRouterProductLaunchPlan({
       return plan;
     default:
       throw new Error(
-        `Unsupported claw router product mode: ${mode}. Expected one of desktop, service, server, plan, check, browser.`,
+        `Unsupported claw router product mode: ${mode}. Expected one of client, desktop, service, server, plan, check, browser.`,
       );
   }
 }
@@ -293,7 +310,8 @@ function printHelp() {
 Start sdkwork-claw-router through a root pnpm-compatible entrypoint.
 
 Modes:
-  desktop  Start the full install-checked workspace with desktop environment flags (default)
+  client   Start the sdkwork-api-gateway-backed portal client workspace
+  desktop  Start the sdkwork-api-gateway-backed desktop client workspace (default)
   service  Start the full install-checked workspace with service-mode environment flags
   server   Start the all-in-one Rust edge runtime plus the portal dev server
   plan     Print the resolved server development URLs and command plan
@@ -307,10 +325,10 @@ Options:
   -h, --help             Show this help
 
 Database profiles:
-  pnpm dev / pnpm server:dev use the PostgreSQL workspace integration profile.
-  pnpm desktop:dev / pnpm tauri:dev use PostgreSQL for the backend service runtime.
+  pnpm dev / pnpm desktop:dev / pnpm tauri:dev start sdkwork-api-gateway and the portal only.
+  pnpm server:dev uses the PostgreSQL workspace integration profile for explicit product server debugging.
   Desktop packages and first-run local user data use SQLite under ~/.sdkwork/router/data.
-  Use pnpm desktop:dev:sqlite or pnpm tauri:dev:sqlite to validate desktop local data behavior.
+  Use pnpm server:dev:sqlite to validate explicit product server SQLite behavior.
 
 Examples:
   pnpm desktop:dev
@@ -319,7 +337,6 @@ Examples:
   pnpm dev
   pnpm dev:sqlite
   pnpm dev:postgres
-  pnpm server:dev:distributed
   pnpm server:plan
 `);
 }
