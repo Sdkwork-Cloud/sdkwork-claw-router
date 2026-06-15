@@ -142,6 +142,7 @@ pub struct EdgeServerConfig {
 #[derive(Clone)]
 pub struct EdgeInProcessUpstreams {
     gateway_router: Router,
+    sdkwork_api_gateway_router: Option<Router>,
     backend_router: Router,
     app_router: Router,
 }
@@ -157,9 +158,15 @@ impl EdgeInProcessUpstreams {
     pub fn new(gateway_router: Router, backend_router: Router, app_router: Router) -> Self {
         Self {
             gateway_router,
+            sdkwork_api_gateway_router: None,
             backend_router,
             app_router,
         }
+    }
+
+    pub fn with_sdkwork_api_gateway_router(mut self, router: Router) -> Self {
+        self.sdkwork_api_gateway_router = Some(router);
+        self
     }
 
     fn router_for_surface(&self, surface: EdgeApiSurface) -> Router {
@@ -171,6 +178,20 @@ impl EdgeInProcessUpstreams {
     }
 
     fn router_for_path(&self, path: &str) -> Option<Router> {
+        if let Some(router) = self
+            .sdkwork_api_gateway_router
+            .clone()
+            .filter(|_| sdkwork_api_gateway_surface_path(path))
+        {
+            return Some(router);
+        }
+        if sdkwork_api_gateway_dependency_path(path) {
+            return Some(
+                self.sdkwork_api_gateway_router
+                    .clone()
+                    .unwrap_or_else(|| self.gateway_router.clone()),
+            );
+        }
         surface_for_path(path).map(|surface| self.router_for_surface(surface))
     }
 }
@@ -639,6 +660,30 @@ fn surface_for_path(path: &str) -> Option<EdgeApiSurface> {
         return Some(EdgeApiSurface::App);
     }
     None
+}
+
+fn sdkwork_api_gateway_dependency_path(path: &str) -> bool {
+    const APPBASE_APP_DEPENDENCY_PREFIXES: [&str; 4] = [
+        "/app/v3/api/auth",
+        "/app/v3/api/iam",
+        "/app/v3/api/oauth",
+        "/app/v3/api/system/iam",
+    ];
+
+    APPBASE_APP_DEPENDENCY_PREFIXES
+        .iter()
+        .any(|prefix| path_matches_prefix(path, prefix))
+}
+
+fn sdkwork_api_gateway_surface_path(path: &str) -> bool {
+    path_matches_prefix(path, APP_API_PREFIX) || path_matches_prefix(path, BACKEND_API_PREFIX)
+}
+
+fn path_matches_prefix(path: &str, prefix: &str) -> bool {
+    path == prefix
+        || path
+            .strip_prefix(prefix)
+            .is_some_and(|suffix| suffix.starts_with('/'))
 }
 
 struct EdgeServerState {

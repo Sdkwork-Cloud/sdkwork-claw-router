@@ -155,8 +155,8 @@ Out of scope for this plan:
   explicit catalog refresh command.
 
 - Modify `services/sdkwork-claw-gateway/src/runtime.rs`
-- Modify `services/sdkwork-claw-admin-api/src/lib.rs`
-- Modify `services/sdkwork-claw-app-api/src/lib.rs`
+- Modify `services/sdkwork-claw-admin/src/lib.rs`
+- Modify `services/sdkwork-claw-app/src/lib.rs`
   Ensure startup install can receive catalog options from environment.
 
 - Modify `services/sdkwork-claw-product/src/api/admin_system.rs`
@@ -917,8 +917,8 @@ git commit -m "add ClawRouter sdkwork models importer"
 - Modify: `services/sdkwork-claw-product/tests/database_installer.rs`
 - Modify: `services/sdkwork-claw-installer/src/main.rs`
 - Modify: `services/sdkwork-claw-gateway/src/runtime.rs`
-- Modify: `services/sdkwork-claw-admin-api/src/lib.rs`
-- Modify: `services/sdkwork-claw-app-api/src/lib.rs`
+- Modify: `services/sdkwork-claw-admin/src/lib.rs`
+- Modify: `services/sdkwork-claw-app/src/lib.rs`
 - Modify: `services/sdkwork-claw-product/src/infrastructure/sql/mod.rs`
 
 - [ ] **Step 1: Write installer behavior tests first**
@@ -1074,7 +1074,7 @@ Run:
 
 ```powershell
 cargo test -p sdkwork-claw-product --test database_installer
-cargo test -p sdkwork-claw-admin-api --test installation_status_route
+cargo test -p sdkwork-claw-admin --test installation_status_route
 cargo test -p sdkwork-claw-gateway --test database_installer_startup
 ```
 
@@ -1083,7 +1083,7 @@ Expected: all pass and report catalog version from `sdkwork-models.json`.
 - [ ] **Step 10: Commit**
 
 ```powershell
-git add services/sdkwork-claw-product services/sdkwork-claw-installer services/sdkwork-claw-gateway services/sdkwork-claw-admin-api services/sdkwork-claw-app-api
+git add services/sdkwork-claw-product services/sdkwork-claw-installer services/sdkwork-claw-gateway services/sdkwork-claw-admin services/sdkwork-claw-app
 git commit -m "migrate installer to sdkwork-models catalog"
 ```
 
@@ -1304,7 +1304,7 @@ git commit -m "add sdkwork models update workflow"
 - Modify: `services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_model_store.rs`
 - Modify: `services/sdkwork-claw-installer/src/main.rs`
 - Modify: `services/sdkwork-claw-product/tests/admin_model_command_api.rs`
-- Modify: `services/sdkwork-claw-admin-api/tests/installation_status_route.rs`
+- Modify: `services/sdkwork-claw-admin/tests/installation_status_route.rs`
 
 - [ ] **Step 1: Write refresh behavior tests**
 
@@ -1381,7 +1381,7 @@ Run:
 
 ```powershell
 cargo test -p sdkwork-claw-product --test admin_model_command_api
-cargo test -p sdkwork-claw-admin-api --test installation_status_route
+cargo test -p sdkwork-claw-admin --test installation_status_route
 cargo test -p sdkwork-claw-product --test database_installer
 ```
 
@@ -1390,7 +1390,7 @@ Expected: install and refresh paths both use the `sdkwork-models` importer.
 - [ ] **Step 7: Commit**
 
 ```powershell
-git add services/sdkwork-claw-product services/sdkwork-claw-installer services/sdkwork-claw-admin-api
+git add services/sdkwork-claw-product services/sdkwork-claw-installer services/sdkwork-claw-admin
 git commit -m "add sdkwork models catalog refresh flow"
 ```
 
@@ -1552,7 +1552,7 @@ cargo test --manifest-path data/sdkwork-models/sdkwork-models-rust/Cargo.toml
 cargo test -p sdkwork-claw-product --test sdkwork_models_catalog_import
 cargo test -p sdkwork-claw-product --test database_installer
 cargo test -p sdkwork-claw-product --test admin_model_command_api
-cargo test -p sdkwork-claw-admin-api --test installation_status_route
+cargo test -p sdkwork-claw-admin --test installation_status_route
 cargo test -p sdkwork-claw-gateway --test database_installer_startup
 pnpm.cmd verify:fast
 ```

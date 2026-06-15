@@ -4,8 +4,6 @@ mod admin_analytics;
 mod admin_announcement;
 mod admin_api_key_rate_limit;
 mod admin_app;
-mod admin_appbase_backend_iam;
-mod admin_appbase_backend_iam_oauth;
 mod admin_auth_settings;
 mod admin_cache;
 mod admin_catalog;
@@ -89,10 +87,6 @@ pub use admin_announcement::admin_announcement_router_with_store;
 pub use admin_api_key_rate_limit::admin_api_key_rate_limit_router_with_store;
 pub use admin_app::admin_app_router_with_store;
 pub use admin_app::admin_app_router_with_store_and_json_body_limit;
-pub use admin_appbase_backend_iam::{
-    admin_appbase_backend_iam_directory_router_with_read_store, AdminAppbaseBackendIamSqlReadStore,
-};
-pub use admin_appbase_backend_iam_oauth::admin_appbase_backend_iam_oauth_router_with_read_store;
 pub use admin_auth_settings::admin_auth_settings_router_with_store;
 pub use admin_cache::admin_cache_router_with_manager;
 pub use admin_catalog::admin_catalog_router_with_store;
@@ -127,7 +121,7 @@ pub use admin_skill::admin_skill_router_with_store_and_json_body_limit;
 pub use admin_storage::admin_storage_router_with_store;
 pub use admin_system::admin_system_router_with_installer;
 pub use admin_transaction_center::admin_transaction_center_router_with_store;
-pub use admin_user::admin_user_router_with_store;
+pub use admin_user::{admin_user_api_key_command_router_with_store, admin_user_router_with_store};
 pub use app_agent_runs::app_agent_run_router;
 pub use app_agent_runs::app_agent_run_router_with_store;
 pub use app_agent_sessions::app_agent_session_router;
@@ -144,6 +138,9 @@ pub use app_auth::{
 };
 pub use app_chat::app_chat_router;
 pub use app_chat::app_chat_router_with_store;
+pub use app_course::app_course_application_router_with_command_store;
+pub use app_course::app_course_application_router_with_command_store_and_upload_root;
+pub use app_course::app_course_application_router_with_command_store_upload_root_and_upload_limits;
 pub use app_course::app_course_router;
 pub use app_course::app_course_router_with_read_store;
 pub use app_course::app_course_router_with_store;

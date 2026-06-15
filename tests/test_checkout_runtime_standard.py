@@ -3,11 +3,20 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-APPBASE = ROOT / ".sdkwork" / "dependencies" / "sdkwork-appbase"
+WORKSPACE_ROOT = ROOT.parent
+COMMERCE_ROOT = WORKSPACE_ROOT / "sdkwork-commerce"
+COMMERCE_API_SERVER = COMMERCE_ROOT / "crates" / "sdkwork-commerce-api-server"
+COMMERCE_STORAGE_SQLX = (
+    COMMERCE_ROOT / "crates" / "sdkwork-commerce-storage-repository-sqlx"
+)
+COMMERCE_RECHARGE_STORES = [
+    COMMERCE_STORAGE_SQLX / "src" / "sqlite_recharge.rs",
+    COMMERCE_STORAGE_SQLX / "src" / "postgres_recharge.rs",
+]
 
 
 class CheckoutRuntimeStandardTest(unittest.TestCase):
-    def test_checkout_contract_is_backed_by_appbase_router_not_product_local_code(self) -> None:
+    def test_checkout_contract_is_backed_by_commerce_dependency_not_product_local_code(self) -> None:
         contract = (ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml").read_text(
             encoding="utf-8"
         )
@@ -17,12 +26,14 @@ class CheckoutRuntimeStandardTest(unittest.TestCase):
         product_ports_mod = (
             ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "mod.rs"
         ).read_text(encoding="utf-8")
-        app_api = (ROOT / "services" / "sdkwork-claw-app-api" / "src" / "lib.rs").read_text(
+        app_api = (ROOT / "services" / "sdkwork-claw-app" / "src" / "lib.rs").read_text(
             encoding="utf-8"
         )
-        appbase_http = (
-            APPBASE
-            / "packages/native-rust/commerce/sdkwork-commerce-http-rust/src/recharge_router.rs"
+        app_routes = (
+            ROOT / "crates" / "sdkwork-router-app-api" / "src" / "routes.rs"
+        ).read_text(encoding="utf-8")
+        commerce_http = (
+            COMMERCE_API_SERVER / "src" / "recharge_router.rs"
         ).read_text(encoding="utf-8")
 
         self.assertIn("operation: fetchCheckoutStatus", contract)
@@ -65,17 +76,17 @@ class CheckoutRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("CheckoutStore", product_ports_mod)
         self.assertNotIn("CheckoutStore", app_api)
         self.assertNotIn("app_checkout_router()", app_api)
-        self.assertIn("app_recharge_checkout_router_with_sqlite_pool", app_api)
-        self.assertIn("app_recharge_checkout_router_with_postgres_pool", app_api)
-        self.assertIn("validate_checkout_order_no", appbase_http)
-        self.assertIn("AppbaseRechargeCheckoutStore", appbase_http)
+        self.assertIn("pub use sdkwork_router_app_api::*;", app_api)
+        self.assertIn("is_commerce_dependency_contract_path", app_routes)
+        self.assertIn('"/app/v3/api/recharges/"', app_routes)
+        self.assertIn("app_recharge_checkout_router_with_sqlite_pool", commerce_http)
+        self.assertIn("app_recharge_checkout_router_with_postgres_pool", commerce_http)
+        self.assertIn("validate_checkout_order_no", commerce_http)
+        self.assertIn("CommerceRechargeCheckoutStore", commerce_http)
 
-    def test_checkout_sql_projection_is_defined_in_appbase_storage(self) -> None:
-        for relative in [
-            "packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/sqlite_recharge.rs",
-            "packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/postgres_recharge.rs",
-        ]:
-            store = (APPBASE / relative).read_text(encoding="utf-8")
+    def test_checkout_sql_projection_is_defined_in_commerce_storage(self) -> None:
+        for store_path in COMMERCE_RECHARGE_STORES:
+            store = store_path.read_text(encoding="utf-8")
             compact_store = " ".join(store.split())
 
             self.assertIn("LOAD_CHECKOUT_STATUS", store)
@@ -131,7 +142,19 @@ class CheckoutRuntimeStandardTest(unittest.TestCase):
             / "checkoutService.ts"
         ).read_text(encoding="utf-8")
 
-        self.assertIn("getClawRouterAppSdkClient().commerce.recharges.orders.retrieve(safeOrderNo)", checkout_service)
+        self.assertIn(
+            "import { getSdkworkCommerceService } from '@sdkwork/commerce-service';",
+            checkout_service,
+        )
+        self.assertIn("appRechargesOrdersRetrieve(safeOrderNo)", checkout_service)
+        self.assertIn(
+            "getSdkworkCommerceService().recharges.orders.retrieve(orderId)",
+            checkout_service,
+        )
+        self.assertNotIn(
+            "getClawRouterAppSdkClient().commerce.recharges.orders.retrieve",
+            checkout_service,
+        )
         self.assertIn("readCheckoutStatusValue(", checkout_service)
         self.assertIn("normalizeCheckoutStatus", checkout_service)
         self.assertNotIn("fetch('/app/v3/api", checkout_service)

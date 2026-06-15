@@ -27,40 +27,15 @@
           "mode": "shared-gateway",
           "gatewayApplication": "sdkwork-api-gateway",
           "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
-          "catalogPolicy": "no-dedicated-gateway-catalog",
-          "migrationCompatibility": "explicit-legacy-product-local-runtime-only"
+          "catalogPolicy": "no-dedicated-gateway-catalog"
         },
         "requiredBaseUrlEnv": "VITE_SDKWORK_APPBASE_APP_API_BASE_URL",
         "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
-        "legacyFallbackBaseUrlEnv": "VITE_CLAWROUTER_APP_API_BASE_URL",
-        "legacyPublicBaseUrlEnv": "PORTAL_PUBLIC_APP_API_BASE_URL",
-        "legacyRustRouteContractCrate": {
-          "package": "sdkwork_iam_http",
-          "path": "../sdkwork-appbase/packages/native-rust/iam/sdkwork-iam-http-rust",
-          "routeMetadataExports": [
-            "app_routes"
-          ],
-          "executableRouterExport": null
-        },
-        "legacyHandlerAdapterExports": [
-          {
-            "package": "sdkwork_claw_product::api",
-            "exports": [
-              "app_sessions_router_with_store",
-              "app_sessions_router_with_store_and_verification_sender",
-              "app_user_profile_router",
-              "app_user_profile_router_with_read_store",
-              "app_iam_directory_router",
-              "app_iam_directory_router_with_read_store"
-            ]
-          }
-        ],
         "mountCoverage": {
           "status": "not-mounted",
           "evidence": [
             "Default Claw Router app runtime treats appbase app API as a dependency surface served by sdkwork-api-gateway through PORTAL_PUBLIC_SDK_BASE_URL.",
-            "services/sdkwork-claw-app-api/tests/contract_routes.rs verifies the default app router does not locally mount appbase IAM app routes.",
-            "Legacy product-local handler adapters are retained only as explicit migration compatibility and are not the shared-gateway default."
+            "services/sdkwork-claw-app/tests/contract_routes.rs verifies the default app router does not locally mount appbase IAM app routes."
           ]
         }
       }
@@ -79,8 +54,7 @@
           "mode": "shared-gateway",
           "gatewayApplication": "sdkwork-api-gateway",
           "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
-          "catalogPolicy": "no-dedicated-gateway-catalog",
-          "migrationCompatibility": "explicit-legacy-product-local-runtime-only"
+          "catalogPolicy": "no-dedicated-gateway-catalog"
         },
         "requiredBaseUrlEnv": "VITE_SDKWORK_COMMERCE_APP_API_BASE_URL",
         "publicBaseUrlEnv": "PORTAL_PUBLIC_COMMERCE_APP_API_BASE_URL",
@@ -91,7 +65,7 @@
             "Commerce app API routes are owned by sdkwork-commerce and consumed through sdkwork-commerce-app-sdk.",
             "Claw Router portal bootstrap derives VITE_SDKWORK_COMMERCE_APP_API_BASE_URL from PORTAL_PUBLIC_SDK_BASE_URL + /app/v3/api when no Commerce-specific override is configured.",
             "Claw Router app runtime uses product-local contract fallback filtering so Commerce dependency app routes return 404 by default instead of local 501 contract stubs.",
-            "cargo test -p sdkwork-claw-app-api --test contract_routes default_router_does_not_mount_commerce_foundation_routes_locally verifies default app runtime does not locally serve Commerce foundation routes.",
+            "cargo test -p sdkwork-claw-app --test contract_routes default_router_does_not_mount_commerce_foundation_routes_locally verifies default app runtime does not locally serve Commerce foundation routes.",
             "No Claw Router runtime mount coverage is declared for Commerce app API handlers."
           ]
         }
@@ -173,46 +147,15 @@
           "mode": "shared-gateway",
           "gatewayApplication": "sdkwork-api-gateway",
           "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
-          "catalogPolicy": "no-dedicated-gateway-catalog",
-          "migrationCompatibility": "explicit-legacy-product-local-runtime-only"
+          "catalogPolicy": "no-dedicated-gateway-catalog"
         },
         "requiredBaseUrlEnv": "VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL",
         "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
-        "legacyFallbackBaseUrlEnv": "VITE_CLAWROUTER_BACKEND_API_BASE_URL",
-        "legacyPublicBaseUrlEnv": "PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL",
-        "legacyRustRouteContractCrate": {
-          "package": "sdkwork_iam_http",
-          "path": "../sdkwork-appbase/packages/native-rust/iam/sdkwork-iam-http-rust",
-          "routeMetadataExports": [
-            "backend_routes"
-          ],
-          "executableRouterExport": null
-        },
-        "legacyHandlerAdapterExports": [
-          {
-            "package": "sdkwork_claw_product::api",
-            "exports": [
-              "admin_appbase_backend_iam_directory_router_with_read_store",
-              "admin_appbase_backend_iam_oauth_router_with_read_store",
-              "AdminAppbaseBackendIamSqlReadStore",
-              "admin_user_router_with_store"
-            ]
-          }
-        ],
         "mountCoverage": {
           "status": "not-mounted",
-          "legacyOperationGroupCoverage": {
-            "explicitCompatibilityOnly": [
-              "iam.directory",
-              "iam.users",
-              "iam.apiKeys",
-              "iam.oauth"
-            ]
-          },
           "evidence": [
             "Default Claw Router backend runtime treats appbase backend IAM API as a dependency surface served by sdkwork-api-gateway through PORTAL_PUBLIC_SDK_BASE_URL.",
-            "services/sdkwork-claw-admin-api/tests/contract_routes.rs verifies the default admin router does not locally mount appbase backend IAM routes.",
-            "Legacy SQL-backed appbase backend IAM adapters are retained only as explicit migration compatibility and are not the shared-gateway default."
+            "services/sdkwork-claw-admin/tests/contract_routes.rs verifies the default admin router does not locally mount appbase backend IAM routes."
           ]
         }
       }
@@ -231,8 +174,7 @@
           "mode": "shared-gateway",
           "gatewayApplication": "sdkwork-api-gateway",
           "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
-          "catalogPolicy": "no-dedicated-gateway-catalog",
-          "migrationCompatibility": "explicit-legacy-product-local-runtime-only"
+          "catalogPolicy": "no-dedicated-gateway-catalog"
         },
         "requiredBaseUrlEnv": "VITE_SDKWORK_COMMERCE_BACKEND_API_BASE_URL",
         "publicBaseUrlEnv": "PORTAL_PUBLIC_COMMERCE_BACKEND_API_BASE_URL",
@@ -243,7 +185,7 @@
             "Commerce backend API routes are owned by sdkwork-commerce and consumed through sdkwork-commerce-backend-sdk plus @sdkwork/commerce-service.",
             "Claw Router portal bootstrap derives VITE_SDKWORK_COMMERCE_BACKEND_API_BASE_URL from PORTAL_PUBLIC_SDK_BASE_URL + /backend/v3/api when no Commerce-specific override is configured.",
             "Claw Router admin runtime uses product-local contract fallback filtering so Commerce dependency backend routes return 404 by default instead of local 501 contract stubs.",
-            "cargo test -p sdkwork-claw-admin-api --test contract_routes default_router_does_not_mount_commerce_backend_routes_locally verifies default admin runtime does not locally serve Commerce backend routes.",
+            "cargo test -p sdkwork-claw-admin --test contract_routes default_router_does_not_mount_commerce_backend_routes_locally verifies default admin runtime does not locally serve Commerce backend routes.",
             "No Claw Router runtime mount coverage is declared for Commerce backend API handlers."
           ]
         }

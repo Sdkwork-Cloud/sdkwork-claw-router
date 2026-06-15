@@ -12,4 +12,4 @@ export {
   readProductRecords,
   readProductString,
   renderProductPageWindow,
-} from "sdkwork-commerce-pc-admin-product";
+} from "@sdkwork/commerce-pc-admin-product";

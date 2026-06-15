@@ -516,7 +516,7 @@ git commit -m "feat(appbase-commerce): align wallet account contracts"
 ## Task 7: Claw-Router Integration Shim
 
 **Files:**
-- Modify: `<workspace-root>/sdkwork-claw-router/services/sdkwork-claw-app-api/src/lib.rs`
+- Modify: `<workspace-root>/sdkwork-claw-router/services/sdkwork-claw-app/src/lib.rs`
 - Modify only if needed: `<workspace-root>/sdkwork-claw-router/services/sdkwork-claw-product/src/api/app_commerce.rs`
 - Test: app-api/router tests or focused cargo checks
 
@@ -529,14 +529,14 @@ Add or update a test that proves `/app/v3/api/billing/wallet/accounts` is served
 Run:
 
 ```powershell
-cargo test -p sdkwork-claw-app-api wallet_accounts_uses_appbase_commerce_store
+cargo test -p sdkwork-claw-app wallet_accounts_uses_appbase_commerce_store
 ```
 
 Expected: fails before integration because route still uses product-local empty implementation.
 
 - [ ] **Step 3: Mount appbase account/wallet router before product fallback**
 
-In `sdkwork-claw-app-api`, when SQLite/Postgres pool is available:
+In `sdkwork-claw-app`, when SQLite/Postgres pool is available:
 
 - construct `SqliteCommerceAccountStore` or `PostgresCommerceAccountStore`
 - merge appbase account/wallet router
@@ -550,8 +550,8 @@ Do not remove product-local code in this task unless all its covered operations 
 Run:
 
 ```powershell
-cargo check -p sdkwork-claw-app-api
-cargo test -p sdkwork-claw-app-api wallet_accounts_uses_appbase_commerce_store
+cargo check -p sdkwork-claw-app
+cargo test -p sdkwork-claw-app wallet_accounts_uses_appbase_commerce_store
 python -B -m tools.frontend_operation_audit --check
 python -B -m tools.appbase_capability_guardian --root .
 ```
@@ -561,7 +561,7 @@ Expected: checks pass. If unrelated existing test failures appear, record them w
 - [ ] **Step 5: Commit**
 
 ```powershell
-git add services\sdkwork-claw-app-api ..\sdkwork-appbase\packages\native-rust\commerce
+git add services\sdkwork-claw-app ..\sdkwork-appbase\packages\native-rust\commerce
 git commit -m "feat(claw-router): mount appbase wallet account router"
 ```
 
@@ -599,7 +599,7 @@ cargo test --manifest-path ..\sdkwork-appbase\packages\native-rust\commerce\sdkw
 cargo test --manifest-path ..\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-storage-sqlx-rust\Cargo.toml
 cargo test --manifest-path ..\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-runtime-rust\Cargo.toml
 cargo test --manifest-path ..\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-http-rust\Cargo.toml
-cargo check -p sdkwork-claw-app-api
+cargo check -p sdkwork-claw-app
 python -B -m tools.frontend_operation_audit --check
 python -B -m tools.appbase_capability_guardian --root .
 ```

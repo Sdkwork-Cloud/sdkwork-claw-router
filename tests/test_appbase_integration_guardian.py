@@ -112,6 +112,33 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
             encoding="utf-8",
         )
 
+    def write_sibling_appbase_catalog(self, workspace_root: Path) -> None:
+        catalog = workspace_root / "sdkwork-appbase" / "specs" / "appbase-capabilities.yaml"
+        catalog.parent.mkdir(parents=True, exist_ok=True)
+        catalog.write_text(
+            textwrap.dedent(
+                """
+                schemaVersion: 1
+                kind: sdkwork.appbase.capability.catalog
+                capabilities:
+                  - id: commerce
+                    domain: commerce
+                    status: standard
+                    maturity: L3
+                    targetMaturity: L3
+                    priority: P0
+                    owner: sdkwork-appbase
+                    requiredLayers: []
+                    qualityGates: []
+                    integration:
+                      productForksForbidden: true
+                      sdkBoundary: generated-sdk-through-ports
+                """
+            ).strip()
+            + "\n",
+            encoding="utf-8",
+        )
+
     def write_integration_manifest(self, root: Path, content: str) -> None:
         manifest = root / "specs" / "appbase-integration.yaml"
         manifest.parent.mkdir(parents=True, exist_ok=True)
@@ -156,13 +183,13 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
             rust:
               crates:
                 - name: sdkwork_commerce_http
-                  manifest: services/sdkwork-claw-app-api/Cargo.toml
+                  manifest: services/sdkwork-claw-app/Cargo.toml
                 - name: sdkwork_commerce_membership_sqlx
-                  manifest: services/sdkwork-claw-app-api/Cargo.toml
+                  manifest: services/sdkwork-claw-app/Cargo.toml
                 - name: sdkwork_commerce_membership_sqlx
-                  manifest: services/sdkwork-claw-admin-api/Cargo.toml
+                  manifest: services/sdkwork-claw-admin/Cargo.toml
             contractTests:
-              - services/sdkwork-claw-app-api/tests/contract_routes.rs
+              - services/sdkwork-claw-app/tests/contract_routes.rs
             verification:
               - python -B -m unittest tests.test_commerce_standard
             forbiddenProductForks:
@@ -211,7 +238,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
             self.write_runtime_adapter(root, adapter)
         self.write_cargo(
             root,
-            "services/sdkwork-claw-app-api/Cargo.toml",
+            "services/sdkwork-claw-app/Cargo.toml",
             """
             [dependencies]
             sdkwork_commerce_http = { path = "../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-http-rust" }
@@ -220,13 +247,13 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
         )
         self.write_cargo(
             root,
-            "services/sdkwork-claw-admin-api/Cargo.toml",
+            "services/sdkwork-claw-admin/Cargo.toml",
             """
             [dependencies]
             sdkwork_commerce_membership_sqlx = { path = "../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-membership-sqlx-rust" }
             """,
         )
-        self.write_runtime_adapter(root, "services/sdkwork-claw-app-api/tests/contract_routes.rs")
+        self.write_runtime_adapter(root, "services/sdkwork-claw-app/tests/contract_routes.rs")
         self.write_runtime_adapter(root, "tests/test_commerce_standard.py")
 
     def write_frontend_contract_index(self, root: Path, content: str) -> Path:
@@ -254,6 +281,43 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             self.write_valid_files(root)
+
+            result = AppbaseIntegrationGuardian(root=root).run()
+
+            self.assertTrue(result.ok, result.messages)
+
+    def test_accepts_sibling_appbase_catalog_without_materialized_dependency_copy(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            workspace_root = Path(tmp)
+            root = workspace_root / "sdkwork-claw-router"
+            root.mkdir()
+            self.write_sibling_appbase_catalog(workspace_root)
+            self.write_integration_manifest(root, self.valid_integration_manifest())
+            self.write_portal_package(
+                root,
+                {dependency: "workspace:*" for dependency in COMMERCE_FRONTEND_DEPENDENCIES},
+            )
+            for adapter in COMMERCE_FRONTEND_SERVICE_ADAPTERS:
+                self.write_runtime_adapter(root, adapter)
+            self.write_cargo(
+                root,
+                "services/sdkwork-claw-app/Cargo.toml",
+                """
+                [dependencies]
+                sdkwork_commerce_http = { workspace = true }
+                sdkwork_commerce_membership_sqlx = { workspace = true }
+                """,
+            )
+            self.write_cargo(
+                root,
+                "services/sdkwork-claw-admin/Cargo.toml",
+                """
+                [dependencies]
+                sdkwork_commerce_membership_sqlx = { workspace = true }
+                """,
+            )
+            self.write_runtime_adapter(root, "services/sdkwork-claw-app/tests/contract_routes.rs")
+            self.write_runtime_adapter(root, "tests/test_commerce_standard.py")
 
             result = AppbaseIntegrationGuardian(root=root).run()
 
@@ -418,7 +482,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
                       adapters: []
                       sdkInjectionAdapters: []
                     contractTests:
-                      - services/sdkwork-claw-app-api/tests/contract_routes.rs
+                      - services/sdkwork-claw-app/tests/contract_routes.rs
                     verification:
                       - python -B -m unittest tests.test_commerce_standard
                     forbiddenProductForks: []

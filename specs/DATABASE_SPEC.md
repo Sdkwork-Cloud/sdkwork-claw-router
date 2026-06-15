@@ -461,7 +461,7 @@ ID 策略是跨语言、跨数据库、跨区域同步和互通的基础设施�
 规则：
 
 - ID 生成器 MUST 明确节点 ID、时钟回拨、序列溢出、重启恢复和监控策略。
-- 运行时业务数据 INSERT 的 `BIGINT id` MUST 由统一 ID 生成器显式生成并绑定写入；Rust 实现 MUST 优先复用 `../../sdkwork-appbase/packages/native-rust/foundation/sdkwork-id-rust` 中的 `sdkwork_id::SnowflakeIdGenerator`，其他语言实现应在 appbase 对应包中提供等价能力。
+- 运行时业务数据 INSERT 的 `BIGINT id` MUST 由统一 ID 生成器显式生成并绑定写入；Rust 实现 MUST 优先复用 `../../sdkwork-appbase/crates/sdkwork-platform-id-service` 中的 `sdkwork_platform_id_service::SnowflakeIdGenerator`，其他语言实现应在 appbase 对应包中提供等价能力。
 - 运行时业务数据 INSERT SHOULD NOT 依赖 `BIGSERIAL`、`AUTOINCREMENT`、单条数据库 `RETURNING id`、`MAX(id)+1` 或本地哈希派生 ID 作为主键分配策略；历史表、临时测试表、外部导入落地表和已声明迁移中的兼容表除外。
 - 官方安装种子、内置目录、标准配置和需要被 `target_id` 稳定引用的数据 MUST 使用保留稳定 ID 或稳定 UUID，不得改用运行时雪花 ID，否则会破坏安装幂等、引用修复和跨版本升级。
 - 雪花 ID 或时间有序 ID 在多区域部署时 MUST 处理 clock rollback，不能假设机器时钟永远单调。

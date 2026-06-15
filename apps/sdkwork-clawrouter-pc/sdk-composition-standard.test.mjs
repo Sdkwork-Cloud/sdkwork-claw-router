@@ -245,4 +245,6 @@ test('commons package does not depend on low-level appbase IAM SDK adapters', ()
   assert.equal(commonsPackageJson.dependencies['@sdkwork/auth-runtime-pc-react'], 'workspace:*');
   assert.equal(commonsPackageJson.dependencies['@sdkwork/iam-sdk-adapter'], undefined);
   assert.doesNotMatch(typecheckShimsSource, /declare module '@sdkwork\/iam-sdk-adapter'/);
+  assert.doesNotMatch(typecheckShimsSource, /appbaseBackendApiBaseUrl/);
+  assert.doesNotMatch(typecheckShimsSource, /createAppbaseBackendClient/);
 });

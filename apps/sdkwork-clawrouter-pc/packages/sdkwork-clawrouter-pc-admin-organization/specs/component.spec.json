@@ -102,11 +102,9 @@
         "providedBy": "sdkwork-clawrouter-pc-commons/runtime",
         "dependencyApiSurface": "sdkwork-appbase-app-sdk",
         "runtimeIntegration": {
-          "mode": "same-origin-mounted",
-          "sameOriginAllowed": true,
-          "baseUrlEnv": "VITE_SDKWORK_APPBASE_APP_API_BASE_URL",
-          "fallbackBaseUrlEnv": "VITE_CLAWROUTER_APP_API_BASE_URL",
-          "publicBaseUrlEnv": "PORTAL_PUBLIC_APP_API_BASE_URL",
+          "mode": "external-service",
+          "sameOriginAllowed": false,
+          "requiredBaseUrlEnv": "VITE_SDKWORK_APPBASE_APP_API_BASE_URL",
           "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL"
         }
       },
@@ -118,11 +116,9 @@
         "providedBy": "sdkwork-clawrouter-pc-commons/runtime",
         "dependencyApiSurface": "sdkwork-appbase-backend-sdk",
         "runtimeIntegration": {
-          "mode": "same-origin-mounted",
-          "sameOriginAllowed": true,
-          "baseUrlEnv": "VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL",
-          "fallbackBaseUrlEnv": "VITE_CLAWROUTER_BACKEND_API_BASE_URL",
-          "publicBaseUrlEnv": "PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL",
+          "mode": "external-service",
+          "sameOriginAllowed": false,
+          "requiredBaseUrlEnv": "VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL",
           "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL"
         }
       }

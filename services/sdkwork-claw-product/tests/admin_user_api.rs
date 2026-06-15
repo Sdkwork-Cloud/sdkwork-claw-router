@@ -52,7 +52,7 @@ async fn admin_user_route_lists_users_and_api_keys_by_user() {
 }
 
 #[tokio::test]
-async fn admin_user_route_serves_appbase_backend_iam_users_from_store() {
+async fn admin_user_route_does_not_serve_appbase_backend_iam_dependency_operations() {
     let store = Arc::new(TestAdminUserStore::default());
     let router = sdkwork_claw_product::api::admin_user_router_with_store(
         store.clone(),
@@ -60,64 +60,58 @@ async fn admin_user_route_serves_appbase_backend_iam_users_from_store() {
         Arc::new(TestSecretGenerator),
     );
 
-    let users_response = router
-        .clone()
-        .oneshot(signed_request("GET", "/backend/v3/api/iam/users", ""))
-        .await
-        .unwrap();
-    assert_eq!(StatusCode::OK, users_response.status());
-    let users_payload = json_payload(users_response).await;
-    assert_eq!("2000", users_payload["code"]);
-    assert_eq!(30, users_payload["data"]["items"][0]["id"]);
-    assert_eq!(
-        "owner@example.com",
-        users_payload["data"]["items"][0]["email"]
-    );
-    assert_ne!(
-        "local-admin@sdkwork-iam.local",
-        users_payload["data"]["items"][0]["email"]
+    for (method, path) in [
+        ("GET", "/backend/v3/api/iam/users"),
+        ("POST", "/backend/v3/api/iam/users"),
+        ("PATCH", "/backend/v3/api/iam/users/30"),
+        ("GET", "/backend/v3/api/iam/api_keys"),
+    ] {
+        let response = router
+            .clone()
+            .oneshot(signed_request(method, path, "{}"))
+            .await
+            .unwrap();
+
+        assert_ne!(StatusCode::OK, response.status(), "{method} {path}");
+    }
+
+    assert!(store.commands.lock().unwrap().is_empty());
+}
+
+#[tokio::test]
+async fn admin_user_route_keeps_product_owned_backend_iam_api_key_commands() {
+    let store = Arc::new(TestAdminUserStore::default());
+    let router = sdkwork_claw_product::api::admin_user_router_with_store(
+        store.clone(),
+        Arc::new(TestHasher),
+        Arc::new(TestSecretGenerator),
     );
 
-    let api_keys_response = router
-        .clone()
-        .oneshot(signed_request("GET", "/backend/v3/api/iam/api_keys", ""))
-        .await
-        .unwrap();
-    assert_eq!(StatusCode::OK, api_keys_response.status());
-    let api_keys_payload = json_payload(api_keys_response).await;
-    assert_eq!("Production", api_keys_payload["data"]["30"][0]["name"]);
-
-    let create_user_response = router
+    let create_key_response = router
         .clone()
         .oneshot(signed_request(
             "POST",
-            "/backend/v3/api/iam/users",
-            r#"{"email":"new@example.com","username":"new-user","balance":"$10.00"}"#,
+            "/backend/v3/api/iam/api_keys",
+            r#"{"userId":30,"name":"Console Key"}"#,
         ))
         .await
         .unwrap();
-    assert_eq!(StatusCode::OK, create_user_response.status());
-    let create_user_payload = json_payload(create_user_response).await;
-    assert_eq!(
-        "new@example.com",
-        create_user_payload["data"]["item"]["email"]
-    );
+    assert_eq!(StatusCode::OK, create_key_response.status());
+    let create_key_payload = json_payload(create_key_response).await;
+    assert_eq!("sk-claw-test-secret", create_key_payload["data"]["rawKey"]);
 
-    let update_user_response = router
+    let delete_key_response = router
         .oneshot(signed_request(
-            "PATCH",
-            "/backend/v3/api/iam/users/30",
-            r#"{"username":"renamed","group":"vip"}"#,
+            "DELETE",
+            "/backend/v3/api/iam/api_keys/100",
+            "",
         ))
         .await
         .unwrap();
-    assert_eq!(StatusCode::OK, update_user_response.status());
-    let update_user_payload = json_payload(update_user_response).await;
-    assert_eq!("renamed", update_user_payload["data"]["item"]["username"]);
-    assert_eq!("vip", update_user_payload["data"]["item"]["group"]);
+    assert_eq!(StatusCode::OK, delete_key_response.status());
 
     assert_eq!(
-        vec!["create_user", "update_user"],
+        vec!["create_api_key", "delete_api_key"],
         *store.commands.lock().unwrap()
     );
 }
@@ -133,8 +127,8 @@ async fn admin_user_route_normalizes_user_list_query_at_request_boundary() {
 
     let response = router
         .oneshot(signed_request(
-            "GET",
-            "/backend/v3/api/iam/users?page_size=20&q=%20owner%20",
+            "POST",
+            "/backend/v3/api/user/list?page_size=20&q=%20owner%20",
             "",
         ))
         .await

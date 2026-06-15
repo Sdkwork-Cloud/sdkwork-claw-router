@@ -81,7 +81,7 @@ All notable changes to `sdkwork-claw-router` release records will be documented 
 ### Verification
 
 - `cargo fmt --all`
-- `cargo test -p sdkwork-claw-app-api --test app_session_route -- --nocapture`
+- `cargo test -p sdkwork-claw-app --test app_session_route -- --nocapture`
 - `cargo test -p sdkwork-claw-product --test app_auth_api -- --nocapture`
 - `cargo test -p sdkwork-claw-installer --test installer_cli installer_cli_reports_invalid_env_catalog_root_as_machine_readable_config_error -- --nocapture`
 - `node scripts/plan-claw-router-install-packages.mjs --check`

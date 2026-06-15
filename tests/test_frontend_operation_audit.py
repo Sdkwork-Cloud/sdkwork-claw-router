@@ -1069,6 +1069,49 @@ class FrontendOperationAuditTest(unittest.TestCase):
 
             self.assertTrue(result.ok, result.messages)
 
+    def test_accepts_appbase_app_oauth_authorization_url_create_without_product_write_tables(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_file(
+                root,
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/oauthService.ts",
+                """
+                import { getSdkworkAppbaseAppSdkClient } from 'sdkwork-clawrouter-pc-commons/sdk-clients';
+
+                export async function createAuthorizationUrl(): Promise<unknown> {
+                  return getSdkworkAppbaseAppSdkClient().oauth.authorizationUrls.create({
+                    provider: 'github',
+                    redirectUri: 'https://app.example/callback',
+                    state: 'state-1',
+                  });
+                }
+                """,
+            )
+            self.write_contract(
+                root,
+                """
+                routes:
+                  - route: /auth/oauth/callback/:provider
+                    required_tables: [iam_oauth_provider_config]
+                frontend_operations:
+                  - route: /auth/oauth/callback/:provider
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/oauthService.ts
+                    operation: createAuthorizationUrl
+                    operation_id: oauth.authorizationUrls.create
+                    kind: create
+                    api_surface: app
+                    api_method: POST
+                    api_path: /app/v3/api/oauth/authorization_urls
+                    sdk_domain: iam
+                    read_sources: [iam_oauth_provider_config]
+                    write_tables: []
+                """,
+            )
+
+            result = FrontendOperationAudit(root=root).validate()
+
+            self.assertTrue(result.ok, result.messages)
+
     def test_accepts_appbase_backend_oauth_sdk_client_as_dependency_boundary(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

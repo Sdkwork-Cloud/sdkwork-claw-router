@@ -2,6 +2,7 @@ import os
 import unittest
 from pathlib import Path
 
+from tools.frontend_contract_loader import load_frontend_field_contract
 from tools.schema_registry_loader import render_schema_registry
 
 
@@ -18,14 +19,14 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("app_api_key_router_with_api_key_hasher", source)
 
     def test_app_api_service_exposes_creation_only_with_command_store_and_hasher(self) -> None:
-        service = ROOT / "services" / "sdkwork-claw-app-api" / "src" / "lib.rs"
+        service = ROOT / "crates" / "sdkwork-router-app-api" / "src" / "routes.rs"
         source = service.read_text(encoding="utf-8")
 
         self.assertNotIn("router_with_product_catalog_and_api_key_security_config", source)
         self.assertNotIn("router_with_product_catalog_api_key_hasher_and_database_status", source)
-        self.assertIn("router_with_api_key_management_store_and_database_status", source)
-        self.assertIn("api_key_hasher,", source)
-        self.assertIn("command_store,", source)
+        self.assertIn("app_routing_channel_command_store", source)
+        self.assertIn("SqliteAppRoutingChannelCommandStore::new", source)
+        self.assertIn("PostgresAppRoutingChannelCommandStore::new", source)
 
     def test_app_api_key_creation_uses_refreshable_read_store_not_overlay(self) -> None:
         api_key_route = ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_api_keys.rs"
@@ -38,15 +39,16 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         self.assertIn("app_api_key_router_with_read_store_and_command_store", source)
 
     def test_database_api_key_routes_reload_sql_read_model(self) -> None:
-        service = ROOT / "services" / "sdkwork-claw-app-api" / "src" / "lib.rs"
+        service = ROOT / "crates" / "sdkwork-router-app-api" / "src" / "routes.rs"
         source = service.read_text(encoding="utf-8")
 
-        self.assertIn("router_with_api_key_management_store_and_database_status", source)
         self.assertIn("api_key_secret_codec_from_config(&api_key_security_config)", source)
         self.assertIn("SqlitePricingCatalogLoader::with_api_key_secret_codec", source)
         self.assertIn("PostgresPricingCatalogLoader::with_api_key_secret_codec", source)
-        self.assertIn("SqliteGatewayApiKeyCommandStore::new(", source)
-        self.assertIn("PostgresGatewayApiKeyCommandStore::new(", source)
+        self.assertIn("SqliteAppRoutingReadStore::with_api_key_secret_codec", source)
+        self.assertIn("PostgresAppRoutingReadStore::with_api_key_secret_codec", source)
+        self.assertIn("SqliteAppRoutingChannelCommandStore::with_provider_health_probe", source)
+        self.assertIn("PostgresAppRoutingChannelCommandStore::with_provider_health_probe", source)
         self.assertIn("api_key_secret_codec.clone()", source)
         self.assertNotIn("router_with_product_catalog_api_key_command_store_and_database_status", source)
 
@@ -80,6 +82,10 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         contract = (
             ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
         ).read_text(encoding="utf-8")
+        contract_payload = load_frontend_field_contract(
+            ROOT,
+            ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml",
+        )
         openapi = (
             ROOT / "generated" / "openapi" / "clawrouter-app-openapi.json"
         ).read_text(encoding="utf-8")
@@ -393,14 +399,15 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         contract = (
             ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
         ).read_text(encoding="utf-8")
+        contract_payload = load_frontend_field_contract(
+            ROOT,
+            ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml",
+        )
         api_key_route = (
             ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_api_keys.rs"
         ).read_text(encoding="utf-8")
-        route_test = (
-            ROOT / "services" / "sdkwork-claw-app-api" / "tests" / "api_key_route.rs"
-        ).read_text(encoding="utf-8")
         database_route_test = (
-            ROOT / "services" / "sdkwork-claw-app-api" / "tests" / "database_config_router.rs"
+            ROOT / "services" / "sdkwork-claw-app" / "tests" / "database_config_router.rs"
         ).read_text(encoding="utf-8")
         service = (
             ROOT
@@ -439,10 +446,14 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
 
         self.assertIn("copyableKey:", contract)
-        console_api_key_model = contract.split(
-            "source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-api-keys/src/apiKeyService.ts\n  interface: ApiKey",
-            1,
-        )[1].split("- route:", 1)[0]
+        console_api_key_model = next(
+            model
+            for model in contract_payload["frontend_models"]
+            if model.get("source")
+            == "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-api-keys/src/apiKeyService.ts"
+            and model.get("interface") == "ApiKey"
+        )
+        console_api_key_fields = console_api_key_model["fields"]
         for field in [
             "id",
             "name",
@@ -460,7 +471,7 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
             "status",
             "defaultForRuntime",
         ]:
-            self.assertIn(f"- {field}", console_api_key_model)
+            self.assertIn(field, console_api_key_fields)
         self.assertNotIn("fields: [id, name, keyVal, fullKey", contract)
         self.assertIn(
             "description: Full raw API key secret returned by create responses. Authenticated owner management list and update responses also expose this value as item.copyableKey for console copy actions.",
@@ -477,16 +488,11 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("key_val: masked_key", api_key_route)
         self.assertNotIn("full_key: masked_key", api_key_route)
 
-        self.assertIn('item["maskedKey"]', route_test)
-        self.assertIn('item.get("keyVal").is_none()', route_test)
-        self.assertIn('item.get("fullKey").is_none()', route_test)
-        self.assertIn('payload["data"]["item"]["maskedKey"]', route_test)
-        self.assertIn('payload["data"]["item"].get("keyVal").is_none()', route_test)
-        self.assertIn('payload["data"]["item"].get("fullKey").is_none()', route_test)
-        self.assertIn('items[0]["maskedKey"]', database_route_test)
-        self.assertIn('items[0]["copyableKey"]', database_route_test)
-        self.assertIn('items[0].get("keyVal").is_none()', database_route_test)
-        self.assertIn('items[0].get("fullKey").is_none()', database_route_test)
+        self.assertIn('keys_payload["data"]["items"][0]["name"]', database_route_test)
+        self.assertIn('keys_payload["data"]["items"][0]["copyableKey"]', database_route_test)
+        self.assertNotIn('keys_payload["data"]["items"][0]["apiKey"]', database_route_test)
+        self.assertNotIn('keys_payload["data"]["items"][0]["keyVal"]', database_route_test)
+        self.assertNotIn('keys_payload["data"]["items"][0]["fullKey"]', database_route_test)
 
         self.assertIn("maskedKey: string", service)
         self.assertIn("copyableKey: string | null", service)
@@ -755,9 +761,9 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         )
 
     def test_app_api_key_creation_uses_signed_trusted_subject_boundary(self) -> None:
-        service = ROOT / "services" / "sdkwork-claw-app-api" / "src" / "lib.rs"
+        service = ROOT / "crates" / "sdkwork-router-app-api" / "src" / "routes.rs"
         service_source = service.read_text(encoding="utf-8")
-        route_test = ROOT / "services" / "sdkwork-claw-app-api" / "tests" / "api_key_route.rs"
+        route_test = ROOT / "services" / "sdkwork-claw-app" / "tests" / "database_config_router.rs"
         route_test_source = route_test.read_text(encoding="utf-8")
         http_auth = ROOT / "crates" / "sdkwork-claw-http" / "src" / "auth.rs"
         http_auth_source = http_auth.read_text(encoding="utf-8")
@@ -772,8 +778,8 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         self.assertIn("trusted_request_subject_boundary", http_auth_source)
         self.assertIn("sign_trusted_request_subject", http_auth_source)
         self.assertIn("attach_trusted_request_subject", http_auth_source)
-        self.assertIn("signed_subject_headers", route_test_source)
-        self.assertIn("app_api_key_create_rejects_direct_trusted_subject_headers", route_test_source)
+        self.assertIn("session_authorization_header", route_test_source)
+        self.assertIn("database_config_app_api_keys_are_not_mounted_locally", route_test_source)
         self.assertNotIn('header("x-sdkwork-tenant-id", "10")', route_test_source)
         self.assertNotIn("x-sdkwork-tenant-id header is required", route_test_source)
 
@@ -782,9 +788,9 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         config_source = config_lib.read_text(encoding="utf-8")
         http_auth = ROOT / "crates" / "sdkwork-claw-http" / "src" / "auth.rs"
         http_auth_source = http_auth.read_text(encoding="utf-8")
-        service = ROOT / "services" / "sdkwork-claw-app-api" / "src" / "lib.rs"
+        service = ROOT / "crates" / "sdkwork-router-app-api" / "src" / "routes.rs"
         service_source = service.read_text(encoding="utf-8")
-        route_test = ROOT / "services" / "sdkwork-claw-app-api" / "tests" / "api_key_route.rs"
+        route_test = ROOT / "services" / "sdkwork-claw-app" / "tests" / "database_config_router.rs"
         route_test_source = route_test.read_text(encoding="utf-8")
         sdk_clients = (
             ROOT
@@ -808,9 +814,9 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         self.assertIn("AppSessionConfig", service_source)
         self.assertIn("app_request_subject_boundary", service_source)
         self.assertIn("session_authorization_header", route_test_source)
-        self.assertIn("app_api_key_create_accepts_app_session_token_subject", route_test_source)
-        self.assertIn("app session bearer token is required", route_test_source)
-        self.assertIn('assert!(!body_text.contains(INTERNAL_TENANT_HEADER));', route_test_source)
+        self.assertIn("database_config_app_iam_directory_requires_session_and_lists_subject_directory", route_test_source)
+        self.assertIn("database_config_password_login_issues_app_session_and_records_password_provider_event", route_test_source)
+        self.assertIn('assert!(!body_text.contains("Other User"));', route_test_source)
         self.assertIn("verify_dual_app_session_headers(headers", http_auth_source)
         self.assertNotIn(
             "if !has_dual_app_session_token_headers(headers) {\n        return Ok(());\n    }",

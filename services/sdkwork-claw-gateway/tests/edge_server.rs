@@ -688,6 +688,14 @@ async fn edge_server_can_dispatch_to_in_process_upstreams() {
                     "surface": "gateway",
                 }))
             }),
+        )
+        .route(
+            "/app/v3/api/auth/login",
+            axum::routing::get(|| async {
+                Json(json!({
+                    "surface": "embedded-gateway",
+                }))
+            }),
         );
     let backend_router = Router::new()
         .route(
@@ -724,6 +732,14 @@ async fn edge_server_can_dispatch_to_in_process_upstreams() {
                     "surface": "app",
                 }))
             }),
+        )
+        .route(
+            "/app/v3/api/auth/login",
+            axum::routing::get(|| async {
+                Json(json!({
+                    "surface": "app",
+                }))
+            }),
         );
     let router = sdkwork_claw_gateway::edge_server_router_with_in_process_upstreams(
         sdkwork_claw_gateway::EdgeServerConfig::try_new(
@@ -750,6 +766,10 @@ async fn edge_server_can_dispatch_to_in_process_upstreams() {
 
     let app = json_request(router.clone(), Method::GET, "/app/v3/api/ai/models", "").await;
     assert_eq!("app", app["surface"]);
+
+    let appbase_auth =
+        json_request(router.clone(), Method::GET, "/app/v3/api/auth/login", "").await;
+    assert_eq!("embedded-gateway", appbase_auth["surface"]);
 
     let ready = json_request(router, Method::GET, "/readyz", "").await;
     assert_eq!("ok", ready["status"]);
@@ -1224,6 +1244,10 @@ async fn edge_server_can_serve_portal_dist_without_node_server() {
             "image-open-api",
             "video-open-api",
             "audio-open-api",
+            "drive-open-api",
+            "knowledgebase-open-api",
+            "memory-open-api",
+            "agent-open-api",
             "payment-open-api",
             "iaas-open-api",
             "paas-open-api",
@@ -1266,42 +1290,74 @@ async fn edge_server_can_serve_portal_dist_without_node_server() {
         schema_tabs[3]["serviceGroups"][0]["code"]
     );
 
-    assert_eq!("Payment Open API", schema_tabs[4]["name"]);
+    assert_eq!("Drive Open API", schema_tabs[4]["name"]);
     assert_eq!(50, schema_tabs[4]["order"]);
+    assert_eq!("drive", schema_tabs[4]["serviceGroups"][0]["code"]);
+    assert!(schema_tabs[4]["serviceGroups"][0]["operations"]
+        .as_array()
+        .unwrap()
+        .contains(&json!("file_upload")));
+
+    assert_eq!("Knowledgebase Open API", schema_tabs[5]["name"]);
+    assert_eq!(60, schema_tabs[5]["order"]);
+    assert_eq!("knowledgebase", schema_tabs[5]["serviceGroups"][0]["code"]);
+    assert!(schema_tabs[5]["serviceGroups"][0]["operations"]
+        .as_array()
+        .unwrap()
+        .contains(&json!("vector_store_search")));
+
+    assert_eq!("Memory Open API", schema_tabs[6]["name"]);
+    assert_eq!(70, schema_tabs[6]["order"]);
+    assert_eq!("memory", schema_tabs[6]["serviceGroups"][0]["code"]);
+    assert!(schema_tabs[6]["serviceGroups"][0]["operations"]
+        .as_array()
+        .unwrap()
+        .contains(&json!("conversation_items")));
+
+    assert_eq!("Agent Open API", schema_tabs[7]["name"]);
+    assert_eq!(80, schema_tabs[7]["order"]);
+    assert_eq!("agent", schema_tabs[7]["serviceGroups"][0]["code"]);
+    assert!(schema_tabs[7]["serviceGroups"][0]["operations"]
+        .as_array()
+        .unwrap()
+        .contains(&json!("assistant_runs")));
+
+    assert_eq!("Payment Open API", schema_tabs[8]["name"]);
+    assert_eq!(90, schema_tabs[8]["order"]);
     assert_eq!(
         "/payments/v3/openapi.json",
-        schema_tabs[4]["defaultSchemaUrl"]
+        schema_tabs[8]["defaultSchemaUrl"]
     );
-    assert!(schema_tabs[4]["aliases"]
+    assert!(schema_tabs[8]["aliases"]
         .as_array()
         .unwrap()
         .contains(&json!("payment-aggregate")));
 
-    assert_eq!("IaaS Open API", schema_tabs[5]["name"]);
-    assert_eq!(60, schema_tabs[5]["order"]);
-    assert_eq!("/cloud/v3/openapi.json", schema_tabs[5]["schemaUrls"][0]);
-    assert!(schema_tabs[5]["aliases"]
+    assert_eq!("IaaS Open API", schema_tabs[9]["name"]);
+    assert_eq!(100, schema_tabs[9]["order"]);
+    assert_eq!("/cloud/v3/openapi.json", schema_tabs[9]["schemaUrls"][0]);
+    assert!(schema_tabs[9]["aliases"]
         .as_array()
         .unwrap()
         .contains(&json!("cloud-services")));
-    assert_eq!("object_storage", schema_tabs[5]["serviceGroups"][0]["code"]);
-    assert!(schema_tabs[5]["serviceGroups"][0]["providerCodes"]
+    assert_eq!("object_storage", schema_tabs[9]["serviceGroups"][0]["code"]);
+    assert!(schema_tabs[9]["serviceGroups"][0]["providerCodes"]
         .as_array()
         .unwrap()
         .contains(&json!("huawei_obs")));
-    assert!(schema_tabs[5]["serviceGroups"][0]["providerCodes"]
+    assert!(schema_tabs[9]["serviceGroups"][0]["providerCodes"]
         .as_array()
         .unwrap()
         .contains(&json!("volcengine_tos")));
-    assert!(schema_tabs[5]["serviceGroups"][0]["operations"]
+    assert!(schema_tabs[9]["serviceGroups"][0]["operations"]
         .as_array()
         .unwrap()
         .contains(&json!("s3_object_batch_delete")));
-    assert!(schema_tabs[5]["serviceGroups"][0]["operations"]
+    assert!(schema_tabs[9]["serviceGroups"][0]["operations"]
         .as_array()
         .unwrap()
         .contains(&json!("s3_server_side_encryption")));
-    let iaas_service_groups = schema_tabs[5]["serviceGroups"].as_array().unwrap();
+    let iaas_service_groups = schema_tabs[9]["serviceGroups"].as_array().unwrap();
     assert!(iaas_service_groups
         .iter()
         .any(|group| group["code"] == "cloud_compute"));
@@ -1312,24 +1368,24 @@ async fn edge_server_can_serve_portal_dist_without_node_server() {
         .iter()
         .any(|group| group["code"] == "deployment_orchestration"));
 
-    assert_eq!("PaaS Open API", schema_tabs[6]["name"]);
-    assert_eq!(70, schema_tabs[6]["order"]);
-    assert_eq!("/paas/v3/openapi.json", schema_tabs[6]["defaultSchemaUrl"]);
-    assert!(schema_tabs[6]["aliases"]
+    assert_eq!("PaaS Open API", schema_tabs[10]["name"]);
+    assert_eq!(110, schema_tabs[10]["order"]);
+    assert_eq!("/paas/v3/openapi.json", schema_tabs[10]["defaultSchemaUrl"]);
+    assert!(schema_tabs[10]["aliases"]
         .as_array()
         .unwrap()
         .contains(&json!("paas-api")));
-    assert_eq!("ocr", schema_tabs[6]["serviceGroups"][0]["code"]);
-    assert!(schema_tabs[6]["serviceGroups"]
+    assert_eq!("ocr", schema_tabs[10]["serviceGroups"][0]["code"]);
+    assert!(schema_tabs[10]["serviceGroups"]
         .as_array()
         .unwrap()
         .iter()
         .any(|group| group["code"] == "content_moderation"));
 
-    assert_eq!("app-api", schema_tabs[7]["id"]);
-    assert_eq!(80, schema_tabs[7]["order"]);
-    assert_eq!("backend-api", schema_tabs[8]["id"]);
-    assert_eq!(90, schema_tabs[8]["order"]);
+    assert_eq!("app-api", schema_tabs[11]["id"]);
+    assert_eq!(120, schema_tabs[11]["order"]);
+    assert_eq!("backend-api", schema_tabs[12]["id"]);
+    assert_eq!(130, schema_tabs[12]["order"]);
     let openapi_payload = json_request(router.clone(), Method::GET, "/openapi.json", "").await;
     assert_eq!("3.0.3", openapi_payload["openapi"]);
     assert_eq!("Claw Router Open API", openapi_payload["info"]["title"]);

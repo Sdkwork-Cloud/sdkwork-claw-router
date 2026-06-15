@@ -210,7 +210,7 @@ function writeLocalStorage(token: StoredAppSessionToken): void {
   try {
     globalThis.localStorage?.setItem(APP_SESSION_STORAGE_KEY, JSON.stringify(token));
   } catch {
-    // Session storage and memory storage remain available for restrictive browser contexts.
+    // Memory storage remains available for restrictive browser contexts.
   }
 }
 

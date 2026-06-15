@@ -2,8 +2,8 @@ schema_registry:
   name: sdkwork-claw-router
   version: 0.1.0
   date: 2026-04-28
-  standard: ../../specs/DATABASE_SPEC.md
-  api_standard: ../../specs/API_SPEC.md
+  standard: ../../../specs/DATABASE_SPEC.md
+  api_standard: ../../../specs/API_SPEC.md
   source_docs:
   - ../18-SkillsHub-AgentSkills-PlusCategory-compatible-design.md
   - ../19-Finance-Trade-Java-compatible-design.md
@@ -19049,7 +19049,7 @@ tables:
         - ai_model
         - ai_model_rank_snapshot
       runtime_contract:
-        scheduler_owner: sdkwork-claw-app-api
+        scheduler_owner: sdkwork-claw-app
         startup_policy:
           run_on_startup_default: true
           env: SDKWORK_CLAW_MODEL_RANKING_RUN_ON_STARTUP

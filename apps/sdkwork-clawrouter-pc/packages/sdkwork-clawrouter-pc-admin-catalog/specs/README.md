@@ -16,7 +16,7 @@ Root SDKWork standards remain authoritative. Local component specs can narrow or
 | Languages | `javascript, typescript` |
 | Status | `ready` |
 
-This package is a Claw Router admin adapter. The Commerce-owned implementation and product-center service facade live in `sdkwork-commerce-pc-admin-product`; this package preserves Claw Router route/package imports, re-exports the Commerce public API, and adds host-side publish-system projections.
+This package is a Claw Router admin adapter. The Commerce-owned implementation and product-center service facade live in `@sdkwork/commerce-pc-admin-product`; this package preserves Claw Router route/package imports, re-exports the Commerce public API, and adds host-side publish-system projections.
 
 ## Contract Manifest
 
@@ -52,7 +52,7 @@ This package is a Claw Router admin adapter. The Commerce-owned implementation a
 ## SDK Clients
 
 - No generated SDK client class is declared at this component boundary.
-- Commerce product center API access is delegated to `sdkwork-commerce-pc-admin-product` and its Commerce service facade.
+- Commerce product center API access is delegated to `@sdkwork/commerce-pc-admin-product` and its Commerce service facade.
 
 ## Publishing System
 

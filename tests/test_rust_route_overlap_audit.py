@@ -39,6 +39,45 @@ class RustRouteOverlapAuditTest(unittest.TestCase):
             result.messages,
         )
 
+    def test_scans_sibling_appbase_crates_layout(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            workspace_root = Path(temp_dir)
+            root = workspace_root / "sdkwork-claw-router"
+            appbase_source_dir = (
+                workspace_root
+                / "sdkwork-appbase"
+                / "crates"
+                / "sdkwork-router-iam-app-api"
+                / "src"
+            )
+            appbase_source_dir.mkdir(parents=True)
+            (appbase_source_dir / "lib.rs").write_text(
+                """
+                use axum::{Router, routing::get};
+
+                pub fn first_router() -> Router {
+                    Router::new().route("/app/v3/api/iam/current_user", get(first_handler))
+                }
+
+                pub fn second_router() -> Router {
+                    Router::new().route("/app/v3/api/iam/current_user", get(second_handler))
+                }
+                """,
+                encoding="utf-8",
+            )
+
+            result = RustRouteOverlapAudit(root).run()
+
+        self.assertFalse(result.ok)
+        self.assertEqual(
+            [
+                "duplicate Rust Axum method route GET /app/v3/api/iam/current_user: "
+                "../sdkwork-appbase/crates/sdkwork-router-iam-app-api/src/lib.rs:5, "
+                "../sdkwork-appbase/crates/sdkwork-router-iam-app-api/src/lib.rs:9"
+            ],
+            result.messages,
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

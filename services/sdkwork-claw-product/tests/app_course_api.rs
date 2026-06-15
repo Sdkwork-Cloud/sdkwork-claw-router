@@ -7,7 +7,8 @@ use std::time::{SystemTime, UNIX_EPOCH};
 use axum::body::Body;
 use axum::http::{header, Request, StatusCode};
 use sdkwork_claw_product::api::{
-    app_course_router_with_store, app_course_router_with_store_and_upload_root,
+    app_course_application_router_with_command_store, app_course_router_with_store,
+    app_course_router_with_store_and_upload_root,
     app_course_router_with_store_upload_root_and_upload_limits, configured_course_upload_limits,
     configured_course_upload_root, CourseUploadLimits,
 };
@@ -135,6 +136,52 @@ async fn app_course_application_route_persists_course_upload_requests() {
         payload["data"]["applicationId"].as_i64().unwrap() > 0,
         "course application response must expose persisted id"
     );
+}
+
+#[tokio::test]
+async fn app_course_application_router_does_not_mount_foundation_read_routes() {
+    let pool = schema_sqlite_pool().await;
+
+    let store = Arc::new(SqliteCourseStore::new(pool));
+    let router = app_course_application_router_with_command_store(store);
+
+    for uri in [
+        "/app/v3/api/courses",
+        "/app/v3/api/courses/categories",
+        "/app/v3/api/courses/overview",
+        "/app/v3/api/courses/c1",
+    ] {
+        let response = router
+            .clone()
+            .oneshot(Request::builder().uri(uri).body(Body::empty()).unwrap())
+            .await
+            .unwrap();
+        assert_eq!(StatusCode::NOT_FOUND, response.status(), "{uri}");
+    }
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/app/v3/api/courses/applications")
+                .header(header::CONTENT_TYPE, "application/json")
+                .body(Body::from(
+                    serde_json::json!({
+                        "title": "Claw Router application-only course",
+                        "category": "ai-coding",
+                        "description": "Product-owned course application route",
+                        "sourceProvider": "bilibili",
+                        "externalBvid": "BV1FAiPBeEZf",
+                        "contactName": "Ada",
+                        "contactEmail": "ada@example.com"
+                    })
+                    .to_string(),
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, response.status());
 }
 
 #[tokio::test]

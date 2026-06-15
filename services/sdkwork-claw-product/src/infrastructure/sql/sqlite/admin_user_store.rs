@@ -351,7 +351,12 @@ async fn list_users(
             COALESCE(NULLIF(m.membership_kind, ''), 'user') AS role_code,
             COALESCE(NULLIF(m.membership_kind, ''), 'standard') AS group_code,
             CAST(COALESCE(a.available_amount, '0') AS TEXT) AS balance,
-            LOWER(COALESCE(NULLIF(u.status, ''), 'inactive')) AS user_status,
+            CASE LOWER(COALESCE(u.status, ''))
+                WHEN 'active' THEN 1
+                WHEN 'banned' THEN 2
+                WHEN 'disabled' THEN 3
+                WHEN 'inactive' THEN 4
+            END AS user_status,
             CAST(COALESCE(le.last_active, u.updated_at, u.created_at, '') AS TEXT) AS last_active,
             CAST(COALESCE(k.last_used_at, '') AS TEXT) AS last_used,
             CAST(COALESCE(u.created_at, '') AS TEXT) AS created_at,
@@ -1142,7 +1147,12 @@ async fn load_user_by_id(
             COALESCE(NULLIF(m.membership_kind, ''), 'user') AS role_code,
             COALESCE(NULLIF(m.membership_kind, ''), 'standard') AS group_code,
             CAST(COALESCE(a.available_amount, '0') AS TEXT) AS balance,
-            LOWER(COALESCE(NULLIF(u.status, ''), 'inactive')) AS user_status,
+            CASE LOWER(COALESCE(u.status, ''))
+                WHEN 'active' THEN 1
+                WHEN 'banned' THEN 2
+                WHEN 'disabled' THEN 3
+                WHEN 'inactive' THEN 4
+            END AS user_status,
             CAST(COALESCE(le.last_active, u.updated_at, u.created_at, '') AS TEXT) AS last_active,
             CAST(COALESCE(k.last_used_at, '') AS TEXT) AS last_used,
             CAST(COALESCE(u.created_at, '') AS TEXT) AS created_at,
@@ -1296,7 +1306,7 @@ fn user_from_row(row: sqlx::sqlite::SqliteRow) -> DomainResult<AdminUserItem> {
         role: role_label(&role_code),
         group,
         balance: balance_label(&balance)?,
-        status: user_status_label(row.try_get("user_status").map_err(row_error)?)?,
+        status: user_status_label(required_integer_cell(&row, "user_status", "user")?)?,
         last_active: timestamp_label(row.try_get("last_active").ok()),
         last_used: timestamp_label(row.try_get("last_used").ok()),
         created_at: timestamp_label(row.try_get("created_at").ok()),
@@ -1350,12 +1360,12 @@ fn user_status_code(status: &str) -> &'static str {
     }
 }
 
-fn user_status_label(status: String) -> DomainResult<String> {
-    match status.as_str() {
-        "active" => Ok("active".to_owned()),
-        "banned" => Ok("banned".to_owned()),
-        "disabled" => Ok("disabled".to_owned()),
-        "inactive" => Ok("inactive".to_owned()),
+fn user_status_label(status: i64) -> DomainResult<String> {
+    match status {
+        1 => Ok("active".to_owned()),
+        2 => Ok("banned".to_owned()),
+        3 => Ok("disabled".to_owned()),
+        4 => Ok("inactive".to_owned()),
         value => Err(DomainError::new(format!(
             "invalid admin user status from database row: {value}"
         ))),

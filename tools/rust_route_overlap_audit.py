@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import os
 import re
 from collections import defaultdict
 from dataclasses import dataclass
@@ -26,8 +27,8 @@ class RustRouteOverlapAudit:
 
     SOURCE_ROOTS: tuple[str, ...] = (
         "services",
-        "../../sdkwork-appbase/packages/native-rust",
     )
+    APPBASE_CRATES_ROOT = Path("crates")
     ROUTE_MARKER = ".route("
     METHOD_NAMES: tuple[str, ...] = ("delete", "get", "patch", "post", "put")
     STRING_CONSTANT_PATTERN = re.compile(
@@ -72,8 +73,7 @@ class RustRouteOverlapAudit:
 
     def _rust_sources(self) -> list[Path]:
         sources: list[Path] = []
-        for source_root in self.SOURCE_ROOTS:
-            root = self.root / source_root
+        for root in self._source_roots():
             if not root.exists():
                 continue
             for source_path in root.rglob("*.rs"):
@@ -82,6 +82,22 @@ class RustRouteOverlapAudit:
                     continue
                 sources.append(source_path)
         return sources
+
+    def _source_roots(self) -> list[Path]:
+        source_roots = [self.root / source_root for source_root in self.SOURCE_ROOTS]
+        appbase_root = self._appbase_root()
+        if appbase_root is not None:
+            source_roots.append(appbase_root / self.APPBASE_CRATES_ROOT)
+        return source_roots
+
+    def _appbase_root(self) -> Path | None:
+        local_dependency = self.root / ".sdkwork" / "dependencies" / "sdkwork-appbase"
+        if local_dependency.exists():
+            return local_dependency
+        sibling_dependency = self.root.parent / "sdkwork-appbase"
+        if sibling_dependency.exists():
+            return sibling_dependency
+        return None
 
     def _route_calls(self, text: str) -> list[tuple[int, str]]:
         calls: list[tuple[int, str]] = []
@@ -302,7 +318,10 @@ class RustRouteOverlapAudit:
         return False
 
     def _display_path(self, path: Path) -> str:
-        return path.relative_to(self.root).as_posix()
+        try:
+            return path.relative_to(self.root).as_posix()
+        except ValueError:
+            return Path(os.path.relpath(path, self.root)).as_posix()
 
 
 def main() -> int:

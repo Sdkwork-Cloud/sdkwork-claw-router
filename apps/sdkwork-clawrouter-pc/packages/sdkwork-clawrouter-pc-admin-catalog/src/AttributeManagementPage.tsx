@@ -1,1 +1,1 @@
-export { AttributeManagementPage } from "sdkwork-commerce-pc-admin-product";
+export { AttributeManagementPage } from "@sdkwork/commerce-pc-admin-product";

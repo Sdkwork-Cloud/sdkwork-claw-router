@@ -122,7 +122,7 @@ pub use app_session_event_store::SqliteAppSessionEventStore;
 pub use app_skills_read_store::SqliteAppSkillsReadStore;
 pub use app_store_read_store::SqliteAppStoreReadStore;
 pub use app_user_profile_read_store::SqliteAppUserProfileReadStore;
-pub use course_store::SqliteCourseStore;
+pub use course_store::{SqliteCourseApplicationCommandStore, SqliteCourseStore};
 pub use dashboard_overview_read_store::SqliteDashboardOverviewReadStore;
 pub use error::SqlCatalogLoadError;
 pub use forum_store::SqliteForumStore;

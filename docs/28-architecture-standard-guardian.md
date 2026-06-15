@@ -48,8 +48,8 @@ docs/09-部署架构设计.md
 - `docs/02-技术架构设计.md`
   - `Rust-first`
   - `sdkwork-claw-gateway`
-  - `sdkwork-claw-app-api`
-  - `sdkwork-claw-admin-api`
+  - `sdkwork-claw-app`
+  - `sdkwork-claw-admin`
   - `/app/v3/api`
   - `/backend/v3/api`
   - `/v1`

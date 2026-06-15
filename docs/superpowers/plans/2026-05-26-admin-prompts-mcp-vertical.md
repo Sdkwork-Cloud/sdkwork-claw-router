@@ -60,7 +60,7 @@
 - Create: `services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_mcp_store.rs`
 - Modify: `services/sdkwork-claw-product/src/infrastructure/sql/sqlite/mod.rs`
 - Modify: `services/sdkwork-claw-product/src/infrastructure/sql/postgres/mod.rs`
-- Modify: `services/sdkwork-claw-admin-api/src/lib.rs`
+- Modify: `services/sdkwork-claw-admin/src/lib.rs`
 - Test: SQLite SQL contract tests for Prompt and MCP.
 
 - [ ] **Step 1: Write failing SQL store tests** proving category reuse, audit reuse, versioning, bindings, seeded demo data, and no dedicated category tables.

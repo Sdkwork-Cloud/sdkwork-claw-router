@@ -3,7 +3,7 @@ use axum::http::{header, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::Json;
 use sdkwork_claw_contract::{matches_path_pattern, ApiSurface};
-use sdkwork_claw_paas_api::standard_paas_service_groups;
+use sdkwork_claw_paas_plugin::standard_paas_service_groups;
 use serde::Serialize;
 
 use crate::error::PlusErrorEnvelope;
@@ -193,6 +193,10 @@ fn schema_tabs_for_surface(surface: Option<ApiSurface>) -> Vec<OpenApiSchemaTab>
             image_open_api_schema_tab(),
             video_open_api_schema_tab(),
             audio_open_api_schema_tab(),
+            drive_open_api_schema_tab(),
+            knowledgebase_open_api_schema_tab(),
+            memory_open_api_schema_tab(),
+            agent_open_api_schema_tab(),
             payment_open_api_schema_tab(),
             iaas_open_api_schema_tab(),
             paas_open_api_schema_tab(),
@@ -300,12 +304,111 @@ fn audio_open_api_schema_tab() -> OpenApiSchemaTab {
     }
 }
 
+fn drive_open_api_schema_tab() -> OpenApiSchemaTab {
+    OpenApiSchemaTab {
+        id: "drive-open-api",
+        name: "Drive Open API",
+        aliases: vec!["sdkwork-drive-open-api", "sdkwork-drive.open"],
+        order: 50,
+        schema_urls: vec![GATEWAY_OPENAPI_PATH],
+        default_schema_url: Some(GATEWAY_OPENAPI_PATH),
+        cache_ttl_seconds: OPENAPI_SCHEMA_CACHE_TTL_SECONDS,
+        status: "available",
+        description: Some(
+            "Drive Open API for OpenAI-compatible files, provider file stores, and upload session routes.",
+        ),
+        service_groups: vec![OpenApiSchemaServiceGroup {
+            code: "drive",
+            name: "Drive",
+            description:
+                "File, file content, and upload lifecycle APIs across OpenAI-compatible and provider-native routes.",
+            provider_codes: vec!["openai", "anthropic", "google"],
+            operations: vec!["file_upload", "file_retrieve", "file_content", "upload_parts"],
+        }],
+    }
+}
+
+fn knowledgebase_open_api_schema_tab() -> OpenApiSchemaTab {
+    OpenApiSchemaTab {
+        id: "knowledgebase-open-api",
+        name: "Knowledgebase Open API",
+        aliases: vec!["sdkwork-knowledgebase-open-api"],
+        order: 60,
+        schema_urls: vec![GATEWAY_OPENAPI_PATH],
+        default_schema_url: Some(GATEWAY_OPENAPI_PATH),
+        cache_ttl_seconds: OPENAPI_SCHEMA_CACHE_TTL_SECONDS,
+        status: "available",
+        description: Some(
+            "Knowledgebase Open API for vector stores, knowledge files, and retrieval search routes.",
+        ),
+        service_groups: vec![OpenApiSchemaServiceGroup {
+            code: "knowledgebase",
+            name: "Knowledgebase",
+            description:
+                "Vector store, knowledge file attachment, and retrieval search APIs for knowledgebase workloads.",
+            provider_codes: vec!["openai"],
+            operations: vec![
+                "vector_store_create",
+                "vector_store_file_attach",
+                "vector_store_search",
+            ],
+        }],
+    }
+}
+
+fn memory_open_api_schema_tab() -> OpenApiSchemaTab {
+    OpenApiSchemaTab {
+        id: "memory-open-api",
+        name: "Memory Open API",
+        aliases: vec!["sdkwork-memory-open-api"],
+        order: 70,
+        schema_urls: vec![GATEWAY_OPENAPI_PATH],
+        default_schema_url: Some(GATEWAY_OPENAPI_PATH),
+        cache_ttl_seconds: OPENAPI_SCHEMA_CACHE_TTL_SECONDS,
+        status: "available",
+        description: Some(
+            "Memory Open API for conversation state, conversation items, and durable interaction history.",
+        ),
+        service_groups: vec![OpenApiSchemaServiceGroup {
+            code: "memory",
+            name: "Memory",
+            description:
+                "Conversation and conversation-item APIs that preserve model interaction memory.",
+            provider_codes: vec!["openai"],
+            operations: vec!["conversations", "conversation_items"],
+        }],
+    }
+}
+
+fn agent_open_api_schema_tab() -> OpenApiSchemaTab {
+    OpenApiSchemaTab {
+        id: "agent-open-api",
+        name: "Agent Open API",
+        aliases: vec!["sdkwork-agent-open-api"],
+        order: 80,
+        schema_urls: vec![GATEWAY_OPENAPI_PATH],
+        default_schema_url: Some(GATEWAY_OPENAPI_PATH),
+        cache_ttl_seconds: OPENAPI_SCHEMA_CACHE_TTL_SECONDS,
+        status: "available",
+        description: Some(
+            "Agent Open API for assistants, threads, runs, and agent execution lifecycle routes.",
+        ),
+        service_groups: vec![OpenApiSchemaServiceGroup {
+            code: "agent",
+            name: "Agent",
+            description: "Assistant, thread, run, and run-step APIs for agent execution.",
+            provider_codes: vec!["openai"],
+            operations: vec!["assistants", "threads", "assistant_runs", "run_steps"],
+        }],
+    }
+}
+
 fn payment_open_api_schema_tab() -> OpenApiSchemaTab {
     OpenApiSchemaTab {
         id: "payment-open-api",
         name: "Payment Open API",
         aliases: vec!["payment-aggregate"],
-        order: 50,
+        order: 90,
         schema_urls: vec![PAYMENT_AGGREGATE_OPENAPI_PATH],
         default_schema_url: Some(PAYMENT_AGGREGATE_OPENAPI_PATH),
         cache_ttl_seconds: OPENAPI_SCHEMA_CACHE_TTL_SECONDS,
@@ -334,7 +437,7 @@ fn iaas_open_api_schema_tab() -> OpenApiSchemaTab {
         id: "iaas-open-api",
         name: "IaaS Open API",
         aliases: vec!["cloud-services"],
-        order: 60,
+        order: 100,
         schema_urls: vec![CLOUD_SERVICES_OPENAPI_PATH],
         default_schema_url: Some(CLOUD_SERVICES_OPENAPI_PATH),
         cache_ttl_seconds: OPENAPI_SCHEMA_CACHE_TTL_SECONDS,
@@ -449,7 +552,7 @@ fn paas_open_api_schema_tab() -> OpenApiSchemaTab {
         id: "paas-open-api",
         name: "PaaS Open API",
         aliases: vec!["paas-api"],
-        order: 70,
+        order: 110,
         schema_urls: vec![PAAS_OPENAPI_PATH],
         default_schema_url: Some(PAAS_OPENAPI_PATH),
         cache_ttl_seconds: OPENAPI_SCHEMA_CACHE_TTL_SECONDS,
@@ -475,7 +578,7 @@ fn app_schema_tab() -> OpenApiSchemaTab {
         id: "app-api",
         name: "App API",
         aliases: vec!["app"],
-        order: 80,
+        order: 120,
         schema_urls: vec![APP_OPENAPI_PATH],
         default_schema_url: Some(APP_OPENAPI_PATH),
         cache_ttl_seconds: OPENAPI_SCHEMA_CACHE_TTL_SECONDS,
@@ -490,7 +593,7 @@ fn backend_schema_tab() -> OpenApiSchemaTab {
         id: "backend-api",
         name: "Backend API",
         aliases: vec!["backend"],
-        order: 90,
+        order: 130,
         schema_urls: vec![BACKEND_OPENAPI_PATH],
         default_schema_url: Some(BACKEND_OPENAPI_PATH),
         cache_ttl_seconds: OPENAPI_SCHEMA_CACHE_TTL_SECONDS,

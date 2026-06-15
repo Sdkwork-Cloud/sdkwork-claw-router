@@ -129,6 +129,33 @@ class SchemaManifestGeneratorTest(unittest.TestCase):
             self.assertFalse(result.ok)
             self.assertIn(f"effective schema registry is stale: {snapshot}", result.messages)
 
+    def test_effective_schema_registry_rewrites_spec_paths_for_generated_location(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / 'specs').mkdir()
+            (root / 'specs' / 'DATABASE_SPEC.md').write_text('# Database Spec\n', encoding='utf-8')
+            (root / 'specs' / 'API_SPEC.md').write_text('# API Spec\n', encoding='utf-8')
+            registry = self.write_registry(
+                root,
+                '''
+                schema_registry:
+                  name: sdkwork-claw-router
+                  standard: ../../specs/DATABASE_SPEC.md
+                  api_standard: ../../specs/API_SPEC.md
+                tables:
+                  - table: ai_model_vendor
+                    domain: ai
+                '''
+            )
+
+            snapshot = SchemaManifestGenerator(root=root, registry_path=registry).write_effective_registry()
+            snapshot_text = snapshot.read_text(encoding='utf-8')
+
+            self.assertIn('standard: ../../../specs/DATABASE_SPEC.md', snapshot_text)
+            self.assertIn('api_standard: ../../../specs/API_SPEC.md', snapshot_text)
+            self.assertTrue((snapshot.parent / '../../../specs/DATABASE_SPEC.md').resolve().exists())
+            self.assertTrue((snapshot.parent / '../../../specs/API_SPEC.md').resolve().exists())
+
     def test_resolves_common_columns_and_explicit_columns(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

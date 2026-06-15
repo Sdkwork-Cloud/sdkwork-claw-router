@@ -174,6 +174,38 @@ pub fn app_course_router_with_store(
     )
 }
 
+pub fn app_course_application_router_with_command_store(
+    command_store: Arc<dyn CourseApplicationCommandStore + Send + Sync>,
+) -> Router {
+    app_course_application_router_with_command_store_and_upload_root(
+        command_store,
+        configured_course_upload_root(),
+    )
+}
+
+pub fn app_course_application_router_with_command_store_and_upload_root(
+    command_store: Arc<dyn CourseApplicationCommandStore + Send + Sync>,
+    upload_root: impl Into<PathBuf>,
+) -> Router {
+    app_course_application_router_with_command_store_upload_root_and_upload_limits(
+        command_store,
+        upload_root.into(),
+        configured_course_upload_limits(),
+    )
+}
+
+pub fn app_course_application_router_with_command_store_upload_root_and_upload_limits(
+    command_store: Arc<dyn CourseApplicationCommandStore + Send + Sync>,
+    upload_root: impl Into<PathBuf>,
+    upload_limits: CourseUploadLimits,
+) -> Router {
+    app_course_application_router_with_state_and_upload_limits(
+        command_store,
+        upload_root.into(),
+        upload_limits,
+    )
+}
+
 pub fn app_course_router_with_store_and_upload_root(
     read_store: Arc<dyn CourseReadStore + Send + Sync>,
     command_store: Arc<dyn CourseApplicationCommandStore + Send + Sync>,
@@ -252,6 +284,36 @@ fn app_course_router_with_state_and_upload_limits(
             read_store,
             command_store,
             require_subject,
+            upload_root: Arc::new(upload_root),
+            upload_limits,
+        })
+}
+
+fn app_course_application_router_with_state_and_upload_limits(
+    command_store: Arc<dyn CourseApplicationCommandStore + Send + Sync>,
+    upload_root: PathBuf,
+    upload_limits: CourseUploadLimits,
+) -> Router {
+    Router::new()
+        .route(
+            "/app/v3/api/courses/applications/videos",
+            post(upload_course_application_video),
+        )
+        .route(
+            "/app/v3/api/courses/applications",
+            post(submit_course_application),
+        )
+        .route(
+            "/uploads/courses/{*filePath}",
+            get(serve_course_upload_asset),
+        )
+        .layer(DefaultBodyLimit::max(
+            upload_limits.video_upload_body_limit_bytes,
+        ))
+        .with_state(AppCourseState {
+            read_store: Arc::new(EmptyCourseReadStore),
+            command_store: Some(command_store),
+            require_subject: false,
             upload_root: Arc::new(upload_root),
             upload_limits,
         })

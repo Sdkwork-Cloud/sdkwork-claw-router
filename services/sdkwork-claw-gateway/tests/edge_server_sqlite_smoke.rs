@@ -351,7 +351,7 @@ fn seeded_admin_router(
     trusted_subject_config: sdkwork_claw_config::TrustedSubjectConfig,
     app_session_config: sdkwork_claw_config::AppSessionConfig,
 ) -> Router {
-    sdkwork_claw_admin_api::router_with_sqlite_shared_runtime(
+    sdkwork_router_backend_api::router_with_sqlite_shared_runtime(
         catalog.database_config().unwrap(),
         runtime.pool.clone(),
         Arc::clone(&runtime.catalog),
@@ -375,7 +375,7 @@ async fn seeded_app_router(
     payment_webhook_config: sdkwork_claw_config::PaymentWebhookConfig,
     deployment_mode: DeploymentMode,
 ) -> Router {
-    sdkwork_claw_app_api::router_with_sqlite_shared_runtime(
+    sdkwork_router_app_api::router_with_sqlite_shared_runtime(
         catalog.database_config().unwrap(),
         runtime.pool.clone(),
         Arc::clone(&runtime.catalog),

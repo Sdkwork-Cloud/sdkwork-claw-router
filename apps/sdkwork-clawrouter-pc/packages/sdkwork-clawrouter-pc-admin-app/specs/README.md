@@ -2,7 +2,7 @@
 
 This directory is the local standards index for `sdkwork-clawrouter-pc-admin-app`.
 
-Canonical SDKWORK standards live under `../../../../../sdkwork-specs/`; this package narrows them for the backend-admin app management surface.
+Canonical SDKWORK standards live under `../../../../../../sdkwork-specs/`; this package narrows them for the backend-admin app management surface.
 
 ## Component
 

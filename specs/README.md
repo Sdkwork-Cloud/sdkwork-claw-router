@@ -22,12 +22,18 @@ Root SDKWork standards remain authoritative. Local component specs can narrow or
 - [dependency-api-surfaces.json](./dependency-api-surfaces.json) records dependency SDK runtime API
   surface imports, Rust backend route-contract exports, same-origin mount coverage, and explicit
   external-service base URL requirements.
-- Shared foundation API composition targets `sdkwork-api-gateway` through the existing
-  `PORTAL_PUBLIC_SDK_BASE_URL` common SDK root and Cargo workspace/feature evidence. Do not add a
-  standalone gateway catalog for Claw Router dependency API facts.
-- Product-local app/admin routers keep Claw Router-owned API contract fallbacks only; Commerce
+- Shared foundation and default client API composition targets `sdkwork-api-gateway` through the
+  existing `PORTAL_PUBLIC_SDK_BASE_URL` common SDK root and Cargo workspace/feature evidence. Do
+  not add a standalone gateway catalog for Claw Router dependency API facts.
+- Product API authorities remain owned by Claw Router, but `pnpm dev`, `pnpm desktop:dev`, and
+  `pnpm tauri:dev` expose app/backend/open surfaces through `sdkwork-api-gateway`. Product-local
+  app/admin routers are for Claw Router-owned contracts and explicit `server:*` debugging only;
   dependency app/backend routes default to `404` locally and are consumed through the shared
   gateway or explicit split-deployment base URLs.
+- Repository layout follows `SDKWORK_WORKSPACE_SPEC.md`: authored API inputs belong in `apis/`,
+  Rust route crates belong in `crates/sdkwork-router-<capability>-<surface>/`, generated SDK
+  family workspaces belong in `sdks/`, and top-level `packages/` is limited to governed shared
+  TypeScript or React package families.
 - Consumers should integrate through public exports, runtime entrypoints, SDK clients, or adapters declared in the manifest.
 - Generated SDK language outputs are represented at their SDK family root instead of duplicating local specs in generated folders.
 
@@ -49,6 +55,7 @@ Root SDKWork standards remain authoritative. Local component specs can narrow or
 | [MODULE_SPEC.md](../../sdkwork-specs/MODULE_SPEC.md) | Reusable package contract and dependency direction. |
 | [README.md](../../sdkwork-specs/README.md) | SDKWork root standards entrypoint. |
 | [SDK_SPEC.md](../../sdkwork-specs/SDK_SPEC.md) | SDK generation and SDK integration rules. |
+| [SDKWORK_WORKSPACE_SPEC.md](../../sdkwork-specs/SDKWORK_WORKSPACE_SPEC.md) | Standard project root directories and `.sdkwork/` metadata rules. |
 | [TEST_SPEC.md](../../sdkwork-specs/TEST_SPEC.md) | Contract, frontend, SDK, security, parity, and documentation verification rules. |
 
 ## Public Exports

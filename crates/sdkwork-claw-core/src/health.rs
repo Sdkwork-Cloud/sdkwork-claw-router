@@ -86,7 +86,7 @@ mod tests {
         )
         .unwrap();
 
-        let health = HealthResponse::new("sdkwork-claw-admin-api", DeploymentMode::Server)
+        let health = HealthResponse::new("sdkwork-claw-admin", DeploymentMode::Server)
             .with_database(DatabaseHealth::from_config(Some(&config)));
         let body = serde_json::to_string(&health).unwrap();
         let payload: serde_json::Value = serde_json::from_str(&body).unwrap();
@@ -102,7 +102,7 @@ mod tests {
 
     #[test]
     fn health_response_marks_database_unconfigured_by_default() {
-        let health = HealthResponse::new("sdkwork-claw-app-api", DeploymentMode::Desktop);
+        let health = HealthResponse::new("sdkwork-claw-app", DeploymentMode::Desktop);
         let payload = serde_json::to_value(&health).unwrap();
 
         assert_eq!(false, payload["database"]["configured"]);

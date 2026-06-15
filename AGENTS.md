@@ -30,10 +30,23 @@ Read `sdkwork.app.config.json` before changing application behavior, runtime con
 - `CODEX.md`: Codex compatibility shim that points to `AGENTS.md` and must not duplicate rules.
 - `sdkwork.app.config.json`: application identity and owned capability metadata.
 - `.sdkwork/`: reserved local dictionary folder; create only for local skills, plugins, manifests, or AI workspace metadata.
+- `apis/`: authored API contracts, route authority inputs, API examples, changelogs, and validation fixtures.
+- `apps/`: runnable application surfaces such as `apps/sdkwork-clawrouter-pc/`.
+- `crates/`: Rust crates, including `sdkwork-router-<capability>-<surface>` route crates.
+- `sdks/`: SDK families, OpenAPI authorities, derived generator inputs, and generated SDK artifacts.
+- `jobs/`: schedules, queue bindings, batch descriptors, and maintenance runbooks.
+- `tools/`: reusable validators, generators, migrations, guardians, and operator utilities.
+- `plugins/`: application/runtime plugin source packages; agent plugins remain under `.sdkwork/plugins/`.
+- `examples/`: runnable examples, sample configs, and SDK/API usage examples.
+- `configs/`: safe config templates, schemas, profile examples, and non-secret defaults.
+- `deployments/`: deployment descriptors, topology examples, packaging handoff files, and runbooks.
+- `scripts/`: thin command entrypoints for build, verification, generation, migration, packaging, and release workflows.
+- `docs/`: repository documentation, architecture notes, runbooks, and release evidence.
+- `tests/`: cross-package, contract, runtime, architecture, and static verification inputs.
 - `specs/`: local application/component contracts and narrowing rules.
-- `sdks/`: SDK families, OpenAPI authorities, route manifests, and generated SDK artifacts.
+- `packages/`: governed shared TypeScript or React package families only; Rust route crates belong under `crates/sdkwork-router-*`.
 - `package.json`, `Cargo.toml`: language/build manifests.
-- Local directories to inspect first when relevant: `.agents/`, `.cargo/`, `.github/`, `apps/`, `assets/`, `crates/`, `data/`, `docs/`, `etc/`, `generated/`, `packages/`, `scripts/`.
+- Local directories to inspect first when relevant: `.agents/`, `.cargo/`, `.github/`, `.sdkwork/`, `apis/`, `apps/`, `assets/`, `configs/`, `crates/`, `data/`, `deployments/`, `docs/`, `etc/`, `examples/`, `generated/`, `jobs/`, `packages/`, `plugins/`, `scripts/`, `sdks/`, `tests/`, `tools/`.
 
 ## Spec Resolution Order
 

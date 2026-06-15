@@ -1,11 +1,15 @@
 import {
+  CLAWROUTER_AGENT_OPEN_API_SDK_REFERENCE_METADATA,
   CLAWROUTER_APP_SDK_REFERENCE_METADATA,
   CLAWROUTER_AUDIO_OPEN_API_SDK_REFERENCE_METADATA,
   CLAWROUTER_BACKEND_SDK_REFERENCE_METADATA,
   CLAWROUTER_CLOUD_SERVICES_SDK_REFERENCE_METADATA,
+  CLAWROUTER_DRIVE_OPEN_API_SDK_REFERENCE_METADATA,
   CLAWROUTER_IAAS_OPEN_API_SDK_REFERENCE_METADATA,
   CLAWROUTER_IMAGE_OPEN_API_SDK_REFERENCE_METADATA,
+  CLAWROUTER_KNOWLEDGEBASE_OPEN_API_SDK_REFERENCE_METADATA,
   CLAWROUTER_LLM_OPEN_API_SDK_REFERENCE_METADATA,
+  CLAWROUTER_MEMORY_OPEN_API_SDK_REFERENCE_METADATA,
   CLAWROUTER_PAAS_OPEN_API_SDK_REFERENCE_METADATA,
   CLAWROUTER_PAYMENT_OPEN_API_SDK_REFERENCE_METADATA,
   CLAWROUTER_VIDEO_OPEN_API_SDK_REFERENCE_METADATA,
@@ -30,13 +34,17 @@ export type ApiSystem = SdkReferenceSystem;
 export type GeneratedSdkMetadata = ClawRouterGeneratedSdkMetadata;
 
 export {
+  CLAWROUTER_AGENT_OPEN_API_SDK_REFERENCE_METADATA,
   CLAWROUTER_APP_SDK_REFERENCE_METADATA,
   CLAWROUTER_AUDIO_OPEN_API_SDK_REFERENCE_METADATA,
   CLAWROUTER_BACKEND_SDK_REFERENCE_METADATA,
   CLAWROUTER_CLOUD_SERVICES_SDK_REFERENCE_METADATA,
+  CLAWROUTER_DRIVE_OPEN_API_SDK_REFERENCE_METADATA,
   CLAWROUTER_IAAS_OPEN_API_SDK_REFERENCE_METADATA,
   CLAWROUTER_IMAGE_OPEN_API_SDK_REFERENCE_METADATA,
+  CLAWROUTER_KNOWLEDGEBASE_OPEN_API_SDK_REFERENCE_METADATA,
   CLAWROUTER_LLM_OPEN_API_SDK_REFERENCE_METADATA,
+  CLAWROUTER_MEMORY_OPEN_API_SDK_REFERENCE_METADATA,
   CLAWROUTER_PAAS_OPEN_API_SDK_REFERENCE_METADATA,
   CLAWROUTER_PAYMENT_OPEN_API_SDK_REFERENCE_METADATA,
   CLAWROUTER_VIDEO_OPEN_API_SDK_REFERENCE_METADATA,
@@ -78,6 +86,10 @@ const SYSTEM_NAMES: Record<ApiSystem, string> = {
   'image-open-api': 'Image Open API',
   'video-open-api': 'Video Open API',
   'audio-open-api': 'Audio Open API',
+  'drive-open-api': 'Drive Open API',
+  'knowledgebase-open-api': 'Knowledgebase Open API',
+  'memory-open-api': 'Memory Open API',
+  'agent-open-api': 'Agent Open API',
   'payment-open-api': 'Payment Open API',
   'iaas-open-api': 'IaaS Open API',
   'paas-open-api': 'PaaS Open API',
@@ -97,11 +109,51 @@ const OPEN_API_PACKAGES: LanguagePackageSet = {
   flutter: 'clawrouter_open_sdk',
 };
 
+const DRIVE_OPEN_API_PACKAGES: LanguagePackageSet = {
+  ts: SDK_SYSTEM_CONFIG['drive-open-api'].packageName,
+  py: 'sdkwork-drive-sdk-generated',
+  go: 'github.com/sdkwork/drive-sdk-generated',
+  java: 'drive-sdk-generated',
+  ruby: 'sdkwork-drive-sdk',
+  php: 'sdkwork/drive-sdk-php',
+  csharp: 'Sdkwork.DriveSdk',
+  rust: 'sdkwork-drive-sdk-generated',
+  flutter: 'sdkwork_drive_sdk',
+};
+
+const MEMORY_OPEN_API_PACKAGES: LanguagePackageSet = {
+  ts: SDK_SYSTEM_CONFIG['memory-open-api'].packageName,
+  py: 'sdkwork-memory-sdk',
+  go: 'github.com/sdkwork/memory-sdk',
+  java: 'memory-sdk',
+  ruby: 'sdkwork-memory-sdk',
+  php: 'sdkwork/memory-sdk-php',
+  csharp: 'Sdkwork.MemorySdk',
+  rust: 'sdkwork-memory-sdk',
+  flutter: 'sdkwork_memory_sdk',
+};
+
+const AGENT_OPEN_API_PACKAGES: LanguagePackageSet = {
+  ts: SDK_SYSTEM_CONFIG['agent-open-api'].packageName,
+  py: 'sdkwork-agent-sdk',
+  go: 'github.com/sdkwork/agent-sdk',
+  java: 'agent-sdk',
+  ruby: 'sdkwork-agent-sdk',
+  php: 'sdkwork/agent-sdk-php',
+  csharp: 'Sdkwork.AgentSdk',
+  rust: 'sdkwork-agent-sdk',
+  flutter: 'sdkwork_agent_sdk',
+};
+
 const SYSTEM_PACKAGE_NAMES: Record<ApiSystem, LanguagePackageSet> = {
   'llm-open-api': OPEN_API_PACKAGES,
   'image-open-api': OPEN_API_PACKAGES,
   'video-open-api': OPEN_API_PACKAGES,
   'audio-open-api': OPEN_API_PACKAGES,
+  'drive-open-api': DRIVE_OPEN_API_PACKAGES,
+  'knowledgebase-open-api': OPEN_API_PACKAGES,
+  'memory-open-api': MEMORY_OPEN_API_PACKAGES,
+  'agent-open-api': AGENT_OPEN_API_PACKAGES,
   'payment-open-api': packageSet('payment-open-api', 'payment', 'Payment'),
   'iaas-open-api': packageSet('iaas-open-api', 'iaas', 'Iaas'),
   'paas-open-api': packageSet('paas-open-api', 'paas', 'Paas'),
@@ -114,6 +166,10 @@ const SYSTEM_CLASS_NAMES: Record<ApiSystem, string> = {
   'image-open-api': SDK_SYSTEM_CONFIG['image-open-api'].name,
   'video-open-api': SDK_SYSTEM_CONFIG['video-open-api'].name,
   'audio-open-api': SDK_SYSTEM_CONFIG['audio-open-api'].name,
+  'drive-open-api': SDK_SYSTEM_CONFIG['drive-open-api'].name,
+  'knowledgebase-open-api': SDK_SYSTEM_CONFIG['knowledgebase-open-api'].name,
+  'memory-open-api': SDK_SYSTEM_CONFIG['memory-open-api'].name,
+  'agent-open-api': SDK_SYSTEM_CONFIG['agent-open-api'].name,
   'payment-open-api': SDK_SYSTEM_CONFIG['payment-open-api'].name,
   'iaas-open-api': SDK_SYSTEM_CONFIG['iaas-open-api'].name,
   'paas-open-api': SDK_SYSTEM_CONFIG['paas-open-api'].name,
@@ -154,6 +210,34 @@ const SYSTEM_EXAMPLES: Record<ApiSystem, LanguageExampleSet> = {
   });
   console.log(speech);`,
     'client.audio.speech.create(...)',
+  ),
+  'drive-open-api': exampleSet(
+    `const files = await client.files.list({
+    limit: 20,
+  });
+  console.log(files.data);`,
+    'client.files.list(...)',
+  ),
+  'knowledgebase-open-api': exampleSet(
+    `const stores = await client.vectorStores.list({
+    limit: 20,
+  });
+  console.log(stores.data);`,
+    'client.vectorStores.list(...)',
+  ),
+  'memory-open-api': exampleSet(
+    `const conversations = await client.conversations.list({
+    limit: 20,
+  });
+  console.log(conversations.data);`,
+    'client.conversations.list(...)',
+  ),
+  'agent-open-api': exampleSet(
+    `const assistants = await client.assistants.list({
+    limit: 20,
+  });
+  console.log(assistants.data);`,
+    'client.assistants.list(...)',
   ),
   'payment-open-api': exampleSet(
     `const intent = await client.payments.intents.create({
@@ -343,5 +427,9 @@ function isOpenCompatibleSystem(system: ApiSystem): boolean {
   return system === 'llm-open-api'
     || system === 'image-open-api'
     || system === 'video-open-api'
-    || system === 'audio-open-api';
+    || system === 'audio-open-api'
+    || system === 'drive-open-api'
+    || system === 'knowledgebase-open-api'
+    || system === 'memory-open-api'
+    || system === 'agent-open-api';
 }

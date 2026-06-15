@@ -121,7 +121,7 @@ pub use app_session_event_store::PostgresAppSessionEventStore;
 pub use app_skills_read_store::PostgresAppSkillsReadStore;
 pub use app_store_read_store::PostgresAppStoreReadStore;
 pub use app_user_profile_read_store::PostgresAppUserProfileReadStore;
-pub use course_store::PostgresCourseStore;
+pub use course_store::{PostgresCourseApplicationCommandStore, PostgresCourseStore};
 pub use dashboard_overview_read_store::PostgresDashboardOverviewReadStore;
 pub use error::PostgresCatalogLoadError;
 pub use forum_store::PostgresForumStore;

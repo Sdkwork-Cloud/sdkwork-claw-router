@@ -1,8 +1,8 @@
 # SDKWork Workspace
 
-This .sdkwork/ directory is source-controlled workspace metadata for $name.
+This .sdkwork/ directory is source-controlled workspace metadata for `sdkwork-clawrouter-pc`.
 
-It is governed by $specPath/SDKWORK_WORKSPACE_SPEC.md and follows the standards entrypoint at $specPath/README.md.
+This README links to `../../../../sdkwork-specs/SDKWORK_WORKSPACE_SPEC.md` and the standards entrypoint at `../../../../sdkwork-specs/README.md`.
 
 Authoritative local entries:
 
@@ -16,5 +16,5 @@ This directory is not runtime state. Do not store generated SDK transport output
 ## Execution References
 
 - Agent entrypoint: `AGENTS.md`
-- Shared execution soul: `../../../sdkwork-specs/SOUL.md`
-- Workspace metadata standard: `../../../sdkwork-specs/SDKWORK_WORKSPACE_SPEC.md`
+- Shared execution soul: `../../../../sdkwork-specs/SOUL.md`
+- Workspace metadata standard: `../../../../sdkwork-specs/SDKWORK_WORKSPACE_SPEC.md`

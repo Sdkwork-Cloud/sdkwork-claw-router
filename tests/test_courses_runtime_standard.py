@@ -113,31 +113,36 @@ class CoursesRuntimeStandardTest(unittest.TestCase):
         self.assertIn("sqlite_course_seed_complete", installer_source)
         self.assertIn("postgres_course_seed_complete", installer_source)
 
-        app_api_source = (ROOT / "services" / "sdkwork-claw-app-api" / "src" / "lib.rs").read_text(encoding="utf-8")
-        self.assertIn("SqliteCourseStore", app_api_source)
-        self.assertIn("PostgresCourseStore", app_api_source)
-        self.assertIn("app_course_router_with_read_store", app_api_source)
+        app_api_source = (ROOT / "services" / "sdkwork-claw-app" / "src" / "lib.rs").read_text(encoding="utf-8")
+        self.assertIn("is_course_dependency_contract_path", app_api_source)
+        self.assertIn('"/app/v3/api/courses/"', app_api_source)
+        self.assertNotIn("SqliteCourseStore", app_api_source)
+        self.assertNotIn("PostgresCourseStore", app_api_source)
+        self.assertNotIn("app_course_router_with_read_store", app_api_source)
 
-    def test_courses_app_openapi_contract_exposes_live_course_paths(self) -> None:
+    def test_courses_app_openapi_contract_exposes_product_owned_course_application_paths_only(self) -> None:
         openapi = json.loads(APP_OPENAPI_PATH.read_text(encoding="utf-8"))
         paths = openapi.get("paths", {})
-        required_paths = {
+        product_owned_paths = {
+            "/app/v3/api/courses/applications",
+            "/app/v3/api/courses/applications/videos",
+        }
+        dependency_owned_paths = {
             "/app/v3/api/courses",
             "/app/v3/api/courses/overview",
             "/app/v3/api/courses/categories",
             "/app/v3/api/courses/{courseId}",
         }
-        self.assertTrue(required_paths.issubset(paths.keys()))
+        self.assertTrue(product_owned_paths.issubset(paths.keys()))
+        self.assertTrue(dependency_owned_paths.isdisjoint(paths.keys()))
         operations = {
             path: next(iter(methods.values()))
             for path, methods in paths.items()
-            if path in required_paths and isinstance(methods, dict)
+            if path in product_owned_paths and isinstance(methods, dict)
         }
         operation_ids = {operation.get("operationId") for operation in operations.values()}
-        self.assertIn("courses.list", operation_ids)
-        self.assertIn("courses.overview.retrieve", operation_ids)
-        self.assertIn("courses.categories.list", operation_ids)
-        self.assertIn("courses.retrieve", operation_ids)
+        self.assertIn("applications.create", operation_ids)
+        self.assertIn("applications.videos.create", operation_ids)
 
     def test_courses_detail_components_have_no_runtime_drift_or_corrupt_copy(self) -> None:
         component_sources = {

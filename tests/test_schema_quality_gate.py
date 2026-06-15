@@ -109,7 +109,7 @@ class SchemaQualityGateTest(unittest.TestCase):
 
     def write_architecture_docs(self, root: Path) -> None:
         docs = {
-            "02-技术架构设计.md": "Rust-first sdkwork-claw-gateway sdkwork-claw-app-api sdkwork-claw-admin-api /app/v3/api /backend/v3/api /v1",
+            "02-技术架构设计.md": "Rust-first sdkwork-claw-gateway sdkwork-claw-app sdkwork-claw-admin /app/v3/api /backend/v3/api /v1",
             "03-技术选型.md": "Rust-first axum tokio sqlx tower hyper utoipa tracing moka rust_decimal",
             "07-性能设计.md": "Rust-first Tokio Axum moka Redis streaming batch writer connection pool",
             "09-部署架构设计.md": "Rust-first Rust services desktop server docker kubernetes SDKWORK_CLAW_DEPLOYMENT_MODE SDKWORK_CLAW_GATEWAY_BIND SDKWORK_CLAW_APP_API_BIND SDKWORK_CLAW_ADMIN_API_BIND",
@@ -176,8 +176,8 @@ class SchemaQualityGateTest(unittest.TestCase):
                     "crates/sdkwork-claw-http",
                     "crates/sdkwork-claw-observability",
                     "services/sdkwork-claw-gateway",
-                    "services/sdkwork-claw-admin-api",
-                    "services/sdkwork-claw-app-api",
+                    "services/sdkwork-claw-admin",
+                    "services/sdkwork-claw-app",
                     "services/sdkwork-claw-product",
                 ]
 
@@ -315,7 +315,7 @@ class SchemaQualityGateTest(unittest.TestCase):
         product_postgres.joinpath("row_mapping.rs").write_text("// postgres row mapping\n", encoding="utf-8")
         product_postgres.joinpath("usage_settlement_store.rs").write_text("// PostgresUsageSettlementStore commerce_usage_settlement plus_account_history settlement_status INSUFFICIENT_POINTS\n", encoding="utf-8")
 
-        for service in ("sdkwork-claw-gateway", "sdkwork-claw-admin-api", "sdkwork-claw-app-api"):
+        for service in ("sdkwork-claw-gateway", "sdkwork-claw-admin", "sdkwork-claw-app"):
             service_root = root / "services" / service
             (service_root / "src").mkdir(parents=True, exist_ok=True)
             (service_root / "Cargo.toml").write_text(

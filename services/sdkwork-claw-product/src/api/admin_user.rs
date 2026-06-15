@@ -6,7 +6,7 @@ use axum::body::Bytes;
 use axum::extract::{Path, Query, State};
 use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
-use axum::routing::{delete, get, patch, post};
+use axum::routing::{delete, post};
 use axum::{Json, Router};
 use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
@@ -15,11 +15,13 @@ use serde_json::Value;
 use crate::api::request_id::{generate_server_request_id, RequestIdError};
 use crate::api::response::PlusApiResult;
 use crate::application::{ApiKeySecretGenerator, ApiKeySecretHasher};
-use crate::domain::{DecimalValue, DomainError};
+use crate::domain::{DecimalValue, DomainError, GatewayApiKey};
 use crate::ports::{
     AdjustAdminUserBalanceCommand, AdminUserApiKeyItem, AdminUserItem, AdminUserStore,
     AdminUserSubject, CreateAdminUserApiKeyCommand, CreateAdminUserCommand,
-    DeleteAdminUserApiKeyCommand, ListAdminUserApiKeysQuery, ListAdminUsersQuery,
+    CreateGatewayApiKeyCommand, DeleteAdminUserApiKeyCommand,
+    DeleteGatewayApiKeyForOrganizationCommand, EnsureDefaultChannelGroupCommand,
+    GatewayApiKeyCommandStore, ListAdminUserApiKeysQuery, ListAdminUsersQuery,
     UpdateAdminUserCommand,
 };
 
@@ -32,10 +34,20 @@ const MAX_GROUP_LEN: usize = 64;
 const MAX_API_KEY_NAME_LEN: usize = 128;
 const DEFAULT_USERS_PAGE_SIZE: i64 = 200;
 const MAX_USERS_PAGE_SIZE: i64 = 500;
+const DEFAULT_CHANNEL_GROUP_CODE: &str = "default";
+const DEFAULT_CHANNEL_GROUP_NAME: &str = "Default";
+const DEFAULT_PRICING_PLAN_CODE: &str = "standard";
 
 #[derive(Clone)]
 struct AdminUserState {
     store: Arc<dyn AdminUserStore + Send + Sync>,
+    api_key_hasher: Arc<dyn ApiKeySecretHasher + Send + Sync>,
+    secret_generator: Arc<dyn ApiKeySecretGenerator + Send + Sync>,
+}
+
+#[derive(Clone)]
+struct AdminApiKeyCommandState {
+    command_store: Arc<dyn GatewayApiKeyCommandStore + Send + Sync>,
     api_key_hasher: Arc<dyn ApiKeySecretHasher + Send + Sync>,
     secret_generator: Arc<dyn ApiKeySecretGenerator + Send + Sync>,
 }
@@ -123,18 +135,7 @@ pub fn admin_user_router_with_store(
             "/backend/v3/api/system/users",
             post(create_user).put(update_user),
         )
-        .route(
-            "/backend/v3/api/iam/users",
-            get(fetch_users).post(create_user),
-        )
-        .route(
-            "/backend/v3/api/iam/users/{user_id}",
-            patch(update_user_by_path),
-        )
-        .route(
-            "/backend/v3/api/iam/api_keys",
-            get(fetch_api_keys_map).post(create_api_key),
-        )
+        .route("/backend/v3/api/iam/api_keys", post(create_api_key))
         .route(
             "/backend/v3/api/iam/api_keys/{api_key_id}",
             delete(delete_api_key),
@@ -145,6 +146,24 @@ pub fn admin_user_router_with_store(
         )
         .with_state(AdminUserState {
             store,
+            api_key_hasher,
+            secret_generator,
+        })
+}
+
+pub fn admin_user_api_key_command_router_with_store(
+    command_store: Arc<dyn GatewayApiKeyCommandStore + Send + Sync>,
+    api_key_hasher: Arc<dyn ApiKeySecretHasher + Send + Sync>,
+    secret_generator: Arc<dyn ApiKeySecretGenerator + Send + Sync>,
+) -> Router {
+    Router::new()
+        .route("/backend/v3/api/iam/api_keys", post(create_backend_api_key))
+        .route(
+            "/backend/v3/api/iam/api_keys/{api_key_id}",
+            delete(delete_backend_api_key),
+        )
+        .with_state(AdminApiKeyCommandState {
+            command_store,
             api_key_hasher,
             secret_generator,
         })
@@ -260,30 +279,6 @@ async fn update_user(
     };
     let user_id = match positive_id(request.id, "id") {
         Ok(id) => id,
-        Err(message) => return bad_request(message),
-    };
-
-    update_user_with_request(state, subject, user_id, request).await
-}
-
-async fn update_user_by_path(
-    State(state): State<AdminUserState>,
-    Path(user_id): Path<i64>,
-    headers: HeaderMap,
-    body: Bytes,
-) -> Response {
-    let user_id = match positive_path_id(user_id, "userId") {
-        Ok(id) => id,
-        Err(message) => return bad_request(message),
-    };
-
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
-    let request = match parse_json_body::<UpdateUserRequest>(&body, "user request body is required")
-    {
-        Ok(request) => request,
         Err(message) => return bad_request(message),
     };
 
@@ -445,7 +440,8 @@ async fn create_api_key(
         Ok(value) => value,
         Err(response) => return response,
     };
-    let idempotency_key = match normalize_idempotency_key(&headers, &state) {
+    let idempotency_key = match normalize_idempotency_key(&headers, state.secret_generator.as_ref())
+    {
         Ok(value) => value,
         Err(error) => return command_build_error_response(error),
     };
@@ -521,6 +517,150 @@ async fn delete_api_key(
     }
 }
 
+async fn create_backend_api_key(
+    State(state): State<AdminApiKeyCommandState>,
+    headers: HeaderMap,
+    body: Bytes,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let request =
+        match parse_json_body::<CreateApiKeyRequest>(&body, "api key request body is required") {
+            Ok(request) => request,
+            Err(message) => return bad_request(message),
+        };
+    let user_id = match positive_id(request.user_id, "userId") {
+        Ok(id) => id,
+        Err(message) => return bad_request(message),
+    };
+    let name = match normalize_required_name(request.name.as_deref(), "name", MAX_API_KEY_NAME_LEN)
+    {
+        Ok(value) => value,
+        Err(message) => return bad_request(message),
+    };
+    let raw_key = match state.secret_generator.generate_api_key_secret() {
+        Ok(value) => value,
+        Err(error) => return command_build_error_response(error),
+    };
+    let key_hash = match state.api_key_hasher.hash_secret(&raw_key) {
+        Ok(value) => value,
+        Err(error) => return command_build_error_response(error),
+    };
+    let requested_at = current_timestamp_string();
+    let request_id = match server_request_id() {
+        Ok(value) => value,
+        Err(response) => return response,
+    };
+    let idempotency_key = match normalize_idempotency_key(&headers, state.secret_generator.as_ref())
+    {
+        Ok(value) => value,
+        Err(error) => return command_build_error_response(error),
+    };
+    let group_uuid = match state.secret_generator.generate_entity_uuid() {
+        Ok(value) => value,
+        Err(error) => return command_build_error_response(error),
+    };
+    let group = match state
+        .command_store
+        .ensure_default_channel_group(EnsureDefaultChannelGroupCommand {
+            group_uuid,
+            tenant_id: subject.tenant_id,
+            organization_id: subject.organization_id,
+            code: DEFAULT_CHANNEL_GROUP_CODE.to_owned(),
+            name: DEFAULT_CHANNEL_GROUP_NAME.to_owned(),
+            pricing_plan_code: DEFAULT_PRICING_PLAN_CODE.to_owned(),
+            rate_multiplier: DecimalValue::ONE,
+            official_price_multiplier: DecimalValue::ONE,
+            requested_at: requested_at.clone(),
+        })
+        .await
+    {
+        Ok(group) => group,
+        Err(error) => {
+            return admin_user_system_response("admin api key command store is unavailable", error)
+        }
+    };
+    let command = match build_backend_create_api_key_command(
+        &state,
+        subject,
+        user_id,
+        group.id,
+        name,
+        &raw_key,
+        key_hash,
+        requested_at,
+        request_id,
+        idempotency_key,
+    ) {
+        Ok(command) => command,
+        Err(error) => return command_build_error_response(error),
+    };
+
+    match state.command_store.create_gateway_api_key(command).await {
+        Ok(created) => Json(PlusApiResult::success(AdminUserApiKeyCreateResponse {
+            key: admin_api_key_item_from_gateway(created.api_key),
+            raw_key,
+        }))
+        .into_response(),
+        Err(error) if error.is_conflict() => conflict_response(error),
+        Err(error) => {
+            admin_user_system_response("admin api key command store is unavailable", error)
+        }
+    }
+}
+
+async fn delete_backend_api_key(
+    State(state): State<AdminApiKeyCommandState>,
+    Path(api_key_id): Path<i64>,
+    headers: HeaderMap,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let api_key_id = match positive_path_id(api_key_id, "apiKeyId") {
+        Ok(id) => id,
+        Err(message) => return bad_request(message),
+    };
+    let requested_at = current_timestamp_string();
+    let request_id = match server_request_id() {
+        Ok(value) => value,
+        Err(response) => return response,
+    };
+    let audit_log_uuid = match state.secret_generator.generate_entity_uuid() {
+        Ok(value) => value,
+        Err(error) => return command_build_error_response(error),
+    };
+
+    let command = DeleteGatewayApiKeyForOrganizationCommand {
+        audit_log_uuid,
+        tenant_id: subject.tenant_id,
+        organization_id: subject.organization_id,
+        operator_id: subject.operator_id,
+        operator_type: subject.operator_type,
+        api_key_id,
+        requested_at,
+        request_id,
+    };
+
+    match state
+        .command_store
+        .delete_gateway_api_key_for_organization(command)
+        .await
+    {
+        Ok(true) => Json(PlusApiResult::success(AdminUserApiKeyDeleteResponse {
+            deleted: true,
+        }))
+        .into_response(),
+        Ok(false) => not_found_response("api key was not found"),
+        Err(error) => {
+            admin_user_system_response("admin api key command store is unavailable", error)
+        }
+    }
+}
+
 fn build_create_user_command(
     state: &AdminUserState,
     subject: AdminUserSubject,
@@ -569,6 +709,58 @@ fn build_create_api_key_command(
         requested_at,
         request_id,
     })
+}
+
+fn build_backend_create_api_key_command(
+    state: &AdminApiKeyCommandState,
+    subject: AdminUserSubject,
+    user_id: i64,
+    group_id: i64,
+    name: String,
+    raw_key: &str,
+    key_hash: String,
+    requested_at: String,
+    request_id: String,
+    idempotency_key: String,
+) -> Result<CreateGatewayApiKeyCommand, DomainError> {
+    Ok(CreateGatewayApiKeyCommand {
+        api_key_uuid: state.secret_generator.generate_entity_uuid()?,
+        access_policy_uuid: state.secret_generator.generate_entity_uuid()?,
+        quota_policy_uuid: state.secret_generator.generate_entity_uuid()?,
+        audit_log_uuid: state.secret_generator.generate_entity_uuid()?,
+        tenant_id: subject.tenant_id,
+        organization_id: subject.organization_id,
+        user_id,
+        operator_id: subject.operator_id,
+        operator_type: subject.operator_type,
+        name,
+        group_id,
+        key_prefix: key_prefix(raw_key),
+        key_display_masked: mask_created_key(raw_key),
+        key_hash,
+        copyable_key: raw_key.to_owned(),
+        hash_alg: HASH_ALG_HMAC_SHA256.to_owned(),
+        secret_version: SECRET_VERSION,
+        request_id,
+        idempotency_key,
+        created_at: requested_at,
+        expire_at: None,
+        allowed_capabilities: Vec::new(),
+        ip_allowlist: Vec::new(),
+        quota_limit: None,
+        default_for_runtime: false,
+    })
+}
+
+fn admin_api_key_item_from_gateway(api_key: GatewayApiKey) -> AdminUserApiKeyItem {
+    AdminUserApiKeyItem {
+        id: api_key.id,
+        user_id: api_key.user_id,
+        name: api_key.display_name(),
+        key: api_key.masked_key(),
+        used: "0.000000".to_owned(),
+        status: api_key.status_label().to_owned(),
+    }
 }
 
 fn resolve_subject(headers: &HeaderMap) -> Result<AdminUserSubject, Response> {
@@ -738,12 +930,12 @@ fn server_request_id() -> Result<String, Response> {
 
 fn normalize_idempotency_key(
     headers: &HeaderMap,
-    state: &AdminUserState,
+    secret_generator: &(dyn ApiKeySecretGenerator + Send + Sync),
 ) -> Result<String, DomainError> {
     if let Some(value) = header_value(headers, IDEMPOTENCY_KEY_HEADER) {
         return validate_request_token(value, IDEMPOTENCY_KEY_HEADER);
     }
-    state.secret_generator.generate_entity_uuid()
+    secret_generator.generate_entity_uuid()
 }
 
 fn header_value<'a>(headers: &'a HeaderMap, name: &str) -> Option<&'a str> {

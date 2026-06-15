@@ -3,11 +3,11 @@ use sdkwork_claw_product::application::{
     SelectProviderChannelRouteQuery, SelectProviderRouteQuery,
 };
 use sdkwork_claw_product::domain::{
-    AiModel, BillingMeter, ChannelGroup, DecimalValue, GatewayApiKey, GatewayApiKeyGroupBinding,
-    ModelMappingBindingType, ModelMappingRule, ModelPrice, ModelProviderRoute, ModelVendor,
-    ModelVendorDefinition, Money, PriceSide, PricingPlan, ProviderChannelRoute,
-    ResolveModelMappingContext, RouteCandidate, RoutingCapability, RoutingFallbackMode,
-    RoutingPolicy, RoutingPolicyScope, RoutingRule,
+    AiModel, BillingMeter, ChannelGroup, DecimalValue, GatewayApiKey,
+    GatewayApiKeyChannelGroupBinding, ModelMappingBindingType, ModelMappingRule, ModelPrice,
+    ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan,
+    ProviderChannelRoute, ResolveModelMappingContext, RouteCandidate, RoutingCapability,
+    RoutingFallbackMode, RoutingPolicy, RoutingPolicyScope, RoutingRule,
 };
 use sdkwork_claw_product::infrastructure::InMemoryPricingCatalog;
 use sdkwork_claw_product::ports::PricingCatalog;
@@ -2450,7 +2450,7 @@ fn selector_rejects_model_route_when_group_bindings_exist_but_not_for_channel_gr
 }
 
 #[test]
-fn selector_chooses_route_from_explicit_api_key_group_bindings() {
+fn selector_chooses_route_from_explicit_api_key_channel_group_bindings() {
     let mut catalog = base_catalog();
     catalog.add_channel_group(ChannelGroup::new(
         20,
@@ -2463,8 +2463,8 @@ fn selector_chooses_route_from_explicit_api_key_group_bindings() {
         GatewayApiKey::new(100, 10, "sk-test", "hash:sk-test")
             .with_owner(10, 20, 30)
             .with_group_bindings(vec![
-                GatewayApiKeyGroupBinding::new(10, "standard-group", "standard", 100, 100),
-                GatewayApiKeyGroupBinding::new(20, "premium-group", "standard", 1, 100),
+                GatewayApiKeyChannelGroupBinding::new(10, "standard-group", "standard", 100, 100),
+                GatewayApiKeyChannelGroupBinding::new(20, "premium-group", "standard", 1, 100),
             ]),
     );
     add_callable_route(

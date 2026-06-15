@@ -45,13 +45,13 @@ pnpm dev -- --install
 
 ## 3. Development Runtime
 
-Full development workspace:
+Gateway-backed client development workspace:
 
 ```bash
 pnpm dev
 ```
 
-Server development mode only:
+Explicit product server development mode:
 
 ```bash
 pnpm server:dev
@@ -72,11 +72,11 @@ pnpm server:plan
 Default access:
 
 ```text
-Edge Portal: http://127.0.0.1:3900/
 Direct Portal Dev: http://127.0.0.1:3901/
-Gateway: http://127.0.0.1:3900/v1
-Admin API: http://127.0.0.1:3900/backend/v3/api
-App API: http://127.0.0.1:3900/app/v3/api
+SDKWork API Gateway: http://127.0.0.1:3902/
+Gateway: http://127.0.0.1:3902/v1
+Admin API: http://127.0.0.1:3902/backend/v3/api
+App API: http://127.0.0.1:3902/app/v3/api
 ```
 
 ## 4. Bind Addresses And Forwarding
@@ -84,19 +84,19 @@ App API: http://127.0.0.1:3900/app/v3/api
 Expose development services externally:
 
 ```bash
-pnpm dev -- --gateway-bind 0.0.0.0:19080 --server-bind 0.0.0.0:12900 --portal-bind 0.0.0.0:13900
+pnpm server:dev -- --gateway-bind 0.0.0.0:19080 --server-bind 0.0.0.0:12900 --portal-bind 0.0.0.0:13900
 ```
 
 Forward the edge server to existing upstream services:
 
 ```bash
-pnpm dev -- --gateway-forward-url http://gateway.internal:18080 --backend-api-forward-url http://admin.internal:18081 --app-api-forward-url http://app.internal:18082
+pnpm server:dev -- --gateway-forward-url http://gateway.internal:18080 --backend-api-forward-url http://admin.internal:18081 --app-api-forward-url http://app.internal:18082
 ```
 
 HTTPS reverse proxy:
 
 ```bash
-pnpm dev -- --external-scheme https --trust-forwarded-headers
+pnpm server:dev -- --external-scheme https --trust-forwarded-headers
 ```
 
 Only trust forwarded headers behind a controlled reverse proxy.

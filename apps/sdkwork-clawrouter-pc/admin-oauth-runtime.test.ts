@@ -343,3 +343,11 @@ test("Claw Router product boundaries no longer expose legacy open platform contr
 
   assert.deepEqual(findings, []);
 });
+
+test('QR login documentation no longer advertises legacy open platform contracts', () => {
+  const docSource = readFileSync(join(workspaceRoot, 'docs', '34-login-qrcode-system.md'), 'utf8');
+
+  const matchedTerms = legacyTerms.filter((term) => docSource.includes(term));
+
+  assert.deepEqual(matchedTerms, []);
+});

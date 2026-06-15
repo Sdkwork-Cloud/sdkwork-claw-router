@@ -23,7 +23,7 @@
 - Modify: `services/sdkwork-claw-product/src/ports/admin_catalog_store.rs`
 - Modify: `services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_catalog_store.rs`
 - Modify: `services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_catalog_store.rs`
-- Modify: `services/sdkwork-claw-admin-api/tests/product_center_routes.rs`
+- Modify: `services/sdkwork-claw-admin/tests/product_center_routes.rs`
 - Modify: `docs/schema-registry/frontend-field-contracts/operations/backend-commerce-catalog.yaml`
 - Regenerate: `generated/api/api-contract-manifest.json`
 - Regenerate: `generated/openapi/clawrouter-backend-openapi.json`

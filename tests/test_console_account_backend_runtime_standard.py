@@ -3,7 +3,15 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-APPBASE_ROOT = ROOT / ".sdkwork" / "dependencies" / "sdkwork-appbase"
+WORKSPACE_ROOT = ROOT.parent
+COMMERCE_ROOT = WORKSPACE_ROOT / "sdkwork-commerce"
+COMMERCE_API_SERVER = COMMERCE_ROOT / "crates" / "sdkwork-commerce-api-server"
+COMMERCE_ACCOUNT_SERVICE = COMMERCE_ROOT / "crates" / "sdkwork-commerce-account-service"
+COMMERCE_STORAGE_SQLX = COMMERCE_ROOT / "crates" / "sdkwork-commerce-storage-repository-sqlx"
+COMMERCE_ACCOUNT_STORES = [
+    (COMMERCE_STORAGE_SQLX / "src" / "sqlite_account.rs", "SqliteCommerceAccountStore"),
+    (COMMERCE_STORAGE_SQLX / "src" / "postgres_account.rs", "PostgresCommerceAccountStore"),
+]
 
 
 class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
@@ -158,26 +166,20 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
         product_sql_mod = (
             ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "mod.rs"
         ).read_text(encoding="utf-8")
-        app_api = (ROOT / "services" / "sdkwork-claw-app-api" / "src" / "lib.rs").read_text(
+        app_api = (ROOT / "services" / "sdkwork-claw-app" / "src" / "lib.rs").read_text(
             encoding="utf-8"
         )
-        appbase_account_router = (
-            APPBASE_ROOT
-            / "packages"
-            / "native-rust"
-            / "commerce"
-            / "sdkwork-commerce-http-rust"
-            / "src"
-            / "account_router.rs"
+        router_app_api = (
+            ROOT / "crates" / "sdkwork-router-app-api" / "src" / "routes.rs"
         ).read_text(encoding="utf-8")
-        appbase_storage = (
-            APPBASE_ROOT
-            / "packages"
-            / "native-rust"
-            / "commerce"
-            / "sdkwork-commerce-storage-sqlx-rust"
-            / "src"
-            / "sqlite_account.rs"
+        dependency_surfaces = (
+            ROOT / "specs" / "dependency-api-surfaces.json"
+        ).read_text(encoding="utf-8")
+        commerce_account_router = (
+            COMMERCE_API_SERVER / "src" / "account_router.rs"
+        ).read_text(encoding="utf-8")
+        commerce_storage = (
+            COMMERCE_STORAGE_SQLX / "src" / "sqlite_account.rs"
         ).read_text(encoding="utf-8")
         product_account_path = (
             ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_account.rs"
@@ -191,29 +193,26 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("mod app_account;", product_api_mod)
         self.assertNotIn("app_account_summary_router", product_api_mod)
         self.assertNotIn("mod read_model;", product_sql_mod)
-        self.assertNotIn("AccountSummaryReadStore", app_api)
-        self.assertNotIn("SqliteAccountSummaryReadStore", app_api)
-        self.assertNotIn("PostgresAccountSummaryReadStore", app_api)
-        self.assertIn("fetch_account_summary", appbase_account_router)
-        self.assertIn("AccountSummaryQuery", appbase_account_router)
-        self.assertIn("AccountSummarySnapshot", appbase_account_router)
-        self.assertIn('AppWalletApiResult::error("4010"', appbase_account_router)
-        self.assertIn("account summary read model is unavailable", appbase_account_router)
-        self.assertIn("retrieve_account_summary_snapshot", appbase_storage)
-        self.assertIn("app_account_wallet_router_with_sqlite_pool", app_api)
-        self.assertIn("app_account_wallet_router_with_postgres_pool", app_api)
-        self.assertIn("app_request_subject_boundary", app_api)
+        self.assertNotIn("AccountSummaryReadStore", app_api + router_app_api)
+        self.assertNotIn("SqliteAccountSummaryReadStore", app_api + router_app_api)
+        self.assertNotIn("PostgresAccountSummaryReadStore", app_api + router_app_api)
+        self.assertIn("fetch_account_summary", commerce_account_router)
+        self.assertIn("AccountSummaryQuery", commerce_account_router)
+        self.assertIn("AccountSummarySnapshot", commerce_account_router)
+        self.assertIn('AppWalletApiResult::error("4010"', commerce_account_router)
+        self.assertIn("account summary read model is unavailable", commerce_account_router)
+        self.assertIn("retrieve_account_summary_snapshot", commerce_storage)
+        self.assertIn("pub use sdkwork_router_app_api::*;", app_api)
+        self.assertIn('Some("commerce" | "promotion")', router_app_api)
+        self.assertIn('"/app/v3/api/accounts/"', router_app_api)
+        self.assertIn("is_commerce_dependency_contract_path", router_app_api)
+        self.assertIn("sdkwork-commerce-app-sdk", dependency_surfaces)
+        self.assertIn('"mode": "external-service"', dependency_surfaces)
+        self.assertIn('"sameOriginAllowed": false', dependency_surfaces)
 
     def test_console_account_port_exposes_only_safe_frontend_fields(self) -> None:
         account_domain = (
-            APPBASE_ROOT
-            / "packages"
-            / "native-rust"
-            / "commerce"
-            / "sdkwork-commerce-account-rust"
-            / "src"
-            / "domain"
-            / "mod.rs"
+            COMMERCE_ACCOUNT_SERVICE / "src" / "domain" / "mod.rs"
         ).read_text(encoding="utf-8")
         product_port_path = (
             ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "account_summary_read_store.rs"
@@ -265,17 +264,7 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("mock", account_summary_contract.lower())
 
     def test_console_account_sql_read_stores_use_scope_and_do_not_expose_raw_bank_details(self) -> None:
-        for relative, store_name in [
-            (
-                "../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/sqlite_account.rs",
-                "SqliteCommerceAccountStore",
-            ),
-            (
-                "../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/postgres_account.rs",
-                "PostgresCommerceAccountStore",
-            ),
-        ]:
-            store_path = ROOT / relative
+        for store_path, store_name in COMMERCE_ACCOUNT_STORES:
             self.assertTrue(store_path.exists())
             store = store_path.read_text(encoding="utf-8")
 
@@ -325,13 +314,10 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
                 self.assertNotIn(sensitive_column, store.lower())
 
     def test_console_account_consumption_modality_preserves_unknown_values(self) -> None:
-        for relative in [
-            "../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/sqlite_account.rs",
-            "../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/postgres_account.rs",
-        ]:
-            store = (ROOT / relative).read_text(encoding="utf-8")
+        for store_path, _store_name in COMMERCE_ACCOUNT_STORES:
+            store = store_path.read_text(encoding="utf-8")
             compact_store = " ".join(store.split())
-            with self.subTest(store=relative):
+            with self.subTest(store=str(store_path)):
                 self.assertIn('let modality = optional_integer_cell(row, "modality");', compact_store)
                 self.assertIn("None => \"Unknown\"", store)
                 self.assertIn("Some(_) => \"Unknown\"", store)
@@ -342,13 +328,10 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
                 self.assertNotIn("_ => \"bg-emerald-500\"", store)
 
     def test_console_account_login_status_fails_closed_for_missing_or_unknown_values(self) -> None:
-        for relative in [
-            "../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/sqlite_account.rs",
-            "../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/postgres_account.rs",
-        ]:
-            store = (ROOT / relative).read_text(encoding="utf-8")
+        for store_path, _store_name in COMMERCE_ACCOUNT_STORES:
+            store = store_path.read_text(encoding="utf-8")
             compact_store = " ".join(store.split())
-            with self.subTest(store=relative):
+            with self.subTest(store=str(store_path)):
                 self.assertIn("login_result,", store)
                 self.assertIn("risk_level", store)
                 self.assertNotIn("COALESCE(login_result, 0) AS login_result", store)
@@ -387,21 +370,6 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
         openapi = (
             ROOT / "generated" / "openapi" / "clawrouter-app-openapi.json"
         ).read_text(encoding="utf-8")
-        sdk_commerce = (
-            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "commerce.ts"
-        ).read_text(encoding="utf-8")
-        account_response_path = (
-            ROOT
-            / "sdks"
-            / "clawrouter-app-sdk"
-            / "clawrouter-app-sdk-typescript"
-            / "src"
-            / "types"
-            / "accounts-current-summary-retrieve-result.ts"
-        )
-        standard_resource_path = (
-            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "commerce-standard-resource-response.ts"
-        )
         frontend = (
             ROOT
             / "apps"
@@ -411,13 +379,24 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
             / "src"
             / "accountService.ts"
         ).read_text(encoding="utf-8")
+        sdk_clients = (
+            ROOT
+            / "apps"
+            / "sdkwork-clawrouter-pc"
+            / "packages"
+            / "sdkwork-clawrouter-pc-commons"
+            / "src"
+            / "sdk-clients.ts"
+        ).read_text(encoding="utf-8")
 
         self.assertEqual(package["type"], "module")
         self.assertEqual(package["scripts"]["typecheck"], "tsc --noEmit")
         self.assertIn('"AccountsCurrentSummaryRetrieveResult"', openapi)
         self.assertIn('"$ref": "#/components/schemas/AccountsCurrentSummaryRetrieveResult"', openapi)
-        self.assertTrue(account_response_path.exists())
-        self.assertTrue(standard_resource_path.exists())
+        self.assertIn('"CommerceStandardResourceResponse"', openapi)
+        self.assertIn('"operationId": "accounts.current.summary.retrieve"', openapi)
+        self.assertIn('"x-sdkwork-resource": "accounts.current.summary"', openapi)
+        self.assertIn('"/app/v3/api/accounts/current/summary"', openapi)
         self.assertFalse(
             (
                 ROOT
@@ -430,18 +409,6 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
             ).exists()
         )
 
-        account_response = account_response_path.read_text(encoding="utf-8")
-        standard_resource = standard_resource_path.read_text(encoding="utf-8")
-        self.assertIn("export interface AccountsCurrentSummaryRetrieveResult", account_response)
-        self.assertIn("data?: CommerceStandardResourceResponse;", account_response)
-        self.assertIn("export interface CommerceStandardResourceResponse", standard_resource)
-        self.assertIn("item: Record<string, unknown>;", standard_resource)
-        self.assertIn(
-            "async retrieve(): Promise<AccountsCurrentSummaryRetrieveResult>",
-            sdk_commerce,
-        )
-        self.assertIn("public readonly summary: CommerceAccountsCurrentSummaryApi;", sdk_commerce)
-
         self.assertIn("export interface AccountStats", frontend)
         self.assertIn("id: string;", frontend)
         self.assertIn("name: string;", frontend)
@@ -449,7 +416,8 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
         self.assertIn("paymentMethod: string;", frontend)
         self.assertIn("mfaEnabled: boolean;", frontend)
         self.assertIn("status: 'success' | 'warning';", frontend)
-        self.assertIn("getClawRouterAppSdkClient().commerce.accounts.current.summary.retrieve()", frontend)
+        self.assertIn("import { getSdkworkCommerceService } from '@sdkwork/commerce-service';", frontend)
+        self.assertIn("getSdkworkCommerceService().accounts.current.summary.retrieve()", frontend)
         self.assertNotIn("type SdkworkCommerceAppAccountSummary", frontend)
         self.assertNotIn("SdkworkCommerceAppAccountSummary['id']", frontend)
         self.assertNotIn("SdkworkCommerceAppAccountSummary['consumptionByService'][number]['name']", frontend)
@@ -457,6 +425,7 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("SdkworkCommerceAppAccountSummary['security']['mfaEnabled']", frontend)
         self.assertNotIn("SdkworkCommerceAppAccountSummary['loginLogs'][number]['status']", frontend)
         self.assertNotIn("@sdkwork/clawrouter-app-sdk", frontend)
+        self.assertNotIn("getClawRouterAppSdkClient().commerce.accounts.current.summary.retrieve()", frontend)
         self.assertIn("Promise<AccountStats>", frontend)
         self.assertIn("normalizeAccountStats", frontend)
         self.assertIn("normalizeConsumptionItem", frontend)
@@ -465,6 +434,11 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
         self.assertIn("normalizeLoginLog", frontend)
         self.assertIn("readRequiredApiItem(result, 'console.account.states.loadErrorFallback')", frontend)
         self.assertNotIn("as unknown as AccountStats", frontend)
+        self.assertIn("configureSdkworkCommerceServiceProvider(createClawRouterCommerceService)", sdk_clients)
+        self.assertIn("createSdkworkCommerceService({", sdk_clients)
+        self.assertIn("createSdkworkCommerceAppSdkClient", sdk_clients)
+        self.assertIn("resolveRequiredCommerceAppBaseUrl", sdk_clients)
+        self.assertIn("sdkwork-commerce-app-sdk-generated-typescript", sdk_clients)
 
 
 if __name__ == "__main__":

@@ -866,7 +866,7 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
             ).glob("*.ts")
         )
         app_api_source = (
-            ROOT / "services" / "sdkwork-claw-app-api" / "src" / "lib.rs"
+            ROOT / "services" / "sdkwork-claw-app" / "src" / "lib.rs"
         ).read_text(encoding="utf-8")
         operations_source = (
             PLAYGROUND_ROOT / "appRuntimeApiOperations.ts"

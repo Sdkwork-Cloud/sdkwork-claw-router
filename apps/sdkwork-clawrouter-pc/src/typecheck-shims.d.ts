@@ -1917,10 +1917,8 @@ declare module '@sdkwork/auth-runtime-pc-react' {
     };
     baseUrls: {
       appbaseAppApiBaseUrl: string;
-      appbaseBackendApiBaseUrl?: string;
     };
     createAppbaseAppClient?: (config: unknown) => unknown;
-    createAppbaseBackendClient?: (config: unknown) => unknown;
     hooks?: {
       onSessionChanged?: (session: unknown) => Promise<unknown> | unknown;
     };

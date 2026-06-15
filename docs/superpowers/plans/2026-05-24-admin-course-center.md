@@ -32,7 +32,7 @@
 - Modify: `services/sdkwork-claw-product/src/ports/mod.rs`
 - Modify: `services/sdkwork-claw-product/src/infrastructure/sql/sqlite/mod.rs`
 - Modify: `services/sdkwork-claw-product/src/infrastructure/sql/postgres/mod.rs`
-- Modify: `services/sdkwork-claw-admin-api/src/lib.rs`
+- Modify: `services/sdkwork-claw-admin/src/lib.rs`
 - Test: `services/sdkwork-claw-product/tests/sqlite_admin_course_store.rs`
 - Test: `services/sdkwork-claw-product/tests/admin_course_api.rs`
 

@@ -2,6 +2,7 @@ use serde_json::Value;
 use sqlx::{Row, SqlitePool};
 
 use crate::domain::{DomainError, DomainResult};
+use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
 use crate::infrastructure::sql::sql_admin_product_center::{
     empty_media_resource, media_resource_from_snapshot, media_resource_locator,
     media_resource_object_blob_id, media_resource_stable_id,
@@ -31,6 +32,17 @@ pub struct SqliteCourseStore {
 }
 
 impl SqliteCourseStore {
+    pub fn new(pool: SqlitePool) -> Self {
+        Self { pool }
+    }
+}
+
+#[derive(Debug, Clone)]
+pub struct SqliteCourseApplicationCommandStore {
+    pool: SqlitePool,
+}
+
+impl SqliteCourseApplicationCommandStore {
     pub fn new(pool: SqlitePool) -> Self {
         Self { pool }
     }
@@ -91,10 +103,20 @@ impl CourseApplicationCommandStore for SqliteCourseStore {
     }
 }
 
+impl CourseApplicationCommandStore for SqliteCourseApplicationCommandStore {
+    fn create_course_application<'a>(
+        &'a self,
+        command: CreateCourseApplicationCommand,
+    ) -> CourseCommandFuture<'a, CourseApplicationItem> {
+        Box::pin(async move { create_course_application(&self.pool, command).await })
+    }
+}
+
 async fn create_course_application(
     pool: &SqlitePool,
     command: CreateCourseApplicationCommand,
 ) -> DomainResult<CourseApplicationItem> {
+    let id = next_claw_runtime_id("content_course_application")?;
     let metadata = serde_json::json!({
         "source": "course_application",
         "notes": command.notes,
@@ -107,9 +129,9 @@ async fn create_course_application(
     let row = sqlx::query(
         r#"
         INSERT INTO content_course_application
-            (uuid, tenant_id, organization_id, user_id, owner_type, owner_id, data_scope, status, metadata, title, category, description, source_provider, external_bvid, video_media_resource_id, video_object_blob_id, video_resource_snapshot, contact_name, contact_email, submitted_at)
+            (id, uuid, tenant_id, organization_id, user_id, owner_type, owner_id, data_scope, status, metadata, title, category, description, source_provider, external_bvid, video_media_resource_id, video_object_blob_id, video_resource_snapshot, contact_name, contact_email, submitted_at)
         VALUES
-            (?, ?, ?, ?, 1, ?, 0, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            (?, ?, ?, ?, ?, 1, ?, 0, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         RETURNING
             id,
             uuid,
@@ -125,6 +147,7 @@ async fn create_course_application(
             COALESCE(CAST(submitted_at AS TEXT), '') AS submitted_at
         "#,
     )
+    .bind(id)
     .bind(&command.uuid)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)

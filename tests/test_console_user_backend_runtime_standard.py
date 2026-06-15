@@ -12,7 +12,7 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
         product_api_mod = (
             ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "mod.rs"
         ).read_text(encoding="utf-8")
-        app_api = (ROOT / "services" / "sdkwork-claw-app-api" / "src" / "lib.rs").read_text(
+        app_api = (ROOT / "services" / "sdkwork-claw-app" / "src" / "lib.rs").read_text(
             encoding="utf-8"
         )
         app_user_path = (
@@ -34,12 +34,11 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
         self.assertIn('PlusApiResult::error("4010"', app_user)
         self.assertIn("app user profile read model is unavailable", app_user)
 
-        self.assertIn("AppUserProfileReadStore", app_api)
-        self.assertIn("AppUserProfileStore", app_api)
-        self.assertIn("SqliteAppUserProfileReadStore", app_api)
-        self.assertIn("PostgresAppUserProfileReadStore", app_api)
-        self.assertIn("app_user_profile_router()", app_api)
-        self.assertIn("app_user_profile_router_with_read_store", app_api)
+        self.assertNotIn("AppUserProfileStore", app_api)
+        self.assertNotIn("SqliteAppUserProfileReadStore", app_api)
+        self.assertNotIn("PostgresAppUserProfileReadStore", app_api)
+        self.assertNotIn("app_user_profile_router()", app_api)
+        self.assertNotIn("app_user_profile_router_with_read_store", app_api)
         self.assertIn("app_request_subject_boundary", app_api)
 
     def test_console_user_port_exposes_only_safe_frontend_fields(self) -> None:
@@ -339,7 +338,7 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
         self.assertIn("Promise<UserProfile>", frontend)
         self.assertIn("normalizeUserProfile", frontend)
         self.assertIn("readRequiredString(data, 'email', 'User profile response missing data')", frontend)
-        self.assertIn("getClawRouterAppSdkClient().iam.users.current.retrieve()", frontend)
+        self.assertIn("getSdkworkAppbaseAppSdkClient().iam.users.current.retrieve()", frontend)
         self.assertNotIn("getClawRouterAppSdkClient().user.fetchUserProfile()", frontend)
         self.assertNotIn("as unknown as UserProfile", frontend)
         self.assertNotIn("initialAvatar", frontend)
@@ -374,7 +373,7 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("read-only", user_view)
         self.assertNotIn("command contract", user_view)
         self.assertIn("UserService.fetchCurrentUser()", user_view)
-        self.assertIn("getClawRouterAppSdkClient().iam.users.current.retrieve()", user_service)
+        self.assertIn("getSdkworkAppbaseAppSdkClient().iam.users.current.retrieve()", user_service)
         self.assertIn("operation: fetchCurrentUser", contract)
         self.assertIn("operation_id: users.current.retrieve", contract)
         self.assertNotIn("updateUserProfile", contract)

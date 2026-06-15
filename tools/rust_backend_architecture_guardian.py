@@ -24,14 +24,14 @@ class RustBackendArchitectureGuardian:
         "crates/sdkwork-claw-http",
         "crates/sdkwork-claw-observability",
         "services/sdkwork-claw-gateway",
-        "services/sdkwork-claw-admin-api",
-        "services/sdkwork-claw-app-api",
+        "services/sdkwork-claw-admin",
+        "services/sdkwork-claw-app",
         "services/sdkwork-claw-product",
     )
     HTTP_BOUNDARY_SERVICES: tuple[str, ...] = (
         "services/sdkwork-claw-gateway",
-        "services/sdkwork-claw-admin-api",
-        "services/sdkwork-claw-app-api",
+        "services/sdkwork-claw-admin",
+        "services/sdkwork-claw-app",
     )
     REQUIRED_WORKSPACE_DEPENDENCIES: tuple[str, ...] = (
         "axum",

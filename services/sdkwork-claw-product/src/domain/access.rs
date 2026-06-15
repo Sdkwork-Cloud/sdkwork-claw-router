@@ -18,7 +18,7 @@ pub struct GatewayApiKey {
     pub expire_at: Option<String>,
     pub status_code: i32,
     pub default_for_runtime: bool,
-    pub group_bindings: Vec<GatewayApiKeyGroupBinding>,
+    pub group_bindings: Vec<GatewayApiKeyChannelGroupBinding>,
 }
 
 impl GatewayApiKey {
@@ -80,14 +80,19 @@ impl GatewayApiKey {
         self
     }
 
-    pub fn with_group_bindings(mut self, group_bindings: Vec<GatewayApiKeyGroupBinding>) -> Self {
+    pub fn with_group_bindings(
+        mut self,
+        group_bindings: Vec<GatewayApiKeyChannelGroupBinding>,
+    ) -> Self {
         self.group_bindings = normalized_group_bindings(group_bindings);
         self
     }
 
-    pub fn effective_group_bindings(&self) -> Vec<GatewayApiKeyGroupBinding> {
+    pub fn effective_group_bindings(&self) -> Vec<GatewayApiKeyChannelGroupBinding> {
         if self.group_bindings.is_empty() {
-            vec![GatewayApiKeyGroupBinding::default_route(self.group_id)]
+            vec![GatewayApiKeyChannelGroupBinding::default_route(
+                self.group_id,
+            )]
         } else {
             self.group_bindings.clone()
         }
@@ -118,7 +123,7 @@ impl GatewayApiKey {
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
-pub struct GatewayApiKeyGroupBinding {
+pub struct GatewayApiKeyChannelGroupBinding {
     pub group_id: i64,
     pub group_code: String,
     pub pricing_plan_code: String,
@@ -128,7 +133,7 @@ pub struct GatewayApiKeyGroupBinding {
     pub weight: i32,
 }
 
-impl GatewayApiKeyGroupBinding {
+impl GatewayApiKeyChannelGroupBinding {
     pub fn new(
         group_id: i64,
         group_code: &str,
@@ -258,8 +263,8 @@ fn mask_key_prefix(key_prefix: &str) -> String {
 }
 
 fn normalized_group_bindings(
-    group_bindings: Vec<GatewayApiKeyGroupBinding>,
-) -> Vec<GatewayApiKeyGroupBinding> {
+    group_bindings: Vec<GatewayApiKeyChannelGroupBinding>,
+) -> Vec<GatewayApiKeyChannelGroupBinding> {
     let mut bindings = group_bindings
         .into_iter()
         .filter(|binding| binding.group_id > 0)

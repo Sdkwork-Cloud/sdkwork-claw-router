@@ -15,7 +15,7 @@ const OPEN_SDK_AUTHORITY_OPENAPI_JSON: &str =
 
 #[tokio::test]
 async fn service_router_exposes_standard_health_and_ready_endpoints() {
-    let router = sdkwork_claw_http::service_router("sdkwork-claw-app-api");
+    let router = sdkwork_claw_http::service_router("sdkwork-claw-app");
 
     let health = router
         .clone()
@@ -311,6 +311,10 @@ async fn service_router_exposes_ordered_sdkwork_router_api_schema_tabs() {
             "image-open-api",
             "video-open-api",
             "audio-open-api",
+            "drive-open-api",
+            "knowledgebase-open-api",
+            "memory-open-api",
+            "agent-open-api",
             "payment-open-api",
             "iaas-open-api",
             "paas-open-api",
@@ -405,42 +409,105 @@ async fn service_router_exposes_ordered_sdkwork_router_api_schema_tabs() {
 
     assert_schema_tab(
         &payload["tabs"][4],
-        "payment-open-api",
-        "Payment Open API",
+        "drive-open-api",
+        "Drive Open API",
         50,
-        "/payments/v3/openapi.json",
+        "/openapi.json",
     );
-    assert_json_array_contains(&payload["tabs"][4]["aliases"], "payment-aggregate");
+    assert_json_array_contains(&payload["tabs"][4]["aliases"], "sdkwork-drive-open-api");
+    assert_json_array_contains(&payload["tabs"][4]["aliases"], "sdkwork-drive.open");
+    assert_eq!("drive", payload["tabs"][4]["serviceGroups"][0]["code"]);
+    assert_json_array_contains(
+        &payload["tabs"][4]["serviceGroups"][0]["operations"],
+        "file_upload",
+    );
 
     assert_schema_tab(
         &payload["tabs"][5],
-        "iaas-open-api",
-        "IaaS Open API",
+        "knowledgebase-open-api",
+        "Knowledgebase Open API",
         60,
-        "/cloud/v3/openapi.json",
+        "/openapi.json",
     );
-    assert_json_array_contains(&payload["tabs"][5]["aliases"], "cloud-services");
+    assert_json_array_contains(
+        &payload["tabs"][5]["aliases"],
+        "sdkwork-knowledgebase-open-api",
+    );
     assert_eq!(
-        "object_storage",
+        "knowledgebase",
         payload["tabs"][5]["serviceGroups"][0]["code"]
     );
     assert_json_array_contains(
-        &payload["tabs"][5]["serviceGroups"][0]["providerCodes"],
+        &payload["tabs"][5]["serviceGroups"][0]["operations"],
+        "vector_store_search",
+    );
+
+    assert_schema_tab(
+        &payload["tabs"][6],
+        "memory-open-api",
+        "Memory Open API",
+        70,
+        "/openapi.json",
+    );
+    assert_json_array_contains(&payload["tabs"][6]["aliases"], "sdkwork-memory-open-api");
+    assert_eq!("memory", payload["tabs"][6]["serviceGroups"][0]["code"]);
+    assert_json_array_contains(
+        &payload["tabs"][6]["serviceGroups"][0]["operations"],
+        "conversation_items",
+    );
+
+    assert_schema_tab(
+        &payload["tabs"][7],
+        "agent-open-api",
+        "Agent Open API",
+        80,
+        "/openapi.json",
+    );
+    assert_json_array_contains(&payload["tabs"][7]["aliases"], "sdkwork-agent-open-api");
+    assert_eq!("agent", payload["tabs"][7]["serviceGroups"][0]["code"]);
+    assert_json_array_contains(
+        &payload["tabs"][7]["serviceGroups"][0]["operations"],
+        "assistant_runs",
+    );
+
+    assert_schema_tab(
+        &payload["tabs"][8],
+        "payment-open-api",
+        "Payment Open API",
+        90,
+        "/payments/v3/openapi.json",
+    );
+    assert_json_array_contains(&payload["tabs"][8]["aliases"], "payment-aggregate");
+
+    assert_schema_tab(
+        &payload["tabs"][9],
+        "iaas-open-api",
+        "IaaS Open API",
+        100,
+        "/cloud/v3/openapi.json",
+    );
+    assert_json_array_contains(&payload["tabs"][9]["aliases"], "cloud-services");
+    assert_eq!(
+        "object_storage",
+        payload["tabs"][9]["serviceGroups"][0]["code"]
+    );
+    assert_json_array_contains(
+        &payload["tabs"][9]["serviceGroups"][0]["providerCodes"],
         "huawei_obs",
     );
     assert_json_array_contains(
-        &payload["tabs"][5]["serviceGroups"][0]["providerCodes"],
+        &payload["tabs"][9]["serviceGroups"][0]["providerCodes"],
         "volcengine_tos",
     );
     assert_json_array_contains(
-        &payload["tabs"][5]["serviceGroups"][0]["operations"],
+        &payload["tabs"][9]["serviceGroups"][0]["operations"],
         "s3_object_batch_delete",
     );
     assert_json_array_contains(
-        &payload["tabs"][5]["serviceGroups"][0]["operations"],
+        &payload["tabs"][9]["serviceGroups"][0]["operations"],
         "s3_server_side_encryption",
     );
-    let iaas_service_groups = payload["tabs"][5]["serviceGroups"].as_array().unwrap();
+    let iaas_service_groups = payload["tabs"][9]["serviceGroups"].as_array().unwrap();
     assert!(iaas_service_groups
         .iter()
         .any(|group| group["code"] == "cloud_compute"));
@@ -452,37 +519,37 @@ async fn service_router_exposes_ordered_sdkwork_router_api_schema_tabs() {
         .any(|group| group["code"] == "deployment_orchestration"));
 
     assert_schema_tab(
-        &payload["tabs"][6],
+        &payload["tabs"][10],
         "paas-open-api",
         "PaaS Open API",
-        70,
+        110,
         "/paas/v3/openapi.json",
     );
-    assert_json_array_contains(&payload["tabs"][6]["aliases"], "paas-api");
-    assert_eq!("ocr", payload["tabs"][6]["serviceGroups"][0]["code"]);
-    assert!(payload["tabs"][6]["serviceGroups"]
+    assert_json_array_contains(&payload["tabs"][10]["aliases"], "paas-api");
+    assert_eq!("ocr", payload["tabs"][10]["serviceGroups"][0]["code"]);
+    assert!(payload["tabs"][10]["serviceGroups"]
         .as_array()
         .unwrap()
         .iter()
         .any(|group| group["code"] == "content_moderation"));
 
     assert_schema_tab(
-        &payload["tabs"][7],
+        &payload["tabs"][11],
         "app-api",
         "App API",
-        80,
+        120,
         "/app/v3/api/openapi.json",
     );
-    assert_json_array_contains(&payload["tabs"][7]["aliases"], "app");
+    assert_json_array_contains(&payload["tabs"][11]["aliases"], "app");
 
     assert_schema_tab(
-        &payload["tabs"][8],
+        &payload["tabs"][12],
         "backend-api",
         "Backend API",
-        90,
+        130,
         "/backend/v3/api/openapi.json",
     );
-    assert_json_array_contains(&payload["tabs"][8]["aliases"], "backend");
+    assert_json_array_contains(&payload["tabs"][12]["aliases"], "backend");
 }
 
 #[tokio::test]
@@ -2030,22 +2097,20 @@ async fn service_router_payment_aggregate_openapi_contract_defines_standard_paym
 
 #[tokio::test]
 async fn service_router_keeps_gateway_openapi_off_app_and_backend_root_paths() {
-    let app_response = sdkwork_claw_http::service_router_with_contract_routes(
-        "sdkwork-claw-app-api",
-        ApiSurface::App,
-    )
-    .oneshot(
-        Request::builder()
-            .uri("/openapi.json")
-            .body(Body::empty())
-            .unwrap(),
-    )
-    .await
-    .unwrap();
+    let app_response =
+        sdkwork_claw_http::service_router_with_contract_routes("sdkwork-claw-app", ApiSurface::App)
+            .oneshot(
+                Request::builder()
+                    .uri("/openapi.json")
+                    .body(Body::empty())
+                    .unwrap(),
+            )
+            .await
+            .unwrap();
     assert_eq!(StatusCode::NOT_FOUND, app_response.status());
 
     let backend_response = sdkwork_claw_http::service_router_with_contract_routes(
-        "sdkwork-claw-admin-api",
+        "sdkwork-claw-admin",
         ApiSurface::Backend,
     )
     .oneshot(
@@ -2058,22 +2123,20 @@ async fn service_router_keeps_gateway_openapi_off_app_and_backend_root_paths() {
     .unwrap();
     assert_eq!(StatusCode::NOT_FOUND, backend_response.status());
 
-    let app_payment_response = sdkwork_claw_http::service_router_with_contract_routes(
-        "sdkwork-claw-app-api",
-        ApiSurface::App,
-    )
-    .oneshot(
-        Request::builder()
-            .uri("/payments/v3/openapi.json")
-            .body(Body::empty())
-            .unwrap(),
-    )
-    .await
-    .unwrap();
+    let app_payment_response =
+        sdkwork_claw_http::service_router_with_contract_routes("sdkwork-claw-app", ApiSurface::App)
+            .oneshot(
+                Request::builder()
+                    .uri("/payments/v3/openapi.json")
+                    .body(Body::empty())
+                    .unwrap(),
+            )
+            .await
+            .unwrap();
     assert_eq!(StatusCode::NOT_FOUND, app_payment_response.status());
 
     let backend_payment_response = sdkwork_claw_http::service_router_with_contract_routes(
-        "sdkwork-claw-admin-api",
+        "sdkwork-claw-admin",
         ApiSurface::Backend,
     )
     .oneshot(
@@ -2089,18 +2152,16 @@ async fn service_router_keeps_gateway_openapi_off_app_and_backend_root_paths() {
 
 #[tokio::test]
 async fn service_router_exposes_surface_openapi_documents() {
-    let app_response = sdkwork_claw_http::service_router_with_contract_routes(
-        "sdkwork-claw-app-api",
-        ApiSurface::App,
-    )
-    .oneshot(
-        Request::builder()
-            .uri("/app/v3/api/openapi.json")
-            .body(Body::empty())
-            .unwrap(),
-    )
-    .await
-    .unwrap();
+    let app_response =
+        sdkwork_claw_http::service_router_with_contract_routes("sdkwork-claw-app", ApiSurface::App)
+            .oneshot(
+                Request::builder()
+                    .uri("/app/v3/api/openapi.json")
+                    .body(Body::empty())
+                    .unwrap(),
+            )
+            .await
+            .unwrap();
     assert_eq!(StatusCode::OK, app_response.status());
     assert_eq!(
         "public, max-age=30, stale-while-revalidate=60",
@@ -2119,7 +2180,7 @@ async fn service_router_exposes_surface_openapi_documents() {
     assert!(app_payload["paths"].get("/app/v3/api/ai/models").is_some());
 
     let backend_response = sdkwork_claw_http::service_router_with_contract_routes(
-        "sdkwork-claw-admin-api",
+        "sdkwork-claw-admin",
         ApiSurface::Backend,
     )
     .oneshot(
@@ -2144,7 +2205,7 @@ async fn service_router_exposes_surface_openapi_documents() {
 #[tokio::test]
 async fn service_router_surface_openapi_documents_exclude_commerce_dependency_contracts() {
     let app_payload = fetch_surface_openapi(
-        "sdkwork-claw-app-api",
+        "sdkwork-claw-app",
         ApiSurface::App,
         "/app/v3/api/openapi.json",
     )
@@ -2188,7 +2249,7 @@ async fn service_router_surface_openapi_documents_exclude_commerce_dependency_co
     );
 
     let backend_payload = fetch_surface_openapi(
-        "sdkwork-claw-admin-api",
+        "sdkwork-claw-admin",
         ApiSurface::Backend,
         "/backend/v3/api/openapi.json",
     )
@@ -2247,10 +2308,7 @@ async fn service_router_openapi_documents_match_sdk_authority_contracts() {
     );
 
     let app_payload = fetch_runtime_openapi_json(
-        sdkwork_claw_http::service_router_with_contract_routes(
-            "sdkwork-claw-app-api",
-            ApiSurface::App,
-        ),
+        sdkwork_claw_http::service_router_with_contract_routes("sdkwork-claw-app", ApiSurface::App),
         "/app/v3/api/openapi.json",
     )
     .await;
@@ -2262,7 +2320,7 @@ async fn service_router_openapi_documents_match_sdk_authority_contracts() {
 
     let backend_payload = fetch_runtime_openapi_json(
         sdkwork_claw_http::service_router_with_contract_routes(
-            "sdkwork-claw-admin-api",
+            "sdkwork-claw-admin",
             ApiSurface::Backend,
         ),
         "/backend/v3/api/openapi.json",
@@ -2277,7 +2335,7 @@ async fn service_router_openapi_documents_match_sdk_authority_contracts() {
 
 #[tokio::test]
 async fn service_router_health_body_contains_service_identity() {
-    let response = sdkwork_claw_http::service_router("sdkwork-claw-admin-api")
+    let response = sdkwork_claw_http::service_router("sdkwork-claw-admin")
         .oneshot(
             Request::builder()
                 .uri("/healthz")
@@ -2292,7 +2350,7 @@ async fn service_router_health_body_contains_service_identity() {
     let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
 
     assert_eq!("ok", payload["status"]);
-    assert_eq!("sdkwork-claw-admin-api", payload["service"]);
+    assert_eq!("sdkwork-claw-admin", payload["service"]);
     assert!(payload["deployment_mode"].is_string());
     assert_eq!(false, payload["database"]["configured"]);
 }
@@ -2311,7 +2369,7 @@ async fn service_router_health_body_contains_safe_database_status() {
     );
     let database = DatabaseConfig::from_url_with_max_connections(&database_url, 8).unwrap();
     let router = sdkwork_claw_http::service_router_with_database_config(
-        "sdkwork-claw-admin-api",
+        "sdkwork-claw-admin",
         Some(&database),
     );
 

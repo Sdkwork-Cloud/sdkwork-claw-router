@@ -359,7 +359,16 @@ class FrontendOperationAudit:
                 messages.append(f"frontend operation {key} multipart upload must declare non-empty file_targets")
 
             if kind in self.WRITE_KINDS:
-                if valid_write_tables and not write_tables and not is_multipart_upload:
+                if (
+                    valid_write_tables
+                    and not write_tables
+                    and not is_multipart_upload
+                    and not self._is_appbase_dependency_operation(
+                        api_surface=api_surface,
+                        sdk_domain=sdk_domain,
+                        source_operation=entry,
+                    )
+                ):
                     messages.append(f"frontend operation {key} kind {kind} must declare non-empty write_tables")
                 elif (
                     valid_write_tables

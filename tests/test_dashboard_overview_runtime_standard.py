@@ -400,7 +400,7 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         product_api = (ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "mod.rs").read_text(
             encoding="utf-8"
         )
-        app_api = (ROOT / "services" / "sdkwork-claw-app-api" / "src" / "lib.rs").read_text(encoding="utf-8")
+        app_api = (ROOT / "services" / "sdkwork-claw-app" / "src" / "lib.rs").read_text(encoding="utf-8")
 
         self.assertIn("app_dashboard_overview_router", product_api)
         self.assertIn("app_dashboard_overview_router_with_read_store", product_api)

@@ -147,7 +147,8 @@ struct IamOauthSessionCreateRequest {
 }
 
 #[derive(Debug, Deserialize)]
-struct IamOauthAuthorizationUrlQuery {
+#[serde(rename_all = "camelCase")]
+struct IamOauthAuthorizationUrlCreateRequest {
     provider: String,
     redirect_uri: String,
     state: Option<String>,
@@ -479,11 +480,11 @@ fn app_public_auth_routes() -> Router<AppAuthState> {
             post(create_password_reset),
         )
         .route(
-            "/app/v3/api/auth/oauth_authorization_urls",
-            get(oauth_authorization_url_not_configured),
+            "/app/v3/api/oauth/authorization_urls",
+            post(oauth_authorization_url_not_configured),
         )
         .route(
-            "/app/v3/api/auth/oauth_sessions",
+            "/app/v3/api/oauth/sessions",
             post(create_oauth_session),
         )
 }
@@ -1873,12 +1874,12 @@ async fn create_password_reset_inner(
 
 async fn oauth_authorization_url_not_configured(
     State(state): State<AppAuthState>,
-    Query(query): Query<IamOauthAuthorizationUrlQuery>,
+    Json(request): Json<IamOauthAuthorizationUrlCreateRequest>,
 ) -> Response {
-    let _provider = query.provider;
-    let _redirect_uri_len = query.redirect_uri.len();
-    let _state_len = query.state.as_deref().unwrap_or_default().len();
-    let _scope_len = query.scope.as_deref().unwrap_or_default().len();
+    let _provider = request.provider;
+    let _redirect_uri_len = request.redirect_uri.len();
+    let _state_len = request.state.as_deref().unwrap_or_default().len();
+    let _scope_len = request.scope.as_deref().unwrap_or_default().len();
     match ensure_oauth_login_enabled(&state).await {
         Ok(()) => oauth_not_configured_response(),
         Err(error) => auth_error_response(error),

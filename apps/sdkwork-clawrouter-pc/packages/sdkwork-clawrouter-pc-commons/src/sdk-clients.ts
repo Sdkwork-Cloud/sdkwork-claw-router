@@ -36,6 +36,8 @@ import {
 } from 'sdkwork-commerce-backend-sdk-generated-typescript';
 import {
   clearStoredAppSessionToken,
+  getStoredAppSessionAccessToken,
+  getStoredAppSessionAuthToken,
   loadStoredAppSessionToken,
 } from './app-session-token.ts';
 import { resetClawRouterIamRuntime } from './iam-runtime.ts';
@@ -46,11 +48,23 @@ import { readClawRouterRuntimeEnv } from './utils/env.ts';
 export const APP_API_PREFIX = '/app/v3/api';
 export const BACKEND_API_PREFIX = '/backend/v3/api';
 export const OPEN_API_PREFIX = '/v1';
+export const DRIVE_OPEN_API_PREFIX = '/open/v3/api';
+export const MEMORY_OPEN_API_PREFIX = '/mem/v3/api';
+export const AGENT_OPEN_API_PREFIX = '/agent/v3/api';
 export const CLOUD_API_PREFIX = '/cloud/v3';
 export const PAYMENT_API_PREFIX = '/payments/v3';
 export const PAAS_API_PREFIX = '/paas/v3';
 
-export type ClawRouterGeneratedSdkType = 'app' | 'backend' | 'ai' | 'payment' | 'iaas' | 'paas';
+export type ClawRouterGeneratedSdkType =
+  | 'app'
+  | 'backend'
+  | 'ai'
+  | 'drive'
+  | 'memory'
+  | 'agent'
+  | 'payment'
+  | 'iaas'
+  | 'paas';
 
 export interface ClawRouterGeneratedSdkMetadata {
   name: string;
@@ -124,6 +138,50 @@ export const CLAWROUTER_AUDIO_OPEN_API_SDK_REFERENCE_METADATA: ClawRouterGenerat
   description: 'SDKWork Audio Open API SDK',
 };
 
+export const CLAWROUTER_DRIVE_OPEN_API_SDK_REFERENCE_METADATA: ClawRouterGeneratedSdkMetadata = {
+  name: 'SdkworkDriveOpenClient',
+  packageName: '@sdkwork-internal/drive-sdk-generated',
+  version: '0.1.0',
+  sdkType: 'drive',
+  apiPrefix: DRIVE_OPEN_API_PREFIX,
+  runtimeEnvName: 'VITE_SDKWORK_DRIVE_OPEN_API_BASE_URL',
+  sourceDir: '../sdkwork-drive/sdks/sdkwork-drive-sdk/sdkwork-drive-sdk-typescript/generated/server-openapi',
+  archiveLanguage: 'typescript',
+  archiveName: 'sdkwork-drive-sdk-typescript-0.1.0.zip',
+  description: 'SDKWork Drive Open API SDK',
+};
+
+export const CLAWROUTER_KNOWLEDGEBASE_OPEN_API_SDK_REFERENCE_METADATA: ClawRouterGeneratedSdkMetadata = {
+  ...CLAWROUTER_AI_SDK_REFERENCE_METADATA,
+  description: 'SDKWork Knowledgebase Open API SDK',
+};
+
+export const CLAWROUTER_MEMORY_OPEN_API_SDK_REFERENCE_METADATA: ClawRouterGeneratedSdkMetadata = {
+  name: 'SdkworkMemoryOpenClient',
+  packageName: '@sdkwork/memory-sdk',
+  version: '0.1.0',
+  sdkType: 'memory',
+  apiPrefix: MEMORY_OPEN_API_PREFIX,
+  runtimeEnvName: 'VITE_SDKWORK_MEMORY_OPEN_API_BASE_URL',
+  sourceDir: '../sdkwork-memory/sdks/sdkwork-memory-sdk/openapi/memory-open-api.openapi.json',
+  archiveLanguage: 'typescript',
+  archiveName: 'sdkwork-memory-sdk-typescript-0.1.0.zip',
+  description: 'SDKWork Memory Open API SDK',
+};
+
+export const CLAWROUTER_AGENT_OPEN_API_SDK_REFERENCE_METADATA: ClawRouterGeneratedSdkMetadata = {
+  name: 'SdkworkAgentClient',
+  packageName: '@sdkwork/agent-sdk',
+  version: '0.1.0',
+  sdkType: 'agent',
+  apiPrefix: AGENT_OPEN_API_PREFIX,
+  runtimeEnvName: 'VITE_SDKWORK_AGENT_OPEN_API_BASE_URL',
+  sourceDir: '../sdkwork-kernel/sdks/sdkwork-agent-sdk/sdkwork-agent-sdk-typescript/generated/server-openapi',
+  archiveLanguage: 'typescript',
+  archiveName: 'sdkwork-agent-sdk-typescript-0.1.0.zip',
+  description: 'SDKWork Agent Open API SDK',
+};
+
 export const CLAWROUTER_PAYMENT_OPEN_API_SDK_REFERENCE_METADATA: ClawRouterGeneratedSdkMetadata = {
   name: 'SdkworkPaymentClient',
   packageName: '@sdkwork/clawrouter-payment-sdk',
@@ -173,6 +231,15 @@ export const SDK_SYSTEM_CONFIG = {
   'image-open-api': CLAWROUTER_IMAGE_OPEN_API_SDK_REFERENCE_METADATA,
   'video-open-api': CLAWROUTER_VIDEO_OPEN_API_SDK_REFERENCE_METADATA,
   'audio-open-api': CLAWROUTER_AUDIO_OPEN_API_SDK_REFERENCE_METADATA,
+  'drive-open-api': CLAWROUTER_DRIVE_OPEN_API_SDK_REFERENCE_METADATA,
+  'knowledgebase-open-api': CLAWROUTER_KNOWLEDGEBASE_OPEN_API_SDK_REFERENCE_METADATA,
+  'memory-open-api': CLAWROUTER_MEMORY_OPEN_API_SDK_REFERENCE_METADATA,
+  'agent-open-api': CLAWROUTER_AGENT_OPEN_API_SDK_REFERENCE_METADATA,
+  'sdkwork-drive-open-api': CLAWROUTER_DRIVE_OPEN_API_SDK_REFERENCE_METADATA,
+  'sdkwork-drive.open': CLAWROUTER_DRIVE_OPEN_API_SDK_REFERENCE_METADATA,
+  'sdkwork-knowledgebase-open-api': CLAWROUTER_KNOWLEDGEBASE_OPEN_API_SDK_REFERENCE_METADATA,
+  'sdkwork-memory-open-api': CLAWROUTER_MEMORY_OPEN_API_SDK_REFERENCE_METADATA,
+  'sdkwork-agent-open-api': CLAWROUTER_AGENT_OPEN_API_SDK_REFERENCE_METADATA,
   'payment-open-api': CLAWROUTER_PAYMENT_OPEN_API_SDK_REFERENCE_METADATA,
   'iaas-open-api': CLAWROUTER_IAAS_OPEN_API_SDK_REFERENCE_METADATA,
   'paas-open-api': CLAWROUTER_PAAS_OPEN_API_SDK_REFERENCE_METADATA,
@@ -188,13 +255,17 @@ export const SDK_SYSTEM_CONFIG = {
 } as const satisfies Record<string, ClawRouterGeneratedSdkMetadata>;
 
 export interface ClawRouterAppSdkClientOptions {
+  accessToken?: string;
   appBaseUrl?: string;
+  authToken?: string;
   platform?: string;
   tokenManager?: AuthTokenManager;
   timeout?: number;
 }
 
 export interface ClawRouterBackendSdkClientOptions {
+  accessToken?: string;
+  authToken?: string;
   backendBaseUrl?: string;
   platform?: string;
   tokenManager?: AuthTokenManager;
@@ -829,6 +900,8 @@ function buildAppConfig(options: ClawRouterAppSdkClientOptions): SdkworkAppConfi
       options.appBaseUrl ?? readClawRouterRuntimeEnv('VITE_CLAWROUTER_APP_API_BASE_URL') ?? APP_API_PREFIX,
       APP_API_PREFIX,
     ),
+    authToken: options.authToken ?? getStoredAppSessionAuthToken(),
+    accessToken: options.accessToken ?? getStoredAppSessionAccessToken(),
     platform: options.platform ?? 'web',
     tokenManager: resolveClawRouterSdkTokenManager(options.tokenManager),
     timeout: options.timeout,
@@ -841,6 +914,8 @@ function buildBackendConfig(options: ClawRouterBackendSdkClientOptions): Sdkwork
       options.backendBaseUrl ?? readClawRouterRuntimeEnv('VITE_CLAWROUTER_BACKEND_API_BASE_URL') ?? BACKEND_API_PREFIX,
       BACKEND_API_PREFIX,
     ),
+    authToken: options.authToken ?? getStoredAppSessionAuthToken(),
+    accessToken: options.accessToken ?? getStoredAppSessionAccessToken(),
     platform: options.platform ?? 'web-admin',
     tokenManager: resolveClawRouterSdkTokenManager(options.tokenManager),
     timeout: options.timeout,
@@ -850,16 +925,20 @@ function buildBackendConfig(options: ClawRouterBackendSdkClientOptions): Sdkwork
 function buildAppbaseAppConfig(options: SdkworkAppbaseAppSdkClientOptions): SdkworkAppbaseAppConfig {
   return {
     baseUrl: normalizeGeneratedSdkBaseUrl(
-      options.appBaseUrl
-      ?? readClawRouterRuntimeEnv('VITE_SDKWORK_APPBASE_APP_API_BASE_URL')
-      ?? readClawRouterRuntimeEnv('VITE_CLAWROUTER_APP_API_BASE_URL')
-      ?? APP_API_PREFIX,
+      resolveRequiredAppbaseAppBaseUrl(options),
       APP_API_PREFIX,
     ),
     platform: options.platform ?? 'web',
     tokenManager: resolveClawRouterSdkTokenManager(options.tokenManager),
     timeout: options.timeout,
   };
+}
+
+export function resolveRequiredAppbaseAppBaseUrl(options: SdkworkAppbaseAppSdkClientOptions): string {
+  return options.appBaseUrl
+    ?? readClawRouterRuntimeEnv('VITE_SDKWORK_APPBASE_APP_API_BASE_URL')
+    ?? deriveDependencySurfaceBaseUrl('PORTAL_PUBLIC_SDK_BASE_URL', APP_API_PREFIX)
+    ?? APP_API_PREFIX;
 }
 
 function buildAppbaseBackendConfig(options: SdkworkAppbaseBackendSdkClientOptions): SdkworkAppbaseBackendConfig {
@@ -877,7 +956,7 @@ function buildAppbaseBackendConfig(options: SdkworkAppbaseBackendSdkClientOption
 export function resolveRequiredAppbaseBackendBaseUrl(options: SdkworkAppbaseBackendSdkClientOptions): string {
   return options.backendBaseUrl
     ?? readClawRouterRuntimeEnv('VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL')
-    ?? readClawRouterRuntimeEnv('VITE_CLAWROUTER_BACKEND_API_BASE_URL')
+    ?? deriveDependencySurfaceBaseUrl('PORTAL_PUBLIC_SDK_BASE_URL', BACKEND_API_PREFIX)
     ?? BACKEND_API_PREFIX;
 }
 

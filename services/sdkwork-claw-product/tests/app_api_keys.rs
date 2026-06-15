@@ -11,9 +11,9 @@ use sdkwork_claw_product::domain::{
 };
 use sdkwork_claw_product::ports::{
     ApiKeyCommandStoreFuture, ApiKeyManagementReadFuture, CreateGatewayApiKeyCommand,
-    CreatedGatewayApiKey, DeleteGatewayApiKeyCommand, EnsureDefaultChannelGroupCommand,
-    GatewayApiKeyCommandStore, GatewayApiKeyManagementReadStore, GatewayApiKeyManagementSnapshot,
-    UpdateGatewayApiKeyCommand, UpdatedGatewayApiKey,
+    CreatedGatewayApiKey, DeleteGatewayApiKeyCommand, DeleteGatewayApiKeyForOrganizationCommand,
+    EnsureDefaultChannelGroupCommand, GatewayApiKeyCommandStore, GatewayApiKeyManagementReadStore,
+    GatewayApiKeyManagementSnapshot, UpdateGatewayApiKeyCommand, UpdatedGatewayApiKey,
 };
 use serde_json::Value;
 use tower::ServiceExt;
@@ -434,6 +434,13 @@ impl GatewayApiKeyCommandStore for TestApiKeyCommandStore {
     fn delete_gateway_api_key<'a>(
         &'a self,
         _command: DeleteGatewayApiKeyCommand,
+    ) -> ApiKeyCommandStoreFuture<'a, bool> {
+        Box::pin(async move { Ok(true) })
+    }
+
+    fn delete_gateway_api_key_for_organization<'a>(
+        &'a self,
+        _command: DeleteGatewayApiKeyForOrganizationCommand,
     ) -> ApiKeyCommandStoreFuture<'a, bool> {
         Box::pin(async move { Ok(true) })
     }

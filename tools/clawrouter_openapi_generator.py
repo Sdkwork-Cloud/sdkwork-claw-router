@@ -49,8 +49,8 @@ class ClawRouterOpenApiGenerator:
         "backend": "SdkworkBackendClient",
     }
     PUBLIC_IAM_OPERATION_IDS = {
-        "oauthAuthorizationUrls.retrieve",
-        "oauthSessions.create",
+        "oauth.authorizationUrls.create",
+        "oauth.sessions.create",
         "passwordResetRequests.create",
         "passwordResets.create",
         "registrations.create",

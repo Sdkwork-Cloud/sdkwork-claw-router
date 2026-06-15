@@ -121,14 +121,34 @@ class AppbaseCapabilityGuardian:
 
     def __init__(self, root: Path, manifest_path: Path | None = None) -> None:
         self.root = Path(root).resolve()
-        self.appbase_root = self.root / APPBASE_ROOT
         self.manifest_path = (
             Path(manifest_path).resolve()
             if manifest_path is not None
-            else self.root / DEFAULT_MANIFEST
+            else self._default_manifest_path()
         )
+        self.appbase_root = self._resolve_appbase_root()
         self._pnpm_packages: dict[str, set[str]] | None = None
         self._cargo_packages: set[str] | None = None
+
+    def _default_manifest_path(self) -> Path:
+        materialized_manifest = self.root / DEFAULT_MANIFEST
+        if materialized_manifest.exists():
+            return materialized_manifest
+        sibling_manifest = self.root.parent / "sdkwork-appbase" / "specs" / "appbase-capabilities.yaml"
+        if sibling_manifest.exists():
+            return sibling_manifest
+        return materialized_manifest
+
+    def _resolve_appbase_root(self) -> Path:
+        if self.manifest_path.name == "appbase-capabilities.yaml" and self.manifest_path.parent.name == "specs":
+            return self.manifest_path.parent.parent
+        materialized_root = self.root / APPBASE_ROOT
+        if materialized_root.exists():
+            return materialized_root
+        sibling_root = self.root.parent / "sdkwork-appbase"
+        if sibling_root.exists():
+            return sibling_root
+        return materialized_root
 
     def run(self) -> AppbaseCapabilityGuardianResult:
         messages: list[str] = []
@@ -356,7 +376,7 @@ class AppbaseCapabilityGuardian:
                 if not path.exists():
                     messages.append(f"capability {capability_id} layer {kind or index} path does not exist: {relative_path}")
                     continue
-                if domain and f"/{domain}/" not in self._posix(relative_path):
+                if domain and not self._layer_path_matches_domain(relative_path, domain):
                     messages.append(f"capability {capability_id} layer {kind or index} path must stay under domain {domain}: {relative_path}")
                 if manifest_name and not (path / manifest_name).exists():
                     messages.append(
@@ -418,6 +438,8 @@ class AppbaseCapabilityGuardian:
 
         cargo_match = re.search(r"\bcargo\s+test\s+-p\s+(\S+)", command)
         if cargo_match:
+            if re.search(r"\s--manifest-path\s+\.\./", command):
+                return messages
             package_name = cargo_match.group(1).strip("'\"")
             if package_name not in self._cargo_package_names():
                 messages.append(
@@ -489,19 +511,32 @@ class AppbaseCapabilityGuardian:
         if self._cargo_packages is not None:
             return self._cargo_packages
         packages: set[str] = set()
-        native_root = self.appbase_root / "packages" / "native-rust"
-        if not native_root.exists():
-            self._cargo_packages = packages
-            return packages
-        for path in self._walk(native_root):
-            if not path.is_file() or path.name != "Cargo.toml":
+        native_roots = [
+            self.appbase_root / "crates",
+            self.appbase_root / "packages" / "native-rust",
+        ]
+        for native_root in native_roots:
+            if not native_root.exists():
                 continue
-            text = path.read_text(encoding="utf-8")
-            match = re.search(r'(?m)^\s*name\s*=\s*"([^"]+)"', text)
-            if match:
-                packages.add(match.group(1))
+            for path in self._walk(native_root):
+                if not path.is_file() or path.name != "Cargo.toml":
+                    continue
+                text = path.read_text(encoding="utf-8")
+                match = re.search(r'(?m)^\s*name\s*=\s*"([^"]+)"', text)
+                if match:
+                    packages.add(match.group(1))
         self._cargo_packages = packages
         return packages
+
+    def _layer_path_matches_domain(self, relative_path: str, domain: str) -> bool:
+        path = Path(relative_path)
+        posix_path = self._posix(relative_path)
+        if f"/{domain}/" in posix_path:
+            return True
+        if path.parts and path.parts[0] == "crates":
+            crate_name = path.name
+            return crate_name == f"sdkwork-{domain}" or crate_name.startswith(f"sdkwork-{domain}-")
+        return False
 
     def _required_string(self, payload: dict[str, Any], key: str, subject: str, messages: list[str]) -> str | None:
         value = payload.get(key)

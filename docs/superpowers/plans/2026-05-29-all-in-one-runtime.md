@@ -54,7 +54,7 @@ Expected: FAIL because the all-in-one builder does not exist.
 
 - [ ] **Step 3: Implement minimal builder**
 
-Promote `sdkwork-claw-admin-api` and `sdkwork-claw-app-api` from dev-dependencies to dependencies of `sdkwork-claw-gateway`. Add `all_in_one_edge_router_from_env` and `serve_all_in_one_edge_server_with_runtime_config`, then make `src/main.rs` use that path when `SDKWORK_CLAW_ALL_IN_ONE_RUNTIME=1`.
+Promote `sdkwork-claw-admin` and `sdkwork-claw-app` from dev-dependencies to dependencies of `sdkwork-claw-gateway`. Add `all_in_one_edge_router_from_env` and `serve_all_in_one_edge_server_with_runtime_config`, then make `src/main.rs` use that path when `SDKWORK_CLAW_ALL_IN_ONE_RUNTIME=1`.
 
 - [ ] **Step 4: Run focused tests**
 

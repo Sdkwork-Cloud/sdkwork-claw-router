@@ -72,11 +72,11 @@ pnpm server:plan
 默认访问：
 
 ```text
-Edge Portal: http://127.0.0.1:3900/
 Direct Portal Dev: http://127.0.0.1:3901/
-Gateway: http://127.0.0.1:3900/v1
-Admin API: http://127.0.0.1:3900/backend/v3/api
-App API: http://127.0.0.1:3900/app/v3/api
+SDKWork API Gateway: http://127.0.0.1:3902/
+Gateway: http://127.0.0.1:3902/v1
+Admin API: http://127.0.0.1:3902/backend/v3/api
+App API: http://127.0.0.1:3902/app/v3/api
 ```
 
 ## 4. 绑定地址和转发目标
@@ -84,19 +84,19 @@ App API: http://127.0.0.1:3900/app/v3/api
 外部访问开发服务：
 
 ```powershell
-pnpm dev -- --gateway-bind 0.0.0.0:19080 --server-bind 0.0.0.0:12900 --portal-bind 0.0.0.0:13900
+pnpm server:dev -- --gateway-bind 0.0.0.0:19080 --server-bind 0.0.0.0:12900 --portal-bind 0.0.0.0:13900
 ```
 
 把 edge server 转发到已有服务：
 
 ```powershell
-pnpm dev -- --gateway-forward-url http://gateway.internal:18080 --backend-api-forward-url http://admin.internal:18081 --app-api-forward-url http://app.internal:18082
+pnpm server:dev -- --gateway-forward-url http://gateway.internal:18080 --backend-api-forward-url http://admin.internal:18081 --app-api-forward-url http://app.internal:18082
 ```
 
 反向代理 HTTPS 场景：
 
 ```powershell
-pnpm dev -- --external-scheme https --trust-forwarded-headers
+pnpm server:dev -- --external-scheme https --trust-forwarded-headers
 ```
 
 只在受控反向代理后启用 forwarded header 信任。

@@ -212,8 +212,17 @@ class AppbaseIntegrationGuardian:
         self.appbase_catalog_path = (
             Path(appbase_catalog_path).resolve()
             if appbase_catalog_path is not None
-            else self.root / APPBASE_CATALOG_PATH
+            else self._default_appbase_catalog_path()
         )
+
+    def _default_appbase_catalog_path(self) -> Path:
+        materialized_catalog = self.root / APPBASE_CATALOG_PATH
+        if materialized_catalog.exists():
+            return materialized_catalog
+        sibling_catalog = self.root.parent / "sdkwork-appbase" / "specs" / "appbase-capabilities.yaml"
+        if sibling_catalog.exists():
+            return sibling_catalog
+        return materialized_catalog
 
     def run(self) -> AppbaseIntegrationGuardianResult:
         messages: list[str] = []

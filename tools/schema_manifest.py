@@ -2,11 +2,12 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-from tools.schema_registry_loader import load_schema_registry, render_schema_registry
+from tools.schema_registry_loader import load_schema_registry
 
 try:
     import yaml
@@ -92,8 +93,12 @@ class SchemaManifestGenerator:
     def render_json(self) -> str:
         return json.dumps(self.generate(), ensure_ascii=False, indent=2, sort_keys=True) + "\n"
 
-    def render_effective_registry(self) -> str:
-        return render_schema_registry(self.registry_path)
+    def render_effective_registry(self, output_path: Path | None = None) -> str:
+        registry = self._load_registry()
+        self._rewrite_effective_registry_spec_paths(registry, self._effective_registry_path(output_path))
+        if yaml is None:
+            raise RuntimeError('PyYAML is required to render schema registry YAML') from _YAML_IMPORT_ERROR
+        return yaml.safe_dump(registry, allow_unicode=True, sort_keys=False)
 
     def write(self, output_path: Path | None = None) -> Path:
         target = (
@@ -109,7 +114,7 @@ class SchemaManifestGenerator:
     def write_effective_registry(self, output_path: Path | None = None) -> Path:
         target = self._effective_registry_path(output_path)
         target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_text(self.render_effective_registry(), encoding="utf-8")
+        target.write_text(self.render_effective_registry(output_path), encoding="utf-8")
         return target
 
     def check(self, output_path: Path | None = None) -> SchemaManifestCheckResult:
@@ -140,6 +145,20 @@ class SchemaManifestGenerator:
 
     def _load_registry(self) -> dict[str, Any]:
         return load_schema_registry(self.registry_path)
+
+    def _rewrite_effective_registry_spec_paths(self, registry: dict[str, Any], target: Path) -> None:
+        schema = registry.get('schema_registry')
+        if not isinstance(schema, dict):
+            return
+
+        for key in ('standard', 'api_standard'):
+            relative_value = schema.get(key)
+            if not isinstance(relative_value, str):
+                continue
+            resolved = (self.registry_path.parent / relative_value).resolve()
+            if not resolved.exists():
+                continue
+            schema[key] = Path(os.path.relpath(resolved, target.parent)).as_posix()
 
     def _compile_table(self, table: dict[str, Any], common_column_groups: dict[str, Any]) -> dict[str, Any]:
         table_name = table["table"]

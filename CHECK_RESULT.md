@@ -1422,7 +1422,7 @@ python -B -m tools.clawrouter_sdk_guardian
 python -B -m tools.clawrouter_openapi_generator --check
 python -B -m tools.api_contract_manifest --check
 cargo test -p sdkwork-claw-product app_model_catalog_route --test app_model_catalog_api
-cargo test -p sdkwork-claw-app-api injected_product_catalog_serves_app_model_catalog_without_secret_material --test api_key_route
+cargo test -p sdkwork-claw-app injected_product_catalog_serves_app_model_catalog_without_secret_material --test api_key_route
 ```
 
 Observed result:
@@ -1650,7 +1650,7 @@ API contract manifest is current
 cargo test -p sdkwork-claw-product app_model_catalog_route --test app_model_catalog_api
 2 passed
 
-cargo test -p sdkwork-claw-app-api injected_product_catalog_serves_app_model_catalog_without_secret_material --test api_key_route
+cargo test -p sdkwork-claw-app injected_product_catalog_serves_app_model_catalog_without_secret_material --test api_key_route
 1 passed
 ```
 
@@ -2979,14 +2979,14 @@ Command:
 
 ```powershell
 cargo test -p sdkwork-claw-product app_model_catalog_route --test app_model_catalog_api
-cargo test -p sdkwork-claw-app-api injected_product_catalog_serves_app_model_catalog_without_secret_material --test api_key_route
+cargo test -p sdkwork-claw-app injected_product_catalog_serves_app_model_catalog_without_secret_material --test api_key_route
 ```
 
 Observed result:
 
 ```text
 sdkwork-claw-product app_model_catalog_api: 2 passed
-sdkwork-claw-app-api api_key_route: 1 passed
+sdkwork-claw-app api_key_route: 1 passed
 ```
 
 The public app model catalog now enforces:

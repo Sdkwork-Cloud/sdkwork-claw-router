@@ -5,8 +5,8 @@ import path from 'node:path';
 import process from 'node:process';
 
 const DEFAULT_TARGETS = Object.freeze([
-  ['sdkwork-claw-admin-api', 'database_config_router'],
-  ['sdkwork-claw-app-api', 'database_config_router'],
+  ['sdkwork-claw-admin', 'database_config_router'],
+  ['sdkwork-claw-app', 'database_config_router'],
   ['sdkwork-claw-gateway', 'database_config_router'],
   ['sdkwork-claw-gateway', 'provider_passthrough_route'],
   ['sdkwork-claw-gateway', 'edge_server'],

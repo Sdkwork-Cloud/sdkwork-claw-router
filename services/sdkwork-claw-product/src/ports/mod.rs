@@ -293,8 +293,9 @@ pub use admin_user_store::{
 };
 pub use api_key_command_store::{
     ApiKeyCommandStoreFuture, CreateGatewayApiKeyCommand, CreatedGatewayApiKey,
-    DeleteGatewayApiKeyCommand, EnsureDefaultChannelGroupCommand, GatewayApiKeyCommandStore,
-    UpdateGatewayApiKeyCommand, UpdatedGatewayApiKey,
+    DeleteGatewayApiKeyCommand, DeleteGatewayApiKeyForOrganizationCommand,
+    EnsureDefaultChannelGroupCommand, GatewayApiKeyCommandStore, UpdateGatewayApiKeyCommand,
+    UpdatedGatewayApiKey,
 };
 pub use api_key_management_read_store::{
     ApiKeyManagementReadFuture, GatewayApiKeyManagementReadStore, GatewayApiKeyManagementSnapshot,

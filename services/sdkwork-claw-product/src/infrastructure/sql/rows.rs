@@ -1,7 +1,7 @@
 use crate::domain::{
     ensure_canonical_model_catalog_key, provider_native_model_id, AiModel, AiModelPublicMetadata,
     BillingMeter, ChannelGroup, ChannelGroupMetricSnapshot, DecimalValue, DomainError,
-    DomainResult, GatewayAccessPolicy, GatewayApiKey, GatewayApiKeyGroupBinding,
+    DomainResult, GatewayAccessPolicy, GatewayApiKey, GatewayApiKeyChannelGroupBinding,
     ModelMappingBindingType, ModelMappingRule, ModelPrice, ModelProviderRoute, ModelVendor,
     ModelVendorDefinition, Money, PriceSide, PricingPlan, ProviderAuthProfile,
     ProviderChannelGroupBinding, ProviderChannelRoute, ProviderRetryPolicy, QuotaPolicy,
@@ -451,7 +451,7 @@ pub struct GatewayApiKeyRow {
 impl GatewayApiKeyRow {
     pub fn into_domain(self) -> GatewayApiKey {
         self.try_into_domain()
-            .expect("gateway api key group bindings must be valid")
+            .expect("gateway api key channel group bindings must be valid")
     }
 
     pub fn try_into_domain(self) -> DomainResult<GatewayApiKey> {
@@ -472,7 +472,9 @@ impl GatewayApiKeyRow {
             expire_at: self.expire_at,
             status_code: self.status_code,
             default_for_runtime: self.default_for_runtime,
-            group_bindings: parse_gateway_api_key_group_bindings(&self.group_bindings_json)?,
+            group_bindings: parse_gateway_api_key_channel_group_bindings(
+                &self.group_bindings_json,
+            )?,
         })
     }
 
@@ -482,20 +484,20 @@ impl GatewayApiKeyRow {
     }
 }
 
-fn parse_gateway_api_key_group_bindings(
+fn parse_gateway_api_key_channel_group_bindings(
     value: &str,
-) -> DomainResult<Vec<GatewayApiKeyGroupBinding>> {
-    let value = parse_json_value(value, "gateway api key group bindings")?;
+) -> DomainResult<Vec<GatewayApiKeyChannelGroupBinding>> {
+    let value = parse_json_value(value, "gateway api key channel group bindings")?;
     let serde_json::Value::Array(items) = value else {
         return Err(DomainError::new(
-            "gateway api key group bindings must be a json array",
+            "gateway api key channel group bindings must be a json array",
         ));
     };
 
     let mut bindings = items
         .into_iter()
         .enumerate()
-        .map(|(index, value)| parse_gateway_api_key_group_binding(value, index))
+        .map(|(index, value)| parse_gateway_api_key_channel_group_binding(value, index))
         .collect::<DomainResult<Vec<_>>>()?;
     bindings.sort_by_key(|binding| {
         (
@@ -508,13 +510,13 @@ fn parse_gateway_api_key_group_bindings(
     Ok(bindings)
 }
 
-fn parse_gateway_api_key_group_binding(
+fn parse_gateway_api_key_channel_group_binding(
     value: serde_json::Value,
     index: usize,
-) -> DomainResult<GatewayApiKeyGroupBinding> {
+) -> DomainResult<GatewayApiKeyChannelGroupBinding> {
     let serde_json::Value::Object(object) = value else {
         return Err(DomainError::new(format!(
-            "gateway api key group bindings[{index}] must be a json object"
+            "gateway api key channel group bindings[{index}] must be a json object"
         )));
     };
     let group_id = object
@@ -523,12 +525,12 @@ fn parse_gateway_api_key_group_binding(
         .and_then(serde_json::Value::as_i64)
         .ok_or_else(|| {
             DomainError::new(format!(
-                "gateway api key group bindings[{index}] must contain integer groupId"
+                "gateway api key channel group bindings[{index}] must contain integer groupId"
             ))
         })?;
     if group_id <= 0 {
         return Err(DomainError::new(format!(
-            "gateway api key group bindings[{index}].groupId must be positive"
+            "gateway api key channel group bindings[{index}].groupId must be positive"
         )));
     }
     let group_code =
@@ -543,11 +545,15 @@ fn parse_gateway_api_key_group_binding(
             .unwrap_or_else(|| "auto".to_owned());
     let priority = parse_optional_i32(&object, "priority", index)?.unwrap_or(100);
     let weight = parse_optional_i32(&object, "weight", index)?.unwrap_or(100);
-    Ok(
-        GatewayApiKeyGroupBinding::new(group_id, &group_code, &pricing_plan_code, priority, weight)
-            .with_binding_role(&binding_role)
-            .with_routing_strategy(&routing_strategy),
+    Ok(GatewayApiKeyChannelGroupBinding::new(
+        group_id,
+        &group_code,
+        &pricing_plan_code,
+        priority,
+        weight,
     )
+    .with_binding_role(&binding_role)
+    .with_routing_strategy(&routing_strategy))
 }
 
 fn parse_optional_object_string(
@@ -576,7 +582,7 @@ fn parse_optional_i32(
         .transpose()
         .map_err(|error| {
             DomainError::new(format!(
-                "gateway api key group bindings[{index}].{key} is invalid: {error}"
+                "gateway api key channel group bindings[{index}].{key} is invalid: {error}"
             ))
         })
 }

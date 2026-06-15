@@ -281,7 +281,7 @@ class MessagingDeliveryStandardTest(unittest.TestCase):
             / "postgres"
             / "verification_delivery_queue_sender.rs"
         )
-        app_api_path = ROOT / "services" / "sdkwork-claw-app-api" / "src" / "lib.rs"
+        app_api_path = ROOT / "services" / "sdkwork-claw-app" / "src" / "lib.rs"
         app_auth_path = (
             ROOT
             / "services"

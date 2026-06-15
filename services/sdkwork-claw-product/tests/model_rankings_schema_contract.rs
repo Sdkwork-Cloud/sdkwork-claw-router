@@ -94,7 +94,7 @@ fn schema_registry_declares_the_same_model_ranking_field_and_index_contract() {
         "required_fields: - rankScope - snapshotDate - snapshotPeriod - windowStart - windowEnd - generatedCount - sourceCount - refreshIntervalSeconds - cacheMaxAgeSeconds - nextRefreshAt - status - attemptCount - retryCount - consecutiveFailureCount - alertRecommended - sourceTables",
         "source_tables: - ai_usage_fact - ai_model - ai_model_rank_snapshot",
         "runtime_contract:",
-        "scheduler_owner: sdkwork-claw-app-api",
+        "scheduler_owner: sdkwork-claw-app",
         "run_on_startup_default: true",
         "default_millis: 300000",
         "max_retry_attempts_default: 1",
@@ -196,7 +196,7 @@ fn schema_manifest_preserves_model_ranking_semantic_contracts_for_release_audit(
         refresh_contract["payload_contract"]["source_tables"]
     );
     assert_eq!(
-        "sdkwork-claw-app-api",
+        "sdkwork-claw-app",
         refresh_contract["runtime_contract"]["scheduler_owner"]
     );
     assert_eq!(

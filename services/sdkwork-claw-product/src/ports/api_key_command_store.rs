@@ -72,6 +72,18 @@ pub struct DeleteGatewayApiKeyCommand {
     pub request_id: String,
 }
 
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct DeleteGatewayApiKeyForOrganizationCommand {
+    pub audit_log_uuid: String,
+    pub tenant_id: i64,
+    pub organization_id: i64,
+    pub operator_id: i64,
+    pub operator_type: i32,
+    pub api_key_id: i64,
+    pub requested_at: String,
+    pub request_id: String,
+}
+
 impl CreateGatewayApiKeyCommand {
     pub fn requires_access_policy(&self) -> bool {
         !self.allowed_capabilities.is_empty() || !self.ip_allowlist.is_empty()
@@ -128,5 +140,10 @@ pub trait GatewayApiKeyCommandStore {
     fn delete_gateway_api_key<'a>(
         &'a self,
         command: DeleteGatewayApiKeyCommand,
+    ) -> ApiKeyCommandStoreFuture<'a, bool>;
+
+    fn delete_gateway_api_key_for_organization<'a>(
+        &'a self,
+        command: DeleteGatewayApiKeyForOrganizationCommand,
     ) -> ApiKeyCommandStoreFuture<'a, bool>;
 }

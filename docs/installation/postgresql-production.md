@@ -97,7 +97,7 @@ Development, production, and desktop runtime data must stay separate:
 | Database default | PostgreSQL through `.env.postgres.example` or `.env.postgres` | PostgreSQL through protected TOML and secret files | SQLite |
 | Config entrypoint | default dev profile or `.env.postgres` override | `/etc/sdkwork/router/clawrouter.toml` | `~/.sdkwork/router/config/clawrouter.toml` |
 | Password storage | local untracked `.env.postgres` | `/etc/sdkwork/router/database.secret` | no PostgreSQL password by default |
-| Startup command | `pnpm dev` | native service, container, or packaged runtime | desktop package or explicit SQLite dev command |
+| Startup command | `pnpm server:dev` | native service, container, or packaged runtime | desktop package or explicit SQLite dev command |
 | Data file | external local PostgreSQL | external managed PostgreSQL | `~/.sdkwork/router/data/clawrouter.sqlite` |
 | SSL mode | usually `disable` | usually `require` | not applicable by default |
 

@@ -55,3 +55,6 @@ container packages keep `[redis].enabled = true` by default and require
 `[redis].url` only as an advanced managed-endpoint override. Prefer
 `[redis].password_file` over direct passwords. Desktop packages keep Redis
 optional and disabled by default.
+
+Desktop/runtime local user data remains SQLite by default. Workspace desktop development commands are gateway-backed client commands; they do not start a product backend service. Packaged desktop runtime and desktop local data profile stores SQLite under `~/.sdkwork/router/data/clawrouter.sqlite`.
+desktop local data profile stores SQLite under `~/.sdkwork/router/data/clawrouter.sqlite`

@@ -163,7 +163,7 @@ function launchWorkspace({
 }) {
   const command = pnpmCommand();
   const args = [
-    'dev',
+    'server:dev',
     '--',
     '--database-url',
     databaseUrl,
@@ -181,8 +181,8 @@ function launchWorkspace({
   const output = { text: '' };
   const exit = { settled: false, code: null, signal: null, error: null };
 
-  // Launch through pnpm dev so the smoke verifies the same root command users run.
-  console.log(`[edge-dev-smoke] launching pnpm dev -- ${args.slice(2).join(' ')}`);
+  // Launch through the explicit product server entrypoint; pnpm dev is client-only.
+  console.log(`[edge-dev-smoke] launching pnpm server:dev -- ${args.slice(2).join(' ')}`);
   let child;
   try {
     child = spawn(command, args, {
@@ -237,12 +237,12 @@ function assertWorkspaceStillRunning(exit, output) {
       throw new Error(processSpawnPermissionDiagnostic(exit.error) + capturedOutputSuffix(output));
     }
     throw new Error(
-      `pnpm dev failed before the edge dev smoke completed: ${exit.error.message}` +
+      `pnpm server:dev failed before the edge dev smoke completed: ${exit.error.message}` +
         capturedOutputSuffix(output),
     );
   }
   throw new Error(
-    `pnpm dev exited before the edge dev smoke completed ` +
+    `pnpm server:dev exited before the edge dev smoke completed ` +
       `(code=${exit.code ?? 'null'}, signal=${exit.signal ?? 'null'})` +
       capturedOutputSuffix(output),
   );

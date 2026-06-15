@@ -1,5 +1,20 @@
 import type { ElementType } from 'react';
-import { Cloud, CreditCard, FileScan, ImageIcon, Layout, Server, Settings, Sparkles, Video, Volume2 } from 'lucide-react';
+import {
+  BookOpen,
+  Bot,
+  Brain,
+  Cloud,
+  CreditCard,
+  FileScan,
+  HardDrive,
+  ImageIcon,
+  Layout,
+  Server,
+  Settings,
+  Sparkles,
+  Video,
+  Volume2,
+} from 'lucide-react';
 import type {
   ApiParameter,
   ApiReferenceEndpoint,
@@ -94,6 +109,16 @@ export interface ApiSystemData {
 }
 
 export type ApiReferenceFetchJson = (url: string) => Promise<unknown>;
+
+type OpenApiSchemaTabDomain =
+  | 'llm'
+  | 'image'
+  | 'video'
+  | 'audio'
+  | 'drive'
+  | 'knowledgebase'
+  | 'memory'
+  | 'agent';
 
 export function sortApiSchemaTabs(tabs: ApiSchemaTab[]): ApiSchemaTab[] {
   return [...tabs].sort((left, right) => {
@@ -206,7 +231,9 @@ export async function buildApiReferenceSystemsFromTabs(
       schemaUrl,
       requestBaseUrl: resolveApiSystemRequestBaseUrl(tab.id, schemaUrl, defaultSchemaDoc?.spec),
       openApiSpec: defaultSchemaDoc?.spec,
-      categories: schemaDocs.flatMap((schemaDoc) => openApiDocumentToCategories(schemaDoc.spec)),
+      categories: schemaDocs.flatMap((schemaDoc) => (
+        filterApiCategoriesForSchemaTab(tab.id, openApiDocumentToCategories(schemaDoc.spec))
+      )),
       status: tab.status ?? 'available',
       description: tab.description,
       serviceGroups: tab.serviceGroups ?? [],
@@ -376,6 +403,215 @@ function openApiDocumentToCategories(spec: OpenApiDocument): ApiCategory[] {
   return sortApiCategories(Object.values(categoriesMap));
 }
 
+function filterApiCategoriesForSchemaTab(tabId: string, categories: ApiCategory[]): ApiCategory[] {
+  const tabDomain = schemaTabDomain(tabId);
+  if (!tabDomain) {
+    return categories;
+  }
+
+  return sortApiCategories(categories
+    .map((category) => ({
+      ...category,
+      endpoints: category.endpoints.filter((endpoint) => (
+        endpointBelongsToSchemaTabDomain(tabDomain, category, endpoint)
+      )),
+    }))
+    .filter((category) => category.endpoints.length > 0));
+}
+
+function endpointBelongsToSchemaTabDomain(
+  tabDomain: OpenApiSchemaTabDomain,
+  category: ApiCategory,
+  endpoint: ApiReferenceEndpoint,
+): boolean {
+  const endpointDomain = classifyOpenApiEndpointDomain(category, endpoint);
+  return tabDomain === 'llm' ? endpointDomain === 'llm' : endpointDomain === tabDomain;
+}
+
+function schemaTabDomain(tabId: string): OpenApiSchemaTabDomain | undefined {
+  if (tabId === 'llm-open-api') return 'llm';
+  if (tabId === 'image-open-api') return 'image';
+  if (tabId === 'video-open-api') return 'video';
+  if (tabId === 'audio-open-api' || tabId === 'voice-open-api') return 'audio';
+  if (tabId === 'drive-open-api' || tabId === 'sdkwork-drive-open-api' || tabId === 'sdkwork-drive.open') return 'drive';
+  if (tabId === 'knowledgebase-open-api' || tabId === 'sdkwork-knowledgebase-open-api') return 'knowledgebase';
+  if (tabId === 'memory-open-api' || tabId === 'sdkwork-memory-open-api') return 'memory';
+  if (tabId === 'agent-open-api' || tabId === 'sdkwork-agent-open-api') return 'agent';
+  return undefined;
+}
+
+function classifyOpenApiEndpointDomain(category: ApiCategory, endpoint: ApiReferenceEndpoint): OpenApiSchemaTabDomain {
+  const categoryDomain = classifyOpenApiCategoryName(category.name);
+  if (categoryDomain) {
+    return categoryDomain;
+  }
+
+  const operationTagDomain = endpoint.openApiOperation?.tags
+    ?.map(classifyOpenApiCategoryName)
+    .find((domain): domain is Exclude<OpenApiSchemaTabDomain, 'llm'> => domain !== undefined);
+  if (operationTagDomain) {
+    return operationTagDomain;
+  }
+
+  return classifyOpenApiPathDomain(endpoint.path)
+    ?? classifyOpenApiOperationIdDomain(endpoint.openApiOperation?.operationId ?? endpoint.id)
+    ?? 'llm';
+}
+
+function classifyOpenApiCategoryName(categoryName: string): Exclude<OpenApiSchemaTabDomain, 'llm'> | undefined {
+  const [parent = categoryName] = splitApiCategoryPath(categoryName);
+  const normalized = normalizeApiDomainText(parent);
+  if (matchesApiDomainToken(normalized, ['assistant', 'assistants', 'thread', 'threads'])) {
+    return 'agent';
+  }
+  if (matchesApiDomainTokenSequence(normalized, [['run', 'steps'], ['runs', 'steps']])) {
+    return 'agent';
+  }
+  if (matchesApiDomainToken(normalized, ['conversation', 'conversations'])) {
+    return 'memory';
+  }
+  if (matchesApiDomainTokenSequence(normalized, [['vector', 'store'], ['vector', 'stores']])) {
+    return 'knowledgebase';
+  }
+  if (matchesApiDomainToken(normalized, ['knowledgebase', 'knowledgebases'])) {
+    return 'knowledgebase';
+  }
+  if (matchesApiDomainToken(normalized, ['file', 'files', 'upload', 'uploads'])) {
+    return 'drive';
+  }
+  if (matchesApiDomainToken(normalized, ['audio', 'audios', 'music', 'suno', 'voice', 'voices', 'speech', 'sfx'])) {
+    return 'audio';
+  }
+  if (matchesApiDomainToken(normalized, ['video', 'videos'])) {
+    return 'video';
+  }
+  if (matchesApiDomainToken(normalized, ['image', 'images'])) {
+    return 'image';
+  }
+  return undefined;
+}
+
+function classifyOpenApiPathDomain(path: string): Exclude<OpenApiSchemaTabDomain, 'llm'> | undefined {
+  const normalized = normalizeApiDomainText(path);
+  if (
+    matchesApiDomainToken(normalized, ['assistant', 'assistants'])
+    || matchesApiDomainToken(normalized, ['thread', 'threads'])
+    || matchesApiDomainTokenSequence(normalized, [
+      ['run', 'steps'],
+      ['runs', 'steps'],
+      ['thread', 'run'],
+      ['threads', 'runs'],
+    ])
+  ) {
+    return 'agent';
+  }
+  if (matchesApiDomainToken(normalized, ['conversation', 'conversations'])) {
+    return 'memory';
+  }
+  if (matchesApiDomainTokenSequence(normalized, [['vector', 'store'], ['vector', 'stores']])) {
+    return 'knowledgebase';
+  }
+  if (matchesApiDomainToken(normalized, ['knowledgebase', 'knowledgebases'])) {
+    return 'knowledgebase';
+  }
+  if (matchesApiDomainToken(normalized, ['file', 'files', 'upload', 'uploads'])) {
+    return 'drive';
+  }
+  if (matchesApiDomainToken(normalized, [
+    'audio',
+    'audios',
+    'music',
+    'suno',
+    'voice',
+    'voices',
+    'speech',
+    'transcription',
+    'transcriptions',
+    'translation',
+    'translations',
+    'sfx',
+  ])) {
+    return 'audio';
+  }
+  if (matchesApiDomainToken(normalized, ['video', 'videos'])) {
+    return 'video';
+  }
+  if (matchesApiDomainToken(normalized, ['image', 'images'])) {
+    return 'image';
+  }
+  return undefined;
+}
+
+function classifyOpenApiOperationIdDomain(operationId: string): Exclude<OpenApiSchemaTabDomain, 'llm'> | undefined {
+  const normalized = normalizeApiDomainText(operationId);
+  if (
+    matchesApiDomainToken(normalized, ['assistant', 'assistants', 'thread', 'threads'])
+    || matchesApiDomainTokenSequence(normalized, [['run', 'step'], ['run', 'steps']])
+  ) {
+    return 'agent';
+  }
+  if (matchesApiDomainToken(normalized, ['conversation', 'conversations'])) {
+    return 'memory';
+  }
+  if (matchesApiDomainTokenSequence(normalized, [['vector', 'store'], ['vector', 'stores']])) {
+    return 'knowledgebase';
+  }
+  if (matchesApiDomainToken(normalized, ['knowledgebase', 'knowledgebases'])) {
+    return 'knowledgebase';
+  }
+  if (matchesApiDomainToken(normalized, ['file', 'files', 'upload', 'uploads'])) {
+    return 'drive';
+  }
+  if (matchesApiDomainToken(normalized, [
+    'audio',
+    'music',
+    'suno',
+    'voice',
+    'speech',
+    'transcription',
+    'translation',
+    'sfx',
+  ])) {
+    return 'audio';
+  }
+  if (matchesApiDomainToken(normalized, ['video'])) {
+    return 'video';
+  }
+  if (matchesApiDomainToken(normalized, ['image'])) {
+    return 'image';
+  }
+  return undefined;
+}
+
+function normalizeApiDomainText(value: string): string {
+  return value
+    .replace(/([a-z0-9])([A-Z])/g, '$1 $2')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
+}
+
+function matchesApiDomainToken(normalizedText: string, tokens: string[]): boolean {
+  if (!normalizedText) {
+    return false;
+  }
+  const tokenSet = new Set(normalizedText.split(/\s+/));
+  return tokens.some((token) => tokenSet.has(token));
+}
+
+function matchesApiDomainTokenSequence(normalizedText: string, sequences: string[][]): boolean {
+  if (!normalizedText) {
+    return false;
+  }
+  const tokens = normalizedText.split(/\s+/);
+  return sequences.some((sequence) => (
+    sequence.length > 0
+    && tokens.some((_, index) => (
+      sequence.every((token, offset) => tokens[index + offset] === token)
+    ))
+  ));
+}
+
 function shouldPreserveApiDisplayWord(word: string): boolean {
   return /^[A-Z0-9_\-/{}:]+$/.test(word)
     || word.includes('.')
@@ -483,9 +719,17 @@ function categorySortKey(categoryName: string): string[] {
     'Images',
     'Videos',
     'Audio',
+    'Music',
+    'Suno',
+    'Voice',
     'Files',
+    'Uploads',
     'Vector Stores',
+    'Knowledgebase',
+    'Conversations',
+    'Memory',
     'Assistants',
+    'Agent',
     'Batches',
     'Fine Tuning',
     'Evals',
@@ -493,7 +737,6 @@ function categorySortKey(categoryName: string): string[] {
     'Skills',
     'Administration',
     'Moderations',
-    'Uploads',
     'Realtime',
   ];
   const parentIndex = modalityOrder.indexOf(parent);
@@ -591,6 +834,10 @@ function iconForTab(id: string): ElementType {
   if (id === 'iaas-open-api' || id === 'cloud-services') return Cloud;
   if (id === 'backend-api' || id === 'backend') return Settings;
   if (id === 'app-api' || id === 'app') return Layout;
+  if (id === 'drive-open-api') return HardDrive;
+  if (id === 'knowledgebase-open-api') return BookOpen;
+  if (id === 'memory-open-api') return Brain;
+  if (id === 'agent-open-api') return Bot;
   if (id === 'image-open-api') return ImageIcon;
   if (id === 'video-open-api') return Video;
   if (id === 'audio-open-api' || id === 'voice-open-api') return Volume2;
@@ -659,6 +906,15 @@ function resolveApiSystemRequestBaseUrl(
     || systemId === 'video-open-api'
     || systemId === 'audio-open-api'
     || systemId === 'voice-open-api'
+    || systemId === 'drive-open-api'
+    || systemId === 'sdkwork-drive-open-api'
+    || systemId === 'sdkwork-drive.open'
+    || systemId === 'knowledgebase-open-api'
+    || systemId === 'sdkwork-knowledgebase-open-api'
+    || systemId === 'memory-open-api'
+    || systemId === 'sdkwork-memory-open-api'
+    || systemId === 'agent-open-api'
+    || systemId === 'sdkwork-agent-open-api'
     || systemId === 'gateway'
   ) {
     return OPEN_API_PREFIX;

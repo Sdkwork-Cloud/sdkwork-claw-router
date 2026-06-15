@@ -10,7 +10,7 @@ class ConsoleMessagesBackendRuntimeStandardTest(unittest.TestCase):
         product_api_mod = (
             ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "mod.rs"
         ).read_text(encoding="utf-8")
-        app_api = (ROOT / "services" / "sdkwork-claw-app-api" / "src" / "lib.rs").read_text(
+        app_api = (ROOT / "services" / "sdkwork-claw-app" / "src" / "lib.rs").read_text(
             encoding="utf-8"
         )
         app_messages_path = (

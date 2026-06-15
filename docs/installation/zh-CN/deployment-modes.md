@@ -14,6 +14,10 @@ SDKWork Claw Router release 包覆盖 `archive`、`service`、`container`、`des
 
 archive、service、container 服务端部署默认启用并要求 Redis，因为服务端缓存运行时使用 Redis 承载共享状态。desktop 包仍保持 Redis 可选且默认关闭。
 
+Source workspace note: `pnpm dev`, `pnpm desktop:dev`, and `pnpm tauri:dev`
+run the sdkwork-api-gateway-backed client workspace. Use
+`pnpm server:dev` for explicit Claw Router product server development.
+
 ## Desktop
 
 特点：

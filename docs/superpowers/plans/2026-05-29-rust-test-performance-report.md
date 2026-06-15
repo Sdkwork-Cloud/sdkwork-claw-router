@@ -352,7 +352,7 @@ Effect:
 Executed after the change:
 
 - `cargo test -p sdkwork-claw-test-support --lib`
-- `cargo test -p sdkwork-claw-admin-api --test sqlite_product_model_route`
+- `cargo test -p sdkwork-claw-admin --test sqlite_product_model_route`
 - `node scripts/run-claw-router-product.test.mjs`
 - `node scripts/run-claw-router-rust-tests.mjs quick`
 - `node scripts/run-claw-router-rust-tests.mjs smoke`
@@ -378,7 +378,7 @@ Executed after the change:
 Observed result:
 
 - `sdkwork-claw-test-support` tests passed
-- representative `sdkwork-claw-admin-api` integration test passed
+- representative `sdkwork-claw-admin` integration test passed
 - repository tooling tests passed
 - scoped quick Rust test profile passed end-to-end
 - scoped smoke Rust test profile passed end-to-end
@@ -435,7 +435,7 @@ Effect:
 Executed after the change:
 
 - `cargo test -p sdkwork-claw-test-support`
-- `cargo test -p sdkwork-claw-admin-api --test sqlite_product_model_route -- --exact`
+- `cargo test -p sdkwork-claw-admin --test sqlite_product_model_route -- --exact`
 
 Observed result:
 
@@ -730,7 +730,7 @@ Observed result:
 
 Historical blocker at that point:
 
-- end-to-end gateway test remeasurement is currently blocked by unrelated compile failures in `services/sdkwork-claw-app-api/src/lib.rs`
+- end-to-end gateway test remeasurement is currently blocked by unrelated compile failures in `services/sdkwork-claw-app/src/lib.rs`
 - the failure pattern is mechanical argument/type drift in `router_with_api_key_management_store_and_database_status(...)` call sites, but that is outside the gateway test-performance scope and should be repaired separately before taking a clean before/after timing on this skip-mode change
 
 ## 22. Remeasured the skip-install settlement path after clearing compile-path noise
@@ -738,7 +738,7 @@ Historical blocker at that point:
 Follow-up verification:
 
 - `cargo check -p sdkwork-claw-product --lib --target-dir target-rust-tests/iter-product-2`
-- `cargo check -p sdkwork-claw-app-api --lib --target-dir target-rust-tests/iter-app-api-3`
+- `cargo check -p sdkwork-claw-app --lib --target-dir target-rust-tests/iter-app-api-3`
 - `cargo test -p sdkwork-claw-gateway --test database_config_router database_config_router_seeded_catalog_supports_skip_startup_install_mode --target-dir target-rust-tests/iter-gateway-skip-2 -- --exact`
 - `cargo test -p sdkwork-claw-gateway --test database_config_router database_config_router_background_settlement_worker_wakes_on_new_usage_without_waiting_full_interval --target-dir target-rust-tests/iter-gateway-skip-2 -- --exact`
 - `cargo test -p sdkwork-claw-gateway --test database_config_router database_config_router_background_settlement_worker_wakes_on_new_usage_without_waiting_full_interval --target-dir target-rust-tests/iter-gateway-skip-2 -- --exact`
@@ -870,7 +870,7 @@ Important interpretation:
 For one-off direct Cargo runs, prefer:
 
 ```powershell
-cargo test -p sdkwork-claw-admin-api --test sqlite_product_model_route
+cargo test -p sdkwork-claw-admin --test sqlite_product_model_route
 cargo test -p sdkwork-claw-gateway --test database_config_router
 cargo test -p sdkwork-claw-product --test openai_compatible_http_relay
 ```

@@ -530,6 +530,7 @@ test("claw router app auth composes the appbase IAM OAuth dependency SDK without
   const appOpenApiSource = readPortalFile("../../generated/openapi/clawrouter-app-openapi.json");
   const backendOpenApiSource = readPortalFile("../../generated/openapi/clawrouter-backend-openapi.json");
   const appSdkInputSource = readPortalFile("../../sdks/clawrouter-app-sdk/openapi/clawrouter-app-sdk.sdkgen.json");
+  const appbaseAppOpenApiSource = readPortalFile("../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/openapi/sdkwork-appbase-app-api.openapi.yaml");
   const appSdkAssemblySource = readPortalFile("../../sdks/clawrouter-app-sdk/.sdkwork-assembly.json");
   const appSdkComponentSource = readPortalFile("../../sdks/clawrouter-app-sdk/specs/component.spec.json");
   const appSdkSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/sdk.ts");
@@ -594,6 +595,10 @@ test("claw router app auth composes the appbase IAM OAuth dependency SDK without
     paths?: Record<string, Record<string, { operationId?: string }>>;
     components?: { schemas?: Record<string, { properties?: Record<string, { enum?: string[]; minItems?: number }>; required?: string[] }>; securitySchemes?: Record<string, unknown> };
   };
+  const appbaseAppOpenApi = JSON.parse(appbaseAppOpenApiSource) as {
+    paths?: Record<string, Record<string, { operationId?: string }>>;
+    components?: { schemas?: Record<string, { properties?: Record<string, { enum?: string[]; minItems?: number }>; required?: string[] }>; securitySchemes?: Record<string, unknown> };
+  };
   const backendOpenApi = JSON.parse(backendOpenApiSource) as {
     paths?: Record<string, Record<string, { operationId?: string }>>;
     components?: { schemas?: Record<string, { properties?: Record<string, unknown>; required?: string[] }> };
@@ -620,6 +625,10 @@ test("claw router app auth composes the appbase IAM OAuth dependency SDK without
   const appbaseOwnedAppRoutes = [
     ["/app/v3/api/oauth/authorization_urls", "post", "oauth.authorizationUrls.create"],
     ["/app/v3/api/oauth/sessions", "post", "oauth.sessions.create"],
+    ["/app/v3/api/oauth/device_authorizations", "post", "oauth.deviceAuthorizations.create"],
+    ["/app/v3/api/oauth/device_authorizations/{deviceAuthorizationId}", "get", "oauth.deviceAuthorizations.retrieve"],
+    ["/app/v3/api/oauth/device_authorizations/{deviceAuthorizationId}/scans", "post", "oauth.deviceAuthorizations.scans.create"],
+    ["/app/v3/api/oauth/device_authorizations/{deviceAuthorizationId}/password_completions", "post", "oauth.deviceAuthorizations.passwordCompletions.create"],
     ["/app/v3/api/auth/password_reset_requests", "post", "passwordResetRequests.create"],
     ["/app/v3/api/auth/password_resets", "post", "passwordResets.create"],
     ["/app/v3/api/auth/registrations", "post", "registrations.create"],
@@ -634,7 +643,7 @@ test("claw router app auth composes the appbase IAM OAuth dependency SDK without
   ] as const;
 
   for (const [path, method, operationId] of appbaseOwnedAppRoutes) {
-    assert.equal(appOpenApi.paths?.[path]?.[method]?.operationId, operationId);
+    assert.equal(appbaseAppOpenApi.paths?.[path]?.[method]?.operationId, operationId);
     assert.equal(appSdkInput.paths?.[path], undefined, `clawrouter app SDK input must not regenerate ${method.toUpperCase()} ${path}`);
   }
   assert.doesNotMatch(appOpenApiSource, new RegExp(`/app/v3/api/${retiredProviderPlatformSnake}`));
@@ -676,30 +685,18 @@ test("claw router app auth composes the appbase IAM OAuth dependency SDK without
   assert.match(appbaseIamRuntimeSource, /runtime\.service\.oauth\?\.sessions\?\.create/);
   assert.doesNotMatch(appbaseAuthServiceSource, /loginQrCodes\?\.callback/);
   assert.doesNotMatch(appbaseIamRuntimeSource, /runtime\.service\.auth\.loginQrCodeCallbacks/);
-  assert.ok(appOpenApi.components?.schemas?.AuthRuntimeSettingsResponse, "app runtime settings must use public auth schema");
-  assert.ok(appOpenApi.components?.schemas?.AuthVerificationPolicy, "app runtime settings must use public verification policy schema");
-  assert.ok(!appOpenApi.components?.schemas?.AdminAuthSettingsResponse, "app SDK must not expose admin settings schema");
-  assert.ok(!appOpenApi.components?.schemas?.AdminAuthVerificationPolicy, "app SDK must not expose admin verification policy schema");
-  assert.equal(appOpenApi.components?.schemas?.AuthRuntimeSettingsResponse?.properties?.loginMethods?.minItems, 1);
-  assert.equal(appOpenApi.components?.schemas?.AuthRuntimeSettingsResponse?.properties?.registerMethods?.minItems, 1);
-  assert.equal(appOpenApi.components?.schemas?.AuthRuntimeSettingsResponse?.properties?.recoveryMethods?.minItems, 1);
-  assert.deepEqual(appOpenApi.components?.schemas?.AuthRuntimeSettingsResponse?.properties?.qrLoginType?.enum, ["web", "official", "mini"]);
-  assert.ok(appOpenApi.components?.schemas?.AuthRuntimeSettingsResponse?.required?.includes("qrLoginType"));
-  assert.deepEqual(
-    [...appOpenApi.components?.schemas?.IamRegistrationCreateRequest?.required ?? []].sort(),
-    ["password", "username"],
-  );
-  const sessionCreateRequired = new Set(appOpenApi.components?.schemas?.IamSessionCreateRequest?.required ?? []);
-  assert.equal(sessionCreateRequired.has("tenantCode"), false);
-  assert.equal(sessionCreateRequired.has("organizationCode"), false);
-  const registrationCreateRequired = new Set(appOpenApi.components?.schemas?.IamRegistrationCreateRequest?.required ?? []);
-  assert.equal(registrationCreateRequired.has("tenantCode"), false);
-  assert.equal(registrationCreateRequired.has("organizationCode"), false);
-  assert.ok(appOpenApi.components?.securitySchemes?.AuthToken, "app OpenAPI must declare AuthToken bearer security");
-  assert.ok(appOpenApi.components?.securitySchemes?.AccessToken, "app OpenAPI must declare Access-Token security");
-  assert.doesNotMatch(appOpenApiSource, /\/app\/v3\/api\/auth\/login/);
-  assert.doesNotMatch(appOpenApiSource, /\/app\/v3\/api\/auth\/session"/);
-  assert.doesNotMatch(appOpenApiSource, new RegExp(`"${retiredQrNamespace}\\.sessions\\.`));
+  for (const [path, method] of appbaseOwnedAppRoutes) {
+    assert.equal(appbaseAppOpenApi.paths?.[path]?.[method]?.["x-sdkwork-owner"], "sdkwork-appbase");
+  }
+  assert.doesNotMatch(appOpenApiSource, /\/app\/v3\/api\/auth\//);
+  assert.doesNotMatch(appOpenApiSource, /\/app\/v3\/api\/oauth\//);
+  assert.doesNotMatch(appSdkTypesSource, /auth-runtime-settings-response/);
+  assert.doesNotMatch(appSdkTypesSource, /auth-verification-policy/);
+  assert.doesNotMatch(appSdkTypesSource, /iam-registration-create-request/);
+  assert.doesNotMatch(appSdkTypesSource, /iam-session-create-request/);
+  assert.doesNotMatch(appbaseAppOpenApiSource, /\/app\/v3\/api\/auth\/login/);
+  assert.doesNotMatch(appbaseAppOpenApiSource, /\/app\/v3\/api\/auth\/session"/);
+  assert.doesNotMatch(appbaseAppOpenApiSource, new RegExp(`"${retiredQrNamespace}\\.sessions\\.`));
   assert.doesNotMatch(backendOpenApiSource, /\/backend\/v3\/api\/auth\//);
   assert.ok(!Object.keys(backendOpenApi.paths ?? {}).some((path) => path.startsWith("/backend/v3/api/auth/")));
   assert.equal(backendOpenApi.paths?.["/backend/v3/api/system/auth/settings"]?.get?.operationId, "auth.settings.retrieve");

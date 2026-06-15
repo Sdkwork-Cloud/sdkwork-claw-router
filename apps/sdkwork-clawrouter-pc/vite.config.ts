@@ -794,9 +794,9 @@ function portalDevProxyOptions(target: string): ProxyOptions {
 
 function resolvePortalDevProxyTarget(value: string | undefined, name: string): string {
   const fallbackByName: Record<string, string> = {
-    PORTAL_DEV_PROXY_GATEWAY_TARGET: 'http://127.0.0.1:18080',
-    PORTAL_DEV_PROXY_BACKEND_API_TARGET: 'http://127.0.0.1:18081',
-    PORTAL_DEV_PROXY_APP_API_TARGET: 'http://127.0.0.1:18082',
+    PORTAL_DEV_PROXY_GATEWAY_TARGET: 'http://127.0.0.1:3902',
+    PORTAL_DEV_PROXY_BACKEND_API_TARGET: 'http://127.0.0.1:3902',
+    PORTAL_DEV_PROXY_APP_API_TARGET: 'http://127.0.0.1:3902',
   };
   const target = value?.trim() || fallbackByName[name];
   if (!target) {

@@ -12,7 +12,7 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         contract = (ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml").read_text(
             encoding="utf-8"
         )
-        app_api = (ROOT / "services" / "sdkwork-claw-app-api" / "src" / "lib.rs").read_text(
+        app_api = (ROOT / "crates" / "sdkwork-router-app-api" / "src" / "routes.rs").read_text(
             encoding="utf-8"
         )
         app_sdk_api_index = (ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "index.ts")
@@ -39,42 +39,24 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         )
         self.assertNotIn("write_tables: [iam_user_login_event]", contract)
 
-        app_auth_api = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_auth.rs"
-        ).read_text(encoding="utf-8")
-        self.assertFalse(
-            (ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_session.rs").exists(),
-            "session bridge must live in the unified app auth router, not a second route factory",
-        )
-        self.assertIn('const APP_SESSION_PATH: &str = "/app/v3/api/auth/sessions";', app_auth_api)
-        self.assertIn("app_sessions_router_with_store", app_auth_api)
-        self.assertIn("create_session_bridge_response", app_auth_api)
-        self.assertIn("TrustedRequestSubject::from_headers", app_auth_api)
-        self.assertIn("AppSessionEventStore", app_auth_api)
-        self.assertIn("issue_iam_session", app_auth_api)
-        self.assertIn('if grant_type == "session_bridge"', app_auth_api)
-        self.assertIn("sign_app_session_token", app_auth_api)
-        self.assertIn("session_id_hash", app_auth_api)
-        self.assertIn("access_token", app_auth_api)
-        self.assertIn("auth_token", app_auth_api)
-        self.assertIn("IamAppContext", app_auth_api)
-
         self.assertIn("AppSubjectBoundaryConfig::new", app_api)
-        self.assertIn("SqliteAppSessionEventStore", app_api)
-        self.assertIn("PostgresAppSessionEventStore", app_api)
-        self.assertIn("app_sessions_router(", app_api)
-        self.assertIn("app_sessions_router_with_store", app_api)
-        self.assertIn("verified_signed_trusted_request_subject", app_auth_api)
-        self.assertIn("generate_server_request_id", app_auth_api)
-        self.assertNotIn('"/app/v3/api/auth/session"', app_auth_api)
+        self.assertNotIn("SqliteAppSessionEventStore", app_api)
+        self.assertNotIn("PostgresAppSessionEventStore", app_api)
+        self.assertNotIn("SqliteAppAuthStore", app_api)
+        self.assertNotIn("PostgresAppAuthStore", app_api)
+        self.assertNotIn("app_sessions_router(", app_api)
+        self.assertNotIn("app_sessions_router_with_store", app_api)
+        self.assertNotIn("app_auth_router_with_store", app_api)
+        self.assertNotIn("app_public_auth_router_with_store", app_api)
 
         self.assertTrue(app_sdk_api_index.exists())
         self.assertTrue(session_service.exists())
         session_source = session_service.read_text(encoding="utf-8")
-        self.assertIn("getClawRouterAppSdkClient", session_source)
+        self.assertIn("getSdkworkAppbaseAppSdkClient", session_source)
         self.assertIn(".auth.sessions.create", session_source)
         self.assertIn("createAppSession", session_source)
-        self.assertIn("grantType: 'session_bridge'", session_source)
+        self.assertNotIn("getClawRouterAppSdkClient().auth.sessions.create", session_source)
+        self.assertNotIn("grantType: 'session_bridge'", session_source)
         self.assertNotIn("fetch(", session_source)
         self.assertNotIn("axios", session_source)
 
@@ -101,7 +83,7 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         self.assertIn("resetClawRouterSdkClients()", session_service)
         self.assertIn("const stored = storeAppSessionFromResult(result);", session_service)
         self.assertIn("type StoredAppSessionToken", session_service)
-        self.assertIn("): Promise<StoredAppSessionToken>", session_service)
+        self.assertIn("): Promise<StoredAppSessionToken | null>", session_service)
         self.assertIn("return stored;", session_service)
         self.assertNotIn("code: '2000'", session_service)
         self.assertNotIn("result.code === '2000'", session_service)
@@ -153,15 +135,15 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
 
         self.assertIn("import { readApiRecord } from './api-result.ts';", portal_session)
-        self.assertIn("let currentSessionPromise: Promise<IamSessionResponse | null> | null = null;", portal_session)
+        self.assertIn("let currentSessionPromise: Promise<PortalSessionResponse | null> | null = null;", portal_session)
         self.assertIn("const session = readCurrentPortalSession(result);", portal_session)
         self.assertIn("if (session) {", portal_session)
         self.assertIn("storeAppSessionFromResult(result);", portal_session)
         self.assertIn("resetClawRouterSdkClients();", portal_session)
         self.assertIn("return session;", portal_session)
-        self.assertIn("function readCurrentPortalSession(result: unknown): IamSessionResponse | null", portal_session)
+        self.assertIn("function readCurrentPortalSession(result: unknown): PortalSessionResponse | null", portal_session)
         self.assertIn(
-            "function isPortalSessionResponse(value: unknown): value is IamSessionResponse",
+            "function isPortalSessionResponse(value: unknown): value is PortalSessionResponse",
             portal_session,
         )
 
@@ -369,9 +351,18 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
                 encoding="utf-8"
             )
         )
-        app_sdk_auth = (
-            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "auth.ts"
-        ).read_text(encoding="utf-8")
+        app_sdk_auth = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "auth.ts"
+        generated_app_sdk_auth = (
+            ROOT
+            / "sdks"
+            / "clawrouter-app-sdk"
+            / "clawrouter-app-sdk-typescript"
+            / "generated"
+            / "server-openapi"
+            / "src"
+            / "api"
+            / "auth.ts"
+        )
         session_service = (
             ROOT
             / "apps"
@@ -384,6 +375,7 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
 
         self.assertIn("operation: createAppSession", contract)
         self.assertIn("operation_id: sessions.create", contract)
+        self.assertIn("openapi_exposed: false", contract)
         self.assertNotIn("request_id_header: true", contract)
 
         operations = {
@@ -393,25 +385,15 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         }
         self.assertFalse(operations["sessions.create"]["request_id_header"])
 
-        parameters = openapi["paths"]["/app/v3/api/auth/sessions"]["post"]["parameters"]
-        request_id_params = [
-            parameter for parameter in parameters if parameter["name"] == "X-Request-Id"
-        ]
-        idempotency_params = [
-            parameter for parameter in parameters if parameter["name"] == "Idempotency-Key"
-        ]
-        self.assertEqual([], request_id_params)
-        self.assertEqual([], idempotency_params)
+        self.assertNotIn("/app/v3/api/auth/sessions", openapi["paths"])
         self.assertNotIn("/app/v3/api/auth/session", openapi["paths"])
 
-        self.assertIn(
-            "async create(body: IamSessionCreateRequest): Promise<SessionsCreateResult>",
-            app_sdk_auth,
-        )
-        self.assertNotIn("xRequestId", app_sdk_auth)
+        self.assertFalse(app_sdk_auth.exists())
+        self.assertFalse(generated_app_sdk_auth.exists())
         self.assertNotIn("createIdempotencyParams('app-session')", session_service)
         self.assertIn(".auth.sessions.create(", session_service)
-        self.assertIn("grantType: 'session_bridge'", session_service)
+        self.assertIn("getSdkworkAppbaseAppSdkClient", session_service)
+        self.assertNotIn("grantType: 'session_bridge'", session_service)
         self.assertNotIn("xRequestId", session_service)
 
 

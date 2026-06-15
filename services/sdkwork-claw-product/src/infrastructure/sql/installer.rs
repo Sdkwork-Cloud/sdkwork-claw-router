@@ -21,7 +21,7 @@ use sdkwork_commerce_core::CommerceServiceError;
 use sdkwork_commerce_storage_sqlx::{
     commerce_database_indexes, commerce_database_tables, commerce_initial_migration_sql,
 };
-use sdkwork_iam_storage_sqlx::{iam_database_tables, iam_initial_migration_sql};
+use sdkwork_iam_directory_repository_sqlx::{iam_database_tables, iam_initial_migration_sql};
 use sdkwork_models::ModelCatalog;
 use sha2::{Digest, Sha256};
 use sqlx::{PgPool, Postgres, Row, Sqlite, SqlitePool, Transaction};

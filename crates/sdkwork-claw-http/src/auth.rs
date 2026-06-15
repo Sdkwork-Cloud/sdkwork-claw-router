@@ -10,7 +10,7 @@ use axum::Json;
 use hmac::{Hmac, Mac};
 use sdkwork_claw_config::{AppSessionConfig, TrustedSubjectConfig};
 use sdkwork_claw_security::redact_secret;
-use sdkwork_iam_core::{AuthLevel, DeploymentMode, Environment, IamAppContext};
+use sdkwork_iam_context_service::{AuthLevel, DeploymentMode, Environment, IamAppContext};
 use serde::Serialize;
 use sha2::Sha256;
 

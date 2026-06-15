@@ -315,7 +315,7 @@ async fn seeded_sqlite_template_current(template_path: &Path) -> bool {
     let valid = sqlite_template_contains_seed_catalog(&pool).await
         && sqlite_template_contains_current_channel_schema(&pool).await
         && sqlite_template_contains_current_model_mapping_schema(&pool).await
-        && sqlite_template_contains_current_gateway_api_key_group_schema(&pool).await
+        && sqlite_template_contains_current_gateway_api_key_channel_group_schema(&pool).await
         && sqlite_template_contains_current_iam_membership_schema(&pool).await
         && sqlite_template_contains_current_provider_object_route_schema(&pool).await
         && sqlite_template_contains_gateway_key_hash(&pool, expected_key_hash.as_str()).await;
@@ -397,7 +397,9 @@ async fn sqlite_template_contains_current_model_mapping_schema(pool: &SqlitePool
     )
 }
 
-async fn sqlite_template_contains_current_gateway_api_key_group_schema(pool: &SqlitePool) -> bool {
+async fn sqlite_template_contains_current_gateway_api_key_channel_group_schema(
+    pool: &SqlitePool,
+) -> bool {
     let required_column_count = sqlx::query_scalar::<_, i64>(
         r#"
         SELECT COUNT(1)

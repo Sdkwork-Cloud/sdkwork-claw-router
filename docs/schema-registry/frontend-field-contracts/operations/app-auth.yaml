@@ -8,6 +8,7 @@ frontend_operations:
   api_surface: app
   api_method: GET
   api_path: /app/v3/api/system/iam/runtime
+  openapi_exposed: false
   sdk_domain: iam
   summary: Retrieve public IAM runtime settings
   description: Returns public login, registration, recovery, OAuth, QR login, and verification policy settings for the shared SDKWork IAM runtime without requiring an app session.
@@ -124,6 +125,7 @@ frontend_operations:
   api_surface: app
   api_method: POST
   api_path: /app/v3/api/auth/sessions
+  openapi_exposed: false
   sdk_domain: auth
   summary: Create IAM session
   description: Creates a standard SDKWork IAM session for password, email-code, phone-code, or signed session-bridge grants and returns dual auth/access tokens with AppContext.
@@ -418,6 +420,7 @@ frontend_operations:
   api_surface: app
   api_method: POST
   api_path: /app/v3/api/auth/registrations
+  openapi_exposed: false
   sdk_domain: auth
   summary: Create IAM registration
   description: Registers a tenant-scoped user through email or phone verification and returns the same IAM session payload used by login.
@@ -482,6 +485,7 @@ frontend_operations:
   api_surface: app
   api_method: GET
   api_path: /app/v3/api/system/iam/verification_policy
+  openapi_exposed: false
   sdk_domain: iam
   summary: Retrieve public IAM verification policy
   description: Returns the public email and phone verification policy flags consumed by appbase IAM.
@@ -497,6 +501,7 @@ frontend_operations:
   api_surface: app
   api_method: GET
   api_path: /app/v3/api/auth/sessions/current
+  openapi_exposed: false
   sdk_domain: auth
   summary: Retrieve current IAM session
   description: Reads the active IAM session and AppContext from the dual-token authentication boundary.
@@ -516,6 +521,7 @@ frontend_operations:
   api_surface: app
   api_method: PATCH
   api_path: /app/v3/api/auth/sessions/current
+  openapi_exposed: false
   sdk_domain: auth
   summary: Update current IAM session
   description: Updates current session metadata such as active organization without changing the public API shape.
@@ -548,6 +554,7 @@ frontend_operations:
   api_surface: app
   api_method: DELETE
   api_path: /app/v3/api/auth/sessions/current
+  openapi_exposed: false
   sdk_domain: auth
   summary: Delete current IAM session
   description: Revokes the active IAM session and clears server-side session state.
@@ -567,6 +574,7 @@ frontend_operations:
   api_surface: app
   api_method: POST
   api_path: /app/v3/api/auth/sessions/refresh
+  openapi_exposed: false
   sdk_domain: auth
   summary: Refresh IAM session
   description: Refreshes the active IAM session using a refresh token and returns a new dual-token payload.
@@ -594,6 +602,7 @@ frontend_operations:
   api_surface: app
   api_method: POST
   api_path: /app/v3/api/auth/password_reset_requests
+  openapi_exposed: false
   sdk_domain: auth
   summary: Create password reset request
   description: Starts password recovery by issuing an IAM verification challenge through the messaging delivery port.
@@ -638,6 +647,7 @@ frontend_operations:
   api_surface: app
   api_method: POST
   api_path: /app/v3/api/auth/password_resets
+  openapi_exposed: false
   sdk_domain: auth
   summary: Create password reset
   description: Completes password recovery using a verified reset code and writes the new credential hash.
@@ -682,6 +692,7 @@ frontend_operations:
   api_surface: app
   api_method: POST
   api_path: /app/v3/api/auth/verification_codes
+  openapi_exposed: false
   sdk_domain: auth
   summary: Create verification code
   description: Creates an IAM verification challenge and sends the code through the messaging SMS or email delivery port.
@@ -738,6 +749,7 @@ frontend_operations:
   api_surface: app
   api_method: POST
   api_path: /app/v3/api/auth/verification_codes/verify
+  openapi_exposed: false
   sdk_domain: auth
   summary: Verify verification code
   description: Verifies a one-time email or phone code against the IAM verification challenge store.
@@ -795,6 +807,7 @@ frontend_operations:
   api_surface: app
   api_method: POST
   api_path: /app/v3/api/oauth/authorization_urls
+  openapi_exposed: false
   sdk_domain: iam
   summary: Retrieve OAuth authorization URL
   description: Returns an OAuth provider authorization URL using standardized app auth configuration.
@@ -803,10 +816,10 @@ frontend_operations:
   request_schema:
     name: IamOauthAuthorizationUrlCreateRequest
     required:
-    - providerCode
+    - provider
     - redirectUri
     properties:
-      providerCode:
+      provider:
         type: string
         minLength: 1
         maxLength: 64
@@ -837,6 +850,7 @@ frontend_operations:
   api_surface: app
   api_method: POST
   api_path: /app/v3/api/oauth/sessions
+  openapi_exposed: false
   sdk_domain: iam
   summary: Create OAuth IAM session
   description: Exchanges an OAuth authorization code for the same dual-token IAM session payload used by password login.

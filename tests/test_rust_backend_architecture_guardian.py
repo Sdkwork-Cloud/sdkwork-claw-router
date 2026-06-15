@@ -20,8 +20,8 @@ class RustBackendArchitectureGuardianTest(unittest.TestCase):
                     "crates/sdkwork-claw-http",
                     "crates/sdkwork-claw-observability",
                     "services/sdkwork-claw-gateway",
-                    "services/sdkwork-claw-admin-api",
-                    "services/sdkwork-claw-app-api",
+                    "services/sdkwork-claw-admin",
+                    "services/sdkwork-claw-app",
                     "services/sdkwork-claw-product",
                 ]
                 resolver = "2"
@@ -57,8 +57,8 @@ class RustBackendArchitectureGuardianTest(unittest.TestCase):
             "crates/sdkwork-claw-http",
             "crates/sdkwork-claw-observability",
             "services/sdkwork-claw-gateway",
-            "services/sdkwork-claw-admin-api",
-            "services/sdkwork-claw-app-api",
+            "services/sdkwork-claw-admin",
+            "services/sdkwork-claw-app",
             "services/sdkwork-claw-product",
         ):
             root.joinpath(member, "Cargo.toml").parent.mkdir(parents=True, exist_ok=True)
@@ -154,7 +154,7 @@ class RustBackendArchitectureGuardianTest(unittest.TestCase):
         product_postgres.joinpath("row_mapping.rs").write_text("// postgres row mapping\n", encoding="utf-8")
         product_postgres.joinpath("usage_settlement_store.rs").write_text("// PostgresUsageSettlementStore commerce_usage_settlement plus_account_history settlement_status INSUFFICIENT_POINTS\n", encoding="utf-8")
 
-        for service in ("sdkwork-claw-gateway", "sdkwork-claw-admin-api", "sdkwork-claw-app-api"):
+        for service in ("sdkwork-claw-gateway", "sdkwork-claw-admin", "sdkwork-claw-app"):
             service_root = root / "services" / service
             service_root.joinpath("Cargo.toml").write_text(
                 textwrap.dedent(
@@ -254,21 +254,21 @@ class RustBackendArchitectureGuardianTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             self.write_valid_workspace(root)
-            service = root / "services" / "sdkwork-claw-app-api"
+            service = root / "services" / "sdkwork-claw-app"
             service.joinpath("Cargo.toml").write_text("[package]\nname = \"service\"\n", encoding="utf-8")
             service.joinpath("src", "lib.rs").write_text("pub fn router() {}\n", encoding="utf-8")
 
             result = RustBackendArchitectureGuardian(root=root).run()
 
             self.assertFalse(result.ok)
-            self.assertIn("services/sdkwork-claw-app-api/Cargo.toml must depend on sdkwork-claw-http", result.messages)
-            self.assertIn("services/sdkwork-claw-app-api/src/lib.rs must build routers through sdkwork_claw_http::service_router", result.messages)
+            self.assertIn("services/sdkwork-claw-app/Cargo.toml must depend on sdkwork-claw-http", result.messages)
+            self.assertIn("services/sdkwork-claw-app/src/lib.rs must build routers through sdkwork_claw_http::service_router", result.messages)
 
     def test_reports_service_without_common_runtime_config_boundary(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             self.write_valid_workspace(root)
-            service = root / "services" / "sdkwork-claw-app-api"
+            service = root / "services" / "sdkwork-claw-app"
             cargo = service / "Cargo.toml"
             cargo.write_text(
                 cargo.read_text(encoding="utf-8").replace(
@@ -282,7 +282,7 @@ class RustBackendArchitectureGuardianTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "services/sdkwork-claw-app-api/Cargo.toml must depend on sdkwork-claw-config",
+                "services/sdkwork-claw-app/Cargo.toml must depend on sdkwork-claw-config",
                 result.messages,
             )
 

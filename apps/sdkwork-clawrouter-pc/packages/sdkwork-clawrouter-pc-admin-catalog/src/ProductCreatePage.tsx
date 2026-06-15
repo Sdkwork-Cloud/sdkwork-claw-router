@@ -12,4 +12,4 @@ export {
   normalizeSpecGroups,
   readSelectedCategoryPaths,
   validateProductDraft,
-} from "sdkwork-commerce-pc-admin-product";
+} from "@sdkwork/commerce-pc-admin-product";

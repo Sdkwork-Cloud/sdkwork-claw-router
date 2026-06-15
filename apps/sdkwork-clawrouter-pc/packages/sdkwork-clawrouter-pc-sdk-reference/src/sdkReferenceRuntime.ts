@@ -1,5 +1,20 @@
 import type { ElementType } from 'react';
-import { Cloud, CreditCard, FileScan, ImageIcon, Layout, Server, Settings, Sparkles, Video, Volume2 } from 'lucide-react';
+import {
+  BookOpen,
+  Bot,
+  Brain,
+  Cloud,
+  CreditCard,
+  FileScan,
+  HardDrive,
+  ImageIcon,
+  Layout,
+  Server,
+  Settings,
+  Sparkles,
+  Video,
+  Volume2,
+} from 'lucide-react';
 import type {
   ApiCategory,
   ApiCategorySidebarNode,
@@ -21,6 +36,10 @@ export type SdkReferenceSystem =
   | 'image-open-api'
   | 'video-open-api'
   | 'audio-open-api'
+  | 'drive-open-api'
+  | 'knowledgebase-open-api'
+  | 'memory-open-api'
+  | 'agent-open-api'
   | 'payment-open-api'
   | 'iaas-open-api'
   | 'paas-open-api'
@@ -29,7 +48,19 @@ export type SdkReferenceSystem =
 export type GeneratedSdkType = ClawRouterGeneratedSdkType;
 export type GeneratedSdkMetadata = ClawRouterGeneratedSdkMetadata;
 
-type LegacySdkReferenceSystem = 'gateway' | 'cloud-services' | 'paas-api' | 'payment-aggregate' | 'app' | 'backend' | 'voice-open-api';
+type LegacySdkReferenceSystem =
+  | 'gateway'
+  | 'cloud-services'
+  | 'paas-api'
+  | 'payment-aggregate'
+  | 'app'
+  | 'backend'
+  | 'voice-open-api'
+  | 'sdkwork-drive-open-api'
+  | 'sdkwork-drive.open'
+  | 'sdkwork-knowledgebase-open-api'
+  | 'sdkwork-memory-open-api'
+  | 'sdkwork-agent-open-api';
 
 const OPEN_API_GENERATED_SDK_DEFAULT_BASE_URL = 'https://api.sdkwork.com';
 const SDK_REFERENCE_SYSTEM_IDS = new Set<SdkReferenceSystem>([
@@ -37,6 +68,10 @@ const SDK_REFERENCE_SYSTEM_IDS = new Set<SdkReferenceSystem>([
   'image-open-api',
   'video-open-api',
   'audio-open-api',
+  'drive-open-api',
+  'knowledgebase-open-api',
+  'memory-open-api',
+  'agent-open-api',
   'payment-open-api',
   'iaas-open-api',
   'paas-open-api',
@@ -51,6 +86,11 @@ const LEGACY_SDK_REFERENCE_SYSTEM_ALIASES: Record<LegacySdkReferenceSystem, SdkR
   app: 'app-api',
   backend: 'backend-api',
   'voice-open-api': 'audio-open-api',
+  'sdkwork-drive-open-api': 'drive-open-api',
+  'sdkwork-drive.open': 'drive-open-api',
+  'sdkwork-knowledgebase-open-api': 'knowledgebase-open-api',
+  'sdkwork-memory-open-api': 'memory-open-api',
+  'sdkwork-agent-open-api': 'agent-open-api',
 };
 
 export interface SdkReferenceSystemData extends Omit<ApiReferenceSystemData, 'id' | 'icon'> {
@@ -158,28 +198,39 @@ export function buildSdkReferenceSidebarTree(categories: ApiCategory[]): ApiCate
 function resolveGeneratedSdkBaseUrl(system: SdkReferenceSystem): string {
   const sdkMetadata = getGeneratedSdkMetadataForSystem(system);
   const configuredBaseUrl = readClawRouterRuntimeEnv(sdkMetadata.runtimeEnvName)
-    ?? (isOpenCompatibleSdkReferenceSystem(system) ? readClawRouterRuntimeEnv('VITE_API_BASE_URL') : undefined);
-  if (isOpenCompatibleSdkReferenceSystem(system)) {
+    ?? (isOpenAiCompatibleSdkReferenceSystem(system) ? readClawRouterRuntimeEnv('VITE_API_BASE_URL') : undefined);
+  if (isOpenAiCompatibleSdkReferenceSystem(system)) {
     return stripGatewayOpenAiVersionBaseUrl(configuredBaseUrl ?? OPEN_API_GENERATED_SDK_DEFAULT_BASE_URL);
+  }
+  if (isSdkworkDomainOpenApiReferenceSystem(system)) {
+    return stripGeneratedSdkApiPrefixBaseUrl(
+      configuredBaseUrl ?? OPEN_API_GENERATED_SDK_DEFAULT_BASE_URL,
+      sdkMetadata.apiPrefix,
+    );
   }
   return configuredBaseUrl ?? sdkMetadata.apiPrefix;
 }
 
 function resolveGeneratedSdkApiPrefix(system: SdkReferenceSystem): string {
-  if (isOpenCompatibleSdkReferenceSystem(system)) {
+  if (isOpenAiCompatibleSdkReferenceSystem(system)) {
     return '';
   }
   return getGeneratedSdkMetadataForSystem(system).apiPrefix;
 }
 
 function stripGatewayOpenAiVersionBaseUrl(baseUrl: string): string {
+  return stripGeneratedSdkApiPrefixBaseUrl(baseUrl, '/v1');
+}
+
+function stripGeneratedSdkApiPrefixBaseUrl(baseUrl: string, apiPrefix: string): string {
   const normalized = baseUrl.trim().replace(/\/+$/g, '');
-  if (!normalized.endsWith('/v1')) {
+  const normalizedPrefix = apiPrefix.startsWith('/') ? apiPrefix : `/${apiPrefix}`;
+  if (!normalized.endsWith(normalizedPrefix)) {
     return normalized;
   }
-  const withoutOpenAiVersion = normalized.slice(0, -'/v1'.length);
-  if (withoutOpenAiVersion) {
-    return withoutOpenAiVersion;
+  const withoutApiPrefix = normalized.slice(0, -normalizedPrefix.length);
+  if (withoutApiPrefix) {
+    return withoutApiPrefix;
   }
   return readBrowserOrigin() ?? OPEN_API_GENERATED_SDK_DEFAULT_BASE_URL;
 }
@@ -228,6 +279,10 @@ function iconForSdkSystem(system: SdkReferenceSystem): ElementType {
   if (system === 'image-open-api') return ImageIcon;
   if (system === 'video-open-api') return Video;
   if (system === 'audio-open-api') return Volume2;
+  if (system === 'drive-open-api') return HardDrive;
+  if (system === 'knowledgebase-open-api') return BookOpen;
+  if (system === 'memory-open-api') return Brain;
+  if (system === 'agent-open-api') return Bot;
   if (system === 'payment-open-api') return CreditCard;
   if (system === 'iaas-open-api') return Cloud;
   if (system === 'paas-open-api') return FileScan;
@@ -253,9 +308,16 @@ function normalizeSdkReferenceSystemId(system: string): SdkReferenceSystem | und
   return LEGACY_SDK_REFERENCE_SYSTEM_ALIASES[system as LegacySdkReferenceSystem];
 }
 
-function isOpenCompatibleSdkReferenceSystem(system: SdkReferenceSystem): boolean {
+function isOpenAiCompatibleSdkReferenceSystem(system: SdkReferenceSystem): boolean {
   return system === 'llm-open-api'
     || system === 'image-open-api'
     || system === 'video-open-api'
-    || system === 'audio-open-api';
+    || system === 'audio-open-api'
+    || system === 'knowledgebase-open-api';
+}
+
+function isSdkworkDomainOpenApiReferenceSystem(system: SdkReferenceSystem): boolean {
+  return system === 'drive-open-api'
+    || system === 'memory-open-api'
+    || system === 'agent-open-api';
 }

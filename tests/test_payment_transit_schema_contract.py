@@ -7,13 +7,11 @@ from tools.schema_registry_loader import load_schema_registry
 
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY_PATH = ROOT / "docs" / "schema-registry" / "sdkwork-claw-router.tables.yaml"
-APPBASE_COMMERCE_MIGRATION = (
-    ROOT
-    / "sdkwork-appbase"
-    / "packages"
-    / "native-rust"
-    / "commerce"
-    / "sdkwork-commerce-storage-sqlx-rust"
+COMMERCE_MIGRATION = (
+    ROOT.parent
+    / "sdkwork-commerce"
+    / "crates"
+    / "sdkwork-commerce-storage-repository-sqlx"
     / "migrations"
     / "0001_commerce_foundation.sql"
 )
@@ -57,13 +55,13 @@ class PaymentTransitSchemaContractTest(unittest.TestCase):
             self.assertIn("tenant_id", table["not_null_columns"], table_name)
             self.assertIn("id", table["columns"], table_name)
 
-    def test_payment_transit_tables_are_in_appbase_foundation_migration(self) -> None:
-        migration = APPBASE_COMMERCE_MIGRATION.read_text(encoding="utf-8")
+    def test_payment_transit_tables_are_in_commerce_foundation_migration(self) -> None:
+        migration = COMMERCE_MIGRATION.read_text(encoding="utf-8")
         for table_name in sorted(PAYMENT_TRANSIT_TABLES):
             self.assertIn(
                 f"CREATE TABLE IF NOT EXISTS {table_name}",
                 migration,
-                f"{table_name} must be physically declared in the Appbase commerce foundation migration",
+                f"{table_name} must be physically declared in the commerce foundation migration",
             )
 
         self.assertNotIn(
@@ -72,20 +70,20 @@ class PaymentTransitSchemaContractTest(unittest.TestCase):
             "provider operation attempts must use the shorter commerce_payment_operation_attempt table name",
         )
 
-    def test_payment_transit_indexes_use_short_identifiers(self) -> None:
-        migration = APPBASE_COMMERCE_MIGRATION.read_text(encoding="utf-8")
+    def test_payment_transit_indexes_use_bounded_identifiers(self) -> None:
+        migration = COMMERCE_MIGRATION.read_text(encoding="utf-8")
         index_names = re.findall(r"CREATE\s+(?:UNIQUE\s+)?INDEX\s+IF\s+NOT\s+EXISTS\s+([a-zA-Z0-9_]+)", migration)
         self.assertTrue(index_names)
         too_long = sorted(name for name in index_names if len(name) > 63)
         self.assertEqual([], too_long)
 
         for expected in [
-            "uk_pay_op_attempt_no",
-            "uk_pay_op_attempt_idem",
-            "idx_pay_op_attempt_resource",
-            "uk_pay_webhook_delivery_event",
-            "uk_pay_webhook_delivery_nonce",
-            "idx_pay_recon_item_run_status",
+            "uk_commerce_payment_operation_attempt_no",
+            "uk_commerce_payment_operation_attempt_idempotency",
+            "idx_commerce_payment_operation_attempt_resource",
+            "uk_commerce_payment_webhook_delivery_event",
+            "uk_commerce_payment_webhook_delivery_nonce",
+            "idx_commerce_payment_reconciliation_item_run_status",
         ]:
             self.assertIn(expected, index_names)
 

@@ -8,15 +8,15 @@ import process from 'node:process';
 
 const PROFILES = new Set(['auto', 'smoke', 'quick', 'admin-api', 'app-api', 'gateway', 'product-relay', 'runtime', 'full']);
 const PACKAGE_BY_SERVICE_DIR = Object.freeze({
-  'sdkwork-claw-admin-api': 'sdkwork-claw-admin-api',
-  'sdkwork-claw-app-api': 'sdkwork-claw-app-api',
+  'sdkwork-claw-admin': 'sdkwork-claw-admin',
+  'sdkwork-claw-app': 'sdkwork-claw-app',
   'sdkwork-claw-gateway': 'sdkwork-claw-gateway',
   'sdkwork-claw-installer': 'sdkwork-claw-installer',
   'sdkwork-claw-product': 'sdkwork-claw-product',
 });
 const PROFILE_BY_SERVICE_PACKAGE = Object.freeze({
-  'sdkwork-claw-admin-api': 'admin-api',
-  'sdkwork-claw-app-api': 'app-api',
+  'sdkwork-claw-admin': 'admin-api',
+  'sdkwork-claw-app': 'app-api',
   'sdkwork-claw-gateway': 'gateway',
   'sdkwork-claw-installer': 'runtime',
   'sdkwork-claw-product': 'runtime',
@@ -302,13 +302,13 @@ function exactAutoTargetsFromChangedTestFile(changedFile) {
   if (gatewayTestMatch) {
     return [{ packageName: 'sdkwork-claw-gateway', testTarget: gatewayTestMatch[1] }];
   }
-  const adminApiTestMatch = normalized.match(/^services\/sdkwork-claw-admin-api\/tests\/([^/]+)\.rs$/u);
+  const adminApiTestMatch = normalized.match(/^services\/sdkwork-claw-admin\/tests\/([^/]+)\.rs$/u);
   if (adminApiTestMatch) {
-    return [{ packageName: 'sdkwork-claw-admin-api', testTarget: adminApiTestMatch[1] }];
+    return [{ packageName: 'sdkwork-claw-admin', testTarget: adminApiTestMatch[1] }];
   }
-  const appApiTestMatch = normalized.match(/^services\/sdkwork-claw-app-api\/tests\/([^/]+)\.rs$/u);
+  const appApiTestMatch = normalized.match(/^services\/sdkwork-claw-app\/tests\/([^/]+)\.rs$/u);
   if (appApiTestMatch) {
-    return [{ packageName: 'sdkwork-claw-app-api', testTarget: appApiTestMatch[1] }];
+    return [{ packageName: 'sdkwork-claw-app', testTarget: appApiTestMatch[1] }];
   }
   return null;
 }
@@ -485,7 +485,7 @@ function buildQuickSteps(env, settings) {
         '-p',
         'sdkwork-claw-product',
         '-p',
-        'sdkwork-claw-admin-api',
+        'sdkwork-claw-admin',
         '--check',
       ],
       env,
@@ -502,7 +502,7 @@ function buildQuickSteps(env, settings) {
       [
         'test',
         '-p',
-        'sdkwork-claw-admin-api',
+        'sdkwork-claw-admin',
         '--test',
         'sqlite_product_model_route',
         'sqlite_product_catalog_route_serves_real_backend_model_list',
@@ -526,7 +526,7 @@ function buildSmokeSteps(env, settings) {
       [
         'test',
         '-p',
-        'sdkwork-claw-admin-api',
+        'sdkwork-claw-admin',
         '--test',
         'sqlite_product_model_route',
         'sqlite_product_catalog_route_serves_real_backend_model_list',
@@ -539,34 +539,34 @@ function buildSmokeSteps(env, settings) {
 
 function buildAdminApiSteps(env, settings) {
   return [
-    cargoStep('admin api health tests', ['test', '-p', 'sdkwork-claw-admin-api', '--test', 'health'], env, settings),
+    cargoStep('admin api health tests', ['test', '-p', 'sdkwork-claw-admin', '--test', 'health'], env, settings),
     cargoStep(
       'admin api contract route tests',
-      ['test', '-p', 'sdkwork-claw-admin-api', '--test', 'contract_routes'],
+      ['test', '-p', 'sdkwork-claw-admin', '--test', 'contract_routes'],
       env,
       settings,
     ),
     cargoStep(
       'admin api database router integration tests',
-      ['test', '-p', 'sdkwork-claw-admin-api', '--test', 'database_config_router'],
+      ['test', '-p', 'sdkwork-claw-admin', '--test', 'database_config_router'],
       env,
       settings,
     ),
     cargoStep(
       'admin api installation status tests',
-      ['test', '-p', 'sdkwork-claw-admin-api', '--test', 'installation_status_route'],
+      ['test', '-p', 'sdkwork-claw-admin', '--test', 'installation_status_route'],
       env,
       settings,
     ),
     cargoStep(
       'admin api product model route tests',
-      ['test', '-p', 'sdkwork-claw-admin-api', '--test', 'product_model_route'],
+      ['test', '-p', 'sdkwork-claw-admin', '--test', 'product_model_route'],
       env,
       settings,
     ),
     cargoStep(
       'admin api sqlite product model route tests',
-      ['test', '-p', 'sdkwork-claw-admin-api', '--test', 'sqlite_product_model_route'],
+      ['test', '-p', 'sdkwork-claw-admin', '--test', 'sqlite_product_model_route'],
       env,
       settings,
     ),
@@ -575,28 +575,28 @@ function buildAdminApiSteps(env, settings) {
 
 function buildAppApiSteps(env, settings) {
   return [
-    cargoStep('app api health tests', ['test', '-p', 'sdkwork-claw-app-api', '--test', 'health'], env, settings),
+    cargoStep('app api health tests', ['test', '-p', 'sdkwork-claw-app', '--test', 'health'], env, settings),
     cargoStep(
       'app api contract route tests',
-      ['test', '-p', 'sdkwork-claw-app-api', '--test', 'contract_routes'],
+      ['test', '-p', 'sdkwork-claw-app', '--test', 'contract_routes'],
       env,
       settings,
     ),
     cargoStep(
       'app api database router integration tests',
-      ['test', '-p', 'sdkwork-claw-app-api', '--test', 'database_config_router'],
+      ['test', '-p', 'sdkwork-claw-app', '--test', 'database_config_router'],
       env,
       settings,
     ),
     cargoStep(
       'app api session route tests',
-      ['test', '-p', 'sdkwork-claw-app-api', '--test', 'app_session_route'],
+      ['test', '-p', 'sdkwork-claw-app', '--test', 'app_session_route'],
       env,
       settings,
     ),
     cargoStep(
       'app api model ranking route tests',
-      ['test', '-p', 'sdkwork-claw-app-api', '--test', 'model_rankings_route'],
+      ['test', '-p', 'sdkwork-claw-app', '--test', 'model_rankings_route'],
       env,
       settings,
     ),
@@ -717,9 +717,9 @@ function buildRuntimeSteps(env, settings) {
         '-p',
         'sdkwork-claw-gateway',
         '-p',
-        'sdkwork-claw-admin-api',
+        'sdkwork-claw-admin',
         '-p',
-        'sdkwork-claw-app-api',
+        'sdkwork-claw-app',
         '-p',
         'sdkwork-claw-installer',
       ],
@@ -733,8 +733,8 @@ function buildFullSteps(env, settings) {
   const runtimePackages = [
     'sdkwork-claw-product',
     'sdkwork-claw-gateway',
-    'sdkwork-claw-admin-api',
-    'sdkwork-claw-app-api',
+    'sdkwork-claw-admin',
+    'sdkwork-claw-app',
     'sdkwork-claw-installer',
   ];
   return [

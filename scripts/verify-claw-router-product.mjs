@@ -14,9 +14,9 @@ Options:
   --parallel             Run dependency-safe verification groups concurrently.
   --concurrency <count>  Maximum commands to run at once in a parallel group. Defaults to 4.
   --build-jobs <count>   Override Cargo build parallelism for Rust verify steps.
-  --with-edge-dev-smoke  Also run the real pnpm dev edge server smoke.
+  --with-edge-dev-smoke  Also run the real pnpm server:dev edge server smoke.
   --skip-edge-dev-smoke
-                         Skip the real pnpm dev edge server smoke even when CI or env opts in.
+                         Skip the real pnpm server:dev edge server smoke even when CI or env opts in.
   --skip-rust-tests      Skip cargo test --workspace.
   --skip-python-tests    Skip python -B -m unittest discover tests.
   --skip-schema-gate     Skip python -B -m tools.schema_quality_gate.

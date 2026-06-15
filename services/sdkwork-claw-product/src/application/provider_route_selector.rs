@@ -6,9 +6,9 @@ use std::sync::atomic::{AtomicU64, Ordering};
 
 use crate::domain::{
     parse_model_catalog_identity, provider_native_model_id, BillingMeter, DomainError,
-    DomainResult, GatewayApiKeyGroupBinding, ModelProviderRoute, ProviderChannelGroupBinding,
-    ProviderChannelRoute, RouteCandidate, RoutingCapability, RoutingPolicy, RoutingPolicyScope,
-    RoutingRule,
+    DomainResult, GatewayApiKeyChannelGroupBinding, ModelProviderRoute,
+    ProviderChannelGroupBinding, ProviderChannelRoute, RouteCandidate, RoutingCapability,
+    RoutingPolicy, RoutingPolicyScope, RoutingRule,
 };
 use crate::ports::PricingCatalog;
 
@@ -378,7 +378,7 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
     fn context_from_group_binding(
         &self,
         context: &AuthenticatedApiKeyContext,
-        binding: &GatewayApiKeyGroupBinding,
+        binding: &GatewayApiKeyChannelGroupBinding,
     ) -> Option<AuthenticatedApiKeyContext> {
         let group = self.catalog.find_channel_group(binding.group_id)?;
         Some(AuthenticatedApiKeyContext {

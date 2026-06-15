@@ -4,10 +4,6 @@ const PRODUCT_API_SOURCES: &[(&str, &str)] = &[
         include_str!("../src/api/admin_agents.rs"),
     ),
     ("admin_app.rs", include_str!("../src/api/admin_app.rs")),
-    (
-        "admin_appbase_backend_iam.rs",
-        include_str!("../src/api/admin_appbase_backend_iam.rs"),
-    ),
     ("admin_cache.rs", include_str!("../src/api/admin_cache.rs")),
     (
         "admin_catalog.rs",

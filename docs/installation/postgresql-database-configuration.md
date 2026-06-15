@@ -1,16 +1,36 @@
 # SDKWork Claw Router PostgreSQL Configuration
 
-SDKWork Claw Router uses PostgreSQL for server-style development and production
-service deployments. Desktop/runtime local user data remains SQLite by default.
+SDKWork Claw Router uses PostgreSQL for explicit product server development and
+production service deployments. Default client development goes through
+`sdkwork-api-gateway`; desktop/runtime local user data remains SQLite by
+default.
 
 SDKWork Claw Router supports two PostgreSQL configuration paths:
 
-- Development environment: `pnpm dev`, `pnpm server:dev`, `pnpm tauri:dev`, and the explicit aliases `pnpm dev:postgres` and `pnpm server:dev:postgres` use the local PostgreSQL profile from `.env.postgres` when present, otherwise `.env.postgres.example` for the backend service runtime. Use `pnpm dev:sqlite` or `pnpm tauri:dev:sqlite` only when SQLite is explicitly intended.
+- Explicit product server development: `pnpm server:dev` and
+  `pnpm server:dev:postgres` use the local PostgreSQL profile from
+  `.env.postgres` when present, otherwise `.env.postgres.example` for the Claw
+  Router backend service runtime. Use `pnpm server:dev:sqlite` only when
+  explicit product server SQLite behavior is intended. `pnpm dev`,
+  `pnpm dev:postgres`, `pnpm dev:sqlite`, `pnpm desktop:dev`, and
+  `pnpm tauri:dev` are gateway-backed client commands and do not start the
+  product backend service.
 - Production environment: do not use `.env.postgres`. Use the protected runtime TOML file, process override file, and secret files from the OS-specific release layout.
 
-The development profile intentionally uses split fields instead of a full connection URL so every application in the SDKWork app stack has the same integration shape. At startup, the dev launcher assembles the split fields into the runtime-standard `SDKWORK_CLAW_DATABASE_URL` and passes that to the Rust services. This does not change the desktop package default: the desktop local data profile stores SQLite under `~/.sdkwork/router/data/clawrouter.sqlite` or `%USERPROFILE%/.sdkwork/router/data/clawrouter.sqlite` on Windows. SQLite also remains available through explicit development entrypoints such as `pnpm dev:sqlite` and `pnpm tauri:dev:sqlite`.
+The development profile intentionally uses split fields instead of a full
+connection URL so every application in the SDKWork app stack has the same
+integration shape. At explicit product server startup, the dev launcher
+assembles the split fields into the runtime-standard
+`SDKWORK_CLAW_DATABASE_URL` and passes that to the Rust services. This does not
+change the desktop package default: the desktop local data profile stores
+SQLite under `~/.sdkwork/router/data/clawrouter.sqlite` or
+`%USERPROFILE%/.sdkwork/router/data/clawrouter.sqlite` on Windows. SQLite also
+remains available through explicit product server development entrypoints such
+as `pnpm server:dev:sqlite`.
 
-Workspace desktop development commands use PostgreSQL for the backend service runtime; packaged desktop runtime and desktop-local user data remain SQLite.
+Workspace desktop development commands are gateway-backed client commands; they
+do not start a product backend service. Packaged desktop runtime and
+desktop local data profile stores SQLite under `~/.sdkwork/router/data/clawrouter.sqlite`.
 
 ## Release Runtime Paths
 
@@ -31,8 +51,8 @@ Guides:
 - [Production PostgreSQL configuration](./postgresql-production.md)
 
 Desktop/runtime local user data remains SQLite by default. Use desktop packages
-or explicit SQLite dev entrypoints when validating single-machine local data
-behavior.
+or explicit product server SQLite dev entrypoints when validating
+single-machine local data behavior.
 
 Configuration precedence in development:
 

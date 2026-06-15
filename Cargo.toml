@@ -7,26 +7,30 @@ members = [
     "crates/sdkwork-claw-provider-adapter-core",
     "crates/sdkwork-claw-provider-adapter-http",
     "crates/sdkwork-claw-provider-adapter-registry",
-    "crates/sdkwork-claw-paas-api",
+    "crates/sdkwork-claw-paas-plugin",
     "crates/sdkwork-claw-security",
     "crates/sdkwork-claw-http",
     "crates/sdkwork-claw-observability",
     "crates/sdkwork-claw-test-support",
     "crates/sdkwork-claw-product-test-support",
-    "packages/sdkwork-router-llm-api",
-    "packages/sdkwork-router-payment-api",
-    "packages/sdkwork-router-image-api",
-    "packages/sdkwork-router-video-api",
-    "packages/sdkwork-router-audio-api",
-    "packages/sdkwork-router-iaas-api",
-    "packages/sdkwork-router-paas-api",
-    "packages/sdkwork-router-app-api",
-    "packages/sdkwork-router-backend-api",
+    "crates/sdkwork-router-llm-open-api",
+    "crates/sdkwork-router-image-open-api",
+    "crates/sdkwork-router-video-open-api",
+    "crates/sdkwork-router-audio-open-api",
+    "crates/sdkwork-router-drive-open-api",
+    "crates/sdkwork-router-knowledgebase-open-api",
+    "crates/sdkwork-router-memory-open-api",
+    "crates/sdkwork-router-agent-open-api",
+    "crates/sdkwork-router-payment-open-api",
+    "crates/sdkwork-router-iaas-open-api",
+    "crates/sdkwork-router-paas-open-api",
+    "crates/sdkwork-router-app-api",
+    "crates/sdkwork-router-backend-api",
     "crates/provider-adapters/tencent-cloud",
     "crates/provider-adapters/alicloud",
     "services/sdkwork-claw-gateway",
-    "services/sdkwork-claw-admin-api",
-    "services/sdkwork-claw-app-api",
+    "services/sdkwork-claw-admin",
+    "services/sdkwork-claw-app",
     "services/sdkwork-claw-installer",
     "services/sdkwork-claw-provider-adapter",
     "services/sdkwork-claw-product",
@@ -40,26 +44,30 @@ default-members = [
     "crates/sdkwork-claw-provider-adapter-core",
     "crates/sdkwork-claw-provider-adapter-http",
     "crates/sdkwork-claw-provider-adapter-registry",
-    "crates/sdkwork-claw-paas-api",
+    "crates/sdkwork-claw-paas-plugin",
     "crates/sdkwork-claw-security",
     "crates/sdkwork-claw-http",
     "crates/sdkwork-claw-observability",
     "crates/sdkwork-claw-test-support",
     "crates/sdkwork-claw-product-test-support",
-    "packages/sdkwork-router-llm-api",
-    "packages/sdkwork-router-payment-api",
-    "packages/sdkwork-router-image-api",
-    "packages/sdkwork-router-video-api",
-    "packages/sdkwork-router-audio-api",
-    "packages/sdkwork-router-iaas-api",
-    "packages/sdkwork-router-paas-api",
-    "packages/sdkwork-router-app-api",
-    "packages/sdkwork-router-backend-api",
+    "crates/sdkwork-router-llm-open-api",
+    "crates/sdkwork-router-image-open-api",
+    "crates/sdkwork-router-video-open-api",
+    "crates/sdkwork-router-audio-open-api",
+    "crates/sdkwork-router-drive-open-api",
+    "crates/sdkwork-router-knowledgebase-open-api",
+    "crates/sdkwork-router-memory-open-api",
+    "crates/sdkwork-router-agent-open-api",
+    "crates/sdkwork-router-payment-open-api",
+    "crates/sdkwork-router-iaas-open-api",
+    "crates/sdkwork-router-paas-open-api",
+    "crates/sdkwork-router-app-api",
+    "crates/sdkwork-router-backend-api",
     "crates/provider-adapters/tencent-cloud",
     "crates/provider-adapters/alicloud",
     "services/sdkwork-claw-gateway",
-    "services/sdkwork-claw-admin-api",
-    "services/sdkwork-claw-app-api",
+    "services/sdkwork-claw-admin",
+    "services/sdkwork-claw-app",
     "services/sdkwork-claw-installer",
     "services/sdkwork-claw-provider-adapter",
     "services/sdkwork-claw-product",
@@ -106,17 +114,21 @@ tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt", "json"]
 sdkwork-claw-contract = { path = "crates/sdkwork-claw-contract" }
 sdkwork-claw-config = { path = "crates/sdkwork-claw-config" }
 sdkwork-claw-core = { path = "crates/sdkwork-claw-core" }
-sdkwork-claw-paas-api = { path = "crates/sdkwork-claw-paas-api" }
+sdkwork-claw-paas-plugin = { path = "crates/sdkwork-claw-paas-plugin" }
 sdkwork-claw-security = { path = "crates/sdkwork-claw-security" }
 sdkwork-claw-http = { path = "crates/sdkwork-claw-http" }
 sdkwork-claw-observability = { path = "crates/sdkwork-claw-observability" }
 sdkwork-claw-product-test-support = { path = "crates/sdkwork-claw-product-test-support" }
 sdkwork-claw-test-support = { path = "crates/sdkwork-claw-test-support" }
 sdkwork-claw-product = { path = "services/sdkwork-claw-product" }
-sdkwork-claw-app-api = { path = "services/sdkwork-claw-app-api" }
-sdkwork-claw-admin-api = { path = "services/sdkwork-claw-admin-api" }
+sdkwork-claw-app = { path = "services/sdkwork-claw-app" }
+sdkwork-claw-admin = { path = "services/sdkwork-claw-admin" }
+sdkwork-router-app-api = { path = "crates/sdkwork-router-app-api" }
+sdkwork-router-backend-api = { path = "crates/sdkwork-router-backend-api" }
 sdkwork-claw-installer = { path = "services/sdkwork-claw-installer" }
 sdkwork-claw-gateway = { path = "services/sdkwork-claw-gateway" }
+sdkwork-api-gateway = { path = "../sdkwork-api-gateway/crates/sdkwork-api-gateway" }
+sdkwork-api-gateway-config = { path = "../sdkwork-api-gateway/crates/sdkwork-api-gateway-config" }
 sdkwork-claw-provider-adapter-contract = { path = "crates/sdkwork-claw-provider-adapter-contract" }
 sdkwork-claw-provider-adapter-core = { path = "crates/sdkwork-claw-provider-adapter-core" }
 sdkwork-claw-provider-adapter-http = { path = "crates/sdkwork-claw-provider-adapter-http" }
@@ -125,16 +137,13 @@ sdkwork-claw-provider-adapter = { path = "services/sdkwork-claw-provider-adapter
 sdkwork-provider-adapter-alicloud = { path = "crates/provider-adapters/alicloud" }
 sdkwork-provider-adapter-tencent-cloud = { path = "crates/provider-adapters/tencent-cloud" }
 sdkwork-models = { path = "data/sdkwork-models/sdkwork-models-rust" }
-sdkwork_id = { path = "../sdkwork-appbase/packages/native-rust/foundation/sdkwork-id-rust" }
-sdkwork_iam_core = { path = "../sdkwork-appbase/packages/native-rust/iam/sdkwork-iam-core-rust" }
-sdkwork_iam_http = { path = "../sdkwork-appbase/packages/native-rust/iam/sdkwork-iam-http-rust" }
-sdkwork_iam_storage_sqlx = { path = "../sdkwork-appbase/packages/native-rust/iam/sdkwork-iam-storage-sqlx-rust" }
-sdkwork_commerce_core = { path = "../sdkwork-commerce/crates/sdkwork-commerce-core-rust" }
-sdkwork_commerce_storage_sqlx = { path = "../sdkwork-commerce/crates/sdkwork-commerce-storage-sqlx-rust" }
-sdkwork_commerce_bootstrap = { path = "../sdkwork-commerce/crates/sdkwork-commerce-bootstrap-rust" }
-sdkwork_commerce_membership_sqlx = { path = "../sdkwork-commerce/crates/sdkwork-commerce-membership-sqlx-rust" }
-sdkwork_commerce_payment = { path = "../sdkwork-commerce/crates/sdkwork-commerce-payment-rust" }
-sdkwork_commerce_invoice = { path = "../sdkwork-commerce/crates/sdkwork-commerce-invoice-rust" }
-sdkwork_commerce_account = { path = "../sdkwork-commerce/crates/sdkwork-commerce-account-rust" }
-sdkwork_commerce_http = { path = "../sdkwork-commerce/crates/sdkwork-commerce-http-rust" }
+sdkwork_platform_id_service = { package = "sdkwork-platform-id-service", path = "../sdkwork-appbase/crates/sdkwork-platform-id-service" }
+sdkwork_iam_context_service = { package = "sdkwork-iam-context-service", path = "../sdkwork-appbase/crates/sdkwork-iam-context-service" }
+sdkwork_iam_directory_repository_sqlx = { package = "sdkwork-iam-directory-repository-sqlx", path = "../sdkwork-appbase/crates/sdkwork-iam-directory-repository-sqlx" }
+sdkwork_commerce_core = { package = "sdkwork-commerce-contract-service", path = "../sdkwork-commerce/crates/sdkwork-commerce-contract-service" }
+sdkwork_commerce_storage_sqlx = { package = "sdkwork-commerce-storage-repository-sqlx", path = "../sdkwork-commerce/crates/sdkwork-commerce-storage-repository-sqlx" }
+sdkwork_commerce_bootstrap = { package = "sdkwork-commerce-bootstrap-manifest", path = "../sdkwork-commerce/crates/sdkwork-commerce-bootstrap-manifest" }
+sdkwork_commerce_membership_sqlx = { package = "sdkwork-commerce-membership-repository-sqlx", path = "../sdkwork-commerce/crates/sdkwork-commerce-membership-repository-sqlx" }
+sdkwork_commerce_payment = { package = "sdkwork-commerce-payment-service", path = "../sdkwork-commerce/crates/sdkwork-commerce-payment-service" }
+sdkwork_commerce_invoice = { package = "sdkwork-commerce-invoice-service", path = "../sdkwork-commerce/crates/sdkwork-commerce-invoice-service" }
 sdkwork-sdk-generator-client = { path = "../sdkwork-sdk-generator/rust" }

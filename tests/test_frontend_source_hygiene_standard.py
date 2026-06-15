@@ -33,15 +33,15 @@ IMAGE_ROOT = dependency_root("sdkwork-image")
 MUSIC_ROOT = dependency_root("sdkwork-music")
 VOICE_ROOT = dependency_root("sdkwork-voice")
 COMMERCE_PC_PACKAGES = COMMERCE_ROOT / "apps" / "sdkwork-commerce-pc" / "packages"
-COMMERCE_PC_COMMERCE = COMMERCE_PC_PACKAGES / "commerce"
 COMMERCE_ADMIN_PRODUCT = COMMERCE_PC_PACKAGES / "sdkwork-commerce-pc-admin-product" / "src"
 APPBASE_PC_CONTENT = APPBASE_ROOT / "packages" / "pc-react" / "content"
 IMAGE_PC_CONTENT = IMAGE_ROOT / "packages" / "pc-react" / "content"
 MUSIC_PC_CONTENT = MUSIC_ROOT / "packages" / "pc-react" / "content"
 VOICE_PC_CONTENT = VOICE_ROOT / "packages" / "pc-react" / "content"
-COMMERCE_PC_REACT_COMMERCE = (
-    COMMERCE_ROOT / "apps" / "sdkwork-commerce-pc" / "packages" / "commerce"
-)
+COMMERCE_PC_ORDER = COMMERCE_PC_PACKAGES / "sdkwork-commerce-pc-order" / "src"
+COMMERCE_PC_PAYMENT = COMMERCE_PC_PACKAGES / "sdkwork-commerce-pc-payment" / "src"
+COMMERCE_PC_CHECKOUT = COMMERCE_PC_PACKAGES / "sdkwork-commerce-pc-checkout" / "src"
+COMMERCE_PC_MEMBERSHIP = COMMERCE_PC_PACKAGES / "sdkwork-commerce-pc-membership" / "src"
 SDKWORK_IMAGE_PC_REACT = first_existing_path(
     IMAGE_PC_CONTENT / "sdkwork-image-pc-react",
     APPBASE_PC_CONTENT / "sdkwork-image-pc-react",
@@ -76,6 +76,8 @@ CLAW_APP_SDK_TYPES_DIST = CLAW_APP_SDK_GENERATED / "dist" / "types"
 CLAW_BACKEND_SDK_TYPES_DIST = CLAW_BACKEND_SDK_GENERATED / "dist" / "types"
 CLAW_APP_SDK_API_SRC = CLAW_APP_SDK / "src" / "api"
 CLAW_BACKEND_SDK_API_SRC = CLAW_BACKEND_SDK / "src" / "api"
+APPBASE_STUDIO_TEMPLATE_SQLX = APPBASE_ROOT / "crates" / "sdkwork-studio-template-repository-sqlx"
+APPBASE_USER_CENTER_TAURI_HOST = APPBASE_ROOT / "crates" / "sdkwork-user-center-tauri-host"
 
 
 def rel(source: Path) -> str:
@@ -397,7 +399,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         )
 
     def test_admin_api_database_config_test_schema_uses_media_resource_columns(self) -> None:
-        source = ROOT / "services" / "sdkwork-claw-admin-api" / "tests" / "database_config_router.rs"
+        source = ROOT / "services" / "sdkwork-claw-admin" / "tests" / "database_config_router.rs"
         relative = rel(source)
         content = source.read_text(encoding="utf-8", errors="ignore")
         required_snippets = [
@@ -433,20 +435,8 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_appbase_native_studio_migrations_use_media_resource_columns(self) -> None:
         migration_sources = [
-            APPBASE_ROOT
-            / "packages"
-            / "native-rust"
-            / "studio"
-            / "sdkwork-studio-storage-sqlx-rust"
-            / "migrations"
-            / "0001_studio_catalog.sql",
-            APPBASE_ROOT
-            / "packages"
-            / "native-rust"
-            / "studio"
-            / "sdkwork-studio-storage-sqlx-rust"
-            / "migrations"
-            / "0002_studio_app_template.sql",
+            APPBASE_STUDIO_TEMPLATE_SQLX / "migrations" / "0001_studio_catalog.sql",
+            APPBASE_STUDIO_TEMPLATE_SQLX / "migrations" / "0002_studio_app_template.sql",
         ]
         required_by_file = {
             "0001_studio_catalog.sql": [
@@ -868,7 +858,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
     def test_admin_product_list_cover_reader_returns_media_resource_object(self) -> None:
         source = PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-catalog" / "src" / "ProductListPage.tsx"
         re_export = source.read_text(encoding="utf-8", errors="ignore")
-        self.assertIn("sdkwork-commerce-pc-admin-product", re_export)
+        self.assertIn("@sdkwork/commerce-pc-admin-product", re_export)
         self.assertIn("readProductCoverResource", re_export)
         implementation_source = first_existing_path(
             COMMERCE_ADMIN_PRODUCT / "ProductListPage.tsx",
@@ -907,7 +897,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
     def test_admin_sku_management_form_preserves_image_media_resource_object(self) -> None:
         source = PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-catalog" / "src" / "SkuManagementPage.tsx"
         re_export = source.read_text(encoding="utf-8", errors="ignore")
-        self.assertIn("sdkwork-commerce-pc-admin-product", re_export)
+        self.assertIn("@sdkwork/commerce-pc-admin-product", re_export)
         self.assertIn("SkuManagementPage", re_export)
         implementation_source = first_existing_path(
             COMMERCE_ADMIN_PRODUCT / "SkuManagementPage.tsx",
@@ -1167,19 +1157,19 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "avatar: readSdkworkMediaResource(profile.avatar),",
                 "avatar: readSdkworkMediaResource(updated.avatar) || profile.avatar,",
             ],
-            COMMERCE_PC_REACT_COMMERCE / "sdkwork-order-pc-react" / "src" / "order-service.ts": [
+            COMMERCE_PC_ORDER / "order-service.ts": [
                 "productImage?: SdkworkMediaResource;",
                 "image?: SdkworkMediaResource;",
                 "productImage: readSdkworkMediaResource(order.productImage),",
                 "image: readSdkworkMediaResource(item.productImage),",
             ],
-            COMMERCE_PC_REACT_COMMERCE / "sdkwork-payment-pc-react" / "src" / "payment.ts": [
+            COMMERCE_PC_PAYMENT / "payment.ts": [
                 "icon?: SdkworkMediaResource;",
             ],
-            COMMERCE_PC_REACT_COMMERCE / "sdkwork-payment-pc-react" / "src" / "payment-service.ts": [
+            COMMERCE_PC_PAYMENT / "payment-service.ts": [
                 "icon: readSdkworkMediaResource(method.methodIcon) || readSdkworkMediaResource(method.icon),",
             ],
-            COMMERCE_PC_REACT_COMMERCE / "sdkwork-membership-pc-react" / "src" / "membership-service.ts": [
+            COMMERCE_PC_MEMBERSHIP / "membership-service.ts": [
                 "icon?: SdkworkMediaResource;",
                 "icon: readSdkworkMediaResource(level.icon),",
             ],
@@ -1299,24 +1289,20 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_appbase_payment_qr_images_preserve_media_resource_objects(self) -> None:
         source_expectations = {
-            COMMERCE_PC_REACT_COMMERCE / "sdkwork-payment-pc-react" / "src" / "payment.ts": [
+            COMMERCE_PC_PAYMENT / "payment.ts": [
                 "qrImage?: SdkworkMediaResource;",
                 "qrContent?: string;",
             ],
-            COMMERCE_PC_REACT_COMMERCE / "sdkwork-payment-pc-react" / "src" / "payment-service.ts": [
+            COMMERCE_PC_PAYMENT / "payment-service.ts": [
                 "deriveQrImage(payment)",
                 "qrContent: deriveQrContent(payment) || fallback.qrContent,",
                 "qrImage: deriveQrImage(payment) || fallback.qrImage,",
             ],
-            COMMERCE_PC_REACT_COMMERCE
-            / "sdkwork-payment-pc-react"
-            / "src"
-            / "components"
-            / "payment-detail-drawer.tsx": [
+            COMMERCE_PC_PAYMENT / "components" / "payment-detail-drawer.tsx": [
                 "const qrImageResourceSrc = getSdkworkMediaDeliveryUrl(detail.qrImage);",
                 "QRCode.toDataURL(detail.qrContent",
             ],
-            COMMERCE_PC_REACT_COMMERCE / "sdkwork-checkout-pc-react" / "src" / "checkout-service.ts": [
+            COMMERCE_PC_CHECKOUT / "checkout-service.ts": [
                 "qrImage?: SdkworkMediaResource;",
                 "qrContent?: string;",
                 "qrContent = payment.qrContent;",
@@ -1550,7 +1536,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         )
 
     def test_appbase_native_user_center_avatar_preserves_media_resource_objects(self) -> None:
-        source = APPBASE_ROOT / "packages" / "pc-react" / "iam" / "sdkwork-user-center-core-pc-react" / "native" / "tauri-rust" / "src" / "user_center_authority.rs"
+        source = APPBASE_USER_CENTER_TAURI_HOST / "src" / "user_center_authority.rs"
         relative = rel(source)
         content = source.read_text(encoding="utf-8", errors="ignore")
         required_snippets = [

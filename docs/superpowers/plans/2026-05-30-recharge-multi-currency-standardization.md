@@ -17,7 +17,7 @@
 - Modify: `docs/schema-registry/frontend-field-contracts/operations/app-commerce-recharges.yaml`
 - Modify: `docs/schema-registry/frontend-field-contracts/operations/backend-commerce-recharges.yaml`
 - Modify: `sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-http-rust/tests/app_recharge_checkout_router.rs`
-- Modify: `services/sdkwork-claw-admin-api/tests/database_config_router.rs`
+- Modify: `services/sdkwork-claw-admin/tests/database_config_router.rs`
 - Modify: `apps/sdkwork-clawrouter-pc/billing-runtime.test.ts`
 - Modify: `apps/sdkwork-clawrouter-pc/admin-membership-recharge-runtime.test.ts`
 

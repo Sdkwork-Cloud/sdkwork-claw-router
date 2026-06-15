@@ -91,15 +91,15 @@ PORTAL_RUNTIME_MODEL_IDENTITY_FIXTURE_PATHS = (
     ROOT / "apps" / "sdkwork-clawrouter-pc" / "console-app-runtime.test.ts",
 )
 API_GATEWAY_MODEL_IDENTITY_FIXTURE_PATHS = (
-    ROOT / "services" / "sdkwork-claw-admin-api" / "tests" / "database_config_router.rs",
-    ROOT / "services" / "sdkwork-claw-app-api" / "tests" / "api_key_route.rs",
+    ROOT / "services" / "sdkwork-claw-admin" / "tests" / "database_config_router.rs",
+    ROOT / "services" / "sdkwork-claw-app" / "tests" / "api_key_route.rs",
     ROOT / "services" / "sdkwork-claw-gateway" / "tests" / "provider_passthrough_route.rs",
     ROOT / "services" / "sdkwork-claw-gateway" / "tests" / "edge_server_sqlite_smoke.rs",
 )
 AI_CHANNEL_ROUTE_RUNTIME_ROOTS = (
     ROOT / "services" / "sdkwork-claw-product" / "src",
     ROOT / "services" / "sdkwork-claw-gateway" / "src",
-    ROOT / "services" / "sdkwork-claw-app-api" / "src",
+    ROOT / "services" / "sdkwork-claw-app" / "src",
 )
 SERVER_RESOURCES = ROOT.parents[1] / "spring-ai-plus-server-application" / "src" / "main" / "resources"
 POSTGRES_MIGRATION_DIR = SERVER_RESOURCES / "database" / "postgresql"
@@ -1430,7 +1430,7 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
 
     def test_regional_catalog_key_guards_use_shared_domain_region_standard(self) -> None:
         direct_region_guard_sources = [
-            ROOT / "services" / "sdkwork-claw-app-api" / "tests" / "model_rankings_route.rs",
+            ROOT / "services" / "sdkwork-claw-app" / "tests" / "model_rankings_route.rs",
             ROOT / "services" / "sdkwork-claw-product" / "src" / "domain" / "catalog.rs",
         ]
         for path in direct_region_guard_sources:
@@ -2252,8 +2252,8 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
 
         for service_runtime in (
             ROOT / "services" / "sdkwork-claw-gateway" / "src" / "runtime.rs",
-            ROOT / "services" / "sdkwork-claw-app-api" / "src" / "lib.rs",
-            ROOT / "services" / "sdkwork-claw-admin-api" / "src" / "lib.rs",
+            ROOT / "services" / "sdkwork-claw-app" / "src" / "lib.rs",
+            ROOT / "services" / "sdkwork-claw-admin" / "src" / "lib.rs",
         ):
             source = read_text(service_runtime)
             self.assertIn("DatabaseInstaller", source)

@@ -13,8 +13,8 @@ The runtime is split into small Rust packages with explicit boundaries:
 - `sdkwork-claw-http`: common Axum router bootstrap, API Key auth input parsing, standard health/readiness routes, request id, timeout, CORS, security headers, and HTTP boundary helpers.
 - `sdkwork-claw-observability`: tracing initialization and telemetry bootstrap.
 - `sdkwork-claw-gateway`: `/v1` OpenAI-compatible gateway and streaming provider relay.
-- `sdkwork-claw-app-api`: `/app/v3/api` app/console/public API surface.
-- `sdkwork-claw-admin-api`: `/backend/v3/api` admin/backend API surface.
+- `sdkwork-claw-app`: `/app/v3/api` app/console/public API surface.
+- `sdkwork-claw-admin`: `/backend/v3/api` admin/backend API surface.
 - `sdkwork-claw-product`: product composition and deployable runtime assembly.
 
 Product implementation starts in `sdkwork-claw-product` and must keep `domain`, `application`, `ports`, and `infrastructure` as first-class submodules. Model catalog, provider route, pricing plan, channel group, and billing meter behavior belongs behind these boundaries before HTTP handlers replace manifest 501 responses.

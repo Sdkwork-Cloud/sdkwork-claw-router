@@ -1,8 +1,21 @@
 # Development PostgreSQL Configuration
 
-This guide documents the local SDKWork Claw Router PostgreSQL development profile. `pnpm dev`, `pnpm server:dev`, and `pnpm tauri:dev` use PostgreSQL by default for the backend service runtime. Desktop packages and desktop user data still use SQLite by default. The checked-in defaults match the SDKWork app stack local profile; `.env.postgres` remains available when a developer needs to override those fields without exporting environment variables.
+This guide documents the local SDKWork Claw Router PostgreSQL development
+profile for explicit product server commands. `pnpm server:dev` and
+`pnpm server:dev:postgres` use PostgreSQL by default for the Claw Router product
+server runtime. The default client commands (`pnpm dev`, `pnpm dev:postgres`,
+`pnpm dev:sqlite`, `pnpm desktop:dev`, `pnpm desktop:dev:sqlite`,
+`pnpm tauri:dev`, and `pnpm tauri:dev:sqlite`) start `sdkwork-api-gateway` plus
+the portal only; they do not start a Claw Router backend service and do not use
+the product server database profile.
 
-Workspace desktop commands (`pnpm desktop:dev` and `pnpm tauri:dev`) start a desktop shell plus the product backend service. That backend service uses the PostgreSQL integration profile. This is not the packaged desktop local-data policy.
+Workspace desktop commands are gateway-backed client commands. They start the
+desktop shell plus `sdkwork-api-gateway`, not a product backend service. Use
+`pnpm server:dev` for PostgreSQL-backed product server debugging and
+`pnpm server:dev:sqlite` when validating the explicit product server SQLite
+profile. This is not the packaged desktop local-data policy.
+Use `pnpm server:dev` for PostgreSQL-backed product server debugging.
+Desktop packages and desktop user data still use SQLite by default.
 
 Desktop SQLite defaults are unchanged by this profile:
 
@@ -26,7 +39,9 @@ For an existing database, make sure the host, port, database name, username, and
 
 ## 2. Optional .env.postgres Override
 
-`pnpm dev` reads `.env.postgres` for the local PostgreSQL profile. If the file is missing or you need to customize the PostgreSQL fields, copy the checked-in template:
+`pnpm server:dev` reads `.env.postgres` for the local PostgreSQL profile. If
+the file is missing or you need to customize the PostgreSQL fields, copy the
+checked-in template:
 
 ```powershell
 Copy-Item .env.postgres.example .env.postgres
@@ -56,21 +71,23 @@ Do not commit `.env.postgres`. The repository only tracks `.env.postgres.example
 
 ## 3. Start With PostgreSQL
 
-Start the full local workspace with PostgreSQL:
-
-```powershell
-pnpm dev
-```
-
-Equivalent explicit server entrypoint:
+Start the explicit product server workspace with PostgreSQL:
 
 ```powershell
 pnpm server:dev
 ```
 
-Tauri development starts the desktop shell and the backend service. The backend service uses the same workspace PostgreSQL profile by default:
+Equivalent explicit PostgreSQL server entrypoint:
 
 ```powershell
+pnpm server:dev:postgres
+```
+
+Client and desktop development use `sdkwork-api-gateway` as the API server and
+do not start the Claw Router product backend:
+
+```powershell
+pnpm dev
 pnpm tauri:dev
 ```
 
@@ -78,7 +95,7 @@ Preview the resolved plan without starting services:
 
 ```powershell
 pnpm server:plan
-pnpm dev --dry-run
+pnpm server:dev --dry-run
 ```
 
 The default dev profile assembles:
@@ -87,27 +104,26 @@ The default dev profile assembles:
 SDKWORK_CLAW_DATABASE_URL=postgresql://sdkwork_ai_dev:sdkworkdev123@[::1]:5432/sdkwork_ai_dev?sslmode=disable
 ```
 
-and passes the URL plus `SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS` to the installer, catalog refresh, gateway, and edge runtime steps.
+and passes the URL plus `SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS` to the explicit
+product server installer, catalog refresh, gateway, and edge runtime steps.
 
-`pnpm dev` already loads `.env.postgres`. These explicit PostgreSQL scripts are aliases for the same profile:
+`pnpm server:dev` loads `.env.postgres`. These PostgreSQL scripts resolve to
+the same product server profile:
 
 ```powershell
-pnpm dev:postgres
 pnpm server:dev:postgres
 pnpm server:plan:postgres
 ```
 
-Use SQLite only through the explicit SQLite entrypoints:
+Use SQLite only through the explicit product server SQLite entrypoints:
 
 ```powershell
-pnpm dev:sqlite
-pnpm tauri:dev:sqlite
+pnpm server:dev:sqlite
 pnpm server:plan:sqlite
 ```
 
-Use those SQLite entrypoints, or a desktop package, when validating desktop
-local data behavior. The PostgreSQL dev profile is not the desktop persistence
-default.
+Use those SQLite entrypoints, or a desktop package, when validating local data
+behavior. The PostgreSQL dev profile is not the desktop persistence default.
 
 ## 4. Configuration Precedence
 
@@ -116,7 +132,7 @@ Development startup resolves the database in this order:
 1. `SDKWORK_CLAW_DATABASE_URL`
 2. `SDKWORK_CLAW_DATABASE_ENGINE/HOST/PORT/NAME/USERNAME/PASSWORD/SSL_MODE`
 3. Default local PostgreSQL dev database
-4. Explicit SQLite entrypoints, which pass `--database-url sqlite://target/dev/clawrouter.sqlite`
+4. Explicit product server SQLite entrypoints, which pass `--database-url sqlite://target/dev/clawrouter.sqlite`
 
 Normal local PostgreSQL development should use the default profile or split fields. Set `SDKWORK_CLAW_DATABASE_URL` only for a temporary explicit override.
 
@@ -124,7 +140,9 @@ Unsupported engines fail startup. A PostgreSQL split-field profile must define `
 
 ## 5. Troubleshooting
 
-If startup shows SQLite in the dry-run output, check whether you used `pnpm dev:sqlite`, `pnpm tauri:dev:sqlite`, or passed `--database-url sqlite://target/dev/clawrouter.sqlite`.
+If product server startup shows SQLite in the dry-run output, check whether you
+used `pnpm server:dev:sqlite`, `pnpm server:plan:sqlite`, or passed
+`--database-url sqlite://target/dev/clawrouter.sqlite`.
 
 If startup fails with a missing password error, add `SDKWORK_CLAW_DATABASE_PASSWORD` to `.env.postgres`. Empty passwords are not accepted for the split-field PostgreSQL profile.
 

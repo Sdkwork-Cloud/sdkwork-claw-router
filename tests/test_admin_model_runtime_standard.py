@@ -328,7 +328,9 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
 
     def test_admin_model_catalog_route_uses_standard_router_not_fallback_compat_layer(self) -> None:
         product_api_mod = (ROOT / "services/sdkwork-claw-product/src/api/mod.rs").read_text(encoding="utf-8")
-        admin_api = (ROOT / "services/sdkwork-claw-admin-api/src/lib.rs").read_text(encoding="utf-8")
+        admin_api = (ROOT / "crates/sdkwork-router-backend-api/src/routes.rs").read_text(
+            encoding="utf-8"
+        )
         product_api_dir = ROOT / "services/sdkwork-claw-product/src/api"
 
         self.assertFalse(

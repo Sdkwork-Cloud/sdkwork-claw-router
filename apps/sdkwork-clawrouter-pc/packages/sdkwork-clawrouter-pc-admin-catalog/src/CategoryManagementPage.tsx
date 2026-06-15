@@ -11,4 +11,4 @@ export {
   readCategoryRecords,
   readCategoryTotal,
   readSeedSummaries,
-} from "sdkwork-commerce-pc-admin-product";
+} from "@sdkwork/commerce-pc-admin-product";

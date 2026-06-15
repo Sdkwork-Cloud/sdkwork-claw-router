@@ -7,7 +7,7 @@ use sdkwork_claw_http::{
     verify_app_session_token, ApiKeyCredentialSource, ApiKeyIdentity, AppSubjectBoundaryConfig,
     TrustedRequestSubject,
 };
-use sdkwork_iam_core::IamAppContext;
+use sdkwork_iam_context_service::IamAppContext;
 
 #[test]
 fn api_key_identity_prefers_authorization_bearer_without_leaking_debug() {

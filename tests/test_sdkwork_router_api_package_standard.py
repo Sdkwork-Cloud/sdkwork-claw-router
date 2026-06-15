@@ -1,3 +1,5 @@
+import json
+import re
 import unittest
 from pathlib import Path
 
@@ -31,26 +33,163 @@ class SdkworkRouterApiPackageStandardTest(unittest.TestCase):
     def test_router_api_packages_are_declared_as_workspace_route_crates(self) -> None:
         cargo_toml = (ROOT / "Cargo.toml").read_text(encoding="utf-8")
         expected_packages = [
-            "sdkwork-router-llm-api",
-            "sdkwork-router-payment-api",
-            "sdkwork-router-image-api",
-            "sdkwork-router-video-api",
-            "sdkwork-router-audio-api",
-            "sdkwork-router-iaas-api",
-            "sdkwork-router-paas-api",
+            "sdkwork-router-llm-open-api",
+            "sdkwork-router-payment-open-api",
+            "sdkwork-router-image-open-api",
+            "sdkwork-router-video-open-api",
+            "sdkwork-router-audio-open-api",
+            "sdkwork-router-drive-open-api",
+            "sdkwork-router-knowledgebase-open-api",
+            "sdkwork-router-memory-open-api",
+            "sdkwork-router-agent-open-api",
+            "sdkwork-router-iaas-open-api",
+            "sdkwork-router-paas-open-api",
             "sdkwork-router-app-api",
             "sdkwork-router-backend-api",
         ]
 
         for package_name in expected_packages:
             with self.subTest(package=package_name):
-                package_root = ROOT / "packages" / package_name
+                package_root = ROOT / "crates" / package_name
                 cargo_manifest = package_root / "Cargo.toml"
                 self.assertTrue(cargo_manifest.exists(), f"{package_name} must be a Rust package")
-                self.assertIn(f'"packages/{package_name}"', cargo_toml)
+                self.assertIn(f'"crates/{package_name}"', cargo_toml)
+                self.assertNotIn(f'"packages/{package_name}"', cargo_toml)
                 self.assertIn(f'name = "{package_name}"', cargo_manifest.read_text(encoding="utf-8"))
                 self.assertTrue((package_root / "src" / "lib.rs").exists())
                 self.assertTrue((package_root / "src" / "manifest.rs").exists())
+                self.assertFalse(
+                    (ROOT / "packages" / package_name).exists(),
+                    f"{package_name} must not remain under top-level packages/",
+                )
+                self.assertTrue((package_root / "specs" / "README.md").exists())
+                self.assertTrue((package_root / "specs" / "component.spec.json").exists())
+
+    def test_router_api_route_crates_have_component_specs(self) -> None:
+        expected_packages = [
+            "sdkwork-router-llm-open-api",
+            "sdkwork-router-payment-open-api",
+            "sdkwork-router-image-open-api",
+            "sdkwork-router-video-open-api",
+            "sdkwork-router-audio-open-api",
+            "sdkwork-router-drive-open-api",
+            "sdkwork-router-knowledgebase-open-api",
+            "sdkwork-router-memory-open-api",
+            "sdkwork-router-agent-open-api",
+            "sdkwork-router-iaas-open-api",
+            "sdkwork-router-paas-open-api",
+            "sdkwork-router-app-api",
+            "sdkwork-router-backend-api",
+        ]
+
+        for package_name in expected_packages:
+            spec_path = ROOT / "crates" / package_name / "specs" / "component.spec.json"
+            with self.subTest(package=package_name):
+                spec = json.loads(spec_path.read_text(encoding="utf-8"))
+                self.assertEqual(spec["kind"], "sdkwork.component.spec")
+                self.assertEqual(spec["component"]["name"], package_name)
+                self.assertEqual(spec["component"]["type"], "rust-route-crate")
+                self.assertEqual(spec["component"]["root"], f"sdkwork-claw-router/crates/{package_name}")
+                self.assertEqual(spec["component"]["languages"], ["rust"])
+                canonical_specs = {entry["file"] for entry in spec["canonicalSpecs"]}
+                self.assertIn("API_SPEC.md", canonical_specs)
+                self.assertIn("SDK_WORKSPACE_GENERATION_SPEC.md", canonical_specs)
+                self.assertIn("TEST_SPEC.md", canonical_specs)
+                self.assertIn("RUST_CODE_SPEC.md", canonical_specs)
+                self.assertEqual(spec["contracts"]["routeManifest"], "src/manifest.rs")
+                self.assertEqual(spec["contracts"]["sdkClients"], [])
+                self.assertEqual(spec["contracts"]["dependencyApiExports"], [])
+
+    def test_app_and_backend_route_crates_expose_executable_router_builders(self) -> None:
+        expected = {
+            "sdkwork-router-app-api": [
+                "src/routes.rs#build_sdkwork_claw_router_app_api_router",
+                "src/routes.rs#build_sdkwork_claw_router_app_api_router_from_env",
+            ],
+            "sdkwork-router-backend-api": [
+                "src/routes.rs#build_sdkwork_claw_router_backend_api_router",
+                "src/routes.rs#build_sdkwork_claw_router_backend_api_router_from_env",
+            ],
+        }
+
+        for package_name, runtime_entrypoints in expected.items():
+            package_root = ROOT / "crates" / package_name
+            cargo_manifest = (package_root / "Cargo.toml").read_text(encoding="utf-8")
+            lib_source = (package_root / "src" / "lib.rs").read_text(encoding="utf-8")
+            routes_source = (package_root / "src" / "routes.rs").read_text(encoding="utf-8")
+            spec = json.loads((package_root / "specs" / "component.spec.json").read_text(encoding="utf-8"))
+
+            with self.subTest(package=package_name):
+                self.assertIn("axum.workspace = true", cargo_manifest)
+                self.assertIn("sdkwork-claw-config.workspace = true", cargo_manifest)
+                self.assertIn("sdkwork-claw-product.workspace = true", cargo_manifest)
+                self.assertIn("pub mod routes;", lib_source)
+                for runtime_entrypoint in runtime_entrypoints:
+                    self.assertIn(runtime_entrypoint, spec["contracts"]["runtimeEntrypoints"])
+                for runtime_entrypoint in runtime_entrypoints:
+                    function_name = runtime_entrypoint.split("#", 1)[1]
+                    self.assertRegex(routes_source, rf"pub (?:async )?fn {re.escape(function_name)}")
+                self.assertIn("Router", routes_source)
+
+    def test_gateway_mounts_claw_apis_through_route_crates_not_service_crates(self) -> None:
+        gateway_manifest = (ROOT / "services" / "sdkwork-claw-gateway" / "Cargo.toml").read_text(
+            encoding="utf-8",
+        )
+        gateway_runtime = (ROOT / "services" / "sdkwork-claw-gateway" / "src" / "runtime.rs").read_text(
+            encoding="utf-8",
+        )
+
+        self.assertIn("sdkwork-router-app-api.workspace = true", gateway_manifest)
+        self.assertIn("sdkwork-router-backend-api.workspace = true", gateway_manifest)
+        self.assertNotIn("sdkwork-claw-app.workspace = true", gateway_manifest)
+        self.assertNotIn("sdkwork-claw-admin.workspace = true", gateway_manifest)
+        self.assertIn("sdkwork_router_app_api::", gateway_runtime)
+        self.assertIn("sdkwork_router_backend_api::", gateway_runtime)
+        self.assertNotIn("sdkwork_claw_app::", gateway_runtime)
+        self.assertNotIn("sdkwork_claw_admin::", gateway_runtime)
+
+    def test_gateway_embeds_claw_api_route_crates_inside_sdkwork_api_gateway(self) -> None:
+        gateway_runtime = (ROOT / "services" / "sdkwork-claw-gateway" / "src" / "runtime.rs").read_text(
+            encoding="utf-8",
+        )
+        edge_server = (ROOT / "services" / "sdkwork-claw-gateway" / "src" / "edge_server.rs").read_text(
+            encoding="utf-8",
+        )
+
+        self.assertIn("build_sdkwork_api_gateway_router_with_embedded_routers", gateway_runtime)
+        self.assertIn('CLAW_ROUTER_APP_API_SERVICE_ID: &str = "sdkwork-claw-router-app-api"', gateway_runtime)
+        self.assertIn(
+            'CLAW_ROUTER_BACKEND_API_SERVICE_ID: &str = "sdkwork-claw-router-backend-api"',
+            gateway_runtime,
+        )
+        self.assertIn("claw_router_gateway_dependency_surfaces", gateway_runtime)
+        self.assertIn("sdkwork_router_app_api::manifest::API_AUTHORITY", gateway_runtime)
+        self.assertIn("sdkwork_router_backend_api::manifest::API_AUTHORITY", gateway_runtime)
+        self.assertIn("sdkwork_router_app_api::paths::ROUTE_PREFIX", gateway_runtime)
+        self.assertIn("sdkwork_router_backend_api::paths::ROUTE_PREFIX", gateway_runtime)
+        self.assertIn("sdkwork_api_gateway_surface_path", edge_server)
+        self.assertIn("path_matches_prefix(path, APP_API_PREFIX)", edge_server)
+        self.assertIn("path_matches_prefix(path, BACKEND_API_PREFIX)", edge_server)
+
+    def test_sdkwork_dependency_open_api_route_packages_keep_sdkwork_authority_mapping(self) -> None:
+        expected_mappings = {
+            "sdkwork-router-drive-open-api": ("sdkwork-drive-open-api", "sdkwork-drive-sdk"),
+            "sdkwork-router-knowledgebase-open-api": (
+                "sdkwork-knowledgebase-open-api",
+                "sdkwork-knowledgebase-sdk",
+            ),
+            "sdkwork-router-memory-open-api": ("sdkwork-memory-open-api", "sdkwork-memory-sdk"),
+            "sdkwork-router-agent-open-api": ("sdkwork-agent-open-api", "sdkwork-agent-sdk"),
+        }
+
+        for package_name, (api_authority, sdk_family) in expected_mappings.items():
+            manifest = (ROOT / "crates" / package_name / "src" / "manifest.rs").read_text(
+                encoding="utf-8",
+            )
+            with self.subTest(package=package_name):
+                self.assertIn(f'pub const API_AUTHORITY: &str = "{api_authority}";', manifest)
+                self.assertIn(f'pub const SDK_FAMILY: &str = "{sdk_family}";', manifest)
+                self.assertNotIn("sdkwork-claw-router.", manifest)
 
 
 if __name__ == "__main__":

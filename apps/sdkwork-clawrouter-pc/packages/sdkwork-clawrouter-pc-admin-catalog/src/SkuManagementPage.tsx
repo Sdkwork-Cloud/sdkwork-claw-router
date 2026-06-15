@@ -1,1 +1,1 @@
-export { SkuManagementPage } from "sdkwork-commerce-pc-admin-product";
+export { SkuManagementPage } from "@sdkwork/commerce-pc-admin-product";

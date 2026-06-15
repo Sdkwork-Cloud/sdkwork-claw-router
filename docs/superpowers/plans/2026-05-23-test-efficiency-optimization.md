@@ -148,8 +148,8 @@ Added `app-api`, `gateway`, and `product-relay` profiles so daily work can targe
 Added `scripts/measure-claw-router-test-targets.mjs` and `pnpm test:rust:measure` for curated slow targets:
 
 ```text
-sdkwork-claw-admin-api:database_config_router
-sdkwork-claw-app-api:database_config_router
+sdkwork-claw-admin:database_config_router
+sdkwork-claw-app:database_config_router
 sdkwork-claw-gateway:database_config_router
 sdkwork-claw-gateway:provider_passthrough_route
 sdkwork-claw-gateway:edge_server
@@ -182,5 +182,5 @@ Made `stop-claw-router-test-processes.mjs` tolerate already-exited repo-local pr
 - `node scripts/run-claw-router-product.test.mjs`: PASS.
 - `node scripts/run-claw-router-rust-tests.mjs quick`: PASS.
 - `node scripts/run-claw-router-rust-tests.mjs quick` hot cache: 3.9s.
-- `node scripts/measure-claw-router-test-targets.mjs --dry-run --target sdkwork-claw-admin-api:database_config_router --target sdkwork-claw-app-api:database_config_router`: PASS.
+- `node scripts/measure-claw-router-test-targets.mjs --dry-run --target sdkwork-claw-admin:database_config_router --target sdkwork-claw-app:database_config_router`: PASS.
 - `cargo check -p sdkwork-claw-http`: PASS.

@@ -40,7 +40,7 @@ Run the focused route test after changes:
 
 ```powershell
 $env:CARGO_TARGET_DIR = Join-Path $PWD 'target/product-category-seed'
-cargo test -p sdkwork-claw-admin-api --test product_center_routes -- product_center_category_seed_initializer_imports_data_directories_idempotently
+cargo test -p sdkwork-claw-admin --test product_center_routes -- product_center_category_seed_initializer_imports_data_directories_idempotently
 ```
 
 The test asserts total product seed size, first-level root coverage, fourth-level leaf coverage, Unicode names, and idempotent re-import.

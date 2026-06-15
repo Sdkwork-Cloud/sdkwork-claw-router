@@ -8,8 +8,9 @@ use crate::domain::{
 };
 use crate::ports::{
     ApiKeyCommandStoreFuture, CreateGatewayApiKeyCommand, CreatedGatewayApiKey,
-    DeleteGatewayApiKeyCommand, EnsureDefaultChannelGroupCommand, GatewayApiKeyCommandStore,
-    UpdateGatewayApiKeyCommand, UpdatedGatewayApiKey,
+    DeleteGatewayApiKeyCommand, DeleteGatewayApiKeyForOrganizationCommand,
+    EnsureDefaultChannelGroupCommand, GatewayApiKeyCommandStore, UpdateGatewayApiKeyCommand,
+    UpdatedGatewayApiKey,
 };
 
 const API_KEY_STATUS_REVOKED: i32 = 4;
@@ -117,6 +118,25 @@ impl GatewayApiKeyCommandStore for PostgresGatewayApiKeyCommandStore {
             }
             tx.commit().await.map_err(|error| {
                 store_error("failed to commit api key delete transaction", error)
+            })?;
+            Ok(deleted)
+        })
+    }
+
+    fn delete_gateway_api_key_for_organization<'a>(
+        &'a self,
+        command: DeleteGatewayApiKeyForOrganizationCommand,
+    ) -> ApiKeyCommandStoreFuture<'a, bool> {
+        Box::pin(async move {
+            let mut tx = self.pool.begin().await.map_err(|error| {
+                store_error("failed to begin admin api key delete transaction", error)
+            })?;
+            let deleted = revoke_api_key_for_organization(&mut tx, &command).await?;
+            if deleted {
+                insert_delete_for_organization_audit_log(&mut tx, &command).await?;
+            }
+            tx.commit().await.map_err(|error| {
+                store_error("failed to commit admin api key delete transaction", error)
             })?;
             Ok(deleted)
         })
@@ -914,6 +934,36 @@ async fn revoke_api_key(
     Ok(result.rows_affected() > 0)
 }
 
+async fn revoke_api_key_for_organization(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &DeleteGatewayApiKeyForOrganizationCommand,
+) -> DomainResult<bool> {
+    let result = sqlx::query(
+        r#"
+        UPDATE iam_gateway_api_key
+        SET status = $1,
+            revoked_at = $2::timestamp AT TIME ZONE 'UTC',
+            revoked_by = $3,
+            updated_at = $2::timestamp AT TIME ZONE 'UTC'
+        WHERE id = $4
+          AND tenant_id = $5
+          AND organization_id = $6
+          AND deleted_at IS NULL
+          AND revoked_at IS NULL
+        "#,
+    )
+    .bind(API_KEY_STATUS_REVOKED)
+    .bind(&command.requested_at)
+    .bind(command.operator_id)
+    .bind(command.api_key_id)
+    .bind(command.tenant_id)
+    .bind(command.organization_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to revoke admin api key", error))?;
+    Ok(result.rows_affected() > 0)
+}
+
 async fn insert_update_audit_log(
     tx: &mut Transaction<'_, Postgres>,
     command: &UpdateGatewayApiKeyCommand,
@@ -986,6 +1036,41 @@ async fn insert_delete_audit_log(
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to write api key delete audit log", error))?;
+    Ok(())
+}
+
+async fn insert_delete_for_organization_audit_log(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &DeleteGatewayApiKeyForOrganizationCommand,
+) -> DomainResult<()> {
+    let change_summary = serde_json::json!({
+        "action": "delete_api_key",
+        "tenantId": command.tenant_id,
+        "organizationId": command.organization_id,
+        "operatorId": command.operator_id,
+        "operatorType": command.operator_type,
+        "apiKeyId": command.api_key_id,
+        "storesSecretPlaintext": false
+    });
+    sqlx::query(
+        r#"
+        INSERT INTO ops_audit_log
+            (uuid, tenant_id, organization_id, action, target_type, target_id, request_id, operator_id, operator_type, change_summary)
+        VALUES
+            ($1, $2, $3, 'delete_api_key', 1, $4, $5, $6, $7, $8::jsonb)
+        "#,
+    )
+    .bind(&command.audit_log_uuid)
+    .bind(command.tenant_id)
+    .bind(command.organization_id)
+    .bind(command.api_key_id)
+    .bind(&command.request_id)
+    .bind(command.operator_id)
+    .bind(command.operator_type)
+    .bind(change_summary.to_string())
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to write admin api key delete audit log", error))?;
     Ok(())
 }
 

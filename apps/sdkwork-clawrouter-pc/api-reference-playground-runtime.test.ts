@@ -746,7 +746,7 @@ test("api reference loads available payment aggregate, paas, cloud storage and a
 
   assert.deepEqual(systems.map((system) => system.id), ["gateway", "payment-aggregate", "paas-api", "cloud-services", "app"]);
   assert.deepEqual(requested, ["/openapi.json", "/payments/v3/openapi.json", "/paas/v3/openapi.json", "/cloud/v3/openapi.json", "/app/v3/api/openapi.json"]);
-  assert.equal(getApiSystemDisplayName(systems[0]), "AI鑱氬悎API");
+  assert.equal(getApiSystemDisplayName(systems[0]), "LLM Open API");
   assert.equal(systems[0].requestBaseUrl, "/v1");
   assert.equal(systems[1].status, "available");
   assert.equal(systems[1].schemaUrl, "/payments/v3/openapi.json");
@@ -850,7 +850,7 @@ test("api reference formats operation summaries as stable display titles", () =>
   assert.equal(formatApiOperationDisplayName("POST /v1/chat/completions"), "POST /v1/chat/completions");
 });
 
-test("api reference defaults gateway display to AI aggregation API and opens chat completions first", async () => {
+test("api reference defaults gateway display to LLM Open API and opens chat completions first", async () => {
   const gatewayOpenApi = JSON.parse(readFileSync(
     new URL("./public/openapi.json", import.meta.url),
     "utf8",
@@ -858,7 +858,7 @@ test("api reference defaults gateway display to AI aggregation API and opens cha
   const manifest: ApiSchemaTabsDocument = {
     cacheTtlSeconds: 30,
     tabs: [
-      { id: "gateway", name: "Claw Router Open API", order: 10, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+      { id: "llm-open-api", name: "LLM Open API", order: 10, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
     ],
   };
 
@@ -868,7 +868,7 @@ test("api reference defaults gateway display to AI aggregation API and opens cha
   });
   const defaultEndpoint = getDefaultApiReferenceEndpoint(systems[0]);
 
-  assert.equal(getApiSystemDisplayName(systems[0]), "AI鑱氬悎API");
+  assert.equal(getApiSystemDisplayName(systems[0]), "LLM Open API");
   assert.equal(defaultEndpoint?.name, "Create Chat Completion");
   assert.equal(defaultEndpoint?.path, "/v1/chat/completions");
 });
@@ -951,6 +951,193 @@ test("api reference keeps vendor multimodal endpoints under their OpenAI modalit
   );
 });
 
+test("api reference splits canonical open api tabs by media domain", async () => {
+  const mediaGatewaySpec = {
+    paths: {
+      "/v1/chat/completions": {
+        post: {
+          operationId: "createChatCompletion",
+          summary: "Create Chat Completion",
+          tags: ["Chat"],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+      "/v1/images/generations": {
+        post: {
+          operationId: "createImageGeneration",
+          summary: "Create Image Generation",
+          tags: ["Images"],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+      "/vidu/ent/v2/text2video": {
+        post: {
+          operationId: "viduCreateTextToVideo",
+          summary: "Vidu Text To Video",
+          tags: ["Videos/vidu"],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+      "/v1/audio/transcriptions": {
+        post: {
+          operationId: "createAudioTranscription",
+          summary: "Create Audio Transcription",
+          tags: ["Audio"],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+      "/suno/v1/music": {
+        post: {
+          operationId: "sunoCreateMusic",
+          summary: "Suno Create Music",
+          tags: ["Music/suno"],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+    },
+  };
+  const manifest: ApiSchemaTabsDocument = {
+    cacheTtlSeconds: 30,
+    tabs: [
+      { id: "llm-open-api", name: "LLM Open API", order: 10, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+      { id: "image-open-api", name: "Image Open API", order: 20, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+      { id: "video-open-api", name: "Video Open API", order: 30, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+      { id: "audio-open-api", name: "Audio Open API", order: 40, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+      { id: "drive-open-api", name: "Drive Open API", order: 50, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+    ],
+  };
+
+  const systems = await buildApiReferenceSystemsFromTabs(manifest, async (url) => {
+    if (url === "/openapi.json") return mediaGatewaySpec;
+    throw new Error(`unexpected url ${url}`);
+  });
+  const pathsBySystem = new Map(systems.map((system) => [
+    system.id,
+    system.categories.flatMap((category) => category.endpoints.map((endpoint) => endpoint.path)).sort(),
+  ]));
+  const categoryNamesBySystem = new Map(systems.map((system) => [
+    system.id,
+    system.categories.map((category) => category.name),
+  ]));
+
+  assert.deepEqual(pathsBySystem.get("llm-open-api"), ["/v1/chat/completions"]);
+  assert.deepEqual(pathsBySystem.get("image-open-api"), ["/v1/images/generations"]);
+  assert.deepEqual(pathsBySystem.get("video-open-api"), ["/vidu/ent/v2/text2video"]);
+  assert.deepEqual(pathsBySystem.get("audio-open-api"), ["/suno/v1/music", "/v1/audio/transcriptions"]);
+  assert.deepEqual(categoryNamesBySystem.get("audio-open-api"), ["Audio", "Music/suno"]);
+  assert.equal(pathsBySystem.get("llm-open-api")?.includes("/v1/images/generations"), false);
+  assert.equal(pathsBySystem.get("llm-open-api")?.includes("/vidu/ent/v2/text2video"), false);
+  assert.equal(pathsBySystem.get("llm-open-api")?.includes("/v1/audio/transcriptions"), false);
+  assert.equal(pathsBySystem.get("llm-open-api")?.includes("/suno/v1/music"), false);
+});
+
+test("api reference splits canonical open api tabs by product capability domain", async () => {
+  const productGatewaySpec = {
+    paths: {
+      "/v1/chat/completions": {
+        post: {
+          operationId: "createChatCompletion",
+          summary: "Create Chat Completion",
+          tags: ["Chat"],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+      "/v1/files": {
+        post: {
+          operationId: "uploadFile",
+          summary: "Upload File",
+          tags: ["Files"],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+      "/v1/uploads": {
+        post: {
+          operationId: "createUpload",
+          summary: "Create Upload",
+          tags: ["Uploads"],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+      "/v1/vector_stores": {
+        post: {
+          operationId: "createVectorStore",
+          summary: "Create Vector Store",
+          tags: ["Vector Stores"],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+      "/v1/vector_stores/{vector_store_id}/search": {
+        post: {
+          operationId: "searchVectorStore",
+          summary: "Search Vector Store",
+          tags: ["Vector Stores"],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+      "/v1/conversations": {
+        post: {
+          operationId: "createConversation",
+          summary: "Create Conversation",
+          tags: ["Conversations"],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+      "/v1/assistants": {
+        post: {
+          operationId: "createAssistant",
+          summary: "Create Assistant",
+          tags: ["Assistants"],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+      "/v1/threads/{thread_id}/runs": {
+        post: {
+          operationId: "createThreadRun",
+          summary: "Create Thread Run",
+          tags: ["Assistants"],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+    },
+  };
+  const manifest: ApiSchemaTabsDocument = {
+    cacheTtlSeconds: 30,
+    tabs: [
+      { id: "llm-open-api", name: "LLM Open API", order: 10, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+      { id: "drive-open-api", name: "Drive Open API", order: 50, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+      { id: "knowledgebase-open-api", name: "Knowledgebase Open API", order: 60, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+      { id: "memory-open-api", name: "Memory Open API", order: 70, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+      { id: "agent-open-api", name: "Agent Open API", order: 80, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+    ],
+  };
+
+  const systems = await buildApiReferenceSystemsFromTabs(manifest, async (url) => {
+    if (url === "/openapi.json") return productGatewaySpec;
+    throw new Error(`unexpected url ${url}`);
+  });
+  const pathsBySystem = new Map(systems.map((system) => [
+    system.id,
+    system.categories.flatMap((category) => category.endpoints.map((endpoint) => endpoint.path)).sort(),
+  ]));
+  const categoryNamesBySystem = new Map(systems.map((system) => [
+    system.id,
+    system.categories.map((category) => category.name),
+  ]));
+
+  assert.deepEqual(pathsBySystem.get("llm-open-api"), ["/v1/chat/completions"]);
+  assert.deepEqual(pathsBySystem.get("drive-open-api"), ["/v1/files", "/v1/uploads"]);
+  assert.deepEqual(pathsBySystem.get("knowledgebase-open-api"), [
+    "/v1/vector_stores",
+    "/v1/vector_stores/{vector_store_id}/search",
+  ]);
+  assert.deepEqual(pathsBySystem.get("memory-open-api"), ["/v1/conversations"]);
+  assert.deepEqual(pathsBySystem.get("agent-open-api"), ["/v1/assistants", "/v1/threads/{thread_id}/runs"]);
+  assert.deepEqual(categoryNamesBySystem.get("drive-open-api"), ["Files", "Uploads"]);
+  assert.deepEqual(categoryNamesBySystem.get("knowledgebase-open-api"), ["Vector Stores"]);
+  assert.deepEqual(categoryNamesBySystem.get("memory-open-api"), ["Conversations"]);
+  assert.deepEqual(categoryNamesBySystem.get("agent-open-api"), ["Assistants"]);
+});
+
 test("api reference shows Google Gemini content endpoints under chat", async () => {
   const gatewayOpenApi = JSON.parse(readFileSync(
     new URL("./public/openapi.json", import.meta.url),
@@ -959,7 +1146,7 @@ test("api reference shows Google Gemini content endpoints under chat", async () 
   const manifest: ApiSchemaTabsDocument = {
     cacheTtlSeconds: 30,
     tabs: [
-      { id: "gateway", name: "Claw Router Open API", order: 10, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+      { id: "llm-open-api", name: "LLM Open API", order: 10, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
     ],
   };
   const systems = await buildApiReferenceSystemsFromTabs(manifest, async (url) => {
@@ -1477,7 +1664,7 @@ test("api reference falls back to legacy openapi when schema tabs manifest is un
 
   assert.deepEqual(requested, ["/openapi/schema-tabs.json", "/openapi.json"]);
   assert.equal(systems.length, 1);
-  assert.equal(systems[0].id, "gateway");
+  assert.equal(systems[0].id, "llm-open-api");
   assert.equal(systems[0].categories[0].endpoints[0].name, "Create Chat Completion");
 });
 
@@ -1493,6 +1680,7 @@ test("sdk reference reuses schema tabs and maps tabs to generated SDK metadata",
   };
 
   const systems = await buildSdkReferenceSystems(manifest, async (url) => {
+    if (url === "/payments/v3/openapi.json") return paymentAggregateSpec;
     if (url === "/cloud/v3/openapi.json") return cloudStorageSpec;
     if (url === "/app/v3/api/openapi.json") return appSpec;
     if (url === "/backend/v3/api/openapi.json") {
@@ -1512,31 +1700,186 @@ test("sdk reference reuses schema tabs and maps tabs to generated SDK metadata",
     throw new Error(`unexpected sdk reference url ${url}`);
   });
 
-  assert.deepEqual(systems.map((system) => system.id), ["cloud-services", "app", "backend"]);
-  assert.equal(systems[0].schemaUrl, "/cloud/v3/openapi.json");
-  assert.equal(systems[0].requestBaseUrl, "/cloud/v3");
-  assert.equal(systems[0].categories.some((category) => category.name === "Cloud Storage/S3 Buckets"), true);
-  assert.equal(systems[1].categories[0].endpoints[0].path, "/app/v3/api/ai/models");
-  assert.equal(getGeneratedSdkMetadataForSystem("cloud-services").packageName, "@sdkwork/clawrouter-cloud-services-sdk");
-  assert.equal(getGeneratedSdkMetadataForSystem("app").packageName, "@sdkwork/clawrouter-app-sdk");
-  assert.equal(getGeneratedSdkMetadataForSystem("backend").packageName, "@sdkwork/clawrouter-backend-sdk");
+  assert.deepEqual(systems.map((system) => system.id), ["payment-open-api", "iaas-open-api", "app-api", "backend-api"]);
+  assert.equal(systems[0].schemaUrl, "/payments/v3/openapi.json");
+  assert.equal(systems[0].requestBaseUrl, "/payments/v3");
+  assert.equal(systems[0].categories.some((category) => category.name === "Payments/Intents"), true);
+  assert.equal(systems[1].schemaUrl, "/cloud/v3/openapi.json");
+  assert.equal(systems[1].requestBaseUrl, "/cloud/v3");
+  assert.equal(systems[1].categories.some((category) => category.name === "Cloud Storage/S3 Buckets"), true);
+  assert.equal(systems[2].categories[0].endpoints[0].path, "/app/v3/api/ai/models");
+  assert.equal(getGeneratedSdkMetadataForSystem("payment-open-api").packageName, "@sdkwork/clawrouter-payment-sdk");
+  assert.equal(getGeneratedSdkMetadataForSystem("iaas-open-api").packageName, "@sdkwork/clawrouter-cloud-services-sdk");
+  assert.equal(getGeneratedSdkMetadataForSystem("app-api").packageName, "@sdkwork/clawrouter-app-sdk");
+  assert.equal(getGeneratedSdkMetadataForSystem("backend-api").packageName, "@sdkwork/clawrouter-backend-sdk");
 
-  const cloudConfig = createGeneratedSdkToolConfig("cloud-services", "typescript", "/cloud/v3/openapi.json");
-  assert.equal(cloudConfig.sdkType, "cloud-services");
+  const cloudConfig = createGeneratedSdkToolConfig("iaas-open-api", "typescript", "/cloud/v3/openapi.json");
+  assert.equal(cloudConfig.sdkType, "iaas");
   assert.equal(cloudConfig.apiSpecPath, "/cloud/v3/openapi.json");
   assert.equal(cloudConfig.baseUrl, "/cloud/v3");
   assert.equal(cloudConfig.packageName, "@sdkwork/clawrouter-cloud-services-sdk");
 
-  const config = createGeneratedSdkToolConfig("backend", "typescript", "/backend/v3/api/openapi.json");
+  const config = createGeneratedSdkToolConfig("backend-api", "typescript", "/backend/v3/api/openapi.json");
   assert.equal(config.sdkType, "backend");
   assert.equal(config.apiSpecPath, "/backend/v3/api/openapi.json");
   assert.equal(config.packageName, "@sdkwork/clawrouter-backend-sdk");
 });
 
-test("sdk reference generates gateway SDKs from domain-root paths", () => {
-  const gatewayConfig = createGeneratedSdkToolConfig("gateway", "typescript", "/openapi.json");
-  const appConfig = createGeneratedSdkToolConfig("app", "typescript", "/app/v3/api/openapi.json");
-  const gatewayTypescriptSdk = getSdkDataForSystem("gateway").find((sdk) => sdk.id === "typescript");
+test("sdk reference maps product open api tabs to generated open SDK metadata", async () => {
+  const openApiSpec = {
+    paths: {
+      "/v1/files": {
+        get: {
+          operationId: "listFiles",
+          summary: "List Files",
+          tags: ["Files"],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+      "/v1/vector_stores": {
+        get: {
+          operationId: "listVectorStores",
+          summary: "List Vector Stores",
+          tags: ["Vector Stores"],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+      "/v1/conversations": {
+        get: {
+          operationId: "listConversations",
+          summary: "List Conversations",
+          tags: ["Conversations"],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+      "/v1/assistants": {
+        get: {
+          operationId: "listAssistants",
+          summary: "List Assistants",
+          tags: ["Assistants"],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+    },
+  };
+  const manifest: ApiSchemaTabsDocument = {
+    cacheTtlSeconds: 30,
+    tabs: [
+      { id: "drive-open-api", name: "Drive Open API", order: 50, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+      { id: "knowledgebase-open-api", name: "Knowledgebase Open API", order: 60, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+      { id: "memory-open-api", name: "Memory Open API", order: 70, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+      { id: "agent-open-api", name: "Agent Open API", order: 80, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+    ],
+  };
+
+  const systems = await buildSdkReferenceSystems(manifest, async (url) => {
+    if (url === "/openapi.json") return openApiSpec;
+    throw new Error(`unexpected sdk reference url ${url}`);
+  });
+
+  assert.deepEqual(systems.map((system) => system.id), [
+    "drive-open-api",
+    "knowledgebase-open-api",
+    "memory-open-api",
+    "agent-open-api",
+  ]);
+  assert.equal(systems[0].categories[0].endpoints[0].path, "/v1/files");
+  assert.equal(systems[1].categories[0].endpoints[0].path, "/v1/vector_stores");
+  assert.equal(systems[2].categories[0].endpoints[0].path, "/v1/conversations");
+  assert.equal(systems[3].categories[0].endpoints[0].path, "/v1/assistants");
+  assert.equal(getGeneratedSdkMetadataForSystem("drive-open-api").packageName, "@sdkwork-internal/drive-sdk-generated");
+  assert.equal(getGeneratedSdkMetadataForSystem("knowledgebase-open-api").packageName, "@sdkwork/clawrouter-open-sdk");
+  assert.equal(getGeneratedSdkMetadataForSystem("memory-open-api").packageName, "@sdkwork/memory-sdk");
+  assert.equal(getGeneratedSdkMetadataForSystem("agent-open-api").packageName, "@sdkwork/agent-sdk");
+
+  const driveConfig = createGeneratedSdkToolConfig("drive-open-api", "typescript", "/openapi.json");
+  assert.equal(driveConfig.name, "SdkworkDriveOpenClient");
+  assert.equal(driveConfig.sdkType, "drive");
+  assert.equal(driveConfig.apiPrefix, "/open/v3/api");
+  assert.equal(driveConfig.baseUrl, "https://api.sdkwork.com");
+
+  const knowledgebaseConfig = createGeneratedSdkToolConfig("knowledgebase-open-api", "typescript", "/openapi.json");
+  assert.equal(knowledgebaseConfig.name, "SdkworkAiClient");
+  assert.equal(knowledgebaseConfig.sdkType, "ai");
+  assert.equal(knowledgebaseConfig.apiPrefix, "");
+
+  const memoryConfig = createGeneratedSdkToolConfig("memory-open-api", "typescript", "/openapi.json");
+  assert.equal(memoryConfig.name, "SdkworkMemoryOpenClient");
+  assert.equal(memoryConfig.sdkType, "memory");
+  assert.equal(memoryConfig.apiPrefix, "/mem/v3/api");
+
+  const agentConfig = createGeneratedSdkToolConfig("agent-open-api", "typescript", "/openapi.json");
+  assert.equal(agentConfig.name, "SdkworkAgentClient");
+  assert.equal(agentConfig.sdkType, "agent");
+  assert.equal(agentConfig.apiPrefix, "/agent/v3/api");
+});
+
+test("sdk reference normalizes sdkwork canonical open api authority aliases", async () => {
+  const openApiSpec = {
+    openapi: "3.0.3",
+    info: { title: "Alias Open API", version: "1.0.0" },
+    paths: {
+      "/v1/files": {
+        get: {
+          operationId: "listFiles",
+          summary: "List Files",
+          tags: ["Files"],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+      "/v1/vector_stores": {
+        get: {
+          operationId: "listVectorStores",
+          summary: "List Vector Stores",
+          tags: ["Vector Stores"],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+      "/v1/conversations": {
+        get: {
+          operationId: "listConversations",
+          summary: "List Conversations",
+          tags: ["Conversations"],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+      "/v1/assistants": {
+        get: {
+          operationId: "listAssistants",
+          summary: "List Assistants",
+          tags: ["Assistants"],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+    },
+  };
+  const manifest: ApiSchemaTabsDocument = {
+    cacheTtlSeconds: 30,
+    tabs: [
+      { id: "sdkwork-drive-open-api", name: "Drive Open API", order: 50, schemaUrls: ["/openapi.json"] },
+      { id: "sdkwork-knowledgebase-open-api", name: "Knowledgebase Open API", order: 60, schemaUrls: ["/openapi.json"] },
+      { id: "sdkwork-memory-open-api", name: "Memory Open API", order: 70, schemaUrls: ["/openapi.json"] },
+      { id: "sdkwork-agent-open-api", name: "Agent Open API", order: 80, schemaUrls: ["/openapi.json"] },
+    ],
+  };
+
+  const systems = await buildSdkReferenceSystems(manifest, async (url) => {
+    if (url === "/openapi.json") return openApiSpec;
+    throw new Error(`unexpected sdk reference url ${url}`);
+  });
+
+  assert.deepEqual(systems.map((system) => system.id), [
+    "drive-open-api",
+    "knowledgebase-open-api",
+    "memory-open-api",
+    "agent-open-api",
+  ]);
+});
+
+test("sdk reference generates llm open api SDKs from domain-root paths", () => {
+  const gatewayConfig = createGeneratedSdkToolConfig("llm-open-api", "typescript", "/openapi.json");
+  const appConfig = createGeneratedSdkToolConfig("app-api", "typescript", "/app/v3/api/openapi.json");
+  const gatewayTypescriptSdk = getSdkDataForSystem("llm-open-api").find((sdk) => sdk.id === "typescript");
 
   assert.ok(gatewayTypescriptSdk);
   assert.equal(gatewayConfig.baseUrl, "https://api.sdkwork.com");
@@ -1553,14 +1896,14 @@ test("sdk reference gateway base URL uses SDK-specific runtime override and fall
     {
       VITE_API_BASE_URL: "https://tenant.example.com/v1",
     },
-    () => createGeneratedSdkToolConfig("gateway", "typescript", "/openapi.json"),
+    () => createGeneratedSdkToolConfig("llm-open-api", "typescript", "/openapi.json"),
   );
   const overriddenConfig = withClawRouterRuntimeEnv(
     {
       VITE_API_BASE_URL: "https://tenant.example.com/v1",
       VITE_CLAWROUTER_OPEN_API_BASE_URL: "https://open.example.com/v1",
     },
-    () => createGeneratedSdkToolConfig("gateway", "typescript", "/openapi.json"),
+    () => createGeneratedSdkToolConfig("llm-open-api", "typescript", "/openapi.json"),
   );
 
   assert.equal(inheritedConfig.baseUrl, "https://tenant.example.com");
@@ -1572,7 +1915,7 @@ test("sdk reference gateway base URL does not collapse root-relative open API ro
     {
       VITE_API_BASE_URL: "/v1",
     },
-    () => createGeneratedSdkToolConfig("gateway", "typescript", "/openapi.json"),
+    () => createGeneratedSdkToolConfig("llm-open-api", "typescript", "/openapi.json"),
     "https://tenant.example.test",
   );
   const overriddenConfig = withClawRouterRuntimeEnv(
@@ -1580,7 +1923,7 @@ test("sdk reference gateway base URL does not collapse root-relative open API ro
       VITE_API_BASE_URL: "https://tenant.example.com/v1",
       VITE_CLAWROUTER_OPEN_API_BASE_URL: "/v1",
     },
-    () => createGeneratedSdkToolConfig("gateway", "typescript", "/openapi.json"),
+    () => createGeneratedSdkToolConfig("llm-open-api", "typescript", "/openapi.json"),
     "https://open.example.test",
   );
 
@@ -1588,24 +1931,114 @@ test("sdk reference gateway base URL does not collapse root-relative open API ro
   assert.equal(overriddenConfig.baseUrl, "https://open.example.test");
 });
 
-test("sdk reference sidebar builds nested modality vendor tree", async () => {
+test("sdk reference canonical open api sidebars keep media out of llm", async () => {
+  const sidebarGatewaySpec = {
+    paths: {
+      "/v1/chat/completions": {
+        post: {
+          operationId: "createChatCompletion",
+          summary: "Create Chat Completion",
+          tags: ["Chat"],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+      "/anthropic/v1/messages": {
+        post: {
+          operationId: "anthropicCreateMessage",
+          summary: "Anthropic Create Message",
+          tags: ["Chat/anthropic"],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+      "/v1/images/generations": {
+        post: {
+          operationId: "createImage",
+          summary: "Create Image",
+          tags: ["Images"],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+      "/vidu/ent/v2/reference2image": {
+        post: {
+          operationId: "viduCreateReferenceToImage",
+          summary: "Vidu Reference To Image",
+          tags: ["Images/vidu"],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+      "/v1/videos": {
+        post: {
+          operationId: "createVideo",
+          summary: "Create Video",
+          tags: ["Videos"],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+      "/vidu/ent/v2/text2video": {
+        post: {
+          operationId: "viduCreateTextToVideo",
+          summary: "Vidu Text To Video",
+          tags: ["Videos/vidu"],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+      "/v1/audio/speech": {
+        post: {
+          operationId: "createSpeech",
+          summary: "Create Speech",
+          tags: ["Audio"],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+      "/suno/v1/music/generations": {
+        post: {
+          operationId: "sunoCreateMusicGeneration",
+          summary: "Suno Create Music Generation",
+          tags: ["Music/suno"],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+      "/google/v1beta/files": {
+        get: {
+          operationId: "googleListFiles",
+          summary: "Google Gemini List Files",
+          tags: ["Files/google"],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+      "/anthropic/v1/files/{file_id}/content": {
+        get: {
+          operationId: "anthropicRetrieveFileContent",
+          summary: "Anthropic Retrieve File Content",
+          tags: ["Files/anthropic"],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+    },
+  };
   const manifest: ApiSchemaTabsDocument = {
     cacheTtlSeconds: 30,
     tabs: [
-      { id: "gateway", name: "Claw Router Open API", order: 10, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+      { id: "llm-open-api", name: "LLM Open API", order: 10, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+      { id: "image-open-api", name: "Image Open API", order: 20, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+      { id: "video-open-api", name: "Video Open API", order: 30, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+      { id: "audio-open-api", name: "Audio Open API", order: 40, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+      { id: "drive-open-api", name: "Drive Open API", order: 50, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
     ],
   };
 
   const systems = await buildSdkReferenceSystems(manifest, async (url) => {
-    if (url === "/openapi.json") return multimodalGatewaySpec;
+    if (url === "/openapi.json") return sidebarGatewaySpec;
     throw new Error(`unexpected sdk reference url ${url}`);
   });
 
-  const tree = buildSdkReferenceSidebarTree(systems[0].categories);
+  const systemsById = new Map(systems.map((system) => [system.id, system]));
+  const llmTree = buildSdkReferenceSidebarTree(systemsById.get("llm-open-api")?.categories ?? []);
 
-  assert.deepEqual(tree.map((node) => node.name), ["Chat", "Images", "Videos", "Files"]);
+  assert.deepEqual(llmTree.map((node) => node.name), ["Chat"]);
 
-  const videos = tree.find((node) => node.name === "Videos");
+  const videosTree = buildSdkReferenceSidebarTree(systemsById.get("video-open-api")?.categories ?? []);
+  const videos = videosTree.find((node) => node.name === "Videos");
   assert.ok(videos);
   assert.deepEqual(videos.children.map((node) => node.name), ["vidu"]);
   assert.equal(videos.endpoints[0].path, "/v1/videos");
@@ -1613,7 +2046,22 @@ test("sdk reference sidebar builds nested modality vendor tree", async () => {
   assert.equal(videos.children[0].endpoints[0].path, "/vidu/ent/v2/text2video");
   assert.equal(videos.totalEndpoints, 2);
 
-  const files = tree.find((node) => node.name === "Files");
+  const imageTree = buildSdkReferenceSidebarTree(systemsById.get("image-open-api")?.categories ?? []);
+  assert.deepEqual(imageTree.map((node) => node.name), ["Images"]);
+
+  const audioTree = buildSdkReferenceSidebarTree(systemsById.get("audio-open-api")?.categories ?? []);
+  assert.deepEqual(audioTree.map((node) => node.name), ["Audio", "Music"]);
+  assert.equal(audioTree.find((node) => node.name === "Audio")?.endpoints[0].path, "/v1/audio/speech");
+  assert.equal(audioTree.find((node) => node.name === "Music")?.children[0].fullName, "Music/suno");
+  assert.equal(
+    audioTree.find((node) => node.name === "Music")?.children[0].endpoints[0].path,
+    "/suno/v1/music/generations",
+  );
+
+  const driveTree = buildSdkReferenceSidebarTree(systemsById.get("drive-open-api")?.categories ?? []);
+  assert.deepEqual(driveTree.map((node) => node.name), ["Files"]);
+
+  const files = driveTree.find((node) => node.name === "Files");
   assert.ok(files);
   assert.equal(files.endpoints.length, 0);
   assert.deepEqual(files.children.map((node) => node.name), ["anthropic", "google"]);
@@ -1625,7 +2073,7 @@ test("sdk reference endpoint documentation uses resolved schema details", async 
   const manifest: ApiSchemaTabsDocument = {
     cacheTtlSeconds: 30,
     tabs: [
-      { id: "gateway", name: "Claw Router Open API", order: 10, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+      { id: "video-open-api", name: "Video Open API", order: 10, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
     ],
   };
 
@@ -1640,8 +2088,8 @@ test("sdk reference endpoint documentation uses resolved schema details", async 
 
   assert.ok(endpoint);
   const docs = buildSdkEndpointDocumentation(endpoint, {
-    name: "ClawRouterGatewaySdk",
-    packageName: "@sdkwork/clawrouter-gateway-sdk",
+    name: "SdkworkAiClient",
+    packageName: "@sdkwork/clawrouter-open-sdk",
     baseUrl: "https://api.example.test",
   });
 
@@ -1663,7 +2111,7 @@ test("sdk reference endpoint documentation keeps JsonObject as explicit free-for
   const manifest: ApiSchemaTabsDocument = {
     cacheTtlSeconds: 30,
     tabs: [
-      { id: "gateway", name: "Claw Router Open API", order: 10, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+      { id: "drive-open-api", name: "Drive Open API", order: 50, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
     ],
   };
 
@@ -1678,8 +2126,8 @@ test("sdk reference endpoint documentation keeps JsonObject as explicit free-for
 
   assert.ok(endpoint);
   const docs = buildSdkEndpointDocumentation(endpoint, {
-    name: "ClawRouterGatewaySdk",
-    packageName: "@sdkwork/clawrouter-gateway-sdk",
+    name: "SdkworkAiClient",
+    packageName: "@sdkwork/clawrouter-open-sdk",
     baseUrl: "https://api.example.test",
   });
 
@@ -1700,7 +2148,7 @@ test("sdk reference endpoint documentation supports multipart requests and binar
   const manifest: ApiSchemaTabsDocument = {
     cacheTtlSeconds: 30,
     tabs: [
-      { id: "gateway", name: "Claw Router Open API", order: 10, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+      { id: "drive-open-api", name: "Drive Open API", order: 50, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
     ],
   };
 
@@ -1742,7 +2190,7 @@ test("sdk endpoint view renders nested return fields instead of only top level r
   const manifest: ApiSchemaTabsDocument = {
     cacheTtlSeconds: 30,
     tabs: [
-      { id: "gateway", name: "Claw Router Open API", order: 10, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+      { id: "memory-open-api", name: "Memory Open API", order: 70, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
     ],
   };
 
@@ -1777,7 +2225,7 @@ test("sdk reference endpoint documentation follows the selected SDK language", a
   const manifest: ApiSchemaTabsDocument = {
     cacheTtlSeconds: 30,
     tabs: [
-      { id: "gateway", name: "Claw Router Open API", order: 10, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+      { id: "video-open-api", name: "Video Open API", order: 10, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
     ],
   };
 
@@ -1792,8 +2240,8 @@ test("sdk reference endpoint documentation follows the selected SDK language", a
 
   assert.ok(endpoint);
   const sdkData = {
-    name: "ClawRouterGatewaySdk",
-    packageName: "@sdkwork/clawrouter-gateway-sdk",
+    name: "SdkworkAiClient",
+    packageName: "@sdkwork/clawrouter-open-sdk",
     baseUrl: "https://api.example.test",
   };
   const typescriptDocs = buildSdkEndpointDocumentation(endpoint, sdkData, "typescript");
@@ -1813,7 +2261,7 @@ test("sdk reference endpoint documentation includes path and query parameters", 
   const manifest: ApiSchemaTabsDocument = {
     cacheTtlSeconds: 30,
     tabs: [
-      { id: "gateway", name: "Claw Router Open API", order: 10, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+      { id: "memory-open-api", name: "Memory Open API", order: 70, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
     ],
   };
 
@@ -1929,7 +2377,9 @@ test("sdk reference endpoint examples use provider native base URLs when endpoin
   const manifest: ApiSchemaTabsDocument = {
     cacheTtlSeconds: 30,
     tabs: [
-      { id: "gateway", name: "Claw Router Open API", order: 10, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+      { id: "llm-open-api", name: "LLM Open API", order: 10, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+      { id: "image-open-api", name: "Image Open API", order: 20, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+      { id: "drive-open-api", name: "Drive Open API", order: 50, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
     ],
   };
 
@@ -1938,13 +2388,14 @@ test("sdk reference endpoint examples use provider native base URLs when endpoin
     throw new Error(`unexpected sdk reference url ${url}`);
   });
 
-  const googleEndpoint = systems[0].categories
+  const systemsById = new Map(systems.map((system) => [system.id, system]));
+  const googleEndpoint = systemsById.get("drive-open-api")?.categories
     .flatMap((category) => category.endpoints)
     .find((item) => item.path === "/google/v1beta/files");
-  const anthropicEndpoint = systems[0].categories
+  const anthropicEndpoint = systemsById.get("llm-open-api")?.categories
     .flatMap((category) => category.endpoints)
     .find((item) => item.path === "/anthropic/v1/messages");
-  const openAiEndpoint = systems[0].categories
+  const openAiEndpoint = systemsById.get("image-open-api")?.categories
     .flatMap((category) => category.endpoints)
     .find((item) => item.path === "/v1/images/generations");
 
@@ -1953,8 +2404,8 @@ test("sdk reference endpoint examples use provider native base URLs when endpoin
   assert.ok(openAiEndpoint);
 
   const sdkData = {
-    name: "ClawRouterGatewaySdk",
-    packageName: "@sdkwork/clawrouter-gateway-sdk",
+    name: "SdkworkAiClient",
+    packageName: "@sdkwork/clawrouter-open-sdk",
     baseUrl: "https://api.example.test/v1",
   };
   const googleDocs = buildSdkEndpointDocumentation(googleEndpoint, sdkData, "typescript");

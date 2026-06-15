@@ -39,6 +39,18 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "03918c3dbd7701a85c6b9887732e2921175f26c350b4563841d0958c21d57e6d"
 
 [[package]]
+name = "argon2"
+version = "0.5.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3c3610892ee6e0cbce8ae2700349fcf8f98adb0dbfbee85aec3c9179d29cc072"
+dependencies = [
+ "base64ct",
+ "blake2",
+ "cpufeatures",
+ "password-hash",
+]
+
+[[package]]
 name = "async-lock"
 version = "3.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -153,10 +165,25 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "72b3254f16251a8381aa12e40e3c4d2f0199f8c6508fbecb9d91f575e0fbb8c6"
 
 [[package]]
+name = "base64ct"
+version = "1.8.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2af50177e190e07a26ab74f8b1efbfe2ef87da2116221318cb1c2e82baf7de06"
+
+[[package]]
 name = "bitflags"
 version = "2.11.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c4512299f36f043ab09a583e57bceb5a5aab7a73db1805848e8fef3c9e8c78b3"
+
+[[package]]
+name = "blake2"
+version = "0.10.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "46502ad458c9a52b69d4d4d32775c788b7a1b85e8bc9d482d92250fc0e3f8efe"
+dependencies = [
+ "digest",
+]
 
 [[package]]
 name = "block-buffer"
@@ -403,6 +430,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "fnv"
+version = "1.0.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3f9eec918d3f24069decb9af1554cad7c880e2da24a9afd88aca000531ab82c1"
+
+[[package]]
 name = "foldhash"
 version = "0.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -551,6 +584,25 @@ dependencies = [
 ]
 
 [[package]]
+name = "h2"
+version = "0.4.14"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "171fefbc92fe4a4de27e0698d6a5b392d6a0e333506bc49133760b3bcf948733"
+dependencies = [
+ "atomic-waker",
+ "bytes",
+ "fnv",
+ "futures-core",
+ "futures-sink",
+ "http",
+ "indexmap",
+ "slab",
+ "tokio",
+ "tokio-util",
+ "tracing",
+]
+
+[[package]]
 name = "hashbrown"
 version = "0.15.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -670,6 +722,7 @@ dependencies = [
  "bytes",
  "futures-channel",
  "futures-core",
+ "h2",
  "http",
  "http-body",
  "httparse",
@@ -695,6 +748,19 @@ dependencies = [
  "tokio-rustls",
  "tower-service",
  "webpki-roots",
+]
+
+[[package]]
+name = "hyper-timeout"
+version = "0.5.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2b90d566bffbce6a75bd8b09a05aa8c2cb1fabb6cb348f8840c9e4c90a0d83b0"
+dependencies = [
+ "hyper",
+ "hyper-util",
+ "pin-project-lite",
+ "tokio",
+ "tower-service",
 ]
 
 [[package]]
@@ -846,6 +912,15 @@ name = "ipnet"
 version = "2.12.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d98f6fed1fde3f8c21bc40a1abb88dd75e67924f9cffc3ef95607bad8017f8e2"
+
+[[package]]
+name = "itertools"
+version = "0.14.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2b192c782037fadd9cfa75548310488aabdbf3d2da73885b31bd0abd03351285"
+dependencies = [
+ "either",
+]
 
 [[package]]
 name = "itoa"
@@ -1068,10 +1143,41 @@ dependencies = [
 ]
 
 [[package]]
+name = "password-hash"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "346f04948ba92c43e8469c1ee6736c7563d71012b17d40745260fe106aac2166"
+dependencies = [
+ "base64ct",
+ "rand_core 0.6.4",
+ "subtle",
+]
+
+[[package]]
 name = "percent-encoding"
 version = "2.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9b4f627cb1b25917193a259e49bdad08f671f8d9708acfd5fe0a8c1455d87220"
+
+[[package]]
+name = "pin-project"
+version = "1.1.13"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2466b2336ed02bcdca6b294417127b90ec92038d1d5c4fbeac971a922e0e0924"
+dependencies = [
+ "pin-project-internal",
+]
+
+[[package]]
+name = "pin-project-internal"
+version = "1.1.13"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c96395f0a926bc13b1c17622aaddda1ecb55d49c8f1bf9777e4d877800a43f8b"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
 
 [[package]]
 name = "pin-project-lite"
@@ -1126,6 +1232,38 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8fd00f0bb2e90d81d1044c2b32617f68fcb9fa3bb7640c23e9c748e53fb30934"
 dependencies = [
  "unicode-ident",
+]
+
+[[package]]
+name = "prost"
+version = "0.14.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "528ac67416ff8646872a3c02cad9cc4ee5dc9f9540c9b10771855c95cb2e5ae1"
+dependencies = [
+ "bytes",
+ "prost-derive",
+]
+
+[[package]]
+name = "prost-derive"
+version = "0.14.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b570b25f7617e43d59005d0990ccb79e950a423952cea19671b7a876da390adf"
+dependencies = [
+ "anyhow",
+ "itertools",
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
+name = "prost-types"
+version = "0.14.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f94967dc7688f3054c7fac87473ffae4cc4c3904800e2d9f5b857246d8963b0a"
+dependencies = [
+ "prost",
 ]
 
 [[package]]
@@ -1355,12 +1493,14 @@ dependencies = [
  "sync_wrapper",
  "tokio",
  "tokio-rustls",
+ "tokio-util",
  "tower",
  "tower-http",
  "tower-service",
  "url",
  "wasm-bindgen",
  "wasm-bindgen-futures",
+ "wasm-streams",
  "web-sys",
  "webpki-roots",
 ]
@@ -1452,46 +1592,87 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "94143f37725109f92c262ed2cf5e59bce7498c01bcc1502d7b9afe439a4e9f49"
 
 [[package]]
-name = "sdkwork-claw-admin-api"
+name = "sdkwork-api-gateway"
 version = "0.1.0"
 dependencies = [
- "anyhow",
  "axum",
- "sdkwork-claw-app-api",
- "sdkwork-claw-config",
- "sdkwork-claw-http",
- "sdkwork-claw-observability",
- "sdkwork-claw-product",
- "sdkwork-claw-test-support",
- "sdkwork_commerce_membership_sqlx",
+ "bytes",
+ "futures-util",
+ "http-body-util",
+ "reqwest",
+ "sdkwork-api-gateway-config",
+ "sdkwork-api-gateway-observability",
+ "sdkwork-api-gateway-registry",
+ "sdkwork-router-iam-app-api",
  "serde",
  "serde_json",
- "sqlx",
+ "thiserror 2.0.18",
  "tokio",
+ "tokio-tungstenite",
  "tower",
+ "tower-http",
  "tracing",
 ]
 
 [[package]]
-name = "sdkwork-claw-app-api"
+name = "sdkwork-api-gateway-config"
+version = "0.1.0"
+dependencies = [
+ "serde",
+ "serde_json",
+ "thiserror 2.0.18",
+ "toml",
+]
+
+[[package]]
+name = "sdkwork-api-gateway-observability"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-api-gateway-config",
+ "sdkwork-api-gateway-registry",
+ "serde",
+]
+
+[[package]]
+name = "sdkwork-api-gateway-registry"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-api-gateway-config",
+ "serde",
+]
+
+[[package]]
+name = "sdkwork-claw-admin"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "axum",
+ "sdkwork-claw-app",
+ "sdkwork-claw-config",
+ "sdkwork-claw-product",
+ "sdkwork-claw-test-support",
+ "sdkwork-router-backend-api",
+ "serde_json",
+ "sqlx",
+ "tokio",
+ "tower",
+]
+
+[[package]]
+name = "sdkwork-claw-app"
 version = "0.1.0"
 dependencies = [
  "anyhow",
  "axum",
  "sdkwork-claw-config",
- "sdkwork-claw-http",
- "sdkwork-claw-observability",
  "sdkwork-claw-product",
  "sdkwork-claw-test-support",
  "sdkwork-models",
- "sdkwork_commerce_account",
- "sdkwork_commerce_http",
- "sdkwork_commerce_membership_sqlx",
+ "sdkwork-router-app-api",
  "serde_json",
  "sqlx",
  "tokio",
  "tower",
- "tracing",
 ]
 
 [[package]]
@@ -1537,8 +1718,8 @@ dependencies = [
  "hyper",
  "hyper-rustls",
  "hyper-util",
- "sdkwork-claw-admin-api",
- "sdkwork-claw-app-api",
+ "sdkwork-api-gateway",
+ "sdkwork-api-gateway-config",
  "sdkwork-claw-config",
  "sdkwork-claw-http",
  "sdkwork-claw-observability",
@@ -1547,6 +1728,8 @@ dependencies = [
  "sdkwork-claw-provider-adapter-http",
  "sdkwork-claw-provider-adapter-registry",
  "sdkwork-claw-test-support",
+ "sdkwork-router-app-api",
+ "sdkwork-router-backend-api",
  "sdkwork-sdk-generator-client",
  "serde_json",
  "sha2",
@@ -1566,9 +1749,9 @@ dependencies = [
  "sdkwork-claw-config",
  "sdkwork-claw-contract",
  "sdkwork-claw-core",
- "sdkwork-claw-paas-api",
+ "sdkwork-claw-paas-plugin",
  "sdkwork-claw-security",
- "sdkwork_iam_core",
+ "sdkwork-iam-context-service",
  "serde",
  "serde_json",
  "sha2",
@@ -1584,7 +1767,7 @@ dependencies = [
  "anyhow",
  "sdkwork-claw-config",
  "sdkwork-claw-product",
- "sdkwork_commerce_core",
+ "sdkwork-commerce-contract-service",
  "serde",
  "serde_json",
  "sqlx",
@@ -1601,7 +1784,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "sdkwork-claw-paas-api"
+name = "sdkwork-claw-paas-plugin"
 version = "0.1.0"
 dependencies = [
  "serde",
@@ -1634,16 +1817,16 @@ dependencies = [
  "sdkwork-claw-provider-adapter-contract",
  "sdkwork-claw-provider-adapter-http",
  "sdkwork-claw-provider-adapter-registry",
+ "sdkwork-commerce-bootstrap-manifest",
+ "sdkwork-commerce-contract-service",
+ "sdkwork-commerce-invoice-service",
+ "sdkwork-commerce-membership-repository-sqlx",
+ "sdkwork-commerce-payment-service",
+ "sdkwork-commerce-storage-repository-sqlx",
+ "sdkwork-iam-directory-repository-sqlx",
  "sdkwork-models",
+ "sdkwork-platform-id-service",
  "sdkwork-sdk-generator-client",
- "sdkwork_commerce_bootstrap",
- "sdkwork_commerce_core",
- "sdkwork_commerce_invoice",
- "sdkwork_commerce_membership_sqlx",
- "sdkwork_commerce_payment",
- "sdkwork_commerce_storage_sqlx",
- "sdkwork_iam_storage_sqlx",
- "sdkwork_id",
  "serde",
  "serde_json",
  "sha2",
@@ -1658,7 +1841,7 @@ name = "sdkwork-claw-product-test-support"
 version = "0.1.0"
 dependencies = [
  "sdkwork-claw-product",
- "sdkwork_commerce_bootstrap",
+ "sdkwork-commerce-bootstrap-manifest",
  "sqlx",
  "tokio",
 ]
@@ -1743,6 +1926,163 @@ dependencies = [
 ]
 
 [[package]]
+name = "sdkwork-commerce-account-service"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-commerce-contract-service",
+]
+
+[[package]]
+name = "sdkwork-commerce-api-server"
+version = "0.1.0"
+dependencies = [
+ "axum",
+ "sdkwork-commerce-account-service",
+ "sdkwork-commerce-catalog-service",
+ "sdkwork-commerce-contract-service",
+ "sdkwork-commerce-invoice-service",
+ "sdkwork-commerce-payment-service",
+ "sdkwork-commerce-promotion-service",
+ "sdkwork-commerce-service-host",
+ "sdkwork-commerce-storage-repository-sqlx",
+ "sdkwork-iam-context-service",
+ "sdkwork-platform-http-context-service",
+ "serde",
+ "serde_json",
+ "sqlx",
+]
+
+[[package]]
+name = "sdkwork-commerce-bootstrap-manifest"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-commerce-api-server",
+ "sdkwork-commerce-contract-service",
+ "sdkwork-commerce-service-host",
+ "sdkwork-commerce-storage-repository-sqlx",
+ "sdkwork-commerce-tauri-host",
+]
+
+[[package]]
+name = "sdkwork-commerce-catalog-service"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-commerce-contract-service",
+]
+
+[[package]]
+name = "sdkwork-commerce-contract-service"
+version = "0.1.0"
+
+[[package]]
+name = "sdkwork-commerce-inventory-service"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-commerce-contract-service",
+]
+
+[[package]]
+name = "sdkwork-commerce-invoice-service"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-commerce-contract-service",
+]
+
+[[package]]
+name = "sdkwork-commerce-membership-repository-sqlx"
+version = "0.1.0"
+dependencies = [
+ "axum",
+ "sdkwork-commerce-bootstrap-manifest",
+ "sdkwork-commerce-contract-service",
+ "sdkwork-commerce-storage-repository-sqlx",
+ "sdkwork-iam-context-service",
+ "sdkwork-platform-http-context-service",
+ "serde",
+ "serde_json",
+ "sqlx",
+]
+
+[[package]]
+name = "sdkwork-commerce-membership-service"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-commerce-contract-service",
+]
+
+[[package]]
+name = "sdkwork-commerce-order-service"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-commerce-contract-service",
+]
+
+[[package]]
+name = "sdkwork-commerce-payment-service"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-commerce-contract-service",
+]
+
+[[package]]
+name = "sdkwork-commerce-promotion-service"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-commerce-contract-service",
+]
+
+[[package]]
+name = "sdkwork-commerce-service-host"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-commerce-account-service",
+ "sdkwork-commerce-catalog-service",
+ "sdkwork-commerce-contract-service",
+ "sdkwork-commerce-inventory-service",
+ "sdkwork-commerce-invoice-service",
+ "sdkwork-commerce-membership-service",
+ "sdkwork-commerce-order-service",
+ "sdkwork-commerce-payment-service",
+ "sdkwork-commerce-promotion-service",
+ "sdkwork-rpc-core-rust",
+]
+
+[[package]]
+name = "sdkwork-commerce-storage-repository-sqlx"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-commerce-account-service",
+ "sdkwork-commerce-catalog-service",
+ "sdkwork-commerce-contract-service",
+ "sdkwork-commerce-invoice-service",
+ "sdkwork-commerce-payment-service",
+ "sdkwork-commerce-promotion-service",
+ "serde",
+ "serde_json",
+ "sqlx",
+]
+
+[[package]]
+name = "sdkwork-commerce-tauri-host"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-commerce-api-server",
+ "sdkwork-commerce-contract-service",
+ "sdkwork-commerce-service-host",
+]
+
+[[package]]
+name = "sdkwork-iam-context-service"
+version = "0.1.0"
+
+[[package]]
+name = "sdkwork-iam-directory-repository-sqlx"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-iam-context-service",
+]
+
+[[package]]
 name = "sdkwork-models"
 version = "0.1.0"
 dependencies = [
@@ -1750,6 +2090,22 @@ dependencies = [
  "serde_json",
  "tempfile",
 ]
+
+[[package]]
+name = "sdkwork-platform-http-context-service"
+version = "0.1.0"
+dependencies = [
+ "async-trait",
+ "axum",
+ "getrandom 0.2.17",
+ "sdkwork-iam-context-service",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
+name = "sdkwork-platform-id-service"
+version = "0.1.0"
 
 [[package]]
 name = "sdkwork-provider-adapter-alicloud"
@@ -1771,40 +2127,105 @@ dependencies = [
 ]
 
 [[package]]
-name = "sdkwork-router-app-api"
+name = "sdkwork-router-agent-open-api"
 version = "0.1.0"
 
 [[package]]
-name = "sdkwork-router-audio-api"
+name = "sdkwork-router-app-api"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "axum",
+ "sdkwork-claw-config",
+ "sdkwork-claw-http",
+ "sdkwork-claw-observability",
+ "sdkwork-claw-product",
+ "sqlx",
+ "tokio",
+ "tracing",
+]
+
+[[package]]
+name = "sdkwork-router-audio-open-api"
 version = "0.1.0"
 
 [[package]]
 name = "sdkwork-router-backend-api"
 version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "axum",
+ "sdkwork-claw-config",
+ "sdkwork-claw-http",
+ "sdkwork-claw-observability",
+ "sdkwork-claw-product",
+ "serde",
+ "sqlx",
+ "tokio",
+ "tracing",
+]
 
 [[package]]
-name = "sdkwork-router-iaas-api"
+name = "sdkwork-router-drive-open-api"
 version = "0.1.0"
 
 [[package]]
-name = "sdkwork-router-image-api"
+name = "sdkwork-router-iaas-open-api"
 version = "0.1.0"
 
 [[package]]
-name = "sdkwork-router-llm-api"
+name = "sdkwork-router-iam-app-api"
+version = "0.1.0"
+dependencies = [
+ "argon2",
+ "axum",
+ "base64",
+ "hmac",
+ "password-hash",
+ "rand_core 0.6.4",
+ "sdkwork-iam-context-service",
+ "sdkwork-platform-http-context-service",
+ "serde",
+ "serde_json",
+ "sha2",
+ "uuid",
+]
+
+[[package]]
+name = "sdkwork-router-image-open-api"
 version = "0.1.0"
 
 [[package]]
-name = "sdkwork-router-paas-api"
+name = "sdkwork-router-knowledgebase-open-api"
 version = "0.1.0"
 
 [[package]]
-name = "sdkwork-router-payment-api"
+name = "sdkwork-router-llm-open-api"
 version = "0.1.0"
 
 [[package]]
-name = "sdkwork-router-video-api"
+name = "sdkwork-router-memory-open-api"
 version = "0.1.0"
+
+[[package]]
+name = "sdkwork-router-paas-open-api"
+version = "0.1.0"
+
+[[package]]
+name = "sdkwork-router-payment-open-api"
+version = "0.1.0"
+
+[[package]]
+name = "sdkwork-router-video-open-api"
+version = "0.1.0"
+
+[[package]]
+name = "sdkwork-rpc-core-rust"
+version = "0.1.0"
+dependencies = [
+ "prost-types",
+ "tonic",
+]
 
 [[package]]
 name = "sdkwork-sdk-generator-client"
@@ -1817,176 +2238,6 @@ dependencies = [
  "thiserror 1.0.69",
  "tokio",
 ]
-
-[[package]]
-name = "sdkwork_commerce_account"
-version = "0.1.0"
-dependencies = [
- "sdkwork_commerce_core",
-]
-
-[[package]]
-name = "sdkwork_commerce_bootstrap"
-version = "0.1.0"
-dependencies = [
- "sdkwork_commerce_core",
- "sdkwork_commerce_http",
- "sdkwork_commerce_runtime",
- "sdkwork_commerce_storage_sqlx",
- "sdkwork_commerce_tauri",
-]
-
-[[package]]
-name = "sdkwork_commerce_catalog"
-version = "0.1.0"
-dependencies = [
- "sdkwork_commerce_core",
-]
-
-[[package]]
-name = "sdkwork_commerce_core"
-version = "0.1.0"
-
-[[package]]
-name = "sdkwork_commerce_http"
-version = "0.1.0"
-dependencies = [
- "axum",
- "sdkwork_commerce_account",
- "sdkwork_commerce_core",
- "sdkwork_commerce_invoice",
- "sdkwork_commerce_payment",
- "sdkwork_commerce_promotion",
- "sdkwork_commerce_runtime",
- "sdkwork_commerce_storage_sqlx",
- "sdkwork_http_context",
- "sdkwork_iam_core",
- "serde",
- "serde_json",
- "sqlx",
-]
-
-[[package]]
-name = "sdkwork_commerce_inventory"
-version = "0.1.0"
-dependencies = [
- "sdkwork_commerce_core",
-]
-
-[[package]]
-name = "sdkwork_commerce_invoice"
-version = "0.1.0"
-dependencies = [
- "sdkwork_commerce_core",
-]
-
-[[package]]
-name = "sdkwork_commerce_membership"
-version = "0.1.0"
-dependencies = [
- "sdkwork_commerce_core",
-]
-
-[[package]]
-name = "sdkwork_commerce_membership_sqlx"
-version = "0.1.0"
-dependencies = [
- "axum",
- "sdkwork_commerce_bootstrap",
- "sdkwork_commerce_core",
- "sdkwork_commerce_storage_sqlx",
- "sdkwork_http_context",
- "sdkwork_iam_core",
- "serde",
- "serde_json",
- "sqlx",
-]
-
-[[package]]
-name = "sdkwork_commerce_order"
-version = "0.1.0"
-dependencies = [
- "sdkwork_commerce_core",
-]
-
-[[package]]
-name = "sdkwork_commerce_payment"
-version = "0.1.0"
-dependencies = [
- "sdkwork_commerce_core",
-]
-
-[[package]]
-name = "sdkwork_commerce_promotion"
-version = "0.1.0"
-dependencies = [
- "sdkwork_commerce_core",
-]
-
-[[package]]
-name = "sdkwork_commerce_runtime"
-version = "0.1.0"
-dependencies = [
- "sdkwork_commerce_account",
- "sdkwork_commerce_catalog",
- "sdkwork_commerce_core",
- "sdkwork_commerce_inventory",
- "sdkwork_commerce_invoice",
- "sdkwork_commerce_membership",
- "sdkwork_commerce_order",
- "sdkwork_commerce_payment",
- "sdkwork_commerce_promotion",
-]
-
-[[package]]
-name = "sdkwork_commerce_storage_sqlx"
-version = "0.1.0"
-dependencies = [
- "sdkwork_commerce_account",
- "sdkwork_commerce_core",
- "sdkwork_commerce_invoice",
- "sdkwork_commerce_payment",
- "sdkwork_commerce_promotion",
- "serde",
- "serde_json",
- "sqlx",
-]
-
-[[package]]
-name = "sdkwork_commerce_tauri"
-version = "0.1.0"
-dependencies = [
- "sdkwork_commerce_core",
- "sdkwork_commerce_http",
- "sdkwork_commerce_runtime",
-]
-
-[[package]]
-name = "sdkwork_http_context"
-version = "0.1.0"
-dependencies = [
- "async-trait",
- "axum",
- "getrandom 0.2.17",
- "sdkwork_iam_core",
- "serde",
- "serde_json",
-]
-
-[[package]]
-name = "sdkwork_iam_core"
-version = "0.1.0"
-
-[[package]]
-name = "sdkwork_iam_storage_sqlx"
-version = "0.1.0"
-dependencies = [
- "sdkwork_iam_core",
-]
-
-[[package]]
-name = "sdkwork_id"
-version = "0.1.0"
 
 [[package]]
 name = "semver"
@@ -2111,6 +2362,16 @@ name = "shlex"
 version = "1.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0fda2ff0d084019ba4d7c6f371c95d8fd75ce3524c3cb8fb653a3023f6323e64"
+
+[[package]]
+name = "signal-hook-registry"
+version = "1.4.8"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c4db69cba1110affc0e9f7bcd48bbf87b3f4fc7c61fc9155afd4c469eb3d6c1b"
+dependencies = [
+ "errno",
+ "libc",
+]
 
 [[package]]
 name = "slab"
@@ -2441,6 +2702,7 @@ dependencies = [
  "libc",
  "mio",
  "pin-project-lite",
+ "signal-hook-registry",
  "socket2",
  "tokio-macros",
  "windows-sys 0.61.2",
@@ -2545,6 +2807,35 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5d99f8c9a7727884afe522e9bd5edbfc91a3312b36a77b5fb8926e4c31a41801"
 
 [[package]]
+name = "tonic"
+version = "0.14.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ac2a5518c70fa84342385732db33fb3f44bc4cc748936eb5833d2df34d6445ef"
+dependencies = [
+ "async-trait",
+ "axum",
+ "base64",
+ "bytes",
+ "h2",
+ "http",
+ "http-body",
+ "http-body-util",
+ "hyper",
+ "hyper-timeout",
+ "hyper-util",
+ "percent-encoding",
+ "pin-project",
+ "socket2",
+ "sync_wrapper",
+ "tokio",
+ "tokio-stream",
+ "tower",
+ "tower-layer",
+ "tower-service",
+ "tracing",
+]
+
+[[package]]
 name = "tower"
 version = "0.5.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2552,9 +2843,12 @@ checksum = "ebe5ef63511595f1344e2d5cfa636d973292adc0eec1f0ad45fae9f0851ab1d4"
 dependencies = [
  "futures-core",
  "futures-util",
+ "indexmap",
  "pin-project-lite",
+ "slab",
  "sync_wrapper",
  "tokio",
+ "tokio-util",
  "tower-layer",
  "tower-service",
  "tracing",
@@ -2575,6 +2869,7 @@ dependencies = [
  "tower",
  "tower-layer",
  "tower-service",
+ "tracing",
  "url",
 ]
 
@@ -2757,6 +3052,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b6c140620e7ffbb22c2dee59cafe6084a59b5ffc27a8859a5f0d494b5d52b6be"
 
 [[package]]
+name = "uuid"
+version = "1.23.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "144d6b123cef80b301b8f72a9e2ca4370ddec21950d0a103dd22c437006d2db7"
+dependencies = [
+ "getrandom 0.4.2",
+ "js-sys",
+ "wasm-bindgen",
+]
+
+[[package]]
 name = "valuable"
 version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2888,6 +3194,19 @@ dependencies = [
  "indexmap",
  "wasm-encoder",
  "wasmparser",
+]
+
+[[package]]
+name = "wasm-streams"
+version = "0.4.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "15053d8d85c7eccdbefef60f06769760a563c7f0a9d6902a13d35c7800b0ad65"
+dependencies = [
+ "futures-util",
+ "js-sys",
+ "wasm-bindgen",
+ "wasm-bindgen-futures",
+ "web-sys",
 ]
 
 [[package]]

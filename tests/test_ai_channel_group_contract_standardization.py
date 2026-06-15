@@ -172,7 +172,7 @@ class AiChannelGroupContractStandardizationTest(unittest.TestCase):
             / "admin_model_rate_limit_store.rs",
             ROOT
             / "services"
-            / "sdkwork-claw-admin-api"
+            / "sdkwork-claw-admin"
             / "tests"
             / "database_config_router.rs",
         ]
