@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "kind": "sdkwork.standard-alignment",
+  "application": "sdkwork-claw-router",
+  "lastReviewedAt": "2026-06-18",
+  "authority": "../sdkwork-specs/README.md",
+  "verification": {
+    "auditCommand": "python tools/sdkwork_standard_alignment_guardian.py",
+    "strictCommand": "python tools/sdkwork_standard_alignment_guardian.py --strict"
+  },
+  "tracks": [
+    {
+      "id": "web-framework",
+      "spec": "../sdkwork-specs/WEB_FRAMEWORK_SPEC.md",
+      "status": "ALIGNED",
+      "target": "All HTTP *-api surfaces use sdkwork-web-framework WebRequestContext pipeline",
+      "blockers": []
+    },
+    {
+      "id": "database",
+      "spec": "../sdkwork-specs/DATABASE_SPEC.md",
+      "status": "ALIGNED",
+      "target": "Connection pools and repositories use sdkwork-database crates end-to-end",
+      "blockers": [
+        "legacy SQL stores still use direct sqlx queries; new stores should adopt repository-sqlx crates"
+      ]
+    },
+    {
+      "id": "discovery",
+      "spec": "../sdkwork-specs/RPC_SPEC.md",
+      "status": "NOT_APPLICABLE",
+      "target": "Integrate sdkwork-discovery only when RPC services are introduced",
+      "blockers": []
+    },
+    {
+      "id": "api-contracts",
+      "spec": "../sdkwork-specs/API_SPEC.md",
+      "status": "ALIGNED",
+      "target": "apis/ authority, route manifests, and OpenAPI extensions are complete",
+      "blockers": []
+    },
+    {
+      "id": "deployment-packaging",
+      "spec": "../sdkwork-specs/DEPLOYMENT_SPEC.md",
+      "status": "ALIGNED",
+      "target": "sdkwork.workflow.json + thin GitHub workflow + topology profiles",
+      "blockers": []
+    },
+    {
+      "id": "frontend-sdk",
+      "spec": "../sdkwork-specs/APP_SDK_INTEGRATION_SPEC.md",
+      "status": "ALIGNED",
+      "target": "Portal consumes generated @sdkwork/clawrouter-* SDKs without raw HTTP",
+      "blockers": []
+    },
+    {
+      "id": "rust-naming",
+      "spec": "../sdkwork-specs/NAMING_SPEC.md",
+      "status": "GOVERNED_EXCEPTION",
+      "target": "Services use sdkwork-<domain>-<capability>-service naming",
+      "blockers": [
+        "approved legacy crates documented in specs/naming-migration.manifest.json until 2026-12-31"
+      ]
+    }
+  ]
+}

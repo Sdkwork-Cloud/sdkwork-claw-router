@@ -78,9 +78,8 @@ use sdkwork_claw_product::ports::{
     ModelRankingsReadModelStore, PricingCatalog, ProviderHealthProbe, RuntimeRegionSettingsStore,
     SiteSettingsStore, UnconfiguredProviderHealthProbe,
 };
-use sqlx::sqlite::{SqliteConnectOptions, SqlitePoolOptions};
+use sdkwork_claw_product::infrastructure::sql::pool::connect_claw_sqlite_runtime_pool;
 use sqlx::{PgPool, SqlitePool};
-use std::str::FromStr;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct RouterApiRouteModule {
@@ -1328,17 +1327,12 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
         build_provider_health_probe(provider_secret_map_config, runtime_toml)?;
     match config.engine {
         DatabaseEngine::Sqlite => {
-            let sqlite_options = SqliteConnectOptions::from_str(config.url.as_str())
-                .map_err(|error| {
-                    ProductCatalogRouterError::Sqlite(SqlCatalogLoadError::Database(error))
-                })?
-                .create_if_missing(true);
-            let pool = SqlitePoolOptions::new()
-                .max_connections(config.max_connections)
-                .connect_with(sqlite_options)
+            let pool = connect_claw_sqlite_runtime_pool(&config)
                 .await
                 .map_err(|error| {
-                    ProductCatalogRouterError::Sqlite(SqlCatalogLoadError::Database(error))
+                    ProductCatalogRouterError::Sqlite(SqlCatalogLoadError::Database(
+                        sqlx::Error::Configuration(error.to_string().into()),
+                    ))
                 })?;
             let database_installer =
                 Arc::new(DatabaseInstaller::for_sqlite(pool.clone()).with_env_options()?);
@@ -1662,7 +1656,7 @@ pub async fn router_from_env() -> Result<Router, ProductCatalogRouterError> {
     let provider_secret_map_config =
         ProviderSecretMapConfig::from_env_or_runtime_toml(runtime_toml.as_ref())
             .map_err(ProductCatalogRouterError::Config)?;
-    match config {
+    let router = match config {
         Some(config) => {
             router_with_database_api_key_trusted_subject_app_session_and_optional_provider_secret_map_config_and_startup_install_mode(
                 config,
@@ -1673,10 +1667,11 @@ pub async fn router_from_env() -> Result<Router, ProductCatalogRouterError> {
                 startup_install_mode,
                 runtime_toml.as_ref(),
             )
-            .await
+            .await?
         }
-        None => Ok(router()),
-    }
+        None => router(),
+    };
+    Ok(crate::web_bootstrap::maybe_wrap_router_with_web_framework(router).await)
 }
 
 fn database_config_from_env_for_startup(
@@ -1819,23 +1814,36 @@ async fn admin_request_subject_boundary(
     mut request: Request<Body>,
     next: Next,
 ) -> Response {
-    let method = request.method().as_str().to_owned();
-    let path_and_query = request
-        .uri()
-        .path_and_query()
-        .map(|value| value.as_str().to_owned())
-        .unwrap_or_else(|| request.uri().path().to_owned());
-    let subject = match sdkwork_claw_http::verified_app_request_subject(
-        request.headers_mut(),
-        &method,
-        &path_and_query,
-        &config.subject_boundary,
-        current_unix_seconds(),
-    ) {
-        Ok(subject) => subject,
-        Err(message) => return admin_unauthorized_response(message),
+    let subject = if sdkwork_claw_http::claw_web_framework_enabled_from_env() {
+        match TrustedRequestSubject::from_extensions(request.extensions()) {
+            Some(subject) => subject,
+            None => {
+                return admin_unauthorized_response(
+                    "trusted request subject is required".to_owned(),
+                )
+            }
+        }
+    } else {
+        let method = request.method().as_str().to_owned();
+        let path_and_query = request
+            .uri()
+            .path_and_query()
+            .map(|value| value.as_str().to_owned())
+            .unwrap_or_else(|| request.uri().path().to_owned());
+        match sdkwork_claw_http::verified_app_request_subject(
+            request.headers_mut(),
+            &method,
+            &path_and_query,
+            &config.subject_boundary,
+            current_unix_seconds(),
+        ) {
+            Ok(subject) => subject,
+            Err(message) => return admin_unauthorized_response(message),
+        }
     };
-    sdkwork_claw_http::attach_trusted_request_subject(&mut request, subject);
+    if !sdkwork_claw_http::claw_web_framework_enabled_from_env() {
+        sdkwork_claw_http::attach_trusted_request_subject(&mut request, subject);
+    }
 
     match config.access_checker.has_admin_access(subject).await {
         Ok(true) => next.run(request).await,

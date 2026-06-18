@@ -17323,7 +17323,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "accounts.current.summary",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-account/src/accountService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/addresses": {
@@ -17440,7 +17445,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "addresses",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       },
       "post": {
         "description": "Standard appbase commerce API for addresses.create; no legacy billing compatibility route is exposed. Reads commerce_user_address. Writes commerce_user_address, ops_audit_log. File targets none.",
@@ -17543,7 +17553,12 @@
         "x-write-tables": [
           "commerce_user_address",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/addresses/{addressId}": {
@@ -17646,7 +17661,12 @@
         "x-write-tables": [
           "commerce_user_address",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       },
       "patch": {
         "description": "Standard appbase commerce API for addresses.update; no legacy billing compatibility route is exposed. Reads commerce_user_address. Writes commerce_user_address, ops_audit_log. File targets none.",
@@ -17758,7 +17778,12 @@
         "x-write-tables": [
           "commerce_user_address",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/addresses/{addressId}/default_selection": {
@@ -17872,7 +17897,12 @@
         "x-write-tables": [
           "commerce_user_address",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/agents": {
@@ -17993,7 +18023,12 @@
         "x-sdkwork-domain": "agents",
         "x-sdkwork-resource": "agentDefinitions",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       },
       "post": {
         "description": "Creates or materializes the private Playground generation agent using the standard app AgentDefinition resource. Reads ai_agent, ai_agent_version. Writes ai_agent, ai_agent_version. File targets none.",
@@ -18097,7 +18132,12 @@
         "x-write-tables": [
           "ai_agent",
           "ai_agent_version"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/agents/runs/{runId}": {
@@ -18188,7 +18228,12 @@
         "x-sdkwork-domain": "agents",
         "x-sdkwork-resource": "agentRuns",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/agents/runs/{runId}/complete": {
@@ -18302,7 +18347,12 @@
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts",
         "x-write-tables": [
           "ai_agent_run"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/agents/runs/{runId}/steps": {
@@ -18420,7 +18470,12 @@
         "x-sdkwork-domain": "agents",
         "x-sdkwork-resource": "agentRunSteps",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       },
       "post": {
         "description": "Appends one ordered AgentRunStep linked to the Playground runtime invocation. Reads ai_agent_run, ai_runtime_invocation. Writes ai_agent_run_step, ai_agent_run, ai_agent_session. File targets none.",
@@ -18534,7 +18589,12 @@
           "ai_agent_run_step",
           "ai_agent_run",
           "ai_agent_session"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/agents/runs/{runId}/steps/{stepId}/complete": {
@@ -18659,7 +18719,12 @@
         "x-write-tables": [
           "ai_agent_run_step",
           "ai_runtime_usage_link"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/agents/sessions/{sessionId}": {
@@ -18754,7 +18819,12 @@
         "x-sdkwork-domain": "agents",
         "x-sdkwork-resource": "agentSessions",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/agents/sessions/{sessionId}/runs": {
@@ -18871,7 +18941,12 @@
         "x-sdkwork-domain": "agents",
         "x-sdkwork-resource": "agentRuns",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       },
       "post": {
         "description": "Creates one AgentRun under a Playground AgentSession and captures selected runtime, model, and input snapshot. The server generates the run request id. Reads ai_agent_session, ai_memory_space. Writes ai_agent_run, ai_agent_session. File targets none.",
@@ -18984,7 +19059,12 @@
         "x-write-tables": [
           "ai_agent_run",
           "ai_agent_session"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/agents/{agentId}": {
@@ -19078,7 +19158,12 @@
         "x-sdkwork-domain": "agents",
         "x-sdkwork-resource": "agentDefinitions",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/agents/{agentId}/sessions": {
@@ -19199,7 +19284,12 @@
         "x-sdkwork-domain": "agents",
         "x-sdkwork-resource": "agentSessions",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       },
       "post": {
         "description": "Creates a resumable AgentSession for one Playground generation run. Reads ai_agent, ai_agent_version, ai_chat_conversation, ai_memory_space. Writes ai_agent_session, ai_memory_space_binding. File targets none.",
@@ -19314,7 +19404,12 @@
         "x-write-tables": [
           "ai_agent_session",
           "ai_memory_space_binding"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/ai/channel_groups": {
@@ -19396,7 +19491,12 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-resource": "channelGroups",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-api-keys/src/apiKeyService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/ai/dashboard/overview": {
@@ -19517,7 +19617,12 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-resource": "dashboard.overview",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-dashboard/src/dashboardService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/ai/gateway/traces": {
@@ -19598,7 +19703,12 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-resource": "gateway.traces",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-gateway/src/gatewayService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/ai/generations": {
@@ -19681,7 +19791,12 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-resource": "generation",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/ai/model_rankings": {
@@ -19811,7 +19926,12 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-resource": "modelRankings",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-rankings/src/rankingService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/ai/model_vendors": {
@@ -19892,7 +20012,12 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-resource": "modelVendors",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-rankings/src/rankingService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/ai/models": {
@@ -20103,7 +20228,12 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-resource": "models",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-models/src/modelService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/ai/routing/api_keys": {
@@ -20184,7 +20314,12 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-resource": "routing.apiKeys",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/routingApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/ai/routing/channels": {
@@ -20268,7 +20403,12 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-resource": "routing.channels",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/routingApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/ai/routing/request_traces": {
@@ -20350,7 +20490,12 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-resource": "routing.requestTraces",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/routingApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/ai/routing/usage": {
@@ -20432,7 +20577,12 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-resource": "routing.usage",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/routingApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/ai/usage/logs": {
@@ -20581,7 +20731,12 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-resource": "usage.logs",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-usage/src/usageService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/billing/history": {
@@ -20711,7 +20866,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "billing.history",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-recharge/src/rechargeService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/cart/current": {
@@ -20798,7 +20958,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "cart.current",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/cart/items": {
@@ -20911,7 +21076,12 @@
           "commerce_cart",
           "commerce_cart_item",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/cart/items/{cartItemId}": {
@@ -21021,7 +21191,12 @@
         "x-write-tables": [
           "commerce_cart_item",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       },
       "patch": {
         "description": "Standard appbase commerce API for cart.items.update; no legacy billing compatibility route is exposed. Reads commerce_cart, commerce_cart_item, commerce_product_spu, commerce_product_sku, commerce_price_list_item, commerce_inventory_stock, promotion_user_coupon, promotion_discount_application. Writes commerce_cart_item, ops_audit_log. File targets none.",
@@ -21140,7 +21315,12 @@
         "x-write-tables": [
           "commerce_cart_item",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/chat/conversations": {
@@ -21249,7 +21429,12 @@
         "x-sdkwork-domain": "chat",
         "x-sdkwork-resource": "conversations",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       },
       "post": {
         "description": "Creates a first-class chat conversation that can be linked to agents, memory spaces, and runtime invocations. Reads ai_agent_session, ai_memory_space. Writes ai_chat_conversation, ai_memory_space_binding. File targets none.",
@@ -21353,7 +21538,12 @@
         "x-write-tables": [
           "ai_chat_conversation",
           "ai_memory_space_binding"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/chat/conversations/{conversationId}": {
@@ -21445,7 +21635,12 @@
         "x-sdkwork-domain": "chat",
         "x-sdkwork-resource": "conversations",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/chat/conversations/{conversationId}/messages": {
@@ -21567,7 +21762,12 @@
         "x-sdkwork-domain": "chat",
         "x-sdkwork-resource": "conversationMessages",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/chat/conversations/{conversationId}/turns": {
@@ -21692,7 +21892,12 @@
           "ai_runtime_usage_link",
           "ai_runtime_artifact",
           "ai_memory_event"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/chat/conversations/{conversationId}/turns/{turnId}/response": {
@@ -21823,7 +22028,12 @@
           "ai_chat_message_part",
           "ai_runtime_usage_link",
           "ai_memory_event"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/checkout/sessions": {
@@ -21940,7 +22150,12 @@
           "commerce_checkout_line",
           "commerce_inventory_reservation",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/checkout/sessions/{checkoutSessionId}": {
@@ -22040,7 +22255,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "checkout.sessions",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/checkout/sessions/{checkoutSessionId}/orders": {
@@ -22169,7 +22389,12 @@
           "commerce_checkout_session",
           "commerce_inventory_reservation",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/checkout/sessions/{checkoutSessionId}/quotes": {
@@ -22295,7 +22520,12 @@
           "commerce_checkout_line",
           "commerce_inventory_reservation",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/content/comments": {
@@ -22435,7 +22665,12 @@
         "x-sdkwork-domain": "content",
         "x-sdkwork-resource": "comments",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       },
       "post": {
         "description": "Create forum comment. Reads plus_comments. Writes plus_comments. File targets none.",
@@ -22526,7 +22761,12 @@
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
         "x-write-tables": [
           "plus_comments"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/content/comments/statistics": {
@@ -22639,7 +22879,12 @@
         "x-sdkwork-domain": "content",
         "x-sdkwork-resource": "comments.statistics",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/content/comments/{commentId}": {
@@ -22731,7 +22976,12 @@
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
         "x-write-tables": [
           "plus_comments"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       },
       "get": {
         "description": "List forum comment detail. Reads plus_comments, plus_content_vote. Writes none. File targets none.",
@@ -22820,7 +23070,12 @@
         "x-sdkwork-domain": "content",
         "x-sdkwork-resource": "comments",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/content/comments/{commentId}/likes": {
@@ -22914,7 +23169,12 @@
         "x-write-tables": [
           "plus_content_vote",
           "plus_comments"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/content/comments/{commentId}/likes/current": {
@@ -23008,7 +23268,12 @@
         "x-write-tables": [
           "plus_content_vote",
           "plus_comments"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/content/comments/{commentId}/pins": {
@@ -23100,7 +23365,12 @@
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
         "x-write-tables": [
           "plus_comments"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/content/comments/{commentId}/pins/current": {
@@ -23192,7 +23462,12 @@
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
         "x-write-tables": [
           "plus_comments"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/content/comments/{commentId}/replies": {
@@ -23309,7 +23584,12 @@
         "x-sdkwork-domain": "content",
         "x-sdkwork-resource": "comments.replies",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/content/comments/{commentId}/reply": {
@@ -23412,7 +23692,12 @@
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
         "x-write-tables": [
           "plus_comments"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/content/feeds": {
@@ -23572,7 +23857,12 @@
         "x-sdkwork-domain": "content",
         "x-sdkwork-resource": "feeds",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       },
       "post": {
         "description": "Create forum feed. Reads plus_feeds. Writes plus_feeds. File targets none.",
@@ -23663,7 +23953,12 @@
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
         "x-write-tables": [
           "plus_feeds"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/content/feeds/category/{categoryId}": {
@@ -23781,7 +24076,12 @@
         "x-sdkwork-domain": "content",
         "x-sdkwork-resource": "feeds.category",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/content/feeds/hot": {
@@ -23877,7 +24177,12 @@
         "x-sdkwork-domain": "content",
         "x-sdkwork-resource": "feeds.hot",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/content/feeds/most_liked": {
@@ -23973,7 +24278,12 @@
         "x-sdkwork-domain": "content",
         "x-sdkwork-resource": "feeds.mostLiked",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/content/feeds/most_viewed": {
@@ -24069,7 +24379,12 @@
         "x-sdkwork-domain": "content",
         "x-sdkwork-resource": "feeds.mostViewed",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/content/feeds/overview": {
@@ -24152,7 +24467,12 @@
         "x-sdkwork-domain": "content",
         "x-sdkwork-resource": "feeds.overview",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/content/feeds/recommend": {
@@ -24248,7 +24568,12 @@
         "x-sdkwork-domain": "content",
         "x-sdkwork-resource": "feeds.recommend",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/content/feeds/top": {
@@ -24344,7 +24669,12 @@
         "x-sdkwork-domain": "content",
         "x-sdkwork-resource": "feeds.top",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/content/feeds/{id}": {
@@ -24436,7 +24766,12 @@
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
         "x-write-tables": [
           "plus_feeds"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       },
       "get": {
         "description": "List forum feed detail. Reads plus_feeds, plus_content_vote, plus_favorite. Writes none. File targets none.",
@@ -24526,7 +24861,12 @@
         "x-sdkwork-domain": "content",
         "x-sdkwork-resource": "feeds",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/content/feeds/{id}/collections": {
@@ -24633,7 +24973,12 @@
         "x-write-tables": [
           "plus_favorite",
           "plus_feeds"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/content/feeds/{id}/collections/current": {
@@ -24727,7 +25072,12 @@
         "x-write-tables": [
           "plus_favorite",
           "plus_feeds"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       },
       "get": {
         "description": "Check forum feed collected. Reads plus_favorite. Writes none. File targets none.",
@@ -24815,7 +25165,12 @@
         "x-sdkwork-domain": "content",
         "x-sdkwork-resource": "feeds.collections.current",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/content/feeds/{id}/likes": {
@@ -24909,7 +25264,12 @@
         "x-write-tables": [
           "plus_content_vote",
           "plus_feeds"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/content/feeds/{id}/likes/current": {
@@ -25003,7 +25363,12 @@
         "x-write-tables": [
           "plus_content_vote",
           "plus_feeds"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/content/feeds/{id}/shares": {
@@ -25095,7 +25460,12 @@
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
         "x-write-tables": [
           "plus_feeds"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/content/users/current/comments": {
@@ -25203,7 +25573,12 @@
         "x-sdkwork-domain": "content",
         "x-sdkwork-resource": "users.current.comments",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/courses/applications": {
@@ -25296,7 +25671,12 @@
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts",
         "x-write-tables": [
           "content_course_application"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/courses/applications/videos": {
@@ -25387,7 +25767,12 @@
         "x-sdkwork-domain": "content",
         "x-sdkwork-resource": "applications.videos",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/ecosystem/skills": {
@@ -25539,7 +25924,12 @@
         "x-sdkwork-domain": "ecosystem",
         "x-sdkwork-resource": "skills",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub/src/services/skillService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/ecosystem/skills/categories": {
@@ -25619,7 +26009,12 @@
         "x-sdkwork-domain": "ecosystem",
         "x-sdkwork-resource": "skills.categories",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub/src/services/skillService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/ecosystem/skills/{skillId}": {
@@ -25714,7 +26109,12 @@
         "x-sdkwork-domain": "ecosystem",
         "x-sdkwork-resource": "skills",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub/src/services/skillService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/ecosystem/skills/{skillId}/config": {
@@ -25822,7 +26222,12 @@
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub/src/services/skillService.ts",
         "x-write-tables": [
           "plus_user_agent_skill"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/ecosystem/skills/{skillId}/disable": {
@@ -25919,7 +26324,12 @@
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub/src/services/skillService.ts",
         "x-write-tables": [
           "plus_user_agent_skill"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/ecosystem/skills/{skillId}/enable": {
@@ -26026,7 +26436,12 @@
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub/src/services/skillService.ts",
         "x-write-tables": [
           "plus_user_agent_skill"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/ecosystem/users/current/skills": {
@@ -26111,7 +26526,12 @@
         "x-sdkwork-domain": "ecosystem",
         "x-sdkwork-resource": "users.current.skills",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub/src/services/skillService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/fulfillments": {
@@ -26233,7 +26653,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "fulfillments",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/fulfillments/{fulfillmentId}": {
@@ -26328,7 +26753,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "fulfillments",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/iam/api_keys": {
@@ -26414,7 +26844,12 @@
         "x-sdkwork-domain": "iam",
         "x-sdkwork-resource": "apiKeys",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-api-keys/src/apiKeyService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       },
       "post": {
         "description": "Create key. Reads ai_channel_group. Writes ai_channel_group, iam_gateway_api_key, iam_gateway_access_policy, ai_quota_policy, ops_audit_log. File targets none.",
@@ -26520,7 +26955,12 @@
           "iam_gateway_access_policy",
           "ai_quota_policy",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/iam/api_keys/{apiKeyId}": {
@@ -26613,7 +27053,12 @@
         "x-write-tables": [
           "iam_gateway_api_key",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       },
       "patch": {
         "description": "Update key. Reads iam_gateway_api_key, ai_channel_group, iam_gateway_access_policy, ai_quota_policy. Writes iam_gateway_api_key, iam_gateway_access_policy, ai_quota_policy, ops_audit_log. File targets none.",
@@ -26720,7 +27165,12 @@
           "iam_gateway_access_policy",
           "ai_quota_policy",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/iam/department_assignments": {
@@ -26883,7 +27333,12 @@
         "x-sdkwork-domain": "iam",
         "x-sdkwork-resource": "departmentAssignments",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/iam/departments": {
@@ -27046,7 +27501,12 @@
         "x-sdkwork-domain": "iam",
         "x-sdkwork-resource": "departments",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/iam/departments/tree": {
@@ -27209,7 +27669,12 @@
         "x-sdkwork-domain": "iam",
         "x-sdkwork-resource": "departments.tree",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/iam/organization_memberships": {
@@ -27371,7 +27836,12 @@
         "x-sdkwork-domain": "iam",
         "x-sdkwork-resource": "organizationMemberships",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/iam/organizations": {
@@ -27534,7 +28004,12 @@
         "x-sdkwork-domain": "iam",
         "x-sdkwork-resource": "organizations",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/iam/organizations/tree": {
@@ -27697,7 +28172,12 @@
         "x-sdkwork-domain": "iam",
         "x-sdkwork-resource": "organizations.tree",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/iam/position_assignments": {
@@ -27860,7 +28340,12 @@
         "x-sdkwork-domain": "iam",
         "x-sdkwork-resource": "positionAssignments",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/iam/positions": {
@@ -28023,7 +28508,12 @@
         "x-sdkwork-domain": "iam",
         "x-sdkwork-resource": "positions",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/iam/role_bindings": {
@@ -28186,7 +28676,12 @@
         "x-sdkwork-domain": "iam",
         "x-sdkwork-resource": "roleBindings",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/iam/users/current": {
@@ -28268,7 +28763,12 @@
         "x-sdkwork-domain": "iam",
         "x-sdkwork-resource": "users.current",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-user/src/userService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/iam/users/settings": {
@@ -28350,7 +28850,12 @@
         "x-sdkwork-domain": "iam",
         "x-sdkwork-resource": "users.settings",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-settings/src/settingsService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       },
       "put": {
         "description": "Update settings. Reads iam_user_preference, integration_webhook_endpoint. Writes iam_user_preference, integration_webhook_endpoint. File targets none.",
@@ -28443,7 +28948,12 @@
         "x-write-tables": [
           "iam_user_preference",
           "integration_webhook_endpoint"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/invoices": {
@@ -28565,7 +29075,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "invoices",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-settlements/src/settlementsService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       },
       "post": {
         "description": "Standard appbase commerce API for invoices.create; no legacy billing compatibility route is exposed. Reads commerce_invoice_title, commerce_invoice, commerce_invoice_item, commerce_invoice_event, commerce_order, commerce_payment_attempt. Writes commerce_invoice, commerce_invoice_item, commerce_invoice_event, ops_audit_log. File targets none.",
@@ -28675,7 +29190,12 @@
           "commerce_invoice_item",
           "commerce_invoice_event",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/invoices/{invoiceId}": {
@@ -28770,7 +29290,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "invoices",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-settlements/src/settlementsService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/memberships/benefits": {
@@ -28866,7 +29391,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "memberships.benefits",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/memberships/current": {
@@ -28955,7 +29485,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "memberships.current",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/memberships/current/status": {
@@ -29038,7 +29573,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "memberships.current.status",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/memberships/package_groups": {
@@ -29145,7 +29685,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "memberships.packageGroups",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/memberships/package_groups/{packageGroupId}": {
@@ -29239,7 +29784,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "memberships.packageGroups",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/memberships/package_groups/{packageGroupId}/packages": {
@@ -29346,7 +29896,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "memberships.packageGroups.packages",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/memberships/packages": {
@@ -29472,7 +30027,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "memberships.packages",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/memberships/packages/{packageId}": {
@@ -29566,7 +30126,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "memberships.packages",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/memberships/plans": {
@@ -29649,7 +30214,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "memberships.plans",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/memberships/points/balance": {
@@ -29731,7 +30301,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "memberships.points.balance",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/memberships/points/daily_rewards": {
@@ -29829,7 +30404,12 @@
           "commerce_account_ledger_entry",
           "commerce_membership_entitlement_usage",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/memberships/points/daily_rewards/status": {
@@ -29911,7 +30491,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "memberships.points.dailyRewards.status",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/memberships/points/history": {
@@ -30030,7 +30615,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "memberships.points.history",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/memberships/privileges/speed_ups": {
@@ -30126,7 +30716,12 @@
         "x-write-tables": [
           "commerce_membership_entitlement_usage",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/memberships/privileges/usage": {
@@ -30208,7 +30803,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "memberships.privileges.usage",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/memberships/purchases": {
@@ -30326,7 +30926,12 @@
           "commerce_membership",
           "commerce_membership_entitlement",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/memberships/purchases/renew": {
@@ -30443,7 +31048,12 @@
           "commerce_membership",
           "commerce_membership_entitlement",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/memberships/purchases/upgrade": {
@@ -30560,7 +31170,12 @@
           "commerce_membership",
           "commerce_membership_entitlement",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/memory/entries/{entryId}": {
@@ -30652,7 +31267,12 @@
         "x-sdkwork-domain": "memory",
         "x-sdkwork-resource": "entries",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/memory/spaces": {
@@ -30760,7 +31380,12 @@
         "x-sdkwork-domain": "memory",
         "x-sdkwork-resource": "spaces",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       },
       "post": {
         "description": "Creates a durable memory space that can be shared by product chat conversations and agent sessions. Reads ai_memory_space. Writes ai_memory_space. File targets none.",
@@ -30862,7 +31487,12 @@
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts",
         "x-write-tables": [
           "ai_memory_space"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/memory/spaces/{spaceId}": {
@@ -30953,7 +31583,12 @@
         "x-sdkwork-domain": "memory",
         "x-sdkwork-resource": "spaces",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/memory/spaces/{spaceId}/entries": {
@@ -31071,7 +31706,12 @@
         "x-sdkwork-domain": "memory",
         "x-sdkwork-resource": "entries",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       },
       "post": {
         "description": "Stores a normalized memory entry with source conversation, turn, item, and runtime invocation linkage. Reads ai_memory_space, ai_chat_conversation, ai_chat_turn, ai_runtime_invocation. Writes ai_memory_entry, ai_memory_event. File targets none.",
@@ -31186,7 +31826,12 @@
         "x-write-tables": [
           "ai_memory_entry",
           "ai_memory_event"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/notification/notifications": {
@@ -31311,7 +31956,12 @@
         "x-sdkwork-domain": "notification",
         "x-sdkwork-resource": "notifications",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/notification/notifications/{notificationId}/acknowledge": {
@@ -31416,7 +32066,12 @@
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts",
         "x-write-tables": [
           "ops_notification_delivery"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/notification/notifications/{notificationId}/popup_seen": {
@@ -31521,7 +32176,12 @@
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts",
         "x-write-tables": [
           "ops_notification_delivery"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/orders": {
@@ -31647,7 +32307,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "orders",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/orders/{orderId}": {
@@ -31746,7 +32411,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "orders",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/orders/{orderId}/cancellations": {
@@ -31871,7 +32541,12 @@
           "commerce_order_event",
           "commerce_inventory_reservation",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/orders/{orderId}/events": {
@@ -32006,7 +32681,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "orders.events",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/payments/attempts/{paymentAttemptId}": {
@@ -32099,7 +32779,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "payments.attempts",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/payments/intents": {
@@ -32207,7 +32892,12 @@
         "x-write-tables": [
           "commerce_payment_intent",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/payments/intents/{paymentIntentId}": {
@@ -32300,7 +32990,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "payments.intents",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/payments/intents/{paymentIntentId}/attempts": {
@@ -32418,7 +33113,12 @@
           "commerce_payment_attempt",
           "commerce_payment_intent",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/payments/methods": {
@@ -32538,7 +33238,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "payments.methods",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/platform/apps/store": {
@@ -32755,7 +33460,12 @@
         "x-sdkwork-domain": "platform",
         "x-sdkwork-resource": "apps.store",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/appService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/platform/apps/store/categories": {
@@ -32835,7 +33545,12 @@
         "x-sdkwork-domain": "platform",
         "x-sdkwork-resource": "apps.store.categories",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/appService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/platform/apps/store/{appId}": {
@@ -32929,7 +33644,12 @@
         "x-sdkwork-domain": "platform",
         "x-sdkwork-resource": "apps.store",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/appService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/promotions/codes/redemptions": {
@@ -33045,7 +33765,12 @@
           "promotion_budget_ledger_entry",
           "promotion_event_outbox",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/promotions/discount_applications": {
@@ -33165,7 +33890,12 @@
           "promotion_budget_ledger_entry",
           "promotion_event_outbox",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/promotions/discount_applications/reversals": {
@@ -33278,7 +34008,12 @@
           "promotion_budget_ledger_entry",
           "promotion_event_outbox",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/promotions/discount_applications/{applicationId}/releases": {
@@ -33399,7 +34134,12 @@
           "promotion_budget_ledger_entry",
           "promotion_event_outbox",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/promotions/discount_applications/{applicationId}/settlements": {
@@ -33521,7 +34261,12 @@
           "promotion_budget_ledger_entry",
           "promotion_event_outbox",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/promotions/user_coupon_claims": {
@@ -33636,7 +34381,12 @@
           "promotion_budget_ledger_entry",
           "promotion_event_outbox",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/promotions/user_coupons": {
@@ -33732,7 +34482,12 @@
         "x-sdkwork-domain": "promotion",
         "x-sdkwork-resource": "promotions.userCoupons.wallet",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-wallet/src/walletService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/recharges/orders": {
@@ -33848,7 +34603,12 @@
           "commerce_payment_intent",
           "commerce_account_ledger_entry",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/recharges/orders/{orderId}": {
@@ -33946,7 +34706,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "recharges.orders",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/recharges/packages": {
@@ -34071,7 +34836,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "recharges.packages",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-recharge/src/rechargeService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/recharges/settings": {
@@ -34152,7 +34922,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "recharges.settings",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-recharge/src/rechargeService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/refunds": {
@@ -34274,7 +35049,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "refunds",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       },
       "post": {
         "description": "Standard appbase commerce API for refunds.create; no legacy billing compatibility route is exposed. Reads commerce_refund, commerce_refund_item, commerce_refund_attempt, commerce_order, commerce_order_item, commerce_payment_attempt. Writes commerce_refund, commerce_refund_item, commerce_refund_attempt, commerce_order_event, ops_audit_log. File targets none.",
@@ -34385,7 +35165,12 @@
           "commerce_refund_attempt",
           "commerce_order_event",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/refunds/{refundId}": {
@@ -34480,7 +35265,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "refunds",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/runtime/invocations": {
@@ -34640,7 +35430,12 @@
         "x-sdkwork-domain": "runtime",
         "x-sdkwork-resource": "invocations",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       },
       "post": {
         "description": "Creates one normalized runtime invocation for Claude Code, Gemini, Codex, OpenAI-compatible providers, tools, MCP calls, skills, or custom runtime adapters. The server generates the runtime request id. Reads ai_chat_conversation, ai_chat_turn, ai_agent_session. Writes ai_runtime_invocation. File targets none.",
@@ -34744,7 +35539,12 @@
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts",
         "x-write-tables": [
           "ai_runtime_invocation"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/runtime/invocations/{invocationId}": {
@@ -34834,7 +35634,12 @@
         "x-sdkwork-domain": "runtime",
         "x-sdkwork-resource": "invocations",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/runtime/invocations/{invocationId}/artifacts": {
@@ -34951,7 +35756,12 @@
         "x-sdkwork-domain": "runtime",
         "x-sdkwork-resource": "artifacts",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       },
       "post": {
         "description": "Stores one artifact produced by a runtime invocation and inherits chat turn, chat item, agent session, and agent run linkage from the invocation. Reads ai_runtime_invocation. Writes ai_runtime_artifact. File targets none.",
@@ -35062,7 +35872,12 @@
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts",
         "x-write-tables": [
           "ai_runtime_artifact"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/runtime/invocations/{invocationId}/complete": {
@@ -35175,7 +35990,12 @@
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts",
         "x-write-tables": [
           "ai_runtime_invocation"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/runtime/invocations/{invocationId}/events": {
@@ -35292,7 +36112,12 @@
         "x-sdkwork-domain": "runtime",
         "x-sdkwork-resource": "invocationEvents",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       },
       "post": {
         "description": "Stores one provider, tool, adapter, or system event under a runtime invocation, including text deltas and provider-native payload snapshots. Reads ai_runtime_invocation. Writes ai_runtime_invocation_event. File targets none.",
@@ -35403,7 +36228,12 @@
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts",
         "x-write-tables": [
           "ai_runtime_invocation_event"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/runtime/invocations/{invocationId}/events/stream": {
@@ -35494,7 +36324,12 @@
         "x-sdkwork-domain": "runtime",
         "x-sdkwork-resource": "invocationEventStreams",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/sdk_reference/archives": {
@@ -35588,7 +36423,12 @@
         "x-write-tables": [
           "content_sdk_release",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/sdk_reference/documentation": {
@@ -35682,7 +36522,12 @@
         "x-write-tables": [
           "content_sdk_release",
           "ops_audit_log"
-        ]
+        ],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/shipments/{shipmentId}": {
@@ -35775,7 +36620,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "shipments",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/system/site/runtime": {
@@ -35876,7 +36726,12 @@
         "x-sdkwork-domain": "sites",
         "x-sdkwork-resource": "site.runtime",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/siteBranding.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/wallet/accounts": {
@@ -35998,7 +36853,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "wallet.accounts",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-wallet/src/walletService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/wallet/exchange_rate": {
@@ -36079,7 +36939,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "wallet.exchangeRate",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-wallet/src/walletService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/wallet/ledger_entries": {
@@ -36196,7 +37061,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "wallet.ledgerEntries",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-settlements/src/settlementsService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/wallet/overview": {
@@ -36281,7 +37151,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "wallet.overview",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-wallet/src/walletService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/wallet/points/exchanges/rules": {
@@ -36383,7 +37258,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "wallet.points.exchangeRules",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-wallet/src/walletService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     },
     "/app/v3/api/wallet/tokens": {
@@ -36465,7 +37345,12 @@
         "x-sdkwork-domain": "commerce",
         "x-sdkwork-resource": "wallet.tokens",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-wallet/src/walletService.ts",
-        "x-write-tables": []
+        "x-write-tables": [],
+        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-api-authority": "sdkwork-clawrouter-app-api",
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app",
+        "x-sdkwork-source-route-crate": "sdkwork-router-app-api"
       }
     }
   },

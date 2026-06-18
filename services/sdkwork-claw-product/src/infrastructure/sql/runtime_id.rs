@@ -2,13 +2,13 @@ use std::sync::OnceLock;
 
 use sdkwork_database_config::DatabaseConfig as StandardDatabaseConfig;
 use sdkwork_database_config::DatabaseEngine as StandardDatabaseEngine;
+use sdkwork_database_config::SqliteJournalMode;
 use sdkwork_id_core::SnowflakeIdGenerator;
 
 use crate::domain::{DomainError, DomainResult};
 
 /// Converts the application-specific database config to the SDKWork standard config
 /// for use with `sdkwork-database-sqlx::PoolBuilder`.
-#[allow(dead_code)]
 pub(crate) fn to_standard_database_config(
     config: &sdkwork_claw_config::DatabaseConfig,
 ) -> StandardDatabaseConfig {
@@ -20,6 +20,13 @@ pub(crate) fn to_standard_database_config(
         engine,
         url: config.url.clone(),
         max_connections: config.max_connections,
+        sqlite: sdkwork_database_config::SqliteConfig {
+            journal_mode: SqliteJournalMode::Wal,
+            busy_timeout_secs: 30,
+            foreign_keys: true,
+            create_if_missing: true,
+            ..sdkwork_database_config::SqliteConfig::default()
+        },
         ..StandardDatabaseConfig::default()
     }
 }

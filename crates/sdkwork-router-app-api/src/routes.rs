@@ -6,7 +6,6 @@ use crate::local_auth_runtime::{
     sqlite_local_auth_runtime_components,
 };
 use crate::{manifest, paths};
-use axum::middleware::from_fn_with_state;
 use axum::Router;
 use sdkwork_claw_config::{
     ApiKeySecurityConfig, AppSessionConfig, DatabaseConfig, DatabaseEngine, DeploymentMode,
@@ -73,11 +72,12 @@ use sdkwork_claw_product::ports::{
     ProviderHealthProbe, SettingsStore, SettlementsDashboardReadStore, SiteSettingsStore,
     UnconfiguredProviderHealthProbe, UsageLogsReadStore, VerificationCodeSender,
 };
-use sqlx::sqlite::{SqliteConnectOptions, SqliteJournalMode, SqlitePoolOptions};
 use sqlx::postgres::PgRow;
 use sqlx::sqlite::SqliteRow;
+use sdkwork_claw_product::infrastructure::sql::pool::{
+    connect_claw_sqlite_runtime_pool, effective_sqlite_runtime_pool_max_connections,
+};
 use sqlx::{PgPool, Row, SqlitePool};
-use std::str::FromStr;
 use tokio::time::sleep;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -90,10 +90,6 @@ pub struct RouterApiRouteModule {
 
 pub const SERVICE_NAME: &str = "sdkwork-claw-app";
 const DEFAULT_APP_RUNTIME_CATALOG_REFRESH_INTERVAL_MILLIS: u64 = 60_000;
-const SQLITE_RUNTIME_MIN_POOL_CONNECTIONS: u32 =
-    DatabaseConfig::DESKTOP_SQLITE_DEFAULT_MAX_CONNECTIONS;
-const SQLITE_POOL_ACQUIRE_TIMEOUT_SECONDS: u64 = 10;
-const SQLITE_BUSY_TIMEOUT_SECONDS: u64 = 30;
 type ApiKeyCodec = Arc<dyn ApiKeySecretCodec + Send + Sync>;
 type AppAgentRegistryRuntimeStore = Arc<dyn AppAgentRegistryStore + Send + Sync>;
 type AppGatewayTracesStore = Arc<dyn AppGatewayTracesReadStore + Send + Sync>;
@@ -590,139 +586,101 @@ fn router_with_runtime_stores_and_database_status(
         None => router.merge(sdkwork_claw_product::api::app_payment_callback_router()),
     };
     router = match payment_intent_runtime_store {
-        Some(store) => router.merge(
+        Some(store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
             sdkwork_claw_product::api::payment_aggregate_router_with_runtime_store(
                 store,
                 Arc::clone(&entity_uuid_generator),
-            )
-            .layer(from_fn_with_state(
-                subject_boundary_config.clone(),
-                sdkwork_claw_http::app_request_subject_boundary,
-            )),
-        ),
-        None => router.merge(sdkwork_claw_product::api::payment_aggregate_router().layer(
-            from_fn_with_state(
-                subject_boundary_config.clone(),
-                sdkwork_claw_http::app_request_subject_boundary,
             ),
+            subject_boundary_config.clone(),
+        )),
+        None => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
+            sdkwork_claw_product::api::payment_aggregate_router(),
+            subject_boundary_config.clone(),
         )),
     };
     router = match dashboard_read_store {
-        Some(read_store) => router.merge(
-            sdkwork_claw_product::api::app_dashboard_overview_router_with_read_store(read_store)
-                .layer(from_fn_with_state(
-                    subject_boundary_config.clone(),
-                    sdkwork_claw_http::app_request_subject_boundary,
-                )),
-        ),
+        Some(read_store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
+            sdkwork_claw_product::api::app_dashboard_overview_router_with_read_store(read_store),
+            subject_boundary_config.clone(),
+        )),
         None => router.merge(sdkwork_claw_product::api::app_dashboard_overview_router()),
     };
     router = match usage_logs_read_store {
-        Some(read_store) => router.merge(
-            sdkwork_claw_product::api::app_usage_logs_router_with_read_store(read_store).layer(
-                from_fn_with_state(
-                    subject_boundary_config.clone(),
-                    sdkwork_claw_http::app_request_subject_boundary,
-                ),
-            ),
-        ),
+        Some(read_store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
+            sdkwork_claw_product::api::app_usage_logs_router_with_read_store(read_store),
+            subject_boundary_config.clone(),
+        )),
         None => router.merge(sdkwork_claw_product::api::app_usage_logs_router()),
     };
     router = match app_gateway_traces_read_store {
-        Some(read_store) => router.merge(
-            sdkwork_claw_product::api::app_gateway_traces_router_with_read_store(read_store).layer(
-                from_fn_with_state(
-                    subject_boundary_config.clone(),
-                    sdkwork_claw_http::app_request_subject_boundary,
-                ),
-            ),
-        ),
+        Some(read_store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
+            sdkwork_claw_product::api::app_gateway_traces_router_with_read_store(read_store),
+            subject_boundary_config.clone(),
+        )),
         None => router.merge(sdkwork_claw_product::api::app_gateway_traces_router()),
     };
     router = match app_notification_store {
-        Some(store) => router.merge(
-            sdkwork_claw_product::api::app_notification_router_with_store(store).layer(
-                from_fn_with_state(
-                    subject_boundary_config.clone(),
-                    sdkwork_claw_http::app_request_subject_boundary,
-                ),
-            ),
-        ),
+        Some(store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
+            sdkwork_claw_product::api::app_notification_router_with_store(store),
+            subject_boundary_config.clone(),
+        )),
         None => router.merge(sdkwork_claw_product::api::app_notification_router()),
     };
     router = match app_chat_store {
-        Some(store) => router.merge(
+        Some(store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
             sdkwork_claw_product::api::app_chat_router_with_store(
                 store,
                 Arc::clone(&entity_uuid_generator),
-            )
-            .layer(from_fn_with_state(
-                subject_boundary_config.clone(),
-                sdkwork_claw_http::app_request_subject_boundary,
-            )),
-        ),
+            ),
+            subject_boundary_config.clone(),
+        )),
         None => router.merge(sdkwork_claw_product::api::app_chat_router()),
     };
     router = match app_generation_history_read_store {
-        Some(read_store) => router.merge(
-            sdkwork_claw_product::api::app_generation_history_router_with_read_store(read_store)
-                .layer(from_fn_with_state(
-                    subject_boundary_config.clone(),
-                    sdkwork_claw_http::app_request_subject_boundary,
-                )),
-        ),
+        Some(read_store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
+            sdkwork_claw_product::api::app_generation_history_router_with_read_store(read_store),
+            subject_boundary_config.clone(),
+        )),
         None => router.merge(sdkwork_claw_product::api::app_generation_history_router()),
     };
     router = match app_agent_registry_store {
-        Some(store) => router.merge(
+        Some(store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
             sdkwork_claw_product::api::app_agent_registry_router_with_store(
                 store,
                 Arc::new(OsApiKeySecretGenerator),
-            )
-            .layer(from_fn_with_state(
-                subject_boundary_config.clone(),
-                sdkwork_claw_http::app_request_subject_boundary,
-            )),
-        ),
+            ),
+            subject_boundary_config.clone(),
+        )),
         None => router.merge(sdkwork_claw_product::api::app_agent_registry_router()),
     };
     router = match app_agent_session_store {
-        Some(store) => router.merge(
+        Some(store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
             sdkwork_claw_product::api::app_agent_session_router_with_store(
                 store,
                 Arc::clone(&entity_uuid_generator),
-            )
-            .layer(from_fn_with_state(
-                subject_boundary_config.clone(),
-                sdkwork_claw_http::app_request_subject_boundary,
-            )),
-        ),
+            ),
+            subject_boundary_config.clone(),
+        )),
         None => router.merge(sdkwork_claw_product::api::app_agent_session_router()),
     };
     router = match app_agent_run_store {
-        Some(store) => router.merge(
+        Some(store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
             sdkwork_claw_product::api::app_agent_run_router_with_store(
                 store,
                 Arc::clone(&entity_uuid_generator),
-            )
-            .layer(from_fn_with_state(
-                subject_boundary_config.clone(),
-                sdkwork_claw_http::app_request_subject_boundary,
-            )),
-        ),
+            ),
+            subject_boundary_config.clone(),
+        )),
         None => router.merge(sdkwork_claw_product::api::app_agent_run_router()),
     };
     router = match app_memory_store {
-        Some(store) => router.merge(
+        Some(store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
             sdkwork_claw_product::api::app_memory_router_with_store(
                 store,
                 Arc::clone(&entity_uuid_generator),
-            )
-            .layer(from_fn_with_state(
-                subject_boundary_config.clone(),
-                sdkwork_claw_http::app_request_subject_boundary,
-            )),
-        ),
+            ),
+            subject_boundary_config.clone(),
+        )),
         None => router.merge(sdkwork_claw_product::api::app_memory_router()),
     };
     router = match app_runtime_store {
@@ -759,20 +717,18 @@ fn router_with_runtime_stores_and_database_status(
                     Arc::clone(&stream_bus),
                 )
             };
-            router.merge(runtime_router.layer(from_fn_with_state(
+            router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
+                runtime_router,
                 subject_boundary_config.clone(),
-                sdkwork_claw_http::app_request_subject_boundary,
-            )))
+            ))
         }
         None => router.merge(sdkwork_claw_product::api::app_runtime_router()),
     };
     router = match app_store_read_store {
         Some(read_store) => router.merge(
-            sdkwork_claw_product::api::app_store_router_with_read_store(read_store).layer(
-                from_fn_with_state(
-                    subject_boundary_config.clone(),
-                    sdkwork_claw_http::optional_app_request_subject_boundary,
-                ),
+            sdkwork_claw_http::apply_optional_app_subject_boundary_if_legacy(
+                sdkwork_claw_product::api::app_store_router_with_read_store(read_store),
+                subject_boundary_config.clone(),
             ),
         ),
         None => router.merge(sdkwork_claw_product::api::app_store_router()),
@@ -787,10 +743,12 @@ fn router_with_runtime_stores_and_database_status(
                 ),
                 None => sdkwork_claw_product::api::app_skills_router_with_read_store(read_store),
             };
-            router.merge(skills_router.layer(from_fn_with_state(
-                subject_boundary_config.clone(),
-                sdkwork_claw_http::optional_app_request_subject_boundary,
-            )))
+            router.merge(
+                sdkwork_claw_http::apply_optional_app_subject_boundary_if_legacy(
+                    skills_router,
+                    subject_boundary_config.clone(),
+                ),
+            )
         }
         None => router.merge(sdkwork_claw_product::api::app_skills_router()),
     };
@@ -824,74 +782,54 @@ fn router_with_runtime_stores_and_database_status(
         _ => router.merge(sdkwork_claw_product::api::app_forum_router()),
     };
     router = match app_providers_read_store {
-        Some(read_store) => router.merge(
-            sdkwork_claw_product::api::app_providers_router_with_read_store(read_store).layer(
-                from_fn_with_state(
-                    subject_boundary_config.clone(),
-                    sdkwork_claw_http::app_request_subject_boundary,
-                ),
-            ),
-        ),
+        Some(read_store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
+            sdkwork_claw_product::api::app_providers_router_with_read_store(read_store),
+            subject_boundary_config.clone(),
+        )),
         None => router.merge(sdkwork_claw_product::api::app_providers_router()),
     };
     router = match app_routing_read_store {
-        Some(read_store) => router.merge(
-            sdkwork_claw_product::api::app_routing_router_with_read_store(read_store).layer(
-                from_fn_with_state(
-                    subject_boundary_config.clone(),
-                    sdkwork_claw_http::app_request_subject_boundary,
-                ),
-            ),
-        ),
+        Some(read_store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
+            sdkwork_claw_product::api::app_routing_router_with_read_store(read_store),
+            subject_boundary_config.clone(),
+        )),
         None => router.merge(sdkwork_claw_product::api::app_routing_router()),
     };
     router = match app_routing_strategy_store {
-        Some(store) => router.merge(
+        Some(store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
             sdkwork_claw_product::api::app_routing_strategy_router_with_store(
                 store,
                 Arc::new(OsApiKeySecretGenerator),
-            )
-            .layer(from_fn_with_state(
-                subject_boundary_config.clone(),
-                sdkwork_claw_http::app_request_subject_boundary,
-            )),
-        ),
+            ),
+            subject_boundary_config.clone(),
+        )),
         None => router.merge(sdkwork_claw_product::api::app_routing_strategy_router()),
     };
     router = match app_routing_channel_command_store {
-        Some(store) => router.merge(
+        Some(store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
             sdkwork_claw_product::api::app_routing_channel_command_router_with_store(
                 store,
                 Arc::new(OsApiKeySecretGenerator),
-            )
-            .layer(from_fn_with_state(
-                subject_boundary_config.clone(),
-                sdkwork_claw_http::app_request_subject_boundary,
-            )),
-        ),
+            ),
+            subject_boundary_config.clone(),
+        )),
         None => router.merge(sdkwork_claw_product::api::app_routing_channel_command_router()),
     };
     router = match settings_store {
-        Some(store) => router.merge(
+        Some(store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
             sdkwork_claw_product::api::app_settings_router_with_store(
                 store,
                 Arc::new(OsApiKeySecretGenerator),
-            )
-            .layer(from_fn_with_state(
-                subject_boundary_config.clone(),
-                sdkwork_claw_http::app_request_subject_boundary,
-            )),
-        ),
+            ),
+            subject_boundary_config.clone(),
+        )),
         None => router.merge(sdkwork_claw_product::api::app_settings_router()),
     };
     router = match settlements_dashboard_read_store {
-        Some(read_store) => router.merge(
-            sdkwork_claw_product::api::app_settlements_dashboard_router_with_read_store(read_store)
-                .layer(from_fn_with_state(
-                    subject_boundary_config,
-                    sdkwork_claw_http::app_request_subject_boundary,
-                )),
-        ),
+        Some(read_store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
+            sdkwork_claw_product::api::app_settlements_dashboard_router_with_read_store(read_store),
+            subject_boundary_config,
+        )),
         None => router.merge(sdkwork_claw_product::api::app_settlements_dashboard_router()),
     };
     router
@@ -917,19 +855,18 @@ pub fn app_forum_router_with_store_and_subject_boundary(
     app_session_config: AppSessionConfig,
     json_body_max_bytes: usize,
 ) -> Router {
-    sdkwork_claw_product::api::app_forum_router_with_store_community_links_and_json_body_limit(
-        feed_read_store,
-        feed_command_store,
-        comment_read_store,
-        comment_command_store,
-        Arc::new(OsApiKeySecretGenerator),
-        sdkwork_claw_product::api::configured_forum_community_links(),
-        json_body_max_bytes,
-    )
-    .layer(from_fn_with_state(
+    sdkwork_claw_http::apply_optional_app_subject_boundary_if_legacy(
+        sdkwork_claw_product::api::app_forum_router_with_store_community_links_and_json_body_limit(
+            feed_read_store,
+            feed_command_store,
+            comment_read_store,
+            comment_command_store,
+            Arc::new(OsApiKeySecretGenerator),
+            sdkwork_claw_product::api::configured_forum_community_links(),
+            json_body_max_bytes,
+        ),
         AppSubjectBoundaryConfig::new(trusted_subject_config, app_session_config),
-        sdkwork_claw_http::optional_app_request_subject_boundary,
-    ))
+    )
 }
 
 pub async fn router_with_sqlite_product_catalog(
@@ -1557,14 +1494,6 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
         build_provider_health_probe(provider_secret_map_config, runtime_toml)?;
     match config.engine {
         DatabaseEngine::Sqlite => {
-            let sqlite_options = SqliteConnectOptions::from_str(config.url.as_str())
-                .map_err(|error| {
-                    ProductCatalogRouterError::Sqlite(SqlCatalogLoadError::Database(error))
-                })?
-                .create_if_missing(true)
-                .foreign_keys(true)
-                .journal_mode(SqliteJournalMode::Wal)
-                .busy_timeout(Duration::from_secs(SQLITE_BUSY_TIMEOUT_SECONDS));
             let sqlite_pool_max_connections =
                 effective_sqlite_runtime_pool_max_connections(&config.url, config.max_connections);
             if sqlite_pool_max_connections > config.max_connections {
@@ -1574,13 +1503,12 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                     "SQLite runtime database pool max_connections was raised to protect app runtime streams and background refresh tasks"
                 );
             }
-            let pool = SqlitePoolOptions::new()
-                .max_connections(sqlite_pool_max_connections)
-                .acquire_timeout(Duration::from_secs(SQLITE_POOL_ACQUIRE_TIMEOUT_SECONDS))
-                .connect_with(sqlite_options)
+            let pool = connect_claw_sqlite_runtime_pool(&config)
                 .await
                 .map_err(|error| {
-                    ProductCatalogRouterError::Sqlite(SqlCatalogLoadError::Database(error))
+                    ProductCatalogRouterError::Sqlite(SqlCatalogLoadError::Database(
+                        sqlx::Error::Configuration(error.to_string().into()),
+                    ))
                 })?;
             if startup_install_mode.should_ensure() {
                 let install_report = DatabaseInstaller::for_sqlite(pool.clone())
@@ -1921,7 +1849,7 @@ pub async fn router_from_env() -> Result<Router, ProductCatalogRouterError> {
     let deployment_mode = deployment_mode_from_env_or_toml(runtime_toml.as_ref())
         .map_err(ProductCatalogRouterError::Config)?;
     ensure_server_safe_deployment_mode(deployment_mode, runtime_toml.as_ref())?;
-    router_with_database_config_api_key_trusted_subject_app_session_and_optional_provider_secret_map_config_and_startup_install_mode(
+    let router = router_with_database_config_api_key_trusted_subject_app_session_and_optional_provider_secret_map_config_and_startup_install_mode(
         config,
         require_api_key_security_config(api_key_security_config)?,
         require_trusted_subject_config(trusted_subject_config)?,
@@ -1932,7 +1860,8 @@ pub async fn router_from_env() -> Result<Router, ProductCatalogRouterError> {
         startup_install_mode,
         runtime_toml.as_ref(),
     )
-    .await
+    .await?;
+    Ok(crate::web_bootstrap::maybe_wrap_router_with_web_framework(router).await)
 }
 
 fn ensure_server_safe_deployment_mode(
@@ -2116,18 +2045,6 @@ pub fn shared_runtime_catalog_refresh_interval_from_toml(
     app_runtime_catalog_refresh_interval_from_env_or_toml(runtime_toml)
 }
 
-fn effective_sqlite_runtime_pool_max_connections(database_url: &str, configured: u32) -> u32 {
-    if is_sqlite_in_memory_database_url(database_url) {
-        return configured;
-    }
-    configured.max(SQLITE_RUNTIME_MIN_POOL_CONNECTIONS)
-}
-
-fn is_sqlite_in_memory_database_url(database_url: &str) -> bool {
-    let lower = database_url.to_ascii_lowercase();
-    lower == "sqlite::memory:" || lower.contains(":memory:") || lower.contains("mode=memory")
-}
-
 fn should_skip_sqlite_catalog_refresh(pool_size: u32, num_idle: usize) -> bool {
     pool_size > 0 && num_idle == 0
 }
@@ -2267,14 +2184,9 @@ fn app_model_rankings_router_with_subject_boundary(
     trusted_subject_config: &TrustedSubjectConfig,
     app_session_config: &AppSessionConfig,
 ) -> Router {
-    sdkwork_claw_product::api::app_model_rankings_router_with_read_store(read_store).layer(
-        from_fn_with_state(
-            AppSubjectBoundaryConfig::new(
-                trusted_subject_config.clone(),
-                app_session_config.clone(),
-            ),
-            sdkwork_claw_http::optional_app_request_subject_boundary,
-        ),
+    sdkwork_claw_http::apply_optional_app_subject_boundary_if_legacy(
+        sdkwork_claw_product::api::app_model_rankings_router_with_read_store(read_store),
+        AppSubjectBoundaryConfig::new(trusted_subject_config.clone(), app_session_config.clone()),
     )
 }
 
@@ -2804,11 +2716,11 @@ mod tests {
     use super::{
         allow_in_memory_runtime_stream_bus_fallback,
         app_runtime_catalog_refresh_interval_from_env_or_toml,
-        effective_sqlite_runtime_pool_max_connections,
         model_ranking_refresh_worker_config_from_env, router_from_env,
         should_invalidate_model_ranking_cache, should_skip_sqlite_catalog_refresh,
         sqlite_model_ranking_schema_ready,
     };
+    use sdkwork_claw_product::infrastructure::sql::pool::effective_sqlite_runtime_pool_max_connections;
     use sdkwork_claw_config::DeploymentMode;
     use sdkwork_claw_product::ports::{ModelRankingRefreshOutcome, ModelRankingRefreshRunStatus};
     use sqlx::sqlite::SqlitePoolOptions;

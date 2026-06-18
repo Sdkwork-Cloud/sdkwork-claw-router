@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "kind": "sdkwork.naming-migration",
+  "application": "sdkwork-claw-router",
+  "authority": "../sdkwork-specs/NAMING_SPEC.md",
+  "approvedAt": "2026-06-18",
+  "reviewBy": "2026-12-31",
+  "legacyCrates": [
+    {
+      "path": "services/sdkwork-claw-product",
+      "target": "services/sdkwork-router-product-service",
+      "reason": "Pre-standard product service crate; rename requires ADR, Cargo workspace migration, and deployment artifact updates."
+    },
+    {
+      "path": "services/sdkwork-claw-app",
+      "target": "services/sdkwork-clawrouter-app-api-server",
+      "reason": "Pre-standard app-api process crate; rename blocked on route crate and topology naming alignment."
+    },
+    {
+      "path": "services/sdkwork-claw-admin",
+      "target": "services/sdkwork-clawrouter-admin-api-server",
+      "reason": "Pre-standard admin-api process crate; rename blocked on backend route manifest and release workflow updates."
+    }
+  ]
+}

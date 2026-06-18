@@ -30,7 +30,7 @@ const X_SDKWORK_SUBJECT_ORGANIZATION_ID: &str = "x-sdkwork-subject-organization-
 const X_SDKWORK_SUBJECT_USER_ID: &str = "x-sdkwork-subject-user-id";
 const X_SDKWORK_SUBJECT_TIMESTAMP: &str = "x-sdkwork-subject-timestamp";
 const X_SDKWORK_SUBJECT_SIGNATURE: &str = "x-sdkwork-subject-signature";
-const DEFAULT_USER_OPERATOR_TYPE: i32 = 1;
+pub(crate) const DEFAULT_USER_OPERATOR_TYPE: i32 = 1;
 const APP_SESSION_TOKEN_VERSION: &str = "v1";
 const APP_SESSION_CLAIM_TOKEN_VERSION: &str = "v2";
 type HmacSha256 = Hmac<Sha256>;
@@ -318,10 +318,19 @@ impl fmt::Debug for AppSubjectBoundaryConfig {
 }
 
 pub fn attach_trusted_request_subject(request: &mut Request<Body>, subject: TrustedRequestSubject) {
-    insert_internal_trusted_subject_headers(request.headers_mut(), subject);
+    project_trusted_subject_for_legacy_handlers(request, subject);
     request
         .extensions_mut()
         .insert(iam_app_context_from_trusted_subject(subject));
+}
+
+/// Projects trusted subject headers and extensions for handlers that still
+/// read `TrustedRequestSubject::from_headers` or extension extractors.
+pub fn project_trusted_subject_for_legacy_handlers(
+    request: &mut Request<Body>,
+    subject: TrustedRequestSubject,
+) {
+    insert_internal_trusted_subject_headers(request.headers_mut(), subject);
     request.extensions_mut().insert(subject);
 }
 
@@ -345,6 +354,9 @@ pub async fn app_request_subject_boundary(
     mut request: Request<Body>,
     next: Next,
 ) -> Response {
+    if crate::web_framework_compat::claw_web_framework_enabled_from_env() {
+        return next.run(request).await;
+    }
     let method = request.method().as_str().to_owned();
     let path_and_query = request
         .uri()
@@ -385,6 +397,9 @@ pub async fn optional_app_request_subject_boundary(
     mut request: Request<Body>,
     next: Next,
 ) -> Response {
+    if crate::web_framework_compat::claw_web_framework_enabled_from_env() {
+        return next.run(request).await;
+    }
     let method = request.method().as_str().to_owned();
     let path_and_query = request
         .uri()

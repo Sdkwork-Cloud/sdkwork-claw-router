@@ -58,9 +58,8 @@ use sdkwork_claw_product::ports::{
 use sdkwork_claw_provider_adapter_contract::AdapterRouteStatus;
 use sdkwork_claw_provider_adapter_http::ProviderAdapterHttpClient;
 use sdkwork_claw_provider_adapter_registry::{ProviderAdapterRegistry, ProviderAdapterRouteConfig};
-use sqlx::sqlite::{SqliteConnectOptions, SqliteJournalMode, SqlitePool, SqlitePoolOptions};
+use sqlx::sqlite::SqlitePool;
 use sqlx::PgPool;
-use std::str::FromStr;
 use tokio::sync::Notify;
 use tokio::time::{sleep, Duration};
 
@@ -232,59 +231,8 @@ impl GatewayUsageRecorder for NotifyingGatewayUsageRecorder {
 
 const DEFAULT_OPENAI_RUNTIME_CATALOG_REFRESH_INTERVAL_MILLIS: u64 = 5_000;
 const CATALOG_REFRESH_FALLBACK_TICKS: u64 = 12;
-const SQLITE_RUNTIME_MIN_POOL_CONNECTIONS: u32 =
-    DatabaseConfig::DESKTOP_SQLITE_DEFAULT_MAX_CONNECTIONS;
-const SQLITE_POOL_ACQUIRE_TIMEOUT_SECONDS: u64 = 10;
-const SQLITE_BUSY_TIMEOUT_SECONDS: u64 = 30;
 
-fn effective_sqlite_runtime_pool_max_connections(database_url: &str, configured: u32) -> u32 {
-    if is_sqlite_in_memory_database_url(database_url) {
-        return configured;
-    }
-    configured.max(SQLITE_RUNTIME_MIN_POOL_CONNECTIONS)
-}
-
-fn is_sqlite_in_memory_database_url(database_url: &str) -> bool {
-    let lower = database_url.to_ascii_lowercase();
-    lower == "sqlite::memory:" || lower.contains(":memory:") || lower.contains("mode=memory")
-}
-
-fn build_sqlite_runtime_pool_options(
-    database_url: &str,
-    configured_max_connections: u32,
-) -> SqlitePoolOptions {
-    SqlitePoolOptions::new()
-        .max_connections(effective_sqlite_runtime_pool_max_connections(
-            database_url,
-            configured_max_connections,
-        ))
-        .acquire_timeout(Duration::from_secs(SQLITE_POOL_ACQUIRE_TIMEOUT_SECONDS))
-}
-
-fn build_sqlite_runtime_connect_options(
-    database_url: &str,
-) -> Result<SqliteConnectOptions, GatewayRouterError> {
-    SqliteConnectOptions::from_str(database_url)
-        .map_err(|error| GatewayRouterError::Sqlite(SqlCatalogLoadError::Database(error)))
-        .map(|options| {
-            options
-                .create_if_missing(true)
-                .foreign_keys(true)
-                .journal_mode(SqliteJournalMode::Wal)
-                .busy_timeout(Duration::from_secs(SQLITE_BUSY_TIMEOUT_SECONDS))
-        })
-}
-
-async fn connect_sqlite_runtime_pool(
-    config: &DatabaseConfig,
-) -> Result<SqlitePool, GatewayRouterError> {
-    build_sqlite_runtime_pool_options(&config.url, config.max_connections)
-        .connect_with(build_sqlite_runtime_connect_options(&config.url)?)
-        .await
-        .map_err(|error| GatewayRouterError::Sqlite(SqlCatalogLoadError::Database(error)))
-}
-
-use sdkwork_database_sqlx::{DatabasePool, PoolContext};
+use sdkwork_database_sqlx::DatabasePool;
 
 #[derive(Clone)]
 struct AllInOneRuntimeContext {
@@ -761,7 +709,11 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
     };
     match config.engine {
         DatabaseEngine::Sqlite => {
-            let pool = connect_sqlite_runtime_pool(&config).await?;
+            let pool = sdkwork_claw_product::infrastructure::sql::pool::connect_claw_sqlite_runtime_pool(
+                &config,
+            )
+            .await
+            .map_err(gateway_sqlite_pool_error)?;
             if startup_install_mode.should_ensure() {
                 let install_report = DatabaseInstaller::for_sqlite(pool.clone())
                     .with_env_options()?
@@ -956,12 +908,22 @@ pub async fn router_from_env() -> Result<Router, GatewayRouterError> {
     }
 }
 
+async fn finalize_all_in_one_route_surfaces(
+    backend_router: Router,
+    app_router: Router,
+) -> (Router, Router) {
+    (
+        sdkwork_router_backend_api::maybe_wrap_router_with_web_framework(backend_router).await,
+        sdkwork_router_app_api::maybe_wrap_router_with_web_framework(app_router).await,
+    )
+}
+
 pub async fn all_in_one_in_process_upstreams_from_env() -> anyhow::Result<EdgeInProcessUpstreams> {
     let context = all_in_one_runtime_context_from_env().await?;
     let gateway_router = build_gateway_router_from_all_in_one_context(&context)?;
     let (backend_router, app_router) = match &context.database_pool {
-        DatabasePool::Sqlite(pool, _) => (
-            sdkwork_router_backend_api::router_with_sqlite_shared_runtime(
+        DatabasePool::Sqlite(pool, _) => {
+            let backend_router = sdkwork_router_backend_api::router_with_sqlite_shared_runtime(
                 context.database_config.clone(),
                 pool.clone(),
                 Arc::clone(&context.catalog),
@@ -974,8 +936,8 @@ pub async fn all_in_one_in_process_upstreams_from_env() -> anyhow::Result<EdgeIn
                 context.request_limits_config.clone(),
                 context.models_catalog_root.clone(),
             )
-            .map_err(anyhow::Error::new)?,
-            sdkwork_router_app_api::router_with_sqlite_shared_runtime(
+            .map_err(anyhow::Error::new)?;
+            let app_router = sdkwork_router_app_api::router_with_sqlite_shared_runtime(
                 context.database_config.clone(),
                 pool.clone(),
                 Arc::clone(&context.catalog),
@@ -991,10 +953,11 @@ pub async fn all_in_one_in_process_upstreams_from_env() -> anyhow::Result<EdgeIn
                 context.model_ranking_refresh_worker_config.clone(),
             )
             .await
-            .map_err(anyhow::Error::new)?,
-        ),
-        DatabasePool::Postgres(pool, _) => (
-            sdkwork_router_backend_api::router_with_postgres_shared_runtime(
+            .map_err(anyhow::Error::new)?;
+            finalize_all_in_one_route_surfaces(backend_router, app_router).await
+        }
+        DatabasePool::Postgres(pool, _) => {
+            let backend_router = sdkwork_router_backend_api::router_with_postgres_shared_runtime(
                 context.database_config.clone(),
                 pool.clone(),
                 Arc::clone(&context.catalog),
@@ -1007,8 +970,8 @@ pub async fn all_in_one_in_process_upstreams_from_env() -> anyhow::Result<EdgeIn
                 context.request_limits_config.clone(),
                 context.models_catalog_root.clone(),
             )
-            .map_err(anyhow::Error::new)?,
-            sdkwork_router_app_api::router_with_postgres_shared_runtime(
+            .map_err(anyhow::Error::new)?;
+            let app_router = sdkwork_router_app_api::router_with_postgres_shared_runtime(
                 context.database_config.clone(),
                 pool.clone(),
                 Arc::clone(&context.catalog),
@@ -1024,8 +987,9 @@ pub async fn all_in_one_in_process_upstreams_from_env() -> anyhow::Result<EdgeIn
                 context.model_ranking_refresh_worker_config.clone(),
             )
             .await
-            .map_err(anyhow::Error::new)?,
-        ),
+            .map_err(anyhow::Error::new)?;
+            finalize_all_in_one_route_surfaces(backend_router, app_router).await
+        }
     };
     let sdkwork_api_gateway_router =
         build_embedded_sdkwork_api_gateway_router(backend_router.clone(), app_router.clone())
@@ -1248,20 +1212,11 @@ async fn all_in_one_runtime_context_from_env() -> anyhow::Result<AllInOneRuntime
 
     match database_config.engine {
         DatabaseEngine::Sqlite => {
-            let sqlite_options = SqliteConnectOptions::from_str(database_config.url.as_str())
-                .map_err(|error| {
-                    anyhow::Error::new(GatewayRouterError::Sqlite(SqlCatalogLoadError::Database(
-                        error,
-                    )))
-                })?
-                .create_if_missing(true)
-                .foreign_keys(true)
-                .journal_mode(SqliteJournalMode::Wal)
-                .busy_timeout(Duration::from_secs(SQLITE_BUSY_TIMEOUT_SECONDS));
-            let sqlite_pool_max_connections = effective_sqlite_runtime_pool_max_connections(
-                &database_config.url,
-                database_config.max_connections,
-            );
+            let sqlite_pool_max_connections =
+                sdkwork_claw_product::infrastructure::sql::pool::effective_sqlite_runtime_pool_max_connections(
+                    &database_config.url,
+                    database_config.max_connections,
+                );
             if sqlite_pool_max_connections > database_config.max_connections {
                 tracing::warn!(
                     configured_max_connections = database_config.max_connections,
@@ -1269,14 +1224,18 @@ async fn all_in_one_runtime_context_from_env() -> anyhow::Result<AllInOneRuntime
                     "SQLite runtime database pool max_connections was raised to protect all-in-one background tasks"
                 );
             }
-            let pool = SqlitePoolOptions::new()
-                .max_connections(sqlite_pool_max_connections)
-                .acquire_timeout(Duration::from_secs(SQLITE_POOL_ACQUIRE_TIMEOUT_SECONDS))
-                .connect_with(sqlite_options)
+            let database_pool =
+                sdkwork_claw_product::infrastructure::sql::pool::connect_claw_sqlite_runtime_database_pool(
+                    &database_config,
+                )
                 .await
-                .map_err(|error| {
+                .map_err(|error| anyhow::Error::new(gateway_sqlite_pool_error(error)))?;
+            let pool = database_pool
+                .as_sqlite()
+                .cloned()
+                .ok_or_else(|| {
                     anyhow::Error::new(GatewayRouterError::Sqlite(SqlCatalogLoadError::Database(
-                        error,
+                        sqlx::Error::Configuration("expected sqlite database pool".into()),
                     )))
                 })?;
             let database_installer = Arc::new(
@@ -1319,10 +1278,9 @@ async fn all_in_one_runtime_context_from_env() -> anyhow::Result<AllInOneRuntime
                 shared_catalog_refresh_interval,
                 provider_runtime.circuit_breaker_recovery_window_seconds,
             );
-            let db_pool_ctx = pool_context(&database_config);
             Ok(AllInOneRuntimeContext {
                 database_config,
-                database_pool: DatabasePool::Sqlite(pool, db_pool_ctx),
+                database_pool,
                 database_installer,
                 catalog,
                 api_key_security_config,
@@ -1345,13 +1303,26 @@ async fn all_in_one_runtime_context_from_env() -> anyhow::Result<AllInOneRuntime
             })
         }
         DatabaseEngine::Postgres => {
-            let pool = sqlx::postgres::PgPoolOptions::new()
-                .max_connections(database_config.max_connections)
-                .connect(&database_config.url)
+            let database_pool =
+                sdkwork_claw_product::infrastructure::sql::pool::connect_standard_database_pool(
+                    &database_config,
+                )
                 .await
                 .map_err(|error| {
                     anyhow::Error::new(GatewayRouterError::Postgres(
-                        PostgresCatalogLoadError::Database(error),
+                        PostgresCatalogLoadError::Database(sqlx::Error::Configuration(
+                            error.to_string().into(),
+                        )),
+                    ))
+                })?;
+            let pool = database_pool
+                .as_postgres()
+                .cloned()
+                .ok_or_else(|| {
+                    anyhow::Error::new(GatewayRouterError::Postgres(
+                        PostgresCatalogLoadError::Database(sqlx::Error::Configuration(
+                            "expected postgres database pool".into(),
+                        )),
                     ))
                 })?;
             let database_installer = Arc::new(
@@ -1394,10 +1365,9 @@ async fn all_in_one_runtime_context_from_env() -> anyhow::Result<AllInOneRuntime
                 shared_catalog_refresh_interval,
                 provider_runtime.circuit_breaker_recovery_window_seconds,
             );
-            let db_pool_ctx = pool_context(&database_config);
             Ok(AllInOneRuntimeContext {
                 database_config,
-                database_pool: DatabasePool::Postgres(pool, db_pool_ctx),
+                database_pool,
                 database_installer,
                 catalog,
                 api_key_security_config,
@@ -1457,18 +1427,10 @@ fn build_gateway_router_from_all_in_one_context(
     .map_err(anyhow::Error::new)
 }
 
-fn pool_context(config: &DatabaseConfig) -> PoolContext {
-    PoolContext {
-        config: sdkwork_database_config::DatabaseConfig {
-            engine: match config.engine {
-                DatabaseEngine::Sqlite => sdkwork_database_config::DatabaseEngine::Sqlite,
-                DatabaseEngine::Postgres => sdkwork_database_config::DatabaseEngine::Postgres,
-            },
-            url: config.url.clone(),
-            max_connections: config.max_connections,
-            ..sdkwork_database_config::DatabaseConfig::default()
-        },
-    }
+fn gateway_sqlite_pool_error(error: impl std::fmt::Display) -> GatewayRouterError {
+    GatewayRouterError::Sqlite(SqlCatalogLoadError::Database(sqlx::Error::Configuration(
+        error.to_string().into(),
+    )))
 }
 
 fn sticky_store_from_shared_database_pool(pool: &DatabasePool) -> Arc<dyn StickyRouteStore> {
@@ -2524,24 +2486,26 @@ mod tests {
     #[test]
     fn gateway_runtime_sqlite_pool_options_raise_file_database_max_connections_and_set_acquire_timeout(
     ) {
-        let options =
-            build_sqlite_runtime_pool_options("sqlite://D:/tmp/sdkwork-claw-router.db", 1);
+        use sdkwork_claw_product::infrastructure::sql::pool::{
+            effective_sqlite_runtime_pool_max_connections, SQLITE_POOL_ACQUIRE_TIMEOUT_SECONDS,
+            SQLITE_RUNTIME_MIN_POOL_CONNECTIONS,
+        };
 
         assert_eq!(
             SQLITE_RUNTIME_MIN_POOL_CONNECTIONS,
-            options.get_max_connections()
+            effective_sqlite_runtime_pool_max_connections("sqlite://D:/tmp/sdkwork-claw-router.db", 1)
         );
-        assert_eq!(
-            Duration::from_secs(SQLITE_POOL_ACQUIRE_TIMEOUT_SECONDS),
-            options.get_acquire_timeout()
-        );
+        assert_eq!(10, SQLITE_POOL_ACQUIRE_TIMEOUT_SECONDS);
     }
 
     #[test]
     fn gateway_runtime_sqlite_pool_options_preserve_in_memory_configured_max_connections() {
-        let options = build_sqlite_runtime_pool_options("sqlite::memory:", 1);
+        use sdkwork_claw_product::infrastructure::sql::pool::effective_sqlite_runtime_pool_max_connections;
 
-        assert_eq!(1, options.get_max_connections());
+        assert_eq!(
+            1,
+            effective_sqlite_runtime_pool_max_connections("sqlite::memory:", 1)
+        );
     }
 
     #[test]

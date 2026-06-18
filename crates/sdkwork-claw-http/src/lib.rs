@@ -7,10 +7,13 @@ pub mod metrics;
 pub mod readiness;
 pub mod router;
 pub mod shutdown;
+pub mod web_bridge;
+pub mod web_framework_compat;
 
 pub use auth::{
-    app_request_subject_boundary, attach_trusted_request_subject, optional_app_request_subject,
-    optional_app_request_subject_boundary, sign_app_session_token,
+    app_request_subject_boundary, attach_trusted_request_subject,
+    optional_app_request_subject, optional_app_request_subject_boundary,
+    project_trusted_subject_for_legacy_handlers, sign_app_session_token,
     sign_app_session_token_with_claims, sign_trusted_request_subject,
     trusted_request_subject_boundary, verified_app_request_subject,
     verified_signed_trusted_request_subject, verify_app_session_authorization_header,
@@ -39,3 +42,10 @@ pub use router::{
 };
 pub use sdkwork_claw_contract::{ApiSurface, ContractOperation};
 pub use shutdown::wait_for_shutdown_signal;
+pub use web_bridge::{
+    inject_legacy_handler_context_from_web_context, trusted_request_subject_from_web_context,
+};
+pub use web_framework_compat::{
+    apply_app_subject_boundary_if_legacy, apply_optional_app_subject_boundary_if_legacy,
+    claw_web_framework_enabled_from_env,
+};
