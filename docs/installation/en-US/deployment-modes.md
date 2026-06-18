@@ -10,7 +10,12 @@ SDKWork Claw Router release packages cover `archive`, `service`, `container`, an
 | `archive` | `self-contained-archive` | PostgreSQL | run gateway directly | private server, manual deployment |
 | `service` | native installer (`.deb`, `.msi`, `.pkg`) | PostgreSQL | host service manager | long-running production service |
 | `container` | `container-image` | PostgreSQL | Containerfile / entrypoint | Docker, Kubernetes, container platforms |
-| `source` | source checkout | gateway-backed client dev; PostgreSQL for explicit server dev | `pnpm dev` / `pnpm server:dev` / `pnpm start` | development, validation, private builds |
+| `source` | source checkout | PostgreSQL unified-process dev (default); gateway-backed client for `desktop:dev` | `pnpm clawrouter:dev` / `pnpm dev` / `pnpm server:dev` / `pnpm start` | development, validation, private builds |
+
+Source workspace note: `pnpm clawrouter:dev` (aliases `pnpm dev`, `pnpm server:dev`)
+starts the integrated product server development profile.
+`pnpm clawrouter:dev:desktop` (aliases `pnpm desktop:dev`, `pnpm tauri:dev`) starts
+the `sdkwork-api-gateway`-backed client workspace only.
 
 Redis is enabled and required by default for archive, service, and container
 server deployments because the server cache runtime uses shared Redis-backed

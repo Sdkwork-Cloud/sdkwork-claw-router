@@ -1,3 +1,6 @@
+use std::sync::Mutex;
+
+use axum::body::Body;
 use serde_json::{json, Value};
 
 use super::{
@@ -19,16 +22,23 @@ impl InvocationInterceptor for ResponseNormalizationInterceptor {
 
     fn after<'a>(&'a self, invocation: &'a mut Invocation) -> InvocationFuture<'a, ()> {
         Box::pin(async move {
+            // Take the stream body out of the dispatch response before normalization
+            let stream_body = invocation
+                .dispatch
+                .response
+                .as_ref()
+                .and_then(|r| r.take_stream_body());
             let normalized = invocation
                 .dispatch
                 .response
                 .as_ref()
-                .map(|response| normalize_dispatch_response(invocation, response))
+                .map(|response| normalize_dispatch_response(invocation, response, stream_body))
                 .unwrap_or_else(|| InvocationNormalizedResponse {
                     status_code: 204,
                     body: None,
                     body_bytes: None,
                     content_type: None,
+                    stream_body: Mutex::new(None),
                 });
             invocation.telemetry.normalized_response = Some(normalized);
             Ok(())
@@ -53,6 +63,7 @@ impl InvocationInterceptor for ResponseNormalizationInterceptor {
                 })),
                 body_bytes: None,
                 content_type: Some("application/json".to_owned()),
+                stream_body: Mutex::new(None),
             });
             Ok(())
         })
@@ -62,11 +73,25 @@ impl InvocationInterceptor for ResponseNormalizationInterceptor {
 fn normalize_dispatch_response(
     invocation: &Invocation,
     response: &InvocationDispatchResponse,
+    stream_body: Option<Body>,
 ) -> InvocationNormalizedResponse {
     if invocation.dispatch.mode == DispatchMode::InternalProviderAdapter {
-        if let Some(normalized) = normalize_adapter_response(response) {
+        if let Some(mut normalized) = normalize_adapter_response(response) {
+            if stream_body.is_some() {
+                normalized.stream_body = Mutex::new(stream_body);
+            }
             return normalized;
         }
+    }
+    // For streaming responses, pass the stream body through and skip body serialization
+    if stream_body.is_some() {
+        return InvocationNormalizedResponse {
+            status_code: response.status_code,
+            body: None,
+            body_bytes: None,
+            content_type: response.content_type.clone(),
+            stream_body: Mutex::new(stream_body),
+        };
     }
     InvocationNormalizedResponse {
         status_code: response.status_code,
@@ -78,6 +103,7 @@ fn normalize_dispatch_response(
                 .as_ref()
                 .map(|_| "application/json".to_owned())
         }),
+        stream_body: Mutex::new(None),
     }
 }
 
@@ -109,6 +135,7 @@ fn normalize_adapter_response(
         body: provider_body,
         body_bytes: None,
         content_type,
+        stream_body: Mutex::new(None),
     })
 }
 
@@ -121,6 +148,7 @@ fn status_code_for_error(error: &InvocationError) -> u16 {
         super::InvocationErrorKind::Routing
         | super::InvocationErrorKind::Pricing
         | super::InvocationErrorKind::Dispatch
+        | super::InvocationErrorKind::ProviderPassthroughFailed
         | super::InvocationErrorKind::Usage
         | super::InvocationErrorKind::Telemetry
         | super::InvocationErrorKind::Internal => 502,

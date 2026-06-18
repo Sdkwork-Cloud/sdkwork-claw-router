@@ -417,7 +417,7 @@ fn model_mapping_snapshot_queries_use_normalized_rule_binding_item_tables() {
 #[test]
 fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
     let queries = PricingCatalogSql::snapshot_load_queries();
-    assert_eq!(14, queries.len());
+    assert_eq!(15, queries.len());
 
     let sql = queries.join("\n");
     for required_table in [
@@ -430,6 +430,7 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
         "ai_channel_group_metric_snapshot",
         "iam_gateway_access_policy",
         "ai_quota_policy",
+        "iam_gateway_risk_rule",
         "ai_provider",
         "ai_channel",
         "ai_channel_credential",
@@ -891,6 +892,8 @@ fn row_mappers_convert_sql_rows_into_domain_objects() {
                 .to_owned(),
         ),
         group_bindings_json: r#"[{"groupId":10,"priority":7,"weight":80,"apiScope":["openai.chat_completions"],"capabilities":["llm"]}]"#.to_owned(),
+        channel_health_status: 1,
+        credential_health_status: 1,
     }
     .try_into_domain()
     .unwrap();
@@ -983,6 +986,9 @@ fn row_mappers_convert_sql_rows_into_domain_objects() {
     let quota_policy = QuotaPolicyRow {
         id: 900,
         quota_limit: Some("1000.000000".to_owned()),
+        requests_per_second: None,
+        requests_per_day: None,
+        burst_limit: None,
     }
     .try_into_domain()
     .unwrap();
@@ -1696,6 +1702,8 @@ fn priced_catalog_rows() -> PricingCatalogRows {
                         .to_owned(),
                 ),
                 group_bindings_json: "[]".to_owned(),
+                channel_health_status: 1,
+                credential_health_status: 1,
             },
             ProviderChannelRouteRow {
                 provider_code: "azure_openai".to_owned(),
@@ -1717,6 +1725,8 @@ fn priced_catalog_rows() -> PricingCatalogRows {
                 timeout_ms: None,
                 retry_policy_json: None,
                 group_bindings_json: "[]".to_owned(),
+                channel_health_status: 1,
+                credential_health_status: 1,
             },
         ],
         routing_policies: vec![RoutingPolicyRow {
@@ -1788,7 +1798,11 @@ fn priced_catalog_rows() -> PricingCatalogRows {
         quota_policies: vec![QuotaPolicyRow {
             id: 900,
             quota_limit: Some("1000.000000".to_owned()),
+            requests_per_second: None,
+            requests_per_day: None,
+            burst_limit: None,
         }],
+        gateway_risk_rules: vec![],
         channel_group_metric_snapshots: vec![ChannelGroupMetricSnapshotRow {
             group_id: 10,
             capacity_used: Some("37.500000".to_owned()),

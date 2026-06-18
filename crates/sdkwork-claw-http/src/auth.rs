@@ -7,11 +7,14 @@ use axum::http::{request::Parts, Extensions, HeaderMap, HeaderValue, Request, St
 use axum::middleware::Next;
 use axum::response::{IntoResponse, Response};
 use axum::Json;
+use base64::{engine::general_purpose::URL_SAFE_NO_PAD, Engine as _};
 use hmac::{Hmac, Mac};
-use sdkwork_claw_config::{AppSessionConfig, TrustedSubjectConfig};
+use sdkwork_claw_config::{
+    AppSessionConfig, DeploymentMode as RuntimeDeploymentMode, TrustedSubjectConfig,
+};
 use sdkwork_claw_security::redact_secret;
 use sdkwork_iam_context_service::{AuthLevel, DeploymentMode, Environment, IamAppContext};
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 use sha2::Sha256;
 
 const AUTHORIZATION: &str = "authorization";
@@ -29,6 +32,7 @@ const X_SDKWORK_SUBJECT_TIMESTAMP: &str = "x-sdkwork-subject-timestamp";
 const X_SDKWORK_SUBJECT_SIGNATURE: &str = "x-sdkwork-subject-signature";
 const DEFAULT_USER_OPERATOR_TYPE: i32 = 1;
 const APP_SESSION_TOKEN_VERSION: &str = "v1";
+const APP_SESSION_CLAIM_TOKEN_VERSION: &str = "v2";
 type HmacSha256 = Hmac<Sha256>;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -57,6 +61,7 @@ pub enum ApiKeyIdentityError {
     InvalidHeaderValue(&'static str),
     InvalidAuthorizationScheme,
     EmptyCredential(ApiKeyCredentialSource),
+    QueryKeyNotAllowed,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -66,6 +71,45 @@ pub struct TrustedRequestSubject {
     pub user_id: i64,
     pub operator_id: i64,
     pub operator_type: i32,
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "lowercase")]
+pub enum AppSessionTokenKind {
+    Auth,
+    Access,
+    Refresh,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct AppSessionTokenClaims {
+    pub token_kind: AppSessionTokenKind,
+    pub tenant_id: i64,
+    pub organization_id: i64,
+    pub user_id: i64,
+    pub session_id: String,
+    pub app_id: String,
+    pub login_scope: String,
+    pub environment: String,
+    pub deployment_mode: String,
+    pub auth_level: String,
+    pub data_scope: Vec<String>,
+    pub permission_scope: Vec<String>,
+    pub issued_at: i64,
+    pub expires_at: i64,
+}
+
+impl AppSessionTokenClaims {
+    pub fn trusted_subject(&self) -> TrustedRequestSubject {
+        TrustedRequestSubject {
+            tenant_id: self.tenant_id,
+            organization_id: self.organization_id,
+            user_id: self.user_id,
+            operator_id: self.user_id,
+            operator_type: DEFAULT_USER_OPERATOR_TYPE,
+        }
+    }
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -92,6 +136,8 @@ pub enum AppSessionTokenError {
     InvalidTokenFormat,
     InvalidPositiveInteger(&'static str),
     InvalidTimestamp(&'static str),
+    InvalidTokenType,
+    InvalidLoginScope,
     IssuedAtOutsideClockSkew,
     Expired,
     InvalidSignature,
@@ -167,6 +213,12 @@ impl fmt::Display for ApiKeyIdentityError {
                 write!(formatter, "authorization header must use Bearer scheme")
             }
             Self::EmptyCredential(_) => write!(formatter, "api key credential must not be empty"),
+            Self::QueryKeyNotAllowed => {
+                write!(
+                    formatter,
+                    "api key query parameter is not allowed in this deployment mode"
+                )
+            }
         }
     }
 }
@@ -538,6 +590,22 @@ pub fn sign_app_session_token(
     )
 }
 
+pub fn sign_app_session_token_with_claims(
+    config: &AppSessionConfig,
+    claims: &AppSessionTokenClaims,
+) -> String {
+    let payload = app_session_claim_payload(claims);
+    let encoded_payload = URL_SAFE_NO_PAD.encode(payload.as_bytes());
+    let mut mac = app_session_hmac_for_config(config);
+    mac.update(encoded_payload.as_bytes());
+    format!(
+        "{}.{}.{}",
+        APP_SESSION_CLAIM_TOKEN_VERSION,
+        encoded_payload,
+        hex::encode(mac.finalize().into_bytes())
+    )
+}
+
 pub fn verify_app_session_authorization_header(
     config: &AppSessionConfig,
     authorization: &str,
@@ -557,8 +625,22 @@ pub fn verify_dual_app_session_headers(
         .ok_or(AppSessionTokenError::MissingBearerToken)?
         .to_str()
         .map_err(|_| AppSessionTokenError::InvalidHeaderValue(AUTHORIZATION))?;
-    let auth_subject =
-        verify_app_session_authorization_header(config, authorization, now_unix_seconds)?;
+    let auth_token = parse_app_session_authorization_bearer(authorization)?;
+    let auth_claims = verify_app_session_token_claims(config, auth_token, now_unix_seconds)
+        .and_then(|claims| {
+            if claims.token_kind == AppSessionTokenKind::Auth {
+                Ok(claims)
+            } else {
+                Err(AppSessionTokenError::InvalidTokenType)
+            }
+        });
+    let auth_subject = match auth_claims.as_ref() {
+        Ok(claims) => claims.trusted_subject(),
+        Err(AppSessionTokenError::InvalidTokenFormat) => {
+            verify_app_session_token(config, auth_token, now_unix_seconds)?
+        }
+        Err(error) => return Err(error.clone()),
+    };
 
     let access_token = headers
         .get(ACCESS_TOKEN)
@@ -569,9 +651,26 @@ pub fn verify_dual_app_session_headers(
     if access_token.is_empty() {
         return Err(AppSessionTokenError::MissingAccessToken);
     }
-    let access_subject = verify_app_session_token(config, access_token, now_unix_seconds)?;
+    let access_claims = verify_app_session_token_claims(config, access_token, now_unix_seconds)
+        .and_then(|claims| {
+            if claims.token_kind == AppSessionTokenKind::Access {
+                Ok(claims)
+            } else {
+                Err(AppSessionTokenError::InvalidTokenType)
+            }
+        });
+    let access_subject = match access_claims.as_ref() {
+        Ok(claims) => claims.trusted_subject(),
+        Err(AppSessionTokenError::InvalidTokenFormat) => {
+            verify_app_session_token(config, access_token, now_unix_seconds)?
+        }
+        Err(error) => return Err(error.clone()),
+    };
     if auth_subject != access_subject {
         return Err(AppSessionTokenError::SubjectMismatch);
+    }
+    if let (Ok(auth_claims), Ok(access_claims)) = (auth_claims, access_claims) {
+        validate_matching_app_session_claims(&auth_claims, &access_claims)?;
     }
     Ok(auth_subject)
 }
@@ -581,6 +680,10 @@ pub fn verify_app_session_token(
     token: &str,
     now_unix_seconds: i64,
 ) -> Result<TrustedRequestSubject, AppSessionTokenError> {
+    if token.trim().starts_with(APP_SESSION_CLAIM_TOKEN_VERSION) {
+        return verify_app_session_token_claims(config, token, now_unix_seconds)
+            .map(|claims| claims.trusted_subject());
+    }
     let parts: Vec<&str> = token.trim().split('.').collect();
     if parts.len() != 7 || parts[0] != APP_SESSION_TOKEN_VERSION {
         return Err(AppSessionTokenError::InvalidTokenFormat);
@@ -603,6 +706,25 @@ pub fn verify_app_session_token(
     };
     verify_app_session_signature(config, subject, issued_at, expires_at, parts[6])?;
     Ok(subject)
+}
+
+pub fn verify_app_session_token_claims(
+    config: &AppSessionConfig,
+    token: &str,
+    now_unix_seconds: i64,
+) -> Result<AppSessionTokenClaims, AppSessionTokenError> {
+    let parts: Vec<&str> = token.trim().split('.').collect();
+    if parts.len() != 3 || parts[0] != APP_SESSION_CLAIM_TOKEN_VERSION {
+        return Err(AppSessionTokenError::InvalidTokenFormat);
+    }
+    verify_app_session_claim_signature(config, parts[1], parts[2])?;
+    let decoded_payload = URL_SAFE_NO_PAD
+        .decode(parts[1])
+        .map_err(|_| AppSessionTokenError::InvalidTokenFormat)?;
+    let claims: AppSessionTokenClaims = serde_json::from_slice(&decoded_payload)
+        .map_err(|_| AppSessionTokenError::InvalidTokenFormat)?;
+    validate_app_session_claims(config, &claims, now_unix_seconds)?;
+    Ok(claims)
 }
 
 impl fmt::Display for TrustedSubjectBoundaryError {
@@ -657,6 +779,15 @@ impl fmt::Display for AppSessionTokenError {
                     formatter,
                     "app session {field} must be a valid unix timestamp"
                 )
+            }
+            Self::InvalidTokenType => {
+                write!(
+                    formatter,
+                    "app session token type is invalid for this header"
+                )
+            }
+            Self::InvalidLoginScope => {
+                write!(formatter, "app session login scope is invalid")
             }
             Self::IssuedAtOutsideClockSkew => {
                 write!(
@@ -847,6 +978,10 @@ fn app_session_payload(subject: TrustedRequestSubject, issued_at: i64, expires_a
     )
 }
 
+fn app_session_claim_payload(claims: &AppSessionTokenClaims) -> String {
+    serde_json::to_string(claims).expect("app session claims should serialize")
+}
+
 fn parse_session_positive_i64(
     value: &str,
     field: &'static str,
@@ -860,6 +995,16 @@ fn parse_session_positive_i64(
     Ok(parsed)
 }
 
+fn parse_session_non_negative_i64(
+    value: i64,
+    field: &'static str,
+) -> Result<i64, AppSessionTokenError> {
+    if value < 0 {
+        return Err(AppSessionTokenError::InvalidPositiveInteger(field));
+    }
+    Ok(value)
+}
+
 fn parse_session_timestamp(value: &str, field: &'static str) -> Result<i64, AppSessionTokenError> {
     let parsed = value
         .parse::<i64>()
@@ -868,6 +1013,58 @@ fn parse_session_timestamp(value: &str, field: &'static str) -> Result<i64, AppS
         return Err(AppSessionTokenError::InvalidTimestamp(field));
     }
     Ok(parsed)
+}
+
+fn validate_app_session_claims(
+    config: &AppSessionConfig,
+    claims: &AppSessionTokenClaims,
+    now_unix_seconds: i64,
+) -> Result<(), AppSessionTokenError> {
+    parse_session_non_negative_i64(claims.organization_id, "organization_id")?;
+    if claims.tenant_id <= 0 {
+        return Err(AppSessionTokenError::InvalidPositiveInteger("tenant_id"));
+    }
+    if claims.user_id <= 0 {
+        return Err(AppSessionTokenError::InvalidPositiveInteger("user_id"));
+    }
+    if claims.session_id.trim().is_empty()
+        || claims.app_id.trim().is_empty()
+        || claims.environment.trim().is_empty()
+        || claims.deployment_mode.trim().is_empty()
+        || claims.auth_level.trim().is_empty()
+    {
+        return Err(AppSessionTokenError::InvalidTokenFormat);
+    }
+    if claims.expires_at <= claims.issued_at {
+        return Err(AppSessionTokenError::InvalidTimestamp("expires_at"));
+    }
+    validate_app_session_time_window(
+        config,
+        claims.issued_at,
+        claims.expires_at,
+        now_unix_seconds,
+    )?;
+    match (claims.login_scope.trim(), claims.organization_id) {
+        ("TENANT", 0) => Ok(()),
+        ("ORGANIZATION", organization_id) if organization_id > 0 => Ok(()),
+        _ => Err(AppSessionTokenError::InvalidLoginScope),
+    }
+}
+
+fn validate_matching_app_session_claims(
+    auth_claims: &AppSessionTokenClaims,
+    access_claims: &AppSessionTokenClaims,
+) -> Result<(), AppSessionTokenError> {
+    if auth_claims.tenant_id != access_claims.tenant_id
+        || auth_claims.organization_id != access_claims.organization_id
+        || auth_claims.user_id != access_claims.user_id
+        || auth_claims.session_id != access_claims.session_id
+        || auth_claims.app_id != access_claims.app_id
+        || auth_claims.login_scope != access_claims.login_scope
+    {
+        return Err(AppSessionTokenError::SubjectMismatch);
+    }
+    Ok(())
 }
 
 fn validate_app_session_time_window(
@@ -886,6 +1083,19 @@ fn validate_app_session_time_window(
         return Err(AppSessionTokenError::InvalidTimestamp("expires_at"));
     }
     Ok(())
+}
+
+fn verify_app_session_claim_signature(
+    config: &AppSessionConfig,
+    encoded_payload: &str,
+    signature: &str,
+) -> Result<(), AppSessionTokenError> {
+    let decoded_signature =
+        hex::decode(signature).map_err(|_| AppSessionTokenError::InvalidSignature)?;
+    let mut mac = app_session_hmac_for_config(config);
+    mac.update(encoded_payload.as_bytes());
+    mac.verify_slice(&decoded_signature)
+        .map_err(|_| AppSessionTokenError::InvalidSignature)
 }
 
 fn verify_app_session_signature(
@@ -963,9 +1173,20 @@ fn parse_credential(
     if let Some(value) = header_value(headers, X_GOOG_API_KEY)? {
         return credential(value, ApiKeyCredentialSource::GoogleApiKeyHeader).map(Some);
     }
-    query_key(uri)
-        .map(|value| credential(value, ApiKeyCredentialSource::QueryKey))
-        .transpose()
+    if let Some(value) = query_key(uri) {
+        if !allows_query_string_api_key() {
+            return Err(ApiKeyIdentityError::QueryKeyNotAllowed);
+        }
+        return credential(value, ApiKeyCredentialSource::QueryKey).map(Some);
+    }
+    Ok(None)
+}
+
+fn allows_query_string_api_key() -> bool {
+    matches!(
+        RuntimeDeploymentMode::from_env(),
+        RuntimeDeploymentMode::Desktop
+    )
 }
 
 fn parse_authorization_bearer(value: &str) -> Result<ApiKeyCredential, ApiKeyIdentityError> {

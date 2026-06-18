@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sdkwork-claw-router-edge
+  labels:
+    app: sdkwork-claw-router
+    component: edge
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sdkwork-claw-router
+      component: edge
+  template:
+    metadata:
+      labels:
+        app: sdkwork-claw-router
+        component: edge
+    spec:
+      terminationGracePeriodSeconds: 60
+      containers:
+        - name: edge
+          image: registry.sdkwork.com/apps/sdkwork-claw-router:latest
+          ports:
+            - containerPort: 3900
+              name: http
+          env:
+            - name: SDKWORK_CLAW_DEPLOYMENT_MODE
+              value: kubernetes
+            - name: SDKWORK_CLAW_CONFIG_FILE
+              value: /etc/sdkwork/clawrouter.toml
+          volumeMounts:
+            - name: config
+              mountPath: /etc/sdkwork
+              readOnly: true
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+            periodSeconds: 10
+            timeoutSeconds: 3
+          readinessProbe:
+            httpGet:
+              path: /readyz
+              port: http
+            periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 3
+      volumes:
+        - name: config
+          secret:
+            secretName: sdkwork-claw-router-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sdkwork-claw-router-edge
+spec:
+  selector:
+    app: sdkwork-claw-router
+    component: edge
+  ports:
+    - name: http
+      port: 3900
+      targetPort: http

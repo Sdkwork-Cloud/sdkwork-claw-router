@@ -16,6 +16,14 @@ import {
   portalPublicRuntimeEnvLineValue,
   resolvePortalPublicRuntimeEnv,
 } from '../portal-public-runtime-env.mjs';
+import {
+  applyTopologyProfileToWorkspaceSettings,
+  bridgeLegacyWorkspaceEnv,
+  bridgeTopologyBindEnvToLegacyRustEnv,
+  loadTopologyProfileForWorkspace,
+  resolveServiceLayoutFromRuntimeMode,
+  waitForWorkspaceHealthSurfaces,
+} from '../lib/claw-router-topology.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -137,10 +145,12 @@ function withSharedFoundationPortalRuntimeEnv(env, settings, {
   const runtimeEnvInput = productSurfaceMode === 'shared-gateway'
     ? {
         ...env,
+        ...bridgeLegacyWorkspaceEnv(env, { runtimeMode: settings.runtimeMode }),
         PORTAL_PUBLIC_SDK_BASE_URL: sdkBaseUrl,
       }
     : {
         ...env,
+        ...bridgeLegacyWorkspaceEnv(env, { runtimeMode: settings.runtimeMode }),
         PORTAL_PUBLIC_SDK_BASE_URL: sdkBaseUrl,
         PORTAL_PUBLIC_API_BASE_URL: String(env.PORTAL_PUBLIC_API_BASE_URL ?? GATEWAY_API_PREFIX).trim(),
         PORTAL_PUBLIC_OPEN_API_BASE_URL: String(
@@ -172,7 +182,7 @@ function withSharedFoundationPortalRuntimeEnv(env, settings, {
     VITE_CLAWROUTER_APP_API_BASE_URL: clawRouterAppApiBaseUrl,
     VITE_CLAWROUTER_BACKEND_API_BASE_URL: clawRouterBackendApiBaseUrl,
     VITE_SDKWORK_APPBASE_APP_API_BASE_URL:
-      runtimeEnv.VITE_SDKWORK_APPBASE_APP_API_BASE_URL ?? sharedFoundationAppApiBaseUrl(settings),
+      runtimeEnv.VITE_SDKWORK_APPBASE_APP_API_BASE_URL ?? clawRouterAppApiBaseUrl,
     VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL:
       runtimeEnv.VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL ?? sharedFoundationBackendApiBaseUrl(settings),
     VITE_SDKWORK_DRIVE_APP_API_BASE_URL:
@@ -256,6 +266,15 @@ export function parseWorkspaceArgs(argv = []) {
     runtimeMode: 'all-in-one',
     runtimeModeExplicit: false,
     explicitForwarding: false,
+    hosting: 'self-hosted',
+    serviceLayout: 'unified-process',
+    profileId: undefined,
+    gatewayBindExplicit: false,
+    adminApiBindExplicit: false,
+    appApiBindExplicit: false,
+    serverBindExplicit: false,
+    portalBindExplicit: false,
+    sdkworkApiGatewayBindExplicit: false,
     install: false,
     dryRun: false,
     planFormat: 'text',
@@ -271,26 +290,32 @@ export function parseWorkspaceArgs(argv = []) {
         break;
       case '--gateway-bind':
         settings.gatewayBind = requireValue(argv, index, arg);
+        settings.gatewayBindExplicit = true;
         index += 1;
         break;
       case '--admin-api-bind':
         settings.adminApiBind = requireValue(argv, index, arg);
+        settings.adminApiBindExplicit = true;
         index += 1;
         break;
       case '--app-api-bind':
         settings.appApiBind = requireValue(argv, index, arg);
+        settings.appApiBindExplicit = true;
         index += 1;
         break;
       case '--server-bind':
         settings.serverBind = requireValue(argv, index, arg);
+        settings.serverBindExplicit = true;
         index += 1;
         break;
       case '--portal-bind':
         settings.portalBind = requireValue(argv, index, arg);
+        settings.portalBindExplicit = true;
         index += 1;
         break;
       case '--sdkwork-api-gateway-bind':
         settings.sdkworkApiGatewayBind = requireValue(argv, index, arg);
+        settings.sdkworkApiGatewayBindExplicit = true;
         index += 1;
         break;
       case '--external-scheme':
@@ -315,14 +340,26 @@ export function parseWorkspaceArgs(argv = []) {
         settings.explicitForwarding = true;
         index += 1;
         break;
+      case '--topology':
+        throw new Error(
+          '--topology is retired; use --hosting (self-hosted|cloud-hosted) and --service-layout (unified-process|split-services)',
+        );
+      case '--hosting':
+        settings.hosting = requireValue(argv, index, arg);
+        index += 1;
+        break;
+      case '--service-layout':
+        settings.serviceLayout = requireValue(argv, index, arg);
+        index += 1;
+        break;
       case '--internal-distributed':
-        settings.runtimeMode = 'distributed';
-        settings.runtimeModeExplicit = true;
-        break;
+        throw new Error(
+          '--internal-distributed is retired; use --service-layout split-services',
+        );
       case '--all-in-one':
-        settings.runtimeMode = 'all-in-one';
-        settings.runtimeModeExplicit = true;
-        break;
+        throw new Error(
+          '--all-in-one is retired; use --service-layout unified-process',
+        );
       case '--client-only':
         settings.runtimeMode = 'client';
         settings.runtimeModeExplicit = true;
@@ -364,6 +401,30 @@ export function parseWorkspaceArgs(argv = []) {
 
   if (settings.explicitForwarding && !settings.runtimeModeExplicit) {
     settings.runtimeMode = 'distributed';
+    settings.serviceLayout = 'split-services';
+  }
+  if (settings.runtimeModeExplicit && !settings.serviceLayout) {
+    settings.serviceLayout = resolveServiceLayoutFromRuntimeMode(settings.runtimeMode)
+      ?? settings.serviceLayout;
+  }
+  if (settings.runtimeMode !== 'client' && settings.databaseUrl === null) {
+    settings.databaseUrl = environmentDatabaseConfig().databaseUrl ?? defaultPostgresDatabaseUrl();
+  }
+  const topologyProfile = loadTopologyProfileForWorkspace({
+    hosting: settings.hosting,
+    serviceLayout: settings.serviceLayout,
+    env: process.env,
+    includeIamDatabase: false,
+  });
+  applyTopologyProfileToWorkspaceSettings(settings, topologyProfile.profileEnv);
+  const legacyBindEnv = bridgeTopologyBindEnvToLegacyRustEnv(
+    topologyProfile.profileEnv,
+    settings,
+  );
+  for (const [key, value] of Object.entries({ ...topologyProfile.profileEnv, ...legacyBindEnv })) {
+    if (value !== undefined && !key.startsWith('VITE_')) {
+      process.env[key] = value;
+    }
   }
   const edgeServerOrigin = forwardingOriginFromBind(settings.serverBind, '--server-bind');
   if (settings.runtimeMode === 'client') {
@@ -816,6 +877,10 @@ Starts the all-in-one Rust edge runtime with an embedded SDKWork API Gateway plu
 Use --client-only to start only the external sdkwork-api-gateway plus the portal dev server.
 
 Options:
+  --hosting <self-hosted|cloud-hosted>
+                         Topology hosting model (default self-hosted)
+  --service-layout <unified-process|split-services>
+                         Topology service layout (default unified-process)
   --database-url <url>    Optional shared SDKWORK_CLAW_DATABASE_URL override (default ${defaultPostgresDatabaseUrl()})
   --gateway-bind <bind>   SDKWORK_CLAW_GATEWAY_BIND override (default ${DEFAULT_GATEWAY_BIND})
   --admin-api-bind <bind> SDKWORK_CLAW_ADMIN_API_BIND override (default ${DEFAULT_ADMIN_API_BIND})
@@ -830,8 +895,6 @@ Options:
                          Rust edge server target for /backend/v3/api
   --app-api-forward-url <url>
                          Rust edge server target for /app/v3/api
-  --all-in-one           Start the default single Rust edge API process
-  --internal-distributed Start separate gateway/admin/app API services for internal validation only
   --client-only          Start only sdkwork-api-gateway plus the portal dev server
   --external-scheme <scheme>
                          External request scheme reported upstream: http or https (default ${DEFAULT_EXTERNAL_SCHEME})
@@ -1104,6 +1167,8 @@ async function main() {
 
   const blockingSteps = plan.steps.filter((step) => step.blocking === true);
   const serviceSteps = plan.steps.filter((step) => step.blocking !== true);
+  const portalSteps = serviceSteps.filter((step) => step.name === 'portal');
+  const backendServiceSteps = serviceSteps.filter((step) => step.name !== 'portal');
 
   for (const step of blockingSteps) {
     try {
@@ -1117,7 +1182,33 @@ async function main() {
     }
   }
 
-  for (const step of serviceSteps) {
+  for (const step of backendServiceSteps) {
+    const child = spawnStep(step, children);
+    child.on('error', (error) => {
+      console.error(`[start-workspace] ${step.name} failed: ${error.message}`);
+      shutdown(`${step.name} error`, 1);
+    });
+    child.on('exit', (code, signal) => {
+      if (shuttingDown) {
+        return;
+      }
+      if (signal || (code ?? 0) !== 0) {
+        shutdown(`${step.name} exit`, code ?? 1);
+      }
+    });
+  }
+
+  if (portalSteps.length > 0) {
+    try {
+      await waitForWorkspaceHealthSurfaces(settings);
+    } catch (error) {
+      console.error(`[start-workspace] ${error.message}`);
+      shutdown('health check failed', 1);
+      return;
+    }
+  }
+
+  for (const step of portalSteps) {
     const child = spawnStep(step, children);
     child.on('error', (error) => {
       console.error(`[start-workspace] ${step.name} failed: ${error.message}`);

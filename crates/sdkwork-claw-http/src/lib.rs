@@ -3,15 +3,20 @@ pub mod contract_routes;
 pub mod error;
 pub mod headers;
 pub mod health;
+pub mod metrics;
+pub mod readiness;
 pub mod router;
+pub mod shutdown;
 
 pub use auth::{
     app_request_subject_boundary, attach_trusted_request_subject, optional_app_request_subject,
-    optional_app_request_subject_boundary, sign_app_session_token, sign_trusted_request_subject,
+    optional_app_request_subject_boundary, sign_app_session_token,
+    sign_app_session_token_with_claims, sign_trusted_request_subject,
     trusted_request_subject_boundary, verified_app_request_subject,
     verified_signed_trusted_request_subject, verify_app_session_authorization_header,
-    verify_app_session_token, ApiKeyCredential, ApiKeyCredentialSource, ApiKeyIdentity,
-    ApiKeyIdentityError, AppSessionTokenError, AppSubjectBoundaryConfig, TrustedRequestSubject,
+    verify_app_session_token, verify_app_session_token_claims, ApiKeyCredential,
+    ApiKeyCredentialSource, ApiKeyIdentity, ApiKeyIdentityError, AppSessionTokenClaims,
+    AppSessionTokenError, AppSessionTokenKind, AppSubjectBoundaryConfig, TrustedRequestSubject,
     TrustedRequestSubjectError, TrustedSubjectBoundaryError,
 };
 pub use contract_routes::{
@@ -23,9 +28,14 @@ pub use contract_routes::{
 };
 pub use error::{NotImplementedData, PlusErrorEnvelope};
 pub use headers::{default_security_headers, redact_http_header};
+pub use metrics::{metrics, record_http_request};
+pub use readiness::ReadinessCheckFn;
 pub use router::{
     service_router, service_router_with_contract_routes,
     service_router_with_contract_routes_and_database_config, service_router_with_database_config,
-    service_router_with_filtered_contract_routes_and_database_config, ContractOperationFilter,
+    service_router_with_filtered_contract_routes_and_database_config,
+    service_router_with_filtered_contract_routes_database_config_and_readiness_check,
+    ContractOperationFilter,
 };
 pub use sdkwork_claw_contract::{ApiSurface, ContractOperation};
+pub use shutdown::wait_for_shutdown_signal;

@@ -166,7 +166,10 @@ where
             .unwrap_or_else(|| invocation.resource.api_code.clone()),
         catalog_key: sticky_route.catalog_key,
         requested_model: invocation.resource.requested_model.clone(),
-        provider_model: sticky_route.provider_model,
+        provider_model: sticky_provider_model_fallback(
+            sticky_route.provider_model.as_deref(),
+            invocation,
+        ),
         region_code: sticky_route
             .region_code
             .or_else(|| {
@@ -366,6 +369,23 @@ where
 
 fn same_region(left: &str, right: &str) -> bool {
     normalize_region(left).eq_ignore_ascii_case(&normalize_region(right))
+}
+
+fn sticky_provider_model_fallback(
+    sticky_provider_model: Option<&str>,
+    invocation: &Invocation,
+) -> Option<String> {
+    let trimmed = sticky_provider_model
+        .map(str::trim)
+        .filter(|v| !v.is_empty());
+    if trimmed.is_some() {
+        return trimmed.map(str::to_owned);
+    }
+    invocation
+        .resource
+        .provider_native_model
+        .clone()
+        .or_else(|| invocation.resource.requested_model.clone())
 }
 
 fn normalize_region(value: &str) -> String {

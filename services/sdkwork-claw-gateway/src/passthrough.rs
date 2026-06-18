@@ -1,9 +1,9 @@
 use crate::gateway_api_key_auth::authenticate_gateway_api_key;
+use crate::invocation_http::response_from_invocation_error;
 use crate::openai_passthrough_routes::{
     apply_openai_method_passthrough_routes, apply_openai_passthrough_routes,
     apply_stored_chat_completion_passthrough_routes,
 };
-use crate::provider_account_auth::render_provider_account_auth;
 use crate::provider_passthrough_transport::{
     build_provider_passthrough_client, forward_provider_passthrough_to_target, PassthroughClient,
     ProviderPassthroughTarget,
@@ -18,7 +18,6 @@ use axum::http::{StatusCode, Uri};
 use axum::response::{IntoResponse, Response};
 use axum::routing::{delete, MethodRouter};
 use axum::{Json, Router};
-use bytes::Bytes;
 use http_body_util::BodyExt;
 use sdkwork_claw_config::{
     ProviderAdapterConfig, ProviderPassthroughAuth, ProviderPassthroughAuthType,
@@ -26,12 +25,12 @@ use sdkwork_claw_config::{
 };
 use sdkwork_claw_product::api::normalize_user_agent_header;
 use sdkwork_claw_product::application::{
-    find_builtin_ai_route, ApiKeySecretHasher, AuthenticatedApiKeyContext, PricingResolver,
-    ProviderRouteSelector, ResolveModelPriceQuery, SelectProviderChannelRouteQuery,
+    find_builtin_ai_route, ApiKeySecretHasher, AuthenticatedApiKeyContext, InvocationError,
+    InvocationErrorKind, PricingResolver, ResolveModelPriceQuery,
 };
 use sdkwork_claw_product::domain::{
     ensure_canonical_model_catalog_key, provider_native_model_id, BillingMeter, DecimalValue,
-    DomainError, DomainResult, ProviderChannelRoute, RoutingCapability,
+    DomainError, DomainResult,
 };
 use sdkwork_claw_product::ports::{
     GatewayUsageQuantity, GatewayUsageRecordCommand, GatewayUsageRecorder, PricingCatalog,
@@ -75,30 +74,6 @@ struct ProviderPassthroughRuntime {
 struct ProviderNativeAdapterRuntime {
     registry: Arc<ProviderAdapterRegistry>,
     client: ProviderAdapterHttpClient,
-}
-
-#[derive(Debug, Clone)]
-struct ProviderNativeRouteMetadata {
-    endpoint_key: Option<String>,
-    api_code: String,
-    route_key: String,
-    capability: RoutingCapability,
-}
-
-#[derive(Debug, Clone)]
-struct ProviderNativeDirectUsageContext {
-    api_key_context: AuthenticatedApiKeyContext,
-    route_metadata: ProviderNativeRouteMetadata,
-    account_route: ProviderChannelRoute,
-    request_id: String,
-    trace_id: Option<String>,
-    requested_model: String,
-    requested_model_catalog_key: String,
-    catalog_key: String,
-    provider_native_model: String,
-    request_path: String,
-    http_method: String,
-    user_agent: Option<String>,
 }
 
 const PROVIDER_NATIVE_PASSTHROUGH_PROVIDERS: &[&str] = &[
@@ -331,18 +306,7 @@ async fn forward_provider_passthrough(
 ) -> Response {
     match runtime.forward(request, None).await {
         Ok(response) => response,
-        Err(message) => (
-            StatusCode::BAD_GATEWAY,
-            Json(json!({
-                "error": {
-                    "message": message,
-                    "type": "server_error",
-                    "param": null,
-                    "code": "provider_passthrough_relay_failed"
-                }
-            })),
-        )
-            .into_response(),
+        Err(message) => passthrough_relay_failed("provider_passthrough_relay_failed", message),
     }
 }
 
@@ -359,31 +323,15 @@ where
         Ok(context) => context,
         Err(response) => return response,
     };
-    let result = match state.secret_resolver.as_ref() {
-        Some(secret_resolver) => {
-            state
-                .runtime
-                .forward_with_channel_route(
-                    state.catalog.as_ref(),
-                    secret_resolver.as_ref(),
-                    request,
-                    &context,
-                    state.usage_recorder.as_ref(),
-                )
-                .await
-        }
-        None => {
-            state
-                .runtime
-                .forward_authenticated(
-                    state.catalog.as_ref(),
-                    request,
-                    &context,
-                    state.usage_recorder.as_ref(),
-                )
-                .await
-        }
-    };
+    let result = state
+        .runtime
+        .forward_authenticated(
+            state.catalog.as_ref(),
+            request,
+            &context,
+            state.usage_recorder.as_ref(),
+        )
+        .await;
     match result {
         Ok(response) => response,
         Err(message) => passthrough_relay_failed("provider_passthrough_relay_failed", message),
@@ -424,19 +372,9 @@ fn passthrough_not_configured(code: &'static str, message: &'static str, path: &
         .into_response()
 }
 
-fn passthrough_relay_failed(code: &'static str, message: String) -> Response {
-    (
-        StatusCode::BAD_GATEWAY,
-        Json(json!({
-            "error": {
-                "message": message,
-                "type": "server_error",
-                "param": null,
-                "code": code
-            }
-        })),
-    )
-        .into_response()
+fn passthrough_relay_failed(_code: &'static str, message: String) -> Response {
+    let error = InvocationError::new(InvocationErrorKind::ProviderPassthroughFailed, message);
+    response_from_invocation_error(&error)
 }
 
 struct AuthenticatedProviderPassthroughState<C> {
@@ -627,103 +565,6 @@ impl ProviderPassthroughRuntime {
         self.forward_to_target(request, target, upstream_uri).await
     }
 
-    async fn forward_with_channel_route<C>(
-        &self,
-        catalog: &C,
-        secret_resolver: &(dyn ProviderSecretResolver + Send + Sync),
-        request: Request,
-        context: &AuthenticatedApiKeyContext,
-        usage_recorder: Option<&UsageRecorder>,
-    ) -> Result<Response, String>
-    where
-        C: PricingCatalog + Send + Sync + 'static,
-    {
-        let standard_path = standard_path_from_passthrough_uri(request.uri())?;
-        let metadata_route = self.provider_native_route_metadata(
-            request.uri(),
-            request.method().as_str(),
-            standard_path.as_str(),
-        )?;
-        let account_route =
-            select_provider_native_channel_route(catalog, context, &metadata_route)?;
-        let target = channel_route_to_passthrough_target(&account_route, secret_resolver)?;
-        let final_mode = self
-            .adapter
-            .as_ref()
-            .map(|adapter| {
-                adapter
-                    .registry
-                    .resolve_standard_path(&ProviderAdapterLookup {
-                        provider_code: account_route.provider_code.as_str(),
-                        method: request.method().as_str(),
-                        standard_path: standard_path.as_str(),
-                        capability: Some(provider_native_capability_code(
-                            metadata_route.capability,
-                        )),
-                        endpoint_key: metadata_route
-                            .endpoint_key
-                            .as_deref()
-                            .or(Some(metadata_route.route_key.as_str())),
-                    })
-                    .mode
-            })
-            .unwrap_or(ProviderInvocationMode::DirectHttp);
-        match final_mode {
-            ProviderInvocationMode::InternalHttpAdapter(route) => {
-                let adapter = self
-                    .adapter
-                    .as_ref()
-                    .expect("adapter mode requires provider-native adapter runtime");
-                let (invocation, response, user_agent) = self
-                    .invoke_adapter(
-                        request,
-                        Some(context),
-                        &target,
-                        adapter,
-                        route,
-                        standard_path,
-                        account_route.channel_id,
-                        account_route.region_code.as_str(),
-                        account_route.timeout_ms,
-                    )
-                    .await?;
-                record_adapter_usage_lines(
-                    catalog,
-                    usage_recorder,
-                    context,
-                    &invocation,
-                    &response,
-                    user_agent.as_deref(),
-                )
-                .await?;
-                adapter_invocation_response(response)
-            }
-            ProviderInvocationMode::DirectHttp => {
-                let upstream_uri = build_provider_passthrough_uri(&target, request.uri())?;
-                let (request, body) = buffer_request(request).await?;
-                let usage_context = build_provider_native_direct_usage_context(
-                    &request,
-                    &body,
-                    context,
-                    &metadata_route,
-                    &account_route,
-                );
-                let response = self
-                    .forward_to_target(request, &target, upstream_uri)
-                    .await?;
-                let status_code = response.status().as_u16();
-                record_provider_native_direct_usage_if_needed(
-                    catalog,
-                    usage_recorder,
-                    usage_context,
-                    status_code,
-                )
-                .await?;
-                Ok(response)
-            }
-        }
-    }
-
     async fn forward_openai(&self, request: Request) -> Result<Response, String> {
         let target = self
             .providers
@@ -810,26 +651,6 @@ impl ProviderPassthroughRuntime {
             .iter()
             .any(|target| target.provider() == "openai")
     }
-
-    fn provider_native_route_metadata(
-        &self,
-        uri: &Uri,
-        method: &str,
-        standard_path: &str,
-    ) -> Result<ProviderNativeRouteMetadata, String> {
-        if let Some(adapter) = &self.adapter {
-            if let Some(route) = adapter
-                .registry
-                .resolve_standard_path_metadata(method, standard_path)
-            {
-                return provider_native_route_metadata_from_adapter_route(&route);
-            }
-        }
-
-        let provider = provider_from_passthrough_path(uri.path())
-            .ok_or_else(|| "provider passthrough path is invalid".to_owned())?;
-        provider_native_route_metadata_from_standard_path(provider, standard_path)
-    }
 }
 
 async fn record_adapter_usage_lines<C>(
@@ -876,228 +697,6 @@ where
             })?;
     }
     Ok(())
-}
-
-async fn record_provider_native_direct_usage_if_needed<C>(
-    catalog: &C,
-    usage_recorder: Option<&UsageRecorder>,
-    context: ProviderNativeDirectUsageContext,
-    status_code: u16,
-) -> Result<(), String>
-where
-    C: PricingCatalog + Send + Sync + 'static,
-{
-    let Some(usage_recorder) = usage_recorder else {
-        return Ok(());
-    };
-    if !(200..=299).contains(&status_code) {
-        return Ok(());
-    }
-    let command = provider_native_direct_usage_command(catalog, &context, status_code)
-        .map_err(|error| format!("provider-native direct usage recording failed: {error}"))?;
-    usage_recorder
-        .record_gateway_usage(command)
-        .await
-        .map_err(|error| format!("provider-native direct usage recording failed: {error}"))?;
-    Ok(())
-}
-
-fn build_provider_native_direct_usage_context(
-    request: &Request,
-    body: &[u8],
-    api_key_context: &AuthenticatedApiKeyContext,
-    route_metadata: &ProviderNativeRouteMetadata,
-    account_route: &ProviderChannelRoute,
-) -> ProviderNativeDirectUsageContext {
-    let provider_native_model = provider_native_model_from_request_body(body)
-        .or_else(|| provider_native_model_from_standard_path(request.uri().path()))
-        .unwrap_or_else(|| {
-            provider_native_model_id(
-                route_metadata
-                    .endpoint_key
-                    .as_deref()
-                    .unwrap_or(account_route.provider_code.as_str()),
-            )
-        });
-    let catalog_key = canonical_provider_native_catalog_key(
-        account_route.provider_code.as_str(),
-        provider_native_model.as_str(),
-    );
-    let requested_model_catalog_key = catalog_key.clone();
-    ProviderNativeDirectUsageContext {
-        api_key_context: api_key_context.clone(),
-        route_metadata: route_metadata.clone(),
-        account_route: account_route.clone(),
-        request_id: generate_server_request_id(),
-        trace_id: request_header_value(request.headers(), "x-trace-id")
-            .or_else(|| request_header_value(request.headers(), "traceparent")),
-        requested_model: provider_native_model.clone(),
-        requested_model_catalog_key,
-        catalog_key,
-        provider_native_model,
-        request_path: request.uri().path().to_owned(),
-        http_method: request.method().to_string(),
-        user_agent: request_header_value(request.headers(), USER_AGENT.as_str())
-            .and_then(|value| normalize_user_agent_header(value.as_str())),
-    }
-}
-
-async fn buffer_request(request: Request) -> Result<(Request, Bytes), String> {
-    let (parts, body) = request.into_parts();
-    let body = body
-        .collect()
-        .await
-        .map_err(|error| format!("failed to read provider passthrough body: {error}"))?
-        .to_bytes();
-    let request = Request::from_parts(parts, Body::from(body.clone()));
-    Ok((request, body))
-}
-
-fn provider_native_direct_usage_command<C>(
-    catalog: &C,
-    context: &ProviderNativeDirectUsageContext,
-    status_code: u16,
-) -> DomainResult<GatewayUsageRecordCommand>
-where
-    C: PricingCatalog + Send + Sync + 'static,
-{
-    let billing_meter = BillingMeter::ApiRequest;
-    let quantity = GatewayUsageQuantity::single_request();
-    let price = PricingResolver::new(catalog).resolve(ResolveModelPriceQuery {
-        api_key_id: context.api_key_context.api_key_id,
-        channel_group_id: Some(context.api_key_context.group_id),
-        model: context.catalog_key.clone(),
-        billing_meter: billing_meter.clone(),
-        provider_code: Some(context.account_route.provider_code.clone()),
-        channel_id: Some(context.account_route.channel_id),
-        region_code: Some(context.account_route.region_code.clone()),
-    })?;
-    let official_reference_amount = adapter_meter_amount(
-        price.official_reference.unit_price.unit_price,
-        quantity.billable_quantity.as_str(),
-        &billing_meter,
-    )?;
-    let upstream_cost_amount = match price.upstream_cost.as_ref() {
-        Some(upstream) => adapter_meter_amount(
-            upstream.unit_price.unit_price,
-            quantity.billable_quantity.as_str(),
-            &billing_meter,
-        )?,
-        None => DecimalValue::ZERO,
-    };
-    let customer_charge_amount = adapter_meter_amount(
-        price.customer_charge.unit_price,
-        quantity.billable_quantity.as_str(),
-        &billing_meter,
-    )?;
-    let billable_quantity = quantity.billable_quantity.clone();
-    let pricing_snapshot = provider_native_direct_pricing_snapshot(
-        context,
-        &billing_meter,
-        &price,
-        &billable_quantity,
-    );
-
-    Ok(GatewayUsageRecordCommand {
-        request_id: context.request_id.clone(),
-        trace_id: context.trace_id.clone(),
-        tenant_id: context.api_key_context.tenant_id,
-        organization_id: context.api_key_context.organization_id,
-        user_id: context.api_key_context.user_id,
-        api_key_id: context.api_key_context.api_key_id,
-        api_key_name_snapshot: context.api_key_context.api_key_name_snapshot.clone(),
-        channel_group_id: context.api_key_context.group_id,
-        channel_group_snapshot: context.api_key_context.group_code.clone(),
-        catalog_key: context.catalog_key.clone(),
-        requested_model: context.requested_model.clone(),
-        requested_model_catalog_key: context.requested_model_catalog_key.clone(),
-        provider_code: context.account_route.provider_code.clone(),
-        channel_id: context.account_route.channel_id,
-        provider_model: context.provider_native_model.clone(),
-        provider_native_model: context.provider_native_model.clone(),
-        region_code: context.account_route.region_code.clone(),
-        request_path: context.request_path.clone(),
-        http_method: context.http_method.clone(),
-        user_agent: context.user_agent.clone(),
-        http_status: status_code,
-        streaming: false,
-        modality: adapter_modality_for_meter(&billing_meter),
-        usage_type: provider_native_direct_usage_type(&billing_meter),
-        billing_meter_code: billing_meter.code().to_owned(),
-        billable_quantity,
-        prompt_tokens: 0,
-        completion_tokens: 0,
-        cached_tokens: 0,
-        total_tokens: 0,
-        request_count: quantity.request_count,
-        result_count: quantity.result_count,
-        item_count: quantity.item_count,
-        character_count: quantity.character_count,
-        image_count: quantity.image_count,
-        audio_seconds: quantity.audio_seconds,
-        video_seconds: quantity.video_seconds,
-        latency_ms: None,
-        ttft_ms: None,
-        provider_error_code: None,
-        error_type: None,
-        error_message_masked: None,
-        base_input_unit_price: price.customer_charge_before_rate.to_fixed_string(6),
-        base_output_unit_price: "0.000000".to_owned(),
-        cache_read_unit_price: "0.000000".to_owned(),
-        rate_multiplier: price.rate_multiplier.to_fixed_string(6),
-        reference_multiplier: price.reference_multiplier.to_fixed_string(6),
-        official_reference_amount: official_reference_amount
-            .to_fixed_string(USAGE_AMOUNT_DECIMAL_DIGITS),
-        customer_charge_amount: customer_charge_amount.to_fixed_string(USAGE_AMOUNT_DECIMAL_DIGITS),
-        upstream_cost_amount: upstream_cost_amount.to_fixed_string(USAGE_AMOUNT_DECIMAL_DIGITS),
-        currency: price.customer_charge.currency,
-        pricing_plan_code: price.pricing_plan_code,
-        pricing_snapshot,
-    })
-}
-
-fn provider_native_direct_usage_type(billing_meter: &BillingMeter) -> i64 {
-    ADAPTER_USAGE_TYPE_BASE + 9_000 + adapter_billing_meter_ordinal(billing_meter)
-}
-
-fn provider_native_direct_pricing_snapshot(
-    context: &ProviderNativeDirectUsageContext,
-    billing_meter: &BillingMeter,
-    price: &sdkwork_claw_product::application::ResolvedModelPrice,
-    billable_quantity: &str,
-) -> String {
-    json!({
-        "source": "provider_native_direct_passthrough",
-        "meter": {
-            "code": billing_meter.code(),
-            "billableQuantity": billable_quantity
-        },
-        "route": {
-            "routeKey": context.route_metadata.route_key.as_str(),
-            "apiCode": context.route_metadata.api_code.as_str()
-        },
-        "model": {
-            "catalogKey": context.catalog_key.as_str(),
-            "requestedCatalogKey": context.requested_model_catalog_key.as_str(),
-            "model": context.requested_model.as_str(),
-            "providerNativeModel": context.provider_native_model.as_str()
-        },
-        "provider": {
-            "code": context.account_route.provider_code.as_str(),
-            "channelId": context.account_route.channel_id
-        },
-        "pricingPlan": {
-            "code": price.pricing_plan_code.as_str()
-        },
-        "group": {
-            "code": price.group_code.as_str()
-        },
-        "multipliers": {
-            "rate": price.rate_multiplier.to_fixed_string(6),
-            "reference": price.reference_multiplier.to_fixed_string(6)
-        }
-    })
-    .to_string()
 }
 
 fn adapter_usage_line_command<C>(
@@ -1592,124 +1191,6 @@ fn provider_adapter_request_body(body: &[u8]) -> Result<Value, String> {
         .map_err(|error| format!("provider adapter route requires a JSON request body: {error}"))
 }
 
-fn select_provider_native_channel_route<C>(
-    catalog: &C,
-    context: &AuthenticatedApiKeyContext,
-    metadata: &ProviderNativeRouteMetadata,
-) -> Result<ProviderChannelRoute, String>
-where
-    C: PricingCatalog + Send + Sync + 'static,
-{
-    ProviderRouteSelector::new(catalog)
-        .select_channel_route(SelectProviderChannelRouteQuery {
-            context: context.clone(),
-            api_code: metadata.api_code.clone(),
-            route_key: metadata.route_key.clone(),
-            capability: metadata.capability,
-        })
-        .map(|selection| selection.route)
-        .map_err(|error| error.to_string())
-}
-
-fn channel_route_to_passthrough_target(
-    route: &ProviderChannelRoute,
-    secret_resolver: &(dyn ProviderSecretResolver + Send + Sync),
-) -> Result<ProviderPassthroughTarget, String> {
-    let base_url = route.base_url.as_deref().ok_or_else(|| {
-        format!(
-            "provider route is not available for configured channel route: selected channel {} has no base URL",
-            route.channel_id
-        )
-    })?;
-    let secret_ref = route.secret_ref.as_deref().ok_or_else(|| {
-        format!(
-            "provider route is not available for configured channel route: selected channel {} has no secret_ref",
-            route.channel_id
-        )
-    })?;
-    let secret_value = secret_resolver
-        .resolve_secret_value(secret_ref)
-        .map_err(|error| {
-            format!("provider route is not available for configured channel route: {error}")
-        })?;
-    let rendered_auth = render_provider_account_auth(&route.auth_profile, secret_value)?;
-    Ok(ProviderPassthroughTarget::new(
-        route.provider_code.clone(),
-        base_url.trim_end_matches('/').to_owned(),
-        rendered_auth.auth,
-        rendered_auth.default_headers,
-    ))
-}
-
-fn provider_native_routing_capability(value: &str) -> Option<RoutingCapability> {
-    match value.trim().to_ascii_lowercase().as_str() {
-        "chat" | "llm" | "text" => Some(RoutingCapability::Chat),
-        "image" | "image_generation" => Some(RoutingCapability::Image),
-        "audio" => Some(RoutingCapability::Audio),
-        "music" | "music_generation" => Some(RoutingCapability::Music),
-        "video" | "video_generation" => Some(RoutingCapability::Video),
-        "embedding" | "embeddings" => Some(RoutingCapability::Embedding),
-        "rerank" => Some(RoutingCapability::Rerank),
-        "network" => Some(RoutingCapability::Network),
-        _ => None,
-    }
-}
-
-fn provider_native_capability_code(capability: RoutingCapability) -> &'static str {
-    match capability {
-        RoutingCapability::Chat => "chat",
-        RoutingCapability::Image => "image_generation",
-        RoutingCapability::Audio => "audio",
-        RoutingCapability::Music => "music_generation",
-        RoutingCapability::Video => "video_generation",
-        RoutingCapability::Embedding => "embedding",
-        RoutingCapability::Rerank => "rerank",
-        RoutingCapability::Network => "network",
-    }
-}
-
-fn provider_native_route_metadata_from_adapter_route(
-    route: &ProviderAdapterRouteConfig,
-) -> Result<ProviderNativeRouteMetadata, String> {
-    let api_code = standard_api_code_for_provider_adapter_route(route).ok_or_else(|| {
-        format!(
-            "provider native adapter route {} {} requires a seeded standard API code mapping",
-            route.provider_code, route.standard_path_pattern
-        )
-    })?;
-    let capability = route
-        .capability
-        .as_deref()
-        .and_then(provider_native_routing_capability)
-        .or_else(|| find_builtin_ai_route(api_code.as_str()).map(|route| route.capability))
-        .ok_or_else(|| {
-            format!("provider native adapter route {api_code} requires a known routing capability")
-        })?;
-    Ok(ProviderNativeRouteMetadata {
-        endpoint_key: route.endpoint_key.clone(),
-        route_key: api_code.clone(),
-        api_code,
-        capability,
-    })
-}
-
-fn provider_native_route_metadata_from_standard_path(
-    provider: &str,
-    standard_path: &str,
-) -> Result<ProviderNativeRouteMetadata, String> {
-    let api_code = provider_native_api_code_from_standard_path(provider, standard_path)
-        .ok_or_else(|| "provider passthrough target is not configured".to_owned())?;
-    let route = find_builtin_ai_route(api_code.as_str()).ok_or_else(|| {
-        format!("provider native route {api_code} requires a seeded standard API code mapping")
-    })?;
-    Ok(ProviderNativeRouteMetadata {
-        endpoint_key: Some(api_code.clone()),
-        route_key: route.route_key.to_owned(),
-        api_code,
-        capability: route.capability,
-    })
-}
-
 fn build_provider_native_adapter_invocation(
     parts: &axum::http::request::Parts,
     target: &ProviderPassthroughTarget,
@@ -1860,6 +1341,7 @@ fn endpoint_key_from_standard_path(provider: &str, standard_path: &str) -> Strin
     provider_native_api_code_from_endpoint_key(normalized_key.as_str()).unwrap_or(normalized_key)
 }
 
+#[allow(dead_code)]
 fn standard_api_code_for_provider_adapter_route(
     route: &ProviderAdapterRouteConfig,
 ) -> Option<String> {
@@ -1931,6 +1413,7 @@ fn provider_native_api_code_from_endpoint_key(endpoint_key: &str) -> Option<Stri
     find_builtin_ai_route(endpoint_key).map(|route| route.api_code.to_owned())
 }
 
+#[allow(dead_code)]
 fn provider_native_model_from_standard_path(path: &str) -> Option<String> {
     let (_, provider_path) = split_provider_passthrough_path(path)?;
     provider_path
@@ -1941,20 +1424,6 @@ fn provider_native_model_from_standard_path(path: &str) -> Option<String> {
                 .strip_prefix("v1/models/")
                 .and_then(|suffix| suffix.split_once(':').map(|(model, _)| model))
         })
-        .map(str::trim)
-        .filter(|value| !value.is_empty())
-        .map(str::to_owned)
-}
-
-fn provider_native_model_from_request_body(body: &[u8]) -> Option<String> {
-    if body.is_empty() {
-        return None;
-    }
-    serde_json::from_slice::<Value>(body)
-        .ok()
-        .as_ref()
-        .and_then(|body| body.get("model"))
-        .and_then(Value::as_str)
         .map(str::trim)
         .filter(|value| !value.is_empty())
         .map(str::to_owned)
@@ -2642,40 +2111,6 @@ mod tests {
                 .contains("providerModel must use vendorCode/modelId"),
             "{error}"
         );
-    }
-
-    #[test]
-    fn provider_native_direct_usage_context_keeps_region_out_of_requested_catalog_key() {
-        let request = Request::builder()
-            .method("POST")
-            .uri("/v1/chat/completions")
-            .body(Body::empty())
-            .unwrap();
-        let api_key_context = test_api_key_context();
-        let route_metadata = ProviderNativeRouteMetadata {
-            endpoint_key: Some("openai.chat_completions".to_owned()),
-            api_code: "openai.chat_completions".to_owned(),
-            route_key: "openai.chat_completions".to_owned(),
-            capability: RoutingCapability::Chat,
-        };
-        let account_route = ProviderChannelRoute::new("openai", 9301)
-            .with_region_code("cn")
-            .with_provider_endpoint(
-                Some("https://api.openai.example/v1"),
-                Option::<String>::None,
-            );
-
-        let context = build_provider_native_direct_usage_context(
-            &request,
-            br#"{"model":"gpt-4o-mini"}"#,
-            &api_key_context,
-            &route_metadata,
-            &account_route,
-        );
-
-        assert_eq!("openai/gpt-4o-mini", context.catalog_key);
-        assert_eq!("openai/gpt-4o-mini", context.requested_model_catalog_key);
-        assert_eq!("cn", context.account_route.region_code);
     }
 
     fn test_api_key_context() -> AuthenticatedApiKeyContext {

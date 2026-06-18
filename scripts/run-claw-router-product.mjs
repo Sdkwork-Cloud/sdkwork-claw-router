@@ -59,6 +59,22 @@ function installCandidatesForMode(mode) {
   }
 }
 
+function portalCommandShimCandidates(absoluteDir) {
+  return [
+    path.join(absoluteDir, 'node_modules', '.bin', 'vite'),
+    path.join(absoluteDir, 'node_modules', '.bin', 'vite.cmd'),
+    path.join(absoluteDir, 'node_modules', '.bin', 'vite.ps1'),
+  ];
+}
+
+function portalDependenciesAreReady(absoluteDir) {
+  if (!existsSync(path.join(absoluteDir, 'node_modules'))) {
+    return false;
+  }
+
+  return portalCommandShimCandidates(absoluteDir).some((candidate) => existsSync(candidate));
+}
+
 export function parseClawRouterProductArgs(argv) {
   const result = {
     mode: 'desktop',
@@ -202,7 +218,7 @@ export function createClawRouterProductLaunchPlan({
 
   for (const relativeDir of installCandidatesForMode(mode)) {
     const absoluteDir = path.join(workspaceRoot, relativeDir);
-    if (!install && existsSync(path.join(absoluteDir, 'node_modules'))) {
+    if (!install && portalDependenciesAreReady(absoluteDir)) {
       continue;
     }
 
@@ -325,10 +341,11 @@ Options:
   -h, --help             Show this help
 
 Database profiles:
-  pnpm dev / pnpm desktop:dev / pnpm tauri:dev start sdkwork-api-gateway and the portal only.
-  pnpm server:dev uses the PostgreSQL workspace integration profile for explicit product server debugging.
+  pnpm clawrouter:dev / pnpm server:dev start the topology-aware integrated product server workspace (default profile: self-hosted.unified-process.development).
+  pnpm clawrouter:dev:desktop / pnpm desktop:dev / pnpm tauri:dev start sdkwork-api-gateway and the portal only (gateway-backed client workspace).
   Desktop packages and first-run local user data use SQLite under ~/.sdkwork/router/data.
-  Use pnpm server:dev:sqlite to validate explicit product server SQLite behavior.
+  Use pnpm clawrouter:dev:sqlite or pnpm server:dev:sqlite to validate explicit product server SQLite behavior.
+  See docs/topology-standard.md for the full clawrouter:* command matrix.
 
 Examples:
   pnpm desktop:dev

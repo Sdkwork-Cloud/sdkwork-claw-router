@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 use axum::http::Method;
 use sdkwork_claw_product::domain::{
     AiRouteFailureStrategy, AiRouteModelRequirement, AiRouteStrategy, BillingMeter,

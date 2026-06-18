@@ -659,7 +659,11 @@ async fn database_config_auth_identity_routes_register_verify_and_reset_password
     )
     .await;
 
-    assert_eq!(StatusCode::OK, code_status);
+    assert_eq!(
+        StatusCode::OK,
+        code_status,
+        "verification code response payload: {code_payload}"
+    );
     assert_eq!("2000", code_payload["code"]);
     let code_id = code_payload["data"]["codeId"].as_str().unwrap();
     let verification_code = code_payload["data"]["debugCode"].as_str().unwrap();
@@ -727,7 +731,7 @@ async fn database_config_auth_identity_routes_register_verify_and_reset_password
     );
     assert_eq!("password", register_payload["data"]["context"]["authLevel"]);
     assert_eq!("10", register_payload["data"]["context"]["tenantId"]);
-    assert_eq!("20", register_payload["data"]["context"]["organizationId"]);
+    assert_eq!("0", register_payload["data"]["context"]["organizationId"]);
     assert!(!register_body_text.contains("new-user-password"));
     assert!(!register_body_text.contains("pbkdf2-sha256"));
 
@@ -803,6 +807,7 @@ async fn database_config_auth_identity_routes_register_verify_and_reset_password
 
     assert_eq!(StatusCode::OK, login_status);
     assert_eq!("new-user", login_payload["data"]["user"]["username"]);
+    assert_eq!("0", login_payload["data"]["context"]["organizationId"]);
 
     let verification_pool = create_sqlite_pool(&database_url).await;
     let user_count: i64 = sqlx::query_scalar(
@@ -5012,11 +5017,37 @@ async fn create_schema(pool: &SqlitePool) {
             quota_period INTEGER,
             quota_unit INTEGER,
             quota_limit TEXT,
+            requests_per_second INTEGER,
+            requests_per_day INTEGER,
+            burst_limit TEXT,
             status INTEGER NOT NULL,
             deleted_at TEXT,
             effective_from TEXT,
             effective_to TEXT,
             updated_at TEXT
+        )"#,
+        r#"CREATE TABLE iam_gateway_risk_rule (
+            id INTEGER PRIMARY KEY,
+            tenant_id INTEGER,
+            organization_id INTEGER,
+            rule_category INTEGER,
+            rule_type INTEGER,
+            scope_type INTEGER,
+            scope_id INTEGER,
+            target_type INTEGER,
+            target_value TEXT,
+            match_mode INTEGER,
+            action INTEGER,
+            priority INTEGER,
+            requests_per_second INTEGER,
+            requests_per_minute INTEGER,
+            requests_per_day INTEGER,
+            burst_limit TEXT,
+            block_duration_seconds INTEGER,
+            status INTEGER NOT NULL,
+            deleted_at TEXT,
+            effective_from TEXT,
+            effective_to TEXT
         )"#,
         r#"CREATE TABLE ai_channel_group_metric_snapshot (
             id INTEGER PRIMARY KEY,
@@ -5075,7 +5106,8 @@ async fn create_schema(pool: &SqlitePool) {
             name TEXT NOT NULL,
             status TEXT NOT NULL,
             created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL
+            updated_at TEXT NOT NULL,
+            deleted_at TEXT
         )"#,
         r#"CREATE TABLE iam_organization (
             id TEXT PRIMARY KEY,
@@ -5086,7 +5118,8 @@ async fn create_schema(pool: &SqlitePool) {
             path TEXT NOT NULL,
             status TEXT NOT NULL,
             created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL
+            updated_at TEXT NOT NULL,
+            deleted_at TEXT
         )"#,
         r#"CREATE TABLE iam_user (
             id TEXT PRIMARY KEY,
@@ -5469,7 +5502,8 @@ async fn create_schema(pool: &SqlitePool) {
             created_at TEXT NOT NULL,
             retention_until TEXT,
             legal_hold INTEGER DEFAULT 0,
-            metadata TEXT
+            metadata TEXT,
+            deleted_at TEXT
         )"#,
         r#"CREATE TABLE ops_notification_message (
             id INTEGER PRIMARY KEY,

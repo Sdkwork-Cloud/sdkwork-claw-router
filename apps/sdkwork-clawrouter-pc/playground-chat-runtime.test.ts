@@ -293,6 +293,7 @@ test("chat playground consumes standard runtime SSE events for streaming interac
   assert.match(operationsSource, /streamRuntimeInvocationEvents/);
   assert.match(runtimeStreamSource, /sdkwork-clawrouter-pc-commons\/runtime/);
   assert.match(commonsRuntimeSource, /\.http\.streamJson/);
+  assert.match(commonsRuntimeSource, /appApiPath/);
   assert.match(commonsRuntimeSource, /\/runtime\/invocations\/\$\{encodeURIComponent\(invocationId\)\}\/events\/stream/);
   assert.match(commonsRuntimeSource, /readRuntimePayloadTextDelta/);
   assert.match(commonsRuntimeSource, /isRuntimeTextDeltaEvent/);
@@ -1484,7 +1485,7 @@ test("agent playground uses standard Agent and Runtime SDK resources with SSE in
   assert.match(facadeSource, /from '@sdkwork\/generations-pc-workspace\/generation-service'/);
   assert.match(facadeSource, /createSdkworkGenerationService/);
   assert.match(facadeSource, /includeSampleRuns:\s*false/);
-  assert.doesNotMatch(facadeSource, /await import\('@sdkwork\/generation-pc-react'\)/);
+  assert.doesNotMatch(facadeSource, /await import\('@sdkwork\/image-pc-generation'\)/);
   assert.doesNotMatch(facadeSource, /loadSdkworkGenerationServiceFactory/);
   assert.doesNotMatch(facadeSource, /createFallbackSdkworkGenerationService/);
   assert.doesNotMatch(facadeSource, /runs\.length === 0 && workspace\.runs\.length > 0/);
@@ -1497,6 +1498,7 @@ test("agent playground uses standard Agent and Runtime SDK resources with SSE in
   assert.match(operationsSource, /streamRuntimeInvocationEvents/);
   assert.match(runtimeStreamSource, /sdkwork-clawrouter-pc-commons\/runtime/);
   assert.match(commonsRuntimeSource, /\.http\.streamJson/);
+  assert.match(commonsRuntimeSource, /appApiPath/);
   assert.match(commonsRuntimeSource, /\/runtime\/invocations\/\$\{encodeURIComponent\(invocationId\)\}\/events\/stream/);
   assert.match(source, /onDelta\?\.\(textDelta\)/);
   assert.match(facadeSource, /runPlaygroundGeneration\(input\)/);
@@ -1785,7 +1787,7 @@ test("generation mode popups reuse appbase popup and mode config primitives", ()
   const videoSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/components/VideoGenerationModePopup.tsx");
   const baseSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/components/GenerationModePopupBase.tsx");
 
-  assert.match(baseSource, /@sdkwork\/generation-pc-react\/react/);
+  assert.match(baseSource, /@sdkwork\/image-pc-generation\/react/);
   assert.doesNotMatch(baseSource, /useState/);
   assert.doesNotMatch(baseSource, /document\.addEventListener/);
   assert.doesNotMatch(baseSource, /function ConfigSectionRenderer/);

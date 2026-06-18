@@ -2131,6 +2131,39 @@ async fn sqlite_installer_repairs_missing_default_iam_subject_on_startup_check()
 }
 
 #[tokio::test]
+async fn sqlite_installer_repairs_default_iam_subject_with_appbase_organization_metadata() {
+    let pool = repair_sqlite_pool().await;
+    let installer = installer(pool.clone());
+
+    sqlx::query("DELETE FROM iam_organization")
+        .execute(&pool)
+        .await
+        .unwrap();
+    sqlx::query("DELETE FROM iam_tenant")
+        .execute(&pool)
+        .await
+        .unwrap();
+
+    let repaired = installer.ensure_installed().await.unwrap();
+    assert_eq!(InstallationStatus::Installed, repaired.status);
+
+    let organization_kind: String = sqlx::query_scalar(
+        r#"
+        SELECT organization_kind
+        FROM iam_organization
+        WHERE id = '20'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        "team", organization_kind,
+        "installer repair must seed appbase-compatible organization metadata"
+    );
+}
+
+#[tokio::test]
 async fn sqlite_installer_repairs_drifted_skills_seed_standard_fields_on_startup_check() {
     let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());

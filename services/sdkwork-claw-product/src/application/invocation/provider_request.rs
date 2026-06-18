@@ -213,6 +213,18 @@ fn rewrite_json_body_model(body: InvocationBody, provider_model: Option<&str>) -
             }
             InvocationBody::Json(value)
         }
+        InvocationBody::Bytes(bytes) => match serde_json::from_slice::<Value>(&bytes) {
+            Ok(mut value) if value.as_object().is_some_and(|o| o.contains_key("model")) => {
+                if let Some(object) = value.as_object_mut() {
+                    object.insert("model".to_owned(), Value::String(provider_model.to_owned()));
+                }
+                match serde_json::to_vec(&value) {
+                    Ok(bytes) => InvocationBody::Bytes(bytes),
+                    Err(_) => InvocationBody::Bytes(bytes),
+                }
+            }
+            _ => InvocationBody::Bytes(bytes),
+        },
         other => other,
     }
 }

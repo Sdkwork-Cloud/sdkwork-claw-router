@@ -206,6 +206,7 @@ async fn find_existing_policy(
           AND subject_id = ?
           AND quota_period = ?
           AND quota_unit = ?
+          AND deleted_at IS NULL
         LIMIT 1
         "#,
     )

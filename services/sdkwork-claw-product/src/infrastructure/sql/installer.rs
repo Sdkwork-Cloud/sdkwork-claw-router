@@ -9,9 +9,11 @@ use std::time::{SystemTime, UNIX_EPOCH};
 
 use crate::infrastructure::sql::iam_seed_defaults::{
     DEFAULT_BOOTSTRAP_ADMIN_DISPLAY_NAME, DEFAULT_BOOTSTRAP_ADMIN_EMAIL,
-    DEFAULT_BOOTSTRAP_ADMIN_USERNAME, DEFAULT_IAM_ORGANIZATION_CODE, DEFAULT_IAM_ORGANIZATION_ID,
-    DEFAULT_IAM_ORGANIZATION_NAME, DEFAULT_IAM_ORGANIZATION_PATH, DEFAULT_IAM_TENANT_CODE,
-    DEFAULT_IAM_TENANT_ID, DEFAULT_IAM_TENANT_NAME,
+    DEFAULT_BOOTSTRAP_ADMIN_USERNAME, DEFAULT_IAM_ORGANIZATION_CODE,
+    DEFAULT_IAM_ORGANIZATION_DATA_BOUNDARY_KIND, DEFAULT_IAM_ORGANIZATION_ID,
+    DEFAULT_IAM_ORGANIZATION_KIND, DEFAULT_IAM_ORGANIZATION_NAME, DEFAULT_IAM_ORGANIZATION_PATH,
+    DEFAULT_IAM_ORGANIZATION_TENANT_BOUNDARY_KIND, DEFAULT_IAM_ORGANIZATION_VERIFICATION_STATUS,
+    DEFAULT_IAM_TENANT_CODE, DEFAULT_IAM_TENANT_ID, DEFAULT_IAM_TENANT_NAME,
 };
 use sdkwork_commerce_bootstrap::{
     commerce_experience_seed_manifest, commerce_recharge_package_seeds,
@@ -21,7 +23,9 @@ use sdkwork_commerce_core::CommerceServiceError;
 use sdkwork_commerce_storage_sqlx::{
     commerce_database_indexes, commerce_database_tables, commerce_initial_migration_sql,
 };
-use sdkwork_iam_directory_repository_sqlx::{iam_database_tables, iam_initial_migration_sql};
+use sdkwork_iam_directory_repository_sqlx::{
+    iam_database_tables, iam_initial_migration_sql, iam_shared_database_compat_migration_sql,
+};
 use sdkwork_models::ModelCatalog;
 use sha2::{Digest, Sha256};
 use sqlx::{PgPool, Postgres, Row, Sqlite, SqlitePool, Transaction};
@@ -53,7 +57,7 @@ use crate::infrastructure::sql::model_catalog_import::{
     load_catalog_root_with_pin, model_catalog_key, pricing_catalog_key,
     DEFAULT_CATALOG_REFRESH_SOURCE,
 };
-use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
+use crate::infrastructure::sql::runtime_id::{next_claw_runtime_id, next_user_id};
 use crate::infrastructure::sql::skills_seed::{
     bundled_skills_seed_payload, import_postgres_skills_seed, import_sqlite_skills_seed,
     postgres_skills_seed_complete, postgres_skills_seed_current,
@@ -1078,8 +1082,7 @@ pub fn log_bootstrap_admin_report(service_name: &str, report: &InstallationRepor
             organization_id = %admin.organization_id,
             user_id = %admin.user_id,
             generated_password = admin.generated_password,
-            initial_password = %admin.initial_password,
-            "SDKWork Claw Router bootstrap admin initialized; save this one-time initial password and rotate it after first login"
+            "SDKWork Claw Router bootstrap admin initialized; retrieve the one-time initial password from the installer CLI output or secure bootstrap channel and rotate it after first login"
         );
     }
 }
@@ -1788,6 +1791,7 @@ impl DatabaseInstaller {
         };
         changed |= match &self.backend {
             InstallerBackend::Sqlite(pool) => {
+                apply_sqlite_appbase_iam_shared_database_compat(pool).await?;
                 if !sqlite_appbase_iam_oauth_schema_tables_exist(pool).await?
                     || !sqlite_appbase_iam_oauth_schema_indexes_exist(pool).await?
                 {
@@ -1807,6 +1811,7 @@ impl DatabaseInstaller {
                     changed = true;
                 }
                 changed |= repair_postgres_appbase_commerce_legacy_constraints(pool).await?;
+                apply_postgres_appbase_iam_shared_database_compat(pool).await?;
                 if !postgres_appbase_iam_oauth_schema_tables_exist(pool).await?
                     || !postgres_appbase_iam_oauth_schema_indexes_exist(pool).await?
                 {
@@ -1877,28 +1882,6 @@ fn generate_bootstrap_admin_password() -> Result<String, DatabaseInstallError> {
             BOOTSTRAP_ADMIN_PASSWORD_ALPHABET[index] as char
         })
         .collect())
-}
-
-async fn sqlite_next_numeric_id(
-    tx: &mut Transaction<'_, Sqlite>,
-    table_name: &str,
-) -> Result<String, sqlx::Error> {
-    let sql = format!(
-        "SELECT COALESCE(MAX(CAST(id AS INTEGER)), 0) + 1 AS next_id FROM {table_name} WHERE id GLOB '[0-9]*'"
-    );
-    let value: i64 = sqlx::query_scalar(&sql).fetch_one(&mut **tx).await?;
-    Ok(value.to_string())
-}
-
-async fn postgres_next_numeric_id(
-    tx: &mut Transaction<'_, Postgres>,
-    table_name: &str,
-) -> Result<String, sqlx::Error> {
-    let sql = format!(
-        "SELECT COALESCE(MAX(NULLIF(regexp_replace(id, '[^0-9]', '', 'g'), '')::BIGINT), 0) + 1 AS next_id FROM {table_name}"
-    );
-    let value: i64 = sqlx::query_scalar(&sql).fetch_one(&mut **tx).await?;
-    Ok(value.to_string())
 }
 
 fn persisted_models_catalog_root_from_metadata(metadata: &str) -> Option<String> {
@@ -2738,6 +2721,7 @@ async fn prepare_sqlite_schema_with_catalog_version(
     for statement in sqlite_schema_statements() {
         execute_sqlite_statement(pool, statement.as_str()).await?;
     }
+    apply_sqlite_appbase_iam_shared_database_compat(pool).await?;
     apply_sqlite_appbase_commerce_schema(pool).await?;
     apply_sqlite_appbase_iam_oauth_schema(pool).await?;
     record_sqlite_migration_completed(
@@ -2990,6 +2974,7 @@ async fn prepare_postgres_schema_with_catalog_version(
     for statement in postgres_schema_statements() {
         execute_postgres_statement(pool, statement.as_str()).await?;
     }
+    apply_postgres_appbase_iam_shared_database_compat(pool).await?;
     apply_postgres_appbase_commerce_schema(pool).await?;
     apply_postgres_appbase_iam_oauth_schema(pool).await?;
     record_postgres_migration_completed(
@@ -3129,6 +3114,7 @@ async fn repair_sqlite_installation(
     {
         apply_sqlite_appbase_commerce_schema(pool).await?;
     }
+    apply_sqlite_appbase_iam_shared_database_compat(pool).await?;
     if !sqlite_appbase_iam_oauth_schema_tables_exist(pool).await?
         || !sqlite_appbase_iam_oauth_schema_indexes_exist(pool).await?
     {
@@ -3372,6 +3358,7 @@ async fn repair_postgres_installation(
         apply_postgres_appbase_commerce_schema(pool).await?;
     }
     repair_postgres_appbase_commerce_legacy_constraints(pool).await?;
+    apply_postgres_appbase_iam_shared_database_compat(pool).await?;
     if !postgres_appbase_iam_oauth_schema_tables_exist(pool).await?
         || !postgres_appbase_iam_oauth_schema_indexes_exist(pool).await?
     {
@@ -3591,6 +3578,7 @@ async fn import_postgres_bundled_forum_seed(pool: &PgPool) -> Result<(), Databas
 async fn import_sqlite_default_iam_subject_seed(
     pool: &SqlitePool,
 ) -> Result<(), DatabaseInstallError> {
+    apply_sqlite_appbase_iam_shared_database_compat(pool).await?;
     sqlite_upsert_default_iam_subject(pool).await?;
     sqlite_upsert_default_iam_permissions(pool).await?;
     Ok(())
@@ -3599,6 +3587,7 @@ async fn import_sqlite_default_iam_subject_seed(
 async fn import_postgres_default_iam_subject_seed(
     pool: &PgPool,
 ) -> Result<(), DatabaseInstallError> {
+    apply_postgres_appbase_iam_shared_database_compat(pool).await?;
     postgres_upsert_default_iam_subject(pool).await?;
     postgres_upsert_default_iam_permissions(pool).await?;
     Ok(())
@@ -4369,7 +4358,9 @@ async fn bootstrap_sqlite_admin_user_if_needed(
             .await?
         {
             Some(user_id) => user_id,
-            None => sqlite_next_numeric_id(&mut tx, "iam_user").await?,
+            None => next_user_id("bootstrap admin user")
+                .map_err(|error| sqlx::Error::Protocol(error.to_string()))?
+                .to_string(),
         };
     let has_active_password =
         sqlite_bootstrap_admin_has_active_password_credential_in_transaction(&mut tx, &user_id)
@@ -4412,7 +4403,9 @@ async fn bootstrap_postgres_admin_user_if_needed(
             .await?
         {
             Some(user_id) => user_id,
-            None => postgres_next_numeric_id(&mut tx, "iam_user").await?,
+            None => next_user_id("bootstrap admin user")
+                .map_err(|error| sqlx::Error::Protocol(error.to_string()))?
+                .to_string(),
         };
     let has_active_password =
         postgres_bootstrap_admin_has_active_password_credential_in_transaction(&mut tx, &user_id)
@@ -4450,7 +4443,9 @@ async fn reset_sqlite_admin_password(
             .await?
         {
             Some(user_id) => user_id,
-            None => sqlite_next_numeric_id(&mut tx, "iam_user").await?,
+            None => next_user_id("bootstrap admin user")
+                .map_err(|error| sqlx::Error::Protocol(error.to_string()))?
+                .to_string(),
         };
     upsert_sqlite_bootstrap_admin(&mut tx, options, &user_id, None, &now).await?;
     sqlx::query(
@@ -4504,7 +4499,9 @@ async fn reset_postgres_admin_password(
             .await?
         {
             Some(user_id) => user_id,
-            None => postgres_next_numeric_id(&mut tx, "iam_user").await?,
+            None => next_user_id("bootstrap admin user")
+                .map_err(|error| sqlx::Error::Protocol(error.to_string()))?
+                .to_string(),
         };
     upsert_postgres_bootstrap_admin(&mut tx, options, &user_id, None, &now).await?;
     sqlx::query(
@@ -6730,9 +6727,24 @@ async fn sqlite_upsert_default_iam_subject(pool: &SqlitePool) -> Result<(), sqlx
     sqlx::query(
         r#"
         INSERT INTO iam_organization
-            (id, tenant_id, parent_id, code, name, path, status, created_at, updated_at)
+            (
+                id,
+                tenant_id,
+                parent_id,
+                code,
+                name,
+                path,
+                status,
+                organization_kind,
+                tenant_boundary_kind,
+                data_boundary_kind,
+                app_boundary_enabled,
+                verification_status,
+                created_at,
+                updated_at
+            )
         VALUES
-            (?, ?, NULL, ?, ?, ?, 'active', ?, ?)
+            (?, ?, NULL, ?, ?, ?, 'active', ?, ?, ?, 0, ?, ?, ?)
         ON CONFLICT(id) DO UPDATE SET
             tenant_id = excluded.tenant_id,
             parent_id = excluded.parent_id,
@@ -6740,6 +6752,11 @@ async fn sqlite_upsert_default_iam_subject(pool: &SqlitePool) -> Result<(), sqlx
             name = excluded.name,
             path = excluded.path,
             status = excluded.status,
+            organization_kind = excluded.organization_kind,
+            tenant_boundary_kind = excluded.tenant_boundary_kind,
+            data_boundary_kind = excluded.data_boundary_kind,
+            app_boundary_enabled = excluded.app_boundary_enabled,
+            verification_status = excluded.verification_status,
             updated_at = excluded.updated_at
         "#,
     )
@@ -6748,6 +6765,10 @@ async fn sqlite_upsert_default_iam_subject(pool: &SqlitePool) -> Result<(), sqlx
     .bind(DEFAULT_IAM_ORGANIZATION_CODE)
     .bind(DEFAULT_IAM_ORGANIZATION_NAME)
     .bind(DEFAULT_IAM_ORGANIZATION_PATH)
+    .bind(DEFAULT_IAM_ORGANIZATION_KIND)
+    .bind(DEFAULT_IAM_ORGANIZATION_TENANT_BOUNDARY_KIND)
+    .bind(DEFAULT_IAM_ORGANIZATION_DATA_BOUNDARY_KIND)
+    .bind(DEFAULT_IAM_ORGANIZATION_VERIFICATION_STATUS)
     .bind(&now)
     .bind(&now)
     .execute(pool)
@@ -6806,9 +6827,39 @@ async fn postgres_upsert_default_iam_subject(pool: &PgPool) -> Result<(), sqlx::
     sqlx::query(
         r#"
         INSERT INTO iam_organization
-            (id, tenant_id, parent_id, code, name, path, status, created_at, updated_at)
+            (
+                id,
+                tenant_id,
+                parent_id,
+                code,
+                name,
+                path,
+                status,
+                organization_kind,
+                tenant_boundary_kind,
+                data_boundary_kind,
+                app_boundary_enabled,
+                verification_status,
+                created_at,
+                updated_at
+            )
         VALUES
-            ($1, $2, NULL, $3, $4, $5, 'active', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+            (
+                $1,
+                $2,
+                NULL,
+                $3,
+                $4,
+                $5,
+                'active',
+                $6,
+                $7,
+                $8,
+                0,
+                $9,
+                CURRENT_TIMESTAMP,
+                CURRENT_TIMESTAMP
+            )
         ON CONFLICT(id) DO UPDATE SET
             tenant_id = excluded.tenant_id,
             parent_id = excluded.parent_id,
@@ -6816,6 +6867,11 @@ async fn postgres_upsert_default_iam_subject(pool: &PgPool) -> Result<(), sqlx::
             name = excluded.name,
             path = excluded.path,
             status = excluded.status,
+            organization_kind = excluded.organization_kind,
+            tenant_boundary_kind = excluded.tenant_boundary_kind,
+            data_boundary_kind = excluded.data_boundary_kind,
+            app_boundary_enabled = excluded.app_boundary_enabled,
+            verification_status = excluded.verification_status,
             updated_at = excluded.updated_at
         "#,
     )
@@ -6824,6 +6880,10 @@ async fn postgres_upsert_default_iam_subject(pool: &PgPool) -> Result<(), sqlx::
     .bind(DEFAULT_IAM_ORGANIZATION_CODE)
     .bind(DEFAULT_IAM_ORGANIZATION_NAME)
     .bind(DEFAULT_IAM_ORGANIZATION_PATH)
+    .bind(DEFAULT_IAM_ORGANIZATION_KIND)
+    .bind(DEFAULT_IAM_ORGANIZATION_TENANT_BOUNDARY_KIND)
+    .bind(DEFAULT_IAM_ORGANIZATION_DATA_BOUNDARY_KIND)
+    .bind(DEFAULT_IAM_ORGANIZATION_VERIFICATION_STATUS)
     .execute(pool)
     .await?;
     Ok(())
@@ -7343,6 +7403,111 @@ fn appbase_iam_oauth_schema_statement(statement: &str) -> bool {
         return false;
     };
     index_name.starts_with("idx_iam_oauth_") || index_name.starts_with("uk_iam_oauth_")
+}
+
+fn appbase_iam_shared_database_compat_statements() -> Vec<String> {
+    strip_line_comments(iam_shared_database_compat_migration_sql())
+        .split(';')
+        .map(str::trim)
+        .filter(|statement| !statement.is_empty())
+        .map(str::to_owned)
+        .collect()
+}
+
+async fn apply_sqlite_appbase_iam_shared_database_compat(
+    pool: &SqlitePool,
+) -> Result<(), DatabaseInstallError> {
+    record_sqlite_migration_started(
+        pool,
+        "appbase-iam-shared-database-compat",
+        CURRENT_SCHEMA_VERSION,
+        iam_shared_database_compat_migration_sql(),
+    )
+    .await?;
+    for statement in appbase_iam_shared_database_compat_statements() {
+        execute_sqlite_iam_shared_database_compat_statement(pool, statement.as_str()).await?;
+    }
+    record_sqlite_migration_completed(
+        pool,
+        "appbase-iam-shared-database-compat",
+        CURRENT_SCHEMA_VERSION,
+        iam_shared_database_compat_migration_sql(),
+    )
+    .await?;
+    Ok(())
+}
+
+async fn apply_postgres_appbase_iam_shared_database_compat(
+    pool: &PgPool,
+) -> Result<(), DatabaseInstallError> {
+    record_postgres_migration_started(
+        pool,
+        "appbase-iam-shared-database-compat",
+        CURRENT_SCHEMA_VERSION,
+        iam_shared_database_compat_migration_sql(),
+    )
+    .await?;
+    for statement in appbase_iam_shared_database_compat_statements() {
+        if let Err(error) = sqlx::query(statement.as_str()).execute(pool).await {
+            if error.to_string().contains("does not exist") {
+                continue;
+            }
+            return Err(DatabaseInstallError::Database(error));
+        }
+    }
+    record_postgres_migration_completed(
+        pool,
+        "appbase-iam-shared-database-compat",
+        CURRENT_SCHEMA_VERSION,
+        iam_shared_database_compat_migration_sql(),
+    )
+    .await?;
+    Ok(())
+}
+
+async fn execute_sqlite_iam_shared_database_compat_statement(
+    pool: &SqlitePool,
+    statement: &str,
+) -> Result<(), DatabaseInstallError> {
+    if let Some((table, column, definition)) = parse_add_column_if_not_exists(statement) {
+        let existing_columns = sqlite_existing_columns(pool, table).await?;
+        if existing_columns.contains(&column.to_ascii_lowercase()) {
+            return Ok(());
+        }
+        let alter = format!(
+            "ALTER TABLE {} ADD COLUMN {} {}",
+            quote_sqlite_identifier(table),
+            quote_sqlite_identifier(column),
+            definition
+        );
+        if let Err(error) = sqlx::query(alter.as_str()).execute(pool).await {
+            if error.to_string().contains("does not exist") {
+                return Ok(());
+            }
+            return Err(DatabaseInstallError::Database(error));
+        }
+        return Ok(());
+    }
+
+    if let Err(error) = sqlx::query(statement).execute(pool).await {
+        if error.to_string().contains("does not exist") {
+            return Ok(());
+        }
+        return Err(DatabaseInstallError::Database(error));
+    }
+    Ok(())
+}
+
+fn parse_add_column_if_not_exists(statement: &str) -> Option<(&str, &str, &str)> {
+    let statement = statement.trim().trim_end_matches(';');
+    let rest = statement.strip_prefix("ALTER TABLE ")?;
+    let (table, rest) = rest.split_once(" ADD COLUMN IF NOT EXISTS ")?;
+    let column_end = rest.find(' ')?;
+    Some((
+        table.trim(),
+        rest[..column_end].trim(),
+        rest[column_end + 1..].trim(),
+    ))
 }
 
 async fn apply_sqlite_appbase_iam_oauth_schema(

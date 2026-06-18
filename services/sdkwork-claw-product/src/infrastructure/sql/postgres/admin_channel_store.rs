@@ -9,6 +9,7 @@ use crate::domain::{DomainError, DomainResult};
 use crate::infrastructure::sql::routing_config_change::{
     record_postgres_ai_routing_config_change, AiRoutingConfigChange,
 };
+use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
 use crate::ports::{
     AdminChannelCommandFuture, AdminChannelCredentialInput, AdminChannelCredentialItem,
     AdminChannelItem, AdminChannelStore, AdminChannelTestOutcome, CreateAdminChannelCommand,
@@ -717,15 +718,17 @@ async fn insert_channel(
     _api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
 ) -> DomainResult<i64> {
     let metadata_json = channel_metadata_json(command.expires_at.as_deref())?;
+    let channel_id = next_claw_runtime_id("admin channel creation")?;
     sqlx::query_scalar(
         r#"
         INSERT INTO ai_channel
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, provider_code, channel_code, channel_name, channel_type, protocol_code, auth_type, credential_rotation_strategy, timeout_ms, retry_policy, circuit_breaker_policy, environment, priority, weight, health_status, consecutive_error_count)
+            (id, uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, provider_code, channel_code, channel_name, channel_type, protocol_code, auth_type, credential_rotation_strategy, timeout_ms, retry_policy, circuit_breaker_policy, environment, priority, weight, health_status, consecutive_error_count)
         VALUES
-            ($1, $2, $3, 1, $4, $5::timestamptz, $6::timestamptz, 0, $7::jsonb, $8, $9, $10, $11, $12, $13, $14, $15, $16::jsonb, $17::jsonb, 1, 100, $18, $19, 0)
+            ($1, $2, $3, $4, 1, $5, $6::timestamptz, $7::timestamptz, 0, $8::jsonb, $9, $10, $11, $12, $13, $14, $15, $16, $17::jsonb, $18::jsonb, 1, 100, $19, $20, 0)
         RETURNING id
         "#,
     )
+    .bind(channel_id)
     .bind(&command.channel_uuid)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
@@ -978,14 +981,16 @@ async fn insert_channel_credential(
         api_key_secret_codec,
     )?
     .to_string();
+    let cred_id = next_claw_runtime_id("channel credential creation")?;
     sqlx::query(
         r#"
         INSERT INTO ai_channel_credential
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, channel_id, provider_code, channel_code, credential_name, base_url, auth_config, credential_ref, credential_hash, masked_label, priority, weight, health_status, consecutive_error_count)
+            (id, uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, channel_id, provider_code, channel_code, credential_name, base_url, auth_config, credential_ref, credential_hash, masked_label, priority, weight, health_status, consecutive_error_count)
         VALUES
-            ($1, $2, $3, 1, $4, $5::timestamptz, $6::timestamptz, 0, '{}'::jsonb, $7, $8, $9, $10, $11, $12::jsonb, $13, $14, $15, $16, $17, $18, 0)
+            ($1, $2, $3, $4, 1, $5, $6::timestamptz, $7::timestamptz, 0, '{}'::jsonb, $8, $9, $10, $11, $12, $13::jsonb, $14, $15, $16, $17, $18, $19, 0)
         "#,
     )
+    .bind(cred_id)
     .bind(&credential.credential_uuid)
     .bind(scope.tenant_id)
     .bind(scope.organization_id)
@@ -1692,15 +1697,17 @@ async fn insert_provider_health_snapshot(
         "providerModel": target.provider_model
     })
     .to_string();
+    let health_id = next_claw_runtime_id("provider health snapshot")?;
     sqlx::query(
         r#"
         INSERT INTO integration_provider_health_snapshot
-            (uuid, tenant_id, organization_id, user_id, request_id, status, created_at, metadata, provider_id, channel_id, provider_account_id, check_type, health_status, latency_ms, http_status, error_code, error_message_masked, checked_at)
+            (id, uuid, tenant_id, organization_id, user_id, request_id, status, created_at, metadata, provider_id, channel_id, provider_account_id, check_type, health_status, latency_ms, http_status, error_code, error_message_masked, checked_at)
         VALUES
-            ($1, $2, $3, $4, $5, 1, $6::timestamptz, $7::jsonb, $8, $9, $10, 1, $11, $12, $13, $14, $15, $16::timestamptz)
+            ($1, $2, $3, $4, $5, $6, 1, $7::timestamptz, $8::jsonb, $9, $10, $11, 1, $12, $13, $14, $15, $16, $17::timestamptz)
         "#,
     )
-    .bind(format!("health-{}", command.config_snapshot_uuid))
+    .bind(health_id)
+    .bind(&command.config_snapshot_uuid)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
     .bind(command.subject.operator_id)
@@ -2024,14 +2031,16 @@ async fn insert_config_snapshot(
 ) -> DomainResult<()> {
     let payload = payload.to_string();
     let snapshot_no = format!("channel-{target_id}-{action}-{snapshot_uuid}");
+    let snapshot_id = next_claw_runtime_id("channel config snapshot")?;
     sqlx::query(
         r#"
         INSERT INTO ops_config_snapshot
-            (uuid, tenant_id, organization_id, user_id, request_id, status, snapshot_no, config_scope, config_type, source_table, source_ids, config_payload, config_hash, published_at, published_by)
+            (id, uuid, tenant_id, organization_id, user_id, request_id, status, snapshot_no, config_scope, config_type, source_table, source_ids, config_payload, config_hash, published_at, published_by)
         VALUES
-            ($1, $2, $3, $4, $5, 1, $6, $7, $8, 'ai_channel', $9::jsonb, $10::jsonb, $11, $12::timestamptz, $13)
+            ($1, $2, $3, $4, $5, $6, 1, $7, $8, $9, 'ai_channel', $10::jsonb, $11::jsonb, $12, $13::timestamptz, $14)
         "#,
     )
+    .bind(snapshot_id)
     .bind(snapshot_uuid)
     .bind(tenant_id)
     .bind(organization_id)
@@ -2063,14 +2072,16 @@ async fn insert_audit_log(
     target_id: i64,
     change_summary: serde_json::Value,
 ) -> DomainResult<()> {
+    let audit_id = next_claw_runtime_id("channel audit log")?;
     sqlx::query(
         r#"
         INSERT INTO ops_audit_log
-            (uuid, tenant_id, organization_id, action, target_type, target_id, request_id, operator_id, operator_type, change_summary)
+            (id, uuid, tenant_id, organization_id, action, target_type, target_id, request_id, operator_id, operator_type, change_summary)
         VALUES
-            ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10::jsonb)
+            ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11::jsonb)
         "#,
     )
+    .bind(audit_id)
     .bind(audit_log_uuid)
     .bind(tenant_id)
     .bind(organization_id)

@@ -4,7 +4,7 @@ use std::time::Duration;
 use crate::{manifest, paths};
 use axum::body::Body;
 use axum::extract::State;
-use axum::http::{HeaderMap, Request, StatusCode};
+use axum::http::{Request, StatusCode};
 use axum::middleware::from_fn_with_state;
 use axum::middleware::Next;
 use axum::response::{IntoResponse, Response};
@@ -81,12 +81,6 @@ use sdkwork_claw_product::ports::{
 use sqlx::sqlite::{SqliteConnectOptions, SqlitePoolOptions};
 use sqlx::{PgPool, SqlitePool};
 use std::str::FromStr;
-
-const X_SDKWORK_SUBJECT_TENANT_ID: &str = "x-sdkwork-subject-tenant-id";
-const X_SDKWORK_SUBJECT_ORGANIZATION_ID: &str = "x-sdkwork-subject-organization-id";
-const X_SDKWORK_SUBJECT_USER_ID: &str = "x-sdkwork-subject-user-id";
-const X_SDKWORK_SUBJECT_TIMESTAMP: &str = "x-sdkwork-subject-timestamp";
-const X_SDKWORK_SUBJECT_SIGNATURE: &str = "x-sdkwork-subject-signature";
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct RouterApiRouteModule {
@@ -219,18 +213,23 @@ struct AdminRouterRuntime<'a> {
     app_session_config: Option<AppSessionConfig>,
     admin_access_checker: Option<AdminAccessChecker>,
     request_limits_config: RequestLimitsConfig,
+    readiness_check: Option<sdkwork_claw_http::ReadinessCheckFn>,
 }
 
 pub fn router() -> Router {
-    router_with_database_status(None)
+    router_with_database_status(None, None)
 }
 
-fn router_with_database_status(config: Option<&DatabaseConfig>) -> Router {
-    sdkwork_claw_http::service_router_with_filtered_contract_routes_and_database_config(
+fn router_with_database_status(
+    config: Option<&DatabaseConfig>,
+    readiness_check: Option<sdkwork_claw_http::ReadinessCheckFn>,
+) -> Router {
+    sdkwork_claw_http::service_router_with_filtered_contract_routes_database_config_and_readiness_check(
         SERVICE_NAME,
         sdkwork_claw_http::ApiSurface::Backend,
         config,
         product_local_contract_operation,
+        readiness_check,
     )
 }
 
@@ -337,6 +336,7 @@ where
         app_session_config,
         admin_access_checker,
         request_limits_config,
+        readiness_check,
     } = runtime;
 
     let routing_cache_manager = cache_manager.clone();
@@ -349,7 +349,7 @@ where
         ),
         None => sdkwork_claw_product::api::admin_model_catalog_router(Arc::clone(&catalog)),
     };
-    let mut router = router_with_database_status(database_config);
+    let mut router = router_with_database_status(database_config, readiness_check);
     router = router.merge(route_explain_router);
     if model_store.is_none() {
         router = router.merge(catalog_router);
@@ -1049,6 +1049,7 @@ pub fn router_with_sqlite_shared_runtime(
             app_session_config: Some(app_session_config),
             admin_access_checker: Some(admin_access_checker),
             request_limits_config,
+            readiness_check: None,
         },
     ))
 }
@@ -1186,6 +1187,7 @@ pub fn router_with_postgres_shared_runtime(
             app_session_config: Some(app_session_config),
             admin_access_checker: Some(admin_access_checker),
             request_limits_config,
+            readiness_check: None,
         },
     ))
 }
@@ -1471,13 +1473,20 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                     app_session_config: Some(app_session_config),
                     admin_access_checker: Some(admin_access_checker),
                     request_limits_config,
+                    readiness_check: Some(
+                        sdkwork_claw_product::infrastructure::sql::pool::sqlite_database_readiness_check(
+                            pool.clone(),
+                        ),
+                    ),
                 },
             ))
         }
         DatabaseEngine::Postgres => {
-            let pool = sqlx::postgres::PgPoolOptions::new()
-                .max_connections(config.max_connections)
-                .connect(&config.url)
+            let pool =
+                sdkwork_claw_product::infrastructure::sql::pool::connect_postgres_runtime_pool(
+                    &config.url,
+                    config.max_connections,
+                )
                 .await
                 .map_err(|error| {
                     ProductCatalogRouterError::Postgres(PostgresCatalogLoadError::Database(error))
@@ -1617,6 +1626,11 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                     app_session_config: Some(app_session_config),
                     admin_access_checker: Some(admin_access_checker),
                     request_limits_config,
+                    readiness_check: Some(
+                        sdkwork_claw_product::infrastructure::sql::pool::postgres_database_readiness_check(
+                            pool.clone(),
+                        ),
+                    ),
                 },
             ))
         }
@@ -1811,7 +1825,6 @@ async fn admin_request_subject_boundary(
         .path_and_query()
         .map(|value| value.as_str().to_owned())
         .unwrap_or_else(|| request.uri().path().to_owned());
-    let was_signed_subject_request = has_any_signed_subject_header(request.headers());
     let subject = match sdkwork_claw_http::verified_app_request_subject(
         request.headers_mut(),
         &method,
@@ -1823,9 +1836,6 @@ async fn admin_request_subject_boundary(
         Err(message) => return admin_unauthorized_response(message),
     };
     sdkwork_claw_http::attach_trusted_request_subject(&mut request, subject);
-    if was_signed_subject_request {
-        return next.run(request).await;
-    }
 
     match config.access_checker.has_admin_access(subject).await {
         Ok(true) => next.run(request).await,
@@ -1896,18 +1906,6 @@ async fn has_postgres_admin_access(
     .fetch_one(pool)
     .await?;
     Ok(count > 0)
-}
-
-fn has_any_signed_subject_header(headers: &HeaderMap) -> bool {
-    [
-        X_SDKWORK_SUBJECT_TENANT_ID,
-        X_SDKWORK_SUBJECT_ORGANIZATION_ID,
-        X_SDKWORK_SUBJECT_USER_ID,
-        X_SDKWORK_SUBJECT_TIMESTAMP,
-        X_SDKWORK_SUBJECT_SIGNATURE,
-    ]
-    .iter()
-    .any(|name| headers.contains_key(*name))
 }
 
 fn current_unix_seconds() -> i64 {
@@ -2032,7 +2030,9 @@ pub async fn serve_with_runtime_config(
     )
     .map_err(anyhow::Error::msg)?;
     let listener = tokio::net::TcpListener::bind(bind_addr).await?;
-    axum::serve(listener, router_from_env().await?).await?;
+    axum::serve(listener, router_from_env().await?)
+        .with_graceful_shutdown(sdkwork_claw_http::wait_for_shutdown_signal())
+        .await?;
     Ok(())
 }
 

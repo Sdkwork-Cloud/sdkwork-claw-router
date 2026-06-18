@@ -36,6 +36,7 @@ COMMERCE_PC_PACKAGES = COMMERCE_ROOT / "apps" / "sdkwork-commerce-pc" / "package
 COMMERCE_ADMIN_PRODUCT = COMMERCE_PC_PACKAGES / "sdkwork-commerce-pc-admin-product" / "src"
 APPBASE_PC_CONTENT = APPBASE_ROOT / "packages" / "pc-react" / "content"
 IMAGE_PC_CONTENT = IMAGE_ROOT / "packages" / "pc-react" / "content"
+IMAGE_PC_APP_PACKAGES = IMAGE_ROOT / "apps" / "sdkwork-image-pc" / "packages"
 MUSIC_PC_CONTENT = MUSIC_ROOT / "packages" / "pc-react" / "content"
 VOICE_PC_CONTENT = VOICE_ROOT / "packages" / "pc-react" / "content"
 COMMERCE_PC_ORDER = COMMERCE_PC_PACKAGES / "sdkwork-commerce-pc-order" / "src"
@@ -43,6 +44,7 @@ COMMERCE_PC_PAYMENT = COMMERCE_PC_PACKAGES / "sdkwork-commerce-pc-payment" / "sr
 COMMERCE_PC_CHECKOUT = COMMERCE_PC_PACKAGES / "sdkwork-commerce-pc-checkout" / "src"
 COMMERCE_PC_MEMBERSHIP = COMMERCE_PC_PACKAGES / "sdkwork-commerce-pc-membership" / "src"
 SDKWORK_IMAGE_PC_REACT = first_existing_path(
+    IMAGE_PC_APP_PACKAGES / "sdkwork-image-pc",
     IMAGE_PC_CONTENT / "sdkwork-image-pc-react",
     APPBASE_PC_CONTENT / "sdkwork-image-pc-react",
 )
@@ -56,6 +58,7 @@ SDKWORK_MEDIA_PC_REACT = first_existing_path(
     APPBASE_PC_CONTENT / "sdkwork-media-pc-react",
 )
 SDKWORK_GENERATION_PC_REACT = first_existing_path(
+    IMAGE_PC_APP_PACKAGES / "sdkwork-image-pc-generation",
     IMAGE_PC_CONTENT / "sdkwork-generation-pc-react",
     APPBASE_PC_CONTENT / "sdkwork-generation-pc-react",
 )

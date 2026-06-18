@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 use sdkwork_claw_config::{ProviderPassthroughAuth, ProviderPassthroughHeader};
 use sdkwork_claw_product::domain::{ProviderAuthProfile, ProviderAuthType};
 

@@ -3,8 +3,9 @@ use sqlx::{Row, SqlitePool};
 
 use crate::infrastructure::sql::rows::{
     AiModelRow, ChannelGroupMetricSnapshotRow, ChannelGroupRow, GatewayAccessPolicyRow,
-    GatewayApiKeyRow, ModelMappingRuleRow, ModelPriceRow, ModelProviderRouteRow, ModelVendorRow,
-    PricingPlanRow, ProviderChannelRouteRow, QuotaPolicyRow, RoutingPolicyRow, RoutingRuleRow,
+    GatewayApiKeyRow, GatewayRiskRuleRow, ModelMappingRuleRow, ModelPriceRow,
+    ModelProviderRouteRow, ModelVendorRow, PricingPlanRow, ProviderChannelRouteRow, QuotaPolicyRow,
+    RoutingPolicyRow, RoutingRuleRow,
 };
 
 pub async fn load_vendors(
@@ -119,6 +120,8 @@ pub async fn load_provider_channel_routes(
             timeout_ms: row.try_get("timeout_ms")?,
             retry_policy_json: row.try_get("retry_policy_json")?,
             group_bindings_json: row.try_get("group_bindings_json")?,
+            channel_health_status: row.try_get("channel_health_status")?,
+            credential_health_status: row.try_get("credential_health_status")?,
         })
     });
     sqlx::query(mapper.sql)
@@ -289,6 +292,38 @@ pub async fn load_quota_policies(
         Ok(QuotaPolicyRow {
             id: row.try_get("id")?,
             quota_limit: row.try_get("quota_limit")?,
+            requests_per_second: row.try_get("requests_per_second")?,
+            requests_per_day: row.try_get("requests_per_day")?,
+            burst_limit: row.try_get("burst_limit")?,
+        })
+    })
+    .fetch(pool)
+    .await
+}
+
+pub async fn load_gateway_risk_rules(
+    pool: &SqlitePool,
+    sql: &'static str,
+) -> Result<Vec<GatewayRiskRuleRow>, sqlx::Error> {
+    map_query(sql, |row| {
+        Ok(GatewayRiskRuleRow {
+            id: row.try_get("id")?,
+            tenant_id: row.try_get("tenant_id")?,
+            organization_id: row.try_get("organization_id")?,
+            rule_category: row.try_get("rule_category")?,
+            rule_type: row.try_get("rule_type")?,
+            scope_type: row.try_get("scope_type")?,
+            scope_id: row.try_get("scope_id")?,
+            target_type: row.try_get("target_type")?,
+            target_value: row.try_get("target_value")?,
+            match_mode: row.try_get("match_mode")?,
+            action: row.try_get("action")?,
+            priority: row.try_get("priority")?,
+            requests_per_second: row.try_get("requests_per_second")?,
+            requests_per_minute: row.try_get("requests_per_minute")?,
+            requests_per_day: row.try_get("requests_per_day")?,
+            burst_limit: row.try_get("burst_limit")?,
+            block_duration_seconds: row.try_get("block_duration_seconds")?,
         })
     })
     .fetch(pool)

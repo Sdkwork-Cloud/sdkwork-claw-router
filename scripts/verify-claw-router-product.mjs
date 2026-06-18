@@ -191,6 +191,34 @@ function buildCommercialContractGuardianPlan(env = process.env) {
   }));
 }
 
+function buildTopologyVerificationPlan(env = process.env) {
+  return [
+    {
+      label: 'topology spec validate',
+      command: 'node',
+      args: [
+        '../sdkwork-app-topology/scripts/sdkwork-topology.mjs',
+        'validate',
+        '--root',
+        '.',
+        '--spec',
+        'specs/topology.spec.json',
+      ],
+      env,
+    },
+    {
+      label: 'topology contract tests',
+      command: 'node',
+      args: [
+        '--test',
+        '--experimental-test-isolation=none',
+        'scripts/verify-claw-router-topology.test.mjs',
+      ],
+      env,
+    },
+  ];
+}
+
 function buildSdkRuntimeBuildPlan(env = process.env) {
   return [
     {
@@ -246,6 +274,7 @@ function buildFastVerificationPlan(env = process.env) {
       args: ['-B', '-m', 'tools.repository_delivery_guardian'],
       env,
     },
+    ...buildTopologyVerificationPlan(env),
     {
       label: 'tooling contract tests',
       command: 'node',
@@ -300,6 +329,7 @@ function buildPrecommitVerificationPlan(env = process.env) {
       args: ['-B', '-m', 'tools.repository_delivery_guardian'],
       env,
     },
+    ...buildTopologyVerificationPlan(env),
     {
       label: 'tooling contract tests',
       command: 'node',
@@ -359,6 +389,7 @@ function buildVerificationPlan(settings, env = process.env) {
         RUSTFLAGS: mergeRustFlags(env.RUSTFLAGS, '-D warnings'),
       },
     },
+    ...buildTopologyVerificationPlan(env),
     {
       label: 'tooling contract tests',
       command: 'node',

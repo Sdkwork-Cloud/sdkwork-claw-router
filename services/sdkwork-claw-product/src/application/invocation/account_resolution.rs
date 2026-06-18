@@ -97,6 +97,7 @@ fn validate_callable_candidate(
         .map(str::trim)
         .filter(|value| !value.is_empty())
         .is_none()
+        && candidate.auth_profile.default_headers.is_empty()
     {
         return Err(account_error(format!(
             "resolved route candidate {}:{} is missing secret ref",

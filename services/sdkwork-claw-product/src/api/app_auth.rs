@@ -8,8 +8,8 @@ use axum::routing::{get, post};
 use axum::{Json, Router};
 use sdkwork_claw_config::{AppSessionConfig, TrustedSubjectConfig};
 use sdkwork_claw_http::{
-    sign_app_session_token, verified_signed_trusted_request_subject,
-    verify_app_session_authorization_header, verify_app_session_token, TrustedRequestSubject,
+    sign_app_session_token_with_claims, verified_signed_trusted_request_subject,
+    AppSessionTokenClaims, AppSessionTokenKind, TrustedRequestSubject,
 };
 use serde::{Deserialize, Serialize};
 use serde_json::{json, Value};
@@ -17,7 +17,7 @@ use sha2::{Digest, Sha256};
 
 use crate::api::request_id::{generate_server_request_id, RequestIdError};
 use crate::api::response::PlusApiResult;
-use crate::application::{EntityUuidGenerator, PasswordHasher};
+use crate::application::{EntityUuidGenerator, PasswordHasher, PasswordLoginRateLimiter};
 use crate::domain::DomainError;
 use crate::ports::{
     ActiveAppSession, AdminAuthSettings, AdminAuthSettingsStore, AppAuthPasswordResetCodeCommand,
@@ -61,6 +61,7 @@ struct AppAuthState {
     trusted_subject_config: TrustedSubjectConfig,
     app_session_config: AppSessionConfig,
     password_hasher: Arc<dyn PasswordHasher + Send + Sync>,
+    password_login_rate_limiter: Arc<PasswordLoginRateLimiter>,
     expose_debug_code: bool,
 }
 
@@ -371,6 +372,7 @@ pub fn app_auth_router_with_store_auth_settings_store_and_verification_sender(
         trusted_subject_config,
         app_session_config,
         password_hasher,
+        password_login_rate_limiter: Arc::new(PasswordLoginRateLimiter::new()),
         expose_debug_code,
     })
 }
@@ -393,6 +395,7 @@ pub fn app_sessions_router_with_store(
         trusted_subject_config,
         app_session_config,
         password_hasher,
+        password_login_rate_limiter: Arc::new(PasswordLoginRateLimiter::new()),
         expose_debug_code: true,
     })
 }
@@ -417,6 +420,7 @@ pub fn app_sessions_router_with_store_and_verification_sender(
         trusted_subject_config,
         app_session_config,
         password_hasher,
+        password_login_rate_limiter: Arc::new(PasswordLoginRateLimiter::new()),
         expose_debug_code,
     })
 }
@@ -441,6 +445,7 @@ pub fn app_public_auth_router_with_store_auth_settings_store_and_verification_se
         trusted_subject_config,
         app_session_config,
         password_hasher,
+        password_login_rate_limiter: Arc::new(PasswordLoginRateLimiter::new()),
         expose_debug_code,
     })
 }
@@ -483,10 +488,7 @@ fn app_public_auth_routes() -> Router<AppAuthState> {
             "/app/v3/api/oauth/authorization_urls",
             post(oauth_authorization_url_not_configured),
         )
-        .route(
-            "/app/v3/api/oauth/sessions",
-            post(create_oauth_session),
-        )
+        .route("/app/v3/api/oauth/sessions", post(create_oauth_session))
 }
 
 fn app_public_iam_runtime_routes() -> Router<AppAuthState> {
@@ -850,6 +852,12 @@ async fn create_session_inner(
         request.username.as_deref().unwrap_or_default(),
         MAX_ACCOUNT_LENGTH,
     )?;
+    let rate_limit_key = password_login_rate_limit_key(&headers, &account);
+    state
+        .password_login_rate_limiter
+        .check_and_record(&rate_limit_key)
+        .map_err(AppSessionCreateError::TooManyRequests)?;
+
     let password = normalize_required_field(
         "password",
         request.password.as_deref().unwrap_or_default(),
@@ -1108,9 +1116,13 @@ async fn load_active_session_for_presented_tokens(
         session.tenant_id == presented.subject.tenant_id
             && session.organization_id == presented.subject.organization_id
             && session.user_id == presented.subject.user_id
+            && session.session_id == presented.session_id
             && session.app_id == APP_ID
+            && presented.app_id == APP_ID
             && session.environment == ENVIRONMENT
+            && presented.environment == ENVIRONMENT
             && session.deployment_mode == DEPLOYMENT_MODE
+            && presented.deployment_mode == DEPLOYMENT_MODE
             && active.user.status == "active"
     }))
 }
@@ -1123,6 +1135,10 @@ struct PresentedSessionTokens {
     access_token_hash: String,
     refresh_token_hash: Option<String>,
     subject: TrustedRequestSubject,
+    session_id: String,
+    app_id: String,
+    environment: String,
+    deployment_mode: String,
 }
 
 impl PresentedSessionTokens {
@@ -1132,16 +1148,36 @@ impl PresentedSessionTokens {
     ) -> Result<Self, AppSessionCreateError> {
         let now = current_unix_seconds();
         let authorization = header_value(headers, AUTHORIZATION_HEADER)?;
-        let subject =
-            verify_app_session_authorization_header(app_session_config, &authorization, now)
-                .map_err(|_| AppSessionCreateError::Unauthorized)?;
         let auth_token = bearer_token_from_authorization_header(&authorization)?;
-        let access_token = header_value(headers, ACCESS_TOKEN_HEADER)?;
-        let access_subject = verify_app_session_token(app_session_config, &access_token, now)
-            .map_err(|_| AppSessionCreateError::Unauthorized)?;
-        if subject != access_subject {
+        let auth_claims = sdkwork_claw_http::verify_app_session_token_claims(
+            app_session_config,
+            &auth_token,
+            now,
+        )
+        .map_err(|_| AppSessionCreateError::Unauthorized)?;
+        if auth_claims.token_kind != AppSessionTokenKind::Auth {
             return Err(AppSessionCreateError::Unauthorized);
         }
+        let access_token = header_value(headers, ACCESS_TOKEN_HEADER)?;
+        let access_claims = sdkwork_claw_http::verify_app_session_token_claims(
+            app_session_config,
+            &access_token,
+            now,
+        )
+        .map_err(|_| AppSessionCreateError::Unauthorized)?;
+        if access_claims.token_kind != AppSessionTokenKind::Access {
+            return Err(AppSessionCreateError::Unauthorized);
+        }
+        if auth_claims.tenant_id != access_claims.tenant_id
+            || auth_claims.organization_id != access_claims.organization_id
+            || auth_claims.user_id != access_claims.user_id
+            || auth_claims.session_id != access_claims.session_id
+            || auth_claims.app_id != access_claims.app_id
+            || auth_claims.login_scope != access_claims.login_scope
+        {
+            return Err(AppSessionCreateError::Unauthorized);
+        }
+        let subject = auth_claims.trusted_subject();
         Ok(Self {
             auth_token_hash: sha256_hex(&auth_token),
             access_token_hash: sha256_hex(&access_token),
@@ -1150,6 +1186,10 @@ impl PresentedSessionTokens {
             refresh_token: None,
             refresh_token_hash: None,
             subject,
+            session_id: auth_claims.session_id,
+            app_id: auth_claims.app_id,
+            environment: auth_claims.environment,
+            deployment_mode: auth_claims.deployment_mode,
         })
     }
 
@@ -1158,10 +1198,19 @@ impl PresentedSessionTokens {
         app_session_config: &AppSessionConfig,
         refresh_token: &str,
     ) -> Result<(), AppSessionCreateError> {
-        let refresh_subject =
-            verify_app_session_token(app_session_config, refresh_token, current_unix_seconds())
-                .map_err(|_| AppSessionCreateError::Unauthorized)?;
-        if refresh_subject != self.subject {
+        let refresh_claims = sdkwork_claw_http::verify_app_session_token_claims(
+            app_session_config,
+            refresh_token,
+            current_unix_seconds(),
+        )
+        .map_err(|_| AppSessionCreateError::Unauthorized)?;
+        if refresh_claims.token_kind != AppSessionTokenKind::Refresh
+            || refresh_claims.trusted_subject() != self.subject
+            || refresh_claims.session_id != self.session_id
+            || refresh_claims.app_id != self.app_id
+            || refresh_claims.environment != self.environment
+            || refresh_claims.deployment_mode != self.deployment_mode
+        {
             return Err(AppSessionCreateError::Unauthorized);
         }
         self.refresh_token = Some(refresh_token.to_owned());
@@ -1197,27 +1246,6 @@ fn sign_iam_session_tokens(
         Some(value) => value,
         None => expires_at(app_session_config, issued_at)?,
     };
-    let subject = TrustedRequestSubject {
-        tenant_id: user.tenant_id,
-        organization_id: user.organization_id,
-        user_id: user.id,
-        operator_id: user.id,
-        operator_type: 1,
-    };
-    let auth_token =
-        sign_app_session_token(app_session_config, subject, issued_at, expires_at_unix);
-    let access_token = sign_app_session_token(
-        app_session_config,
-        subject,
-        issued_at + 1,
-        expires_at_unix + 1,
-    );
-    let refresh_token = sign_app_session_token(
-        app_session_config,
-        subject,
-        issued_at + 2,
-        expires_at_unix + 2,
-    );
     let session_id = match session_id {
         Some(session_id) => session_id,
         None => entity_uuid_generator
@@ -1225,12 +1253,40 @@ fn sign_iam_session_tokens(
             .map_err(|error| AppSessionCreateError::System(error.to_string()))?,
     };
     let expires_at = expires_at_unix.to_string();
-    let data_scope = vec![
-        format!("tenant:{}", user.tenant_id),
-        format!("organization:{}", user.organization_id),
-        format!("user:{}", user.id),
-    ];
+    let login_scope = if user.organization_id > 0 {
+        "ORGANIZATION"
+    } else {
+        "TENANT"
+    };
+    let data_scope = session_data_scope(user.tenant_id, user.organization_id, user.id);
     let permission_scope = vec!["clawrouter:console".to_owned()];
+    let auth_claims = AppSessionTokenClaims {
+        token_kind: AppSessionTokenKind::Auth,
+        tenant_id: user.tenant_id,
+        organization_id: user.organization_id,
+        user_id: user.id,
+        session_id: session_id.clone(),
+        app_id: APP_ID.to_owned(),
+        login_scope: login_scope.to_owned(),
+        environment: ENVIRONMENT.to_owned(),
+        deployment_mode: DEPLOYMENT_MODE.to_owned(),
+        auth_level: auth_level.to_owned(),
+        data_scope: data_scope.clone(),
+        permission_scope: permission_scope.clone(),
+        issued_at,
+        expires_at: expires_at_unix,
+    };
+    let mut access_claims = auth_claims.clone();
+    access_claims.token_kind = AppSessionTokenKind::Access;
+    access_claims.issued_at += 1;
+    access_claims.expires_at += 1;
+    let mut refresh_claims = auth_claims.clone();
+    refresh_claims.token_kind = AppSessionTokenKind::Refresh;
+    refresh_claims.issued_at += 2;
+    refresh_claims.expires_at += 2;
+    let auth_token = sign_app_session_token_with_claims(app_session_config, &auth_claims);
+    let access_token = sign_app_session_token_with_claims(app_session_config, &access_claims);
+    let refresh_token = sign_app_session_token_with_claims(app_session_config, &refresh_claims);
     let context = IamAppContext {
         app_id: APP_ID.to_owned(),
         auth_level: auth_level.to_owned(),
@@ -1272,6 +1328,15 @@ fn sign_iam_session_tokens(
         data_scope,
         response,
     })
+}
+
+fn session_data_scope(tenant_id: i64, organization_id: i64, user_id: i64) -> Vec<String> {
+    let mut data_scope = vec![format!("tenant:{tenant_id}")];
+    if organization_id > 0 {
+        data_scope.push(format!("organization:{organization_id}"));
+    }
+    data_scope.push(format!("user:{user_id}"));
+    data_scope
 }
 
 fn session_response_from_active_session(
@@ -2207,6 +2272,32 @@ fn map_verification_delivery_error(error: DomainError) -> AppSessionCreateError 
     } else {
         AppSessionCreateError::System(error.to_string())
     }
+}
+
+fn password_login_rate_limit_key(headers: &HeaderMap, account: &str) -> String {
+    format!(
+        "ip:{}|account:{}",
+        client_ip_from_headers(headers),
+        account.to_ascii_lowercase()
+    )
+}
+
+fn client_ip_from_headers(headers: &HeaderMap) -> String {
+    headers
+        .get("x-forwarded-for")
+        .and_then(|value| value.to_str().ok())
+        .and_then(|value| value.split(',').next())
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+        .or_else(|| {
+            headers
+                .get("x-real-ip")
+                .and_then(|value| value.to_str().ok())
+                .map(str::trim)
+                .filter(|value| !value.is_empty())
+        })
+        .unwrap_or("unknown")
+        .to_owned()
 }
 
 fn normalize_grant_type(value: &str) -> String {

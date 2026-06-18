@@ -259,6 +259,9 @@ ORDER BY priority ASC, effective_from DESC, id DESC
         r#"
 SELECT
     id,
+    COALESCE(tenant_id, 0) AS tenant_id,
+    COALESCE(organization_id, 0) AS organization_id,
+    COALESCE(user_id, 0) AS user_id,
     COALESCE(channel_group_id, 0) AS group_id,
     COALESCE(name, '') AS name,
     COALESCE(key_prefix, '') AS key_prefix,

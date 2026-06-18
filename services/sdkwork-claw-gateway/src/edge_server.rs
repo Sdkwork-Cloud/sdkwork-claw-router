@@ -211,7 +211,9 @@ pub async fn serve_with_runtime_config(
     )
     .map_err(anyhow::Error::msg)?;
     let listener = tokio::net::TcpListener::bind(bind_addr).await?;
-    axum::serve(listener, runtime::router_from_env().await?).await?;
+    axum::serve(listener, runtime::router_from_env().await?)
+        .with_graceful_shutdown(sdkwork_claw_http::wait_for_shutdown_signal())
+        .await?;
     Ok(())
 }
 
@@ -231,7 +233,9 @@ pub async fn serve_edge_server_with_runtime_config(
     )
     .map_err(anyhow::Error::msg)?;
     let listener = tokio::net::TcpListener::bind(bind_addr).await?;
-    axum::serve(listener, edge_server_router(config)).await?;
+    axum::serve(listener, edge_server_router(config))
+        .with_graceful_shutdown(sdkwork_claw_http::wait_for_shutdown_signal())
+        .await?;
     Ok(())
 }
 
@@ -255,7 +259,9 @@ pub async fn serve_all_in_one_edge_server_with_runtime_config(
     )
     .map_err(anyhow::Error::msg)?;
     let listener = tokio::net::TcpListener::bind(bind_addr).await?;
-    axum::serve(listener, all_in_one_edge_router_from_env(config).await?).await?;
+    axum::serve(listener, all_in_one_edge_router_from_env(config).await?)
+        .with_graceful_shutdown(sdkwork_claw_http::wait_for_shutdown_signal())
+        .await?;
     Ok(())
 }
 

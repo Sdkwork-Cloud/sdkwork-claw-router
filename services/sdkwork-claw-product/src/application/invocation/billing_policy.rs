@@ -26,14 +26,30 @@ fn billing_policy_for(invocation: &Invocation) -> InvocationBilling {
     }
 
     match invocation.resource.surface {
-        InvocationSurface::ProviderNative => InvocationBilling {
-            mode: BillingMode::ExternalUsageLine,
-            meter: invocation.billing.meter.clone(),
-            quantity_source: BillingQuantitySource::AdapterUsageLines,
-            pricing_required: true,
-            settlement_required: true,
-            prepaid_required: false,
-        },
+        InvocationSurface::ProviderNative => {
+            if matches!(
+                invocation.dispatch.invocation_shape,
+                InvocationShape::SseStream
+            ) {
+                // Provider-native SSE streaming — use composite token billing
+                streaming_composite_policy(
+                    invocation
+                        .billing
+                        .meter
+                        .clone()
+                        .unwrap_or(BillingMeter::LlmInputToken),
+                )
+            } else {
+                InvocationBilling {
+                    mode: BillingMode::ExternalUsageLine,
+                    meter: invocation.billing.meter.clone(),
+                    quantity_source: BillingQuantitySource::FixedRequest,
+                    pricing_required: true,
+                    settlement_required: true,
+                    prepaid_required: false,
+                }
+            }
+        }
         InvocationSurface::OpenAiCompatible => openai_compatible_policy(invocation),
         InvocationSurface::CloudStorage => storage_policy(invocation),
         InvocationSurface::CloudIaas => api_request_policy(),

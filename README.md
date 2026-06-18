@@ -356,16 +356,20 @@ workspace-local `data/sdkwork-models` directory as
 `SDKWORK_MODELS_CATALOG_ROOT` by default and run a blocking
 `refresh-catalog --catalog-root data/sdkwork-models --force` step after
 `ensure`. Local JSON model or pricing edits are therefore imported into the dev
-database on every server-mode startup. The default client commands
-(`pnpm dev`, `pnpm desktop:dev`, and `pnpm tauri:dev`) do not start the
-Claw Router product server and do not run installer or catalog refresh steps;
-they use `sdkwork-api-gateway` as the API server.
+database on every server-mode startup. Default workspace commands
+(`pnpm dev`, `pnpm server:dev`) start the topology-aware integrated
+product server workspace. Gateway-backed client commands
+(`pnpm desktop:dev`, `pnpm tauri:dev`) start `sdkwork-api-gateway` plus
+the portal only and do not run installer or catalog refresh steps.
 
 Command intent:
 
-- `pnpm dev` starts the gateway-backed client development workspace:
-  `sdkwork-api-gateway` plus the portal dev server. It does not start the
-  Claw Router Rust edge/API process.
+- `pnpm clawrouter:dev` (alias: `pnpm dev`, `pnpm server:dev`) starts the default
+  integrated product server workspace (`self-hosted.unified-process.development`).
+  See `docs/topology-standard.md` for the full command matrix and env keys.
+- `pnpm clawrouter:dev:split` starts split-services internal validation layout.
+- `pnpm clawrouter:dev:desktop` (alias: `pnpm desktop:dev`, `pnpm tauri:dev`) starts
+  the gateway-backed client workspace only.
 - `pnpm test` runs the launcher/tooling contract tests.
 - `pnpm build` builds production portal assets, builds the generated app
   and backend SDK runtime packages, creates SDK ZIP archives under
@@ -378,13 +382,10 @@ Command intent:
   `.env.release.local` from the release host process environment, runs strict
   `release:preflight`, and then runs the full `verify` gate.
 - `pnpm portal:dev` starts the browser portal only.
-- `pnpm desktop:dev` and `pnpm tauri:dev` start the gateway-backed desktop
-  client workspace: `sdkwork-api-gateway` plus the portal desktop renderer.
-  They do not start a Claw Router product backend service.
+- `pnpm desktop:dev` and `pnpm tauri:dev` are aliases of `pnpm clawrouter:dev:desktop`.
 - `pnpm service:dev` starts the full install-checked workspace with
   service-mode environment flags.
-- `pnpm server:dev` explicitly starts the all-in-one Rust edge/API process
-  plus the portal dev server for product server debugging.
+- `pnpm server:dev` is an alias of `pnpm clawrouter:dev`.
 - `pnpm smoke:dev` starts the explicit `pnpm server:dev` entrypoint on
   isolated random local ports, verifies the edge and portal OpenAPI/runtime
   URLs, and stops the spawned process tree.
@@ -404,7 +405,8 @@ shells that block `pnpm.ps1`, call the package-manager shim through your shell
 or adjust the execution policy instead of changing committed scripts.
 
 Client development commands use `sdkwork-api-gateway` for API integration.
-Explicit product server development commands use PostgreSQL for integration
+Gateway-backed client commands (`pnpm desktop:dev`, `pnpm tauri:dev`) use
+that gateway workspace. Explicit product server development commands use PostgreSQL for integration
 testing unless an explicit SQLite server profile is selected. Desktop packages and first-run local user data use SQLite under `~/.sdkwork/router/data`.
 On Windows, the equivalent path is `%USERPROFILE%/.sdkwork/router/data`.
 Use `pnpm server:dev:sqlite` when validating explicit product server SQLite
@@ -412,10 +414,10 @@ behavior from the workspace. `pnpm desktop:dev:sqlite` and
 `pnpm tauri:dev:sqlite` are client-mode aliases and do not start a product
 backend service.
 
-Client-only startup prints the browser and API access matrix before launching
-processes. This is the gateway-backed client workspace, not the default product
-server topology. With default ports, `sdkwork-api-gateway` listens on `3902`
-and the portal dev server listens on `3901`:
+Gateway-backed client startup (`pnpm desktop:dev`, `pnpm tauri:dev`) prints
+the browser and API access matrix before launching processes. With default
+ports, `sdkwork-api-gateway` listens on `3902` and the portal dev server
+listens on `3901`:
 
 - Direct Portal Dev: `http://127.0.0.1:3901/`
 - SDKWork API Gateway: `http://127.0.0.1:3902/`

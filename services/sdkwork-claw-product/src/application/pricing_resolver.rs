@@ -53,6 +53,20 @@ impl<'a, C: PricingCatalog> PricingResolver<'a, C> {
     pub fn resolve(&self, query: ResolveModelPriceQuery) -> DomainResult<ResolvedModelPrice> {
         let api_key = self.find_api_key(query.api_key_id)?;
         let group = self.find_group(query.channel_group_id.unwrap_or(api_key.group_id))?;
+        // Verify the channel group belongs to the same tenant/organization as the API key,
+        // or is a global resource (tenant_id == 0)
+        if group.tenant_id != 0 && group.tenant_id != api_key.tenant_id {
+            return Err(DomainError::new(format!(
+                "channel group {} does not belong to tenant {}",
+                group.id, api_key.tenant_id
+            )));
+        }
+        if group.organization_id != 0 && group.organization_id != api_key.organization_id {
+            return Err(DomainError::new(format!(
+                "channel group {} does not belong to organization {}",
+                group.id, api_key.organization_id
+            )));
+        }
         let plan = self.find_plan(&group.pricing_plan_code)?;
         let model = self.find_model(&query.model)?;
         let vendor = self.find_vendor(&model.vendor_code)?;

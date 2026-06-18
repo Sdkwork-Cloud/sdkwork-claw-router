@@ -5,11 +5,14 @@ mod api_key_authenticator;
 mod api_key_secret_generator;
 mod cache_runtime;
 mod category_seed;
+mod gateway_invocation_policy;
+mod gateway_invocation_rate_limit;
 mod invocation;
 mod model_catalog_query;
 mod model_ranking_refresh_worker;
 mod model_rankings_service;
 mod password_hash;
+mod password_login_rate_limit;
 mod payment_adapter;
 mod payment_intent_runtime;
 mod payment_provider_account_resolver;
@@ -59,6 +62,10 @@ pub use cache_runtime::{
     ROUTING_PROVIDER_OBJECT_ROUTE_CACHE_NAMESPACE, ROUTING_SNAPSHOT_CACHE_NAMESPACE,
 };
 pub use category_seed::{load_admin_category_seed_bundles, DEFAULT_ADMIN_CATEGORY_SEED_DATASETS};
+pub use gateway_invocation_policy::{
+    client_ip_allowed_by_allowlist, GatewayInvocationPolicyGuard, GatewayInvocationPolicyViolation,
+};
+pub use gateway_invocation_rate_limit::{GatewayInvocationRateLimiter, GatewayRateLimitSpec};
 pub use invocation::{
     AccountResolutionInterceptor, BillingMode, BillingPolicyInterceptor, BillingQuantitySource,
     DispatchExecutor, DispatchMode, Invocation, InvocationAccount, InvocationAdapterTarget,
@@ -89,6 +96,7 @@ pub use model_ranking_refresh_worker::{
 };
 pub use model_rankings_service::ModelRankingsService;
 pub use password_hash::{PasswordHasher, Pbkdf2Sha256PasswordHasher};
+pub use password_login_rate_limit::PasswordLoginRateLimiter;
 pub use payment_adapter::{
     PaymentAdapterFuture, PaymentAdapterOperation, PaymentCancelPaymentIntentRequest,
     PaymentCancelRefundRequest, PaymentCapturePaymentIntentRequest,

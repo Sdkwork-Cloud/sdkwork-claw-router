@@ -2,4 +2,4 @@ export {
   SdkworkGenerationModePopupBase as GenerationModePopupBase,
   type SdkworkGenerationModeOption as ModeOption,
   type SdkworkGenerationModeSection as ConfigSection,
-} from '@sdkwork/generation-pc-react/react';
+} from '@sdkwork/image-pc-generation/react';

@@ -15,6 +15,7 @@ impl PricingCatalogSql {
             Self::load_api_keys(),
             Self::load_access_policies(),
             Self::load_quota_policies(),
+            Self::load_gateway_risk_rules(),
             Self::load_channel_group_metric_snapshots(),
             Self::load_prices(),
         ]
@@ -489,6 +490,16 @@ SELECT
     cc.auth_config::text AS auth_config_json,
     c.timeout_ms AS timeout_ms,
     c.retry_policy::text AS retry_policy_json,
+    CASE
+        WHEN COALESCE(c.health_status, 1) = 1 THEN 1
+        WHEN COALESCE(c.updated_at, CURRENT_TIMESTAMP) + ($1 * INTERVAL '1 second') <= CURRENT_TIMESTAMP THEN 1
+        ELSE COALESCE(c.health_status, 1)
+    END AS channel_health_status,
+    CASE
+        WHEN COALESCE(cc.health_status, 1) = 1 THEN 1
+        WHEN COALESCE(cc.updated_at, CURRENT_TIMESTAMP) + ($1 * INTERVAL '1 second') <= CURRENT_TIMESTAMP THEN 1
+        ELSE COALESCE(cc.health_status, 1)
+    END AS credential_health_status,
     COALESCE((
         SELECT jsonb_agg(
             jsonb_build_object(
@@ -587,14 +598,7 @@ LEFT JOIN ai_provider p
 WHERE c.deleted_at IS NULL
   AND (p.id IS NULL OR p.deleted_at IS NULL)
   AND c.status = 1
-  AND (
-      COALESCE(c.health_status, 1) = 1
-      OR COALESCE(c.updated_at, CURRENT_TIMESTAMP) + ($1 * INTERVAL '1 second') <= CURRENT_TIMESTAMP
-  )
-  AND (
-      COALESCE(cc.health_status, 1) = 1
-      OR COALESCE(cc.updated_at, CURRENT_TIMESTAMP) + ($1 * INTERVAL '1 second') <= CURRENT_TIMESTAMP
-  )
+  AND cc.status = 1
   AND (p.id IS NULL OR p.status = 1)
   AND EXISTS (
       SELECT 1
@@ -869,13 +873,45 @@ ORDER BY updated_at DESC, id DESC
         r#"
 SELECT
     id,
-    quota_limit::text AS quota_limit
+    quota_limit::text AS quota_limit,
+    requests_per_second,
+    requests_per_day,
+    burst_limit::text AS burst_limit
 FROM ai_quota_policy
 WHERE deleted_at IS NULL
   AND status = 1
   AND (effective_from IS NULL OR effective_from <= CURRENT_TIMESTAMP)
   AND (effective_to IS NULL OR effective_to > CURRENT_TIMESTAMP)
 ORDER BY updated_at DESC, id DESC
+"#
+    }
+
+    pub fn load_gateway_risk_rules() -> &'static str {
+        r#"
+SELECT
+    id,
+    COALESCE(tenant_id, 0) AS tenant_id,
+    COALESCE(organization_id, 0) AS organization_id,
+    COALESCE(rule_category, 0) AS rule_category,
+    COALESCE(rule_type, 0) AS rule_type,
+    scope_type,
+    scope_id,
+    COALESCE(target_type, 0) AS target_type,
+    COALESCE(target_value, '') AS target_value,
+    COALESCE(match_mode, 0) AS match_mode,
+    COALESCE(action, 0) AS action,
+    COALESCE(priority, 0) AS priority,
+    requests_per_second,
+    requests_per_minute,
+    requests_per_day,
+    burst_limit::text AS burst_limit,
+    block_duration_seconds
+FROM iam_gateway_risk_rule
+WHERE deleted_at IS NULL
+  AND status = 1
+  AND (effective_from IS NULL OR effective_from <= CURRENT_TIMESTAMP)
+  AND (effective_to IS NULL OR effective_to > CURRENT_TIMESTAMP)
+ORDER BY priority ASC, id ASC
 "#
     }
 

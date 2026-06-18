@@ -103,6 +103,29 @@ fn extract_stream_flag(invocation: &mut Invocation) {
             .as_deref()
             .and_then(query_value_stream)
     })
+    .or_else(|| {
+        // Detect streaming via Accept header (Anthropic, etc.)
+        invocation
+            .request
+            .headers
+            .get("accept")
+            .and_then(|v| v.to_str().ok())
+            .and_then(|v| {
+                if v.contains("text/event-stream") {
+                    Some(true)
+                } else {
+                    None
+                }
+            })
+    })
+    .or_else(|| {
+        // Detect Gemini streaming endpoints: :streamGenerateContent
+        if invocation.request.path.contains(":streamGenerateContent") {
+            Some(true)
+        } else {
+            None
+        }
+    })
     .unwrap_or(false);
 
     if stream {

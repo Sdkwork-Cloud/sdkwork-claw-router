@@ -1,8 +1,28 @@
 use std::sync::OnceLock;
 
-use sdkwork_platform_id_service::SnowflakeIdGenerator;
+use sdkwork_database_config::DatabaseConfig as StandardDatabaseConfig;
+use sdkwork_database_config::DatabaseEngine as StandardDatabaseEngine;
+use sdkwork_id_core::SnowflakeIdGenerator;
 
 use crate::domain::{DomainError, DomainResult};
+
+/// Converts the application-specific database config to the SDKWork standard config
+/// for use with `sdkwork-database-sqlx::PoolBuilder`.
+#[allow(dead_code)]
+pub(crate) fn to_standard_database_config(
+    config: &sdkwork_claw_config::DatabaseConfig,
+) -> StandardDatabaseConfig {
+    let engine = match config.engine {
+        sdkwork_claw_config::DatabaseEngine::Sqlite => StandardDatabaseEngine::Sqlite,
+        sdkwork_claw_config::DatabaseEngine::Postgres => StandardDatabaseEngine::Postgres,
+    };
+    StandardDatabaseConfig {
+        engine,
+        url: config.url.clone(),
+        max_connections: config.max_connections,
+        ..StandardDatabaseConfig::default()
+    }
+}
 
 const ADMIN_APP_NODE_ID: u16 = 21;
 const ADMIN_SKILL_NODE_ID: u16 = 22;
@@ -22,6 +42,13 @@ pub(crate) fn next_admin_skill_id(context: &str) -> DomainResult<i64> {
 }
 
 pub(crate) fn next_claw_runtime_id(context: &str) -> DomainResult<i64> {
+    let generator = claw_runtime_id_generator()?;
+    next_runtime_id(generator, context)
+}
+
+/// Generates a globally unique user ID using the Claw runtime Snowflake generator.
+/// Replaces `MAX(id) + 1` patterns in admin/user stores per DATABASE_SPEC §6.1.
+pub(crate) fn next_user_id(context: &str) -> DomainResult<i64> {
     let generator = claw_runtime_id_generator()?;
     next_runtime_id(generator, context)
 }

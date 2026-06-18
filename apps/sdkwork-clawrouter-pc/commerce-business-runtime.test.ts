@@ -454,7 +454,7 @@ test("admin commerce packages are split by product, inventory, order, payment, m
   const packageExpectations = {
     "sdkwork-clawrouter-pc-admin-catalog": [
       "CatalogAdmin",
-      "sdkwork-commerce-pc-admin-product",
+      "@sdkwork/commerce-pc-admin-product",
       "createCommerceProductAdminService",
     ],
     "sdkwork-clawrouter-pc-admin-inventory": [
@@ -534,7 +534,7 @@ test("admin commerce packages are split by product, inventory, order, payment, m
     }
     assert.doesNotMatch(viewSource, /sdkwork-clawrouter-pc-commons\/runtime/);
     if (packageName === "sdkwork-clawrouter-pc-admin-catalog") {
-      assert.match(serviceSource, /sdkwork-commerce-pc-admin-product/);
+      assert.match(serviceSource, /@sdkwork\/commerce-pc-admin-product/);
     } else {
       assert.match(serviceSource, /getSdkworkCommerceService/);
       assert.doesNotMatch(

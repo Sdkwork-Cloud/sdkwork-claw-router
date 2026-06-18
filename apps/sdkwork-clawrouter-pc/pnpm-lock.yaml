@@ -36,6 +36,9 @@ catalogs:
     react-i18next:
       specifier: ^17.0.2
       version: 17.0.8
+    react-router:
+      specifier: ^7.14.0
+      version: 7.14.0
     react-router-dom:
       specifier: ^7.14.0
       version: 7.14.0
@@ -92,6 +95,9 @@ importers:
       '@sdkwork/commerce-contracts':
         specifier: workspace:*
         version: link:../../../sdkwork-commerce/packages/common/commerce/sdkwork-commerce-contracts
+      '@sdkwork/commerce-pc-admin-product':
+        specifier: workspace:*
+        version: link:../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-admin-product
       '@sdkwork/commerce-sdk-ports':
         specifier: workspace:*
         version: link:../../../sdkwork-commerce/packages/common/commerce/sdkwork-commerce-sdk-ports
@@ -119,9 +125,6 @@ importers:
       '@sdkwork/file-service':
         specifier: workspace:*
         version: link:../../packages/common/file/sdkwork-file-service
-      '@sdkwork/generation-pc-react':
-        specifier: workspace:*
-        version: link:../../../sdkwork-image/packages/pc-react/content/sdkwork-generation-pc-react
       '@sdkwork/generations-pc-workspace':
         specifier: workspace:*
         version: link:../../../sdkwork-generations/apps/sdkwork-generations-pc/packages/sdkwork-generations-pc-workspace
@@ -155,6 +158,9 @@ importers:
       '@sdkwork/iam-service':
         specifier: workspace:*
         version: link:../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-service
+      '@sdkwork/image-pc-generation':
+        specifier: workspace:*
+        version: link:../../../sdkwork-image/apps/sdkwork-image-pc/packages/sdkwork-image-pc-generation
       '@sdkwork/notification-pc-react':
         specifier: workspace:*
         version: link:../../../sdkwork-appbase/packages/pc-react/notification/sdkwork-notification-pc-react
@@ -170,6 +176,9 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.1.14
         version: 4.2.2(vite@6.4.2(@types/node@22.19.17)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0))
+      '@tanstack/react-query':
+        specifier: ^5.90.12
+        version: 5.101.0(react@19.2.4)
       '@uiw/react-md-editor':
         specifier: ^4.1.0
         version: 4.1.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -491,9 +500,6 @@ importers:
       sdkwork-commerce-backend-sdk-generated-typescript:
         specifier: workspace:*
         version: link:../../../sdkwork-commerce/sdks/sdkwork-commerce-backend-sdk/sdkwork-commerce-backend-sdk-typescript/generated/server-openapi
-      sdkwork-commerce-pc-admin-product:
-        specifier: workspace:*
-        version: link:../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-admin-product
       sdkwork-generations-app-sdk-generated-typescript:
         specifier: workspace:*
         version: link:../../../sdkwork-generations/sdks/sdkwork-generations-app-sdk/sdkwork-generations-app-sdk-typescript/generated/server-openapi
@@ -750,6 +756,8 @@ importers:
         specifier: ^6.0.2
         version: 6.0.2
 
+  ../../../sdkwork-appbase/packages/pc-react/integration/sdkwork-open-platform-admin-pc-react: {}
+
   ../../../sdkwork-appbase/packages/pc-react/notification/sdkwork-notification-pc-react:
     dependencies:
       lucide-react:
@@ -790,6 +798,9 @@ importers:
 
   ../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-admin-product:
     devDependencies:
+      '@sdkwork/commerce-pc-core':
+        specifier: workspace:*
+        version: link:../sdkwork-commerce-pc-core
       '@sdkwork/commerce-service':
         specifier: workspace:*
         version: link:../../../../packages/common/commerce/sdkwork-commerce-service
@@ -811,9 +822,14 @@ importers:
       react-i18next:
         specifier: 'catalog:'
         version: 17.0.8(i18next@26.3.1(typescript@6.0.2))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@6.0.2)
+      react-router:
+        specifier: 'catalog:'
+        version: 7.14.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       react-router-dom:
         specifier: 'catalog:'
         version: 7.14.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+
+  ../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-core: {}
 
   ../../../sdkwork-commerce/packages/common/commerce/sdkwork-commerce-contracts: {}
 
@@ -963,16 +979,16 @@ importers:
         specifier: ^5.3.0
         version: 5.8.3
 
-  ../../../sdkwork-image/packages/common/image/sdkwork-image-contracts: {}
-
-  ../../../sdkwork-image/packages/pc-react/content/sdkwork-generation-pc-react:
+  ../../../sdkwork-image/apps/sdkwork-image-pc/packages/sdkwork-image-pc-generation:
     dependencies:
       '@sdkwork/image-contracts':
         specifier: workspace:*
-        version: link:../../../common/image/sdkwork-image-contracts
+        version: link:../../../../packages/common/image/sdkwork-image-contracts
       lucide-react:
         specifier: 'catalog:'
         version: 0.546.0(react@19.2.4)
+
+  ../../../sdkwork-image/packages/common/image/sdkwork-image-contracts: {}
 
   ../../../sdkwork-ui/sdkwork-ui-pc-react:
     dependencies:
@@ -1370,7 +1386,7 @@ importers:
 
   packages/sdkwork-clawrouter-pc-admin-catalog:
     dependencies:
-      sdkwork-commerce-pc-admin-product:
+      '@sdkwork/commerce-pc-admin-product':
         specifier: workspace:*
         version: link:../../../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-admin-product
 
@@ -1508,6 +1524,9 @@ importers:
 
   packages/sdkwork-clawrouter-pc-admin-ratelimit:
     dependencies:
+      '@tanstack/react-query':
+        specifier: ^5.90.12
+        version: 5.101.0(react@19.2.4)
       sdkwork-clawrouter-pc-commons:
         specifier: workspace:*
         version: link:../sdkwork-clawrouter-pc-commons
@@ -1624,6 +1643,9 @@ importers:
       '@sdkwork/sdk-common':
         specifier: ^1.0.2
         version: 1.0.2
+      '@tanstack/react-query':
+        specifier: ^5.90.12
+        version: 5.101.0(react@19.2.4)
       sdkwork-commerce-app-sdk-generated-typescript:
         specifier: workspace:*
         version: link:../../../../../sdkwork-commerce/sdks/sdkwork-commerce-app-sdk/sdkwork-commerce-app-sdk-typescript/generated/server-openapi
@@ -1815,12 +1837,12 @@ importers:
 
   packages/sdkwork-clawrouter-pc-playground:
     dependencies:
-      '@sdkwork/generation-pc-react':
-        specifier: workspace:*
-        version: link:../../../../../sdkwork-image/packages/pc-react/content/sdkwork-generation-pc-react
       '@sdkwork/generations-pc-workspace':
         specifier: workspace:*
         version: link:../../../../../sdkwork-generations/apps/sdkwork-generations-pc/packages/sdkwork-generations-pc-workspace
+      '@sdkwork/image-pc-generation':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-image/apps/sdkwork-image-pc/packages/sdkwork-image-pc-generation
       react-markdown:
         specifier: 10.1.0
         version: 10.1.0(@types/react@19.2.14)(react@19.2.4)
@@ -3813,6 +3835,14 @@ packages:
     resolution: {integrity: sha512-mEiF5HO1QqCLXoNEfXVA1Tzo+cYsrqV7w9Juj2wdUFyW07JRenqMG225MvPwr3ZD9N1bFQj46X7r33iHxLUW0w==}
     peerDependencies:
       vite: ^5.2.0 || ^6 || ^7 || ^8
+
+  '@tanstack/query-core@5.101.0':
+    resolution: {integrity: sha512-cQetA74EB+seWySv1TTKr828TnP0u39m6LykwDXIo84SNortpDkp30TMEjkqtYCNP9c40uT/iwl6MLiufEt0Ow==}
+
+  '@tanstack/react-query@5.101.0':
+    resolution: {integrity: sha512-rLlJXSpkqfizLWgkR5+eLeIk0MvTx/meEIR7LRjxic+qxiQP8zVjq7BqQkiCMNLQBlLfuOLqqr6KO5GtrDlmSg==}
+    peerDependencies:
+      react: ^18 || ^19
 
   '@tanstack/react-table@8.21.3':
     resolution: {integrity: sha512-5nNMTSETP4ykGegmVkhjcS8tTLW6Vl4axfEGQN3v0zdHYbK4UfoqfPChclTrJ4EoK9QynqAu9oUf8VEmrpZ5Ww==}
@@ -7605,6 +7635,13 @@ snapshots:
       '@tailwindcss/oxide': 4.2.2
       tailwindcss: 4.2.2
       vite: 8.0.3(@types/node@25.9.2)(esbuild@0.27.7)(jiti@2.6.1)(tsx@4.21.0)
+
+  '@tanstack/query-core@5.101.0': {}
+
+  '@tanstack/react-query@5.101.0(react@19.2.4)':
+    dependencies:
+      '@tanstack/query-core': 5.101.0
+      react: 19.2.4
 
   '@tanstack/react-table@8.21.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:

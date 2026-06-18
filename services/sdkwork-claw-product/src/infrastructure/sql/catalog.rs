@@ -2,15 +2,16 @@ use std::collections::BTreeMap;
 
 use crate::domain::{
     AiModel, BillingMeter, ChannelGroup, ChannelGroupMetricSnapshot, DecimalValue, DomainResult,
-    GatewayAccessPolicy, GatewayApiKey, ModelMappingRule, ModelPrice, ModelProviderRoute,
-    ModelVendorDefinition, Money, PriceSide, PricingPlan, ProviderChannelRoute, QuotaPolicy,
-    ResolveModelMappingContext, RoutingPolicy, RoutingRule,
+    GatewayAccessPolicy, GatewayApiKey, GatewayRiskRule, ModelMappingRule, ModelPrice,
+    ModelProviderRoute, ModelVendorDefinition, Money, PriceSide, PricingPlan, ProviderChannelRoute,
+    QuotaPolicy, ResolveModelMappingContext, RoutingPolicy, RoutingRule,
 };
 use crate::infrastructure::in_memory_pricing_catalog::resolve_model_mapping_from_rules;
 use crate::infrastructure::sql::rows::{
     AiModelRow, ChannelGroupMetricSnapshotRow, ChannelGroupRow, GatewayAccessPolicyRow,
-    GatewayApiKeyRow, ModelMappingRuleRow, ModelPriceRow, ModelProviderRouteRow, ModelVendorRow,
-    PricingPlanRow, ProviderChannelRouteRow, QuotaPolicyRow, RoutingPolicyRow, RoutingRuleRow,
+    GatewayApiKeyRow, GatewayRiskRuleRow, ModelMappingRuleRow, ModelPriceRow,
+    ModelProviderRouteRow, ModelVendorRow, PricingPlanRow, ProviderChannelRouteRow, QuotaPolicyRow,
+    RoutingPolicyRow, RoutingRuleRow,
 };
 use crate::ports::PricingCatalog;
 use std::sync::{Arc, RwLock};
@@ -29,6 +30,7 @@ pub struct PricingCatalogRows {
     pub api_keys: Vec<GatewayApiKeyRow>,
     pub access_policies: Vec<GatewayAccessPolicyRow>,
     pub quota_policies: Vec<QuotaPolicyRow>,
+    pub gateway_risk_rules: Vec<GatewayRiskRuleRow>,
     pub channel_group_metric_snapshots: Vec<ChannelGroupMetricSnapshotRow>,
     pub prices: Vec<ModelPriceRow>,
 }
@@ -65,6 +67,7 @@ pub struct SqlPricingCatalogSnapshot {
     api_keys: Vec<GatewayApiKey>,
     access_policies: Vec<GatewayAccessPolicy>,
     quota_policies: Vec<QuotaPolicy>,
+    gateway_risk_rules: Vec<GatewayRiskRule>,
     channel_group_metric_snapshots: Vec<ChannelGroupMetricSnapshot>,
     prices: Vec<ModelPrice>,
     managed_provider_secrets: BTreeMap<String, String>,
@@ -105,6 +108,10 @@ impl SqlPricingCatalogSnapshot {
                 GatewayAccessPolicyRow::try_into_domain,
             )?,
             quota_policies: map_rows(rows.quota_policies, QuotaPolicyRow::try_into_domain)?,
+            gateway_risk_rules: map_rows(
+                rows.gateway_risk_rules,
+                GatewayRiskRuleRow::try_into_domain,
+            )?,
             channel_group_metric_snapshots: map_rows(
                 rows.channel_group_metric_snapshots,
                 ChannelGroupMetricSnapshotRow::try_into_domain,
@@ -251,6 +258,10 @@ impl PricingCatalog for RefreshableSqlPricingCatalog {
 
     fn find_quota_policy(&self, policy_id: i64) -> Option<QuotaPolicy> {
         self.current_snapshot().find_quota_policy(policy_id)
+    }
+
+    fn list_gateway_risk_rules(&self) -> Vec<GatewayRiskRule> {
+        self.current_snapshot().list_gateway_risk_rules()
     }
 
     fn find_latest_channel_group_metric_snapshot(
@@ -415,6 +426,10 @@ impl PricingCatalog for SqlPricingCatalogSnapshot {
             .iter()
             .find(|policy| policy.id == policy_id)
             .cloned()
+    }
+
+    fn list_gateway_risk_rules(&self) -> Vec<GatewayRiskRule> {
+        self.gateway_risk_rules.clone()
     }
 
     fn find_latest_channel_group_metric_snapshot(

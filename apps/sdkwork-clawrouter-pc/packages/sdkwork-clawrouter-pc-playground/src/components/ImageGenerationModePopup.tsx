@@ -2,7 +2,7 @@ import { Home, RectangleHorizontal, RectangleVertical, Square } from 'lucide-rea
 import {
   DEFAULT_SDKWORK_GENERATION_IMAGE_MODE_CONFIG,
   type SdkworkGenerationImageModeConfig,
-} from '@sdkwork/generation-pc-react/react';
+} from '@sdkwork/image-pc-generation/react';
 import { GenerationModePopupBase, type ConfigSection } from './GenerationModePopupBase';
 
 export type ImageGenerationConfig = SdkworkGenerationImageModeConfig;

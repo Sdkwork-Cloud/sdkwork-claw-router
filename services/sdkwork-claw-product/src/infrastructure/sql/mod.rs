@@ -10,6 +10,7 @@ pub(crate) mod iam_seed_defaults;
 pub mod installer;
 pub(crate) mod model_catalog_import;
 pub(crate) mod model_modality;
+pub mod pool;
 pub mod postgres;
 pub(crate) mod provider_classification;
 mod queries;

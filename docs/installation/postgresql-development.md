@@ -1,13 +1,12 @@
 # Development PostgreSQL Configuration
 
 This guide documents the local SDKWork Claw Router PostgreSQL development
-profile for explicit product server commands. `pnpm server:dev` and
-`pnpm server:dev:postgres` use PostgreSQL by default for the Claw Router product
-server runtime. The default client commands (`pnpm dev`, `pnpm dev:postgres`,
-`pnpm dev:sqlite`, `pnpm desktop:dev`, `pnpm desktop:dev:sqlite`,
-`pnpm tauri:dev`, and `pnpm tauri:dev:sqlite`) start `sdkwork-api-gateway` plus
-the portal only; they do not start a Claw Router backend service and do not use
-the product server database profile.
+profile for explicit product server commands. `pnpm clawrouter:dev` (aliases:
+`pnpm dev`, `pnpm server:dev`) and `pnpm server:dev:postgres` use PostgreSQL by
+default for the integrated Claw Router product server runtime. Gateway-backed
+client commands (`pnpm clawrouter:dev:desktop`, `pnpm desktop:dev`,
+`pnpm tauri:dev`, and their `:sqlite` aliases) start `sdkwork-api-gateway` plus
+the portal only; they do not start the product server database profile.
 
 Workspace desktop commands are gateway-backed client commands. They start the
 desktop shell plus `sdkwork-api-gateway`, not a product backend service. Use
@@ -83,11 +82,19 @@ Equivalent explicit PostgreSQL server entrypoint:
 pnpm server:dev:postgres
 ```
 
-Client and desktop development use `sdkwork-api-gateway` as the API server and
-do not start the Claw Router product backend:
+Integrated product server (PostgreSQL by default):
 
 ```powershell
+pnpm clawrouter:dev
 pnpm dev
+pnpm server:dev
+```
+
+Gateway-backed desktop client (no product server):
+
+```powershell
+pnpm clawrouter:dev:desktop
+pnpm desktop:dev
 pnpm tauri:dev
 ```
 

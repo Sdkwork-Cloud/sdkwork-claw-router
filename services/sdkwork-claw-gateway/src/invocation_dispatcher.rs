@@ -1,6 +1,7 @@
 use std::collections::HashSet;
 use std::time::Duration;
 
+use axum::body::Body as AxumBody;
 use axum::http::header::{self, HeaderName, HeaderValue};
 use axum::http::request::Builder as RequestBuilder;
 use axum::http::Uri;
@@ -20,6 +21,7 @@ use sdkwork_claw_product::ports::{
 };
 
 const INVOCATION_UPSTREAM_BODY_LIMIT_BYTES: usize = 32 * 1024 * 1024;
+const DEFAULT_DISPATCH_TIMEOUT_MS: u64 = 30_000;
 
 type InvocationHttpBody = Full<Bytes>;
 type InvocationHttpConnector = HttpsConnector<HttpConnector>;
@@ -112,6 +114,24 @@ impl InvocationDispatcher for InvocationHttpDispatcher {
                 .map(str::trim)
                 .filter(|value| !value.is_empty())
                 .map(str::to_owned);
+
+            let is_sse_stream = content_type.as_deref().is_some_and(|ct| {
+                let ct_lower = ct.to_lowercase();
+                ct_lower.starts_with("text/event-stream")
+                    || ct_lower.starts_with("application/x-ndjson")
+            });
+
+            if is_sse_stream {
+                // For SSE streaming responses, don't buffer — pass the body through
+                let (_, body) = response.into_parts();
+                let stream_body = AxumBody::new(body);
+                return Ok(InvocationDispatchResponse::streaming(
+                    status_code,
+                    content_type,
+                    stream_body,
+                ));
+            }
+
             let body = execute_with_optional_timeout(
                 account,
                 "provider response body",
@@ -173,7 +193,11 @@ async fn execute_with_optional_timeout<F, T>(
 where
     F: std::future::Future<Output = T>,
 {
-    let Some(timeout) = account.timeout_ms.and_then(timeout_duration) else {
+    let Some(timeout) = account
+        .timeout_ms
+        .and_then(timeout_duration)
+        .or_else(|| timeout_duration(DEFAULT_DISPATCH_TIMEOUT_MS))
+    else {
         return Ok(future.await);
     };
     tokio::time::timeout(timeout, future).await.map_err(|_| {

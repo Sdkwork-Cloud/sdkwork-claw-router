@@ -245,12 +245,42 @@ impl ChannelGroupMetricSnapshot {
 pub struct QuotaPolicy {
     pub id: i64,
     pub quota_limit: Option<DecimalValue>,
+    pub requests_per_second: Option<i64>,
+    pub requests_per_day: Option<i64>,
+    pub burst_limit: Option<DecimalValue>,
 }
 
 impl QuotaPolicy {
     pub fn new(id: i64, quota_limit: Option<DecimalValue>) -> Self {
-        Self { id, quota_limit }
+        Self {
+            id,
+            quota_limit,
+            requests_per_second: None,
+            requests_per_day: None,
+            burst_limit: None,
+        }
     }
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct GatewayRiskRule {
+    pub id: i64,
+    pub tenant_id: i64,
+    pub organization_id: i64,
+    pub rule_category: i32,
+    pub rule_type: i32,
+    pub scope_type: Option<i32>,
+    pub scope_id: Option<i64>,
+    pub target_type: i32,
+    pub target_value: String,
+    pub match_mode: i32,
+    pub action: i32,
+    pub priority: i32,
+    pub requests_per_second: Option<i64>,
+    pub requests_per_minute: Option<i64>,
+    pub requests_per_day: Option<i64>,
+    pub burst_limit: Option<DecimalValue>,
+    pub block_duration_seconds: Option<i64>,
 }
 
 fn mask_key_prefix(key_prefix: &str) -> String {

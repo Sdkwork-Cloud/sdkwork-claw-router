@@ -3,7 +3,7 @@ use std::sync::Arc;
 use axum::Router;
 use sdkwork_api_gateway_config::{
     DependencyApiSurfaceConfig, DependencyRuntimeMode, GatewayMode, GatewayRuntimeConfig,
-    APPBASE_APP_API_SERVICE_ID,
+    APPBASE_APP_API_SERVICE_ID, APPBASE_BACKEND_API_PREFIX, APPBASE_BACKEND_API_SERVICE_ID,
 };
 use sdkwork_claw_config::{
     ApiKeySecurityConfig, AppSessionConfig, DatabaseConfig, DatabaseEngine, DeploymentMode,
@@ -118,28 +118,15 @@ fn router_with_invocation_runtime_and_provider_native_routes<C>(
     api_key_hasher: ApiKeyHasher,
     provider_secret_resolver: Option<Arc<RefreshableProviderSecretMapResolver>>,
     invocation_sticky_store: Option<Arc<dyn StickyRouteStore>>,
-    route_scoped_sticky_store: Option<
-        crate::route_scoped_openai_passthrough::StickyObjectRouteStore,
-    >,
     usage_recorder: Option<UsageRecorder>,
-    provider_passthrough_config: Option<ProviderRelayConfig>,
+    _provider_passthrough_config: Option<ProviderRelayConfig>,
     provider_adapter_config: Option<ProviderAdapterConfig>,
 ) -> Router
 where
     C: PricingCatalog + Send + Sync + 'static,
 {
-    let router = router_with_route_scoped_openai_and_provider_native_routes(
-        base_router,
-        Arc::clone(&catalog),
-        Arc::clone(&api_key_hasher),
-        provider_secret_resolver.clone(),
-        route_scoped_sticky_store,
-        usage_recorder.clone(),
-        provider_passthrough_config.clone(),
-        provider_adapter_config.clone(),
-    );
     router_with_invocation_runtime_routes(
-        router,
+        base_router,
         catalog,
         api_key_hasher,
         provider_secret_resolver,
@@ -149,63 +136,12 @@ where
     )
 }
 
-fn router_with_route_scoped_openai_and_provider_native_routes<C>(
-    base_router: Router,
-    catalog: Arc<C>,
-    api_key_hasher: ApiKeyHasher,
-    provider_secret_resolver: Option<Arc<RefreshableProviderSecretMapResolver>>,
-    route_scoped_sticky_store: Option<
-        crate::route_scoped_openai_passthrough::StickyObjectRouteStore,
-    >,
-    usage_recorder: Option<UsageRecorder>,
-    provider_passthrough_config: Option<ProviderRelayConfig>,
-    provider_adapter_config: Option<ProviderAdapterConfig>,
-) -> Router
-where
-    C: PricingCatalog + Send + Sync + 'static,
-{
-    let provider_secret_resolver_dyn = provider_secret_resolver
-        .clone()
-        .map(|resolver| -> Arc<dyn ProviderSecretResolver + Send + Sync> { resolver });
-    let mut router = base_router;
-    if let Some(secret_resolver) = provider_secret_resolver_dyn.clone() {
-        router = router.merge(crate::passthrough::route_scoped_openai_passthrough_router(
-            Arc::clone(&catalog),
-            Arc::clone(&api_key_hasher),
-            secret_resolver,
-            usage_recorder.clone(),
-            route_scoped_sticky_store,
-        ));
-    }
-    if provider_secret_resolver_dyn.is_some()
-        || provider_passthrough_config.is_some()
-        || provider_adapter_config
-            .as_ref()
-            .is_some_and(|config| !config.routes().is_empty())
-    {
-        router = router.merge(
-            crate::passthrough::authenticated_provider_native_passthrough_router_with_adapter_config(
-                provider_passthrough_config.clone(),
-                Arc::clone(&catalog),
-                Arc::clone(&api_key_hasher),
-                provider_adapter_config.clone(),
-                provider_secret_resolver_dyn,
-                usage_recorder.clone(),
-            ),
-        );
-    }
-    router
-}
-
 fn router_with_database_runtime_routes<C>(
     base_router: Router,
     catalog: Arc<C>,
     api_key_hasher: ApiKeyHasher,
     provider_secret_resolver: Option<Arc<RefreshableProviderSecretMapResolver>>,
     invocation_sticky_store: Option<Arc<dyn StickyRouteStore>>,
-    route_scoped_sticky_store: Option<
-        crate::route_scoped_openai_passthrough::StickyObjectRouteStore,
-    >,
     usage_recorder: Option<UsageRecorder>,
     provider_passthrough_config: Option<ProviderRelayConfig>,
     provider_adapter_config: Option<ProviderAdapterConfig>,
@@ -221,7 +157,6 @@ where
             api_key_hasher,
             provider_secret_resolver,
             invocation_sticky_store,
-            route_scoped_sticky_store,
             usage_recorder,
             provider_passthrough_config,
             provider_adapter_config,
@@ -349,15 +284,12 @@ async fn connect_sqlite_runtime_pool(
         .map_err(|error| GatewayRouterError::Sqlite(SqlCatalogLoadError::Database(error)))
 }
 
-#[derive(Clone)]
-enum SharedDatabasePool {
-    Sqlite(SqlitePool),
-    Postgres(PgPool),
-}
+use sdkwork_database_sqlx::{DatabasePool, PoolContext};
 
+#[derive(Clone)]
 struct AllInOneRuntimeContext {
     database_config: DatabaseConfig,
-    database_pool: SharedDatabasePool,
+    database_pool: DatabasePool,
     database_installer: Arc<DatabaseInstaller>,
     catalog: Arc<RefreshableSqlPricingCatalog>,
     api_key_security_config: ApiKeySecurityConfig,
@@ -542,7 +474,7 @@ fn router_with_openai_runtime_routes<C>(
     invocation_plugins: Vec<OpenAiInvocationPluginRef>,
     failure_strategy: OpenAiRuntimeFailureStrategy,
     default_retry_policy: ProviderRetryPolicy,
-    provider_passthrough_config: Option<ProviderRelayConfig>,
+    _provider_passthrough_config: Option<ProviderRelayConfig>,
     provider_adapter_config: Option<ProviderAdapterConfig>,
     provider_secret_resolver: Option<Arc<RefreshableProviderSecretMapResolver>>,
     _prefer_secret_ref_openai_runtime: bool,
@@ -551,27 +483,14 @@ fn router_with_openai_runtime_routes<C>(
 where
     C: PricingCatalog + Send + Sync + 'static,
 {
-    let base_router = match provider_passthrough_config.clone() {
-        Some(config) if provider_secret_resolver.is_none() => base_router.merge(
-            crate::passthrough::authenticated_stored_chat_completion_passthrough_router(
-                config,
-                Arc::clone(&catalog),
-                Arc::clone(&api_key_hasher),
-            ),
-        ),
-        _ => base_router,
-    };
-
     if provider_secret_resolver.is_some() {
-        return router_with_invocation_runtime_and_provider_native_routes(
+        return router_with_invocation_runtime_routes(
             base_router,
-            Arc::clone(&catalog),
-            Arc::clone(&api_key_hasher),
-            provider_secret_resolver.clone(),
+            catalog,
+            api_key_hasher,
+            provider_secret_resolver,
             sticky_store,
-            None,
-            usage_recorder.clone(),
-            provider_passthrough_config,
+            usage_recorder,
             provider_adapter_config,
         );
     }
@@ -697,18 +616,7 @@ where
         .merge(responses_router)
         .merge(chat_router);
 
-    match provider_passthrough_config {
-        Some(config) => router.merge(
-            crate::passthrough::authenticated_gateway_passthrough_router_with_adapter_config(
-                config,
-                catalog,
-                api_key_hasher,
-                provider_adapter_config,
-                usage_recorder.clone(),
-            ),
-        ),
-        None => router,
-    }
+    router
 }
 
 pub async fn router_with_database_and_api_key_config(
@@ -891,19 +799,15 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                 provider_runtime.catalog_refresh_interval,
                 provider_runtime.circuit_breaker_recovery_window_seconds,
             );
+            let invocation_sticky: Option<Arc<dyn StickyRouteStore>> = Some(Arc::new(
+                InvocationStickyObjectRouteStore::sqlite(pool.clone()),
+            ));
             router_with_database_runtime_routes(
-                router_with_database_status_and_passthrough_placeholder(Some(&config), false),
+                router_with_database_status_and_passthrough_placeholder(Some(&config), true),
                 catalog,
                 api_key_hasher,
                 provider_secret_resolver.clone(),
-                Some(Arc::new(InvocationStickyObjectRouteStore::sqlite(
-                    pool.clone(),
-                ))),
-                Some(
-                    crate::route_scoped_openai_passthrough::StickyObjectRouteStore::sqlite(
-                        pool.clone(),
-                    ),
-                ),
+                invocation_sticky,
                 Some(usage_recorder),
                 provider_passthrough_config,
                 provider_adapter_config.clone(),
@@ -911,9 +815,11 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
             )
         }
         DatabaseEngine::Postgres => {
-            let pool = sqlx::postgres::PgPoolOptions::new()
-                .max_connections(config.max_connections)
-                .connect(&config.url)
+            let pool =
+                sdkwork_claw_product::infrastructure::sql::pool::connect_postgres_runtime_pool(
+                    &config.url,
+                    config.max_connections,
+                )
                 .await
                 .map_err(|error| {
                     GatewayRouterError::Postgres(PostgresCatalogLoadError::Database(error))
@@ -955,19 +861,15 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                 provider_runtime.catalog_refresh_interval,
                 provider_runtime.circuit_breaker_recovery_window_seconds,
             );
+            let invocation_sticky: Option<Arc<dyn StickyRouteStore>> = Some(Arc::new(
+                InvocationStickyObjectRouteStore::postgres(pool.clone()),
+            ));
             router_with_database_runtime_routes(
-                router_with_database_status_and_passthrough_placeholder(Some(&config), false),
+                router_with_database_status_and_passthrough_placeholder(Some(&config), true),
                 catalog,
                 api_key_hasher,
                 provider_secret_resolver.clone(),
-                Some(Arc::new(InvocationStickyObjectRouteStore::postgres(
-                    pool.clone(),
-                ))),
-                Some(
-                    crate::route_scoped_openai_passthrough::StickyObjectRouteStore::postgres(
-                        pool.clone(),
-                    ),
-                ),
+                invocation_sticky,
                 Some(usage_recorder),
                 provider_passthrough_config,
                 provider_adapter_config.clone(),
@@ -1058,7 +960,7 @@ pub async fn all_in_one_in_process_upstreams_from_env() -> anyhow::Result<EdgeIn
     let context = all_in_one_runtime_context_from_env().await?;
     let gateway_router = build_gateway_router_from_all_in_one_context(&context)?;
     let (backend_router, app_router) = match &context.database_pool {
-        SharedDatabasePool::Sqlite(pool) => (
+        DatabasePool::Sqlite(pool, _) => (
             sdkwork_router_backend_api::router_with_sqlite_shared_runtime(
                 context.database_config.clone(),
                 pool.clone(),
@@ -1091,7 +993,7 @@ pub async fn all_in_one_in_process_upstreams_from_env() -> anyhow::Result<EdgeIn
             .await
             .map_err(anyhow::Error::new)?,
         ),
-        SharedDatabasePool::Postgres(pool) => (
+        DatabasePool::Postgres(pool, _) => (
             sdkwork_router_backend_api::router_with_postgres_shared_runtime(
                 context.database_config.clone(),
                 pool.clone(),
@@ -1126,14 +1028,15 @@ pub async fn all_in_one_in_process_upstreams_from_env() -> anyhow::Result<EdgeIn
         ),
     };
     let sdkwork_api_gateway_router =
-        build_embedded_sdkwork_api_gateway_router(backend_router.clone(), app_router.clone())?;
+        build_embedded_sdkwork_api_gateway_router(backend_router.clone(), app_router.clone())
+            .await?;
     Ok(
         EdgeInProcessUpstreams::new(gateway_router, backend_router, app_router)
             .with_sdkwork_api_gateway_router(sdkwork_api_gateway_router),
     )
 }
 
-fn build_embedded_sdkwork_api_gateway_router(
+async fn build_embedded_sdkwork_api_gateway_router(
     backend_router: Router,
     app_router: Router,
 ) -> Result<Router, GatewayRouterError> {
@@ -1149,7 +1052,23 @@ fn build_embedded_sdkwork_api_gateway_router(
         [
             (
                 APPBASE_APP_API_SERVICE_ID.to_owned(),
-                sdkwork_api_gateway::build_embedded_sdkwork_appbase_app_api_router(),
+                sdkwork_api_gateway::build_embedded_sdkwork_appbase_app_api_router()
+                    .await
+                    .map_err(|error| {
+                        GatewayRouterError::Config(format!(
+                            "failed to build embedded SDKWork Appbase app API router: {error}"
+                        ))
+                    })?,
+            ),
+            (
+                APPBASE_BACKEND_API_SERVICE_ID.to_owned(),
+                sdkwork_api_gateway::build_embedded_sdkwork_appbase_backend_api_router()
+                    .await
+                    .map_err(|error| {
+                        GatewayRouterError::Config(format!(
+                            "failed to build embedded SDKWork Appbase backend API router: {error}"
+                        ))
+                    })?,
             ),
             (
                 CLAW_ROUTER_BACKEND_API_SERVICE_ID.to_owned(),
@@ -1165,8 +1084,9 @@ fn build_embedded_sdkwork_api_gateway_router(
     })
 }
 
-fn claw_router_gateway_dependency_surfaces() -> [DependencyApiSurfaceConfig; 2] {
+fn claw_router_gateway_dependency_surfaces() -> [DependencyApiSurfaceConfig; 3] {
     [
+        claw_router_appbase_backend_dependency_surface(),
         DependencyApiSurfaceConfig {
             service_id: CLAW_ROUTER_BACKEND_API_SERVICE_ID.to_owned(),
             workspace: "sdkwork-claw-router".to_owned(),
@@ -1203,6 +1123,26 @@ fn claw_router_gateway_dependency_surfaces() -> [DependencyApiSurfaceConfig; 2] 
             required_base_url_key: None,
         },
     ]
+}
+
+fn claw_router_appbase_backend_dependency_surface() -> DependencyApiSurfaceConfig {
+    DependencyApiSurfaceConfig {
+        service_id: APPBASE_BACKEND_API_SERVICE_ID.to_owned(),
+        workspace: "sdkwork-appbase".to_owned(),
+        sdk_family: "sdkwork-appbase-backend-sdk".to_owned(),
+        api_authority: "sdkwork-appbase-backend-api".to_owned(),
+        surface: "backend".to_owned(),
+        api_prefix: APPBASE_BACKEND_API_PREFIX.to_owned(),
+        runtime_mode: DependencyRuntimeMode::Embedded,
+        same_origin_allowed: true,
+        executable_export: Some(
+            "sdkwork_router_iam_backend_api::build_sdkwork_appbase_backend_api_router".to_owned(),
+        ),
+        cargo_feature: Some("foundation-appbase".to_owned()),
+        cargo_dependency: Some("sdkwork-router-iam-backend-api".to_owned()),
+        coverage: "appbase-iam-backend-routes".to_owned(),
+        required_base_url_key: None,
+    }
 }
 
 async fn all_in_one_runtime_context_from_env() -> anyhow::Result<AllInOneRuntimeContext> {
@@ -1379,9 +1319,10 @@ async fn all_in_one_runtime_context_from_env() -> anyhow::Result<AllInOneRuntime
                 shared_catalog_refresh_interval,
                 provider_runtime.circuit_breaker_recovery_window_seconds,
             );
+            let db_pool_ctx = pool_context(&database_config);
             Ok(AllInOneRuntimeContext {
                 database_config,
-                database_pool: SharedDatabasePool::Sqlite(pool),
+                database_pool: DatabasePool::Sqlite(pool, db_pool_ctx),
                 database_installer,
                 catalog,
                 api_key_security_config,
@@ -1453,9 +1394,10 @@ async fn all_in_one_runtime_context_from_env() -> anyhow::Result<AllInOneRuntime
                 shared_catalog_refresh_interval,
                 provider_runtime.circuit_breaker_recovery_window_seconds,
             );
+            let db_pool_ctx = pool_context(&database_config);
             Ok(AllInOneRuntimeContext {
                 database_config,
-                database_pool: SharedDatabasePool::Postgres(pool),
+                database_pool: DatabasePool::Postgres(pool, db_pool_ctx),
                 database_installer,
                 catalog,
                 api_key_security_config,
@@ -1486,8 +1428,8 @@ fn build_gateway_router_from_all_in_one_context(
     let api_key_hasher =
         build_api_key_hasher(&context.api_key_security_config).map_err(anyhow::Error::new)?;
     let usage_recorder: UsageRecorder = match &context.database_pool {
-        SharedDatabasePool::Sqlite(pool) => Arc::new(SqliteGatewayUsageRecorder::new(pool.clone())),
-        SharedDatabasePool::Postgres(pool) => {
+        DatabasePool::Sqlite(pool, _) => Arc::new(SqliteGatewayUsageRecorder::new(pool.clone())),
+        DatabasePool::Postgres(pool, _) => {
             Arc::new(PostgresGatewayUsageRecorder::new(pool.clone()))
         }
     };
@@ -1499,15 +1441,12 @@ fn build_gateway_router_from_all_in_one_context(
     router_with_database_runtime_routes(
         router_with_database_status_and_passthrough_placeholder(
             Some(&context.database_config),
-            false,
+            true,
         ),
         Arc::clone(&context.catalog),
         api_key_hasher,
         context.provider_secret_resolver.clone(),
         Some(sticky_store_from_shared_database_pool(
-            &context.database_pool,
-        )),
-        Some(route_scoped_sticky_store_from_shared_database_pool(
             &context.database_pool,
         )),
         Some(usage_recorder),
@@ -1518,26 +1457,27 @@ fn build_gateway_router_from_all_in_one_context(
     .map_err(anyhow::Error::new)
 }
 
-fn sticky_store_from_shared_database_pool(pool: &SharedDatabasePool) -> Arc<dyn StickyRouteStore> {
-    match pool {
-        SharedDatabasePool::Sqlite(pool) => {
-            Arc::new(InvocationStickyObjectRouteStore::sqlite(pool.clone()))
-        }
-        SharedDatabasePool::Postgres(pool) => {
-            Arc::new(InvocationStickyObjectRouteStore::postgres(pool.clone()))
-        }
+fn pool_context(config: &DatabaseConfig) -> PoolContext {
+    PoolContext {
+        config: sdkwork_database_config::DatabaseConfig {
+            engine: match config.engine {
+                DatabaseEngine::Sqlite => sdkwork_database_config::DatabaseEngine::Sqlite,
+                DatabaseEngine::Postgres => sdkwork_database_config::DatabaseEngine::Postgres,
+            },
+            url: config.url.clone(),
+            max_connections: config.max_connections,
+            ..sdkwork_database_config::DatabaseConfig::default()
+        },
     }
 }
 
-fn route_scoped_sticky_store_from_shared_database_pool(
-    pool: &SharedDatabasePool,
-) -> crate::route_scoped_openai_passthrough::StickyObjectRouteStore {
+fn sticky_store_from_shared_database_pool(pool: &DatabasePool) -> Arc<dyn StickyRouteStore> {
     match pool {
-        SharedDatabasePool::Sqlite(pool) => {
-            crate::route_scoped_openai_passthrough::StickyObjectRouteStore::sqlite(pool.clone())
+        DatabasePool::Sqlite(pool, _) => {
+            Arc::new(InvocationStickyObjectRouteStore::sqlite(pool.clone()))
         }
-        SharedDatabasePool::Postgres(pool) => {
-            crate::route_scoped_openai_passthrough::StickyObjectRouteStore::postgres(pool.clone())
+        DatabasePool::Postgres(pool, _) => {
+            Arc::new(InvocationStickyObjectRouteStore::postgres(pool.clone()))
         }
     }
 }
@@ -2505,9 +2445,10 @@ impl From<PostgresCatalogLoadError> for GatewayRouterError {
 mod tests {
     use super::*;
 
-    #[test]
-    fn embedded_sdkwork_api_gateway_router_builds_for_all_in_one_runtime() {
+    #[tokio::test]
+    async fn embedded_sdkwork_api_gateway_router_builds_for_all_in_one_runtime() {
         let _router = build_embedded_sdkwork_api_gateway_router(Router::new(), Router::new())
+            .await
             .expect("embedded SDKWork API Gateway router should build");
     }
 

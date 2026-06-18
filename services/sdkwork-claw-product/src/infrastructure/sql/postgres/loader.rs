@@ -104,6 +104,11 @@ impl PostgresPricingCatalogLoader {
                 PricingCatalogSql::load_quota_policies(),
             )
             .await?,
+            gateway_risk_rules: row_mapping::load_gateway_risk_rules(
+                &self.pool,
+                PricingCatalogSql::load_gateway_risk_rules(),
+            )
+            .await?,
             channel_group_metric_snapshots: row_mapping::load_channel_group_metric_snapshots(
                 &self.pool,
                 PricingCatalogSql::load_channel_group_metric_snapshots(),

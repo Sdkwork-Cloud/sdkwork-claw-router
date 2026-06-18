@@ -487,7 +487,7 @@ declare module '@sdkwork/iam-runtime' {
   export function createIamRuntime(input: CreateIamRuntimeInput): IamRuntime;
 }
 
-declare module '@sdkwork/generation-pc-react' {
+declare module '@sdkwork/image-pc-generation' {
   export type SdkworkGenerationStatus = 'completed' | 'failed' | 'queued' | 'running';
 
   export interface SdkworkGenerationRun {
@@ -534,7 +534,7 @@ declare module '@sdkwork/generation-pc-react' {
   ): SdkworkGenerationService;
 }
 
-declare module 'sdkwork-commerce-pc-admin-product' {
+declare module '@sdkwork/commerce-pc-admin-product' {
   import type { ReactNode } from 'react';
 
   export type ProductStatusTone = 'success' | 'warning' | 'neutral' | 'danger';
@@ -865,7 +865,7 @@ declare module 'sdkwork-commerce-pc-admin-product' {
   export function readSeedSummaries(result: unknown): SeedSummary[];
 }
 
-declare module '@sdkwork/generation-pc-react/generation-service' {
+declare module '@sdkwork/image-pc-generation/generation-service' {
   export type SdkworkGenerationStatus = 'completed' | 'failed' | 'queued' | 'running';
 
   export interface SdkworkGenerationRun {
@@ -1302,7 +1302,7 @@ declare module 'sdkwork-generations-app-sdk-generated-typescript' {
   export function createClient(config: SdkworkAppConfig): SdkworkAppClient;
 }
 
-declare module '@sdkwork/generation-pc-react/generation-history' {
+declare module '@sdkwork/image-pc-generation/generation-history' {
   import type { SdkworkMediaResource } from '@sdkwork/appbase-pc-react';
 
   export type SdkworkGenerationAssetModality = 'audio' | 'image' | 'music' | 'sfx' | 'video';
@@ -1394,7 +1394,7 @@ declare module '@sdkwork/generation-pc-react/generation-history' {
   ): SdkworkGenerationSerializedAssetConfig | undefined;
 }
 
-declare module '@sdkwork/generation-pc-react/react' {
+declare module '@sdkwork/image-pc-generation/react' {
   import type { ReactNode } from 'react';
   import type { SdkworkMediaResource } from '@sdkwork/appbase-pc-react';
 

@@ -165,6 +165,33 @@ test("portal dev server may serve workspace SDK sources resolved by aliases", as
   assert.ok(config.server?.fs?.allow?.includes(workspaceRoot));
 });
 
+test("portal resolves ClawRouter generated SDK imports to source entries", async () => {
+  const config = await resolvePortalViteConfig();
+  const aliases = config.resolve?.alias;
+
+  assert.ok(Array.isArray(aliases));
+  for (const [packageName, sdkFamily] of [
+    ["@sdkwork/clawrouter-app-sdk", "clawrouter-app-sdk"],
+    ["@sdkwork/clawrouter-backend-sdk", "clawrouter-backend-sdk"],
+    ["@sdkwork/clawrouter-open-sdk", "clawrouter-open-sdk"],
+  ] as const) {
+    const expectedEntry = path.resolve(
+      import.meta.dirname,
+      `../../sdks/${sdkFamily}/${sdkFamily}-typescript/generated/server-openapi/src/index.ts`,
+    );
+    assert.equal(
+      aliases.find((alias) => (
+        typeof alias === "object"
+        && alias !== null
+        && "find" in alias
+        && alias.find === packageName
+      ))?.replacement,
+      expectedEntry,
+    );
+    assert.ok(existsSync(expectedEntry), `${packageName} alias must point to a real generated source file`);
+  }
+});
+
 test("portal dependency roots resolve to the sibling workspace repository path", () => {
   const fakeConfigDir = path.resolve(
     import.meta.dirname,
@@ -377,6 +404,14 @@ test("portal scripts run dependency preflight before Vite entrypoints", () => {
   assert.equal(portalPackage.scripts.dev, "pnpm deps:check && vite --configLoader native");
   assert.equal(portalPackage.scripts["browser:dev"], "pnpm deps:check && vite --configLoader native");
   assert.equal(portalPackage.scripts.build, "pnpm deps:check && node scripts/build-portal.mjs");
+});
+
+test("portal dependency preflight verifies Vite command shims before passing", () => {
+  const preflightSource = readFileSync(new URL("./scripts/check-portal-deps.mjs", import.meta.url), "utf8");
+
+  assert.ok(preflightSource.includes("assertPortalCommandShims"));
+  assert.ok(preflightSource.includes("node_modules', '.bin', 'vite"));
+  assert.ok(preflightSource.includes("pnpm install"));
 });
 
 test("motion React entrypoint has browser-visible named exports after dependency optimization", async () => {

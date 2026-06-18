@@ -344,6 +344,19 @@ test("claw router auth controller reuses appbase runtime while preserving app SD
   assert.match(sdkClientsSource, /createDriveAppClient/);
   assert.match(sdkClientsSource, /VITE_SDKWORK_DRIVE_APP_API_BASE_URL/);
   assert.match(iamRuntimeSource, /tokenManager:\s*getClawRouterGlobalTokenManager\(\)/);
+  assert.equal((sdkClientsSource.match(/createTokenManager\(\)/g) ?? []).length, 1);
+  assert.match(sdkClientsSource, /function buildAppConfig\(options: ClawRouterAppSdkClientOptions\): SdkworkAppConfig \{\s*return \{[\s\S]*?tokenManager:\s*resolveClawRouterSdkTokenManager\(options\.tokenManager\)/);
+  assert.match(sdkClientsSource, /function buildBackendConfig\(options: ClawRouterBackendSdkClientOptions\): SdkworkBackendConfig \{\s*return \{[\s\S]*?tokenManager:\s*resolveClawRouterSdkTokenManager\(options\.tokenManager\)/);
+  assert.match(sdkClientsSource, /function buildAppbaseAppConfig\(options: SdkworkAppbaseAppSdkClientOptions\): SdkworkAppbaseAppConfig \{\s*return \{[\s\S]*?tokenManager:\s*resolveClawRouterSdkTokenManager\(options\.tokenManager\)/);
+  assert.match(sdkClientsSource, /function buildGenerationsAppConfig\(options: SdkworkGenerationsAppSdkClientOptions\): SdkworkGenerationsAppConfig \{\s*return \{[\s\S]*?tokenManager:\s*resolveClawRouterSdkTokenManager\(options\.tokenManager\)/);
+  assert.match(sdkClientsSource, /function buildDriveAppConfig\(options: SdkworkDriveAppSdkClientOptions\): SdkworkDriveAppConfig \{\s*return \{[\s\S]*?tokenManager:\s*resolveClawRouterSdkTokenManager\(options\.tokenManager\)/);
+  assert.match(sdkClientsSource, /function buildCommerceAppConfig\(options: SdkworkCommerceAppSdkClientOptions\): SdkworkCommerceAppConfig \{\s*return \{[\s\S]*?tokenManager:\s*resolveClawRouterSdkTokenManager\(options\.tokenManager\)/);
+  assert.match(sdkClientsSource, /function buildCommerceBackendConfig\(\s*options: SdkworkCommerceBackendSdkClientOptions,\s*\): SdkworkCommerceBackendConfig \{\s*return \{[\s\S]*?tokenManager:\s*resolveClawRouterSdkTokenManager\(options\.tokenManager\)/);
+  assert.doesNotMatch(sdkClientsSource, /authToken:\s*options\.authToken/);
+  assert.doesNotMatch(sdkClientsSource, /accessToken:\s*options\.accessToken/);
+  assert.doesNotMatch(sdkClientsSource, /getStoredAppSessionAuthToken\(\)/);
+  assert.doesNotMatch(sdkClientsSource, /getStoredAppSessionAccessToken\(\)/);
+  assert.doesNotMatch(sdkClientsSource, /interface ClawRouterAiSdkClientOptions \{[\s\S]*?(?:authToken|accessToken)\?: string/);
   assert.doesNotMatch(iamRuntimeSource, /getClawRouterAiSdkClient\(\)/);
   assert.doesNotMatch(iamRuntimeSource, /getClawRouterBackendSdkClient\(\)/);
   assert.doesNotMatch(iamRuntimeSource, /getSdkworkAppbaseBackendSdkClient\(\)/);
@@ -1723,23 +1736,24 @@ test("admin app center and OAuth modules are separated", () => {
   const adminRegistrySource = readAdminRegistrySource();
   const i18nSource = readI18nResourceSource();
   const appCenterHeaderModule = findAdminModuleDefinitionSource(adminRegistrySource, "appCenter");
-  const oauthHeaderModule = findAdminModuleDefinitionSource(adminRegistrySource, "oauth");
+  const operationsHeaderModule = findAdminModuleDefinitionSource(adminRegistrySource, "operations");
   const homeHeaderModule = findAdminModuleDefinitionSource(adminRegistrySource, "home");
   const appCenterMenu = findAdminModuleMenuSource(adminRegistrySource, "appCenter");
-  const oauthMenu = findAdminModuleMenuSource(adminRegistrySource, "oauth");
+  const operationsMenu = findAdminModuleMenuSource(adminRegistrySource, "operations");
   const homeMenu = findAdminModuleMenuSource(adminRegistrySource, "home");
   const retiredAdminProviderPath = "/admin/" + "open" + "-platform";
 
-  for (const moduleId of ["home", "appCenter", "oauth", "courseCenter", "productCenter", "transactionCenter", "memberCenter", "marketingCenter", "financeCenter", "storageCenter", "driveCenter", "operations", "serviceProviderCenter"]) {
+  for (const moduleId of ["home", "appCenter", "courseCenter", "productCenter", "transactionCenter", "memberCenter", "marketingCenter", "financeCenter", "storageCenter", "driveCenter", "operations", "serviceProviderCenter"]) {
     assert.match(adminRegistrySource, new RegExp(`\\| '${moduleId}'`), `${moduleId} must be part of AdminModuleId`);
   }
+  assert.doesNotMatch(adminRegistrySource, /id:\s*'oauth'/);
   assert.match(
     appCenterHeaderModule,
     /id:\s*'appCenter',\s*nameKey:\s*'admin\.header\.appCenter'[\s\S]*defaultPath:\s*'\/admin\/app'[\s\S]*pathPrefixes:\s*\['\/admin\/app'\]/,
   );
   assert.match(
-    oauthHeaderModule,
-    /id:\s*'oauth',\s*nameKey:\s*'admin\.header\.oauth'[\s\S]*defaultPath:\s*'\/admin\/oauth\/overview'[\s\S]*pathPrefixes:\s*\['\/admin\/oauth'\]/,
+    operationsHeaderModule,
+    /id:\s*'operations',\s*nameKey:\s*'admin\.header\.operations'[\s\S]*pathPrefixes:\s*\[[^\]]*'\/admin\/oauth'[^\]]*\]/,
   );
   assert.doesNotMatch(homeHeaderModule, /'\/admin\/app'/);
   assert.doesNotMatch(homeHeaderModule, new RegExp(retiredAdminProviderPath.replaceAll("/", "\\/")));
@@ -1749,17 +1763,16 @@ test("admin app center and OAuth modules are separated", () => {
     /moduleId:\s*'appCenter',\s*items:\s*\[\s*itemBlock\(\{\s*path:\s*'\/admin\/app',\s*labelKey:\s*'admin\.menu\.appStore'/,
   );
   assert.doesNotMatch(appCenterMenu, /\/admin\/oauth/);
-  assert.match(oauthMenu, /moduleId:\s*'oauth'/);
-  assert.match(oauthMenu, /groupBlock\('admin\.menu\.oauth\.workspace'/);
-  assert.match(oauthMenu, /path:\s*'\/admin\/oauth\/login',\s*labelKey:\s*'admin\.menu\.oauth\.login'/);
-  assert.match(oauthMenu, /path:\s*'\/admin\/oauth\/resource-accounts\/official-accounts',\s*labelKey:\s*'admin\.menu\.oauth\.officialAccounts'/);
-  assert.match(oauthMenu, /path:\s*'\/admin\/oauth\/resource-accounts\/mini-programs',\s*labelKey:\s*'admin\.menu\.oauth\.miniPrograms'/);
+  assert.match(operationsMenu, /moduleId:\s*'operations'/);
+  assert.match(operationsMenu, /groupBlock\('admin\.menu\.ops\.oauth'/);
+  assert.match(operationsMenu, /path:\s*'\/admin\/oauth\/login-platforms',\s*labelKey:\s*'admin\.menu\.oauth\.loginPlatforms'/);
+  assert.match(operationsMenu, /path:\s*'\/admin\/oauth\/official-accounts',\s*labelKey:\s*'admin\.menu\.oauth\.officialAccounts'/);
+  assert.match(operationsMenu, /path:\s*'\/admin\/oauth\/mini-programs',\s*labelKey:\s*'admin\.menu\.oauth\.miniPrograms'/);
   assert.doesNotMatch(homeMenu, /path:\s*'\/admin\/app'/);
   assert.doesNotMatch(homeMenu, /\/admin\/oauth/);
   assert.match(i18nSource, /"admin\.header\.appCenter":\s*"App Center"/);
   assert.match(i18nSource, /"admin\.header\.appCenter":\s*"\u5e94\u7528\u4e2d\u5fc3"/);
-  assert.match(i18nSource, /"admin\.header\.oauth":\s*"OAuth"/);
-  assert.match(i18nSource, /"admin\.menu\.oauth\.login":\s*"OAuth Login"/);
+  assert.match(i18nSource, /"admin\.menu\.oauth\.loginPlatforms":\s*"OAuth Login Platform Accounts"/);
   assert.match(i18nSource, /"admin\.menu\.oauth\.officialAccounts":\s*"Official Accounts"/);
   assert.match(i18nSource, /"admin\.menu\.oauth\.miniPrograms":\s*"Mini Programs"/);
 });
@@ -2117,15 +2130,13 @@ test("admin OAuth owns official account and mini program resource-account sectio
   assert.equal(oauthPackageJson.dependencies["sdkwork-clawrouter-pc-commons"], "workspace:*");
   assert.match(tsconfigSource, /"sdkwork-clawrouter-pc-admin-oauth":\s*\[\s*"\.\/packages\/sdkwork-clawrouter-pc-admin-oauth\/src\/index\.tsx"\s*\]/);
 
-  const oauthHeaderModule = findAdminModuleDefinitionSource(adminRegistrySource, "oauth");
-  assert.match(oauthHeaderModule, /'\/admin\/oauth\/overview'/);
-  assert.match(oauthHeaderModule, /pathPrefixes:\s*\['\/admin\/oauth'\]/);
-  const oauthMenu = findAdminModuleMenuSource(adminRegistrySource, "oauth");
-  assert.match(oauthMenu, /groupBlock\('admin\.menu\.oauth\.resourceAccess'/);
-  assert.match(oauthMenu, /path:\s*'\/admin\/oauth\/resource-accounts\/official-accounts',\s*labelKey:\s*'admin\.menu\.oauth\.officialAccounts'/);
-  assert.match(oauthMenu, /path:\s*'\/admin\/oauth\/resource-accounts\/mini-programs',\s*labelKey:\s*'admin\.menu\.oauth\.miniPrograms'/);
-  assert.match(oauthMenu, /path:\s*'\/admin\/oauth\/operator-platforms',\s*labelKey:\s*'admin\.menu\.oauth\.operatorPlatforms'/);
-  assert.match(oauthMenu, /path:\s*'\/admin\/oauth\/resource-authorizations',\s*labelKey:\s*'admin\.menu\.oauth\.resourceAuthorizations'/);
+  const operationsHeaderModule = findAdminModuleDefinitionSource(adminRegistrySource, "operations");
+  assert.match(operationsHeaderModule, /'\/admin\/oauth'/);
+  const operationsMenu = findAdminModuleMenuSource(adminRegistrySource, "operations");
+  assert.match(operationsMenu, /groupBlock\('admin\.menu\.ops\.oauth'/);
+  assert.match(operationsMenu, /path:\s*'\/admin\/oauth\/login-platforms',\s*labelKey:\s*'admin\.menu\.oauth\.loginPlatforms'/);
+  assert.match(operationsMenu, /path:\s*'\/admin\/oauth\/official-accounts',\s*labelKey:\s*'admin\.menu\.oauth\.officialAccounts'/);
+  assert.match(operationsMenu, /path:\s*'\/admin\/oauth\/mini-programs',\s*labelKey:\s*'admin\.menu\.oauth\.miniPrograms'/);
   assert.match(adminLayoutSource, /from '\.\/adminSidebarActive'/);
   assert.match(adminLayoutSource, /hasActiveSidebarGroupItem\(location\.pathname, group\)/);
   assert.match(adminLayoutSource, /isSidebarItemActive\(location\.pathname, item, group\.items\)/);
@@ -2134,19 +2145,18 @@ test("admin OAuth owns official account and mini program resource-account sectio
   assert.doesNotMatch(adminLayoutSource, /end=\{isSidebarItemExact\(item\)\}/);
 
   assert.match(appSource, /const OAuthAdmin = lazyRoute\(\(\) => import\('sdkwork-clawrouter-pc-admin-oauth'\), 'OAuthAdmin'\);/);
-  assert.match(appSource, /<Route path="oauth" element=\{<Navigate to="\/admin\/oauth\/overview" replace \/>} \/>/);
-  assert.match(appSource, /<Route path="oauth\/resource-accounts\/official-accounts" element=\{<OAuthAdmin sectionId="officialAccounts" \/>} \/>/);
-  assert.match(appSource, /<Route path="oauth\/resource-accounts\/mini-programs" element=\{<OAuthAdmin sectionId="miniPrograms" \/>} \/>/);
-  assert.match(appSource, /<Route path="oauth\/operator-platforms" element=\{<OAuthAdmin sectionId="operatorPlatforms" \/>} \/>/);
-  assert.match(appSource, /<Route path="oauth\/login\/mini-programs" element=\{<OAuthAdmin sectionId="miniProgramLogin" \/>} \/>/);
+  assert.match(appSource, /<Route path="oauth" element=\{<Navigate to="\/admin\/oauth\/login-platforms" replace \/>} \/>/);
+  assert.match(appSource, /<Route path="oauth\/login-platforms" element=\{<OAuthAdmin sectionId="oauthLoginPlatforms" \/>} \/>/);
+  assert.match(appSource, /<Route path="oauth\/official-accounts" element=\{<OAuthAdmin sectionId="officialAccounts" \/>} \/>/);
+  assert.match(appSource, /<Route path="oauth\/mini-programs" element=\{<OAuthAdmin sectionId="miniPrograms" \/>} \/>/);
 
   for (const key of [
+    "admin.menu.oauth.loginPlatforms",
     "admin.menu.oauth.officialAccounts",
     "admin.menu.oauth.miniPrograms",
-    "admin.menu.oauth.operatorPlatforms",
-    "admin.menu.oauth.resourceAuthorizations",
-    "admin.menu.oauth.webhooks",
-    "admin.menu.oauth.callbackDiagnostics",
+    "admin.oauth.sections.oauthLoginPlatforms",
+    "admin.oauth.sections.officialAccounts",
+    "admin.oauth.sections.miniPrograms",
   ]) {
     assert.match(i18nSource, new RegExp(`"${key.replaceAll(".", "\\.")}"`), `${key} must be present in i18n resources`);
   }
@@ -2155,53 +2165,21 @@ test("admin OAuth owns official account and mini program resource-account sectio
 
   assert.match(oauthSource, /export function OAuthAdmin/);
   assert.match(oauthSource, /sectionId\?: string/);
-  assert.match(oauthSource, /const DEFAULT_SECTION_ID: OAuthAdminSectionId = 'overview'/);
-  assert.match(oauthSource, /officialAccounts:\s*'\/admin\/oauth\/resource-accounts\/official-accounts'/);
-  assert.match(oauthSource, /miniPrograms:\s*'\/admin\/oauth\/resource-accounts\/mini-programs'/);
-  assert.match(oauthSource, /WeChat Official Account/);
-  assert.match(oauthSource, /WeChat Mini Program/);
-  assert.match(oauthSource, /Alipay Mini Program/);
-  assert.match(oauthSource, /DingTalk/);
-  assert.match(oauthSource, /Lark \/ Feishu/);
-  assert.match(oauthSource, /GitHub/);
-  assert.match(oauthSource, /Google/);
-  assert.match(oauthSource, /Apple/);
-  assert.match(oauthSource, /Microsoft Entra ID/);
-  assert.match(oauthSource, /PC web/);
-  assert.match(oauthSource, /Mobile web/);
-  assert.match(oauthSource, /Native App/);
-  assert.match(oauthSource, /Mini program/);
-  assert.match(oauthSource, /Official Account/);
-  assert.match(oauthSource, /Self-managed AppID\/AppSecret or component platform authorization/);
-  assert.match(oauthSource, /Self-managed account or operator-authorized account/);
-  assert.match(oauthSource, /OAuthResourceWorkspace/);
-  assert.match(oauthSource, /activeSectionId="officialAccounts"/);
-  assert.match(oauthSource, /activeSectionId="miniPrograms"/);
+  assert.match(oauthSource, /const DEFAULT_SECTION_ID: OAuthAdminSectionId = 'oauthLoginPlatforms'/);
+  assert.match(oauthSource, /route:\s*'\/admin\/oauth\/official-accounts'/);
+  assert.match(oauthSource, /route:\s*'\/admin\/oauth\/mini-programs'/);
+  assert.match(oauthSource, /resourceAccountKind: 'official_account'/);
+  assert.match(oauthSource, /resourceAccountKind: 'mini_program'/);
+  assert.match(oauthSource, /AdminResourceCenter/);
+  assert.match(oauthSource, /activeSectionId=\{activeSection\.id\}/);
+  assert.match(oauthSource, /showSectionNavigation=\{false\}/);
 
   for (const sdkMarker of [
     "getSdkworkAppbaseBackendSdkClient",
-    "iam.oauth.providerCatalog",
-    "iam.oauth.integrations",
-    "iam.oauth.clients",
-    "iam.oauth.secrets",
-    "iam.oauth.surfaces",
-    "iam.oauth.flowConfigs",
-    "iam.oauth.operatorPlatforms",
     "iam.oauth.resourceAccounts",
-    "iam.oauth.resourceAuthorizations",
-    "iam.oauth.webhookConfigs",
-    "iam.oauth.operationalResources",
-    "iam.oauth.accountLinks",
-    "iam.oauth.grants",
-    "iam.oauth.callbackEvents",
-    "iam.oauth.diagnosticRuns",
   ]) {
     assert.ok(oauthServiceSource.includes(sdkMarker), `OAuth service must use appbase backend SDK marker: ${sdkMarker}`);
   }
-  assert.match(oauthServiceSource, /miniProgramLoginChecks/);
-  assert.match(oauthServiceSource, /authorizationRefreshes/);
-  assert.match(oauthServiceSource, /preAuthorizations/);
-  assert.match(oauthServiceSource, /verifications/);
   assert.doesNotMatch(oauthServiceSource, new RegExp(retiredBackendSdkResource.replaceAll(".", "\\.")));
   assert.doesNotMatch(oauthServiceSource, /\bfetch\s*\(/);
   assert.doesNotMatch(oauthServiceSource, /\baxios\b/);
@@ -2223,7 +2201,7 @@ test("admin commerce pages no longer render nested second-level sidebars", () =>
   assert.match(adminResourceCenterSource, /activeSectionId\?: TSectionId/);
   assert.match(adminResourceCenterSource, /showSectionNavigation\?: boolean/);
   assert.match(adminResourceCenterSource, /showSectionNavigation && \(/);
-  assert.match(catalogWrapperSource, /from "sdkwork-commerce-pc-admin-product"/);
+  assert.match(catalogWrapperSource, /from "@sdkwork\/commerce-pc-admin-product"/);
 
   for (const source of [catalogSource, inventorySource, ordersSource, paymentsSource, walletSource, financeSource]) {
     assert.match(source, /activeSectionId=\{activeSectionId\}/);
@@ -2458,13 +2436,13 @@ test("portal resolves Commerce workspace modules and their peer dependencies fro
   const viteConfigSource = readPortalFile("./vite.config.ts");
   const workspaceSource = readPortalFile("./pnpm-workspace.yaml");
 
-  assert.equal(packageJson.dependencies["sdkwork-commerce-pc-admin-product"], "workspace:*");
+  assert.equal(packageJson.dependencies["@sdkwork/commerce-pc-admin-product"], "workspace:*");
   assert.equal(packageJson.dependencies["@sdkwork/commerce-service"], "workspace:*");
   assert.match(tsconfigSource, /sdkwork-commerce-pc-admin-product\/src\/index\.tsx/);
   assert.match(tsconfigSource, /sdkwork-commerce-service\/src\/index\.ts/);
   assert.match(tsconfigSource, /sdkwork-commerce-sdk-ports\/src\/index\.ts/);
   assert.match(tsconfigSource, /sdkwork-commerce-contracts\/src\/index\.ts/);
-  assert.match(viteConfigSource, /find: 'sdkwork-commerce-pc-admin-product'/);
+  assert.match(viteConfigSource, /find: '@sdkwork\/commerce-pc-admin-product'/);
   assert.match(viteConfigSource, /find: '@sdkwork\/commerce-service'/);
   assert.match(viteConfigSource, /find: '@sdkwork\/commerce-sdk-ports'/);
   assert.match(viteConfigSource, /find: '@sdkwork\/commerce-contracts'/);

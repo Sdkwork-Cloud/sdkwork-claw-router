@@ -1,11 +1,11 @@
 use std::sync::Arc;
 use std::time::Duration;
 
-use crate::{manifest, paths};
 use crate::local_auth_runtime::{
     build_local_auth_router, postgres_local_auth_runtime_components,
     sqlite_local_auth_runtime_components,
 };
+use crate::{manifest, paths};
 use axum::middleware::from_fn_with_state;
 use axum::Router;
 use sdkwork_claw_config::{
@@ -32,13 +32,13 @@ use sdkwork_claw_product::infrastructure::sql::installer::{
 };
 use sdkwork_claw_product::infrastructure::sql::postgres::{
     PostgresAppAgentRegistryStore, PostgresAppAgentRunStore, PostgresAppAgentSessionStore,
-    PostgresAppChatStore, PostgresAppGatewayTracesReadStore,
-    PostgresAppGenerationHistoryReadStore, PostgresAppMemoryStore, PostgresAppNotificationStore,
-    PostgresAppProvidersReadStore, PostgresAppRoutingChannelCommandStore,
-    PostgresAppRoutingReadStore, PostgresAppRoutingStrategyStore, PostgresAppRuntimeStore,
-    PostgresAppSkillsReadStore, PostgresAppStoreReadStore, PostgresCatalogLoadError,
-    PostgresCourseApplicationCommandStore, PostgresDashboardOverviewReadStore, PostgresForumStore,
-    PostgresModelRankingRefreshStore, PostgresModelRankingsReadStore, PostgresPaymentCallbackStore,
+    PostgresAppChatStore, PostgresAppGatewayTracesReadStore, PostgresAppGenerationHistoryReadStore,
+    PostgresAppMemoryStore, PostgresAppNotificationStore, PostgresAppProvidersReadStore,
+    PostgresAppRoutingChannelCommandStore, PostgresAppRoutingReadStore,
+    PostgresAppRoutingStrategyStore, PostgresAppRuntimeStore, PostgresAppSkillsReadStore,
+    PostgresAppStoreReadStore, PostgresCatalogLoadError, PostgresCourseApplicationCommandStore,
+    PostgresDashboardOverviewReadStore, PostgresForumStore, PostgresModelRankingRefreshStore,
+    PostgresModelRankingsReadStore, PostgresPaymentCallbackStore,
     PostgresPaymentIntentRuntimeStore, PostgresPricingCatalogLoader, PostgresSettingsStore,
     PostgresSettlementsDashboardReadStore, PostgresSiteSettingsStore, PostgresUsageLogsReadStore,
     PostgresVerificationDeliveryConfigStore, PostgresVerificationDeliveryQueueSender,
@@ -49,11 +49,11 @@ use sdkwork_claw_product::infrastructure::sql::sqlite::{
     SqliteAppGenerationHistoryReadStore, SqliteAppMemoryStore, SqliteAppNotificationStore,
     SqliteAppProvidersReadStore, SqliteAppRoutingChannelCommandStore, SqliteAppRoutingReadStore,
     SqliteAppRoutingStrategyStore, SqliteAppRuntimeStore, SqliteAppSkillsReadStore,
-    SqliteAppStoreReadStore, SqliteCourseApplicationCommandStore,
-    SqliteDashboardOverviewReadStore, SqliteForumStore, SqliteModelRankingRefreshStore,
-    SqliteModelRankingsReadStore, SqlitePaymentCallbackStore, SqlitePaymentIntentRuntimeStore,
-    SqlitePricingCatalogLoader, SqliteSettingsStore, SqliteSettlementsDashboardReadStore,
-    SqliteSiteSettingsStore, SqliteUsageLogsReadStore, SqliteVerificationDeliveryConfigStore,
+    SqliteAppStoreReadStore, SqliteCourseApplicationCommandStore, SqliteDashboardOverviewReadStore,
+    SqliteForumStore, SqliteModelRankingRefreshStore, SqliteModelRankingsReadStore,
+    SqlitePaymentCallbackStore, SqlitePaymentIntentRuntimeStore, SqlitePricingCatalogLoader,
+    SqliteSettingsStore, SqliteSettlementsDashboardReadStore, SqliteSiteSettingsStore,
+    SqliteUsageLogsReadStore, SqliteVerificationDeliveryConfigStore,
     SqliteVerificationDeliveryQueueSender,
 };
 use sdkwork_claw_product::infrastructure::{
@@ -74,7 +74,9 @@ use sdkwork_claw_product::ports::{
     UnconfiguredProviderHealthProbe, UsageLogsReadStore, VerificationCodeSender,
 };
 use sqlx::sqlite::{SqliteConnectOptions, SqliteJournalMode, SqlitePoolOptions};
-use sqlx::{PgPool, SqlitePool};
+use sqlx::postgres::PgRow;
+use sqlx::sqlite::SqliteRow;
+use sqlx::{PgPool, Row, SqlitePool};
 use std::str::FromStr;
 use tokio::time::sleep;
 
@@ -157,7 +159,7 @@ pub async fn build_sdkwork_claw_router_app_api_router_from_env(
 
 pub fn router() -> Router {
     merge_app_sdk_reference_router(
-        router_with_database_status(None),
+        router_with_database_status(None, None),
         RequestLimitsConfig::default(),
     )
     .merge(sdkwork_claw_product::api::app_site_settings_router())
@@ -186,12 +188,16 @@ pub fn router() -> Router {
     .merge(sdkwork_claw_product::api::app_routing_channel_command_router())
 }
 
-fn router_with_database_status(config: Option<&DatabaseConfig>) -> Router {
-    sdkwork_claw_http::service_router_with_filtered_contract_routes_and_database_config(
+fn router_with_database_status(
+    config: Option<&DatabaseConfig>,
+    readiness_check: Option<sdkwork_claw_http::ReadinessCheckFn>,
+) -> Router {
+    sdkwork_claw_http::service_router_with_filtered_contract_routes_database_config_and_readiness_check(
         SERVICE_NAME,
         sdkwork_claw_http::ApiSurface::App,
         config,
         product_local_contract_operation,
+        readiness_check,
     )
 }
 
@@ -263,7 +269,7 @@ where
     C: PricingCatalog + Send + Sync + 'static,
 {
     merge_app_sdk_reference_router(
-        router_with_database_status(config),
+        router_with_database_status(config, None),
         RequestLimitsConfig::default(),
     )
     .merge(sdkwork_claw_product::api::app_site_settings_router())
@@ -351,44 +357,145 @@ async fn postgres_verification_code_sender(
 async fn sqlite_default_verification_delivery_subject(
     pool: &SqlitePool,
 ) -> Result<(i64, i64), sqlx::Error> {
-    let tenant_id_raw: String =
-        sqlx::query_scalar("SELECT id FROM iam_tenant WHERE status = 'active' ORDER BY id LIMIT 1")
-            .fetch_one(pool)
-            .await?;
-    let organization_id_raw: String = sqlx::query_scalar(
-        "SELECT id FROM iam_organization WHERE tenant_id = ? AND status = 'active' ORDER BY id LIMIT 1",
-    )
-    .bind(&tenant_id_raw)
-    .fetch_one(pool)
-    .await?;
-    let tenant_id = parse_numeric_subject_id("iam_tenant.id", &tenant_id_raw)?;
-    let organization_id = parse_numeric_subject_id("iam_organization.id", &organization_id_raw)?;
-    Ok((tenant_id, organization_id))
+    resolve_sqlite_verification_delivery_subject(pool, Some("default"), Some("root")).await
 }
 
 async fn postgres_default_verification_delivery_subject(
     pool: &PgPool,
 ) -> Result<(i64, i64), sqlx::Error> {
-    let tenant_id_raw: String =
-        sqlx::query_scalar("SELECT id FROM iam_tenant WHERE status = 'active' ORDER BY id LIMIT 1")
-            .fetch_one(pool)
-            .await?;
-    let organization_id_raw: String = sqlx::query_scalar(
-        "SELECT id FROM iam_organization WHERE tenant_id = $1 AND status = 'active' ORDER BY id LIMIT 1",
-    )
-    .bind(&tenant_id_raw)
-    .fetch_one(pool)
-    .await?;
-    let tenant_id = parse_numeric_subject_id("iam_tenant.id", &tenant_id_raw)?;
-    let organization_id = parse_numeric_subject_id("iam_organization.id", &organization_id_raw)?;
+    resolve_postgres_verification_delivery_subject(pool, Some("default"), Some("root")).await
+}
+
+async fn resolve_sqlite_verification_delivery_subject(
+    pool: &SqlitePool,
+    tenant_code: Option<&str>,
+    organization_code: Option<&str>,
+) -> Result<(i64, i64), sqlx::Error> {
+    let tenant_row = match tenant_code {
+        Some(code) if !code.trim().is_empty() => sqlx::query(
+            "SELECT id FROM iam_tenant WHERE code = ? AND status = 'active' ORDER BY id LIMIT 1",
+        )
+        .bind(code.trim())
+        .fetch_optional(pool)
+        .await?,
+        _ => {
+            sqlx::query("SELECT id FROM iam_tenant WHERE status = 'active' ORDER BY id LIMIT 1")
+                .fetch_optional(pool)
+                .await?
+        }
+    };
+    let tenant_id = tenant_row
+        .as_ref()
+        .and_then(|row| sqlite_numeric_iam_subject_id(row, "id"))
+        .ok_or_else(|| {
+            sqlx::Error::Protocol(
+                "active IAM tenant was not found or has a non-numeric id".to_owned(),
+            )
+        })?;
+
+    let organization_row = match organization_code {
+        Some(code) if !code.trim().is_empty() => sqlx::query(
+            "SELECT id FROM iam_organization WHERE tenant_id = ? AND code = ? AND status = 'active' ORDER BY id LIMIT 1",
+        )
+        .bind(tenant_id.to_string())
+        .bind(code.trim())
+        .fetch_optional(pool)
+        .await?,
+        _ => sqlx::query(
+            "SELECT id FROM iam_organization WHERE tenant_id = ? AND status = 'active' ORDER BY id LIMIT 1",
+        )
+        .bind(tenant_id.to_string())
+        .fetch_optional(pool)
+        .await?,
+    };
+    let organization_id = organization_row
+        .as_ref()
+        .and_then(|row| sqlite_numeric_iam_subject_id(row, "id"))
+        .ok_or_else(|| {
+            sqlx::Error::Protocol(
+                "active IAM organization was not found or has a non-numeric id".to_owned(),
+            )
+        })?;
+
     Ok((tenant_id, organization_id))
 }
 
-fn parse_numeric_subject_id(column: &'static str, value: &str) -> Result<i64, sqlx::Error> {
-    value
-        .trim()
-        .parse::<i64>()
-        .map_err(|error| sqlx::Error::Protocol(format!("{column} must be numeric: {error}")))
+async fn resolve_postgres_verification_delivery_subject(
+    pool: &PgPool,
+    tenant_code: Option<&str>,
+    organization_code: Option<&str>,
+) -> Result<(i64, i64), sqlx::Error> {
+    let tenant_row = match tenant_code {
+        Some(code) if !code.trim().is_empty() => sqlx::query(
+            "SELECT id FROM iam_tenant WHERE code = $1 AND status = 'active' ORDER BY id LIMIT 1",
+        )
+        .bind(code.trim())
+        .fetch_optional(pool)
+        .await?,
+        _ => {
+            sqlx::query("SELECT id FROM iam_tenant WHERE status = 'active' ORDER BY id LIMIT 1")
+                .fetch_optional(pool)
+                .await?
+        }
+    };
+    let tenant_id = tenant_row
+        .as_ref()
+        .and_then(|row| postgres_numeric_iam_subject_id(row, "id"))
+        .ok_or_else(|| {
+            sqlx::Error::Protocol(
+                "active IAM tenant was not found or has a non-numeric id".to_owned(),
+            )
+        })?;
+
+    let organization_row = match organization_code {
+        Some(code) if !code.trim().is_empty() => sqlx::query(
+            "SELECT id FROM iam_organization WHERE tenant_id = $1 AND code = $2 AND status = 'active' ORDER BY id LIMIT 1",
+        )
+        .bind(tenant_id.to_string())
+        .bind(code.trim())
+        .fetch_optional(pool)
+        .await?,
+        _ => sqlx::query(
+            "SELECT id FROM iam_organization WHERE tenant_id = $1 AND status = 'active' ORDER BY id LIMIT 1",
+        )
+        .bind(tenant_id.to_string())
+        .fetch_optional(pool)
+        .await?,
+    };
+    let organization_id = organization_row
+        .as_ref()
+        .and_then(|row| postgres_numeric_iam_subject_id(row, "id"))
+        .ok_or_else(|| {
+            sqlx::Error::Protocol(
+                "active IAM organization was not found or has a non-numeric id".to_owned(),
+            )
+        })?;
+
+    Ok((tenant_id, organization_id))
+}
+
+fn sqlite_numeric_iam_subject_id(row: &SqliteRow, column: &str) -> Option<i64> {
+    row.try_get::<i64, _>(column)
+        .ok()
+        .or_else(|| row.try_get::<i32, _>(column).ok().map(i64::from))
+        .or_else(|| {
+            row.try_get::<Option<String>, _>(column)
+                .ok()
+                .flatten()
+                .and_then(|value| value.trim().parse::<i64>().ok())
+        })
+}
+
+fn postgres_numeric_iam_subject_id(row: &PgRow, column: &str) -> Option<i64> {
+    row.try_get::<i64, _>(column)
+        .ok()
+        .or_else(|| row.try_get::<i32, _>(column).ok().map(i64::from))
+        .or_else(|| {
+            row.try_get::<Option<String>, _>(column)
+                .ok()
+                .flatten()
+                .and_then(|value| value.trim().parse::<i64>().ok())
+        })
 }
 
 fn router_with_runtime_stores_and_database_status(
@@ -437,6 +544,7 @@ fn router_with_runtime_stores_and_database_status(
     model_catalog_router: Option<Router>,
     config: Option<&DatabaseConfig>,
     request_limits_config: RequestLimitsConfig,
+    readiness_check: Option<sdkwork_claw_http::ReadinessCheckFn>,
 ) -> Router {
     let subject_boundary_config =
         AppSubjectBoundaryConfig::new(trusted_subject_config.clone(), app_session_config.clone());
@@ -451,7 +559,7 @@ fn router_with_runtime_stores_and_database_status(
         verification_code_sender,
         expose_debug_verification_code,
     );
-    let mut router = router_with_database_status(config).merge(
+    let mut router = router_with_database_status(config, readiness_check).merge(
         sdkwork_claw_product::api::app_sdk_reference_router_with_json_body_limit(
             request_limits_config.sdk_reference_json_body_max_bytes(),
         ),
@@ -926,6 +1034,7 @@ pub async fn router_with_sqlite_product_catalog(
         Some(model_catalog_router),
         None,
         RequestLimitsConfig::default(),
+        None,
     ))
 }
 
@@ -1032,6 +1141,7 @@ pub async fn router_with_postgres_product_catalog(
         Some(model_catalog_router),
         None,
         RequestLimitsConfig::default(),
+        None,
     ))
 }
 
@@ -1158,6 +1268,7 @@ pub async fn router_with_sqlite_shared_runtime(
         Some(model_catalog_router),
         Some(&config),
         request_limits_config,
+        None,
     ))
 }
 
@@ -1285,6 +1396,7 @@ pub async fn router_with_postgres_shared_runtime(
         Some(model_catalog_router),
         Some(&config),
         request_limits_config,
+        None,
     ))
 }
 
@@ -1559,6 +1671,11 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                     })?;
             let (app_auth_store, app_auth_settings_store, app_session_event_store) =
                 sqlite_local_auth_runtime_components(pool.clone());
+            let readiness_check = Some(
+                sdkwork_claw_product::infrastructure::sql::pool::sqlite_database_readiness_check(
+                    pool.clone(),
+                ),
+            );
             Ok(router_with_runtime_stores_and_database_status(
                 Some(app_auth_store),
                 Some(app_auth_settings_store),
@@ -1605,12 +1722,15 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 Some(model_catalog_router),
                 Some(&config),
                 request_limits_config,
+                readiness_check,
             ))
         }
         DatabaseEngine::Postgres => {
-            let pool = sqlx::postgres::PgPoolOptions::new()
-                .max_connections(config.max_connections)
-                .connect(&config.url)
+            let pool =
+                sdkwork_claw_product::infrastructure::sql::pool::connect_postgres_runtime_pool(
+                    &config.url,
+                    config.max_connections,
+                )
                 .await
                 .map_err(|error| {
                     ProductCatalogRouterError::Postgres(PostgresCatalogLoadError::Database(error))
@@ -1708,6 +1828,11 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                     })?;
             let (app_auth_store, app_auth_settings_store, app_session_event_store) =
                 postgres_local_auth_runtime_components(pool.clone());
+            let readiness_check = Some(
+                sdkwork_claw_product::infrastructure::sql::pool::postgres_database_readiness_check(
+                    pool.clone(),
+                ),
+            );
             Ok(router_with_runtime_stores_and_database_status(
                 Some(app_auth_store),
                 Some(app_auth_settings_store),
@@ -1754,6 +1879,7 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 Some(model_catalog_router),
                 Some(&config),
                 request_limits_config,
+                readiness_check,
             ))
         }
     }
@@ -1792,6 +1918,9 @@ pub async fn router_from_env() -> Result<Router, ProductCatalogRouterError> {
     let provider_secret_map_config =
         ProviderSecretMapConfig::from_env_or_runtime_toml(runtime_toml.as_ref())
             .map_err(ProductCatalogRouterError::Config)?;
+    let deployment_mode = deployment_mode_from_env_or_toml(runtime_toml.as_ref())
+        .map_err(ProductCatalogRouterError::Config)?;
+    ensure_server_safe_deployment_mode(deployment_mode, runtime_toml.as_ref())?;
     router_with_database_config_api_key_trusted_subject_app_session_and_optional_provider_secret_map_config_and_startup_install_mode(
         config,
         require_api_key_security_config(api_key_security_config)?,
@@ -1799,12 +1928,32 @@ pub async fn router_from_env() -> Result<Router, ProductCatalogRouterError> {
         require_app_session_config(app_session_config)?,
         require_payment_webhook_config(payment_webhook_config)?,
         provider_secret_map_config,
-        deployment_mode_from_env_or_toml(runtime_toml.as_ref())
-            .map_err(ProductCatalogRouterError::Config)?,
+        deployment_mode,
         startup_install_mode,
         runtime_toml.as_ref(),
     )
     .await
+}
+
+fn ensure_server_safe_deployment_mode(
+    deployment_mode: DeploymentMode,
+    runtime_toml: Option<&RuntimeTomlConfig>,
+) -> Result<(), ProductCatalogRouterError> {
+    if deployment_mode != DeploymentMode::Desktop {
+        return Ok(());
+    }
+    let environment = runtime_toml
+        .and_then(|config| config.install.environment.as_deref())
+        .unwrap_or("development")
+        .trim()
+        .to_ascii_lowercase();
+    if environment == "production" || environment == "prod" {
+        return Err(ProductCatalogRouterError::Config(
+            "desktop deployment mode cannot be used with a production environment profile"
+                .to_owned(),
+        ));
+    }
+    Ok(())
 }
 
 fn api_key_secret_codec_from_config(
@@ -2644,7 +2793,9 @@ pub async fn serve_with_runtime_config(
     )
     .map_err(anyhow::Error::msg)?;
     let listener = tokio::net::TcpListener::bind(bind_addr).await?;
-    axum::serve(listener, router_from_env().await?).await?;
+    axum::serve(listener, router_from_env().await?)
+        .with_graceful_shutdown(sdkwork_claw_http::wait_for_shutdown_signal())
+        .await?;
     Ok(())
 }
 

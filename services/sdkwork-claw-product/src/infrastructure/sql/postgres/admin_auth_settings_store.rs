@@ -1,6 +1,7 @@
 use sqlx::{PgPool, Postgres, Row, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
+use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
 use crate::infrastructure::sql::sql_admin_auth_settings::{
     settings_from_payload, settings_payload, settings_snapshot_payload,
     AUTH_SETTINGS_AUDIT_TARGET_TYPE, AUTH_SETTINGS_SOURCE_TABLE, CONFIG_SCOPE_AUTH,
@@ -93,6 +94,7 @@ async fn load_auth_settings(
           AND organization_id = $2
           AND status = 1
           AND source_table = $3
+          AND deleted_at IS NULL
         ORDER BY published_at DESC NULLS LAST, created_at DESC NULLS LAST, id DESC
         LIMIT 1
         "#,
@@ -117,13 +119,13 @@ async fn resolve_auth_settings_scope(
 ) -> DomainResult<(i64, i64)> {
     let tenant_row = match tenant_code {
         Some(code) if !code.trim().is_empty() => sqlx::query(
-            "SELECT id FROM iam_tenant WHERE code = $1 AND status = 'active' ORDER BY id LIMIT 1",
+            "SELECT id FROM iam_tenant WHERE code = $1 AND status = 'active' AND deleted_at IS NULL ORDER BY id LIMIT 1",
         )
         .bind(code.trim())
         .fetch_optional(pool)
         .await,
         _ => {
-            sqlx::query("SELECT id FROM iam_tenant WHERE status = 'active' ORDER BY id LIMIT 1")
+            sqlx::query("SELECT id FROM iam_tenant WHERE status = 'active' AND deleted_at IS NULL ORDER BY id LIMIT 1")
                 .fetch_optional(pool)
                 .await
         }
@@ -136,14 +138,14 @@ async fn resolve_auth_settings_scope(
 
     let organization_row = match organization_code {
         Some(code) if !code.trim().is_empty() => sqlx::query(
-            "SELECT id FROM iam_organization WHERE tenant_id = $1 AND code = $2 AND status = 'active' ORDER BY id LIMIT 1",
+            "SELECT id FROM iam_organization WHERE tenant_id = $1 AND code = $2 AND status = 'active' AND deleted_at IS NULL ORDER BY id LIMIT 1",
         )
         .bind(tenant_id.to_string())
         .bind(code.trim())
         .fetch_optional(pool)
         .await,
         _ => sqlx::query(
-            "SELECT id FROM iam_organization WHERE tenant_id = $1 AND status = 'active' ORDER BY id LIMIT 1",
+            "SELECT id FROM iam_organization WHERE tenant_id = $1 AND status = 'active' AND deleted_at IS NULL ORDER BY id LIMIT 1",
         )
         .bind(tenant_id.to_string())
         .fetch_optional(pool)
@@ -164,14 +166,16 @@ async fn insert_config_snapshot(
 ) -> DomainResult<()> {
     let payload = settings_snapshot_payload(&command.settings)?;
     let snapshot_no = format!("auth-settings-update-{}", command.config_snapshot_uuid);
+    let snapshot_id = next_claw_runtime_id("auth settings config snapshot")?;
     sqlx::query(
         r#"
         INSERT INTO ops_config_snapshot
-            (uuid, tenant_id, organization_id, user_id, request_id, status, snapshot_no, config_scope, config_type, source_table, source_ids, config_payload, config_hash, published_at, published_by)
+            (id, uuid, tenant_id, organization_id, user_id, request_id, status, snapshot_no, config_scope, config_type, source_table, source_ids, config_payload, config_hash, published_at, published_by)
         VALUES
-            ($1, $2, $3, $4, $5, 1, $6, $7, $8, $9, $10::jsonb, $11::jsonb, $12, $13::timestamptz, $14)
+            ($1, $2, $3, $4, $5, $6, 1, $7, $8, $9, $10, $11::jsonb, $12::jsonb, $13, $14::timestamptz, $15)
         "#,
     )
+    .bind(snapshot_id)
     .bind(&command.config_snapshot_uuid)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
@@ -196,14 +200,16 @@ async fn insert_audit_log(
     tx: &mut Transaction<'_, Postgres>,
     command: &UpdateAdminAuthSettingsCommand,
 ) -> DomainResult<()> {
+    let audit_id = next_claw_runtime_id("auth settings audit log")?;
     sqlx::query(
         r#"
         INSERT INTO ops_audit_log
-            (uuid, tenant_id, organization_id, action, target_type, target_id, request_id, operator_id, operator_type, change_summary)
+            (id, uuid, tenant_id, organization_id, action, target_type, target_id, request_id, operator_id, operator_type, change_summary)
         VALUES
-            ($1, $2, $3, 'update_auth_settings', $4, 0, $5, $6, $7, $8::jsonb)
+            ($1, $2, $3, $4, 'update_auth_settings', $5, 0, $6, $7, $8, $9::jsonb)
         "#,
     )
+    .bind(audit_id)
     .bind(&command.audit_log_uuid)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)

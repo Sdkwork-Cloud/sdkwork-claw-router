@@ -9,6 +9,7 @@ use crate::domain::{DomainError, DomainResult};
 use crate::infrastructure::sql::routing_config_change::{
     record_sqlite_ai_routing_config_change, AiRoutingConfigChange,
 };
+use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
 use crate::ports::{
     AdminChannelCommandFuture, AdminChannelCredentialInput, AdminChannelCredentialItem,
     AdminChannelItem, AdminChannelStore, AdminChannelTestOutcome, CreateAdminChannelCommand,
@@ -719,14 +720,16 @@ async fn insert_channel(
     _api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
 ) -> DomainResult<i64> {
     let metadata_json = channel_metadata_json(command.expires_at.as_deref())?;
+    let channel_id = next_claw_runtime_id("admin channel creation")?;
     sqlx::query(
         r#"
         INSERT INTO ai_channel
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, provider_code, channel_code, channel_name, channel_type, protocol_code, auth_type, credential_rotation_strategy, timeout_ms, retry_policy, circuit_breaker_policy, environment, priority, weight, health_status, consecutive_error_count)
+            (id, uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, provider_code, channel_code, channel_name, channel_type, protocol_code, auth_type, credential_rotation_strategy, timeout_ms, retry_policy, circuit_breaker_policy, environment, priority, weight, health_status, consecutive_error_count)
         VALUES
-            (?, ?, ?, 1, ?, ?, ?, 0, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, 100, ?, ?, 0)
+            (?, ?, ?, ?, 1, ?, ?, ?, 0, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, 100, ?, ?, 0)
         "#,
     )
+    .bind(channel_id)
     .bind(&command.channel_uuid)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
@@ -988,14 +991,16 @@ async fn insert_channel_credential(
         api_key_secret_codec,
     )?
     .to_string();
+    let cred_id = next_claw_runtime_id("channel credential creation")?;
     sqlx::query(
         r#"
         INSERT INTO ai_channel_credential
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, channel_id, provider_code, channel_code, credential_name, base_url, auth_config, credential_ref, credential_hash, masked_label, priority, weight, health_status, consecutive_error_count)
+            (id, uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, channel_id, provider_code, channel_code, credential_name, base_url, auth_config, credential_ref, credential_hash, masked_label, priority, weight, health_status, consecutive_error_count)
         VALUES
-            (?, ?, ?, 1, ?, ?, ?, 0, '{}', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0)
+            (?, ?, ?, ?, 1, ?, ?, ?, 0, '{}', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0)
         "#,
     )
+    .bind(cred_id)
     .bind(&credential.credential_uuid)
     .bind(scope.tenant_id)
     .bind(scope.organization_id)
@@ -2025,14 +2030,16 @@ async fn insert_config_snapshot(
 ) -> DomainResult<()> {
     let payload = payload.to_string();
     let snapshot_no = format!("channel-{target_id}-{action}-{snapshot_uuid}");
+    let snapshot_id = next_claw_runtime_id("channel config snapshot")?;
     sqlx::query(
         r#"
         INSERT INTO ops_config_snapshot
-            (uuid, tenant_id, organization_id, user_id, request_id, status, snapshot_no, config_scope, config_type, source_table, source_ids, config_payload, config_hash, published_at, published_by)
+            (id, uuid, tenant_id, organization_id, user_id, request_id, status, snapshot_no, config_scope, config_type, source_table, source_ids, config_payload, config_hash, published_at, published_by)
         VALUES
-            (?, ?, ?, ?, ?, 1, ?, ?, ?, 'ai_channel', ?, ?, ?, ?, ?)
+            (?, ?, ?, ?, ?, ?, 1, ?, ?, ?, 'ai_channel', ?, ?, ?, ?, ?)
         "#,
     )
+    .bind(snapshot_id)
     .bind(snapshot_uuid)
     .bind(tenant_id)
     .bind(organization_id)
@@ -2064,14 +2071,16 @@ async fn insert_audit_log(
     target_id: i64,
     change_summary: serde_json::Value,
 ) -> DomainResult<()> {
+    let audit_id = next_claw_runtime_id("channel audit log")?;
     sqlx::query(
         r#"
         INSERT INTO ops_audit_log
-            (uuid, tenant_id, organization_id, action, target_type, target_id, request_id, operator_id, operator_type, change_summary)
+            (id, uuid, tenant_id, organization_id, action, target_type, target_id, request_id, operator_id, operator_type, change_summary)
         VALUES
-            (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         "#,
     )
+    .bind(audit_id)
     .bind(audit_log_uuid)
     .bind(tenant_id)
     .bind(organization_id)

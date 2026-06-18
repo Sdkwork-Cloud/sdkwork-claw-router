@@ -1,8 +1,8 @@
 use crate::domain::{
     AiModel, BillingMeter, ChannelGroup, ChannelGroupMetricSnapshot, GatewayAccessPolicy,
-    GatewayApiKey, ModelMappingBindingType, ModelMappingRule, ModelPrice, ModelProviderRoute,
-    ModelVendorDefinition, PriceSide, PricingPlan, ProviderChannelRoute, QuotaPolicy,
-    ResolveModelMappingContext, RoutingPolicy, RoutingRule,
+    GatewayApiKey, GatewayRiskRule, ModelMappingBindingType, ModelMappingRule, ModelPrice,
+    ModelProviderRoute, ModelVendorDefinition, PriceSide, PricingPlan, ProviderChannelRoute,
+    QuotaPolicy, ResolveModelMappingContext, RoutingPolicy, RoutingRule,
 };
 use crate::ports::PricingCatalog;
 
@@ -20,6 +20,7 @@ pub struct InMemoryPricingCatalog {
     api_keys: Vec<GatewayApiKey>,
     access_policies: Vec<GatewayAccessPolicy>,
     quota_policies: Vec<QuotaPolicy>,
+    gateway_risk_rules: Vec<GatewayRiskRule>,
     channel_group_metric_snapshots: Vec<ChannelGroupMetricSnapshot>,
     prices: Vec<ModelPrice>,
 }
@@ -88,6 +89,10 @@ impl InMemoryPricingCatalog {
 
     pub fn add_quota_policy(&mut self, policy: QuotaPolicy) {
         self.quota_policies.push(policy);
+    }
+
+    pub fn add_gateway_risk_rule(&mut self, rule: GatewayRiskRule) {
+        self.gateway_risk_rules.push(rule);
     }
 
     pub fn add_channel_group_metric_snapshot(&mut self, snapshot: ChannelGroupMetricSnapshot) {
@@ -230,6 +235,10 @@ impl PricingCatalog for InMemoryPricingCatalog {
             .iter()
             .find(|policy| policy.id == policy_id)
             .cloned()
+    }
+
+    fn list_gateway_risk_rules(&self) -> Vec<GatewayRiskRule> {
+        self.gateway_risk_rules.clone()
     }
 
     fn find_latest_channel_group_metric_snapshot(

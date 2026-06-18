@@ -120,7 +120,7 @@ async fn find_user_by_account(
         SELECT
             u.id,
             u.tenant_id,
-            COALESCE(om.organization_id, '') AS organization_id,
+            COALESCE(om.organization_id, '0') AS organization_id,
             COALESCE(u.username, '') AS username,
             COALESCE(u.email, '') AS email,
             COALESCE(NULLIF(u.display_name, ''), NULLIF(u.username, ''), NULLIF(u.email, ''), 'SDKWork User') AS display_name,
@@ -139,7 +139,7 @@ async fn find_user_by_account(
          AND c.user_id = u.id
          AND c.credential_type = 'password'
          AND c.status = 'active'
-        JOIN iam_organization_membership om
+        LEFT JOIN iam_organization_membership om
           ON om.tenant_id = u.tenant_id
          AND om.user_id = u.id
          AND om.status = 'active'
@@ -273,8 +273,7 @@ async fn create_registration(
         }
     }
 
-    let user_id = next_numeric_id(&mut tx, "iam_user").await?;
-    let member_id = format!("member-{user_id}");
+    let user_id = crate::infrastructure::sql::runtime_id::next_user_id("app user registration")?;
     let credential_id = format!("credential-{user_id}-password");
     let identity_id = format!("identity-{user_id}-{provider}");
     let now = command.now.to_string();
@@ -302,25 +301,28 @@ async fn create_registration(
     .await
     .map_err(|error| store_error("failed to insert IAM user", error))?;
 
-    sqlx::query(
-        r#"
-        INSERT INTO iam_organization_membership
-            (id, tenant_id, organization_id, user_id, membership_kind, display_name, is_primary, status, joined_at, created_at, updated_at)
-        VALUES
-            (?, ?, ?, ?, 'owner', ?, 1, 'active', ?, ?, ?)
-        "#,
-    )
-    .bind(&member_id)
-    .bind(&tenant_id)
-    .bind(&organization_id)
-    .bind(&user_id)
-    .bind(&command.display_name)
-    .bind(&now)
-    .bind(&now)
-    .bind(&now)
-    .execute(&mut *tx)
-    .await
-    .map_err(|error| store_error("failed to insert IAM organization membership", error))?;
+    if organization_id != "0" {
+        let member_id = format!("member-{user_id}");
+        sqlx::query(
+            r#"
+            INSERT INTO iam_organization_membership
+                (id, tenant_id, organization_id, user_id, membership_kind, display_name, is_primary, status, joined_at, created_at, updated_at)
+            VALUES
+                (?, ?, ?, ?, 'owner', ?, 1, 'active', ?, ?, ?)
+            "#,
+        )
+        .bind(&member_id)
+        .bind(&tenant_id)
+        .bind(&organization_id)
+        .bind(&user_id)
+        .bind(&command.display_name)
+        .bind(&now)
+        .bind(&now)
+        .bind(&now)
+        .execute(&mut *tx)
+        .await
+        .map_err(|error| store_error("failed to insert IAM organization membership", error))?;
+    }
 
     sqlx::query(
         r#"
@@ -675,20 +677,21 @@ async fn select_organization_id(
     tenant_id: &str,
     organization_code: Option<&str>,
 ) -> DomainResult<String> {
+    let Some(code) = organization_code
+        .map(str::trim)
+        .filter(|code| !code.is_empty())
+    else {
+        return Ok("0".to_owned());
+    };
     let row = match organization_code {
-        Some(code) if !code.trim().is_empty() => sqlx::query(
+        Some(_) => sqlx::query(
             "SELECT id FROM iam_organization WHERE tenant_id = ? AND code = ? AND status = 'active' ORDER BY id LIMIT 1",
         )
         .bind(tenant_id)
-        .bind(code.trim())
+        .bind(code)
         .fetch_optional(&mut **tx)
         .await,
-        _ => sqlx::query(
-            "SELECT id FROM iam_organization WHERE tenant_id = ? AND status = 'active' ORDER BY id LIMIT 1",
-        )
-        .bind(tenant_id)
-        .fetch_optional(&mut **tx)
-        .await,
+        None => unreachable!("empty organization code returned before query"),
     }
     .map_err(|error| store_error("failed to load IAM organization", error))?;
     row.map(|row| string_cell(&row, "id"))
@@ -745,20 +748,6 @@ async fn account_exists(
     .await
     .map_err(|error| store_error("failed to check IAM account uniqueness", error))?;
     Ok(count > 0)
-}
-
-async fn next_numeric_id(
-    tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
-    table_name: &str,
-) -> DomainResult<String> {
-    let sql = format!(
-        "SELECT COALESCE(MAX(CAST(id AS INTEGER)), 0) + 1 AS next_id FROM {table_name} WHERE id GLOB '[0-9]*'"
-    );
-    let value: i64 = sqlx::query_scalar(&sql)
-        .fetch_one(&mut **tx)
-        .await
-        .map_err(|error| store_error("failed to allocate IAM numeric id", error))?;
-    Ok(value.to_string())
 }
 
 fn user_from_row(row: sqlx::sqlite::SqliteRow) -> DomainResult<AppAuthUserCredential> {

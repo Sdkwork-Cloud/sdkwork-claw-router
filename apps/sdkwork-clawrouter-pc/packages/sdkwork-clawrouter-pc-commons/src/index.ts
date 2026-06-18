@@ -19,3 +19,4 @@ export * from './model-catalog-identity';
 export * from './reference-sidebar-groups';
 export * from './share-url';
 export * from './recharge-math';
+export * from './queryClient';

@@ -222,9 +222,29 @@ function setFavicon(documentRef: Document, href: string): void {
   link.href = href;
 }
 
+function sanitizeCustomCss(css: string): string {
+  const trimmed = css.trim();
+  if (!trimmed) {
+    return '';
+  }
+  const blockedPatterns = [
+    /@import\b/i,
+    /javascript:/i,
+    /expression\s*\(/i,
+    /behavior\s*:/i,
+    /-moz-binding/i,
+    /url\s*\(\s*["']?\s*data:/i,
+  ];
+  if (blockedPatterns.some((pattern) => pattern.test(trimmed))) {
+    return '';
+  }
+  return trimmed;
+}
+
 function applyCustomCss(documentRef: Document, css: string): void {
+  const safeCss = sanitizeCustomCss(css);
   let style = documentRef.getElementById(CUSTOM_CSS_ELEMENT_ID) as HTMLStyleElement | null;
-  if (!css) {
+  if (!safeCss) {
     style?.remove();
     return;
   }
@@ -233,7 +253,7 @@ function applyCustomCss(documentRef: Document, css: string): void {
     style.id = CUSTOM_CSS_ELEMENT_ID;
     documentRef.head.appendChild(style);
   }
-  style.textContent = css;
+  style.textContent = safeCss;
 }
 
 function notifySiteBrandingChanged(): void {

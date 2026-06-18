@@ -504,7 +504,7 @@ async fn insert_user(
     tx: &mut Transaction<'_, Postgres>,
     command: &CreateAdminUserCommand,
 ) -> DomainResult<i64> {
-    let user_id = next_numeric_id(tx, "iam_user").await?;
+    let user_id = crate::infrastructure::sql::runtime_id::next_user_id("admin user creation")?;
     let user_id_text = user_id.to_string();
     let tenant_id = command.subject.tenant_id.to_string();
     let organization_id = command.subject.organization_id.to_string();
@@ -1282,19 +1282,6 @@ fn account_id(uuid: &str) -> String {
     } else {
         format!("account-{value}")
     }
-}
-
-async fn next_numeric_id(
-    tx: &mut Transaction<'_, Postgres>,
-    table_name: &str,
-) -> DomainResult<i64> {
-    let sql = format!(
-        "SELECT COALESCE(MAX(NULLIF(regexp_replace(id, '[^0-9]', '', 'g'), '')::BIGINT), 0) + 1 AS next_id FROM {table_name}"
-    );
-    sqlx::query_scalar(&sql)
-        .fetch_one(&mut **tx)
-        .await
-        .map_err(|error| store_error("failed to allocate IAM numeric id", error))
 }
 
 fn user_status_code(status: &str) -> &'static str {

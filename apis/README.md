@@ -20,3 +20,19 @@ Generated SDK transport output, generated SDK control-plane `.sdkwork/` files, s
 ## Verification
 - `python -B tools/architecture_standard_guardian.py`
 - `python -B -m unittest tests.test_sdkwork_router_api_package_standard`
+
+## Contract authority
+
+HTTP contract sources are materialized under surface/domain paths:
+
+- `apis/open-api/clawrouter/clawrouter-open-api.openapi.json`
+- `apis/app-api/clawrouter/clawrouter-app-api.openapi.json`
+- `apis/backend-api/clawrouter/clawrouter-backend-api.openapi.json`
+
+Materialization sources:
+
+- `sdks/clawrouter-open-sdk/openapi/clawrouter-open-sdk.openapi.json`
+- `generated/openapi/clawrouter-app-openapi.json`
+- `generated/openapi/clawrouter-backend-openapi.json`
+
+Upstream authoring inputs remain in `docs/schema-registry/` and `generated/api/api-contract-manifest.json`. Run `pnpm apis:materialize:write` after OpenAPI generation changes.

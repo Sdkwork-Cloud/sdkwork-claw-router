@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 use axum::routing::MethodRouter;
 use axum::Router;
 

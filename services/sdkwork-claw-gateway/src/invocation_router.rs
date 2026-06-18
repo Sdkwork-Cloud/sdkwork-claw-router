@@ -6,7 +6,8 @@ use axum::Router;
 use sdkwork_claw_config::ProviderAdapterConfig;
 use sdkwork_claw_product::application::ApiKeySecretHasher;
 use sdkwork_claw_product::application::{
-    AccountResolutionInterceptor, BillingPolicyInterceptor, DispatchExecutor, InvocationPipeline,
+    AccountResolutionInterceptor, BillingPolicyInterceptor, DispatchExecutor,
+    GatewayInvocationPolicyGuard, GatewayInvocationRateLimiter, InvocationPipeline,
     PayloadExtractionInterceptor, PricingFinalizationInterceptor, PricingPreflightInterceptor,
     PricingSettlementInterceptor, ProviderAdapterDispatchInterceptor,
     ResponseNormalizationInterceptor, RoutePlanningInterceptor, StickyCommitInterceptor,
@@ -28,6 +29,7 @@ where
     pub(crate) catalog: Arc<C>,
     pub(crate) api_key_hasher: Arc<dyn ApiKeySecretHasher + Send + Sync>,
     pub(crate) pipeline: InvocationPipeline,
+    pub(crate) invocation_policy_guard: Arc<GatewayInvocationPolicyGuard>,
 }
 
 impl<C> Clone for InvocationRouterState<C>
@@ -39,7 +41,30 @@ where
             catalog: Arc::clone(&self.catalog),
             api_key_hasher: Arc::clone(&self.api_key_hasher),
             pipeline: self.pipeline.clone(),
+            invocation_policy_guard: Arc::clone(&self.invocation_policy_guard),
         }
+    }
+}
+
+fn default_invocation_policy_guard() -> Arc<GatewayInvocationPolicyGuard> {
+    Arc::new(GatewayInvocationPolicyGuard::new(Arc::new(
+        GatewayInvocationRateLimiter::new(),
+    )))
+}
+
+fn invocation_router_state<C>(
+    catalog: Arc<C>,
+    api_key_hasher: Arc<dyn ApiKeySecretHasher + Send + Sync>,
+    pipeline: InvocationPipeline,
+) -> InvocationRouterState<C>
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    InvocationRouterState {
+        catalog,
+        api_key_hasher,
+        pipeline,
+        invocation_policy_guard: default_invocation_policy_guard(),
     }
 }
 
@@ -52,11 +77,11 @@ pub fn invocation_router_with_catalog_api_key_hasher_dispatcher_and_secret_resol
 where
     C: PricingCatalog + Send + Sync + 'static,
 {
-    invocation_router_with_state(InvocationRouterState {
-        catalog: Arc::clone(&catalog),
+    invocation_router_with_state(invocation_router_state(
+        Arc::clone(&catalog),
         api_key_hasher,
-        pipeline: invocation_pipeline(catalog, dispatcher, Some(secret_resolver), None, None, None),
-    })
+        invocation_pipeline(catalog, dispatcher, Some(secret_resolver), None, None, None),
+    ))
 }
 
 pub fn invocation_router_with_catalog_api_key_hasher_and_dispatcher<C>(
@@ -67,11 +92,11 @@ pub fn invocation_router_with_catalog_api_key_hasher_and_dispatcher<C>(
 where
     C: PricingCatalog + Send + Sync + 'static,
 {
-    invocation_router_with_state(InvocationRouterState {
-        catalog: Arc::clone(&catalog),
+    invocation_router_with_state(invocation_router_state(
+        Arc::clone(&catalog),
         api_key_hasher,
-        pipeline: invocation_pipeline(catalog, dispatcher, None, None, None, None),
-    })
+        invocation_pipeline(catalog, dispatcher, None, None, None, None),
+    ))
 }
 
 pub fn invocation_router_with_catalog_api_key_hasher_dispatcher_secret_resolver_and_sticky_store<
@@ -86,10 +111,10 @@ pub fn invocation_router_with_catalog_api_key_hasher_dispatcher_secret_resolver_
 where
     C: PricingCatalog + Send + Sync + 'static,
 {
-    invocation_router_with_state(InvocationRouterState {
-        catalog: Arc::clone(&catalog),
+    invocation_router_with_state(invocation_router_state(
+        Arc::clone(&catalog),
         api_key_hasher,
-        pipeline: invocation_pipeline(
+        invocation_pipeline(
             catalog,
             dispatcher,
             Some(secret_resolver),
@@ -97,7 +122,7 @@ where
             None,
             None,
         ),
-    })
+    ))
 }
 
 pub fn invocation_router_with_full_pipeline<C>(
@@ -111,10 +136,10 @@ pub fn invocation_router_with_full_pipeline<C>(
 where
     C: PricingCatalog + Send + Sync + 'static,
 {
-    invocation_router_with_state(InvocationRouterState {
-        catalog: Arc::clone(&catalog),
+    invocation_router_with_state(invocation_router_state(
+        Arc::clone(&catalog),
         api_key_hasher,
-        pipeline: invocation_pipeline(
+        invocation_pipeline(
             catalog,
             dispatcher,
             secret_resolver,
@@ -122,7 +147,7 @@ where
             usage_recorder,
             None,
         ),
-    })
+    ))
 }
 
 pub fn invocation_router_with_full_pipeline_and_provider_adapter_config<C>(
@@ -140,10 +165,10 @@ where
     let adapter_resolver = provider_adapter_config
         .and_then(InvocationProviderAdapterResolver::from_config)
         .map(|resolver| Arc::new(resolver) as Arc<dyn ProviderAdapterRouteResolver>);
-    invocation_router_with_state(InvocationRouterState {
-        catalog: Arc::clone(&catalog),
+    invocation_router_with_state(invocation_router_state(
+        Arc::clone(&catalog),
         api_key_hasher,
-        pipeline: invocation_pipeline(
+        invocation_pipeline(
             catalog,
             dispatcher,
             secret_resolver,
@@ -151,7 +176,7 @@ where
             usage_recorder,
             adapter_resolver,
         ),
-    })
+    ))
 }
 
 fn invocation_router_with_state<C>(state: InvocationRouterState<C>) -> Router

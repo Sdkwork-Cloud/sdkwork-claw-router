@@ -2,8 +2,8 @@ use crate::domain::{
     ensure_canonical_model_catalog_key, provider_native_model_id, AiModel, AiModelPublicMetadata,
     BillingMeter, ChannelGroup, ChannelGroupMetricSnapshot, DecimalValue, DomainError,
     DomainResult, GatewayAccessPolicy, GatewayApiKey, GatewayApiKeyChannelGroupBinding,
-    ModelMappingBindingType, ModelMappingRule, ModelPrice, ModelProviderRoute, ModelVendor,
-    ModelVendorDefinition, Money, PriceSide, PricingPlan, ProviderAuthProfile,
+    GatewayRiskRule, ModelMappingBindingType, ModelMappingRule, ModelPrice, ModelProviderRoute,
+    ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan, ProviderAuthProfile,
     ProviderChannelGroupBinding, ProviderChannelRoute, ProviderRetryPolicy, QuotaPolicy,
     RouteCandidate, RoutingCapability, RoutingFallbackMode, RoutingPolicy, RoutingPolicyScope,
     RoutingRule,
@@ -153,6 +153,8 @@ pub struct ProviderChannelRouteRow {
     pub timeout_ms: Option<i64>,
     pub retry_policy_json: Option<String>,
     pub group_bindings_json: String,
+    pub channel_health_status: i32,
+    pub credential_health_status: i32,
 }
 
 pub struct ModelMappingRuleRow {
@@ -245,6 +247,8 @@ impl ProviderChannelRouteRow {
             timeout_ms,
             retry_policy,
             group_bindings: parse_provider_channel_group_bindings(&self.group_bindings_json)?,
+            channel_health_status: self.channel_health_status,
+            credential_health_status: self.credential_health_status,
         })
     }
 }
@@ -620,6 +624,9 @@ impl GatewayAccessPolicyRow {
 pub struct QuotaPolicyRow {
     pub id: i64,
     pub quota_limit: Option<String>,
+    pub requests_per_second: Option<i64>,
+    pub requests_per_day: Option<i64>,
+    pub burst_limit: Option<String>,
 }
 
 impl QuotaPolicyRow {
@@ -627,6 +634,53 @@ impl QuotaPolicyRow {
         Ok(QuotaPolicy {
             id: self.id,
             quota_limit: parse_optional_decimal(self.quota_limit)?,
+            requests_per_second: self.requests_per_second,
+            requests_per_day: self.requests_per_day,
+            burst_limit: parse_optional_decimal(self.burst_limit)?,
+        })
+    }
+}
+
+pub struct GatewayRiskRuleRow {
+    pub id: i64,
+    pub tenant_id: i64,
+    pub organization_id: i64,
+    pub rule_category: i32,
+    pub rule_type: i32,
+    pub scope_type: Option<i32>,
+    pub scope_id: Option<i64>,
+    pub target_type: i32,
+    pub target_value: String,
+    pub match_mode: i32,
+    pub action: i32,
+    pub priority: i32,
+    pub requests_per_second: Option<i64>,
+    pub requests_per_minute: Option<i64>,
+    pub requests_per_day: Option<i64>,
+    pub burst_limit: Option<String>,
+    pub block_duration_seconds: Option<i64>,
+}
+
+impl GatewayRiskRuleRow {
+    pub fn try_into_domain(self) -> DomainResult<GatewayRiskRule> {
+        Ok(GatewayRiskRule {
+            id: self.id,
+            tenant_id: self.tenant_id,
+            organization_id: self.organization_id,
+            rule_category: self.rule_category,
+            rule_type: self.rule_type,
+            scope_type: self.scope_type,
+            scope_id: self.scope_id,
+            target_type: self.target_type,
+            target_value: self.target_value,
+            match_mode: self.match_mode,
+            action: self.action,
+            priority: self.priority,
+            requests_per_second: self.requests_per_second,
+            requests_per_minute: self.requests_per_minute,
+            requests_per_day: self.requests_per_day,
+            burst_limit: parse_optional_decimal(self.burst_limit)?,
+            block_duration_seconds: self.block_duration_seconds,
         })
     }
 }

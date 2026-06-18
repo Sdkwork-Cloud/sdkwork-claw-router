@@ -14,10 +14,11 @@ use sdkwork_claw_product::application::{
     InvocationResource, InvocationSubject,
 };
 use sdkwork_claw_product::domain::{
-    AiModel, BillingMeter, ChannelGroup, DecimalValue, DomainError, DomainResult, GatewayApiKey,
-    ModelPrice, ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide,
-    PricingPlan, ProviderChannelRoute, ProviderRetryPolicy, RouteCandidate, RoutingCapability,
-    RoutingPolicy, RoutingPolicyScope, RoutingRule,
+    AiModel, BillingMeter, ChannelGroup, DecimalValue, DomainError, DomainResult,
+    GatewayAccessPolicy, GatewayApiKey, ModelPrice, ModelProviderRoute, ModelVendor,
+    ModelVendorDefinition, Money, PriceSide, PricingPlan, ProviderChannelRoute,
+    ProviderRetryPolicy, QuotaPolicy, RouteCandidate, RoutingCapability, RoutingPolicy,
+    RoutingPolicyScope, RoutingRule,
 };
 use sdkwork_claw_product::infrastructure::crypto::HmacSha256ApiKeySecretHasher;
 use sdkwork_claw_product::infrastructure::InMemoryPricingCatalog;
@@ -1888,4 +1889,102 @@ async fn invocation_http_dispatcher_enforces_account_timeout() {
     assert_eq!(None, error.status_code);
 
     server.abort();
+}
+
+#[tokio::test]
+async fn invocation_router_blocks_client_ip_outside_access_policy_allowlist() {
+    let hasher = hasher();
+    let key_hash = hasher.hash_secret("sk-live-secret").unwrap();
+    let mut catalog = catalog_with_hashed_api_key(key_hash);
+    catalog.add_access_policy(GatewayAccessPolicy::new(
+        700,
+        vec!["chat".to_owned()],
+        vec!["192.168.1.10".to_owned()],
+    ));
+    let mut api_key = GatewayApiKey::new(101, 10, "sk-live", &key_hash);
+    api_key = api_key.with_owner(10, 20, 30).with_management_metadata(
+        "live",
+        "sk-live********",
+        Some(700),
+        None,
+        "",
+        None,
+    );
+    catalog.add_api_key(api_key);
+
+    let router =
+        sdkwork_claw_gateway::invocation_router_with_catalog_api_key_hasher_dispatcher_and_secret_resolver(
+            Arc::new(catalog),
+            hasher,
+            Arc::new(CapturingDispatcher::default()),
+            secret_resolver(),
+        );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/chat/completions")
+                .header("authorization", "Bearer sk-live-secret")
+                .header("content-type", "application/json")
+                .header("x-forwarded-for", "8.8.8.8")
+                .body(Body::from(
+                    r#"{"model":"gpt-4o-mini","messages":[{"role":"user","content":"ping"}]}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::FORBIDDEN, response.status());
+}
+
+#[tokio::test]
+async fn invocation_router_enforces_api_key_quota_rate_limit() {
+    let hasher = hasher();
+    let key_hash = hasher.hash_secret("sk-live-secret").unwrap();
+    let mut catalog = catalog_with_hashed_api_key(key_hash);
+    catalog.add_quota_policy(QuotaPolicy {
+        id: 900,
+        quota_limit: None,
+        requests_per_second: Some(1),
+        requests_per_day: None,
+        burst_limit: None,
+    });
+    let mut api_key = GatewayApiKey::new(101, 10, "sk-live", &key_hash);
+    api_key = api_key.with_owner(10, 20, 30).with_management_metadata(
+        "live",
+        "sk-live********",
+        None,
+        Some(900),
+        "",
+        None,
+    );
+    catalog.add_api_key(api_key);
+
+    let router =
+        sdkwork_claw_gateway::invocation_router_with_catalog_api_key_hasher_dispatcher_and_secret_resolver(
+            Arc::new(catalog),
+            hasher,
+            Arc::new(CapturingDispatcher::default()),
+            secret_resolver(),
+        );
+
+    let request = || {
+        Request::builder()
+            .method("POST")
+            .uri("/v1/chat/completions")
+            .header("authorization", "Bearer sk-live-secret")
+            .header("content-type", "application/json")
+            .body(Body::from(
+                r#"{"model":"gpt-4o-mini","messages":[{"role":"user","content":"ping"}]}"#,
+            ))
+            .unwrap()
+    };
+
+    let first = router.clone().oneshot(request()).await.unwrap();
+    assert_eq!(StatusCode::OK, first.status());
+
+    let second = router.oneshot(request()).await.unwrap();
+    assert_eq!(StatusCode::TOO_MANY_REQUESTS, second.status());
 }

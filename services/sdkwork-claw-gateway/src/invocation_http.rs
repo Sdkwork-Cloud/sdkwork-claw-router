@@ -2,10 +2,10 @@ use axum::body::{to_bytes, Body};
 use axum::http::{header, HeaderMap, HeaderValue, Request, StatusCode, Uri};
 use axum::response::Response;
 use sdkwork_claw_product::application::{
-    BillingMode, DispatchMode, Invocation, InvocationBody, InvocationClassificationRequest,
-    InvocationDispatchResponse, InvocationError, InvocationErrorKind, InvocationRequest,
-    InvocationResourceClassifier, InvocationSubject, InvocationSurface, OpenAiResourceClassifier,
-    ProviderNativeResourceClassifier, ResourceType,
+    BillingMode, DispatchMode, GatewayInvocationPolicyViolation, Invocation, InvocationBody,
+    InvocationClassificationRequest, InvocationDispatchResponse, InvocationError,
+    InvocationErrorKind, InvocationRequest, InvocationResourceClassifier, InvocationSubject,
+    InvocationSurface, OpenAiResourceClassifier, ProviderNativeResourceClassifier, ResourceType,
 };
 use sdkwork_claw_product::ports::PricingCatalog;
 use serde_json::{json, Value};
@@ -42,6 +42,15 @@ where
         Ok(context) => context,
         Err(response) => return response,
     };
+
+    let client_ip = extract_client_ip_from_headers(&parts.headers);
+    if let Err(violation) = state.invocation_policy_guard.enforce(
+        state.catalog.as_ref(),
+        &auth_context,
+        client_ip.as_deref(),
+    ) {
+        return response_from_policy_violation(&violation);
+    }
 
     let body = match invocation_body_from_http(&parts.headers, body).await {
         Ok(body) => body,
@@ -192,10 +201,7 @@ fn invocation_request_from_http(
     let idempotency_key = header_text(&headers, "idempotency-key");
     let user_agent = header_text(&headers, header::USER_AGENT.as_str());
     let content_type = header_text(&headers, header::CONTENT_TYPE.as_str());
-    let client_ip = header_text(&headers, "x-forwarded-for")
-        .and_then(|value| value.split(',').next().map(str::trim).map(str::to_owned))
-        .filter(|value| !value.is_empty())
-        .or_else(|| header_text(&headers, "x-real-ip"));
+    let client_ip = extract_client_ip_from_headers(&headers);
 
     let mut request = InvocationRequest::new(method, path)
         .with_request_id(request_id)
@@ -261,8 +267,24 @@ fn normalized_response_to_http(
         body,
         body_bytes,
         content_type,
+        stream_body,
     } = normalized;
     let status = StatusCode::from_u16(status_code).unwrap_or(StatusCode::BAD_GATEWAY);
+
+    // For streaming responses, return the body directly without buffering
+    if let Ok(Some(stream)) = stream_body.lock().map(|mut guard| guard.take()) {
+        let mut response = Response::new(stream);
+        *response.status_mut() = status;
+        if let Some(ct) = content_type
+            .as_deref()
+            .filter(|value| !value.trim().is_empty())
+            .and_then(|value| HeaderValue::from_str(value).ok())
+        {
+            response.headers_mut().insert(header::CONTENT_TYPE, ct);
+        }
+        return response;
+    }
+
     let body = body_bytes
         .or_else(|| body.map(|body| serde_json::to_vec(&body).unwrap_or_else(|_| b"{}".to_vec())));
     let mut response = Response::new(Body::from(body.unwrap_or_default()));
@@ -279,7 +301,49 @@ fn normalized_response_to_http(
     response
 }
 
-fn response_from_invocation_error(error: &InvocationError) -> Response {
+fn extract_client_ip_from_headers(headers: &HeaderMap) -> Option<String> {
+    header_text(headers, "x-forwarded-for")
+        .and_then(|value| value.split(',').next().map(str::trim).map(str::to_owned))
+        .filter(|value| !value.is_empty())
+        .or_else(|| header_text(headers, "x-real-ip"))
+}
+
+pub(crate) fn response_from_policy_violation(
+    violation: &GatewayInvocationPolicyViolation,
+) -> Response {
+    match violation {
+        GatewayInvocationPolicyViolation::Forbidden(message) => {
+            let error = InvocationError::new(InvocationErrorKind::Authorization, message.clone());
+            response_from_invocation_error(&error)
+        }
+        GatewayInvocationPolicyViolation::RateLimited {
+            message,
+            retry_after_secs,
+        } => {
+            let body = json!({
+                "error": {
+                    "message": message,
+                    "type": "rate_limit_error",
+                    "param": null,
+                    "code": "rate_limit_exceeded"
+                }
+            });
+            let body = serde_json::to_vec(&body).unwrap_or_else(|_| b"{}".to_vec());
+            let mut response = Response::new(Body::from(body));
+            *response.status_mut() = StatusCode::TOO_MANY_REQUESTS;
+            response.headers_mut().insert(
+                header::CONTENT_TYPE,
+                HeaderValue::from_static("application/json"),
+            );
+            if let Ok(value) = HeaderValue::from_str(&retry_after_secs.to_string()) {
+                response.headers_mut().insert(header::RETRY_AFTER, value);
+            }
+            response
+        }
+    }
+}
+
+pub(crate) fn response_from_invocation_error(error: &InvocationError) -> Response {
     let status = match error.kind {
         InvocationErrorKind::InvalidRequest | InvocationErrorKind::ResourceClassification => {
             StatusCode::BAD_REQUEST
@@ -289,6 +353,7 @@ fn response_from_invocation_error(error: &InvocationError) -> Response {
         InvocationErrorKind::Routing
         | InvocationErrorKind::Pricing
         | InvocationErrorKind::Dispatch
+        | InvocationErrorKind::ProviderPassthroughFailed
         | InvocationErrorKind::Usage
         | InvocationErrorKind::Telemetry
         | InvocationErrorKind::Internal => StatusCode::BAD_GATEWAY,

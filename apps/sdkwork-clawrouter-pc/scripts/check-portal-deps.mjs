@@ -1,5 +1,5 @@
 import { createRequire } from 'node:module';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
 import { pathToFileURL } from 'node:url';
@@ -100,6 +100,20 @@ function assertRuntimePackagesResolve() {
   }
 }
 
+function assertPortalCommandShims() {
+  const commandShims = [
+    path.join(portalRoot, 'node_modules', '.bin', 'vite'),
+    path.join(portalRoot, 'node_modules', '.bin', 'vite.cmd'),
+    path.join(portalRoot, 'node_modules', '.bin', 'vite.ps1'),
+  ];
+
+  if (!commandShims.some((commandShim) => existsSync(commandShim))) {
+    throw new Error(
+      'Portal dependency command shims are not installed: vite. Run pnpm install in apps/sdkwork-clawrouter-pc or start with pnpm --dir apps/sdkwork-clawrouter-pc install.',
+    );
+  }
+}
+
 function assertViteConfigDoesNotAliasRuntimeDependencies() {
   const viteConfig = readFileSync(path.join(portalRoot, 'vite.config.ts'), 'utf8');
   const forbidden = forbiddenAliasTokens.filter((dependency) => {
@@ -123,6 +137,7 @@ try {
   assertNoRetiredGenericSdkDependencies();
   assertDirectDependencies();
   assertRuntimePackagesResolve();
+  assertPortalCommandShims();
   assertViteConfigDoesNotAliasRuntimeDependencies();
   await assertMotionReactExports();
   console.log('Portal dependency preflight passed.');

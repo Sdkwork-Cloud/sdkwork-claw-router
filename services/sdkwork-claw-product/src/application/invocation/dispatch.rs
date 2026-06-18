@@ -1,5 +1,7 @@
 use std::fmt::{Debug, Formatter};
+use std::sync::Mutex;
 
+use axum::body::Body;
 use axum::http::{HeaderMap, HeaderName, Method};
 use serde_json::Value;
 
@@ -47,12 +49,36 @@ pub enum InvocationShape {
     Empty,
 }
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug)]
 pub struct InvocationDispatchResponse {
     pub status_code: u16,
     pub body: Option<Value>,
     pub body_bytes: Option<Vec<u8>>,
     pub content_type: Option<String>,
+    /// Streaming response body for SSE/streaming requests.
+    /// Wrapped in Mutex for Sync safety. Clone creates a new empty Mutex.
+    pub stream_body: Mutex<Option<Body>>,
+}
+
+impl Clone for InvocationDispatchResponse {
+    fn clone(&self) -> Self {
+        Self {
+            status_code: self.status_code,
+            body: self.body.clone(),
+            body_bytes: self.body_bytes.clone(),
+            content_type: self.content_type.clone(),
+            stream_body: Mutex::new(None),
+        }
+    }
+}
+
+impl PartialEq for InvocationDispatchResponse {
+    fn eq(&self, other: &Self) -> bool {
+        self.status_code == other.status_code
+            && self.body == other.body
+            && self.body_bytes == other.body_bytes
+            && self.content_type == other.content_type
+    }
 }
 
 impl InvocationDispatchResponse {
@@ -62,6 +88,7 @@ impl InvocationDispatchResponse {
             body: Some(body),
             body_bytes: None,
             content_type: Some("application/json".to_owned()),
+            stream_body: Mutex::new(None),
         }
     }
 
@@ -71,6 +98,7 @@ impl InvocationDispatchResponse {
             body: None,
             body_bytes: Some(body.into()),
             content_type,
+            stream_body: Mutex::new(None),
         }
     }
 
@@ -80,7 +108,24 @@ impl InvocationDispatchResponse {
             body: None,
             body_bytes: None,
             content_type: None,
+            stream_body: Mutex::new(None),
         }
+    }
+
+    /// Create a streaming response with the given status, content type, and body.
+    pub fn streaming(status_code: u16, content_type: Option<String>, body: Body) -> Self {
+        Self {
+            status_code,
+            body: None,
+            body_bytes: None,
+            content_type,
+            stream_body: Mutex::new(Some(body)),
+        }
+    }
+
+    /// Take the stream body out, if present.
+    pub fn take_stream_body(&self) -> Option<Body> {
+        self.stream_body.lock().ok()?.take()
     }
 
     pub fn is_success(&self) -> bool {

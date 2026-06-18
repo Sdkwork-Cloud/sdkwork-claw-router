@@ -478,7 +478,8 @@ export default defineConfig(({mode}) => {
         { find: '@sdkwork/appbase-backend-sdk', replacement: path.resolve(appbaseRoot, 'sdks/sdkwork-appbase-backend-sdk/sdkwork-appbase-backend-sdk-typescript/generated/server-openapi/src/index.ts') },
         { find: '@sdkwork/clawrouter-app-sdk', replacement: path.resolve(configDir, '../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/index.ts') },
         { find: '@sdkwork/clawrouter-backend-sdk', replacement: path.resolve(configDir, '../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/index.ts') },
-        { find: 'sdkwork-commerce-pc-admin-product', replacement: path.resolve(sdkworkCommerceRoot, 'apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-admin-product/src/index.tsx') },
+        { find: '@sdkwork/clawrouter-open-sdk', replacement: path.resolve(configDir, '../../sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript/generated/server-openapi/src/index.ts') },
+        { find: '@sdkwork/commerce-pc-admin-product', replacement: path.resolve(sdkworkCommerceRoot, 'apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-admin-product/src/index.tsx') },
         { find: '@sdkwork/commerce-contracts', replacement: path.resolve(sdkworkCommerceRoot, 'packages/common/commerce/sdkwork-commerce-contracts/src/index.ts') },
         { find: '@sdkwork/commerce-sdk-ports', replacement: path.resolve(sdkworkCommerceRoot, 'packages/common/commerce/sdkwork-commerce-sdk-ports/src/index.ts') },
         { find: '@sdkwork/commerce-service', replacement: path.resolve(sdkworkCommerceRoot, 'packages/common/commerce/sdkwork-commerce-service/src/index.ts') },
@@ -498,10 +499,10 @@ export default defineConfig(({mode}) => {
         { find: '@sdkwork/generations-pc-workspace/generation-service', replacement: path.resolve(sdkworkGenerationsRoot, 'apps/sdkwork-generations-pc/packages/sdkwork-generations-pc-workspace/src/generation-service.ts') },
         { find: '@sdkwork/generations-pc-workspace/react', replacement: path.resolve(sdkworkGenerationsRoot, 'apps/sdkwork-generations-pc/packages/sdkwork-generations-pc-workspace/src/react.ts') },
         { find: '@sdkwork/generations-pc-workspace', replacement: path.resolve(sdkworkGenerationsRoot, 'apps/sdkwork-generations-pc/packages/sdkwork-generations-pc-workspace/src/index.ts') },
-        { find: '@sdkwork/generation-pc-react/react', replacement: path.resolve(sdkworkImageRoot, 'packages/pc-react/content/sdkwork-generation-pc-react/src/react.ts') },
-        { find: '@sdkwork/generation-pc-react/generation-service', replacement: path.resolve(sdkworkImageRoot, 'packages/pc-react/content/sdkwork-generation-pc-react/src/generation-service.ts') },
-        { find: '@sdkwork/generation-pc-react/generation-history', replacement: path.resolve(sdkworkImageRoot, 'packages/pc-react/content/sdkwork-generation-pc-react/src/generation-history.ts') },
-        { find: '@sdkwork/generation-pc-react', replacement: path.resolve(sdkworkImageRoot, 'packages/pc-react/content/sdkwork-generation-pc-react/src/index.ts') },
+        { find: '@sdkwork/image-pc-generation/react', replacement: path.resolve(sdkworkImageRoot, 'apps/sdkwork-image-pc/packages/sdkwork-image-pc-generation/src/react.ts') },
+        { find: '@sdkwork/image-pc-generation/generation-service', replacement: path.resolve(sdkworkImageRoot, 'apps/sdkwork-image-pc/packages/sdkwork-image-pc-generation/src/generation-service.ts') },
+        { find: '@sdkwork/image-pc-generation/generation-history', replacement: path.resolve(sdkworkImageRoot, 'apps/sdkwork-image-pc/packages/sdkwork-image-pc-generation/src/generation-history.ts') },
+        { find: '@sdkwork/image-pc-generation', replacement: path.resolve(sdkworkImageRoot, 'apps/sdkwork-image-pc/packages/sdkwork-image-pc-generation/src/index.ts') },
         { find: 'sdkwork-generations-app-sdk-generated-typescript', replacement: path.resolve(sdkworkGenerationsRoot, 'sdks/sdkwork-generations-app-sdk/sdkwork-generations-app-sdk-typescript/generated/server-openapi/src/index.ts') },
         { find: '@sdkwork/host-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/host/sdkwork-host-pc-react/src/index.ts') },
         { find: '@sdkwork/host-tauri-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/host/sdkwork-host-tauri-pc-react/src/index.ts') },
@@ -792,11 +793,31 @@ function portalDevProxyOptions(target: string): ProxyOptions {
   };
 }
 
-function resolvePortalDevProxyTarget(value: string | undefined, name: string): string {
-  const fallbackByName: Record<string, string> = {
-    PORTAL_DEV_PROXY_GATEWAY_TARGET: 'http://127.0.0.1:3902',
-    PORTAL_DEV_PROXY_BACKEND_API_TARGET: 'http://127.0.0.1:3902',
-    PORTAL_DEV_PROXY_APP_API_TARGET: 'http://127.0.0.1:3902',
+function resolvePortalDevProxyTarget(
+  value: string | undefined,
+  name: string,
+  env: NodeJS.ProcessEnv = process.env,
+): string {
+  const applicationPublicHttpUrl = readConfiguredPortalPublicEnv(
+    env.VITE_SDKWORK_CLAW_ROUTER_APPLICATION_PUBLIC_HTTP_URL
+    ?? env.SDKWORK_CLAW_ROUTER_APPLICATION_PUBLIC_HTTP_URL,
+  );
+  const applicationBackendHttpUrl = readConfiguredPortalPublicEnv(
+    env.VITE_SDKWORK_CLAW_ROUTER_APPLICATION_BACKEND_HTTP_URL
+    ?? env.SDKWORK_CLAW_ROUTER_APPLICATION_BACKEND_HTTP_URL,
+  );
+  const applicationOpenHttpUrl = readConfiguredPortalPublicEnv(
+    env.VITE_SDKWORK_CLAW_ROUTER_APPLICATION_OPEN_HTTP_URL
+    ?? env.SDKWORK_CLAW_ROUTER_APPLICATION_OPEN_HTTP_URL,
+  );
+  const platformHttpUrl = readConfiguredPortalPublicEnv(
+    env.VITE_SDKWORK_CLAW_ROUTER_PLATFORM_API_GATEWAY_HTTP_URL
+    ?? env.SDKWORK_CLAW_ROUTER_PLATFORM_API_GATEWAY_HTTP_URL,
+  );
+  const fallbackByName: Record<string, string | undefined> = {
+    PORTAL_DEV_PROXY_GATEWAY_TARGET: applicationOpenHttpUrl ?? applicationPublicHttpUrl ?? platformHttpUrl,
+    PORTAL_DEV_PROXY_BACKEND_API_TARGET: applicationBackendHttpUrl ?? applicationPublicHttpUrl ?? platformHttpUrl,
+    PORTAL_DEV_PROXY_APP_API_TARGET: applicationPublicHttpUrl ?? platformHttpUrl,
   };
   const target = value?.trim() || fallbackByName[name];
   if (!target) {

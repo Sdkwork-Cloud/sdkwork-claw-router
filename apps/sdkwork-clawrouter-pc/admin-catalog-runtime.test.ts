@@ -25,9 +25,9 @@ test("admin catalog adapter re-exports Commerce product admin without Claw Route
   const productListAdapterSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/ProductListPage.tsx");
   const serviceAdapterSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts");
 
-  assert.match(indexSource, /from "sdkwork-commerce-pc-admin-product"/);
-  assert.match(productListAdapterSource, /from "sdkwork-commerce-pc-admin-product"/);
-  assert.match(serviceAdapterSource, /from "sdkwork-commerce-pc-admin-product"/);
+  assert.match(indexSource, /from "@sdkwork\/commerce-pc-admin-product"/);
+  assert.match(productListAdapterSource, /from "@sdkwork\/commerce-pc-admin-product"/);
+  assert.match(serviceAdapterSource, /from "@sdkwork\/commerce-pc-admin-product"/);
   assert.match(indexSource, /CatalogAdmin/);
   assert.match(indexSource, /CommerceProductAdmin/);
   assert.match(serviceAdapterSource, /createCommerceProductAdminService/);
@@ -119,7 +119,7 @@ test("admin catalog products route uses a Commerce-owned Weixin-style product li
   assert.match(productListSource, /status:\s*activeTab\.status/);
   assert.match(productListSource, /buildProductQueryText\(appliedFilters\)/);
   assert.match(serviceSource, /createCommerceProductAdminService/);
-  assert.match(serviceSource, /catalog\.products\.list\(params\)/);
+  assert.match(serviceSource, /catalog\.products\.management\.list\(params\)/);
   assert.doesNotMatch(serviceSource, /getClawRouterBackendSdkClient/);
   assert.doesNotMatch(productListSource, /\bfetch\s*\(|axios|XMLHttpRequest/);
   assert.doesNotMatch(serviceSource, /\bfetch\s*\(|axios|XMLHttpRequest/);

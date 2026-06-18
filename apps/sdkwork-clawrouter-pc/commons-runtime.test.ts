@@ -303,9 +303,7 @@ test("open gateway SDK clients never inherit portal session tokens", () => {
     assert.equal(implicitClient.httpClient?.authConfig?.tokenManager?.getAccessToken?.(), undefined);
 
     const explicitClient = createClawRouterAiSdkClient({
-      accessToken: "access-token-unsafe",
       apiKey: "sk-open-gateway",
-      authToken: "auth-token-unsafe",
     }) as unknown as {
       httpClient?: { authConfig?: { apiKey?: string; authMode?: string; tokenManager?: { getAccessToken?: () => string | undefined } } };
     };

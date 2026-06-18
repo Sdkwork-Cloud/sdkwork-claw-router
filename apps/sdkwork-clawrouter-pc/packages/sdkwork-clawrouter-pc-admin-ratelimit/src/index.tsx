@@ -1,7 +1,16 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import { useQueryClient } from '@tanstack/react-query';
 import { Plus, Search, Globe, Key, Database, X, Lock, Gauge, Trash2, Loader2, AlertTriangle } from 'lucide-react';
 import { AdminTableShell, BusinessStateTableRow, ConfirmDialog } from 'sdkwork-clawrouter-pc-commons';
 import { RateLimitService, IpLimitRule, TokenLimitRule, ModelLimitRule, FirewallRule } from './ratelimitService';
+import {
+  rateLimitQueryKeys,
+  useFirewallRulesQuery,
+  useIpRateLimitsQuery,
+  useModelRateLimitsQuery,
+  useRateLimitDashboardQuery,
+  useTokenRateLimitsQuery,
+} from './ratelimitQueries';
 import {
   createFirewallInputFromForm,
   createIpLimitInputFromForm,
@@ -95,49 +104,11 @@ export function RateLimitAdmin() {
 // 1. 全局风控大盘
 function RiskDashboardView() {
   const { t } = useTranslation();
-  const [snapshot, setSnapshot] = useState<{
-    ipLimits: IpLimitRule[];
-    tokenLimits: TokenLimitRule[];
-    modelLimits: ModelLimitRule[];
-    firewallRules: FirewallRule[];
-  } | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [loadError, setLoadError] = useState<string | null>(null);
+  const { data: snapshot, error, isLoading, refetch, isFetching } = useRateLimitDashboardQuery();
+  const loadError = error ? getLoadErrorMessage(error, 'Failed to load risk control dashboard.') : null;
+  const loading = isLoading || isFetching;
 
-  const loadDashboard = useCallback(async (isActive: () => boolean = () => true) => {
-    setLoading(true);
-    setLoadError(null);
-    try {
-      const [ipLimits, tokenLimits, modelLimits, firewallRules] = await Promise.all([
-        RateLimitService.fetchIpLimits(),
-        RateLimitService.fetchTokenLimits(),
-        RateLimitService.fetchModelLimits(),
-        RateLimitService.fetchFirewalls(),
-      ]);
-      if (isActive()) {
-        setSnapshot({ ipLimits, tokenLimits, modelLimits, firewallRules });
-      }
-    } catch (error) {
-      if (isActive()) {
-        setSnapshot(null);
-        setLoadError(getLoadErrorMessage(error, 'Failed to load risk control dashboard.'));
-      }
-    } finally {
-      if (isActive()) {
-        setLoading(false);
-      }
-    }
-  }, []);
-
-  useEffect(() => {
-    let active = true;
-    void loadDashboard(() => active);
-    return () => {
-      active = false;
-    };
-  }, [loadDashboard]);
-
-  if (loading) {
+  if (loading && !snapshot) {
     return (
       <div className="flex-1 flex flex-col items-center justify-center text-slate-500">
         <Loader2 className="w-8 h-8 mb-3 animate-spin text-red-500" />
@@ -154,7 +125,7 @@ function RiskDashboardView() {
         <p className="text-sm max-w-lg mb-4">{loadError}</p>
         <button
           type="button"
-          onClick={() => void loadDashboard()}
+          onClick={() => void refetch()}
           className="px-4 py-2 rounded-lg bg-red-600 text-sm font-medium text-white hover:bg-red-700 transition-colors"
         >
           {t('common.actions.retry')}
@@ -246,44 +217,21 @@ function getLoadErrorMessage(error: unknown, fallback: string): string {
 // 2. IP访问限流
 function IpRateLimitView({ search, setSearch }: { search: string, setSearch: (s: string) => void }) {
   const { t } = useTranslation();
+  const queryClient = useQueryClient();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [limits, setLimits] = useState<IpLimitRule[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [loadError, setLoadError] = useState<string | null>(null);
-
-  const loadIpLimits = useCallback(async (isActive: () => boolean = () => true) => {
-    setLoading(true);
-    setLoadError(null);
-    try {
-      const data = await RateLimitService.fetchIpLimits();
-      if (isActive()) {
-        setLimits(data);
-      }
-    } catch (error) {
-      if (isActive()) {
-        setLoadError(getLoadErrorMessage(error, 'Failed to load IP limit rules.'));
-      }
-    } finally {
-      if (isActive()) {
-        setLoading(false);
-      }
-    }
-  }, []);
-
-  useEffect(() => {
-    let active = true;
-    void loadIpLimits(() => active);
-    return () => {
-      active = false;
-    };
-  }, [loadIpLimits]);
+  const { data: limits = [], error, isLoading, refetch, isFetching } = useIpRateLimitsQuery();
+  const loadError = error ? getLoadErrorMessage(error, 'Failed to load IP limit rules.') : null;
+  const loading = isLoading || isFetching;
 
   const handleAddRule = async (e: React.FormEvent) => {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
     const added = await RateLimitService.addIpLimit(createIpLimitInputFromForm(formData));
-    setLimits(current => [added, ...current]);
-    setLoadError(null);
+    queryClient.setQueryData(rateLimitQueryKeys.ipLimits(), (current: IpLimitRule[] | undefined) => [
+      added,
+      ...(current ?? []),
+    ]);
+    await queryClient.invalidateQueries({ queryKey: rateLimitQueryKeys.dashboard() });
     setIsModalOpen(false);
   };
 
@@ -325,7 +273,7 @@ function IpRateLimitView({ search, setSearch }: { search: string, setSearch: (s:
                 kind="error"
                 title="IP limit rules could not be loaded"
                 description={loadError}
-                onRetry={() => void loadIpLimits()}
+                onRetry={() => void refetch()}
               />
             ) : filteredLimits.length === 0 ? (
               <BusinessStateTableRow
@@ -403,44 +351,21 @@ function IpRateLimitView({ search, setSearch }: { search: string, setSearch: (s:
 // 3. 令牌与API Key限流
 function TokenRateLimitView({ search, setSearch }: { search: string, setSearch: (s: string) => void }) {
   const { t } = useTranslation();
+  const queryClient = useQueryClient();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [limits, setLimits] = useState<TokenLimitRule[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [loadError, setLoadError] = useState<string | null>(null);
-
-  const loadTokenLimits = useCallback(async (isActive: () => boolean = () => true) => {
-    setLoading(true);
-    setLoadError(null);
-    try {
-      const data = await RateLimitService.fetchTokenLimits();
-      if (isActive()) {
-        setLimits(data);
-      }
-    } catch (error) {
-      if (isActive()) {
-        setLoadError(getLoadErrorMessage(error, 'Failed to load token limit rules.'));
-      }
-    } finally {
-      if (isActive()) {
-        setLoading(false);
-      }
-    }
-  }, []);
-
-  useEffect(() => {
-    let active = true;
-    void loadTokenLimits(() => active);
-    return () => {
-      active = false;
-    };
-  }, [loadTokenLimits]);
+  const { data: limits = [], error, isLoading, refetch, isFetching } = useTokenRateLimitsQuery();
+  const loadError = error ? getLoadErrorMessage(error, 'Failed to load token limit rules.') : null;
+  const loading = isLoading || isFetching;
 
   const handleAddTokenLimit = async (e: React.FormEvent) => {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
     const added = await RateLimitService.addTokenLimit(createTokenLimitInputFromForm(formData));
-    setLimits(current => [added, ...current]);
-    setLoadError(null);
+    queryClient.setQueryData(rateLimitQueryKeys.tokenLimits(), (current: TokenLimitRule[] | undefined) => [
+      added,
+      ...(current ?? []),
+    ]);
+    await queryClient.invalidateQueries({ queryKey: rateLimitQueryKeys.dashboard() });
     setIsModalOpen(false);
   };
 
@@ -482,7 +407,7 @@ function TokenRateLimitView({ search, setSearch }: { search: string, setSearch: 
                 kind="error"
                 title="Token limit rules could not be loaded"
                 description={loadError}
-                onRetry={() => void loadTokenLimits()}
+                onRetry={() => void refetch()}
               />
             ) : filteredLimits.length === 0 ? (
               <BusinessStateTableRow
@@ -559,44 +484,21 @@ function TokenRateLimitView({ search, setSearch }: { search: string, setSearch: 
 // 4. 特定模型频控 (TPM/RPM)
 function ModelRateLimitView({ search, setSearch }: { search: string, setSearch: (s: string) => void }) {
   const { t } = useTranslation();
+  const queryClient = useQueryClient();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [limits, setLimits] = useState<ModelLimitRule[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [loadError, setLoadError] = useState<string | null>(null);
-
-  const loadModelLimits = useCallback(async (isActive: () => boolean = () => true) => {
-    setLoading(true);
-    setLoadError(null);
-    try {
-      const data = await RateLimitService.fetchModelLimits();
-      if (isActive()) {
-        setLimits(data);
-      }
-    } catch (error) {
-      if (isActive()) {
-        setLoadError(getLoadErrorMessage(error, 'Failed to load model limit rules.'));
-      }
-    } finally {
-      if (isActive()) {
-        setLoading(false);
-      }
-    }
-  }, []);
-
-  useEffect(() => {
-    let active = true;
-    void loadModelLimits(() => active);
-    return () => {
-      active = false;
-    };
-  }, [loadModelLimits]);
+  const { data: limits = [], error, isLoading, refetch, isFetching } = useModelRateLimitsQuery();
+  const loadError = error ? getLoadErrorMessage(error, 'Failed to load model limit rules.') : null;
+  const loading = isLoading || isFetching;
 
   const handleAddModelLimit = async (e: React.FormEvent) => {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
     const added = await RateLimitService.addModelLimit(createModelLimitInputFromForm(formData));
-    setLimits(current => [added, ...current]);
-    setLoadError(null);
+    queryClient.setQueryData(rateLimitQueryKeys.modelLimits(), (current: ModelLimitRule[] | undefined) => [
+      added,
+      ...(current ?? []),
+    ]);
+    await queryClient.invalidateQueries({ queryKey: rateLimitQueryKeys.dashboard() });
     setIsModalOpen(false);
   };
 
@@ -637,7 +539,7 @@ function ModelRateLimitView({ search, setSearch }: { search: string, setSearch: 
                  kind="error"
                  title="Model limit rules could not be loaded"
                  description={loadError}
-                 onRetry={() => void loadModelLimits()}
+                 onRetry={() => void refetch()}
                />
              ) : filteredLimits.length === 0 ? (
                <BusinessStateTableRow
@@ -709,46 +611,23 @@ function ModelRateLimitView({ search, setSearch }: { search: string, setSearch: 
 // 5. WAF
 function FirewallView({ search, setSearch }: { search: string, setSearch: (s: string) => void }) {
   const { t } = useTranslation();
+  const queryClient = useQueryClient();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [rules, setRules] = useState<FirewallRule[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [loadError, setLoadError] = useState<string | null>(null);
+  const { data: rules = [], error, isLoading, refetch, isFetching } = useFirewallRulesQuery();
+  const loadError = error ? getLoadErrorMessage(error, 'Failed to load firewall rules.') : null;
+  const loading = isLoading || isFetching;
   const [removeTarget, setRemoveTarget] = useState<FirewallRule | null>(null);
   const [removingFirewallId, setRemovingFirewallId] = useState<string | null>(null);
-
-  const loadFirewalls = useCallback(async (isActive: () => boolean = () => true) => {
-    setLoading(true);
-    setLoadError(null);
-    try {
-      const data = await RateLimitService.fetchFirewalls();
-      if (isActive()) {
-        setRules(data);
-      }
-    } catch (error) {
-      if (isActive()) {
-        setLoadError(getLoadErrorMessage(error, 'Failed to load firewall rules.'));
-      }
-    } finally {
-      if (isActive()) {
-        setLoading(false);
-      }
-    }
-  }, []);
-
-  useEffect(() => {
-    let active = true;
-    void loadFirewalls(() => active);
-    return () => {
-      active = false;
-    };
-  }, [loadFirewalls]);
 
   const handleAddFirewall = async (e: React.FormEvent) => {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
     const added = await RateLimitService.addFirewall(createFirewallInputFromForm(formData));
-    setRules(current => [added, ...current]);
-    setLoadError(null);
+    queryClient.setQueryData(rateLimitQueryKeys.firewalls(), (current: FirewallRule[] | undefined) => [
+      added,
+      ...(current ?? []),
+    ]);
+    await queryClient.invalidateQueries({ queryKey: rateLimitQueryKeys.dashboard() });
     setIsModalOpen(false);
   };
 
@@ -768,7 +647,10 @@ function FirewallView({ search, setSearch }: { search: string, setSearch: (s: st
     try {
       const ok = await RateLimitService.removeFirewall(id);
       if (ok) {
-        setRules(current => current.filter(r => r.id !== id));
+        queryClient.setQueryData(rateLimitQueryKeys.firewalls(), (current: FirewallRule[] | undefined) =>
+          (current ?? []).filter(r => r.id !== id),
+        );
+        await queryClient.invalidateQueries({ queryKey: rateLimitQueryKeys.dashboard() });
       }
       setRemoveTarget(null);
     } finally {
@@ -813,7 +695,7 @@ function FirewallView({ search, setSearch }: { search: string, setSearch: (s: st
                  kind="error"
                  title="Firewall rules could not be loaded"
                  description={loadError}
-                 onRetry={() => void loadFirewalls()}
+                 onRetry={() => void refetch()}
                />
              ) : filteredRules.length === 0 ? (
                <BusinessStateTableRow

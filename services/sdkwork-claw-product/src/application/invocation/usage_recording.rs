@@ -229,6 +229,7 @@ fn status_code_for_error(error: &InvocationError) -> u16 {
         InvocationErrorKind::Routing
         | InvocationErrorKind::Pricing
         | InvocationErrorKind::Dispatch
+        | InvocationErrorKind::ProviderPassthroughFailed
         | InvocationErrorKind::Usage
         | InvocationErrorKind::Telemetry
         | InvocationErrorKind::Internal => 502,

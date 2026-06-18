@@ -381,6 +381,14 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
         binding: &GatewayApiKeyChannelGroupBinding,
     ) -> Option<AuthenticatedApiKeyContext> {
         let group = self.catalog.find_channel_group(binding.group_id)?;
+        // Verify the bound channel group belongs to the same tenant/organization,
+        // or is a global resource (tenant_id == 0)
+        if group.tenant_id != 0 && group.tenant_id != context.tenant_id {
+            return None;
+        }
+        if group.organization_id != 0 && group.organization_id != context.organization_id {
+            return None;
+        }
         Some(AuthenticatedApiKeyContext {
             api_key_id: context.api_key_id,
             tenant_id: context.tenant_id,
@@ -797,7 +805,9 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
     }
 
     fn route_is_callable(&self, route: &ModelProviderRoute) -> bool {
-        has_text(route.base_url.as_deref()) && has_text(route.secret_ref.as_deref())
+        has_text(route.base_url.as_deref())
+            && (has_text(route.secret_ref.as_deref())
+                || !route.auth_profile.default_headers.is_empty())
     }
 
     fn evaluate_candidate_channel_routes(
@@ -886,7 +896,10 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
     }
 
     fn channel_route_is_callable(&self, route: &ProviderChannelRoute) -> bool {
-        has_text(route.base_url.as_deref()) && has_text(route.secret_ref.as_deref())
+        has_text(route.base_url.as_deref())
+            && (has_text(route.secret_ref.as_deref())
+                || !route.auth_profile.default_headers.is_empty())
+            && route.is_channel_healthy()
     }
 
     fn ensure_route_is_priced(

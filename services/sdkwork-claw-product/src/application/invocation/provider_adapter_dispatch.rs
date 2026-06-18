@@ -1,6 +1,9 @@
 use std::sync::Arc;
 
-use super::{DispatchMode, Invocation, InvocationFuture, InvocationInterceptor, InvocationSurface};
+use super::{
+    BillingQuantitySource, DispatchMode, Invocation, InvocationFuture, InvocationInterceptor,
+    InvocationSurface,
+};
 use crate::ports::ProviderAdapterRouteResolver;
 
 #[derive(Clone)]
@@ -30,6 +33,7 @@ impl InvocationInterceptor for ProviderAdapterDispatchInterceptor {
             invocation.dispatch.mode = DispatchMode::InternalProviderAdapter;
             invocation.dispatch.invocation_shape = target.shape.clone();
             invocation.dispatch.adapter_target = Some(target);
+            invocation.billing.quantity_source = BillingQuantitySource::AdapterUsageLines;
             Ok(())
         })
     }

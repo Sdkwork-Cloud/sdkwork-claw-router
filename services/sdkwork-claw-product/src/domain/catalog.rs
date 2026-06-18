@@ -1232,6 +1232,8 @@ pub struct ProviderChannelRoute {
     pub timeout_ms: Option<u64>,
     pub retry_policy: Option<ProviderRetryPolicy>,
     pub group_bindings: Vec<ProviderChannelGroupBinding>,
+    pub channel_health_status: i32,
+    pub credential_health_status: i32,
 }
 
 impl ProviderChannelRoute {
@@ -1255,6 +1257,8 @@ impl ProviderChannelRoute {
             timeout_ms: None,
             retry_policy: None,
             group_bindings: Vec::new(),
+            channel_health_status: 1,
+            credential_health_status: 1,
         }
     }
 
@@ -1357,6 +1361,11 @@ impl ProviderChannelRoute {
     pub fn with_group_bindings(mut self, group_bindings: Vec<ProviderChannelGroupBinding>) -> Self {
         self.group_bindings = group_bindings;
         self
+    }
+
+    /// Returns true when both the channel and its credential are healthy (health_status == 1).
+    pub fn is_channel_healthy(&self) -> bool {
+        self.channel_health_status == 1 && self.credential_health_status == 1
     }
 }
 

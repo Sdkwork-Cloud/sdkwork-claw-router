@@ -4,7 +4,8 @@ use sdkwork_claw_config::{AppSessionConfig, TrustedSubjectConfig};
 use sdkwork_claw_http::{
     optional_app_request_subject, sign_app_session_token, sign_trusted_request_subject,
     verified_app_request_subject, verified_signed_trusted_request_subject,
-    verify_app_session_token, ApiKeyCredentialSource, ApiKeyIdentity, AppSubjectBoundaryConfig,
+    verify_app_session_token, verify_app_session_token_claims, ApiKeyCredentialSource,
+    ApiKeyIdentity, AppSessionTokenClaims, AppSessionTokenKind, AppSubjectBoundaryConfig,
     TrustedRequestSubject,
 };
 use sdkwork_iam_context_service::IamAppContext;
@@ -257,6 +258,161 @@ fn app_session_token_verifies_subject_without_leaking_token_material() {
 
     assert_eq!(subject, parsed);
     assert!(!format!("{config:?}").contains("app-session-secret"));
+}
+
+#[test]
+fn app_session_claim_token_accepts_tenant_level_organization_zero() {
+    let config =
+        AppSessionConfig::from_signing_secret("app-session-secret-0123456789abcd").unwrap();
+    let claims = AppSessionTokenClaims {
+        token_kind: AppSessionTokenKind::Access,
+        tenant_id: 10,
+        organization_id: 0,
+        user_id: 30,
+        session_id: "session-tenant-scope".to_owned(),
+        app_id: "sdkwork-claw-router".to_owned(),
+        login_scope: "TENANT".to_owned(),
+        environment: "dev".to_owned(),
+        deployment_mode: "local".to_owned(),
+        auth_level: "password".to_owned(),
+        data_scope: vec!["tenant:10".to_owned(), "user:30".to_owned()],
+        permission_scope: vec!["clawrouter:console".to_owned()],
+        issued_at: 1_800_000_000,
+        expires_at: 1_800_000_300,
+    };
+
+    let token = sdkwork_claw_http::sign_app_session_token_with_claims(&config, &claims);
+    let parsed = verify_app_session_token_claims(&config, &token, 1_800_000_001).unwrap();
+
+    assert_eq!(claims, parsed);
+    assert_eq!(
+        0,
+        verify_app_session_token(&config, &token, 1_800_000_001)
+            .unwrap()
+            .organization_id
+    );
+}
+
+#[test]
+fn app_request_subject_boundary_rejects_swapped_auth_and_access_token_types() {
+    let trusted_subject_config =
+        TrustedSubjectConfig::from_signing_secret("0123456789abcdef0123456789abcdef").unwrap();
+    let app_session_config =
+        AppSessionConfig::from_signing_secret("app-session-secret-0123456789abcd").unwrap();
+    let boundary_config =
+        AppSubjectBoundaryConfig::new(trusted_subject_config, app_session_config.clone());
+    let common_claims = AppSessionTokenClaims {
+        token_kind: AppSessionTokenKind::Access,
+        tenant_id: 10,
+        organization_id: 20,
+        user_id: 30,
+        session_id: "session-token-type".to_owned(),
+        app_id: "sdkwork-claw-router".to_owned(),
+        login_scope: "ORGANIZATION".to_owned(),
+        environment: "dev".to_owned(),
+        deployment_mode: "local".to_owned(),
+        auth_level: "password".to_owned(),
+        data_scope: vec![
+            "tenant:10".to_owned(),
+            "organization:20".to_owned(),
+            "user:30".to_owned(),
+        ],
+        permission_scope: vec!["clawrouter:console".to_owned()],
+        issued_at: 1_800_000_000,
+        expires_at: 1_800_000_300,
+    };
+    let auth_header_token =
+        sdkwork_claw_http::sign_app_session_token_with_claims(&app_session_config, &common_claims);
+    let mut access_claims = common_claims.clone();
+    access_claims.token_kind = AppSessionTokenKind::Auth;
+    access_claims.issued_at += 1;
+    access_claims.expires_at += 1;
+    let access_header_token =
+        sdkwork_claw_http::sign_app_session_token_with_claims(&app_session_config, &access_claims);
+    let mut headers = HeaderMap::new();
+    headers.insert(
+        "authorization",
+        HeaderValue::from_str(&format!("Bearer {auth_header_token}")).unwrap(),
+    );
+    headers.insert(
+        "Access-Token",
+        HeaderValue::from_str(&access_header_token).unwrap(),
+    );
+
+    let error = verified_app_request_subject(
+        &mut headers,
+        "POST",
+        "/app/v3/api/router/api_keys",
+        &boundary_config,
+        1_800_000_001,
+    )
+    .unwrap_err();
+
+    assert_eq!("app session token type is invalid for this header", error);
+    assert!(headers.get("authorization").is_none());
+    assert!(headers.get("Access-Token").is_none());
+}
+
+#[test]
+fn app_request_subject_boundary_rejects_access_token_from_different_session() {
+    let trusted_subject_config =
+        TrustedSubjectConfig::from_signing_secret("0123456789abcdef0123456789abcdef").unwrap();
+    let app_session_config =
+        AppSessionConfig::from_signing_secret("app-session-secret-0123456789abcd").unwrap();
+    let boundary_config =
+        AppSubjectBoundaryConfig::new(trusted_subject_config, app_session_config.clone());
+    let auth_claims = AppSessionTokenClaims {
+        token_kind: AppSessionTokenKind::Auth,
+        tenant_id: 10,
+        organization_id: 20,
+        user_id: 30,
+        session_id: "session-auth".to_owned(),
+        app_id: "sdkwork-claw-router".to_owned(),
+        login_scope: "ORGANIZATION".to_owned(),
+        environment: "dev".to_owned(),
+        deployment_mode: "local".to_owned(),
+        auth_level: "password".to_owned(),
+        data_scope: vec![
+            "tenant:10".to_owned(),
+            "organization:20".to_owned(),
+            "user:30".to_owned(),
+        ],
+        permission_scope: vec!["clawrouter:console".to_owned()],
+        issued_at: 1_800_000_000,
+        expires_at: 1_800_000_300,
+    };
+    let mut access_claims = auth_claims.clone();
+    access_claims.token_kind = AppSessionTokenKind::Access;
+    access_claims.session_id = "session-access".to_owned();
+    access_claims.issued_at += 1;
+    access_claims.expires_at += 1;
+    let auth_token =
+        sdkwork_claw_http::sign_app_session_token_with_claims(&app_session_config, &auth_claims);
+    let access_token =
+        sdkwork_claw_http::sign_app_session_token_with_claims(&app_session_config, &access_claims);
+    let mut headers = HeaderMap::new();
+    headers.insert(
+        "authorization",
+        HeaderValue::from_str(&format!("Bearer {auth_token}")).unwrap(),
+    );
+    headers.insert(
+        "Access-Token",
+        HeaderValue::from_str(&access_token).unwrap(),
+    );
+
+    let error = verified_app_request_subject(
+        &mut headers,
+        "POST",
+        "/app/v3/api/router/api_keys",
+        &boundary_config,
+        1_800_000_001,
+    )
+    .unwrap_err();
+
+    assert_eq!(
+        "app session auth token and access token subjects do not match",
+        error
+    );
 }
 
 #[test]

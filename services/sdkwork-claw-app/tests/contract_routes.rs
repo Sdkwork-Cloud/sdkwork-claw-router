@@ -283,7 +283,8 @@ async fn default_router_does_not_mount_appbase_app_iam_routes_locally() {
 }
 
 #[test]
-fn route_crate_source_does_not_construct_product_local_appbase_or_course_runtime_stores_by_default() {
+fn route_crate_source_does_not_construct_product_local_appbase_or_course_runtime_stores_by_default()
+{
     let source = std::fs::read_to_string(
         std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
             .join("../../crates/sdkwork-router-app-api/src/routes.rs"),

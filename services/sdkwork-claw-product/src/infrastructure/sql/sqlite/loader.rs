@@ -108,6 +108,12 @@ impl SqlitePricingCatalogLoader {
             )
             .await
             .map_err(|source| sqlite_query_error("LOAD_QUOTA_POLICIES", source))?,
+            gateway_risk_rules: row_mapping::load_gateway_risk_rules(
+                &self.pool,
+                queries::LOAD_GATEWAY_RISK_RULES,
+            )
+            .await
+            .map_err(|source| sqlite_query_error("LOAD_GATEWAY_RISK_RULES", source))?,
             channel_group_metric_snapshots: row_mapping::load_channel_group_metric_snapshots(
                 &self.pool,
                 queries::LOAD_API_KEY_GROUP_METRIC_SNAPSHOTS,

@@ -127,6 +127,9 @@ impl InvocationInterceptor for DispatchExecutor {
                         Ok(response) => {
                             let status_code = effective_response_status_code(invocation, &response);
                             let retryable = retryable_status(candidate, status_code);
+                            if matches!(status_code, 401 | 403) {
+                                invocation.dispatch.resolved_secret = None;
+                            }
                             invocation.routing.attempted_routes.push(failed_attempt(
                                 candidate,
                                 index,
@@ -269,9 +272,15 @@ fn resolve_provider_secret(
         return Ok(None);
     };
     let Some(secret_resolver) = secret_resolver else {
-        return Ok(current_secret
+        return match current_secret
             .filter(|secret| secret.secret_ref == secret_ref)
-            .cloned());
+            .cloned()
+        {
+            Some(secret) => Ok(Some(secret)),
+            None => Err(dispatch_error(format!(
+                "provider secret resolver is not available for secret_ref {secret_ref}",
+            ))),
+        };
     };
     let value = secret_resolver
         .resolve_secret_value(secret_ref)

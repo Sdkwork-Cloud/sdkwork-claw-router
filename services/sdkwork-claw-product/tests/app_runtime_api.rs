@@ -4165,6 +4165,10 @@ impl sdkwork_claw_product::ports::PricingCatalog for TestRuntimeCatalog {
         None
     }
 
+    fn list_gateway_risk_rules(&self) -> Vec<sdkwork_claw_product::domain::GatewayRiskRule> {
+        Vec::new()
+    }
+
     fn find_latest_channel_group_metric_snapshot(
         &self,
         _group_id: i64,

@@ -1,5 +1,6 @@
-import { APP_API_PREFIX, type ClawRouterAppSdkClient } from './sdk-clients.ts';
+import { appApiPath } from '@sdkwork/clawrouter-app-sdk';
 import type { RuntimeEventItem } from '@sdkwork/clawrouter-app-sdk';
+import type { ClawRouterAppSdkClient } from './sdk-clients.ts';
 
 export * from './user-agent.ts';
 
@@ -13,10 +14,10 @@ export async function* streamRuntimeInvocationEvents(
   const eventCursor = Number.isFinite(afterEventNo) && afterEventNo > 0
     ? `?after_event_no=${Math.trunc(afterEventNo)}`
     : '';
-  const runtimeInvocationEventStreamPath = `/runtime/invocations/${encodeURIComponent(invocationId)}/events/stream${eventCursor}`;
-  yield* client.http.streamJson<RuntimeStreamEvent>(
-    `${APP_API_PREFIX}${runtimeInvocationEventStreamPath}`,
+  const streamPath = appApiPath(
+    `/runtime/invocations/${encodeURIComponent(invocationId)}/events/stream${eventCursor}`,
   );
+  yield* client.http.streamJson<RuntimeStreamEvent>(streamPath);
 }
 
 export function readRuntimeTextDelta(event: RuntimeStreamEvent): string {

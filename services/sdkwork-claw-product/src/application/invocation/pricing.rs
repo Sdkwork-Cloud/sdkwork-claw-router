@@ -72,6 +72,7 @@ where
             }
 
             if invocation.billing.quantity_source == BillingQuantitySource::FixedRequest
+                && !invocation.usage.pricing_quotes.is_empty()
                 && !invocation
                     .usage
                     .lines
@@ -115,7 +116,16 @@ where
             );
             let mut quotes = Vec::new();
             for meter in meters {
-                quotes.push(resolve_quote(self.catalog.as_ref(), invocation, meter)?);
+                match resolve_quote(self.catalog.as_ref(), invocation, meter.clone()) {
+                    Ok(quote) => quotes.push(quote),
+                    Err(error)
+                        if optional_meter(&meter, invocation.billing.mode.clone())
+                            && is_missing_official_price(&error) =>
+                    {
+                        continue;
+                    }
+                    Err(error) => return Err(error),
+                }
             }
 
             for line in &mut invocation.usage.lines {
@@ -130,6 +140,7 @@ where
     }
 }
 
+/// Returns billing meters that require pricing resolution based on the billing mode.
 fn meters_for_pricing(invocation: &Invocation) -> Vec<BillingMeter> {
     let mut meters = Vec::new();
     match invocation.billing.mode {
@@ -271,8 +282,12 @@ fn priced_requested_model(invocation: &Invocation, resolved: &ResolvedModelPrice
         .unwrap_or_else(|| resolved.model.clone())
 }
 
+/// Returns true when pricing resolution failed because no price data exists for the model,
+/// allowing optional meters (e.g. ExternalUsageLine) to be skipped gracefully.
 fn is_missing_official_price(error: &InvocationError) -> bool {
     error.message.contains("official reference price not found")
+        || error.message.contains("model not found")
+        || error.message.contains("model is not available")
 }
 
 fn pricing_error(message: impl Into<String>) -> InvocationError {

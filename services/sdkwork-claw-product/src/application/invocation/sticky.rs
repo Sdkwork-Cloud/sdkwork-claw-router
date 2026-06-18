@@ -184,7 +184,11 @@ fn sticky_provider_model_fallback(invocation: &Invocation) -> Option<String> {
             .clone()
             .or_else(|| Some(invocation.resource.route_key.clone()));
     }
-    None
+    invocation
+        .resource
+        .provider_native_model
+        .clone()
+        .or_else(|| invocation.resource.requested_model.clone())
 }
 
 fn apply_sticky_binding(invocation: &mut Invocation, binding: StickyObjectRouteBinding) {

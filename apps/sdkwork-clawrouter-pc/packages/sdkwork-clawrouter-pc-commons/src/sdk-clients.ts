@@ -36,8 +36,6 @@ import {
 } from 'sdkwork-commerce-backend-sdk-generated-typescript';
 import {
   clearStoredAppSessionToken,
-  getStoredAppSessionAccessToken,
-  getStoredAppSessionAuthToken,
   loadStoredAppSessionToken,
 } from './app-session-token.ts';
 import { resetClawRouterIamRuntime } from './iam-runtime.ts';
@@ -255,17 +253,13 @@ export const SDK_SYSTEM_CONFIG = {
 } as const satisfies Record<string, ClawRouterGeneratedSdkMetadata>;
 
 export interface ClawRouterAppSdkClientOptions {
-  accessToken?: string;
   appBaseUrl?: string;
-  authToken?: string;
   platform?: string;
   tokenManager?: AuthTokenManager;
   timeout?: number;
 }
 
 export interface ClawRouterBackendSdkClientOptions {
-  accessToken?: string;
-  authToken?: string;
   backendBaseUrl?: string;
   platform?: string;
   tokenManager?: AuthTokenManager;
@@ -315,10 +309,8 @@ export interface SdkworkAppbaseBackendSdkClientOptions {
 }
 
 export interface ClawRouterAiSdkClientOptions {
-  accessToken?: string;
   aiBaseUrl?: string;
   apiKey?: string;
-  authToken?: string;
   platform?: string;
   timeout?: number;
 }
@@ -900,8 +892,6 @@ function buildAppConfig(options: ClawRouterAppSdkClientOptions): SdkworkAppConfi
       options.appBaseUrl ?? readClawRouterRuntimeEnv('VITE_CLAWROUTER_APP_API_BASE_URL') ?? APP_API_PREFIX,
       APP_API_PREFIX,
     ),
-    authToken: options.authToken ?? getStoredAppSessionAuthToken(),
-    accessToken: options.accessToken ?? getStoredAppSessionAccessToken(),
     platform: options.platform ?? 'web',
     tokenManager: resolveClawRouterSdkTokenManager(options.tokenManager),
     timeout: options.timeout,
@@ -914,8 +904,6 @@ function buildBackendConfig(options: ClawRouterBackendSdkClientOptions): Sdkwork
       options.backendBaseUrl ?? readClawRouterRuntimeEnv('VITE_CLAWROUTER_BACKEND_API_BASE_URL') ?? BACKEND_API_PREFIX,
       BACKEND_API_PREFIX,
     ),
-    authToken: options.authToken ?? getStoredAppSessionAuthToken(),
-    accessToken: options.accessToken ?? getStoredAppSessionAccessToken(),
     platform: options.platform ?? 'web-admin',
     tokenManager: resolveClawRouterSdkTokenManager(options.tokenManager),
     timeout: options.timeout,
@@ -1157,18 +1145,8 @@ function createBackendCommerceCanonicalFacade(commerce: BackendCommerceDependenc
   attachManagementAlias(facade.orders.events, 'list');
   attachManagementAlias(facade.refunds, 'list');
   attachManagementAlias(facade.refunds, 'retrieve');
-  attachMissingCommerceOperation(facade.refunds, ['approvals', 'create'], 'commerce.refunds.approvals.create');
-  attachMissingCommerceOperation(facade.refunds, ['attempts', 'create'], 'commerce.refunds.attempts.create');
   attachManagementAlias(facade.fulfillments, 'list');
   attachManagementAlias(facade.fulfillments, 'retrieve');
-  attachMissingCommerceOperation(facade.fulfillments, ['create'], 'commerce.fulfillments.create');
-  attachMissingCommerceOperation(facade.fulfillments, ['shipments', 'create'], 'commerce.fulfillments.shipments.create');
-  attachMissingCommerceOperation(facade.fulfillments, ['shipments', 'update'], 'commerce.fulfillments.shipments.update');
-  attachMissingCommerceOperation(
-    facade.fulfillments,
-    ['trackingEvents', 'create'],
-    'commerce.fulfillments.trackingEvents.create',
-  );
   attachManagementAlias(facade.invoices, 'list');
   attachManagementAlias(facade.invoices, 'retrieve');
   attachManagementAlias(facade.payments.methods, 'list');
@@ -1207,12 +1185,7 @@ function attachCommerceServiceAliases(service: SdkworkCommerceService): SdkworkC
 
   attachCommerceManagementAliases(readCommerceObject(catalog?.['spus']), ['list']);
   attachCommerceManagementAliases(fulfillments, ['list', 'retrieve']);
-  attachMissingCommerceOperation(fulfillments, ['create'], 'commerce.fulfillments.create');
-  attachMissingCommerceOperation(fulfillments, ['shipments', 'create'], 'commerce.fulfillments.shipments.create');
-  attachMissingCommerceOperation(fulfillments, ['shipments', 'update'], 'commerce.fulfillments.shipments.update');
-  attachMissingCommerceOperation(fulfillments, ['trackingEvents', 'create'], 'commerce.fulfillments.trackingEvents.create');
-  attachMissingCommerceOperation(refunds, ['approvals', 'create'], 'commerce.refunds.approvals.create');
-  attachMissingCommerceOperation(refunds, ['attempts', 'create'], 'commerce.refunds.attempts.create');
+  attachCommerceManagementAliases(refunds, ['list', 'retrieve']);
   attachCommerceManagementAliases(readCommerceObject(memberships?.['plans']), ['list']);
   attachCommerceManagementAliases(readCommerceObject(memberships?.['packages']), ['list']);
   attachCommerceManagementAliases(readCommerceObject(memberships?.['packageGroups']), ['list']);
@@ -1274,41 +1247,6 @@ function attachNestedCreateAlias(resource: Record<string, unknown>, methodName: 
     return;
   }
   attachReadOnlyProperty(resource, methodName, create.bind(nestedResource));
-}
-
-function attachMissingCommerceOperation(
-  resource: unknown,
-  path: readonly string[],
-  operation: string,
-): void {
-  if (!isCommerceObjectResource(resource) || path.length === 0) {
-    return;
-  }
-  const [segment, ...tail] = path;
-  const record = resource as Record<string, unknown>;
-  if (!segment) {
-    return;
-  }
-  if (tail.length === 0) {
-    if (typeof record[segment] !== 'function') {
-      attachReadOnlyProperty(record, segment, createMissingCommerceDependencyOperation(operation));
-    }
-    return;
-  }
-  let child = record[segment];
-  if (!isCommerceObjectResource(child)) {
-    child = {};
-    attachReadOnlyProperty(record, segment, child);
-  }
-  attachMissingCommerceOperation(child, tail, operation);
-}
-
-function createMissingCommerceDependencyOperation(operation: string): () => never {
-  return () => {
-    throw new Error(
-      `${operation} is not exposed by sdkwork-commerce SDK; update the owning commerce contract and regenerate the dependency SDK before enabling this action.`,
-    );
-  };
 }
 
 function attachReadOnlyProperty<TTarget extends object, TKey extends PropertyKey, TValue>(

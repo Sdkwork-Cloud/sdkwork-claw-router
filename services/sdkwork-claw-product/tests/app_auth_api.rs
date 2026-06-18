@@ -162,6 +162,7 @@ async fn app_auth_sessions_current_retrieve_returns_active_persisted_session() {
     assert_eq!("20", login_payload["data"]["context"]["organizationId"]);
 
     let response = router
+        .clone()
         .oneshot(
             Request::builder()
                 .method("GET")
@@ -536,6 +537,7 @@ async fn app_auth_login_legacy_path_is_not_exposed() {
     let router = app_auth_router(pool);
 
     let response = router
+        .clone()
         .oneshot(
             Request::builder()
                 .method("POST")
@@ -849,6 +851,97 @@ async fn app_auth_registrations_create_requires_verification_code() {
             .await
             .unwrap();
     assert_eq!(0, created_count);
+}
+
+#[tokio::test]
+async fn app_auth_registrations_create_without_organization_defaults_to_tenant_scope() {
+    let pool = create_pool().await;
+    create_minimal_auth_schema(&pool).await;
+    seed_user(&pool, 30, "alice", "alice@example.com", "Alice Router", 1).await;
+    let router = app_auth_router(pool.clone());
+
+    let response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/app/v3/api/auth/registrations")
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    json!({
+                        "channel": "EMAIL",
+                        "email": "tenant-scoped@example.com",
+                        "username": "tenant-scoped@example.com",
+                        "password": "new-user-password",
+                        "confirmPassword": "new-user-password"
+                    })
+                    .to_string(),
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let payload = response_json(response).await;
+    assert_eq!("2000", payload["code"]);
+    assert_eq!("10", payload["data"]["context"]["tenantId"]);
+    assert_eq!("0", payload["data"]["context"]["organizationId"]);
+    assert_eq!("tenant:10", payload["data"]["context"]["dataScope"][0]);
+    assert!(!payload["data"]["context"]["dataScope"]
+        .as_array()
+        .unwrap()
+        .iter()
+        .any(|scope| scope == "organization:0"));
+
+    let auth_token = payload["data"]["authToken"].as_str().unwrap();
+    let access_token = payload["data"]["accessToken"].as_str().unwrap();
+    for token in [auth_token, access_token] {
+        let claims = sdkwork_claw_http::verify_app_session_token_claims(
+            &app_session_config(),
+            token,
+            current_unix_seconds(),
+        )
+        .expect("registration response must issue claim-bearing IAM session tokens");
+        assert_eq!(10, claims.tenant_id);
+        assert_eq!(0, claims.organization_id);
+        assert_eq!("TENANT", claims.login_scope);
+        assert_eq!("sdkwork-claw-router", claims.app_id);
+        assert_eq!(payload["data"]["sessionId"], claims.session_id);
+    }
+
+    let registered_user_id = payload["data"]["user"]["id"].as_str().unwrap();
+    let membership_count: i64 =
+        sqlx::query_scalar("SELECT COUNT(1) FROM iam_organization_membership WHERE user_id = ?")
+            .bind(registered_user_id)
+            .fetch_one(&pool)
+            .await
+            .unwrap();
+    assert_eq!(0, membership_count);
+
+    let stored_organization_id: String =
+        sqlx::query_scalar("SELECT organization_id FROM iam_session WHERE user_id = ? LIMIT 1")
+            .bind(registered_user_id)
+            .fetch_one(&pool)
+            .await
+            .unwrap();
+    assert_eq!("0", stored_organization_id);
+
+    let login_response = router
+        .oneshot(login_request(
+            "tenant-scoped@example.com",
+            "new-user-password",
+        ))
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, login_response.status());
+    let login_payload = response_json(login_response).await;
+    assert_eq!("2000", login_payload["code"]);
+    assert_eq!("0", login_payload["data"]["context"]["organizationId"]);
+    assert_eq!(
+        "tenant-scoped@example.com",
+        login_payload["data"]["user"]["username"]
+    );
 }
 
 fn app_auth_router(pool: SqlitePool) -> axum::Router {

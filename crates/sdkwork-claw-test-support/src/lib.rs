@@ -318,6 +318,7 @@ async fn seeded_sqlite_template_current(template_path: &Path) -> bool {
         && sqlite_template_contains_current_gateway_api_key_channel_group_schema(&pool).await
         && sqlite_template_contains_current_iam_membership_schema(&pool).await
         && sqlite_template_contains_current_provider_object_route_schema(&pool).await
+        && sqlite_template_contains_current_gateway_policy_schema(&pool).await
         && sqlite_template_contains_gateway_key_hash(&pool, expected_key_hash.as_str()).await;
     pool.close().await;
     valid
@@ -532,6 +533,29 @@ async fn sqlite_template_contains_current_provider_object_route_schema(pool: &Sq
     .fetch_one(pool)
     .await;
     matches!((required_column_count, unique_index_count), (Ok(29), Ok(1)))
+}
+
+async fn sqlite_template_contains_current_gateway_policy_schema(pool: &SqlitePool) -> bool {
+    let quota_rate_limit_columns = sqlx::query_scalar::<_, i64>(
+        r#"
+        SELECT COUNT(1)
+        FROM pragma_table_info('ai_quota_policy')
+        WHERE name IN ('requests_per_second', 'requests_per_day', 'burst_limit')
+        "#,
+    )
+    .fetch_one(pool)
+    .await;
+    let risk_rule_table = sqlx::query_scalar::<_, i64>(
+        r#"
+        SELECT COUNT(1)
+        FROM sqlite_master
+        WHERE type = 'table'
+          AND name = 'iam_gateway_risk_rule'
+        "#,
+    )
+    .fetch_one(pool)
+    .await;
+    matches!((quota_rate_limit_columns, risk_rule_table), (Ok(3), Ok(1)))
 }
 
 async fn sqlite_template_contains_gateway_key_hash(pool: &SqlitePool, expected: &str) -> bool {
@@ -1711,11 +1735,37 @@ async fn create_schema(pool: &SqlitePool) -> anyhow::Result<()> {
             channel_group_id INTEGER,
             model TEXT,
             quota_limit TEXT,
+            requests_per_second INTEGER,
+            requests_per_day INTEGER,
+            burst_limit TEXT,
             status INTEGER NOT NULL,
             deleted_at TEXT,
             effective_from TEXT,
             effective_to TEXT,
             updated_at TEXT
+        )"#,
+        r#"CREATE TABLE iam_gateway_risk_rule (
+            id INTEGER PRIMARY KEY,
+            tenant_id INTEGER,
+            organization_id INTEGER,
+            rule_category INTEGER,
+            rule_type INTEGER,
+            scope_type INTEGER,
+            scope_id INTEGER,
+            target_type INTEGER,
+            target_value TEXT,
+            match_mode INTEGER,
+            action INTEGER,
+            priority INTEGER,
+            requests_per_second INTEGER,
+            requests_per_minute INTEGER,
+            requests_per_day INTEGER,
+            burst_limit TEXT,
+            block_duration_seconds INTEGER,
+            status INTEGER NOT NULL,
+            deleted_at TEXT,
+            effective_from TEXT,
+            effective_to TEXT
         )"#,
         r#"CREATE TABLE ai_channel_group_metric_snapshot (
             id INTEGER PRIMARY KEY,
