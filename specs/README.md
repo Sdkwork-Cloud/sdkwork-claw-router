@@ -26,9 +26,9 @@ Root SDKWork standards remain authoritative. Local component specs can narrow or
   existing `PORTAL_PUBLIC_SDK_BASE_URL` common SDK root and Cargo workspace/feature evidence. Do
   not add a standalone gateway catalog for Claw Router dependency API facts.
 - Product API authorities remain owned by Claw Router. Integrated development
-  (`pnpm clawrouter:dev`, aliases `pnpm dev` and `pnpm server:dev`) starts the
+  (`pnpm dev`, aliases `pnpm dev` and `pnpm dev:server`) starts the
   topology-aware product server. Gateway-backed desktop commands
-  (`pnpm clawrouter:dev:desktop`, `pnpm desktop:dev`, `pnpm tauri:dev`) expose
+  (`pnpm dev:desktop`, `pnpm dev:desktop`, `pnpm dev:desktop`) expose
   app/backend/open surfaces through `sdkwork-api-gateway`. Product-local
   app/admin routers are for Claw Router-owned contracts and explicit server
   debugging only;
@@ -83,11 +83,11 @@ Root SDKWork standards remain authoritative. Local component specs can narrow or
 - Adoption guide: [APP_RUNTIME_TOPOLOGY_ADOPTION.md](../../sdkwork-specs/APP_RUNTIME_TOPOLOGY_ADOPTION.md)
 - Human summary: [docs/topology-standard.md](../docs/topology-standard.md)
 - Profile env: [configs/topology/](../configs/topology/)
-- Default dev profile: `self-hosted.unified-process.development`
-- Canonical dev entry: `pnpm clawrouter:dev`
-- Split-services validation: `pnpm clawrouter:dev:split`
-- Cloud dev: `pnpm clawrouter:dev:cloud`
-- Gateway packaging: `pnpm gateway:matrix`, `pnpm gateway:cloud:bundle`
+- Default dev profile: `standalone.unified-process.development`
+- Canonical dev entry: `pnpm dev`
+- Split-services validation: `pnpm dev:browser:postgres:split-services:standalone`
+- Cloud dev: `pnpm dev:browser:postgres:unified-process:cloud`
+- Gateway packaging: `pnpm gateway:matrix`, `pnpm gateway:package:cloud`
 - Validate: `pnpm topology:validate`
 
 ## Verification

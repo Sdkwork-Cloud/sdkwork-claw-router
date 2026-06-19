@@ -23,5 +23,5 @@ Generated SDK transport output, runnable server code, secrets, and generated SDK
 
 ## Verification
 
-- `pnpm apis:materialize:check`
+- `pnpm api:materialize:check`
 - `python -B -m unittest tests.test_api_contract_directory_standard`

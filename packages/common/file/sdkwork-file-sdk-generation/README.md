@@ -68,8 +68,8 @@ paths outside the root directory, duplicate paths, or stale content hashes.
 
 The repository exposes one standard CLI for SDK family artifacts:
 
-- `pnpm.cmd file-sdk:artifacts:check -- --json`
-- `pnpm.cmd file-sdk:artifacts:write -- --json`
+- `pnpm.cmd sdk:file:artifacts:check -- --json`
+- `pnpm.cmd sdk:file:artifacts:write -- --json`
 
 The package also exposes local equivalents:
 

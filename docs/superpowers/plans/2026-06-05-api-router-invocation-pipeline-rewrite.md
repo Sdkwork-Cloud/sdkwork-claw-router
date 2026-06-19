@@ -273,7 +273,7 @@
 
 ### Task 17: Final Verification
 
-- [ ] Run `pnpm.cmd fmt:rust:check`.
+- [ ] Run `pnpm.cmd format:rust:check`.
 - [ ] Run `cargo test --workspace`.
 - [ ] Run `pnpm.cmd test`.
 - [ ] Run `pnpm.cmd verify`.

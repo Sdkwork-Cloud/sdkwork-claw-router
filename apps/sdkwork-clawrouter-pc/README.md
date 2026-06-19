@@ -1,15 +1,15 @@
 # SDKWork ClawRouter PC
 
-SDKWork ClawRouter PC is the browser console for the Claw Router product. Default root `pnpm dev` starts the integrated product server workspace (topology profile `self-hosted.unified-process.development`); gateway-backed client mode is available via `pnpm desktop:dev`. Production packages are served by the Rust edge server. Frontend business calls stay behind the portal service layer, generated SDKs, and SDKWork API entrypoints.
+SDKWork ClawRouter PC is the browser console for the Claw Router product. Default root `pnpm dev` starts the integrated product server workspace (topology profile `standalone.unified-process.development`); gateway-backed client mode is available via `pnpm dev:desktop`. Production packages are served by the Rust edge server. Frontend business calls stay behind the portal service layer, generated SDKs, and SDKWork API entrypoints.
 
 ## Architecture
 
 - Portal UI modules call local service boundaries.
 - App business APIs use `@sdkwork/clawrouter-app-sdk` for `/app/v3/api`.
 - Admin and backend APIs use `@sdkwork/clawrouter-backend-sdk` for `/backend/v3/api`.
-- `sdkwork-api-gateway` backs gateway-only client development (`pnpm desktop:dev`); integrated dev uses the Rust edge on `application.public-ingress` (default `http://127.0.0.1:3900`).
+- `sdkwork-api-gateway` backs gateway-only client development (`pnpm dev:desktop`); integrated dev uses the Rust edge on `application.public-ingress` (default `http://127.0.0.1:3900`).
 - The Rust edge server is the default development entrypoint (`pnpm dev`) and the production packaged entrypoint.
-- Direct product service ports remain available for split-services profiles (`pnpm clawrouter:dev:split`) and explicit diagnostics.
+- Direct product service ports remain available for split-services profiles (`pnpm dev:browser:postgres:split-services:standalone`) and explicit diagnostics.
 
 ## Local Layout
 
@@ -45,21 +45,19 @@ See `docs/topology-standard.md` for topology profiles, URLs, and env keys.
 Useful root entrypoints:
 
 - `pnpm.cmd dev` starts the integrated Rust edge plus portal dev server (default unified-process profile on port 3900).
-- `pnpm.cmd desktop:dev` starts `sdkwork-api-gateway` and the portal dev server only (gateway-backed client).
+- `pnpm.cmd dev:desktop` starts `sdkwork-api-gateway` and the portal dev server only (gateway-backed client).
 - `pnpm.cmd test` runs launcher and tooling contract tests.
 - `pnpm.cmd build` builds production portal assets and the Rust edge server release binary.
 - `pnpm.cmd start` serves the production portal through the Rust edge server.
 - `pnpm.cmd release` runs release preflight and the full verification gate.
 - `pnpm.cmd smoke:dev` verifies the explicit product server edge entrypoint and direct service URLs on isolated local ports.
-- `pnpm.cmd portal:dev` starts only the browser portal Vite dev server.
-- `pnpm.cmd desktop:dev` starts the gateway-backed desktop client workspace.
-- `pnpm.cmd service:dev` starts the full install-checked local workspace with service-mode environment flags.
-- `pnpm.cmd server:dev -- --gateway-bind 0.0.0.0:19080` starts all services with forwarded workspace options.
-- `pnpm.cmd server:plan` prints the server startup plan without launching processes.
+- `pnpm.cmd dev:desktop` starts the gateway-backed desktop client workspace.
+- `pnpm.cmd dev:server -- --gateway-bind 0.0.0.0:19080` starts all services with forwarded workspace options.
+- `pnpm.cmd topology:plan:server` prints the server startup plan without launching processes.
 
 ## Development Entrypoint
 
-Default development uses topology profile `self-hosted.unified-process.development` (see `docs/topology-standard.md`). The integrated Rust edge listens on `application.public-ingress` (default `http://127.0.0.1:3900`); the portal Vite dev server runs on port `3901` and is health-gated behind backend `/healthz`.
+Default development uses topology profile `standalone.unified-process.development` (see `docs/topology-standard.md`). The integrated Rust edge listens on `application.public-ingress` (default `http://127.0.0.1:3900`); the portal Vite dev server runs on port `3901` and is health-gated behind backend `/healthz`.
 
 Default integrated development URLs:
 
@@ -68,7 +66,7 @@ Default integrated development URLs:
 - Backend/Admin API: `http://127.0.0.1:3900/backend/v3/api`
 - App API: `http://127.0.0.1:3900/app/v3/api`
 
-Gateway-backed client mode (`pnpm desktop:dev`) uses `sdkwork-api-gateway` on port `3902` and portal dev server on `3901`:
+Gateway-backed client mode (`pnpm dev:desktop`) uses `sdkwork-api-gateway` on port `3902` and portal dev server on `3901`:
 
 - Portal Vite dev server: `http://127.0.0.1:3901/`
 - SDKWork API Gateway: `http://127.0.0.1:3902/`
@@ -115,7 +113,7 @@ Direct local service URLs remain accessible in explicit server mode:
 Forwarding URLs are internal proxy targets. They must be HTTP or HTTPS origins without paths, query strings, or fragments.
 
 ```powershell
-pnpm.cmd server:dev -- --gateway-forward-url http://gateway.internal:18080 --backend-api-forward-url http://admin.internal:18081 --app-api-forward-url http://app.internal:18082
+pnpm.cmd dev:server -- --gateway-forward-url http://gateway.internal:18080 --backend-api-forward-url http://admin.internal:18081 --app-api-forward-url http://app.internal:18082
 ```
 
 Production `pnpm.cmd start` supports the same edge bind and upstream controls after `pnpm.cmd build` creates the release artifact:
@@ -141,20 +139,20 @@ remain available as per-surface overrides for split deployments.
 Bind overrides use separate names for the public edge entrypoint and the direct portal dev server:
 
 ```powershell
-pnpm.cmd server:dev -- --server-bind 0.0.0.0:12900 --portal-bind 0.0.0.0:13900
+pnpm.cmd dev:server -- --server-bind 0.0.0.0:12900 --portal-bind 0.0.0.0:13900
 ```
 
 When the edge server is deployed behind a controlled HTTPS reverse proxy, report the external scheme explicitly:
 
 ```powershell
-pnpm.cmd server:dev -- --external-scheme https
+pnpm.cmd dev:server -- --external-scheme https
 pnpm.cmd start -- --external-scheme https
 ```
 
 Only enable trusted forwarded headers when that controlled proxy is the only inbound source:
 
 ```powershell
-pnpm.cmd server:dev -- --external-scheme https --trust-forwarded-headers
+pnpm.cmd dev:server -- --external-scheme https --trust-forwarded-headers
 pnpm.cmd start -- --external-scheme https --trust-forwarded-headers
 ```
 

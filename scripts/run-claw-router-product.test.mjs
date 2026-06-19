@@ -150,30 +150,28 @@ test('root package exposes pnpm product entrypoints', () => {
     readFileSync(path.join(workspaceRoot, 'package.json'), 'utf8'),
   );
 
-  const canonicalDev = 'node scripts/claw-router-dev.mjs --target browser --hosting self-hosted --service-layout unified-process --database postgres --dev-env-file .env.postgres';
-  const canonicalDevSqlite = 'node scripts/claw-router-dev.mjs --target browser --hosting self-hosted --service-layout unified-process --database sqlite';
-  const canonicalDesktop = 'node scripts/claw-router-dev.mjs --target desktop --hosting self-hosted --service-layout unified-process';
-  const canonicalService = 'node scripts/claw-router-dev.mjs --target service --hosting self-hosted --service-layout unified-process --database postgres --dev-env-file .env.postgres';
-  const canonicalServiceSqlite = 'node scripts/claw-router-dev.mjs --target service --hosting self-hosted --service-layout unified-process --database sqlite';
-  const canonicalPlanSqlite = 'node scripts/claw-router-dev.mjs --target plan --hosting self-hosted --service-layout unified-process --database sqlite';
-  const canonicalPlanPostgres = 'node scripts/claw-router-dev.mjs --target plan --hosting self-hosted --service-layout unified-process --database postgres --dev-env-file .env.postgres';
+  const canonicalBrowser = 'node scripts/claw-router-dev.mjs --target browser --deployment-profile standalone --service-layout unified-process --database postgres --dev-env-file .env.postgres';
+  const canonicalBrowserSqlite = 'node scripts/claw-router-dev.mjs --target browser --deployment-profile standalone --service-layout unified-process --database sqlite';
+  const canonicalDesktop = 'node scripts/claw-router-dev.mjs --target desktop --deployment-profile standalone --service-layout unified-process --database postgres --dev-env-file .env.postgres';
+  const canonicalDesktopSqlite = 'node scripts/claw-router-dev.mjs --target desktop --deployment-profile standalone --service-layout unified-process --database sqlite';
+  const canonicalPlanSqlite = 'node scripts/claw-router-dev.mjs --target plan --deployment-profile standalone --service-layout unified-process --database sqlite';
+  const canonicalPlanPostgres = 'node scripts/claw-router-dev.mjs --target plan --deployment-profile standalone --service-layout unified-process --database postgres --dev-env-file .env.postgres';
 
   assert.equal(rootPackage.private, true);
   assert.equal(rootPackage.packageManager, 'pnpm@10.33.0');
-  assert.equal(rootPackage.scripts.dev, 'pnpm run clawrouter:dev');
-  assert.equal(rootPackage.scripts['dev:sqlite'], 'pnpm run clawrouter:dev:sqlite');
-  assert.equal(rootPackage.scripts['dev:postgres'], 'pnpm run clawrouter:dev:postgres');
-  assert.equal(rootPackage.scripts['clawrouter:dev'], canonicalDev);
-  assert.equal(rootPackage.scripts['clawrouter:dev:sqlite'], canonicalDevSqlite);
-  assert.equal(rootPackage.scripts['clawrouter:dev:postgres'], canonicalDev);
+  assert.equal(rootPackage.scripts.dev, 'pnpm dev:browser');
+  assert.equal(rootPackage.scripts['dev:browser'], 'pnpm dev:browser:postgres:unified-process:standalone');
+  assert.equal(rootPackage.scripts['dev:browser:postgres'], 'pnpm dev:browser:postgres:unified-process:standalone');
+  assert.equal(rootPackage.scripts['dev:browser:sqlite'], canonicalBrowserSqlite);
+  assert.equal(rootPackage.scripts['dev:browser:postgres:unified-process:standalone'], canonicalBrowser);
   assert.equal(
     rootPackage.scripts.test,
     'pnpm topology:validate && pnpm test:topology && node scripts/run-claw-router-product.test.mjs',
   );
   assert.match(rootPackage.scripts['topology:validate'], /sdkwork-topology\.mjs validate/u);
   assert.match(rootPackage.scripts['test:topology'], /verify-claw-router-topology\.test\.mjs/u);
-  assert.match(rootPackage.scripts['clawrouter:dev'], /claw-router-dev\.mjs/u);
-  assert.match(rootPackage.scripts['clawrouter:dev:split'], /--service-layout split-services/u);
+  assert.match(rootPackage.scripts['dev:browser:postgres:unified-process:standalone'], /claw-router-dev\.mjs/u);
+  assert.match(rootPackage.scripts['dev:browser:postgres:split-services:cloud'], /--service-layout split-services/u);
   assert.match(rootPackage.scripts['gateway:matrix'], /sdkwork-topology\.mjs print-matrix/u);
   assert.equal(
     rootPackage.scripts.build,
@@ -235,27 +233,30 @@ test('root package exposes pnpm product entrypoints', () => {
     rootPackage.scripts['db:refresh-catalog'],
     'node scripts/manage-claw-router-database.mjs refresh-catalog',
   );
-  assert.equal(rootPackage.scripts['desktop:dev'], 'pnpm run clawrouter:dev:desktop');
-  assert.equal(rootPackage.scripts['desktop:dev:sqlite'], 'pnpm run clawrouter:dev:desktop');
-  assert.equal(rootPackage.scripts['tauri:dev'], 'pnpm run clawrouter:dev:desktop');
-  assert.equal(rootPackage.scripts['tauri:dev:sqlite'], 'pnpm run clawrouter:dev:desktop');
-  assert.equal(rootPackage.scripts['service:dev'], canonicalService);
-  assert.equal(rootPackage.scripts['service:dev:sqlite'], canonicalServiceSqlite);
-  assert.equal(rootPackage.scripts['server:dev'], 'pnpm run clawrouter:dev');
-  assert.equal(rootPackage.scripts['server:dev:sqlite'], 'pnpm run clawrouter:dev:sqlite');
-  assert.equal(rootPackage.scripts['server:dev:postgres'], 'pnpm run clawrouter:dev:postgres');
-  assert.equal(rootPackage.scripts['server:plan:sqlite'], 'pnpm run clawrouter:plan:sqlite');
-  assert.equal(rootPackage.scripts['server:plan:postgres'], 'pnpm run clawrouter:plan:postgres');
+  assert.equal(rootPackage.scripts['dev:desktop'], 'pnpm dev:desktop:postgres:unified-process:standalone');
+  assert.equal(rootPackage.scripts['dev:desktop:postgres'], 'pnpm dev:desktop:postgres:unified-process:standalone');
+  assert.equal(rootPackage.scripts['dev:desktop:postgres:unified-process:standalone'], canonicalDesktop);
+  assert.equal(rootPackage.scripts['dev:desktop:sqlite'], canonicalDesktopSqlite);
+  assert.equal(rootPackage.scripts['dev:service'], undefined);
+  assert.equal(rootPackage.scripts['dev:service:sqlite'], undefined);
+  assert.equal(rootPackage.scripts['dev:portal'], undefined);
+  assert.equal(rootPackage.scripts['dev:server'], 'pnpm dev:browser:postgres:unified-process:standalone');
+  assert.equal(rootPackage.scripts['dev:server:sqlite'], canonicalBrowserSqlite);
+  assert.equal(rootPackage.scripts['dev:server:postgres'], 'pnpm dev:browser:postgres:unified-process:standalone');
+  assert.equal(rootPackage.scripts['topology:plan:server:sqlite'], canonicalPlanSqlite);
+  assert.equal(rootPackage.scripts['topology:plan:server:postgres'], canonicalPlanPostgres);
   assert.equal(
     rootPackage.scripts['smoke:dev'],
     'node scripts/smoke-edge-dev-server.mjs',
   );
+  assert.equal(rootPackage.scripts['fmt:rust'], undefined);
+  assert.equal(rootPackage.scripts['fmt:rust:check'], undefined);
   assert.equal(
-    rootPackage.scripts['fmt:rust'],
+    rootPackage.scripts['format:rust'],
     'node scripts/cargo-fmt-workspace.mjs',
   );
   assert.equal(
-    rootPackage.scripts['fmt:rust:check'],
+    rootPackage.scripts['format:rust:check'],
     'node scripts/cargo-fmt-workspace.mjs --check',
   );
   assert.equal(
@@ -372,15 +373,16 @@ test('root package exposes pnpm product entrypoints', () => {
   );
 });
 
-test('pnpm dev delegates to canonical clawrouter:dev topology command', () => {
+test('pnpm dev delegates to canonical browser topology command', () => {
   const rootPackage = readWorkspaceJson('package.json');
 
-  assert.equal(rootPackage.scripts.dev, 'pnpm run clawrouter:dev');
-  assert.match(rootPackage.scripts['clawrouter:dev'], /--target browser/u);
-  assert.match(rootPackage.scripts['clawrouter:dev'], /--hosting self-hosted/u);
-  assert.match(rootPackage.scripts['clawrouter:dev'], /--service-layout unified-process/u);
-  assert.doesNotMatch(rootPackage.scripts['clawrouter:dev'], /client/u);
-  assert.doesNotMatch(rootPackage.scripts['clawrouter:dev:sqlite'], /client/u);
+  assert.equal(rootPackage.scripts.dev, 'pnpm dev:browser');
+  assert.equal(rootPackage.scripts['dev:browser'], 'pnpm dev:browser:postgres:unified-process:standalone');
+  assert.match(rootPackage.scripts['dev:browser:postgres:unified-process:standalone'], /--target browser/u);
+  assert.match(rootPackage.scripts['dev:browser:postgres:unified-process:standalone'], /--deployment-profile standalone/u);
+  assert.match(rootPackage.scripts['dev:browser:postgres:unified-process:standalone'], /--service-layout unified-process/u);
+  assert.doesNotMatch(rootPackage.scripts['dev:browser:postgres:unified-process:standalone'], /client/u);
+  assert.doesNotMatch(rootPackage.scripts['dev:browser:sqlite'], /client/u);
 });
 
 test('foundation dependency APIs target the shared sdkwork api gateway without a local gateway catalog', () => {
@@ -1392,19 +1394,18 @@ test('installation documentation covers release, source, initialization, usage, 
   assert.ok(rootReadme.includes('Desktop packages and first-run local user data use SQLite under `~/.sdkwork/router/data`.'));
   assert.ok(postgresqlIndex.includes('./postgresql-development.md'));
   assert.ok(postgresqlIndex.includes('./postgresql-production.md'));
-  assert.ok(postgresqlIndex.includes('pnpm server:dev:postgres'));
-  assert.ok(postgresqlDevelopment.includes('pnpm clawrouter:dev'));
+  assert.ok(postgresqlIndex.includes('pnpm dev:server:postgres'));
+  assert.ok(postgresqlDevelopment.includes('pnpm dev:browser'));
   assert.ok(postgresqlDevelopment.includes('pnpm dev'));
-  assert.ok(postgresqlDevelopment.includes('pnpm server:dev'));
-  assert.ok(postgresqlDevelopment.includes('pnpm clawrouter:dev:desktop'));
-  assert.ok(postgresqlDevelopment.includes('pnpm tauri:dev'));
+  assert.ok(postgresqlDevelopment.includes('pnpm dev:server'));
+  assert.ok(postgresqlDevelopment.includes('pnpm dev:desktop'));
   assert.ok(postgresqlDevelopment.includes('Copy-Item .env.postgres.example .env.postgres'));
   assert.ok(postgresqlDevelopment.includes('SDKWORK_CLAW_DATABASE_ENGINE=postgresql'));
   assert.ok(!postgresqlDevelopment.includes('SDKWORK_CLAW_DATABASE_PROVIDER=postgresql'));
-  assert.ok(postgresqlDevelopment.includes('pnpm server:dev:postgres'));
+  assert.ok(postgresqlDevelopment.includes('pnpm dev:server:postgres'));
   assert.ok(postgresqlDevelopment.includes('Default local PostgreSQL dev database'));
   assert.ok(postgresqlDevelopment.includes('Workspace desktop commands are gateway-backed client commands.'));
-  assert.ok(postgresqlDevelopment.includes('Use `pnpm server:dev` for PostgreSQL-backed product server debugging'));
+  assert.ok(postgresqlDevelopment.includes('Use `pnpm dev:server` for PostgreSQL-backed product server debugging'));
   assert.ok(postgresqlDevelopment.includes('Desktop packages and desktop user data still use SQLite by default.'));
   assert.ok(postgresqlDevelopment.includes('~/.sdkwork/router/data/clawrouter.sqlite'));
   assert.ok(postgresqlIndex.includes('Desktop/runtime local user data remains SQLite by default.'));
@@ -1417,8 +1418,8 @@ test('installation documentation covers release, source, initialization, usage, 
   assert.ok(postgresqlProduction.includes('SDKWORK_CLAW_DATABASE_URL'));
   assert.ok(postgresqlProduction.includes('Desktop local runtime'));
   assert.ok(postgresqlProduction.includes('~/.sdkwork/router/data/clawrouter.sqlite'));
-  assert.ok(enRelease.includes('This desktop SQLite policy is independent from the explicit product server PostgreSQL development profile used by `pnpm clawrouter:dev`, `pnpm server:dev`, and `pnpm server:dev:postgres` for the backend service runtime.'));
-  assert.ok(enRelease.includes('Gateway-backed client commands such as `pnpm clawrouter:dev:desktop`, `pnpm desktop:dev`, and `pnpm tauri:dev` run through `sdkwork-api-gateway` and do not start a Claw Router backend service.'));
+  assert.ok(enRelease.includes('This desktop SQLite policy is independent from the explicit product server PostgreSQL development profile used by `pnpm dev`, `pnpm dev:server`, and `pnpm dev:server:postgres` for the backend service runtime.'));
+  assert.ok(enRelease.includes('Gateway-backed client commands such as `pnpm dev:desktop` and `pnpm dev:desktop:sqlite` run through `sdkwork-api-gateway` and do not start a Claw Router backend service.'));
 
   for (const relativePath of ['README.md', ...requiredDocs]) {
     assertMarkdownLocalLinksExist(relativePath);
@@ -1649,7 +1650,7 @@ test('portal runtime is served by Rust edge server without Node server entrypoin
   assert.ok(!scriptsSurface.includes('smoke-production-server.mjs'));
   assert.equal(portalPackage.scripts['deps:check'], 'node scripts/check-portal-deps.mjs');
   assert.equal(portalPackage.scripts.dev, 'pnpm deps:check && vite --configLoader native');
-  assert.equal(portalPackage.scripts['browser:dev'], 'pnpm deps:check && vite --configLoader native');
+  assert.equal(portalPackage.scripts['dev:browser'], 'pnpm deps:check && vite --configLoader native');
   assert.equal(portalPackage.scripts.preview, 'vite preview --configLoader native');
   assert.equal(portalPackage.scripts.build, 'pnpm deps:check && node scripts/build-portal.mjs');
   assert.equal(portalPackage.scripts.start, 'node ../../scripts/start-claw-router-production.mjs');
@@ -1757,10 +1758,10 @@ test('claw router product launcher help distinguishes workspace PostgreSQL from 
   ], { cwd: workspaceRoot });
 
   assert.ok(stdout.includes('Database profiles:'));
-  assert.ok(stdout.includes('pnpm clawrouter:dev / pnpm server:dev start the topology-aware integrated product server workspace'));
-  assert.ok(stdout.includes('pnpm clawrouter:dev:desktop / pnpm desktop:dev / pnpm tauri:dev start sdkwork-api-gateway and the portal only'));
+  assert.ok(stdout.includes('pnpm dev:browser starts the topology-aware integrated product server workspace'));
+  assert.ok(stdout.includes('pnpm dev:desktop starts the desktop dev workspace with PostgreSQL and standalone topology by default'));
   assert.ok(stdout.includes('Desktop packages and first-run local user data use SQLite under ~/.sdkwork/router/data.'));
-  assert.ok(stdout.includes('Use pnpm clawrouter:dev:sqlite or pnpm server:dev:sqlite to validate explicit product server SQLite behavior.'));
+  assert.ok(stdout.includes('Use pnpm dev:browser:sqlite or pnpm dev:desktop:sqlite to validate explicit SQLite behavior.'));
 });
 
 test('claw router product launcher parses dev env file before forwarded workspace arguments', async () => {
@@ -2260,7 +2261,7 @@ test('claw router workspace launch plan defaults to all-in-one Rust edge runtime
     assert.deepEqual(portalStep.args, [
       '--dir',
       'apps/sdkwork-clawrouter-pc',
-      'browser:dev',
+      'dev:browser',
     ]);
     assert.equal(portalStep.env.PORT, '3901');
     assert.equal(portalStep.env.SDKWORK_CLAW_PORTAL_BIND, '127.0.0.1:3901');
@@ -2518,7 +2519,7 @@ test('claw router workspace supports custom edge server and direct portal binds'
   assert.deepEqual(portalStep.args, [
     '--dir',
     'apps/sdkwork-clawrouter-pc',
-    'browser:dev',
+    'dev:browser',
   ]);
   assert.equal(portalStep.env.HOST, '0.0.0.0');
   assert.equal(portalStep.env.PORT, '13900');
@@ -3594,9 +3595,9 @@ test('claw router product help does not present distributed dev as a standard wo
   );
 
   assert.equal(
-    source.includes('pnpm server:dev:distributed'),
+    source.includes('pnpm server:dev'),
     false,
-    'default help examples must not advertise distributed mode as a standard workflow',
+    'default help examples must not advertise server:dev as a standard workflow',
   );
 });
 
@@ -5324,20 +5325,22 @@ test('native installer builder CLI validates cross-platform service and desktop 
   );
 });
 
-test('release workflow validates native installer payload layouts before upload', () => {
-  const workflow = readFileSync(path.join(workspaceRoot, '.github', 'workflows', 'release-package.yml'), 'utf8');
-  assert.ok(workflow.includes('Validate built install package payloads'));
-  assert.ok(workflow.includes('node scripts/validate-claw-router-install-artifacts.mjs'));
-  assert.ok(workflow.includes('--package-id $packageId'));
-  assert.ok(workflow.includes('--artifact-path $file.FullName'));
+test('sdkwork workflow validates native installer payload layouts before upload', () => {
+  const workflow = JSON.parse(readFileSync(path.join(workspaceRoot, 'sdkwork.workflow.json'), 'utf8'));
+  const validateSource = JSON.stringify(workflow.lifecycle?.validate ?? []);
+  assert.ok(validateSource.includes('Validate selected install package'));
+  assert.ok(validateSource.includes('node scripts/validate-claw-router-install-artifacts.mjs'));
+  assert.ok(validateSource.includes('--package-id $legacyPackageId'));
+  assert.ok(validateSource.includes('--artifact-path $file.FullName'));
 });
 
-test('release workflow can opt into CDN download links without making CDN mandatory', () => {
-  const workflow = readFileSync(path.join(workspaceRoot, '.github', 'workflows', 'release-package.yml'), 'utf8');
-  assert.ok(workflow.includes('CLAWROUTER_DOWNLOAD_CDN_BASE_URL: ${{ vars.CLAWROUTER_DOWNLOAD_CDN_BASE_URL }}'));
-  assert.ok(workflow.includes('if ($env:CLAWROUTER_DOWNLOAD_CDN_BASE_URL)'));
-  assert.ok(workflow.includes('$downloadArgs += @("--cdn-base-url", $env:CLAWROUTER_DOWNLOAD_CDN_BASE_URL)'));
-  assert.ok(workflow.includes('node scripts/update-claw-router-downloads.mjs @downloadArgs'));
+test('sdkwork workflow can opt into CDN download links without making CDN mandatory', () => {
+  const workflow = JSON.parse(readFileSync(path.join(workspaceRoot, 'sdkwork.workflow.json'), 'utf8'));
+  const buildSource = JSON.stringify(workflow.lifecycle?.build ?? []);
+  assert.ok(buildSource.includes('CLAWROUTER_DOWNLOAD_CDN_BASE_URL'));
+  assert.ok(buildSource.includes('if ($env:CLAWROUTER_DOWNLOAD_CDN_BASE_URL)'));
+  assert.ok(buildSource.includes('--cdn-base-url'));
+  assert.ok(buildSource.includes('node scripts/update-claw-router-downloads.mjs @downloadArgs'));
 });
 
 test('install package tar writer supports long production asset paths', async () => {
@@ -6519,6 +6522,8 @@ test('precommit verification plan keeps commit-time checks lightweight and stage
     'app store seed check',
     'skills seed check',
     'repository delivery guard',
+    'agent workflow standard check',
+    'pnpm script standard check',
     'topology spec validate',
     'topology contract tests',
     'tooling contract tests',
@@ -6589,6 +6594,8 @@ test('fast verification plan refreshes SDK dist before low-cost Codex iteration 
     'app store seed check',
     'skills seed check',
     'repository delivery guard',
+    'agent workflow standard check',
+    'pnpm script standard check',
     'topology spec validate',
     'topology contract tests',
     'tooling contract tests',
@@ -6604,6 +6611,8 @@ test('fast verification plan refreshes SDK dist before low-cost Codex iteration 
     'pnpm.cmd app-store:seed:check',
     'pnpm.cmd skills:seed:check',
     'python -B -m tools.repository_delivery_guardian',
+    'pnpm.cmd check:agent-workflow-standard',
+    'pnpm.cmd check:pnpm-script-standard',
     'node ../sdkwork-app-topology/scripts/sdkwork-topology.mjs validate --root . --spec specs/topology.spec.json',
     'node --test --experimental-test-isolation=none scripts/verify-claw-router-topology.test.mjs',
     'node scripts/run-claw-router-product.test.mjs',
@@ -6693,7 +6702,7 @@ test('verification plan can include edge dev server smoke when explicitly reques
     'node --experimental-strip-types apps/sdkwork-clawrouter-pc/vite-config-runtime.test.ts',
   ));
   assert.ok(commandLines.includes('node scripts/smoke-edge-dev-server.mjs'));
-  assert.ok(smokeSource.includes('pnpm server:dev'));
+  assert.ok(smokeSource.includes('pnpm dev:server'));
   assert.ok(smokeSource.includes('/healthz'));
   assert.ok(smokeSource.includes('/readyz'));
   assert.ok(smokeSource.includes('/openapi.json'));
@@ -7305,7 +7314,8 @@ test('environment and deployment specs document Claw Router runtime config stand
   for (const content of [environmentSpec, deploymentSpec]) {
     assert.ok(content.includes('SdkWork Claw Router'));
     assert.ok(content.includes('SDKWORK_CLAW_CONFIG_FILE'));
-    assert.ok(content.includes('SDKWORK_CLAW_DEPLOYMENT_MODE'));
+    assert.ok(content.includes('SDKWORK_CLAW_DEPLOYMENT_PROFILE'));
+    assert.ok(content.includes('SDKWORK_CLAW_RUNTIME_TARGET'));
     assert.ok(content.includes('SDKWORK_<APP>_DATABASE_ENGINE'));
     assert.ok(content.includes('SDKWORK_<APP>_DATABASE_SSL_MODE'));
     assert.ok(content.includes('SDKWORK_CLAW_DATABASE_URL'));
@@ -7325,7 +7335,8 @@ test('environment and deployment specs document Claw Router runtime config stand
     assert.ok(content.includes('%ProgramData%/sdkwork/router/clawrouter.toml'));
     assert.ok(content.includes('~/.sdkwork/router/config/clawrouter.toml'));
   }
-  assert.ok(environmentSpec.includes('Server and container deployments default to PostgreSQL.'));
+  assert.ok(environmentSpec.includes('| `standalone` | `server` | PostgreSQL |'));
+  assert.ok(environmentSpec.includes('| `standalone` | `container` | PostgreSQL |'));
   assert.ok(environmentSpec.includes('.env.postgres.example'));
   assert.ok(environmentSpec.includes('SDKWORK_CLAW_DATABASE_ENGINE=postgresql'));
   assert.ok(environmentSpec.includes('SDKWORK_CLAW_DATABASE_SCHEMA=sdkwork_ai_dev'));
@@ -7339,16 +7350,16 @@ test('environment and deployment specs document Claw Router runtime config stand
   assert.ok(environmentSpec.includes('port = 6379'));
   assert.ok(environmentSpec.includes('database = 0'));
   assert.ok(environmentSpec.includes('password_file = "/etc/sdkwork/router/redis.secret"'));
-  assert.ok(environmentSpec.includes('Desktop deployments default to SQLite.'));
-  assert.ok(environmentSpec.includes('Desktop/runtime local user data remains SQLite by default'));
-  assert.ok(environmentSpec.includes('For SDKWork Claw Router, `pnpm clawrouter:dev` (aliases `pnpm dev`,'));
-  assert.ok(environmentSpec.includes('`pnpm server:dev`) start the integrated Claw Router product server'));
-  assert.ok(environmentSpec.includes('Gateway-backed client commands such as'));
-  assert.ok(environmentSpec.includes('`pnpm clawrouter:dev:desktop`, `pnpm desktop:dev`, and `pnpm tauri:dev` must'));
-  assert.ok(environmentSpec.includes('`pnpm server:dev:sqlite` and `pnpm clawrouter:dev:sqlite` (alias'));
-  assert.ok(deploymentSpec.includes('Redis is enabled and required by default for server and container deployments.'));
+  assert.ok(environmentSpec.includes('Desktop runtime targets default to SQLite.'));
+  assert.ok(environmentSpec.includes('`pnpm dev:browser` and'));
+  assert.ok(environmentSpec.includes('`pnpm dev:desktop` default to PostgreSQL, `unified-process`, and standalone'));
+  assert.ok(environmentSpec.includes('`pnpm dev:desktop:sqlite`'));
+  assert.ok(deploymentSpec.includes('Redis is enabled and required by default for cloud deployments and standalone'));
+  assert.ok(deploymentSpec.includes('server/container packages that declare shared runtime state.'));
+  assert.ok(deploymentSpec.includes('Desktop runtime targets keep Redis optional and disabled by default.'));
   assert.ok(deploymentSpec.includes('Desktop packages must keep local user data on SQLite by default.'));
-  assert.ok(deploymentSpec.includes('belongs to the launched backend'));
+  assert.ok(deploymentSpec.includes('belongs to dev orchestration and any launched backend service runtime;'));
+  assert.ok(deploymentSpec.includes('it must not change the installed desktop package default or the desktop user'));
   const desktopArchitectureSpec = readFileSync(path.join(specsRoot, 'DESKTOP_APP_ARCHITECTURE_SPEC.md'), 'utf8');
   assert.ok(desktopArchitectureSpec.includes('Desktop local user data | SQLite'));
   assert.ok(desktopArchitectureSpec.includes('Explicit service/backend runtime started by desktop development commands | PostgreSQL'));
@@ -7487,7 +7498,7 @@ test('release preflight defaults missing staging environment to warnings', async
     'pnpm.cmd models:check',
     'pnpm.cmd verify',
     'pnpm.cmd test:postgres:required',
-    'pnpm.cmd server:plan',
+    'pnpm.cmd topology:plan:server',
     'pnpm.cmd clean:fast -- --dry-run',
   ]);
 });
@@ -8073,7 +8084,7 @@ test('portal dev scripts run Vite without a Node server entrypoint', () => {
   );
 
   assert.equal(portalPackage.scripts.dev, 'pnpm deps:check && vite --configLoader native');
-  assert.equal(portalPackage.scripts['browser:dev'], 'pnpm deps:check && vite --configLoader native');
+  assert.equal(portalPackage.scripts['dev:browser'], 'pnpm deps:check && vite --configLoader native');
   assert.equal(portalPackage.scripts.preview, 'vite preview --configLoader native');
   assert.equal(
     portalPackage.scripts.typecheck,
@@ -8087,8 +8098,8 @@ test('portal dev scripts run Vite without a Node server entrypoint', () => {
   );
   assert.ok(!portalPackage.scripts.dev.includes('tsx'));
   assert.ok(portalPackage.scripts.dev.includes('--configLoader native'));
-  assert.ok(!portalPackage.scripts['browser:dev'].includes('tsx'));
-  assert.ok(portalPackage.scripts['browser:dev'].includes('--configLoader native'));
+  assert.ok(!portalPackage.scripts['dev:browser'].includes('tsx'));
+  assert.ok(portalPackage.scripts['dev:browser'].includes('--configLoader native'));
   assert.ok(portalPackage.scripts.preview.includes('--configLoader native'));
   assert.ok(!JSON.stringify(portalPackage.scripts).includes('server.ts'));
   assert.match(viteConfig, /host:\s*resolvePortalDevHost\(process\.env\)/u);

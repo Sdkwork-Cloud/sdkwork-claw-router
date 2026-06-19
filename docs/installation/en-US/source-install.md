@@ -54,19 +54,19 @@ pnpm dev
 Explicit product server development mode:
 
 ```bash
-pnpm server:dev
+pnpm dev:server
 ```
 
-Standalone portal browser development server:
+Gateway-backed desktop/client development mode:
 
 ```bash
-pnpm portal:dev
+pnpm dev:desktop
 ```
 
 Print the startup plan without starting services:
 
 ```bash
-pnpm server:plan
+pnpm topology:plan:server
 ```
 
 Default access:
@@ -84,19 +84,19 @@ App API: http://127.0.0.1:3902/app/v3/api
 Expose development services externally:
 
 ```bash
-pnpm server:dev -- --gateway-bind 0.0.0.0:19080 --server-bind 0.0.0.0:12900 --portal-bind 0.0.0.0:13900
+pnpm dev:server -- --gateway-bind 0.0.0.0:19080 --server-bind 0.0.0.0:12900 --portal-bind 0.0.0.0:13900
 ```
 
 Forward the edge server to existing upstream services:
 
 ```bash
-pnpm server:dev -- --gateway-forward-url http://gateway.internal:18080 --backend-api-forward-url http://admin.internal:18081 --app-api-forward-url http://app.internal:18082
+pnpm dev:server -- --gateway-forward-url http://gateway.internal:18080 --backend-api-forward-url http://admin.internal:18081 --app-api-forward-url http://app.internal:18082
 ```
 
 HTTPS reverse proxy:
 
 ```bash
-pnpm server:dev -- --external-scheme https --trust-forwarded-headers
+pnpm dev:server -- --external-scheme https --trust-forwarded-headers
 ```
 
 Only trust forwarded headers behind a controlled reverse proxy.

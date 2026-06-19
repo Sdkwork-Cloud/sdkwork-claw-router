@@ -59,26 +59,28 @@ test('declares v2 topology spec and profile env files for sdkwork-claw-router', 
   }
 });
 
-test('root package.json wires @sdkwork/app-topology and canonical clawrouter:dev scripts', async () => {
+test('root package.json wires @sdkwork/app-topology and canonical dev scripts', async () => {
   const packageJson = await readJson('package.json');
   const spec = await readJson('specs/topology.spec.json');
   assert.equal(packageJson.dependencies['@sdkwork/app-topology'], 'file:../sdkwork-app-topology');
-  assert.equal(packageJson.scripts.dev, 'pnpm run clawrouter:dev');
-  assert.match(packageJson.scripts['clawrouter:dev'], /scripts\/claw-router-dev\.mjs/);
-  assert.match(packageJson.scripts['clawrouter:dev'], /--hosting self-hosted/u);
-  assert.match(packageJson.scripts['clawrouter:dev'], /--service-layout unified-process/u);
-  assert.match(packageJson.scripts['clawrouter:dev'], /--target browser/u);
-  assert.match(packageJson.scripts['clawrouter:dev'], /--database postgres/u);
-  assert.match(packageJson.scripts['clawrouter:dev:split'], /--service-layout split-services/u);
-  assert.match(packageJson.scripts['clawrouter:dev:cloud'], /--hosting cloud-hosted/u);
-  assert.match(packageJson.scripts['clawrouter:dev:desktop'], /--target desktop/u);
+  assert.equal(packageJson.scripts.dev, 'pnpm dev:browser');
+  assert.equal(packageJson.scripts['dev:browser'], 'pnpm dev:browser:postgres:unified-process:standalone');
+  assert.match(packageJson.scripts['dev:browser:postgres:unified-process:standalone'], /scripts\/claw-router-dev\.mjs/);
+  assert.match(packageJson.scripts['dev:browser:postgres:unified-process:standalone'], /--deployment-profile standalone/u);
+  assert.match(packageJson.scripts['dev:browser:postgres:unified-process:standalone'], /--service-layout unified-process/u);
+  assert.match(packageJson.scripts['dev:browser:postgres:unified-process:standalone'], /--target browser/u);
+  assert.match(packageJson.scripts['dev:browser:postgres:unified-process:standalone'], /--database postgres/u);
+  assert.match(packageJson.scripts['dev:browser:postgres:split-services:cloud'], /--service-layout split-services/u);
+  assert.match(packageJson.scripts['dev:browser:postgres:split-services:cloud'], /--deployment-profile cloud/u);
+  assert.equal(packageJson.scripts['dev:desktop'], 'pnpm dev:desktop:postgres:unified-process:standalone');
+  assert.match(packageJson.scripts['dev:desktop:postgres:unified-process:standalone'], /--target desktop/u);
   assert.match(packageJson.scripts['topology:validate'], /sdkwork-topology\.mjs validate/);
   assert.match(packageJson.scripts['gateway:matrix'], /sdkwork-topology\.mjs print-matrix/);
-  assert.match(packageJson.scripts['gateway:cloud:bundle'], /gateway-cloud-bundle\.mjs bundle/);
+  assert.match(packageJson.scripts['gateway:package:cloud'], /gateway-cloud-bundle\.mjs bundle/);
   assert.equal(spec.scripts.clawRouterDev, 'scripts/claw-router-dev.mjs');
   assert.equal(spec.scripts.gatewayCloudBundle, 'scripts/gateway-cloud-bundle.mjs');
-  assert.equal(spec.scripts.pnpm['clawrouter:dev'].hosting, 'self-hosted');
-  assert.equal(spec.scripts.pnpm['clawrouter:dev'].serviceLayout, 'unified-process');
+  assert.equal(spec.scripts.pnpm.dev.deploymentProfile, 'standalone');
+  assert.equal(spec.scripts.pnpm.dev.serviceLayout, 'unified-process');
 });
 
 test('declares cloud gateway config bundles referenced by topology spec', async () => {
@@ -224,12 +226,14 @@ test('sdkwork.workflow.json references topology cloud-config packaging target', 
     (target) => target.id === 'platform-config-bundle-tar-gz',
   );
   const workflowTarget = workflow.targets.find(
-    (target) => target.id === 'platform-config-bundle-tar-gz',
+    (target) => target.outputGlobs?.includes(topologyTarget.outputGlob),
   );
 
   assert.ok(topologyTarget);
   assert.ok(workflowTarget);
-  assert.equal(workflowTarget.profile, 'cloud-config');
+  assert.equal(workflowTarget.profile, 'container');
+  assert.equal(workflowTarget.deploymentProfile, 'cloud');
+  assert.equal(workflowTarget.variant, 'config-bundle');
   assert.deepEqual(workflowTarget.outputGlobs, [topologyTarget.outputGlob]);
   const packageStep = workflow.lifecycle.package.find(
     (step) => step.name === 'Package cloud gateway config bundle',
@@ -237,14 +241,14 @@ test('sdkwork.workflow.json references topology cloud-config packaging target', 
   const validateStep = workflow.lifecycle.validate.find(
     (step) => step.name === 'Validate cloud gateway config bundle',
   );
-  assert.ok(packageStep?.run.includes('gateway:cloud:bundle'));
-  assert.ok(validateStep?.run.includes('gateway:cloud:bundle:validate'));
+  assert.ok(packageStep?.run.includes('gateway:package:cloud'));
+  assert.ok(validateStep?.run.includes('gateway:validate:cloud'));
 });
 
 test('claw-router dev orchestrator loads topology profile and forwards workspace flags', async () => {
   const devScript = await read('scripts/claw-router-dev.mjs');
   assert.match(devScript, /loadTopologyProfileForWorkspace/);
-  assert.match(devScript, /--hosting/);
+  assert.match(devScript, /--deployment-profile/);
   assert.match(devScript, /--service-layout/);
   assert.match(devScript, /--target/);
   assert.match(devScript, /--database/);

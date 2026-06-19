@@ -21,6 +21,26 @@ const __dirname = path.dirname(__filename);
 const LEGACY_MODES = new Set(['server', 'desktop', 'browser', 'plan', 'service']);
 const DEFAULT_SQLITE_DATABASE_URL = 'sqlite://target/dev/clawrouter.sqlite';
 
+function deploymentProfileToHosting(deploymentProfile) {
+  if (deploymentProfile === 'standalone') {
+    return 'self-hosted';
+  }
+  if (deploymentProfile === 'cloud') {
+    return 'cloud-hosted';
+  }
+  throw new Error('--deployment-profile must be standalone or cloud');
+}
+
+function hostingToDeploymentProfile(hosting) {
+  if (hosting === 'self-hosted') {
+    return 'standalone';
+  }
+  if (hosting === 'cloud-hosted') {
+    return 'cloud';
+  }
+  throw new Error('--hosting must be self-hosted or cloud-hosted');
+}
+
 function mapTargetToProductMode(target, legacyMode) {
   if (target === 'desktop') {
     return 'desktop';
@@ -61,6 +81,7 @@ function applyDatabaseSettings(settings) {
 
 function parseArgs(argv) {
   const settings = {
+    deploymentProfile: 'standalone',
     hosting: 'self-hosted',
     serviceLayout: 'unified-process',
     target: 'browser',
@@ -81,11 +102,18 @@ function parseArgs(argv) {
     }
     if (arg === '--topology') {
       throw new Error(
-        '--topology is retired; use --hosting (self-hosted|cloud-hosted) and --service-layout (unified-process|split-services)',
+        '--topology is retired; use --deployment-profile (standalone|cloud) and --service-layout (unified-process|split-services)',
       );
+    }
+    if (arg === '--deployment-profile') {
+      settings.deploymentProfile = argv[index + 1] ?? settings.deploymentProfile;
+      settings.hosting = deploymentProfileToHosting(settings.deploymentProfile);
+      index += 1;
+      continue;
     }
     if (arg === '--hosting') {
       settings.hosting = argv[index + 1] ?? settings.hosting;
+      settings.deploymentProfile = hostingToDeploymentProfile(settings.hosting);
       index += 1;
       continue;
     }
@@ -144,7 +172,7 @@ function printHelp() {
 Topology-aware Claw Router dev entry. Loads configs/topology profile env via @sdkwork/app-topology.
 
 Options:
-  --hosting <self-hosted|cloud-hosted>              Default: self-hosted
+  --deployment-profile <standalone|cloud>           Default: standalone
   --service-layout <unified-process|split-services> Default: unified-process
   --target <browser|browser-only|desktop|plan|service>
                                                     Default: browser (integrated product server)
@@ -153,13 +181,13 @@ Options:
   --dry-run                                         Print resolved topology only
   --help, -h
 
-Note: --topology is retired. Use --hosting and --service-layout instead.
+Note: --topology is retired. Use --deployment-profile and --service-layout instead.
 
 Examples:
-  pnpm clawrouter:dev
-  pnpm clawrouter:dev:split
-  pnpm clawrouter:dev:cloud
-  pnpm clawrouter:dev:desktop
+  pnpm dev:browser
+  pnpm dev:browser:postgres:split-services:cloud
+  pnpm dev:desktop
+  pnpm dev:desktop:sqlite
 `);
 }
 
@@ -182,6 +210,7 @@ function main() {
     repoRoot: REPO_ROOT,
     profileId,
     defaultDevProfileId: DEFAULT_DEV_PROFILE_ID,
+    deploymentProfile: settings.deploymentProfile,
     hosting: settings.hosting,
     serviceLayout: settings.serviceLayout,
     target: settings.target,

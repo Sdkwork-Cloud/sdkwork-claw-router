@@ -1,87 +1,84 @@
 # Repository Guidelines
 
-<!-- SDKWORK-AGENTS-GENERATED: v1 -->
+<!-- SDKWORK-AGENTS-GENERATED: v2 -->
 
 ## SDKWORK Soul
 
-Read `../../../sdkwork-specs/SOUL.md` before executing tasks in this root. Follow specs before memory, dictionary before context, stop on ambiguity, and evidence before completion.
+Read `../../../sdkwork-specs/SOUL.md` before executing tasks in this application root. Follow specs before memory, dictionary before context, stop on ambiguity, and evidence before completion.
 
 ## SDKWORK Standards
 
-Canonical SDKWORK specs path from this root:
+Canonical SDKWORK specs path from this application root:
 
 - `../../../sdkwork-specs/README.md`
 - `../../../sdkwork-specs/SOUL.md`
 - `../../../sdkwork-specs/AGENTS_SPEC.md`
+- `../../../sdkwork-specs/PNPM_SCRIPT_SPEC.md`
+- `../../../sdkwork-specs/GITHUB_WORKFLOW_SPEC.md`
 - `../../../sdkwork-specs/CODE_STYLE_SPEC.md`
 - `../../../sdkwork-specs/NAMING_SPEC.md`
 
-Do not copy root standard text into this repository. If these relative paths do not resolve, stop and report the broken workspace layout.
+Do not copy root standard text into this application root. If these relative paths do not resolve, stop and report the broken workspace layout.
 
 ## Application Identity
 
-Read `sdkwork.app.config.json` before changing application behavior, runtime config, SDK wiring, release metadata, or app-owned capabilities.
+Read `sdkwork.app.config.json` only when changing PC application behavior, runtime config, SDK wiring, release metadata, packaging, or app-owned capabilities.
 
 ## Local Dictionary Structure
 
-- `AGENTS.md`: local agent entrypoint and relative SDKWORK spec index.
-- `CLAUDE.md`: Claude Code compatibility shim that points to `AGENTS.md` and must not duplicate rules.
-- `GEMINI.md`: Gemini CLI compatibility shim that points to `AGENTS.md` and must not duplicate rules.
-- `CODEX.md`: Codex compatibility shim that points to `AGENTS.md` and must not duplicate rules.
-- `sdkwork.app.config.json`: application identity and owned capability metadata.
-- `.sdkwork/`: reserved local dictionary folder; create only for local skills, plugins, manifests, or AI workspace metadata.
-- `specs/`: local application/component contracts and narrowing rules.
-- `sdks/`: not present here; use only for SDK authority or generation surfaces.
-- `package.json`, `pnpm-workspace.yaml`: language/build manifests.
-- Local directories to inspect first when relevant: `app/`, `packages/`, `public/`, `scripts/`, `specs/`, `src/`.
+- `AGENTS.md`: local application agent entrypoint and relative SDKWork spec index.
+- `CLAUDE.md`, `GEMINI.md`, `CODEX.md`: compatibility shims that point to `AGENTS.md` and must not duplicate rules.
+- `sdkwork.app.config.json`: PC application identity and release metadata.
+- `.sdkwork/`: local application dictionary for skills, plugins, manifests, and AI workspace metadata.
+- `specs/`: local PC application/component contracts and narrowing rules.
+- `packages/`: PC React package family for app, console, admin, shared runtime, and desktop host modules.
+- `src/`: thin PC application bootstrap, providers, route assembly, and shell entry.
+- `scripts/`: app-local build, validation, generation, migration, and development utilities.
+- `package.json`: app-surface command manifest; public command names still follow `PNPM_SCRIPT_SPEC.md`.
 
 ## Spec Resolution Order
 
+Use dynamic progressive loading:
+
 1. Read this `AGENTS.md` and any nearer component-level `AGENTS.md`.
-2. Read `sdkwork.app.config.json` when present.
-3. Read local `specs/README.md` and `specs/component.spec.json` when present.
-4. Read local `.sdkwork/README.md`, `.sdkwork/skills/`, and `.sdkwork/plugins/` when relevant.
-5. Read `../../../sdkwork-specs/README.md` and the task-specific root specs.
-6. Inspect implementation files only after the relevant dictionary entries are clear.
+2. Read `sdkwork.app.config.json` only when app behavior, runtime config, SDK wiring, release, or package identity is touched.
+3. Read local `specs/README.md` and `specs/component.spec.json` only when local contracts are relevant.
+4. Read local `.sdkwork/README.md`, `.sdkwork/skills/`, and `.sdkwork/plugins/` only when local agent extensions are relevant.
+5. Read `../../../sdkwork-specs/README.md`, then only the task-specific root specs.
+6. Inspect implementation files after the relevant standards are clear.
 
 ## Required Specs By Task Type
 
-- Agent/workflow changes: `../../../sdkwork-specs/SOUL.md`, `../../../sdkwork-specs/AGENTS_SPEC.md`, `../../../sdkwork-specs/SDKWORK_WORKSPACE_SPEC.md`.
+- Agent/workflow changes: `../../../sdkwork-specs/SOUL.md`, `../../../sdkwork-specs/AGENTS_SPEC.md`, `../../../sdkwork-specs/SDKWORK_WORKSPACE_SPEC.md`, `../../../sdkwork-specs/GITHUB_WORKFLOW_SPEC.md`, and `../../../sdkwork-specs/TEST_SPEC.md`.
+- Package script changes: `../../../sdkwork-specs/PNPM_SCRIPT_SPEC.md`, `../../../sdkwork-specs/APP_RUNTIME_TOPOLOGY_SPEC.md`, and `../../../sdkwork-specs/TEST_SPEC.md`.
 - Any code change: `../../../sdkwork-specs/CODE_STYLE_SPEC.md`, `../../../sdkwork-specs/NAMING_SPEC.md`, plus only the touched language/framework spec.
-- Rust code: `../../../sdkwork-specs/RUST_CODE_SPEC.md` and `../../../sdkwork-specs/RUST_RPC_SPEC.md` when RPC is touched.
-- Java/Spring code: `../../../sdkwork-specs/JAVA_CODE_SPEC.md` and `../../../sdkwork-specs/WEB_BACKEND_SPEC.md` when HTTP backend behavior is touched.
 - TypeScript/Node code: `../../../sdkwork-specs/TYPESCRIPT_CODE_SPEC.md`.
-- Frontend/UI code: `../../../sdkwork-specs/FRONTEND_CODE_SPEC.md`, `../../../sdkwork-specs/FRONTEND_SPEC.md`, `../../../sdkwork-specs/UI_ARCHITECTURE_SPEC.md`, and exactly one detailed UI architecture spec.
-- API, SDK, database, runtime, security, and deployment changes must follow the task matrix in `../../../sdkwork-specs/README.md`.
+- Frontend/UI code: `../../../sdkwork-specs/FRONTEND_CODE_SPEC.md`, `../../../sdkwork-specs/FRONTEND_SPEC.md`, `../../../sdkwork-specs/UI_ARCHITECTURE_SPEC.md`, and `../../../sdkwork-specs/APP_PC_REACT_UI_SPEC.md`.
+- PC application architecture: `../../../sdkwork-specs/APPLICATION_SPEC.md`, `../../../sdkwork-specs/APP_CLIENT_ARCHITECTURE_ALIGNMENT_SPEC.md`, and `../../../sdkwork-specs/APP_PC_ARCHITECTURE_SPEC.md`.
+- Runtime config, SDK wiring, release metadata, and packaging changes must follow the task matrix in `../../../sdkwork-specs/README.md`.
 
-Language-specific specs are on-demand; do not load Rust, Java, TypeScript, and frontend specs for unrelated tasks.
+Language-specific specs are on-demand; do not load unrelated specs for unrelated tasks.
 
 ## Code Style Rules
 
-Read `../../../sdkwork-specs/CODE_STYLE_SPEC.md` and `../../../sdkwork-specs/NAMING_SPEC.md` before code changes.
-
-Load language specs only when touched: Rust uses `RUST_CODE_SPEC.md`, Java/Spring uses `JAVA_CODE_SPEC.md`, TypeScript/Node uses `TYPESCRIPT_CODE_SPEC.md`, and frontend/UI uses `FRONTEND_CODE_SPEC.md`.
-
-For TypeScript or frontend code, prefer strict types, explicit package exports, colocated tests, and existing package/module boundaries.
+Read `../../../sdkwork-specs/CODE_STYLE_SPEC.md` and `../../../sdkwork-specs/NAMING_SPEC.md` before code changes. Root `src/` must stay thin; business pages, services, i18n, state, and route contributions belong in packages. Feature packages use generated SDK clients or approved composed wrappers, not raw HTTP or manual credential headers.
 
 ## Build, Test, and Verification
 
-Run commands from this directory unless a command explicitly targets another path.
+Run commands from this application root unless a command explicitly targets the repository root:
 
-- `pnpm install`: install dependencies for this workspace or package.
-- `pnpm run dev`: start the local development server or app shell.
-- `pnpm run start`: start the configured runtime entrypoint.
-- `pnpm run build`: build production artifacts or package outputs.
-- `pnpm run lint`: run lint and static checks.
-- `pnpm run typecheck`: run TypeScript type checks.
-- `pnpm run preview`: serve built artifacts locally.
+- `pnpm dev`
+- `pnpm build`
+- `pnpm lint`
+- `pnpm typecheck`
+- `pnpm preview`
 
-Run the narrowest relevant check first, then broader verification when API contracts, SDK generation, persistence, security, or cross-package boundaries change.
+From the repository root, run `pnpm check:pnpm-script-standard` and `pnpm check:agent-workflow-standard` when changing app-surface commands, AGENTS, packaging, or workflow metadata.
 
 ## Agent Execution Rules
 
-Use the convention dictionary instead of broad context loading. Do not hand-edit generated SDK output unless the task is explicitly about generated artifacts and the source contract is verified. Do not replace generated SDK integration with raw HTTP. Keep changes scoped to the owning module, package, crate, or app root. Record the exact verification commands and important outputs before reporting completion.
+Use dynamic progressive loading and the convention dictionary before broad source loading. Do not hand-edit generated SDK output. Do not replace generated SDK integration with raw HTTP. Keep changes scoped to the owning package, surface, or app root. Record exact verification commands and important outputs before reporting completion.
 
 ## Human Review Rules
 
-Request human review before breaking SDKWORK standards, changing public naming, altering security/auth behavior, changing database migrations or production deployment config, deleting data/files, or changing generated SDK ownership. Surface unresolved spec paths, app identity conflicts, component ownership conflicts, and API authority ambiguity instead of guessing.
+Request human review before breaking SDKWork standards, changing public naming, altering security/auth behavior, changing generated SDK ownership, changing production release metadata, or deleting tracked runtime/cache files.

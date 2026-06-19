@@ -610,7 +610,7 @@ export function buildWorkspaceCommandPlan(settings, {
       {
         name: 'portal',
         command: pnpmCommand(platform),
-        args: ['--dir', portalRelativeDir, 'browser:dev'],
+        args: ['--dir', portalRelativeDir, 'dev:browser'],
         cwd: workspaceRoot,
         env: portalEnv(settings),
         shell: shellForPnpm(platform),
@@ -704,7 +704,7 @@ export function buildWorkspaceCommandPlan(settings, {
     {
       name: 'portal',
       command: pnpmCommand(platform),
-      args: ['--dir', portalRelativeDir, 'browser:dev'],
+      args: ['--dir', portalRelativeDir, 'dev:browser'],
       cwd: workspaceRoot,
       env: portalEnv(settings),
       shell: shellForPnpm(platform),

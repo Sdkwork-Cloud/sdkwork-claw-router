@@ -15,7 +15,7 @@ pnpm topology:validate
 Canonical dev commands (see `docs/topology-standard.md` and `specs/topology.spec.json` → `scripts.pnpm`):
 
 ```bash
-pnpm clawrouter:dev
-pnpm clawrouter:dev:split
-pnpm clawrouter:dev:cloud
+pnpm dev
+pnpm dev:browser:postgres:split-services:standalone
+pnpm dev:browser:postgres:unified-process:cloud
 ```

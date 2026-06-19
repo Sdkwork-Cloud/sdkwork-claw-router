@@ -125,7 +125,7 @@ If the stored catalog version differs from the selected catalog root, startup
 status becomes `UpgradeRequired` and the next `ensure_installed()` refreshes
 the catalog rows.
 
-For local development, `pnpm dev` and `pnpm server:dev` must not stop at
+For local development, `pnpm dev` and `pnpm dev:server` must not stop at
 `ensure_installed()`. The workspace launcher sets `SDKWORK_MODELS_CATALOG_ROOT`
 to the checkout-local `data/sdkwork-models` directory when the variable is not
 already set, then runs a blocking `sdkwork-claw-installer refresh-catalog

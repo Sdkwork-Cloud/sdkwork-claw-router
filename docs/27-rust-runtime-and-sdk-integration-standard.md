@@ -286,7 +286,7 @@ python -B -m tools.api_contract_manifest --check
 python -B -m tools.frontend_operation_audit --check
 python -B -m tools.schema_quality_gate
 cargo test
-pnpm fmt:rust:check
+pnpm format:rust:check
 ```
 
 If SDK generation is changed, also run the relevant generator check from the owning SDK home. Generated SDK files remain generated artifacts and must not be manually edited.

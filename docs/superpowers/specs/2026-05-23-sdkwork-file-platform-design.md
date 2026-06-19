@@ -1151,8 +1151,8 @@ checker that operate only on planned files, reject unsafe paths or stale hashes,
 and never delete unplanned operator-owned files. Repository tooling uses the
 standard Node filesystem host, which resolves all artifact paths under the
 workspace root and rejects direct read or write attempts that escape that root.
-The repository command surface is fixed as `pnpm.cmd file-sdk:artifacts:check`
-and `pnpm.cmd file-sdk:artifacts:write`, with package-local equivalents on
+The repository command surface is fixed as `pnpm.cmd sdk:file:artifacts:check`
+and `pnpm.cmd sdk:file:artifacts:write`, with package-local equivalents on
 `@sdkwork/file-sdk-generation`. Check mode is the safe default, returns a
 non-zero exit code for missing or drifted planned artifacts, and emits a
 machine-readable JSON report when `--json` is supplied. Write mode materializes

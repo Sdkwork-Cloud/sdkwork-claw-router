@@ -103,7 +103,7 @@ function main() {
     const targetHash = sha256(targetPath);
     if (targetHash !== sourceHash) {
       if (check) {
-        messages.push(`apis contract stale: ${contract.target} (run pnpm apis:materialize:write)`);
+        messages.push(`apis contract stale: ${contract.target} (run pnpm api:materialize:write)`);
       }
       if (apply) {
         ensureParent(targetPath);
@@ -119,7 +119,7 @@ function main() {
 
   if (existingManifest !== manifestText) {
     if (check) {
-      messages.push('apis/manifest.json is stale (run pnpm apis:materialize:write)');
+      messages.push('apis/manifest.json is stale (run pnpm api:materialize:write)');
     }
     if (apply) {
       writeFileSync(manifestPath, manifestText, 'utf8');

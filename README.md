@@ -237,12 +237,10 @@ pnpm test
 pnpm build
 pnpm start
 pnpm release
-pnpm portal:dev
-pnpm desktop:dev
-pnpm service:dev
-pnpm server:dev
+pnpm dev:desktop
+pnpm dev:server
 pnpm smoke:dev
-pnpm product:check
+pnpm check
 pnpm install:packages:plan
 pnpm install:packages:check
 pnpm install:package:check
@@ -351,24 +349,24 @@ as `AdminModelCatalogSyncResponse`. Frontend or application service wrappers
 should preserve the full report, including counts, `snapshotId`, and
 `syncRunId`, instead of collapsing the response to only `vendors` and `models`.
 
-Explicit product server commands such as `pnpm server:dev` use the
+Explicit product server commands such as `pnpm dev:server` use the
 workspace-local `data/sdkwork-models` directory as
 `SDKWORK_MODELS_CATALOG_ROOT` by default and run a blocking
 `refresh-catalog --catalog-root data/sdkwork-models --force` step after
 `ensure`. Local JSON model or pricing edits are therefore imported into the dev
 database on every server-mode startup. Default workspace commands
-(`pnpm dev`, `pnpm server:dev`) start the topology-aware integrated
+(`pnpm dev`, `pnpm dev:server`) start the topology-aware integrated
 product server workspace. Gateway-backed client commands
-(`pnpm desktop:dev`, `pnpm tauri:dev`) start `sdkwork-api-gateway` plus
+(`pnpm dev:desktop`, `pnpm dev:desktop`) start `sdkwork-api-gateway` plus
 the portal only and do not run installer or catalog refresh steps.
 
 Command intent:
 
-- `pnpm clawrouter:dev` (alias: `pnpm dev`, `pnpm server:dev`) starts the default
+- `pnpm dev` (alias: `pnpm dev`, `pnpm dev:server`) starts the default
   integrated product server workspace (`self-hosted.unified-process.development`).
   See `docs/topology-standard.md` for the full command matrix and env keys.
-- `pnpm clawrouter:dev:split` starts split-services internal validation layout.
-- `pnpm clawrouter:dev:desktop` (alias: `pnpm desktop:dev`, `pnpm tauri:dev`) starts
+- `pnpm dev:browser:postgres:split-services:standalone` starts split-services internal validation layout.
+- `pnpm dev:desktop`  starts
   the gateway-backed client workspace only.
 - `pnpm test` runs the launcher/tooling contract tests.
 - `pnpm build` builds production portal assets, builds the generated app
@@ -381,15 +379,12 @@ Command intent:
 - `pnpm release` validates the release environment, regenerates
   `.env.release.local` from the release host process environment, runs strict
   `release:preflight`, and then runs the full `verify` gate.
-- `pnpm portal:dev` starts the browser portal only.
-- `pnpm desktop:dev` and `pnpm tauri:dev` are aliases of `pnpm clawrouter:dev:desktop`.
-- `pnpm service:dev` starts the full install-checked workspace with
-  service-mode environment flags.
-- `pnpm server:dev` is an alias of `pnpm clawrouter:dev`.
-- `pnpm smoke:dev` starts the explicit `pnpm server:dev` entrypoint on
+- `pnpm dev:desktop` and `pnpm dev:desktop` is the canonical gateway-backed desktop client entrypoint.
+- `pnpm dev:server` is an alias of `pnpm dev`.
+- `pnpm smoke:dev` starts the explicit `pnpm dev:server` entrypoint on
   isolated random local ports, verifies the edge and portal OpenAPI/runtime
   URLs, and stops the spawned process tree.
-- `pnpm product:check` runs portal typecheck and production build.
+- `pnpm check` runs portal typecheck and production build.
 - `pnpm install:packages:plan` prints the deterministic cross-platform
   install package matrix without building packages or starting services.
 - `pnpm install:packages:check` validates the same matrix for release and
@@ -405,16 +400,16 @@ shells that block `pnpm.ps1`, call the package-manager shim through your shell
 or adjust the execution policy instead of changing committed scripts.
 
 Client development commands use `sdkwork-api-gateway` for API integration.
-Gateway-backed client commands (`pnpm desktop:dev`, `pnpm tauri:dev`) use
+Gateway-backed client commands (`pnpm dev:desktop`, `pnpm dev:desktop`) use
 that gateway workspace. Explicit product server development commands use PostgreSQL for integration
 testing unless an explicit SQLite server profile is selected. Desktop packages and first-run local user data use SQLite under `~/.sdkwork/router/data`.
 On Windows, the equivalent path is `%USERPROFILE%/.sdkwork/router/data`.
-Use `pnpm server:dev:sqlite` when validating explicit product server SQLite
-behavior from the workspace. `pnpm desktop:dev:sqlite` and
-`pnpm tauri:dev:sqlite` are client-mode aliases and do not start a product
+Use `pnpm dev:server:sqlite` when validating explicit product server SQLite
+behavior from the workspace. `pnpm dev:desktop:sqlite` and
+`pnpm dev:desktop:sqlite` is a client-mode entrypoint and does not start a product
 backend service.
 
-Gateway-backed client startup (`pnpm desktop:dev`, `pnpm tauri:dev`) prints
+Gateway-backed client startup (`pnpm dev:desktop`, `pnpm dev:desktop`) prints
 the browser and API access matrix before launching processes. With default
 ports, `sdkwork-api-gateway` listens on `3902` and the portal dev server
 listens on `3901`:
@@ -441,7 +436,7 @@ The portal dev server proxies same-origin API requests to the managed
 - Direct Portal App API OpenAPI Proxy:
   `http://127.0.0.1:3901/app/v3/api/openapi.json`
 
-Explicit `pnpm server:dev` startup prints the product edge access matrix. With
+Explicit `pnpm dev:server` startup prints the product edge access matrix. With
 default ports, the Rust edge server at `3900` is the single product server
 entrypoint. In default all-in-one server mode, `/v1`, `/backend/v3/api`, and
 `/app/v3/api` are dispatched to in-process Rust routers while portal assets
@@ -474,12 +469,12 @@ for debugging and external reverse proxy setups:
 - Backend/Admin API: `http://127.0.0.1:18081/backend/v3/api`
 - App API: `http://127.0.0.1:18082/app/v3/api`
 
-Use `pnpm server:plan` to print the explicit product server URLs and command
+Use `pnpm topology:plan:server` to print the explicit product server URLs and command
 plan without starting processes. Forward bind overrides through `--`, for
 example:
 
 ```powershell
-pnpm server:dev -- --server-bind 0.0.0.0:12900 --portal-bind 0.0.0.0:13900
+pnpm dev:server -- --server-bind 0.0.0.0:12900 --portal-bind 0.0.0.0:13900
 ```
 
 The Rust edge server forwarding targets default to the edge server itself in
@@ -487,7 +482,7 @@ when the edge server should forward to another host, container network, or
 separate local service process:
 
 ```powershell
-pnpm server:dev -- --gateway-forward-url http://gateway.internal:18080 --backend-api-forward-url http://admin.internal:18081 --app-api-forward-url http://app.internal:18082
+pnpm dev:server -- --gateway-forward-url http://gateway.internal:18080 --backend-api-forward-url http://admin.internal:18081 --app-api-forward-url http://app.internal:18082
 ```
 
 Forwarding URLs must be HTTP/HTTPS origins only. The Rust edge server uses
@@ -526,7 +521,7 @@ When the edge server is deployed behind a controlled HTTPS reverse proxy,
 set the reported external scheme explicitly:
 
 ```powershell
-pnpm server:dev -- --external-scheme https
+pnpm dev:server -- --external-scheme https
 pnpm start -- --external-scheme https
 ```
 
@@ -534,7 +529,7 @@ Only enable trusted forwarded headers when the edge server is not directly
 reachable by clients and every inbound request comes from that controlled proxy:
 
 ```powershell
-pnpm server:dev -- --external-scheme https --trust-forwarded-headers
+pnpm dev:server -- --external-scheme https --trust-forwarded-headers
 pnpm start -- --external-scheme https --trust-forwarded-headers
 ```
 
@@ -590,7 +585,7 @@ node scripts/verify-claw-router-product.mjs --skip-contract-guardians
 Do not use `--skip-contract-guardians` for final delivery.
 
 The live edge dev smoke still exists, but it is opt-in because it launches the
-explicit `pnpm server:dev` entrypoint, installer/catalog startup, Rust services,
+explicit `pnpm dev:server` entrypoint, installer/catalog startup, Rust services,
 and the portal dev server. Run it directly when you need that product server
 coverage:
 

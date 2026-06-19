@@ -188,6 +188,6 @@ Implementation proceeds in this order:
 6. Add `infrastructure` adapters behind ports.
 7. Wire modules through `bootstrap`.
 8. Add OpenAPI and regenerate SDKs.
-9. Run `python -B -m tools.schema_quality_gate`, `pnpm fmt:rust:check`, and `cargo test`.
+9. Run `python -B -m tools.schema_quality_gate`, `pnpm format:rust:check`, and `cargo test`.
 
 Database schema changes are not part of this standard step. Any table, column, index, migration, or embedded DB change requires explicit user confirmation before editing.

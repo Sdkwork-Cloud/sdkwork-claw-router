@@ -402,7 +402,7 @@ test("portal scripts run dependency preflight before Vite entrypoints", () => {
 
   assert.equal(portalPackage.scripts["deps:check"], "node scripts/check-portal-deps.mjs");
   assert.equal(portalPackage.scripts.dev, "pnpm deps:check && vite --configLoader native");
-  assert.equal(portalPackage.scripts["browser:dev"], "pnpm deps:check && vite --configLoader native");
+  assert.equal(portalPackage.scripts["dev:browser"], "pnpm deps:check && vite --configLoader native");
   assert.equal(portalPackage.scripts.build, "pnpm deps:check && node scripts/build-portal.mjs");
 });
 

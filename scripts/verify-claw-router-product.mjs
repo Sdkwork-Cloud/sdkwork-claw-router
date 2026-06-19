@@ -14,9 +14,9 @@ Options:
   --parallel             Run dependency-safe verification groups concurrently.
   --concurrency <count>  Maximum commands to run at once in a parallel group. Defaults to 4.
   --build-jobs <count>   Override Cargo build parallelism for Rust verify steps.
-  --with-edge-dev-smoke  Also run the real pnpm server:dev edge server smoke.
+  --with-edge-dev-smoke  Also run the real pnpm dev:server edge server smoke.
   --skip-edge-dev-smoke
-                         Skip the real pnpm server:dev edge server smoke even when CI or env opts in.
+                         Skip the real pnpm dev:server edge server smoke even when CI or env opts in.
   --skip-rust-tests      Skip cargo test --workspace.
   --skip-python-tests    Skip python -B -m unittest discover tests.
   --skip-schema-gate     Skip python -B -m tools.schema_quality_gate.
@@ -274,6 +274,18 @@ function buildFastVerificationPlan(env = process.env) {
       args: ['-B', '-m', 'tools.repository_delivery_guardian'],
       env,
     },
+    {
+      label: 'agent workflow standard check',
+      command: pnpmCommand(),
+      args: ['check:agent-workflow-standard'],
+      env,
+    },
+    {
+      label: 'pnpm script standard check',
+      command: pnpmCommand(),
+      args: ['check:pnpm-script-standard'],
+      env,
+    },
     ...buildTopologyVerificationPlan(env),
     {
       label: 'tooling contract tests',
@@ -327,6 +339,18 @@ function buildPrecommitVerificationPlan(env = process.env) {
       label: 'repository delivery guard',
       command: 'python',
       args: ['-B', '-m', 'tools.repository_delivery_guardian'],
+      env,
+    },
+    {
+      label: 'agent workflow standard check',
+      command: pnpmCommand(),
+      args: ['check:agent-workflow-standard'],
+      env,
+    },
+    {
+      label: 'pnpm script standard check',
+      command: pnpmCommand(),
+      args: ['check:pnpm-script-standard'],
       env,
     },
     ...buildTopologyVerificationPlan(env),
@@ -388,6 +412,18 @@ function buildVerificationPlan(settings, env = process.env) {
         ...rustEnv,
         RUSTFLAGS: mergeRustFlags(env.RUSTFLAGS, '-D warnings'),
       },
+    },
+    {
+      label: 'agent workflow standard check',
+      command: pnpmCommand(),
+      args: ['check:agent-workflow-standard'],
+      env,
+    },
+    {
+      label: 'pnpm script standard check',
+      command: pnpmCommand(),
+      args: ['check:pnpm-script-standard'],
+      env,
     },
     ...buildTopologyVerificationPlan(env),
     {

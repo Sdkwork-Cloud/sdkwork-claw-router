@@ -1361,7 +1361,7 @@ python -B -m tools.clawrouter_sdk_runtime_standardizer
 node scripts\verify-claw-router-product.mjs
 python -B -m unittest discover tests
 python -B -m unittest tests.test_frontend_source_hygiene_standard tests.test_models_catalog_runtime_standard tests.test_workspace_delivery_standard
-pnpm.cmd --dir apps\sdkwork-clawrouter-pc run product:check
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc run check
 pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-models typecheck
 pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-i18n typecheck
 node --experimental-strip-types apps\sdkwork-clawrouter-pc\models-runtime.test.ts
@@ -1448,7 +1448,7 @@ python -B -m unittest tests.test_frontend_source_hygiene_standard tests.test_mod
 Ran 20 tests
 OK
 
-pnpm.cmd --dir apps\sdkwork-clawrouter-pc run product:check
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc run check
 turbo run typecheck: 17 successful, 17 total
 vite production build completed and built dist\server.mjs
 

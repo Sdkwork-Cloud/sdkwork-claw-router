@@ -35,4 +35,4 @@ Materialization sources:
 - `generated/openapi/clawrouter-app-openapi.json`
 - `generated/openapi/clawrouter-backend-openapi.json`
 
-Upstream authoring inputs remain in `docs/schema-registry/` and `generated/api/api-contract-manifest.json`. Run `pnpm apis:materialize:write` after OpenAPI generation changes.
+Upstream authoring inputs remain in `docs/schema-registry/` and `generated/api/api-contract-manifest.json`. Run `pnpm api:materialize:write` after OpenAPI generation changes.

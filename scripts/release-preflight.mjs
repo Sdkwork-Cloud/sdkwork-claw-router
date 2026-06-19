@@ -692,7 +692,7 @@ function buildReleasePreflightReport({
     commandLine(pnpm, ['models:check']),
     commandLine(pnpm, ['verify']),
     commandLine(pnpm, ['test:postgres:required']),
-    commandLine(pnpm, ['server:plan']),
+    commandLine(pnpm, ['topology:plan:server']),
     commandLine(pnpm, ['clean:fast', '--', '--dry-run']),
   ];
 

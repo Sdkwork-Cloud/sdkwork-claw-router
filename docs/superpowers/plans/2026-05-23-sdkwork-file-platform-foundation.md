@@ -409,7 +409,7 @@ preserving the SDKWork appbase package boundaries and naming.
 - `pnpm.cmd --dir packages/common/file/sdkwork-file-schema test`
 - `pnpm.cmd --dir packages/common/file/sdkwork-file-api-contracts test`
 - `pnpm.cmd --dir packages/common/file/sdkwork-file-sdk-generation test`
-- `pnpm.cmd file-sdk:artifacts:check -- --json`
+- `pnpm.cmd sdk:file:artifacts:check -- --json`
 - `pnpm.cmd --dir packages/common/file/sdkwork-file-sdk-adapter test`
 - `pnpm.cmd --dir packages/common/file/sdkwork-file-service test`
 - `pnpm.cmd --dir packages/common/file/sdkwork-file-contracts typecheck`

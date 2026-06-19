@@ -295,7 +295,7 @@ export function createClawRouterProductLaunchPlan({
       plan.push({
         label: 'portal browser runtime',
         command: pnpm,
-        args: appendForwardArgs(['--dir', portalRelativeDir, 'browser:dev'], extraArgs),
+        args: appendForwardArgs(['--dir', portalRelativeDir, 'dev:browser'], extraArgs),
         cwd: workspaceRoot,
         env: launchEnv,
         shell,
@@ -304,9 +304,9 @@ export function createClawRouterProductLaunchPlan({
       return plan;
     case 'check':
       plan.push({
-        label: 'portal product check',
+        label: 'portal check',
         command: pnpm,
-        args: ['--dir', portalRelativeDir, 'product:check'],
+        args: ['--dir', portalRelativeDir, 'check'],
         cwd: workspaceRoot,
         env: launchEnv,
         shell,
@@ -341,20 +341,18 @@ Options:
   -h, --help             Show this help
 
 Database profiles:
-  pnpm clawrouter:dev / pnpm server:dev start the topology-aware integrated product server workspace (default profile: self-hosted.unified-process.development).
-  pnpm clawrouter:dev:desktop / pnpm desktop:dev / pnpm tauri:dev start sdkwork-api-gateway and the portal only (gateway-backed client workspace).
+  pnpm dev:browser starts the topology-aware integrated product server workspace (default profile: standalone.unified-process.development).
+  pnpm dev:desktop starts the desktop dev workspace with PostgreSQL and standalone topology by default.
   Desktop packages and first-run local user data use SQLite under ~/.sdkwork/router/data.
-  Use pnpm clawrouter:dev:sqlite or pnpm server:dev:sqlite to validate explicit product server SQLite behavior.
-  See docs/topology-standard.md for the full clawrouter:* command matrix.
+  Use pnpm dev:browser:sqlite or pnpm dev:desktop:sqlite to validate explicit SQLite behavior.
+  See docs/topology-standard.md for the full standard command matrix.
 
 Examples:
-  pnpm desktop:dev
-  pnpm service:dev
-  pnpm server:dev -- --gateway-bind 0.0.0.0:19080
   pnpm dev
-  pnpm dev:sqlite
-  pnpm dev:postgres
-  pnpm server:plan
+  pnpm dev:browser
+  pnpm dev:desktop
+  pnpm dev:browser:sqlite
+  pnpm topology:plan:server
 `);
 }
 

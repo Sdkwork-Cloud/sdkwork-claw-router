@@ -54,19 +54,19 @@ pnpm dev
 只启动 server 开发模式：
 
 ```powershell
-pnpm server:dev
+pnpm dev:server
 ```
 
 只启动 portal 浏览器开发服务：
 
 ```powershell
-pnpm portal:dev
+pnpm dev:desktop
 ```
 
 打印启动计划而不启动：
 
 ```powershell
-pnpm server:plan
+pnpm topology:plan:server
 ```
 
 默认访问：
@@ -84,19 +84,19 @@ App API: http://127.0.0.1:3902/app/v3/api
 外部访问开发服务：
 
 ```powershell
-pnpm server:dev -- --gateway-bind 0.0.0.0:19080 --server-bind 0.0.0.0:12900 --portal-bind 0.0.0.0:13900
+pnpm dev:server -- --gateway-bind 0.0.0.0:19080 --server-bind 0.0.0.0:12900 --portal-bind 0.0.0.0:13900
 ```
 
 把 edge server 转发到已有服务：
 
 ```powershell
-pnpm server:dev -- --gateway-forward-url http://gateway.internal:18080 --backend-api-forward-url http://admin.internal:18081 --app-api-forward-url http://app.internal:18082
+pnpm dev:server -- --gateway-forward-url http://gateway.internal:18080 --backend-api-forward-url http://admin.internal:18081 --app-api-forward-url http://app.internal:18082
 ```
 
 反向代理 HTTPS 场景：
 
 ```powershell
-pnpm server:dev -- --external-scheme https --trust-forwarded-headers
+pnpm dev:server -- --external-scheme https --trust-forwarded-headers
 ```
 
 只在受控反向代理后启用 forwarded header 信任。

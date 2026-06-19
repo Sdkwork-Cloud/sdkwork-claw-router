@@ -26,5 +26,5 @@ SDKWork Claw Router API maintainers.
 
 ## Verification
 
-- `pnpm apis:standard-extensions:check`
+- `pnpm api:standard-extensions:check`
 - `python tools/sdkwork_standard_alignment_guardian.py`

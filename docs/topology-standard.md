@@ -9,38 +9,53 @@ This repository adopts the shared SDKWork runtime topology framework.
 
 ## Archetype
 
-`application-http-gateway` — Claw Router exposes three **application** HTTP surfaces (open gateway `/v1`, backend `/backend/v3/api`, app `/app/v3/api`) through the edge server or split upstream services. Shared IAM and appbase SDKs use **platform.api-gateway**.
+`application-http-gateway` - Claw Router exposes three **application** HTTP
+surfaces (open gateway `/v1`, backend `/backend/v3/api`, app `/app/v3/api`)
+through the edge server or split upstream services. Shared IAM and appbase SDKs
+use **platform.api-gateway**.
 
-## Default dev profile
+## Default Dev Profile
 
-`self-hosted.unified-process.development` — single-port integrated runtime on `application.public-ingress`.
+`standalone.unified-process.development` - single-port integrated runtime on
+`application.public-ingress`.
 
-## Command matrix (`package.json`)
+Topology profiles use the SDKWork `deploymentProfile` axis directly:
+`standalone.*` for single-application units and `cloud.*` for split cloud
+deployment.
 
-Canonical topology commands use `scripts/claw-router-dev.mjs` with explicit `--hosting`, `--service-layout`, `--target`, and `--database` flags. Authoritative mapping is also declared in `specs/topology.spec.json` → `scripts.pnpm`.
+## Command Matrix (`package.json`)
 
-| Script | Hosting | Service layout | Target | Database |
+Canonical topology commands use `scripts/claw-router-dev.mjs` with explicit
+`--deployment-profile`, `--service-layout`, `--target`, and `--database` flags.
+Authoritative mapping is also declared in `specs/topology.spec.json` ->
+`scripts.pnpm`.
+
+| Script | Deployment profile | Service layout | Target | Database |
 | --- | --- | --- | --- | --- |
-| `pnpm clawrouter:dev` | self-hosted | unified-process | browser | postgres |
-| `pnpm clawrouter:dev:sqlite` | self-hosted | unified-process | browser | sqlite |
-| `pnpm clawrouter:dev:split` | self-hosted | split-services | browser | postgres |
-| `pnpm clawrouter:dev:cloud` | cloud-hosted | unified-process | browser | postgres |
-| `pnpm clawrouter:dev:cloud:split` | cloud-hosted | split-services | browser | postgres |
-| `pnpm clawrouter:dev:desktop` | self-hosted | unified-process | desktop | — |
-| `pnpm clawrouter:plan` | self-hosted | unified-process | plan | postgres |
+| `pnpm dev` | standalone | unified-process | browser | postgres |
+| `pnpm dev:browser` | standalone | unified-process | browser | postgres |
+| `pnpm dev:browser:sqlite` | standalone | unified-process | browser | sqlite |
+| `pnpm dev:browser:postgres:split-services:standalone` | standalone | split-services | browser | postgres |
+| `pnpm dev:browser:postgres:unified-process:cloud` | cloud | unified-process | browser | postgres |
+| `pnpm dev:browser:postgres:split-services:cloud` | cloud | split-services | browser | postgres |
+| `pnpm dev:desktop` | standalone | unified-process | desktop | postgres |
+| `pnpm dev:desktop:sqlite` | standalone | unified-process | desktop | sqlite |
+| `pnpm topology:plan:server` | standalone | unified-process | plan | postgres |
 
-Legacy aliases (`pnpm dev`, `pnpm server:dev`, `pnpm desktop:dev`) delegate to the canonical `clawrouter:*` scripts above.
+`pnpm dev`, `pnpm dev:browser`, and `pnpm dev:desktop` delegate to the canonical
+standard profile scripts above. Product-prefixed `clawrouter:*`, platform-first
+`desktop:*`, and tool-first `tauri:*` scripts are retired.
 
-Gateway packaging (cloud config bundle only — binary owned by `sdkwork-api-gateway`):
+Gateway packaging (cloud config bundle only, binary owned by `sdkwork-api-gateway`):
 
 | Script | Purpose |
 | --- | --- |
 | `pnpm gateway:matrix` | print all packaging targets from topology spec |
-| `pnpm gateway:cloud:matrix` | print `platform-config-bundle` targets |
-| `pnpm gateway:cloud:bundle` | bundle `configs/sdkwork-api-gateway.claw-router.*.toml` |
+| `pnpm gateway:matrix:cloud` | print `platform-config-bundle` targets |
+| `pnpm gateway:package:cloud` | bundle `configs/sdkwork-api-gateway.claw-router.*.toml` |
 | `pnpm topology:validate` | validate `specs/topology.spec.json` |
 
-## Local URLs (self-hosted unified dev)
+## Local URLs (standalone unified dev)
 
 | Surface | URL |
 | --- | --- |
@@ -51,16 +66,18 @@ Gateway packaging (cloud config bundle only — binary owned by `sdkwork-api-gat
 
 Client env keys:
 
-- `VITE_SDKWORK_CLAW_ROUTER_APPLICATION_PUBLIC_HTTP_URL` — app SDK (`/app/v3/api`)
-- `VITE_SDKWORK_CLAW_ROUTER_APPLICATION_BACKEND_HTTP_URL` — backend SDK (`/backend/v3/api`)
-- `VITE_SDKWORK_CLAW_ROUTER_APPLICATION_OPEN_HTTP_URL` — open SDK (`/v1`)
-- `VITE_SDKWORK_CLAW_ROUTER_PLATFORM_API_GATEWAY_HTTP_URL` — platform / IAM SDKs
+- `VITE_SDKWORK_CLAW_ROUTER_APPLICATION_PUBLIC_HTTP_URL` - app SDK (`/app/v3/api`)
+- `VITE_SDKWORK_CLAW_ROUTER_APPLICATION_BACKEND_HTTP_URL` - backend SDK (`/backend/v3/api`)
+- `VITE_SDKWORK_CLAW_ROUTER_APPLICATION_OPEN_HTTP_URL` - open SDK (`/v1`)
+- `VITE_SDKWORK_CLAW_ROUTER_PLATFORM_API_GATEWAY_HTTP_URL` - platform / IAM SDKs
 
-`start-workspace.mjs` health-gates the portal dev server: backend processes start first, required `/healthz` endpoints must pass, then Vite starts.
+`start-workspace.mjs` health-gates the portal dev server: backend processes
+start first, required `/healthz` endpoints must pass, then Vite starts.
 
-Profile values live in `configs/topology/*.env` only. Do not hardcode ports in route crates or feature packages.
+Profile values live in `configs/topology/*.env` only. Do not hardcode ports in
+route crates or feature packages.
 
-Cloud gateway config bundles (for `cloud-hosted` profiles):
+Cloud gateway config bundles (for `cloud` profiles):
 
 - `configs/sdkwork-api-gateway.claw-router.development.toml`
 - `configs/sdkwork-api-gateway.claw-router.production.toml`

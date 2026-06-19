@@ -119,7 +119,7 @@
     },
     "portalRenderer": {
       "package": "apps/sdkwork-clawrouter-pc",
-      "script": "browser:dev"
+      "script": "dev:browser"
     },
     "cloudGateway": {
       "crate": "sdkwork-api-gateway-api-server",
@@ -141,7 +141,7 @@
           {
             "id": "portal-renderer",
             "package": "apps/sdkwork-clawrouter-pc",
-            "script": "browser:dev",
+            "script": "dev:browser",
             "required": true
           }
         ],
@@ -182,7 +182,7 @@
           {
             "id": "portal-renderer",
             "package": "apps/sdkwork-clawrouter-pc",
-            "script": "browser:dev",
+            "script": "dev:browser",
             "required": true
           }
         ],
@@ -209,7 +209,7 @@
           {
             "id": "portal-renderer",
             "package": "apps/sdkwork-clawrouter-pc",
-            "script": "browser:dev",
+            "script": "dev:browser",
             "required": true
           }
         ],
@@ -250,7 +250,7 @@
           {
             "id": "portal-renderer",
             "package": "apps/sdkwork-clawrouter-pc",
-            "script": "browser:dev",
+            "script": "dev:browser",
             "required": true
           }
         ],
@@ -276,7 +276,7 @@
         "architecture": "all",
         "formats": ["tar.gz"],
         "runner": "ubuntu-24.04",
-        "outputGlob": "dist/cloud-config/sdkwork-claw-router-api-gateway-config-*.tar.gz"
+        "outputGlob": "dist/config-bundle/sdkwork-claw-router-api-gateway-config-*.tar.gz"
       }
     ]
   },
@@ -284,32 +284,37 @@
     "clawRouterDev": "scripts/claw-router-dev.mjs",
     "gatewayCloudBundle": "scripts/gateway-cloud-bundle.mjs",
     "pnpm": {
-      "clawrouter:dev": {
-        "script": "clawrouter:dev",
+      "dev": {
+        "script": "dev",
+        "deploymentProfile": "standalone",
         "hosting": "self-hosted",
         "serviceLayout": "unified-process",
         "target": "browser",
         "database": "postgres"
       },
-      "clawrouter:dev:split": {
-        "script": "clawrouter:dev:split",
+      "dev:browser:postgres:split-services:standalone": {
+        "script": "dev:browser:postgres:split-services:standalone",
+        "deploymentProfile": "standalone",
         "hosting": "self-hosted",
         "serviceLayout": "split-services",
         "target": "browser",
         "database": "postgres"
       },
-      "clawrouter:dev:cloud": {
-        "script": "clawrouter:dev:cloud",
+      "dev:browser:postgres:unified-process:cloud": {
+        "script": "dev:browser:postgres:unified-process:cloud",
+        "deploymentProfile": "cloud",
         "hosting": "cloud-hosted",
         "serviceLayout": "unified-process",
         "target": "browser",
         "database": "postgres"
       },
-      "clawrouter:dev:desktop": {
-        "script": "clawrouter:dev:desktop",
+      "dev:desktop": {
+        "script": "dev:desktop",
+        "deploymentProfile": "standalone",
         "hosting": "self-hosted",
         "serviceLayout": "unified-process",
-        "target": "desktop"
+        "target": "desktop",
+        "database": "postgres"
       },
       "topology:validate": {
         "script": "topology:validate",
@@ -319,12 +324,12 @@
         "script": "gateway:matrix",
         "command": "sdkwork-topology print-matrix --profile all"
       },
-      "gateway:cloud:matrix": {
-        "script": "gateway:cloud:matrix",
+      "gateway:matrix:cloud": {
+        "script": "gateway:matrix:cloud",
         "command": "sdkwork-topology print-matrix --profile platform-config-bundle"
       },
-      "gateway:cloud:bundle": {
-        "script": "gateway:cloud:bundle",
+      "gateway:package:cloud": {
+        "script": "gateway:package:cloud",
         "command": "gateway-cloud-bundle bundle"
       }
     }

@@ -1,20 +1,20 @@
 # SDKWork Claw Router PostgreSQL Configuration
 
 SDKWork Claw Router uses PostgreSQL for explicit product server development and
-production service deployments. Integrated development (`pnpm clawrouter:dev`,
-aliases `pnpm dev` and `pnpm server:dev`) uses PostgreSQL by default.
+production service deployments. Integrated development (`pnpm dev`,
+aliases `pnpm dev` and `pnpm dev:server`) uses PostgreSQL by default.
 Gateway-backed desktop client commands go through `sdkwork-api-gateway`;
 desktop/runtime local user data remains SQLite by default.
 
 SDKWork Claw Router supports two PostgreSQL configuration paths:
 
-- Integrated and explicit product server development: `pnpm clawrouter:dev`
-  (aliases `pnpm dev`, `pnpm server:dev`) and `pnpm server:dev:postgres` use the
+- Integrated and explicit product server development: `pnpm dev`
+  (aliases `pnpm dev`, `pnpm dev:server`) and `pnpm dev:server:postgres` use the
   local PostgreSQL profile from `.env.postgres` when present, otherwise
   `.env.postgres.example` for the Claw Router backend service runtime. Use
-  `pnpm server:dev:sqlite` or `pnpm clawrouter:dev:sqlite` only when explicit
+  `pnpm dev:server:sqlite` or `pnpm dev:browser:sqlite` only when explicit
   product server SQLite behavior is intended. Gateway-backed client commands
-  (`pnpm clawrouter:dev:desktop`, `pnpm desktop:dev`, and `pnpm tauri:dev`) do
+  (`pnpm dev:desktop`, `pnpm dev:desktop`, and `pnpm dev:desktop`) do
   not start the product backend service.
 - Production environment: do not use `.env.postgres`. Use the protected runtime TOML file, process override file, and secret files from the OS-specific release layout.
 
@@ -27,7 +27,7 @@ change the desktop package default: the desktop local data profile stores
 SQLite under `~/.sdkwork/router/data/clawrouter.sqlite` or
 `%USERPROFILE%/.sdkwork/router/data/clawrouter.sqlite` on Windows. SQLite also
 remains available through explicit product server development entrypoints such
-as `pnpm server:dev:sqlite`.
+as `pnpm dev:server:sqlite`.
 
 Workspace desktop development commands are gateway-backed client commands; they
 do not start a product backend service. Packaged desktop runtime and

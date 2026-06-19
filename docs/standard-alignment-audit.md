@@ -5,8 +5,8 @@
 审计命令：
 
 ```bash
-pnpm alignment:audit
-pnpm alignment:check
+pnpm check:alignment:audit
+pnpm check:alignment
 python tools/sdkwork_standard_alignment_guardian.py --strict
 ```
 
@@ -91,7 +91,7 @@ python tools/sdkwork_standard_alignment_guardian.py --strict
 ### API（已对齐元数据层）
 
 - 契约权威：`apis/`（materialize 自 `generated/openapi` / SDK 权威）
-- 标准扩展工具：`pnpm apis:standard-extensions:write`
+- 标准扩展工具：`pnpm api:standard-extensions:write`
 - Route manifest：`sdks/_route-manifests/{app,backend,open}-api/*.route-manifest.json`
 
 ### 前端（已对齐）
@@ -112,9 +112,9 @@ python tools/sdkwork_standard_alignment_guardian.py --strict
 ## 7. 验证命令
 
 ```bash
-pnpm alignment:audit
-pnpm apis:standard-extensions:check
-pnpm apis:http-route-manifest:check
+pnpm check:alignment:audit
+pnpm api:standard-extensions:check
+pnpm api:http-route-manifest:check
 pnpm topology:validate
 python tools/architecture_standard_guardian.py
 cargo check -p sdkwork-router-app-api -p sdkwork-router-backend-api
