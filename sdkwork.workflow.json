@@ -126,13 +126,13 @@
         "name": "Build selected install package",
         "shell": "pwsh",
         "workingDirectory": ".",
-        "run": "$ErrorActionPreference = \"Stop\"\nfunction Resolve-ClawRouterPackageId([string] $packageId) {\n  switch ($packageId) {\n    \"linux-debian-x64-server-deb\" { return \"linux-x64-service\" }\n    \"linux-debian-arm64-server-deb\" { return \"linux-arm64-service\" }\n    \"linux-x64-server-tar-gz\" { return \"linux-x64-archive\" }\n    \"linux-arm64-server-tar-gz\" { return \"linux-arm64-archive\" }\n    \"windows-x64-server-msi\" { return \"windows-x64-service\" }\n    \"windows-arm64-server-msi\" { return \"windows-arm64-service\" }\n    \"windows-x64-server-zip\" { return \"windows-x64-archive\" }\n    \"windows-arm64-server-zip\" { return \"windows-arm64-archive\" }\n    \"macos-x64-server-pkg\" { return \"macos-x64-service\" }\n    \"macos-arm64-server-pkg\" { return \"macos-arm64-service\" }\n    \"macos-x64-server-tar-gz\" { return \"macos-x64-archive\" }\n    \"macos-arm64-server-tar-gz\" { return \"macos-arm64-archive\" }\n    \"linux-debian-x64-desktop-deb\" { return \"linux-x64-desktop\" }\n    \"linux-debian-arm64-desktop-deb\" { return \"linux-arm64-desktop\" }\n    \"windows-x64-desktop-msi\" { return \"windows-x64-desktop\" }\n    \"windows-arm64-desktop-msi\" { return \"windows-arm64-desktop\" }\n    \"macos-x64-desktop-pkg\" { return \"macos-x64-desktop\" }\n    \"macos-arm64-desktop-pkg\" { return \"macos-arm64-desktop\" }\n    default { throw \"Unsupported SDKWork package id $packageId\" }\n  }\n}\n$legacyPackageId = Resolve-ClawRouterPackageId $env:SDKWORK_PACKAGE_ID\nif ($env:SDKWORK_PACKAGE_FORMAT -in @(\"deb\", \"pkg\", \"msi\")) {\n  node scripts/build-claw-router-native-installer.mjs --package-id $legacyPackageId --version $env:SDKWORK_PACKAGE_VERSION --staging-root dist/install-package-staging --output-dir dist/install-packages --json\n} else {\n  node scripts/build-claw-router-install-package.mjs --package-id $legacyPackageId --version $env:SDKWORK_PACKAGE_VERSION --staging-root dist/install-package-staging --output-dir dist/install-packages --json\n}"
+        "run": "$ErrorActionPreference = \"Stop\"\nfunction Resolve-ClawRouterPackageId([string] $packageId) {\n  switch ($packageId) {\n    \"linux-debian-x64-standalone-server-deb\" { return \"linux-x64-service\" }\n    \"linux-debian-arm64-standalone-server-deb\" { return \"linux-arm64-service\" }\n    \"linux-x64-standalone-server-tar-gz\" { return \"linux-x64-archive\" }\n    \"linux-arm64-standalone-server-tar-gz\" { return \"linux-arm64-archive\" }\n    \"windows-x64-standalone-server-msi\" { return \"windows-x64-service\" }\n    \"windows-arm64-standalone-server-msi\" { return \"windows-arm64-service\" }\n    \"windows-x64-standalone-server-zip\" { return \"windows-x64-archive\" }\n    \"windows-arm64-standalone-server-zip\" { return \"windows-arm64-archive\" }\n    \"macos-x64-standalone-server-pkg\" { return \"macos-x64-service\" }\n    \"macos-arm64-standalone-server-pkg\" { return \"macos-arm64-service\" }\n    \"macos-x64-standalone-server-tar-gz\" { return \"macos-x64-archive\" }\n    \"macos-arm64-standalone-server-tar-gz\" { return \"macos-arm64-archive\" }\n    \"linux-debian-x64-standalone-desktop-deb\" { return \"linux-x64-desktop\" }\n    \"linux-debian-arm64-standalone-desktop-deb\" { return \"linux-arm64-desktop\" }\n    \"windows-x64-standalone-desktop-msi\" { return \"windows-x64-desktop\" }\n    \"windows-arm64-standalone-desktop-msi\" { return \"windows-arm64-desktop\" }\n    \"macos-x64-standalone-desktop-pkg\" { return \"macos-x64-desktop\" }\n    \"macos-arm64-standalone-desktop-pkg\" { return \"macos-arm64-desktop\" }\n    default { throw \"Unsupported SDKWork package id $packageId\" }\n  }\n}\n$legacyPackageId = Resolve-ClawRouterPackageId $env:SDKWORK_PACKAGE_ID\nif ($env:SDKWORK_PACKAGE_FORMAT -in @(\"deb\", \"pkg\", \"msi\")) {\n  node scripts/build-claw-router-native-installer.mjs --package-id $legacyPackageId --version $env:SDKWORK_PACKAGE_VERSION --staging-root dist/install-package-staging --output-dir dist/install-packages --json\n} else {\n  node scripts/build-claw-router-install-package.mjs --package-id $legacyPackageId --version $env:SDKWORK_PACKAGE_VERSION --staging-root dist/install-package-staging --output-dir dist/install-packages --json\n}"
       },
       {
         "name": "Package cloud gateway config bundle",
         "shell": "pwsh",
         "workingDirectory": ".",
-        "run": "$ErrorActionPreference = \"Stop\"\nswitch ($env:SDKWORK_PACKAGE_PROFILE) {\n  'cloud-config' { pnpm gateway:cloud:bundle }\n  default { Write-Host \"Skipping cloud gateway config bundle for profile $($env:SDKWORK_PACKAGE_PROFILE)\" }\n}"
+        "run": "$ErrorActionPreference = \"Stop\"\nswitch ($env:SDKWORK_PACKAGE_VARIANT) {\n  'config-bundle' { pnpm gateway:cloud:bundle }\n  default { Write-Host \"Skipping cloud gateway config bundle for profile $($env:SDKWORK_PACKAGE_VARIANT)\" }\n}"
       }
     ],
     "validate": [
@@ -140,13 +140,13 @@
         "name": "Validate selected install package",
         "shell": "pwsh",
         "workingDirectory": ".",
-        "run": "$ErrorActionPreference = \"Stop\"\nfunction Resolve-ClawRouterPackageId([string] $packageId) {\n  switch ($packageId) {\n    \"linux-debian-x64-server-deb\" { return \"linux-x64-service\" }\n    \"linux-debian-arm64-server-deb\" { return \"linux-arm64-service\" }\n    \"linux-x64-server-tar-gz\" { return \"linux-x64-archive\" }\n    \"linux-arm64-server-tar-gz\" { return \"linux-arm64-archive\" }\n    \"windows-x64-server-msi\" { return \"windows-x64-service\" }\n    \"windows-arm64-server-msi\" { return \"windows-arm64-service\" }\n    \"windows-x64-server-zip\" { return \"windows-x64-archive\" }\n    \"windows-arm64-server-zip\" { return \"windows-arm64-archive\" }\n    \"macos-x64-server-pkg\" { return \"macos-x64-service\" }\n    \"macos-arm64-server-pkg\" { return \"macos-arm64-service\" }\n    \"macos-x64-server-tar-gz\" { return \"macos-x64-archive\" }\n    \"macos-arm64-server-tar-gz\" { return \"macos-arm64-archive\" }\n    \"linux-debian-x64-desktop-deb\" { return \"linux-x64-desktop\" }\n    \"linux-debian-arm64-desktop-deb\" { return \"linux-arm64-desktop\" }\n    \"windows-x64-desktop-msi\" { return \"windows-x64-desktop\" }\n    \"windows-arm64-desktop-msi\" { return \"windows-x64-desktop\" }\n    \"macos-x64-desktop-pkg\" { return \"macos-x64-desktop\" }\n    \"macos-arm64-desktop-pkg\" { return \"macos-arm64-desktop\" }\n    default { throw \"Unsupported SDKWork package id $packageId\" }\n  }\n}\nfunction Resolve-ClawRouterArtifactId([string] $legacyPackageId) {\n  $parts = $legacyPackageId -split \"-\"\n  if ($parts.Length -ne 3) { throw \"Invalid legacy Claw Router package id $legacyPackageId\" }\n  if ($parts[2] -eq \"service\") { return \"$($parts[0])-$($parts[1])-server\" }\n  return $legacyPackageId\n}\n$legacyPackageId = Resolve-ClawRouterPackageId $env:SDKWORK_PACKAGE_ID\n$legacyArtifactId = Resolve-ClawRouterArtifactId $legacyPackageId\n$pattern = \"clawrouter-$legacyArtifactId-$env:SDKWORK_PACKAGE_VERSION.$env:SDKWORK_PACKAGE_FORMAT\"\n$file = Get-ChildItem -Path \"dist/install-packages\" -File |\n  Where-Object { $_.Name -like $pattern -and $_.Name -notlike \"*.manifest.json\" -and $_.Name -notlike \"install-packages-manifest*.json\" } |\n  Select-Object -First 1\nif (-not $file) { throw \"Missing built install package artifact matching $pattern for $env:SDKWORK_PACKAGE_ID\" }\nnode scripts/validate-claw-router-install-artifacts.mjs --package-id $legacyPackageId --artifact-path $file.FullName --version $env:SDKWORK_PACKAGE_VERSION"
+        "run": "$ErrorActionPreference = \"Stop\"\nfunction Resolve-ClawRouterPackageId([string] $packageId) {\n  switch ($packageId) {\n    \"linux-debian-x64-standalone-server-deb\" { return \"linux-x64-service\" }\n    \"linux-debian-arm64-standalone-server-deb\" { return \"linux-arm64-service\" }\n    \"linux-x64-standalone-server-tar-gz\" { return \"linux-x64-archive\" }\n    \"linux-arm64-standalone-server-tar-gz\" { return \"linux-arm64-archive\" }\n    \"windows-x64-standalone-server-msi\" { return \"windows-x64-service\" }\n    \"windows-arm64-standalone-server-msi\" { return \"windows-arm64-service\" }\n    \"windows-x64-standalone-server-zip\" { return \"windows-x64-archive\" }\n    \"windows-arm64-standalone-server-zip\" { return \"windows-arm64-archive\" }\n    \"macos-x64-standalone-server-pkg\" { return \"macos-x64-service\" }\n    \"macos-arm64-standalone-server-pkg\" { return \"macos-arm64-service\" }\n    \"macos-x64-standalone-server-tar-gz\" { return \"macos-x64-archive\" }\n    \"macos-arm64-standalone-server-tar-gz\" { return \"macos-arm64-archive\" }\n    \"linux-debian-x64-standalone-desktop-deb\" { return \"linux-x64-desktop\" }\n    \"linux-debian-arm64-standalone-desktop-deb\" { return \"linux-arm64-desktop\" }\n    \"windows-x64-standalone-desktop-msi\" { return \"windows-x64-desktop\" }\n    \"windows-arm64-standalone-desktop-msi\" { return \"windows-x64-desktop\" }\n    \"macos-x64-standalone-desktop-pkg\" { return \"macos-x64-desktop\" }\n    \"macos-arm64-standalone-desktop-pkg\" { return \"macos-arm64-desktop\" }\n    default { throw \"Unsupported SDKWork package id $packageId\" }\n  }\n}\nfunction Resolve-ClawRouterArtifactId([string] $legacyPackageId) {\n  $parts = $legacyPackageId -split \"-\"\n  if ($parts.Length -ne 3) { throw \"Invalid legacy Claw Router package id $legacyPackageId\" }\n  if ($parts[2] -eq \"service\") { return \"$($parts[0])-$($parts[1])-server\" }\n  return $legacyPackageId\n}\n$legacyPackageId = Resolve-ClawRouterPackageId $env:SDKWORK_PACKAGE_ID\n$legacyArtifactId = Resolve-ClawRouterArtifactId $legacyPackageId\n$pattern = \"clawrouter-$legacyArtifactId-$env:SDKWORK_PACKAGE_VERSION.$env:SDKWORK_PACKAGE_FORMAT\"\n$file = Get-ChildItem -Path \"dist/install-packages\" -File |\n  Where-Object { $_.Name -like $pattern -and $_.Name -notlike \"*.manifest.json\" -and $_.Name -notlike \"install-packages-manifest*.json\" } |\n  Select-Object -First 1\nif (-not $file) { throw \"Missing built install package artifact matching $pattern for $env:SDKWORK_PACKAGE_ID\" }\nnode scripts/validate-claw-router-install-artifacts.mjs --package-id $legacyPackageId --artifact-path $file.FullName --version $env:SDKWORK_PACKAGE_VERSION"
       },
       {
         "name": "Validate cloud gateway config bundle",
         "shell": "pwsh",
         "workingDirectory": ".",
-        "run": "$ErrorActionPreference = \"Stop\"\nswitch ($env:SDKWORK_PACKAGE_PROFILE) {\n  'cloud-config' { pnpm gateway:cloud:bundle:validate }\n  default { Write-Host \"Skipping cloud gateway config bundle validation for profile $($env:SDKWORK_PACKAGE_PROFILE)\" }\n}"
+        "run": "$ErrorActionPreference = \"Stop\"\nswitch ($env:SDKWORK_PACKAGE_VARIANT) {\n  'config-bundle' { pnpm gateway:cloud:bundle:validate }\n  default { Write-Host \"Skipping cloud gateway config bundle validation for profile $($env:SDKWORK_PACKAGE_VARIANT)\" }\n}"
       }
     ],
     "sign": [
@@ -168,179 +168,294 @@
   },
   "targets": [
     {
-      "id": "linux-debian-x64-server-deb",
+      "id": "linux-debian-x64-standalone-server-deb",
       "profile": "server",
       "platform": "linux",
       "distribution": "debian",
       "architecture": "x64",
-      "formats": ["deb"],
+      "formats": [
+        "deb"
+      ],
       "runner": "ubuntu-24.04",
-      "outputGlobs": ["dist/install-packages/*"]
+      "outputGlobs": [
+        "dist/install-packages/*"
+      ],
+      "deploymentProfile": "standalone",
+      "runtimeTarget": "server"
     },
     {
-      "id": "linux-debian-arm64-server-deb",
+      "id": "linux-debian-arm64-standalone-server-deb",
       "profile": "server",
       "platform": "linux",
       "distribution": "debian",
       "architecture": "arm64",
-      "formats": ["deb"],
+      "formats": [
+        "deb"
+      ],
       "runner": "ubuntu-24.04-arm",
-      "outputGlobs": ["dist/install-packages/*"]
+      "outputGlobs": [
+        "dist/install-packages/*"
+      ],
+      "deploymentProfile": "standalone",
+      "runtimeTarget": "server"
     },
     {
-      "id": "linux-x64-server-tar-gz",
+      "id": "linux-x64-standalone-server-tar-gz",
       "profile": "server",
       "platform": "linux",
       "architecture": "x64",
-      "formats": ["tar.gz"],
+      "formats": [
+        "tar.gz"
+      ],
       "runner": "ubuntu-24.04",
-      "outputGlobs": ["dist/install-packages/*"]
+      "outputGlobs": [
+        "dist/install-packages/*"
+      ],
+      "deploymentProfile": "standalone",
+      "runtimeTarget": "server"
     },
     {
-      "id": "linux-arm64-server-tar-gz",
+      "id": "linux-arm64-standalone-server-tar-gz",
       "profile": "server",
       "platform": "linux",
       "architecture": "arm64",
-      "formats": ["tar.gz"],
+      "formats": [
+        "tar.gz"
+      ],
       "runner": "ubuntu-24.04-arm",
-      "outputGlobs": ["dist/install-packages/*"]
+      "outputGlobs": [
+        "dist/install-packages/*"
+      ],
+      "deploymentProfile": "standalone",
+      "runtimeTarget": "server"
     },
     {
-      "id": "windows-x64-server-msi",
+      "id": "windows-x64-standalone-server-msi",
       "profile": "server",
       "platform": "windows",
       "architecture": "x64",
-      "formats": ["msi"],
+      "formats": [
+        "msi"
+      ],
       "runner": "windows-2022",
-      "outputGlobs": ["dist/install-packages/*"]
+      "outputGlobs": [
+        "dist/install-packages/*"
+      ],
+      "deploymentProfile": "standalone",
+      "runtimeTarget": "server"
     },
     {
-      "id": "windows-arm64-server-msi",
+      "id": "windows-arm64-standalone-server-msi",
       "profile": "server",
       "platform": "windows",
       "architecture": "arm64",
-      "formats": ["msi"],
+      "formats": [
+        "msi"
+      ],
       "runner": "windows-11-arm",
-      "outputGlobs": ["dist/install-packages/*"]
+      "outputGlobs": [
+        "dist/install-packages/*"
+      ],
+      "deploymentProfile": "standalone",
+      "runtimeTarget": "server"
     },
     {
-      "id": "windows-x64-server-zip",
+      "id": "windows-x64-standalone-server-zip",
       "profile": "server",
       "platform": "windows",
       "architecture": "x64",
-      "formats": ["zip"],
+      "formats": [
+        "zip"
+      ],
       "runner": "windows-2022",
-      "outputGlobs": ["dist/install-packages/*"]
+      "outputGlobs": [
+        "dist/install-packages/*"
+      ],
+      "deploymentProfile": "standalone",
+      "runtimeTarget": "server"
     },
     {
-      "id": "windows-arm64-server-zip",
+      "id": "windows-arm64-standalone-server-zip",
       "profile": "server",
       "platform": "windows",
       "architecture": "arm64",
-      "formats": ["zip"],
+      "formats": [
+        "zip"
+      ],
       "runner": "windows-11-arm",
-      "outputGlobs": ["dist/install-packages/*"]
+      "outputGlobs": [
+        "dist/install-packages/*"
+      ],
+      "deploymentProfile": "standalone",
+      "runtimeTarget": "server"
     },
     {
-      "id": "macos-x64-server-pkg",
+      "id": "macos-x64-standalone-server-pkg",
       "profile": "server",
       "platform": "macos",
       "architecture": "x64",
-      "formats": ["pkg"],
+      "formats": [
+        "pkg"
+      ],
       "runner": "macos-15-intel",
-      "outputGlobs": ["dist/install-packages/*"]
+      "outputGlobs": [
+        "dist/install-packages/*"
+      ],
+      "deploymentProfile": "standalone",
+      "runtimeTarget": "server"
     },
     {
-      "id": "macos-arm64-server-pkg",
+      "id": "macos-arm64-standalone-server-pkg",
       "profile": "server",
       "platform": "macos",
       "architecture": "arm64",
-      "formats": ["pkg"],
+      "formats": [
+        "pkg"
+      ],
       "runner": "macos-14",
-      "outputGlobs": ["dist/install-packages/*"]
+      "outputGlobs": [
+        "dist/install-packages/*"
+      ],
+      "deploymentProfile": "standalone",
+      "runtimeTarget": "server"
     },
     {
-      "id": "macos-x64-server-tar-gz",
+      "id": "macos-x64-standalone-server-tar-gz",
       "profile": "server",
       "platform": "macos",
       "architecture": "x64",
-      "formats": ["tar.gz"],
+      "formats": [
+        "tar.gz"
+      ],
       "runner": "macos-15-intel",
-      "outputGlobs": ["dist/install-packages/*"]
+      "outputGlobs": [
+        "dist/install-packages/*"
+      ],
+      "deploymentProfile": "standalone",
+      "runtimeTarget": "server"
     },
     {
-      "id": "macos-arm64-server-tar-gz",
+      "id": "macos-arm64-standalone-server-tar-gz",
       "profile": "server",
       "platform": "macos",
       "architecture": "arm64",
-      "formats": ["tar.gz"],
+      "formats": [
+        "tar.gz"
+      ],
       "runner": "macos-14",
-      "outputGlobs": ["dist/install-packages/*"]
+      "outputGlobs": [
+        "dist/install-packages/*"
+      ],
+      "deploymentProfile": "standalone",
+      "runtimeTarget": "server"
     },
     {
-      "id": "linux-debian-x64-desktop-deb",
+      "id": "linux-debian-x64-standalone-desktop-deb",
       "profile": "desktop",
       "platform": "linux",
       "distribution": "debian",
       "architecture": "x64",
-      "formats": ["deb"],
+      "formats": [
+        "deb"
+      ],
       "runner": "ubuntu-24.04",
-      "outputGlobs": ["dist/install-packages/*"]
+      "outputGlobs": [
+        "dist/install-packages/*"
+      ],
+      "deploymentProfile": "standalone",
+      "runtimeTarget": "desktop"
     },
     {
-      "id": "linux-debian-arm64-desktop-deb",
+      "id": "linux-debian-arm64-standalone-desktop-deb",
       "profile": "desktop",
       "platform": "linux",
       "distribution": "debian",
       "architecture": "arm64",
-      "formats": ["deb"],
+      "formats": [
+        "deb"
+      ],
       "runner": "ubuntu-24.04-arm",
-      "outputGlobs": ["dist/install-packages/*"]
+      "outputGlobs": [
+        "dist/install-packages/*"
+      ],
+      "deploymentProfile": "standalone",
+      "runtimeTarget": "desktop"
     },
     {
-      "id": "windows-x64-desktop-msi",
+      "id": "windows-x64-standalone-desktop-msi",
       "profile": "desktop",
       "platform": "windows",
       "architecture": "x64",
-      "formats": ["msi"],
+      "formats": [
+        "msi"
+      ],
       "runner": "windows-2022",
-      "outputGlobs": ["dist/install-packages/*"]
+      "outputGlobs": [
+        "dist/install-packages/*"
+      ],
+      "deploymentProfile": "standalone",
+      "runtimeTarget": "desktop"
     },
     {
-      "id": "windows-arm64-desktop-msi",
+      "id": "windows-arm64-standalone-desktop-msi",
       "profile": "desktop",
       "platform": "windows",
       "architecture": "arm64",
-      "formats": ["msi"],
+      "formats": [
+        "msi"
+      ],
       "runner": "windows-11-arm",
-      "outputGlobs": ["dist/install-packages/*"]
+      "outputGlobs": [
+        "dist/install-packages/*"
+      ],
+      "deploymentProfile": "standalone",
+      "runtimeTarget": "desktop"
     },
     {
-      "id": "macos-x64-desktop-pkg",
+      "id": "macos-x64-standalone-desktop-pkg",
       "profile": "desktop",
       "platform": "macos",
       "architecture": "x64",
-      "formats": ["pkg"],
+      "formats": [
+        "pkg"
+      ],
       "runner": "macos-15-intel",
-      "outputGlobs": ["dist/install-packages/*"]
+      "outputGlobs": [
+        "dist/install-packages/*"
+      ],
+      "deploymentProfile": "standalone",
+      "runtimeTarget": "desktop"
     },
     {
-      "id": "macos-arm64-desktop-pkg",
+      "id": "macos-arm64-standalone-desktop-pkg",
       "profile": "desktop",
       "platform": "macos",
       "architecture": "arm64",
-      "formats": ["pkg"],
+      "formats": [
+        "pkg"
+      ],
       "runner": "macos-14",
-      "outputGlobs": ["dist/install-packages/*"]
+      "outputGlobs": [
+        "dist/install-packages/*"
+      ],
+      "deploymentProfile": "standalone",
+      "runtimeTarget": "desktop"
     },
     {
-      "id": "platform-config-bundle-tar-gz",
-      "profile": "cloud-config",
-      "platform": "all",
-      "architecture": "all",
-      "formats": ["tar.gz"],
+      "id": "container-noarch-cloud-container-config-bundle-tar-gz",
+      "profile": "container",
+      "platform": "container",
+      "architecture": "noarch",
+      "formats": [
+        "tar.gz"
+      ],
       "runner": "ubuntu-24.04",
-      "outputGlobs": ["dist/cloud-config/sdkwork-claw-router-api-gateway-config-*.tar.gz"]
+      "outputGlobs": [
+        "dist/config-bundle/sdkwork-claw-router-api-gateway-config-*.tar.gz"
+      ],
+      "deploymentProfile": "cloud",
+      "runtimeTarget": "container",
+      "variant": "config-bundle"
     }
   ],
   "security": {

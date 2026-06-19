@@ -75,6 +75,7 @@ class SdkworkStandardAlignmentGuardian:
         checks.extend(self._check_workflow_dependencies())
         checks.extend(self._check_cargo_workspace_dependencies())
         checks.extend(self._check_web_framework_integration())
+        checks.extend(self._check_handler_subject_resolution())
         checks.extend(self._check_http_route_manifest_runtime())
         checks.extend(self._check_database_framework_integration())
         checks.extend(self._check_api_contract_metadata())
@@ -349,6 +350,58 @@ class SdkworkStandardAlignmentGuardian:
                 remediation="use finalize_all_in_one_route_surfaces to wrap both shared-runtime routers",
             )
         )
+        return checks
+
+    def _check_handler_subject_resolution(self) -> list[AlignmentCheck]:
+        checks: list[AlignmentCheck] = []
+        api_dir = self.root / "services" / "sdkwork-claw-product" / "src" / "api"
+        allowlist = {"app_auth.rs", "subject.rs"}
+        legacy_files: list[str] = []
+        migrated_files: list[str] = []
+        for path in sorted(api_dir.glob("*.rs")):
+            if path.name in allowlist:
+                continue
+            text = path.read_text(encoding="utf-8")
+            if "TrustedRequestSubject::from_headers" in text:
+                legacy_files.append(path.name)
+            if "Option<TrustedRequestSubject>" in text or "_subject: TrustedRequestSubject" in text:
+                if "TrustedRequestSubject::from_headers" not in text:
+                    migrated_files.append(path.name)
+
+        checks.append(
+            AlignmentCheck(
+                id="web-framework-handler-subject-migration",
+                category="web-framework",
+                severity="warning",
+                status="pass" if not legacy_files else "fail",
+                message=(
+                    "product API handlers resolve subject via TrustedRequestSubject extractors"
+                    if not legacy_files
+                    else (
+                        f"{len(legacy_files)} product API handlers still call "
+                        "TrustedRequestSubject::from_headers"
+                    )
+                ),
+                remediation=(
+                    "replace header parsing with sdkwork-web-framework-aware extractors; "
+                    "see services/sdkwork-claw-product/src/api/subject.rs"
+                ),
+            )
+        )
+        if migrated_files:
+            checks.append(
+                AlignmentCheck(
+                    id="web-framework-handler-subject-migration-progress",
+                    category="web-framework",
+                    severity="info",
+                    status="pass",
+                    message=(
+                        f"{len(migrated_files)} product API modules already use framework-aware "
+                        "subject extractors"
+                    ),
+                    remediation="",
+                )
+            )
         return checks
 
     def _check_database_framework_integration(self) -> list[AlignmentCheck]:

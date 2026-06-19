@@ -230,6 +230,30 @@ impl TrustedRequestSubject {
         extensions.get::<Self>().copied()
     }
 
+    /// Resolves the trusted subject from request extensions, web-framework context,
+    /// or legacy signed headers when the web framework is disabled.
+    pub fn resolve_optional(headers: &HeaderMap, extensions: &Extensions) -> Option<Self> {
+        if let Some(subject) = Self::from_extensions(extensions) {
+            return Some(subject);
+        }
+        if let Some(context) = extensions.get::<sdkwork_web_core::WebRequestContext>() {
+            return crate::web_bridge::trusted_request_subject_from_web_context(context);
+        }
+        if crate::web_framework_compat::claw_web_framework_enabled_from_env() {
+            return None;
+        }
+        Self::from_headers(headers).ok()
+    }
+
+    pub fn resolve_optional_from_parts(parts: &Parts) -> Option<Self> {
+        Self::resolve_optional(&parts.headers, &parts.extensions)
+    }
+
+    pub fn resolve_from_parts(parts: &Parts) -> Result<Self, TrustedRequestSubjectError> {
+        Self::resolve_optional_from_parts(parts)
+            .ok_or(TrustedRequestSubjectError::MissingExtension)
+    }
+
     pub fn from_headers(headers: &HeaderMap) -> Result<Self, TrustedSubjectBoundaryError> {
         let tenant_id = required_signed_positive_i64_header(headers, X_SDKWORK_TENANT_ID)?;
         let organization_id =
@@ -252,7 +276,7 @@ where
     type Rejection = Response;
 
     async fn from_request_parts(parts: &mut Parts, _state: &S) -> Result<Self, Self::Rejection> {
-        Self::from_extensions(&parts.extensions).ok_or_else(|| {
+        Self::resolve_from_parts(parts).map_err(|_| {
             (
                 StatusCode::UNAUTHORIZED,
                 Json(BoundaryErrorEnvelope {
@@ -276,7 +300,7 @@ where
         parts: &mut Parts,
         _state: &S,
     ) -> Result<Option<Self>, Self::Rejection> {
-        Ok(Self::from_extensions(&parts.extensions))
+        Ok(Self::resolve_optional_from_parts(parts))
     }
 }
 

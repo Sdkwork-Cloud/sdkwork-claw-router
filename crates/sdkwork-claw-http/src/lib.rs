@@ -22,6 +22,9 @@ pub use auth::{
     AppSessionTokenError, AppSessionTokenKind, AppSubjectBoundaryConfig, TrustedRequestSubject,
     TrustedRequestSubjectError, TrustedSubjectBoundaryError,
 };
+pub use web_bridge::{
+    inject_legacy_handler_context_from_web_context, trusted_request_subject_from_web_context,
+};
 pub use contract_routes::{
     app_openapi_response, backend_openapi_response, cloud_services_openapi_response,
     contract_fallback, gateway_openapi_response, openapi_schema_tabs_response_for_surface,
@@ -42,9 +45,6 @@ pub use router::{
 };
 pub use sdkwork_claw_contract::{ApiSurface, ContractOperation};
 pub use shutdown::wait_for_shutdown_signal;
-pub use web_bridge::{
-    inject_legacy_handler_context_from_web_context, trusted_request_subject_from_web_context,
-};
 pub use web_framework_compat::{
     apply_app_subject_boundary_if_legacy, apply_optional_app_subject_boundary_if_legacy,
     claw_web_framework_enabled_from_env,

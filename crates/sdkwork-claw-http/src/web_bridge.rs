@@ -156,7 +156,49 @@ mod tests {
         );
         assert_eq!(
             subject,
-            TrustedRequestSubject::from_headers(request.headers()).expect("from headers")
+            TrustedRequestSubject::resolve_optional(request.headers(), request.extensions())
+                .expect("resolved subject")
         );
+    }
+
+    #[test]
+    fn resolve_optional_prefers_web_request_context_principal() {
+        let principal = WebRequestPrincipal::builder()
+            .tenant_id("20001")
+            .organization_id(Some("30002".to_owned()))
+            .user_id("40003")
+            .login_scope(WebLoginScope::Organization)
+            .session_id(Some("session-1".to_owned()))
+            .app_id("sdkwork-claw-router")
+            .environment(WebEnvironment::Dev)
+            .deployment_mode(WebDeploymentMode::Private)
+            .auth_level(WebAuthLevel::Password)
+            .build();
+        let context = WebRequestContext {
+            request_id: ServerRequestId("test-request".to_owned()),
+            api_surface: WebApiSurface::AppApi,
+            auth_mode: WebAuthMode::DualToken,
+            transport: WebTransportFacts {
+                path: "/app/v3/api/test".to_owned(),
+                method: "GET".to_owned(),
+                auth_token_present: true,
+                access_token_present: true,
+                api_key_present: false,
+                oauth_bearer_present: false,
+            },
+            principal: Some(principal),
+            locale: None,
+        };
+        let mut request = Request::new(Body::empty());
+        request.extensions_mut().insert(context);
+
+        let subject = TrustedRequestSubject::resolve_optional(
+            request.headers(),
+            request.extensions(),
+        )
+        .expect("subject from web context");
+        assert_eq!(20_001, subject.tenant_id);
+        assert_eq!(30_002, subject.organization_id);
+        assert_eq!(40_003, subject.user_id);
     }
 }

@@ -14,7 +14,9 @@
       "spec": "../sdkwork-specs/WEB_FRAMEWORK_SPEC.md",
       "status": "ALIGNED",
       "target": "All HTTP *-api surfaces use sdkwork-web-framework WebRequestContext pipeline",
-      "blockers": []
+      "blockers": [
+        "product API handlers still parsing TrustedRequestSubject::from_headers; migrate to framework-aware extractors"
+      ]
     },
     {
       "id": "database",

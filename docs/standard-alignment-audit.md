@@ -55,8 +55,8 @@ python tools/sdkwork_standard_alignment_guardian.py --strict
 
 ### 剩余工作（持续治理）
 
-1. 逐步将 handler 参数从 `TrustedRequestSubject` 迁移为 `WebRequestContext` / `RequirePrincipal`（bridge 层已消除双重鉴权）
-2. ~~在 gateway all-in-one 合并路径上避免双重 `WebFrameworkLayer` 包裹~~ → 已通过 `finalize_all_in_one_route_surfaces` 对 app/backend 各包裹一次；`router_from_env` 与 shared-runtime 路径职责分离
+1. 将 product API handler 从 `TrustedRequestSubject::from_headers` 迁移为 `TrustedRequestSubject` / `Option<TrustedRequestSubject>` 提取器（工具链：`tools/migrate_product_api_trusted_subject_extractors.py`）
+2. ~~gateway all-in-one 双重包裹~~ → 已通过 `finalize_all_in_one_route_surfaces` 解决
 3. 存量 SQL store 分批迁移 repository-sqlx crate
 
 ## 3. sdkwork-database
