@@ -143,7 +143,7 @@ async fn sqlite_app_store_uses_release_note_highlights_when_portal_features_are_
     .await;
     sqlx::query(
         r#"
-        UPDATE plus_app
+        UPDATE platform_app
         SET release_notes = '[{"version":"1.0.0","highlights":["Seeded metadata","Package matrix","Release governance"]}]'
         WHERE id = 1700
         "#,
@@ -194,7 +194,7 @@ async fn sqlite_app_store_does_not_fallback_disabled_install_packages_to_public_
     .await;
     sqlx::query(
         r#"
-        UPDATE plus_app
+        UPDATE platform_app
         SET install_config = '{"packages":[{"id":"blocked-msi","enabled":false,"version":"0.1.0","platform":"DESKTOP_WINDOWS","packageFormat":"MSI","artifact":{"kind":"archive","source":"external_url","url":"https://cdn.example.test/apps/blocked.msi","publicUrl":"https://cdn.example.test/apps/blocked.msi"}}]}'
         WHERE id = 1750
         "#,
@@ -264,15 +264,13 @@ async fn sqlite_app_store_falls_back_to_tenant_public_apps_for_authenticated_org
         "2026-06-03 09:30:00",
     )
     .await;
-    insert_asset_with_scope(
+    patch_platform_app_catalog(
         &pool,
-        1501,
-        10,
-        0,
         1500,
-        "screenshot",
-        "https://cdn.example.test/apps/public-screen.png",
-        1,
+        Some(r#"{"screenshots":[{"asset":{"kind":"image","source":"external_url","url":"https://cdn.example.test/apps/public-screen.png","publicUrl":"https://cdn.example.test/apps/public-screen.png"}}],"previews":[]}"#),
+        None,
+        0.0,
+        0,
     )
     .await;
     insert_artifact_with_scope(
@@ -590,7 +588,7 @@ async fn sqlite_app_store_loads_categories_from_all_public_apps_without_catalog_
     assert_eq!(
         vec!["HTML".to_owned(), "Productivity".to_owned(), "React".to_owned()],
         categories,
-        "categories endpoint must read the unified plus_category app-store tree, not derive categories from plus_app.app_type"
+        "categories endpoint must read the unified c_category app-store tree, not derive categories from platform_app.app_type"
     );
 }
 
@@ -747,13 +745,14 @@ fn owner_subject() -> AppStoreSubject {
 async fn create_app_store_tables(pool: &SqlitePool) {
     for statement in [
         r#"
-        CREATE TABLE plus_app (
+        CREATE TABLE platform_app (
             id INTEGER PRIMARY KEY,
             uuid TEXT,
             created_at TEXT,
             updated_at TEXT,
             tenant_id INTEGER NOT NULL,
             organization_id INTEGER NOT NULL,
+            data_scope INTEGER NOT NULL DEFAULT 0,
             user_id INTEGER NOT NULL,
             name TEXT NOT NULL,
             icon TEXT,
@@ -778,24 +777,27 @@ async fn create_app_store_tables(pool: &SqlitePool) {
             store_url TEXT,
             artifact_media_resource_id TEXT,
             artifact_object_blob_id INTEGER,
-            artifact_resource_snapshot TEXT
+            artifact_resource_snapshot TEXT,
+            download_count INTEGER NOT NULL DEFAULT 0,
+            rating_avg REAL NOT NULL DEFAULT 0,
+            rating_count INTEGER NOT NULL DEFAULT 0
         )
         "#,
         r#"
-        CREATE TABLE plus_category (
+        CREATE TABLE c_category (
             id INTEGER PRIMARY KEY,
             uuid TEXT,
             tenant_id INTEGER NOT NULL,
             organization_id INTEGER NOT NULL,
-            shop_id INTEGER,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            category_type TEXT NOT NULL,
             name TEXT NOT NULL,
             description TEXT,
-            pid INTEGER,
-            type INTEGER NOT NULL,
-            group_name TEXT,
             code TEXT,
             tags TEXT,
-            icon TEXT,
+            icon_media_resource_id TEXT,
+            icon_object_blob_id INTEGER,
+            icon_resource_snapshot TEXT,
             sort_weight INTEGER,
             parent_id INTEGER,
             path TEXT,
@@ -804,7 +806,7 @@ async fn create_app_store_tables(pool: &SqlitePool) {
         )
         "#,
         r#"
-        CREATE TABLE studio_catalog_action (
+        CREATE TABLE ai_skill_action (
             id INTEGER PRIMARY KEY,
             tenant_id INTEGER NOT NULL,
             organization_id INTEGER NOT NULL,
@@ -822,7 +824,7 @@ async fn create_app_store_tables(pool: &SqlitePool) {
         )
         "#,
         r#"
-        CREATE TABLE studio_catalog_asset (
+        CREATE TABLE ai_skill_asset (
             id INTEGER PRIMARY KEY,
             tenant_id INTEGER NOT NULL,
             organization_id INTEGER NOT NULL,
@@ -845,7 +847,7 @@ async fn create_app_store_tables(pool: &SqlitePool) {
         )
         "#,
         r#"
-        CREATE TABLE studio_catalog_artifact (
+        CREATE TABLE ai_skill_artifact (
             id INTEGER PRIMARY KEY,
             tenant_id INTEGER NOT NULL,
             organization_id INTEGER NOT NULL,
@@ -892,11 +894,12 @@ async fn seed_app_categories(pool: &SqlitePool) {
 async fn insert_app_category(pool: &SqlitePool, id: i64, name: &str, code: &str, sort_weight: i64) {
     sqlx::query(
         r#"
-        INSERT INTO plus_category (
-            id, uuid, tenant_id, organization_id, shop_id, name, description, pid,
-            type, group_name, code, tags, icon, sort_weight, parent_id, path, visible, status
+        INSERT INTO c_category (
+            id, uuid, tenant_id, organization_id, data_scope, category_type, name, description,
+            code, tags, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot,
+            sort_weight, parent_id, path, visible, status
         )
-        VALUES (?1, ?2, 20001, 0, 0, ?3, ?4, 0, 999999, 'app-store', ?5, '[]', NULL, ?6, NULL, ?7, 1, 1)
+        VALUES (?1, ?2, 20001, 0, 0, 'app_store', ?3, ?4, ?5, '[]', NULL, NULL, NULL, ?6, NULL, ?7, 1, 1)
         "#,
     )
     .bind(id)
@@ -920,11 +923,12 @@ async fn insert_non_app_category(
 ) {
     sqlx::query(
         r#"
-        INSERT INTO plus_category (
-            id, uuid, tenant_id, organization_id, shop_id, name, description, pid,
-            type, group_name, code, tags, icon, sort_weight, parent_id, path, visible, status
+        INSERT INTO c_category (
+            id, uuid, tenant_id, organization_id, data_scope, category_type, name, description,
+            code, tags, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot,
+            sort_weight, parent_id, path, visible, status
         )
-        VALUES (?1, ?2, 20001, 0, 0, ?3, ?4, 0, 19, 'skills', ?5, '[]', NULL, ?6, NULL, ?7, 1, 1)
+        VALUES (?1, ?2, 20001, 0, 0, 'skill_market', ?3, ?4, ?5, '[]', NULL, NULL, NULL, ?6, NULL, ?7, 1, 1)
         "#,
     )
     .bind(id)
@@ -1016,30 +1020,47 @@ async fn seed_app_store(pool: &SqlitePool) {
         "2026-05-04 09:30:00",
     )
     .await;
-    insert_asset(
-        pool,
-        501,
+    patch_platform_app_catalog(
+        &pool,
         101,
-        "screenshot",
-        "https://cdn.example.test/apps/claw-screen-1.png",
-        1,
-    )
-    .await;
-    insert_asset(
-        pool,
-        502,
-        101,
-        "screenshot",
-        "https://cdn.example.test/apps/claw-screen-2.png",
+        Some(APP_101_RESOURCE_LIST),
+        Some(APP_101_INSTALL_CONFIG),
+        4.8,
         2,
     )
     .await;
-    insert_artifact(pool).await;
-    insert_action(pool, 101, "download", None).await;
-    insert_action(pool, 101, "download", None).await;
-    insert_action(pool, 101, "rating", Some(4.0)).await;
-    insert_action(pool, 101, "rating", Some(5.0)).await;
-    insert_action(pool, 101, "rating", Some(5.5)).await;
+}
+
+const APP_101_RESOURCE_LIST: &str = r#"{"screenshots":[{"asset":{"kind":"image","source":"external_url","url":"https://cdn.example.test/apps/claw-screen-1.png","publicUrl":"https://cdn.example.test/apps/claw-screen-1.png"}},{"asset":{"kind":"image","source":"external_url","url":"https://cdn.example.test/apps/claw-screen-2.png","publicUrl":"https://cdn.example.test/apps/claw-screen-2.png"}}],"previews":[]}"#;
+
+const APP_101_INSTALL_CONFIG: &str = r#"{"packages":[{"id":"9001","platform":"DESKTOP_WINDOWS","platformType":"desktop","os":"windows","version":"2.1.0","enabled":true,"artifactSizeBytes":44040192,"releaseNotes":"Hardened routing policies","publishedAt":"2026-05-01T08:00:00Z","artifact":{"kind":"binary","source":"external_url","url":"https://cdn.example.test/apps/claw-2.1.0.exe","publicUrl":"https://cdn.example.test/apps/claw-2.1.0.exe"}}]}"#;
+
+async fn patch_platform_app_catalog(
+    pool: &SqlitePool,
+    id: i64,
+    resource_list: Option<&str>,
+    install_config: Option<&str>,
+    rating_avg: f64,
+    download_count: i64,
+) {
+    sqlx::query(
+        r#"
+        UPDATE platform_app
+        SET resource_list = COALESCE(?2, resource_list),
+            install_config = COALESCE(?3, install_config),
+            rating_avg = ?4,
+            download_count = ?5
+        WHERE id = ?1
+        "#,
+    )
+    .bind(id)
+    .bind(resource_list)
+    .bind(install_config)
+    .bind(rating_avg)
+    .bind(download_count)
+    .execute(pool)
+    .await
+    .unwrap();
 }
 
 async fn insert_app(
@@ -1062,7 +1083,7 @@ async fn insert_app(
 ) {
     sqlx::query(
         r#"
-        INSERT INTO plus_app (
+        INSERT INTO platform_app (
             id, uuid, created_at, updated_at, tenant_id, organization_id, user_id,
             name, icon, resource_list, project_id, description, version,
             icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot,
@@ -1136,7 +1157,7 @@ async fn insert_asset_with_scope(
 ) {
     sqlx::query(
         r#"
-        INSERT INTO studio_catalog_asset (
+        INSERT INTO ai_skill_asset (
             id, tenant_id, organization_id, target_type, target_id, artifact_id,
             asset_type, asset_media_resource_id, asset_object_blob_id, asset_resource_snapshot,
             thumbnail_media_resource_id, thumbnail_object_blob_id, thumbnail_resource_snapshot,
@@ -1191,7 +1212,7 @@ async fn insert_artifact_with_scope(
 ) {
     sqlx::query(
         r#"
-        INSERT INTO studio_catalog_artifact (
+        INSERT INTO ai_skill_artifact (
             id, tenant_id, organization_id, target_type, target_id, artifact_type,
             platform_type, os_name, version, artifact_ref, artifact_media_resource_id,
             artifact_object_blob_id, artifact_resource_snapshot,
@@ -1234,7 +1255,7 @@ async fn insert_action(
 ) {
     sqlx::query(
         r#"
-        INSERT INTO studio_catalog_action (
+        INSERT INTO ai_skill_action (
             tenant_id, organization_id, user_id, target_type, target_id, release_id,
             action_type, rating_score, created_at, payload_hash, client_ip_hash,
             user_agent_hash, metadata

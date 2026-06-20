@@ -589,7 +589,7 @@ async fn list_categories(
                COALESCE(sort_weight, 0) AS sort_weight,
                parent_id, path, COALESCE(visible, 1) AS visible,
                COALESCE(status, 1) AS status, type AS category_type
-        FROM plus_category
+        FROM c_category
         WHERE (
               (tenant_id = ? AND organization_id = ?)
               OR (tenant_id = ? AND organization_id = ?)
@@ -653,7 +653,7 @@ async fn list_apps(pool: &SqlitePool, query: ListAdminAppsQuery) -> DomainResult
     let total: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM plus_app
+        FROM platform_app
         WHERE (
               (
                   tenant_id = ?
@@ -730,7 +730,7 @@ async fn list_apps(pool: &SqlitePool, query: ListAdminAppsQuery) -> DomainResult
             CAST(artifact_resource_snapshot AS TEXT) AS artifact_resource_snapshot,
             CAST(created_at AS TEXT) AS created_at,
             CAST(updated_at AS TEXT) AS updated_at
-        FROM plus_app
+        FROM platform_app
         WHERE (
               (
                   tenant_id = ?
@@ -826,7 +826,7 @@ async fn list_app_templates(
     let total: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM studio_app_template
+        FROM platform_app_template
         WHERE (
               (
                   tenant_id = ?
@@ -883,7 +883,7 @@ async fn list_app_templates(
             CAST(capability_manifest AS TEXT) AS capability_manifest,
             CAST(created_at AS TEXT) AS created_at,
             CAST(updated_at AS TEXT) AS updated_at
-        FROM studio_app_template
+        FROM platform_app_template
         WHERE (
               (
                   tenant_id = ?
@@ -955,7 +955,7 @@ async fn load_app_category_filter(
     let row = sqlx::query(
         r#"
         SELECT name, code
-        FROM plus_category
+        FROM c_category
         WHERE id = ?
           AND (
               (tenant_id = ? AND organization_id = ?)
@@ -1059,7 +1059,7 @@ fn app_by_id_query() -> sqlx::query::Query<'static, Sqlite, sqlx::sqlite::Sqlite
             CAST(artifact_resource_snapshot AS TEXT) AS artifact_resource_snapshot,
             CAST(created_at AS TEXT) AS created_at,
             CAST(updated_at AS TEXT) AS updated_at
-        FROM plus_app
+        FROM platform_app
         WHERE id = ?
           AND (
               (
@@ -1110,7 +1110,7 @@ fn app_by_id_owned_query(
             CAST(artifact_resource_snapshot AS TEXT) AS artifact_resource_snapshot,
             CAST(created_at AS TEXT) AS created_at,
             CAST(updated_at AS TEXT) AS updated_at
-        FROM plus_app
+        FROM platform_app
         WHERE id = ?
           AND tenant_id = ?
           AND organization_id = ?
@@ -1143,7 +1143,7 @@ async fn load_template_by_id(
             CAST(capability_manifest AS TEXT) AS capability_manifest,
             CAST(created_at AS TEXT) AS created_at,
             CAST(updated_at AS TEXT) AS updated_at
-        FROM studio_app_template
+        FROM platform_app_template
         WHERE id = ?
           AND (
               (
@@ -1206,7 +1206,7 @@ async fn load_template_by_id_tx(
             CAST(capability_manifest AS TEXT) AS capability_manifest,
             CAST(created_at AS TEXT) AS created_at,
             CAST(updated_at AS TEXT) AS updated_at
-        FROM studio_app_template
+        FROM platform_app_template
         WHERE id = ?
           AND tenant_id = ?
           AND organization_id = ?
@@ -1240,7 +1240,7 @@ async fn insert_app_template(
     let cover_resource_snapshot = cover.map(serde_json::Value::to_string);
     sqlx::query(
         r#"
-        INSERT INTO studio_app_template
+        INSERT INTO platform_app_template
             (id, uuid, tenant_id, organization_id, data_scope, status, template_no, template_code,
              template_name, description, category_id, category_code, template_type, runtime,
              framework, language,
@@ -1339,7 +1339,7 @@ async fn update_app_template(
     let cover_resource_snapshot = cover.as_ref().map(serde_json::Value::to_string);
     sqlx::query(
         r#"
-        UPDATE studio_app_template
+        UPDATE platform_app_template
         SET template_name = ?,
             description = ?,
             category_id = ?,
@@ -1480,7 +1480,7 @@ async fn set_app_template_publish_status(
     let publish_status = template_publish_status_code(&command.publish_status)?;
     let result = sqlx::query(
         r#"
-        UPDATE studio_app_template
+        UPDATE platform_app_template
         SET publish_status = ?,
             published_at = CASE WHEN ? = 2 THEN ? ELSE published_at END,
             deprecated_at = CASE WHEN ? = 3 THEN ? ELSE deprecated_at END,
@@ -1513,7 +1513,7 @@ async fn delete_app_template(
 ) -> DomainResult<bool> {
     let result = sqlx::query(
         r#"
-        UPDATE studio_app_template
+        UPDATE platform_app_template
         SET status = -1,
             deleted_at = ?,
             deleted_by = ?,
@@ -1537,9 +1537,9 @@ async fn delete_app_template(
     if result.rows_affected() == 0 {
         return Ok(false);
     }
-    delete_template_catalog_projection(tx, "studio_catalog_action", command).await?;
-    delete_template_catalog_projection(tx, "studio_catalog_asset", command).await?;
-    delete_template_catalog_projection(tx, "studio_catalog_artifact", command).await?;
+    delete_template_catalog_projection(tx, "ai_skill_action", command).await?;
+    delete_template_catalog_projection(tx, "ai_skill_asset", command).await?;
+    delete_template_catalog_projection(tx, "ai_skill_artifact", command).await?;
     Ok(true)
 }
 
@@ -1569,7 +1569,7 @@ async fn insert_app(
     let artifact_resource_snapshot = artifact_resource.as_ref().map(serde_json::Value::to_string);
     sqlx::query(
         r#"
-        INSERT INTO plus_app
+        INSERT INTO platform_app
             (id, uuid, tenant_id, organization_id, data_scope, user_id, name, icon, resource_list, project_id, description, version, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, access_url, config, status, app_type, platforms, install_platforms, install_skill, install_config, release_notes, package_name, bundle_id, store_url, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot, created_at, updated_at)
         VALUES
             (?, ?, ?, ?, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
@@ -1623,7 +1623,7 @@ async fn insert_category(
     let icon_resource_snapshot = icon.map(serde_json::Value::to_string);
     sqlx::query(
         r#"
-        INSERT INTO plus_category
+        INSERT INTO c_category
             (id, uuid, tenant_id, organization_id, data_scope, name, description, type, group_name, code,
              icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot,
              sort_weight, parent_id, path, visible, status, created_at, updated_at)
@@ -1669,7 +1669,7 @@ async fn load_category_by_id(
                COALESCE(sort_weight, 0) AS sort_weight,
                parent_id, path, COALESCE(visible, 1) AS visible,
                COALESCE(status, 1) AS status, type AS category_type
-        FROM plus_category
+        FROM c_category
         WHERE id = ?
           AND tenant_id = ?
           AND organization_id = ?
@@ -1734,7 +1734,7 @@ async fn update_app(
     let artifact_resource_snapshot = artifact_resource.as_ref().map(serde_json::Value::to_string);
     sqlx::query(
         r#"
-        UPDATE plus_app
+        UPDATE platform_app
         SET user_id = ?,
             name = ?,
             description = ?,
@@ -1859,7 +1859,7 @@ async fn update_category(
     }
     let result = sqlx::query(
         r#"
-        UPDATE plus_category
+        UPDATE c_category
         SET name = CASE WHEN ? THEN ? ELSE name END,
             description = CASE WHEN ? THEN ? ELSE description END,
             code = CASE WHEN ? THEN ? ELSE code END,
@@ -1963,7 +1963,7 @@ async fn set_app_status(
     let status_code = app_status_code(status)?;
     sqlx::query(
         r#"
-        UPDATE plus_app
+        UPDATE platform_app
         SET status = ?,
             config = ?,
             updated_at = ?,
@@ -1991,7 +1991,7 @@ async fn delete_app(
 ) -> DomainResult<bool> {
     let result = sqlx::query(
         r#"
-        DELETE FROM plus_app
+        DELETE FROM platform_app
         WHERE id = ?
           AND tenant_id = ?
           AND organization_id = ?
@@ -2006,9 +2006,9 @@ async fn delete_app(
     if result.rows_affected() == 0 {
         return Ok(false);
     }
-    delete_catalog_projection(tx, "studio_catalog_action", command).await?;
-    delete_catalog_projection(tx, "studio_catalog_asset", command).await?;
-    delete_catalog_projection(tx, "studio_catalog_artifact", command).await?;
+    delete_catalog_projection(tx, "ai_skill_action", command).await?;
+    delete_catalog_projection(tx, "ai_skill_asset", command).await?;
+    delete_catalog_projection(tx, "ai_skill_artifact", command).await?;
     Ok(true)
 }
 
@@ -2019,7 +2019,7 @@ async fn delete_category(
     ensure_category_delete_allowed(tx, command).await?;
     let result = sqlx::query(
         r#"
-        UPDATE plus_category
+        UPDATE c_category
         SET status = -1,
             visible = 0,
             updated_at = ?,
@@ -2050,7 +2050,7 @@ async fn ensure_category_delete_allowed(
     let child_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM plus_category
+        FROM c_category
         WHERE tenant_id = ?
           AND organization_id = ?
           AND parent_id = ?
@@ -2079,27 +2079,27 @@ async fn delete_catalog_projection(
     command: &DeleteAdminAppCommand,
 ) -> DomainResult<()> {
     let sql = match table_name {
-        "studio_catalog_action" => {
+        "ai_skill_action" => {
             r#"
-            DELETE FROM studio_catalog_action
+            DELETE FROM ai_skill_action
             WHERE tenant_id = ?
               AND organization_id = ?
               AND target_type = ?
               AND target_id = ?
             "#
         }
-        "studio_catalog_asset" => {
+        "ai_skill_asset" => {
             r#"
-            DELETE FROM studio_catalog_asset
+            DELETE FROM ai_skill_asset
             WHERE tenant_id = ?
               AND organization_id = ?
               AND target_type = ?
               AND target_id = ?
             "#
         }
-        "studio_catalog_artifact" => {
+        "ai_skill_artifact" => {
             r#"
-            DELETE FROM studio_catalog_artifact
+            DELETE FROM ai_skill_artifact
             WHERE tenant_id = ?
               AND organization_id = ?
               AND target_type = ?
@@ -2125,27 +2125,27 @@ async fn delete_template_catalog_projection(
     command: &DeleteAdminAppTemplateCommand,
 ) -> DomainResult<()> {
     let sql = match table_name {
-        "studio_catalog_action" => {
+        "ai_skill_action" => {
             r#"
-            DELETE FROM studio_catalog_action
+            DELETE FROM ai_skill_action
             WHERE tenant_id = ?
               AND organization_id = ?
               AND target_type = ?
               AND target_id = ?
             "#
         }
-        "studio_catalog_asset" => {
+        "ai_skill_asset" => {
             r#"
-            DELETE FROM studio_catalog_asset
+            DELETE FROM ai_skill_asset
             WHERE tenant_id = ?
               AND organization_id = ?
               AND target_type = ?
               AND target_id = ?
             "#
         }
-        "studio_catalog_artifact" => {
+        "ai_skill_artifact" => {
             r#"
-            DELETE FROM studio_catalog_artifact
+            DELETE FROM ai_skill_artifact
             WHERE tenant_id = ?
               AND organization_id = ?
               AND target_type = ?
@@ -2211,7 +2211,7 @@ async fn next_assigned_id(tx: &mut Transaction<'_, Sqlite>, app_uuid: &str) -> D
         tx,
         "admin-app",
         app_uuid,
-        "SELECT COUNT(1) FROM plus_app WHERE id = ?",
+        "SELECT COUNT(1) FROM platform_app WHERE id = ?",
         "failed to check app runtime id",
     )
     .await
@@ -2225,7 +2225,7 @@ async fn next_category_assigned_id(
         tx,
         "admin-app-category",
         category_uuid,
-        "SELECT COUNT(1) FROM plus_category WHERE id = ?",
+        "SELECT COUNT(1) FROM c_category WHERE id = ?",
         "failed to check app category runtime id",
     )
     .await
@@ -2239,7 +2239,7 @@ async fn next_template_assigned_id(
         tx,
         "admin-app-template",
         template_uuid,
-        "SELECT COUNT(1) FROM studio_app_template WHERE id = ?",
+        "SELECT COUNT(1) FROM platform_app_template WHERE id = ?",
         "failed to check app template runtime id",
     )
     .await

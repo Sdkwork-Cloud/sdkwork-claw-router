@@ -527,8 +527,8 @@ async fn initialize_category_seeds(
                 import_product_category_seed(pool, command.subject, &command.requested_at, &bundle)
                     .await?
             }
-            "plus_category" => {
-                import_plus_category_seed(pool, &command.requested_at, &bundle).await?
+            "c_category" => {
+                import_c_category_seed(pool, &command.requested_at, &bundle).await?
             }
             target => {
                 return Err(DomainError::new(format!(
@@ -616,14 +616,14 @@ async fn import_product_category_seed(
     Ok(seed_summary(bundle, upserted, 0))
 }
 
-async fn import_plus_category_seed(
+async fn import_c_category_seed(
     pool: &PgPool,
     requested_at: &str,
     bundle: &AdminCategorySeedBundle,
 ) -> DomainResult<AdminCategorySeedInitializeSummary> {
     let category_type = bundle
         .category_type
-        .ok_or_else(|| DomainError::new("plus_category seed requires categoryType"))?;
+        .ok_or_else(|| DomainError::new("c_category seed requires categoryType"))?;
     let group_name = required_seed_text(bundle.group_name.as_deref(), "groupName")?;
     let id_by_code = bundle
         .categories
@@ -659,7 +659,7 @@ async fn import_plus_category_seed(
             .unwrap_or_else(|| format!("/{}/{}", bundle.dataset, code));
         sqlx::query(
             r#"
-            INSERT INTO plus_category
+            INSERT INTO c_category
                 (id, uuid, tenant_id, organization_id, data_scope, name, description, shop_id, type, group_name, code, tags, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, sort_weight, parent_id, path, visible, status, created_at, updated_at)
             VALUES
                 ($1, $2, 0, 0, 0, $3, $4, 0, $5, $6, $7, $8::jsonb, NULL, NULL, NULL, $9, $10, $11, $12, $13, $14, $14)

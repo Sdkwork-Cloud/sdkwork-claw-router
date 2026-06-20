@@ -437,8 +437,8 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                                 "kind": "delete",
                                 "path_params": ["commentId"],
                                 "source": "apps/portal/forumService.ts",
-                                "read_sources": ["plus_comments"],
-                                "write_tables": ["plus_comments"],
+                                "read_sources": ["content_comment"],
+                                "write_tables": ["content_comment"],
                                 "response_schema": {
                                     "name": "NoData",
                                     "schema": {"$ref": "#/components/schemas/NoData"},
@@ -623,7 +623,7 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                                 "kind": "read",
                                 "path_params": ["id"],
                                 "source": "apps/portal/forumService.ts",
-                                "read_sources": ["plus_favorite"],
+                                "read_sources": ["content_favorite"],
                                 "write_tables": [],
                                 "response_schema": {
                                     "name": "ForumBooleanResponse",
@@ -1029,8 +1029,8 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                                 "kind": "update",
                                 "path_params": ["skillId", "assetId"],
                                 "source": "apps/portal/skillService.tsx",
-                                "read_sources": ["plus_agent_skill", "studio_catalog_asset"],
-                                "write_tables": ["studio_catalog_asset", "ops_audit_log"],
+                                "read_sources": ["ai_agent_skill", "ai_skill_asset"],
+                                "write_tables": ["ai_skill_asset", "ops_audit_log"],
                                 "request_schema": {
                                     "name": "AdminSkillAssetUpdateRequest",
                                     "schema": {
@@ -1150,8 +1150,8 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                                 "kind": "action",
                                 "path_params": ["id"],
                                 "source": "apps/portal/forumService.ts",
-                                "read_sources": ["plus_feeds", "plus_favorite"],
-                                "write_tables": ["plus_feeds", "plus_favorite"],
+                                "read_sources": ["content_forum_post", "content_favorite"],
+                                "write_tables": ["content_forum_post", "content_favorite"],
                                 "request_body_required": False,
                                 "query_parameters_declared": True,
                                 "query_parameters": [
@@ -1258,7 +1258,7 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                                 "kind": "read",
                                 "path_params": [],
                                 "source": "apps/portal/adminAppService.ts",
-                                "read_sources": ["plus_app"],
+                                "read_sources": ["platform_app"],
                                 "write_tables": [],
                                 "request_body_required": False,
                                 "request_schema": {
@@ -1377,7 +1377,7 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                                 "kind": "read",
                                 "path_params": [],
                                 "source": "apps/portal/adminAppService.ts",
-                                "read_sources": ["plus_app"],
+                                "read_sources": ["platform_app"],
                                 "write_tables": [],
                                 "request_body_required": False,
                                 "request_schema": {
@@ -1516,8 +1516,8 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                                 "kind": "action",
                                 "path_params": ["id"],
                                 "source": "apps/portal/forumService.ts",
-                                "read_sources": ["plus_feeds", "plus_favorite"],
-                                "write_tables": ["plus_feeds", "plus_favorite"],
+                                "read_sources": ["content_forum_post", "content_favorite"],
+                                "write_tables": ["content_forum_post", "content_favorite"],
                                 "request_body_required": False,
                                 "query_parameters_declared": True,
                                 "query_parameters": [
@@ -1616,8 +1616,8 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                                 "kind": "action",
                                 "path_params": ["id"],
                                 "source": "apps/portal/forumService.ts",
-                                "read_sources": ["plus_feeds", "plus_favorite"],
-                                "write_tables": ["plus_feeds", "plus_favorite"],
+                                "read_sources": ["content_forum_post", "content_favorite"],
+                                "write_tables": ["content_forum_post", "content_favorite"],
                                 "request_body_required": False,
                                 "query_parameters_declared": True,
                                 "query_parameters": [

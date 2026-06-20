@@ -87,15 +87,15 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
     .await;
     assert_table_exists(&pool, "ops_job_execution").await;
     assert_table_exists(&pool, "ai_request_trace").await;
-    assert_table_exists(&pool, "plus_app").await;
-    assert_table_exists(&pool, "plus_category").await;
-    assert_table_exists(&pool, "plus_agent_skill_package").await;
-    assert_table_exists(&pool, "plus_agent_skill").await;
-    assert_table_exists(&pool, "plus_user_agent_skill").await;
-    assert_table_exists(&pool, "plus_feeds").await;
-    assert_table_exists(&pool, "plus_comments").await;
-    assert_table_exists(&pool, "plus_content_vote").await;
-    assert_table_exists(&pool, "plus_favorite").await;
+    assert_table_exists(&pool, "platform_app").await;
+    assert_table_exists(&pool, "c_category").await;
+    assert_table_exists(&pool, "ai_agent_skill_package").await;
+    assert_table_exists(&pool, "ai_agent_skill").await;
+    assert_table_exists(&pool, "ai_user_agent_skill").await;
+    assert_table_exists(&pool, "content_forum_post").await;
+    assert_table_exists(&pool, "content_comment").await;
+    assert_table_exists(&pool, "content_reaction").await;
+    assert_table_exists(&pool, "content_favorite").await;
     assert_table_exists(&pool, "ai_chat_conversation").await;
     assert_table_exists(&pool, "ai_chat_turn").await;
     assert_table_exists(&pool, "ai_chat_message").await;
@@ -125,14 +125,14 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
     assert_sqlite_index_exists(&pool, "idx_ai_model_rank_snapshot_latest_scope").await;
     assert_sqlite_index_exists(&pool, "idx_ai_model_rank_snapshot_filter_rank").await;
     assert_sqlite_index_exists(&pool, "idx_ops_job_execution_model_ranking_scope_started").await;
-    assert_sqlite_index_exists(&pool, "idx_app_user_id").await;
-    assert_sqlite_index_exists(&pool, "idx_app_project_id").await;
-    assert_sqlite_index_exists(&pool, "idx_app_status").await;
-    assert_sqlite_index_exists(&pool, "idx_category_type_shop").await;
+    assert_sqlite_index_exists(&pool, "idx_platform_app_user_id").await;
+    assert_sqlite_index_exists(&pool, "idx_platform_app_project_id").await;
+    assert_sqlite_index_exists(&pool, "idx_platform_app_status").await;
+    assert_sqlite_index_exists(&pool, "idx_c_category_type_scope").await;
     assert_sqlite_index_exists(&pool, "uk_ops_notification_delivery_user_message_app").await;
-    assert_sqlite_index_exists(&pool, "uk_plus_agent_skill_key").await;
-    assert_sqlite_index_exists(&pool, "idx_plus_agent_skill_market").await;
-    assert_sqlite_index_exists(&pool, "uk_plus_user_agent_skill").await;
+    assert_sqlite_index_exists(&pool, "uk_ai_agent_skill_key").await;
+    assert_sqlite_index_exists(&pool, "idx_ai_agent_skill_market").await;
+    assert_sqlite_index_exists(&pool, "uk_ai_user_agent_skill").await;
     assert_sqlite_index_exists(&pool, "uk_ai_runtime_usage_link_agent_scope").await;
     assert_sqlite_index_exists(&pool, "idx_commerce_order_owner_status_created_at").await;
     assert_sqlite_index_exists(&pool, "uk_iam_oauth_provider_catalog_owner_code").await;
@@ -328,7 +328,7 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
     .await;
     assert_sqlite_columns_exist(
         &pool,
-        "plus_app",
+        "platform_app",
         &[
             "tenant_id",
             "organization_id",
@@ -1448,7 +1448,7 @@ async fn sqlite_installer_imports_course_comment_seed_with_canonical_scope_field
     let comment = sqlx::query(
         r#"
         SELECT tenant_id, organization_id, data_scope, user_id, content_type, content_id, status, likes, reply_count, is_top
-        FROM plus_comments
+        FROM content_comment
         WHERE id = 30006001
         "#,
     )
@@ -1990,12 +1990,12 @@ async fn sqlite_installer_repairs_missing_skills_seed_rows_on_startup_check() {
     let installer = installer(pool.clone());
 
     sqlx::query(
-        "DELETE FROM studio_catalog_artifact WHERE uuid = 'skill-artifact-prompt-optimizer-wasm'",
+        "DELETE FROM ai_skill_artifact WHERE uuid = 'skill-artifact-prompt-optimizer-wasm'",
     )
     .execute(&pool)
     .await
     .unwrap();
-    sqlx::query("DELETE FROM plus_agent_skill WHERE skill_key = 'prompt-optimizer'")
+    sqlx::query("DELETE FROM ai_agent_skill WHERE skill_key = 'prompt-optimizer'")
         .execute(&pool)
         .await
         .unwrap();
@@ -2026,7 +2026,7 @@ async fn sqlite_installer_repairs_core_skill_seed_without_reimporting_full_skill
 
     sqlx::query(
         r#"
-        UPDATE plus_agent_skill
+        UPDATE ai_agent_skill
         SET source_type = 'LEGACY_EXTERNAL',
             market_status = 'DRAFT',
             visibility = 'PRIVATE',
@@ -2065,7 +2065,7 @@ async fn sqlite_installer_repairs_missing_forum_tutorial_seed_rows_on_startup_ch
     let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    sqlx::query("DELETE FROM plus_feeds WHERE uuid = 'sdkwork-forum-tutorial-quick-start'")
+    sqlx::query("DELETE FROM content_forum_post WHERE uuid = 'sdkwork-forum-tutorial-quick-start'")
         .execute(&pool)
         .await
         .unwrap();
@@ -2170,7 +2170,7 @@ async fn sqlite_installer_repairs_drifted_skills_seed_standard_fields_on_startup
 
     sqlx::query(
         r#"
-        UPDATE plus_agent_skill
+        UPDATE ai_agent_skill
         SET source_type = 'LEGACY_EXTERNAL',
             market_status = 'DRAFT',
             visibility = 'PRIVATE',
@@ -2200,7 +2200,7 @@ async fn sqlite_installer_repairs_drifted_skills_seed_standard_fields_on_startup
     let prompt_optimizer = sqlx::query(
         r#"
         SELECT source_type, market_status, visibility, review_status, enabled, builtin, is_builtin
-        FROM plus_agent_skill
+        FROM ai_agent_skill
         WHERE tenant_id = 0
           AND organization_id = 0
           AND skill_key = 'prompt-optimizer'
@@ -2233,7 +2233,7 @@ async fn sqlite_installer_repairs_drifted_skill_package_identity_on_startup_chec
 
     sqlx::query(
         r#"
-        UPDATE plus_agent_skill_package
+        UPDATE ai_agent_skill_package
         SET package_key = 'legacy-sdkwork-official-skills',
             name = 'Legacy SDKWork Official Skills',
             enabled = 0,
@@ -2260,7 +2260,7 @@ async fn sqlite_installer_repairs_drifted_skill_package_identity_on_startup_chec
     let package = sqlx::query(
         r#"
         SELECT package_key, name, enabled, featured
-        FROM plus_agent_skill_package
+        FROM ai_agent_skill_package
         WHERE tenant_id = 0
           AND organization_id = 0
           AND id = 7101
@@ -2286,7 +2286,7 @@ async fn sqlite_installer_reclaims_skill_package_key_from_stale_seed_duplicate_o
 
     sqlx::query(
         r#"
-        UPDATE plus_agent_skill_package
+        UPDATE ai_agent_skill_package
         SET package_key = 'legacy-sdkwork-official-skills',
             name = 'Legacy SDKWork Official Skills',
             enabled = 0
@@ -2300,7 +2300,7 @@ async fn sqlite_installer_reclaims_skill_package_key_from_stale_seed_duplicate_o
     .unwrap();
     sqlx::query(
         r#"
-        INSERT INTO plus_agent_skill_package
+        INSERT INTO ai_agent_skill_package
             (id, uuid, tenant_id, organization_id, data_scope, user_id, package_key, name, enabled, featured, sort_weight, tags)
         VALUES
             (97101, 'stale-seed-package-sdkwork-official-skills', 0, 0, 0, 0, 'sdkwork-official-skills', 'Stale SDKWork Official Skills Duplicate', 0, 0, 999, '[]')
@@ -2323,7 +2323,7 @@ async fn sqlite_installer_reclaims_skill_package_key_from_stale_seed_duplicate_o
     let canonical_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM plus_agent_skill_package
+        FROM ai_agent_skill_package
         WHERE tenant_id = 0
           AND organization_id = 0
           AND package_key = 'sdkwork-official-skills'
@@ -2337,7 +2337,7 @@ async fn sqlite_installer_reclaims_skill_package_key_from_stale_seed_duplicate_o
     let stale_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM plus_agent_skill_package
+        FROM ai_agent_skill_package
         WHERE tenant_id = 0
           AND organization_id = 0
           AND id = 97101
@@ -2351,7 +2351,7 @@ async fn sqlite_installer_reclaims_skill_package_key_from_stale_seed_duplicate_o
     let package = sqlx::query(
         r#"
         SELECT package_key, name, enabled, featured
-        FROM plus_agent_skill_package
+        FROM ai_agent_skill_package
         WHERE tenant_id = 0
           AND organization_id = 0
           AND id = 7101
@@ -2377,12 +2377,12 @@ async fn sqlite_installer_repairs_skills_seed_when_store_visible_catalog_becomes
 
     sqlx::query(
         r#"
-        UPDATE plus_category
+        UPDATE c_category
         SET visible = 0,
             status = 0
         WHERE tenant_id = 0
           AND organization_id = 0
-          AND type IN (19, 20)
+          AND category_type IN ('skill_market', 'skills_collection')
         "#,
     )
     .execute(&pool)
@@ -2422,7 +2422,7 @@ async fn sqlite_installer_repairs_drifted_skills_artifact_standard_fields_on_sta
 
     sqlx::query(
         r#"
-        UPDATE studio_catalog_artifact
+        UPDATE ai_skill_artifact
         SET artifact_ref = 'builtin://sdkwork.skills.prompt_optimizer@0.0.0',
             artifact_size_bytes = 1,
             checksum_hash = 'sha256:0000000000000000000000000000000000000000000000000000000000000000',
@@ -2450,7 +2450,7 @@ async fn sqlite_installer_repairs_drifted_skills_artifact_standard_fields_on_sta
     let artifact = sqlx::query(
         r#"
         SELECT artifact_ref, artifact_size_bytes, checksum_hash, status, deleted_at
-        FROM studio_catalog_artifact
+        FROM ai_skill_artifact
         WHERE tenant_id = 0
           AND organization_id = 0
           AND uuid = 'skill-artifact-prompt-optimizer-100'
@@ -2480,7 +2480,7 @@ async fn sqlite_installer_repairs_drifted_app_seed_standard_fields_on_startup_ch
 
     sqlx::query(
         r#"
-        UPDATE plus_app
+        UPDATE platform_app
         SET name = 'Drifted Claw Router',
             status = 0,
             config = '{"standard":{"appKey":"sdkwork-claw-router"},"portal":{"marketStatus":"DRAFT"}}',
@@ -2508,7 +2508,7 @@ async fn sqlite_installer_repairs_drifted_app_seed_standard_fields_on_startup_ch
     let claw_router = sqlx::query(
         r#"
         SELECT name, status, config, install_config, release_notes
-        FROM plus_app
+        FROM platform_app
         WHERE tenant_id = 20001
           AND organization_id = 0
           AND uuid = 'sdkwork-app-sdkwork-claw-router'
@@ -2546,7 +2546,7 @@ async fn sqlite_installer_repairs_app_seed_uuid_drift_on_stable_id_without_prima
 
     let changed = sqlx::query(
         r#"
-        UPDATE plus_app
+        UPDATE platform_app
         SET uuid = 'sdkwork-app-legacy-claw-studio',
             name = 'Legacy Claw Studio',
             status = 1,
@@ -2576,7 +2576,7 @@ async fn sqlite_installer_repairs_app_seed_uuid_drift_on_stable_id_without_prima
     let claw_studio = sqlx::query(
         r#"
         SELECT uuid, name, status, config
-        FROM plus_app
+        FROM platform_app
         WHERE id = 20001001
         "#,
     )
@@ -2597,254 +2597,13 @@ async fn sqlite_installer_repairs_app_seed_uuid_drift_on_stable_id_without_prima
 }
 
 #[tokio::test]
-async fn sqlite_installer_repairs_app_artifact_uuid_drift_without_unique_uuid_conflict() {
-    let pool = repair_sqlite_pool().await;
-    let installer = installer(pool.clone());
-
-    let canonical = sqlx::query(
-        r#"
-        SELECT id, uuid, tenant_id, organization_id, target_type, target_id, artifact_type,
-               version, platform_type, os_name
-        FROM studio_catalog_artifact
-        WHERE tenant_id = 20001
-          AND organization_id = 0
-          AND target_type = 15
-          AND uuid LIKE 'sdkapp-artifact-%'
-          AND status = 1
-          AND deleted_at IS NULL
-        ORDER BY id
-        LIMIT 1
-        "#,
-    )
-    .fetch_one(&pool)
-    .await
-    .unwrap();
-    let artifact_id = canonical.get::<i64, _>("id");
-    let artifact_uuid = canonical.get::<String, _>("uuid");
-    let target_id = canonical.get::<i64, _>("target_id");
-    let artifact_type = canonical.get::<i64, _>("artifact_type");
-    let version = canonical.get::<String, _>("version");
-    let platform_type = canonical.get::<String, _>("platform_type");
-    let os_name = canonical.get::<String, _>("os_name");
-
-    let changed = sqlx::query(
-        r#"
-        UPDATE studio_catalog_artifact
-        SET uuid = 'sdkapp-artifact-legacy-claw-router-package',
-            artifact_ref = 'legacy-package',
-            status = 0,
-            metadata = '{"seedKind":"sdkwork.plus_app.seed","itemType":"app_artifact","appKey":"legacy","sourceHash":"old"}'
-        WHERE id = ?
-        "#,
-    )
-    .bind(artifact_id)
-    .execute(&pool)
-    .await
-    .unwrap()
-    .rows_affected();
-    assert_eq!(
-        1, changed,
-        "test setup must drift the canonical artifact row"
-    );
-
-    sqlx::query(
-        r#"
-        INSERT INTO studio_catalog_artifact
-            (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_type, version, platform_type, os_name, artifact_ref, artifact_size_bytes, published_at)
-        VALUES
-            (?, 20001, 0, 0, 1, '{"seedKind":"sdkwork.plus_app.seed","itemType":"app_artifact","appKey":"wrong-owner","sourceHash":"old"}', 15, ?, ?, ?, ?, ?, 'wrong-owner-package', 1, '2026-05-09T00:00:00Z')
-        "#,
-    )
-    .bind(&artifact_uuid)
-    .bind(target_id + 99_999)
-    .bind(artifact_type)
-    .bind(&version)
-    .bind(&platform_type)
-    .bind(&os_name)
-    .execute(&pool)
-    .await
-    .unwrap();
-
-    assert_eq!(
-        InstallationStatus::UpgradeRequired,
-        installer.status().await.unwrap(),
-        "installer status must detect app artifact uuid drift and the wrong row occupying the canonical uuid"
-    );
-
-    let repaired = installer.ensure_installed().await.unwrap();
-    assert_eq!(InstallationStatus::Installed, repaired.status);
-    assert!(repaired.changed);
-
-    let repaired_artifact = sqlx::query(
-        r#"
-        SELECT uuid, status, deleted_at, artifact_ref, target_id, artifact_type, version, platform_type, os_name
-        FROM studio_catalog_artifact
-        WHERE id = ?
-        "#,
-    )
-    .bind(artifact_id)
-    .fetch_one(&pool)
-    .await
-    .unwrap();
-    assert_eq!(artifact_uuid, repaired_artifact.get::<String, _>("uuid"));
-    assert_eq!(1, repaired_artifact.get::<i64, _>("status"));
-    assert!(repaired_artifact
-        .get::<Option<String>, _>("deleted_at")
-        .is_none());
-    assert_eq!(target_id, repaired_artifact.get::<i64, _>("target_id"));
-    assert_eq!(
-        artifact_type,
-        repaired_artifact.get::<i64, _>("artifact_type")
-    );
-    assert_eq!(version, repaired_artifact.get::<String, _>("version"));
-    assert_eq!(
-        platform_type,
-        repaired_artifact.get::<String, _>("platform_type")
-    );
-    assert_eq!(os_name, repaired_artifact.get::<String, _>("os_name"));
-
-    let wrong_owner_count: i64 = sqlx::query_scalar(
-        r#"
-        SELECT COUNT(1)
-        FROM studio_catalog_artifact
-        WHERE tenant_id = 20001
-          AND organization_id = 0
-          AND uuid = ?
-          AND id <> ?
-        "#,
-    )
-    .bind(&artifact_uuid)
-    .bind(artifact_id)
-    .fetch_one(&pool)
-    .await
-    .unwrap();
-    assert_eq!(0, wrong_owner_count);
-}
-
-#[tokio::test]
-async fn sqlite_installer_retires_stale_app_seed_artifact_projections_on_startup_check() {
-    let pool = repair_sqlite_pool().await;
-    let installer = installer(pool.clone());
-
-    let video_cut_app_id: i64 = sqlx::query_scalar(
-        r#"
-        SELECT id
-        FROM plus_app
-        WHERE tenant_id = 20001
-          AND organization_id = 0
-          AND json_extract(config, '$.standard.appKey') = 'sdkwork-video-cut'
-        "#,
-    )
-    .fetch_one(&pool)
-    .await
-    .unwrap();
-    sqlx::query(
-        r#"
-        INSERT INTO studio_catalog_artifact
-            (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_type, version, platform_type, os_name, artifact_ref, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot, artifact_size_bytes, published_at)
-        VALUES
-            ('sdkapp-artifact-stale-video-cut-windows', 20001, 0, 0, 1, '{"seedKind":"sdkwork.plus_app.seed","itemType":"app_artifact","appKey":"sdkwork-video-cut","sourceHash":"old"}', 15, ?, 1, '0.1.4', 'DESKTOP_WINDOWS', 'desktop-windows-x64', 'desktop-windows-msi', 'stale-video-cut-windows-artifact', NULL, '{"kind":"document","source":"external_url","url":"https://cdn.example.test/stale/video-cut.msi","publicUrl":"https://cdn.example.test/stale/video-cut.msi"}', 1, '2026-05-09T00:00:00Z')
-        "#,
-    )
-    .bind(video_cut_app_id)
-    .execute(&pool)
-    .await
-    .unwrap();
-
-    assert_eq!(
-        InstallationStatus::UpgradeRequired,
-        installer.status().await.unwrap(),
-        "installer status must detect stale active app seed artifacts that are no longer in the canonical package matrix"
-    );
-
-    let repaired = installer.ensure_installed().await.unwrap();
-    assert_eq!(InstallationStatus::Installed, repaired.status);
-    assert!(repaired.changed);
-
-    let stale = sqlx::query(
-        r#"
-        SELECT status, deleted_at, deleted_by
-        FROM studio_catalog_artifact
-        WHERE uuid = 'sdkapp-artifact-stale-video-cut-windows'
-        "#,
-    )
-    .fetch_one(&pool)
-    .await
-    .unwrap();
-    assert_eq!(0, stale.get::<i64, _>("status"));
-    assert!(
-        stale.get::<Option<String>, _>("deleted_at").is_some(),
-        "stale app seed artifacts must be tombstoned instead of remaining visible"
-    );
-    assert_eq!(0, stale.get::<i64, _>("deleted_by"));
-}
-
-#[tokio::test]
-async fn sqlite_installer_retires_stale_app_seed_asset_projections_on_startup_check() {
-    let pool = repair_sqlite_pool().await;
-    let installer = installer(pool.clone());
-
-    let app_id: i64 = sqlx::query_scalar(
-        r#"
-        SELECT id
-        FROM plus_app
-        WHERE tenant_id = 20001
-          AND organization_id = 0
-          AND json_extract(config, '$.standard.appKey') = 'sdkwork-claw-router'
-        "#,
-    )
-    .fetch_one(&pool)
-    .await
-    .unwrap();
-    sqlx::query(
-        r#"
-        INSERT INTO studio_catalog_asset
-            (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, asset_type, asset_media_resource_id, asset_resource_snapshot, sort_order)
-        VALUES
-            ('sdkapp-asset-stale-claw-router-screen', 20001, 0, 0, 1, '{"seedKind":"sdkwork.plus_app.seed","itemType":"app_asset","appKey":"sdkwork-claw-router","sourceHash":"old"}', 15, ?, 2, 'stale-claw-router-screen-asset', '{"kind":"image","source":"external_url","url":"https://cdn.example.test/stale/claw-router.png","publicUrl":"https://cdn.example.test/stale/claw-router.png"}', 99)
-        "#,
-    )
-    .bind(app_id)
-    .execute(&pool)
-    .await
-    .unwrap();
-
-    assert_eq!(
-        InstallationStatus::UpgradeRequired,
-        installer.status().await.unwrap(),
-        "installer status must detect stale active app seed assets that are no longer in the canonical media matrix"
-    );
-
-    let repaired = installer.ensure_installed().await.unwrap();
-    assert_eq!(InstallationStatus::Installed, repaired.status);
-    assert!(repaired.changed);
-
-    let stale = sqlx::query(
-        r#"
-        SELECT status, deleted_at, deleted_by
-        FROM studio_catalog_asset
-        WHERE uuid = 'sdkapp-asset-stale-claw-router-screen'
-        "#,
-    )
-    .fetch_one(&pool)
-    .await
-    .unwrap();
-    assert_eq!(0, stale.get::<i64, _>("status"));
-    assert!(
-        stale.get::<Option<String>, _>("deleted_at").is_some(),
-        "stale app seed assets must be tombstoned instead of remaining visible"
-    );
-    assert_eq!(0, stale.get::<i64, _>("deleted_by"));
-}
-
-#[tokio::test]
 async fn sqlite_installer_retires_stale_app_seed_apps_on_startup_check() {
     let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
     sqlx::query(
         r#"
-        INSERT INTO plus_app
+        INSERT INTO platform_app
             (id, uuid, tenant_id, organization_id, data_scope, user_id, name, icon, resource_list, project_id, config, status, platforms, install_platforms, install_skill, install_config, release_notes)
         VALUES
             (20999999, 'sdkwork-app-removed-seed-app', 20001, 0, 0, 0, 'Removed Seed App', '{}', '{}', 0, '{"standard":{"appKey":"removed-seed-app"},"portal":{"marketStatus":"PUBLISHED"}}', 1, '{"platforms":["Web"]}', '{"platforms":["Web"]}', '{}', '{"packages":[]}', '[]')
@@ -2867,7 +2626,7 @@ async fn sqlite_installer_retires_stale_app_seed_apps_on_startup_check() {
     let stale = sqlx::query(
         r#"
         SELECT status, config
-        FROM plus_app
+        FROM platform_app
         WHERE uuid = 'sdkwork-app-removed-seed-app'
         "#,
     )
@@ -2892,7 +2651,7 @@ async fn sqlite_installer_repairs_half_retired_stale_app_seed_apps_on_startup_ch
 
     sqlx::query(
         r#"
-        INSERT INTO plus_app
+        INSERT INTO platform_app
             (id, uuid, tenant_id, organization_id, data_scope, user_id, name, icon, resource_list, project_id, config, status, platforms, install_platforms, install_skill, install_config, release_notes)
         VALUES
             (20999997, 'sdkwork-app-half-retired-seed-app', 20001, 0, 0, 0, 'Half Retired Seed App', '{}', '{}', 0, '{"standard":{"appKey":"half-retired-seed-app"},"portal":{"marketStatus":"PUBLISHED"}}', 0, '{"platforms":["Web"]}', '{"platforms":["Web"]}', '{}', '{"packages":[]}', '[]')
@@ -2915,7 +2674,7 @@ async fn sqlite_installer_repairs_half_retired_stale_app_seed_apps_on_startup_ch
     let config_text: String = sqlx::query_scalar(
         r#"
         SELECT config
-        FROM plus_app
+        FROM platform_app
         WHERE uuid = 'sdkwork-app-half-retired-seed-app'
         "#,
     )
@@ -2934,10 +2693,10 @@ async fn sqlite_installer_retires_stale_app_seed_categories_on_startup_check() {
 
     sqlx::query(
         r#"
-        INSERT INTO plus_category
-            (id, uuid, tenant_id, organization_id, data_scope, name, description, shop_id, type, group_name, code, tags, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, sort_weight, parent_id, path, visible, status)
+        INSERT INTO c_category
+            (id, uuid, tenant_id, organization_id, data_scope, category_type, name, description, code, tags, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, sort_weight, parent_id, path, visible, status)
         VALUES
-            (20999998, 'sdkwork-app-category-removed', 20001, 0, 0, 'Removed Category', 'Removed stale app category.', 0, 999999, 'app-store', 'app-store-removed', '["app","app-store","removed"]', 'stale-app-category-icon', NULL, '{"kind":"image","source":"provider_asset","uri":"app-window"}', 999, NULL, '/apps/categories/app-store-removed', 1, 1)
+            (20999998, 'sdkwork-app-category-removed', 20001, 0, 0, 'app_store', 'Removed Category', 'Removed stale app category.', 'app-store-removed', '["app","app-store","removed"]', 'stale-app-category-icon', NULL, '{"kind":"image","source":"provider_asset","uri":"app-window"}', 999, NULL, '/apps/categories/app-store-removed', 1, 1)
         "#,
     )
     .execute(&pool)
@@ -2957,7 +2716,7 @@ async fn sqlite_installer_retires_stale_app_seed_categories_on_startup_check() {
     let stale = sqlx::query(
         r#"
         SELECT visible, status
-        FROM plus_category
+        FROM c_category
         WHERE uuid = 'sdkwork-app-category-removed'
         "#,
     )
@@ -2975,10 +2734,10 @@ async fn sqlite_installer_repairs_half_retired_stale_app_seed_categories_on_star
 
     sqlx::query(
         r#"
-        INSERT INTO plus_category
-            (id, uuid, tenant_id, organization_id, data_scope, name, description, shop_id, type, group_name, code, tags, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, sort_weight, parent_id, path, visible, status)
+        INSERT INTO c_category
+            (id, uuid, tenant_id, organization_id, data_scope, category_type, name, description, code, tags, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, sort_weight, parent_id, path, visible, status)
         VALUES
-            (20999996, 'sdkwork-app-category-half-retired', 20001, 0, 0, 'Half Retired Category', 'Half retired stale app category.', 0, 999999, 'app-store', 'app-store-half-retired', '["app","app-store","half-retired"]', 'stale-app-category-icon', NULL, '{"kind":"image","source":"provider_asset","uri":"app-window"}', 999, NULL, '/apps/categories/app-store-half-retired', 1, 0)
+            (20999996, 'sdkwork-app-category-half-retired', 20001, 0, 0, 'app_store', 'Half Retired Category', 'Half retired stale app category.', 'app-store-half-retired', '["app","app-store","half-retired"]', 'stale-app-category-icon', NULL, '{"kind":"image","source":"provider_asset","uri":"app-window"}', 999, NULL, '/apps/categories/app-store-half-retired', 1, 0)
         "#,
     )
     .execute(&pool)
@@ -2998,7 +2757,7 @@ async fn sqlite_installer_repairs_half_retired_stale_app_seed_categories_on_star
     let stale = sqlx::query(
         r#"
         SELECT visible, status
-        FROM plus_category
+        FROM c_category
         WHERE uuid = 'sdkwork-app-category-half-retired'
         "#,
     )
@@ -3204,10 +2963,10 @@ async fn sqlite_installer_repairs_missing_appbase_commerce_order_schema_indexes_
 async fn sqlite_installer_installs_seed_projection_indexes_for_fast_startup_checks() {
     let pool = repair_sqlite_pool().await;
 
-    assert_sqlite_index_exists(&pool, "idx_studio_catalog_asset_seed_source").await;
-    assert_sqlite_index_exists(&pool, "idx_studio_catalog_artifact_seed_source").await;
-    assert_sqlite_index_exists(&pool, "idx_studio_catalog_asset_seed_kind").await;
-    assert_sqlite_index_exists(&pool, "idx_studio_catalog_artifact_seed_kind").await;
+    assert_sqlite_index_exists(&pool, "idx_ai_skill_asset_target").await;
+    assert_sqlite_index_exists(&pool, "idx_ai_skill_artifact_target").await;
+    assert_sqlite_index_exists(&pool, "idx_platform_app_category_id").await;
+    assert_sqlite_index_exists(&pool, "idx_c_category_parent").await;
 }
 
 #[tokio::test]
@@ -4768,10 +4527,10 @@ async fn assert_skill_store_seed_rows(pool: &SqlitePool) {
     let category_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM plus_category
+        FROM c_category
         WHERE tenant_id = 0
           AND organization_id = 0
-          AND type IN (19, 20)
+          AND category_type IN ('skill_market', 'skills_collection')
           AND status = 1
         "#,
     )
@@ -4786,7 +4545,7 @@ async fn assert_skill_store_seed_rows(pool: &SqlitePool) {
     let package_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM plus_agent_skill_package
+        FROM ai_agent_skill_package
         WHERE tenant_id = 0
           AND organization_id = 0
           AND enabled = 1
@@ -4803,7 +4562,7 @@ async fn assert_skill_store_seed_rows(pool: &SqlitePool) {
     let skill_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM plus_agent_skill
+        FROM ai_agent_skill
         WHERE tenant_id = 0
           AND organization_id = 0
           AND enabled = 1
@@ -4823,7 +4582,7 @@ async fn assert_skill_store_seed_rows(pool: &SqlitePool) {
     let concrete_skill = sqlx::query(
         r#"
         SELECT name, provider, tags, capabilities, default_config
-        FROM plus_agent_skill
+        FROM ai_agent_skill
         WHERE skill_key = 'prompt-optimizer'
           AND tenant_id = 0
           AND organization_id = 0
@@ -4866,7 +4625,7 @@ async fn sqlite_core_skill_seed_row_count(pool: &SqlitePool) -> i64 {
     sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM plus_agent_skill
+        FROM ai_agent_skill
         WHERE tenant_id = 0
           AND organization_id = 0
         "#,
@@ -4881,7 +4640,7 @@ async fn assert_app_store_seed_rows(pool: &SqlitePool) {
     let app_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM plus_app
+        FROM platform_app
         WHERE uuid LIKE 'sdkwork-app-%'
         "#,
     )
@@ -4890,13 +4649,13 @@ async fn assert_app_store_seed_rows(pool: &SqlitePool) {
     .unwrap();
     assert_eq!(
         expected_app_count as i64, app_count,
-        "installer must seed every sdkwork.app.config.json PlusApp projection"
+        "installer must seed every sdkwork.app.config.json platform_app projection"
     );
 
     let claw_router = sqlx::query(
         r#"
         SELECT name, version, icon_resource_snapshot, access_url, config, install_config, release_notes, status
-        FROM plus_app
+        FROM platform_app
         WHERE tenant_id = 20001
           AND organization_id = 0
           AND json_extract(config, '$.standard.appKey') = 'sdkwork-claw-router'
@@ -4913,7 +4672,7 @@ async fn assert_app_store_seed_rows(pool: &SqlitePool) {
     assert_eq!(1, claw_router.get::<i64, _>("status"));
     assert_eq!("0.1.0", claw_router.get::<String, _>("version"));
     assert_eq!(
-        "https://cdn.sdkwork.com/apps/sdkwork-claw-router/assets/icon-1024.png",
+        "https://cdn.sdkwork.com/sdkwork-claw-router/assets/icon-1024.png",
         serde_json::from_str::<serde_json::Value>(
             claw_router
                 .get::<String, _>("icon_resource_snapshot")
@@ -4924,7 +4683,7 @@ async fn assert_app_store_seed_rows(pool: &SqlitePool) {
             .unwrap()
     );
     assert_eq!(
-        "https://api.sdkwork.com/apps/sdkwork-claw-router",
+        "https://api.sdkwork.com/sdkwork-claw-router",
         claw_router.get::<String, _>("access_url")
     );
 
@@ -4937,24 +4696,24 @@ async fn assert_app_store_seed_rows(pool: &SqlitePool) {
         serde_json::from_str(claw_router.get::<String, _>("install_config").as_str()).unwrap();
     assert!(
         install_config["packages"].as_array().unwrap().len() >= 4,
-        "PlusApp install_config must preserve the package matrix"
+        "platform_app install_config must preserve the package matrix"
     );
 
     let release_notes: serde_json::Value =
         serde_json::from_str(claw_router.get::<String, _>("release_notes").as_str()).unwrap();
     assert!(
         !release_notes.as_array().unwrap().is_empty(),
-        "PlusApp release_notes must preserve standard release metadata"
+        "platform_app release_notes must preserve standard release metadata"
     );
 
     let expected_app_category_codes = sdkwork_app_category_seed_codes();
     let app_category_rows = sqlx::query(
         r#"
         SELECT code
-        FROM plus_category
+        FROM c_category
         WHERE tenant_id = 20001
           AND organization_id = 0
-          AND type = 999999
+          AND category_type = 'app_store'
           AND status = 1
         ORDER BY code
         "#,
@@ -4968,13 +4727,13 @@ async fn assert_app_store_seed_rows(pool: &SqlitePool) {
         .collect::<BTreeSet<_>>();
     assert_eq!(
         expected_app_category_codes, app_category_codes,
-        "installer must normalize AppCenter portal categories into PlusCategory records"
+        "installer must normalize AppCenter portal categories into c_category app_store records"
     );
 
-    let app_id: i64 = sqlx::query_scalar(
+    let claw_router_row = sqlx::query(
         r#"
-        SELECT id
-        FROM plus_app
+        SELECT resource_list, install_config
+        FROM platform_app
         WHERE tenant_id = 20001
           AND organization_id = 0
           AND json_extract(config, '$.standard.appKey') = 'sdkwork-claw-router'
@@ -4983,55 +4742,17 @@ async fn assert_app_store_seed_rows(pool: &SqlitePool) {
     .fetch_one(pool)
     .await
     .unwrap();
-
-    let asset_count: i64 = sqlx::query_scalar(
-        r#"
-        SELECT COUNT(1)
-        FROM studio_catalog_asset
-        WHERE tenant_id = 20001
-          AND organization_id = 0
-          AND target_type = 15
-          AND target_id = ?
-          AND asset_type IN (1, 2, 3)
-          AND status = 1
-          AND deleted_at IS NULL
-        "#,
-    )
-    .bind(app_id)
-    .fetch_one(pool)
-    .await
-    .unwrap();
+    let resource_list: serde_json::Value =
+        serde_json::from_str(claw_router_row.get::<String, _>("resource_list").as_str()).unwrap();
     assert!(
-        asset_count >= 3,
-        "installer must project app icon, screenshot, and preview media into studio_catalog_asset"
+        resource_list["screenshots"].as_array().unwrap().len() >= 1,
+        "installer must keep app screenshots on platform_app.resource_list"
     );
 
-    let artifact_count: i64 = sqlx::query_scalar(
+    let video_cut_install_config: serde_json::Value = sqlx::query_scalar(
         r#"
-        SELECT COUNT(1)
-        FROM studio_catalog_artifact
-        WHERE tenant_id = 20001
-          AND organization_id = 0
-          AND target_type = 15
-          AND target_id = ?
-          AND artifact_type = 1
-          AND status = 1
-          AND deleted_at IS NULL
-        "#,
-    )
-    .bind(app_id)
-    .fetch_one(pool)
-    .await
-    .unwrap();
-    assert!(
-        artifact_count >= 4,
-        "installer must project app install packages into studio_catalog_artifact"
-    );
-
-    let video_cut_app_id: i64 = sqlx::query_scalar(
-        r#"
-        SELECT id
-        FROM plus_app
+        SELECT install_config
+        FROM platform_app
         WHERE tenant_id = 20001
           AND organization_id = 0
           AND json_extract(config, '$.standard.appKey') = 'sdkwork-video-cut'
@@ -5039,49 +4760,33 @@ async fn assert_app_store_seed_rows(pool: &SqlitePool) {
     )
     .fetch_one(pool)
     .await
+    .map(|value: String| serde_json::from_str(value.as_str()).unwrap())
     .unwrap();
-    let disabled_video_cut_artifacts: i64 = sqlx::query_scalar(
-        r#"
-        SELECT COUNT(1)
-        FROM studio_catalog_artifact
-        WHERE tenant_id = 20001
-          AND organization_id = 0
-          AND target_type = 15
-          AND target_id = ?
-          AND artifact_type = 1
-          AND status = 0
-          AND deleted_at IS NULL
-        "#,
-    )
-    .bind(video_cut_app_id)
-    .fetch_one(pool)
-    .await
-    .unwrap();
-    assert_eq!(
-        6, disabled_video_cut_artifacts,
-        "installer must preserve disabled app package projections as inactive artifacts instead of dropping the package matrix"
+    let packages = video_cut_install_config["packages"].as_array().unwrap();
+    assert!(
+        packages
+            .iter()
+            .any(|package| package.get("enabled") == Some(&serde_json::Value::Bool(false))),
+        "disabled app packages must remain in platform_app.install_config instead of separate artifact projections"
+    );
+    assert!(
+        packages.len() >= 6,
+        "platform_app.install_config must preserve the full package matrix"
     );
 
-    let active_video_cut_artifacts: i64 = sqlx::query_scalar(
+    let app_catalog_asset_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM studio_catalog_artifact
-        WHERE tenant_id = 20001
-          AND organization_id = 0
-          AND target_type = 15
-          AND target_id = ?
-          AND artifact_type = 1
-          AND status = 1
-          AND deleted_at IS NULL
+        FROM ai_skill_asset
+        WHERE target_type = 15
         "#,
     )
-    .bind(video_cut_app_id)
     .fetch_one(pool)
     .await
     .unwrap();
     assert_eq!(
-        0, active_video_cut_artifacts,
-        "disabled app packages must not be visible as active App Store release artifacts"
+        0, app_catalog_asset_count,
+        "v4.1 app seed must not project app media into ai_skill_asset"
     );
 }
 
@@ -5529,7 +5234,7 @@ async fn assert_forum_tutorial_seed_rows(pool: &SqlitePool) {
     let feed_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM plus_feeds
+        FROM content_forum_post
         WHERE uuid LIKE 'sdkwork-forum-tutorial-%'
           AND COALESCE(status, 0) = 2
           AND tenant_id = 0
@@ -5547,7 +5252,7 @@ async fn assert_forum_tutorial_seed_rows(pool: &SqlitePool) {
     let tutorial = sqlx::query(
         r#"
         SELECT title, summary, category_id, is_top, is_recommended, tags
-        FROM plus_feeds
+        FROM content_forum_post
         WHERE uuid = 'sdkwork-forum-tutorial-quick-start'
         "#,
     )
@@ -5573,7 +5278,7 @@ async fn assert_forum_tutorial_seed_rows(pool: &SqlitePool) {
     let forum_comment_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM plus_comments
+        FROM content_comment
         WHERE uuid LIKE 'sdkwork-forum-comment-%'
           AND COALESCE(content_type, 0) = 5
           AND tenant_id = 0
@@ -5591,7 +5296,7 @@ async fn assert_forum_tutorial_seed_rows(pool: &SqlitePool) {
     let vote_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM plus_content_vote
+        FROM content_reaction
         WHERE uuid LIKE 'sdkwork-forum-vote-%'
           AND COALESCE(content_type, 0) = 5
           AND tenant_id = 0
@@ -5609,7 +5314,7 @@ async fn assert_forum_tutorial_seed_rows(pool: &SqlitePool) {
     let favorite_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM plus_favorite
+        FROM content_favorite
         WHERE uuid LIKE 'sdkwork-forum-favorite-%'
           AND COALESCE(content_type, 0) = 5
           AND tenant_id = 0

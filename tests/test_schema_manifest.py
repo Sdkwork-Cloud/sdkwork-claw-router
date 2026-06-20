@@ -192,7 +192,7 @@ class SchemaManifestGeneratorTest(unittest.TestCase):
                 root,
                 """
                 tables:
-                  - table: plus_agent_skill
+                  - table: ai_agent_skill
                     domain: legacy
                     columns:
                       skill_key: { type: string(128), constraints: "NOT NULL" }
@@ -219,7 +219,7 @@ class SchemaManifestGeneratorTest(unittest.TestCase):
                 root,
                 """
                 tables:
-                  - table: plus_app
+                  - table: platform_app
                     domain: legacy
                     generated_by_this_project: false
                     physical_columns:

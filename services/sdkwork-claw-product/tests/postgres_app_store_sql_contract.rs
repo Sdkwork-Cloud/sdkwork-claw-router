@@ -33,10 +33,10 @@ fn app_store_sql_scopes_every_primary_query_by_trusted_subject() {
 #[test]
 fn app_store_sql_reads_existing_market_tables_and_filters_active_apps() {
     for expected in [
-        "FROM plus_app a",
-        "FROM studio_catalog_action sa",
-        "FROM studio_catalog_asset",
-        "FROM studio_catalog_artifact",
+        "FROM platform_app a",
+        "FROM ai_skill_action sa",
+        "FROM ai_skill_asset",
+        "FROM ai_skill_artifact",
         "COALESCE(a.status, 1) = 1",
         "COALESCE(NULLIF(a.config -> 'portal' ->> 'marketStatus', ''), NULLIF(a.config ->> 'marketStatus', ''), 'DRAFT') = 'PUBLISHED'",
         "$3::integer IS NULL OR COALESCE(a.status, 1) = $4",
@@ -61,7 +61,7 @@ fn app_store_sql_reads_existing_market_tables_and_filters_active_apps() {
             && !POSTGRES_APP_STORE.contains("\"PUBLISHED\" | '1'")
             && !POSTGRES_APP_STORE.contains("\"ACTIVE\" | \"ENABLED\" | \"PUBLISHED\"")
             && !POSTGRES_APP_STORE.contains("\"ACTIVE\" | \"ENABLED\" | \"1\""),
-        "Postgres app store status mapper must keep plus_app.status separate from portal marketStatus"
+        "Postgres app store status mapper must keep platform_app.status separate from portal marketStatus"
     );
 }
 
@@ -106,7 +106,7 @@ fn app_store_sql_returns_contract_projection_fields() {
     );
     assert!(
         !POSTGRES_APP_STORE.contains("download_url"),
-        "Postgres app store SQL must not read plus_app.download_url; app artifacts must be MediaResource objects from artifact_resource_snapshot"
+        "Postgres app store SQL must not read platform_app.download_url; app artifacts must be MediaResource objects from artifact_resource_snapshot"
     );
 }
 
@@ -132,10 +132,10 @@ fn app_store_detail_sql_accepts_numeric_id_or_stable_app_key() {
 }
 
 #[test]
-fn app_store_categories_sql_reads_unified_plus_category_app_store_tree() {
+fn app_store_categories_sql_reads_unified_c_category_app_store_tree() {
     for expected in [
         "const LOAD_CATEGORIES",
-        "FROM plus_category c",
+        "FROM c_category c",
         "c.tenant_id = $1",
         "c.organization_id = $2",
         "OR (c.tenant_id = $3 AND c.organization_id = 0)",
@@ -150,6 +150,6 @@ fn app_store_categories_sql_reads_unified_plus_category_app_store_tree() {
 
     assert!(
         !compact_sql(POSTGRES_APP_STORE).contains("app_category_from_raw("),
-        "categories must not be derived from plus_app.app_type or app DTO config"
+        "categories must not be derived from platform_app.app_type or app DTO config"
     );
 }

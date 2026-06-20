@@ -71,14 +71,14 @@ fn validate_bundle(dataset: &str, bundle: &AdminCategorySeedBundle) -> DomainRes
     }
     if !matches!(
         bundle.target.as_str(),
-        "commerce_product_category" | "plus_category"
+        "commerce_product_category" | "c_category"
     ) {
         return Err(DomainError::new(format!(
             "category seed dataset {dataset} has unsupported target {}",
             bundle.target
         )));
     }
-    if bundle.target == "plus_category"
+    if bundle.target == "c_category"
         && (bundle.category_type.is_none()
             || bundle
                 .group_name
@@ -88,7 +88,7 @@ fn validate_bundle(dataset: &str, bundle: &AdminCategorySeedBundle) -> DomainRes
                 .is_empty())
     {
         return Err(DomainError::new(format!(
-            "plus_category seed dataset {dataset} requires categoryType and groupName"
+            "c_category seed dataset {dataset} requires categoryType and groupName"
         )));
     }
     Ok(())

@@ -21,6 +21,7 @@ const FEEDS_STATUS_DELETED: i64 = 3;
 const COMMENT_STATUS_PUBLISHED: i64 = 1;
 const COMMENT_STATUS_DELETED: i64 = 3;
 const FAVORITE_STATUS_ACTIVE: i64 = 1;
+const REACTION_TYPE_LIKE: i64 = 2;
 const DEFAULT_PAGE_SIZE: i64 = 20;
 const MAX_PAGE_SIZE: i64 = 100;
 
@@ -89,17 +90,18 @@ impl ForumFeedReadStore for PostgresForumStore {
                     COALESCE(to_char((f.updated_at AT TIME ZONE 'UTC'), 'YYYY-MM-DD"T"HH24:MI:SS"Z"'), '') AS updated_at,
                     EXISTS (
                         SELECT 1
-                        FROM plus_content_vote v
+                        FROM content_reaction v
                         WHERE v.tenant_id = f.tenant_id
                           AND v.organization_id = f.organization_id
                           AND v.user_id = $3
-                          AND v.content_type = $4
-                          AND v.content_id = f.id
-                          AND lower(COALESCE(v.rating, '')) = 'like'
+                          AND v.target_type = $4
+                          AND v.target_id = f.id
+                          AND v.reaction_type = 2
+                          AND v.cancelled_at IS NULL
                     ) AS is_liked,
                     EXISTS (
                         SELECT 1
-                        FROM plus_favorite fav
+                        FROM content_favorite fav
                         WHERE fav.tenant_id = f.tenant_id
                           AND fav.organization_id = f.organization_id
                           AND fav.user_id = $3
@@ -107,7 +109,7 @@ impl ForumFeedReadStore for PostgresForumStore {
                           AND fav.content_id = f.id
                           AND COALESCE(fav.status, 0) = $5
                     ) AS is_collected
-                FROM plus_feeds f
+                FROM content_forum_post f
                 WHERE COALESCE(f.status, 0) = $6
                   AND ($7::int8 IS NULL OR COALESCE(f.content_type, 0) = $7)
                   AND ($8::int8 IS NULL OR COALESCE(f.user_id, 0) = $8)
@@ -197,7 +199,7 @@ impl ForumFeedCommandStore for PostgresForumStore {
 
             sqlx::query(
                 r#"
-                INSERT INTO plus_feeds
+                INSERT INTO content_forum_post
                     (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, user_id,
                      title, summary, category_id, content_type, content_id, cover_resources, resource_list,
                      author, source, source_url, publish_time, tags, status, view_count, like_count,
@@ -244,7 +246,7 @@ impl ForumFeedCommandStore for PostgresForumStore {
         Box::pin(async move {
             let rows = sqlx::query(
                 r#"
-                UPDATE plus_feeds
+                UPDATE content_forum_post
                 SET status = $1,
                     updated_at = CURRENT_TIMESTAMP
                 WHERE id = $2
@@ -308,18 +310,21 @@ impl ForumFeedCommandStore for PostgresForumStore {
     ) -> ForumCommandFuture<'a, ForumFeedItem> {
         Box::pin(async move {
             let feed = require_feed(&self.pool, feed_id, Some(subject)).await?;
+            let metadata = json!({
+                "title": feed.title,
+                "folderId": folder_id,
+            })
+            .to_string();
             sqlx::query(
                 r#"
-                INSERT INTO plus_favorite
-                    (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, user_id,
-                     title, content_type, content_id, folder_id, sort_weight, is_private, status, view_count)
+                INSERT INTO content_favorite
+                    (id, uuid, tenant_id, organization_id, data_scope, user_id, content_type,
+                     content_id, status, metadata, source)
                 VALUES
-                    ($1, $2, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0, $3, $4, 1, $5,
-                     $6, $7, $8, $9, 0, false, $10, 0)
+                    ($1, $2, $3, $4, 1, $5, $6, $7, $8, $9::jsonb, 'forum')
                 ON CONFLICT(user_id, content_type, content_id) DO UPDATE SET
-                    title = excluded.title,
-                    folder_id = excluded.folder_id,
                     status = excluded.status,
+                    metadata = excluded.metadata,
                     updated_at = CURRENT_TIMESTAMP
                 "#,
             )
@@ -328,11 +333,10 @@ impl ForumFeedCommandStore for PostgresForumStore {
             .bind(subject.tenant_id)
             .bind(subject.organization_id)
             .bind(subject.user_id)
-            .bind(feed.title)
             .bind(CONTENT_TYPE_FEEDS)
             .bind(feed_id)
-            .bind(folder_id)
             .bind(FAVORITE_STATUS_ACTIVE)
+            .bind(metadata)
             .execute(&self.pool)
             .await
             .map_err(sql_error)?;
@@ -350,7 +354,7 @@ impl ForumFeedCommandStore for PostgresForumStore {
             require_feed(&self.pool, feed_id, Some(subject)).await?;
             sqlx::query(
                 r#"
-                DELETE FROM plus_favorite
+                DELETE FROM content_favorite
                 WHERE tenant_id = $1
                   AND organization_id = $2
                   AND user_id = $3
@@ -380,7 +384,7 @@ impl ForumFeedCommandStore for PostgresForumStore {
             require_feed(&self.pool, feed_id, Some(subject)).await?;
             sqlx::query(
                 r#"
-                UPDATE plus_feeds
+                UPDATE content_forum_post
                 SET share_count = COALESCE(share_count, 0) + 1,
                     updated_at = CURRENT_TIMESTAMP
                 WHERE id = $3
@@ -453,7 +457,7 @@ impl ForumCommentReadStore for PostgresForumStore {
                 LIMIT 1
                 "#,
                 select = COMMENT_SELECT_COLUMNS,
-                scope_filter = postgres_scope_filter("plus_comments"),
+                scope_filter = postgres_scope_filter("content_comment"),
             );
             let row = sqlx::query(sql.as_str())
                 .bind(scope.tenant_id)
@@ -487,7 +491,7 @@ impl ForumCommentReadStore for PostgresForumStore {
                     content, content_type, content_id, status, likes, reply_count, is_top,
                     COALESCE(author::text, '') AS author,
                     COALESCE(to_char((created_at AT TIME ZONE 'UTC'), 'YYYY-MM-DD"T"HH24:MI:SS"Z"'), '') AS created_at
-                FROM plus_comments
+                FROM content_comment
                 WHERE tenant_id = $1
                   AND organization_id = $2
                   AND user_id = $3
@@ -508,7 +512,7 @@ impl ForumCommentReadStore for PostgresForumStore {
             let total = sqlx::query_scalar::<_, i64>(
                 r#"
                 SELECT COUNT(1)
-                FROM plus_comments
+                FROM content_comment
                 WHERE tenant_id = $1
                   AND organization_id = $2
                   AND user_id = $3
@@ -546,13 +550,13 @@ impl ForumCommentReadStore for PostgresForumStore {
                 format!(
                     r#"
                 SELECT COUNT(1)
-                FROM plus_comments
+                FROM content_comment
                 WHERE content_type = $3
                   AND content_id = $4
                   AND COALESCE(status, 0) = $5
                   AND {scope_filter}
                 "#,
-                    scope_filter = postgres_scope_filter("plus_comments"),
+                    scope_filter = postgres_scope_filter("content_comment"),
                 )
                 .as_str(),
             )
@@ -602,9 +606,9 @@ impl ForumCommentCommandStore for PostgresForumStore {
 
             sqlx::query(
                 r#"
-                INSERT INTO plus_comments
+                INSERT INTO content_comment
                     (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, user_id,
-                     parent_id, path, sort_weight, content, content_type, content_id, status,
+                     parent_id, path, sort_weight, body, content_type, content_id, status,
                      likes, reply_count, is_top, ip_address, device_info, author)
                 VALUES
                     ($1, $2, $3, $3, 0, $4, $5, 1, $6,
@@ -634,7 +638,7 @@ impl ForumCommentCommandStore for PostgresForumStore {
             if let Some(parent_id) = command.parent_id {
                 sqlx::query(
                     r#"
-                    UPDATE plus_comments
+                    UPDATE content_comment
                     SET reply_count = COALESCE(reply_count, 0) + 1,
                         updated_at = CURRENT_TIMESTAMP
                     WHERE id = $1
@@ -659,7 +663,7 @@ impl ForumCommentCommandStore for PostgresForumStore {
             let parent = load_comment_parent(&self.pool, comment_id, Some(subject)).await?;
             let rows = sqlx::query(
                 r#"
-                UPDATE plus_comments
+                UPDATE content_comment
                 SET status = $1,
                     updated_at = CURRENT_TIMESTAMP
                 WHERE id = $2
@@ -690,7 +694,7 @@ impl ForumCommentCommandStore for PostgresForumStore {
                     if let Some(parent_id) = parent.parent_id {
                         sqlx::query(
                             r#"
-                            UPDATE plus_comments
+                            UPDATE content_comment
                             SET reply_count = GREATEST(COALESCE(reply_count, 0) - 1, 0),
                                 updated_at = CURRENT_TIMESTAMP
                             WHERE id = $1
@@ -749,7 +753,7 @@ impl ForumCommentCommandStore for PostgresForumStore {
         Box::pin(async move {
             let rows = sqlx::query(
                 r#"
-                UPDATE plus_comments
+                UPDATE content_comment
                 SET is_top = $1,
                     updated_at = CURRENT_TIMESTAMP
                 WHERE id = $2
@@ -786,7 +790,7 @@ const COMMENT_SELECT_COLUMNS: &str = r#"
         COALESCE(author::text, '') AS author,
         COALESCE(to_char((created_at AT TIME ZONE 'UTC'), 'YYYY-MM-DD"T"HH24:MI:SS"Z"'), '') AS created_at,
         COALESCE(to_char((updated_at AT TIME ZONE 'UTC'), 'YYYY-MM-DD"T"HH24:MI:SS"Z"'), '') AS updated_at
-    FROM plus_comments
+    FROM content_comment
 "#;
 
 async fn load_feed_by_id(
@@ -824,17 +828,18 @@ async fn load_feed_by_id(
                 COALESCE(to_char((f.updated_at AT TIME ZONE 'UTC'), 'YYYY-MM-DD"T"HH24:MI:SS"Z"'), '') AS updated_at,
                 EXISTS (
                     SELECT 1
-                    FROM plus_content_vote v
+                    FROM content_reaction v
                     WHERE v.tenant_id = f.tenant_id
                       AND v.organization_id = f.organization_id
                       AND v.user_id = $3
-                      AND v.content_type = $4
-                      AND v.content_id = f.id
-                      AND lower(COALESCE(v.rating, '')) = 'like'
+                      AND v.target_type = $4
+                      AND v.target_id = f.id
+                      AND v.reaction_type = 2
+                      AND v.cancelled_at IS NULL
                 ) AS is_liked,
                 EXISTS (
                     SELECT 1
-                    FROM plus_favorite fav
+                    FROM content_favorite fav
                     WHERE fav.tenant_id = f.tenant_id
                       AND fav.organization_id = f.organization_id
                       AND fav.user_id = $3
@@ -842,7 +847,7 @@ async fn load_feed_by_id(
                       AND fav.content_id = f.id
                       AND COALESCE(fav.status, 0) = $5
                 ) AS is_collected
-            FROM plus_feeds f
+            FROM content_forum_post f
             WHERE f.id = $6
               AND COALESCE(f.status, 0) = $7
               AND {scope_filter}
@@ -885,14 +890,14 @@ async fn increment_feed_view_count(
     sqlx::query(
         format!(
             r#"
-        UPDATE plus_feeds
+        UPDATE content_forum_post
         SET view_count = COALESCE(view_count, 0) + 1,
             updated_at = CURRENT_TIMESTAMP
         WHERE id = $3
           AND COALESCE(status, 0) = $4
           AND {scope_filter}
         "#,
-            scope_filter = postgres_scope_filter("plus_feeds"),
+            scope_filter = postgres_scope_filter("content_forum_post"),
         )
         .as_str(),
     )
@@ -914,7 +919,7 @@ async fn feed_is_collected(
     let count = sqlx::query_scalar::<_, i64>(
         r#"
         SELECT COUNT(1)
-        FROM plus_favorite
+        FROM content_favorite
         WHERE tenant_id = $1
           AND organization_id = $2
           AND user_id = $3
@@ -944,13 +949,13 @@ async fn load_forum_overview(
         r#"
         WITH published_feeds AS (
             SELECT id, user_id, created_at, updated_at
-            FROM plus_feeds
+            FROM content_forum_post
             WHERE COALESCE(status, 0) = $3
               AND {feed_scope_filter}
         ),
         published_comments AS (
             SELECT user_id, created_at, updated_at
-            FROM plus_comments
+            FROM content_comment
             WHERE COALESCE(status, 0) = $4
               AND COALESCE(content_type, 0) IN (5, 22)
               AND {comment_scope_filter}
@@ -977,8 +982,8 @@ async fn load_forum_overview(
             (SELECT COUNT(1) FROM activity_users) AS member_count,
             (SELECT COUNT(1) FROM recent_activity_users) AS online_members
         "#,
-        feed_scope_filter = postgres_scope_filter("plus_feeds"),
-        comment_scope_filter = postgres_scope_filter("plus_comments"),
+        feed_scope_filter = postgres_scope_filter("content_forum_post"),
+        comment_scope_filter = postgres_scope_filter("content_comment"),
     );
     let row = sqlx::query(sql.as_str())
         .bind(scope.tenant_id)
@@ -1000,10 +1005,10 @@ async fn load_forum_overview(
             source_description: "Derived from PlusFeeds, PlusComments, vote, and favorite tables."
                 .to_owned(),
             source_tables: vec![
-                "plus_feeds".to_owned(),
-                "plus_comments".to_owned(),
-                "plus_content_vote".to_owned(),
-                "plus_favorite".to_owned(),
+                "content_forum_post".to_owned(),
+                "content_comment".to_owned(),
+                "content_reaction".to_owned(),
+                "content_favorite".to_owned(),
             ],
             observed_at: current_timestamp_string(),
         },
@@ -1019,19 +1024,15 @@ async fn upsert_like_vote(
 ) -> DomainResult<()> {
     sqlx::query(
         r#"
-        INSERT INTO plus_content_vote
-            (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope,
-             user_id, content_type, content_id, rating, metadata, source, client_ip, device_info)
+        INSERT INTO content_reaction
+            (id, uuid, tenant_id, organization_id, user_id, status, metadata, target_type,
+             target_id, reaction_type, reaction_value)
         VALUES
-            ($1, $2, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0, $3, $4, 1,
-             $5, $6, $7, 'like', $8::jsonb, 'forum', $9, $10)
-        ON CONFLICT(user_id, content_type, content_id) DO UPDATE SET
-            rating = 'like',
+            ($1, $2, $3, $4, $5, 1, $6::jsonb, $7, $8, 2, '1')
+        ON CONFLICT(tenant_id, organization_id, user_id, target_type, target_id, reaction_type) DO UPDATE SET
+            reaction_value = '1',
             metadata = excluded.metadata,
-            source = excluded.source,
-            client_ip = excluded.client_ip,
-            device_info = excluded.device_info,
-            updated_at = CURRENT_TIMESTAMP
+            cancelled_at = NULL
         "#,
     )
     .bind(next_entity_id())
@@ -1042,8 +1043,6 @@ async fn upsert_like_vote(
     .bind(content_type)
     .bind(content_id)
     .bind("{}")
-    .bind(Option::<&str>::None)
-    .bind(Option::<&str>::None)
     .execute(pool)
     .await
     .map_err(sql_error)?;
@@ -1058,13 +1057,13 @@ async fn delete_like_vote(
 ) -> DomainResult<()> {
     sqlx::query(
         r#"
-        DELETE FROM plus_content_vote
+        DELETE FROM content_reaction
         WHERE tenant_id = $1
           AND organization_id = $2
           AND user_id = $3
-          AND content_type = $4
-          AND content_id = $5
-          AND lower(COALESCE(rating, '')) = 'like'
+          AND target_type = $4
+          AND target_id = $5
+          AND reaction_type = 2
         "#,
     )
     .bind(subject.tenant_id)
@@ -1081,13 +1080,14 @@ async fn delete_like_vote(
 async fn refresh_feed_like_count(pool: &PgPool, feed_id: i64) -> DomainResult<()> {
     sqlx::query(
         r#"
-        UPDATE plus_feeds
+        UPDATE content_forum_post
         SET like_count = (
                 SELECT COUNT(1)
-                FROM plus_content_vote
-                WHERE content_type = $1
-                  AND content_id = $2
-                  AND lower(COALESCE(rating, '')) = 'like'
+                FROM content_reaction
+                WHERE target_type = $1
+                  AND target_id = $2
+                  AND reaction_type = 2
+                  AND cancelled_at IS NULL
             ),
             updated_at = CURRENT_TIMESTAMP
         WHERE id = $2
@@ -1104,10 +1104,10 @@ async fn refresh_feed_like_count(pool: &PgPool, feed_id: i64) -> DomainResult<()
 async fn refresh_feed_favorite_count(pool: &PgPool, feed_id: i64) -> DomainResult<()> {
     sqlx::query(
         r#"
-        UPDATE plus_feeds
+        UPDATE content_forum_post
         SET favorite_count = (
                 SELECT COUNT(1)
-                FROM plus_favorite
+                FROM content_favorite
                 WHERE content_type = $1
                   AND content_id = $2
                   AND COALESCE(status, 0) = $3
@@ -1128,13 +1128,14 @@ async fn refresh_feed_favorite_count(pool: &PgPool, feed_id: i64) -> DomainResul
 async fn refresh_comment_like_count(pool: &PgPool, comment_id: i64) -> DomainResult<()> {
     sqlx::query(
         r#"
-        UPDATE plus_comments
+        UPDATE content_comment
         SET likes = (
                 SELECT COUNT(1)
-                FROM plus_content_vote
-                WHERE content_type = $1
-                  AND content_id = $2
-                  AND lower(COALESCE(rating, '')) = 'like'
+                FROM content_reaction
+                WHERE target_type = $1
+                  AND target_id = $2
+                  AND reaction_type = 2
+                  AND cancelled_at IS NULL
             ),
             updated_at = CURRENT_TIMESTAMP
         WHERE id = $2
@@ -1156,7 +1157,7 @@ async fn increment_target_comment_count(
     if content_type == CONTENT_TYPE_FEEDS {
         sqlx::query(
             r#"
-            UPDATE plus_feeds
+            UPDATE content_forum_post
             SET comment_count = COALESCE(comment_count, 0) + 1,
                 updated_at = CURRENT_TIMESTAMP
             WHERE id = $1
@@ -1178,7 +1179,7 @@ async fn decrement_target_comment_count(
     if content_type == CONTENT_TYPE_FEEDS {
         sqlx::query(
             r#"
-            UPDATE plus_feeds
+            UPDATE content_forum_post
             SET comment_count = GREATEST(COALESCE(comment_count, 0) - 1, 0),
                 updated_at = CURRENT_TIMESTAMP
             WHERE id = $1
@@ -1219,7 +1220,7 @@ async fn load_comment_page(
         LIMIT $7 OFFSET $8
         "#,
         select = COMMENT_SELECT_COLUMNS,
-        scope_filter = postgres_scope_filter("plus_comments"),
+        scope_filter = postgres_scope_filter("content_comment"),
     );
     let rows = sqlx::query(sql.as_str())
         .bind(scope.tenant_id)
@@ -1237,14 +1238,14 @@ async fn load_comment_page(
     let count_sql = format!(
         r#"
         SELECT COUNT(1)
-        FROM plus_comments
+        FROM content_comment
         WHERE content_type = $3
           AND content_id = $4
           AND COALESCE(status, 0) = $5
           AND {parent_filter}
           AND {scope_filter}
         "#,
-        scope_filter = postgres_scope_filter("plus_comments"),
+        scope_filter = postgres_scope_filter("content_comment"),
     );
     let total = sqlx::query_scalar::<_, i64>(count_sql.as_str())
         .bind(scope.tenant_id)
@@ -1285,7 +1286,7 @@ async fn load_comment_items_by_parent(
             LIMIT $5 OFFSET $6
             "#,
             select = COMMENT_SELECT_COLUMNS,
-            scope_filter = postgres_scope_filter("plus_comments"),
+            scope_filter = postgres_scope_filter("content_comment"),
         )
         .as_str(),
     )
@@ -1319,13 +1320,13 @@ async fn load_comment_parent(
         format!(
             r#"
         SELECT content_type, content_id, parent_id, path
-        FROM plus_comments
+        FROM content_comment
         WHERE id = $3
           AND COALESCE(status, 0) = $4
           AND {scope_filter}
         LIMIT 1
         "#,
-            scope_filter = postgres_scope_filter("plus_comments"),
+            scope_filter = postgres_scope_filter("content_comment"),
         )
         .as_str(),
     )
@@ -1359,7 +1360,7 @@ async fn require_comment_item(
         LIMIT 1
         "#,
         select = COMMENT_SELECT_COLUMNS,
-        scope_filter = postgres_scope_filter("plus_comments"),
+        scope_filter = postgres_scope_filter("content_comment"),
     );
     let row = sqlx::query(sql.as_str())
         .bind(scope.tenant_id)

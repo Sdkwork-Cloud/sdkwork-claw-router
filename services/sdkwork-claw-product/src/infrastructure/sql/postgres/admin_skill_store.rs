@@ -22,6 +22,22 @@ use crate::ports::{
 const SKILL_TARGET_TYPE: i32 = 35;
 const CATEGORY_TYPE_SKILLS: i32 = 19;
 const CATEGORY_TYPE_SKILLS_COLLECTION: i32 = 20;
+const SKILL_CATEGORY_TYPE_MARKET: &str = "skill_market";
+const SKILL_CATEGORY_TYPE_COLLECTION: &str = "skills_collection";
+
+fn skill_category_type_label(value: i32) -> &'static str {
+    match value {
+        CATEGORY_TYPE_SKILLS_COLLECTION => SKILL_CATEGORY_TYPE_COLLECTION,
+        _ => SKILL_CATEGORY_TYPE_MARKET,
+    }
+}
+
+fn skill_category_type_code(value: &str) -> i32 {
+    match value {
+        SKILL_CATEGORY_TYPE_COLLECTION => CATEGORY_TYPE_SKILLS_COLLECTION,
+        _ => CATEGORY_TYPE_SKILLS,
+    }
+}
 const PUBLIC_SKILLS_TENANT_ID: i64 = 0;
 const PUBLIC_SKILLS_ORGANIZATION_ID: i64 = 0;
 const MAX_RUNTIME_ID_ATTEMPTS: u8 = 16;
@@ -1067,13 +1083,13 @@ async fn list_categories(
                icon_resource_snapshot,
                COALESCE(sort_weight, 0) AS sort_weight,
                parent_id, path, COALESCE(visible, true) AS visible,
-               COALESCE(status, 1) AS status, type AS category_type
-        FROM plus_category
+               COALESCE(status, 1) AS status, category_type
+        FROM c_category
         WHERE (
               (tenant_id = $1 AND organization_id = $2)
               OR (tenant_id = $3 AND organization_id = $4)
           )
-          AND type IN ($5, $6)
+          AND category_type IN ($5, $6)
           AND COALESCE(status, 1) >= 0
         ORDER BY
             CASE
@@ -1090,8 +1106,8 @@ async fn list_categories(
     .bind(query.subject.organization_id)
     .bind(PUBLIC_SKILLS_TENANT_ID)
     .bind(PUBLIC_SKILLS_ORGANIZATION_ID)
-    .bind(CATEGORY_TYPE_SKILLS)
-    .bind(CATEGORY_TYPE_SKILLS_COLLECTION)
+    .bind(SKILL_CATEGORY_TYPE_MARKET)
+    .bind(SKILL_CATEGORY_TYPE_COLLECTION)
     .fetch_all(pool)
     .await
     .map_err(|error| store_error("failed to list skill categories", error))?;
@@ -1104,7 +1120,7 @@ async fn insert_category(
 ) -> DomainResult<i64> {
     let id = next_assigned_id(
         tx,
-        "plus_category",
+        "c_category",
         "admin-skill-category",
         &command.category_uuid,
     )
@@ -1115,8 +1131,8 @@ async fn insert_category(
     let icon_resource_snapshot = icon.map(serde_json::Value::to_string);
     sqlx::query(
         r#"
-        INSERT INTO plus_category
-            (id, uuid, tenant_id, organization_id, data_scope, name, description, type, code,
+        INSERT INTO c_category
+            (id, uuid, tenant_id, organization_id, data_scope, category_type, name, description, code,
              icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot,
              sort_weight, parent_id, path, visible, status, created_at, updated_at)
         VALUES
@@ -1127,9 +1143,9 @@ async fn insert_category(
     .bind(&command.category_uuid)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
+    .bind(skill_category_type_label(command.category_type))
     .bind(&command.name)
     .bind(command.description.as_deref())
-    .bind(command.category_type)
     .bind(command.code.as_deref())
     .bind(icon_media_resource_id)
     .bind(icon_object_blob_id)
@@ -1159,20 +1175,20 @@ async fn load_category_by_id(
                icon_resource_snapshot,
                COALESCE(sort_weight, 0) AS sort_weight,
                parent_id, path, COALESCE(visible, true) AS visible,
-               COALESCE(status, 1) AS status, type AS category_type
-        FROM plus_category
+               COALESCE(status, 1) AS status, category_type
+        FROM c_category
         WHERE id = $1
           AND tenant_id = $2
           AND organization_id = $3
-          AND type IN ($4, $5)
+          AND category_type IN ($4, $5)
         LIMIT 1
         "#,
     )
     .bind(id)
     .bind(tenant_id)
     .bind(organization_id)
-    .bind(CATEGORY_TYPE_SKILLS)
-    .bind(CATEGORY_TYPE_SKILLS_COLLECTION)
+    .bind(SKILL_CATEGORY_TYPE_MARKET)
+    .bind(SKILL_CATEGORY_TYPE_COLLECTION)
     .fetch_optional(&mut **tx)
     .await
     .map_err(|error| store_error("failed to load skill category", error))?;
@@ -1195,7 +1211,7 @@ async fn update_category(
     let icon_resource_snapshot = icon.map(serde_json::Value::to_string);
     let result = sqlx::query(
         r#"
-        UPDATE plus_category
+        UPDATE c_category
         SET name = COALESCE($1, name),
             description = CASE WHEN $2 THEN $3 ELSE description END,
             code = CASE WHEN $4 THEN $5 ELSE code END,
@@ -1207,13 +1223,13 @@ async fn update_category(
             path = CASE WHEN $15 THEN $16 ELSE path END,
             visible = COALESCE($17, visible),
             status = COALESCE($18, status),
-            type = COALESCE($19, type),
+            category_type = COALESCE($19, category_type),
             updated_at = $20::timestamptz,
             v = COALESCE(v, 0) + 1
         WHERE id = $21
           AND tenant_id = $22
           AND organization_id = $23
-          AND type IN ($24, $25)
+          AND category_type IN ($24, $25)
         "#,
     )
     .bind(command.name.as_deref())
@@ -1249,13 +1265,17 @@ async fn update_category(
     )
     .bind(command.visible)
     .bind(command.status)
-    .bind(command.category_type)
+    .bind(
+        command
+            .category_type
+            .map(|value| skill_category_type_label(value).to_owned()),
+    )
     .bind(&command.requested_at)
     .bind(command.category_id)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
-    .bind(CATEGORY_TYPE_SKILLS)
-    .bind(CATEGORY_TYPE_SKILLS_COLLECTION)
+    .bind(SKILL_CATEGORY_TYPE_MARKET)
+    .bind(SKILL_CATEGORY_TYPE_COLLECTION)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to update skill category", error))?;
@@ -1269,14 +1289,14 @@ async fn delete_category(
     ensure_category_delete_allowed(tx, command).await?;
     let result = sqlx::query(
         r#"
-        UPDATE plus_category
+        UPDATE c_category
         SET status = -1,
             updated_at = $1::timestamptz,
             v = COALESCE(v, 0) + 1
         WHERE id = $2
           AND tenant_id = $3
           AND organization_id = $4
-          AND type IN ($5, $6)
+          AND category_type IN ($5, $6)
           AND COALESCE(status, 1) >= 0
         "#,
     )
@@ -1284,8 +1304,8 @@ async fn delete_category(
     .bind(command.category_id)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
-    .bind(CATEGORY_TYPE_SKILLS)
-    .bind(CATEGORY_TYPE_SKILLS_COLLECTION)
+    .bind(SKILL_CATEGORY_TYPE_MARKET)
+    .bind(SKILL_CATEGORY_TYPE_COLLECTION)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to delete skill category", error))?;
@@ -1314,7 +1334,7 @@ async fn list_packages(
                CAST(latest_published_at AS TEXT) AS latest_published_at,
                CAST(created_at AS TEXT) AS created_at,
                CAST(updated_at AS TEXT) AS updated_at
-        FROM plus_agent_skill_package
+        FROM ai_agent_skill_package
         WHERE (
               (tenant_id = $1 AND organization_id = $2)
               OR (tenant_id = $3 AND organization_id = $4)
@@ -1359,7 +1379,7 @@ async fn insert_package(
 ) -> DomainResult<i64> {
     let id = next_assigned_id(
         tx,
-        "plus_agent_skill_package",
+        "ai_agent_skill_package",
         "admin-agent-skill-package",
         &command.package_uuid,
     )
@@ -1374,7 +1394,7 @@ async fn insert_package(
     let icon_resource_snapshot = icon.map(serde_json::Value::to_string);
     sqlx::query(
         r#"
-        INSERT INTO plus_agent_skill_package
+        INSERT INTO ai_agent_skill_package
             (id, uuid, tenant_id, organization_id, data_scope, user_id, package_key, name,
              summary, description, icon_media_resource_id, icon_object_blob_id,
              icon_resource_snapshot, cover_media_resource_id, cover_object_blob_id,
@@ -1429,7 +1449,7 @@ async fn update_package(
     let icon_resource_snapshot = icon.map(serde_json::Value::to_string);
     let result = sqlx::query(
         r#"
-        UPDATE plus_agent_skill_package
+        UPDATE ai_agent_skill_package
         SET package_key = COALESCE($1, package_key),
             name = COALESCE($2, name),
             summary = COALESCE($3, summary),
@@ -1502,7 +1522,7 @@ async fn set_package_enabled(
 ) -> DomainResult<bool> {
     let result = sqlx::query(
         r#"
-        UPDATE plus_agent_skill_package
+        UPDATE ai_agent_skill_package
         SET enabled = $1,
             updated_at = $2::timestamptz,
             v = COALESCE(v, 0) + 1
@@ -1528,7 +1548,7 @@ async fn delete_package(
 ) -> DomainResult<bool> {
     sqlx::query(
         r#"
-        UPDATE plus_agent_skill
+        UPDATE ai_agent_skill
         SET package_id = NULL,
             updated_at = $1::timestamptz,
             v = COALESCE(v, 0) + 1
@@ -1547,7 +1567,7 @@ async fn delete_package(
 
     let result = sqlx::query(
         r#"
-        DELETE FROM plus_agent_skill_package
+        DELETE FROM ai_agent_skill_package
         WHERE id = $1
           AND tenant_id = $2
           AND organization_id = $3
@@ -1579,7 +1599,7 @@ async fn load_package_by_id(
                CAST(latest_published_at AS TEXT) AS latest_published_at,
                CAST(created_at AS TEXT) AS created_at,
                CAST(updated_at AS TEXT) AS updated_at
-        FROM plus_agent_skill_package
+        FROM ai_agent_skill_package
         WHERE id = $1
           AND tenant_id = $2
           AND organization_id = $3
@@ -1633,7 +1653,7 @@ async fn list_skills(
             CAST(latest_published_at AS TEXT) AS latest_published_at,
             CAST(created_at AS TEXT) AS created_at,
             CAST(updated_at AS TEXT) AS updated_at
-        FROM plus_agent_skill
+        FROM ai_agent_skill
         WHERE (
               (tenant_id = $1 AND organization_id = $2)
               OR (tenant_id = $3 AND organization_id = $4)
@@ -1687,7 +1707,7 @@ async fn insert_skill(
 ) -> DomainResult<i64> {
     let id = next_assigned_id(
         tx,
-        "plus_agent_skill",
+        "ai_agent_skill",
         "admin-agent-skill",
         &command.skill_uuid,
     )
@@ -1702,7 +1722,7 @@ async fn insert_skill(
     let icon_resource_snapshot = icon.map(serde_json::Value::to_string);
     sqlx::query(
         r#"
-        INSERT INTO plus_agent_skill
+        INSERT INTO ai_agent_skill
             (id, uuid, tenant_id, organization_id, data_scope, user_id, skill_key, name, summary,
              description, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot,
              cover_media_resource_id, cover_object_blob_id,
@@ -1785,7 +1805,7 @@ async fn update_skill(
     let icon_resource_snapshot = icon.map(serde_json::Value::to_string);
     let result = sqlx::query(
         r#"
-        UPDATE plus_agent_skill
+        UPDATE ai_agent_skill
         SET skill_key = COALESCE($1, skill_key),
             name = COALESCE($2, name),
             summary = COALESCE($3, summary),
@@ -1958,7 +1978,7 @@ async fn set_skill_enabled(
 ) -> DomainResult<bool> {
     let result = sqlx::query(
         r#"
-        UPDATE plus_agent_skill
+        UPDATE ai_agent_skill
         SET enabled = $1,
             updated_at = $2::timestamptz,
             v = COALESCE(v, 0) + 1
@@ -1984,7 +2004,7 @@ async fn set_market_status(
 ) -> DomainResult<bool> {
     let result = sqlx::query(
         r#"
-        UPDATE plus_agent_skill
+        UPDATE ai_agent_skill
         SET market_status = $1,
             latest_published_at = CASE WHEN $2 THEN $3::timestamptz ELSE latest_published_at END,
             updated_at = $4::timestamptz,
@@ -2013,7 +2033,7 @@ async fn review_skill(
 ) -> DomainResult<bool> {
     let result = sqlx::query(
         r#"
-        UPDATE plus_agent_skill
+        UPDATE ai_agent_skill
         SET review_status = $1,
             review_comment = $2,
             reviewed_by = $3,
@@ -2045,7 +2065,7 @@ async fn delete_skill(
 ) -> DomainResult<bool> {
     sqlx::query(
         r#"
-        DELETE FROM plus_user_agent_skill
+        DELETE FROM ai_user_agent_skill
         WHERE tenant_id = $1
           AND organization_id = $2
           AND skill_id = $3
@@ -2068,7 +2088,7 @@ async fn delete_skill(
 
     let result = sqlx::query(
         r#"
-        DELETE FROM plus_agent_skill
+        DELETE FROM ai_agent_skill
         WHERE id = $1
           AND tenant_id = $2
           AND organization_id = $3
@@ -2116,7 +2136,7 @@ async fn load_skill_by_id(
             CAST(latest_published_at AS TEXT) AS latest_published_at,
             CAST(created_at AS TEXT) AS created_at,
             CAST(updated_at AS TEXT) AS updated_at
-        FROM plus_agent_skill
+        FROM ai_agent_skill
         WHERE id = $1
           AND tenant_id = $2
           AND organization_id = $3
@@ -2148,7 +2168,7 @@ async fn list_assets(
                CAST(published_at AS TEXT) AS published_at,
                CAST(created_at AS TEXT) AS created_at,
                CAST(updated_at AS TEXT) AS updated_at
-        FROM studio_catalog_asset
+        FROM ai_skill_asset
         WHERE (
               (tenant_id = $1 AND organization_id = $2)
               OR (tenant_id = $3 AND organization_id = $4)
@@ -2183,7 +2203,7 @@ async fn insert_asset(
 ) -> DomainResult<i64> {
     let id = next_assigned_id(
         tx,
-        "studio_catalog_asset",
+        "ai_skill_asset",
         "admin-skill-asset",
         &command.asset_uuid,
     )
@@ -2197,7 +2217,7 @@ async fn insert_asset(
         .and_then(media_resource_object_blob_id);
     sqlx::query(
         r#"
-        INSERT INTO studio_catalog_asset
+        INSERT INTO ai_skill_asset
             (id, uuid, tenant_id, organization_id, data_scope, status, target_type, target_id,
              artifact_id, asset_type, asset_media_resource_id, asset_object_blob_id,
              asset_resource_snapshot, thumbnail_media_resource_id, thumbnail_object_blob_id,
@@ -2257,7 +2277,7 @@ async fn update_asset(
     let thumbnail_resource_snapshot = thumbnail.map(serde_json::Value::to_string);
     let result = sqlx::query(
         r#"
-        UPDATE studio_catalog_asset
+        UPDATE ai_skill_asset
         SET artifact_id = CASE WHEN $1 THEN $2 ELSE artifact_id END,
             asset_type = COALESCE($3, asset_type),
             asset_media_resource_id = CASE WHEN $4 THEN $5 ELSE asset_media_resource_id END,
@@ -2351,7 +2371,7 @@ async fn delete_asset(
 ) -> DomainResult<bool> {
     let result = sqlx::query(
         r#"
-        DELETE FROM studio_catalog_asset
+        DELETE FROM ai_skill_asset
         WHERE id = $1
           AND tenant_id = $2
           AND organization_id = $3
@@ -2389,7 +2409,7 @@ async fn load_asset_by_id(
                CAST(published_at AS TEXT) AS published_at,
                CAST(created_at AS TEXT) AS created_at,
                CAST(updated_at AS TEXT) AS updated_at
-        FROM studio_catalog_asset
+        FROM ai_skill_asset
         WHERE id = $1
           AND tenant_id = $2
           AND organization_id = $3
@@ -2427,7 +2447,7 @@ async fn list_artifacts(
                CAST(deprecated_at AS TEXT) AS deprecated_at,
                CAST(created_at AS TEXT) AS created_at,
                CAST(updated_at AS TEXT) AS updated_at
-        FROM studio_catalog_artifact
+        FROM ai_skill_artifact
         WHERE (
               (tenant_id = $1 AND organization_id = $2)
               OR (tenant_id = $3 AND organization_id = $4)
@@ -2462,7 +2482,7 @@ async fn insert_artifact(
 ) -> DomainResult<i64> {
     let id = next_assigned_id(
         tx,
-        "studio_catalog_artifact",
+        "ai_skill_artifact",
         "admin-skill-artifact",
         &command.artifact_uuid,
     )
@@ -2473,7 +2493,7 @@ async fn insert_artifact(
     let artifact_resource_snapshot = artifact.map(serde_json::Value::to_string);
     sqlx::query(
         r#"
-        INSERT INTO studio_catalog_artifact
+        INSERT INTO ai_skill_artifact
             (id, uuid, tenant_id, organization_id, data_scope, status, target_type, target_id,
              artifact_type, version, platform_type, os_name, artifact_ref,
              artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot,
@@ -2527,7 +2547,7 @@ async fn update_artifact(
     let artifact_resource_snapshot = artifact.map(serde_json::Value::to_string);
     let result = sqlx::query(
         r#"
-        UPDATE studio_catalog_artifact
+        UPDATE ai_skill_artifact
         SET artifact_type = COALESCE($1, artifact_type),
             version = COALESCE($2, version),
             platform_type = COALESCE($3, platform_type),
@@ -2634,7 +2654,7 @@ async fn delete_artifact(
 ) -> DomainResult<bool> {
     sqlx::query(
         r#"
-        UPDATE studio_catalog_asset
+        UPDATE ai_skill_asset
         SET artifact_id = NULL,
             updated_at = $1::timestamptz,
             version = COALESCE(version, 0) + 1
@@ -2657,7 +2677,7 @@ async fn delete_artifact(
 
     let result = sqlx::query(
         r#"
-        DELETE FROM studio_catalog_artifact
+        DELETE FROM ai_skill_artifact
         WHERE id = $1
           AND tenant_id = $2
           AND organization_id = $3
@@ -2684,7 +2704,7 @@ async fn delete_skill_catalog_records(
 ) -> DomainResult<()> {
     sqlx::query(
         r#"
-        DELETE FROM studio_catalog_asset
+        DELETE FROM ai_skill_asset
         WHERE tenant_id = $1
           AND organization_id = $2
           AND target_type = $3
@@ -2701,7 +2721,7 @@ async fn delete_skill_catalog_records(
 
     sqlx::query(
         r#"
-        DELETE FROM studio_catalog_artifact
+        DELETE FROM ai_skill_artifact
         WHERE tenant_id = $1
           AND organization_id = $2
           AND target_type = $3
@@ -2739,7 +2759,7 @@ async fn load_artifact_by_id(
                CAST(deprecated_at AS TEXT) AS deprecated_at,
                CAST(created_at AS TEXT) AS created_at,
                CAST(updated_at AS TEXT) AS updated_at
-        FROM studio_catalog_artifact
+        FROM ai_skill_artifact
         WHERE id = $1
           AND tenant_id = $2
           AND organization_id = $3
@@ -2771,19 +2791,19 @@ async fn ensure_category_exists(
     let exists: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM plus_category
+        FROM c_category
         WHERE id = $1
           AND tenant_id = $2
           AND organization_id = $3
-          AND type IN ($4, $5)
+          AND category_type IN ($4, $5)
           AND COALESCE(status, 1) >= 0
         "#,
     )
     .bind(category_id)
     .bind(tenant_id)
     .bind(organization_id)
-    .bind(CATEGORY_TYPE_SKILLS)
-    .bind(CATEGORY_TYPE_SKILLS_COLLECTION)
+    .bind(SKILL_CATEGORY_TYPE_MARKET)
+    .bind(SKILL_CATEGORY_TYPE_COLLECTION)
     .fetch_one(&mut **tx)
     .await
     .map_err(|error| store_error("failed to validate skill category", error))?;
@@ -2801,19 +2821,19 @@ async fn ensure_category_delete_allowed(
     let child_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM plus_category
+        FROM c_category
         WHERE tenant_id = $1
           AND organization_id = $2
           AND parent_id = $3
-          AND type IN ($4, $5)
+          AND category_type IN ($4, $5)
           AND COALESCE(status, 1) >= 0
         "#,
     )
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
     .bind(command.category_id)
-    .bind(CATEGORY_TYPE_SKILLS)
-    .bind(CATEGORY_TYPE_SKILLS_COLLECTION)
+    .bind(SKILL_CATEGORY_TYPE_MARKET)
+    .bind(SKILL_CATEGORY_TYPE_COLLECTION)
     .fetch_one(&mut **tx)
     .await
     .map_err(|error| store_error("failed to validate child skill categories", error))?;
@@ -2824,7 +2844,7 @@ async fn ensure_category_delete_allowed(
     let package_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM plus_agent_skill_package
+        FROM ai_agent_skill_package
         WHERE tenant_id = $1
           AND organization_id = $2
           AND category_id = $3
@@ -2843,7 +2863,7 @@ async fn ensure_category_delete_allowed(
     let skill_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM plus_agent_skill
+        FROM ai_agent_skill
         WHERE tenant_id = $1
           AND organization_id = $2
           AND category_id = $3
@@ -2873,7 +2893,7 @@ async fn ensure_package_exists(
     let exists: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM plus_agent_skill_package
+        FROM ai_agent_skill_package
         WHERE id = $1
           AND tenant_id = $2
           AND organization_id = $3
@@ -2901,7 +2921,7 @@ async fn ensure_skill_exists(
     let exists: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM plus_agent_skill
+        FROM ai_agent_skill
         WHERE id = $1
           AND tenant_id = $2
           AND organization_id = $3
@@ -2929,7 +2949,7 @@ async fn ensure_visible_skill_exists(
     let exists: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM plus_agent_skill
+        FROM ai_agent_skill
         WHERE id = $1
           AND (
               (tenant_id = $2 AND organization_id = $3)
@@ -2965,7 +2985,7 @@ async fn ensure_skill_artifact_exists(
     let exists: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM studio_catalog_artifact
+        FROM ai_skill_artifact
         WHERE id = $1
           AND tenant_id = $2
           AND organization_id = $3
@@ -3039,7 +3059,11 @@ fn category_from_row(row: sqlx::postgres::PgRow) -> DomainResult<AdminSkillCateg
         path: row.try_get("path").ok().flatten(),
         visible: bool_cell(&row, "visible"),
         status: integer_cell(&row, "status") as i32,
-        category_type: integer_cell(&row, "category_type") as i32,
+        category_type: skill_category_type_code(
+            row.try_get::<String, _>("category_type")
+                .map_err(row_error)?
+                .as_str(),
+        ),
     })
 }
 
@@ -3295,34 +3319,34 @@ async fn assigned_id_exists(
     id: i64,
 ) -> DomainResult<bool> {
     let count: i64 = match table_name {
-        "plus_category" => sqlx::query_scalar("SELECT COUNT(1) FROM plus_category WHERE id = $1")
+        "c_category" => sqlx::query_scalar("SELECT COUNT(1) FROM c_category WHERE id = $1")
             .bind(id)
             .fetch_one(&mut **tx)
             .await
             .map_err(|error| store_error("failed to check category assigned id", error))?,
-        "plus_agent_skill" => {
-            sqlx::query_scalar("SELECT COUNT(1) FROM plus_agent_skill WHERE id = $1")
+        "ai_agent_skill" => {
+            sqlx::query_scalar("SELECT COUNT(1) FROM ai_agent_skill WHERE id = $1")
                 .bind(id)
                 .fetch_one(&mut **tx)
                 .await
                 .map_err(|error| store_error("failed to check skill assigned id", error))?
         }
-        "plus_agent_skill_package" => {
-            sqlx::query_scalar("SELECT COUNT(1) FROM plus_agent_skill_package WHERE id = $1")
+        "ai_agent_skill_package" => {
+            sqlx::query_scalar("SELECT COUNT(1) FROM ai_agent_skill_package WHERE id = $1")
                 .bind(id)
                 .fetch_one(&mut **tx)
                 .await
                 .map_err(|error| store_error("failed to check skill package assigned id", error))?
         }
-        "studio_catalog_asset" => {
-            sqlx::query_scalar("SELECT COUNT(1) FROM studio_catalog_asset WHERE id = $1")
+        "ai_skill_asset" => {
+            sqlx::query_scalar("SELECT COUNT(1) FROM ai_skill_asset WHERE id = $1")
                 .bind(id)
                 .fetch_one(&mut **tx)
                 .await
                 .map_err(|error| store_error("failed to check skill asset assigned id", error))?
         }
-        "studio_catalog_artifact" => {
-            sqlx::query_scalar("SELECT COUNT(1) FROM studio_catalog_artifact WHERE id = $1")
+        "ai_skill_artifact" => {
+            sqlx::query_scalar("SELECT COUNT(1) FROM ai_skill_artifact WHERE id = $1")
                 .bind(id)
                 .fetch_one(&mut **tx)
                 .await

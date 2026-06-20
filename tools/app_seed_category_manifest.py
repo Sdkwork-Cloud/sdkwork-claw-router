@@ -16,8 +16,8 @@ class AppCategorySeedManifestCheckResult:
 class AppCategorySeedManifestGenerator:
     """Generate /data/app PlusCategory seed data from the app seed bundle."""
 
-    KIND = "sdkwork.plus_category.app_seed"
-    APP_SEED_KIND = "sdkwork.plus_app.seed"
+    KIND = "sdkwork.c_category.app_seed"
+    APP_SEED_KIND = "sdkwork.platform_app.seed"
     EXPLICIT_CATEGORY_IDS = {
         "app-store-html": 20_002_001,
         "app-store-react": 20_002_002,

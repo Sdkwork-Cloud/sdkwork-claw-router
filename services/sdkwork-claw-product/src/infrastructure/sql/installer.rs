@@ -72,7 +72,7 @@ const GENERATED_POSTGRES_SCHEMA: &str =
     include_str!("../../../../../generated/schema/postgres/schema.sql");
 const BUNDLED_MODELS_CATALOG_MANIFEST: &str =
     include_str!("../../../../../data/sdkwork-models/sdkwork-models.json");
-pub const CURRENT_SCHEMA_VERSION: &str = "2026.06.04.1";
+pub const CURRENT_SCHEMA_VERSION: &str = "2026.06.20.1";
 pub const DEFAULT_SEED_PROFILE: &str = "commercial";
 pub const DEFAULT_INSTALL_ENVIRONMENT: &str = "production";
 pub const ENV_INSTALL_ENVIRONMENT: &str = "SDKWORK_CLAW_INSTALL_ENVIRONMENT";

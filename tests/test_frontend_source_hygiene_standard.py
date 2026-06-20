@@ -439,7 +439,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
     def test_appbase_native_studio_migrations_use_media_resource_columns(self) -> None:
         migration_sources = [
             APPBASE_STUDIO_TEMPLATE_SQLX / "migrations" / "0001_studio_catalog.sql",
-            APPBASE_STUDIO_TEMPLATE_SQLX / "migrations" / "0002_studio_app_template.sql",
+            APPBASE_STUDIO_TEMPLATE_SQLX / "migrations" / "0002_platform_app_template.sql",
         ]
         required_by_file = {
             "0001_studio_catalog.sql": [
@@ -453,7 +453,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "artifact_object_blob_id BIGINT",
                 "artifact_resource_snapshot JSONB",
             ],
-            "0002_studio_app_template.sql": [
+            "0002_platform_app_template.sql": [
                 "icon_media_resource_id VARCHAR(128)",
                 "icon_object_blob_id BIGINT",
                 "icon_resource_snapshot JSONB",
@@ -485,8 +485,8 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
     def test_active_design_docs_describe_canonical_media_resource_fields(self) -> None:
         active_doc_sources = [
             ROOT / "docs" / "11-数据契约与核心表设计.md",
-            ROOT / "docs" / "12-前端功能模块与数据库表结构映射.md",
-            ROOT / "docs" / "14-数据结构细节复核与补强记录.md",
+            ROOT / "docs" / "12-前端功能模块与数据库表结构映�?md",
+            ROOT / "docs" / "14-数据结构细节复核与补强记�?md",
             ROOT / "docs" / "17-AppCenter-PlusApp-compatible-design.md",
             ROOT / "docs" / "18-SkillsHub-AgentSkills-PlusCategory-compatible-design.md",
         ]
@@ -500,14 +500,14 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "cover_resource_snapshot",
                 "video_resource_snapshot",
             ],
-            "12-前端功能模块与数据库表结构映射.md": [
+            "12-前端功能模块与数据库表结构映�?md": [
                 "icon_resource_snapshot",
                 "asset_resource_snapshot",
                 "thumbnail_resource_snapshot",
                 "video_resource_snapshot",
                 "MediaResource",
             ],
-            "14-数据结构细节复核与补强记录.md": [
+            "14-数据结构细节复核与补强记�?md": [
                 "logo_media_resource_id",
                 "icon_resource_snapshot",
             ],
@@ -1602,7 +1602,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             if "cover_resources" not in content:
-                violations.append(f"{relative}: missing canonical plus_feeds.cover_resources usage")
+                violations.append(f"{relative}: missing canonical content_forum_post.cover_resources usage")
             for line_number, line in enumerate(content.splitlines(), start=1):
                 if "cover_images" in line:
                     violations.append(f"{relative}:{line_number}: {line.strip()}")
@@ -1610,7 +1610,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         self.assertEqual(
             [],
             violations,
-            "Forum persistence must store feed cover media as MediaResource objects in plus_feeds.cover_resources, not legacy cover_images.",
+            "Forum persistence must store feed cover media as MediaResource objects in content_forum_post.cover_resources, not legacy cover_images.",
         )
 
     def test_backend_site_settings_media_fields_preserve_media_resource_objects(self) -> None:
@@ -1739,7 +1739,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         self.assertEqual(
             [],
             violations,
-            "Skill asset SQL adapters must persist MediaResource snapshots through the canonical studio_catalog_asset media columns, not legacy URL columns.",
+            "Skill asset SQL adapters must persist MediaResource snapshots through the canonical ai_skill_asset media columns, not legacy URL columns.",
         )
 
     def test_backend_skill_cover_media_fields_preserve_media_resource_objects(self) -> None:
@@ -1912,7 +1912,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         self.assertEqual(
             [],
             violations,
-            "Admin app category icon fields must stay as MediaResource objects named icon and persist through canonical plus_category icon_* media columns.",
+            "Admin app category icon fields must stay as MediaResource objects named icon and persist through canonical c_category icon_* media columns.",
         )
 
     def test_backend_skill_artifact_media_fields_preserve_media_resource_objects(self) -> None:

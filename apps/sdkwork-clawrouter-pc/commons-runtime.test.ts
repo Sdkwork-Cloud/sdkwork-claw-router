@@ -281,9 +281,23 @@ test("sdk clients use a static IAM runtime reset dependency so Vite can chunk th
     new URL("./packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts", import.meta.url),
     "utf8",
   );
+  const iamRuntimeSource = readFileSync(
+    new URL("./packages/sdkwork-clawrouter-pc-commons/src/iam-runtime.ts", import.meta.url),
+    "utf8",
+  );
 
   assert.match(source, /from '\.\/iam-runtime\.ts';/);
   assert.doesNotMatch(source, /await import\('\.\/iam-runtime\.ts'\)/);
+  assert.doesNotMatch(
+    iamRuntimeSource,
+    /VITE_SDKWORK_APP_ID|SDKWORK_IAM_BOOTSTRAP_|SDKWORK_APP_ID/u,
+    "Claw Router IAM runtime must not read runtime identity scope from bootstrap env variables.",
+  );
+  assert.match(
+    iamRuntimeSource,
+    /CLAW_ROUTER_IAM_RUNTIME_APP_ID\s*=\s*['"]sdkwork-claw-router['"]/u,
+    "Claw Router IAM runtime must use the compile-time manifest app identifier.",
+  );
 });
 
 test("open gateway SDK clients never inherit portal session tokens", () => {

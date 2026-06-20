@@ -25,7 +25,7 @@ fn external_media_resource(locator: &str, kind: &str) -> serde_json::Value {
 }
 
 #[tokio::test]
-async fn sqlite_admin_app_store_manages_plus_app_lifecycle_with_market_state_and_audit() {
+async fn sqlite_admin_app_store_manages_platform_app_lifecycle_with_market_state_and_audit() {
     let pool = sqlite_pool().await;
 
     let store = SqliteAdminAppStore::new(pool.clone());
@@ -89,7 +89,7 @@ async fn sqlite_admin_app_store_manages_plus_app_lifecycle_with_market_state_and
     assert_eq!("DRAFT", created.market_status);
     assert_eq!("DRAFT", created.config["portal"]["marketStatus"]);
 
-    let stored_config: String = sqlx::query_scalar("SELECT config FROM plus_app WHERE id = ?")
+    let stored_config: String = sqlx::query_scalar("SELECT config FROM platform_app WHERE id = ?")
         .bind(created.id)
         .fetch_one(&pool)
         .await
@@ -212,7 +212,7 @@ async fn sqlite_admin_app_store_manages_plus_app_lifecycle_with_market_state_and
 
     sqlx::query(
         r#"
-        INSERT INTO studio_catalog_asset
+        INSERT INTO ai_skill_asset
             (uuid, tenant_id, organization_id, target_type, target_id, asset_type, asset_resource_snapshot)
         VALUES
             ('admin-app-asset-workflow-portal', ?, ?, 15, ?, 1, '{"kind":"image","source":"external_url","url":"https://cdn.example.test/apps/workflow/icon.png","publicUrl":"https://cdn.example.test/apps/workflow/icon.png"}')
@@ -226,7 +226,7 @@ async fn sqlite_admin_app_store_manages_plus_app_lifecycle_with_market_state_and
     .unwrap();
     sqlx::query(
         r#"
-        INSERT INTO studio_catalog_artifact
+        INSERT INTO ai_skill_artifact
             (uuid, tenant_id, organization_id, target_type, target_id, artifact_type, version, platform_type, os_name)
         VALUES
             ('admin-app-artifact-workflow-portal', ?, ?, 15, ?, 1, '1.0.0', 'web', 'pc-web')
@@ -251,21 +251,21 @@ async fn sqlite_admin_app_store_manages_plus_app_lifecycle_with_market_state_and
         .unwrap();
     assert!(deleted);
 
-    let app_rows: i64 = sqlx::query_scalar("SELECT COUNT(1) FROM plus_app WHERE id = ?")
+    let app_rows: i64 = sqlx::query_scalar("SELECT COUNT(1) FROM platform_app WHERE id = ?")
         .bind(created.id)
         .fetch_one(&pool)
         .await
         .unwrap();
     assert_eq!(0, app_rows);
     let asset_rows: i64 =
-        sqlx::query_scalar("SELECT COUNT(1) FROM studio_catalog_asset WHERE target_id = ?")
+        sqlx::query_scalar("SELECT COUNT(1) FROM ai_skill_asset WHERE target_id = ?")
             .bind(created.id)
             .fetch_one(&pool)
             .await
             .unwrap();
     assert_eq!(0, asset_rows);
     let artifact_rows: i64 =
-        sqlx::query_scalar("SELECT COUNT(1) FROM studio_catalog_artifact WHERE target_id = ?")
+        sqlx::query_scalar("SELECT COUNT(1) FROM ai_skill_artifact WHERE target_id = ?")
             .bind(created.id)
             .fetch_one(&pool)
             .await
@@ -367,7 +367,7 @@ async fn sqlite_admin_app_store_manages_app_template_lifecycle_with_audit() {
     );
 
     let stored_template: (i64, i64, String, String, String) =
-        sqlx::query_as("SELECT visibility, publish_status, git_repo_url, git_ref, git_sub_path FROM studio_app_template WHERE id = ?")
+        sqlx::query_as("SELECT visibility, publish_status, git_repo_url, git_ref, git_sub_path FROM platform_app_template WHERE id = ?")
             .bind(created.id)
             .fetch_one(&pool)
             .await
@@ -480,7 +480,7 @@ async fn sqlite_admin_app_store_manages_app_template_lifecycle_with_audit() {
 
     sqlx::query(
         r#"
-        INSERT INTO studio_catalog_asset
+        INSERT INTO ai_skill_asset
             (uuid, tenant_id, organization_id, target_type, target_id, asset_type, asset_resource_snapshot)
         VALUES
             ('admin-app-template-asset-agent-dashboard', ?, ?, 16, ?, 1, '{"kind":"image","source":"external_url","url":"https://cdn.example.test/templates/agent.svg","publicUrl":"https://cdn.example.test/templates/agent.svg"}')
@@ -506,14 +506,14 @@ async fn sqlite_admin_app_store_manages_app_template_lifecycle_with_audit() {
     assert!(deleted);
 
     let template_status: i64 =
-        sqlx::query_scalar("SELECT status FROM studio_app_template WHERE id = ?")
+        sqlx::query_scalar("SELECT status FROM platform_app_template WHERE id = ?")
             .bind(created.id)
             .fetch_one(&pool)
             .await
             .unwrap();
     assert_eq!(-1, template_status);
     let asset_rows: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM studio_catalog_asset WHERE target_type = 16 AND target_id = ?",
+        "SELECT COUNT(1) FROM ai_skill_asset WHERE target_type = 16 AND target_id = ?",
     )
     .bind(created.id)
     .fetch_one(&pool)
@@ -608,7 +608,7 @@ async fn sqlite_admin_app_store_rejects_market_state_aliases_as_runtime_status()
     }
 
     let created_rows: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM plus_app WHERE uuid LIKE 'admin-app-invalid-runtime-status-%'",
+        "SELECT COUNT(1) FROM platform_app WHERE uuid LIKE 'admin-app-invalid-runtime-status-%'",
     )
     .fetch_one(&pool)
     .await
@@ -780,7 +780,7 @@ async fn sqlite_admin_app_store_publishes_without_changing_runtime_status() {
     assert_eq!("PUBLISHED", published.market_status);
     assert_eq!("PUBLISHED", published.config["portal"]["marketStatus"]);
 
-    let status_code: i64 = sqlx::query_scalar("SELECT status FROM plus_app WHERE id = ?")
+    let status_code: i64 = sqlx::query_scalar("SELECT status FROM platform_app WHERE id = ?")
         .bind(created.id)
         .fetch_one(&pool)
         .await
@@ -901,7 +901,7 @@ async fn sqlite_pool() -> SqlitePool {
 async fn create_admin_app_store_tables(pool: &SqlitePool) {
     for statement in [
         r#"
-        CREATE TABLE plus_app (
+        CREATE TABLE platform_app (
             id INTEGER PRIMARY KEY,
             uuid TEXT,
             tenant_id INTEGER NOT NULL,
@@ -938,7 +938,7 @@ async fn create_admin_app_store_tables(pool: &SqlitePool) {
         )
         "#,
         r#"
-        CREATE TABLE plus_category (
+        CREATE TABLE c_category (
             id INTEGER PRIMARY KEY,
             uuid TEXT,
             tenant_id INTEGER NOT NULL,
@@ -963,7 +963,7 @@ async fn create_admin_app_store_tables(pool: &SqlitePool) {
         )
         "#,
         r#"
-        CREATE TABLE studio_catalog_action (
+        CREATE TABLE ai_skill_action (
             id INTEGER PRIMARY KEY,
             tenant_id INTEGER NOT NULL,
             organization_id INTEGER NOT NULL,
@@ -972,7 +972,7 @@ async fn create_admin_app_store_tables(pool: &SqlitePool) {
         )
         "#,
         r#"
-        CREATE TABLE studio_catalog_asset (
+        CREATE TABLE ai_skill_asset (
             id INTEGER PRIMARY KEY,
             uuid TEXT,
             tenant_id INTEGER NOT NULL,
@@ -990,7 +990,7 @@ async fn create_admin_app_store_tables(pool: &SqlitePool) {
         )
         "#,
         r#"
-        CREATE TABLE studio_catalog_artifact (
+        CREATE TABLE ai_skill_artifact (
             id INTEGER PRIMARY KEY,
             uuid TEXT,
             tenant_id INTEGER NOT NULL,
@@ -1004,7 +1004,7 @@ async fn create_admin_app_store_tables(pool: &SqlitePool) {
         )
         "#,
         r#"
-        CREATE TABLE studio_app_template (
+        CREATE TABLE platform_app_template (
             id INTEGER PRIMARY KEY,
             uuid TEXT NOT NULL UNIQUE,
             created_at TEXT,
@@ -1083,7 +1083,7 @@ async fn insert_admin_visible_app(
 ) {
     sqlx::query(
         r#"
-        INSERT INTO plus_app
+        INSERT INTO platform_app
             (id, uuid, tenant_id, organization_id, data_scope, user_id, name, icon, resource_list, project_id, description, version, access_url, config, status, app_type, platforms, install_platforms, install_skill, install_config, release_notes, package_name, bundle_id, store_url, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot, created_at, updated_at)
         VALUES
             (?, ?, ?, ?, 0, 0, ?, '{}', '{}', 0, ?, '1.0.0', ?, ?, 1, 'web', '{"platforms":["web"]}', '{"platforms":["web"]}', '{}', '{"packages":[]}', '[]', NULL, NULL, NULL, ?, NULL, ?, '2026-05-09 11:00:00', '2026-05-09 11:00:00')

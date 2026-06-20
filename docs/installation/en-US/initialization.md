@@ -118,8 +118,8 @@ For a default Linux service deployment, the package creates this runtime databas
 engine = "postgresql"
 host = "db.example.com"
 port = 5432
-database = "sdkwork_ai_prod"
-username = "sdkworkprod@2026++"
+database = "sdkwork"
+username = "sdkwork"
 password_file = "/etc/sdkwork/router/database.secret"
 # password = "change-me"
 ssl_mode = "require"
@@ -295,8 +295,8 @@ For production server/service/container deployments, use the structured TOML fie
 engine = "postgresql"
 host = "db.internal"
 port = 5432
-database = "sdkwork_ai_prod"
-username = "sdkworkprod@2026++"
+database = "sdkwork"
+username = "sdkwork"
 password = "real-password"
 ssl_mode = "require"
 max_connections = 16
@@ -322,7 +322,7 @@ deployment_mode = "server"
 `SDKWORK_CLAW_DATABASE_URL` remains available in `/etc/sdkwork/router/clawrouter.env` or the process environment only as an explicit operator override:
 
 ```text
-SDKWORK_CLAW_DATABASE_URL=postgresql://sdkworkprod%402026%2B%2B:<password>@db.example.com:5432/sdkwork_ai_prod
+SDKWORK_CLAW_DATABASE_URL=postgresql://sdkworkprod%402026%2B%2B:<password>@db.example.com:5432/sdkwork
 ```
 
 Desktop SQLite example:

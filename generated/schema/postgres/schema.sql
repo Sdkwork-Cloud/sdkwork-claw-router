@@ -380,323 +380,6 @@ CREATE TABLE IF NOT EXISTS iam_audit_event (
 CREATE INDEX IF NOT EXISTS idx_iam_audit_event_tenant_created_at ON iam_audit_event (tenant_id, created_at, action);
 CREATE INDEX IF NOT EXISTS idx_iam_audit_event_request_id ON iam_audit_event (request_id);
 
-CREATE TABLE IF NOT EXISTS plus_app (
-    id BIGINT NOT NULL PRIMARY KEY,
-    uuid VARCHAR(255) NOT NULL UNIQUE,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    v BIGINT NOT NULL DEFAULT 0,
-    tenant_id BIGINT NOT NULL DEFAULT 0,
-    organization_id BIGINT NOT NULL DEFAULT 0,
-    data_scope INTEGER NOT NULL DEFAULT 0,
-    user_id BIGINT,
-    name VARCHAR(255) NOT NULL,
-    icon JSONB,
-    resource_list JSONB,
-    project_id BIGINT,
-    description TEXT,
-    version VARCHAR(64),
-    icon_media_resource_id VARCHAR(128),
-    icon_object_blob_id BIGINT,
-    icon_resource_snapshot JSONB,
-    access_url VARCHAR(512),
-    config JSONB NOT NULL DEFAULT '{}'::jsonb,
-    status INTEGER NOT NULL DEFAULT 1,
-    app_type VARCHAR(64),
-    platforms JSONB,
-    install_platforms JSONB,
-    install_skill JSONB,
-    install_config JSONB,
-    release_notes JSONB,
-    package_name VARCHAR(255),
-    bundle_id VARCHAR(255),
-    store_url VARCHAR(512),
-    artifact_media_resource_id VARCHAR(128),
-    artifact_object_blob_id BIGINT,
-    artifact_resource_snapshot JSONB
-);
-
-CREATE INDEX IF NOT EXISTS idx_app_user_id ON plus_app (user_id);
-CREATE INDEX IF NOT EXISTS idx_app_project_id ON plus_app (project_id);
-CREATE INDEX IF NOT EXISTS idx_app_status ON plus_app (status);
-
-CREATE TABLE IF NOT EXISTS plus_category (
-    id BIGINT NOT NULL PRIMARY KEY,
-    uuid VARCHAR(255) NOT NULL UNIQUE,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    v BIGINT NOT NULL DEFAULT 0,
-    tenant_id BIGINT NOT NULL DEFAULT 0,
-    organization_id BIGINT NOT NULL DEFAULT 0,
-    data_scope INTEGER NOT NULL DEFAULT 0,
-    name VARCHAR(255) NOT NULL,
-    description TEXT,
-    shop_id BIGINT,
-    type INTEGER NOT NULL,
-    group_name VARCHAR(128),
-    code VARCHAR(128),
-    tags JSONB NOT NULL DEFAULT '[]'::jsonb,
-    icon_media_resource_id VARCHAR(128),
-    icon_object_blob_id BIGINT,
-    icon_resource_snapshot JSONB,
-    sort_weight INTEGER NOT NULL DEFAULT 0,
-    parent_id BIGINT,
-    path VARCHAR(1024),
-    visible BOOLEAN NOT NULL DEFAULT TRUE,
-    status INTEGER NOT NULL DEFAULT 1
-);
-
-CREATE INDEX IF NOT EXISTS idx_category_shop_id ON plus_category (shop_id);
-CREATE INDEX IF NOT EXISTS idx_category_type_shop ON plus_category (type, shop_id);
-
-CREATE TABLE IF NOT EXISTS plus_agent_skill_package (
-    id BIGINT NOT NULL PRIMARY KEY,
-    uuid VARCHAR(255) NOT NULL UNIQUE,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    v BIGINT NOT NULL DEFAULT 0,
-    tenant_id BIGINT NOT NULL DEFAULT 0,
-    organization_id BIGINT NOT NULL DEFAULT 0,
-    data_scope INTEGER NOT NULL DEFAULT 0,
-    user_id BIGINT,
-    package_key VARCHAR(128) NOT NULL,
-    name VARCHAR(255) NOT NULL,
-    summary VARCHAR(512),
-    description VARCHAR(4000),
-    icon_media_resource_id VARCHAR(128),
-    icon_object_blob_id BIGINT,
-    icon_resource_snapshot JSONB,
-    cover_media_resource_id VARCHAR(128),
-    cover_object_blob_id BIGINT,
-    cover_resource_snapshot JSONB,
-    category_id BIGINT,
-    enabled BOOLEAN NOT NULL DEFAULT TRUE,
-    featured BOOLEAN NOT NULL DEFAULT FALSE,
-    sort_weight INTEGER NOT NULL DEFAULT 0,
-    tags JSONB NOT NULL DEFAULT '[]'::jsonb,
-    latest_published_at TIMESTAMPTZ
-);
-
-CREATE UNIQUE INDEX IF NOT EXISTS uk_plus_agent_skill_package_key ON plus_agent_skill_package (tenant_id, organization_id, package_key);
-CREATE INDEX IF NOT EXISTS idx_plus_agent_skill_package_user ON plus_agent_skill_package (user_id);
-CREATE INDEX IF NOT EXISTS idx_plus_agent_skill_package_category ON plus_agent_skill_package (category_id);
-CREATE INDEX IF NOT EXISTS idx_plus_agent_skill_package_market ON plus_agent_skill_package (enabled, featured, sort_weight);
-CREATE INDEX IF NOT EXISTS idx_plus_agent_skill_package_seed_scope ON plus_agent_skill_package (tenant_id, organization_id, data_scope, id, uuid, package_key, name, sort_weight, enabled, featured);
-
-CREATE TABLE IF NOT EXISTS plus_agent_skill (
-    id BIGINT NOT NULL PRIMARY KEY,
-    uuid VARCHAR(255) NOT NULL UNIQUE,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    v BIGINT NOT NULL DEFAULT 0,
-    tenant_id BIGINT NOT NULL DEFAULT 0,
-    organization_id BIGINT NOT NULL DEFAULT 0,
-    data_scope INTEGER NOT NULL DEFAULT 0,
-    user_id BIGINT,
-    skill_key VARCHAR(128) NOT NULL,
-    name VARCHAR(255) NOT NULL,
-    summary VARCHAR(512),
-    description VARCHAR(4000),
-    icon_media_resource_id VARCHAR(128),
-    icon_object_blob_id BIGINT,
-    icon_resource_snapshot JSONB,
-    cover_media_resource_id VARCHAR(128),
-    cover_object_blob_id BIGINT,
-    cover_resource_snapshot JSONB,
-    category_id BIGINT,
-    package_id BIGINT,
-    provider VARCHAR(128),
-    version VARCHAR(64),
-    version_name VARCHAR(64),
-    runtime VARCHAR(64),
-    entrypoint VARCHAR(255),
-    manifest_url VARCHAR(500),
-    repository_url VARCHAR(500),
-    homepage_url VARCHAR(500),
-    documentation_url VARCHAR(500),
-    license_name VARCHAR(128),
-    source_type VARCHAR(32) NOT NULL,
-    market_status VARCHAR(32) NOT NULL,
-    visibility VARCHAR(32) NOT NULL,
-    review_status VARCHAR(32) NOT NULL,
-    review_comment VARCHAR(1000),
-    reviewed_by BIGINT,
-    reviewed_at TIMESTAMPTZ,
-    builtin BOOLEAN NOT NULL DEFAULT FALSE,
-    is_builtin BOOLEAN NOT NULL DEFAULT FALSE,
-    enabled BOOLEAN NOT NULL DEFAULT TRUE,
-    featured BOOLEAN NOT NULL DEFAULT FALSE,
-    recommend_weight INTEGER NOT NULL DEFAULT 0,
-    price NUMERIC(38, 12),
-    currency VARCHAR(16) NOT NULL DEFAULT 'CNY',
-    install_count BIGINT NOT NULL DEFAULT 0,
-    rating_avg NUMERIC(38, 12) NOT NULL DEFAULT 0,
-    rating_count BIGINT NOT NULL DEFAULT 0,
-    tags JSONB NOT NULL DEFAULT '[]'::jsonb,
-    capabilities JSONB NOT NULL DEFAULT '[]'::jsonb,
-    config_schema JSONB NOT NULL DEFAULT '{}'::jsonb,
-    default_config JSONB NOT NULL DEFAULT '{}'::jsonb,
-    latest_published_at TIMESTAMPTZ
-);
-
-CREATE UNIQUE INDEX IF NOT EXISTS uk_plus_agent_skill_key ON plus_agent_skill (tenant_id, organization_id, skill_key);
-CREATE INDEX IF NOT EXISTS idx_plus_agent_skill_user ON plus_agent_skill (user_id);
-CREATE INDEX IF NOT EXISTS idx_plus_agent_skill_category ON plus_agent_skill (category_id);
-CREATE INDEX IF NOT EXISTS idx_plus_agent_skill_package ON plus_agent_skill (package_id);
-CREATE INDEX IF NOT EXISTS idx_plus_agent_skill_market ON plus_agent_skill (market_status, visibility, review_status, enabled);
-CREATE INDEX IF NOT EXISTS idx_plus_agent_skill_featured ON plus_agent_skill (featured, recommend_weight);
-CREATE INDEX IF NOT EXISTS idx_plus_agent_skill_seed_scope ON plus_agent_skill (tenant_id, organization_id, data_scope);
-CREATE INDEX IF NOT EXISTS idx_plus_agent_skill_official_seed ON plus_agent_skill (tenant_id, organization_id, data_scope, source_type, provider, market_status, visibility, review_status, builtin, is_builtin, enabled);
-
-CREATE TABLE IF NOT EXISTS plus_user_agent_skill (
-    id BIGINT NOT NULL PRIMARY KEY,
-    uuid VARCHAR(255) NOT NULL UNIQUE,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    v BIGINT NOT NULL DEFAULT 0,
-    tenant_id BIGINT NOT NULL DEFAULT 0,
-    organization_id BIGINT NOT NULL DEFAULT 0,
-    data_scope INTEGER NOT NULL DEFAULT 0,
-    user_id BIGINT NOT NULL,
-    skill_id BIGINT NOT NULL,
-    enabled BOOLEAN NOT NULL DEFAULT TRUE,
-    config JSONB NOT NULL DEFAULT '{}'::jsonb,
-    installed_at TIMESTAMPTZ,
-    last_enabled_at TIMESTAMPTZ,
-    last_used_at TIMESTAMPTZ,
-    used_count BIGINT NOT NULL DEFAULT 0
-);
-
-CREATE UNIQUE INDEX IF NOT EXISTS uk_plus_user_agent_skill ON plus_user_agent_skill (tenant_id, organization_id, user_id, skill_id);
-CREATE INDEX IF NOT EXISTS idx_plus_user_agent_skill_user ON plus_user_agent_skill (user_id);
-CREATE INDEX IF NOT EXISTS idx_plus_user_agent_skill_skill ON plus_user_agent_skill (skill_id);
-CREATE INDEX IF NOT EXISTS idx_plus_user_agent_skill_enabled ON plus_user_agent_skill (enabled);
-
-CREATE TABLE IF NOT EXISTS plus_feeds (
-    id BIGINT NOT NULL PRIMARY KEY,
-    uuid VARCHAR(255) NOT NULL UNIQUE,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    v BIGINT NOT NULL DEFAULT 0,
-    tenant_id BIGINT NOT NULL DEFAULT 0,
-    organization_id BIGINT NOT NULL DEFAULT 0,
-    data_scope INTEGER NOT NULL DEFAULT 0,
-    user_id BIGINT,
-    title VARCHAR(255) NOT NULL,
-    summary TEXT,
-    category_id BIGINT NOT NULL DEFAULT 0,
-    content_type INTEGER NOT NULL,
-    content_id BIGINT NOT NULL,
-    cover_resources JSONB,
-    resource_list JSONB,
-    author JSONB,
-    source VARCHAR(100),
-    source_url VARCHAR(500),
-    publish_time TIMESTAMPTZ,
-    tags JSONB,
-    status INTEGER NOT NULL DEFAULT 2,
-    view_count BIGINT NOT NULL DEFAULT 0,
-    like_count BIGINT NOT NULL DEFAULT 0,
-    comment_count BIGINT NOT NULL DEFAULT 0,
-    share_count BIGINT NOT NULL DEFAULT 0,
-    favorite_count BIGINT NOT NULL DEFAULT 0,
-    is_top BOOLEAN NOT NULL DEFAULT FALSE,
-    is_hot BOOLEAN NOT NULL DEFAULT FALSE,
-    is_recommended BOOLEAN NOT NULL DEFAULT FALSE,
-    sort_order INTEGER NOT NULL DEFAULT 0
-);
-
-CREATE INDEX IF NOT EXISTS idx_feeds_status ON plus_feeds (status);
-CREATE INDEX IF NOT EXISTS idx_feeds_user_id ON plus_feeds (user_id);
-CREATE INDEX IF NOT EXISTS idx_feeds_category_id ON plus_feeds (category_id);
-CREATE INDEX IF NOT EXISTS idx_feeds_content_type ON plus_feeds (content_type);
-CREATE INDEX IF NOT EXISTS idx_feeds_publish_time ON plus_feeds (publish_time);
-CREATE INDEX IF NOT EXISTS idx_feeds_status_publish_time ON plus_feeds (status, publish_time);
-
-CREATE TABLE IF NOT EXISTS plus_comments (
-    id BIGINT NOT NULL PRIMARY KEY,
-    uuid VARCHAR(255) NOT NULL UNIQUE,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    v BIGINT NOT NULL DEFAULT 0,
-    tenant_id BIGINT NOT NULL DEFAULT 0,
-    organization_id BIGINT NOT NULL DEFAULT 0,
-    data_scope INTEGER NOT NULL DEFAULT 0,
-    user_id BIGINT,
-    parent_id BIGINT,
-    path VARCHAR(1024),
-    sort_weight INTEGER NOT NULL DEFAULT 0,
-    content TEXT NOT NULL,
-    content_type INTEGER NOT NULL,
-    content_id BIGINT NOT NULL,
-    status INTEGER NOT NULL DEFAULT 1,
-    likes INTEGER NOT NULL DEFAULT 0,
-    reply_count INTEGER NOT NULL DEFAULT 0,
-    is_top BOOLEAN NOT NULL DEFAULT FALSE,
-    ip_address VARCHAR(64),
-    device_info VARCHAR(255),
-    author JSONB
-);
-
-CREATE INDEX IF NOT EXISTS idx_comment_content_id_type ON plus_comments (content_id, content_type);
-CREATE INDEX IF NOT EXISTS idx_comment_user_id ON plus_comments (user_id);
-CREATE INDEX IF NOT EXISTS idx_comment_status ON plus_comments (status);
-CREATE INDEX IF NOT EXISTS idx_comment_parent_id ON plus_comments (parent_id);
-
-CREATE TABLE IF NOT EXISTS plus_content_vote (
-    id BIGINT NOT NULL PRIMARY KEY,
-    uuid VARCHAR(255) NOT NULL UNIQUE,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    v BIGINT NOT NULL DEFAULT 0,
-    tenant_id BIGINT NOT NULL DEFAULT 0,
-    organization_id BIGINT NOT NULL DEFAULT 0,
-    data_scope INTEGER NOT NULL DEFAULT 0,
-    user_id BIGINT,
-    content_type INTEGER NOT NULL,
-    content_id BIGINT NOT NULL,
-    rating VARCHAR(20) NOT NULL DEFAULT 'like',
-    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
-    source VARCHAR(50),
-    client_ip VARCHAR(50),
-    device_info VARCHAR(255)
-);
-
-CREATE UNIQUE INDEX IF NOT EXISTS idx_vote_user_content ON plus_content_vote (user_id, content_type, content_id);
-CREATE INDEX IF NOT EXISTS idx_vote_content ON plus_content_vote (content_type, content_id);
-CREATE INDEX IF NOT EXISTS idx_vote_rating ON plus_content_vote (rating);
-CREATE INDEX IF NOT EXISTS idx_vote_created_at ON plus_content_vote (created_at);
-
-CREATE TABLE IF NOT EXISTS plus_favorite (
-    id BIGINT NOT NULL PRIMARY KEY,
-    uuid VARCHAR(255) NOT NULL UNIQUE,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    v BIGINT NOT NULL DEFAULT 0,
-    tenant_id BIGINT NOT NULL DEFAULT 0,
-    organization_id BIGINT NOT NULL DEFAULT 0,
-    data_scope INTEGER NOT NULL DEFAULT 0,
-    user_id BIGINT,
-    title VARCHAR(200),
-    image JSONB,
-    content_type INTEGER NOT NULL,
-    content_id BIGINT NOT NULL,
-    folder_id BIGINT,
-    remark VARCHAR(500),
-    tags VARCHAR(500),
-    sort_weight INTEGER NOT NULL DEFAULT 0,
-    is_private BOOLEAN NOT NULL DEFAULT FALSE,
-    status INTEGER NOT NULL DEFAULT 1,
-    view_count INTEGER NOT NULL DEFAULT 0,
-    last_viewed_at TIMESTAMPTZ
-);
-
-CREATE UNIQUE INDEX IF NOT EXISTS idx_favorite_user_content ON plus_favorite (user_id, content_type, content_id);
-CREATE INDEX IF NOT EXISTS idx_favorite_user_id ON plus_favorite (user_id);
-CREATE INDEX IF NOT EXISTS idx_favorite_content ON plus_favorite (content_type, content_id);
-CREATE INDEX IF NOT EXISTS idx_favorite_folder_id ON plus_favorite (folder_id);
-CREATE INDEX IF NOT EXISTS idx_favorite_created_at ON plus_favorite (created_at);
-
 CREATE TABLE IF NOT EXISTS ops_referral_stat_snapshot (
     id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
@@ -1936,131 +1619,6 @@ CREATE TABLE IF NOT EXISTS messaging_rate_limit_bucket (
 
 CREATE UNIQUE INDEX IF NOT EXISTS uk_messaging_rate_limit_bucket_scope ON messaging_rate_limit_bucket (tenant_id, organization_id, scene_code, channel, target_hash, ip_hash, device_hash, window_start, window_seconds);
 CREATE INDEX IF NOT EXISTS idx_messaging_rate_limit_bucket_window ON messaging_rate_limit_bucket (tenant_id, organization_id, scene_code, channel, window_start);
-
-CREATE TABLE IF NOT EXISTS open_platform_provider (
-    id BIGINT NOT NULL PRIMARY KEY,
-    uuid VARCHAR(64) NOT NULL,
-    tenant_id BIGINT NOT NULL DEFAULT 0,
-    organization_id BIGINT NOT NULL DEFAULT 0,
-    data_scope INTEGER NOT NULL DEFAULT 0,
-    status INTEGER NOT NULL DEFAULT 1,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    version BIGINT NOT NULL DEFAULT 0,
-    deleted_at TIMESTAMPTZ,
-    deleted_by BIGINT,
-    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
-    provider VARCHAR(64) NOT NULL,
-    name VARCHAR(128) NOT NULL,
-    icon_media_resource_id VARCHAR(128),
-    icon_object_blob_id BIGINT,
-    icon_resource_snapshot JSONB,
-    docs_url VARCHAR(512),
-    website_url VARCHAR(512),
-    capabilities JSONB,
-    sort_order INTEGER
-);
-
-CREATE UNIQUE INDEX IF NOT EXISTS uk_open_platform_provider_tenant_provider ON open_platform_provider (tenant_id, organization_id, provider);
-CREATE INDEX IF NOT EXISTS idx_open_platform_provider_status_sort ON open_platform_provider (tenant_id, organization_id, status, sort_order, id);
-
-CREATE TABLE IF NOT EXISTS open_platform_manifest (
-    id BIGINT NOT NULL PRIMARY KEY,
-    uuid VARCHAR(64) NOT NULL,
-    tenant_id BIGINT NOT NULL DEFAULT 0,
-    organization_id BIGINT NOT NULL DEFAULT 0,
-    data_scope INTEGER NOT NULL DEFAULT 0,
-    status INTEGER NOT NULL DEFAULT 1,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    version VARCHAR(32) NOT NULL,
-    deleted_at TIMESTAMPTZ,
-    deleted_by BIGINT,
-    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
-    manifest_key VARCHAR(128) NOT NULL,
-    provider VARCHAR(64) NOT NULL,
-    account_type VARCHAR(64) NOT NULL,
-    capability_schema JSONB,
-    callback_schema JSONB,
-    entry_schema JSONB,
-    sort_order INTEGER
-);
-
-CREATE UNIQUE INDEX IF NOT EXISTS uk_open_platform_manifest_tenant_key ON open_platform_manifest (tenant_id, organization_id, manifest_key);
-CREATE INDEX IF NOT EXISTS idx_open_platform_manifest_provider_type ON open_platform_manifest (tenant_id, organization_id, provider, account_type, status, sort_order, id);
-
-CREATE TABLE IF NOT EXISTS open_platform_account (
-    id BIGINT NOT NULL PRIMARY KEY,
-    uuid VARCHAR(64) NOT NULL,
-    tenant_id BIGINT NOT NULL DEFAULT 0,
-    organization_id BIGINT NOT NULL DEFAULT 0,
-    data_scope INTEGER NOT NULL DEFAULT 0,
-    status INTEGER NOT NULL DEFAULT 1,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    version BIGINT NOT NULL DEFAULT 0,
-    deleted_at TIMESTAMPTZ,
-    deleted_by BIGINT,
-    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
-    account_key VARCHAR(128) NOT NULL,
-    name VARCHAR(128) NOT NULL,
-    provider VARCHAR(64) NOT NULL,
-    account_type VARCHAR(64) NOT NULL,
-    app_id VARCHAR(128),
-    secret_ref VARCHAR(256),
-    token_ref VARCHAR(256),
-    aes_key_ref VARCHAR(256),
-    default_entry_id BIGINT,
-    qr_default BOOLEAN
-);
-
-CREATE UNIQUE INDEX IF NOT EXISTS uk_open_platform_account_tenant_key ON open_platform_account (tenant_id, organization_id, account_key);
-CREATE INDEX IF NOT EXISTS idx_open_platform_account_provider_type_status ON open_platform_account (tenant_id, organization_id, provider, account_type, status, id);
-
-CREATE TABLE IF NOT EXISTS open_platform_entry (
-    id BIGINT NOT NULL PRIMARY KEY,
-    uuid VARCHAR(64) NOT NULL,
-    tenant_id BIGINT NOT NULL DEFAULT 0,
-    organization_id BIGINT NOT NULL DEFAULT 0,
-    data_scope INTEGER NOT NULL DEFAULT 0,
-    status INTEGER NOT NULL DEFAULT 1,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    version BIGINT NOT NULL DEFAULT 0,
-    deleted_at TIMESTAMPTZ,
-    deleted_by BIGINT,
-    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
-    account_id BIGINT NOT NULL,
-    entry_key VARCHAR(128) NOT NULL,
-    entry_type VARCHAR(64) NOT NULL,
-    entry_url VARCHAR(1024) NOT NULL
-);
-
-CREATE UNIQUE INDEX IF NOT EXISTS uk_open_platform_entry_account_key ON open_platform_entry (tenant_id, organization_id, account_id, entry_key);
-CREATE INDEX IF NOT EXISTS idx_open_platform_entry_account_status ON open_platform_entry (tenant_id, organization_id, account_id, status, id);
-
-CREATE TABLE IF NOT EXISTS open_platform_pay_binding (
-    id BIGINT NOT NULL PRIMARY KEY,
-    uuid VARCHAR(64) NOT NULL,
-    tenant_id BIGINT NOT NULL DEFAULT 0,
-    organization_id BIGINT NOT NULL DEFAULT 0,
-    data_scope INTEGER NOT NULL DEFAULT 0,
-    status INTEGER NOT NULL DEFAULT 1,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    version BIGINT NOT NULL DEFAULT 0,
-    deleted_at TIMESTAMPTZ,
-    deleted_by BIGINT,
-    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
-    account_id BIGINT NOT NULL,
-    payment_account_id VARCHAR(128) NOT NULL,
-    payment_channel_id VARCHAR(128),
-    scene VARCHAR(64) NOT NULL,
-    mode VARCHAR(64) NOT NULL
-);
-
-CREATE UNIQUE INDEX IF NOT EXISTS uk_open_platform_pay_binding_account_scene ON open_platform_pay_binding (tenant_id, organization_id, account_id, payment_account_id, scene);
-CREATE INDEX IF NOT EXISTS idx_open_platform_pay_binding_account_status ON open_platform_pay_binding (tenant_id, organization_id, account_id, status, id);
 
 CREATE TABLE IF NOT EXISTS integration_proxy (
     id BIGINT NOT NULL PRIMARY KEY,
@@ -4964,228 +4522,6 @@ CREATE TABLE IF NOT EXISTS commerce_settlement_export (
 CREATE UNIQUE INDEX IF NOT EXISTS uk_commerce_settlement_export_no ON commerce_settlement_export (export_no);
 CREATE INDEX IF NOT EXISTS idx_commerce_settlement_export_tenant_period ON commerce_settlement_export (tenant_id, organization_id, period_start, period_end, created_at, id);
 
-CREATE TABLE IF NOT EXISTS studio_catalog_action (
-    id BIGINT NOT NULL PRIMARY KEY,
-    uuid VARCHAR(64) NOT NULL,
-    tenant_id BIGINT NOT NULL DEFAULT 0,
-    organization_id BIGINT NOT NULL DEFAULT 0,
-    user_id BIGINT,
-    request_id VARCHAR(128),
-    trace_id VARCHAR(128),
-    payload_hash VARCHAR(128),
-    status INTEGER NOT NULL DEFAULT 1,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    retention_until TIMESTAMPTZ,
-    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
-    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
-    target_type INTEGER,
-    target_id BIGINT,
-    release_id BIGINT,
-    action_type INTEGER,
-    rating_score NUMERIC(38, 12),
-    review_title VARCHAR(200),
-    review_body TEXT,
-    client_ip_hash VARCHAR(128),
-    user_agent_hash VARCHAR(128)
-);
-
-CREATE INDEX IF NOT EXISTS idx_studio_catalog_action_target_type ON studio_catalog_action (target_type, target_id, action_type, created_at, id);
-CREATE INDEX IF NOT EXISTS idx_studio_catalog_action_user ON studio_catalog_action (tenant_id, organization_id, user_id, action_type, created_at, id);
-
-CREATE TABLE IF NOT EXISTS studio_catalog_asset (
-    id BIGINT NOT NULL PRIMARY KEY,
-    uuid VARCHAR(64) NOT NULL,
-    tenant_id BIGINT NOT NULL DEFAULT 0,
-    organization_id BIGINT NOT NULL DEFAULT 0,
-    data_scope INTEGER NOT NULL DEFAULT 0,
-    status INTEGER NOT NULL DEFAULT 1,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    version BIGINT NOT NULL DEFAULT 0,
-    deleted_at TIMESTAMPTZ,
-    deleted_by BIGINT,
-    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
-    target_type INTEGER,
-    target_id BIGINT,
-    artifact_id BIGINT,
-    asset_type INTEGER,
-    asset_media_resource_id VARCHAR(128),
-    asset_object_blob_id BIGINT,
-    asset_resource_snapshot JSONB,
-    thumbnail_media_resource_id VARCHAR(128),
-    thumbnail_object_blob_id BIGINT,
-    thumbnail_resource_snapshot JSONB,
-    title VARCHAR(200),
-    alt_text VARCHAR(500),
-    mime_type VARCHAR(128),
-    width INTEGER,
-    height INTEGER,
-    duration_seconds NUMERIC(38, 12),
-    file_size BIGINT,
-    sort_order INTEGER,
-    published_at TIMESTAMPTZ
-);
-
-CREATE INDEX IF NOT EXISTS idx_studio_catalog_asset_target ON studio_catalog_asset (tenant_id, organization_id, target_type, target_id, asset_type, sort_order, id);
-CREATE INDEX IF NOT EXISTS idx_studio_catalog_asset_artifact ON studio_catalog_asset (tenant_id, organization_id, artifact_id, sort_order, id);
-CREATE UNIQUE INDEX IF NOT EXISTS uk_studio_catalog_asset_uuid ON studio_catalog_asset (tenant_id, organization_id, uuid);
-CREATE INDEX IF NOT EXISTS idx_studio_catalog_asset_seed_source ON studio_catalog_asset (tenant_id, organization_id, status);
-CREATE INDEX IF NOT EXISTS idx_studio_catalog_asset_seed_kind ON studio_catalog_asset (tenant_id, organization_id, target_type);
-
-CREATE TABLE IF NOT EXISTS studio_catalog_artifact (
-    id BIGINT NOT NULL PRIMARY KEY,
-    uuid VARCHAR(64) NOT NULL,
-    tenant_id BIGINT NOT NULL DEFAULT 0,
-    organization_id BIGINT NOT NULL DEFAULT 0,
-    data_scope INTEGER NOT NULL DEFAULT 0,
-    status INTEGER NOT NULL DEFAULT 1,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    version VARCHAR(64),
-    deleted_at TIMESTAMPTZ,
-    deleted_by BIGINT,
-    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
-    target_type INTEGER,
-    target_id BIGINT,
-    artifact_type INTEGER,
-    platform_type VARCHAR(64),
-    os_name VARCHAR(64),
-    artifact_ref VARCHAR(512),
-    artifact_media_resource_id VARCHAR(128),
-    artifact_object_blob_id BIGINT,
-    artifact_resource_snapshot JSONB,
-    artifact_size_bytes BIGINT,
-    runtime VARCHAR(128),
-    frameworks JSONB,
-    license_name VARCHAR(128),
-    checksum_hash VARCHAR(128),
-    release_notes TEXT,
-    published_at TIMESTAMPTZ,
-    deprecated_at TIMESTAMPTZ
-);
-
-CREATE INDEX IF NOT EXISTS idx_studio_catalog_artifact_target ON studio_catalog_artifact (tenant_id, organization_id, target_type, target_id, status, published_at, id);
-CREATE UNIQUE INDEX IF NOT EXISTS uk_studio_catalog_artifact_version ON studio_catalog_artifact (tenant_id, organization_id, target_type, target_id, artifact_type, version, platform_type, os_name);
-CREATE UNIQUE INDEX IF NOT EXISTS uk_studio_catalog_artifact_uuid ON studio_catalog_artifact (tenant_id, organization_id, uuid);
-CREATE INDEX IF NOT EXISTS idx_studio_catalog_artifact_seed_source ON studio_catalog_artifact (tenant_id, organization_id, status);
-CREATE INDEX IF NOT EXISTS idx_studio_catalog_artifact_seed_kind ON studio_catalog_artifact (tenant_id, organization_id, target_type);
-
-CREATE TABLE IF NOT EXISTS studio_app_template (
-    id BIGINT NOT NULL PRIMARY KEY,
-    uuid VARCHAR(64) NOT NULL,
-    tenant_id BIGINT NOT NULL DEFAULT 0,
-    organization_id BIGINT NOT NULL DEFAULT 0,
-    data_scope INTEGER NOT NULL DEFAULT 0,
-    status INTEGER NOT NULL DEFAULT 1,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    version BIGINT NOT NULL DEFAULT 0,
-    deleted_at TIMESTAMPTZ,
-    deleted_by BIGINT,
-    metadata JSONB,
-    template_no VARCHAR(64),
-    template_code VARCHAR(128),
-    template_name VARCHAR(255),
-    description TEXT,
-    category_id BIGINT,
-    category_code VARCHAR(128),
-    template_type VARCHAR(64),
-    runtime VARCHAR(128),
-    framework VARCHAR(128),
-    language VARCHAR(64),
-    icon_media_resource_id VARCHAR(128),
-    icon_object_blob_id BIGINT,
-    icon_resource_snapshot JSONB,
-    cover_media_resource_id VARCHAR(128),
-    cover_object_blob_id BIGINT,
-    cover_resource_snapshot JSONB,
-    visibility INTEGER,
-    publish_status INTEGER,
-    featured BOOLEAN,
-    sort_weight INTEGER,
-    owner_user_id BIGINT,
-    source_app_id BIGINT,
-    git_repo_url VARCHAR(1024),
-    git_ref VARCHAR(128),
-    git_sub_path VARCHAR(1024),
-    current_version_id BIGINT,
-    app_config_schema JSONB,
-    default_app_config JSONB,
-    variable_schema JSONB,
-    dependency_manifest JSONB,
-    capability_manifest JSONB,
-    published_at TIMESTAMPTZ,
-    deprecated_at TIMESTAMPTZ
-);
-
-CREATE UNIQUE INDEX IF NOT EXISTS uk_studio_app_template_no ON studio_app_template (tenant_id, template_no);
-CREATE UNIQUE INDEX IF NOT EXISTS uk_studio_app_template_code ON studio_app_template (tenant_id, organization_id, template_code);
-CREATE INDEX IF NOT EXISTS idx_studio_app_template_scope_status ON studio_app_template (tenant_id, organization_id, visibility, publish_status, status, updated_at, id);
-CREATE INDEX IF NOT EXISTS idx_studio_app_template_category ON studio_app_template (tenant_id, organization_id, category_id, publish_status, sort_weight, id);
-CREATE INDEX IF NOT EXISTS idx_studio_app_template_type_runtime ON studio_app_template (tenant_id, organization_id, template_type, runtime, framework, status, id);
-CREATE INDEX IF NOT EXISTS idx_studio_app_template_git_source ON studio_app_template (tenant_id, organization_id, git_repo_url, git_sub_path, status, id);
-CREATE INDEX IF NOT EXISTS idx_studio_app_template_featured ON studio_app_template (tenant_id, organization_id, featured, sort_weight, id);
-
-CREATE TABLE IF NOT EXISTS studio_app_template_version (
-    id BIGINT NOT NULL PRIMARY KEY,
-    uuid VARCHAR(64) NOT NULL,
-    tenant_id BIGINT NOT NULL DEFAULT 0,
-    organization_id BIGINT NOT NULL DEFAULT 0,
-    data_scope INTEGER NOT NULL DEFAULT 0,
-    status INTEGER NOT NULL DEFAULT 1,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    version BIGINT NOT NULL DEFAULT 0,
-    deleted_at TIMESTAMPTZ,
-    deleted_by BIGINT,
-    metadata JSONB,
-    template_id BIGINT,
-    version_no VARCHAR(64),
-    artifact_id BIGINT,
-    changelog TEXT,
-    file_manifest JSONB,
-    dependency_manifest JSONB,
-    capability_manifest JSONB,
-    variable_schema JSONB,
-    app_config_schema JSONB,
-    default_app_config JSONB,
-    publish_status INTEGER,
-    published_at TIMESTAMPTZ,
-    deprecated_at TIMESTAMPTZ
-);
-
-CREATE UNIQUE INDEX IF NOT EXISTS uk_studio_app_template_version_no ON studio_app_template_version (tenant_id, organization_id, template_id, version_no);
-CREATE INDEX IF NOT EXISTS idx_studio_app_template_version_template ON studio_app_template_version (tenant_id, organization_id, template_id, publish_status, created_at, id);
-CREATE INDEX IF NOT EXISTS idx_studio_app_template_version_artifact ON studio_app_template_version (tenant_id, organization_id, artifact_id, status, id);
-
-CREATE TABLE IF NOT EXISTS studio_app_template_usage (
-    id BIGINT NOT NULL PRIMARY KEY,
-    uuid VARCHAR(64) NOT NULL,
-    tenant_id BIGINT NOT NULL DEFAULT 0,
-    organization_id BIGINT NOT NULL DEFAULT 0,
-    data_scope INTEGER NOT NULL DEFAULT 0,
-    status INTEGER NOT NULL DEFAULT 1,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    version BIGINT NOT NULL DEFAULT 0,
-    deleted_at TIMESTAMPTZ,
-    deleted_by BIGINT,
-    metadata JSONB,
-    template_id BIGINT,
-    template_version_id BIGINT,
-    target_app_id BIGINT,
-    user_id BIGINT,
-    request_id VARCHAR(128),
-    usage_type INTEGER,
-    input_snapshot JSONB,
-    output_snapshot JSONB
-);
-
-CREATE INDEX IF NOT EXISTS idx_studio_app_template_usage_template ON studio_app_template_usage (tenant_id, organization_id, template_id, template_version_id, created_at, id);
-CREATE INDEX IF NOT EXISTS idx_studio_app_template_usage_target ON studio_app_template_usage (tenant_id, organization_id, target_app_id, created_at, id);
-CREATE INDEX IF NOT EXISTS idx_studio_app_template_usage_user ON studio_app_template_usage (tenant_id, organization_id, user_id, created_at, id);
-CREATE INDEX IF NOT EXISTS idx_studio_app_template_usage_request ON studio_app_template_usage (tenant_id, organization_id, request_id, id);
-
 CREATE TABLE IF NOT EXISTS content_announcement (
     id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
@@ -5481,6 +4817,499 @@ CREATE TABLE IF NOT EXISTS content_course_application (
 
 CREATE INDEX IF NOT EXISTS idx_content_course_application_status ON content_course_application (tenant_id, organization_id, status, created_at, id);
 CREATE INDEX IF NOT EXISTS idx_content_course_application_user ON content_course_application (tenant_id, organization_id, user_id, created_at, id);
+
+CREATE TABLE IF NOT EXISTS platform_app (
+    id BIGINT NOT NULL PRIMARY KEY,
+    uuid VARCHAR(255) NOT NULL UNIQUE,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    v BIGINT NOT NULL DEFAULT 0,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    user_id BIGINT,
+    category_id BIGINT,
+    name VARCHAR(255) NOT NULL,
+    icon JSONB,
+    resource_list JSONB,
+    project_id BIGINT,
+    description TEXT,
+    version VARCHAR(64),
+    icon_media_resource_id VARCHAR(128),
+    icon_object_blob_id BIGINT,
+    icon_resource_snapshot JSONB,
+    access_url VARCHAR(512),
+    config JSONB NOT NULL DEFAULT '{}'::jsonb,
+    status INTEGER NOT NULL DEFAULT 1,
+    app_type VARCHAR(64),
+    platforms JSONB,
+    install_platforms JSONB,
+    install_skill JSONB,
+    install_config JSONB,
+    release_notes JSONB,
+    package_name VARCHAR(255),
+    bundle_id VARCHAR(255),
+    store_url VARCHAR(512),
+    artifact_media_resource_id VARCHAR(128),
+    artifact_object_blob_id BIGINT,
+    artifact_resource_snapshot JSONB,
+    download_count BIGINT NOT NULL DEFAULT 0,
+    rating_avg NUMERIC(38, 12) NOT NULL DEFAULT 0,
+    rating_count BIGINT NOT NULL DEFAULT 0
+);
+
+CREATE INDEX IF NOT EXISTS idx_platform_app_user_id ON platform_app (user_id);
+CREATE INDEX IF NOT EXISTS idx_platform_app_project_id ON platform_app (project_id);
+CREATE INDEX IF NOT EXISTS idx_platform_app_status ON platform_app (status);
+CREATE INDEX IF NOT EXISTS idx_platform_app_category_id ON platform_app (category_id);
+
+CREATE TABLE IF NOT EXISTS platform_app_template (
+    id BIGINT NOT NULL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    template_no VARCHAR(64),
+    template_code VARCHAR(128),
+    template_name VARCHAR(255),
+    description TEXT,
+    category_id BIGINT,
+    category_code VARCHAR(128),
+    template_type VARCHAR(64),
+    runtime VARCHAR(128),
+    framework VARCHAR(128),
+    language VARCHAR(64),
+    icon_media_resource_id VARCHAR(128),
+    icon_object_blob_id BIGINT,
+    icon_resource_snapshot JSONB,
+    cover_media_resource_id VARCHAR(128),
+    cover_object_blob_id BIGINT,
+    cover_resource_snapshot JSONB,
+    visibility INTEGER,
+    publish_status INTEGER,
+    featured BOOLEAN,
+    sort_weight INTEGER,
+    owner_user_id BIGINT,
+    source_app_id BIGINT,
+    git_repo_url VARCHAR(1024),
+    git_ref VARCHAR(128),
+    git_sub_path VARCHAR(1024),
+    current_version_id BIGINT,
+    app_config_schema JSONB,
+    default_app_config JSONB,
+    variable_schema JSONB,
+    dependency_manifest JSONB,
+    capability_manifest JSONB,
+    published_at TIMESTAMPTZ,
+    deprecated_at TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_platform_app_template_no ON platform_app_template (tenant_id, template_no);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_platform_app_template_code ON platform_app_template (tenant_id, organization_id, template_code);
+CREATE INDEX IF NOT EXISTS idx_platform_app_template_scope_status ON platform_app_template (tenant_id, organization_id, visibility, publish_status, status, updated_at, id);
+CREATE INDEX IF NOT EXISTS idx_platform_app_template_category ON platform_app_template (tenant_id, organization_id, category_id, publish_status, sort_weight, id);
+
+CREATE TABLE IF NOT EXISTS platform_app_template_version (
+    id BIGINT NOT NULL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    template_id BIGINT,
+    version_no VARCHAR(64),
+    artifact_id BIGINT,
+    changelog TEXT,
+    file_manifest JSONB,
+    dependency_manifest JSONB,
+    capability_manifest JSONB,
+    variable_schema JSONB,
+    app_config_schema JSONB,
+    default_app_config JSONB,
+    publish_status INTEGER,
+    published_at TIMESTAMPTZ,
+    deprecated_at TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_platform_app_template_version_no ON platform_app_template_version (tenant_id, organization_id, template_id, version_no);
+CREATE INDEX IF NOT EXISTS idx_platform_app_template_version_template ON platform_app_template_version (tenant_id, organization_id, template_id, publish_status, created_at, id);
+
+CREATE TABLE IF NOT EXISTS platform_app_template_usage (
+    id BIGINT NOT NULL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT,
+    request_id VARCHAR(128),
+    trace_id VARCHAR(128),
+    payload_hash VARCHAR(128),
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    retention_until TIMESTAMPTZ,
+    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    template_id BIGINT,
+    template_version_id BIGINT,
+    target_app_id BIGINT,
+    usage_type INTEGER,
+    input_snapshot JSONB,
+    output_snapshot JSONB
+);
+
+CREATE INDEX IF NOT EXISTS idx_platform_app_template_usage_template ON platform_app_template_usage (tenant_id, organization_id, template_id, template_version_id, created_at, id);
+CREATE INDEX IF NOT EXISTS idx_platform_app_template_usage_target ON platform_app_template_usage (tenant_id, organization_id, target_app_id, created_at, id);
+CREATE INDEX IF NOT EXISTS idx_platform_app_template_usage_user ON platform_app_template_usage (tenant_id, organization_id, user_id, created_at, id);
+
+CREATE TABLE IF NOT EXISTS c_category (
+    id BIGINT NOT NULL PRIMARY KEY,
+    uuid VARCHAR(255) NOT NULL UNIQUE,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    v BIGINT NOT NULL DEFAULT 0,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    category_type VARCHAR(64) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    code VARCHAR(128),
+    tags JSONB NOT NULL DEFAULT '[]'::jsonb,
+    icon_media_resource_id VARCHAR(128),
+    icon_object_blob_id BIGINT,
+    icon_resource_snapshot JSONB,
+    sort_weight INTEGER NOT NULL DEFAULT 0,
+    parent_id BIGINT,
+    path VARCHAR(1024),
+    visible BOOLEAN NOT NULL DEFAULT TRUE,
+    status INTEGER NOT NULL DEFAULT 1
+);
+
+CREATE INDEX IF NOT EXISTS idx_c_category_type_scope ON c_category (tenant_id, organization_id, category_type, status, sort_weight, id);
+CREATE INDEX IF NOT EXISTS idx_c_category_parent ON c_category (tenant_id, organization_id, category_type, parent_id, sort_weight, id);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_c_category_code ON c_category (tenant_id, organization_id, category_type, code);
+
+CREATE TABLE IF NOT EXISTS ai_agent_skill_package (
+    id BIGINT NOT NULL PRIMARY KEY,
+    uuid VARCHAR(255) NOT NULL UNIQUE,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    v BIGINT NOT NULL DEFAULT 0,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    user_id BIGINT,
+    package_key VARCHAR(128) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    summary VARCHAR(512),
+    description VARCHAR(4000),
+    icon_media_resource_id VARCHAR(128),
+    icon_object_blob_id BIGINT,
+    icon_resource_snapshot JSONB,
+    cover_media_resource_id VARCHAR(128),
+    cover_object_blob_id BIGINT,
+    cover_resource_snapshot JSONB,
+    category_id BIGINT,
+    enabled BOOLEAN NOT NULL DEFAULT TRUE,
+    featured BOOLEAN NOT NULL DEFAULT FALSE,
+    sort_weight INTEGER NOT NULL DEFAULT 0,
+    tags JSONB NOT NULL DEFAULT '[]'::jsonb,
+    latest_published_at TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_agent_skill_package_key ON ai_agent_skill_package (tenant_id, organization_id, package_key);
+CREATE INDEX IF NOT EXISTS idx_ai_agent_skill_package_user ON ai_agent_skill_package (user_id);
+CREATE INDEX IF NOT EXISTS idx_ai_agent_skill_package_category ON ai_agent_skill_package (category_id);
+
+CREATE TABLE IF NOT EXISTS ai_agent_skill (
+    id BIGINT NOT NULL PRIMARY KEY,
+    uuid VARCHAR(255) NOT NULL UNIQUE,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    v BIGINT NOT NULL DEFAULT 0,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    user_id BIGINT,
+    skill_key VARCHAR(128) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    summary VARCHAR(512),
+    description VARCHAR(4000),
+    icon_media_resource_id VARCHAR(128),
+    icon_object_blob_id BIGINT,
+    icon_resource_snapshot JSONB,
+    cover_media_resource_id VARCHAR(128),
+    cover_object_blob_id BIGINT,
+    cover_resource_snapshot JSONB,
+    category_id BIGINT,
+    package_id BIGINT,
+    provider VARCHAR(128),
+    version VARCHAR(64),
+    version_name VARCHAR(64),
+    runtime VARCHAR(64),
+    entrypoint VARCHAR(255),
+    manifest_url VARCHAR(500),
+    repository_url VARCHAR(500),
+    homepage_url VARCHAR(500),
+    documentation_url VARCHAR(500),
+    license_name VARCHAR(128),
+    source_type VARCHAR(32) NOT NULL,
+    market_status VARCHAR(32) NOT NULL,
+    visibility VARCHAR(32) NOT NULL,
+    review_status VARCHAR(32) NOT NULL,
+    review_comment VARCHAR(1000),
+    reviewed_by BIGINT,
+    reviewed_at TIMESTAMPTZ,
+    builtin BOOLEAN NOT NULL DEFAULT FALSE,
+    is_builtin BOOLEAN NOT NULL DEFAULT FALSE,
+    enabled BOOLEAN NOT NULL DEFAULT TRUE,
+    featured BOOLEAN NOT NULL DEFAULT FALSE,
+    recommend_weight INTEGER NOT NULL DEFAULT 0,
+    price NUMERIC(38, 12),
+    currency VARCHAR(16) NOT NULL DEFAULT 'CNY',
+    install_count BIGINT NOT NULL DEFAULT 0,
+    rating_avg NUMERIC(38, 12) NOT NULL DEFAULT 0,
+    rating_count BIGINT NOT NULL DEFAULT 0,
+    tags JSONB NOT NULL DEFAULT '[]'::jsonb,
+    capabilities JSONB NOT NULL DEFAULT '[]'::jsonb,
+    config_schema JSONB NOT NULL DEFAULT '{}'::jsonb,
+    default_config JSONB NOT NULL DEFAULT '{}'::jsonb,
+    latest_published_at TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_agent_skill_key ON ai_agent_skill (tenant_id, organization_id, skill_key);
+CREATE INDEX IF NOT EXISTS idx_ai_agent_skill_user ON ai_agent_skill (user_id);
+CREATE INDEX IF NOT EXISTS idx_ai_agent_skill_category ON ai_agent_skill (category_id);
+CREATE INDEX IF NOT EXISTS idx_ai_agent_skill_package ON ai_agent_skill (package_id);
+CREATE INDEX IF NOT EXISTS idx_ai_agent_skill_market ON ai_agent_skill (market_status, visibility, review_status, enabled);
+
+CREATE TABLE IF NOT EXISTS ai_user_agent_skill (
+    id BIGINT NOT NULL PRIMARY KEY,
+    uuid VARCHAR(255) NOT NULL UNIQUE,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    v BIGINT NOT NULL DEFAULT 0,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    user_id BIGINT,
+    skill_id BIGINT NOT NULL,
+    enabled BOOLEAN NOT NULL DEFAULT TRUE,
+    config JSONB NOT NULL DEFAULT '{}'::jsonb,
+    installed_at TIMESTAMPTZ,
+    last_enabled_at TIMESTAMPTZ,
+    last_used_at TIMESTAMPTZ,
+    used_count BIGINT NOT NULL DEFAULT 0
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_user_agent_skill ON ai_user_agent_skill (tenant_id, organization_id, user_id, skill_id);
+CREATE INDEX IF NOT EXISTS idx_ai_user_agent_skill_skill ON ai_user_agent_skill (skill_id);
+
+CREATE TABLE IF NOT EXISTS ai_skill_asset (
+    id BIGINT NOT NULL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    target_type INTEGER,
+    target_id BIGINT,
+    artifact_id BIGINT,
+    asset_type INTEGER,
+    asset_media_resource_id VARCHAR(128),
+    asset_object_blob_id BIGINT,
+    asset_resource_snapshot JSONB,
+    thumbnail_media_resource_id VARCHAR(128),
+    thumbnail_object_blob_id BIGINT,
+    thumbnail_resource_snapshot JSONB,
+    title VARCHAR(200),
+    alt_text VARCHAR(500),
+    mime_type VARCHAR(128),
+    width INTEGER,
+    height INTEGER,
+    duration_seconds NUMERIC(38, 12),
+    file_size BIGINT,
+    sort_order INTEGER,
+    published_at TIMESTAMPTZ
+);
+
+CREATE INDEX IF NOT EXISTS idx_ai_skill_asset_target ON ai_skill_asset (tenant_id, organization_id, target_type, target_id, asset_type, sort_order, id);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_skill_asset_uuid ON ai_skill_asset (tenant_id, organization_id, uuid);
+
+CREATE TABLE IF NOT EXISTS ai_skill_artifact (
+    id BIGINT NOT NULL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version VARCHAR(64),
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    target_type INTEGER,
+    target_id BIGINT,
+    artifact_type INTEGER,
+    platform_type VARCHAR(64),
+    os_name VARCHAR(64),
+    artifact_ref VARCHAR(512),
+    artifact_media_resource_id VARCHAR(128),
+    artifact_object_blob_id BIGINT,
+    artifact_resource_snapshot JSONB,
+    artifact_size_bytes BIGINT,
+    runtime VARCHAR(128),
+    frameworks JSONB,
+    license_name VARCHAR(128),
+    checksum_hash VARCHAR(128),
+    release_notes TEXT,
+    published_at TIMESTAMPTZ,
+    deprecated_at TIMESTAMPTZ
+);
+
+CREATE INDEX IF NOT EXISTS idx_ai_skill_artifact_target ON ai_skill_artifact (tenant_id, organization_id, target_type, target_id, status, published_at, id);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_skill_artifact_version ON ai_skill_artifact (tenant_id, organization_id, target_type, target_id, artifact_type, version, platform_type, os_name);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_skill_artifact_uuid ON ai_skill_artifact (tenant_id, organization_id, uuid);
+
+CREATE TABLE IF NOT EXISTS ai_skill_action (
+    id BIGINT NOT NULL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT,
+    request_id VARCHAR(128),
+    trace_id VARCHAR(128),
+    payload_hash VARCHAR(128),
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    retention_until TIMESTAMPTZ,
+    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    target_type INTEGER,
+    target_id BIGINT,
+    release_id BIGINT,
+    action_type INTEGER,
+    rating_score NUMERIC(38, 12),
+    review_title VARCHAR(200),
+    review_body TEXT,
+    client_ip_hash VARCHAR(128),
+    user_agent_hash VARCHAR(128)
+);
+
+CREATE INDEX IF NOT EXISTS idx_ai_skill_action_target ON ai_skill_action (target_type, target_id, action_type, created_at, id);
+CREATE INDEX IF NOT EXISTS idx_ai_skill_action_user ON ai_skill_action (tenant_id, organization_id, user_id, action_type, created_at, id);
+
+CREATE TABLE IF NOT EXISTS content_forum_post (
+    id BIGINT NOT NULL PRIMARY KEY,
+    uuid VARCHAR(255) NOT NULL UNIQUE,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    v BIGINT NOT NULL DEFAULT 0,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    user_id BIGINT,
+    title VARCHAR(255) NOT NULL,
+    summary TEXT,
+    category_id BIGINT NOT NULL DEFAULT 0,
+    content_type INTEGER NOT NULL,
+    content_id BIGINT NOT NULL,
+    cover_resources JSONB,
+    resource_list JSONB,
+    author JSONB,
+    source VARCHAR(100),
+    source_url VARCHAR(500),
+    publish_time TIMESTAMPTZ,
+    tags JSONB,
+    status INTEGER NOT NULL DEFAULT 2,
+    view_count BIGINT NOT NULL DEFAULT 0,
+    like_count BIGINT NOT NULL DEFAULT 0,
+    comment_count BIGINT NOT NULL DEFAULT 0,
+    share_count BIGINT NOT NULL DEFAULT 0,
+    favorite_count BIGINT NOT NULL DEFAULT 0,
+    is_top BOOLEAN NOT NULL DEFAULT FALSE,
+    is_hot BOOLEAN NOT NULL DEFAULT FALSE,
+    is_recommended BOOLEAN NOT NULL DEFAULT FALSE,
+    sort_order INTEGER NOT NULL DEFAULT 0
+);
+
+CREATE INDEX IF NOT EXISTS idx_content_forum_post_status ON content_forum_post (status);
+CREATE INDEX IF NOT EXISTS idx_content_forum_post_user_id ON content_forum_post (user_id);
+CREATE INDEX IF NOT EXISTS idx_content_forum_post_category_id ON content_forum_post (category_id);
+CREATE INDEX IF NOT EXISTS idx_content_forum_post_content_type ON content_forum_post (content_type);
+CREATE INDEX IF NOT EXISTS idx_content_forum_post_publish_time ON content_forum_post (publish_time);
+CREATE INDEX IF NOT EXISTS idx_content_forum_post_status_publish_time ON content_forum_post (status, publish_time);
+
+CREATE TABLE IF NOT EXISTS content_comment (
+    id BIGINT NOT NULL PRIMARY KEY,
+    uuid VARCHAR(255) NOT NULL UNIQUE,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    v BIGINT NOT NULL DEFAULT 0,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    user_id BIGINT,
+    content_type INTEGER NOT NULL,
+    content_id BIGINT NOT NULL,
+    parent_id BIGINT,
+    root_id BIGINT,
+    path VARCHAR(512),
+    sort_weight INTEGER NOT NULL DEFAULT 0,
+    body TEXT,
+    author JSONB,
+    likes BIGINT NOT NULL DEFAULT 0,
+    reply_count BIGINT NOT NULL DEFAULT 0,
+    is_top BOOLEAN NOT NULL DEFAULT FALSE,
+    status INTEGER NOT NULL DEFAULT 1,
+    ip_address VARCHAR(50),
+    client_ip VARCHAR(50),
+    device_info VARCHAR(255)
+);
+
+CREATE INDEX IF NOT EXISTS idx_content_comment_content ON content_comment (content_type, content_id, parent_id, created_at, id);
+CREATE INDEX IF NOT EXISTS idx_content_comment_user ON content_comment (user_id, created_at, id);
+
+CREATE TABLE IF NOT EXISTS content_favorite (
+    id BIGINT NOT NULL PRIMARY KEY,
+    uuid VARCHAR(255) NOT NULL UNIQUE,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    v BIGINT NOT NULL DEFAULT 0,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    user_id BIGINT,
+    content_type INTEGER NOT NULL,
+    content_id BIGINT NOT NULL,
+    status INTEGER NOT NULL DEFAULT 1,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    source VARCHAR(50),
+    client_ip VARCHAR(50),
+    device_info VARCHAR(255)
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_content_favorite_user_content ON content_favorite (user_id, content_type, content_id);
+CREATE INDEX IF NOT EXISTS idx_content_favorite_content ON content_favorite (content_type, content_id);
 
 CREATE TABLE IF NOT EXISTS ops_gateway_instance (
     id BIGINT NOT NULL PRIMARY KEY,

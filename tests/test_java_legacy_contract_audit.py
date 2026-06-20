@@ -72,7 +72,7 @@ class JavaLegacyContractAuditTest(unittest.TestCase):
                 root,
                 """
                 tables:
-                  - table: plus_app
+                  - table: platform_app
                     domain: legacy
                     java_contract:
                       entity: com.example.PlusApp
@@ -96,7 +96,7 @@ class JavaLegacyContractAuditTest(unittest.TestCase):
             result = JavaLegacyContractAudit(root=root, registry_path=registry).validate()
 
             self.assertFalse(result.ok)
-            self.assertIn("plus_app Java @Table name mismatch: expected plus_app, found wrong_app", result.messages)
+            self.assertIn("platform_app Java @Table name mismatch: expected platform_app, found wrong_app", result.messages)
 
     def test_check_reports_stale_generated_audit(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -105,7 +105,7 @@ class JavaLegacyContractAuditTest(unittest.TestCase):
                 root,
                 """
                 tables:
-                  - table: plus_app
+                  - table: platform_app
                     domain: legacy
                     java_contract:
                       entity: com.example.PlusApp
@@ -117,7 +117,7 @@ class JavaLegacyContractAuditTest(unittest.TestCase):
                 """
                 package com.example;
                 import jakarta.persistence.*;
-                @Table(name = "plus_app")
+                @Table(name = "platform_app")
                 public class PlusApp {
                     @Column(name = "name")
                     private String name;

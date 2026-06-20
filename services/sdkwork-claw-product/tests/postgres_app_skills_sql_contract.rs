@@ -32,10 +32,10 @@ fn app_skills_sql_scopes_every_primary_query_by_trusted_subject() {
 #[test]
 fn app_skills_sql_enforces_public_market_filter() {
     for expected in [
-        "FROM plus_agent_skill s",
-        "LEFT JOIN plus_category c",
-        "FROM studio_catalog_asset",
-        "FROM studio_catalog_artifact",
+        "FROM ai_agent_skill s",
+        "LEFT JOIN c_category c",
+        "FROM ai_skill_asset",
+        "FROM ai_skill_artifact",
         "COALESCE(s.enabled, false) = true",
         "upper(COALESCE(s.visibility, '')) = 'PUBLIC'",
         "upper(COALESCE(s.review_status, '')) = 'APPROVED'",

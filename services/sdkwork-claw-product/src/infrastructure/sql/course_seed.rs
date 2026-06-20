@@ -332,7 +332,7 @@ pub(crate) async fn sqlite_course_seed_complete(pool: &SqlitePool) -> Result<boo
     .await?;
     let category_count = sqlite_seed_count(
         pool,
-        "plus_category",
+        "c_category",
         "id",
         &seed
             .bundle
@@ -380,7 +380,7 @@ pub(crate) async fn sqlite_course_seed_complete(pool: &SqlitePool) -> Result<boo
     .await?;
     let comment_count = sqlite_seed_count(
         pool,
-        "plus_comments",
+        "content_comment",
         "id",
         &seed
             .bundle
@@ -418,7 +418,7 @@ pub(crate) async fn postgres_course_seed_complete(pool: &PgPool) -> Result<bool,
     .await?;
     let category_count = postgres_seed_count(
         pool,
-        "plus_category",
+        "c_category",
         "id",
         &seed
             .bundle
@@ -466,7 +466,7 @@ pub(crate) async fn postgres_course_seed_complete(pool: &PgPool) -> Result<bool,
     .await?;
     let comment_count = postgres_seed_count(
         pool,
-        "plus_comments",
+        "content_comment",
         "id",
         &seed
             .bundle
@@ -496,7 +496,7 @@ async fn sqlite_course_seed_standard_fields_complete(
         let count: i64 = sqlx::query_scalar(
             r#"
             SELECT COUNT(1)
-            FROM plus_category
+            FROM c_category
             WHERE id = ?
               AND uuid = ?
               AND tenant_id = ?
@@ -701,7 +701,7 @@ async fn sqlite_course_seed_standard_fields_complete(
         let count: i64 = sqlx::query_scalar(
             r#"
             SELECT COUNT(1)
-            FROM plus_comments
+            FROM content_comment
             WHERE id = ?
               AND uuid = ?
               AND tenant_id = ?
@@ -834,7 +834,7 @@ async fn postgres_course_seed_standard_fields_complete(
         let count: i64 = sqlx::query_scalar(
             r#"
             SELECT COUNT(1)
-            FROM plus_category
+            FROM c_category
             WHERE id = $1
               AND uuid = $2
               AND tenant_id = $3
@@ -1039,7 +1039,7 @@ async fn postgres_course_seed_standard_fields_complete(
         let count: i64 = sqlx::query_scalar(
             r#"
             SELECT COUNT(1)
-            FROM plus_comments
+            FROM content_comment
             WHERE id = $1
               AND uuid = $2
               AND tenant_id = $3
@@ -1085,10 +1085,10 @@ async fn import_sqlite_categories(
         let icon_resource_snapshot = icon.to_string();
         sqlx::query(
             r#"
-            INSERT INTO plus_category
-                (id, uuid, tenant_id, organization_id, data_scope, name, description, shop_id, type, group_name, code, tags, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, sort_weight, parent_id, path, visible, status)
+            INSERT INTO c_category
+                (id, uuid, tenant_id, organization_id, data_scope, category_type, name, description, code, tags, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, sort_weight, parent_id, path, visible, status)
             VALUES
-                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT(id) DO UPDATE SET
                 uuid = excluded.uuid,
                 tenant_id = excluded.tenant_id,
@@ -1096,9 +1096,7 @@ async fn import_sqlite_categories(
                 data_scope = excluded.data_scope,
                 name = excluded.name,
                 description = excluded.description,
-                shop_id = excluded.shop_id,
-                type = excluded.type,
-                group_name = excluded.group_name,
+                category_type = excluded.category_type,
                 code = excluded.code,
                 tags = excluded.tags,
                 icon_media_resource_id = excluded.icon_media_resource_id,
@@ -1117,11 +1115,9 @@ async fn import_sqlite_categories(
         .bind(SYSTEM_TENANT_ID)
         .bind(SYSTEM_ORGANIZATION_ID)
         .bind(SYSTEM_DATA_SCOPE)
+        .bind("course")
         .bind(&item.name)
         .bind(&item.description)
-        .bind(SYSTEM_ORGANIZATION_ID)
-        .bind(COURSE_CATEGORY_TYPE)
-        .bind("course")
         .bind(&item.code)
         .bind(json_string(&item.tags))
         .bind(icon_media_resource_id)
@@ -1149,10 +1145,10 @@ async fn import_postgres_categories(
         let icon_resource_snapshot = icon.to_string();
         sqlx::query(
             r#"
-            INSERT INTO plus_category
-                (id, uuid, tenant_id, organization_id, data_scope, name, description, shop_id, type, group_name, code, tags, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, sort_weight, parent_id, path, visible, status)
+            INSERT INTO c_category
+                (id, uuid, tenant_id, organization_id, data_scope, category_type, name, description, code, tags, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, sort_weight, parent_id, path, visible, status)
             VALUES
-                ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12::jsonb, $13, $14, $15::jsonb, $16, $17, $18, $19, $20)
+                ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12::jsonb, $13, $14, $15::jsonb, $16, $17, $18)
             ON CONFLICT(id) DO UPDATE SET
                 uuid = excluded.uuid,
                 tenant_id = excluded.tenant_id,
@@ -1160,9 +1156,7 @@ async fn import_postgres_categories(
                 data_scope = excluded.data_scope,
                 name = excluded.name,
                 description = excluded.description,
-                shop_id = excluded.shop_id,
-                type = excluded.type,
-                group_name = excluded.group_name,
+                category_type = excluded.category_type,
                 code = excluded.code,
                 tags = excluded.tags,
                 icon_media_resource_id = excluded.icon_media_resource_id,
@@ -1181,11 +1175,9 @@ async fn import_postgres_categories(
         .bind(SYSTEM_TENANT_ID)
         .bind(SYSTEM_ORGANIZATION_ID)
         .bind(SYSTEM_DATA_SCOPE)
+        .bind("course")
         .bind(&item.name)
         .bind(&item.description)
-        .bind(SYSTEM_ORGANIZATION_ID)
-        .bind(COURSE_CATEGORY_TYPE)
-        .bind("course")
         .bind(&item.code)
         .bind(json_string(&item.tags))
         .bind(icon_media_resource_id)
@@ -1976,8 +1968,8 @@ fn relation_insert_postgres() -> &'static str {
 
 fn comment_insert_sqlite() -> &'static str {
     r#"
-    INSERT INTO plus_comments
-        (id, uuid, created_at, updated_at, tenant_id, organization_id, data_scope, user_id, content, content_type, content_id, status, likes, reply_count, is_top, author)
+    INSERT INTO content_comment
+        (id, uuid, created_at, updated_at, tenant_id, organization_id, data_scope, user_id, body, content_type, content_id, status, likes, reply_count, is_top, author)
     VALUES
         (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, 0, ?)
     ON CONFLICT(id) DO UPDATE SET
@@ -1988,7 +1980,7 @@ fn comment_insert_sqlite() -> &'static str {
         organization_id = excluded.organization_id,
         data_scope = excluded.data_scope,
         user_id = excluded.user_id,
-        content = excluded.content,
+        body = excluded.body,
         content_type = excluded.content_type,
         content_id = excluded.content_id,
         status = excluded.status,
@@ -1999,8 +1991,8 @@ fn comment_insert_sqlite() -> &'static str {
 
 fn comment_insert_postgres() -> &'static str {
     r#"
-    INSERT INTO plus_comments
-        (id, uuid, created_at, updated_at, tenant_id, organization_id, data_scope, user_id, content, content_type, content_id, status, likes, reply_count, is_top, author)
+    INSERT INTO content_comment
+        (id, uuid, created_at, updated_at, tenant_id, organization_id, data_scope, user_id, body, content_type, content_id, status, likes, reply_count, is_top, author)
     VALUES
         ($1, $2, $3::timestamptz, $3::timestamptz, $4, $5, $6, $7, $8, $9, $10, $11, $12, 0, false, $13::jsonb)
     ON CONFLICT(id) DO UPDATE SET
@@ -2011,7 +2003,7 @@ fn comment_insert_postgres() -> &'static str {
         organization_id = excluded.organization_id,
         data_scope = excluded.data_scope,
         user_id = excluded.user_id,
-        content = excluded.content,
+        body = excluded.body,
         content_type = excluded.content_type,
         content_id = excluded.content_id,
         status = excluded.status,

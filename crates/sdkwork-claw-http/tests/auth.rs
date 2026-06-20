@@ -273,7 +273,7 @@ fn app_session_claim_token_accepts_tenant_level_organization_zero() {
         app_id: "sdkwork-claw-router".to_owned(),
         login_scope: "TENANT".to_owned(),
         environment: "dev".to_owned(),
-        deployment_mode: "local".to_owned(),
+        deployment_mode: "saas".to_owned(),
         auth_level: "password".to_owned(),
         data_scope: vec!["tenant:10".to_owned(), "user:30".to_owned()],
         permission_scope: vec!["clawrouter:console".to_owned()],
@@ -310,7 +310,7 @@ fn app_request_subject_boundary_rejects_swapped_auth_and_access_token_types() {
         app_id: "sdkwork-claw-router".to_owned(),
         login_scope: "ORGANIZATION".to_owned(),
         environment: "dev".to_owned(),
-        deployment_mode: "local".to_owned(),
+        deployment_mode: "saas".to_owned(),
         auth_level: "password".to_owned(),
         data_scope: vec![
             "tenant:10".to_owned(),
@@ -370,7 +370,7 @@ fn app_request_subject_boundary_rejects_access_token_from_different_session() {
         app_id: "sdkwork-claw-router".to_owned(),
         login_scope: "ORGANIZATION".to_owned(),
         environment: "dev".to_owned(),
-        deployment_mode: "local".to_owned(),
+        deployment_mode: "saas".to_owned(),
         auth_level: "password".to_owned(),
         data_scope: vec![
             "tenant:10".to_owned(),

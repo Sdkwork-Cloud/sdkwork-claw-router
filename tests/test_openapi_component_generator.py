@@ -102,7 +102,7 @@ class OpenApiComponentGeneratorTest(unittest.TestCase):
                 root,
                 """
                 tables:
-                  - table: plus_agent_skill_package
+                  - table: ai_agent_skill_package
                     domain: legacy
                     frontend_contract:
                       field_mapping:

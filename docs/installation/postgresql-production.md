@@ -21,9 +21,9 @@ The service reads `/etc/sdkwork/router/clawrouter.toml` and `/etc/sdkwork/router
 Create a database and user owned by the Claw Router deployment:
 
 ```sql
-CREATE USER "sdkworkprod@2026++" WITH PASSWORD 'replace-with-real-password';
-CREATE DATABASE sdkwork_ai_prod OWNER "sdkworkprod@2026++";
-GRANT ALL PRIVILEGES ON DATABASE sdkwork_ai_prod TO "sdkworkprod@2026++";
+CREATE USER "sdkwork" WITH PASSWORD 'replace-with-real-password';
+CREATE DATABASE sdkwork OWNER "sdkwork";
+GRANT ALL PRIVILEGES ON DATABASE sdkwork TO "sdkwork";
 ```
 
 For managed PostgreSQL, create the equivalent user, database, and network allowlist through the provider console.
@@ -48,8 +48,8 @@ Configure `/etc/sdkwork/router/clawrouter.toml` with split PostgreSQL fields:
 engine = "postgresql"
 host = "db.example.com"
 port = 5432
-database = "sdkwork_ai_prod"
-username = "sdkworkprod@2026++"
+database = "sdkwork"
+username = "sdkwork"
 password_file = "/etc/sdkwork/router/database.secret"
 ssl_mode = "require"
 max_connections = 16
@@ -64,7 +64,7 @@ Use `password_file` for normal production deployments. Direct `password = "..."`
 `SDKWORK_CLAW_DATABASE_URL` remains supported as an emergency or orchestration override:
 
 ```bash
-SDKWORK_CLAW_DATABASE_URL="postgresql://sdkworkprod%402026%2B%2B:<password>@db.example.com:5432/sdkwork_ai_prod?sslmode=require"
+SDKWORK_CLAW_DATABASE_URL="postgresql://sdkworkprod%402026%2B%2B:<password>@db.example.com:5432/sdkwork?sslmode=require"
 SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS="16"
 ```
 
@@ -85,7 +85,7 @@ Manually verify database connectivity when needed:
 
 ```bash
 PGPASSWORD="$(sudo cat /etc/sdkwork/router/database.secret)" \
-  psql -h db.example.com -p 5432 -U "sdkworkprod@2026++" -d sdkwork_ai_prod -c "select 1;"
+  psql -h db.example.com -p 5432 -U "sdkwork" -d sdkwork -c "select 1;"
 ```
 
 ## 7. Environment Separation

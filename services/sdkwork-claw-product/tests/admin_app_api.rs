@@ -19,7 +19,7 @@ use serde_json::Value;
 use tower::ServiceExt;
 
 #[tokio::test]
-async fn admin_app_route_manages_plus_apps_and_market_state() {
+async fn admin_app_route_manages_platform_apps_and_market_state() {
     let store = Arc::new(TestAdminAppStore::default());
     let router = sdkwork_claw_product::api::admin_app_router_with_store(
         store.clone(),

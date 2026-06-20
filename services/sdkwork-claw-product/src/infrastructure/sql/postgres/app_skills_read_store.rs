@@ -33,8 +33,8 @@ SELECT
     COALESCE(NULLIF(s.manifest_url, ''), '') AS manifest_url,
     COALESCE(to_char((s.latest_published_at AT TIME ZONE 'UTC'), 'YYYY-MM-DD"T"HH24:MI:SS"Z"'), '') AS latest_published_at,
     COALESCE(to_char((s.updated_at AT TIME ZONE 'UTC'), 'YYYY-MM-DD"T"HH24:MI:SS"Z"'), '') AS updated_at
-FROM plus_agent_skill s
-LEFT JOIN plus_category c
+FROM ai_agent_skill s
+LEFT JOIN c_category c
   ON c.id = s.category_id
  AND c.tenant_id = s.tenant_id
  AND c.organization_id = s.organization_id
@@ -71,8 +71,8 @@ SELECT
     COALESCE(NULLIF(s.manifest_url, ''), '') AS manifest_url,
     COALESCE(to_char((s.latest_published_at AT TIME ZONE 'UTC'), 'YYYY-MM-DD"T"HH24:MI:SS"Z"'), '') AS latest_published_at,
     COALESCE(to_char((s.updated_at AT TIME ZONE 'UTC'), 'YYYY-MM-DD"T"HH24:MI:SS"Z"'), '') AS updated_at
-FROM plus_agent_skill s
-LEFT JOIN plus_category c
+FROM ai_agent_skill s
+LEFT JOIN c_category c
   ON c.id = s.category_id
  AND c.tenant_id = s.tenant_id
  AND c.organization_id = s.organization_id
@@ -114,10 +114,10 @@ SELECT
     COALESCE(NULLIF(s.manifest_url, ''), '') AS manifest_url,
     COALESCE(to_char((s.latest_published_at AT TIME ZONE 'UTC'), 'YYYY-MM-DD"T"HH24:MI:SS"Z"'), '') AS latest_published_at,
     COALESCE(to_char((s.updated_at AT TIME ZONE 'UTC'), 'YYYY-MM-DD"T"HH24:MI:SS"Z"'), '') AS updated_at
-FROM plus_user_agent_skill us
-JOIN plus_agent_skill s
+FROM ai_user_agent_skill us
+JOIN ai_agent_skill s
   ON s.id = us.skill_id
-LEFT JOIN plus_category c
+LEFT JOIN c_category c
   ON c.id = s.category_id
  AND c.tenant_id = s.tenant_id
  AND c.organization_id = s.organization_id
@@ -162,10 +162,10 @@ SELECT
     COALESCE(NULLIF(s.manifest_url, ''), '') AS manifest_url,
     COALESCE(to_char((s.latest_published_at AT TIME ZONE 'UTC'), 'YYYY-MM-DD"T"HH24:MI:SS"Z"'), '') AS latest_published_at,
     COALESCE(to_char((s.updated_at AT TIME ZONE 'UTC'), 'YYYY-MM-DD"T"HH24:MI:SS"Z"'), '') AS updated_at
-FROM plus_user_agent_skill us
-JOIN plus_agent_skill s
+FROM ai_user_agent_skill us
+JOIN ai_agent_skill s
   ON s.id = us.skill_id
-LEFT JOIN plus_category c
+LEFT JOIN c_category c
   ON c.id = s.category_id
  AND c.tenant_id = s.tenant_id
  AND c.organization_id = s.organization_id
@@ -190,7 +190,7 @@ SELECT
     COALESCE(CAST(asset_type AS TEXT), '') AS asset_type,
     COALESCE(asset_resource_snapshot::text, '') AS asset_resource_snapshot,
     COALESCE(thumbnail_resource_snapshot::text, '') AS thumbnail_resource_snapshot
-FROM studio_catalog_asset
+FROM ai_skill_asset
 WHERE tenant_id = $1
   AND organization_id = $2
   AND target_type = $3
@@ -214,7 +214,7 @@ SELECT
     COALESCE(NULLIF(license_name, ''), '') AS license_name,
     COALESCE(NULLIF(release_notes, ''), '') AS release_notes,
     COALESCE(to_char((published_at AT TIME ZONE 'UTC'), 'YYYY-MM-DD"T"HH24:MI:SS"Z"'), '') AS published_at
-FROM studio_catalog_artifact
+FROM ai_skill_artifact
 WHERE tenant_id = $1
   AND organization_id = $2
   AND target_type = $3
@@ -312,7 +312,7 @@ impl AppSkillsReadStore for PostgresAppSkillsReadStore {
                     COALESCE(NULLIF(name, ''), '') AS name,
                     COALESCE(sort_weight, 999999) AS sort_weight,
                     id
-                FROM plus_category
+                FROM c_category
                 WHERE ((tenant_id = $1 AND organization_id = $2) OR (tenant_id = 0 AND organization_id = 0))
                   AND type IN ($3, $4)
                   AND COALESCE(visible, true) = true
@@ -374,7 +374,7 @@ impl AppSkillsCommandStore for PostgresAppSkillsReadStore {
             let config = merge_skill_install_config(&skill.default_config, command.config)?;
             sqlx::query(
                 r#"
-                INSERT INTO plus_user_agent_skill
+                INSERT INTO ai_user_agent_skill
                     (uuid, tenant_id, organization_id, data_scope, user_id, skill_id, enabled, config, installed_at, last_enabled_at)
                 VALUES
                     ($1, $2, $3, 1, $4, $5, true, $6::jsonb, $7, $7)
@@ -411,7 +411,7 @@ impl AppSkillsCommandStore for PostgresAppSkillsReadStore {
                 .ok_or_else(|| DomainError::not_found("skill was not found"))?;
             let rows = sqlx::query(
                 r#"
-                UPDATE plus_user_agent_skill
+                UPDATE ai_user_agent_skill
                 SET enabled = $1,
                     last_enabled_at = CASE WHEN $1 THEN $2 ELSE last_enabled_at END,
                     updated_at = CURRENT_TIMESTAMP
@@ -450,7 +450,7 @@ impl AppSkillsCommandStore for PostgresAppSkillsReadStore {
                 .ok_or_else(|| DomainError::not_found("skill was not found"))?;
             let rows = sqlx::query(
                 r#"
-                UPDATE plus_user_agent_skill
+                UPDATE ai_user_agent_skill
                 SET config = $1::jsonb,
                     updated_at = CURRENT_TIMESTAMP
                 WHERE tenant_id = $2
@@ -582,7 +582,7 @@ async fn load_installable_skill(
         SELECT
             s.id AS skill_id,
             COALESCE(s.default_config::text, '{}') AS default_config
-        FROM plus_agent_skill s
+        FROM ai_agent_skill s
         WHERE ((s.tenant_id = $1 AND s.organization_id = $2) OR (s.tenant_id = 0 AND s.organization_id = 0))
           AND (CAST(s.id AS TEXT) = $3 OR s.skill_key = $3 OR s.uuid = $3)
           AND COALESCE(s.enabled, false) = true

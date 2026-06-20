@@ -313,7 +313,7 @@ pub(crate) async fn repair_sqlite_template_state_current(pool: &SqlitePool) -> b
     let skill_count: i64 = match sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM plus_agent_skill
+        FROM ai_agent_skill
         WHERE tenant_id = 0
           AND organization_id = 0
         "#,
@@ -327,7 +327,7 @@ pub(crate) async fn repair_sqlite_template_state_current(pool: &SqlitePool) -> b
     let asset_count: i64 = match sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM studio_catalog_asset
+        FROM ai_skill_asset
         WHERE tenant_id = 0
           AND organization_id = 0
           AND metadata ->> 'itemType' = 'skill_asset'
@@ -342,7 +342,7 @@ pub(crate) async fn repair_sqlite_template_state_current(pool: &SqlitePool) -> b
     let artifact_count: i64 = match sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM studio_catalog_artifact
+        FROM ai_skill_artifact
         WHERE tenant_id = 0
           AND organization_id = 0
           AND metadata ->> 'itemType' = 'skill_artifact'
@@ -383,15 +383,11 @@ pub(crate) async fn sqlite_template_objects_current(pool: &SqlitePool) -> bool {
         ("table", "ai_channel_group_member"),
         ("table", "iam_verification_scene_policy"),
         ("table", "messaging_template"),
-        ("table", "plus_app"),
-        ("table", "plus_agent_skill"),
-        ("table", "content_course"),
-        ("table", "plus_feeds"),
-        ("index", "idx_studio_catalog_asset_seed_source"),
-        ("index", "idx_studio_catalog_artifact_seed_source"),
-        ("index", "idx_plus_agent_skill_package_seed_scope"),
-        ("index", "idx_plus_agent_skill_seed_scope"),
-        ("index", "idx_plus_agent_skill_official_seed"),
+        ("table", "platform_app"),
+        ("table", "ai_agent_skill"),
+        ("table", "content_forum_post"),
+        ("index", "idx_ai_agent_skill_package_category"),
+        ("index", "idx_ai_agent_skill_market"),
     ];
     for (object_type, name) in required_schema_objects {
         let exists: i64 = match sqlx::query_scalar(
@@ -445,9 +441,9 @@ pub(crate) async fn sqlite_template_objects_current(pool: &SqlitePool) -> bool {
 
 fn required_generated_columns() -> &'static [(&'static str, &'static str)] {
     &[
-        ("plus_category", "icon_resource_snapshot"),
-        ("plus_agent_skill_package", "icon_resource_snapshot"),
-        ("plus_agent_skill", "icon_resource_snapshot"),
+        ("c_category", "icon_resource_snapshot"),
+        ("ai_agent_skill_package", "icon_resource_snapshot"),
+        ("ai_agent_skill", "icon_resource_snapshot"),
         ("content_course", "thumbnail_resource_snapshot"),
     ]
 }
@@ -549,7 +545,7 @@ fn sqlite_template_label(path: &Path) -> Option<&'static str> {
 pub(crate) async fn retain_core_skill_seed_rows(pool: &SqlitePool) {
     sqlx::query(
         r#"
-        DELETE FROM studio_catalog_asset
+        DELETE FROM ai_skill_asset
         WHERE tenant_id = 0
           AND organization_id = 0
           AND metadata ->> 'itemType' = 'skill_asset'
@@ -561,7 +557,7 @@ pub(crate) async fn retain_core_skill_seed_rows(pool: &SqlitePool) {
     .unwrap();
     sqlx::query(
         r#"
-        DELETE FROM studio_catalog_artifact
+        DELETE FROM ai_skill_artifact
         WHERE tenant_id = 0
           AND organization_id = 0
           AND metadata ->> 'itemType' = 'skill_artifact'
@@ -573,7 +569,7 @@ pub(crate) async fn retain_core_skill_seed_rows(pool: &SqlitePool) {
     .unwrap();
     sqlx::query(
         r#"
-        DELETE FROM plus_agent_skill
+        DELETE FROM ai_agent_skill
         WHERE tenant_id = 0
           AND organization_id = 0
           AND id NOT IN (8101, 8102, 8103)

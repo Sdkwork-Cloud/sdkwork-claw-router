@@ -36,7 +36,7 @@ class AdminPromptMcpSchemaStandardTest(unittest.TestCase):
 
         self.assertIn("category_id", self.tables["ai_prompt"]["columns"])
         self.assertIn("category_id", self.tables["ai_mcp_server"]["columns"])
-        self.assertIn("plus_category", self.tables)
+        self.assertIn("c_category", self.tables)
 
     def test_prompt_and_mcp_routes_are_admin_backend_surfaces(self) -> None:
         route_expectations = {

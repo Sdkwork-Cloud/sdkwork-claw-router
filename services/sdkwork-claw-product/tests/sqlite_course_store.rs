@@ -81,7 +81,7 @@ async fn sqlite_course_store_reads_seeded_course_catalog_from_java_compatible_ta
         categories
             .iter()
             .any(|category| category.code == "ai-coding" && category.course_count > 0),
-        "course categories must come from plus_category type 6 with live course counts"
+        "course categories must come from c_category type 6 with live course counts"
     );
 
     let overview = store.load_overview(None).await.unwrap();
@@ -94,8 +94,8 @@ async fn sqlite_course_store_reads_seeded_course_catalog_from_java_compatible_ta
             "content_course_section".to_owned(),
             "content_course_lesson".to_owned(),
             "content_course_relation".to_owned(),
-            "plus_category".to_owned(),
-            "plus_comments".to_owned(),
+            "c_category".to_owned(),
+            "content_comment".to_owned(),
             "content_reaction".to_owned(),
         ],
         overview.source.source_tables

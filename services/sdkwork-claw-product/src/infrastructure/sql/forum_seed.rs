@@ -12,6 +12,8 @@ const CONTENT_TYPE_FEEDS: i32 = 5;
 const FEEDS_STATUS_PUBLISHED: i32 = 2;
 const COMMENT_STATUS_PUBLISHED: i32 = 1;
 const FAVORITE_STATUS_ACTIVE: i32 = 1;
+const REACTION_TYPE_LIKE: i32 = 2;
+const ACTIVE_STATUS: i32 = 1;
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -176,7 +178,7 @@ pub(crate) async fn sqlite_forum_seed_complete(pool: &SqlitePool) -> Result<bool
     let feed_count = sqlite_feed_seed_standard_count(pool, &seed).await?;
     let comment_count = sqlite_seed_count(
         pool,
-        "plus_comments",
+        "content_comment",
         "uuid",
         &seed
             .comments
@@ -187,7 +189,7 @@ pub(crate) async fn sqlite_forum_seed_complete(pool: &SqlitePool) -> Result<bool
     .await?;
     let vote_count = sqlite_seed_count(
         pool,
-        "plus_content_vote",
+        "content_reaction",
         "uuid",
         &seed
             .votes
@@ -198,7 +200,7 @@ pub(crate) async fn sqlite_forum_seed_complete(pool: &SqlitePool) -> Result<bool
     .await?;
     let favorite_count = sqlite_seed_count(
         pool,
-        "plus_favorite",
+        "content_favorite",
         "uuid",
         &seed
             .favorites
@@ -218,7 +220,7 @@ pub(crate) async fn postgres_forum_seed_complete(pool: &PgPool) -> Result<bool, 
     let feed_count = postgres_feed_seed_standard_count(pool, &seed).await?;
     let comment_count = postgres_seed_count(
         pool,
-        "plus_comments",
+        "content_comment",
         "uuid",
         &seed
             .comments
@@ -229,7 +231,7 @@ pub(crate) async fn postgres_forum_seed_complete(pool: &PgPool) -> Result<bool, 
     .await?;
     let vote_count = postgres_seed_count(
         pool,
-        "plus_content_vote",
+        "content_reaction",
         "uuid",
         &seed
             .votes
@@ -240,7 +242,7 @@ pub(crate) async fn postgres_forum_seed_complete(pool: &PgPool) -> Result<bool, 
     .await?;
     let favorite_count = postgres_seed_count(
         pool,
-        "plus_favorite",
+        "content_favorite",
         "uuid",
         &seed
             .favorites
@@ -262,7 +264,7 @@ async fn import_sqlite_feeds(
     for item in &seed.feeds {
         sqlx::query(
             r#"
-            INSERT INTO plus_feeds
+            INSERT INTO content_forum_post
                 (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope,
                  user_id, title, summary, category_id, content_type, content_id, cover_resources,
                  resource_list, author, source, source_url, publish_time, tags, status, view_count,
@@ -345,7 +347,7 @@ async fn import_postgres_feeds(
     for item in &seed.feeds {
         sqlx::query(
             r#"
-            INSERT INTO plus_feeds
+            INSERT INTO content_forum_post
                 (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope,
                  user_id, title, summary, category_id, content_type, content_id, cover_resources,
                  resource_list, author, source, source_url, publish_time, tags, status, view_count,
@@ -500,11 +502,13 @@ async fn import_sqlite_votes(
             .bind(&item.uuid)
             .bind(feed.tenant_id)
             .bind(feed.organization_id)
-            .bind(SYSTEM_DATA_SCOPE)
             .bind(item.user_id)
+            .bind(ACTIVE_STATUS)
+            .bind(seed_metadata(seed, "vote", &item.uuid))
             .bind(CONTENT_TYPE_FEEDS)
             .bind(item.content_id)
-            .bind(seed_metadata(seed, "vote", &item.uuid))
+            .bind(REACTION_TYPE_LIKE)
+            .bind("1")
             .execute(&mut **tx)
             .await?;
     }
@@ -522,11 +526,13 @@ async fn import_postgres_votes(
             .bind(&item.uuid)
             .bind(feed.tenant_id)
             .bind(feed.organization_id)
-            .bind(SYSTEM_DATA_SCOPE)
             .bind(item.user_id)
+            .bind(ACTIVE_STATUS)
+            .bind(seed_metadata(seed, "vote", &item.uuid))
             .bind(CONTENT_TYPE_FEEDS)
             .bind(item.content_id)
-            .bind(seed_metadata(seed, "vote", &item.uuid))
+            .bind(REACTION_TYPE_LIKE)
+            .bind("1")
             .execute(&mut **tx)
             .await?;
     }
@@ -546,11 +552,10 @@ async fn import_sqlite_favorites(
             .bind(feed.organization_id)
             .bind(SYSTEM_DATA_SCOPE)
             .bind(item.user_id)
-            .bind(&item.title)
-            .bind(empty_images_json())
             .bind(CONTENT_TYPE_FEEDS)
             .bind(item.content_id)
             .bind(FAVORITE_STATUS_ACTIVE)
+            .bind(favorite_seed_metadata(seed, &item.title, &item.uuid))
             .execute(&mut **tx)
             .await?;
     }
@@ -570,11 +575,10 @@ async fn import_postgres_favorites(
             .bind(feed.organization_id)
             .bind(SYSTEM_DATA_SCOPE)
             .bind(item.user_id)
-            .bind(&item.title)
-            .bind(empty_images_json())
             .bind(CONTENT_TYPE_FEEDS)
             .bind(item.content_id)
             .bind(FAVORITE_STATUS_ACTIVE)
+            .bind(favorite_seed_metadata(seed, &item.title, &item.uuid))
             .execute(&mut **tx)
             .await?;
     }
@@ -583,9 +587,9 @@ async fn import_postgres_favorites(
 
 fn comment_insert_sqlite() -> &'static str {
     r#"
-    INSERT INTO plus_comments
+    INSERT INTO content_comment
         (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, user_id,
-         parent_id, path, sort_weight, content, content_type, content_id, status, likes,
+         parent_id, path, sort_weight, body, content_type, content_id, status, likes,
          reply_count, is_top, ip_address, device_info, author)
     VALUES
         (?, ?, ?, ?, 0, ?, ?, ?, ?, ?, ?, 0, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
@@ -599,7 +603,7 @@ fn comment_insert_sqlite() -> &'static str {
         user_id = excluded.user_id,
         parent_id = excluded.parent_id,
         path = excluded.path,
-        content = excluded.content,
+        body = excluded.body,
         content_type = excluded.content_type,
         content_id = excluded.content_id,
         status = excluded.status,
@@ -614,9 +618,9 @@ fn comment_insert_sqlite() -> &'static str {
 
 fn comment_insert_postgres() -> &'static str {
     r#"
-    INSERT INTO plus_comments
+    INSERT INTO content_comment
         (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, user_id,
-         parent_id, path, sort_weight, content, content_type, content_id, status, likes,
+         parent_id, path, sort_weight, body, content_type, content_id, status, likes,
          reply_count, is_top, ip_address, device_info, author)
     VALUES
         ($1, $2, $3::timestamptz, $4::timestamptz, 0, $5, $6, $7, $8, $9, $10, 0,
@@ -631,7 +635,7 @@ fn comment_insert_postgres() -> &'static str {
         user_id = excluded.user_id,
         parent_id = excluded.parent_id,
         path = excluded.path,
-        content = excluded.content,
+        body = excluded.body,
         content_type = excluded.content_type,
         content_id = excluded.content_id,
         status = excluded.status,
@@ -646,77 +650,70 @@ fn comment_insert_postgres() -> &'static str {
 
 fn vote_insert_sqlite() -> &'static str {
     r#"
-    INSERT INTO plus_content_vote
-        (id, uuid, tenant_id, organization_id, data_scope, user_id, content_type, content_id,
-         rating, metadata, source)
+    INSERT INTO content_reaction
+        (id, uuid, tenant_id, organization_id, user_id, status, metadata, target_type, target_id,
+         reaction_type, reaction_value)
     VALUES
-        (?, ?, ?, ?, ?, ?, ?, ?, 'like', ?, 'forum-seed')
-    ON CONFLICT(user_id, content_type, content_id) DO UPDATE SET
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ON CONFLICT(tenant_id, organization_id, user_id, target_type, target_id, reaction_type) DO UPDATE SET
         uuid = excluded.uuid,
-        tenant_id = excluded.tenant_id,
-        organization_id = excluded.organization_id,
-        data_scope = excluded.data_scope,
-        rating = excluded.rating,
+        status = excluded.status,
         metadata = excluded.metadata,
-        source = excluded.source,
-        updated_at = CURRENT_TIMESTAMP
+        reaction_value = excluded.reaction_value,
+        cancelled_at = NULL
     "#
 }
 
 fn vote_insert_postgres() -> &'static str {
     r#"
-    INSERT INTO plus_content_vote
-        (id, uuid, tenant_id, organization_id, data_scope, user_id, content_type, content_id,
-         rating, metadata, source)
+    INSERT INTO content_reaction
+        (id, uuid, tenant_id, organization_id, user_id, status, metadata, target_type, target_id,
+         reaction_type, reaction_value)
     VALUES
-        ($1, $2, $3, $4, $5, $6, $7, $8, 'like', $9::jsonb, 'forum-seed')
-    ON CONFLICT(user_id, content_type, content_id) DO UPDATE SET
+        ($1, $2, $3, $4, $5, $6, $7::jsonb, $8, $9, $10, $11)
+    ON CONFLICT(tenant_id, organization_id, user_id, target_type, target_id, reaction_type) DO UPDATE SET
         uuid = excluded.uuid,
-        tenant_id = excluded.tenant_id,
-        organization_id = excluded.organization_id,
-        data_scope = excluded.data_scope,
-        rating = excluded.rating,
+        status = excluded.status,
         metadata = excluded.metadata,
-        source = excluded.source,
-        updated_at = CURRENT_TIMESTAMP
+        reaction_value = excluded.reaction_value,
+        cancelled_at = NULL
     "#
 }
 
 fn favorite_insert_sqlite() -> &'static str {
     r#"
-    INSERT INTO plus_favorite
-        (id, uuid, tenant_id, organization_id, data_scope, user_id, title, image, content_type,
-         content_id, folder_id, remark, tags, sort_weight, is_private, status, view_count)
+    INSERT INTO content_favorite
+        (id, uuid, tenant_id, organization_id, data_scope, user_id, content_type, content_id, status,
+         metadata, source)
     VALUES
-        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, 'forum tutorial seed', NULL, 0, 0, ?, 0)
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'forum-seed')
     ON CONFLICT(user_id, content_type, content_id) DO UPDATE SET
         uuid = excluded.uuid,
         tenant_id = excluded.tenant_id,
         organization_id = excluded.organization_id,
         data_scope = excluded.data_scope,
-        title = excluded.title,
-        image = excluded.image,
         status = excluded.status,
+        metadata = excluded.metadata,
+        source = excluded.source,
         updated_at = CURRENT_TIMESTAMP
     "#
 }
 
 fn favorite_insert_postgres() -> &'static str {
     r#"
-    INSERT INTO plus_favorite
-        (id, uuid, tenant_id, organization_id, data_scope, user_id, title, image, content_type,
-         content_id, folder_id, remark, tags, sort_weight, is_private, status, view_count)
+    INSERT INTO content_favorite
+        (id, uuid, tenant_id, organization_id, data_scope, user_id, content_type, content_id, status,
+         metadata, source)
     VALUES
-        ($1, $2, $3, $4, $5, $6, $7, $8::jsonb, $9, $10, NULL, 'forum tutorial seed',
-         NULL, 0, false, $11, 0)
+        ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10::jsonb, 'forum-seed')
     ON CONFLICT(user_id, content_type, content_id) DO UPDATE SET
         uuid = excluded.uuid,
         tenant_id = excluded.tenant_id,
         organization_id = excluded.organization_id,
         data_scope = excluded.data_scope,
-        title = excluded.title,
-        image = excluded.image,
         status = excluded.status,
+        metadata = excluded.metadata,
+        source = excluded.source,
         updated_at = CURRENT_TIMESTAMP
     "#
 }
@@ -730,7 +727,7 @@ async fn sqlite_feed_seed_standard_count(
         let row = sqlx::query(
             r#"
             SELECT COUNT(1) AS count
-            FROM plus_feeds
+            FROM content_forum_post
             WHERE id = ?
               AND uuid = ?
               AND tenant_id = ?
@@ -775,7 +772,7 @@ async fn postgres_feed_seed_standard_count(
         let row = sqlx::query(
             r#"
             SELECT COUNT(1) AS count
-            FROM plus_feeds
+            FROM content_forum_post
             WHERE id = $1
               AND uuid = $2
               AND tenant_id = $3
@@ -953,6 +950,20 @@ fn seed_metadata(seed: &ForumSeedBundle, item_type: &str, item_uuid: &str) -> St
         "itemType": item_type,
         "itemUuid": item_uuid,
         "sourceHash": seed_hash(),
+    })
+    .to_string()
+}
+
+fn favorite_seed_metadata(seed: &ForumSeedBundle, title: &str, item_uuid: &str) -> String {
+    serde_json::json!({
+        "source": seed.catalog_code,
+        "catalogVersion": seed.catalog_version,
+        "schemaVersion": seed.schema_version,
+        "generatedAt": seed.generated_at,
+        "itemType": "favorite",
+        "itemUuid": item_uuid,
+        "sourceHash": seed_hash(),
+        "title": title,
     })
     .to_string()
 }

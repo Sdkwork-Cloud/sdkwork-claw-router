@@ -138,10 +138,10 @@ export const FORUM_CONTENT_SOURCE = {
   sourceDescription: 'Derived from PlusFeeds, PlusComments, vote, and favorite tables.',
   observedAt: '',
   sourceTables: [
-    'plus_feeds',
-    'plus_comments',
-    'plus_content_vote',
-    'plus_favorite',
+    'content_forum_post',
+    'content_comment',
+    'content_reaction',
+    'content_favorite',
   ],
 } as const satisfies ForumContentSource;
 

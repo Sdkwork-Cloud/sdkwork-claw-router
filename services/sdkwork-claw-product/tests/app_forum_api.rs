@@ -79,10 +79,10 @@ async fn app_forum_public_read_routes_return_live_forum_data_without_auth() {
     );
     assert_eq!(
         [
-            "plus_feeds",
-            "plus_comments",
-            "plus_content_vote",
-            "plus_favorite"
+            "content_forum_post",
+            "content_comment",
+            "content_reaction",
+            "content_favorite"
         ],
         overview_payload["data"]["source"]["sourceTables"]
             .as_array()
@@ -1045,14 +1045,14 @@ async fn expected_public_forum_overview_stats(pool: &SqlitePool) -> ExpectedForu
             r#"
             WITH published_feeds AS (
                 SELECT user_id, created_at, updated_at
-                FROM plus_feeds
+                FROM content_forum_post
                 WHERE COALESCE(status, 0) = 2
                   AND tenant_id = 0
                   AND organization_id = 0
             ),
             published_comments AS (
                 SELECT user_id, created_at, updated_at
-                FROM plus_comments
+                FROM content_comment
                 WHERE COALESCE(status, 0) = 1
                   AND COALESCE(content_type, 0) IN (5, 22)
                   AND tenant_id = 0

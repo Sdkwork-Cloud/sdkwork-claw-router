@@ -31,11 +31,11 @@ schema_registry:
     - commerce
     - promotion
     - messaging
-    - studio
+    - platform
+    - c
     - content
     - ops
-    legacy_prefixes:
-    - plus
+    legacy_prefixes: []
     forbidden_new_prefixes:
     - claw
     - router
@@ -45,16 +45,12 @@ schema_registry:
     - portal
   legacy_compatibility_guardrails:
     java_entity_first_required: false
-    rule: sdkwork-appbase owns reusable local/private commerce and IAM foundation tables; new application contracts must use appbase standard tables instead of Java Plus commerce aliases.
+    rule: Greenfield v4.1 data model uses platform_, c_, ai_, and content_ tables as system of record; plus_* and studio_* legacy tables are retired.
     protected_domains:
-    - user
-    - app
+    - platform
+    - classification
     - skill
-    - category
-    - feeds
-    - comments
-    - favorite
-    - vote
+    - content
     forbidden_synonym_tables:
     - router_order
     - router_payment
@@ -155,18 +151,18 @@ domains:
   messaging:
     owner: sdkwork-appbase-messaging
     bounded_context: external-message-delivery
-  studio:
-    owner: portal-ecosystem
-    bounded_context: portal-studio-assets
+  platform:
+    owner: app-center-service
+    bounded_context: saas-application-platform
+  classification:
+    owner: catalog-service
+    bounded_context: cross-cutting-taxonomy
   content:
     owner: content-ops
     bounded_context: portal-content
   ops:
     owner: platform-ops
     bounded_context: operations-observability
-  legacy:
-    owner: legacy-java-plus-entity
-    bounded_context: legacy-compatible
 domain_names:
   model_vendor:
     canonical_name: ModelVendor
@@ -497,6 +493,10 @@ table_fragments:
 - tables/019-commerce.yaml
 - tables/020-studio.yaml
 - tables/021-content.yaml
+- tables/029-platform.yaml
+- tables/030-category.yaml
+- tables/031-ai-agent-skills.yaml
+- tables/032-content-forum.yaml
 - tables/022-ops.yaml
 - tables/023-integration.yaml
 - tables/024-content.yaml

@@ -78,7 +78,7 @@ class AdminPromptMcpRuntimeStandardTest(unittest.TestCase):
                     "publishPromptVersion",
                 }:
                     self.assertIn("ai_prompt", operation.get("read_sources", []))
-                    self.assertIn("plus_category", operation.get("read_sources", []))
+                    self.assertIn("c_category", operation.get("read_sources", []))
                 if "Mcp" in operation_name:
                     self.assertIn("ai_mcp_server", operation.get("read_sources", []))
                     if operation["api_method"] in {"POST", "PUT"}:
@@ -92,15 +92,15 @@ class AdminPromptMcpRuntimeStandardTest(unittest.TestCase):
             if isinstance(route, dict) and route.get("route") in {"/admin/prompts", "/admin/mcp"}
         }
         self.assertEqual({"/admin/prompts", "/admin/mcp"}, set(route_contracts))
-        self.assertIn("plus_category", route_contracts["/admin/prompts"]["required_tables"])
-        self.assertIn("plus_category", route_contracts["/admin/mcp"]["required_tables"])
+        self.assertIn("c_category", route_contracts["/admin/prompts"]["required_tables"])
+        self.assertIn("c_category", route_contracts["/admin/mcp"]["required_tables"])
         self.assertNotIn("ai_capability", route_contracts["/admin/prompts"]["required_tables"])
         self.assertNotIn("ai_capability", route_contracts["/admin/mcp"]["required_tables"])
 
         table_registry = load_schema_registry(TABLE_REGISTRY_PATH)
         tables = {table["table"]: table for table in table_registry["tables"]}
-        self.assertIn("/admin/prompts", tables["plus_category"]["frontend_routes"])
-        self.assertIn("/admin/mcp", tables["plus_category"]["frontend_routes"])
+        self.assertIn("/admin/prompts", tables["c_category"]["frontend_routes"])
+        self.assertIn("/admin/mcp", tables["c_category"]["frontend_routes"])
         self.assertIn("/admin/prompts", tables["ops_audit_log"]["frontend_routes"])
         self.assertIn("/admin/mcp", tables["ops_audit_log"]["frontend_routes"])
 
@@ -222,7 +222,7 @@ class AdminPromptMcpRuntimeStandardTest(unittest.TestCase):
         self.assertIn("'/admin/mcp'", registry)
         self.assertIn("admin.menu.prompts", registry)
         self.assertIn("admin.menu.mcp", registry)
-        self.assertIn('"admin.menu.prompts": "提示词管理"', navigation)
+        self.assertIn('"admin.menu.prompts": "提示词管�?', navigation)
         self.assertIn('"admin.menu.mcp": "MCP管理"', navigation)
 
 
@@ -264,7 +264,7 @@ class AdminPromptMcpRuntimeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
 
         self.assertIn("getClawRouterBackendSdkClient().ecosystem.skills.categories.list", commons_category_options)
-        self.assertIn("plus_category", commons_category_options)
+        self.assertIn("c_category", commons_category_options)
         self.assertNotIn("fetch(", commons_category_options)
         self.assertNotIn("axios", commons_category_options)
 

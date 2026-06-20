@@ -55,7 +55,7 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                             "module": "app-center",
                             "path_params": [],
                             "source": "apps/portal/appService.ts",
-                            "read_sources": ["plus_app"],
+                            "read_sources": ["platform_app"],
                             "write_tables": [],
                             "query_parameters_declared": True,
                             "query_parameters": [],
@@ -154,8 +154,8 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                             "module": "forum",
                             "path_params": ["id"],
                             "source": "apps/portal/forumService.ts",
-                            "read_sources": ["plus_feeds", "plus_favorite"],
-                            "write_tables": ["plus_favorite", "plus_feeds"],
+                            "read_sources": ["content_forum_post", "content_favorite"],
+                            "write_tables": ["content_favorite", "content_forum_post"],
                             "request_id_header": True,
                             "request_body_required": False,
                             "query_parameters_declared": True,
@@ -190,8 +190,8 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                             "module": "forum",
                             "path_params": ["commentId"],
                             "source": "apps/portal/forumService.ts",
-                            "read_sources": ["plus_comments"],
-                            "write_tables": ["plus_comments"],
+                            "read_sources": ["content_comment"],
+                            "write_tables": ["content_comment"],
                         },
                         {
                             "api_surface": "app",
@@ -416,7 +416,7 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                           type: string
                     PlusAgentSkillPackageRecord:
                       type: object
-                      x-table: plus_agent_skill_package
+                      x-table: ai_agent_skill_package
                       x-domain: legacy
                       x-generated-by-this-project: true
                       properties:
@@ -426,7 +426,7 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                           $ref: '#/components/schemas/MediaResource'
                     PlusAgentSkillRecord:
                       type: object
-                      x-table: plus_agent_skill
+                      x-table: ai_agent_skill
                       x-domain: legacy
                       x-generated-by-this-project: true
                       properties:
@@ -436,7 +436,7 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                           $ref: '#/components/schemas/MediaResource'
                     PlusCategoryRecord:
                       type: object
-                      x-table: plus_category
+                      x-table: c_category
                       x-domain: legacy
                       x-generated-by-this-project: true
                       properties:
@@ -795,8 +795,8 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                                 "module": "app-center",
                                 "path_params": ["appId"],
                                 "source": "apps/portal/adminAppService.ts",
-                                "read_sources": ["plus_app"],
-                                "write_tables": ["plus_app"],
+                                "read_sources": ["platform_app"],
+                                "write_tables": ["platform_app"],
                                 "request_body_required": False,
                                 "request_schema": {
                                     "name": "EnableAppRequest",

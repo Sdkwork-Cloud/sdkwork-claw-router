@@ -28,25 +28,9 @@ SELECT
     COALESCE(a.install_config::text, '') AS install_config,
     COALESCE(a.release_notes::text, '') AS release_notes,
     COALESCE(a.artifact_resource_snapshot::text, '') AS artifact_resource_snapshot,
-    COALESCE((
-        SELECT AVG(sa.rating_score)::float8
-        FROM studio_catalog_action sa
-        WHERE sa.tenant_id = a.tenant_id
-          AND sa.organization_id = a.organization_id
-          AND sa.target_type = 15
-          AND sa.target_id = a.id
-          AND sa.rating_score IS NOT NULL
-    ), 0) AS rating,
-    COALESCE((
-        SELECT COUNT(*)
-        FROM studio_catalog_action sa
-        WHERE sa.tenant_id = a.tenant_id
-          AND sa.organization_id = a.organization_id
-          AND sa.target_type = 15
-          AND sa.target_id = a.id
-          AND sa.action_type IN (1, 2)
-    ), 0) AS download_count
-FROM plus_app a
+    COALESCE(a.rating_avg, 0)::float8 AS rating,
+    COALESCE(a.download_count, 0) AS download_count
+FROM platform_app a
 WHERE (
       (
           a.tenant_id = $1
@@ -85,7 +69,7 @@ LIMIT $10 OFFSET $11
 
 const COUNT_APPS: &str = r#"
 SELECT COUNT(1)
-FROM plus_app a
+FROM platform_app a
 WHERE (
       (
           a.tenant_id = $1
@@ -121,25 +105,9 @@ SELECT
     COALESCE(a.install_config::text, '') AS install_config,
     COALESCE(a.release_notes::text, '') AS release_notes,
     COALESCE(a.artifact_resource_snapshot::text, '') AS artifact_resource_snapshot,
-    COALESCE((
-        SELECT AVG(sa.rating_score)::float8
-        FROM studio_catalog_action sa
-        WHERE sa.tenant_id = a.tenant_id
-          AND sa.organization_id = a.organization_id
-          AND sa.target_type = 15
-          AND sa.target_id = a.id
-          AND sa.rating_score IS NOT NULL
-    ), 0) AS rating,
-    COALESCE((
-        SELECT COUNT(*)
-        FROM studio_catalog_action sa
-        WHERE sa.tenant_id = a.tenant_id
-          AND sa.organization_id = a.organization_id
-          AND sa.target_type = 15
-          AND sa.target_id = a.id
-          AND sa.action_type IN (1, 2)
-    ), 0) AS download_count
-FROM plus_app a
+    COALESCE(a.rating_avg, 0)::float8 AS rating,
+    COALESCE(a.download_count, 0) AS download_count
+FROM platform_app a
 WHERE (
       (
           a.tenant_id = $1
@@ -170,7 +138,7 @@ LIMIT 1
 const LOAD_CATEGORIES: &str = r#"
 SELECT
     COALESCE(NULLIF(c.name, ''), '') AS name
-FROM plus_category c
+FROM c_category c
 WHERE (
       (
           c.tenant_id = $1
@@ -181,8 +149,7 @@ WHERE (
       )
       OR (c.tenant_id = $3 AND c.organization_id = 0)
   )
-  AND c.type = 999999
-  AND c.group_name = 'app-store'
+  AND c.category_type = 'app_store'
   AND COALESCE(c.visible, true) = true
   AND COALESCE(c.status, 1) = 1
 ORDER BY COALESCE(c.sort_weight, 0), c.id
@@ -193,7 +160,7 @@ SELECT
     COALESCE(CAST(asset_type AS TEXT), '') AS asset_type,
     COALESCE(asset_resource_snapshot::text, '') AS asset_resource_snapshot,
     COALESCE(thumbnail_resource_snapshot::text, '') AS thumbnail_resource_snapshot
-FROM studio_catalog_asset
+FROM ai_skill_asset
 WHERE tenant_id = $1
   AND organization_id = $2
   AND target_type = $3
@@ -217,7 +184,7 @@ SELECT
     COALESCE(NULLIF(license_name, ''), '') AS license_name,
     COALESCE(NULLIF(release_notes, ''), '') AS release_notes,
     COALESCE(to_char((published_at AT TIME ZONE 'UTC'), 'YYYY-MM-DD"T"HH24:MI:SS"Z"'), '') AS published_at
-FROM studio_catalog_artifact
+FROM ai_skill_artifact
 WHERE tenant_id = $1
   AND organization_id = $2
   AND target_type = $3
@@ -406,35 +373,19 @@ fn paged_sort_suffix(sort: Option<&str>) -> &'static str {
 }
 
 async fn load_assets(
-    pool: &PgPool,
-    raw: &RawAppStoreRecord,
-    target_id: i64,
+    _pool: &PgPool,
+    _raw: &RawAppStoreRecord,
+    _target_id: i64,
 ) -> DomainResult<Vec<RawCatalogAsset>> {
-    let rows = sqlx::query(LOAD_ASSETS)
-        .bind(raw.tenant_id)
-        .bind(raw.organization_id)
-        .bind(CATALOG_TARGET_TYPE_APP)
-        .bind(target_id)
-        .fetch_all(pool)
-        .await
-        .map_err(sql_error)?;
-    Ok(rows.iter().map(row_to_asset).collect())
+    Ok(Vec::new())
 }
 
 async fn load_artifacts(
-    pool: &PgPool,
-    raw: &RawAppStoreRecord,
-    target_id: i64,
+    _pool: &PgPool,
+    _raw: &RawAppStoreRecord,
+    _target_id: i64,
 ) -> DomainResult<Vec<RawCatalogArtifact>> {
-    let rows = sqlx::query(LOAD_ARTIFACTS)
-        .bind(raw.tenant_id)
-        .bind(raw.organization_id)
-        .bind(CATALOG_TARGET_TYPE_APP)
-        .bind(target_id)
-        .fetch_all(pool)
-        .await
-        .map_err(sql_error)?;
-    Ok(rows.iter().map(row_to_artifact).collect())
+    Ok(Vec::new())
 }
 
 fn row_to_raw_app(row: &sqlx::postgres::PgRow) -> RawAppStoreRecord {

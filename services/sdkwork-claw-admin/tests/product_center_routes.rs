@@ -724,7 +724,7 @@ async fn product_center_category_seed_initializer_imports_data_directories_idemp
     }));
     assert!(summaries.iter().any(|item| {
         item["dataset"] == "agent-skills"
-            && item["targetTable"] == "plus_category"
+            && item["targetTable"] == "c_category"
             && item["upserted"].as_i64().unwrap_or_default() >= 8
     }));
 
@@ -734,7 +734,7 @@ async fn product_center_category_seed_initializer_imports_data_directories_idemp
             .await
             .unwrap();
     let plus_count_after_first: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM plus_category WHERE group_name LIKE 'category-seed:%'",
+        "SELECT COUNT(1) FROM c_category WHERE group_name LIKE 'category-seed:%'",
     )
     .fetch_one(&pool)
     .await
@@ -820,7 +820,7 @@ async fn product_center_category_seed_initializer_imports_data_directories_idemp
         "家具",
         "家庭清洁&纸品",
         "家装建材",
-        "工业品",
+        "工业�?,
         "汽车用品",
         "玩具乐器",
         "运动户外",
@@ -833,7 +833,7 @@ async fn product_center_category_seed_initializer_imports_data_directories_idemp
         "二手",
         "生活服务",
         "图书",
-        "艺术品",
+        "艺术�?,
         "教育培训",
         "珠宝首饰",
         "保健膳食",
@@ -855,7 +855,7 @@ async fn product_center_category_seed_initializer_imports_data_directories_idemp
     assert_eq!("\u{98df}\u{54c1}\u{996e}\u{6599}", product_root_name);
 
     let course_root_name: String =
-        sqlx::query_scalar("SELECT name FROM plus_category WHERE code = 'courses-career'")
+        sqlx::query_scalar("SELECT name FROM c_category WHERE code = 'courses-career'")
             .fetch_one(&pool)
             .await
             .unwrap();
@@ -887,7 +887,7 @@ async fn product_center_category_seed_initializer_imports_data_directories_idemp
             .await
             .unwrap();
     let plus_count_after_second: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM plus_category WHERE group_name LIKE 'category-seed:%'",
+        "SELECT COUNT(1) FROM c_category WHERE group_name LIKE 'category-seed:%'",
     )
     .fetch_one(&pool)
     .await
@@ -1124,7 +1124,7 @@ async fn create_product_center_schema(pool: &SqlitePool) {
 
 async fn create_category_seed_schema(pool: &SqlitePool) {
     sqlx::query(
-        r#"CREATE TABLE IF NOT EXISTS plus_category (
+        r#"CREATE TABLE IF NOT EXISTS c_category (
             id INTEGER PRIMARY KEY,
             uuid TEXT NOT NULL UNIQUE,
             tenant_id INTEGER NOT NULL DEFAULT 0,

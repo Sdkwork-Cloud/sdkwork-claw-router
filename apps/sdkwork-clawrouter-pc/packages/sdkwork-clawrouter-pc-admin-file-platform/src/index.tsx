@@ -11,7 +11,7 @@ import type {
 import {
   getSdkworkDriveAppSdkClient,
 } from 'sdkwork-clawrouter-pc-commons/sdk-clients';
-import { readClawRouterRuntimeEnv } from 'sdkwork-clawrouter-pc-commons/utils/env';
+import { resolveSessionTenantId } from 'sdkwork-clawrouter-pc-commons/session-jwt-claims';
 
 export type DriveAdminSectionId =
   | 'audit'
@@ -139,9 +139,7 @@ function createDriveFilePlatformAppClient(client: SdkworkDriveAppClient) {
 }
 
 function resolveDriveTenantId(): string {
-  return readClawRouterRuntimeEnv('VITE_SDKWORK_TENANT_ID')
-    ?? readClawRouterRuntimeEnv('VITE_CLAWROUTER_TENANT_ID')
-    ?? '20001';
+  return resolveSessionTenantId();
 }
 
 function mapDriveSpace(space: DriveSpace) {

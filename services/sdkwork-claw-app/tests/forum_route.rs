@@ -181,10 +181,10 @@ impl ForumFeedReadStore for TestForumStore {
                         "Derived from Java-compatible PlusFeeds, PlusComments, vote, and favorite tables."
                             .to_owned(),
                     source_tables: vec![
-                        "plus_feeds".to_owned(),
-                        "plus_comments".to_owned(),
-                        "plus_content_vote".to_owned(),
-                        "plus_favorite".to_owned(),
+                        "content_forum_post".to_owned(),
+                        "content_comment".to_owned(),
+                        "content_reaction".to_owned(),
+                        "content_favorite".to_owned(),
                     ],
                     observed_at: "2026-05-11 10:00:00".to_owned(),
                 },

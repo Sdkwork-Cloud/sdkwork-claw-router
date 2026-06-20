@@ -7,7 +7,7 @@ use sdkwork_claw_product_test_support::{repair_sqlite_pool, schema_sqlite_pool};
 use serde_json::json;
 
 #[tokio::test]
-async fn sqlite_forum_store_uses_java_plus_feeds_and_comments_contract() {
+async fn sqlite_forum_store_uses_java_content_forum_post_and_comments_contract() {
     let pool = repair_sqlite_pool().await;
 
     let store = SqliteForumStore::new(pool.clone());
@@ -154,7 +154,7 @@ async fn sqlite_forum_store_uses_java_plus_feeds_and_comments_contract() {
     assert_eq!(2, refreshed_feed.comment_count);
     assert_eq!(
         2, refreshed_feed.view_count,
-        "detail reads must mirror Java app API and increment plus_feeds.view_count"
+        "detail reads must mirror Java app API and increment content_forum_post.view_count"
     );
 }
 
@@ -300,7 +300,7 @@ async fn sqlite_forum_store_does_not_apply_feed_side_effects_across_tenants() {
         sqlx::query_as::<_, (i64, i64, i64, i64)>(
             r#"
             SELECT view_count, like_count, favorite_count, share_count
-            FROM plus_feeds
+            FROM content_forum_post
             WHERE id = ?1
             "#,
         )
@@ -316,7 +316,7 @@ async fn sqlite_forum_store_does_not_apply_feed_side_effects_across_tenants() {
     let foreign_votes = sqlx::query_scalar::<_, i64>(
         r#"
         SELECT COUNT(1)
-        FROM plus_content_vote
+        FROM content_reaction
         WHERE tenant_id = ?1
           AND user_id = ?2
           AND content_id = ?3
@@ -333,7 +333,7 @@ async fn sqlite_forum_store_does_not_apply_feed_side_effects_across_tenants() {
     let foreign_favorites = sqlx::query_scalar::<_, i64>(
         r#"
         SELECT COUNT(1)
-        FROM plus_favorite
+        FROM content_favorite
         WHERE tenant_id = ?1
           AND user_id = ?2
           AND content_id = ?3

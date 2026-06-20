@@ -169,7 +169,7 @@ def expected_app_categories(seed):
 class AppSeedCatalogStandardTest(unittest.TestCase):
     maxDiff = None
 
-    def test_app_seed_catalog_exports_distinct_sdkwork_apps_as_plus_app_projection(self):
+    def test_app_seed_catalog_exports_distinct_sdkwork_apps_as_platform_app_projection(self):
         self.assertTrue(
             SEED_PATH.exists(),
             "data/app/sdkwork-apps.json must be the installable app seed bundle",
@@ -177,7 +177,7 @@ class AppSeedCatalogStandardTest(unittest.TestCase):
 
         seed = json.loads(SEED_PATH.read_text(encoding="utf-8"))
         self.assertEqual(1, seed.get("schemaVersion"))
-        self.assertEqual("sdkwork.plus_app.seed", seed.get("kind"))
+        self.assertEqual("sdkwork.platform_app.seed", seed.get("kind"))
         self.assertEqual("sdkwork-claw-router", seed.get("source", {}).get("rootAppKey"))
         self.assertIsInstance(seed.get("apps"), list)
         self.assertGreater(len(seed["apps"]), 0)
@@ -200,34 +200,34 @@ class AppSeedCatalogStandardTest(unittest.TestCase):
                 self.assertIsInstance(item.get("tenantId"), int)
                 self.assertIsInstance(item.get("organizationId"), int)
 
-                plus_app = item.get("plusApp")
-                self.assertIsInstance(plus_app, dict)
+                platform_app = item.get("plusApp")
+                self.assertIsInstance(platform_app, dict)
                 self.assertTrue(
-                    PLUS_APP_FIELDS.issubset(plus_app.keys()),
-                    f"plusApp is missing Java PlusApp projection fields: {PLUS_APP_FIELDS - set(plus_app.keys())}",
+                    PLUS_APP_FIELDS.issubset(platform_app.keys()),
+                    f"plusApp is missing Java PlusApp projection fields: {PLUS_APP_FIELDS - set(platform_app.keys())}",
                 )
-                self.assertIsInstance(plus_app["name"], str)
-                self.assertTrue(plus_app["name"].strip())
-                self.assertNotIn("iconUrl", plus_app)
-                self.assertNotIn("downloadUrl", plus_app)
-                assert_media_resource(self, plus_app.get("icon"), "image")
-                artifact = plus_app.get("artifact")
+                self.assertIsInstance(platform_app["name"], str)
+                self.assertTrue(platform_app["name"].strip())
+                self.assertNotIn("iconUrl", platform_app)
+                self.assertNotIn("downloadUrl", platform_app)
+                assert_media_resource(self, platform_app.get("icon"), "image")
+                artifact = platform_app.get("artifact")
                 if artifact is not None:
                     assert_media_resource(self, artifact, "document")
                 self.assertIn(
-                    plus_app["status"],
+                    platform_app["status"],
                     {"ACTIVE", "INACTIVE"},
                     "PlusApp runtime status must use only ACTIVE/INACTIVE; marketplace state belongs in config.portal.marketStatus",
                 )
-                self.assertIsInstance(plus_app["config"], dict)
-                self.assertEqual(item["appKey"], plus_app["config"].get("standard", {}).get("appKey"))
-                expected_market_status = "PUBLISHED" if plus_app["status"] == "ACTIVE" else "DRAFT"
+                self.assertIsInstance(platform_app["config"], dict)
+                self.assertEqual(item["appKey"], platform_app["config"].get("standard", {}).get("appKey"))
+                expected_market_status = "PUBLISHED" if platform_app["status"] == "ACTIVE" else "DRAFT"
                 self.assertEqual(
                     expected_market_status,
-                    plus_app["config"].get("portal", {}).get("marketStatus"),
+                    platform_app["config"].get("portal", {}).get("marketStatus"),
                     "installable app seed must persist marketplace state in PlusApp config.portal.marketStatus",
                 )
-                portal_category = plus_app["config"].get("portal", {}).get("category")
+                portal_category = platform_app["config"].get("portal", {}).get("category")
                 self.assertIsInstance(
                     portal_category,
                     str,
@@ -236,7 +236,7 @@ class AppSeedCatalogStandardTest(unittest.TestCase):
                 self.assertTrue(portal_category.strip())
                 store_categories = [
                     store.get("category")
-                    for store in plus_app["config"].get("publish", {}).get("stores", [])
+                    for store in platform_app["config"].get("publish", {}).get("stores", [])
                     if store.get("category")
                 ]
                 if store_categories:
@@ -245,14 +245,14 @@ class AppSeedCatalogStandardTest(unittest.TestCase):
                         portal_category,
                         "store category enums must be converted into AppCenter display categories in config.portal.category",
                     )
-                self.assertIsInstance(plus_app["platforms"].get("platforms"), list)
-                self.assertGreater(len(plus_app["platforms"]["platforms"]), 0)
-                self.assertIsInstance(plus_app["installPlatforms"].get("platforms"), list)
-                self.assertGreater(len(plus_app["installPlatforms"]["platforms"]), 0)
-                self.assertIsInstance(plus_app["installConfig"].get("packages"), list)
-                self.assertGreater(len(plus_app["installConfig"]["packages"]), 0)
-                self.assertIsInstance(plus_app["releaseNotes"], list)
-                self.assertGreater(len(plus_app["releaseNotes"]), 0)
+                self.assertIsInstance(platform_app["platforms"].get("platforms"), list)
+                self.assertGreater(len(platform_app["platforms"]["platforms"]), 0)
+                self.assertIsInstance(platform_app["installPlatforms"].get("platforms"), list)
+                self.assertGreater(len(platform_app["installPlatforms"]["platforms"]), 0)
+                self.assertIsInstance(platform_app["installConfig"].get("packages"), list)
+                self.assertGreater(len(platform_app["installConfig"]["packages"]), 0)
+                self.assertIsInstance(platform_app["releaseNotes"], list)
+                self.assertGreater(len(platform_app["releaseNotes"]), 0)
 
     def test_app_seed_media_fields_are_canonical_media_resources(self):
         seed = json.loads(SEED_PATH.read_text(encoding="utf-8"))
@@ -260,19 +260,19 @@ class AppSeedCatalogStandardTest(unittest.TestCase):
         source = APP_SEED_SOURCE_PATH.read_text(encoding="utf-8")
 
         for item in seed["apps"]:
-            plus_app = item["plusApp"]
+            platform_app = item["plusApp"]
             with self.subTest(app=item["appKey"]):
-                self.assertNotIn("iconUrl", plus_app)
-                self.assertNotIn("downloadUrl", plus_app)
-                assert_media_resource(self, plus_app.get("icon"), "image")
-                if plus_app.get("artifact") is not None:
-                    assert_media_resource(self, plus_app["artifact"], "document")
-                for package in plus_app["installConfig"]["packages"]:
+                self.assertNotIn("iconUrl", platform_app)
+                self.assertNotIn("downloadUrl", platform_app)
+                assert_media_resource(self, platform_app.get("icon"), "image")
+                if platform_app.get("artifact") is not None:
+                    assert_media_resource(self, platform_app["artifact"], "document")
+                for package in platform_app["installConfig"]["packages"]:
                     self.assertNotIn("url", package)
                     self.assertNotIn("downloadUrl", package)
                     assert_media_resource(self, package.get("artifact"), "document")
 
-                media = plus_app["config"].get("media", {})
+                media = platform_app["config"].get("media", {})
                 primary_icon = media.get("icons", {}).get("primary")
                 if primary_icon is not None:
                     assert_media_descriptor(self, primary_icon, "image")
@@ -361,11 +361,11 @@ class AppSeedCatalogStandardTest(unittest.TestCase):
         validation_source = source[validation_start:validation_end]
         for expected in [
             "invalid bundled app seed schemaVersion",
-            "sdkwork.plus_app.seed",
+            "sdkwork.platform_app.seed",
             "invalid bundled app seed count",
             "duplicate bundled app appKey",
             "invalid bundled app appKey",
-            'json_path_text(&entry.plus_app.config, &["standard", "appKey"])',
+            'json_path_text(&entry.platform_app.config, &["standard", "appKey"])',
             "does not match config.standard.appKey",
             "invalid bundled app runtime status",
         ]:
@@ -384,8 +384,8 @@ class AppSeedCatalogStandardTest(unittest.TestCase):
         category_seed = json.loads(APP_CATEGORY_SEED_PATH.read_text(encoding="utf-8"))
 
         self.assertEqual(1, category_seed.get("schemaVersion"))
-        self.assertEqual("sdkwork.plus_category.app_seed", category_seed.get("kind"))
-        self.assertEqual("sdkwork.plus_app.seed", category_seed.get("source", {}).get("appSeedKind"))
+        self.assertEqual("sdkwork.c_category.app_seed", category_seed.get("kind"))
+        self.assertEqual("sdkwork.platform_app.seed", category_seed.get("source", {}).get("appSeedKind"))
         self.assertEqual(len(seed["apps"]), category_seed.get("source", {}).get("appCount"))
         self.assertEqual(
             seed["source"],
@@ -437,12 +437,12 @@ class AppSeedCatalogStandardTest(unittest.TestCase):
         self.assertNotIn(
             '"ACTIVE" | "ENABLED" | "PUBLISHED"',
             source,
-            "app seed importer must not collapse marketplace or legacy aliases into plus_app.status",
+            "app seed importer must not collapse marketplace or legacy aliases into platform_app.status",
         )
         self.assertNotIn(
             '"ACTIVE" | "ENABLED" | "1"',
             source,
-            "app seed importer must not accept numeric or legacy aliases for plus_app.status",
+            "app seed importer must not accept numeric or legacy aliases for platform_app.status",
         )
 
     def test_app_seed_importer_uses_the_same_category_derivation_as_app_store_runtime(self):
@@ -468,15 +468,15 @@ class AppSeedCatalogStandardTest(unittest.TestCase):
         function_start = source.index("fn app_category_name(entry: &AppSeedEntry) -> String")
         function_end = source.index("fn app_category_code(name: &str) -> String", function_start)
         function_source = source[function_start:function_end]
-        self.assertIn('json_path_text(&entry.plus_app.config, &["portal", "category"])', source)
-        self.assertIn('json_path_text(&entry.plus_app.config, &["category"])', source)
+        self.assertIn('json_path_text(&entry.platform_app.config, &["portal", "category"])', source)
+        self.assertIn('json_path_text(&entry.platform_app.config, &["category"])', source)
         self.assertIn(
-            'json_path_text(&entry.plus_app.install_config, &["portal", "category"])',
+            'json_path_text(&entry.platform_app.install_config, &["portal", "category"])',
             source,
         )
         self.assertLess(
-            function_source.index('json_path_text(&entry.plus_app.config, &["portal", "category"])'),
-            function_source.index("entry.plus_app.app_type"),
+            function_source.index('json_path_text(&entry.platform_app.config, &["portal", "category"])'),
+            function_source.index("entry.platform_app.app_type"),
             "seeded PlusCategory rows must prefer config portal category before falling back to app_type",
         )
 
@@ -498,7 +498,7 @@ class AppSeedCatalogStandardTest(unittest.TestCase):
         self.assertNotIn(
             'if !json_bool_default(package, "enabled", true) {\n                continue;\n            }',
             source,
-            "app seed importer must not drop disabled packages from studio_catalog_artifact",
+            "app seed importer must not drop disabled packages from ai_skill_artifact",
         )
         self.assertIn(
             'let status = if json_bool_default(package, "enabled", true) {',

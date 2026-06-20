@@ -103,13 +103,13 @@ async fn database_config_admin_app_route_manages_market_state_without_runtime_al
         .any(|item| item["id"].as_str() == Some(app_id_text.as_str())));
 
     let pool = connect_sqlite_for_test(&database_url).await;
-    let stored_status: i64 = sqlx::query_scalar("SELECT status FROM plus_app WHERE id = ?")
+    let stored_status: i64 = sqlx::query_scalar("SELECT status FROM platform_app WHERE id = ?")
         .bind(app_id)
         .fetch_one(&pool)
         .await
         .unwrap();
     let stored_market_status: String = sqlx::query_scalar(
-        "SELECT json_extract(config, '$.portal.marketStatus') FROM plus_app WHERE id = ?",
+        "SELECT json_extract(config, '$.portal.marketStatus') FROM platform_app WHERE id = ?",
     )
     .bind(app_id)
     .fetch_one(&pool)

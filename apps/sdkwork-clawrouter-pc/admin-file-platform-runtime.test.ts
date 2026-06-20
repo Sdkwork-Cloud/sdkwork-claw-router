@@ -106,8 +106,9 @@ test("admin file platform is composed from storage and drive module blocks", () 
   assert.match(fileAdminIndexSource, /driveNodesList/);
   assert.match(fileAdminIndexSource, /client\.drive\.spaces\.list/);
   assert.match(fileAdminIndexSource, /client\.drive\.nodes\.list/);
-  assert.match(fileAdminIndexSource, /VITE_SDKWORK_TENANT_ID/);
-  assert.match(fileAdminIndexSource, /VITE_CLAWROUTER_TENANT_ID/);
+  assert.match(fileAdminIndexSource, /resolveSessionTenantId/);
+  assert.doesNotMatch(fileAdminIndexSource, /VITE_SDKWORK_TENANT_ID/);
+  assert.doesNotMatch(fileAdminIndexSource, /VITE_CLAWROUTER_TENANT_ID/);
   assert.doesNotMatch(fileAdminIndexSource, /createEmptyDriveService/);
   assert.doesNotMatch(fileAdminIndexSource, /async listDriveSpaces\(\) \{ return \{ items: \[\] \}; \}/);
   assert.doesNotMatch(fileAdminIndexSource, /async listDriveNodes\(\) \{ return \{ items: \[\] \}; \}/);

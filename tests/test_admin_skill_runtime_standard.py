@@ -70,11 +70,11 @@ class AdminSkillRuntimeStandardTest(unittest.TestCase):
                 self.assertEqual(method, operation["api_method"])
                 self.assertEqual(path, operation["api_path"])
                 if operation_name in {"fetchSkillCategories", "createSkillCategory"}:
-                    self.assertIn("plus_category", operation["read_sources"])
+                    self.assertIn("c_category", operation["read_sources"])
                 elif "SkillPackage" in operation_name:
-                    self.assertIn("plus_agent_skill_package", operation["read_sources"])
+                    self.assertIn("ai_agent_skill_package", operation["read_sources"])
                 else:
-                    self.assertIn("plus_agent_skill", operation["read_sources"])
+                    self.assertIn("ai_agent_skill", operation["read_sources"])
                 if method in {"POST", "PUT", "DELETE"} and operation_name not in {"fetchSkills", "fetchSkillPackages"}:
                     self.assertIn("ops_audit_log", operation.get("write_tables", []))
 

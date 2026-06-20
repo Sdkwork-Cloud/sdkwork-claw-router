@@ -469,8 +469,16 @@ fn releases_from_json(
             }
             let artifact = json_release_artifact(object)?;
             let locator = media_resource_public_locator(&artifact);
-            let platform = object_string(object, "platformType");
-            let os = object_string(object, "os");
+            let platform = first_non_empty(&[
+                object_string(object, "platformType"),
+                object_string(object, "platform"),
+            ])
+            .unwrap_or_default();
+            let os = first_non_empty(&[
+                object_string(object, "os"),
+                object_string(object, "platform"),
+            ])
+            .unwrap_or_default();
             Some(AppStoreReleaseItem {
                 id: non_empty(
                     first_non_empty(&[
@@ -540,6 +548,20 @@ fn app_category(app_type: &str, config: Option<&Value>, install_config: Option<&
 }
 
 fn platform_type_label(platform: &str, os: &str, url: &str) -> String {
+    let platform_key = normalize_text(platform).to_ascii_uppercase();
+    if platform_key.contains("WEB") {
+        return "Web".to_owned();
+    }
+    if platform_key.contains("MINI") {
+        return "Mini Program".to_owned();
+    }
+    if platform_key.contains("ANDROID")
+        || platform_key.contains("IOS")
+        || platform_key.contains("HARMONY")
+        || platform_key.contains("MOBILE")
+    {
+        return "Mobile".to_owned();
+    }
     let normalized = format!("{} {} {}", platform, os, url).to_lowercase();
     if normalized.contains("mini")
         || normalized.contains("wechat")
@@ -567,6 +589,10 @@ fn platform_type_label(platform: &str, os: &str, url: &str) -> String {
 }
 
 fn os_label(os: &str, platform: &str, url: &str) -> String {
+    let platform_key = normalize_text(platform).to_ascii_uppercase();
+    if platform_key.contains("WEB") {
+        return "PC Web".to_owned();
+    }
     let normalized = format!("{} {} {}", os, platform, url).to_lowercase();
     if normalized.contains("mac") || normalized.ends_with(".dmg") {
         return "macOS".to_owned();
@@ -740,6 +766,9 @@ fn value_to_string(value: &Value) -> Option<String> {
 
 fn value_to_media_resource(value: &Value, kind: &str) -> Value {
     if let Value::Object(object) = value {
+        if let Some(asset) = object.get("asset") {
+            return value_to_media_resource(asset, kind);
+        }
         if matches!(object.get("kind"), Some(Value::String(_)))
             && matches!(object.get("source"), Some(Value::String(_)))
         {

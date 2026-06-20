@@ -155,7 +155,7 @@ async fn database_config_app_store_route_reads_installed_published_apps_through_
     let invisible_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM plus_app
+        FROM platform_app
         WHERE tenant_id = ?
           AND organization_id = ?
           AND (

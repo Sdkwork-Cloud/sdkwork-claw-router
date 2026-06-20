@@ -103,8 +103,8 @@ Systemd service: clawrouter.service
 engine = "postgresql"
 host = "db.example.com"
 port = 5432
-database = "sdkwork_ai_prod"
-username = "sdkworkprod@2026++"
+database = "sdkwork"
+username = "sdkwork"
 password_file = "/etc/sdkwork/router/database.secret"
 # password = "change-me"
 ssl_mode = "require"
@@ -210,8 +210,8 @@ deployment_mode = "server"
 engine = "postgresql"
 host = "db.internal"
 port = 5432
-database = "sdkwork_ai_prod"
-username = "sdkworkprod@2026++"
+database = "sdkwork"
+username = "sdkwork"
 password = "real-password"
 ssl_mode = "require"
 max_connections = 16
@@ -282,7 +282,7 @@ Set-Location $installRoot
 生产或多节点 server/service 部署需要在受保护的服务环境或运行时 TOML 中配置 PostgreSQL：
 
 ```powershell
-$env:SDKWORK_CLAW_DATABASE_URL="postgresql://sdkworkprod%402026%2B%2B:<password>@db.example.com:5432/sdkwork_ai_prod"
+$env:SDKWORK_CLAW_DATABASE_URL="postgresql://sdkworkprod%402026%2B%2B:<password>@db.example.com:5432/sdkwork"
 ```
 
 Windows `.msi` 会把程序二进制放在 `%ProgramFiles%/sdkwork/router`，把共享模板放在 `%ProgramData%/sdkwork/router`。原生安装清单会记录 service 模板、运行时 TOML、密码文件和数据目录继承 ProgramData ACL；desktop 运行时文件由当前用户初始化到 `%USERPROFILE%/.sdkwork/router/config` 和 `%USERPROFILE%/.sdkwork/router/data`，使用当前用户 profile ACL。

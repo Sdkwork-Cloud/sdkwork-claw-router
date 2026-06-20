@@ -1,0 +1,259 @@
+tables:
+- table: content_forum_post
+  domain: content
+  profile: tenant_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: content-service
+  generated_by_this_project: true
+  frontend_routes:
+  - /forum
+  - /forum/:id
+  api_surfaces:
+  - app
+  - backend
+  columns:
+    id:
+      type: int64
+      constraints: PRIMARY KEY
+    uuid:
+      type: string(255)
+      constraints: NOT NULL UNIQUE
+    created_at:
+      type: instant
+      constraints: NOT NULL DEFAULT CURRENT_TIMESTAMP
+    updated_at:
+      type: instant
+      constraints: NOT NULL DEFAULT CURRENT_TIMESTAMP
+    v:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    tenant_id:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    organization_id:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    data_scope:
+      type: int32
+      constraints: NOT NULL DEFAULT 0
+    user_id: int64
+    title:
+      type: string(255)
+      constraints: NOT NULL
+    summary: text
+    category_id:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    content_type:
+      type: int32
+      constraints: NOT NULL
+    content_id:
+      type: int64
+      constraints: NOT NULL
+    cover_resources: json
+    resource_list: json
+    author: json
+    source: string(100)
+    source_url: string(500)
+    publish_time: instant
+    tags: json
+    status:
+      type: int32
+      constraints: NOT NULL DEFAULT 2
+    view_count:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    like_count:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    comment_count:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    share_count:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    favorite_count:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    is_top:
+      type: bool
+      constraints: NOT NULL DEFAULT FALSE
+    is_hot:
+      type: bool
+      constraints: NOT NULL DEFAULT FALSE
+    is_recommended:
+      type: bool
+      constraints: NOT NULL DEFAULT FALSE
+    sort_order:
+      type: int32
+      constraints: NOT NULL DEFAULT 0
+  indexes:
+  - name: idx_content_forum_post_status
+    columns:
+    - status
+  - name: idx_content_forum_post_user_id
+    columns:
+    - user_id
+  - name: idx_content_forum_post_category_id
+    columns:
+    - category_id
+  - name: idx_content_forum_post_content_type
+    columns:
+    - content_type
+  - name: idx_content_forum_post_publish_time
+    columns:
+    - publish_time
+  - name: idx_content_forum_post_status_publish_time
+    columns:
+    - status
+    - publish_time
+- table: content_comment
+  domain: content
+  profile: tenant_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: content-service
+  generated_by_this_project: true
+  frontend_routes:
+  - /forum
+  - /forum/:id
+  - /courses
+  - /courses/:id
+  - /admin/courses/comments
+  api_surfaces:
+  - app
+  - backend
+  columns:
+    id:
+      type: int64
+      constraints: PRIMARY KEY
+    uuid:
+      type: string(255)
+      constraints: NOT NULL UNIQUE
+    created_at:
+      type: instant
+      constraints: NOT NULL DEFAULT CURRENT_TIMESTAMP
+    updated_at:
+      type: instant
+      constraints: NOT NULL DEFAULT CURRENT_TIMESTAMP
+    v:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    tenant_id:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    organization_id:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    data_scope:
+      type: int32
+      constraints: NOT NULL DEFAULT 0
+    user_id: int64
+    content_type:
+      type: int32
+      constraints: NOT NULL
+    content_id:
+      type: int64
+      constraints: NOT NULL
+    parent_id: int64
+    root_id: int64
+    path: string(512)
+    sort_weight:
+      type: int32
+      constraints: NOT NULL DEFAULT 0
+    body: text
+    author: json
+    likes:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    reply_count:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    is_top:
+      type: bool
+      constraints: NOT NULL DEFAULT FALSE
+    status:
+      type: int32
+      constraints: NOT NULL DEFAULT 1
+    ip_address: string(50)
+    client_ip: string(50)
+    device_info: string(255)
+  indexes:
+  - name: idx_content_comment_content
+    columns:
+    - content_type
+    - content_id
+    - parent_id
+    - created_at
+    - id
+  - name: idx_content_comment_user
+    columns:
+    - user_id
+    - created_at
+    - id
+- table: content_favorite
+  domain: content
+  profile: tenant_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: content-service
+  generated_by_this_project: true
+  frontend_routes:
+  - /forum
+  - /forum/:id
+  api_surfaces:
+  - app
+  - backend
+  columns:
+    id:
+      type: int64
+      constraints: PRIMARY KEY
+    uuid:
+      type: string(255)
+      constraints: NOT NULL UNIQUE
+    created_at:
+      type: instant
+      constraints: NOT NULL DEFAULT CURRENT_TIMESTAMP
+    updated_at:
+      type: instant
+      constraints: NOT NULL DEFAULT CURRENT_TIMESTAMP
+    v:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    tenant_id:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    organization_id:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    data_scope:
+      type: int32
+      constraints: NOT NULL DEFAULT 0
+    user_id: int64
+    content_type:
+      type: int32
+      constraints: NOT NULL
+    content_id:
+      type: int64
+      constraints: NOT NULL
+    status:
+      type: int32
+      constraints: NOT NULL DEFAULT 1
+    metadata:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    source: string(50)
+    client_ip: string(50)
+    device_info: string(255)
+  indexes:
+  - name: uk_content_favorite_user_content
+    unique: true
+    columns:
+    - user_id
+    - content_type
+    - content_id
+  - name: idx_content_favorite_content
+    columns:
+    - content_type
+    - content_id

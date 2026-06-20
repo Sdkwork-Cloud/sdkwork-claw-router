@@ -1,4 +1,4 @@
-﻿use serde::Deserialize;
+use serde::Deserialize;
 use sha2::{Digest, Sha256};
 use sqlx::{PgPool, QueryBuilder, Row, Sqlite, SqlitePool};
 
@@ -38,6 +38,35 @@ const BUNDLED_SKILLS_SEED_ARTIFACT_COUNT: usize = 65_539;
 const BUNDLED_SKILLS_SEED_SOURCE_HASH: &str =
     "892e1f301eb5550379ec4de19526773b273d442792a2f69bbb8b3891a13f04be";
 const CORE_SKILL_IDS: [i64; 3] = [8101, 8102, 8103];
+
+fn category_type_from_legacy_seed(group_name: Option<&str>, legacy_type: i32) -> &'static str {
+    if let Some(group) = group_name {
+        if group.contains("app-store") {
+            return "app_store";
+        }
+        if group.contains("agent-skills") || group.contains("skills") {
+            return "skill_market";
+        }
+        if group.contains("course") {
+            return "course";
+        }
+        if group.contains("forum") {
+            return "forum";
+        }
+        if group.contains("mcp") {
+            return "mcp";
+        }
+        if group.contains("prompt") {
+            return "prompt";
+        }
+    }
+    match legacy_type {
+        19 => "skill_market",
+        20 => "skills_collection",
+        999_999 => "app_store",
+        _ => "skill_market",
+    }
+}
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -463,14 +492,14 @@ pub(crate) async fn postgres_skills_seed_complete(pool: &PgPool) -> Result<bool,
     let skill_count = postgres_skill_seed_count(pool).await?;
     let asset_count = postgres_skill_projection_seed_count(
         pool,
-        "studio_catalog_asset",
+        "ai_skill_asset",
         "skill_asset",
         &seed.source_hash,
     )
     .await?;
     let artifact_count = postgres_skill_projection_seed_count(
         pool,
-        "studio_catalog_artifact",
+        "ai_skill_artifact",
         "skill_artifact",
         &seed.source_hash,
     )
@@ -553,10 +582,10 @@ async fn import_sqlite_category_rows(
         let icon_resource_snapshot = icon.as_ref().map(serde_json::Value::to_string);
         sqlx::query(
             r#"
-            INSERT INTO plus_category
-                (id, uuid, tenant_id, organization_id, data_scope, name, description, shop_id, type, group_name, code, tags, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, sort_weight, parent_id, path, visible, status)
+            INSERT INTO c_category
+                (id, uuid, tenant_id, organization_id, data_scope, category_type, name, description, code, tags, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, sort_weight, parent_id, path, visible, status)
             VALUES
-                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT(id) DO UPDATE SET
                 uuid = excluded.uuid,
                 tenant_id = excluded.tenant_id,
@@ -564,9 +593,7 @@ async fn import_sqlite_category_rows(
                 data_scope = excluded.data_scope,
                 name = excluded.name,
                 description = excluded.description,
-                shop_id = excluded.shop_id,
-                type = excluded.type,
-                group_name = excluded.group_name,
+                category_type = excluded.category_type,
                 code = excluded.code,
                 tags = excluded.tags,
                 icon_media_resource_id = excluded.icon_media_resource_id,
@@ -585,11 +612,9 @@ async fn import_sqlite_category_rows(
         .bind(SYSTEM_TENANT_ID)
         .bind(SYSTEM_ORGANIZATION_ID)
         .bind(SYSTEM_DATA_SCOPE)
+        .bind(category_type_from_legacy_seed(item.group_name.as_deref(), item.r#type))
         .bind(&item.name)
         .bind(&item.description)
-        .bind(item.shop_id)
-        .bind(item.r#type)
-        .bind(&item.group_name)
         .bind(&item.code)
         .bind(json_string(&item.tags))
         .bind(icon_media_resource_id)
@@ -627,7 +652,7 @@ async fn import_sqlite_package_rows(
         let cover_resource_snapshot = item.cover.as_ref().map(serde_json::Value::to_string);
         sqlx::query(
             r#"
-            DELETE FROM plus_agent_skill_package
+            DELETE FROM ai_agent_skill_package
             WHERE id <> ?
               AND (
                     uuid = ?
@@ -649,7 +674,7 @@ async fn import_sqlite_package_rows(
 
         sqlx::query(
             r#"
-            INSERT INTO plus_agent_skill_package
+            INSERT INTO ai_agent_skill_package
                 (id, uuid, tenant_id, organization_id, data_scope, user_id, package_key, name, summary, description, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, cover_media_resource_id, cover_object_blob_id, cover_resource_snapshot, category_id, enabled, featured, sort_weight, tags, latest_published_at)
             VALUES
                 (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
@@ -720,7 +745,7 @@ async fn import_sqlite_skill_rows(
     for chunk in skills.chunks(SQLITE_SKILL_INSERT_BATCH_SIZE) {
         let mut query_builder: QueryBuilder<'_, Sqlite> = QueryBuilder::new(
             r#"
-            INSERT INTO plus_agent_skill
+            INSERT INTO ai_agent_skill
                 (id, uuid, tenant_id, organization_id, data_scope, user_id, skill_key, name, summary, description, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, cover_media_resource_id, cover_object_blob_id, cover_resource_snapshot, category_id, package_id, provider, version, version_name, runtime, entrypoint, manifest_url, repository_url, homepage_url, documentation_url, license_name, source_type, market_status, visibility, review_status, review_comment, reviewed_by, reviewed_at, builtin, is_builtin, enabled, featured, recommend_weight, price, currency, install_count, rating_avg, rating_count, tags, capabilities, config_schema, default_config, latest_published_at)
             "#,
         );
@@ -857,12 +882,12 @@ async fn import_sqlite_asset_rows(
         .iter()
         .map(|item| item.uuid.as_str())
         .collect::<Vec<_>>();
-    delete_sqlite_seed_rows_by_text_values(tx, "studio_catalog_asset", "uuid", &asset_uuids)
+    delete_sqlite_seed_rows_by_text_values(tx, "ai_skill_asset", "uuid", &asset_uuids)
         .await?;
     for chunk in assets.chunks(SQLITE_ASSET_INSERT_BATCH_SIZE) {
         let mut query_builder: QueryBuilder<'_, Sqlite> = QueryBuilder::new(
             r#"
-            INSERT INTO studio_catalog_asset
+            INSERT INTO ai_skill_asset
                 (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_id, asset_type, asset_media_resource_id, asset_object_blob_id, asset_resource_snapshot, thumbnail_media_resource_id, thumbnail_object_blob_id, thumbnail_resource_snapshot, title, alt_text, mime_type, width, height, duration_seconds, file_size, sort_order, published_at, id)
             "#,
         );
@@ -932,12 +957,12 @@ async fn import_sqlite_artifact_rows(
         .iter()
         .map(|item| item.uuid.as_str())
         .collect::<Vec<_>>();
-    delete_sqlite_seed_rows_by_text_values(tx, "studio_catalog_artifact", "uuid", &artifact_uuids)
+    delete_sqlite_seed_rows_by_text_values(tx, "ai_skill_artifact", "uuid", &artifact_uuids)
         .await?;
     for chunk in artifacts.chunks(SQLITE_ARTIFACT_INSERT_BATCH_SIZE) {
         let mut query_builder: QueryBuilder<'_, Sqlite> = QueryBuilder::new(
             r#"
-            INSERT INTO studio_catalog_artifact
+            INSERT INTO ai_skill_artifact
                 (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_type, version, platform_type, os_name, artifact_ref, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot, artifact_size_bytes, runtime, frameworks, license_name, checksum_hash, release_notes, published_at, deprecated_at, id)
             "#,
         );
@@ -1046,10 +1071,10 @@ async fn import_postgres_categories(
         let icon_resource_snapshot = icon.as_ref().map(serde_json::Value::to_string);
         sqlx::query(
             r#"
-            INSERT INTO plus_category
-                (id, uuid, tenant_id, organization_id, data_scope, name, description, shop_id, type, group_name, code, tags, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, sort_weight, parent_id, path, visible, status)
+            INSERT INTO c_category
+                (id, uuid, tenant_id, organization_id, data_scope, category_type, name, description, code, tags, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, sort_weight, parent_id, path, visible, status)
             VALUES
-                ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12::jsonb, $13, $14, $15::jsonb, $16, $17, $18, $19, $20)
+                ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12::jsonb, $13, $14, $15::jsonb, $16, $17, $18)
             ON CONFLICT(id) DO UPDATE SET
                 uuid = excluded.uuid,
                 tenant_id = excluded.tenant_id,
@@ -1057,9 +1082,7 @@ async fn import_postgres_categories(
                 data_scope = excluded.data_scope,
                 name = excluded.name,
                 description = excluded.description,
-                shop_id = excluded.shop_id,
-                type = excluded.type,
-                group_name = excluded.group_name,
+                category_type = excluded.category_type,
                 code = excluded.code,
                 tags = excluded.tags,
                 icon_media_resource_id = excluded.icon_media_resource_id,
@@ -1078,11 +1101,9 @@ async fn import_postgres_categories(
         .bind(SYSTEM_TENANT_ID)
         .bind(SYSTEM_ORGANIZATION_ID)
         .bind(SYSTEM_DATA_SCOPE)
+        .bind(category_type_from_legacy_seed(item.group_name.as_deref(), item.r#type))
         .bind(&item.name)
         .bind(&item.description)
-        .bind(item.shop_id)
-        .bind(item.r#type)
-        .bind(&item.group_name)
         .bind(&item.code)
         .bind(json_string(&item.tags))
         .bind(icon_media_resource_id)
@@ -1113,7 +1134,7 @@ async fn import_postgres_packages(
         let cover_resource_snapshot = item.cover.as_ref().map(serde_json::Value::to_string);
         sqlx::query(
             r#"
-            DELETE FROM plus_agent_skill_package
+            DELETE FROM ai_agent_skill_package
             WHERE id <> $1
               AND (
                     uuid = $2
@@ -1135,7 +1156,7 @@ async fn import_postgres_packages(
 
         sqlx::query(
             r#"
-            INSERT INTO plus_agent_skill_package
+            INSERT INTO ai_agent_skill_package
                 (id, uuid, tenant_id, organization_id, data_scope, user_id, package_key, name, summary, description, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, cover_media_resource_id, cover_object_blob_id, cover_resource_snapshot, category_id, enabled, featured, sort_weight, tags, latest_published_at)
             VALUES
                 ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13::jsonb, $14, $15, $16::jsonb, $17, $18, $19, $20, $21::jsonb, $22::timestamptz)
@@ -1206,7 +1227,7 @@ async fn import_postgres_skills(
         let cover_resource_snapshot = item.cover.as_ref().map(serde_json::Value::to_string);
         sqlx::query(
             r#"
-            INSERT INTO plus_agent_skill
+            INSERT INTO ai_agent_skill
                 (id, uuid, tenant_id, organization_id, data_scope, user_id, skill_key, name, summary, description, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, cover_media_resource_id, cover_object_blob_id, cover_resource_snapshot, category_id, package_id, provider, version, version_name, runtime, entrypoint, manifest_url, repository_url, homepage_url, documentation_url, license_name, source_type, market_status, visibility, review_status, review_comment, reviewed_by, reviewed_at, builtin, is_builtin, enabled, featured, recommend_weight, price, currency, install_count, rating_avg, rating_count, tags, capabilities, config_schema, default_config, latest_published_at)
             VALUES
                 ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13::jsonb, $14, $15, $16::jsonb, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31, $32, $33, $34, $35::timestamptz, $36, $37, $38, $39, $40, CAST($41 AS NUMERIC), $42, $43, CAST($44 AS NUMERIC), $45, $46::jsonb, $47::jsonb, $48::jsonb, $49::jsonb, $50::timestamptz)
@@ -1331,7 +1352,7 @@ async fn import_postgres_assets(
         let thumbnail_resource_snapshot = item.thumbnail.as_ref().map(serde_json::Value::to_string);
         let result = sqlx::query(
             r#"
-            UPDATE studio_catalog_asset
+            UPDATE ai_skill_asset
             SET
                 target_type = $1,
                 target_id = $2,
@@ -1393,7 +1414,7 @@ async fn import_postgres_assets(
         }
         sqlx::query(
             r#"
-            INSERT INTO studio_catalog_asset
+            INSERT INTO ai_skill_asset
                 (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_id, asset_type, asset_media_resource_id, asset_object_blob_id, asset_resource_snapshot, thumbnail_media_resource_id, thumbnail_object_blob_id, thumbnail_resource_snapshot, title, alt_text, mime_type, width, height, duration_seconds, file_size, sort_order, published_at, id)
             VALUES
                 ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13::jsonb, $14, $15, $16::jsonb, $17, $18, $19, $20, $21, CAST($22 AS NUMERIC), $23, $24, $25::timestamptz, $26)
@@ -1451,7 +1472,7 @@ async fn import_postgres_artifacts(
         release_postgres_skill_artifact_uuid_owner(tx, item).await?;
         sqlx::query(
             r#"
-            INSERT INTO studio_catalog_artifact
+            INSERT INTO ai_skill_artifact
                 (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_type, version, platform_type, os_name, artifact_ref, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot, artifact_size_bytes, runtime, frameworks, license_name, checksum_hash, release_notes, published_at, deprecated_at, id)
             VALUES
                 ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16::jsonb, $17, $18, $19::jsonb, $20, $21, $22, $23::timestamptz, $24::timestamptz, $25)
@@ -1513,7 +1534,7 @@ async fn release_postgres_skill_artifact_uuid_owner(
 ) -> Result<(), sqlx::Error> {
     sqlx::query(
         r#"
-        UPDATE studio_catalog_artifact
+        UPDATE ai_skill_artifact
         SET uuid = uuid || '-retired-' || id::text,
             status = 0,
             deleted_at = CURRENT_TIMESTAMP,
@@ -1555,7 +1576,7 @@ async fn sqlite_core_skill_seed_standard_count(
         let row = sqlx::query(
             r#"
             SELECT COUNT(1) AS count
-            FROM plus_agent_skill
+            FROM ai_agent_skill
             WHERE tenant_id = 0
               AND organization_id = 0
               AND data_scope = 0
@@ -1600,7 +1621,7 @@ async fn sqlite_core_asset_seed_standard_count(
         let row = sqlx::query(
             r#"
             SELECT COUNT(1) AS count
-            FROM studio_catalog_asset
+            FROM ai_skill_asset
             WHERE tenant_id = 0
               AND organization_id = 0
               AND status = 1
@@ -1644,7 +1665,7 @@ async fn sqlite_core_artifact_seed_standard_count(
         let row = sqlx::query(
             r#"
             SELECT COUNT(1) AS count
-            FROM studio_catalog_artifact
+            FROM ai_skill_artifact
             WHERE tenant_id = 0
               AND organization_id = 0
               AND status = 1
@@ -1697,7 +1718,7 @@ async fn sqlite_category_seed_standard_count(
         let row = sqlx::query(
             r#"
             SELECT COUNT(1) AS count
-            FROM plus_category
+            FROM c_category
             WHERE tenant_id = 0
               AND organization_id = 0
               AND data_scope = 0
@@ -1733,7 +1754,7 @@ async fn sqlite_package_seed_standard_count(
         let row = sqlx::query(
             r#"
             SELECT COUNT(1) AS count
-            FROM plus_agent_skill_package
+            FROM ai_agent_skill_package
             WHERE id = ?
               AND tenant_id = 0
               AND organization_id = 0
@@ -1769,7 +1790,7 @@ async fn postgres_category_seed_standard_count(
         let row = sqlx::query(
             r#"
             SELECT COUNT(1) AS count
-            FROM plus_category
+            FROM c_category
             WHERE tenant_id = 0
               AND organization_id = 0
               AND data_scope = 0
@@ -1805,7 +1826,7 @@ async fn postgres_package_seed_standard_count(
         let row = sqlx::query(
             r#"
             SELECT COUNT(1) AS count
-            FROM plus_agent_skill_package
+            FROM ai_agent_skill_package
             WHERE id = $1
               AND tenant_id = 0
               AND organization_id = 0
@@ -1862,7 +1883,7 @@ async fn postgres_skill_seed_count(pool: &PgPool) -> Result<i64, sqlx::Error> {
     let row = sqlx::query(
         r#"
         SELECT COUNT(1) AS count
-        FROM plus_agent_skill
+        FROM ai_agent_skill
         WHERE tenant_id = 0
           AND organization_id = 0
           AND data_scope = 0
@@ -1877,7 +1898,7 @@ async fn postgres_official_skill_seed_standard_count(pool: &PgPool) -> Result<i6
     let row = sqlx::query(
         r#"
         SELECT COUNT(1) AS count
-        FROM plus_agent_skill
+        FROM ai_agent_skill
         WHERE tenant_id = 0
           AND organization_id = 0
           AND data_scope = 0
@@ -1905,7 +1926,7 @@ async fn postgres_core_skill_seed_standard_count(
         let row = sqlx::query(
             r#"
             SELECT COUNT(1) AS count
-            FROM plus_agent_skill
+            FROM ai_agent_skill
             WHERE tenant_id = 0
               AND organization_id = 0
               AND data_scope = 0
@@ -1950,7 +1971,7 @@ async fn postgres_core_asset_seed_standard_count(
         let row = sqlx::query(
             r#"
             SELECT COUNT(1) AS count
-            FROM studio_catalog_asset
+            FROM ai_skill_asset
             WHERE tenant_id = 0
               AND organization_id = 0
               AND status = 1
@@ -1994,7 +2015,7 @@ async fn postgres_core_artifact_seed_standard_count(
         let row = sqlx::query(
             r#"
             SELECT COUNT(1) AS count
-            FROM studio_catalog_artifact
+            FROM ai_skill_artifact
             WHERE tenant_id = 0
               AND organization_id = 0
               AND status = 1

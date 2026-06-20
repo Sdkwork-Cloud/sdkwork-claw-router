@@ -2021,6 +2021,7 @@ checksum = "94143f37725109f92c262ed2cf5e59bce7498c01bcc1502d7b9afe439a4e9f49"
 name = "sdkwork-api-gateway"
 version = "0.1.0"
 dependencies = [
+ "async-trait",
  "axum",
  "bytes",
  "futures-util",
@@ -2029,8 +2030,12 @@ dependencies = [
  "sdkwork-api-gateway-config",
  "sdkwork-api-gateway-observability",
  "sdkwork-api-gateway-registry",
+ "sdkwork-iam-web-adapter",
  "sdkwork-router-iam-app-api",
  "sdkwork-router-iam-backend-api",
+ "sdkwork-web-axum",
+ "sdkwork-web-contract",
+ "sdkwork-web-core",
  "serde",
  "serde_json",
  "thiserror 2.0.18",
@@ -2525,9 +2530,12 @@ dependencies = [
  "sdkwork-commerce-promotion-service",
  "sdkwork-commerce-rpc",
  "sdkwork-commerce-shop-service",
+ "sdkwork-commerce-storage-repository-sqlx",
+ "sdkwork-database-sqlx",
  "sdkwork-iam-context-service",
  "sdkwork-iam-web-adapter",
  "sdkwork-web-core",
+ "serde_json",
  "sqlx",
  "tokio",
  "tokio-stream",
@@ -2633,13 +2641,17 @@ dependencies = [
  "base64",
  "chrono",
  "hmac",
+ "rand_core 0.6.4",
+ "reqwest",
  "sdkwork-database-sqlx",
  "sdkwork-iam-context-service",
  "sdkwork-web-axum",
  "sdkwork-web-core",
+ "serde",
  "serde_json",
  "sha2",
  "sqlx",
+ "uuid",
 ]
 
 [[package]]
@@ -2736,7 +2748,6 @@ version = "0.1.0"
 name = "sdkwork-router-iam-app-api"
 version = "0.1.0"
 dependencies = [
- "aes-gcm",
  "argon2",
  "async-trait",
  "axum",
@@ -2768,9 +2779,13 @@ name = "sdkwork-router-iam-backend-api"
 version = "0.1.0"
 dependencies = [
  "axum",
+ "chrono",
+ "sdkwork-database-sqlx",
  "sdkwork-iam-web-adapter",
  "sdkwork-web-contract",
  "sdkwork-web-core",
+ "serde_json",
+ "sqlx",
 ]
 
 [[package]]

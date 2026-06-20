@@ -14,7 +14,7 @@ async fn sqlite_app_skills_reads_public_catalog_without_trusted_subject() {
     seed_skills(&pool).await;
     sqlx::query(
         r#"
-        INSERT INTO plus_category (
+        INSERT INTO c_category (
             id, tenant_id, organization_id, parent_id, name, description, shop_id,
             type, group_name, code, tags, icon_media_resource_id, icon_object_blob_id,
             icon_resource_snapshot, sort_weight, path, visible, status
@@ -192,7 +192,7 @@ async fn sqlite_app_skills_enable_disable_and_configure_user_installation() {
     let install_count: i64 = sqlx::query(
         r#"
         SELECT COUNT(*) AS total
-        FROM plus_user_agent_skill
+        FROM ai_user_agent_skill
         WHERE tenant_id = 10
           AND organization_id = 20
           AND user_id = 30
@@ -306,7 +306,7 @@ fn owner_subject() -> AppSkillsSubject {
 async fn create_skill_tables(pool: &SqlitePool) {
     for statement in [
         r#"
-        CREATE TABLE plus_category (
+        CREATE TABLE c_category (
             id INTEGER PRIMARY KEY,
             tenant_id INTEGER NOT NULL,
             organization_id INTEGER NOT NULL,
@@ -328,7 +328,7 @@ async fn create_skill_tables(pool: &SqlitePool) {
         )
         "#,
         r#"
-        CREATE TABLE plus_agent_skill_package (
+        CREATE TABLE ai_agent_skill_package (
             id INTEGER PRIMARY KEY,
             tenant_id INTEGER NOT NULL,
             organization_id INTEGER NOT NULL,
@@ -352,7 +352,7 @@ async fn create_skill_tables(pool: &SqlitePool) {
         )
         "#,
         r#"
-        CREATE TABLE plus_agent_skill (
+        CREATE TABLE ai_agent_skill (
             id INTEGER PRIMARY KEY,
             uuid TEXT NOT NULL UNIQUE,
             tenant_id INTEGER NOT NULL,
@@ -406,7 +406,7 @@ async fn create_skill_tables(pool: &SqlitePool) {
         )
         "#,
         r#"
-        CREATE TABLE plus_user_agent_skill (
+        CREATE TABLE ai_user_agent_skill (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             uuid TEXT NOT NULL UNIQUE,
             tenant_id INTEGER NOT NULL,
@@ -426,7 +426,7 @@ async fn create_skill_tables(pool: &SqlitePool) {
         )
         "#,
         r#"
-        CREATE TABLE studio_catalog_action (
+        CREATE TABLE ai_skill_action (
             id INTEGER PRIMARY KEY,
             tenant_id INTEGER NOT NULL,
             organization_id INTEGER NOT NULL,
@@ -444,7 +444,7 @@ async fn create_skill_tables(pool: &SqlitePool) {
         )
         "#,
         r#"
-        CREATE TABLE studio_catalog_asset (
+        CREATE TABLE ai_skill_asset (
             id INTEGER PRIMARY KEY,
             tenant_id INTEGER NOT NULL,
             organization_id INTEGER NOT NULL,
@@ -467,7 +467,7 @@ async fn create_skill_tables(pool: &SqlitePool) {
         )
         "#,
         r#"
-        CREATE TABLE studio_catalog_artifact (
+        CREATE TABLE ai_skill_artifact (
             id INTEGER PRIMARY KEY,
             tenant_id INTEGER NOT NULL,
             organization_id INTEGER NOT NULL,
@@ -500,7 +500,7 @@ async fn create_skill_tables(pool: &SqlitePool) {
 async fn seed_skills(pool: &SqlitePool) {
     sqlx::query(
         r#"
-        INSERT INTO plus_category (
+        INSERT INTO c_category (
             id, tenant_id, organization_id, parent_id, name, description, shop_id,
             type, group_name, code, tags, icon_media_resource_id, icon_object_blob_id,
             icon_resource_snapshot, sort_weight, path, visible, status
@@ -513,7 +513,7 @@ async fn seed_skills(pool: &SqlitePool) {
     .unwrap();
     sqlx::query(
         r#"
-        INSERT INTO plus_agent_skill_package (
+        INSERT INTO ai_agent_skill_package (
             id, tenant_id, organization_id, user_id, package_key, name, summary,
             description, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot,
             cover_media_resource_id, cover_object_blob_id, cover_resource_snapshot,
@@ -663,7 +663,7 @@ async fn insert_skill(
 ) {
     sqlx::query(
         r#"
-        INSERT INTO plus_agent_skill (
+        INSERT INTO ai_agent_skill (
             id, uuid, tenant_id, organization_id, user_id, skill_key, name, summary,
             description, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot,
             cover_media_resource_id, cover_object_blob_id, cover_resource_snapshot,
@@ -718,7 +718,7 @@ async fn insert_skill(
 async fn insert_skill_asset(pool: &SqlitePool) {
     sqlx::query(
         r#"
-        INSERT INTO studio_catalog_asset (
+        INSERT INTO ai_skill_asset (
             id, tenant_id, organization_id, target_type, target_id, artifact_id,
             asset_type, asset_media_resource_id, asset_object_blob_id, asset_resource_snapshot,
             thumbnail_media_resource_id, thumbnail_object_blob_id, thumbnail_resource_snapshot,
@@ -742,7 +742,7 @@ async fn insert_skill_asset(pool: &SqlitePool) {
 async fn insert_skill_artifact(pool: &SqlitePool) {
     sqlx::query(
         r#"
-        INSERT INTO studio_catalog_artifact (
+        INSERT INTO ai_skill_artifact (
             id, tenant_id, organization_id, target_type, target_id, artifact_type,
             platform_type, os_name, version, artifact_ref, artifact_media_resource_id,
             artifact_object_blob_id, artifact_resource_snapshot,
@@ -773,7 +773,7 @@ async fn insert_action(
 ) {
     sqlx::query(
         r#"
-        INSERT INTO studio_catalog_action (
+        INSERT INTO ai_skill_action (
             tenant_id, organization_id, user_id, target_type, target_id, release_id,
             action_type, rating_score, created_at, payload_hash, client_ip_hash,
             user_agent_hash, metadata

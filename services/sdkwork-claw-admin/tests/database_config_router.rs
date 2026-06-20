@@ -4711,7 +4711,7 @@ async fn create_schema(pool: &SqlitePool) {
             permission_id TEXT NOT NULL,
             created_at TEXT NOT NULL
         )"#,
-        r#"CREATE TABLE plus_app (
+        r#"CREATE TABLE platform_app (
             id INTEGER PRIMARY KEY,
             uuid TEXT NOT NULL UNIQUE,
             created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -4746,9 +4746,9 @@ async fn create_schema(pool: &SqlitePool) {
             artifact_object_blob_id INTEGER,
             artifact_resource_snapshot TEXT
         )"#,
-        "CREATE INDEX idx_app_user_id ON plus_app (user_id)",
-        "CREATE INDEX idx_app_project_id ON plus_app (project_id)",
-        "CREATE INDEX idx_app_status ON plus_app (status)",
+        "CREATE INDEX idx_app_user_id ON platform_app (user_id)",
+        "CREATE INDEX idx_app_project_id ON platform_app (project_id)",
+        "CREATE INDEX idx_app_status ON platform_app (status)",
         r#"CREATE TABLE plus_order_worker_dispatch_profile (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             uuid TEXT NOT NULL UNIQUE,
@@ -4768,7 +4768,7 @@ async fn create_schema(pool: &SqlitePool) {
         "CREATE UNIQUE INDEX uk_order_worker_dispatch_profile_user_id ON plus_order_worker_dispatch_profile (user_id)",
         "CREATE INDEX idx_order_worker_dispatch_profile_enabled ON plus_order_worker_dispatch_profile (enabled)",
         "CREATE INDEX idx_order_worker_dispatch_profile_rating_level ON plus_order_worker_dispatch_profile (rating_level)",
-        r#"CREATE TABLE plus_category (
+        r#"CREATE TABLE c_category (
             id INTEGER PRIMARY KEY,
             uuid TEXT NOT NULL UNIQUE,
             created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -4794,7 +4794,7 @@ async fn create_schema(pool: &SqlitePool) {
             visible INTEGER NOT NULL DEFAULT 1,
             status INTEGER NOT NULL DEFAULT 1
         )"#,
-        r#"CREATE TABLE plus_agent_skill_package (
+        r#"CREATE TABLE ai_agent_skill_package (
             id INTEGER PRIMARY KEY,
             uuid TEXT NOT NULL UNIQUE,
             created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -4821,11 +4821,11 @@ async fn create_schema(pool: &SqlitePool) {
             tags TEXT NOT NULL DEFAULT '[]',
             latest_published_at TEXT
         )"#,
-        "CREATE UNIQUE INDEX uk_plus_agent_skill_package_key ON plus_agent_skill_package (tenant_id, organization_id, package_key)",
-        "CREATE INDEX idx_plus_agent_skill_package_user ON plus_agent_skill_package (user_id)",
-        "CREATE INDEX idx_plus_agent_skill_package_category ON plus_agent_skill_package (category_id)",
-        "CREATE INDEX idx_plus_agent_skill_package_market ON plus_agent_skill_package (enabled, featured, sort_weight)",
-        r#"CREATE TABLE plus_agent_skill (
+        "CREATE UNIQUE INDEX uk_ai_agent_skill_package_key ON ai_agent_skill_package (tenant_id, organization_id, package_key)",
+        "CREATE INDEX idx_ai_agent_skill_package_user ON ai_agent_skill_package (user_id)",
+        "CREATE INDEX idx_ai_agent_skill_package_category ON ai_agent_skill_package (category_id)",
+        "CREATE INDEX idx_ai_agent_skill_package_market ON ai_agent_skill_package (enabled, featured, sort_weight)",
+        r#"CREATE TABLE ai_agent_skill (
             id INTEGER PRIMARY KEY,
             uuid TEXT NOT NULL UNIQUE,
             created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -4880,10 +4880,10 @@ async fn create_schema(pool: &SqlitePool) {
             default_config TEXT NOT NULL DEFAULT '{}',
             latest_published_at TEXT
         )"#,
-        "CREATE UNIQUE INDEX uk_plus_agent_skill_key ON plus_agent_skill (tenant_id, organization_id, skill_key)",
-        "CREATE INDEX idx_plus_agent_skill_package ON plus_agent_skill (package_id)",
-        "CREATE INDEX idx_plus_agent_skill_category ON plus_agent_skill (category_id)",
-        "CREATE INDEX idx_plus_agent_skill_market ON plus_agent_skill (enabled, visibility, review_status, market_status, featured, recommend_weight)",
+        "CREATE UNIQUE INDEX uk_ai_agent_skill_key ON ai_agent_skill (tenant_id, organization_id, skill_key)",
+        "CREATE INDEX idx_ai_agent_skill_package ON ai_agent_skill (package_id)",
+        "CREATE INDEX idx_ai_agent_skill_category ON ai_agent_skill (category_id)",
+        "CREATE INDEX idx_ai_agent_skill_market ON ai_agent_skill (enabled, visibility, review_status, market_status, featured, recommend_weight)",
         r#"CREATE TABLE iam_user_login_event (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             uuid TEXT NOT NULL,

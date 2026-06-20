@@ -27,11 +27,11 @@ fn assert_sql_not_contains(sql: &str, forbidden: &str) {
 #[test]
 fn postgres_forum_uses_java_compatible_plus_tables_only() {
     for expected in [
-        "CREATE TABLE IF NOT EXISTS plus_feeds",
-        "CREATE TABLE IF NOT EXISTS plus_comments",
-        "CREATE TABLE IF NOT EXISTS plus_content_vote",
-        "CREATE TABLE IF NOT EXISTS plus_favorite",
-        "id BIGINT PRIMARY KEY",
+        "CREATE TABLE IF NOT EXISTS content_forum_post",
+        "CREATE TABLE IF NOT EXISTS content_comment",
+        "CREATE TABLE IF NOT EXISTS content_reaction",
+        "CREATE TABLE IF NOT EXISTS content_favorite",
+        "id BIGINT NOT NULL PRIMARY KEY",
         "content_type INTEGER NOT NULL",
         "status INTEGER NOT NULL DEFAULT 2",
         "status INTEGER NOT NULL DEFAULT 1",
@@ -40,22 +40,19 @@ fn postgres_forum_uses_java_compatible_plus_tables_only() {
     }
 
     for expected in [
-        "FROM plus_feeds f",
-        "INSERT INTO plus_feeds",
-        "UPDATE plus_feeds",
-        "FROM plus_comments",
-        "INSERT INTO plus_comments",
-        "UPDATE plus_comments",
-        "INSERT INTO plus_content_vote",
-        "DELETE FROM plus_content_vote",
-        "INSERT INTO plus_favorite",
-        "DELETE FROM plus_favorite",
+        "FROM content_forum_post f",
+        "INSERT INTO content_forum_post",
+        "UPDATE content_forum_post",
+        "FROM content_comment",
+        "INSERT INTO content_comment",
+        "UPDATE content_comment",
+        "INSERT INTO content_reaction",
+        "DELETE FROM content_reaction",
+        "INSERT INTO content_favorite",
+        "DELETE FROM content_favorite",
     ] {
         assert_sql_contains(POSTGRES_FORUM_STORE, expected);
     }
-
-    assert_sql_not_contains(POSTGRES_FORUM_STORE, "content_forum_post");
-    assert_sql_not_contains(POSTGRES_FORUM_STORE, "content_forum_comment");
 }
 
 #[test]
@@ -66,12 +63,13 @@ fn postgres_forum_persists_java_enum_codes_and_fact_backed_counts() {
         "const FEEDS_STATUS_PUBLISHED: i64 = 2;",
         "const COMMENT_STATUS_PUBLISHED: i64 = 1;",
         "const FAVORITE_STATUS_ACTIVE: i64 = 1;",
-        "lower(COALESCE(v.rating, '')) = 'like'",
-        "SELECT COUNT(1) FROM plus_content_vote",
-        "SELECT COUNT(1) FROM plus_favorite",
-        "favorite_count = ( SELECT COUNT(1) FROM plus_favorite",
-        "like_count = ( SELECT COUNT(1) FROM plus_content_vote",
-        "likes = ( SELECT COUNT(1) FROM plus_content_vote",
+        "reaction_type = 2",
+        "cancelled_at IS NULL",
+        "SELECT COUNT(1) FROM content_reaction",
+        "SELECT COUNT(1) FROM content_favorite",
+        "favorite_count = ( SELECT COUNT(1) FROM content_favorite",
+        "like_count = ( SELECT COUNT(1) FROM content_reaction",
+        "likes = ( SELECT COUNT(1) FROM content_reaction",
     ] {
         assert_sql_contains(POSTGRES_FORUM_STORE, expected);
     }
@@ -87,8 +85,8 @@ fn postgres_forum_uses_postgres_placeholders_and_jsonb_casts() {
         "$12::jsonb",
         "$13::jsonb",
         "$16::jsonb",
-        "metadata, source, client_ip, device_info",
-        "$8::jsonb",
+        "metadata, source",
+        "$9::jsonb",
     ] {
         assert_sql_contains(POSTGRES_FORUM_STORE, expected);
     }
@@ -105,7 +103,7 @@ fn postgres_forum_comment_reads_are_tenant_scoped() {
         "load_comment_parent(",
         "load_comment_items_by_parent(",
         "require_comment_item(",
-        "scope_filter = postgres_scope_filter(\"plus_comments\")",
+        "scope_filter = postgres_scope_filter(\"content_comment\")",
         "WHERE content_type = $3",
         "WHERE parent_id = $3",
         "WHERE id = $3",
@@ -126,7 +124,7 @@ fn postgres_forum_feed_side_effects_are_subject_scoped() {
         "if load_feed_by_id(&self.pool, feed_id, subject)",
         ".await? .is_none()",
         "increment_feed_view_count(&self.pool, feed_id, subject).await?",
-        "scope_filter = postgres_scope_filter(\"plus_feeds\")",
+        "scope_filter = postgres_scope_filter(\"content_forum_post\")",
         "WHERE id = $3 AND COALESCE(status, 0) = $4 AND {scope_filter}",
         "require_feed(&self.pool, feed_id, Some(subject)).await?",
         "let feed = require_feed(&self.pool, feed_id, Some(subject)).await?",
@@ -143,10 +141,10 @@ fn postgres_forum_feed_side_effects_are_subject_scoped() {
     );
     assert_sql_not_contains(
         POSTGRES_FORUM_STORE,
-        "UPDATE plus_feeds SET view_count = COALESCE(view_count, 0) + 1, updated_at = CURRENT_TIMESTAMP WHERE id = $1 AND COALESCE(status, 0) = $2",
+        "UPDATE content_forum_post SET view_count = COALESCE(view_count, 0) + 1, updated_at = CURRENT_TIMESTAMP WHERE id = $1 AND COALESCE(status, 0) = $2",
     );
     assert_sql_not_contains(
         POSTGRES_FORUM_STORE,
-        "UPDATE plus_feeds SET share_count = COALESCE(share_count, 0) + 1, updated_at = CURRENT_TIMESTAMP WHERE id = $1 AND COALESCE(status, 0) = $2",
+        "UPDATE content_forum_post SET share_count = COALESCE(share_count, 0) + 1, updated_at = CURRENT_TIMESTAMP WHERE id = $1 AND COALESCE(status, 0) = $2",
     );
 }

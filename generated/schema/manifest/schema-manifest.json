@@ -1,21 +1,5 @@
 {
-  "external_legacy_tables": [
-    "plus_card",
-    "plus_card_template",
-    "plus_channel",
-    "plus_channel_account",
-    "plus_channel_proxy",
-    "plus_department",
-    "plus_invitation_code",
-    "plus_invitation_relation",
-    "plus_member_card",
-    "plus_member_level",
-    "plus_partner",
-    "plus_position",
-    "plus_usage_record",
-    "plus_user_address",
-    "plus_user_card"
-  ],
+  "external_legacy_tables": [],
   "generated_tables": [
     "ai_agent",
     "ai_agent_mcp_server",
@@ -23,6 +7,8 @@
     "ai_agent_run",
     "ai_agent_run_step",
     "ai_agent_session",
+    "ai_agent_skill",
+    "ai_agent_skill_package",
     "ai_agent_tool_binding",
     "ai_agent_version",
     "ai_api_endpoint",
@@ -96,12 +82,17 @@
     "ai_runtime_usage_link",
     "ai_site",
     "ai_site_service",
+    "ai_skill_action",
+    "ai_skill_artifact",
+    "ai_skill_asset",
     "ai_usage_fact",
     "ai_usage_service_provider_edge",
+    "ai_user_agent_skill",
     "ai_vendor_api_endpoint",
     "ai_vendor_modality",
     "analytics_service_provider_daily",
     "analytics_service_provider_edge_daily",
+    "c_category",
     "commerce_service_provider_exposure_snapshot",
     "commerce_settlement_export",
     "commerce_usage_pricing_plan",
@@ -113,12 +104,15 @@
     "commerce_usage_statement",
     "commerce_usage_statement_item",
     "content_announcement",
+    "content_comment",
     "content_course",
     "content_course_application",
     "content_course_lesson",
     "content_course_relation",
     "content_course_section",
     "content_doc_page",
+    "content_favorite",
+    "content_forum_post",
     "content_openapi_snapshot",
     "content_reaction",
     "content_sdk_release",
@@ -203,15 +197,10 @@
     "ops_notification_recipient",
     "ops_outbox_event",
     "ops_referral_stat_snapshot",
-    "plus_agent_skill",
-    "plus_agent_skill_package",
-    "plus_app",
-    "plus_category",
-    "plus_comments",
-    "plus_content_vote",
-    "plus_favorite",
-    "plus_feeds",
-    "plus_user_agent_skill",
+    "platform_app",
+    "platform_app_template",
+    "platform_app_template_usage",
+    "platform_app_template_version",
     "storage_default_bucket_policy",
     "storage_gc_job",
     "storage_quota_policy",
@@ -221,12 +210,6 @@
     "storage_usage_counter",
     "storage_usage_ledger",
     "storage_usage_snapshot",
-    "studio_app_template",
-    "studio_app_template_usage",
-    "studio_app_template_version",
-    "studio_catalog_action",
-    "studio_catalog_artifact",
-    "studio_catalog_asset",
     "system_installation_state",
     "system_schema_migration",
     "upload_completion_attempt",
@@ -244,7 +227,7 @@
       "route_scope": "public",
       "tables": [
         "content_doc_page",
-        "plus_app"
+        "platform_app"
       ]
     },
     "/admin/agents": {
@@ -308,15 +291,12 @@
       "required_api_surface": "backend",
       "route_scope": "admin",
       "tables": [
+        "c_category",
         "ops_audit_log",
-        "plus_app",
-        "plus_category",
-        "studio_app_template",
-        "studio_app_template_usage",
-        "studio_app_template_version",
-        "studio_catalog_action",
-        "studio_catalog_artifact",
-        "studio_catalog_asset"
+        "platform_app",
+        "platform_app_template",
+        "platform_app_template_usage",
+        "platform_app_template_version"
       ]
     },
     "/admin/cache": {
@@ -341,6 +321,7 @@
       "required_api_surface": "backend",
       "route_scope": "admin",
       "tables": [
+        "c_category",
         "commerce_price_list",
         "commerce_price_list_item",
         "commerce_product_attribute",
@@ -352,8 +333,7 @@
         "commerce_product_sku_attribute",
         "commerce_product_spu",
         "commerce_product_spu_category",
-        "ops_audit_log",
-        "plus_category"
+        "ops_audit_log"
       ]
     },
     "/admin/catalog/attributes": {
@@ -549,10 +529,7 @@
         "integration_provider_account",
         "integration_provider_health_snapshot",
         "ops_audit_log",
-        "ops_config_snapshot",
-        "plus_channel",
-        "plus_channel_account",
-        "plus_channel_proxy"
+        "ops_config_snapshot"
       ]
     },
     "/admin/channel/resources": {
@@ -617,10 +594,8 @@
         "content_course_lesson",
         "content_course_relation",
         "content_course_section",
-        "content_forum_comment",
         "content_reaction",
-        "ops_audit_log",
-        "plus_comments"
+        "ops_audit_log"
       ]
     },
     "/admin/courses/applications": {
@@ -654,9 +629,8 @@
       "required_api_surface": "backend",
       "route_scope": "admin",
       "tables": [
-        "content_course",
-        "content_forum_comment",
-        "plus_comments"
+        "content_comment",
+        "content_course"
       ]
     },
     "/admin/courses/dashboard": {
@@ -673,9 +647,7 @@
         "content_course_lesson",
         "content_course_relation",
         "content_course_section",
-        "content_forum_comment",
-        "content_reaction",
-        "plus_comments"
+        "content_reaction"
       ]
     },
     "/admin/courses/engagement": {
@@ -1148,14 +1120,6 @@
         "iam_user",
         "ops_audit_log",
         "ops_referral_stat_snapshot",
-        "plus_card",
-        "plus_card_template",
-        "plus_invitation_code",
-        "plus_invitation_relation",
-        "plus_member_card",
-        "plus_member_level",
-        "plus_partner",
-        "plus_user_card",
         "promotion_budget_account",
         "promotion_budget_ledger_entry",
         "promotion_code",
@@ -1558,14 +1522,6 @@
         "iam_user",
         "ops_audit_log",
         "ops_referral_stat_snapshot",
-        "plus_card",
-        "plus_card_template",
-        "plus_invitation_code",
-        "plus_invitation_relation",
-        "plus_member_card",
-        "plus_member_level",
-        "plus_partner",
-        "plus_user_card",
         "promotion_budget_account",
         "promotion_budget_ledger_entry",
         "promotion_code",
@@ -1630,8 +1586,8 @@
         "ai_mcp_server",
         "ai_mcp_server_revision",
         "ai_mcp_tool",
-        "ops_audit_log",
-        "plus_category"
+        "c_category",
+        "ops_audit_log"
       ]
     },
     "/admin/memberships": {
@@ -2671,8 +2627,8 @@
         "ai_prompt",
         "ai_prompt_binding",
         "ai_prompt_version",
-        "ops_audit_log",
-        "plus_category"
+        "c_category",
+        "ops_audit_log"
       ]
     },
     "/admin/ratelimit": {
@@ -2706,8 +2662,7 @@
         "ai_billing_meter",
         "ai_request_trace",
         "ai_routing_decision_log",
-        "ai_usage_fact",
-        "plus_usage_record"
+        "ai_usage_fact"
       ]
     },
     "/admin/runtime-region": {
@@ -2747,8 +2702,7 @@
         "integration_service_provider",
         "integration_service_provider_closure",
         "integration_service_provider_edge",
-        "ops_audit_log",
-        "plus_category"
+        "ops_audit_log"
       ]
     },
     "/admin/service-providers/accounts": {
@@ -2760,8 +2714,7 @@
       "required_api_surface": "backend",
       "route_scope": "admin",
       "tables": [
-        "ops_audit_log",
-        "plus_category"
+        "ops_audit_log"
       ]
     },
     "/admin/service-providers/adjustments": {
@@ -3027,13 +2980,12 @@
       "required_api_surface": "backend",
       "route_scope": "admin",
       "tables": [
-        "ops_audit_log",
-        "plus_agent_skill",
-        "plus_agent_skill_package",
-        "plus_category",
-        "plus_user_agent_skill",
-        "studio_catalog_artifact",
-        "studio_catalog_asset"
+        "ai_agent_skill",
+        "ai_agent_skill_package",
+        "ai_skill_artifact",
+        "ai_skill_asset",
+        "c_category",
+        "ops_audit_log"
       ]
     },
     "/admin/storage": {
@@ -3214,10 +3166,7 @@
         "iam_user",
         "iam_user_login_event",
         "iam_user_role",
-        "ops_audit_log",
-        "plus_department",
-        "plus_position",
-        "plus_user_address"
+        "ops_audit_log"
       ]
     },
     "/admin/wallet": {
@@ -3351,33 +3300,25 @@
     "/apps": {
       "api_surfaces": [
         "app",
-        "backend",
-        "worker"
+        "backend"
       ],
       "required_api_surface": "app",
       "route_scope": "public",
       "tables": [
-        "plus_app",
-        "plus_category",
-        "studio_catalog_action",
-        "studio_catalog_artifact",
-        "studio_catalog_asset"
+        "c_category",
+        "platform_app"
       ]
     },
     "/apps/:id": {
       "api_surfaces": [
         "app",
-        "backend",
-        "worker"
+        "backend"
       ],
       "required_api_surface": "app",
       "route_scope": "public",
       "tables": [
-        "plus_app",
-        "plus_category",
-        "studio_catalog_action",
-        "studio_catalog_artifact",
-        "studio_catalog_asset"
+        "c_category",
+        "platform_app"
       ]
     },
     "/auth/forgot-password": {
@@ -3526,10 +3467,7 @@
         "iam_tenant",
         "iam_user",
         "iam_user_login_event",
-        "iam_user_security_setting",
-        "plus_member_card",
-        "plus_member_level",
-        "plus_user_address"
+        "iam_user_security_setting"
       ]
     },
     "/console/agents": {
@@ -3749,8 +3687,7 @@
         "ai_channel",
         "ai_provider",
         "integration_proxy",
-        "ops_config_snapshot",
-        "plus_channel_proxy"
+        "ops_config_snapshot"
       ]
     },
     "/console/recharge": {
@@ -3810,10 +3747,7 @@
         "iam_gateway_api_key",
         "iam_gateway_api_key_channel_group",
         "ops_audit_log",
-        "ops_config_snapshot",
-        "plus_channel",
-        "plus_channel_account",
-        "plus_channel_proxy"
+        "ops_config_snapshot"
       ]
     },
     "/console/settings": {
@@ -3870,8 +3804,7 @@
         "ai_channel_group",
         "ai_request_trace",
         "ai_routing_decision_log",
-        "ai_usage_fact",
-        "plus_usage_record"
+        "ai_usage_fact"
       ]
     },
     "/console/user": {
@@ -3936,12 +3869,12 @@
       "required_api_surface": "app",
       "route_scope": "public",
       "tables": [
+        "c_category",
+        "content_comment",
         "content_course",
         "content_course_application",
         "content_course_relation",
-        "content_reaction",
-        "plus_category",
-        "plus_comments"
+        "content_reaction"
       ]
     },
     "/courses/:id": {
@@ -3953,13 +3886,13 @@
       "required_api_surface": "app",
       "route_scope": "public",
       "tables": [
+        "c_category",
+        "content_comment",
         "content_course",
         "content_course_lesson",
         "content_course_relation",
         "content_course_section",
-        "content_reaction",
-        "plus_category",
-        "plus_comments"
+        "content_reaction"
       ]
     },
     "/docs": {
@@ -3984,10 +3917,10 @@
       "required_api_surface": "app",
       "route_scope": "public",
       "tables": [
-        "plus_comments",
-        "plus_content_vote",
-        "plus_favorite",
-        "plus_feeds"
+        "c_category",
+        "content_comment",
+        "content_favorite",
+        "content_forum_post"
       ]
     },
     "/forum/:id": {
@@ -3998,10 +3931,9 @@
       "required_api_surface": "app",
       "route_scope": "public",
       "tables": [
-        "plus_comments",
-        "plus_content_vote",
-        "plus_favorite",
-        "plus_feeds"
+        "content_comment",
+        "content_favorite",
+        "content_forum_post"
       ]
     },
     "/models": {
@@ -4162,13 +4094,13 @@
       "required_api_surface": "app",
       "route_scope": "public",
       "tables": [
-        "plus_agent_skill",
-        "plus_agent_skill_package",
-        "plus_category",
-        "plus_user_agent_skill",
-        "studio_catalog_action",
-        "studio_catalog_artifact",
-        "studio_catalog_asset"
+        "ai_agent_skill",
+        "ai_agent_skill_package",
+        "ai_skill_action",
+        "ai_skill_artifact",
+        "ai_skill_asset",
+        "ai_user_agent_skill",
+        "c_category"
       ]
     },
     "/skills-hub/:id": {
@@ -4180,13 +4112,13 @@
       "required_api_surface": "app",
       "route_scope": "public",
       "tables": [
-        "plus_agent_skill",
-        "plus_agent_skill_package",
-        "plus_category",
-        "plus_user_agent_skill",
-        "studio_catalog_action",
-        "studio_catalog_artifact",
-        "studio_catalog_asset"
+        "ai_agent_skill",
+        "ai_agent_skill_package",
+        "ai_skill_action",
+        "ai_skill_artifact",
+        "ai_skill_asset",
+        "ai_user_agent_skill",
+        "c_category"
       ]
     },
     "/vip": {
@@ -4244,17 +4176,17 @@
   },
   "summary": {
     "api_surface_counts": {
-      "app": 209,
-      "backend": 313,
+      "app": 198,
+      "backend": 296,
       "openai_v1": 10,
       "system": 3,
-      "worker": 249
+      "worker": 248
     },
-    "external_legacy_table_count": 15,
+    "external_legacy_table_count": 0,
     "frontend_route_count": 198,
-    "generated_table_count": 216,
-    "legacy_table_count": 24,
-    "table_count": 324
+    "generated_table_count": 215,
+    "legacy_table_count": 0,
+    "table_count": 306
   },
   "tables": [
     {
@@ -6372,6 +6304,525 @@
       "table": "ai_agent_session",
       "unique_constraints": [],
       "write_owner": "agent-runtime"
+    },
+    {
+      "api_surfaces": [
+        "app",
+        "backend"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "uuid",
+          "source": "explicit",
+          "type": "string(255)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "updated_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "v",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "organization_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "data_scope",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "user_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "skill_key",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "name",
+          "source": "explicit",
+          "type": "string(255)"
+        },
+        {
+          "name": "summary",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "description",
+          "source": "explicit",
+          "type": "string(4000)"
+        },
+        {
+          "name": "icon_media_resource_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "icon_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "icon_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "cover_media_resource_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "cover_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "cover_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "category_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "package_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "provider",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "version",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "version_name",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "runtime",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "entrypoint",
+          "source": "explicit",
+          "type": "string(255)"
+        },
+        {
+          "name": "manifest_url",
+          "source": "explicit",
+          "type": "string(500)"
+        },
+        {
+          "name": "repository_url",
+          "source": "explicit",
+          "type": "string(500)"
+        },
+        {
+          "name": "homepage_url",
+          "source": "explicit",
+          "type": "string(500)"
+        },
+        {
+          "name": "documentation_url",
+          "source": "explicit",
+          "type": "string(500)"
+        },
+        {
+          "name": "license_name",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "source_type",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "market_status",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "visibility",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "review_status",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "review_comment",
+          "source": "explicit",
+          "type": "string(1000)"
+        },
+        {
+          "name": "reviewed_by",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "reviewed_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "builtin",
+          "source": "explicit",
+          "type": "bool"
+        },
+        {
+          "name": "is_builtin",
+          "source": "explicit",
+          "type": "bool"
+        },
+        {
+          "name": "enabled",
+          "source": "explicit",
+          "type": "bool"
+        },
+        {
+          "name": "featured",
+          "source": "explicit",
+          "type": "bool"
+        },
+        {
+          "name": "recommend_weight",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "price",
+          "source": "explicit",
+          "type": "decimal"
+        },
+        {
+          "name": "currency",
+          "source": "explicit",
+          "type": "string(16)"
+        },
+        {
+          "name": "install_count",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "rating_avg",
+          "source": "explicit",
+          "type": "decimal"
+        },
+        {
+          "name": "rating_count",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "tags",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "capabilities",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "config_schema",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "default_config",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "latest_published_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L2",
+      "domain": "ai",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/skills-hub",
+        "/skills-hub/:id",
+        "/admin/skill"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "skill_key"
+          ],
+          "name": "uk_ai_agent_skill_key",
+          "unique": true
+        },
+        {
+          "columns": [
+            "user_id"
+          ],
+          "name": "idx_ai_agent_skill_user",
+          "unique": false
+        },
+        {
+          "columns": [
+            "category_id"
+          ],
+          "name": "idx_ai_agent_skill_category",
+          "unique": false
+        },
+        {
+          "columns": [
+            "package_id"
+          ],
+          "name": "idx_ai_agent_skill_package",
+          "unique": false
+        },
+        {
+          "columns": [
+            "market_status",
+            "visibility",
+            "review_status",
+            "enabled"
+          ],
+          "name": "idx_ai_agent_skill_market",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "tenant_entity",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "ai_agent_skill",
+      "unique_constraints": [],
+      "write_owner": "skills-service"
+    },
+    {
+      "api_surfaces": [
+        "app",
+        "backend"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "uuid",
+          "source": "explicit",
+          "type": "string(255)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "updated_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "v",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "organization_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "data_scope",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "user_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "package_key",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "name",
+          "source": "explicit",
+          "type": "string(255)"
+        },
+        {
+          "name": "summary",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "description",
+          "source": "explicit",
+          "type": "string(4000)"
+        },
+        {
+          "name": "icon_media_resource_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "icon_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "icon_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "cover_media_resource_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "cover_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "cover_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "category_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "enabled",
+          "source": "explicit",
+          "type": "bool"
+        },
+        {
+          "name": "featured",
+          "source": "explicit",
+          "type": "bool"
+        },
+        {
+          "name": "sort_weight",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "tags",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "latest_published_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L2",
+      "domain": "ai",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/skills-hub",
+        "/skills-hub/:id",
+        "/admin/skill"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "package_key"
+          ],
+          "name": "uk_ai_agent_skill_package_key",
+          "unique": true
+        },
+        {
+          "columns": [
+            "user_id"
+          ],
+          "name": "idx_ai_agent_skill_package_user",
+          "unique": false
+        },
+        {
+          "columns": [
+            "category_id"
+          ],
+          "name": "idx_ai_agent_skill_package_category",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "tenant_entity",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "ai_agent_skill_package",
+      "unique_constraints": [],
+      "write_owner": "skills-service"
     },
     {
       "api_surfaces": [
@@ -29696,6 +30147,863 @@
     {
       "api_surfaces": [
         "app",
+        "backend"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "group": "event_log",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "user_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "request_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "trace_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "payload_hash",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "retention_until",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "legal_hold",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "name": "target_type",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "target_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "release_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "action_type",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "rating_score",
+          "source": "explicit",
+          "type": "decimal"
+        },
+        {
+          "name": "review_title",
+          "source": "explicit",
+          "type": "string(200)"
+        },
+        {
+          "name": "review_body",
+          "source": "explicit",
+          "type": "text"
+        },
+        {
+          "name": "client_ip_hash",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "user_agent_hash",
+          "source": "explicit",
+          "type": "string(128)"
+        }
+      ],
+      "common_columns": [
+        {
+          "group": "event_log",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "user_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "request_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "trace_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "payload_hash",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "retention_until",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "legal_hold",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        }
+      ],
+      "compliance_level": "L2",
+      "domain": "ai",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/skills-hub",
+        "/skills-hub/:id"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "target_type",
+            "target_id",
+            "action_type",
+            "created_at",
+            "id"
+          ],
+          "name": "idx_ai_skill_action_target",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "user_id",
+            "action_type",
+            "created_at",
+            "id"
+          ],
+          "name": "idx_ai_skill_action_user",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "event_log",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "ai_skill_action",
+      "unique_constraints": [],
+      "write_owner": "skills-service"
+    },
+    {
+      "api_surfaces": [
+        "app",
+        "backend",
+        "worker"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "name": "target_type",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "target_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "artifact_type",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "version",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "platform_type",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "os_name",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "artifact_ref",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "artifact_media_resource_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "artifact_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "artifact_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "artifact_size_bytes",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "runtime",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "frameworks",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "license_name",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "checksum_hash",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "release_notes",
+          "source": "explicit",
+          "type": "text"
+        },
+        {
+          "name": "published_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "deprecated_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        }
+      ],
+      "compliance_level": "L2",
+      "domain": "ai",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/skills-hub",
+        "/skills-hub/:id",
+        "/admin/skill"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "target_type",
+            "target_id",
+            "status",
+            "published_at",
+            "id"
+          ],
+          "name": "idx_ai_skill_artifact_target",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "target_type",
+            "target_id",
+            "artifact_type",
+            "version",
+            "platform_type",
+            "os_name"
+          ],
+          "name": "uk_ai_skill_artifact_version",
+          "unique": true
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "uuid"
+          ],
+          "name": "uk_ai_skill_artifact_uuid",
+          "unique": true
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "tenant_entity",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "ai_skill_artifact",
+      "unique_constraints": [],
+      "write_owner": "skills-service"
+    },
+    {
+      "api_surfaces": [
+        "app",
+        "backend"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "name": "target_type",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "target_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "artifact_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "asset_type",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "asset_media_resource_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "asset_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "asset_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "thumbnail_media_resource_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "thumbnail_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "thumbnail_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "title",
+          "source": "explicit",
+          "type": "string(200)"
+        },
+        {
+          "name": "alt_text",
+          "source": "explicit",
+          "type": "string(500)"
+        },
+        {
+          "name": "mime_type",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "width",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "height",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "duration_seconds",
+          "source": "explicit",
+          "type": "decimal"
+        },
+        {
+          "name": "file_size",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "sort_order",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "published_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        }
+      ],
+      "compliance_level": "L2",
+      "domain": "ai",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/skills-hub",
+        "/skills-hub/:id",
+        "/admin/skill"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "target_type",
+            "target_id",
+            "asset_type",
+            "sort_order",
+            "id"
+          ],
+          "name": "idx_ai_skill_asset_target",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "uuid"
+          ],
+          "name": "uk_ai_skill_asset_uuid",
+          "unique": true
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "tenant_entity",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "ai_skill_asset",
+      "unique_constraints": [],
+      "write_owner": "skills-service"
+    },
+    {
+      "api_surfaces": [
+        "app",
         "backend",
         "openai_v1",
         "worker"
@@ -30636,6 +31944,135 @@
       "table": "ai_usage_service_provider_edge",
       "unique_constraints": [],
       "write_owner": "gateway-runtime"
+    },
+    {
+      "api_surfaces": [
+        "app",
+        "backend"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "uuid",
+          "source": "explicit",
+          "type": "string(255)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "updated_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "v",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "organization_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "data_scope",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "user_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "skill_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "enabled",
+          "source": "explicit",
+          "type": "bool"
+        },
+        {
+          "name": "config",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "installed_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "last_enabled_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "last_used_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "used_count",
+          "source": "explicit",
+          "type": "int64"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L2",
+      "domain": "ai",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/skills-hub",
+        "/skills-hub/:id"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "user_id",
+            "skill_id"
+          ],
+          "name": "uk_ai_user_agent_skill",
+          "unique": true
+        },
+        {
+          "columns": [
+            "skill_id"
+          ],
+          "name": "idx_ai_user_agent_skill_skill",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "tenant_entity",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "ai_user_agent_skill",
+      "unique_constraints": [],
+      "write_owner": "skills-service"
     },
     {
       "api_surfaces": [
@@ -31642,6 +33079,187 @@
       "table": "analytics_service_provider_edge_daily",
       "unique_constraints": [],
       "write_owner": "analytics-worker"
+    },
+    {
+      "api_surfaces": [
+        "app",
+        "backend"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "uuid",
+          "source": "explicit",
+          "type": "string(255)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "updated_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "v",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "organization_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "data_scope",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "category_type",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "name",
+          "source": "explicit",
+          "type": "string(255)"
+        },
+        {
+          "name": "description",
+          "source": "explicit",
+          "type": "text"
+        },
+        {
+          "name": "code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "tags",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "icon_media_resource_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "icon_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "icon_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "sort_weight",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "parent_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "path",
+          "source": "explicit",
+          "type": "string(1024)"
+        },
+        {
+          "name": "visible",
+          "source": "explicit",
+          "type": "bool"
+        },
+        {
+          "name": "status",
+          "source": "explicit",
+          "type": "int32"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L2",
+      "domain": "classification",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/apps",
+        "/apps/:id",
+        "/skills-hub",
+        "/skills-hub/:id",
+        "/courses",
+        "/courses/:id",
+        "/forum",
+        "/admin/catalog",
+        "/admin/app",
+        "/admin/skill",
+        "/admin/prompts",
+        "/admin/mcp"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "category_type",
+            "status",
+            "sort_weight",
+            "id"
+          ],
+          "name": "idx_c_category_type_scope",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "category_type",
+            "parent_id",
+            "sort_weight",
+            "id"
+          ],
+          "name": "idx_c_category_parent",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "category_type",
+            "code"
+          ],
+          "name": "uk_c_category_code",
+          "unique": true
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "tenant_entity",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "c_category",
+      "unique_constraints": [],
+      "write_owner": "catalog-service"
     },
     {
       "api_surfaces": [
@@ -44989,6 +46607,156 @@
       "column_types": {},
       "columns": [
         {
+          "name": "id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "uuid",
+          "source": "explicit",
+          "type": "string(255)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "updated_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "v",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "organization_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "data_scope",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "user_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "content_type",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "content_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "parent_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "root_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "body",
+          "source": "explicit",
+          "type": "text"
+        },
+        {
+          "name": "author",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "likes",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "status",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "client_ip",
+          "source": "explicit",
+          "type": "string(50)"
+        },
+        {
+          "name": "device_info",
+          "source": "explicit",
+          "type": "string(255)"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L2",
+      "domain": "content",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/forum",
+        "/forum/:id",
+        "/courses",
+        "/courses/:id",
+        "/admin/courses/comments"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "content_type",
+            "content_id",
+            "parent_id",
+            "created_at",
+            "id"
+          ],
+          "name": "idx_content_comment_content",
+          "unique": false
+        },
+        {
+          "columns": [
+            "user_id",
+            "created_at",
+            "id"
+          ],
+          "name": "idx_content_comment_user",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "tenant_entity",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "content_comment",
+      "unique_constraints": [],
+      "write_owner": "content-service"
+    },
+    {
+      "api_surfaces": [
+        "app",
+        "backend"
+      ],
+      "column_types": {},
+      "columns": [
+        {
           "group": "tenant_entity",
           "name": "id",
           "source": "common",
@@ -46548,401 +48316,239 @@
     },
     {
       "api_surfaces": [
+        "app",
         "backend"
       ],
       "column_types": {},
       "columns": [
         {
-          "group": "user_entity",
           "name": "id",
-          "source": "common",
-          "type": "common"
+          "source": "explicit",
+          "type": "int64"
         },
         {
-          "group": "user_entity",
           "name": "uuid",
-          "source": "common",
-          "type": "common"
+          "source": "explicit",
+          "type": "string(255)"
         },
         {
-          "group": "user_entity",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "user_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "owner_type",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "owner_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "data_scope",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
           "name": "created_at",
-          "source": "common",
-          "type": "common"
+          "source": "explicit",
+          "type": "instant"
         },
         {
-          "group": "user_entity",
           "name": "updated_at",
-          "source": "common",
-          "type": "common"
+          "source": "explicit",
+          "type": "instant"
         },
         {
-          "group": "user_entity",
-          "name": "version",
-          "source": "common",
-          "type": "common"
+          "name": "v",
+          "source": "explicit",
+          "type": "int64"
         },
         {
-          "group": "user_entity",
-          "name": "deleted_at",
-          "source": "common",
-          "type": "common"
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "int64"
         },
         {
-          "group": "user_entity",
-          "name": "deleted_by",
-          "source": "common",
-          "type": "common"
+          "name": "organization_id",
+          "source": "explicit",
+          "type": "int64"
         },
         {
-          "group": "user_entity",
+          "name": "data_scope",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "user_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "content_type",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "content_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "status",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
           "name": "metadata",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "name": "target_type",
-          "source": "explicit",
-          "type": "enum_int32"
-        },
-        {
-          "name": "target_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "post_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "course_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "parent_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "root_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "body",
-          "source": "explicit",
-          "type": "text"
-        },
-        {
-          "name": "author_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "author_snapshot",
           "source": "explicit",
           "type": "json"
         },
         {
-          "name": "like_count",
+          "name": "source",
           "source": "explicit",
-          "type": "int64"
+          "type": "string(50)"
+        },
+        {
+          "name": "client_ip",
+          "source": "explicit",
+          "type": "string(50)"
+        },
+        {
+          "name": "device_info",
+          "source": "explicit",
+          "type": "string(255)"
         }
       ],
-      "common_columns": [
-        {
-          "group": "user_entity",
-          "name": "id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "uuid",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "user_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "owner_type",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "owner_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "data_scope",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "created_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "updated_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "version",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "deleted_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "deleted_by",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "metadata",
-          "source": "common",
-          "type": "common"
-        }
-      ],
+      "common_columns": [],
       "compliance_level": "L2",
       "domain": "content",
       "foreign_keys": [],
       "frontend_routes": [
-        "/admin/courses",
-        "/admin/courses/dashboard",
-        "/admin/courses/comments"
+        "/forum",
+        "/forum/:id"
       ],
-      "generated_by_this_project": false,
+      "generated_by_this_project": true,
       "indexes": [
         {
           "columns": [
-            "post_id",
-            "parent_id",
-            "created_at",
-            "id"
+            "user_id",
+            "content_type",
+            "content_id"
           ],
-          "name": "idx_content_forum_comment_post",
-          "unique": false
+          "name": "uk_content_favorite_user_content",
+          "unique": true
         },
         {
           "columns": [
-            "target_type",
-            "target_id",
-            "parent_id",
-            "created_at",
-            "id"
+            "content_type",
+            "content_id"
           ],
-          "name": "idx_content_forum_comment_target",
+          "name": "idx_content_favorite_content",
           "unique": false
         }
       ],
       "lifecycle": null,
       "not_null_columns": [],
       "physical_columns": null,
-      "profile": "retired_projection",
+      "profile": "tenant_entity",
       "projection_policy": null,
       "security": null,
       "source_refs": [],
       "source_tables": [],
-      "system_of_record": false,
-      "table": "content_forum_comment",
+      "system_of_record": true,
+      "table": "content_favorite",
       "unique_constraints": [],
-      "write_owner": "legacy-static-fixture"
+      "write_owner": "content-service"
     },
     {
-      "api_surfaces": [],
+      "api_surfaces": [
+        "app",
+        "backend"
+      ],
       "column_types": {},
       "columns": [
         {
-          "group": "user_entity",
           "name": "id",
-          "source": "common",
-          "type": "common"
+          "source": "explicit",
+          "type": "int64"
         },
         {
-          "group": "user_entity",
           "name": "uuid",
-          "source": "common",
-          "type": "common"
+          "source": "explicit",
+          "type": "string(255)"
         },
         {
-          "group": "user_entity",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "user_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "owner_type",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "owner_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "data_scope",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
           "name": "created_at",
-          "source": "common",
-          "type": "common"
+          "source": "explicit",
+          "type": "instant"
         },
         {
-          "group": "user_entity",
           "name": "updated_at",
-          "source": "common",
-          "type": "common"
+          "source": "explicit",
+          "type": "instant"
         },
         {
-          "group": "user_entity",
-          "name": "version",
-          "source": "common",
-          "type": "common"
+          "name": "v",
+          "source": "explicit",
+          "type": "int64"
         },
         {
-          "group": "user_entity",
-          "name": "deleted_at",
-          "source": "common",
-          "type": "common"
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "int64"
         },
         {
-          "group": "user_entity",
-          "name": "deleted_by",
-          "source": "common",
-          "type": "common"
+          "name": "organization_id",
+          "source": "explicit",
+          "type": "int64"
         },
         {
-          "group": "user_entity",
-          "name": "metadata",
-          "source": "common",
-          "type": "common"
+          "name": "data_scope",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "user_id",
+          "source": "explicit",
+          "type": "int64"
         },
         {
           "name": "title",
           "source": "explicit",
-          "type": "string(200)"
+          "type": "string(255)"
         },
         {
-          "name": "body",
+          "name": "summary",
           "source": "explicit",
           "type": "text"
         },
         {
-          "name": "content_snippet",
+          "name": "category_id",
           "source": "explicit",
-          "type": "string(512)"
+          "type": "int64"
         },
         {
-          "name": "category",
+          "name": "content_type",
           "source": "explicit",
-          "type": "string(64)"
+          "type": "int32"
+        },
+        {
+          "name": "content_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "cover_resources",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "resource_list",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "author",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "source",
+          "source": "explicit",
+          "type": "string(100)"
+        },
+        {
+          "name": "source_url",
+          "source": "explicit",
+          "type": "string(500)"
+        },
+        {
+          "name": "publish_time",
+          "source": "explicit",
+          "type": "instant"
         },
         {
           "name": "tags",
@@ -46950,14 +48556,14 @@
           "type": "json"
         },
         {
-          "name": "author_id",
+          "name": "status",
           "source": "explicit",
-          "type": "int64"
+          "type": "int32"
         },
         {
-          "name": "author_snapshot",
+          "name": "view_count",
           "source": "explicit",
-          "type": "json"
+          "type": "int64"
         },
         {
           "name": "like_count",
@@ -46970,152 +48576,102 @@
           "type": "int64"
         },
         {
-          "name": "view_count",
+          "name": "share_count",
           "source": "explicit",
           "type": "int64"
         },
         {
-          "name": "pinned",
+          "name": "favorite_count",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "is_top",
           "source": "explicit",
           "type": "bool"
         },
         {
-          "name": "last_replied_at",
+          "name": "is_hot",
           "source": "explicit",
-          "type": "instant"
+          "type": "bool"
+        },
+        {
+          "name": "is_recommended",
+          "source": "explicit",
+          "type": "bool"
+        },
+        {
+          "name": "sort_order",
+          "source": "explicit",
+          "type": "int32"
         }
       ],
-      "common_columns": [
-        {
-          "group": "user_entity",
-          "name": "id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "uuid",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "user_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "owner_type",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "owner_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "data_scope",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "created_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "updated_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "version",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "deleted_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "deleted_by",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "user_entity",
-          "name": "metadata",
-          "source": "common",
-          "type": "common"
-        }
-      ],
+      "common_columns": [],
       "compliance_level": "L2",
       "domain": "content",
       "foreign_keys": [],
-      "frontend_routes": [],
-      "generated_by_this_project": false,
+      "frontend_routes": [
+        "/forum",
+        "/forum/:id"
+      ],
+      "generated_by_this_project": true,
       "indexes": [
         {
           "columns": [
-            "category",
-            "status",
-            "pinned",
-            "updated_at",
-            "id"
+            "status"
           ],
-          "name": "idx_content_forum_post_category_status",
+          "name": "idx_content_forum_post_status",
           "unique": false
         },
         {
           "columns": [
-            "author_id",
-            "created_at",
-            "id"
+            "user_id"
           ],
-          "name": "idx_content_forum_post_author",
+          "name": "idx_content_forum_post_user_id",
+          "unique": false
+        },
+        {
+          "columns": [
+            "category_id"
+          ],
+          "name": "idx_content_forum_post_category_id",
+          "unique": false
+        },
+        {
+          "columns": [
+            "content_type"
+          ],
+          "name": "idx_content_forum_post_content_type",
+          "unique": false
+        },
+        {
+          "columns": [
+            "publish_time"
+          ],
+          "name": "idx_content_forum_post_publish_time",
+          "unique": false
+        },
+        {
+          "columns": [
+            "status",
+            "publish_time"
+          ],
+          "name": "idx_content_forum_post_status_publish_time",
           "unique": false
         }
       ],
       "lifecycle": null,
       "not_null_columns": [],
       "physical_columns": null,
-      "profile": "retired_projection",
+      "profile": "tenant_entity",
       "projection_policy": null,
       "security": null,
       "source_refs": [],
       "source_tables": [],
-      "system_of_record": false,
+      "system_of_record": true,
       "table": "content_forum_post",
       "unique_constraints": [],
-      "write_owner": "legacy-static-fixture"
+      "write_owner": "content-service"
     },
     {
       "api_surfaces": [
@@ -66907,646 +68463,7 @@
           "type": "int64"
         },
         {
-          "name": "skill_key",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "name",
-          "source": "explicit",
-          "type": "string(255)"
-        },
-        {
-          "name": "summary",
-          "source": "explicit",
-          "type": "string(512)"
-        },
-        {
-          "name": "description",
-          "source": "explicit",
-          "type": "string(4000)"
-        },
-        {
-          "name": "icon_media_resource_id",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "icon_object_blob_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "icon_resource_snapshot",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "cover_media_resource_id",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "cover_object_blob_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "cover_resource_snapshot",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
           "name": "category_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "package_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "provider",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "version",
-          "source": "explicit",
-          "type": "string(64)"
-        },
-        {
-          "name": "version_name",
-          "source": "explicit",
-          "type": "string(64)"
-        },
-        {
-          "name": "runtime",
-          "source": "explicit",
-          "type": "string(64)"
-        },
-        {
-          "name": "entrypoint",
-          "source": "explicit",
-          "type": "string(255)"
-        },
-        {
-          "name": "manifest_url",
-          "source": "explicit",
-          "type": "string(500)"
-        },
-        {
-          "name": "repository_url",
-          "source": "explicit",
-          "type": "string(500)"
-        },
-        {
-          "name": "homepage_url",
-          "source": "explicit",
-          "type": "string(500)"
-        },
-        {
-          "name": "documentation_url",
-          "source": "explicit",
-          "type": "string(500)"
-        },
-        {
-          "name": "license_name",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "source_type",
-          "source": "explicit",
-          "type": "string(32)"
-        },
-        {
-          "name": "market_status",
-          "source": "explicit",
-          "type": "string(32)"
-        },
-        {
-          "name": "visibility",
-          "source": "explicit",
-          "type": "string(32)"
-        },
-        {
-          "name": "review_status",
-          "source": "explicit",
-          "type": "string(32)"
-        },
-        {
-          "name": "review_comment",
-          "source": "explicit",
-          "type": "string(1000)"
-        },
-        {
-          "name": "reviewed_by",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "reviewed_at",
-          "source": "explicit",
-          "type": "instant"
-        },
-        {
-          "name": "builtin",
-          "source": "explicit",
-          "type": "bool"
-        },
-        {
-          "name": "is_builtin",
-          "source": "explicit",
-          "type": "bool"
-        },
-        {
-          "name": "enabled",
-          "source": "explicit",
-          "type": "bool"
-        },
-        {
-          "name": "featured",
-          "source": "explicit",
-          "type": "bool"
-        },
-        {
-          "name": "recommend_weight",
-          "source": "explicit",
-          "type": "int32"
-        },
-        {
-          "name": "price",
-          "source": "explicit",
-          "type": "decimal"
-        },
-        {
-          "name": "currency",
-          "source": "explicit",
-          "type": "string(16)"
-        },
-        {
-          "name": "install_count",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "rating_avg",
-          "source": "explicit",
-          "type": "decimal"
-        },
-        {
-          "name": "rating_count",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "tags",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "capabilities",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "config_schema",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "default_config",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "latest_published_at",
-          "source": "explicit",
-          "type": "instant"
-        }
-      ],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/skills-hub",
-        "/skills-hub/:id",
-        "/admin/skill"
-      ],
-      "generated_by_this_project": true,
-      "indexes": [
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "skill_key"
-          ],
-          "name": "uk_plus_agent_skill_key",
-          "unique": true
-        },
-        {
-          "columns": [
-            "user_id"
-          ],
-          "name": "idx_plus_agent_skill_user",
-          "unique": false
-        },
-        {
-          "columns": [
-            "category_id"
-          ],
-          "name": "idx_plus_agent_skill_category",
-          "unique": false
-        },
-        {
-          "columns": [
-            "package_id"
-          ],
-          "name": "idx_plus_agent_skill_package",
-          "unique": false
-        },
-        {
-          "columns": [
-            "market_status",
-            "visibility",
-            "review_status",
-            "enabled"
-          ],
-          "name": "idx_plus_agent_skill_market",
-          "unique": false
-        },
-        {
-          "columns": [
-            "featured",
-            "recommend_weight"
-          ],
-          "name": "idx_plus_agent_skill_featured",
-          "unique": false
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "data_scope"
-          ],
-          "name": "idx_plus_agent_skill_seed_scope",
-          "unique": false
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "data_scope",
-            "source_type",
-            "provider",
-            "market_status",
-            "visibility",
-            "review_status",
-            "builtin",
-            "is_builtin",
-            "enabled"
-          ],
-          "name": "idx_plus_agent_skill_official_seed",
-          "unique": false
-        }
-      ],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": {
-        "inherited": "PlusUserBaseEntity columns",
-        "own": [
-          "skill_key",
-          "name",
-          "summary",
-          "description",
-          "icon_media_resource_id",
-          "icon_object_blob_id",
-          "icon_resource_snapshot",
-          "cover_media_resource_id",
-          "cover_object_blob_id",
-          "cover_resource_snapshot",
-          "category_id",
-          "package_id",
-          "provider",
-          "version",
-          "runtime",
-          "entrypoint",
-          "manifest_url",
-          "repository_url",
-          "homepage_url",
-          "documentation_url",
-          "license_name",
-          "source_type",
-          "market_status",
-          "visibility",
-          "review_status",
-          "review_comment",
-          "reviewed_by",
-          "reviewed_at",
-          "is_builtin",
-          "enabled",
-          "featured",
-          "recommend_weight",
-          "price",
-          "currency",
-          "install_count",
-          "rating_avg",
-          "rating_count",
-          "tags",
-          "capabilities",
-          "config_schema",
-          "default_config",
-          "latest_published_at"
-        ]
-      },
-      "profile": "java_compatible_owned",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "plus_agent_skill",
-      "unique_constraints": [],
-      "write_owner": null
-    },
-    {
-      "api_surfaces": [
-        "app",
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [
-        {
-          "name": "id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "uuid",
-          "source": "explicit",
-          "type": "string(255)"
-        },
-        {
-          "name": "created_at",
-          "source": "explicit",
-          "type": "instant"
-        },
-        {
-          "name": "updated_at",
-          "source": "explicit",
-          "type": "instant"
-        },
-        {
-          "name": "v",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "tenant_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "organization_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "data_scope",
-          "source": "explicit",
-          "type": "int32"
-        },
-        {
-          "name": "user_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "package_key",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "name",
-          "source": "explicit",
-          "type": "string(255)"
-        },
-        {
-          "name": "summary",
-          "source": "explicit",
-          "type": "string(512)"
-        },
-        {
-          "name": "description",
-          "source": "explicit",
-          "type": "string(4000)"
-        },
-        {
-          "name": "icon_media_resource_id",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "icon_object_blob_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "icon_resource_snapshot",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "cover_media_resource_id",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "cover_object_blob_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "cover_resource_snapshot",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "category_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "enabled",
-          "source": "explicit",
-          "type": "bool"
-        },
-        {
-          "name": "featured",
-          "source": "explicit",
-          "type": "bool"
-        },
-        {
-          "name": "sort_weight",
-          "source": "explicit",
-          "type": "int32"
-        },
-        {
-          "name": "tags",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "latest_published_at",
-          "source": "explicit",
-          "type": "instant"
-        }
-      ],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/skills-hub",
-        "/skills-hub/:id",
-        "/admin/skill"
-      ],
-      "generated_by_this_project": true,
-      "indexes": [
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "package_key"
-          ],
-          "name": "uk_plus_agent_skill_package_key",
-          "unique": true
-        },
-        {
-          "columns": [
-            "user_id"
-          ],
-          "name": "idx_plus_agent_skill_package_user",
-          "unique": false
-        },
-        {
-          "columns": [
-            "category_id"
-          ],
-          "name": "idx_plus_agent_skill_package_category",
-          "unique": false
-        },
-        {
-          "columns": [
-            "enabled",
-            "featured",
-            "sort_weight"
-          ],
-          "name": "idx_plus_agent_skill_package_market",
-          "unique": false
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "data_scope",
-            "id",
-            "uuid",
-            "package_key",
-            "name",
-            "sort_weight",
-            "enabled",
-            "featured"
-          ],
-          "name": "idx_plus_agent_skill_package_seed_scope",
-          "unique": false
-        }
-      ],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": {
-        "inherited": "PlusUserBaseEntity columns",
-        "own": [
-          "package_key",
-          "name",
-          "summary",
-          "description",
-          "icon_media_resource_id",
-          "icon_object_blob_id",
-          "icon_resource_snapshot",
-          "cover_media_resource_id",
-          "cover_object_blob_id",
-          "cover_resource_snapshot",
-          "category_id",
-          "enabled",
-          "featured",
-          "sort_weight",
-          "tags",
-          "latest_published_at"
-        ]
-      },
-      "profile": "java_compatible_owned",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "plus_agent_skill_package",
-      "unique_constraints": [],
-      "write_owner": null
-    },
-    {
-      "api_surfaces": [
-        "app",
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [
-        {
-          "name": "id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "uuid",
-          "source": "explicit",
-          "type": "string(255)"
-        },
-        {
-          "name": "created_at",
-          "source": "explicit",
-          "type": "instant"
-        },
-        {
-          "name": "updated_at",
-          "source": "explicit",
-          "type": "instant"
-        },
-        {
-          "name": "v",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "tenant_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "organization_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "data_scope",
-          "source": "explicit",
-          "type": "int32"
-        },
-        {
-          "name": "user_id",
           "source": "explicit",
           "type": "int64"
         },
@@ -67669,11 +68586,26 @@
           "name": "artifact_resource_snapshot",
           "source": "explicit",
           "type": "json"
+        },
+        {
+          "name": "download_count",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "rating_avg",
+          "source": "explicit",
+          "type": "decimal"
+        },
+        {
+          "name": "rating_count",
+          "source": "explicit",
+          "type": "int64"
         }
       ],
       "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
+      "compliance_level": "L2",
+      "domain": "platform",
       "foreign_keys": [],
       "frontend_routes": [
         "/",
@@ -67687,174 +68619,135 @@
           "columns": [
             "user_id"
           ],
-          "name": "idx_app_user_id",
+          "name": "idx_platform_app_user_id",
           "unique": false
         },
         {
           "columns": [
             "project_id"
           ],
-          "name": "idx_app_project_id",
+          "name": "idx_platform_app_project_id",
           "unique": false
         },
         {
           "columns": [
             "status"
           ],
-          "name": "idx_app_status",
+          "name": "idx_platform_app_status",
+          "unique": false
+        },
+        {
+          "columns": [
+            "category_id"
+          ],
+          "name": "idx_platform_app_category_id",
           "unique": false
         }
       ],
       "lifecycle": null,
       "not_null_columns": [],
-      "physical_columns": {
-        "inherited": "PlusUserBaseEntity columns",
-        "own": [
-          "name",
-          "icon",
-          "resource_list",
-          "project_id",
-          "description",
-          "version",
-          "icon_media_resource_id",
-          "icon_object_blob_id",
-          "icon_resource_snapshot",
-          "access_url",
-          "config",
-          "status",
-          "app_type",
-          "platforms",
-          "install_platforms",
-          "install_skill",
-          "install_config",
-          "release_notes",
-          "package_name",
-          "bundle_id",
-          "store_url",
-          "artifact_media_resource_id",
-          "artifact_object_blob_id",
-          "artifact_resource_snapshot"
-        ]
-      },
-      "profile": "router_owned_standard",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "plus_app",
-      "unique_constraints": [],
-      "write_owner": "sdkwork-claw-product"
-    },
-    {
-      "api_surfaces": [
-        "app",
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/admin/marketing",
-        "/admin/marketing/referrals"
-      ],
-      "generated_by_this_project": false,
-      "indexes": [],
-      "lifecycle": null,
-      "not_null_columns": [],
       "physical_columns": null,
-      "profile": "legacy_compatible",
+      "profile": "tenant_entity",
       "projection_policy": null,
       "security": null,
       "source_refs": [],
       "source_tables": [],
       "system_of_record": true,
-      "table": "plus_card",
+      "table": "platform_app",
       "unique_constraints": [],
-      "write_owner": null
+      "write_owner": "app-center-service"
     },
     {
       "api_surfaces": [
-        "app",
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/admin/marketing",
-        "/admin/marketing/referrals"
-      ],
-      "generated_by_this_project": false,
-      "indexes": [],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "legacy_compatible",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "plus_card_template",
-      "unique_constraints": [],
-      "write_owner": null
-    },
-    {
-      "api_surfaces": [
-        "app",
-        "backend"
+        "backend",
+        "worker"
       ],
       "column_types": {},
       "columns": [
         {
+          "group": "tenant_entity",
           "name": "id",
-          "source": "explicit",
-          "type": "int64"
+          "source": "common",
+          "type": "common"
         },
         {
+          "group": "tenant_entity",
           "name": "uuid",
-          "source": "explicit",
-          "type": "string(255)"
+          "source": "common",
+          "type": "common"
         },
         {
-          "name": "created_at",
-          "source": "explicit",
-          "type": "instant"
-        },
-        {
-          "name": "updated_at",
-          "source": "explicit",
-          "type": "instant"
-        },
-        {
-          "name": "v",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
+          "group": "tenant_entity",
           "name": "tenant_id",
-          "source": "explicit",
-          "type": "int64"
+          "source": "common",
+          "type": "common"
         },
         {
+          "group": "tenant_entity",
           "name": "organization_id",
-          "source": "explicit",
-          "type": "int64"
+          "source": "common",
+          "type": "common"
         },
         {
+          "group": "tenant_entity",
           "name": "data_scope",
-          "source": "explicit",
-          "type": "int32"
+          "source": "common",
+          "type": "common"
         },
         {
-          "name": "name",
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "name": "template_no",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "template_code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "template_name",
           "source": "explicit",
           "type": "string(255)"
         },
@@ -67864,29 +68757,34 @@
           "type": "text"
         },
         {
-          "name": "shop_id",
+          "name": "category_id",
           "source": "explicit",
           "type": "int64"
         },
         {
-          "name": "type",
-          "source": "explicit",
-          "type": "int32"
-        },
-        {
-          "name": "group_name",
+          "name": "category_code",
           "source": "explicit",
           "type": "string(128)"
         },
         {
-          "name": "code",
+          "name": "template_type",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "runtime",
           "source": "explicit",
           "type": "string(128)"
         },
         {
-          "name": "tags",
+          "name": "framework",
           "source": "explicit",
-          "type": "json"
+          "type": "string(128)"
+        },
+        {
+          "name": "language",
+          "source": "explicit",
+          "type": "string(64)"
         },
         {
           "name": "icon_media_resource_id",
@@ -67904,1343 +68802,445 @@
           "type": "json"
         },
         {
-          "name": "sort_weight",
+          "name": "cover_media_resource_id",
           "source": "explicit",
-          "type": "int32"
+          "type": "string(128)"
         },
         {
-          "name": "parent_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "path",
-          "source": "explicit",
-          "type": "string(1024)"
-        },
-        {
-          "name": "visible",
-          "source": "explicit",
-          "type": "bool"
-        },
-        {
-          "name": "status",
-          "source": "explicit",
-          "type": "int32"
-        }
-      ],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/apps",
-        "/apps/:id",
-        "/skills-hub",
-        "/skills-hub/:id",
-        "/courses",
-        "/courses/:id",
-        "/admin/catalog",
-        "/admin/app",
-        "/admin/skill",
-        "/admin/prompts",
-        "/admin/mcp",
-        "/admin/service-providers",
-        "/admin/service-providers/accounts"
-      ],
-      "generated_by_this_project": true,
-      "indexes": [
-        {
-          "columns": [
-            "shop_id"
-          ],
-          "name": "idx_category_shop_id",
-          "unique": false
-        },
-        {
-          "columns": [
-            "type",
-            "shop_id"
-          ],
-          "name": "idx_category_type_shop",
-          "unique": false
-        }
-      ],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": {
-        "inherited": "PlusBaseTreeEntity columns",
-        "own": [
-          "name",
-          "description",
-          "shop_id",
-          "type",
-          "group_name",
-          "code",
-          "tags",
-          "icon_media_resource_id",
-          "icon_object_blob_id",
-          "icon_resource_snapshot",
-          "sort_weight",
-          "parent_id",
-          "path",
-          "visible",
-          "status"
-        ]
-      },
-      "profile": "java_compatible_owned",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "plus_category",
-      "unique_constraints": [],
-      "write_owner": null
-    },
-    {
-      "api_surfaces": [
-        "app",
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/console/routing",
-        "/admin/channel"
-      ],
-      "generated_by_this_project": false,
-      "indexes": [],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "legacy_compatible",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "plus_channel",
-      "unique_constraints": [],
-      "write_owner": null
-    },
-    {
-      "api_surfaces": [
-        "app",
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/console/routing",
-        "/admin/channel"
-      ],
-      "generated_by_this_project": false,
-      "indexes": [],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "legacy_compatible",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "plus_channel_account",
-      "unique_constraints": [],
-      "write_owner": null
-    },
-    {
-      "api_surfaces": [
-        "app",
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/console/routing",
-        "/console/providers",
-        "/admin/channel"
-      ],
-      "generated_by_this_project": false,
-      "indexes": [],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "legacy_compatible",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "plus_channel_proxy",
-      "unique_constraints": [],
-      "write_owner": null
-    },
-    {
-      "api_surfaces": [
-        "app",
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [
-        {
-          "name": "id",
+          "name": "cover_object_blob_id",
           "source": "explicit",
           "type": "int64"
         },
         {
-          "name": "uuid",
-          "source": "explicit",
-          "type": "string(255)"
-        },
-        {
-          "name": "created_at",
-          "source": "explicit",
-          "type": "instant"
-        },
-        {
-          "name": "updated_at",
-          "source": "explicit",
-          "type": "instant"
-        },
-        {
-          "name": "v",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "tenant_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "organization_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "data_scope",
-          "source": "explicit",
-          "type": "int32"
-        },
-        {
-          "name": "user_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "parent_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "path",
-          "source": "explicit",
-          "type": "string(1024)"
-        },
-        {
-          "name": "sort_weight",
-          "source": "explicit",
-          "type": "int32"
-        },
-        {
-          "name": "content",
-          "source": "explicit",
-          "type": "text"
-        },
-        {
-          "name": "content_type",
-          "source": "explicit",
-          "type": "int32"
-        },
-        {
-          "name": "content_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "status",
-          "source": "explicit",
-          "type": "int32"
-        },
-        {
-          "name": "likes",
-          "source": "explicit",
-          "type": "int32"
-        },
-        {
-          "name": "reply_count",
-          "source": "explicit",
-          "type": "int32"
-        },
-        {
-          "name": "is_top",
-          "source": "explicit",
-          "type": "bool"
-        },
-        {
-          "name": "ip_address",
-          "source": "explicit",
-          "type": "string(64)"
-        },
-        {
-          "name": "device_info",
-          "source": "explicit",
-          "type": "string(255)"
-        },
-        {
-          "name": "author",
+          "name": "cover_resource_snapshot",
           "source": "explicit",
           "type": "json"
+        },
+        {
+          "name": "visibility",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "publish_status",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "featured",
+          "source": "explicit",
+          "type": "bool"
+        },
+        {
+          "name": "sort_weight",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "owner_user_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "source_app_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "git_repo_url",
+          "source": "explicit",
+          "type": "string(1024)"
+        },
+        {
+          "name": "git_ref",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "git_sub_path",
+          "source": "explicit",
+          "type": "string(1024)"
+        },
+        {
+          "name": "current_version_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "app_config_schema",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "default_app_config",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "variable_schema",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "dependency_manifest",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "capability_manifest",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "published_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "deprecated_at",
+          "source": "explicit",
+          "type": "instant"
         }
       ],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/forum",
-        "/forum/:id",
-        "/courses",
-        "/courses/:id",
-        "/admin/courses",
-        "/admin/courses/dashboard",
-        "/admin/courses/comments"
-      ],
-      "generated_by_this_project": true,
-      "indexes": [
+      "common_columns": [
         {
-          "columns": [
-            "content_id",
-            "content_type"
-          ],
-          "name": "idx_comment_content_id_type",
-          "unique": false
-        },
-        {
-          "columns": [
-            "user_id"
-          ],
-          "name": "idx_comment_user_id",
-          "unique": false
-        },
-        {
-          "columns": [
-            "status"
-          ],
-          "name": "idx_comment_status",
-          "unique": false
-        },
-        {
-          "columns": [
-            "parent_id"
-          ],
-          "name": "idx_comment_parent_id",
-          "unique": false
-        }
-      ],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": {
-        "inherited": "PlusUserBaseTreeEntity columns",
-        "own": [
-          "content",
-          "content_type",
-          "content_id",
-          "status",
-          "likes",
-          "reply_count",
-          "is_top",
-          "ip_address",
-          "device_info",
-          "author"
-        ]
-      },
-      "profile": "java_compatible_owned",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "plus_comments",
-      "unique_constraints": [],
-      "write_owner": null
-    },
-    {
-      "api_surfaces": [
-        "app",
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [
-        {
+          "group": "tenant_entity",
           "name": "id",
-          "source": "explicit",
-          "type": "int64"
+          "source": "common",
+          "type": "common"
         },
         {
+          "group": "tenant_entity",
           "name": "uuid",
-          "source": "explicit",
-          "type": "string(255)"
+          "source": "common",
+          "type": "common"
         },
         {
-          "name": "created_at",
-          "source": "explicit",
-          "type": "instant"
-        },
-        {
-          "name": "updated_at",
-          "source": "explicit",
-          "type": "instant"
-        },
-        {
-          "name": "v",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
+          "group": "tenant_entity",
           "name": "tenant_id",
-          "source": "explicit",
-          "type": "int64"
+          "source": "common",
+          "type": "common"
         },
         {
+          "group": "tenant_entity",
           "name": "organization_id",
-          "source": "explicit",
-          "type": "int64"
+          "source": "common",
+          "type": "common"
         },
         {
+          "group": "tenant_entity",
           "name": "data_scope",
-          "source": "explicit",
-          "type": "int32"
+          "source": "common",
+          "type": "common"
         },
         {
-          "name": "user_id",
-          "source": "explicit",
-          "type": "int64"
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
         },
         {
-          "name": "content_type",
-          "source": "explicit",
-          "type": "int32"
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
         },
         {
-          "name": "content_id",
-          "source": "explicit",
-          "type": "int64"
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
         },
         {
-          "name": "rating",
-          "source": "explicit",
-          "type": "string(20)"
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
         },
         {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
           "name": "metadata",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "source",
-          "source": "explicit",
-          "type": "string(50)"
-        },
-        {
-          "name": "client_ip",
-          "source": "explicit",
-          "type": "string(50)"
-        },
-        {
-          "name": "device_info",
-          "source": "explicit",
-          "type": "string(255)"
+          "source": "common",
+          "type": "common"
         }
       ],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
+      "compliance_level": "L2",
+      "domain": "platform",
       "foreign_keys": [],
       "frontend_routes": [
-        "/forum",
-        "/forum/:id"
+        "/admin/app"
       ],
       "generated_by_this_project": true,
       "indexes": [
         {
           "columns": [
-            "user_id",
-            "content_type",
-            "content_id"
+            "tenant_id",
+            "template_no"
           ],
-          "name": "idx_vote_user_content",
+          "name": "uk_platform_app_template_no",
           "unique": true
         },
         {
           "columns": [
-            "content_type",
-            "content_id"
+            "tenant_id",
+            "organization_id",
+            "template_code"
           ],
-          "name": "idx_vote_content",
-          "unique": false
-        },
-        {
-          "columns": [
-            "rating"
-          ],
-          "name": "idx_vote_rating",
-          "unique": false
-        },
-        {
-          "columns": [
-            "created_at"
-          ],
-          "name": "idx_vote_created_at",
-          "unique": false
-        }
-      ],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": {
-        "inherited": "PlusUserBaseEntity columns",
-        "own": [
-          "content_type",
-          "content_id",
-          "rating",
-          "metadata",
-          "source",
-          "client_ip",
-          "device_info"
-        ]
-      },
-      "profile": "java_compatible_owned",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "plus_content_vote",
-      "unique_constraints": [],
-      "write_owner": null
-    },
-    {
-      "api_surfaces": [
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/admin/user"
-      ],
-      "generated_by_this_project": false,
-      "indexes": [],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "legacy_compatible",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "plus_department",
-      "unique_constraints": [],
-      "write_owner": null
-    },
-    {
-      "api_surfaces": [
-        "app",
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [
-        {
-          "name": "id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "uuid",
-          "source": "explicit",
-          "type": "string(255)"
-        },
-        {
-          "name": "created_at",
-          "source": "explicit",
-          "type": "instant"
-        },
-        {
-          "name": "updated_at",
-          "source": "explicit",
-          "type": "instant"
-        },
-        {
-          "name": "v",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "tenant_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "organization_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "data_scope",
-          "source": "explicit",
-          "type": "int32"
-        },
-        {
-          "name": "user_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "title",
-          "source": "explicit",
-          "type": "string(200)"
-        },
-        {
-          "name": "image",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "content_type",
-          "source": "explicit",
-          "type": "int32"
-        },
-        {
-          "name": "content_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "folder_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "remark",
-          "source": "explicit",
-          "type": "string(500)"
-        },
-        {
-          "name": "tags",
-          "source": "explicit",
-          "type": "string(500)"
-        },
-        {
-          "name": "sort_weight",
-          "source": "explicit",
-          "type": "int32"
-        },
-        {
-          "name": "is_private",
-          "source": "explicit",
-          "type": "bool"
-        },
-        {
-          "name": "status",
-          "source": "explicit",
-          "type": "int32"
-        },
-        {
-          "name": "view_count",
-          "source": "explicit",
-          "type": "int32"
-        },
-        {
-          "name": "last_viewed_at",
-          "source": "explicit",
-          "type": "instant"
-        }
-      ],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/forum",
-        "/forum/:id"
-      ],
-      "generated_by_this_project": true,
-      "indexes": [
-        {
-          "columns": [
-            "user_id",
-            "content_type",
-            "content_id"
-          ],
-          "name": "idx_favorite_user_content",
+          "name": "uk_platform_app_template_code",
           "unique": true
         },
         {
           "columns": [
-            "user_id"
-          ],
-          "name": "idx_favorite_user_id",
-          "unique": false
-        },
-        {
-          "columns": [
-            "content_type",
-            "content_id"
-          ],
-          "name": "idx_favorite_content",
-          "unique": false
-        },
-        {
-          "columns": [
-            "folder_id"
-          ],
-          "name": "idx_favorite_folder_id",
-          "unique": false
-        },
-        {
-          "columns": [
-            "created_at"
-          ],
-          "name": "idx_favorite_created_at",
-          "unique": false
-        }
-      ],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": {
-        "inherited": "PlusUserBaseEntity columns",
-        "own": [
-          "title",
-          "image",
-          "content_type",
-          "content_id",
-          "folder_id",
-          "remark",
-          "tags",
-          "sort_weight",
-          "is_private",
-          "status",
-          "view_count",
-          "last_viewed_at"
-        ]
-      },
-      "profile": "java_compatible_owned",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "plus_favorite",
-      "unique_constraints": [],
-      "write_owner": null
-    },
-    {
-      "api_surfaces": [
-        "app",
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [
-        {
-          "name": "id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "uuid",
-          "source": "explicit",
-          "type": "string(255)"
-        },
-        {
-          "name": "created_at",
-          "source": "explicit",
-          "type": "instant"
-        },
-        {
-          "name": "updated_at",
-          "source": "explicit",
-          "type": "instant"
-        },
-        {
-          "name": "v",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "tenant_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "organization_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "data_scope",
-          "source": "explicit",
-          "type": "int32"
-        },
-        {
-          "name": "user_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "title",
-          "source": "explicit",
-          "type": "string(255)"
-        },
-        {
-          "name": "summary",
-          "source": "explicit",
-          "type": "text"
-        },
-        {
-          "name": "category_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "content_type",
-          "source": "explicit",
-          "type": "int32"
-        },
-        {
-          "name": "content_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "cover_resources",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "resource_list",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "author",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "source",
-          "source": "explicit",
-          "type": "string(100)"
-        },
-        {
-          "name": "source_url",
-          "source": "explicit",
-          "type": "string(500)"
-        },
-        {
-          "name": "publish_time",
-          "source": "explicit",
-          "type": "instant"
-        },
-        {
-          "name": "tags",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "status",
-          "source": "explicit",
-          "type": "int32"
-        },
-        {
-          "name": "view_count",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "like_count",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "comment_count",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "share_count",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "favorite_count",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "is_top",
-          "source": "explicit",
-          "type": "bool"
-        },
-        {
-          "name": "is_hot",
-          "source": "explicit",
-          "type": "bool"
-        },
-        {
-          "name": "is_recommended",
-          "source": "explicit",
-          "type": "bool"
-        },
-        {
-          "name": "sort_order",
-          "source": "explicit",
-          "type": "int32"
-        }
-      ],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/forum",
-        "/forum/:id"
-      ],
-      "generated_by_this_project": true,
-      "indexes": [
-        {
-          "columns": [
-            "status"
-          ],
-          "name": "idx_feeds_status",
-          "unique": false
-        },
-        {
-          "columns": [
-            "user_id"
-          ],
-          "name": "idx_feeds_user_id",
-          "unique": false
-        },
-        {
-          "columns": [
-            "category_id"
-          ],
-          "name": "idx_feeds_category_id",
-          "unique": false
-        },
-        {
-          "columns": [
-            "content_type"
-          ],
-          "name": "idx_feeds_content_type",
-          "unique": false
-        },
-        {
-          "columns": [
-            "publish_time"
-          ],
-          "name": "idx_feeds_publish_time",
-          "unique": false
-        },
-        {
-          "columns": [
+            "tenant_id",
+            "organization_id",
+            "visibility",
+            "publish_status",
             "status",
-            "publish_time"
+            "updated_at",
+            "id"
           ],
-          "name": "idx_feeds_status_publish_time",
+          "name": "idx_platform_app_template_scope_status",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "category_id",
+            "publish_status",
+            "sort_weight",
+            "id"
+          ],
+          "name": "idx_platform_app_template_category",
           "unique": false
         }
       ],
       "lifecycle": null,
       "not_null_columns": [],
-      "physical_columns": {
-        "inherited": "PlusUserBaseEntity columns",
-        "own": [
-          "title",
-          "summary",
-          "category_id",
-          "content_type",
-          "content_id",
-          "cover_resources",
-          "resource_list",
-          "author",
-          "source",
-          "source_url",
-          "publish_time",
-          "tags",
-          "status",
-          "view_count",
-          "like_count",
-          "comment_count",
-          "share_count",
-          "favorite_count",
-          "is_top",
-          "is_hot",
-          "is_recommended",
-          "sort_order"
-        ]
-      },
-      "profile": "java_compatible_owned",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "plus_feeds",
-      "unique_constraints": [],
-      "write_owner": null
-    },
-    {
-      "api_surfaces": [
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/admin/marketing",
-        "/admin/marketing/referrals"
-      ],
-      "generated_by_this_project": false,
-      "indexes": [],
-      "lifecycle": null,
-      "not_null_columns": [],
       "physical_columns": null,
-      "profile": "legacy_compatible",
+      "profile": "tenant_entity",
       "projection_policy": null,
       "security": null,
       "source_refs": [],
       "source_tables": [],
       "system_of_record": true,
-      "table": "plus_invitation_code",
+      "table": "platform_app_template",
       "unique_constraints": [],
-      "write_owner": null
+      "write_owner": "app-center-service"
     },
     {
       "api_surfaces": [
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/admin/marketing",
-        "/admin/marketing/referrals"
-      ],
-      "generated_by_this_project": false,
-      "indexes": [],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "legacy_compatible",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "plus_invitation_relation",
-      "unique_constraints": [],
-      "write_owner": null
-    },
-    {
-      "api_surfaces": [
-        "app",
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/console/account",
-        "/admin/marketing",
-        "/admin/marketing/referrals"
-      ],
-      "generated_by_this_project": false,
-      "indexes": [],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "legacy_compatible",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "plus_member_card",
-      "unique_constraints": [],
-      "write_owner": null
-    },
-    {
-      "api_surfaces": [
-        "app",
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/console/account",
-        "/admin/marketing",
-        "/admin/marketing/referrals"
-      ],
-      "generated_by_this_project": false,
-      "indexes": [],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "legacy_compatible",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "plus_member_level",
-      "unique_constraints": [],
-      "write_owner": null
-    },
-    {
-      "api_surfaces": [
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/admin/marketing",
-        "/admin/marketing/referrals"
-      ],
-      "generated_by_this_project": false,
-      "indexes": [],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "legacy_compatible",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "plus_partner",
-      "unique_constraints": [],
-      "write_owner": null
-    },
-    {
-      "api_surfaces": [
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/admin/user"
-      ],
-      "generated_by_this_project": false,
-      "indexes": [],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "legacy_compatible",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "plus_position",
-      "unique_constraints": [],
-      "write_owner": null
-    },
-    {
-      "api_surfaces": [
-        "app",
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/console/usage",
-        "/admin/record"
-      ],
-      "generated_by_this_project": false,
-      "indexes": [],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "legacy_compatible",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "plus_usage_record",
-      "unique_constraints": [],
-      "write_owner": null
-    },
-    {
-      "api_surfaces": [
-        "app",
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/console/account",
-        "/admin/user"
-      ],
-      "generated_by_this_project": false,
-      "indexes": [],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "legacy_compatible",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "plus_user_address",
-      "unique_constraints": [],
-      "write_owner": null
-    },
-    {
-      "api_surfaces": [
-        "app",
-        "backend"
+        "backend",
+        "worker"
       ],
       "column_types": {},
       "columns": [
         {
+          "group": "event_log",
           "name": "id",
-          "source": "explicit",
-          "type": "int64"
+          "source": "common",
+          "type": "common"
         },
         {
+          "group": "event_log",
           "name": "uuid",
-          "source": "explicit",
-          "type": "string(255)"
+          "source": "common",
+          "type": "common"
         },
         {
-          "name": "created_at",
-          "source": "explicit",
-          "type": "instant"
-        },
-        {
-          "name": "updated_at",
-          "source": "explicit",
-          "type": "instant"
-        },
-        {
-          "name": "v",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
+          "group": "event_log",
           "name": "tenant_id",
-          "source": "explicit",
-          "type": "int64"
+          "source": "common",
+          "type": "common"
         },
         {
+          "group": "event_log",
           "name": "organization_id",
-          "source": "explicit",
-          "type": "int64"
+          "source": "common",
+          "type": "common"
         },
         {
-          "name": "data_scope",
-          "source": "explicit",
-          "type": "int32"
-        },
-        {
+          "group": "event_log",
           "name": "user_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "request_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "trace_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "payload_hash",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "retention_until",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "legal_hold",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "name": "template_id",
           "source": "explicit",
           "type": "int64"
         },
         {
-          "name": "skill_id",
+          "name": "template_version_id",
           "source": "explicit",
           "type": "int64"
         },
         {
-          "name": "enabled",
+          "name": "target_app_id",
           "source": "explicit",
-          "type": "bool"
+          "type": "int64"
         },
         {
-          "name": "config",
+          "name": "usage_type",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "input_snapshot",
           "source": "explicit",
           "type": "json"
         },
         {
-          "name": "installed_at",
+          "name": "output_snapshot",
           "source": "explicit",
-          "type": "instant"
-        },
-        {
-          "name": "last_enabled_at",
-          "source": "explicit",
-          "type": "instant"
-        },
-        {
-          "name": "last_used_at",
-          "source": "explicit",
-          "type": "instant"
-        },
-        {
-          "name": "used_count",
-          "source": "explicit",
-          "type": "int64"
+          "type": "json"
         }
       ],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
+      "common_columns": [
+        {
+          "group": "event_log",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "user_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "request_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "trace_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "payload_hash",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "retention_until",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "legal_hold",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        }
+      ],
+      "compliance_level": "L2",
+      "domain": "platform",
       "foreign_keys": [],
       "frontend_routes": [
-        "/skills-hub",
-        "/skills-hub/:id",
-        "/admin/skill"
+        "/admin/app"
       ],
       "generated_by_this_project": true,
       "indexes": [
@@ -69248,87 +69248,312 @@
           "columns": [
             "tenant_id",
             "organization_id",
+            "template_id",
+            "template_version_id",
+            "created_at",
+            "id"
+          ],
+          "name": "idx_platform_app_template_usage_template",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "target_app_id",
+            "created_at",
+            "id"
+          ],
+          "name": "idx_platform_app_template_usage_target",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
             "user_id",
-            "skill_id"
+            "created_at",
+            "id"
           ],
-          "name": "uk_plus_user_agent_skill",
-          "unique": true
-        },
-        {
-          "columns": [
-            "user_id"
-          ],
-          "name": "idx_plus_user_agent_skill_user",
-          "unique": false
-        },
-        {
-          "columns": [
-            "skill_id"
-          ],
-          "name": "idx_plus_user_agent_skill_skill",
-          "unique": false
-        },
-        {
-          "columns": [
-            "enabled"
-          ],
-          "name": "idx_plus_user_agent_skill_enabled",
+          "name": "idx_platform_app_template_usage_user",
           "unique": false
         }
       ],
       "lifecycle": null,
       "not_null_columns": [],
-      "physical_columns": {
-        "inherited": "PlusUserBaseEntity columns",
-        "own": [
-          "skill_id",
-          "enabled",
-          "config",
-          "installed_at",
-          "last_enabled_at",
-          "last_used_at",
-          "used_count"
-        ]
-      },
-      "profile": "java_compatible_owned",
+      "physical_columns": null,
+      "profile": "event_log",
       "projection_policy": null,
       "security": null,
       "source_refs": [],
       "source_tables": [],
       "system_of_record": true,
-      "table": "plus_user_agent_skill",
+      "table": "platform_app_template_usage",
       "unique_constraints": [],
-      "write_owner": "sdkwork-claw-router"
+      "write_owner": "app-center-service"
     },
     {
       "api_surfaces": [
-        "app",
-        "backend"
+        "backend",
+        "worker"
       ],
       "column_types": {},
-      "columns": [],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
+      "columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "name": "template_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "version_no",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "artifact_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "changelog",
+          "source": "explicit",
+          "type": "text"
+        },
+        {
+          "name": "file_manifest",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "dependency_manifest",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "capability_manifest",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "variable_schema",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "app_config_schema",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "default_app_config",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "publish_status",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "published_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "deprecated_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        }
+      ],
+      "compliance_level": "L2",
+      "domain": "platform",
       "foreign_keys": [],
       "frontend_routes": [
-        "/admin/marketing",
-        "/admin/marketing/referrals"
+        "/admin/app"
       ],
-      "generated_by_this_project": false,
-      "indexes": [],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "template_id",
+            "version_no"
+          ],
+          "name": "uk_platform_app_template_version_no",
+          "unique": true
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "template_id",
+            "publish_status",
+            "created_at",
+            "id"
+          ],
+          "name": "idx_platform_app_template_version_template",
+          "unique": false
+        }
+      ],
       "lifecycle": null,
       "not_null_columns": [],
       "physical_columns": null,
-      "profile": "legacy_compatible",
+      "profile": "tenant_entity",
       "projection_policy": null,
       "security": null,
       "source_refs": [],
       "source_tables": [],
       "system_of_record": true,
-      "table": "plus_user_card",
+      "table": "platform_app_template_version",
       "unique_constraints": [],
-      "write_owner": null
+      "write_owner": "app-center-service"
     },
     {
       "api_surfaces": [
@@ -75607,1888 +75832,6 @@
       "table": "storage_usage_snapshot",
       "unique_constraints": [],
       "write_owner": "storage-service"
-    },
-    {
-      "api_surfaces": [
-        "backend",
-        "worker"
-      ],
-      "column_types": {},
-      "columns": [
-        {
-          "group": "tenant_entity",
-          "name": "id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "uuid",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "data_scope",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "created_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "updated_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "version",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_by",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "metadata",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "name": "template_no",
-          "source": "explicit",
-          "type": "string(64)"
-        },
-        {
-          "name": "template_code",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "template_name",
-          "source": "explicit",
-          "type": "string(255)"
-        },
-        {
-          "name": "description",
-          "source": "explicit",
-          "type": "text"
-        },
-        {
-          "name": "category_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "category_code",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "template_type",
-          "source": "explicit",
-          "type": "string(64)"
-        },
-        {
-          "name": "runtime",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "framework",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "language",
-          "source": "explicit",
-          "type": "string(64)"
-        },
-        {
-          "name": "icon_media_resource_id",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "icon_object_blob_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "icon_resource_snapshot",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "cover_media_resource_id",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "cover_object_blob_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "cover_resource_snapshot",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "visibility",
-          "source": "explicit",
-          "type": "enum_int32"
-        },
-        {
-          "name": "publish_status",
-          "source": "explicit",
-          "type": "enum_int32"
-        },
-        {
-          "name": "featured",
-          "source": "explicit",
-          "type": "bool"
-        },
-        {
-          "name": "sort_weight",
-          "source": "explicit",
-          "type": "int32"
-        },
-        {
-          "name": "owner_user_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "source_app_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "git_repo_url",
-          "source": "explicit",
-          "type": "string(1024)"
-        },
-        {
-          "name": "git_ref",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "git_sub_path",
-          "source": "explicit",
-          "type": "string(1024)"
-        },
-        {
-          "name": "current_version_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "app_config_schema",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "default_app_config",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "variable_schema",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "dependency_manifest",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "capability_manifest",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "metadata",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "published_at",
-          "source": "explicit",
-          "type": "instant"
-        },
-        {
-          "name": "deprecated_at",
-          "source": "explicit",
-          "type": "instant"
-        }
-      ],
-      "common_columns": [
-        {
-          "group": "tenant_entity",
-          "name": "id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "uuid",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "data_scope",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "created_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "updated_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "version",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_by",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "metadata",
-          "source": "common",
-          "type": "common"
-        }
-      ],
-      "compliance_level": "L2",
-      "domain": "studio",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/admin/app"
-      ],
-      "generated_by_this_project": true,
-      "indexes": [
-        {
-          "columns": [
-            "tenant_id",
-            "template_no"
-          ],
-          "name": "uk_studio_app_template_no",
-          "unique": true
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "template_code"
-          ],
-          "name": "uk_studio_app_template_code",
-          "unique": true
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "visibility",
-            "publish_status",
-            "status",
-            "updated_at",
-            "id"
-          ],
-          "name": "idx_studio_app_template_scope_status",
-          "unique": false
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "category_id",
-            "publish_status",
-            "sort_weight",
-            "id"
-          ],
-          "name": "idx_studio_app_template_category",
-          "unique": false
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "template_type",
-            "runtime",
-            "framework",
-            "status",
-            "id"
-          ],
-          "name": "idx_studio_app_template_type_runtime",
-          "unique": false
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "git_repo_url",
-            "git_sub_path",
-            "status",
-            "id"
-          ],
-          "name": "idx_studio_app_template_git_source",
-          "unique": false
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "featured",
-            "sort_weight",
-            "id"
-          ],
-          "name": "idx_studio_app_template_featured",
-          "unique": false
-        }
-      ],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "tenant_entity",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "studio_app_template",
-      "unique_constraints": [],
-      "write_owner": "app-center-service"
-    },
-    {
-      "api_surfaces": [
-        "backend",
-        "worker"
-      ],
-      "column_types": {},
-      "columns": [
-        {
-          "group": "tenant_entity",
-          "name": "id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "uuid",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "data_scope",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "created_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "updated_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "version",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_by",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "metadata",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "name": "template_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "template_version_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "target_app_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "user_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "request_id",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "usage_type",
-          "source": "explicit",
-          "type": "enum_int32"
-        },
-        {
-          "name": "input_snapshot",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "output_snapshot",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "metadata",
-          "source": "explicit",
-          "type": "json"
-        }
-      ],
-      "common_columns": [
-        {
-          "group": "tenant_entity",
-          "name": "id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "uuid",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "data_scope",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "created_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "updated_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "version",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_by",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "metadata",
-          "source": "common",
-          "type": "common"
-        }
-      ],
-      "compliance_level": "L2",
-      "domain": "studio",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/admin/app"
-      ],
-      "generated_by_this_project": true,
-      "indexes": [
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "template_id",
-            "template_version_id",
-            "created_at",
-            "id"
-          ],
-          "name": "idx_studio_app_template_usage_template",
-          "unique": false
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "target_app_id",
-            "created_at",
-            "id"
-          ],
-          "name": "idx_studio_app_template_usage_target",
-          "unique": false
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "user_id",
-            "created_at",
-            "id"
-          ],
-          "name": "idx_studio_app_template_usage_user",
-          "unique": false
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "request_id",
-            "id"
-          ],
-          "name": "idx_studio_app_template_usage_request",
-          "unique": false
-        }
-      ],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "event_log",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "studio_app_template_usage",
-      "unique_constraints": [],
-      "write_owner": "app-center-service"
-    },
-    {
-      "api_surfaces": [
-        "backend",
-        "worker"
-      ],
-      "column_types": {},
-      "columns": [
-        {
-          "group": "tenant_entity",
-          "name": "id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "uuid",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "data_scope",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "created_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "updated_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "version",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_by",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "metadata",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "name": "template_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "version_no",
-          "source": "explicit",
-          "type": "string(64)"
-        },
-        {
-          "name": "artifact_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "changelog",
-          "source": "explicit",
-          "type": "text"
-        },
-        {
-          "name": "file_manifest",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "dependency_manifest",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "capability_manifest",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "variable_schema",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "app_config_schema",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "default_app_config",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "publish_status",
-          "source": "explicit",
-          "type": "enum_int32"
-        },
-        {
-          "name": "metadata",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "published_at",
-          "source": "explicit",
-          "type": "instant"
-        },
-        {
-          "name": "deprecated_at",
-          "source": "explicit",
-          "type": "instant"
-        }
-      ],
-      "common_columns": [
-        {
-          "group": "tenant_entity",
-          "name": "id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "uuid",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "data_scope",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "created_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "updated_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "version",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_by",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "metadata",
-          "source": "common",
-          "type": "common"
-        }
-      ],
-      "compliance_level": "L2",
-      "domain": "studio",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/admin/app"
-      ],
-      "generated_by_this_project": true,
-      "indexes": [
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "template_id",
-            "version_no"
-          ],
-          "name": "uk_studio_app_template_version_no",
-          "unique": true
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "template_id",
-            "publish_status",
-            "created_at",
-            "id"
-          ],
-          "name": "idx_studio_app_template_version_template",
-          "unique": false
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "artifact_id",
-            "status",
-            "id"
-          ],
-          "name": "idx_studio_app_template_version_artifact",
-          "unique": false
-        }
-      ],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "tenant_entity",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "studio_app_template_version",
-      "unique_constraints": [],
-      "write_owner": "app-center-service"
-    },
-    {
-      "api_surfaces": [
-        "app",
-        "backend",
-        "worker"
-      ],
-      "column_types": {},
-      "columns": [
-        {
-          "group": "event_log",
-          "name": "id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "uuid",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "user_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "request_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "trace_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "payload_hash",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "created_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "retention_until",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "legal_hold",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "metadata",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "name": "target_type",
-          "source": "explicit",
-          "type": "enum_int32"
-        },
-        {
-          "name": "target_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "release_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "action_type",
-          "source": "explicit",
-          "type": "enum_int32"
-        },
-        {
-          "name": "rating_score",
-          "source": "explicit",
-          "type": "decimal"
-        },
-        {
-          "name": "review_title",
-          "source": "explicit",
-          "type": "string(200)"
-        },
-        {
-          "name": "review_body",
-          "source": "explicit",
-          "type": "text"
-        },
-        {
-          "name": "client_ip_hash",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "user_agent_hash",
-          "source": "explicit",
-          "type": "string(128)"
-        }
-      ],
-      "common_columns": [
-        {
-          "group": "event_log",
-          "name": "id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "uuid",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "user_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "request_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "trace_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "payload_hash",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "created_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "retention_until",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "legal_hold",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "metadata",
-          "source": "common",
-          "type": "common"
-        }
-      ],
-      "compliance_level": "L2",
-      "domain": "studio",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/apps",
-        "/apps/:id",
-        "/skills-hub",
-        "/skills-hub/:id",
-        "/admin/app"
-      ],
-      "generated_by_this_project": true,
-      "indexes": [
-        {
-          "columns": [
-            "target_type",
-            "target_id",
-            "action_type",
-            "created_at",
-            "id"
-          ],
-          "name": "idx_studio_catalog_action_target_type",
-          "unique": false
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "user_id",
-            "action_type",
-            "created_at",
-            "id"
-          ],
-          "name": "idx_studio_catalog_action_user",
-          "unique": false
-        }
-      ],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "event_log",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "studio_catalog_action",
-      "unique_constraints": [],
-      "write_owner": "portal-content-service"
-    },
-    {
-      "api_surfaces": [
-        "app",
-        "backend",
-        "worker"
-      ],
-      "column_types": {},
-      "columns": [
-        {
-          "group": "tenant_entity",
-          "name": "id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "uuid",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "data_scope",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "created_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "updated_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "version",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_by",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "metadata",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "name": "target_type",
-          "source": "explicit",
-          "type": "enum_int32"
-        },
-        {
-          "name": "target_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "artifact_type",
-          "source": "explicit",
-          "type": "enum_int32"
-        },
-        {
-          "name": "version",
-          "source": "explicit",
-          "type": "string(64)"
-        },
-        {
-          "name": "platform_type",
-          "source": "explicit",
-          "type": "string(64)"
-        },
-        {
-          "name": "os_name",
-          "source": "explicit",
-          "type": "string(64)"
-        },
-        {
-          "name": "artifact_ref",
-          "source": "explicit",
-          "type": "string(512)"
-        },
-        {
-          "name": "artifact_media_resource_id",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "artifact_object_blob_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "artifact_resource_snapshot",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "artifact_size_bytes",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "runtime",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "frameworks",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "license_name",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "checksum_hash",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "release_notes",
-          "source": "explicit",
-          "type": "text"
-        },
-        {
-          "name": "published_at",
-          "source": "explicit",
-          "type": "instant"
-        },
-        {
-          "name": "deprecated_at",
-          "source": "explicit",
-          "type": "instant"
-        }
-      ],
-      "common_columns": [
-        {
-          "group": "tenant_entity",
-          "name": "id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "uuid",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "data_scope",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "created_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "updated_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "version",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_by",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "metadata",
-          "source": "common",
-          "type": "common"
-        }
-      ],
-      "compliance_level": "L2",
-      "domain": "studio",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/apps",
-        "/apps/:id",
-        "/skills-hub",
-        "/skills-hub/:id",
-        "/admin/app",
-        "/admin/skill"
-      ],
-      "generated_by_this_project": true,
-      "indexes": [
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "target_type",
-            "target_id",
-            "status",
-            "published_at",
-            "id"
-          ],
-          "name": "idx_studio_catalog_artifact_target",
-          "unique": false
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "target_type",
-            "target_id",
-            "artifact_type",
-            "version",
-            "platform_type",
-            "os_name"
-          ],
-          "name": "uk_studio_catalog_artifact_version",
-          "unique": true
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "uuid"
-          ],
-          "name": "uk_studio_catalog_artifact_uuid",
-          "unique": true
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "status"
-          ],
-          "name": "idx_studio_catalog_artifact_seed_source",
-          "unique": false
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "target_type"
-          ],
-          "name": "idx_studio_catalog_artifact_seed_kind",
-          "unique": false
-        }
-      ],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "tenant_entity",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "studio_catalog_artifact",
-      "unique_constraints": [],
-      "write_owner": "portal-content-service"
-    },
-    {
-      "api_surfaces": [
-        "app",
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [
-        {
-          "group": "tenant_entity",
-          "name": "id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "uuid",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "data_scope",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "created_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "updated_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "version",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_by",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "metadata",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "name": "target_type",
-          "source": "explicit",
-          "type": "enum_int32"
-        },
-        {
-          "name": "target_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "artifact_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "asset_type",
-          "source": "explicit",
-          "type": "enum_int32"
-        },
-        {
-          "name": "asset_media_resource_id",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "asset_object_blob_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "asset_resource_snapshot",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "thumbnail_media_resource_id",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "thumbnail_object_blob_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "thumbnail_resource_snapshot",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "title",
-          "source": "explicit",
-          "type": "string(200)"
-        },
-        {
-          "name": "alt_text",
-          "source": "explicit",
-          "type": "string(500)"
-        },
-        {
-          "name": "mime_type",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "width",
-          "source": "explicit",
-          "type": "int32"
-        },
-        {
-          "name": "height",
-          "source": "explicit",
-          "type": "int32"
-        },
-        {
-          "name": "duration_seconds",
-          "source": "explicit",
-          "type": "decimal"
-        },
-        {
-          "name": "file_size",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "sort_order",
-          "source": "explicit",
-          "type": "int32"
-        },
-        {
-          "name": "published_at",
-          "source": "explicit",
-          "type": "instant"
-        }
-      ],
-      "common_columns": [
-        {
-          "group": "tenant_entity",
-          "name": "id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "uuid",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "data_scope",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "created_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "updated_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "version",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_by",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "metadata",
-          "source": "common",
-          "type": "common"
-        }
-      ],
-      "compliance_level": "L2",
-      "domain": "studio",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/apps",
-        "/apps/:id",
-        "/skills-hub",
-        "/skills-hub/:id",
-        "/admin/app",
-        "/admin/skill"
-      ],
-      "generated_by_this_project": true,
-      "indexes": [
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "target_type",
-            "target_id",
-            "asset_type",
-            "sort_order",
-            "id"
-          ],
-          "name": "idx_studio_catalog_asset_target",
-          "unique": false
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "artifact_id",
-            "sort_order",
-            "id"
-          ],
-          "name": "idx_studio_catalog_asset_artifact",
-          "unique": false
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "uuid"
-          ],
-          "name": "uk_studio_catalog_asset_uuid",
-          "unique": true
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "status"
-          ],
-          "name": "idx_studio_catalog_asset_seed_source",
-          "unique": false
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "target_type"
-          ],
-          "name": "idx_studio_catalog_asset_seed_kind",
-          "unique": false
-        }
-      ],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "tenant_entity",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "studio_catalog_asset",
-      "unique_constraints": [],
-      "write_owner": "portal-content-service"
     },
     {
       "api_surfaces": [

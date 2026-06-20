@@ -72,16 +72,16 @@ class SchemaGuardianTest(unittest.TestCase):
                 tables:
                   - table: plus_user
                     domain: legacy
-                  - table: plus_agent_skill
+                  - table: ai_agent_skill
                     domain: legacy
                     foreign_keys:
-                      - { name: fk_plus_agent_skill_user, columns: [user_id], references_table: plus_user, references_columns: [id] }
+                      - { name: fk_ai_agent_skill_user, columns: [user_id], references_table: plus_user, references_columns: [id] }
                   - table: ops_referral_stat_snapshot
                     domain: ops
                     profile: projection
-                    source_tables: [plus_user, plus_agent_skill]
+                    source_tables: [plus_user, ai_agent_skill]
                     projection_policy:
-                      does_not_replace: [plus_user, plus_agent_skill]
+                      does_not_replace: [plus_user, ai_agent_skill]
                 """,
             )
 
@@ -90,7 +90,7 @@ class SchemaGuardianTest(unittest.TestCase):
             self.assertFalse(result.ok)
             self.assertIn("legacy identity table must be removed: plus_user", result.messages)
             self.assertIn(
-                "plus_agent_skill foreign key fk_plus_agent_skill_user must reference iam_user instead of plus_user",
+                "ai_agent_skill foreign key fk_ai_agent_skill_user must reference iam_user instead of plus_user",
                 result.messages,
             )
             self.assertIn(
@@ -587,7 +587,7 @@ class SchemaGuardianTest(unittest.TestCase):
                   - table: studio_skill_listing
                     domain: studio
                     frontend_routes: [/skills-hub]
-                  - table: plus_agent_skill
+                  - table: ai_agent_skill
                     domain: legacy
                     frontend_routes: [/skills-hub]
                 """,
@@ -663,11 +663,11 @@ class SchemaGuardianTest(unittest.TestCase):
                     generated_by_this_project: false
                     frontend_routes: [/console/checkout, /console/recharge, /admin/finance]
                     api_surfaces: [app, backend, worker]
-                  - table: plus_agent_skill
+                  - table: ai_agent_skill
                     domain: legacy
                     frontend_routes: [/skills-hub, /skills-hub/:id]
                     api_surfaces: [app, backend]
-                  - table: plus_category
+                  - table: c_category
                     domain: legacy
                     frontend_routes: [/skills-hub, /skills-hub/:id]
                     api_surfaces: [app, backend]
@@ -892,12 +892,12 @@ class SchemaGuardianTest(unittest.TestCase):
                   legacy_compatibility_guardrails:
                     forbidden_synonym_tables: []
                 tables:
-                  - table: plus_agent_skill
+                  - table: ai_agent_skill
                     domain: legacy
                   - table: ops_skill_stat_snapshot
                     domain: ops
                     profile: projection
-                    source_tables: [plus_agent_skill]
+                    source_tables: [ai_agent_skill]
                 """,
             )
 
@@ -905,7 +905,7 @@ class SchemaGuardianTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "ops_skill_stat_snapshot projection over legacy table plus_agent_skill must declare projection_policy.does_not_replace",
+                "ops_skill_stat_snapshot projection over legacy table ai_agent_skill must declare projection_policy.does_not_replace",
                 result.messages,
             )
 

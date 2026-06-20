@@ -479,10 +479,10 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_manifest(
                 root,
                 {
-                    "routes": {"/apps": {"tables": ["plus_app"]}},
+                    "routes": {"/apps": {"tables": ["platform_app"]}},
                     "tables": [
                         {
-                            "table": "plus_app",
+                            "table": "platform_app",
                             "columns": [],
                             "physical_columns": {"own": ["name", "resource_list", "release_notes"]},
                         }
@@ -494,9 +494,9 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 """
                 routes:
                   - route: /apps
-                    required_tables: [plus_app]
+                    required_tables: [platform_app]
                     required_columns:
-                      plus_app: [name, resource_list, release_notes]
+                      platform_app: [name, resource_list, release_notes]
                 """,
             )
 

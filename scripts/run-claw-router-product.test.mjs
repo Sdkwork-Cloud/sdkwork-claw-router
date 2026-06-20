@@ -24,14 +24,14 @@ const validReleaseEnv = Object.freeze({
 });
 const defaultDevPostgresDatabaseUrl =
   'postgresql://sdkwork_ai_dev:sdkworkdev123@[::1]:5432/sdkwork_ai_dev?sslmode=disable';
-const defaultProdPostgresDatabase = 'sdkwork_ai_prod';
-const defaultProdPostgresUsername = 'sdkworkprod@2026++';
+const defaultProdPostgresDatabase = 'sdkwork';
+const defaultProdPostgresUsername = 'sdkwork';
 const defaultProdPostgresUrl =
-  'postgresql://sdkworkprod%402026%2B%2B:change-me@db.example.com:5432/sdkwork_ai_prod?sslmode=require';
+  'postgresql://sdkworkprod%402026%2B%2B:change-me@db.example.com:5432/sdkwork?sslmode=require';
 const defaultProdPostgresUrlWithoutPassword =
-  'postgresql://sdkworkprod%402026%2B%2B@db.example.com:5432/sdkwork_ai_prod?sslmode=require';
+  'postgresql://sdkworkprod%402026%2B%2B@db.example.com:5432/sdkwork?sslmode=require';
 const productionPostgresDsnExample =
-  'postgresql://sdkworkprod%402026%2B%2B:<password>@db.example.com:5432/sdkwork_ai_prod';
+  'postgresql://sdkworkprod%402026%2B%2B:<password>@db.example.com:5432/sdkwork';
 const defaultDevSqliteDatabaseUrl = 'sqlite://target/dev/clawrouter.sqlite';
 const devDatabaseEnvNames = Object.freeze([
   'SDKWORK_CLAW_DATABASE_URL',

@@ -24,6 +24,8 @@ import {
 import { normalizeGeneratedSdkBaseUrl } from './sdk-base-url.ts';
 import { readClawRouterRuntimeEnv } from './utils/env.ts';
 
+const CLAW_ROUTER_IAM_RUNTIME_APP_ID = 'sdkwork-claw-router';
+
 let runtimeComposition: SdkworkAppbasePcAuthRuntimeComposition | null = null;
 
 export function createClawRouterIamRuntime(): IamRuntime {
@@ -33,7 +35,7 @@ export function createClawRouterIamRuntime(): IamRuntime {
 export function createClawRouterIamRuntimeComposition(): SdkworkAppbasePcAuthRuntimeComposition {
   return createSdkworkAppbasePcAuthRuntime({
     app: {
-      appId: readClawRouterRuntimeEnv('VITE_SDKWORK_APP_ID') ?? 'sdkwork-claw-router',
+      appId: CLAW_ROUTER_IAM_RUNTIME_APP_ID,
       deploymentMode: readIamDeploymentMode() ?? 'saas',
       environment: readIamEnvironment() ?? 'dev',
       platform: 'pc',

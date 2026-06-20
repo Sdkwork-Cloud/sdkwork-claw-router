@@ -232,7 +232,7 @@ class SchemaCompilerTest(unittest.TestCase):
                 root,
                 """
                 tables:
-                  - table: plus_agent_skill
+                  - table: ai_agent_skill
                     domain: legacy
                     generated_by_this_project: true
                     columns:
@@ -243,13 +243,13 @@ class SchemaCompilerTest(unittest.TestCase):
                       tags: { type: json, constraints: "NOT NULL DEFAULT '[]'::jsonb" }
                       default_config: { type: json, constraints: "NOT NULL DEFAULT '{}'::jsonb" }
                     indexes:
-                      - { name: uk_plus_agent_skill_key, unique: true, columns: [skill_key] }
+                      - { name: uk_ai_agent_skill_key, unique: true, columns: [skill_key] }
                 """,
             )
 
             sql = SchemaCompiler(root=root, registry_path=registry).compile_postgres()
 
-            self.assertIn("CREATE TABLE IF NOT EXISTS plus_agent_skill (", sql)
+            self.assertIn("CREATE TABLE IF NOT EXISTS ai_agent_skill (", sql)
             self.assertIn("    id BIGINT NOT NULL PRIMARY KEY,", sql)
             self.assertIn("    uuid VARCHAR(255) NOT NULL UNIQUE,", sql)
             self.assertIn("    skill_key VARCHAR(128) NOT NULL,", sql)
@@ -257,7 +257,7 @@ class SchemaCompilerTest(unittest.TestCase):
             self.assertIn("    tags JSONB NOT NULL DEFAULT '[]'::jsonb,", sql)
             self.assertIn("    default_config JSONB NOT NULL DEFAULT '{}'::jsonb", sql)
             self.assertIn(
-                "CREATE UNIQUE INDEX IF NOT EXISTS uk_plus_agent_skill_key ON plus_agent_skill (skill_key);",
+                "CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_agent_skill_key ON ai_agent_skill (skill_key);",
                 sql,
             )
 

@@ -411,7 +411,7 @@ async fn load_categories(
                   AND lower(COALESCE(c.category, '')) = lower(COALESCE(cat.code, cat.name, ''))
                   AND {course_scope_filter}
             ) AS course_count
-        FROM plus_category cat
+        FROM c_category cat
         WHERE COALESCE(cat.type, 0) = $4
           AND COALESCE(cat.visible, true) = true
           AND COALESCE(cat.status, 0) = 1
@@ -511,7 +511,7 @@ const COURSE_SELECT_COLUMNS: &str = r#"
         COALESCE(to_char((COALESCE(c.published_at, c.updated_at, c.created_at) AT TIME ZONE 'UTC'), 'YYYY-MM-DD"T"HH24:MI:SS"Z"'), '') AS published_at,
         (
             SELECT COUNT(1)
-            FROM plus_comments comments
+            FROM content_comment comments
             WHERE comments.content_type = 6
               AND comments.content_id = c.id
               AND COALESCE(comments.status, 0) = 1
@@ -597,7 +597,7 @@ const COURSE_SELECT_COLUMNS: &str = r#"
               AND reaction.cancelled_at IS NULL
         ) AS share_count
     FROM content_course c
-    LEFT JOIN plus_category cat
+    LEFT JOIN c_category cat
       ON lower(COALESCE(cat.code, '')) = lower(COALESCE(c.category, ''))
      AND cat.type = 6
      AND lower(COALESCE(cat.group_name, '')) = 'course'
@@ -867,8 +867,8 @@ fn live_course_source() -> CourseOverviewSource {
             "content_course_section".to_owned(),
             "content_course_lesson".to_owned(),
             "content_course_relation".to_owned(),
-            "plus_category".to_owned(),
-            "plus_comments".to_owned(),
+            "c_category".to_owned(),
+            "content_comment".to_owned(),
             "content_reaction".to_owned(),
         ],
         observed_at: current_timestamp_string(),

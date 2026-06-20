@@ -676,7 +676,7 @@ async function runAppStoreSeedCheckFromCommittedSeeds(settings, { workspaceRoot,
   if (!isRecord(appSeed)) {
     throw new Error(`app store PlusApp seed is missing or invalid: ${plan.appSeedPath}`);
   }
-  if (appSeed.kind !== 'sdkwork.plus_app.seed') {
+  if (appSeed.kind !== 'sdkwork.platform_app.seed') {
     throw new Error(`app store PlusApp seed has unsupported kind: ${appSeed.kind ?? '(missing)'}`);
   }
   if (!Array.isArray(appSeed.apps)) {

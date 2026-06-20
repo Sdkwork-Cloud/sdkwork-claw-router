@@ -758,7 +758,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                     api_surface: app
                     api_method: GET
                     api_path: /app/v3/api/forum/feeds
-                    read_sources: [plus_feeds]
+                    read_sources: [content_forum_post]
                     query_parameters: []
                     response_schema:
                       name: ForumFeedListResponse
@@ -865,7 +865,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                     api_surface: app
                     api_method: GET
                     api_path: /app/v3/api/content/feeds/search
-                    read_sources: [plus_feeds]
+                    read_sources: [content_forum_post]
                     query_parameters:
                       - name: q
                         required: true
@@ -978,7 +978,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                     api_surface: app
                     api_method: POST
                     api_path: /app/v3/api/content/comments/{commentId}/likes
-                    read_sources: [plus_comments]
+                    read_sources: [content_comment]
                     write_tables: [content_reaction]
                     request_body_required: false
                     response_schema:
@@ -991,7 +991,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                     api_surface: app
                     api_method: DELETE
                     api_path: /app/v3/api/content/comments/{commentId}/likes/current
-                    read_sources: [plus_comments]
+                    read_sources: [content_comment]
                     write_tables: [content_reaction]
                     request_body_required: false
                     response_schema:

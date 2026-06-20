@@ -271,7 +271,7 @@ async fn sqlite_admin_skill_store_generates_assigned_ids_and_manages_market_life
         SELECT id, tenant_id, organization_id, category_id, tags, capabilities,
                CAST(cover_resource_snapshot AS TEXT) AS cover_resource_snapshot,
                config_schema, default_config
-        FROM plus_agent_skill
+        FROM ai_agent_skill
         WHERE id = ?
         "#,
     )
@@ -503,7 +503,7 @@ async fn sqlite_admin_skill_store_generates_assigned_ids_and_manages_market_life
 
     sqlx::query(
         r#"
-        INSERT INTO plus_user_agent_skill
+        INSERT INTO ai_user_agent_skill
             (id, uuid, tenant_id, organization_id, data_scope, user_id, skill_id, enabled, config)
         VALUES
             (?, 'user-skill-workflow-planner-pro', ?, ?, 1, 1001, ?, 1, '{}')
@@ -529,14 +529,14 @@ async fn sqlite_admin_skill_store_generates_assigned_ids_and_manages_market_life
         .unwrap();
     assert!(deleted);
 
-    let skill_rows: i64 = sqlx::query_scalar("SELECT COUNT(1) FROM plus_agent_skill WHERE id = ?")
+    let skill_rows: i64 = sqlx::query_scalar("SELECT COUNT(1) FROM ai_agent_skill WHERE id = ?")
         .bind(skill.id)
         .fetch_one(&pool)
         .await
         .unwrap();
     assert_eq!(0, skill_rows);
     let user_skill_rows: i64 =
-        sqlx::query_scalar("SELECT COUNT(1) FROM plus_user_agent_skill WHERE skill_id = ?")
+        sqlx::query_scalar("SELECT COUNT(1) FROM ai_user_agent_skill WHERE skill_id = ?")
             .bind(skill.id)
             .fetch_one(&pool)
             .await
@@ -668,14 +668,14 @@ async fn sqlite_admin_skill_store_generates_assigned_ids_and_manages_market_life
     assert!(deleted_package);
 
     let package_rows: i64 =
-        sqlx::query_scalar("SELECT COUNT(1) FROM plus_agent_skill_package WHERE id = ?")
+        sqlx::query_scalar("SELECT COUNT(1) FROM ai_agent_skill_package WHERE id = ?")
             .bind(package.id)
             .fetch_one(&pool)
             .await
             .unwrap();
     assert_eq!(0, package_rows);
     let linked_skill_rows: i64 =
-        sqlx::query_scalar("SELECT COUNT(1) FROM plus_agent_skill WHERE package_id = ?")
+        sqlx::query_scalar("SELECT COUNT(1) FROM ai_agent_skill WHERE package_id = ?")
             .bind(package.id)
             .fetch_one(&pool)
             .await
@@ -729,7 +729,7 @@ async fn sqlite_admin_skill_store_generates_assigned_ids_and_manages_market_life
         .unwrap();
     assert!(deleted_category);
 
-    let category_status: i64 = sqlx::query_scalar("SELECT status FROM plus_category WHERE id = ?")
+    let category_status: i64 = sqlx::query_scalar("SELECT status FROM c_category WHERE id = ?")
         .bind(category.id)
         .fetch_one(&pool)
         .await
@@ -852,7 +852,7 @@ async fn sqlite_admin_skill_store_manages_assets_and_artifacts_as_skill_catalog_
         r#"
         SELECT id, tenant_id, organization_id, target_type, target_id, asset_type,
                asset_resource_snapshot, thumbnail_resource_snapshot, title, width, height, file_size, sort_order, status
-        FROM studio_catalog_asset
+        FROM ai_skill_asset
         WHERE id = ?
         "#,
     )
@@ -984,7 +984,7 @@ async fn sqlite_admin_skill_store_manages_assets_and_artifacts_as_skill_catalog_
                CAST(artifact_resource_snapshot AS TEXT) AS artifact_resource_snapshot,
                artifact_size_bytes, runtime, CAST(frameworks AS TEXT) AS frameworks,
                license_name, checksum_hash, release_notes, status
-        FROM studio_catalog_artifact
+        FROM ai_skill_artifact
         WHERE id = ?
         "#,
     )
@@ -1153,7 +1153,7 @@ async fn sqlite_admin_skill_store_manages_assets_and_artifacts_as_skill_catalog_
     assert!(deleted);
 
     let remaining_assets: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM studio_catalog_asset WHERE target_type = 35 AND target_id = ?",
+        "SELECT COUNT(1) FROM ai_skill_asset WHERE target_type = 35 AND target_id = ?",
     )
     .bind(skill.id)
     .fetch_one(&pool)
@@ -1161,7 +1161,7 @@ async fn sqlite_admin_skill_store_manages_assets_and_artifacts_as_skill_catalog_
     .unwrap();
     assert_eq!(0, remaining_assets);
     let remaining_artifacts: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM studio_catalog_artifact WHERE target_type = 35 AND target_id = ?",
+        "SELECT COUNT(1) FROM ai_skill_artifact WHERE target_type = 35 AND target_id = ?",
     )
     .bind(skill.id)
     .fetch_one(&pool)
@@ -1320,7 +1320,7 @@ async fn sqlite_admin_skill_store_lists_skill_store_visible_catalog_scopes() {
         "public skill-store rows must be readable from admin but not mutable through tenant admin writes"
     );
     let public_enabled: i64 =
-        sqlx::query_scalar("SELECT enabled FROM plus_agent_skill WHERE id = ?")
+        sqlx::query_scalar("SELECT enabled FROM ai_agent_skill WHERE id = ?")
             .bind(40_002_201)
             .fetch_one(&pool)
             .await
@@ -1358,7 +1358,7 @@ async fn insert_admin_visible_skill_catalog(
     ));
     sqlx::query(
         r#"
-        INSERT INTO plus_category
+        INSERT INTO c_category
             (id, uuid, tenant_id, organization_id, data_scope, name, description, type, code,
              icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot,
              sort_weight, parent_id, path, visible, status, created_at, updated_at)
@@ -1384,7 +1384,7 @@ async fn insert_admin_visible_skill_catalog(
 
     sqlx::query(
         r#"
-        INSERT INTO plus_agent_skill_package
+        INSERT INTO ai_agent_skill_package
             (id, uuid, tenant_id, organization_id, data_scope, user_id, package_key, name, summary, description,
              icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot,
              cover_media_resource_id, cover_object_blob_id, cover_resource_snapshot,
@@ -1427,7 +1427,7 @@ async fn insert_admin_visible_skill_catalog(
 
     sqlx::query(
         r#"
-        INSERT INTO plus_agent_skill
+        INSERT INTO ai_agent_skill
             (id, uuid, tenant_id, organization_id, data_scope, user_id, skill_key, name, summary,
              description, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot,
              cover_media_resource_id, cover_object_blob_id, cover_resource_snapshot,
@@ -1491,7 +1491,7 @@ async fn insert_admin_visible_skill_asset(
 ) {
     sqlx::query(
         r#"
-        INSERT INTO studio_catalog_asset
+        INSERT INTO ai_skill_asset
             (id, uuid, tenant_id, organization_id, data_scope, status, target_type, target_id, artifact_id, asset_type, asset_media_resource_id, asset_resource_snapshot, title, alt_text, mime_type, width, height, duration_seconds, file_size, sort_order, published_at, created_at, updated_at)
         VALUES
             (?, ?, ?, ?, 0, 1, 35, ?, NULL, 1, ?, ?, ?, ?, 'image/png', 1200, 720, NULL, 128000, 1, '2026-05-09 11:03:00', '2026-05-09 11:03:00', '2026-05-09 11:03:00')
@@ -1529,7 +1529,7 @@ async fn insert_admin_visible_skill_artifact(
 ) {
     sqlx::query(
         r#"
-        INSERT INTO studio_catalog_artifact
+        INSERT INTO ai_skill_artifact
             (id, uuid, tenant_id, organization_id, data_scope, status, target_type, target_id, artifact_type, version, platform_type, os_name, artifact_ref, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot, artifact_size_bytes, runtime, frameworks, license_name, checksum_hash, release_notes, published_at, deprecated_at, created_at, updated_at)
         VALUES
             (?, ?, ?, ?, 0, 1, 35, ?, 1, '1.0.0', 'agent', 'runtime', ?, ?, ?, ?, 4096, 'builtin', ?, 'SDKWork Commercial', NULL, 'Initial release', '2026-05-09 11:04:00', NULL, '2026-05-09 11:04:00', '2026-05-09 11:04:00')

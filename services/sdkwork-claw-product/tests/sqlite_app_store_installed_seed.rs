@@ -17,22 +17,22 @@ async fn sqlite_app_store_reads_installed_seed_media_and_release_artifacts_by_ap
     assert_eq!("sdkwork-skills-app", item.developer);
     assert_eq!("HTML", item.category);
     assert_eq!(
-        "https://cdn.sdkwork.com/apps/sdkwork-claw-router/assets/icon-1024.png",
+        "https://cdn.sdkwork.com/sdkwork-claw-router/assets/icon-1024.png",
         item.image["publicUrl"]
     );
     assert!(
         item.screenshots
             .iter()
-            .any(|resource| resource["publicUrl"] == "https://cdn.sdkwork.com/apps/sdkwork-claw-router/media/desktop_windows-screenshot.png"),
-        "installed AppCenter read model must consume studio_catalog_asset screenshots"
+            .any(|resource| resource["publicUrl"] == "https://cdn.sdkwork.com/sdkwork-claw-router/media/desktop_windows-screenshot.png"),
+        "installed AppCenter read model must consume platform_app resource_list screenshots"
     );
     assert!(
         item.releases.iter().any(|release| release.artifact["publicUrl"]
-            == "https://cdn.sdkwork.com/apps/sdkwork-claw-router/STABLE/0.1.0/web.zip"
+            == "https://cdn.sdkwork.com/sdkwork-claw-router/STABLE/0.1.0/web.zip"
             && release.platform_type == "Web"
             && release.os == "PC Web"
             && release.version == "0.1.0"),
-        "installed AppCenter read model must consume studio_catalog_artifact release packages with normalized web platform labels"
+        "installed AppCenter read model must consume platform_app install_config release packages"
     );
 }
 

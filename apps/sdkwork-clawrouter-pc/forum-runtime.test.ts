@@ -208,10 +208,10 @@ test("forum content source metadata is live and database-backed", () => {
     sourceDescription: "Derived from PlusFeeds, PlusComments, vote, and favorite tables.",
     observedAt: "",
     sourceTables: [
-      "plus_feeds",
-      "plus_comments",
-      "plus_content_vote",
-      "plus_favorite",
+      "content_forum_post",
+      "content_comment",
+      "content_reaction",
+      "content_favorite",
     ],
   });
 });
@@ -233,7 +233,7 @@ test("forum catalog view model prefers backend live source metadata when availab
         sourceLabel: "Live forum data",
         sourceDescription: "Aggregated from deployment database state.",
         observedAt: "2026-05-11 10:00:00",
-        sourceTables: ["plus_feeds", "plus_comments"],
+        sourceTables: ["content_forum_post", "content_comment"],
       },
     },
   });
@@ -242,7 +242,7 @@ test("forum catalog view model prefers backend live source metadata when availab
     sourceLabel: "Live forum data",
     sourceDescription: "Aggregated from deployment database state.",
     observedAt: "2026-05-11 10:00:00",
-    sourceTables: ["plus_feeds", "plus_comments"],
+    sourceTables: ["content_forum_post", "content_comment"],
   });
 });
 
@@ -734,7 +734,7 @@ test("forum service loads live forum overview data through generated app SDK end
           ],
           source: {
             sourceLabel: "Live forum data",
-            sourceTables: ["plus_feeds", "plus_comments"],
+            sourceTables: ["content_forum_post", "content_comment"],
             observedAt: "2026-05-11 10:00:00",
           },
         };
@@ -838,7 +838,7 @@ test("forum service ignores community links that are not real public URLs", asyn
           source: {
             sourceLabel: "Live forum data",
             sourceDescription: "Derived from PlusFeeds, PlusComments, vote, and favorite tables.",
-            sourceTables: ["plus_feeds", "plus_comments"],
+            sourceTables: ["content_forum_post", "content_comment"],
             observedAt: "2026-05-11 10:00:00",
           },
         };

@@ -31,7 +31,7 @@ const MACOS_SERVICE_ROOT = '/Library/Application Support/sdkwork/router';
 const USER_PRIVATE_ROUTER_ROOT = '~/.sdkwork/router';
 const CONTAINER_SECRET_ROOT = '/run/secrets/sdkwork/router';
 const RUNTIME_CONFIG_TEMPLATE_PATH = 'config/clawrouter.toml.example';
-const POSTGRES_DSN_EXAMPLE = 'postgresql://sdkworkprod%402026%2B%2B:<password>@db.example.com:5432/sdkwork_ai_prod';
+const POSTGRES_DSN_EXAMPLE = 'postgresql://sdkworkprod%402026%2B%2B:<password>@db.example.com:5432/sdkwork';
 const FAST_INITIALIZATION_CONTRACT = Object.freeze([
   'host-env-prepare',
   'runtime-config-write',
@@ -390,8 +390,8 @@ function databasePolicyFor({ platform, runtimeProfile, deploymentMode = 'archive
     defaultEngine: 'postgresql',
     defaultHost: 'db.example.com',
     defaultPort: 5432,
-    defaultDatabase: 'sdkwork_ai_prod',
-    defaultUsername: 'sdkworkprod@2026++',
+    defaultDatabase: 'sdkwork',
+    defaultUsername: 'sdkwork',
     passwordFile: {
       path: passwordFile,
       required: true,

@@ -51,8 +51,8 @@ export interface AdminAiCategoryUpdateInput {
 
 export async function listAdminAiCategoryOptions(): Promise<AdminCategoryOption[]> {
   const result = await getClawRouterBackendSdkClient().ecosystem.skills.categories.list();
-  ensureSdkworkApiSuccess(result, 'Failed to load plus_category options');
-  return readRequiredApiItems(result, 'Failed to load plus_category options')
+  ensureSdkworkApiSuccess(result, 'Failed to load c_category options');
+  return readRequiredApiItems(result, 'Failed to load c_category options')
     .map(readAdminCategoryOption)
     .sort(compareAdminCategoryOptions);
 }
@@ -61,8 +61,8 @@ export async function createAdminAiCategory(input: AdminAiCategoryCreateInput): 
   const result = await getClawRouterBackendSdkClient().ecosystem.skills.categories.create(
     normalizeAdminAiCategoryCreateInput(input),
   );
-  ensureSdkworkApiSuccess(result, 'Failed to create plus_category');
-  return readAdminCategoryOption(readRequiredApiItem(result, 'Created plus_category response is missing data'));
+  ensureSdkworkApiSuccess(result, 'Failed to create c_category');
+  return readAdminCategoryOption(readRequiredApiItem(result, 'Created c_category response is missing data'));
 }
 
 export async function updateAdminAiCategory(categoryId: string, input: AdminAiCategoryUpdateInput): Promise<AdminCategoryOption> {
@@ -70,17 +70,17 @@ export async function updateAdminAiCategory(categoryId: string, input: AdminAiCa
     requiredSafePathSegment(categoryId, 'categoryId'),
     normalizeAdminAiCategoryUpdateInput(input),
   );
-  ensureSdkworkApiSuccess(result, 'Failed to update plus_category');
-  return readAdminCategoryOption(readRequiredApiItem(result, 'Updated plus_category response is missing data'));
+  ensureSdkworkApiSuccess(result, 'Failed to update c_category');
+  return readAdminCategoryOption(readRequiredApiItem(result, 'Updated c_category response is missing data'));
 }
 
 export async function deleteAdminAiCategory(categoryId: string): Promise<boolean> {
   const result = await getClawRouterBackendSdkClient().ecosystem.skills.categories.delete(
     requiredSafePathSegment(categoryId, 'categoryId'),
   );
-  ensureSdkworkApiSuccess(result, 'Failed to delete plus_category');
+  ensureSdkworkApiSuccess(result, 'Failed to delete c_category');
   if (readBoolean(readApiRecord(result), 'deleted') !== true) {
-    throw new Error('plus_category delete confirmation is required');
+    throw new Error('c_category delete confirmation is required');
   }
   return true;
 }
@@ -141,11 +141,11 @@ function attachAdminCategoryName(
 
 function readAdminCategoryOption(value: unknown): AdminCategoryOption {
   if (!isRecord(value)) {
-    throw new Error('plus_category option record is required');
+    throw new Error('c_category option record is required');
   }
   return {
-    id: readRequiredString(value, 'id', 'plus_category id is required'),
-    name: readRequiredString(value, 'name', 'plus_category name is required'),
+    id: readRequiredString(value, 'id', 'c_category id is required'),
+    name: readRequiredString(value, 'name', 'c_category name is required'),
     code: readString(value, 'code'),
     description: readString(value, 'description'),
     icon: readMediaResource(value.icon),

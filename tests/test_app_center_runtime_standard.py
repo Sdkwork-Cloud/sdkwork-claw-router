@@ -474,9 +474,9 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         )
 
         expected_contract_phrases = [
-            "Stable application identity from plus_app.config.standard.appKey when present; falls back to plus_app.id only when appKey is absent.",
+            "Stable application identity from platform_app.config.standard.appKey when present; falls back to platform_app.id only when appKey is absent.",
             "Returns public App Store entries where PlusApp runtime status is ACTIVE and config.portal.marketStatus is PUBLISHED.",
-            "Path parameter appId accepts either the stable appKey or numeric plus_app.id and applies the same ACTIVE/PUBLISHED and public organization_id = 0 visibility rules as getApps.",
+            "Path parameter appId accepts either the stable appKey or numeric platform_app.id and applies the same ACTIVE/PUBLISHED and public organization_id = 0 visibility rules as getApps.",
         ]
 
         for expected in expected_contract_phrases:
@@ -489,7 +489,7 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
             self.assertIn(expected, contract)
             self.assertIn(expected, openapi)
 
-    def test_admin_app_management_page_exposes_complete_plus_app_payload_fields(self) -> None:
+    def test_admin_app_management_page_exposes_complete_platform_app_payload_fields(self) -> None:
         app_admin_source = (
             ROOT
             / "apps"
@@ -868,7 +868,7 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         contract = (
             ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
         ).read_text(encoding="utf-8")
-        app_sdk_plus_app_record = (
+        app_sdk_platform_app_record = (
             ROOT
             / "sdks"
             / "clawrouter-app-sdk"
@@ -877,7 +877,7 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
             / "types"
             / "plus-app-record.ts"
         ).read_text(encoding="utf-8")
-        backend_sdk_plus_app_record = (
+        backend_sdk_platform_app_record = (
             ROOT
             / "sdks"
             / "clawrouter-backend-sdk"
@@ -894,12 +894,12 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         self.assertIn("readMediaResourceUrl(release?.artifact)", app_runtime)
         self.assertNotIn("downloadUrl: readString(item, 'downloadUrl')", app_runtime)
         self.assertNotIn("downloadUrl: string", app_runtime)
-        for sdk_record in [app_sdk_plus_app_record, backend_sdk_plus_app_record]:
+        for sdk_record in [app_sdk_platform_app_record, backend_sdk_platform_app_record]:
             self.assertIn("import type { MediaResource }", sdk_record)
             self.assertIn("artifact?: MediaResource;", sdk_record)
             self.assertNotIn("download_url", sdk_record)
         for token in (
-            "plus_app:",
+            "platform_app:",
             "- icon_media_resource_id",
             "- icon_object_blob_id",
             "- icon_resource_snapshot",
@@ -907,7 +907,7 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
             "- platforms",
             "- install_config",
             "- release_notes",
-            "studio_catalog_artifact:",
+            "ai_skill_artifact:",
             "- target_type",
             "- target_id",
             "- version",
@@ -940,18 +940,18 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         ]:
             self.assertNotIn(forbidden_fake_download, app_details)
 
-    def test_plus_app_registry_is_not_bound_to_legacy_java_media_url_contract(self) -> None:
+    def test_platform_app_registry_is_not_bound_to_legacy_java_media_url_contract(self) -> None:
         registry = (ROOT / "docs" / "schema-registry" / "tables" / "003-legacy.yaml").read_text(
             encoding="utf-8"
         )
-        plus_app_section = registry[
-            registry.index("- table: plus_app") : registry.index("- table: plus_category")
+        platform_app_section = registry[
+            registry.index("- table: platform_app") : registry.index("- table: c_category")
         ]
-        self.assertIn("profile: router_owned_standard", plus_app_section)
-        self.assertIn("write_owner: sdkwork-claw-product", plus_app_section)
-        self.assertIn("compatibility_rule: canonical_media_resource_contract", plus_app_section)
-        self.assertNotIn("java_contract:", plus_app_section)
-        self.assertNotIn("keep_physical_structure_identical", plus_app_section)
+        self.assertIn("profile: router_owned_standard", platform_app_section)
+        self.assertIn("write_owner: sdkwork-claw-product", platform_app_section)
+        self.assertIn("compatibility_rule: canonical_media_resource_contract", platform_app_section)
+        self.assertNotIn("java_contract:", platform_app_section)
+        self.assertNotIn("keep_physical_structure_identical", platform_app_section)
 
         legacy_audit = json.loads(
             (ROOT / "generated" / "schema" / "legacy" / "java-legacy-contract-audit.json").read_text(
@@ -960,12 +960,12 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         )
         audited_tables = [item["table"] for item in legacy_audit.get("tables", [])]
         self.assertNotIn(
-            "plus_app",
+            "platform_app",
             audited_tables,
-            "plus_app is router-owned now; Java legacy audit must not reintroduce icon_url/download_url.",
+            "platform_app is router-owned now; Java legacy audit must not reintroduce icon_url/download_url.",
         )
 
-    def test_official_sdks_do_not_reintroduce_legacy_plus_app_media_url_fields(self) -> None:
+    def test_official_sdks_do_not_reintroduce_legacy_platform_app_media_url_fields(self) -> None:
         sdk_root = ROOT / "sdks"
         text_suffixes = {
             ".cs",
