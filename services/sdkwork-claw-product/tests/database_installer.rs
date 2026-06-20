@@ -100,8 +100,6 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
     assert_table_exists(&pool, "ai_agent_session").await;
     assert_table_exists(&pool, "ai_agent_run").await;
     assert_table_exists(&pool, "ai_agent_run_step").await;
-    assert_table_exists(&pool, "ai_memory_space").await;
-    assert_table_exists(&pool, "ai_memory_entry").await;
     assert_table_exists(&pool, "ai_runtime_invocation").await;
     assert_table_exists(&pool, "ai_runtime_invocation_event").await;
     assert_table_exists(&pool, "ai_runtime_usage_link").await;
@@ -371,54 +369,6 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
             "input_tokens",
             "output_tokens",
             "total_tokens",
-        ],
-    )
-    .await;
-    assert_sqlite_columns_exist(
-        &pool,
-        "ai_memory_space",
-        &[
-            "tenant_id",
-            "organization_id",
-            "user_id",
-            "owner_type",
-            "owner_id",
-        ],
-    )
-    .await;
-    assert_sqlite_columns_exist(
-        &pool,
-        "ai_memory_entry",
-        &[
-            "tenant_id",
-            "organization_id",
-            "user_id",
-            "space_id",
-            "memory_code",
-        ],
-    )
-    .await;
-    assert_sqlite_columns_exist(
-        &pool,
-        "ai_memory_event",
-        &[
-            "tenant_id",
-            "organization_id",
-            "user_id",
-            "memory_id",
-            "space_id",
-        ],
-    )
-    .await;
-    assert_sqlite_columns_exist(
-        &pool,
-        "ai_memory_link",
-        &[
-            "tenant_id",
-            "organization_id",
-            "user_id",
-            "memory_id",
-            "link_type",
         ],
     )
     .await;

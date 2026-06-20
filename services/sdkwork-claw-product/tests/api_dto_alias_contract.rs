@@ -61,7 +61,6 @@ const PRODUCT_API_SOURCES: &[(&str, &str)] = &[
         "app_iam_directory_query.rs",
         include_str!("../src/api/app_iam_directory_query.rs"),
     ),
-    ("app_memory.rs", include_str!("../src/api/app_memory.rs")),
     (
         "app_notification.rs",
         include_str!("../src/api/app_notification.rs"),

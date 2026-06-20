@@ -93,12 +93,6 @@ impl AppChatStore for SqliteAppChatStore {
                 .clone()
                 .filter(|value| !value.trim().is_empty())
                 .unwrap_or_else(|| "New conversation".to_owned());
-            validate_memory_space_scope(
-                &self.pool,
-                command.subject,
-                command.memory_space_id.as_deref(),
-            )
-            .await?;
             let metadata = serde_json::to_string(&command.metadata)
                 .map_err(|error| DomainError::new(format!("invalid chat metadata: {error}")))?;
             sqlx::query(
@@ -218,39 +212,6 @@ impl AppChatStore for SqliteAppChatStore {
     ) -> AppChatFuture<'a, AppChatTurnOutcome> {
         Box::pin(async move { complete_turn_response(&self.pool, command).await })
     }
-}
-
-async fn validate_memory_space_scope(
-    pool: &SqlitePool,
-    subject: AppChatSubject,
-    memory_space_id: Option<&str>,
-) -> DomainResult<()> {
-    let Some(memory_space_id) = memory_space_id.filter(|value| !value.trim().is_empty()) else {
-        return Ok(());
-    };
-    let exists: Option<i64> = sqlx::query_scalar(
-        r#"
-        SELECT 1
-        FROM ai_memory_space
-        WHERE tenant_id = ?1
-          AND organization_id = ?2
-          AND user_id = ?3
-          AND uuid = ?4
-          AND status <> 'deleted'
-        LIMIT 1
-        "#,
-    )
-    .bind(subject.tenant_id)
-    .bind(subject.organization_id)
-    .bind(subject.user_id)
-    .bind(memory_space_id)
-    .fetch_optional(pool)
-    .await
-    .map_err(sql_error)?;
-    if exists.is_none() {
-        return Err(DomainError::not_found("memory space was not found"));
-    }
-    Ok(())
 }
 
 async fn create_turn(

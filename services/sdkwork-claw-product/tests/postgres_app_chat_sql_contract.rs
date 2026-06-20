@@ -27,18 +27,6 @@ fn postgres_chat_usage_link_insert_persists_trusted_product_user_id() {
 }
 
 #[test]
-fn postgres_chat_conversation_memory_binding_is_user_scoped() {
-    for expected in [
-        "SELECT 1 FROM ai_memory_space",
-        "AND user_id = $3",
-        "AND uuid = $4",
-        "validate_memory_space_scope",
-    ] {
-        assert_sql_contains(POSTGRES_APP_CHAT_STORE, expected);
-    }
-}
-
-#[test]
 fn postgres_chat_completion_persists_context_snapshot_and_links_turn() {
     for expected in [
         "INSERT INTO ai_chat_context_snapshot",
