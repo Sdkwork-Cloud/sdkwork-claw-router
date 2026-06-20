@@ -181,19 +181,19 @@ class FrontendFieldAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/demo/src/courseCatalog.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/forumCatalog.ts",
                 """
-                export type CourseInstructor = {
+                export type ForumAuthor = {
                   name: string;
                   avatar: string;
                 };
 
-                export interface Course {
+                export interface ForumPost {
                   id: string;
-                  instructor: CourseInstructor;
+                  author: ForumAuthor;
                 }
 
-                export type CoursePlaylistView = {
+                export type ForumPostPreview = {
                   id: string;
                 };
                 """,
@@ -202,14 +202,14 @@ class FrontendFieldAuditTest(unittest.TestCase):
                 root,
                 """
                 frontend_models:
-                  - route: /courses
-                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/courseCatalog.ts
-                    interface: Course
-                    fields: [id, instructor, instructor.name, instructor.avatar]
-                    data_sources: [content_course]
+                  - route: /forum
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/forumCatalog.ts
+                    interface: ForumPost
+                    fields: [id, author, author.name, author.avatar]
+                    data_sources: [content_forum_post]
                 routes:
-                  - route: /courses
-                    required_tables: [content_course]
+                  - route: /forum
+                    required_tables: [content_forum_post]
                 """,
             )
 
@@ -218,7 +218,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
 
             self.assertTrue(result.ok, result.messages)
             self.assertEqual(
-                ["Course"],
+                ["ForumPost"],
                 [entry["interface"] for entry in audit["interfaces"]],
             )
             self.assertEqual(
@@ -473,8 +473,8 @@ class FrontendFieldAuditTest(unittest.TestCase):
                   uri?: string;
                 }
 
-                export interface CourseApplicationVideoUploadResult {
-                  video: MediaResource;
+                export interface ForumAttachmentUploadResult {
+                  attachment: MediaResource;
                   fileName: string;
                 }
                 """,
@@ -485,13 +485,13 @@ class FrontendFieldAuditTest(unittest.TestCase):
                 frontend_models:
                   - route: /demo
                     source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
-                    interface: CourseApplicationVideoUploadResult
-                    fields: [video, video.kind, video.source, video.uri, fileName]
+                    interface: ForumAttachmentUploadResult
+                    fields: [attachment, attachment.kind, attachment.source, attachment.uri, fileName]
                     data_sources: []
-                    file_targets: [course_application_video_uploads]
+                    file_targets: [forum_attachment_uploads]
                 routes:
                   - route: /demo
-                    required_tables: [content_course_application]
+                    required_tables: [content_forum_post]
                 """,
             )
 
@@ -499,7 +499,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
             audit = FrontendFieldAudit(root=root).generate()
 
             self.assertTrue(result.ok, result.messages)
-            self.assertEqual(["course_application_video_uploads"], audit["interfaces"][0]["file_targets"])
+            self.assertEqual(["forum_attachment_uploads"], audit["interfaces"][0]["file_targets"])
 
     def test_reports_upload_model_without_file_targets_or_data_sources(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -514,8 +514,8 @@ class FrontendFieldAuditTest(unittest.TestCase):
                   uri?: string;
                 }
 
-                export interface CourseApplicationVideoUploadResult {
-                  video: MediaResource;
+                export interface ForumAttachmentUploadResult {
+                  attachment: MediaResource;
                 }
                 """,
             )
@@ -525,12 +525,12 @@ class FrontendFieldAuditTest(unittest.TestCase):
                 frontend_models:
                   - route: /demo
                     source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
-                    interface: CourseApplicationVideoUploadResult
-                    fields: [video, video.kind, video.source, video.uri]
+                    interface: ForumAttachmentUploadResult
+                    fields: [attachment, attachment.kind, attachment.source, attachment.uri]
                     data_sources: []
                 routes:
                   - route: /demo
-                    required_tables: [content_course_application]
+                    required_tables: [content_forum_post]
                 """,
             )
 
@@ -538,7 +538,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "frontend model apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#CourseApplicationVideoUploadResult must declare non-empty data_sources or file_targets",
+                "frontend model apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#ForumAttachmentUploadResult must declare non-empty data_sources or file_targets",
                 result.messages,
             )
 

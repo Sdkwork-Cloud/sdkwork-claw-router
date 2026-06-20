@@ -8,7 +8,8 @@ fn category_seed_manifests_target_v41_tables() {
         .iter()
         .map(|dataset| (*dataset).to_owned())
         .collect::<Vec<_>>();
-    let bundles = load_admin_category_seed_bundles(&datasets).expect("category seed bundles must load");
+    let bundles =
+        load_admin_category_seed_bundles(&datasets).expect("category seed bundles must load");
 
     for bundle in bundles {
         assert_eq!(bundle.schema_version, 1);
@@ -42,9 +43,12 @@ fn category_seed_manifests_target_v41_tables() {
 #[test]
 fn category_seed_scope_mapping_matches_dataset_contract() {
     let expectations = [
-        ("apps", 999_999, None, "app_store"),
-        ("courses", 6, Some("category-seed:courses"), "course"),
-        ("agent-skills", 19, Some("category-seed:agent-skills"), "skill_market"),
+        (
+            "agent-skills",
+            19,
+            Some("category-seed:agent-skills"),
+            "skill_market",
+        ),
         ("agents", 30, Some("category-seed:agents"), "agent"),
         ("mcp", 40, Some("category-seed:mcp"), "mcp"),
     ];

@@ -110,6 +110,15 @@ importers:
       '@sdkwork/distribution-pc-react':
         specifier: workspace:*
         version: link:../../../sdkwork-appbase/packages/pc-react/device/sdkwork-distribution-pc-react
+      '@sdkwork/documents-pc-api-reference':
+        specifier: workspace:*
+        version: link:../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference
+      '@sdkwork/documents-pc-commons':
+        specifier: workspace:*
+        version: link:../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-commons
+      '@sdkwork/documents-pc-sdk-reference':
+        specifier: workspace:*
+        version: link:../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-sdk-reference
       '@sdkwork/drive-app-sdk':
         specifier: workspace:*
         version: link:../../../sdkwork-drive/sdks/sdkwork-drive-app-sdk/sdkwork-drive-app-sdk-typescript
@@ -314,9 +323,6 @@ importers:
       sdkwork-clawrouter-pc-admin-announcement:
         specifier: workspace:*
         version: link:packages/sdkwork-clawrouter-pc-admin-announcement
-      sdkwork-clawrouter-pc-admin-app:
-        specifier: workspace:*
-        version: link:packages/sdkwork-clawrouter-pc-admin-app
       sdkwork-clawrouter-pc-admin-cache:
         specifier: workspace:*
         version: link:packages/sdkwork-clawrouter-pc-admin-cache
@@ -329,9 +335,6 @@ importers:
       sdkwork-clawrouter-pc-admin-core:
         specifier: workspace:*
         version: link:packages/sdkwork-clawrouter-pc-admin-core
-      sdkwork-clawrouter-pc-admin-courses:
-        specifier: workspace:*
-        version: link:packages/sdkwork-clawrouter-pc-admin-courses
       sdkwork-clawrouter-pc-admin-dashboard:
         specifier: workspace:*
         version: link:packages/sdkwork-clawrouter-pc-admin-dashboard
@@ -407,12 +410,6 @@ importers:
       sdkwork-clawrouter-pc-admin-wallet:
         specifier: workspace:*
         version: link:packages/sdkwork-clawrouter-pc-admin-wallet
-      sdkwork-clawrouter-pc-api-reference:
-        specifier: workspace:*
-        version: link:packages/sdkwork-clawrouter-pc-api-reference
-      sdkwork-clawrouter-pc-app-center:
-        specifier: workspace:*
-        version: link:packages/sdkwork-clawrouter-pc-app-center
       sdkwork-clawrouter-pc-commons:
         specifier: workspace:*
         version: link:packages/sdkwork-clawrouter-pc-commons
@@ -461,9 +458,6 @@ importers:
       sdkwork-clawrouter-pc-core:
         specifier: workspace:*
         version: link:packages/sdkwork-clawrouter-pc-core
-      sdkwork-clawrouter-pc-courses:
-        specifier: workspace:*
-        version: link:packages/sdkwork-clawrouter-pc-courses
       sdkwork-clawrouter-pc-forum:
         specifier: workspace:*
         version: link:packages/sdkwork-clawrouter-pc-forum
@@ -482,9 +476,6 @@ importers:
       sdkwork-clawrouter-pc-rankings:
         specifier: workspace:*
         version: link:packages/sdkwork-clawrouter-pc-rankings
-      sdkwork-clawrouter-pc-sdk-reference:
-        specifier: workspace:*
-        version: link:packages/sdkwork-clawrouter-pc-sdk-reference
       sdkwork-clawrouter-pc-skills-hub:
         specifier: workspace:*
         version: link:packages/sdkwork-clawrouter-pc-skills-hub
@@ -931,6 +922,109 @@ importers:
         specifier: ^4.1.2
         version: 4.1.5(@types/node@25.9.2)(jiti@2.6.1)(jsdom@29.1.1)(lightningcss@1.32.0)(tsx@4.21.0)
 
+  ../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference:
+    dependencies:
+      '@sdkwork/documents-pc-commons':
+        specifier: workspace:*
+        version: link:../sdkwork-documents-pc-commons
+      lucide-react:
+        specifier: ^0.511.0
+        version: 0.511.0(react@19.2.4)
+      motion:
+        specifier: ^12.38.0
+        version: 12.38.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      react:
+        specifier: ^19.1.0
+        version: 19.2.4
+      react-i18next:
+        specifier: ^15.5.2
+        version: 15.7.4(i18next@26.3.1(typescript@5.8.3))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.8.3)
+      react-router-dom:
+        specifier: ^7.14.0
+        version: 7.14.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+    devDependencies:
+      '@types/react':
+        specifier: ^19.0.0
+        version: 19.2.14
+      '@types/react-dom':
+        specifier: ^19.0.0
+        version: 19.2.3(@types/react@19.2.14)
+      typescript:
+        specifier: ~5.8.2
+        version: 5.8.3
+
+  ../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-commons:
+    dependencies:
+      lucide-react:
+        specifier: ^0.511.0
+        version: 0.511.0(react@19.2.4)
+      react:
+        specifier: ^19.1.0
+        version: 19.2.4
+    devDependencies:
+      '@types/react':
+        specifier: ^19.0.0
+        version: 19.2.14
+      '@types/react-dom':
+        specifier: ^19.0.0
+        version: 19.2.3(@types/react@19.2.14)
+      typescript:
+        specifier: ~5.8.2
+        version: 5.8.3
+
+  ../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-i18n:
+    devDependencies:
+      typescript:
+        specifier: ~5.8.2
+        version: 5.8.3
+
+  ../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-sdk-reference:
+    dependencies:
+      '@sdkwork/documents-pc-api-reference':
+        specifier: workspace:*
+        version: link:../sdkwork-documents-pc-api-reference
+      '@sdkwork/documents-pc-commons':
+        specifier: workspace:*
+        version: link:../sdkwork-documents-pc-commons
+      lucide-react:
+        specifier: ^0.511.0
+        version: 0.511.0(react@19.2.4)
+      motion:
+        specifier: ^12.38.0
+        version: 12.38.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      react:
+        specifier: ^19.1.0
+        version: 19.2.4
+      react-i18next:
+        specifier: ^15.5.2
+        version: 15.7.4(i18next@26.3.1(typescript@5.8.3))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.8.3)
+    devDependencies:
+      '@types/react':
+        specifier: ^19.0.0
+        version: 19.2.14
+      '@types/react-dom':
+        specifier: ^19.0.0
+        version: 19.2.3(@types/react@19.2.14)
+      typescript:
+        specifier: ~5.8.2
+        version: 5.8.3
+
+  ../../../sdkwork-documents/sdks/sdkwork-documents-app-sdk/sdkwork-documents-app-sdk-typescript/generated/server-openapi:
+    dependencies:
+      '@sdkwork/sdk-common':
+        specifier: ^1.0.2
+        version: 1.0.3
+    devDependencies:
+      '@types/node':
+        specifier: ^20.0.0
+        version: 20.19.39
+      rollup:
+        specifier: ^4.0.0
+        version: 4.60.1
+      typescript:
+        specifier: ^5.3.0
+        version: 5.8.3
+
   ../../../sdkwork-drive/sdks/sdkwork-drive-app-sdk/sdkwork-drive-app-sdk-typescript:
     dependencies:
       '@sdkwork/sdk-common':
@@ -1368,12 +1462,6 @@ importers:
         specifier: workspace:*
         version: link:../sdkwork-clawrouter-pc-commons
 
-  packages/sdkwork-clawrouter-pc-admin-app:
-    dependencies:
-      sdkwork-clawrouter-pc-commons:
-        specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
-
   packages/sdkwork-clawrouter-pc-admin-cache:
     dependencies:
       sdkwork-clawrouter-pc-commons:
@@ -1397,12 +1485,6 @@ importers:
         version: link:../sdkwork-clawrouter-pc-commons
 
   packages/sdkwork-clawrouter-pc-admin-core:
-    dependencies:
-      sdkwork-clawrouter-pc-commons:
-        specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
-
-  packages/sdkwork-clawrouter-pc-admin-courses:
     dependencies:
       sdkwork-clawrouter-pc-commons:
         specifier: workspace:*
@@ -1579,32 +1661,6 @@ importers:
         specifier: workspace:*
         version: link:../sdkwork-clawrouter-pc-commons
 
-  packages/sdkwork-clawrouter-pc-api-reference:
-    dependencies:
-      sdkwork-clawrouter-pc-commons:
-        specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
-    devDependencies:
-      typescript:
-        specifier: ~5.8.2
-        version: 5.8.3
-      vite:
-        specifier: ^6.2.0
-        version: 6.4.2(@types/node@25.9.2)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0)
-
-  packages/sdkwork-clawrouter-pc-app-center:
-    dependencies:
-      sdkwork-clawrouter-pc-commons:
-        specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
-    devDependencies:
-      typescript:
-        specifier: ~5.8.2
-        version: 5.8.3
-      vite:
-        specifier: ^6.2.0
-        version: 6.4.2(@types/node@25.9.2)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0)
-
   packages/sdkwork-clawrouter-pc-commons:
     dependencies:
       '@sdkwork/appbase-app-sdk':
@@ -1628,6 +1684,9 @@ importers:
       '@sdkwork/commerce-service':
         specifier: workspace:*
         version: link:../../../../../sdkwork-commerce/packages/common/commerce/sdkwork-commerce-service
+      '@sdkwork/documents-app-sdk':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-documents/sdks/sdkwork-documents-app-sdk/sdkwork-documents-app-sdk-typescript/generated/server-openapi
       '@sdkwork/drive-app-sdk':
         specifier: workspace:*
         version: link:../../../../../sdkwork-drive/sdks/sdkwork-drive-app-sdk/sdkwork-drive-app-sdk-typescript
@@ -1768,22 +1827,6 @@ importers:
         specifier: ^6.2.0
         version: 6.4.2(@types/node@25.9.2)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0)
 
-  packages/sdkwork-clawrouter-pc-courses:
-    dependencies:
-      react-router:
-        specifier: ^7.14.0
-        version: 7.14.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      sdkwork-clawrouter-pc-commons:
-        specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
-    devDependencies:
-      typescript:
-        specifier: ~5.8.2
-        version: 5.8.3
-      vite:
-        specifier: ^6.2.0
-        version: 6.4.2(@types/node@25.9.2)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0)
-
   packages/sdkwork-clawrouter-pc-forum:
     dependencies:
       qrcode:
@@ -1875,22 +1918,6 @@ importers:
       typescript:
         specifier: ~5.8.2
         version: 5.8.3
-
-  packages/sdkwork-clawrouter-pc-sdk-reference:
-    dependencies:
-      sdkwork-clawrouter-pc-api-reference:
-        specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-api-reference
-      sdkwork-clawrouter-pc-commons:
-        specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
-    devDependencies:
-      typescript:
-        specifier: ~5.8.2
-        version: 5.8.3
-      vite:
-        specifier: ^6.2.0
-        version: 6.4.2(@types/node@25.9.2)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0)
 
   packages/sdkwork-clawrouter-pc-skills-hub:
     dependencies:
@@ -4958,6 +4985,11 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
+  lucide-react@0.511.0:
+    resolution: {integrity: sha512-VK5a2ydJ7xm8GvBeKLS9mu1pVK6ucef9780JVUjw6bAjJL/QXnd4Y0p7SPeOUMC27YhzNCZvm5d/QX0Tp3rc0w==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
+
   lucide-react@0.546.0:
     resolution: {integrity: sha512-Z94u6fKT43lKeYHiVyvyR8fT7pwCzDu7RyMPpTvh054+xahSgj4HFQ+NmflvzdXsoAjYGdCguGaFKYuvq0ThCQ==}
     peerDependencies:
@@ -5301,6 +5333,22 @@ packages:
     engines: {node: '>=18.0.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18 || ^19
+
+  react-i18next@15.7.4:
+    resolution: {integrity: sha512-nyU8iKNrI5uDJch0z9+Y5XEr34b0wkyYj3Rp+tfbahxtlswxSCjcUL9H0nqXo9IR3/t5Y5PKIA3fx3MfUyR9Xw==}
+    peerDependencies:
+      i18next: '>= 23.4.0'
+      react: '>= 16.8.0'
+      react-dom: '*'
+      react-native: '*'
+      typescript: ^5
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+      typescript:
+        optional: true
 
   react-i18next@17.0.2:
     resolution: {integrity: sha512-shBftH2vaTWK2Bsp7FiL+cevx3xFJlvFxmsDFQSrJc+6twHkP0tv/bGa01VVWzpreUVVwU+3Hev5iFqRg65RwA==}
@@ -8734,6 +8782,10 @@ snapshots:
     optionalDependencies:
       typescript: 5.8.3
 
+  i18next@26.3.1(typescript@5.8.3):
+    optionalDependencies:
+      typescript: 5.8.3
+
   i18next@26.3.1(typescript@6.0.2):
     optionalDependencies:
       typescript: 6.0.2
@@ -8885,6 +8937,10 @@ snapshots:
   lru-cache@5.1.1:
     dependencies:
       yallist: 3.1.1
+
+  lucide-react@0.511.0(react@19.2.4):
+    dependencies:
+      react: 19.2.4
 
   lucide-react@0.546.0(react@19.2.4):
     dependencies:
@@ -9424,6 +9480,16 @@ snapshots:
   react-hook-form@7.75.0(react@19.2.4):
     dependencies:
       react: 19.2.4
+
+  react-i18next@15.7.4(i18next@26.3.1(typescript@5.8.3))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.8.3):
+    dependencies:
+      '@babel/runtime': 7.29.2
+      html-parse-stringify: 3.0.1
+      i18next: 26.3.1(typescript@5.8.3)
+      react: 19.2.4
+    optionalDependencies:
+      react-dom: 19.2.4(react@19.2.4)
+      typescript: 5.8.3
 
   react-i18next@17.0.2(i18next@26.0.3(typescript@5.8.3))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.8.3):
     dependencies:

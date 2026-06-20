@@ -1093,7 +1093,6 @@ test("portal auth guard classifies every console and admin path as login protect
     "/admin",
     "/admin/dashboard",
     "/admin/user",
-    "/admin/app",
     "/admin/ratelimit",
   ]) {
     assert.equal(isProtectedPortalPath(path), true, `${path} must require login`);
@@ -1103,15 +1102,13 @@ test("portal auth guard classifies every console and admin path as login protect
     "/",
     "/models",
     "/models/openai/gpt-4o",
-    "/apps",
-    "/apps/app-1",
     "/skills-hub",
     "/skills-hub/skill-1",
+    "/product-docs",
     "/docs",
     "/api-reference",
     "/sdk-reference",
     "/forum",
-    "/courses",
     "/playground",
     "/auth/login",
     "/console-public",
@@ -1521,7 +1518,6 @@ test("admin sidebar labels are resolved through i18n keys", () => {
   assert.match(adminRegistrySource, /groupBlock\('admin\.menu\.home\.accountPoolManagement'/);
   assert.match(adminRegistrySource, /groupBlock\('admin\.menu\.home\.agentSkills'/);
   assert.match(adminRegistrySource, /groupBlock\('admin\.menu\.home\.dataManagement'/);
-  assert.match(adminRegistrySource, /labelKey:\s*'admin\.menu\.appStore'/);
   assert.match(adminRegistrySource, /labelKey:\s*'admin\.menu\.agentSkills'/);
   assert.match(adminRegistrySource, /labelKey:\s*'admin\.menu\.analytics'/);
   assert.match(adminRegistrySource, /labelKey:\s*'admin\.menu\.authSettings'/);
@@ -1540,7 +1536,6 @@ test("admin sidebar labels are resolved through i18n keys", () => {
     "admin.menu.home.accountPoolManagement",
     "admin.menu.home.agentSkills",
     "admin.menu.home.dataManagement",
-    "admin.menu.appStore",
     "admin.menu.agentSkills",
     "admin.menu.analytics",
     "admin.menu.authSettings",
@@ -1732,25 +1727,20 @@ test("admin channel table keeps channel and provider content on one line", () =>
   assert.match(channelSource, /<span className="min-w-0 truncate">\{channel\.accessType\}<\/span>/);
 });
 
-test("admin app center and OAuth modules are separated", () => {
+test("admin OAuth module lives under operations", () => {
   const adminRegistrySource = readAdminRegistrySource();
   const i18nSource = readI18nResourceSource();
-  const appCenterHeaderModule = findAdminModuleDefinitionSource(adminRegistrySource, "appCenter");
   const operationsHeaderModule = findAdminModuleDefinitionSource(adminRegistrySource, "operations");
   const homeHeaderModule = findAdminModuleDefinitionSource(adminRegistrySource, "home");
-  const appCenterMenu = findAdminModuleMenuSource(adminRegistrySource, "appCenter");
   const operationsMenu = findAdminModuleMenuSource(adminRegistrySource, "operations");
   const homeMenu = findAdminModuleMenuSource(adminRegistrySource, "home");
   const retiredAdminProviderPath = "/admin/" + "open" + "-platform";
 
-  for (const moduleId of ["home", "appCenter", "courseCenter", "productCenter", "transactionCenter", "memberCenter", "marketingCenter", "financeCenter", "storageCenter", "driveCenter", "operations", "serviceProviderCenter"]) {
+  for (const moduleId of ["home", "productCenter", "transactionCenter", "memberCenter", "marketingCenter", "financeCenter", "storageCenter", "driveCenter", "operations", "serviceProviderCenter"]) {
     assert.match(adminRegistrySource, new RegExp(`\\| '${moduleId}'`), `${moduleId} must be part of AdminModuleId`);
   }
   assert.doesNotMatch(adminRegistrySource, /id:\s*'oauth'/);
-  assert.match(
-    appCenterHeaderModule,
-    /id:\s*'appCenter',\s*nameKey:\s*'admin\.header\.appCenter'[\s\S]*defaultPath:\s*'\/admin\/app'[\s\S]*pathPrefixes:\s*\['\/admin\/app'\]/,
-  );
+  assert.doesNotMatch(adminRegistrySource, /id:\s*'appCenter'/);
   assert.match(
     operationsHeaderModule,
     /id:\s*'operations',\s*nameKey:\s*'admin\.header\.operations'[\s\S]*pathPrefixes:\s*\[[^\]]*'\/admin\/oauth'[^\]]*\]/,
@@ -1758,11 +1748,6 @@ test("admin app center and OAuth modules are separated", () => {
   assert.doesNotMatch(homeHeaderModule, /'\/admin\/app'/);
   assert.doesNotMatch(homeHeaderModule, new RegExp(retiredAdminProviderPath.replaceAll("/", "\\/")));
 
-  assert.match(
-    appCenterMenu,
-    /moduleId:\s*'appCenter',\s*items:\s*\[\s*itemBlock\(\{\s*path:\s*'\/admin\/app',\s*labelKey:\s*'admin\.menu\.appStore'/,
-  );
-  assert.doesNotMatch(appCenterMenu, /\/admin\/oauth/);
   assert.match(operationsMenu, /moduleId:\s*'operations'/);
   assert.match(operationsMenu, /groupBlock\('admin\.menu\.ops\.oauth'/);
   assert.match(operationsMenu, /path:\s*'\/admin\/oauth\/login-platforms',\s*labelKey:\s*'admin\.menu\.oauth\.loginPlatforms'/);
@@ -1770,8 +1755,6 @@ test("admin app center and OAuth modules are separated", () => {
   assert.match(operationsMenu, /path:\s*'\/admin\/oauth\/mini-programs',\s*labelKey:\s*'admin\.menu\.oauth\.miniPrograms'/);
   assert.doesNotMatch(homeMenu, /path:\s*'\/admin\/app'/);
   assert.doesNotMatch(homeMenu, /\/admin\/oauth/);
-  assert.match(i18nSource, /"admin\.header\.appCenter":\s*"App Center"/);
-  assert.match(i18nSource, /"admin\.header\.appCenter":\s*"\u5e94\u7528\u4e2d\u5fc3"/);
   assert.match(i18nSource, /"admin\.menu\.oauth\.loginPlatforms":\s*"OAuth Login Platform Accounts"/);
   assert.match(i18nSource, /"admin\.menu\.oauth\.officialAccounts":\s*"Official Accounts"/);
   assert.match(i18nSource, /"admin\.menu\.oauth\.miniPrograms":\s*"Mini Programs"/);
@@ -1992,7 +1975,6 @@ test("admin service provider center is an independent package backed by backend 
   const serviceProviderSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-service-provider/src/index.tsx");
   const serviceProviderServiceSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-service-provider/src/serviceProviderService.ts");
   const serviceProviderHeaderModule = findAdminModuleDefinitionSource(adminRegistrySource, "serviceProviderCenter");
-  const appCenterHeaderModule = findAdminModuleDefinitionSource(adminRegistrySource, "appCenter");
   const serviceProviderMenu = findAdminModuleMenuSource(adminRegistrySource, "serviceProviderCenter");
 
   assert.equal(packageJson.dependencies["sdkwork-clawrouter-pc-admin-service-provider"], "workspace:*");
@@ -2006,7 +1988,6 @@ test("admin service provider center is an independent package backed by backend 
     /id:\s*'serviceProviderCenter',\s*nameKey:\s*'admin\.header\.serviceProviderCenter'[\s\S]*defaultPath:\s*'\/admin\/service-providers\/dashboard'[\s\S]*pathPrefixes:\s*\[[^\]]*'\/admin\/service-providers'[^\]]*\]/,
   );
   assert.deepEqual(findOrderedMatches(adminRegistrySource, /id:\s*'([^']+)'/g).slice(-1), ["serviceProviderCenter"]);
-  assert.doesNotMatch(appCenterHeaderModule, /'\/admin\/service-providers'/);
   assert.deepEqual(findOrderedMatches(adminRegistrySource, /moduleId:\s*'([^']+)'/g).slice(-1), ["serviceProviderCenter"]);
   for (const groupKey of [
     "admin.menu.serviceProviderCenter.operations",

@@ -50,15 +50,12 @@ client.SetHeader("X-Custom-Header", "value");
 
 ## API Modules
 
-- `client.Agents` - agents API
 - `client.Ai` - ai API
 - `client.Content` - content API
-- `client.Ecosystem` - ecosystem API
 - `client.Iam` - iam API
 - `client.Integration` - integration API
 - `client.Mcp` - mcp API
 - `client.Messaging` - messaging API
-- `client.Platform` - platform API
 - `client.Prompts` - prompts API
 - `client.ServiceProviders` - service_providers API
 - `client.Sites` - sites API
@@ -66,23 +63,6 @@ client.SetHeader("X-Custom-Header", "value");
 - `client.System` - system API
 
 ## Usage Examples
-
-### agents
-
-```csharp
-// List managed agents
-var query = new Dictionary<string, object>
-{
-    ["q"] = "q",
-    ["owner_user_id"] = "1",
-    ["status"] = "active",
-    ["visibility"] = "private",
-    ["page"] = "page",
-    ["page_size"] = "page-size",
-};
-var result = await client.Agents.AgentDefinitionsListAsync(query);
-Console.WriteLine(result);
-```
 
 ### ai
 
@@ -97,14 +77,6 @@ Console.WriteLine(result);
 ```csharp
 // List announcements
 var result = await client.Content.AnnouncementsListAsync();
-Console.WriteLine(result);
-```
-
-### ecosystem
-
-```csharp
-// List skill categories
-var result = await client.Ecosystem.SkillsCategoriesListAsync();
 Console.WriteLine(result);
 ```
 
@@ -157,14 +129,6 @@ var query = new Dictionary<string, object>
     ["provider_code"] = "ok",
 };
 var result = await client.Messaging.ProviderAccountsListAsync(query);
-Console.WriteLine(result);
-```
-
-### platform
-
-```csharp
-// List app categories
-var result = await client.Platform.AppsCategoriesListAsync();
 Console.WriteLine(result);
 ```
 

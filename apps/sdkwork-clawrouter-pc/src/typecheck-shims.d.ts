@@ -2042,3 +2042,91 @@ declare module '@sdkwork/iam-sdk-ports' {
   const iamSdkPorts: unknown;
   export default iamSdkPorts;
 }
+
+declare module '@sdkwork/documents-pc-commons' {
+  import type { ComponentType, ReactNode } from 'react';
+
+  export type DocumentsGeneratedSdkType =
+    | 'app'
+    | 'backend'
+    | 'ai'
+    | 'drive'
+    | 'memory'
+    | 'agent'
+    | 'payment'
+    | 'iaas'
+    | 'paas';
+
+  export interface DocumentsGeneratedSdkMetadata {
+    name: string;
+    packageName: string;
+    version: string;
+    sdkType: DocumentsGeneratedSdkType;
+    apiPrefix: string;
+    runtimeEnvName: string;
+    sourceDir: string;
+    archiveLanguage: 'typescript';
+    archiveName: string;
+    description: string;
+  }
+
+  export interface DocumentsAppSdkClient {
+    sdkReference: {
+      documentation: {
+        create: (body: Record<string, unknown>) => Promise<unknown>;
+      };
+      archives: {
+        create: (body: Record<string, unknown>) => Promise<unknown>;
+      };
+    };
+  }
+
+  export interface DocumentsReferenceRuntime {
+    readRuntimeEnv: (name: string) => string | undefined;
+    resolveRuntimeBoolean: (name: string, defaultValue?: boolean) => boolean;
+    sdkSystemConfig: Record<string, DocumentsGeneratedSdkMetadata>;
+    getDocumentsAppSdkClient: () => DocumentsAppSdkClient;
+    playgroundUserAgent?: string;
+  }
+
+  export function resolvePlaygroundUserAgent(runtime: DocumentsReferenceRuntime): string;
+  export function useDocumentsReferenceRuntime(): DocumentsReferenceRuntime;
+
+  export const DocumentsReferenceRuntimeProvider: ComponentType<{
+    value: DocumentsReferenceRuntime;
+    children?: ReactNode;
+  }>;
+}
+
+declare module '@sdkwork/documents-pc-commons/runtime' {
+  export const documentsReferenceRuntime: unknown;
+}
+
+declare module '@sdkwork/documents-pc-api-reference' {
+  import type { ComponentType } from 'react';
+
+  export const Docs: ComponentType;
+  export const ApiReference: ComponentType;
+  export const ProductDocs: ComponentType;
+  export const ApiPlayground: ComponentType;
+}
+
+declare module '@sdkwork/documents-pc-api-reference/openapiTypes' {
+  export type ApiParameter = Record<string, unknown>;
+  export type ApiReferenceEndpoint = Record<string, unknown>;
+  export type OpenApiDocument = Record<string, unknown>;
+}
+
+declare module '@sdkwork/documents-pc-api-reference/apiReferenceSchemaTabs' {
+  export type ApiReferenceSchemaTab = string;
+}
+
+declare module '@sdkwork/documents-pc-api-reference/openapiSchemaRuntime' {
+  export const openapiSchemaRuntime: unknown;
+}
+
+declare module '@sdkwork/documents-pc-sdk-reference' {
+  import type { ComponentType } from 'react';
+
+  export const SdkReference: ComponentType;
+}

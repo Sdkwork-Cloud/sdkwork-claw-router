@@ -200,43 +200,6 @@ public class ContentApi {
         return try await client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/content/users/current/comments"), query), responseType: UsersCurrentCommentsListResult.self)
     }
 
-    /// List courses
-    public func coursesList(level: String? = nil, category: String? = nil, q: String? = nil, page: String? = nil, pageSize: String? = nil) async throws -> CoursesListResult? {
-        let query = buildQueryString([
-            QueryParameterSpec(name: "level", value: level, style: "form", explode: true, allowReserved: false, contentType: nil),
-            QueryParameterSpec(name: "category", value: category, style: "form", explode: true, allowReserved: false, contentType: nil),
-            QueryParameterSpec(name: "q", value: q, style: "form", explode: true, allowReserved: false, contentType: nil),
-            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
-            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)
-        ])
-        return try await client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/courses"), query), responseType: CoursesListResult.self)
-    }
-
-    /// Create course application
-    public func applicationsCreate(body: CourseApplicationCreateRequest) async throws -> ApplicationsCreateResult? {
-        return try await client.post(ApiPaths.appPath("/courses/applications"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ApplicationsCreateResult.self)
-    }
-
-    /// Upload course application video
-    public func applicationsVideosCreate(body: CourseApplicationVideoUploadRequest) async throws -> ApplicationsVideosCreateResult? {
-        return try await client.post(ApiPaths.appPath("/courses/applications/videos"), body: body, params: nil, headers: nil, contentType: "multipart/form-data", responseType: ApplicationsVideosCreateResult.self)
-    }
-
-    /// List course categories
-    public func coursesCategoriesList() async throws -> CoursesCategoriesListResult? {
-        return try await client.get(ApiPaths.appPath("/courses/categories"), responseType: CoursesCategoriesListResult.self)
-    }
-
-    /// List course overview
-    public func coursesOverviewRetrieve() async throws -> CoursesOverviewRetrieveResult? {
-        return try await client.get(ApiPaths.appPath("/courses/overview"), responseType: CoursesOverviewRetrieveResult.self)
-    }
-
-    /// List course detail
-    public func coursesRetrieve(courseId: String) async throws -> CoursesRetrieveResult? {
-        return try await client.get(ApiPaths.appPath("/courses/\(serializePathParameter(courseId, PathParameterSpec(name: "courseId", style: "simple", explode: false)))"), responseType: CoursesRetrieveResult.self)
-    }
-
     private struct PathParameterSpec {
         let name: String
         let style: String

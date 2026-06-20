@@ -282,22 +282,22 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                     {
                         "api_surface": "app",
                         "api_method": "POST",
-                        "api_path": "/app/v3/api/courses/applications/videos",
-                        "operation": "uploadCourseApplicationVideo",
-                        "operation_id": "applications.videos.create",
+                        "api_path": "/app/v3/api/content/forum/attachments",
+                        "operation": "uploadForumAttachment",
+                        "operation_id": "forum.attachments.create",
                         "tag": "content",
                         "kind": "create",
                         "path_params": [],
-                        "source": "apps/portal/courseService.ts",
+                        "source": "apps/portal/forumService.ts",
                         "read_sources": [],
                         "write_tables": [],
                         "request_content_type": "multipart/form-data",
                         "request_schema": {
-                            "name": "CourseApplicationVideoUploadRequest",
+                            "name": "ForumAttachmentUploadRequest",
                             "schema": upload_request,
                         },
                         "response_schema": {
-                            "name": "CourseApplicationVideoUploadResponse",
+                            "name": "ForumAttachmentUploadResponse",
                             "schema": upload_response,
                         },
                     }
@@ -310,15 +310,15 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
             app_spec = {
                 "openapi": "3.1.0",
                 "paths": {
-                    "/app/v3/api/courses/applications/videos": {
+                    "/app/v3/api/content/forum/attachments": {
                         "post": {
-                            "operationId": "applications.videos.create",
+                            "operationId": "forum.attachments.create",
                             "requestBody": {
                                 "required": True,
                                 "content": {
                                     "multipart/form-data": {
                                         "schema": {
-                                            "$ref": "#/components/schemas/CourseApplicationVideoUploadRequest"
+                                            "$ref": "#/components/schemas/ForumAttachmentUploadRequest"
                                         }
                                     }
                                 },
@@ -328,7 +328,7 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                                     "content": {
                                         "application/json": {
                                             "schema": {
-                                                "$ref": "#/components/schemas/ApplicationsVideosCreateResult"
+                                                "$ref": "#/components/schemas/ForumAttachmentsCreateResult"
                                             }
                                         }
                                     }
@@ -339,14 +339,14 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                 },
                 "components": {
                     "schemas": {
-                        "CourseApplicationVideoUploadRequest": upload_request,
-                        "CourseApplicationVideoUploadResponse": upload_response,
+                        "ForumAttachmentUploadRequest": upload_request,
+                        "ForumAttachmentUploadResponse": upload_response,
                         "MediaResource": media_resource,
-                        "ApplicationsVideosCreateResult": {
+                        "ForumAttachmentsCreateResult": {
                             "type": "object",
                             "properties": {
                                 "data": {
-                                    "$ref": "#/components/schemas/CourseApplicationVideoUploadResponse"
+                                    "$ref": "#/components/schemas/ForumAttachmentUploadResponse"
                                 }
                             },
                         },
@@ -366,36 +366,36 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
             (sdk_base / "api" / "content.ts").write_text(
                 "import { appApiPath } from './paths';\n"
                 "import type { HttpClient } from '../http/client';\n"
-                "import type { ApplicationsVideosCreateResult, CourseApplicationVideoUploadRequest } from '../types';\n"
-                "export class ContentApplicationsVideosApi {\n"
+                "import type { ForumAttachmentsCreateResult, ForumAttachmentUploadRequest } from '../types';\n"
+                "export class ContentForumAttachmentsApi {\n"
                 "  constructor(private client: HttpClient) {}\n"
-                "  async create(body: CourseApplicationVideoUploadRequest): Promise<ApplicationsVideosCreateResult> {\n"
-                "    return this.client.post<ApplicationsVideosCreateResult>(appApiPath(`/courses/applications/videos`), body, undefined, undefined, 'multipart/form-data');\n"
+                "  async create(body: ForumAttachmentUploadRequest): Promise<ForumAttachmentsCreateResult> {\n"
+                "    return this.client.post<ForumAttachmentsCreateResult>(appApiPath(`/content/forum/attachments`), body, undefined, undefined, 'multipart/form-data');\n"
                 "  }\n"
                 "}\n",
                 encoding="utf-8",
             )
-            (sdk_base / "types" / "course-application-video-upload-request.ts").write_text(
-                "export interface CourseApplicationVideoUploadRequest { file: string; }\n",
+            (sdk_base / "types" / "forum-attachment-upload-request.ts").write_text(
+                "export interface ForumAttachmentUploadRequest { file: string; }\n",
                 encoding="utf-8",
             )
-            (sdk_base / "types" / "course-application-video-upload-response.ts").write_text(
+            (sdk_base / "types" / "forum-attachment-upload-response.ts").write_text(
                 "import type { MediaResource } from './media-resource';\n"
-                "export interface CourseApplicationVideoUploadResponse { video: MediaResource; sha256: string; }\n",
+                "export interface ForumAttachmentUploadResponse { attachment: MediaResource; sha256: string; }\n",
                 encoding="utf-8",
             )
             (sdk_base / "types" / "media-resource.ts").write_text(
                 "export interface MediaResource { kind: string; source: string; uri?: string; }\n",
                 encoding="utf-8",
             )
-            (sdk_base / "types" / "applications-videos-create-result.ts").write_text(
-                "import type { CourseApplicationVideoUploadResponse } from './course-application-video-upload-response';\n"
-                "export interface ApplicationsVideosCreateResult { data?: CourseApplicationVideoUploadResponse; }\n",
+            (sdk_base / "types" / "forum-attachments-create-result.ts").write_text(
+                "import type { ForumAttachmentUploadResponse } from './forum-attachment-upload-response';\n"
+                "export interface ForumAttachmentsCreateResult { data?: ForumAttachmentUploadResponse; }\n",
                 encoding="utf-8",
             )
             (sdk_base / "types" / "index.ts").write_text(
-                "export type { CourseApplicationVideoUploadRequest } from './course-application-video-upload-request';\n"
-                "export type { CourseApplicationVideoUploadResponse } from './course-application-video-upload-response';\n"
+                "export type { ForumAttachmentUploadRequest } from './forum-attachment-upload-request';\n"
+                "export type { ForumAttachmentUploadResponse } from './forum-attachment-upload-response';\n"
                 "export type { MediaResource } from './media-resource';\n"
                 "export type { ApplicationsVideosCreateResult } from './applications-videos-create-result';\n",
                 encoding="utf-8",
@@ -1251,18 +1251,18 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                             {
                                 "api_surface": "backend",
                                 "api_method": "POST",
-                                "api_path": "/backend/v3/api/platform/apps/list",
-                                "operation": "fetchApps",
-                                "operation_id": "apps.list",
-                                "tag": "app",
+                                "api_path": "/backend/v3/api/ecosystem/skills/list",
+                                "operation": "fetchSkills",
+                                "operation_id": "skills.list",
+                                "tag": "ecosystem",
                                 "kind": "read",
                                 "path_params": [],
-                                "source": "apps/portal/adminAppService.ts",
-                                "read_sources": ["appstore_app"],
+                                "source": "apps/portal/skillService.ts",
+                                "read_sources": ["agent_skill"],
                                 "write_tables": [],
                                 "request_body_required": False,
                                 "request_schema": {
-                                    "name": "AdminAppListRequest",
+                                    "name": "AdminSkillListRequest",
                                     "schema": {
                                         "type": "object",
                                         "additionalProperties": False,
@@ -1272,7 +1272,7 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                                     },
                                 },
                                 "response_schema": {
-                                    "name": "AdminAppListResponse",
+                                    "name": "AdminSkillListResponse",
                                     "schema": {
                                         "type": "object",
                                         "additionalProperties": False,
@@ -1306,35 +1306,35 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
             backend = root / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript"
             (backend / "src" / "api").mkdir(parents=True, exist_ok=True)
             (backend / "src" / "types").mkdir(parents=True, exist_ok=True)
-            (backend / "src" / "api" / "app.ts").write_text(
+            (backend / "src" / "api" / "ecosystem.ts").write_text(
                 "import { backendApiPath } from './paths';\n"
                 "import type { HttpClient } from '../http/client';\n"
-                "import type { AdminAppListRequest, AppsListResult } from '../types';\n"
-                "export class AppApi {\n"
+                "import type { AdminSkillListRequest, SkillsListResult } from '../types';\n"
+                "export class EcosystemApi {\n"
                 "  constructor(private client: HttpClient) {}\n"
-                "  async list(body?: AdminAppListRequest, xRequestId?: string): Promise<AppsListResult> {\n"
-                "    return this.client.post<AppsListResult>(backendApiPath(`/app/list`), body, undefined, { 'X-Request-Id': xRequestId }, 'application/json');\n"
+                "  async list(body?: AdminSkillListRequest, xRequestId?: string): Promise<SkillsListResult> {\n"
+                "    return this.client.post<SkillsListResult>(backendApiPath(`/ecosystem/skills/list`), body, undefined, { 'X-Request-Id': xRequestId }, 'application/json');\n"
                 "  }\n"
                 "}\n",
                 encoding="utf-8",
             )
-            (backend / "src" / "types" / "admin-app-list-request.ts").write_text(
-                "export interface AdminAppListRequest { q?: string; }\n",
+            (backend / "src" / "types" / "admin-skill-list-request.ts").write_text(
+                "export interface AdminSkillListRequest { q?: string; }\n",
                 encoding="utf-8",
             )
-            (backend / "src" / "types" / "admin-app-list-response.ts").write_text(
-                "export interface AdminAppListResponse { items: { id: string }[]; }\n",
+            (backend / "src" / "types" / "admin-skill-list-response.ts").write_text(
+                "export interface AdminSkillListResponse { items: { id: string }[]; }\n",
                 encoding="utf-8",
             )
-            (backend / "src" / "types" / "apps-list-result.ts").write_text(
-                "import type { AdminAppListResponse } from './admin-app-list-response';\n"
-                "export interface AppsListResult { code: string; data?: AdminAppListResponse; }\n",
+            (backend / "src" / "types" / "skills-list-result.ts").write_text(
+                "import type { AdminSkillListResponse } from './admin-skill-list-response';\n"
+                "export interface SkillsListResult { code: string; data?: AdminSkillListResponse; }\n",
                 encoding="utf-8",
             )
             (backend / "src" / "types" / "index.ts").write_text(
-                "export type { AdminAppListRequest } from './admin-app-list-request';\n"
-                "export type { AdminAppListResponse } from './admin-app-list-response';\n"
-                "export type { AppsListResult } from './apps-list-result';\n",
+                "export type { AdminSkillListRequest } from './admin-skill-list-request';\n"
+                "export type { AdminSkillListResponse } from './admin-skill-list-response';\n"
+                "export type { SkillsListResult } from './skills-list-result';\n",
                 encoding="utf-8",
             )
             app = root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src"
@@ -1370,18 +1370,18 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                             {
                                 "api_surface": "backend",
                                 "api_method": "POST",
-                                "api_path": "/backend/v3/api/platform/apps/list",
-                                "operation": "fetchApps",
-                                "operation_id": "apps.list",
-                                "tag": "app",
+                                "api_path": "/backend/v3/api/ecosystem/skills/list",
+                                "operation": "fetchSkills",
+                                "operation_id": "skills.list",
+                                "tag": "ecosystem",
                                 "kind": "read",
                                 "path_params": [],
-                                "source": "apps/portal/adminAppService.ts",
-                                "read_sources": ["appstore_app"],
+                                "source": "apps/portal/skillService.ts",
+                                "read_sources": ["agent_skill"],
                                 "write_tables": [],
                                 "request_body_required": False,
                                 "request_schema": {
-                                    "name": "AdminAppListRequest",
+                                    "name": "AdminSkillListRequest",
                                     "schema": {
                                         "type": "object",
                                         "additionalProperties": False,
@@ -1395,7 +1395,7 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                                     },
                                 },
                                 "response_schema": {
-                                    "name": "AdminAppListResponse",
+                                    "name": "AdminSkillListResponse",
                                     "schema": {
                                         "type": "object",
                                         "additionalProperties": False,
@@ -1429,20 +1429,20 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
             backend = root / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript"
             (backend / "src" / "api").mkdir(parents=True, exist_ok=True)
             (backend / "src" / "types").mkdir(parents=True, exist_ok=True)
-            (backend / "src" / "api" / "app.ts").write_text(
+            (backend / "src" / "api" / "ecosystem.ts").write_text(
                 "import { backendApiPath } from './paths';\n"
                 "import type { HttpClient } from '../http/client';\n"
-                "import type { AdminAppListRequest, AppsListResult } from '../types';\n"
-                "export class AppApi {\n"
+                "import type { AdminSkillListRequest, SkillsListResult } from '../types';\n"
+                "export class EcosystemApi {\n"
                 "  constructor(private client: HttpClient) {}\n"
-                "  async list(body?: AdminAppListRequest, xRequestId?: string): Promise<AppsListResult> {\n"
-                "    return this.client.post<AppsListResult>(backendApiPath(`/app/list`), body, undefined, { 'X-Request-Id': xRequestId }, 'application/json');\n"
+                "  async list(body?: AdminSkillListRequest, xRequestId?: string): Promise<SkillsListResult> {\n"
+                "    return this.client.post<SkillsListResult>(backendApiPath(`/ecosystem/skills/list`), body, undefined, { 'X-Request-Id': xRequestId }, 'application/json');\n"
                 "  }\n"
                 "}\n",
                 encoding="utf-8",
             )
-            (backend / "src" / "types" / "admin-app-list-request.ts").write_text(
-                "export interface AdminAppListRequest {\n"
+            (backend / "src" / "types" / "admin-skill-list-request.ts").write_text(
+                "export interface AdminSkillListRequest {\n"
                 "  q?: string;\n"
                 "  keyword?: string;\n"
                 "  search_query?: string;\n"
@@ -1451,19 +1451,19 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                 "}\n",
                 encoding="utf-8",
             )
-            (backend / "src" / "types" / "admin-app-list-response.ts").write_text(
-                "export interface AdminAppListResponse { items: { id: string }[]; }\n",
+            (backend / "src" / "types" / "admin-skill-list-response.ts").write_text(
+                "export interface AdminSkillListResponse { items: { id: string }[]; }\n",
                 encoding="utf-8",
             )
-            (backend / "src" / "types" / "apps-list-result.ts").write_text(
-                "import type { AdminAppListResponse } from './admin-app-list-response';\n"
-                "export interface AppsListResult { code: string; data?: AdminAppListResponse; }\n",
+            (backend / "src" / "types" / "skills-list-result.ts").write_text(
+                "import type { AdminSkillListResponse } from './admin-skill-list-response';\n"
+                "export interface SkillsListResult { code: string; data?: AdminSkillListResponse; }\n",
                 encoding="utf-8",
             )
             (backend / "src" / "types" / "index.ts").write_text(
-                "export type { AdminAppListRequest } from './admin-app-list-request';\n"
-                "export type { AdminAppListResponse } from './admin-app-list-response';\n"
-                "export type { AppsListResult } from './apps-list-result';\n",
+                "export type { AdminSkillListRequest } from './admin-skill-list-request';\n"
+                "export type { AdminSkillListResponse } from './admin-skill-list-response';\n"
+                "export type { SkillsListResult } from './skills-list-result';\n",
                 encoding="utf-8",
             )
             app = root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src"
@@ -1475,11 +1475,11 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
             self.assertFalse(result.ok)
             for property_name in ("keyword", "search_query", "search", "searchQuery"):
                 self.assertIn(
-                    f"backend apps.list request schema AdminAppListRequest.{property_name} must use q for search text",
+                    f"backend skills.list request schema AdminSkillListRequest.{property_name} must use q for search text",
                     result.messages,
                 )
                 self.assertIn(
-                    f"backend apps.list SDK request type AdminAppListRequest.{property_name} must use q for search text",
+                    f"backend skills.list SDK request type AdminSkillListRequest.{property_name} must use q for search text",
                     result.messages,
                 )
             self.assertFalse(any(".q must use q for search text" in message for message in result.messages))

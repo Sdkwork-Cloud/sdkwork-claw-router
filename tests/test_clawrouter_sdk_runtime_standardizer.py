@@ -242,15 +242,15 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
             multipart_spec = {
                 "openapi": "3.1.0",
                 "paths": {
-                    "/app/v3/api/courses/applications/videos": {
+                    "/app/v3/api/content/forum/attachments": {
                         "post": {
-                            "operationId": "applications.videos.create",
+                            "operationId": "forum.attachments.create",
                             "requestBody": {
                                 "required": True,
                                 "content": {
                                     "multipart/form-data": {
                                         "schema": {
-                                            "$ref": "#/components/schemas/CourseApplicationVideoUploadRequest"
+                                            "$ref": "#/components/schemas/ForumAttachmentUploadRequest"
                                         }
                                     }
                                 },
@@ -260,7 +260,7 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
                 },
                 "components": {
                     "schemas": {
-                        "CourseApplicationVideoUploadRequest": {
+                        "ForumAttachmentUploadRequest": {
                             "type": "object",
                             "properties": {"file": {"type": "string", "format": "binary"}},
                         }
@@ -280,11 +280,11 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
             (api_dir / "content.ts").write_text(
                 "import { appApiPath } from './paths';\n"
                 "import type { HttpClient } from '../http/client';\n"
-                "import type { ApplicationsVideosCreateResult, CourseApplicationVideoUploadRequest } from '../types';\n"
-                "export class ContentApplicationsVideosApi {\n"
+                "import type { ForumAttachmentsCreateResult, ForumAttachmentUploadRequest } from '../types';\n"
+                "export class ContentForumAttachmentsApi {\n"
                 "  constructor(private client: HttpClient) {}\n"
-                "  async create(body: CourseApplicationVideoUploadRequest): Promise<ApplicationsVideosCreateResult> {\n"
-                "    return this.client.post<ApplicationsVideosCreateResult>(appApiPath(`/courses/applications/videos`), body, undefined, undefined, 'multipart/form-data');\n"
+                "  async create(body: ForumAttachmentUploadRequest): Promise<ForumAttachmentsCreateResult> {\n"
+                "    return this.client.post<ForumAttachmentsCreateResult>(appApiPath(`/content/forum/attachments`), body, undefined, undefined, 'multipart/form-data');\n"
                 "  }\n"
                 "}\n",
                 encoding="utf-8",
@@ -293,8 +293,8 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
             self.standardizer(root, ("clawrouter-app-sdk",)).run()
 
             content = (api_dir / "content.ts").read_text(encoding="utf-8")
-            self.assertIn("CourseApplicationVideoUploadRequest", content)
-            self.assertIn("async create(body: CourseApplicationVideoUploadRequest)", content)
+            self.assertIn("ForumAttachmentUploadRequest", content)
+            self.assertIn("async create(body: ForumAttachmentUploadRequest)", content)
             self.assertNotIn("async create(body: FormData)", content)
 
     def test_syncs_family_openapi_snapshots_without_typescript_workspace(self) -> None:

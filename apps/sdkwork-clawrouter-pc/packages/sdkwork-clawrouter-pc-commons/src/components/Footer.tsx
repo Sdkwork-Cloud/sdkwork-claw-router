@@ -54,7 +54,6 @@ export function Footer() {
             <ul className="space-y-4">
               <li><Link to="/features" className="text-slate-600 dark:text-slate-400 hover:text-lobster-500 dark:hover:text-lobster-400 transition-colors">{t('footer.features')}</Link></li>
               <li><Link to="/models" className="text-slate-600 dark:text-slate-400 hover:text-lobster-500 dark:hover:text-lobster-400 transition-colors">{t('footer.models')}</Link></li>
-              <li><Link to="/apps" className="text-slate-600 dark:text-slate-400 hover:text-lobster-500 dark:hover:text-lobster-400 transition-colors">{t('footer.appCenter')}</Link></li>
               <li><Link to="/pricing" className="text-slate-600 dark:text-slate-400 hover:text-lobster-500 dark:hover:text-lobster-400 transition-colors">{t('footer.pricing')}</Link></li>
               <li><Link to="/changelog" className="text-slate-600 dark:text-slate-400 hover:text-lobster-500 dark:hover:text-lobster-400 transition-colors">{t('footer.changelog')}</Link></li>
             </ul>
@@ -68,8 +67,6 @@ export function Footer() {
               <li><Link to="/api-reference" className="text-slate-600 dark:text-slate-400 hover:text-lobster-500 dark:hover:text-lobster-400 transition-colors">{t('footer.api')}</Link></li>
               <li><Link to="/guides" className="text-slate-600 dark:text-slate-400 hover:text-lobster-500 dark:hover:text-lobster-400 transition-colors">{t('footer.guides')}</Link></li>
               <li><Link to="/blog" className="text-slate-600 dark:text-slate-400 hover:text-lobster-500 dark:hover:text-lobster-400 transition-colors">{t('footer.blog')}</Link></li>
-              <li><Link to="/forum" className="text-slate-600 dark:text-slate-400 hover:text-lobster-500 dark:hover:text-lobster-400 transition-colors">{t('footer.forum')}</Link></li>
-              <li><Link to="/courses" className="text-slate-600 dark:text-slate-400 hover:text-lobster-500 dark:hover:text-lobster-400 transition-colors">{t('footer.courses')}</Link></li>
             </ul>
           </div>
 

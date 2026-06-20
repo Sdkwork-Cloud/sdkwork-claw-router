@@ -3,29 +3,32 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SDK_REFERENCE_ROOT = (
+WORKSPACE_ROOT = ROOT.parent
+DOCUMENTS_SDK_REFERENCE_ROOT = (
+    WORKSPACE_ROOT
+    / "sdkwork-documents"
+    / "apps"
+    / "sdkwork-documents-pc"
+    / "packages"
+    / "sdkwork-documents-pc-sdk-reference"
+    / "src"
+)
+COMMONS_RUNTIME = (
     ROOT
     / "apps"
     / "sdkwork-clawrouter-pc"
     / "packages"
-    / "sdkwork-clawrouter-pc-sdk-reference"
+    / "sdkwork-clawrouter-pc-commons"
     / "src"
+    / "sdk-clients.ts"
 )
 
 
 class SdkReferenceRuntimeStandardTest(unittest.TestCase):
     def test_sdk_reference_runtime_accepts_all_router_api_systems(self) -> None:
-        sdk_runtime_source = (SDK_REFERENCE_ROOT / "sdkReferenceRuntime.ts").read_text(encoding="utf-8")
-        sdk_data = (SDK_REFERENCE_ROOT / "data" / "sdkData.ts").read_text(encoding="utf-8")
-        commons_runtime = (
-            ROOT
-            / "apps"
-            / "sdkwork-clawrouter-pc"
-            / "packages"
-            / "sdkwork-clawrouter-pc-commons"
-            / "src"
-            / "sdk-clients.ts"
-        ).read_text(encoding="utf-8")
+        sdk_runtime_source = (DOCUMENTS_SDK_REFERENCE_ROOT / "sdkReferenceRuntime.ts").read_text(encoding="utf-8")
+        sdk_data = (DOCUMENTS_SDK_REFERENCE_ROOT / "data" / "sdkData.ts").read_text(encoding="utf-8")
+        commons_runtime = COMMONS_RUNTIME.read_text(encoding="utf-8")
 
         for system_id in [
             "llm-open-api",
@@ -47,7 +50,7 @@ class SdkReferenceRuntimeStandardTest(unittest.TestCase):
             self.assertNotIn(f"export type SdkReferenceSystem = {legacy_id}", sdk_runtime_source)
 
     def test_sdk_reference_examples_use_generated_sdk_client_mounts(self) -> None:
-        sdk_data = (SDK_REFERENCE_ROOT / "data" / "sdkData.ts").read_text(encoding="utf-8")
+        sdk_data = (DOCUMENTS_SDK_REFERENCE_ROOT / "data" / "sdkData.ts").read_text(encoding="utf-8")
 
         for expected in [
             "client.iam.apiKeys.list()",
@@ -71,31 +74,43 @@ class SdkReferenceRuntimeStandardTest(unittest.TestCase):
             self.assertNotIn(stale_example, sdk_data)
 
     def test_sdk_reference_uses_shared_openapi_endpoint_types(self) -> None:
-        sdk_reference = SDK_REFERENCE_ROOT / "pages" / "SdkReference.tsx"
-        endpoint_view = SDK_REFERENCE_ROOT / "components" / "SdkEndpointView.tsx"
+        sdk_reference = DOCUMENTS_SDK_REFERENCE_ROOT / "pages" / "SdkReference.tsx"
+        endpoint_view = DOCUMENTS_SDK_REFERENCE_ROOT / "components" / "SdkEndpointView.tsx"
         sdk_reference_source = sdk_reference.read_text(encoding="utf-8")
         endpoint_view_source = endpoint_view.read_text(encoding="utf-8")
 
         for token in [
-            "import type { ApiReferenceEndpoint } from 'sdkwork-clawrouter-pc-api-reference/openapiTypes'",
-            "import type { OpenApiDocument } from 'sdkwork-clawrouter-pc-api-reference/openapiTypes'",
+            "import type { ApiReferenceEndpoint } from '@sdkwork/documents-pc-api-reference/openapiTypes'",
+            "import type { OpenApiDocument } from '@sdkwork/documents-pc-api-reference/openapiTypes'",
             "loadSdkReferenceSystems()",
             "activeSystemData?.openApiSpec",
         ]:
             self.assertIn(token, sdk_reference_source)
 
-        sdk_runtime_source = (SDK_REFERENCE_ROOT / "sdkReferenceRuntime.ts").read_text(encoding="utf-8")
-        sdk_documentation_source = (SDK_REFERENCE_ROOT / "sdkEndpointDocumentation.ts").read_text(encoding="utf-8")
-        sdk_generation_service_source = (SDK_REFERENCE_ROOT / "sdkReferenceGenerationService.ts").read_text(encoding="utf-8")
+        sdk_runtime_source = (DOCUMENTS_SDK_REFERENCE_ROOT / "sdkReferenceRuntime.ts").read_text(encoding="utf-8")
+        sdk_documentation_source = (DOCUMENTS_SDK_REFERENCE_ROOT / "sdkEndpointDocumentation.ts").read_text(encoding="utf-8")
+        sdk_generation_service_source = (
+            DOCUMENTS_SDK_REFERENCE_ROOT / "sdkReferenceGenerationService.ts"
+        ).read_text(encoding="utf-8")
+        adapter_source = (
+            ROOT
+            / "apps"
+            / "sdkwork-clawrouter-pc"
+            / "packages"
+            / "sdkwork-clawrouter-pc-commons"
+            / "src"
+            / "documents-reference-runtime-adapter.ts"
+        ).read_text(encoding="utf-8")
 
         self.assertIn("export interface GeneratedSdkToolConfig", sdk_runtime_source)
         self.assertIn("const [activeSdkConfig, setActiveSdkConfig] = useState<GeneratedSdkToolConfig | null>(null)", sdk_reference_source)
-        self.assertIn("getClawRouterAppSdkClient().sdkReference.documentation.create", sdk_generation_service_source)
-        self.assertIn("getClawRouterAppSdkClient().sdkReference.archives.create", sdk_generation_service_source)
+        self.assertIn("getDocumentsAppSdkClient().sdkReference.documentation.create", sdk_generation_service_source)
+        self.assertIn("getDocumentsAppSdkClient().sdkReference.archives.create", sdk_generation_service_source)
+        self.assertIn("@sdkwork/documents-app-sdk", adapter_source)
         self.assertNotIn("generateResponse.json()", sdk_reference_source)
 
-        self.assertIn("import type { ApiParameter } from 'sdkwork-clawrouter-pc-api-reference/openapiTypes'", endpoint_view_source)
-        self.assertIn("import type { ApiReferenceEndpoint } from 'sdkwork-clawrouter-pc-api-reference/openapiTypes'", endpoint_view_source)
+        self.assertIn("import type { ApiParameter } from '@sdkwork/documents-pc-api-reference/openapiTypes'", endpoint_view_source)
+        self.assertIn("import type { ApiReferenceEndpoint } from '@sdkwork/documents-pc-api-reference/openapiTypes'", endpoint_view_source)
         self.assertIn("export interface SdkEndpointData", sdk_documentation_source)
         self.assertIn("function toSdkMethodName(endpoint: ApiReferenceEndpoint, language: string): string", sdk_documentation_source)
         self.assertIn("function upperPathSegment(_match: string, chr: string): string", sdk_documentation_source)
@@ -114,7 +129,7 @@ class SdkReferenceRuntimeStandardTest(unittest.TestCase):
                 self.assertNotIn("Promise<any>", source)
 
     def test_sdk_reference_sidebar_uses_fixed_width_without_resize_drag_handle(self) -> None:
-        sdk_reference_source = (SDK_REFERENCE_ROOT / "pages" / "SdkReference.tsx").read_text(encoding="utf-8")
+        sdk_reference_source = (DOCUMENTS_SDK_REFERENCE_ROOT / "pages" / "SdkReference.tsx").read_text(encoding="utf-8")
         portal_css = (ROOT / "apps" / "sdkwork-clawrouter-pc" / "src" / "index.css").read_text(encoding="utf-8")
 
         self.assertIn("md:w-[360px] md:max-w-[360px] md:basis-[360px]", sdk_reference_source)

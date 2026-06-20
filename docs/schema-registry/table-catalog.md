@@ -2,9 +2,9 @@
 
 生成来源：`docs/schema-registry/sdkwork-claw-router.tables.yaml`
 source: docs/schema-registry/sdkwork-claw-router.tables.yaml
-表总数：306
-table-count: 306
-本项目生成表：215
+表总数：154
+table-count: 154
+本项目生成表：154
 
 本文列出当前应用 schema registry 中登记的全部数据库表，并给出中文业务说明。`generated = no` 表示物理结构由外部系统或 Java 兼容实体拥有，当前应用只登记和读取契约。
 
@@ -12,16 +12,13 @@ table-count: 306
 
 | domain | 表数量 | 说明 |
 | --- | ---: | --- |
-| `ai` | 90 | AI 中转与模型服务 |
+| `ai` | 84 | AI 中转与模型服务 |
 | `classification` | 1 | classification |
-| `commerce` | 85 | 交易、计费与结算 |
-| `content` | 31 | 内容、文档与对象存储 |
-| `iam` | 32 | 身份、访问与安全 |
+| `commerce` | 12 | 交易、计费与结算 |
+| `content` | 18 | 内容、文档与对象存储 |
+| `iam` | 10 | 身份、访问与安全 |
 | `integration` | 14 | 外部集成与服务商 |
-| `messaging` | 15 | 消息触达 |
-| `ops` | 14 | 运维治理 |
-| `platform` | 4 | platform |
-| `promotion` | 18 | 营销促销 |
+| `ops` | 13 | 运维治理 |
 | `system` | 2 | 系统安装 |
 
 ## AI 中转与模型服务
@@ -108,12 +105,6 @@ table-count: 306
 | `ai_generation_job` | AI 中转与模型服务的事件日志，记录 生成任务。 | `event_log` | `generation-service` | yes |
 | `ai_generation_asset` | AI 中转与模型服务的用户级数据，记录 生成资产。 | `user_entity` | `generation-service` | yes |
 | `ai_generation_asset_action` | AI 中转与模型服务的事件日志，记录 生成资产操作。 | `event_log` | `generation-service` | yes |
-| `ai_agent_skill_package` | AI 中转与模型服务的租户级主数据，记录 Agent 技能包。 | `tenant_entity` | `skills-service` | yes |
-| `ai_agent_skill` | AI 中转与模型服务的租户级主数据，记录 Agent 技能。 | `tenant_entity` | `skills-service` | yes |
-| `ai_user_agent_skill` | AI 中转与模型服务的租户级主数据，记录 用户 Agent 技能。 | `tenant_entity` | `skills-service` | yes |
-| `ai_skill_asset` | AI 中转与模型服务的租户级主数据，记录 skillasset。 | `tenant_entity` | `skills-service` | yes |
-| `ai_skill_artifact` | AI 中转与模型服务的租户级主数据，记录 skillartifact。 | `tenant_entity` | `skills-service` | yes |
-| `ai_skill_action` | AI 中转与模型服务的事件日志，记录 skillaction。 | `event_log` | `skills-service` | yes |
 | `ai_model_mapping_rule` | 模型映射规则主表，定义全局、vendor、账号或分组级模型别名映射。 | `rule_entity` | `ai-routing-service` | yes |
 | `ai_model_mapping_rule_item` | 模型映射规则条目，保存源模型到目标模型的具体映射。 | `relation_entity` | `ai-routing-service` | yes |
 | `ai_model_mapping_rule_binding` | 模型映射规则绑定，定义映射规则适用的账号、分组、vendor 或全局范围。 | `relation_entity` | `ai-routing-service` | yes |
@@ -129,79 +120,6 @@ table-count: 306
 
 | 表名 | 说明 | profile | write_owner | generated |
 | --- | --- | --- | --- | --- |
-| `commerce_idempotency_key` | 交易、计费与结算的外部兼容表，登记 幂等键 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_account` | 交易、计费与结算的外部兼容表，登记 账户 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_account_ledger_entry` | 交易、计费与结算的外部兼容表，登记 账户流水 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_account_hold` | 交易、计费与结算的外部兼容表，登记 账户冻结 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_billing_history` | 交易、计费与结算的外部兼容表，登记 计费历史 的现有物理结构供当前应用读取或映射。 | `read_model` | `sdkwork-appbase-commerce` | no |
-| `commerce_product_category` | 交易、计费与结算的外部兼容表，登记 商品分类 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_product_spu` | 交易、计费与结算的外部兼容表，登记 商品 SPU 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_product_spu_category` | 交易、计费与结算的外部兼容表，登记 商品 SPU 分类 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_product_sku` | 交易、计费与结算的外部兼容表，登记 商品 SKU 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_product_attribute` | 交易、计费与结算的外部兼容表，登记 商品属性 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_product_category_attribute` | 交易、计费与结算的外部兼容表，登记 商品分类属性 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_product_attribute_value` | 交易、计费与结算的外部兼容表，登记 商品属性值 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_product_sku_attribute` | 交易、计费与结算的外部兼容表，登记 商品 SKU 属性 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_product_media` | 交易、计费与结算的外部兼容表，登记 商品媒体 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_price_list` | 交易、计费与结算的外部兼容表，登记 价格表 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_price_list_item` | 交易、计费与结算的外部兼容表，登记 价格表条目 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_inventory_stock` | 交易、计费与结算的外部兼容表，登记 库存 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_inventory_reservation` | 交易、计费与结算的外部兼容表，登记 库存预留 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_inventory_ledger` | 交易、计费与结算的外部兼容表，登记 库存流水 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_cart` | 交易、计费与结算的外部兼容表，登记 cart 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_cart_item` | 交易、计费与结算的外部兼容表，登记 购物车条目 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_user_address` | 交易、计费与结算的外部兼容表，登记 用户地址 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_checkout_session` | 交易、计费与结算的外部兼容表，登记 结算会话 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_checkout_line` | 交易、计费与结算的外部兼容表，登记 结算行 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_checkout_quote` | 交易、计费与结算的外部兼容表，登记 结算报价 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_membership_plan` | 交易、计费与结算的外部兼容表，登记 会员计划 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_membership_package_group` | 交易、计费与结算的外部兼容表，登记 会员套餐组 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_membership_package` | 交易、计费与结算的外部兼容表，登记 会员套餐 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_membership` | 交易、计费与结算的外部兼容表，登记 membership 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_membership_entitlement` | 交易、计费与结算的外部兼容表，登记 会员权益 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_membership_entitlement_usage` | 交易、计费与结算的外部兼容表，登记 会员权益用量 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_recharge_package` | 交易、计费与结算的外部兼容表，登记 充值套餐 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_order` | 交易、计费与结算的外部兼容表，登记 order 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_order_item` | 交易、计费与结算的外部兼容表，登记 订单明细 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_order_amount_breakdown` | 交易、计费与结算的外部兼容表，登记 订单金额拆分 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_order_address_snapshot` | 交易、计费与结算的外部兼容表，登记 订单地址快照 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_order_event` | 交易、计费与结算的外部兼容表，登记 订单事件 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_order_cancellation` | 交易、计费与结算的外部兼容表，登记 订单取消 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_payment_provider` | 交易、计费与结算的外部兼容表，登记 payment供应商 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_payment_provider_account` | 交易、计费与结算的外部兼容表，登记 支付供应商账号 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_payment_channel` | 交易、计费与结算的外部兼容表，登记 支付渠道 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_payment_route_rule` | 交易、计费与结算的外部兼容表，登记 支付路由规则 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_payment_provider_capability` | 交易、计费与结算的外部兼容表，登记 支付供应商能力 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_payment_operation_attempt` | 交易、计费与结算的外部兼容表，登记 支付操作尝试 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_payment_route_decision` | 交易、计费与结算的外部兼容表，登记 支付路由决策 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_payment_capture` | 交易、计费与结算的外部兼容表，登记 支付扣款 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_payment_webhook_delivery` | 交易、计费与结算的外部兼容表，登记 支付 Webhook 投递 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_payment_statement` | 交易、计费与结算的外部兼容表，登记 支付账单 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_payment_statement_item` | 交易、计费与结算的外部兼容表，登记 支付账单明细 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_payment_reconciliation_item` | 交易、计费与结算的外部兼容表，登记 支付对账明细 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_payment_fee` | 交易、计费与结算的外部兼容表，登记 支付费用 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_payment_dispute` | 交易、计费与结算的外部兼容表，登记 支付争议 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_payment_dispute_event` | 交易、计费与结算的外部兼容表，登记 支付争议事件 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_payment_intent` | 交易、计费与结算的外部兼容表，登记 支付意图 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_payment_attempt` | 交易、计费与结算的外部兼容表，登记 支付尝试 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_payment_webhook_event` | 交易、计费与结算的外部兼容表，登记 支付 Webhook 事件 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_payment_reconciliation_run` | 交易、计费与结算的外部兼容表，登记 支付对账批次 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_payment_method` | 交易、计费与结算的外部兼容表，登记 支付方式 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_refund` | 交易、计费与结算的外部兼容表，登记 refund 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_refund_item` | 交易、计费与结算的外部兼容表，登记 退款明细 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_refund_attempt` | 交易、计费与结算的外部兼容表，登记 退款尝试 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_refund_event` | 交易、计费与结算的外部兼容表，登记 退款事件 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_fulfillment_order` | 交易、计费与结算的外部兼容表，登记 履约单 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_fulfillment_item` | 交易、计费与结算的外部兼容表，登记 履约明细 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_shipment` | 交易、计费与结算的外部兼容表，登记 物流发货 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_shipment_tracking_event` | 交易、计费与结算的外部兼容表，登记 物流跟踪事件 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_digital_delivery` | 交易、计费与结算的外部兼容表，登记 数字交付 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_exchange_rule` | 交易、计费与结算的外部兼容表，登记 换货规则 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_invoice_title` | 交易、计费与结算的外部兼容表，登记 发票抬头 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_invoice` | 交易、计费与结算的外部兼容表，登记 invoice 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_invoice_item` | 交易、计费与结算的外部兼容表，登记 发票明细 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_invoice_event` | 交易、计费与结算的外部兼容表，登记 发票事件 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
-| `commerce_invoice_provider_attempt` | 交易、计费与结算的外部兼容表，登记 发票服务尝试 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-commerce` | no |
 | `commerce_usage_settlement` | 交易、计费与结算的账务投影，记录 用量结算。 | `ledger_projection` | `settlement-worker` | yes |
 | `commerce_usage_pricing_plan` | 交易、计费与结算的字典主数据，记录 用量价格计划。 | `dictionary_entity` | `pricing-service` | yes |
 | `commerce_usage_statement` | 交易、计费与结算的投影快照，记录 用量账单。 | `projection` | `billing-worker` | yes |
@@ -219,19 +137,6 @@ table-count: 306
 
 | 表名 | 说明 | profile | write_owner | generated |
 | --- | --- | --- | --- | --- |
-| `content_announcement` | 内容、文档与对象存储的内容主数据，记录 公告。 | `content_entity` | `content-service` | yes |
-| `content_doc_page` | 内容、文档与对象存储的内容主数据，记录 文档页面。 | `content_entity` | `docs-service` | yes |
-| `content_openapi_snapshot` | 内容、文档与对象存储的投影快照，记录 OpenAPI 快照。 | `projection` | `api-docs-pipeline` | yes |
-| `content_sdk_release` | 内容、文档与对象存储的内容主数据，记录 SDK 发布。 | `content_entity` | `sdk-release-pipeline` | yes |
-| `content_reaction` | 内容、文档与对象存储的事件日志，记录 reaction。 | `event_log` | `content-engagement-service` | yes |
-| `content_course` | 内容、文档与对象存储的内容主数据，记录 course。 | `content_entity` | `course-service` | yes |
-| `content_course_section` | 内容、文档与对象存储的内容主数据，记录 课程章节。 | `content_entity` | `course-service` | yes |
-| `content_course_lesson` | 内容、文档与对象存储的内容主数据，记录 课程课时。 | `content_entity` | `course-service` | yes |
-| `content_course_relation` | 内容、文档与对象存储的关系绑定，记录 课程关系。 | `relation_entity` | `course-service` | yes |
-| `content_course_application` | 内容、文档与对象存储的用户内容申请，记录 课程申请。 | `user_content_application` | `course-service` | yes |
-| `content_forum_post` | 内容、文档与对象存储的租户级主数据，记录 论坛帖子。 | `tenant_entity` | `content-service` | yes |
-| `content_comment` | 内容、文档与对象存储的租户级主数据，记录 comment。 | `tenant_entity` | `content-service` | yes |
-| `content_favorite` | 内容、文档与对象存储的租户级主数据，记录 favorite。 | `tenant_entity` | `content-service` | yes |
 | `object_provider` | 内容、文档与对象存储的对象存储供应商，记录 供应商。 | `object_storage_provider` | `storage-service` | yes |
 | `object_bucket` | 内容、文档与对象存储的对象存储桶，记录 bucket。 | `object_storage_bucket` | `storage-service` | yes |
 | `storage_default_bucket_policy` | 内容、文档与对象存储的对象存储路由策略，记录 默认桶策略。 | `object_storage_routing_policy` | `storage-service` | yes |
@@ -255,28 +160,6 @@ table-count: 306
 
 | 表名 | 说明 | profile | write_owner | generated |
 | --- | --- | --- | --- | --- |
-| `iam_tenant` | 身份、访问与安全的租户根数据，记录 租户。 | `tenant_root` | `sdkwork-appbase-iam` | yes |
-| `iam_organization` | 身份、访问与安全的租户级主数据，记录 组织。 | `tenant_entity` | `sdkwork-appbase-iam` | yes |
-| `iam_organization_membership` | 身份、访问与安全的租户级主数据，记录 组织membership。 | `tenant_entity` | `sdkwork-appbase-iam` | yes |
-| `iam_department` | 身份、访问与安全的tree entity，记录 department。 | `tree_entity` | `sdkwork-appbase-iam` | yes |
-| `iam_department_assignment` | 身份、访问与安全的关系绑定，记录 departmentassignment。 | `relation_entity` | `sdkwork-appbase-iam` | yes |
-| `iam_position` | 身份、访问与安全的租户级主数据，记录 position。 | `tenant_entity` | `sdkwork-appbase-iam` | yes |
-| `iam_position_assignment` | 身份、访问与安全的关系绑定，记录 positionassignment。 | `relation_entity` | `sdkwork-appbase-iam` | yes |
-| `iam_user` | 身份、访问与安全的租户级主数据，记录 user。 | `tenant_entity` | `sdkwork-appbase-iam` | yes |
-| `iam_user_identity` | 身份、访问与安全的租户级主数据，记录 用户身份。 | `tenant_entity` | `sdkwork-appbase-iam` | yes |
-| `iam_credential` | 身份、访问与安全的租户级主数据，记录 凭证。 | `tenant_entity` | `sdkwork-appbase-iam` | yes |
-| `iam_session` | 身份、访问与安全的租户级主数据，记录 会话。 | `tenant_entity` | `sdkwork-appbase-iam` | yes |
-| `iam_mfa_factor` | 身份、访问与安全的租户级主数据，记录 MFA 因子。 | `tenant_entity` | `sdkwork-appbase-iam` | yes |
-| `iam_device` | 身份、访问与安全的租户级主数据，记录 设备。 | `tenant_entity` | `sdkwork-appbase-iam` | yes |
-| `iam_role` | 身份、访问与安全的租户级主数据，记录 角色。 | `tenant_entity` | `sdkwork-appbase-iam` | yes |
-| `iam_permission` | 身份、访问与安全的全局主数据，记录 权限。 | `global_entity` | `sdkwork-appbase-iam` | yes |
-| `iam_policy` | 身份、访问与安全的租户级主数据，记录 策略。 | `tenant_entity` | `sdkwork-appbase-iam` | yes |
-| `iam_role_permission` | 身份、访问与安全的租户级主数据，记录 角色权限。 | `tenant_entity` | `sdkwork-appbase-iam` | yes |
-| `iam_role_binding` | 身份、访问与安全的关系绑定，记录 角色binding。 | `relation_entity` | `sdkwork-appbase-iam` | yes |
-| `iam_user_role` | 身份、访问与安全的租户级主数据，记录 用户角色。 | `tenant_entity` | `sdkwork-appbase-iam` | yes |
-| `iam_api_key` | 身份、访问与安全的租户级主数据，记录 API Key。 | `tenant_entity` | `sdkwork-appbase-iam` | yes |
-| `iam_security_event` | 身份、访问与安全的事件日志，记录 安全事件。 | `event_log` | `sdkwork-appbase-iam` | yes |
-| `iam_audit_event` | 身份、访问与安全的审计日志，记录 审计事件。 | `audit_log` | `sdkwork-appbase-iam` | yes |
 | `iam_gateway_api_key` | 中转站对外 API Key 索引，保存密钥哈希、默认分组、策略和限额引用。 | `credential_index` | `api-key-service` | yes |
 | `iam_gateway_api_key_channel_group` | 身份、访问与安全的关系绑定，记录 gatewayapikeychannelgroup。 | `relation_entity` | `api-key-service` | yes |
 | `iam_gateway_access_policy` | 保存网关 API Key 的访问能力、IP 白名单等访问控制策略。 | `tenant_entity` | `access-policy-service` | yes |
@@ -307,31 +190,10 @@ table-count: 306
 | `integration_provider_invoice_import` | 外部集成与服务商的上游账单导入批次，记录 供应商账单导入批次。 | `upstream_provider_invoice_import` | `reconciliation-worker` | yes |
 | `integration_provider_invoice_item` | 外部集成与服务商的上游账单明细，记录 供应商账单明细。 | `upstream_provider_invoice_item` | `reconciliation-worker` | yes |
 
-## 消息触达
-
-| 表名 | 说明 | profile | write_owner | generated |
-| --- | --- | --- | --- | --- |
-| `messaging_provider` | 消息触达的供应商字典，记录 供应商。 | `provider_dictionary` | `sdkwork-appbase-messaging` | yes |
-| `messaging_provider_account` | 消息触达的供应商账号，记录 供应商账号。 | `provider_account` | `sdkwork-appbase-messaging` | yes |
-| `messaging_provider_capability` | 消息触达的供应商能力，记录 供应商能力。 | `provider_capability` | `sdkwork-appbase-messaging` | yes |
-| `messaging_sender_identity` | 消息触达的发送身份，记录 发送身份。 | `sender_identity` | `sdkwork-appbase-messaging` | yes |
-| `messaging_template` | 消息触达的消息模板，记录 模板。 | `template` | `sdkwork-appbase-messaging` | yes |
-| `messaging_template_version` | 消息触达的模板版本，记录 模板版本。 | `template_version` | `sdkwork-appbase-messaging` | yes |
-| `messaging_template_variant` | 消息触达的模板变体，记录 模板变体。 | `template_variant` | `sdkwork-appbase-messaging` | yes |
-| `messaging_template_binding` | 消息触达的模板绑定，记录 模板绑定。 | `template_binding` | `sdkwork-appbase-messaging` | yes |
-| `messaging_route_rule` | 消息触达的路由规则，记录 routerule。 | `route_rule` | `sdkwork-appbase-messaging` | yes |
-| `messaging_route_rule_target` | 消息触达的路由目标，记录 路由目标。 | `route_rule_target` | `sdkwork-appbase-messaging` | yes |
-| `messaging_send_request` | 消息触达的发送请求，记录 发送请求。 | `send_request` | `sdkwork-appbase-messaging` | yes |
-| `messaging_send_attempt` | 消息触达的发送尝试，记录 发送尝试。 | `send_attempt` | `sdkwork-appbase-messaging` | yes |
-| `messaging_delivery_event` | 消息触达的投递事件，记录 投递事件。 | `delivery_event` | `sdkwork-appbase-messaging` | yes |
-| `messaging_suppression` | 消息触达的触达抑制，记录 触达抑制。 | `suppression` | `sdkwork-appbase-messaging` | yes |
-| `messaging_rate_limit_bucket` | 消息触达的rate limit bucket，记录 限流桶。 | `rate_limit_bucket` | `sdkwork-appbase-messaging` | yes |
-
 ## 运维治理
 
 | 表名 | 说明 | profile | write_owner | generated |
 | --- | --- | --- | --- | --- |
-| `ops_referral_stat_snapshot` | 运维治理的投影快照，记录 推荐统计快照。 | `projection` | `marketing-analytics-worker` | yes |
 | `ops_gateway_instance` | 运维治理的核心主数据，记录 网关实例。 | `core_entity` | `ops-service` | yes |
 | `ops_gateway_heartbeat` | 运维治理的事件日志，记录 网关心跳。 | `event_log` | `ops-agent` | yes |
 | `ops_config_snapshot` | 运维治理的快照，记录 配置快照。 | `snapshot` | `control-plane` | yes |
@@ -345,38 +207,6 @@ table-count: 306
 | `ops_notification_delivery` | 运维治理的通知投递，记录 通知投递。 | `notification_delivery` | `notification-service` | yes |
 | `ops_notification_preference` | 运维治理的通知偏好，记录 通知偏好。 | `notification_preference` | `notification-service` | yes |
 | `ops_metric_snapshot` | 运维治理的投影快照，记录 指标快照。 | `projection` | `metrics-worker` | yes |
-
-## platform
-
-| 表名 | 说明 | profile | write_owner | generated |
-| --- | --- | --- | --- | --- |
-| `platform_app` | platform的租户级主数据，记录 platformapp。 | `tenant_entity` | `app-center-service` | yes |
-| `platform_app_template` | platform的租户级主数据，记录 platformapp模板。 | `tenant_entity` | `app-center-service` | yes |
-| `platform_app_template_version` | platform的租户级主数据，记录 platformapp模板version。 | `tenant_entity` | `app-center-service` | yes |
-| `platform_app_template_usage` | platform的事件日志，记录 platformapp模板usage。 | `event_log` | `app-center-service` | yes |
-
-## 营销促销
-
-| 表名 | 说明 | profile | write_owner | generated |
-| --- | --- | --- | --- | --- |
-| `promotion_offer` | 营销促销的外部兼容表，登记 offer 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-promotion` | no |
-| `promotion_offer_version` | 营销促销的外部兼容表，登记 优惠版本 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-promotion` | no |
-| `promotion_offer_presentation` | 营销促销的外部兼容表，登记 优惠展示配置 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-promotion` | no |
-| `promotion_offer_scope` | 营销促销的外部兼容表，登记 优惠适用范围 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-promotion` | no |
-| `promotion_offer_audience_rule` | 营销促销的外部兼容表，登记 优惠人群规则 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-promotion` | no |
-| `promotion_offer_time_window` | 营销促销的外部兼容表，登记 优惠时间窗口 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-promotion` | no |
-| `promotion_budget_account` | 营销促销的外部兼容表，登记 预算账户 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-promotion` | no |
-| `promotion_budget_ledger_entry` | 营销促销的外部兼容表，登记 预算流水 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-promotion` | no |
-| `promotion_coupon_stock` | 营销促销的外部兼容表，登记 优惠券库存 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-promotion` | no |
-| `promotion_code` | 营销促销的外部兼容表，登记 code 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-promotion` | no |
-| `promotion_code_redemption` | 营销促销的外部兼容表，登记 优惠码核销 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-promotion` | no |
-| `promotion_user_coupon` | 营销促销的外部兼容表，登记 用户优惠券 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-promotion` | no |
-| `promotion_discount_application` | 营销促销的外部兼容表，登记 优惠应用 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-promotion` | no |
-| `promotion_discount_allocation` | 营销促销的外部兼容表，登记 优惠分摊 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-promotion` | no |
-| `promotion_coupon_ledger_entry` | 营销促销的外部兼容表，登记 优惠券流水 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-promotion` | no |
-| `promotion_external_binding` | 营销促销的外部兼容表，登记 外部绑定 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-promotion` | no |
-| `promotion_external_operation` | 营销促销的外部兼容表，登记 外部操作 的现有物理结构供当前应用读取或映射。 | `external_operation_log` | `sdkwork-appbase-promotion` | no |
-| `promotion_event_outbox` | 营销促销的外部兼容表，登记 事件发件箱 的现有物理结构供当前应用读取或映射。 | `event_log` | `sdkwork-appbase-promotion` | no |
 
 ## 系统安装
 

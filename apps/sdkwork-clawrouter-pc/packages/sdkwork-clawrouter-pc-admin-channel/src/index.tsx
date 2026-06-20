@@ -69,6 +69,7 @@ import {
   reconcileChannelVendorSelection,
 } from './channelVendorSelection.ts';
 import { AdminTableShell, AiResourceSelectorModal, BusinessStateTableRow, ConfirmDialog } from 'sdkwork-clawrouter-pc-commons';
+import { copyTextToClipboard } from 'sdkwork-clawrouter-pc-commons/clipboard';
 
 type ToastState = { message: string; type: 'success' | 'info' | 'error' } | null;
 type AccountDrawerMode = 'create' | 'copy' | 'edit';
@@ -2864,19 +2865,18 @@ export function ChannelAdmin() {
     window.setTimeout(() => setToast(null), 3000);
   }, []);
 
-  const handleCopyCredentialApiKey = useCallback((credential: ChannelCredentialItem) => {
+  const handleCopyCredentialApiKey = useCallback(async (credential: ChannelCredentialItem) => {
     const apiKey = credential.apiKey?.trim();
     if (!apiKey) {
       showToast(t('admin.channel.credentials.apiKeyUnavailable'), 'error');
       return;
     }
-    if (!navigator.clipboard?.writeText) {
-      showToast(t('common.actions.copyFailed'), 'error');
+    const result = await copyTextToClipboard(apiKey);
+    if (result.ok) {
+      showToast(t('common.actions.copiedApiKey'));
       return;
     }
-    void navigator.clipboard.writeText(apiKey)
-      .then(() => showToast(t('common.actions.copiedApiKey')))
-      .catch(() => showToast(t('common.actions.copyFailed'), 'error'));
+    showToast(t('common.actions.copyFailed'), 'error');
   }, [showToast, t]);
 
   const loadChannels = useCallback(async (isActive: () => boolean = () => true) => {

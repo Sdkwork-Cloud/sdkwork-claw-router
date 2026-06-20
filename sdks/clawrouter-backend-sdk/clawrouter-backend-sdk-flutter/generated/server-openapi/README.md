@@ -44,15 +44,12 @@ client.setHeader('X-Custom-Header', 'value');
 
 ## API Modules
 
-- `client.agents` - agents API
 - `client.ai` - ai API
 - `client.content` - content API
-- `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.integration` - integration API
 - `client.mcp` - mcp API
 - `client.messaging` - messaging API
-- `client.platform` - platform API
 - `client.prompts` - prompts API
 - `client.serviceProviders` - service_providers API
 - `client.sites` - sites API
@@ -60,21 +57,6 @@ client.setHeader('X-Custom-Header', 'value');
 - `client.system` - system API
 
 ## Usage Examples
-
-### agents
-```dart
-// List managed agents
-final params = <String, dynamic>{
-  'q': 'q',
-  'owner_user_id': '1',
-  'status': 'active',
-  'visibility': 'private',
-  'page': 'page',
-  'page_size': 'page-size',
-};
-final result = await client.agents.agentDefinitionsList(params);
-print(result);
-```
 
 ### ai
 ```dart
@@ -87,13 +69,6 @@ print(result);
 ```dart
 // List announcements
 final result = await client.content.announcementsList();
-print(result);
-```
-
-### ecosystem
-```dart
-// List skill categories
-final result = await client.ecosystem.skillsCategoriesList();
 print(result);
 ```
 
@@ -140,13 +115,6 @@ final params = <String, dynamic>{
   'provider_code': 'ok',
 };
 final result = await client.messaging.providerAccountsList(params);
-print(result);
-```
-
-### platform
-```dart
-// List app categories
-final result = await client.platform.appsCategoriesList();
 print(result);
 ```
 

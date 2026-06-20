@@ -9,15 +9,12 @@ namespace Sdkwork.ClawRouter.Backend
     {
         private readonly SdkHttpClient _httpClient;
 
-        public AgentsApi Agents { get; }
         public AiApi Ai { get; }
         public ContentApi Content { get; }
-        public EcosystemApi Ecosystem { get; }
         public IamApi Iam { get; }
         public IntegrationApi Integration { get; }
         public McpApi Mcp { get; }
         public MessagingApi Messaging { get; }
-        public PlatformApi Platform { get; }
         public PromptsApi Prompts { get; }
         public ServiceProvidersApi ServiceProviders { get; }
         public SitesApi Sites { get; }
@@ -27,15 +24,12 @@ namespace Sdkwork.ClawRouter.Backend
         public SdkworkBackendClient(string baseUrl)
         {
             _httpClient = new SdkHttpClient(baseUrl);
-            Agents = new AgentsApi(_httpClient);
             Ai = new AiApi(_httpClient);
             Content = new ContentApi(_httpClient);
-            Ecosystem = new EcosystemApi(_httpClient);
             Iam = new IamApi(_httpClient);
             Integration = new IntegrationApi(_httpClient);
             Mcp = new McpApi(_httpClient);
             Messaging = new MessagingApi(_httpClient);
-            Platform = new PlatformApi(_httpClient);
             Prompts = new PromptsApi(_httpClient);
             ServiceProviders = new ServiceProvidersApi(_httpClient);
             Sites = new SitesApi(_httpClient);
@@ -46,15 +40,12 @@ namespace Sdkwork.ClawRouter.Backend
         public SdkworkBackendClient(SdkConfig config)
         {
             _httpClient = new SdkHttpClient(config);
-            Agents = new AgentsApi(_httpClient);
             Ai = new AiApi(_httpClient);
             Content = new ContentApi(_httpClient);
-            Ecosystem = new EcosystemApi(_httpClient);
             Iam = new IamApi(_httpClient);
             Integration = new IntegrationApi(_httpClient);
             Mcp = new McpApi(_httpClient);
             Messaging = new MessagingApi(_httpClient);
-            Platform = new PlatformApi(_httpClient);
             Prompts = new PromptsApi(_httpClient);
             ServiceProviders = new ServiceProvidersApi(_httpClient);
             Sites = new SitesApi(_httpClient);

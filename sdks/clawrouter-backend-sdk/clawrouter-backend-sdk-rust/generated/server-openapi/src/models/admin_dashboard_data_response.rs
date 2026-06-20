@@ -5,6 +5,10 @@ use crate::models::{AdminDashboardRecentUsageItem, AdminDashboardTrafficItem, Ad
 /// Admin dashboard data response schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AdminDashboardDataResponse {
+    /// Active users field on admin dashboard data response.
+    #[serde(rename = "activeUsers")]
+    pub active_users: String,
+
     /// Model distribution field on admin dashboard data response.
     #[serde(rename = "modelDistribution")]
     pub model_distribution: Vec<AdminPieChartItem>,

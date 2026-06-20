@@ -54,32 +54,16 @@ const client = new SdkworkAppClient({
 
 ## API Modules
 
-- `client.agents` - agents API
 - `client.ai` - ai API
 - `client.chat` - chat API
 - `client.content` - content API
-- `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.memory` - memory API
 - `client.notification` - notification API
-- `client.platform` - platform API
 - `client.runtime` - runtime API
-- `client.sdkReference` - sdk_reference API
 - `client.sites` - sites API
 
 ## Usage Examples
-
-### agents
-
-```typescript
-// List Playground agent definitions
-const params = {
-  page: 'page',
-  page_size: 'page_size',
-  q: 'q',
-};
-const result = await client.agents.agentDefinitions.list(params);
-```
 
 ### ai
 
@@ -104,13 +88,6 @@ const result = await client.chat.conversations.list(params);
 ```typescript
 // List forum overview
 const result = await client.content.feeds.overview.retrieve();
-```
-
-### ecosystem
-
-```typescript
-// Get categories
-const result = await client.ecosystem.skills.categories.list();
 ```
 
 ### iam
@@ -144,13 +121,6 @@ const params = {
 const result = await client.notification.list(params);
 ```
 
-### platform
-
-```typescript
-// Get categories
-const result = await client.platform.apps.store.categories.list();
-```
-
 ### runtime
 
 ```typescript
@@ -165,33 +135,6 @@ const params = {
   status: 'status',
 };
 const result = await client.runtime.invocations.list(params);
-```
-
-### sdk_reference
-
-```typescript
-// Generate SDK archive
-const body = {
-  config: {
-    apiPrefix: 'apiPrefix',
-    apiSpecPath: 'apiSpecPath',
-    author: 'author',
-    baseUrl: 'baseUrl',
-    description: 'description',
-    language: 'language',
-    license: 'license',
-    name: 'name',
-    outputPath: 'outputPath',
-    packageName: 'packageName',
-    sdkType: 'app',
-    version: 'version',
-  },
-  language: 'language',
-  spec: {
-    value: 'value',
-  },
-};
-const result = await client.sdkReference.archives.create(body);
 ```
 
 ### sites

@@ -11,7 +11,7 @@ export interface ForumCommentItem {
   /** Content id field on forum comment item. */
   contentId: string;
   /** Content type field on forum comment item. */
-  contentType: 'FEEDS' | 'COMMENTS' | 'COURSE';
+  contentType: 'FEEDS' | 'COMMENTS';
   /** Created at field on forum comment item. */
   createdAt: string;
   /** Is top field on forum comment item. */

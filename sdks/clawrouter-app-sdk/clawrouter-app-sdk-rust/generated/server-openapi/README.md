@@ -43,33 +43,16 @@ client.set_header("X-Custom-Header", "value");
 
 ## API Modules
 
-- `client.agents()` - agents API
 - `client.ai()` - ai API
 - `client.chat()` - chat API
 - `client.content()` - content API
-- `client.ecosystem()` - ecosystem API
 - `client.iam()` - iam API
 - `client.memory()` - memory API
 - `client.notification()` - notification API
-- `client.platform()` - platform API
 - `client.runtime()` - runtime API
-- `client.sdk_reference()` - sdk_reference API
 - `client.system()` - system API
 
 ## Usage Examples
-
-### agents
-
-```rust
-use std::collections::HashMap;
-// List Playground agent definitions
-let mut query = HashMap::new();
-query.insert("page".to_string(), serde_json::json!("page"));
-query.insert("page_size".to_string(), serde_json::json!("page-size"));
-query.insert("q".to_string(), serde_json::json!("q"));
-let result = client.agents().agent_definitions_list(Some(&query)).await?;
-println!("{result:?}");
-```
 
 ### ai
 
@@ -96,14 +79,6 @@ println!("{result:?}");
 ```rust
 // List forum overview
 let result = client.content().feeds_overview_retrieve().await?;
-println!("{result:?}");
-```
-
-### ecosystem
-
-```rust
-// Get categories
-let result = client.ecosystem().skills_categories_list().await?;
 println!("{result:?}");
 ```
 
@@ -141,14 +116,6 @@ let result = client.notification().notifications_list(Some(&query)).await?;
 println!("{result:?}");
 ```
 
-### platform
-
-```rust
-// Get categories
-let result = client.platform().apps_store_categories_list().await?;
-println!("{result:?}");
-```
-
 ### runtime
 
 ```rust
@@ -163,21 +130,6 @@ query.insert("agent_session_id".to_string(), serde_json::json!("1"));
 query.insert("runtime".to_string(), serde_json::json!("runtime"));
 query.insert("status".to_string(), serde_json::json!("status"));
 let result = client.runtime().invocations_list(Some(&query)).await?;
-println!("{result:?}");
-```
-
-### sdk_reference
-
-```rust
-use clawrouter_app_sdk::*;
-// Generate SDK archive
-let body = SdkReferenceArchiveGenerateRequest {
-    config: serde_json::json!({"apiPrefix":"apiprefix","apiSpecPath":"apispecpath","author":"author","baseUrl":"baseurl","description":"description","language":"language","license":"license","name":"name","outputPath":"outputpath","packageName":"name","sdkType":"sdktype","version":"version"}),
-    language: "language".to_string(),
-    spec: serde_json::json!({"value":"value"}),
-    ..Default::default()
-};
-let result = client.sdk_reference().archives_create(&body).await?;
 println!("{result:?}");
 ```
 

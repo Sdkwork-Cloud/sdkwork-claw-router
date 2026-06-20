@@ -61,15 +61,12 @@ client.getHttpClient().setHeader("X-Custom-Header", "value");
 
 ## API Modules
 
-- `client.getAgents()` - agents API
 - `client.getAi()` - ai API
 - `client.getContent()` - content API
-- `client.getEcosystem()` - ecosystem API
 - `client.getIam()` - iam API
 - `client.getIntegration()` - integration API
 - `client.getMcp()` - mcp API
 - `client.getMessaging()` - messaging API
-- `client.getPlatform()` - platform API
 - `client.getPrompts()` - prompts API
 - `client.getServiceProviders()` - service_providers API
 - `client.getSites()` - sites API
@@ -77,21 +74,6 @@ client.getHttpClient().setHeader("X-Custom-Header", "value");
 - `client.getSystem()` - system API
 
 ## Usage Examples
-
-### agents
-
-```java
-// List managed agents
-Map<String, Object> params = new LinkedHashMap<>();
-params.put("q", "q");
-params.put("owner_user_id", "1");
-params.put("status", "active");
-params.put("visibility", "private");
-params.put("page", "page");
-params.put("page_size", "page-size");
-AgentDefinitionsListResult result = client.getAgents().agentDefinitionsList(params);
-System.out.println(result);
-```
 
 ### ai
 
@@ -106,14 +88,6 @@ System.out.println(result);
 ```java
 // List announcements
 AnnouncementsListResult result = client.getContent().announcementsList();
-System.out.println(result);
-```
-
-### ecosystem
-
-```java
-// List skill categories
-SkillsCategoriesListResult result = client.getEcosystem().skillsCategoriesList();
 System.out.println(result);
 ```
 
@@ -162,14 +136,6 @@ params.put("status", "status");
 params.put("channel", "sms");
 params.put("provider_code", "ok");
 ProviderAccountsListResult result = client.getMessaging().providerAccountsList(params);
-System.out.println(result);
-```
-
-### platform
-
-```java
-// List app categories
-AppsCategoriesListResult result = client.getPlatform().appsCategoriesList();
 System.out.println(result);
 ```
 

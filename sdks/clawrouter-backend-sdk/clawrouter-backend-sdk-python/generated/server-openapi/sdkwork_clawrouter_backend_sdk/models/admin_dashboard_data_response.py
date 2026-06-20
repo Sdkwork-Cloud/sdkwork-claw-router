@@ -11,6 +11,7 @@ if TYPE_CHECKING:
 @dataclass
 class AdminDashboardDataResponse:
     """Admin dashboard data response schema exposed by Claw Router."""
+    active_users: str
     model_distribution: List[AdminPieChartItem]
     multimodal: List[AdminPieChartItem]
     recent_usage: List[AdminDashboardRecentUsageItem]

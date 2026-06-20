@@ -5,6 +5,16 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+WORKSPACE_ROOT = ROOT.parent
+DOCUMENTS_API_REFERENCE_SRC = (
+    WORKSPACE_ROOT
+    / "sdkwork-documents"
+    / "apps"
+    / "sdkwork-documents-pc"
+    / "packages"
+    / "sdkwork-documents-pc-api-reference"
+    / "src"
+)
 
 
 class AppSessionExchangeStandardTest(unittest.TestCase):
@@ -87,20 +97,13 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         self.assertIn("return stored;", session_service)
         self.assertNotIn("code: '2000'", session_service)
         self.assertNotIn("result.code === '2000'", session_service)
-        self.assertIn("getStoredAppSessionAuthToken", sdk_clients)
-        self.assertIn("getStoredAppSessionAccessToken", sdk_clients)
-        self.assertIn("appClientSessionKey", sdk_clients)
-        self.assertIn("backendClientSessionKey", sdk_clients)
-        self.assertIn("const authToken = getStoredAppSessionAuthToken();", sdk_clients)
-        self.assertIn("const accessToken = getStoredAppSessionAccessToken();", sdk_clients)
-        self.assertIn("const sessionKey = createSessionKey(authToken, accessToken);", sdk_clients)
-        self.assertIn("appClientSessionKey !== sessionKey", sdk_clients)
-        self.assertIn("backendClientSessionKey !== sessionKey", sdk_clients)
-        self.assertIn("createSessionKey(authToken: string | undefined, accessToken: string | undefined)", sdk_clients)
-        self.assertIn("authToken: options.authToken ?? getStoredAppSessionAuthToken()", sdk_clients)
-        self.assertIn("accessToken: options.accessToken ?? getStoredAppSessionAccessToken()", sdk_clients)
-        self.assertIn("authToken?: string;", sdk_clients)
-        self.assertIn("accessToken?: string;", sdk_clients)
+        self.assertIn("loadStoredAppSessionToken", sdk_clients)
+        self.assertIn("syncTokenManagerFromStoredSession", sdk_clients)
+        self.assertIn("readStoredAuthTokens", sdk_clients)
+        self.assertIn("const stored = loadStoredAppSessionToken();", sdk_clients)
+        self.assertIn("tokenManager.setTokens(tokens);", sdk_clients)
+        self.assertIn("resolveClawRouterSdkTokenManager", sdk_clients)
+        self.assertIn("getClawRouterGlobalTokenManager", sdk_clients)
         self.assertIn("?? APP_API_PREFIX", sdk_clients)
         self.assertIn("?? BACKEND_API_PREFIX", sdk_clients)
         self.assertNotIn("?? API_BASE_URL", sdk_clients)
@@ -115,7 +118,8 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         self.assertIn("clearStoredAppSessionToken", session_token)
         self.assertIn("export * from './app-session-token.ts';", runtime_source)
         self.assertNotIn("export * from './app-session-token';", index_source)
-        self.assertNotIn("localStorage", session_token)
+        self.assertIn("writeSessionStorage", session_token)
+        self.assertIn("writeLocalStorage", session_token)
         self.assertNotIn("Authorization", session_service)
         self.assertNotIn("Authorization", sdk_clients)
         self.assertIn("apiKey?: string;", sdk_clients)
@@ -188,23 +192,10 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
 
     def test_api_playground_current_user_auth_reads_app_session_store_not_legacy_local_storage(self):
         playground = (
-            ROOT
-            / "apps"
-            / "sdkwork-clawrouter-pc"
-            / "packages"
-            / "sdkwork-clawrouter-pc-api-reference"
-            / "src"
-            / "components"
-            / "ApiPlayground.tsx"
+            DOCUMENTS_API_REFERENCE_SRC / "components" / "ApiPlayground.tsx"
         ).read_text(encoding="utf-8")
         playground_request = (
-            ROOT
-            / "apps"
-            / "sdkwork-clawrouter-pc"
-            / "packages"
-            / "sdkwork-clawrouter-pc-api-reference"
-            / "src"
-            / "playgroundRequest.ts"
+            DOCUMENTS_API_REFERENCE_SRC / "playgroundRequest.ts"
         ).read_text(encoding="utf-8")
 
         self.assertIn("getStoredAppSessionAuthToken", playground)

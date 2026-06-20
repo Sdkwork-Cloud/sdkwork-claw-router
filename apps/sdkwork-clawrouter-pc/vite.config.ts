@@ -432,8 +432,11 @@ export default defineConfig(({mode}) => {
   const sdkworkCoreRoot = resolvePortalWorkspaceDependencyRoot(configDir, 'sdkwork-core');
   const sdkworkUiRoot = resolvePortalWorkspaceDependencyRoot(configDir, 'sdkwork-ui');
   const sdkworkCommerceRoot = resolvePortalWorkspaceDependencyRoot(configDir, 'sdkwork-commerce');
-  loadEnv(mode, configDir, '');
+  const env = loadEnv(mode, configDir, '');
   return {
+    define: {
+      'process.env.SDKWORK_ACCESS_TOKEN': JSON.stringify(env.SDKWORK_ACCESS_TOKEN ?? ''),
+    },
     plugins: [
       clawrouterRuntimeEnvPlugin(),
       react(),
@@ -689,8 +692,8 @@ export default defineConfig(({mode}) => {
     },
     optimizeDeps: {
       exclude: [
-        'sdkwork-clawrouter-pc-api-reference',
-        'sdkwork-clawrouter-pc-sdk-reference',
+        '@sdkwork/documents-pc-api-reference',
+        '@sdkwork/documents-pc-sdk-reference',
       ],
       include: [
         'react',

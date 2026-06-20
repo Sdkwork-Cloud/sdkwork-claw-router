@@ -500,7 +500,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
 
                 export async function uploadVideo(): Promise<void> {
                   const formData = new FormData();
-                  await getClawRouterAppSdkClient().content.applications.videos.create(formData);
+                  await getClawRouterAppSdkClient().content.forum.attachments.create(formData);
                 }
                 """,
             )
@@ -509,20 +509,20 @@ class FrontendOperationAuditTest(unittest.TestCase):
                 """
                 routes:
                   - route: /demo
-                    required_tables: [content_course_application]
+                    required_tables: [content_forum_post]
                 frontend_operations:
                   - route: /demo
                     source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     operation: uploadVideo
-                    operation_id: applications.videos.create
+                    operation_id: forum.attachments.create
                     kind: create
                     api_surface: app
                     api_method: POST
-                    api_path: /app/v3/api/courses/applications/videos
+                    api_path: /app/v3/api/content/forum/attachments
                     request_content_type: multipart/form-data
                     read_sources: []
                     write_tables: []
-                    file_targets: [course_application_video_uploads]
+                    file_targets: [forum_attachment_uploads]
                 """,
             )
 
@@ -541,7 +541,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
 
                 export async function uploadVideo(): Promise<void> {
                   const formData = new FormData();
-                  await getClawRouterAppSdkClient().content.applications.videos.create(formData);
+                  await getClawRouterAppSdkClient().content.forum.attachments.create(formData);
                 }
                 """,
             )
@@ -550,16 +550,16 @@ class FrontendOperationAuditTest(unittest.TestCase):
                 """
                 routes:
                   - route: /demo
-                    required_tables: [content_course_application]
+                    required_tables: [content_forum_post]
                 frontend_operations:
                   - route: /demo
                     source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     operation: uploadVideo
-                    operation_id: applications.videos.create
+                    operation_id: forum.attachments.create
                     kind: create
                     api_surface: app
                     api_method: POST
-                    api_path: /app/v3/api/courses/applications/videos
+                    api_path: /app/v3/api/content/forum/attachments
                     request_content_type: multipart/form-data
                     read_sources: []
                     write_tables: []

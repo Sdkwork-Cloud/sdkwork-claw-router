@@ -1,10 +1,6 @@
 pub(crate) mod admin_marketing_recharge;
 pub(crate) mod ai_routing_seed;
-pub(crate) mod app_catalog_mapping;
-pub(crate) mod app_seed;
 pub mod catalog;
-pub(crate) mod composed_module_bootstrap;
-pub(crate) mod course_seed;
 pub(crate) mod dashboard_overview_metrics;
 pub(crate) mod forum_seed;
 pub(crate) mod iam_seed_defaults;
@@ -18,7 +14,6 @@ mod queries;
 pub(crate) mod routing_config_change;
 pub mod rows;
 pub(crate) mod runtime_id;
-pub(crate) mod skills_seed;
 pub(crate) mod sql_admin_analytics;
 pub(crate) mod sql_admin_auth_settings;
 pub(crate) mod sql_admin_messaging;

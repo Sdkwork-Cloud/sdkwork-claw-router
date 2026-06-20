@@ -34,8 +34,6 @@ const PACKAGE_MANIFEST_FILE = 'install-manifest.json';
 const INSTALL_MANIFEST_SCHEMA_VERSION = '2026-05-15.install-manifest.v1';
 const INSTALL_PACKAGES_MANIFEST_SCHEMA_VERSION = '2026-05-15.install-packages-manifest.v1';
 const INSTALL_CONFIGURATION_SCHEMA_VERSION = '2026-05-16.install-configuration.v1';
-const COURSE_VIDEO_UPLOAD_MAX_BYTES = 1024 * 1024 * 1024;
-const COURSE_VIDEO_UPLOAD_BODY_LIMIT_BYTES = COURSE_VIDEO_UPLOAD_MAX_BYTES + 1024 * 1024;
 const PROVIDER_RESPONSE_TIMEOUT_MILLIS = 120_000;
 const PROVIDER_HEALTH_PROBE_TIMEOUT_MILLIS = 10_000;
 const PROVIDER_CATALOG_REFRESH_INTERVAL_MILLIS = 5_000;
@@ -580,7 +578,6 @@ function resolveManifestGeneratedAt({ env = process.env, now = new Date() } = {}
 
 function createPackageManifest(buildPlan, artifactFiles, generatedArtifacts = [], options = {}) {
   const generatedAt = options.generatedAt ?? resolveManifestGeneratedAt();
-  const courseUploadPolicy = courseUploadPolicyFor(buildPlan.package);
   return {
     schemaVersion: INSTALL_MANIFEST_SCHEMA_VERSION,
     generatedAt,
@@ -608,7 +605,6 @@ function createPackageManifest(buildPlan, artifactFiles, generatedArtifacts = []
       templatePath: RUNTIME_CONFIG_TEMPLATE_PATH,
       configFile: buildPlan.package.databasePolicy.configFile.path,
       dataDirectory: buildPlan.package.databasePolicy.dataDirectory.path,
-      courseUploadRoot: courseUploadPolicy.uploadRoot,
     },
     installConfiguration: createInstallConfiguration(buildPlan.package),
     artifacts: artifactFiles,
@@ -620,7 +616,6 @@ function createPackageManifest(buildPlan, artifactFiles, generatedArtifacts = []
 function createInstallConfiguration(packageItem) {
   const policy = packageItem.databasePolicy;
   const redisPolicy = packageItem.redisPolicy;
-  const courseUploadPolicy = courseUploadPolicyFor(packageItem);
   const requestLimitsPolicy = requestLimitsPolicyFor();
   const isPostgresql = policy.defaultEngine === 'postgresql';
   const isLinuxService = packageItem.platform === 'linux' && packageItem.deploymentMode === 'service';
@@ -735,7 +730,6 @@ function createInstallConfiguration(packageItem) {
         backoffMillis: PROVIDER_RETRY_BACKOFF_MILLIS,
       },
     },
-    courses: courseUploadPolicy,
     requestLimits: requestLimitsPolicy,
     observability: {
       configSection: 'observability',
@@ -764,26 +758,6 @@ function requestLimitsPolicyFor() {
       'SDKWORK_CLAW_ADMIN_SKILL_JSON_BODY_MAX_BYTES',
       'SDKWORK_CLAW_FORUM_JSON_BODY_MAX_BYTES',
       'SDKWORK_CLAW_PAYMENT_CALLBACK_BODY_MAX_BYTES',
-    ],
-  };
-}
-
-function courseUploadPolicyFor(packageItem) {
-  const policy = packageItem.databasePolicy;
-  const uploadRoot = packageItem.platform === 'windows'
-    ? `${policy.dataDirectory.path}/Uploads/Courses`
-    : `${policy.dataDirectory.path}/uploads/courses`;
-  return {
-    configSection: 'courses',
-    uploadRootConfigSection: 'paths',
-    uploadRoot,
-    videoUploadMaxBytes: COURSE_VIDEO_UPLOAD_MAX_BYTES,
-    videoUploadBodyLimitBytes: COURSE_VIDEO_UPLOAD_BODY_LIMIT_BYTES,
-    bodyLimitIncludesMultipartOverhead: true,
-    envOverrides: [
-      'SDKWORK_CLAW_COURSE_UPLOAD_ROOT',
-      'SDKWORK_CLAW_COURSE_VIDEO_UPLOAD_MAX_BYTES',
-      'SDKWORK_CLAW_COURSE_VIDEO_UPLOAD_BODY_LIMIT_BYTES',
     ],
   };
 }
@@ -1015,13 +989,6 @@ function createInstallGuide(packageItem) {
   }
 
   lines.push(
-    'Course upload storage is configured in [paths] and [courses].',
-    `[paths].course_upload_root defaults to ${installConfiguration.courses.uploadRoot}.`,
-    `[courses].video_upload_max_bytes defaults to ${installConfiguration.courses.videoUploadMaxBytes}; keep reverse proxy and container ingress limits at or above [courses].video_upload_body_limit_bytes (${installConfiguration.courses.videoUploadBodyLimitBytes}).`,
-    '',
-  );
-
-  lines.push(
     'Request body limits are configured in [request_limits].',
     `Admin app JSON defaults to ${installConfiguration.requestLimits.adminAppJsonBodyMaxBytes} bytes; admin skill JSON defaults to ${installConfiguration.requestLimits.adminSkillJsonBodyMaxBytes} bytes.`,
     `Forum JSON defaults to ${installConfiguration.requestLimits.forumJsonBodyMaxBytes} bytes; payment callback payloads default to ${installConfiguration.requestLimits.paymentCallbackBodyMaxBytes} bytes.`,
@@ -1160,7 +1127,6 @@ function createInstallGuide(packageItem) {
 function createRuntimeConfigTemplate(packageItem) {
   const policy = packageItem.databasePolicy;
   const redisPolicy = packageItem.redisPolicy;
-  const courseUploadPolicy = courseUploadPolicyFor(packageItem);
   const requestLimitsPolicy = requestLimitsPolicyFor();
   const runtimeAssetRoot = nativeRuntimeAssetRoot(packageItem);
   const portalStaticDist = `${runtimeAssetRoot}/portal/dist`;
@@ -1385,12 +1351,6 @@ function createRuntimeConfigTemplate(packageItem) {
     '',
     '[paths]',
     `data_directory = "${policy.dataDirectory.path}"`,
-    `course_upload_root = "${courseUploadPolicy.uploadRoot}"`,
-    '',
-    '[courses]',
-    '# Local course application video upload policy. Keep upstream proxy/body limits at or above video_upload_body_limit_bytes.',
-    `video_upload_max_bytes = ${courseUploadPolicy.videoUploadMaxBytes}`,
-    `video_upload_body_limit_bytes = ${courseUploadPolicy.videoUploadBodyLimitBytes}`,
     '',
     '[request_limits]',
     '# Runtime API request body limits. Keep reverse proxy and container ingress limits aligned.',
@@ -1612,7 +1572,6 @@ function createContainerMetadata(packageItem) {
     configFile: packageItem.databasePolicy.configFile.path,
     database: packageItem.databasePolicy,
     redis: packageItem.redisPolicy,
-    courses: courseUploadPolicyFor(packageItem),
     requestLimits: requestLimitsPolicyFor(),
     healthChecks: packageItem.healthChecks,
     initCommands: packageItem.initCommands,
@@ -1632,7 +1591,6 @@ function createDesktopMetadata(packageItem) {
     dataDirectory: packageItem.databasePolicy.dataDirectory.path,
     database: packageItem.databasePolicy,
     redis: packageItem.redisPolicy,
-    courses: courseUploadPolicyFor(packageItem),
     requestLimits: requestLimitsPolicyFor(),
     healthChecks: packageItem.healthChecks,
     initCommands: packageItem.initCommands,

@@ -14,8 +14,8 @@
 
 **Files:**
 - Modify: `apps/sdkwork-clawrouter-pc/api-reference-playground-runtime.test.ts`
-- Modify: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/apiReferenceSchemaTabs.ts`
-- Modify: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/pages/ApiReference.tsx`
+- Modify: `../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/apiReferenceSchemaTabs.ts`
+- Modify: `../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/pages/ApiReference.tsx`
 
 - [ ] **Step 1: Write failing runtime tests**
   Add tests proving planned `payment-aggregate` and `cloud-services` tabs survive normalization, remain ordered before `app`, fetch no schemas, expose `status: "planned"`, and keep SDK Reference limited to `gateway`, `app`, and `backend`.

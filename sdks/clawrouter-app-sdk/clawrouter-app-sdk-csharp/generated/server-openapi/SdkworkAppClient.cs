@@ -9,50 +9,38 @@ namespace Sdkwork.ClawRouter.App
     {
         private readonly SdkHttpClient _httpClient;
 
-        public AgentsApi Agents { get; }
         public AiApi Ai { get; }
         public ChatApi Chat { get; }
         public ContentApi Content { get; }
-        public EcosystemApi Ecosystem { get; }
         public IamApi Iam { get; }
         public MemoryApi Memory { get; }
         public NotificationApi Notification { get; }
-        public PlatformApi Platform { get; }
         public RuntimeApi Runtime { get; }
-        public SdkReferenceApi SdkReference { get; }
         public SystemApi System { get; }
 
         public SdkworkAppClient(string baseUrl)
         {
             _httpClient = new SdkHttpClient(baseUrl);
-            Agents = new AgentsApi(_httpClient);
             Ai = new AiApi(_httpClient);
             Chat = new ChatApi(_httpClient);
             Content = new ContentApi(_httpClient);
-            Ecosystem = new EcosystemApi(_httpClient);
             Iam = new IamApi(_httpClient);
             Memory = new MemoryApi(_httpClient);
             Notification = new NotificationApi(_httpClient);
-            Platform = new PlatformApi(_httpClient);
             Runtime = new RuntimeApi(_httpClient);
-            SdkReference = new SdkReferenceApi(_httpClient);
             System = new SystemApi(_httpClient);
         }
 
         public SdkworkAppClient(SdkConfig config)
         {
             _httpClient = new SdkHttpClient(config);
-            Agents = new AgentsApi(_httpClient);
             Ai = new AiApi(_httpClient);
             Chat = new ChatApi(_httpClient);
             Content = new ContentApi(_httpClient);
-            Ecosystem = new EcosystemApi(_httpClient);
             Iam = new IamApi(_httpClient);
             Memory = new MemoryApi(_httpClient);
             Notification = new NotificationApi(_httpClient);
-            Platform = new PlatformApi(_httpClient);
             Runtime = new RuntimeApi(_httpClient);
-            SdkReference = new SdkReferenceApi(_httpClient);
             System = new SystemApi(_httpClient);
         }
         public SdkworkAppClient SetAuthToken(string token)

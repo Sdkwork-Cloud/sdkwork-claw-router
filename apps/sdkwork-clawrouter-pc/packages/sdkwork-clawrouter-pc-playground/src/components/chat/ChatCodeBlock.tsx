@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { ReactNode } from 'react';
 import { Check, Copy } from 'lucide-react';
+import { copyTextToClipboard } from 'sdkwork-clawrouter-pc-commons/clipboard';
 
 const CODE_COPY_RESET_MS = 1400;
 
@@ -18,18 +19,18 @@ export function ChatCodeBlock({
   const languageLabel = normalizeLanguageLabel(language);
 
   async function handleCopy(): Promise<void> {
-    if (!displayCode || typeof navigator === 'undefined' || !navigator.clipboard) {
+    if (!displayCode) {
       return;
     }
-    try {
-      await navigator.clipboard.writeText(displayCode);
-      setCopied(true);
-      globalThis.setTimeout(() => {
-        setCopied(false);
-      }, CODE_COPY_RESET_MS);
-    } catch {
+    const result = await copyTextToClipboard(displayCode);
+    if (!result.ok) {
       setCopied(false);
+      return;
     }
+    setCopied(true);
+    globalThis.setTimeout(() => {
+      setCopied(false);
+    }, CODE_COPY_RESET_MS);
   }
 
   const copyLabel = copied ? 'Copied' : 'Copy code';

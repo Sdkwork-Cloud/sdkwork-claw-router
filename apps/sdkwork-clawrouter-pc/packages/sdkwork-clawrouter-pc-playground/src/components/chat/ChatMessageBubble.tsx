@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { AlertTriangle, Check, Copy } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { copyTextToClipboard } from 'sdkwork-clawrouter-pc-commons/clipboard';
 import { ChatMarkdownMessage } from './ChatMarkdownMessage';
 import type { ChatMessage } from './chatTypes';
 
@@ -31,18 +32,18 @@ export function ChatMessageBubble({ message }: { message: ChatMessage }) {
       : 'select-text w-full min-w-0 px-0 py-0 text-sm leading-6 text-slate-100';
 
   async function handleCopy(): Promise<void> {
-    if (!copyText || typeof navigator === 'undefined' || !navigator.clipboard) {
+    if (!copyText) {
       return;
     }
-    try {
-      await navigator.clipboard.writeText(copyText);
-      setCopied(true);
-      globalThis.setTimeout(() => {
-        setCopied(false);
-      }, COPY_RESET_MS);
-    } catch {
+    const result = await copyTextToClipboard(copyText);
+    if (!result.ok) {
       setCopied(false);
+      return;
     }
+    setCopied(true);
+    globalThis.setTimeout(() => {
+      setCopied(false);
+    }, COPY_RESET_MS);
   }
 
   return (

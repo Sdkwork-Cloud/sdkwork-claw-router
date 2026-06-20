@@ -5,6 +5,16 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+WORKSPACE_ROOT = ROOT.parent
+DOCUMENTS_API_REFERENCE_SRC = (
+    WORKSPACE_ROOT
+    / "sdkwork-documents"
+    / "apps"
+    / "sdkwork-documents-pc"
+    / "packages"
+    / "sdkwork-documents-pc-api-reference"
+    / "src"
+)
 
 
 class AccessTokenHeaderStandardTest(unittest.TestCase):
@@ -120,13 +130,7 @@ class AccessTokenHeaderStandardTest(unittest.TestCase):
             ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "README.md",
             ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "README.md",
             ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "iam-session-response.ts",
-            ROOT
-            / "apps"
-            / "sdkwork-clawrouter-pc"
-            / "packages"
-            / "sdkwork-clawrouter-pc-api-reference"
-            / "src"
-            / "playgroundRequest.ts",
+            DOCUMENTS_API_REFERENCE_SRC / "playgroundRequest.ts",
         ]
 
         vendor = "Sdkwork"

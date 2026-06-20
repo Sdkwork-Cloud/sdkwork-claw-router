@@ -43,15 +43,12 @@ client.set_header("X-Custom-Header", "value");
 
 ## API Modules
 
-- `client.agents()` - agents API
 - `client.ai()` - ai API
 - `client.content()` - content API
-- `client.ecosystem()` - ecosystem API
 - `client.iam()` - iam API
 - `client.integration()` - integration API
 - `client.mcp()` - mcp API
 - `client.messaging()` - messaging API
-- `client.platform()` - platform API
 - `client.prompts()` - prompts API
 - `client.service_providers()` - service_providers API
 - `client.sites()` - sites API
@@ -59,22 +56,6 @@ client.set_header("X-Custom-Header", "value");
 - `client.system()` - system API
 
 ## Usage Examples
-
-### agents
-
-```rust
-use std::collections::HashMap;
-// List managed agents
-let mut query = HashMap::new();
-query.insert("q".to_string(), serde_json::json!("q"));
-query.insert("owner_user_id".to_string(), serde_json::json!("1"));
-query.insert("status".to_string(), serde_json::json!("active"));
-query.insert("visibility".to_string(), serde_json::json!("private"));
-query.insert("page".to_string(), serde_json::json!("page"));
-query.insert("page_size".to_string(), serde_json::json!("page-size"));
-let result = client.agents().agent_definitions_list(Some(&query)).await?;
-println!("{result:?}");
-```
 
 ### ai
 
@@ -89,14 +70,6 @@ println!("{result:?}");
 ```rust
 // List announcements
 let result = client.content().announcements_list().await?;
-println!("{result:?}");
-```
-
-### ecosystem
-
-```rust
-// List skill categories
-let result = client.ecosystem().skills_categories_list().await?;
 println!("{result:?}");
 ```
 
@@ -147,14 +120,6 @@ query.insert("status".to_string(), serde_json::json!("status"));
 query.insert("channel".to_string(), serde_json::json!("sms"));
 query.insert("provider_code".to_string(), serde_json::json!("ok"));
 let result = client.messaging().provider_accounts_list(Some(&query)).await?;
-println!("{result:?}");
-```
-
-### platform
-
-```rust
-// List app categories
-let result = client.platform().apps_categories_list().await?;
 println!("{result:?}");
 ```
 

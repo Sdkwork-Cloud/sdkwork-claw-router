@@ -20,7 +20,6 @@ pub struct RuntimeTomlConfig {
     pub edge: EdgeSectionConfig,
     pub portal: PortalSectionConfig,
     pub paths: PathsSectionConfig,
-    pub courses: CoursesSectionConfig,
     pub request_limits: RequestLimitsSectionConfig,
     pub observability: ObservabilitySectionConfig,
     pub redis: RedisSectionConfig,
@@ -133,14 +132,6 @@ pub struct PortalToolsSectionConfig {
 #[serde(default)]
 pub struct PathsSectionConfig {
     pub data_directory: Option<String>,
-    pub course_upload_root: Option<String>,
-}
-
-#[derive(Debug, Clone, Default, PartialEq, Eq, Deserialize)]
-#[serde(default)]
-pub struct CoursesSectionConfig {
-    pub video_upload_max_bytes: Option<u64>,
-    pub video_upload_body_limit_bytes: Option<u64>,
 }
 
 #[derive(Debug, Clone, Default, PartialEq, Eq, Deserialize)]
@@ -149,7 +140,6 @@ pub struct RequestLimitsSectionConfig {
     pub admin_app_json_body_max_bytes: Option<u64>,
     pub admin_skill_json_body_max_bytes: Option<u64>,
     pub forum_json_body_max_bytes: Option<u64>,
-    pub sdk_reference_json_body_max_bytes: Option<u64>,
     pub payment_callback_body_max_bytes: Option<u64>,
 }
 

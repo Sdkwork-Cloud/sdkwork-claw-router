@@ -444,7 +444,6 @@ fn required_generated_columns() -> &'static [(&'static str, &'static str)] {
         ("c_category", "icon_resource_snapshot"),
         ("ai_agent_skill_package", "icon_resource_snapshot"),
         ("ai_agent_skill", "icon_resource_snapshot"),
-        ("content_course", "thumbnail_resource_snapshot"),
     ]
 }
 

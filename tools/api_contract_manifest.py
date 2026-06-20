@@ -175,7 +175,6 @@ class ApiContractManifestGenerator:
         "shipments": "commerce",
         "wallet": "commerce",
         "audit": "commerce",
-        "course": "content",
         "feed": "content",
         "forum": "content",
         "comment": "content",
@@ -277,12 +276,6 @@ class ApiContractManifestGenerator:
         "agent": "agents",
         "channel": "channels",
         "comment": "comments",
-        "course-applications": "course-applications",
-        "course-lessons": "course-lessons",
-        "course-sections": "course-sections",
-        "course_applications": "course-applications",
-        "course_lessons": "course-lessons",
-        "course_sections": "course-sections",
         "coupon": "coupons",
         "promotion-codes": "promotion_codes",
         "feed": "feeds",
@@ -322,14 +315,13 @@ class ApiContractManifestGenerator:
         ("upload_", "storage"),
         ("drive_", "storage"),
         ("file_", "storage"),
-        ("platform_app", "platform"),
+        ("appstore_app", "platform"),
         ("c_category", "platform"),
         ("content_forum_post", "content"),
         ("content_comment", "content"),
         ("content_reaction", "content"),
         ("content_favorite", "content"),
         ("ai_agent_skill", "ecosystem"),
-        ("course_", "content"),
         ("ops_notification", "notification"),
         ("ops_", "system"),
     )
@@ -469,7 +461,7 @@ class ApiContractManifestGenerator:
             api_path = entry.get("api_path")
             operation_id = compiled_entry.get("operation_id")
             openapi_exposed = entry.get("openapi_exposed", True)
-            key = self._operation_key(source, operation)
+            key = self._operation_key(source, operation, route)
 
             if key in keys:
                 messages.append(f"duplicate api contract operation: {key}")
@@ -642,7 +634,7 @@ class ApiContractManifestGenerator:
         )
 
         compiled = {
-            "key": self._operation_key(source, operation),
+            "key": self._operation_key(source, operation, route),
             "source": source,
             "operation": operation,
             "operation_id": operation_id,
@@ -772,8 +764,6 @@ class ApiContractManifestGenerator:
             "agents",
             "auth",
             "chat",
-            "course",
-            "courses",
             "iam",
             "memory",
             "oauth",
@@ -909,7 +899,7 @@ class ApiContractManifestGenerator:
             return first
         if first in {"coupon", "payment", "vip", "account", "finance"}:
             return self._tag_from_tables(read_sources, write_tables) or "commerce"
-        if first in {"course", "courses", "feed", "feeds", "comment", "comments", "announcement", "announcements", "content"}:
+        if first in {"feed", "feeds", "comment", "comments", "announcement", "announcements", "content"}:
             return "content"
         if first in {"messaging", "message_delivery", "sms", "email"}:
             return "messaging"
@@ -1528,8 +1518,12 @@ class ApiContractManifestGenerator:
             return "console"
         return "public"
 
-    def _operation_key(self, source: Any, operation: Any) -> str:
-        return f"{self._string(source)}#{self._string(operation)}"
+    def _operation_key(self, source: Any, operation: Any, route: Any = None) -> str:
+        base = f"{self._string(source)}#{self._string(operation)}"
+        route_value = self._string(route)
+        if route_value:
+            return f"{base}@{route_value}"
+        return base
 
     def _string(self, value: Any) -> str:
         return value if isinstance(value, str) else ""

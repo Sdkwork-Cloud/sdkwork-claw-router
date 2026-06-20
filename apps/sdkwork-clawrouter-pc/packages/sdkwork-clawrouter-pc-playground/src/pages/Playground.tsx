@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { createClientOperationToken } from 'sdkwork-clawrouter-pc-commons/runtime';
+import { copyTextToClipboard } from 'sdkwork-clawrouter-pc-commons/clipboard';
 import {
   getSdkworkGenerationModelBucket,
 } from '@sdkwork/generations-pc-workspace/generation-asset-config';
@@ -473,7 +474,7 @@ export function Playground() {
       });
       return;
     }
-    await navigator.clipboard.writeText(previewAssetUrl);
+    await copyTextToClipboard(previewAssetUrl);
   };
 
   const regeneratePreviewAsset = async () => {

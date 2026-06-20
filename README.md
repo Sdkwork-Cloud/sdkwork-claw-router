@@ -933,11 +933,6 @@ backoff_millis = 0
 
 [paths]
 data_directory = "/var/lib/sdkwork/router"
-course_upload_root = "/var/lib/sdkwork/router/uploads/courses"
-
-[courses]
-video_upload_max_bytes = 1073741824
-video_upload_body_limit_bytes = 1074790400
 
 [request_limits]
 admin_app_json_body_max_bytes = 131072
@@ -969,12 +964,8 @@ paths are `/etc/sdkwork/router/redis.secret` for Linux service installs,
 ClawRouter config/data directory on Windows, macOS, and desktop installs.
 
 `[paths]` contains runtime-owned filesystem roots. `data_directory` is the
-long-lived application state directory and `course_upload_root` is where local
-course application video uploads are stored and served from `/uploads/courses/*`.
-Keep both paths on durable storage for service and container deployments.
-`[courses]` controls local course upload capacity. Keep reverse proxy,
-container ingress, and load balancer request-body limits at or above
-`video_upload_body_limit_bytes`.
+long-lived application state directory. Keep it on durable storage for service
+and container deployments.
 
 `[request_limits]` controls runtime body limits for high-risk write entrypoints:
 backend app JSON, backend skill JSON, public forum JSON, and payment provider
@@ -1182,9 +1173,8 @@ DevTools Protocol and verifies:
   Chrome DevTools Protocol, so DOM text assertions are stable on CI and release
   hosts with different OS languages.
 - The public route matrix renders expected DOM content for `/models`,
-  `/models/openai%2Fgpt-4o-mini`, `/rankings`, `/courses`, `/courses/c1`,
-  `/forum`, `/forum/1`, `/apps`, `/apps/app-1`, `/skills-hub`,
-  `/skills-hub/skill-1`, and `/api-reference`.
+  `/models/openai%2Fgpt-4o-mini`, `/rankings`, `/forum`, `/forum/1`, `/apps`,
+  `/apps/app-1`, `/skills-hub`, `/skills-hub/skill-1`, and `/api-reference`.
 - SDK-backed `/models` routes also use route-scoped Chrome DevTools Protocol
   `Fetch` fixtures for `/app/v3/api/router/models`, proving the generated app
   SDK runtime catalog can render successful runtime models, access-group
@@ -1192,13 +1182,6 @@ DevTools Protocol and verifies:
   catalog, encoded runtime detail routes, public reference/unavailable price
   status, performance source labels, and `Try in Playground` detail actions
   without exposing private pricing tokens in the DOM.
-- Schema-provenanced `/courses` routes also exercise catalog category
-  filtering, level filtering, search filtering, card navigation,
-  `/courses/c1` detail rendering, Bilibili iframe URL/referrer policy,
-  lesson-grid interaction, related-course navigation, missing-detail fallback,
-  deterministic snapshot labels, and discussion copy while rejecting unsafe
-  runtime drift tokens such as `javascript:alert(1)`, `Math.random`, and
-  `toLocaleDateString`.
 - Schema-provenanced `/forum` routes also exercise catalog category filtering,
   search filtering, empty-result fallback, top-sort ordering, post-card
   navigation, `/forum/1` detail rendering, related-discussion navigation,

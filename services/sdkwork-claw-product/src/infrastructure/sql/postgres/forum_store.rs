@@ -14,7 +14,6 @@ use crate::ports::{
 };
 
 const CONTENT_TYPE_FEEDS: i64 = 5;
-const CONTENT_TYPE_COURSE: i64 = 6;
 const CONTENT_TYPE_COMMENTS: i64 = 22;
 const FEEDS_STATUS_PUBLISHED: i64 = 2;
 const FEEDS_STATUS_DELETED: i64 = 3;
@@ -1601,7 +1600,6 @@ fn required_content_type_code(value: &str) -> DomainResult<i64> {
 fn content_type_code(value: &str) -> Option<i64> {
     match value.trim().to_ascii_lowercase().replace('-', "_").as_str() {
         "feeds" | "feed" | "forum" | "post" => Some(CONTENT_TYPE_FEEDS),
-        "course" | "courses" => Some(CONTENT_TYPE_COURSE),
         "comments" | "comment" => Some(CONTENT_TYPE_COMMENTS),
         "all" | "" => None,
         _ => value.trim().parse::<i64>().ok(),
@@ -1611,7 +1609,6 @@ fn content_type_code(value: &str) -> Option<i64> {
 fn content_type_slug(value: i64) -> &'static str {
     match value {
         CONTENT_TYPE_FEEDS => "feeds",
-        CONTENT_TYPE_COURSE => "course",
         CONTENT_TYPE_COMMENTS => "comments",
         _ => "unknown",
     }
@@ -1620,7 +1617,6 @@ fn content_type_slug(value: i64) -> &'static str {
 fn content_type_name(value: i64) -> &'static str {
     match value {
         CONTENT_TYPE_FEEDS => "FEEDS",
-        CONTENT_TYPE_COURSE => "COURSE",
         CONTENT_TYPE_COMMENTS => "COMMENTS",
         _ => "DEFAULT",
     }

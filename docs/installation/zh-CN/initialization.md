@@ -216,11 +216,6 @@ backoff_millis = 0
 
 [paths]
 data_directory = "/var/lib/sdkwork/router"
-course_upload_root = "/var/lib/sdkwork/router/uploads/courses"
-
-[courses]
-video_upload_max_bytes = 1073741824
-video_upload_body_limit_bytes = 1074790400
 
 [request_limits]
 admin_app_json_body_max_bytes = 131072
@@ -235,9 +230,6 @@ deployment_mode = "server"
 `.deb` 包创建的 `/etc/sdkwork/router/database.secret` 初始内容是占位值 `change-me`。启动 `clawrouter` 前必须替换为真实 PostgreSQL 密码；server 配置仍使用 `db.example.com` 或 `change-me` 时会被启动校验拒绝。
 
 server/service/container 部署默认启用并要求 Redis。首次启动前必须配置 `[redis].host`、`[redis].port`、`[redis].database`；只有托管 Redis 端点无法用分离字段清晰表达时，才使用 `[redis].url` 作为高级覆盖。优先使用 `/etc/sdkwork/router/redis.secret` 或其他受保护的 `password_file`，只有 TOML 文件本身按密钥文件管理时才直接使用 `[redis].password`。desktop 部署仍保持 Redis 可选且默认关闭。
-
-`[paths].course_upload_root` 用于保存本地课程申请视频上传文件。service 和 container 部署应放在持久化存储中，默认保持在应用数据卷内；只有明确挂载独立媒体卷时才改到其他目录。
-`[courses].video_upload_max_bytes` 是允许的视频文件大小，`[courses].video_upload_body_limit_bytes` 包含 multipart 开销。反向代理、容器 ingress 和负载均衡的请求体限制应不低于 body limit。
 
 `[request_limits]` 控制运行时 JSON 和 webhook 请求体限制，属于高风险写入入口的防护配置。`admin_app_json_body_max_bytes` 和 `admin_skill_json_body_max_bytes` 保护后台管理 API，`forum_json_body_max_bytes` 保护公开应用论坛写入，`payment_callback_body_max_bytes` 保护支付供应商回调。反向代理、负载均衡和容器 ingress 的请求体限制应与这些值保持一致，使超大请求在进入昂贵业务处理前被拒绝。
 
@@ -264,11 +256,6 @@ max_connections = 16
 
 [paths]
 data_directory = "/var/lib/sdkwork/router"
-course_upload_root = "/var/lib/sdkwork/router/uploads/courses"
-
-[courses]
-video_upload_max_bytes = 1073741824
-video_upload_body_limit_bytes = 1074790400
 
 [request_limits]
 admin_app_json_body_max_bytes = 131072

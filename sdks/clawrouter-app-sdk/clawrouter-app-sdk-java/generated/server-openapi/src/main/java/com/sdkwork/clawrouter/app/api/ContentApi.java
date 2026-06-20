@@ -235,49 +235,6 @@ public class ContentApi {
         return client.convertValue(raw, new TypeReference<UsersCurrentCommentsListResult>() {});
     }
 
-    /** List courses */
-    public CoursesListResult coursesList(String level, String category, String q, String page, String pageSize) throws Exception {
-        String query = buildQueryString(List.of(
-            new QueryParameterSpec("level", level, "form", true, false, null),
-            new QueryParameterSpec("category", category, "form", true, false, null),
-            new QueryParameterSpec("q", q, "form", true, false, null),
-            new QueryParameterSpec("page", page, "form", true, false, null),
-            new QueryParameterSpec("page_size", pageSize, "form", true, false, null)
-        ));
-        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/courses"), query));
-        return client.convertValue(raw, new TypeReference<CoursesListResult>() {});
-    }
-
-    /** Create course application */
-    public ApplicationsCreateResult applicationsCreate(CourseApplicationCreateRequest body) throws Exception {
-        Object raw = client.post(ApiPaths.appPath("/courses/applications"), body, null, null, "application/json");
-        return client.convertValue(raw, new TypeReference<ApplicationsCreateResult>() {});
-    }
-
-    /** Upload course application video */
-    public ApplicationsVideosCreateResult applicationsVideosCreate(CourseApplicationVideoUploadRequest body) throws Exception {
-        Object raw = client.post(ApiPaths.appPath("/courses/applications/videos"), body, null, null, "multipart/form-data");
-        return client.convertValue(raw, new TypeReference<ApplicationsVideosCreateResult>() {});
-    }
-
-    /** List course categories */
-    public CoursesCategoriesListResult coursesCategoriesList() throws Exception {
-        Object raw = client.get(ApiPaths.appPath("/courses/categories"));
-        return client.convertValue(raw, new TypeReference<CoursesCategoriesListResult>() {});
-    }
-
-    /** List course overview */
-    public CoursesOverviewRetrieveResult coursesOverviewRetrieve() throws Exception {
-        Object raw = client.get(ApiPaths.appPath("/courses/overview"));
-        return client.convertValue(raw, new TypeReference<CoursesOverviewRetrieveResult>() {});
-    }
-
-    /** List course detail */
-    public CoursesRetrieveResult coursesRetrieve(String courseId) throws Exception {
-        Object raw = client.get(ApiPaths.appPath("/courses/" + serializePathParameter(courseId, new PathParameterSpec("courseId", "simple", false)) + ""));
-        return client.convertValue(raw, new TypeReference<CoursesRetrieveResult>() {});
-    }
-
     private record PathParameterSpec(String name, String style, boolean explode) {}
 
     private static String serializePathParameter(Object value, PathParameterSpec spec) {

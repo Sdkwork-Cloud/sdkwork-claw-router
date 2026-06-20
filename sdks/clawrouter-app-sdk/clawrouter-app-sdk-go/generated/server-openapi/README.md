@@ -55,36 +55,16 @@ client.SetHeader("X-Custom-Header", "value")
 
 ## API Modules
 
-- `client.Agents` - agents API
 - `client.Ai` - ai API
 - `client.Chat` - chat API
 - `client.Content` - content API
-- `client.Ecosystem` - ecosystem API
 - `client.Iam` - iam API
 - `client.Memory` - memory API
 - `client.Notification` - notification API
-- `client.Platform` - platform API
 - `client.Runtime` - runtime API
-- `client.SdkReference` - sdk_reference API
 - `client.System` - system API
 
 ## Usage Examples
-
-### agents
-
-```go
-// List Playground agent definitions
-params := map[string]interface{}{
-    "page": "page",
-    "page_size": "page_size",
-    "q": "q",
-}
-result, err := client.Agents.AgentDefinitionsList(params)
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
 
 ### ai
 
@@ -117,17 +97,6 @@ fmt.Println(result)
 ```go
 // List forum overview
 result, err := client.Content.FeedsOverviewRetrieve()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### ecosystem
-
-```go
-// Get categories
-result, err := client.Ecosystem.SkillsCategoriesList()
 if err != nil {
     panic(err)
 }
@@ -177,17 +146,6 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### platform
-
-```go
-// Get categories
-result, err := client.Platform.AppsStoreCategoriesList()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
 ### runtime
 
 ```go
@@ -202,37 +160,6 @@ params := map[string]interface{}{
     "status": "status",
 }
 result, err := client.Runtime.InvocationsList(params)
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### sdk_reference
-
-```go
-// Generate SDK archive
-body := sdktypes.SdkReferenceArchiveGenerateRequest{
-    Config: map[string]interface{}{
-    "apiPrefix": "apiPrefix",
-    "apiSpecPath": "apiSpecPath",
-    "author": "author",
-    "baseUrl": "baseUrl",
-    "description": "description",
-    "language": "language",
-    "license": "license",
-    "name": "name",
-    "outputPath": "outputPath",
-    "packageName": "packageName",
-    "sdkType": "app",
-    "version": "version",
-},
-    Language: "language",
-    Spec: map[string]sdktypes.JsonValue{
-    "value": "value",
-},
-}
-result, err := client.SdkReference.ArchivesCreate(body)
 if err != nil {
     panic(err)
 }
@@ -296,10 +223,12 @@ MIT
 
 ## Regeneration Contract
 
-- Generator-owned files are tracked in `.sdkwork/sdkwork-generator-manifest.json`.
-- Each run also writes `.sdkwork/sdkwork-generator-changes.json` so automation can inspect created, updated, deleted, unchanged, scaffolded, and backed-up files plus the classified impact areas, verification plan, and execution decision for the latest generation.
-- Apply mode also writes `.sdkwork/sdkwork-generator-report.json` with the full execution report, including `schemaVersion`, `generator`, stable artifact paths, and the execution handoff commands that match CLI `--json` output.
+- HTTP/OpenAPI generator-owned files are tracked in `.sdkwork/sdkwork-generator-manifest.json`.
+- HTTP/OpenAPI generation also writes `.sdkwork/sdkwork-generator-changes.json` so automation can inspect created, updated, deleted, unchanged, scaffolded, and backed-up files plus the classified impact areas, verification plan, and execution decision for the latest generation.
+- HTTP/OpenAPI apply mode also writes `.sdkwork/sdkwork-generator-report.json` with the full execution report, including `schemaVersion`, `generator`, stable artifact paths, and the execution handoff commands that match CLI `--json` output.
 - CLI JSON output also includes an execution handoff with concrete next commands, including reviewed apply commands for dry-run flows.
-- Put hand-written wrappers, adapters, and orchestration in `custom/`.
-- Files scaffolded under `custom/` are created once and preserved across regenerations.
-- If a generated-owned file was modified locally, its previous content is copied to `.sdkwork/manual-backups/` before overwrite or removal.
+- Put HTTP/OpenAPI hand-written wrappers, adapters, and orchestration in `custom/`.
+- Files scaffolded under `custom/` are created once and preserved across HTTP/OpenAPI regenerations.
+- If an HTTP/OpenAPI generated-owned file was modified locally, its previous content is copied to `.sdkwork/manual-backups/` before overwrite or removal.
+- RPC SDK source workspaces use convention-first evidence by default: RPC SDK family naming, language workspace naming, `rpc/*.manifest.json`, proto source references, generated client source, and native package manifests.
+- Use `sdkgen inspect --protocol rpc` to verify RPC convention evidence. Request persisted generator evidence only with `--emit-control-plane` for release, CI, audit, or migration workflows; evidence paths are derived by generator convention.

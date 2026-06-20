@@ -48,15 +48,12 @@ client.set_header('X-Custom-Header', 'value')
 
 ## API Modules
 
-- `client.agents` - agents API
 - `client.ai` - ai API
 - `client.content` - content API
-- `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.integration` - integration API
 - `client.mcp` - mcp API
 - `client.messaging` - messaging API
-- `client.platform` - platform API
 - `client.prompts` - prompts API
 - `client.service_providers` - service_providers API
 - `client.sites` - sites API
@@ -64,22 +61,6 @@ client.set_header('X-Custom-Header', 'value')
 - `client.system` - system API
 
 ## Usage Examples
-
-### agents
-
-```python
-# List managed agents
-params = {
-    'q': 'q',
-    'owner_user_id': 'owner_user_id',
-    'status': 'active',
-    'visibility': 'private',
-    'page': 'page',
-    'page_size': 'page_size',
-}
-result = client.agents.agent_definitions.list(params)
-print(result)
-```
 
 ### ai
 
@@ -94,14 +75,6 @@ print(result)
 ```python
 # List announcements
 result = client.content.announcements.list()
-print(result)
-```
-
-### ecosystem
-
-```python
-# List skill categories
-result = client.ecosystem.skills.categories.list()
 print(result)
 ```
 
@@ -152,14 +125,6 @@ params = {
     'provider_code': 'provider_code',
 }
 result = client.messaging.provider_accounts.list(params)
-print(result)
-```
-
-### platform
-
-```python
-# List app categories
-result = client.platform.apps.categories.list()
 print(result)
 ```
 

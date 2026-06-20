@@ -1,4 +1,4 @@
-﻿use std::collections::BTreeSet;
+use std::collections::BTreeSet;
 use std::error::Error;
 use std::fmt::{Display, Formatter};
 use std::fs;
@@ -11,7 +11,7 @@ use sdkwork_appbase_iam_bootstrap::{
     iam_baseline_postgres_sql, import_postgres_default_iam_seed, import_sqlite_default_iam_seed,
     postgres_default_iam_seed_complete, sqlite_default_iam_seed_complete,
     DEFAULT_BOOTSTRAP_ADMIN_DISPLAY_NAME, DEFAULT_BOOTSTRAP_ADMIN_EMAIL,
-    DEFAULT_BOOTSTRAP_ADMIN_USER_ID, DEFAULT_BOOTSTRAP_ADMIN_USERNAME, DEFAULT_IAM_ORGANIZATION_ID,
+    DEFAULT_BOOTSTRAP_ADMIN_USERNAME, DEFAULT_BOOTSTRAP_ADMIN_USER_ID, DEFAULT_IAM_ORGANIZATION_ID,
     DEFAULT_IAM_TENANT_ID,
 };
 use sdkwork_commerce_bootstrap::{
@@ -33,17 +33,6 @@ use crate::infrastructure::sql::ai_routing_seed::{
     import_sqlite_ai_routing_seed, postgres_ai_routing_seed_complete,
     sqlite_ai_routing_seed_complete,
 };
-use crate::infrastructure::sql::app_seed::{
-    bundled_app_seed_payload, import_postgres_app_seed, import_sqlite_app_seed,
-    postgres_app_seed_complete, repair_sqlite_app_seed, sqlite_app_seed_complete,
-};
-use crate::infrastructure::sql::composed_module_bootstrap::{
-    ensure_postgres_composed_module_bootstrap, ensure_sqlite_composed_module_bootstrap,
-};
-use crate::infrastructure::sql::course_seed::{
-    bundled_course_seed_payload, import_postgres_course_seed, import_sqlite_course_seed,
-    postgres_course_seed_complete, repair_sqlite_course_seed, sqlite_course_seed_complete,
-};
 use crate::infrastructure::sql::forum_seed::{
     bundled_forum_seed_payload, import_postgres_forum_seed, import_sqlite_forum_seed,
     postgres_forum_seed_complete, sqlite_forum_seed_complete,
@@ -57,12 +46,7 @@ use crate::infrastructure::sql::model_catalog_import::{
     load_catalog_root_with_pin, model_catalog_key, pricing_catalog_key,
     DEFAULT_CATALOG_REFRESH_SOURCE,
 };
-use crate::infrastructure::sql::runtime_id::{next_claw_runtime_id};
-use crate::infrastructure::sql::skills_seed::{
-    bundled_skills_seed_payload, import_postgres_skills_seed, import_sqlite_skills_seed,
-    postgres_skills_seed_complete, postgres_skills_seed_current,
-    repair_incomplete_sqlite_skills_seed, sqlite_skills_seed_current,
-};
+use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
 use crate::infrastructure::sql::sql_admin_product_center::{
     media_resource_object_blob_id, media_resource_stable_id, provider_asset_media_resource,
 };
@@ -72,9 +56,6 @@ const GENERATED_POSTGRES_SCHEMA: &str =
     include_str!("../../../../../generated/schema/postgres/schema.sql");
 const APPSTORE_FOUNDATION_SQL: &str = include_str!(
     "../../../../../../sdkwork-appstore/database/ddl/baseline/postgres/0001_appstore_legacy_baseline.sql"
-);
-const COURSE_FOUNDATION_SQL: &str = include_str!(
-    "../../../../../../sdkwork-course/database/ddl/baseline/postgres/0001_course_legacy_baseline.sql"
 );
 const CLAWROUTER_LEGACY_PROJECTION_SQL: &str = include_str!(
     "../../../../../database/ddl/baseline/postgres/0002_clawrouter_legacy_projection.sql"
@@ -905,18 +886,12 @@ impl DatabaseInstaller {
         match &self.backend {
             InstallerBackend::Sqlite(pool) => {
                 import_sqlite_bundled_ai_routing_seed(pool).await?;
-                import_sqlite_bundled_app_seed(pool).await?;
-                import_sqlite_bundled_skills_seed(pool).await?;
-                import_sqlite_bundled_course_seed(pool).await?;
                 import_sqlite_bundled_forum_seed(pool).await?;
                 import_sqlite_default_iam_subject_seed(pool).await?;
                 import_sqlite_commerce_experience_seed(pool).await?;
             }
             InstallerBackend::Postgres(pool) => {
                 import_postgres_bundled_ai_routing_seed(pool).await?;
-                import_postgres_bundled_app_seed(pool).await?;
-                import_postgres_bundled_skills_seed(pool).await?;
-                import_postgres_bundled_course_seed(pool).await?;
                 import_postgres_bundled_forum_seed(pool).await?;
                 import_postgres_default_iam_subject_seed(pool).await?;
                 import_postgres_commerce_experience_seed(pool).await?;
@@ -1103,10 +1078,6 @@ impl DatabaseInstaller {
                     sqlite_changed = true;
                 }
                 sqlite_changed |= ensure_sqlite_appstore_module_schema_columns(pool).await?;
-                if !sqlite_course_module_schema_tables_exist(pool).await? {
-                    apply_sqlite_course_module_schema(pool).await?;
-                    sqlite_changed = true;
-                }
                 if !sqlite_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
                     apply_sqlite_clawrouter_legacy_projection_schema(pool).await?;
                     sqlite_changed = true;
@@ -1138,10 +1109,6 @@ impl DatabaseInstaller {
                     changed = true;
                 }
                 changed |= ensure_postgres_appstore_module_schema_columns(pool).await?;
-                if !postgres_course_module_schema_tables_exist(pool).await? {
-                    apply_postgres_course_module_schema(pool).await?;
-                    changed = true;
-                }
                 if !postgres_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
                     apply_postgres_clawrouter_legacy_projection_schema(pool).await?;
                     changed = true;
@@ -1915,9 +1882,6 @@ async fn sqlite_status(
     if !sqlite_appstore_module_schema_tables_exist(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
-    if !sqlite_course_module_schema_tables_exist(pool).await? {
-        return Ok(InstallationStatus::UpgradeRequired);
-    }
     if !sqlite_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
@@ -1956,27 +1920,6 @@ async fn sqlite_status(
     {
         return Ok(InstallationStatus::UpgradeRequired);
     }
-    if !sqlite_app_seed_complete(pool).await? {
-        return Ok(InstallationStatus::UpgradeRequired);
-    }
-    if !sqlite_skills_seed_current(pool).await? {
-        return Ok(InstallationStatus::UpgradeRequired);
-    }
-    if !sqlite_seed_migration_payload_current(
-        pool,
-        "skills",
-        CURRENT_SCHEMA_VERSION,
-        bundled_skills_seed_payload()
-            .map_err(|error| DatabaseInstallError::InvalidState(error.to_string()))?
-            .as_str(),
-    )
-    .await?
-    {
-        return Ok(InstallationStatus::UpgradeRequired);
-    }
-    if !sqlite_course_seed_complete(pool).await? {
-        return Ok(InstallationStatus::UpgradeRequired);
-    }
     if !sqlite_forum_seed_complete(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
@@ -1984,18 +1927,6 @@ async fn sqlite_status(
         return Ok(InstallationStatus::UpgradeRequired);
     }
     if !sqlite_commerce_experience_seed_complete(pool).await? {
-        return Ok(InstallationStatus::UpgradeRequired);
-    }
-    if !sqlite_seed_migration_payload_current(
-        pool,
-        "course",
-        CURRENT_SCHEMA_VERSION,
-        bundled_course_seed_payload()
-            .map_err(|error| DatabaseInstallError::InvalidState(error.to_string()))?
-            .as_str(),
-    )
-    .await?
-    {
         return Ok(InstallationStatus::UpgradeRequired);
     }
     if !sqlite_seed_migration_payload_current(
@@ -2065,7 +1996,6 @@ async fn prepare_sqlite_schema_with_catalog_version(
     apply_sqlite_appbase_commerce_schema(pool).await?;
     apply_sqlite_appbase_iam_oauth_schema(pool).await?;
     apply_sqlite_appstore_module_schema(pool).await?;
-    apply_sqlite_course_module_schema(pool).await?;
     apply_sqlite_clawrouter_legacy_projection_schema(pool).await?;
     record_sqlite_migration_completed(
         pool,
@@ -2153,9 +2083,6 @@ async fn postgres_status(
     if !postgres_appstore_module_schema_tables_exist(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
-    if !postgres_course_module_schema_tables_exist(pool).await? {
-        return Ok(InstallationStatus::UpgradeRequired);
-    }
     if !postgres_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
@@ -2194,27 +2121,6 @@ async fn postgres_status(
     {
         return Ok(InstallationStatus::UpgradeRequired);
     }
-    if !postgres_app_seed_complete(pool).await? {
-        return Ok(InstallationStatus::UpgradeRequired);
-    }
-    if !postgres_skills_seed_current(pool).await? {
-        return Ok(InstallationStatus::UpgradeRequired);
-    }
-    if !postgres_seed_migration_payload_current(
-        pool,
-        "skills",
-        CURRENT_SCHEMA_VERSION,
-        bundled_skills_seed_payload()
-            .map_err(|error| DatabaseInstallError::InvalidState(error.to_string()))?
-            .as_str(),
-    )
-    .await?
-    {
-        return Ok(InstallationStatus::UpgradeRequired);
-    }
-    if !postgres_course_seed_complete(pool).await? {
-        return Ok(InstallationStatus::UpgradeRequired);
-    }
     if !postgres_forum_seed_complete(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
@@ -2222,18 +2128,6 @@ async fn postgres_status(
         return Ok(InstallationStatus::UpgradeRequired);
     }
     if !postgres_commerce_experience_seed_complete(pool).await? {
-        return Ok(InstallationStatus::UpgradeRequired);
-    }
-    if !postgres_seed_migration_payload_current(
-        pool,
-        "course",
-        CURRENT_SCHEMA_VERSION,
-        bundled_course_seed_payload()
-            .map_err(|error| DatabaseInstallError::InvalidState(error.to_string()))?
-            .as_str(),
-    )
-    .await?
-    {
         return Ok(InstallationStatus::UpgradeRequired);
     }
     if !postgres_seed_migration_payload_current(
@@ -2333,7 +2227,6 @@ async fn prepare_postgres_schema_with_catalog_version(
     apply_postgres_appbase_commerce_schema(pool).await?;
     apply_postgres_appbase_iam_oauth_schema(pool).await?;
     apply_postgres_appstore_module_schema(pool).await?;
-    apply_postgres_course_module_schema(pool).await?;
     apply_postgres_clawrouter_legacy_projection_schema(pool).await?;
     record_postgres_migration_completed(
         pool,
@@ -2378,10 +2271,7 @@ async fn install_sqlite(
         catalog_payload.as_str(),
     )
     .await?;
-    import_sqlite_bundled_app_seed(pool).await?;
     import_sqlite_bundled_ai_routing_seed(pool).await?;
-    import_sqlite_bundled_skills_seed(pool).await?;
-    import_sqlite_bundled_course_seed(pool).await?;
     import_sqlite_bundled_forum_seed(pool).await?;
     import_sqlite_default_iam_subject_seed(pool).await?;
     import_sqlite_commerce_experience_seed(pool).await?;
@@ -2425,10 +2315,7 @@ async fn install_postgres(
         catalog_payload.as_str(),
     )
     .await?;
-    import_postgres_bundled_app_seed(pool).await?;
     import_postgres_bundled_ai_routing_seed(pool).await?;
-    import_postgres_bundled_skills_seed(pool).await?;
-    import_postgres_bundled_course_seed(pool).await?;
     import_postgres_bundled_forum_seed(pool).await?;
     import_postgres_default_iam_subject_seed(pool).await?;
     import_postgres_commerce_experience_seed(pool).await?;
@@ -2483,9 +2370,6 @@ async fn repair_sqlite_installation(
     if !sqlite_appstore_module_schema_tables_exist(pool).await? {
         apply_sqlite_appstore_module_schema(pool).await?;
     }
-    if !sqlite_course_module_schema_tables_exist(pool).await? {
-        apply_sqlite_course_module_schema(pool).await?;
-    }
     if !sqlite_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
         apply_sqlite_clawrouter_legacy_projection_schema(pool).await?;
     }
@@ -2530,109 +2414,6 @@ async fn repair_sqlite_installation(
         import_sqlite_bundled_ai_routing_seed(pool).await?;
     }
 
-    let app_seed_complete = sqlite_app_seed_complete(pool).await?;
-    let app_seed_payload = bundled_app_seed_payload()
-        .map_err(|error| DatabaseInstallError::InvalidState(error.to_string()))?;
-    let app_seed_payload_current = sqlite_seed_migration_payload_current(
-        pool,
-        "app-seed",
-        CURRENT_SCHEMA_VERSION,
-        app_seed_payload.as_str(),
-    )
-    .await?;
-    if !app_seed_payload_current {
-        import_sqlite_bundled_app_seed(pool).await?;
-    } else if !app_seed_complete {
-        record_sqlite_migration_started(
-            pool,
-            "app-seed",
-            CURRENT_SCHEMA_VERSION,
-            app_seed_payload.as_str(),
-        )
-        .await?;
-        repair_sqlite_app_seed(pool).await?;
-        record_sqlite_migration_completed(
-            pool,
-            "app-seed",
-            CURRENT_SCHEMA_VERSION,
-            app_seed_payload.as_str(),
-        )
-        .await?;
-    }
-    let skills_payload = bundled_skills_seed_payload()
-        .map_err(|error| DatabaseInstallError::InvalidState(error.to_string()))?;
-    let skills_seed_current = sqlite_skills_seed_current(pool).await?;
-    let skills_payload_current = sqlite_seed_migration_payload_current(
-        pool,
-        "skills",
-        CURRENT_SCHEMA_VERSION,
-        skills_payload.as_str(),
-    )
-    .await?;
-    if !skills_payload_current {
-        import_sqlite_bundled_skills_seed(pool).await?;
-    } else if !skills_seed_current {
-        record_sqlite_migration_started(
-            pool,
-            "skills",
-            CURRENT_SCHEMA_VERSION,
-            skills_payload.as_str(),
-        )
-        .await?;
-        repair_incomplete_sqlite_skills_seed(pool).await?;
-        record_sqlite_migration_completed(
-            pool,
-            "skills",
-            CURRENT_SCHEMA_VERSION,
-            skills_payload.as_str(),
-        )
-        .await?;
-    }
-    let course_payload = bundled_course_seed_payload()
-        .map_err(|error| DatabaseInstallError::InvalidState(error.to_string()))?;
-    let course_seed_complete = sqlite_course_seed_complete(pool).await?;
-    let course_payload_current = sqlite_seed_migration_payload_current(
-        pool,
-        "course",
-        CURRENT_SCHEMA_VERSION,
-        course_payload.as_str(),
-    )
-    .await?;
-    if !course_payload_current {
-        record_sqlite_migration_started(
-            pool,
-            "course",
-            CURRENT_SCHEMA_VERSION,
-            course_payload.as_str(),
-        )
-        .await?;
-        import_sqlite_course_seed(pool).await?;
-        record_sqlite_migration_completed(
-            pool,
-            "course",
-            CURRENT_SCHEMA_VERSION,
-            course_payload.as_str(),
-        )
-        .await?;
-    } else if !course_seed_complete {
-        record_sqlite_migration_started(
-            pool,
-            "course",
-            CURRENT_SCHEMA_VERSION,
-            course_payload.as_str(),
-        )
-        .await?;
-        repair_sqlite_course_seed(pool).await?;
-        record_sqlite_migration_completed(
-            pool,
-            "course",
-            CURRENT_SCHEMA_VERSION,
-            course_payload.as_str(),
-        )
-        .await?;
-    } else {
-        import_sqlite_course_seed(pool).await?;
-    }
     if !sqlite_forum_seed_complete(pool).await?
         || !sqlite_seed_migration_payload_current(
             pool,
@@ -2741,9 +2522,6 @@ async fn repair_postgres_installation(
     if !postgres_appstore_module_schema_tables_exist(pool).await? {
         apply_postgres_appstore_module_schema(pool).await?;
     }
-    if !postgres_course_module_schema_tables_exist(pool).await? {
-        apply_postgres_course_module_schema(pool).await?;
-    }
     if !postgres_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
         apply_postgres_clawrouter_legacy_projection_schema(pool).await?;
     }
@@ -2789,25 +2567,6 @@ async fn repair_postgres_installation(
         import_postgres_bundled_ai_routing_seed(pool).await?;
     }
 
-    if !postgres_app_seed_complete(pool).await? {
-        import_postgres_bundled_app_seed(pool).await?;
-    }
-    if !postgres_skills_seed_complete(pool).await? {
-        import_postgres_bundled_skills_seed(pool).await?;
-    }
-    if !postgres_course_seed_complete(pool).await?
-        || !postgres_seed_migration_payload_current(
-            pool,
-            "course",
-            CURRENT_SCHEMA_VERSION,
-            bundled_course_seed_payload()
-                .map_err(|error| DatabaseInstallError::InvalidState(error.to_string()))?
-                .as_str(),
-        )
-        .await?
-    {
-        import_postgres_bundled_course_seed(pool).await?;
-    }
     if !postgres_forum_seed_complete(pool).await?
         || !postgres_seed_migration_payload_current(
             pool,
@@ -2839,28 +2598,6 @@ async fn repair_postgres_installation(
     Ok(bootstrap_admin)
 }
 
-async fn import_sqlite_bundled_app_seed(pool: &SqlitePool) -> Result<(), DatabaseInstallError> {
-    let payload = bundled_app_seed_payload()
-        .map_err(|error| DatabaseInstallError::InvalidState(error.to_string()))?;
-    record_sqlite_migration_started(pool, "app-seed", CURRENT_SCHEMA_VERSION, payload.as_str())
-        .await?;
-    import_sqlite_app_seed(pool).await?;
-    record_sqlite_migration_completed(pool, "app-seed", CURRENT_SCHEMA_VERSION, payload.as_str())
-        .await?;
-    Ok(())
-}
-
-async fn import_postgres_bundled_app_seed(pool: &PgPool) -> Result<(), DatabaseInstallError> {
-    let payload = bundled_app_seed_payload()
-        .map_err(|error| DatabaseInstallError::InvalidState(error.to_string()))?;
-    record_postgres_migration_started(pool, "app-seed", CURRENT_SCHEMA_VERSION, payload.as_str())
-        .await?;
-    import_postgres_app_seed(pool).await?;
-    record_postgres_migration_completed(pool, "app-seed", CURRENT_SCHEMA_VERSION, payload.as_str())
-        .await?;
-    Ok(())
-}
-
 async fn import_sqlite_bundled_ai_routing_seed(
     pool: &SqlitePool,
 ) -> Result<(), DatabaseInstallError> {
@@ -2889,50 +2626,6 @@ async fn import_postgres_bundled_ai_routing_seed(
         payload.as_str(),
     )
     .await?;
-    Ok(())
-}
-
-async fn import_sqlite_bundled_skills_seed(pool: &SqlitePool) -> Result<(), DatabaseInstallError> {
-    let payload = bundled_skills_seed_payload()
-        .map_err(|error| DatabaseInstallError::InvalidState(error.to_string()))?;
-    record_sqlite_migration_started(pool, "skills", CURRENT_SCHEMA_VERSION, payload.as_str())
-        .await?;
-    import_sqlite_skills_seed(pool).await?;
-    record_sqlite_migration_completed(pool, "skills", CURRENT_SCHEMA_VERSION, payload.as_str())
-        .await?;
-    Ok(())
-}
-
-async fn import_postgres_bundled_skills_seed(pool: &PgPool) -> Result<(), DatabaseInstallError> {
-    let payload = bundled_skills_seed_payload()
-        .map_err(|error| DatabaseInstallError::InvalidState(error.to_string()))?;
-    record_postgres_migration_started(pool, "skills", CURRENT_SCHEMA_VERSION, payload.as_str())
-        .await?;
-    import_postgres_skills_seed(pool).await?;
-    record_postgres_migration_completed(pool, "skills", CURRENT_SCHEMA_VERSION, payload.as_str())
-        .await?;
-    Ok(())
-}
-
-async fn import_sqlite_bundled_course_seed(pool: &SqlitePool) -> Result<(), DatabaseInstallError> {
-    let payload = bundled_course_seed_payload()
-        .map_err(|error| DatabaseInstallError::InvalidState(error.to_string()))?;
-    record_sqlite_migration_started(pool, "course", CURRENT_SCHEMA_VERSION, payload.as_str())
-        .await?;
-    import_sqlite_course_seed(pool).await?;
-    record_sqlite_migration_completed(pool, "course", CURRENT_SCHEMA_VERSION, payload.as_str())
-        .await?;
-    Ok(())
-}
-
-async fn import_postgres_bundled_course_seed(pool: &PgPool) -> Result<(), DatabaseInstallError> {
-    let payload = bundled_course_seed_payload()
-        .map_err(|error| DatabaseInstallError::InvalidState(error.to_string()))?;
-    record_postgres_migration_started(pool, "course", CURRENT_SCHEMA_VERSION, payload.as_str())
-        .await?;
-    import_postgres_course_seed(pool).await?;
-    record_postgres_migration_completed(pool, "course", CURRENT_SCHEMA_VERSION, payload.as_str())
-        .await?;
     Ok(())
 }
 
@@ -3998,11 +3691,12 @@ fn reset_admin_password_history_id(user_id: &str, now: &str) -> String {
         .duration_since(UNIX_EPOCH)
         .map(|duration| duration.as_nanos())
         .unwrap_or(0);
-    let suffix =
-        sha256_hex(format!("{user_id}:{now}:{nanos}:{sequence}:reset-admin-password-history").as_str())
-            .chars()
-            .take(16)
-            .collect::<String>();
+    let suffix = sha256_hex(
+        format!("{user_id}:{now}:{nanos}:{sequence}:reset-admin-password-history").as_str(),
+    )
+    .chars()
+    .take(16)
+    .collect::<String>();
     format!("password-history-{user_id}-reset-{suffix}")
 }
 
@@ -4819,9 +4513,6 @@ async fn sqlite_refresh_schema_needs_prepare(
     if !sqlite_appstore_module_schema_tables_exist(pool).await? {
         return Ok(true);
     }
-    if !sqlite_course_module_schema_tables_exist(pool).await? {
-        return Ok(true);
-    }
     if !sqlite_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
         return Ok(true);
     }
@@ -4879,9 +4570,6 @@ async fn postgres_refresh_schema_needs_prepare(
         return Ok(true);
     }
     if !postgres_appstore_module_schema_tables_exist(pool).await? {
-        return Ok(true);
-    }
-    if !postgres_course_module_schema_tables_exist(pool).await? {
         return Ok(true);
     }
     if !postgres_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
@@ -6478,22 +6166,8 @@ fn appstore_module_table_names() -> Vec<&'static str> {
     ]
 }
 
-fn course_module_table_names() -> Vec<&'static str> {
-    vec![
-        "course_category",
-        "course_catalog",
-        "course_section",
-        "course_lesson",
-        "course_application",
-    ]
-}
-
 fn appstore_foundation_migration_sql() -> &'static str {
     APPSTORE_FOUNDATION_SQL
-}
-
-fn course_foundation_migration_sql() -> &'static str {
-    COURSE_FOUNDATION_SQL
 }
 
 fn appstore_module_postgres_schema_statements() -> Vec<String> {
@@ -6507,24 +6181,6 @@ fn appstore_module_postgres_schema_statements() -> Vec<String> {
 
 fn appstore_module_sqlite_schema_statements() -> Vec<String> {
     strip_line_comments(appstore_foundation_migration_sql())
-        .split(';')
-        .map(str::trim)
-        .filter(|statement| !statement.is_empty())
-        .map(postgres_statement_to_sqlite)
-        .collect()
-}
-
-fn course_module_postgres_schema_statements() -> Vec<String> {
-    strip_line_comments(course_foundation_migration_sql())
-        .split(';')
-        .map(str::trim)
-        .filter(|statement| !statement.is_empty())
-        .map(str::to_owned)
-        .collect()
-}
-
-fn course_module_sqlite_schema_statements() -> Vec<String> {
-    strip_line_comments(course_foundation_migration_sql())
         .split(';')
         .map(str::trim)
         .filter(|statement| !statement.is_empty())
@@ -6561,34 +6217,9 @@ async fn postgres_appstore_module_schema_tables_exist(pool: &PgPool) -> Result<b
     Ok(string_set(appstore_module_table_names()).is_subset(&installed_tables))
 }
 
-async fn sqlite_course_module_schema_tables_exist(pool: &SqlitePool) -> Result<bool, sqlx::Error> {
-    let installed_tables = sqlite_string_set(
-        pool,
-        r#"
-        SELECT name
-        FROM sqlite_master
-        WHERE type = 'table'
-        "#,
-    )
-    .await?;
-    Ok(string_set(course_module_table_names()).is_subset(&installed_tables))
-}
-
-async fn postgres_course_module_schema_tables_exist(pool: &PgPool) -> Result<bool, sqlx::Error> {
-    let installed_tables = postgres_string_set(
-        pool,
-        r#"
-        SELECT table_name
-        FROM information_schema.tables
-        WHERE table_schema = current_schema()
-          AND table_type = 'BASE TABLE'
-        "#,
-    )
-    .await?;
-    Ok(string_set(course_module_table_names()).is_subset(&installed_tables))
-}
-
-async fn apply_sqlite_appstore_module_schema(pool: &SqlitePool) -> Result<(), DatabaseInstallError> {
+async fn apply_sqlite_appstore_module_schema(
+    pool: &SqlitePool,
+) -> Result<(), DatabaseInstallError> {
     record_sqlite_migration_started(
         pool,
         "appstore-module-schema",
@@ -6630,7 +6261,9 @@ async fn apply_postgres_appstore_module_schema(pool: &PgPool) -> Result<(), Data
     Ok(())
 }
 
-async fn ensure_sqlite_appstore_module_schema_columns(pool: &SqlitePool) -> Result<bool, sqlx::Error> {
+async fn ensure_sqlite_appstore_module_schema_columns(
+    pool: &SqlitePool,
+) -> Result<bool, sqlx::Error> {
     let mut changed = false;
     for statement in appstore_module_sqlite_schema_statements() {
         if create_table_name(statement.as_str()).as_deref() != Some("appstore_app") {
@@ -6647,7 +6280,9 @@ async fn ensure_sqlite_appstore_module_schema_columns(pool: &SqlitePool) -> Resu
     Ok(changed)
 }
 
-async fn ensure_postgres_appstore_module_schema_columns(pool: &PgPool) -> Result<bool, sqlx::Error> {
+async fn ensure_postgres_appstore_module_schema_columns(
+    pool: &PgPool,
+) -> Result<bool, sqlx::Error> {
     let mut changed = false;
     for statement in appstore_module_postgres_schema_statements() {
         if create_table_name(statement.as_str()).as_deref() != Some("appstore_app") {
@@ -6656,54 +6291,6 @@ async fn ensure_postgres_appstore_module_schema_columns(pool: &PgPool) -> Result
         changed |= ensure_postgres_table_columns(pool, statement.as_str()).await?;
     }
     Ok(changed)
-}
-
-async fn apply_sqlite_course_module_schema(pool: &SqlitePool) -> Result<(), DatabaseInstallError> {
-    record_sqlite_migration_started(
-        pool,
-        "course-module-schema",
-        CURRENT_SCHEMA_VERSION,
-        course_foundation_migration_sql(),
-    )
-    .await?;
-    for statement in course_module_sqlite_schema_statements() {
-        execute_sqlite_statement(pool, statement.as_str()).await?;
-    }
-    record_sqlite_migration_completed(
-        pool,
-        "course-module-schema",
-        CURRENT_SCHEMA_VERSION,
-        course_foundation_migration_sql(),
-    )
-    .await?;
-    ensure_sqlite_composed_module_bootstrap(pool)
-        .await
-        .map_err(DatabaseInstallError::Database)?;
-    Ok(())
-}
-
-async fn apply_postgres_course_module_schema(pool: &PgPool) -> Result<(), DatabaseInstallError> {
-    record_postgres_migration_started(
-        pool,
-        "course-module-schema",
-        CURRENT_SCHEMA_VERSION,
-        course_foundation_migration_sql(),
-    )
-    .await?;
-    for statement in course_module_postgres_schema_statements() {
-        execute_postgres_statement(pool, statement.as_str()).await?;
-    }
-    record_postgres_migration_completed(
-        pool,
-        "course-module-schema",
-        CURRENT_SCHEMA_VERSION,
-        course_foundation_migration_sql(),
-    )
-    .await?;
-    ensure_postgres_composed_module_bootstrap(pool)
-        .await
-        .map_err(DatabaseInstallError::Database)?;
-    Ok(())
 }
 
 fn appbase_iam_foundation_postgres_schema_statements() -> Vec<String> {

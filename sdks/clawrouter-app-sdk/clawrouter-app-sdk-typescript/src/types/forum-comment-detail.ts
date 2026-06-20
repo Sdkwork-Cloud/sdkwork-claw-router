@@ -12,7 +12,7 @@ export interface ForumCommentDetail {
   /** Content id field on forum comment detail. */
   contentId: string;
   /** Content type field on forum comment detail. */
-  contentType: 'FEEDS' | 'COMMENTS' | 'COURSE';
+  contentType: 'FEEDS' | 'COMMENTS';
   /** Created at field on forum comment detail. */
   createdAt: string;
   /** Device info field on forum comment detail. */

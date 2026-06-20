@@ -3,15 +3,12 @@ import SDKworkCommon
 
 public class SdkworkBackendClient {
     private let httpClient: HttpClient
-    public let agents: AgentsApi
     public let ai: AiApi
     public let content: ContentApi
-    public let ecosystem: EcosystemApi
     public let iam: IamApi
     public let integration: IntegrationApi
     public let mcp: McpApi
     public let messaging: MessagingApi
-    public let platform: PlatformApi
     public let prompts: PromptsApi
     public let serviceProviders: ServiceProvidersApi
     public let sites: SitesApi
@@ -20,15 +17,12 @@ public class SdkworkBackendClient {
 
     public init(baseURL: String) {
         self.httpClient = HttpClient(baseURL: baseURL)
-        self.agents = AgentsApi(client: httpClient)
         self.ai = AiApi(client: httpClient)
         self.content = ContentApi(client: httpClient)
-        self.ecosystem = EcosystemApi(client: httpClient)
         self.iam = IamApi(client: httpClient)
         self.integration = IntegrationApi(client: httpClient)
         self.mcp = McpApi(client: httpClient)
         self.messaging = MessagingApi(client: httpClient)
-        self.platform = PlatformApi(client: httpClient)
         self.prompts = PromptsApi(client: httpClient)
         self.serviceProviders = ServiceProvidersApi(client: httpClient)
         self.sites = SitesApi(client: httpClient)
@@ -38,15 +32,12 @@ public class SdkworkBackendClient {
 
     public init(config: SdkConfig) {
         self.httpClient = HttpClient(config: config)
-        self.agents = AgentsApi(client: httpClient)
         self.ai = AiApi(client: httpClient)
         self.content = ContentApi(client: httpClient)
-        self.ecosystem = EcosystemApi(client: httpClient)
         self.iam = IamApi(client: httpClient)
         self.integration = IntegrationApi(client: httpClient)
         self.mcp = McpApi(client: httpClient)
         self.messaging = MessagingApi(client: httpClient)
-        self.platform = PlatformApi(client: httpClient)
         self.prompts = PromptsApi(client: httpClient)
         self.serviceProviders = ServiceProvidersApi(client: httpClient)
         self.sites = SitesApi(client: httpClient)

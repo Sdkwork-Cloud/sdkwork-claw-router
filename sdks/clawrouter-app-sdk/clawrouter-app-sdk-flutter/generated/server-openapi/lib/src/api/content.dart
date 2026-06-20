@@ -322,69 +322,6 @@ class ContentApi {
       return map == null ? null : UsersCurrentCommentsListResult.fromJson(map);
     })();
   }
-
-  /// List courses
-  Future<CoursesListResult?> coursesList([String? level, String? category, String? q, String? page, String? pageSize]) async {
-    final query = buildQueryString([
-      QueryParameterSpec('level', level, 'form', true, false, null),
-      QueryParameterSpec('category', category, 'form', true, false, null),
-      QueryParameterSpec('q', q, 'form', true, false, null),
-      QueryParameterSpec('page', page, 'form', true, false, null),
-      QueryParameterSpec('page_size', pageSize, 'form', true, false, null)
-    ]);
-    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.appPath('/courses'), query));
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : CoursesListResult.fromJson(map);
-    })();
-  }
-
-  /// Create course application
-  Future<ApplicationsCreateResult?> applicationsCreate(CourseApplicationCreateRequest body) async {
-    final payload = body.toJson();
-    final response = await _client.post(ApiPaths.appPath('/courses/applications'), body: payload, contentType: 'application/json');
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : ApplicationsCreateResult.fromJson(map);
-    })();
-  }
-
-  /// Upload course application video
-  Future<ApplicationsVideosCreateResult?> applicationsVideosCreate(CourseApplicationVideoUploadRequest body) async {
-    final payload = body.toJson();
-    final response = await _client.post(ApiPaths.appPath('/courses/applications/videos'), body: payload, contentType: 'multipart/form-data');
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : ApplicationsVideosCreateResult.fromJson(map);
-    })();
-  }
-
-  /// List course categories
-  Future<CoursesCategoriesListResult?> coursesCategoriesList() async {
-    final response = await _client.get(ApiPaths.appPath('/courses/categories'));
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : CoursesCategoriesListResult.fromJson(map);
-    })();
-  }
-
-  /// List course overview
-  Future<CoursesOverviewRetrieveResult?> coursesOverviewRetrieve() async {
-    final response = await _client.get(ApiPaths.appPath('/courses/overview'));
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : CoursesOverviewRetrieveResult.fromJson(map);
-    })();
-  }
-
-  /// List course detail
-  Future<CoursesRetrieveResult?> coursesRetrieve(String courseId) async {
-    final response = await _client.get(ApiPaths.appPath('/courses/${serializePathParameter(courseId, const PathParameterSpec('courseId', 'simple', false))}'));
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : CoursesRetrieveResult.fromJson(map);
-    })();
-  }
 }
 
 class PathParameterSpec {

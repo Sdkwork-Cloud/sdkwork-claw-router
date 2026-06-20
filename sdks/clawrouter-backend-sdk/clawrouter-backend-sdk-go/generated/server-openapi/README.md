@@ -55,15 +55,12 @@ client.SetHeader("X-Custom-Header", "value")
 
 ## API Modules
 
-- `client.Agents` - agents API
 - `client.Ai` - ai API
 - `client.Content` - content API
-- `client.Ecosystem` - ecosystem API
 - `client.Iam` - iam API
 - `client.Integration` - integration API
 - `client.Mcp` - mcp API
 - `client.Messaging` - messaging API
-- `client.Platform` - platform API
 - `client.Prompts` - prompts API
 - `client.ServiceProviders` - service_providers API
 - `client.Sites` - sites API
@@ -71,25 +68,6 @@ client.SetHeader("X-Custom-Header", "value")
 - `client.System` - system API
 
 ## Usage Examples
-
-### agents
-
-```go
-// List managed agents
-params := map[string]interface{}{
-    "q": "q",
-    "owner_user_id": "owner_user_id",
-    "status": "active",
-    "visibility": "private",
-    "page": "page",
-    "page_size": "page_size",
-}
-result, err := client.Agents.AgentDefinitionsList(params)
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
 
 ### ai
 
@@ -107,17 +85,6 @@ fmt.Println(result)
 ```go
 // List announcements
 result, err := client.Content.AnnouncementsList()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### ecosystem
-
-```go
-// List skill categories
-result, err := client.Ecosystem.SkillsCategoriesList()
 if err != nil {
     panic(err)
 }
@@ -180,17 +147,6 @@ params := map[string]interface{}{
     "provider_code": "provider_code",
 }
 result, err := client.Messaging.ProviderAccountsList(params)
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### platform
-
-```go
-// List app categories
-result, err := client.Platform.AppsCategoriesList()
 if err != nil {
     panic(err)
 }

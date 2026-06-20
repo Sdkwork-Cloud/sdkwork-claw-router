@@ -389,39 +389,23 @@ class ClawRouterOpenApiContractAuditTest(unittest.TestCase):
 
             self.assertTrue(result.ok, result.messages)
 
-    def test_accepts_backend_course_admin_hyphenated_content_resources(self) -> None:
-        with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
-            spec = self.valid_spec("backend")
-            operation = spec["paths"].pop("/backend/v3/api/ai/model_vendors")
-            operation["post"]["operationId"] = "courseApplications.review"
-            operation["post"]["tags"] = ["content"]
-            operation["post"]["x-sdkwork-domain"] = "content"
-            operation["post"]["x-sdkwork-resource"] = "courseApplications"
-            spec["paths"]["/backend/v3/api/content/course-applications/{applicationId}/review"] = operation
-            self.write_specs(root, backend_spec=spec)
-
-            result = ClawRouterOpenApiContractAudit(root=root).run()
-
-            self.assertTrue(result.ok, result.messages)
-
     def test_rejects_unapproved_backend_hyphenated_content_resources(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             spec = self.valid_spec("backend")
             operation = spec["paths"].pop("/backend/v3/api/ai/model_vendors")
-            operation["post"]["operationId"] = "courseOffers.review"
+            operation["post"]["operationId"] = "contentOffers.review"
             operation["post"]["tags"] = ["content"]
             operation["post"]["x-sdkwork-domain"] = "content"
-            operation["post"]["x-sdkwork-resource"] = "courseOffers"
-            spec["paths"]["/backend/v3/api/content/course-offers"] = operation
+            operation["post"]["x-sdkwork-resource"] = "contentOffers"
+            spec["paths"]["/backend/v3/api/content/content-offers"] = operation
             self.write_specs(root, backend_spec=spec)
 
             result = ClawRouterOpenApiContractAudit(root=root).run()
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "backend path /backend/v3/api/content/course-offers static segment course-offers must be lowercase lower_snake_case",
+                "backend path /backend/v3/api/content/content-offers static segment content-offers must be lowercase lower_snake_case",
                 result.messages,
             )
 

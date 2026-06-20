@@ -14,7 +14,6 @@
 
 - Create: `data/categories/README.md`
 - Create: `data/categories/product/categories.json`
-- Create: `data/categories/courses/categories.json`
 - Create: `data/categories/agents/categories.json`
 - Create: `data/categories/agent-skills/categories.json`
 - Create: `data/categories/mcp/categories.json`

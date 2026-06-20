@@ -4,6 +4,8 @@ import type { ProviderJsonValue } from './provider-json-value';
 export interface OpenAiImageGenerationRequest {
   /** Image model id or Claw Router catalog key. */
   model: string;
+  /** Number of images to generate when supported. */
+  n?: number;
   /** Text prompt describing the image to generate. */
   prompt: string;
   /** Requested image quality when supported. */

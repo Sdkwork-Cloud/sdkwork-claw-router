@@ -65,6 +65,10 @@ const originalCryptoDescriptor = Object.getOwnPropertyDescriptor(globalThis, "cr
 const originalFetch = globalThis.fetch;
 const originalWindowDescriptor = Object.getOwnPropertyDescriptor(globalThis, "window");
 
+function readPortalSource(relativePath: string): string {
+  return readFileSync(new URL(relativePath, import.meta.url), "utf8");
+}
+
 function withCrypto<T>(cryptoValue: Crypto | undefined, fn: () => T): T {
   Object.defineProperty(globalThis, "crypto", {
     configurable: true,
@@ -274,6 +278,41 @@ test("generated SDK metadata declares independent runtime base URL variables for
   assert.equal(SDK_SYSTEM_CONFIG.gateway.runtimeEnvName, "VITE_CLAWROUTER_OPEN_API_BASE_URL");
   assert.equal(SDK_SYSTEM_CONFIG.app.runtimeEnvName, "VITE_CLAWROUTER_APP_API_BASE_URL");
   assert.equal(SDK_SYSTEM_CONFIG.backend.runtimeEnvName, "VITE_CLAWROUTER_BACKEND_API_BASE_URL");
+});
+
+test("documents runtime adapter prefers documents app base URL, then clawrouter app base URL, then APP_API_PREFIX", () => {
+  const source = readPortalSource("./packages/sdkwork-clawrouter-pc-commons/src/documents-reference-runtime-adapter.ts");
+
+  const documentsEnvIndex = source.indexOf("VITE_SDKWORK_DOCUMENTS_APP_API_BASE_URL");
+  const clawRouterEnvIndex = source.indexOf("VITE_CLAWROUTER_APP_API_BASE_URL");
+  const apiPrefixFallbackIndex = source.lastIndexOf("?? APP_API_PREFIX");
+
+  assert.ok(documentsEnvIndex !== -1, "documents runtime adapter must read VITE_SDKWORK_DOCUMENTS_APP_API_BASE_URL");
+  assert.ok(clawRouterEnvIndex !== -1, "documents runtime adapter must retain VITE_CLAWROUTER_APP_API_BASE_URL fallback");
+  assert.ok(apiPrefixFallbackIndex !== -1, "documents runtime adapter must fall back to APP_API_PREFIX");
+  assert.ok(documentsEnvIndex < clawRouterEnvIndex, "documents runtime adapter must prefer the dedicated documents API base URL");
+  assert.ok(clawRouterEnvIndex < apiPrefixFallbackIndex, "documents runtime adapter must fall back to the clawrouter app API base URL before APP_API_PREFIX");
+});
+
+test("documents runtime adapter caches a singleton SDK client bound to the clawrouter token manager", () => {
+  const source = readPortalSource("./packages/sdkwork-clawrouter-pc-commons/src/documents-reference-runtime-adapter.ts");
+
+  assert.match(source, /let documentsAppSdkClient: SdkworkDocumentsAppClient \| null = null;/);
+  assert.match(source, /if \(!documentsAppSdkClient\) \{/);
+  assert.match(source, /documentsAppSdkClient = createClient\(\{/);
+  assert.match(source, /baseUrl: resolveDocumentsAppApiBaseUrl\(\),/);
+  assert.match(source, /tokenManager: getClawRouterGlobalTokenManager\(\),/);
+  assert.match(source, /return documentsAppSdkClient as unknown as DocumentsAppSdkClient;/);
+});
+
+test("portal bootstrap mounts the documents runtime provider with the clawrouter adapter", () => {
+  const source = readPortalSource("./src/main.tsx");
+
+  assert.match(source, /import \{ PortalQueryProvider, clawRouterDocumentsReferenceRuntime \} from 'sdkwork-clawrouter-pc-commons';/);
+  assert.match(source, /import \{ DocumentsReferenceRuntimeProvider \} from '@sdkwork\/documents-pc-commons';/);
+  assert.match(source, /<DocumentsReferenceRuntimeProvider value=\{clawRouterDocumentsReferenceRuntime\}>/);
+  assert.match(source, /<App \/>/);
+  assert.match(source, /<\/DocumentsReferenceRuntimeProvider>/);
 });
 
 test("sdk clients use a static IAM runtime reset dependency so Vite can chunk the portal deterministically", () => {
@@ -774,7 +813,7 @@ test("portal auth helpers preserve the current route for login-required actions"
   assert.deepEqual(
     resolvePortalLoginRequiredAction({
       hasSession: true,
-      location: { pathname: "/courses", search: "", hash: "" },
+      location: { pathname: "/forum", search: "", hash: "" },
     }),
     { allowed: true },
   );

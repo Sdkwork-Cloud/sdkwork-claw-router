@@ -3,7 +3,6 @@ const PRODUCT_API_SOURCES: &[(&str, &str)] = &[
         "admin_agents.rs",
         include_str!("../src/api/admin_agents.rs"),
     ),
-    ("admin_app.rs", include_str!("../src/api/admin_app.rs")),
     ("admin_cache.rs", include_str!("../src/api/admin_cache.rs")),
     (
         "admin_catalog.rs",
@@ -55,18 +54,8 @@ const PRODUCT_API_SOURCES: &[(&str, &str)] = &[
         include_str!("../src/api/admin_transaction_center.rs"),
     ),
     ("admin_user.rs", include_str!("../src/api/admin_user.rs")),
-    (
-        "app_agent_runs.rs",
-        include_str!("../src/api/app_agent_runs.rs"),
-    ),
-    (
-        "app_agent_sessions.rs",
-        include_str!("../src/api/app_agent_sessions.rs"),
-    ),
-    ("app_agents.rs", include_str!("../src/api/app_agents.rs")),
     ("app_auth.rs", include_str!("../src/api/app_auth.rs")),
     ("app_chat.rs", include_str!("../src/api/app_chat.rs")),
-    ("app_course.rs", include_str!("../src/api/app_course.rs")),
     ("app_forum.rs", include_str!("../src/api/app_forum.rs")),
     (
         "app_iam_directory_query.rs",
@@ -82,8 +71,6 @@ const PRODUCT_API_SOURCES: &[(&str, &str)] = &[
         "app_settlements.rs",
         include_str!("../src/api/app_settlements.rs"),
     ),
-    ("app_skills.rs", include_str!("../src/api/app_skills.rs")),
-    ("app_store.rs", include_str!("../src/api/app_store.rs")),
     (
         "app_usage_logs.rs",
         include_str!("../src/api/app_usage_logs.rs"),

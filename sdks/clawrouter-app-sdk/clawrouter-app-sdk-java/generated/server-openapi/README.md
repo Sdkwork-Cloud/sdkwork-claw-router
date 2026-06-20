@@ -61,32 +61,16 @@ client.getHttpClient().setHeader("X-Custom-Header", "value");
 
 ## API Modules
 
-- `client.getAgents()` - agents API
 - `client.getAi()` - ai API
 - `client.getChat()` - chat API
 - `client.getContent()` - content API
-- `client.getEcosystem()` - ecosystem API
 - `client.getIam()` - iam API
 - `client.getMemory()` - memory API
 - `client.getNotification()` - notification API
-- `client.getPlatform()` - platform API
 - `client.getRuntime()` - runtime API
-- `client.getSdkReference()` - sdk_reference API
 - `client.getSystem()` - system API
 
 ## Usage Examples
-
-### agents
-
-```java
-// List Playground agent definitions
-Map<String, Object> params = new LinkedHashMap<>();
-params.put("page", "page");
-params.put("page_size", "page-size");
-params.put("q", "q");
-AgentDefinitionsListResult result = client.getAgents().agentDefinitionsList(params);
-System.out.println(result);
-```
 
 ### ai
 
@@ -112,14 +96,6 @@ System.out.println(result);
 ```java
 // List forum overview
 FeedsOverviewRetrieveResult result = client.getContent().feedsOverviewRetrieve();
-System.out.println(result);
-```
-
-### ecosystem
-
-```java
-// Get categories
-SkillsCategoriesListResult result = client.getEcosystem().skillsCategoriesList();
 System.out.println(result);
 ```
 
@@ -155,14 +131,6 @@ NotificationsListResult result = client.getNotification().notificationsList(para
 System.out.println(result);
 ```
 
-### platform
-
-```java
-// Get categories
-AppsStoreCategoriesListResult result = client.getPlatform().appsStoreCategoriesList();
-System.out.println(result);
-```
-
 ### runtime
 
 ```java
@@ -176,18 +144,6 @@ params.put("agent_session_id", "1");
 params.put("runtime", "runtime");
 params.put("status", "status");
 InvocationsListResult result = client.getRuntime().invocationsList(params);
-System.out.println(result);
-```
-
-### sdk_reference
-
-```java
-// Generate SDK archive
-SdkReferenceArchiveGenerateRequest body = new SdkReferenceArchiveGenerateRequest();
-body.setConfig(new LinkedHashMap<>());
-body.setLanguage("language");
-body.setSpec(new LinkedHashMap<>());
-ArchivesCreateResult result = client.getSdkReference().archivesCreate(body);
 System.out.println(result);
 ```
 
@@ -244,10 +200,12 @@ MIT
 
 ## Regeneration Contract
 
-- Generator-owned files are tracked in `.sdkwork/sdkwork-generator-manifest.json`.
-- Each run also writes `.sdkwork/sdkwork-generator-changes.json` so automation can inspect created, updated, deleted, unchanged, scaffolded, and backed-up files plus the classified impact areas, verification plan, and execution decision for the latest generation.
-- Apply mode also writes `.sdkwork/sdkwork-generator-report.json` with the full execution report, including `schemaVersion`, `generator`, stable artifact paths, and the execution handoff commands that match CLI `--json` output.
+- HTTP/OpenAPI generator-owned files are tracked in `.sdkwork/sdkwork-generator-manifest.json`.
+- HTTP/OpenAPI generation also writes `.sdkwork/sdkwork-generator-changes.json` so automation can inspect created, updated, deleted, unchanged, scaffolded, and backed-up files plus the classified impact areas, verification plan, and execution decision for the latest generation.
+- HTTP/OpenAPI apply mode also writes `.sdkwork/sdkwork-generator-report.json` with the full execution report, including `schemaVersion`, `generator`, stable artifact paths, and the execution handoff commands that match CLI `--json` output.
 - CLI JSON output also includes an execution handoff with concrete next commands, including reviewed apply commands for dry-run flows.
-- Put hand-written wrappers, adapters, and orchestration in `custom/`.
-- Files scaffolded under `custom/` are created once and preserved across regenerations.
-- If a generated-owned file was modified locally, its previous content is copied to `.sdkwork/manual-backups/` before overwrite or removal.
+- Put HTTP/OpenAPI hand-written wrappers, adapters, and orchestration in `custom/`.
+- Files scaffolded under `custom/` are created once and preserved across HTTP/OpenAPI regenerations.
+- If an HTTP/OpenAPI generated-owned file was modified locally, its previous content is copied to `.sdkwork/manual-backups/` before overwrite or removal.
+- RPC SDK source workspaces use convention-first evidence by default: RPC SDK family naming, language workspace naming, `rpc/*.manifest.json`, proto source references, generated client source, and native package manifests.
+- Use `sdkgen inspect --protocol rpc` to verify RPC convention evidence. Request persisted generator evidence only with `--emit-control-plane` for release, CI, audit, or migration workflows; evidence paths are derived by generator convention.

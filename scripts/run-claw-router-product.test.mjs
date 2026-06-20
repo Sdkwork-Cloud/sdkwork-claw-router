@@ -12,6 +12,24 @@ import {
 
 const workspaceRoot = path.resolve(import.meta.dirname, '..');
 const portalRoot = path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc');
+const documentsApiReferenceRoot = path.join(
+  workspaceRoot,
+  '..',
+  'sdkwork-documents',
+  'apps',
+  'sdkwork-documents-pc',
+  'packages',
+  'sdkwork-documents-pc-api-reference',
+);
+const documentsSdkReferenceRoot = path.join(
+  workspaceRoot,
+  '..',
+  'sdkwork-documents',
+  'apps',
+  'sdkwork-documents-pc',
+  'packages',
+  'sdkwork-documents-pc-sdk-reference',
+);
 const execFileAsync = promisify(execFile);
 
 const validReleaseEnv = Object.freeze({
@@ -528,9 +546,6 @@ test('product app and admin API servers do not keep direct foundation API runtim
       'app_public_auth_router(',
       'app_user_profile_router',
       'app_iam_directory_router',
-      'app_course_router',
-      'SqliteCourseStore',
-      'PostgresCourseStore',
       'SqliteAppUserProfileReadStore',
       'PostgresAppUserProfileReadStore',
       'SqliteAppSessionEventStore',
@@ -900,10 +915,6 @@ test('rust test runner exposes isolated daily-maintenance profiles', async () =>
     true,
   );
   assert.equal(
-    autoProductSchemaFixtureChange.steps.some((step) => step.args.includes('app_course_api')),
-    true,
-  );
-  assert.equal(
     autoProductSchemaFixtureChange.steps.some((step) => step.args.includes('sqlite_app_store_installed_seed')),
     false,
   );
@@ -930,11 +941,7 @@ test('rust test runner exposes isolated daily-maintenance profiles', async () =>
     true,
   );
   assert.equal(
-    autoProductRepairFixtureChange.steps.some((step) => step.args.includes('sqlite_app_store_installed_seed')),
-    true,
-  );
-  assert.equal(
-    autoProductRepairFixtureChange.steps.some((step) => step.args.includes('app_course_api')),
+    autoProductRepairFixtureChange.steps.some((step) => step.args.includes('sqlite_forum_store')),
     true,
   );
   assert.equal(
@@ -962,10 +969,6 @@ test('rust test runner exposes isolated daily-maintenance profiles', async () =>
   assert.equal(
     autoProductInstalledFixtureChange.steps.some((step) => step.args.includes('database_installer_installed')),
     true,
-  );
-  assert.equal(
-    autoProductInstalledFixtureChange.steps.some((step) => step.args.includes('app_course_api')),
-    false,
   );
   assert.equal(
     autoProductInstalledFixtureChange.steps.some((step) => step.args.includes('sqlite_admin_channel_group_store')),
@@ -3737,7 +3740,6 @@ test('production starter initializes server PostgreSQL runtime config template',
   assert.ok(content.includes('ssl_mode = "require"'));
   assert.ok(content.includes('max_connections = 16'));
   assert.ok(content.includes(`data_directory = "${slashPath(path.join(fixtureRoot, 'etc', 'Data'))}"`));
-  assert.ok(content.includes(`course_upload_root = "${slashPath(path.join(fixtureRoot, 'etc', 'Data', 'Uploads', 'Courses'))}"`));
   assert.ok(content.includes('[redis]'));
   assert.ok(content.includes('enabled = true'));
   assert.ok(content.includes('host = "redis.example.com"'));
@@ -4440,10 +4442,6 @@ test('install package builder emits service and container deployment packages fr
     assert.ok(serviceConfigTemplate.includes('log_thread_ids = false'));
     assert.ok(serviceConfigTemplate.includes('[paths]'));
     assert.ok(serviceConfigTemplate.includes('data_directory = "/var/lib/sdkwork/router"'));
-    assert.ok(serviceConfigTemplate.includes('course_upload_root = "/var/lib/sdkwork/router/uploads/courses"'));
-    assert.ok(serviceConfigTemplate.includes('[courses]'));
-    assert.ok(serviceConfigTemplate.includes('video_upload_max_bytes = 1073741824'));
-    assert.ok(serviceConfigTemplate.includes('video_upload_body_limit_bytes = 1074790400'));
     assert.ok(serviceConfigTemplate.includes('[request_limits]'));
     assert.ok(serviceConfigTemplate.includes('admin_app_json_body_max_bytes = 131072'));
     assert.ok(serviceConfigTemplate.includes('admin_skill_json_body_max_bytes = 65536'));
@@ -4525,8 +4523,6 @@ test('install package builder emits service and container deployment packages fr
     assert.ok(serviceInstallGuide.includes('Redis is enabled and required by default for server deployments'));
     assert.ok(serviceInstallGuide.includes('[redis].enabled = true'));
     assert.ok(serviceInstallGuide.includes('/etc/sdkwork/router/redis.secret'));
-    assert.ok(serviceInstallGuide.includes('Course upload storage is configured in [paths] and [courses].'));
-    assert.ok(serviceInstallGuide.includes('[courses].video_upload_max_bytes defaults to 1073741824'));
     assert.ok(serviceInstallGuide.includes('Request body limits are configured in [request_limits].'));
     assert.ok(serviceInstallGuide.includes('Admin app JSON defaults to 131072 bytes'));
     assert.ok(serviceInstallGuide.includes('payment callback payloads default to 65536 bytes'));
@@ -4548,9 +4544,7 @@ test('install package builder emits service and container deployment packages fr
       ),
       true,
     );
-    assert.equal(serviceResult.manifest.runtimeConfig.courseUploadRoot, '/var/lib/sdkwork/router/uploads/courses');
-    assert.equal(serviceResult.manifest.installConfiguration.courses.videoUploadMaxBytes, 1073741824);
-    assert.equal(serviceResult.manifest.installConfiguration.courses.videoUploadBodyLimitBytes, 1074790400);
+    assert.equal(serviceResult.manifest.runtimeConfig.dataDirectory, '/var/lib/sdkwork/router');
     assert.deepEqual(serviceResult.manifest.installConfiguration.requestLimits, {
       configSection: 'request_limits',
       adminAppJsonBodyMaxBytes: 131072,
@@ -4618,9 +4612,6 @@ test('install package builder emits service and container deployment packages fr
     assert.equal(metadata.redis.enabledByDefault, true);
     assert.equal(metadata.redis.required, true);
     assert.equal(metadata.redis.runtimeRequired, true);
-    assert.equal(metadata.courses.uploadRoot, '/var/lib/sdkwork/router/uploads/courses');
-    assert.equal(metadata.courses.videoUploadMaxBytes, 1073741824);
-    assert.equal(metadata.courses.videoUploadBodyLimitBytes, 1074790400);
     assert.equal(metadata.configFile, '/etc/sdkwork/router/clawrouter.toml');
     const containerInstallGuide = readTarEntryText(containerTarBytes, 'INSTALL.md');
     assert.ok(containerInstallGuide.includes('Configuration Files'));
@@ -4688,17 +4679,11 @@ test('install package builder emits service and container deployment packages fr
     assert.ok(desktopConfigTemplate.includes('enabled = false'));
     assert.ok(desktopConfigTemplate.includes('~/.sdkwork/router/config/clawrouter.toml'));
     assert.ok(desktopConfigTemplate.includes('~/.sdkwork/router/data/clawrouter.sqlite'));
-    assert.ok(desktopConfigTemplate.includes('course_upload_root = "~/.sdkwork/router/data/uploads/courses"'));
-    assert.ok(desktopConfigTemplate.includes('[courses]'));
-    assert.ok(desktopConfigTemplate.includes('video_upload_max_bytes = 1073741824'));
-    assert.ok(desktopConfigTemplate.includes('video_upload_body_limit_bytes = 1074790400'));
     assert.ok(desktopConfigTemplate.includes('[request_limits]'));
     assert.ok(desktopConfigTemplate.includes('admin_app_json_body_max_bytes = 131072'));
     assert.ok(desktopConfigTemplate.includes('forum_json_body_max_bytes = 262144'));
     assert.equal(desktopMetadata.database.defaultEngine, 'sqlite');
     assert.equal(desktopMetadata.redis.enabledByDefault, false);
-    assert.equal(desktopMetadata.courses.uploadRoot, '~/.sdkwork/router/data/uploads/courses');
-    assert.equal(desktopMetadata.courses.videoUploadMaxBytes, 1073741824);
     assert.equal(desktopMetadata.requestLimits.paymentCallbackBodyMaxBytes, 65536);
     assert.equal(desktopMetadata.database.requiresExternalDatabase, false);
     const desktopInstallGuide = readTarEntryText(desktopTarBytes, 'INSTALL.md');
@@ -6081,29 +6066,11 @@ test('API router product chain is covered from portal services through SDK and R
 
 test('portal SDK reference uses real generated SDK package metadata for downloads', () => {
   const sdkReferenceSource = readFileSync(
-    path.join(
-      workspaceRoot,
-      'apps',
-      'sdkwork-clawrouter-pc',
-      'packages',
-      'sdkwork-clawrouter-pc-sdk-reference',
-      'src',
-      'pages',
-      'SdkReference.tsx',
-    ),
+    path.join(documentsSdkReferenceRoot, 'src', 'pages', 'SdkReference.tsx'),
     'utf8',
   );
   const sdkDataSource = readFileSync(
-    path.join(
-      workspaceRoot,
-      'apps',
-      'sdkwork-clawrouter-pc',
-      'packages',
-      'sdkwork-clawrouter-pc-sdk-reference',
-      'src',
-      'data',
-      'sdkData.ts',
-    ),
+    path.join(documentsSdkReferenceRoot, 'src', 'data', 'sdkData.ts'),
     'utf8',
   );
   const sdkClientBoundarySource = readFileSync(
@@ -6115,6 +6082,18 @@ test('portal SDK reference uses real generated SDK package metadata for download
       'sdkwork-clawrouter-pc-commons',
       'src',
       'sdk-clients.ts',
+    ),
+    'utf8',
+  );
+  const documentsReferenceAdapterSource = readFileSync(
+    path.join(
+      workspaceRoot,
+      'apps',
+      'sdkwork-clawrouter-pc',
+      'packages',
+      'sdkwork-clawrouter-pc-commons',
+      'src',
+      'documents-reference-runtime-adapter.ts',
     ),
     'utf8',
   );
@@ -6143,10 +6122,14 @@ test('portal SDK reference uses real generated SDK package metadata for download
     ),
   );
   const referenceSurface = `${sdkReferenceSource}\n${sdkDataSource}`;
-  const sdkMetadataSurface = `${referenceSurface}\n${sdkClientBoundarySource}`;
+  const sdkMetadataSurface = `${referenceSurface}\n${sdkClientBoundarySource}\n${documentsReferenceAdapterSource}`;
 
-  assert.ok(sdkDataSource.includes('CLAWROUTER_APP_SDK_REFERENCE_METADATA'));
-  assert.ok(sdkDataSource.includes('CLAWROUTER_BACKEND_SDK_REFERENCE_METADATA'));
+  assert.ok(sdkDataSource.includes('getSdkSystemConfig'));
+  assert.ok(sdkDataSource.includes('getGeneratedSdkMetadataForSystem'));
+  assert.ok(sdkClientBoundarySource.includes('CLAWROUTER_APP_SDK_REFERENCE_METADATA'));
+  assert.ok(sdkClientBoundarySource.includes('CLAWROUTER_BACKEND_SDK_REFERENCE_METADATA'));
+  assert.ok(documentsReferenceAdapterSource.includes('SDK_SYSTEM_CONFIG'));
+  assert.ok(documentsReferenceAdapterSource.includes('clawRouterDocumentsReferenceRuntime'));
   assert.ok(sdkMetadataSurface.includes(appSdkPackage.name));
   assert.ok(sdkMetadataSurface.includes(appSdkPackage.version));
   assert.ok(sdkMetadataSurface.includes(backendSdkPackage.name));
@@ -6795,15 +6778,13 @@ test('edge dev smoke validates the current gateway and surface OpenAPI contract 
       requiredPaths: [
         '/backend/v3/api/ai/model_vendors',
         '/backend/v3/api/recharges/packages',
-        '/backend/v3/api/ecosystem/skills',
       ],
     },
     {
       openApi: appOpenApi,
       expectedTitle: 'SDKWork Claw Router App API',
       requiredPaths: [
-        '/app/v3/api/platform/apps/store',
-        '/app/v3/api/ecosystem/skills',
+        '/app/v3/api/ai/models',
         '/app/v3/api/recharges/packages',
       ],
     },
@@ -6824,7 +6805,7 @@ test('edge dev smoke validates the current gateway and surface OpenAPI contract 
   }
 });
 
-test('edge dev smoke isolates SQLite and validates public app and skills browse data', () => {
+test('edge dev smoke isolates SQLite and validates public app model browse data', () => {
   const smokeSource = readFileSync(
     path.join(workspaceRoot, 'scripts', 'smoke-edge-dev-server.mjs'),
     'utf8',
@@ -6833,13 +6814,9 @@ test('edge dev smoke isolates SQLite and validates public app and skills browse 
   assert.ok(smokeSource.includes('isolatedSmokeDatabaseUrl()'));
   assert.ok(smokeSource.includes("'--database-url'"));
   assert.match(smokeSource, /path\.join\(\s*'target',\s*'dev-smoke',/u);
-  assert.ok(smokeSource.includes('/app/v3/api/platform/apps/store/categories'));
-  assert.ok(smokeSource.includes('/app/v3/api/platform/apps/store?q=sdkwork-claw-router&page=1&page_size=6'));
-  assert.ok(smokeSource.includes('/app/v3/api/ecosystem/skills/categories'));
-  assert.ok(smokeSource.includes('/app/v3/api/ecosystem/skills?q=prompt&page=1&page_size=6'));
+  assert.ok(smokeSource.includes('/app/v3/api/ai/models?page=1&page_size=6'));
   assert.ok(smokeSource.includes('assertPublicBrowseEnvelope'));
   assert.ok(smokeSource.includes('SDKWork Claw Router'));
-  assert.ok(smokeSource.includes('Prompt Optimizer'));
   assert.ok(smokeSource.includes('must not require authorization'));
 });
 
@@ -8111,8 +8088,8 @@ test('portal dev scripts run Vite without a Node server entrypoint', () => {
   assert.ok(viteConfig.includes('PORTAL_PUBLIC_APP_API_BASE_URL'));
   assert.ok(viteConfig.includes('PORTAL_PUBLIC_BACKEND_API_BASE_URL'));
   assert.ok(viteConfig.includes('optimizeDeps'));
-  assert.ok(viteConfig.includes("'sdkwork-clawrouter-pc-api-reference'"));
-  assert.ok(viteConfig.includes("'sdkwork-clawrouter-pc-sdk-reference'"));
+  assert.ok(viteConfig.includes("'@sdkwork/documents-pc-api-reference'"));
+  assert.ok(viteConfig.includes("'@sdkwork/documents-pc-sdk-reference'"));
 });
 
 test('portal typecheck project does not compile external appbase or UI source', () => {
@@ -8198,8 +8175,6 @@ test('portal workspace packages declare ESM module metadata', () => {
     'sdkwork-clawrouter-pc-admin-ratelimit',
     'sdkwork-clawrouter-pc-admin-record',
     'sdkwork-clawrouter-pc-admin-user',
-    'sdkwork-clawrouter-pc-api-reference',
-    'sdkwork-clawrouter-pc-app-center',
     'sdkwork-clawrouter-pc-commons',
     'sdkwork-clawrouter-pc-console-account',
     'sdkwork-clawrouter-pc-console-api-keys',
@@ -8216,15 +8191,12 @@ test('portal workspace packages declare ESM module metadata', () => {
     'sdkwork-clawrouter-pc-console-user',
     'sdkwork-clawrouter-pc-console-wallet',
     'sdkwork-clawrouter-pc-core',
-    'sdkwork-clawrouter-pc-courses',
     'sdkwork-clawrouter-pc-forum',
     'sdkwork-clawrouter-pc-home',
     'sdkwork-clawrouter-pc-i18n',
     'sdkwork-clawrouter-pc-models',
     'sdkwork-clawrouter-pc-playground',
     'sdkwork-clawrouter-pc-rankings',
-    'sdkwork-clawrouter-pc-sdk-reference',
-    'sdkwork-clawrouter-pc-skills-hub',
     'sdkwork-clawrouter-pc-types',
   ];
 
@@ -8416,28 +8388,11 @@ test('verification plan includes real browser DOM smoke after production HTTP sm
     'utf8',
   );
   const apiEndpointViewSource = readFileSync(
-    path.join(
-      workspaceRoot,
-      'apps',
-      'sdkwork-clawrouter-pc',
-      'packages',
-      'sdkwork-clawrouter-pc-api-reference',
-      'src',
-      'components',
-      'ApiEndpointView.tsx',
-    ),
+    path.join(documentsApiReferenceRoot, 'src', 'components', 'ApiEndpointView.tsx'),
     'utf8',
   );
   const codeSnippetClientSource = readFileSync(
-    path.join(
-      workspaceRoot,
-      'apps',
-      'sdkwork-clawrouter-pc',
-      'packages',
-      'sdkwork-clawrouter-pc-api-reference',
-      'src',
-      'codeSnippetClient.ts',
-    ),
+    path.join(documentsApiReferenceRoot, 'src', 'codeSnippetClient.ts'),
     'utf8',
   );
 
@@ -8560,68 +8515,14 @@ test('verification plan includes real browser DOM smoke after production HTTP sm
   assert.match(browserSmokeSource, /\/rankings/);
   assert.match(browserSmokeSource, /Published catalog benchmark/);
   assert.match(browserSmokeSource, /Snapshot Benchmark/);
-  assert.match(browserSmokeSource, /\/courses/);
-  assert.match(browserSmokeSource, /\/courses\/c1/);
-  assert.ok(browserSmokeSource.includes('/courses?__browser-smoke-category=1'));
-  assert.ok(browserSmokeSource.includes('/courses?__browser-smoke-level=1'));
-  assert.ok(browserSmokeSource.includes('/courses?__browser-smoke-search=1'));
-  assert.ok(browserSmokeSource.includes('/courses?__browser-smoke-card-click=1'));
-  assert.ok(browserSmokeSource.includes('/courses/c1?__browser-smoke-detail=1'));
-  assert.ok(browserSmokeSource.includes('/courses/c1?__browser-smoke-lesson-grid=1'));
-  assert.ok(browserSmokeSource.includes('/courses/c1?__browser-smoke-related=1'));
-  assert.ok(browserSmokeSource.includes('/courses/__browser-smoke-missing'));
-  const coursesSmokeStart = browserSmokeSource.indexOf('pathName: "/courses"');
-  const forumSmokeStart = browserSmokeSource.indexOf('pathName: "/forum"');
-  assert.ok(coursesSmokeStart >= 0);
-  assert.ok(forumSmokeStart > coursesSmokeStart);
-  const coursesSmokeSource = browserSmokeSource.slice(coursesSmokeStart, forumSmokeStart);
-  assert.equal(
-    coursesSmokeSource.match(/appSdkFixtureMode: APP_SDK_FIXTURE_MODE/g)?.length ?? 0,
-    10,
-    'production browser course smoke routes must use app SDK fixtures instead of live app API targets',
-  );
-  assert.match(browserSmokeSource, /BROWSER_SMOKE_COURSE_RECORDS/);
-  assert.match(browserSmokeSource, /function resolveCourseAppSdkFixture\(request\)/);
-  assert.match(browserSmokeSource, /method !== "GET"/);
-  assert.match(browserSmokeSource, /pathName === "\/app\/v3\/api\/courses"/);
-  assert.match(browserSmokeSource, /browserSmokeCourseListResponse\(parsedUrl\.searchParams\)/);
-  assert.match(browserSmokeSource, /pathName === "\/app\/v3\/api\/courses\/categories"/);
-  assert.match(browserSmokeSource, /BROWSER_SMOKE_COURSE_CATEGORIES/);
-  assert.match(browserSmokeSource, /pathName === "\/app\/v3\/api\/courses\/overview"/);
-  assert.match(browserSmokeSource, /browserSmokeCourseOverviewResponse\(\)/);
-  assert.match(browserSmokeSource, /pathName\.startsWith\("\/app\/v3\/api\/courses\/"\)/);
-  assert.match(browserSmokeSource, /browserSmokeCourseDetailResponse\(courseId\)/);
-  assert.match(browserSmokeSource, /const courseFixture = resolveCourseAppSdkFixture\(request\)/);
-  assert.match(browserSmokeSource, /Master Claw Router/);
-  assert.match(browserSmokeSource, /Featured Courses/);
-  assert.match(browserSmokeSource, /Claw Router Fundamentals: Zero to Hero/);
-  assert.match(browserSmokeSource, /ABOUT THIS COURSE/);
-  assert.match(browserSmokeSource, /Curated course content snapshot/);
-  assert.match(browserSmokeSource, /Advanced API Architecture and Design/);
-  assert.match(browserSmokeSource, /Authentication and Authorization Flows/);
-  assert.match(browserSmokeSource, /Microservices and Distributed Tracing/);
-  assert.match(browserSmokeSource, /Course not found\./);
-  assert.match(browserSmokeSource, /Add a constructive course comment/);
-  assert.match(browserSmokeSource, /Select lesson/);
-  assert.match(browserSmokeSource, /Lesson grid/);
-  assert.match(browserSmokeSource, /BV1GJ411x7h7/);
-  assert.match(browserSmokeSource, /player\.bilibili\.com\/player\.html/);
-  assert.match(browserSmokeSource, /clickRouteCourseFilterButtonByText\("Architecture"\)/);
-  assert.match(browserSmokeSource, /clickRouteCourseFilterButtonByText\("Advanced"\)/);
-  assert.match(browserSmokeSource, /clickRouteCourseCardByTitle\("Claw Router Fundamentals: Zero to Hero"\)/);
-  assert.match(browserSmokeSource, /clickRouteCourseRelatedLinkByTitle\("Advanced API Architecture and Design"\)/);
-  assert.match(browserSmokeSource, /setRouteTextInputByPlaceholder\("Search courses\.\.\.", "security"\)/);
-  assert.match(browserSmokeSource, /clickRouteButtonByTitle\("Lesson grid"\)/);
-  assert.match(browserSmokeSource, /iframe\[src\^="https:\/\/player\.bilibili\.com\/player\.html"\]/);
-  assert.match(browserSmokeSource, /javascript:alert\(1\)/);
-  assert.match(browserSmokeSource, /toLocaleDateString/);
-  assert.match(browserSmokeSource, /Math\.random/);
   assert.match(browserSmokeSource, /\/forum/);
   assert.ok(browserSmokeSource.includes('/forum?__browser-smoke-live-empty=1'));
   assert.ok(browserSmokeSource.includes('/forum/__browser-smoke-missing'));
-  const appSmokeStart = browserSmokeSource.indexOf('pathName: "/apps"');
-  assert.ok(appSmokeStart > forumSmokeStart);
-  const forumSmokeSource = browserSmokeSource.slice(forumSmokeStart, appSmokeStart);
+  const forumSmokeStart = browserSmokeSource.indexOf('pathName: "/forum"');
+  const skillsSmokeStart = browserSmokeSource.indexOf('pathName: "/skills-hub"');
+  assert.ok(forumSmokeStart >= 0);
+  assert.ok(skillsSmokeStart > forumSmokeStart);
+  const forumSmokeSource = browserSmokeSource.slice(forumSmokeStart, skillsSmokeStart);
   assert.equal(
     forumSmokeSource.match(/appSdkFixtureMode: APP_SDK_FIXTURE_MODE/g)?.length ?? 0,
     0,
@@ -8640,26 +8541,6 @@ test('verification plan includes real browser DOM smoke after production HTTP sm
   assert.match(browserSmokeSource, /Discussion not found\./);
   assert.match(browserSmokeSource, /No discussions found/);
   assert.match(browserSmokeSource, /Community links are not configured\./);
-  assert.match(browserSmokeSource, /\/apps/);
-  assert.match(browserSmokeSource, /\/apps\/app-1/);
-  assert.match(browserSmokeSource, /APP_SDK_FAILURE_FIXTURE_MODE/);
-  assert.match(browserSmokeSource, /Browser smoke apps unavailable/);
-  assert.match(browserSmokeSource, /Browser smoke app details unavailable/);
-  assert.match(browserSmokeSource, /Apps could not be loaded/);
-  assert.match(browserSmokeSource, /App details could not be loaded/);
-  assert.match(browserSmokeSource, /\/apps\/__browser-smoke-success/);
-  assert.match(browserSmokeSource, /Browser Smoke App/);
-  assert.match(browserSmokeSource, /browser-smoke-app-web/);
-  assert.match(browserSmokeSource, /https:\/\/apps\.example\.test\/browser-smoke-app/);
-  assert.match(browserSmokeSource, /\/apps\?__browser-smoke-empty/);
-  assert.match(browserSmokeSource, /No apps found/);
-  assert.match(browserSmokeSource, /no-match-browser-smoke-app/);
-  assert.match(browserSmokeSource, /\/apps\/__browser-smoke-missing/);
-  assert.match(browserSmokeSource, /App not found/);
-  assert.match(browserSmokeSource, /App categories could not be loaded/);
-  assert.match(browserSmokeSource, /Browser smoke app categories unavailable/);
-  assert.match(browserSmokeSource, /\/apps\?__browser-smoke-retry/);
-  assert.match(browserSmokeSource, /Browser smoke apps transient failure/);
   assert.match(browserSmokeSource, /\/skills-hub/);
   assert.match(browserSmokeSource, /\/skills-hub\/skill-1/);
   assert.match(browserSmokeSource, /Browser smoke skills unavailable/);
@@ -8763,7 +8644,6 @@ test('verification plan includes real browser DOM smoke after production HTTP sm
   assert.match(browserSmokeSource, /APP_SDK_RETRY_FIXTURE_MODE/);
   assert.match(browserSmokeSource, /APP_SDK_SHARED_BROWSER_FIXTURES/);
   assert.match(browserSmokeSource, /app\/v3\/api\/notification\/notifications/);
-  assert.match(browserSmokeSource, /app\/v3\/api\/platform\/apps\/store/);
   assert.match(browserSmokeSource, /app\/v3\/api\/ecosystem\/skills/);
   assert.match(browserSmokeSource, /Fetch\.enable/);
   assert.match(browserSmokeSource, /Fetch\.requestPaused/);
@@ -8895,50 +8775,6 @@ test('verification plan includes portal auth runtime tests before route runtime 
   ));
 });
 
-test('verification plan includes portal skills runtime tests before broad suites', async () => {
-  const module = await import(
-    pathToFileURL(path.join(workspaceRoot, 'scripts', 'verify-claw-router-product.mjs')).href
-  );
-  const plan = module.buildVerificationPlan(
-    { skipRustTests: false, skipPythonTests: false, skipSchemaGate: true },
-    {},
-  );
-  const commandLines = plan.map((step) => `${step.command} ${step.args.join(' ')}`);
-  const forumRuntimeIndex = plan.findIndex((step) => step.label === 'portal forum runtime tests');
-  const skillsRuntimeIndex = plan.findIndex((step) => step.label === 'portal skills runtime tests');
-  const rustTestsIndex = plan.findIndex((step) => step.label === 'rust workspace tests');
-  const pythonTestsIndex = plan.findIndex((step) => step.label === 'python standard tests');
-
-  assert.ok(skillsRuntimeIndex > forumRuntimeIndex, 'skills runtime tests must run after existing public route runtime tests');
-  assert.ok(skillsRuntimeIndex < rustTestsIndex, 'skills runtime tests must run before broad Rust tests');
-  assert.ok(skillsRuntimeIndex < pythonTestsIndex, 'skills runtime tests must run before broad Python tests');
-  assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-clawrouter-pc/skills-runtime.test.ts',
-  ));
-});
-
-test('verification plan includes portal app center runtime tests before broad suites', async () => {
-  const module = await import(
-    pathToFileURL(path.join(workspaceRoot, 'scripts', 'verify-claw-router-product.mjs')).href
-  );
-  const plan = module.buildVerificationPlan(
-    { skipRustTests: false, skipPythonTests: false, skipSchemaGate: true },
-    {},
-  );
-  const commandLines = plan.map((step) => `${step.command} ${step.args.join(' ')}`);
-  const skillsRuntimeIndex = plan.findIndex((step) => step.label === 'portal skills runtime tests');
-  const appCenterRuntimeIndex = plan.findIndex((step) => step.label === 'portal app center runtime tests');
-  const rustTestsIndex = plan.findIndex((step) => step.label === 'rust workspace tests');
-  const pythonTestsIndex = plan.findIndex((step) => step.label === 'python standard tests');
-
-  assert.ok(appCenterRuntimeIndex > skillsRuntimeIndex, 'app center runtime tests must run after existing public SDK route runtime tests');
-  assert.ok(appCenterRuntimeIndex < rustTestsIndex, 'app center runtime tests must run before broad Rust tests');
-  assert.ok(appCenterRuntimeIndex < pythonTestsIndex, 'app center runtime tests must run before broad Python tests');
-  assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-clawrouter-pc/app-runtime.test.ts',
-  ));
-});
-
 test('verification plan includes portal home downloads runtime tests before broad suites', async () => {
   const module = await import(
     pathToFileURL(path.join(workspaceRoot, 'scripts', 'verify-claw-router-product.mjs')).href
@@ -8948,13 +8784,13 @@ test('verification plan includes portal home downloads runtime tests before broa
     {},
   );
   const commandLines = plan.map((step) => `${step.command} ${step.args.join(' ')}`);
-  const appCenterRuntimeIndex = plan.findIndex((step) => step.label === 'portal app center runtime tests');
+  const forumRuntimeIndex = plan.findIndex((step) => step.label === 'portal forum runtime tests');
   const homeDownloadsRuntimeIndex = plan.findIndex((step) => step.label === 'portal home downloads runtime tests');
   const apiReferenceRuntimeIndex = plan.findIndex((step) => step.label === 'portal api reference playground runtime tests');
   const rustTestsIndex = plan.findIndex((step) => step.label === 'rust workspace tests');
   const pythonTestsIndex = plan.findIndex((step) => step.label === 'python standard tests');
 
-  assert.ok(homeDownloadsRuntimeIndex > appCenterRuntimeIndex, 'home downloads runtime tests must run after app center runtime tests');
+  assert.ok(homeDownloadsRuntimeIndex > forumRuntimeIndex, 'home downloads runtime tests must run after existing public route runtime tests');
   assert.ok(homeDownloadsRuntimeIndex < apiReferenceRuntimeIndex, 'home downloads runtime tests must run before API reference runtime tests');
   assert.ok(homeDownloadsRuntimeIndex < rustTestsIndex, 'home downloads runtime tests must run before broad Rust tests');
   assert.ok(homeDownloadsRuntimeIndex < pythonTestsIndex, 'home downloads runtime tests must run before broad Python tests');
@@ -8972,12 +8808,12 @@ test('verification plan includes portal api reference playground runtime tests b
     {},
   );
   const commandLines = plan.map((step) => `${step.command} ${step.args.join(' ')}`);
-  const appCenterRuntimeIndex = plan.findIndex((step) => step.label === 'portal app center runtime tests');
+  const homeDownloadsRuntimeIndex = plan.findIndex((step) => step.label === 'portal home downloads runtime tests');
   const apiReferenceRuntimeIndex = plan.findIndex((step) => step.label === 'portal api reference playground runtime tests');
   const rustTestsIndex = plan.findIndex((step) => step.label === 'rust workspace tests');
   const pythonTestsIndex = plan.findIndex((step) => step.label === 'python standard tests');
 
-  assert.ok(apiReferenceRuntimeIndex > appCenterRuntimeIndex, 'api reference playground runtime tests must run after public SDK route runtime tests');
+  assert.ok(apiReferenceRuntimeIndex > homeDownloadsRuntimeIndex, 'api reference playground runtime tests must run after home downloads runtime tests');
   assert.ok(apiReferenceRuntimeIndex < rustTestsIndex, 'api reference playground runtime tests must run before broad Rust tests');
   assert.ok(apiReferenceRuntimeIndex < pythonTestsIndex, 'api reference playground runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
@@ -9039,49 +8875,20 @@ test('production browser smoke validates api reference route bundle semantics', 
     'utf8',
   );
   const playgroundRowsSource = readFileSync(
-    path.join(
-      workspaceRoot,
-      'apps',
-      'sdkwork-clawrouter-pc',
-      'packages',
-      'sdkwork-clawrouter-pc-api-reference',
-      'src',
-      'apiPlaygroundRows.ts',
-    ),
+    path.join(documentsApiReferenceRoot, 'src', 'apiPlaygroundRows.ts'),
     'utf8',
   );
   const playgroundRequestSource = readFileSync(
-    path.join(
-      workspaceRoot,
-      'apps',
-      'sdkwork-clawrouter-pc',
-      'packages',
-      'sdkwork-clawrouter-pc-api-reference',
-      'src',
-      'playgroundRequest.ts',
-    ),
+    path.join(documentsApiReferenceRoot, 'src', 'playgroundRequest.ts'),
     'utf8',
   );
   const playgroundSource = readFileSync(
-    path.join(
-      workspaceRoot,
-      'apps',
-      'sdkwork-clawrouter-pc',
-      'packages',
-      'sdkwork-clawrouter-pc-api-reference',
-      'src',
-      'components',
-      'ApiPlayground.tsx',
-    ),
+    path.join(documentsApiReferenceRoot, 'src', 'components', 'ApiPlayground.tsx'),
     'utf8',
   );
   const playgroundDownloadSource = readFileSync(
     path.join(
-      workspaceRoot,
-      'apps',
-      'sdkwork-clawrouter-pc',
-      'packages',
-      'sdkwork-clawrouter-pc-api-reference',
+      documentsApiReferenceRoot,
       'src',
       'playgroundResponseDownload.ts',
     ),
@@ -9134,26 +8941,6 @@ test('production browser smoke validates admin skill route through backend SDK f
   assert.ok(smokeSource.includes('/backend/v3/api/ecosystem/skills/package'));
   assert.ok(smokeSource.includes('/backend/v3/api/ecosystem/skills'));
   assert.ok(smokeSource.includes('Browser Smoke Admin Skill'));
-});
-
-test('production browser smoke validates admin app route through backend SDK fixtures', () => {
-  const smokeSource = readFileSync(
-    path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', 'scripts', 'smoke-production-browser.mjs'),
-    'utf8',
-  );
-
-  assert.ok(smokeSource.includes('BACKEND_SDK_APP_FIXTURE_MODE'));
-  assert.ok(smokeSource.includes('/admin/app?__browser-smoke-admin-app=1'));
-  assert.ok(smokeSource.includes('requiresPortalSession: true'));
-  assert.ok(smokeSource.includes('sdkwork.clawRouter.appSession.v1'));
-  assert.ok(smokeSource.includes('/app/v3/api/auth/sessions/current'));
-  assert.ok(smokeSource.includes('/backend/v3/api/system/installation/status'));
-  assert.ok(smokeSource.includes('urlPattern: "*://*/backend/v3/api/*"'));
-  assert.ok(smokeSource.includes('/backend/v3/api/platform/apps/categories'));
-  assert.ok(smokeSource.includes('/backend/v3/api/platform/apps'));
-  assert.ok(smokeSource.includes('Browser Smoke Admin App'));
-  assert.ok(smokeSource.includes('app-browser-smoke'));
-  assert.ok(!smokeSource.includes('app_browser_smoke'));
 });
 
 test('production browser smoke keeps current-user playground CORS compatible with app session tokens', () => {
@@ -9236,30 +9023,6 @@ test('verification plan includes portal console app runtime tests before broad s
   assert.ok(consoleAppRuntimeIndex < pythonTestsIndex, 'console app runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
     `${module.pnpmCommand()} --dir apps/sdkwork-clawrouter-pc exec tsx console-app-runtime.test.ts`,
-  ));
-});
-
-test('verification plan includes portal console agents runtime tests before broad suites', async () => {
-  const module = await import(
-    pathToFileURL(path.join(workspaceRoot, 'scripts', 'verify-claw-router-product.mjs')).href
-  );
-  const plan = module.buildVerificationPlan(
-    { skipRustTests: false, skipPythonTests: false, skipSchemaGate: true },
-    {},
-  );
-  const commandLines = plan.map((step) => `${step.command} ${step.args.join(' ')}`);
-  const consoleAppRuntimeIndex = plan.findIndex((step) => step.label === 'portal console app runtime tests');
-  const consoleAgentsRuntimeIndex = plan.findIndex((step) => step.label === 'portal console agents runtime tests');
-  const consoleRoutingRuntimeIndex = plan.findIndex((step) => step.label === 'portal console routing runtime tests');
-  const rustTestsIndex = plan.findIndex((step) => step.label === 'rust workspace tests');
-  const pythonTestsIndex = plan.findIndex((step) => step.label === 'python standard tests');
-
-  assert.ok(consoleAgentsRuntimeIndex > consoleAppRuntimeIndex, 'console agents runtime tests must run after console app runtime tests');
-  assert.ok(consoleAgentsRuntimeIndex < consoleRoutingRuntimeIndex, 'console agents runtime tests must run before console routing runtime tests');
-  assert.ok(consoleAgentsRuntimeIndex < rustTestsIndex, 'console agents runtime tests must run before broad Rust tests');
-  assert.ok(consoleAgentsRuntimeIndex < pythonTestsIndex, 'console agents runtime tests must run before broad Python tests');
-  assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-clawrouter-pc/console-agents-runtime.test.ts',
   ));
 });
 
@@ -9396,54 +9159,6 @@ test('verification plan includes portal admin model runtime tests before broad s
   assert.ok(adminModelRuntimeIndex < pythonTestsIndex, 'admin model runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
     'node --experimental-strip-types apps/sdkwork-clawrouter-pc/admin-model-runtime.test.ts',
-  ));
-});
-
-test('verification plan includes portal admin skill runtime tests before broad suites', async () => {
-  const module = await import(
-    pathToFileURL(path.join(workspaceRoot, 'scripts', 'verify-claw-router-product.mjs')).href
-  );
-  const plan = module.buildVerificationPlan(
-    { skipRustTests: false, skipPythonTests: false, skipSchemaGate: true },
-    {},
-  );
-  const commandLines = plan.map((step) => `${step.command} ${step.args.join(' ')}`);
-  const adminModelRuntimeIndex = plan.findIndex((step) => step.label === 'portal admin model runtime tests');
-  const adminSkillRuntimeIndex = plan.findIndex((step) => step.label === 'portal admin skill runtime tests');
-  const adminRatelimitRuntimeIndex = plan.findIndex((step) => step.label === 'portal admin ratelimit runtime tests');
-  const rustTestsIndex = plan.findIndex((step) => step.label === 'rust workspace tests');
-  const pythonTestsIndex = plan.findIndex((step) => step.label === 'python standard tests');
-
-  assert.ok(adminSkillRuntimeIndex > adminModelRuntimeIndex, 'admin skill runtime tests must run after admin model runtime tests');
-  assert.ok(adminSkillRuntimeIndex < adminRatelimitRuntimeIndex, 'admin skill runtime tests must run before admin ratelimit runtime tests');
-  assert.ok(adminSkillRuntimeIndex < rustTestsIndex, 'admin skill runtime tests must run before broad Rust tests');
-  assert.ok(adminSkillRuntimeIndex < pythonTestsIndex, 'admin skill runtime tests must run before broad Python tests');
-  assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-clawrouter-pc/admin-skill-runtime.test.ts',
-  ));
-});
-
-test('verification plan includes portal admin app runtime tests before broad suites', async () => {
-  const module = await import(
-    pathToFileURL(path.join(workspaceRoot, 'scripts', 'verify-claw-router-product.mjs')).href
-  );
-  const plan = module.buildVerificationPlan(
-    { skipRustTests: false, skipPythonTests: false, skipSchemaGate: true },
-    {},
-  );
-  const commandLines = plan.map((step) => `${step.command} ${step.args.join(' ')}`);
-  const adminModelRuntimeIndex = plan.findIndex((step) => step.label === 'portal admin model runtime tests');
-  const adminAppRuntimeIndex = plan.findIndex((step) => step.label === 'portal admin app runtime tests');
-  const adminSkillRuntimeIndex = plan.findIndex((step) => step.label === 'portal admin skill runtime tests');
-  const rustTestsIndex = plan.findIndex((step) => step.label === 'rust workspace tests');
-  const pythonTestsIndex = plan.findIndex((step) => step.label === 'python standard tests');
-
-  assert.ok(adminAppRuntimeIndex > adminModelRuntimeIndex, 'admin app runtime tests must run after admin model runtime tests');
-  assert.ok(adminAppRuntimeIndex < adminSkillRuntimeIndex, 'admin app runtime tests must run before admin skill runtime tests');
-  assert.ok(adminAppRuntimeIndex < rustTestsIndex, 'admin app runtime tests must run before broad Rust tests');
-  assert.ok(adminAppRuntimeIndex < pythonTestsIndex, 'admin app runtime tests must run before broad Python tests');
-  assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-clawrouter-pc/admin-app-runtime.test.ts',
   ));
 });
 

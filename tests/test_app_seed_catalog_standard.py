@@ -445,7 +445,7 @@ class AppSeedCatalogStandardTest(unittest.TestCase):
             "app seed importer must not accept numeric or legacy aliases for platform_app.status",
         )
 
-    def test_app_seed_importer_uses_the_same_category_derivation_as_app_store_runtime(self):
+    def test_app_seed_importer_uses_explicit_category_derivation_from_seed_data(self):
         source = APP_SEED_SOURCE_PATH.read_text(encoding="utf-8")
         self.assertIn(
             "const APP_CATEGORY_SEED_JSON: &str",

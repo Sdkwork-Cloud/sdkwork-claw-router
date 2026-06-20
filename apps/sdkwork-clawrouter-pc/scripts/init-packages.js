@@ -7,9 +7,7 @@ const packages = [
   'sdkwork-clawrouter-pc-commons',
   'sdkwork-clawrouter-pc-core',
   'sdkwork-clawrouter-pc-home',
-  'sdkwork-clawrouter-pc-api-reference',
   'sdkwork-clawrouter-pc-playground',
-  'sdkwork-clawrouter-pc-app-center',
   'sdkwork-clawrouter-pc-models'
 ];
 

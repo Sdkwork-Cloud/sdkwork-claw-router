@@ -161,15 +161,10 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
     { name: t('nav.home'), href: '/' },
     { name: t('nav.models'), href: '/models' },
     { name: t('nav.rankings'), href: '/rankings' },
-    { name: t('nav.apps'), href: '/apps' },
-    { name: t('nav.skills'), href: '/skills-hub' },
     { name: t('nav.productDocs'), href: '/product-docs' },
     { name: t('nav.docs'), href: '/docs' },
     { name: t('nav.api'), href: '/api-reference' },
     { name: t('nav.sdk'), href: '/sdk-reference' },
-    { name: t('nav.forum'), href: '/forum' },
-    { name: t('nav.courses'), href: '/courses' },
-    { name: t('nav.buyVip', 'Buy VIP'), href: '/vip' },
     { name: 'Playground', href: '/playground' },
   ];
 

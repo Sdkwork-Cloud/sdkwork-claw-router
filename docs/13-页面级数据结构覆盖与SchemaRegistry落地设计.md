@@ -4,6 +4,7 @@
 > 日期：2026-04-28
 > 范围：`apps/sdkwork-clawrouter-pc` 全量 public、console、admin 页面级数据结构覆盖、验收条件、Schema Registry 落地方式。
 > 关联：[12-前端功能模块与数据库表结构映射.md](./12-前端功能模块与数据库表结构映射.md)、[14-数据结构细节复核与补强记录.md](./14-数据结构细节复核与补强记录.md)、[schema-registry/sdkwork-claw-router.tables.yaml](./schema-registry/sdkwork-claw-router.tables.yaml)。
+> **2026-06-20：** 课程（`/courses`、`content_course*`）已迁出至 `sdkwork-course`；下文涉及 course 的段落为历史记录，以 [31-product-composition-model.md](./31-product-composition-model.md) 为准。
 
 ## 1. 目标
 

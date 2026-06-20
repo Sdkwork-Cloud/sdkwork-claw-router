@@ -219,33 +219,6 @@
       }
     },
     {
-      "workspace": "sdkwork-course-app-sdk",
-      "consumerSdkFamily": "clawrouter-app-sdk",
-      "role": "course-app-capability",
-      "dependencyMode": "consumer-sdk",
-      "surface": "app-api",
-      "apiPrefix": "/app/v3/api",
-      "runtimeIntegration": {
-        "mode": "external-service",
-        "sameOriginAllowed": false,
-        "targetRuntimeIntegration": {
-          "mode": "shared-gateway",
-          "gatewayApplication": "sdkwork-api-gateway",
-          "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
-          "catalogPolicy": "no-dedicated-gateway-catalog"
-        },
-        "requiredBaseUrlEnv": "VITE_SDKWORK_COURSE_APP_API_BASE_URL",
-        "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
-        "mountCoverage": {
-          "status": "not-mounted",
-          "evidence": [
-            "Course routes and course_* tables are owned by sdkwork-course.",
-            "Claw Router database bootstrap applies course module DDL from ../sdkwork-course/database without generating content_course* tables locally."
-          ]
-        }
-      }
-    },
-    {
       "workspace": "sdkwork-appstore-backend-sdk",
       "consumerSdkFamily": "clawrouter-backend-sdk",
       "role": "appstore-backend-management-capability",
@@ -272,12 +245,12 @@
       }
     },
     {
-      "workspace": "sdkwork-course-backend-sdk",
-      "consumerSdkFamily": "clawrouter-backend-sdk",
-      "role": "course-backend-management-capability",
+      "workspace": "sdkwork-documents-app-sdk",
+      "consumerSdkFamily": "clawrouter-app-sdk",
+      "role": "documents-reference-capability",
       "dependencyMode": "consumer-sdk",
-      "surface": "backend-api",
-      "apiPrefix": "/backend/v3/api",
+      "surface": "app-api",
+      "apiPrefix": "/app/v3/api",
       "runtimeIntegration": {
         "mode": "external-service",
         "sameOriginAllowed": false,
@@ -287,12 +260,14 @@
           "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
           "catalogPolicy": "no-dedicated-gateway-catalog"
         },
-        "requiredBaseUrlEnv": "VITE_SDKWORK_COURSE_BACKEND_API_BASE_URL",
+        "requiredBaseUrlEnv": "VITE_SDKWORK_DOCUMENTS_APP_API_BASE_URL",
         "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
         "mountCoverage": {
           "status": "not-mounted",
           "evidence": [
-            "Course admin APIs are owned by sdkwork-course-backend-sdk."
+            "Product docs, API reference, and SDK reference UI are owned by sdkwork-documents PC packages.",
+            "SDK reference generation APIs are owned by sdkwork-documents-app-sdk and implemented in sdkwork-content-documents-sdk-reference.",
+            "Claw Router consumes @sdkwork/documents-pc-* packages and @sdkwork/documents-app-sdk through documents-reference-runtime-adapter.ts."
           ]
         }
       }

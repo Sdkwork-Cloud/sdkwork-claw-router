@@ -34,15 +34,13 @@ const BACKEND_SURFACE_OPENAPI_CONTRACT = {
   requiredPaths: [
     '/backend/v3/api/ai/model_vendors',
     '/backend/v3/api/recharges/packages',
-    '/backend/v3/api/ecosystem/skills',
   ],
 };
 
 const APP_SURFACE_OPENAPI_CONTRACT = {
   expectedTitle: 'SDKWork Claw Router App API',
   requiredPaths: [
-    '/app/v3/api/platform/apps/store',
-    '/app/v3/api/ecosystem/skills',
+    '/app/v3/api/ai/models',
     '/app/v3/api/recharges/packages',
   ],
 };
@@ -389,7 +387,7 @@ function assertPublicBrowseEnvelope({ response, body }, label, expectedText) {
   if (!Array.isArray(items) || items.length === 0) {
     throw new Error(`${label} returned no public browse data: ${body.slice(0, 500)}`);
   }
-  if (!body.includes(expectedText)) {
+  if (expectedText && !body.includes(expectedText)) {
     throw new Error(`${label} did not include ${expectedText}: ${body.slice(0, 500)}`);
   }
 }
@@ -569,31 +567,10 @@ async function main() {
     });
     await waitForEndpoint({
       ...workspace,
-      url: `${edgeBaseUrl}/app/v3/api/platform/apps/store/categories`,
-      label: 'edge app store public categories',
+      url: `${edgeBaseUrl}/app/v3/api/ai/models?page=1&page_size=6`,
+      label: 'edge models public list',
       validate: (result) =>
-        assertPublicBrowseEnvelope(result, 'edge app store public categories', 'Productivity'),
-    });
-    await waitForEndpoint({
-      ...workspace,
-      url: `${edgeBaseUrl}/app/v3/api/platform/apps/store?q=sdkwork-claw-router&page=1&page_size=6`,
-      label: 'edge app store public list',
-      validate: (result) =>
-        assertPublicBrowseEnvelope(result, 'edge app store public list', 'SDKWork Claw Router'),
-    });
-    await waitForEndpoint({
-      ...workspace,
-      url: `${edgeBaseUrl}/app/v3/api/ecosystem/skills/categories`,
-      label: 'edge skills public categories',
-      validate: (result) =>
-        assertPublicBrowseEnvelope(result, 'edge skills public categories', 'SDKWork Official'),
-    });
-    await waitForEndpoint({
-      ...workspace,
-      url: `${edgeBaseUrl}/app/v3/api/ecosystem/skills?q=prompt&page=1&page_size=6`,
-      label: 'edge skills public list',
-      validate: (result) =>
-        assertPublicBrowseEnvelope(result, 'edge skills public list', 'Prompt Optimizer'),
+        assertPublicBrowseEnvelope(result, 'edge models public list'),
     });
 
     await waitForEndpoint({
@@ -623,31 +600,10 @@ async function main() {
     });
     await waitForEndpoint({
       ...workspace,
-      url: `${appBaseUrl}/app/v3/api/platform/apps/store/categories`,
-      label: 'direct app store public categories',
+      url: `${appBaseUrl}/app/v3/api/ai/models?page=1&page_size=6`,
+      label: 'direct models public list',
       validate: (result) =>
-        assertPublicBrowseEnvelope(result, 'direct app store public categories', 'Productivity'),
-    });
-    await waitForEndpoint({
-      ...workspace,
-      url: `${appBaseUrl}/app/v3/api/platform/apps/store?q=sdkwork-claw-router&page=1&page_size=6`,
-      label: 'direct app store public list',
-      validate: (result) =>
-        assertPublicBrowseEnvelope(result, 'direct app store public list', 'SDKWork Claw Router'),
-    });
-    await waitForEndpoint({
-      ...workspace,
-      url: `${appBaseUrl}/app/v3/api/ecosystem/skills/categories`,
-      label: 'direct skills public categories',
-      validate: (result) =>
-        assertPublicBrowseEnvelope(result, 'direct skills public categories', 'SDKWork Official'),
-    });
-    await waitForEndpoint({
-      ...workspace,
-      url: `${appBaseUrl}/app/v3/api/ecosystem/skills?q=prompt&page=1&page_size=6`,
-      label: 'direct skills public list',
-      validate: (result) =>
-        assertPublicBrowseEnvelope(result, 'direct skills public list', 'Prompt Optimizer'),
+        assertPublicBrowseEnvelope(result, 'direct models public list'),
     });
     await waitForEndpoint({
       ...workspace,
@@ -686,47 +642,10 @@ async function main() {
     });
     await waitForEndpoint({
       ...workspace,
-      url: `${portalBaseUrl}/app/v3/api/platform/apps/store/categories`,
-      label: 'direct portal app store public categories proxy',
+      url: `${portalBaseUrl}/app/v3/api/ai/models?page=1&page_size=6`,
+      label: 'direct portal models public list proxy',
       validate: (result) =>
-        assertPublicBrowseEnvelope(
-          result,
-          'direct portal app store public categories proxy',
-          'Productivity',
-        ),
-    });
-    await waitForEndpoint({
-      ...workspace,
-      url: `${portalBaseUrl}/app/v3/api/platform/apps/store?q=sdkwork-claw-router&page=1&page_size=6`,
-      label: 'direct portal app store public list proxy',
-      validate: (result) =>
-        assertPublicBrowseEnvelope(
-          result,
-          'direct portal app store public list proxy',
-          'SDKWork Claw Router',
-        ),
-    });
-    await waitForEndpoint({
-      ...workspace,
-      url: `${portalBaseUrl}/app/v3/api/ecosystem/skills/categories`,
-      label: 'direct portal skills public categories proxy',
-      validate: (result) =>
-        assertPublicBrowseEnvelope(
-          result,
-          'direct portal skills public categories proxy',
-          'SDKWork Official',
-        ),
-    });
-    await waitForEndpoint({
-      ...workspace,
-      url: `${portalBaseUrl}/app/v3/api/ecosystem/skills?q=prompt&page=1&page_size=6`,
-      label: 'direct portal skills public list proxy',
-      validate: (result) =>
-        assertPublicBrowseEnvelope(
-          result,
-          'direct portal skills public list proxy',
-          'Prompt Optimizer',
-        ),
+        assertPublicBrowseEnvelope(result, 'direct portal models public list proxy'),
     });
 
     console.log(`[edge-dev-smoke] passed: ${edgeBaseUrl}/`);

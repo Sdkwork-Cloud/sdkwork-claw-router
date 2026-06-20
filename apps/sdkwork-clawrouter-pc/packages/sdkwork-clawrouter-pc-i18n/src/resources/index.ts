@@ -11,7 +11,6 @@ import { adminCommerceWalletMessages } from './admin-commerce/wallet';
 import { adminAgentsMessages } from './admin/agents';
 import { adminAnalyticsRecordMessages } from './admin/analytics-record';
 import { adminAnnouncementMessages } from './admin/announcement';
-import { adminAppCenterMessages } from './admin/app-center';
 import { adminAuthSettingsMessages } from './admin/auth-settings';
 import { adminCacheMessages } from './admin/cache';
 import { adminChannelMessages } from './admin/channel';
@@ -56,8 +55,6 @@ import { playgroundInputMessages } from './playground/input';
 import { playgroundModalitiesMessages } from './playground/modalities';
 import { playgroundPreviewMessages } from './playground/preview';
 import { publicApiReferenceMessages } from './public/api-reference';
-import { publicAppsMessages } from './public/apps';
-import { publicCoursesMessages } from './public/courses';
 import { publicDocsMessages } from './public/docs';
 import { publicForumMessages } from './public/forum';
 import { publicModelsMessages } from './public/models';
@@ -80,7 +77,6 @@ export const resources = mergeI18nBundles([
   adminAgentsMessages,
   adminAnalyticsRecordMessages,
   adminAnnouncementMessages,
-  adminAppCenterMessages,
   adminAuthSettingsMessages,
   adminCacheMessages,
   adminChannelMessages,
@@ -125,8 +121,6 @@ export const resources = mergeI18nBundles([
   playgroundModalitiesMessages,
   playgroundPreviewMessages,
   publicApiReferenceMessages,
-  publicAppsMessages,
-  publicCoursesMessages,
   publicDocsMessages,
   publicForumMessages,
   publicModelsMessages,

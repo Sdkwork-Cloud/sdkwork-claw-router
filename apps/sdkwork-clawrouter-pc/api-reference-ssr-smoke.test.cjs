@@ -132,9 +132,14 @@ function installSsrRequireHooks() {
 
 installSsrRequireHooks();
 
-const { ApiPlayground } = require('./packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiPlayground.tsx');
-const { ApiPlaygroundParamsTable } = require('./packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiPlaygroundParamsTable.tsx');
-const { createApiPlaygroundInitialState } = require('./packages/sdkwork-clawrouter-pc-api-reference/src/apiPlaygroundRows.ts');
+const documentsApiReferenceRoot = path.join(
+  portalRoot,
+  '../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src',
+);
+
+const { ApiPlayground } = require(path.join(documentsApiReferenceRoot, 'components/ApiPlayground.tsx'));
+const { ApiPlaygroundParamsTable } = require(path.join(documentsApiReferenceRoot, 'components/ApiPlaygroundParamsTable.tsx'));
+const { createApiPlaygroundInitialState } = require(path.join(documentsApiReferenceRoot, 'apiPlaygroundRows.ts'));
 
 const endpoint = {
   id: 'create-response',

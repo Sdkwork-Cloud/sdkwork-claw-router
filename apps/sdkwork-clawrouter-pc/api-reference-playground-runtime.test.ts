@@ -14,7 +14,7 @@ import {
   sortApiSchemaTabs,
   type ApiSchemaTab,
   type ApiSchemaTabsDocument,
-} from "./packages/sdkwork-clawrouter-pc-api-reference/src/apiReferenceSchemaTabs.ts";
+} from "../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/apiReferenceSchemaTabs.ts";
 import {
   APP_API_PREFIX,
   BACKEND_API_PREFIX,
@@ -25,28 +25,28 @@ import {
   buildSdkReferenceSystems,
   createGeneratedSdkToolConfig,
   getGeneratedSdkMetadataForSystem,
-} from "./packages/sdkwork-clawrouter-pc-sdk-reference/src/sdkReferenceRuntime.ts";
+} from "../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-sdk-reference/src/sdkReferenceRuntime.ts";
 import {
   buildSdkEndpointDocumentation,
-} from "./packages/sdkwork-clawrouter-pc-sdk-reference/src/sdkEndpointDocumentation.ts";
+} from "../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-sdk-reference/src/sdkEndpointDocumentation.ts";
 import {
   getSdkDataForSystem,
-} from "./packages/sdkwork-clawrouter-pc-sdk-reference/src/data/sdkData.ts";
+} from "../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-sdk-reference/src/data/sdkData.ts";
 import {
   buildStaticCodeSnippet,
   joinRequestUrl,
-} from "./packages/sdkwork-clawrouter-pc-api-reference/src/codeSnippetClient.ts";
+} from "../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/codeSnippetClient.ts";
 import {
   createApiPlaygroundInitialState,
   createApiPlaygroundInitialStateKey,
   makeApiPlaygroundEmptyRow,
   makeApiPlaygroundSchemaRows,
   parseApiPlaygroundBulkRows,
-} from "./packages/sdkwork-clawrouter-pc-api-reference/src/apiPlaygroundRows.ts";
+} from "../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/apiPlaygroundRows.ts";
 import {
   buildPlaygroundRequest,
-} from "./packages/sdkwork-clawrouter-pc-api-reference/src/playgroundRequest.ts";
-import * as apiPlaygroundResponse from "./packages/sdkwork-clawrouter-pc-api-reference/src/playgroundResponseDownload.ts";
+} from "../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/playgroundRequest.ts";
+import * as apiPlaygroundResponse from "../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/playgroundResponseDownload.ts";
 
 if (!i18n.isInitialized) {
   void i18n
@@ -62,19 +62,19 @@ if (!i18n.isInitialized) {
 
 const { createApiPlaygroundResponseDownload } = apiPlaygroundResponse;
 const apiReferencePageSource = () => readFileSync(
-  new URL("./packages/sdkwork-clawrouter-pc-api-reference/src/pages/ApiReference.tsx", import.meta.url),
+  new URL("../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/pages/ApiReference.tsx", import.meta.url),
   "utf8",
 );
 const sdkReferencePageSource = () => readFileSync(
-  new URL("./packages/sdkwork-clawrouter-pc-sdk-reference/src/pages/SdkReference.tsx", import.meta.url),
+  new URL("../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-sdk-reference/src/pages/SdkReference.tsx", import.meta.url),
   "utf8",
 );
 const sdkEndpointViewSource = () => readFileSync(
-  new URL("./packages/sdkwork-clawrouter-pc-sdk-reference/src/components/SdkEndpointView.tsx", import.meta.url),
+  new URL("../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-sdk-reference/src/components/SdkEndpointView.tsx", import.meta.url),
   "utf8",
 );
 const sdkReferenceGenerationServiceSource = () => readFileSync(
-  new URL("./packages/sdkwork-clawrouter-pc-sdk-reference/src/sdkReferenceGenerationService.ts", import.meta.url),
+  new URL("../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-sdk-reference/src/sdkReferenceGenerationService.ts", import.meta.url),
   "utf8",
 );
 const originalWindowDescriptor = Object.getOwnPropertyDescriptor(globalThis, "window");
@@ -831,7 +831,7 @@ test("api reference systems derive request base urls per API surface", async () 
 
 test("api reference schema tabs source uses commons SDK prefix boundary instead of local business prefix literals", () => {
   const source = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-api-reference/src/apiReferenceSchemaTabs.ts", import.meta.url),
+    new URL("../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/apiReferenceSchemaTabs.ts", import.meta.url),
     "utf8",
   );
 
@@ -886,11 +886,11 @@ test("api reference page renders planned API groups as planned empty states", ()
 
 test("api reference endpoint view and playground use system request base urls instead of global API base url", () => {
   const endpointSource = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiEndpointView.tsx", import.meta.url),
+    new URL("../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiEndpointView.tsx", import.meta.url),
     "utf8",
   );
   const playgroundSource = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiPlayground.tsx", import.meta.url),
+    new URL("../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiPlayground.tsx", import.meta.url),
     "utf8",
   );
   const pageSource = apiReferencePageSource();
@@ -907,11 +907,11 @@ test("api reference endpoint view and playground use system request base urls in
 
 test("sdk reference endpoint playground also threads system request base urls through the sdk endpoint view", () => {
   const sdkEndpointViewSource = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-sdk-reference/src/components/SdkEndpointView.tsx", import.meta.url),
+    new URL("../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-sdk-reference/src/components/SdkEndpointView.tsx", import.meta.url),
     "utf8",
   );
   const sdkReferencePageSource = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-sdk-reference/src/pages/SdkReference.tsx", import.meta.url),
+    new URL("../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-sdk-reference/src/pages/SdkReference.tsx", import.meta.url),
     "utf8",
   );
 
@@ -1413,7 +1413,7 @@ test("api reference documents multipart request bodies and binary success respon
 
 test("api endpoint view exposes response object and renders response properties as a table", () => {
   const source = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiEndpointView.tsx", import.meta.url),
+    new URL("../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiEndpointView.tsx", import.meta.url),
     "utf8",
   );
 
@@ -1426,7 +1426,7 @@ test("api endpoint view exposes response object and renders response properties 
 
 test("api endpoint view keeps response object and properties table visible for empty response schemas", () => {
   const source = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiEndpointView.tsx", import.meta.url),
+    new URL("../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiEndpointView.tsx", import.meta.url),
     "utf8",
   );
 
@@ -2430,7 +2430,7 @@ test("sdk reference language switching does not reload OpenAPI schema documents"
 test("sdk reference generation uses app SDK instead of local tool API fetches", () => {
   const pageSource = sdkReferencePageSource();
   const serviceSource = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-sdk-reference/src/sdkReferenceGenerationService.ts", import.meta.url),
+    new URL("../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-sdk-reference/src/sdkReferenceGenerationService.ts", import.meta.url),
     "utf8",
   );
   const appSdkSource = readFileSync(
@@ -2465,7 +2465,7 @@ test("sdk endpoint view sends selected endpoint metadata to documentation genera
 
 test("sdk reference generation requests keep config language aligned with selected language", () => {
   const runtimeSource = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-sdk-reference/src/sdkReferenceRuntime.ts", import.meta.url),
+    new URL("../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-sdk-reference/src/sdkReferenceRuntime.ts", import.meta.url),
     "utf8",
   );
   const serviceSource = sdkReferenceGenerationServiceSource();
@@ -2496,7 +2496,7 @@ test("api and sdk reference sidebar child directories align with endpoint rows",
 });
 
 test("sdk reference load preserves schema tab default schema url", async () => {
-  const { loadSdkReferenceSystems } = await import("./packages/sdkwork-clawrouter-pc-sdk-reference/src/sdkReferenceRuntime.ts");
+  const { loadSdkReferenceSystems } = await import("../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-sdk-reference/src/sdkReferenceRuntime.ts");
   const originalFetch = globalThis.fetch;
   globalThis.fetch = (async (input: RequestInfo | URL) => {
     const url = String(input);
@@ -2945,7 +2945,7 @@ test("api playground request builder focuses validation and rejects managed head
 
 test("api playground current user send requires login before network requests", () => {
   const source = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiPlayground.tsx", import.meta.url),
+    new URL("../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiPlayground.tsx", import.meta.url),
     "utf8",
   );
 

@@ -1,9 +1,9 @@
 #![forbid(unsafe_code)]
 
+mod http_route_manifest;
 pub mod manifest;
 pub mod paths;
 pub mod routes;
-mod http_route_manifest;
 mod web_bootstrap;
 
 pub use manifest::{route_manifest, RouterApiRouteManifest};

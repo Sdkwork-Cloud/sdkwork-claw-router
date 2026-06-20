@@ -7,10 +7,10 @@
       "observed_at": "2026-05-03",
       "route": "/",
       "schema_tables": [
-        "content_doc_page",
-        "appstore_app"
+        "ai_model",
+        "ai_model_vendor"
       ],
-      "source_hash": "sha256:b056dd08e62fdb434f8b52d15a8f1689cd12767baf804a5022df62b43d79748d",
+      "source_hash": "sha256:8609139ab4c5c71ca3b728b95a21183bd137e3f5331400dd32670f47bfdf86a4",
       "source_ref": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-home/src/pages/Home.tsx"
     },
     "static-route:/admin/drive": {
@@ -21,7 +21,7 @@
       "schema_tables": [
         "iam_user"
       ],
-      "source_hash": "sha256:c66390545531117424a39991cf40cd642cf236cd6a28a2c420a81d6e7438e25f",
+      "source_hash": "sha256:820a2873e89ec97241716ca0360eb10064a6c9ca33ad1ebc866e4600cc8ec56c",
       "source_ref": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/index.tsx"
     },
     "static-route:/admin/drive/audit": {
@@ -32,7 +32,7 @@
       "schema_tables": [
         "iam_user"
       ],
-      "source_hash": "sha256:c66390545531117424a39991cf40cd642cf236cd6a28a2c420a81d6e7438e25f",
+      "source_hash": "sha256:820a2873e89ec97241716ca0360eb10064a6c9ca33ad1ebc866e4600cc8ec56c",
       "source_ref": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/index.tsx"
     },
     "static-route:/admin/drive/nodes": {
@@ -43,7 +43,7 @@
       "schema_tables": [
         "iam_user"
       ],
-      "source_hash": "sha256:c66390545531117424a39991cf40cd642cf236cd6a28a2c420a81d6e7438e25f",
+      "source_hash": "sha256:820a2873e89ec97241716ca0360eb10064a6c9ca33ad1ebc866e4600cc8ec56c",
       "source_ref": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/index.tsx"
     },
     "static-route:/admin/drive/permissions": {
@@ -54,7 +54,7 @@
       "schema_tables": [
         "iam_user"
       ],
-      "source_hash": "sha256:c66390545531117424a39991cf40cd642cf236cd6a28a2c420a81d6e7438e25f",
+      "source_hash": "sha256:820a2873e89ec97241716ca0360eb10064a6c9ca33ad1ebc866e4600cc8ec56c",
       "source_ref": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/index.tsx"
     },
     "static-route:/admin/drive/share-links": {
@@ -65,7 +65,7 @@
       "schema_tables": [
         "iam_user"
       ],
-      "source_hash": "sha256:c66390545531117424a39991cf40cd642cf236cd6a28a2c420a81d6e7438e25f",
+      "source_hash": "sha256:820a2873e89ec97241716ca0360eb10064a6c9ca33ad1ebc866e4600cc8ec56c",
       "source_ref": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/index.tsx"
     },
     "static-route:/admin/drive/spaces": {
@@ -76,35 +76,8 @@
       "schema_tables": [
         "iam_user"
       ],
-      "source_hash": "sha256:c66390545531117424a39991cf40cd642cf236cd6a28a2c420a81d6e7438e25f",
+      "source_hash": "sha256:820a2873e89ec97241716ca0360eb10064a6c9ca33ad1ebc866e4600cc8ec56c",
       "source_ref": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/index.tsx"
-    },
-    "static-route:/courses": {
-      "id": "static-route:/courses",
-      "mode": "curated_seed_content",
-      "observed_at": "2026-05-03",
-      "route": "/courses",
-      "schema_tables": [
-        "content_course",
-        "content_course_relation",
-        "content_reaction"
-      ],
-      "source_hash": "sha256:40156e489c9a1cd765dcc3a59eec35a83e3f9bb7b2136b34c399e99f426f7f30",
-      "source_ref": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseCatalog.ts"
-    },
-    "static-route:/courses/:id": {
-      "id": "static-route:/courses/:id",
-      "mode": "curated_seed_content",
-      "observed_at": "2026-05-03",
-      "route": "/courses/:id",
-      "schema_tables": [
-        "content_course",
-        "content_course_section",
-        "content_course_lesson",
-        "content_course_relation"
-      ],
-      "source_hash": "sha256:40156e489c9a1cd765dcc3a59eec35a83e3f9bb7b2136b34c399e99f426f7f30",
-      "source_ref": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseCatalog.ts"
     },
     "static-route:/docs": {
       "id": "static-route:/docs",
@@ -116,8 +89,8 @@
         "content_openapi_snapshot",
         "content_sdk_release"
       ],
-      "source_hash": "sha256:936f5caa5ab392a869e2a86dc7e2ffd6556e3892210356f78742acee787132be",
-      "source_ref": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/pages/Docs.tsx"
+      "source_hash": "sha256:03a32851853bfd3c2ab6a68b745343c2cf0f6d94d69a35f589320610fe7be2b4",
+      "source_ref": "apps/sdkwork-clawrouter-pc/src/App.tsx"
     },
     "static-route:/models": {
       "id": "static-route:/models",
@@ -130,7 +103,7 @@
         "ai_model_capability",
         "ai_model_pricing"
       ],
-      "source_hash": "sha256:0146b712763494656db99d1f357bb57d877974a4c9184ff2dfca09cc54903d59",
+      "source_hash": "sha256:dc3a32a1a8f2c5fb5f07080b276fd1bca15fbba922b81145907b784f3e82b69f",
       "source_ref": "docs/schema-registry/sdkwork-claw-router.tables.yaml"
     },
     "static-route:/product-docs": {
@@ -142,8 +115,8 @@
         "content_doc_page",
         "content_openapi_snapshot"
       ],
-      "source_hash": "sha256:8e7168dc7005e460b407d5c06991ee04d1139e927200c04074e91717a5992bad",
-      "source_ref": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/pages/ProductDocs.tsx"
+      "source_hash": "sha256:03a32851853bfd3c2ab6a68b745343c2cf0f6d94d69a35f589320610fe7be2b4",
+      "source_ref": "apps/sdkwork-clawrouter-pc/src/App.tsx"
     },
     "static-route:/rankings": {
       "id": "static-route:/rankings",
@@ -154,8 +127,21 @@
         "ai_model_rank_snapshot",
         "ai_usage_fact"
       ],
-      "source_hash": "sha256:0146b712763494656db99d1f357bb57d877974a4c9184ff2dfca09cc54903d59",
+      "source_hash": "sha256:dc3a32a1a8f2c5fb5f07080b276fd1bca15fbba922b81145907b784f3e82b69f",
       "source_ref": "docs/schema-registry/sdkwork-claw-router.tables.yaml"
+    },
+    "static-route:/sdk-reference": {
+      "id": "static-route:/sdk-reference",
+      "mode": "generated_reference_snapshot",
+      "observed_at": "2026-06-20",
+      "route": "/sdk-reference",
+      "schema_tables": [
+        "content_doc_page",
+        "content_openapi_snapshot",
+        "content_sdk_release"
+      ],
+      "source_hash": "sha256:03a32851853bfd3c2ab6a68b745343c2cf0f6d94d69a35f589320610fe7be2b4",
+      "source_ref": "apps/sdkwork-clawrouter-pc/src/App.tsx"
     }
   },
   "source": "docs/schema-registry/frontend-static-source-snapshots.yaml",

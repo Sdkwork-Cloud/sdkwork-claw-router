@@ -329,14 +329,28 @@ class FrontendContractGuardian:
     )
     RAW_BROWSER_NETWORK_ALLOWLIST = frozenset(
         {
-            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/pages/ApiReference.tsx",
-            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/apiReferenceSchemaTabs.ts",
-            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiPlayground.tsx",
-            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/codeSnippetClient.ts",
             "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-core/src/index.ts",
-            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-sdk-reference/src/pages/SdkReference.tsx",
+            "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/apiReferenceSchemaTabs.ts",
+            "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/codeSnippetClient.ts",
+            "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiPlayground.tsx",
         }
     )
+    DOCUMENTS_RUNTIME_BOUNDARY_FILES = frozenset(
+        {
+            "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-commons/src/documents-reference-runtime.tsx",
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/documents-reference-runtime-adapter.ts",
+        }
+    )
+    EXTERNAL_DEPENDENCY_SDK_FAMILIES_WITHOUT_LOCAL_OPERATIONS = frozenset(
+        {
+            "sdkwork-documents-app-sdk",
+        }
+    )
+    WORKSPACE_DOCUMENTS_PACKAGE_SRC: dict[str, str] = {
+        "@sdkwork/documents-pc-api-reference": "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src",
+        "@sdkwork/documents-pc-sdk-reference": "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-sdk-reference/src",
+        "@sdkwork/documents-pc-commons": "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-commons/src",
+    }
     FORBIDDEN_PORTAL_SERVER_FILES = (
         "server.ts",
         "server.test.ts",
@@ -452,6 +466,12 @@ class FrontendContractGuardian:
         self.portal_root = self.root / "apps" / "sdkwork-clawrouter-pc"
         self.vite_config_path = self.portal_root / "vite.config.ts"
         self.portal_package_path = self.portal_root / "package.json"
+
+    def _resolve_workspace_sibling_path(self, relative_path: str) -> Path:
+        nested = (self.root / relative_path).resolve()
+        if nested.exists():
+            return nested
+        return (self.root.parent / relative_path).resolve()
 
     def run(self) -> FrontendContractResult:
         messages: list[str] = []
@@ -740,7 +760,7 @@ class FrontendContractGuardian:
                 if root_package in self.NODE_ONLY_BROWSER_PACKAGES:
                     messages.append(
                         f"browser source must not import node-only package {root_package}: "
-                        f"{source_path.relative_to(self.root).as_posix()}"
+                        f"{self._browser_source_display_path(source_path)}"
                     )
         return messages
 
@@ -749,7 +769,37 @@ class FrontendContractGuardian:
         files: list[Path] = []
         for source_root in source_roots:
             files.extend(self._browser_source_files_under(source_root))
+        for relative_src in self.WORKSPACE_DOCUMENTS_PACKAGE_SRC.values():
+            workspace_src = self._resolve_workspace_sibling_path(relative_src)
+            files.extend(self._browser_source_files_under(workspace_src))
         return files
+
+    def _resolve_portal_package_src(self, package_name: str) -> Path | None:
+        if isinstance(package_name, str) and package_name in self.WORKSPACE_DOCUMENTS_PACKAGE_SRC:
+            workspace_src = self._resolve_workspace_sibling_path(
+                self.WORKSPACE_DOCUMENTS_PACKAGE_SRC[package_name]
+            )
+            if workspace_src.is_dir():
+                return workspace_src
+        unscoped = package_name.split("/", 1)[1] if isinstance(package_name, str) and package_name.startswith("@") else package_name
+        candidates = [
+            self.portal_root / "packages" / unscoped / "src",
+            self.portal_root / "node_modules" / package_name / "src",
+        ]
+        for candidate in candidates:
+            if candidate.is_dir():
+                return candidate
+        return None
+
+    def _browser_source_display_path(self, source_path: Path) -> str:
+        try:
+            return source_path.relative_to(self.root).as_posix()
+        except ValueError:
+            pass
+        try:
+            return source_path.relative_to(self.root.parent).as_posix()
+        except ValueError:
+            return source_path.as_posix()
 
     def _browser_source_files_under(self, source_root: Path) -> list[Path]:
         if not source_root.exists():
@@ -935,7 +985,7 @@ class FrontendContractGuardian:
         messages: list[str] = []
         service_name_pattern = re.compile(r"(?:^|[/\\])[^/\\]*[Ss]ervice\.tsx?$")
         for source_path in self._browser_source_files(self.portal_root):
-            relative = source_path.relative_to(self.root).as_posix()
+            relative = self._browser_source_display_path(source_path)
             source = self._safe_read_text(source_path)
             if source is None:
                 continue
@@ -991,7 +1041,7 @@ class FrontendContractGuardian:
             source = self._safe_read_text(source_path)
             if source is None:
                 continue
-            relative = source_path.relative_to(self.root).as_posix()
+            relative = self._browser_source_display_path(source_path)
 
             if relative not in self.SDK_CLIENT_BOUNDARY_FILES:
                 for match in self.GENERATED_SDK_VALUE_IMPORT_PATTERN.finditer(source):
@@ -1004,7 +1054,7 @@ class FrontendContractGuardian:
                 if self.GENERATED_SDK_CLIENT_CONSTRUCTION_PATTERN.search(source):
                     messages.append(f"{self.GENERATED_SDK_CLIENT_CONSTRUCTION_BOUNDARY_MESSAGE}: {relative}")
 
-            if any(prefix in source for prefix in self.BUSINESS_API_PREFIXES) and relative not in self.SDK_CLIENT_BOUNDARY_FILES:
+            if any(prefix in source for prefix in self.BUSINESS_API_PREFIXES) and relative not in self.SDK_CLIENT_BOUNDARY_FILES and relative not in self.DOCUMENTS_RUNTIME_BOUNDARY_FILES:
                 messages.append(f"{self.BUSINESS_API_PREFIX_BOUNDARY_MESSAGE}: {relative}")
 
             if self._contains_manual_admin_session_token_usage(relative, source):
@@ -1136,7 +1186,10 @@ class FrontendContractGuardian:
                 )
 
             if delivery_kind == "sdk_backed_business_runtime":
-                messages.extend(self._check_sdk_backed_route_classification(entry, manifest_route, operation_items))
+                if self._is_dependency_owned_classification_route(entry):
+                    messages.extend(self._check_dependency_owned_route_classification(entry, contract, operation_items))
+                else:
+                    messages.extend(self._check_sdk_backed_route_classification(entry, manifest_route, operation_items))
             elif delivery_kind == "schema_provenanced_content":
                 messages.extend(self._check_schema_content_route_classification(entry, manifest_route, operation_items))
             elif delivery_kind == "local_developer_tool_api":
@@ -1196,6 +1249,9 @@ class FrontendContractGuardian:
             messages.append(
                 f"dependency-owned route {route} contract must declare dependency_sdk_family {dependency_sdk_family}"
             )
+
+        if dependency_sdk_family in self.EXTERNAL_DEPENDENCY_SDK_FAMILIES_WITHOUT_LOCAL_OPERATIONS:
+            return messages
 
         operation_routes = {route, *self._string_list(entry.get("operation_routes"))}
         matching_operations = [
@@ -1657,8 +1713,16 @@ class FrontendContractGuardian:
         if not gate_sources:
             messages.append(f"local tool route {route} must declare gate_sources")
         for gate_source in gate_sources:
-            source = self._safe_read_text((self.root / gate_source).resolve()) or ""
-            if "resolveClawRouterRuntimeBoolean" not in source or "VITE_TOOL_API_ENABLED" not in source:
+            gate_source_path = (
+                self._resolve_workspace_sibling_path(gate_source)
+                if gate_source.startswith("sdkwork-documents/")
+                else (self.root / gate_source).resolve()
+            )
+            source = self._safe_read_text(gate_source_path) or ""
+            if "VITE_TOOL_API_ENABLED" not in source or (
+                "resolveClawRouterRuntimeBoolean" not in source
+                and "resolveDocumentsRuntimeBoolean" not in source
+            ):
                 messages.append(
                     f"local tool route {route} gate source {gate_source} "
                     "must read VITE_TOOL_API_ENABLED through resolveClawRouterRuntimeBoolean"
@@ -1673,7 +1737,7 @@ class FrontendContractGuardian:
             source = self._safe_read_text(source_path)
             if source is None:
                 continue
-            relative = source_path.relative_to(self.root).as_posix()
+            relative = self._browser_source_display_path(source_path)
             for match in endpoint_call.finditer(source):
                 sources.add((match.group(1), relative))
         return sources
@@ -1684,8 +1748,8 @@ class FrontendContractGuardian:
         if not isinstance(package_name, str):
             return []
 
-        package_src = self.portal_root / "packages" / package_name / "src"
-        if not package_src.exists():
+        package_src = self._resolve_portal_package_src(package_name) if isinstance(package_name, str) else None
+        if package_src is None or not package_src.exists():
             return []
 
         actual_sources = self._browser_fetch_sources_for_package(package_src)
@@ -1707,7 +1771,7 @@ class FrontendContractGuardian:
             source = self._safe_read_text(source_path)
             if source is None:
                 continue
-            relative = source_path.relative_to(self.root).as_posix()
+            relative = self._browser_source_display_path(source_path)
             for match in self.BROWSER_FETCH_CALL_PATTERN.finditer(source):
                 if self._is_ignored_source_position(source, match.start()):
                     continue
@@ -1930,20 +1994,28 @@ class FrontendContractGuardian:
 
         for evidence in evidence_items:
             evidence_path = Path(evidence)
-            if evidence_path.is_absolute() or ".." in evidence_path.parts:
+            if evidence_path.is_absolute():
                 messages.append(
                     f"frontend route {route} classification evidence must be a repo-relative path: {evidence}"
                 )
                 continue
 
-            resolved = (self.root / evidence).resolve()
-            try:
-                resolved.relative_to(self.root)
-            except ValueError:
+            if evidence.startswith("sdkwork-documents/"):
+                resolved = self._resolve_workspace_sibling_path(evidence)
+            elif ".." in evidence_path.parts:
                 messages.append(
-                    f"frontend route {route} classification evidence must stay inside repository: {evidence}"
+                    f"frontend route {route} classification evidence must be a repo-relative path: {evidence}"
                 )
                 continue
+            else:
+                resolved = (self.root / evidence).resolve()
+                try:
+                    resolved.relative_to(self.root)
+                except ValueError:
+                    messages.append(
+                        f"frontend route {route} classification evidence must stay inside repository: {evidence}"
+                    )
+                    continue
 
             if not resolved.exists():
                 messages.append(f"frontend route {route} classification evidence does not exist: {evidence}")

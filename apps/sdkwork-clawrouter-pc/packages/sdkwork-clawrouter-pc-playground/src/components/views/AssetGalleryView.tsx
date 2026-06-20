@@ -26,6 +26,7 @@ import {
   readMediaResourceUrl,
   type ClawRouterMediaResource,
 } from 'sdkwork-clawrouter-pc-commons/runtime';
+import { copyTextToClipboard } from 'sdkwork-clawrouter-pc-commons/clipboard';
 
 export type AssetType = 'image' | 'video' | 'speech' | 'sound' | 'music';
 
@@ -147,9 +148,10 @@ export function AssetGalleryView({
       .filter(Boolean)
       .join('\n');
 
-    if (text && navigator.clipboard) {
-      await navigator.clipboard.writeText(text);
+    if (!text) {
+      return;
     }
+    await copyTextToClipboard(text);
   };
 
   const getActiveFilterLabel = () => {

@@ -621,31 +621,31 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 root,
                 """
                 frontend_operations:
-                  - route: /courses
-                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/courseService.ts
-                    operation: uploadCourseApplicationVideo
-                    operation_id: applications.videos.create
+                  - route: /forum
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/forumService.ts
+                    operation: uploadForumAttachment
+                    operation_id: forum.attachments.create
                     kind: create
                     api_surface: app
                     api_method: POST
-                    api_path: /app/v3/api/courses/applications/videos
-                    sdk_domain: course
+                    api_path: /app/v3/api/content/forum/attachments
+                    sdk_domain: content
                     read_sources: []
                     write_tables: []
-                    file_targets: [course_application_video_uploads]
+                    file_targets: [forum_attachment_uploads]
                     request_content_type: multipart/form-data
                     request_schema:
-                      name: CourseApplicationVideoUploadRequest
+                      name: ForumAttachmentUploadRequest
                       type: object
                       required: [file]
                       properties:
                         file: { type: string, format: binary }
                     response_schema:
-                      name: CourseApplicationVideoUploadResponse
+                      name: ForumAttachmentUploadResponse
                       type: object
-                      required: [video]
+                      required: [attachment]
                       properties:
-                        video:
+                        attachment:
                           $ref: '#/components/schemas/MediaResource'
                 """,
             )
@@ -656,7 +656,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
             self.assertEqual("multipart/form-data", operation["request_content_type"])
             self.assertEqual([], operation["read_sources"])
             self.assertEqual([], operation["write_tables"])
-            self.assertEqual(["course_application_video_uploads"], operation["file_targets"])
+            self.assertEqual(["forum_attachment_uploads"], operation["file_targets"])
 
     def test_derives_standard_tag_domain_and_operation_id_from_path(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -737,17 +737,17 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 root,
                 """
                 frontend_operations:
-                  - route: /courses
-                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/courseService.ts
-                    operation: fetchCourses
+                  - route: /models
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/modelService.ts
+                    operation: fetchModels
                     kind: read
                     api_surface: app
                     api_method: GET
-                    api_path: /app/v3/api/courses
-                    read_sources: [content_course]
+                    api_path: /app/v3/api/ai/models
+                    read_sources: [ai_model]
                     query_parameters: []
                     response_schema:
-                      name: CourseListResponse
+                      name: ModelListResponse
                       type: object
                       properties:
                         items: { type: array, items: { type: object, additionalProperties: true } }
@@ -771,8 +771,8 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
             manifest = ApiContractManifestGenerator(root=root, contract_path=contract).generate()
             operations = {operation["operation"]: operation for operation in manifest["operations"]}
 
-            self.assertEqual("/app/v3/api/courses", operations["fetchCourses"]["api_path"])
-            self.assertEqual("courses.list", operations["fetchCourses"]["operation_id"])
+            self.assertEqual("/app/v3/api/ai/models", operations["fetchModels"]["api_path"])
+            self.assertEqual("models.list", operations["fetchModels"]["operation_id"])
             self.assertEqual("/app/v3/api/content/forum/feeds", operations["fetchForumFeeds"]["api_path"])
             self.assertEqual("forum.feeds.list", operations["fetchForumFeeds"]["operation_id"])
 
@@ -932,10 +932,6 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 "/backend/v3/api/iam/users",
                 "users.list",
             ),
-            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts#fetchApps": (
-                "/backend/v3/api/platform/apps",
-                "apps.list",
-            ),
         }
 
         for key, (api_path, operation_id) in expected.items():
@@ -957,17 +953,17 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 root,
                 """
                 frontend_operations:
-                  - route: /courses/:courseId
-                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/courseService.ts
-                    operation: fetchCourseDetail
+                  - route: /models/:modelId
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/modelService.ts
+                    operation: fetchModelDetail
                     kind: read
                     api_surface: app
                     api_method: GET
-                    api_path: /app/v3/api/courses/{courseId}
-                    read_sources: [content_course]
+                    api_path: /app/v3/api/ai/models/{modelId}
+                    read_sources: [ai_model]
                     query_parameters: []
                     response_schema:
-                      name: CourseDetailResponse
+                      name: ModelDetailResponse
                       type: object
                       properties:
                         id: { type: string }
@@ -1006,8 +1002,8 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
             operations = {operation["operation"]: operation for operation in manifest["operations"]}
 
             self.assertTrue(result.ok, result.messages)
-            self.assertEqual("courses.retrieve", operations["fetchCourseDetail"]["operation_id"])
-            self.assertEqual("/app/v3/api/courses/{courseId}", operations["fetchCourseDetail"]["api_path"])
+            self.assertEqual("models.retrieve", operations["fetchModelDetail"]["operation_id"])
+            self.assertEqual("/app/v3/api/ai/models/{modelId}", operations["fetchModelDetail"]["api_path"])
             self.assertEqual("comments.likes.create", operations["likeForumComment"]["operation_id"])
             self.assertEqual("/app/v3/api/content/comments/{commentId}/likes", operations["likeForumComment"]["api_path"])
             self.assertEqual("comments.likes.current.delete", operations["unlikeForumComment"]["operation_id"])

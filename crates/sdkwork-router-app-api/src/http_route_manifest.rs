@@ -455,18 +455,6 @@ const HTTP_ROUTES: &[HttpRoute] = &[
         "users.current.comments.list",
     ),
     HttpRoute::dual_token(
-        HttpMethod::Post,
-        "/app/v3/api/courses/applications",
-        "content",
-        "applications.create",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Post,
-        "/app/v3/api/courses/applications/videos",
-        "content",
-        "applications.videos.create",
-    ),
-    HttpRoute::dual_token(
         HttpMethod::Get,
         "/app/v3/api/ecosystem/skills",
         "ecosystem",
@@ -1005,18 +993,6 @@ const HTTP_ROUTES: &[HttpRoute] = &[
         "/app/v3/api/runtime/invocations/{invocationId}/events/stream",
         "runtime",
         "invocationEventStreams.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Post,
-        "/app/v3/api/sdk_reference/archives",
-        "sdkReference",
-        "archives.create",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Post,
-        "/app/v3/api/sdk_reference/documentation",
-        "sdkReference",
-        "documentation.create",
     ),
     HttpRoute::dual_token(
         HttpMethod::Get,

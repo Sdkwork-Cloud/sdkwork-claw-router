@@ -1,38 +1,8 @@
 import { appApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { ApplicationsCreateResult, ApplicationsVideosCreateResult, CommentsCreateResult, CommentsDeleteResult, CommentsLikesCreateResult, CommentsLikesCurrentDeleteResult, CommentsListResult, CommentsPinsCreateResult, CommentsPinsCurrentDeleteResult, CommentsRepliesListResult, CommentsReplyCreateResult, CommentsRetrieveResult, CommentsStatisticsListResult, CourseApplicationCreateRequest, CourseApplicationVideoUploadRequest, FeedsCategoryRetrieveResult, FeedsCollectionsCreateResult, FeedsCollectionsCurrentDeleteResult, FeedsCollectionsCurrentRetrieveResult, FeedsCreateResult, FeedsDeleteResult, FeedsHotListResult, FeedsLikesCreateResult, FeedsLikesCurrentDeleteResult, FeedsListResult, FeedsMostLikedListResult, FeedsMostViewedListResult, FeedsOverviewRetrieveResult, FeedsRecommendListResult, FeedsRetrieveResult, FeedsSharesCreateResult, FeedsTopListResult, ForumCreateCommentRequest, ForumCreateFeedRequest, ForumReplyCommentRequest, UsersCurrentCommentsListResult } from '../types';
+import type { CommentsCreateResult, CommentsDeleteResult, CommentsLikesCreateResult, CommentsLikesCurrentDeleteResult, CommentsListResult, CommentsPinsCreateResult, CommentsPinsCurrentDeleteResult, CommentsRepliesListResult, CommentsReplyCreateResult, CommentsRetrieveResult, CommentsStatisticsListResult, FeedsCategoryRetrieveResult, FeedsCollectionsCreateResult, FeedsCollectionsCurrentDeleteResult, FeedsCollectionsCurrentRetrieveResult, FeedsCreateResult, FeedsDeleteResult, FeedsHotListResult, FeedsLikesCreateResult, FeedsLikesCurrentDeleteResult, FeedsListResult, FeedsMostLikedListResult, FeedsMostViewedListResult, FeedsOverviewRetrieveResult, FeedsRecommendListResult, FeedsRetrieveResult, FeedsSharesCreateResult, FeedsTopListResult, ForumCreateCommentRequest, ForumCreateFeedRequest, ForumReplyCommentRequest, UsersCurrentCommentsListResult } from '../types';
 
-
-export class ContentApplicationsVideosApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Upload course application video */
-  async create(body: CourseApplicationVideoUploadRequest): Promise<ApplicationsVideosCreateResult> {
-    return this.client.post<ApplicationsVideosCreateResult>(appApiPath(`/courses/applications/videos`), body, undefined, undefined, 'multipart/form-data');
-  }
-}
-
-export class ContentApplicationsApi {
-  private client: HttpClient;
-  public readonly videos: ContentApplicationsVideosApi;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-    this.videos = new ContentApplicationsVideosApi(client);
-  }
-
-
-/** Create course application */
-  async create(body: CourseApplicationCreateRequest): Promise<ApplicationsCreateResult> {
-    return this.client.post<ApplicationsCreateResult>(appApiPath(`/courses/applications`), body, undefined, undefined, 'application/json');
-  }
-}
 
 export interface ContentUsersCurrentCommentsListParams {
   page?: string;
@@ -462,7 +432,7 @@ export class ContentCommentsLikesApi {
 }
 
 export interface ContentCommentsStatisticsListParams {
-  contentType: 'feeds' | 'comments' | 'course' | 'courses' | 'FEEDS' | 'COMMENTS' | 'COURSE' | 'COURSES';
+  contentType: 'feeds' | 'comments' | 'FEEDS' | 'COMMENTS';
   contentId: string;
 }
 
@@ -485,7 +455,7 @@ export class ContentCommentsStatisticsApi {
 }
 
 export interface ContentCommentsListParams {
-  contentType: 'feeds' | 'comments' | 'course' | 'courses' | 'FEEDS' | 'COMMENTS' | 'COURSE' | 'COURSES';
+  contentType: 'feeds' | 'comments' | 'FEEDS' | 'COMMENTS';
   contentId: string;
   page?: string;
   pageSize?: string;
@@ -539,14 +509,12 @@ export class ContentApi {
   public readonly comments: ContentCommentsApi;
   public readonly feeds: ContentFeedsApi;
   public readonly users: ContentUsersApi;
-  public readonly applications: ContentApplicationsApi;
 
   constructor(client: HttpClient) {
     this.client = client;
     this.comments = new ContentCommentsApi(client);
     this.feeds = new ContentFeedsApi(client);
     this.users = new ContentUsersApi(client);
-    this.applications = new ContentApplicationsApi(client);
   }
 
 }

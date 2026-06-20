@@ -53,33 +53,16 @@ val client = SdkworkAppClient(config)
 
 ## API Modules
 
-- `client.agents` - agents API
 - `client.ai` - ai API
 - `client.chat` - chat API
 - `client.content` - content API
-- `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.memory` - memory API
 - `client.notification` - notification API
-- `client.platform` - platform API
 - `client.runtime` - runtime API
-- `client.sdkReference` - sdk_reference API
 - `client.system` - system API
 
 ## Usage Examples
-
-### agents
-
-```kotlin
-// List Playground agent definitions
-val params = linkedMapOf<String, Any>(
-    "page" to "page",
-    "page_size" to "page-size",
-    "q" to "q"
-)
-val result = client.agents.agentDefinitionsList(params)
-println(result)
-```
 
 ### ai
 
@@ -106,14 +89,6 @@ println(result)
 ```kotlin
 // List forum overview
 val result = client.content.feedsOverviewRetrieve()
-println(result)
-```
-
-### ecosystem
-
-```kotlin
-// Get categories
-val result = client.ecosystem.skillsCategoriesList()
 println(result)
 ```
 
@@ -151,14 +126,6 @@ val result = client.notification.notificationsList(params)
 println(result)
 ```
 
-### platform
-
-```kotlin
-// Get categories
-val result = client.platform.appsStoreCategoriesList()
-println(result)
-```
-
 ### runtime
 
 ```kotlin
@@ -173,34 +140,6 @@ val params = linkedMapOf<String, Any>(
     "status" to "status"
 )
 val result = client.runtime.invocationsList(params)
-println(result)
-```
-
-### sdk_reference
-
-```kotlin
-// Generate SDK archive
-val body = SdkReferenceArchiveGenerateRequest(
-    config = linkedMapOf<String, Any>(
-    "apiPrefix" to "apiprefix",
-    "apiSpecPath" to "apispecpath",
-    "author" to "author",
-    "baseUrl" to "baseurl",
-    "description" to "description",
-    "language" to "language",
-    "license" to "license",
-    "name" to "name",
-    "outputPath" to "outputpath",
-    "packageName" to "name",
-    "sdkType" to "app",
-    "version" to "version"
-),
-    language = "language",
-    spec = linkedMapOf<String, Any>(
-    "value" to "value"
-)
-)
-val result = client.sdkReference.archivesCreate(body)
 println(result)
 ```
 
@@ -262,10 +201,12 @@ MIT
 
 ## Regeneration Contract
 
-- Generator-owned files are tracked in `.sdkwork/sdkwork-generator-manifest.json`.
-- Each run also writes `.sdkwork/sdkwork-generator-changes.json` so automation can inspect created, updated, deleted, unchanged, scaffolded, and backed-up files plus the classified impact areas, verification plan, and execution decision for the latest generation.
-- Apply mode also writes `.sdkwork/sdkwork-generator-report.json` with the full execution report, including `schemaVersion`, `generator`, stable artifact paths, and the execution handoff commands that match CLI `--json` output.
+- HTTP/OpenAPI generator-owned files are tracked in `.sdkwork/sdkwork-generator-manifest.json`.
+- HTTP/OpenAPI generation also writes `.sdkwork/sdkwork-generator-changes.json` so automation can inspect created, updated, deleted, unchanged, scaffolded, and backed-up files plus the classified impact areas, verification plan, and execution decision for the latest generation.
+- HTTP/OpenAPI apply mode also writes `.sdkwork/sdkwork-generator-report.json` with the full execution report, including `schemaVersion`, `generator`, stable artifact paths, and the execution handoff commands that match CLI `--json` output.
 - CLI JSON output also includes an execution handoff with concrete next commands, including reviewed apply commands for dry-run flows.
-- Put hand-written wrappers, adapters, and orchestration in `custom/`.
-- Files scaffolded under `custom/` are created once and preserved across regenerations.
-- If a generated-owned file was modified locally, its previous content is copied to `.sdkwork/manual-backups/` before overwrite or removal.
+- Put HTTP/OpenAPI hand-written wrappers, adapters, and orchestration in `custom/`.
+- Files scaffolded under `custom/` are created once and preserved across HTTP/OpenAPI regenerations.
+- If an HTTP/OpenAPI generated-owned file was modified locally, its previous content is copied to `.sdkwork/manual-backups/` before overwrite or removal.
+- RPC SDK source workspaces use convention-first evidence by default: RPC SDK family naming, language workspace naming, `rpc/*.manifest.json`, proto source references, generated client source, and native package manifests.
+- Use `sdkgen inspect --protocol rpc` to verify RPC convention evidence. Request persisted generator evidence only with `--emit-control-plane` for release, CI, audit, or migration workflows; evidence paths are derived by generator convention.

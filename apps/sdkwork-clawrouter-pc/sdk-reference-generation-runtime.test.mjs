@@ -10,13 +10,19 @@ function readWorkspaceFile(relativePath) {
   return readFileSync(new URL(`../../${relativePath}`, import.meta.url), "utf8");
 }
 
+function readSiblingWorkspaceFile(relativePath) {
+  return readFileSync(new URL(`../../../${relativePath}`, import.meta.url), "utf8");
+}
+
 test("sdk reference generation calls generated app SDK routes", () => {
-  const pageSource = readPortalFile("./packages/sdkwork-clawrouter-pc-sdk-reference/src/pages/SdkReference.tsx");
-  const serviceSource = readPortalFile(
-    "./packages/sdkwork-clawrouter-pc-sdk-reference/src/sdkReferenceGenerationService.ts",
+  const pageSource = readSiblingWorkspaceFile(
+    "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-sdk-reference/src/pages/SdkReference.tsx",
+  );
+  const serviceSource = readSiblingWorkspaceFile(
+    "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-sdk-reference/src/sdkReferenceGenerationService.ts",
   );
   const appSdkSource = readWorkspaceFile(
-    "sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/sdk-reference.ts",
+    "../sdkwork-documents/sdks/sdkwork-documents-app-sdk/sdkwork-documents-app-sdk-typescript/generated/server-openapi/src/api/sdk-reference.ts",
   );
 
   for (const source of [pageSource, serviceSource]) {
@@ -26,7 +32,7 @@ test("sdk reference generation calls generated app SDK routes", () => {
     assert.equal(source.includes('fetch("/api/generate-sdk"'), false);
   }
 
-  assert.match(serviceSource, /getClawRouterAppSdkClient/u);
+  assert.match(serviceSource, /getDocumentsAppSdkClient/u);
   assert.match(serviceSource, /sdkReference\.documentation\.create/u);
   assert.match(serviceSource, /sdkReference\.archives\.create/u);
   assert.match(appSdkSource, /appApiPath\(`\/sdk_reference\/documentation`\)/u);

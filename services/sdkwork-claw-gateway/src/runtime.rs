@@ -709,11 +709,12 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
     };
     match config.engine {
         DatabaseEngine::Sqlite => {
-            let pool = sdkwork_claw_product::infrastructure::sql::pool::connect_claw_sqlite_runtime_pool(
-                &config,
-            )
-            .await
-            .map_err(gateway_sqlite_pool_error)?;
+            let pool =
+                sdkwork_claw_product::infrastructure::sql::pool::connect_claw_sqlite_runtime_pool(
+                    &config,
+                )
+                .await
+                .map_err(gateway_sqlite_pool_error)?;
             if startup_install_mode.should_ensure() {
                 let install_report = DatabaseInstaller::for_sqlite(pool.clone())
                     .with_env_options()?
@@ -1230,14 +1231,11 @@ async fn all_in_one_runtime_context_from_env() -> anyhow::Result<AllInOneRuntime
                 )
                 .await
                 .map_err(|error| anyhow::Error::new(gateway_sqlite_pool_error(error)))?;
-            let pool = database_pool
-                .as_sqlite()
-                .cloned()
-                .ok_or_else(|| {
-                    anyhow::Error::new(GatewayRouterError::Sqlite(SqlCatalogLoadError::Database(
-                        sqlx::Error::Configuration("expected sqlite database pool".into()),
-                    )))
-                })?;
+            let pool = database_pool.as_sqlite().cloned().ok_or_else(|| {
+                anyhow::Error::new(GatewayRouterError::Sqlite(SqlCatalogLoadError::Database(
+                    sqlx::Error::Configuration("expected sqlite database pool".into()),
+                )))
+            })?;
             let database_installer = Arc::new(
                 DatabaseInstaller::for_sqlite(pool.clone())
                     .with_env_options()
@@ -1315,16 +1313,13 @@ async fn all_in_one_runtime_context_from_env() -> anyhow::Result<AllInOneRuntime
                         )),
                     ))
                 })?;
-            let pool = database_pool
-                .as_postgres()
-                .cloned()
-                .ok_or_else(|| {
-                    anyhow::Error::new(GatewayRouterError::Postgres(
-                        PostgresCatalogLoadError::Database(sqlx::Error::Configuration(
-                            "expected postgres database pool".into(),
-                        )),
-                    ))
-                })?;
+            let pool = database_pool.as_postgres().cloned().ok_or_else(|| {
+                anyhow::Error::new(GatewayRouterError::Postgres(
+                    PostgresCatalogLoadError::Database(sqlx::Error::Configuration(
+                        "expected postgres database pool".into(),
+                    )),
+                ))
+            })?;
             let database_installer = Arc::new(
                 DatabaseInstaller::for_postgres(pool.clone())
                     .with_env_options()
@@ -2493,7 +2488,10 @@ mod tests {
 
         assert_eq!(
             SQLITE_RUNTIME_MIN_POOL_CONNECTIONS,
-            effective_sqlite_runtime_pool_max_connections("sqlite://D:/tmp/sdkwork-claw-router.db", 1)
+            effective_sqlite_runtime_pool_max_connections(
+                "sqlite://D:/tmp/sdkwork-claw-router.db",
+                1
+            )
         );
         assert_eq!(10, SQLITE_POOL_ACQUIRE_TIMEOUT_SECONDS);
     }

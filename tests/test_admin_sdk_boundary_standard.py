@@ -149,10 +149,5 @@ class AdminSdkBoundaryStandardTest(unittest.TestCase):
             with self.subTest(namespace=namespace):
                 self.assertNotIn(namespace, source)
 
-    def test_app_center_public_package_does_not_export_admin_routes(self) -> None:
-        index_source = read_text(PACKAGES_ROOT / "sdkwork-clawrouter-pc-app-center" / "src" / "index.ts")
-        self.assertNotRegex(index_source, re.compile(r"AppAdmin|adminAppService"))
-
-
 if __name__ == "__main__":
     unittest.main()

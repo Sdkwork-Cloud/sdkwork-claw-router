@@ -1,6 +1,8 @@
 use std::time::Duration;
 
-use sdkwork_database_config::{DatabaseConfig as StandardDatabaseConfig, DatabaseEngine as StandardDatabaseEngine};
+use sdkwork_database_config::{
+    DatabaseConfig as StandardDatabaseConfig, DatabaseEngine as StandardDatabaseEngine,
+};
 use sdkwork_database_repository::RepositoryError;
 use sdkwork_database_sqlx::{DatabasePool, PoolBuilder, PoolError};
 use sqlx::PgPool;
@@ -110,6 +112,8 @@ pub fn standard_database_readiness_check(
 ) -> sdkwork_claw_http::ReadinessCheckFn {
     match pool {
         DatabasePool::Sqlite(sqlite_pool, _) => sqlite_database_readiness_check(sqlite_pool),
-        DatabasePool::Postgres(postgres_pool, _) => postgres_database_readiness_check(postgres_pool),
+        DatabasePool::Postgres(postgres_pool, _) => {
+            postgres_database_readiness_check(postgres_pool)
+        }
     }
 }

@@ -4,7 +4,15 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+WORKSPACE_ROOT = ROOT.parent
 FRONTEND_ROOT = ROOT / "apps" / "sdkwork-clawrouter-pc" / "packages"
+DOCUMENTS_PACKAGES_ROOT = (
+    WORKSPACE_ROOT
+    / "sdkwork-documents"
+    / "apps"
+    / "sdkwork-documents-pc"
+    / "packages"
+)
 APPROVED_CLIPBOARD_UTILITY = (
     FRONTEND_ROOT
     / "sdkwork-clawrouter-pc-commons"
@@ -72,22 +80,37 @@ class FrontendClipboardStandardTest(unittest.TestCase):
 
     def test_high_value_copy_interactions_use_shared_copy_button(self) -> None:
         migrated_files = [
-            FRONTEND_ROOT / "sdkwork-clawrouter-pc-admin-marketing" / "src" / "index.tsx",
             FRONTEND_ROOT / "sdkwork-clawrouter-pc-admin-user" / "src" / "index.tsx",
             FRONTEND_ROOT / "sdkwork-clawrouter-pc-console-account" / "src" / "AccountView.tsx",
             FRONTEND_ROOT / "sdkwork-clawrouter-pc-console-api-keys" / "src" / "ApiKeysView.tsx",
             FRONTEND_ROOT / "sdkwork-clawrouter-pc-models" / "src" / "pages" / "ModelDetails.tsx",
-            FRONTEND_ROOT / "sdkwork-clawrouter-pc-api-reference" / "src" / "components" / "ApiEndpointView.tsx",
-            FRONTEND_ROOT / "sdkwork-clawrouter-pc-api-reference" / "src" / "components" / "ApiPlayground.tsx",
-            FRONTEND_ROOT / "sdkwork-clawrouter-pc-sdk-reference" / "src" / "components" / "SdkEndpointView.tsx",
-            FRONTEND_ROOT / "sdkwork-clawrouter-pc-sdk-reference" / "src" / "pages" / "SdkReference.tsx",
+            DOCUMENTS_PACKAGES_ROOT
+            / "sdkwork-documents-pc-api-reference"
+            / "src"
+            / "components"
+            / "ApiEndpointView.tsx",
+            DOCUMENTS_PACKAGES_ROOT
+            / "sdkwork-documents-pc-api-reference"
+            / "src"
+            / "components"
+            / "ApiPlayground.tsx",
+            DOCUMENTS_PACKAGES_ROOT
+            / "sdkwork-documents-pc-sdk-reference"
+            / "src"
+            / "components"
+            / "SdkEndpointView.tsx",
+            DOCUMENTS_PACKAGES_ROOT
+            / "sdkwork-documents-pc-sdk-reference"
+            / "src"
+            / "pages"
+            / "SdkReference.tsx",
             FRONTEND_ROOT / "sdkwork-clawrouter-pc-skills-hub" / "src" / "pages" / "SkillDetails.tsx",
         ]
         offenders: list[str] = []
 
         for path in migrated_files:
             source = path.read_text(encoding="utf-8")
-            rel = path.relative_to(ROOT)
+            rel = path.relative_to(ROOT) if path.is_relative_to(ROOT) else path.relative_to(WORKSPACE_ROOT)
             if "CopyButton" not in source:
                 offenders.append(f"{rel}: missing CopyButton")
             if "copyTextToClipboard" in source:

@@ -307,62 +307,6 @@ namespace Sdkwork.ClawRouter.App.Api
             return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.UsersCurrentCommentsListResult>(ApiPaths.AppendQueryString(ApiPaths.AppPath("/content/users/current/comments"), queryString));
         }
 
-        /// <summary>
-        /// List courses
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.CoursesListResult?> CoursesListAsync(string? level = null, string? category = null, string? q = null, string? page = null, string? pageSize = null)
-        {
-            var queryString = BuildQueryString(new[]
-            {
-                new QueryParameterSpec("level", level, "form", true, false, null),
-                new QueryParameterSpec("category", category, "form", true, false, null),
-                new QueryParameterSpec("q", q, "form", true, false, null),
-                new QueryParameterSpec("page", page, "form", true, false, null),
-                new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            });
-            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.CoursesListResult>(ApiPaths.AppendQueryString(ApiPaths.AppPath("/courses"), queryString));
-        }
-
-        /// <summary>
-        /// Create course application
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.ApplicationsCreateResult?> ApplicationsCreateAsync(Sdkwork.ClawRouter.App.Models.CourseApplicationCreateRequest body)
-        {
-            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.ApplicationsCreateResult>(ApiPaths.AppPath("/courses/applications"), body, null, null, "application/json");
-        }
-
-        /// <summary>
-        /// Upload course application video
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.ApplicationsVideosCreateResult?> ApplicationsVideosCreateAsync(Sdkwork.ClawRouter.App.Models.CourseApplicationVideoUploadRequest body)
-        {
-            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.ApplicationsVideosCreateResult>(ApiPaths.AppPath("/courses/applications/videos"), body, null, null, "multipart/form-data");
-        }
-
-        /// <summary>
-        /// List course categories
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.CoursesCategoriesListResult?> CoursesCategoriesListAsync()
-        {
-            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.CoursesCategoriesListResult>(ApiPaths.AppPath("/courses/categories"));
-        }
-
-        /// <summary>
-        /// List course overview
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.CoursesOverviewRetrieveResult?> CoursesOverviewRetrieveAsync()
-        {
-            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.CoursesOverviewRetrieveResult>(ApiPaths.AppPath("/courses/overview"));
-        }
-
-        /// <summary>
-        /// List course detail
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.CoursesRetrieveResult?> CoursesRetrieveAsync(string courseId)
-        {
-            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.CoursesRetrieveResult>(ApiPaths.AppPath($"/courses/{SerializePathParameter(courseId, new PathParameterSpec("courseId", "simple", false))}"));
-        }
-
         private sealed record PathParameterSpec(string Name, string Style, bool Explode);
 
         private static string SerializePathParameter(object? value, PathParameterSpec spec)

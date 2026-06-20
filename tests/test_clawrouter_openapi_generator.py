@@ -46,23 +46,6 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                         {
                             "api_surface": "app",
                             "api_method": "GET",
-                            "api_path": "/app/v3/api/platform/store/categories",
-                            "operation": "getCategories",
-                            "operation_id": "store.categories.list",
-                            "tag": "platform",
-                            "sdk_domain": "platform",
-                            "kind": "read",
-                            "module": "app-center",
-                            "path_params": [],
-                            "source": "apps/portal/appService.ts",
-                            "read_sources": ["appstore_app"],
-                            "write_tables": [],
-                            "query_parameters_declared": True,
-                            "query_parameters": [],
-                        },
-                        {
-                            "api_surface": "app",
-                            "api_method": "GET",
                             "api_path": "/app/v3/api/ecosystem/skills/categories",
                             "operation": "getCategories",
                             "operation_id": "categories.list",
@@ -634,20 +617,20 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                 {
                     "api_surface": "app",
                     "api_method": "POST",
-                    "api_path": "/app/v3/api/courses/applications/videos",
-                    "operation": "uploadCourseApplicationVideo",
-                    "operation_id": "applications.videos.create",
+                    "api_path": "/app/v3/api/content/forum/attachments",
+                    "operation": "uploadForumAttachment",
+                    "operation_id": "forum.attachments.create",
                     "tag": "content",
                     "kind": "create",
-                    "module": "courses",
+                    "module": "forum",
                     "path_params": [],
-                    "source": "apps/portal/courseService.ts",
+                    "source": "apps/portal/forumService.ts",
                     "read_sources": [],
                     "write_tables": [],
-                    "file_targets": ["course_application_video_uploads"],
+                    "file_targets": ["forum_attachment_uploads"],
                     "request_content_type": "multipart/form-data",
                     "request_schema": {
-                        "name": "CourseApplicationVideoUploadRequest",
+                        "name": "ForumAttachmentUploadRequest",
                         "schema": {
                             "type": "object",
                             "additionalProperties": False,
@@ -658,13 +641,13 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                         },
                     },
                     "response_schema": {
-                        "name": "CourseApplicationVideoUploadResponse",
+                        "name": "ForumAttachmentUploadResponse",
                         "schema": {
                             "type": "object",
                             "additionalProperties": False,
-                            "required": ["video"],
+                            "required": ["attachment"],
                             "properties": {
-                                "video": {"$ref": "#/components/schemas/MediaResource"},
+                                "attachment": {"$ref": "#/components/schemas/MediaResource"},
                             },
                         },
                     },
@@ -698,18 +681,18 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
             )
 
             app_spec = ClawRouterOpenApiGenerator(root=root).generate("app")
-            operation = app_spec["paths"]["/app/v3/api/courses/applications/videos"]["post"]
+            operation = app_spec["paths"]["/app/v3/api/content/forum/attachments"]["post"]
             schemas = app_spec["components"]["schemas"]
 
             self.assertEqual(
-                {"$ref": "#/components/schemas/CourseApplicationVideoUploadRequest"},
+                {"$ref": "#/components/schemas/ForumAttachmentUploadRequest"},
                 operation["requestBody"]["content"]["multipart/form-data"]["schema"],
             )
-            self.assertEqual(["course_application_video_uploads"], operation["x-file-targets"])
-            self.assertIn("File targets course_application_video_uploads.", operation["description"])
+            self.assertEqual(["forum_attachment_uploads"], operation["x-file-targets"])
+            self.assertIn("File targets forum_attachment_uploads.", operation["description"])
             self.assertIn("MediaResource", schemas)
             self.assertDescribedSchemaRef(
-                schemas["CourseApplicationVideoUploadResponse"]["properties"]["video"],
+                schemas["ForumAttachmentUploadResponse"]["properties"]["attachment"],
                 "#/components/schemas/MediaResource",
             )
 
@@ -787,19 +770,19 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                             {
                                 "api_surface": "backend",
                                 "api_method": "POST",
-                                "api_path": "/backend/v3/api/platform/apps/{appId}/enable",
-                                "operation": "enableApp",
-                                "operation_id": "apps.enable",
-                                "tag": "platform",
+                                "api_path": "/backend/v3/api/ecosystem/skills/{skillId}/publish",
+                                "operation": "publishSkill",
+                                "operation_id": "skills.publish",
+                                "tag": "ecosystem",
                                 "kind": "action",
-                                "module": "app-center",
-                                "path_params": ["appId"],
-                                "source": "apps/portal/adminAppService.ts",
-                                "read_sources": ["appstore_app"],
-                                "write_tables": ["appstore_app"],
+                                "module": "admin-skill",
+                                "path_params": ["skillId"],
+                                "source": "apps/portal/skillService.ts",
+                                "read_sources": ["agent_skill"],
+                                "write_tables": ["agent_skill"],
                                 "request_body_required": False,
                                 "request_schema": {
-                                    "name": "EnableAppRequest",
+                                    "name": "PublishSkillRequest",
                                     "schema": {
                                         "type": "object",
                                         "additionalProperties": False,
@@ -807,7 +790,7 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                                     },
                                 },
                                 "response_schema": {
-                                    "name": "AdminAppMutationResponse",
+                                    "name": "AdminSkillMutationResponse",
                                     "schema": {
                                         "type": "object",
                                         "additionalProperties": False,
@@ -828,14 +811,14 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
             )
 
             backend_spec = ClawRouterOpenApiGenerator(root=root).generate("backend")
-            operation = backend_spec["paths"]["/backend/v3/api/platform/apps/{appId}/enable"]["post"]
+            operation = backend_spec["paths"]["/backend/v3/api/ecosystem/skills/{skillId}/publish"]["post"]
 
             self.assertEqual(
-                {"$ref": "#/components/schemas/EnableAppRequest"},
+                {"$ref": "#/components/schemas/PublishSkillRequest"},
                 operation["requestBody"]["content"]["application/json"]["schema"],
             )
             self.assertFalse(operation["requestBody"]["required"])
-            self.assertIn("EnableAppRequest", backend_spec["components"]["schemas"])
+            self.assertIn("PublishSkillRequest", backend_spec["components"]["schemas"])
 
     def test_array_response_schema_drives_result_data_component(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

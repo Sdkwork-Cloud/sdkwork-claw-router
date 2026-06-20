@@ -134,17 +134,11 @@ sdk_generator_api_key_file = "/etc/sdkwork/router/sdk-generator.secret"
 
 [paths]
 data_directory = "/var/lib/sdkwork/router"
-course_upload_root = "/var/lib/sdkwork/router/uploads/courses"
-
-[courses]
-video_upload_max_bytes = 1073741824
-video_upload_body_limit_bytes = 1074790400
 
 [request_limits]
 admin_app_json_body_max_bytes = 131072
 admin_skill_json_body_max_bytes = 65536
 forum_json_body_max_bytes = 262144
-sdk_reference_json_body_max_bytes = 8388608
 payment_callback_body_max_bytes = 65536
 
 [observability]
@@ -358,15 +352,6 @@ password_file = "/etc/sdkwork/router/bootstrap-admin.secret"
         config.paths.data_directory.as_deref()
     );
     assert_eq!(
-        Some("/var/lib/sdkwork/router/uploads/courses"),
-        config.paths.course_upload_root.as_deref()
-    );
-    assert_eq!(Some(1073741824), config.courses.video_upload_max_bytes);
-    assert_eq!(
-        Some(1074790400),
-        config.courses.video_upload_body_limit_bytes
-    );
-    assert_eq!(
         Some(131072),
         config.request_limits.admin_app_json_body_max_bytes
     );
@@ -377,10 +362,6 @@ password_file = "/etc/sdkwork/router/bootstrap-admin.secret"
     assert_eq!(
         Some(262144),
         config.request_limits.forum_json_body_max_bytes
-    );
-    assert_eq!(
-        Some(8388608),
-        config.request_limits.sdk_reference_json_body_max_bytes
     );
     assert_eq!(
         Some(65536),

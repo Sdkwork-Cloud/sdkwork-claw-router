@@ -6,7 +6,7 @@ This directory is the canonical data source for admin-triggered category initial
 
 - `schemaVersion`: manifest version. Current value is `1`.
 - `kind`: must be `sdkwork.category_seed`.
-- `dataset`: stable ASCII dataset key, such as `product`, `courses`, `agents`, `agent-skills`, `mcp`, or `apps`.
+- `dataset`: stable ASCII dataset key, such as `product`, `agents`, `agent-skills`, `mcp`, or `apps`.
 - `target`: target table. Product taxonomy uses `commerce_product_category`; reusable platform taxonomies use `c_category`.
 - `installPolicy.defaultEnabled`: must remain `false` unless install-time seeding is intentionally enabled by configuration.
 - `installPolicy.configKey`: global opt-in switch, currently `SDKWORK_CLAW_INSTALL_CATEGORY_SEEDS`.
@@ -18,4 +18,4 @@ Product category display names may be Unicode. `categoryNo` and `parentCategoryN
 
 ## c_category Rules
 
-Reusable datasets must define legacy `categoryType` (mapped to string `category_type` on import), optional `groupName` (import hint only), stable numeric `id`, stable `uuid`, ASCII `code`, optional `parentCode`, display `name`, `sortWeight`, `visible`, and numeric `status`. Admin initialization imports these records idempotently into `c_category.category_type` scopes such as `app_store`, `course`, `skill_market`, `agent`, and `mcp`.
+Reusable datasets must define legacy `categoryType` (mapped to string `category_type` on import), optional `groupName` (import hint only), stable numeric `id`, stable `uuid`, ASCII `code`, optional `parentCode`, display `name`, `sortWeight`, `visible`, and numeric `status`. Admin initialization imports these records idempotently into `c_category.category_type` scopes such as `app_store`, `skill_market`, `agent`, and `mcp`.

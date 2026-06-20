@@ -3,16 +3,12 @@ use crate::ports::AdminCategorySeedBundle;
 
 const PRODUCT_CATEGORY_SEED_JSON: &str =
     include_str!("../../../../data/categories/product/categories.json");
-const COURSE_CATEGORY_SEED_JSON: &str =
-    include_str!("../../../../data/categories/courses/categories.json");
 const AGENT_CATEGORY_SEED_JSON: &str =
     include_str!("../../../../data/categories/agents/categories.json");
 const AGENT_SKILL_CATEGORY_SEED_JSON: &str =
     include_str!("../../../../data/categories/agent-skills/categories.json");
 const MCP_CATEGORY_SEED_JSON: &str =
     include_str!("../../../../data/categories/mcp/categories.json");
-const APP_CATEGORY_SEED_JSON: &str =
-    include_str!("../../../../data/categories/apps/categories.json");
 
 pub fn c_category_type_scope(
     legacy_category_type: i32,
@@ -20,17 +16,11 @@ pub fn c_category_type_scope(
     group_name: Option<&str>,
 ) -> DomainResult<&'static str> {
     if let Some(group) = group_name {
-        if group.contains("app-store") || group.contains(":apps") {
-            return Ok("app_store");
-        }
         if group.contains("agent-skills") {
             return Ok("skill_market");
         }
         if group.contains(":agents") {
             return Ok("agent");
-        }
-        if group.contains("course") {
-            return Ok("course");
         }
         if group.contains("forum") {
             return Ok("forum");
@@ -43,15 +33,11 @@ pub fn c_category_type_scope(
         }
     }
     match legacy_category_type {
-        6 => Ok("course"),
         19 => Ok("skill_market"),
         20 => Ok("skills_collection"),
         30 => Ok("agent"),
         40 => Ok("mcp"),
-        999_999 => Ok("app_store"),
         _ => match dataset {
-            "apps" => Ok("app_store"),
-            "courses" => Ok("course"),
             "agent-skills" => Ok("skill_market"),
             "agents" => Ok("agent"),
             "mcp" => Ok("mcp"),
@@ -62,14 +48,8 @@ pub fn c_category_type_scope(
     }
 }
 
-pub const DEFAULT_ADMIN_CATEGORY_SEED_DATASETS: &[&str] = &[
-    "product",
-    "courses",
-    "agents",
-    "agent-skills",
-    "mcp",
-    "apps",
-];
+pub const DEFAULT_ADMIN_CATEGORY_SEED_DATASETS: &[&str] =
+    &["product", "agents", "agent-skills", "mcp"];
 
 pub fn load_admin_category_seed_bundles(
     datasets: &[String],
@@ -78,11 +58,9 @@ pub fn load_admin_category_seed_bundles(
     for dataset in datasets {
         let source = match dataset.as_str() {
             "product" => PRODUCT_CATEGORY_SEED_JSON,
-            "courses" => COURSE_CATEGORY_SEED_JSON,
             "agents" => AGENT_CATEGORY_SEED_JSON,
             "agent-skills" => AGENT_SKILL_CATEGORY_SEED_JSON,
             "mcp" => MCP_CATEGORY_SEED_JSON,
-            "apps" => APP_CATEGORY_SEED_JSON,
             other => {
                 return Err(DomainError::new(format!(
                     "unsupported category seed dataset {other}"

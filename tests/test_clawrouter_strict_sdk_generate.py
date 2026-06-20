@@ -42,17 +42,17 @@ class ClawRouterStrictSdkGenerateTest(unittest.TestCase):
                                 },
                             }
                         },
-                        "/app/v3/api/courses/applications/videos": {
+                        "/app/v3/api/content/forum/attachments": {
                             "post": {
-                                "operationId": "applications.videos.create",
+                                "operationId": "forum.attachments.create",
                                 "tags": ["content"],
-                                "x-sdkwork-resource": "applications.videos",
+                                "x-sdkwork-resource": "forum.attachments",
                                 "requestBody": {
                                     "required": True,
                                     "content": {
                                         "multipart/form-data": {
                                             "schema": {
-                                                "$ref": "#/components/schemas/CourseApplicationVideoUploadRequest"
+                                                "$ref": "#/components/schemas/ForumAttachmentUploadRequest"
                                             }
                                         }
                                     },
@@ -151,7 +151,7 @@ class ClawRouterStrictSdkGenerateTest(unittest.TestCase):
                                 "type": "object",
                                 "additionalProperties": True,
                             },
-                            "CourseApplicationVideoUploadRequest": {
+                            "ForumAttachmentUploadRequest": {
                                 "type": "object",
                                 "additionalProperties": False,
                                 "required": ["file"],
@@ -159,12 +159,12 @@ class ClawRouterStrictSdkGenerateTest(unittest.TestCase):
                                     "file": {"type": "string", "format": "binary"},
                                 },
                             },
-                            "CourseApplicationVideoUploadResponse": {
+                            "ForumAttachmentUploadResponse": {
                                 "type": "object",
                                 "additionalProperties": False,
-                                "required": ["video", "sha256"],
+                                "required": ["attachment", "sha256"],
                                 "properties": {
-                                    "video": {"$ref": "#/components/schemas/MediaResource"},
+                                    "attachment": {"$ref": "#/components/schemas/MediaResource"},
                                     "sha256": {"type": "string"},
                                 },
                             },
@@ -178,7 +178,7 @@ class ClawRouterStrictSdkGenerateTest(unittest.TestCase):
                                     "uri": {"type": "string"},
                                 },
                             },
-                            "ApplicationsVideosCreateResult": {
+                            "ForumAttachmentsCreateResult": {
                                 "type": "object",
                                 "additionalProperties": False,
                                 "required": ["code"],
@@ -186,7 +186,7 @@ class ClawRouterStrictSdkGenerateTest(unittest.TestCase):
                                     "code": {"type": "string"},
                                     "message": {"type": "string"},
                                     "data": {
-                                        "$ref": "#/components/schemas/CourseApplicationVideoUploadResponse"
+                                        "$ref": "#/components/schemas/ForumAttachmentUploadResponse"
                                     },
                                 },
                             },
@@ -292,23 +292,23 @@ class ClawRouterStrictSdkGenerateTest(unittest.TestCase):
                 content for path, content in files.items() if path.startswith("src/api/") and "multipart/form-data" in content
             )
             self.assertIn(
-                "async applicationsVideosCreate(body: " + "CourseApplicationVideoUploadRequest)",
+                "async forumAttachmentsCreate(body: " + "ForumAttachmentUploadRequest)",
                 multipart_api_source,
             )
             self.assertNotIn(
-                "async applicationsVideosCreate(body: FormData)",
+                "async forumAttachmentsCreate(body: FormData)",
                 multipart_api_source,
             )
             self.assertIn("src/types/media-resource.ts", files)
-            upload_response_source = files["src/types/course-application-video-upload-response.ts"]
+            upload_response_source = files["src/types/forum-attachment-upload-response.ts"]
             self.assertIn("import type { MediaResource } from './media-resource';", upload_response_source)
-            self.assertIn("video: MediaResource;", upload_response_source)
-            self.assertNotIn("video" + "Url", upload_response_source)
+            self.assertIn("attachment: MediaResource;", upload_response_source)
+            self.assertNotIn("attachment" + "Url", upload_response_source)
 
             self.assertIn("src/api/index.ts", files)
             self.assertIn("export { BaseApi } from './base';", files["src/api/index.ts"])
             self.assertIn("export { appApiPath } from './paths';", files["src/api/index.ts"])
-            self.assertIn("export * from './course';", files["src/api/index.ts"])
+            self.assertIn("export * from './forum';", files["src/api/index.ts"])
             self.assertIn("export * from './session';", files["src/api/index.ts"])
             self.assertNotIn("export { ContentApi, createContentApi }", files["src/api/index.ts"])
 

@@ -96,13 +96,13 @@ test("dependency optimizer pre-bundles recharts instead of serving its mixed ESM
 test("API reference workspace package is not served from stale dependency optimizer cache", async () => {
   const config = await resolvePortalViteConfig();
 
-  assert.ok(config.optimizeDeps?.exclude?.includes("sdkwork-clawrouter-pc-api-reference"));
+  assert.ok(config.optimizeDeps?.exclude?.includes("@sdkwork/documents-pc-api-reference"));
 });
 
 test("SDK reference workspace package is not served from stale dependency optimizer cache", async () => {
   const config = await resolvePortalViteConfig();
 
-  assert.ok(config.optimizeDeps?.exclude?.includes("sdkwork-clawrouter-pc-sdk-reference"));
+  assert.ok(config.optimizeDeps?.exclude?.includes("@sdkwork/documents-pc-sdk-reference"));
 });
 
 test("portal workspace packages resolve to source files outside node_modules in dev", async () => {
@@ -115,18 +115,18 @@ test("portal workspace packages resolve to source files outside node_modules in 
 
   const resolvedRoot = await callResolveId(
     resolver.resolveId,
-    "sdkwork-clawrouter-pc-api-reference",
+    "@sdkwork/documents-pc-api-reference",
     new URL("./src/App.tsx", import.meta.url).pathname,
   );
   const resolvedSubpath = await callResolveId(
     resolver.resolveId,
     "sdkwork-clawrouter-pc-commons/runtime",
-    new URL("./packages/sdkwork-clawrouter-pc-api-reference/src/codeSnippetClient.ts", import.meta.url).pathname,
+    new URL("../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/codeSnippetClient.ts", import.meta.url).pathname,
   );
 
   assert.equal(
     resolvedRoot,
-    path.resolve(import.meta.dirname, "packages/sdkwork-clawrouter-pc-api-reference/src/index.ts"),
+    path.resolve(import.meta.dirname, "../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/index.ts"),
   );
   assert.equal(
     resolvedSubpath,

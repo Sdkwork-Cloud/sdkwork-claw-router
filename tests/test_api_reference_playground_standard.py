@@ -3,12 +3,14 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+WORKSPACE_ROOT = ROOT.parent
 API_REFERENCE_ROOT = (
-    ROOT
+    WORKSPACE_ROOT
+    / "sdkwork-documents"
     / "apps"
-    / "sdkwork-clawrouter-pc"
+    / "sdkwork-documents-pc"
     / "packages"
-    / "sdkwork-clawrouter-pc-api-reference"
+    / "sdkwork-documents-pc-api-reference"
     / "src"
 )
 

@@ -146,7 +146,6 @@ tables:
   - /admin/model/sites
   - /admin/model/mappings
   - /admin/app
-  - /admin/skill
   - /admin/prompts
   - /admin/mcp
   - /admin/channel
@@ -159,7 +158,6 @@ tables:
   - /admin/storage/usage
   - /admin/storage/reconciliation
   - /admin/storage/garbage-collection
-  - /admin/announcement
   - /admin/marketing
   - /admin/ratelimit
   - /admin/oauth
@@ -167,7 +165,6 @@ tables:
   - /console/recharge
   - /console/checkout
   - /console/memberships
-  - /vip
   - /console/settlements
   - /admin/catalog
   - /admin/inventory
@@ -220,7 +217,6 @@ tables:
   - /admin/oauth/grants
   - /admin/oauth/callback-diagnostics
   - /admin/oauth/diagnostic-runs
-  - /admin/courses
   - /admin/service-providers
   - /admin/service-providers/accounts
   - /admin/service-providers/dashboard
@@ -238,12 +234,6 @@ tables:
   - /admin/service-providers/adjustments
   - /admin/service-providers/risk
   - /admin/service-providers/audit
-  - /admin/messaging/providers
-  - /admin/messaging/sender-identities
-  - /admin/messaging/templates
-  - /admin/messaging/route-rules
-  - /admin/messaging/diagnostics
-  - /admin/messaging/verification-policies
   - /admin/memberships/recharge-packages
   - /admin/wallet/recharge-orders
   - /admin/wallet/wallet-accounts
@@ -264,7 +254,6 @@ tables:
   - /admin/finance/refunds-report
   - /admin/finance/audit-events
   - /admin/marketing/referrals
-  - /admin/messaging/suppressions
   - /admin/storage
   - /admin/storage/providers
   - /admin/storage/buckets
@@ -279,6 +268,22 @@ tables:
   - /admin/drive/permissions
   - /admin/drive/share-links
   - /admin/drive/audit
+  - /
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/events
+  - /admin/marketing/external-bindings
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/user-coupons
+  - /admin/oauth/login-platforms
+  - /admin/oauth/mini-programs
+  - /admin/oauth/official-accounts
+  - /api-reference
+  - /auth/oauth/callback/:provider
+  - /console/user
+  - /docs
+  - /product-docs
   api_surfaces:
   - app
   - backend

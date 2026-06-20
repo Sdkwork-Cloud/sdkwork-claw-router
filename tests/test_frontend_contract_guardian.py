@@ -506,16 +506,18 @@ class FrontendContractGuardianTest(unittest.TestCase):
 
     def test_reports_node_only_codegen_import_from_browser_source(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
+            workspace = Path(tmp)
+            root = workspace / "sdkwork-claw-router"
             self.write_app(root, '<Route path="/api-reference" element={<ApiReference />} />')
             self.write_manifest(root, {"routes": {"/api-reference": {"tables": []}}, "tables": []})
             self.write_contract(root, "routes:\n  - route: /api-reference\n")
             component = (
-                root
+                workspace
+                / "sdkwork-documents"
                 / "apps"
-                / "sdkwork-clawrouter-pc"
+                / "sdkwork-documents-pc"
                 / "packages"
-                / "sdkwork-clawrouter-pc-api-reference"
+                / "sdkwork-documents-pc-api-reference"
                 / "src"
                 / "components"
                 / "ApiEndpointView.tsx"
@@ -528,7 +530,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.assertFalse(result.ok)
             self.assertIn(
                 "browser source must not import node-only package sdkwork-code-generator: "
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiEndpointView.tsx",
+                "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiEndpointView.tsx",
                 result.messages,
             )
 
@@ -1136,7 +1138,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_contract(root, "routes:\n  - route: /\n")
             self.write_portal_source(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiEndpointView.tsx",
+                "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiEndpointView.tsx",
                 """
                 import { API_BASE_URL, CopyButton, resolveClawRouterRuntimeBoolean } from 'sdkwork-clawrouter-pc-commons';
 
@@ -1152,7 +1154,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.assertIn(
                 "portal browser source must import runtime helpers from sdkwork-clawrouter-pc-commons/runtime "
                 "instead of the commons UI root: "
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiEndpointView.tsx "
+                "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiEndpointView.tsx "
                 "imports API_BASE_URL, resolveClawRouterRuntimeBoolean",
                 result.messages,
             )
@@ -1165,7 +1167,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_contract(root, "routes:\n  - route: /\n")
             self.write_portal_source(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiEndpointView.tsx",
+                "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiEndpointView.tsx",
                 """
                 import { CopyButton } from 'sdkwork-clawrouter-pc-commons';
                 import { API_BASE_URL, resolveClawRouterRuntimeBoolean } from 'sdkwork-clawrouter-pc-commons/runtime';
@@ -2541,23 +2543,23 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_app(
                 root,
                 """
-                const Courses = lazyRoute(() => import('sdkwork-clawrouter-pc-courses'), 'Courses');
-                <Route path="/courses" element={<Courses />} />
+                const ForumView = lazyRoute(() => import('sdkwork-clawrouter-pc-forum'), 'ForumView');
+                <Route path="/forum" element={<ForumView />} />
                 """,
             )
             self.write_manifest(
                 root,
                 {
                     "routes": {
-                        "/courses": {
+                        "/forum": {
                             "required_api_surface": "app",
                             "route_scope": "public",
-                            "tables": ["content_course", "content_course_relation"],
+                            "tables": ["content_forum_post", "content_reaction"],
                         },
                     },
                     "tables": [
-                        {"table": "content_course", "columns": [{"name": "title"}]},
-                        {"table": "content_course_relation", "columns": [{"name": "course_id"}]},
+                        {"table": "content_forum_post", "columns": [{"name": "title"}]},
+                        {"table": "content_reaction", "columns": [{"name": "post_id"}]},
                     ],
                 },
             )
@@ -2565,15 +2567,15 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 root,
                 """
                 routes:
-                  - route: /courses
-                    required_tables: [content_course]
+                  - route: /forum
+                    required_tables: [content_forum_post]
                 """,
             )
             self.write_portal_source(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/data.ts",
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/data.ts",
                 """
-                export const courseCatalog = [];
+                export const forumCatalog = [];
                 """,
             )
             self.write_route_classification(
@@ -2582,19 +2584,19 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 schema: sdkwork-claw-router-frontend-route-classification
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
-                  - route: /courses
-                    package: sdkwork-clawrouter-pc-courses
+                  - route: /forum
+                    package: sdkwork-clawrouter-pc-forum
                     owner: public-portal
                     route_scope: public
                     delivery_kind: schema_provenanced_content
-                    provenance_tables: [content_course, content_course_relation]
+                    provenance_tables: [content_forum_post, content_reaction]
                     static_delivery:
                       mode: curated_seed_content
                       refresh_policy: manual_content_release
                       max_staleness: release_bound
                       upgrade_triggers: [authoring_workflow]
                     evidence:
-                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/data.ts
+                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/data.ts
                       - generated/schema/manifest/schema-manifest.json
                 """,
             )
@@ -2603,7 +2605,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "schema content route /courses curated seed static_delivery must declare source_manifest_ref",
+                "schema content route /forum curated seed static_delivery must declare source_manifest_ref",
                 result.messages,
             )
 
@@ -2612,37 +2614,37 @@ class FrontendContractGuardianTest(unittest.TestCase):
             root = Path(tmp)
             source_hash = self.write_catalog_source(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/data.ts",
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/data.ts",
                 """
-                export const courseCatalog = [];
+                export const forumCatalog = [];
                 """,
             )
             self.write_app(
                 root,
                 """
-                const Courses = lazyRoute(() => import('sdkwork-clawrouter-pc-courses'), 'Courses');
-                <Route path="/courses" element={<Courses />} />
+                const ForumView = lazyRoute(() => import('sdkwork-clawrouter-pc-forum'), 'ForumView');
+                <Route path="/forum" element={<ForumView />} />
                 """,
             )
             self.write_manifest(
                 root,
                 {
                     "routes": {
-                        "/courses": {
+                        "/forum": {
                             "required_api_surface": "app",
                             "route_scope": "public",
-                            "tables": ["content_course"],
+                            "tables": ["content_forum_post"],
                         },
                     },
-                    "tables": [{"table": "content_course", "columns": [{"name": "title"}]}],
+                    "tables": [{"table": "content_forum_post", "columns": [{"name": "title"}]}],
                 },
             )
             self.write_contract(
                 root,
                 """
                 routes:
-                  - route: /courses
-                    required_tables: [content_course]
+                  - route: /forum
+                    required_tables: [content_forum_post]
                 """,
             )
             self.write_static_source_manifest(
@@ -2651,14 +2653,14 @@ class FrontendContractGuardianTest(unittest.TestCase):
                     "schema": "sdkwork-claw-router-frontend-static-source-manifest",
                     "version": 1,
                     "snapshots": {
-                        "static-route:/courses": {
-                            "id": "static-route:/courses",
-                            "route": "/courses",
+                        "static-route:/forum": {
+                            "id": "static-route:/forum",
+                            "route": "/forum",
                             "mode": "curated_seed_content",
-                            "source_ref": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/data.ts",
+                            "source_ref": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/data.ts",
                             "observed_at": "2026-05-03",
                             "source_hash": source_hash,
-                            "schema_tables": ["content_course"],
+                            "schema_tables": ["content_forum_post"],
                         }
                     },
                 },
@@ -2669,25 +2671,25 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 schema: sdkwork-claw-router-frontend-route-classification
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
-                  - route: /courses
-                    package: sdkwork-clawrouter-pc-courses
+                  - route: /forum
+                    package: sdkwork-clawrouter-pc-forum
                     owner: public-portal
                     route_scope: public
                     delivery_kind: schema_provenanced_content
-                    provenance_tables: [content_course]
+                    provenance_tables: [content_forum_post]
                     static_delivery:
                       mode: curated_seed_content
                       refresh_policy: manual_content_release
                       max_staleness: release_bound
                       upgrade_triggers: [authoring_workflow]
-                      source_manifest_ref: "static-route:/courses"
+                      source_manifest_ref: "static-route:/forum"
                       source_metadata:
-                        source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/data.ts
+                        source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/data.ts
                         observed_at: "2026-05-03"
                         source_hash: {source_hash}
-                        schema_tables: [content_course]
+                        schema_tables: [content_forum_post]
                     evidence:
-                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/data.ts
+                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/data.ts
                       - generated/schema/manifest/schema-manifest.json
                 """,
             )
@@ -2696,7 +2698,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "schema content route /courses curated seed static_delivery must use source_manifest_ref instead of inline source_metadata",
+                "schema content route /forum curated seed static_delivery must use source_manifest_ref instead of inline source_metadata",
                 result.messages,
             )
 
@@ -2706,36 +2708,36 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_app(
                 root,
                 """
-                const Courses = lazyRoute(() => import('sdkwork-clawrouter-pc-courses'), 'Courses');
-                <Route path="/courses" element={<Courses />} />
+                const ForumView = lazyRoute(() => import('sdkwork-clawrouter-pc-forum'), 'ForumView');
+                <Route path="/forum" element={<ForumView />} />
                 """,
             )
             self.write_manifest(
                 root,
                 {
                     "routes": {
-                        "/courses": {
+                        "/forum": {
                             "required_api_surface": "app",
                             "route_scope": "public",
-                            "tables": ["content_course"],
+                            "tables": ["content_forum_post"],
                         },
                     },
-                    "tables": [{"table": "content_course", "columns": [{"name": "title"}]}],
+                    "tables": [{"table": "content_forum_post", "columns": [{"name": "title"}]}],
                 },
             )
             self.write_contract(
                 root,
                 """
                 routes:
-                  - route: /courses
-                    required_tables: [content_course]
+                  - route: /forum
+                    required_tables: [content_forum_post]
                 """,
             )
             self.write_portal_source(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/data.ts",
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/data.ts",
                 """
-                export const courseCatalog = [];
+                export const forumCatalog = [];
                 """,
             )
             self.write_route_classification(
@@ -2744,20 +2746,20 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 schema: sdkwork-claw-router-frontend-route-classification
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
-                  - route: /courses
-                    package: sdkwork-clawrouter-pc-courses
+                  - route: /forum
+                    package: sdkwork-clawrouter-pc-forum
                     owner: public-portal
                     route_scope: public
                     delivery_kind: schema_provenanced_content
-                    provenance_tables: [content_course]
+                    provenance_tables: [content_forum_post]
                     static_delivery:
                       mode: curated_seed_content
                       refresh_policy: manual_content_release
                       max_staleness: release_bound
                       upgrade_triggers: [authoring_workflow]
-                      source_manifest_ref: "static-route:/courses"
+                      source_manifest_ref: "static-route:/forum"
                     evidence:
-                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/data.ts
+                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/data.ts
                       - generated/schema/manifest/schema-manifest.json
                 """,
             )
@@ -2776,7 +2778,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_app(
                 root,
                 """
-                const Docs = lazyRoute(() => import('sdkwork-clawrouter-pc-api-reference'), 'Docs');
+                const Docs = lazyRoute(() => import('@sdkwork/documents-pc-api-reference'), 'Docs');
                 <Route path="/docs" element={<Docs />} />
                 """,
             )
@@ -2806,7 +2808,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             )
             self.write_portal_source(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/pages/Docs.tsx",
+                "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/pages/Docs.tsx",
                 """
                 export function Docs() {
                   return null;
@@ -2823,7 +2825,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                             "id": "static-route:/docs",
                             "route": "/docs",
                             "mode": "generated_reference_snapshot",
-                            "source_ref": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/pages/Docs.tsx",
+                            "source_ref": "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/pages/Docs.tsx",
                             "observed_at": "2026-05-03",
                             "source_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
                             "schema_tables": ["content_doc_page", "content_openapi_snapshot"],
@@ -2838,7 +2840,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /docs
-                    package: sdkwork-clawrouter-pc-api-reference
+                    package: '@sdkwork/documents-pc-api-reference'
                     owner: developer-experience
                     route_scope: public
                     delivery_kind: schema_provenanced_content
@@ -2850,7 +2852,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                       upgrade_triggers: [authoring_workflow]
                       source_manifest_ref: "static-route:/docs"
                     evidence:
-                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/pages/Docs.tsx
+                      - sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/pages/Docs.tsx
                       - generated/schema/manifest/schema-manifest.json
                 """,
             )
@@ -3248,7 +3250,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             )
             self.write_portal_source(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/codeSnippetClient.ts",
+                "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/codeSnippetClient.ts",
                 """
                 export async function generate() {
                   await fetch('/api/code-snippet');
@@ -3257,7 +3259,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             )
             self.write_portal_source(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiEndpointView.tsx",
+                "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiEndpointView.tsx",
                 """
                 export function ApiEndpointView() {
                   return null;
@@ -3271,17 +3273,17 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /api-reference
-                    package: sdkwork-clawrouter-pc-api-reference
+                    package: '@sdkwork/documents-pc-api-reference'
                     owner: developer-experience
                     route_scope: public
                     delivery_kind: local_developer_tool_api
                     tool_endpoints: [/api/code-snippet]
                     source_files:
-                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/codeSnippetClient.ts
+                      - sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/codeSnippetClient.ts
                     gate_sources:
-                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiEndpointView.tsx
+                      - sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiEndpointView.tsx
                     evidence:
-                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/codeSnippetClient.ts
+                      - sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/codeSnippetClient.ts
                 """,
             )
 
@@ -3298,7 +3300,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             )
             self.assertIn(
                 "local tool route /api-reference gate source "
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiEndpointView.tsx "
+                "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiEndpointView.tsx "
                 "must read VITE_TOOL_API_ENABLED through resolveClawRouterRuntimeBoolean",
                 result.messages,
             )
@@ -3309,7 +3311,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_app(
                 root,
                 """
-                const ApiReference = lazyRoute(() => import('sdkwork-clawrouter-pc-api-reference'), 'ApiReference');
+                const ApiReference = lazyRoute(() => import('@sdkwork/documents-pc-api-reference'), 'ApiReference');
                 <Route path="/api-reference" element={<ApiReference />} />
                 """,
             )
@@ -3336,7 +3338,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             )
             self.write_portal_source(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/pages/ApiReference.tsx",
+                "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/pages/ApiReference.tsx",
                 """
                 export async function loadSpec() {
                   return fetch('/openapi.json');
@@ -3345,7 +3347,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             )
             self.write_portal_source(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiPlayground.tsx",
+                "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiPlayground.tsx",
                 """
                 import { resolveClawRouterRuntimeBoolean } from 'sdkwork-clawrouter-pc-commons';
                 const enabled = resolveClawRouterRuntimeBoolean('VITE_TOOL_API_ENABLED', false);
@@ -3356,7 +3358,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             )
             self.write_portal_source(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/codeSnippetClient.ts",
+                "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/codeSnippetClient.ts",
                 """
                 export async function generate() {
                   return fetch('/api/code-snippet');
@@ -3370,7 +3372,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /api-reference
-                    package: sdkwork-clawrouter-pc-api-reference
+                    package: '@sdkwork/documents-pc-api-reference'
                     owner: developer-experience
                     route_scope: public
                     delivery_kind: local_developer_tool_api
@@ -3378,16 +3380,16 @@ class FrontendContractGuardianTest(unittest.TestCase):
                     runtime_env: PORTAL_PUBLIC_TOOL_API_ENABLED
                     tool_endpoints: [/api/code-snippet]
                     source_files:
-                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/codeSnippetClient.ts
+                      - sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/codeSnippetClient.ts
                     gate_sources:
-                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiPlayground.tsx
+                      - sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiPlayground.tsx
                     browser_network_sources:
                       - endpoint: /api/code-snippet
-                        source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/codeSnippetClient.ts
+                        source: sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/codeSnippetClient.ts
                         purpose: local_tool_api
                     evidence:
-                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/codeSnippetClient.ts
-                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiPlayground.tsx
+                      - sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/codeSnippetClient.ts
+                      - sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiPlayground.tsx
                 """,
             )
 
@@ -3396,14 +3398,14 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.assertFalse(result.ok)
             self.assertIn(
                 "local tool route /api-reference must declare browser_network_sources entry "
-                "external_runtime_request|apps/sdkwork-clawrouter-pc/packages/"
-                "sdkwork-clawrouter-pc-api-reference/src/components/ApiPlayground.tsx",
+                "external_runtime_request|sdkwork-documents/apps/sdkwork-documents-pc/packages/"
+                "sdkwork-documents-pc-api-reference/src/components/ApiPlayground.tsx",
                 result.messages,
             )
             self.assertIn(
                 "local tool route /api-reference must declare browser_network_sources entry "
-                "/openapi.json|apps/sdkwork-clawrouter-pc/packages/"
-                "sdkwork-clawrouter-pc-api-reference/src/pages/ApiReference.tsx",
+                "/openapi.json|sdkwork-documents/apps/sdkwork-documents-pc/packages/"
+                "sdkwork-documents-pc-api-reference/src/pages/ApiReference.tsx",
                 result.messages,
             )
 
@@ -3413,7 +3415,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_app(
                 root,
                 """
-                const ApiReference = lazyRoute(() => import('sdkwork-clawrouter-pc-api-reference'), 'ApiReference');
+                const ApiReference = lazyRoute(() => import('@sdkwork/documents-pc-api-reference'), 'ApiReference');
                 <Route path="/api-reference" element={<ApiReference />} />
                 """,
             )
@@ -3440,7 +3442,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             )
             self.write_portal_source(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/codeSnippetClient.ts",
+                "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/codeSnippetClient.ts",
                 """
                 export function buildSnippet(url: string) {
                   return `const response = await fetch("${url}", { method: "GET" });`;
@@ -3452,7 +3454,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             )
             self.write_portal_source(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiEndpointView.tsx",
+                "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiEndpointView.tsx",
                 """
                 import { resolveClawRouterRuntimeBoolean } from 'sdkwork-clawrouter-pc-commons/runtime';
                 const enabled = resolveClawRouterRuntimeBoolean('VITE_TOOL_API_ENABLED', false);
@@ -3468,7 +3470,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /api-reference
-                    package: sdkwork-clawrouter-pc-api-reference
+                    package: '@sdkwork/documents-pc-api-reference'
                     owner: developer-experience
                     route_scope: public
                     delivery_kind: local_developer_tool_api
@@ -3476,16 +3478,16 @@ class FrontendContractGuardianTest(unittest.TestCase):
                     runtime_env: PORTAL_PUBLIC_TOOL_API_ENABLED
                     tool_endpoints: [/api/code-snippet]
                     source_files:
-                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/codeSnippetClient.ts
+                      - sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/codeSnippetClient.ts
                     gate_sources:
-                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiEndpointView.tsx
+                      - sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiEndpointView.tsx
                     browser_network_sources:
                       - endpoint: /api/code-snippet
-                        source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/codeSnippetClient.ts
+                        source: sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/codeSnippetClient.ts
                         purpose: local_tool_api
                     evidence:
-                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/codeSnippetClient.ts
-                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiEndpointView.tsx
+                      - sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/codeSnippetClient.ts
+                      - sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiEndpointView.tsx
                 """,
             )
 
@@ -3499,7 +3501,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_app(
                 root,
                 """
-                const ApiReference = lazyRoute(() => import('sdkwork-clawrouter-pc-api-reference'), 'ApiReference');
+                const ApiReference = lazyRoute(() => import('@sdkwork/documents-pc-api-reference'), 'ApiReference');
                 <Route path="/api-reference" element={<ApiReference />} />
                 """,
             )
@@ -3526,7 +3528,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             )
             self.write_portal_source(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/apiReferenceSchemaTabs.ts",
+                "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/apiReferenceSchemaTabs.ts",
                 """
                 const API_SCHEMA_TABS_URL = '/openapi/schema-tabs.json';
                 async function defaultFetchJson(url: string): Promise<unknown> {
@@ -3539,7 +3541,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             )
             self.write_portal_source(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/codeSnippetClient.ts",
+                "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/codeSnippetClient.ts",
                 """
                 export async function generate() {
                   return fetch('/api/code-snippet');
@@ -3548,7 +3550,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             )
             self.write_portal_source(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiEndpointView.tsx",
+                "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiEndpointView.tsx",
                 """
                 import { resolveClawRouterRuntimeBoolean } from 'sdkwork-clawrouter-pc-commons/runtime';
                 const enabled = resolveClawRouterRuntimeBoolean('VITE_TOOL_API_ENABLED', false);
@@ -3564,7 +3566,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /api-reference
-                    package: sdkwork-clawrouter-pc-api-reference
+                    package: '@sdkwork/documents-pc-api-reference'
                     owner: developer-experience
                     route_scope: public
                     delivery_kind: local_developer_tool_api
@@ -3572,20 +3574,20 @@ class FrontendContractGuardianTest(unittest.TestCase):
                     runtime_env: PORTAL_PUBLIC_TOOL_API_ENABLED
                     tool_endpoints: [/api/code-snippet]
                     source_files:
-                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/codeSnippetClient.ts
+                      - sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/codeSnippetClient.ts
                     gate_sources:
-                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiEndpointView.tsx
+                      - sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiEndpointView.tsx
                     browser_network_sources:
                       - endpoint: external_runtime_request
-                        source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/apiReferenceSchemaTabs.ts
+                        source: sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/apiReferenceSchemaTabs.ts
                         purpose: local_openapi_snapshot
                       - endpoint: /api/code-snippet
-                        source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/codeSnippetClient.ts
+                        source: sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/codeSnippetClient.ts
                         purpose: local_tool_api
                     evidence:
-                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/apiReferenceSchemaTabs.ts
-                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/codeSnippetClient.ts
-                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiEndpointView.tsx
+                      - sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/apiReferenceSchemaTabs.ts
+                      - sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/codeSnippetClient.ts
+                      - sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiEndpointView.tsx
                 """,
             )
 
@@ -3625,7 +3627,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_app(
                 root,
                 """
-                const ApiReference = lazyRoute(() => import('sdkwork-clawrouter-pc-api-reference'), 'ApiReference');
+                const ApiReference = lazyRoute(() => import('@sdkwork/documents-pc-api-reference'), 'ApiReference');
                 <Route path="/api-reference" element={<ApiReference />} />
                 """,
             )
@@ -3652,7 +3654,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             )
             self.write_portal_source(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/pages/ApiReference.tsx",
+                "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/pages/ApiReference.tsx",
                 """
                 export async function loadSpec() {
                   return fetch('/openapi.json');
@@ -3661,7 +3663,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             )
             self.write_portal_source(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiPlayground.tsx",
+                "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiPlayground.tsx",
                 """
                 import { resolveClawRouterRuntimeBoolean } from 'sdkwork-clawrouter-pc-commons';
                 const enabled = resolveClawRouterRuntimeBoolean('VITE_TOOL_API_ENABLED', false);
@@ -3672,7 +3674,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             )
             self.write_portal_source(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/codeSnippetClient.ts",
+                "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/codeSnippetClient.ts",
                 """
                 export async function generate() {
                   return fetch('/api/code-snippet');
@@ -3686,7 +3688,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /api-reference
-                    package: sdkwork-clawrouter-pc-api-reference
+                    package: '@sdkwork/documents-pc-api-reference'
                     owner: developer-experience
                     route_scope: public
                     delivery_kind: local_developer_tool_api
@@ -3694,23 +3696,23 @@ class FrontendContractGuardianTest(unittest.TestCase):
                     runtime_env: PORTAL_PUBLIC_TOOL_API_ENABLED
                     tool_endpoints: [/api/code-snippet]
                     source_files:
-                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/codeSnippetClient.ts
+                      - sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/codeSnippetClient.ts
                     gate_sources:
-                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiPlayground.tsx
+                      - sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiPlayground.tsx
                     browser_network_sources:
                       - endpoint: /openapi.json
-                        source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/pages/ApiReference.tsx
+                        source: sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/pages/ApiReference.tsx
                         purpose: local_tool_api
                       - endpoint: /api/code-snippet
-                        source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/codeSnippetClient.ts
+                        source: sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/codeSnippetClient.ts
                         purpose: explicit_api_playground_request
                       - endpoint: external_runtime_request
-                        source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiPlayground.tsx
+                        source: sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiPlayground.tsx
                         purpose: local_tool_api
                     evidence:
-                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/pages/ApiReference.tsx
-                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/codeSnippetClient.ts
-                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiPlayground.tsx
+                      - sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/pages/ApiReference.tsx
+                      - sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/codeSnippetClient.ts
+                      - sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiPlayground.tsx
                 """,
             )
 
@@ -3719,22 +3721,22 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.assertFalse(result.ok)
             self.assertIn(
                 "local tool route /api-reference browser_network_sources entry "
-                "/openapi.json|apps/sdkwork-clawrouter-pc/packages/"
-                "sdkwork-clawrouter-pc-api-reference/src/pages/ApiReference.tsx "
+                "/openapi.json|sdkwork-documents/apps/sdkwork-documents-pc/packages/"
+                "sdkwork-documents-pc-api-reference/src/pages/ApiReference.tsx "
                 "must use purpose local_openapi_snapshot",
                 result.messages,
             )
             self.assertIn(
                 "local tool route /api-reference browser_network_sources entry "
-                "/api/code-snippet|apps/sdkwork-clawrouter-pc/packages/"
-                "sdkwork-clawrouter-pc-api-reference/src/codeSnippetClient.ts "
+                "/api/code-snippet|sdkwork-documents/apps/sdkwork-documents-pc/packages/"
+                "sdkwork-documents-pc-api-reference/src/codeSnippetClient.ts "
                 "must use purpose local_tool_api",
                 result.messages,
             )
             self.assertIn(
                 "local tool route /api-reference browser_network_sources entry "
-                "external_runtime_request|apps/sdkwork-clawrouter-pc/packages/"
-                "sdkwork-clawrouter-pc-api-reference/src/components/ApiPlayground.tsx "
+                "external_runtime_request|sdkwork-documents/apps/sdkwork-documents-pc/packages/"
+                "sdkwork-documents-pc-api-reference/src/components/ApiPlayground.tsx "
                 "must use purpose explicit_api_playground_request",
                 result.messages,
             )
@@ -3745,7 +3747,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_app(
                 root,
                 """
-                const ApiReference = lazyRoute(() => import('sdkwork-clawrouter-pc-api-reference'), 'ApiReference');
+                const ApiReference = lazyRoute(() => import('@sdkwork/documents-pc-api-reference'), 'ApiReference');
                 <Route path="/api-reference" element={<ApiReference />} />
                 """,
             )
@@ -3772,7 +3774,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             )
             self.write_portal_source(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiEndpointView.tsx",
+                "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiEndpointView.tsx",
                 """
                 import { resolveClawRouterRuntimeBoolean } from 'sdkwork-clawrouter-pc-commons';
                 const enabled = resolveClawRouterRuntimeBoolean('VITE_TOOL_API_ENABLED', false);
@@ -3783,7 +3785,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             )
             self.write_portal_source(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/codeSnippetClient.ts",
+                "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/codeSnippetClient.ts",
                 """
                 export async function generate() {
                   return fetch('/api/code-snippet');
@@ -3797,7 +3799,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /api-reference
-                    package: sdkwork-clawrouter-pc-api-reference
+                    package: '@sdkwork/documents-pc-api-reference'
                     owner: developer-experience
                     route_scope: public
                     delivery_kind: local_developer_tool_api
@@ -3805,19 +3807,19 @@ class FrontendContractGuardianTest(unittest.TestCase):
                     runtime_env: PORTAL_PUBLIC_TOOL_API_ENABLED
                     tool_endpoints: [/api/code-snippet]
                     source_files:
-                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/codeSnippetClient.ts
+                      - sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/codeSnippetClient.ts
                     gate_sources:
-                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiEndpointView.tsx
+                      - sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiEndpointView.tsx
                     browser_network_sources:
                       - endpoint: /api/code-snippet
-                        source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/codeSnippetClient.ts
+                        source: sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/codeSnippetClient.ts
                         purpose: local_tool_api
                       - endpoint: external_runtime_request
-                        source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiEndpointView.tsx
+                        source: sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiEndpointView.tsx
                         purpose: explicit_api_playground_request
                     evidence:
-                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/codeSnippetClient.ts
-                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiEndpointView.tsx
+                      - sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/codeSnippetClient.ts
+                      - sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiEndpointView.tsx
                 """,
             )
 
@@ -3826,7 +3828,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.assertFalse(result.ok)
             self.assertIn(
                 "local tool route /api-reference external runtime browser source "
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiEndpointView.tsx "
+                "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiEndpointView.tsx "
                 "must be isolated in an ApiPlayground component or the API reference schema-tabs loader",
                 result.messages,
             )

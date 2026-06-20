@@ -531,27 +531,9 @@ function buildVerificationPlan(settings, env = process.env) {
     env,
   });
   plan.push({
-    label: 'portal courses runtime tests',
-    command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/courses-runtime.test.ts'],
-    env,
-  });
-  plan.push({
     label: 'portal forum runtime tests',
     command: 'node',
     args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/forum-runtime.test.ts'],
-    env,
-  });
-  plan.push({
-    label: 'portal skills runtime tests',
-    command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/skills-runtime.test.ts'],
-    env,
-  });
-  plan.push({
-    label: 'portal app center runtime tests',
-    command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/app-runtime.test.ts'],
     env,
   });
   plan.push({
@@ -597,12 +579,6 @@ function buildVerificationPlan(settings, env = process.env) {
     env,
   });
   plan.push({
-    label: 'portal console agents runtime tests',
-    command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/console-agents-runtime.test.ts'],
-    env,
-  });
-  plan.push({
     label: 'portal console routing runtime tests',
     command: 'node',
     args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/console-routing-runtime.test.ts'],
@@ -636,18 +612,6 @@ function buildVerificationPlan(settings, env = process.env) {
     label: 'portal admin model runtime tests',
     command: 'node',
     args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/admin-model-runtime.test.ts'],
-    env,
-  });
-  plan.push({
-    label: 'portal admin app runtime tests',
-    command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/admin-app-runtime.test.ts'],
-    env,
-  });
-  plan.push({
-    label: 'portal admin skill runtime tests',
-    command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/admin-skill-runtime.test.ts'],
     env,
   });
   plan.push({
@@ -731,10 +695,7 @@ const PARALLEL_SAFE_LABELS = new Set([
   'portal auth runtime tests',
   'portal models runtime tests',
   'portal rankings runtime tests',
-  'portal courses runtime tests',
   'portal forum runtime tests',
-  'portal skills runtime tests',
-  'portal app center runtime tests',
   'portal home downloads runtime tests',
   'portal api reference playground runtime tests',
   'portal api reference SSR smoke tests',
@@ -742,15 +703,12 @@ const PARALLEL_SAFE_LABELS = new Set([
   'portal api key runtime tests',
   'portal commerce business runtime tests',
   'portal console app runtime tests',
-  'portal console agents runtime tests',
   'portal console routing runtime tests',
   'portal console operations runtime tests',
   'portal admin group runtime tests',
   'portal admin channel runtime tests',
   'portal admin user runtime tests',
   'portal admin model runtime tests',
-  'portal admin app runtime tests',
-  'portal admin skill runtime tests',
   'portal admin ratelimit runtime tests',
   'portal admin marketing runtime tests',
   'portal admin operations runtime tests',

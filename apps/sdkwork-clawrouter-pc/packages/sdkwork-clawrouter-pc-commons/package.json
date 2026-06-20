@@ -61,6 +61,12 @@
       "require": "./src/components/CopyButton.tsx",
       "default": "./src/components/CopyButton.tsx"
     },
+    "./clipboard": {
+      "types": "./src/clipboard.ts",
+      "import": "./src/clipboard.ts",
+      "require": "./src/clipboard.ts",
+      "default": "./src/clipboard.ts"
+    },
     "./idempotency": {
       "types": "./src/idempotency.ts",
       "import": "./src/idempotency.ts",
@@ -72,6 +78,12 @@
       "import": "./src/utils/env.ts",
       "require": "./src/utils/env.ts",
       "default": "./src/utils/env.ts"
+    },
+    "./session-jwt-claims": {
+      "types": "./src/session-jwt-claims.ts",
+      "import": "./src/session-jwt-claims.ts",
+      "require": "./src/session-jwt-claims.ts",
+      "default": "./src/session-jwt-claims.ts"
     }
   },
   "scripts": {
@@ -84,6 +96,7 @@
     "@sdkwork/appbase-backend-sdk": "workspace:*",
     "@sdkwork/auth-runtime-pc-react": "workspace:*",
     "@sdkwork/clawrouter-app-sdk": "workspace:*",
+    "@sdkwork/documents-app-sdk": "workspace:*",
     "@sdkwork/clawrouter-backend-sdk": "workspace:*",
     "@sdkwork/clawrouter-open-sdk": "workspace:*",
     "@sdkwork/drive-app-sdk": "workspace:*",

@@ -29,6 +29,9 @@ use sdkwork_claw_product::infrastructure::sql::catalog::{
 use sdkwork_claw_product::infrastructure::sql::installer::{
     log_bootstrap_admin_report, DatabaseInstallError, DatabaseInstaller,
 };
+use sdkwork_claw_product::infrastructure::sql::pool::{
+    connect_claw_sqlite_runtime_pool, effective_sqlite_runtime_pool_max_connections,
+};
 use sdkwork_claw_product::infrastructure::sql::postgres::{
     PostgresAppAgentRegistryStore, PostgresAppAgentRunStore, PostgresAppAgentSessionStore,
     PostgresAppChatStore, PostgresAppGatewayTracesReadStore, PostgresAppGenerationHistoryReadStore,
@@ -74,9 +77,6 @@ use sdkwork_claw_product::ports::{
 };
 use sqlx::postgres::PgRow;
 use sqlx::sqlite::SqliteRow;
-use sdkwork_claw_product::infrastructure::sql::pool::{
-    connect_claw_sqlite_runtime_pool, effective_sqlite_runtime_pool_max_connections,
-};
 use sqlx::{PgPool, Row, SqlitePool};
 use tokio::time::sleep;
 
@@ -2720,8 +2720,8 @@ mod tests {
         should_invalidate_model_ranking_cache, should_skip_sqlite_catalog_refresh,
         sqlite_model_ranking_schema_ready,
     };
-    use sdkwork_claw_product::infrastructure::sql::pool::effective_sqlite_runtime_pool_max_connections;
     use sdkwork_claw_config::DeploymentMode;
+    use sdkwork_claw_product::infrastructure::sql::pool::effective_sqlite_runtime_pool_max_connections;
     use sdkwork_claw_product::ports::{ModelRankingRefreshOutcome, ModelRankingRefreshRunStatus};
     use sqlx::sqlite::SqlitePoolOptions;
     use std::sync::{Mutex, OnceLock};

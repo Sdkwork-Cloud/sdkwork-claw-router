@@ -1666,50 +1666,6 @@
       "apiSurface": "app"
     },
     {
-      "method": "POST",
-      "path": "/app/v3/api/courses/applications",
-      "operationId": "applications.create",
-      "tags": [
-        "content"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/courses/applications/videos",
-      "operationId": "applications.videos.create",
-      "tags": [
-        "content"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
       "method": "GET",
       "path": "/app/v3/api/ecosystem/skills",
       "operationId": "skills.list",
@@ -3673,50 +3629,6 @@
       "operationId": "invocationEventStreams.list",
       "tags": [
         "runtime"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/sdk_reference/archives",
-      "operationId": "archives.create",
-      "tags": [
-        "sdkReference"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/sdk_reference/documentation",
-      "operationId": "documentation.create",
-      "tags": [
-        "sdkReference"
       ],
       "auth": {
         "mode": "dual-token",

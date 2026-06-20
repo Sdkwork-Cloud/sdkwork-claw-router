@@ -250,8 +250,7 @@ impl TrustedRequestSubject {
     }
 
     pub fn resolve_from_parts(parts: &Parts) -> Result<Self, TrustedRequestSubjectError> {
-        Self::resolve_optional_from_parts(parts)
-            .ok_or(TrustedRequestSubjectError::MissingExtension)
+        Self::resolve_optional_from_parts(parts).ok_or(TrustedRequestSubjectError::MissingExtension)
     }
 
     pub fn from_headers(headers: &HeaderMap) -> Result<Self, TrustedSubjectBoundaryError> {

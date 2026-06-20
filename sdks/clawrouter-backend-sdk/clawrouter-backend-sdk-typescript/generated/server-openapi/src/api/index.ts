@@ -1,14 +1,11 @@
 export { BaseApi } from './base';
 export { backendApiPath } from './paths';
-export * from './agents';
 export * from './ai';
 export * from './content';
-export * from './ecosystem';
 export * from './iam';
 export * from './integration';
 export * from './mcp';
 export * from './messaging';
-export * from './platform';
 export * from './prompts';
 export * from './service-providers';
 export * from './sites';

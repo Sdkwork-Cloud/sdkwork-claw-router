@@ -51,8 +51,8 @@ Contract and API reference:
 - Modify: `crates/sdkwork-claw-http/specs/payment-aggregate-openapi.json`
 - Modify: `crates/sdkwork-claw-http/src/contract_routes.rs`
 - Modify: `crates/sdkwork-claw-http/src/router.rs`
-- Modify: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/apiReferenceSchemaTabs.ts`
-- Modify: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/pages/ApiReference.tsx`
+- Modify: `../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/apiReferenceSchemaTabs.ts`
+- Modify: `../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/pages/ApiReference.tsx`
 - Modify: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-i18n/src/resources/public/api-reference.ts`
 
 Schema and registry:

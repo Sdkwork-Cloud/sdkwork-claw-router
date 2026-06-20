@@ -1,96 +1,100 @@
 schema: sdkwork-claw-router-frontend-static-source-snapshots
 version: 1
 source: docs/schema-registry/frontend-route-classification.yaml
-rule: schema-provenanced static frontend routes must bind each curated or generated snapshot to one repo source and one generated sha256 manifest entry.
-
+rule: schema-provenanced static frontend routes must bind each curated or generated
+  snapshot to one repo source and one generated sha256 manifest entry.
 snapshots:
-  - id: static-route:/
-    route: /
-    mode: curated_seed_content
-    source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-home/src/pages/Home.tsx
-    observed_at: "2026-05-03"
-    schema_tables: [content_doc_page, appstore_app]
-
-  - id: static-route:/courses
-    route: /courses
-    mode: curated_seed_content
-    source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseCatalog.ts
-    observed_at: "2026-05-03"
-    schema_tables: [course_catalog, course_catalog_link, course_reaction]
-
-  - id: static-route:/courses/:id
-    route: /courses/:id
-    mode: curated_seed_content
-    source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseCatalog.ts
-    observed_at: "2026-05-03"
-    schema_tables: [course_catalog, course_section, course_lesson, course_catalog_link]
-
-  - id: static-route:/docs
-    route: /docs
-    mode: generated_reference_snapshot
-    source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/pages/Docs.tsx
-    observed_at: "2026-05-03"
-    schema_tables: [content_doc_page, content_openapi_snapshot, content_sdk_release]
-
-  - id: static-route:/models
-    route: /models
-    mode: published_catalog_snapshot
-    source_ref: docs/schema-registry/sdkwork-claw-router.tables.yaml
-    observed_at: "2026-05-03"
-    schema_tables: [ai_model_vendor, ai_model, ai_model_capability, ai_model_pricing]
-
-  - id: static-route:/product-docs
-    route: /product-docs
-    mode: generated_reference_snapshot
-    source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/pages/ProductDocs.tsx
-    observed_at: "2026-05-03"
-    schema_tables: [content_doc_page, content_openapi_snapshot]
-
-  - id: static-route:/rankings
-    route: /rankings
-    mode: published_catalog_snapshot
-    source_ref: docs/schema-registry/sdkwork-claw-router.tables.yaml
-    observed_at: "2026-05-03"
-    schema_tables: [ai_model_rank_snapshot, ai_usage_fact]
-
-  - id: static-route:/admin/drive
-    route: /admin/drive
-    mode: generated_reference_snapshot
-    source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/index.tsx
-    observed_at: "2026-05-25"
-    schema_tables: [iam_user]
-
-  - id: static-route:/admin/drive/spaces
-    route: /admin/drive/spaces
-    mode: generated_reference_snapshot
-    source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/index.tsx
-    observed_at: "2026-05-25"
-    schema_tables: [iam_user]
-
-  - id: static-route:/admin/drive/nodes
-    route: /admin/drive/nodes
-    mode: generated_reference_snapshot
-    source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/index.tsx
-    observed_at: "2026-05-25"
-    schema_tables: [iam_user]
-
-  - id: static-route:/admin/drive/permissions
-    route: /admin/drive/permissions
-    mode: generated_reference_snapshot
-    source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/index.tsx
-    observed_at: "2026-05-25"
-    schema_tables: [iam_user]
-
-  - id: static-route:/admin/drive/share-links
-    route: /admin/drive/share-links
-    mode: generated_reference_snapshot
-    source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/index.tsx
-    observed_at: "2026-05-25"
-    schema_tables: [iam_user]
-
-  - id: static-route:/admin/drive/audit
-    route: /admin/drive/audit
-    mode: generated_reference_snapshot
-    source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/index.tsx
-    observed_at: "2026-05-25"
-    schema_tables: [iam_user]
+- id: static-route:/
+  route: /
+  mode: curated_seed_content
+  source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-home/src/pages/Home.tsx
+  observed_at: '2026-05-03'
+  schema_tables:
+  - ai_model
+  - ai_model_vendor
+- id: static-route:/docs
+  route: /docs
+  mode: generated_reference_snapshot
+  source_ref: apps/sdkwork-clawrouter-pc/src/App.tsx
+  observed_at: '2026-05-03'
+  schema_tables:
+  - content_doc_page
+  - content_openapi_snapshot
+  - content_sdk_release
+- id: static-route:/models
+  route: /models
+  mode: published_catalog_snapshot
+  source_ref: docs/schema-registry/sdkwork-claw-router.tables.yaml
+  observed_at: '2026-05-03'
+  schema_tables:
+  - ai_model_vendor
+  - ai_model
+  - ai_model_capability
+  - ai_model_pricing
+- id: static-route:/product-docs
+  route: /product-docs
+  mode: generated_reference_snapshot
+  source_ref: apps/sdkwork-clawrouter-pc/src/App.tsx
+  observed_at: '2026-05-03'
+  schema_tables:
+  - content_doc_page
+  - content_openapi_snapshot
+- id: static-route:/sdk-reference
+  route: /sdk-reference
+  mode: generated_reference_snapshot
+  source_ref: apps/sdkwork-clawrouter-pc/src/App.tsx
+  observed_at: '2026-06-20'
+  schema_tables:
+  - content_doc_page
+  - content_openapi_snapshot
+  - content_sdk_release
+- id: static-route:/rankings
+  route: /rankings
+  mode: published_catalog_snapshot
+  source_ref: docs/schema-registry/sdkwork-claw-router.tables.yaml
+  observed_at: '2026-05-03'
+  schema_tables:
+  - ai_model_rank_snapshot
+  - ai_usage_fact
+- id: static-route:/admin/drive
+  route: /admin/drive
+  mode: generated_reference_snapshot
+  source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/index.tsx
+  observed_at: '2026-05-25'
+  schema_tables:
+  - iam_user
+- id: static-route:/admin/drive/spaces
+  route: /admin/drive/spaces
+  mode: generated_reference_snapshot
+  source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/index.tsx
+  observed_at: '2026-05-25'
+  schema_tables:
+  - iam_user
+- id: static-route:/admin/drive/nodes
+  route: /admin/drive/nodes
+  mode: generated_reference_snapshot
+  source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/index.tsx
+  observed_at: '2026-05-25'
+  schema_tables:
+  - iam_user
+- id: static-route:/admin/drive/permissions
+  route: /admin/drive/permissions
+  mode: generated_reference_snapshot
+  source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/index.tsx
+  observed_at: '2026-05-25'
+  schema_tables:
+  - iam_user
+- id: static-route:/admin/drive/share-links
+  route: /admin/drive/share-links
+  mode: generated_reference_snapshot
+  source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/index.tsx
+  observed_at: '2026-05-25'
+  schema_tables:
+  - iam_user
+- id: static-route:/admin/drive/audit
+  route: /admin/drive/audit
+  mode: generated_reference_snapshot
+  source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/index.tsx
+  observed_at: '2026-05-25'
+  schema_tables:
+  - iam_user

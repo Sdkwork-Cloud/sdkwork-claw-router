@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import ApplicationsCreateResult, ApplicationsVideosCreateResult, CommentsCreateResult, CommentsDeleteResult, CommentsLikesCreateResult, CommentsLikesCurrentDeleteResult, CommentsListResult, CommentsPinsCreateResult, CommentsPinsCurrentDeleteResult, CommentsRepliesListResult, CommentsReplyCreateResult, CommentsRetrieveResult, CommentsStatisticsListResult, CourseApplicationCreateRequest, CourseApplicationVideoUploadRequest, CoursesCategoriesListResult, CoursesListResult, CoursesOverviewRetrieveResult, CoursesRetrieveResult, FeedsCategoryRetrieveResult, FeedsCollectionsCreateResult, FeedsCollectionsCurrentDeleteResult, FeedsCollectionsCurrentRetrieveResult, FeedsCreateResult, FeedsDeleteResult, FeedsHotListResult, FeedsLikesCreateResult, FeedsLikesCurrentDeleteResult, FeedsListResult, FeedsMostLikedListResult, FeedsMostViewedListResult, FeedsOverviewRetrieveResult, FeedsRecommendListResult, FeedsRetrieveResult, FeedsSharesCreateResult, FeedsTopListResult, ForumCreateCommentRequest, ForumCreateFeedRequest, ForumReplyCommentRequest, UsersCurrentCommentsListResult
+from ..models import CommentsCreateResult, CommentsDeleteResult, CommentsLikesCreateResult, CommentsLikesCurrentDeleteResult, CommentsListResult, CommentsPinsCreateResult, CommentsPinsCurrentDeleteResult, CommentsRepliesListResult, CommentsReplyCreateResult, CommentsRetrieveResult, CommentsStatisticsListResult, FeedsCategoryRetrieveResult, FeedsCollectionsCreateResult, FeedsCollectionsCurrentDeleteResult, FeedsCollectionsCurrentRetrieveResult, FeedsCreateResult, FeedsDeleteResult, FeedsHotListResult, FeedsLikesCreateResult, FeedsLikesCurrentDeleteResult, FeedsListResult, FeedsMostLikedListResult, FeedsMostViewedListResult, FeedsOverviewRetrieveResult, FeedsRecommendListResult, FeedsRetrieveResult, FeedsSharesCreateResult, FeedsTopListResult, ForumCreateCommentRequest, ForumCreateFeedRequest, ForumReplyCommentRequest, UsersCurrentCommentsListResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -192,8 +192,6 @@ class ContentApi:
         self.comments = ContentCommentsApi(client)
         self.feeds = ContentFeedsApi(client)
         self.users = ContentUsersApi(client)
-        self.courses = ContentCoursesApi(client)
-        self.applications = ContentApplicationsApi(client)
 
 
 class ContentCommentsApi:
@@ -540,72 +538,3 @@ class ContentUsersCurrentCommentsApi:
             {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
         ])
         return self._client.get(_append_query_string(f"/app/v3/api/content/users/current/comments", query))
-
-class ContentCoursesApi:
-    """content content.courses API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-        self.categories = ContentCoursesCategoriesApi(client)
-        self.overview = ContentCoursesOverviewApi(client)
-
-
-    def list(self, level: Optional[str] = None, category: Optional[str] = None, q: Optional[str] = None, page: Optional[str] = None, page_size: Optional[str] = None) -> CoursesListResult:
-        """List courses"""
-        query = build_query_string([
-            {'name': 'level', 'value': level, 'style': 'form', 'explode': True, 'allow_reserved': False},
-            {'name': 'category', 'value': category, 'style': 'form', 'explode': True, 'allow_reserved': False},
-            {'name': 'q', 'value': q, 'style': 'form', 'explode': True, 'allow_reserved': False},
-            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
-            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
-        ])
-        return self._client.get(_append_query_string(f"/app/v3/api/courses", query))
-
-    def retrieve(self, course_id: str) -> CoursesRetrieveResult:
-        """List course detail"""
-        return self._client.get(f"/app/v3/api/courses/{serialize_path_parameter(course_id, {'name': 'courseId', 'style': 'simple', 'explode': False})}")
-
-class ContentCoursesCategoriesApi:
-    """content content.courses.categories API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-
-
-    def list(self) -> CoursesCategoriesListResult:
-        """List course categories"""
-        return self._client.get(f"/app/v3/api/courses/categories")
-
-class ContentCoursesOverviewApi:
-    """content content.courses.overview API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-
-
-    def retrieve(self) -> CoursesOverviewRetrieveResult:
-        """List course overview"""
-        return self._client.get(f"/app/v3/api/courses/overview")
-
-class ContentApplicationsApi:
-    """content content.applications API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-        self.videos = ContentApplicationsVideosApi(client)
-
-
-    def create(self, body: CourseApplicationCreateRequest) -> ApplicationsCreateResult:
-        """Create course application"""
-        return self._client.post(f"/app/v3/api/courses/applications", json=body)
-
-class ContentApplicationsVideosApi:
-    """content content.applications.videos API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-
-
-    def create(self, body: CourseApplicationVideoUploadRequest) -> ApplicationsVideosCreateResult:
-        """Upload course application video"""
-        return self._client.post(f"/app/v3/api/courses/applications/videos", data=body)

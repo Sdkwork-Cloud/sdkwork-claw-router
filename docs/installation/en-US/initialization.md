@@ -216,11 +216,6 @@ backoff_millis = 0
 
 [paths]
 data_directory = "/var/lib/sdkwork/router"
-course_upload_root = "/var/lib/sdkwork/router/uploads/courses"
-
-[courses]
-video_upload_max_bytes = 1073741824
-video_upload_body_limit_bytes = 1074790400
 
 [request_limits]
 admin_app_json_body_max_bytes = 131072
@@ -241,15 +236,6 @@ override. Use `/etc/sdkwork/router/redis.secret` or another protected
 `password_file`, and keep direct `[redis].password` only for TOML files managed
 as secret-bearing files. Desktop deployments keep Redis optional and disabled
 by default.
-
-`[paths].course_upload_root` stores local course application video uploads. Put
-it on durable storage for service and container deployments and keep it inside
-the application data volume unless a deployment intentionally mounts a separate
-media volume.
-`[courses].video_upload_max_bytes` is the accepted video payload size, and
-`[courses].video_upload_body_limit_bytes` includes multipart overhead. Configure
-reverse proxies, container ingress, and load balancer request-body limits at or
-above the body limit.
 
 `[request_limits]` controls runtime JSON and webhook body limits for
 high-risk write APIs. `admin_app_json_body_max_bytes` and
@@ -303,11 +289,6 @@ max_connections = 16
 
 [paths]
 data_directory = "/var/lib/sdkwork/router"
-course_upload_root = "/var/lib/sdkwork/router/uploads/courses"
-
-[courses]
-video_upload_max_bytes = 1073741824
-video_upload_body_limit_bytes = 1074790400
 
 [request_limits]
 admin_app_json_body_max_bytes = 131072

@@ -29,8 +29,6 @@ schema_registry:
     - integration
     - ai
     - commerce
-    - promotion
-    - messaging
     - platform
     - c
     - content
@@ -45,7 +43,7 @@ schema_registry:
     - portal
   legacy_compatibility_guardrails:
     java_entity_first_required: false
-    rule: Greenfield composition model uses ai_, ops_, integration_, storage_, and c_ (skill/agent/mcp) as claw-router system of record. App center is owned by sdkwork-appstore (appstore_*). Courses are owned by sdkwork-course (course_*). IAM and commerce base tables are imported modules; plus_* and studio_* legacy tables are retired.
+    rule: Greenfield composition model uses ai_, ops_, integration_, storage_, and c_ (skill/agent/mcp) as claw-router system of record. App center is owned by sdkwork-appstore (appstore_*). Commerce, promotion, messaging, and IAM base tables are owned by sibling modules and must not be registered here; plus_* and studio_* legacy tables are retired.
     protected_domains:
     - platform
     - classification
@@ -62,7 +60,7 @@ schema_registry:
     - sdkwork_account
     - sdkwork_refund
     - sdkwork_invoice
-    allowed_projection_exception: commerce_* base capability tables are provided by sdkwork-appbase-commerce; router-owned commerce_* tables may only add usage settlement, statement, export, and analytics projections. platform_* and content_course* DDL is owned by sdkwork-appstore and sdkwork-course and must not be generated in claw-router schema.sql.
+    allowed_projection_exception: commerce_*, promotion_*, messaging_*, and iam_* base capability tables are owned by sdkwork-commerce, sdkwork-appbase, or sdkwork-appbase-messaging and must not be registered in claw-router schema registry. Router-owned commerce_* tables may only add usage settlement, statement, export, and analytics projections. Portal content and forum tables are owned by sibling content modules. platform_* DDL is owned by sdkwork-appstore and must not be generated in claw-router schema.sql.
   common_column_groups:
     tenant_entity:
     - id
@@ -148,18 +146,12 @@ domains:
   commerce:
     owner: commerce-projection
     bounded_context: router-commerce-projection
-  messaging:
-    owner: sdkwork-appbase-messaging
-    bounded_context: external-message-delivery
   platform:
-    owner: app-center-service
-    bounded_context: saas-application-platform
+    owner: sdkwork-appstore
+    bounded_context: external-appstore-platform
   classification:
     owner: catalog-service
     bounded_context: cross-cutting-taxonomy
-  content:
-    owner: content-ops
-    bounded_context: portal-content
   ops:
     owner: platform-ops
     bounded_context: operations-observability
@@ -473,31 +465,16 @@ domain_names:
       label: Expression
 table_fragments:
 - tables/001-system.yaml
-- tables/002-iam.yaml
-- tables/003-legacy.yaml
-- tables/004-commerce.yaml
-- tables/005-promotion.yaml
-- tables/006-commerce.yaml
-- tables/007-legacy.yaml
-- tables/008-ops.yaml
-- tables/009-legacy.yaml
 - tables/010-iam.yaml
 - tables/011-ai.yaml
 - tables/012-iam.yaml
 - tables/013-integration.yaml
-- tables/014-messaging.yaml
 - tables/015-integration.yaml
 - tables/016-ai.yaml
 - tables/017-integration.yaml
 - tables/018-ai.yaml
 - tables/019-commerce.yaml
-- tables/020-studio.yaml
-- tables/021-content.yaml
-- tables/029-platform.yaml
-- tables/033-course.yaml
 - tables/030-category.yaml
-- tables/031-ai-agent-skills.yaml
-- tables/032-content-forum.yaml
 - tables/022-ops.yaml
 - tables/023-integration.yaml
 - tables/024-content.yaml

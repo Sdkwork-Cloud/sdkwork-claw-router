@@ -1343,9 +1343,8 @@ fn validate_comment_query(
 fn normalize_comment_content_type(value: Option<String>) -> Result<String, String> {
     let value = normalize_required_text(value, "content_type", 64)?;
     match value.as_str() {
-        "feeds" | "comments" | "course" | "courses" | "FEEDS" | "COMMENTS" | "COURSE"
-        | "COURSES" => Ok(value),
-        _ => Err("content_type must be feeds, comments, or course".to_owned()),
+        "feeds" | "comments" | "FEEDS" | "COMMENTS" => Ok(value),
+        _ => Err("content_type must be feeds or comments".to_owned()),
     }
 }
 

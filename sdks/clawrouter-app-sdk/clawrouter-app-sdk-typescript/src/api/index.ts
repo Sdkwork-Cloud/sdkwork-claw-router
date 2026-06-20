@@ -1,14 +1,10 @@
 export { BaseApi } from './base';
 export { appApiPath } from './paths';
-export * from './agents';
 export * from './ai';
 export * from './chat';
 export * from './content';
-export * from './ecosystem';
 export * from './iam';
 export * from './memory';
 export * from './notification';
-export * from './platform';
 export * from './runtime';
-export * from './sdk-reference';
 export * from './sites';

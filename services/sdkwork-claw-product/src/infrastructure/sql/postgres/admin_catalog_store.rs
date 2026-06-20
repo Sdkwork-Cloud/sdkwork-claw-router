@@ -528,9 +528,7 @@ async fn initialize_category_seeds(
                 import_product_category_seed(pool, command.subject, &command.requested_at, &bundle)
                     .await?
             }
-            "c_category" => {
-                import_c_category_seed(pool, &command.requested_at, &bundle).await?
-            }
+            "c_category" => import_c_category_seed(pool, &command.requested_at, &bundle).await?,
             target => {
                 return Err(DomainError::new(format!(
                     "unsupported category seed target {target}"

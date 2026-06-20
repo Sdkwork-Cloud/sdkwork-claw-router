@@ -222,15 +222,15 @@ class AdminPromptMcpRuntimeStandardTest(unittest.TestCase):
         self.assertIn("'/admin/mcp'", registry)
         self.assertIn("admin.menu.prompts", registry)
         self.assertIn("admin.menu.mcp", registry)
-        self.assertIn('"admin.menu.prompts": "提示词管�?', navigation)
-        self.assertIn('"admin.menu.mcp": "MCP管理"', navigation)
+        self.assertIn('"admin.menu.prompts": "Prompt Management"', navigation)
+        self.assertIn('"admin.menu.mcp": "MCP Management"', navigation)
 
 
     def test_prompt_and_mcp_admin_forms_use_unified_category_selector(self) -> None:
         commons_category_options = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-clawrouter-pc-commons"
+            / "sdkwork-clawrouter-pc-admin-core"
             / "src"
             / "admin-category-options.ts"
         ).read_text(encoding="utf-8")
@@ -660,7 +660,7 @@ class AdminPromptMcpRuntimeStandardTest(unittest.TestCase):
         self.assertIn("versionOptions={versionOptions}", prompt_page)
         self.assertIn("admin.prompts.fields.selectVersion", prompt_page)
         self.assertIn("PROMPT_BINDING_NULL_VERSION_VALUE", prompt_page)
-        self.assertIn("optionalNullableInteger(form, 'promptVersionId'", prompt_page)
+        self.assertIn("optionalNullableIntegerString(form, 'promptVersionId'", prompt_page)
         self.assertIn("admin.prompts.fields.defaultVersion", prompt_page)
         self.assertIn("admin.prompts.fields.keepVersion", prompt_page)
         self.assertIn("key: 'promptVersionId'", prompt_page)
@@ -698,8 +698,8 @@ class AdminPromptMcpRuntimeStandardTest(unittest.TestCase):
         self.assertIn("admin.mcp.fields.selectTool", mcp_page)
         self.assertIn("MCP_BINDING_NULL_REVISION_VALUE", mcp_page)
         self.assertIn("MCP_BINDING_NULL_TOOL_VALUE", mcp_page)
-        self.assertIn("optionalNullableInteger(form, 'serverRevisionId'", mcp_page)
-        self.assertIn("optionalNullableInteger(form, 'toolId'", mcp_page)
+        self.assertIn("optionalNullableIntegerString(form, 'serverRevisionId'", mcp_page)
+        self.assertIn("optionalNullableIntegerString(form, 'toolId'", mcp_page)
         self.assertIn("admin.mcp.fields.defaultRevision", mcp_page)
         self.assertIn("admin.mcp.fields.defaultTool", mcp_page)
         self.assertIn("admin.mcp.fields.keepRevision", mcp_page)

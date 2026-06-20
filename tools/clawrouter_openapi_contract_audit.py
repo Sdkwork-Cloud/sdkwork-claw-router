@@ -72,11 +72,6 @@ class ClawRouterOpenApiContractAudit:
     }
     TOP_LEVEL_VERTICAL_SDK_DOMAINS = {"mcp", "prompts"}
     FORBIDDEN_RPC_PATH_SEGMENTS = {"check_collected", "detail", "list", "mine", "search"}
-    BACKEND_COURSE_RESOURCE_SEGMENTS = {
-        "course-applications",
-        "course-lessons",
-        "course-sections",
-    }
 
     def __init__(self, root: Path, openapi_dir: Path | None = None) -> None:
         self.root = Path(root).resolve()
@@ -257,8 +252,6 @@ class ClawRouterOpenApiContractAudit:
                     messages.append(f"{surface} path {path} parameter {parameter_name} must be lowerCamelCase")
                 continue
             if not re.match(r"^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$", raw_segment):
-                if self._is_allowed_backend_course_resource_segment(surface, path, raw_segment):
-                    continue
                 messages.append(f"{surface} path {path} static segment {raw_segment} must be lowercase lower_snake_case")
             if raw_segment in self.FORBIDDEN_RPC_PATH_SEGMENTS:
                 messages.append(
@@ -266,13 +259,6 @@ class ClawRouterOpenApiContractAudit:
                 )
 
         return messages
-
-    def _is_allowed_backend_course_resource_segment(self, surface: str, path: str, segment: str) -> bool:
-        return (
-            surface == "backend"
-            and path.startswith("/backend/v3/api/content/")
-            and segment in self.BACKEND_COURSE_RESOURCE_SEGMENTS
-        )
 
     def _audit_operation_standard(self, label: str, operation: dict[str, Any]) -> list[str]:
         messages: list[str] = []

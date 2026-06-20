@@ -283,8 +283,7 @@ async fn default_router_does_not_mount_appbase_app_iam_routes_locally() {
 }
 
 #[test]
-fn route_crate_source_does_not_construct_product_local_appbase_or_course_runtime_stores_by_default()
-{
+fn route_crate_source_does_not_construct_product_local_appbase_runtime_stores_by_default() {
     let source = std::fs::read_to_string(
         std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
             .join("../../crates/sdkwork-router-app-api/src/routes.rs"),
@@ -298,8 +297,6 @@ fn route_crate_source_does_not_construct_product_local_appbase_or_course_runtime
         "PostgresAppAuthStore",
         "SqliteAppIamDirectoryReadStore",
         "PostgresAppIamDirectoryReadStore",
-        "SqliteCourseStore",
-        "PostgresCourseStore",
         "SqliteAppUserProfileReadStore",
         "PostgresAppUserProfileReadStore",
     ] {
@@ -311,28 +308,19 @@ fn route_crate_source_does_not_construct_product_local_appbase_or_course_runtime
 }
 
 #[tokio::test]
-async fn default_router_does_not_mount_course_foundation_routes_locally() {
-    for path in [
-        "/app/v3/api/courses",
-        "/app/v3/api/courses/categories",
-        "/app/v3/api/courses/overview",
-        "/app/v3/api/courses/course-1",
-    ] {
-        let (status, payload) = call(Method::GET, path).await;
+async fn default_router_does_not_mount_appstore_foundation_routes_locally() {
+    let cases = [
+        (Method::GET, "/app/v3/api/platform/apps/store"),
+        (Method::GET, "/app/v3/api/platform/apps/categories"),
+        (Method::GET, "/app/v3/api/platform/apps/installed"),
+    ];
+
+    for (method, path) in cases {
+        let (status, payload) = call(method, path).await;
 
         assert_eq!(StatusCode::NOT_FOUND, status, "{path}");
         assert_eq!(Value::Null, payload, "{path}");
     }
-}
-
-#[tokio::test]
-async fn app_store_route_is_exposed_by_default_router() {
-    let (status, payload) = call(Method::GET, "/app/v3/api/platform/apps/store").await;
-
-    assert_eq!(StatusCode::OK, status);
-    assert_eq!("2000", payload["code"]);
-    assert_eq!("SUCCESS", payload["msg"]);
-    assert_eq!(0, payload["data"]["items"].as_array().unwrap().len());
 }
 
 #[tokio::test]

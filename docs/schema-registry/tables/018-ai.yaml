@@ -1665,10 +1665,14 @@ tables:
     settlement_status: enum_int32
     settlement_id: int64
   column_descriptions:
-    official_reference_amount: Vendor official reference amount captured for audit and comparison.
-    upstream_cost_amount: Sensitive upstream access cost captured for admin cost accounting only.
-    customer_charge_amount: Customer-facing sales/charge amount used by app usage display, settlement, and ranking refresh.
-    cost_amount: Legacy compatibility field for customer-facing charge amount; new gateway writes mirror customer_charge_amount, never upstream_cost_amount.
+    official_reference_amount: Vendor official reference amount captured for audit
+      and comparison.
+    upstream_cost_amount: Sensitive upstream access cost captured for admin cost accounting
+      only.
+    customer_charge_amount: Customer-facing sales/charge amount used by app usage
+      display, settlement, and ranking refresh.
+    cost_amount: Legacy compatibility field for customer-facing charge amount; new
+      gateway writes mirror customer_charge_amount, never upstream_cost_amount.
   semantic_contracts:
     ranking_refresh_source_fact:
       time_field: occurred_at
@@ -1955,7 +1959,6 @@ tables:
   - ai_prompt_version
   frontend_routes:
   - /admin/prompts
-  - /admin/agents
   api_surfaces:
   - backend
   - worker
@@ -2243,7 +2246,6 @@ tables:
   - ai_mcp_tool
   frontend_routes:
   - /admin/mcp
-  - /admin/agents
   api_surfaces:
   - backend
   - worker
@@ -2311,7 +2313,6 @@ tables:
   frontend_routes:
   - /playground
   - /c/:conversationId
-  - /admin/agents
   api_surfaces:
   - app
   - backend
@@ -2375,7 +2376,6 @@ tables:
   frontend_routes:
   - /playground
   - /c/:conversationId
-  - /admin/agents
   api_surfaces:
   - app
   - backend
@@ -2437,7 +2437,6 @@ tables:
   frontend_routes:
   - /playground
   - /c/:conversationId
-  - /admin/agents
   api_surfaces:
   - app
   - backend
@@ -2548,7 +2547,6 @@ tables:
   frontend_routes:
   - /playground
   - /console/agents
-  - /admin/agents
   api_surfaces:
   - app
   - backend
@@ -2646,7 +2644,6 @@ tables:
   frontend_routes:
   - /playground
   - /console/agents
-  - /admin/agents
   api_surfaces:
   - app
   - backend
@@ -2711,7 +2708,6 @@ tables:
   frontend_routes:
   - /playground
   - /c/:conversationId
-  - /admin/agents
   api_surfaces:
   - app
   - backend
@@ -3136,7 +3132,6 @@ tables:
   frontend_routes:
   - /playground
   - /c/:conversationId
-  - /admin/agents
   api_surfaces:
   - app
   - backend
@@ -3240,7 +3235,6 @@ tables:
   frontend_routes:
   - /playground
   - /console/agents
-  - /admin/agents
   api_surfaces:
   - app
   - backend
@@ -3301,7 +3295,6 @@ tables:
   frontend_routes:
   - /playground
   - /console/agents
-  - /admin/agents
   api_surfaces:
   - app
   - backend
@@ -3629,7 +3622,6 @@ tables:
   frontend_routes:
   - /playground
   - /c/:conversationId
-  - /admin/agents
   api_surfaces:
   - app
   - backend
@@ -3965,7 +3957,6 @@ tables:
   frontend_routes:
   - /playground
   - /console/agents
-  - /admin/agents
   api_surfaces:
   - app
   - backend
@@ -4035,7 +4026,6 @@ tables:
   frontend_routes:
   - /playground
   - /console/agents
-  - /admin/agents
   api_surfaces:
   - app
   - backend

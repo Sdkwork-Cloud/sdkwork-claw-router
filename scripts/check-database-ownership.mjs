@@ -22,9 +22,6 @@ function ownerForTable(tableName, prefixOwners) {
   if (tableName.startsWith('platform_')) {
     return 'appstore-platform';
   }
-  if (tableName.startsWith('content_course')) {
-    return 'course-platform';
-  }
   return 'claw-router-platform';
 }
 
@@ -104,9 +101,7 @@ function main() {
     'commerce_account',
     'commerce_payment',
     'appstore_',
-    'course_',
     'platform_',
-    'content_course',
   ];
   for (const tableName of collectCreateTables(baselineSql)) {
     if (clawRouterBaselinePrefixes.some((prefix) => tableName.startsWith(prefix))) {

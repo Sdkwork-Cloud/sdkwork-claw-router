@@ -24,8 +24,8 @@
       "generationState": "materialized",
       "releaseState": "not_published",
       "generatedPath": "clawrouter-open-sdk-typescript/generated/server-openapi",
-      "packagePath": "clawrouter-open-sdk-typescript/generated/server-openapi",
-      "manifestPath": "clawrouter-open-sdk-typescript/generated/server-openapi/package.json",
+      "packagePath": "clawrouter-open-sdk-typescript",
+      "manifestPath": "clawrouter-open-sdk-typescript/package.json",
       "name": "@sdkwork/clawrouter-open-sdk",
       "version": "0.1.0",
       "description": "SDKWork Claw Router OpenAI-compatible gateway SDK",
@@ -40,9 +40,22 @@
       },
       "packages": [
         {
-          "layer": "generated",
+          "layer": "generated-output",
           "packagePath": "clawrouter-open-sdk-typescript/generated/server-openapi",
           "manifestPath": "clawrouter-open-sdk-typescript/generated/server-openapi/package.json",
+          "name": "@sdkwork/clawrouter-open-sdk",
+          "version": "0.1.0",
+          "description": "SDKWork Claw Router OpenAI-compatible gateway SDK generator-owned transport output",
+          "entrypoints": {
+            "main": "./dist/index.cjs",
+            "module": "./dist/index.js",
+            "types": "./dist/index.d.ts"
+          }
+        },
+        {
+          "layer": "package",
+          "packagePath": "clawrouter-open-sdk-typescript",
+          "manifestPath": "clawrouter-open-sdk-typescript/package.json",
           "name": "@sdkwork/clawrouter-open-sdk",
           "version": "0.1.0",
           "description": "SDKWork Claw Router OpenAI-compatible gateway SDK",

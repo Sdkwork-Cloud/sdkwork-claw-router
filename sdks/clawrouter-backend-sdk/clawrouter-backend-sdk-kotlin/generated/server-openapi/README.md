@@ -53,15 +53,12 @@ val client = SdkworkBackendClient(config)
 
 ## API Modules
 
-- `client.agents` - agents API
 - `client.ai` - ai API
 - `client.content` - content API
-- `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.integration` - integration API
 - `client.mcp` - mcp API
 - `client.messaging` - messaging API
-- `client.platform` - platform API
 - `client.prompts` - prompts API
 - `client.serviceProviders` - service_providers API
 - `client.sites` - sites API
@@ -69,22 +66,6 @@ val client = SdkworkBackendClient(config)
 - `client.system` - system API
 
 ## Usage Examples
-
-### agents
-
-```kotlin
-// List managed agents
-val params = linkedMapOf<String, Any>(
-    "q" to "q",
-    "owner_user_id" to "1",
-    "status" to "active",
-    "visibility" to "private",
-    "page" to "page",
-    "page_size" to "page-size"
-)
-val result = client.agents.agentDefinitionsList(params)
-println(result)
-```
 
 ### ai
 
@@ -99,14 +80,6 @@ println(result)
 ```kotlin
 // List announcements
 val result = client.content.announcementsList()
-println(result)
-```
-
-### ecosystem
-
-```kotlin
-// List skill categories
-val result = client.ecosystem.skillsCategoriesList()
 println(result)
 ```
 
@@ -157,14 +130,6 @@ val params = linkedMapOf<String, Any>(
     "provider_code" to "ok"
 )
 val result = client.messaging.providerAccountsList(params)
-println(result)
-```
-
-### platform
-
-```kotlin
-// List app categories
-val result = client.platform.appsCategoriesList()
 println(result)
 ```
 

@@ -36,6 +36,7 @@ use sdkwork_claw_product::infrastructure::sql::catalog::RefreshableSqlPricingCat
 use sdkwork_claw_product::infrastructure::sql::installer::{
     log_bootstrap_admin_report, DatabaseInstallError, DatabaseInstaller,
 };
+use sdkwork_claw_product::infrastructure::sql::pool::connect_claw_sqlite_runtime_pool;
 use sdkwork_claw_product::infrastructure::sql::postgres::{
     PostgresAdminAiResourceStore, PostgresAdminAnalyticsReadStore, PostgresAdminAnnouncementStore,
     PostgresAdminApiKeyRateLimitStore, PostgresAdminAppStore, PostgresAdminAuthSettingsStore,
@@ -78,7 +79,6 @@ use sdkwork_claw_product::ports::{
     ModelRankingsReadModelStore, PricingCatalog, ProviderHealthProbe, RuntimeRegionSettingsStore,
     SiteSettingsStore, UnconfiguredProviderHealthProbe,
 };
-use sdkwork_claw_product::infrastructure::sql::pool::connect_claw_sqlite_runtime_pool;
 use sqlx::{PgPool, SqlitePool};
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]

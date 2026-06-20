@@ -2,8 +2,7 @@ use axum::extract::Request;
 use sdkwork_web_core::WebRequestContext;
 
 use crate::auth::{
-    project_trusted_subject_for_legacy_handlers, TrustedRequestSubject,
-    DEFAULT_USER_OPERATOR_TYPE,
+    project_trusted_subject_for_legacy_handlers, TrustedRequestSubject, DEFAULT_USER_OPERATOR_TYPE,
 };
 
 /// Projects the standard `WebRequestContext` principal into the legacy
@@ -44,15 +43,13 @@ mod tests {
     use axum::extract::Request;
     use sdkwork_web_core::{
         ServerRequestId, WebApiSurface, WebAuthLevel, WebAuthMode, WebDeploymentMode,
-        WebEnvironment, WebLoginScope, WebRequestContext, WebRequestPrincipal,
-        WebTransportFacts,
+        WebEnvironment, WebLoginScope, WebRequestContext, WebRequestPrincipal, WebTransportFacts,
     };
 
     use crate::auth::TrustedRequestSubject;
 
     use super::{
-        inject_legacy_handler_context_from_web_context,
-        trusted_request_subject_from_web_context,
+        inject_legacy_handler_context_from_web_context, trusted_request_subject_from_web_context,
     };
 
     #[test]
@@ -192,11 +189,9 @@ mod tests {
         let mut request = Request::new(Body::empty());
         request.extensions_mut().insert(context);
 
-        let subject = TrustedRequestSubject::resolve_optional(
-            request.headers(),
-            request.extensions(),
-        )
-        .expect("subject from web context");
+        let subject =
+            TrustedRequestSubject::resolve_optional(request.headers(), request.extensions())
+                .expect("subject from web context");
         assert_eq!(20_001, subject.tenant_id);
         assert_eq!(30_002, subject.organization_id);
         assert_eq!(40_003, subject.user_id);

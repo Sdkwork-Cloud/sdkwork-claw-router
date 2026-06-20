@@ -230,49 +230,6 @@ class ContentApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<UsersCurrentCommentsListResult>() {})
     }
 
-    /** List courses */
-    suspend fun coursesList(level: String? = null, category: String? = null, q: String? = null, page: String? = null, pageSize: String? = null): CoursesListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("level", level, "form", true, false, null),
-            QueryParameterSpec("category", category, "form", true, false, null),
-            QueryParameterSpec("q", q, "form", true, false, null),
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/courses"), query))
-        return client.convertValue(raw, object : TypeReference<CoursesListResult>() {})
-    }
-
-    /** Create course application */
-    suspend fun applicationsCreate(body: CourseApplicationCreateRequest): ApplicationsCreateResult? {
-        val raw = client.post(ApiPaths.appPath("/courses/applications"), body, null, null, "application/json")
-        return client.convertValue(raw, object : TypeReference<ApplicationsCreateResult>() {})
-    }
-
-    /** Upload course application video */
-    suspend fun applicationsVideosCreate(body: CourseApplicationVideoUploadRequest): ApplicationsVideosCreateResult? {
-        val raw = client.post(ApiPaths.appPath("/courses/applications/videos"), body, null, null, "multipart/form-data")
-        return client.convertValue(raw, object : TypeReference<ApplicationsVideosCreateResult>() {})
-    }
-
-    /** List course categories */
-    suspend fun coursesCategoriesList(): CoursesCategoriesListResult? {
-        val raw = client.get(ApiPaths.appPath("/courses/categories"))
-        return client.convertValue(raw, object : TypeReference<CoursesCategoriesListResult>() {})
-    }
-
-    /** List course overview */
-    suspend fun coursesOverviewRetrieve(): CoursesOverviewRetrieveResult? {
-        val raw = client.get(ApiPaths.appPath("/courses/overview"))
-        return client.convertValue(raw, object : TypeReference<CoursesOverviewRetrieveResult>() {})
-    }
-
-    /** List course detail */
-    suspend fun coursesRetrieve(courseId: String): CoursesRetrieveResult? {
-        val raw = client.get(ApiPaths.appPath("/courses/${serializePathParameter(courseId, PathParameterSpec("courseId", "simple", false))}"))
-        return client.convertValue(raw, object : TypeReference<CoursesRetrieveResult>() {})
-    }
-
     private data class PathParameterSpec(val name: String, val style: String, val explode: Boolean)
 
     private fun serializePathParameter(value: Any?, spec: PathParameterSpec): String {

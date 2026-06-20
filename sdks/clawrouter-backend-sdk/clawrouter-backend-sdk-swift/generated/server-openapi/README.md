@@ -48,15 +48,12 @@ client.setHeader("X-Custom-Header", value: "value")
 
 ## API Modules
 
-- `client.agents` - agents API
 - `client.ai` - ai API
 - `client.content` - content API
-- `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.integration` - integration API
 - `client.mcp` - mcp API
 - `client.messaging` - messaging API
-- `client.platform` - platform API
 - `client.prompts` - prompts API
 - `client.serviceProviders` - service_providers API
 - `client.sites` - sites API
@@ -64,22 +61,6 @@ client.setHeader("X-Custom-Header", value: "value")
 - `client.system` - system API
 
 ## Usage Examples
-
-### agents
-
-```swift
-// List managed agents
-let params: [String: Any] = [
-    "q": "q",
-    "owner_user_id": "1",
-    "status": "active",
-    "visibility": "private",
-    "page": "page",
-    "page_size": "page-size"
-]
-let result = try await client.agents.agentDefinitionsList(params: params)
-print(result)
-```
 
 ### ai
 
@@ -94,14 +75,6 @@ print(result)
 ```swift
 // List announcements
 let result = try await client.content.announcementsList()
-print(result)
-```
-
-### ecosystem
-
-```swift
-// List skill categories
-let result = try await client.ecosystem.skillsCategoriesList()
 print(result)
 ```
 
@@ -152,14 +125,6 @@ let params: [String: Any] = [
     "provider_code": "ok"
 ]
 let result = try await client.messaging.providerAccountsList(params: params)
-print(result)
-```
-
-### platform
-
-```swift
-// List app categories
-let result = try await client.platform.appsCategoriesList()
 print(result)
 ```
 

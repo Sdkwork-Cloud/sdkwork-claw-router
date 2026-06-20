@@ -7,17 +7,13 @@ import (
 
 type SdkworkAppClient struct {
     http *sdkhttp.Client
-    Agents *api.AgentsApi
     Ai *api.AiApi
     Chat *api.ChatApi
     Content *api.ContentApi
-    Ecosystem *api.EcosystemApi
     Iam *api.IamApi
     Memory *api.MemoryApi
     Notification *api.NotificationApi
-    Platform *api.PlatformApi
     Runtime *api.RuntimeApi
-    SdkReference *api.SdkReferenceApi
     System *api.SystemApi
 }
 
@@ -30,17 +26,13 @@ func NewSdkworkAppClientWithConfig(config sdkhttp.Config) *SdkworkAppClient {
     client := sdkhttp.NewClient(config)
     return &SdkworkAppClient{
         http: client,
-        Agents: api.NewAgentsApi(client),
         Ai: api.NewAiApi(client),
         Chat: api.NewChatApi(client),
         Content: api.NewContentApi(client),
-        Ecosystem: api.NewEcosystemApi(client),
         Iam: api.NewIamApi(client),
         Memory: api.NewMemoryApi(client),
         Notification: api.NewNotificationApi(client),
-        Platform: api.NewPlatformApi(client),
         Runtime: api.NewRuntimeApi(client),
-        SdkReference: api.NewSdkReferenceApi(client),
         System: api.NewSystemApi(client),
     }
 }

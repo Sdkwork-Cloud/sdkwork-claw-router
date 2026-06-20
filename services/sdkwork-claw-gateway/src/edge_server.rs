@@ -634,9 +634,6 @@ impl EdgeServerConfig {
         if path == "/app/v3/api" || path.starts_with("/app/v3/api/") {
             return Some(&self.app_base_url);
         }
-        if path == "/uploads/courses" || path.starts_with("/uploads/courses/") {
-            return Some(&self.app_base_url);
-        }
         if self.portal_static_dist.is_none() {
             return Some(&self.portal_base_url);
         }
@@ -658,11 +655,7 @@ fn surface_for_path(path: &str) -> Option<EdgeApiSurface> {
     if path == "/backend/v3/api" || path.starts_with("/backend/v3/api/") {
         return Some(EdgeApiSurface::Backend);
     }
-    if path == "/app/v3/api"
-        || path.starts_with("/app/v3/api/")
-        || path == "/uploads/courses"
-        || path.starts_with("/uploads/courses/")
-    {
+    if path == "/app/v3/api" || path.starts_with("/app/v3/api/") {
         return Some(EdgeApiSurface::App);
     }
     None

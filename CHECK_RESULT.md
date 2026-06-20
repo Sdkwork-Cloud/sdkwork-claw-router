@@ -1,5 +1,7 @@
 # sdkwork-claw-router Check Result
 
+> **2026-06-20:** Course module removed from claw-router. Entries below that reference `/courses`, `sdkwork-clawrouter-pc-courses`, `content_course*`, or `[courses]` TOML are historical only. References to retired local documents packages such as `sdkwork-clawrouter-pc-api-reference` and legacy local app-center typecheck commands are also historical only after the shared documents capability migration. See `docs/31-product-composition-model.md`.
+
 Last verified: 2026-05-03 Asia/Shanghai
 Workspace: `<workspace-root>\sdkwork-claw-router`
 

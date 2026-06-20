@@ -24,21 +24,23 @@ VERIFIER_SOURCE = ROOT / "scripts" / "verify-claw-router-product.mjs"
 TOOLING_TEST_SOURCE = ROOT / "scripts" / "run-claw-router-product.test.mjs"
 NODE_TEST_SOURCE = ROOT / "apps" / "sdkwork-clawrouter-pc" / "commons-runtime.test.ts"
 API_PLAYGROUND_REQUEST_SOURCE = (
-    ROOT
+    ROOT.parent
+    / "sdkwork-documents"
     / "apps"
-    / "sdkwork-clawrouter-pc"
+    / "sdkwork-documents-pc"
     / "packages"
-    / "sdkwork-clawrouter-pc-api-reference"
+    / "sdkwork-documents-pc-api-reference"
     / "src"
     / "playgroundRequest.ts"
 )
 API_PLAYGROUND_RUNTIME_TEST_SOURCE = (
     ROOT / "apps" / "sdkwork-clawrouter-pc" / "api-reference-playground-runtime.test.ts"
 )
-SDK_SPEC_SOURCE = ROOT.parents[1] / "specs" / "SDK_SPEC.md"
-API_SPEC_SOURCE = ROOT.parents[1] / "specs" / "API_SPEC.md"
-FRONTEND_SPEC_SOURCE = ROOT.parents[1] / "specs" / "FRONTEND_SPEC.md"
-TEST_SPEC_SOURCE = ROOT.parents[1] / "specs" / "TEST_SPEC.md"
+SPECS_ROOT = ROOT.parent / "sdkwork-specs"
+SDK_SPEC_SOURCE = SPECS_ROOT / "SDK_SPEC.md"
+API_SPEC_SOURCE = SPECS_ROOT / "API_SPEC.md"
+FRONTEND_SPEC_SOURCE = SPECS_ROOT / "FRONTEND_SPEC.md"
+TEST_SPEC_SOURCE = SPECS_ROOT / "TEST_SPEC.md"
 
 
 class FrontendRequestTokenStandardTest(unittest.TestCase):

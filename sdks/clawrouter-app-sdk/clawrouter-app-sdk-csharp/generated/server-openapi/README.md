@@ -50,34 +50,16 @@ client.SetHeader("X-Custom-Header", "value");
 
 ## API Modules
 
-- `client.Agents` - agents API
 - `client.Ai` - ai API
 - `client.Chat` - chat API
 - `client.Content` - content API
-- `client.Ecosystem` - ecosystem API
 - `client.Iam` - iam API
 - `client.Memory` - memory API
 - `client.Notification` - notification API
-- `client.Platform` - platform API
 - `client.Runtime` - runtime API
-- `client.SdkReference` - sdk_reference API
 - `client.System` - system API
 
 ## Usage Examples
-
-### agents
-
-```csharp
-// List Playground agent definitions
-var query = new Dictionary<string, object>
-{
-    ["page"] = "page",
-    ["page_size"] = "page-size",
-    ["q"] = "q",
-};
-var result = await client.Agents.AgentDefinitionsListAsync(query);
-Console.WriteLine(result);
-```
 
 ### ai
 
@@ -105,14 +87,6 @@ Console.WriteLine(result);
 ```csharp
 // List forum overview
 var result = await client.Content.FeedsOverviewRetrieveAsync();
-Console.WriteLine(result);
-```
-
-### ecosystem
-
-```csharp
-// Get categories
-var result = await client.Ecosystem.SkillsCategoriesListAsync();
 Console.WriteLine(result);
 ```
 
@@ -152,14 +126,6 @@ var result = await client.Notification.NotificationsListAsync(query);
 Console.WriteLine(result);
 ```
 
-### platform
-
-```csharp
-// Get categories
-var result = await client.Platform.AppsStoreCategoriesListAsync();
-Console.WriteLine(result);
-```
-
 ### runtime
 
 ```csharp
@@ -175,20 +141,6 @@ var query = new Dictionary<string, object>
     ["status"] = "status",
 };
 var result = await client.Runtime.InvocationsListAsync(query);
-Console.WriteLine(result);
-```
-
-### sdk_reference
-
-```csharp
-// Generate SDK archive
-var body = new SdkReferenceArchiveGenerateRequest
-{
-    Config = new Dictionary<string, object>(),
-    Language = "language",
-    Spec = new Dictionary<string, object>(),
-};
-var result = await client.SdkReference.ArchivesCreateAsync(body);
 Console.WriteLine(result);
 ```
 
@@ -249,10 +201,12 @@ MIT
 
 ## Regeneration Contract
 
-- Generator-owned files are tracked in `.sdkwork/sdkwork-generator-manifest.json`.
-- Each run also writes `.sdkwork/sdkwork-generator-changes.json` so automation can inspect created, updated, deleted, unchanged, scaffolded, and backed-up files plus the classified impact areas, verification plan, and execution decision for the latest generation.
-- Apply mode also writes `.sdkwork/sdkwork-generator-report.json` with the full execution report, including `schemaVersion`, `generator`, stable artifact paths, and the execution handoff commands that match CLI `--json` output.
+- HTTP/OpenAPI generator-owned files are tracked in `.sdkwork/sdkwork-generator-manifest.json`.
+- HTTP/OpenAPI generation also writes `.sdkwork/sdkwork-generator-changes.json` so automation can inspect created, updated, deleted, unchanged, scaffolded, and backed-up files plus the classified impact areas, verification plan, and execution decision for the latest generation.
+- HTTP/OpenAPI apply mode also writes `.sdkwork/sdkwork-generator-report.json` with the full execution report, including `schemaVersion`, `generator`, stable artifact paths, and the execution handoff commands that match CLI `--json` output.
 - CLI JSON output also includes an execution handoff with concrete next commands, including reviewed apply commands for dry-run flows.
-- Put hand-written wrappers, adapters, and orchestration in `custom/`.
-- Files scaffolded under `custom/` are created once and preserved across regenerations.
-- If a generated-owned file was modified locally, its previous content is copied to `.sdkwork/manual-backups/` before overwrite or removal.
+- Put HTTP/OpenAPI hand-written wrappers, adapters, and orchestration in `custom/`.
+- Files scaffolded under `custom/` are created once and preserved across HTTP/OpenAPI regenerations.
+- If an HTTP/OpenAPI generated-owned file was modified locally, its previous content is copied to `.sdkwork/manual-backups/` before overwrite or removal.
+- RPC SDK source workspaces use convention-first evidence by default: RPC SDK family naming, language workspace naming, `rpc/*.manifest.json`, proto source references, generated client source, and native package manifests.
+- Use `sdkgen inspect --protocol rpc` to verify RPC convention evidence. Request persisted generator evidence only with `--emit-control-plane` for release, CI, audit, or migration workflows; evidence paths are derived by generator convention.

@@ -77,6 +77,21 @@ CLAW_APP_SDK_GENERATED = CLAW_APP_SDK / "generated" / "server-openapi"
 CLAW_BACKEND_SDK_GENERATED = CLAW_BACKEND_SDK / "generated" / "server-openapi"
 CLAW_APP_SDK_TYPES_DIST = CLAW_APP_SDK_GENERATED / "dist" / "types"
 CLAW_BACKEND_SDK_TYPES_DIST = CLAW_BACKEND_SDK_GENERATED / "dist" / "types"
+CLAW_APP_SDK_TYPES_PUBLISHED = first_existing_path(
+    CLAW_APP_SDK_GENERATED / "src" / "types",
+    CLAW_APP_SDK_TYPES_DIST,
+)
+CLAW_BACKEND_SDK_TYPES_PUBLISHED = first_existing_path(
+    CLAW_BACKEND_SDK_GENERATED / "src" / "types",
+    CLAW_BACKEND_SDK_TYPES_DIST,
+)
+def sdk_published_type_file(types_root: Path, stem: str) -> Path:
+    return first_existing_path(
+        types_root / f"{stem}.ts",
+        types_root / f"{stem}.d.ts",
+    )
+
+
 CLAW_APP_SDK_API_SRC = CLAW_APP_SDK / "src" / "api"
 CLAW_BACKEND_SDK_API_SRC = CLAW_BACKEND_SDK / "src" / "api"
 APPBASE_STUDIO_TEMPLATE_SQLX = APPBASE_ROOT / "crates" / "sdkwork-studio-template-repository-sqlx"
@@ -177,12 +192,12 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_portal_runtime_sources_do_not_log_errors_to_browser_console(self) -> None:
         allowed_example_sources = {
-            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/codeSnippetClient.ts",
-            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/pages/Docs.tsx",
+            "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/codeSnippetClient.ts",
+            "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/pages/Docs.tsx",
             "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-core/src/index.ts",
             "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-models/src/pages/ModelDetails.tsx",
-            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-sdk-reference/src/components/SdkEndpointView.tsx",
-            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-sdk-reference/src/data/sdkData.ts",
+            "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-sdk-reference/src/components/SdkEndpointView.tsx",
+            "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-sdk-reference/src/data/sdkData.ts",
         }
         violations: list[str] = []
         console_call = re.compile(r"\bconsole\.(?:log|error|warn|debug|trace)\s*\(")
@@ -244,10 +259,8 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         service_sources = [
             PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-agents" / "src" / "agentService.ts",
             PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-skill" / "src" / "skillService.ts",
-            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-app-center" / "src" / "services" / "appService.ts",
             PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-core" / "src" / "admin-category-options.ts",
             PORTAL_PACKAGES / "sdkwork-clawrouter-pc-console-user" / "src" / "userService.ts",
-            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-courses" / "src" / "courseService.ts",
         ]
         media_fields = (
             "avatar",
@@ -281,9 +294,8 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_display_media_strings_use_src_or_href_names(self) -> None:
         source_roots = [
-            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-app-center" / "src",
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-skills-hub" / "src",
             PORTAL_PACKAGES / "sdkwork-clawrouter-pc-console-user" / "src",
-            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-courses" / "src",
             PORTAL_PACKAGES / "sdkwork-clawrouter-pc-playground" / "src",
         ]
         forbidden_patterns = [
@@ -439,7 +451,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
     def test_appbase_native_studio_migrations_use_media_resource_columns(self) -> None:
         migration_sources = [
             APPBASE_STUDIO_TEMPLATE_SQLX / "migrations" / "0001_studio_catalog.sql",
-            APPBASE_STUDIO_TEMPLATE_SQLX / "migrations" / "0002_platform_app_template.sql",
+            APPBASE_STUDIO_TEMPLATE_SQLX / "migrations" / "0002_studio_app_template.sql",
         ]
         required_by_file = {
             "0001_studio_catalog.sql": [
@@ -453,7 +465,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "artifact_object_blob_id BIGINT",
                 "artifact_resource_snapshot JSONB",
             ],
-            "0002_platform_app_template.sql": [
+            "0002_studio_app_template.sql": [
                 "icon_media_resource_id VARCHAR(128)",
                 "icon_object_blob_id BIGINT",
                 "icon_resource_snapshot JSONB",
@@ -483,31 +495,31 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         )
 
     def test_active_design_docs_describe_canonical_media_resource_fields(self) -> None:
+        docs_dir = ROOT / "docs"
         active_doc_sources = [
-            ROOT / "docs" / "11-数据契约与核心表设计.md",
-            ROOT / "docs" / "12-前端功能模块与数据库表结构映�?md",
-            ROOT / "docs" / "14-数据结构细节复核与补强记�?md",
-            ROOT / "docs" / "17-AppCenter-PlusApp-compatible-design.md",
-            ROOT / "docs" / "18-SkillsHub-AgentSkills-PlusCategory-compatible-design.md",
+            next(iter(sorted(docs_dir.glob("11-*.md")))),
+            next(iter(sorted(docs_dir.glob("12-*.md")))),
+            next(iter(sorted(docs_dir.glob("14-*.md")))),
+            docs_dir / "17-AppCenter-PlusApp-compatible-design.md",
+            docs_dir / "18-SkillsHub-AgentSkills-PlusCategory-compatible-design.md",
         ]
         legacy_media_fields = re.compile(
             r"\b(?:cover_image|cover_url|icon_url|logo_url|thumbnail_url|video_url|asset_url|artifact_url|media_url)\b"
         )
         required_snippets = {
-            "11-数据契约与核心表设计.md": [
+            "11": [
                 "icon_media_resource_id",
                 "logo_resource_snapshot",
                 "cover_resource_snapshot",
                 "video_resource_snapshot",
             ],
-            "12-前端功能模块与数据库表结构映�?md": [
+            "12": [
                 "icon_resource_snapshot",
                 "asset_resource_snapshot",
                 "thumbnail_resource_snapshot",
-                "video_resource_snapshot",
                 "MediaResource",
             ],
-            "14-数据结构细节复核与补强记�?md": [
+            "14": [
                 "logo_media_resource_id",
                 "icon_resource_snapshot",
             ],
@@ -526,8 +538,13 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
         for source in active_doc_sources:
             relative = rel(source)
+            snippet_key = (
+                source.name.split("-", 1)[0]
+                if source.name.startswith(("11-", "12-", "14-"))
+                else source.name
+            )
             content = source.read_text(encoding="utf-8", errors="ignore")
-            for snippet in required_snippets[source.name]:
+            for snippet in required_snippets[snippet_key]:
                 if snippet not in content:
                     violations.append(f"{relative}: missing {snippet!r}")
             for match in legacy_media_fields.finditer(content):
@@ -621,96 +638,6 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             [],
             violations,
             "App/admin agent registry media structures must expose avatar as a MediaResource object and only read avatar_resource_snapshot from storage.",
-        )
-
-    def test_course_backend_media_fields_preserve_media_resource_objects(self) -> None:
-        source_expectations = {
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "course_store.rs": [
-                "pub avatar: Value,",
-                "pub video: Value,",
-                "pub thumbnail: Value,",
-                "pub video: Option<Value>,",
-            ],
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_course.rs": [
-                "video: Option<Value>,",
-                "video: Value,",
-                "let video = normalize_optional_media_resource(request.video, \"video\")?",
-            ],
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "course_store.rs": [
-                'thumbnail: media_resource_from_row(row, "thumbnail_resource_snapshot", "image"),',
-                'video: media_resource_from_row(row, "video_resource_snapshot", "video"),',
-            ],
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "course_store.rs": [
-                'thumbnail: media_resource_from_row(row, "thumbnail_resource_snapshot", "image"),',
-                'video: media_resource_from_row(row, "video_resource_snapshot", "video"),',
-            ],
-        }
-        legacy_patterns = ("avatar: String", "thumbnail_url", "video_url", "thumbnailUrl", "videoUrl", "media_resource_url")
-        violations: list[str] = []
-
-        for source, required_snippets in source_expectations.items():
-            relative = rel(source)
-            content = source.read_text(encoding="utf-8", errors="ignore")
-            for snippet in required_snippets:
-                if snippet not in content:
-                    violations.append(f"{relative}: missing {snippet!r}")
-            for line_number, line in enumerate(content.splitlines(), start=1):
-                if any(pattern in line for pattern in legacy_patterns):
-                    violations.append(f"{relative}:{line_number}: {line.strip()}")
-
-        self.assertEqual(
-            [],
-            violations,
-            "Course backend API, ports, and SQL stores must keep thumbnail/avatar/video as MediaResource objects; URL extraction belongs in concrete UI playback/display code.",
-        )
-
-    def test_backend_app_and_template_media_fields_preserve_media_resource_objects(self) -> None:
-        source_expectations = {
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "admin_app_store.rs": [
-                "pub icon: Value,",
-                "pub icon: Option<Value>,",
-                "pub cover: Option<Value>,",
-                "pub icon: Option<Option<Value>>,",
-                "pub cover: Option<Option<Value>>,",
-            ],
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "admin_app.rs": [
-                "icon: optional_media_resource(request.icon, \"icon\")?",
-                "cover: optional_media_resource(request.cover, \"cover\")?",
-                "icon: normalize_nullable_media_resource(request.icon, \"icon\")?",
-                "cover: normalize_nullable_media_resource(request.cover, \"cover\")?",
-                "icon: item.icon,",
-                "cover: item.cover,",
-            ],
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "admin_app_store.rs": [
-                "icon_resource_snapshot",
-                "cover_resource_snapshot",
-                'icon: optional_media_resource_from_row(&row, "icon_resource_snapshot")?',
-                'cover: optional_media_resource_from_row(&row, "cover_resource_snapshot")?',
-            ],
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "admin_app_store.rs": [
-                "icon_resource_snapshot",
-                "cover_resource_snapshot",
-                'icon: optional_media_resource_from_row(&row, "icon_resource_snapshot")',
-                'cover: optional_media_resource_from_row(&row, "cover_resource_snapshot")',
-            ],
-        }
-        legacy_patterns = ("icon_url", "cover_url", "iconUrl", "coverUrl", "optional_media_resource_url")
-        violations: list[str] = []
-
-        for source, required_snippets in source_expectations.items():
-            relative = rel(source)
-            content = source.read_text(encoding="utf-8", errors="ignore")
-            for snippet in required_snippets:
-                if snippet not in content:
-                    violations.append(f"{relative}: missing {snippet!r}")
-            for line_number, line in enumerate(content.splitlines(), start=1):
-                if any(pattern in line for pattern in legacy_patterns):
-                    violations.append(f"{relative}:{line_number}: {line.strip()}")
-
-        self.assertEqual(
-            [],
-            violations,
-            "Admin app/template media fields must be named icon/cover and carry MediaResource objects through API, port, and SQL layers.",
         )
 
     def test_generation_history_media_fields_preserve_media_resource_objects(self) -> None:
@@ -938,13 +865,6 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_business_runtime_media_models_preserve_media_resource_objects(self) -> None:
         source_expectations = {
-            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-app-center" / "src" / "appRuntime.ts": [
-                r"\bimage\s*:\s*string\b",
-                r"\bscreenshots\s*:\s*string\[\]",
-                r"\breadString\s*\(\s*item\s*,\s*'iconUrl'",
-                r"\breadString\s*\(\s*item\s*,\s*'artifactUrl'",
-                r"\breadString\s*\(\s*asset\s*,\s*'assetUrl'",
-            ],
             PORTAL_PACKAGES / "sdkwork-clawrouter-pc-skills-hub" / "src" / "skillRuntime.ts": [
                 r"\bimage\s*:\s*string\b",
                 r"\bscreenshots\s*:\s*string\[\]",
@@ -981,10 +901,6 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             PORTAL_PACKAGES / "sdkwork-clawrouter-pc-vip" / "src" / "vipService.ts": [
                 r"\bicon\??\s*:\s*string\b",
             ],
-            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-courses" / "src" / "courseService.ts": [
-                r"\bicon\s*:\s*string\b",
-                r"\bicon\s*:\s*readString\s*\(\s*value\s*,\s*'icon'\s*\)",
-            ],
         }
         violations: list[str] = []
 
@@ -1004,8 +920,8 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         )
 
     def test_app_sdk_published_types_export_media_resource(self) -> None:
-        sdk_types_index = CLAW_APP_SDK_TYPES_DIST / "index.d.ts"
-        sdk_media_type = CLAW_APP_SDK_TYPES_DIST / "media-resource.d.ts"
+        sdk_types_index = sdk_published_type_file(CLAW_APP_SDK_TYPES_PUBLISHED, "index")
+        sdk_media_type = sdk_published_type_file(CLAW_APP_SDK_TYPES_PUBLISHED, "media-resource")
 
         self.assertTrue(sdk_types_index.exists(), f"{rel(sdk_types_index)} must exist")
         self.assertTrue(sdk_media_type.exists(), f"{rel(sdk_media_type)} must exist")
@@ -1016,9 +932,14 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         )
 
     def test_backend_sdk_published_category_types_preserve_media_resource_icon(self) -> None:
-        sdk_types_root = CLAW_BACKEND_SDK_TYPES_DIST
-        create_request = sdk_types_root / "admin-skill-category-create-request.d.ts"
-        update_request = sdk_types_root / "admin-skill-category-update-request.d.ts"
+        create_request = sdk_published_type_file(
+            CLAW_BACKEND_SDK_TYPES_PUBLISHED,
+            "admin-skill-category-create-request",
+        )
+        update_request = sdk_published_type_file(
+            CLAW_BACKEND_SDK_TYPES_PUBLISHED,
+            "admin-skill-category-update-request",
+        )
 
         for source in (create_request, update_request):
             relative = rel(source)
@@ -1036,15 +957,11 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_generated_table_record_sdk_media_fields_preserve_media_resource_objects(self) -> None:
         sdk_record_expectations = {
-            CLAW_APP_SDK_TYPES_SRC / "app-catalog-item.ts": [
-                "image: MediaResource;",
-                "screenshots: MediaResource[];",
-            ],
-            CLAW_APP_SDK_TYPES_SRC / "app-detail-response.ts": [
-                "image: MediaResource;",
-                "screenshots: MediaResource[];",
-            ],
             CLAW_APP_SDK_TYPES_SRC / "skill-catalog-item.ts": [
+                "image: MediaResource;",
+                "screenshots: MediaResource[];",
+            ],
+            sdk_published_type_file(CLAW_APP_SDK_TYPES_PUBLISHED, "skill-catalog-item"): [
                 "image: MediaResource;",
                 "screenshots: MediaResource[];",
             ],
@@ -1052,53 +969,21 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "image: MediaResource;",
                 "screenshots: MediaResource[];",
             ],
-            CLAW_APP_SDK_TYPES_DIST / "app-catalog-item.d.ts": [
+            sdk_published_type_file(CLAW_APP_SDK_TYPES_PUBLISHED, "skill-detail-response"): [
                 "image: MediaResource;",
                 "screenshots: MediaResource[];",
-            ],
-            CLAW_APP_SDK_TYPES_DIST / "app-detail-response.d.ts": [
-                "image: MediaResource;",
-                "screenshots: MediaResource[];",
-            ],
-            CLAW_APP_SDK_TYPES_DIST / "skill-catalog-item.d.ts": [
-                "image: MediaResource;",
-                "screenshots: MediaResource[];",
-            ],
-            CLAW_APP_SDK_TYPES_DIST / "skill-detail-response.d.ts": [
-                "image: MediaResource;",
-                "screenshots: MediaResource[];",
-            ],
-            CLAW_BACKEND_SDK_TYPES_SRC / "admin-app-category-item.ts": [
-                "icon?: MediaResource;",
             ],
             CLAW_BACKEND_SDK_TYPES_SRC / "admin-skill-category-item.ts": [
                 "icon?: MediaResource;",
             ],
-            CLAW_BACKEND_SDK_TYPES_SRC / "admin-app-item-response.ts": [
-                "artifact?: MediaResource;",
-                "icon: MediaResource;",
-            ],
-            CLAW_BACKEND_SDK_TYPES_SRC / "admin-app-template-item-response.ts": [
-                "cover?: MediaResource;",
-                "icon?: MediaResource;",
-            ],
-            CLAW_BACKEND_SDK_TYPES_DIST / "admin-app-category-item.d.ts": [
-                "icon?: MediaResource;",
-            ],
-            CLAW_BACKEND_SDK_TYPES_DIST / "admin-skill-category-item.d.ts": [
-                "icon?: MediaResource;",
-            ],
-            CLAW_BACKEND_SDK_TYPES_DIST / "admin-app-item-response.d.ts": [
-                "artifact?: MediaResource;",
-                "icon: MediaResource;",
-            ],
-            CLAW_BACKEND_SDK_TYPES_DIST / "admin-app-template-item-response.d.ts": [
-                "cover?: MediaResource;",
+            sdk_published_type_file(CLAW_BACKEND_SDK_TYPES_PUBLISHED, "admin-skill-category-item"): [
                 "icon?: MediaResource;",
             ],
         }
 
         for source, required_snippets in sdk_record_expectations.items():
+            if not source.exists():
+                self.fail(f"{rel(source)} must exist")
             relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             self.assertIn(
@@ -1124,14 +1009,16 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
     def test_generated_table_record_sdks_do_not_expose_media_storage_columns(self) -> None:
         sdk_type_roots = [
             CLAW_APP_SDK_TYPES_SRC,
-            CLAW_APP_SDK_TYPES_DIST,
+            CLAW_APP_SDK_TYPES_PUBLISHED,
             CLAW_BACKEND_SDK_TYPES_SRC,
-            CLAW_BACKEND_SDK_TYPES_DIST,
+            CLAW_BACKEND_SDK_TYPES_PUBLISHED,
         ]
         media_storage_pattern = re.compile(r"\b[A-Za-z0-9_]+_(?:media_resource_id|object_blob_id|resource_snapshot)\??:")
         violations: list[str] = []
 
         for sdk_type_root in sdk_type_roots:
+            if not sdk_type_root.exists():
+                continue
             for source in [*sdk_type_root.glob("*-record.ts"), *sdk_type_root.glob("*-record.d.ts")]:
                 content = source.read_text(encoding="utf-8", errors="ignore")
                 for line_number, line in enumerate(content.splitlines(), start=1):
@@ -1574,22 +1461,6 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             "Appbase native user center public avatar/logo payloads and local schema must preserve media resource objects instead of URL strings.",
         )
 
-    def test_app_sdk_course_category_exposes_icon_key_not_media_icon_string(self) -> None:
-        source = CLAW_APP_SDK_TYPES_DIST / "course-category-item.d.ts"
-        relative = rel(source)
-        content = source.read_text(encoding="utf-8", errors="ignore")
-
-        self.assertIn(
-            "iconKey: string;",
-            content,
-            f"{relative} must expose symbolic course category icons as iconKey.",
-        )
-        self.assertNotIn(
-            "icon: string;",
-            content,
-            f"{relative} must not expose symbolic icon keys as media-like icon strings.",
-        )
-
     def test_forum_backend_persistence_uses_canonical_media_resource_columns(self) -> None:
         forum_sources = [
             ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "forum_store.rs",
@@ -1853,68 +1724,6 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             "Admin skill/category/package icon fields must stay as MediaResource objects named icon and persist through canonical icon_* media columns.",
         )
 
-    def test_backend_app_category_icon_media_fields_preserve_media_resource_objects(self) -> None:
-        source_expectations = {
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "admin_app_store.rs": [
-                "pub icon: Option<Value>,",
-                "pub icon: Option<Option<Value>>,",
-            ],
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "admin_app.rs": [
-                "icon: Option<Value>,",
-                "icon: optional_media_resource(request.icon, \"icon\")?",
-                "icon: normalize_nullable_media_resource(request.icon, \"icon\")?",
-                "icon: item.icon,",
-            ],
-            ROOT
-            / "services"
-            / "sdkwork-claw-product"
-            / "src"
-            / "infrastructure"
-            / "sql"
-            / "sqlite"
-            / "admin_app_store.rs": [
-                "icon_media_resource_id",
-                "icon_object_blob_id",
-                "icon_resource_snapshot",
-            ],
-            ROOT
-            / "services"
-            / "sdkwork-claw-product"
-            / "src"
-            / "infrastructure"
-            / "sql"
-            / "postgres"
-            / "admin_app_store.rs": [
-                "icon_media_resource_id",
-                "icon_object_blob_id",
-                "icon_resource_snapshot",
-            ],
-        }
-        legacy_patterns = (
-            "code, icon,",
-            "code, icon\n",
-            "icon = CASE",
-            "command.icon.as_deref()",
-            "row.try_get(\"icon\")",
-        )
-        violations: list[str] = []
-
-        for source, required_snippets in source_expectations.items():
-            relative = rel(source)
-            content = source.read_text(encoding="utf-8", errors="ignore")
-            for snippet in required_snippets:
-                if snippet not in content:
-                    violations.append(f"{relative}: missing {snippet!r}")
-            for line_number, line in enumerate(content.splitlines(), start=1):
-                if any(pattern in line for pattern in legacy_patterns):
-                    violations.append(f"{relative}:{line_number}: {line.strip()}")
-
-        self.assertEqual(
-            [],
-            violations,
-            "Admin app category icon fields must stay as MediaResource objects named icon and persist through canonical c_category icon_* media columns.",
-        )
-
     def test_backend_skill_artifact_media_fields_preserve_media_resource_objects(self) -> None:
         source_expectations = {
             ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "admin_skill_store.rs": [
@@ -1970,103 +1779,8 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             "Admin skill artifact file fields must stay as MediaResource objects named artifact and persist through canonical artifact_* media columns.",
         )
 
-    def test_backend_app_seed_persists_media_resource_snapshots(self) -> None:
-        source = (
-            ROOT
-            / "services"
-            / "sdkwork-claw-product"
-            / "src"
-            / "infrastructure"
-            / "sql"
-            / "app_seed.rs"
-        )
-        required_snippets = [
-            "icon_resource_snapshot",
-            "asset_resource_snapshot",
-            "thumbnail_resource_snapshot",
-            "artifact_resource_snapshot",
-            "media_resource_stable_id",
-            "media_resource_object_blob_id",
-        ]
-        legacy_patterns = (
-            "icon_url",
-            "asset_url",
-            "thumbnail_url",
-            "artifact_url",
-            "iconUrl",
-            "assetUrl",
-            "thumbnailUrl",
-            "artifactUrl",
-        )
-        violations: list[str] = []
-        content = source.read_text(encoding="utf-8", errors="ignore")
-
-        for snippet in required_snippets:
-            if snippet not in content:
-                violations.append(f"{rel(source)}: missing {snippet!r}")
-        for line_number, line in enumerate(content.splitlines(), start=1):
-            if any(pattern in line for pattern in legacy_patterns):
-                violations.append(f"{rel(source)}:{line_number}: {line.strip()}")
-
-        self.assertEqual(
-            [],
-            violations,
-            "App seed import must require MediaResource object inputs and persist only canonical media snapshot columns.",
-        )
-
-    def test_app_center_view_models_preserve_media_resource_objects_until_display(self) -> None:
-        runtime_source = (
-            ROOT
-            / "apps"
-            / "sdkwork-clawrouter-pc"
-            / "packages"
-            / "sdkwork-clawrouter-pc-app-center"
-            / "src"
-            / "appRuntime.ts"
-        )
-        runtime = runtime_source.read_text(encoding="utf-8", errors="ignore")
-        violations: list[str] = []
-        for forbidden in ("imageSource: string", "imageSource: readMediaResourceUrl"):
-            if forbidden in runtime:
-                violations.append(f"{runtime_rel(source)}: contains {forbidden!r}")
-
-        for source in [
-            ROOT
-            / "apps"
-            / "sdkwork-clawrouter-pc"
-            / "packages"
-            / "sdkwork-clawrouter-pc-app-center"
-            / "src"
-            / "pages"
-            / "AppCenter.tsx",
-            ROOT
-            / "apps"
-            / "sdkwork-clawrouter-pc"
-            / "packages"
-            / "sdkwork-clawrouter-pc-app-center"
-            / "src"
-            / "components"
-            / "AppCenterPreview.tsx",
-        ]:
-            content = source.read_text(encoding="utf-8", errors="ignore")
-            if "src={readMediaResourceUrl(app.image)}" not in content:
-                violations.append(
-                    f"{rel(source)}: image display must extract URL from app.image at the img boundary"
-                )
-            if "app.imageSource" in content:
-                violations.append(
-                    f"{rel(source)}: must not consume pre-extracted imageSource"
-                )
-
-        self.assertEqual(
-            [],
-            violations,
-            "App center view models must keep ClawRouterMediaResource objects and call readMediaResourceUrl only at concrete image display boundaries.",
-        )
-
     def test_portal_remote_list_services_fail_closed_for_malformed_list_payloads(self) -> None:
         allowed_optional_sources = {
-            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/appService.ts",
             "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub/src/services/skillService.ts",
         }
         violations: list[str] = []
@@ -2169,13 +1883,6 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         self.assertIn("MAX_SETTLEMENT_DASHBOARD_YEAR", service)
 
     def test_portal_catalog_services_normalize_filters_before_sdk_calls(self) -> None:
-        app_service_path = (
-            PORTAL_PACKAGES
-            / "sdkwork-clawrouter-pc-app-center"
-            / "src"
-            / "services"
-            / "appService.ts"
-        )
         skill_service_path = (
             PORTAL_PACKAGES
             / "sdkwork-clawrouter-pc-skills-hub"
@@ -2183,23 +1890,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             / "services"
             / "skillService.ts"
         )
-        app_service = app_service_path.read_text(encoding="utf-8", errors="ignore")
         skill_service = skill_service_path.read_text(encoding="utf-8", errors="ignore")
-
-        self.assertIn("toAppCatalogQueryParams", app_service)
-        self.assertTrue(
-            ".platform.apps.store.list(toAppCatalogQueryParams(filters))" in app_service
-            or (
-                "const query = toAppCatalogQueryParams(filters)" in app_service
-                and ".platform.apps.store.list(query)" in app_service
-            ),
-            "app catalog service must pass normalized query params into the generated SDK",
-        )
-        self.assertNotIn(".platform.apps.store.list(filters", app_service)
-        self.assertNotIn(".app.getApps", app_service)
-        self.assertNotIn("filters as Record<string, unknown>", app_service)
-        self.assertIn("MAX_APP_CATALOG_PAGE_SIZE", app_service)
-        self.assertIn("MAX_APP_CATALOG_QUERY_TEXT_LENGTH", app_service)
 
         self.assertIn("toSkillCatalogQueryParams", skill_service)
         self.assertTrue(
@@ -2218,19 +1909,6 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         self.assertIn("MAX_SKILL_CATALOG_QUERY_TEXT_LENGTH", skill_service)
 
     def test_portal_catalog_services_fail_closed_for_remote_contract_drift(self) -> None:
-        app_service = (
-            PORTAL_PACKAGES
-            / "sdkwork-clawrouter-pc-app-center"
-            / "src"
-            / "services"
-            / "appService.ts"
-        ).read_text(encoding="utf-8", errors="ignore")
-        app_runtime = (
-            PORTAL_PACKAGES
-            / "sdkwork-clawrouter-pc-app-center"
-            / "src"
-            / "appRuntime.ts"
-        ).read_text(encoding="utf-8", errors="ignore")
         skill_service = (
             PORTAL_PACKAGES
             / "sdkwork-clawrouter-pc-skills-hub"
@@ -2245,15 +1923,6 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             / "skillRuntime.ts"
         ).read_text(encoding="utf-8", errors="ignore")
 
-        self.assertIn("const items: SdkAppCatalogResponse['items']", app_service)
-        self.assertIn("items.map(normalizeAppApiRecord)", app_service)
-        self.assertIn("readRequiredRecord(value, 'App record is required')", app_runtime)
-        self.assertIn("readRequiredFirstString(item, ['id', 'appId', 'app_id', 'code'], 'App id is required')", app_runtime)
-        self.assertIn("readRequiredFirstString(item, ['name'], 'App name is required')", app_runtime)
-        self.assertIn("readRequiredFirstString(item, ['developer', 'provider', 'publisher'], 'App developer is required')", app_runtime)
-        self.assertIn("throw new Error(platformType ? `Unsupported app platform type: ${platformType}` : 'App platform type is required')", app_runtime)
-        self.assertIn("throw new Error(os ? `Unsupported app operating system: ${os}` : `App operating system is required for ${platformType}`)", app_runtime)
-
         self.assertIn("const items: SdkSkillsCatalogResponse['items']", skill_service)
         self.assertIn("items.map(normalizeSkillApiRecord)", skill_service)
         self.assertIn("readRequiredRecord(value, 'Skill record is required')", skill_runtime)
@@ -2263,26 +1932,15 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         self.assertIn("return value.map((item) => readRequiredRecord(item, 'Skill package record is required'))", skill_runtime)
 
         for relative_source, source in {
-            "appService.ts": app_service,
             "skillService.ts": skill_service,
-            "appRuntime.ts": app_runtime,
             "skillRuntime.ts": skill_runtime,
         }.items():
             self.assertNotIn(".filter(isRecord)", source, relative_source)
             self.assertNotIn("return value.filter(isRecord)", source, relative_source)
 
-        self.assertNotIn("return PLATFORM_TYPES.includes(platformType as PlatformType) ? (platformType as PlatformType) : 'Web';", app_runtime)
-        self.assertNotIn("return 'PC Web';", app_runtime)
         self.assertNotIn("return records.find(isRecord);", skill_runtime)
 
     def test_portal_catalog_detail_services_validate_sdk_path_ids(self) -> None:
-        app_service_path = (
-            PORTAL_PACKAGES
-            / "sdkwork-clawrouter-pc-app-center"
-            / "src"
-            / "services"
-            / "appService.ts"
-        )
         skill_service_path = (
             PORTAL_PACKAGES
             / "sdkwork-clawrouter-pc-skills-hub"
@@ -2290,15 +1948,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             / "services"
             / "skillService.ts"
         )
-        app_service = app_service_path.read_text(encoding="utf-8", errors="ignore")
         skill_service = skill_service_path.read_text(encoding="utf-8", errors="ignore")
-
-        self.assertIn("requiredSafePathSegment(id, 'appId')", app_service)
-        self.assertIn(".platform.apps.store.retrieve(requiredSafePathSegment(id, 'appId'))", app_service)
-        self.assertIn("readRequiredApiItem(result, 'App detail response is missing data')", app_service)
-        self.assertNotIn(".app.getAppById(id)", app_service)
-        self.assertNotIn(".app.getAppById", app_service)
-        self.assertNotIn("readApiItems(result).find", app_service)
 
         self.assertIn("requiredSafePathSegment(id, 'skillId')", skill_service)
         self.assertIn(".ecosystem.skills.retrieve(requiredSafePathSegment(id, 'skillId'))", skill_service)
@@ -2823,7 +2473,6 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             / "sdk-request-boundary.ts"
         )
         guarded_services = [
-            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-app-center" / "src" / "services" / "appService.ts",
             PORTAL_PACKAGES / "sdkwork-clawrouter-pc-skills-hub" / "src" / "services" / "skillService.ts",
             PORTAL_PACKAGES / "sdkwork-clawrouter-pc-console-usage" / "src" / "usageService.ts",
             PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-record" / "src" / "recordService.ts",

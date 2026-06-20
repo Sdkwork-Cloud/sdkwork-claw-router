@@ -54,15 +54,12 @@ const client = new SdkworkBackendClient({
 
 ## API Modules
 
-- `client.agents` - agents API
 - `client.ai` - ai API
 - `client.content` - content API
-- `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.integration` - integration API
 - `client.mcp` - mcp API
 - `client.messaging` - messaging API
-- `client.platform` - platform API
 - `client.prompts` - prompts API
 - `client.serviceProviders` - service_providers API
 - `client.sites` - sites API
@@ -70,21 +67,6 @@ const client = new SdkworkBackendClient({
 - `client.system` - system API
 
 ## Usage Examples
-
-### agents
-
-```typescript
-// List managed agents
-const params = {
-  q: 'q',
-  owner_user_id: 'owner_user_id',
-  status: 'active',
-  visibility: 'private',
-  page: 'page',
-  page_size: 'page_size',
-};
-const result = await client.agents.agentDefinitions.list(params);
-```
 
 ### ai
 
@@ -98,13 +80,6 @@ const result = await client.ai.channelGroups.list();
 ```typescript
 // List announcements
 const result = await client.content.announcements.list();
-```
-
-### ecosystem
-
-```typescript
-// List skill categories
-const result = await client.ecosystem.skills.categories.list();
 ```
 
 ### iam
@@ -151,13 +126,6 @@ const params = {
   provider_code: 'provider_code',
 };
 const result = await client.messaging.providerAccounts.list(params);
-```
-
-### platform
-
-```typescript
-// List app categories
-const result = await client.platform.apps.categories.list();
 ```
 
 ### prompts

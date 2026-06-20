@@ -7,15 +7,12 @@ import (
 
 type SdkworkBackendClient struct {
     http *sdkhttp.Client
-    Agents *api.AgentsApi
     Ai *api.AiApi
     Content *api.ContentApi
-    Ecosystem *api.EcosystemApi
     Iam *api.IamApi
     Integration *api.IntegrationApi
     Mcp *api.McpApi
     Messaging *api.MessagingApi
-    Platform *api.PlatformApi
     Prompts *api.PromptsApi
     ServiceProviders *api.ServiceProvidersApi
     Sites *api.SitesApi
@@ -32,15 +29,12 @@ func NewSdkworkBackendClientWithConfig(config sdkhttp.Config) *SdkworkBackendCli
     client := sdkhttp.NewClient(config)
     return &SdkworkBackendClient{
         http: client,
-        Agents: api.NewAgentsApi(client),
         Ai: api.NewAiApi(client),
         Content: api.NewContentApi(client),
-        Ecosystem: api.NewEcosystemApi(client),
         Iam: api.NewIamApi(client),
         Integration: api.NewIntegrationApi(client),
         Mcp: api.NewMcpApi(client),
         Messaging: api.NewMessagingApi(client),
-        Platform: api.NewPlatformApi(client),
         Prompts: api.NewPromptsApi(client),
         ServiceProviders: api.NewServiceProvidersApi(client),
         Sites: api.NewSitesApi(client),

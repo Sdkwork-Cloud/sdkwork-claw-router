@@ -3,11 +3,20 @@ package com.sdkwork.clawrouter.backend.model;
 import java.util.List;
 
 public class AdminDashboardDataResponse {
+    private String activeUsers;
     private List<AdminPieChartItem> modelDistribution;
     private List<AdminPieChartItem> multimodal;
     private List<AdminDashboardRecentUsageItem> recentUsage;
     private List<AdminDashboardTrafficItem> traffic;
     private List<AdminPieChartItem> userConsumption;
+
+    public String getActiveUsers() {
+        return this.activeUsers;
+    }
+
+    public void setActiveUsers(String activeUsers) {
+        this.activeUsers = activeUsers;
+    }
 
     public List<AdminPieChartItem> getModelDistribution() {
         return this.modelDistribution;
