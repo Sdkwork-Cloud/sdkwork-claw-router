@@ -33,7 +33,6 @@ mod app_chat_store;
 mod app_gateway_traces_read_store;
 mod app_generation_history_read_store;
 mod app_iam_directory_read_store;
-mod app_memory_store;
 mod app_notification_store;
 mod app_providers_read_store;
 mod app_routing_channel_command_store;
@@ -289,11 +288,6 @@ pub use app_iam_directory_read_store::{
     AppIamDirectoryReadStore, AppIamDirectorySubject, AppIamOrganizationItem,
     AppIamOrganizationMembershipItem, AppIamOrganizationTreeItem, AppIamPositionAssignmentItem,
     AppIamPositionItem, AppIamRoleBindingItem,
-};
-pub use app_memory_store::{
-    AppMemoryEntryItem, AppMemoryEntryList, AppMemoryFuture, AppMemorySpaceItem,
-    AppMemorySpaceList, AppMemoryStore, AppMemorySubject, CreateAppMemoryEntryCommand,
-    CreateAppMemorySpaceCommand,
 };
 pub use app_notification_store::{
     AcknowledgeAppNotificationCommand, AppNotificationFuture, AppNotificationItem,

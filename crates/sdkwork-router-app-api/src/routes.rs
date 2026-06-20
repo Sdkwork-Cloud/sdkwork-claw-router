@@ -35,7 +35,7 @@ use sdkwork_claw_product::infrastructure::sql::pool::{
 use sdkwork_claw_product::infrastructure::sql::postgres::{
     PostgresAppAgentRegistryStore, PostgresAppAgentRunStore, PostgresAppAgentSessionStore,
     PostgresAppChatStore, PostgresAppGatewayTracesReadStore, PostgresAppGenerationHistoryReadStore,
-    PostgresAppMemoryStore, PostgresAppNotificationStore, PostgresAppProvidersReadStore,
+PostgresAppNotificationStore, PostgresAppProvidersReadStore,
     PostgresAppRoutingChannelCommandStore, PostgresAppRoutingReadStore,
     PostgresAppRoutingStrategyStore, PostgresAppRuntimeStore, PostgresAppSkillsReadStore,
     PostgresAppStoreReadStore, PostgresCatalogLoadError, PostgresCourseApplicationCommandStore,
@@ -48,7 +48,7 @@ use sdkwork_claw_product::infrastructure::sql::postgres::{
 use sdkwork_claw_product::infrastructure::sql::sqlite::{
     SqlCatalogLoadError, SqliteAppAgentRegistryStore, SqliteAppAgentRunStore,
     SqliteAppAgentSessionStore, SqliteAppChatStore, SqliteAppGatewayTracesReadStore,
-    SqliteAppGenerationHistoryReadStore, SqliteAppMemoryStore, SqliteAppNotificationStore,
+    SqliteAppGenerationHistoryReadStore, SqliteAppNotificationStore,
     SqliteAppProvidersReadStore, SqliteAppRoutingChannelCommandStore, SqliteAppRoutingReadStore,
     SqliteAppRoutingStrategyStore, SqliteAppRuntimeStore, SqliteAppSkillsReadStore,
     SqliteAppStoreReadStore, SqliteCourseApplicationCommandStore, SqliteDashboardOverviewReadStore,
@@ -66,7 +66,7 @@ use sdkwork_claw_product::ports::PricingCatalog;
 use sdkwork_claw_product::ports::{
     AdminAuthSettingsStore, AppAgentRegistryStore, AppAgentRunStore, AppAgentSessionStore,
     AppAuthStore, AppChatStore, AppGatewayTracesReadStore, AppGenerationHistoryReadStore,
-    AppMemoryStore, AppNotificationStore, AppProvidersReadStore, AppRoutingChannelCommandStore,
+AppNotificationStore, AppProvidersReadStore, AppRoutingChannelCommandStore,
     AppRoutingReadStore, AppRoutingStrategyStore, AppRuntimeStore, AppSessionEventStore,
     AppSkillsCommandStore, AppSkillsReadStore, AppStoreReadStore, DashboardOverviewReadStore,
     ForumCommentCommandStore, ForumCommentReadStore, ForumFeedCommandStore, ForumFeedReadStore,
@@ -98,7 +98,6 @@ type AppGenerationHistoryStore = Arc<dyn AppGenerationHistoryReadStore + Send + 
 type AppChatRuntimeStore = Arc<dyn AppChatStore + Send + Sync>;
 type AppAgentSessionRuntimeStore = Arc<dyn AppAgentSessionStore + Send + Sync>;
 type AppAgentRunRuntimeStore = Arc<dyn AppAgentRunStore + Send + Sync>;
-type AppMemoryRuntimeStore = Arc<dyn AppMemoryStore + Send + Sync>;
 type AppRuntimeRuntimeStore = Arc<dyn AppRuntimeStore + Send + Sync>;
 type AppRuntimeExecutionCatalog = Arc<RefreshableSqlPricingCatalog>;
 type AppRuntimeChatStreamRelay = Arc<dyn ChatCompletionStreamRelay + Send + Sync>;
@@ -173,7 +172,6 @@ pub fn router() -> Router {
     .merge(sdkwork_claw_product::api::app_agent_registry_router())
     .merge(sdkwork_claw_product::api::app_agent_session_router())
     .merge(sdkwork_claw_product::api::app_agent_run_router())
-    .merge(sdkwork_claw_product::api::app_memory_router())
     .merge(sdkwork_claw_product::api::app_runtime_router())
     .merge(sdkwork_claw_product::api::app_store_router())
     .merge(sdkwork_claw_product::api::app_skills_router())
@@ -282,7 +280,6 @@ where
     .merge(sdkwork_claw_product::api::app_agent_registry_router())
     .merge(sdkwork_claw_product::api::app_agent_session_router())
     .merge(sdkwork_claw_product::api::app_agent_run_router())
-    .merge(sdkwork_claw_product::api::app_memory_router())
     .merge(sdkwork_claw_product::api::app_runtime_router())
     .merge(sdkwork_claw_product::api::app_store_router())
     .merge(sdkwork_claw_product::api::app_skills_router())
@@ -519,7 +516,6 @@ fn router_with_runtime_stores_and_database_status(
     app_agent_registry_store: Option<AppAgentRegistryRuntimeStore>,
     app_agent_session_store: Option<AppAgentSessionRuntimeStore>,
     app_agent_run_store: Option<AppAgentRunRuntimeStore>,
-    app_memory_store: Option<AppMemoryRuntimeStore>,
     app_runtime_store: Option<AppRuntimeRuntimeStore>,
     app_runtime_execution_catalog: Option<AppRuntimeExecutionCatalog>,
     app_runtime_chat_stream_relay: Option<AppRuntimeChatStreamRelay>,
@@ -672,16 +668,6 @@ fn router_with_runtime_stores_and_database_status(
             subject_boundary_config.clone(),
         )),
         None => router.merge(sdkwork_claw_product::api::app_agent_run_router()),
-    };
-    router = match app_memory_store {
-        Some(store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
-            sdkwork_claw_product::api::app_memory_router_with_store(
-                store,
-                Arc::clone(&entity_uuid_generator),
-            ),
-            subject_boundary_config.clone(),
-        )),
-        None => router.merge(sdkwork_claw_product::api::app_memory_router()),
     };
     router = match app_runtime_store {
         Some(store) => {
@@ -907,7 +893,6 @@ pub async fn router_with_sqlite_product_catalog(
     let app_agent_registry_store = Arc::new(SqliteAppAgentRegistryStore::new(pool.clone()));
     let app_agent_session_store = Arc::new(SqliteAppAgentSessionStore::new(pool.clone()));
     let app_agent_run_store = Arc::new(SqliteAppAgentRunStore::new(pool.clone()));
-    let app_memory_store = Arc::new(SqliteAppMemoryStore::new(pool.clone()));
     let app_runtime_store = Arc::new(SqliteAppRuntimeStore::new(pool.clone()));
     let app_store_read_store = Arc::new(SqliteAppStoreReadStore::new(pool.clone()));
     let app_skills_store = Arc::new(SqliteAppSkillsReadStore::new(pool.clone()));
@@ -950,7 +935,6 @@ pub async fn router_with_sqlite_product_catalog(
         Some(app_agent_registry_store),
         Some(app_agent_session_store),
         Some(app_agent_run_store),
-        Some(app_memory_store),
         Some(app_runtime_store),
         None,
         None,
@@ -1014,7 +998,6 @@ pub async fn router_with_postgres_product_catalog(
     let app_agent_registry_store = Arc::new(PostgresAppAgentRegistryStore::new(pool.clone()));
     let app_agent_session_store = Arc::new(PostgresAppAgentSessionStore::new(pool.clone()));
     let app_agent_run_store = Arc::new(PostgresAppAgentRunStore::new(pool.clone()));
-    let app_memory_store = Arc::new(PostgresAppMemoryStore::new(pool.clone()));
     let app_runtime_store = Arc::new(PostgresAppRuntimeStore::new(pool.clone()));
     let app_store_read_store = Arc::new(PostgresAppStoreReadStore::new(pool.clone()));
     let app_skills_store = Arc::new(PostgresAppSkillsReadStore::new(pool.clone()));
@@ -1057,7 +1040,6 @@ pub async fn router_with_postgres_product_catalog(
         Some(app_agent_registry_store),
         Some(app_agent_session_store),
         Some(app_agent_run_store),
-        Some(app_memory_store),
         Some(app_runtime_store),
         None,
         None,
@@ -1132,7 +1114,6 @@ pub async fn router_with_sqlite_shared_runtime(
     let app_agent_registry_store = Arc::new(SqliteAppAgentRegistryStore::new(pool.clone()));
     let app_agent_session_store = Arc::new(SqliteAppAgentSessionStore::new(pool.clone()));
     let app_agent_run_store = Arc::new(SqliteAppAgentRunStore::new(pool.clone()));
-    let app_memory_store = Arc::new(SqliteAppMemoryStore::new(pool.clone()));
     let app_runtime_store = Arc::new(SqliteAppRuntimeStore::new(pool.clone()));
     let app_store_read_store = Arc::new(SqliteAppStoreReadStore::new(pool.clone()));
     let app_skills_store = Arc::new(SqliteAppSkillsReadStore::new(pool.clone()));
@@ -1184,7 +1165,6 @@ pub async fn router_with_sqlite_shared_runtime(
         Some(app_agent_registry_store),
         Some(app_agent_session_store),
         Some(app_agent_run_store),
-        Some(app_memory_store),
         Some(app_runtime_store),
         Some(catalog),
         None,
@@ -1260,7 +1240,6 @@ pub async fn router_with_postgres_shared_runtime(
     let app_agent_registry_store = Arc::new(PostgresAppAgentRegistryStore::new(pool.clone()));
     let app_agent_session_store = Arc::new(PostgresAppAgentSessionStore::new(pool.clone()));
     let app_agent_run_store = Arc::new(PostgresAppAgentRunStore::new(pool.clone()));
-    let app_memory_store = Arc::new(PostgresAppMemoryStore::new(pool.clone()));
     let app_runtime_store = Arc::new(PostgresAppRuntimeStore::new(pool.clone()));
     let app_store_read_store = Arc::new(PostgresAppStoreReadStore::new(pool.clone()));
     let app_skills_store = Arc::new(PostgresAppSkillsReadStore::new(pool.clone()));
@@ -1312,7 +1291,6 @@ pub async fn router_with_postgres_shared_runtime(
         Some(app_agent_registry_store),
         Some(app_agent_session_store),
         Some(app_agent_run_store),
-        Some(app_memory_store),
         Some(app_runtime_store),
         Some(catalog),
         None,
@@ -1570,8 +1548,7 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
             let app_agent_registry_store = Arc::new(SqliteAppAgentRegistryStore::new(pool.clone()));
             let app_agent_session_store = Arc::new(SqliteAppAgentSessionStore::new(pool.clone()));
             let app_agent_run_store = Arc::new(SqliteAppAgentRunStore::new(pool.clone()));
-            let app_memory_store = Arc::new(SqliteAppMemoryStore::new(pool.clone()));
-            let app_runtime_store = Arc::new(SqliteAppRuntimeStore::new(pool.clone()));
+                    let app_runtime_store = Arc::new(SqliteAppRuntimeStore::new(pool.clone()));
             let app_store_read_store = Arc::new(SqliteAppStoreReadStore::new(pool.clone()));
             let app_skills_store = Arc::new(SqliteAppSkillsReadStore::new(pool.clone()));
             let course_application_command_store =
@@ -1629,8 +1606,7 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 Some(app_agent_registry_store),
                 Some(app_agent_session_store),
                 Some(app_agent_run_store),
-                Some(app_memory_store),
-                Some(app_runtime_store),
+                        Some(app_runtime_store),
                 Some(app_runtime_execution_catalog),
                 None,
                 Some(Arc::clone(&app_runtime_gateway_client)),
@@ -1724,8 +1700,7 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 Arc::new(PostgresAppAgentRegistryStore::new(pool.clone()));
             let app_agent_session_store = Arc::new(PostgresAppAgentSessionStore::new(pool.clone()));
             let app_agent_run_store = Arc::new(PostgresAppAgentRunStore::new(pool.clone()));
-            let app_memory_store = Arc::new(PostgresAppMemoryStore::new(pool.clone()));
-            let app_runtime_store = Arc::new(PostgresAppRuntimeStore::new(pool.clone()));
+                    let app_runtime_store = Arc::new(PostgresAppRuntimeStore::new(pool.clone()));
             let app_store_read_store = Arc::new(PostgresAppStoreReadStore::new(pool.clone()));
             let app_skills_store = Arc::new(PostgresAppSkillsReadStore::new(pool.clone()));
             let course_application_command_store =
@@ -1786,8 +1761,7 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 Some(app_agent_registry_store),
                 Some(app_agent_session_store),
                 Some(app_agent_run_store),
-                Some(app_memory_store),
-                Some(app_runtime_store),
+                        Some(app_runtime_store),
                 Some(app_runtime_execution_catalog),
                 None,
                 Some(Arc::clone(&app_runtime_gateway_client)),

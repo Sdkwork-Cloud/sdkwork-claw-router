@@ -156,7 +156,6 @@ frontend_operations:
   - ai_chat_message_part
   - ai_runtime_invocation
   - ai_runtime_usage_link
-  - ai_memory_event
   file_targets: []
 - route: /playground
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
@@ -172,7 +171,6 @@ frontend_operations:
   read_sources:
   - ai_chat_conversation
   - ai_agent_session
-  - ai_memory_space
   query_parameters:
   - name: page
     schema:
@@ -280,10 +278,8 @@ frontend_operations:
   description: Creates a first-class chat conversation that can be linked to agents, memory spaces, and runtime invocations.
   read_sources:
   - ai_agent_session
-  - ai_memory_space
   write_tables:
   - ai_chat_conversation
-  - ai_memory_space_binding
   idempotency_required: true
   request_schema:
     name: ChatConversationCreateRequest
@@ -336,7 +332,6 @@ frontend_operations:
   read_sources:
   - ai_chat_conversation
   - ai_agent_session
-  - ai_memory_space
   path_params:
   - conversationId
   query_parameters: []
@@ -514,8 +509,6 @@ frontend_operations:
   read_sources:
   - ai_chat_conversation
   - ai_agent_session
-  - ai_memory_space
-  - ai_memory_entry
   write_tables:
   - ai_chat_turn
   - ai_chat_item
@@ -526,7 +519,6 @@ frontend_operations:
   - ai_runtime_invocation_event
   - ai_runtime_usage_link
   - ai_runtime_artifact
-  - ai_memory_event
   path_params:
   - conversationId
   idempotency_required: true
@@ -645,7 +637,6 @@ frontend_operations:
   - ai_chat_message
   - ai_chat_message_part
   - ai_runtime_usage_link
-  - ai_memory_event
   path_params:
   - conversationId
   - turnId
