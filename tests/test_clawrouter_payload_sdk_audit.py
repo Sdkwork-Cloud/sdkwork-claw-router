@@ -1258,7 +1258,7 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                                 "kind": "read",
                                 "path_params": [],
                                 "source": "apps/portal/adminAppService.ts",
-                                "read_sources": ["platform_app"],
+                                "read_sources": ["appstore_app"],
                                 "write_tables": [],
                                 "request_body_required": False,
                                 "request_schema": {
@@ -1377,7 +1377,7 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                                 "kind": "read",
                                 "path_params": [],
                                 "source": "apps/portal/adminAppService.ts",
-                                "read_sources": ["platform_app"],
+                                "read_sources": ["appstore_app"],
                                 "write_tables": [],
                                 "request_body_required": False,
                                 "request_schema": {

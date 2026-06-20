@@ -200,7 +200,7 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
         release_schema = contract[contract.index("app_release_item:"):contract.index("app_catalog_item:")]
 
-        self.assertIn("- artifact", release_schema)
+        self.assertIn("required: [id, platformType, os, version, size, releaseDate, artifact]", release_schema)
         self.assertIn("artifact:\n        $ref: '#/components/schemas/MediaResource'", release_schema)
         self.assertNotIn("downloadUrl", release_schema)
         self.assertIn('"artifact":', openapi)
@@ -238,7 +238,7 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
             / "apps"
             / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-clawrouter-pc-app-center"
+            / "sdkwork-clawrouter-pc-admin-app"
             / "src"
             / "services"
             / "adminAppService.ts"
@@ -342,7 +342,7 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         self.assertIn("getClawRouterBackendSdkClient().platform.apps.publish", admin_service)
         self.assertIn("getClawRouterBackendSdkClient().platform.apps.unpublish", admin_service)
         self.assertIn("categoryId?: unknown;", admin_service)
-        self.assertIn("request.categoryId = positiveInteger(input.categoryId, 'categoryId'", admin_service)
+        self.assertIn("request.categoryId = String(positiveInteger(input.categoryId, 'categoryId'", admin_service)
         self.assertIn("readOptionalNonNegativeInteger", admin_service)
         self.assertIn("readOptionalBoolean", admin_service)
         self.assertNotIn("fetch(", admin_service)
@@ -413,7 +413,7 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
             / "apps"
             / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-clawrouter-pc-app-center"
+            / "sdkwork-clawrouter-pc-admin-app"
             / "src"
             / "services"
             / "adminAppService.ts"
@@ -423,7 +423,7 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
             / "apps"
             / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-clawrouter-pc-app-center"
+            / "sdkwork-clawrouter-pc-admin-app"
             / "src"
             / "pages"
             / "AppAdmin.tsx"
@@ -474,9 +474,9 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         )
 
         expected_contract_phrases = [
-            "Stable application identity from platform_app.config.standard.appKey when present; falls back to platform_app.id only when appKey is absent.",
+            "Stable application identity from appstore_app.config.standard.appKey when present; falls back to appstore_app.id only when appKey is absent.",
             "Returns public App Store entries where PlusApp runtime status is ACTIVE and config.portal.marketStatus is PUBLISHED.",
-            "Path parameter appId accepts either the stable appKey or numeric platform_app.id and applies the same ACTIVE/PUBLISHED and public organization_id = 0 visibility rules as getApps.",
+            "Path parameter appId accepts either the stable appKey or numeric appstore_app.id and applies the same ACTIVE/PUBLISHED and public organization_id = 0 visibility rules as getApps.",
         ]
 
         for expected in expected_contract_phrases:
@@ -495,7 +495,7 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
             / "apps"
             / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-clawrouter-pc-app-center"
+            / "sdkwork-clawrouter-pc-admin-app"
             / "src"
             / "pages"
             / "AppAdmin.tsx"
@@ -505,7 +505,7 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
             / "apps"
             / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-clawrouter-pc-app-center"
+            / "sdkwork-clawrouter-pc-admin-app"
             / "src"
             / "services"
             / "adminAppService.ts"
@@ -557,7 +557,7 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
             / "apps"
             / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-clawrouter-pc-app-center"
+            / "sdkwork-clawrouter-pc-admin-app"
             / "src"
             / "pages"
             / "AppAdmin.tsx"
@@ -590,7 +590,7 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
             / "apps"
             / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-clawrouter-pc-app-center"
+            / "sdkwork-clawrouter-pc-admin-app"
             / "src"
             / "pages"
             / "AppAdmin.tsx"
@@ -614,23 +614,26 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
             / "admin"
             / "core-navigation.ts"
         ).read_text(encoding="utf-8")
-        app_center_index = (
+        admin_app_index = (
             portal
             / "packages"
-            / "sdkwork-clawrouter-pc-app-center"
+            / "sdkwork-clawrouter-pc-admin-app"
             / "src"
-            / "index.ts"
+            / "index.tsx"
         ).read_text(encoding="utf-8")
 
         self.assertIn(
-            "const AppAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-app-center'), 'AppAdmin');",
+            "const AppAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-app'), 'AppAdmin');",
             app_source,
         )
         self.assertIn('<Route path="app" element={<AppAdmin />} />', app_source)
         self.assertIn("defaultPath: '/admin/app'", admin_registry_source)
         self.assertIn("itemBlock({ path: '/admin/app', labelKey: 'admin.menu.appStore', icon: Package })", admin_registry_source)
         self.assertIn('"admin.menu.appStore": "App Store"', core_navigation_source)
-        self.assertIn("export * from './pages/AppAdmin';", app_center_index)
+        self.assertIn("export * from './pages/AppAdmin';", admin_app_index)
+        self.assertNotIn("export * from './pages/AppAdmin';", (
+            portal / "packages" / "sdkwork-clawrouter-pc-app-center" / "src" / "index.ts"
+        ).read_text(encoding="utf-8"))
 
     def test_app_center_sdk_routes_have_retryable_error_states(self) -> None:
         package = (
@@ -868,23 +871,23 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         contract = (
             ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
         ).read_text(encoding="utf-8")
-        app_sdk_platform_app_record = (
+        app_sdk_app_catalog_item = (
             ROOT
             / "sdks"
             / "clawrouter-app-sdk"
             / "clawrouter-app-sdk-typescript"
             / "src"
             / "types"
-            / "plus-app-record.ts"
+            / "app-catalog-item.ts"
         ).read_text(encoding="utf-8")
-        backend_sdk_platform_app_record = (
+        backend_sdk_admin_app_item = (
             ROOT
             / "sdks"
             / "clawrouter-backend-sdk"
             / "clawrouter-backend-sdk-typescript"
             / "src"
             / "types"
-            / "plus-app-record.ts"
+            / "admin-app-item-response.ts"
         ).read_text(encoding="utf-8")
 
         self.assertIn("getClawRouterAppSdkClient().platform.apps.store.retrieve", app_service)
@@ -894,12 +897,13 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         self.assertIn("readMediaResourceUrl(release?.artifact)", app_runtime)
         self.assertNotIn("downloadUrl: readString(item, 'downloadUrl')", app_runtime)
         self.assertNotIn("downloadUrl: string", app_runtime)
-        for sdk_record in [app_sdk_platform_app_record, backend_sdk_platform_app_record]:
+        for sdk_record in [app_sdk_app_catalog_item, backend_sdk_admin_app_item]:
             self.assertIn("import type { MediaResource }", sdk_record)
-            self.assertIn("artifact?: MediaResource;", sdk_record)
+            self.assertIn("MediaResource", sdk_record)
             self.assertNotIn("download_url", sdk_record)
+            self.assertNotIn("downloadUrl", sdk_record)
         for token in (
-            "platform_app:",
+            "appstore_app:",
             "- icon_media_resource_id",
             "- icon_object_blob_id",
             "- icon_resource_snapshot",
@@ -940,18 +944,16 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         ]:
             self.assertNotIn(forbidden_fake_download, app_details)
 
-    def test_platform_app_registry_is_not_bound_to_legacy_java_media_url_contract(self) -> None:
-        registry = (ROOT / "docs" / "schema-registry" / "tables" / "003-legacy.yaml").read_text(
+    def test_appstore_app_registry_is_not_bound_to_legacy_java_media_url_contract(self) -> None:
+        registry = (ROOT / "docs" / "schema-registry" / "tables" / "029-platform.yaml").read_text(
             encoding="utf-8"
         )
-        platform_app_section = registry[
-            registry.index("- table: platform_app") : registry.index("- table: c_category")
+        appstore_app_section = registry[
+            registry.index("- table: appstore_app") : registry.index("- table: appstore_app_template")
         ]
-        self.assertIn("profile: router_owned_standard", platform_app_section)
-        self.assertIn("write_owner: sdkwork-claw-product", platform_app_section)
-        self.assertIn("compatibility_rule: canonical_media_resource_contract", platform_app_section)
-        self.assertNotIn("java_contract:", platform_app_section)
-        self.assertNotIn("keep_physical_structure_identical", platform_app_section)
+        self.assertIn("write_owner: sdkwork-appstore", appstore_app_section)
+        self.assertNotIn("icon_url", appstore_app_section)
+        self.assertNotIn("download_url", appstore_app_section)
 
         legacy_audit = json.loads(
             (ROOT / "generated" / "schema" / "legacy" / "java-legacy-contract-audit.json").read_text(
@@ -960,9 +962,9 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         )
         audited_tables = [item["table"] for item in legacy_audit.get("tables", [])]
         self.assertNotIn(
-            "platform_app",
+            "appstore_app",
             audited_tables,
-            "platform_app is router-owned now; Java legacy audit must not reintroduce icon_url/download_url.",
+            "appstore_app is appstore-owned; Java legacy audit must not reintroduce icon_url/download_url.",
         )
 
     def test_official_sdks_do_not_reintroduce_legacy_platform_app_media_url_fields(self) -> None:

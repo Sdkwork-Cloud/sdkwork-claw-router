@@ -10,11 +10,11 @@ frontend_operations:
   openapi_exposed: false
   sdk_domain: course
   read_sources:
-  - content_course
-  - content_course_relation
+  - course_catalog
+  - course_catalog_link
   - c_category
-  - content_comment
-  - content_reaction
+  - course_comment
+  - course_reaction
   query_parameters:
   - name: level
     schema:
@@ -249,10 +249,10 @@ frontend_operations:
   openapi_exposed: false
   sdk_domain: course
   read_sources:
-  - content_course
+  - course_catalog
   - c_category
-  - content_comment
-  - content_reaction
+  - course_comment
+  - course_reaction
   query_parameters: []
   response_schema:
     name: CourseOverview
@@ -328,7 +328,7 @@ frontend_operations:
   sdk_domain: course
   read_sources:
   - c_category
-  - content_course
+  - course_catalog
   query_parameters: []
   response_schema:
     name: CourseCategoryList
@@ -387,9 +387,9 @@ frontend_operations:
   api_path: /app/v3/api/courses/applications
   sdk_domain: course
   read_sources:
-  - content_course_application
+  - course_application
   write_tables:
-  - content_course_application
+  - course_application
   request_schema:
     name: CourseApplicationCreateRequest
     type: object
@@ -562,13 +562,13 @@ frontend_operations:
   openapi_exposed: false
   sdk_domain: course
   read_sources:
-  - content_course
-  - content_course_section
-  - content_course_lesson
-  - content_course_relation
+  - course_catalog
+  - course_section
+  - course_lesson
+  - course_catalog_link
   - c_category
-  - content_comment
-  - content_reaction
+  - course_comment
+  - course_reaction
   query_parameters: []
   response_schema:
     name: CourseDetail

@@ -6,13 +6,39 @@
   "displayName": "CLAW_ROUTER Database",
   "owner": "claw-router-platform",
   "engines": [
-    "postgres"
+    "postgres",
+    "sqlite"
   ],
   "defaultEngine": "postgres",
-  "tablePrefix": "claw_",
-  "contractVersion": "1.0.0",
+  "tablePrefix": "ai_",
+  "contractVersion": "1.1.0",
   "baselineStrategy": "baseline-plus-migrations",
-  "modules": [],
+  "modules": [
+    {
+      "moduleId": "appbase-iam",
+      "locator": "../sdkwork-appbase/database",
+      "order": 10,
+      "owner": "appbase-platform"
+    },
+    {
+      "moduleId": "commerce-core",
+      "locator": "../sdkwork-commerce/database",
+      "order": 20,
+      "owner": "commerce-platform"
+    },
+    {
+      "moduleId": "appstore",
+      "locator": "../sdkwork-appstore/database",
+      "order": 30,
+      "owner": "appstore-platform"
+    },
+    {
+      "moduleId": "course",
+      "locator": "../sdkwork-course/database",
+      "order": 40,
+      "owner": "course-platform"
+    }
+  ],
   "lifecycle": {
     "autoMigrate": true,
     "seedOnBoot": false,

@@ -45,7 +45,7 @@ schema_registry:
     - portal
   legacy_compatibility_guardrails:
     java_entity_first_required: false
-    rule: Greenfield v4.1 data model uses platform_, c_, ai_, and content_ tables as system of record; plus_* and studio_* legacy tables are retired.
+    rule: Greenfield composition model uses ai_, ops_, integration_, storage_, and c_ (skill/agent/mcp) as claw-router system of record. App center is owned by sdkwork-appstore (appstore_*). Courses are owned by sdkwork-course (course_*). IAM and commerce base tables are imported modules; plus_* and studio_* legacy tables are retired.
     protected_domains:
     - platform
     - classification
@@ -62,7 +62,7 @@ schema_registry:
     - sdkwork_account
     - sdkwork_refund
     - sdkwork_invoice
-    allowed_projection_exception: commerce_* base capability tables are provided by sdkwork-appbase; router-owned commerce_* tables may only add usage settlement, statement, export, and analytics projections.
+    allowed_projection_exception: commerce_* base capability tables are provided by sdkwork-appbase-commerce; router-owned commerce_* tables may only add usage settlement, statement, export, and analytics projections. platform_* and content_course* DDL is owned by sdkwork-appstore and sdkwork-course and must not be generated in claw-router schema.sql.
   common_column_groups:
     tenant_entity:
     - id
@@ -494,6 +494,7 @@ table_fragments:
 - tables/020-studio.yaml
 - tables/021-content.yaml
 - tables/029-platform.yaml
+- tables/033-course.yaml
 - tables/030-category.yaml
 - tables/031-ai-agent-skills.yaml
 - tables/032-content-forum.yaml

@@ -219,7 +219,7 @@ class SchemaManifestGeneratorTest(unittest.TestCase):
                 root,
                 """
                 tables:
-                  - table: platform_app
+                  - table: appstore_app
                     domain: legacy
                     generated_by_this_project: false
                     physical_columns:

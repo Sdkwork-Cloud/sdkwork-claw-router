@@ -24,7 +24,7 @@ async fn sqlite_app_store_reads_installed_seed_media_and_release_artifacts_by_ap
         item.screenshots
             .iter()
             .any(|resource| resource["publicUrl"] == "https://cdn.sdkwork.com/sdkwork-claw-router/media/desktop_windows-screenshot.png"),
-        "installed AppCenter read model must consume platform_app resource_list screenshots"
+        "installed AppCenter read model must consume appstore_app resource_list screenshots"
     );
     assert!(
         item.releases.iter().any(|release| release.artifact["publicUrl"]
@@ -32,7 +32,7 @@ async fn sqlite_app_store_reads_installed_seed_media_and_release_artifacts_by_ap
             && release.platform_type == "Web"
             && release.os == "PC Web"
             && release.version == "0.1.0"),
-        "installed AppCenter read model must consume platform_app install_config release packages"
+        "installed AppCenter read model must consume appstore_app install_config release packages"
     );
 }
 

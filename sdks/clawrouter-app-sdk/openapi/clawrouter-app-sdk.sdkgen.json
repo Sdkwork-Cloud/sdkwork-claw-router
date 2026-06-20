@@ -2034,7 +2034,7 @@
             "type": "array"
           },
           "id": {
-            "description": "Stable application identity from platform_app.config.standard.appKey when present; falls back to platform_app.id only when appKey is absent.",
+            "description": "Stable application identity from appstore_app.config.standard.appKey when present; falls back to appstore_app.id only when appKey is absent.",
             "maxLength": 128,
             "minLength": 1,
             "type": "string"
@@ -2255,7 +2255,7 @@
             "type": "array"
           },
           "id": {
-            "description": "Stable application identity from platform_app.config.standard.appKey when present; falls back to platform_app.id only when appKey is absent.",
+            "description": "Stable application identity from appstore_app.config.standard.appKey when present; falls back to appstore_app.id only when appKey is absent.",
             "maxLength": 128,
             "minLength": 1,
             "type": "string"
@@ -20869,7 +20869,7 @@
     },
     "/app/v3/api/platform/apps/store": {
       "get": {
-        "description": "Returns public App Store entries where PlusApp runtime status is ACTIVE and config.portal.marketStatus is PUBLISHED. Authenticated positive-organization app sessions may read same-tenant public organization_id = 0 app projections; tenant isolation is always enforced. Reads platform_app, c_category. Writes none. File targets none.",
+        "description": "Returns public App Store entries where PlusApp runtime status is ACTIVE and config.portal.marketStatus is PUBLISHED. Authenticated positive-organization app sessions may read same-tenant public organization_id = 0 app projections; tenant isolation is always enforced. Reads appstore_app, c_category. Writes none. File targets none.",
         "operationId": "apps.store.list",
         "parameters": [
           {
@@ -21070,7 +21070,7 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "platform_app",
+          "appstore_app",
           "c_category"
         ],
         "x-route-scope": "public",
@@ -21167,7 +21167,7 @@
     },
     "/app/v3/api/platform/apps/store/{appId}": {
       "get": {
-        "description": "Path parameter appId accepts either the stable appKey or numeric platform_app.id and applies the same ACTIVE/PUBLISHED and public organization_id = 0 visibility rules as getApps. Reads platform_app, c_category. Writes none. File targets none.",
+        "description": "Path parameter appId accepts either the stable appKey or numeric appstore_app.id and applies the same ACTIVE/PUBLISHED and public organization_id = 0 visibility rules as getApps. Reads appstore_app, c_category. Writes none. File targets none.",
         "operationId": "apps.store.retrieve",
         "parameters": [
           {
@@ -21245,7 +21245,7 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "platform_app",
+          "appstore_app",
           "c_category"
         ],
         "x-route-scope": "public",

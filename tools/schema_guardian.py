@@ -155,7 +155,8 @@ APPBASE_COMMERCE_LEGACY_ALIASES: dict[str, str] = {
 }
 
 V41_PLATFORM_LEGACY_ALIASES: dict[str, str] = {
-    "plus_app": "platform_app",
+    "plus_app": "appstore_app",
+    "platform_app": "appstore_app",
     "plus_category": "c_category",
     "plus_agent_skill": "ai_agent_skill",
     "plus_agent_skill_package": "ai_agent_skill_package",
@@ -167,7 +168,10 @@ V41_PLATFORM_LEGACY_ALIASES: dict[str, str] = {
     "plus_comments": "content_comment",
     "plus_favorite": "content_favorite",
     "plus_content_vote": "content_reaction",
-    "studio_app_template": "platform_app_template",
+    "studio_app_template": "appstore_app_template",
+    "platform_app_template": "appstore_app_template",
+    "platform_app_template_version": "appstore_app_template_version",
+    "platform_app_template_usage": "appstore_app_template_usage",
 }
 
 REQUIRED_TABLE_COLUMNS = {

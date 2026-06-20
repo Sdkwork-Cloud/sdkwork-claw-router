@@ -23,6 +23,112 @@ const APP_STORE_CATEGORY_TYPE: i32 = 999_999;
 const APP_STORE_CATEGORY_SCOPE: &str = "app_store";
 const APP_STORE_CATEGORY_GROUP: &str = "app-store";
 const MAX_RUNTIME_ID_ATTEMPTS: u8 = 16;
+const DEFAULT_APPSTORE_PUBLISHER_ID: &str = "appstore-publisher-default-20";
+const DEFAULT_APPSTORE_LOCALE: &str = "en-US";
+
+fn canonical_appstore_category_id(category_id: i64) -> String {
+    format!("appstore-category-{category_id}")
+}
+
+fn canonical_appstore_category_localization_id(category_id: i64) -> String {
+    format!("appstore-category-loc-{category_id}-en-us")
+}
+
+fn parse_canonical_appstore_category_id(canonical_id: &str) -> Option<i64> {
+    canonical_id
+        .strip_prefix("appstore-category-")
+        .and_then(|suffix| suffix.parse().ok())
+}
+
+fn optional_canonical_parent_category_id(parent_id: Option<i64>) -> Option<String> {
+    parent_id.map(canonical_appstore_category_id)
+}
+
+fn parse_optional_canonical_parent_category_id(parent_canonical_id: Option<String>) -> Option<i64> {
+    parent_canonical_id
+        .as_deref()
+        .and_then(parse_canonical_appstore_category_id)
+}
+
+fn category_status_to_appstore(status: i32) -> &'static str {
+    if status >= 1 {
+        "active"
+    } else {
+        "inactive"
+    }
+}
+
+fn category_status_from_appstore(status: &str) -> i32 {
+    match status {
+        "active" => 1,
+        "inactive" => 0,
+        "retired" => -1,
+        _ => 0,
+    }
+}
+
+fn tenant_id_to_appstore(tenant_id: i64) -> String {
+    tenant_id.to_string()
+}
+
+fn icon_from_media_resource_id(icon_media_resource_id: Option<String>) -> Option<serde_json::Value> {
+    icon_media_resource_id.filter(|value| !value.trim().is_empty()).map(|value| {
+        serde_json::json!({
+            "kind": "image",
+            "source": "media_resource",
+            "id": value,
+        })
+    })
+}
+
+const APPSTORE_APP_SELECT: &str = r#"
+    CAST(COALESCE(NULLIF(plus_app_id, ''), '0') AS INTEGER) AS id,
+    legacy_uuid AS uuid,
+    CAST(tenant_id AS INTEGER) AS tenant_id,
+    CAST(organization_id AS INTEGER) AS organization_id,
+    CAST(owner_user_id AS INTEGER) AS user_id,
+    display_name AS name,
+    description,
+    latest_released_version AS version,
+    CAST(icon AS TEXT) AS icon,
+    CAST(icon_resource_snapshot AS TEXT) AS icon_resource_snapshot,
+    CAST(resource_list AS TEXT) AS resource_list,
+    CAST(project_id AS INTEGER) AS project_id,
+    access_url,
+    CAST(config AS TEXT) AS config,
+    json_extract(config, '$.standard.appKey') AS app_key,
+    COALESCE(runtime_status, 1) AS status,
+    COALESCE(
+        NULLIF(json_extract(config, '$.portal.marketStatus'), ''),
+        NULLIF(json_extract(config, '$.marketStatus'), ''),
+        'DRAFT'
+    ) AS market_status,
+    app_type,
+    CAST(platforms AS TEXT) AS platforms,
+    CAST(install_platforms AS TEXT) AS install_platforms,
+    CAST(install_skill AS TEXT) AS install_skill,
+    CAST(install_config AS TEXT) AS install_config,
+    CAST(release_notes AS TEXT) AS release_notes,
+    package_name,
+    bundle_id,
+    store_url,
+    CAST(artifact_resource_snapshot AS TEXT) AS artifact_resource_snapshot,
+    CAST(created_at AS TEXT) AS created_at,
+    CAST(updated_at AS TEXT) AS updated_at
+"#;
+
+const APPSTORE_APP_SCOPE: &str = r#"
+    (
+        (
+            CAST(tenant_id AS INTEGER) = ?
+            AND (
+                CAST(organization_id AS INTEGER) = ?
+                OR (? > 0 AND CAST(organization_id AS INTEGER) = 0)
+            )
+        )
+        OR (CAST(tenant_id AS INTEGER) = ? AND CAST(organization_id AS INTEGER) = 0)
+    )
+"#;
 
 #[derive(Debug, Clone)]
 pub struct SqliteAdminAppStore {
@@ -585,26 +691,49 @@ async fn list_categories(
 ) -> DomainResult<Vec<AdminAppCategoryItem>> {
     let rows = sqlx::query(
         r#"
-        SELECT id, uuid, tenant_id, organization_id, name, description, code,
-               CAST(icon_resource_snapshot AS TEXT) AS icon_resource_snapshot,
-               COALESCE(sort_weight, 0) AS sort_weight,
-               parent_id, path, COALESCE(visible, 1) AS visible,
-               COALESCE(status, 1) AS status, category_type
-        FROM c_category
+        SELECT
+            cat.id AS canonical_category_id,
+            loc.id AS uuid,
+            CASE
+                WHEN cat.tenant_id = ?5 THEN ?3
+                ELSE CAST(cat.tenant_id AS INTEGER)
+            END AS tenant_id,
+            CASE
+                WHEN cat.tenant_id = ?5 THEN ?4
+                ELSE ?2
+            END AS organization_id,
+            loc.display_name AS name,
+            loc.description,
+            cat.category_code AS code,
+            cat.icon_media_resource_id,
+            cat.sort_order AS sort_weight,
+            cat.parent_category_id AS parent_canonical_id,
+            COALESCE('/app-store/' || cat.category_code, '') AS path,
+            CASE WHEN cat.category_status = 'active' THEN 1 ELSE 0 END AS visible,
+            CASE
+                WHEN cat.category_status = 'active' THEN 1
+                WHEN cat.category_status = 'inactive' THEN 0
+                ELSE -1
+            END AS status,
+            ?6 AS category_type
+        FROM appstore_category cat
+        INNER JOIN appstore_category_localization loc
+            ON loc.category_id = cat.id
+           AND loc.tenant_id = cat.tenant_id
+           AND loc.locale = ?7
         WHERE (
-              (tenant_id = ? AND organization_id = ?)
-              OR (tenant_id = ? AND organization_id = ?)
+              cat.tenant_id = CAST(?1 AS TEXT)
+              OR cat.tenant_id = ?5
           )
-          AND category_type = ?
-          AND COALESCE(status, 1) >= 0
+          AND cat.category_status <> 'retired'
         ORDER BY
             CASE
-                WHEN tenant_id = ? AND organization_id = ? THEN 0
-                WHEN tenant_id = ? AND organization_id = ? THEN 1
+                WHEN cat.tenant_id = CAST(?1 AS TEXT) THEN 0
+                WHEN cat.tenant_id = ?5 THEN 1
                 ELSE 2
             END,
-            COALESCE(sort_weight, 0) ASC,
-            id ASC
+            COALESCE(cat.sort_order, 0) ASC,
+            cat.id ASC
         LIMIT 500
         "#,
     )
@@ -612,11 +741,9 @@ async fn list_categories(
     .bind(query.subject.organization_id)
     .bind(PUBLIC_APP_STORE_TENANT_ID)
     .bind(PUBLIC_APP_STORE_ORGANIZATION_ID)
+    .bind(PUBLIC_APP_STORE_TENANT_ID.to_string())
     .bind(APP_STORE_CATEGORY_SCOPE)
-    .bind(query.subject.tenant_id)
-    .bind(query.subject.organization_id)
-    .bind(PUBLIC_APP_STORE_TENANT_ID)
-    .bind(PUBLIC_APP_STORE_ORGANIZATION_ID)
+    .bind(DEFAULT_APPSTORE_LOCALE)
     .fetch_all(pool)
     .await
     .map_err(|error| store_error("failed to list app categories", error))?;
@@ -650,21 +777,13 @@ async fn list_apps(pool: &SqlitePool, query: ListAdminAppsQuery) -> DomainResult
     let category_name = category.as_ref().map(|category| category.0.as_str());
     let category_code = category.as_ref().and_then(|category| category.1.as_deref());
     let total: i64 = sqlx::query_scalar(
-        r#"
+        &format!(
+            r#"
         SELECT COUNT(1)
-        FROM platform_app
-        WHERE (
-              (
-                  tenant_id = ?
-                  AND (
-                      organization_id = ?
-                      OR (? > 0 AND organization_id = 0)
-                  )
-              )
-              OR (tenant_id = ? AND organization_id = 0)
-          )
-          AND (? IS NULL OR name LIKE ? ESCAPE '\' OR COALESCE(description, '') LIKE ? ESCAPE '\' OR COALESCE(json_extract(config, '$.standard.appKey'), '') LIKE ? ESCAPE '\')
-          AND (? IS NULL OR COALESCE(status, 1) = ?)
+        FROM appstore_app
+        WHERE {APPSTORE_APP_SCOPE}
+          AND (? IS NULL OR display_name LIKE ? ESCAPE '\' OR COALESCE(description, '') LIKE ? ESCAPE '\' OR COALESCE(json_extract(config, '$.standard.appKey'), '') LIKE ? ESCAPE '\')
+          AND (? IS NULL OR COALESCE(runtime_status, 1) = ?)
           AND (? IS NULL OR COALESCE(NULLIF(json_extract(config, '$.portal.marketStatus'), ''), NULLIF(json_extract(config, '$.marketStatus'), ''), 'DRAFT') = ?)
           AND (? IS NULL OR app_type = ?)
           AND (
@@ -682,7 +801,8 @@ async fn list_apps(pool: &SqlitePool, query: ListAdminAppsQuery) -> DomainResult
                   replace(replace(COALESCE(app_type, ''), 'APP_', ''), '_', ' ')
               )) = lower(?))
           )
-        "#,
+        "#
+        )
     )
     .bind(query.subject.tenant_id)
     .bind(query.subject.organization_id)
@@ -706,42 +826,14 @@ async fn list_apps(pool: &SqlitePool, query: ListAdminAppsQuery) -> DomainResult
     .await
     .map_err(|error| store_error("failed to count apps", error))?;
     let rows = sqlx::query(
-        r#"
+        &format!(
+            r#"
         SELECT
-            id, uuid, tenant_id, organization_id, user_id, name, description, version,
-            CAST(icon AS TEXT) AS icon,
-            CAST(icon_resource_snapshot AS TEXT) AS icon_resource_snapshot,
-            CAST(resource_list AS TEXT) AS resource_list,
-            project_id, access_url, CAST(config AS TEXT) AS config,
-            json_extract(config, '$.standard.appKey') AS app_key,
-            COALESCE(status, 1) AS status,
-            COALESCE(
-                NULLIF(json_extract(config, '$.portal.marketStatus'), ''),
-                NULLIF(json_extract(config, '$.marketStatus'), ''),
-                'DRAFT'
-            ) AS market_status,
-            app_type, CAST(platforms AS TEXT) AS platforms,
-            CAST(install_platforms AS TEXT) AS install_platforms,
-            CAST(install_skill AS TEXT) AS install_skill,
-            CAST(install_config AS TEXT) AS install_config,
-            CAST(release_notes AS TEXT) AS release_notes,
-            package_name, bundle_id, store_url,
-            CAST(artifact_resource_snapshot AS TEXT) AS artifact_resource_snapshot,
-            CAST(created_at AS TEXT) AS created_at,
-            CAST(updated_at AS TEXT) AS updated_at
-        FROM platform_app
-        WHERE (
-              (
-                  tenant_id = ?
-                  AND (
-                      organization_id = ?
-                      OR (? > 0 AND organization_id = 0)
-                  )
-              )
-              OR (tenant_id = ? AND organization_id = 0)
-          )
-          AND (? IS NULL OR name LIKE ? ESCAPE '\' OR COALESCE(description, '') LIKE ? ESCAPE '\' OR COALESCE(json_extract(config, '$.standard.appKey'), '') LIKE ? ESCAPE '\')
-          AND (? IS NULL OR COALESCE(status, 1) = ?)
+            {APPSTORE_APP_SELECT}
+        FROM appstore_app
+        WHERE {APPSTORE_APP_SCOPE}
+          AND (? IS NULL OR display_name LIKE ? ESCAPE '\' OR COALESCE(description, '') LIKE ? ESCAPE '\' OR COALESCE(json_extract(config, '$.standard.appKey'), '') LIKE ? ESCAPE '\')
+          AND (? IS NULL OR COALESCE(runtime_status, 1) = ?)
           AND (? IS NULL OR COALESCE(NULLIF(json_extract(config, '$.portal.marketStatus'), ''), NULLIF(json_extract(config, '$.marketStatus'), ''), 'DRAFT') = ?)
           AND (? IS NULL OR app_type = ?)
           AND (
@@ -761,15 +853,16 @@ async fn list_apps(pool: &SqlitePool, query: ListAdminAppsQuery) -> DomainResult
           )
         ORDER BY
             CASE
-                WHEN tenant_id = ? AND organization_id = ? THEN 0
-                WHEN tenant_id = ? AND organization_id = 0 THEN 1
-                WHEN tenant_id = ? AND organization_id = 0 THEN 2
+                WHEN CAST(tenant_id AS INTEGER) = ? AND CAST(organization_id AS INTEGER) = ? THEN 0
+                WHEN CAST(tenant_id AS INTEGER) = ? AND CAST(organization_id AS INTEGER) = 0 THEN 1
+                WHEN CAST(tenant_id AS INTEGER) = ? AND CAST(organization_id AS INTEGER) = 0 THEN 2
                 ELSE 3
             END,
             COALESCE(updated_at, created_at) DESC,
-            id DESC
+            CAST(COALESCE(NULLIF(plus_app_id, ''), '0') AS INTEGER) DESC
         LIMIT ? OFFSET ?
-        "#,
+        "#
+        )
     )
     .bind(query.subject.tenant_id)
     .bind(query.subject.organization_id)
@@ -825,7 +918,7 @@ async fn list_app_templates(
     let total: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM platform_app_template
+        FROM appstore_app_template
         WHERE (
               (
                   tenant_id = ?
@@ -882,7 +975,7 @@ async fn list_app_templates(
             CAST(capability_manifest AS TEXT) AS capability_manifest,
             CAST(created_at AS TEXT) AS created_at,
             CAST(updated_at AS TEXT) AS updated_at
-        FROM platform_app_template
+        FROM appstore_app_template
         WHERE (
               (
                   tenant_id = ?
@@ -951,36 +1044,36 @@ async fn load_app_category_filter(
     tenant_id: i64,
     organization_id: i64,
 ) -> DomainResult<Option<(String, Option<String>)>> {
+    let canonical_id = canonical_appstore_category_id(category_id);
     let row = sqlx::query(
         r#"
-        SELECT name, code
-        FROM c_category
-        WHERE id = ?
+        SELECT loc.display_name AS name, cat.category_code AS code
+        FROM appstore_category cat
+        INNER JOIN appstore_category_localization loc
+            ON loc.category_id = cat.id
+           AND loc.tenant_id = cat.tenant_id
+           AND loc.locale = ?
+        WHERE cat.id = ?
           AND (
-              (tenant_id = ? AND organization_id = ?)
-              OR (tenant_id = ? AND organization_id = ?)
+              cat.tenant_id = CAST(? AS TEXT)
+              OR cat.tenant_id = ?
           )
-          AND category_type = ?
-          AND COALESCE(status, 1) >= 0
+          AND cat.category_status <> 'retired'
         ORDER BY
             CASE
-                WHEN tenant_id = ? AND organization_id = ? THEN 0
-                WHEN tenant_id = ? AND organization_id = ? THEN 1
+                WHEN cat.tenant_id = CAST(? AS TEXT) THEN 0
+                WHEN cat.tenant_id = ? THEN 1
                 ELSE 2
             END
         LIMIT 1
         "#,
     )
-    .bind(category_id)
+    .bind(DEFAULT_APPSTORE_LOCALE)
+    .bind(canonical_id)
     .bind(tenant_id)
-    .bind(organization_id)
-    .bind(PUBLIC_APP_STORE_TENANT_ID)
-    .bind(PUBLIC_APP_STORE_ORGANIZATION_ID)
-    .bind(APP_STORE_CATEGORY_SCOPE)
+    .bind(PUBLIC_APP_STORE_TENANT_ID.to_string())
     .bind(tenant_id)
-    .bind(organization_id)
-    .bind(PUBLIC_APP_STORE_TENANT_ID)
-    .bind(PUBLIC_APP_STORE_ORGANIZATION_ID)
+    .bind(PUBLIC_APP_STORE_TENANT_ID.to_string())
     .fetch_optional(pool)
     .await
     .map_err(|error| store_error("failed to load app category filter", error))?;
@@ -998,19 +1091,38 @@ async fn load_app_by_id(
     tenant_id: i64,
     organization_id: i64,
 ) -> DomainResult<Option<AdminAppItem>> {
-    let row = app_by_id_query()
-        .bind(id)
-        .bind(tenant_id)
-        .bind(organization_id)
-        .bind(organization_id)
-        .bind(PUBLIC_APP_STORE_TENANT_ID)
-        .bind(tenant_id)
-        .bind(organization_id)
-        .bind(tenant_id)
-        .bind(PUBLIC_APP_STORE_TENANT_ID)
-        .fetch_optional(pool)
-        .await
-        .map_err(|error| store_error("failed to load app", error))?;
+    let row = sqlx::query(
+        &format!(
+            r#"
+        SELECT
+            {APPSTORE_APP_SELECT}
+        FROM appstore_app
+        WHERE CAST(COALESCE(NULLIF(plus_app_id, ''), '0') AS INTEGER) = ?
+          AND {APPSTORE_APP_SCOPE}
+        ORDER BY
+            CASE
+                WHEN CAST(tenant_id AS INTEGER) = ? AND CAST(organization_id AS INTEGER) = ? THEN 0
+                WHEN CAST(tenant_id AS INTEGER) = ? AND CAST(organization_id AS INTEGER) = 0 THEN 1
+                WHEN CAST(tenant_id AS INTEGER) = ? AND CAST(organization_id AS INTEGER) = 0 THEN 2
+                ELSE 3
+            END,
+            CAST(COALESCE(NULLIF(plus_app_id, ''), '0') AS INTEGER) DESC
+        LIMIT 1
+        "#
+        ),
+    )
+    .bind(id)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(organization_id)
+    .bind(PUBLIC_APP_STORE_TENANT_ID)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(tenant_id)
+    .bind(PUBLIC_APP_STORE_TENANT_ID)
+    .fetch_optional(pool)
+    .await
+    .map_err(|error| store_error("failed to load app", error))?;
     row.map(app_from_row).transpose()
 }
 
@@ -1020,100 +1132,26 @@ async fn load_app_by_id_tx(
     tenant_id: i64,
     organization_id: i64,
 ) -> DomainResult<Option<AdminAppItem>> {
-    let row = app_by_id_owned_query()
-        .bind(id)
-        .bind(tenant_id)
-        .bind(organization_id)
-        .fetch_optional(&mut **tx)
-        .await
-        .map_err(|error| store_error("failed to load app", error))?;
+    let row = sqlx::query(
+        &format!(
+            r#"
+        SELECT
+            {APPSTORE_APP_SELECT}
+        FROM appstore_app
+        WHERE CAST(COALESCE(NULLIF(plus_app_id, ''), '0') AS INTEGER) = ?
+          AND CAST(tenant_id AS INTEGER) = ?
+          AND CAST(organization_id AS INTEGER) = ?
+        LIMIT 1
+        "#
+        ),
+    )
+    .bind(id)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to load app", error))?;
     row.map(app_from_row).transpose()
-}
-
-fn app_by_id_query() -> sqlx::query::Query<'static, Sqlite, sqlx::sqlite::SqliteArguments<'static>>
-{
-    sqlx::query(
-        r#"
-        SELECT
-            id, uuid, tenant_id, organization_id, user_id, name, description, version,
-            CAST(icon AS TEXT) AS icon,
-            CAST(icon_resource_snapshot AS TEXT) AS icon_resource_snapshot,
-            CAST(resource_list AS TEXT) AS resource_list,
-            project_id, access_url, CAST(config AS TEXT) AS config,
-            json_extract(config, '$.standard.appKey') AS app_key,
-            COALESCE(status, 1) AS status,
-            COALESCE(
-                NULLIF(json_extract(config, '$.portal.marketStatus'), ''),
-                NULLIF(json_extract(config, '$.marketStatus'), ''),
-                'DRAFT'
-            ) AS market_status,
-            app_type, CAST(platforms AS TEXT) AS platforms,
-            CAST(install_platforms AS TEXT) AS install_platforms,
-            CAST(install_skill AS TEXT) AS install_skill,
-            CAST(install_config AS TEXT) AS install_config,
-            CAST(release_notes AS TEXT) AS release_notes,
-            package_name, bundle_id, store_url,
-            CAST(artifact_resource_snapshot AS TEXT) AS artifact_resource_snapshot,
-            CAST(created_at AS TEXT) AS created_at,
-            CAST(updated_at AS TEXT) AS updated_at
-        FROM platform_app
-        WHERE id = ?
-          AND (
-              (
-                  tenant_id = ?
-                  AND (
-                      organization_id = ?
-                      OR (? > 0 AND organization_id = 0)
-                  )
-              )
-              OR (tenant_id = ? AND organization_id = 0)
-          )
-        ORDER BY
-            CASE
-                WHEN tenant_id = ? AND organization_id = ? THEN 0
-                WHEN tenant_id = ? AND organization_id = 0 THEN 1
-                WHEN tenant_id = ? AND organization_id = 0 THEN 2
-                ELSE 3
-            END,
-            id DESC
-        LIMIT 1
-        "#,
-    )
-}
-
-fn app_by_id_owned_query(
-) -> sqlx::query::Query<'static, Sqlite, sqlx::sqlite::SqliteArguments<'static>> {
-    sqlx::query(
-        r#"
-        SELECT
-            id, uuid, tenant_id, organization_id, user_id, name, description, version,
-            CAST(icon AS TEXT) AS icon,
-            CAST(icon_resource_snapshot AS TEXT) AS icon_resource_snapshot,
-            CAST(resource_list AS TEXT) AS resource_list,
-            project_id, access_url, CAST(config AS TEXT) AS config,
-            json_extract(config, '$.standard.appKey') AS app_key,
-            COALESCE(status, 1) AS status,
-            COALESCE(
-                NULLIF(json_extract(config, '$.portal.marketStatus'), ''),
-                NULLIF(json_extract(config, '$.marketStatus'), ''),
-                'DRAFT'
-            ) AS market_status,
-            app_type, CAST(platforms AS TEXT) AS platforms,
-            CAST(install_platforms AS TEXT) AS install_platforms,
-            CAST(install_skill AS TEXT) AS install_skill,
-            CAST(install_config AS TEXT) AS install_config,
-            CAST(release_notes AS TEXT) AS release_notes,
-            package_name, bundle_id, store_url,
-            CAST(artifact_resource_snapshot AS TEXT) AS artifact_resource_snapshot,
-            CAST(created_at AS TEXT) AS created_at,
-            CAST(updated_at AS TEXT) AS updated_at
-        FROM platform_app
-        WHERE id = ?
-          AND tenant_id = ?
-          AND organization_id = ?
-        LIMIT 1
-        "#,
-    )
 }
 
 async fn load_template_by_id(
@@ -1140,7 +1178,7 @@ async fn load_template_by_id(
             CAST(capability_manifest AS TEXT) AS capability_manifest,
             CAST(created_at AS TEXT) AS created_at,
             CAST(updated_at AS TEXT) AS updated_at
-        FROM platform_app_template
+        FROM appstore_app_template
         WHERE id = ?
           AND (
               (
@@ -1203,7 +1241,7 @@ async fn load_template_by_id_tx(
             CAST(capability_manifest AS TEXT) AS capability_manifest,
             CAST(created_at AS TEXT) AS created_at,
             CAST(updated_at AS TEXT) AS updated_at
-        FROM platform_app_template
+        FROM appstore_app_template
         WHERE id = ?
           AND tenant_id = ?
           AND organization_id = ?
@@ -1237,7 +1275,7 @@ async fn insert_app_template(
     let cover_resource_snapshot = cover.map(serde_json::Value::to_string);
     sqlx::query(
         r#"
-        INSERT INTO platform_app_template
+        INSERT INTO appstore_app_template
             (id, uuid, tenant_id, organization_id, data_scope, status, template_no, template_code,
              template_name, description, category_id, category_code, template_type, runtime,
              framework, language,
@@ -1336,7 +1374,7 @@ async fn update_app_template(
     let cover_resource_snapshot = cover.as_ref().map(serde_json::Value::to_string);
     sqlx::query(
         r#"
-        UPDATE platform_app_template
+        UPDATE appstore_app_template
         SET template_name = ?,
             description = ?,
             category_id = ?,
@@ -1477,7 +1515,7 @@ async fn set_app_template_publish_status(
     let publish_status = template_publish_status_code(&command.publish_status)?;
     let result = sqlx::query(
         r#"
-        UPDATE platform_app_template
+        UPDATE appstore_app_template
         SET publish_status = ?,
             published_at = CASE WHEN ? = 2 THEN ? ELSE published_at END,
             deprecated_at = CASE WHEN ? = 3 THEN ? ELSE deprecated_at END,
@@ -1510,7 +1548,7 @@ async fn delete_app_template(
 ) -> DomainResult<bool> {
     let result = sqlx::query(
         r#"
-        UPDATE platform_app_template
+        UPDATE appstore_app_template
         SET status = -1,
             deleted_at = ?,
             deleted_by = ?,
@@ -1549,58 +1587,84 @@ async fn insert_app(
     let status_code = app_status_code(&command.status)?;
     let market_status = app_market_status(&command.market_status)?;
     normalize_config(&mut config, command.app_key.as_deref(), Some(market_status))?;
+    let (app_status, distribution_status, review_status) =
+        appstore_lifecycle_fields(&command.status, market_status)?;
+    let app_key = resolve_app_key(&config, command.app_key.as_deref());
     let icon_resource = media_resource_from_value(&command.icon, "image");
-    let icon_media_resource_id = icon_resource.as_ref().map(media_resource_stable_id);
-    let icon_object_blob_id = icon_resource
-        .as_ref()
-        .and_then(media_resource_object_blob_id);
+    let icon_media_id = icon_resource.as_ref().map(media_resource_stable_id);
     let icon_resource_snapshot = icon_resource.as_ref().map(serde_json::Value::to_string);
     let artifact_resource = command
         .artifact
         .as_ref()
         .and_then(|artifact| media_resource_from_value(artifact, "archive"));
-    let artifact_media_resource_id = artifact_resource.as_ref().map(media_resource_stable_id);
-    let artifact_object_blob_id = artifact_resource
-        .as_ref()
-        .and_then(media_resource_object_blob_id);
     let artifact_resource_snapshot = artifact_resource.as_ref().map(serde_json::Value::to_string);
+    let runtime_family = config
+        .pointer("/standard/family")
+        .and_then(|value| value.as_str())
+        .unwrap_or("web");
+    let runtime_framework = config
+        .pointer("/standard/framework")
+        .and_then(|value| value.as_str())
+        .unwrap_or("unknown");
+    let app_type = command
+        .app_type
+        .as_deref()
+        .filter(|value| !value.trim().is_empty())
+        .unwrap_or("application");
     sqlx::query(
         r#"
-        INSERT INTO platform_app
-            (id, uuid, tenant_id, organization_id, data_scope, user_id, name, icon, resource_list, project_id, description, version, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, access_url, config, status, app_type, platforms, install_platforms, install_skill, install_config, release_notes, package_name, bundle_id, store_url, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot, created_at, updated_at)
+        INSERT INTO appstore_app
+            (id, tenant_id, organization_id, publisher_id, app_no, app_key, plus_app_id, plus_app_key,
+             app_slug, display_name, description, default_locale, app_type, runtime_family, runtime_framework,
+             app_status, distribution_status, review_status, monetization_mode, official_website_url,
+             icon_media_id, icon, icon_resource_snapshot, resource_list, access_url, config, runtime_status,
+             install_skill, install_config, install_platforms, platforms, release_notes, package_name,
+             bundle_id, store_url, artifact_resource_snapshot, legacy_uuid, owner_user_id, project_id,
+             latest_released_version, manifest_snapshot_json, created_at, updated_at)
         VALUES
-            (?, ?, ?, ?, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'free', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         "#,
     )
-    .bind(id)
-    .bind(&command.app_uuid)
-    .bind(command.subject.tenant_id)
-    .bind(command.subject.organization_id)
-    .bind(command.user_id)
+    .bind(canonical_appstore_app_id(id))
+    .bind(command.subject.tenant_id.to_string())
+    .bind(command.subject.organization_id.to_string())
+    .bind(DEFAULT_APPSTORE_PUBLISHER_ID)
+    .bind(&app_key)
+    .bind(&app_key)
+    .bind(id.to_string())
+    .bind(&app_key)
+    .bind(appstore_app_slug(&app_key))
     .bind(&command.name)
-    .bind(command.icon.to_string())
-    .bind(command.resource_list.to_string())
-    .bind(command.project_id)
     .bind(command.description.as_deref())
-    .bind(command.version.as_deref())
-    .bind(icon_media_resource_id)
-    .bind(icon_object_blob_id)
-    .bind(icon_resource_snapshot)
+    .bind(DEFAULT_APPSTORE_LOCALE)
+    .bind(app_type)
+    .bind(runtime_family)
+    .bind(runtime_framework)
+    .bind(app_status)
+    .bind(distribution_status)
+    .bind(review_status)
+    .bind(command.access_url.as_deref())
+    .bind(icon_media_id)
+    .bind(command.icon.to_string())
+    .bind(icon_resource_snapshot.unwrap_or_default())
+    .bind(command.resource_list.to_string())
     .bind(command.access_url.as_deref())
     .bind(config.to_string())
     .bind(status_code)
-    .bind(command.app_type.as_deref())
-    .bind(command.platforms.to_string())
-    .bind(command.install_platforms.to_string())
     .bind(command.install_skill.to_string())
     .bind(command.install_config.to_string())
+    .bind(command.install_platforms.to_string())
+    .bind(command.platforms.to_string())
     .bind(command.release_notes.to_string())
     .bind(command.package_name.as_deref())
     .bind(command.bundle_id.as_deref())
     .bind(command.store_url.as_deref())
-    .bind(artifact_media_resource_id)
-    .bind(artifact_object_blob_id)
-    .bind(artifact_resource_snapshot)
+    .bind(artifact_resource_snapshot.unwrap_or_default())
+    .bind(&command.app_uuid)
+    .bind(command.user_id.map(|value| value.to_string()))
+    .bind(command.project_id.map(|value| value.to_string()))
+    .bind(command.version.as_deref())
+    .bind("{}")
     .bind(&command.requested_at)
     .bind(&command.requested_at)
     .execute(&mut **tx)
@@ -1614,41 +1678,50 @@ async fn insert_category(
     command: &CreateAdminAppCategoryCommand,
 ) -> DomainResult<i64> {
     let id = next_category_assigned_id(tx, &command.category_uuid).await?;
+    let canonical_id = canonical_appstore_category_id(id);
+    let tenant_str = tenant_id_to_appstore(command.subject.tenant_id);
     let icon = command.icon.as_ref();
     let icon_media_resource_id = icon.map(media_resource_stable_id);
-    let icon_object_blob_id = icon.and_then(media_resource_object_blob_id);
-    let icon_resource_snapshot = icon.map(serde_json::Value::to_string);
     sqlx::query(
         r#"
-        INSERT INTO c_category
-            (id, uuid, tenant_id, organization_id, data_scope, category_type, name, description, code,
-             icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot,
-             sort_weight, parent_id, path, visible, status, created_at, updated_at)
+        INSERT INTO appstore_category
+            (id, tenant_id, category_code, parent_category_id, category_level, category_status,
+             sort_order, icon_media_resource_id, created_at, updated_at)
         VALUES
-            (?, ?, ?, ?, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            (?, ?, ?, ?, 1, ?, ?, ?, ?, ?)
         "#,
     )
-    .bind(id)
-    .bind(&command.category_uuid)
-    .bind(command.subject.tenant_id)
-    .bind(command.subject.organization_id)
-    .bind(APP_STORE_CATEGORY_SCOPE)
-    .bind(&command.name)
-    .bind(command.description.as_deref())
-    .bind(command.code.as_deref())
-    .bind(icon_media_resource_id)
-    .bind(icon_object_blob_id)
-    .bind(icon_resource_snapshot)
+    .bind(&canonical_id)
+    .bind(&tenant_str)
+    .bind(command.code.as_deref().unwrap_or_default())
+    .bind(optional_canonical_parent_category_id(command.parent_id))
+    .bind(category_status_to_appstore(command.status))
     .bind(command.sort_weight)
-    .bind(command.parent_id)
-    .bind(command.path.as_deref())
-    .bind(command.visible)
-    .bind(command.status)
+    .bind(icon_media_resource_id)
     .bind(&command.requested_at)
     .bind(&command.requested_at)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to create app category", error))?;
+    sqlx::query(
+        r#"
+        INSERT INTO appstore_category_localization
+            (id, tenant_id, category_id, locale, display_name, description, created_at, updated_at)
+        VALUES
+            (?, ?, ?, ?, ?, ?, ?, ?)
+        "#,
+    )
+    .bind(&command.category_uuid)
+    .bind(&tenant_str)
+    .bind(&canonical_id)
+    .bind(DEFAULT_APPSTORE_LOCALE)
+    .bind(&command.name)
+    .bind(command.description.as_deref())
+    .bind(&command.requested_at)
+    .bind(&command.requested_at)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to create app category localization", error))?;
     Ok(id)
 }
 
@@ -1658,24 +1731,43 @@ async fn load_category_by_id(
     tenant_id: i64,
     organization_id: i64,
 ) -> DomainResult<Option<AdminAppCategoryItem>> {
+    let canonical_id = canonical_appstore_category_id(category_id);
+    let tenant_str = tenant_id_to_appstore(tenant_id);
     let row = sqlx::query(
         r#"
-        SELECT id, uuid, tenant_id, organization_id, name, description, code,
-               CAST(icon_resource_snapshot AS TEXT) AS icon_resource_snapshot,
-               COALESCE(sort_weight, 0) AS sort_weight,
-               parent_id, path, COALESCE(visible, 1) AS visible,
-               COALESCE(status, 1) AS status, category_type
-        FROM c_category
-        WHERE id = ?
-          AND tenant_id = ?
-          AND organization_id = ?
-          AND category_type = ?
+        SELECT
+            cat.id AS canonical_category_id,
+            loc.id AS uuid,
+            CAST(cat.tenant_id AS INTEGER) AS tenant_id,
+            ? AS organization_id,
+            loc.display_name AS name,
+            loc.description,
+            cat.category_code AS code,
+            cat.icon_media_resource_id,
+            cat.sort_order AS sort_weight,
+            cat.parent_category_id AS parent_canonical_id,
+            COALESCE('/app-store/' || cat.category_code, '') AS path,
+            CASE WHEN cat.category_status = 'active' THEN 1 ELSE 0 END AS visible,
+            CASE
+                WHEN cat.category_status = 'active' THEN 1
+                WHEN cat.category_status = 'inactive' THEN 0
+                ELSE -1
+            END AS status,
+            ? AS category_type
+        FROM appstore_category cat
+        INNER JOIN appstore_category_localization loc
+            ON loc.category_id = cat.id
+           AND loc.tenant_id = cat.tenant_id
+           AND loc.locale = ?
+        WHERE cat.id = ?
+          AND cat.tenant_id = ?
         "#,
     )
-    .bind(category_id)
-    .bind(tenant_id)
     .bind(organization_id)
     .bind(APP_STORE_CATEGORY_SCOPE)
+    .bind(DEFAULT_APPSTORE_LOCALE)
+    .bind(canonical_id)
+    .bind(tenant_str)
     .fetch_optional(&mut **tx)
     .await
     .map_err(|error| store_error("failed to load app category", error))?;
@@ -1711,31 +1803,23 @@ async fn update_app(
         .clone()
         .unwrap_or_else(|| existing.icon.clone());
     let icon_resource = media_resource_from_value(&next_icon, "image");
-    let icon_media_resource_id = icon_resource.as_ref().map(media_resource_stable_id);
-    let icon_object_blob_id = icon_resource
-        .as_ref()
-        .and_then(media_resource_object_blob_id);
+    let icon_media_id = icon_resource.as_ref().map(media_resource_stable_id);
     let icon_resource_snapshot = icon_resource.as_ref().map(serde_json::Value::to_string);
     let artifact_resource = match &command.artifact {
         Some(Some(artifact)) => media_resource_from_value(artifact, "archive"),
         Some(None) => None,
         None => existing.artifact.clone(),
     };
-    let artifact_media_resource_id = artifact_resource.as_ref().map(media_resource_stable_id);
-    let artifact_object_blob_id = artifact_resource
-        .as_ref()
-        .and_then(media_resource_object_blob_id);
     let artifact_resource_snapshot = artifact_resource.as_ref().map(serde_json::Value::to_string);
     sqlx::query(
         r#"
-        UPDATE platform_app
-        SET user_id = ?,
-            name = ?,
+        UPDATE appstore_app
+        SET owner_user_id = ?,
+            display_name = ?,
             description = ?,
-            version = ?,
+            latest_released_version = ?,
             icon = ?,
-            icon_media_resource_id = ?,
-            icon_object_blob_id = ?,
+            icon_media_id = ?,
             icon_resource_snapshot = ?,
             resource_list = ?,
             project_id = ?,
@@ -1750,17 +1834,20 @@ async fn update_app(
             package_name = ?,
             bundle_id = ?,
             store_url = ?,
-            artifact_media_resource_id = ?,
-            artifact_object_blob_id = ?,
             artifact_resource_snapshot = ?,
             updated_at = ?,
-            v = COALESCE(v, 0) + 1
-        WHERE id = ?
-          AND tenant_id = ?
-          AND organization_id = ?
+            version = COALESCE(version, 0) + 1
+        WHERE CAST(COALESCE(NULLIF(plus_app_id, ''), '0') AS INTEGER) = ?
+          AND CAST(tenant_id AS INTEGER) = ?
+          AND CAST(organization_id AS INTEGER) = ?
         "#,
     )
-    .bind(command.user_id.unwrap_or(existing.user_id))
+    .bind(
+        command
+            .user_id
+            .unwrap_or(existing.user_id)
+            .map(|value| value.to_string()),
+    )
     .bind(command.name.as_deref().unwrap_or(existing.name.as_str()))
     .bind(
         command
@@ -1772,8 +1859,7 @@ async fn update_app(
     )
     .bind(command.version.clone().unwrap_or(existing.version))
     .bind(next_icon.to_string())
-    .bind(icon_media_resource_id)
-    .bind(icon_object_blob_id)
+    .bind(icon_media_id)
     .bind(icon_resource_snapshot)
     .bind(
         command
@@ -1782,7 +1868,12 @@ async fn update_app(
             .unwrap_or(existing.resource_list)
             .to_string(),
     )
-    .bind(command.project_id.unwrap_or(existing.project_id))
+    .bind(
+        command
+            .project_id
+            .unwrap_or(existing.project_id)
+            .map(|value| value.to_string()),
+    )
     .bind(command.access_url.clone().unwrap_or(existing.access_url))
     .bind(config.to_string())
     .bind(command.app_type.clone().unwrap_or(existing.app_type))
@@ -1829,9 +1920,7 @@ async fn update_app(
     )
     .bind(command.bundle_id.clone().unwrap_or(existing.bundle_id))
     .bind(command.store_url.clone().unwrap_or(existing.store_url))
-    .bind(artifact_media_resource_id)
-    .bind(artifact_object_blob_id)
-    .bind(artifact_resource_snapshot)
+    .bind(artifact_resource_snapshot.unwrap_or_default())
     .bind(&command.requested_at)
     .bind(command.app_id)
     .bind(command.subject.tenant_id)
@@ -1851,32 +1940,21 @@ async fn update_category(
             "app category parent cannot reference itself",
         ));
     }
-    let result = sqlx::query(
+    let canonical_id = canonical_appstore_category_id(command.category_id);
+    let tenant_str = tenant_id_to_appstore(command.subject.tenant_id);
+    let category_updated = sqlx::query(
         r#"
-        UPDATE c_category
-        SET name = CASE WHEN ? THEN ? ELSE name END,
-            description = CASE WHEN ? THEN ? ELSE description END,
-            code = CASE WHEN ? THEN ? ELSE code END,
+        UPDATE appstore_category
+        SET category_code = CASE WHEN ? THEN ? ELSE category_code END,
             icon_media_resource_id = CASE WHEN ? THEN ? ELSE icon_media_resource_id END,
-            icon_object_blob_id = CASE WHEN ? THEN ? ELSE icon_object_blob_id END,
-            icon_resource_snapshot = CASE WHEN ? THEN ? ELSE icon_resource_snapshot END,
-            sort_weight = CASE WHEN ? THEN ? ELSE sort_weight END,
-            parent_id = CASE WHEN ? THEN ? ELSE parent_id END,
-            path = CASE WHEN ? THEN ? ELSE path END,
-            visible = CASE WHEN ? THEN ? ELSE visible END,
-            status = CASE WHEN ? THEN ? ELSE status END,
-            updated_at = ?,
-            v = COALESCE(v, 0) + 1
+            sort_order = CASE WHEN ? THEN ? ELSE sort_order END,
+            parent_category_id = CASE WHEN ? THEN ? ELSE parent_category_id END,
+            category_status = CASE WHEN ? THEN ? ELSE category_status END,
+            updated_at = ?
         WHERE id = ?
           AND tenant_id = ?
-          AND organization_id = ?
-          AND category_type = ?
         "#,
     )
-    .bind(command.name.is_some())
-    .bind(command.name.as_deref())
-    .bind(command.description.is_some())
-    .bind(command.description.clone().flatten())
     .bind(command.code.is_some())
     .bind(command.code.clone().flatten())
     .bind(command.icon.is_some())
@@ -1887,41 +1965,46 @@ async fn update_category(
             .and_then(|value| value.as_ref())
             .map(media_resource_stable_id),
     )
-    .bind(command.icon.is_some())
-    .bind(
-        command
-            .icon
-            .as_ref()
-            .and_then(|value| value.as_ref())
-            .and_then(media_resource_object_blob_id),
-    )
-    .bind(command.icon.is_some())
-    .bind(
-        command
-            .icon
-            .as_ref()
-            .and_then(|value| value.as_ref())
-            .map(serde_json::Value::to_string),
-    )
     .bind(command.sort_weight.is_some())
     .bind(command.sort_weight)
     .bind(command.parent_id.is_some())
-    .bind(command.parent_id.flatten())
-    .bind(command.path.is_some())
-    .bind(command.path.clone().flatten())
-    .bind(command.visible.is_some())
-    .bind(command.visible)
+    .bind(optional_canonical_parent_category_id(command.parent_id.flatten()))
     .bind(command.status.is_some())
-    .bind(command.status)
+    .bind(
+        command
+            .status
+            .map(category_status_to_appstore)
+            .unwrap_or("active"),
+    )
     .bind(&command.requested_at)
-    .bind(command.category_id)
-    .bind(command.subject.tenant_id)
-    .bind(command.subject.organization_id)
-    .bind(APP_STORE_CATEGORY_SCOPE)
+    .bind(&canonical_id)
+    .bind(&tenant_str)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to update app category", error))?;
-    Ok(result.rows_affected() > 0)
+    let localization_updated = sqlx::query(
+        r#"
+        UPDATE appstore_category_localization
+        SET display_name = CASE WHEN ? THEN ? ELSE display_name END,
+            description = CASE WHEN ? THEN ? ELSE description END,
+            updated_at = ?
+        WHERE category_id = ?
+          AND tenant_id = ?
+          AND locale = ?
+        "#,
+    )
+    .bind(command.name.is_some())
+    .bind(command.name.as_deref())
+    .bind(command.description.is_some())
+    .bind(command.description.clone().flatten())
+    .bind(&command.requested_at)
+    .bind(&canonical_id)
+    .bind(&tenant_str)
+    .bind(DEFAULT_APPSTORE_LOCALE)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to update app category localization", error))?;
+    Ok(category_updated.rows_affected() > 0 || localization_updated.rows_affected() > 0)
 }
 
 async fn set_app_status(
@@ -1953,20 +2036,34 @@ async fn set_app_status(
         .as_deref()
         .unwrap_or(existing.status.as_str());
     let status_code = app_status_code(status)?;
+    let market_status = command
+        .market_status
+        .as_deref()
+        .map(app_market_status)
+        .transpose()?
+        .unwrap_or(existing.market_status.as_str());
+    let (app_status, distribution_status, review_status) =
+        appstore_lifecycle_fields(status, market_status)?;
     sqlx::query(
         r#"
-        UPDATE platform_app
-        SET status = ?,
+        UPDATE appstore_app
+        SET runtime_status = ?,
             config = ?,
+            app_status = ?,
+            distribution_status = ?,
+            review_status = ?,
             updated_at = ?,
-            v = COALESCE(v, 0) + 1
-        WHERE id = ?
-          AND tenant_id = ?
-          AND organization_id = ?
+            version = COALESCE(version, 0) + 1
+        WHERE CAST(COALESCE(NULLIF(plus_app_id, ''), '0') AS INTEGER) = ?
+          AND CAST(tenant_id AS INTEGER) = ?
+          AND CAST(organization_id AS INTEGER) = ?
         "#,
     )
     .bind(status_code)
     .bind(config.to_string())
+    .bind(app_status)
+    .bind(distribution_status)
+    .bind(review_status)
     .bind(&command.requested_at)
     .bind(command.app_id)
     .bind(command.subject.tenant_id)
@@ -1983,10 +2080,10 @@ async fn delete_app(
 ) -> DomainResult<bool> {
     let result = sqlx::query(
         r#"
-        DELETE FROM platform_app
-        WHERE id = ?
-          AND tenant_id = ?
-          AND organization_id = ?
+        DELETE FROM appstore_app
+        WHERE CAST(COALESCE(NULLIF(plus_app_id, ''), '0') AS INTEGER) = ?
+          AND CAST(tenant_id AS INTEGER) = ?
+          AND CAST(organization_id AS INTEGER) = ?
         "#,
     )
     .bind(command.app_id)
@@ -2009,24 +2106,20 @@ async fn delete_category(
     command: &DeleteAdminAppCategoryCommand,
 ) -> DomainResult<bool> {
     ensure_category_delete_allowed(tx, command).await?;
+    let canonical_id = canonical_appstore_category_id(command.category_id);
+    let tenant_str = tenant_id_to_appstore(command.subject.tenant_id);
     let result = sqlx::query(
         r#"
-        UPDATE c_category
-        SET status = -1,
-            visible = 0,
-            updated_at = ?,
-            v = COALESCE(v, 0) + 1
+        UPDATE appstore_category
+        SET category_status = 'retired',
+            updated_at = ?
         WHERE id = ?
           AND tenant_id = ?
-          AND organization_id = ?
-          AND category_type = ?
         "#,
     )
     .bind(&command.requested_at)
-    .bind(command.category_id)
-    .bind(command.subject.tenant_id)
-    .bind(command.subject.organization_id)
-    .bind(APP_STORE_CATEGORY_SCOPE)
+    .bind(&canonical_id)
+    .bind(&tenant_str)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to delete app category", error))?;
@@ -2037,21 +2130,19 @@ async fn ensure_category_delete_allowed(
     tx: &mut Transaction<'_, Sqlite>,
     command: &DeleteAdminAppCategoryCommand,
 ) -> DomainResult<()> {
+    let parent_canonical_id = canonical_appstore_category_id(command.category_id);
+    let tenant_str = tenant_id_to_appstore(command.subject.tenant_id);
     let child_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM c_category
+        FROM appstore_category
         WHERE tenant_id = ?
-          AND organization_id = ?
-          AND parent_id = ?
-          AND category_type = ?
-          AND COALESCE(status, 1) >= 0
+          AND parent_category_id = ?
+          AND category_status <> 'retired'
         "#,
     )
-    .bind(command.subject.tenant_id)
-    .bind(command.subject.organization_id)
-    .bind(command.category_id)
-    .bind(APP_STORE_CATEGORY_SCOPE)
+    .bind(tenant_str)
+    .bind(parent_canonical_id)
     .fetch_one(&mut **tx)
     .await
     .map_err(|error| store_error("failed to validate child app categories", error))?;
@@ -2195,28 +2286,43 @@ async fn insert_audit_log(
 }
 
 async fn next_assigned_id(tx: &mut Transaction<'_, Sqlite>, app_uuid: &str) -> DomainResult<i64> {
-    next_app_table_id(
-        tx,
-        "admin-app",
-        app_uuid,
-        "SELECT COUNT(1) FROM platform_app WHERE id = ?",
-        "failed to check app runtime id",
-    )
-    .await
+    for _ in 0..MAX_RUNTIME_ID_ATTEMPTS {
+        let id = next_admin_app_id("admin-app")?;
+        let exists: i64 = sqlx::query_scalar("SELECT COUNT(1) FROM appstore_app WHERE plus_app_id = ?")
+            .bind(id.to_string())
+            .fetch_one(&mut **tx)
+            .await
+            .map_err(|error| store_error("failed to check app runtime id", error))?;
+        if exists == 0 {
+            return Ok(id);
+        }
+    }
+    Err(DomainError::conflict(format!(
+        "failed to allocate snowflake id for admin-app: {app_uuid}"
+    )))
 }
 
 async fn next_category_assigned_id(
     tx: &mut Transaction<'_, Sqlite>,
     category_uuid: &str,
 ) -> DomainResult<i64> {
-    next_app_table_id(
-        tx,
-        "admin-app-category",
-        category_uuid,
-        "SELECT COUNT(1) FROM c_category WHERE id = ?",
-        "failed to check app category runtime id",
-    )
-    .await
+    for _ in 0..MAX_RUNTIME_ID_ATTEMPTS {
+        let id = next_admin_app_id("admin-app-category")?;
+        let canonical_id = canonical_appstore_category_id(id);
+        let exists: i64 = sqlx::query_scalar(
+            "SELECT COUNT(1) FROM appstore_category WHERE id = ?",
+        )
+        .bind(canonical_id)
+        .fetch_one(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to check app category runtime id", error))?;
+        if exists == 0 {
+            return Ok(id);
+        }
+    }
+    Err(DomainError::conflict(format!(
+        "failed to allocate snowflake id for admin-app-category: {category_uuid}"
+    )))
 }
 
 async fn next_template_assigned_id(
@@ -2227,7 +2333,7 @@ async fn next_template_assigned_id(
         tx,
         "admin-app-template",
         template_uuid,
-        "SELECT COUNT(1) FROM platform_app_template WHERE id = ?",
+        "SELECT COUNT(1) FROM appstore_app_template WHERE id = ?",
         "failed to check app template runtime id",
     )
     .await
@@ -2335,17 +2441,27 @@ fn app_from_row(row: sqlx::sqlite::SqliteRow) -> DomainResult<AdminAppItem> {
 }
 
 fn category_from_row(row: sqlx::sqlite::SqliteRow) -> DomainResult<AdminAppCategoryItem> {
+    let canonical_category_id = string_cell(&row, "canonical_category_id");
     Ok(AdminAppCategoryItem {
-        id: row.try_get("id").map_err(row_error)?,
+        id: canonical_category_id
+            .as_deref()
+            .and_then(parse_canonical_appstore_category_id)
+            .unwrap_or_else(|| integer_cell(&row, "tenant_id")),
         uuid: row.try_get("uuid").map_err(row_error)?,
         tenant_id: row.try_get("tenant_id").map_err(row_error)?,
         organization_id: row.try_get("organization_id").map_err(row_error)?,
         name: row.try_get("name").map_err(row_error)?,
         description: row.try_get("description").ok().flatten(),
         code: row.try_get("code").ok().flatten(),
-        icon: optional_media_resource_from_row(&row, "icon_resource_snapshot")?,
+        icon: icon_from_media_resource_id(
+            row.try_get::<Option<String>, _>("icon_media_resource_id")
+                .ok()
+                .flatten(),
+        ),
         sort_weight: integer_cell(&row, "sort_weight") as i32,
-        parent_id: row.try_get("parent_id").ok().flatten(),
+        parent_id: parse_optional_canonical_parent_category_id(
+            row.try_get("parent_canonical_id").ok().flatten(),
+        ),
         path: row.try_get("path").ok().flatten(),
         visible: integer_cell(&row, "visible") != 0,
         status: integer_cell(&row, "status") as i32,
@@ -2467,6 +2583,55 @@ fn app_status_code(value: &str) -> DomainResult<i32> {
         "ACTIVE" => Ok(1),
         "INACTIVE" => Ok(0),
         _ => Err(DomainError::new("app status must be ACTIVE or INACTIVE")),
+    }
+}
+
+fn canonical_appstore_app_id(stable_id: i64) -> String {
+    format!("appstore-app-{stable_id}")
+}
+
+fn appstore_app_slug(app_key: &str) -> String {
+    app_key
+        .chars()
+        .map(|ch| {
+            if ch.is_ascii_alphanumeric() {
+                ch.to_ascii_lowercase()
+            } else {
+                '-'
+            }
+        })
+        .collect::<String>()
+        .split('-')
+        .filter(|segment| !segment.is_empty())
+        .collect::<Vec<_>>()
+        .join("-")
+}
+
+fn resolve_app_key(config: &serde_json::Value, explicit: Option<&str>) -> String {
+    explicit
+        .filter(|value| !value.trim().is_empty())
+        .map(str::to_owned)
+        .or_else(|| {
+            config
+                .pointer("/standard/appKey")
+                .and_then(|value| value.as_str())
+                .map(str::to_owned)
+        })
+        .unwrap_or_else(|| "admin-app".to_owned())
+}
+
+fn appstore_lifecycle_fields(
+    runtime_status: &str,
+    market_status: &str,
+) -> DomainResult<(&'static str, &'static str, &'static str)> {
+    let _ = app_status_code(runtime_status)?;
+    match app_market_status(market_status)? {
+        "DRAFT" => Ok(("draft", "unlisted", "draft")),
+        "PUBLISHED" => Ok(("published", "listed", "approved")),
+        "OFFLINE" => Ok(("published", "unlisted", "approved")),
+        _ => Err(DomainError::new(
+            "app marketStatus must be DRAFT, PUBLISHED, or OFFLINE",
+        )),
     }
 }
 

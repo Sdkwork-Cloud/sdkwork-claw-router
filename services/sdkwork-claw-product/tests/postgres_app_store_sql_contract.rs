@@ -18,27 +18,26 @@ fn assert_sql_contains(sql: &str, expected: &str) {
 #[test]
 fn app_store_sql_scopes_every_primary_query_by_trusted_subject() {
     for expected in [
-        "a.tenant_id = $1",
-        "a.organization_id = $2",
-        "OR ($2 > 0 AND a.organization_id = 0)",
-        "c.tenant_id = $1",
-        "c.organization_id = $2",
-        "WHERE tenant_id = $1",
-        "AND organization_id = $2",
+        "CAST(a.tenant_id AS BIGINT) = $1",
+        "CAST(a.organization_id AS BIGINT) = $2",
+        "OR ($2 > 0 AND CAST(a.organization_id AS BIGINT) = 0)",
+        "cat.tenant_id = CAST($1 AS TEXT)",
     ] {
         assert_sql_contains(POSTGRES_APP_STORE, expected);
     }
 }
 
 #[test]
-fn app_store_sql_reads_existing_market_tables_and_filters_active_apps() {
+fn app_store_sql_reads_appstore_app_directly_and_filters_active_apps() {
     for expected in [
-        "FROM platform_app a",
-        "COALESCE(a.rating_avg, 0)::float8 AS rating",
+        "FROM appstore_app a",
+        "a.app_status = 'published'",
+        "a.distribution_status = 'listed'",
+        "COALESCE(NULLIF(a.rating_avg, ''), '0')::float8 AS rating",
         "COALESCE(a.download_count, 0) AS download_count",
-        "COALESCE(a.status, 1) = 1",
-        "COALESCE(NULLIF(a.config -> 'portal' ->> 'marketStatus', ''), NULLIF(a.config ->> 'marketStatus', ''), 'DRAFT') = 'PUBLISHED'",
-        "$3::integer IS NULL OR COALESCE(a.status, 1) = $4",
+        "COALESCE(a.runtime_status, 1) = 1",
+        "COALESCE(NULLIF(a.config::jsonb -> 'portal' ->> 'marketStatus', ''), NULLIF(a.config::jsonb ->> 'marketStatus', ''), 'DRAFT') = 'PUBLISHED'",
+        "$3::integer IS NULL OR COALESCE(a.runtime_status, 1) = $4",
         "$5::text IS NULL OR COALESCE(a.updated_at, a.created_at) >= $6::timestamp",
         "$7::text IS NULL OR COALESCE(a.updated_at, a.created_at) <= $8::timestamp",
         "const LOAD_APPS_BASE",
@@ -49,8 +48,12 @@ fn app_store_sql_reads_existing_market_tables_and_filters_active_apps() {
         assert_sql_contains(POSTGRES_APP_STORE, expected);
     }
     assert!(
+        !POSTGRES_APP_STORE.contains("platform_app"),
+        "Postgres app store must not read legacy platform_app"
+    );
+    assert!(
         !POSTGRES_APP_STORE.contains("FROM ai_skill_action"),
-        "Postgres app store must not aggregate downloads/ratings from ai_skill_action; use platform_app columns"
+        "Postgres app store must not aggregate downloads/ratings from ai_skill_action; use appstore_app columns"
     );
     assert!(
         !POSTGRES_APP_STORE.contains("LIKE $10 ESCAPE"),
@@ -62,7 +65,7 @@ fn app_store_sql_reads_existing_market_tables_and_filters_active_apps() {
             && !POSTGRES_APP_STORE.contains("\"PUBLISHED\" | '1'")
             && !POSTGRES_APP_STORE.contains("\"ACTIVE\" | \"ENABLED\" | \"PUBLISHED\"")
             && !POSTGRES_APP_STORE.contains("\"ACTIVE\" | \"ENABLED\" | \"1\""),
-        "Postgres app store status mapper must keep platform_app.status separate from portal marketStatus"
+        "Postgres app store status mapper must keep runtime_status separate from portal marketStatus"
     );
 }
 
@@ -104,7 +107,7 @@ fn app_store_sql_returns_contract_projection_fields() {
     );
     assert!(
         !POSTGRES_APP_STORE.contains("download_url"),
-        "Postgres app store SQL must not read platform_app.download_url; app artifacts must be MediaResource objects from artifact_resource_snapshot"
+        "Postgres app store SQL must not read legacy download_url; app artifacts must be MediaResource objects from artifact_resource_snapshot"
     );
 }
 
@@ -121,32 +124,32 @@ fn app_catalog_mapping_does_not_fallback_to_legacy_media_url_fields() {
 #[test]
 fn app_store_detail_sql_accepts_numeric_id_or_stable_app_key() {
     for expected in [
-        "CAST(a.id AS TEXT) = $3",
-        "a.config -> 'standard' ->> 'appKey' = $3",
-        "OR ($2 > 0 AND a.organization_id = 0)",
+        "COALESCE(NULLIF(a.plus_app_id, ''), a.id) = $3",
+        "a.config::jsonb -> 'standard' ->> 'appKey' = $3",
+        "OR ($2 > 0 AND CAST(a.organization_id AS BIGINT) = 0)",
     ] {
         assert_sql_contains(POSTGRES_APP_STORE, expected);
     }
 }
 
 #[test]
-fn app_store_categories_sql_reads_unified_c_category_app_store_tree() {
+fn app_store_categories_sql_reads_appstore_category_localizations() {
     for expected in [
         "const LOAD_CATEGORIES",
-        "FROM c_category c",
-        "c.tenant_id = $1",
-        "c.organization_id = $2",
-        "OR (c.tenant_id = $3 AND c.organization_id = 0)",
-        "c.category_type = 'app_store'",
-        "COALESCE(c.visible, true) = true",
-        "COALESCE(c.status, 1) = 1",
-        "ORDER BY COALESCE(c.sort_weight, 0), c.id",
+        "FROM appstore_category cat",
+        "appstore_category_localization loc",
+        "cat.category_status = 'active'",
+        "ORDER BY COALESCE(cat.sort_order, 0), cat.id",
     ] {
         assert_sql_contains(POSTGRES_APP_STORE, expected);
     }
 
     assert!(
+        !compact_sql(POSTGRES_APP_STORE).contains("c.category_type = 'app_store'"),
+        "categories must read canonical appstore_category rows instead of legacy c_category app_store projections"
+    );
+    assert!(
         !compact_sql(POSTGRES_APP_STORE).contains("app_category_from_raw("),
-        "categories must not be derived from platform_app.app_type or app DTO config"
+        "categories must not be derived from legacy app_type or app DTO config"
     );
 }

@@ -1070,16 +1070,18 @@ fn live_course_source() -> CourseOverviewSource {
     CourseOverviewSource {
         source_label: "Live course data".to_owned(),
         source_description:
-            "Derived from Java-compatible course, category, comment, and reaction tables."
+            "Derived from sdkwork-course module catalog, category, comment, and reaction tables."
                 .to_owned(),
         source_tables: vec![
-            "content_course".to_owned(),
-            "content_course_section".to_owned(),
-            "content_course_lesson".to_owned(),
-            "content_course_relation".to_owned(),
-            "c_category".to_owned(),
-            "content_comment".to_owned(),
-            "content_reaction".to_owned(),
+            "course_catalog".to_owned(),
+            "course_section".to_owned(),
+            "course_lesson".to_owned(),
+            "course_catalog_link".to_owned(),
+            "course_category".to_owned(),
+            "course_instructor".to_owned(),
+            "course_comment".to_owned(),
+            "course_reaction".to_owned(),
+            "course_resource_ref".to_owned(),
         ],
         observed_at: current_timestamp_string(),
     }

@@ -1,15 +1,1 @@
-pub(crate) const DEFAULT_IAM_TENANT_ID: &str = "10";
-pub(crate) const DEFAULT_IAM_TENANT_CODE: &str = "default";
-pub(crate) const DEFAULT_IAM_TENANT_NAME: &str = "Default Tenant";
-pub(crate) const DEFAULT_IAM_ORGANIZATION_ID: &str = "20";
-pub(crate) const DEFAULT_IAM_ORGANIZATION_CODE: &str = "root";
-pub(crate) const DEFAULT_IAM_ORGANIZATION_NAME: &str = "Root Organization";
-pub(crate) const DEFAULT_IAM_ORGANIZATION_PATH: &str = "/20";
-pub(crate) const DEFAULT_IAM_ORGANIZATION_KIND: &str = "team";
-pub(crate) const DEFAULT_IAM_ORGANIZATION_TENANT_BOUNDARY_KIND: &str = "exclusive";
-pub(crate) const DEFAULT_IAM_ORGANIZATION_DATA_BOUNDARY_KIND: &str = "tenant";
-pub(crate) const DEFAULT_IAM_ORGANIZATION_VERIFICATION_STATUS: &str = "verified";
-pub(crate) const DEFAULT_BOOTSTRAP_ADMIN_USER_ID: &str = "1";
-pub(crate) const DEFAULT_BOOTSTRAP_ADMIN_USERNAME: &str = "admin";
-pub(crate) const DEFAULT_BOOTSTRAP_ADMIN_DISPLAY_NAME: &str = "Administrator";
-pub(crate) const DEFAULT_BOOTSTRAP_ADMIN_EMAIL: &str = "admin@sdkwork.com";
+pub use sdkwork_appbase_iam_bootstrap::constants::*;

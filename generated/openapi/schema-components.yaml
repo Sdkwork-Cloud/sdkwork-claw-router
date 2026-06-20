@@ -11197,6 +11197,468 @@ components:
         margin_amount:
           type: string
           format: decimal
+    AppstoreAppRecord:
+      type: object
+      x-table: appstore_app
+      x-domain: platform
+      x-generated-by-this-project: false
+      properties:
+        id:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        uuid:
+          type: string
+          maxLength: 255
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        v:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        tenant_id:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        organization_id:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        data_scope:
+          type: integer
+          format: int32
+        user_id:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        category_id:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        name:
+          type: string
+          maxLength: 255
+        icon:
+          $ref: '#/components/schemas/MediaResource'
+        resource_list:
+          type: object
+          additionalProperties: true
+        project_id:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        description:
+          type: string
+        version:
+          type: string
+          maxLength: 64
+        access_url:
+          type: string
+          maxLength: 512
+        config:
+          type: object
+          additionalProperties: true
+        status:
+          type: integer
+          format: int32
+        app_type:
+          type: string
+          maxLength: 64
+        platforms:
+          type: object
+          additionalProperties: true
+        install_platforms:
+          type: object
+          additionalProperties: true
+        install_skill:
+          type: object
+          additionalProperties: true
+        install_config:
+          type: object
+          additionalProperties: true
+        release_notes:
+          type: object
+          additionalProperties: true
+        package_name:
+          type: string
+          maxLength: 255
+        bundle_id:
+          type: string
+          maxLength: 255
+        store_url:
+          type: string
+          maxLength: 512
+        download_count:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        rating_avg:
+          type: string
+          format: decimal
+        rating_count:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        artifact:
+          $ref: '#/components/schemas/MediaResource'
+    AppstoreAppTemplateRecord:
+      type: object
+      x-table: appstore_app_template
+      x-domain: platform
+      x-generated-by-this-project: false
+      properties:
+        id:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        organization_id:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        metadata:
+          type: object
+          additionalProperties: true
+        template_no:
+          type: string
+          maxLength: 64
+        template_code:
+          type: string
+          maxLength: 128
+        template_name:
+          type: string
+          maxLength: 255
+        description:
+          type: string
+        category_id:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        category_code:
+          type: string
+          maxLength: 128
+        template_type:
+          type: string
+          maxLength: 64
+        runtime:
+          type: string
+          maxLength: 128
+        framework:
+          type: string
+          maxLength: 128
+        language:
+          type: string
+          maxLength: 64
+        visibility:
+          type: string
+          x-db-type: enum_int32
+        publish_status:
+          type: string
+          x-db-type: enum_int32
+        featured:
+          type: boolean
+        sort_weight:
+          type: integer
+          format: int32
+        owner_user_id:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        source_app_id:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        git_repo_url:
+          type: string
+          maxLength: 1024
+        git_ref:
+          type: string
+          maxLength: 128
+        git_sub_path:
+          type: string
+          maxLength: 1024
+        current_version_id:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        app_config_schema:
+          type: object
+          additionalProperties: true
+        default_app_config:
+          type: object
+          additionalProperties: true
+        variable_schema:
+          type: object
+          additionalProperties: true
+        dependency_manifest:
+          type: object
+          additionalProperties: true
+        capability_manifest:
+          type: object
+          additionalProperties: true
+        published_at:
+          type: string
+          format: date-time
+        deprecated_at:
+          type: string
+          format: date-time
+        cover:
+          $ref: '#/components/schemas/MediaResource'
+        icon:
+          $ref: '#/components/schemas/MediaResource'
+    AppstoreAppTemplateUsageRecord:
+      type: object
+      x-table: appstore_app_template_usage
+      x-domain: platform
+      x-generated-by-this-project: false
+      properties:
+        id:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        organization_id:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        user_id:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        request_id:
+          type: string
+          maxLength: 128
+        trace_id:
+          type: string
+          maxLength: 128
+        payload_hash:
+          type: string
+          maxLength: 128
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        retention_until:
+          type: string
+          format: date-time
+        legal_hold:
+          type: boolean
+        metadata:
+          type: object
+          additionalProperties: true
+        template_id:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        template_version_id:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        target_app_id:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        usage_type:
+          type: string
+          x-db-type: enum_int32
+        input_snapshot:
+          type: object
+          additionalProperties: true
+        output_snapshot:
+          type: object
+          additionalProperties: true
+    AppstoreAppTemplateVersionRecord:
+      type: object
+      x-table: appstore_app_template_version
+      x-domain: platform
+      x-generated-by-this-project: false
+      properties:
+        id:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        organization_id:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        metadata:
+          type: object
+          additionalProperties: true
+        template_id:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        version_no:
+          type: string
+          maxLength: 64
+        artifact_id:
+          type: string
+          format: int64
+          pattern: ^-?[0-9]+$
+          x-sdkwork-int64-string: true
+          x-sdkwork-rust-type: i64
+        changelog:
+          type: string
+        file_manifest:
+          type: object
+          additionalProperties: true
+        dependency_manifest:
+          type: object
+          additionalProperties: true
+        capability_manifest:
+          type: object
+          additionalProperties: true
+        variable_schema:
+          type: object
+          additionalProperties: true
+        app_config_schema:
+          type: object
+          additionalProperties: true
+        default_app_config:
+          type: object
+          additionalProperties: true
+        publish_status:
+          type: string
+          x-db-type: enum_int32
+        published_at:
+          type: string
+          format: date-time
+        deprecated_at:
+          type: string
+          format: date-time
     CCategoryRecord:
       type: object
       x-table: c_category
@@ -17111,7 +17573,7 @@ components:
       type: object
       x-table: content_course_application
       x-domain: content
-      x-generated-by-this-project: true
+      x-generated-by-this-project: false
       properties:
         id:
           type: string
@@ -17220,7 +17682,7 @@ components:
       type: object
       x-table: content_course_lesson
       x-domain: content
-      x-generated-by-this-project: true
+      x-generated-by-this-project: false
       properties:
         id:
           type: string
@@ -17321,7 +17783,7 @@ components:
       type: object
       x-table: content_course
       x-domain: content
-      x-generated-by-this-project: true
+      x-generated-by-this-project: false
       properties:
         id:
           type: string
@@ -17431,7 +17893,7 @@ components:
       type: object
       x-table: content_course_relation
       x-domain: content
-      x-generated-by-this-project: true
+      x-generated-by-this-project: false
       properties:
         id:
           type: string
@@ -17506,7 +17968,7 @@ components:
       type: object
       x-table: content_course_section
       x-domain: content
-      x-generated-by-this-project: true
+      x-generated-by-this-project: false
       properties:
         id:
           type: string
@@ -18160,7 +18622,7 @@ components:
       type: object
       x-table: iam_api_key
       x-domain: iam
-      x-generated-by-this-project: true
+      x-generated-by-this-project: false
       properties:
         id:
           type: string
@@ -18196,7 +18658,7 @@ components:
       type: object
       x-table: iam_audit_event
       x-domain: iam
-      x-generated-by-this-project: true
+      x-generated-by-this-project: false
       properties:
         id:
           type: string
@@ -18241,7 +18703,7 @@ components:
       type: object
       x-table: iam_credential
       x-domain: iam
-      x-generated-by-this-project: true
+      x-generated-by-this-project: false
       properties:
         id:
           type: string
@@ -18274,7 +18736,7 @@ components:
       type: object
       x-table: iam_department_assignment
       x-domain: iam
-      x-generated-by-this-project: true
+      x-generated-by-this-project: false
       properties:
         id:
           type: string
@@ -18319,7 +18781,7 @@ components:
       type: object
       x-table: iam_department
       x-domain: iam
-      x-generated-by-this-project: true
+      x-generated-by-this-project: false
       properties:
         id:
           type: string
@@ -18364,7 +18826,7 @@ components:
       type: object
       x-table: iam_device
       x-domain: iam
-      x-generated-by-this-project: true
+      x-generated-by-this-project: false
       properties:
         id:
           type: string
@@ -18942,7 +19404,7 @@ components:
       type: object
       x-table: iam_mfa_factor
       x-domain: iam
-      x-generated-by-this-project: true
+      x-generated-by-this-project: false
       properties:
         id:
           type: string
@@ -18972,7 +19434,7 @@ components:
       type: object
       x-table: iam_organization_membership
       x-domain: iam
-      x-generated-by-this-project: true
+      x-generated-by-this-project: false
       properties:
         id:
           type: string
@@ -19020,7 +19482,7 @@ components:
       type: object
       x-table: iam_organization
       x-domain: iam
-      x-generated-by-this-project: true
+      x-generated-by-this-project: false
       properties:
         id:
           type: string
@@ -19053,7 +19515,7 @@ components:
       type: object
       x-table: iam_permission
       x-domain: iam
-      x-generated-by-this-project: true
+      x-generated-by-this-project: false
       properties:
         id:
           type: string
@@ -19077,7 +19539,7 @@ components:
       type: object
       x-table: iam_policy
       x-domain: iam
-      x-generated-by-this-project: true
+      x-generated-by-this-project: false
       properties:
         id:
           type: string
@@ -19107,7 +19569,7 @@ components:
       type: object
       x-table: iam_position_assignment
       x-domain: iam
-      x-generated-by-this-project: true
+      x-generated-by-this-project: false
       properties:
         id:
           type: string
@@ -19149,7 +19611,7 @@ components:
       type: object
       x-table: iam_position
       x-domain: iam
-      x-generated-by-this-project: true
+      x-generated-by-this-project: false
       properties:
         id:
           type: string
@@ -19188,7 +19650,7 @@ components:
       type: object
       x-table: iam_role_binding
       x-domain: iam
-      x-generated-by-this-project: true
+      x-generated-by-this-project: false
       properties:
         id:
           type: string
@@ -19230,7 +19692,7 @@ components:
       type: object
       x-table: iam_role_permission
       x-domain: iam
-      x-generated-by-this-project: true
+      x-generated-by-this-project: false
       properties:
         id:
           type: string
@@ -19251,7 +19713,7 @@ components:
       type: object
       x-table: iam_role
       x-domain: iam
-      x-generated-by-this-project: true
+      x-generated-by-this-project: false
       properties:
         id:
           type: string
@@ -19278,7 +19740,7 @@ components:
       type: object
       x-table: iam_security_event
       x-domain: iam
-      x-generated-by-this-project: true
+      x-generated-by-this-project: false
       properties:
         id:
           type: string
@@ -19308,7 +19770,7 @@ components:
       type: object
       x-table: iam_session
       x-domain: iam
-      x-generated-by-this-project: true
+      x-generated-by-this-project: false
       properties:
         id:
           type: string
@@ -19371,7 +19833,7 @@ components:
       type: object
       x-table: iam_tenant
       x-domain: iam
-      x-generated-by-this-project: true
+      x-generated-by-this-project: false
       properties:
         id:
           type: string
@@ -19395,7 +19857,7 @@ components:
       type: object
       x-table: iam_user_identity
       x-domain: iam
-      x-generated-by-this-project: true
+      x-generated-by-this-project: false
       properties:
         id:
           type: string
@@ -19609,7 +20071,7 @@ components:
       type: object
       x-table: iam_user
       x-domain: iam
-      x-generated-by-this-project: true
+      x-generated-by-this-project: false
       properties:
         id:
           type: string
@@ -19644,7 +20106,7 @@ components:
       type: object
       x-table: iam_user_role
       x-domain: iam
-      x-generated-by-this-project: true
+      x-generated-by-this-project: false
       properties:
         id:
           type: string
@@ -25114,468 +25576,6 @@ components:
           type: string
           maxLength: 10
         snapshot_at:
-          type: string
-          format: date-time
-    PlatformAppRecord:
-      type: object
-      x-table: platform_app
-      x-domain: platform
-      x-generated-by-this-project: true
-      properties:
-        id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        uuid:
-          type: string
-          maxLength: 255
-        created_at:
-          type: string
-          format: date-time
-        updated_at:
-          type: string
-          format: date-time
-        v:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        tenant_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        organization_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        data_scope:
-          type: integer
-          format: int32
-        user_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        category_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        name:
-          type: string
-          maxLength: 255
-        icon:
-          $ref: '#/components/schemas/MediaResource'
-        resource_list:
-          type: object
-          additionalProperties: true
-        project_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        description:
-          type: string
-        version:
-          type: string
-          maxLength: 64
-        access_url:
-          type: string
-          maxLength: 512
-        config:
-          type: object
-          additionalProperties: true
-        status:
-          type: integer
-          format: int32
-        app_type:
-          type: string
-          maxLength: 64
-        platforms:
-          type: object
-          additionalProperties: true
-        install_platforms:
-          type: object
-          additionalProperties: true
-        install_skill:
-          type: object
-          additionalProperties: true
-        install_config:
-          type: object
-          additionalProperties: true
-        release_notes:
-          type: object
-          additionalProperties: true
-        package_name:
-          type: string
-          maxLength: 255
-        bundle_id:
-          type: string
-          maxLength: 255
-        store_url:
-          type: string
-          maxLength: 512
-        download_count:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        rating_avg:
-          type: string
-          format: decimal
-        rating_count:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        artifact:
-          $ref: '#/components/schemas/MediaResource'
-    PlatformAppTemplateRecord:
-      type: object
-      x-table: platform_app_template
-      x-domain: platform
-      x-generated-by-this-project: true
-      properties:
-        id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        uuid:
-          type: string
-          maxLength: 64
-        tenant_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        organization_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        data_scope:
-          type: string
-          x-db-type: enum_int32
-        status:
-          type: string
-          x-db-type: enum_int32
-        created_at:
-          type: string
-          format: date-time
-        updated_at:
-          type: string
-          format: date-time
-        version:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        deleted_at:
-          type: string
-          format: date-time
-        deleted_by:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        metadata:
-          type: object
-          additionalProperties: true
-        template_no:
-          type: string
-          maxLength: 64
-        template_code:
-          type: string
-          maxLength: 128
-        template_name:
-          type: string
-          maxLength: 255
-        description:
-          type: string
-        category_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        category_code:
-          type: string
-          maxLength: 128
-        template_type:
-          type: string
-          maxLength: 64
-        runtime:
-          type: string
-          maxLength: 128
-        framework:
-          type: string
-          maxLength: 128
-        language:
-          type: string
-          maxLength: 64
-        visibility:
-          type: string
-          x-db-type: enum_int32
-        publish_status:
-          type: string
-          x-db-type: enum_int32
-        featured:
-          type: boolean
-        sort_weight:
-          type: integer
-          format: int32
-        owner_user_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        source_app_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        git_repo_url:
-          type: string
-          maxLength: 1024
-        git_ref:
-          type: string
-          maxLength: 128
-        git_sub_path:
-          type: string
-          maxLength: 1024
-        current_version_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        app_config_schema:
-          type: object
-          additionalProperties: true
-        default_app_config:
-          type: object
-          additionalProperties: true
-        variable_schema:
-          type: object
-          additionalProperties: true
-        dependency_manifest:
-          type: object
-          additionalProperties: true
-        capability_manifest:
-          type: object
-          additionalProperties: true
-        published_at:
-          type: string
-          format: date-time
-        deprecated_at:
-          type: string
-          format: date-time
-        cover:
-          $ref: '#/components/schemas/MediaResource'
-        icon:
-          $ref: '#/components/schemas/MediaResource'
-    PlatformAppTemplateUsageRecord:
-      type: object
-      x-table: platform_app_template_usage
-      x-domain: platform
-      x-generated-by-this-project: true
-      properties:
-        id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        uuid:
-          type: string
-          maxLength: 64
-        tenant_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        organization_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        user_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        request_id:
-          type: string
-          maxLength: 128
-        trace_id:
-          type: string
-          maxLength: 128
-        payload_hash:
-          type: string
-          maxLength: 128
-        status:
-          type: string
-          x-db-type: enum_int32
-        created_at:
-          type: string
-          format: date-time
-        retention_until:
-          type: string
-          format: date-time
-        legal_hold:
-          type: boolean
-        metadata:
-          type: object
-          additionalProperties: true
-        template_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        template_version_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        target_app_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        usage_type:
-          type: string
-          x-db-type: enum_int32
-        input_snapshot:
-          type: object
-          additionalProperties: true
-        output_snapshot:
-          type: object
-          additionalProperties: true
-    PlatformAppTemplateVersionRecord:
-      type: object
-      x-table: platform_app_template_version
-      x-domain: platform
-      x-generated-by-this-project: true
-      properties:
-        id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        uuid:
-          type: string
-          maxLength: 64
-        tenant_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        organization_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        data_scope:
-          type: string
-          x-db-type: enum_int32
-        status:
-          type: string
-          x-db-type: enum_int32
-        created_at:
-          type: string
-          format: date-time
-        updated_at:
-          type: string
-          format: date-time
-        version:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        deleted_at:
-          type: string
-          format: date-time
-        deleted_by:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        metadata:
-          type: object
-          additionalProperties: true
-        template_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        version_no:
-          type: string
-          maxLength: 64
-        artifact_id:
-          type: string
-          format: int64
-          pattern: ^-?[0-9]+$
-          x-sdkwork-int64-string: true
-          x-sdkwork-rust-type: i64
-        changelog:
-          type: string
-        file_manifest:
-          type: object
-          additionalProperties: true
-        dependency_manifest:
-          type: object
-          additionalProperties: true
-        capability_manifest:
-          type: object
-          additionalProperties: true
-        variable_schema:
-          type: object
-          additionalProperties: true
-        app_config_schema:
-          type: object
-          additionalProperties: true
-        default_app_config:
-          type: object
-          additionalProperties: true
-        publish_status:
-          type: string
-          x-db-type: enum_int32
-        published_at:
-          type: string
-          format: date-time
-        deprecated_at:
           type: string
           format: date-time
     PromotionBudgetAccountRecord:

@@ -1,4 +1,4 @@
-use std::collections::BTreeSet;
+﻿use std::collections::BTreeSet;
 use std::error::Error;
 use std::fmt::{Display, Formatter};
 use std::fs;
@@ -7,13 +7,12 @@ use std::sync::atomic::{AtomicU64, Ordering};
 use std::sync::OnceLock;
 use std::time::{SystemTime, UNIX_EPOCH};
 
-use crate::infrastructure::sql::iam_seed_defaults::{
+use sdkwork_appbase_iam_bootstrap::{
+    iam_baseline_postgres_sql, import_postgres_default_iam_seed, import_sqlite_default_iam_seed,
+    postgres_default_iam_seed_complete, sqlite_default_iam_seed_complete,
     DEFAULT_BOOTSTRAP_ADMIN_DISPLAY_NAME, DEFAULT_BOOTSTRAP_ADMIN_EMAIL,
-    DEFAULT_BOOTSTRAP_ADMIN_USER_ID, DEFAULT_BOOTSTRAP_ADMIN_USERNAME, DEFAULT_IAM_ORGANIZATION_CODE,
-    DEFAULT_IAM_ORGANIZATION_DATA_BOUNDARY_KIND, DEFAULT_IAM_ORGANIZATION_ID,
-    DEFAULT_IAM_ORGANIZATION_KIND, DEFAULT_IAM_ORGANIZATION_NAME, DEFAULT_IAM_ORGANIZATION_PATH,
-    DEFAULT_IAM_ORGANIZATION_TENANT_BOUNDARY_KIND, DEFAULT_IAM_ORGANIZATION_VERIFICATION_STATUS,
-    DEFAULT_IAM_TENANT_CODE, DEFAULT_IAM_TENANT_ID, DEFAULT_IAM_TENANT_NAME,
+    DEFAULT_BOOTSTRAP_ADMIN_USER_ID, DEFAULT_BOOTSTRAP_ADMIN_USERNAME, DEFAULT_IAM_ORGANIZATION_ID,
+    DEFAULT_IAM_TENANT_ID,
 };
 use sdkwork_commerce_bootstrap::{
     commerce_experience_seed_manifest, commerce_recharge_package_seeds,
@@ -23,9 +22,7 @@ use sdkwork_commerce_core::CommerceServiceError;
 use sdkwork_commerce_storage_sqlx::{
     commerce_database_indexes, commerce_database_tables, commerce_initial_migration_sql,
 };
-use sdkwork_iam_directory_repository_sqlx::{
-    iam_database_tables, iam_initial_migration_sql, iam_shared_database_compat_migration_sql,
-};
+use sdkwork_iam_directory_repository_sqlx::iam_database_tables;
 use sdkwork_models::ModelCatalog;
 use sha2::{Digest, Sha256};
 use sqlx::{PgPool, Postgres, Row, Sqlite, SqlitePool, Transaction};
@@ -39,6 +36,9 @@ use crate::infrastructure::sql::ai_routing_seed::{
 use crate::infrastructure::sql::app_seed::{
     bundled_app_seed_payload, import_postgres_app_seed, import_sqlite_app_seed,
     postgres_app_seed_complete, repair_sqlite_app_seed, sqlite_app_seed_complete,
+};
+use crate::infrastructure::sql::composed_module_bootstrap::{
+    ensure_postgres_composed_module_bootstrap, ensure_sqlite_composed_module_bootstrap,
 };
 use crate::infrastructure::sql::course_seed::{
     bundled_course_seed_payload, import_postgres_course_seed, import_sqlite_course_seed,
@@ -70,9 +70,18 @@ use crate::ports::{AdminModelStore, AdminModelSubject, SyncAdminModelCatalogComm
 
 const GENERATED_POSTGRES_SCHEMA: &str =
     include_str!("../../../../../generated/schema/postgres/schema.sql");
+const APPSTORE_FOUNDATION_SQL: &str = include_str!(
+    "../../../../../../sdkwork-appstore/database/ddl/baseline/postgres/0001_appstore_legacy_baseline.sql"
+);
+const COURSE_FOUNDATION_SQL: &str = include_str!(
+    "../../../../../../sdkwork-course/database/ddl/baseline/postgres/0001_course_legacy_baseline.sql"
+);
+const CLAWROUTER_LEGACY_PROJECTION_SQL: &str = include_str!(
+    "../../../../../database/ddl/baseline/postgres/0002_clawrouter_legacy_projection.sql"
+);
 const BUNDLED_MODELS_CATALOG_MANIFEST: &str =
     include_str!("../../../../../data/sdkwork-models/sdkwork-models.json");
-pub const CURRENT_SCHEMA_VERSION: &str = "2026.06.20.1";
+pub const CURRENT_SCHEMA_VERSION: &str = "2026.06.20.6";
 pub const DEFAULT_SEED_PROFILE: &str = "commercial";
 pub const DEFAULT_INSTALL_ENVIRONMENT: &str = "production";
 pub const ENV_INSTALL_ENVIRONMENT: &str = "SDKWORK_CLAW_INSTALL_ENVIRONMENT";
@@ -130,719 +139,6 @@ const APPBASE_COMMERCE_LEGACY_NOT_NULL_COLUMN_REPAIRS: &[(&str, &str, &str)] = &
         "provider",
         r#"ALTER TABLE "commerce_payment_method" ALTER COLUMN "provider" DROP NOT NULL"#,
     ),
-];
-
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
-struct DefaultIamPermissionSeed {
-    code: &'static str,
-    name: &'static str,
-    resource: &'static str,
-    action: &'static str,
-}
-
-const DEFAULT_IAM_PERMISSION_SEEDS: &[DefaultIamPermissionSeed] = &[
-    DefaultIamPermissionSeed {
-        code: "iam.users.read",
-        name: "Read IAM users",
-        resource: "iam.users",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.users.create",
-        name: "Create IAM users",
-        resource: "iam.users",
-        action: "create",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.users.update",
-        name: "Update IAM users",
-        resource: "iam.users",
-        action: "update",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.users.delete",
-        name: "Delete IAM users",
-        resource: "iam.users",
-        action: "delete",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.organizations.read",
-        name: "Read organizations",
-        resource: "iam.organizations",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.organizations.create",
-        name: "Create organizations",
-        resource: "iam.organizations",
-        action: "create",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.organizations.update",
-        name: "Update organizations",
-        resource: "iam.organizations",
-        action: "update",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.organizations.delete",
-        name: "Delete organizations",
-        resource: "iam.organizations",
-        action: "delete",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.departments.read",
-        name: "Read departments",
-        resource: "iam.departments",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.departments.create",
-        name: "Create departments",
-        resource: "iam.departments",
-        action: "create",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.departments.update",
-        name: "Update departments",
-        resource: "iam.departments",
-        action: "update",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.departments.delete",
-        name: "Delete departments",
-        resource: "iam.departments",
-        action: "delete",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.departments.manage",
-        name: "Manage departments",
-        resource: "iam.departments",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.memberships.read",
-        name: "Read organization memberships",
-        resource: "iam.memberships",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.memberships.create",
-        name: "Create organization memberships",
-        resource: "iam.memberships",
-        action: "create",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.memberships.update",
-        name: "Update organization memberships",
-        resource: "iam.memberships",
-        action: "update",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.memberships.deactivate",
-        name: "Deactivate organization memberships",
-        resource: "iam.memberships",
-        action: "deactivate",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.positions.read",
-        name: "Read positions",
-        resource: "iam.positions",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.positions.create",
-        name: "Create positions",
-        resource: "iam.positions",
-        action: "create",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.positions.update",
-        name: "Update positions",
-        resource: "iam.positions",
-        action: "update",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.positions.delete",
-        name: "Delete positions",
-        resource: "iam.positions",
-        action: "delete",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.assignments.read",
-        name: "Read department and position assignments",
-        resource: "iam.assignments",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.assignments.create",
-        name: "Create department and position assignments",
-        resource: "iam.assignments",
-        action: "create",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.assignments.update",
-        name: "Update department and position assignments",
-        resource: "iam.assignments",
-        action: "update",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.assignments.deactivate",
-        name: "Deactivate department and position assignments",
-        resource: "iam.assignments",
-        action: "deactivate",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.roles.read",
-        name: "Read IAM roles",
-        resource: "iam.roles",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.roles.create",
-        name: "Create IAM roles",
-        resource: "iam.roles",
-        action: "create",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.roles.update",
-        name: "Update IAM roles",
-        resource: "iam.roles",
-        action: "update",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.roles.delete",
-        name: "Delete IAM roles",
-        resource: "iam.roles",
-        action: "delete",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.roles.manage",
-        name: "Manage IAM roles",
-        resource: "iam.roles",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.permissions.read",
-        name: "Read IAM permissions",
-        resource: "iam.permissions",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.permissions.create",
-        name: "Create IAM permissions",
-        resource: "iam.permissions",
-        action: "create",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.permissions.update",
-        name: "Update IAM permissions",
-        resource: "iam.permissions",
-        action: "update",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.permissions.delete",
-        name: "Delete IAM permissions",
-        resource: "iam.permissions",
-        action: "delete",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.permissions.manage",
-        name: "Manage IAM permissions",
-        resource: "iam.permissions",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.role_permissions.read",
-        name: "Read role permissions",
-        resource: "iam.role_permissions",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.role_permissions.create",
-        name: "Grant role permissions",
-        resource: "iam.role_permissions",
-        action: "create",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.role_permissions.delete",
-        name: "Revoke role permissions",
-        resource: "iam.role_permissions",
-        action: "delete",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.role_permissions.manage",
-        name: "Manage role permissions",
-        resource: "iam.role_permissions",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.role_bindings.read",
-        name: "Read role bindings",
-        resource: "iam.role_bindings",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.role_bindings.create",
-        name: "Create role bindings",
-        resource: "iam.role_bindings",
-        action: "create",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.role_bindings.delete",
-        name: "Delete role bindings",
-        resource: "iam.role_bindings",
-        action: "delete",
-    },
-    DefaultIamPermissionSeed {
-        code: "iam.role_bindings.manage",
-        name: "Manage role bindings",
-        resource: "iam.role_bindings",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "ai.models.read",
-        name: "Read AI models",
-        resource: "ai.models",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "ai.models.manage",
-        name: "Manage AI models",
-        resource: "ai.models",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "ai.resources.read",
-        name: "Read AI resources",
-        resource: "ai.resources",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "ai.resources.manage",
-        name: "Manage AI resources",
-        resource: "ai.resources",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "ai.routing.read",
-        name: "Read AI routing",
-        resource: "ai.routing",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "ai.routing.manage",
-        name: "Manage AI routing",
-        resource: "ai.routing",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "ai.channels.read",
-        name: "Read AI channels",
-        resource: "ai.channels",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "ai.channels.manage",
-        name: "Manage AI channels",
-        resource: "ai.channels",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "ai.groups.read",
-        name: "Read AI account pools",
-        resource: "ai.groups",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "ai.groups.manage",
-        name: "Manage AI account pools",
-        resource: "ai.groups",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "ai.agents.read",
-        name: "Read AI agents",
-        resource: "ai.agents",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "ai.agents.manage",
-        name: "Manage AI agents",
-        resource: "ai.agents",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "ai.skills.read",
-        name: "Read AI skills",
-        resource: "ai.skills",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "ai.skills.manage",
-        name: "Manage AI skills",
-        resource: "ai.skills",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "ai.prompts.read",
-        name: "Read AI prompts",
-        resource: "ai.prompts",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "ai.prompts.manage",
-        name: "Manage AI prompts",
-        resource: "ai.prompts",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "ai.mcp.read",
-        name: "Read MCP servers",
-        resource: "ai.mcp",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "ai.mcp.manage",
-        name: "Manage MCP servers",
-        resource: "ai.mcp",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "ai.records.read",
-        name: "Read AI records",
-        resource: "ai.records",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "ai.records.manage",
-        name: "Manage AI records",
-        resource: "ai.records",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "ai.analytics.read",
-        name: "Read AI analytics",
-        resource: "ai.analytics",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "apps.app_center.read",
-        name: "Read App Center",
-        resource: "apps.app_center",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "apps.app_center.manage",
-        name: "Manage App Center",
-        resource: "apps.app_center",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "courses.catalog.read",
-        name: "Read course catalog",
-        resource: "courses.catalog",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "courses.catalog.manage",
-        name: "Manage course catalog",
-        resource: "courses.catalog",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "courses.content.read",
-        name: "Read course content",
-        resource: "courses.content",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "courses.content.manage",
-        name: "Manage course content",
-        resource: "courses.content",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "commerce.catalog.read",
-        name: "Read product catalog",
-        resource: "commerce.catalog",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "commerce.catalog.manage",
-        name: "Manage product catalog",
-        resource: "commerce.catalog",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "commerce.inventory.read",
-        name: "Read inventory",
-        resource: "commerce.inventory",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "commerce.inventory.manage",
-        name: "Manage inventory",
-        resource: "commerce.inventory",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "commerce.orders.read",
-        name: "Read orders",
-        resource: "commerce.orders",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "commerce.orders.manage",
-        name: "Manage orders",
-        resource: "commerce.orders",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "commerce.payments.read",
-        name: "Read payments",
-        resource: "commerce.payments",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "commerce.payments.manage",
-        name: "Manage payments",
-        resource: "commerce.payments",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "commerce.memberships.read",
-        name: "Read membership products",
-        resource: "commerce.memberships",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "commerce.memberships.manage",
-        name: "Manage membership products",
-        resource: "commerce.memberships",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "commerce.marketing.read",
-        name: "Read marketing campaigns",
-        resource: "commerce.marketing",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "commerce.marketing.manage",
-        name: "Manage marketing campaigns",
-        resource: "commerce.marketing",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "finance.revenue.read",
-        name: "Read finance revenue",
-        resource: "finance.revenue",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "wallet.accounts.read",
-        name: "Read wallet accounts",
-        resource: "wallet.accounts",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "wallet.accounts.manage",
-        name: "Manage wallet accounts",
-        resource: "wallet.accounts",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "storage.providers.read",
-        name: "Read storage providers",
-        resource: "storage.providers",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "storage.providers.manage",
-        name: "Manage storage providers",
-        resource: "storage.providers",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "drive.spaces.read",
-        name: "Read drive spaces",
-        resource: "drive.spaces",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "drive.spaces.manage",
-        name: "Manage drive spaces",
-        resource: "drive.spaces",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "drive.nodes.read",
-        name: "Read drive nodes",
-        resource: "drive.nodes",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "drive.nodes.manage",
-        name: "Manage drive nodes",
-        resource: "drive.nodes",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "drive.permissions.read",
-        name: "Read drive permissions",
-        resource: "drive.permissions",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "drive.permissions.manage",
-        name: "Manage drive permissions",
-        resource: "drive.permissions",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "messaging.providers.read",
-        name: "Read messaging providers",
-        resource: "messaging.providers",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "messaging.providers.manage",
-        name: "Manage messaging providers",
-        resource: "messaging.providers",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "messaging.templates.read",
-        name: "Read messaging templates",
-        resource: "messaging.templates",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "messaging.templates.manage",
-        name: "Manage messaging templates",
-        resource: "messaging.templates",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "messaging.requests.read",
-        name: "Read messaging requests",
-        resource: "messaging.requests",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "messaging.requests.manage",
-        name: "Manage messaging requests",
-        resource: "messaging.requests",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "integrations.service_providers.read",
-        name: "Read service providers",
-        resource: "integrations.service_providers",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "integrations.service_providers.manage",
-        name: "Manage service providers",
-        resource: "integrations.service_providers",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "ops.monitor.read",
-        name: "Read operations monitor",
-        resource: "ops.monitor",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "ops.rate_limits.read",
-        name: "Read rate limits",
-        resource: "ops.rate_limits",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "ops.rate_limits.manage",
-        name: "Manage rate limits",
-        resource: "ops.rate_limits",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "ops.cache.read",
-        name: "Read cache",
-        resource: "ops.cache",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "ops.cache.manage",
-        name: "Manage cache",
-        resource: "ops.cache",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "ops.service_nodes.read",
-        name: "Read service nodes",
-        resource: "ops.service_nodes",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "ops.service_nodes.manage",
-        name: "Manage service nodes",
-        resource: "ops.service_nodes",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "ops.runtime_regions.read",
-        name: "Read runtime regions",
-        resource: "ops.runtime_regions",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "ops.runtime_regions.manage",
-        name: "Manage runtime regions",
-        resource: "ops.runtime_regions",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "system.site.read",
-        name: "Read site settings",
-        resource: "system.site",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "system.site.manage",
-        name: "Manage site settings",
-        resource: "system.site",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "system.settings.read",
-        name: "Read system settings",
-        resource: "system.settings",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "system.settings.manage",
-        name: "Manage system settings",
-        resource: "system.settings",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "system.announcements.read",
-        name: "Read announcements",
-        resource: "system.announcements",
-        action: "read",
-    },
-    DefaultIamPermissionSeed {
-        code: "system.announcements.manage",
-        name: "Manage announcements",
-        resource: "system.announcements",
-        action: "manage",
-    },
-    DefaultIamPermissionSeed {
-        code: "system.audit.read",
-        name: "Read audit records",
-        resource: "system.audit",
-        action: "read",
-    },
 ];
 
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -1791,15 +1087,31 @@ impl DatabaseInstaller {
         };
         changed |= match &self.backend {
             InstallerBackend::Sqlite(pool) => {
-                apply_sqlite_appbase_iam_shared_database_compat(pool).await?;
+                let mut sqlite_changed = false;
+                if !sqlite_appbase_iam_foundation_schema_tables_exist(pool).await? {
+                    apply_sqlite_appbase_iam_foundation_schema(pool).await?;
+                    sqlite_changed = true;
+                }
                 if !sqlite_appbase_iam_oauth_schema_tables_exist(pool).await?
                     || !sqlite_appbase_iam_oauth_schema_indexes_exist(pool).await?
                 {
                     apply_sqlite_appbase_iam_oauth_schema(pool).await?;
-                    true
-                } else {
-                    false
+                    sqlite_changed = true;
                 }
+                if !sqlite_appstore_module_schema_tables_exist(pool).await? {
+                    apply_sqlite_appstore_module_schema(pool).await?;
+                    sqlite_changed = true;
+                }
+                sqlite_changed |= ensure_sqlite_appstore_module_schema_columns(pool).await?;
+                if !sqlite_course_module_schema_tables_exist(pool).await? {
+                    apply_sqlite_course_module_schema(pool).await?;
+                    sqlite_changed = true;
+                }
+                if !sqlite_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
+                    apply_sqlite_clawrouter_legacy_projection_schema(pool).await?;
+                    sqlite_changed = true;
+                }
+                sqlite_changed
             }
             InstallerBackend::Postgres(pool) => {
                 let mut changed = false;
@@ -1811,11 +1123,27 @@ impl DatabaseInstaller {
                     changed = true;
                 }
                 changed |= repair_postgres_appbase_commerce_legacy_constraints(pool).await?;
-                apply_postgres_appbase_iam_shared_database_compat(pool).await?;
+                if !postgres_appbase_iam_foundation_schema_tables_exist(pool).await? {
+                    apply_postgres_appbase_iam_foundation_schema(pool).await?;
+                    changed = true;
+                }
                 if !postgres_appbase_iam_oauth_schema_tables_exist(pool).await?
                     || !postgres_appbase_iam_oauth_schema_indexes_exist(pool).await?
                 {
                     apply_postgres_appbase_iam_oauth_schema(pool).await?;
+                    changed = true;
+                }
+                if !postgres_appstore_module_schema_tables_exist(pool).await? {
+                    apply_postgres_appstore_module_schema(pool).await?;
+                    changed = true;
+                }
+                changed |= ensure_postgres_appstore_module_schema_columns(pool).await?;
+                if !postgres_course_module_schema_tables_exist(pool).await? {
+                    apply_postgres_course_module_schema(pool).await?;
+                    changed = true;
+                }
+                if !postgres_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
+                    apply_postgres_clawrouter_legacy_projection_schema(pool).await?;
                     changed = true;
                 }
                 changed
@@ -2575,10 +1903,22 @@ async fn sqlite_status(
     if !sqlite_appbase_commerce_schema_indexes_exist(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
+    if !sqlite_appbase_iam_foundation_schema_tables_exist(pool).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
     if !sqlite_appbase_iam_oauth_schema_tables_exist(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
     if !sqlite_appbase_iam_oauth_schema_indexes_exist(pool).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
+    if !sqlite_appstore_module_schema_tables_exist(pool).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
+    if !sqlite_course_module_schema_tables_exist(pool).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
+    if !sqlite_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
     if bootstrap_admin_options.enabled
@@ -2721,9 +2061,12 @@ async fn prepare_sqlite_schema_with_catalog_version(
     for statement in sqlite_schema_statements() {
         execute_sqlite_statement(pool, statement.as_str()).await?;
     }
-    apply_sqlite_appbase_iam_shared_database_compat(pool).await?;
+    apply_sqlite_appbase_iam_foundation_schema(pool).await?;
     apply_sqlite_appbase_commerce_schema(pool).await?;
     apply_sqlite_appbase_iam_oauth_schema(pool).await?;
+    apply_sqlite_appstore_module_schema(pool).await?;
+    apply_sqlite_course_module_schema(pool).await?;
+    apply_sqlite_clawrouter_legacy_projection_schema(pool).await?;
     record_sqlite_migration_completed(
         pool,
         "schema",
@@ -2798,10 +2141,22 @@ async fn postgres_status(
     if !postgres_appbase_commerce_schema_indexes_exist(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
+    if !postgres_appbase_iam_foundation_schema_tables_exist(pool).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
     if !postgres_appbase_iam_oauth_schema_tables_exist(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
     if !postgres_appbase_iam_oauth_schema_indexes_exist(pool).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
+    if !postgres_appstore_module_schema_tables_exist(pool).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
+    if !postgres_course_module_schema_tables_exist(pool).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
+    if !postgres_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
     if bootstrap_admin_options.enabled
@@ -2974,9 +2329,12 @@ async fn prepare_postgres_schema_with_catalog_version(
     for statement in postgres_schema_statements() {
         execute_postgres_statement(pool, statement.as_str()).await?;
     }
-    apply_postgres_appbase_iam_shared_database_compat(pool).await?;
+    apply_postgres_appbase_iam_foundation_schema(pool).await?;
     apply_postgres_appbase_commerce_schema(pool).await?;
     apply_postgres_appbase_iam_oauth_schema(pool).await?;
+    apply_postgres_appstore_module_schema(pool).await?;
+    apply_postgres_course_module_schema(pool).await?;
+    apply_postgres_clawrouter_legacy_projection_schema(pool).await?;
     record_postgres_migration_completed(
         pool,
         "schema",
@@ -3114,11 +2472,22 @@ async fn repair_sqlite_installation(
     {
         apply_sqlite_appbase_commerce_schema(pool).await?;
     }
-    apply_sqlite_appbase_iam_shared_database_compat(pool).await?;
+    if !sqlite_appbase_iam_foundation_schema_tables_exist(pool).await? {
+        apply_sqlite_appbase_iam_foundation_schema(pool).await?;
+    }
     if !sqlite_appbase_iam_oauth_schema_tables_exist(pool).await?
         || !sqlite_appbase_iam_oauth_schema_indexes_exist(pool).await?
     {
         apply_sqlite_appbase_iam_oauth_schema(pool).await?;
+    }
+    if !sqlite_appstore_module_schema_tables_exist(pool).await? {
+        apply_sqlite_appstore_module_schema(pool).await?;
+    }
+    if !sqlite_course_module_schema_tables_exist(pool).await? {
+        apply_sqlite_course_module_schema(pool).await?;
+    }
+    if !sqlite_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
+        apply_sqlite_clawrouter_legacy_projection_schema(pool).await?;
     }
 
     let catalog = load_install_model_catalog(options)?;
@@ -3229,7 +2598,23 @@ async fn repair_sqlite_installation(
         course_payload.as_str(),
     )
     .await?;
-    if !course_seed_complete {
+    if !course_payload_current {
+        record_sqlite_migration_started(
+            pool,
+            "course",
+            CURRENT_SCHEMA_VERSION,
+            course_payload.as_str(),
+        )
+        .await?;
+        import_sqlite_course_seed(pool).await?;
+        record_sqlite_migration_completed(
+            pool,
+            "course",
+            CURRENT_SCHEMA_VERSION,
+            course_payload.as_str(),
+        )
+        .await?;
+    } else if !course_seed_complete {
         record_sqlite_migration_started(
             pool,
             "course",
@@ -3245,21 +2630,8 @@ async fn repair_sqlite_installation(
             course_payload.as_str(),
         )
         .await?;
-    } else if !course_payload_current {
-        record_sqlite_migration_started(
-            pool,
-            "course",
-            CURRENT_SCHEMA_VERSION,
-            course_payload.as_str(),
-        )
-        .await?;
-        record_sqlite_migration_completed(
-            pool,
-            "course",
-            CURRENT_SCHEMA_VERSION,
-            course_payload.as_str(),
-        )
-        .await?;
+    } else {
+        import_sqlite_course_seed(pool).await?;
     }
     if !sqlite_forum_seed_complete(pool).await?
         || !sqlite_seed_migration_payload_current(
@@ -3358,11 +2730,22 @@ async fn repair_postgres_installation(
         apply_postgres_appbase_commerce_schema(pool).await?;
     }
     repair_postgres_appbase_commerce_legacy_constraints(pool).await?;
-    apply_postgres_appbase_iam_shared_database_compat(pool).await?;
+    if !postgres_appbase_iam_foundation_schema_tables_exist(pool).await? {
+        apply_postgres_appbase_iam_foundation_schema(pool).await?;
+    }
     if !postgres_appbase_iam_oauth_schema_tables_exist(pool).await?
         || !postgres_appbase_iam_oauth_schema_indexes_exist(pool).await?
     {
         apply_postgres_appbase_iam_oauth_schema(pool).await?;
+    }
+    if !postgres_appstore_module_schema_tables_exist(pool).await? {
+        apply_postgres_appstore_module_schema(pool).await?;
+    }
+    if !postgres_course_module_schema_tables_exist(pool).await? {
+        apply_postgres_course_module_schema(pool).await?;
+    }
+    if !postgres_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
+        apply_postgres_clawrouter_legacy_projection_schema(pool).await?;
     }
 
     let catalog = load_install_model_catalog(options)?;
@@ -3578,19 +2961,17 @@ async fn import_postgres_bundled_forum_seed(pool: &PgPool) -> Result<(), Databas
 async fn import_sqlite_default_iam_subject_seed(
     pool: &SqlitePool,
 ) -> Result<(), DatabaseInstallError> {
-    apply_sqlite_appbase_iam_shared_database_compat(pool).await?;
-    sqlite_upsert_default_iam_subject(pool).await?;
-    sqlite_upsert_default_iam_permissions(pool).await?;
-    Ok(())
+    import_sqlite_default_iam_seed(pool)
+        .await
+        .map_err(DatabaseInstallError::Database)
 }
 
 async fn import_postgres_default_iam_subject_seed(
     pool: &PgPool,
 ) -> Result<(), DatabaseInstallError> {
-    apply_postgres_appbase_iam_shared_database_compat(pool).await?;
-    postgres_upsert_default_iam_subject(pool).await?;
-    postgres_upsert_default_iam_permissions(pool).await?;
-    Ok(())
+    import_postgres_default_iam_seed(pool)
+        .await
+        .map_err(DatabaseInstallError::Database)
 }
 
 async fn import_sqlite_commerce_experience_seed(
@@ -4442,34 +3823,61 @@ async fn reset_sqlite_admin_password(
             None => DEFAULT_BOOTSTRAP_ADMIN_USER_ID.to_owned(),
         };
     upsert_sqlite_bootstrap_admin(&mut tx, options, &user_id, None, &now).await?;
-    sqlx::query(
+    let old_password_hash: Option<String> = sqlx::query_scalar(
         r#"
-        UPDATE iam_credential
-        SET status = 'rotated',
-            updated_at = ?
+        SELECT credential_hash
+        FROM iam_credential
         WHERE tenant_id = ?
           AND user_id = ?
           AND credential_type = 'password'
           AND status = 'active'
         "#,
     )
-    .bind(&now)
     .bind(DEFAULT_IAM_TENANT_ID)
     .bind(&user_id)
-    .execute(&mut *tx)
+    .fetch_optional(&mut *tx)
     .await?;
 
     let password = options.password()?;
     let password_hash = bootstrap_password_hash(&password, &user_id, now.as_str())?;
+    if old_password_hash
+        .as_deref()
+        .is_some_and(|existing| existing != password_hash.as_str())
+    {
+        sqlx::query(
+            r#"
+            INSERT INTO iam_password_history
+                (id, tenant_id, user_id, password_hash, created_at)
+            VALUES
+                (?, ?, ?, ?, ?)
+            "#,
+        )
+        .bind(reset_admin_password_history_id(&user_id, &now))
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(&user_id)
+        .bind(old_password_hash.as_deref().expect("old password hash"))
+        .bind(&now)
+        .execute(&mut *tx)
+        .await?;
+    }
+
     sqlx::query(
         r#"
         INSERT INTO iam_credential
             (id, tenant_id, user_id, credential_type, credential_hash, status, expires_at, created_at, updated_at)
         VALUES
             (?, ?, ?, 'password', ?, 'active', NULL, ?, ?)
+        ON CONFLICT(id) DO UPDATE SET
+            tenant_id = excluded.tenant_id,
+            user_id = excluded.user_id,
+            credential_type = excluded.credential_type,
+            credential_hash = excluded.credential_hash,
+            status = excluded.status,
+            expires_at = excluded.expires_at,
+            updated_at = excluded.updated_at
         "#,
     )
-    .bind(reset_admin_password_credential_id(&user_id, &now))
+    .bind(bootstrap_admin_password_credential_id(&user_id))
     .bind(DEFAULT_IAM_TENANT_ID)
     .bind(&user_id)
     .bind(&password_hash)
@@ -4496,34 +3904,61 @@ async fn reset_postgres_admin_password(
             None => DEFAULT_BOOTSTRAP_ADMIN_USER_ID.to_owned(),
         };
     upsert_postgres_bootstrap_admin(&mut tx, options, &user_id, None, &now).await?;
-    sqlx::query(
+    let old_password_hash: Option<String> = sqlx::query_scalar(
         r#"
-        UPDATE iam_credential
-        SET status = 'rotated',
-            updated_at = $1::timestamptz
-        WHERE tenant_id = $2
-          AND user_id = $3
+        SELECT credential_hash
+        FROM iam_credential
+        WHERE tenant_id = $1
+          AND user_id = $2
           AND credential_type = 'password'
           AND status = 'active'
         "#,
     )
-    .bind(&now)
     .bind(DEFAULT_IAM_TENANT_ID)
     .bind(&user_id)
-    .execute(&mut *tx)
+    .fetch_optional(&mut *tx)
     .await?;
 
     let password = options.password()?;
     let password_hash = bootstrap_password_hash(&password, &user_id, now.as_str())?;
+    if old_password_hash
+        .as_deref()
+        .is_some_and(|existing| existing != password_hash.as_str())
+    {
+        sqlx::query(
+            r#"
+            INSERT INTO iam_password_history
+                (id, tenant_id, user_id, password_hash, created_at)
+            VALUES
+                ($1, $2, $3, $4, $5::timestamptz)
+            "#,
+        )
+        .bind(reset_admin_password_history_id(&user_id, &now))
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(&user_id)
+        .bind(old_password_hash.as_deref().expect("old password hash"))
+        .bind(&now)
+        .execute(&mut *tx)
+        .await?;
+    }
+
     sqlx::query(
         r#"
         INSERT INTO iam_credential
             (id, tenant_id, user_id, credential_type, credential_hash, status, expires_at, created_at, updated_at)
         VALUES
             ($1, $2, $3, 'password', $4, 'active', NULL, $5::timestamptz, $5::timestamptz)
+        ON CONFLICT(id) DO UPDATE SET
+            tenant_id = excluded.tenant_id,
+            user_id = excluded.user_id,
+            credential_type = excluded.credential_type,
+            credential_hash = excluded.credential_hash,
+            status = excluded.status,
+            expires_at = excluded.expires_at,
+            updated_at = excluded.updated_at
         "#,
     )
-    .bind(reset_admin_password_credential_id(&user_id, &now))
+    .bind(bootstrap_admin_password_credential_id(&user_id))
     .bind(DEFAULT_IAM_TENANT_ID)
     .bind(&user_id)
     .bind(&password_hash)
@@ -4553,118 +3988,30 @@ fn reset_admin_password_report(
     }
 }
 
-fn reset_admin_password_credential_id(user_id: &str, now: &str) -> String {
+fn bootstrap_admin_password_credential_id(user_id: &str) -> String {
+    format!("credential-{user_id}-bootstrap-password")
+}
+
+fn reset_admin_password_history_id(user_id: &str, now: &str) -> String {
     let sequence = ADMIN_PASSWORD_RESET_SEQUENCE.fetch_add(1, Ordering::Relaxed);
     let nanos = SystemTime::now()
         .duration_since(UNIX_EPOCH)
         .map(|duration| duration.as_nanos())
         .unwrap_or(0);
     let suffix =
-        sha256_hex(format!("{user_id}:{now}:{nanos}:{sequence}:reset-admin-password").as_str())
+        sha256_hex(format!("{user_id}:{now}:{nanos}:{sequence}:reset-admin-password-history").as_str())
             .chars()
             .take(16)
             .collect::<String>();
-    format!("credential-{user_id}-reset-password-{suffix}")
+    format!("password-history-{user_id}-reset-{suffix}")
 }
 
 async fn sqlite_default_iam_subject_seed_complete(pool: &SqlitePool) -> Result<bool, sqlx::Error> {
-    let count: i64 = sqlx::query_scalar(
-        r#"
-        SELECT COUNT(1)
-        FROM iam_tenant t
-        JOIN iam_organization o ON o.tenant_id = t.id
-        WHERE t.id = ?
-          AND t.code = ?
-          AND t.status = 'active'
-          AND o.id = ?
-          AND o.code = ?
-          AND o.status = 'active'
-        "#,
-    )
-    .bind(DEFAULT_IAM_TENANT_ID)
-    .bind(DEFAULT_IAM_TENANT_CODE)
-    .bind(DEFAULT_IAM_ORGANIZATION_ID)
-    .bind(DEFAULT_IAM_ORGANIZATION_CODE)
-    .fetch_one(pool)
-    .await?;
-    if count != 1 {
-        return Ok(false);
-    }
-    sqlite_default_iam_permission_seed_complete(pool).await
+    sqlite_default_iam_seed_complete(pool).await
 }
 
 async fn postgres_default_iam_subject_seed_complete(pool: &PgPool) -> Result<bool, sqlx::Error> {
-    let count: i64 = sqlx::query_scalar(
-        r#"
-        SELECT COUNT(1)
-        FROM iam_tenant t
-        JOIN iam_organization o ON o.tenant_id = t.id
-        WHERE t.id = $1
-          AND t.code = $2
-          AND t.status = 'active'
-          AND o.id = $3
-          AND o.code = $4
-          AND o.status = 'active'
-        "#,
-    )
-    .bind(DEFAULT_IAM_TENANT_ID)
-    .bind(DEFAULT_IAM_TENANT_CODE)
-    .bind(DEFAULT_IAM_ORGANIZATION_ID)
-    .bind(DEFAULT_IAM_ORGANIZATION_CODE)
-    .fetch_one(pool)
-    .await?;
-    if count != 1 {
-        return Ok(false);
-    }
-    postgres_default_iam_permission_seed_complete(pool).await
-}
-
-async fn sqlite_default_iam_permission_seed_complete(
-    pool: &SqlitePool,
-) -> Result<bool, sqlx::Error> {
-    for permission in DEFAULT_IAM_PERMISSION_SEEDS {
-        let count: i64 = sqlx::query_scalar(
-            r#"
-            SELECT COUNT(1)
-            FROM iam_permission
-            WHERE code = ?
-              AND resource = ?
-              AND action = ?
-            "#,
-        )
-        .bind(permission.code)
-        .bind(permission.resource)
-        .bind(permission.action)
-        .fetch_one(pool)
-        .await?;
-        if count != 1 {
-            return Ok(false);
-        }
-    }
-    Ok(true)
-}
-
-async fn postgres_default_iam_permission_seed_complete(pool: &PgPool) -> Result<bool, sqlx::Error> {
-    for permission in DEFAULT_IAM_PERMISSION_SEEDS {
-        let count: i64 = sqlx::query_scalar(
-            r#"
-            SELECT COUNT(1)
-            FROM iam_permission
-            WHERE code = $1
-              AND resource = $2
-              AND action = $3
-            "#,
-        )
-        .bind(permission.code)
-        .bind(permission.resource)
-        .bind(permission.action)
-        .fetch_one(pool)
-        .await?;
-        if count != 1 {
-            return Ok(false);
-        }
-    }
-    Ok(true)
+    postgres_default_iam_seed_complete(pool).await
 }
 
 async fn sqlite_commerce_experience_seed_complete(
@@ -5019,7 +4366,7 @@ async fn upsert_sqlite_bootstrap_admin(
                 updated_at = excluded.updated_at
             "#,
         )
-        .bind(format!("credential-{user_id}-bootstrap-password"))
+        .bind(bootstrap_admin_password_credential_id(user_id))
         .bind(DEFAULT_IAM_TENANT_ID)
         .bind(user_id)
         .bind(password_hash)
@@ -5143,7 +4490,7 @@ async fn upsert_postgres_bootstrap_admin(
                 updated_at = excluded.updated_at
             "#,
         )
-        .bind(format!("credential-{user_id}-bootstrap-password"))
+        .bind(bootstrap_admin_password_credential_id(user_id))
         .bind(DEFAULT_IAM_TENANT_ID)
         .bind(user_id)
         .bind(password_hash)
@@ -5460,10 +4807,22 @@ async fn sqlite_refresh_schema_needs_prepare(
     if !sqlite_appbase_commerce_schema_indexes_exist(pool).await? {
         return Ok(true);
     }
+    if !sqlite_appbase_iam_foundation_schema_tables_exist(pool).await? {
+        return Ok(true);
+    }
     if !sqlite_appbase_iam_oauth_schema_tables_exist(pool).await? {
         return Ok(true);
     }
     if !sqlite_appbase_iam_oauth_schema_indexes_exist(pool).await? {
+        return Ok(true);
+    }
+    if !sqlite_appstore_module_schema_tables_exist(pool).await? {
+        return Ok(true);
+    }
+    if !sqlite_course_module_schema_tables_exist(pool).await? {
+        return Ok(true);
+    }
+    if !sqlite_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
         return Ok(true);
     }
     let Some(row) = sqlx::query(
@@ -5510,10 +4869,22 @@ async fn postgres_refresh_schema_needs_prepare(
     if !postgres_appbase_commerce_schema_indexes_exist(pool).await? {
         return Ok(true);
     }
+    if !postgres_appbase_iam_foundation_schema_tables_exist(pool).await? {
+        return Ok(true);
+    }
     if !postgres_appbase_iam_oauth_schema_tables_exist(pool).await? {
         return Ok(true);
     }
     if !postgres_appbase_iam_oauth_schema_indexes_exist(pool).await? {
+        return Ok(true);
+    }
+    if !postgres_appstore_module_schema_tables_exist(pool).await? {
+        return Ok(true);
+    }
+    if !postgres_course_module_schema_tables_exist(pool).await? {
+        return Ok(true);
+    }
+    if !postgres_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
         return Ok(true);
     }
     let Some(row) = sqlx::query(
@@ -6693,231 +6064,6 @@ async fn create_postgres_system_tables(pool: &PgPool) -> Result<(), sqlx::Error>
     Ok(())
 }
 
-async fn sqlite_upsert_default_iam_subject(pool: &SqlitePool) -> Result<(), sqlx::Error> {
-    let now = current_utc_timestamp_string();
-    sqlx::query(
-        r#"
-        INSERT INTO iam_tenant
-            (id, code, name, status, created_at, updated_at)
-        VALUES
-            (?, ?, ?, 'active', ?, ?)
-        ON CONFLICT(id) DO UPDATE SET
-            code = excluded.code,
-            name = excluded.name,
-            status = excluded.status,
-            updated_at = excluded.updated_at
-        "#,
-    )
-    .bind(DEFAULT_IAM_TENANT_ID)
-    .bind(DEFAULT_IAM_TENANT_CODE)
-    .bind(DEFAULT_IAM_TENANT_NAME)
-    .bind(&now)
-    .bind(&now)
-    .execute(pool)
-    .await?;
-
-    sqlx::query(
-        r#"
-        INSERT INTO iam_organization
-            (
-                id,
-                tenant_id,
-                parent_id,
-                code,
-                name,
-                path,
-                status,
-                organization_kind,
-                tenant_boundary_kind,
-                data_boundary_kind,
-                app_boundary_enabled,
-                verification_status,
-                created_at,
-                updated_at
-            )
-        VALUES
-            (?, ?, NULL, ?, ?, ?, 'active', ?, ?, ?, 0, ?, ?, ?)
-        ON CONFLICT(id) DO UPDATE SET
-            tenant_id = excluded.tenant_id,
-            parent_id = excluded.parent_id,
-            code = excluded.code,
-            name = excluded.name,
-            path = excluded.path,
-            status = excluded.status,
-            organization_kind = excluded.organization_kind,
-            tenant_boundary_kind = excluded.tenant_boundary_kind,
-            data_boundary_kind = excluded.data_boundary_kind,
-            app_boundary_enabled = excluded.app_boundary_enabled,
-            verification_status = excluded.verification_status,
-            updated_at = excluded.updated_at
-        "#,
-    )
-    .bind(DEFAULT_IAM_ORGANIZATION_ID)
-    .bind(DEFAULT_IAM_TENANT_ID)
-    .bind(DEFAULT_IAM_ORGANIZATION_CODE)
-    .bind(DEFAULT_IAM_ORGANIZATION_NAME)
-    .bind(DEFAULT_IAM_ORGANIZATION_PATH)
-    .bind(DEFAULT_IAM_ORGANIZATION_KIND)
-    .bind(DEFAULT_IAM_ORGANIZATION_TENANT_BOUNDARY_KIND)
-    .bind(DEFAULT_IAM_ORGANIZATION_DATA_BOUNDARY_KIND)
-    .bind(DEFAULT_IAM_ORGANIZATION_VERIFICATION_STATUS)
-    .bind(&now)
-    .bind(&now)
-    .execute(pool)
-    .await?;
-    Ok(())
-}
-
-async fn sqlite_upsert_default_iam_permissions(pool: &SqlitePool) -> Result<(), sqlx::Error> {
-    let now = current_utc_timestamp_string();
-    for permission in DEFAULT_IAM_PERMISSION_SEEDS {
-        let permission_id = default_iam_permission_id(permission.code);
-        sqlx::query(
-            r#"
-            INSERT INTO iam_permission
-                (id, code, name, resource, action, created_at)
-            VALUES
-                (?, ?, ?, ?, ?, ?)
-            ON CONFLICT(code) DO UPDATE SET
-                name = excluded.name,
-                resource = excluded.resource,
-                action = excluded.action
-            "#,
-        )
-        .bind(permission_id)
-        .bind(permission.code)
-        .bind(permission.name)
-        .bind(permission.resource)
-        .bind(permission.action)
-        .bind(&now)
-        .execute(pool)
-        .await?;
-    }
-    Ok(())
-}
-
-async fn postgres_upsert_default_iam_subject(pool: &PgPool) -> Result<(), sqlx::Error> {
-    sqlx::query(
-        r#"
-        INSERT INTO iam_tenant
-            (id, code, name, status, created_at, updated_at)
-        VALUES
-            ($1, $2, $3, 'active', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
-        ON CONFLICT(id) DO UPDATE SET
-            code = excluded.code,
-            name = excluded.name,
-            status = excluded.status,
-            updated_at = excluded.updated_at
-        "#,
-    )
-    .bind(DEFAULT_IAM_TENANT_ID)
-    .bind(DEFAULT_IAM_TENANT_CODE)
-    .bind(DEFAULT_IAM_TENANT_NAME)
-    .execute(pool)
-    .await?;
-
-    sqlx::query(
-        r#"
-        INSERT INTO iam_organization
-            (
-                id,
-                tenant_id,
-                parent_id,
-                code,
-                name,
-                path,
-                status,
-                organization_kind,
-                tenant_boundary_kind,
-                data_boundary_kind,
-                app_boundary_enabled,
-                verification_status,
-                created_at,
-                updated_at
-            )
-        VALUES
-            (
-                $1,
-                $2,
-                NULL,
-                $3,
-                $4,
-                $5,
-                'active',
-                $6,
-                $7,
-                $8,
-                0,
-                $9,
-                CURRENT_TIMESTAMP,
-                CURRENT_TIMESTAMP
-            )
-        ON CONFLICT(id) DO UPDATE SET
-            tenant_id = excluded.tenant_id,
-            parent_id = excluded.parent_id,
-            code = excluded.code,
-            name = excluded.name,
-            path = excluded.path,
-            status = excluded.status,
-            organization_kind = excluded.organization_kind,
-            tenant_boundary_kind = excluded.tenant_boundary_kind,
-            data_boundary_kind = excluded.data_boundary_kind,
-            app_boundary_enabled = excluded.app_boundary_enabled,
-            verification_status = excluded.verification_status,
-            updated_at = excluded.updated_at
-        "#,
-    )
-    .bind(DEFAULT_IAM_ORGANIZATION_ID)
-    .bind(DEFAULT_IAM_TENANT_ID)
-    .bind(DEFAULT_IAM_ORGANIZATION_CODE)
-    .bind(DEFAULT_IAM_ORGANIZATION_NAME)
-    .bind(DEFAULT_IAM_ORGANIZATION_PATH)
-    .bind(DEFAULT_IAM_ORGANIZATION_KIND)
-    .bind(DEFAULT_IAM_ORGANIZATION_TENANT_BOUNDARY_KIND)
-    .bind(DEFAULT_IAM_ORGANIZATION_DATA_BOUNDARY_KIND)
-    .bind(DEFAULT_IAM_ORGANIZATION_VERIFICATION_STATUS)
-    .execute(pool)
-    .await?;
-    Ok(())
-}
-
-async fn postgres_upsert_default_iam_permissions(pool: &PgPool) -> Result<(), sqlx::Error> {
-    for permission in DEFAULT_IAM_PERMISSION_SEEDS {
-        let permission_id = default_iam_permission_id(permission.code);
-        sqlx::query(
-            r#"
-            INSERT INTO iam_permission
-                (id, code, name, resource, action, created_at)
-            VALUES
-                ($1, $2, $3, $4, $5, CURRENT_TIMESTAMP)
-            ON CONFLICT(code) DO UPDATE SET
-                name = excluded.name,
-                resource = excluded.resource,
-                action = excluded.action
-            "#,
-        )
-        .bind(permission_id)
-        .bind(permission.code)
-        .bind(permission.name)
-        .bind(permission.resource)
-        .bind(permission.action)
-        .execute(pool)
-        .await?;
-    }
-    Ok(())
-}
-
-fn default_iam_permission_id(code: &str) -> String {
-    let normalized = code
-        .chars()
-        .map(|ch| match ch {
-            'a'..='z' | '0'..='9' => ch,
-            _ => '-',
-        })
-        .collect::<String>();
-    format!("iam-permission-{normalized}")
-}
-
 async fn upsert_sqlite_installing_state(
     pool: &SqlitePool,
     options: &DatabaseInstallOptions,
@@ -7321,6 +6467,445 @@ async fn apply_postgres_appbase_commerce_schema(pool: &PgPool) -> Result<(), Dat
     Ok(())
 }
 
+fn appstore_module_table_names() -> Vec<&'static str> {
+    vec![
+        "appstore_idempotency_key",
+        "appstore_publisher",
+        "appstore_app",
+        "appstore_listing",
+        "appstore_category",
+        "appstore_app_template",
+    ]
+}
+
+fn course_module_table_names() -> Vec<&'static str> {
+    vec![
+        "course_category",
+        "course_catalog",
+        "course_section",
+        "course_lesson",
+        "course_application",
+    ]
+}
+
+fn appstore_foundation_migration_sql() -> &'static str {
+    APPSTORE_FOUNDATION_SQL
+}
+
+fn course_foundation_migration_sql() -> &'static str {
+    COURSE_FOUNDATION_SQL
+}
+
+fn appstore_module_postgres_schema_statements() -> Vec<String> {
+    strip_line_comments(appstore_foundation_migration_sql())
+        .split(';')
+        .map(str::trim)
+        .filter(|statement| !statement.is_empty())
+        .map(str::to_owned)
+        .collect()
+}
+
+fn appstore_module_sqlite_schema_statements() -> Vec<String> {
+    strip_line_comments(appstore_foundation_migration_sql())
+        .split(';')
+        .map(str::trim)
+        .filter(|statement| !statement.is_empty())
+        .map(postgres_statement_to_sqlite)
+        .collect()
+}
+
+fn course_module_postgres_schema_statements() -> Vec<String> {
+    strip_line_comments(course_foundation_migration_sql())
+        .split(';')
+        .map(str::trim)
+        .filter(|statement| !statement.is_empty())
+        .map(str::to_owned)
+        .collect()
+}
+
+fn course_module_sqlite_schema_statements() -> Vec<String> {
+    strip_line_comments(course_foundation_migration_sql())
+        .split(';')
+        .map(str::trim)
+        .filter(|statement| !statement.is_empty())
+        .map(postgres_statement_to_sqlite)
+        .collect()
+}
+
+async fn sqlite_appstore_module_schema_tables_exist(
+    pool: &SqlitePool,
+) -> Result<bool, sqlx::Error> {
+    let installed_tables = sqlite_string_set(
+        pool,
+        r#"
+        SELECT name
+        FROM sqlite_master
+        WHERE type = 'table'
+        "#,
+    )
+    .await?;
+    Ok(string_set(appstore_module_table_names()).is_subset(&installed_tables))
+}
+
+async fn postgres_appstore_module_schema_tables_exist(pool: &PgPool) -> Result<bool, sqlx::Error> {
+    let installed_tables = postgres_string_set(
+        pool,
+        r#"
+        SELECT table_name
+        FROM information_schema.tables
+        WHERE table_schema = current_schema()
+          AND table_type = 'BASE TABLE'
+        "#,
+    )
+    .await?;
+    Ok(string_set(appstore_module_table_names()).is_subset(&installed_tables))
+}
+
+async fn sqlite_course_module_schema_tables_exist(pool: &SqlitePool) -> Result<bool, sqlx::Error> {
+    let installed_tables = sqlite_string_set(
+        pool,
+        r#"
+        SELECT name
+        FROM sqlite_master
+        WHERE type = 'table'
+        "#,
+    )
+    .await?;
+    Ok(string_set(course_module_table_names()).is_subset(&installed_tables))
+}
+
+async fn postgres_course_module_schema_tables_exist(pool: &PgPool) -> Result<bool, sqlx::Error> {
+    let installed_tables = postgres_string_set(
+        pool,
+        r#"
+        SELECT table_name
+        FROM information_schema.tables
+        WHERE table_schema = current_schema()
+          AND table_type = 'BASE TABLE'
+        "#,
+    )
+    .await?;
+    Ok(string_set(course_module_table_names()).is_subset(&installed_tables))
+}
+
+async fn apply_sqlite_appstore_module_schema(pool: &SqlitePool) -> Result<(), DatabaseInstallError> {
+    record_sqlite_migration_started(
+        pool,
+        "appstore-module-schema",
+        CURRENT_SCHEMA_VERSION,
+        appstore_foundation_migration_sql(),
+    )
+    .await?;
+    for statement in appstore_module_sqlite_schema_statements() {
+        execute_sqlite_statement(pool, statement.as_str()).await?;
+    }
+    record_sqlite_migration_completed(
+        pool,
+        "appstore-module-schema",
+        CURRENT_SCHEMA_VERSION,
+        appstore_foundation_migration_sql(),
+    )
+    .await?;
+    Ok(())
+}
+
+async fn apply_postgres_appstore_module_schema(pool: &PgPool) -> Result<(), DatabaseInstallError> {
+    record_postgres_migration_started(
+        pool,
+        "appstore-module-schema",
+        CURRENT_SCHEMA_VERSION,
+        appstore_foundation_migration_sql(),
+    )
+    .await?;
+    for statement in appstore_module_postgres_schema_statements() {
+        execute_postgres_statement(pool, statement.as_str()).await?;
+    }
+    record_postgres_migration_completed(
+        pool,
+        "appstore-module-schema",
+        CURRENT_SCHEMA_VERSION,
+        appstore_foundation_migration_sql(),
+    )
+    .await?;
+    Ok(())
+}
+
+async fn ensure_sqlite_appstore_module_schema_columns(pool: &SqlitePool) -> Result<bool, sqlx::Error> {
+    let mut changed = false;
+    for statement in appstore_module_sqlite_schema_statements() {
+        if create_table_name(statement.as_str()).as_deref() != Some("appstore_app") {
+            continue;
+        }
+        let Some(table) = create_table_name(statement.as_str()) else {
+            continue;
+        };
+        let before = sqlite_existing_columns(pool, &table).await?;
+        ensure_sqlite_table_columns(pool, statement.as_str()).await?;
+        let after = sqlite_existing_columns(pool, &table).await?;
+        changed |= before != after;
+    }
+    Ok(changed)
+}
+
+async fn ensure_postgres_appstore_module_schema_columns(pool: &PgPool) -> Result<bool, sqlx::Error> {
+    let mut changed = false;
+    for statement in appstore_module_postgres_schema_statements() {
+        if create_table_name(statement.as_str()).as_deref() != Some("appstore_app") {
+            continue;
+        }
+        changed |= ensure_postgres_table_columns(pool, statement.as_str()).await?;
+    }
+    Ok(changed)
+}
+
+async fn apply_sqlite_course_module_schema(pool: &SqlitePool) -> Result<(), DatabaseInstallError> {
+    record_sqlite_migration_started(
+        pool,
+        "course-module-schema",
+        CURRENT_SCHEMA_VERSION,
+        course_foundation_migration_sql(),
+    )
+    .await?;
+    for statement in course_module_sqlite_schema_statements() {
+        execute_sqlite_statement(pool, statement.as_str()).await?;
+    }
+    record_sqlite_migration_completed(
+        pool,
+        "course-module-schema",
+        CURRENT_SCHEMA_VERSION,
+        course_foundation_migration_sql(),
+    )
+    .await?;
+    ensure_sqlite_composed_module_bootstrap(pool)
+        .await
+        .map_err(DatabaseInstallError::Database)?;
+    Ok(())
+}
+
+async fn apply_postgres_course_module_schema(pool: &PgPool) -> Result<(), DatabaseInstallError> {
+    record_postgres_migration_started(
+        pool,
+        "course-module-schema",
+        CURRENT_SCHEMA_VERSION,
+        course_foundation_migration_sql(),
+    )
+    .await?;
+    for statement in course_module_postgres_schema_statements() {
+        execute_postgres_statement(pool, statement.as_str()).await?;
+    }
+    record_postgres_migration_completed(
+        pool,
+        "course-module-schema",
+        CURRENT_SCHEMA_VERSION,
+        course_foundation_migration_sql(),
+    )
+    .await?;
+    ensure_postgres_composed_module_bootstrap(pool)
+        .await
+        .map_err(DatabaseInstallError::Database)?;
+    Ok(())
+}
+
+fn appbase_iam_foundation_postgres_schema_statements() -> Vec<String> {
+    strip_line_comments(iam_baseline_postgres_sql())
+        .split(';')
+        .map(str::trim)
+        .filter(|statement| !statement.is_empty())
+        .map(str::to_owned)
+        .collect()
+}
+
+fn appbase_iam_foundation_sqlite_schema_statements() -> Vec<String> {
+    appbase_iam_foundation_postgres_schema_statements()
+        .into_iter()
+        .map(|statement| postgres_statement_to_sqlite(statement.as_str()))
+        .collect()
+}
+
+fn appbase_iam_foundation_table_names() -> BTreeSet<String> {
+    iam_database_tables()
+        .into_iter()
+        .map(str::to_owned)
+        .collect()
+}
+
+async fn sqlite_appbase_iam_foundation_schema_tables_exist(
+    pool: &SqlitePool,
+) -> Result<bool, sqlx::Error> {
+    let installed_tables = sqlite_string_set(
+        pool,
+        r#"
+        SELECT name
+        FROM sqlite_master
+        WHERE type = 'table'
+        "#,
+    )
+    .await?;
+    Ok(appbase_iam_foundation_table_names().is_subset(&installed_tables))
+}
+
+async fn postgres_appbase_iam_foundation_schema_tables_exist(
+    pool: &PgPool,
+) -> Result<bool, sqlx::Error> {
+    let installed_tables = postgres_string_set(
+        pool,
+        r#"
+        SELECT tablename
+        FROM pg_tables
+        WHERE schemaname = current_schema()
+        "#,
+    )
+    .await?;
+    Ok(appbase_iam_foundation_table_names().is_subset(&installed_tables))
+}
+
+async fn apply_sqlite_appbase_iam_foundation_schema(
+    pool: &SqlitePool,
+) -> Result<(), DatabaseInstallError> {
+    record_sqlite_migration_started(
+        pool,
+        "appbase-iam-foundation-schema",
+        CURRENT_SCHEMA_VERSION,
+        iam_baseline_postgres_sql(),
+    )
+    .await?;
+    for statement in appbase_iam_foundation_sqlite_schema_statements() {
+        execute_sqlite_iam_shared_database_compat_statement(pool, statement.as_str()).await?;
+    }
+    record_sqlite_migration_completed(
+        pool,
+        "appbase-iam-foundation-schema",
+        CURRENT_SCHEMA_VERSION,
+        iam_baseline_postgres_sql(),
+    )
+    .await?;
+    Ok(())
+}
+
+async fn apply_postgres_appbase_iam_foundation_schema(
+    pool: &PgPool,
+) -> Result<(), DatabaseInstallError> {
+    record_postgres_migration_started(
+        pool,
+        "appbase-iam-foundation-schema",
+        CURRENT_SCHEMA_VERSION,
+        iam_baseline_postgres_sql(),
+    )
+    .await?;
+    for statement in appbase_iam_foundation_postgres_schema_statements() {
+        execute_postgres_statement(pool, statement.as_str()).await?;
+    }
+    record_postgres_migration_completed(
+        pool,
+        "appbase-iam-foundation-schema",
+        CURRENT_SCHEMA_VERSION,
+        iam_baseline_postgres_sql(),
+    )
+    .await?;
+    Ok(())
+}
+
+fn clawrouter_legacy_projection_table_names() -> Vec<&'static str> {
+    Vec::new()
+}
+
+fn clawrouter_legacy_projection_schema_statement(_statement: &str) -> bool {
+    false
+}
+
+fn clawrouter_legacy_projection_postgres_schema_statements() -> Vec<String> {
+    strip_line_comments(CLAWROUTER_LEGACY_PROJECTION_SQL)
+        .split(';')
+        .map(str::trim)
+        .filter(|statement| !statement.is_empty())
+        .filter(|statement| clawrouter_legacy_projection_schema_statement(statement))
+        .map(str::to_owned)
+        .collect()
+}
+
+fn clawrouter_legacy_projection_sqlite_schema_statements() -> Vec<String> {
+    clawrouter_legacy_projection_postgres_schema_statements()
+        .into_iter()
+        .map(|statement| postgres_statement_to_sqlite(statement.as_str()))
+        .collect()
+}
+
+async fn sqlite_clawrouter_legacy_projection_schema_tables_exist(
+    pool: &SqlitePool,
+) -> Result<bool, sqlx::Error> {
+    let installed_tables = sqlite_string_set(
+        pool,
+        r#"
+        SELECT name
+        FROM sqlite_master
+        WHERE type = 'table'
+        "#,
+    )
+    .await?;
+    Ok(string_set(clawrouter_legacy_projection_table_names()).is_subset(&installed_tables))
+}
+
+async fn postgres_clawrouter_legacy_projection_schema_tables_exist(
+    pool: &PgPool,
+) -> Result<bool, sqlx::Error> {
+    let installed_tables = postgres_string_set(
+        pool,
+        r#"
+        SELECT tablename
+        FROM pg_tables
+        WHERE schemaname = current_schema()
+        "#,
+    )
+    .await?;
+    Ok(string_set(clawrouter_legacy_projection_table_names()).is_subset(&installed_tables))
+}
+
+async fn apply_sqlite_clawrouter_legacy_projection_schema(
+    pool: &SqlitePool,
+) -> Result<(), DatabaseInstallError> {
+    record_sqlite_migration_started(
+        pool,
+        "clawrouter-legacy-projection-schema",
+        CURRENT_SCHEMA_VERSION,
+        CLAWROUTER_LEGACY_PROJECTION_SQL,
+    )
+    .await?;
+    for statement in clawrouter_legacy_projection_sqlite_schema_statements() {
+        execute_sqlite_statement(pool, statement.as_str()).await?;
+    }
+    record_sqlite_migration_completed(
+        pool,
+        "clawrouter-legacy-projection-schema",
+        CURRENT_SCHEMA_VERSION,
+        CLAWROUTER_LEGACY_PROJECTION_SQL,
+    )
+    .await?;
+    Ok(())
+}
+
+async fn apply_postgres_clawrouter_legacy_projection_schema(
+    pool: &PgPool,
+) -> Result<(), DatabaseInstallError> {
+    record_postgres_migration_started(
+        pool,
+        "clawrouter-legacy-projection-schema",
+        CURRENT_SCHEMA_VERSION,
+        CLAWROUTER_LEGACY_PROJECTION_SQL,
+    )
+    .await?;
+    for statement in clawrouter_legacy_projection_postgres_schema_statements() {
+        execute_postgres_statement(pool, statement.as_str()).await?;
+    }
+    record_postgres_migration_completed(
+        pool,
+        "clawrouter-legacy-projection-schema",
+        CURRENT_SCHEMA_VERSION,
+        CLAWROUTER_LEGACY_PROJECTION_SQL,
+    )
+    .await?;
+    Ok(())
+}
+
 async fn repair_postgres_appbase_commerce_legacy_constraints(
     pool: &PgPool,
 ) -> Result<bool, sqlx::Error> {
@@ -7365,7 +6950,7 @@ fn postgres_appbase_commerce_legacy_not_null_constraint_repairs() -> Vec<&'stati
 }
 
 fn appbase_iam_oauth_postgres_schema_statements() -> Vec<String> {
-    strip_line_comments(iam_initial_migration_sql())
+    strip_line_comments(iam_baseline_postgres_sql())
         .split(';')
         .map(str::trim)
         .filter(|statement| !statement.is_empty())
@@ -7375,7 +6960,7 @@ fn appbase_iam_oauth_postgres_schema_statements() -> Vec<String> {
 }
 
 fn appbase_iam_oauth_sqlite_schema_statements() -> Vec<String> {
-    strip_line_comments(iam_initial_migration_sql())
+    strip_line_comments(iam_baseline_postgres_sql())
         .split(';')
         .map(str::trim)
         .filter(|statement| !statement.is_empty())
@@ -7397,64 +6982,11 @@ fn appbase_iam_oauth_schema_statement(statement: &str) -> bool {
     index_name.starts_with("idx_iam_oauth_") || index_name.starts_with("uk_iam_oauth_")
 }
 
-fn appbase_iam_shared_database_compat_statements() -> Vec<String> {
-    strip_line_comments(iam_shared_database_compat_migration_sql())
-        .split(';')
-        .map(str::trim)
-        .filter(|statement| !statement.is_empty())
-        .map(str::to_owned)
-        .collect()
-}
-
-async fn apply_sqlite_appbase_iam_shared_database_compat(
-    pool: &SqlitePool,
-) -> Result<(), DatabaseInstallError> {
-    record_sqlite_migration_started(
-        pool,
-        "appbase-iam-shared-database-compat",
-        CURRENT_SCHEMA_VERSION,
-        iam_shared_database_compat_migration_sql(),
-    )
-    .await?;
-    for statement in appbase_iam_shared_database_compat_statements() {
-        execute_sqlite_iam_shared_database_compat_statement(pool, statement.as_str()).await?;
-    }
-    record_sqlite_migration_completed(
-        pool,
-        "appbase-iam-shared-database-compat",
-        CURRENT_SCHEMA_VERSION,
-        iam_shared_database_compat_migration_sql(),
-    )
-    .await?;
-    Ok(())
-}
-
-async fn apply_postgres_appbase_iam_shared_database_compat(
-    pool: &PgPool,
-) -> Result<(), DatabaseInstallError> {
-    record_postgres_migration_started(
-        pool,
-        "appbase-iam-shared-database-compat",
-        CURRENT_SCHEMA_VERSION,
-        iam_shared_database_compat_migration_sql(),
-    )
-    .await?;
-    for statement in appbase_iam_shared_database_compat_statements() {
-        if let Err(error) = sqlx::query(statement.as_str()).execute(pool).await {
-            if error.to_string().contains("does not exist") {
-                continue;
-            }
-            return Err(DatabaseInstallError::Database(error));
-        }
-    }
-    record_postgres_migration_completed(
-        pool,
-        "appbase-iam-shared-database-compat",
-        CURRENT_SCHEMA_VERSION,
-        iam_shared_database_compat_migration_sql(),
-    )
-    .await?;
-    Ok(())
+fn sqlite_iam_shared_database_compat_statement_skippable(error: &sqlx::Error) -> bool {
+    let message = error.to_string().to_ascii_lowercase();
+    message.contains("does not exist")
+        || message.contains("no such table")
+        || message.contains("no such column")
 }
 
 async fn execute_sqlite_iam_shared_database_compat_statement(
@@ -7473,7 +7005,7 @@ async fn execute_sqlite_iam_shared_database_compat_statement(
             definition
         );
         if let Err(error) = sqlx::query(alter.as_str()).execute(pool).await {
-            if error.to_string().contains("does not exist") {
+            if sqlite_iam_shared_database_compat_statement_skippable(&error) {
                 return Ok(());
             }
             return Err(DatabaseInstallError::Database(error));
@@ -7482,7 +7014,7 @@ async fn execute_sqlite_iam_shared_database_compat_statement(
     }
 
     if let Err(error) = sqlx::query(statement).execute(pool).await {
-        if error.to_string().contains("does not exist") {
+        if sqlite_iam_shared_database_compat_statement_skippable(&error) {
             return Ok(());
         }
         return Err(DatabaseInstallError::Database(error));
@@ -7509,7 +7041,7 @@ async fn apply_sqlite_appbase_iam_oauth_schema(
         pool,
         "appbase-iam-oauth-schema",
         CURRENT_SCHEMA_VERSION,
-        iam_initial_migration_sql(),
+        iam_baseline_postgres_sql(),
     )
     .await?;
     for statement in appbase_iam_oauth_sqlite_schema_statements() {
@@ -7519,7 +7051,7 @@ async fn apply_sqlite_appbase_iam_oauth_schema(
         pool,
         "appbase-iam-oauth-schema",
         CURRENT_SCHEMA_VERSION,
-        iam_initial_migration_sql(),
+        iam_baseline_postgres_sql(),
     )
     .await?;
     Ok(())
@@ -7532,7 +7064,7 @@ async fn apply_postgres_appbase_iam_oauth_schema(
         pool,
         "appbase-iam-oauth-schema",
         CURRENT_SCHEMA_VERSION,
-        iam_initial_migration_sql(),
+        iam_baseline_postgres_sql(),
     )
     .await?;
     for statement in appbase_iam_oauth_postgres_schema_statements() {
@@ -7542,7 +7074,7 @@ async fn apply_postgres_appbase_iam_oauth_schema(
         pool,
         "appbase-iam-oauth-schema",
         CURRENT_SCHEMA_VERSION,
-        iam_initial_migration_sql(),
+        iam_baseline_postgres_sql(),
     )
     .await?;
     Ok(())
@@ -8288,6 +7820,50 @@ mod tests {
             columns["priority"]
         );
         assert_eq!("\"weight\" INTEGER NOT NULL DEFAULT 100", columns["weight"]);
+    }
+
+    #[test]
+    fn appbase_iam_foundation_schema_includes_core_directory_tables() {
+        let statements = super::appbase_iam_foundation_postgres_schema_statements();
+        assert!(
+            statements
+                .iter()
+                .any(|statement| statement.contains("CREATE TABLE IF NOT EXISTS iam_organization")),
+            "appbase IAM foundation bootstrap must create iam_organization"
+        );
+        assert!(
+            statements
+                .iter()
+                .any(|statement| statement.contains("CREATE TABLE IF NOT EXISTS iam_user")),
+            "appbase IAM foundation bootstrap must create iam_user"
+        );
+    }
+
+    #[tokio::test]
+    async fn sqlite_appbase_iam_foundation_schema_bootstraps_directory_tables() {
+        use sqlx::sqlite::SqlitePoolOptions;
+        let pool = SqlitePoolOptions::new()
+            .max_connections(1)
+            .connect("sqlite::memory:")
+            .await
+            .expect("sqlite memory pool");
+        super::create_sqlite_system_tables(&pool)
+            .await
+            .expect("system tables");
+        super::apply_sqlite_appbase_iam_foundation_schema(&pool)
+            .await
+            .expect("iam foundation bootstrap");
+        let table: String = sqlx::query_scalar(
+            r#"
+            SELECT name
+            FROM sqlite_master
+            WHERE type = 'table' AND name = 'iam_organization'
+            "#,
+        )
+        .fetch_one(&pool)
+        .await
+        .expect("iam_organization table");
+        assert_eq!("iam_organization", table);
     }
 
     #[test]

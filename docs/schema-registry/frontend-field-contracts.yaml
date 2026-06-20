@@ -4533,7 +4533,7 @@ x_response_entities:
         type: string
         minLength: 1
         maxLength: 128
-        description: Stable application identity from platform_app.config.standard.appKey when present; falls back to platform_app.id only when appKey is absent.
+        description: Stable application identity from appstore_app.config.standard.appKey when present; falls back to appstore_app.id only when appKey is absent.
       name: { type: string, minLength: 1, maxLength: 128 }
       developer: { type: string, minLength: 1, maxLength: 128 }
       category: { type: string, minLength: 1, maxLength: 128 }
@@ -8758,7 +8758,7 @@ frontend_models:
       - createdAt
       - updatedAt
     data_sources:
-      - platform_app
+      - appstore_app
       - c_category
   - route: /admin/app
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
@@ -8819,7 +8819,7 @@ frontend_models:
       - page
       - pageSize
     data_sources:
-      - platform_app
+      - appstore_app
       - c_category
   - route: /admin/app
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
@@ -8857,7 +8857,7 @@ frontend_models:
       - pageSize
       - hasNextPage
     data_sources:
-      - platform_app
+      - appstore_app
       - c_category
   - route: /admin/app
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
@@ -8885,7 +8885,7 @@ frontend_models:
       - storeUrl
       - artifact
     data_sources:
-      - platform_app
+      - appstore_app
       - c_category
   - route: /admin/app
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
@@ -8911,7 +8911,7 @@ frontend_models:
       - storeUrl
       - artifact
     data_sources:
-      - platform_app
+      - appstore_app
       - c_category
   - route: /admin/app
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
@@ -8948,7 +8948,7 @@ frontend_models:
       - createdAt
       - updatedAt
     data_sources:
-      - platform_app_template
+      - appstore_app_template
   - route: /admin/app
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     interface: AdminAppTemplateCreateInput
@@ -8979,7 +8979,7 @@ frontend_models:
       - dependencyManifest
       - capabilityManifest
     data_sources:
-      - platform_app_template
+      - appstore_app_template
   - route: /admin/app
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     interface: AdminAppTemplateUpdateInput
@@ -9008,7 +9008,7 @@ frontend_models:
       - dependencyManifest
       - capabilityManifest
     data_sources:
-      - platform_app_template
+      - appstore_app_template
   - route: /admin/app
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     interface: AdminAppTemplateListInput
@@ -9021,7 +9021,7 @@ frontend_models:
       - page
       - pageSize
     data_sources:
-      - platform_app_template
+      - appstore_app_template
   - route: /admin/app
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     interface: AdminAppTemplatePage
@@ -9062,7 +9062,7 @@ frontend_models:
       - pageSize
       - hasNextPage
     data_sources:
-      - platform_app_template
+      - appstore_app_template
   - route: /apps
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/appRuntime.ts
     interface: App
@@ -9087,7 +9087,7 @@ frontend_models:
       - releases.artifact
       - releases.whatsNew
     data_sources:
-      - platform_app
+      - appstore_app
   - route: /apps
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/appRuntime.ts
     interface: AppRelease
@@ -9101,7 +9101,7 @@ frontend_models:
       - artifact
       - whatsNew
     data_sources:
-      - platform_app
+      - appstore_app
   - route: /apps
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/appService.ts
     interface: AppFilters
@@ -9113,7 +9113,7 @@ frontend_models:
       - page
       - pageSize
     data_sources:
-      - platform_app
+      - appstore_app
   - route: /apps
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/appService.ts
     interface: AppCatalogPage
@@ -9124,7 +9124,7 @@ frontend_models:
       - pageSize
       - hasNextPage
     data_sources:
-      - platform_app
+      - appstore_app
   - route: /console/notifications
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
     interface: NotificationItem
@@ -21573,7 +21573,7 @@ frontend_operations:
     description: Returns public App Store entries where PlusApp runtime status is ACTIVE and config.portal.marketStatus is PUBLISHED. Authenticated positive-organization app sessions may read same-tenant public organization_id = 0 app projections;
       tenant isolation is always enforced.
     read_sources:
-      - platform_app
+      - appstore_app
       - c_category
     query_parameters:
       - name: page
@@ -21628,7 +21628,7 @@ frontend_operations:
                 type: string
                 minLength: 1
                 maxLength: 128
-                description: Stable application identity from platform_app.config.standard.appKey when present; falls back to platform_app.id only when appKey is absent.
+                description: Stable application identity from appstore_app.config.standard.appKey when present; falls back to appstore_app.id only when appKey is absent.
               name: { type: string, minLength: 1, maxLength: 128 }
               developer: { type: string, minLength: 1, maxLength: 128 }
               category: { type: string, minLength: 1, maxLength: 128 }
@@ -21675,9 +21675,9 @@ frontend_operations:
     api_surface: app
     api_method: GET
     api_path: /app/v3/api/platform/apps/store/{appId}
-    description: Path parameter appId accepts either the stable appKey or numeric platform_app.id and applies the same ACTIVE/PUBLISHED and public organization_id = 0 visibility rules as getApps.
+    description: Path parameter appId accepts either the stable appKey or numeric appstore_app.id and applies the same ACTIVE/PUBLISHED and public organization_id = 0 visibility rules as getApps.
     read_sources:
-      - platform_app
+      - appstore_app
       - c_category
     query_parameters: []
     response_schema:
@@ -21690,7 +21690,7 @@ frontend_operations:
           type: string
           minLength: 1
           maxLength: 128
-          description: Stable application identity from platform_app.config.standard.appKey when present; falls back to platform_app.id only when appKey is absent.
+          description: Stable application identity from appstore_app.config.standard.appKey when present; falls back to appstore_app.id only when appKey is absent.
         name: { type: string, minLength: 1, maxLength: 128 }
         developer: { type: string, minLength: 1, maxLength: 128 }
         category: { type: string, minLength: 1, maxLength: 128 }
@@ -37757,7 +37757,7 @@ frontend_operations:
     api_method: GET
     api_path: /backend/v3/api/platform/apps
     read_sources:
-      - platform_app
+      - appstore_app
       - c_category
       - ai_skill_asset
       - ai_skill_artifact
@@ -38041,7 +38041,7 @@ frontend_operations:
     api_method: GET
     api_path: /backend/v3/api/platform/apps/templates
     read_sources:
-      - platform_app_template
+      - appstore_app_template
       - ai_skill_asset
       - ai_skill_artifact
     query_parameters:
@@ -38138,9 +38138,9 @@ frontend_operations:
     api_method: POST
     api_path: /backend/v3/api/platform/apps/templates
     read_sources:
-      - platform_app_template
+      - appstore_app_template
     write_tables:
-      - platform_app_template
+      - appstore_app_template
       - ops_audit_log
     request_schema:
       name: AdminAppTemplateCreateRequest
@@ -38263,7 +38263,7 @@ frontend_operations:
     api_method: GET
     api_path: /backend/v3/api/platform/apps/templates/{templateId}
     read_sources:
-      - platform_app_template
+      - appstore_app_template
     query_parameters: []
     response_schema:
       name: AdminAppTemplateMutationResponse
@@ -38337,9 +38337,9 @@ frontend_operations:
     api_method: PUT
     api_path: /backend/v3/api/platform/apps/templates/{templateId}
     read_sources:
-      - platform_app_template
+      - appstore_app_template
     write_tables:
-      - platform_app_template
+      - appstore_app_template
       - ops_audit_log
     request_schema:
       name: AdminAppTemplateUpdateRequest
@@ -38462,12 +38462,12 @@ frontend_operations:
     api_method: DELETE
     api_path: /backend/v3/api/platform/apps/templates/{templateId}
     read_sources:
-      - platform_app_template
+      - appstore_app_template
       - ai_skill_action
       - ai_skill_asset
       - ai_skill_artifact
     write_tables:
-      - platform_app_template
+      - appstore_app_template
       - ai_skill_action
       - ai_skill_asset
       - ai_skill_artifact
@@ -38490,9 +38490,9 @@ frontend_operations:
     api_path: /backend/v3/api/platform/apps/templates/{templateId}/publish
     description: Sets app template publishStatus to PUBLISHED.
     read_sources:
-      - platform_app_template
+      - appstore_app_template
     write_tables:
-      - platform_app_template
+      - appstore_app_template
       - ops_audit_log
     request_body_required: false
     response_schema:
@@ -38568,9 +38568,9 @@ frontend_operations:
     api_path: /backend/v3/api/platform/apps/templates/{templateId}/unpublish
     description: Sets app template publishStatus to OFFLINE.
     read_sources:
-      - platform_app_template
+      - appstore_app_template
     write_tables:
-      - platform_app_template
+      - appstore_app_template
       - ops_audit_log
     request_body_required: false
     response_schema:
@@ -38644,12 +38644,12 @@ frontend_operations:
     api_method: POST
     api_path: /backend/v3/api/platform/apps
     read_sources:
-      - platform_app
+      - appstore_app
       - c_category
       - ai_skill_asset
       - ai_skill_artifact
     write_tables:
-      - platform_app
+      - appstore_app
       - ops_audit_log
     request_schema:
       name: AdminAppCreateRequest
@@ -38778,7 +38778,7 @@ frontend_operations:
     api_method: GET
     api_path: /backend/v3/api/platform/apps/{appId}
     read_sources:
-      - platform_app
+      - appstore_app
       - c_category
       - ai_skill_asset
       - ai_skill_artifact
@@ -38856,12 +38856,12 @@ frontend_operations:
     api_method: PUT
     api_path: /backend/v3/api/platform/apps/{appId}
     read_sources:
-      - platform_app
+      - appstore_app
       - c_category
       - ai_skill_asset
       - ai_skill_artifact
     write_tables:
-      - platform_app
+      - appstore_app
       - ops_audit_log
     request_schema:
       name: AdminAppUpdateRequest
@@ -38989,12 +38989,12 @@ frontend_operations:
     api_method: DELETE
     api_path: /backend/v3/api/platform/apps/{appId}
     read_sources:
-      - platform_app
+      - appstore_app
       - ai_skill_action
       - ai_skill_asset
       - ai_skill_artifact
     write_tables:
-      - platform_app
+      - appstore_app
       - ai_skill_action
       - ai_skill_asset
       - ai_skill_artifact
@@ -39015,9 +39015,9 @@ frontend_operations:
     api_path: /backend/v3/api/platform/apps/{appId}/enable
     description: Sets PlusApp runtime status to ACTIVE without changing config.portal.marketStatus.
     read_sources:
-      - platform_app
+      - appstore_app
     write_tables:
-      - platform_app
+      - appstore_app
       - ops_audit_log
     request_body_required: false
     response_schema:
@@ -39094,9 +39094,9 @@ frontend_operations:
     api_path: /backend/v3/api/platform/apps/{appId}/disable
     description: Sets PlusApp runtime status to INACTIVE without changing config.portal.marketStatus.
     read_sources:
-      - platform_app
+      - appstore_app
     write_tables:
-      - platform_app
+      - appstore_app
       - ops_audit_log
     request_body_required: false
     response_schema:
@@ -39173,9 +39173,9 @@ frontend_operations:
     api_path: /backend/v3/api/platform/apps/{appId}/publish
     description: Sets config.portal.marketStatus to PUBLISHED without changing PlusApp runtime status.
     read_sources:
-      - platform_app
+      - appstore_app
     write_tables:
-      - platform_app
+      - appstore_app
       - ops_audit_log
     request_body_required: false
     response_schema:
@@ -39252,9 +39252,9 @@ frontend_operations:
     api_path: /backend/v3/api/platform/apps/{appId}/unpublish
     description: Sets config.portal.marketStatus to OFFLINE without changing PlusApp runtime status.
     read_sources:
-      - platform_app
+      - appstore_app
     write_tables:
-      - platform_app
+      - appstore_app
       - ops_audit_log
     request_body_required: false
     response_schema:
@@ -43375,7 +43375,7 @@ routes:
   - route: /
     required_tables:
       - content_doc_page
-      - platform_app
+      - appstore_app
   - route: /vip
     required_tables:
       - commerce_product_spu
@@ -43510,13 +43510,13 @@ routes:
         - strengths
   - route: /apps
     required_tables:
-      - platform_app
+      - appstore_app
       - c_category
       - ai_skill_action
       - ai_skill_asset
       - ai_skill_artifact
     required_columns:
-      platform_app:
+      appstore_app:
         - name
         - description
         - icon_media_resource_id
@@ -43555,13 +43555,13 @@ routes:
         - release_notes
   - route: /apps/:id
     required_tables:
-      - platform_app
+      - appstore_app
       - c_category
       - ai_skill_action
       - ai_skill_asset
       - ai_skill_artifact
     required_columns:
-      platform_app:
+      appstore_app:
         - name
         - description
         - icon_media_resource_id
@@ -44851,15 +44851,15 @@ routes:
       - ops_job_execution
   - route: /admin/app
     required_tables:
-      - platform_app
+      - appstore_app
       - c_category
-      - platform_app_template
+      - appstore_app_template
       - ai_skill_action
       - ai_skill_asset
       - ai_skill_artifact
       - ops_audit_log
     required_columns:
-      platform_app:
+      appstore_app:
         - name
         - description
         - version
@@ -44898,7 +44898,7 @@ routes:
         - path
         - visible
         - status
-      platform_app_template:
+      appstore_app_template:
         - uuid
         - template_no
         - template_code

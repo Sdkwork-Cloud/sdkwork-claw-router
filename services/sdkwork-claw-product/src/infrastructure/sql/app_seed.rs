@@ -24,6 +24,12 @@ const APP_ASSET_TYPE_ICON: i32 = 1;
 const APP_ASSET_TYPE_SCREENSHOT: i32 = 2;
 const APP_ASSET_TYPE_PREVIEW: i32 = 3;
 const APP_ARTIFACT_TYPE_PACKAGE: i32 = 1;
+const DEFAULT_APPSTORE_PUBLISHER_ID: &str = "appstore-publisher-default-20";
+const DEFAULT_APPSTORE_TENANT_ID: &str = "10";
+const DEFAULT_APPSTORE_ORGANIZATION_ID: &str = "20";
+const DEFAULT_APPSTORE_PUBLIC_TENANT_ID: &str = "20001";
+const DEFAULT_APPSTORE_PUBLIC_ORGANIZATION_ID: &str = "0";
+const DEFAULT_APPSTORE_LOCALE: &str = "en-US";
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -292,7 +298,6 @@ pub(crate) fn bundled_app_seed_payload() -> Result<String, AppSeedLoadError> {
 pub(crate) async fn import_sqlite_app_seed(pool: &SqlitePool) -> Result<(), sqlx::Error> {
     let catalog = AppSeedCatalog::load().map_err(json_decode_error)?;
     let mut tx = pool.begin().await?;
-    import_sqlite_categories(&mut tx, &catalog).await?;
     import_sqlite_apps(&mut tx, &catalog).await?;
     import_sqlite_assets(&mut tx, &catalog).await?;
     import_sqlite_artifacts(&mut tx, &catalog).await?;
@@ -311,7 +316,8 @@ pub(crate) async fn repair_sqlite_app_seed(pool: &SqlitePool) -> Result<bool, sq
     if integrity.category_count != catalog.categories.len() as i64
         || integrity.stale_category_count != 0
     {
-        repair_sqlite_categories(&mut tx, &catalog).await?;
+        retire_sqlite_stale_categories(&mut tx, &catalog).await?;
+        sync_sqlite_canonical_appstore_categories(&mut tx, &catalog).await?;
     }
     if integrity.app_count != catalog.bundle.apps.len() as i64 || integrity.stale_app_count != 0 {
         repair_sqlite_apps(&mut tx, &catalog).await?;
@@ -319,12 +325,7 @@ pub(crate) async fn repair_sqlite_app_seed(pool: &SqlitePool) -> Result<bool, sq
     tx.commit().await?;
 
     if !sqlite_app_seed_complete_with_catalog(pool, &catalog).await? {
-        let mut tx = pool.begin().await?;
-        import_sqlite_categories(&mut tx, &catalog).await?;
-        import_sqlite_apps(&mut tx, &catalog).await?;
-        import_sqlite_assets(&mut tx, &catalog).await?;
-        import_sqlite_artifacts(&mut tx, &catalog).await?;
-        tx.commit().await?;
+        import_sqlite_app_seed(pool).await?;
     }
     Ok(true)
 }
@@ -332,7 +333,6 @@ pub(crate) async fn repair_sqlite_app_seed(pool: &SqlitePool) -> Result<bool, sq
 pub(crate) async fn import_postgres_app_seed(pool: &PgPool) -> Result<(), sqlx::Error> {
     let catalog = AppSeedCatalog::load().map_err(json_decode_error)?;
     let mut tx = pool.begin().await?;
-    import_postgres_categories(&mut tx, &catalog).await?;
     import_postgres_apps(&mut tx, &catalog).await?;
     import_postgres_assets(&mut tx, &catalog).await?;
     import_postgres_artifacts(&mut tx, &catalog).await?;
@@ -396,72 +396,6 @@ pub(crate) async fn postgres_app_seed_complete(pool: &PgPool) -> Result<bool, sq
         && stale_category_count == 0)
 }
 
-async fn import_sqlite_categories(
-    tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
-    catalog: &AppSeedCatalog,
-) -> Result<(), sqlx::Error> {
-    repair_sqlite_categories(tx, catalog).await
-}
-
-async fn repair_sqlite_categories(
-    tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
-    catalog: &AppSeedCatalog,
-) -> Result<(), sqlx::Error> {
-    retire_sqlite_stale_categories(tx, catalog).await?;
-    for item in &catalog.categories {
-        let (icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot) =
-            app_category_icon_columns(item);
-        sqlx::query(
-            r#"
-            INSERT INTO c_category
-                (id, uuid, tenant_id, organization_id, data_scope, category_type, name, description, code, tags, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, sort_weight, parent_id, path, visible, status)
-            VALUES
-                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            ON CONFLICT(id) DO UPDATE SET
-                uuid = excluded.uuid,
-                tenant_id = excluded.tenant_id,
-                organization_id = excluded.organization_id,
-                data_scope = excluded.data_scope,
-                category_type = excluded.category_type,
-                name = excluded.name,
-                description = excluded.description,
-                code = excluded.code,
-                tags = excluded.tags,
-                icon_media_resource_id = excluded.icon_media_resource_id,
-                icon_object_blob_id = excluded.icon_object_blob_id,
-                icon_resource_snapshot = excluded.icon_resource_snapshot,
-                sort_weight = excluded.sort_weight,
-                parent_id = excluded.parent_id,
-                path = excluded.path,
-                visible = excluded.visible,
-                status = excluded.status,
-                updated_at = CURRENT_TIMESTAMP
-            "#,
-        )
-        .bind(item.id)
-        .bind(&item.uuid)
-        .bind(APP_STORE_TENANT_ID)
-        .bind(INSTALL_PROJECTION_ORGANIZATION_ID)
-        .bind(SYSTEM_DATA_SCOPE)
-        .bind("app_store")
-        .bind(&item.name)
-        .bind(&item.description)
-        .bind(&item.code)
-        .bind(json_string(&item.tags))
-        .bind(icon_media_resource_id)
-        .bind(icon_object_blob_id)
-        .bind(icon_resource_snapshot)
-        .bind(item.sort_weight)
-        .bind(Option::<i64>::None)
-        .bind(&item.path)
-        .bind(true)
-        .bind(ACTIVE_STATUS)
-        .execute(&mut **tx)
-        .await?;
-    }
-    Ok(())
-}
-
 async fn import_sqlite_apps(
     tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
     catalog: &AppSeedCatalog,
@@ -474,181 +408,7 @@ async fn repair_sqlite_apps(
     catalog: &AppSeedCatalog,
 ) -> Result<(), sqlx::Error> {
     retire_sqlite_stale_apps(tx, catalog).await?;
-    for (index, entry) in catalog.bundle.apps.iter().enumerate() {
-        let icon = app_icon(entry);
-        let icon_media_resource_id = icon.as_ref().map(media_resource_stable_id);
-        let icon_object_blob_id = icon.as_ref().and_then(media_resource_object_blob_id);
-        let icon_resource_snapshot = icon.as_ref().map(Value::to_string);
-        let (artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot) =
-            app_artifact_columns(entry);
-        let stable_id = stable_app_id(index);
-        let app_uuid = app_uuid(&entry.app_key);
-        sqlx::query(
-            r#"
-            UPDATE platform_app
-            SET uuid = uuid || '-retired-' || id,
-                status = ?,
-                config = json_patch(
-                    COALESCE(NULLIF(config, ''), '{}'),
-                    '{"portal":{"marketStatus":"OFFLINE"}}'
-                ),
-                updated_at = CURRENT_TIMESTAMP
-            WHERE uuid = ?
-              AND id <> ?
-            "#,
-        )
-        .bind(INACTIVE_STATUS)
-        .bind(&app_uuid)
-        .bind(stable_id)
-        .execute(&mut **tx)
-        .await?;
-
-        let result = sqlx::query(
-            r#"
-            UPDATE platform_app
-            SET
-                uuid = ?,
-                tenant_id = ?,
-                organization_id = ?,
-                data_scope = ?,
-                user_id = ?,
-                name = ?,
-                icon = ?,
-                resource_list = ?,
-                project_id = ?,
-                description = ?,
-                version = ?,
-                icon_media_resource_id = ?,
-                icon_object_blob_id = ?,
-                icon_resource_snapshot = ?,
-                access_url = ?,
-                config = ?,
-                status = ?,
-                app_type = ?,
-                platforms = ?,
-                install_platforms = ?,
-                install_skill = ?,
-                install_config = ?,
-                release_notes = ?,
-                package_name = ?,
-                bundle_id = ?,
-                store_url = ?,
-                artifact_media_resource_id = ?,
-                artifact_object_blob_id = ?,
-                artifact_resource_snapshot = ?,
-                updated_at = CURRENT_TIMESTAMP
-            WHERE id = ?
-            "#,
-        )
-        .bind(&app_uuid)
-        .bind(entry.tenant_id)
-        .bind(install_projection_organization_id(entry))
-        .bind(SYSTEM_DATA_SCOPE)
-        .bind(0_i64)
-        .bind(&entry.platform_app.name)
-        .bind(icon_json(entry))
-        .bind(resource_list_json(entry))
-        .bind(0_i64)
-        .bind(&entry.platform_app.description)
-        .bind(&entry.platform_app.version)
-        .bind(&icon_media_resource_id)
-        .bind(icon_object_blob_id)
-        .bind(&icon_resource_snapshot)
-        .bind(&entry.platform_app.access_url)
-        .bind(entry.platform_app.config.to_string())
-        .bind(app_status_code(&entry.platform_app.status)?)
-        .bind(&entry.platform_app.app_type)
-        .bind(entry.platform_app.platforms.to_string())
-        .bind(entry.platform_app.install_platforms.to_string())
-        .bind(entry.platform_app.install_skill.to_string())
-        .bind(entry.platform_app.install_config.to_string())
-        .bind(entry.platform_app.release_notes.to_string())
-        .bind(&entry.platform_app.package_name)
-        .bind(&entry.platform_app.bundle_id)
-        .bind(&entry.platform_app.store_url)
-        .bind(&artifact_media_resource_id)
-        .bind(artifact_object_blob_id)
-        .bind(&artifact_resource_snapshot)
-        .bind(stable_id)
-        .execute(&mut **tx)
-        .await?;
-        if result.rows_affected() > 0 {
-            continue;
-        }
-
-        sqlx::query(
-            r#"
-            INSERT INTO platform_app
-                (id, uuid, tenant_id, organization_id, data_scope, user_id, name, icon, resource_list, project_id, description, version, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, access_url, config, status, app_type, platforms, install_platforms, install_skill, install_config, release_notes, package_name, bundle_id, store_url, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot)
-            VALUES
-                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            ON CONFLICT(id) DO UPDATE SET
-                uuid = excluded.uuid,
-                tenant_id = excluded.tenant_id,
-                organization_id = excluded.organization_id,
-                data_scope = excluded.data_scope,
-                user_id = excluded.user_id,
-                name = excluded.name,
-                icon = excluded.icon,
-                resource_list = excluded.resource_list,
-                project_id = excluded.project_id,
-                description = excluded.description,
-                version = excluded.version,
-                icon_media_resource_id = excluded.icon_media_resource_id,
-                icon_object_blob_id = excluded.icon_object_blob_id,
-                icon_resource_snapshot = excluded.icon_resource_snapshot,
-                access_url = excluded.access_url,
-                config = excluded.config,
-                status = excluded.status,
-                app_type = excluded.app_type,
-                platforms = excluded.platforms,
-                install_platforms = excluded.install_platforms,
-                install_skill = excluded.install_skill,
-                install_config = excluded.install_config,
-                release_notes = excluded.release_notes,
-                package_name = excluded.package_name,
-                bundle_id = excluded.bundle_id,
-                store_url = excluded.store_url,
-                artifact_media_resource_id = excluded.artifact_media_resource_id,
-                artifact_object_blob_id = excluded.artifact_object_blob_id,
-                artifact_resource_snapshot = excluded.artifact_resource_snapshot,
-                updated_at = CURRENT_TIMESTAMP
-            "#,
-        )
-        .bind(stable_id)
-        .bind(&app_uuid)
-        .bind(entry.tenant_id)
-        .bind(install_projection_organization_id(entry))
-        .bind(SYSTEM_DATA_SCOPE)
-        .bind(0_i64)
-        .bind(&entry.platform_app.name)
-        .bind(icon_json(entry))
-        .bind(resource_list_json(entry))
-        .bind(0_i64)
-        .bind(&entry.platform_app.description)
-        .bind(&entry.platform_app.version)
-        .bind(&icon_media_resource_id)
-        .bind(icon_object_blob_id)
-        .bind(&icon_resource_snapshot)
-        .bind(&entry.platform_app.access_url)
-        .bind(entry.platform_app.config.to_string())
-        .bind(app_status_code(&entry.platform_app.status)?)
-        .bind(&entry.platform_app.app_type)
-        .bind(entry.platform_app.platforms.to_string())
-        .bind(entry.platform_app.install_platforms.to_string())
-        .bind(entry.platform_app.install_skill.to_string())
-        .bind(entry.platform_app.install_config.to_string())
-        .bind(entry.platform_app.release_notes.to_string())
-        .bind(&entry.platform_app.package_name)
-        .bind(&entry.platform_app.bundle_id)
-        .bind(&entry.platform_app.store_url)
-        .bind(&artifact_media_resource_id)
-        .bind(artifact_object_blob_id)
-        .bind(&artifact_resource_snapshot)
-        .execute(&mut **tx)
-        .await?;
-    }
-    Ok(())
+    sync_sqlite_canonical_appstore_module(tx, catalog).await
 }
 
 async fn import_sqlite_assets(
@@ -679,242 +439,12 @@ async fn repair_sqlite_artifacts(
     Ok(())
 }
 
-async fn import_postgres_categories(
-    tx: &mut sqlx::Transaction<'_, sqlx::Postgres>,
-    catalog: &AppSeedCatalog,
-) -> Result<(), sqlx::Error> {
-    retire_postgres_stale_categories(tx, catalog).await?;
-    for item in &catalog.categories {
-        let (icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot) =
-            app_category_icon_columns(item);
-        sqlx::query(
-            r#"
-            INSERT INTO c_category
-                (id, uuid, tenant_id, organization_id, data_scope, category_type, name, description, code, tags, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, sort_weight, parent_id, path, visible, status)
-            VALUES
-                ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10::jsonb, $11, $12, $13::jsonb, $14, $15, $16, $17, $18)
-            ON CONFLICT(id) DO UPDATE SET
-                uuid = excluded.uuid,
-                tenant_id = excluded.tenant_id,
-                organization_id = excluded.organization_id,
-                data_scope = excluded.data_scope,
-                category_type = excluded.category_type,
-                name = excluded.name,
-                description = excluded.description,
-                code = excluded.code,
-                tags = excluded.tags,
-                icon_media_resource_id = excluded.icon_media_resource_id,
-                icon_object_blob_id = excluded.icon_object_blob_id,
-                icon_resource_snapshot = excluded.icon_resource_snapshot,
-                sort_weight = excluded.sort_weight,
-                parent_id = excluded.parent_id,
-                path = excluded.path,
-                visible = excluded.visible,
-                status = excluded.status,
-                updated_at = CURRENT_TIMESTAMP
-            "#,
-        )
-        .bind(item.id)
-        .bind(&item.uuid)
-        .bind(APP_STORE_TENANT_ID)
-        .bind(INSTALL_PROJECTION_ORGANIZATION_ID)
-        .bind(SYSTEM_DATA_SCOPE)
-        .bind("app_store")
-        .bind(&item.name)
-        .bind(&item.description)
-        .bind(&item.code)
-        .bind(json_string(&item.tags))
-        .bind(icon_media_resource_id)
-        .bind(icon_object_blob_id)
-        .bind(icon_resource_snapshot)
-        .bind(item.sort_weight)
-        .bind(Option::<i64>::None)
-        .bind(&item.path)
-        .bind(true)
-        .bind(ACTIVE_STATUS)
-        .execute(&mut **tx)
-        .await?;
-    }
-    Ok(())
-}
-
 async fn import_postgres_apps(
     tx: &mut sqlx::Transaction<'_, sqlx::Postgres>,
     catalog: &AppSeedCatalog,
 ) -> Result<(), sqlx::Error> {
     retire_postgres_stale_apps(tx, catalog).await?;
-    for (index, entry) in catalog.bundle.apps.iter().enumerate() {
-        let icon = app_icon(entry);
-        let icon_media_resource_id = icon.as_ref().map(media_resource_stable_id);
-        let icon_object_blob_id = icon.as_ref().and_then(media_resource_object_blob_id);
-        let icon_resource_snapshot = icon.as_ref().map(Value::to_string);
-        let (artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot) =
-            app_artifact_columns(entry);
-        let stable_id = stable_app_id(index);
-        let app_uuid = app_uuid(&entry.app_key);
-        sqlx::query(
-            r#"
-            UPDATE platform_app
-            SET uuid = uuid || '-retired-' || id::text,
-                status = $1,
-                config = jsonb_set(COALESCE(config, '{}'::jsonb), '{portal,marketStatus}', '"OFFLINE"'::jsonb, true),
-                updated_at = CURRENT_TIMESTAMP
-            WHERE uuid = $2
-              AND id <> $3
-            "#,
-        )
-        .bind(INACTIVE_STATUS)
-        .bind(&app_uuid)
-        .bind(stable_id)
-        .execute(&mut **tx)
-        .await?;
-
-        let result = sqlx::query(
-            r#"
-            UPDATE platform_app
-            SET
-                uuid = $1,
-                tenant_id = $2,
-                organization_id = $3,
-                data_scope = $4,
-                user_id = $5,
-                name = $6,
-                icon = $7::jsonb,
-                resource_list = $8::jsonb,
-                project_id = $9,
-                description = $10,
-                version = $11,
-                icon_media_resource_id = $12,
-                icon_object_blob_id = $13,
-                icon_resource_snapshot = $14::jsonb,
-                access_url = $15,
-                config = $16::jsonb,
-                status = $17,
-                app_type = $18,
-                platforms = $19::jsonb,
-                install_platforms = $20::jsonb,
-                install_skill = $21::jsonb,
-                install_config = $22::jsonb,
-                release_notes = $23::jsonb,
-                package_name = $24,
-                bundle_id = $25,
-                store_url = $26,
-                artifact_media_resource_id = $27,
-                artifact_object_blob_id = $28,
-                artifact_resource_snapshot = $29::jsonb,
-                updated_at = CURRENT_TIMESTAMP
-            WHERE id = $30
-            "#,
-        )
-        .bind(&app_uuid)
-        .bind(entry.tenant_id)
-        .bind(install_projection_organization_id(entry))
-        .bind(SYSTEM_DATA_SCOPE)
-        .bind(0_i64)
-        .bind(&entry.platform_app.name)
-        .bind(icon_json(entry))
-        .bind(resource_list_json(entry))
-        .bind(0_i64)
-        .bind(&entry.platform_app.description)
-        .bind(&entry.platform_app.version)
-        .bind(&icon_media_resource_id)
-        .bind(icon_object_blob_id)
-        .bind(&icon_resource_snapshot)
-        .bind(&entry.platform_app.access_url)
-        .bind(entry.platform_app.config.to_string())
-        .bind(app_status_code(&entry.platform_app.status)?)
-        .bind(&entry.platform_app.app_type)
-        .bind(entry.platform_app.platforms.to_string())
-        .bind(entry.platform_app.install_platforms.to_string())
-        .bind(entry.platform_app.install_skill.to_string())
-        .bind(entry.platform_app.install_config.to_string())
-        .bind(entry.platform_app.release_notes.to_string())
-        .bind(&entry.platform_app.package_name)
-        .bind(&entry.platform_app.bundle_id)
-        .bind(&entry.platform_app.store_url)
-        .bind(&artifact_media_resource_id)
-        .bind(artifact_object_blob_id)
-        .bind(&artifact_resource_snapshot)
-        .bind(stable_id)
-        .execute(&mut **tx)
-        .await?;
-        if result.rows_affected() > 0 {
-            continue;
-        }
-
-        sqlx::query(
-            r#"
-            INSERT INTO platform_app
-                (id, uuid, tenant_id, organization_id, data_scope, user_id, name, icon, resource_list, project_id, description, version, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, access_url, config, status, app_type, platforms, install_platforms, install_skill, install_config, release_notes, package_name, bundle_id, store_url, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot)
-            VALUES
-                ($1, $2, $3, $4, $5, $6, $7, $8::jsonb, $9::jsonb, $10, $11, $12, $13, $14, $15::jsonb, $16, $17::jsonb, $18, $19, $20::jsonb, $21::jsonb, $22::jsonb, $23::jsonb, $24::jsonb, $25, $26, $27, $28, $29, $30::jsonb)
-            ON CONFLICT(id) DO UPDATE SET
-                uuid = excluded.uuid,
-                tenant_id = excluded.tenant_id,
-                organization_id = excluded.organization_id,
-                data_scope = excluded.data_scope,
-                user_id = excluded.user_id,
-                name = excluded.name,
-                icon = excluded.icon,
-                resource_list = excluded.resource_list,
-                project_id = excluded.project_id,
-                description = excluded.description,
-                version = excluded.version,
-                icon_media_resource_id = excluded.icon_media_resource_id,
-                icon_object_blob_id = excluded.icon_object_blob_id,
-                icon_resource_snapshot = excluded.icon_resource_snapshot,
-                access_url = excluded.access_url,
-                config = excluded.config,
-                status = excluded.status,
-                app_type = excluded.app_type,
-                platforms = excluded.platforms,
-                install_platforms = excluded.install_platforms,
-                install_skill = excluded.install_skill,
-                install_config = excluded.install_config,
-                release_notes = excluded.release_notes,
-                package_name = excluded.package_name,
-                bundle_id = excluded.bundle_id,
-                store_url = excluded.store_url,
-                artifact_media_resource_id = excluded.artifact_media_resource_id,
-                artifact_object_blob_id = excluded.artifact_object_blob_id,
-                artifact_resource_snapshot = excluded.artifact_resource_snapshot,
-                updated_at = CURRENT_TIMESTAMP
-            "#,
-        )
-        .bind(stable_id)
-        .bind(&app_uuid)
-        .bind(entry.tenant_id)
-        .bind(install_projection_organization_id(entry))
-        .bind(SYSTEM_DATA_SCOPE)
-        .bind(0_i64)
-        .bind(&entry.platform_app.name)
-        .bind(icon_json(entry))
-        .bind(resource_list_json(entry))
-        .bind(0_i64)
-        .bind(&entry.platform_app.description)
-        .bind(&entry.platform_app.version)
-        .bind(&icon_media_resource_id)
-        .bind(icon_object_blob_id)
-        .bind(&icon_resource_snapshot)
-        .bind(&entry.platform_app.access_url)
-        .bind(entry.platform_app.config.to_string())
-        .bind(app_status_code(&entry.platform_app.status)?)
-        .bind(&entry.platform_app.app_type)
-        .bind(entry.platform_app.platforms.to_string())
-        .bind(entry.platform_app.install_platforms.to_string())
-        .bind(entry.platform_app.install_skill.to_string())
-        .bind(entry.platform_app.install_config.to_string())
-        .bind(entry.platform_app.release_notes.to_string())
-        .bind(&entry.platform_app.package_name)
-        .bind(&entry.platform_app.bundle_id)
-        .bind(&entry.platform_app.store_url)
-        .bind(&artifact_media_resource_id)
-        .bind(artifact_object_blob_id)
-        .bind(&artifact_resource_snapshot)
-        .execute(&mut **tx)
-        .await?;
-    }
-    Ok(())
+    sync_postgres_canonical_appstore_module(tx, catalog).await
 }
 
 async fn import_postgres_assets(
@@ -1018,40 +548,41 @@ async fn retire_sqlite_stale_apps(
     let current_uuids = app_seed_uuids(catalog);
     let rows = sqlx::query(
         r#"
-        SELECT uuid
-        FROM platform_app
-        WHERE tenant_id = ?
-          AND organization_id = ?
-          AND uuid LIKE 'sdkwork-app-%'
+        SELECT legacy_uuid
+        FROM appstore_app
+        WHERE CAST(tenant_id AS INTEGER) = ?
+          AND CAST(organization_id AS INTEGER) = ?
+          AND legacy_uuid LIKE 'sdkwork-app-%'
           AND (
-              status <> ?
+              app_status <> 'retired'
               OR COALESCE(NULLIF(json_extract(config, '$.portal.marketStatus'), ''), NULLIF(json_extract(config, '$.marketStatus'), ''), 'DRAFT') <> 'OFFLINE'
           )
         "#,
     )
     .bind(APP_STORE_TENANT_ID)
     .bind(INSTALL_PROJECTION_ORGANIZATION_ID)
-    .bind(INACTIVE_STATUS)
     .fetch_all(&mut **tx)
     .await?;
 
     for row in rows {
-        let uuid = row.get::<String, _>("uuid");
+        let uuid = row.get::<String, _>("legacy_uuid");
         if current_uuids.contains(uuid.as_str()) {
             continue;
         }
         sqlx::query(
             r#"
-            UPDATE platform_app
-            SET status = ?,
+            UPDATE appstore_app
+            SET runtime_status = ?,
+                app_status = 'retired',
+                distribution_status = 'unlisted',
                 config = json_patch(
                     COALESCE(NULLIF(config, ''), '{}'),
                     '{"portal":{"marketStatus":"OFFLINE"}}'
                 ),
-                updated_at = CURRENT_TIMESTAMP
-            WHERE tenant_id = ?
-              AND organization_id = ?
-              AND uuid = ?
+                updated_at = datetime('now')
+            WHERE CAST(tenant_id AS INTEGER) = ?
+              AND CAST(organization_id AS INTEGER) = ?
+              AND legacy_uuid = ?
             "#,
         )
         .bind(INACTIVE_STATUS)
@@ -1071,37 +602,38 @@ async fn retire_postgres_stale_apps(
     let current_uuids = app_seed_uuids(catalog);
     let rows = sqlx::query(
         r#"
-        SELECT uuid
-        FROM platform_app
-        WHERE tenant_id = $1
-          AND organization_id = $2
-          AND uuid LIKE 'sdkwork-app-%'
+        SELECT legacy_uuid
+        FROM appstore_app
+        WHERE CAST(tenant_id AS BIGINT) = $1
+          AND CAST(organization_id AS BIGINT) = $2
+          AND legacy_uuid LIKE 'sdkwork-app-%'
           AND (
-              status <> $3
-              OR COALESCE(NULLIF(config -> 'portal' ->> 'marketStatus', ''), NULLIF(config ->> 'marketStatus', ''), 'DRAFT') <> 'OFFLINE'
+              app_status <> 'retired'
+              OR COALESCE(NULLIF(config::jsonb -> 'portal' ->> 'marketStatus', ''), NULLIF(config::jsonb ->> 'marketStatus', ''), 'DRAFT') <> 'OFFLINE'
           )
         "#,
     )
     .bind(APP_STORE_TENANT_ID)
     .bind(INSTALL_PROJECTION_ORGANIZATION_ID)
-    .bind(INACTIVE_STATUS)
     .fetch_all(&mut **tx)
     .await?;
 
     for row in rows {
-        let uuid = row.get::<String, _>("uuid");
+        let uuid = row.get::<String, _>("legacy_uuid");
         if current_uuids.contains(uuid.as_str()) {
             continue;
         }
         sqlx::query(
             r#"
-            UPDATE platform_app
-            SET status = $1,
-                config = jsonb_set(COALESCE(config, '{}'::jsonb), '{portal,marketStatus}', '"OFFLINE"'::jsonb, true),
-                updated_at = CURRENT_TIMESTAMP
-            WHERE tenant_id = $2
-              AND organization_id = $3
-              AND uuid = $4
+            UPDATE appstore_app
+            SET runtime_status = $1,
+                app_status = 'retired',
+                distribution_status = 'unlisted',
+                config = jsonb_set(COALESCE(config::jsonb, '{}'::jsonb), '{portal,marketStatus}', '"OFFLINE"'::jsonb, true)::text,
+                updated_at = CURRENT_TIMESTAMP::text
+            WHERE CAST(tenant_id AS BIGINT) = $2
+              AND CAST(organization_id AS BIGINT) = $3
+              AND legacy_uuid = $4
             "#,
         )
         .bind(INACTIVE_STATUS)
@@ -1118,48 +650,37 @@ async fn retire_sqlite_stale_categories(
     tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
     catalog: &AppSeedCatalog,
 ) -> Result<(), sqlx::Error> {
-    let current_uuids = category_seed_uuids(catalog);
+    let current_ids = catalog
+        .categories
+        .iter()
+        .map(|item| canonical_appstore_category_id(item.id))
+        .collect::<BTreeSet<_>>();
     let rows = sqlx::query(
         r#"
-        SELECT uuid
-        FROM c_category
+        SELECT id
+        FROM appstore_category
         WHERE tenant_id = ?
-          AND organization_id = ?
-          AND category_type = ?
-          AND uuid LIKE 'sdkwork-app-category-%'
-          AND (
-              status <> ?
-              OR visible <> false
-          )
+          AND category_status = 'active'
         "#,
     )
-    .bind(APP_STORE_TENANT_ID)
-    .bind(INSTALL_PROJECTION_ORGANIZATION_ID)
-    .bind("app_store")
-    .bind(INACTIVE_STATUS)
+    .bind(DEFAULT_APPSTORE_PUBLIC_TENANT_ID)
     .fetch_all(&mut **tx)
     .await?;
 
     for row in rows {
-        let uuid = row.get::<String, _>("uuid");
-        if current_uuids.contains(uuid.as_str()) {
+        let id = row.get::<String, _>("id");
+        if current_ids.contains(id.as_str()) {
             continue;
         }
         sqlx::query(
             r#"
-            UPDATE c_category
-            SET visible = false,
-                status = ?,
-                updated_at = CURRENT_TIMESTAMP
-            WHERE tenant_id = ?
-              AND organization_id = ?
-              AND uuid = ?
+            UPDATE appstore_category
+            SET category_status = 'retired',
+                updated_at = datetime('now')
+            WHERE id = ?
             "#,
         )
-        .bind(INACTIVE_STATUS)
-        .bind(APP_STORE_TENANT_ID)
-        .bind(INSTALL_PROJECTION_ORGANIZATION_ID)
-        .bind(&uuid)
+        .bind(&id)
         .execute(&mut **tx)
         .await?;
     }
@@ -1170,48 +691,37 @@ async fn retire_postgres_stale_categories(
     tx: &mut sqlx::Transaction<'_, sqlx::Postgres>,
     catalog: &AppSeedCatalog,
 ) -> Result<(), sqlx::Error> {
-    let current_uuids = category_seed_uuids(catalog);
+    let current_ids = catalog
+        .categories
+        .iter()
+        .map(|item| canonical_appstore_category_id(item.id))
+        .collect::<BTreeSet<_>>();
     let rows = sqlx::query(
         r#"
-        SELECT uuid
-        FROM c_category
+        SELECT id
+        FROM appstore_category
         WHERE tenant_id = $1
-          AND organization_id = $2
-          AND category_type = $3
-          AND uuid LIKE 'sdkwork-app-category-%'
-          AND (
-              status <> $5
-              OR visible <> false
-          )
+          AND category_status = 'active'
         "#,
     )
-    .bind(APP_STORE_TENANT_ID)
-    .bind(INSTALL_PROJECTION_ORGANIZATION_ID)
-    .bind("app_store")
-    .bind(INACTIVE_STATUS)
+    .bind(DEFAULT_APPSTORE_PUBLIC_TENANT_ID)
     .fetch_all(&mut **tx)
     .await?;
 
     for row in rows {
-        let uuid = row.get::<String, _>("uuid");
-        if current_uuids.contains(uuid.as_str()) {
+        let id = row.get::<String, _>("id");
+        if current_ids.contains(id.as_str()) {
             continue;
         }
         sqlx::query(
             r#"
-            UPDATE c_category
-            SET visible = false,
-                status = $1,
-                updated_at = CURRENT_TIMESTAMP
-            WHERE tenant_id = $2
-              AND organization_id = $3
-              AND uuid = $4
+            UPDATE appstore_category
+            SET category_status = 'retired',
+                updated_at = CURRENT_TIMESTAMP::text
+            WHERE id = $1
             "#,
         )
-        .bind(INACTIVE_STATUS)
-        .bind(APP_STORE_TENANT_ID)
-        .bind(INSTALL_PROJECTION_ORGANIZATION_ID)
-        .bind(&uuid)
+        .bind(&id)
         .execute(&mut **tx)
         .await?;
     }
@@ -1828,17 +1338,20 @@ async fn sqlite_app_seed_standard_count(
     let expected = sqlite_expected_app_fingerprints(catalog)?;
     let rows = sqlx::query(
         r#"
-        SELECT id, uuid, tenant_id, organization_id, data_scope, user_id, name, icon,
-               resource_list, project_id, description, version,
-               icon_media_resource_id, icon_object_blob_id,
-               CAST(icon_resource_snapshot AS TEXT) AS icon_resource_snapshot,
+        SELECT CAST(plus_app_id AS INTEGER) AS id, legacy_uuid AS uuid,
+               CAST(tenant_id AS INTEGER) AS tenant_id,
+               CAST(organization_id AS INTEGER) AS organization_id,
+               0 AS data_scope, 0 AS user_id, display_name AS name, icon,
+               resource_list, NULL AS project_id, description, latest_released_version AS version,
+               icon_media_id AS icon_media_resource_id, NULL AS icon_object_blob_id,
+               icon_resource_snapshot,
                access_url,
-               config, status, app_type, platforms, install_platforms, install_skill,
+               config, runtime_status AS status, app_type, platforms, install_platforms, install_skill,
                install_config, release_notes, package_name, bundle_id, store_url,
-               artifact_media_resource_id, artifact_object_blob_id,
-               CAST(artifact_resource_snapshot AS TEXT) AS artifact_resource_snapshot
-        FROM platform_app
-        WHERE uuid LIKE 'sdkwork-app-%'
+               NULL AS artifact_media_resource_id, NULL AS artifact_object_blob_id,
+               artifact_resource_snapshot
+        FROM appstore_app
+        WHERE legacy_uuid LIKE 'sdkwork-app-%'
         "#,
     )
     .fetch_all(pool)
@@ -1887,45 +1400,25 @@ async fn sqlite_category_seed_standard_count(
     pool: &SqlitePool,
     categories: &[AppCategorySeed],
 ) -> Result<i64, sqlx::Error> {
-    let expected = sqlite_expected_category_fingerprints(categories);
-    let rows = sqlx::query(
-        r#"
-        SELECT id, uuid, tenant_id, organization_id, data_scope, category_type, name, description,
-               code, tags, icon_media_resource_id,
-               icon_object_blob_id, icon_resource_snapshot, sort_weight, parent_id,
-               path, visible, status
-        FROM c_category
-        WHERE uuid LIKE 'sdkwork-app-category-%'
-        "#,
-    )
-    .fetch_all(pool)
-    .await?;
-    let actual = rows
-        .into_iter()
-        .map(|row| {
-            seed_fingerprint(serde_json::json!([
-                row.get::<i64, _>("id"),
-                row.get::<String, _>("uuid"),
-                row.get::<i64, _>("tenant_id"),
-                row.get::<i64, _>("organization_id"),
-                row.get::<i64, _>("data_scope"),
-                row.get::<String, _>("category_type"),
-                row.get::<String, _>("name"),
-                row.get::<Option<String>, _>("description"),
-                row.get::<Option<String>, _>("code"),
-                row.get::<String, _>("tags"),
-                row.get::<Option<String>, _>("icon_media_resource_id"),
-                row.get::<Option<i64>, _>("icon_object_blob_id"),
-                row.get::<Option<String>, _>("icon_resource_snapshot"),
-                row.get::<i64, _>("sort_weight"),
-                row.get::<Option<i64>, _>("parent_id"),
-                row.get::<Option<String>, _>("path"),
-                row.get::<i64, _>("visible"),
-                row.get::<i64, _>("status"),
-            ]))
-        })
-        .collect::<BTreeSet<_>>();
-    Ok(matching_seed_fingerprint_count(&expected, &actual))
+    if categories.is_empty() {
+        return Ok(0);
+    }
+    let ids = categories
+        .iter()
+        .map(|item| canonical_appstore_category_id(item.id))
+        .collect::<Vec<_>>();
+    let placeholders = std::iter::repeat_n("?", ids.len())
+        .collect::<Vec<_>>()
+        .join(", ");
+    let sql = format!(
+        "SELECT COUNT(1) AS count FROM appstore_category WHERE tenant_id = ? AND category_status = 'active' AND id IN ({placeholders})"
+    );
+    let mut query = sqlx::query(sql.as_str()).bind(DEFAULT_APPSTORE_PUBLIC_TENANT_ID);
+    for id in ids {
+        query = query.bind(id);
+    }
+    let row = query.fetch_one(pool).await?;
+    Ok(row.get::<i64, _>("count"))
 }
 
 async fn sqlite_stale_app_seed_count(
@@ -1935,20 +1428,19 @@ async fn sqlite_stale_app_seed_count(
     let current_uuids = app_seed_uuids(catalog);
     let rows = sqlx::query(
         r#"
-        SELECT uuid
-        FROM platform_app
-        WHERE tenant_id = ?
-          AND organization_id = ?
-          AND uuid LIKE 'sdkwork-app-%'
+        SELECT legacy_uuid AS uuid
+        FROM appstore_app
+        WHERE CAST(tenant_id AS INTEGER) = ?
+          AND CAST(organization_id AS INTEGER) = ?
+          AND legacy_uuid LIKE 'sdkwork-app-%'
           AND (
-              status <> ?
+              app_status <> 'retired'
               OR COALESCE(NULLIF(json_extract(config, '$.portal.marketStatus'), ''), NULLIF(json_extract(config, '$.marketStatus'), ''), 'DRAFT') <> 'OFFLINE'
           )
         "#,
     )
     .bind(APP_STORE_TENANT_ID)
     .bind(INSTALL_PROJECTION_ORGANIZATION_ID)
-    .bind(INACTIVE_STATUS)
     .fetch_all(pool)
     .await?;
     Ok(rows
@@ -1964,32 +1456,27 @@ async fn sqlite_stale_app_category_count(
     pool: &SqlitePool,
     catalog: &AppSeedCatalog,
 ) -> Result<i64, sqlx::Error> {
-    let current_uuids = category_seed_uuids(catalog);
+    let current_ids = catalog
+        .categories
+        .iter()
+        .map(|item| canonical_appstore_category_id(item.id))
+        .collect::<BTreeSet<_>>();
     let rows = sqlx::query(
         r#"
-        SELECT uuid
-        FROM c_category
+        SELECT id
+        FROM appstore_category
         WHERE tenant_id = ?
-          AND organization_id = ?
-          AND category_type = ?
-          AND uuid LIKE 'sdkwork-app-category-%'
-          AND (
-              status <> ?
-              OR visible <> false
-          )
+          AND category_status = 'active'
         "#,
     )
-    .bind(APP_STORE_TENANT_ID)
-    .bind(INSTALL_PROJECTION_ORGANIZATION_ID)
-    .bind("app_store")
-    .bind(INACTIVE_STATUS)
+    .bind(DEFAULT_APPSTORE_PUBLIC_TENANT_ID)
     .fetch_all(pool)
     .await?;
     Ok(rows
         .into_iter()
         .filter(|row| {
-            let uuid = row.get::<String, _>("uuid");
-            !current_uuids.contains(uuid.as_str())
+            let id = row.get::<String, _>("id");
+            !current_ids.contains(id.as_str())
         })
         .count() as i64)
 }
@@ -2341,57 +1828,41 @@ async fn postgres_app_seed_standard_count(
         let row = sqlx::query(
             r#"
             SELECT COUNT(1) AS count
-            FROM platform_app
-            WHERE id = $1
-              AND uuid = $2
-              AND tenant_id = $3
-              AND organization_id = $4
-              AND data_scope = $5
-              AND user_id = $6
-              AND name = $7
-              AND icon = $8::jsonb
-              AND resource_list = $9::jsonb
-              AND project_id = $10
-              AND description IS NOT DISTINCT FROM $11
-              AND version IS NOT DISTINCT FROM $12
-              AND icon_media_resource_id IS NOT DISTINCT FROM $13
-              AND icon_object_blob_id IS NOT DISTINCT FROM $14
-              AND icon_resource_snapshot IS NOT DISTINCT FROM $15::jsonb
-              AND access_url IS NOT DISTINCT FROM $16
-              AND config = $17::jsonb
-              AND status = $18
-              AND app_type IS NOT DISTINCT FROM $19
-              AND platforms = $20::jsonb
-              AND install_platforms = $21::jsonb
-              AND install_skill = $22::jsonb
-              AND install_config = $23::jsonb
-              AND release_notes = $24::jsonb
-              AND package_name IS NOT DISTINCT FROM $25
-              AND bundle_id IS NOT DISTINCT FROM $26
-              AND store_url IS NOT DISTINCT FROM $27
-              AND artifact_media_resource_id IS NOT DISTINCT FROM $28
-              AND artifact_object_blob_id IS NOT DISTINCT FROM $29
-              AND artifact_resource_snapshot IS NOT DISTINCT FROM $30::jsonb
+            FROM appstore_app
+            WHERE plus_app_id = $1
+              AND legacy_uuid = $2
+              AND CAST(tenant_id AS BIGINT) = $3
+              AND CAST(organization_id AS BIGINT) = $4
+              AND display_name = $5
+              AND icon = $6
+              AND resource_list = $7
+              AND description IS NOT DISTINCT FROM $8
+              AND latest_released_version IS NOT DISTINCT FROM $9
+              AND icon_resource_snapshot IS NOT DISTINCT FROM $10
+              AND access_url IS NOT DISTINCT FROM $11
+              AND config = $12
+              AND runtime_status = $13
+              AND app_type IS NOT DISTINCT FROM $14
+              AND platforms = $15
+              AND install_platforms = $16
+              AND install_skill = $17
+              AND install_config = $18
+              AND release_notes = $19
+              AND package_name IS NOT DISTINCT FROM $20
+              AND bundle_id IS NOT DISTINCT FROM $21
+              AND store_url IS NOT DISTINCT FROM $22
+              AND artifact_resource_snapshot IS NOT DISTINCT FROM $23
             "#,
         )
-        .bind(stable_app_id(index))
+        .bind(stable_app_id(index).to_string())
         .bind(app_uuid(&entry.app_key))
         .bind(entry.tenant_id)
         .bind(install_projection_organization_id(entry))
-        .bind(SYSTEM_DATA_SCOPE)
-        .bind(0_i64)
         .bind(&entry.platform_app.name)
         .bind(icon_json(entry))
         .bind(resource_list_json(entry))
-        .bind(0_i64)
         .bind(&entry.platform_app.description)
         .bind(&entry.platform_app.version)
-        .bind(app_icon(&entry).as_ref().map(media_resource_stable_id))
-        .bind(
-            app_icon(&entry)
-                .as_ref()
-                .and_then(media_resource_object_blob_id),
-        )
         .bind(app_icon(&entry).as_ref().map(Value::to_string))
         .bind(&entry.platform_app.access_url)
         .bind(entry.platform_app.config.to_string())
@@ -2405,8 +1876,6 @@ async fn postgres_app_seed_standard_count(
         .bind(&entry.platform_app.package_name)
         .bind(&entry.platform_app.bundle_id)
         .bind(&entry.platform_app.store_url)
-        .bind(app_artifact_columns(entry).0)
-        .bind(app_artifact_columns(entry).1)
         .bind(app_artifact_columns(entry).2)
         .fetch_one(pool)
         .await?;
@@ -2419,56 +1888,26 @@ async fn postgres_category_seed_standard_count(
     pool: &PgPool,
     categories: &[AppCategorySeed],
 ) -> Result<i64, sqlx::Error> {
-    let mut count = 0;
-    for item in categories {
-        let (icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot) =
-            app_category_icon_columns(item);
-        let row = sqlx::query(
-            r#"
-            SELECT COUNT(1) AS count
-            FROM c_category
-            WHERE id = $1
-              AND uuid = $2
-              AND tenant_id = $3
-              AND organization_id = $4
-              AND data_scope = $5
-              AND category_type = $6
-              AND name = $7
-              AND description = $8
-              AND code = $9
-              AND tags = $10::jsonb
-              AND icon_media_resource_id = $11
-              AND icon_object_blob_id IS NOT DISTINCT FROM $12
-              AND icon_resource_snapshot = $13::jsonb
-              AND sort_weight = $14
-              AND parent_id IS NULL
-              AND path = $15
-              AND visible = $16
-              AND status = $17
-            "#,
-        )
-        .bind(item.id)
-        .bind(&item.uuid)
-        .bind(APP_STORE_TENANT_ID)
-        .bind(INSTALL_PROJECTION_ORGANIZATION_ID)
-        .bind(SYSTEM_DATA_SCOPE)
-        .bind("app_store")
-        .bind(&item.name)
-        .bind(&item.description)
-        .bind(&item.code)
-        .bind(json_string(&item.tags))
-        .bind(icon_media_resource_id)
-        .bind(icon_object_blob_id)
-        .bind(icon_resource_snapshot)
-        .bind(item.sort_weight)
-        .bind(&item.path)
-        .bind(true)
-        .bind(ACTIVE_STATUS)
-        .fetch_one(pool)
-        .await?;
-        count += row.get::<i64, _>("count");
+    if categories.is_empty() {
+        return Ok(0);
     }
-    Ok(count)
+    let ids = categories
+        .iter()
+        .map(|item| canonical_appstore_category_id(item.id))
+        .collect::<Vec<_>>();
+    let placeholders = (1..=ids.len())
+        .map(|index| format!("${index}"))
+        .collect::<Vec<_>>()
+        .join(", ");
+    let sql = format!(
+        "SELECT COUNT(1) AS count FROM appstore_category WHERE tenant_id = $1 AND category_status = 'active' AND id IN ({placeholders})"
+    );
+    let mut query = sqlx::query(sql.as_str()).bind(DEFAULT_APPSTORE_PUBLIC_TENANT_ID);
+    for id in ids {
+        query = query.bind(id);
+    }
+    let row = query.fetch_one(pool).await?;
+    Ok(row.get::<i64, _>("count"))
 }
 
 async fn postgres_stale_app_seed_count(
@@ -2478,20 +1917,19 @@ async fn postgres_stale_app_seed_count(
     let current_uuids = app_seed_uuids(catalog);
     let rows = sqlx::query(
         r#"
-        SELECT uuid
-        FROM platform_app
-        WHERE tenant_id = $1
-          AND organization_id = $2
-          AND uuid LIKE 'sdkwork-app-%'
+        SELECT legacy_uuid AS uuid
+        FROM appstore_app
+        WHERE CAST(tenant_id AS BIGINT) = $1
+          AND CAST(organization_id AS BIGINT) = $2
+          AND legacy_uuid LIKE 'sdkwork-app-%'
           AND (
-              status <> $3
-              OR COALESCE(NULLIF(config -> 'portal' ->> 'marketStatus', ''), NULLIF(config ->> 'marketStatus', ''), 'DRAFT') <> 'OFFLINE'
+              app_status <> 'retired'
+              OR COALESCE(NULLIF(config::jsonb -> 'portal' ->> 'marketStatus', ''), NULLIF(config::jsonb ->> 'marketStatus', ''), 'DRAFT') <> 'OFFLINE'
           )
         "#,
     )
     .bind(APP_STORE_TENANT_ID)
     .bind(INSTALL_PROJECTION_ORGANIZATION_ID)
-    .bind(INACTIVE_STATUS)
     .fetch_all(pool)
     .await?;
     Ok(rows
@@ -2507,32 +1945,27 @@ async fn postgres_stale_app_category_count(
     pool: &PgPool,
     catalog: &AppSeedCatalog,
 ) -> Result<i64, sqlx::Error> {
-    let current_uuids = category_seed_uuids(catalog);
+    let current_ids = catalog
+        .categories
+        .iter()
+        .map(|item| canonical_appstore_category_id(item.id))
+        .collect::<BTreeSet<_>>();
     let rows = sqlx::query(
         r#"
-        SELECT uuid
-        FROM c_category
+        SELECT id
+        FROM appstore_category
         WHERE tenant_id = $1
-          AND organization_id = $2
-          AND category_type = $3
-          AND uuid LIKE 'sdkwork-app-category-%'
-          AND (
-              status <> $5
-              OR visible <> false
-          )
+          AND category_status = 'active'
         "#,
     )
-    .bind(APP_STORE_TENANT_ID)
-    .bind(INSTALL_PROJECTION_ORGANIZATION_ID)
-    .bind("app_store")
-    .bind(INACTIVE_STATUS)
+    .bind(DEFAULT_APPSTORE_PUBLIC_TENANT_ID)
     .fetch_all(pool)
     .await?;
     Ok(rows
         .into_iter()
         .filter(|row| {
-            let uuid = row.get::<String, _>("uuid");
-            !current_uuids.contains(uuid.as_str())
+            let id = row.get::<String, _>("id");
+            !current_ids.contains(id.as_str())
         })
         .count() as i64)
 }
@@ -3163,6 +2596,498 @@ fn normalize_code(value: &str) -> String {
         }
     }
     normalized.trim_matches('-').to_owned()
+}
+
+fn canonical_appstore_app_id(stable_id: i64) -> String {
+    format!("appstore-app-{stable_id}")
+}
+
+fn canonical_appstore_category_id(category_id: i64) -> String {
+    format!("appstore-category-{category_id}")
+}
+
+fn canonical_appstore_category_localization_id(category_id: i64) -> String {
+    format!("appstore-category-loc-{category_id}-en-us")
+}
+
+fn appstore_app_slug(app_key: &str) -> String {
+    normalize_code(app_key)
+}
+
+fn appstore_runtime_fields(entry: &AppSeedEntry) -> (String, String, String) {
+    let app_type = non_empty(
+        entry
+            .platform_app
+            .app_type
+            .clone()
+            .unwrap_or_else(|| "application".to_owned()),
+        "application",
+    );
+    let runtime_family = non_empty(
+        json_path_text(
+            &entry.platform_app.config,
+            &["standard", "family"],
+        ),
+        "web",
+    );
+    let runtime_framework = non_empty(
+        json_path_text(
+            &entry.platform_app.config,
+            &["standard", "framework"],
+        ),
+        "unknown",
+    );
+    (app_type, runtime_family, runtime_framework)
+}
+
+fn appstore_status_fields(status: &str) -> Result<(&'static str, &'static str, &'static str), sqlx::Error> {
+    match status.trim() {
+        "ACTIVE" => Ok(("published", "listed", "approved")),
+        "INACTIVE" => Ok(("retired", "unlisted", "approved")),
+        other => Err(sqlx::Error::Protocol(format!(
+            "invalid bundled app runtime status `{other}`: expected ACTIVE or INACTIVE"
+        ))),
+    }
+}
+
+fn appstore_manifest_snapshot(entry: &AppSeedEntry, stable_id: i64) -> String {
+    serde_json::json!({
+        "legacyProjection": {
+            "platformAppId": stable_id,
+            "uuid": app_uuid(&entry.app_key),
+            "tenantId": entry.tenant_id,
+            "organizationId": install_projection_organization_id(entry),
+        },
+        "installConfig": entry.platform_app.install_config,
+        "config": entry.platform_app.config,
+        "platforms": entry.platform_app.platforms,
+        "installPlatforms": entry.platform_app.install_platforms,
+    })
+    .to_string()
+}
+
+fn appstore_official_website_url(entry: &AppSeedEntry) -> Option<String> {
+    first_non_empty(&[
+        json_path_text(
+            &entry.platform_app.config,
+            &["standard", "officialWebsiteUrl"],
+        ),
+        json_path_text(
+            &entry.platform_app.config,
+            &["publish", "officialWebsiteUrl"],
+        ),
+    ])
+}
+
+fn appstore_entry_tenant_id(entry: &AppSeedEntry) -> String {
+    entry.tenant_id.to_string()
+}
+
+fn appstore_entry_organization_id(entry: &AppSeedEntry) -> String {
+    install_projection_organization_id(entry).to_string()
+}
+
+async fn sync_sqlite_canonical_appstore_categories(
+    tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
+    catalog: &AppSeedCatalog,
+) -> Result<(), sqlx::Error> {
+    for item in &catalog.categories {
+        let (icon_media_resource_id, _, _) = app_category_icon_columns(item);
+        sqlx::query(
+            r#"
+            INSERT INTO appstore_category
+                (id, tenant_id, category_code, parent_category_id, category_level, category_status, sort_order, icon_media_resource_id, created_at, updated_at)
+            VALUES
+                (?, ?, ?, NULL, 1, 'active', ?, ?, datetime('now'), datetime('now'))
+            ON CONFLICT(id) DO UPDATE SET
+                category_code = excluded.category_code,
+                category_status = excluded.category_status,
+                sort_order = excluded.sort_order,
+                icon_media_resource_id = excluded.icon_media_resource_id,
+                updated_at = datetime('now')
+            "#,
+        )
+        .bind(canonical_appstore_category_id(item.id))
+        .bind(DEFAULT_APPSTORE_PUBLIC_TENANT_ID)
+        .bind(&item.code)
+        .bind(item.sort_weight)
+        .bind(icon_media_resource_id)
+        .execute(&mut **tx)
+        .await?;
+
+        sqlx::query(
+            r#"
+            INSERT INTO appstore_category_localization
+                (id, tenant_id, category_id, locale, display_name, description, created_at, updated_at)
+            VALUES
+                (?, ?, ?, ?, ?, ?, datetime('now'), datetime('now'))
+            ON CONFLICT(id) DO UPDATE SET
+                display_name = excluded.display_name,
+                description = excluded.description,
+                updated_at = datetime('now')
+            "#,
+        )
+        .bind(canonical_appstore_category_localization_id(item.id))
+        .bind(DEFAULT_APPSTORE_PUBLIC_TENANT_ID)
+        .bind(canonical_appstore_category_id(item.id))
+        .bind(DEFAULT_APPSTORE_LOCALE)
+        .bind(&item.name)
+        .bind(&item.description)
+        .execute(&mut **tx)
+        .await?;
+    }
+    Ok(())
+}
+
+async fn sync_sqlite_canonical_appstore_module(
+    tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
+    catalog: &AppSeedCatalog,
+) -> Result<(), sqlx::Error> {
+    sync_sqlite_canonical_appstore_categories(tx, catalog).await?;
+    for (index, entry) in catalog.bundle.apps.iter().enumerate() {
+        let stable_id = stable_app_id(index);
+        let app_uuid_value = app_uuid(&entry.app_key);
+        let (app_type, runtime_family, runtime_framework) = appstore_runtime_fields(entry);
+        let (app_status, distribution_status, review_status) =
+            appstore_status_fields(&entry.platform_app.status)?;
+        let icon = app_icon(entry);
+        let icon_media_id = icon.as_ref().map(media_resource_stable_id);
+        let icon_resource_snapshot = icon.as_ref().map(Value::to_string);
+        let (_, _, artifact_resource_snapshot) = app_artifact_columns(entry);
+        let version = entry
+            .platform_app
+            .version
+            .clone()
+            .unwrap_or_else(|| "0.0.0".to_owned());
+        sqlx::query(
+            r#"
+            INSERT INTO appstore_app
+                (
+                    id,
+                    tenant_id,
+                    organization_id,
+                    publisher_id,
+                    app_no,
+                    app_key,
+                    plus_app_id,
+                    plus_app_key,
+                    app_slug,
+                    display_name,
+                    description,
+                    default_locale,
+                    app_type,
+                    runtime_family,
+                    runtime_framework,
+                    app_status,
+                    distribution_status,
+                    review_status,
+                    monetization_mode,
+                    official_website_url,
+                    icon_media_id,
+                    icon,
+                    icon_resource_snapshot,
+                    resource_list,
+                    access_url,
+                    config,
+                    runtime_status,
+                    install_skill,
+                    install_config,
+                    install_platforms,
+                    platforms,
+                    release_notes,
+                    package_name,
+                    bundle_id,
+                    store_url,
+                    artifact_resource_snapshot,
+                    legacy_uuid,
+                    latest_released_version,
+                    manifest_snapshot_json,
+                    created_at,
+                    updated_at
+                )
+            VALUES
+                (
+                    ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'free', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'), datetime('now')
+                )
+            ON CONFLICT(id) DO UPDATE SET
+                tenant_id = excluded.tenant_id,
+                organization_id = excluded.organization_id,
+                app_no = excluded.app_no,
+                app_key = excluded.app_key,
+                plus_app_id = excluded.plus_app_id,
+                plus_app_key = excluded.plus_app_key,
+                app_slug = excluded.app_slug,
+                display_name = excluded.display_name,
+                description = excluded.description,
+                app_type = excluded.app_type,
+                runtime_family = excluded.runtime_family,
+                runtime_framework = excluded.runtime_framework,
+                app_status = excluded.app_status,
+                distribution_status = excluded.distribution_status,
+                review_status = excluded.review_status,
+                official_website_url = excluded.official_website_url,
+                icon_media_id = excluded.icon_media_id,
+                icon = excluded.icon,
+                icon_resource_snapshot = excluded.icon_resource_snapshot,
+                resource_list = excluded.resource_list,
+                access_url = excluded.access_url,
+                config = excluded.config,
+                runtime_status = excluded.runtime_status,
+                install_skill = excluded.install_skill,
+                install_config = excluded.install_config,
+                install_platforms = excluded.install_platforms,
+                platforms = excluded.platforms,
+                release_notes = excluded.release_notes,
+                package_name = excluded.package_name,
+                bundle_id = excluded.bundle_id,
+                store_url = excluded.store_url,
+                artifact_resource_snapshot = excluded.artifact_resource_snapshot,
+                legacy_uuid = excluded.legacy_uuid,
+                latest_released_version = excluded.latest_released_version,
+                manifest_snapshot_json = excluded.manifest_snapshot_json,
+                updated_at = datetime('now')
+            "#,
+        )
+        .bind(canonical_appstore_app_id(stable_id))
+        .bind(appstore_entry_tenant_id(entry))
+        .bind(appstore_entry_organization_id(entry))
+        .bind(DEFAULT_APPSTORE_PUBLISHER_ID)
+        .bind(&entry.app_key)
+        .bind(&entry.app_key)
+        .bind(stable_id.to_string())
+        .bind(&entry.app_key)
+        .bind(appstore_app_slug(&entry.app_key))
+        .bind(&entry.platform_app.name)
+        .bind(&entry.platform_app.description)
+        .bind(DEFAULT_APPSTORE_LOCALE)
+        .bind(app_type)
+        .bind(runtime_family)
+        .bind(runtime_framework)
+        .bind(app_status)
+        .bind(distribution_status)
+        .bind(review_status)
+        .bind(appstore_official_website_url(entry))
+        .bind(icon_media_id)
+        .bind(icon_json(entry))
+        .bind(icon_resource_snapshot)
+        .bind(resource_list_json(entry))
+        .bind(&entry.platform_app.access_url)
+        .bind(entry.platform_app.config.to_string())
+        .bind(app_status_code(&entry.platform_app.status)?)
+        .bind(entry.platform_app.install_skill.to_string())
+        .bind(entry.platform_app.install_config.to_string())
+        .bind(entry.platform_app.install_platforms.to_string())
+        .bind(entry.platform_app.platforms.to_string())
+        .bind(entry.platform_app.release_notes.to_string())
+        .bind(&entry.platform_app.package_name)
+        .bind(&entry.platform_app.bundle_id)
+        .bind(&entry.platform_app.store_url)
+        .bind(artifact_resource_snapshot)
+        .bind(&app_uuid_value)
+        .bind(version)
+        .bind(appstore_manifest_snapshot(entry, stable_id))
+        .execute(&mut **tx)
+        .await?;
+    }
+    Ok(())
+}
+
+async fn sync_postgres_canonical_appstore_module(
+    tx: &mut sqlx::Transaction<'_, sqlx::Postgres>,
+    catalog: &AppSeedCatalog,
+) -> Result<(), sqlx::Error> {
+    for item in &catalog.categories {
+        let (icon_media_resource_id, _, _) = app_category_icon_columns(item);
+        sqlx::query(
+            r#"
+            INSERT INTO appstore_category
+                (id, tenant_id, category_code, parent_category_id, category_level, category_status, sort_order, icon_media_resource_id, created_at, updated_at)
+            VALUES
+                ($1, $2, $3, NULL, 1, 'active', $4, $5, CURRENT_TIMESTAMP::text, CURRENT_TIMESTAMP::text)
+            ON CONFLICT(id) DO UPDATE SET
+                category_code = excluded.category_code,
+                category_status = excluded.category_status,
+                sort_order = excluded.sort_order,
+                icon_media_resource_id = excluded.icon_media_resource_id,
+                updated_at = CURRENT_TIMESTAMP::text
+            "#,
+        )
+        .bind(canonical_appstore_category_id(item.id))
+        .bind(DEFAULT_APPSTORE_PUBLIC_TENANT_ID)
+        .bind(&item.code)
+        .bind(item.sort_weight)
+        .bind(icon_media_resource_id)
+        .execute(&mut **tx)
+        .await?;
+
+        sqlx::query(
+            r#"
+            INSERT INTO appstore_category_localization
+                (id, tenant_id, category_id, locale, display_name, description, created_at, updated_at)
+            VALUES
+                ($1, $2, $3, $4, $5, $6, CURRENT_TIMESTAMP::text, CURRENT_TIMESTAMP::text)
+            ON CONFLICT(id) DO UPDATE SET
+                display_name = excluded.display_name,
+                description = excluded.description,
+                updated_at = CURRENT_TIMESTAMP::text
+            "#,
+        )
+        .bind(canonical_appstore_category_localization_id(item.id))
+        .bind(DEFAULT_APPSTORE_PUBLIC_TENANT_ID)
+        .bind(canonical_appstore_category_id(item.id))
+        .bind(DEFAULT_APPSTORE_LOCALE)
+        .bind(&item.name)
+        .bind(&item.description)
+        .execute(&mut **tx)
+        .await?;
+    }
+
+    for (index, entry) in catalog.bundle.apps.iter().enumerate() {
+        let stable_id = stable_app_id(index);
+        let app_uuid_value = app_uuid(&entry.app_key);
+        let (app_type, runtime_family, runtime_framework) = appstore_runtime_fields(entry);
+        let (app_status, distribution_status, review_status) =
+            appstore_status_fields(&entry.platform_app.status)?;
+        let icon = app_icon(entry);
+        let icon_media_id = icon.as_ref().map(media_resource_stable_id);
+        let icon_resource_snapshot = icon.as_ref().map(Value::to_string);
+        let (_, _, artifact_resource_snapshot) = app_artifact_columns(entry);
+        let version = entry
+            .platform_app
+            .version
+            .clone()
+            .unwrap_or_else(|| "0.0.0".to_owned());
+        sqlx::query(
+            r#"
+            INSERT INTO appstore_app
+                (
+                    id,
+                    tenant_id,
+                    organization_id,
+                    publisher_id,
+                    app_no,
+                    app_key,
+                    plus_app_id,
+                    plus_app_key,
+                    app_slug,
+                    display_name,
+                    description,
+                    default_locale,
+                    app_type,
+                    runtime_family,
+                    runtime_framework,
+                    app_status,
+                    distribution_status,
+                    review_status,
+                    monetization_mode,
+                    official_website_url,
+                    icon_media_id,
+                    icon,
+                    icon_resource_snapshot,
+                    resource_list,
+                    access_url,
+                    config,
+                    runtime_status,
+                    install_skill,
+                    install_config,
+                    install_platforms,
+                    platforms,
+                    release_notes,
+                    package_name,
+                    bundle_id,
+                    store_url,
+                    artifact_resource_snapshot,
+                    legacy_uuid,
+                    latest_released_version,
+                    manifest_snapshot_json,
+                    created_at,
+                    updated_at
+                )
+            VALUES
+                (
+                    $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, 'free', $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31, $32, $33, $34, $35, $36, $37, $38, CURRENT_TIMESTAMP::text, CURRENT_TIMESTAMP::text
+                )
+            ON CONFLICT(id) DO UPDATE SET
+                tenant_id = excluded.tenant_id,
+                organization_id = excluded.organization_id,
+                app_no = excluded.app_no,
+                app_key = excluded.app_key,
+                plus_app_id = excluded.plus_app_id,
+                plus_app_key = excluded.plus_app_key,
+                app_slug = excluded.app_slug,
+                display_name = excluded.display_name,
+                description = excluded.description,
+                app_type = excluded.app_type,
+                runtime_family = excluded.runtime_family,
+                runtime_framework = excluded.runtime_framework,
+                app_status = excluded.app_status,
+                distribution_status = excluded.distribution_status,
+                review_status = excluded.review_status,
+                official_website_url = excluded.official_website_url,
+                icon_media_id = excluded.icon_media_id,
+                icon = excluded.icon,
+                icon_resource_snapshot = excluded.icon_resource_snapshot,
+                resource_list = excluded.resource_list,
+                access_url = excluded.access_url,
+                config = excluded.config,
+                runtime_status = excluded.runtime_status,
+                install_skill = excluded.install_skill,
+                install_config = excluded.install_config,
+                install_platforms = excluded.install_platforms,
+                platforms = excluded.platforms,
+                release_notes = excluded.release_notes,
+                package_name = excluded.package_name,
+                bundle_id = excluded.bundle_id,
+                store_url = excluded.store_url,
+                artifact_resource_snapshot = excluded.artifact_resource_snapshot,
+                legacy_uuid = excluded.legacy_uuid,
+                latest_released_version = excluded.latest_released_version,
+                manifest_snapshot_json = excluded.manifest_snapshot_json,
+                updated_at = CURRENT_TIMESTAMP::text
+            "#,
+        )
+        .bind(canonical_appstore_app_id(stable_id))
+        .bind(appstore_entry_tenant_id(entry))
+        .bind(appstore_entry_organization_id(entry))
+        .bind(DEFAULT_APPSTORE_PUBLISHER_ID)
+        .bind(&entry.app_key)
+        .bind(&entry.app_key)
+        .bind(stable_id.to_string())
+        .bind(&entry.app_key)
+        .bind(appstore_app_slug(&entry.app_key))
+        .bind(&entry.platform_app.name)
+        .bind(&entry.platform_app.description)
+        .bind(DEFAULT_APPSTORE_LOCALE)
+        .bind(app_type)
+        .bind(runtime_family)
+        .bind(runtime_framework)
+        .bind(app_status)
+        .bind(distribution_status)
+        .bind(review_status)
+        .bind(appstore_official_website_url(entry))
+        .bind(icon_media_id)
+        .bind(icon_json(entry))
+        .bind(icon_resource_snapshot)
+        .bind(resource_list_json(entry))
+        .bind(&entry.platform_app.access_url)
+        .bind(entry.platform_app.config.to_string())
+        .bind(app_status_code(&entry.platform_app.status)?)
+        .bind(entry.platform_app.install_skill.to_string())
+        .bind(entry.platform_app.install_config.to_string())
+        .bind(entry.platform_app.install_platforms.to_string())
+        .bind(entry.platform_app.platforms.to_string())
+        .bind(entry.platform_app.release_notes.to_string())
+        .bind(&entry.platform_app.package_name)
+        .bind(&entry.platform_app.bundle_id)
+        .bind(&entry.platform_app.store_url)
+        .bind(artifact_resource_snapshot)
+        .bind(&app_uuid_value)
+        .bind(version)
+        .bind(appstore_manifest_snapshot(entry, stable_id))
+        .execute(&mut **tx)
+        .await?;
+    }
+    Ok(())
 }
 
 fn json_decode_error(error: AppSeedLoadError) -> sqlx::Error {

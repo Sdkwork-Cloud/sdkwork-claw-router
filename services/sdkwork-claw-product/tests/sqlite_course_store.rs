@@ -7,7 +7,7 @@ use sdkwork_claw_product_test_support::{repair_sqlite_pool, schema_sqlite_pool};
 use serde_json::json;
 
 #[tokio::test]
-async fn sqlite_course_store_reads_seeded_course_catalog_from_java_compatible_tables() {
+async fn sqlite_course_store_reads_seeded_course_catalog_from_canonical_course_tables() {
     let pool = repair_sqlite_pool().await;
 
     let store = SqliteCourseStore::new(pool);
@@ -25,7 +25,7 @@ async fn sqlite_course_store_reads_seeded_course_catalog_from_java_compatible_ta
         .unwrap();
     assert!(
         courses.iter().any(|course| course.course_code == "c1"),
-        "installer seed must populate content_course rows readable by course store"
+        "installer seed must populate course_catalog rows readable by course store"
     );
     let first = courses
         .iter()
@@ -41,7 +41,7 @@ async fn sqlite_course_store_reads_seeded_course_catalog_from_java_compatible_ta
     assert!(first.engagement.students_count > 0);
     assert_eq!(
         155, first.engagement.likes,
-        "course engagement must preserve aggregated content_reaction.reaction_value counts"
+        "course engagement must preserve aggregated course_reaction.reaction_value counts"
     );
     assert_eq!(
         22, first.engagement.saves,
@@ -73,7 +73,7 @@ async fn sqlite_course_store_reads_seeded_course_catalog_from_java_compatible_ta
             .related_courses
             .iter()
             .all(|course| course.course_code != detail.course.course_code),
-        "related course list must resolve persisted content_course_relation links"
+        "related course list must resolve persisted course_catalog_link links"
     );
 
     let categories = store.load_categories(None).await.unwrap();
@@ -81,7 +81,7 @@ async fn sqlite_course_store_reads_seeded_course_catalog_from_java_compatible_ta
         categories
             .iter()
             .any(|category| category.code == "ai-coding" && category.course_count > 0),
-        "course categories must come from c_category category_type course with live course counts"
+        "course categories must come from course_category with live course counts"
     );
 
     let overview = store.load_overview(None).await.unwrap();
@@ -90,13 +90,15 @@ async fn sqlite_course_store_reads_seeded_course_catalog_from_java_compatible_ta
     assert_eq!("Live course data", overview.source.source_label);
     assert_eq!(
         vec![
-            "content_course".to_owned(),
-            "content_course_section".to_owned(),
-            "content_course_lesson".to_owned(),
-            "content_course_relation".to_owned(),
-            "c_category".to_owned(),
-            "content_comment".to_owned(),
-            "content_reaction".to_owned(),
+            "course_catalog".to_owned(),
+            "course_section".to_owned(),
+            "course_lesson".to_owned(),
+            "course_catalog_link".to_owned(),
+            "course_category".to_owned(),
+            "course_instructor".to_owned(),
+            "course_comment".to_owned(),
+            "course_reaction".to_owned(),
+            "course_resource_ref".to_owned(),
         ],
         overview.source.source_tables
     );

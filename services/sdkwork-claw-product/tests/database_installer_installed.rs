@@ -37,7 +37,7 @@ async fn sqlite_installer_upgrades_existing_installation_when_versions_change() 
     sqlx::query(
         r#"
         CREATE TRIGGER reject_unnecessary_course_seed_reimport
-        BEFORE UPDATE ON content_course
+        BEFORE UPDATE ON course_catalog
         BEGIN
             SELECT RAISE(ABORT, 'version-only upgrade must not reimport current course seed');
         END

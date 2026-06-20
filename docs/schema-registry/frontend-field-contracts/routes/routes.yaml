@@ -3,7 +3,7 @@ routes:
 - route: /
   required_tables:
   - content_doc_page
-  - platform_app
+  - appstore_app
 - route: /vip
   required_tables:
   - commerce_product_spu
@@ -138,13 +138,13 @@ routes:
     - strengths
 - route: /apps
   required_tables:
-  - platform_app
+  - appstore_app
   - c_category
   - ai_skill_action
   - ai_skill_asset
   - ai_skill_artifact
   required_columns:
-    platform_app:
+    appstore_app:
     - name
     - description
     - icon_media_resource_id
@@ -183,13 +183,13 @@ routes:
     - release_notes
 - route: /apps/:id
   required_tables:
-  - platform_app
+  - appstore_app
   - c_category
   - ai_skill_action
   - ai_skill_asset
   - ai_skill_artifact
   required_columns:
-    platform_app:
+    appstore_app:
     - name
     - description
     - icon_media_resource_id
@@ -727,14 +727,14 @@ routes:
     - status
 - route: /courses
   required_tables:
-  - content_course
-  - content_course_relation
-  - content_course_application
+  - course_catalog
+  - course_catalog_link
+  - course_application
   - c_category
-  - content_comment
-  - content_reaction
+  - course_comment
+  - course_reaction
   required_columns:
-    content_course:
+    course_catalog:
     - course_code
     - title
     - description
@@ -749,7 +749,7 @@ routes:
     - level
     - category
     - tags
-    content_course_application:
+    course_application:
     - title
     - category
     - description
@@ -770,7 +770,7 @@ routes:
     - description
     - sort_weight
     - status
-    content_comment:
+    course_comment:
     - content_type
     - content_id
     - parent_id
@@ -780,7 +780,7 @@ routes:
     - likes
     - reply_count
     - is_top
-    content_reaction:
+    course_reaction:
     - target_type
     - target_id
     - reaction_type
@@ -788,15 +788,15 @@ routes:
     - status
 - route: /courses/:id
   required_tables:
-  - content_course
-  - content_course_section
-  - content_course_lesson
-  - content_course_relation
+  - course_catalog
+  - course_section
+  - course_lesson
+  - course_catalog_link
   - c_category
-  - content_comment
-  - content_reaction
+  - course_comment
+  - course_reaction
   required_columns:
-    content_course:
+    course_catalog:
     - course_code
     - title
     - description
@@ -813,7 +813,7 @@ routes:
     - tags
     - content
     - external_bvid
-    content_course_section:
+    course_section:
     - course_id
     - section_no
     - title
@@ -822,7 +822,7 @@ routes:
     - duration_seconds
     - sort_order
     - status
-    content_course_lesson:
+    course_lesson:
     - course_id
     - section_id
     - lesson_no
@@ -838,7 +838,7 @@ routes:
     - free_preview
     - sort_order
     - status
-    content_course_relation:
+    course_catalog_link:
     - course_id
     - related_course_id
     - relation_type
@@ -852,7 +852,7 @@ routes:
     - description
     - sort_weight
     - status
-    content_comment:
+    course_comment:
     - content_type
     - content_id
     - parent_id
@@ -862,7 +862,7 @@ routes:
     - likes
     - reply_count
     - is_top
-    content_reaction:
+    course_reaction:
     - target_type
     - target_id
     - reaction_type
@@ -1479,15 +1479,15 @@ routes:
   - ops_job_execution
 - route: /admin/app
   required_tables:
-  - platform_app
+  - appstore_app
   - c_category
-  - platform_app_template
+  - appstore_app_template
   - ai_skill_action
   - ai_skill_asset
   - ai_skill_artifact
   - ops_audit_log
   required_columns:
-    platform_app:
+    appstore_app:
     - name
     - description
     - version
@@ -1526,7 +1526,7 @@ routes:
     - path
     - visible
     - status
-    platform_app_template:
+    appstore_app_template:
     - uuid
     - template_no
     - template_code
@@ -1587,49 +1587,49 @@ routes:
     - release_notes
 - route: /admin/courses
   required_tables:
-  - content_course
-  - content_course_section
-  - content_course_lesson
-  - content_course_relation
-  - content_course_application
-  - content_comment
-  - content_reaction
+  - course_catalog
+  - course_section
+  - course_lesson
+  - course_catalog_link
+  - course_application
+  - course_comment
+  - course_reaction
   - ops_audit_log
 - route: /admin/courses/dashboard
   required_tables:
-  - content_course
-  - content_course_lesson
-  - content_course_application
-  - content_comment
-  - content_reaction
+  - course_catalog
+  - course_lesson
+  - course_application
+  - course_comment
+  - course_reaction
 - route: /admin/courses/catalog
   required_tables:
-  - content_course
+  - course_catalog
 - route: /admin/courses/sections
   required_tables:
-  - content_course
-  - content_course_section
+  - course_catalog
+  - course_section
 - route: /admin/courses/lessons
   required_tables:
-  - content_course
-  - content_course_lesson
+  - course_catalog
+  - course_lesson
 - route: /admin/courses/relations
   required_tables:
-  - content_course
-  - content_course_relation
+  - course_catalog
+  - course_catalog_link
 - route: /admin/courses/applications
   required_tables:
-  - content_course
-  - content_course_application
+  - course_catalog
+  - course_application
 - route: /admin/courses/comments
   required_tables:
-  - content_course
-  - content_comment
+  - course_catalog
+  - course_comment
 - route: /admin/courses/engagement
   required_tables:
-  - content_course
-  - content_course_relation
-  - content_reaction
+  - course_catalog
+  - course_catalog_link
+  - course_reaction
 - route: /admin/skill
   required_tables:
   - ai_agent_skill

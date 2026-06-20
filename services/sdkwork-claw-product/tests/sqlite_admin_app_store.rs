@@ -25,7 +25,7 @@ fn external_media_resource(locator: &str, kind: &str) -> serde_json::Value {
 }
 
 #[tokio::test]
-async fn sqlite_admin_app_store_manages_platform_app_lifecycle_with_market_state_and_audit() {
+async fn sqlite_admin_app_store_manages_appstore_app_lifecycle_with_market_state_and_audit() {
     let pool = sqlite_pool().await;
 
     let store = SqliteAdminAppStore::new(pool.clone());
@@ -89,8 +89,10 @@ async fn sqlite_admin_app_store_manages_platform_app_lifecycle_with_market_state
     assert_eq!("DRAFT", created.market_status);
     assert_eq!("DRAFT", created.config["portal"]["marketStatus"]);
 
-    let stored_config: String = sqlx::query_scalar("SELECT config FROM platform_app WHERE id = ?")
-        .bind(created.id)
+    let stored_config: String = sqlx::query_scalar(
+        "SELECT config FROM appstore_app WHERE plus_app_id = ?",
+    )
+        .bind(created.id.to_string())
         .fetch_one(&pool)
         .await
         .unwrap();
@@ -251,8 +253,10 @@ async fn sqlite_admin_app_store_manages_platform_app_lifecycle_with_market_state
         .unwrap();
     assert!(deleted);
 
-    let app_rows: i64 = sqlx::query_scalar("SELECT COUNT(1) FROM platform_app WHERE id = ?")
-        .bind(created.id)
+    let app_rows: i64 = sqlx::query_scalar(
+        "SELECT COUNT(1) FROM appstore_app WHERE plus_app_id = ?",
+    )
+        .bind(created.id.to_string())
         .fetch_one(&pool)
         .await
         .unwrap();
@@ -367,8 +371,8 @@ async fn sqlite_admin_app_store_manages_app_template_lifecycle_with_audit() {
     );
 
     let stored_template: (i64, i64, String, String, String) =
-        sqlx::query_as("SELECT visibility, publish_status, git_repo_url, git_ref, git_sub_path FROM platform_app_template WHERE id = ?")
-            .bind(created.id)
+        sqlx::query_as("SELECT visibility, publish_status, git_repo_url, git_ref, git_sub_path FROM appstore_app_template WHERE id = ?")
+            .bind(created.id.to_string())
             .fetch_one(&pool)
             .await
             .unwrap();
@@ -488,7 +492,7 @@ async fn sqlite_admin_app_store_manages_app_template_lifecycle_with_audit() {
     )
     .bind(TENANT_ID)
     .bind(ORGANIZATION_ID)
-    .bind(created.id)
+    .bind(created.id.to_string())
     .execute(&pool)
     .await
     .unwrap();
@@ -506,8 +510,8 @@ async fn sqlite_admin_app_store_manages_app_template_lifecycle_with_audit() {
     assert!(deleted);
 
     let template_status: i64 =
-        sqlx::query_scalar("SELECT status FROM platform_app_template WHERE id = ?")
-            .bind(created.id)
+        sqlx::query_scalar("SELECT status FROM appstore_app_template WHERE id = ?")
+            .bind(created.id.to_string())
             .fetch_one(&pool)
             .await
             .unwrap();
@@ -515,7 +519,7 @@ async fn sqlite_admin_app_store_manages_app_template_lifecycle_with_audit() {
     let asset_rows: i64 = sqlx::query_scalar(
         "SELECT COUNT(1) FROM ai_skill_asset WHERE target_type = 16 AND target_id = ?",
     )
-    .bind(created.id)
+    .bind(created.id.to_string())
     .fetch_one(&pool)
     .await
     .unwrap();
@@ -608,7 +612,7 @@ async fn sqlite_admin_app_store_rejects_market_state_aliases_as_runtime_status()
     }
 
     let created_rows: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM platform_app WHERE uuid LIKE 'admin-app-invalid-runtime-status-%'",
+        "SELECT COUNT(1) FROM appstore_app WHERE legacy_uuid LIKE 'admin-app-invalid-runtime-status-%'",
     )
     .fetch_one(&pool)
     .await
@@ -780,8 +784,10 @@ async fn sqlite_admin_app_store_publishes_without_changing_runtime_status() {
     assert_eq!("PUBLISHED", published.market_status);
     assert_eq!("PUBLISHED", published.config["portal"]["marketStatus"]);
 
-    let status_code: i64 = sqlx::query_scalar("SELECT status FROM platform_app WHERE id = ?")
-        .bind(created.id)
+    let status_code: i64 = sqlx::query_scalar(
+        "SELECT runtime_status FROM appstore_app WHERE plus_app_id = ?",
+    )
+        .bind(created.id.to_string())
         .fetch_one(&pool)
         .await
         .unwrap();
@@ -901,64 +907,80 @@ async fn sqlite_pool() -> SqlitePool {
 async fn create_admin_app_store_tables(pool: &SqlitePool) {
     for statement in [
         r#"
-        CREATE TABLE platform_app (
-            id INTEGER PRIMARY KEY,
-            uuid TEXT,
-            tenant_id INTEGER NOT NULL,
-            organization_id INTEGER NOT NULL,
-            data_scope INTEGER,
-            user_id INTEGER,
-            name TEXT NOT NULL,
-            icon TEXT,
-            resource_list TEXT,
-            project_id INTEGER,
+        CREATE TABLE appstore_app (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT NOT NULL,
+            publisher_id TEXT NOT NULL,
+            app_no TEXT NOT NULL,
+            app_key TEXT NOT NULL,
+            plus_app_id TEXT,
+            plus_app_key TEXT,
+            app_slug TEXT NOT NULL,
+            display_name TEXT NOT NULL,
             description TEXT,
-            version TEXT,
-            icon_media_resource_id TEXT,
-            icon_object_blob_id INTEGER,
-            icon_resource_snapshot TEXT,
+            default_locale TEXT NOT NULL,
+            app_type TEXT NOT NULL,
+            runtime_family TEXT NOT NULL,
+            runtime_framework TEXT NOT NULL,
+            app_status TEXT NOT NULL,
+            distribution_status TEXT NOT NULL,
+            review_status TEXT NOT NULL,
+            monetization_mode TEXT NOT NULL,
+            official_website_url TEXT,
+            icon_media_id TEXT,
+            icon TEXT NOT NULL DEFAULT '{}',
+            icon_resource_snapshot TEXT NOT NULL DEFAULT '',
+            resource_list TEXT NOT NULL DEFAULT '[]',
             access_url TEXT,
-            config TEXT,
-            status INTEGER,
-            app_type TEXT,
-            platforms TEXT,
-            install_platforms TEXT,
-            install_skill TEXT,
-            install_config TEXT,
-            release_notes TEXT,
+            config TEXT NOT NULL DEFAULT '{}',
+            runtime_status INTEGER NOT NULL DEFAULT 1,
+            install_skill TEXT NOT NULL DEFAULT '{}',
+            install_config TEXT NOT NULL DEFAULT '{}',
+            install_platforms TEXT NOT NULL DEFAULT '[]',
+            platforms TEXT NOT NULL DEFAULT '[]',
+            release_notes TEXT NOT NULL DEFAULT '[]',
             package_name TEXT,
             bundle_id TEXT,
             store_url TEXT,
-            artifact_media_resource_id TEXT,
-            artifact_object_blob_id INTEGER,
-            artifact_resource_snapshot TEXT,
-            created_at TEXT,
-            updated_at TEXT,
-            v INTEGER
+            artifact_resource_snapshot TEXT NOT NULL DEFAULT '',
+            download_count INTEGER NOT NULL DEFAULT 0,
+            rating_avg TEXT NOT NULL DEFAULT '0',
+            rating_count INTEGER NOT NULL DEFAULT 0,
+            legacy_uuid TEXT,
+            owner_user_id TEXT,
+            project_id TEXT,
+            latest_released_version TEXT,
+            manifest_snapshot_json TEXT NOT NULL DEFAULT '{}',
+            version INTEGER NOT NULL DEFAULT 0,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL
         )
         "#,
         r#"
-        CREATE TABLE c_category (
-            id INTEGER PRIMARY KEY,
-            uuid TEXT,
-            tenant_id INTEGER NOT NULL,
-            organization_id INTEGER NOT NULL,
-            data_scope INTEGER,
-            category_type TEXT NOT NULL,
-            name TEXT NOT NULL,
-            description TEXT,
-            code TEXT,
+        CREATE TABLE appstore_category (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            category_code TEXT NOT NULL,
+            parent_category_id TEXT,
+            category_level INTEGER NOT NULL DEFAULT 1,
+            category_status TEXT NOT NULL,
+            sort_order INTEGER NOT NULL DEFAULT 0,
             icon_media_resource_id TEXT,
-            icon_object_blob_id INTEGER,
-            icon_resource_snapshot TEXT,
-            sort_weight INTEGER,
-            parent_id INTEGER,
-            path TEXT,
-            visible INTEGER,
-            status INTEGER,
-            created_at TEXT,
-            updated_at TEXT,
-            v INTEGER
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL
+        )
+        "#,
+        r#"
+        CREATE TABLE appstore_category_localization (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            category_id TEXT NOT NULL,
+            locale TEXT NOT NULL,
+            display_name TEXT NOT NULL,
+            description TEXT,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL
         )
         "#,
         r#"
@@ -1003,7 +1025,7 @@ async fn create_admin_app_store_tables(pool: &SqlitePool) {
         )
         "#,
         r#"
-        CREATE TABLE platform_app_template (
+        CREATE TABLE appstore_app_template (
             id INTEGER PRIMARY KEY,
             uuid TEXT NOT NULL UNIQUE,
             created_at TEXT,
@@ -1082,16 +1104,26 @@ async fn insert_admin_visible_app(
 ) {
     sqlx::query(
         r#"
-        INSERT INTO platform_app
-            (id, uuid, tenant_id, organization_id, data_scope, user_id, name, icon, resource_list, project_id, description, version, access_url, config, status, app_type, platforms, install_platforms, install_skill, install_config, release_notes, package_name, bundle_id, store_url, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot, created_at, updated_at)
+        INSERT INTO appstore_app
+            (id, tenant_id, organization_id, publisher_id, app_no, app_key, plus_app_id, plus_app_key,
+             app_slug, display_name, description, default_locale, app_type, runtime_family, runtime_framework,
+             app_status, distribution_status, review_status, monetization_mode, access_url, config, runtime_status,
+             platforms, install_platforms, install_skill, install_config, release_notes, artifact_resource_snapshot,
+             legacy_uuid, latest_released_version, manifest_snapshot_json, icon, resource_list, created_at, updated_at)
         VALUES
-            (?, ?, ?, ?, 0, 0, ?, '{}', '{}', 0, ?, '1.0.0', ?, ?, 1, 'web', '{"platforms":["web"]}', '{"platforms":["web"]}', '{}', '{"packages":[]}', '[]', NULL, NULL, NULL, ?, NULL, ?, '2026-05-09 11:00:00', '2026-05-09 11:00:00')
+            (?, ?, ?, 'appstore-publisher-default-20', ?, ?, ?, ?, ?, ?, ?, 'en-US', 'web', 'web', 'unknown',
+             'published', 'listed', 'approved', 'free', ?, ?, 1, '{"platforms":["web"]}', '{"platforms":["web"]}',
+             '{}', '{"packages":[]}', '[]', ?, ?, '1.0.0', '{}', '{}', '{}', '2026-05-09 11:00:00', '2026-05-09 11:00:00')
         "#,
     )
-    .bind(id)
-    .bind(format!("admin-visible-app-{id}"))
-    .bind(tenant_id)
-    .bind(organization_id)
+    .bind(format!("appstore-app-{id}"))
+    .bind(tenant_id.to_string())
+    .bind(organization_id.to_string())
+    .bind(app_key)
+    .bind(app_key)
+    .bind(id.to_string())
+    .bind(app_key)
+    .bind(app_key)
     .bind(name)
     .bind(format!("{name} description"))
     .bind(format!("https://apps.example.test/{app_key}"))
@@ -1105,12 +1137,12 @@ async fn insert_admin_visible_app(
         }
     })
     .to_string())
-    .bind(format!("test-admin-app-artifact-{id}"))
     .bind(external_media_resource(
         &format!("https://cdn.example.test/apps/{app_key}.zip"),
         "archive",
     )
     .to_string())
+    .bind(format!("admin-visible-app-{id}"))
     .execute(pool)
     .await
     .unwrap();

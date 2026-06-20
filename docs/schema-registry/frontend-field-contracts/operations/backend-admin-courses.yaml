@@ -13,11 +13,11 @@ frontend_operations:
   summary: Course Dashboard Retrieve
   description: Course operating dashboard from the current content course catalog, lessons, applications, comments, and reactions.
   read_sources:
-  - content_course
-  - content_course_lesson
-  - content_course_application
-  - content_comment
-  - content_reaction
+  - course_catalog
+  - course_lesson
+  - course_application
+  - course_comment
+  - course_reaction
   query_parameters: []
   response_schema:
     name: AdminCourseDashboardResponse
@@ -90,7 +90,7 @@ frontend_operations:
   summary: Admin Courses List
   description: Course catalog records available to content administrators.
   read_sources:
-  - content_course
+  - course_catalog
   query_parameters: &adminCourseListQuery
   - name: page
     schema:
@@ -183,9 +183,9 @@ frontend_operations:
   summary: Admin Course Create
   description: Creates a managed course catalog record using the existing content course table.
   read_sources:
-  - content_course
+  - course_catalog
   write_tables:
-  - content_course
+  - course_catalog
   - ops_audit_log
   request_schema: &adminCourseMutationRequest
     name: AdminCourseMutationRequest
@@ -263,9 +263,9 @@ frontend_operations:
   summary: Admin Course Update
   description: Updates mutable course catalog fields without changing the existing database schema.
   read_sources:
-  - content_course
+  - course_catalog
   write_tables:
-  - content_course
+  - course_catalog
   - ops_audit_log
   request_schema: *adminCourseMutationRequest
   response_schema: *adminCourseMutationResponse
@@ -283,9 +283,9 @@ frontend_operations:
   summary: Admin Course Delete
   description: Soft-deletes or archives a course record and writes the operation audit trail.
   read_sources:
-  - content_course
+  - course_catalog
   write_tables:
-  - content_course
+  - course_catalog
   - ops_audit_log
   response_schema: &adminDeleteResponse
     name: AdminCourseDeleteResponse
@@ -309,7 +309,7 @@ frontend_operations:
   summary: Admin Course Sections List
   description: Sections for a selected course.
   read_sources:
-  - content_course_section
+  - course_section
   query_parameters: *adminCourseListQuery
   response_schema:
     name: AdminCourseSectionCollectionResponse
@@ -373,10 +373,10 @@ frontend_operations:
   summary: Admin Course Section Create
   description: Creates a course section under the selected course.
   read_sources:
-  - content_course
-  - content_course_section
+  - course_catalog
+  - course_section
   write_tables:
-  - content_course_section
+  - course_section
   - ops_audit_log
   request_schema: &adminCourseSectionMutationRequest
     name: AdminCourseSectionMutationRequest
@@ -446,9 +446,9 @@ frontend_operations:
   summary: Admin Course Section Update
   description: Updates a course section record.
   read_sources:
-  - content_course_section
+  - course_section
   write_tables:
-  - content_course_section
+  - course_section
   - ops_audit_log
   request_schema: *adminCourseSectionMutationRequest
   response_schema: *adminCourseSectionMutationResponse
@@ -466,9 +466,9 @@ frontend_operations:
   summary: Admin Course Section Delete
   description: Deletes or archives a course section record.
   read_sources:
-  - content_course_section
+  - course_section
   write_tables:
-  - content_course_section
+  - course_section
   - ops_audit_log
   response_schema: *adminDeleteResponse
 - route: /admin/courses
@@ -484,7 +484,7 @@ frontend_operations:
   summary: Admin Course Lessons List
   description: Lessons for a selected course.
   read_sources:
-  - content_course_lesson
+  - course_lesson
   query_parameters: *adminCourseListQuery
   response_schema:
     name: AdminCourseLessonCollectionResponse
@@ -551,10 +551,10 @@ frontend_operations:
   summary: Admin Course Lesson Create
   description: Creates a course lesson under the selected course.
   read_sources:
-  - content_course
-  - content_course_lesson
+  - course_catalog
+  - course_lesson
   write_tables:
-  - content_course_lesson
+  - course_lesson
   - ops_audit_log
   request_schema: &adminCourseLessonMutationRequest
     name: AdminCourseLessonMutationRequest
@@ -638,9 +638,9 @@ frontend_operations:
   summary: Admin Course Lesson Update
   description: Updates a course lesson record.
   read_sources:
-  - content_course_lesson
+  - course_lesson
   write_tables:
-  - content_course_lesson
+  - course_lesson
   - ops_audit_log
   request_schema: *adminCourseLessonMutationRequest
   response_schema: *adminCourseLessonMutationResponse
@@ -658,9 +658,9 @@ frontend_operations:
   summary: Admin Course Lesson Delete
   description: Deletes or archives a course lesson record.
   read_sources:
-  - content_course_lesson
+  - course_lesson
   write_tables:
-  - content_course_lesson
+  - course_lesson
   - ops_audit_log
   response_schema: *adminDeleteResponse
 - route: /admin/courses
@@ -676,7 +676,7 @@ frontend_operations:
   summary: Admin Course Relations List
   description: Related course graph rows for a selected course.
   read_sources:
-  - content_course_relation
+  - course_catalog_link
   query_parameters: *adminCourseListQuery
   response_schema: &adminCourseRelationCollectionResponse
     name: AdminCourseRelationCollectionResponse
@@ -732,9 +732,9 @@ frontend_operations:
   summary: Admin Course Relations Replace
   description: Replaces the related course graph rows for a selected course.
   read_sources:
-  - content_course_relation
+  - course_catalog_link
   write_tables:
-  - content_course_relation
+  - course_catalog_link
   - ops_audit_log
   request_schema:
     name: AdminCourseRelationsReplaceRequest
@@ -776,7 +776,7 @@ frontend_operations:
   summary: Admin Course Applications List
   description: Submitted course applications waiting for review or historical governance.
   read_sources:
-  - content_course_application
+  - course_application
   query_parameters: *adminCourseListQuery
   response_schema:
     name: AdminCourseApplicationCollectionResponse
@@ -840,9 +840,9 @@ frontend_operations:
   summary: Admin Course Application Review
   description: Reviews a submitted course application and records the audit trail.
   read_sources:
-  - content_course_application
+  - course_application
   write_tables:
-  - content_course_application
+  - course_application
   - ops_audit_log
   request_schema:
     name: AdminCourseApplicationReviewRequest
@@ -897,7 +897,7 @@ frontend_operations:
   summary: Admin Course Comments List
   description: Course-related comments for moderation and content governance.
   read_sources:
-  - content_comment
+  - course_comment
   query_parameters: *adminCourseListQuery
   response_schema: &adminCourseCommentCollectionResponse
     name: AdminCourseCommentCollectionResponse
@@ -953,9 +953,9 @@ frontend_operations:
   summary: Admin Course Comment Moderate
   description: Moderates a course comment and writes the operation audit trail.
   read_sources:
-  - content_comment
+  - course_comment
   write_tables:
-  - content_comment
+  - course_comment
   - ops_audit_log
   request_schema:
     name: AdminCourseCommentModerationRequest
@@ -985,8 +985,8 @@ frontend_operations:
   summary: Admin Course Engagement List
   description: Aggregated course engagement signals from reactions and course relation activity.
   read_sources:
-  - content_reaction
-  - content_course_relation
+  - course_reaction
+  - course_catalog_link
   query_parameters: *adminCourseListQuery
   response_schema:
     name: AdminCourseEngagementCollectionResponse

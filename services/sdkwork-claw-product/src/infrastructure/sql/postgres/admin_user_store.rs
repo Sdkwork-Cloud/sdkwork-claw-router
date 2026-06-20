@@ -514,7 +514,7 @@ async fn insert_user(
         INSERT INTO iam_user
             (id, tenant_id, username, display_name, email, phone, avatar_media_resource_id, avatar_object_blob_id, avatar_resource_snapshot, status, created_at, updated_at)
         VALUES
-            ($1, $2, $3, $4, $5, '', $6, $7, $8::jsonb, 'active', $9::timestamp AT TIME ZONE 'UTC', $9::timestamp AT TIME ZONE 'UTC')
+            ($1, $2, $3, $4, $5, NULL, $6, $7, $8::jsonb, 'active', $9::timestamp AT TIME ZONE 'UTC', $9::timestamp AT TIME ZONE 'UTC')
         "#,
     )
     .bind(&user_id_text)

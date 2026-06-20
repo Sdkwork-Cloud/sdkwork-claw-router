@@ -517,7 +517,7 @@ async fn insert_user(
         INSERT INTO iam_user
             (id, tenant_id, username, display_name, email, phone, avatar_media_resource_id, avatar_object_blob_id, avatar_resource_snapshot, status, created_at, updated_at)
         VALUES
-            (?, ?, ?, ?, ?, '', ?, ?, ?, 'active', ?, ?)
+            (?, ?, ?, ?, ?, NULL, ?, ?, ?, 'active', ?, ?)
         "#,
     )
     .bind(&user_id_text)

@@ -243,7 +243,7 @@ class SchemaGuardianTest(unittest.TestCase):
                   legacy_compatibility_guardrails:
                     forbidden_synonym_tables: []
                 tables:
-                  - table: platform_app
+                  - table: appstore_app
                     domain: platform
                 """,
             )
@@ -263,7 +263,7 @@ class SchemaGuardianTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "docs\\schema-registry\\frontend-field-contracts\\operations\\app-platform.yaml references v4.1 retired platform alias: plus_app -> platform_app",
+                "docs\\schema-registry\\frontend-field-contracts\\operations\\app-platform.yaml references v4.1 retired platform alias: plus_app -> appstore_app",
                 result.messages,
             )
 
@@ -277,7 +277,7 @@ class SchemaGuardianTest(unittest.TestCase):
                   legacy_compatibility_guardrails:
                     forbidden_synonym_tables: []
                 tables:
-                  - table: platform_app_template
+                  - table: appstore_app_template
                     domain: platform
                 """,
             )
@@ -297,7 +297,7 @@ class SchemaGuardianTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "docs\\schema-registry\\frontend-field-contracts\\models\\app-center.yaml references v4.1 retired platform alias: studio_app_template -> platform_app_template",
+                "docs\\schema-registry\\frontend-field-contracts\\models\\app-center.yaml references v4.1 retired platform alias: studio_app_template -> appstore_app_template",
                 result.messages,
             )
 

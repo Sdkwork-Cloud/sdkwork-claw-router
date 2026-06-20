@@ -2,7 +2,6 @@ use serde_json::Value;
 use sqlx::{Row, SqlitePool};
 
 use crate::domain::{DomainError, DomainResult};
-use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
 use crate::infrastructure::sql::sql_admin_product_center::{
     empty_media_resource, media_resource_from_snapshot, media_resource_locator,
     media_resource_object_blob_id, media_resource_stable_id,
@@ -15,6 +14,8 @@ use crate::ports::{
 };
 
 const COURSE_STATUS_PUBLISHED: i64 = 1;
+const COURSE_STATUS_ACTIVE: &str = "active";
+const COURSE_PUBLISH_STATUS_PUBLISHED: &str = "published";
 const COURSE_CATEGORY_TYPE: &str = "course";
 const COMMENT_STATUS_PUBLISHED: i64 = 1;
 const CONTENT_TYPE_COURSE: i64 = 6;
@@ -24,7 +25,6 @@ const REACTION_TYPE_SAVE: i64 = 3;
 const REACTION_TYPE_SHARE: i64 = 4;
 const DEFAULT_PAGE_SIZE: i64 = 12;
 const MAX_PAGE_SIZE: i64 = 240;
-const COURSE_APPLICATION_STATUS_PENDING: i64 = 1;
 
 #[derive(Debug, Clone)]
 pub struct SqliteCourseStore {
@@ -116,55 +116,50 @@ async fn create_course_application(
     pool: &SqlitePool,
     command: CreateCourseApplicationCommand,
 ) -> DomainResult<CourseApplicationItem> {
-    let id = next_claw_runtime_id("content_course_application")?;
     let metadata = serde_json::json!({
         "source": "course_application",
+        "sourceProvider": command.source_provider,
+        "externalBvid": command.external_bvid,
         "notes": command.notes,
+        "video": command.video,
     })
     .to_string();
     let video = command.video.as_ref();
-    let video_media_resource_id = video.map(media_resource_stable_id);
-    let video_object_blob_id = video.and_then(media_resource_object_blob_id);
-    let video_resource_snapshot = video.map(serde_json::Value::to_string);
+    let sample_resource_ref_id = video.map(media_resource_stable_id);
     let row = sqlx::query(
         r#"
-        INSERT INTO content_course_application
-            (id, uuid, tenant_id, organization_id, user_id, owner_type, owner_id, data_scope, status, metadata, title, category, description, source_provider, external_bvid, video_media_resource_id, video_object_blob_id, video_resource_snapshot, contact_name, contact_email, submitted_at)
+        INSERT INTO course_application
+            (id, uuid, tenant_id, organization_id, applicant_user_id, title,
+             category_id, description, sample_resource_ref_id, contact_name, contact_email,
+             application_status, metadata_json, status, created_at, updated_at, version)
         VALUES
-            (?, ?, ?, ?, ?, 1, ?, 0, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'submitted', ?, 'active', ?, ?, 0)
         RETURNING
             id,
             uuid,
             title,
-            category,
+            category_id AS category,
             description,
-            source_provider,
-            COALESCE(external_bvid, '') AS external_bvid,
-            COALESCE(CAST(video_resource_snapshot AS TEXT), '') AS video_resource_snapshot,
+            application_status,
+            metadata_json,
             COALESCE(contact_name, '') AS contact_name,
             COALESCE(contact_email, '') AS contact_email,
-            status,
-            COALESCE(CAST(submitted_at AS TEXT), '') AS submitted_at
+            created_at AS submitted_at
         "#,
     )
-    .bind(id)
     .bind(&command.uuid)
-    .bind(command.subject.tenant_id)
-    .bind(command.subject.organization_id)
-    .bind(command.subject.user_id)
-    .bind(command.subject.user_id)
-    .bind(COURSE_APPLICATION_STATUS_PENDING)
-    .bind(metadata)
+    .bind(&command.uuid)
+    .bind(command.subject.tenant_id.to_string())
+    .bind(command.subject.organization_id.to_string())
+    .bind(command.subject.user_id.to_string())
     .bind(&command.title)
     .bind(&command.category)
     .bind(&command.description)
-    .bind(&command.source_provider)
-    .bind(command.external_bvid.as_deref())
-    .bind(video_media_resource_id)
-    .bind(video_object_blob_id)
-    .bind(video_resource_snapshot)
+    .bind(sample_resource_ref_id)
     .bind(command.contact_name.as_deref())
     .bind(command.contact_email.as_deref())
+    .bind(metadata)
+    .bind(&command.submitted_at)
     .bind(&command.submitted_at)
     .fetch_one(pool)
     .await
@@ -189,25 +184,32 @@ async fn load_courses(
     let sql = format!(
         r#"
         {select}
-        WHERE COALESCE(c.status, 0) = ?3
+        WHERE c.status = '{active_status}'
+          AND c.publish_status = '{publish_status}'
           AND c.deleted_at IS NULL
-          AND (?4 IS NULL OR COALESCE(c.level, 0) = ?4)
-          AND (?5 IS NULL OR lower(COALESCE(c.category, '')) = ?5)
+          AND (?3 IS NULL OR CASE lower(COALESCE(c.difficulty_level, ''))
+                WHEN 'beginner' THEN 1
+                WHEN 'intermediate' THEN 2
+                WHEN 'advanced' THEN 3
+                ELSE 0
+            END = ?3)
+          AND (?4 IS NULL OR lower(COALESCE(cat.category_code, '')) = ?4)
           AND (
-                ?6 IS NULL
-             OR lower(COALESCE(c.title, '') || ' ' || COALESCE(c.description, '') || ' ' || COALESCE(c.category, '') || ' ' || CAST(COALESCE(c.tags, '') AS TEXT)) LIKE ?6
+                ?5 IS NULL
+             OR lower(COALESCE(c.title, '') || ' ' || COALESCE(c.description, '') || ' ' || COALESCE(cat.category_code, '') || ' ' || CAST(COALESCE(c.tags_json, '[]') AS TEXT)) LIKE ?5
           )
           AND {scope_filter}
-        ORDER BY COALESCE(c.published_at, c.updated_at, c.created_at) DESC, c.id DESC
-        LIMIT ?7 OFFSET ?8
+        ORDER BY COALESCE(c.published_at, c.updated_at, c.created_at) DESC, CAST(c.id AS INTEGER) DESC
+        LIMIT ?6 OFFSET ?7
         "#,
         select = COURSE_SELECT_COLUMNS,
-        scope_filter = sqlite_scope_filter("c"),
+        scope_filter = sqlite_canonical_scope_filter("c"),
+        active_status = COURSE_STATUS_ACTIVE,
+        publish_status = COURSE_PUBLISH_STATUS_PUBLISHED,
     );
     let rows = sqlx::query(sql.as_str())
         .bind(scope.tenant_id)
         .bind(scope.organization_id)
-        .bind(COURSE_STATUS_PUBLISHED)
         .bind(query.level)
         .bind(category.as_deref())
         .bind(keyword.as_deref())
@@ -229,23 +231,27 @@ async fn load_course_by_identifier(
     let sql = format!(
         r#"
         {select}
-        WHERE COALESCE(c.status, 0) = ?3
+        WHERE c.status = '{active_status}'
+          AND c.publish_status = '{publish_status}'
           AND c.deleted_at IS NULL
           AND (
-                lower(COALESCE(c.course_code, '')) = ?4
-             OR (?5 IS NOT NULL AND c.id = ?5)
+                lower(COALESCE(c.course_code, '')) = ?3
+             OR c.id = ?4
+             OR (?5 IS NOT NULL AND CAST(c.id AS INTEGER) = ?5)
           )
           AND {scope_filter}
         LIMIT 1
         "#,
         select = COURSE_SELECT_COLUMNS,
-        scope_filter = sqlite_scope_filter("c"),
+        scope_filter = sqlite_canonical_scope_filter("c"),
+        active_status = COURSE_STATUS_ACTIVE,
+        publish_status = COURSE_PUBLISH_STATUS_PUBLISHED,
     );
     let row = sqlx::query(sql.as_str())
         .bind(scope.tenant_id)
         .bind(scope.organization_id)
-        .bind(COURSE_STATUS_PUBLISHED)
         .bind(course_id.trim().to_ascii_lowercase())
+        .bind(course_id.trim())
         .bind(numeric_id)
         .fetch_optional(pool)
         .await
@@ -259,28 +265,30 @@ async fn load_related_courses(
     subject: Option<CourseSubject>,
 ) -> DomainResult<Vec<CourseItem>> {
     let scope = read_scope(subject);
+    let canonical_course_id = course_id.to_string();
     let sql = format!(
         r#"
         {select}
-        JOIN content_course_relation r
-          ON r.related_course_id = c.id
+        JOIN course_catalog_link r
+          ON r.linked_course_id = c.id
          AND r.course_id = ?3
-         AND COALESCE(r.status, 0) = ?4
-         AND r.deleted_at IS NULL
-        WHERE COALESCE(c.status, 0) = ?4
+         AND r.status = '{active_status}'
+        WHERE c.status = '{active_status}'
+          AND c.publish_status = '{publish_status}'
           AND c.deleted_at IS NULL
           AND {scope_filter}
-        ORDER BY COALESCE(r.sort_order, 0), c.id
+        ORDER BY COALESCE(r.sort_order, 0), CAST(c.id AS INTEGER)
         LIMIT 8
         "#,
         select = COURSE_SELECT_COLUMNS,
-        scope_filter = sqlite_scope_filter("c"),
+        scope_filter = sqlite_canonical_scope_filter("c"),
+        active_status = COURSE_STATUS_ACTIVE,
+        publish_status = COURSE_PUBLISH_STATUS_PUBLISHED,
     );
     let rows = sqlx::query(sql.as_str())
         .bind(scope.tenant_id)
         .bind(scope.organization_id)
-        .bind(course_id)
-        .bind(COURSE_STATUS_PUBLISHED)
+        .bind(canonical_course_id)
         .fetch_all(pool)
         .await
         .map_err(sql_error)?;
@@ -292,21 +300,21 @@ async fn load_sections(pool: &SqlitePool, course_id: i64) -> DomainResult<Vec<Co
         r#"
         SELECT
             id,
-            COALESCE(section_no, 0) AS section_no,
+            COALESCE(CAST(section_no AS INTEGER), 0) AS section_no,
             COALESCE(title, '') AS title,
             COALESCE(description, '') AS description,
-            COALESCE(sort_order, section_no, id) AS sort_order,
-            COALESCE(lesson_count, 0) AS lesson_count,
-            COALESCE(duration_seconds, 0) AS duration_seconds
-        FROM content_course_section
+            COALESCE(sort_order, CAST(section_no AS INTEGER), 0) AS sort_order,
+            COALESCE(lesson_count_snapshot, 0) AS lesson_count,
+            COALESCE(duration_seconds_snapshot, 0) AS duration_seconds
+        FROM course_section
         WHERE course_id = ?1
-          AND COALESCE(status, 0) = ?2
+          AND status = ?2
           AND deleted_at IS NULL
-        ORDER BY COALESCE(sort_order, section_no, id), id
+        ORDER BY COALESCE(sort_order, CAST(section_no AS INTEGER), 0), id
         "#,
     )
-    .bind(course_id)
-    .bind(COURSE_STATUS_PUBLISHED)
+    .bind(course_id.to_string())
+    .bind(COURSE_STATUS_ACTIVE)
     .fetch_all(pool)
     .await
     .map_err(sql_error)?;
@@ -338,29 +346,36 @@ async fn load_lessons(
     let rows = sqlx::query(
         r#"
         SELECT
-            id,
-            COALESCE(lesson_no, 0) AS lesson_no,
-            COALESCE(title, '') AS title,
-            COALESCE(description, '') AS description,
-            COALESCE(CAST(video_resource_snapshot AS TEXT), '') AS video_resource_snapshot,
-            COALESCE(external_bvid, '') AS external_bvid,
-            COALESCE(source_provider, '') AS source_provider,
-            COALESCE(duration_seconds, 0) AS duration_seconds,
-            COALESCE(duration_text, '') AS duration_text,
-            COALESCE(content, '') AS content,
-            COALESCE(sort_order, lesson_no, id) AS sort_order,
-            COALESCE(free_preview, 0) AS free_preview
-        FROM content_course_lesson
-        WHERE course_id = ?1
-          AND section_id = ?2
-          AND COALESCE(status, 0) = ?3
-          AND deleted_at IS NULL
-        ORDER BY COALESCE(sort_order, lesson_no, id), id
+            l.id,
+            COALESCE(CAST(l.lesson_no AS INTEGER), 0) AS lesson_no,
+            COALESCE(l.title, '') AS title,
+            COALESCE(l.description, '') AS description,
+            COALESCE(CAST(ref.media_resource_snapshot AS TEXT), '') AS video_resource_snapshot,
+            COALESCE(l.external_source_id, '') AS external_bvid,
+            COALESCE(l.source_provider, '') AS source_provider,
+            COALESCE(l.duration_seconds, 0) AS duration_seconds,
+            COALESCE(l.duration_text, '') AS duration_text,
+            COALESCE(l.content, '') AS content,
+            COALESCE(l.sort_order, CAST(l.lesson_no AS INTEGER), 0) AS sort_order,
+            COALESCE(l.free_preview, 0) AS free_preview
+        FROM course_lesson l
+        LEFT JOIN course_resource_ref ref
+          ON ref.owner_type = 'lesson'
+         AND ref.owner_id = l.id
+         AND ref.resource_role = 'primary_video'
+         AND ref.status = ?4
+         AND ref.deleted_at IS NULL
+        WHERE l.course_id = ?1
+          AND l.section_id = ?2
+          AND l.status = ?3
+          AND l.deleted_at IS NULL
+        ORDER BY COALESCE(l.sort_order, CAST(l.lesson_no AS INTEGER), 0), l.id
         "#,
     )
-    .bind(course_id)
-    .bind(section_id)
-    .bind(COURSE_STATUS_PUBLISHED)
+    .bind(course_id.to_string())
+    .bind(section_id.to_string())
+    .bind(COURSE_STATUS_ACTIVE)
+    .bind(COURSE_STATUS_ACTIVE)
     .fetch_all(pool)
     .await
     .map_err(sql_error)?;
@@ -398,45 +413,46 @@ async fn load_categories(
         r#"
         SELECT
             cat.id,
-            COALESCE(cat.code, '') AS code,
+            COALESCE(cat.category_code, '') AS code,
             COALESCE(cat.name, '') AS name,
             COALESCE(cat.description, '') AS description,
             COALESCE(CAST(cat.icon_resource_snapshot AS TEXT), '') AS icon_resource_snapshot,
-            COALESCE(cat.sort_weight, 0) AS sort_weight,
+            COALESCE(cat.sort_order, 0) AS sort_weight,
             (
                 SELECT COUNT(1)
-                FROM content_course c
-                WHERE COALESCE(c.status, 0) = ?3
+                FROM course_catalog c
+                WHERE c.category_id = cat.id
+                  AND c.status = '{active_status}'
+                  AND c.publish_status = '{publish_status}'
                   AND c.deleted_at IS NULL
-                  AND lower(COALESCE(c.category, '')) = lower(COALESCE(cat.code, cat.name, ''))
                   AND {course_scope_filter}
             ) AS course_count
-        FROM c_category cat
-        WHERE cat.category_type = ?4
-          AND COALESCE(cat.visible, 1) = 1
-          AND COALESCE(cat.status, 0) = 1
+        FROM course_category cat
+        WHERE cat.category_code <> 'root'
+          AND cat.status = '{active_status}'
+          AND cat.deleted_at IS NULL
           AND {category_scope_filter}
-        ORDER BY COALESCE(cat.sort_weight, 0), cat.id
+        ORDER BY COALESCE(cat.sort_order, 0), cat.id
         "#,
-        course_scope_filter = sqlite_scope_filter("c"),
-        category_scope_filter = sqlite_scope_filter("cat"),
+        course_scope_filter = sqlite_canonical_scope_filter("c"),
+        category_scope_filter = sqlite_canonical_scope_filter("cat"),
+        active_status = COURSE_STATUS_ACTIVE,
+        publish_status = COURSE_PUBLISH_STATUS_PUBLISHED,
     );
     let rows = sqlx::query(sql.as_str())
         .bind(scope.tenant_id)
         .bind(scope.organization_id)
-        .bind(COURSE_STATUS_PUBLISHED)
-        .bind(COURSE_CATEGORY_TYPE)
         .fetch_all(pool)
         .await
         .map_err(sql_error)?;
     Ok(rows
         .iter()
         .map(|row| {
-            let id = integer_cell(row, "id");
+            let id = string_cell(row, "id");
             let name = string_cell(row, "name");
             let code = string_cell(row, "code");
             CourseCategoryItem {
-                id: id.to_string(),
+                id,
                 code,
                 label: name.clone(),
                 name,
@@ -458,19 +474,21 @@ async fn load_overview(
         r#"
         SELECT
             COUNT(1) AS total_courses,
-            COALESCE(SUM(COALESCE(lessons_count, 0)), 0) AS total_lessons,
-            COALESCE(SUM(COALESCE(students_count, 0)), 0) AS total_students
-        FROM content_course c
-        WHERE COALESCE(c.status, 0) = ?3
+            COALESCE(SUM(COALESCE(c.lesson_count_snapshot, 0)), 0) AS total_lessons,
+            COALESCE(SUM(COALESCE(c.student_count_snapshot, 0)), 0) AS total_students
+        FROM course_catalog c
+        WHERE c.status = '{active_status}'
+          AND c.publish_status = '{publish_status}'
           AND c.deleted_at IS NULL
           AND {scope_filter}
         "#,
-        scope_filter = sqlite_scope_filter("c"),
+        scope_filter = sqlite_canonical_scope_filter("c"),
+        active_status = COURSE_STATUS_ACTIVE,
+        publish_status = COURSE_PUBLISH_STATUS_PUBLISHED,
     );
     let row = sqlx::query(sql.as_str())
         .bind(scope.tenant_id)
         .bind(scope.organization_id)
-        .bind(COURSE_STATUS_PUBLISHED)
         .fetch_one(pool)
         .await
         .map_err(sql_error)?;
@@ -488,32 +506,38 @@ async fn load_overview(
 
 const COURSE_SELECT_COLUMNS: &str = r#"
     SELECT
-        c.id,
+        CAST(c.id AS INTEGER) AS id,
         COALESCE(c.course_code, '') AS course_code,
         COALESCE(c.title, '') AS title,
         COALESCE(c.description, '') AS description,
-        CAST(COALESCE(c.thumbnail_resource_snapshot, '') AS TEXT) AS thumbnail_resource_snapshot,
-        CAST(COALESCE(c.instructor_snapshot, '') AS TEXT) AS instructor_snapshot,
-        COALESCE(c.duration_text, '') AS duration_text,
-        COALESCE(c.lessons_count, 0) AS lessons_count,
-        CAST(COALESCE(c.rating_score, 0) AS TEXT) AS rating_score,
-        COALESCE(c.students_count, 0) AS students_count,
-        COALESCE(c.level, 0) AS level,
-        COALESCE(c.category, '') AS category,
-        COALESCE(cat.name, c.category, '') AS category_label,
-        CAST(COALESCE(c.tags, '') AS TEXT) AS tags,
-        COALESCE(c.external_bvid, '') AS external_bvid,
-        COALESCE(c.content, '') AS content,
-        CAST(c.price_amount AS TEXT) AS price_amount,
+        CAST(COALESCE(c.cover_resource_snapshot, '') AS TEXT) AS thumbnail_resource_snapshot,
+        CAST(COALESCE(inst.profile_links_json, '{}') AS TEXT) AS instructor_snapshot,
+        COALESCE(c.subtitle, '') AS duration_text,
+        COALESCE(c.lesson_count_snapshot, 0) AS lessons_count,
+        CAST(COALESCE(c.rating_score_snapshot, '0') AS TEXT) AS rating_score,
+        COALESCE(c.student_count_snapshot, 0) AS students_count,
+        CASE lower(COALESCE(c.difficulty_level, ''))
+            WHEN 'beginner' THEN 1
+            WHEN 'intermediate' THEN 2
+            WHEN 'advanced' THEN 3
+            ELSE 0
+        END AS level,
+        COALESCE(cat.category_code, '') AS category,
+        COALESCE(cat.name, cat.category_code, '') AS category_label,
+        CAST(COALESCE(c.tags_json, '[]') AS TEXT) AS tags,
+        COALESCE(c.external_source_id, '') AS external_bvid,
+        COALESCE(c.body_content, '') AS content,
+        c.price_amount AS price_amount,
         COALESCE(c.currency, '') AS currency,
         COALESCE(c.is_collection, 0) AS is_collection,
         CAST(COALESCE(c.published_at, c.updated_at, c.created_at) AS TEXT) AS published_at,
         (
             SELECT COUNT(1)
-            FROM content_comment comments
-            WHERE comments.content_type = 6
-              AND comments.content_id = c.id
-              AND COALESCE(comments.status, 0) = 1
+            FROM course_comment comments
+            WHERE comments.target_type = 'course'
+              AND comments.target_id = c.id
+              AND comments.status = 'active'
+              AND comments.deleted_at IS NULL
         ) AS comment_count,
         (
             SELECT COALESCE(
@@ -527,12 +551,12 @@ const COURSE_SELECT_COLUMNS: &str = r#"
                 ),
                 0
             )
-            FROM content_reaction reaction
-            WHERE reaction.target_type = 6
+            FROM course_reaction reaction
+            WHERE reaction.target_type = 'course'
               AND reaction.target_id = c.id
-              AND reaction.reaction_type = 1
-              AND COALESCE(reaction.status, 0) = 1
-              AND reaction.cancelled_at IS NULL
+              AND reaction.reaction_type = 'view'
+              AND reaction.status = 'active'
+              AND reaction.deleted_at IS NULL
         ) AS view_count,
         (
             SELECT COALESCE(
@@ -546,12 +570,12 @@ const COURSE_SELECT_COLUMNS: &str = r#"
                 ),
                 0
             )
-            FROM content_reaction reaction
-            WHERE reaction.target_type = 6
+            FROM course_reaction reaction
+            WHERE reaction.target_type = 'course'
               AND reaction.target_id = c.id
-              AND reaction.reaction_type = 2
-              AND COALESCE(reaction.status, 0) = 1
-              AND reaction.cancelled_at IS NULL
+              AND reaction.reaction_type = 'like'
+              AND reaction.status = 'active'
+              AND reaction.deleted_at IS NULL
         ) AS like_count,
         (
             SELECT COALESCE(
@@ -565,12 +589,12 @@ const COURSE_SELECT_COLUMNS: &str = r#"
                 ),
                 0
             )
-            FROM content_reaction reaction
-            WHERE reaction.target_type = 6
+            FROM course_reaction reaction
+            WHERE reaction.target_type = 'course'
               AND reaction.target_id = c.id
-              AND reaction.reaction_type = 3
-              AND COALESCE(reaction.status, 0) = 1
-              AND reaction.cancelled_at IS NULL
+              AND reaction.reaction_type = 'save'
+              AND reaction.status = 'active'
+              AND reaction.deleted_at IS NULL
         ) AS save_count,
         (
             SELECT COALESCE(
@@ -584,17 +608,18 @@ const COURSE_SELECT_COLUMNS: &str = r#"
                 ),
                 0
             )
-            FROM content_reaction reaction
-            WHERE reaction.target_type = 6
+            FROM course_reaction reaction
+            WHERE reaction.target_type = 'course'
               AND reaction.target_id = c.id
-              AND reaction.reaction_type = 4
-              AND COALESCE(reaction.status, 0) = 1
-              AND reaction.cancelled_at IS NULL
+              AND reaction.reaction_type = 'share'
+              AND reaction.status = 'active'
+              AND reaction.deleted_at IS NULL
         ) AS share_count
-    FROM content_course c
-    LEFT JOIN c_category cat
-      ON lower(COALESCE(cat.code, '')) = lower(COALESCE(c.category, ''))
-     AND cat.category_type = 'course'
+    FROM course_catalog c
+    LEFT JOIN course_category cat
+      ON cat.id = c.category_id
+    LEFT JOIN course_instructor inst
+      ON inst.id = c.primary_instructor_id
 "#;
 
 fn course_from_row(row: &sqlx::sqlite::SqliteRow) -> CourseItem {
@@ -650,27 +675,50 @@ fn course_from_row(row: &sqlx::sqlite::SqliteRow) -> CourseItem {
 }
 
 fn course_application_from_row(row: &sqlx::sqlite::SqliteRow) -> CourseApplicationItem {
+    let metadata_text = string_cell(row, "metadata_json");
+    let metadata: Value =
+        serde_json::from_str(metadata_text.as_str()).unwrap_or(Value::Null);
     CourseApplicationItem {
         id: string_cell(row, "uuid"),
-        application_id: integer_cell(row, "id"),
+        application_id: stable_application_numeric_id(&string_cell(row, "id")),
         title: string_cell(row, "title"),
         category: string_cell(row, "category"),
         description: string_cell(row, "description"),
-        source_provider: string_cell(row, "source_provider"),
-        external_bvid: string_cell(row, "external_bvid"),
-        video: optional_media_resource_from_row(row, "video_resource_snapshot", "video"),
+        source_provider: metadata
+            .get("sourceProvider")
+            .and_then(Value::as_str)
+            .unwrap_or("local")
+            .to_owned(),
+        external_bvid: metadata
+            .get("externalBvid")
+            .and_then(Value::as_str)
+            .unwrap_or("")
+            .to_owned(),
+        video: metadata.get("video").cloned().filter(|value| !value.is_null()),
         contact_name: string_cell(row, "contact_name"),
         contact_email: string_cell(row, "contact_email"),
-        status: course_application_status_label(integer_cell(row, "status")).to_owned(),
+        status: canonical_course_application_status_label(&string_cell(
+            row,
+            "application_status",
+        ))
+        .to_owned(),
         submitted_at: string_cell(row, "submitted_at"),
     }
 }
 
-fn course_application_status_label(status: i64) -> &'static str {
+fn stable_application_numeric_id(application_key: &str) -> i64 {
+    let mut hash: u64 = 0;
+    for byte in application_key.bytes() {
+        hash = hash.wrapping_mul(31).wrapping_add(byte as u64);
+    }
+    ((hash & i64::MAX as u64) as i64).max(1)
+}
+
+fn canonical_course_application_status_label(status: &str) -> &'static str {
     match status {
-        COURSE_APPLICATION_STATUS_PENDING => "pending",
-        2 => "approved",
-        3 => "rejected",
+        "submitted" => "pending",
+        "approved" => "approved",
+        "rejected" => "rejected",
         _ => "pending",
     }
 }
@@ -691,6 +739,16 @@ fn read_scope(subject: Option<CourseSubject>) -> ReadScope {
         tenant_id: subject.tenant_id.max(0),
         organization_id: subject.organization_id.max(0),
     }
+}
+
+fn sqlite_canonical_scope_filter(alias: &str) -> String {
+    format!(
+        r#"(
+            (?1 > 0 AND {alias}.tenant_id = CAST(?1 AS TEXT) AND COALESCE({alias}.organization_id, '0') = CAST(?2 AS TEXT))
+            OR (?1 > 0 AND ?2 > 0 AND {alias}.tenant_id = CAST(?1 AS TEXT) AND COALESCE({alias}.organization_id, '0') = '0')
+            OR ({alias}.tenant_id = '0' AND COALESCE({alias}.organization_id, '0') = '0')
+        )"#
+    )
 }
 
 fn sqlite_scope_filter(alias: &str) -> String {
@@ -854,16 +912,18 @@ fn live_course_source() -> CourseOverviewSource {
     CourseOverviewSource {
         source_label: "Live course data".to_owned(),
         source_description:
-            "Derived from Java-compatible course, category, comment, and reaction tables."
+            "Derived from sdkwork-course module catalog, category, comment, and reaction tables."
                 .to_owned(),
         source_tables: vec![
-            "content_course".to_owned(),
-            "content_course_section".to_owned(),
-            "content_course_lesson".to_owned(),
-            "content_course_relation".to_owned(),
-            "c_category".to_owned(),
-            "content_comment".to_owned(),
-            "content_reaction".to_owned(),
+            "course_catalog".to_owned(),
+            "course_section".to_owned(),
+            "course_lesson".to_owned(),
+            "course_catalog_link".to_owned(),
+            "course_category".to_owned(),
+            "course_instructor".to_owned(),
+            "course_comment".to_owned(),
+            "course_reaction".to_owned(),
+            "course_resource_ref".to_owned(),
         ],
         observed_at: current_timestamp_string(),
     }

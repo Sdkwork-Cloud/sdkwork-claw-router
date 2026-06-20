@@ -45,8 +45,11 @@ schema_registry:
     - portal
   legacy_compatibility_guardrails:
     java_entity_first_required: false
-    rule: Greenfield v4.1 data model uses platform_, c_, ai_, and content_ tables
-      as system of record; plus_* and studio_* legacy tables are retired.
+    rule: Greenfield composition model uses ai_, ops_, integration_, storage_, and
+      c_ (skill/agent/mcp) as claw-router system of record. App center is owned by
+      sdkwork-appstore (appstore_*). Courses are owned by sdkwork-course (course_*).
+      IAM and commerce base tables are imported modules; plus_* and studio_* legacy
+      tables are retired.
     protected_domains:
     - platform
     - classification
@@ -64,8 +67,10 @@ schema_registry:
     - sdkwork_refund
     - sdkwork_invoice
     allowed_projection_exception: commerce_* base capability tables are provided by
-      sdkwork-appbase; router-owned commerce_* tables may only add usage settlement,
-      statement, export, and analytics projections.
+      sdkwork-appbase-commerce; router-owned commerce_* tables may only add usage
+      settlement, statement, export, and analytics projections. platform_* and content_course*
+      DDL is owned by sdkwork-appstore and sdkwork-course and must not be generated
+      in claw-router schema.sql.
   common_column_groups:
     tenant_entity:
     - id
@@ -608,7 +613,7 @@ tables:
   compliance_level: L3
   system_of_record: true
   write_owner: sdkwork-appbase-iam
-  generated_by_this_project: true
+  generated_by_this_project: false
   frontend_routes:
   - /auth/login
   - /auth/register
@@ -649,7 +654,7 @@ tables:
   compliance_level: L3
   system_of_record: true
   write_owner: sdkwork-appbase-iam
-  generated_by_this_project: true
+  generated_by_this_project: false
   frontend_routes:
   - /console/account
   - /admin/organization
@@ -699,7 +704,7 @@ tables:
   compliance_level: L3
   system_of_record: true
   write_owner: sdkwork-appbase-iam
-  generated_by_this_project: true
+  generated_by_this_project: false
   frontend_routes:
   - /console/notifications
   - /admin/organization
@@ -761,7 +766,7 @@ tables:
   compliance_level: L3
   system_of_record: true
   write_owner: sdkwork-appbase-iam
-  generated_by_this_project: true
+  generated_by_this_project: false
   frontend_routes:
   - /console/account
   - /admin/organization
@@ -820,7 +825,7 @@ tables:
   compliance_level: L3
   system_of_record: true
   write_owner: sdkwork-appbase-iam
-  generated_by_this_project: true
+  generated_by_this_project: false
   source_tables:
   - iam_organization_membership
   - iam_department
@@ -888,7 +893,7 @@ tables:
   compliance_level: L3
   system_of_record: true
   write_owner: sdkwork-appbase-iam
-  generated_by_this_project: true
+  generated_by_this_project: false
   source_tables:
   - iam_department
   frontend_routes:
@@ -940,7 +945,7 @@ tables:
   compliance_level: L3
   system_of_record: true
   write_owner: sdkwork-appbase-iam
-  generated_by_this_project: true
+  generated_by_this_project: false
   source_tables:
   - iam_department_assignment
   - iam_position
@@ -1005,7 +1010,7 @@ tables:
   compliance_level: L3
   system_of_record: true
   write_owner: sdkwork-appbase-iam
-  generated_by_this_project: true
+  generated_by_this_project: false
   frontend_routes:
   - /auth/login
   - /auth/register
@@ -1074,7 +1079,7 @@ tables:
   compliance_level: L3
   system_of_record: true
   write_owner: sdkwork-appbase-iam
-  generated_by_this_project: true
+  generated_by_this_project: false
   frontend_routes:
   - /auth/login
   - /auth/register
@@ -1119,7 +1124,7 @@ tables:
   compliance_level: L3
   system_of_record: true
   write_owner: sdkwork-appbase-iam
-  generated_by_this_project: true
+  generated_by_this_project: false
   frontend_routes:
   - /auth/login
   - /auth/register
@@ -1159,7 +1164,7 @@ tables:
   compliance_level: L3
   system_of_record: true
   write_owner: sdkwork-appbase-iam
-  generated_by_this_project: true
+  generated_by_this_project: false
   frontend_routes:
   - /auth/login
   - /auth/register
@@ -1228,7 +1233,7 @@ tables:
   compliance_level: L3
   system_of_record: true
   write_owner: sdkwork-appbase-iam
-  generated_by_this_project: true
+  generated_by_this_project: false
   frontend_routes:
   - /auth/login
   - /auth/register
@@ -1262,7 +1267,7 @@ tables:
   compliance_level: L3
   system_of_record: true
   write_owner: sdkwork-appbase-iam
-  generated_by_this_project: true
+  generated_by_this_project: false
   frontend_routes:
   - /auth/login
   - /auth/register
@@ -1301,7 +1306,7 @@ tables:
   compliance_level: L3
   system_of_record: true
   write_owner: sdkwork-appbase-iam
-  generated_by_this_project: true
+  generated_by_this_project: false
   frontend_routes:
   - /admin/user
   - /admin/organization
@@ -1342,7 +1347,7 @@ tables:
   compliance_level: L3
   system_of_record: true
   write_owner: sdkwork-appbase-iam
-  generated_by_this_project: true
+  generated_by_this_project: false
   frontend_routes:
   - /admin/user
   - /admin/organization
@@ -1374,7 +1379,7 @@ tables:
   compliance_level: L3
   system_of_record: true
   write_owner: sdkwork-appbase-iam
-  generated_by_this_project: true
+  generated_by_this_project: false
   frontend_routes:
   - /admin/user
   api_surfaces:
@@ -1410,7 +1415,7 @@ tables:
   compliance_level: L3
   system_of_record: true
   write_owner: sdkwork-appbase-iam
-  generated_by_this_project: true
+  generated_by_this_project: false
   frontend_routes:
   - /admin/user
   - /admin/organization
@@ -1448,7 +1453,7 @@ tables:
   compliance_level: L3
   system_of_record: true
   write_owner: sdkwork-appbase-iam
-  generated_by_this_project: true
+  generated_by_this_project: false
   source_tables:
   - iam_role
   frontend_routes:
@@ -1512,7 +1517,7 @@ tables:
   compliance_level: L3
   system_of_record: true
   write_owner: sdkwork-appbase-iam
-  generated_by_this_project: true
+  generated_by_this_project: false
   frontend_routes:
   - /admin/user
   - /admin/organization
@@ -1553,7 +1558,7 @@ tables:
   compliance_level: L3
   system_of_record: true
   write_owner: sdkwork-appbase-iam
-  generated_by_this_project: true
+  generated_by_this_project: false
   frontend_routes:
   - /admin/user
   api_surfaces:
@@ -1592,7 +1597,7 @@ tables:
   compliance_level: L3
   system_of_record: true
   write_owner: sdkwork-appbase-iam
-  generated_by_this_project: true
+  generated_by_this_project: false
   frontend_routes:
   - /auth/login
   - /auth/register
@@ -1630,7 +1635,7 @@ tables:
   compliance_level: L3
   system_of_record: true
   write_owner: sdkwork-appbase-iam
-  generated_by_this_project: true
+  generated_by_this_project: false
   frontend_routes:
   - /auth/login
   - /auth/register
@@ -16335,6 +16340,7 @@ tables:
   compliance_level: L2
   system_of_record: true
   write_owner: course-service
+  generated_by_this_project: false
   common_columns: tenant_entity
   frontend_routes:
   - /courses
@@ -16389,6 +16395,7 @@ tables:
   compliance_level: L2
   system_of_record: true
   write_owner: course-service
+  generated_by_this_project: false
   common_columns: tenant_entity
   frontend_routes:
   - /courses/:id
@@ -16423,6 +16430,7 @@ tables:
   compliance_level: L2
   system_of_record: true
   write_owner: course-service
+  generated_by_this_project: false
   common_columns: tenant_entity
   frontend_routes:
   - /courses/:id
@@ -16465,6 +16473,7 @@ tables:
   compliance_level: L2
   system_of_record: true
   write_owner: course-service
+  generated_by_this_project: false
   common_columns: tenant_entity
   frontend_routes:
   - /courses
@@ -16494,6 +16503,7 @@ tables:
   compliance_level: L2
   system_of_record: true
   write_owner: course-service
+  generated_by_this_project: false
   common_columns: user_entity
   frontend_routes:
   - /courses
@@ -16541,13 +16551,13 @@ tables:
     - user_id
     - created_at
     - id
-- table: platform_app
+- table: appstore_app
   domain: platform
   profile: tenant_entity
   compliance_level: L2
   system_of_record: true
-  write_owner: app-center-service
-  generated_by_this_project: true
+  write_owner: sdkwork-appstore
+  generated_by_this_project: false
   frontend_routes:
   - /
   - /apps
@@ -16623,24 +16633,25 @@ tables:
       type: int64
       constraints: NOT NULL DEFAULT 0
   indexes:
-  - name: idx_platform_app_user_id
+  - name: idx_appstore_app_user_id
     columns:
     - user_id
-  - name: idx_platform_app_project_id
+  - name: idx_appstore_app_project_id
     columns:
     - project_id
-  - name: idx_platform_app_status
+  - name: idx_appstore_app_status
     columns:
     - status
-  - name: idx_platform_app_category_id
+  - name: idx_appstore_app_category_id
     columns:
     - category_id
-- table: platform_app_template
+- table: appstore_app_template
   domain: platform
   profile: tenant_entity
   compliance_level: L2
   system_of_record: true
-  write_owner: app-center-service
+  write_owner: sdkwork-appstore
+  generated_by_this_project: false
   common_columns: tenant_entity
   frontend_routes:
   - /admin/app
@@ -16682,18 +16693,18 @@ tables:
     published_at: instant
     deprecated_at: instant
   indexes:
-  - name: uk_platform_app_template_no
+  - name: uk_appstore_app_template_no
     unique: true
     columns:
     - tenant_id
     - template_no
-  - name: uk_platform_app_template_code
+  - name: uk_appstore_app_template_code
     unique: true
     columns:
     - tenant_id
     - organization_id
     - template_code
-  - name: idx_platform_app_template_scope_status
+  - name: idx_appstore_app_template_scope_status
     columns:
     - tenant_id
     - organization_id
@@ -16702,7 +16713,7 @@ tables:
     - status
     - updated_at
     - id
-  - name: idx_platform_app_template_category
+  - name: idx_appstore_app_template_category
     columns:
     - tenant_id
     - organization_id
@@ -16710,12 +16721,13 @@ tables:
     - publish_status
     - sort_weight
     - id
-- table: platform_app_template_version
+- table: appstore_app_template_version
   domain: platform
   profile: tenant_entity
   compliance_level: L2
   system_of_record: true
-  write_owner: app-center-service
+  write_owner: sdkwork-appstore
+  generated_by_this_project: false
   common_columns: tenant_entity
   frontend_routes:
   - /admin/app
@@ -16737,14 +16749,14 @@ tables:
     published_at: instant
     deprecated_at: instant
   indexes:
-  - name: uk_platform_app_template_version_no
+  - name: uk_appstore_app_template_version_no
     unique: true
     columns:
     - tenant_id
     - organization_id
     - template_id
     - version_no
-  - name: idx_platform_app_template_version_template
+  - name: idx_appstore_app_template_version_template
     columns:
     - tenant_id
     - organization_id
@@ -16752,12 +16764,13 @@ tables:
     - publish_status
     - created_at
     - id
-- table: platform_app_template_usage
+- table: appstore_app_template_usage
   domain: platform
   profile: event_log
   compliance_level: L2
   system_of_record: true
-  write_owner: app-center-service
+  write_owner: sdkwork-appstore
+  generated_by_this_project: false
   common_columns: event_log
   frontend_routes:
   - /admin/app
@@ -16772,7 +16785,7 @@ tables:
     input_snapshot: json
     output_snapshot: json
   indexes:
-  - name: idx_platform_app_template_usage_template
+  - name: idx_appstore_app_template_usage_template
     columns:
     - tenant_id
     - organization_id
@@ -16780,14 +16793,14 @@ tables:
     - template_version_id
     - created_at
     - id
-  - name: idx_platform_app_template_usage_target
+  - name: idx_appstore_app_template_usage_target
     columns:
     - tenant_id
     - organization_id
     - target_app_id
     - created_at
     - id
-  - name: idx_platform_app_template_usage_user
+  - name: idx_appstore_app_template_usage_user
     columns:
     - tenant_id
     - organization_id

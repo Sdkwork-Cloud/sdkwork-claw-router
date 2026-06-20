@@ -21,11 +21,15 @@ const REPLACEMENTS = [
   ['studio_catalog_asset', 'ai_skill_asset'],
   ['studio_catalog_action', 'ai_skill_action'],
   ['plus_category', 'c_category'],
-  ['plus_app', 'platform_app'],
+  ['plus_app', 'appstore_app'],
+  ['platform_app', 'appstore_app'],
   ['plus_feeds', 'content_forum_post'],
   ['plus_comments', 'content_comment'],
   ['plus_favorite', 'content_favorite'],
-  ['studio_app_template', 'platform_app_template'],
+  ['studio_app_template', 'appstore_app_template'],
+  ['platform_app_template', 'appstore_app_template'],
+  ['platform_app_template_version', 'appstore_app_template_version'],
+  ['platform_app_template_usage', 'appstore_app_template_usage'],
 ];
 
 const APP_JSON_ONLY_SOURCES = new Set([

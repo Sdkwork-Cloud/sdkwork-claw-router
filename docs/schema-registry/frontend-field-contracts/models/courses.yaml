@@ -35,11 +35,11 @@ frontend_models:
   - engagement.shares
   - engagement.discussions
   data_sources:
-  - content_course
-  - content_course_relation
+  - course_catalog
+  - course_catalog_link
   - c_category
-  - content_comment
-  - content_reaction
+  - course_comment
+  - course_reaction
 - route: /courses
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
   interface: CourseCategory
@@ -54,7 +54,7 @@ frontend_models:
   - courseCount
   data_sources:
   - c_category
-  - content_course
+  - course_catalog
 - route: /courses
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
   interface: CourseOverviewStats
@@ -64,10 +64,10 @@ frontend_models:
   - totalStudents
   - totalCategories
   data_sources:
-  - content_course
+  - course_catalog
   - c_category
-  - content_comment
-  - content_reaction
+  - course_comment
+  - course_reaction
 - route: /courses
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
   interface: CourseOverview
@@ -79,10 +79,10 @@ frontend_models:
   - stats.totalCategories
   - source
   data_sources:
-  - content_course
+  - course_catalog
   - c_category
-  - content_comment
-  - content_reaction
+  - course_comment
+  - course_reaction
 - route: /courses
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
   interface: CourseQuery
@@ -93,7 +93,7 @@ frontend_models:
   - page
   - size
   data_sources:
-  - content_course
+  - course_catalog
   - c_category
 - route: /courses
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
@@ -114,11 +114,11 @@ frontend_models:
   - totalElements
   - source
   data_sources:
-  - content_course
-  - content_course_relation
+  - course_catalog
+  - course_catalog_link
   - c_category
-  - content_comment
-  - content_reaction
+  - course_comment
+  - course_reaction
 - route: /courses
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
   interface: CourseApplicationInput
@@ -133,7 +133,7 @@ frontend_models:
   - contactEmail
   - notes
   data_sources:
-  - content_course_application
+  - course_application
 - route: /courses
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
   interface: CourseApplicationResult
@@ -150,7 +150,7 @@ frontend_models:
   - status
   - submittedAt
   data_sources:
-  - content_course_application
+  - course_application
 - route: /courses
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
   interface: CourseApplicationVideoUploadInput
@@ -158,7 +158,7 @@ frontend_models:
   - file
   - fileName
   data_sources:
-  - content_course_application
+  - course_application
   file_targets:
   - course_application_video_uploads
 - route: /courses
@@ -172,7 +172,7 @@ frontend_models:
   - sha256
   - uploadedAt
   data_sources:
-  - content_course_application
+  - course_application
   file_targets:
   - course_application_video_uploads
 - route: /courses/:id
@@ -183,10 +183,10 @@ frontend_models:
   - course
   - source
   data_sources:
-  - content_course
-  - content_course_section
-  - content_course_lesson
-  - content_course_relation
+  - course_catalog
+  - course_section
+  - course_lesson
+  - course_catalog_link
   - c_category
-  - content_comment
-  - content_reaction
+  - course_comment
+  - course_reaction

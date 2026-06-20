@@ -397,7 +397,8 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
                 self.assertEqual("sdkwork-appbase", operation["x-sdkwork-owner"])
 
         route_contract_source = read_text(APPBASE_IAM_BACKEND_ROUTE_CRATE / "src" / "manifest.rs")
-        self.assertIn("backend_oauth_routes()", route_contract_source)
+        self.assertIn("backend_routes()", route_contract_source)
+        self.assertIn("iam.oauth.providerCatalog.list", route_contract_source)
         self.assertIn('"/backend/v3/api/iam/oauth/provider_catalog"', route_contract_source)
         self.assertIn('"/backend/v3/api/iam/oauth/resource_accounts"', route_contract_source)
         router_source = read_text(APPBASE_IAM_BACKEND_ROUTE_CRATE / "src" / "routes.rs")
@@ -410,7 +411,7 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
             admin_api_source,
         )
         self.assertFalse(PRODUCT_ADMIN_APPBASE_BACKEND_IAM_OAUTH.exists())
-        self.assertIn("iam_initial_migration_sql", installer_source)
+        self.assertIn("iam_baseline_postgres_sql", installer_source)
         self.assertIn("iam_database_tables", installer_source)
         self.assertIn("appbase_iam_oauth_table_names", installer_source)
         self.assertIn("appbase_iam_oauth_schema_statement", installer_source)

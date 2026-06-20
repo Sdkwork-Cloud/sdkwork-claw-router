@@ -13,7 +13,7 @@ export interface AppDetailResponse {
   downloads: string;
   /** Features field on app detail response. */
   features: string[];
-  /** Stable application identity from platform_app.config.standard.appKey when present; falls back to platform_app.id only when appKey is absent. */
+  /** Stable application identity from appstore_app.config.standard.appKey when present; falls back to appstore_app.id only when appKey is absent. */
   id: string;
   /** Image field on app detail response. */
   image: MediaResource;

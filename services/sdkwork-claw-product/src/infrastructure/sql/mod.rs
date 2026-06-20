@@ -3,6 +3,7 @@ pub(crate) mod ai_routing_seed;
 pub(crate) mod app_catalog_mapping;
 pub(crate) mod app_seed;
 pub mod catalog;
+pub(crate) mod composed_module_bootstrap;
 pub(crate) mod course_seed;
 pub(crate) mod dashboard_overview_metrics;
 pub(crate) mod forum_seed;

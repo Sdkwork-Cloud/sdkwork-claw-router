@@ -9,21 +9,21 @@ snapshots:
     mode: curated_seed_content
     source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-home/src/pages/Home.tsx
     observed_at: "2026-05-03"
-    schema_tables: [content_doc_page, platform_app]
+    schema_tables: [content_doc_page, appstore_app]
 
   - id: static-route:/courses
     route: /courses
     mode: curated_seed_content
     source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseCatalog.ts
     observed_at: "2026-05-03"
-    schema_tables: [content_course, content_course_relation, content_reaction]
+    schema_tables: [course_catalog, course_catalog_link, course_reaction]
 
   - id: static-route:/courses/:id
     route: /courses/:id
     mode: curated_seed_content
     source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseCatalog.ts
     observed_at: "2026-05-03"
-    schema_tables: [content_course, content_course_section, content_course_lesson, content_course_relation]
+    schema_tables: [course_catalog, course_section, course_lesson, course_catalog_link]
 
   - id: static-route:/docs
     route: /docs

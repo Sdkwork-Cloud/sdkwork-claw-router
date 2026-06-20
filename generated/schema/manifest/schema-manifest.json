@@ -105,45 +105,18 @@
     "commerce_usage_statement_item",
     "content_announcement",
     "content_comment",
-    "content_course",
-    "content_course_application",
-    "content_course_lesson",
-    "content_course_relation",
-    "content_course_section",
     "content_doc_page",
     "content_favorite",
     "content_forum_post",
     "content_openapi_snapshot",
     "content_reaction",
     "content_sdk_release",
-    "iam_api_key",
-    "iam_audit_event",
-    "iam_credential",
-    "iam_department",
-    "iam_department_assignment",
-    "iam_device",
     "iam_gateway_access_policy",
     "iam_gateway_api_key",
     "iam_gateway_api_key_channel_group",
     "iam_gateway_risk_rule",
-    "iam_mfa_factor",
-    "iam_organization",
-    "iam_organization_membership",
-    "iam_permission",
-    "iam_policy",
-    "iam_position",
-    "iam_position_assignment",
-    "iam_role",
-    "iam_role_binding",
-    "iam_role_permission",
-    "iam_security_event",
-    "iam_session",
-    "iam_tenant",
-    "iam_user",
-    "iam_user_identity",
     "iam_user_login_event",
     "iam_user_preference",
-    "iam_user_role",
     "iam_user_security_setting",
     "iam_verification_attempt",
     "iam_verification_challenge",
@@ -197,10 +170,6 @@
     "ops_notification_recipient",
     "ops_outbox_event",
     "ops_referral_stat_snapshot",
-    "platform_app",
-    "platform_app_template",
-    "platform_app_template_usage",
-    "platform_app_template_version",
     "storage_default_bucket_policy",
     "storage_gc_job",
     "storage_quota_policy",
@@ -226,8 +195,8 @@
       "required_api_surface": "app",
       "route_scope": "public",
       "tables": [
-        "content_doc_page",
-        "platform_app"
+        "appstore_app",
+        "content_doc_page"
       ]
     },
     "/admin/agents": {
@@ -291,12 +260,12 @@
       "required_api_surface": "backend",
       "route_scope": "admin",
       "tables": [
+        "appstore_app",
+        "appstore_app_template",
+        "appstore_app_template_usage",
+        "appstore_app_template_version",
         "c_category",
-        "ops_audit_log",
-        "platform_app",
-        "platform_app_template",
-        "platform_app_template_usage",
-        "platform_app_template_version"
+        "ops_audit_log"
       ]
     },
     "/admin/cache": {
@@ -3305,8 +3274,8 @@
       "required_api_surface": "app",
       "route_scope": "public",
       "tables": [
-        "c_category",
-        "platform_app"
+        "appstore_app",
+        "c_category"
       ]
     },
     "/apps/:id": {
@@ -3317,8 +3286,8 @@
       "required_api_surface": "app",
       "route_scope": "public",
       "tables": [
-        "c_category",
-        "platform_app"
+        "appstore_app",
+        "c_category"
       ]
     },
     "/auth/forgot-password": {
@@ -4184,7 +4153,7 @@
     },
     "external_legacy_table_count": 0,
     "frontend_route_count": 198,
-    "generated_table_count": 215,
+    "generated_table_count": 184,
     "legacy_table_count": 0,
     "table_count": 306
   },
@@ -33128,6 +33097,1151 @@
           "type": "int32"
         },
         {
+          "name": "user_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "category_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "name",
+          "source": "explicit",
+          "type": "string(255)"
+        },
+        {
+          "name": "icon",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "resource_list",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "project_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "description",
+          "source": "explicit",
+          "type": "text"
+        },
+        {
+          "name": "version",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "icon_media_resource_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "icon_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "icon_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "access_url",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "config",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "status",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "app_type",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "platforms",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "install_platforms",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "install_skill",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "install_config",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "release_notes",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "package_name",
+          "source": "explicit",
+          "type": "string(255)"
+        },
+        {
+          "name": "bundle_id",
+          "source": "explicit",
+          "type": "string(255)"
+        },
+        {
+          "name": "store_url",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "artifact_media_resource_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "artifact_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "artifact_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "download_count",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "rating_avg",
+          "source": "explicit",
+          "type": "decimal"
+        },
+        {
+          "name": "rating_count",
+          "source": "explicit",
+          "type": "int64"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L2",
+      "domain": "platform",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/",
+        "/apps",
+        "/apps/:id",
+        "/admin/app"
+      ],
+      "generated_by_this_project": false,
+      "indexes": [
+        {
+          "columns": [
+            "user_id"
+          ],
+          "name": "idx_appstore_app_user_id",
+          "unique": false
+        },
+        {
+          "columns": [
+            "project_id"
+          ],
+          "name": "idx_appstore_app_project_id",
+          "unique": false
+        },
+        {
+          "columns": [
+            "status"
+          ],
+          "name": "idx_appstore_app_status",
+          "unique": false
+        },
+        {
+          "columns": [
+            "category_id"
+          ],
+          "name": "idx_appstore_app_category_id",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "tenant_entity",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "appstore_app",
+      "unique_constraints": [],
+      "write_owner": "sdkwork-appstore"
+    },
+    {
+      "api_surfaces": [
+        "backend",
+        "worker"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "name": "template_no",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "template_code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "template_name",
+          "source": "explicit",
+          "type": "string(255)"
+        },
+        {
+          "name": "description",
+          "source": "explicit",
+          "type": "text"
+        },
+        {
+          "name": "category_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "category_code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "template_type",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "runtime",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "framework",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "language",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "icon_media_resource_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "icon_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "icon_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "cover_media_resource_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "cover_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "cover_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "visibility",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "publish_status",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "featured",
+          "source": "explicit",
+          "type": "bool"
+        },
+        {
+          "name": "sort_weight",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "owner_user_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "source_app_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "git_repo_url",
+          "source": "explicit",
+          "type": "string(1024)"
+        },
+        {
+          "name": "git_ref",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "git_sub_path",
+          "source": "explicit",
+          "type": "string(1024)"
+        },
+        {
+          "name": "current_version_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "app_config_schema",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "default_app_config",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "variable_schema",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "dependency_manifest",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "capability_manifest",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "published_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "deprecated_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        }
+      ],
+      "compliance_level": "L2",
+      "domain": "platform",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/admin/app"
+      ],
+      "generated_by_this_project": false,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "template_no"
+          ],
+          "name": "uk_appstore_app_template_no",
+          "unique": true
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "template_code"
+          ],
+          "name": "uk_appstore_app_template_code",
+          "unique": true
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "visibility",
+            "publish_status",
+            "status",
+            "updated_at",
+            "id"
+          ],
+          "name": "idx_appstore_app_template_scope_status",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "category_id",
+            "publish_status",
+            "sort_weight",
+            "id"
+          ],
+          "name": "idx_appstore_app_template_category",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "tenant_entity",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "appstore_app_template",
+      "unique_constraints": [],
+      "write_owner": "sdkwork-appstore"
+    },
+    {
+      "api_surfaces": [
+        "backend",
+        "worker"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "group": "event_log",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "user_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "request_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "trace_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "payload_hash",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "retention_until",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "legal_hold",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "name": "template_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "template_version_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "target_app_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "usage_type",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "input_snapshot",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "output_snapshot",
+          "source": "explicit",
+          "type": "json"
+        }
+      ],
+      "common_columns": [
+        {
+          "group": "event_log",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "user_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "request_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "trace_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "payload_hash",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "retention_until",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "legal_hold",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        }
+      ],
+      "compliance_level": "L2",
+      "domain": "platform",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/admin/app"
+      ],
+      "generated_by_this_project": false,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "template_id",
+            "template_version_id",
+            "created_at",
+            "id"
+          ],
+          "name": "idx_appstore_app_template_usage_template",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "target_app_id",
+            "created_at",
+            "id"
+          ],
+          "name": "idx_appstore_app_template_usage_target",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "user_id",
+            "created_at",
+            "id"
+          ],
+          "name": "idx_appstore_app_template_usage_user",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "event_log",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "appstore_app_template_usage",
+      "unique_constraints": [],
+      "write_owner": "sdkwork-appstore"
+    },
+    {
+      "api_surfaces": [
+        "backend",
+        "worker"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "name": "template_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "version_no",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "artifact_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "changelog",
+          "source": "explicit",
+          "type": "text"
+        },
+        {
+          "name": "file_manifest",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "dependency_manifest",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "capability_manifest",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "variable_schema",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "app_config_schema",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "default_app_config",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "publish_status",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "published_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "deprecated_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        }
+      ],
+      "compliance_level": "L2",
+      "domain": "platform",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/admin/app"
+      ],
+      "generated_by_this_project": false,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "template_id",
+            "version_no"
+          ],
+          "name": "uk_appstore_app_template_version_no",
+          "unique": true
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "template_id",
+            "publish_status",
+            "created_at",
+            "id"
+          ],
+          "name": "idx_appstore_app_template_version_template",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "tenant_entity",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "appstore_app_template_version",
+      "unique_constraints": [],
+      "write_owner": "sdkwork-appstore"
+    },
+    {
+      "api_surfaces": [
+        "app",
+        "backend"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "uuid",
+          "source": "explicit",
+          "type": "string(255)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "updated_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "v",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "organization_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "data_scope",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
           "name": "category_type",
           "source": "explicit",
           "type": "string(64)"
@@ -47044,7 +48158,7 @@
         "/admin/courses/comments",
         "/admin/courses/engagement"
       ],
-      "generated_by_this_project": true,
+      "generated_by_this_project": false,
       "indexes": [
         {
           "columns": [
@@ -47346,7 +48460,7 @@
         "/admin/courses/dashboard",
         "/admin/courses/applications"
       ],
-      "generated_by_this_project": true,
+      "generated_by_this_project": false,
       "indexes": [
         {
           "columns": [
@@ -47622,7 +48736,7 @@
         "/admin/courses/dashboard",
         "/admin/courses/lessons"
       ],
-      "generated_by_this_project": true,
+      "generated_by_this_project": false,
       "indexes": [
         {
           "columns": [
@@ -47840,7 +48954,7 @@
         "/admin/courses/relations",
         "/admin/courses/engagement"
       ],
-      "generated_by_this_project": true,
+      "generated_by_this_project": false,
       "indexes": [
         {
           "columns": [
@@ -48063,7 +49177,7 @@
         "/admin/courses/dashboard",
         "/admin/courses/sections"
       ],
-      "generated_by_this_project": true,
+      "generated_by_this_project": false,
       "indexes": [
         {
           "columns": [
@@ -49557,7 +50671,7 @@
       "frontend_routes": [
         "/admin/user"
       ],
-      "generated_by_this_project": true,
+      "generated_by_this_project": false,
       "indexes": [
         {
           "columns": [
@@ -49665,7 +50779,7 @@
         "/auth/forgot-password",
         "/auth/oauth/callback/:provider"
       ],
-      "generated_by_this_project": true,
+      "generated_by_this_project": false,
       "indexes": [
         {
           "columns": [
@@ -49758,7 +50872,7 @@
         "/auth/register",
         "/auth/forgot-password"
       ],
-      "generated_by_this_project": true,
+      "generated_by_this_project": false,
       "indexes": [
         {
           "columns": [
@@ -49865,7 +50979,7 @@
         "/console/account",
         "/admin/organization"
       ],
-      "generated_by_this_project": true,
+      "generated_by_this_project": false,
       "indexes": [
         {
           "columns": [
@@ -49992,7 +51106,7 @@
         "/console/account",
         "/admin/organization"
       ],
-      "generated_by_this_project": true,
+      "generated_by_this_project": false,
       "indexes": [
         {
           "columns": [
@@ -50101,7 +51215,7 @@
         "/auth/oauth/callback/:provider",
         "/console/user"
       ],
-      "generated_by_this_project": true,
+      "generated_by_this_project": false,
       "indexes": [],
       "lifecycle": null,
       "not_null_columns": [],
@@ -51521,7 +52635,7 @@
         "/auth/forgot-password",
         "/console/user"
       ],
-      "generated_by_this_project": true,
+      "generated_by_this_project": false,
       "indexes": [],
       "lifecycle": null,
       "not_null_columns": [],
@@ -51597,7 +52711,7 @@
         "/console/account",
         "/admin/organization"
       ],
-      "generated_by_this_project": true,
+      "generated_by_this_project": false,
       "indexes": [
         {
           "columns": [
@@ -51726,7 +52840,7 @@
         "/console/notifications",
         "/admin/organization"
       ],
-      "generated_by_this_project": true,
+      "generated_by_this_project": false,
       "indexes": [
         {
           "columns": [
@@ -51817,7 +52931,7 @@
         "/admin/user",
         "/admin/organization"
       ],
-      "generated_by_this_project": true,
+      "generated_by_this_project": false,
       "indexes": [],
       "lifecycle": null,
       "not_null_columns": [],
@@ -51894,7 +53008,7 @@
       "frontend_routes": [
         "/admin/user"
       ],
-      "generated_by_this_project": true,
+      "generated_by_this_project": false,
       "indexes": [],
       "lifecycle": null,
       "not_null_columns": [],
@@ -51989,7 +53103,7 @@
         "/console/account",
         "/admin/organization"
       ],
-      "generated_by_this_project": true,
+      "generated_by_this_project": false,
       "indexes": [
         {
           "columns": [
@@ -52103,7 +53217,7 @@
         "/console/account",
         "/admin/organization"
       ],
-      "generated_by_this_project": true,
+      "generated_by_this_project": false,
       "indexes": [
         {
           "columns": [
@@ -52203,7 +53317,7 @@
         "/admin/user",
         "/admin/organization"
       ],
-      "generated_by_this_project": true,
+      "generated_by_this_project": false,
       "indexes": [
         {
           "columns": [
@@ -52313,7 +53427,7 @@
         "/admin/user",
         "/admin/organization"
       ],
-      "generated_by_this_project": true,
+      "generated_by_this_project": false,
       "indexes": [
         {
           "columns": [
@@ -52404,7 +53518,7 @@
         "/admin/user",
         "/admin/organization"
       ],
-      "generated_by_this_project": true,
+      "generated_by_this_project": false,
       "indexes": [
         {
           "columns": [
@@ -52497,7 +53611,7 @@
         "/auth/forgot-password",
         "/auth/oauth/callback/:provider"
       ],
-      "generated_by_this_project": true,
+      "generated_by_this_project": false,
       "indexes": [
         {
           "columns": [
@@ -52634,7 +53748,7 @@
         "/auth/oauth/callback/:provider",
         "/console/user"
       ],
-      "generated_by_this_project": true,
+      "generated_by_this_project": false,
       "indexes": [
         {
           "columns": [
@@ -52731,7 +53845,7 @@
         "/console/user",
         "/admin/user"
       ],
-      "generated_by_this_project": true,
+      "generated_by_this_project": false,
       "indexes": [
         {
           "columns": [
@@ -52861,7 +53975,7 @@
         "/admin/drive/audit",
         "/admin/organization"
       ],
-      "generated_by_this_project": true,
+      "generated_by_this_project": false,
       "indexes": [
         {
           "columns": [
@@ -52949,7 +54063,7 @@
         "/auth/oauth/callback/:provider",
         "/console/user"
       ],
-      "generated_by_this_project": true,
+      "generated_by_this_project": false,
       "indexes": [
         {
           "columns": [
@@ -53571,7 +54685,7 @@
         "/admin/user",
         "/admin/organization"
       ],
-      "generated_by_this_project": true,
+      "generated_by_this_project": false,
       "indexes": [
         {
           "columns": [
@@ -68434,1151 +69548,6 @@
       "table": "ops_referral_stat_snapshot",
       "unique_constraints": [],
       "write_owner": "marketing-analytics-worker"
-    },
-    {
-      "api_surfaces": [
-        "app",
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [
-        {
-          "name": "id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "uuid",
-          "source": "explicit",
-          "type": "string(255)"
-        },
-        {
-          "name": "created_at",
-          "source": "explicit",
-          "type": "instant"
-        },
-        {
-          "name": "updated_at",
-          "source": "explicit",
-          "type": "instant"
-        },
-        {
-          "name": "v",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "tenant_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "organization_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "data_scope",
-          "source": "explicit",
-          "type": "int32"
-        },
-        {
-          "name": "user_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "category_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "name",
-          "source": "explicit",
-          "type": "string(255)"
-        },
-        {
-          "name": "icon",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "resource_list",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "project_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "description",
-          "source": "explicit",
-          "type": "text"
-        },
-        {
-          "name": "version",
-          "source": "explicit",
-          "type": "string(64)"
-        },
-        {
-          "name": "icon_media_resource_id",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "icon_object_blob_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "icon_resource_snapshot",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "access_url",
-          "source": "explicit",
-          "type": "string(512)"
-        },
-        {
-          "name": "config",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "status",
-          "source": "explicit",
-          "type": "int32"
-        },
-        {
-          "name": "app_type",
-          "source": "explicit",
-          "type": "string(64)"
-        },
-        {
-          "name": "platforms",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "install_platforms",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "install_skill",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "install_config",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "release_notes",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "package_name",
-          "source": "explicit",
-          "type": "string(255)"
-        },
-        {
-          "name": "bundle_id",
-          "source": "explicit",
-          "type": "string(255)"
-        },
-        {
-          "name": "store_url",
-          "source": "explicit",
-          "type": "string(512)"
-        },
-        {
-          "name": "artifact_media_resource_id",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "artifact_object_blob_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "artifact_resource_snapshot",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "download_count",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "rating_avg",
-          "source": "explicit",
-          "type": "decimal"
-        },
-        {
-          "name": "rating_count",
-          "source": "explicit",
-          "type": "int64"
-        }
-      ],
-      "common_columns": [],
-      "compliance_level": "L2",
-      "domain": "platform",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/",
-        "/apps",
-        "/apps/:id",
-        "/admin/app"
-      ],
-      "generated_by_this_project": true,
-      "indexes": [
-        {
-          "columns": [
-            "user_id"
-          ],
-          "name": "idx_platform_app_user_id",
-          "unique": false
-        },
-        {
-          "columns": [
-            "project_id"
-          ],
-          "name": "idx_platform_app_project_id",
-          "unique": false
-        },
-        {
-          "columns": [
-            "status"
-          ],
-          "name": "idx_platform_app_status",
-          "unique": false
-        },
-        {
-          "columns": [
-            "category_id"
-          ],
-          "name": "idx_platform_app_category_id",
-          "unique": false
-        }
-      ],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "tenant_entity",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "platform_app",
-      "unique_constraints": [],
-      "write_owner": "app-center-service"
-    },
-    {
-      "api_surfaces": [
-        "backend",
-        "worker"
-      ],
-      "column_types": {},
-      "columns": [
-        {
-          "group": "tenant_entity",
-          "name": "id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "uuid",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "data_scope",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "created_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "updated_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "version",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_by",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "metadata",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "name": "template_no",
-          "source": "explicit",
-          "type": "string(64)"
-        },
-        {
-          "name": "template_code",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "template_name",
-          "source": "explicit",
-          "type": "string(255)"
-        },
-        {
-          "name": "description",
-          "source": "explicit",
-          "type": "text"
-        },
-        {
-          "name": "category_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "category_code",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "template_type",
-          "source": "explicit",
-          "type": "string(64)"
-        },
-        {
-          "name": "runtime",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "framework",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "language",
-          "source": "explicit",
-          "type": "string(64)"
-        },
-        {
-          "name": "icon_media_resource_id",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "icon_object_blob_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "icon_resource_snapshot",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "cover_media_resource_id",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "cover_object_blob_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "cover_resource_snapshot",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "visibility",
-          "source": "explicit",
-          "type": "enum_int32"
-        },
-        {
-          "name": "publish_status",
-          "source": "explicit",
-          "type": "enum_int32"
-        },
-        {
-          "name": "featured",
-          "source": "explicit",
-          "type": "bool"
-        },
-        {
-          "name": "sort_weight",
-          "source": "explicit",
-          "type": "int32"
-        },
-        {
-          "name": "owner_user_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "source_app_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "git_repo_url",
-          "source": "explicit",
-          "type": "string(1024)"
-        },
-        {
-          "name": "git_ref",
-          "source": "explicit",
-          "type": "string(128)"
-        },
-        {
-          "name": "git_sub_path",
-          "source": "explicit",
-          "type": "string(1024)"
-        },
-        {
-          "name": "current_version_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "app_config_schema",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "default_app_config",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "variable_schema",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "dependency_manifest",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "capability_manifest",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "published_at",
-          "source": "explicit",
-          "type": "instant"
-        },
-        {
-          "name": "deprecated_at",
-          "source": "explicit",
-          "type": "instant"
-        }
-      ],
-      "common_columns": [
-        {
-          "group": "tenant_entity",
-          "name": "id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "uuid",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "data_scope",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "created_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "updated_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "version",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_by",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "metadata",
-          "source": "common",
-          "type": "common"
-        }
-      ],
-      "compliance_level": "L2",
-      "domain": "platform",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/admin/app"
-      ],
-      "generated_by_this_project": true,
-      "indexes": [
-        {
-          "columns": [
-            "tenant_id",
-            "template_no"
-          ],
-          "name": "uk_platform_app_template_no",
-          "unique": true
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "template_code"
-          ],
-          "name": "uk_platform_app_template_code",
-          "unique": true
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "visibility",
-            "publish_status",
-            "status",
-            "updated_at",
-            "id"
-          ],
-          "name": "idx_platform_app_template_scope_status",
-          "unique": false
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "category_id",
-            "publish_status",
-            "sort_weight",
-            "id"
-          ],
-          "name": "idx_platform_app_template_category",
-          "unique": false
-        }
-      ],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "tenant_entity",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "platform_app_template",
-      "unique_constraints": [],
-      "write_owner": "app-center-service"
-    },
-    {
-      "api_surfaces": [
-        "backend",
-        "worker"
-      ],
-      "column_types": {},
-      "columns": [
-        {
-          "group": "event_log",
-          "name": "id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "uuid",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "user_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "request_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "trace_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "payload_hash",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "created_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "retention_until",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "legal_hold",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "metadata",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "name": "template_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "template_version_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "target_app_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "usage_type",
-          "source": "explicit",
-          "type": "enum_int32"
-        },
-        {
-          "name": "input_snapshot",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "output_snapshot",
-          "source": "explicit",
-          "type": "json"
-        }
-      ],
-      "common_columns": [
-        {
-          "group": "event_log",
-          "name": "id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "uuid",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "user_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "request_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "trace_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "payload_hash",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "created_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "retention_until",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "legal_hold",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "event_log",
-          "name": "metadata",
-          "source": "common",
-          "type": "common"
-        }
-      ],
-      "compliance_level": "L2",
-      "domain": "platform",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/admin/app"
-      ],
-      "generated_by_this_project": true,
-      "indexes": [
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "template_id",
-            "template_version_id",
-            "created_at",
-            "id"
-          ],
-          "name": "idx_platform_app_template_usage_template",
-          "unique": false
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "target_app_id",
-            "created_at",
-            "id"
-          ],
-          "name": "idx_platform_app_template_usage_target",
-          "unique": false
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "user_id",
-            "created_at",
-            "id"
-          ],
-          "name": "idx_platform_app_template_usage_user",
-          "unique": false
-        }
-      ],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "event_log",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "platform_app_template_usage",
-      "unique_constraints": [],
-      "write_owner": "app-center-service"
-    },
-    {
-      "api_surfaces": [
-        "backend",
-        "worker"
-      ],
-      "column_types": {},
-      "columns": [
-        {
-          "group": "tenant_entity",
-          "name": "id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "uuid",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "data_scope",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "created_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "updated_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "version",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_by",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "metadata",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "name": "template_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "version_no",
-          "source": "explicit",
-          "type": "string(64)"
-        },
-        {
-          "name": "artifact_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "changelog",
-          "source": "explicit",
-          "type": "text"
-        },
-        {
-          "name": "file_manifest",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "dependency_manifest",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "capability_manifest",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "variable_schema",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "app_config_schema",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "default_app_config",
-          "source": "explicit",
-          "type": "json"
-        },
-        {
-          "name": "publish_status",
-          "source": "explicit",
-          "type": "enum_int32"
-        },
-        {
-          "name": "published_at",
-          "source": "explicit",
-          "type": "instant"
-        },
-        {
-          "name": "deprecated_at",
-          "source": "explicit",
-          "type": "instant"
-        }
-      ],
-      "common_columns": [
-        {
-          "group": "tenant_entity",
-          "name": "id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "uuid",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "tenant_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "organization_id",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "data_scope",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "status",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "created_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "updated_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "version",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_at",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "deleted_by",
-          "source": "common",
-          "type": "common"
-        },
-        {
-          "group": "tenant_entity",
-          "name": "metadata",
-          "source": "common",
-          "type": "common"
-        }
-      ],
-      "compliance_level": "L2",
-      "domain": "platform",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/admin/app"
-      ],
-      "generated_by_this_project": true,
-      "indexes": [
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "template_id",
-            "version_no"
-          ],
-          "name": "uk_platform_app_template_version_no",
-          "unique": true
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "template_id",
-            "publish_status",
-            "created_at",
-            "id"
-          ],
-          "name": "idx_platform_app_template_version_template",
-          "unique": false
-        }
-      ],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "tenant_entity",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "platform_app_template_version",
-      "unique_constraints": [],
-      "write_owner": "app-center-service"
     },
     {
       "api_surfaces": [

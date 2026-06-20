@@ -190,6 +190,112 @@
           ]
         }
       }
+    },
+    {
+      "workspace": "sdkwork-appstore-app-sdk",
+      "consumerSdkFamily": "clawrouter-app-sdk",
+      "role": "appstore-app-capability",
+      "dependencyMode": "consumer-sdk",
+      "surface": "app-api",
+      "apiPrefix": "/app/v3/api",
+      "runtimeIntegration": {
+        "mode": "external-service",
+        "sameOriginAllowed": false,
+        "targetRuntimeIntegration": {
+          "mode": "shared-gateway",
+          "gatewayApplication": "sdkwork-api-gateway",
+          "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
+          "catalogPolicy": "no-dedicated-gateway-catalog"
+        },
+        "requiredBaseUrlEnv": "VITE_SDKWORK_APPSTORE_APP_API_BASE_URL",
+        "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
+        "mountCoverage": {
+          "status": "not-mounted",
+          "evidence": [
+            "Application center routes and appstore_* tables are owned by sdkwork-appstore.",
+            "Claw Router database bootstrap applies appstore module DDL from ../sdkwork-appstore/database without generating platform_* tables locally."
+          ]
+        }
+      }
+    },
+    {
+      "workspace": "sdkwork-course-app-sdk",
+      "consumerSdkFamily": "clawrouter-app-sdk",
+      "role": "course-app-capability",
+      "dependencyMode": "consumer-sdk",
+      "surface": "app-api",
+      "apiPrefix": "/app/v3/api",
+      "runtimeIntegration": {
+        "mode": "external-service",
+        "sameOriginAllowed": false,
+        "targetRuntimeIntegration": {
+          "mode": "shared-gateway",
+          "gatewayApplication": "sdkwork-api-gateway",
+          "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
+          "catalogPolicy": "no-dedicated-gateway-catalog"
+        },
+        "requiredBaseUrlEnv": "VITE_SDKWORK_COURSE_APP_API_BASE_URL",
+        "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
+        "mountCoverage": {
+          "status": "not-mounted",
+          "evidence": [
+            "Course routes and course_* tables are owned by sdkwork-course.",
+            "Claw Router database bootstrap applies course module DDL from ../sdkwork-course/database without generating content_course* tables locally."
+          ]
+        }
+      }
+    },
+    {
+      "workspace": "sdkwork-appstore-backend-sdk",
+      "consumerSdkFamily": "clawrouter-backend-sdk",
+      "role": "appstore-backend-management-capability",
+      "dependencyMode": "consumer-sdk",
+      "surface": "backend-api",
+      "apiPrefix": "/backend/v3/api",
+      "runtimeIntegration": {
+        "mode": "external-service",
+        "sameOriginAllowed": false,
+        "targetRuntimeIntegration": {
+          "mode": "shared-gateway",
+          "gatewayApplication": "sdkwork-api-gateway",
+          "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
+          "catalogPolicy": "no-dedicated-gateway-catalog"
+        },
+        "requiredBaseUrlEnv": "VITE_SDKWORK_APPSTORE_BACKEND_API_BASE_URL",
+        "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
+        "mountCoverage": {
+          "status": "not-mounted",
+          "evidence": [
+            "App center admin APIs are owned by sdkwork-appstore-backend-sdk."
+          ]
+        }
+      }
+    },
+    {
+      "workspace": "sdkwork-course-backend-sdk",
+      "consumerSdkFamily": "clawrouter-backend-sdk",
+      "role": "course-backend-management-capability",
+      "dependencyMode": "consumer-sdk",
+      "surface": "backend-api",
+      "apiPrefix": "/backend/v3/api",
+      "runtimeIntegration": {
+        "mode": "external-service",
+        "sameOriginAllowed": false,
+        "targetRuntimeIntegration": {
+          "mode": "shared-gateway",
+          "gatewayApplication": "sdkwork-api-gateway",
+          "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
+          "catalogPolicy": "no-dedicated-gateway-catalog"
+        },
+        "requiredBaseUrlEnv": "VITE_SDKWORK_COURSE_BACKEND_API_BASE_URL",
+        "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
+        "mountCoverage": {
+          "status": "not-mounted",
+          "evidence": [
+            "Course admin APIs are owned by sdkwork-course-backend-sdk."
+          ]
+        }
+      }
     }
   ]
 }

@@ -13,11 +13,11 @@ frontend_models:
   - totalComments
   - totalEngagement
   data_sources:
-  - content_course
-  - content_course_lesson
-  - content_course_application
-  - content_comment
-  - content_reaction
+  - course_catalog
+  - course_lesson
+  - course_application
+  - course_comment
+  - course_reaction
 - route: /admin/courses
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/src/courseAdminTypes.ts
   interface: AdminCourseItem
@@ -33,7 +33,7 @@ frontend_models:
   - publishedAt
   - updatedAt
   data_sources:
-  - content_course
+  - course_catalog
 - route: /admin/courses
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/src/courseAdminTypes.ts
   interface: AdminCourseSectionItem
@@ -47,7 +47,7 @@ frontend_models:
   - durationSeconds
   - status
   data_sources:
-  - content_course_section
+  - course_section
 - route: /admin/courses
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/src/courseAdminTypes.ts
   interface: AdminCourseLessonItem
@@ -62,7 +62,7 @@ frontend_models:
   - freePreview
   - status
   data_sources:
-  - content_course_lesson
+  - course_lesson
 - route: /admin/courses
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/src/courseAdminTypes.ts
   interface: AdminCourseApplicationItem
@@ -76,4 +76,4 @@ frontend_models:
   - submittedAt
   - reviewedAt
   data_sources:
-  - content_course_application
+  - course_application

@@ -3,7 +3,7 @@ use sqlx::{Row, SqlitePool};
 use crate::domain::{DomainError, DomainResult};
 use crate::infrastructure::sql::app_catalog_mapping::{
     build_app_item, query_matches_app_catalog_filters, sort_app_catalog_entries, RawAppStoreRecord,
-    RawCatalogArtifact, RawCatalogAsset, CATALOG_TARGET_TYPE_APP,
+    RawCatalogArtifact, RawCatalogAsset,
 };
 use crate::ports::{
     AppStoreItem, AppStoreItems, AppStoreQuery, AppStoreReadFuture, AppStoreReadStore,
@@ -12,38 +12,40 @@ use crate::ports::{
 
 const LOAD_APPS_BASE: &str = r#"
 SELECT
-    CAST(a.id AS TEXT) AS id,
-    a.tenant_id AS tenant_id,
-    a.organization_id AS organization_id,
-    COALESCE(NULLIF(json_extract(a.config, '$.standard.appKey'), ''), CAST(a.id AS TEXT)) AS app_key,
-    COALESCE(NULLIF(a.name, ''), '') AS name,
+    COALESCE(NULLIF(a.plus_app_id, ''), a.id) AS id,
+    CAST(a.tenant_id AS INTEGER) AS tenant_id,
+    CAST(a.organization_id AS INTEGER) AS organization_id,
+    COALESCE(NULLIF(json_extract(a.config, '$.standard.appKey'), ''), NULLIF(a.app_key, ''), a.plus_app_id, a.id) AS app_key,
+    COALESCE(NULLIF(a.display_name, ''), '') AS name,
     COALESCE(NULLIF(a.description, ''), '') AS description,
-    COALESCE(NULLIF(a.version, ''), '') AS version,
-    COALESCE(CAST(a.icon AS TEXT), '') AS icon,
-    COALESCE(CAST(a.icon_resource_snapshot AS TEXT), '') AS icon_resource_snapshot,
-    COALESCE(CAST(a.resource_list AS TEXT), '') AS resource_list,
-    COALESCE(CAST(a.config AS TEXT), '') AS config,
-    COALESCE(CAST(a.app_type AS TEXT), '') AS app_type,
-    COALESCE(CAST(a.install_skill AS TEXT), '') AS install_skill,
-    COALESCE(CAST(a.install_config AS TEXT), '') AS install_config,
-    COALESCE(CAST(a.release_notes AS TEXT), '') AS release_notes,
-    COALESCE(CAST(a.artifact_resource_snapshot AS TEXT), '') AS artifact_resource_snapshot,
-    COALESCE(a.rating_avg, 0) AS rating,
+    COALESCE(NULLIF(a.latest_released_version, ''), '') AS version,
+    COALESCE(a.icon, '') AS icon,
+    COALESCE(a.icon_resource_snapshot, '') AS icon_resource_snapshot,
+    COALESCE(a.resource_list, '') AS resource_list,
+    COALESCE(a.config, '') AS config,
+    COALESCE(a.app_type, '') AS app_type,
+    COALESCE(a.install_skill, '') AS install_skill,
+    COALESCE(a.install_config, '') AS install_config,
+    COALESCE(a.release_notes, '') AS release_notes,
+    COALESCE(a.artifact_resource_snapshot, '') AS artifact_resource_snapshot,
+    COALESCE(CAST(NULLIF(a.rating_avg, '') AS REAL), 0) AS rating,
     COALESCE(a.download_count, 0) AS download_count
-FROM platform_app a
-WHERE (
+FROM appstore_app a
+WHERE a.app_status = 'published'
+  AND a.distribution_status = 'listed'
+  AND (
       (
-          a.tenant_id = ?1
+          CAST(a.tenant_id AS INTEGER) = ?1
           AND (
-              a.organization_id = ?2
-              OR (?2 > 0 AND a.organization_id = 0)
+              CAST(a.organization_id AS INTEGER) = ?2
+              OR (?2 > 0 AND CAST(a.organization_id AS INTEGER) = 0)
           )
       )
-      OR (a.tenant_id = ?9 AND a.organization_id = 0)
+      OR (CAST(a.tenant_id AS INTEGER) = ?9 AND CAST(a.organization_id AS INTEGER) = 0)
   )
-  AND COALESCE(a.status, 1) = 1
+  AND COALESCE(a.runtime_status, 1) = 1
   AND COALESCE(NULLIF(json_extract(a.config, '$.portal.marketStatus'), ''), NULLIF(json_extract(a.config, '$.marketStatus'), ''), 'DRAFT') = 'PUBLISHED'
-  AND (?3 IS NULL OR COALESCE(a.status, 1) = ?4)
+  AND (?3 IS NULL OR COALESCE(a.runtime_status, 1) = ?4)
   AND (?5 IS NULL OR COALESCE(a.updated_at, a.created_at) >= ?6)
   AND (?7 IS NULL OR COALESCE(a.updated_at, a.created_at) <= ?8)
 "#;
@@ -69,66 +71,71 @@ LIMIT ?10 OFFSET ?11
 
 const COUNT_APPS: &str = r#"
 SELECT COUNT(1)
-FROM platform_app a
-WHERE (
+FROM appstore_app a
+WHERE a.app_status = 'published'
+  AND a.distribution_status = 'listed'
+  AND (
       (
-          a.tenant_id = ?1
+          CAST(a.tenant_id AS INTEGER) = ?1
           AND (
-              a.organization_id = ?2
-              OR (?2 > 0 AND a.organization_id = 0)
+              CAST(a.organization_id AS INTEGER) = ?2
+              OR (?2 > 0 AND CAST(a.organization_id AS INTEGER) = 0)
           )
       )
-      OR (a.tenant_id = ?9 AND a.organization_id = 0)
+      OR (CAST(a.tenant_id AS INTEGER) = ?9 AND CAST(a.organization_id AS INTEGER) = 0)
   )
-  AND COALESCE(a.status, 1) = 1
+  AND COALESCE(a.runtime_status, 1) = 1
   AND COALESCE(NULLIF(json_extract(a.config, '$.portal.marketStatus'), ''), NULLIF(json_extract(a.config, '$.marketStatus'), ''), 'DRAFT') = 'PUBLISHED'
-  AND (?3 IS NULL OR COALESCE(a.status, 1) = ?4)
+  AND (?3 IS NULL OR COALESCE(a.runtime_status, 1) = ?4)
   AND (?5 IS NULL OR COALESCE(a.updated_at, a.created_at) >= ?6)
   AND (?7 IS NULL OR COALESCE(a.updated_at, a.created_at) <= ?8)
 "#;
 
 const LOAD_APP_BY_ID: &str = r#"
 SELECT
-    CAST(a.id AS TEXT) AS id,
-    a.tenant_id AS tenant_id,
-    a.organization_id AS organization_id,
-    COALESCE(NULLIF(json_extract(a.config, '$.standard.appKey'), ''), CAST(a.id AS TEXT)) AS app_key,
-    COALESCE(NULLIF(a.name, ''), '') AS name,
+    COALESCE(NULLIF(a.plus_app_id, ''), a.id) AS id,
+    CAST(a.tenant_id AS INTEGER) AS tenant_id,
+    CAST(a.organization_id AS INTEGER) AS organization_id,
+    COALESCE(NULLIF(json_extract(a.config, '$.standard.appKey'), ''), NULLIF(a.app_key, ''), a.plus_app_id, a.id) AS app_key,
+    COALESCE(NULLIF(a.display_name, ''), '') AS name,
     COALESCE(NULLIF(a.description, ''), '') AS description,
-    COALESCE(NULLIF(a.version, ''), '') AS version,
-    COALESCE(CAST(a.icon AS TEXT), '') AS icon,
-    COALESCE(CAST(a.icon_resource_snapshot AS TEXT), '') AS icon_resource_snapshot,
-    COALESCE(CAST(a.resource_list AS TEXT), '') AS resource_list,
-    COALESCE(CAST(a.config AS TEXT), '') AS config,
-    COALESCE(CAST(a.app_type AS TEXT), '') AS app_type,
-    COALESCE(CAST(a.install_skill AS TEXT), '') AS install_skill,
-    COALESCE(CAST(a.install_config AS TEXT), '') AS install_config,
-    COALESCE(CAST(a.release_notes AS TEXT), '') AS release_notes,
-    COALESCE(CAST(a.artifact_resource_snapshot AS TEXT), '') AS artifact_resource_snapshot,
-    COALESCE(a.rating_avg, 0) AS rating,
+    COALESCE(NULLIF(a.latest_released_version, ''), '') AS version,
+    COALESCE(a.icon, '') AS icon,
+    COALESCE(a.icon_resource_snapshot, '') AS icon_resource_snapshot,
+    COALESCE(a.resource_list, '') AS resource_list,
+    COALESCE(a.config, '') AS config,
+    COALESCE(a.app_type, '') AS app_type,
+    COALESCE(a.install_skill, '') AS install_skill,
+    COALESCE(a.install_config, '') AS install_config,
+    COALESCE(a.release_notes, '') AS release_notes,
+    COALESCE(a.artifact_resource_snapshot, '') AS artifact_resource_snapshot,
+    COALESCE(CAST(NULLIF(a.rating_avg, '') AS REAL), 0) AS rating,
     COALESCE(a.download_count, 0) AS download_count
-FROM platform_app a
-WHERE (
+FROM appstore_app a
+WHERE a.app_status = 'published'
+  AND a.distribution_status = 'listed'
+  AND (
       (
-          a.tenant_id = ?1
+          CAST(a.tenant_id AS INTEGER) = ?1
           AND (
-              a.organization_id = ?2
-              OR (?2 > 0 AND a.organization_id = 0)
+              CAST(a.organization_id AS INTEGER) = ?2
+              OR (?2 > 0 AND CAST(a.organization_id AS INTEGER) = 0)
           )
       )
-      OR (a.tenant_id = ?4 AND a.organization_id = 0)
+      OR (CAST(a.tenant_id AS INTEGER) = ?4 AND CAST(a.organization_id AS INTEGER) = 0)
   )
   AND (
-      CAST(a.id AS TEXT) = ?3
+      COALESCE(NULLIF(a.plus_app_id, ''), a.id) = ?3
       OR json_extract(a.config, '$.standard.appKey') = ?3
+      OR a.app_key = ?3
   )
-  AND COALESCE(a.status, 1) = 1
+  AND COALESCE(a.runtime_status, 1) = 1
   AND COALESCE(NULLIF(json_extract(a.config, '$.portal.marketStatus'), ''), NULLIF(json_extract(a.config, '$.marketStatus'), ''), 'DRAFT') = 'PUBLISHED'
 ORDER BY
     CASE
-        WHEN a.tenant_id = ?1 AND a.organization_id = ?2 THEN 0
-        WHEN a.tenant_id = ?1 AND a.organization_id = 0 THEN 1
-        WHEN a.tenant_id = ?4 AND a.organization_id = 0 THEN 2
+        WHEN CAST(a.tenant_id AS INTEGER) = ?1 AND CAST(a.organization_id AS INTEGER) = ?2 THEN 0
+        WHEN CAST(a.tenant_id AS INTEGER) = ?1 AND CAST(a.organization_id AS INTEGER) = 0 THEN 1
+        WHEN CAST(a.tenant_id AS INTEGER) = ?4 AND CAST(a.organization_id AS INTEGER) = 0 THEN 2
         ELSE 3
     END,
     a.id DESC
@@ -137,62 +144,17 @@ LIMIT 1
 
 const LOAD_CATEGORIES: &str = r#"
 SELECT
-    COALESCE(NULLIF(c.name, ''), '') AS name
-FROM c_category c
-WHERE (
-      (
-          c.tenant_id = ?1
-          AND (
-              c.organization_id = ?2
-              OR (?2 > 0 AND c.organization_id = 0)
-          )
+    COALESCE(NULLIF(loc.display_name, ''), '') AS name
+FROM appstore_category cat
+INNER JOIN appstore_category_localization loc
+  ON loc.category_id = cat.id
+ AND loc.tenant_id = cat.tenant_id
+WHERE cat.category_status = 'active'
+  AND (
+        cat.tenant_id = CAST(?1 AS TEXT)
+        OR cat.tenant_id = ?3
       )
-      OR (c.tenant_id = ?3 AND c.organization_id = 0)
-  )
-  AND c.category_type = 'app_store'
-  AND COALESCE(c.visible, 1) = 1
-  AND COALESCE(c.status, 1) = 1
-ORDER BY COALESCE(c.sort_weight, 0), c.id
-"#;
-
-const LOAD_ASSETS: &str = r#"
-SELECT
-    COALESCE(CAST(asset_type AS TEXT), '') AS asset_type,
-    COALESCE(CAST(asset_resource_snapshot AS TEXT), '') AS asset_resource_snapshot,
-    COALESCE(CAST(thumbnail_resource_snapshot AS TEXT), '') AS thumbnail_resource_snapshot
-FROM ai_skill_asset
-WHERE tenant_id = ?1
-  AND organization_id = ?2
-  AND target_type = ?3
-  AND target_id = ?4
-  AND deleted_at IS NULL
-  AND COALESCE(status, 1) = 1
-ORDER BY COALESCE(sort_order, 999999), id
-LIMIT 20
-"#;
-
-const LOAD_ARTIFACTS: &str = r#"
-SELECT
-    CAST(id AS TEXT) AS id,
-    COALESCE(NULLIF(platform_type, ''), '') AS platform_type,
-    COALESCE(NULLIF(os_name, ''), '') AS os_name,
-    COALESCE(NULLIF(version, ''), '') AS version,
-    COALESCE(NULLIF(artifact_ref, ''), '') AS artifact_ref,
-    COALESCE(CAST(artifact_resource_snapshot AS TEXT), '') AS artifact_resource_snapshot,
-    COALESCE(artifact_size_bytes, 0) AS artifact_size_bytes,
-    COALESCE(CAST(frameworks AS TEXT), '') AS frameworks,
-    COALESCE(NULLIF(license_name, ''), '') AS license_name,
-    COALESCE(NULLIF(release_notes, ''), '') AS release_notes,
-    COALESCE(CAST(published_at AS TEXT), '') AS published_at
-FROM ai_skill_artifact
-WHERE tenant_id = ?1
-  AND organization_id = ?2
-  AND target_type = ?3
-  AND target_id = ?4
-  AND deleted_at IS NULL
-  AND COALESCE(status, 1) = 1
-ORDER BY published_at DESC, id DESC
-LIMIT 64
+ORDER BY COALESCE(cat.sort_order, 0), cat.id
 "#;
 
 const PUBLIC_APP_STORE_TENANT_ID: i64 = 20_001;
@@ -324,7 +286,7 @@ impl AppStoreReadStore for SqliteAppStoreReadStore {
             let rows = sqlx::query(LOAD_CATEGORIES)
                 .bind(subject.tenant_id)
                 .bind(subject.organization_id)
-                .bind(PUBLIC_APP_STORE_TENANT_ID)
+                .bind(PUBLIC_APP_STORE_TENANT_ID.to_string())
                 .fetch_all(&self.pool)
                 .await
                 .map_err(sql_error)?;
@@ -408,30 +370,6 @@ fn row_to_raw_app(row: &sqlx::sqlite::SqliteRow) -> RawAppStoreRecord {
         artifact_resource_snapshot: string_cell(row, "artifact_resource_snapshot"),
         rating: decimal_cell(row, "rating"),
         download_count: integer_cell(row, "download_count"),
-    }
-}
-
-fn row_to_asset(row: &sqlx::sqlite::SqliteRow) -> RawCatalogAsset {
-    RawCatalogAsset {
-        asset_type: string_cell(row, "asset_type"),
-        asset_resource_snapshot: string_cell(row, "asset_resource_snapshot"),
-        thumbnail_resource_snapshot: string_cell(row, "thumbnail_resource_snapshot"),
-    }
-}
-
-fn row_to_artifact(row: &sqlx::sqlite::SqliteRow) -> RawCatalogArtifact {
-    RawCatalogArtifact {
-        id: string_cell(row, "id"),
-        platform_type: string_cell(row, "platform_type"),
-        os_name: string_cell(row, "os_name"),
-        version: string_cell(row, "version"),
-        artifact_ref: string_cell(row, "artifact_ref"),
-        artifact_resource_snapshot: string_cell(row, "artifact_resource_snapshot"),
-        artifact_size_bytes: integer_cell(row, "artifact_size_bytes"),
-        frameworks: string_cell(row, "frameworks"),
-        license_name: string_cell(row, "license_name"),
-        release_notes: string_cell(row, "release_notes"),
-        published_at: string_cell(row, "published_at"),
     }
 }
 

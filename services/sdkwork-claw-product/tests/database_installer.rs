@@ -87,7 +87,7 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
     .await;
     assert_table_exists(&pool, "ops_job_execution").await;
     assert_table_exists(&pool, "ai_request_trace").await;
-    assert_table_exists(&pool, "platform_app").await;
+    assert_table_exists(&pool, "appstore_app").await;
     assert_table_exists(&pool, "c_category").await;
     assert_table_exists(&pool, "ai_agent_skill_package").await;
     assert_table_exists(&pool, "ai_agent_skill").await;
@@ -125,9 +125,6 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
     assert_sqlite_index_exists(&pool, "idx_ai_model_rank_snapshot_latest_scope").await;
     assert_sqlite_index_exists(&pool, "idx_ai_model_rank_snapshot_filter_rank").await;
     assert_sqlite_index_exists(&pool, "idx_ops_job_execution_model_ranking_scope_started").await;
-    assert_sqlite_index_exists(&pool, "idx_platform_app_user_id").await;
-    assert_sqlite_index_exists(&pool, "idx_platform_app_project_id").await;
-    assert_sqlite_index_exists(&pool, "idx_platform_app_status").await;
     assert_sqlite_index_exists(&pool, "idx_c_category_type_scope").await;
     assert_sqlite_index_exists(&pool, "uk_ops_notification_delivery_user_message_app").await;
     assert_sqlite_index_exists(&pool, "uk_ai_agent_skill_key").await;
@@ -328,23 +325,21 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
     .await;
     assert_sqlite_columns_exist(
         &pool,
-        "platform_app",
+        "appstore_app",
         &[
             "tenant_id",
             "organization_id",
-            "user_id",
-            "name",
+            "owner_user_id",
+            "display_name",
+            "description",
+            "latest_released_version",
             "icon",
+            "icon_resource_snapshot",
             "resource_list",
             "project_id",
-            "description",
-            "version",
-            "icon_media_resource_id",
-            "icon_object_blob_id",
-            "icon_resource_snapshot",
             "access_url",
             "config",
-            "status",
+            "runtime_status",
             "app_type",
             "platforms",
             "install_platforms",
@@ -354,9 +349,12 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
             "package_name",
             "bundle_id",
             "store_url",
-            "artifact_media_resource_id",
-            "artifact_object_blob_id",
             "artifact_resource_snapshot",
+            "download_count",
+            "rating_avg",
+            "rating_count",
+            "legacy_uuid",
+            "plus_app_id",
         ],
     )
     .await;
@@ -757,7 +755,7 @@ async fn sqlite_admin_user_store_lists_registered_tenant_users_outside_current_o
         INSERT INTO iam_user
             (id, tenant_id, username, display_name, email, phone, avatar_media_resource_id, avatar_object_blob_id, avatar_resource_snapshot, status, created_at, updated_at)
         VALUES
-            ('2', '10', 'registered-cross-org', 'Registered Cross Org', 'registered-cross-org@example.com', '', 'media-registered-cross-org-avatar', 'iam-user-avatar:registered-cross-org', '{"kind":"image","source":"provider_asset","uri":"iam-user-avatar:registered-cross-org"}', 'active', '2026-05-17T09:00:00Z', '2026-05-17T09:00:00Z')
+            ('2', '10', 'registered-cross-org', 'Registered Cross Org', 'registered-cross-org@example.com', NULL, 'media-registered-cross-org-avatar', 'iam-user-avatar:registered-cross-org', '{"kind":"image","source":"provider_asset","uri":"iam-user-avatar:registered-cross-org"}', 'active', '2026-05-17T09:00:00Z', '2026-05-17T09:00:00Z')
         "#,
     )
     .execute(&pool)
@@ -1235,11 +1233,9 @@ async fn sqlite_installer_reset_admin_password_rotates_existing_password() {
     let rotated_password_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM iam_credential
+        FROM iam_password_history
         WHERE tenant_id = '10'
           AND user_id = '1'
-          AND credential_type = 'password'
-          AND status = 'rotated'
         "#,
     )
     .fetch_one(&pool)
@@ -1247,7 +1243,7 @@ async fn sqlite_installer_reset_admin_password_rotates_existing_password() {
     .unwrap();
     assert!(
         rotated_password_count >= 1,
-        "reset-admin must retain old password credentials as rotated audit history"
+        "reset-admin must retain prior password hashes in iam_password_history"
     );
 }
 
@@ -1447,24 +1443,22 @@ async fn sqlite_installer_imports_course_comment_seed_with_canonical_scope_field
 
     let comment = sqlx::query(
         r#"
-        SELECT tenant_id, organization_id, data_scope, user_id, content_type, content_id, status, likes, reply_count, is_top
-        FROM content_comment
-        WHERE id = 30006001
+        SELECT tenant_id, organization_id, target_type, target_id, author_user_id, moderation_status, like_count_snapshot, status
+        FROM course_comment
+        WHERE id = 'course-comment-30006001'
         "#,
     )
     .fetch_one(&pool)
     .await
     .unwrap();
-    assert_eq!(0, comment.get::<i64, _>("tenant_id"));
-    assert_eq!(0, comment.get::<i64, _>("organization_id"));
-    assert_eq!(0, comment.get::<i64, _>("data_scope"));
-    assert_eq!(301, comment.get::<i64, _>("user_id"));
-    assert_eq!(6, comment.get::<i64, _>("content_type"));
-    assert_eq!(30001001, comment.get::<i64, _>("content_id"));
-    assert_eq!(1, comment.get::<i64, _>("status"));
-    assert_eq!(8, comment.get::<i64, _>("likes"));
-    assert_eq!(0, comment.get::<i64, _>("reply_count"));
-    assert_eq!(0, comment.get::<i64, _>("is_top"));
+    assert_eq!("0", comment.get::<String, _>("tenant_id"));
+    assert_eq!("0", comment.get::<String, _>("organization_id"));
+    assert_eq!("course", comment.get::<String, _>("target_type"));
+    assert_eq!("30001001", comment.get::<String, _>("target_id"));
+    assert_eq!("301", comment.get::<String, _>("author_user_id"));
+    assert_eq!("approved", comment.get::<String, _>("moderation_status"));
+    assert_eq!(8, comment.get::<i64, _>("like_count_snapshot"));
+    assert_eq!("active", comment.get::<String, _>("status"));
 }
 
 #[tokio::test]
@@ -1474,12 +1468,12 @@ async fn sqlite_installer_repairs_drifted_course_relation_seed_identity_on_start
 
     sqlx::query(
         r#"
-        UPDATE content_course_relation
-        SET course_id = 30001001,
-            related_course_id = 30001003,
-            relation_type = 1,
+        UPDATE course_catalog_link
+        SET course_id = '30001001',
+            linked_course_id = '30001003',
+            link_type = '1',
             sort_order = 9001
-        WHERE id = 30005002
+        WHERE id = 'course-link-30005002'
         "#,
     )
     .execute(&pool)
@@ -1509,23 +1503,19 @@ async fn sqlite_installer_repairs_drifted_course_relation_seed_identity_on_start
 
     let relation = sqlx::query(
         r#"
-        SELECT course_id, related_course_id, relation_type, sort_order, status, deleted_at
-        FROM content_course_relation
-        WHERE id = 30005002
+        SELECT course_id, linked_course_id, link_type, sort_order, status
+        FROM course_catalog_link
+        WHERE id = 'course-link-30005002'
         "#,
     )
     .fetch_one(&pool)
     .await
     .unwrap();
-    assert_eq!(30001001, relation.get::<i64, _>("course_id"));
-    assert_eq!(30001006, relation.get::<i64, _>("related_course_id"));
-    assert_eq!(1, relation.get::<i64, _>("relation_type"));
+    assert_eq!("30001001", relation.get::<String, _>("course_id"));
+    assert_eq!("30001006", relation.get::<String, _>("linked_course_id"));
+    assert_eq!("1", relation.get::<String, _>("link_type"));
     assert_eq!(20, relation.get::<i64, _>("sort_order"));
-    assert_eq!(1, relation.get::<i64, _>("status"));
-    assert!(
-        relation.get::<Option<String>, _>("deleted_at").is_none(),
-        "course relation seed repair must restore the canonical active relation row"
-    );
+    assert_eq!("active", relation.get::<String, _>("status"));
 }
 
 #[tokio::test]
@@ -1559,7 +1549,7 @@ async fn sqlite_installer_reimports_course_seed_when_recorded_payload_is_stale()
     let course_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM content_course
+        FROM course_catalog
         WHERE course_code LIKE 'c%'
           AND deleted_at IS NULL
         "#,
@@ -1597,11 +1587,11 @@ async fn sqlite_installer_repairs_drifted_course_section_seed_identity_on_payloa
 
     sqlx::query(
         r#"
-        UPDATE content_course_section
-        SET course_id = 30001002,
-            section_no = 9,
+        UPDATE course_section
+        SET course_id = '30001002',
+            section_no = '9',
             title = 'Drifted section'
-        WHERE id = 30003001
+        WHERE id = '30003001'
         "#,
     )
     .execute(&pool)
@@ -1626,19 +1616,18 @@ async fn sqlite_installer_repairs_drifted_course_section_seed_identity_on_payloa
 
     let section = sqlx::query(
         r#"
-        SELECT course_id, section_no, title, status, deleted_at
-        FROM content_course_section
-        WHERE id = 30003001
+        SELECT course_id, section_no, title, status
+        FROM course_section
+        WHERE id = '30003001'
         "#,
     )
     .fetch_one(&pool)
     .await
     .unwrap();
-    assert_eq!(30001001, section.get::<i64, _>("course_id"));
-    assert_eq!(1, section.get::<i64, _>("section_no"));
+    assert_eq!("30001001", section.get::<String, _>("course_id"));
+    assert_eq!("1", section.get::<String, _>("section_no"));
     assert_ne!("Drifted section", section.get::<String, _>("title"));
-    assert_eq!(1, section.get::<i64, _>("status"));
-    assert!(section.get::<Option<String>, _>("deleted_at").is_none());
+    assert_eq!("active", section.get::<String, _>("status"));
 }
 
 #[tokio::test]
@@ -2481,15 +2470,17 @@ async fn sqlite_installer_repairs_drifted_app_seed_standard_fields_on_startup_ch
 
     sqlx::query(
         r#"
-        UPDATE platform_app
-        SET name = 'Drifted Claw Router',
-            status = 0,
+        UPDATE appstore_app
+        SET display_name = 'Drifted Claw Router',
+            runtime_status = 0,
+            app_status = 'draft',
+            distribution_status = 'unlisted',
             config = '{"standard":{"appKey":"sdkwork-claw-router"},"portal":{"marketStatus":"DRAFT"}}',
             install_config = '{"packages":[]}',
             release_notes = '[]'
-        WHERE tenant_id = 20001
-          AND organization_id = 0
-          AND uuid = 'sdkwork-app-sdkwork-claw-router'
+        WHERE CAST(tenant_id AS INTEGER) = 20001
+          AND CAST(organization_id AS INTEGER) = 0
+          AND legacy_uuid = 'sdkwork-app-sdkwork-claw-router'
         "#,
     )
     .execute(&pool)
@@ -2508,18 +2499,18 @@ async fn sqlite_installer_repairs_drifted_app_seed_standard_fields_on_startup_ch
 
     let claw_router = sqlx::query(
         r#"
-        SELECT name, status, config, install_config, release_notes
-        FROM platform_app
-        WHERE tenant_id = 20001
-          AND organization_id = 0
-          AND uuid = 'sdkwork-app-sdkwork-claw-router'
+        SELECT display_name, runtime_status, config, install_config, release_notes
+        FROM appstore_app
+        WHERE CAST(tenant_id AS INTEGER) = 20001
+          AND CAST(organization_id AS INTEGER) = 0
+          AND legacy_uuid = 'sdkwork-app-sdkwork-claw-router'
         "#,
     )
     .fetch_one(&pool)
     .await
     .unwrap();
-    assert_eq!("SDKWork Claw Router", claw_router.get::<String, _>("name"));
-    assert_eq!(1, claw_router.get::<i64, _>("status"));
+    assert_eq!("SDKWork Claw Router", claw_router.get::<String, _>("display_name"));
+    assert_eq!(1, claw_router.get::<i64, _>("runtime_status"));
 
     let config: serde_json::Value =
         serde_json::from_str(claw_router.get::<String, _>("config").as_str()).unwrap();
@@ -2547,15 +2538,17 @@ async fn sqlite_installer_repairs_app_seed_uuid_drift_on_stable_id_without_prima
 
     let changed = sqlx::query(
         r#"
-        UPDATE platform_app
-        SET uuid = 'sdkwork-app-legacy-claw-studio',
-            name = 'Legacy Claw Studio',
-            status = 1,
+        UPDATE appstore_app
+        SET legacy_uuid = 'sdkwork-app-legacy-claw-studio',
+            display_name = 'Legacy Claw Studio',
+            runtime_status = 1,
+            app_status = 'published',
+            distribution_status = 'listed',
             config = '{"standard":{"appKey":"legacy-claw-studio"},"portal":{"marketStatus":"PUBLISHED"}}'
-        WHERE tenant_id = 20001
-          AND organization_id = 0
-          AND id = 20001001
-          AND uuid = 'sdkwork-app-claw-studio'
+        WHERE CAST(tenant_id AS INTEGER) = 20001
+          AND CAST(organization_id AS INTEGER) = 0
+          AND plus_app_id = '20001001'
+          AND legacy_uuid = 'sdkwork-app-claw-studio'
         "#,
     )
     .execute(&pool)
@@ -2576,9 +2569,9 @@ async fn sqlite_installer_repairs_app_seed_uuid_drift_on_stable_id_without_prima
 
     let claw_studio = sqlx::query(
         r#"
-        SELECT uuid, name, status, config
-        FROM platform_app
-        WHERE id = 20001001
+        SELECT legacy_uuid, display_name, runtime_status, config
+        FROM appstore_app
+        WHERE plus_app_id = '20001001'
         "#,
     )
     .fetch_one(&pool)
@@ -2586,10 +2579,10 @@ async fn sqlite_installer_repairs_app_seed_uuid_drift_on_stable_id_without_prima
     .unwrap();
     assert_eq!(
         "sdkwork-app-claw-studio",
-        claw_studio.get::<String, _>("uuid")
+        claw_studio.get::<String, _>("legacy_uuid")
     );
-    assert_eq!("Claw Studio", claw_studio.get::<String, _>("name"));
-    assert_eq!(1, claw_studio.get::<i64, _>("status"));
+    assert_eq!("Claw Studio", claw_studio.get::<String, _>("display_name"));
+    assert_eq!(1, claw_studio.get::<i64, _>("runtime_status"));
 
     let config: serde_json::Value =
         serde_json::from_str(claw_studio.get::<String, _>("config").as_str()).unwrap();
@@ -2604,10 +2597,17 @@ async fn sqlite_installer_retires_stale_app_seed_apps_on_startup_check() {
 
     sqlx::query(
         r#"
-        INSERT INTO platform_app
-            (id, uuid, tenant_id, organization_id, data_scope, user_id, name, icon, resource_list, project_id, config, status, platforms, install_platforms, install_skill, install_config, release_notes)
+        INSERT INTO appstore_app
+            (id, tenant_id, organization_id, publisher_id, app_no, app_key, plus_app_id, plus_app_key, app_slug,
+             display_name, default_locale, app_type, runtime_family, runtime_framework, app_status,
+             distribution_status, review_status, monetization_mode, config, runtime_status, legacy_uuid,
+             created_at, updated_at)
         VALUES
-            (20999999, 'sdkwork-app-removed-seed-app', 20001, 0, 0, 0, 'Removed Seed App', '{}', '{}', 0, '{"standard":{"appKey":"removed-seed-app"},"portal":{"marketStatus":"PUBLISHED"}}', 1, '{"platforms":["Web"]}', '{"platforms":["Web"]}', '{}', '{"packages":[]}', '[]')
+            ('appstore-app-20999999', '20001', '0', 'appstore-publisher-default-20', 'removed-seed-app', 'removed-seed-app',
+             '20999999', 'removed-seed-app', 'removed-seed-app', 'Removed Seed App', 'en-US', 'application', 'web', 'unknown',
+             'published', 'listed', 'approved', 'free',
+             '{"standard":{"appKey":"removed-seed-app"},"portal":{"marketStatus":"PUBLISHED"}}', 1,
+             'sdkwork-app-removed-seed-app', '2026-05-01 09:30:00', '2026-05-01 09:30:00')
         "#,
     )
     .execute(&pool)
@@ -2626,9 +2626,9 @@ async fn sqlite_installer_retires_stale_app_seed_apps_on_startup_check() {
 
     let stale = sqlx::query(
         r#"
-        SELECT status, config
-        FROM platform_app
-        WHERE uuid = 'sdkwork-app-removed-seed-app'
+        SELECT runtime_status, config
+        FROM appstore_app
+        WHERE legacy_uuid = 'sdkwork-app-removed-seed-app'
         "#,
     )
     .fetch_one(&pool)
@@ -2652,10 +2652,17 @@ async fn sqlite_installer_repairs_half_retired_stale_app_seed_apps_on_startup_ch
 
     sqlx::query(
         r#"
-        INSERT INTO platform_app
-            (id, uuid, tenant_id, organization_id, data_scope, user_id, name, icon, resource_list, project_id, config, status, platforms, install_platforms, install_skill, install_config, release_notes)
+        INSERT INTO appstore_app
+            (id, tenant_id, organization_id, publisher_id, app_no, app_key, plus_app_id, plus_app_key, app_slug,
+             display_name, default_locale, app_type, runtime_family, runtime_framework, app_status,
+             distribution_status, review_status, monetization_mode, config, runtime_status, legacy_uuid,
+             created_at, updated_at)
         VALUES
-            (20999997, 'sdkwork-app-half-retired-seed-app', 20001, 0, 0, 0, 'Half Retired Seed App', '{}', '{}', 0, '{"standard":{"appKey":"half-retired-seed-app"},"portal":{"marketStatus":"PUBLISHED"}}', 0, '{"platforms":["Web"]}', '{"platforms":["Web"]}', '{}', '{"packages":[]}', '[]')
+            ('appstore-app-20999997', '20001', '0', 'appstore-publisher-default-20', 'half-retired-seed-app', 'half-retired-seed-app',
+             '20999997', 'half-retired-seed-app', 'half-retired-seed-app', 'Half Retired Seed App', 'en-US', 'application', 'web', 'unknown',
+             'published', 'listed', 'approved', 'free',
+             '{"standard":{"appKey":"half-retired-seed-app"},"portal":{"marketStatus":"PUBLISHED"}}', 0,
+             'sdkwork-app-half-retired-seed-app', '2026-05-01 09:30:00', '2026-05-01 09:30:00')
         "#,
     )
     .execute(&pool)
@@ -2675,8 +2682,8 @@ async fn sqlite_installer_repairs_half_retired_stale_app_seed_apps_on_startup_ch
     let config_text: String = sqlx::query_scalar(
         r#"
         SELECT config
-        FROM platform_app
-        WHERE uuid = 'sdkwork-app-half-retired-seed-app'
+        FROM appstore_app
+        WHERE legacy_uuid = 'sdkwork-app-half-retired-seed-app'
         "#,
     )
     .fetch_one(&pool)
@@ -2979,7 +2986,7 @@ async fn sqlite_installer_installs_seed_projection_indexes_for_fast_startup_chec
 
     assert_sqlite_index_exists(&pool, "idx_ai_skill_asset_target").await;
     assert_sqlite_index_exists(&pool, "idx_ai_skill_artifact_target").await;
-    assert_sqlite_index_exists(&pool, "idx_platform_app_category_id").await;
+    assert_sqlite_index_exists(&pool, "idx_appstore_app_status").await;
     assert_sqlite_index_exists(&pool, "idx_c_category_parent").await;
 }
 
@@ -4654,8 +4661,8 @@ async fn assert_app_store_seed_rows(pool: &SqlitePool) {
     let app_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM platform_app
-        WHERE uuid LIKE 'sdkwork-app-%'
+        FROM appstore_app
+        WHERE legacy_uuid LIKE 'sdkwork-app-%'
         "#,
     )
     .fetch_one(pool)
@@ -4663,15 +4670,15 @@ async fn assert_app_store_seed_rows(pool: &SqlitePool) {
     .unwrap();
     assert_eq!(
         expected_app_count as i64, app_count,
-        "installer must seed every sdkwork.app.config.json platform_app projection"
+        "installer must seed every sdkwork.app.config.json app into canonical appstore_app rows"
     );
 
     let claw_router = sqlx::query(
         r#"
-        SELECT name, version, icon_resource_snapshot, access_url, config, install_config, release_notes, status
-        FROM platform_app
-        WHERE tenant_id = 20001
-          AND organization_id = 0
+        SELECT display_name, latest_released_version, icon_resource_snapshot, access_url, config, install_config, release_notes, runtime_status
+        FROM appstore_app
+        WHERE CAST(tenant_id AS INTEGER) = 20001
+          AND CAST(organization_id AS INTEGER) = 0
           AND json_extract(config, '$.standard.appKey') = 'sdkwork-claw-router'
         "#,
     )
@@ -4680,11 +4687,11 @@ async fn assert_app_store_seed_rows(pool: &SqlitePool) {
     .unwrap();
     assert_eq!(
         "SDKWork Claw Router",
-        claw_router.get::<String, _>("name"),
+        claw_router.get::<String, _>("display_name"),
         "seed data must include the root Claw Router app"
     );
-    assert_eq!(1, claw_router.get::<i64, _>("status"));
-    assert_eq!("0.1.0", claw_router.get::<String, _>("version"));
+    assert_eq!(1, claw_router.get::<i64, _>("runtime_status"));
+    assert_eq!("0.1.0", claw_router.get::<String, _>("latest_released_version"));
     assert_eq!(
         "https://cdn.sdkwork.com/sdkwork-claw-router/assets/icon-1024.png",
         serde_json::from_str::<serde_json::Value>(
@@ -4710,26 +4717,24 @@ async fn assert_app_store_seed_rows(pool: &SqlitePool) {
         serde_json::from_str(claw_router.get::<String, _>("install_config").as_str()).unwrap();
     assert!(
         install_config["packages"].as_array().unwrap().len() >= 4,
-        "platform_app install_config must preserve the package matrix"
+        "appstore_app install_config must preserve the package matrix"
     );
 
     let release_notes: serde_json::Value =
         serde_json::from_str(claw_router.get::<String, _>("release_notes").as_str()).unwrap();
     assert!(
         !release_notes.as_array().unwrap().is_empty(),
-        "platform_app release_notes must preserve standard release metadata"
+        "appstore_app release_notes must preserve standard release metadata"
     );
 
     let expected_app_category_codes = sdkwork_app_category_seed_codes();
     let app_category_rows = sqlx::query(
         r#"
-        SELECT code
-        FROM c_category
-        WHERE tenant_id = 20001
-          AND organization_id = 0
-          AND category_type = 'app_store'
-          AND status = 1
-        ORDER BY code
+        SELECT category_code AS code
+        FROM appstore_category
+        WHERE tenant_id = '20001'
+          AND category_status = 'active'
+        ORDER BY category_code
         "#,
     )
     .fetch_all(pool)
@@ -4741,15 +4746,32 @@ async fn assert_app_store_seed_rows(pool: &SqlitePool) {
         .collect::<BTreeSet<_>>();
     assert_eq!(
         expected_app_category_codes, app_category_codes,
-        "installer must normalize AppCenter portal categories into c_category app_store records"
+        "installer must seed AppCenter portal categories into canonical appstore_category rows"
+    );
+
+    let appstore_category_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM appstore_category
+        WHERE tenant_id = '20001'
+          AND category_status = 'active'
+        "#,
+    )
+    .fetch_one(pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        expected_app_category_codes.len() as i64,
+        appstore_category_count,
+        "installer must seed AppCenter categories into appstore_category rows"
     );
 
     let claw_router_row = sqlx::query(
         r#"
         SELECT resource_list, install_config
-        FROM platform_app
-        WHERE tenant_id = 20001
-          AND organization_id = 0
+        FROM appstore_app
+        WHERE CAST(tenant_id AS INTEGER) = 20001
+          AND CAST(organization_id AS INTEGER) = 0
           AND json_extract(config, '$.standard.appKey') = 'sdkwork-claw-router'
         "#,
     )
@@ -4760,13 +4782,13 @@ async fn assert_app_store_seed_rows(pool: &SqlitePool) {
         serde_json::from_str(claw_router_row.get::<String, _>("resource_list").as_str()).unwrap();
     assert!(
         resource_list["screenshots"].as_array().unwrap().len() >= 1,
-        "installer must keep app screenshots on platform_app.resource_list"
+        "installer must keep app screenshots on appstore_app.resource_list"
     );
 
     let video_cut_install_config: serde_json::Value = sqlx::query_scalar(
         r#"
         SELECT install_config
-        FROM platform_app
+        FROM appstore_app
         WHERE tenant_id = 20001
           AND organization_id = 0
           AND json_extract(config, '$.standard.appKey') = 'sdkwork-video-cut'
@@ -4781,11 +4803,11 @@ async fn assert_app_store_seed_rows(pool: &SqlitePool) {
         packages
             .iter()
             .any(|package| package.get("enabled") == Some(&serde_json::Value::Bool(false))),
-        "disabled app packages must remain in platform_app.install_config instead of separate artifact projections"
+        "disabled app packages must remain in appstore_app.install_config instead of separate artifact projections"
     );
     assert!(
         packages.len() >= 6,
-        "platform_app.install_config must preserve the full package matrix"
+        "appstore_app.install_config must preserve the full package matrix"
     );
 
     let app_catalog_asset_count: i64 = sqlx::query_scalar(

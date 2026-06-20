@@ -143,9 +143,9 @@ async fn sqlite_app_store_uses_release_note_highlights_when_portal_features_are_
     .await;
     sqlx::query(
         r#"
-        UPDATE platform_app
+        UPDATE appstore_app
         SET release_notes = '[{"version":"1.0.0","highlights":["Seeded metadata","Package matrix","Release governance"]}]'
-        WHERE id = 1700
+        WHERE plus_app_id = '1700'
         "#,
     )
     .execute(&pool)
@@ -194,9 +194,9 @@ async fn sqlite_app_store_does_not_fallback_disabled_install_packages_to_public_
     .await;
     sqlx::query(
         r#"
-        UPDATE platform_app
+        UPDATE appstore_app
         SET install_config = '{"packages":[{"id":"blocked-msi","enabled":false,"version":"0.1.0","platform":"DESKTOP_WINDOWS","packageFormat":"MSI","artifact":{"kind":"archive","source":"external_url","url":"https://cdn.example.test/apps/blocked.msi","publicUrl":"https://cdn.example.test/apps/blocked.msi"}}]}'
-        WHERE id = 1750
+        WHERE plus_app_id = '1750'
         "#,
     )
     .execute(&pool)
@@ -264,7 +264,7 @@ async fn sqlite_app_store_falls_back_to_tenant_public_apps_for_authenticated_org
         "2026-06-03 09:30:00",
     )
     .await;
-    patch_platform_app_catalog(
+    patch_appstore_app_catalog(
         &pool,
         1500,
         Some(r#"{"screenshots":[{"asset":{"kind":"image","source":"external_url","url":"https://cdn.example.test/apps/public-screen.png","publicUrl":"https://cdn.example.test/apps/public-screen.png"}}],"previews":[]}"#),
@@ -588,7 +588,7 @@ async fn sqlite_app_store_loads_categories_from_all_public_apps_without_catalog_
     assert_eq!(
         vec!["HTML".to_owned(), "Productivity".to_owned(), "React".to_owned()],
         categories,
-        "categories endpoint must read the unified c_category app-store tree, not derive categories from platform_app.app_type"
+        "categories endpoint must read canonical appstore_category rows, not derive categories from legacy app_type"
     );
 }
 
@@ -653,7 +653,7 @@ async fn sqlite_app_store_applies_keyword_filter_before_catalog_pagination() {
         .unwrap();
 
     assert_eq!(
-        vec!["800".to_owned()],
+        vec!["app-800".to_owned()],
         items.into_iter().map(|item| item.id).collect::<Vec<_>>(),
         "keyword filtering must happen before SQL pagination so older matches are not dropped"
     );
@@ -720,7 +720,7 @@ async fn sqlite_app_store_paginates_after_dto_keyword_semantics_not_raw_sql_pref
         .unwrap();
 
     assert_eq!(
-        vec!["1200".to_owned()],
+        vec!["app-1200".to_owned()],
         items.into_iter().map(|item| item.id).collect::<Vec<_>>(),
         "catalog pagination must run after DTO keyword semantics, not after a wider raw SQL prefilter"
     );
@@ -744,45 +744,6 @@ fn owner_subject() -> AppStoreSubject {
 
 async fn create_app_store_tables(pool: &SqlitePool) {
     for statement in [
-        r#"
-        CREATE TABLE platform_app (
-            id INTEGER PRIMARY KEY,
-            uuid TEXT,
-            created_at TEXT,
-            updated_at TEXT,
-            tenant_id INTEGER NOT NULL,
-            organization_id INTEGER NOT NULL,
-            data_scope INTEGER NOT NULL DEFAULT 0,
-            user_id INTEGER NOT NULL,
-            name TEXT NOT NULL,
-            icon TEXT,
-            resource_list TEXT,
-            project_id INTEGER,
-            description TEXT,
-            version TEXT,
-            icon_media_resource_id TEXT,
-            icon_object_blob_id INTEGER,
-            icon_resource_snapshot TEXT,
-            access_url TEXT,
-            config TEXT,
-            status INTEGER,
-            app_type TEXT,
-            platforms TEXT,
-            install_platforms TEXT,
-            install_skill TEXT,
-            install_config TEXT,
-            release_notes TEXT,
-            package_name TEXT,
-            bundle_id TEXT,
-            store_url TEXT,
-            artifact_media_resource_id TEXT,
-            artifact_object_blob_id INTEGER,
-            artifact_resource_snapshot TEXT,
-            download_count INTEGER NOT NULL DEFAULT 0,
-            rating_avg REAL NOT NULL DEFAULT 0,
-            rating_count INTEGER NOT NULL DEFAULT 0
-        )
-        "#,
         r#"
         CREATE TABLE c_category (
             id INTEGER PRIMARY KEY,
@@ -872,23 +833,161 @@ async fn create_app_store_tables(pool: &SqlitePool) {
             metadata TEXT
         )
         "#,
+        r#"
+        CREATE TABLE appstore_publisher (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT NOT NULL,
+            publisher_no TEXT NOT NULL,
+            publisher_type TEXT NOT NULL,
+            display_name TEXT NOT NULL,
+            publisher_status TEXT NOT NULL,
+            verification_status TEXT NOT NULL,
+            owner_user_id TEXT,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL
+        )
+        "#,
+        r#"
+        CREATE TABLE appstore_app (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT NOT NULL,
+            publisher_id TEXT NOT NULL,
+            app_no TEXT NOT NULL,
+            app_key TEXT NOT NULL,
+            plus_app_id TEXT,
+            plus_app_key TEXT,
+            app_slug TEXT NOT NULL,
+            display_name TEXT NOT NULL,
+            description TEXT,
+            default_locale TEXT NOT NULL,
+            app_type TEXT NOT NULL,
+            runtime_family TEXT NOT NULL,
+            runtime_framework TEXT NOT NULL,
+            app_status TEXT NOT NULL,
+            distribution_status TEXT NOT NULL,
+            review_status TEXT NOT NULL,
+            monetization_mode TEXT NOT NULL,
+            icon TEXT NOT NULL DEFAULT '{}',
+            icon_resource_snapshot TEXT NOT NULL DEFAULT '',
+            resource_list TEXT NOT NULL DEFAULT '[]',
+            access_url TEXT,
+            config TEXT NOT NULL DEFAULT '{}',
+            runtime_status INTEGER NOT NULL DEFAULT 1,
+            install_skill TEXT NOT NULL DEFAULT '{}',
+            install_config TEXT NOT NULL DEFAULT '{}',
+            install_platforms TEXT NOT NULL DEFAULT '[]',
+            platforms TEXT NOT NULL DEFAULT '[]',
+            release_notes TEXT NOT NULL DEFAULT '[]',
+            package_name TEXT,
+            bundle_id TEXT,
+            store_url TEXT,
+            artifact_resource_snapshot TEXT NOT NULL DEFAULT '',
+            download_count INTEGER NOT NULL DEFAULT 0,
+            rating_avg TEXT NOT NULL DEFAULT '0',
+            rating_count INTEGER NOT NULL DEFAULT 0,
+            legacy_uuid TEXT,
+            manifest_snapshot_json TEXT NOT NULL DEFAULT '{}',
+            latest_released_version TEXT,
+            version INTEGER NOT NULL DEFAULT 0,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL
+        )
+        "#,
+        r#"
+        CREATE TABLE appstore_category (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            category_code TEXT NOT NULL,
+            parent_category_id TEXT,
+            category_level INTEGER NOT NULL DEFAULT 1,
+            category_status TEXT NOT NULL,
+            sort_order INTEGER NOT NULL DEFAULT 0,
+            icon_media_resource_id TEXT,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL
+        )
+        "#,
+        r#"
+        CREATE TABLE appstore_category_localization (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            category_id TEXT NOT NULL,
+            locale TEXT NOT NULL,
+            display_name TEXT NOT NULL,
+            description TEXT,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL
+        )
+        "#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }
+    sqlx::query(
+        r#"
+        INSERT INTO appstore_publisher
+            (id, tenant_id, organization_id, publisher_no, publisher_type, display_name, publisher_status, verification_status, owner_user_id, created_at, updated_at)
+        VALUES
+            ('appstore-publisher-default-20', '10', '20', 'default-root', 'organization', 'Root Organization Publisher', 'active', 'verified', '1', '2026-05-01 09:30:00', '2026-05-01 09:30:00')
+        "#,
+    )
+    .execute(pool)
+    .await
+    .unwrap();
 }
 
 async fn seed_app_categories(pool: &SqlitePool) {
-    insert_app_category(pool, 20002001, "HTML", "app-store-html", 100).await;
-    insert_app_category(
+    insert_appstore_category(pool, "appstore-category-html", "HTML", "app-store-html", 100).await;
+    insert_appstore_category(
         pool,
-        20254147,
+        "appstore-category-productivity",
         "Productivity",
         "app-store-productivity",
         101,
     )
     .await;
-    insert_app_category(pool, 20002002, "React", "app-store-react", 102).await;
+    insert_appstore_category(pool, "appstore-category-react", "React", "app-store-react", 102)
+        .await;
     insert_non_app_category(pool, 20003001, "Skills", "skills", 100).await;
+}
+
+async fn insert_appstore_category(
+    pool: &SqlitePool,
+    id: &str,
+    name: &str,
+    code: &str,
+    sort_order: i64,
+) {
+    sqlx::query(
+        r#"
+        INSERT INTO appstore_category
+            (id, tenant_id, category_code, category_level, category_status, sort_order, created_at, updated_at)
+        VALUES
+            (?1, '20001', ?2, 1, 'active', ?3, '2026-05-01 09:30:00', '2026-05-01 09:30:00')
+        "#,
+    )
+    .bind(id)
+    .bind(code)
+    .bind(sort_order)
+    .execute(pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO appstore_category_localization
+            (id, tenant_id, category_id, locale, display_name, description, created_at, updated_at)
+        VALUES
+            (?1, '20001', ?2, 'en-US', ?3, ?4, '2026-05-01 09:30:00', '2026-05-01 09:30:00')
+        "#,
+    )
+    .bind(format!("{id}-en-us"))
+    .bind(id)
+    .bind(name)
+    .bind(format!("{name} app category"))
+    .execute(pool)
+    .await
+    .unwrap();
 }
 
 async fn insert_app_category(pool: &SqlitePool, id: i64, name: &str, code: &str, sort_weight: i64) {
@@ -1020,7 +1119,7 @@ async fn seed_app_store(pool: &SqlitePool) {
         "2026-05-04 09:30:00",
     )
     .await;
-    patch_platform_app_catalog(
+    patch_appstore_app_catalog(
         &pool,
         101,
         Some(APP_101_RESOURCE_LIST),
@@ -1035,7 +1134,7 @@ const APP_101_RESOURCE_LIST: &str = r#"{"screenshots":[{"asset":{"kind":"image",
 
 const APP_101_INSTALL_CONFIG: &str = r#"{"packages":[{"id":"9001","platform":"DESKTOP_WINDOWS","platformType":"desktop","os":"windows","version":"2.1.0","enabled":true,"artifactSizeBytes":44040192,"releaseNotes":"Hardened routing policies","publishedAt":"2026-05-01T08:00:00Z","artifact":{"kind":"binary","source":"external_url","url":"https://cdn.example.test/apps/claw-2.1.0.exe","publicUrl":"https://cdn.example.test/apps/claw-2.1.0.exe"}}]}"#;
 
-async fn patch_platform_app_catalog(
+async fn patch_appstore_app_catalog(
     pool: &SqlitePool,
     id: i64,
     resource_list: Option<&str>,
@@ -1045,18 +1144,18 @@ async fn patch_platform_app_catalog(
 ) {
     sqlx::query(
         r#"
-        UPDATE platform_app
+        UPDATE appstore_app
         SET resource_list = COALESCE(?2, resource_list),
             install_config = COALESCE(?3, install_config),
             rating_avg = ?4,
             download_count = ?5
-        WHERE id = ?1
+        WHERE plus_app_id = ?1
         "#,
     )
-    .bind(id)
+    .bind(id.to_string())
     .bind(resource_list)
     .bind(install_config)
-    .bind(rating_avg)
+    .bind(rating_avg.to_string())
     .bind(download_count)
     .execute(pool)
     .await
@@ -1068,7 +1167,7 @@ async fn insert_app(
     id: i64,
     tenant_id: i64,
     organization_id: i64,
-    user_id: i64,
+    _user_id: i64,
     name: &str,
     description: &str,
     version: &str,
@@ -1081,44 +1180,65 @@ async fn insert_app(
     access_url: &str,
     updated_at: &str,
 ) {
+    let config_value: serde_json::Value =
+        serde_json::from_str(config).unwrap_or_else(|_| serde_json::json!({}));
+    let market_status = config_value
+        .pointer("/portal/marketStatus")
+        .or_else(|| config_value.get("marketStatus"))
+        .and_then(|value| value.as_str())
+        .unwrap_or("DRAFT");
+    let app_key = config_value
+        .pointer("/standard/appKey")
+        .and_then(|value| value.as_str())
+        .map(str::to_owned)
+        .unwrap_or_else(|| format!("app-{id}"));
+    let app_slug = app_key.replace('.', "-").replace('_', "-");
+    let (app_status, distribution_status) = if status == 1 && market_status == "PUBLISHED" {
+        ("published", "listed")
+    } else {
+        ("draft", "unlisted")
+    };
+    let artifact_snapshot = if artifact_public_url.is_empty() {
+        String::new()
+    } else {
+        optional_media_resource_snapshot(artifact_public_url, "archive").unwrap_or_default()
+    };
     sqlx::query(
         r#"
-        INSERT INTO platform_app (
-            id, uuid, created_at, updated_at, tenant_id, organization_id, user_id,
-            name, icon, resource_list, project_id, description, version,
-            icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot,
-            access_url, config, status, app_type, platforms, install_platforms,
-            install_skill, install_config, release_notes, package_name, bundle_id,
-            store_url, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot
+        INSERT INTO appstore_app (
+            id, tenant_id, organization_id, publisher_id, app_no, app_key, plus_app_id, plus_app_key,
+            app_slug, display_name, description, default_locale, app_type, runtime_family, runtime_framework,
+            app_status, distribution_status, review_status, monetization_mode, icon, icon_resource_snapshot,
+            resource_list, access_url, config, runtime_status, install_skill, install_config, artifact_resource_snapshot,
+            legacy_uuid, latest_released_version, manifest_snapshot_json, created_at, updated_at
         )
         VALUES (
-            ?1, ?2, '2026-05-01 09:30:00', ?3, ?4, ?5, ?6,
-            ?7, NULL, NULL, NULL, ?8, ?9,
-            ?10, NULL, ?11,
-            ?12, ?13, ?14, ?15, NULL, NULL,
-            ?16, NULL, NULL, NULL, NULL,
-            NULL, ?17, NULL, ?18
+            ?1, ?2, ?3, 'appstore-publisher-default-20', ?4, ?4, ?5, ?4, ?6, ?7, ?8, 'en-US', ?9, 'web', 'unknown',
+            ?10, ?11, 'approved', 'free', '{}', ?12, '[]', ?13, ?14, ?15, ?16, '{}', ?17,
+            ?18, ?19, '{}', '2026-05-01 09:30:00', ?20
         )
         "#,
     )
-    .bind(id)
-    .bind(format!("uuid-{id}"))
-    .bind(updated_at)
-    .bind(tenant_id)
-    .bind(organization_id)
-    .bind(user_id)
+    .bind(format!("appstore-app-{id}"))
+    .bind(tenant_id.to_string())
+    .bind(organization_id.to_string())
+    .bind(&app_key)
+    .bind(id.to_string())
+    .bind(&app_slug)
     .bind(name)
     .bind(description)
-    .bind(version)
-    .bind(format!("test-app-icon-{id}"))
+    .bind(app_type)
+    .bind(app_status)
+    .bind(distribution_status)
     .bind(media_resource_snapshot(icon_public_url, "image"))
     .bind(access_url)
     .bind(config)
     .bind(status)
-    .bind(app_type)
     .bind(install_skill)
-    .bind(optional_media_resource_id(id, artifact_public_url))
-    .bind(optional_media_resource_snapshot(artifact_public_url, "archive"))
+    .bind(artifact_snapshot)
+    .bind(format!("uuid-{id}"))
+    .bind(version)
+    .bind(updated_at)
     .execute(pool)
     .await
     .unwrap();

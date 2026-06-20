@@ -52936,7 +52936,7 @@
     },
     "/backend/v3/api/platform/apps": {
       "get": {
-        "description": "List apps. Reads platform_app, c_category, ai_skill_asset, ai_skill_artifact. Writes none. File targets none.",
+        "description": "List apps. Reads appstore_app, c_category, ai_skill_asset, ai_skill_artifact. Writes none. File targets none.",
         "operationId": "apps.list",
         "parameters": [
           {
@@ -53092,7 +53092,7 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "platform_app",
+          "appstore_app",
           "c_category",
           "ai_skill_asset",
           "ai_skill_artifact"
@@ -53105,7 +53105,7 @@
         "x-write-tables": []
       },
       "post": {
-        "description": "Create app. Reads platform_app, c_category, ai_skill_asset, ai_skill_artifact. Writes platform_app, ops_audit_log. File targets none.",
+        "description": "Create app. Reads appstore_app, c_category, ai_skill_asset, ai_skill_artifact. Writes appstore_app, ops_audit_log. File targets none.",
         "operationId": "apps.create",
         "parameters": [],
         "requestBody": {
@@ -53184,7 +53184,7 @@
         "x-contract-kind": "create",
         "x-file-targets": [],
         "x-read-sources": [
-          "platform_app",
+          "appstore_app",
           "c_category",
           "ai_skill_asset",
           "ai_skill_artifact"
@@ -53195,7 +53195,7 @@
         "x-sdkwork-resource": "apps",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "platform_app",
+          "appstore_app",
           "ops_audit_log"
         ]
       }
@@ -53569,7 +53569,7 @@
     },
     "/backend/v3/api/platform/apps/templates": {
       "get": {
-        "description": "List app templates. Reads platform_app_template, ai_skill_asset, ai_skill_artifact. Writes none. File targets none.",
+        "description": "List app templates. Reads appstore_app_template, ai_skill_asset, ai_skill_artifact. Writes none. File targets none.",
         "operationId": "apps.templates.list",
         "parameters": [
           {
@@ -53723,7 +53723,7 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "platform_app_template",
+          "appstore_app_template",
           "ai_skill_asset",
           "ai_skill_artifact"
         ],
@@ -53735,7 +53735,7 @@
         "x-write-tables": []
       },
       "post": {
-        "description": "Create app template. Reads platform_app_template. Writes platform_app_template, ops_audit_log. File targets none.",
+        "description": "Create app template. Reads appstore_app_template. Writes appstore_app_template, ops_audit_log. File targets none.",
         "operationId": "apps.templates.create",
         "parameters": [],
         "requestBody": {
@@ -53814,7 +53814,7 @@
         "x-contract-kind": "create",
         "x-file-targets": [],
         "x-read-sources": [
-          "platform_app_template"
+          "appstore_app_template"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -53822,14 +53822,14 @@
         "x-sdkwork-resource": "apps.templates",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "platform_app_template",
+          "appstore_app_template",
           "ops_audit_log"
         ]
       }
     },
     "/backend/v3/api/platform/apps/templates/{templateId}": {
       "delete": {
-        "description": "Delete app template. Reads platform_app_template, ai_skill_action, ai_skill_asset, ai_skill_artifact. Writes platform_app_template, ai_skill_action, ai_skill_asset, ai_skill_artifact, ops_audit_log. File targets none.",
+        "description": "Delete app template. Reads appstore_app_template, ai_skill_action, ai_skill_asset, ai_skill_artifact. Writes appstore_app_template, ai_skill_action, ai_skill_asset, ai_skill_artifact, ops_audit_log. File targets none.",
         "operationId": "apps.templates.delete",
         "parameters": [
           {
@@ -53907,7 +53907,7 @@
         "x-contract-kind": "delete",
         "x-file-targets": [],
         "x-read-sources": [
-          "platform_app_template",
+          "appstore_app_template",
           "ai_skill_action",
           "ai_skill_asset",
           "ai_skill_artifact"
@@ -53918,7 +53918,7 @@
         "x-sdkwork-resource": "apps.templates",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "platform_app_template",
+          "appstore_app_template",
           "ai_skill_action",
           "ai_skill_asset",
           "ai_skill_artifact",
@@ -53926,7 +53926,7 @@
         ]
       },
       "get": {
-        "description": "List app template. Reads platform_app_template. Writes none. File targets none.",
+        "description": "List app template. Reads appstore_app_template. Writes none. File targets none.",
         "operationId": "apps.templates.retrieve",
         "parameters": [
           {
@@ -54004,7 +54004,7 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "platform_app_template"
+          "appstore_app_template"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -54014,7 +54014,7 @@
         "x-write-tables": []
       },
       "put": {
-        "description": "Update app template. Reads platform_app_template. Writes platform_app_template, ops_audit_log. File targets none.",
+        "description": "Update app template. Reads appstore_app_template. Writes appstore_app_template, ops_audit_log. File targets none.",
         "operationId": "apps.templates.update",
         "parameters": [
           {
@@ -54103,7 +54103,7 @@
         "x-contract-kind": "update",
         "x-file-targets": [],
         "x-read-sources": [
-          "platform_app_template"
+          "appstore_app_template"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -54111,14 +54111,14 @@
         "x-sdkwork-resource": "apps.templates",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "platform_app_template",
+          "appstore_app_template",
           "ops_audit_log"
         ]
       }
     },
     "/backend/v3/api/platform/apps/templates/{templateId}/publish": {
       "post": {
-        "description": "Sets app template publishStatus to PUBLISHED. Reads platform_app_template. Writes platform_app_template, ops_audit_log. File targets none.",
+        "description": "Sets app template publishStatus to PUBLISHED. Reads appstore_app_template. Writes appstore_app_template, ops_audit_log. File targets none.",
         "operationId": "apps.templates.publish",
         "parameters": [
           {
@@ -54196,7 +54196,7 @@
         "x-contract-kind": "action",
         "x-file-targets": [],
         "x-read-sources": [
-          "platform_app_template"
+          "appstore_app_template"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -54204,14 +54204,14 @@
         "x-sdkwork-resource": "apps.templates",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "platform_app_template",
+          "appstore_app_template",
           "ops_audit_log"
         ]
       }
     },
     "/backend/v3/api/platform/apps/templates/{templateId}/unpublish": {
       "post": {
-        "description": "Sets app template publishStatus to OFFLINE. Reads platform_app_template. Writes platform_app_template, ops_audit_log. File targets none.",
+        "description": "Sets app template publishStatus to OFFLINE. Reads appstore_app_template. Writes appstore_app_template, ops_audit_log. File targets none.",
         "operationId": "apps.templates.unpublish",
         "parameters": [
           {
@@ -54289,7 +54289,7 @@
         "x-contract-kind": "action",
         "x-file-targets": [],
         "x-read-sources": [
-          "platform_app_template"
+          "appstore_app_template"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -54297,14 +54297,14 @@
         "x-sdkwork-resource": "apps.templates",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "platform_app_template",
+          "appstore_app_template",
           "ops_audit_log"
         ]
       }
     },
     "/backend/v3/api/platform/apps/{appId}": {
       "delete": {
-        "description": "Delete app. Reads platform_app, ai_skill_action, ai_skill_asset, ai_skill_artifact. Writes platform_app, ai_skill_action, ai_skill_asset, ai_skill_artifact, ops_audit_log. File targets none.",
+        "description": "Delete app. Reads appstore_app, ai_skill_action, ai_skill_asset, ai_skill_artifact. Writes appstore_app, ai_skill_action, ai_skill_asset, ai_skill_artifact, ops_audit_log. File targets none.",
         "operationId": "apps.delete",
         "parameters": [
           {
@@ -54382,7 +54382,7 @@
         "x-contract-kind": "delete",
         "x-file-targets": [],
         "x-read-sources": [
-          "platform_app",
+          "appstore_app",
           "ai_skill_action",
           "ai_skill_asset",
           "ai_skill_artifact"
@@ -54393,7 +54393,7 @@
         "x-sdkwork-resource": "apps",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "platform_app",
+          "appstore_app",
           "ai_skill_action",
           "ai_skill_asset",
           "ai_skill_artifact",
@@ -54401,7 +54401,7 @@
         ]
       },
       "get": {
-        "description": "List app. Reads platform_app, c_category, ai_skill_asset, ai_skill_artifact. Writes none. File targets none.",
+        "description": "List app. Reads appstore_app, c_category, ai_skill_asset, ai_skill_artifact. Writes none. File targets none.",
         "operationId": "apps.retrieve",
         "parameters": [
           {
@@ -54479,7 +54479,7 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "platform_app",
+          "appstore_app",
           "c_category",
           "ai_skill_asset",
           "ai_skill_artifact"
@@ -54492,7 +54492,7 @@
         "x-write-tables": []
       },
       "put": {
-        "description": "Update app. Reads platform_app, c_category, ai_skill_asset, ai_skill_artifact. Writes platform_app, ops_audit_log. File targets none.",
+        "description": "Update app. Reads appstore_app, c_category, ai_skill_asset, ai_skill_artifact. Writes appstore_app, ops_audit_log. File targets none.",
         "operationId": "apps.update",
         "parameters": [
           {
@@ -54581,7 +54581,7 @@
         "x-contract-kind": "update",
         "x-file-targets": [],
         "x-read-sources": [
-          "platform_app",
+          "appstore_app",
           "c_category",
           "ai_skill_asset",
           "ai_skill_artifact"
@@ -54592,14 +54592,14 @@
         "x-sdkwork-resource": "apps",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "platform_app",
+          "appstore_app",
           "ops_audit_log"
         ]
       }
     },
     "/backend/v3/api/platform/apps/{appId}/disable": {
       "post": {
-        "description": "Sets PlusApp runtime status to INACTIVE without changing config.portal.marketStatus. Reads platform_app. Writes platform_app, ops_audit_log. File targets none.",
+        "description": "Sets PlusApp runtime status to INACTIVE without changing config.portal.marketStatus. Reads appstore_app. Writes appstore_app, ops_audit_log. File targets none.",
         "operationId": "apps.disable",
         "parameters": [
           {
@@ -54677,7 +54677,7 @@
         "x-contract-kind": "action",
         "x-file-targets": [],
         "x-read-sources": [
-          "platform_app"
+          "appstore_app"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -54685,14 +54685,14 @@
         "x-sdkwork-resource": "apps",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "platform_app",
+          "appstore_app",
           "ops_audit_log"
         ]
       }
     },
     "/backend/v3/api/platform/apps/{appId}/enable": {
       "post": {
-        "description": "Sets PlusApp runtime status to ACTIVE without changing config.portal.marketStatus. Reads platform_app. Writes platform_app, ops_audit_log. File targets none.",
+        "description": "Sets PlusApp runtime status to ACTIVE without changing config.portal.marketStatus. Reads appstore_app. Writes appstore_app, ops_audit_log. File targets none.",
         "operationId": "apps.enable",
         "parameters": [
           {
@@ -54770,7 +54770,7 @@
         "x-contract-kind": "action",
         "x-file-targets": [],
         "x-read-sources": [
-          "platform_app"
+          "appstore_app"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -54778,14 +54778,14 @@
         "x-sdkwork-resource": "apps",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "platform_app",
+          "appstore_app",
           "ops_audit_log"
         ]
       }
     },
     "/backend/v3/api/platform/apps/{appId}/publish": {
       "post": {
-        "description": "Sets config.portal.marketStatus to PUBLISHED without changing PlusApp runtime status. Reads platform_app. Writes platform_app, ops_audit_log. File targets none.",
+        "description": "Sets config.portal.marketStatus to PUBLISHED without changing PlusApp runtime status. Reads appstore_app. Writes appstore_app, ops_audit_log. File targets none.",
         "operationId": "apps.publish",
         "parameters": [
           {
@@ -54863,7 +54863,7 @@
         "x-contract-kind": "action",
         "x-file-targets": [],
         "x-read-sources": [
-          "platform_app"
+          "appstore_app"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -54871,14 +54871,14 @@
         "x-sdkwork-resource": "apps",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "platform_app",
+          "appstore_app",
           "ops_audit_log"
         ]
       }
     },
     "/backend/v3/api/platform/apps/{appId}/unpublish": {
       "post": {
-        "description": "Sets config.portal.marketStatus to OFFLINE without changing PlusApp runtime status. Reads platform_app. Writes platform_app, ops_audit_log. File targets none.",
+        "description": "Sets config.portal.marketStatus to OFFLINE without changing PlusApp runtime status. Reads appstore_app. Writes appstore_app, ops_audit_log. File targets none.",
         "operationId": "apps.unpublish",
         "parameters": [
           {
@@ -54956,7 +54956,7 @@
         "x-contract-kind": "action",
         "x-file-targets": [],
         "x-read-sources": [
-          "platform_app"
+          "appstore_app"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -54964,7 +54964,7 @@
         "x-sdkwork-resource": "apps",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "platform_app",
+          "appstore_app",
           "ops_audit_log"
         ]
       }

@@ -158,7 +158,7 @@ function stripAppSkillTables(content) {
     if (routeIndex === -1) {
       continue;
     }
-    const platformIndex = next.indexOf('    platform_app:\n', routeIndex);
+    const platformIndex = next.indexOf('    appstore_app:\n', routeIndex);
     if (platformIndex === -1) {
       continue;
     }
@@ -174,11 +174,11 @@ function stripAppSkillTables(content) {
 
   next = next.replace(
     /  - studio_app_template\n/g,
-    '  - platform_app_template\n',
+    '  - appstore_app_template\n',
   );
   next = next.replace(
     /^    studio_app_template:\n/gm,
-    '    platform_app_template:\n',
+    '    appstore_app_template:\n',
   );
 
   return next;
@@ -243,7 +243,7 @@ if (writeIfChanged(classificationYaml, replaceOAuthClassification(fs.readFileSyn
   console.log('updated frontend-route-classification.yaml');
 }
 
-if (writeIfChanged(staticSnapshotsYaml, fs.readFileSync(staticSnapshotsYaml, 'utf8').replaceAll('plus_app', 'platform_app'))) {
+if (writeIfChanged(staticSnapshotsYaml, fs.readFileSync(staticSnapshotsYaml, 'utf8').replaceAll('plus_app', 'appstore_app'))) {
   changed += 1;
   console.log('updated frontend-static-source-snapshots.yaml');
 }
