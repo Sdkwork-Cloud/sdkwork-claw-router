@@ -37,6 +37,14 @@ frontend_models:
   - id
   - email
   - username
+  - displayName
+  - mobile
+  - gender
+  - country
+  - province
+  - city
+  - district
+  - address
   - role
   - group
   - balance
@@ -44,6 +52,7 @@ frontend_models:
   - lastActive
   - lastUsed
   - createdAt
+  - updatedAt
   data_sources:
   - iam_user
   - commerce_account
@@ -58,6 +67,14 @@ frontend_models:
   - users.id
   - users.email
   - users.username
+  - users.displayName
+  - users.mobile
+  - users.gender
+  - users.country
+  - users.province
+  - users.city
+  - users.district
+  - users.address
   - users.role
   - users.group
   - users.balance
@@ -65,11 +82,20 @@ frontend_models:
   - users.lastActive
   - users.lastUsed
   - users.createdAt
+  - users.updatedAt
   - apiKeysMap
   - apiKeysLoadError
   data_sources:
   - iam_user
   - iam_gateway_api_key
+- route: /admin/user
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-user/src/userService.ts
+  interface: UserListQuery
+  fields:
+  - q
+  - pageSize
+  data_sources:
+  - iam_user
 - route: /admin/user
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-user/src/userService.ts
   interface: UserUpdateInput

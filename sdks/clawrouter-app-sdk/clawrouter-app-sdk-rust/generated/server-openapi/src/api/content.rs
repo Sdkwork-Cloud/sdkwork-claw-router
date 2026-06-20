@@ -3,7 +3,7 @@ use std::sync::Arc;
 use crate::api::paths::app_path;
 use crate::api::paths::append_query_string;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{ApplicationsCreateResult, ApplicationsVideosCreateResult, CommentsCreateResult, CommentsDeleteResult, CommentsLikesCreateResult, CommentsLikesCurrentDeleteResult, CommentsListResult, CommentsPinsCreateResult, CommentsPinsCurrentDeleteResult, CommentsRepliesListResult, CommentsReplyCreateResult, CommentsRetrieveResult, CommentsStatisticsListResult, CourseApplicationCreateRequest, CourseApplicationVideoUploadRequest, CoursesCategoriesListResult, CoursesListResult, CoursesOverviewRetrieveResult, CoursesRetrieveResult, FeedsCategoryRetrieveResult, FeedsCollectionsCreateResult, FeedsCollectionsCurrentDeleteResult, FeedsCollectionsCurrentRetrieveResult, FeedsCreateResult, FeedsDeleteResult, FeedsHotListResult, FeedsLikesCreateResult, FeedsLikesCurrentDeleteResult, FeedsListResult, FeedsMostLikedListResult, FeedsMostViewedListResult, FeedsOverviewRetrieveResult, FeedsRecommendListResult, FeedsRetrieveResult, FeedsSharesCreateResult, FeedsTopListResult, ForumCreateCommentRequest, ForumCreateFeedRequest, ForumReplyCommentRequest, UsersCurrentCommentsListResult};
+use crate::models::{ApplicationsCreateResult, ApplicationsVideosCreateResult, CommentsCreateResult, CommentsDeleteResult, CommentsLikesCreateResult, CommentsLikesCurrentDeleteResult, CommentsListResult, CommentsPinsCreateResult, CommentsPinsCurrentDeleteResult, CommentsRepliesListResult, CommentsReplyCreateResult, CommentsRetrieveResult, CommentsStatisticsListResult, CourseApplicationCreateRequest, CourseApplicationVideoUploadRequest, FeedsCategoryRetrieveResult, FeedsCollectionsCreateResult, FeedsCollectionsCurrentDeleteResult, FeedsCollectionsCurrentRetrieveResult, FeedsCreateResult, FeedsDeleteResult, FeedsHotListResult, FeedsLikesCreateResult, FeedsLikesCurrentDeleteResult, FeedsListResult, FeedsMostLikedListResult, FeedsMostViewedListResult, FeedsOverviewRetrieveResult, FeedsRecommendListResult, FeedsRetrieveResult, FeedsSharesCreateResult, FeedsTopListResult, ForumCreateCommentRequest, ForumCreateFeedRequest, ForumReplyCommentRequest, UsersCurrentCommentsListResult};
 
 #[derive(Clone)]
 pub struct ContentApi {
@@ -237,19 +237,6 @@ impl ContentApi {
         self.client.get(&path, None, None).await
     }
 
-    /// List courses
-    pub async fn courses_list(&self, level: Option<&str>, category: Option<&str>, q: Option<&str>, page: Option<&str>, page_size: Option<&str>) -> Result<CoursesListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("level", level, "form", true, false, None),
-            QueryParameterSpec::new("category", category, "form", true, false, None),
-            QueryParameterSpec::new("q", q, "form", true, false, None),
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-        ]);
-        let path = append_query_string(app_path(&"/courses".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
     /// Create course application
     pub async fn applications_create(&self, body: &CourseApplicationCreateRequest) -> Result<ApplicationsCreateResult, SdkworkError> {
         let path = app_path(&"/courses/applications".to_string());
@@ -260,24 +247,6 @@ impl ContentApi {
     pub async fn applications_videos_create(&self, body: &CourseApplicationVideoUploadRequest) -> Result<ApplicationsVideosCreateResult, SdkworkError> {
         let path = app_path(&"/courses/applications/videos".to_string());
         self.client.post(&path, Some(body), None, None, Some("multipart/form-data")).await
-    }
-
-    /// List course categories
-    pub async fn courses_categories_list(&self) -> Result<CoursesCategoriesListResult, SdkworkError> {
-        let path = app_path(&"/courses/categories".to_string());
-        self.client.get(&path, None, None).await
-    }
-
-    /// List course overview
-    pub async fn courses_overview_retrieve(&self) -> Result<CoursesOverviewRetrieveResult, SdkworkError> {
-        let path = app_path(&"/courses/overview".to_string());
-        self.client.get(&path, None, None).await
-    }
-
-    /// List course detail
-    pub async fn courses_retrieve(&self, course_id: &str) -> Result<CoursesRetrieveResult, SdkworkError> {
-        let path = app_path(&format!("/courses/{}", serialize_path_parameter(course_id, PathParameterSpec::new("courseId", "simple", false))));
-        self.client.get(&path, None, None).await
     }
 
 }

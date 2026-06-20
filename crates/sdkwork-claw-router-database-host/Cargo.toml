@@ -1,0 +1,17 @@
+[package]
+name = "sdkwork-claw-router-database-host"
+version.workspace = true
+edition.workspace = true
+license-file.workspace = true
+description = "SDKWork Claw Router database lifecycle bootstrap."
+
+[lib]
+name = "sdkwork_claw_router_database_host"
+path = "src/lib.rs"
+
+[dependencies]
+dotenvy = "0.15"
+sdkwork_database_config = { workspace = true }
+sdkwork_database_lifecycle = { workspace = true }
+sdkwork_database_spi = { workspace = true }
+sdkwork_database_sqlx = { workspace = true }

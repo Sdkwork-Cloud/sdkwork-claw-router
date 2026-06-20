@@ -34,6 +34,7 @@ members = [
     "services/sdkwork-claw-installer",
     "services/sdkwork-claw-provider-adapter",
     "services/sdkwork-claw-product",
+    "crates/sdkwork-claw-router-database-host",
     "data/sdkwork-models/sdkwork-models-rust",
 ]
 default-members = [
@@ -157,5 +158,12 @@ sdkwork-iam-web-adapter = { path = "../sdkwork-appbase/crates/sdkwork-iam-web-ad
 
 # SDKWork database dependencies
 sdkwork-database-config = { path = "../sdkwork-database/crates/sdkwork-database-config" }
+sdkwork-database-lifecycle = { path = "../sdkwork-database/crates/sdkwork-database-lifecycle" }
+sdkwork-database-spi = { path = "../sdkwork-database/crates/sdkwork-database-spi" }
 sdkwork-database-sqlx = { path = "../sdkwork-database/crates/sdkwork-database-sqlx" }
 sdkwork-database-repository = { path = "../sdkwork-database/crates/sdkwork-database-repository" }
+sdkwork_database_config = { path = "../sdkwork-database/crates/sdkwork-database-config", package = "sdkwork-database-config" }
+sdkwork_database_lifecycle = { path = "../sdkwork-database/crates/sdkwork-database-lifecycle", package = "sdkwork-database-lifecycle" }
+sdkwork_database_spi = { path = "../sdkwork-database/crates/sdkwork-database-spi", package = "sdkwork-database-spi" }
+sdkwork_database_sqlx = { path = "../sdkwork-database/crates/sdkwork-database-sqlx", package = "sdkwork-database-sqlx" }
+sdkwork-claw-router-database-host = { path = "crates/sdkwork-claw-router-database-host" }

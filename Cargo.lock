@@ -2269,6 +2269,7 @@ dependencies = [
  "sdkwork-claw-provider-adapter-contract",
  "sdkwork-claw-provider-adapter-http",
  "sdkwork-claw-provider-adapter-registry",
+ "sdkwork-claw-router-database-host",
  "sdkwork-commerce-bootstrap-manifest",
  "sdkwork-commerce-contract-service",
  "sdkwork-commerce-invoice-service",
@@ -2362,6 +2363,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "sdkwork-claw-router-database-host"
+version = "0.1.0"
+dependencies = [
+ "dotenvy",
+ "sdkwork-database-config",
+ "sdkwork-database-lifecycle",
+ "sdkwork-database-spi",
+ "sdkwork-database-sqlx",
+]
+
+[[package]]
 name = "sdkwork-claw-security"
 version = "0.1.0"
 
@@ -2435,6 +2447,17 @@ dependencies = [
 [[package]]
 name = "sdkwork-commerce-contract-service"
 version = "0.1.0"
+
+[[package]]
+name = "sdkwork-commerce-database-host"
+version = "0.1.0"
+dependencies = [
+ "dotenvy",
+ "sdkwork-database-config",
+ "sdkwork-database-lifecycle",
+ "sdkwork-database-spi",
+ "sdkwork-database-sqlx",
+]
 
 [[package]]
 name = "sdkwork-commerce-inventory-service"
@@ -2569,6 +2592,7 @@ dependencies = [
  "sdkwork-commerce-account-service",
  "sdkwork-commerce-catalog-service",
  "sdkwork-commerce-contract-service",
+ "sdkwork-commerce-database-host",
  "sdkwork-commerce-invoice-service",
  "sdkwork-commerce-order-service",
  "sdkwork-commerce-payment-service",

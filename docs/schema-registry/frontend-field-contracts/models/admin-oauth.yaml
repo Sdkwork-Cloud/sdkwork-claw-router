@@ -1,6 +1,6 @@
 fragment: models/admin-oauth
 frontend_models:
-- route: /admin/oauth
+- route: /admin/oauth/login-platforms
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
   interface: OAuthListParams
   fields:
@@ -8,13 +8,7 @@ frontend_models:
   - pageSize
   - providerCode
   - status
-  - surface
   - resourceAccountKind
-  - ownerMode
   - q
   data_sources:
-  - iam_oauth_provider_catalog
-  - iam_oauth_integration
-  - iam_oauth_client
-  - iam_oauth_surface
   - iam_oauth_resource_account

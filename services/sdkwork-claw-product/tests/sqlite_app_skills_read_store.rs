@@ -15,11 +15,11 @@ async fn sqlite_app_skills_reads_public_catalog_without_trusted_subject() {
     sqlx::query(
         r#"
         INSERT INTO c_category (
-            id, tenant_id, organization_id, parent_id, name, description, shop_id,
-            type, group_name, code, tags, icon_media_resource_id, icon_object_blob_id,
+            id, tenant_id, organization_id, parent_id, category_type, name, description,
+            code, tags, icon_media_resource_id, icon_object_blob_id,
             icon_resource_snapshot, sort_weight, path, visible, status
         )
-        VALUES (3901, 0, 0, NULL, 'Official', NULL, NULL, 19, NULL, 'official', NULL, NULL, NULL, NULL, 1, '/official', 1, 1)
+        VALUES (3901, 0, 0, NULL, 'skill_market', 'Official', NULL, 'official', NULL, NULL, NULL, NULL, 1, '/official', 1, 1)
         "#,
     )
     .execute(&pool)
@@ -311,11 +311,9 @@ async fn create_skill_tables(pool: &SqlitePool) {
             tenant_id INTEGER NOT NULL,
             organization_id INTEGER NOT NULL,
             parent_id INTEGER,
+            category_type TEXT NOT NULL,
             name TEXT NOT NULL,
             description TEXT,
-            shop_id INTEGER,
-            type INTEGER,
-            group_name TEXT,
             code TEXT,
             tags TEXT,
             icon_media_resource_id TEXT,
@@ -501,11 +499,11 @@ async fn seed_skills(pool: &SqlitePool) {
     sqlx::query(
         r#"
         INSERT INTO c_category (
-            id, tenant_id, organization_id, parent_id, name, description, shop_id,
-            type, group_name, code, tags, icon_media_resource_id, icon_object_blob_id,
+            id, tenant_id, organization_id, parent_id, category_type, name, description,
+            code, tags, icon_media_resource_id, icon_object_blob_id,
             icon_resource_snapshot, sort_weight, path, visible, status
         )
-        VALUES (301, 10, 20, NULL, 'Routing', NULL, NULL, 19, NULL, 'routing', NULL, NULL, NULL, NULL, 10, '/routing', 1, 1)
+        VALUES (301, 10, 20, NULL, 'skill_market', 'Routing', NULL, 'routing', NULL, NULL, NULL, NULL, 10, '/routing', 1, 1)
         "#,
     )
     .execute(pool)

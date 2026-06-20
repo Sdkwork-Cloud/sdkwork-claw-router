@@ -1,7 +1,7 @@
 import { appApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { ApplicationsCreateResult, ApplicationsVideosCreateResult, CommentsCreateResult, CommentsDeleteResult, CommentsLikesCreateResult, CommentsLikesCurrentDeleteResult, CommentsListResult, CommentsPinsCreateResult, CommentsPinsCurrentDeleteResult, CommentsRepliesListResult, CommentsReplyCreateResult, CommentsRetrieveResult, CommentsStatisticsListResult, CourseApplicationCreateRequest, CourseApplicationVideoUploadRequest, CoursesCategoriesListResult, CoursesListResult, CoursesOverviewRetrieveResult, CoursesRetrieveResult, FeedsCategoryRetrieveResult, FeedsCollectionsCreateResult, FeedsCollectionsCurrentDeleteResult, FeedsCollectionsCurrentRetrieveResult, FeedsCreateResult, FeedsDeleteResult, FeedsHotListResult, FeedsLikesCreateResult, FeedsLikesCurrentDeleteResult, FeedsListResult, FeedsMostLikedListResult, FeedsMostViewedListResult, FeedsOverviewRetrieveResult, FeedsRecommendListResult, FeedsRetrieveResult, FeedsSharesCreateResult, FeedsTopListResult, ForumCreateCommentRequest, ForumCreateFeedRequest, ForumReplyCommentRequest, UsersCurrentCommentsListResult } from '../types';
+import type { ApplicationsCreateResult, ApplicationsVideosCreateResult, CommentsCreateResult, CommentsDeleteResult, CommentsLikesCreateResult, CommentsLikesCurrentDeleteResult, CommentsListResult, CommentsPinsCreateResult, CommentsPinsCurrentDeleteResult, CommentsRepliesListResult, CommentsReplyCreateResult, CommentsRetrieveResult, CommentsStatisticsListResult, CourseApplicationCreateRequest, CourseApplicationVideoUploadRequest, FeedsCategoryRetrieveResult, FeedsCollectionsCreateResult, FeedsCollectionsCurrentDeleteResult, FeedsCollectionsCurrentRetrieveResult, FeedsCreateResult, FeedsDeleteResult, FeedsHotListResult, FeedsLikesCreateResult, FeedsLikesCurrentDeleteResult, FeedsListResult, FeedsMostLikedListResult, FeedsMostViewedListResult, FeedsOverviewRetrieveResult, FeedsRecommendListResult, FeedsRetrieveResult, FeedsSharesCreateResult, FeedsTopListResult, ForumCreateCommentRequest, ForumCreateFeedRequest, ForumReplyCommentRequest, UsersCurrentCommentsListResult } from '../types';
 
 
 export class ContentApplicationsVideosApi {
@@ -31,72 +31,6 @@ export class ContentApplicationsApi {
 /** Create course application */
   async create(body: CourseApplicationCreateRequest): Promise<ApplicationsCreateResult> {
     return this.client.post<ApplicationsCreateResult>(appApiPath(`/courses/applications`), body, undefined, undefined, 'application/json');
-  }
-}
-
-export class ContentCoursesOverviewApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** List course overview */
-  async retrieve(): Promise<CoursesOverviewRetrieveResult> {
-    return this.client.get<CoursesOverviewRetrieveResult>(appApiPath(`/courses/overview`));
-  }
-}
-
-export class ContentCoursesCategoriesApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** List course categories */
-  async list(): Promise<CoursesCategoriesListResult> {
-    return this.client.get<CoursesCategoriesListResult>(appApiPath(`/courses/categories`));
-  }
-}
-
-export interface ContentCoursesListParams {
-  level?: string;
-  category?: string;
-  q?: string;
-  page?: string;
-  pageSize?: string;
-}
-
-export class ContentCoursesApi {
-  private client: HttpClient;
-  public readonly categories: ContentCoursesCategoriesApi;
-  public readonly overview: ContentCoursesOverviewApi;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-    this.categories = new ContentCoursesCategoriesApi(client);
-    this.overview = new ContentCoursesOverviewApi(client);
-  }
-
-
-/** List courses */
-  async list(params?: ContentCoursesListParams): Promise<CoursesListResult> {
-    const query = buildQueryString([
-      { name: 'level', value: params?.level, style: 'form', explode: true, allowReserved: false },
-      { name: 'category', value: params?.category, style: 'form', explode: true, allowReserved: false },
-      { name: 'q', value: params?.q, style: 'form', explode: true, allowReserved: false },
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<CoursesListResult>(appendQueryString(appApiPath(`/courses`), query));
-  }
-
-/** List course detail */
-  async retrieve(courseId: string): Promise<CoursesRetrieveResult> {
-    return this.client.get<CoursesRetrieveResult>(appApiPath(`/courses/${serializePathParameter(courseId, { name: 'courseId', style: 'simple', explode: false })}`));
   }
 }
 
@@ -605,7 +539,6 @@ export class ContentApi {
   public readonly comments: ContentCommentsApi;
   public readonly feeds: ContentFeedsApi;
   public readonly users: ContentUsersApi;
-  public readonly courses: ContentCoursesApi;
   public readonly applications: ContentApplicationsApi;
 
   constructor(client: HttpClient) {
@@ -613,7 +546,6 @@ export class ContentApi {
     this.comments = new ContentCommentsApi(client);
     this.feeds = new ContentFeedsApi(client);
     this.users = new ContentUsersApi(client);
-    this.courses = new ContentCoursesApi(client);
     this.applications = new ContentApplicationsApi(client);
   }
 

@@ -20,7 +20,7 @@ pub struct AppCatalogItem {
     /// Features field on app catalog item.
     pub features: Vec<String>,
 
-    /// Stable application identity from plus_app.config.standard.appKey when present; falls back to plus_app.id only when appKey is absent.
+    /// Stable application identity from platform_app.config.standard.appKey when present; falls back to platform_app.id only when appKey is absent.
     pub id: String,
 
     /// Image field on app catalog item.

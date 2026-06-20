@@ -611,6 +611,7 @@ frontend_operations:
 - route: /admin/group
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts
   operation: fetchRuntimeRouteExplain
+  operation_scope: app_shell
   operation_id: routeExplain.create
   kind: action
   api_surface: backend

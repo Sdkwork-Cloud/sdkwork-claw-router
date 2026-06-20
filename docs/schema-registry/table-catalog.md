@@ -2,9 +2,9 @@
 
 生成来源：`docs/schema-registry/sdkwork-claw-router.tables.yaml`
 source: docs/schema-registry/sdkwork-claw-router.tables.yaml
-表总数：324
-table-count: 324
-本项目生成表：216
+表总数：306
+table-count: 306
+本项目生成表：215
 
 本文列出当前应用 schema registry 中登记的全部数据库表，并给出中文业务说明。`generated = no` 表示物理结构由外部系统或 Java 兼容实体拥有，当前应用只登记和读取契约。
 
@@ -12,16 +12,16 @@ table-count: 324
 
 | domain | 表数量 | 说明 |
 | --- | ---: | --- |
-| `ai` | 84 | AI 中转与模型服务 |
+| `ai` | 90 | AI 中转与模型服务 |
+| `classification` | 1 | classification |
 | `commerce` | 85 | 交易、计费与结算 |
-| `content` | 30 | 内容、文档与对象存储 |
+| `content` | 31 | 内容、文档与对象存储 |
 | `iam` | 32 | 身份、访问与安全 |
 | `integration` | 14 | 外部集成与服务商 |
-| `legacy` | 24 | Java Plus 兼容 |
 | `messaging` | 15 | 消息触达 |
 | `ops` | 14 | 运维治理 |
+| `platform` | 4 | platform |
 | `promotion` | 18 | 营销促销 |
-| `studio` | 6 | 工作台与应用市场 |
 | `system` | 2 | 系统安装 |
 
 ## AI 中转与模型服务
@@ -108,10 +108,22 @@ table-count: 324
 | `ai_generation_job` | AI 中转与模型服务的事件日志，记录 生成任务。 | `event_log` | `generation-service` | yes |
 | `ai_generation_asset` | AI 中转与模型服务的用户级数据，记录 生成资产。 | `user_entity` | `generation-service` | yes |
 | `ai_generation_asset_action` | AI 中转与模型服务的事件日志，记录 生成资产操作。 | `event_log` | `generation-service` | yes |
+| `ai_agent_skill_package` | AI 中转与模型服务的租户级主数据，记录 Agent 技能包。 | `tenant_entity` | `skills-service` | yes |
+| `ai_agent_skill` | AI 中转与模型服务的租户级主数据，记录 Agent 技能。 | `tenant_entity` | `skills-service` | yes |
+| `ai_user_agent_skill` | AI 中转与模型服务的租户级主数据，记录 用户 Agent 技能。 | `tenant_entity` | `skills-service` | yes |
+| `ai_skill_asset` | AI 中转与模型服务的租户级主数据，记录 skillasset。 | `tenant_entity` | `skills-service` | yes |
+| `ai_skill_artifact` | AI 中转与模型服务的租户级主数据，记录 skillartifact。 | `tenant_entity` | `skills-service` | yes |
+| `ai_skill_action` | AI 中转与模型服务的事件日志，记录 skillaction。 | `event_log` | `skills-service` | yes |
 | `ai_model_mapping_rule` | 模型映射规则主表，定义全局、vendor、账号或分组级模型别名映射。 | `rule_entity` | `ai-routing-service` | yes |
 | `ai_model_mapping_rule_item` | 模型映射规则条目，保存源模型到目标模型的具体映射。 | `relation_entity` | `ai-routing-service` | yes |
 | `ai_model_mapping_rule_binding` | 模型映射规则绑定，定义映射规则适用的账号、分组、vendor 或全局范围。 | `relation_entity` | `ai-routing-service` | yes |
 | `ai_usage_service_provider_edge` | 将 AI 用量事实关联到服务商链路，用于服务商结算和成本分摊。 | `commercial_usage_edge_fact` | `gateway-runtime` | yes |
+
+## classification
+
+| 表名 | 说明 | profile | write_owner | generated |
+| --- | --- | --- | --- | --- |
+| `c_category` | classification的租户级主数据，记录 ccategory。 | `tenant_entity` | `catalog-service` | yes |
 
 ## 交易、计费与结算
 
@@ -211,14 +223,15 @@ table-count: 324
 | `content_doc_page` | 内容、文档与对象存储的内容主数据，记录 文档页面。 | `content_entity` | `docs-service` | yes |
 | `content_openapi_snapshot` | 内容、文档与对象存储的投影快照，记录 OpenAPI 快照。 | `projection` | `api-docs-pipeline` | yes |
 | `content_sdk_release` | 内容、文档与对象存储的内容主数据，记录 SDK 发布。 | `content_entity` | `sdk-release-pipeline` | yes |
-| `content_forum_post` | 内容、文档与对象存储的外部兼容表，登记 论坛帖子 的现有物理结构供当前应用读取或映射。 | `retired_projection` | `legacy-static-fixture` | no |
-| `content_forum_comment` | 内容、文档与对象存储的外部兼容表，登记 论坛评论 的现有物理结构供当前应用读取或映射。 | `retired_projection` | `legacy-static-fixture` | no |
 | `content_reaction` | 内容、文档与对象存储的事件日志，记录 reaction。 | `event_log` | `content-engagement-service` | yes |
 | `content_course` | 内容、文档与对象存储的内容主数据，记录 course。 | `content_entity` | `course-service` | yes |
 | `content_course_section` | 内容、文档与对象存储的内容主数据，记录 课程章节。 | `content_entity` | `course-service` | yes |
 | `content_course_lesson` | 内容、文档与对象存储的内容主数据，记录 课程课时。 | `content_entity` | `course-service` | yes |
 | `content_course_relation` | 内容、文档与对象存储的关系绑定，记录 课程关系。 | `relation_entity` | `course-service` | yes |
 | `content_course_application` | 内容、文档与对象存储的用户内容申请，记录 课程申请。 | `user_content_application` | `course-service` | yes |
+| `content_forum_post` | 内容、文档与对象存储的租户级主数据，记录 论坛帖子。 | `tenant_entity` | `content-service` | yes |
+| `content_comment` | 内容、文档与对象存储的租户级主数据，记录 comment。 | `tenant_entity` | `content-service` | yes |
+| `content_favorite` | 内容、文档与对象存储的租户级主数据，记录 favorite。 | `tenant_entity` | `content-service` | yes |
 | `object_provider` | 内容、文档与对象存储的对象存储供应商，记录 供应商。 | `object_storage_provider` | `storage-service` | yes |
 | `object_bucket` | 内容、文档与对象存储的对象存储桶，记录 bucket。 | `object_storage_bucket` | `storage-service` | yes |
 | `storage_default_bucket_policy` | 内容、文档与对象存储的对象存储路由策略，记录 默认桶策略。 | `object_storage_routing_policy` | `storage-service` | yes |
@@ -294,35 +307,6 @@ table-count: 324
 | `integration_provider_invoice_import` | 外部集成与服务商的上游账单导入批次，记录 供应商账单导入批次。 | `upstream_provider_invoice_import` | `reconciliation-worker` | yes |
 | `integration_provider_invoice_item` | 外部集成与服务商的上游账单明细，记录 供应商账单明细。 | `upstream_provider_invoice_item` | `reconciliation-worker` | yes |
 
-## Java Plus 兼容
-
-| 表名 | 说明 | profile | write_owner | generated |
-| --- | --- | --- | --- | --- |
-| `plus_user_address` | Java Plus 兼容的外部兼容表，登记 用户地址 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `` | no |
-| `plus_app` | Java Plus 兼容的router owned standard，记录 app。 | `router_owned_standard` | `sdkwork-claw-product` | yes |
-| `plus_category` | Java Plus 兼容的java compatible owned，记录 category。 | `java_compatible_owned` | `` | yes |
-| `plus_agent_skill_package` | Java Plus 兼容的java compatible owned，记录 Agent 技能包。 | `java_compatible_owned` | `` | yes |
-| `plus_agent_skill` | Java Plus 兼容的java compatible owned，记录 Agent 技能。 | `java_compatible_owned` | `` | yes |
-| `plus_user_agent_skill` | Java Plus 兼容的java compatible owned，记录 用户 Agent 技能。 | `java_compatible_owned` | `sdkwork-claw-router` | yes |
-| `plus_feeds` | Java Plus 兼容的java compatible owned，记录 feeds。 | `java_compatible_owned` | `` | yes |
-| `plus_comments` | Java Plus 兼容的java compatible owned，记录 comments。 | `java_compatible_owned` | `` | yes |
-| `plus_content_vote` | Java Plus 兼容的java compatible owned，记录 内容投票。 | `java_compatible_owned` | `` | yes |
-| `plus_favorite` | Java Plus 兼容的java compatible owned，记录 favorite。 | `java_compatible_owned` | `` | yes |
-| `plus_department` | Java Plus 兼容的外部兼容表，登记 department 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `` | no |
-| `plus_position` | Java Plus 兼容的外部兼容表，登记 position 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `` | no |
-| `plus_member_card` | Java Plus 兼容的外部兼容表，登记 会员卡 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `` | no |
-| `plus_member_level` | Java Plus 兼容的外部兼容表，登记 会员等级 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `` | no |
-| `plus_card` | Java Plus 兼容的外部兼容表，登记 card 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `` | no |
-| `plus_card_template` | Java Plus 兼容的外部兼容表，登记 卡模板 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `` | no |
-| `plus_user_card` | Java Plus 兼容的外部兼容表，登记 用户卡 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `` | no |
-| `plus_invitation_code` | Java Plus 兼容的外部兼容表，登记 邀请码 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `` | no |
-| `plus_invitation_relation` | Java Plus 兼容的外部兼容表，登记 邀请关系 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `` | no |
-| `plus_partner` | Java Plus 兼容的外部兼容表，登记 partner 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `` | no |
-| `plus_usage_record` | Java Plus 兼容的外部兼容表，登记 usagerecord 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `` | no |
-| `plus_channel` | Java Plus 兼容的外部兼容表，登记 channel 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `` | no |
-| `plus_channel_account` | Java Plus 兼容的外部兼容表，登记 channel账户 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `` | no |
-| `plus_channel_proxy` | Java Plus 兼容的外部兼容表，登记 channel代理 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `` | no |
-
 ## 消息触达
 
 | 表名 | 说明 | profile | write_owner | generated |
@@ -362,6 +346,15 @@ table-count: 324
 | `ops_notification_preference` | 运维治理的通知偏好，记录 通知偏好。 | `notification_preference` | `notification-service` | yes |
 | `ops_metric_snapshot` | 运维治理的投影快照，记录 指标快照。 | `projection` | `metrics-worker` | yes |
 
+## platform
+
+| 表名 | 说明 | profile | write_owner | generated |
+| --- | --- | --- | --- | --- |
+| `platform_app` | platform的租户级主数据，记录 platformapp。 | `tenant_entity` | `app-center-service` | yes |
+| `platform_app_template` | platform的租户级主数据，记录 platformapp模板。 | `tenant_entity` | `app-center-service` | yes |
+| `platform_app_template_version` | platform的租户级主数据，记录 platformapp模板version。 | `tenant_entity` | `app-center-service` | yes |
+| `platform_app_template_usage` | platform的事件日志，记录 platformapp模板usage。 | `event_log` | `app-center-service` | yes |
+
 ## 营销促销
 
 | 表名 | 说明 | profile | write_owner | generated |
@@ -384,17 +377,6 @@ table-count: 324
 | `promotion_external_binding` | 营销促销的外部兼容表，登记 外部绑定 的现有物理结构供当前应用读取或映射。 | `appbase_standard` | `sdkwork-appbase-promotion` | no |
 | `promotion_external_operation` | 营销促销的外部兼容表，登记 外部操作 的现有物理结构供当前应用读取或映射。 | `external_operation_log` | `sdkwork-appbase-promotion` | no |
 | `promotion_event_outbox` | 营销促销的外部兼容表，登记 事件发件箱 的现有物理结构供当前应用读取或映射。 | `event_log` | `sdkwork-appbase-promotion` | no |
-
-## 工作台与应用市场
-
-| 表名 | 说明 | profile | write_owner | generated |
-| --- | --- | --- | --- | --- |
-| `studio_catalog_action` | 工作台与应用市场的事件日志，记录 市场行为。 | `event_log` | `portal-content-service` | yes |
-| `studio_catalog_asset` | 工作台与应用市场的租户级主数据，记录 市场资产。 | `tenant_entity` | `portal-content-service` | yes |
-| `studio_catalog_artifact` | 工作台与应用市场的租户级主数据，记录 市场制品。 | `tenant_entity` | `portal-content-service` | yes |
-| `studio_app_template` | 工作台与应用市场的租户级主数据，记录 应用模板。 | `tenant_entity` | `app-center-service` | yes |
-| `studio_app_template_version` | 工作台与应用市场的租户级主数据，记录 应用模板版本。 | `tenant_entity` | `app-center-service` | yes |
-| `studio_app_template_usage` | 工作台与应用市场的事件日志，记录 应用模板用量。 | `event_log` | `app-center-service` | yes |
 
 ## 系统安装
 

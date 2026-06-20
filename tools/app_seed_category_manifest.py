@@ -135,16 +135,20 @@ class AppCategorySeedManifestGenerator:
     def _portal_category(self, app: Any) -> str:
         if not isinstance(app, dict):
             return ""
-        plus_app = app.get("plusApp")
-        if not isinstance(plus_app, dict):
-            return ""
-        config = plus_app.get("config")
-        if not isinstance(config, dict):
-            return ""
-        portal = config.get("portal")
-        if not isinstance(portal, dict):
-            return ""
-        return self._string(portal.get("category")).strip()
+        for key in ("platformApp", "plusApp"):
+            app_record = app.get(key)
+            if not isinstance(app_record, dict):
+                continue
+            config = app_record.get("config")
+            if not isinstance(config, dict):
+                continue
+            portal = config.get("portal")
+            if not isinstance(portal, dict):
+                continue
+            category = self._string(portal.get("category")).strip()
+            if category:
+                return category
+        return ""
 
     def _category_id(self, code: str) -> int:
         return self.EXPLICIT_CATEGORY_IDS.get(code, 20_002_000 + self._stable_hash_mod(code, 900_000))

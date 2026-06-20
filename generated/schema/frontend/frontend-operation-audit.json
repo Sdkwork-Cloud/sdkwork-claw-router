@@ -132,15 +132,15 @@
       "operation": "createApp",
       "operation_scope": null,
       "read_sources": [
-        "plus_app",
-        "plus_category",
-        "studio_catalog_asset",
-        "studio_catalog_artifact"
+        "platform_app",
+        "c_category",
+        "ai_skill_asset",
+        "ai_skill_artifact"
       ],
       "route": "/admin/app",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
       "write_tables": [
-        "plus_app",
+        "platform_app",
         "ops_audit_log"
       ]
     },
@@ -153,12 +153,12 @@
       "operation": "createAppCategory",
       "operation_scope": null,
       "read_sources": [
-        "plus_category"
+        "c_category"
       ],
       "route": "/admin/app",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
       "write_tables": [
-        "plus_category",
+        "c_category",
         "ops_audit_log"
       ]
     },
@@ -171,12 +171,12 @@
       "operation": "createAppTemplate",
       "operation_scope": null,
       "read_sources": [
-        "studio_app_template"
+        "platform_app_template"
       ],
       "route": "/admin/app",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
       "write_tables": [
-        "studio_app_template",
+        "platform_app_template",
         "ops_audit_log"
       ]
     },
@@ -189,18 +189,18 @@
       "operation": "deleteApp",
       "operation_scope": null,
       "read_sources": [
-        "plus_app",
-        "studio_catalog_action",
-        "studio_catalog_asset",
-        "studio_catalog_artifact"
+        "platform_app",
+        "ai_skill_action",
+        "ai_skill_asset",
+        "ai_skill_artifact"
       ],
       "route": "/admin/app",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
       "write_tables": [
-        "plus_app",
-        "studio_catalog_action",
-        "studio_catalog_asset",
-        "studio_catalog_artifact",
+        "platform_app",
+        "ai_skill_action",
+        "ai_skill_asset",
+        "ai_skill_artifact",
         "ops_audit_log"
       ]
     },
@@ -213,12 +213,12 @@
       "operation": "deleteAppCategory",
       "operation_scope": null,
       "read_sources": [
-        "plus_category"
+        "c_category"
       ],
       "route": "/admin/app",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
       "write_tables": [
-        "plus_category",
+        "c_category",
         "ops_audit_log"
       ]
     },
@@ -231,18 +231,18 @@
       "operation": "deleteAppTemplate",
       "operation_scope": null,
       "read_sources": [
-        "studio_app_template",
-        "studio_catalog_action",
-        "studio_catalog_asset",
-        "studio_catalog_artifact"
+        "platform_app_template",
+        "ai_skill_action",
+        "ai_skill_asset",
+        "ai_skill_artifact"
       ],
       "route": "/admin/app",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
       "write_tables": [
-        "studio_app_template",
-        "studio_catalog_action",
-        "studio_catalog_asset",
-        "studio_catalog_artifact",
+        "platform_app_template",
+        "ai_skill_action",
+        "ai_skill_asset",
+        "ai_skill_artifact",
         "ops_audit_log"
       ]
     },
@@ -255,12 +255,12 @@
       "operation": "disableApp",
       "operation_scope": null,
       "read_sources": [
-        "plus_app"
+        "platform_app"
       ],
       "route": "/admin/app",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
       "write_tables": [
-        "plus_app",
+        "platform_app",
         "ops_audit_log"
       ]
     },
@@ -273,12 +273,12 @@
       "operation": "enableApp",
       "operation_scope": null,
       "read_sources": [
-        "plus_app"
+        "platform_app"
       ],
       "route": "/admin/app",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
       "write_tables": [
-        "plus_app",
+        "platform_app",
         "ops_audit_log"
       ]
     },
@@ -291,10 +291,10 @@
       "operation": "fetchApp",
       "operation_scope": null,
       "read_sources": [
-        "plus_app",
-        "plus_category",
-        "studio_catalog_asset",
-        "studio_catalog_artifact"
+        "platform_app",
+        "c_category",
+        "ai_skill_asset",
+        "ai_skill_artifact"
       ],
       "route": "/admin/app",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
@@ -309,7 +309,7 @@
       "operation": "fetchAppCategories",
       "operation_scope": null,
       "read_sources": [
-        "plus_category"
+        "c_category"
       ],
       "route": "/admin/app",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
@@ -324,7 +324,7 @@
       "operation": "fetchAppTemplate",
       "operation_scope": null,
       "read_sources": [
-        "studio_app_template"
+        "platform_app_template"
       ],
       "route": "/admin/app",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
@@ -339,9 +339,9 @@
       "operation": "fetchAppTemplates",
       "operation_scope": null,
       "read_sources": [
-        "studio_app_template",
-        "studio_catalog_asset",
-        "studio_catalog_artifact"
+        "platform_app_template",
+        "ai_skill_asset",
+        "ai_skill_artifact"
       ],
       "route": "/admin/app",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
@@ -356,10 +356,10 @@
       "operation": "fetchApps",
       "operation_scope": null,
       "read_sources": [
-        "plus_app",
-        "plus_category",
-        "studio_catalog_asset",
-        "studio_catalog_artifact"
+        "platform_app",
+        "c_category",
+        "ai_skill_asset",
+        "ai_skill_artifact"
       ],
       "route": "/admin/app",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
@@ -374,12 +374,12 @@
       "operation": "offlineApp",
       "operation_scope": null,
       "read_sources": [
-        "plus_app"
+        "platform_app"
       ],
       "route": "/admin/app",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
       "write_tables": [
-        "plus_app",
+        "platform_app",
         "ops_audit_log"
       ]
     },
@@ -392,12 +392,12 @@
       "operation": "offlineAppTemplate",
       "operation_scope": null,
       "read_sources": [
-        "studio_app_template"
+        "platform_app_template"
       ],
       "route": "/admin/app",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
       "write_tables": [
-        "studio_app_template",
+        "platform_app_template",
         "ops_audit_log"
       ]
     },
@@ -410,12 +410,12 @@
       "operation": "publishApp",
       "operation_scope": null,
       "read_sources": [
-        "plus_app"
+        "platform_app"
       ],
       "route": "/admin/app",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
       "write_tables": [
-        "plus_app",
+        "platform_app",
         "ops_audit_log"
       ]
     },
@@ -428,12 +428,12 @@
       "operation": "publishAppTemplate",
       "operation_scope": null,
       "read_sources": [
-        "studio_app_template"
+        "platform_app_template"
       ],
       "route": "/admin/app",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
       "write_tables": [
-        "studio_app_template",
+        "platform_app_template",
         "ops_audit_log"
       ]
     },
@@ -446,15 +446,15 @@
       "operation": "updateApp",
       "operation_scope": null,
       "read_sources": [
-        "plus_app",
-        "plus_category",
-        "studio_catalog_asset",
-        "studio_catalog_artifact"
+        "platform_app",
+        "c_category",
+        "ai_skill_asset",
+        "ai_skill_artifact"
       ],
       "route": "/admin/app",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
       "write_tables": [
-        "plus_app",
+        "platform_app",
         "ops_audit_log"
       ]
     },
@@ -467,12 +467,12 @@
       "operation": "updateAppCategory",
       "operation_scope": null,
       "read_sources": [
-        "plus_category"
+        "c_category"
       ],
       "route": "/admin/app",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
       "write_tables": [
-        "plus_category",
+        "c_category",
         "ops_audit_log"
       ]
     },
@@ -485,12 +485,12 @@
       "operation": "updateAppTemplate",
       "operation_scope": null,
       "read_sources": [
-        "studio_app_template"
+        "platform_app_template"
       ],
       "route": "/admin/app",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
       "write_tables": [
-        "studio_app_template",
+        "platform_app_template",
         "ops_audit_log"
       ]
     },
@@ -1081,7 +1081,7 @@
       "operation": "fetchAdminCourseComments",
       "operation_scope": null,
       "read_sources": [
-        "content_forum_comment"
+        "content_comment"
       ],
       "route": "/admin/courses",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/src/courseAdminService.ts",
@@ -1175,7 +1175,7 @@
         "content_course",
         "content_course_lesson",
         "content_course_application",
-        "content_forum_comment",
+        "content_comment",
         "content_reaction"
       ],
       "route": "/admin/courses",
@@ -1191,12 +1191,12 @@
       "operation": "moderateAdminCourseComment",
       "operation_scope": null,
       "read_sources": [
-        "content_forum_comment"
+        "content_comment"
       ],
       "route": "/admin/courses",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/src/courseAdminService.ts",
       "write_tables": [
-        "content_forum_comment",
+        "content_comment",
         "ops_audit_log"
       ]
     },
@@ -1301,7 +1301,9 @@
       "read_sources": [
         "ai_usage_fact",
         "ai_request_trace",
-        "ops_metric_snapshot"
+        "ops_metric_snapshot",
+        "iam_user",
+        "iam_organization_membership"
       ],
       "route": "/admin/dashboard",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-dashboard/src/dashboardService.ts",
@@ -1889,6 +1891,25 @@
     },
     {
       "api_method": "GET",
+      "api_path": "/backend/v3/api/ai/channel_groups/{channelGroupId}/route_explain",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchGroupRouteExplain",
+      "operation_scope": null,
+      "read_sources": [
+        "ai_channel_group",
+        "ai_channel_group_member",
+        "ai_channel_group_resource",
+        "ai_channel",
+        "ai_provider"
+      ],
+      "route": "/admin/group",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
       "api_path": "/backend/v3/api/ai/channel_groups",
       "api_surface": "backend",
       "file_targets": [],
@@ -1898,6 +1919,29 @@
       "read_sources": [
         "ai_channel_group",
         "ai_channel_group_metric_snapshot",
+        "ai_pricing_plan"
+      ],
+      "route": "/admin/group",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/ai/route_explain",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "fetchRuntimeRouteExplain",
+      "operation_scope": "app_shell",
+      "read_sources": [
+        "ai_api_key",
+        "ai_channel_group",
+        "ai_channel_group_member",
+        "ai_model_provider_route",
+        "ai_provider_route",
+        "ai_routing_policy",
+        "ai_routing_rule",
+        "ai_model_pricing",
         "ai_pricing_plan"
       ],
       "route": "/admin/group",
@@ -2298,7 +2342,7 @@
       "operation_scope": null,
       "read_sources": [
         "ai_mcp_server",
-        "plus_category"
+        "c_category"
       ],
       "route": "/admin/mcp",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-mcp/src/mcpService.ts",
@@ -2357,7 +2401,7 @@
       "operation_scope": null,
       "read_sources": [
         "ai_mcp_server",
-        "plus_category"
+        "c_category"
       ],
       "route": "/admin/mcp",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-mcp/src/mcpService.ts",
@@ -2407,7 +2451,7 @@
       "operation_scope": null,
       "read_sources": [
         "ai_mcp_server",
-        "plus_category"
+        "c_category"
       ],
       "route": "/admin/mcp",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-mcp/src/mcpService.ts",
@@ -2481,7 +2525,7 @@
       "operation_scope": null,
       "read_sources": [
         "ai_mcp_server",
-        "plus_category"
+        "c_category"
       ],
       "route": "/admin/mcp",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-mcp/src/mcpService.ts",
@@ -4365,244 +4409,52 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/open_platform/accounts",
+      "api_path": "/backend/v3/api/iam/oauth/resource_accounts",
       "api_surface": "backend",
       "file_targets": [],
       "kind": "create",
-      "operation": "createOpenPlatformAccount",
-      "operation_scope": null,
+      "operation": "createOAuthResourceAccount",
+      "operation_scope": "app_shell",
       "read_sources": [
-        "open_platform_account"
+        "iam_oauth_resource_account"
       ],
-      "route": "/admin/open-platform",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts",
+      "route": "/admin/oauth/login-platforms",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
       "write_tables": [
-        "open_platform_account",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/open_platform/accounts/{accountId}/entries",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "create",
-      "operation": "createOpenPlatformAccountEntry",
-      "operation_scope": null,
-      "read_sources": [
-        "open_platform_account",
-        "open_platform_entry"
-      ],
-      "route": "/admin/open-platform",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts",
-      "write_tables": [
-        "open_platform_entry",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/open_platform/accounts/{accountId}/pay_bindings",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "create",
-      "operation": "createOpenPlatformAccountPayBinding",
-      "operation_scope": null,
-      "read_sources": [
-        "open_platform_account",
-        "open_platform_pay_binding"
-      ],
-      "route": "/admin/open-platform",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts",
-      "write_tables": [
-        "open_platform_pay_binding",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "DELETE",
-      "api_path": "/backend/v3/api/open_platform/accounts/{accountId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "delete",
-      "operation": "deleteOpenPlatformAccount",
-      "operation_scope": null,
-      "read_sources": [
-        "open_platform_account"
-      ],
-      "route": "/admin/open-platform",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts",
-      "write_tables": [
-        "open_platform_account",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "DELETE",
-      "api_path": "/backend/v3/api/open_platform/accounts/{accountId}/entries/{entryId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "delete",
-      "operation": "deleteOpenPlatformAccountEntry",
-      "operation_scope": null,
-      "read_sources": [
-        "open_platform_account",
-        "open_platform_entry"
-      ],
-      "route": "/admin/open-platform",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts",
-      "write_tables": [
-        "open_platform_entry",
-        "open_platform_account",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "DELETE",
-      "api_path": "/backend/v3/api/open_platform/accounts/{accountId}/pay_bindings/{bindingId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "delete",
-      "operation": "deleteOpenPlatformAccountPayBinding",
-      "operation_scope": null,
-      "read_sources": [
-        "open_platform_account",
-        "open_platform_pay_binding"
-      ],
-      "route": "/admin/open-platform",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts",
-      "write_tables": [
-        "open_platform_pay_binding",
+        "iam_oauth_resource_account",
         "ops_audit_log"
       ]
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/open_platform/accounts/{accountId}/entries",
+      "api_path": "/backend/v3/api/iam/oauth/resource_accounts",
       "api_surface": "backend",
       "file_targets": [],
       "kind": "read",
-      "operation": "listOpenPlatformAccountEntries",
-      "operation_scope": null,
+      "operation": "listOAuthResourceAccounts",
+      "operation_scope": "app_shell",
       "read_sources": [
-        "open_platform_account",
-        "open_platform_entry"
+        "iam_oauth_resource_account"
       ],
-      "route": "/admin/open-platform",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/open_platform/accounts/{accountId}/pay_bindings",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "read",
-      "operation": "listOpenPlatformAccountPayBindings",
-      "operation_scope": null,
-      "read_sources": [
-        "open_platform_account",
-        "open_platform_pay_binding"
-      ],
-      "route": "/admin/open-platform",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/open_platform/accounts",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "read",
-      "operation": "listOpenPlatformAccounts",
-      "operation_scope": null,
-      "read_sources": [
-        "open_platform_account"
-      ],
-      "route": "/admin/open-platform",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/open_platform/manifests",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "read",
-      "operation": "listOpenPlatformManifests",
-      "operation_scope": null,
-      "read_sources": [
-        "open_platform_manifest"
-      ],
-      "route": "/admin/open-platform",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/open_platform/providers",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "read",
-      "operation": "listOpenPlatformProviders",
-      "operation_scope": null,
-      "read_sources": [
-        "open_platform_provider"
-      ],
-      "route": "/admin/open-platform",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/open_platform/accounts/{accountId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "read",
-      "operation": "retrieveOpenPlatformAccount",
-      "operation_scope": null,
-      "read_sources": [
-        "open_platform_account"
-      ],
-      "route": "/admin/open-platform",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts",
+      "route": "/admin/oauth/login-platforms",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
       "write_tables": []
     },
     {
       "api_method": "PATCH",
-      "api_path": "/backend/v3/api/open_platform/accounts/{accountId}",
+      "api_path": "/backend/v3/api/iam/oauth/resource_accounts/{resourceAccountId}",
       "api_surface": "backend",
       "file_targets": [],
       "kind": "update",
-      "operation": "updateOpenPlatformAccount",
-      "operation_scope": null,
+      "operation": "updateOAuthResourceAccount",
+      "operation_scope": "app_shell",
       "read_sources": [
-        "open_platform_account"
+        "iam_oauth_resource_account"
       ],
-      "route": "/admin/open-platform",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts",
+      "route": "/admin/oauth/login-platforms",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
       "write_tables": [
-        "open_platform_account",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "PATCH",
-      "api_path": "/backend/v3/api/open_platform/accounts/{accountId}/entries/{entryId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "update",
-      "operation": "updateOpenPlatformAccountEntry",
-      "operation_scope": null,
-      "read_sources": [
-        "open_platform_account",
-        "open_platform_entry"
-      ],
-      "route": "/admin/open-platform",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts",
-      "write_tables": [
-        "open_platform_entry",
-        "open_platform_account",
+        "iam_oauth_resource_account",
         "ops_audit_log"
       ]
     },
@@ -4758,7 +4610,7 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/orders/management",
+      "api_path": "/backend/v3/api/orders",
       "api_surface": "backend",
       "file_targets": [],
       "kind": "read",
@@ -4827,7 +4679,7 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/orders/management/{orderId}",
+      "api_path": "/backend/v3/api/orders/{orderId}",
       "api_surface": "backend",
       "file_targets": [],
       "kind": "read",
@@ -4897,7 +4749,7 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/refunds/management",
+      "api_path": "/backend/v3/api/refunds",
       "api_surface": "backend",
       "file_targets": [],
       "kind": "read",
@@ -4917,7 +4769,7 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/refunds/management/{refundId}",
+      "api_path": "/backend/v3/api/refunds/{refundId}",
       "api_surface": "backend",
       "file_targets": [],
       "kind": "read",
@@ -5875,7 +5727,7 @@
       "operation_scope": null,
       "read_sources": [
         "ai_prompt",
-        "plus_category"
+        "c_category"
       ],
       "route": "/admin/prompts",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts",
@@ -5896,7 +5748,7 @@
         "ai_prompt",
         "ai_prompt_version",
         "ai_prompt_binding",
-        "plus_category"
+        "c_category"
       ],
       "route": "/admin/prompts",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts",
@@ -5916,7 +5768,7 @@
       "read_sources": [
         "ai_prompt",
         "ai_prompt_version",
-        "plus_category"
+        "c_category"
       ],
       "route": "/admin/prompts",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts",
@@ -5938,7 +5790,7 @@
         "ai_prompt",
         "ai_prompt_version",
         "ai_prompt_binding",
-        "plus_category"
+        "c_category"
       ],
       "route": "/admin/prompts",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts",
@@ -5955,7 +5807,7 @@
       "read_sources": [
         "ai_prompt",
         "ai_prompt_version",
-        "plus_category"
+        "c_category"
       ],
       "route": "/admin/prompts",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts",
@@ -5971,7 +5823,7 @@
       "operation_scope": null,
       "read_sources": [
         "ai_prompt",
-        "plus_category"
+        "c_category"
       ],
       "route": "/admin/prompts",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts",
@@ -5988,7 +5840,7 @@
       "read_sources": [
         "ai_prompt",
         "ai_prompt_version",
-        "plus_category"
+        "c_category"
       ],
       "route": "/admin/prompts",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts",
@@ -6009,7 +5861,7 @@
       "read_sources": [
         "ai_prompt",
         "ai_prompt_version",
-        "plus_category"
+        "c_category"
       ],
       "route": "/admin/prompts",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts",
@@ -6029,7 +5881,7 @@
         "ai_prompt",
         "ai_prompt_version",
         "ai_prompt_binding",
-        "plus_category"
+        "c_category"
       ],
       "route": "/admin/prompts",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts",
@@ -6722,12 +6574,12 @@
       "operation": "approveSkill",
       "operation_scope": null,
       "read_sources": [
-        "plus_agent_skill"
+        "ai_agent_skill"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
       "write_tables": [
-        "plus_agent_skill",
+        "ai_agent_skill",
         "ops_audit_log"
       ]
     },
@@ -6740,14 +6592,14 @@
       "operation": "createSkill",
       "operation_scope": null,
       "read_sources": [
-        "plus_agent_skill",
-        "plus_agent_skill_package",
-        "plus_category"
+        "ai_agent_skill",
+        "ai_agent_skill_package",
+        "c_category"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
       "write_tables": [
-        "plus_agent_skill",
+        "ai_agent_skill",
         "ops_audit_log"
       ]
     },
@@ -6760,15 +6612,15 @@
       "operation": "createSkillArtifact",
       "operation_scope": null,
       "read_sources": [
-        "plus_agent_skill",
-        "studio_catalog_artifact",
-        "studio_catalog_asset"
+        "ai_agent_skill",
+        "ai_skill_artifact",
+        "ai_skill_asset"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
       "write_tables": [
-        "studio_catalog_artifact",
-        "studio_catalog_asset",
+        "ai_skill_artifact",
+        "ai_skill_asset",
         "ops_audit_log"
       ]
     },
@@ -6781,14 +6633,14 @@
       "operation": "createSkillAsset",
       "operation_scope": null,
       "read_sources": [
-        "plus_agent_skill",
-        "studio_catalog_asset",
-        "studio_catalog_artifact"
+        "ai_agent_skill",
+        "ai_skill_asset",
+        "ai_skill_artifact"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
       "write_tables": [
-        "studio_catalog_asset",
+        "ai_skill_asset",
         "ops_audit_log"
       ]
     },
@@ -6801,12 +6653,12 @@
       "operation": "createSkillCategory",
       "operation_scope": null,
       "read_sources": [
-        "plus_category"
+        "c_category"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
       "write_tables": [
-        "plus_category",
+        "c_category",
         "ops_audit_log"
       ]
     },
@@ -6819,13 +6671,13 @@
       "operation": "createSkillPackage",
       "operation_scope": null,
       "read_sources": [
-        "plus_agent_skill_package",
-        "plus_category"
+        "ai_agent_skill_package",
+        "c_category"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
       "write_tables": [
-        "plus_agent_skill_package",
+        "ai_agent_skill_package",
         "ops_audit_log"
       ]
     },
@@ -6838,14 +6690,14 @@
       "operation": "deleteSkill",
       "operation_scope": null,
       "read_sources": [
-        "plus_agent_skill",
-        "plus_user_agent_skill"
+        "ai_agent_skill",
+        "ai_user_agent_skill"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
       "write_tables": [
-        "plus_agent_skill",
-        "plus_user_agent_skill",
+        "ai_agent_skill",
+        "ai_user_agent_skill",
         "ops_audit_log"
       ]
     },
@@ -6858,15 +6710,15 @@
       "operation": "deleteSkillArtifact",
       "operation_scope": null,
       "read_sources": [
-        "plus_agent_skill",
-        "studio_catalog_artifact",
-        "studio_catalog_asset"
+        "ai_agent_skill",
+        "ai_skill_artifact",
+        "ai_skill_asset"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
       "write_tables": [
-        "studio_catalog_artifact",
-        "studio_catalog_asset",
+        "ai_skill_artifact",
+        "ai_skill_asset",
         "ops_audit_log"
       ]
     },
@@ -6879,13 +6731,13 @@
       "operation": "deleteSkillAsset",
       "operation_scope": null,
       "read_sources": [
-        "plus_agent_skill",
-        "studio_catalog_asset"
+        "ai_agent_skill",
+        "ai_skill_asset"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
       "write_tables": [
-        "studio_catalog_asset",
+        "ai_skill_asset",
         "ops_audit_log"
       ]
     },
@@ -6898,14 +6750,14 @@
       "operation": "deleteSkillCategory",
       "operation_scope": null,
       "read_sources": [
-        "plus_category",
-        "plus_agent_skill_package",
-        "plus_agent_skill"
+        "c_category",
+        "ai_agent_skill_package",
+        "ai_agent_skill"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
       "write_tables": [
-        "plus_category",
+        "c_category",
         "ops_audit_log"
       ]
     },
@@ -6918,14 +6770,14 @@
       "operation": "deleteSkillPackage",
       "operation_scope": null,
       "read_sources": [
-        "plus_agent_skill_package",
-        "plus_agent_skill"
+        "ai_agent_skill_package",
+        "ai_agent_skill"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
       "write_tables": [
-        "plus_agent_skill_package",
-        "plus_agent_skill",
+        "ai_agent_skill_package",
+        "ai_agent_skill",
         "ops_audit_log"
       ]
     },
@@ -6938,12 +6790,12 @@
       "operation": "disableSkill",
       "operation_scope": null,
       "read_sources": [
-        "plus_agent_skill"
+        "ai_agent_skill"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
       "write_tables": [
-        "plus_agent_skill",
+        "ai_agent_skill",
         "ops_audit_log"
       ]
     },
@@ -6956,12 +6808,12 @@
       "operation": "disableSkillPackage",
       "operation_scope": null,
       "read_sources": [
-        "plus_agent_skill_package"
+        "ai_agent_skill_package"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
       "write_tables": [
-        "plus_agent_skill_package",
+        "ai_agent_skill_package",
         "ops_audit_log"
       ]
     },
@@ -6974,12 +6826,12 @@
       "operation": "enableSkill",
       "operation_scope": null,
       "read_sources": [
-        "plus_agent_skill"
+        "ai_agent_skill"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
       "write_tables": [
-        "plus_agent_skill",
+        "ai_agent_skill",
         "ops_audit_log"
       ]
     },
@@ -6992,12 +6844,12 @@
       "operation": "enableSkillPackage",
       "operation_scope": null,
       "read_sources": [
-        "plus_agent_skill_package"
+        "ai_agent_skill_package"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
       "write_tables": [
-        "plus_agent_skill_package",
+        "ai_agent_skill_package",
         "ops_audit_log"
       ]
     },
@@ -7010,9 +6862,9 @@
       "operation": "fetchSkillArtifacts",
       "operation_scope": null,
       "read_sources": [
-        "plus_agent_skill",
-        "studio_catalog_artifact",
-        "studio_catalog_asset"
+        "ai_agent_skill",
+        "ai_skill_artifact",
+        "ai_skill_asset"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
@@ -7027,9 +6879,9 @@
       "operation": "fetchSkillAssets",
       "operation_scope": null,
       "read_sources": [
-        "plus_agent_skill",
-        "studio_catalog_asset",
-        "studio_catalog_artifact"
+        "ai_agent_skill",
+        "ai_skill_asset",
+        "ai_skill_artifact"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
@@ -7044,7 +6896,7 @@
       "operation": "fetchSkillCategories",
       "operation_scope": null,
       "read_sources": [
-        "plus_category"
+        "c_category"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
@@ -7059,8 +6911,8 @@
       "operation": "fetchSkillPackages",
       "operation_scope": null,
       "read_sources": [
-        "plus_agent_skill_package",
-        "plus_category"
+        "ai_agent_skill_package",
+        "c_category"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
@@ -7075,9 +6927,9 @@
       "operation": "fetchSkills",
       "operation_scope": null,
       "read_sources": [
-        "plus_agent_skill",
-        "plus_agent_skill_package",
-        "plus_category"
+        "ai_agent_skill",
+        "ai_agent_skill_package",
+        "c_category"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
@@ -7092,9 +6944,9 @@
       "operation": "getSkill",
       "operation_scope": null,
       "read_sources": [
-        "plus_agent_skill",
-        "plus_agent_skill_package",
-        "plus_category"
+        "ai_agent_skill",
+        "ai_agent_skill_package",
+        "c_category"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
@@ -7109,9 +6961,9 @@
       "operation": "getSkillArtifact",
       "operation_scope": null,
       "read_sources": [
-        "plus_agent_skill",
-        "studio_catalog_artifact",
-        "studio_catalog_asset"
+        "ai_agent_skill",
+        "ai_skill_artifact",
+        "ai_skill_asset"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
@@ -7126,9 +6978,9 @@
       "operation": "getSkillAsset",
       "operation_scope": null,
       "read_sources": [
-        "plus_agent_skill",
-        "studio_catalog_asset",
-        "studio_catalog_artifact"
+        "ai_agent_skill",
+        "ai_skill_asset",
+        "ai_skill_artifact"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
@@ -7143,8 +6995,8 @@
       "operation": "getSkillPackage",
       "operation_scope": null,
       "read_sources": [
-        "plus_agent_skill_package",
-        "plus_category"
+        "ai_agent_skill_package",
+        "c_category"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
@@ -7159,12 +7011,12 @@
       "operation": "offlineSkill",
       "operation_scope": null,
       "read_sources": [
-        "plus_agent_skill"
+        "ai_agent_skill"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
       "write_tables": [
-        "plus_agent_skill",
+        "ai_agent_skill",
         "ops_audit_log"
       ]
     },
@@ -7177,12 +7029,12 @@
       "operation": "publishSkill",
       "operation_scope": null,
       "read_sources": [
-        "plus_agent_skill"
+        "ai_agent_skill"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
       "write_tables": [
-        "plus_agent_skill",
+        "ai_agent_skill",
         "ops_audit_log"
       ]
     },
@@ -7195,12 +7047,12 @@
       "operation": "rejectSkill",
       "operation_scope": null,
       "read_sources": [
-        "plus_agent_skill"
+        "ai_agent_skill"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
       "write_tables": [
-        "plus_agent_skill",
+        "ai_agent_skill",
         "ops_audit_log"
       ]
     },
@@ -7213,14 +7065,14 @@
       "operation": "updateSkill",
       "operation_scope": null,
       "read_sources": [
-        "plus_agent_skill",
-        "plus_agent_skill_package",
-        "plus_category"
+        "ai_agent_skill",
+        "ai_agent_skill_package",
+        "c_category"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
       "write_tables": [
-        "plus_agent_skill",
+        "ai_agent_skill",
         "ops_audit_log"
       ]
     },
@@ -7233,15 +7085,15 @@
       "operation": "updateSkillArtifact",
       "operation_scope": null,
       "read_sources": [
-        "plus_agent_skill",
-        "studio_catalog_artifact",
-        "studio_catalog_asset"
+        "ai_agent_skill",
+        "ai_skill_artifact",
+        "ai_skill_asset"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
       "write_tables": [
-        "studio_catalog_artifact",
-        "studio_catalog_asset",
+        "ai_skill_artifact",
+        "ai_skill_asset",
         "ops_audit_log"
       ]
     },
@@ -7254,14 +7106,14 @@
       "operation": "updateSkillAsset",
       "operation_scope": null,
       "read_sources": [
-        "plus_agent_skill",
-        "studio_catalog_asset",
-        "studio_catalog_artifact"
+        "ai_agent_skill",
+        "ai_skill_asset",
+        "ai_skill_artifact"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
       "write_tables": [
-        "studio_catalog_asset",
+        "ai_skill_asset",
         "ops_audit_log"
       ]
     },
@@ -7274,12 +7126,12 @@
       "operation": "updateSkillCategory",
       "operation_scope": null,
       "read_sources": [
-        "plus_category"
+        "c_category"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
       "write_tables": [
-        "plus_category",
+        "c_category",
         "ops_audit_log"
       ]
     },
@@ -7292,13 +7144,13 @@
       "operation": "updateSkillPackage",
       "operation_scope": null,
       "read_sources": [
-        "plus_agent_skill_package",
-        "plus_category"
+        "ai_agent_skill_package",
+        "c_category"
       ],
       "route": "/admin/skill",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
       "write_tables": [
-        "plus_agent_skill_package",
+        "ai_agent_skill_package",
         "ops_audit_log"
       ]
     },
@@ -7525,258 +7377,6 @@
       "write_tables": []
     },
     {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/open_platform/accounts",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "create",
-      "operation": "createAccount",
-      "operation_scope": "app_shell",
-      "read_sources": [
-        "open_platform_account"
-      ],
-      "route": "/admin/open-platform/mini-programs/accounts",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts",
-      "write_tables": [
-        "open_platform_account",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/open_platform/accounts/{accountId}/entries",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "create",
-      "operation": "createEntry",
-      "operation_scope": "app_shell",
-      "read_sources": [
-        "open_platform_account",
-        "open_platform_entry"
-      ],
-      "route": "/admin/open-platform/mini-programs/urls",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts",
-      "write_tables": [
-        "open_platform_entry",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "DELETE",
-      "api_path": "/backend/v3/api/open_platform/accounts/{accountId}/entries/{entryId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "delete",
-      "operation": "deleteEntry",
-      "operation_scope": "app_shell",
-      "read_sources": [
-        "open_platform_account",
-        "open_platform_entry"
-      ],
-      "route": "/admin/open-platform/mini-programs/urls",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts",
-      "write_tables": [
-        "open_platform_entry",
-        "open_platform_account",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/open_platform/accounts",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "read",
-      "operation": "fetchAccounts",
-      "operation_scope": "app_shell",
-      "read_sources": [
-        "open_platform_account"
-      ],
-      "route": "/admin/open-platform/mini-programs/accounts",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/open_platform/accounts/{accountId}/entries",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "read",
-      "operation": "fetchEntries",
-      "operation_scope": "app_shell",
-      "read_sources": [
-        "open_platform_account",
-        "open_platform_entry"
-      ],
-      "route": "/admin/open-platform/mini-programs/urls",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts",
-      "write_tables": []
-    },
-    {
-      "api_method": "PATCH",
-      "api_path": "/backend/v3/api/open_platform/accounts/{accountId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "update",
-      "operation": "updateAccount",
-      "operation_scope": "app_shell",
-      "read_sources": [
-        "open_platform_account"
-      ],
-      "route": "/admin/open-platform/mini-programs/accounts",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts",
-      "write_tables": [
-        "open_platform_account",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "PATCH",
-      "api_path": "/backend/v3/api/open_platform/accounts/{accountId}/entries/{entryId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "update",
-      "operation": "updateEntry",
-      "operation_scope": "app_shell",
-      "read_sources": [
-        "open_platform_account",
-        "open_platform_entry"
-      ],
-      "route": "/admin/open-platform/mini-programs/urls",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts",
-      "write_tables": [
-        "open_platform_entry",
-        "open_platform_account",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/open_platform/accounts",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "create",
-      "operation": "createAccount",
-      "operation_scope": "app_shell",
-      "read_sources": [
-        "open_platform_account"
-      ],
-      "route": "/admin/open-platform/official-accounts/accounts",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts",
-      "write_tables": [
-        "open_platform_account",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/open_platform/accounts/{accountId}/entries",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "create",
-      "operation": "createEntry",
-      "operation_scope": "app_shell",
-      "read_sources": [
-        "open_platform_account",
-        "open_platform_entry"
-      ],
-      "route": "/admin/open-platform/official-accounts/menus",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts",
-      "write_tables": [
-        "open_platform_entry",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "DELETE",
-      "api_path": "/backend/v3/api/open_platform/accounts/{accountId}/entries/{entryId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "delete",
-      "operation": "deleteEntry",
-      "operation_scope": "app_shell",
-      "read_sources": [
-        "open_platform_account",
-        "open_platform_entry"
-      ],
-      "route": "/admin/open-platform/official-accounts/menus",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts",
-      "write_tables": [
-        "open_platform_entry",
-        "open_platform_account",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/open_platform/accounts",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "read",
-      "operation": "fetchAccounts",
-      "operation_scope": "app_shell",
-      "read_sources": [
-        "open_platform_account"
-      ],
-      "route": "/admin/open-platform/official-accounts/accounts",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/open_platform/accounts/{accountId}/entries",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "read",
-      "operation": "fetchEntries",
-      "operation_scope": "app_shell",
-      "read_sources": [
-        "open_platform_account",
-        "open_platform_entry"
-      ],
-      "route": "/admin/open-platform/official-accounts/menus",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts",
-      "write_tables": []
-    },
-    {
-      "api_method": "PATCH",
-      "api_path": "/backend/v3/api/open_platform/accounts/{accountId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "update",
-      "operation": "updateAccount",
-      "operation_scope": "app_shell",
-      "read_sources": [
-        "open_platform_account"
-      ],
-      "route": "/admin/open-platform/official-accounts/accounts",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts",
-      "write_tables": [
-        "open_platform_account",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "PATCH",
-      "api_path": "/backend/v3/api/open_platform/accounts/{accountId}/entries/{entryId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "update",
-      "operation": "updateEntry",
-      "operation_scope": "app_shell",
-      "read_sources": [
-        "open_platform_account",
-        "open_platform_entry"
-      ],
-      "route": "/admin/open-platform/official-accounts/menus",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts",
-      "write_tables": [
-        "open_platform_entry",
-        "open_platform_account",
-        "ops_audit_log"
-      ]
-    },
-    {
       "api_method": "GET",
       "api_path": "/app/v3/api/platform/apps/store/{appId}",
       "api_surface": "app",
@@ -7785,11 +7385,8 @@
       "operation": "getAppById",
       "operation_scope": null,
       "read_sources": [
-        "plus_app",
-        "plus_category",
-        "studio_catalog_action",
-        "studio_catalog_asset",
-        "studio_catalog_artifact"
+        "platform_app",
+        "c_category"
       ],
       "route": "/apps",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/appService.ts",
@@ -7804,11 +7401,8 @@
       "operation": "getApps",
       "operation_scope": null,
       "read_sources": [
-        "plus_app",
-        "plus_category",
-        "studio_catalog_action",
-        "studio_catalog_asset",
-        "studio_catalog_artifact"
+        "platform_app",
+        "c_category"
       ],
       "route": "/apps",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/appService.ts",
@@ -7823,7 +7417,7 @@
       "operation": "getCategories",
       "operation_scope": null,
       "read_sources": [
-        "plus_category"
+        "c_category"
       ],
       "route": "/apps",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/appService.ts",
@@ -10324,7 +9918,7 @@
       "operation": "fetchCourseCategories",
       "operation_scope": null,
       "read_sources": [
-        "plus_category",
+        "c_category",
         "content_course"
       ],
       "route": "/courses",
@@ -10344,8 +9938,8 @@
         "content_course_section",
         "content_course_lesson",
         "content_course_relation",
-        "plus_category",
-        "plus_comments",
+        "c_category",
+        "content_comment",
         "content_reaction"
       ],
       "route": "/courses/:id",
@@ -10362,8 +9956,8 @@
       "operation_scope": null,
       "read_sources": [
         "content_course",
-        "plus_category",
-        "plus_comments",
+        "c_category",
+        "content_comment",
         "content_reaction"
       ],
       "route": "/courses",
@@ -10381,8 +9975,8 @@
       "read_sources": [
         "content_course",
         "content_course_relation",
-        "plus_category",
-        "plus_comments",
+        "c_category",
+        "content_comment",
         "content_reaction"
       ],
       "route": "/courses",
@@ -10430,7 +10024,7 @@
       "operation": "checkForumFeedCollected",
       "operation_scope": null,
       "read_sources": [
-        "plus_favorite"
+        "content_favorite"
       ],
       "route": "/forum/:id",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
@@ -10445,14 +10039,14 @@
       "operation": "collectForumFeed",
       "operation_scope": null,
       "read_sources": [
-        "plus_feeds",
-        "plus_favorite"
+        "content_forum_post",
+        "content_favorite"
       ],
       "route": "/forum/:id",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
       "write_tables": [
-        "plus_favorite",
-        "plus_feeds"
+        "content_favorite",
+        "content_forum_post"
       ]
     },
     {
@@ -10464,12 +10058,12 @@
       "operation": "createForumComment",
       "operation_scope": null,
       "read_sources": [
-        "plus_comments"
+        "content_comment"
       ],
       "route": "/forum/:id",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
       "write_tables": [
-        "plus_comments"
+        "content_comment"
       ]
     },
     {
@@ -10481,12 +10075,12 @@
       "operation": "createForumFeed",
       "operation_scope": null,
       "read_sources": [
-        "plus_feeds"
+        "content_forum_post"
       ],
       "route": "/forum",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
       "write_tables": [
-        "plus_feeds"
+        "content_forum_post"
       ]
     },
     {
@@ -10498,12 +10092,12 @@
       "operation": "deleteForumComment",
       "operation_scope": null,
       "read_sources": [
-        "plus_comments"
+        "content_comment"
       ],
       "route": "/forum/:id",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
       "write_tables": [
-        "plus_comments"
+        "content_comment"
       ]
     },
     {
@@ -10515,12 +10109,12 @@
       "operation": "deleteForumFeed",
       "operation_scope": null,
       "read_sources": [
-        "plus_feeds"
+        "content_forum_post"
       ],
       "route": "/forum/:id",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
       "write_tables": [
-        "plus_feeds"
+        "content_forum_post"
       ]
     },
     {
@@ -10532,9 +10126,9 @@
       "operation": "fetchCategoryForumFeeds",
       "operation_scope": null,
       "read_sources": [
-        "plus_feeds",
-        "plus_content_vote",
-        "plus_favorite"
+        "content_forum_post",
+        "content_reaction",
+        "content_favorite"
       ],
       "route": "/forum",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
@@ -10549,8 +10143,8 @@
       "operation": "fetchForumCommentDetail",
       "operation_scope": null,
       "read_sources": [
-        "plus_comments",
-        "plus_content_vote"
+        "content_comment",
+        "content_reaction"
       ],
       "route": "/forum/:id",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
@@ -10565,8 +10159,8 @@
       "operation": "fetchForumCommentReplies",
       "operation_scope": null,
       "read_sources": [
-        "plus_comments",
-        "plus_content_vote"
+        "content_comment",
+        "content_reaction"
       ],
       "route": "/forum/:id",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
@@ -10581,7 +10175,7 @@
       "operation": "fetchForumCommentStatistics",
       "operation_scope": null,
       "read_sources": [
-        "plus_comments"
+        "content_comment"
       ],
       "route": "/forum/:id",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
@@ -10596,8 +10190,8 @@
       "operation": "fetchForumComments",
       "operation_scope": null,
       "read_sources": [
-        "plus_comments",
-        "plus_content_vote"
+        "content_comment",
+        "content_reaction"
       ],
       "route": "/forum/:id",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
@@ -10612,9 +10206,9 @@
       "operation": "fetchForumFeedDetail",
       "operation_scope": null,
       "read_sources": [
-        "plus_feeds",
-        "plus_content_vote",
-        "plus_favorite"
+        "content_forum_post",
+        "content_reaction",
+        "content_favorite"
       ],
       "route": "/forum/:id",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
@@ -10629,9 +10223,9 @@
       "operation": "fetchForumFeeds",
       "operation_scope": null,
       "read_sources": [
-        "plus_feeds",
-        "plus_content_vote",
-        "plus_favorite"
+        "content_forum_post",
+        "content_reaction",
+        "content_favorite"
       ],
       "route": "/forum",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
@@ -10646,10 +10240,10 @@
       "operation": "fetchForumOverview",
       "operation_scope": null,
       "read_sources": [
-        "plus_feeds",
-        "plus_comments",
-        "plus_content_vote",
-        "plus_favorite"
+        "content_forum_post",
+        "content_comment",
+        "content_reaction",
+        "content_favorite"
       ],
       "route": "/forum",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
@@ -10664,9 +10258,9 @@
       "operation": "fetchHotForumFeeds",
       "operation_scope": null,
       "read_sources": [
-        "plus_feeds",
-        "plus_content_vote",
-        "plus_favorite"
+        "content_forum_post",
+        "content_reaction",
+        "content_favorite"
       ],
       "route": "/forum",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
@@ -10681,9 +10275,9 @@
       "operation": "fetchMostLikedForumFeeds",
       "operation_scope": null,
       "read_sources": [
-        "plus_feeds",
-        "plus_content_vote",
-        "plus_favorite"
+        "content_forum_post",
+        "content_reaction",
+        "content_favorite"
       ],
       "route": "/forum",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
@@ -10698,9 +10292,9 @@
       "operation": "fetchMostViewedForumFeeds",
       "operation_scope": null,
       "read_sources": [
-        "plus_feeds",
-        "plus_content_vote",
-        "plus_favorite"
+        "content_forum_post",
+        "content_reaction",
+        "content_favorite"
       ],
       "route": "/forum",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
@@ -10715,8 +10309,8 @@
       "operation": "fetchMyForumComments",
       "operation_scope": null,
       "read_sources": [
-        "plus_comments",
-        "plus_content_vote"
+        "content_comment",
+        "content_reaction"
       ],
       "route": "/forum/:id",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
@@ -10731,9 +10325,9 @@
       "operation": "fetchRecommendedForumFeeds",
       "operation_scope": null,
       "read_sources": [
-        "plus_feeds",
-        "plus_content_vote",
-        "plus_favorite"
+        "content_forum_post",
+        "content_reaction",
+        "content_favorite"
       ],
       "route": "/forum",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
@@ -10748,9 +10342,9 @@
       "operation": "fetchTopForumFeeds",
       "operation_scope": null,
       "read_sources": [
-        "plus_feeds",
-        "plus_content_vote",
-        "plus_favorite"
+        "content_forum_post",
+        "content_reaction",
+        "content_favorite"
       ],
       "route": "/forum",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
@@ -10765,14 +10359,14 @@
       "operation": "likeForumComment",
       "operation_scope": null,
       "read_sources": [
-        "plus_comments",
-        "plus_content_vote"
+        "content_comment",
+        "content_reaction"
       ],
       "route": "/forum/:id",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
       "write_tables": [
-        "plus_content_vote",
-        "plus_comments"
+        "content_reaction",
+        "content_comment"
       ]
     },
     {
@@ -10784,14 +10378,14 @@
       "operation": "likeForumFeed",
       "operation_scope": null,
       "read_sources": [
-        "plus_feeds",
-        "plus_content_vote"
+        "content_forum_post",
+        "content_reaction"
       ],
       "route": "/forum/:id",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
       "write_tables": [
-        "plus_content_vote",
-        "plus_feeds"
+        "content_reaction",
+        "content_forum_post"
       ]
     },
     {
@@ -10803,12 +10397,12 @@
       "operation": "pinForumComment",
       "operation_scope": null,
       "read_sources": [
-        "plus_comments"
+        "content_comment"
       ],
       "route": "/forum/:id",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
       "write_tables": [
-        "plus_comments"
+        "content_comment"
       ]
     },
     {
@@ -10820,12 +10414,12 @@
       "operation": "replyForumComment",
       "operation_scope": null,
       "read_sources": [
-        "plus_comments"
+        "content_comment"
       ],
       "route": "/forum/:id",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
       "write_tables": [
-        "plus_comments"
+        "content_comment"
       ]
     },
     {
@@ -10837,9 +10431,9 @@
       "operation": "searchForumFeeds",
       "operation_scope": null,
       "read_sources": [
-        "plus_feeds",
-        "plus_content_vote",
-        "plus_favorite"
+        "content_forum_post",
+        "content_reaction",
+        "content_favorite"
       ],
       "route": "/forum",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
@@ -10854,12 +10448,12 @@
       "operation": "shareForumFeed",
       "operation_scope": null,
       "read_sources": [
-        "plus_feeds"
+        "content_forum_post"
       ],
       "route": "/forum/:id",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
       "write_tables": [
-        "plus_feeds"
+        "content_forum_post"
       ]
     },
     {
@@ -10871,14 +10465,14 @@
       "operation": "uncollectForumFeed",
       "operation_scope": null,
       "read_sources": [
-        "plus_feeds",
-        "plus_favorite"
+        "content_forum_post",
+        "content_favorite"
       ],
       "route": "/forum/:id",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
       "write_tables": [
-        "plus_favorite",
-        "plus_feeds"
+        "content_favorite",
+        "content_forum_post"
       ]
     },
     {
@@ -10890,14 +10484,14 @@
       "operation": "unlikeForumComment",
       "operation_scope": null,
       "read_sources": [
-        "plus_comments",
-        "plus_content_vote"
+        "content_comment",
+        "content_reaction"
       ],
       "route": "/forum/:id",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
       "write_tables": [
-        "plus_content_vote",
-        "plus_comments"
+        "content_reaction",
+        "content_comment"
       ]
     },
     {
@@ -10909,14 +10503,14 @@
       "operation": "unlikeForumFeed",
       "operation_scope": null,
       "read_sources": [
-        "plus_feeds",
-        "plus_content_vote"
+        "content_forum_post",
+        "content_reaction"
       ],
       "route": "/forum/:id",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
       "write_tables": [
-        "plus_content_vote",
-        "plus_feeds"
+        "content_reaction",
+        "content_forum_post"
       ]
     },
     {
@@ -10928,12 +10522,12 @@
       "operation": "unpinForumComment",
       "operation_scope": null,
       "read_sources": [
-        "plus_comments"
+        "content_comment"
       ],
       "route": "/forum/:id",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
       "write_tables": [
-        "plus_comments"
+        "content_comment"
       ]
     },
     {
@@ -11934,17 +11528,17 @@
       "operation": "disableSkill",
       "operation_scope": null,
       "read_sources": [
-        "plus_user_agent_skill",
-        "plus_agent_skill",
-        "plus_agent_skill_package",
-        "plus_category",
-        "studio_catalog_asset",
-        "studio_catalog_artifact"
+        "ai_user_agent_skill",
+        "ai_agent_skill",
+        "ai_agent_skill_package",
+        "c_category",
+        "ai_skill_asset",
+        "ai_skill_artifact"
       ],
       "route": "/skills-hub",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub/src/services/skillService.ts",
       "write_tables": [
-        "plus_user_agent_skill"
+        "ai_user_agent_skill"
       ]
     },
     {
@@ -11956,16 +11550,16 @@
       "operation": "enableSkill",
       "operation_scope": null,
       "read_sources": [
-        "plus_agent_skill",
-        "plus_agent_skill_package",
-        "plus_category",
-        "studio_catalog_asset",
-        "studio_catalog_artifact"
+        "ai_agent_skill",
+        "ai_agent_skill_package",
+        "c_category",
+        "ai_skill_asset",
+        "ai_skill_artifact"
       ],
       "route": "/skills-hub",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub/src/services/skillService.ts",
       "write_tables": [
-        "plus_user_agent_skill"
+        "ai_user_agent_skill"
       ]
     },
     {
@@ -11977,7 +11571,7 @@
       "operation": "getCategories",
       "operation_scope": null,
       "read_sources": [
-        "plus_category"
+        "c_category"
       ],
       "route": "/skills-hub",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub/src/services/skillService.ts",
@@ -11992,12 +11586,12 @@
       "operation": "getMySkills",
       "operation_scope": null,
       "read_sources": [
-        "plus_user_agent_skill",
-        "plus_agent_skill",
-        "plus_agent_skill_package",
-        "plus_category",
-        "studio_catalog_asset",
-        "studio_catalog_artifact"
+        "ai_user_agent_skill",
+        "ai_agent_skill",
+        "ai_agent_skill_package",
+        "c_category",
+        "ai_skill_asset",
+        "ai_skill_artifact"
       ],
       "route": "/skills-hub",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub/src/services/skillService.ts",
@@ -12012,12 +11606,12 @@
       "operation": "getSkillById",
       "operation_scope": null,
       "read_sources": [
-        "plus_agent_skill",
-        "plus_agent_skill_package",
-        "plus_category",
-        "studio_catalog_action",
-        "studio_catalog_asset",
-        "studio_catalog_artifact"
+        "ai_agent_skill",
+        "ai_agent_skill_package",
+        "c_category",
+        "ai_skill_action",
+        "ai_skill_asset",
+        "ai_skill_artifact"
       ],
       "route": "/skills-hub",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub/src/services/skillService.ts",
@@ -12032,12 +11626,12 @@
       "operation": "getSkills",
       "operation_scope": null,
       "read_sources": [
-        "plus_agent_skill",
-        "plus_agent_skill_package",
-        "plus_category",
-        "studio_catalog_action",
-        "studio_catalog_asset",
-        "studio_catalog_artifact"
+        "ai_agent_skill",
+        "ai_agent_skill_package",
+        "c_category",
+        "ai_skill_action",
+        "ai_skill_asset",
+        "ai_skill_artifact"
       ],
       "route": "/skills-hub",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub/src/services/skillService.ts",
@@ -12052,17 +11646,17 @@
       "operation": "updateSkillConfig",
       "operation_scope": null,
       "read_sources": [
-        "plus_user_agent_skill",
-        "plus_agent_skill",
-        "plus_agent_skill_package",
-        "plus_category",
-        "studio_catalog_asset",
-        "studio_catalog_artifact"
+        "ai_user_agent_skill",
+        "ai_agent_skill",
+        "ai_agent_skill_package",
+        "c_category",
+        "ai_skill_asset",
+        "ai_skill_artifact"
       ],
       "route": "/skills-hub",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub/src/services/skillService.ts",
       "write_tables": [
-        "plus_user_agent_skill"
+        "ai_user_agent_skill"
       ]
     },
     {
@@ -12150,85 +11744,10 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/open_platform/qr_auth/sessions/{sessionKey}/scans",
+      "api_path": "/app/v3/api/oauth/authorization_urls",
       "api_surface": "app",
       "file_targets": [],
       "kind": "create",
-      "operation": "callbackLoginQrCode",
-      "operation_scope": null,
-      "read_sources": [
-        "iam_security_event"
-      ],
-      "route": "/auth/login",
-      "source": "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
-      "write_tables": [
-        "iam_security_event"
-      ]
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/app/v3/api/open_platform/qr_auth/sessions/{sessionKey}",
-      "api_surface": "app",
-      "file_targets": [],
-      "kind": "read",
-      "operation": "checkLoginQrCodeStatus",
-      "operation_scope": null,
-      "read_sources": [
-        "iam_session",
-        "iam_user",
-        "iam_security_event"
-      ],
-      "route": "/auth/login",
-      "source": "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
-      "write_tables": []
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/app/v3/api/open_platform/qr_auth/sessions/{sessionKey}/passwords",
-      "api_surface": "app",
-      "file_targets": [],
-      "kind": "create",
-      "operation": "confirmLoginQrCode",
-      "operation_scope": null,
-      "read_sources": [
-        "iam_session",
-        "iam_user",
-        "iam_credential",
-        "iam_security_event"
-      ],
-      "route": "/auth/login",
-      "source": "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
-      "write_tables": [
-        "iam_session",
-        "iam_audit_event",
-        "iam_security_event"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/app/v3/api/open_platform/qr_auth/sessions",
-      "api_surface": "app",
-      "file_targets": [],
-      "kind": "create",
-      "operation": "generateLoginQrCode",
-      "operation_scope": null,
-      "read_sources": [
-        "iam_security_event",
-        "open_platform_account",
-        "open_platform_entry"
-      ],
-      "route": "/auth/login",
-      "source": "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
-      "write_tables": [
-        "iam_security_event"
-      ]
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/app/v3/api/auth/oauth_authorization_urls",
-      "api_surface": "app",
-      "file_targets": [],
-      "kind": "read",
       "operation": "getOAuthAuthorizationUrl",
       "operation_scope": null,
       "read_sources": [
@@ -12385,7 +11904,7 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/auth/oauth_sessions",
+      "api_path": "/app/v3/api/oauth/sessions",
       "api_surface": "app",
       "file_targets": [],
       "kind": "create",
@@ -12533,8 +12052,8 @@
     }
   ],
   "summary": {
-    "operation_count": 660,
-    "source_file_count": 67,
-    "write_operation_count": 338
+    "operation_count": 633,
+    "source_file_count": 65,
+    "write_operation_count": 321
   }
 }

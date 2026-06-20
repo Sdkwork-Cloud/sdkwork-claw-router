@@ -14,6 +14,54 @@ const MCP_CATEGORY_SEED_JSON: &str =
 const APP_CATEGORY_SEED_JSON: &str =
     include_str!("../../../../data/categories/apps/categories.json");
 
+pub fn c_category_type_scope(
+    legacy_category_type: i32,
+    dataset: &str,
+    group_name: Option<&str>,
+) -> DomainResult<&'static str> {
+    if let Some(group) = group_name {
+        if group.contains("app-store") || group.contains(":apps") {
+            return Ok("app_store");
+        }
+        if group.contains("agent-skills") {
+            return Ok("skill_market");
+        }
+        if group.contains(":agents") {
+            return Ok("agent");
+        }
+        if group.contains("course") {
+            return Ok("course");
+        }
+        if group.contains("forum") {
+            return Ok("forum");
+        }
+        if group.contains(":mcp") {
+            return Ok("mcp");
+        }
+        if group.contains("prompt") {
+            return Ok("prompt");
+        }
+    }
+    match legacy_category_type {
+        6 => Ok("course"),
+        19 => Ok("skill_market"),
+        20 => Ok("skills_collection"),
+        30 => Ok("agent"),
+        40 => Ok("mcp"),
+        999_999 => Ok("app_store"),
+        _ => match dataset {
+            "apps" => Ok("app_store"),
+            "courses" => Ok("course"),
+            "agent-skills" => Ok("skill_market"),
+            "agents" => Ok("agent"),
+            "mcp" => Ok("mcp"),
+            other => Err(DomainError::new(format!(
+                "unsupported c_category seed scope for dataset {other} with categoryType {legacy_category_type}"
+            ))),
+        },
+    }
+}
+
 pub const DEFAULT_ADMIN_CATEGORY_SEED_DATASETS: &[&str] = &[
     "product",
     "courses",

@@ -27,7 +27,7 @@ fn assert_sql_not_contains(sql: &str, forbidden: &str) {
 #[test]
 fn postgres_admin_skill_writes_appbase_snowflake_ids_explicitly() {
     for expected in [
-        "use crate::infrastructure::sql::runtime_id::next_admin_skill_id;",
+        "use crate::infrastructure::sql::runtime_id::{next_admin_skill_id, next_claw_runtime_id};",
         "const MAX_RUNTIME_ID_ATTEMPTS: u8 = 16;",
         "let id = next_admin_skill_id(namespace)?;",
         "SELECT COUNT(1) FROM c_category WHERE id = $1",
@@ -97,7 +97,9 @@ fn postgres_admin_skill_uses_jsonb_for_skill_metadata_and_audit_payloads() {
         "config_schema = COALESCE($52::jsonb, config_schema)",
         "default_config = COALESCE($53::jsonb, default_config)",
         "INSERT INTO ops_audit_log",
-        "$10::jsonb",
+        "INSERT INTO ops_audit_log (id, uuid, tenant_id, organization_id",
+        "next_claw_runtime_id(\"ops_audit_log\")",
+        "$11::jsonb",
         ".bind(SKILL_TARGET_TYPE)",
     ] {
         assert_sql_contains(POSTGRES_ADMIN_SKILL_STORE, expected);
@@ -119,7 +121,7 @@ fn postgres_admin_skill_matches_physical_schema_without_fake_soft_delete() {
         POSTGRES_SCHEMA,
         "CREATE TABLE IF NOT EXISTS ai_user_agent_skill",
     );
-    assert_sql_contains(POSTGRES_SCHEMA, "id BIGINT PRIMARY KEY");
+    assert_sql_contains(POSTGRES_SCHEMA, "id BIGINT NOT NULL PRIMARY KEY");
     assert_sql_contains(POSTGRES_ADMIN_SKILL_STORE, "DELETE FROM ai_agent_skill");
     assert_sql_not_contains(POSTGRES_ADMIN_SKILL_STORE, "ai_agent_skill.deleted_at");
     assert_sql_not_contains(POSTGRES_ADMIN_SKILL_STORE, "s.deleted_at");

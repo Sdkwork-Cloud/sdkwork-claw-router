@@ -1,7 +1,7 @@
 use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
-use crate::infrastructure::sql::runtime_id::next_admin_skill_id;
+use crate::infrastructure::sql::runtime_id::{next_admin_skill_id, next_claw_runtime_id};
 use crate::infrastructure::sql::sql_admin_product_center::{
     empty_media_resource, media_resource_object_blob_id, media_resource_stable_id,
 };
@@ -3050,14 +3050,16 @@ async fn insert_audit_log(
     target_id: i64,
     change_summary: serde_json::Value,
 ) -> DomainResult<()> {
+    let audit_log_id = next_claw_runtime_id("ops_audit_log")?;
     sqlx::query(
         r#"
         INSERT INTO ops_audit_log
-            (uuid, tenant_id, organization_id, action, target_type, target_id, request_id, operator_id, operator_type, change_summary)
+            (id, uuid, tenant_id, organization_id, action, target_type, target_id, request_id, operator_id, operator_type, change_summary)
         VALUES
-            (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         "#,
     )
+    .bind(audit_log_id)
     .bind(audit_log_uuid)
     .bind(tenant_id)
     .bind(organization_id)

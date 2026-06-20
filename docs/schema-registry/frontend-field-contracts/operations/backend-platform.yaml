@@ -464,7 +464,7 @@ frontend_operations:
   api_method: GET
   api_path: /backend/v3/api/platform/apps/templates
   read_sources:
-  - studio_app_template
+  - platform_app_template
   - ai_skill_asset
   - ai_skill_artifact
   query_parameters:
@@ -695,9 +695,9 @@ frontend_operations:
   api_method: POST
   api_path: /backend/v3/api/platform/apps/templates
   read_sources:
-  - studio_app_template
+  - platform_app_template
   write_tables:
-  - studio_app_template
+  - platform_app_template
   - ops_audit_log
   request_schema:
     name: AdminAppTemplateCreateRequest
@@ -832,7 +832,7 @@ frontend_operations:
   api_method: GET
   api_path: /backend/v3/api/platform/apps/templates/{templateId}
   read_sources:
-  - studio_app_template
+  - platform_app_template
   query_parameters: []
   response_schema: *id017
 - route: /admin/app
@@ -844,9 +844,9 @@ frontend_operations:
   api_method: PUT
   api_path: /backend/v3/api/platform/apps/templates/{templateId}
   read_sources:
-  - studio_app_template
+  - platform_app_template
   write_tables:
-  - studio_app_template
+  - platform_app_template
   - ops_audit_log
   request_schema:
     name: AdminAppTemplateUpdateRequest
@@ -966,12 +966,12 @@ frontend_operations:
   api_method: DELETE
   api_path: /backend/v3/api/platform/apps/templates/{templateId}
   read_sources:
-  - studio_app_template
+  - platform_app_template
   - ai_skill_action
   - ai_skill_asset
   - ai_skill_artifact
   write_tables:
-  - studio_app_template
+  - platform_app_template
   - ai_skill_action
   - ai_skill_asset
   - ai_skill_artifact
@@ -995,9 +995,9 @@ frontend_operations:
   api_path: /backend/v3/api/platform/apps/templates/{templateId}/publish
   description: Sets app template publishStatus to PUBLISHED.
   read_sources:
-  - studio_app_template
+  - platform_app_template
   write_tables:
-  - studio_app_template
+  - platform_app_template
   - ops_audit_log
   request_body_required: false
   response_schema: *id017
@@ -1011,9 +1011,9 @@ frontend_operations:
   api_path: /backend/v3/api/platform/apps/templates/{templateId}/unpublish
   description: Sets app template publishStatus to OFFLINE.
   read_sources:
-  - studio_app_template
+  - platform_app_template
   write_tables:
-  - studio_app_template
+  - platform_app_template
   - ops_audit_log
   request_body_required: false
   response_schema: *id017

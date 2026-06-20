@@ -65,11 +65,11 @@ impl DatabaseConfig {
     pub const DESKTOP_SQLITE_DEFAULT_MAX_CONNECTIONS: u32 = 8;
     pub const ENV_CONFIG_FILE: &'static str = "SDKWORK_CLAW_CONFIG_FILE";
     pub const SERVER_DEFAULT_POSTGRES_URL: &'static str =
-        "postgresql://sdkworkprod%402026%2B%2B:change-me@db.example.com:5432/sdkwork_ai_prod?sslmode=require";
+        "postgresql://sdkwork_ai_prod:change-me@db.example.com:5432/sdkwork_ai_prod?sslmode=require";
     pub const SERVER_DEFAULT_POSTGRES_HOST: &'static str = "db.example.com";
     pub const SERVER_DEFAULT_POSTGRES_PORT: u16 = 5432;
     pub const SERVER_DEFAULT_POSTGRES_DATABASE: &'static str = "sdkwork_ai_prod";
-    pub const SERVER_DEFAULT_POSTGRES_USERNAME: &'static str = "sdkworkprod@2026++";
+    pub const SERVER_DEFAULT_POSTGRES_USERNAME: &'static str = "sdkwork_ai_prod";
     pub const SERVER_DEFAULT_POSTGRES_PASSWORD: &'static str = "change-me";
     pub const SERVER_DEFAULT_POSTGRES_PASSWORD_FILE: &'static str =
         "/etc/sdkwork/router/database.secret";
@@ -779,11 +779,17 @@ fn is_placeholder_postgres_url(value: &str) -> bool {
         "postgresql://sdkwork_claw_router:change-me@localhost:5432/sdkwork_claw_router";
     const LEGACY_SERVER_DEFAULT_POSTGRES_URL_V2: &str =
         "postgresql://sdkwork_claw_router:change-me@db.example.com:5432/sdkwork_claw_router?sslmode=require";
+    const LEGACY_SERVER_DEFAULT_POSTGRES_URL_V3: &str =
+        "postgresql://sdkworkprod%402026%2B%2B:change-me@db.example.com:5432/sdkwork_ai_prod?sslmode=require";
+    const LEGACY_SERVER_DEFAULT_POSTGRES_URL_V4: &str =
+        "postgresql://sdkwork:change-me@db.example.com:5432/sdkwork?sslmode=require";
 
     let value = value.trim();
     if value == DatabaseConfig::SERVER_DEFAULT_POSTGRES_URL
         || value == LEGACY_SERVER_DEFAULT_POSTGRES_URL
         || value == LEGACY_SERVER_DEFAULT_POSTGRES_URL_V2
+        || value == LEGACY_SERVER_DEFAULT_POSTGRES_URL_V3
+        || value == LEGACY_SERVER_DEFAULT_POSTGRES_URL_V4
     {
         return true;
     }
@@ -791,6 +797,9 @@ fn is_placeholder_postgres_url(value: &str) -> bool {
     let Ok(parsed) = url::Url::parse(value) else {
         return false;
     };
+    if parsed.username() == "sdkworkprod@2026++" {
+        return true;
+    }
     let host = parsed.host_str().unwrap_or_default().to_ascii_lowercase();
     if host == DatabaseConfig::SERVER_DEFAULT_POSTGRES_HOST {
         return true;

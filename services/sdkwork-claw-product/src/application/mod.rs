@@ -61,7 +61,9 @@ pub use cache_runtime::{
     ROUTING_DISABLED_CHANNEL_CACHE_NAMESPACE, ROUTING_IDEMPOTENCY_CACHE_NAMESPACE,
     ROUTING_PROVIDER_OBJECT_ROUTE_CACHE_NAMESPACE, ROUTING_SNAPSHOT_CACHE_NAMESPACE,
 };
-pub use category_seed::{load_admin_category_seed_bundles, DEFAULT_ADMIN_CATEGORY_SEED_DATASETS};
+pub use category_seed::{
+    c_category_type_scope, load_admin_category_seed_bundles, DEFAULT_ADMIN_CATEGORY_SEED_DATASETS,
+};
 pub use gateway_invocation_policy::{
     client_ip_allowed_by_allowlist, GatewayInvocationPolicyGuard, GatewayInvocationPolicyViolation,
 };

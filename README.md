@@ -833,8 +833,8 @@ The runtime config file is TOML and supports:
 engine = "postgresql"
 host = "db.example.com"
 port = 5432
-database = "sdkwork"
-username = "sdkwork"
+database = "sdkwork_ai_prod"
+username = "sdkwork_ai_prod"
 password_file = "/etc/sdkwork/router/database.secret"
 # password = "change-me"
 ssl_mode = "require"
@@ -1017,8 +1017,8 @@ instead of using a separate password file:
 engine = "postgresql"
 host = "db.internal"
 port = 5432
-database = "sdkwork"
-username = "sdkwork"
+database = "sdkwork_ai_prod"
+username = "sdkwork_ai_prod"
 password = "real-password"
 ssl_mode = "require"
 max_connections = 16

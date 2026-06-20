@@ -15,7 +15,7 @@ use crate::ports::{
 };
 
 const COURSE_STATUS_PUBLISHED: i64 = 1;
-const COURSE_CATEGORY_TYPE: i64 = 6;
+const COURSE_CATEGORY_TYPE: &str = "course";
 const COMMENT_STATUS_PUBLISHED: i64 = 1;
 const CONTENT_TYPE_COURSE: i64 = 6;
 const REACTION_TYPE_VIEW: i64 = 1;
@@ -412,10 +412,9 @@ async fn load_categories(
                   AND {course_scope_filter}
             ) AS course_count
         FROM c_category cat
-        WHERE COALESCE(cat.type, 0) = $4
+        WHERE cat.category_type = $4
           AND COALESCE(cat.visible, true) = true
           AND COALESCE(cat.status, 0) = 1
-          AND lower(COALESCE(cat.group_name, '')) = 'course'
           AND {category_scope_filter}
         ORDER BY COALESCE(cat.sort_weight, 0), cat.id
         "#,
@@ -599,8 +598,7 @@ const COURSE_SELECT_COLUMNS: &str = r#"
     FROM content_course c
     LEFT JOIN c_category cat
       ON lower(COALESCE(cat.code, '')) = lower(COALESCE(c.category, ''))
-     AND cat.type = 6
-     AND lower(COALESCE(cat.group_name, '')) = 'course'
+     AND cat.category_type = 'course'
 "#;
 
 fn course_from_row(row: &sqlx::postgres::PgRow) -> CourseItem {

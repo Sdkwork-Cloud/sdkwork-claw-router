@@ -154,6 +154,22 @@ APPBASE_COMMERCE_LEGACY_ALIASES: dict[str, str] = {
     "plus_vip_user": "commerce_vip_membership",
 }
 
+V41_PLATFORM_LEGACY_ALIASES: dict[str, str] = {
+    "plus_app": "platform_app",
+    "plus_category": "c_category",
+    "plus_agent_skill": "ai_agent_skill",
+    "plus_agent_skill_package": "ai_agent_skill_package",
+    "plus_user_agent_skill": "ai_user_agent_skill",
+    "studio_catalog_action": "ai_skill_action",
+    "studio_catalog_asset": "ai_skill_asset",
+    "studio_catalog_artifact": "ai_skill_artifact",
+    "plus_feeds": "content_forum_post",
+    "plus_comments": "content_comment",
+    "plus_favorite": "content_favorite",
+    "plus_content_vote": "content_reaction",
+    "studio_app_template": "platform_app_template",
+}
+
 REQUIRED_TABLE_COLUMNS = {
     "ai_model_vendor": {"vendor_code", "display_name"},
     "ai_model": {
@@ -444,6 +460,9 @@ class SchemaGuardian:
         messages.extend(self._check_legacy_identity_standard(data, by_table))
         messages.extend(self._check_appbase_commerce_legacy_aliases(by_table))
         messages.extend(self._check_appbase_commerce_legacy_alias_references())
+        messages.extend(self._check_v41_platform_legacy_aliases(by_table))
+        messages.extend(self._check_v41_platform_legacy_alias_references())
+        messages.extend(self._check_category_seed_manifests())
         messages.extend(self._check_schema_registry_media_resource_columns(by_table))
         messages.extend(self._check_frontend_contract_media_resource_fields())
         messages.extend(self._check_skills_hub_tables(by_table))
@@ -508,6 +527,52 @@ class SchemaGuardian:
                 if alias in text:
                     messages.append(
                         f"{source.relative_to(self.root)} references appbase commerce legacy alias: {alias} -> {replacement}"
+                    )
+
+        return messages
+
+    def _check_v41_platform_legacy_aliases(self, by_table: dict[str, dict[str, Any]]) -> list[str]:
+        messages: list[str] = []
+        for table, replacement in sorted(V41_PLATFORM_LEGACY_ALIASES.items()):
+            if table in by_table:
+                messages.append(f"v4.1 platform legacy alias must be removed: {table} -> {replacement}")
+        return messages
+
+    def _check_category_seed_manifests(self) -> list[str]:
+        messages: list[str] = []
+        categories_root = self.root / "data" / "categories"
+        if not categories_root.exists():
+            return messages
+
+        for manifest in sorted(categories_root.glob("*/categories.json")):
+            text = manifest.read_text(encoding="utf-8")
+            if "plus_category" in text:
+                messages.append(
+                    f"{manifest.relative_to(self.root)} must target c_category instead of plus_category"
+                )
+        return messages
+
+    def _check_v41_platform_legacy_alias_references(self) -> list[str]:
+        checked_sources = [
+            *self._frontend_contract_source_paths(),
+            self.root / "docs" / "schema-registry" / "frontend-field-contracts.yaml",
+            self.root / "tools" / "api_contract_manifest.py",
+            self.root / "apis" / "app-api" / "clawrouter" / "clawrouter-app-api.openapi.json",
+            self.root / "apis" / "backend-api" / "clawrouter" / "clawrouter-backend-api.openapi.json",
+            self.root / "generated" / "openapi" / "clawrouter-app-openapi.json",
+            self.root / "generated" / "openapi" / "clawrouter-backend-openapi.json",
+            self.root / "generated" / "api" / "api-contract-manifest.json",
+        ]
+        messages: list[str] = []
+
+        for source in checked_sources:
+            if not source.exists():
+                continue
+            text = source.read_text(encoding="utf-8")
+            for alias, replacement in sorted(V41_PLATFORM_LEGACY_ALIASES.items()):
+                if alias in text:
+                    messages.append(
+                        f"{source.relative_to(self.root)} references v4.1 retired platform alias: {alias} -> {replacement}"
                     )
 
         return messages

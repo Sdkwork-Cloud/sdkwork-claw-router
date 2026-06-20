@@ -104,8 +104,8 @@ The default server database configuration is external PostgreSQL:
 engine = "postgresql"
 host = "db.example.com"
 port = 5432
-database = "sdkwork"
-username = "sdkwork"
+database = "sdkwork_ai_prod"
+username = "sdkwork_ai_prod"
 password_file = "/etc/sdkwork/router/database.secret"
 # password = "change-me"
 ssl_mode = "require"
@@ -223,8 +223,8 @@ For controlled deployments where the TOML file itself is managed as a secret-bea
 engine = "postgresql"
 host = "db.internal"
 port = 5432
-database = "sdkwork"
-username = "sdkwork"
+database = "sdkwork_ai_prod"
+username = "sdkwork_ai_prod"
 password = "real-password"
 ssl_mode = "require"
 max_connections = 16
@@ -295,7 +295,7 @@ Set-Location $installRoot
 For Windows server/service deployment, set PostgreSQL in the runtime TOML before starting the gateway. A protected process override remains available when the service manager injects secrets:
 
 ```powershell
-$env:SDKWORK_CLAW_DATABASE_URL="postgresql://sdkworkprod%402026%2B%2B:<password>@db.example.com:5432/sdkwork"
+$env:SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_ai_prod:<password>@db.example.com:5432/sdkwork_ai_prod"
 ```
 
 Windows `.msi` packages keep program binaries under `%ProgramFiles%/sdkwork/router` and shared templates under `%ProgramData%/sdkwork/router`. The native manifest records inherited ProgramData ACLs for service templates, runtime TOML, password files, and data directories. Desktop runtime files are created during user initialization under `%USERPROFILE%/.sdkwork/router/config` and `%USERPROFILE%/.sdkwork/router/data`, using the current user's profile ACLs.

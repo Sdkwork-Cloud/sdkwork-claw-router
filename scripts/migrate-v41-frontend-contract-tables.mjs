@@ -25,6 +25,7 @@ const REPLACEMENTS = [
   ['plus_feeds', 'content_forum_post'],
   ['plus_comments', 'content_comment'],
   ['plus_favorite', 'content_favorite'],
+  ['studio_app_template', 'platform_app_template'],
 ];
 
 const APP_JSON_ONLY_SOURCES = new Set([

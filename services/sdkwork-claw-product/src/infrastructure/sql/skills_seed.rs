@@ -40,32 +40,8 @@ const BUNDLED_SKILLS_SEED_SOURCE_HASH: &str =
 const CORE_SKILL_IDS: [i64; 3] = [8101, 8102, 8103];
 
 fn category_type_from_legacy_seed(group_name: Option<&str>, legacy_type: i32) -> &'static str {
-    if let Some(group) = group_name {
-        if group.contains("app-store") {
-            return "app_store";
-        }
-        if group.contains("agent-skills") || group.contains("skills") {
-            return "skill_market";
-        }
-        if group.contains("course") {
-            return "course";
-        }
-        if group.contains("forum") {
-            return "forum";
-        }
-        if group.contains("mcp") {
-            return "mcp";
-        }
-        if group.contains("prompt") {
-            return "prompt";
-        }
-    }
-    match legacy_type {
-        19 => "skill_market",
-        20 => "skills_collection",
-        999_999 => "app_store",
-        _ => "skill_market",
-    }
+    crate::application::c_category_type_scope(legacy_type, "", group_name)
+        .unwrap_or("skill_market")
 }
 
 #[derive(Debug, Clone, Deserialize)]

@@ -233,6 +233,74 @@ class SchemaGuardianTest(unittest.TestCase):
                 result.messages,
             )
 
+    def test_rejects_v41_platform_legacy_alias_references_in_modular_contract_sources(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            registry = self.write_registry(
+                root,
+                """
+                schema_registry:
+                  legacy_compatibility_guardrails:
+                    forbidden_synonym_tables: []
+                tables:
+                  - table: platform_app
+                    domain: platform
+                """,
+            )
+            operations_dir = root / "docs" / "schema-registry" / "frontend-field-contracts" / "operations"
+            operations_dir.mkdir(parents=True)
+            fragment = operations_dir / "app-platform.yaml"
+            fragment.write_text(
+                "frontend_operations:\n"
+                "  - route: /admin/app\n"
+                "    read_sources: [plus_app]\n",
+                encoding="utf-8",
+            )
+            index = root / "docs" / "schema-registry" / "frontend-field-contracts" / "index.yaml"
+            index.write_text("fragments:\n  - operations/app-platform.yaml\n", encoding="utf-8")
+
+            result = SchemaGuardian(root=root, registry_path=registry).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "docs\\schema-registry\\frontend-field-contracts\\operations\\app-platform.yaml references v4.1 retired platform alias: plus_app -> platform_app",
+                result.messages,
+            )
+
+    def test_rejects_v41_studio_app_template_alias_in_modular_contract_sources(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            registry = self.write_registry(
+                root,
+                """
+                schema_registry:
+                  legacy_compatibility_guardrails:
+                    forbidden_synonym_tables: []
+                tables:
+                  - table: platform_app_template
+                    domain: platform
+                """,
+            )
+            models_dir = root / "docs" / "schema-registry" / "frontend-field-contracts" / "models"
+            models_dir.mkdir(parents=True)
+            fragment = models_dir / "app-center.yaml"
+            fragment.write_text(
+                "frontend_models:\n"
+                "  - route: /admin/app\n"
+                "    data_sources: [studio_app_template]\n",
+                encoding="utf-8",
+            )
+            index = root / "docs" / "schema-registry" / "frontend-field-contracts" / "index.yaml"
+            index.write_text("fragments:\n  - models/app-center.yaml\n", encoding="utf-8")
+
+            result = SchemaGuardian(root=root, registry_path=registry).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "docs\\schema-registry\\frontend-field-contracts\\models\\app-center.yaml references v4.1 retired platform alias: studio_app_template -> platform_app_template",
+                result.messages,
+            )
+
     def test_rejects_bare_media_url_columns_in_schema_registry(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

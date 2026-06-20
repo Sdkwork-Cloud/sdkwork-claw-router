@@ -23,8 +23,8 @@ const workspaceRoot = path.resolve(__dirname, '..');
 const portalDist = path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', 'dist');
 const SERVER_DEFAULT_POSTGRES_HOST = 'db.example.com';
 const SERVER_DEFAULT_POSTGRES_PORT = 5432;
-const SERVER_DEFAULT_POSTGRES_DATABASE = 'sdkwork';
-const SERVER_DEFAULT_POSTGRES_USERNAME = 'sdkwork';
+const SERVER_DEFAULT_POSTGRES_DATABASE = 'sdkwork_ai_prod';
+const SERVER_DEFAULT_POSTGRES_USERNAME = 'sdkwork_ai_prod';
 const SERVER_DEFAULT_POSTGRES_PASSWORD = 'change-me';
 const SERVER_DEFAULT_POSTGRES_SSL_MODE = 'require';
 const SERVER_DEFAULT_POSTGRES_URL = `postgresql://${encodeURIComponent(SERVER_DEFAULT_POSTGRES_USERNAME)}:${SERVER_DEFAULT_POSTGRES_PASSWORD}@${SERVER_DEFAULT_POSTGRES_HOST}:${SERVER_DEFAULT_POSTGRES_PORT}/${SERVER_DEFAULT_POSTGRES_DATABASE}?sslmode=${SERVER_DEFAULT_POSTGRES_SSL_MODE}`;
@@ -882,11 +882,23 @@ function runtimeConfigPostgresUrlUsesPlaceholder(value) {
     return false;
   }
   const legacyDefault = 'postgresql://sdkwork_claw_router:change-me@localhost:5432/sdkwork_claw_router';
-  if (normalized === SERVER_DEFAULT_POSTGRES_URL || normalized === legacyDefault) {
+  const legacyWrongUsername =
+    'postgresql://sdkworkprod%402026%2B%2B:change-me@db.example.com:5432/sdkwork_ai_prod?sslmode=require';
+  const legacyWrongDatabase =
+    'postgresql://sdkwork:change-me@db.example.com:5432/sdkwork?sslmode=require';
+  if (
+    normalized === SERVER_DEFAULT_POSTGRES_URL
+    || normalized === legacyDefault
+    || normalized === legacyWrongUsername
+    || normalized === legacyWrongDatabase
+  ) {
     return true;
   }
   try {
     const parsed = new URL(normalized);
+    if (parsed.username === 'sdkworkprod@2026++') {
+      return true;
+    }
     return parsed.hostname === SERVER_DEFAULT_POSTGRES_HOST
       || parsed.password === SERVER_DEFAULT_POSTGRES_PASSWORD;
   } catch {

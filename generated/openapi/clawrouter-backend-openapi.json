@@ -38530,7 +38530,7 @@
     },
     "/backend/v3/api/content/courses/comments": {
       "get": {
-        "description": "Course-related comments for moderation and content governance. Reads content_forum_comment. Writes none. File targets none.",
+        "description": "Course-related comments for moderation and content governance. Reads content_comment. Writes none. File targets none.",
         "operationId": "courseComments.list",
         "parameters": [
           {
@@ -38645,7 +38645,7 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "content_forum_comment"
+          "content_comment"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "content",
@@ -38657,7 +38657,7 @@
     },
     "/backend/v3/api/content/courses/comments/{commentId}/moderation": {
       "patch": {
-        "description": "Moderates a course comment and writes the operation audit trail. Reads content_forum_comment. Writes content_forum_comment, ops_audit_log. File targets none.",
+        "description": "Moderates a course comment and writes the operation audit trail. Reads content_comment. Writes content_comment, ops_audit_log. File targets none.",
         "operationId": "courseComments.moderate",
         "parameters": [
           {
@@ -38746,7 +38746,7 @@
         "x-contract-kind": "update",
         "x-file-targets": [],
         "x-read-sources": [
-          "content_forum_comment"
+          "content_comment"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "content",
@@ -38754,14 +38754,14 @@
         "x-sdkwork-resource": "courseComments",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/src/courseAdminService.ts",
         "x-write-tables": [
-          "content_forum_comment",
+          "content_comment",
           "ops_audit_log"
         ]
       }
     },
     "/backend/v3/api/content/courses/dashboard": {
       "get": {
-        "description": "Course operating dashboard from the current content course catalog, lessons, applications, comments, and reactions. Reads content_course, content_course_lesson, content_course_application, content_forum_comment, content_reaction. Writes none. File targets none.",
+        "description": "Course operating dashboard from the current content course catalog, lessons, applications, comments, and reactions. Reads content_course, content_course_lesson, content_course_application, content_comment, content_reaction. Writes none. File targets none.",
         "operationId": "courses.dashboard.retrieve",
         "parameters": [],
         "responses": {
@@ -38832,7 +38832,7 @@
           "content_course",
           "content_course_lesson",
           "content_course_application",
-          "content_forum_comment",
+          "content_comment",
           "content_reaction"
         ],
         "x-route-scope": "admin",
@@ -53569,7 +53569,7 @@
     },
     "/backend/v3/api/platform/apps/templates": {
       "get": {
-        "description": "List app templates. Reads studio_app_template, ai_skill_asset, ai_skill_artifact. Writes none. File targets none.",
+        "description": "List app templates. Reads platform_app_template, ai_skill_asset, ai_skill_artifact. Writes none. File targets none.",
         "operationId": "apps.templates.list",
         "parameters": [
           {
@@ -53723,7 +53723,7 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "studio_app_template",
+          "platform_app_template",
           "ai_skill_asset",
           "ai_skill_artifact"
         ],
@@ -53735,7 +53735,7 @@
         "x-write-tables": []
       },
       "post": {
-        "description": "Create app template. Reads studio_app_template. Writes studio_app_template, ops_audit_log. File targets none.",
+        "description": "Create app template. Reads platform_app_template. Writes platform_app_template, ops_audit_log. File targets none.",
         "operationId": "apps.templates.create",
         "parameters": [],
         "requestBody": {
@@ -53814,7 +53814,7 @@
         "x-contract-kind": "create",
         "x-file-targets": [],
         "x-read-sources": [
-          "studio_app_template"
+          "platform_app_template"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -53822,14 +53822,14 @@
         "x-sdkwork-resource": "apps.templates",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "studio_app_template",
+          "platform_app_template",
           "ops_audit_log"
         ]
       }
     },
     "/backend/v3/api/platform/apps/templates/{templateId}": {
       "delete": {
-        "description": "Delete app template. Reads studio_app_template, ai_skill_action, ai_skill_asset, ai_skill_artifact. Writes studio_app_template, ai_skill_action, ai_skill_asset, ai_skill_artifact, ops_audit_log. File targets none.",
+        "description": "Delete app template. Reads platform_app_template, ai_skill_action, ai_skill_asset, ai_skill_artifact. Writes platform_app_template, ai_skill_action, ai_skill_asset, ai_skill_artifact, ops_audit_log. File targets none.",
         "operationId": "apps.templates.delete",
         "parameters": [
           {
@@ -53907,7 +53907,7 @@
         "x-contract-kind": "delete",
         "x-file-targets": [],
         "x-read-sources": [
-          "studio_app_template",
+          "platform_app_template",
           "ai_skill_action",
           "ai_skill_asset",
           "ai_skill_artifact"
@@ -53918,7 +53918,7 @@
         "x-sdkwork-resource": "apps.templates",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "studio_app_template",
+          "platform_app_template",
           "ai_skill_action",
           "ai_skill_asset",
           "ai_skill_artifact",
@@ -53926,7 +53926,7 @@
         ]
       },
       "get": {
-        "description": "List app template. Reads studio_app_template. Writes none. File targets none.",
+        "description": "List app template. Reads platform_app_template. Writes none. File targets none.",
         "operationId": "apps.templates.retrieve",
         "parameters": [
           {
@@ -54004,7 +54004,7 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "studio_app_template"
+          "platform_app_template"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -54014,7 +54014,7 @@
         "x-write-tables": []
       },
       "put": {
-        "description": "Update app template. Reads studio_app_template. Writes studio_app_template, ops_audit_log. File targets none.",
+        "description": "Update app template. Reads platform_app_template. Writes platform_app_template, ops_audit_log. File targets none.",
         "operationId": "apps.templates.update",
         "parameters": [
           {
@@ -54103,7 +54103,7 @@
         "x-contract-kind": "update",
         "x-file-targets": [],
         "x-read-sources": [
-          "studio_app_template"
+          "platform_app_template"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -54111,14 +54111,14 @@
         "x-sdkwork-resource": "apps.templates",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "studio_app_template",
+          "platform_app_template",
           "ops_audit_log"
         ]
       }
     },
     "/backend/v3/api/platform/apps/templates/{templateId}/publish": {
       "post": {
-        "description": "Sets app template publishStatus to PUBLISHED. Reads studio_app_template. Writes studio_app_template, ops_audit_log. File targets none.",
+        "description": "Sets app template publishStatus to PUBLISHED. Reads platform_app_template. Writes platform_app_template, ops_audit_log. File targets none.",
         "operationId": "apps.templates.publish",
         "parameters": [
           {
@@ -54196,7 +54196,7 @@
         "x-contract-kind": "action",
         "x-file-targets": [],
         "x-read-sources": [
-          "studio_app_template"
+          "platform_app_template"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -54204,14 +54204,14 @@
         "x-sdkwork-resource": "apps.templates",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "studio_app_template",
+          "platform_app_template",
           "ops_audit_log"
         ]
       }
     },
     "/backend/v3/api/platform/apps/templates/{templateId}/unpublish": {
       "post": {
-        "description": "Sets app template publishStatus to OFFLINE. Reads studio_app_template. Writes studio_app_template, ops_audit_log. File targets none.",
+        "description": "Sets app template publishStatus to OFFLINE. Reads platform_app_template. Writes platform_app_template, ops_audit_log. File targets none.",
         "operationId": "apps.templates.unpublish",
         "parameters": [
           {
@@ -54289,7 +54289,7 @@
         "x-contract-kind": "action",
         "x-file-targets": [],
         "x-read-sources": [
-          "studio_app_template"
+          "platform_app_template"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -54297,7 +54297,7 @@
         "x-sdkwork-resource": "apps.templates",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "studio_app_template",
+          "platform_app_template",
           "ops_audit_log"
         ]
       }

@@ -428,7 +428,7 @@ fn from_env_or_initialize_creates_server_postgres_template_and_requires_real_dat
     assert!(content.contains("host = \"db.example.com\""));
     assert!(content.contains("port = 5432"));
     assert!(content.contains("database = \"sdkwork_ai_prod\""));
-    assert!(content.contains("username = \"sdkworkprod@2026++\""));
+    assert!(content.contains("username = \"sdkwork_ai_prod\""));
     assert!(content.contains(&format!(
         "password_file = \"{}\"",
         slash_path(&config_path.parent().unwrap().join("database.secret"))
@@ -515,9 +515,12 @@ fn server_runtime_validation_rejects_placeholder_postgres_host_and_password() {
     let location = RuntimeConfigLocation::for_platform("linux", RuntimeConfigProfile::Server);
 
     for url in [
+        "postgresql://sdkwork_ai_prod:change-me@db.example.com:5432/sdkwork_ai_prod?sslmode=require",
+        "postgresql://sdkwork_ai_prod:secret@db.example.com:5432/sdkwork_ai_prod?sslmode=require",
+        "postgresql://sdkwork_ai_prod:change-me@db.internal:5432/sdkwork_ai_prod?sslmode=require",
         "postgresql://sdkworkprod%402026%2B%2B:change-me@db.example.com:5432/sdkwork_ai_prod?sslmode=require",
         "postgresql://sdkworkprod%402026%2B%2B:secret@db.example.com:5432/sdkwork_ai_prod?sslmode=require",
-        "postgresql://sdkworkprod%402026%2B%2B:change-me@db.internal:5432/sdkwork_ai_prod?sslmode=require",
+        "postgresql://sdkwork:change-me@db.example.com:5432/sdkwork?sslmode=require",
         "postgresql://sdkwork_claw_router:change-me@db.example.com:5432/sdkwork_claw_router?sslmode=require",
         "postgresql://sdkwork_claw_router:secret@db.example.com:5432/sdkwork_claw_router?sslmode=require",
         "postgresql://sdkwork_claw_router:change-me@db.internal:5432/sdkwork_claw_router?sslmode=require",
@@ -535,7 +538,7 @@ fn server_runtime_validation_rejects_placeholder_postgres_host_and_password() {
 fn server_runtime_validation_accepts_real_postgres_location_and_password() {
     let location = RuntimeConfigLocation::for_platform("linux", RuntimeConfigProfile::Server);
     let config = DatabaseConfig::from_url(
-        "postgresql://sdkworkprod%402026%2B%2B:real-password@db.internal:5432/sdkwork_ai_prod?sslmode=require",
+        "postgresql://sdkwork_ai_prod:real-password@db.internal:5432/sdkwork_ai_prod?sslmode=require",
     )
     .unwrap();
 

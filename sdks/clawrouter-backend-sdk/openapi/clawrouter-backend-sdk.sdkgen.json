@@ -33240,7 +33240,7 @@
     },
     "/backend/v3/api/content/courses/comments": {
       "get": {
-        "description": "Course-related comments for moderation and content governance. Reads content_forum_comment. Writes none. File targets none.",
+        "description": "Course-related comments for moderation and content governance. Reads content_comment. Writes none. File targets none.",
         "operationId": "courseComments.list",
         "parameters": [
           {
@@ -33355,7 +33355,7 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "content_forum_comment"
+          "content_comment"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "content",
@@ -33369,7 +33369,7 @@
     },
     "/backend/v3/api/content/courses/comments/{commentId}/moderation": {
       "patch": {
-        "description": "Moderates a course comment and writes the operation audit trail. Reads content_forum_comment. Writes content_forum_comment, ops_audit_log. File targets none.",
+        "description": "Moderates a course comment and writes the operation audit trail. Reads content_comment. Writes content_comment, ops_audit_log. File targets none.",
         "operationId": "courseComments.moderate",
         "parameters": [
           {
@@ -33458,7 +33458,7 @@
         "x-contract-kind": "update",
         "x-file-targets": [],
         "x-read-sources": [
-          "content_forum_comment"
+          "content_comment"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "content",
@@ -33466,7 +33466,7 @@
         "x-sdkwork-resource": "courseComments",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/src/courseAdminService.ts",
         "x-write-tables": [
-          "content_forum_comment",
+          "content_comment",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -33475,7 +33475,7 @@
     },
     "/backend/v3/api/content/courses/dashboard": {
       "get": {
-        "description": "Course operating dashboard from the current content course catalog, lessons, applications, comments, and reactions. Reads content_course, content_course_lesson, content_course_application, content_forum_comment, content_reaction. Writes none. File targets none.",
+        "description": "Course operating dashboard from the current content course catalog, lessons, applications, comments, and reactions. Reads content_course, content_course_lesson, content_course_application, content_comment, content_reaction. Writes none. File targets none.",
         "operationId": "courses.dashboard.retrieve",
         "parameters": [],
         "responses": {
@@ -33546,7 +33546,7 @@
           "content_course",
           "content_course_lesson",
           "content_course_application",
-          "content_forum_comment",
+          "content_comment",
           "content_reaction"
         ],
         "x-route-scope": "admin",
@@ -34618,7 +34618,7 @@
     },
     "/backend/v3/api/ecosystem/skills": {
       "get": {
-        "description": "List skills. Reads plus_agent_skill, plus_agent_skill_package, plus_category. Writes none. File targets none.",
+        "description": "List skills. Reads ai_agent_skill, ai_agent_skill_package, c_category. Writes none. File targets none.",
         "operationId": "skills.list",
         "parameters": [
           {
@@ -34785,9 +34785,9 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_agent_skill",
-          "plus_agent_skill_package",
-          "plus_category"
+          "ai_agent_skill",
+          "ai_agent_skill_package",
+          "c_category"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -34799,7 +34799,7 @@
         "x-sdkwork-api-authority": "sdkwork-claw-router.backend"
       },
       "post": {
-        "description": "Create skill. Reads plus_agent_skill, plus_agent_skill_package, plus_category. Writes plus_agent_skill, ops_audit_log. File targets none.",
+        "description": "Create skill. Reads ai_agent_skill, ai_agent_skill_package, c_category. Writes ai_agent_skill, ops_audit_log. File targets none.",
         "operationId": "skills.create",
         "parameters": [],
         "requestBody": {
@@ -34878,9 +34878,9 @@
         "x-contract-kind": "create",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_agent_skill",
-          "plus_agent_skill_package",
-          "plus_category"
+          "ai_agent_skill",
+          "ai_agent_skill_package",
+          "c_category"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -34888,7 +34888,7 @@
         "x-sdkwork-resource": "skills",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
         "x-write-tables": [
-          "plus_agent_skill",
+          "ai_agent_skill",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -34897,7 +34897,7 @@
     },
     "/backend/v3/api/ecosystem/skills/categories": {
       "get": {
-        "description": "List skill categories. Reads plus_category. Writes none. File targets none.",
+        "description": "List skill categories. Reads c_category. Writes none. File targets none.",
         "operationId": "skills.categories.list",
         "parameters": [],
         "responses": {
@@ -34965,7 +34965,7 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_category"
+          "c_category"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -34977,7 +34977,7 @@
         "x-sdkwork-api-authority": "sdkwork-claw-router.backend"
       },
       "post": {
-        "description": "Create skill category. Reads plus_category. Writes plus_category, ops_audit_log. File targets none.",
+        "description": "Create skill category. Reads c_category. Writes c_category, ops_audit_log. File targets none.",
         "operationId": "skills.categories.create",
         "parameters": [],
         "requestBody": {
@@ -35056,7 +35056,7 @@
         "x-contract-kind": "create",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_category"
+          "c_category"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -35064,7 +35064,7 @@
         "x-sdkwork-resource": "skills.categories",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
         "x-write-tables": [
-          "plus_category",
+          "c_category",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -35073,7 +35073,7 @@
     },
     "/backend/v3/api/ecosystem/skills/categories/{categoryId}": {
       "delete": {
-        "description": "Delete skill category. Reads plus_category, plus_agent_skill_package, plus_agent_skill. Writes plus_category, ops_audit_log. File targets none.",
+        "description": "Delete skill category. Reads c_category, ai_agent_skill_package, ai_agent_skill. Writes c_category, ops_audit_log. File targets none.",
         "operationId": "skills.categories.delete",
         "parameters": [
           {
@@ -35151,9 +35151,9 @@
         "x-contract-kind": "delete",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_category",
-          "plus_agent_skill_package",
-          "plus_agent_skill"
+          "c_category",
+          "ai_agent_skill_package",
+          "ai_agent_skill"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -35161,14 +35161,14 @@
         "x-sdkwork-resource": "skills.categories",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
         "x-write-tables": [
-          "plus_category",
+          "c_category",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
         "x-sdkwork-api-authority": "sdkwork-claw-router.backend"
       },
       "put": {
-        "description": "Update skill category. Reads plus_category. Writes plus_category, ops_audit_log. File targets none.",
+        "description": "Update skill category. Reads c_category. Writes c_category, ops_audit_log. File targets none.",
         "operationId": "skills.categories.update",
         "parameters": [
           {
@@ -35257,7 +35257,7 @@
         "x-contract-kind": "update",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_category"
+          "c_category"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -35265,7 +35265,7 @@
         "x-sdkwork-resource": "skills.categories",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
         "x-write-tables": [
-          "plus_category",
+          "c_category",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -35274,7 +35274,7 @@
     },
     "/backend/v3/api/ecosystem/skills/package": {
       "get": {
-        "description": "List skill packages. Reads plus_agent_skill_package, plus_category. Writes none. File targets none.",
+        "description": "List skill packages. Reads ai_agent_skill_package, c_category. Writes none. File targets none.",
         "operationId": "skills.package.list",
         "parameters": [
           {
@@ -35398,8 +35398,8 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_agent_skill_package",
-          "plus_category"
+          "ai_agent_skill_package",
+          "c_category"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -35411,7 +35411,7 @@
         "x-sdkwork-api-authority": "sdkwork-claw-router.backend"
       },
       "post": {
-        "description": "Create skill package. Reads plus_agent_skill_package, plus_category. Writes plus_agent_skill_package, ops_audit_log. File targets none.",
+        "description": "Create skill package. Reads ai_agent_skill_package, c_category. Writes ai_agent_skill_package, ops_audit_log. File targets none.",
         "operationId": "skills.package.create",
         "parameters": [],
         "requestBody": {
@@ -35490,8 +35490,8 @@
         "x-contract-kind": "create",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_agent_skill_package",
-          "plus_category"
+          "ai_agent_skill_package",
+          "c_category"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -35499,7 +35499,7 @@
         "x-sdkwork-resource": "skills.package",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
         "x-write-tables": [
-          "plus_agent_skill_package",
+          "ai_agent_skill_package",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -35508,7 +35508,7 @@
     },
     "/backend/v3/api/ecosystem/skills/package/{packageId}": {
       "delete": {
-        "description": "Delete skill package. Reads plus_agent_skill_package, plus_agent_skill. Writes plus_agent_skill_package, plus_agent_skill, ops_audit_log. File targets none.",
+        "description": "Delete skill package. Reads ai_agent_skill_package, ai_agent_skill. Writes ai_agent_skill_package, ai_agent_skill, ops_audit_log. File targets none.",
         "operationId": "skills.package.delete",
         "parameters": [
           {
@@ -35586,8 +35586,8 @@
         "x-contract-kind": "delete",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_agent_skill_package",
-          "plus_agent_skill"
+          "ai_agent_skill_package",
+          "ai_agent_skill"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -35595,15 +35595,15 @@
         "x-sdkwork-resource": "skills.package",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
         "x-write-tables": [
-          "plus_agent_skill_package",
-          "plus_agent_skill",
+          "ai_agent_skill_package",
+          "ai_agent_skill",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
         "x-sdkwork-api-authority": "sdkwork-claw-router.backend"
       },
       "get": {
-        "description": "Get skill package. Reads plus_agent_skill_package, plus_category. Writes none. File targets none.",
+        "description": "Get skill package. Reads ai_agent_skill_package, c_category. Writes none. File targets none.",
         "operationId": "skills.package.retrieve",
         "parameters": [
           {
@@ -35681,8 +35681,8 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_agent_skill_package",
-          "plus_category"
+          "ai_agent_skill_package",
+          "c_category"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -35694,7 +35694,7 @@
         "x-sdkwork-api-authority": "sdkwork-claw-router.backend"
       },
       "put": {
-        "description": "Update skill package. Reads plus_agent_skill_package, plus_category. Writes plus_agent_skill_package, ops_audit_log. File targets none.",
+        "description": "Update skill package. Reads ai_agent_skill_package, c_category. Writes ai_agent_skill_package, ops_audit_log. File targets none.",
         "operationId": "skills.package.update",
         "parameters": [
           {
@@ -35783,8 +35783,8 @@
         "x-contract-kind": "update",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_agent_skill_package",
-          "plus_category"
+          "ai_agent_skill_package",
+          "c_category"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -35792,7 +35792,7 @@
         "x-sdkwork-resource": "skills.package",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
         "x-write-tables": [
-          "plus_agent_skill_package",
+          "ai_agent_skill_package",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -35801,7 +35801,7 @@
     },
     "/backend/v3/api/ecosystem/skills/package/{packageId}/disable": {
       "post": {
-        "description": "Disable skill package. Reads plus_agent_skill_package. Writes plus_agent_skill_package, ops_audit_log. File targets none.",
+        "description": "Disable skill package. Reads ai_agent_skill_package. Writes ai_agent_skill_package, ops_audit_log. File targets none.",
         "operationId": "skills.package.disable",
         "parameters": [
           {
@@ -35879,7 +35879,7 @@
         "x-contract-kind": "action",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_agent_skill_package"
+          "ai_agent_skill_package"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -35887,7 +35887,7 @@
         "x-sdkwork-resource": "skills.package",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
         "x-write-tables": [
-          "plus_agent_skill_package",
+          "ai_agent_skill_package",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -35896,7 +35896,7 @@
     },
     "/backend/v3/api/ecosystem/skills/package/{packageId}/enable": {
       "post": {
-        "description": "Enable skill package. Reads plus_agent_skill_package. Writes plus_agent_skill_package, ops_audit_log. File targets none.",
+        "description": "Enable skill package. Reads ai_agent_skill_package. Writes ai_agent_skill_package, ops_audit_log. File targets none.",
         "operationId": "skills.package.enable",
         "parameters": [
           {
@@ -35974,7 +35974,7 @@
         "x-contract-kind": "action",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_agent_skill_package"
+          "ai_agent_skill_package"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -35982,7 +35982,7 @@
         "x-sdkwork-resource": "skills.package",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
         "x-write-tables": [
-          "plus_agent_skill_package",
+          "ai_agent_skill_package",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -35991,7 +35991,7 @@
     },
     "/backend/v3/api/ecosystem/skills/{skillId}": {
       "delete": {
-        "description": "Delete skill. Reads plus_agent_skill, plus_user_agent_skill. Writes plus_agent_skill, plus_user_agent_skill, ops_audit_log. File targets none.",
+        "description": "Delete skill. Reads ai_agent_skill, ai_user_agent_skill. Writes ai_agent_skill, ai_user_agent_skill, ops_audit_log. File targets none.",
         "operationId": "skills.delete",
         "parameters": [
           {
@@ -36069,8 +36069,8 @@
         "x-contract-kind": "delete",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_agent_skill",
-          "plus_user_agent_skill"
+          "ai_agent_skill",
+          "ai_user_agent_skill"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -36078,15 +36078,15 @@
         "x-sdkwork-resource": "skills",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
         "x-write-tables": [
-          "plus_agent_skill",
-          "plus_user_agent_skill",
+          "ai_agent_skill",
+          "ai_user_agent_skill",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
         "x-sdkwork-api-authority": "sdkwork-claw-router.backend"
       },
       "get": {
-        "description": "Get skill. Reads plus_agent_skill, plus_agent_skill_package, plus_category. Writes none. File targets none.",
+        "description": "Get skill. Reads ai_agent_skill, ai_agent_skill_package, c_category. Writes none. File targets none.",
         "operationId": "skills.retrieve",
         "parameters": [
           {
@@ -36164,9 +36164,9 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_agent_skill",
-          "plus_agent_skill_package",
-          "plus_category"
+          "ai_agent_skill",
+          "ai_agent_skill_package",
+          "c_category"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -36178,7 +36178,7 @@
         "x-sdkwork-api-authority": "sdkwork-claw-router.backend"
       },
       "put": {
-        "description": "Update skill. Reads plus_agent_skill, plus_agent_skill_package, plus_category. Writes plus_agent_skill, ops_audit_log. File targets none.",
+        "description": "Update skill. Reads ai_agent_skill, ai_agent_skill_package, c_category. Writes ai_agent_skill, ops_audit_log. File targets none.",
         "operationId": "skills.update",
         "parameters": [
           {
@@ -36267,9 +36267,9 @@
         "x-contract-kind": "update",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_agent_skill",
-          "plus_agent_skill_package",
-          "plus_category"
+          "ai_agent_skill",
+          "ai_agent_skill_package",
+          "c_category"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -36277,7 +36277,7 @@
         "x-sdkwork-resource": "skills",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
         "x-write-tables": [
-          "plus_agent_skill",
+          "ai_agent_skill",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -36286,7 +36286,7 @@
     },
     "/backend/v3/api/ecosystem/skills/{skillId}/artifacts": {
       "get": {
-        "description": "List skill artifacts. Reads plus_agent_skill, studio_catalog_artifact, studio_catalog_asset. Writes none. File targets none.",
+        "description": "List skill artifacts. Reads ai_agent_skill, ai_skill_artifact, ai_skill_asset. Writes none. File targets none.",
         "operationId": "skills.artifacts.list",
         "parameters": [
           {
@@ -36364,9 +36364,9 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_agent_skill",
-          "studio_catalog_artifact",
-          "studio_catalog_asset"
+          "ai_agent_skill",
+          "ai_skill_artifact",
+          "ai_skill_asset"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -36378,7 +36378,7 @@
         "x-sdkwork-api-authority": "sdkwork-claw-router.backend"
       },
       "post": {
-        "description": "Create skill artifact. Reads plus_agent_skill, studio_catalog_artifact, studio_catalog_asset. Writes studio_catalog_artifact, studio_catalog_asset, ops_audit_log. File targets none.",
+        "description": "Create skill artifact. Reads ai_agent_skill, ai_skill_artifact, ai_skill_asset. Writes ai_skill_artifact, ai_skill_asset, ops_audit_log. File targets none.",
         "operationId": "skills.artifacts.create",
         "parameters": [
           {
@@ -36467,9 +36467,9 @@
         "x-contract-kind": "create",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_agent_skill",
-          "studio_catalog_artifact",
-          "studio_catalog_asset"
+          "ai_agent_skill",
+          "ai_skill_artifact",
+          "ai_skill_asset"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -36477,8 +36477,8 @@
         "x-sdkwork-resource": "skills.artifacts",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
         "x-write-tables": [
-          "studio_catalog_artifact",
-          "studio_catalog_asset",
+          "ai_skill_artifact",
+          "ai_skill_asset",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -36487,7 +36487,7 @@
     },
     "/backend/v3/api/ecosystem/skills/{skillId}/artifacts/{artifactId}": {
       "delete": {
-        "description": "Delete skill artifact. Reads plus_agent_skill, studio_catalog_artifact, studio_catalog_asset. Writes studio_catalog_artifact, studio_catalog_asset, ops_audit_log. File targets none.",
+        "description": "Delete skill artifact. Reads ai_agent_skill, ai_skill_artifact, ai_skill_asset. Writes ai_skill_artifact, ai_skill_asset, ops_audit_log. File targets none.",
         "operationId": "skills.artifacts.delete",
         "parameters": [
           {
@@ -36574,9 +36574,9 @@
         "x-contract-kind": "delete",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_agent_skill",
-          "studio_catalog_artifact",
-          "studio_catalog_asset"
+          "ai_agent_skill",
+          "ai_skill_artifact",
+          "ai_skill_asset"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -36584,15 +36584,15 @@
         "x-sdkwork-resource": "skills.artifacts",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
         "x-write-tables": [
-          "studio_catalog_artifact",
-          "studio_catalog_asset",
+          "ai_skill_artifact",
+          "ai_skill_asset",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
         "x-sdkwork-api-authority": "sdkwork-claw-router.backend"
       },
       "get": {
-        "description": "Get skill artifact. Reads plus_agent_skill, studio_catalog_artifact, studio_catalog_asset. Writes none. File targets none.",
+        "description": "Get skill artifact. Reads ai_agent_skill, ai_skill_artifact, ai_skill_asset. Writes none. File targets none.",
         "operationId": "skills.artifacts.retrieve",
         "parameters": [
           {
@@ -36679,9 +36679,9 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_agent_skill",
-          "studio_catalog_artifact",
-          "studio_catalog_asset"
+          "ai_agent_skill",
+          "ai_skill_artifact",
+          "ai_skill_asset"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -36693,7 +36693,7 @@
         "x-sdkwork-api-authority": "sdkwork-claw-router.backend"
       },
       "put": {
-        "description": "Update skill artifact. Reads plus_agent_skill, studio_catalog_artifact, studio_catalog_asset. Writes studio_catalog_artifact, studio_catalog_asset, ops_audit_log. File targets none.",
+        "description": "Update skill artifact. Reads ai_agent_skill, ai_skill_artifact, ai_skill_asset. Writes ai_skill_artifact, ai_skill_asset, ops_audit_log. File targets none.",
         "operationId": "skills.artifacts.update",
         "parameters": [
           {
@@ -36791,9 +36791,9 @@
         "x-contract-kind": "update",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_agent_skill",
-          "studio_catalog_artifact",
-          "studio_catalog_asset"
+          "ai_agent_skill",
+          "ai_skill_artifact",
+          "ai_skill_asset"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -36801,8 +36801,8 @@
         "x-sdkwork-resource": "skills.artifacts",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
         "x-write-tables": [
-          "studio_catalog_artifact",
-          "studio_catalog_asset",
+          "ai_skill_artifact",
+          "ai_skill_asset",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -36811,7 +36811,7 @@
     },
     "/backend/v3/api/ecosystem/skills/{skillId}/assets": {
       "get": {
-        "description": "List skill assets. Reads plus_agent_skill, studio_catalog_asset, studio_catalog_artifact. Writes none. File targets none.",
+        "description": "List skill assets. Reads ai_agent_skill, ai_skill_asset, ai_skill_artifact. Writes none. File targets none.",
         "operationId": "skills.assets.list",
         "parameters": [
           {
@@ -36889,9 +36889,9 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_agent_skill",
-          "studio_catalog_asset",
-          "studio_catalog_artifact"
+          "ai_agent_skill",
+          "ai_skill_asset",
+          "ai_skill_artifact"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -36903,7 +36903,7 @@
         "x-sdkwork-api-authority": "sdkwork-claw-router.backend"
       },
       "post": {
-        "description": "Create skill asset. Reads plus_agent_skill, studio_catalog_asset, studio_catalog_artifact. Writes studio_catalog_asset, ops_audit_log. File targets none.",
+        "description": "Create skill asset. Reads ai_agent_skill, ai_skill_asset, ai_skill_artifact. Writes ai_skill_asset, ops_audit_log. File targets none.",
         "operationId": "skills.assets.create",
         "parameters": [
           {
@@ -36992,9 +36992,9 @@
         "x-contract-kind": "create",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_agent_skill",
-          "studio_catalog_asset",
-          "studio_catalog_artifact"
+          "ai_agent_skill",
+          "ai_skill_asset",
+          "ai_skill_artifact"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -37002,7 +37002,7 @@
         "x-sdkwork-resource": "skills.assets",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
         "x-write-tables": [
-          "studio_catalog_asset",
+          "ai_skill_asset",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -37011,7 +37011,7 @@
     },
     "/backend/v3/api/ecosystem/skills/{skillId}/assets/{assetId}": {
       "delete": {
-        "description": "Delete skill asset. Reads plus_agent_skill, studio_catalog_asset. Writes studio_catalog_asset, ops_audit_log. File targets none.",
+        "description": "Delete skill asset. Reads ai_agent_skill, ai_skill_asset. Writes ai_skill_asset, ops_audit_log. File targets none.",
         "operationId": "skills.assets.delete",
         "parameters": [
           {
@@ -37098,8 +37098,8 @@
         "x-contract-kind": "delete",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_agent_skill",
-          "studio_catalog_asset"
+          "ai_agent_skill",
+          "ai_skill_asset"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -37107,14 +37107,14 @@
         "x-sdkwork-resource": "skills.assets",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
         "x-write-tables": [
-          "studio_catalog_asset",
+          "ai_skill_asset",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
         "x-sdkwork-api-authority": "sdkwork-claw-router.backend"
       },
       "get": {
-        "description": "Get skill asset. Reads plus_agent_skill, studio_catalog_asset, studio_catalog_artifact. Writes none. File targets none.",
+        "description": "Get skill asset. Reads ai_agent_skill, ai_skill_asset, ai_skill_artifact. Writes none. File targets none.",
         "operationId": "skills.assets.retrieve",
         "parameters": [
           {
@@ -37201,9 +37201,9 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_agent_skill",
-          "studio_catalog_asset",
-          "studio_catalog_artifact"
+          "ai_agent_skill",
+          "ai_skill_asset",
+          "ai_skill_artifact"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -37215,7 +37215,7 @@
         "x-sdkwork-api-authority": "sdkwork-claw-router.backend"
       },
       "put": {
-        "description": "Update skill asset. Reads plus_agent_skill, studio_catalog_asset, studio_catalog_artifact. Writes studio_catalog_asset, ops_audit_log. File targets none.",
+        "description": "Update skill asset. Reads ai_agent_skill, ai_skill_asset, ai_skill_artifact. Writes ai_skill_asset, ops_audit_log. File targets none.",
         "operationId": "skills.assets.update",
         "parameters": [
           {
@@ -37313,9 +37313,9 @@
         "x-contract-kind": "update",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_agent_skill",
-          "studio_catalog_asset",
-          "studio_catalog_artifact"
+          "ai_agent_skill",
+          "ai_skill_asset",
+          "ai_skill_artifact"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -37323,7 +37323,7 @@
         "x-sdkwork-resource": "skills.assets",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
         "x-write-tables": [
-          "studio_catalog_asset",
+          "ai_skill_asset",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -37332,7 +37332,7 @@
     },
     "/backend/v3/api/ecosystem/skills/{skillId}/disable": {
       "post": {
-        "description": "Disable skill. Reads plus_agent_skill. Writes plus_agent_skill, ops_audit_log. File targets none.",
+        "description": "Disable skill. Reads ai_agent_skill. Writes ai_agent_skill, ops_audit_log. File targets none.",
         "operationId": "skills.disable",
         "parameters": [
           {
@@ -37410,7 +37410,7 @@
         "x-contract-kind": "action",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_agent_skill"
+          "ai_agent_skill"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -37418,7 +37418,7 @@
         "x-sdkwork-resource": "skills",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
         "x-write-tables": [
-          "plus_agent_skill",
+          "ai_agent_skill",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -37427,7 +37427,7 @@
     },
     "/backend/v3/api/ecosystem/skills/{skillId}/enable": {
       "post": {
-        "description": "Enable skill. Reads plus_agent_skill. Writes plus_agent_skill, ops_audit_log. File targets none.",
+        "description": "Enable skill. Reads ai_agent_skill. Writes ai_agent_skill, ops_audit_log. File targets none.",
         "operationId": "skills.enable",
         "parameters": [
           {
@@ -37505,7 +37505,7 @@
         "x-contract-kind": "action",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_agent_skill"
+          "ai_agent_skill"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -37513,7 +37513,7 @@
         "x-sdkwork-resource": "skills",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
         "x-write-tables": [
-          "plus_agent_skill",
+          "ai_agent_skill",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -37522,7 +37522,7 @@
     },
     "/backend/v3/api/ecosystem/skills/{skillId}/publish": {
       "post": {
-        "description": "Publish skill. Reads plus_agent_skill. Writes plus_agent_skill, ops_audit_log. File targets none.",
+        "description": "Publish skill. Reads ai_agent_skill. Writes ai_agent_skill, ops_audit_log. File targets none.",
         "operationId": "skills.publish",
         "parameters": [
           {
@@ -37600,7 +37600,7 @@
         "x-contract-kind": "action",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_agent_skill"
+          "ai_agent_skill"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -37608,7 +37608,7 @@
         "x-sdkwork-resource": "skills",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
         "x-write-tables": [
-          "plus_agent_skill",
+          "ai_agent_skill",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -37617,7 +37617,7 @@
     },
     "/backend/v3/api/ecosystem/skills/{skillId}/review/approve": {
       "post": {
-        "description": "Approve skill. Reads plus_agent_skill. Writes plus_agent_skill, ops_audit_log. File targets none.",
+        "description": "Approve skill. Reads ai_agent_skill. Writes ai_agent_skill, ops_audit_log. File targets none.",
         "operationId": "skills.review.approve",
         "parameters": [
           {
@@ -37706,7 +37706,7 @@
         "x-contract-kind": "action",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_agent_skill"
+          "ai_agent_skill"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -37714,7 +37714,7 @@
         "x-sdkwork-resource": "skills.review",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
         "x-write-tables": [
-          "plus_agent_skill",
+          "ai_agent_skill",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -37723,7 +37723,7 @@
     },
     "/backend/v3/api/ecosystem/skills/{skillId}/review/reject": {
       "post": {
-        "description": "Reject skill. Reads plus_agent_skill. Writes plus_agent_skill, ops_audit_log. File targets none.",
+        "description": "Reject skill. Reads ai_agent_skill. Writes ai_agent_skill, ops_audit_log. File targets none.",
         "operationId": "skills.review.reject",
         "parameters": [
           {
@@ -37812,7 +37812,7 @@
         "x-contract-kind": "action",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_agent_skill"
+          "ai_agent_skill"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -37820,7 +37820,7 @@
         "x-sdkwork-resource": "skills.review",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
         "x-write-tables": [
-          "plus_agent_skill",
+          "ai_agent_skill",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -37829,7 +37829,7 @@
     },
     "/backend/v3/api/ecosystem/skills/{skillId}/unpublish": {
       "post": {
-        "description": "Offline skill. Reads plus_agent_skill. Writes plus_agent_skill, ops_audit_log. File targets none.",
+        "description": "Offline skill. Reads ai_agent_skill. Writes ai_agent_skill, ops_audit_log. File targets none.",
         "operationId": "skills.unpublish",
         "parameters": [
           {
@@ -37907,7 +37907,7 @@
         "x-contract-kind": "action",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_agent_skill"
+          "ai_agent_skill"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "ecosystem",
@@ -37915,7 +37915,7 @@
         "x-sdkwork-resource": "skills",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
         "x-write-tables": [
-          "plus_agent_skill",
+          "ai_agent_skill",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -39213,7 +39213,7 @@
     },
     "/backend/v3/api/mcp/servers": {
       "get": {
-        "description": "Lists vertical MCP server definitions with unified category references and operational health. Reads ai_mcp_server, plus_category. Writes none. File targets none.",
+        "description": "Lists vertical MCP server definitions with unified category references and operational health. Reads ai_mcp_server, c_category. Writes none. File targets none.",
         "operationId": "servers.list",
         "parameters": [
           {
@@ -39359,7 +39359,7 @@
         "x-file-targets": [],
         "x-read-sources": [
           "ai_mcp_server",
-          "plus_category"
+          "c_category"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "mcp",
@@ -39371,7 +39371,7 @@
         "x-sdkwork-api-authority": "sdkwork-claw-router.backend"
       },
       "post": {
-        "description": "Creates an MCP server definition; classification is only by unified category references. Reads ai_mcp_server, plus_category. Writes ai_mcp_server, ops_audit_log. File targets none.",
+        "description": "Creates an MCP server definition; classification is only by unified category references. Reads ai_mcp_server, c_category. Writes ai_mcp_server, ops_audit_log. File targets none.",
         "operationId": "servers.create",
         "parameters": [
           {
@@ -39462,7 +39462,7 @@
         "x-file-targets": [],
         "x-read-sources": [
           "ai_mcp_server",
-          "plus_category"
+          "c_category"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "mcp",
@@ -39479,7 +39479,7 @@
     },
     "/backend/v3/api/mcp/servers/{serverId}": {
       "get": {
-        "description": "Retrieves one MCP server definition for detailed governance. Reads ai_mcp_server, plus_category. Writes none. File targets none.",
+        "description": "Retrieves one MCP server definition for detailed governance. Reads ai_mcp_server, c_category. Writes none. File targets none.",
         "operationId": "servers.retrieve",
         "parameters": [
           {
@@ -39558,7 +39558,7 @@
         "x-file-targets": [],
         "x-read-sources": [
           "ai_mcp_server",
-          "plus_category"
+          "c_category"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "mcp",
@@ -39570,7 +39570,7 @@
         "x-sdkwork-api-authority": "sdkwork-claw-router.backend"
       },
       "put": {
-        "description": "Updates MCP server metadata, lifecycle state, and unified category reference. Reads ai_mcp_server, plus_category. Writes ai_mcp_server, ops_audit_log. File targets none.",
+        "description": "Updates MCP server metadata, lifecycle state, and unified category reference. Reads ai_mcp_server, c_category. Writes ai_mcp_server, ops_audit_log. File targets none.",
         "operationId": "servers.update",
         "parameters": [
           {
@@ -39660,7 +39660,7 @@
         "x-file-targets": [],
         "x-read-sources": [
           "ai_mcp_server",
-          "plus_category"
+          "c_category"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "mcp",
@@ -42813,7 +42813,7 @@
     },
     "/backend/v3/api/platform/apps": {
       "get": {
-        "description": "List apps. Reads plus_app, plus_category, studio_catalog_asset, studio_catalog_artifact. Writes none. File targets none.",
+        "description": "List apps. Reads platform_app, c_category, ai_skill_asset, ai_skill_artifact. Writes none. File targets none.",
         "operationId": "apps.list",
         "parameters": [
           {
@@ -42969,10 +42969,10 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_app",
-          "plus_category",
-          "studio_catalog_asset",
-          "studio_catalog_artifact"
+          "platform_app",
+          "c_category",
+          "ai_skill_asset",
+          "ai_skill_artifact"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -42984,7 +42984,7 @@
         "x-sdkwork-api-authority": "sdkwork-claw-router.backend"
       },
       "post": {
-        "description": "Create app. Reads plus_app, plus_category, studio_catalog_asset, studio_catalog_artifact. Writes plus_app, ops_audit_log. File targets none.",
+        "description": "Create app. Reads platform_app, c_category, ai_skill_asset, ai_skill_artifact. Writes platform_app, ops_audit_log. File targets none.",
         "operationId": "apps.create",
         "parameters": [],
         "requestBody": {
@@ -43063,10 +43063,10 @@
         "x-contract-kind": "create",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_app",
-          "plus_category",
-          "studio_catalog_asset",
-          "studio_catalog_artifact"
+          "platform_app",
+          "c_category",
+          "ai_skill_asset",
+          "ai_skill_artifact"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -43074,7 +43074,7 @@
         "x-sdkwork-resource": "apps",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "plus_app",
+          "platform_app",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -43083,7 +43083,7 @@
     },
     "/backend/v3/api/platform/apps/categories": {
       "get": {
-        "description": "List app categories. Reads plus_category. Writes none. File targets none.",
+        "description": "List app categories. Reads c_category. Writes none. File targets none.",
         "operationId": "apps.categories.list",
         "parameters": [],
         "responses": {
@@ -43151,7 +43151,7 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_category"
+          "c_category"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -43163,7 +43163,7 @@
         "x-sdkwork-api-authority": "sdkwork-claw-router.backend"
       },
       "post": {
-        "description": "Create app category. Reads plus_category. Writes plus_category, ops_audit_log. File targets none.",
+        "description": "Create app category. Reads c_category. Writes c_category, ops_audit_log. File targets none.",
         "operationId": "apps.categories.create",
         "parameters": [],
         "requestBody": {
@@ -43242,7 +43242,7 @@
         "x-contract-kind": "create",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_category"
+          "c_category"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -43250,7 +43250,7 @@
         "x-sdkwork-resource": "apps.categories",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "plus_category",
+          "c_category",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -43259,7 +43259,7 @@
     },
     "/backend/v3/api/platform/apps/categories/{categoryId}": {
       "delete": {
-        "description": "Delete app category. Reads plus_category. Writes plus_category, ops_audit_log. File targets none.",
+        "description": "Delete app category. Reads c_category. Writes c_category, ops_audit_log. File targets none.",
         "operationId": "apps.categories.delete",
         "parameters": [
           {
@@ -43337,7 +43337,7 @@
         "x-contract-kind": "delete",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_category"
+          "c_category"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -43345,14 +43345,14 @@
         "x-sdkwork-resource": "apps.categories",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "plus_category",
+          "c_category",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
         "x-sdkwork-api-authority": "sdkwork-claw-router.backend"
       },
       "put": {
-        "description": "Update app category. Reads plus_category. Writes plus_category, ops_audit_log. File targets none.",
+        "description": "Update app category. Reads c_category. Writes c_category, ops_audit_log. File targets none.",
         "operationId": "apps.categories.update",
         "parameters": [
           {
@@ -43441,7 +43441,7 @@
         "x-contract-kind": "update",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_category"
+          "c_category"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -43449,7 +43449,7 @@
         "x-sdkwork-resource": "apps.categories",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "plus_category",
+          "c_category",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -43458,7 +43458,7 @@
     },
     "/backend/v3/api/platform/apps/templates": {
       "get": {
-        "description": "List app templates. Reads studio_app_template, studio_catalog_asset, studio_catalog_artifact. Writes none. File targets none.",
+        "description": "List app templates. Reads platform_app_template, ai_skill_asset, ai_skill_artifact. Writes none. File targets none.",
         "operationId": "apps.templates.list",
         "parameters": [
           {
@@ -43612,9 +43612,9 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "studio_app_template",
-          "studio_catalog_asset",
-          "studio_catalog_artifact"
+          "platform_app_template",
+          "ai_skill_asset",
+          "ai_skill_artifact"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -43626,7 +43626,7 @@
         "x-sdkwork-api-authority": "sdkwork-claw-router.backend"
       },
       "post": {
-        "description": "Create app template. Reads studio_app_template. Writes studio_app_template, ops_audit_log. File targets none.",
+        "description": "Create app template. Reads platform_app_template. Writes platform_app_template, ops_audit_log. File targets none.",
         "operationId": "apps.templates.create",
         "parameters": [],
         "requestBody": {
@@ -43705,7 +43705,7 @@
         "x-contract-kind": "create",
         "x-file-targets": [],
         "x-read-sources": [
-          "studio_app_template"
+          "platform_app_template"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -43713,7 +43713,7 @@
         "x-sdkwork-resource": "apps.templates",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "studio_app_template",
+          "platform_app_template",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -43722,7 +43722,7 @@
     },
     "/backend/v3/api/platform/apps/templates/{templateId}": {
       "delete": {
-        "description": "Delete app template. Reads studio_app_template, studio_catalog_action, studio_catalog_asset, studio_catalog_artifact. Writes studio_app_template, studio_catalog_action, studio_catalog_asset, studio_catalog_artifact, ops_audit_log. File targets none.",
+        "description": "Delete app template. Reads platform_app_template, ai_skill_action, ai_skill_asset, ai_skill_artifact. Writes platform_app_template, ai_skill_action, ai_skill_asset, ai_skill_artifact, ops_audit_log. File targets none.",
         "operationId": "apps.templates.delete",
         "parameters": [
           {
@@ -43800,10 +43800,10 @@
         "x-contract-kind": "delete",
         "x-file-targets": [],
         "x-read-sources": [
-          "studio_app_template",
-          "studio_catalog_action",
-          "studio_catalog_asset",
-          "studio_catalog_artifact"
+          "platform_app_template",
+          "ai_skill_action",
+          "ai_skill_asset",
+          "ai_skill_artifact"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -43811,17 +43811,17 @@
         "x-sdkwork-resource": "apps.templates",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "studio_app_template",
-          "studio_catalog_action",
-          "studio_catalog_asset",
-          "studio_catalog_artifact",
+          "platform_app_template",
+          "ai_skill_action",
+          "ai_skill_asset",
+          "ai_skill_artifact",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
         "x-sdkwork-api-authority": "sdkwork-claw-router.backend"
       },
       "get": {
-        "description": "List app template. Reads studio_app_template. Writes none. File targets none.",
+        "description": "List app template. Reads platform_app_template. Writes none. File targets none.",
         "operationId": "apps.templates.retrieve",
         "parameters": [
           {
@@ -43899,7 +43899,7 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "studio_app_template"
+          "platform_app_template"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -43911,7 +43911,7 @@
         "x-sdkwork-api-authority": "sdkwork-claw-router.backend"
       },
       "put": {
-        "description": "Update app template. Reads studio_app_template. Writes studio_app_template, ops_audit_log. File targets none.",
+        "description": "Update app template. Reads platform_app_template. Writes platform_app_template, ops_audit_log. File targets none.",
         "operationId": "apps.templates.update",
         "parameters": [
           {
@@ -44000,7 +44000,7 @@
         "x-contract-kind": "update",
         "x-file-targets": [],
         "x-read-sources": [
-          "studio_app_template"
+          "platform_app_template"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -44008,7 +44008,7 @@
         "x-sdkwork-resource": "apps.templates",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "studio_app_template",
+          "platform_app_template",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -44017,7 +44017,7 @@
     },
     "/backend/v3/api/platform/apps/templates/{templateId}/publish": {
       "post": {
-        "description": "Sets app template publishStatus to PUBLISHED. Reads studio_app_template. Writes studio_app_template, ops_audit_log. File targets none.",
+        "description": "Sets app template publishStatus to PUBLISHED. Reads platform_app_template. Writes platform_app_template, ops_audit_log. File targets none.",
         "operationId": "apps.templates.publish",
         "parameters": [
           {
@@ -44095,7 +44095,7 @@
         "x-contract-kind": "action",
         "x-file-targets": [],
         "x-read-sources": [
-          "studio_app_template"
+          "platform_app_template"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -44103,7 +44103,7 @@
         "x-sdkwork-resource": "apps.templates",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "studio_app_template",
+          "platform_app_template",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -44112,7 +44112,7 @@
     },
     "/backend/v3/api/platform/apps/templates/{templateId}/unpublish": {
       "post": {
-        "description": "Sets app template publishStatus to OFFLINE. Reads studio_app_template. Writes studio_app_template, ops_audit_log. File targets none.",
+        "description": "Sets app template publishStatus to OFFLINE. Reads platform_app_template. Writes platform_app_template, ops_audit_log. File targets none.",
         "operationId": "apps.templates.unpublish",
         "parameters": [
           {
@@ -44190,7 +44190,7 @@
         "x-contract-kind": "action",
         "x-file-targets": [],
         "x-read-sources": [
-          "studio_app_template"
+          "platform_app_template"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -44198,7 +44198,7 @@
         "x-sdkwork-resource": "apps.templates",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "studio_app_template",
+          "platform_app_template",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -44207,7 +44207,7 @@
     },
     "/backend/v3/api/platform/apps/{appId}": {
       "delete": {
-        "description": "Delete app. Reads plus_app, studio_catalog_action, studio_catalog_asset, studio_catalog_artifact. Writes plus_app, studio_catalog_action, studio_catalog_asset, studio_catalog_artifact, ops_audit_log. File targets none.",
+        "description": "Delete app. Reads platform_app, ai_skill_action, ai_skill_asset, ai_skill_artifact. Writes platform_app, ai_skill_action, ai_skill_asset, ai_skill_artifact, ops_audit_log. File targets none.",
         "operationId": "apps.delete",
         "parameters": [
           {
@@ -44285,10 +44285,10 @@
         "x-contract-kind": "delete",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_app",
-          "studio_catalog_action",
-          "studio_catalog_asset",
-          "studio_catalog_artifact"
+          "platform_app",
+          "ai_skill_action",
+          "ai_skill_asset",
+          "ai_skill_artifact"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -44296,17 +44296,17 @@
         "x-sdkwork-resource": "apps",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "plus_app",
-          "studio_catalog_action",
-          "studio_catalog_asset",
-          "studio_catalog_artifact",
+          "platform_app",
+          "ai_skill_action",
+          "ai_skill_asset",
+          "ai_skill_artifact",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
         "x-sdkwork-api-authority": "sdkwork-claw-router.backend"
       },
       "get": {
-        "description": "List app. Reads plus_app, plus_category, studio_catalog_asset, studio_catalog_artifact. Writes none. File targets none.",
+        "description": "List app. Reads platform_app, c_category, ai_skill_asset, ai_skill_artifact. Writes none. File targets none.",
         "operationId": "apps.retrieve",
         "parameters": [
           {
@@ -44384,10 +44384,10 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_app",
-          "plus_category",
-          "studio_catalog_asset",
-          "studio_catalog_artifact"
+          "platform_app",
+          "c_category",
+          "ai_skill_asset",
+          "ai_skill_artifact"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -44399,7 +44399,7 @@
         "x-sdkwork-api-authority": "sdkwork-claw-router.backend"
       },
       "put": {
-        "description": "Update app. Reads plus_app, plus_category, studio_catalog_asset, studio_catalog_artifact. Writes plus_app, ops_audit_log. File targets none.",
+        "description": "Update app. Reads platform_app, c_category, ai_skill_asset, ai_skill_artifact. Writes platform_app, ops_audit_log. File targets none.",
         "operationId": "apps.update",
         "parameters": [
           {
@@ -44488,10 +44488,10 @@
         "x-contract-kind": "update",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_app",
-          "plus_category",
-          "studio_catalog_asset",
-          "studio_catalog_artifact"
+          "platform_app",
+          "c_category",
+          "ai_skill_asset",
+          "ai_skill_artifact"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -44499,7 +44499,7 @@
         "x-sdkwork-resource": "apps",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "plus_app",
+          "platform_app",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -44508,7 +44508,7 @@
     },
     "/backend/v3/api/platform/apps/{appId}/disable": {
       "post": {
-        "description": "Sets PlusApp runtime status to INACTIVE without changing config.portal.marketStatus. Reads plus_app. Writes plus_app, ops_audit_log. File targets none.",
+        "description": "Sets PlusApp runtime status to INACTIVE without changing config.portal.marketStatus. Reads platform_app. Writes platform_app, ops_audit_log. File targets none.",
         "operationId": "apps.disable",
         "parameters": [
           {
@@ -44586,7 +44586,7 @@
         "x-contract-kind": "action",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_app"
+          "platform_app"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -44594,7 +44594,7 @@
         "x-sdkwork-resource": "apps",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "plus_app",
+          "platform_app",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -44603,7 +44603,7 @@
     },
     "/backend/v3/api/platform/apps/{appId}/enable": {
       "post": {
-        "description": "Sets PlusApp runtime status to ACTIVE without changing config.portal.marketStatus. Reads plus_app. Writes plus_app, ops_audit_log. File targets none.",
+        "description": "Sets PlusApp runtime status to ACTIVE without changing config.portal.marketStatus. Reads platform_app. Writes platform_app, ops_audit_log. File targets none.",
         "operationId": "apps.enable",
         "parameters": [
           {
@@ -44681,7 +44681,7 @@
         "x-contract-kind": "action",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_app"
+          "platform_app"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -44689,7 +44689,7 @@
         "x-sdkwork-resource": "apps",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "plus_app",
+          "platform_app",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -44698,7 +44698,7 @@
     },
     "/backend/v3/api/platform/apps/{appId}/publish": {
       "post": {
-        "description": "Sets config.portal.marketStatus to PUBLISHED without changing PlusApp runtime status. Reads plus_app. Writes plus_app, ops_audit_log. File targets none.",
+        "description": "Sets config.portal.marketStatus to PUBLISHED without changing PlusApp runtime status. Reads platform_app. Writes platform_app, ops_audit_log. File targets none.",
         "operationId": "apps.publish",
         "parameters": [
           {
@@ -44776,7 +44776,7 @@
         "x-contract-kind": "action",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_app"
+          "platform_app"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -44784,7 +44784,7 @@
         "x-sdkwork-resource": "apps",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "plus_app",
+          "platform_app",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -44793,7 +44793,7 @@
     },
     "/backend/v3/api/platform/apps/{appId}/unpublish": {
       "post": {
-        "description": "Sets config.portal.marketStatus to OFFLINE without changing PlusApp runtime status. Reads plus_app. Writes plus_app, ops_audit_log. File targets none.",
+        "description": "Sets config.portal.marketStatus to OFFLINE without changing PlusApp runtime status. Reads platform_app. Writes platform_app, ops_audit_log. File targets none.",
         "operationId": "apps.unpublish",
         "parameters": [
           {
@@ -44871,7 +44871,7 @@
         "x-contract-kind": "action",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_app"
+          "platform_app"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "platform",
@@ -44879,7 +44879,7 @@
         "x-sdkwork-resource": "apps",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
-          "plus_app",
+          "platform_app",
           "ops_audit_log"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
@@ -44888,7 +44888,7 @@
     },
     "/backend/v3/api/prompts": {
       "get": {
-        "description": "Lists vertical prompt definitions with unified category references and lifecycle state. Reads ai_prompt, plus_category. Writes none. File targets none.",
+        "description": "Lists vertical prompt definitions with unified category references and lifecycle state. Reads ai_prompt, c_category. Writes none. File targets none.",
         "operationId": "definitions.list",
         "parameters": [
           {
@@ -45034,7 +45034,7 @@
         "x-file-targets": [],
         "x-read-sources": [
           "ai_prompt",
-          "plus_category"
+          "c_category"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "prompts",
@@ -45046,7 +45046,7 @@
         "x-sdkwork-api-authority": "sdkwork-claw-router.backend"
       },
       "post": {
-        "description": "Creates a reusable prompt definition; classification is only by unified category references. Reads ai_prompt, plus_category. Writes ai_prompt, ops_audit_log. File targets none.",
+        "description": "Creates a reusable prompt definition; classification is only by unified category references. Reads ai_prompt, c_category. Writes ai_prompt, ops_audit_log. File targets none.",
         "operationId": "definitions.create",
         "parameters": [
           {
@@ -45137,7 +45137,7 @@
         "x-file-targets": [],
         "x-read-sources": [
           "ai_prompt",
-          "plus_category"
+          "c_category"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "prompts",
@@ -45154,7 +45154,7 @@
     },
     "/backend/v3/api/prompts/bindings/{bindingId}": {
       "put": {
-        "description": "Updates owner binding policy, version scope, priority, and enablement for a prompt binding. Reads ai_prompt, ai_prompt_version, ai_prompt_binding, plus_category. Writes ai_prompt_binding, ops_audit_log. File targets none.",
+        "description": "Updates owner binding policy, version scope, priority, and enablement for a prompt binding. Reads ai_prompt, ai_prompt_version, ai_prompt_binding, c_category. Writes ai_prompt_binding, ops_audit_log. File targets none.",
         "operationId": "definitionBindings.update",
         "parameters": [
           {
@@ -45246,7 +45246,7 @@
           "ai_prompt",
           "ai_prompt_version",
           "ai_prompt_binding",
-          "plus_category"
+          "c_category"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "prompts",
@@ -45263,7 +45263,7 @@
     },
     "/backend/v3/api/prompts/versions/{versionId}/publish": {
       "post": {
-        "description": "Publishes a reviewed prompt version and makes it the prompt default runtime version. Reads ai_prompt, ai_prompt_version, plus_category. Writes ai_prompt, ai_prompt_version, ops_audit_log. File targets none.",
+        "description": "Publishes a reviewed prompt version and makes it the prompt default runtime version. Reads ai_prompt, ai_prompt_version, c_category. Writes ai_prompt, ai_prompt_version, ops_audit_log. File targets none.",
         "operationId": "versions.publish",
         "parameters": [
           {
@@ -45343,7 +45343,7 @@
         "x-read-sources": [
           "ai_prompt",
           "ai_prompt_version",
-          "plus_category"
+          "c_category"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "prompts",
@@ -45361,7 +45361,7 @@
     },
     "/backend/v3/api/prompts/versions/{versionId}/render": {
       "post": {
-        "description": "Renders a prompt version by applying runtime variables without persisting output. Reads ai_prompt, ai_prompt_version, plus_category. Writes ops_audit_log. File targets none.",
+        "description": "Renders a prompt version by applying runtime variables without persisting output. Reads ai_prompt, ai_prompt_version, c_category. Writes ops_audit_log. File targets none.",
         "operationId": "versionRenders.create",
         "parameters": [
           {
@@ -45452,7 +45452,7 @@
         "x-read-sources": [
           "ai_prompt",
           "ai_prompt_version",
-          "plus_category"
+          "c_category"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "prompts",
@@ -45468,7 +45468,7 @@
     },
     "/backend/v3/api/prompts/{promptId}/bindings": {
       "get": {
-        "description": "Lists agent, skill, and runtime owner bindings for a prompt definition. Reads ai_prompt, ai_prompt_version, ai_prompt_binding, plus_category. Writes none. File targets none.",
+        "description": "Lists agent, skill, and runtime owner bindings for a prompt definition. Reads ai_prompt, ai_prompt_version, ai_prompt_binding, c_category. Writes none. File targets none.",
         "operationId": "definitionBindings.list",
         "parameters": [
           {
@@ -45549,7 +45549,7 @@
           "ai_prompt",
           "ai_prompt_version",
           "ai_prompt_binding",
-          "plus_category"
+          "c_category"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "prompts",
@@ -45561,7 +45561,7 @@
         "x-sdkwork-api-authority": "sdkwork-claw-router.backend"
       },
       "post": {
-        "description": "Creates an owner binding for a prompt definition or a specific prompt version. Reads ai_prompt, ai_prompt_version, ai_prompt_binding, plus_category. Writes ai_prompt_binding, ops_audit_log. File targets none.",
+        "description": "Creates an owner binding for a prompt definition or a specific prompt version. Reads ai_prompt, ai_prompt_version, ai_prompt_binding, c_category. Writes ai_prompt_binding, ops_audit_log. File targets none.",
         "operationId": "definitionBindings.create",
         "parameters": [
           {
@@ -45663,7 +45663,7 @@
           "ai_prompt",
           "ai_prompt_version",
           "ai_prompt_binding",
-          "plus_category"
+          "c_category"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "prompts",
@@ -45680,7 +45680,7 @@
     },
     "/backend/v3/api/prompts/{promptId}/versions": {
       "get": {
-        "description": "Lists immutable prompt versions for one prompt definition. Reads ai_prompt, ai_prompt_version, plus_category. Writes none. File targets none.",
+        "description": "Lists immutable prompt versions for one prompt definition. Reads ai_prompt, ai_prompt_version, c_category. Writes none. File targets none.",
         "operationId": "versions.list",
         "parameters": [
           {
@@ -45760,7 +45760,7 @@
         "x-read-sources": [
           "ai_prompt",
           "ai_prompt_version",
-          "plus_category"
+          "c_category"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "prompts",
@@ -45772,7 +45772,7 @@
         "x-sdkwork-api-authority": "sdkwork-claw-router.backend"
       },
       "post": {
-        "description": "Creates a draft prompt version with typed variables, output schema, examples, and safety policy. Reads ai_prompt, ai_prompt_version, plus_category. Writes ai_prompt, ai_prompt_version, ops_audit_log. File targets none.",
+        "description": "Creates a draft prompt version with typed variables, output schema, examples, and safety policy. Reads ai_prompt, ai_prompt_version, c_category. Writes ai_prompt, ai_prompt_version, ops_audit_log. File targets none.",
         "operationId": "versions.create",
         "parameters": [
           {
@@ -45873,7 +45873,7 @@
         "x-read-sources": [
           "ai_prompt",
           "ai_prompt_version",
-          "plus_category"
+          "c_category"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "prompts",

@@ -16,7 +16,7 @@ frontend_operations:
   - content_course
   - content_course_lesson
   - content_course_application
-  - content_forum_comment
+  - content_comment
   - content_reaction
   query_parameters: []
   response_schema:
@@ -897,7 +897,7 @@ frontend_operations:
   summary: Admin Course Comments List
   description: Course-related comments for moderation and content governance.
   read_sources:
-  - content_forum_comment
+  - content_comment
   query_parameters: *adminCourseListQuery
   response_schema: &adminCourseCommentCollectionResponse
     name: AdminCourseCommentCollectionResponse
@@ -953,9 +953,9 @@ frontend_operations:
   summary: Admin Course Comment Moderate
   description: Moderates a course comment and writes the operation audit trail.
   read_sources:
-  - content_forum_comment
+  - content_comment
   write_tables:
-  - content_forum_comment
+  - content_comment
   - ops_audit_log
   request_schema:
     name: AdminCourseCommentModerationRequest

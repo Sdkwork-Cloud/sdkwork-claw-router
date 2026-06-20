@@ -1,7 +1,7 @@
 version: 0.1.0
 source: apps/sdkwork-clawrouter-pc/src/App.tsx
-schema: sdkwork-claw-router-frontend-field-contracts
 rule: every actual portal route must be backed by explicit schema tables; page-critical fields must map to generated columns or Java-owned physical columns.
+schema: sdkwork-claw-router-frontend-field-contracts
 x_response_entities:
   admin_announcement_item:
     name: AdminAnnouncementItem
@@ -5842,6 +5842,7 @@ frontend_models:
     fields:
       - name
       - value
+      - chartValue
       - color
     data_sources:
       - ai_usage_fact
@@ -5882,9 +5883,68 @@ frontend_models:
       - tokens
       - requests
       - cost
+      - chartTokens
+      - chartRequests
+      - chartCost
     data_sources:
       - ai_request_trace
       - ai_usage_fact
+  - route: /admin/dashboard
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-dashboard/src/dashboardService.ts
+    interface: DashboardDataQuery
+    fields:
+      - timeRange
+    data_sources:
+      - ai_usage_fact
+      - ai_request_trace
+  - route: /admin/dashboard
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-dashboard/src/dashboardService.ts
+    interface: DashboardDataSnapshot
+    fields:
+      - activeUsers
+      - summaryCards
+      - summaryCards.label
+      - summaryCards.value
+      - summaryCards.detail
+      - userConsumption
+      - userConsumption.name
+      - userConsumption.value
+      - userConsumption.chartValue
+      - userConsumption.color
+      - multimodal
+      - multimodal.name
+      - multimodal.value
+      - multimodal.chartValue
+      - multimodal.color
+      - traffic
+      - traffic.time
+      - traffic.tokens
+      - traffic.requests
+      - traffic.cost
+      - traffic.chartTokens
+      - traffic.chartRequests
+      - traffic.chartCost
+      - modelDistribution
+      - modelDistribution.name
+      - modelDistribution.value
+      - modelDistribution.chartValue
+      - modelDistribution.color
+      - recentUsage
+      - recentUsage.id
+      - recentUsage.user
+      - recentUsage.isApiUser
+      - recentUsage.model
+      - recentUsage.type
+      - recentUsage.billingMode
+      - recentUsage.usageIn
+      - recentUsage.usageOut
+      - recentUsage.usageCount
+      - recentUsage.time
+      - recentUsage.status
+      - recentUsage.cost
+    data_sources:
+      - ai_usage_fact
+      - ai_request_trace
   - route: /admin/group
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts
     interface: GroupData
@@ -7210,7 +7270,7 @@ frontend_models:
     data_sources:
       - ops_gateway_instance
       - ops_gateway_heartbeat
-  - route: /admin/oauth
+  - route: /admin/oauth/login-platforms
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
     interface: OAuthListParams
     fields:
@@ -7218,15 +7278,9 @@ frontend_models:
       - pageSize
       - providerCode
       - status
-      - surface
       - resourceAccountKind
-      - ownerMode
       - q
     data_sources:
-      - iam_oauth_provider_catalog
-      - iam_oauth_integration
-      - iam_oauth_client
-      - iam_oauth_surface
       - iam_oauth_resource_account
   - route: /admin/organization
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
@@ -7319,6 +7373,12 @@ frontend_models:
       - displayName
       - email
       - mobile
+      - gender
+      - country
+      - province
+      - city
+      - district
+      - address
       - status
       - createdAt
       - updatedAt
@@ -7437,6 +7497,12 @@ frontend_models:
       - users.displayName
       - users.email
       - users.mobile
+      - users.gender
+      - users.country
+      - users.province
+      - users.city
+      - users.district
+      - users.address
       - users.status
       - users.createdAt
       - users.updatedAt
@@ -8592,6 +8658,14 @@ frontend_models:
       - id
       - email
       - username
+      - displayName
+      - mobile
+      - gender
+      - country
+      - province
+      - city
+      - district
+      - address
       - role
       - group
       - balance
@@ -8599,6 +8673,7 @@ frontend_models:
       - lastActive
       - lastUsed
       - createdAt
+      - updatedAt
     data_sources:
       - iam_user
       - commerce_account
@@ -8613,6 +8688,14 @@ frontend_models:
       - users.id
       - users.email
       - users.username
+      - users.displayName
+      - users.mobile
+      - users.gender
+      - users.country
+      - users.province
+      - users.city
+      - users.district
+      - users.address
       - users.role
       - users.group
       - users.balance
@@ -8620,11 +8703,20 @@ frontend_models:
       - users.lastActive
       - users.lastUsed
       - users.createdAt
+      - users.updatedAt
       - apiKeysMap
       - apiKeysLoadError
     data_sources:
       - iam_user
       - iam_gateway_api_key
+  - route: /admin/user
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-user/src/userService.ts
+    interface: UserListQuery
+    fields:
+      - q
+      - pageSize
+    data_sources:
+      - iam_user
   - route: /admin/user
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-user/src/userService.ts
     interface: UserUpdateInput
@@ -8856,7 +8948,7 @@ frontend_models:
       - createdAt
       - updatedAt
     data_sources:
-      - studio_app_template
+      - platform_app_template
   - route: /admin/app
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     interface: AdminAppTemplateCreateInput
@@ -8887,7 +8979,7 @@ frontend_models:
       - dependencyManifest
       - capabilityManifest
     data_sources:
-      - studio_app_template
+      - platform_app_template
   - route: /admin/app
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     interface: AdminAppTemplateUpdateInput
@@ -8916,7 +9008,7 @@ frontend_models:
       - dependencyManifest
       - capabilityManifest
     data_sources:
-      - studio_app_template
+      - platform_app_template
   - route: /admin/app
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     interface: AdminAppTemplateListInput
@@ -8929,7 +9021,7 @@ frontend_models:
       - page
       - pageSize
     data_sources:
-      - studio_app_template
+      - platform_app_template
   - route: /admin/app
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     interface: AdminAppTemplatePage
@@ -8970,7 +9062,7 @@ frontend_models:
       - pageSize
       - hasNextPage
     data_sources:
-      - studio_app_template
+      - platform_app_template
   - route: /apps
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/appRuntime.ts
     interface: App
@@ -9008,7 +9100,8 @@ frontend_models:
       - releaseDate
       - artifact
       - whatsNew
-    data_sources: null
+    data_sources:
+      - platform_app
   - route: /apps
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/appService.ts
     interface: AppFilters
@@ -10338,7 +10431,6 @@ frontend_models:
       - packages.features.included
       - packages.isPopular
       - packages.isRecommended
-      - packages.isPreview
       - packages.isPurchasable
       - packages.badge
     data_sources:
@@ -10372,7 +10464,6 @@ frontend_models:
       - features.included
       - isPopular
       - isRecommended
-      - isPreview
       - isPurchasable
       - badge
     data_sources:
@@ -10442,7 +10533,6 @@ frontend_models:
       - groups.packages.features.included
       - groups.packages.isPopular
       - groups.packages.isRecommended
-      - groups.packages.isPreview
       - groups.packages.isPurchasable
       - groups.packages.badge
       - summary
@@ -23035,6 +23125,7 @@ frontend_operations:
   - route: /admin/group
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts
     operation: fetchRuntimeRouteExplain
+    operation_scope: app_shell
     operation_id: routeExplain.create
     kind: action
     api_surface: backend
@@ -31031,7 +31122,7 @@ frontend_operations:
       - content_course
       - content_course_lesson
       - content_course_application
-      - content_forum_comment
+      - content_comment
       - content_reaction
     query_parameters: []
     response_schema:
@@ -31756,7 +31847,7 @@ frontend_operations:
     summary: Admin Course Comments List
     description: Course-related comments for moderation and content governance.
     read_sources:
-      - content_forum_comment
+      - content_comment
     query_parameters:
       - name: page
         schema: { type: integer, format: int64, minimum: 1 }
@@ -31800,9 +31891,9 @@ frontend_operations:
     summary: Admin Course Comment Moderate
     description: Moderates a course comment and writes the operation audit trail.
     read_sources:
-      - content_forum_comment
+      - content_comment
     write_tables:
-      - content_forum_comment
+      - content_comment
       - ops_audit_log
     request_schema:
       name: AdminCourseCommentModerationRequest
@@ -34572,454 +34663,7 @@ frontend_operations:
     write_tables:
       - iam_role_permission
       - ops_audit_log
-  - route: /admin/oauth/provider-catalog
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: listOAuthProviderCatalog
-    operation_scope: app_shell
-    operation_id: iam.oauth.providerCatalog.list
-    kind: read
-    api_surface: backend
-    api_method: GET
-    api_path: /backend/v3/api/iam/oauth/provider_catalog
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_provider_catalog
-  - route: /admin/oauth/integrations
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: listOAuthIntegrations
-    operation_scope: app_shell
-    operation_id: iam.oauth.integrations.list
-    kind: read
-    api_surface: backend
-    api_method: GET
-    api_path: /backend/v3/api/iam/oauth/integrations
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_integration
-  - route: /admin/oauth/integrations
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: createOAuthIntegration
-    operation_scope: app_shell
-    operation_id: iam.oauth.integrations.create
-    kind: create
-    api_surface: backend
-    api_method: POST
-    api_path: /backend/v3/api/iam/oauth/integrations
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_integration
-    write_tables:
-      - iam_oauth_integration
-      - ops_audit_log
-  - route: /admin/oauth/integrations
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: updateOAuthIntegration
-    operation_scope: app_shell
-    operation_id: iam.oauth.integrations.update
-    kind: update
-    api_surface: backend
-    api_method: PATCH
-    api_path: /backend/v3/api/iam/oauth/integrations/{integrationId}
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_integration
-    write_tables:
-      - iam_oauth_integration
-      - ops_audit_log
-  - route: /admin/oauth/clients
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: listOAuthClients
-    operation_scope: app_shell
-    operation_id: iam.oauth.clients.list
-    kind: read
-    api_surface: backend
-    api_method: GET
-    api_path: /backend/v3/api/iam/oauth/clients
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_client
-  - route: /admin/oauth/clients
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: createOAuthClient
-    operation_scope: app_shell
-    operation_id: iam.oauth.clients.create
-    kind: create
-    api_surface: backend
-    api_method: POST
-    api_path: /backend/v3/api/iam/oauth/clients
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_client
-    write_tables:
-      - iam_oauth_client
-      - ops_audit_log
-  - route: /admin/oauth/clients
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: updateOAuthClient
-    operation_scope: app_shell
-    operation_id: iam.oauth.clients.update
-    kind: update
-    api_surface: backend
-    api_method: PATCH
-    api_path: /backend/v3/api/iam/oauth/clients/{oauthClientId}
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_client
-    write_tables:
-      - iam_oauth_client
-      - ops_audit_log
-  - route: /admin/oauth/secrets
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: listOAuthSecrets
-    operation_scope: app_shell
-    operation_id: iam.oauth.secrets.list
-    kind: read
-    api_surface: backend
-    api_method: GET
-    api_path: /backend/v3/api/iam/oauth/secrets
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_secret
-  - route: /admin/oauth/secrets
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: createOAuthSecret
-    operation_scope: app_shell
-    operation_id: iam.oauth.secrets.create
-    kind: create
-    api_surface: backend
-    api_method: POST
-    api_path: /backend/v3/api/iam/oauth/secrets
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_secret
-    write_tables:
-      - iam_oauth_secret
-      - ops_audit_log
-  - route: /admin/oauth/surfaces
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: listOAuthSurfaces
-    operation_scope: app_shell
-    operation_id: iam.oauth.surfaces.list
-    kind: read
-    api_surface: backend
-    api_method: GET
-    api_path: /backend/v3/api/iam/oauth/surfaces
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_surface
-  - route: /admin/oauth/surfaces
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: createOAuthSurface
-    operation_scope: app_shell
-    operation_id: iam.oauth.surfaces.create
-    kind: create
-    api_surface: backend
-    api_method: POST
-    api_path: /backend/v3/api/iam/oauth/surfaces
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_surface
-    write_tables:
-      - iam_oauth_surface
-      - ops_audit_log
-  - route: /admin/oauth/surfaces
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: updateOAuthSurface
-    operation_scope: app_shell
-    operation_id: iam.oauth.surfaces.update
-    kind: update
-    api_surface: backend
-    api_method: PATCH
-    api_path: /backend/v3/api/iam/oauth/surfaces/{surfaceId}
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_surface
-    write_tables:
-      - iam_oauth_surface
-      - ops_audit_log
-  - route: /admin/oauth/flow-configs
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: listOAuthFlowConfigs
-    operation_scope: app_shell
-    operation_id: iam.oauth.flowConfigs.list
-    kind: read
-    api_surface: backend
-    api_method: GET
-    api_path: /backend/v3/api/iam/oauth/flow_configs
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_flow_config
-  - route: /admin/oauth/flow-configs
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: createOAuthFlowConfig
-    operation_scope: app_shell
-    operation_id: iam.oauth.flowConfigs.create
-    kind: create
-    api_surface: backend
-    api_method: POST
-    api_path: /backend/v3/api/iam/oauth/flow_configs
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_flow_config
-    write_tables:
-      - iam_oauth_flow_config
-      - ops_audit_log
-  - route: /admin/oauth/flow-configs
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: updateOAuthFlowConfig
-    operation_scope: app_shell
-    operation_id: iam.oauth.flowConfigs.update
-    kind: update
-    api_surface: backend
-    api_method: PATCH
-    api_path: /backend/v3/api/iam/oauth/flow_configs/{flowConfigId}
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_flow_config
-    write_tables:
-      - iam_oauth_flow_config
-      - ops_audit_log
-  - route: /admin/oauth/scope-profiles
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: listOAuthScopeProfiles
-    operation_scope: app_shell
-    operation_id: iam.oauth.scopeProfiles.list
-    kind: read
-    api_surface: backend
-    api_method: GET
-    api_path: /backend/v3/api/iam/oauth/scope_profiles
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_scope_profile
-  - route: /admin/oauth/scope-profiles
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: createOAuthScopeProfile
-    operation_scope: app_shell
-    operation_id: iam.oauth.scopeProfiles.create
-    kind: create
-    api_surface: backend
-    api_method: POST
-    api_path: /backend/v3/api/iam/oauth/scope_profiles
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_scope_profile
-    write_tables:
-      - iam_oauth_scope_profile
-      - ops_audit_log
-  - route: /admin/oauth/scope-profiles
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: updateOAuthScopeProfile
-    operation_scope: app_shell
-    operation_id: iam.oauth.scopeProfiles.update
-    kind: update
-    api_surface: backend
-    api_method: PATCH
-    api_path: /backend/v3/api/iam/oauth/scope_profiles/{scopeProfileId}
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_scope_profile
-    write_tables:
-      - iam_oauth_scope_profile
-      - ops_audit_log
-  - route: /admin/oauth/claim-mappings
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: listOAuthClaimMappings
-    operation_scope: app_shell
-    operation_id: iam.oauth.claimMappings.list
-    kind: read
-    api_surface: backend
-    api_method: GET
-    api_path: /backend/v3/api/iam/oauth/claim_mappings
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_claim_mapping
-  - route: /admin/oauth/claim-mappings
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: createOAuthClaimMapping
-    operation_scope: app_shell
-    operation_id: iam.oauth.claimMappings.create
-    kind: create
-    api_surface: backend
-    api_method: POST
-    api_path: /backend/v3/api/iam/oauth/claim_mappings
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_claim_mapping
-    write_tables:
-      - iam_oauth_claim_mapping
-      - ops_audit_log
-  - route: /admin/oauth/claim-mappings
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: updateOAuthClaimMapping
-    operation_scope: app_shell
-    operation_id: iam.oauth.claimMappings.update
-    kind: update
-    api_surface: backend
-    api_method: PATCH
-    api_path: /backend/v3/api/iam/oauth/claim_mappings/{mappingId}
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_claim_mapping
-    write_tables:
-      - iam_oauth_claim_mapping
-      - ops_audit_log
-  - route: /admin/oauth/policies
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: listOAuthPolicies
-    operation_scope: app_shell
-    operation_id: iam.oauth.policies.list
-    kind: read
-    api_surface: backend
-    api_method: GET
-    api_path: /backend/v3/api/iam/oauth/policies
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_policy
-  - route: /admin/oauth/policies
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: createOAuthPolicy
-    operation_scope: app_shell
-    operation_id: iam.oauth.policies.create
-    kind: create
-    api_surface: backend
-    api_method: POST
-    api_path: /backend/v3/api/iam/oauth/policies
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_policy
-    write_tables:
-      - iam_oauth_policy
-      - ops_audit_log
-  - route: /admin/oauth/policies
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: updateOAuthPolicy
-    operation_scope: app_shell
-    operation_id: iam.oauth.policies.update
-    kind: update
-    api_surface: backend
-    api_method: PATCH
-    api_path: /backend/v3/api/iam/oauth/policies/{policyId}
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_policy
-    write_tables:
-      - iam_oauth_policy
-      - ops_audit_log
-  - route: /admin/oauth/tenant-bindings
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: listOAuthTenantBindings
-    operation_scope: app_shell
-    operation_id: iam.oauth.tenantBindings.list
-    kind: read
-    api_surface: backend
-    api_method: GET
-    api_path: /backend/v3/api/iam/oauth/tenant_bindings
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_tenant_binding
-  - route: /admin/oauth/tenant-bindings
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: createOAuthTenantBinding
-    operation_scope: app_shell
-    operation_id: iam.oauth.tenantBindings.create
-    kind: create
-    api_surface: backend
-    api_method: POST
-    api_path: /backend/v3/api/iam/oauth/tenant_bindings
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_tenant_binding
-    write_tables:
-      - iam_oauth_tenant_binding
-      - ops_audit_log
-  - route: /admin/oauth/tenant-bindings
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: updateOAuthTenantBinding
-    operation_scope: app_shell
-    operation_id: iam.oauth.tenantBindings.update
-    kind: update
-    api_surface: backend
-    api_method: PATCH
-    api_path: /backend/v3/api/iam/oauth/tenant_bindings/{bindingId}
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_tenant_binding
-    write_tables:
-      - iam_oauth_tenant_binding
-      - ops_audit_log
-  - route: /admin/oauth/operator-platforms
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: listOAuthOperatorPlatforms
-    operation_scope: app_shell
-    operation_id: iam.oauth.operatorPlatforms.list
-    kind: read
-    api_surface: backend
-    api_method: GET
-    api_path: /backend/v3/api/iam/oauth/operator_platforms
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_operator_platform
-  - route: /admin/oauth/operator-platforms
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: createOAuthOperatorPlatform
-    operation_scope: app_shell
-    operation_id: iam.oauth.operatorPlatforms.create
-    kind: create
-    api_surface: backend
-    api_method: POST
-    api_path: /backend/v3/api/iam/oauth/operator_platforms
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_operator_platform
-    write_tables:
-      - iam_oauth_operator_platform
-      - ops_audit_log
-  - route: /admin/oauth/operator-platforms
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: createOAuthOperatorPreAuthorization
-    operation_scope: app_shell
-    operation_id: iam.oauth.operatorPlatforms.preAuthorizations.create
-    kind: create
-    api_surface: backend
-    api_method: POST
-    api_path: /backend/v3/api/iam/oauth/operator_platforms/{operatorPlatformId}/pre_authorizations
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_operator_platform
-    write_tables:
-      - iam_oauth_operator_platform
-      - ops_audit_log
-  - route: /admin/oauth/resource-accounts
+  - route: /admin/oauth/login-platforms
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
     operation: listOAuthResourceAccounts
     operation_scope: app_shell
@@ -35032,7 +34676,7 @@ frontend_operations:
     openapi_exposed: false
     read_sources:
       - iam_oauth_resource_account
-  - route: /admin/oauth/resource-accounts
+  - route: /admin/oauth/login-platforms
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
     operation: createOAuthResourceAccount
     operation_scope: app_shell
@@ -35048,7 +34692,7 @@ frontend_operations:
     write_tables:
       - iam_oauth_resource_account
       - ops_audit_log
-  - route: /admin/oauth/resource-accounts
+  - route: /admin/oauth/login-platforms
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
     operation: updateOAuthResourceAccount
     operation_scope: app_shell
@@ -35063,337 +34707,6 @@ frontend_operations:
       - iam_oauth_resource_account
     write_tables:
       - iam_oauth_resource_account
-      - ops_audit_log
-  - route: /admin/oauth/resource-accounts
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: verifyOAuthResourceAccount
-    operation_scope: app_shell
-    operation_id: iam.oauth.resourceAccounts.verifications.create
-    kind: create
-    api_surface: backend
-    api_method: POST
-    api_path: /backend/v3/api/iam/oauth/resource_accounts/{resourceAccountId}/verifications
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_resource_account
-    write_tables:
-      - iam_oauth_resource_account
-      - ops_audit_log
-  - route: /admin/oauth/login/mini-programs
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: checkOAuthMiniProgramLogin
-    operation_scope: app_shell
-    operation_id: iam.oauth.resourceAccounts.miniProgramLoginChecks.create
-    kind: create
-    api_surface: backend
-    api_method: POST
-    api_path: /backend/v3/api/iam/oauth/resource_accounts/{resourceAccountId}/mini_program_login_checks
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_resource_account
-    write_tables:
-      - iam_oauth_resource_account
-      - ops_audit_log
-  - route: /admin/oauth/resource-accounts
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: refreshOAuthResourceAuthorization
-    operation_scope: app_shell
-    operation_id: iam.oauth.resourceAccounts.authorizationRefreshes.create
-    kind: create
-    api_surface: backend
-    api_method: POST
-    api_path: /backend/v3/api/iam/oauth/resource_accounts/{resourceAccountId}/authorization_refreshes
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_resource_account
-    write_tables:
-      - iam_oauth_resource_account
-      - ops_audit_log
-  - route: /admin/oauth/resource-authorizations
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: listOAuthResourceAuthorizations
-    operation_scope: app_shell
-    operation_id: iam.oauth.resourceAuthorizations.list
-    kind: read
-    api_surface: backend
-    api_method: GET
-    api_path: /backend/v3/api/iam/oauth/resource_authorizations
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_resource_authorization
-  - route: /admin/oauth/resource-authorizations
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: createOAuthResourceAuthorization
-    operation_scope: app_shell
-    operation_id: iam.oauth.resourceAuthorizations.create
-    kind: create
-    api_surface: backend
-    api_method: POST
-    api_path: /backend/v3/api/iam/oauth/resource_authorizations
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_resource_authorization
-    write_tables:
-      - iam_oauth_resource_authorization
-      - ops_audit_log
-  - route: /admin/oauth/resource-authorizations
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: updateOAuthResourceAuthorization
-    operation_scope: app_shell
-    operation_id: iam.oauth.resourceAuthorizations.update
-    kind: update
-    api_surface: backend
-    api_method: PATCH
-    api_path: /backend/v3/api/iam/oauth/resource_authorizations/{authorizationId}
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_resource_authorization
-    write_tables:
-      - iam_oauth_resource_authorization
-      - ops_audit_log
-  - route: /admin/oauth/webhooks
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: listOAuthWebhooks
-    operation_scope: app_shell
-    operation_id: iam.oauth.webhookConfigs.list
-    kind: read
-    api_surface: backend
-    api_method: GET
-    api_path: /backend/v3/api/iam/oauth/webhook_configs
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_webhook_config
-  - route: /admin/oauth/webhooks
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: createOAuthWebhook
-    operation_scope: app_shell
-    operation_id: iam.oauth.webhookConfigs.create
-    kind: create
-    api_surface: backend
-    api_method: POST
-    api_path: /backend/v3/api/iam/oauth/webhook_configs
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_webhook_config
-    write_tables:
-      - iam_oauth_webhook_config
-      - ops_audit_log
-  - route: /admin/oauth/webhooks
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: updateOAuthWebhook
-    operation_scope: app_shell
-    operation_id: iam.oauth.webhookConfigs.update
-    kind: update
-    api_surface: backend
-    api_method: PATCH
-    api_path: /backend/v3/api/iam/oauth/webhook_configs/{webhookConfigId}
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_webhook_config
-    write_tables:
-      - iam_oauth_webhook_config
-      - ops_audit_log
-  - route: /admin/oauth/webhooks
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: verifyOAuthWebhook
-    operation_scope: app_shell
-    operation_id: iam.oauth.webhookConfigs.verifications.create
-    kind: create
-    api_surface: backend
-    api_method: POST
-    api_path: /backend/v3/api/iam/oauth/webhook_configs/{webhookConfigId}/verifications
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_webhook_config
-    write_tables:
-      - iam_oauth_webhook_config
-      - ops_audit_log
-  - route: /admin/oauth/operational-resources
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: listOAuthOperationalResources
-    operation_scope: app_shell
-    operation_id: iam.oauth.operationalResources.list
-    kind: read
-    api_surface: backend
-    api_method: GET
-    api_path: /backend/v3/api/iam/oauth/operational_resources
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_operational_resource
-  - route: /admin/oauth/operational-resources
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: createOAuthOperationalResource
-    operation_scope: app_shell
-    operation_id: iam.oauth.operationalResources.create
-    kind: create
-    api_surface: backend
-    api_method: POST
-    api_path: /backend/v3/api/iam/oauth/operational_resources
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_operational_resource
-    write_tables:
-      - iam_oauth_operational_resource
-      - ops_audit_log
-  - route: /admin/oauth/operational-resources
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: updateOAuthOperationalResource
-    operation_scope: app_shell
-    operation_id: iam.oauth.operationalResources.update
-    kind: update
-    api_surface: backend
-    api_method: PATCH
-    api_path: /backend/v3/api/iam/oauth/operational_resources/{resourceId}
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_operational_resource
-    write_tables:
-      - iam_oauth_operational_resource
-      - ops_audit_log
-  - route: /admin/oauth/operational-resources
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: deleteOAuthOperationalResource
-    operation_scope: app_shell
-    operation_id: iam.oauth.operationalResources.delete
-    kind: delete
-    api_surface: backend
-    api_method: DELETE
-    api_path: /backend/v3/api/iam/oauth/operational_resources/{resourceId}
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_operational_resource
-    write_tables:
-      - iam_oauth_operational_resource
-      - ops_audit_log
-  - route: /admin/oauth/operational-resources
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: publishOAuthOperationalResource
-    operation_scope: app_shell
-    operation_id: iam.oauth.operationalResources.publishes.create
-    kind: create
-    api_surface: backend
-    api_method: POST
-    api_path: /backend/v3/api/iam/oauth/operational_resources/{resourceId}/publishes
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_operational_resource
-    write_tables:
-      - iam_oauth_operational_resource
-      - ops_audit_log
-  - route: /admin/oauth/account-links
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: listOAuthAccountLinks
-    operation_scope: app_shell
-    operation_id: iam.oauth.accountLinks.list
-    kind: read
-    api_surface: backend
-    api_method: GET
-    api_path: /backend/v3/api/iam/oauth/account_links
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_account_link
-  - route: /admin/oauth/account-links
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: updateOAuthAccountLink
-    operation_scope: app_shell
-    operation_id: iam.oauth.accountLinks.update
-    kind: update
-    api_surface: backend
-    api_method: PATCH
-    api_path: /backend/v3/api/iam/oauth/account_links/{accountLinkId}
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_account_link
-    write_tables:
-      - iam_oauth_account_link
-      - ops_audit_log
-  - route: /admin/oauth/grants
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: listOAuthGrants
-    operation_scope: app_shell
-    operation_id: iam.oauth.grants.list
-    kind: read
-    api_surface: backend
-    api_method: GET
-    api_path: /backend/v3/api/iam/oauth/grants
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_grant
-  - route: /admin/oauth/grants
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: deleteOAuthGrant
-    operation_scope: app_shell
-    operation_id: iam.oauth.grants.delete
-    kind: delete
-    api_surface: backend
-    api_method: DELETE
-    api_path: /backend/v3/api/iam/oauth/grants/{grantId}
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_grant
-    write_tables:
-      - iam_oauth_grant
-      - ops_audit_log
-  - route: /admin/oauth/callback-diagnostics
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: listOAuthCallbackEvents
-    operation_scope: app_shell
-    operation_id: iam.oauth.callbackEvents.list
-    kind: read
-    api_surface: backend
-    api_method: GET
-    api_path: /backend/v3/api/iam/oauth/callback_events
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_callback_event
-  - route: /admin/oauth/diagnostic-runs
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: listOAuthDiagnosticRuns
-    operation_scope: app_shell
-    operation_id: iam.oauth.diagnosticRuns.list
-    kind: read
-    api_surface: backend
-    api_method: GET
-    api_path: /backend/v3/api/iam/oauth/diagnostic_runs
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_diagnostic_run
-  - route: /admin/oauth/diagnostic-runs
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
-    operation: createOAuthDiagnosticRun
-    operation_scope: app_shell
-    operation_id: iam.oauth.diagnosticRuns.create
-    kind: create
-    api_surface: backend
-    api_method: POST
-    api_path: /backend/v3/api/iam/oauth/diagnostic_runs
-    sdk_domain: appbase
-    openapi_exposed: false
-    read_sources:
-      - iam_oauth_diagnostic_run
-    write_tables:
-      - iam_oauth_diagnostic_run
       - ops_audit_log
   - route: /admin/channel
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
@@ -38728,7 +38041,7 @@ frontend_operations:
     api_method: GET
     api_path: /backend/v3/api/platform/apps/templates
     read_sources:
-      - studio_app_template
+      - platform_app_template
       - ai_skill_asset
       - ai_skill_artifact
     query_parameters:
@@ -38825,9 +38138,9 @@ frontend_operations:
     api_method: POST
     api_path: /backend/v3/api/platform/apps/templates
     read_sources:
-      - studio_app_template
+      - platform_app_template
     write_tables:
-      - studio_app_template
+      - platform_app_template
       - ops_audit_log
     request_schema:
       name: AdminAppTemplateCreateRequest
@@ -38950,7 +38263,7 @@ frontend_operations:
     api_method: GET
     api_path: /backend/v3/api/platform/apps/templates/{templateId}
     read_sources:
-      - studio_app_template
+      - platform_app_template
     query_parameters: []
     response_schema:
       name: AdminAppTemplateMutationResponse
@@ -39024,9 +38337,9 @@ frontend_operations:
     api_method: PUT
     api_path: /backend/v3/api/platform/apps/templates/{templateId}
     read_sources:
-      - studio_app_template
+      - platform_app_template
     write_tables:
-      - studio_app_template
+      - platform_app_template
       - ops_audit_log
     request_schema:
       name: AdminAppTemplateUpdateRequest
@@ -39149,12 +38462,12 @@ frontend_operations:
     api_method: DELETE
     api_path: /backend/v3/api/platform/apps/templates/{templateId}
     read_sources:
-      - studio_app_template
+      - platform_app_template
       - ai_skill_action
       - ai_skill_asset
       - ai_skill_artifact
     write_tables:
-      - studio_app_template
+      - platform_app_template
       - ai_skill_action
       - ai_skill_asset
       - ai_skill_artifact
@@ -39177,9 +38490,9 @@ frontend_operations:
     api_path: /backend/v3/api/platform/apps/templates/{templateId}/publish
     description: Sets app template publishStatus to PUBLISHED.
     read_sources:
-      - studio_app_template
+      - platform_app_template
     write_tables:
-      - studio_app_template
+      - platform_app_template
       - ops_audit_log
     request_body_required: false
     response_schema:
@@ -39255,9 +38568,9 @@ frontend_operations:
     api_path: /backend/v3/api/platform/apps/templates/{templateId}/unpublish
     description: Sets app template publishStatus to OFFLINE.
     read_sources:
-      - studio_app_template
+      - platform_app_template
     write_tables:
-      - studio_app_template
+      - platform_app_template
       - ops_audit_log
     request_body_required: false
     response_schema:
@@ -45148,6 +44461,8 @@ routes:
       - ops_metric_snapshot
       - system_installation_state
       - system_schema_migration
+      - iam_user
+      - iam_organization_membership
   - route: /admin/analytics
     required_tables:
       - ai_usage_fact
@@ -45538,7 +44853,7 @@ routes:
     required_tables:
       - platform_app
       - c_category
-      - studio_app_template
+      - platform_app_template
       - ai_skill_action
       - ai_skill_asset
       - ai_skill_artifact
@@ -45583,7 +44898,7 @@ routes:
         - path
         - visible
         - status
-      studio_app_template:
+      platform_app_template:
         - uuid
         - template_no
         - template_code
@@ -45649,7 +44964,7 @@ routes:
       - content_course_lesson
       - content_course_relation
       - content_course_application
-      - content_forum_comment
+      - content_comment
       - content_reaction
       - ops_audit_log
   - route: /admin/courses/dashboard
@@ -45657,7 +44972,7 @@ routes:
       - content_course
       - content_course_lesson
       - content_course_application
-      - content_forum_comment
+      - content_comment
       - content_reaction
   - route: /admin/courses/catalog
     required_tables:
@@ -45681,7 +44996,7 @@ routes:
   - route: /admin/courses/comments
     required_tables:
       - content_course
-      - content_forum_comment
+      - content_comment
   - route: /admin/courses/engagement
     required_tables:
       - content_course
@@ -47453,603 +46768,21 @@ routes:
       - promotion_code
       - promotion_code_redemption
       - ops_referral_stat_snapshot
-  - route: /admin/oauth
+  - route: /admin/oauth/login-platforms
     dependency_owned: true
     dependency_sdk_family: sdkwork-appbase-backend-sdk
     required_tables:
-      - iam_oauth_provider_catalog
-      - iam_oauth_integration
-      - iam_oauth_client
-      - iam_oauth_secret
-      - iam_oauth_surface
-      - iam_oauth_flow_config
-      - iam_oauth_scope_profile
-      - iam_oauth_claim_mapping
-      - iam_oauth_policy
-      - iam_oauth_tenant_binding
-      - iam_oauth_operator_platform
       - iam_oauth_resource_account
-      - iam_oauth_resource_authorization
-      - iam_oauth_webhook_config
-      - iam_oauth_operational_resource
-      - iam_oauth_account_link
-      - iam_oauth_grant
-      - iam_oauth_callback_event
-      - iam_oauth_diagnostic_run
       - ops_audit_log
-  - route: /admin/oauth/overview
+  - route: /admin/oauth/official-accounts
     dependency_owned: true
     dependency_sdk_family: sdkwork-appbase-backend-sdk
     required_tables:
-      - iam_oauth_provider_catalog
-      - iam_oauth_integration
-      - iam_oauth_client
-      - iam_oauth_secret
-      - iam_oauth_surface
-      - iam_oauth_flow_config
-      - iam_oauth_scope_profile
-      - iam_oauth_claim_mapping
-      - iam_oauth_policy
-      - iam_oauth_tenant_binding
-      - iam_oauth_operator_platform
       - iam_oauth_resource_account
-      - iam_oauth_resource_authorization
-      - iam_oauth_webhook_config
-      - iam_oauth_operational_resource
-      - iam_oauth_account_link
-      - iam_oauth_grant
-      - iam_oauth_callback_event
-      - iam_oauth_diagnostic_run
       - ops_audit_log
-  - route: /admin/oauth/login
+  - route: /admin/oauth/mini-programs
     dependency_owned: true
     dependency_sdk_family: sdkwork-appbase-backend-sdk
     required_tables:
-      - iam_oauth_provider_catalog
-      - iam_oauth_integration
-      - iam_oauth_client
-      - iam_oauth_secret
-      - iam_oauth_surface
-      - iam_oauth_flow_config
-      - iam_oauth_scope_profile
-      - iam_oauth_claim_mapping
-      - iam_oauth_policy
-      - iam_oauth_tenant_binding
-      - iam_oauth_operator_platform
       - iam_oauth_resource_account
-      - iam_oauth_resource_authorization
-      - iam_oauth_webhook_config
-      - iam_oauth_operational_resource
-      - iam_oauth_account_link
-      - iam_oauth_grant
-      - iam_oauth_callback_event
-      - iam_oauth_diagnostic_run
-      - ops_audit_log
-  - route: /admin/oauth/login/mini-programs
-    dependency_owned: true
-    dependency_sdk_family: sdkwork-appbase-backend-sdk
-    required_tables:
-      - iam_oauth_provider_catalog
-      - iam_oauth_integration
-      - iam_oauth_client
-      - iam_oauth_secret
-      - iam_oauth_surface
-      - iam_oauth_flow_config
-      - iam_oauth_scope_profile
-      - iam_oauth_claim_mapping
-      - iam_oauth_policy
-      - iam_oauth_tenant_binding
-      - iam_oauth_operator_platform
-      - iam_oauth_resource_account
-      - iam_oauth_resource_authorization
-      - iam_oauth_webhook_config
-      - iam_oauth_operational_resource
-      - iam_oauth_account_link
-      - iam_oauth_grant
-      - iam_oauth_callback_event
-      - iam_oauth_diagnostic_run
-      - ops_audit_log
-  - route: /admin/oauth/provider-catalog
-    dependency_owned: true
-    dependency_sdk_family: sdkwork-appbase-backend-sdk
-    required_tables:
-      - iam_oauth_provider_catalog
-      - iam_oauth_integration
-      - iam_oauth_client
-      - iam_oauth_secret
-      - iam_oauth_surface
-      - iam_oauth_flow_config
-      - iam_oauth_scope_profile
-      - iam_oauth_claim_mapping
-      - iam_oauth_policy
-      - iam_oauth_tenant_binding
-      - iam_oauth_operator_platform
-      - iam_oauth_resource_account
-      - iam_oauth_resource_authorization
-      - iam_oauth_webhook_config
-      - iam_oauth_operational_resource
-      - iam_oauth_account_link
-      - iam_oauth_grant
-      - iam_oauth_callback_event
-      - iam_oauth_diagnostic_run
-      - ops_audit_log
-  - route: /admin/oauth/integrations
-    dependency_owned: true
-    dependency_sdk_family: sdkwork-appbase-backend-sdk
-    required_tables:
-      - iam_oauth_provider_catalog
-      - iam_oauth_integration
-      - iam_oauth_client
-      - iam_oauth_secret
-      - iam_oauth_surface
-      - iam_oauth_flow_config
-      - iam_oauth_scope_profile
-      - iam_oauth_claim_mapping
-      - iam_oauth_policy
-      - iam_oauth_tenant_binding
-      - iam_oauth_operator_platform
-      - iam_oauth_resource_account
-      - iam_oauth_resource_authorization
-      - iam_oauth_webhook_config
-      - iam_oauth_operational_resource
-      - iam_oauth_account_link
-      - iam_oauth_grant
-      - iam_oauth_callback_event
-      - iam_oauth_diagnostic_run
-      - ops_audit_log
-  - route: /admin/oauth/clients
-    dependency_owned: true
-    dependency_sdk_family: sdkwork-appbase-backend-sdk
-    required_tables:
-      - iam_oauth_provider_catalog
-      - iam_oauth_integration
-      - iam_oauth_client
-      - iam_oauth_secret
-      - iam_oauth_surface
-      - iam_oauth_flow_config
-      - iam_oauth_scope_profile
-      - iam_oauth_claim_mapping
-      - iam_oauth_policy
-      - iam_oauth_tenant_binding
-      - iam_oauth_operator_platform
-      - iam_oauth_resource_account
-      - iam_oauth_resource_authorization
-      - iam_oauth_webhook_config
-      - iam_oauth_operational_resource
-      - iam_oauth_account_link
-      - iam_oauth_grant
-      - iam_oauth_callback_event
-      - iam_oauth_diagnostic_run
-      - ops_audit_log
-  - route: /admin/oauth/secrets
-    dependency_owned: true
-    dependency_sdk_family: sdkwork-appbase-backend-sdk
-    required_tables:
-      - iam_oauth_provider_catalog
-      - iam_oauth_integration
-      - iam_oauth_client
-      - iam_oauth_secret
-      - iam_oauth_surface
-      - iam_oauth_flow_config
-      - iam_oauth_scope_profile
-      - iam_oauth_claim_mapping
-      - iam_oauth_policy
-      - iam_oauth_tenant_binding
-      - iam_oauth_operator_platform
-      - iam_oauth_resource_account
-      - iam_oauth_resource_authorization
-      - iam_oauth_webhook_config
-      - iam_oauth_operational_resource
-      - iam_oauth_account_link
-      - iam_oauth_grant
-      - iam_oauth_callback_event
-      - iam_oauth_diagnostic_run
-      - ops_audit_log
-  - route: /admin/oauth/surfaces
-    dependency_owned: true
-    dependency_sdk_family: sdkwork-appbase-backend-sdk
-    required_tables:
-      - iam_oauth_provider_catalog
-      - iam_oauth_integration
-      - iam_oauth_client
-      - iam_oauth_secret
-      - iam_oauth_surface
-      - iam_oauth_flow_config
-      - iam_oauth_scope_profile
-      - iam_oauth_claim_mapping
-      - iam_oauth_policy
-      - iam_oauth_tenant_binding
-      - iam_oauth_operator_platform
-      - iam_oauth_resource_account
-      - iam_oauth_resource_authorization
-      - iam_oauth_webhook_config
-      - iam_oauth_operational_resource
-      - iam_oauth_account_link
-      - iam_oauth_grant
-      - iam_oauth_callback_event
-      - iam_oauth_diagnostic_run
-      - ops_audit_log
-  - route: /admin/oauth/flow-configs
-    dependency_owned: true
-    dependency_sdk_family: sdkwork-appbase-backend-sdk
-    required_tables:
-      - iam_oauth_provider_catalog
-      - iam_oauth_integration
-      - iam_oauth_client
-      - iam_oauth_secret
-      - iam_oauth_surface
-      - iam_oauth_flow_config
-      - iam_oauth_scope_profile
-      - iam_oauth_claim_mapping
-      - iam_oauth_policy
-      - iam_oauth_tenant_binding
-      - iam_oauth_operator_platform
-      - iam_oauth_resource_account
-      - iam_oauth_resource_authorization
-      - iam_oauth_webhook_config
-      - iam_oauth_operational_resource
-      - iam_oauth_account_link
-      - iam_oauth_grant
-      - iam_oauth_callback_event
-      - iam_oauth_diagnostic_run
-      - ops_audit_log
-  - route: /admin/oauth/scope-profiles
-    dependency_owned: true
-    dependency_sdk_family: sdkwork-appbase-backend-sdk
-    required_tables:
-      - iam_oauth_provider_catalog
-      - iam_oauth_integration
-      - iam_oauth_client
-      - iam_oauth_secret
-      - iam_oauth_surface
-      - iam_oauth_flow_config
-      - iam_oauth_scope_profile
-      - iam_oauth_claim_mapping
-      - iam_oauth_policy
-      - iam_oauth_tenant_binding
-      - iam_oauth_operator_platform
-      - iam_oauth_resource_account
-      - iam_oauth_resource_authorization
-      - iam_oauth_webhook_config
-      - iam_oauth_operational_resource
-      - iam_oauth_account_link
-      - iam_oauth_grant
-      - iam_oauth_callback_event
-      - iam_oauth_diagnostic_run
-      - ops_audit_log
-  - route: /admin/oauth/claim-mappings
-    dependency_owned: true
-    dependency_sdk_family: sdkwork-appbase-backend-sdk
-    required_tables:
-      - iam_oauth_provider_catalog
-      - iam_oauth_integration
-      - iam_oauth_client
-      - iam_oauth_secret
-      - iam_oauth_surface
-      - iam_oauth_flow_config
-      - iam_oauth_scope_profile
-      - iam_oauth_claim_mapping
-      - iam_oauth_policy
-      - iam_oauth_tenant_binding
-      - iam_oauth_operator_platform
-      - iam_oauth_resource_account
-      - iam_oauth_resource_authorization
-      - iam_oauth_webhook_config
-      - iam_oauth_operational_resource
-      - iam_oauth_account_link
-      - iam_oauth_grant
-      - iam_oauth_callback_event
-      - iam_oauth_diagnostic_run
-      - ops_audit_log
-  - route: /admin/oauth/policies
-    dependency_owned: true
-    dependency_sdk_family: sdkwork-appbase-backend-sdk
-    required_tables:
-      - iam_oauth_provider_catalog
-      - iam_oauth_integration
-      - iam_oauth_client
-      - iam_oauth_secret
-      - iam_oauth_surface
-      - iam_oauth_flow_config
-      - iam_oauth_scope_profile
-      - iam_oauth_claim_mapping
-      - iam_oauth_policy
-      - iam_oauth_tenant_binding
-      - iam_oauth_operator_platform
-      - iam_oauth_resource_account
-      - iam_oauth_resource_authorization
-      - iam_oauth_webhook_config
-      - iam_oauth_operational_resource
-      - iam_oauth_account_link
-      - iam_oauth_grant
-      - iam_oauth_callback_event
-      - iam_oauth_diagnostic_run
-      - ops_audit_log
-  - route: /admin/oauth/tenant-bindings
-    dependency_owned: true
-    dependency_sdk_family: sdkwork-appbase-backend-sdk
-    required_tables:
-      - iam_oauth_provider_catalog
-      - iam_oauth_integration
-      - iam_oauth_client
-      - iam_oauth_secret
-      - iam_oauth_surface
-      - iam_oauth_flow_config
-      - iam_oauth_scope_profile
-      - iam_oauth_claim_mapping
-      - iam_oauth_policy
-      - iam_oauth_tenant_binding
-      - iam_oauth_operator_platform
-      - iam_oauth_resource_account
-      - iam_oauth_resource_authorization
-      - iam_oauth_webhook_config
-      - iam_oauth_operational_resource
-      - iam_oauth_account_link
-      - iam_oauth_grant
-      - iam_oauth_callback_event
-      - iam_oauth_diagnostic_run
-      - ops_audit_log
-  - route: /admin/oauth/operator-platforms
-    dependency_owned: true
-    dependency_sdk_family: sdkwork-appbase-backend-sdk
-    required_tables:
-      - iam_oauth_provider_catalog
-      - iam_oauth_integration
-      - iam_oauth_client
-      - iam_oauth_secret
-      - iam_oauth_surface
-      - iam_oauth_flow_config
-      - iam_oauth_scope_profile
-      - iam_oauth_claim_mapping
-      - iam_oauth_policy
-      - iam_oauth_tenant_binding
-      - iam_oauth_operator_platform
-      - iam_oauth_resource_account
-      - iam_oauth_resource_authorization
-      - iam_oauth_webhook_config
-      - iam_oauth_operational_resource
-      - iam_oauth_account_link
-      - iam_oauth_grant
-      - iam_oauth_callback_event
-      - iam_oauth_diagnostic_run
-      - ops_audit_log
-  - route: /admin/oauth/resource-accounts
-    dependency_owned: true
-    dependency_sdk_family: sdkwork-appbase-backend-sdk
-    required_tables:
-      - iam_oauth_provider_catalog
-      - iam_oauth_integration
-      - iam_oauth_client
-      - iam_oauth_secret
-      - iam_oauth_surface
-      - iam_oauth_flow_config
-      - iam_oauth_scope_profile
-      - iam_oauth_claim_mapping
-      - iam_oauth_policy
-      - iam_oauth_tenant_binding
-      - iam_oauth_operator_platform
-      - iam_oauth_resource_account
-      - iam_oauth_resource_authorization
-      - iam_oauth_webhook_config
-      - iam_oauth_operational_resource
-      - iam_oauth_account_link
-      - iam_oauth_grant
-      - iam_oauth_callback_event
-      - iam_oauth_diagnostic_run
-      - ops_audit_log
-  - route: /admin/oauth/resource-accounts/official-accounts
-    dependency_owned: true
-    dependency_sdk_family: sdkwork-appbase-backend-sdk
-    required_tables:
-      - iam_oauth_provider_catalog
-      - iam_oauth_integration
-      - iam_oauth_client
-      - iam_oauth_secret
-      - iam_oauth_surface
-      - iam_oauth_flow_config
-      - iam_oauth_scope_profile
-      - iam_oauth_claim_mapping
-      - iam_oauth_policy
-      - iam_oauth_tenant_binding
-      - iam_oauth_operator_platform
-      - iam_oauth_resource_account
-      - iam_oauth_resource_authorization
-      - iam_oauth_webhook_config
-      - iam_oauth_operational_resource
-      - iam_oauth_account_link
-      - iam_oauth_grant
-      - iam_oauth_callback_event
-      - iam_oauth_diagnostic_run
-      - ops_audit_log
-  - route: /admin/oauth/resource-accounts/mini-programs
-    dependency_owned: true
-    dependency_sdk_family: sdkwork-appbase-backend-sdk
-    required_tables:
-      - iam_oauth_provider_catalog
-      - iam_oauth_integration
-      - iam_oauth_client
-      - iam_oauth_secret
-      - iam_oauth_surface
-      - iam_oauth_flow_config
-      - iam_oauth_scope_profile
-      - iam_oauth_claim_mapping
-      - iam_oauth_policy
-      - iam_oauth_tenant_binding
-      - iam_oauth_operator_platform
-      - iam_oauth_resource_account
-      - iam_oauth_resource_authorization
-      - iam_oauth_webhook_config
-      - iam_oauth_operational_resource
-      - iam_oauth_account_link
-      - iam_oauth_grant
-      - iam_oauth_callback_event
-      - iam_oauth_diagnostic_run
-      - ops_audit_log
-  - route: /admin/oauth/resource-authorizations
-    dependency_owned: true
-    dependency_sdk_family: sdkwork-appbase-backend-sdk
-    required_tables:
-      - iam_oauth_provider_catalog
-      - iam_oauth_integration
-      - iam_oauth_client
-      - iam_oauth_secret
-      - iam_oauth_surface
-      - iam_oauth_flow_config
-      - iam_oauth_scope_profile
-      - iam_oauth_claim_mapping
-      - iam_oauth_policy
-      - iam_oauth_tenant_binding
-      - iam_oauth_operator_platform
-      - iam_oauth_resource_account
-      - iam_oauth_resource_authorization
-      - iam_oauth_webhook_config
-      - iam_oauth_operational_resource
-      - iam_oauth_account_link
-      - iam_oauth_grant
-      - iam_oauth_callback_event
-      - iam_oauth_diagnostic_run
-      - ops_audit_log
-  - route: /admin/oauth/webhooks
-    dependency_owned: true
-    dependency_sdk_family: sdkwork-appbase-backend-sdk
-    required_tables:
-      - iam_oauth_provider_catalog
-      - iam_oauth_integration
-      - iam_oauth_client
-      - iam_oauth_secret
-      - iam_oauth_surface
-      - iam_oauth_flow_config
-      - iam_oauth_scope_profile
-      - iam_oauth_claim_mapping
-      - iam_oauth_policy
-      - iam_oauth_tenant_binding
-      - iam_oauth_operator_platform
-      - iam_oauth_resource_account
-      - iam_oauth_resource_authorization
-      - iam_oauth_webhook_config
-      - iam_oauth_operational_resource
-      - iam_oauth_account_link
-      - iam_oauth_grant
-      - iam_oauth_callback_event
-      - iam_oauth_diagnostic_run
-      - ops_audit_log
-  - route: /admin/oauth/operational-resources
-    dependency_owned: true
-    dependency_sdk_family: sdkwork-appbase-backend-sdk
-    required_tables:
-      - iam_oauth_provider_catalog
-      - iam_oauth_integration
-      - iam_oauth_client
-      - iam_oauth_secret
-      - iam_oauth_surface
-      - iam_oauth_flow_config
-      - iam_oauth_scope_profile
-      - iam_oauth_claim_mapping
-      - iam_oauth_policy
-      - iam_oauth_tenant_binding
-      - iam_oauth_operator_platform
-      - iam_oauth_resource_account
-      - iam_oauth_resource_authorization
-      - iam_oauth_webhook_config
-      - iam_oauth_operational_resource
-      - iam_oauth_account_link
-      - iam_oauth_grant
-      - iam_oauth_callback_event
-      - iam_oauth_diagnostic_run
-      - ops_audit_log
-  - route: /admin/oauth/account-links
-    dependency_owned: true
-    dependency_sdk_family: sdkwork-appbase-backend-sdk
-    required_tables:
-      - iam_oauth_provider_catalog
-      - iam_oauth_integration
-      - iam_oauth_client
-      - iam_oauth_secret
-      - iam_oauth_surface
-      - iam_oauth_flow_config
-      - iam_oauth_scope_profile
-      - iam_oauth_claim_mapping
-      - iam_oauth_policy
-      - iam_oauth_tenant_binding
-      - iam_oauth_operator_platform
-      - iam_oauth_resource_account
-      - iam_oauth_resource_authorization
-      - iam_oauth_webhook_config
-      - iam_oauth_operational_resource
-      - iam_oauth_account_link
-      - iam_oauth_grant
-      - iam_oauth_callback_event
-      - iam_oauth_diagnostic_run
-      - ops_audit_log
-  - route: /admin/oauth/grants
-    dependency_owned: true
-    dependency_sdk_family: sdkwork-appbase-backend-sdk
-    required_tables:
-      - iam_oauth_provider_catalog
-      - iam_oauth_integration
-      - iam_oauth_client
-      - iam_oauth_secret
-      - iam_oauth_surface
-      - iam_oauth_flow_config
-      - iam_oauth_scope_profile
-      - iam_oauth_claim_mapping
-      - iam_oauth_policy
-      - iam_oauth_tenant_binding
-      - iam_oauth_operator_platform
-      - iam_oauth_resource_account
-      - iam_oauth_resource_authorization
-      - iam_oauth_webhook_config
-      - iam_oauth_operational_resource
-      - iam_oauth_account_link
-      - iam_oauth_grant
-      - iam_oauth_callback_event
-      - iam_oauth_diagnostic_run
-      - ops_audit_log
-  - route: /admin/oauth/callback-diagnostics
-    dependency_owned: true
-    dependency_sdk_family: sdkwork-appbase-backend-sdk
-    required_tables:
-      - iam_oauth_provider_catalog
-      - iam_oauth_integration
-      - iam_oauth_client
-      - iam_oauth_secret
-      - iam_oauth_surface
-      - iam_oauth_flow_config
-      - iam_oauth_scope_profile
-      - iam_oauth_claim_mapping
-      - iam_oauth_policy
-      - iam_oauth_tenant_binding
-      - iam_oauth_operator_platform
-      - iam_oauth_resource_account
-      - iam_oauth_resource_authorization
-      - iam_oauth_webhook_config
-      - iam_oauth_operational_resource
-      - iam_oauth_account_link
-      - iam_oauth_grant
-      - iam_oauth_callback_event
-      - iam_oauth_diagnostic_run
-      - ops_audit_log
-  - route: /admin/oauth/diagnostic-runs
-    dependency_owned: true
-    dependency_sdk_family: sdkwork-appbase-backend-sdk
-    required_tables:
-      - iam_oauth_provider_catalog
-      - iam_oauth_integration
-      - iam_oauth_client
-      - iam_oauth_secret
-      - iam_oauth_surface
-      - iam_oauth_flow_config
-      - iam_oauth_scope_profile
-      - iam_oauth_claim_mapping
-      - iam_oauth_policy
-      - iam_oauth_tenant_binding
-      - iam_oauth_operator_platform
-      - iam_oauth_resource_account
-      - iam_oauth_resource_authorization
-      - iam_oauth_webhook_config
-      - iam_oauth_operational_resource
-      - iam_oauth_account_link
-      - iam_oauth_grant
-      - iam_oauth_callback_event
-      - iam_oauth_diagnostic_run
       - ops_audit_log

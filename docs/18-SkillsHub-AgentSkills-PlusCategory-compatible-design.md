@@ -1,5 +1,7 @@
 # SkillsHub AgentSkills / PlusCategory 兼容设计
 
+> **已废弃（Deprecated）** — 自 v4.1 起由 [30-platform-data-model-v4.md](./30-platform-data-model-v4.md) 取代。Greenfield 安装使用 `ai_agent_skill*` + `c_category`，不再兼容 `plus_agent_skill` / `plus_category`。
+
 > 版本：0.1
 > 日期：2026-04-28
 > 范围：`apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub`、`legacy-java-plus-app-api`、`legacy-java-plus-backend-api`、`legacy-java-plus-entity`

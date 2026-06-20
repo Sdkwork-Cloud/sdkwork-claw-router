@@ -81,7 +81,7 @@ async fn sqlite_course_store_reads_seeded_course_catalog_from_java_compatible_ta
         categories
             .iter()
             .any(|category| category.code == "ai-coding" && category.course_count > 0),
-        "course categories must come from c_category type 6 with live course counts"
+        "course categories must come from c_category category_type course with live course counts"
     );
 
     let overview = store.load_overview(None).await.unwrap();

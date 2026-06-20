@@ -2498,7 +2498,7 @@
       "query_parameters": [],
       "query_parameters_declared": false,
       "read_sources": [
-        "studio_app_template"
+        "platform_app_template"
       ],
       "request_body_required": null,
       "request_id_header": false,
@@ -2862,7 +2862,7 @@
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
       "tag": "platform",
       "write_tables": [
-        "studio_app_template",
+        "platform_app_template",
         "ops_audit_log"
       ]
     },
@@ -2994,7 +2994,7 @@
       "query_parameters": [],
       "query_parameters_declared": false,
       "read_sources": [
-        "studio_app_template",
+        "platform_app_template",
         "ai_skill_action",
         "ai_skill_asset",
         "ai_skill_artifact"
@@ -3027,7 +3027,7 @@
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
       "tag": "platform",
       "write_tables": [
-        "studio_app_template",
+        "platform_app_template",
         "ai_skill_action",
         "ai_skill_asset",
         "ai_skill_artifact",
@@ -3891,7 +3891,7 @@
       "query_parameters": [],
       "query_parameters_declared": true,
       "read_sources": [
-        "studio_app_template"
+        "platform_app_template"
       ],
       "request_body_required": null,
       "request_id_header": false,
@@ -4202,7 +4202,7 @@
       ],
       "query_parameters_declared": true,
       "read_sources": [
-        "studio_app_template",
+        "platform_app_template",
         "ai_skill_asset",
         "ai_skill_artifact"
       ],
@@ -5065,7 +5065,7 @@
       "query_parameters": [],
       "query_parameters_declared": false,
       "read_sources": [
-        "studio_app_template"
+        "platform_app_template"
       ],
       "request_body_required": false,
       "request_id_header": false,
@@ -5280,7 +5280,7 @@
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
       "tag": "platform",
       "write_tables": [
-        "studio_app_template",
+        "platform_app_template",
         "ops_audit_log"
       ]
     },
@@ -5545,7 +5545,7 @@
       "query_parameters": [],
       "query_parameters_declared": false,
       "read_sources": [
-        "studio_app_template"
+        "platform_app_template"
       ],
       "request_body_required": false,
       "request_id_header": false,
@@ -5760,7 +5760,7 @@
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
       "tag": "platform",
       "write_tables": [
-        "studio_app_template",
+        "platform_app_template",
         "ops_audit_log"
       ]
     },
@@ -6341,7 +6341,7 @@
       "query_parameters": [],
       "query_parameters_declared": false,
       "read_sources": [
-        "studio_app_template"
+        "platform_app_template"
       ],
       "request_body_required": null,
       "request_id_header": false,
@@ -6696,7 +6696,7 @@
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
       "tag": "platform",
       "write_tables": [
-        "studio_app_template",
+        "platform_app_template",
         "ops_audit_log"
       ]
     },
@@ -12486,7 +12486,7 @@
       ],
       "query_parameters_declared": true,
       "read_sources": [
-        "content_forum_comment"
+        "content_comment"
       ],
       "request_body_required": null,
       "request_id_header": false,
@@ -13307,7 +13307,7 @@
         "content_course",
         "content_course_lesson",
         "content_course_application",
-        "content_forum_comment",
+        "content_comment",
         "content_reaction"
       ],
       "request_body_required": null,
@@ -13434,7 +13434,7 @@
       "query_parameters": [],
       "query_parameters_declared": false,
       "read_sources": [
-        "content_forum_comment"
+        "content_comment"
       ],
       "request_body_required": null,
       "request_id_header": false,
@@ -13526,7 +13526,7 @@
       "summary": "Admin Course Comment Moderate",
       "tag": "content",
       "write_tables": [
-        "content_forum_comment",
+        "content_comment",
         "ops_audit_log"
       ]
     },
@@ -42083,340 +42083,6 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/iam/oauth/resource_accounts/{resourceAccountId}/mini_program_login_checks",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#checkOAuthMiniProgramLogin",
-      "kind": "create",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "checkOAuthMiniProgramLogin",
-      "operation_id": "iam.oauth.resourceAccounts.miniProgramLoginChecks.create",
-      "path_params": [
-        "resourceAccountId"
-      ],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_resource_account"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/login/mini-programs",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_resource_account",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/iam/oauth/claim_mappings",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#createOAuthClaimMapping",
-      "kind": "create",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "createOAuthClaimMapping",
-      "operation_id": "iam.oauth.claimMappings.create",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_claim_mapping"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/claim-mappings",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_claim_mapping",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/iam/oauth/clients",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#createOAuthClient",
-      "kind": "create",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "createOAuthClient",
-      "operation_id": "iam.oauth.clients.create",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_client"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/clients",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_client",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/iam/oauth/diagnostic_runs",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#createOAuthDiagnosticRun",
-      "kind": "create",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "createOAuthDiagnosticRun",
-      "operation_id": "iam.oauth.diagnosticRuns.create",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_diagnostic_run"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/diagnostic-runs",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_diagnostic_run",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/iam/oauth/flow_configs",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#createOAuthFlowConfig",
-      "kind": "create",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "createOAuthFlowConfig",
-      "operation_id": "iam.oauth.flowConfigs.create",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_flow_config"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/flow-configs",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_flow_config",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/iam/oauth/integrations",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#createOAuthIntegration",
-      "kind": "create",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "createOAuthIntegration",
-      "operation_id": "iam.oauth.integrations.create",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_integration"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/integrations",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_integration",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/iam/oauth/operational_resources",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#createOAuthOperationalResource",
-      "kind": "create",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "createOAuthOperationalResource",
-      "operation_id": "iam.oauth.operationalResources.create",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_operational_resource"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/operational-resources",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_operational_resource",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/iam/oauth/operator_platforms",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#createOAuthOperatorPlatform",
-      "kind": "create",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "createOAuthOperatorPlatform",
-      "operation_id": "iam.oauth.operatorPlatforms.create",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_operator_platform"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/operator-platforms",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_operator_platform",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/iam/oauth/operator_platforms/{operatorPlatformId}/pre_authorizations",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#createOAuthOperatorPreAuthorization",
-      "kind": "create",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "createOAuthOperatorPreAuthorization",
-      "operation_id": "iam.oauth.operatorPlatforms.preAuthorizations.create",
-      "path_params": [
-        "operatorPlatformId"
-      ],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_operator_platform"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/operator-platforms",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_operator_platform",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/iam/oauth/policies",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#createOAuthPolicy",
-      "kind": "create",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "createOAuthPolicy",
-      "operation_id": "iam.oauth.policies.create",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_policy"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/policies",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_policy",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
       "api_path": "/backend/v3/api/iam/oauth/resource_accounts",
       "api_surface": "backend",
       "file_targets": [],
@@ -42435,7 +42101,7 @@
       ],
       "request_body_required": null,
       "request_id_header": false,
-      "route": "/admin/oauth/resource-accounts",
+      "route": "/admin/oauth/login-platforms",
       "route_scope": "admin",
       "sdk_api_prefix": "/backend/v3/api",
       "sdk_client": "SdkworkBackendClient",
@@ -42447,634 +42113,6 @@
         "iam_oauth_resource_account",
         "ops_audit_log"
       ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/iam/oauth/resource_authorizations",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#createOAuthResourceAuthorization",
-      "kind": "create",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "createOAuthResourceAuthorization",
-      "operation_id": "iam.oauth.resourceAuthorizations.create",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_resource_authorization"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/resource-authorizations",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_resource_authorization",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/iam/oauth/scope_profiles",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#createOAuthScopeProfile",
-      "kind": "create",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "createOAuthScopeProfile",
-      "operation_id": "iam.oauth.scopeProfiles.create",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_scope_profile"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/scope-profiles",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_scope_profile",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/iam/oauth/secrets",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#createOAuthSecret",
-      "kind": "create",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "createOAuthSecret",
-      "operation_id": "iam.oauth.secrets.create",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_secret"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/secrets",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_secret",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/iam/oauth/surfaces",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#createOAuthSurface",
-      "kind": "create",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "createOAuthSurface",
-      "operation_id": "iam.oauth.surfaces.create",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_surface"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/surfaces",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_surface",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/iam/oauth/tenant_bindings",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#createOAuthTenantBinding",
-      "kind": "create",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "createOAuthTenantBinding",
-      "operation_id": "iam.oauth.tenantBindings.create",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_tenant_binding"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/tenant-bindings",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_tenant_binding",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/iam/oauth/webhook_configs",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#createOAuthWebhook",
-      "kind": "create",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "createOAuthWebhook",
-      "operation_id": "iam.oauth.webhookConfigs.create",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_webhook_config"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/webhooks",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_webhook_config",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "DELETE",
-      "api_path": "/backend/v3/api/iam/oauth/grants/{grantId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#deleteOAuthGrant",
-      "kind": "delete",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "deleteOAuthGrant",
-      "operation_id": "iam.oauth.grants.delete",
-      "path_params": [
-        "grantId"
-      ],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_grant"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/grants",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_grant",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "DELETE",
-      "api_path": "/backend/v3/api/iam/oauth/operational_resources/{resourceId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#deleteOAuthOperationalResource",
-      "kind": "delete",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "deleteOAuthOperationalResource",
-      "operation_id": "iam.oauth.operationalResources.delete",
-      "path_params": [
-        "resourceId"
-      ],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_operational_resource"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/operational-resources",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_operational_resource",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/iam/oauth/account_links",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#listOAuthAccountLinks",
-      "kind": "read",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "listOAuthAccountLinks",
-      "operation_id": "iam.oauth.accountLinks.list",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_account_link"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/account-links",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/iam/oauth/callback_events",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#listOAuthCallbackEvents",
-      "kind": "read",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "listOAuthCallbackEvents",
-      "operation_id": "iam.oauth.callbackEvents.list",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_callback_event"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/callback-diagnostics",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/iam/oauth/claim_mappings",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#listOAuthClaimMappings",
-      "kind": "read",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "listOAuthClaimMappings",
-      "operation_id": "iam.oauth.claimMappings.list",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_claim_mapping"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/claim-mappings",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/iam/oauth/clients",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#listOAuthClients",
-      "kind": "read",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "listOAuthClients",
-      "operation_id": "iam.oauth.clients.list",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_client"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/clients",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/iam/oauth/diagnostic_runs",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#listOAuthDiagnosticRuns",
-      "kind": "read",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "listOAuthDiagnosticRuns",
-      "operation_id": "iam.oauth.diagnosticRuns.list",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_diagnostic_run"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/diagnostic-runs",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/iam/oauth/flow_configs",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#listOAuthFlowConfigs",
-      "kind": "read",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "listOAuthFlowConfigs",
-      "operation_id": "iam.oauth.flowConfigs.list",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_flow_config"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/flow-configs",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/iam/oauth/grants",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#listOAuthGrants",
-      "kind": "read",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "listOAuthGrants",
-      "operation_id": "iam.oauth.grants.list",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_grant"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/grants",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/iam/oauth/integrations",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#listOAuthIntegrations",
-      "kind": "read",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "listOAuthIntegrations",
-      "operation_id": "iam.oauth.integrations.list",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_integration"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/integrations",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/iam/oauth/operational_resources",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#listOAuthOperationalResources",
-      "kind": "read",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "listOAuthOperationalResources",
-      "operation_id": "iam.oauth.operationalResources.list",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_operational_resource"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/operational-resources",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/iam/oauth/operator_platforms",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#listOAuthOperatorPlatforms",
-      "kind": "read",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "listOAuthOperatorPlatforms",
-      "operation_id": "iam.oauth.operatorPlatforms.list",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_operator_platform"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/operator-platforms",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/iam/oauth/policies",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#listOAuthPolicies",
-      "kind": "read",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "listOAuthPolicies",
-      "operation_id": "iam.oauth.policies.list",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_policy"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/policies",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/iam/oauth/provider_catalog",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#listOAuthProviderCatalog",
-      "kind": "read",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "listOAuthProviderCatalog",
-      "operation_id": "iam.oauth.providerCatalog.list",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_provider_catalog"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/provider-catalog",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": []
     },
     {
       "api_method": "GET",
@@ -43096,7 +42134,7 @@
       ],
       "request_body_required": null,
       "request_id_header": false,
-      "route": "/admin/oauth/resource-accounts",
+      "route": "/admin/oauth/login-platforms",
       "route_scope": "admin",
       "sdk_api_prefix": "/backend/v3/api",
       "sdk_client": "SdkworkBackendClient",
@@ -43105,501 +42143,6 @@
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
       "tag": "iam",
       "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/iam/oauth/resource_authorizations",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#listOAuthResourceAuthorizations",
-      "kind": "read",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "listOAuthResourceAuthorizations",
-      "operation_id": "iam.oauth.resourceAuthorizations.list",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_resource_authorization"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/resource-authorizations",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/iam/oauth/scope_profiles",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#listOAuthScopeProfiles",
-      "kind": "read",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "listOAuthScopeProfiles",
-      "operation_id": "iam.oauth.scopeProfiles.list",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_scope_profile"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/scope-profiles",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/iam/oauth/secrets",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#listOAuthSecrets",
-      "kind": "read",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "listOAuthSecrets",
-      "operation_id": "iam.oauth.secrets.list",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_secret"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/secrets",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/iam/oauth/surfaces",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#listOAuthSurfaces",
-      "kind": "read",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "listOAuthSurfaces",
-      "operation_id": "iam.oauth.surfaces.list",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_surface"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/surfaces",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/iam/oauth/tenant_bindings",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#listOAuthTenantBindings",
-      "kind": "read",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "listOAuthTenantBindings",
-      "operation_id": "iam.oauth.tenantBindings.list",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_tenant_binding"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/tenant-bindings",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/iam/oauth/webhook_configs",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#listOAuthWebhooks",
-      "kind": "read",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "listOAuthWebhooks",
-      "operation_id": "iam.oauth.webhookConfigs.list",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_webhook_config"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/webhooks",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": []
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/iam/oauth/operational_resources/{resourceId}/publishes",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#publishOAuthOperationalResource",
-      "kind": "create",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "publishOAuthOperationalResource",
-      "operation_id": "iam.oauth.operationalResources.publishes.create",
-      "path_params": [
-        "resourceId"
-      ],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_operational_resource"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/operational-resources",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_operational_resource",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/iam/oauth/resource_accounts/{resourceAccountId}/authorization_refreshes",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#refreshOAuthResourceAuthorization",
-      "kind": "create",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "refreshOAuthResourceAuthorization",
-      "operation_id": "iam.oauth.resourceAccounts.authorizationRefreshes.create",
-      "path_params": [
-        "resourceAccountId"
-      ],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_resource_account"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/resource-accounts",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_resource_account",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "PATCH",
-      "api_path": "/backend/v3/api/iam/oauth/account_links/{accountLinkId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#updateOAuthAccountLink",
-      "kind": "update",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "updateOAuthAccountLink",
-      "operation_id": "iam.oauth.accountLinks.update",
-      "path_params": [
-        "accountLinkId"
-      ],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_account_link"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/account-links",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_account_link",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "PATCH",
-      "api_path": "/backend/v3/api/iam/oauth/claim_mappings/{mappingId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#updateOAuthClaimMapping",
-      "kind": "update",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "updateOAuthClaimMapping",
-      "operation_id": "iam.oauth.claimMappings.update",
-      "path_params": [
-        "mappingId"
-      ],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_claim_mapping"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/claim-mappings",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_claim_mapping",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "PATCH",
-      "api_path": "/backend/v3/api/iam/oauth/clients/{oauthClientId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#updateOAuthClient",
-      "kind": "update",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "updateOAuthClient",
-      "operation_id": "iam.oauth.clients.update",
-      "path_params": [
-        "oauthClientId"
-      ],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_client"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/clients",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_client",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "PATCH",
-      "api_path": "/backend/v3/api/iam/oauth/flow_configs/{flowConfigId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#updateOAuthFlowConfig",
-      "kind": "update",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "updateOAuthFlowConfig",
-      "operation_id": "iam.oauth.flowConfigs.update",
-      "path_params": [
-        "flowConfigId"
-      ],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_flow_config"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/flow-configs",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_flow_config",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "PATCH",
-      "api_path": "/backend/v3/api/iam/oauth/integrations/{integrationId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#updateOAuthIntegration",
-      "kind": "update",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "updateOAuthIntegration",
-      "operation_id": "iam.oauth.integrations.update",
-      "path_params": [
-        "integrationId"
-      ],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_integration"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/integrations",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_integration",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "PATCH",
-      "api_path": "/backend/v3/api/iam/oauth/operational_resources/{resourceId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#updateOAuthOperationalResource",
-      "kind": "update",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "updateOAuthOperationalResource",
-      "operation_id": "iam.oauth.operationalResources.update",
-      "path_params": [
-        "resourceId"
-      ],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_operational_resource"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/operational-resources",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_operational_resource",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "PATCH",
-      "api_path": "/backend/v3/api/iam/oauth/policies/{policyId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#updateOAuthPolicy",
-      "kind": "update",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "updateOAuthPolicy",
-      "operation_id": "iam.oauth.policies.update",
-      "path_params": [
-        "policyId"
-      ],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_policy"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/policies",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_policy",
-        "ops_audit_log"
-      ]
     },
     {
       "api_method": "PATCH",
@@ -43623,7 +42166,7 @@
       ],
       "request_body_required": null,
       "request_id_header": false,
-      "route": "/admin/oauth/resource-accounts",
+      "route": "/admin/oauth/login-platforms",
       "route_scope": "admin",
       "sdk_api_prefix": "/backend/v3/api",
       "sdk_client": "SdkworkBackendClient",
@@ -43633,251 +42176,6 @@
       "tag": "iam",
       "write_tables": [
         "iam_oauth_resource_account",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "PATCH",
-      "api_path": "/backend/v3/api/iam/oauth/resource_authorizations/{authorizationId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#updateOAuthResourceAuthorization",
-      "kind": "update",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "updateOAuthResourceAuthorization",
-      "operation_id": "iam.oauth.resourceAuthorizations.update",
-      "path_params": [
-        "authorizationId"
-      ],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_resource_authorization"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/resource-authorizations",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_resource_authorization",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "PATCH",
-      "api_path": "/backend/v3/api/iam/oauth/scope_profiles/{scopeProfileId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#updateOAuthScopeProfile",
-      "kind": "update",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "updateOAuthScopeProfile",
-      "operation_id": "iam.oauth.scopeProfiles.update",
-      "path_params": [
-        "scopeProfileId"
-      ],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_scope_profile"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/scope-profiles",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_scope_profile",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "PATCH",
-      "api_path": "/backend/v3/api/iam/oauth/surfaces/{surfaceId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#updateOAuthSurface",
-      "kind": "update",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "updateOAuthSurface",
-      "operation_id": "iam.oauth.surfaces.update",
-      "path_params": [
-        "surfaceId"
-      ],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_surface"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/surfaces",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_surface",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "PATCH",
-      "api_path": "/backend/v3/api/iam/oauth/tenant_bindings/{bindingId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#updateOAuthTenantBinding",
-      "kind": "update",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "updateOAuthTenantBinding",
-      "operation_id": "iam.oauth.tenantBindings.update",
-      "path_params": [
-        "bindingId"
-      ],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_tenant_binding"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/tenant-bindings",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_tenant_binding",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "PATCH",
-      "api_path": "/backend/v3/api/iam/oauth/webhook_configs/{webhookConfigId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#updateOAuthWebhook",
-      "kind": "update",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "updateOAuthWebhook",
-      "operation_id": "iam.oauth.webhookConfigs.update",
-      "path_params": [
-        "webhookConfigId"
-      ],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_webhook_config"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/webhooks",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_webhook_config",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/iam/oauth/resource_accounts/{resourceAccountId}/verifications",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#verifyOAuthResourceAccount",
-      "kind": "create",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "verifyOAuthResourceAccount",
-      "operation_id": "iam.oauth.resourceAccounts.verifications.create",
-      "path_params": [
-        "resourceAccountId"
-      ],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_resource_account"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/resource-accounts",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_resource_account",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/iam/oauth/webhook_configs/{webhookConfigId}/verifications",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts#verifyOAuthWebhook",
-      "kind": "create",
-      "module": "sdkwork-clawrouter-pc-admin-oauth",
-      "openapi_exposed": false,
-      "operation": "verifyOAuthWebhook",
-      "operation_id": "iam.oauth.webhookConfigs.verifications.create",
-      "path_params": [
-        "webhookConfigId"
-      ],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "iam_oauth_webhook_config"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "route": "/admin/oauth/webhooks",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "iam",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
-      "tag": "iam",
-      "write_tables": [
-        "iam_oauth_webhook_config",
         "ops_audit_log"
       ]
     },
@@ -103317,25 +101615,25 @@
   },
   "summary": {
     "api_method_counts": {
-      "DELETE": 54,
-      "GET": 326,
-      "PATCH": 59,
-      "POST": 214,
+      "DELETE": 52,
+      "GET": 308,
+      "PATCH": 47,
+      "POST": 194,
       "PUT": 28
     },
     "api_surface_counts": {
       "app": 237,
-      "backend": 444
+      "backend": 392
     },
-    "operation_count": 681,
+    "operation_count": 629,
     "route_scope_counts": {
-      "admin": 444,
+      "admin": 392,
       "console": 116,
       "public": 121
     },
     "sdk_client_counts": {
       "SdkworkAppClient": 237,
-      "SdkworkBackendClient": 444
+      "SdkworkBackendClient": 392
     }
   }
 }

@@ -1359,11 +1359,11 @@ async fn insert_admin_visible_skill_catalog(
     sqlx::query(
         r#"
         INSERT INTO c_category
-            (id, uuid, tenant_id, organization_id, data_scope, name, description, type, code,
+            (id, uuid, tenant_id, organization_id, data_scope, name, description, category_type, code,
              icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot,
              sort_weight, parent_id, path, visible, status, created_at, updated_at)
         VALUES
-            (?, ?, ?, ?, 0, ?, ?, 19, ?, ?, NULL, ?, 10, NULL, ?, 1, 1, '2026-05-09 11:00:00', '2026-05-09 11:00:00')
+            (?, ?, ?, ?, 0, ?, ?, 'skill_market', ?, ?, NULL, ?, 10, NULL, ?, 1, 1, '2026-05-09 11:00:00', '2026-05-09 11:00:00')
         "#,
     )
     .bind(category_id)

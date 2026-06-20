@@ -21,8 +21,8 @@ fn app_store_sql_scopes_every_primary_query_by_trusted_subject() {
         "a.tenant_id = $1",
         "a.organization_id = $2",
         "OR ($2 > 0 AND a.organization_id = 0)",
-        "sa.tenant_id = a.tenant_id",
-        "sa.organization_id = a.organization_id",
+        "c.tenant_id = $1",
+        "c.organization_id = $2",
         "WHERE tenant_id = $1",
         "AND organization_id = $2",
     ] {
@@ -34,16 +34,13 @@ fn app_store_sql_scopes_every_primary_query_by_trusted_subject() {
 fn app_store_sql_reads_existing_market_tables_and_filters_active_apps() {
     for expected in [
         "FROM platform_app a",
-        "FROM ai_skill_action sa",
-        "FROM ai_skill_asset",
-        "FROM ai_skill_artifact",
+        "COALESCE(a.rating_avg, 0)::float8 AS rating",
+        "COALESCE(a.download_count, 0) AS download_count",
         "COALESCE(a.status, 1) = 1",
         "COALESCE(NULLIF(a.config -> 'portal' ->> 'marketStatus', ''), NULLIF(a.config ->> 'marketStatus', ''), 'DRAFT') = 'PUBLISHED'",
         "$3::integer IS NULL OR COALESCE(a.status, 1) = $4",
         "$5::text IS NULL OR COALESCE(a.updated_at, a.created_at) >= $6::timestamp",
         "$7::text IS NULL OR COALESCE(a.updated_at, a.created_at) <= $8::timestamp",
-        "target_type = 15",
-        "CATALOG_TARGET_TYPE_APP",
         "const LOAD_APPS_BASE",
         "const LOAD_APPS_PAGED_SUFFIX",
         "const LOAD_APPS_UNPAGED_SUFFIX",
@@ -51,6 +48,10 @@ fn app_store_sql_reads_existing_market_tables_and_filters_active_apps() {
     ] {
         assert_sql_contains(POSTGRES_APP_STORE, expected);
     }
+    assert!(
+        !POSTGRES_APP_STORE.contains("FROM ai_skill_action"),
+        "Postgres app store must not aggregate downloads/ratings from ai_skill_action; use platform_app columns"
+    );
     assert!(
         !POSTGRES_APP_STORE.contains("LIKE $10 ESCAPE"),
         "Postgres app store keyword filtering must use DTO semantics before pagination instead of a wider raw SQL LIKE page"
@@ -92,10 +93,7 @@ fn app_store_sql_returns_contract_projection_fields() {
         "AS app_type",
         "AS rating",
         "AS download_count",
-        "AS asset_resource_snapshot",
-        "AS thumbnail_resource_snapshot",
         "AS artifact_resource_snapshot",
-        "AS artifact_size_bytes",
     ] {
         assert_sql_contains(POSTGRES_APP_STORE, expected);
     }

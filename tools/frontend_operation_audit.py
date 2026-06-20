@@ -363,6 +363,7 @@ class FrontendOperationAudit:
                     valid_write_tables
                     and not write_tables
                     and not is_multipart_upload
+                    and not is_app_shell_operation
                     and not self._is_appbase_dependency_operation(
                         api_surface=api_surface,
                         sdk_domain=sdk_domain,

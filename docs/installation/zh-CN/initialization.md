@@ -118,8 +118,8 @@ server/service/container：
 engine = "postgresql"
 host = "db.example.com"
 port = 5432
-database = "sdkwork"
-username = "sdkwork"
+database = "sdkwork_ai_prod"
+username = "sdkwork_ai_prod"
 password_file = "/etc/sdkwork/router/database.secret"
 # password = "change-me"
 ssl_mode = "require"
@@ -256,8 +256,8 @@ server/service/container 部署默认启用并要求 Redis。首次启动前必�
 engine = "postgresql"
 host = "db.internal"
 port = 5432
-database = "sdkwork"
-username = "sdkwork"
+database = "sdkwork_ai_prod"
+username = "sdkwork_ai_prod"
 password = "real-password"
 ssl_mode = "require"
 max_connections = 16
@@ -283,7 +283,7 @@ deployment_mode = "server"
 `SDKWORK_CLAW_DATABASE_URL` 仍可在 `/etc/sdkwork/router/clawrouter.env` 或进程环境中作为明确运维覆盖：
 
 ```text
-SDKWORK_CLAW_DATABASE_URL=postgresql://sdkworkprod%402026%2B%2B:<password>@db.example.com:5432/sdkwork
+SDKWORK_CLAW_DATABASE_URL=postgresql://sdkwork_ai_prod:<password>@db.example.com:5432/sdkwork_ai_prod
 ```
 
 desktop SQLite 示例：

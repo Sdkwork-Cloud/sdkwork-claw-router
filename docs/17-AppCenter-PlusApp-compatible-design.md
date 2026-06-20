@@ -1,5 +1,7 @@
 # AppCenter PlusApp 兼容设计
 
+> **已废弃（Deprecated）** — 自 v4.1 起由 [30-platform-data-model-v4.md](./30-platform-data-model-v4.md) 取代。Greenfield 安装仅使用 `platform_app` + `c_category`，不再兼容 Java `plus_app`。
+
 > 版本：0.1
 > 日期：2026-04-28
 > 适用范围：`apps/sdkwork-clawrouter-pc` 的 `/apps`、`/apps/:id`、首页 AppCenterPreview，以及 Console/Admin 中与 App 管理相关的页面。

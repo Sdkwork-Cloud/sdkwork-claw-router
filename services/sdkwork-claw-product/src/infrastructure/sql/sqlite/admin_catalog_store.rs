@@ -3,6 +3,7 @@ use std::collections::{BTreeMap, HashSet};
 use serde_json::{json, Map, Value};
 use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
+use crate::application::c_category_type_scope;
 use crate::domain::{DomainError, DomainResult};
 use crate::infrastructure::sql::sql_admin_product_center::{
     is_missing_table_error, is_unique_constraint_error, media_resource_stable_id,
@@ -624,10 +625,14 @@ async fn import_c_category_seed(
     requested_at: &str,
     bundle: &AdminCategorySeedBundle,
 ) -> DomainResult<AdminCategorySeedInitializeSummary> {
-    let category_type = bundle
+    let legacy_category_type = bundle
         .category_type
         .ok_or_else(|| DomainError::new("c_category seed requires categoryType"))?;
-    let group_name = required_seed_text(bundle.group_name.as_deref(), "groupName")?;
+    let category_type = c_category_type_scope(
+        legacy_category_type,
+        bundle.dataset.as_str(),
+        bundle.group_name.as_deref(),
+    )?;
     let id_by_code = bundle
         .categories
         .iter()
@@ -663,15 +668,14 @@ async fn import_c_category_seed(
         sqlx::query(
             r#"
             INSERT INTO c_category
-                (id, uuid, tenant_id, organization_id, data_scope, name, description, shop_id, type, group_name, code, tags, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, sort_weight, parent_id, path, visible, status, created_at, updated_at)
+                (id, uuid, tenant_id, organization_id, data_scope, category_type, name, description, code, tags, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, sort_weight, parent_id, path, visible, status, created_at, updated_at)
             VALUES
-                (?1, ?2, 0, 0, 0, ?3, ?4, 0, ?5, ?6, ?7, ?8, NULL, NULL, NULL, ?9, ?10, ?11, ?12, ?13, ?14, ?14)
+                (?1, ?2, 0, 0, 0, ?3, ?4, ?5, ?6, ?7, NULL, NULL, NULL, ?8, ?9, ?10, ?11, ?12, ?13, ?13)
             ON CONFLICT(id) DO UPDATE SET
                 uuid = excluded.uuid,
+                category_type = excluded.category_type,
                 name = excluded.name,
                 description = excluded.description,
-                type = excluded.type,
-                group_name = excluded.group_name,
                 code = excluded.code,
                 tags = excluded.tags,
                 sort_weight = excluded.sort_weight,
@@ -684,10 +688,9 @@ async fn import_c_category_seed(
         )
         .bind(id)
         .bind(uuid)
+        .bind(category_type)
         .bind(&item.name)
         .bind(description)
-        .bind(category_type)
-        .bind(group_name)
         .bind(code)
         .bind(tags)
         .bind(item.sort_weight.or(item.sort_order).unwrap_or(0))
@@ -698,7 +701,7 @@ async fn import_c_category_seed(
         .bind(requested_at)
         .execute(pool)
         .await
-        .map_err(|error| write_error("failed to import plus category seed", error))?;
+        .map_err(|error| write_error("failed to import c_category seed", error))?;
         upserted += 1;
     }
     Ok(seed_summary(bundle, upserted, 0))

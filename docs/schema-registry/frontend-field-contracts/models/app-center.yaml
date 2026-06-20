@@ -221,7 +221,7 @@ frontend_models:
   - createdAt
   - updatedAt
   data_sources:
-  - studio_app_template
+  - platform_app_template
 - route: /admin/app
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   interface: AdminAppTemplateCreateInput
@@ -252,7 +252,7 @@ frontend_models:
   - dependencyManifest
   - capabilityManifest
   data_sources:
-  - studio_app_template
+  - platform_app_template
 - route: /admin/app
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   interface: AdminAppTemplateUpdateInput
@@ -281,7 +281,7 @@ frontend_models:
   - dependencyManifest
   - capabilityManifest
   data_sources:
-  - studio_app_template
+  - platform_app_template
 - route: /admin/app
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   interface: AdminAppTemplateListInput
@@ -294,7 +294,7 @@ frontend_models:
   - page
   - pageSize
   data_sources:
-  - studio_app_template
+  - platform_app_template
 - route: /admin/app
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   interface: AdminAppTemplatePage
@@ -335,7 +335,7 @@ frontend_models:
   - pageSize
   - hasNextPage
   data_sources:
-  - studio_app_template
+  - platform_app_template
 - route: /apps
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/appRuntime.ts
   interface: App
@@ -374,6 +374,7 @@ frontend_models:
   - artifact
   - whatsNew
   data_sources:
+  - platform_app
 - route: /apps
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/appService.ts
   interface: AppFilters

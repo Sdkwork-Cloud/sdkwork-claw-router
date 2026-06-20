@@ -2034,7 +2034,7 @@
             "type": "array"
           },
           "id": {
-            "description": "Stable application identity from plus_app.config.standard.appKey when present; falls back to plus_app.id only when appKey is absent.",
+            "description": "Stable application identity from platform_app.config.standard.appKey when present; falls back to platform_app.id only when appKey is absent.",
             "maxLength": 128,
             "minLength": 1,
             "type": "string"
@@ -2255,7 +2255,7 @@
             "type": "array"
           },
           "id": {
-            "description": "Stable application identity from plus_app.config.standard.appKey when present; falls back to plus_app.id only when appKey is absent.",
+            "description": "Stable application identity from platform_app.config.standard.appKey when present; falls back to platform_app.id only when appKey is absent.",
             "maxLength": 128,
             "minLength": 1,
             "type": "string"
@@ -4497,1055 +4497,6 @@
           "uploadedAt"
         ],
         "type": "object"
-      },
-      "CourseCategoryItem": {
-        "additionalProperties": false,
-        "description": "Course category item schema exposed by Claw Router.",
-        "properties": {
-          "code": {
-            "description": "Code field on course category item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "courseCount": {
-            "description": "Course count field on course category item.",
-            "format": "int64",
-            "pattern": "^[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "description": {
-            "description": "Description field on course category item.",
-            "maxLength": 1024,
-            "type": "string"
-          },
-          "iconKey": {
-            "description": "Icon key field on course category item.",
-            "maxLength": 128,
-            "type": "string"
-          },
-          "id": {
-            "description": "Id field on course category item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "label": {
-            "description": "Label field on course category item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "name": {
-            "description": "Name field on course category item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "sortWeight": {
-            "description": "Sort weight field on course category item.",
-            "format": "int64",
-            "pattern": "^-?[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          }
-        },
-        "required": [
-          "id",
-          "code",
-          "label",
-          "name",
-          "description",
-          "iconKey",
-          "sortWeight",
-          "courseCount"
-        ],
-        "type": "object"
-      },
-      "CourseCategoryList": {
-        "description": "Course category list schema exposed by Claw Router.",
-        "items": {
-          "$ref": "#/components/schemas/CourseCategoryItem"
-        },
-        "maxItems": 100,
-        "name": "CourseCategoryList",
-        "type": "array"
-      },
-      "CourseDetail": {
-        "additionalProperties": false,
-        "description": "Course detail schema exposed by Claw Router.",
-        "name": "CourseDetail",
-        "properties": {
-          "category": {
-            "description": "Category field on course detail.",
-            "maxLength": 128,
-            "type": "string"
-          },
-          "categoryLabel": {
-            "description": "Category label field on course detail.",
-            "maxLength": 128,
-            "type": "string"
-          },
-          "commentCount": {
-            "description": "Comment count field on course detail.",
-            "format": "int64",
-            "pattern": "^[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "content": {
-            "description": "Content field on course detail.",
-            "maxLength": 20000,
-            "type": "string"
-          },
-          "contentId": {
-            "description": "Content id field on course detail.",
-            "format": "int64",
-            "pattern": "^[1-9][0-9]*$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "courseCode": {
-            "description": "Course code field on course detail.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "currency": {
-            "description": "Currency field on course detail.",
-            "maxLength": 16,
-            "type": "string"
-          },
-          "description": {
-            "description": "Description field on course detail.",
-            "maxLength": 2048,
-            "type": "string"
-          },
-          "durationText": {
-            "description": "Duration text field on course detail.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "engagement": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/CourseEngagement"
-              }
-            ],
-            "description": "Engagement field on course detail."
-          },
-          "externalBvid": {
-            "description": "External bvid field on course detail.",
-            "maxLength": 128,
-            "type": "string"
-          },
-          "id": {
-            "description": "Id field on course detail.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "instructor": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/CourseInstructor"
-              }
-            ],
-            "description": "Instructor field on course detail."
-          },
-          "isCollection": {
-            "description": "Is collection field on course detail.",
-            "type": "boolean"
-          },
-          "lessonsCount": {
-            "description": "Lessons count field on course detail.",
-            "format": "int64",
-            "pattern": "^[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "level": {
-            "description": "Level field on course detail.",
-            "format": "int64",
-            "pattern": "^[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "levelLabel": {
-            "description": "Level label field on course detail.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "priceAmount": {
-            "description": "Price amount field on course detail.",
-            "maxLength": 64,
-            "nullable": true,
-            "type": "string"
-          },
-          "publishedAt": {
-            "description": "Published at field on course detail.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "ratingScore": {
-            "description": "Rating score field on course detail.",
-            "maximum": 5,
-            "minimum": 0,
-            "type": "number"
-          },
-          "relatedCourses": {
-            "description": "Related courses field on course detail.",
-            "items": {
-              "$ref": "#/components/schemas/CourseItem"
-            },
-            "maxItems": 16,
-            "type": "array"
-          },
-          "sections": {
-            "description": "Sections field on course detail.",
-            "items": {
-              "$ref": "#/components/schemas/CourseSectionItem"
-            },
-            "maxItems": 100,
-            "type": "array"
-          },
-          "source": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/CourseOverviewSource"
-              }
-            ],
-            "description": "Source field on course detail."
-          },
-          "studentsCount": {
-            "description": "Students count field on course detail.",
-            "format": "int64",
-            "pattern": "^[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "tags": {
-            "description": "Tags field on course detail.",
-            "items": {
-              "description": "Tags field on course detail.",
-              "maxLength": 64,
-              "minLength": 1,
-              "type": "string"
-            },
-            "maxItems": 32,
-            "type": "array"
-          },
-          "thumbnail": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/MediaResource"
-              }
-            ],
-            "description": "Thumbnail field on course detail."
-          },
-          "title": {
-            "description": "Title field on course detail.",
-            "maxLength": 255,
-            "minLength": 1,
-            "type": "string"
-          }
-        },
-        "required": [
-          "id",
-          "contentId",
-          "courseCode",
-          "title",
-          "description",
-          "thumbnail",
-          "instructor",
-          "durationText",
-          "lessonsCount",
-          "ratingScore",
-          "studentsCount",
-          "level",
-          "levelLabel",
-          "category",
-          "categoryLabel",
-          "tags",
-          "externalBvid",
-          "content",
-          "currency",
-          "isCollection",
-          "publishedAt",
-          "commentCount",
-          "engagement",
-          "sections",
-          "relatedCourses",
-          "source"
-        ],
-        "type": "object"
-      },
-      "CourseEngagement": {
-        "additionalProperties": false,
-        "description": "Course engagement schema exposed by Claw Router.",
-        "properties": {
-          "discussions": {
-            "description": "Discussions field on course engagement.",
-            "format": "int64",
-            "pattern": "^[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "likes": {
-            "description": "Likes field on course engagement.",
-            "format": "int64",
-            "pattern": "^[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "saves": {
-            "description": "Saves field on course engagement.",
-            "format": "int64",
-            "pattern": "^[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "shares": {
-            "description": "Shares field on course engagement.",
-            "format": "int64",
-            "pattern": "^[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "studentsCount": {
-            "description": "Students count field on course engagement.",
-            "format": "int64",
-            "pattern": "^[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "views": {
-            "description": "Views field on course engagement.",
-            "format": "int64",
-            "pattern": "^[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          }
-        },
-        "required": [
-          "views",
-          "likes",
-          "saves",
-          "shares",
-          "discussions",
-          "studentsCount"
-        ],
-        "type": "object"
-      },
-      "CourseInstructor": {
-        "additionalProperties": false,
-        "description": "Course instructor schema exposed by Claw Router.",
-        "properties": {
-          "avatar": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/MediaResource"
-              }
-            ],
-            "description": "Avatar field on course instructor."
-          },
-          "bio": {
-            "description": "Bio field on course instructor.",
-            "maxLength": 1024,
-            "type": "string"
-          },
-          "name": {
-            "description": "Name field on course instructor.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "title": {
-            "description": "Title field on course instructor.",
-            "maxLength": 128,
-            "type": "string"
-          }
-        },
-        "required": [
-          "name",
-          "avatar",
-          "title",
-          "bio"
-        ],
-        "type": "object"
-      },
-      "CourseItem": {
-        "additionalProperties": false,
-        "description": "Course item schema exposed by Claw Router.",
-        "properties": {
-          "category": {
-            "description": "Category field on course item.",
-            "maxLength": 128,
-            "type": "string"
-          },
-          "categoryLabel": {
-            "description": "Category label field on course item.",
-            "maxLength": 128,
-            "type": "string"
-          },
-          "commentCount": {
-            "description": "Comment count field on course item.",
-            "format": "int64",
-            "pattern": "^[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "content": {
-            "description": "Content field on course item.",
-            "maxLength": 20000,
-            "type": "string"
-          },
-          "contentId": {
-            "description": "Content id field on course item.",
-            "format": "int64",
-            "pattern": "^[1-9][0-9]*$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "courseCode": {
-            "description": "Course code field on course item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "currency": {
-            "description": "Currency field on course item.",
-            "maxLength": 16,
-            "type": "string"
-          },
-          "description": {
-            "description": "Description field on course item.",
-            "maxLength": 2048,
-            "type": "string"
-          },
-          "durationText": {
-            "description": "Duration text field on course item.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "engagement": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/CourseEngagement"
-              }
-            ],
-            "description": "Engagement field on course item."
-          },
-          "externalBvid": {
-            "description": "External bvid field on course item.",
-            "maxLength": 128,
-            "type": "string"
-          },
-          "id": {
-            "description": "Id field on course item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "instructor": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/CourseInstructor"
-              }
-            ],
-            "description": "Instructor field on course item."
-          },
-          "isCollection": {
-            "description": "Is collection field on course item.",
-            "type": "boolean"
-          },
-          "lessonsCount": {
-            "description": "Lessons count field on course item.",
-            "format": "int64",
-            "pattern": "^[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "level": {
-            "description": "Level field on course item.",
-            "format": "int64",
-            "pattern": "^[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "levelLabel": {
-            "description": "Level label field on course item.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "priceAmount": {
-            "description": "Price amount field on course item.",
-            "maxLength": 64,
-            "nullable": true,
-            "type": "string"
-          },
-          "publishedAt": {
-            "description": "Published at field on course item.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "ratingScore": {
-            "description": "Rating score field on course item.",
-            "maximum": 5,
-            "minimum": 0,
-            "type": "number"
-          },
-          "studentsCount": {
-            "description": "Students count field on course item.",
-            "format": "int64",
-            "pattern": "^[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "tags": {
-            "description": "Tags field on course item.",
-            "items": {
-              "description": "Tags field on course item.",
-              "maxLength": 64,
-              "minLength": 1,
-              "type": "string"
-            },
-            "maxItems": 32,
-            "type": "array"
-          },
-          "thumbnail": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/MediaResource"
-              }
-            ],
-            "description": "Thumbnail field on course item."
-          },
-          "title": {
-            "description": "Title field on course item.",
-            "maxLength": 255,
-            "minLength": 1,
-            "type": "string"
-          }
-        },
-        "required": [
-          "id",
-          "contentId",
-          "courseCode",
-          "title",
-          "description",
-          "thumbnail",
-          "instructor",
-          "durationText",
-          "lessonsCount",
-          "ratingScore",
-          "studentsCount",
-          "level",
-          "levelLabel",
-          "category",
-          "categoryLabel",
-          "tags",
-          "externalBvid",
-          "content",
-          "currency",
-          "isCollection",
-          "publishedAt",
-          "commentCount",
-          "engagement"
-        ],
-        "type": "object"
-      },
-      "CourseLessonItem": {
-        "additionalProperties": false,
-        "description": "Course lesson item schema exposed by Claw Router.",
-        "properties": {
-          "content": {
-            "description": "Content field on course lesson item.",
-            "maxLength": 20000,
-            "type": "string"
-          },
-          "description": {
-            "description": "Description field on course lesson item.",
-            "maxLength": 1024,
-            "type": "string"
-          },
-          "durationSeconds": {
-            "description": "Duration seconds field on course lesson item.",
-            "format": "int64",
-            "pattern": "^[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "durationText": {
-            "description": "Duration text field on course lesson item.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "externalBvid": {
-            "description": "External bvid field on course lesson item.",
-            "maxLength": 128,
-            "type": "string"
-          },
-          "freePreview": {
-            "description": "Free preview field on course lesson item.",
-            "type": "boolean"
-          },
-          "id": {
-            "description": "Id field on course lesson item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "lessonId": {
-            "description": "Lesson id field on course lesson item.",
-            "format": "int64",
-            "pattern": "^[1-9][0-9]*$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "lessonNo": {
-            "description": "Lesson no field on course lesson item.",
-            "format": "int64",
-            "pattern": "^[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "number": {
-            "description": "Number field on course lesson item.",
-            "format": "int64",
-            "pattern": "^[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "sortOrder": {
-            "description": "Sort order field on course lesson item.",
-            "format": "int64",
-            "pattern": "^-?[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "sourceProvider": {
-            "description": "Source provider field on course lesson item.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "title": {
-            "description": "Title field on course lesson item.",
-            "maxLength": 255,
-            "minLength": 1,
-            "type": "string"
-          },
-          "video": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/MediaResource"
-              }
-            ],
-            "description": "Video field on course lesson item."
-          }
-        },
-        "required": [
-          "id",
-          "lessonId",
-          "lessonNo",
-          "number",
-          "title",
-          "description",
-          "video",
-          "externalBvid",
-          "sourceProvider",
-          "durationSeconds",
-          "durationText",
-          "content",
-          "sortOrder",
-          "freePreview"
-        ],
-        "type": "object"
-      },
-      "CourseListResponse": {
-        "additionalProperties": false,
-        "description": "Course list response schema exposed by Claw Router.",
-        "name": "CourseListResponse",
-        "properties": {
-          "content": {
-            "description": "Content field on course list response.",
-            "items": {
-              "$ref": "#/components/schemas/CourseItem"
-            },
-            "maxItems": 100,
-            "type": "array"
-          },
-          "items": {
-            "description": "Items field on course list response.",
-            "items": {
-              "$ref": "#/components/schemas/CourseItem"
-            },
-            "maxItems": 100,
-            "type": "array"
-          },
-          "page": {
-            "description": "Page field on course list response.",
-            "format": "int64",
-            "pattern": "^[1-9][0-9]*$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "size": {
-            "description": "Size field on course list response.",
-            "format": "int64",
-            "pattern": "^[1-9][0-9]*$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "totalElements": {
-            "description": "Total elements field on course list response.",
-            "format": "int64",
-            "pattern": "^[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          }
-        },
-        "required": [
-          "items",
-          "content",
-          "page",
-          "size",
-          "totalElements"
-        ],
-        "type": "object"
-      },
-      "CourseOverview": {
-        "additionalProperties": false,
-        "description": "Course overview schema exposed by Claw Router.",
-        "name": "CourseOverview",
-        "properties": {
-          "source": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/CourseOverviewSource"
-              }
-            ],
-            "description": "Source field on course overview."
-          },
-          "stats": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/CourseOverviewStats"
-              }
-            ],
-            "description": "Stats field on course overview."
-          }
-        },
-        "required": [
-          "stats",
-          "source"
-        ],
-        "type": "object"
-      },
-      "CourseOverviewSource": {
-        "additionalProperties": false,
-        "description": "Course overview source schema exposed by Claw Router.",
-        "properties": {
-          "observedAt": {
-            "description": "Observed at field on course overview source.",
-            "maxLength": 64,
-            "minLength": 1,
-            "type": "string"
-          },
-          "sourceDescription": {
-            "description": "Source description field on course overview source.",
-            "maxLength": 512,
-            "minLength": 1,
-            "type": "string"
-          },
-          "sourceLabel": {
-            "description": "Source label field on course overview source.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "sourceTables": {
-            "description": "Source tables field on course overview source.",
-            "items": {
-              "description": "Source tables field on course overview source.",
-              "maxLength": 128,
-              "minLength": 1,
-              "type": "string"
-            },
-            "maxItems": 8,
-            "type": "array"
-          }
-        },
-        "required": [
-          "sourceLabel",
-          "sourceDescription",
-          "sourceTables",
-          "observedAt"
-        ],
-        "type": "object"
-      },
-      "CourseOverviewStats": {
-        "additionalProperties": false,
-        "description": "Course overview stats schema exposed by Claw Router.",
-        "properties": {
-          "totalCategories": {
-            "description": "Total categories field on course overview stats.",
-            "format": "int64",
-            "pattern": "^[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "totalCourses": {
-            "description": "Total courses field on course overview stats.",
-            "format": "int64",
-            "pattern": "^[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "totalLessons": {
-            "description": "Total lessons field on course overview stats.",
-            "format": "int64",
-            "pattern": "^[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "totalStudents": {
-            "description": "Total students field on course overview stats.",
-            "format": "int64",
-            "pattern": "^[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          }
-        },
-        "required": [
-          "totalCourses",
-          "totalLessons",
-          "totalStudents",
-          "totalCategories"
-        ],
-        "type": "object"
-      },
-      "CourseSectionItem": {
-        "additionalProperties": false,
-        "description": "Course section item schema exposed by Claw Router.",
-        "properties": {
-          "description": {
-            "description": "Description field on course section item.",
-            "maxLength": 1024,
-            "type": "string"
-          },
-          "durationSeconds": {
-            "description": "Duration seconds field on course section item.",
-            "format": "int64",
-            "pattern": "^[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "id": {
-            "description": "Id field on course section item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "lessonCount": {
-            "description": "Lesson count field on course section item.",
-            "format": "int64",
-            "pattern": "^[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "lessons": {
-            "description": "Lessons field on course section item.",
-            "items": {
-              "$ref": "#/components/schemas/CourseLessonItem"
-            },
-            "maxItems": 100,
-            "type": "array"
-          },
-          "sectionId": {
-            "description": "Section id field on course section item.",
-            "format": "int64",
-            "pattern": "^[1-9][0-9]*$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "sectionNo": {
-            "description": "Section no field on course section item.",
-            "format": "int64",
-            "pattern": "^[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "sortOrder": {
-            "description": "Sort order field on course section item.",
-            "format": "int64",
-            "pattern": "^-?[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "title": {
-            "description": "Title field on course section item.",
-            "maxLength": 255,
-            "minLength": 1,
-            "type": "string"
-          }
-        },
-        "required": [
-          "id",
-          "sectionId",
-          "sectionNo",
-          "title",
-          "description",
-          "sortOrder",
-          "lessonCount",
-          "durationSeconds",
-          "lessons"
-        ],
-        "type": "object"
-      },
-      "CoursesCategoriesListResult": {
-        "additionalProperties": false,
-        "description": "Courses categories list result schema exposed by Claw Router.",
-        "properties": {
-          "code": {
-            "description": "Business response code.",
-            "type": "string"
-          },
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/CourseCategoryList"
-              }
-            ],
-            "description": "Data field on courses categories list result."
-          },
-          "msg": {
-            "description": "Human-readable response message.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "code"
-        ],
-        "type": "object",
-        "x-operation-id": "courses.categories.list"
-      },
-      "CoursesListResult": {
-        "additionalProperties": false,
-        "description": "Courses list result schema exposed by Claw Router.",
-        "properties": {
-          "code": {
-            "description": "Business response code.",
-            "type": "string"
-          },
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/CourseListResponse"
-              }
-            ],
-            "description": "Data field on courses list result."
-          },
-          "msg": {
-            "description": "Human-readable response message.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "code"
-        ],
-        "type": "object",
-        "x-operation-id": "courses.list"
-      },
-      "CoursesOverviewRetrieveResult": {
-        "additionalProperties": false,
-        "description": "Courses overview retrieve result schema exposed by Claw Router.",
-        "properties": {
-          "code": {
-            "description": "Business response code.",
-            "type": "string"
-          },
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/CourseOverview"
-              }
-            ],
-            "description": "Data field on courses overview retrieve result."
-          },
-          "msg": {
-            "description": "Human-readable response message.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "code"
-        ],
-        "type": "object",
-        "x-operation-id": "courses.overview.retrieve"
-      },
-      "CoursesRetrieveResult": {
-        "additionalProperties": false,
-        "description": "Courses retrieve result schema exposed by Claw Router.",
-        "properties": {
-          "code": {
-            "description": "Business response code.",
-            "type": "string"
-          },
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/CourseDetail"
-              }
-            ],
-            "description": "Data field on courses retrieve result."
-          },
-          "msg": {
-            "description": "Human-readable response message.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "code"
-        ],
-        "type": "object",
-        "x-operation-id": "courses.retrieve"
       },
       "CreateApiKeyRequest": {
         "additionalProperties": false,
@@ -16468,7 +15419,7 @@
     },
     "/app/v3/api/content/comments": {
       "get": {
-        "description": "List forum comments. Reads plus_comments, plus_content_vote. Writes none. File targets none.",
+        "description": "List forum comments. Reads content_comment, content_reaction. Writes none. File targets none.",
         "operationId": "comments.list",
         "parameters": [
           {
@@ -16595,8 +15546,8 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_comments",
-          "plus_content_vote"
+          "content_comment",
+          "content_reaction"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "content",
@@ -16608,7 +15559,7 @@
         "x-sdkwork-api-authority": "sdkwork-claw-router.app"
       },
       "post": {
-        "description": "Create forum comment. Reads plus_comments. Writes plus_comments. File targets none.",
+        "description": "Create forum comment. Reads content_comment. Writes content_comment. File targets none.",
         "operationId": "comments.create",
         "parameters": [],
         "requestBody": {
@@ -16687,7 +15638,7 @@
         "x-contract-kind": "create",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_comments"
+          "content_comment"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "content",
@@ -16695,7 +15646,7 @@
         "x-sdkwork-resource": "comments",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
         "x-write-tables": [
-          "plus_comments"
+          "content_comment"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
         "x-sdkwork-api-authority": "sdkwork-claw-router.app"
@@ -16703,7 +15654,7 @@
     },
     "/app/v3/api/content/comments/statistics": {
       "get": {
-        "description": "List forum comment statistics. Reads plus_comments. Writes none. File targets none.",
+        "description": "List forum comment statistics. Reads content_comment. Writes none. File targets none.",
         "operationId": "comments.statistics.list",
         "parameters": [
           {
@@ -16804,7 +15755,7 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_comments"
+          "content_comment"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "content",
@@ -16818,7 +15769,7 @@
     },
     "/app/v3/api/content/comments/{commentId}": {
       "delete": {
-        "description": "Delete forum comment. Reads plus_comments. Writes plus_comments. File targets none.",
+        "description": "Delete forum comment. Reads content_comment. Writes content_comment. File targets none.",
         "operationId": "comments.delete",
         "parameters": [
           {
@@ -16896,7 +15847,7 @@
         "x-contract-kind": "delete",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_comments"
+          "content_comment"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "content",
@@ -16904,13 +15855,13 @@
         "x-sdkwork-resource": "comments",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
         "x-write-tables": [
-          "plus_comments"
+          "content_comment"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
         "x-sdkwork-api-authority": "sdkwork-claw-router.app"
       },
       "get": {
-        "description": "List forum comment detail. Reads plus_comments, plus_content_vote. Writes none. File targets none.",
+        "description": "List forum comment detail. Reads content_comment, content_reaction. Writes none. File targets none.",
         "operationId": "comments.retrieve",
         "parameters": [
           {
@@ -16988,8 +15939,8 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_comments",
-          "plus_content_vote"
+          "content_comment",
+          "content_reaction"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "content",
@@ -17003,7 +15954,7 @@
     },
     "/app/v3/api/content/comments/{commentId}/likes": {
       "post": {
-        "description": "Like forum comment. Reads plus_comments, plus_content_vote. Writes plus_content_vote, plus_comments. File targets none.",
+        "description": "Like forum comment. Reads content_comment, content_reaction. Writes content_reaction, content_comment. File targets none.",
         "operationId": "comments.likes.create",
         "parameters": [
           {
@@ -17081,8 +16032,8 @@
         "x-contract-kind": "action",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_comments",
-          "plus_content_vote"
+          "content_comment",
+          "content_reaction"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "content",
@@ -17090,8 +16041,8 @@
         "x-sdkwork-resource": "comments.likes",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
         "x-write-tables": [
-          "plus_content_vote",
-          "plus_comments"
+          "content_reaction",
+          "content_comment"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
         "x-sdkwork-api-authority": "sdkwork-claw-router.app"
@@ -17099,7 +16050,7 @@
     },
     "/app/v3/api/content/comments/{commentId}/likes/current": {
       "delete": {
-        "description": "Unlike forum comment. Reads plus_comments, plus_content_vote. Writes plus_content_vote, plus_comments. File targets none.",
+        "description": "Unlike forum comment. Reads content_comment, content_reaction. Writes content_reaction, content_comment. File targets none.",
         "operationId": "comments.likes.current.delete",
         "parameters": [
           {
@@ -17177,8 +16128,8 @@
         "x-contract-kind": "delete",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_comments",
-          "plus_content_vote"
+          "content_comment",
+          "content_reaction"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "content",
@@ -17186,8 +16137,8 @@
         "x-sdkwork-resource": "comments.likes.current",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
         "x-write-tables": [
-          "plus_content_vote",
-          "plus_comments"
+          "content_reaction",
+          "content_comment"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
         "x-sdkwork-api-authority": "sdkwork-claw-router.app"
@@ -17195,7 +16146,7 @@
     },
     "/app/v3/api/content/comments/{commentId}/pins": {
       "post": {
-        "description": "Pin forum comment. Reads plus_comments. Writes plus_comments. File targets none.",
+        "description": "Pin forum comment. Reads content_comment. Writes content_comment. File targets none.",
         "operationId": "comments.pins.create",
         "parameters": [
           {
@@ -17273,7 +16224,7 @@
         "x-contract-kind": "action",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_comments"
+          "content_comment"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "content",
@@ -17281,7 +16232,7 @@
         "x-sdkwork-resource": "comments.pins",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
         "x-write-tables": [
-          "plus_comments"
+          "content_comment"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
         "x-sdkwork-api-authority": "sdkwork-claw-router.app"
@@ -17289,7 +16240,7 @@
     },
     "/app/v3/api/content/comments/{commentId}/pins/current": {
       "delete": {
-        "description": "Unpin forum comment. Reads plus_comments. Writes plus_comments. File targets none.",
+        "description": "Unpin forum comment. Reads content_comment. Writes content_comment. File targets none.",
         "operationId": "comments.pins.current.delete",
         "parameters": [
           {
@@ -17367,7 +16318,7 @@
         "x-contract-kind": "delete",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_comments"
+          "content_comment"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "content",
@@ -17375,7 +16326,7 @@
         "x-sdkwork-resource": "comments.pins.current",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
         "x-write-tables": [
-          "plus_comments"
+          "content_comment"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
         "x-sdkwork-api-authority": "sdkwork-claw-router.app"
@@ -17383,7 +16334,7 @@
     },
     "/app/v3/api/content/comments/{commentId}/replies": {
       "get": {
-        "description": "List forum comment replies. Reads plus_comments, plus_content_vote. Writes none. File targets none.",
+        "description": "List forum comment replies. Reads content_comment, content_reaction. Writes none. File targets none.",
         "operationId": "comments.replies.list",
         "parameters": [
           {
@@ -17487,8 +16438,8 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_comments",
-          "plus_content_vote"
+          "content_comment",
+          "content_reaction"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "content",
@@ -17502,7 +16453,7 @@
     },
     "/app/v3/api/content/comments/{commentId}/reply": {
       "post": {
-        "description": "Reply forum comment. Reads plus_comments. Writes plus_comments. File targets none.",
+        "description": "Reply forum comment. Reads content_comment. Writes content_comment. File targets none.",
         "operationId": "comments.reply.create",
         "parameters": [
           {
@@ -17591,7 +16542,7 @@
         "x-contract-kind": "create",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_comments"
+          "content_comment"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "content",
@@ -17599,7 +16550,7 @@
         "x-sdkwork-resource": "comments.reply",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
         "x-write-tables": [
-          "plus_comments"
+          "content_comment"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
         "x-sdkwork-api-authority": "sdkwork-claw-router.app"
@@ -17607,7 +16558,7 @@
     },
     "/app/v3/api/content/feeds": {
       "get": {
-        "description": "List forum feeds. Reads plus_feeds, plus_content_vote, plus_favorite. Writes none. File targets none.",
+        "description": "List forum feeds. Reads content_forum_post, content_reaction, content_favorite. Writes none. File targets none.",
         "operationId": "feeds.list",
         "parameters": [
           {
@@ -17753,9 +16704,9 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_feeds",
-          "plus_content_vote",
-          "plus_favorite"
+          "content_forum_post",
+          "content_reaction",
+          "content_favorite"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "content",
@@ -17767,7 +16718,7 @@
         "x-sdkwork-api-authority": "sdkwork-claw-router.app"
       },
       "post": {
-        "description": "Create forum feed. Reads plus_feeds. Writes plus_feeds. File targets none.",
+        "description": "Create forum feed. Reads content_forum_post. Writes content_forum_post. File targets none.",
         "operationId": "feeds.create",
         "parameters": [],
         "requestBody": {
@@ -17846,7 +16797,7 @@
         "x-contract-kind": "create",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_feeds"
+          "content_forum_post"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "content",
@@ -17854,7 +16805,7 @@
         "x-sdkwork-resource": "feeds",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
         "x-write-tables": [
-          "plus_feeds"
+          "content_forum_post"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
         "x-sdkwork-api-authority": "sdkwork-claw-router.app"
@@ -17862,7 +16813,7 @@
     },
     "/app/v3/api/content/feeds/category/{categoryId}": {
       "get": {
-        "description": "List category forum feeds. Reads plus_feeds, plus_content_vote, plus_favorite. Writes none. File targets none.",
+        "description": "List category forum feeds. Reads content_forum_post, content_reaction, content_favorite. Writes none. File targets none.",
         "operationId": "feeds.category.retrieve",
         "parameters": [
           {
@@ -17966,9 +16917,9 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_feeds",
-          "plus_content_vote",
-          "plus_favorite"
+          "content_forum_post",
+          "content_reaction",
+          "content_favorite"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "content",
@@ -17982,7 +16933,7 @@
     },
     "/app/v3/api/content/feeds/hot": {
       "get": {
-        "description": "List hot forum feeds. Reads plus_feeds, plus_content_vote, plus_favorite. Writes none. File targets none.",
+        "description": "List hot forum feeds. Reads content_forum_post, content_reaction, content_favorite. Writes none. File targets none.",
         "operationId": "feeds.hot.list",
         "parameters": [
           {
@@ -18064,9 +17015,9 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_feeds",
-          "plus_content_vote",
-          "plus_favorite"
+          "content_forum_post",
+          "content_reaction",
+          "content_favorite"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "content",
@@ -18080,7 +17031,7 @@
     },
     "/app/v3/api/content/feeds/most_liked": {
       "get": {
-        "description": "List most liked forum feeds. Reads plus_feeds, plus_content_vote, plus_favorite. Writes none. File targets none.",
+        "description": "List most liked forum feeds. Reads content_forum_post, content_reaction, content_favorite. Writes none. File targets none.",
         "operationId": "feeds.mostLiked.list",
         "parameters": [
           {
@@ -18162,9 +17113,9 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_feeds",
-          "plus_content_vote",
-          "plus_favorite"
+          "content_forum_post",
+          "content_reaction",
+          "content_favorite"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "content",
@@ -18178,7 +17129,7 @@
     },
     "/app/v3/api/content/feeds/most_viewed": {
       "get": {
-        "description": "List most viewed forum feeds. Reads plus_feeds, plus_content_vote, plus_favorite. Writes none. File targets none.",
+        "description": "List most viewed forum feeds. Reads content_forum_post, content_reaction, content_favorite. Writes none. File targets none.",
         "operationId": "feeds.mostViewed.list",
         "parameters": [
           {
@@ -18260,9 +17211,9 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_feeds",
-          "plus_content_vote",
-          "plus_favorite"
+          "content_forum_post",
+          "content_reaction",
+          "content_favorite"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "content",
@@ -18276,7 +17227,7 @@
     },
     "/app/v3/api/content/feeds/overview": {
       "get": {
-        "description": "List forum overview. Reads plus_feeds, plus_comments, plus_content_vote, plus_favorite. Writes none. File targets none.",
+        "description": "List forum overview. Reads content_forum_post, content_comment, content_reaction, content_favorite. Writes none. File targets none.",
         "operationId": "feeds.overview.retrieve",
         "parameters": [],
         "responses": {
@@ -18344,10 +17295,10 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_feeds",
-          "plus_comments",
-          "plus_content_vote",
-          "plus_favorite"
+          "content_forum_post",
+          "content_comment",
+          "content_reaction",
+          "content_favorite"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "content",
@@ -18361,7 +17312,7 @@
     },
     "/app/v3/api/content/feeds/recommend": {
       "get": {
-        "description": "List recommended forum feeds. Reads plus_feeds, plus_content_vote, plus_favorite. Writes none. File targets none.",
+        "description": "List recommended forum feeds. Reads content_forum_post, content_reaction, content_favorite. Writes none. File targets none.",
         "operationId": "feeds.recommend.list",
         "parameters": [
           {
@@ -18443,9 +17394,9 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_feeds",
-          "plus_content_vote",
-          "plus_favorite"
+          "content_forum_post",
+          "content_reaction",
+          "content_favorite"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "content",
@@ -18459,7 +17410,7 @@
     },
     "/app/v3/api/content/feeds/top": {
       "get": {
-        "description": "List top forum feeds. Reads plus_feeds, plus_content_vote, plus_favorite. Writes none. File targets none.",
+        "description": "List top forum feeds. Reads content_forum_post, content_reaction, content_favorite. Writes none. File targets none.",
         "operationId": "feeds.top.list",
         "parameters": [
           {
@@ -18541,9 +17492,9 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_feeds",
-          "plus_content_vote",
-          "plus_favorite"
+          "content_forum_post",
+          "content_reaction",
+          "content_favorite"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "content",
@@ -18557,7 +17508,7 @@
     },
     "/app/v3/api/content/feeds/{id}": {
       "delete": {
-        "description": "Delete forum feed. Reads plus_feeds. Writes plus_feeds. File targets none.",
+        "description": "Delete forum feed. Reads content_forum_post. Writes content_forum_post. File targets none.",
         "operationId": "feeds.delete",
         "parameters": [
           {
@@ -18635,7 +17586,7 @@
         "x-contract-kind": "delete",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_feeds"
+          "content_forum_post"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "content",
@@ -18643,13 +17594,13 @@
         "x-sdkwork-resource": "feeds",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
         "x-write-tables": [
-          "plus_feeds"
+          "content_forum_post"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
         "x-sdkwork-api-authority": "sdkwork-claw-router.app"
       },
       "get": {
-        "description": "List forum feed detail. Reads plus_feeds, plus_content_vote, plus_favorite. Writes none. File targets none.",
+        "description": "List forum feed detail. Reads content_forum_post, content_reaction, content_favorite. Writes none. File targets none.",
         "operationId": "feeds.retrieve",
         "parameters": [
           {
@@ -18727,9 +17678,9 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_feeds",
-          "plus_content_vote",
-          "plus_favorite"
+          "content_forum_post",
+          "content_reaction",
+          "content_favorite"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "content",
@@ -18743,7 +17694,7 @@
     },
     "/app/v3/api/content/feeds/{id}/collections": {
       "post": {
-        "description": "Collect forum feed. Reads plus_feeds, plus_favorite. Writes plus_favorite, plus_feeds. File targets none.",
+        "description": "Collect forum feed. Reads content_forum_post, content_favorite. Writes content_favorite, content_forum_post. File targets none.",
         "operationId": "feeds.collections.create",
         "parameters": [
           {
@@ -18834,8 +17785,8 @@
         "x-contract-kind": "action",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_feeds",
-          "plus_favorite"
+          "content_forum_post",
+          "content_favorite"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "content",
@@ -18843,8 +17794,8 @@
         "x-sdkwork-resource": "feeds.collections",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
         "x-write-tables": [
-          "plus_favorite",
-          "plus_feeds"
+          "content_favorite",
+          "content_forum_post"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
         "x-sdkwork-api-authority": "sdkwork-claw-router.app"
@@ -18852,7 +17803,7 @@
     },
     "/app/v3/api/content/feeds/{id}/collections/current": {
       "delete": {
-        "description": "Uncollect forum feed. Reads plus_feeds, plus_favorite. Writes plus_favorite, plus_feeds. File targets none.",
+        "description": "Uncollect forum feed. Reads content_forum_post, content_favorite. Writes content_favorite, content_forum_post. File targets none.",
         "operationId": "feeds.collections.current.delete",
         "parameters": [
           {
@@ -18930,8 +17881,8 @@
         "x-contract-kind": "delete",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_feeds",
-          "plus_favorite"
+          "content_forum_post",
+          "content_favorite"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "content",
@@ -18939,14 +17890,14 @@
         "x-sdkwork-resource": "feeds.collections.current",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
         "x-write-tables": [
-          "plus_favorite",
-          "plus_feeds"
+          "content_favorite",
+          "content_forum_post"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
         "x-sdkwork-api-authority": "sdkwork-claw-router.app"
       },
       "get": {
-        "description": "Check forum feed collected. Reads plus_favorite. Writes none. File targets none.",
+        "description": "Check forum feed collected. Reads content_favorite. Writes none. File targets none.",
         "operationId": "feeds.collections.current.retrieve",
         "parameters": [
           {
@@ -19024,7 +17975,7 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_favorite"
+          "content_favorite"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "content",
@@ -19038,7 +17989,7 @@
     },
     "/app/v3/api/content/feeds/{id}/likes": {
       "post": {
-        "description": "Like forum feed. Reads plus_feeds, plus_content_vote. Writes plus_content_vote, plus_feeds. File targets none.",
+        "description": "Like forum feed. Reads content_forum_post, content_reaction. Writes content_reaction, content_forum_post. File targets none.",
         "operationId": "feeds.likes.create",
         "parameters": [
           {
@@ -19116,8 +18067,8 @@
         "x-contract-kind": "action",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_feeds",
-          "plus_content_vote"
+          "content_forum_post",
+          "content_reaction"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "content",
@@ -19125,8 +18076,8 @@
         "x-sdkwork-resource": "feeds.likes",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
         "x-write-tables": [
-          "plus_content_vote",
-          "plus_feeds"
+          "content_reaction",
+          "content_forum_post"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
         "x-sdkwork-api-authority": "sdkwork-claw-router.app"
@@ -19134,7 +18085,7 @@
     },
     "/app/v3/api/content/feeds/{id}/likes/current": {
       "delete": {
-        "description": "Unlike forum feed. Reads plus_feeds, plus_content_vote. Writes plus_content_vote, plus_feeds. File targets none.",
+        "description": "Unlike forum feed. Reads content_forum_post, content_reaction. Writes content_reaction, content_forum_post. File targets none.",
         "operationId": "feeds.likes.current.delete",
         "parameters": [
           {
@@ -19212,8 +18163,8 @@
         "x-contract-kind": "delete",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_feeds",
-          "plus_content_vote"
+          "content_forum_post",
+          "content_reaction"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "content",
@@ -19221,8 +18172,8 @@
         "x-sdkwork-resource": "feeds.likes.current",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
         "x-write-tables": [
-          "plus_content_vote",
-          "plus_feeds"
+          "content_reaction",
+          "content_forum_post"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
         "x-sdkwork-api-authority": "sdkwork-claw-router.app"
@@ -19230,7 +18181,7 @@
     },
     "/app/v3/api/content/feeds/{id}/shares": {
       "post": {
-        "description": "Share forum feed. Reads plus_feeds. Writes plus_feeds. File targets none.",
+        "description": "Share forum feed. Reads content_forum_post. Writes content_forum_post. File targets none.",
         "operationId": "feeds.shares.create",
         "parameters": [
           {
@@ -19308,7 +18259,7 @@
         "x-contract-kind": "action",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_feeds"
+          "content_forum_post"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "content",
@@ -19316,7 +18267,7 @@
         "x-sdkwork-resource": "feeds.shares",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
         "x-write-tables": [
-          "plus_feeds"
+          "content_forum_post"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
         "x-sdkwork-api-authority": "sdkwork-claw-router.app"
@@ -19324,7 +18275,7 @@
     },
     "/app/v3/api/content/users/current/comments": {
       "get": {
-        "description": "List my forum comments. Reads plus_comments, plus_content_vote. Writes none. File targets none.",
+        "description": "List my forum comments. Reads content_comment, content_reaction. Writes none. File targets none.",
         "operationId": "users.current.comments.list",
         "parameters": [
           {
@@ -19419,160 +18370,14 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_comments",
-          "plus_content_vote"
+          "content_comment",
+          "content_reaction"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "content",
         "x-sdkwork-domain": "content",
         "x-sdkwork-resource": "users.current.comments",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts",
-        "x-write-tables": [],
-        "x-sdkwork-owner": "sdkwork-claw-router",
-        "x-sdkwork-api-authority": "sdkwork-claw-router.app"
-      }
-    },
-    "/app/v3/api/courses": {
-      "get": {
-        "description": "List courses. Reads content_course, content_course_relation, plus_category, plus_comments, content_reaction. Writes none. File targets none.",
-        "operationId": "courses.list",
-        "parameters": [
-          {
-            "description": "Level query parameter.",
-            "in": "query",
-            "name": "level",
-            "required": false,
-            "schema": {
-              "format": "int64",
-              "pattern": "^[1-9][0-9]*$",
-              "type": "string",
-              "x-sdkwork-int64-string": true,
-              "x-sdkwork-rust-type": "i64"
-            }
-          },
-          {
-            "description": "Category query parameter.",
-            "in": "query",
-            "name": "category",
-            "required": false,
-            "schema": {
-              "maxLength": 64,
-              "type": "string"
-            }
-          },
-          {
-            "description": "Q query parameter.",
-            "in": "query",
-            "name": "q",
-            "required": false,
-            "schema": {
-              "maxLength": 128,
-              "type": "string"
-            }
-          },
-          {
-            "description": "Page query parameter.",
-            "in": "query",
-            "name": "page",
-            "required": false,
-            "schema": {
-              "format": "int64",
-              "pattern": "^[1-9][0-9]*$",
-              "type": "string",
-              "x-sdkwork-int64-string": true,
-              "x-sdkwork-rust-type": "i64"
-            }
-          },
-          {
-            "description": "Page size query parameter.",
-            "in": "query",
-            "name": "page_size",
-            "required": false,
-            "schema": {
-              "format": "int64",
-              "pattern": "^[1-9][0-9]*$",
-              "type": "string",
-              "x-sdkwork-int64-string": true,
-              "x-sdkwork-rust-type": "i64"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CoursesListResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "List courses",
-        "tags": [
-          "content"
-        ],
-        "x-contract-kind": "read",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "content_course",
-          "content_course_relation",
-          "plus_category",
-          "plus_comments",
-          "content_reaction"
-        ],
-        "x-route-scope": "public",
-        "x-sdk-domain": "content",
-        "x-sdkwork-domain": "content",
-        "x-sdkwork-resource": "courses",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts",
         "x-write-tables": [],
         "x-sdkwork-owner": "sdkwork-claw-router",
         "x-sdkwork-api-authority": "sdkwork-claw-router.app"
@@ -19766,275 +18571,9 @@
         "x-sdkwork-api-authority": "sdkwork-claw-router.app"
       }
     },
-    "/app/v3/api/courses/categories": {
-      "get": {
-        "description": "List course categories. Reads plus_category, content_course. Writes none. File targets none.",
-        "operationId": "courses.categories.list",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CoursesCategoriesListResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "List course categories",
-        "tags": [
-          "content"
-        ],
-        "x-contract-kind": "read",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "plus_category",
-          "content_course"
-        ],
-        "x-route-scope": "public",
-        "x-sdk-domain": "content",
-        "x-sdkwork-domain": "content",
-        "x-sdkwork-resource": "courses.categories",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts",
-        "x-write-tables": [],
-        "x-sdkwork-owner": "sdkwork-claw-router",
-        "x-sdkwork-api-authority": "sdkwork-claw-router.app"
-      }
-    },
-    "/app/v3/api/courses/overview": {
-      "get": {
-        "description": "List course overview. Reads content_course, plus_category, plus_comments, content_reaction. Writes none. File targets none.",
-        "operationId": "courses.overview.retrieve",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CoursesOverviewRetrieveResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "List course overview",
-        "tags": [
-          "content"
-        ],
-        "x-contract-kind": "read",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "content_course",
-          "plus_category",
-          "plus_comments",
-          "content_reaction"
-        ],
-        "x-route-scope": "public",
-        "x-sdk-domain": "content",
-        "x-sdkwork-domain": "content",
-        "x-sdkwork-resource": "courses.overview",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts",
-        "x-write-tables": [],
-        "x-sdkwork-owner": "sdkwork-claw-router",
-        "x-sdkwork-api-authority": "sdkwork-claw-router.app"
-      }
-    },
-    "/app/v3/api/courses/{courseId}": {
-      "get": {
-        "description": "List course detail. Reads content_course, content_course_section, content_course_lesson, content_course_relation, plus_category, plus_comments, content_reaction. Writes none. File targets none.",
-        "operationId": "courses.retrieve",
-        "parameters": [
-          {
-            "description": "Course id path parameter.",
-            "in": "path",
-            "name": "courseId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CoursesRetrieveResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "List course detail",
-        "tags": [
-          "content"
-        ],
-        "x-contract-kind": "read",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "content_course",
-          "content_course_section",
-          "content_course_lesson",
-          "content_course_relation",
-          "plus_category",
-          "plus_comments",
-          "content_reaction"
-        ],
-        "x-route-scope": "public",
-        "x-sdk-domain": "content",
-        "x-sdkwork-domain": "content",
-        "x-sdkwork-resource": "courses",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts",
-        "x-write-tables": [],
-        "x-sdkwork-owner": "sdkwork-claw-router",
-        "x-sdkwork-api-authority": "sdkwork-claw-router.app"
-      }
-    },
     "/app/v3/api/ecosystem/skills": {
       "get": {
-        "description": "Get skills. Reads plus_agent_skill, plus_agent_skill_package, plus_category, studio_catalog_action, studio_catalog_asset, studio_catalog_artifact. Writes none. File targets none.",
+        "description": "Get skills. Reads ai_agent_skill, ai_agent_skill_package, c_category, ai_skill_action, ai_skill_asset, ai_skill_artifact. Writes none. File targets none.",
         "operationId": "skills.list",
         "parameters": [
           {
@@ -20169,12 +18708,12 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_agent_skill",
-          "plus_agent_skill_package",
-          "plus_category",
-          "studio_catalog_action",
-          "studio_catalog_asset",
-          "studio_catalog_artifact"
+          "ai_agent_skill",
+          "ai_agent_skill_package",
+          "c_category",
+          "ai_skill_action",
+          "ai_skill_asset",
+          "ai_skill_artifact"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "ecosystem",
@@ -20188,7 +18727,7 @@
     },
     "/app/v3/api/ecosystem/skills/categories": {
       "get": {
-        "description": "Get categories. Reads plus_category. Writes none. File targets none.",
+        "description": "Get categories. Reads c_category. Writes none. File targets none.",
         "operationId": "skills.categories.list",
         "parameters": [],
         "responses": {
@@ -20256,7 +18795,7 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_category"
+          "c_category"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "ecosystem",
@@ -20270,7 +18809,7 @@
     },
     "/app/v3/api/ecosystem/skills/{skillId}": {
       "get": {
-        "description": "Get skill by ID. Reads plus_agent_skill, plus_agent_skill_package, plus_category, studio_catalog_action, studio_catalog_asset, studio_catalog_artifact. Writes none. File targets none.",
+        "description": "Get skill by ID. Reads ai_agent_skill, ai_agent_skill_package, c_category, ai_skill_action, ai_skill_asset, ai_skill_artifact. Writes none. File targets none.",
         "operationId": "skills.retrieve",
         "parameters": [
           {
@@ -20348,12 +18887,12 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_agent_skill",
-          "plus_agent_skill_package",
-          "plus_category",
-          "studio_catalog_action",
-          "studio_catalog_asset",
-          "studio_catalog_artifact"
+          "ai_agent_skill",
+          "ai_agent_skill_package",
+          "c_category",
+          "ai_skill_action",
+          "ai_skill_asset",
+          "ai_skill_artifact"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "ecosystem",
@@ -20367,7 +18906,7 @@
     },
     "/app/v3/api/ecosystem/skills/{skillId}/config": {
       "put": {
-        "description": "Update skill config. Reads plus_user_agent_skill, plus_agent_skill, plus_agent_skill_package, plus_category, studio_catalog_asset, studio_catalog_artifact. Writes plus_user_agent_skill. File targets none.",
+        "description": "Update skill config. Reads ai_user_agent_skill, ai_agent_skill, ai_agent_skill_package, c_category, ai_skill_asset, ai_skill_artifact. Writes ai_user_agent_skill. File targets none.",
         "operationId": "skills.config.update",
         "parameters": [
           {
@@ -20456,12 +18995,12 @@
         "x-contract-kind": "update",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_user_agent_skill",
-          "plus_agent_skill",
-          "plus_agent_skill_package",
-          "plus_category",
-          "studio_catalog_asset",
-          "studio_catalog_artifact"
+          "ai_user_agent_skill",
+          "ai_agent_skill",
+          "ai_agent_skill_package",
+          "c_category",
+          "ai_skill_asset",
+          "ai_skill_artifact"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "ecosystem",
@@ -20469,7 +19008,7 @@
         "x-sdkwork-resource": "skills.config",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub/src/services/skillService.ts",
         "x-write-tables": [
-          "plus_user_agent_skill"
+          "ai_user_agent_skill"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
         "x-sdkwork-api-authority": "sdkwork-claw-router.app"
@@ -20477,7 +19016,7 @@
     },
     "/app/v3/api/ecosystem/skills/{skillId}/disable": {
       "post": {
-        "description": "Disable skill. Reads plus_user_agent_skill, plus_agent_skill, plus_agent_skill_package, plus_category, studio_catalog_asset, studio_catalog_artifact. Writes plus_user_agent_skill. File targets none.",
+        "description": "Disable skill. Reads ai_user_agent_skill, ai_agent_skill, ai_agent_skill_package, c_category, ai_skill_asset, ai_skill_artifact. Writes ai_user_agent_skill. File targets none.",
         "operationId": "skills.disable",
         "parameters": [
           {
@@ -20555,12 +19094,12 @@
         "x-contract-kind": "action",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_user_agent_skill",
-          "plus_agent_skill",
-          "plus_agent_skill_package",
-          "plus_category",
-          "studio_catalog_asset",
-          "studio_catalog_artifact"
+          "ai_user_agent_skill",
+          "ai_agent_skill",
+          "ai_agent_skill_package",
+          "c_category",
+          "ai_skill_asset",
+          "ai_skill_artifact"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "ecosystem",
@@ -20568,7 +19107,7 @@
         "x-sdkwork-resource": "skills",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub/src/services/skillService.ts",
         "x-write-tables": [
-          "plus_user_agent_skill"
+          "ai_user_agent_skill"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
         "x-sdkwork-api-authority": "sdkwork-claw-router.app"
@@ -20576,7 +19115,7 @@
     },
     "/app/v3/api/ecosystem/skills/{skillId}/enable": {
       "post": {
-        "description": "Enable skill. Reads plus_agent_skill, plus_agent_skill_package, plus_category, studio_catalog_asset, studio_catalog_artifact. Writes plus_user_agent_skill. File targets none.",
+        "description": "Enable skill. Reads ai_agent_skill, ai_agent_skill_package, c_category, ai_skill_asset, ai_skill_artifact. Writes ai_user_agent_skill. File targets none.",
         "operationId": "skills.enable",
         "parameters": [
           {
@@ -20665,11 +19204,11 @@
         "x-contract-kind": "action",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_agent_skill",
-          "plus_agent_skill_package",
-          "plus_category",
-          "studio_catalog_asset",
-          "studio_catalog_artifact"
+          "ai_agent_skill",
+          "ai_agent_skill_package",
+          "c_category",
+          "ai_skill_asset",
+          "ai_skill_artifact"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "ecosystem",
@@ -20677,7 +19216,7 @@
         "x-sdkwork-resource": "skills",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub/src/services/skillService.ts",
         "x-write-tables": [
-          "plus_user_agent_skill"
+          "ai_user_agent_skill"
         ],
         "x-sdkwork-owner": "sdkwork-claw-router",
         "x-sdkwork-api-authority": "sdkwork-claw-router.app"
@@ -20685,7 +19224,7 @@
     },
     "/app/v3/api/ecosystem/users/current/skills": {
       "get": {
-        "description": "Get my skills. Reads plus_user_agent_skill, plus_agent_skill, plus_agent_skill_package, plus_category, studio_catalog_asset, studio_catalog_artifact. Writes none. File targets none.",
+        "description": "Get my skills. Reads ai_user_agent_skill, ai_agent_skill, ai_agent_skill_package, c_category, ai_skill_asset, ai_skill_artifact. Writes none. File targets none.",
         "operationId": "users.current.skills.list",
         "parameters": [],
         "responses": {
@@ -20753,12 +19292,12 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_user_agent_skill",
-          "plus_agent_skill",
-          "plus_agent_skill_package",
-          "plus_category",
-          "studio_catalog_asset",
-          "studio_catalog_artifact"
+          "ai_user_agent_skill",
+          "ai_agent_skill",
+          "ai_agent_skill_package",
+          "c_category",
+          "ai_skill_asset",
+          "ai_skill_artifact"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "ecosystem",
@@ -22330,7 +20869,7 @@
     },
     "/app/v3/api/platform/apps/store": {
       "get": {
-        "description": "Returns public App Store entries where PlusApp runtime status is ACTIVE and config.portal.marketStatus is PUBLISHED. Authenticated positive-organization app sessions may read same-tenant public organization_id = 0 app projections; tenant isolation is always enforced. Reads plus_app, plus_category, studio_catalog_action, studio_catalog_asset, studio_catalog_artifact. Writes none. File targets none.",
+        "description": "Returns public App Store entries where PlusApp runtime status is ACTIVE and config.portal.marketStatus is PUBLISHED. Authenticated positive-organization app sessions may read same-tenant public organization_id = 0 app projections; tenant isolation is always enforced. Reads platform_app, c_category. Writes none. File targets none.",
         "operationId": "apps.store.list",
         "parameters": [
           {
@@ -22531,11 +21070,8 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_app",
-          "plus_category",
-          "studio_catalog_action",
-          "studio_catalog_asset",
-          "studio_catalog_artifact"
+          "platform_app",
+          "c_category"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "platform",
@@ -22549,7 +21085,7 @@
     },
     "/app/v3/api/platform/apps/store/categories": {
       "get": {
-        "description": "Get categories. Reads plus_category. Writes none. File targets none.",
+        "description": "Get categories. Reads c_category. Writes none. File targets none.",
         "operationId": "apps.store.categories.list",
         "parameters": [],
         "responses": {
@@ -22617,7 +21153,7 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_category"
+          "c_category"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "platform",
@@ -22631,7 +21167,7 @@
     },
     "/app/v3/api/platform/apps/store/{appId}": {
       "get": {
-        "description": "Path parameter appId accepts either the stable appKey or numeric plus_app.id and applies the same ACTIVE/PUBLISHED and public organization_id = 0 visibility rules as getApps. Reads plus_app, plus_category, studio_catalog_action, studio_catalog_asset, studio_catalog_artifact. Writes none. File targets none.",
+        "description": "Path parameter appId accepts either the stable appKey or numeric platform_app.id and applies the same ACTIVE/PUBLISHED and public organization_id = 0 visibility rules as getApps. Reads platform_app, c_category. Writes none. File targets none.",
         "operationId": "apps.store.retrieve",
         "parameters": [
           {
@@ -22709,11 +21245,8 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_app",
-          "plus_category",
-          "studio_catalog_action",
-          "studio_catalog_asset",
-          "studio_catalog_artifact"
+          "platform_app",
+          "c_category"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "platform",
@@ -24128,8 +22661,6 @@
     "mode": "owner-only-sdk-generation",
     "dependencies": {
       "sdkwork-appbase-app-sdk": [
-        "DELETE auth/sessions/current",
-        "GET auth/sessions/current",
         "GET iam/department_assignments",
         "GET iam/departments",
         "GET iam/departments/tree",
@@ -24139,19 +22670,7 @@
         "GET iam/position_assignments",
         "GET iam/positions",
         "GET iam/role_bindings",
-        "GET iam/users/current",
-        "GET system/iam/runtime",
-        "GET system/iam/verification_policy",
-        "PATCH auth/sessions/current",
-        "POST auth/password_reset_requests",
-        "POST auth/password_resets",
-        "POST auth/registrations",
-        "POST auth/sessions",
-        "POST auth/sessions/refresh",
-        "POST auth/verification_codes",
-        "POST auth/verification_codes/verify",
-        "POST oauth/authorization_urls",
-        "POST oauth/sessions"
+        "GET iam/users/current"
       ],
       "sdkwork-commerce-app-sdk": [
         "DELETE addresses/{}",
