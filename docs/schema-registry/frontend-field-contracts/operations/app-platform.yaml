@@ -9,11 +9,8 @@ frontend_operations:
   api_path: /app/v3/api/platform/apps/store
   description: Returns public App Store entries where PlusApp runtime status is ACTIVE and config.portal.marketStatus is PUBLISHED. Authenticated positive-organization app sessions may read same-tenant public organization_id = 0 app projections; tenant isolation is always enforced.
   read_sources:
-  - plus_app
-  - plus_category
-  - studio_catalog_action
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - platform_app
+  - c_category
   query_parameters:
   - name: page
     schema:
@@ -115,7 +112,7 @@ frontend_operations:
               type: string
               minLength: 1
               maxLength: 128
-              description: Stable application identity from plus_app.config.standard.appKey when present; falls back to plus_app.id only when appKey is absent.
+              description: Stable application identity from platform_app.config.standard.appKey when present; falls back to platform_app.id only when appKey is absent.
             name:
               type: string
               minLength: 1
@@ -232,13 +229,10 @@ frontend_operations:
   api_surface: app
   api_method: GET
   api_path: /app/v3/api/platform/apps/store/{appId}
-  description: Path parameter appId accepts either the stable appKey or numeric plus_app.id and applies the same ACTIVE/PUBLISHED and public organization_id = 0 visibility rules as getApps.
+  description: Path parameter appId accepts either the stable appKey or numeric platform_app.id and applies the same ACTIVE/PUBLISHED and public organization_id = 0 visibility rules as getApps.
   read_sources:
-  - plus_app
-  - plus_category
-  - studio_catalog_action
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - platform_app
+  - c_category
   query_parameters: []
   response_schema:
     name: AppDetailResponse
@@ -254,7 +248,7 @@ frontend_operations:
   api_method: GET
   api_path: /app/v3/api/platform/apps/store/categories
   read_sources:
-  - plus_category
+  - c_category
   query_parameters: []
   response_schema:
     name: AppCategoriesResponse

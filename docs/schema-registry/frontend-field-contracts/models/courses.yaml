@@ -37,8 +37,8 @@ frontend_models:
   data_sources:
   - content_course
   - content_course_relation
-  - plus_category
-  - plus_comments
+  - c_category
+  - content_comment
   - content_reaction
 - route: /courses
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
@@ -53,7 +53,7 @@ frontend_models:
   - sortWeight
   - courseCount
   data_sources:
-  - plus_category
+  - c_category
   - content_course
 - route: /courses
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
@@ -65,8 +65,8 @@ frontend_models:
   - totalCategories
   data_sources:
   - content_course
-  - plus_category
-  - plus_comments
+  - c_category
+  - content_comment
   - content_reaction
 - route: /courses
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
@@ -80,8 +80,8 @@ frontend_models:
   - source
   data_sources:
   - content_course
-  - plus_category
-  - plus_comments
+  - c_category
+  - content_comment
   - content_reaction
 - route: /courses
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
@@ -94,7 +94,7 @@ frontend_models:
   - size
   data_sources:
   - content_course
-  - plus_category
+  - c_category
 - route: /courses
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
   interface: CourseCatalogResult
@@ -116,8 +116,8 @@ frontend_models:
   data_sources:
   - content_course
   - content_course_relation
-  - plus_category
-  - plus_comments
+  - c_category
+  - content_comment
   - content_reaction
 - route: /courses
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
@@ -187,6 +187,6 @@ frontend_models:
   - content_course_section
   - content_course_lesson
   - content_course_relation
-  - plus_category
-  - plus_comments
+  - c_category
+  - content_comment
   - content_reaction

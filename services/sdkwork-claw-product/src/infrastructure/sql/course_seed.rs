@@ -14,7 +14,7 @@ const SYSTEM_TENANT_ID: i64 = 0;
 const SYSTEM_ORGANIZATION_ID: i64 = 0;
 const SYSTEM_DATA_SCOPE: i32 = 0;
 const ACTIVE_STATUS: i32 = 1;
-const COURSE_CATEGORY_TYPE: i32 = 6;
+const COURSE_CATEGORY_TYPE: &str = "course";
 const CONTENT_TYPE_COURSE: i32 = 6;
 const COMMENT_STATUS_PUBLISHED: i32 = 1;
 const REACTION_TYPE_VIEW: i32 = 1;
@@ -502,9 +502,7 @@ async fn sqlite_course_seed_standard_fields_complete(
               AND tenant_id = ?
               AND organization_id = ?
               AND data_scope = ?
-              AND shop_id = ?
-              AND type = ?
-              AND group_name = 'course'
+              AND category_type = ?
               AND code = ?
               AND sort_weight = ?
               AND parent_id IS NULL
@@ -518,7 +516,6 @@ async fn sqlite_course_seed_standard_fields_complete(
         .bind(SYSTEM_TENANT_ID)
         .bind(SYSTEM_ORGANIZATION_ID)
         .bind(SYSTEM_DATA_SCOPE)
-        .bind(SYSTEM_ORGANIZATION_ID)
         .bind(COURSE_CATEGORY_TYPE)
         .bind(&item.code)
         .bind(item.sort_weight)
@@ -840,15 +837,13 @@ async fn postgres_course_seed_standard_fields_complete(
               AND tenant_id = $3
               AND organization_id = $4
               AND data_scope = $5
-              AND shop_id = $6
-              AND type = $7
-              AND group_name = 'course'
-              AND code = $8
-              AND sort_weight = $9
+              AND category_type = $6
+              AND code = $7
+              AND sort_weight = $8
               AND parent_id IS NULL
-              AND path = $10
+              AND path = $9
               AND visible = TRUE
-              AND status = $11
+              AND status = $10
             "#,
         )
         .bind(item.id)
@@ -856,7 +851,6 @@ async fn postgres_course_seed_standard_fields_complete(
         .bind(SYSTEM_TENANT_ID)
         .bind(SYSTEM_ORGANIZATION_ID)
         .bind(SYSTEM_DATA_SCOPE)
-        .bind(SYSTEM_ORGANIZATION_ID)
         .bind(COURSE_CATEGORY_TYPE)
         .bind(&item.code)
         .bind(item.sort_weight)

@@ -13,7 +13,7 @@ frontend_operations:
   description: Lists vertical prompt definitions with unified category references and lifecycle state.
   read_sources:
   - ai_prompt
-  - plus_category
+  - c_category
   query_parameters:
   - name: page
     schema: { type: integer, format: int64, minimum: 1 }
@@ -79,7 +79,7 @@ frontend_operations:
   description: Creates a reusable prompt definition; classification is only by unified category references.
   read_sources:
   - ai_prompt
-  - plus_category
+  - c_category
   write_tables:
   - ai_prompt
   - ops_audit_log
@@ -120,7 +120,7 @@ frontend_operations:
   read_sources:
   - ai_prompt
   - ai_prompt_version
-  - plus_category
+  - c_category
   query_parameters: []
   response_schema:
     name: AdminPromptVersionListResponse
@@ -177,7 +177,7 @@ frontend_operations:
   read_sources:
   - ai_prompt
   - ai_prompt_version
-  - plus_category
+  - c_category
   write_tables:
   - ai_prompt
   - ai_prompt_version
@@ -222,7 +222,7 @@ frontend_operations:
   read_sources:
   - ai_prompt
   - ai_prompt_version
-  - plus_category
+  - c_category
   write_tables:
   - ai_prompt
   - ai_prompt_version
@@ -245,7 +245,7 @@ frontend_operations:
   read_sources:
   - ai_prompt
   - ai_prompt_version
-  - plus_category
+  - c_category
   write_tables:
   - ops_audit_log
   request_schema:
@@ -276,7 +276,7 @@ frontend_operations:
   - ai_prompt
   - ai_prompt_version
   - ai_prompt_binding
-  - plus_category
+  - c_category
   query_parameters: []
   response_schema:
     name: AdminPromptBindingListResponse
@@ -324,7 +324,7 @@ frontend_operations:
   - ai_prompt
   - ai_prompt_version
   - ai_prompt_binding
-  - plus_category
+  - c_category
   write_tables:
   - ai_prompt_binding
   - ops_audit_log
@@ -363,7 +363,7 @@ frontend_operations:
   - ai_prompt
   - ai_prompt_version
   - ai_prompt_binding
-  - plus_category
+  - c_category
   write_tables:
   - ai_prompt_binding
   - ops_audit_log

@@ -31,10 +31,8 @@ frontend_models:
   - createdAt
   - updatedAt
   data_sources:
-  - plus_app
-  - plus_category
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - platform_app
+  - c_category
 - route: /admin/app
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   interface: AdminAppCategory
@@ -51,7 +49,7 @@ frontend_models:
   - status
   - type
   data_sources:
-  - plus_category
+  - c_category
 - route: /admin/app
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   interface: AdminAppCategoryCreateInput
@@ -66,7 +64,7 @@ frontend_models:
   - visible
   - status
   data_sources:
-  - plus_category
+  - c_category
 - route: /admin/app
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   interface: AdminAppCategoryUpdateInput
@@ -81,7 +79,7 @@ frontend_models:
   - visible
   - status
   data_sources:
-  - plus_category
+  - c_category
 - route: /admin/app
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   interface: AdminAppListInput
@@ -94,10 +92,8 @@ frontend_models:
   - page
   - pageSize
   data_sources:
-  - plus_app
-  - plus_category
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - platform_app
+  - c_category
 - route: /admin/app
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   interface: AdminAppPage
@@ -134,10 +130,8 @@ frontend_models:
   - pageSize
   - hasNextPage
   data_sources:
-  - plus_app
-  - plus_category
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - platform_app
+  - c_category
 - route: /admin/app
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   interface: AdminAppCreateInput
@@ -164,10 +158,8 @@ frontend_models:
   - storeUrl
   - artifact
   data_sources:
-  - plus_app
-  - plus_category
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - platform_app
+  - c_category
 - route: /admin/app
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   interface: AdminAppUpdateInput
@@ -192,10 +184,8 @@ frontend_models:
   - storeUrl
   - artifact
   data_sources:
-  - plus_app
-  - plus_category
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - platform_app
+  - c_category
 - route: /admin/app
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   interface: AdminAppTemplate
@@ -370,10 +360,7 @@ frontend_models:
   - releases.artifact
   - releases.whatsNew
   data_sources:
-  - plus_app
-  - studio_catalog_action
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - platform_app
 - route: /apps
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/appRuntime.ts
   interface: AppRelease
@@ -387,7 +374,6 @@ frontend_models:
   - artifact
   - whatsNew
   data_sources:
-  - studio_catalog_artifact
 - route: /apps
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/appService.ts
   interface: AppFilters
@@ -399,8 +385,7 @@ frontend_models:
   - page
   - pageSize
   data_sources:
-  - plus_app
-  - studio_catalog_artifact
+  - platform_app
 - route: /apps
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/appService.ts
   interface: AppCatalogPage
@@ -411,5 +396,4 @@ frontend_models:
   - pageSize
   - hasNextPage
   data_sources:
-  - plus_app
-  - studio_catalog_artifact
+  - platform_app

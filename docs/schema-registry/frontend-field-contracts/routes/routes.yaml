@@ -3,7 +3,7 @@ routes:
 - route: /
   required_tables:
   - content_doc_page
-  - plus_app
+  - platform_app
 - route: /vip
   required_tables:
   - commerce_product_spu
@@ -138,13 +138,13 @@ routes:
     - strengths
 - route: /apps
   required_tables:
-  - plus_app
-  - plus_category
-  - studio_catalog_action
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - platform_app
+  - c_category
+  - ai_skill_action
+  - ai_skill_asset
+  - ai_skill_artifact
   required_columns:
-    plus_app:
+    platform_app:
     - name
     - description
     - icon_media_resource_id
@@ -157,12 +157,12 @@ routes:
     - artifact_media_resource_id
     - artifact_object_blob_id
     - artifact_resource_snapshot
-    studio_catalog_action:
+    ai_skill_action:
     - target_type
     - target_id
     - action_type
     - rating_score
-    studio_catalog_asset:
+    ai_skill_asset:
     - target_type
     - target_id
     - asset_type
@@ -170,7 +170,7 @@ routes:
     - asset_object_blob_id
     - asset_resource_snapshot
     - sort_order
-    studio_catalog_artifact:
+    ai_skill_artifact:
     - target_type
     - target_id
     - artifact_type
@@ -183,13 +183,13 @@ routes:
     - release_notes
 - route: /apps/:id
   required_tables:
-  - plus_app
-  - plus_category
-  - studio_catalog_action
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - platform_app
+  - c_category
+  - ai_skill_action
+  - ai_skill_asset
+  - ai_skill_artifact
   required_columns:
-    plus_app:
+    platform_app:
     - name
     - description
     - icon_media_resource_id
@@ -202,14 +202,14 @@ routes:
     - artifact_media_resource_id
     - artifact_object_blob_id
     - artifact_resource_snapshot
-    studio_catalog_asset:
+    ai_skill_asset:
     - target_type
     - target_id
     - asset_type
     - asset_media_resource_id
     - asset_object_blob_id
     - asset_resource_snapshot
-    studio_catalog_artifact:
+    ai_skill_artifact:
     - target_type
     - target_id
     - version
@@ -487,15 +487,15 @@ routes:
     - detail_json
 - route: /skills-hub
   required_tables:
-  - plus_agent_skill
-  - plus_agent_skill_package
-  - plus_category
-  - plus_user_agent_skill
-  - studio_catalog_action
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - ai_agent_skill
+  - ai_agent_skill_package
+  - c_category
+  - ai_user_agent_skill
+  - ai_skill_action
+  - ai_skill_asset
+  - ai_skill_artifact
   required_columns:
-    plus_agent_skill:
+    ai_agent_skill:
     - name
     - provider
     - description
@@ -508,7 +508,7 @@ routes:
     - install_count
     - rating_avg
     - latest_published_at
-    plus_category:
+    c_category:
     - name
     - code
     - type
@@ -516,7 +516,7 @@ routes:
     - icon_object_blob_id
     - icon_resource_snapshot
     - sort_weight
-    studio_catalog_asset:
+    ai_skill_asset:
     - target_type
     - target_id
     - asset_type
@@ -524,7 +524,7 @@ routes:
     - asset_object_blob_id
     - asset_resource_snapshot
     - sort_order
-    studio_catalog_artifact:
+    ai_skill_artifact:
     - target_type
     - target_id
     - version
@@ -534,15 +534,15 @@ routes:
     - license_name
 - route: /skills-hub/:id
   required_tables:
-  - plus_agent_skill
-  - plus_agent_skill_package
-  - plus_category
-  - plus_user_agent_skill
-  - studio_catalog_action
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - ai_agent_skill
+  - ai_agent_skill_package
+  - c_category
+  - ai_user_agent_skill
+  - ai_skill_action
+  - ai_skill_asset
+  - ai_skill_artifact
   required_columns:
-    plus_agent_skill:
+    ai_agent_skill:
     - skill_key
     - name
     - provider
@@ -554,7 +554,7 @@ routes:
     - documentation_url
     - license_name
     - capabilities
-    studio_catalog_artifact:
+    ai_skill_artifact:
     - target_type
     - target_id
     - artifact_ref
@@ -651,12 +651,12 @@ routes:
   - ai_runtime_invocation
 - route: /forum
   required_tables:
-  - plus_feeds
-  - plus_comments
-  - plus_content_vote
-  - plus_favorite
+  - content_forum_post
+  - content_comment
+  - content_reaction
+  - content_favorite
   required_columns:
-    plus_feeds:
+    content_forum_post:
     - title
     - summary
     - category_id
@@ -670,7 +670,7 @@ routes:
     - is_top
     - is_hot
     - is_recommended
-    plus_comments:
+    content_comment:
     - content_type
     - content_id
     - parent_id
@@ -680,24 +680,24 @@ routes:
     - likes
     - reply_count
     - is_top
-    plus_content_vote:
+    content_reaction:
     - user_id
     - content_type
     - content_id
     - rating
-    plus_favorite:
+    content_favorite:
     - user_id
     - content_type
     - content_id
     - status
 - route: /forum/:id
   required_tables:
-  - plus_feeds
-  - plus_comments
-  - plus_content_vote
-  - plus_favorite
+  - content_forum_post
+  - content_comment
+  - content_reaction
+  - content_favorite
   required_columns:
-    plus_feeds:
+    content_forum_post:
     - title
     - summary
     - content_type
@@ -706,7 +706,7 @@ routes:
     - like_count
     - comment_count
     - view_count
-    plus_comments:
+    content_comment:
     - content_type
     - content_id
     - parent_id
@@ -715,12 +715,12 @@ routes:
     - likes
     - reply_count
     - is_top
-    plus_content_vote:
+    content_reaction:
     - user_id
     - content_type
     - content_id
     - rating
-    plus_favorite:
+    content_favorite:
     - user_id
     - content_type
     - content_id
@@ -730,8 +730,8 @@ routes:
   - content_course
   - content_course_relation
   - content_course_application
-  - plus_category
-  - plus_comments
+  - c_category
+  - content_comment
   - content_reaction
   required_columns:
     content_course:
@@ -762,7 +762,7 @@ routes:
     - contact_email
     - status
     - submitted_at
-    plus_category:
+    c_category:
     - type
     - group_name
     - code
@@ -770,7 +770,7 @@ routes:
     - description
     - sort_weight
     - status
-    plus_comments:
+    content_comment:
     - content_type
     - content_id
     - parent_id
@@ -792,8 +792,8 @@ routes:
   - content_course_section
   - content_course_lesson
   - content_course_relation
-  - plus_category
-  - plus_comments
+  - c_category
+  - content_comment
   - content_reaction
   required_columns:
     content_course:
@@ -844,7 +844,7 @@ routes:
     - relation_type
     - sort_order
     - status
-    plus_category:
+    c_category:
     - type
     - group_name
     - code
@@ -852,7 +852,7 @@ routes:
     - description
     - sort_weight
     - status
-    plus_comments:
+    content_comment:
     - content_type
     - content_id
     - parent_id
@@ -1197,7 +1197,7 @@ routes:
   - ai_prompt
   - ai_prompt_version
   - ai_prompt_binding
-  - plus_category
+  - c_category
   - ops_audit_log
   required_columns:
     ai_prompt:
@@ -1256,7 +1256,7 @@ routes:
     - status
     - created_at
     - updated_at
-    plus_category:
+    c_category:
     - name
     - code
     - type
@@ -1282,7 +1282,7 @@ routes:
   - ai_mcp_server_revision
   - ai_mcp_tool
   - ai_mcp_binding
-  - plus_category
+  - c_category
   - ops_audit_log
   required_columns:
     ai_mcp_server:
@@ -1371,7 +1371,7 @@ routes:
     - snapshot_json
     - created_at
     - updated_at
-    plus_category:
+    c_category:
     - name
     - code
     - type
@@ -1477,15 +1477,15 @@ routes:
   - ops_job_execution
 - route: /admin/app
   required_tables:
-  - plus_app
-  - plus_category
+  - platform_app
+  - c_category
   - studio_app_template
-  - studio_catalog_action
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - ai_skill_action
+  - ai_skill_asset
+  - ai_skill_artifact
   - ops_audit_log
   required_columns:
-    plus_app:
+    platform_app:
     - name
     - description
     - version
@@ -1511,7 +1511,7 @@ routes:
     - artifact_resource_snapshot
     - created_at
     - updated_at
-    plus_category:
+    c_category:
     - name
     - description
     - code
@@ -1559,12 +1559,12 @@ routes:
     - status
     - created_at
     - updated_at
-    studio_catalog_action:
+    ai_skill_action:
     - target_type
     - target_id
     - action_type
     - rating_score
-    studio_catalog_asset:
+    ai_skill_asset:
     - target_type
     - target_id
     - asset_type
@@ -1572,7 +1572,7 @@ routes:
     - asset_object_blob_id
     - asset_resource_snapshot
     - sort_order
-    studio_catalog_artifact:
+    ai_skill_artifact:
     - target_type
     - target_id
     - artifact_type
@@ -1630,15 +1630,15 @@ routes:
   - content_reaction
 - route: /admin/skill
   required_tables:
-  - plus_agent_skill
-  - plus_agent_skill_package
-  - plus_category
-  - plus_user_agent_skill
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - ai_agent_skill
+  - ai_agent_skill_package
+  - c_category
+  - ai_user_agent_skill
+  - ai_skill_asset
+  - ai_skill_artifact
   - ops_audit_log
   required_columns:
-    plus_agent_skill:
+    ai_agent_skill:
     - skill_key
     - name
     - summary
@@ -1685,7 +1685,7 @@ routes:
     - latest_published_at
     - created_at
     - updated_at
-    plus_agent_skill_package:
+    ai_agent_skill_package:
     - package_key
     - name
     - summary
@@ -1704,7 +1704,7 @@ routes:
     - latest_published_at
     - created_at
     - updated_at
-    plus_category:
+    c_category:
     - name
     - description
     - code
@@ -1717,12 +1717,12 @@ routes:
     - path
     - visible
     - status
-    plus_user_agent_skill:
+    ai_user_agent_skill:
     - skill_id
     - enabled
     - config
     - installed_at
-    studio_catalog_asset:
+    ai_skill_asset:
     - target_type
     - target_id
     - artifact_id
@@ -1745,7 +1745,7 @@ routes:
     - published_at
     - created_at
     - updated_at
-    studio_catalog_artifact:
+    ai_skill_artifact:
     - target_type
     - target_id
     - artifact_type
@@ -2187,7 +2187,7 @@ routes:
 - route: /admin/catalog
   required_tables:
   - commerce_product_category
-  - plus_category
+  - c_category
   - commerce_product_spu
   - commerce_product_spu_category
   - commerce_product_sku
@@ -3035,8 +3035,8 @@ routes:
   - promotion_external_binding
   - promotion_external_operation
   - promotion_event_outbox
-  - plus_invitation_code
-  - plus_invitation_relation
+  - promotion_code
+  - promotion_code_redemption
   - ops_referral_stat_snapshot
 - route: /admin/oauth
   dependency_owned: true

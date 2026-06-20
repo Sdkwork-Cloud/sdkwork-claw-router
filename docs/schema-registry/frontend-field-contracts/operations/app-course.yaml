@@ -12,8 +12,8 @@ frontend_operations:
   read_sources:
   - content_course
   - content_course_relation
-  - plus_category
-  - plus_comments
+  - c_category
+  - content_comment
   - content_reaction
   query_parameters:
   - name: level
@@ -250,8 +250,8 @@ frontend_operations:
   sdk_domain: course
   read_sources:
   - content_course
-  - plus_category
-  - plus_comments
+  - c_category
+  - content_comment
   - content_reaction
   query_parameters: []
   response_schema:
@@ -327,7 +327,7 @@ frontend_operations:
   openapi_exposed: false
   sdk_domain: course
   read_sources:
-  - plus_category
+  - c_category
   - content_course
   query_parameters: []
   response_schema:
@@ -566,8 +566,8 @@ frontend_operations:
   - content_course_section
   - content_course_lesson
   - content_course_relation
-  - plus_category
-  - plus_comments
+  - c_category
+  - content_comment
   - content_reaction
   query_parameters: []
   response_schema:

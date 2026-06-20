@@ -9,7 +9,7 @@ use std::time::{SystemTime, UNIX_EPOCH};
 
 use crate::infrastructure::sql::iam_seed_defaults::{
     DEFAULT_BOOTSTRAP_ADMIN_DISPLAY_NAME, DEFAULT_BOOTSTRAP_ADMIN_EMAIL,
-    DEFAULT_BOOTSTRAP_ADMIN_USERNAME, DEFAULT_IAM_ORGANIZATION_CODE,
+    DEFAULT_BOOTSTRAP_ADMIN_USER_ID, DEFAULT_BOOTSTRAP_ADMIN_USERNAME, DEFAULT_IAM_ORGANIZATION_CODE,
     DEFAULT_IAM_ORGANIZATION_DATA_BOUNDARY_KIND, DEFAULT_IAM_ORGANIZATION_ID,
     DEFAULT_IAM_ORGANIZATION_KIND, DEFAULT_IAM_ORGANIZATION_NAME, DEFAULT_IAM_ORGANIZATION_PATH,
     DEFAULT_IAM_ORGANIZATION_TENANT_BOUNDARY_KIND, DEFAULT_IAM_ORGANIZATION_VERIFICATION_STATUS,
@@ -57,7 +57,7 @@ use crate::infrastructure::sql::model_catalog_import::{
     load_catalog_root_with_pin, model_catalog_key, pricing_catalog_key,
     DEFAULT_CATALOG_REFRESH_SOURCE,
 };
-use crate::infrastructure::sql::runtime_id::{next_claw_runtime_id, next_user_id};
+use crate::infrastructure::sql::runtime_id::{next_claw_runtime_id};
 use crate::infrastructure::sql::skills_seed::{
     bundled_skills_seed_payload, import_postgres_skills_seed, import_sqlite_skills_seed,
     postgres_skills_seed_complete, postgres_skills_seed_current,
@@ -4358,9 +4358,7 @@ async fn bootstrap_sqlite_admin_user_if_needed(
             .await?
         {
             Some(user_id) => user_id,
-            None => next_user_id("bootstrap admin user")
-                .map_err(|error| sqlx::Error::Protocol(error.to_string()))?
-                .to_string(),
+            None => DEFAULT_BOOTSTRAP_ADMIN_USER_ID.to_owned(),
         };
     let has_active_password =
         sqlite_bootstrap_admin_has_active_password_credential_in_transaction(&mut tx, &user_id)
@@ -4403,9 +4401,7 @@ async fn bootstrap_postgres_admin_user_if_needed(
             .await?
         {
             Some(user_id) => user_id,
-            None => next_user_id("bootstrap admin user")
-                .map_err(|error| sqlx::Error::Protocol(error.to_string()))?
-                .to_string(),
+            None => DEFAULT_BOOTSTRAP_ADMIN_USER_ID.to_owned(),
         };
     let has_active_password =
         postgres_bootstrap_admin_has_active_password_credential_in_transaction(&mut tx, &user_id)
@@ -4443,9 +4439,7 @@ async fn reset_sqlite_admin_password(
             .await?
         {
             Some(user_id) => user_id,
-            None => next_user_id("bootstrap admin user")
-                .map_err(|error| sqlx::Error::Protocol(error.to_string()))?
-                .to_string(),
+            None => DEFAULT_BOOTSTRAP_ADMIN_USER_ID.to_owned(),
         };
     upsert_sqlite_bootstrap_admin(&mut tx, options, &user_id, None, &now).await?;
     sqlx::query(
@@ -4499,9 +4493,7 @@ async fn reset_postgres_admin_password(
             .await?
         {
             Some(user_id) => user_id,
-            None => next_user_id("bootstrap admin user")
-                .map_err(|error| sqlx::Error::Protocol(error.to_string()))?
-                .to_string(),
+            None => DEFAULT_BOOTSTRAP_ADMIN_USER_ID.to_owned(),
         };
     upsert_postgres_bootstrap_admin(&mut tx, options, &user_id, None, &now).await?;
     sqlx::query(

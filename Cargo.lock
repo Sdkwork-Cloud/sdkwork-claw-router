@@ -2074,6 +2074,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "sdkwork-appbase-database-host"
+version = "0.1.0"
+dependencies = [
+ "dotenvy",
+ "sdkwork-database-lifecycle",
+ "sdkwork-database-spi",
+ "sdkwork-database-sqlx",
+ "sdkwork-iam-web-adapter",
+ "sqlx",
+ "tracing",
+]
+
+[[package]]
 name = "sdkwork-claw-admin"
 version = "0.1.0"
 dependencies = [
@@ -2589,6 +2602,34 @@ dependencies = [
 ]
 
 [[package]]
+name = "sdkwork-database-history"
+version = "0.1.0"
+dependencies = [
+ "hex",
+ "sdkwork-database-config",
+ "sdkwork-database-sqlx",
+ "sha2",
+ "sqlx",
+ "thiserror 2.0.18",
+]
+
+[[package]]
+name = "sdkwork-database-lifecycle"
+version = "0.1.0"
+dependencies = [
+ "async-trait",
+ "sdkwork-database-config",
+ "sdkwork-database-history",
+ "sdkwork-database-spi",
+ "sdkwork-database-sqlx",
+ "serde",
+ "serde_json",
+ "thiserror 2.0.18",
+ "tokio",
+ "tracing",
+]
+
+[[package]]
 name = "sdkwork-database-repository"
 version = "0.1.0"
 dependencies = [
@@ -2605,6 +2646,19 @@ dependencies = [
  "tokio",
  "tracing",
  "uuid",
+]
+
+[[package]]
+name = "sdkwork-database-spi"
+version = "0.1.0"
+dependencies = [
+ "async-trait",
+ "regex",
+ "sdkwork-database-config",
+ "serde",
+ "serde_json",
+ "serde_yaml",
+ "thiserror 2.0.18",
 ]
 
 [[package]]
@@ -2756,6 +2810,7 @@ dependencies = [
  "hmac",
  "password-hash",
  "rand_core 0.6.4",
+ "sdkwork-appbase-database-host",
  "sdkwork-database-config",
  "sdkwork-database-sqlx",
  "sdkwork-iam-context-service",
@@ -2780,12 +2835,14 @@ version = "0.1.0"
 dependencies = [
  "axum",
  "chrono",
+ "sdkwork-appbase-database-host",
  "sdkwork-database-sqlx",
  "sdkwork-iam-web-adapter",
  "sdkwork-web-contract",
  "sdkwork-web-core",
  "serde_json",
  "sqlx",
+ "tracing",
 ]
 
 [[package]]
@@ -2952,6 +3009,19 @@ dependencies = [
  "itoa",
  "ryu",
  "serde",
+]
+
+[[package]]
+name = "serde_yaml"
+version = "0.9.34+deprecated"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6a8b1a1a2ebf674015cc02edccce75287f1a0130d394307b36743c2f5d504b47"
+dependencies = [
+ "indexmap",
+ "itoa",
+ "ryu",
+ "serde",
+ "unsafe-libyaml",
 ]
 
 [[package]]
@@ -3838,6 +3908,12 @@ dependencies = [
  "crypto-common",
  "subtle",
 ]
+
+[[package]]
+name = "unsafe-libyaml"
+version = "0.2.11"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "673aac59facbab8a9007c7f6108d11f63b603f7cabff99fabf650fea5c32b861"
 
 [[package]]
 name = "untrusted"

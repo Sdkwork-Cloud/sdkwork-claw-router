@@ -20,6 +20,7 @@ const APP_TEMPLATE_TARGET_TYPE: i32 = 16;
 const PUBLIC_APP_STORE_TENANT_ID: i64 = 20_001;
 const PUBLIC_APP_STORE_ORGANIZATION_ID: i64 = 0;
 const APP_STORE_CATEGORY_TYPE: i32 = 999_999;
+const APP_STORE_CATEGORY_SCOPE: &str = "app_store";
 const APP_STORE_CATEGORY_GROUP: &str = "app-store";
 const MAX_RUNTIME_ID_ATTEMPTS: u8 = 16;
 
@@ -588,14 +589,13 @@ async fn list_categories(
                CAST(icon_resource_snapshot AS TEXT) AS icon_resource_snapshot,
                COALESCE(sort_weight, 0) AS sort_weight,
                parent_id, path, COALESCE(visible, 1) AS visible,
-               COALESCE(status, 1) AS status, type AS category_type
+               COALESCE(status, 1) AS status, category_type
         FROM c_category
         WHERE (
               (tenant_id = ? AND organization_id = ?)
               OR (tenant_id = ? AND organization_id = ?)
           )
-          AND type = ?
-          AND group_name = ?
+          AND category_type = ?
           AND COALESCE(status, 1) >= 0
         ORDER BY
             CASE
@@ -612,8 +612,7 @@ async fn list_categories(
     .bind(query.subject.organization_id)
     .bind(PUBLIC_APP_STORE_TENANT_ID)
     .bind(PUBLIC_APP_STORE_ORGANIZATION_ID)
-    .bind(APP_STORE_CATEGORY_TYPE)
-    .bind(APP_STORE_CATEGORY_GROUP)
+    .bind(APP_STORE_CATEGORY_SCOPE)
     .bind(query.subject.tenant_id)
     .bind(query.subject.organization_id)
     .bind(PUBLIC_APP_STORE_TENANT_ID)
@@ -961,8 +960,7 @@ async fn load_app_category_filter(
               (tenant_id = ? AND organization_id = ?)
               OR (tenant_id = ? AND organization_id = ?)
           )
-          AND type = ?
-          AND group_name = ?
+          AND category_type = ?
           AND COALESCE(status, 1) >= 0
         ORDER BY
             CASE
@@ -978,8 +976,7 @@ async fn load_app_category_filter(
     .bind(organization_id)
     .bind(PUBLIC_APP_STORE_TENANT_ID)
     .bind(PUBLIC_APP_STORE_ORGANIZATION_ID)
-    .bind(APP_STORE_CATEGORY_TYPE)
-    .bind(APP_STORE_CATEGORY_GROUP)
+    .bind(APP_STORE_CATEGORY_SCOPE)
     .bind(tenant_id)
     .bind(organization_id)
     .bind(PUBLIC_APP_STORE_TENANT_ID)
@@ -1624,21 +1621,20 @@ async fn insert_category(
     sqlx::query(
         r#"
         INSERT INTO c_category
-            (id, uuid, tenant_id, organization_id, data_scope, name, description, type, group_name, code,
+            (id, uuid, tenant_id, organization_id, data_scope, category_type, name, description, code,
              icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot,
              sort_weight, parent_id, path, visible, status, created_at, updated_at)
         VALUES
-            (?, ?, ?, ?, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            (?, ?, ?, ?, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         "#,
     )
     .bind(id)
     .bind(&command.category_uuid)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
+    .bind(APP_STORE_CATEGORY_SCOPE)
     .bind(&command.name)
     .bind(command.description.as_deref())
-    .bind(command.category_type)
-    .bind(APP_STORE_CATEGORY_GROUP)
     .bind(command.code.as_deref())
     .bind(icon_media_resource_id)
     .bind(icon_object_blob_id)
@@ -1668,20 +1664,18 @@ async fn load_category_by_id(
                CAST(icon_resource_snapshot AS TEXT) AS icon_resource_snapshot,
                COALESCE(sort_weight, 0) AS sort_weight,
                parent_id, path, COALESCE(visible, 1) AS visible,
-               COALESCE(status, 1) AS status, type AS category_type
+               COALESCE(status, 1) AS status, category_type
         FROM c_category
         WHERE id = ?
           AND tenant_id = ?
           AND organization_id = ?
-          AND type = ?
-          AND group_name = ?
+          AND category_type = ?
         "#,
     )
     .bind(category_id)
     .bind(tenant_id)
     .bind(organization_id)
-    .bind(APP_STORE_CATEGORY_TYPE)
-    .bind(APP_STORE_CATEGORY_GROUP)
+    .bind(APP_STORE_CATEGORY_SCOPE)
     .fetch_optional(&mut **tx)
     .await
     .map_err(|error| store_error("failed to load app category", error))?;
@@ -1876,8 +1870,7 @@ async fn update_category(
         WHERE id = ?
           AND tenant_id = ?
           AND organization_id = ?
-          AND type = ?
-          AND group_name = ?
+          AND category_type = ?
         "#,
     )
     .bind(command.name.is_some())
@@ -1924,8 +1917,7 @@ async fn update_category(
     .bind(command.category_id)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
-    .bind(APP_STORE_CATEGORY_TYPE)
-    .bind(APP_STORE_CATEGORY_GROUP)
+    .bind(APP_STORE_CATEGORY_SCOPE)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to update app category", error))?;
@@ -2027,16 +2019,14 @@ async fn delete_category(
         WHERE id = ?
           AND tenant_id = ?
           AND organization_id = ?
-          AND type = ?
-          AND group_name = ?
+          AND category_type = ?
         "#,
     )
     .bind(&command.requested_at)
     .bind(command.category_id)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
-    .bind(APP_STORE_CATEGORY_TYPE)
-    .bind(APP_STORE_CATEGORY_GROUP)
+    .bind(APP_STORE_CATEGORY_SCOPE)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to delete app category", error))?;
@@ -2054,16 +2044,14 @@ async fn ensure_category_delete_allowed(
         WHERE tenant_id = ?
           AND organization_id = ?
           AND parent_id = ?
-          AND type = ?
-          AND group_name = ?
+          AND category_type = ?
           AND COALESCE(status, 1) >= 0
         "#,
     )
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
     .bind(command.category_id)
-    .bind(APP_STORE_CATEGORY_TYPE)
-    .bind(APP_STORE_CATEGORY_GROUP)
+    .bind(APP_STORE_CATEGORY_SCOPE)
     .fetch_one(&mut **tx)
     .await
     .map_err(|error| store_error("failed to validate child app categories", error))?;
@@ -2361,8 +2349,17 @@ fn category_from_row(row: sqlx::sqlite::SqliteRow) -> DomainResult<AdminAppCateg
         path: row.try_get("path").ok().flatten(),
         visible: integer_cell(&row, "visible") != 0,
         status: integer_cell(&row, "status") as i32,
-        category_type: integer_cell(&row, "category_type") as i32,
+        category_type: category_type_to_api(
+            string_cell(&row, "category_type").unwrap_or_default(),
+        ),
     })
+}
+
+fn category_type_to_api(scope: String) -> i32 {
+    match scope.as_str() {
+        "app_store" => APP_STORE_CATEGORY_TYPE,
+        _ => scope.parse().unwrap_or(0),
+    }
 }
 
 fn template_from_row(row: sqlx::sqlite::SqliteRow) -> DomainResult<AdminAppTemplateItem> {

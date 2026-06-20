@@ -1724,7 +1724,7 @@ async fn sqlite_category_seed_standard_count(
               AND data_scope = 0
               AND uuid = ?
               AND name = ?
-              AND type = ?
+              AND category_type = ?
               AND code = ?
               AND sort_weight = ?
               AND visible = ?
@@ -1733,7 +1733,10 @@ async fn sqlite_category_seed_standard_count(
         )
         .bind(&item.uuid)
         .bind(&item.name)
-        .bind(item.r#type)
+        .bind(category_type_from_legacy_seed(
+            item.group_name.as_deref(),
+            item.r#type,
+        ))
         .bind(&item.code)
         .bind(item.sort_weight)
         .bind(item.visible)
@@ -1796,7 +1799,7 @@ async fn postgres_category_seed_standard_count(
               AND data_scope = 0
               AND uuid = $1
               AND name = $2
-              AND type = $3
+              AND category_type = $3
               AND code = $4
               AND sort_weight = $5
               AND visible = $6
@@ -1805,7 +1808,10 @@ async fn postgres_category_seed_standard_count(
         )
         .bind(&item.uuid)
         .bind(&item.name)
-        .bind(item.r#type)
+        .bind(category_type_from_legacy_seed(
+            item.group_name.as_deref(),
+            item.r#type,
+        ))
         .bind(&item.code)
         .bind(item.sort_weight)
         .bind(item.visible)

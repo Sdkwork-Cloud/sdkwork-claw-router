@@ -8,7 +8,7 @@ frontend_operations:
   api_method: GET
   api_path: /backend/v3/api/ecosystem/skills/categories
   read_sources:
-  - plus_category
+  - c_category
   query_parameters: []
   response_schema:
     name: AdminSkillCategoryListResponse
@@ -79,9 +79,9 @@ frontend_operations:
   api_method: POST
   api_path: /backend/v3/api/ecosystem/skills/categories
   read_sources:
-  - plus_category
+  - c_category
   write_tables:
-  - plus_category
+  - c_category
   - ops_audit_log
   request_schema:
     name: AdminSkillCategoryCreateRequest
@@ -149,9 +149,9 @@ frontend_operations:
   api_method: PUT
   api_path: /backend/v3/api/ecosystem/skills/categories/{categoryId}
   read_sources:
-  - plus_category
+  - c_category
   write_tables:
-  - plus_category
+  - c_category
   - ops_audit_log
   request_schema:
     name: AdminSkillCategoryUpdateRequest
@@ -222,11 +222,11 @@ frontend_operations:
   api_method: DELETE
   api_path: /backend/v3/api/ecosystem/skills/categories/{categoryId}
   read_sources:
-  - plus_category
-  - plus_agent_skill_package
-  - plus_agent_skill
+  - c_category
+  - ai_agent_skill_package
+  - ai_agent_skill
   write_tables:
-  - plus_category
+  - c_category
   - ops_audit_log
   request_body_required: false
   response_schema:
@@ -245,8 +245,8 @@ frontend_operations:
   api_method: GET
   api_path: /backend/v3/api/ecosystem/skills/package
   read_sources:
-  - plus_agent_skill_package
-  - plus_category
+  - ai_agent_skill_package
+  - c_category
   query_parameters:
   - name: q
     schema:
@@ -357,8 +357,8 @@ frontend_operations:
   api_method: GET
   api_path: /backend/v3/api/ecosystem/skills/package/{packageId}
   read_sources:
-  - plus_agent_skill_package
-  - plus_category
+  - ai_agent_skill_package
+  - c_category
   query_parameters: []
   response_schema:
     name: AdminSkillPackageMutationResponse
@@ -380,10 +380,10 @@ frontend_operations:
   api_method: POST
   api_path: /backend/v3/api/ecosystem/skills/package
   read_sources:
-  - plus_agent_skill_package
-  - plus_category
+  - ai_agent_skill_package
+  - c_category
   write_tables:
-  - plus_agent_skill_package
+  - ai_agent_skill_package
   - ops_audit_log
   request_schema:
     name: AdminSkillPackageCreateRequest
@@ -452,10 +452,10 @@ frontend_operations:
   api_method: PUT
   api_path: /backend/v3/api/ecosystem/skills/package/{packageId}
   read_sources:
-  - plus_agent_skill_package
-  - plus_category
+  - ai_agent_skill_package
+  - c_category
   write_tables:
-  - plus_agent_skill_package
+  - ai_agent_skill_package
   - ops_audit_log
   request_schema:
     name: AdminSkillPackageUpdateRequest
@@ -525,11 +525,11 @@ frontend_operations:
   api_method: DELETE
   api_path: /backend/v3/api/ecosystem/skills/package/{packageId}
   read_sources:
-  - plus_agent_skill_package
-  - plus_agent_skill
+  - ai_agent_skill_package
+  - ai_agent_skill
   write_tables:
-  - plus_agent_skill_package
-  - plus_agent_skill
+  - ai_agent_skill_package
+  - ai_agent_skill
   - ops_audit_log
   response_schema:
     name: AdminSkillPackageDeleteResponse
@@ -547,9 +547,9 @@ frontend_operations:
   api_method: POST
   api_path: /backend/v3/api/ecosystem/skills/package/{packageId}/enable
   read_sources:
-  - plus_agent_skill_package
+  - ai_agent_skill_package
   write_tables:
-  - plus_agent_skill_package
+  - ai_agent_skill_package
   - ops_audit_log
   request_body_required: false
   response_schema:
@@ -572,9 +572,9 @@ frontend_operations:
   api_method: POST
   api_path: /backend/v3/api/ecosystem/skills/package/{packageId}/disable
   read_sources:
-  - plus_agent_skill_package
+  - ai_agent_skill_package
   write_tables:
-  - plus_agent_skill_package
+  - ai_agent_skill_package
   - ops_audit_log
   request_body_required: false
   response_schema:
@@ -597,9 +597,9 @@ frontend_operations:
   api_method: GET
   api_path: /backend/v3/api/ecosystem/skills
   read_sources:
-  - plus_agent_skill
-  - plus_agent_skill_package
-  - plus_category
+  - ai_agent_skill
+  - ai_agent_skill_package
+  - c_category
   query_parameters:
   - name: q
     schema:
@@ -852,9 +852,9 @@ frontend_operations:
   api_method: GET
   api_path: /backend/v3/api/ecosystem/skills/{skillId}
   read_sources:
-  - plus_agent_skill
-  - plus_agent_skill_package
-  - plus_category
+  - ai_agent_skill
+  - ai_agent_skill_package
+  - c_category
   query_parameters: []
   response_schema:
     name: AdminSkillMutationResponse
@@ -876,11 +876,11 @@ frontend_operations:
   api_method: POST
   api_path: /backend/v3/api/ecosystem/skills
   read_sources:
-  - plus_agent_skill
-  - plus_agent_skill_package
-  - plus_category
+  - ai_agent_skill
+  - ai_agent_skill_package
+  - c_category
   write_tables:
-  - plus_agent_skill
+  - ai_agent_skill
   - ops_audit_log
   request_schema:
     name: AdminSkillCreateRequest
@@ -1038,11 +1038,11 @@ frontend_operations:
   api_method: PUT
   api_path: /backend/v3/api/ecosystem/skills/{skillId}
   read_sources:
-  - plus_agent_skill
-  - plus_agent_skill_package
-  - plus_category
+  - ai_agent_skill
+  - ai_agent_skill_package
+  - c_category
   write_tables:
-  - plus_agent_skill
+  - ai_agent_skill
   - ops_audit_log
   request_schema:
     name: AdminSkillUpdateRequest
@@ -1195,11 +1195,11 @@ frontend_operations:
   api_method: DELETE
   api_path: /backend/v3/api/ecosystem/skills/{skillId}
   read_sources:
-  - plus_agent_skill
-  - plus_user_agent_skill
+  - ai_agent_skill
+  - ai_user_agent_skill
   write_tables:
-  - plus_agent_skill
-  - plus_user_agent_skill
+  - ai_agent_skill
+  - ai_user_agent_skill
   - ops_audit_log
   response_schema:
     name: AdminSkillDeleteResponse
@@ -1217,9 +1217,9 @@ frontend_operations:
   api_method: POST
   api_path: /backend/v3/api/ecosystem/skills/{skillId}/enable
   read_sources:
-  - plus_agent_skill
+  - ai_agent_skill
   write_tables:
-  - plus_agent_skill
+  - ai_agent_skill
   - ops_audit_log
   request_body_required: false
   response_schema:
@@ -1242,9 +1242,9 @@ frontend_operations:
   api_method: POST
   api_path: /backend/v3/api/ecosystem/skills/{skillId}/disable
   read_sources:
-  - plus_agent_skill
+  - ai_agent_skill
   write_tables:
-  - plus_agent_skill
+  - ai_agent_skill
   - ops_audit_log
   request_body_required: false
   response_schema:
@@ -1267,9 +1267,9 @@ frontend_operations:
   api_method: POST
   api_path: /backend/v3/api/ecosystem/skills/{skillId}/publish
   read_sources:
-  - plus_agent_skill
+  - ai_agent_skill
   write_tables:
-  - plus_agent_skill
+  - ai_agent_skill
   - ops_audit_log
   request_body_required: false
   response_schema:
@@ -1292,9 +1292,9 @@ frontend_operations:
   api_method: POST
   api_path: /backend/v3/api/ecosystem/skills/{skillId}/unpublish
   read_sources:
-  - plus_agent_skill
+  - ai_agent_skill
   write_tables:
-  - plus_agent_skill
+  - ai_agent_skill
   - ops_audit_log
   request_body_required: false
   response_schema:
@@ -1317,9 +1317,9 @@ frontend_operations:
   api_method: POST
   api_path: /backend/v3/api/ecosystem/skills/{skillId}/review/approve
   read_sources:
-  - plus_agent_skill
+  - ai_agent_skill
   write_tables:
-  - plus_agent_skill
+  - ai_agent_skill
   - ops_audit_log
   request_schema:
     name: AdminSkillReviewRequest
@@ -1351,9 +1351,9 @@ frontend_operations:
   api_method: POST
   api_path: /backend/v3/api/ecosystem/skills/{skillId}/review/reject
   read_sources:
-  - plus_agent_skill
+  - ai_agent_skill
   write_tables:
-  - plus_agent_skill
+  - ai_agent_skill
   - ops_audit_log
   request_schema:
     name: AdminSkillReviewRequest
@@ -1385,9 +1385,9 @@ frontend_operations:
   api_method: GET
   api_path: /backend/v3/api/ecosystem/skills/{skillId}/assets
   read_sources:
-  - plus_agent_skill
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - ai_agent_skill
+  - ai_skill_asset
+  - ai_skill_artifact
   query_parameters: []
   response_schema:
     name: AdminSkillAssetListResponse
@@ -1502,9 +1502,9 @@ frontend_operations:
   api_method: GET
   api_path: /backend/v3/api/ecosystem/skills/{skillId}/assets/{assetId}
   read_sources:
-  - plus_agent_skill
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - ai_agent_skill
+  - ai_skill_asset
+  - ai_skill_artifact
   query_parameters: []
   response_schema:
     name: AdminSkillAssetMutationResponse
@@ -1526,11 +1526,11 @@ frontend_operations:
   api_method: POST
   api_path: /backend/v3/api/ecosystem/skills/{skillId}/assets
   read_sources:
-  - plus_agent_skill
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - ai_agent_skill
+  - ai_skill_asset
+  - ai_skill_artifact
   write_tables:
-  - studio_catalog_asset
+  - ai_skill_asset
   - ops_audit_log
   request_schema:
     name: AdminSkillAssetCreateRequest
@@ -1605,11 +1605,11 @@ frontend_operations:
   api_method: PUT
   api_path: /backend/v3/api/ecosystem/skills/{skillId}/assets/{assetId}
   read_sources:
-  - plus_agent_skill
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - ai_agent_skill
+  - ai_skill_asset
+  - ai_skill_artifact
   write_tables:
-  - studio_catalog_asset
+  - ai_skill_asset
   - ops_audit_log
   request_schema:
     name: AdminSkillAssetUpdateRequest
@@ -1692,10 +1692,10 @@ frontend_operations:
   api_method: DELETE
   api_path: /backend/v3/api/ecosystem/skills/{skillId}/assets/{assetId}
   read_sources:
-  - plus_agent_skill
-  - studio_catalog_asset
+  - ai_agent_skill
+  - ai_skill_asset
   write_tables:
-  - studio_catalog_asset
+  - ai_skill_asset
   - ops_audit_log
   response_schema:
     name: AdminSkillAssetDeleteResponse
@@ -1713,9 +1713,9 @@ frontend_operations:
   api_method: GET
   api_path: /backend/v3/api/ecosystem/skills/{skillId}/artifacts
   read_sources:
-  - plus_agent_skill
-  - studio_catalog_artifact
-  - studio_catalog_asset
+  - ai_agent_skill
+  - ai_skill_artifact
+  - ai_skill_asset
   query_parameters: []
   response_schema:
     name: AdminSkillArtifactListResponse
@@ -1845,9 +1845,9 @@ frontend_operations:
   api_method: GET
   api_path: /backend/v3/api/ecosystem/skills/{skillId}/artifacts/{artifactId}
   read_sources:
-  - plus_agent_skill
-  - studio_catalog_artifact
-  - studio_catalog_asset
+  - ai_agent_skill
+  - ai_skill_artifact
+  - ai_skill_asset
   query_parameters: []
   response_schema:
     name: AdminSkillArtifactMutationResponse
@@ -1869,12 +1869,12 @@ frontend_operations:
   api_method: POST
   api_path: /backend/v3/api/ecosystem/skills/{skillId}/artifacts
   read_sources:
-  - plus_agent_skill
-  - studio_catalog_artifact
-  - studio_catalog_asset
+  - ai_agent_skill
+  - ai_skill_artifact
+  - ai_skill_asset
   write_tables:
-  - studio_catalog_artifact
-  - studio_catalog_asset
+  - ai_skill_artifact
+  - ai_skill_asset
   - ops_audit_log
   request_schema:
     name: AdminSkillArtifactCreateRequest
@@ -1957,12 +1957,12 @@ frontend_operations:
   api_method: PUT
   api_path: /backend/v3/api/ecosystem/skills/{skillId}/artifacts/{artifactId}
   read_sources:
-  - plus_agent_skill
-  - studio_catalog_artifact
-  - studio_catalog_asset
+  - ai_agent_skill
+  - ai_skill_artifact
+  - ai_skill_asset
   write_tables:
-  - studio_catalog_artifact
-  - studio_catalog_asset
+  - ai_skill_artifact
+  - ai_skill_asset
   - ops_audit_log
   request_schema:
     name: AdminSkillArtifactUpdateRequest
@@ -2053,12 +2053,12 @@ frontend_operations:
   api_method: DELETE
   api_path: /backend/v3/api/ecosystem/skills/{skillId}/artifacts/{artifactId}
   read_sources:
-  - plus_agent_skill
-  - studio_catalog_artifact
-  - studio_catalog_asset
+  - ai_agent_skill
+  - ai_skill_artifact
+  - ai_skill_asset
   write_tables:
-  - studio_catalog_artifact
-  - studio_catalog_asset
+  - ai_skill_artifact
+  - ai_skill_asset
   - ops_audit_log
   response_schema:
     name: AdminSkillArtifactDeleteResponse

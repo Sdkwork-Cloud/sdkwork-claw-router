@@ -2,8 +2,8 @@ schema_registry:
   name: sdkwork-claw-router
   version: 0.1.0
   date: 2026-04-28
-  standard: ../../specs/DATABASE_SPEC.md
-  api_standard: ../../specs/API_SPEC.md
+  standard: ../../../specs/DATABASE_SPEC.md
+  api_standard: ../../../specs/API_SPEC.md
   source_docs:
   - ../18-SkillsHub-AgentSkills-PlusCategory-compatible-design.md
   - ../19-Finance-Trade-Java-compatible-design.md
@@ -7927,15 +7927,15 @@ tables:
   write_owner: marketing-analytics-worker
   common_columns: projection
   source_tables:
-  - plus_invitation_code
-  - plus_invitation_relation
+  - promotion_code
+  - promotion_code_redemption
   - iam_user
   - commerce_order
   - commerce_payment_attempt
   projection_policy:
     does_not_replace:
-    - plus_invitation_code
-    - plus_invitation_relation
+    - promotion_code
+    - promotion_code_redemption
     - iam_user
     purpose: admin_marketing_referral_analytics_only
   frontend_routes:
@@ -17490,14 +17490,25 @@ tables:
       constraints: NOT NULL
     parent_id: int64
     root_id: int64
+    path: string(512)
+    sort_weight:
+      type: int32
+      constraints: NOT NULL DEFAULT 0
     body: text
     author: json
     likes:
       type: int64
       constraints: NOT NULL DEFAULT 0
+    reply_count:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    is_top:
+      type: bool
+      constraints: NOT NULL DEFAULT FALSE
     status:
       type: int32
       constraints: NOT NULL DEFAULT 1
+    ip_address: string(50)
     client_ip: string(50)
     device_info: string(255)
   indexes:

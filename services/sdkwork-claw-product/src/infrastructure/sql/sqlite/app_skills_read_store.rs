@@ -38,7 +38,7 @@ LEFT JOIN c_category c
   ON c.id = s.category_id
  AND c.tenant_id = s.tenant_id
  AND c.organization_id = s.organization_id
- AND c.type IN (19, 20)
+ AND c.category_type IN ('skill_market', 'skills_collection')
  AND COALESCE(c.visible, 1) = 1
  AND COALESCE(c.status, 1) = 1
 WHERE ((s.tenant_id = ?1 AND s.organization_id = ?2) OR (s.tenant_id = 0 AND s.organization_id = 0))
@@ -76,7 +76,7 @@ LEFT JOIN c_category c
   ON c.id = s.category_id
  AND c.tenant_id = s.tenant_id
  AND c.organization_id = s.organization_id
- AND c.type IN (19, 20)
+ AND c.category_type IN ('skill_market', 'skills_collection')
  AND COALESCE(c.visible, 1) = 1
  AND COALESCE(c.status, 1) = 1
 WHERE ((s.tenant_id = ?1 AND s.organization_id = ?2) OR (s.tenant_id = 0 AND s.organization_id = 0))
@@ -121,7 +121,7 @@ LEFT JOIN c_category c
   ON c.id = s.category_id
  AND c.tenant_id = s.tenant_id
  AND c.organization_id = s.organization_id
- AND c.type IN (19, 20)
+ AND c.category_type IN ('skill_market', 'skills_collection')
  AND COALESCE(c.visible, 1) = 1
  AND COALESCE(c.status, 1) = 1
 WHERE us.tenant_id = ?1
@@ -167,7 +167,7 @@ LEFT JOIN c_category c
   ON c.id = s.category_id
  AND c.tenant_id = s.tenant_id
  AND c.organization_id = s.organization_id
- AND c.type IN (19, 20)
+ AND c.category_type IN ('skill_market', 'skills_collection')
  AND COALESCE(c.visible, 1) = 1
  AND COALESCE(c.status, 1) = 1
 WHERE us.tenant_id = ?1
@@ -311,7 +311,7 @@ impl AppSkillsReadStore for SqliteAppSkillsReadStore {
                     id
                 FROM c_category
                 WHERE ((tenant_id = ?1 AND organization_id = ?2) OR (tenant_id = 0 AND organization_id = 0))
-                  AND type IN (?3, ?4)
+                  AND category_type IN (?3, ?4)
                   AND COALESCE(visible, 1) = 1
                   AND COALESCE(status, 1) = 1
                 ORDER BY sort_weight ASC, id ASC, name ASC

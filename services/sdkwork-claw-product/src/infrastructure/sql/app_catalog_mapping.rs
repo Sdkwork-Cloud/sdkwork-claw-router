@@ -5,8 +5,8 @@ use crate::ports::{AppSkillItem, AppSkillPackageItem, AppStoreItem, AppStoreRele
 
 pub(crate) const CATALOG_TARGET_TYPE_APP: i64 = 15;
 pub(crate) const CATALOG_TARGET_TYPE_SKILL: i64 = 35;
-pub(crate) const CATEGORY_TYPE_SKILLS: i64 = 19;
-pub(crate) const CATEGORY_TYPE_SKILLS_COLLECTION: i64 = 20;
+pub(crate) const CATEGORY_TYPE_SKILLS: &str = "skill_market";
+pub(crate) const CATEGORY_TYPE_SKILLS_COLLECTION: &str = "skills_collection";
 
 const DEFAULT_APP_CATEGORY: &str = "General";
 const DEFAULT_DEVELOPER: &str = "SDKWork";

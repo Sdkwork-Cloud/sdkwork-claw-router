@@ -10,7 +10,7 @@ routes:
   delivery_kind: schema_provenanced_content
   provenance_tables:
   - content_doc_page
-  - plus_app
+  - platform_app
   static_delivery:
     mode: curated_seed_content
     refresh_policy: manual_content_release
@@ -67,7 +67,7 @@ routes:
   - ai_prompt
   - ai_prompt_version
   - ai_prompt_binding
-  - plus_category
+  - c_category
   - ops_audit_log
   evidence:
   - apps/sdkwork-clawrouter-pc/src/App.tsx
@@ -86,7 +86,7 @@ routes:
   - ai_mcp_server_revision
   - ai_mcp_tool
   - ai_mcp_binding
-  - plus_category
+  - c_category
   - ops_audit_log
   evidence:
   - apps/sdkwork-clawrouter-pc/src/App.tsx
@@ -1038,7 +1038,7 @@ routes:
   api_surface: backend
   required_tables:
   - commerce_product_category
-  - plus_category
+  - c_category
   - commerce_product_spu
   - commerce_product_spu_category
   - commerce_product_sku
@@ -2647,8 +2647,8 @@ routes:
   - promotion_external_binding
   - promotion_external_operation
   - promotion_event_outbox
-  - plus_invitation_code
-  - plus_invitation_relation
+  - promotion_code
+  - promotion_code_redemption
   - ops_referral_stat_snapshot
   evidence: *promotionAdminEvidence
 - route: /admin/storage

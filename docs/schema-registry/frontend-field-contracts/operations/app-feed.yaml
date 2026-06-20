@@ -9,10 +9,10 @@ frontend_operations:
   api_path: /app/v3/api/content/feeds/overview
   sdk_domain: feed
   read_sources:
-  - plus_feeds
-  - plus_comments
-  - plus_content_vote
-  - plus_favorite
+  - content_forum_post
+  - content_comment
+  - content_reaction
+  - content_favorite
   query_parameters: []
   response_schema:
     name: ForumOverviewResponse
@@ -122,9 +122,9 @@ frontend_operations:
   api_path: /app/v3/api/content/feeds
   sdk_domain: feed
   read_sources:
-  - plus_feeds
-  - plus_content_vote
-  - plus_favorite
+  - content_forum_post
+  - content_reaction
+  - content_favorite
   query_parameters:
   - name: type
     schema:
@@ -286,9 +286,9 @@ frontend_operations:
   api_path: /app/v3/api/content/feeds/{id}
   sdk_domain: feed
   read_sources:
-  - plus_feeds
-  - plus_content_vote
-  - plus_favorite
+  - content_forum_post
+  - content_reaction
+  - content_favorite
   query_parameters: []
   response_schema: *id001
 - route: /forum
@@ -300,9 +300,9 @@ frontend_operations:
   api_path: /app/v3/api/content/feeds
   sdk_domain: feed
   read_sources:
-  - plus_feeds
+  - content_forum_post
   write_tables:
-  - plus_feeds
+  - content_forum_post
   request_schema:
     name: ForumCreateFeedRequest
     type: object
@@ -349,9 +349,9 @@ frontend_operations:
   api_path: /app/v3/api/content/feeds/{id}
   sdk_domain: feed
   read_sources:
-  - plus_feeds
+  - content_forum_post
   write_tables:
-  - plus_feeds
+  - content_forum_post
   response_schema: &id003
     name: ForumBooleanResponse
     type: boolean
@@ -364,11 +364,11 @@ frontend_operations:
   api_path: /app/v3/api/content/feeds/{id}/likes
   sdk_domain: feed
   read_sources:
-  - plus_feeds
-  - plus_content_vote
+  - content_forum_post
+  - content_reaction
   write_tables:
-  - plus_content_vote
-  - plus_feeds
+  - content_reaction
+  - content_forum_post
   request_body_required: false
   response_schema: *id001
 - route: /forum/:id
@@ -380,11 +380,11 @@ frontend_operations:
   api_path: /app/v3/api/content/feeds/{id}/likes/current
   sdk_domain: feed
   read_sources:
-  - plus_feeds
-  - plus_content_vote
+  - content_forum_post
+  - content_reaction
   write_tables:
-  - plus_content_vote
-  - plus_feeds
+  - content_reaction
+  - content_forum_post
   request_body_required: false
   response_schema: *id001
 - route: /forum/:id
@@ -396,11 +396,11 @@ frontend_operations:
   api_path: /app/v3/api/content/feeds/{id}/collections
   sdk_domain: feed
   read_sources:
-  - plus_feeds
-  - plus_favorite
+  - content_forum_post
+  - content_favorite
   write_tables:
-  - plus_favorite
-  - plus_feeds
+  - content_favorite
+  - content_forum_post
   request_body_required: false
   query_parameters:
   - name: folder_id
@@ -418,11 +418,11 @@ frontend_operations:
   api_path: /app/v3/api/content/feeds/{id}/collections/current
   sdk_domain: feed
   read_sources:
-  - plus_feeds
-  - plus_favorite
+  - content_forum_post
+  - content_favorite
   write_tables:
-  - plus_favorite
-  - plus_feeds
+  - content_favorite
+  - content_forum_post
   request_body_required: false
   response_schema: *id001
 - route: /forum/:id
@@ -434,9 +434,9 @@ frontend_operations:
   api_path: /app/v3/api/content/feeds/{id}/shares
   sdk_domain: feed
   read_sources:
-  - plus_feeds
+  - content_forum_post
   write_tables:
-  - plus_feeds
+  - content_forum_post
   request_body_required: false
   response_schema: *id001
 - route: /forum
@@ -448,9 +448,9 @@ frontend_operations:
   api_path: /app/v3/api/content/feeds/hot
   sdk_domain: feed
   read_sources:
-  - plus_feeds
-  - plus_content_vote
-  - plus_favorite
+  - content_forum_post
+  - content_reaction
+  - content_favorite
   query_parameters:
   - name: limit
     schema:
@@ -468,9 +468,9 @@ frontend_operations:
   api_path: /app/v3/api/content/feeds/recommend
   sdk_domain: feed
   read_sources:
-  - plus_feeds
-  - plus_content_vote
-  - plus_favorite
+  - content_forum_post
+  - content_reaction
+  - content_favorite
   query_parameters:
   - name: limit
     schema:
@@ -489,9 +489,9 @@ frontend_operations:
   openapi_exposed: false
   sdk_domain: feed
   read_sources:
-  - plus_feeds
-  - plus_content_vote
-  - plus_favorite
+  - content_forum_post
+  - content_reaction
+  - content_favorite
   query_parameters:
   - name: q
     required: true
@@ -519,9 +519,9 @@ frontend_operations:
   api_path: /app/v3/api/content/feeds/top
   sdk_domain: feed
   read_sources:
-  - plus_feeds
-  - plus_content_vote
-  - plus_favorite
+  - content_forum_post
+  - content_reaction
+  - content_favorite
   query_parameters:
   - name: limit
     schema:
@@ -539,9 +539,9 @@ frontend_operations:
   api_path: /app/v3/api/content/feeds/category/{categoryId}
   sdk_domain: feed
   read_sources:
-  - plus_feeds
-  - plus_content_vote
-  - plus_favorite
+  - content_forum_post
+  - content_reaction
+  - content_favorite
   query_parameters:
   - name: page
     schema:
@@ -564,9 +564,9 @@ frontend_operations:
   api_path: /app/v3/api/content/feeds/most_viewed
   sdk_domain: feed
   read_sources:
-  - plus_feeds
-  - plus_content_vote
-  - plus_favorite
+  - content_forum_post
+  - content_reaction
+  - content_favorite
   query_parameters:
   - name: limit
     schema:
@@ -584,9 +584,9 @@ frontend_operations:
   api_path: /app/v3/api/content/feeds/most_liked
   sdk_domain: feed
   read_sources:
-  - plus_feeds
-  - plus_content_vote
-  - plus_favorite
+  - content_forum_post
+  - content_reaction
+  - content_favorite
   query_parameters:
   - name: limit
     schema:
@@ -604,6 +604,6 @@ frontend_operations:
   api_path: /app/v3/api/content/feeds/{id}/collections/current
   sdk_domain: feed
   read_sources:
-  - plus_favorite
+  - content_favorite
   query_parameters: []
   response_schema: *id003

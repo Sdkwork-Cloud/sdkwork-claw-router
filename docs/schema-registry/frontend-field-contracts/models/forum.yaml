@@ -9,8 +9,8 @@ frontend_models:
   - memberCount
   - onlineMembers
   data_sources:
-  - plus_feeds
-  - plus_comments
+  - content_forum_post
+  - content_comment
 - route: /forum
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   interface: ForumOverviewSource
@@ -20,10 +20,10 @@ frontend_models:
   - sourceTables
   - observedAt
   data_sources:
-  - plus_feeds
-  - plus_comments
-  - plus_content_vote
-  - plus_favorite
+  - content_forum_post
+  - content_comment
+  - content_reaction
+  - content_favorite
 - route: /forum
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   interface: ForumOverview
@@ -40,10 +40,10 @@ frontend_models:
   - source.sourceTables
   - source.observedAt
   data_sources:
-  - plus_feeds
-  - plus_comments
-  - plus_content_vote
-  - plus_favorite
+  - content_forum_post
+  - content_comment
+  - content_reaction
+  - content_favorite
 - route: /forum
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   interface: ForumFeedFilters
@@ -57,9 +57,9 @@ frontend_models:
   - size
   - authorId
   data_sources:
-  - plus_feeds
-  - plus_content_vote
-  - plus_favorite
+  - content_forum_post
+  - content_reaction
+  - content_favorite
 - route: /forum/:id
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   interface: ForumCommentQuery
@@ -69,8 +69,8 @@ frontend_models:
   - page
   - size
   data_sources:
-  - plus_comments
-  - plus_content_vote
+  - content_comment
+  - content_reaction
 - route: /forum
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   interface: ForumFeedInput
@@ -83,14 +83,14 @@ frontend_models:
   - source
   - sourceUrl
   data_sources:
-  - plus_feeds
+  - content_forum_post
 - route: /forum/:id
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   interface: ForumFeedStatistics
   fields:
   - totalComments
   data_sources:
-  - plus_comments
+  - content_comment
 - route: /forum/:id
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   interface: ForumCommentInput
@@ -100,14 +100,14 @@ frontend_models:
   - content
   - deviceInfo
   data_sources:
-  - plus_comments
+  - content_comment
 - route: /forum/:id
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   interface: ForumCollectInput
   fields:
   - folderId
   data_sources:
-  - plus_favorite
+  - content_favorite
 - route: /forum/:id
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   interface: ForumReplyInput
@@ -115,4 +115,4 @@ frontend_models:
   - content
   - deviceInfo
   data_sources:
-  - plus_comments
+  - content_comment

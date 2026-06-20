@@ -9,8 +9,8 @@ frontend_operations:
   api_path: /app/v3/api/content/comments
   sdk_domain: comment
   read_sources:
-  - plus_comments
-  - plus_content_vote
+  - content_comment
+  - content_reaction
   query_parameters:
   - name: content_type
     required: true
@@ -168,8 +168,8 @@ frontend_operations:
   api_path: /app/v3/api/content/comments/{commentId}/replies
   sdk_domain: comment
   read_sources:
-  - plus_comments
-  - plus_content_vote
+  - content_comment
+  - content_reaction
   query_parameters:
   - name: page
     schema:
@@ -192,8 +192,8 @@ frontend_operations:
   api_path: /app/v3/api/content/comments/{commentId}
   sdk_domain: comment
   read_sources:
-  - plus_comments
-  - plus_content_vote
+  - content_comment
+  - content_reaction
   query_parameters: []
   response_schema:
     name: ForumCommentDetail
@@ -284,8 +284,8 @@ frontend_operations:
   api_path: /app/v3/api/content/users/current/comments
   sdk_domain: comment
   read_sources:
-  - plus_comments
-  - plus_content_vote
+  - content_comment
+  - content_reaction
   query_parameters:
   - name: page
     schema:
@@ -308,7 +308,7 @@ frontend_operations:
   api_path: /app/v3/api/content/comments/statistics
   sdk_domain: comment
   read_sources:
-  - plus_comments
+  - content_comment
   query_parameters:
   - name: content_type
     required: true
@@ -349,9 +349,9 @@ frontend_operations:
   api_path: /app/v3/api/content/comments
   sdk_domain: comment
   read_sources:
-  - plus_comments
+  - content_comment
   write_tables:
-  - plus_comments
+  - content_comment
   request_schema:
     name: ForumCreateCommentRequest
     type: object
@@ -393,9 +393,9 @@ frontend_operations:
   api_path: /app/v3/api/content/comments/{commentId}/reply
   sdk_domain: comment
   read_sources:
-  - plus_comments
+  - content_comment
   write_tables:
-  - plus_comments
+  - content_comment
   request_schema:
     name: ForumReplyCommentRequest
     type: object
@@ -420,9 +420,9 @@ frontend_operations:
   api_path: /app/v3/api/content/comments/{commentId}
   sdk_domain: comment
   read_sources:
-  - plus_comments
+  - content_comment
   write_tables:
-  - plus_comments
+  - content_comment
   response_schema:
     name: NoData
     schema:
@@ -436,11 +436,11 @@ frontend_operations:
   api_path: /app/v3/api/content/comments/{commentId}/likes
   sdk_domain: comment
   read_sources:
-  - plus_comments
-  - plus_content_vote
+  - content_comment
+  - content_reaction
   write_tables:
-  - plus_content_vote
-  - plus_comments
+  - content_reaction
+  - content_comment
   request_body_required: false
   response_schema: *id001
 - route: /forum/:id
@@ -452,11 +452,11 @@ frontend_operations:
   api_path: /app/v3/api/content/comments/{commentId}/likes/current
   sdk_domain: comment
   read_sources:
-  - plus_comments
-  - plus_content_vote
+  - content_comment
+  - content_reaction
   write_tables:
-  - plus_content_vote
-  - plus_comments
+  - content_reaction
+  - content_comment
   response_schema: *id001
 - route: /forum/:id
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
@@ -467,9 +467,9 @@ frontend_operations:
   api_path: /app/v3/api/content/comments/{commentId}/pins
   sdk_domain: comment
   read_sources:
-  - plus_comments
+  - content_comment
   write_tables:
-  - plus_comments
+  - content_comment
   request_body_required: false
   response_schema: *id001
 - route: /forum/:id
@@ -481,7 +481,7 @@ frontend_operations:
   api_path: /app/v3/api/content/comments/{commentId}/pins/current
   sdk_domain: comment
   read_sources:
-  - plus_comments
+  - content_comment
   write_tables:
-  - plus_comments
+  - content_comment
   response_schema: *id001

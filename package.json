@@ -48,8 +48,8 @@
     "admin:reset:dev:postgres": "node scripts/reset-admin-account.mjs --mode dev --dev-env-file .env.postgres",
     "admin:reset:release": "node scripts/reset-admin-account.mjs --mode release",
     "db": "node scripts/manage-claw-router-database.mjs",
-    "db:status": "node scripts/manage-claw-router-database.mjs status",
-    "db:init": "node scripts/manage-claw-router-database.mjs init",
+    "db:status": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . status",
+    "db:init": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . init",
     "db:upgrade": "node scripts/manage-claw-router-database.mjs upgrade",
     "db:ensure": "node scripts/manage-claw-router-database.mjs ensure",
     "db:refresh-catalog": "node scripts/manage-claw-router-database.mjs refresh-catalog",
@@ -110,6 +110,14 @@
     "nginx:render": "node scripts/configure-nginx.mjs --write",
     "nginx:deploy": "node scripts/configure-nginx.mjs --deploy",
     "check:alignment:audit": "python tools/sdkwork_standard_alignment_guardian.py",
-    "check:alignment": "python tools/sdkwork_standard_alignment_guardian.py --strict"
+    "check:alignment": "python tools/sdkwork_standard_alignment_guardian.py --strict",
+    "db:validate": "node ../sdkwork-specs/tools/check-database-framework-standard.mjs --root .",
+    "db:plan": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . plan",
+    "db:migrate": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . migrate",
+    "db:seed": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . seed",
+    "db:drift": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . drift",
+    "db:drift:check": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . drift-check",
+    "db:bootstrap": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . bootstrap",
+    "test:contract:database": "node ../sdkwork-specs/tools/check-database-framework-standard.mjs --root ."
   }
 }

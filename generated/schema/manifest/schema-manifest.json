@@ -46672,6 +46672,16 @@
           "type": "int64"
         },
         {
+          "name": "path",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "sort_weight",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
           "name": "body",
           "source": "explicit",
           "type": "text"
@@ -46687,9 +46697,24 @@
           "type": "int64"
         },
         {
+          "name": "reply_count",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "is_top",
+          "source": "explicit",
+          "type": "bool"
+        },
+        {
           "name": "status",
           "source": "explicit",
           "type": "int32"
+        },
+        {
+          "name": "ip_address",
+          "source": "explicit",
+          "type": "string(50)"
         },
         {
           "name": "client_ip",
@@ -68390,8 +68415,8 @@
       "profile": "projection",
       "projection_policy": {
         "does_not_replace": [
-          "plus_invitation_code",
-          "plus_invitation_relation",
+          "promotion_code",
+          "promotion_code_redemption",
           "iam_user"
         ],
         "purpose": "admin_marketing_referral_analytics_only"
@@ -68399,8 +68424,8 @@
       "security": null,
       "source_refs": [],
       "source_tables": [
-        "plus_invitation_code",
-        "plus_invitation_relation",
+        "promotion_code",
+        "promotion_code_redemption",
         "iam_user",
         "commerce_order",
         "commerce_payment_attempt"

@@ -2481,16 +2481,16 @@ async fn insert_recharge_product_row(
     sqlx::query(
         r#"
         INSERT INTO commerce_product_spu
-            (id, tenant_id, organization_id, spu_no, title, subtitle, description, product_type, category_id, sales_status, visible_surfaces, created_at, updated_at)
+            (id, tenant_id, organization_id, spu_no, title, subtitle, description, product_type, status, visible_surfaces, created_at, updated_at)
         VALUES
-            (?, CAST(? AS TEXT), CAST(? AS TEXT), ?, ?, ?, ?, 'points_recharge', 'commerce-recharge', 'active', '["app","console","admin"]', ?, ?)
+            (?, CAST(? AS TEXT), CAST(? AS TEXT), ?, ?, ?, ?, 'points_recharge', 'active', '["app","console","admin"]', ?, ?)
         ON CONFLICT(tenant_id, spu_no) DO UPDATE SET
             id = excluded.id,
             organization_id = excluded.organization_id,
             title = excluded.title,
             subtitle = excluded.subtitle,
             description = excluded.description,
-            sales_status = excluded.sales_status,
+            status = excluded.status,
             visible_surfaces = excluded.visible_surfaces,
             updated_at = excluded.updated_at
         "#,
@@ -2507,6 +2507,31 @@ async fn insert_recharge_product_row(
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to create recharge product", error))?;
+
+    let spu_category_id = format!("{product_id}:commerce-recharge");
+    sqlx::query(
+        r#"
+        INSERT INTO commerce_product_spu_category
+            (id, tenant_id, organization_id, spu_id, category_id, primary_flag, sort_order, status, created_at, updated_at)
+        VALUES
+            (?, CAST(? AS TEXT), CAST(? AS TEXT), ?, 'commerce-recharge', 1, 0, 'active', ?, ?)
+        ON CONFLICT(tenant_id, spu_id, category_id) DO UPDATE SET
+            organization_id = excluded.organization_id,
+            primary_flag = excluded.primary_flag,
+            sort_order = excluded.sort_order,
+            status = excluded.status,
+            updated_at = excluded.updated_at
+        "#,
+    )
+    .bind(spu_category_id)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(&product_id)
+    .bind(requested_at)
+    .bind(requested_at)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to link recharge product category", error))?;
 
     Ok(product_id)
 }
@@ -2525,7 +2550,7 @@ async fn insert_recharge_sku_row(
     sqlx::query(
         r#"
         INSERT INTO commerce_product_sku
-            (id, tenant_id, organization_id, spu_id, sku_no, name, title, price_amount, original_price_amount, currency_code, delivery_mode, inventory_tracking, sales_status, spec_json, created_at, updated_at)
+            (id, tenant_id, organization_id, spu_id, sku_no, name, title, price_amount, original_price_amount, currency_code, fulfillment_type, inventory_tracking, status, spec_json, created_at, updated_at)
         VALUES
             (?, CAST(? AS TEXT), CAST(? AS TEXT), ?, ?, ?, ?, ?, ?, ?, 'points_credit', 'untracked', ?, ?, ?, ?)
         ON CONFLICT(tenant_id, sku_no) DO UPDATE SET
@@ -2535,7 +2560,7 @@ async fn insert_recharge_sku_row(
             price_amount = excluded.price_amount,
             original_price_amount = excluded.original_price_amount,
             currency_code = excluded.currency_code,
-            sales_status = excluded.sales_status,
+            status = excluded.status,
             spec_json = excluded.spec_json,
             updated_at = excluded.updated_at
         "#,
@@ -2580,7 +2605,7 @@ async fn update_recharge_sku_row_by_id(
             price_amount = ?,
             original_price_amount = ?,
             currency_code = ?,
-            sales_status = ?,
+            status = ?,
             spec_json = ?,
             updated_at = ?
         WHERE id = ?
@@ -2620,7 +2645,7 @@ async fn update_recharge_sku_sales_status_by_id(
     let result = sqlx::query(
         r#"
         UPDATE commerce_product_sku
-        SET sales_status = ?,
+        SET status = ?,
             updated_at = ?
         WHERE id = ?
           AND tenant_id = CAST(? AS TEXT)
@@ -2652,7 +2677,7 @@ async fn refresh_recharge_product_sales_status(
         SELECT COUNT(1)
         FROM commerce_product_sku
         WHERE spu_id = ?
-          AND sales_status = 'active'
+          AND status = 'active'
         "#,
     )
     .bind(product_id)
@@ -2664,7 +2689,7 @@ async fn refresh_recharge_product_sales_status(
         r#"
         UPDATE commerce_product_spu
         SET description = ?,
-            sales_status = ?,
+            status = ?,
             updated_at = ?
         WHERE id = ?
         "#,

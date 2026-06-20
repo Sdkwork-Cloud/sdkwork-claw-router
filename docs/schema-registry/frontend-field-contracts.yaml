@@ -1,7 +1,7 @@
 version: 0.1.0
-rule: every actual portal route must be backed by explicit schema tables; page-critical fields must map to generated columns or Java-owned physical columns.
-schema: sdkwork-claw-router-frontend-field-contracts
 source: apps/sdkwork-clawrouter-pc/src/App.tsx
+schema: sdkwork-claw-router-frontend-field-contracts
+rule: every actual portal route must be backed by explicit schema tables; page-critical fields must map to generated columns or Java-owned physical columns.
 x_response_entities:
   admin_announcement_item:
     name: AdminAnnouncementItem
@@ -4533,7 +4533,7 @@ x_response_entities:
         type: string
         minLength: 1
         maxLength: 128
-        description: Stable application identity from plus_app.config.standard.appKey when present; falls back to plus_app.id only when appKey is absent.
+        description: Stable application identity from platform_app.config.standard.appKey when present; falls back to platform_app.id only when appKey is absent.
       name: { type: string, minLength: 1, maxLength: 128 }
       developer: { type: string, minLength: 1, maxLength: 128 }
       category: { type: string, minLength: 1, maxLength: 128 }
@@ -7706,7 +7706,7 @@ frontend_models:
       - updatedAt
     data_sources:
       - ai_prompt
-      - plus_category
+      - c_category
   - route: /admin/prompts
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts
     interface: AdminPromptVersion
@@ -8002,7 +8002,7 @@ frontend_models:
       - status
       - type
     data_sources:
-      - plus_category
+      - c_category
   - route: /admin/skill
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
     interface: AdminSkillCategoryCreateInput
@@ -8018,7 +8018,7 @@ frontend_models:
       - status
       - type
     data_sources:
-      - plus_category
+      - c_category
   - route: /admin/skill
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
     interface: AdminSkillCategoryUpdateInput
@@ -8034,7 +8034,7 @@ frontend_models:
       - status
       - type
     data_sources:
-      - plus_category
+      - c_category
   - route: /admin/skill
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
     interface: AdminSkillPackage
@@ -8055,8 +8055,8 @@ frontend_models:
       - createdAt
       - updatedAt
     data_sources:
-      - plus_agent_skill_package
-      - plus_category
+      - ai_agent_skill_package
+      - c_category
   - route: /admin/skill
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
     interface: AdminSkillPackageListInput
@@ -8067,8 +8067,8 @@ frontend_models:
       - page
       - pageSize
     data_sources:
-      - plus_agent_skill_package
-      - plus_category
+      - ai_agent_skill_package
+      - c_category
   - route: /admin/skill
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
     interface: AdminSkillPackageCreateInput
@@ -8085,8 +8085,8 @@ frontend_models:
       - tags
       - cover
     data_sources:
-      - plus_agent_skill_package
-      - plus_category
+      - ai_agent_skill_package
+      - c_category
   - route: /admin/skill
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
     interface: AdminSkillPackageUpdateInput
@@ -8103,8 +8103,8 @@ frontend_models:
       - tags
       - cover
     data_sources:
-      - plus_agent_skill_package
-      - plus_category
+      - ai_agent_skill_package
+      - c_category
   - route: /admin/skill
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
     interface: AdminSkill
@@ -8153,9 +8153,9 @@ frontend_models:
       - createdAt
       - updatedAt
     data_sources:
-      - plus_agent_skill
-      - plus_agent_skill_package
-      - plus_category
+      - ai_agent_skill
+      - ai_agent_skill_package
+      - c_category
   - route: /admin/skill
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
     interface: AdminSkillListInput
@@ -8169,9 +8169,9 @@ frontend_models:
       - page
       - pageSize
     data_sources:
-      - plus_agent_skill
-      - plus_agent_skill_package
-      - plus_category
+      - ai_agent_skill
+      - ai_agent_skill_package
+      - c_category
   - route: /admin/skill
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
     interface: AdminSkillCreateInput
@@ -8210,9 +8210,9 @@ frontend_models:
       - configSchema
       - defaultConfig
     data_sources:
-      - plus_agent_skill
-      - plus_agent_skill_package
-      - plus_category
+      - ai_agent_skill
+      - ai_agent_skill_package
+      - c_category
   - route: /admin/skill
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
     interface: AdminSkillUpdateInput
@@ -8248,9 +8248,9 @@ frontend_models:
       - configSchema
       - defaultConfig
     data_sources:
-      - plus_agent_skill
-      - plus_agent_skill_package
-      - plus_category
+      - ai_agent_skill
+      - ai_agent_skill_package
+      - c_category
   - route: /admin/skill
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
     interface: AdminSkillAsset
@@ -8276,9 +8276,9 @@ frontend_models:
       - createdAt
       - updatedAt
     data_sources:
-      - plus_agent_skill
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - ai_agent_skill
+      - ai_skill_asset
+      - ai_skill_artifact
   - route: /admin/skill
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
     interface: AdminSkillAssetCreateInput
@@ -8298,9 +8298,9 @@ frontend_models:
       - status
       - publishedAt
     data_sources:
-      - plus_agent_skill
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - ai_agent_skill
+      - ai_skill_asset
+      - ai_skill_artifact
   - route: /admin/skill
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
     interface: AdminSkillAssetUpdateInput
@@ -8320,9 +8320,9 @@ frontend_models:
       - status
       - publishedAt
     data_sources:
-      - plus_agent_skill
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - ai_agent_skill
+      - ai_skill_asset
+      - ai_skill_artifact
   - route: /admin/skill
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
     interface: AdminSkillArtifact
@@ -8349,9 +8349,9 @@ frontend_models:
       - createdAt
       - updatedAt
     data_sources:
-      - plus_agent_skill
-      - studio_catalog_artifact
-      - studio_catalog_asset
+      - ai_agent_skill
+      - ai_skill_artifact
+      - ai_skill_asset
   - route: /admin/skill
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
     interface: AdminSkillArtifactCreateInput
@@ -8372,9 +8372,9 @@ frontend_models:
       - publishedAt
       - deprecatedAt
     data_sources:
-      - plus_agent_skill
-      - studio_catalog_artifact
-      - studio_catalog_asset
+      - ai_agent_skill
+      - ai_skill_artifact
+      - ai_skill_asset
   - route: /admin/skill
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
     interface: AdminSkillArtifactUpdateInput
@@ -8395,9 +8395,9 @@ frontend_models:
       - publishedAt
       - deprecatedAt
     data_sources:
-      - plus_agent_skill
-      - studio_catalog_artifact
-      - studio_catalog_asset
+      - ai_agent_skill
+      - ai_skill_artifact
+      - ai_skill_asset
   - route: /admin/mcp
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-mcp/src/mcpService.ts
     interface: AdminMcpServer
@@ -8427,7 +8427,7 @@ frontend_models:
       - updatedAt
     data_sources:
       - ai_mcp_server
-      - plus_category
+      - c_category
   - route: /admin/mcp
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-mcp/src/mcpService.ts
     interface: AdminMcpServerRevision
@@ -8666,10 +8666,8 @@ frontend_models:
       - createdAt
       - updatedAt
     data_sources:
-      - plus_app
-      - plus_category
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - platform_app
+      - c_category
   - route: /admin/app
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     interface: AdminAppCategory
@@ -8686,7 +8684,7 @@ frontend_models:
       - status
       - type
     data_sources:
-      - plus_category
+      - c_category
   - route: /admin/app
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     interface: AdminAppCategoryCreateInput
@@ -8701,7 +8699,7 @@ frontend_models:
       - visible
       - status
     data_sources:
-      - plus_category
+      - c_category
   - route: /admin/app
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     interface: AdminAppCategoryUpdateInput
@@ -8716,7 +8714,7 @@ frontend_models:
       - visible
       - status
     data_sources:
-      - plus_category
+      - c_category
   - route: /admin/app
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     interface: AdminAppListInput
@@ -8729,10 +8727,8 @@ frontend_models:
       - page
       - pageSize
     data_sources:
-      - plus_app
-      - plus_category
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - platform_app
+      - c_category
   - route: /admin/app
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     interface: AdminAppPage
@@ -8769,10 +8765,8 @@ frontend_models:
       - pageSize
       - hasNextPage
     data_sources:
-      - plus_app
-      - plus_category
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - platform_app
+      - c_category
   - route: /admin/app
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     interface: AdminAppCreateInput
@@ -8799,10 +8793,8 @@ frontend_models:
       - storeUrl
       - artifact
     data_sources:
-      - plus_app
-      - plus_category
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - platform_app
+      - c_category
   - route: /admin/app
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     interface: AdminAppUpdateInput
@@ -8827,10 +8819,8 @@ frontend_models:
       - storeUrl
       - artifact
     data_sources:
-      - plus_app
-      - plus_category
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - platform_app
+      - c_category
   - route: /admin/app
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     interface: AdminAppTemplate
@@ -9005,10 +8995,7 @@ frontend_models:
       - releases.artifact
       - releases.whatsNew
     data_sources:
-      - plus_app
-      - studio_catalog_action
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - platform_app
   - route: /apps
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/appRuntime.ts
     interface: AppRelease
@@ -9021,8 +9008,7 @@ frontend_models:
       - releaseDate
       - artifact
       - whatsNew
-    data_sources:
-      - studio_catalog_artifact
+    data_sources: null
   - route: /apps
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/appService.ts
     interface: AppFilters
@@ -9034,8 +9020,7 @@ frontend_models:
       - page
       - pageSize
     data_sources:
-      - plus_app
-      - studio_catalog_artifact
+      - platform_app
   - route: /apps
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/appService.ts
     interface: AppCatalogPage
@@ -9046,8 +9031,7 @@ frontend_models:
       - pageSize
       - hasNextPage
     data_sources:
-      - plus_app
-      - studio_catalog_artifact
+      - platform_app
   - route: /console/notifications
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
     interface: NotificationItem
@@ -9775,8 +9759,8 @@ frontend_models:
     data_sources:
       - content_course
       - content_course_relation
-      - plus_category
-      - plus_comments
+      - c_category
+      - content_comment
       - content_reaction
   - route: /courses
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
@@ -9791,7 +9775,7 @@ frontend_models:
       - sortWeight
       - courseCount
     data_sources:
-      - plus_category
+      - c_category
       - content_course
   - route: /courses
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
@@ -9803,8 +9787,8 @@ frontend_models:
       - totalCategories
     data_sources:
       - content_course
-      - plus_category
-      - plus_comments
+      - c_category
+      - content_comment
       - content_reaction
   - route: /courses
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
@@ -9818,8 +9802,8 @@ frontend_models:
       - source
     data_sources:
       - content_course
-      - plus_category
-      - plus_comments
+      - c_category
+      - content_comment
       - content_reaction
   - route: /courses
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
@@ -9832,7 +9816,7 @@ frontend_models:
       - size
     data_sources:
       - content_course
-      - plus_category
+      - c_category
   - route: /courses
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
     interface: CourseCatalogResult
@@ -9854,8 +9838,8 @@ frontend_models:
     data_sources:
       - content_course
       - content_course_relation
-      - plus_category
-      - plus_comments
+      - c_category
+      - content_comment
       - content_reaction
   - route: /courses
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
@@ -9925,8 +9909,8 @@ frontend_models:
       - content_course_section
       - content_course_lesson
       - content_course_relation
-      - plus_category
-      - plus_comments
+      - c_category
+      - content_comment
       - content_reaction
   - route: /forum
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
@@ -9937,8 +9921,8 @@ frontend_models:
       - memberCount
       - onlineMembers
     data_sources:
-      - plus_feeds
-      - plus_comments
+      - content_forum_post
+      - content_comment
   - route: /forum
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
     interface: ForumOverviewSource
@@ -9948,10 +9932,10 @@ frontend_models:
       - sourceTables
       - observedAt
     data_sources:
-      - plus_feeds
-      - plus_comments
-      - plus_content_vote
-      - plus_favorite
+      - content_forum_post
+      - content_comment
+      - content_reaction
+      - content_favorite
   - route: /forum
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
     interface: ForumOverview
@@ -9968,10 +9952,10 @@ frontend_models:
       - source.sourceTables
       - source.observedAt
     data_sources:
-      - plus_feeds
-      - plus_comments
-      - plus_content_vote
-      - plus_favorite
+      - content_forum_post
+      - content_comment
+      - content_reaction
+      - content_favorite
   - route: /forum
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
     interface: ForumFeedFilters
@@ -9985,9 +9969,9 @@ frontend_models:
       - size
       - authorId
     data_sources:
-      - plus_feeds
-      - plus_content_vote
-      - plus_favorite
+      - content_forum_post
+      - content_reaction
+      - content_favorite
   - route: /forum/:id
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
     interface: ForumCommentQuery
@@ -9997,8 +9981,8 @@ frontend_models:
       - page
       - size
     data_sources:
-      - plus_comments
-      - plus_content_vote
+      - content_comment
+      - content_reaction
   - route: /forum
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
     interface: ForumFeedInput
@@ -10011,14 +9995,14 @@ frontend_models:
       - source
       - sourceUrl
     data_sources:
-      - plus_feeds
+      - content_forum_post
   - route: /forum/:id
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
     interface: ForumFeedStatistics
     fields:
       - totalComments
     data_sources:
-      - plus_comments
+      - content_comment
   - route: /forum/:id
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
     interface: ForumCommentInput
@@ -10028,14 +10012,14 @@ frontend_models:
       - content
       - deviceInfo
     data_sources:
-      - plus_comments
+      - content_comment
   - route: /forum/:id
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
     interface: ForumCollectInput
     fields:
       - folderId
     data_sources:
-      - plus_favorite
+      - content_favorite
   - route: /forum/:id
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
     interface: ForumReplyInput
@@ -10043,7 +10027,7 @@ frontend_models:
       - content
       - deviceInfo
     data_sources:
-      - plus_comments
+      - content_comment
   - route: /models
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-models/src/data/models.ts
     interface: Model
@@ -10313,12 +10297,12 @@ frontend_models:
       - packages.licenseName
       - packages.publishedAt
     data_sources:
-      - plus_agent_skill
-      - plus_agent_skill_package
-      - plus_category
-      - studio_catalog_action
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - ai_agent_skill
+      - ai_agent_skill_package
+      - c_category
+      - ai_skill_action
+      - ai_skill_asset
+      - ai_skill_artifact
   - route: /vip
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-vip/src/vipService.ts
     interface: VipPackageGroup
@@ -13632,8 +13616,8 @@ frontend_operations:
     api_path: /app/v3/api/content/comments
     sdk_domain: comment
     read_sources:
-      - plus_comments
-      - plus_content_vote
+      - content_comment
+      - content_reaction
     query_parameters:
       - name: content_type
         required: true
@@ -13727,8 +13711,8 @@ frontend_operations:
     api_path: /app/v3/api/content/comments/{commentId}/replies
     sdk_domain: comment
     read_sources:
-      - plus_comments
-      - plus_content_vote
+      - content_comment
+      - content_reaction
     query_parameters:
       - name: page
         schema: { type: integer, format: int64, minimum: 1 }
@@ -13816,8 +13800,8 @@ frontend_operations:
     api_path: /app/v3/api/content/comments/{commentId}
     sdk_domain: comment
     read_sources:
-      - plus_comments
-      - plus_content_vote
+      - content_comment
+      - content_reaction
     query_parameters: []
     response_schema:
       name: ForumCommentDetail
@@ -13892,8 +13876,8 @@ frontend_operations:
     api_path: /app/v3/api/content/users/current/comments
     sdk_domain: comment
     read_sources:
-      - plus_comments
-      - plus_content_vote
+      - content_comment
+      - content_reaction
     query_parameters:
       - name: page
         schema: { type: integer, format: int64, minimum: 1 }
@@ -13981,7 +13965,7 @@ frontend_operations:
     api_path: /app/v3/api/content/comments/statistics
     sdk_domain: comment
     read_sources:
-      - plus_comments
+      - content_comment
     query_parameters:
       - name: content_type
         required: true
@@ -14005,9 +13989,9 @@ frontend_operations:
     api_path: /app/v3/api/content/comments
     sdk_domain: comment
     read_sources:
-      - plus_comments
+      - content_comment
     write_tables:
-      - plus_comments
+      - content_comment
     request_schema:
       name: ForumCreateCommentRequest
       type: object
@@ -14056,9 +14040,9 @@ frontend_operations:
     api_path: /app/v3/api/content/comments/{commentId}/reply
     sdk_domain: comment
     read_sources:
-      - plus_comments
+      - content_comment
     write_tables:
-      - plus_comments
+      - content_comment
     request_schema:
       name: ForumReplyCommentRequest
       type: object
@@ -14105,9 +14089,9 @@ frontend_operations:
     api_path: /app/v3/api/content/comments/{commentId}
     sdk_domain: comment
     read_sources:
-      - plus_comments
+      - content_comment
     write_tables:
-      - plus_comments
+      - content_comment
     response_schema:
       name: NoData
       schema:
@@ -14121,11 +14105,11 @@ frontend_operations:
     api_path: /app/v3/api/content/comments/{commentId}/likes
     sdk_domain: comment
     read_sources:
-      - plus_comments
-      - plus_content_vote
+      - content_comment
+      - content_reaction
     write_tables:
-      - plus_content_vote
-      - plus_comments
+      - content_reaction
+      - content_comment
     request_body_required: false
     response_schema:
       name: ForumCommentItem
@@ -14165,11 +14149,11 @@ frontend_operations:
     api_path: /app/v3/api/content/comments/{commentId}/likes/current
     sdk_domain: comment
     read_sources:
-      - plus_comments
-      - plus_content_vote
+      - content_comment
+      - content_reaction
     write_tables:
-      - plus_content_vote
-      - plus_comments
+      - content_reaction
+      - content_comment
     response_schema:
       name: ForumCommentItem
       type: object
@@ -14208,9 +14192,9 @@ frontend_operations:
     api_path: /app/v3/api/content/comments/{commentId}/pins
     sdk_domain: comment
     read_sources:
-      - plus_comments
+      - content_comment
     write_tables:
-      - plus_comments
+      - content_comment
     request_body_required: false
     response_schema:
       name: ForumCommentItem
@@ -14250,9 +14234,9 @@ frontend_operations:
     api_path: /app/v3/api/content/comments/{commentId}/pins/current
     sdk_domain: comment
     read_sources:
-      - plus_comments
+      - content_comment
     write_tables:
-      - plus_comments
+      - content_comment
     response_schema:
       name: ForumCommentItem
       type: object
@@ -17649,8 +17633,8 @@ frontend_operations:
     read_sources:
       - content_course
       - content_course_relation
-      - plus_category
-      - plus_comments
+      - c_category
+      - content_comment
       - content_reaction
     query_parameters:
       - name: level
@@ -17801,8 +17785,8 @@ frontend_operations:
     sdk_domain: course
     read_sources:
       - content_course
-      - plus_category
-      - plus_comments
+      - c_category
+      - content_comment
       - content_reaction
     query_parameters: []
     response_schema:
@@ -17844,7 +17828,7 @@ frontend_operations:
     openapi_exposed: false
     sdk_domain: course
     read_sources:
-      - plus_category
+      - c_category
       - content_course
     query_parameters: []
     response_schema:
@@ -17962,8 +17946,8 @@ frontend_operations:
       - content_course_section
       - content_course_lesson
       - content_course_relation
-      - plus_category
-      - plus_comments
+      - c_category
+      - content_comment
       - content_reaction
     query_parameters: []
     response_schema:
@@ -18143,12 +18127,12 @@ frontend_operations:
     api_method: GET
     api_path: /app/v3/api/ecosystem/skills
     read_sources:
-      - plus_agent_skill
-      - plus_agent_skill_package
-      - plus_category
-      - studio_catalog_action
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - ai_agent_skill
+      - ai_agent_skill_package
+      - c_category
+      - ai_skill_action
+      - ai_skill_asset
+      - ai_skill_artifact
     query_parameters:
       - name: q
         schema: { type: string, maxLength: 128 }
@@ -18229,12 +18213,12 @@ frontend_operations:
     api_method: GET
     api_path: /app/v3/api/ecosystem/skills/{skillId}
     read_sources:
-      - plus_agent_skill
-      - plus_agent_skill_package
-      - plus_category
-      - studio_catalog_action
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - ai_agent_skill
+      - ai_agent_skill_package
+      - c_category
+      - ai_skill_action
+      - ai_skill_asset
+      - ai_skill_artifact
     query_parameters: []
     response_schema:
       name: SkillDetailResponse
@@ -18296,7 +18280,7 @@ frontend_operations:
     api_method: GET
     api_path: /app/v3/api/ecosystem/skills/categories
     read_sources:
-      - plus_category
+      - c_category
     query_parameters: []
     response_schema:
       name: SkillCategoriesResponse
@@ -18314,12 +18298,12 @@ frontend_operations:
     api_method: GET
     api_path: /app/v3/api/ecosystem/users/current/skills
     read_sources:
-      - plus_user_agent_skill
-      - plus_agent_skill
-      - plus_agent_skill_package
-      - plus_category
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - ai_user_agent_skill
+      - ai_agent_skill
+      - ai_agent_skill_package
+      - c_category
+      - ai_skill_asset
+      - ai_skill_artifact
     query_parameters: []
     response_schema:
       name: AppInstalledSkillsResponse
@@ -18403,13 +18387,13 @@ frontend_operations:
     api_method: POST
     api_path: /app/v3/api/ecosystem/skills/{skillId}/enable
     read_sources:
-      - plus_agent_skill
-      - plus_agent_skill_package
-      - plus_category
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - ai_agent_skill
+      - ai_agent_skill_package
+      - c_category
+      - ai_skill_asset
+      - ai_skill_artifact
     write_tables:
-      - plus_user_agent_skill
+      - ai_user_agent_skill
     request_schema:
       name: AppSkillConfigRequest
       type: object
@@ -18503,14 +18487,14 @@ frontend_operations:
     api_method: POST
     api_path: /app/v3/api/ecosystem/skills/{skillId}/disable
     read_sources:
-      - plus_user_agent_skill
-      - plus_agent_skill
-      - plus_agent_skill_package
-      - plus_category
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - ai_user_agent_skill
+      - ai_agent_skill
+      - ai_agent_skill_package
+      - c_category
+      - ai_skill_asset
+      - ai_skill_artifact
     write_tables:
-      - plus_user_agent_skill
+      - ai_user_agent_skill
     request_body_required: false
     response_schema:
       name: AppInstalledSkillResponse
@@ -18591,14 +18575,14 @@ frontend_operations:
     api_method: PUT
     api_path: /app/v3/api/ecosystem/skills/{skillId}/config
     read_sources:
-      - plus_user_agent_skill
-      - plus_agent_skill
-      - plus_agent_skill_package
-      - plus_category
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - ai_user_agent_skill
+      - ai_agent_skill
+      - ai_agent_skill_package
+      - c_category
+      - ai_skill_asset
+      - ai_skill_artifact
     write_tables:
-      - plus_user_agent_skill
+      - ai_user_agent_skill
     request_schema:
       name: AppSkillConfigRequest
       type: object
@@ -18693,10 +18677,10 @@ frontend_operations:
     api_path: /app/v3/api/content/feeds/overview
     sdk_domain: feed
     read_sources:
-      - plus_feeds
-      - plus_comments
-      - plus_content_vote
-      - plus_favorite
+      - content_forum_post
+      - content_comment
+      - content_reaction
+      - content_favorite
     query_parameters: []
     response_schema:
       name: ForumOverviewResponse
@@ -18751,9 +18735,9 @@ frontend_operations:
     api_path: /app/v3/api/content/feeds
     sdk_domain: feed
     read_sources:
-      - plus_feeds
-      - plus_content_vote
-      - plus_favorite
+      - content_forum_post
+      - content_reaction
+      - content_favorite
     query_parameters:
       - name: type
         schema: { type: string, enum: [recommend, hot, top] }
@@ -18821,9 +18805,9 @@ frontend_operations:
     api_path: /app/v3/api/content/feeds/{id}
     sdk_domain: feed
     read_sources:
-      - plus_feeds
-      - plus_content_vote
-      - plus_favorite
+      - content_forum_post
+      - content_reaction
+      - content_favorite
     query_parameters: []
     response_schema:
       name: ForumFeedItem
@@ -18875,9 +18859,9 @@ frontend_operations:
     api_path: /app/v3/api/content/feeds
     sdk_domain: feed
     read_sources:
-      - plus_feeds
+      - content_forum_post
     write_tables:
-      - plus_feeds
+      - content_forum_post
     request_schema:
       name: ForumCreateFeedRequest
       type: object
@@ -18948,9 +18932,9 @@ frontend_operations:
     api_path: /app/v3/api/content/feeds/{id}
     sdk_domain: feed
     read_sources:
-      - plus_feeds
+      - content_forum_post
     write_tables:
-      - plus_feeds
+      - content_forum_post
     response_schema:
       name: ForumBooleanResponse
       type: boolean
@@ -18963,11 +18947,11 @@ frontend_operations:
     api_path: /app/v3/api/content/feeds/{id}/likes
     sdk_domain: feed
     read_sources:
-      - plus_feeds
-      - plus_content_vote
+      - content_forum_post
+      - content_reaction
     write_tables:
-      - plus_content_vote
-      - plus_feeds
+      - content_reaction
+      - content_forum_post
     request_body_required: false
     response_schema:
       name: ForumFeedItem
@@ -19019,11 +19003,11 @@ frontend_operations:
     api_path: /app/v3/api/content/feeds/{id}/likes/current
     sdk_domain: feed
     read_sources:
-      - plus_feeds
-      - plus_content_vote
+      - content_forum_post
+      - content_reaction
     write_tables:
-      - plus_content_vote
-      - plus_feeds
+      - content_reaction
+      - content_forum_post
     request_body_required: false
     response_schema:
       name: ForumFeedItem
@@ -19075,11 +19059,11 @@ frontend_operations:
     api_path: /app/v3/api/content/feeds/{id}/collections
     sdk_domain: feed
     read_sources:
-      - plus_feeds
-      - plus_favorite
+      - content_forum_post
+      - content_favorite
     write_tables:
-      - plus_favorite
-      - plus_feeds
+      - content_favorite
+      - content_forum_post
     request_body_required: false
     query_parameters:
       - name: folder_id
@@ -19134,11 +19118,11 @@ frontend_operations:
     api_path: /app/v3/api/content/feeds/{id}/collections/current
     sdk_domain: feed
     read_sources:
-      - plus_feeds
-      - plus_favorite
+      - content_forum_post
+      - content_favorite
     write_tables:
-      - plus_favorite
-      - plus_feeds
+      - content_favorite
+      - content_forum_post
     request_body_required: false
     response_schema:
       name: ForumFeedItem
@@ -19190,9 +19174,9 @@ frontend_operations:
     api_path: /app/v3/api/content/feeds/{id}/shares
     sdk_domain: feed
     read_sources:
-      - plus_feeds
+      - content_forum_post
     write_tables:
-      - plus_feeds
+      - content_forum_post
     request_body_required: false
     response_schema:
       name: ForumFeedItem
@@ -19244,9 +19228,9 @@ frontend_operations:
     api_path: /app/v3/api/content/feeds/hot
     sdk_domain: feed
     read_sources:
-      - plus_feeds
-      - plus_content_vote
-      - plus_favorite
+      - content_forum_post
+      - content_reaction
+      - content_favorite
     query_parameters:
       - name: limit
         schema: { type: integer, format: int64, minimum: 1, maximum: 100 }
@@ -19304,9 +19288,9 @@ frontend_operations:
     api_path: /app/v3/api/content/feeds/recommend
     sdk_domain: feed
     read_sources:
-      - plus_feeds
-      - plus_content_vote
-      - plus_favorite
+      - content_forum_post
+      - content_reaction
+      - content_favorite
     query_parameters:
       - name: limit
         schema: { type: integer, format: int64, minimum: 1, maximum: 100 }
@@ -19365,9 +19349,9 @@ frontend_operations:
     openapi_exposed: false
     sdk_domain: feed
     read_sources:
-      - plus_feeds
-      - plus_content_vote
-      - plus_favorite
+      - content_forum_post
+      - content_reaction
+      - content_favorite
     query_parameters:
       - name: q
         required: true
@@ -19430,9 +19414,9 @@ frontend_operations:
     api_path: /app/v3/api/content/feeds/top
     sdk_domain: feed
     read_sources:
-      - plus_feeds
-      - plus_content_vote
-      - plus_favorite
+      - content_forum_post
+      - content_reaction
+      - content_favorite
     query_parameters:
       - name: limit
         schema: { type: integer, format: int64, minimum: 1, maximum: 100 }
@@ -19490,9 +19474,9 @@ frontend_operations:
     api_path: /app/v3/api/content/feeds/category/{categoryId}
     sdk_domain: feed
     read_sources:
-      - plus_feeds
-      - plus_content_vote
-      - plus_favorite
+      - content_forum_post
+      - content_reaction
+      - content_favorite
     query_parameters:
       - name: page
         schema: { type: integer, format: int64, minimum: 1 }
@@ -19552,9 +19536,9 @@ frontend_operations:
     api_path: /app/v3/api/content/feeds/most_viewed
     sdk_domain: feed
     read_sources:
-      - plus_feeds
-      - plus_content_vote
-      - plus_favorite
+      - content_forum_post
+      - content_reaction
+      - content_favorite
     query_parameters:
       - name: limit
         schema: { type: integer, format: int64, minimum: 1, maximum: 100 }
@@ -19612,9 +19596,9 @@ frontend_operations:
     api_path: /app/v3/api/content/feeds/most_liked
     sdk_domain: feed
     read_sources:
-      - plus_feeds
-      - plus_content_vote
-      - plus_favorite
+      - content_forum_post
+      - content_reaction
+      - content_favorite
     query_parameters:
       - name: limit
         schema: { type: integer, format: int64, minimum: 1, maximum: 100 }
@@ -19672,7 +19656,7 @@ frontend_operations:
     api_path: /app/v3/api/content/feeds/{id}/collections/current
     sdk_domain: feed
     read_sources:
-      - plus_favorite
+      - content_favorite
     query_parameters: []
     response_schema:
       name: ForumBooleanResponse
@@ -21499,11 +21483,8 @@ frontend_operations:
     description: Returns public App Store entries where PlusApp runtime status is ACTIVE and config.portal.marketStatus is PUBLISHED. Authenticated positive-organization app sessions may read same-tenant public organization_id = 0 app projections;
       tenant isolation is always enforced.
     read_sources:
-      - plus_app
-      - plus_category
-      - studio_catalog_action
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - platform_app
+      - c_category
     query_parameters:
       - name: page
         schema: { type: integer, format: int32, minimum: 1 }
@@ -21557,7 +21538,7 @@ frontend_operations:
                 type: string
                 minLength: 1
                 maxLength: 128
-                description: Stable application identity from plus_app.config.standard.appKey when present; falls back to plus_app.id only when appKey is absent.
+                description: Stable application identity from platform_app.config.standard.appKey when present; falls back to platform_app.id only when appKey is absent.
               name: { type: string, minLength: 1, maxLength: 128 }
               developer: { type: string, minLength: 1, maxLength: 128 }
               category: { type: string, minLength: 1, maxLength: 128 }
@@ -21604,13 +21585,10 @@ frontend_operations:
     api_surface: app
     api_method: GET
     api_path: /app/v3/api/platform/apps/store/{appId}
-    description: Path parameter appId accepts either the stable appKey or numeric plus_app.id and applies the same ACTIVE/PUBLISHED and public organization_id = 0 visibility rules as getApps.
+    description: Path parameter appId accepts either the stable appKey or numeric platform_app.id and applies the same ACTIVE/PUBLISHED and public organization_id = 0 visibility rules as getApps.
     read_sources:
-      - plus_app
-      - plus_category
-      - studio_catalog_action
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - platform_app
+      - c_category
     query_parameters: []
     response_schema:
       name: AppDetailResponse
@@ -21622,7 +21600,7 @@ frontend_operations:
           type: string
           minLength: 1
           maxLength: 128
-          description: Stable application identity from plus_app.config.standard.appKey when present; falls back to plus_app.id only when appKey is absent.
+          description: Stable application identity from platform_app.config.standard.appKey when present; falls back to platform_app.id only when appKey is absent.
         name: { type: string, minLength: 1, maxLength: 128 }
         developer: { type: string, minLength: 1, maxLength: 128 }
         category: { type: string, minLength: 1, maxLength: 128 }
@@ -21666,7 +21644,7 @@ frontend_operations:
     api_method: GET
     api_path: /app/v3/api/platform/apps/store/categories
     read_sources:
-      - plus_category
+      - c_category
     query_parameters: []
     response_schema:
       name: AppCategoriesResponse
@@ -32063,7 +32041,7 @@ frontend_operations:
     api_method: GET
     api_path: /backend/v3/api/ecosystem/skills/categories
     read_sources:
-      - plus_category
+      - c_category
     query_parameters: []
     response_schema:
       name: AdminSkillCategoryListResponse
@@ -32098,9 +32076,9 @@ frontend_operations:
     api_method: POST
     api_path: /backend/v3/api/ecosystem/skills/categories
     read_sources:
-      - plus_category
+      - c_category
     write_tables:
-      - plus_category
+      - c_category
       - ops_audit_log
     request_schema:
       name: AdminSkillCategoryCreateRequest
@@ -32160,9 +32138,9 @@ frontend_operations:
     api_method: PUT
     api_path: /backend/v3/api/ecosystem/skills/categories/{categoryId}
     read_sources:
-      - plus_category
+      - c_category
     write_tables:
-      - plus_category
+      - c_category
       - ops_audit_log
     request_schema:
       name: AdminSkillCategoryUpdateRequest
@@ -32225,11 +32203,11 @@ frontend_operations:
     api_method: DELETE
     api_path: /backend/v3/api/ecosystem/skills/categories/{categoryId}
     read_sources:
-      - plus_category
-      - plus_agent_skill_package
-      - plus_agent_skill
+      - c_category
+      - ai_agent_skill_package
+      - ai_agent_skill
     write_tables:
-      - plus_category
+      - c_category
       - ops_audit_log
     request_body_required: false
     response_schema:
@@ -32247,8 +32225,8 @@ frontend_operations:
     api_method: GET
     api_path: /backend/v3/api/ecosystem/skills/package
     read_sources:
-      - plus_agent_skill_package
-      - plus_category
+      - ai_agent_skill_package
+      - c_category
     query_parameters:
       - name: q
         schema: { type: string, maxLength: 128 }
@@ -32302,8 +32280,8 @@ frontend_operations:
     api_method: GET
     api_path: /backend/v3/api/ecosystem/skills/package/{packageId}
     read_sources:
-      - plus_agent_skill_package
-      - plus_category
+      - ai_agent_skill_package
+      - c_category
     query_parameters: []
     response_schema:
       name: AdminSkillPackageMutationResponse
@@ -32345,10 +32323,10 @@ frontend_operations:
     api_method: POST
     api_path: /backend/v3/api/ecosystem/skills/package
     read_sources:
-      - plus_agent_skill_package
-      - plus_category
+      - ai_agent_skill_package
+      - c_category
     write_tables:
-      - plus_agent_skill_package
+      - ai_agent_skill_package
       - ops_audit_log
     request_schema:
       name: AdminSkillPackageCreateRequest
@@ -32411,10 +32389,10 @@ frontend_operations:
     api_method: PUT
     api_path: /backend/v3/api/ecosystem/skills/package/{packageId}
     read_sources:
-      - plus_agent_skill_package
-      - plus_category
+      - ai_agent_skill_package
+      - c_category
     write_tables:
-      - plus_agent_skill_package
+      - ai_agent_skill_package
       - ops_audit_log
     request_schema:
       name: AdminSkillPackageUpdateRequest
@@ -32479,11 +32457,11 @@ frontend_operations:
     api_method: DELETE
     api_path: /backend/v3/api/ecosystem/skills/package/{packageId}
     read_sources:
-      - plus_agent_skill_package
-      - plus_agent_skill
+      - ai_agent_skill_package
+      - ai_agent_skill
     write_tables:
-      - plus_agent_skill_package
-      - plus_agent_skill
+      - ai_agent_skill_package
+      - ai_agent_skill
       - ops_audit_log
     response_schema:
       name: AdminSkillPackageDeleteResponse
@@ -32500,9 +32478,9 @@ frontend_operations:
     api_method: POST
     api_path: /backend/v3/api/ecosystem/skills/package/{packageId}/enable
     read_sources:
-      - plus_agent_skill_package
+      - ai_agent_skill_package
     write_tables:
-      - plus_agent_skill_package
+      - ai_agent_skill_package
       - ops_audit_log
     request_body_required: false
     response_schema:
@@ -32545,9 +32523,9 @@ frontend_operations:
     api_method: POST
     api_path: /backend/v3/api/ecosystem/skills/package/{packageId}/disable
     read_sources:
-      - plus_agent_skill_package
+      - ai_agent_skill_package
     write_tables:
-      - plus_agent_skill_package
+      - ai_agent_skill_package
       - ops_audit_log
     request_body_required: false
     response_schema:
@@ -32590,9 +32568,9 @@ frontend_operations:
     api_method: GET
     api_path: /backend/v3/api/ecosystem/skills
     read_sources:
-      - plus_agent_skill
-      - plus_agent_skill_package
-      - plus_category
+      - ai_agent_skill
+      - ai_agent_skill_package
+      - c_category
     query_parameters:
       - name: q
         schema: { type: string, maxLength: 128 }
@@ -32685,9 +32663,9 @@ frontend_operations:
     api_method: GET
     api_path: /backend/v3/api/ecosystem/skills/{skillId}
     read_sources:
-      - plus_agent_skill
-      - plus_agent_skill_package
-      - plus_category
+      - ai_agent_skill
+      - ai_agent_skill_package
+      - c_category
     query_parameters: []
     response_schema:
       name: AdminSkillMutationResponse
@@ -32762,11 +32740,11 @@ frontend_operations:
     api_method: POST
     api_path: /backend/v3/api/ecosystem/skills
     read_sources:
-      - plus_agent_skill
-      - plus_agent_skill_package
-      - plus_category
+      - ai_agent_skill
+      - ai_agent_skill_package
+      - c_category
     write_tables:
-      - plus_agent_skill
+      - ai_agent_skill
       - ops_audit_log
     request_schema:
       name: AdminSkillCreateRequest
@@ -32888,11 +32866,11 @@ frontend_operations:
     api_method: PUT
     api_path: /backend/v3/api/ecosystem/skills/{skillId}
     read_sources:
-      - plus_agent_skill
-      - plus_agent_skill_package
-      - plus_category
+      - ai_agent_skill
+      - ai_agent_skill_package
+      - c_category
     write_tables:
-      - plus_agent_skill
+      - ai_agent_skill
       - ops_audit_log
     request_schema:
       name: AdminSkillUpdateRequest
@@ -33013,11 +32991,11 @@ frontend_operations:
     api_method: DELETE
     api_path: /backend/v3/api/ecosystem/skills/{skillId}
     read_sources:
-      - plus_agent_skill
-      - plus_user_agent_skill
+      - ai_agent_skill
+      - ai_user_agent_skill
     write_tables:
-      - plus_agent_skill
-      - plus_user_agent_skill
+      - ai_agent_skill
+      - ai_user_agent_skill
       - ops_audit_log
     response_schema:
       name: AdminSkillDeleteResponse
@@ -33034,9 +33012,9 @@ frontend_operations:
     api_method: POST
     api_path: /backend/v3/api/ecosystem/skills/{skillId}/enable
     read_sources:
-      - plus_agent_skill
+      - ai_agent_skill
     write_tables:
-      - plus_agent_skill
+      - ai_agent_skill
       - ops_audit_log
     request_body_required: false
     response_schema:
@@ -33112,9 +33090,9 @@ frontend_operations:
     api_method: POST
     api_path: /backend/v3/api/ecosystem/skills/{skillId}/disable
     read_sources:
-      - plus_agent_skill
+      - ai_agent_skill
     write_tables:
-      - plus_agent_skill
+      - ai_agent_skill
       - ops_audit_log
     request_body_required: false
     response_schema:
@@ -33190,9 +33168,9 @@ frontend_operations:
     api_method: POST
     api_path: /backend/v3/api/ecosystem/skills/{skillId}/publish
     read_sources:
-      - plus_agent_skill
+      - ai_agent_skill
     write_tables:
-      - plus_agent_skill
+      - ai_agent_skill
       - ops_audit_log
     request_body_required: false
     response_schema:
@@ -33268,9 +33246,9 @@ frontend_operations:
     api_method: POST
     api_path: /backend/v3/api/ecosystem/skills/{skillId}/unpublish
     read_sources:
-      - plus_agent_skill
+      - ai_agent_skill
     write_tables:
-      - plus_agent_skill
+      - ai_agent_skill
       - ops_audit_log
     request_body_required: false
     response_schema:
@@ -33346,9 +33324,9 @@ frontend_operations:
     api_method: POST
     api_path: /backend/v3/api/ecosystem/skills/{skillId}/review/approve
     read_sources:
-      - plus_agent_skill
+      - ai_agent_skill
     write_tables:
-      - plus_agent_skill
+      - ai_agent_skill
       - ops_audit_log
     request_schema:
       name: AdminSkillReviewRequest
@@ -33429,9 +33407,9 @@ frontend_operations:
     api_method: POST
     api_path: /backend/v3/api/ecosystem/skills/{skillId}/review/reject
     read_sources:
-      - plus_agent_skill
+      - ai_agent_skill
     write_tables:
-      - plus_agent_skill
+      - ai_agent_skill
       - ops_audit_log
     request_schema:
       name: AdminSkillReviewRequest
@@ -33512,9 +33490,9 @@ frontend_operations:
     api_method: GET
     api_path: /backend/v3/api/ecosystem/skills/{skillId}/assets
     read_sources:
-      - plus_agent_skill
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - ai_agent_skill
+      - ai_skill_asset
+      - ai_skill_artifact
     query_parameters: []
     response_schema:
       name: AdminSkillAssetListResponse
@@ -33560,9 +33538,9 @@ frontend_operations:
     api_method: GET
     api_path: /backend/v3/api/ecosystem/skills/{skillId}/assets/{assetId}
     read_sources:
-      - plus_agent_skill
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - ai_agent_skill
+      - ai_skill_asset
+      - ai_skill_artifact
     query_parameters: []
     response_schema:
       name: AdminSkillAssetMutationResponse
@@ -33606,11 +33584,11 @@ frontend_operations:
     api_method: POST
     api_path: /backend/v3/api/ecosystem/skills/{skillId}/assets
     read_sources:
-      - plus_agent_skill
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - ai_agent_skill
+      - ai_skill_asset
+      - ai_skill_artifact
     write_tables:
-      - studio_catalog_asset
+      - ai_skill_asset
       - ops_audit_log
     request_schema:
       name: AdminSkillAssetCreateRequest
@@ -33674,11 +33652,11 @@ frontend_operations:
     api_method: PUT
     api_path: /backend/v3/api/ecosystem/skills/{skillId}/assets/{assetId}
     read_sources:
-      - plus_agent_skill
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - ai_agent_skill
+      - ai_skill_asset
+      - ai_skill_artifact
     write_tables:
-      - studio_catalog_asset
+      - ai_skill_asset
       - ops_audit_log
     request_schema:
       name: AdminSkillAssetUpdateRequest
@@ -33743,10 +33721,10 @@ frontend_operations:
     api_method: DELETE
     api_path: /backend/v3/api/ecosystem/skills/{skillId}/assets/{assetId}
     read_sources:
-      - plus_agent_skill
-      - studio_catalog_asset
+      - ai_agent_skill
+      - ai_skill_asset
     write_tables:
-      - studio_catalog_asset
+      - ai_skill_asset
       - ops_audit_log
     response_schema:
       name: AdminSkillAssetDeleteResponse
@@ -33763,9 +33741,9 @@ frontend_operations:
     api_method: GET
     api_path: /backend/v3/api/ecosystem/skills/{skillId}/artifacts
     read_sources:
-      - plus_agent_skill
-      - studio_catalog_artifact
-      - studio_catalog_asset
+      - ai_agent_skill
+      - ai_skill_artifact
+      - ai_skill_asset
     query_parameters: []
     response_schema:
       name: AdminSkillArtifactListResponse
@@ -33819,9 +33797,9 @@ frontend_operations:
     api_method: GET
     api_path: /backend/v3/api/ecosystem/skills/{skillId}/artifacts/{artifactId}
     read_sources:
-      - plus_agent_skill
-      - studio_catalog_artifact
-      - studio_catalog_asset
+      - ai_agent_skill
+      - ai_skill_artifact
+      - ai_skill_asset
     query_parameters: []
     response_schema:
       name: AdminSkillArtifactMutationResponse
@@ -33873,12 +33851,12 @@ frontend_operations:
     api_method: POST
     api_path: /backend/v3/api/ecosystem/skills/{skillId}/artifacts
     read_sources:
-      - plus_agent_skill
-      - studio_catalog_artifact
-      - studio_catalog_asset
+      - ai_agent_skill
+      - ai_skill_artifact
+      - ai_skill_asset
     write_tables:
-      - studio_catalog_artifact
-      - studio_catalog_asset
+      - ai_skill_artifact
+      - ai_skill_asset
       - ops_audit_log
     request_schema:
       name: AdminSkillArtifactCreateRequest
@@ -33958,12 +33936,12 @@ frontend_operations:
     api_method: PUT
     api_path: /backend/v3/api/ecosystem/skills/{skillId}/artifacts/{artifactId}
     read_sources:
-      - plus_agent_skill
-      - studio_catalog_artifact
-      - studio_catalog_asset
+      - ai_agent_skill
+      - ai_skill_artifact
+      - ai_skill_asset
     write_tables:
-      - studio_catalog_artifact
-      - studio_catalog_asset
+      - ai_skill_artifact
+      - ai_skill_asset
       - ops_audit_log
     request_schema:
       name: AdminSkillArtifactUpdateRequest
@@ -34044,12 +34022,12 @@ frontend_operations:
     api_method: DELETE
     api_path: /backend/v3/api/ecosystem/skills/{skillId}/artifacts/{artifactId}
     read_sources:
-      - plus_agent_skill
-      - studio_catalog_artifact
-      - studio_catalog_asset
+      - ai_agent_skill
+      - ai_skill_artifact
+      - ai_skill_asset
     write_tables:
-      - studio_catalog_artifact
-      - studio_catalog_asset
+      - ai_skill_artifact
+      - ai_skill_asset
       - ops_audit_log
     response_schema:
       name: AdminSkillArtifactDeleteResponse
@@ -37288,7 +37266,7 @@ frontend_operations:
     description: Lists vertical prompt definitions with unified category references and lifecycle state.
     read_sources:
       - ai_prompt
-      - plus_category
+      - c_category
     query_parameters:
       - name: page
         schema: { type: integer, format: int64, minimum: 1 }
@@ -37354,7 +37332,7 @@ frontend_operations:
     description: Creates a reusable prompt definition; classification is only by unified category references.
     read_sources:
       - ai_prompt
-      - plus_category
+      - c_category
     write_tables:
       - ai_prompt
       - ops_audit_log
@@ -37421,7 +37399,7 @@ frontend_operations:
     read_sources:
       - ai_prompt
       - ai_prompt_version
-      - plus_category
+      - c_category
     query_parameters: []
     response_schema:
       name: AdminPromptVersionListResponse
@@ -37476,7 +37454,7 @@ frontend_operations:
     read_sources:
       - ai_prompt
       - ai_prompt_version
-      - plus_category
+      - c_category
     write_tables:
       - ai_prompt
       - ai_prompt_version
@@ -37549,7 +37527,7 @@ frontend_operations:
     read_sources:
       - ai_prompt
       - ai_prompt_version
-      - plus_category
+      - c_category
     write_tables:
       - ai_prompt
       - ai_prompt_version
@@ -37572,7 +37550,7 @@ frontend_operations:
     read_sources:
       - ai_prompt
       - ai_prompt_version
-      - plus_category
+      - c_category
     write_tables:
       - ops_audit_log
     request_schema:
@@ -37603,7 +37581,7 @@ frontend_operations:
       - ai_prompt
       - ai_prompt_version
       - ai_prompt_binding
-      - plus_category
+      - c_category
     query_parameters: []
     response_schema:
       name: AdminPromptBindingListResponse
@@ -37651,7 +37629,7 @@ frontend_operations:
       - ai_prompt
       - ai_prompt_version
       - ai_prompt_binding
-      - plus_category
+      - c_category
     write_tables:
       - ai_prompt_binding
       - ops_audit_log
@@ -37710,7 +37688,7 @@ frontend_operations:
       - ai_prompt
       - ai_prompt_version
       - ai_prompt_binding
-      - plus_category
+      - c_category
     write_tables:
       - ai_prompt_binding
       - ops_audit_log
@@ -37743,7 +37721,7 @@ frontend_operations:
     description: Lists vertical MCP server definitions with unified category references and operational health.
     read_sources:
       - ai_mcp_server
-      - plus_category
+      - c_category
     query_parameters:
       - name: page
         schema: { type: integer, format: int64, minimum: 1 }
@@ -37813,7 +37791,7 @@ frontend_operations:
     description: Retrieves one MCP server definition for detailed governance.
     read_sources:
       - ai_mcp_server
-      - plus_category
+      - c_category
     query_parameters: []
     response_schema:
       name: AdminMcpServerMutationResponse
@@ -37867,7 +37845,7 @@ frontend_operations:
     description: Creates an MCP server definition; classification is only by unified category references.
     read_sources:
       - ai_mcp_server
-      - plus_category
+      - c_category
     write_tables:
       - ai_mcp_server
       - ops_audit_log
@@ -37904,7 +37882,7 @@ frontend_operations:
     description: Updates MCP server metadata, lifecycle state, and unified category reference.
     read_sources:
       - ai_mcp_server
-      - plus_category
+      - c_category
     write_tables:
       - ai_mcp_server
       - ops_audit_log
@@ -38466,10 +38444,10 @@ frontend_operations:
     api_method: GET
     api_path: /backend/v3/api/platform/apps
     read_sources:
-      - plus_app
-      - plus_category
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - platform_app
+      - c_category
+      - ai_skill_asset
+      - ai_skill_artifact
     query_parameters:
       - name: q
         schema: { type: string, maxLength: 128 }
@@ -38566,7 +38544,7 @@ frontend_operations:
     api_method: GET
     api_path: /backend/v3/api/platform/apps/categories
     read_sources:
-      - plus_category
+      - c_category
     query_parameters: []
     response_schema:
       name: AdminAppCategoryListResponse
@@ -38602,9 +38580,9 @@ frontend_operations:
     api_method: POST
     api_path: /backend/v3/api/platform/apps/categories
     read_sources:
-      - plus_category
+      - c_category
     write_tables:
-      - plus_category
+      - c_category
       - ops_audit_log
     request_schema:
       name: AdminAppCategoryCreateRequest
@@ -38664,9 +38642,9 @@ frontend_operations:
     api_method: PUT
     api_path: /backend/v3/api/platform/apps/categories/{categoryId}
     read_sources:
-      - plus_category
+      - c_category
     write_tables:
-      - plus_category
+      - c_category
       - ops_audit_log
     request_schema:
       name: AdminAppCategoryUpdateRequest
@@ -38729,9 +38707,9 @@ frontend_operations:
     api_method: DELETE
     api_path: /backend/v3/api/platform/apps/categories/{categoryId}
     read_sources:
-      - plus_category
+      - c_category
     write_tables:
-      - plus_category
+      - c_category
       - ops_audit_log
     request_body_required: false
     response_schema:
@@ -38751,8 +38729,8 @@ frontend_operations:
     api_path: /backend/v3/api/platform/apps/templates
     read_sources:
       - studio_app_template
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - ai_skill_asset
+      - ai_skill_artifact
     query_parameters:
       - name: q
         schema: { type: string, maxLength: 128 }
@@ -39172,14 +39150,14 @@ frontend_operations:
     api_path: /backend/v3/api/platform/apps/templates/{templateId}
     read_sources:
       - studio_app_template
-      - studio_catalog_action
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - ai_skill_action
+      - ai_skill_asset
+      - ai_skill_artifact
     write_tables:
       - studio_app_template
-      - studio_catalog_action
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - ai_skill_action
+      - ai_skill_asset
+      - ai_skill_artifact
       - ops_audit_log
     request_body_required: false
     response_schema:
@@ -39353,12 +39331,12 @@ frontend_operations:
     api_method: POST
     api_path: /backend/v3/api/platform/apps
     read_sources:
-      - plus_app
-      - plus_category
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - platform_app
+      - c_category
+      - ai_skill_asset
+      - ai_skill_artifact
     write_tables:
-      - plus_app
+      - platform_app
       - ops_audit_log
     request_schema:
       name: AdminAppCreateRequest
@@ -39487,10 +39465,10 @@ frontend_operations:
     api_method: GET
     api_path: /backend/v3/api/platform/apps/{appId}
     read_sources:
-      - plus_app
-      - plus_category
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - platform_app
+      - c_category
+      - ai_skill_asset
+      - ai_skill_artifact
     query_parameters: []
     response_schema:
       name: AdminAppMutationResponse
@@ -39565,12 +39543,12 @@ frontend_operations:
     api_method: PUT
     api_path: /backend/v3/api/platform/apps/{appId}
     read_sources:
-      - plus_app
-      - plus_category
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - platform_app
+      - c_category
+      - ai_skill_asset
+      - ai_skill_artifact
     write_tables:
-      - plus_app
+      - platform_app
       - ops_audit_log
     request_schema:
       name: AdminAppUpdateRequest
@@ -39698,15 +39676,15 @@ frontend_operations:
     api_method: DELETE
     api_path: /backend/v3/api/platform/apps/{appId}
     read_sources:
-      - plus_app
-      - studio_catalog_action
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - platform_app
+      - ai_skill_action
+      - ai_skill_asset
+      - ai_skill_artifact
     write_tables:
-      - plus_app
-      - studio_catalog_action
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - platform_app
+      - ai_skill_action
+      - ai_skill_asset
+      - ai_skill_artifact
       - ops_audit_log
     response_schema:
       name: AdminAppDeleteResponse
@@ -39724,9 +39702,9 @@ frontend_operations:
     api_path: /backend/v3/api/platform/apps/{appId}/enable
     description: Sets PlusApp runtime status to ACTIVE without changing config.portal.marketStatus.
     read_sources:
-      - plus_app
+      - platform_app
     write_tables:
-      - plus_app
+      - platform_app
       - ops_audit_log
     request_body_required: false
     response_schema:
@@ -39803,9 +39781,9 @@ frontend_operations:
     api_path: /backend/v3/api/platform/apps/{appId}/disable
     description: Sets PlusApp runtime status to INACTIVE without changing config.portal.marketStatus.
     read_sources:
-      - plus_app
+      - platform_app
     write_tables:
-      - plus_app
+      - platform_app
       - ops_audit_log
     request_body_required: false
     response_schema:
@@ -39882,9 +39860,9 @@ frontend_operations:
     api_path: /backend/v3/api/platform/apps/{appId}/publish
     description: Sets config.portal.marketStatus to PUBLISHED without changing PlusApp runtime status.
     read_sources:
-      - plus_app
+      - platform_app
     write_tables:
-      - plus_app
+      - platform_app
       - ops_audit_log
     request_body_required: false
     response_schema:
@@ -39961,9 +39939,9 @@ frontend_operations:
     api_path: /backend/v3/api/platform/apps/{appId}/unpublish
     description: Sets config.portal.marketStatus to OFFLINE without changing PlusApp runtime status.
     read_sources:
-      - plus_app
+      - platform_app
     write_tables:
-      - plus_app
+      - platform_app
       - ops_audit_log
     request_body_required: false
     response_schema:
@@ -44084,7 +44062,7 @@ routes:
   - route: /
     required_tables:
       - content_doc_page
-      - plus_app
+      - platform_app
   - route: /vip
     required_tables:
       - commerce_product_spu
@@ -44219,13 +44197,13 @@ routes:
         - strengths
   - route: /apps
     required_tables:
-      - plus_app
-      - plus_category
-      - studio_catalog_action
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - platform_app
+      - c_category
+      - ai_skill_action
+      - ai_skill_asset
+      - ai_skill_artifact
     required_columns:
-      plus_app:
+      platform_app:
         - name
         - description
         - icon_media_resource_id
@@ -44238,12 +44216,12 @@ routes:
         - artifact_media_resource_id
         - artifact_object_blob_id
         - artifact_resource_snapshot
-      studio_catalog_action:
+      ai_skill_action:
         - target_type
         - target_id
         - action_type
         - rating_score
-      studio_catalog_asset:
+      ai_skill_asset:
         - target_type
         - target_id
         - asset_type
@@ -44251,7 +44229,7 @@ routes:
         - asset_object_blob_id
         - asset_resource_snapshot
         - sort_order
-      studio_catalog_artifact:
+      ai_skill_artifact:
         - target_type
         - target_id
         - artifact_type
@@ -44264,13 +44242,13 @@ routes:
         - release_notes
   - route: /apps/:id
     required_tables:
-      - plus_app
-      - plus_category
-      - studio_catalog_action
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - platform_app
+      - c_category
+      - ai_skill_action
+      - ai_skill_asset
+      - ai_skill_artifact
     required_columns:
-      plus_app:
+      platform_app:
         - name
         - description
         - icon_media_resource_id
@@ -44283,14 +44261,14 @@ routes:
         - artifact_media_resource_id
         - artifact_object_blob_id
         - artifact_resource_snapshot
-      studio_catalog_asset:
+      ai_skill_asset:
         - target_type
         - target_id
         - asset_type
         - asset_media_resource_id
         - asset_object_blob_id
         - asset_resource_snapshot
-      studio_catalog_artifact:
+      ai_skill_artifact:
         - target_type
         - target_id
         - version
@@ -44568,15 +44546,15 @@ routes:
         - detail_json
   - route: /skills-hub
     required_tables:
-      - plus_agent_skill
-      - plus_agent_skill_package
-      - plus_category
-      - plus_user_agent_skill
-      - studio_catalog_action
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - ai_agent_skill
+      - ai_agent_skill_package
+      - c_category
+      - ai_user_agent_skill
+      - ai_skill_action
+      - ai_skill_asset
+      - ai_skill_artifact
     required_columns:
-      plus_agent_skill:
+      ai_agent_skill:
         - name
         - provider
         - description
@@ -44589,7 +44567,7 @@ routes:
         - install_count
         - rating_avg
         - latest_published_at
-      plus_category:
+      c_category:
         - name
         - code
         - type
@@ -44597,7 +44575,7 @@ routes:
         - icon_object_blob_id
         - icon_resource_snapshot
         - sort_weight
-      studio_catalog_asset:
+      ai_skill_asset:
         - target_type
         - target_id
         - asset_type
@@ -44605,7 +44583,7 @@ routes:
         - asset_object_blob_id
         - asset_resource_snapshot
         - sort_order
-      studio_catalog_artifact:
+      ai_skill_artifact:
         - target_type
         - target_id
         - version
@@ -44615,15 +44593,15 @@ routes:
         - license_name
   - route: /skills-hub/:id
     required_tables:
-      - plus_agent_skill
-      - plus_agent_skill_package
-      - plus_category
-      - plus_user_agent_skill
-      - studio_catalog_action
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - ai_agent_skill
+      - ai_agent_skill_package
+      - c_category
+      - ai_user_agent_skill
+      - ai_skill_action
+      - ai_skill_asset
+      - ai_skill_artifact
     required_columns:
-      plus_agent_skill:
+      ai_agent_skill:
         - skill_key
         - name
         - provider
@@ -44635,7 +44613,7 @@ routes:
         - documentation_url
         - license_name
         - capabilities
-      studio_catalog_artifact:
+      ai_skill_artifact:
         - target_type
         - target_id
         - artifact_ref
@@ -44732,12 +44710,12 @@ routes:
       - ai_runtime_invocation
   - route: /forum
     required_tables:
-      - plus_feeds
-      - plus_comments
-      - plus_content_vote
-      - plus_favorite
+      - content_forum_post
+      - content_comment
+      - content_reaction
+      - content_favorite
     required_columns:
-      plus_feeds:
+      content_forum_post:
         - title
         - summary
         - category_id
@@ -44751,7 +44729,7 @@ routes:
         - is_top
         - is_hot
         - is_recommended
-      plus_comments:
+      content_comment:
         - content_type
         - content_id
         - parent_id
@@ -44761,24 +44739,24 @@ routes:
         - likes
         - reply_count
         - is_top
-      plus_content_vote:
+      content_reaction:
         - user_id
         - content_type
         - content_id
         - rating
-      plus_favorite:
+      content_favorite:
         - user_id
         - content_type
         - content_id
         - status
   - route: /forum/:id
     required_tables:
-      - plus_feeds
-      - plus_comments
-      - plus_content_vote
-      - plus_favorite
+      - content_forum_post
+      - content_comment
+      - content_reaction
+      - content_favorite
     required_columns:
-      plus_feeds:
+      content_forum_post:
         - title
         - summary
         - content_type
@@ -44787,7 +44765,7 @@ routes:
         - like_count
         - comment_count
         - view_count
-      plus_comments:
+      content_comment:
         - content_type
         - content_id
         - parent_id
@@ -44796,12 +44774,12 @@ routes:
         - likes
         - reply_count
         - is_top
-      plus_content_vote:
+      content_reaction:
         - user_id
         - content_type
         - content_id
         - rating
-      plus_favorite:
+      content_favorite:
         - user_id
         - content_type
         - content_id
@@ -44811,8 +44789,8 @@ routes:
       - content_course
       - content_course_relation
       - content_course_application
-      - plus_category
-      - plus_comments
+      - c_category
+      - content_comment
       - content_reaction
     required_columns:
       content_course:
@@ -44843,7 +44821,7 @@ routes:
         - contact_email
         - status
         - submitted_at
-      plus_category:
+      c_category:
         - type
         - group_name
         - code
@@ -44851,7 +44829,7 @@ routes:
         - description
         - sort_weight
         - status
-      plus_comments:
+      content_comment:
         - content_type
         - content_id
         - parent_id
@@ -44873,8 +44851,8 @@ routes:
       - content_course_section
       - content_course_lesson
       - content_course_relation
-      - plus_category
-      - plus_comments
+      - c_category
+      - content_comment
       - content_reaction
     required_columns:
       content_course:
@@ -44925,7 +44903,7 @@ routes:
         - relation_type
         - sort_order
         - status
-      plus_category:
+      c_category:
         - type
         - group_name
         - code
@@ -44933,7 +44911,7 @@ routes:
         - description
         - sort_weight
         - status
-      plus_comments:
+      content_comment:
         - content_type
         - content_id
         - parent_id
@@ -45278,7 +45256,7 @@ routes:
       - ai_prompt
       - ai_prompt_version
       - ai_prompt_binding
-      - plus_category
+      - c_category
       - ops_audit_log
     required_columns:
       ai_prompt:
@@ -45337,7 +45315,7 @@ routes:
         - status
         - created_at
         - updated_at
-      plus_category:
+      c_category:
         - name
         - code
         - type
@@ -45363,7 +45341,7 @@ routes:
       - ai_mcp_server_revision
       - ai_mcp_tool
       - ai_mcp_binding
-      - plus_category
+      - c_category
       - ops_audit_log
     required_columns:
       ai_mcp_server:
@@ -45452,7 +45430,7 @@ routes:
         - snapshot_json
         - created_at
         - updated_at
-      plus_category:
+      c_category:
         - name
         - code
         - type
@@ -45558,15 +45536,15 @@ routes:
       - ops_job_execution
   - route: /admin/app
     required_tables:
-      - plus_app
-      - plus_category
+      - platform_app
+      - c_category
       - studio_app_template
-      - studio_catalog_action
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - ai_skill_action
+      - ai_skill_asset
+      - ai_skill_artifact
       - ops_audit_log
     required_columns:
-      plus_app:
+      platform_app:
         - name
         - description
         - version
@@ -45592,7 +45570,7 @@ routes:
         - artifact_resource_snapshot
         - created_at
         - updated_at
-      plus_category:
+      c_category:
         - name
         - description
         - code
@@ -45640,12 +45618,12 @@ routes:
         - status
         - created_at
         - updated_at
-      studio_catalog_action:
+      ai_skill_action:
         - target_type
         - target_id
         - action_type
         - rating_score
-      studio_catalog_asset:
+      ai_skill_asset:
         - target_type
         - target_id
         - asset_type
@@ -45653,7 +45631,7 @@ routes:
         - asset_object_blob_id
         - asset_resource_snapshot
         - sort_order
-      studio_catalog_artifact:
+      ai_skill_artifact:
         - target_type
         - target_id
         - artifact_type
@@ -45711,15 +45689,15 @@ routes:
       - content_reaction
   - route: /admin/skill
     required_tables:
-      - plus_agent_skill
-      - plus_agent_skill_package
-      - plus_category
-      - plus_user_agent_skill
-      - studio_catalog_asset
-      - studio_catalog_artifact
+      - ai_agent_skill
+      - ai_agent_skill_package
+      - c_category
+      - ai_user_agent_skill
+      - ai_skill_asset
+      - ai_skill_artifact
       - ops_audit_log
     required_columns:
-      plus_agent_skill:
+      ai_agent_skill:
         - skill_key
         - name
         - summary
@@ -45766,7 +45744,7 @@ routes:
         - latest_published_at
         - created_at
         - updated_at
-      plus_agent_skill_package:
+      ai_agent_skill_package:
         - package_key
         - name
         - summary
@@ -45785,7 +45763,7 @@ routes:
         - latest_published_at
         - created_at
         - updated_at
-      plus_category:
+      c_category:
         - name
         - description
         - code
@@ -45798,12 +45776,12 @@ routes:
         - path
         - visible
         - status
-      plus_user_agent_skill:
+      ai_user_agent_skill:
         - skill_id
         - enabled
         - config
         - installed_at
-      studio_catalog_asset:
+      ai_skill_asset:
         - target_type
         - target_id
         - artifact_id
@@ -45826,7 +45804,7 @@ routes:
         - published_at
         - created_at
         - updated_at
-      studio_catalog_artifact:
+      ai_skill_artifact:
         - target_type
         - target_id
         - artifact_type
@@ -46404,7 +46382,7 @@ routes:
   - route: /admin/catalog
     required_tables:
       - commerce_product_category
-      - plus_category
+      - c_category
       - commerce_product_spu
       - commerce_product_spu_category
       - commerce_product_sku
@@ -47472,8 +47450,8 @@ routes:
       - promotion_external_binding
       - promotion_external_operation
       - promotion_event_outbox
-      - plus_invitation_code
-      - plus_invitation_relation
+      - promotion_code
+      - promotion_code_redemption
       - ops_referral_stat_snapshot
   - route: /admin/oauth
     dependency_owned: true

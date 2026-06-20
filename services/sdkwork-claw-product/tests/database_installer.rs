@@ -1857,10 +1857,11 @@ async fn sqlite_installer_reimports_ai_routing_seed_when_admin_api_group_payload
     sqlx::query(
         r#"
         INSERT INTO ai_resource_group_item
-            (uuid, tenant_id, organization_id, data_scope, status, metadata,
+            (id, uuid, tenant_id, organization_id, data_scope, status, metadata,
              resource_group_id, resource_group_code, item_type, resource_id, resource_code,
              child_resource_group_code, item_role, sort_order)
         SELECT
+            999999001,
             'stale-api-all-explicit-member',
             0,
             0,
@@ -2836,6 +2837,19 @@ async fn sqlite_installer_repairs_changed_generated_schema_index_definitions_bef
         .unwrap();
     sqlx::query(
         r#"
+        DELETE FROM ai_model_rank_snapshot
+        WHERE rowid NOT IN (
+            SELECT MIN(rowid)
+            FROM ai_model_rank_snapshot
+            GROUP BY tenant_id, organization_id, snapshot_date, snapshot_period, rank_scope, catalog_key
+        )
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
         CREATE UNIQUE INDEX uk_ai_model_rank_snapshot_scope_catalog_key
         ON ai_model_rank_snapshot (
             tenant_id,
@@ -3152,9 +3166,9 @@ async fn sqlite_installer_status_report_maps_failed_catalog_refresh_status() {
     sqlx::query(
         r#"
         INSERT INTO ai_model_catalog_sync_run
-            (uuid, source_code, run_status, started_at, metadata)
+            (id, uuid, tenant_id, organization_id, status, source_code, run_status, started_at, metadata)
         VALUES
-            ('catalog-sync-failed-status-test', 'manual', 2, '2999-01-01T00:00:00Z', '{}')
+            (9001, 'catalog-sync-failed-status-test', 0, 0, 1, 'manual', 2, '2999-01-01T00:00:00Z', '{}')
         "#,
     )
     .execute(&pool)
@@ -3180,10 +3194,10 @@ async fn sqlite_installer_status_report_uses_highest_id_for_same_refresh_timesta
     sqlx::query(
         r#"
         INSERT INTO ai_model_catalog_sync_run
-            (uuid, source_code, run_status, started_at, metadata)
+            (id, uuid, tenant_id, organization_id, status, source_code, run_status, started_at, metadata)
         VALUES
-            ('catalog-sync-same-time-failed', 'manual', 2, '2999-01-01T00:00:00Z', '{}'),
-            ('catalog-sync-same-time-success', 'manual', 1, '2999-01-01T00:00:00Z', '{"syncMode":"dry_run"}')
+            (9002, 'catalog-sync-same-time-failed', 0, 0, 1, 'manual', 2, '2999-01-01T00:00:00Z', '{}'),
+            (9003, 'catalog-sync-same-time-success', 0, 0, 1, 'manual', 1, '2999-01-01T00:00:00Z', '{"syncMode":"dry_run"}')
         "#,
     )
     .execute(&pool)
@@ -4815,7 +4829,7 @@ async fn assert_commerce_experience_seed_rows(pool: &SqlitePool) {
         WHERE tenant_id = '0'
           AND organization_id = '0'
           AND spu_no = 'membership'
-          AND sales_status = 'active'
+          AND status = 'active'
         "#,
     )
     .fetch_one(pool)
@@ -4886,7 +4900,7 @@ async fn assert_commerce_experience_seed_rows(pool: &SqlitePool) {
               AND organization_id = '0'
               AND spu_id = 'seed-product-membership'
               AND sku_no LIKE ?
-              AND sales_status = 'active'
+              AND status = 'active'
             "#,
         )
         .bind(format!("membership-{group_code}-%"))
@@ -4960,7 +4974,7 @@ async fn assert_commerce_experience_seed_rows(pool: &SqlitePool) {
         WHERE tenant_id = '0'
           AND organization_id = '0'
           AND spu_no IN ('points-recharge-cny', 'points-recharge-non-cny')
-          AND sales_status = 'active'
+          AND status = 'active'
         "#,
     )
     .fetch_one(pool)
@@ -5298,7 +5312,7 @@ async fn assert_forum_tutorial_seed_rows(pool: &SqlitePool) {
         SELECT COUNT(1)
         FROM content_reaction
         WHERE uuid LIKE 'sdkwork-forum-vote-%'
-          AND COALESCE(content_type, 0) = 5
+          AND COALESCE(target_type, 0) = 5
           AND tenant_id = 0
           AND organization_id = 0
         "#,

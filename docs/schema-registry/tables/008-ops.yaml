@@ -7,15 +7,15 @@ tables:
   write_owner: marketing-analytics-worker
   common_columns: projection
   source_tables:
-  - plus_invitation_code
-  - plus_invitation_relation
+  - promotion_code
+  - promotion_code_redemption
   - iam_user
   - commerce_order
   - commerce_payment_attempt
   projection_policy:
     does_not_replace:
-    - plus_invitation_code
-    - plus_invitation_relation
+    - promotion_code
+    - promotion_code_redemption
     - iam_user
     purpose: admin_marketing_referral_analytics_only
   frontend_routes:

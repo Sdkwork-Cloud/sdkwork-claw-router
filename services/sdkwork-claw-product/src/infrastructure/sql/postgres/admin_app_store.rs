@@ -20,6 +20,7 @@ const APP_TEMPLATE_TARGET_TYPE: i32 = 16;
 const PUBLIC_APP_STORE_TENANT_ID: i64 = 20_001;
 const PUBLIC_APP_STORE_ORGANIZATION_ID: i64 = 0;
 const APP_STORE_CATEGORY_TYPE: i32 = 999_999;
+const APP_STORE_CATEGORY_SCOPE: &str = "app_store";
 const APP_STORE_CATEGORY_GROUP: &str = "app-store";
 const MAX_RUNTIME_ID_ATTEMPTS: u8 = 16;
 
@@ -588,14 +589,13 @@ async fn list_categories(
                icon_resource_snapshot,
                COALESCE(sort_weight, 0) AS sort_weight,
                parent_id, path, COALESCE(visible, true) AS visible,
-               COALESCE(status, 1) AS status, type AS category_type
+               COALESCE(status, 1) AS status, category_type
         FROM c_category
         WHERE (
               (tenant_id = $1 AND organization_id = $2)
               OR (tenant_id = $3 AND organization_id = $4)
           )
-          AND type = $5
-          AND group_name = $6
+          AND category_type = 'app_store'
           AND COALESCE(status, 1) >= 0
         ORDER BY
             CASE
@@ -612,8 +612,6 @@ async fn list_categories(
     .bind(query.subject.organization_id)
     .bind(PUBLIC_APP_STORE_TENANT_ID)
     .bind(PUBLIC_APP_STORE_ORGANIZATION_ID)
-    .bind(APP_STORE_CATEGORY_TYPE)
-    .bind(APP_STORE_CATEGORY_GROUP)
     .fetch_all(pool)
     .await
     .map_err(|error| store_error("failed to list app categories", error))?;
@@ -945,8 +943,7 @@ async fn load_app_category_filter(
               (tenant_id = $2 AND organization_id = $3)
               OR (tenant_id = $4 AND organization_id = $5)
           )
-          AND type = $6
-          AND group_name = $7
+          AND category_type = 'app_store'
           AND COALESCE(status, 1) >= 0
         ORDER BY
             CASE
@@ -962,8 +959,6 @@ async fn load_app_category_filter(
     .bind(organization_id)
     .bind(PUBLIC_APP_STORE_TENANT_ID)
     .bind(PUBLIC_APP_STORE_ORGANIZATION_ID)
-    .bind(APP_STORE_CATEGORY_TYPE)
-    .bind(APP_STORE_CATEGORY_GROUP)
     .fetch_optional(pool)
     .await
     .map_err(|error| store_error("failed to load app category filter", error))?;
@@ -1587,12 +1582,12 @@ async fn insert_category(
     sqlx::query(
         r#"
         INSERT INTO c_category
-            (id, uuid, tenant_id, organization_id, data_scope, name, description, type, group_name, code,
+            (id, uuid, tenant_id, organization_id, data_scope, category_type, name, description, code,
              icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot,
              sort_weight, parent_id, path, visible, status, created_at, updated_at)
         VALUES
-            ($1, $2, $3, $4, 1, $5, $6, $7, $8, $9, $10, $11, $12::jsonb,
-             $13, $14, $15, $16, $17, $18::timestamptz, $19::timestamptz)
+            ($1, $2, $3, $4, 1, 'app_store', $5, $6, $7, $8, $9, $10::jsonb,
+             $11, $12, $13, $14, $15, $16::timestamptz, $17::timestamptz)
         "#,
     )
     .bind(id)
@@ -1601,8 +1596,6 @@ async fn insert_category(
     .bind(command.subject.organization_id)
     .bind(&command.name)
     .bind(command.description.as_deref())
-    .bind(command.category_type)
-    .bind(APP_STORE_CATEGORY_GROUP)
     .bind(command.code.as_deref())
     .bind(icon_media_resource_id)
     .bind(icon_object_blob_id)
@@ -1632,20 +1625,17 @@ async fn load_category_by_id(
                icon_resource_snapshot,
                COALESCE(sort_weight, 0) AS sort_weight,
                parent_id, path, COALESCE(visible, true) AS visible,
-               COALESCE(status, 1) AS status, type AS category_type
+               COALESCE(status, 1) AS status, category_type
         FROM c_category
         WHERE id = $1
           AND tenant_id = $2
           AND organization_id = $3
-          AND type = $4
-          AND group_name = $5
+          AND category_type = 'app_store'
         "#,
     )
     .bind(category_id)
     .bind(tenant_id)
     .bind(organization_id)
-    .bind(APP_STORE_CATEGORY_TYPE)
-    .bind(APP_STORE_CATEGORY_GROUP)
     .fetch_optional(&mut **tx)
     .await
     .map_err(|error| store_error("failed to load app category", error))?;
@@ -1833,8 +1823,7 @@ async fn update_category(
         WHERE id = $24
           AND tenant_id = $25
           AND organization_id = $26
-          AND type = $27
-          AND group_name = $28
+          AND category_type = 'app_store'
         "#,
     )
     .bind(command.name.is_some())
@@ -1881,8 +1870,6 @@ async fn update_category(
     .bind(command.category_id)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
-    .bind(APP_STORE_CATEGORY_TYPE)
-    .bind(APP_STORE_CATEGORY_GROUP)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to update app category", error))?;
@@ -1984,16 +1971,13 @@ async fn delete_category(
         WHERE id = $2
           AND tenant_id = $3
           AND organization_id = $4
-          AND type = $5
-          AND group_name = $6
+          AND category_type = 'app_store'
         "#,
     )
     .bind(&command.requested_at)
     .bind(command.category_id)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
-    .bind(APP_STORE_CATEGORY_TYPE)
-    .bind(APP_STORE_CATEGORY_GROUP)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to delete app category", error))?;
@@ -2011,16 +1995,13 @@ async fn ensure_category_delete_allowed(
         WHERE tenant_id = $1
           AND organization_id = $2
           AND parent_id = $3
-          AND type = $4
-          AND group_name = $5
+          AND category_type = 'app_store'
           AND COALESCE(status, 1) >= 0
         "#,
     )
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
     .bind(command.category_id)
-    .bind(APP_STORE_CATEGORY_TYPE)
-    .bind(APP_STORE_CATEGORY_GROUP)
     .fetch_one(&mut **tx)
     .await
     .map_err(|error| store_error("failed to validate child app categories", error))?;
@@ -2318,8 +2299,17 @@ fn category_from_row(row: sqlx::postgres::PgRow) -> DomainResult<AdminAppCategor
         path: row.try_get("path").ok().flatten(),
         visible: bool_cell(&row, "visible"),
         status: integer_cell(&row, "status") as i32,
-        category_type: integer_cell(&row, "category_type") as i32,
+        category_type: category_type_to_api(
+            string_cell(&row, "category_type").unwrap_or_default(),
+        ),
     })
+}
+
+fn category_type_to_api(scope: String) -> i32 {
+    match scope.as_str() {
+        "app_store" => APP_STORE_CATEGORY_TYPE,
+        _ => scope.parse().unwrap_or(0),
+    }
 }
 
 fn template_from_row(row: sqlx::postgres::PgRow) -> DomainResult<AdminAppTemplateItem> {

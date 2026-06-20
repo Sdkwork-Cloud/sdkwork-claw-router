@@ -8,10 +8,10 @@ frontend_operations:
   api_method: GET
   api_path: /backend/v3/api/platform/apps
   read_sources:
-  - plus_app
-  - plus_category
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - platform_app
+  - c_category
+  - ai_skill_asset
+  - ai_skill_artifact
   query_parameters:
   - name: q
     schema:
@@ -238,7 +238,7 @@ frontend_operations:
   api_method: GET
   api_path: /backend/v3/api/platform/apps/categories
   read_sources:
-  - plus_category
+  - c_category
   query_parameters: []
   response_schema:
     name: AdminAppCategoryListResponse
@@ -309,9 +309,9 @@ frontend_operations:
   api_method: POST
   api_path: /backend/v3/api/platform/apps/categories
   read_sources:
-  - plus_category
+  - c_category
   write_tables:
-  - plus_category
+  - c_category
   - ops_audit_log
   request_schema:
     name: AdminAppCategoryCreateRequest
@@ -374,9 +374,9 @@ frontend_operations:
   api_method: PUT
   api_path: /backend/v3/api/platform/apps/categories/{categoryId}
   read_sources:
-  - plus_category
+  - c_category
   write_tables:
-  - plus_category
+  - c_category
   - ops_audit_log
   request_schema:
     name: AdminAppCategoryUpdateRequest
@@ -442,9 +442,9 @@ frontend_operations:
   api_method: DELETE
   api_path: /backend/v3/api/platform/apps/categories/{categoryId}
   read_sources:
-  - plus_category
+  - c_category
   write_tables:
-  - plus_category
+  - c_category
   - ops_audit_log
   request_body_required: false
   response_schema:
@@ -465,8 +465,8 @@ frontend_operations:
   api_path: /backend/v3/api/platform/apps/templates
   read_sources:
   - studio_app_template
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - ai_skill_asset
+  - ai_skill_artifact
   query_parameters:
   - name: q
     schema:
@@ -967,14 +967,14 @@ frontend_operations:
   api_path: /backend/v3/api/platform/apps/templates/{templateId}
   read_sources:
   - studio_app_template
-  - studio_catalog_action
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - ai_skill_action
+  - ai_skill_asset
+  - ai_skill_artifact
   write_tables:
   - studio_app_template
-  - studio_catalog_action
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - ai_skill_action
+  - ai_skill_asset
+  - ai_skill_artifact
   - ops_audit_log
   request_body_required: false
   response_schema:
@@ -1025,12 +1025,12 @@ frontend_operations:
   api_method: POST
   api_path: /backend/v3/api/platform/apps
   read_sources:
-  - plus_app
-  - plus_category
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - platform_app
+  - c_category
+  - ai_skill_asset
+  - ai_skill_artifact
   write_tables:
-  - plus_app
+  - platform_app
   - ops_audit_log
   request_schema:
     name: AdminAppCreateRequest
@@ -1137,10 +1137,10 @@ frontend_operations:
   api_method: GET
   api_path: /backend/v3/api/platform/apps/{appId}
   read_sources:
-  - plus_app
-  - plus_category
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - platform_app
+  - c_category
+  - ai_skill_asset
+  - ai_skill_artifact
   query_parameters: []
   response_schema:
     name: AdminAppMutationResponse
@@ -1162,12 +1162,12 @@ frontend_operations:
   api_method: PUT
   api_path: /backend/v3/api/platform/apps/{appId}
   read_sources:
-  - plus_app
-  - plus_category
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - platform_app
+  - c_category
+  - ai_skill_asset
+  - ai_skill_artifact
   write_tables:
-  - plus_app
+  - platform_app
   - ops_audit_log
   request_schema:
     name: AdminAppUpdateRequest
@@ -1269,15 +1269,15 @@ frontend_operations:
   api_method: DELETE
   api_path: /backend/v3/api/platform/apps/{appId}
   read_sources:
-  - plus_app
-  - studio_catalog_action
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - platform_app
+  - ai_skill_action
+  - ai_skill_asset
+  - ai_skill_artifact
   write_tables:
-  - plus_app
-  - studio_catalog_action
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - platform_app
+  - ai_skill_action
+  - ai_skill_asset
+  - ai_skill_artifact
   - ops_audit_log
   response_schema:
     name: AdminAppDeleteResponse
@@ -1296,9 +1296,9 @@ frontend_operations:
   api_path: /backend/v3/api/platform/apps/{appId}/enable
   description: Sets PlusApp runtime status to ACTIVE without changing config.portal.marketStatus.
   read_sources:
-  - plus_app
+  - platform_app
   write_tables:
-  - plus_app
+  - platform_app
   - ops_audit_log
   request_body_required: false
   response_schema:
@@ -1322,9 +1322,9 @@ frontend_operations:
   api_path: /backend/v3/api/platform/apps/{appId}/disable
   description: Sets PlusApp runtime status to INACTIVE without changing config.portal.marketStatus.
   read_sources:
-  - plus_app
+  - platform_app
   write_tables:
-  - plus_app
+  - platform_app
   - ops_audit_log
   request_body_required: false
   response_schema:
@@ -1348,9 +1348,9 @@ frontend_operations:
   api_path: /backend/v3/api/platform/apps/{appId}/publish
   description: Sets config.portal.marketStatus to PUBLISHED without changing PlusApp runtime status.
   read_sources:
-  - plus_app
+  - platform_app
   write_tables:
-  - plus_app
+  - platform_app
   - ops_audit_log
   request_body_required: false
   response_schema:
@@ -1374,9 +1374,9 @@ frontend_operations:
   api_path: /backend/v3/api/platform/apps/{appId}/unpublish
   description: Sets config.portal.marketStatus to OFFLINE without changing PlusApp runtime status.
   read_sources:
-  - plus_app
+  - platform_app
   write_tables:
-  - plus_app
+  - platform_app
   - ops_audit_log
   request_body_required: false
   response_schema:

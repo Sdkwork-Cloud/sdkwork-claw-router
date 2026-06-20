@@ -226,14 +226,14 @@ frontend_operations:
   api_path: /backend/v3/api/catalog/category_seeds/initialize
   sdk_domain: commerce
   summary: Initialize admin category seed datasets
-  description: Imports selected category seed datasets from data/categories into commerce product categories and reusable plus_category records.
+  description: Imports selected category seed datasets from data/categories into commerce product categories and reusable c_category records.
   idempotency_required: true
   read_sources:
   - commerce_product_category
-  - plus_category
+  - c_category
   write_tables:
   - commerce_product_category
-  - plus_category
+  - c_category
   - ops_audit_log
   request_schema:
     name: CommerceCategorySeedInitializeRequest
@@ -284,7 +284,7 @@ frontend_operations:
               type: string
               enum:
               - commerce_product_category
-              - plus_category
+              - c_category
             requested:
               type: integer
               format: int64

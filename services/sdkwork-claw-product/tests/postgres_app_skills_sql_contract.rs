@@ -40,7 +40,7 @@ fn app_skills_sql_enforces_public_market_filter() {
         "upper(COALESCE(s.visibility, '')) = 'PUBLIC'",
         "upper(COALESCE(s.review_status, '')) = 'APPROVED'",
         "upper(COALESCE(s.market_status, '')) = 'PUBLISHED'",
-        "c.type IN (19, 20)",
+        "c.category_type IN ('skill_market', 'skills_collection')",
         "target_type = $3",
         "CATALOG_TARGET_TYPE_SKILL",
     ] {

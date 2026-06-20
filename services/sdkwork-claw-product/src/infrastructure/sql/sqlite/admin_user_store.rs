@@ -1038,14 +1038,16 @@ async fn insert_api_key(
     command: &CreateAdminUserApiKeyCommand,
     group_id: i64,
 ) -> DomainResult<i64> {
+    let id = next_claw_runtime_id("admin user api key")?;
     sqlx::query(
         r#"
         INSERT INTO iam_gateway_api_key
-            (uuid, tenant_id, organization_id, user_id, channel_group_id, name, key_prefix, key_display_masked, key_hash, hash_alg, secret_version, idempotency_key, status, created_at, updated_at, last_revealed_at)
+            (id, uuid, tenant_id, organization_id, user_id, channel_group_id, name, key_prefix, key_display_masked, key_hash, hash_alg, secret_version, idempotency_key, status, created_at, updated_at, last_revealed_at)
         VALUES
-            (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?, CURRENT_TIMESTAMP)
+            (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?, CURRENT_TIMESTAMP)
         "#,
     )
+    .bind(id)
     .bind(&command.api_key_uuid)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
@@ -1063,10 +1065,7 @@ async fn insert_api_key(
     .execute(&mut **tx)
     .await
     .map_err(store_create_error)?;
-    sqlx::query_scalar("SELECT last_insert_rowid()")
-        .fetch_one(&mut **tx)
-        .await
-        .map_err(|error| store_error("failed to read created api key id", error))
+    Ok(id)
 }
 
 async fn revoke_api_key(

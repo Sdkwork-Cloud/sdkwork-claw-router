@@ -16,7 +16,7 @@ frontend_models:
   - status
   - type
   data_sources:
-  - plus_category
+  - c_category
 - route: /admin/skill
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   interface: AdminSkillCategoryCreateInput
@@ -32,7 +32,7 @@ frontend_models:
   - status
   - type
   data_sources:
-  - plus_category
+  - c_category
 - route: /admin/skill
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   interface: AdminSkillCategoryUpdateInput
@@ -48,7 +48,7 @@ frontend_models:
   - status
   - type
   data_sources:
-  - plus_category
+  - c_category
 - route: /admin/skill
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   interface: AdminSkillPackage
@@ -69,8 +69,8 @@ frontend_models:
   - createdAt
   - updatedAt
   data_sources:
-  - plus_agent_skill_package
-  - plus_category
+  - ai_agent_skill_package
+  - c_category
 - route: /admin/skill
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   interface: AdminSkillPackageListInput
@@ -81,8 +81,8 @@ frontend_models:
   - page
   - pageSize
   data_sources:
-  - plus_agent_skill_package
-  - plus_category
+  - ai_agent_skill_package
+  - c_category
 - route: /admin/skill
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   interface: AdminSkillPackageCreateInput
@@ -99,8 +99,8 @@ frontend_models:
   - tags
   - cover
   data_sources:
-  - plus_agent_skill_package
-  - plus_category
+  - ai_agent_skill_package
+  - c_category
 - route: /admin/skill
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   interface: AdminSkillPackageUpdateInput
@@ -117,8 +117,8 @@ frontend_models:
   - tags
   - cover
   data_sources:
-  - plus_agent_skill_package
-  - plus_category
+  - ai_agent_skill_package
+  - c_category
 - route: /admin/skill
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   interface: AdminSkill
@@ -167,9 +167,9 @@ frontend_models:
   - createdAt
   - updatedAt
   data_sources:
-  - plus_agent_skill
-  - plus_agent_skill_package
-  - plus_category
+  - ai_agent_skill
+  - ai_agent_skill_package
+  - c_category
 - route: /admin/skill
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   interface: AdminSkillListInput
@@ -183,9 +183,9 @@ frontend_models:
   - page
   - pageSize
   data_sources:
-  - plus_agent_skill
-  - plus_agent_skill_package
-  - plus_category
+  - ai_agent_skill
+  - ai_agent_skill_package
+  - c_category
 - route: /admin/skill
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   interface: AdminSkillCreateInput
@@ -224,9 +224,9 @@ frontend_models:
   - configSchema
   - defaultConfig
   data_sources:
-  - plus_agent_skill
-  - plus_agent_skill_package
-  - plus_category
+  - ai_agent_skill
+  - ai_agent_skill_package
+  - c_category
 - route: /admin/skill
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   interface: AdminSkillUpdateInput
@@ -262,9 +262,9 @@ frontend_models:
   - configSchema
   - defaultConfig
   data_sources:
-  - plus_agent_skill
-  - plus_agent_skill_package
-  - plus_category
+  - ai_agent_skill
+  - ai_agent_skill_package
+  - c_category
 - route: /admin/skill
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   interface: AdminSkillAsset
@@ -290,9 +290,9 @@ frontend_models:
   - createdAt
   - updatedAt
   data_sources:
-  - plus_agent_skill
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - ai_agent_skill
+  - ai_skill_asset
+  - ai_skill_artifact
 - route: /admin/skill
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   interface: AdminSkillAssetCreateInput
@@ -312,9 +312,9 @@ frontend_models:
   - status
   - publishedAt
   data_sources:
-  - plus_agent_skill
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - ai_agent_skill
+  - ai_skill_asset
+  - ai_skill_artifact
 - route: /admin/skill
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   interface: AdminSkillAssetUpdateInput
@@ -334,9 +334,9 @@ frontend_models:
   - status
   - publishedAt
   data_sources:
-  - plus_agent_skill
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - ai_agent_skill
+  - ai_skill_asset
+  - ai_skill_artifact
 - route: /admin/skill
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   interface: AdminSkillArtifact
@@ -363,9 +363,9 @@ frontend_models:
   - createdAt
   - updatedAt
   data_sources:
-  - plus_agent_skill
-  - studio_catalog_artifact
-  - studio_catalog_asset
+  - ai_agent_skill
+  - ai_skill_artifact
+  - ai_skill_asset
 - route: /admin/skill
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   interface: AdminSkillArtifactCreateInput
@@ -386,9 +386,9 @@ frontend_models:
   - publishedAt
   - deprecatedAt
   data_sources:
-  - plus_agent_skill
-  - studio_catalog_artifact
-  - studio_catalog_asset
+  - ai_agent_skill
+  - ai_skill_artifact
+  - ai_skill_asset
 - route: /admin/skill
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   interface: AdminSkillArtifactUpdateInput
@@ -409,6 +409,6 @@ frontend_models:
   - publishedAt
   - deprecatedAt
   data_sources:
-  - plus_agent_skill
-  - studio_catalog_artifact
-  - studio_catalog_asset
+  - ai_agent_skill
+  - ai_skill_artifact
+  - ai_skill_asset

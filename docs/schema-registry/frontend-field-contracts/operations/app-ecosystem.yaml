@@ -8,12 +8,12 @@ frontend_operations:
   api_method: GET
   api_path: /app/v3/api/ecosystem/skills
   read_sources:
-  - plus_agent_skill
-  - plus_agent_skill_package
-  - plus_category
-  - studio_catalog_action
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - ai_agent_skill
+  - ai_agent_skill_package
+  - c_category
+  - ai_skill_action
+  - ai_skill_asset
+  - ai_skill_artifact
   query_parameters:
   - name: q
     schema:
@@ -185,12 +185,12 @@ frontend_operations:
   api_method: GET
   api_path: /app/v3/api/ecosystem/skills/{skillId}
   read_sources:
-  - plus_agent_skill
-  - plus_agent_skill_package
-  - plus_category
-  - studio_catalog_action
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - ai_agent_skill
+  - ai_agent_skill_package
+  - c_category
+  - ai_skill_action
+  - ai_skill_asset
+  - ai_skill_artifact
   query_parameters: []
   response_schema:
     name: SkillDetailResponse
@@ -206,7 +206,7 @@ frontend_operations:
   api_method: GET
   api_path: /app/v3/api/ecosystem/skills/categories
   read_sources:
-  - plus_category
+  - c_category
   query_parameters: []
   response_schema:
     name: SkillCategoriesResponse
@@ -228,12 +228,12 @@ frontend_operations:
   api_method: GET
   api_path: /app/v3/api/ecosystem/users/current/skills
   read_sources:
-  - plus_user_agent_skill
-  - plus_agent_skill
-  - plus_agent_skill_package
-  - plus_category
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - ai_user_agent_skill
+  - ai_agent_skill
+  - ai_agent_skill_package
+  - c_category
+  - ai_skill_asset
+  - ai_skill_artifact
   query_parameters: []
   response_schema:
     name: AppInstalledSkillsResponse
@@ -285,13 +285,13 @@ frontend_operations:
   api_method: POST
   api_path: /app/v3/api/ecosystem/skills/{skillId}/enable
   read_sources:
-  - plus_agent_skill
-  - plus_agent_skill_package
-  - plus_category
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - ai_agent_skill
+  - ai_agent_skill_package
+  - c_category
+  - ai_skill_asset
+  - ai_skill_artifact
   write_tables:
-  - plus_user_agent_skill
+  - ai_user_agent_skill
   request_schema: &id005
     name: AppSkillConfigRequest
     type: object
@@ -322,14 +322,14 @@ frontend_operations:
   api_method: POST
   api_path: /app/v3/api/ecosystem/skills/{skillId}/disable
   read_sources:
-  - plus_user_agent_skill
-  - plus_agent_skill
-  - plus_agent_skill_package
-  - plus_category
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - ai_user_agent_skill
+  - ai_agent_skill
+  - ai_agent_skill_package
+  - c_category
+  - ai_skill_asset
+  - ai_skill_artifact
   write_tables:
-  - plus_user_agent_skill
+  - ai_user_agent_skill
   request_body_required: false
   response_schema:
     name: AppInstalledSkillResponse
@@ -345,14 +345,14 @@ frontend_operations:
   api_method: PUT
   api_path: /app/v3/api/ecosystem/skills/{skillId}/config
   read_sources:
-  - plus_user_agent_skill
-  - plus_agent_skill
-  - plus_agent_skill_package
-  - plus_category
-  - studio_catalog_asset
-  - studio_catalog_artifact
+  - ai_user_agent_skill
+  - ai_agent_skill
+  - ai_agent_skill_package
+  - c_category
+  - ai_skill_asset
+  - ai_skill_artifact
   write_tables:
-  - plus_user_agent_skill
+  - ai_user_agent_skill
   request_schema: *id005
   response_schema:
     name: AppInstalledSkillResponse
