@@ -1,7 +1,7 @@
 fragment: models/console-memberships
 frontend_models:
 - route: /console/memberships
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/src/App.tsx
   interface: MembershipSummary
   fields:
   - membershipNo
@@ -15,7 +15,7 @@ frontend_models:
   - commerce_membership_plan
   - commerce_membership_entitlement
 - route: /console/memberships
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/src/App.tsx
   interface: MembershipPackageGroup
   fields:
   - id
@@ -43,7 +43,7 @@ frontend_models:
   - commerce_membership_plan
   - commerce_product_sku
 - route: /console/memberships
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/src/App.tsx
   interface: MembershipPackage
   fields:
   - id
@@ -64,7 +64,7 @@ frontend_models:
   - commerce_membership_plan
   - commerce_product_sku
 - route: /console/memberships
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/src/App.tsx
   interface: MembershipBenefit
   fields:
   - code
@@ -78,7 +78,7 @@ frontend_models:
   - commerce_membership_entitlement
   - commerce_membership_entitlement_usage
 - route: /console/memberships
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/src/App.tsx
   interface: MembershipPointsBalance
   fields:
   - balance
@@ -89,7 +89,7 @@ frontend_models:
   - commerce_account_ledger_entry
   - commerce_membership
 - route: /console/memberships
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/src/App.tsx
   interface: MembershipPointsHistoryItem
   fields:
   - id
@@ -102,7 +102,7 @@ frontend_models:
   - commerce_account_ledger_entry
   - commerce_membership
 - route: /console/memberships
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/src/App.tsx
   interface: MembershipDailyRewardStatus
   fields:
   - available
@@ -116,7 +116,7 @@ frontend_models:
   - commerce_account_ledger_entry
   - commerce_membership_entitlement_usage
 - route: /console/memberships
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/src/App.tsx
   interface: MembershipPrivilegeUsageItem
   fields:
   - code
@@ -130,7 +130,7 @@ frontend_models:
   - commerce_membership_entitlement
   - commerce_membership_entitlement_usage
 - route: /console/memberships
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/src/App.tsx
   interface: MembershipPrivilegeUsage
   fields:
   - speedUpAvailable
@@ -147,7 +147,7 @@ frontend_models:
   - commerce_membership_entitlement
   - commerce_membership_entitlement_usage
 - route: /console/memberships
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/src/App.tsx
   interface: MembershipActionResult
   fields:
   - success
@@ -163,7 +163,7 @@ frontend_models:
   - commerce_membership_entitlement_usage
   - ops_audit_log
 - route: /console/memberships
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/src/App.tsx
   interface: MembershipOverview
   fields:
   - summary

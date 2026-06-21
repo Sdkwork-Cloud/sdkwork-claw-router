@@ -262,7 +262,7 @@ const HTTP_ROUTES: &[HttpRoute] = &[
         "runtime",
         "invocationEventStreams.list",
     ),
-    HttpRoute::dual_token(
+    HttpRoute::public(
         HttpMethod::Get,
         "/app/v3/api/system/site/runtime",
         "system",
@@ -272,5 +272,26 @@ const HTTP_ROUTES: &[HttpRoute] = &[
 
 pub fn http_route_manifest() -> HttpRouteManifest {
     HttpRouteManifest::new(HTTP_ROUTES)
+}
+
+#[cfg(test)]
+mod tests {
+    use sdkwork_web_contract::RouteAuth;
+    use sdkwork_web_core::{resolve_public_path, WebRequestContextProfile};
+
+    #[test]
+    fn site_runtime_route_is_public_without_app_session() {
+        let manifest = super::http_route_manifest();
+        let route = manifest
+            .match_route("GET", "/app/v3/api/system/site/runtime")
+            .expect("site runtime route must be registered");
+        assert_eq!(RouteAuth::Public, route.auth);
+        assert!(resolve_public_path(
+            "GET",
+            "/app/v3/api/system/site/runtime",
+            &WebRequestContextProfile::default(),
+            Some(manifest),
+        ));
+    }
 }
 

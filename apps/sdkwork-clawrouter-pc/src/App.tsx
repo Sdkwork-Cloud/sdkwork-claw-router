@@ -16,6 +16,7 @@ import {
   type ThemePreference,
 } from './themePreference';
 import { RequireAdminSession, RequirePortalSession, PortalAuthenticatedAuthRouteGuard } from './auth/protectedPortalRoutes';
+import { ConsoleCheckoutView, ConsoleMembershipView, ConsolePaymentView } from './commerce/consoleCommerceViews';
 
 const Home = lazyRoute(() => import('@sdkwork/clawrouter-pc-home'), 'Home');
 const Models = lazyRoute(() => import('@sdkwork/clawrouter-pc-models/models'), 'Models');
@@ -40,10 +41,9 @@ const GatewayView = lazyRoute(() => import('@sdkwork/clawrouter-pc-console-gatew
 const ApiKeysView = lazyRoute(() => import('@sdkwork/clawrouter-pc-console-api-keys'), 'ApiKeysView');
 const UserView = lazyRoute(() => import('@sdkwork/clawrouter-pc-console-user'), 'UserView');
 const SettingsView = lazyRoute(() => import('@sdkwork/clawrouter-pc-console-settings'), 'SettingsView');
-const AccountView = lazyRoute(() => import('@sdkwork/clawrouter-pc-console-account'), 'AccountView');
-const WalletView = lazyRoute(() => import('@sdkwork/clawrouter-pc-console-wallet'), 'WalletView');
-const MembershipsView = lazyRoute(() => import('@sdkwork/clawrouter-pc-console-memberships'), 'MembershipsView');
-const SettlementsView = lazyRoute(() => import('@sdkwork/clawrouter-pc-console-settlements'), 'SettlementsView');
+const AccountView = lazyRoute(() => import('@sdkwork/commerce-pc-billing'), 'SdkworkBillingPage');
+const WalletView = lazyRoute(() => import('@sdkwork/commerce-pc-wallet'), 'SdkworkWalletPage');
+const SettlementsView = lazyRoute(() => import('@sdkwork/commerce-pc-billing'), 'SdkworkBillingPage');
 const MessagesView = lazyRoute(() => import('@sdkwork/clawrouter-pc-console-messages'), 'MessagesView');
 
 const DashboardAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-dashboard'), 'DashboardAdmin');
@@ -162,7 +162,9 @@ export default function App() {
               <Route path="api-keys" element={<ApiKeysView />} />
               <Route path="account" element={<AccountView />} />
               <Route path="wallet" element={<WalletView />} />
-              <Route path="memberships" element={<MembershipsView />} />
+              <Route path="memberships" element={<ConsoleMembershipView />} />
+              <Route path="checkout" element={<ConsoleCheckoutView />} />
+              <Route path="payment" element={<ConsolePaymentView />} />
               <Route path="settlements" element={<SettlementsView />} />
               <Route path="notifications" element={<MessagesView />} />
               <Route path="user" element={<UserView />} />

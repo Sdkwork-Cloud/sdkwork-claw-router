@@ -1378,18 +1378,18 @@ test('installation documentation covers release, source, initialization, usage, 
   assert.ok(enRelease.includes('./bin/clawrouterctl ensure'));
   assert.ok(zhSource.includes('pnpm release:env:write -- --check'));
   assert.ok(enSource.includes('pnpm release:env:write -- --check'));
-  assert.ok(zhSource.includes('目标机器后，不要求安�?`pnpm`'));
+  assert.ok(zhSource.includes('目标机器后，不要求安�?`pnpm`'));
   assert.ok(enSource.includes('the host does not need `pnpm`'));
-  assert.ok(zhUsage.includes('注册是否需要验证码�?IAM 运行时策略控�?));
+  assert.ok(zhUsage.includes('注册是否需要验证码�?IAM 运行时策略控�?));
   assert.ok(enUsage.includes('Whether registration requires verification code is controlled by IAM runtime policy'));
   assert.ok(zhUsage.includes('SDK 包版本独立于 Claw Router release 版本'));
   assert.ok(enUsage.includes('SDK package versions are independent from Claw Router release versions'));
   /*
   assert.ok(zhSource.includes('鐩爣鏈哄櫒鍚庯紝涓嶈姹傚畨瑁?`pnpm`'));
   assert.ok(enSource.includes('the host does not need `pnpm`'));
-  assert.ok(zhUsage.includes('娉ㄥ唽鏄惁闇€瑕侀獙璇佺爜�?IAM 杩愯鏃剁瓥鐣ユ帶鍒?));
+  assert.ok(zhUsage.includes('娉ㄥ唽鏄惁闇€瑕侀獙璇佺爜�?IAM 杩愯鏃剁瓥鐣ユ帶鍒?));
   assert.ok(enUsage.includes('Whether registration requires verification code is controlled by IAM runtime policy'));
-  assert.ok(zhUsage.includes('SDK 鍖呯増鏈嫭绔嬩�?Claw Router release 鐗堟�?));
+  assert.ok(zhUsage.includes('SDK 鍖呯増鏈嫭绔嬩�?Claw Router release 鐗堟�?));
   assert.ok(enUsage.includes('SDK package versions are independent from Claw Router release versions'));
   */
   assert.ok(rootReadme.includes('Client development commands use `sdkwork-api-gateway` for API integration.'));

@@ -357,6 +357,85 @@ routes:
   evidence:
   - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-api-keys/src/apiKeyService.ts
   - docs/schema-registry/frontend-field-contracts.yaml
+- route: /console/notifications
+  package: "@sdkwork/clawrouter-pc-console-messages"
+  owner: customer-console
+  route_scope: console
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  evidence:
+  - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-messages/src/messagesService.ts
+  - docs/schema-registry/frontend-field-contracts/models/commons.yaml
+- route: /console/account
+  package: "@sdkwork/commerce-pc-billing"
+  owner: customer-console
+  route_scope: console
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-commerce-app-sdk
+  evidence:
+  - apps/sdkwork-clawrouter-pc/src/App.tsx
+  - docs/schema-registry/frontend-field-contracts/models/console-account.yaml
+- route: /console/wallet
+  package: "@sdkwork/commerce-pc-wallet"
+  owner: customer-console
+  route_scope: console
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-commerce-app-sdk
+  evidence:
+  - apps/sdkwork-clawrouter-pc/src/App.tsx
+  - docs/schema-registry/frontend-field-contracts/models/console-wallet.yaml
+- route: /console/memberships
+  package: "@sdkwork/commerce-pc-membership"
+  owner: customer-console
+  route_scope: console
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-commerce-app-sdk
+  evidence:
+  - apps/sdkwork-clawrouter-pc/src/App.tsx
+  - docs/schema-registry/frontend-field-contracts/models/console-memberships.yaml
+- route: /console/checkout
+  package: "@sdkwork/commerce-pc-checkout"
+  owner: customer-console
+  route_scope: console
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-commerce-app-sdk
+  operation_routes:
+  - /console/memberships
+  - /console/wallet
+  evidence:
+  - apps/sdkwork-clawrouter-pc/src/commerce/consoleCommerceViews.tsx
+  - docs/schema-registry/frontend-field-contracts/models/console-checkout.yaml
+- route: /console/payment
+  package: "@sdkwork/commerce-pc-payment"
+  owner: customer-console
+  route_scope: console
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-commerce-app-sdk
+  operation_routes:
+  - /console/checkout
+  evidence:
+  - apps/sdkwork-clawrouter-pc/src/commerce/consoleCommerceViews.tsx
+- route: /console/settlements
+  package: "@sdkwork/commerce-pc-billing"
+  owner: customer-console
+  route_scope: console
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-commerce-app-sdk
+  evidence:
+  - apps/sdkwork-clawrouter-pc/src/App.tsx
+  - docs/schema-registry/frontend-field-contracts/models/console-settlements.yaml
 - route: /console/dashboard
   package: "@sdkwork/clawrouter-pc-console-dashboard"
   owner: customer-console

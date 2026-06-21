@@ -2092,6 +2092,7 @@ name = "sdkwork-appbase-iam-bootstrap"
 version = "0.1.0"
 dependencies = [
  "chrono",
+ "sdkwork-iam-context-service",
  "sqlx",
 ]
 
@@ -2741,6 +2742,9 @@ dependencies = [
 [[package]]
 name = "sdkwork-iam-context-service"
 version = "0.1.0"
+dependencies = [
+ "sdkwork-utils-rust",
+]
 
 [[package]]
 name = "sdkwork-iam-directory-repository-sqlx"
@@ -2766,6 +2770,7 @@ dependencies = [
  "reqwest",
  "sdkwork-database-sqlx",
  "sdkwork-iam-context-service",
+ "sdkwork-utils-rust",
  "sdkwork-web-axum",
  "sdkwork-web-core",
  "serde",
@@ -2878,11 +2883,13 @@ dependencies = [
  "password-hash",
  "rand_core 0.6.4",
  "sdkwork-appbase-database-host",
+ "sdkwork-appbase-iam-bootstrap",
  "sdkwork-database-config",
  "sdkwork-database-sqlx",
  "sdkwork-iam-context-service",
  "sdkwork-iam-directory-repository-sqlx",
  "sdkwork-iam-web-adapter",
+ "sdkwork-utils-rust",
  "sdkwork-web-axum",
  "sdkwork-web-contract",
  "sdkwork-web-core",
@@ -2910,6 +2917,7 @@ dependencies = [
  "serde_json",
  "sqlx",
  "tracing",
+ "uuid",
 ]
 
 [[package]]

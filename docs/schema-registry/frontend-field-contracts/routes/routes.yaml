@@ -595,6 +595,57 @@ routes:
     - requests_per_second
     - requests_per_day
     - burst_limit
+- route: /console/account
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-commerce-app-sdk
+  required_tables:
+  - commerce_account
+  - commerce_invoice
+  - iam_user
+  - iam_organization
+  - iam_user_security_setting
+  - iam_user_login_event
+  - ai_usage_fact
+- route: /console/wallet
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-commerce-app-sdk
+  required_tables:
+  - commerce_billing_history
+  - commerce_wallet_account
+  - commerce_wallet_transaction
+- route: /console/memberships
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-commerce-app-sdk
+  required_tables:
+  - commerce_membership
+  - commerce_membership_plan
+  - commerce_membership_entitlement
+  - commerce_membership_package
+  - commerce_membership_package_group
+- route: /console/checkout
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-commerce-app-sdk
+  required_tables:
+  - commerce_checkout_session
+  - commerce_checkout_line
+  - commerce_checkout_quote
+- route: /console/payment
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-commerce-app-sdk
+  required_tables:
+  - commerce_payment_intent
+  - commerce_payment_attempt
+- route: /console/settlements
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-commerce-app-sdk
+  required_tables:
+  - commerce_usage_statement
+  - commerce_usage_statement_item
+  - ai_usage_fact
+- route: /console/notifications
+  required_tables:
+  - ops_notification_message
+  - ops_notification_delivery
 - route: /console/user
   dependency_owned: true
   dependency_sdk_family: sdkwork-appbase-app-sdk

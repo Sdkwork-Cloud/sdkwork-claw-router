@@ -87,10 +87,6 @@ class FrontendBusinessStateStandardTest(unittest.TestCase):
             / "sdkwork-clawrouter-pc-admin-channel"
             / "src"
             / "index.tsx",
-            PORTAL_PACKAGES
-            / "sdkwork-clawrouter-pc-console-commerce"
-            / "src"
-            / "CommerceView.tsx",
         ]
         panel_components = [
             PORTAL_PACKAGES
@@ -105,18 +101,6 @@ class FrontendBusinessStateStandardTest(unittest.TestCase):
             / "sdkwork-clawrouter-pc-console-settings"
             / "src"
             / "SettingsView.tsx",
-            PORTAL_PACKAGES
-            / "sdkwork-clawrouter-pc-console-account"
-            / "src"
-            / "AccountView.tsx",
-            PORTAL_PACKAGES
-            / "sdkwork-clawrouter-pc-console-commerce"
-            / "src"
-            / "CheckoutView.tsx",
-            PORTAL_PACKAGES
-            / "sdkwork-clawrouter-pc-console-recharge"
-            / "src"
-            / "RechargeView.tsx",
         ]
         marketing_components = [
             PORTAL_PACKAGES

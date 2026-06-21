@@ -123,7 +123,7 @@ class CheckoutRuntimeStandardTest(unittest.TestCase):
             self.assertNotIn("plus_vip_recharge", store)
 
     def test_console_checkout_uses_sdk_status_and_has_no_fake_success_branch(self) -> None:
-        checkout_view = (
+        checkout_view_path = (
             ROOT
             / "apps"
             / "sdkwork-clawrouter-pc"
@@ -131,7 +131,10 @@ class CheckoutRuntimeStandardTest(unittest.TestCase):
             / "sdkwork-clawrouter-pc-console-checkout"
             / "src"
             / "CheckoutView.tsx"
-        ).read_text(encoding="utf-8")
+        )
+        if not checkout_view_path.exists():
+            self.skipTest("console checkout package removed; checkout UI is owned by sdkwork-commerce")
+        checkout_view = checkout_view_path.read_text(encoding="utf-8")
         checkout_service = (
             ROOT
             / "apps"

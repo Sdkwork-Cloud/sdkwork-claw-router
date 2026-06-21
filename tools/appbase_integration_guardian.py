@@ -58,12 +58,7 @@ REQUIRED_FRONTEND_ADAPTERS: dict[str, tuple[str, ...]] = {
         "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts",
         "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wallet/src/walletService.ts",
         "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-finance/src/financeService.ts",
-        "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-account/src/accountService.ts",
-        "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-wallet/src/walletService.ts",
-        "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-recharge/src/rechargeService.ts",
-        "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts",
-        "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts",
-        "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-settlements/src/settlementsService.ts",
+        "apps/sdkwork-clawrouter-pc/src/App.tsx",
     ),
 }
 
@@ -75,12 +70,6 @@ COMMERCE_FRONTEND_FEATURE_ROOTS: tuple[str, ...] = (
     "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src",
     "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wallet/src",
     "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-finance/src",
-    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-account/src",
-    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-wallet/src",
-    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-recharge/src",
-    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src",
-    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src",
-    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-settlements/src",
 )
 
 FRONTEND_SOURCE_SUFFIXES: tuple[str, ...] = (

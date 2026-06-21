@@ -5,6 +5,18 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 WORKSPACE_ROOT = ROOT.parent
 COMMERCE_ROOT = WORKSPACE_ROOT / "sdkwork-commerce"
+CONSOLE_ACCOUNT_PACKAGE = (
+    ROOT
+    / "apps"
+    / "sdkwork-clawrouter-pc"
+    / "packages"
+    / "sdkwork-clawrouter-pc-console-account"
+)
+
+
+def skip_unless_console_account_package(test_case: unittest.TestCase) -> None:
+    if not CONSOLE_ACCOUNT_PACKAGE.exists():
+        test_case.skipTest("console account package removed; account UI is owned by sdkwork-commerce")
 COMMERCE_API_SERVER = COMMERCE_ROOT / "crates" / "sdkwork-commerce-api-server"
 COMMERCE_ACCOUNT_SERVICE = COMMERCE_ROOT / "crates" / "sdkwork-commerce-account-service"
 COMMERCE_STORAGE_SQLX = COMMERCE_ROOT / "crates" / "sdkwork-commerce-storage-repository-sqlx"
@@ -16,6 +28,7 @@ COMMERCE_ACCOUNT_STORES = [
 
 class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
     def test_console_account_ui_has_retryable_load_state(self) -> None:
+        skip_unless_console_account_package(self)
         account_view = (
             ROOT
             / "apps"
@@ -35,6 +48,7 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn('<Loader2 className="w-8 h-8', account_view)
 
     def test_console_account_product_states_are_localized(self) -> None:
+        skip_unless_console_account_package(self)
         account_view = (
             ROOT
             / "apps"
@@ -89,6 +103,7 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
             self.assertNotIn(hardcoded_copy, account_service)
 
     def test_console_account_ui_is_read_only_until_command_contract_exists(self) -> None:
+        skip_unless_console_account_package(self)
         account_view = (
             ROOT
             / "apps"
@@ -359,6 +374,7 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
         self.assertIn("- commerce_account", contract)
 
     def test_console_account_generated_sdk_and_frontend_use_precise_account_type(self) -> None:
+        skip_unless_console_account_package(self)
         package_root = (
             ROOT
             / "apps"

@@ -865,6 +865,50 @@ declare module '@sdkwork/commerce-pc-admin-product' {
   export function readSeedSummaries(result: unknown): SeedSummary[];
 }
 
+declare module '@sdkwork/commerce-pc-wallet' {
+  import type { ComponentType } from 'react';
+
+  export const SdkworkWalletPage: ComponentType<Record<string, unknown>>;
+}
+
+declare module '@sdkwork/commerce-pc-membership' {
+  import type { ComponentType } from 'react';
+
+  export const SdkworkMembershipPage: ComponentType<Record<string, unknown>>;
+}
+
+declare module '@sdkwork/commerce-pc-billing' {
+  import type { ComponentType } from 'react';
+
+  export const SdkworkBillingPage: ComponentType<Record<string, unknown>>;
+}
+
+declare module '@sdkwork/commerce-pc-checkout' {
+  import type { ComponentType } from 'react';
+
+  export interface SdkworkCheckoutPageProps {
+    onNavigate?: (route: string) => void;
+  }
+
+  export const SdkworkCheckoutPage: ComponentType<SdkworkCheckoutPageProps>;
+}
+
+declare module '@sdkwork/commerce-pc-payment' {
+  import type { ComponentType } from 'react';
+
+  export interface SdkworkPaymentController {
+    bootstrap(): Promise<unknown>;
+    openDetail(paymentId: string): Promise<unknown>;
+  }
+
+  export interface SdkworkPaymentPageProps {
+    controller?: SdkworkPaymentController;
+  }
+
+  export function createSdkworkPaymentController(): SdkworkPaymentController;
+  export const SdkworkPaymentPage: ComponentType<SdkworkPaymentPageProps>;
+}
+
 declare module '@sdkwork/image-pc-generation/generation-service' {
   export type SdkworkGenerationStatus = 'completed' | 'failed' | 'queued' | 'running';
 

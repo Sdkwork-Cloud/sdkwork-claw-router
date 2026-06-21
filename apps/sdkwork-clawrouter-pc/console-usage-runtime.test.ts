@@ -145,39 +145,17 @@ const simplifiedConsolePageFiles = [
 ].filter(portalFileExists);
 
 const deferredConsolePageFiles = [
-  "./packages/sdkwork-clawrouter-pc-console-account/src/AccountView.tsx",
-  "./packages/sdkwork-clawrouter-pc-console-wallet/src/WalletView.tsx",
-  "./packages/sdkwork-clawrouter-pc-console-recharge/src/RechargeView.tsx",
-  "./packages/sdkwork-clawrouter-pc-console-checkout/src/CheckoutView.tsx",
-  "./packages/sdkwork-clawrouter-pc-console-memberships/src/MembershipsView.tsx",
-  "./packages/sdkwork-clawrouter-pc-console-settlements/src/SettlementsView.tsx",
   "./packages/sdkwork-clawrouter-pc-console-messages/src/MessagesView.tsx",
 ];
 
 const removedConsolePageTitlePatterns = [
   {
-    file: "./packages/sdkwork-clawrouter-pc-console-account/src/AccountView.tsx",
-    pattern: /<h1[^>]*>\s*\{t\("console\.account\.accountview\.text\.jkt39d"/,
-  },
-  {
-    file: "./packages/sdkwork-clawrouter-pc-console-checkout/src/CheckoutView.tsx",
-    pattern: /<h1[^>]*>\s*\{t\("console\.billing\.checkoutview\.text\.cxkxif"/,
-  },
-  {
     file: "./packages/sdkwork-clawrouter-pc-console-gateway/src/GatewayView.tsx",
     pattern: /<h1[^>]*>\s*\{t\('console\.gateway\.title'/,
   },
   {
-    file: "./packages/sdkwork-clawrouter-pc-console-memberships/src/MembershipsView.tsx",
-    pattern: /<h1[^>]*>\s*\{t\('console\.memberships\.title'/,
-  },
-  {
     file: "./packages/sdkwork-clawrouter-pc-console-messages/src/MessagesView.tsx",
     pattern: /<h1[^>]*>\s*<Bell[^>]*>\s*\{t\('console\.messages\.title'/,
-  },
-  {
-    file: "./packages/sdkwork-clawrouter-pc-console-settlements/src/SettlementsView.tsx",
-    pattern: /<h1[^>]*>\s*\{t\('console\.menu\.settlements'/,
   },
   {
     file: "./packages/sdkwork-clawrouter-pc-console-settings/src/SettingsView.tsx",
@@ -413,10 +391,16 @@ test("console gateway tooling stays product-focused without implementation cavea
   assertNoImplementationCaveats(source);
 });
 
-test("console account summary stays product-focused without implementation caveats", { skip: !portalFileExists("./packages/sdkwork-clawrouter-pc-console-account/src/AccountView.tsx") }, () => {
-  const source = readPortalFile("./packages/sdkwork-clawrouter-pc-console-account/src/AccountView.tsx");
+test("console account and recharge surfaces are owned by sdkwork-commerce PC packages", () => {
+  const appSource = readPortalFile("./src/App.tsx");
+  const packageJson = JSON.parse(readPortalFile("./package.json")) as { dependencies: Record<string, string> };
 
-  assertNoImplementationCaveats(source);
+  assert.match(appSource, /import\('@sdkwork\/commerce-pc-billing'\), 'SdkworkBillingPage'/);
+  assert.match(appSource, /import\('@sdkwork\/commerce-pc-wallet'\), 'SdkworkWalletPage'/);
+  assert.equal(packageJson.dependencies["@sdkwork/commerce-pc-billing"], "workspace:*");
+  assert.equal(packageJson.dependencies["@sdkwork/commerce-pc-wallet"], "workspace:*");
+  assert.doesNotMatch(appSource, /clawrouter-pc-console-account/);
+  assert.doesNotMatch(appSource, /clawrouter-pc-console-recharge/);
 });
 
 test("console user settings stay product-focused without implementation caveats", () => {
@@ -497,9 +481,15 @@ test("portal applies persisted theme preferences before first React render", () 
   assert.match(mainSource, /initializeThemePreferences\(\);[\s\S]*createRoot/);
 });
 
-test("console recharge stays product-focused without implementation caveats", { skip: !portalFileExists("./packages/sdkwork-clawrouter-pc-console-recharge/src/RechargeView.tsx") }, () => {
-  const source = readPortalFile("./packages/sdkwork-clawrouter-pc-console-recharge/src/RechargeView.tsx");
+test("console commerce recharge UI is owned by sdkwork-commerce wallet package", () => {
+  const walletPagePath = "../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-wallet/src/pages/WalletPage.tsx";
+  if (!portalFileExists(walletPagePath)) {
+    return;
+  }
+  const source = readPortalFile(walletPagePath);
 
+  assert.match(source, /SdkworkWalletRechargeDialog/);
+  assert.match(source, /openRecharge/);
   assertNoImplementationCaveats(source);
 });
 

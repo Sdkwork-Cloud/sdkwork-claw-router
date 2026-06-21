@@ -353,6 +353,7 @@ class FrontendContractGuardian:
     )
     EXTERNAL_DEPENDENCY_SDK_FAMILIES_WITHOUT_LOCAL_OPERATIONS = frozenset(
         {
+            "sdkwork-commerce-app-sdk",
             "sdkwork-documents-app-sdk",
             "sdkwork-appbase-app-sdk",
             "sdkwork-clawrouter-app-sdk",

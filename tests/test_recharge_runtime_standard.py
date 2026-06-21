@@ -134,7 +134,7 @@ class RechargeRuntimeStandardTest(unittest.TestCase):
             self.assertNotIn("insert_vip_recharge", store)
 
     def test_console_recharge_uses_generated_sdk_service_adapter(self) -> None:
-        recharge_view = (
+        recharge_view_path = (
             ROOT
             / "apps"
             / "sdkwork-clawrouter-pc"
@@ -142,7 +142,10 @@ class RechargeRuntimeStandardTest(unittest.TestCase):
             / "sdkwork-clawrouter-pc-console-recharge"
             / "src"
             / "RechargeView.tsx"
-        ).read_text(encoding="utf-8")
+        )
+        if not recharge_view_path.exists():
+            self.skipTest("console recharge package removed; recharge UI is owned by sdkwork-commerce")
+        recharge_view = recharge_view_path.read_text(encoding="utf-8")
         recharge_service = (
             ROOT
             / "apps"

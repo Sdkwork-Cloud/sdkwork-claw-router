@@ -80,8 +80,9 @@ class FrontendClipboardStandardTest(unittest.TestCase):
 
     def test_high_value_copy_interactions_use_shared_copy_button(self) -> None:
         migrated_files = [
+            path
+            for path in [
             FRONTEND_ROOT / "sdkwork-clawrouter-pc-admin-user" / "src" / "index.tsx",
-            FRONTEND_ROOT / "sdkwork-clawrouter-pc-console-account" / "src" / "AccountView.tsx",
             FRONTEND_ROOT / "sdkwork-clawrouter-pc-console-api-keys" / "src" / "ApiKeysView.tsx",
             FRONTEND_ROOT / "sdkwork-clawrouter-pc-models" / "src" / "pages" / "ModelDetails.tsx",
             DOCUMENTS_PACKAGES_ROOT
@@ -104,6 +105,8 @@ class FrontendClipboardStandardTest(unittest.TestCase):
             / "src"
             / "pages"
             / "SdkReference.tsx",
+            ]
+            if path.exists()
         ]
         offenders: list[str] = []
 

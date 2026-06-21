@@ -170,6 +170,9 @@ importers:
       '@sdkwork/clawrouter-pc-console-gateway':
         specifier: workspace:*
         version: link:packages/sdkwork-clawrouter-pc-console-gateway
+      '@sdkwork/clawrouter-pc-console-messages':
+        specifier: workspace:*
+        version: link:packages/sdkwork-clawrouter-pc-console-messages
       '@sdkwork/clawrouter-pc-console-settings':
         specifier: workspace:*
         version: link:packages/sdkwork-clawrouter-pc-console-settings
@@ -212,6 +215,21 @@ importers:
       '@sdkwork/commerce-pc-admin-product':
         specifier: workspace:*
         version: link:../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-admin-product
+      '@sdkwork/commerce-pc-billing':
+        specifier: workspace:*
+        version: link:../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-billing
+      '@sdkwork/commerce-pc-checkout':
+        specifier: workspace:*
+        version: link:../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-checkout
+      '@sdkwork/commerce-pc-membership':
+        specifier: workspace:*
+        version: link:../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-membership
+      '@sdkwork/commerce-pc-payment':
+        specifier: workspace:*
+        version: link:../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-payment
+      '@sdkwork/commerce-pc-wallet':
+        specifier: workspace:*
+        version: link:../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-wallet
       '@sdkwork/commerce-sdk-ports':
         specifier: workspace:*
         version: link:../../../sdkwork-commerce/packages/common/commerce/sdkwork-commerce-sdk-ports
@@ -514,6 +532,25 @@ importers:
         specifier: ^6.0.2
         version: 6.0.2
 
+  ../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-application-bootstrap:
+    dependencies:
+      '@sdkwork/iam-sdk-adapter':
+        specifier: workspace:*
+        version: link:../sdkwork-iam-sdk-adapter
+      '@sdkwork/iam-sdk-ports':
+        specifier: workspace:*
+        version: link:../sdkwork-iam-sdk-ports
+      '@sdkwork/iam-service':
+        specifier: workspace:*
+        version: link:../sdkwork-iam-service
+      '@sdkwork/runtime-bootstrap':
+        specifier: workspace:*
+        version: link:../../foundation/sdkwork-runtime-bootstrap
+    devDependencies:
+      typescript:
+        specifier: ^6.0.2
+        version: 6.0.2
+
   ../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-contracts:
     devDependencies:
       typescript:
@@ -586,7 +623,11 @@ importers:
         specifier: ^6.0.2
         version: 6.0.2
 
-  ../../../sdkwork-appbase/packages/common/integration/sdkwork-platform: {}
+  ../../../sdkwork-appbase/packages/common/integration/sdkwork-platform:
+    dependencies:
+      '@sdkwork/utils':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-utils/packages/sdkwork-utils-typescript
 
   ../../../sdkwork-appbase/packages/pc-react/device/sdkwork-distribution-pc-react:
     dependencies:
@@ -634,6 +675,9 @@ importers:
       '@sdkwork/runtime-bootstrap':
         specifier: workspace:*
         version: link:../../../common/foundation/sdkwork-runtime-bootstrap
+      '@sdkwork/utils':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-utils/packages/sdkwork-utils-typescript
       lucide-react:
         specifier: 'catalog:'
         version: 0.546.0(react@19.2.4)
@@ -703,6 +747,9 @@ importers:
 
   ../../../sdkwork-appbase/packages/pc-react/notification/sdkwork-notification-pc-react:
     dependencies:
+      '@sdkwork/utils':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-utils/packages/sdkwork-utils-typescript
       lucide-react:
         specifier: 'catalog:'
         version: 0.546.0(react@19.2.4)
@@ -772,7 +819,39 @@ importers:
         specifier: 'catalog:'
         version: 7.14.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
 
+  ../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-billing: {}
+
+  ../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-checkout: {}
+
   ../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-core: {}
+
+  ../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-coupon: {}
+
+  ../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-invoice: {}
+
+  ../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-membership: {}
+
+  ../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-offer: {}
+
+  ../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-order:
+    dependencies:
+      '@sdkwork/appbase-pc-react':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-appbase/packages/pc-react/foundation/sdkwork-appbase-pc-react
+
+  ../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-payment:
+    dependencies:
+      '@sdkwork/appbase-pc-react':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-appbase/packages/pc-react/foundation/sdkwork-appbase-pc-react
+
+  ../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-points: {}
+
+  ../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-pricing: {}
+
+  ../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-subscription: {}
+
+  ../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-wallet: {}
 
   ../../../sdkwork-commerce/packages/common/commerce/sdkwork-commerce-contracts: {}
 
@@ -1676,6 +1755,12 @@ importers:
         version: link:../sdkwork-clawrouter-pc-commons
 
   packages/sdkwork-clawrouter-pc-console-gateway:
+    dependencies:
+      '@sdkwork/clawrouter-pc-commons':
+        specifier: workspace:*
+        version: link:../sdkwork-clawrouter-pc-commons
+
+  packages/sdkwork-clawrouter-pc-console-messages:
     dependencies:
       '@sdkwork/clawrouter-pc-commons':
         specifier: workspace:*

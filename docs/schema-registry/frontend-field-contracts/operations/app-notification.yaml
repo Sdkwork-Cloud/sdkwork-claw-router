@@ -1,8 +1,8 @@
 fragment: operations/app-notification
 frontend_operations:
 - route: /console/notifications
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
-  operation: fetchNotifications
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-messages/src/messagesService.ts
+  operation: fetchMessages
   operation_id: notifications.list
   kind: read
   api_surface: app
@@ -49,7 +49,7 @@ frontend_operations:
             archived: { type: boolean }
             actionUrl: { type: string, nullable: true, maxLength: 512 }
 - route: /console/notifications
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-messages/src/messagesService.ts
   operation: acknowledge
   operation_id: notifications.acknowledge.create
   kind: create
@@ -74,7 +74,7 @@ frontend_operations:
       updated: { type: boolean }
       state: { type: string, enum: [acknowledged, popup_seen] }
 - route: /console/notifications
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-messages/src/messagesService.ts
   operation: markPopupSeen
   operation_id: notifications.popupSeen.create
   kind: create

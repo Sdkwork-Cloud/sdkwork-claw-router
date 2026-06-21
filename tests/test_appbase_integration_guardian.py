@@ -23,13 +23,12 @@ COMMERCE_FRONTEND_DEPENDENCIES = [
     "sdkwork-clawrouter-pc-admin-memberships",
     "sdkwork-clawrouter-pc-admin-wallet",
     "sdkwork-clawrouter-pc-admin-finance",
-    "sdkwork-clawrouter-pc-console-account",
-    "sdkwork-clawrouter-pc-console-wallet",
-    "sdkwork-clawrouter-pc-console-recharge",
-    "sdkwork-clawrouter-pc-console-checkout",
-    "sdkwork-clawrouter-pc-console-memberships",
-    "sdkwork-clawrouter-pc-console-settlements",
+    "@sdkwork/commerce-pc-wallet",
+    "@sdkwork/commerce-pc-membership",
+    "@sdkwork/commerce-pc-billing",
 ]
+
+COMMERCE_CONSOLE_SHELL_ADAPTER = "apps/sdkwork-clawrouter-pc/src/App.tsx"
 
 COMMERCE_FRONTEND_SERVICE_ADAPTERS = [
     "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts",
@@ -39,12 +38,7 @@ COMMERCE_FRONTEND_SERVICE_ADAPTERS = [
     "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts",
     "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wallet/src/walletService.ts",
     "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-finance/src/financeService.ts",
-    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-account/src/accountService.ts",
-    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-wallet/src/walletService.ts",
-    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-recharge/src/rechargeService.ts",
-    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts",
-    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts",
-    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-settlements/src/settlementsService.ts",
+    COMMERCE_CONSOLE_SHELL_ADAPTER,
 ]
 
 

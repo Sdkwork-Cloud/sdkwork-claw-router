@@ -673,6 +673,7 @@ test("console layout keeps readable navigation labels and valid logout markup", 
   assert.doesNotMatch(source, legacyConsoleMojibakePattern);
   assert.doesNotMatch(source, /path:\s*'\/console\/recharge'/);
   assert.doesNotMatch(source, /path:\s*'\/console\/checkout'/);
+  assert.doesNotMatch(source, /path:\s*'\/console\/payment'/);
   assert.doesNotMatch(source, /console\.recharge\.nav\.recharge/);
   assert.doesNotMatch(source, /console\.checkout\.nav\.checkout/);
   assert.match(
@@ -732,10 +733,31 @@ test("console sidebar keeps dashboard top-level and groups the remaining menus b
   assert.doesNotMatch(source, /mainNavigation\.map/);
   assert.doesNotMatch(source, /path:\s*'\/console\/recharge'/);
   assert.doesNotMatch(source, /path:\s*'\/console\/checkout'/);
+  assert.doesNotMatch(source, /path:\s*'\/console\/payment'/);
   assert.doesNotMatch(source, /console\.menu\.group\.aiWorkspace/);
   assert.doesNotMatch(source, /console\.menu\.agents/);
   assert.doesNotMatch(source, /path:\s*'\/console\/agents'/);
   assert.doesNotMatch(source, /\bBot\b/);
+});
+
+test("console commerce routes mount sdkwork-commerce PC pages directly", () => {
+  const appSource = readPortalSource("./src/App.tsx");
+  const commerceViewsSource = readPortalSource("./src/commerce/consoleCommerceViews.tsx");
+
+  assert.match(appSource, /import\('@sdkwork\/commerce-pc-wallet'\), 'SdkworkWalletPage'/);
+  assert.match(appSource, /ConsoleMembershipView/);
+  assert.match(appSource, /import\('@sdkwork\/commerce-pc-billing'\), 'SdkworkBillingPage'/);
+  assert.match(appSource, /path="checkout" element=\{<ConsoleCheckoutView \/>}/);
+  assert.match(appSource, /path="payment" element=\{<ConsolePaymentView \/>}/);
+  assert.match(commerceViewsSource, /SdkworkCheckoutPage/);
+  assert.match(commerceViewsSource, /SdkworkMembershipPage/);
+  assert.match(commerceViewsSource, /routeSearchParams=\{searchParams\}/);
+  assert.match(commerceViewsSource, /checkoutBasePath="\/console\/checkout"/);
+  assert.match(commerceViewsSource, /SdkworkPaymentPage/);
+  assert.match(commerceViewsSource, /mapCommerceRouteToConsole/);
+  assert.doesNotMatch(appSource, /clawrouter-pc-console-wallet/);
+  assert.doesNotMatch(appSource, /clawrouter-pc-console-recharge/);
+  assert.doesNotMatch(appSource, /clawrouter-pc-console-commerce/);
 });
 
 test("console recharge exchange wording stays consistent in shell navigation and i18n resources", () => {
