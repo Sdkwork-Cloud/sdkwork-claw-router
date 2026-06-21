@@ -607,7 +607,7 @@ fn temp_portal_dist_dir(test_name: &str) -> PathBuf {
         .duration_since(UNIX_EPOCH)
         .unwrap()
         .as_nanos();
-    std::env::temp_dir().join(format!("sdkwork-claw-router-{test_name}-{suffix}"))
+    std::env::temp_dir().join(format!("sdkwork-clawrouter-{test_name}-{suffix}"))
 }
 
 fn write_portal_dist_fixture(root: &Path) {

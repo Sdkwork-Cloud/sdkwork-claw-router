@@ -13,6 +13,7 @@ use serde::Serialize;
 use serde_json::Value;
 
 use crate::api::response::PlusApiResult;
+use crate::api::subject::map_optional_app_user_subject;
 use crate::application::EntityUuidGenerator;
 use crate::domain::DomainError;
 use crate::infrastructure::OsApiKeySecretGenerator;
@@ -532,8 +533,12 @@ fn app_forum_router_with_state(
         })
 }
 
-async fn fetch_forum_overview(State(state): State<AppForumState>, headers: HeaderMap) -> Response {
-    let subject = match forum_subject(&headers, state.require_subject) {
+async fn fetch_forum_overview(
+    State(state): State<AppForumState>,
+    subject: Option<TrustedRequestSubject>,
+    _headers: HeaderMap,
+) -> Response {
+    let subject = match forum_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -550,19 +555,22 @@ async fn fetch_forum_overview(State(state): State<AppForumState>, headers: Heade
 
 async fn fetch_feeds(
     State(state): State<AppForumState>,
+    subject: Option<TrustedRequestSubject>,
     headers: HeaderMap,
     Query(query): Query<ForumFeedHttpQuery>,
 ) -> Response {
-    fetch_feeds_with_query(state, headers, validate_feed_list_query(query)).await
+    fetch_feeds_with_query(state, subject, headers, validate_feed_list_query(query)).await
 }
 
 async fn fetch_hot_feeds(
     State(state): State<AppForumState>,
+    subject: Option<TrustedRequestSubject>,
     headers: HeaderMap,
     Query(query): Query<ForumFeedHttpQuery>,
 ) -> Response {
     fetch_feeds_with_query(
         state,
+        subject,
         headers,
         validate_feed_shortcut_query(query, "hot", DEFAULT_FEED_LIMIT),
     )
@@ -571,11 +579,13 @@ async fn fetch_hot_feeds(
 
 async fn fetch_recommended_feeds(
     State(state): State<AppForumState>,
+    subject: Option<TrustedRequestSubject>,
     headers: HeaderMap,
     Query(query): Query<ForumFeedHttpQuery>,
 ) -> Response {
     fetch_feeds_with_query(
         state,
+        subject,
         headers,
         validate_feed_shortcut_query(query, "recommend", DEFAULT_FEED_LIMIT),
     )
@@ -584,11 +594,13 @@ async fn fetch_recommended_feeds(
 
 async fn fetch_top_feeds(
     State(state): State<AppForumState>,
+    subject: Option<TrustedRequestSubject>,
     headers: HeaderMap,
     Query(query): Query<ForumFeedHttpQuery>,
 ) -> Response {
     fetch_feeds_with_query(
         state,
+        subject,
         headers,
         validate_feed_shortcut_query(query, "top", DEFAULT_TOP_FEED_LIMIT),
     )
@@ -597,11 +609,13 @@ async fn fetch_top_feeds(
 
 async fn fetch_most_viewed_feeds(
     State(state): State<AppForumState>,
+    subject: Option<TrustedRequestSubject>,
     headers: HeaderMap,
     Query(query): Query<ForumFeedHttpQuery>,
 ) -> Response {
     fetch_feeds_with_query(
         state,
+        subject,
         headers,
         validate_feed_shortcut_query(query, "most_viewed", DEFAULT_FEED_LIMIT),
     )
@@ -610,11 +624,13 @@ async fn fetch_most_viewed_feeds(
 
 async fn fetch_most_liked_feeds(
     State(state): State<AppForumState>,
+    subject: Option<TrustedRequestSubject>,
     headers: HeaderMap,
     Query(query): Query<ForumFeedHttpQuery>,
 ) -> Response {
     fetch_feeds_with_query(
         state,
+        subject,
         headers,
         validate_feed_shortcut_query(query, "most_liked", DEFAULT_FEED_LIMIT),
     )
@@ -623,12 +639,14 @@ async fn fetch_most_liked_feeds(
 
 async fn fetch_category_feeds(
     State(state): State<AppForumState>,
+    subject: Option<TrustedRequestSubject>,
     Path(category_id): Path<i64>,
     headers: HeaderMap,
     Query(query): Query<ForumFeedHttpQuery>,
 ) -> Response {
     fetch_feeds_with_query(
         state,
+        subject,
         headers,
         validate_feed_category_query(query, category_id),
     )
@@ -637,10 +655,11 @@ async fn fetch_category_feeds(
 
 async fn fetch_feeds_with_query(
     state: AppForumState,
-    headers: HeaderMap,
+    subject: Option<TrustedRequestSubject>,
+    _headers: HeaderMap,
     query: Result<ForumFeedQuery, String>,
 ) -> Response {
-    let subject = match forum_subject(&headers, state.require_subject) {
+    let subject = match forum_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -656,10 +675,11 @@ async fn fetch_feeds_with_query(
 
 async fn fetch_feed_detail(
     State(state): State<AppForumState>,
+    subject: Option<TrustedRequestSubject>,
     Path(feed_id): Path<String>,
-    headers: HeaderMap,
+    _headers: HeaderMap,
 ) -> Response {
-    let subject = match forum_subject(&headers, state.require_subject) {
+    let subject = match forum_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -683,14 +703,15 @@ async fn fetch_feed_detail(
 
 async fn check_feed_collected(
     State(state): State<AppForumState>,
+    subject: Option<TrustedRequestSubject>,
     Path(feed_id): Path<i64>,
-    headers: HeaderMap,
+    _headers: HeaderMap,
 ) -> Response {
     let feed_id = match validate_positive_id(feed_id, "id") {
         Ok(feed_id) => feed_id,
         Err(message) => return bad_request(message),
     };
-    let subject = match forum_subject(&headers, state.require_subject) {
+    let subject = match forum_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -706,10 +727,11 @@ async fn check_feed_collected(
 
 async fn create_feed(
     State(state): State<AppForumState>,
-    headers: HeaderMap,
+    subject: Option<TrustedRequestSubject>,
+    _headers: HeaderMap,
     body: Bytes,
 ) -> Response {
-    let request_subject = match forum_subject(&headers, state.require_subject) {
+    let request_subject = match forum_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -740,14 +762,15 @@ async fn create_feed(
 
 async fn delete_feed(
     State(state): State<AppForumState>,
+    subject: Option<TrustedRequestSubject>,
     Path(feed_id): Path<i64>,
-    headers: HeaderMap,
+    _headers: HeaderMap,
 ) -> Response {
     let feed_id = match validate_positive_id(feed_id, "id") {
         Ok(feed_id) => feed_id,
         Err(message) => return bad_request(message),
     };
-    let subject = match required_forum_subject(&headers, state.require_subject, "delete feed") {
+    let subject = match required_forum_subject(subject, state.require_subject, "delete feed") {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -756,14 +779,15 @@ async fn delete_feed(
 
 async fn like_feed(
     State(state): State<AppForumState>,
+    subject: Option<TrustedRequestSubject>,
     Path(feed_id): Path<i64>,
-    headers: HeaderMap,
+    _headers: HeaderMap,
 ) -> Response {
     let feed_id = match validate_positive_id(feed_id, "id") {
         Ok(feed_id) => feed_id,
         Err(message) => return bad_request(message),
     };
-    let subject = match required_forum_subject(&headers, state.require_subject, "like feed") {
+    let subject = match required_forum_subject(subject, state.require_subject, "like feed") {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -772,14 +796,15 @@ async fn like_feed(
 
 async fn unlike_feed(
     State(state): State<AppForumState>,
+    subject: Option<TrustedRequestSubject>,
     Path(feed_id): Path<i64>,
-    headers: HeaderMap,
+    _headers: HeaderMap,
 ) -> Response {
     let feed_id = match validate_positive_id(feed_id, "id") {
         Ok(feed_id) => feed_id,
         Err(message) => return bad_request(message),
     };
-    let subject = match required_forum_subject(&headers, state.require_subject, "unlike feed") {
+    let subject = match required_forum_subject(subject, state.require_subject, "unlike feed") {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -788,15 +813,16 @@ async fn unlike_feed(
 
 async fn collect_feed(
     State(state): State<AppForumState>,
+    subject: Option<TrustedRequestSubject>,
     Path(feed_id): Path<i64>,
-    headers: HeaderMap,
+    _headers: HeaderMap,
     Query(query): Query<CollectFeedQuery>,
 ) -> Response {
     let feed_id = match validate_positive_id(feed_id, "id") {
         Ok(feed_id) => feed_id,
         Err(message) => return bad_request(message),
     };
-    let subject = match required_forum_subject(&headers, state.require_subject, "collect feed") {
+    let subject = match required_forum_subject(subject, state.require_subject, "collect feed") {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -814,14 +840,15 @@ async fn collect_feed(
 
 async fn uncollect_feed(
     State(state): State<AppForumState>,
+    subject: Option<TrustedRequestSubject>,
     Path(feed_id): Path<i64>,
-    headers: HeaderMap,
+    _headers: HeaderMap,
 ) -> Response {
     let feed_id = match validate_positive_id(feed_id, "id") {
         Ok(feed_id) => feed_id,
         Err(message) => return bad_request(message),
     };
-    let subject = match required_forum_subject(&headers, state.require_subject, "uncollect feed") {
+    let subject = match required_forum_subject(subject, state.require_subject, "uncollect feed") {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -835,14 +862,15 @@ async fn uncollect_feed(
 
 async fn share_feed(
     State(state): State<AppForumState>,
+    subject: Option<TrustedRequestSubject>,
     Path(feed_id): Path<i64>,
-    headers: HeaderMap,
+    _headers: HeaderMap,
 ) -> Response {
     let feed_id = match validate_positive_id(feed_id, "id") {
         Ok(feed_id) => feed_id,
         Err(message) => return bad_request(message),
     };
-    let subject = match required_forum_subject(&headers, state.require_subject, "share feed") {
+    let subject = match required_forum_subject(subject, state.require_subject, "share feed") {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -851,10 +879,11 @@ async fn share_feed(
 
 async fn fetch_comments(
     State(state): State<AppForumState>,
-    headers: HeaderMap,
+    subject: Option<TrustedRequestSubject>,
+    _headers: HeaderMap,
     Query(query): Query<ForumCommentHttpQuery>,
 ) -> Response {
-    let subject = match forum_subject(&headers, state.require_subject) {
+    let subject = match forum_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -874,15 +903,16 @@ async fn fetch_comments(
 
 async fn fetch_comment_replies(
     State(state): State<AppForumState>,
+    subject: Option<TrustedRequestSubject>,
     Path(comment_id): Path<i64>,
-    headers: HeaderMap,
+    _headers: HeaderMap,
     Query(query): Query<ForumCommentHttpQuery>,
 ) -> Response {
     let comment_id = match validate_positive_id(comment_id, "commentId") {
         Ok(comment_id) => comment_id,
         Err(message) => return bad_request(message),
     };
-    let subject = match forum_subject(&headers, state.require_subject) {
+    let subject = match forum_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -902,14 +932,15 @@ async fn fetch_comment_replies(
 
 async fn fetch_comment_detail(
     State(state): State<AppForumState>,
+    subject: Option<TrustedRequestSubject>,
     Path(comment_id): Path<i64>,
-    headers: HeaderMap,
+    _headers: HeaderMap,
 ) -> Response {
     let comment_id = match validate_positive_id(comment_id, "commentId") {
         Ok(comment_id) => comment_id,
         Err(message) => return bad_request(message),
     };
-    let subject = match forum_subject(&headers, state.require_subject) {
+    let subject = match forum_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -926,10 +957,11 @@ async fn fetch_comment_detail(
 
 async fn fetch_my_comments(
     State(state): State<AppForumState>,
-    headers: HeaderMap,
+    subject: Option<TrustedRequestSubject>,
+    _headers: HeaderMap,
     Query(query): Query<ForumCommentHttpQuery>,
 ) -> Response {
-    let subject = match required_forum_subject(&headers, state.require_subject, "my comments") {
+    let subject = match required_forum_subject(subject, state.require_subject, "my comments") {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -949,10 +981,11 @@ async fn fetch_my_comments(
 
 async fn fetch_comment_statistics(
     State(state): State<AppForumState>,
-    headers: HeaderMap,
+    subject: Option<TrustedRequestSubject>,
+    _headers: HeaderMap,
     Query(query): Query<ForumCommentHttpQuery>,
 ) -> Response {
-    let subject = match forum_subject(&headers, state.require_subject) {
+    let subject = match forum_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -980,10 +1013,11 @@ async fn fetch_comment_statistics(
 
 async fn create_comment(
     State(state): State<AppForumState>,
-    headers: HeaderMap,
+    subject: Option<TrustedRequestSubject>,
+    _headers: HeaderMap,
     body: Bytes,
 ) -> Response {
-    let request_subject = match forum_subject(&headers, state.require_subject) {
+    let request_subject = match forum_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -1024,15 +1058,16 @@ async fn create_comment(
 
 async fn reply_comment(
     State(state): State<AppForumState>,
+    subject: Option<TrustedRequestSubject>,
     Path(comment_id): Path<i64>,
-    headers: HeaderMap,
+    _headers: HeaderMap,
     body: Bytes,
 ) -> Response {
     let comment_id = match validate_positive_id(comment_id, "commentId") {
         Ok(comment_id) => comment_id,
         Err(message) => return bad_request(message),
     };
-    let request_subject = match forum_subject(&headers, state.require_subject) {
+    let request_subject = match forum_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -1121,14 +1156,15 @@ async fn create_comment_with_target(
 
 async fn delete_comment(
     State(state): State<AppForumState>,
+    subject: Option<TrustedRequestSubject>,
     Path(comment_id): Path<i64>,
-    headers: HeaderMap,
+    _headers: HeaderMap,
 ) -> Response {
     let comment_id = match validate_positive_id(comment_id, "commentId") {
         Ok(comment_id) => comment_id,
         Err(message) => return bad_request(message),
     };
-    let subject = match required_forum_subject(&headers, state.require_subject, "delete comment") {
+    let subject = match required_forum_subject(subject, state.require_subject, "delete comment") {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -1142,14 +1178,15 @@ async fn delete_comment(
 
 async fn like_comment(
     State(state): State<AppForumState>,
+    subject: Option<TrustedRequestSubject>,
     Path(comment_id): Path<i64>,
-    headers: HeaderMap,
+    _headers: HeaderMap,
 ) -> Response {
     let comment_id = match validate_positive_id(comment_id, "commentId") {
         Ok(comment_id) => comment_id,
         Err(message) => return bad_request(message),
     };
-    let subject = match required_forum_subject(&headers, state.require_subject, "like comment") {
+    let subject = match required_forum_subject(subject, state.require_subject, "like comment") {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -1163,14 +1200,15 @@ async fn like_comment(
 
 async fn unlike_comment(
     State(state): State<AppForumState>,
+    subject: Option<TrustedRequestSubject>,
     Path(comment_id): Path<i64>,
-    headers: HeaderMap,
+    _headers: HeaderMap,
 ) -> Response {
     let comment_id = match validate_positive_id(comment_id, "commentId") {
         Ok(comment_id) => comment_id,
         Err(message) => return bad_request(message),
     };
-    let subject = match required_forum_subject(&headers, state.require_subject, "unlike comment") {
+    let subject = match required_forum_subject(subject, state.require_subject, "unlike comment") {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -1184,31 +1222,34 @@ async fn unlike_comment(
 
 async fn pin_comment(
     State(state): State<AppForumState>,
+    subject: Option<TrustedRequestSubject>,
     Path(comment_id): Path<i64>,
     headers: HeaderMap,
 ) -> Response {
-    set_comment_pin(state, comment_id, headers, true).await
+    set_comment_pin(state, subject, comment_id, headers, true).await
 }
 
 async fn unpin_comment(
     State(state): State<AppForumState>,
+    subject: Option<TrustedRequestSubject>,
     Path(comment_id): Path<i64>,
     headers: HeaderMap,
 ) -> Response {
-    set_comment_pin(state, comment_id, headers, false).await
+    set_comment_pin(state, subject, comment_id, headers, false).await
 }
 
 async fn set_comment_pin(
     state: AppForumState,
+    subject: Option<TrustedRequestSubject>,
     comment_id: i64,
-    headers: HeaderMap,
+    _headers: HeaderMap,
     pinned: bool,
 ) -> Response {
     let comment_id = match validate_positive_id(comment_id, "commentId") {
         Ok(comment_id) => comment_id,
         Err(message) => return bad_request(message),
     };
-    let subject = match required_forum_subject(&headers, state.require_subject, "pin comment") {
+    let subject = match required_forum_subject(subject, state.require_subject, "pin comment") {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -1374,30 +1415,22 @@ fn page_size_from_query(query: Option<&ForumFeedQuery>) -> (i64, i64) {
 }
 
 fn forum_subject(
-    headers: &HeaderMap,
+    subject: Option<TrustedRequestSubject>,
     require_subject: bool,
 ) -> Result<Option<ForumSubject>, Response> {
-    match TrustedRequestSubject::from_headers(headers) {
-        Ok(subject) => Ok(Some(ForumSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            user_id: subject.user_id,
-        })),
-        Err(error) if require_subject => Err((
-            StatusCode::UNAUTHORIZED,
-            Json(PlusApiResult::error("4010", error.to_string())),
-        )
-            .into_response()),
-        Err(_) => Ok(None),
-    }
+    map_optional_app_user_subject(subject, require_subject, |trusted| ForumSubject {
+        tenant_id: trusted.tenant_id,
+        organization_id: trusted.organization_id,
+        user_id: trusted.user_id,
+    })
 }
 
 fn required_forum_subject(
-    headers: &HeaderMap,
+    subject: Option<TrustedRequestSubject>,
     require_subject: bool,
     action: &str,
 ) -> Result<ForumSubject, Response> {
-    match forum_subject(headers, require_subject)? {
+    match forum_subject(subject, require_subject)? {
         Some(subject) => Ok(subject),
         None => Err((
             StatusCode::UNAUTHORIZED,

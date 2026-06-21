@@ -20,7 +20,7 @@
 
 - [ ] **Step 1: Write the failing Python test**
 
-Add a test that asserts `data/app/sdkwork-apps.json` exists, has `kind=sdkwork.plus_app.seed`, contains at least `sdkwork-claw-router`, stores `plusApp` fields matching Java `PlusApp`, and has no duplicate `appKey`.
+Add a test that asserts `data/app/sdkwork-apps.json` exists, has `kind=sdkwork.plus_app.seed`, contains at least `sdkwork-clawrouter`, stores `plusApp` fields matching Java `PlusApp`, and has no duplicate `appKey`.
 
 - [ ] **Step 2: Run the test to verify RED**
 

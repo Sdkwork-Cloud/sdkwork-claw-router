@@ -1,5 +1,5 @@
 use axum::extract::{Query, State};
-use axum::http::{HeaderMap, StatusCode};
+use axum::http::StatusCode;
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
@@ -49,15 +49,12 @@ where
 
 async fn fetch_payment_runtime_snapshot<S>(
     State(state): State<AdminPaymentRuntimeState<S>>,
-    headers: HeaderMap,
+    _trusted: TrustedRequestSubject,
     Query(query): Query<PaymentRuntimeSnapshotQuery>,
 ) -> Response
 where
     S: PaymentProviderRuntimeSnapshotStore + Clone + Send + Sync + 'static,
 {
-    if let Err(response) = require_admin_subject(&headers) {
-        return response;
-    }
     let environment = match normalize_environment(query.environment) {
         Ok(environment) => environment,
         Err(response) => return response,
@@ -87,16 +84,6 @@ fn normalize_environment(environment: Option<String>) -> Result<String, Response
         }
     };
     Ok(environment.to_owned())
-}
-
-fn require_admin_subject(headers: &HeaderMap) -> Result<TrustedRequestSubject, Response> {
-    TrustedRequestSubject::from_headers(headers).map_err(|error| {
-        (
-            StatusCode::UNAUTHORIZED,
-            Json(PlusApiResult::error("4010", error.to_string())),
-        )
-            .into_response()
-    })
 }
 
 fn bad_request(message: impl Into<String>) -> Response {

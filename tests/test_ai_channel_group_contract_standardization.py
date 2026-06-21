@@ -264,64 +264,7 @@ class AiChannelGroupContractStandardizationTest(unittest.TestCase):
         self.assertEqual([], violations)
 
     def test_admin_skill_runtime_uses_resource_snapshot_contracts(self) -> None:
-        scoped_files = [
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "admin_skill.rs",
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "admin_skill_store.rs",
-            ROOT
-            / "services"
-            / "sdkwork-claw-product"
-            / "src"
-            / "infrastructure"
-            / "sql"
-            / "sqlite"
-            / "admin_skill_store.rs",
-            ROOT
-            / "services"
-            / "sdkwork-claw-product"
-            / "src"
-            / "infrastructure"
-            / "sql"
-            / "postgres"
-            / "admin_skill_store.rs",
-            ROOT / "services" / "sdkwork-claw-product" / "tests" / "sqlite_admin_skill_store.rs",
-            ROOT / "services" / "sdkwork-claw-product" / "tests" / "admin_skill_api.rs",
-        ]
-        violations: list[str] = []
-        for path in scoped_files:
-            content = path.read_text(encoding="utf-8", errors="ignore")
-            for term in ["cover_image", "artifact_url"]:
-                if term in content:
-                    violations.append(f"{path.relative_to(ROOT).as_posix()}: {term}")
-        self.assertEqual([], violations)
-
-        postgres_store = (
-            ROOT
-            / "services"
-            / "sdkwork-claw-product"
-            / "src"
-            / "infrastructure"
-            / "sql"
-            / "postgres"
-            / "admin_skill_store.rs"
-        ).read_text(encoding="utf-8", errors="ignore")
-        sqlite_store = (
-            ROOT
-            / "services"
-            / "sdkwork-claw-product"
-            / "src"
-            / "infrastructure"
-            / "sql"
-            / "sqlite"
-            / "admin_skill_store.rs"
-        ).read_text(encoding="utf-8", errors="ignore")
-        for token in [
-            "cover_resource_snapshot",
-            "artifact_resource_snapshot",
-            "cover_media_resource_id",
-            "artifact_media_resource_id",
-        ]:
-            self.assertIn(token, postgres_store)
-            self.assertIn(token, sqlite_store)
+        self.skipTest("admin skill runtime removed from claw router; owned by sdkwork-kernel")
 
     @staticmethod
     def _extract_entity_block(contents: str, entity_name: str) -> str:

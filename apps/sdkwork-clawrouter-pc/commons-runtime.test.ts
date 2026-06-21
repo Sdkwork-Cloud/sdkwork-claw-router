@@ -308,11 +308,37 @@ test("documents runtime adapter caches a singleton SDK client bound to the clawr
 test("portal bootstrap mounts the documents runtime provider with the clawrouter adapter", () => {
   const source = readPortalSource("./src/main.tsx");
 
-  assert.match(source, /import \{ PortalQueryProvider, clawRouterDocumentsReferenceRuntime \} from 'sdkwork-clawrouter-pc-commons';/);
+  assert.match(source, /import \{ PortalQueryProvider, clawRouterDocumentsReferenceRuntime \} from '@sdkwork\/clawrouter-pc-commons';/);
   assert.match(source, /import \{ DocumentsReferenceRuntimeProvider \} from '@sdkwork\/documents-pc-commons';/);
   assert.match(source, /<DocumentsReferenceRuntimeProvider value=\{clawRouterDocumentsReferenceRuntime\}>/);
   assert.match(source, /<App \/>/);
   assert.match(source, /<\/DocumentsReferenceRuntimeProvider>/);
+});
+
+test("portal shell offsets embedded documents routes below the fixed navbar", () => {
+  const shellSource = readPortalSource("./packages/sdkwork-clawrouter-pc-shell/src/AppShellLayout.tsx");
+  const indexCssSource = readPortalSource("./src/index.css");
+
+  assert.match(shellSource, /DOCUMENTS_HOST_OFFSET_ROUTE_PATTERN/);
+  assert.match(shellSource, /product-docs\|docs\|api-reference/);
+  assert.match(shellSource, /sdkwork-clawrouter-documents-host-offset flex-1/);
+  assert.match(indexCssSource, /\.sdkwork-clawrouter-documents-host-offset \{/);
+  assert.match(indexCssSource, /padding-top: var\(--sdkwork-portal-navbar-height, 4rem\);/);
+  assert.match(indexCssSource, /\.sdkwork-clawrouter-documents-host-offset \.sdkwork-documents-shell-page-root \{/);
+  assert.match(indexCssSource, /\.sdkwork-documents-shell-sticky-sidebar \{/);
+});
+
+test("portal i18n consumes documents catalogs from sdkwork-documents", () => {
+  const resourcesSource = readPortalSource("./packages/sdkwork-clawrouter-pc-i18n/src/resources/index.ts");
+  const i18nSource = readPortalSource("./packages/sdkwork-clawrouter-pc-i18n/src/index.ts");
+
+  assert.match(resourcesSource, /from '@sdkwork\/documents-pc-i18n'/);
+  assert.match(resourcesSource, /publicDocsMessages/);
+  assert.match(resourcesSource, /publicApiReferenceMessages/);
+  assert.match(resourcesSource, /publicSdkReferenceMessages/);
+  assert.doesNotMatch(resourcesSource, /\.\/public\/docs/);
+  assert.match(i18nSource, /platformName: "Claw Router"/);
+  assert.match(i18nSource, /defaultVariables:/);
 });
 
 test("sdk clients use a static IAM runtime reset dependency so Vite can chunk the portal deterministically", () => {
@@ -334,7 +360,7 @@ test("sdk clients use a static IAM runtime reset dependency so Vite can chunk th
   );
   assert.match(
     iamRuntimeSource,
-    /CLAW_ROUTER_IAM_RUNTIME_APP_ID\s*=\s*['"]sdkwork-claw-router['"]/u,
+    /CLAW_ROUTER_IAM_RUNTIME_APP_ID\s*=\s*['"]sdkwork-clawrouter['"]/u,
     "Claw Router IAM runtime must use the compile-time manifest app identifier.",
   );
 });
@@ -426,7 +452,7 @@ test("portal notification service fetches console announcements without frontend
   );
 
   for (const marker of [
-    "client.notification.list({",
+    "client.notification.listNotifications({",
     "includeArchived: options.includeArchived ?? false",
     "page: options.page ?? DEFAULT_NOTIFICATION_PAGE",
     "pageSize: options.pageSize ?? DEFAULT_NOTIFICATION_PAGE_SIZE",
@@ -453,19 +479,19 @@ test("portal notification and commerce dependency SDK facades expose component-c
   );
 
   for (const marker of [
-    "export type PortalNotificationClient = ClawRouterAppSdkClient & SdkworkNotificationGeneratedClient;",
-    "listNotifications: client.notification.list.bind(client.notification)",
-    "acknowledge: client.notification.acknowledge",
-    "popupSeen: client.notification.popupSeen",
+    "export type PortalNotificationClient = SdkworkNotificationGeneratedClient;",
+    "client.notification.listNotifications({",
+    "client.notification.acknowledge.create(notificationId)",
+    "client.notification.popupSeen.create(notificationId)",
   ]) {
     assert.ok(notificationSource.includes(marker), `missing notification client facade marker: ${marker}`);
   }
 
   for (const marker of [
     "type BackendCommerceDependencyOverlay =",
-    "BackendCommerceResourceMap",
-    "createBackendCommerceCanonicalFacade(commerce: BackendCommerceDependencyOverlay)",
-    "return attachReadOnlyProperty(client, 'commerce', composedCommerce) as unknown as ClawRouterBackendSdkClient;",
+    "function createBackendCommerceCanonicalFacade(commerce: BackendCommerceDependencyOverlay)",
+    "attachManagementAlias(facade.wallet.accounts, 'list')",
+    "createBackendCommerceCanonicalFacade(",
   ]) {
     assert.ok(sdkClientsSource.includes(marker), `missing commerce backend facade marker: ${marker}`);
   }
@@ -612,7 +638,7 @@ test("footer renders configurable site branding and copyright", () => {
 
 test("console layout keeps readable navigation labels and valid logout markup", () => {
   const source = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-console-core/src/ConsoleLayout.tsx", import.meta.url),
+    new URL("./packages/sdkwork-clawrouter-pc-console-shell/src/ConsoleLayout.tsx", import.meta.url),
     "utf8",
   );
 
@@ -649,13 +675,15 @@ test("console layout keeps readable navigation labels and valid logout markup", 
   assert.doesNotMatch(source, /path:\s*'\/console\/checkout'/);
   assert.doesNotMatch(source, /console\.recharge\.nav\.recharge/);
   assert.doesNotMatch(source, /console\.checkout\.nav\.checkout/);
-  assert.match(source, /<span>\{t\("console\.core\.consolelayout\.text\.12hokt7", "Log out"\)\}<\/span>/);
-  assert.doesNotMatch(source, /<span>[^<]*\/span>/);
+  assert.match(
+    source,
+    /\{sidebarOpen && <span>\{t\("console\.core\.consolelayout\.text\.12hokt7", "Log out"\)\}<\/span>\}/,
+  );
 });
 
 test("console sidebar keeps dashboard top-level and groups the remaining menus by workflow", () => {
   const source = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-console-core/src/ConsoleLayout.tsx", import.meta.url),
+    new URL("./packages/sdkwork-clawrouter-pc-console-shell/src/ConsoleLayout.tsx", import.meta.url),
     "utf8",
   );
 
@@ -710,9 +738,9 @@ test("console sidebar keeps dashboard top-level and groups the remaining menus b
   assert.doesNotMatch(source, /\bBot\b/);
 });
 
-test("console wallet uses recharge exchange wording and concise tabs", () => {
-  const walletSource = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-console-wallet/src/WalletView.tsx", import.meta.url),
+test("console recharge exchange wording stays consistent in shell navigation and i18n resources", () => {
+  const consoleShellSource = readFileSync(
+    new URL("./packages/sdkwork-clawrouter-pc-console-shell/src/ConsoleLayout.tsx", import.meta.url),
     "utf8",
   );
   const billingI18nSource = readFileSync(
@@ -723,61 +751,13 @@ test("console wallet uses recharge exchange wording and concise tabs", () => {
     new URL("./packages/sdkwork-clawrouter-pc-i18n/src/resources/console/recharge.ts", import.meta.url),
     "utf8",
   );
-  const walletPackageJson = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-console-wallet/package.json", import.meta.url),
-    "utf8",
-  );
-  const rechargeSource = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-console-recharge/src/RechargeView.tsx", import.meta.url),
-    "utf8",
-  );
 
-  assert.doesNotMatch(walletSource, /console\.billing\.billingview\.text\.gd62li/);
-  assert.doesNotMatch(walletSource, /<h1[^>]*>/);
-  assert.doesNotMatch(walletSource, /w-6 h-6 text-lobster-500/);
-  assert.doesNotMatch(walletSource, /py-2 border-b border-slate-200/);
-  assert.match(walletSource, /"\u5151\u6362"/u);
-  assert.match(walletSource, /"\u5145\u503c"/u);
+  assert.match(consoleShellSource, /fallbackLabel: 'Recharge exchange'/);
   assert.match(billingI18nSource, /"console\.billing\.billingview\.text\.gd62li": "\u5145\u503c\u5151\u6362"/u);
   assert.match(billingI18nSource, /"console\.billing\.billingview\.text\.1iq97ql": "\u5151\u6362"/u);
   assert.match(billingI18nSource, /"console\.billing\.billingview\.text\.1wlfhep": "\u5145\u503c"/u);
   assert.match(rechargeI18nSource, /"console\.recharge\.tabs\.redeem": "\u5151\u6362"/u);
   assert.match(rechargeI18nSource, /"console\.recharge\.tabs\.online": "\u5145\u503c"/u);
-  assert.match(walletPackageJson, /"sdkwork-clawrouter-pc-console-recharge": "workspace:\*"/);
-  assert.match(walletSource, /import \{ RechargePanel, RechargeRecordsTabs \} from 'sdkwork-clawrouter-pc-console-recharge';/);
-  assert.match(walletSource, /const \[activeTab, setActiveTab\] = useState<'redeem' \| 'recharge'>\('redeem'\);/);
-  assert.match(walletSource, /<RechargePanel embedded showTabs=\{false\} \/>/);
-  assert.match(walletSource, /<RechargeRecordsTabs refreshSignal=\{recordsRefreshSeed\} \/>/);
-  assert.doesNotMatch(walletSource, /const \[historyTab, setHistoryTab\]/);
-  assert.doesNotMatch(walletSource, /setHistoryTab\('recharge'\)/);
-  assert.doesNotMatch(walletSource, /historyTab === 'recharge'/);
-  assert.doesNotMatch(walletSource, /<WalletHistoryTable/);
-  assert.doesNotMatch(walletSource, /fetchRechargeHistory/);
-  assert.doesNotMatch(walletSource, /"\u94b1\u5305\u4e0e\u5145\u503c"|"\u5361\u5bc6\u5151\u6362"/u);
-  assert.doesNotMatch(rechargeSource, /"\u5361\u5bc6\u5151\u6362"|"\u5728\u7ebf\u5145\u503c"/u);
-  const legacyWalletMojibakePattern = new RegExp(
-    [
-      "\\u7490\\ufe3d\\u57db",
-      "\\u934f\\u621e\\u5d32",
-      "\\u59dd\\uff45\\u6e6a",
-      "\\u6d93\\u64b3\\u7758",
-      "\\u9418\\u8235",
-      "\\u93c8\\ue101\\u6e40",
-      "\\u68f0\\u52ee",
-      "\\u6748\\u64b3\\u53c6",
-      "\\u6e1a\\u5b2a",
-      "\\u7ed4\\u5b2a\\u5d46",
-      "\\u95ad\\u20ac\\u7487",
-      "\\u6d5c\\u5c80\\u6dee",
-      "\\u95b2\\u6226",
-      "\\u93c0\\ue219\\u7caf",
-      "\\u6fb6\\u8fab\\u89e6",
-      "\\u93c6\\u509b\\u68e4",
-      "\\u934f\\u546d\\u20ac",
-    ].join("|"),
-    "u",
-  );
-  assert.doesNotMatch(walletSource, legacyWalletMojibakePattern);
   assert.doesNotMatch(billingI18nSource, /"console\.billing\.billingview\.text\.gd62li": "\u94b1\u5305\u4e0e\u5145\u503c"/u);
   assert.doesNotMatch(billingI18nSource, /"console\.billing\.billingview\.text\.1iq97ql": "\u5361\u5bc6\u5151\u6362"/u);
   assert.doesNotMatch(billingI18nSource, /"console\.billing\.billingview\.text\.1wlfhep": "\u5728\u7ebf\u5145\u503c"/u);
@@ -801,13 +781,13 @@ test("portal auth helpers preserve the current route for login-required actions"
       hasSession: false,
       location: {
         hash: "#install",
-        pathname: "/skills-hub/skill-1",
+        pathname: "/models/openai/gpt-4o",
         search: "?tab=config",
       },
     }),
     {
       allowed: false,
-      redirectTo: "/auth/login?redirect=%2Fskills-hub%2Fskill-1%3Ftab%3Dconfig%23install",
+      redirectTo: "/auth/login?redirect=%2Fmodels%2Fopenai%2Fgpt-4o%3Ftab%3Dconfig%23install",
     },
   );
   assert.deepEqual(
@@ -817,6 +797,24 @@ test("portal auth helpers preserve the current route for login-required actions"
     }),
     { allowed: true },
   );
+
+  storeAppSessionFromResult({
+    accessToken: "partial-access",
+    authToken: "partial-auth",
+  });
+  assert.equal(hasStoredPortalSession(), false);
+
+  storeAppSessionFromResult({
+    accessToken: "full-access",
+    authToken: "full-auth",
+    context: {
+      tenantId: "tenant-42",
+      userId: "user-42",
+      sessionId: "session-42",
+    },
+  });
+  assert.equal(hasStoredPortalSession(), true);
+  clearStoredAppSessionToken();
 });
 
 test("navbar sign-in preserves the current public route while console links use route protection", () => {
@@ -831,14 +829,18 @@ test("navbar sign-in preserves the current public route while console links use 
   assert.doesNotMatch(navbarSource, /redirect=\/console/u);
 });
 
-test("navbar exposes the existing VIP purchase entry through the dedicated VIP route", () => {
+test("console sidebar exposes memberships as the commerce upgrade entry point", () => {
+  const consoleShellSource = readFileSync(
+    new URL("./packages/sdkwork-clawrouter-pc-console-shell/src/ConsoleLayout.tsx", import.meta.url),
+    "utf8",
+  );
   const navbarSource = readFileSync(
     new URL("./packages/sdkwork-clawrouter-pc-commons/src/components/Navbar.tsx", import.meta.url),
     "utf8",
   );
 
-  assert.match(navbarSource, /href: '\/vip'/u);
-  assert.match(navbarSource, /t\('nav\.buyVip'/u);
+  assert.match(consoleShellSource, /path: '\/console\/memberships'/);
+  assert.match(consoleShellSource, /fallbackLabel: 'Memberships'/);
   assert.doesNotMatch(navbarSource, /href: '\/console\/memberships'/u);
   assert.doesNotMatch(navbarSource, /\/console\/billing\?vip/u);
 });
@@ -849,7 +851,7 @@ test("navbar keeps the public GitHub repository entry hidden", () => {
     "utf8",
   );
 
-  assert.doesNotMatch(navbarSource, /github\.com\/Sdkwork-Cloud\/sdkwork-claw-router\.git/u);
+  assert.doesNotMatch(navbarSource, /github\.com\/Sdkwork-Cloud\/sdkwork-clawrouter\.git/u);
   assert.doesNotMatch(navbarSource, /GitHub Repository/u);
   assert.doesNotMatch(navbarSource, /\bGithub\b/u);
 });
@@ -1087,7 +1089,7 @@ test("createAppSession stores dual IAM tokens returned as generated SDK data obj
           expiresAt: new Date(Date.now() + 3600_000).toISOString(),
           sessionId: "session-2026",
           context: {
-            appId: "sdkwork-claw-router",
+            appId: "sdkwork-clawrouter",
             authLevel: "password",
             dataScope: ["tenant:tenant-2026"],
             deploymentMode: "saas",
@@ -1122,6 +1124,8 @@ test("createAppSession stores dual IAM tokens returned as generated SDK data obj
     assert.equal(result.accessToken, "access-token-2026");
     assert.equal(result.refreshToken, "refresh-token-2026");
     assert.equal(result.sessionId, "session-2026");
+    assert.equal(result.context?.tenantId, "tenant-2026");
+    assert.equal(hasStoredPortalSession(), true);
   } finally {
     clearStoredAppSessionToken();
     resetClawRouterSdkClients();

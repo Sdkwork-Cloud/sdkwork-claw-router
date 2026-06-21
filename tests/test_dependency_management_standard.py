@@ -12,7 +12,7 @@ RETIRED_DEPS_LOCAL_LINK = ":".join(["deps", "local", "link"])
 RETIRED_DEPS_LOCAL_CHECK = ":".join(["deps", "local", "check"])
 RETIRED_LOCAL_SCRIPT = "-".join(["prepare-local", "dependencies.mjs"])
 PORTAL_DEPENDENCY_PREFIX = "../../../"
-OLD_APPLICATION_ROOT = re.compile(r"(?<!/)apps/sdkwork-claw-router(?:[\\/]|$)")
+OLD_APPLICATION_ROOT = re.compile(r"(?<!/)apps/sdkwork-clawrouter(?:[\\/]|$)")
 MACHINE_ABSOLUTE_PATH = re.compile(
     "|".join(
         [

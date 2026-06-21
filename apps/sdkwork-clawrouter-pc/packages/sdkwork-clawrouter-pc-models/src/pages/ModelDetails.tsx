@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, MessageSquare, Check, Info, FileText, ExternalLink, Zap, Cpu, Globe, AlertTriangle, Code2, Layers, Activity } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { CopyButton } from 'sdkwork-clawrouter-pc-commons';
+import { CopyButton } from '@sdkwork/clawrouter-pc-commons';
 import type { Model } from '../data/models';
 import { findModelByCatalogRouteId, ModelService } from '../modelService';
 import { deriveModelCatalogDetailView, type ModelCatalogModalityTone } from '../modelCatalog';

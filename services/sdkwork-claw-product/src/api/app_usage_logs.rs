@@ -1,7 +1,7 @@
 use std::sync::Arc;
 
 use axum::extract::{Query, State};
-use axum::http::{HeaderMap, StatusCode};
+use axum::http::StatusCode;
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
@@ -9,6 +9,7 @@ use sdkwork_claw_http::TrustedRequestSubject;
 use serde::Deserialize;
 
 use crate::api::response::PlusApiResult;
+use crate::api::subject::map_optional_app_user_subject;
 use crate::ports::{
     UsageLogsPage, UsageLogsQuery, UsageLogsReadFuture, UsageLogsReadStore, UsageLogsStatus,
     UsageLogsSubject,
@@ -114,23 +115,20 @@ fn app_usage_logs_router_with_state(
 
 async fn fetch_usage_logs(
     State(state): State<AppUsageLogsState>,
-    headers: HeaderMap,
+    subject: Option<TrustedRequestSubject>,
     Query(query): Query<AppUsageLogsQuery>,
 ) -> Response {
-    let subject = match TrustedRequestSubject::from_headers(&headers) {
-        Ok(subject) => Some(UsageLogsSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            user_id: subject.user_id,
-        }),
-        Err(error) if state.require_subject => {
-            return (
-                StatusCode::UNAUTHORIZED,
-                Json(PlusApiResult::error("4010", error.to_string())),
-            )
-                .into_response();
-        }
-        Err(_) => None,
+    let subject = match map_optional_app_user_subject(
+        subject,
+        state.require_subject,
+        |trusted| UsageLogsSubject {
+            tenant_id: trusted.tenant_id,
+            organization_id: trusted.organization_id,
+            user_id: trusted.user_id,
+        },
+    ) {
+        Ok(subject) => subject,
+        Err(response) => return response,
     };
 
     let validated_query = match validate_usage_logs_query(query) {

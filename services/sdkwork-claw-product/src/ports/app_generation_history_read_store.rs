@@ -2,7 +2,6 @@ use std::future::Future;
 use std::pin::Pin;
 
 use serde::Serialize;
-use serde_json::Value;
 
 use crate::domain::DomainResult;
 
@@ -18,12 +17,12 @@ pub struct AppGenerationHistorySubject {
 
 #[derive(Debug, Clone, Default, Serialize, PartialEq)]
 #[serde(rename_all = "camelCase")]
-pub struct AppGenerationHistoryItems<T> {
-    pub items: Vec<T>,
+pub struct AppGenerationHistoryItems {
+    pub items: Vec<AppGenerationHistoryItem>,
 }
 
-impl<T> AppGenerationHistoryItems<T> {
-    pub fn new(items: Vec<T>) -> Self {
+impl AppGenerationHistoryItems {
+    pub fn new(items: Vec<AppGenerationHistoryItem>) -> Self {
         Self { items }
     }
 }
@@ -35,27 +34,9 @@ pub struct AppGenerationHistoryItem {
     pub date: String,
     pub prompt: String,
     #[serde(rename = "type")]
-    pub item_type: String,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub model_info: Option<String>,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub model_catalog_key: Option<String>,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub asset: Option<Value>,
-    pub images: Vec<Value>,
-    pub videos: Vec<Value>,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub aspect_ratio: Option<String>,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub duration_seconds: Option<i64>,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub status: Option<String>,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub output_text: Option<String>,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub created_at: Option<String>,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub updated_at: Option<String>,
+    pub kind: String,
+    pub images: Vec<serde_json::Value>,
+    pub videos: Vec<serde_json::Value>,
 }
 
 pub trait AppGenerationHistoryReadStore {

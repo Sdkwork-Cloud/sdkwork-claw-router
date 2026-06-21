@@ -39,7 +39,7 @@ DEFAULT_INTEGRATION_PATH = Path("specs") / "appbase-integration.yaml"
 PORTAL_PACKAGE_PATH = Path("apps") / "sdkwork-clawrouter-pc" / "package.json"
 FRONTEND_FIELD_CONTRACTS_PATH = DEFAULT_CONTRACT_SNAPSHOT
 FRONTEND_ROUTE_CLASSIFICATION_PATH = Path("docs") / "schema-registry" / "frontend-route-classification.yaml"
-TABLE_REGISTRY_PATH = Path("docs") / "schema-registry" / "sdkwork-claw-router.tables.yaml"
+TABLE_REGISTRY_PATH = Path("docs") / "schema-registry" / "sdkwork-clawrouter.tables.yaml"
 LEGACY_CONSOLE_BILLING_ROUTE = "/console/" + "billing"
 
 MATURITY_RANK: dict[str, int] = {
@@ -287,8 +287,8 @@ class AppbaseIntegrationGuardian:
         if manifest.get("kind") != "sdkwork.appbase.integration":
             messages.append("appbase integration manifest kind must be sdkwork.appbase.integration")
         app = manifest.get("app")
-        if not isinstance(app, dict) or app.get("key") != "sdkwork-claw-router":
-            messages.append("appbase integration manifest must declare app.key sdkwork-claw-router")
+        if not isinstance(app, dict) or app.get("key") != "sdkwork-clawrouter":
+            messages.append("appbase integration manifest must declare app.key sdkwork-clawrouter")
         integrations = manifest.get("integrations")
         if not isinstance(integrations, list) or not integrations:
             messages.append("appbase integration manifest must declare integrations")
@@ -795,8 +795,8 @@ class AppbaseIntegrationGuardian:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Validate appbase capability integration for sdkwork-claw-router.")
-    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-claw-router root directory")
+    parser = argparse.ArgumentParser(description="Validate appbase capability integration for sdkwork-clawrouter.")
+    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-clawrouter root directory")
     parser.add_argument("--manifest", type=Path, default=None, help="appbase integration manifest path")
     parser.add_argument("--appbase-catalog", type=Path, default=None, help="appbase capability catalog path")
     args = parser.parse_args()

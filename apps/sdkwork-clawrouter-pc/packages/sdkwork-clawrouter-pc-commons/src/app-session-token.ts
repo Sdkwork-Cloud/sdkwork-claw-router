@@ -1,5 +1,7 @@
 import { readApiRecord } from './api-result.ts';
+import { parseJwtPayload } from './session-jwt-claims.ts';
 import { dispatchPortalSessionChange } from './portal-session-events.ts';
+import type { PortalIamBridgeSession, PortalSessionAppContext } from './portal-session-types.ts';
 
 const APP_SESSION_STORAGE_KEY = 'sdkwork.clawRouter.appSession.v1';
 const EXPIRY_SKEW_SECONDS = 30;
@@ -7,6 +9,7 @@ const EXPIRY_SKEW_SECONDS = 30;
 export interface StoredAppSessionToken {
   accessToken: string;
   authToken: string;
+  context?: PortalSessionAppContext;
   expiresAt?: number;
   refreshToken?: string;
   sessionId?: string;
@@ -34,9 +37,12 @@ export function storeAppSessionFromResult(result: unknown): StoredAppSessionToke
     throw new Error('App session response is missing valid SDKWork IAM token data');
   }
 
+  const context = readPortalSessionContext(data);
+
   const stored: StoredAppSessionToken = {
     accessToken,
     authToken,
+    ...(context ? { context } : {}),
     ...(Number.isFinite(expiresAt) ? { expiresAt } : {}),
     ...(refreshToken ? { refreshToken } : {}),
     ...(sessionId ? { sessionId } : {}),
@@ -111,6 +117,41 @@ export function clearStoredAppSessionToken(): void {
   dispatchPortalSessionChange();
 }
 
+export function toPortalIamBridgeSession(
+  token: StoredAppSessionToken | null,
+): PortalIamBridgeSession | null {
+  if (!token?.authToken && !token?.accessToken && !token?.refreshToken) {
+    return null;
+  }
+
+  return {
+    ...(token.accessToken ? { accessToken: token.accessToken } : {}),
+    ...(token.authToken ? { authToken: token.authToken } : {}),
+    ...(token.refreshToken ? { refreshToken: token.refreshToken } : {}),
+    ...(token.sessionId ? { sessionId: token.sessionId } : {}),
+    ...(token.context ? { context: toPortalIamBridgeContext(token.context) } : {}),
+  };
+}
+
+export function resolveStoredPortalTenantId(token: StoredAppSessionToken | null = loadStoredAppSessionToken()): string | undefined {
+  if (!token) {
+    return undefined;
+  }
+
+  const tenantId = token.context?.tenantId?.trim();
+  if (tenantId) {
+    return tenantId;
+  }
+
+  const claims = parseJwtPayload(token.accessToken);
+  if (!claims) {
+    return undefined;
+  }
+
+  const claimTenantId = readJwtClaimString(claims, 'tenant_id', 'tenantId');
+  return claimTenantId ?? undefined;
+}
+
 function readAppSessionPayload(result: unknown): Record<string, unknown> {
   return readApiRecord(result);
 }
@@ -133,6 +174,7 @@ function isStoredAppSessionToken(value: unknown): value is StoredAppSessionToken
     value.authToken.length > 0 &&
     typeof value.storedAt === 'number' &&
     Number.isFinite(value.storedAt) &&
+    (value.context === undefined || isPortalSessionAppContext(value.context)) &&
     (value.expiresAt === undefined ||
       (typeof value.expiresAt === 'number' && Number.isFinite(value.expiresAt))) &&
     (value.refreshToken === undefined ||
@@ -140,6 +182,116 @@ function isStoredAppSessionToken(value: unknown): value is StoredAppSessionToken
     (value.sessionId === undefined ||
       (typeof value.sessionId === 'string' && value.sessionId.length > 0))
   );
+}
+
+function readPortalSessionContext(record: Record<string, unknown>): PortalSessionAppContext | undefined {
+  const context = record.context;
+  if (!isRecord(context)) {
+    return undefined;
+  }
+
+  const tenantId = readString(context, 'tenantId');
+  const userId = readString(context, 'userId');
+  const sessionId = readString(context, 'sessionId');
+  if (!tenantId || !userId || !sessionId) {
+    return undefined;
+  }
+
+  const organizationId = readString(context, 'organizationId');
+  const appId = readString(context, 'appId');
+  const environment = readString(context, 'environment');
+  const deploymentMode = readString(context, 'deploymentMode');
+  const authLevel = readString(context, 'authLevel');
+  const dataScope = readStringArray(context.dataScope);
+  const permissionScope = readStringArray(context.permissionScope);
+
+  return {
+    tenantId,
+    userId,
+    sessionId,
+    ...(organizationId ? { organizationId } : {}),
+    ...(appId ? { appId } : {}),
+    ...(environment ? { environment } : {}),
+    ...(deploymentMode ? { deploymentMode } : {}),
+    ...(authLevel ? { authLevel } : {}),
+    ...(dataScope ? { dataScope } : {}),
+    ...(permissionScope ? { permissionScope } : {}),
+  };
+}
+
+function isPortalSessionAppContext(value: unknown): value is PortalSessionAppContext {
+  if (!isRecord(value)) {
+    return false;
+  }
+  return (
+    typeof value.tenantId === 'string' &&
+    value.tenantId.length > 0 &&
+    typeof value.userId === 'string' &&
+    value.userId.length > 0
+  );
+}
+
+function toPortalIamBridgeContext(context: PortalSessionAppContext): PortalIamBridgeSession['context'] {
+  return {
+    appId: context.appId ?? 'sdkwork-clawrouter',
+    authLevel: toIamAuthLevel(context.authLevel),
+    dataScope: [...(context.dataScope ?? [])],
+    deploymentMode: normalizeIamDeploymentMode(context.deploymentMode),
+    environment: toIamEnvironment(context.environment),
+    organizationId: context.organizationId,
+    permissionScope: [...(context.permissionScope ?? [])],
+    sessionId: context.sessionId ?? '',
+    tenantId: context.tenantId,
+    userId: context.userId,
+  };
+}
+
+function normalizeIamDeploymentMode(value: string | undefined): 'local' | 'private' | 'saas' {
+  if (value === 'local' || value === 'standalone') {
+    return 'local';
+  }
+  if (value === 'saas' || value === 'cloud') {
+    return 'saas';
+  }
+  return 'private';
+}
+
+function toIamEnvironment(value: string | undefined): 'dev' | 'prod' | 'test' {
+  const normalized = String(value ?? '').trim().toLowerCase();
+  if (normalized === 'prod' || normalized === 'production' || normalized === 'staging') {
+    return 'prod';
+  }
+  if (normalized === 'test' || normalized === 'testing') {
+    return 'test';
+  }
+  return 'dev';
+}
+
+function toIamAuthLevel(value: string | undefined): 'anonymous' | 'password' | 'mfa' | 'system' {
+  if (value === 'anonymous' || value === 'password' || value === 'mfa' || value === 'system') {
+    return value;
+  }
+  return 'password';
+}
+
+function readStringArray(value: unknown): string[] | undefined {
+  if (!Array.isArray(value)) {
+    return undefined;
+  }
+  const items = value
+    .map((item) => (typeof item === 'string' ? item.trim() : ''))
+    .filter((item) => item.length > 0);
+  return items.length > 0 ? items : undefined;
+}
+
+function readJwtClaimString(claims: Record<string, unknown>, ...keys: string[]): string | undefined {
+  for (const key of keys) {
+    const value = String(claims[key] ?? '').trim();
+    if (value) {
+      return value;
+    }
+  }
+  return undefined;
 }
 
 function readString(record: Record<string, unknown>, key: string): string {

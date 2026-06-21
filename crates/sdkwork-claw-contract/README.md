@@ -33,7 +33,7 @@ Extension points are limited to public exports, runtime entrypoints, SDK clients
 
 ## Verification
 
-- `cargo test --manifest-path apps/sdkwork-claw-router/crates/sdkwork-claw-contract/Cargo.toml`
+- `cargo test --manifest-path apps/sdkwork-clawrouter/crates/sdkwork-claw-contract/Cargo.toml`
 
 ## Owner And Status
 

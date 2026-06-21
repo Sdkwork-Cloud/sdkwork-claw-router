@@ -3,6 +3,18 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+CONSOLE_SETTLEMENTS_PACKAGE = (
+    ROOT
+    / "apps"
+    / "sdkwork-clawrouter-pc"
+    / "packages"
+    / "sdkwork-clawrouter-pc-console-settlements"
+)
+
+
+def skip_unless_console_settlements_package(test_case: unittest.TestCase) -> None:
+    if not CONSOLE_SETTLEMENTS_PACKAGE.exists():
+        test_case.skipTest("console settlements package removed from claw router PC surface")
 
 
 class SettlementsRuntimeStandardTest(unittest.TestCase):
@@ -98,6 +110,7 @@ class SettlementsRuntimeStandardTest(unittest.TestCase):
             self.assertNotIn("target.cost +=", store)
 
     def test_console_settlements_uses_exact_decimal_strings(self) -> None:
+        skip_unless_console_settlements_package(self)
         service = (
             ROOT
             / "apps"
@@ -139,6 +152,7 @@ class SettlementsRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("sum + item.text + item.image + item.video + item.audio + item.music", view)
 
     def test_console_settlements_ui_has_retryable_load_state(self) -> None:
+        skip_unless_console_settlements_package(self)
         view = (
             ROOT
             / "apps"
@@ -157,6 +171,7 @@ class SettlementsRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("SettlementsService.fetchDashboardData({ year: selectedYear }).then", view)
 
     def test_console_settlements_product_states_are_localized(self) -> None:
+        skip_unless_console_settlements_package(self)
         view = (
             ROOT
             / "apps"
@@ -209,6 +224,7 @@ class SettlementsRuntimeStandardTest(unittest.TestCase):
             self.assertNotIn(hardcoded_copy, service)
 
     def test_console_settlements_ui_is_read_only_until_command_contract_exists(self) -> None:
+        skip_unless_console_settlements_package(self)
         view = (
             ROOT
             / "apps"
@@ -269,6 +285,7 @@ class SettlementsRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("operation: createSettlement", settlement_operation_contract)
 
     def test_console_settlements_uses_precise_sdk_response_contract(self) -> None:
+        skip_unless_console_settlements_package(self)
         contract = (
             ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
         ).read_text(encoding="utf-8")

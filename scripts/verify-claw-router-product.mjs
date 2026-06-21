@@ -6,7 +6,7 @@ import process from 'node:process';
 function printHelp() {
   console.log(`Usage: node scripts/verify-claw-router-product.mjs [options]
 
-Run the standard sdkwork-claw-router verification sequence.
+Run the standard sdkwork-clawrouter verification sequence.
 
 Options:
   --fast                 Run the low-cost local iteration gate for Codex loops.
@@ -165,6 +165,7 @@ function buildCargoVerificationEnv(env = process.env, settings = {}) {
 }
 
 const COMMERCIAL_CONTRACT_GUARDIANS = [
+  ['sdkwork standard alignment guard', 'tools.sdkwork_standard_alignment_guardian', ['--strict']],
   ['repository delivery guard', 'tools.repository_delivery_guardian'],
   ['clawrouter generated SDK guard', 'tools.clawrouter_sdk_guardian'],
   ['clawrouter project skill guard', 'tools.clawrouter_skill_guardian'],
@@ -621,21 +622,9 @@ function buildVerificationPlan(settings, env = process.env) {
     env,
   });
   plan.push({
-    label: 'portal admin marketing runtime tests',
-    command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/admin-marketing-runtime.test.ts'],
-    env,
-  });
-  plan.push({
     label: 'portal admin operations runtime tests',
     command: 'node',
     args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/admin-operations-runtime.test.ts'],
-    env,
-  });
-  plan.push({
-    label: 'portal admin announcement runtime tests',
-    command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/admin-announcement-runtime.test.ts'],
     env,
   });
   plan.push({
@@ -710,9 +699,7 @@ const PARALLEL_SAFE_LABELS = new Set([
   'portal admin user runtime tests',
   'portal admin model runtime tests',
   'portal admin ratelimit runtime tests',
-  'portal admin marketing runtime tests',
   'portal admin operations runtime tests',
-  'portal admin announcement runtime tests',
   'portal models SSR smoke tests',
 ]);
 

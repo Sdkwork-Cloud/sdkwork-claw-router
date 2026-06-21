@@ -1,7 +1,7 @@
 use std::sync::Arc;
 
 use axum::extract::State;
-use axum::http::{HeaderMap, StatusCode};
+use axum::http::StatusCode;
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
@@ -9,6 +9,7 @@ use sdkwork_claw_http::TrustedRequestSubject;
 use serde::Serialize;
 
 use crate::api::response::PlusApiResult;
+use crate::api::subject::admin_operator_fields;
 use crate::ports::{AdminMonitorQuery, AdminMonitorReadStore, AdminMonitorSubject};
 
 #[derive(Clone)]
@@ -41,33 +42,33 @@ pub fn admin_monitor_router_with_read_store(
         .with_state(AdminMonitorState { read_store })
 }
 
-async fn fetch_nodes(State(state): State<AdminMonitorState>, headers: HeaderMap) -> Response {
-    let query = match monitor_query_from_headers(&headers) {
-        Ok(query) => query,
-        Err(response) => return response,
-    };
+async fn fetch_nodes(
+    State(state): State<AdminMonitorState>,
+    trusted: TrustedRequestSubject,
+) -> Response {
+    let query = monitor_query(trusted);
     match state.read_store.list_monitor_nodes(query).await {
         Ok(items) => monitor_success(items),
         Err(error) => monitor_system_response("monitor nodes read model is unavailable", error),
     }
 }
 
-async fn fetch_alerts(State(state): State<AdminMonitorState>, headers: HeaderMap) -> Response {
-    let query = match monitor_query_from_headers(&headers) {
-        Ok(query) => query,
-        Err(response) => return response,
-    };
+async fn fetch_alerts(
+    State(state): State<AdminMonitorState>,
+    trusted: TrustedRequestSubject,
+) -> Response {
+    let query = monitor_query(trusted);
     match state.read_store.list_monitor_alerts(query).await {
         Ok(items) => monitor_success(items),
         Err(error) => monitor_system_response("monitor alerts read model is unavailable", error),
     }
 }
 
-async fn fetch_performance(State(state): State<AdminMonitorState>, headers: HeaderMap) -> Response {
-    let query = match monitor_query_from_headers(&headers) {
-        Ok(query) => query,
-        Err(response) => return response,
-    };
+async fn fetch_performance(
+    State(state): State<AdminMonitorState>,
+    trusted: TrustedRequestSubject,
+) -> Response {
+    let query = monitor_query(trusted);
     match state.read_store.list_monitor_performance(query).await {
         Ok(items) => monitor_success(items),
         Err(error) => {
@@ -76,23 +77,16 @@ async fn fetch_performance(State(state): State<AdminMonitorState>, headers: Head
     }
 }
 
-fn monitor_query_from_headers(headers: &HeaderMap) -> Result<AdminMonitorQuery, Response> {
-    TrustedRequestSubject::from_headers(headers)
-        .map(|subject| AdminMonitorQuery {
-            subject: AdminMonitorSubject {
-                tenant_id: subject.tenant_id,
-                organization_id: subject.organization_id,
-                operator_id: subject.operator_id,
-                operator_type: subject.operator_type,
-            },
-        })
-        .map_err(|error| {
-            (
-                StatusCode::UNAUTHORIZED,
-                Json(PlusApiResult::error("4010", error.to_string())),
-            )
-                .into_response()
-        })
+fn monitor_query(trusted: TrustedRequestSubject) -> AdminMonitorQuery {
+    let operator = admin_operator_fields(trusted);
+    AdminMonitorQuery {
+        subject: AdminMonitorSubject {
+            tenant_id: operator.tenant_id,
+            organization_id: operator.organization_id,
+            operator_id: operator.operator_id,
+            operator_type: operator.operator_type,
+        },
+    }
 }
 
 fn monitor_success<T>(items: Vec<T>) -> Response

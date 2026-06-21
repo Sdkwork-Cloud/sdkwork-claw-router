@@ -1,6 +1,6 @@
 ---
 name: clawrouter-sdk-generation
-description: Use when regenerating sdkwork-claw-router OpenAPI specs and the generated TypeScript packages @sdkwork/clawrouter-app-sdk, @sdkwork/clawrouter-backend-sdk, and @sdkwork/clawrouter-open-sdk from the project API contract manifest.
+description: Use when regenerating sdkwork-clawrouter OpenAPI specs and the generated TypeScript packages @sdkwork/clawrouter-app-sdk, @sdkwork/clawrouter-backend-sdk, and @sdkwork/clawrouter-open-sdk from the project API contract manifest.
 ---
 
 # ClawRouter SDK Generation
@@ -29,7 +29,7 @@ Never hand-edit generated SDK output. Fix the manifest, OpenAPI generator, or `s
 
 ## Commands
 
-Run from `apps/sdkwork-claw-router`:
+Run from `apps/sdkwork-clawrouter`:
 
 ```powershell
 python -B -m tools.api_contract_manifest

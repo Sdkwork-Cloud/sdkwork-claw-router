@@ -1,7 +1,7 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { AdminAuthSettingsUpdateRequest, AdminFirewallRuleCreateRequest, AdminIpLimitCreateRequest, AdminModelLimitCreateRequest, AdminRuntimeRegionSettingsUpdateRequest, AdminServiceNodeCreateRequest, AdminServiceNodeStatusUpdateRequest, AdminServiceNodeUpdateRequest, AdminSiteSettingsUpdateRequest, AdminTokenLimitCreateRequest, AnalyticsAdminOverviewRetrieveResult, AuthSettingsRetrieveResult, AuthSettingsUpdateResult, CacheInstancesDeleteResult, CacheInstancesRefreshCreateResult, CacheNamespacesDeleteResult, CacheNamespacesKeysDeleteResult, CacheNamespacesKeysListResult, CacheNamespacesRefreshCreateResult, CacheOverviewRetrieveResult, CacheRefreshCreateResult, DashboardAdminOverviewRetrieveResult, FirewallsRulesCreateResult, FirewallsRulesDeleteResult, FirewallsRulesListResult, InstallationStatusRetrieveResult, MarketingReferralStatsListResult, MonitorAlertsListResult, MonitorNodesListResult, MonitorPerformanceListResult, RateLimitsApiKeysCreateResult, RateLimitsApiKeysListResult, RateLimitsIpCreateResult, RateLimitsIpListResult, RateLimitsModelsCreateResult, RateLimitsModelsListResult, RecordsListResult, RuntimeRegionSettingsRetrieveResult, RuntimeRegionSettingsUpdateResult, ServiceNodesCreateResult, ServiceNodesDeleteResult, ServiceNodesListResult, ServiceNodesStatusUpdateResult, ServiceNodesUpdateResult, SiteSettingsRetrieveResult, SiteSettingsUpdateResult } from '../types';
+import type { AdminAuthSettingsUpdateRequest, AdminFirewallRuleCreateRequest, AdminIpLimitCreateRequest, AdminModelLimitCreateRequest, AdminRuntimeRegionSettingsUpdateRequest, AdminServiceNodeCreateRequest, AdminServiceNodeStatusUpdateRequest, AdminServiceNodeUpdateRequest, AdminSiteSettingsUpdateRequest, AdminTokenLimitCreateRequest, AnalyticsAdminOverviewRetrieveResult, AuthSettingsRetrieveResult, AuthSettingsUpdateResult, CacheInstancesDeleteResult, CacheInstancesRefreshCreateResult, CacheNamespacesDeleteResult, CacheNamespacesKeysDeleteResult, CacheNamespacesKeysListResult, CacheNamespacesRefreshCreateResult, CacheOverviewRetrieveResult, CacheRefreshCreateResult, DashboardAdminOverviewRetrieveResult, FirewallsRulesCreateResult, FirewallsRulesDeleteResult, FirewallsRulesListResult, InstallationStatusRetrieveResult, MonitorAlertsListResult, MonitorNodesListResult, MonitorPerformanceListResult, RateLimitsApiKeysCreateResult, RateLimitsApiKeysListResult, RateLimitsIpCreateResult, RateLimitsIpListResult, RateLimitsModelsCreateResult, RateLimitsModelsListResult, RecordsListResult, RuntimeRegionSettingsRetrieveResult, RuntimeRegionSettingsUpdateResult, ServiceNodesCreateResult, ServiceNodesDeleteResult, ServiceNodesListResult, ServiceNodesStatusUpdateResult, ServiceNodesUpdateResult, SiteSettingsRetrieveResult, SiteSettingsUpdateResult } from '../types';
 
 
 export class SystemSiteSettingsApi {
@@ -272,31 +272,6 @@ export class SystemMonitorApi {
     this.alerts = new SystemMonitorAlertsApi(client);
     this.nodes = new SystemMonitorNodesApi(client);
     this.performance = new SystemMonitorPerformanceApi(client);
-  }
-
-}
-
-export class SystemMarketingReferralStatsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** List referral stats */
-  async list(): Promise<MarketingReferralStatsListResult> {
-    return this.client.get<MarketingReferralStatsListResult>(backendApiPath(`/system/marketing/referral_stats`));
-  }
-}
-
-export class SystemMarketingApi {
-  private client: HttpClient;
-  public readonly referralStats: SystemMarketingReferralStatsApi;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-    this.referralStats = new SystemMarketingReferralStatsApi(client);
   }
 
 }
@@ -619,7 +594,6 @@ export class SystemApi {
   public readonly dashboard: SystemDashboardApi;
   public readonly firewalls: SystemFirewallsApi;
   public readonly installation: SystemInstallationApi;
-  public readonly marketing: SystemMarketingApi;
   public readonly monitor: SystemMonitorApi;
   public readonly rateLimits: SystemRateLimitsApi;
   public readonly records: SystemRecordsApi;
@@ -635,7 +609,6 @@ export class SystemApi {
     this.dashboard = new SystemDashboardApi(client);
     this.firewalls = new SystemFirewallsApi(client);
     this.installation = new SystemInstallationApi(client);
-    this.marketing = new SystemMarketingApi(client);
     this.monitor = new SystemMonitorApi(client);
     this.rateLimits = new SystemRateLimitsApi(client);
     this.records = new SystemRecordsApi(client);

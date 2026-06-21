@@ -3,7 +3,7 @@ const GENERATED_POSTGRES_SCHEMA: &str =
 const SCHEMA_MANIFEST: &str =
     include_str!("../../../generated/schema/manifest/schema-manifest.json");
 const SCHEMA_REGISTRY_TABLES: &str =
-    include_str!("../../../generated/schema/registry/sdkwork-claw-router.tables.effective.yaml");
+    include_str!("../../../generated/schema/registry/sdkwork-clawrouter.tables.effective.yaml");
 
 fn compact_sql(value: &str) -> String {
     value.split_whitespace().collect::<Vec<_>>().join(" ")

@@ -26,7 +26,7 @@
 ### Task 2: Schema and SQL Store
 
 **Files:**
-- Modify: `docs/schema-registry/sdkwork-claw-router.tables.yaml`
+- Modify: `docs/schema-registry/sdkwork-clawrouter.tables.yaml`
 - Modify/generated: `generated/schema/postgres/schema.sql`
 - Modify/generated: `generated/schema/manifest/schema-manifest.json`
 - Modify: `services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_channel_group_store.rs`

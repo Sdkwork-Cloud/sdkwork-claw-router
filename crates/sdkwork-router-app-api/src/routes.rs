@@ -33,12 +33,10 @@ use sdkwork_claw_product::infrastructure::sql::pool::{
     connect_claw_sqlite_runtime_pool, effective_sqlite_runtime_pool_max_connections,
 };
 use sdkwork_claw_product::infrastructure::sql::postgres::{
-    PostgresAppAgentRegistryStore, PostgresAppAgentRunStore, PostgresAppAgentSessionStore,
-    PostgresAppChatStore, PostgresAppGatewayTracesReadStore, PostgresAppGenerationHistoryReadStore,
+    PostgresAppChatStore, PostgresAppGatewayTracesReadStore,
 PostgresAppNotificationStore, PostgresAppProvidersReadStore,
     PostgresAppRoutingChannelCommandStore, PostgresAppRoutingReadStore,
-    PostgresAppRoutingStrategyStore, PostgresAppRuntimeStore, PostgresAppSkillsReadStore,
-    PostgresAppStoreReadStore, PostgresCatalogLoadError, PostgresCourseApplicationCommandStore,
+    PostgresAppRoutingStrategyStore, PostgresAppRuntimeStore, PostgresCatalogLoadError,
     PostgresDashboardOverviewReadStore, PostgresForumStore, PostgresModelRankingRefreshStore,
     PostgresModelRankingsReadStore, PostgresPaymentCallbackStore,
     PostgresPaymentIntentRuntimeStore, PostgresPricingCatalogLoader, PostgresSettingsStore,
@@ -46,12 +44,10 @@ PostgresAppNotificationStore, PostgresAppProvidersReadStore,
     PostgresVerificationDeliveryConfigStore, PostgresVerificationDeliveryQueueSender,
 };
 use sdkwork_claw_product::infrastructure::sql::sqlite::{
-    SqlCatalogLoadError, SqliteAppAgentRegistryStore, SqliteAppAgentRunStore,
-    SqliteAppAgentSessionStore, SqliteAppChatStore, SqliteAppGatewayTracesReadStore,
-    SqliteAppGenerationHistoryReadStore, SqliteAppNotificationStore,
+    SqlCatalogLoadError, SqliteAppChatStore, SqliteAppGatewayTracesReadStore,
+    SqliteAppNotificationStore,
     SqliteAppProvidersReadStore, SqliteAppRoutingChannelCommandStore, SqliteAppRoutingReadStore,
-    SqliteAppRoutingStrategyStore, SqliteAppRuntimeStore, SqliteAppSkillsReadStore,
-    SqliteAppStoreReadStore, SqliteCourseApplicationCommandStore, SqliteDashboardOverviewReadStore,
+    SqliteAppRoutingStrategyStore, SqliteAppRuntimeStore, SqliteDashboardOverviewReadStore,
     SqliteForumStore, SqliteModelRankingRefreshStore, SqliteModelRankingsReadStore,
     SqlitePaymentCallbackStore, SqlitePaymentIntentRuntimeStore, SqlitePricingCatalogLoader,
     SqliteSettingsStore, SqliteSettlementsDashboardReadStore, SqliteSiteSettingsStore,
@@ -64,11 +60,10 @@ use sdkwork_claw_product::infrastructure::{
 use sdkwork_claw_product::ports::ChatCompletionStreamRelay;
 use sdkwork_claw_product::ports::PricingCatalog;
 use sdkwork_claw_product::ports::{
-    AdminAuthSettingsStore, AppAgentRegistryStore, AppAgentRunStore, AppAgentSessionStore,
-    AppAuthStore, AppChatStore, AppGatewayTracesReadStore, AppGenerationHistoryReadStore,
+    AdminAuthSettingsStore,
+    AppAuthStore, AppChatStore, AppGatewayTracesReadStore,
 AppNotificationStore, AppProvidersReadStore, AppRoutingChannelCommandStore,
-    AppRoutingReadStore, AppRoutingStrategyStore, AppRuntimeStore, AppSessionEventStore,
-    AppSkillsCommandStore, AppSkillsReadStore, AppStoreReadStore, DashboardOverviewReadStore,
+    AppRoutingReadStore, AppRoutingStrategyStore, AppRuntimeStore, AppSessionEventStore, DashboardOverviewReadStore,
     ForumCommentCommandStore, ForumCommentReadStore, ForumFeedCommandStore, ForumFeedReadStore,
     ModelRankingRefreshOutcome, ModelRankingRefreshRunStatus, ModelRankingRefreshStore,
     ModelRankingsCacheInvalidation, ModelRankingsReadModelStore, PaymentCallbackStore,
@@ -91,13 +86,9 @@ pub struct RouterApiRouteModule {
 pub const SERVICE_NAME: &str = "sdkwork-claw-app";
 const DEFAULT_APP_RUNTIME_CATALOG_REFRESH_INTERVAL_MILLIS: u64 = 60_000;
 type ApiKeyCodec = Arc<dyn ApiKeySecretCodec + Send + Sync>;
-type AppAgentRegistryRuntimeStore = Arc<dyn AppAgentRegistryStore + Send + Sync>;
 type AppGatewayTracesStore = Arc<dyn AppGatewayTracesReadStore + Send + Sync>;
 type AppNotificationRuntimeStore = Arc<dyn AppNotificationStore + Send + Sync>;
-type AppGenerationHistoryStore = Arc<dyn AppGenerationHistoryReadStore + Send + Sync>;
 type AppChatRuntimeStore = Arc<dyn AppChatStore + Send + Sync>;
-type AppAgentSessionRuntimeStore = Arc<dyn AppAgentSessionStore + Send + Sync>;
-type AppAgentRunRuntimeStore = Arc<dyn AppAgentRunStore + Send + Sync>;
 type AppRuntimeRuntimeStore = Arc<dyn AppRuntimeStore + Send + Sync>;
 type AppRuntimeExecutionCatalog = Arc<RefreshableSqlPricingCatalog>;
 type AppRuntimeChatStreamRelay = Arc<dyn ChatCompletionStreamRelay + Send + Sync>;
@@ -114,11 +105,6 @@ type AppSessionAuditStore = Arc<dyn AppSessionEventStore + Send + Sync>;
 type AppVerificationCodeSender = Arc<dyn VerificationCodeSender + Send + Sync>;
 type AppPasswordHasher = Arc<dyn PasswordHasher + Send + Sync>;
 type AppSiteSettingsRuntimeStore = Arc<dyn SiteSettingsStore + Send + Sync>;
-type AppSkillsRuntimeStore = Arc<dyn AppSkillsReadStore + Send + Sync>;
-type AppSkillsCommandRuntimeStore = Arc<dyn AppSkillsCommandStore + Send + Sync>;
-type AppStoreRuntimeStore = Arc<dyn AppStoreReadStore + Send + Sync>;
-type CourseApplicationCommandRuntimeStore =
-    Arc<dyn sdkwork_claw_product::ports::CourseApplicationCommandStore + Send + Sync>;
 type ForumFeedReadRuntimeStore = Arc<dyn ForumFeedReadStore + Send + Sync>;
 type ForumFeedCommandRuntimeStore = Arc<dyn ForumFeedCommandStore + Send + Sync>;
 type ForumCommentReadRuntimeStore = Arc<dyn ForumCommentReadStore + Send + Sync>;
@@ -153,10 +139,7 @@ pub async fn build_sdkwork_claw_router_app_api_router_from_env(
 }
 
 pub fn router() -> Router {
-    merge_app_sdk_reference_router(
-        router_with_database_status(None, None),
-        RequestLimitsConfig::default(),
-    )
+    router_with_database_status(None, None)
     .merge(sdkwork_claw_product::api::app_site_settings_router())
     .merge(sdkwork_claw_product::api::app_payment_callback_router())
     .merge(sdkwork_claw_product::api::payment_aggregate_router())
@@ -168,13 +151,7 @@ pub fn router() -> Router {
     .merge(sdkwork_claw_product::api::app_gateway_traces_router())
     .merge(sdkwork_claw_product::api::app_notification_router())
     .merge(sdkwork_claw_product::api::app_chat_router())
-    .merge(sdkwork_claw_product::api::app_generation_history_router())
-    .merge(sdkwork_claw_product::api::app_agent_registry_router())
-    .merge(sdkwork_claw_product::api::app_agent_session_router())
-    .merge(sdkwork_claw_product::api::app_agent_run_router())
     .merge(sdkwork_claw_product::api::app_runtime_router())
-    .merge(sdkwork_claw_product::api::app_store_router())
-    .merge(sdkwork_claw_product::api::app_skills_router())
     .merge(sdkwork_claw_product::api::app_forum_router())
     .merge(sdkwork_claw_product::api::app_providers_router())
     .merge(sdkwork_claw_product::api::app_routing_router())
@@ -201,7 +178,7 @@ fn product_local_contract_operation(operation: &sdkwork_claw_http::ContractOpera
         Some("commerce" | "promotion")
     ) && !is_commerce_dependency_contract_path(&operation.path)
         && !is_appbase_dependency_contract_path(&operation.path)
-        && !is_course_dependency_contract_path(&operation.path)
+
 }
 
 fn is_appbase_dependency_contract_path(path: &str) -> bool {
@@ -240,14 +217,6 @@ fn is_commerce_dependency_contract_path(path: &str) -> bool {
         .any(|prefix| path == prefix.trim_end_matches('/') || path.starts_with(prefix))
 }
 
-fn is_course_dependency_contract_path(path: &str) -> bool {
-    const COURSE_APP_PREFIXES: &[&str] = &["/app/v3/api/courses/"];
-
-    COURSE_APP_PREFIXES
-        .iter()
-        .any(|prefix| path == prefix.trim_end_matches('/') || path.starts_with(prefix))
-}
-
 pub fn router_with_product_catalog<C>(catalog: Arc<C>) -> Router
 where
     C: PricingCatalog + Send + Sync + 'static,
@@ -262,10 +231,7 @@ fn router_with_product_catalog_and_database_status<C>(
 where
     C: PricingCatalog + Send + Sync + 'static,
 {
-    merge_app_sdk_reference_router(
-        router_with_database_status(config, None),
-        RequestLimitsConfig::default(),
-    )
+    router_with_database_status(config, None)
     .merge(sdkwork_claw_product::api::app_site_settings_router())
     .merge(sdkwork_claw_product::api::app_payment_callback_router())
     .merge(sdkwork_claw_product::api::app_dashboard_overview_router())
@@ -276,13 +242,7 @@ where
     .merge(sdkwork_claw_product::api::app_gateway_traces_router())
     .merge(sdkwork_claw_product::api::app_notification_router())
     .merge(sdkwork_claw_product::api::app_chat_router())
-    .merge(sdkwork_claw_product::api::app_generation_history_router())
-    .merge(sdkwork_claw_product::api::app_agent_registry_router())
-    .merge(sdkwork_claw_product::api::app_agent_session_router())
-    .merge(sdkwork_claw_product::api::app_agent_run_router())
     .merge(sdkwork_claw_product::api::app_runtime_router())
-    .merge(sdkwork_claw_product::api::app_store_router())
-    .merge(sdkwork_claw_product::api::app_skills_router())
     .merge(sdkwork_claw_product::api::app_forum_router())
     .merge(sdkwork_claw_product::api::app_providers_router())
     .merge(sdkwork_claw_product::api::app_routing_router())
@@ -512,19 +472,11 @@ fn router_with_runtime_stores_and_database_status(
     app_gateway_traces_read_store: Option<AppGatewayTracesStore>,
     app_notification_store: Option<AppNotificationRuntimeStore>,
     app_chat_store: Option<AppChatRuntimeStore>,
-    app_generation_history_read_store: Option<AppGenerationHistoryStore>,
-    app_agent_registry_store: Option<AppAgentRegistryRuntimeStore>,
-    app_agent_session_store: Option<AppAgentSessionRuntimeStore>,
-    app_agent_run_store: Option<AppAgentRunRuntimeStore>,
     app_runtime_store: Option<AppRuntimeRuntimeStore>,
     app_runtime_execution_catalog: Option<AppRuntimeExecutionCatalog>,
     app_runtime_chat_stream_relay: Option<AppRuntimeChatStreamRelay>,
     app_runtime_gateway_client: Option<AppRuntimeGatewayRuntimeClient>,
     app_runtime_stream_bus: Option<AppRuntimeStreamBus>,
-    app_store_read_store: Option<AppStoreRuntimeStore>,
-    app_skills_read_store: Option<AppSkillsRuntimeStore>,
-    app_skills_command_store: Option<AppSkillsCommandRuntimeStore>,
-    course_application_command_store: Option<CourseApplicationCommandRuntimeStore>,
     forum_feed_read_store: Option<ForumFeedReadRuntimeStore>,
     forum_feed_command_store: Option<ForumFeedCommandRuntimeStore>,
     forum_comment_read_store: Option<ForumCommentReadRuntimeStore>,
@@ -551,11 +503,7 @@ fn router_with_runtime_stores_and_database_status(
         verification_code_sender,
         expose_debug_verification_code,
     );
-    let mut router = router_with_database_status(config, readiness_check).merge(
-        sdkwork_claw_product::api::app_sdk_reference_router_with_json_body_limit(
-            request_limits_config.sdk_reference_json_body_max_bytes(),
-        ),
-    );
+    let mut router = router_with_database_status(config, readiness_check);
     router = router.merge(app_auth_router);
     router = match app_site_settings_store {
         Some(store) => {
@@ -632,43 +580,6 @@ fn router_with_runtime_stores_and_database_status(
         )),
         None => router.merge(sdkwork_claw_product::api::app_chat_router()),
     };
-    router = match app_generation_history_read_store {
-        Some(read_store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
-            sdkwork_claw_product::api::app_generation_history_router_with_read_store(read_store),
-            subject_boundary_config.clone(),
-        )),
-        None => router.merge(sdkwork_claw_product::api::app_generation_history_router()),
-    };
-    router = match app_agent_registry_store {
-        Some(store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
-            sdkwork_claw_product::api::app_agent_registry_router_with_store(
-                store,
-                Arc::new(OsApiKeySecretGenerator),
-            ),
-            subject_boundary_config.clone(),
-        )),
-        None => router.merge(sdkwork_claw_product::api::app_agent_registry_router()),
-    };
-    router = match app_agent_session_store {
-        Some(store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
-            sdkwork_claw_product::api::app_agent_session_router_with_store(
-                store,
-                Arc::clone(&entity_uuid_generator),
-            ),
-            subject_boundary_config.clone(),
-        )),
-        None => router.merge(sdkwork_claw_product::api::app_agent_session_router()),
-    };
-    router = match app_agent_run_store {
-        Some(store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
-            sdkwork_claw_product::api::app_agent_run_router_with_store(
-                store,
-                Arc::clone(&entity_uuid_generator),
-            ),
-            subject_boundary_config.clone(),
-        )),
-        None => router.merge(sdkwork_claw_product::api::app_agent_run_router()),
-    };
     router = match app_runtime_store {
         Some(store) => {
             let stream_bus = app_runtime_stream_bus
@@ -710,41 +621,6 @@ fn router_with_runtime_stores_and_database_status(
         }
         None => router.merge(sdkwork_claw_product::api::app_runtime_router()),
     };
-    router = match app_store_read_store {
-        Some(read_store) => router.merge(
-            sdkwork_claw_http::apply_optional_app_subject_boundary_if_legacy(
-                sdkwork_claw_product::api::app_store_router_with_read_store(read_store),
-                subject_boundary_config.clone(),
-            ),
-        ),
-        None => router.merge(sdkwork_claw_product::api::app_store_router()),
-    };
-    router = match app_skills_read_store {
-        Some(read_store) => {
-            let skills_router = match app_skills_command_store {
-                Some(command_store) => sdkwork_claw_product::api::app_skills_router_with_store(
-                    read_store,
-                    command_store,
-                    Arc::new(OsApiKeySecretGenerator),
-                ),
-                None => sdkwork_claw_product::api::app_skills_router_with_read_store(read_store),
-            };
-            router.merge(
-                sdkwork_claw_http::apply_optional_app_subject_boundary_if_legacy(
-                    skills_router,
-                    subject_boundary_config.clone(),
-                ),
-            )
-        }
-        None => router.merge(sdkwork_claw_product::api::app_skills_router()),
-    };
-    if let Some(command_store) = course_application_command_store {
-        router = router.merge(
-            sdkwork_claw_product::api::app_course_application_router_with_command_store(
-                command_store,
-            ),
-        );
-    }
     router = match (
         forum_feed_read_store,
         forum_feed_command_store,
@@ -821,16 +697,6 @@ fn router_with_runtime_stores_and_database_status(
     router
 }
 
-fn merge_app_sdk_reference_router(
-    router: Router,
-    request_limits_config: RequestLimitsConfig,
-) -> Router {
-    router.merge(
-        sdkwork_claw_product::api::app_sdk_reference_router_with_json_body_limit(
-            request_limits_config.sdk_reference_json_body_max_bytes(),
-        ),
-    )
-}
 
 pub fn app_forum_router_with_store_and_subject_boundary(
     feed_read_store: Arc<dyn ForumFeedReadStore + Send + Sync>,
@@ -888,16 +754,7 @@ pub async fn router_with_sqlite_product_catalog(
         Arc::new(SqliteAppGatewayTracesReadStore::new(pool.clone()));
     let app_notification_store = Arc::new(SqliteAppNotificationStore::new(pool.clone()));
     let app_chat_store = Arc::new(SqliteAppChatStore::new(pool.clone()));
-    let app_generation_history_read_store =
-        Arc::new(SqliteAppGenerationHistoryReadStore::new(pool.clone()));
-    let app_agent_registry_store = Arc::new(SqliteAppAgentRegistryStore::new(pool.clone()));
-    let app_agent_session_store = Arc::new(SqliteAppAgentSessionStore::new(pool.clone()));
-    let app_agent_run_store = Arc::new(SqliteAppAgentRunStore::new(pool.clone()));
     let app_runtime_store = Arc::new(SqliteAppRuntimeStore::new(pool.clone()));
-    let app_store_read_store = Arc::new(SqliteAppStoreReadStore::new(pool.clone()));
-    let app_skills_store = Arc::new(SqliteAppSkillsReadStore::new(pool.clone()));
-    let course_application_command_store =
-        Arc::new(SqliteCourseApplicationCommandStore::new(pool.clone()));
     let forum_store = Arc::new(SqliteForumStore::new(pool.clone()));
     let app_providers_read_store = Arc::new(SqliteAppProvidersReadStore::new(pool.clone()));
     let app_routing_read_store = Arc::new(SqliteAppRoutingReadStore::with_api_key_secret_codec(
@@ -931,19 +788,11 @@ pub async fn router_with_sqlite_product_catalog(
         Some(app_gateway_traces_read_store),
         Some(app_notification_store),
         Some(app_chat_store),
-        Some(app_generation_history_read_store),
-        Some(app_agent_registry_store),
-        Some(app_agent_session_store),
-        Some(app_agent_run_store),
         Some(app_runtime_store),
         None,
         None,
         None,
         None,
-        Some(app_store_read_store),
-        Some(app_skills_store.clone()),
-        Some(app_skills_store),
-        Some(course_application_command_store),
         Some(forum_store.clone()),
         Some(forum_store.clone()),
         Some(forum_store.clone()),
@@ -993,16 +842,7 @@ pub async fn router_with_postgres_product_catalog(
         Arc::new(PostgresAppGatewayTracesReadStore::new(pool.clone()));
     let app_notification_store = Arc::new(PostgresAppNotificationStore::new(pool.clone()));
     let app_chat_store = Arc::new(PostgresAppChatStore::new(pool.clone()));
-    let app_generation_history_read_store =
-        Arc::new(PostgresAppGenerationHistoryReadStore::new(pool.clone()));
-    let app_agent_registry_store = Arc::new(PostgresAppAgentRegistryStore::new(pool.clone()));
-    let app_agent_session_store = Arc::new(PostgresAppAgentSessionStore::new(pool.clone()));
-    let app_agent_run_store = Arc::new(PostgresAppAgentRunStore::new(pool.clone()));
     let app_runtime_store = Arc::new(PostgresAppRuntimeStore::new(pool.clone()));
-    let app_store_read_store = Arc::new(PostgresAppStoreReadStore::new(pool.clone()));
-    let app_skills_store = Arc::new(PostgresAppSkillsReadStore::new(pool.clone()));
-    let course_application_command_store =
-        Arc::new(PostgresCourseApplicationCommandStore::new(pool.clone()));
     let forum_store = Arc::new(PostgresForumStore::new(pool.clone()));
     let app_providers_read_store = Arc::new(PostgresAppProvidersReadStore::new(pool.clone()));
     let app_routing_read_store = Arc::new(PostgresAppRoutingReadStore::with_api_key_secret_codec(
@@ -1036,19 +876,11 @@ pub async fn router_with_postgres_product_catalog(
         Some(app_gateway_traces_read_store),
         Some(app_notification_store),
         Some(app_chat_store),
-        Some(app_generation_history_read_store),
-        Some(app_agent_registry_store),
-        Some(app_agent_session_store),
-        Some(app_agent_run_store),
         Some(app_runtime_store),
         None,
         None,
         None,
         None,
-        Some(app_store_read_store),
-        Some(app_skills_store.clone()),
-        Some(app_skills_store),
-        Some(course_application_command_store),
         Some(forum_store.clone()),
         Some(forum_store.clone()),
         Some(forum_store.clone()),
@@ -1109,16 +941,7 @@ pub async fn router_with_sqlite_shared_runtime(
         Arc::new(SqliteAppGatewayTracesReadStore::new(pool.clone()));
     let app_notification_store = Arc::new(SqliteAppNotificationStore::new(pool.clone()));
     let app_chat_store = Arc::new(SqliteAppChatStore::new(pool.clone()));
-    let app_generation_history_read_store =
-        Arc::new(SqliteAppGenerationHistoryReadStore::new(pool.clone()));
-    let app_agent_registry_store = Arc::new(SqliteAppAgentRegistryStore::new(pool.clone()));
-    let app_agent_session_store = Arc::new(SqliteAppAgentSessionStore::new(pool.clone()));
-    let app_agent_run_store = Arc::new(SqliteAppAgentRunStore::new(pool.clone()));
     let app_runtime_store = Arc::new(SqliteAppRuntimeStore::new(pool.clone()));
-    let app_store_read_store = Arc::new(SqliteAppStoreReadStore::new(pool.clone()));
-    let app_skills_store = Arc::new(SqliteAppSkillsReadStore::new(pool.clone()));
-    let course_application_command_store =
-        Arc::new(SqliteCourseApplicationCommandStore::new(pool.clone()));
     let forum_store = Arc::new(SqliteForumStore::new(pool.clone()));
     let app_providers_read_store = Arc::new(SqliteAppProvidersReadStore::new(pool.clone()));
     let app_routing_read_store = Arc::new(SqliteAppRoutingReadStore::with_api_key_secret_codec(
@@ -1161,19 +984,11 @@ pub async fn router_with_sqlite_shared_runtime(
         Some(app_gateway_traces_read_store),
         Some(app_notification_store),
         Some(app_chat_store),
-        Some(app_generation_history_read_store),
-        Some(app_agent_registry_store),
-        Some(app_agent_session_store),
-        Some(app_agent_run_store),
         Some(app_runtime_store),
         Some(catalog),
         None,
         Some(app_runtime_gateway_client),
         Some(app_runtime_stream_bus),
-        Some(app_store_read_store),
-        Some(app_skills_store.clone()),
-        Some(app_skills_store),
-        Some(course_application_command_store),
         Some(forum_store.clone()),
         Some(forum_store.clone()),
         Some(forum_store.clone()),
@@ -1235,16 +1050,7 @@ pub async fn router_with_postgres_shared_runtime(
         Arc::new(PostgresAppGatewayTracesReadStore::new(pool.clone()));
     let app_notification_store = Arc::new(PostgresAppNotificationStore::new(pool.clone()));
     let app_chat_store = Arc::new(PostgresAppChatStore::new(pool.clone()));
-    let app_generation_history_read_store =
-        Arc::new(PostgresAppGenerationHistoryReadStore::new(pool.clone()));
-    let app_agent_registry_store = Arc::new(PostgresAppAgentRegistryStore::new(pool.clone()));
-    let app_agent_session_store = Arc::new(PostgresAppAgentSessionStore::new(pool.clone()));
-    let app_agent_run_store = Arc::new(PostgresAppAgentRunStore::new(pool.clone()));
     let app_runtime_store = Arc::new(PostgresAppRuntimeStore::new(pool.clone()));
-    let app_store_read_store = Arc::new(PostgresAppStoreReadStore::new(pool.clone()));
-    let app_skills_store = Arc::new(PostgresAppSkillsReadStore::new(pool.clone()));
-    let course_application_command_store =
-        Arc::new(PostgresCourseApplicationCommandStore::new(pool.clone()));
     let forum_store = Arc::new(PostgresForumStore::new(pool.clone()));
     let app_providers_read_store = Arc::new(PostgresAppProvidersReadStore::new(pool.clone()));
     let app_routing_read_store = Arc::new(PostgresAppRoutingReadStore::with_api_key_secret_codec(
@@ -1287,19 +1093,11 @@ pub async fn router_with_postgres_shared_runtime(
         Some(app_gateway_traces_read_store),
         Some(app_notification_store),
         Some(app_chat_store),
-        Some(app_generation_history_read_store),
-        Some(app_agent_registry_store),
-        Some(app_agent_session_store),
-        Some(app_agent_run_store),
         Some(app_runtime_store),
         Some(catalog),
         None,
         Some(app_runtime_gateway_client),
         Some(app_runtime_stream_bus),
-        Some(app_store_read_store),
-        Some(app_skills_store.clone()),
-        Some(app_skills_store),
-        Some(course_application_command_store),
         Some(forum_store.clone()),
         Some(forum_store.clone()),
         Some(forum_store.clone()),
@@ -1543,16 +1341,7 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 Arc::new(SqliteAppGatewayTracesReadStore::new(pool.clone()));
             let app_notification_store = Arc::new(SqliteAppNotificationStore::new(pool.clone()));
             let app_chat_store = Arc::new(SqliteAppChatStore::new(pool.clone()));
-            let app_generation_history_read_store =
-                Arc::new(SqliteAppGenerationHistoryReadStore::new(pool.clone()));
-            let app_agent_registry_store = Arc::new(SqliteAppAgentRegistryStore::new(pool.clone()));
-            let app_agent_session_store = Arc::new(SqliteAppAgentSessionStore::new(pool.clone()));
-            let app_agent_run_store = Arc::new(SqliteAppAgentRunStore::new(pool.clone()));
-                    let app_runtime_store = Arc::new(SqliteAppRuntimeStore::new(pool.clone()));
-            let app_store_read_store = Arc::new(SqliteAppStoreReadStore::new(pool.clone()));
-            let app_skills_store = Arc::new(SqliteAppSkillsReadStore::new(pool.clone()));
-            let course_application_command_store =
-                Arc::new(SqliteCourseApplicationCommandStore::new(pool.clone()));
+            let app_runtime_store = Arc::new(SqliteAppRuntimeStore::new(pool.clone()));
             let forum_store = Arc::new(SqliteForumStore::new(pool.clone()));
             let app_providers_read_store = Arc::new(SqliteAppProvidersReadStore::new(pool.clone()));
             let app_routing_read_store =
@@ -1602,20 +1391,12 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 Some(app_gateway_traces_read_store),
                 Some(app_notification_store),
                 Some(app_chat_store),
-                Some(app_generation_history_read_store),
-                Some(app_agent_registry_store),
-                Some(app_agent_session_store),
-                Some(app_agent_run_store),
-                        Some(app_runtime_store),
+                                                        Some(app_runtime_store),
                 Some(app_runtime_execution_catalog),
                 None,
                 Some(Arc::clone(&app_runtime_gateway_client)),
                 Some(Arc::clone(&app_runtime_stream_bus)),
-                Some(app_store_read_store),
-                Some(app_skills_store.clone()),
-                Some(app_skills_store),
-                Some(course_application_command_store),
-                Some(forum_store.clone()),
+                                                Some(forum_store.clone()),
                 Some(forum_store.clone()),
                 Some(forum_store.clone()),
                 Some(forum_store),
@@ -1694,17 +1475,7 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 Arc::new(PostgresAppGatewayTracesReadStore::new(pool.clone()));
             let app_notification_store = Arc::new(PostgresAppNotificationStore::new(pool.clone()));
             let app_chat_store = Arc::new(PostgresAppChatStore::new(pool.clone()));
-            let app_generation_history_read_store =
-                Arc::new(PostgresAppGenerationHistoryReadStore::new(pool.clone()));
-            let app_agent_registry_store =
-                Arc::new(PostgresAppAgentRegistryStore::new(pool.clone()));
-            let app_agent_session_store = Arc::new(PostgresAppAgentSessionStore::new(pool.clone()));
-            let app_agent_run_store = Arc::new(PostgresAppAgentRunStore::new(pool.clone()));
-                    let app_runtime_store = Arc::new(PostgresAppRuntimeStore::new(pool.clone()));
-            let app_store_read_store = Arc::new(PostgresAppStoreReadStore::new(pool.clone()));
-            let app_skills_store = Arc::new(PostgresAppSkillsReadStore::new(pool.clone()));
-            let course_application_command_store =
-                Arc::new(PostgresCourseApplicationCommandStore::new(pool.clone()));
+            let app_runtime_store = Arc::new(PostgresAppRuntimeStore::new(pool.clone()));
             let forum_store = Arc::new(PostgresForumStore::new(pool.clone()));
             let app_providers_read_store =
                 Arc::new(PostgresAppProvidersReadStore::new(pool.clone()));
@@ -1757,20 +1528,12 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 Some(app_gateway_traces_read_store),
                 Some(app_notification_store),
                 Some(app_chat_store),
-                Some(app_generation_history_read_store),
-                Some(app_agent_registry_store),
-                Some(app_agent_session_store),
-                Some(app_agent_run_store),
-                        Some(app_runtime_store),
+                                                        Some(app_runtime_store),
                 Some(app_runtime_execution_catalog),
                 None,
                 Some(Arc::clone(&app_runtime_gateway_client)),
                 Some(Arc::clone(&app_runtime_stream_bus)),
-                Some(app_store_read_store),
-                Some(app_skills_store.clone()),
-                Some(app_skills_store),
-                Some(course_application_command_store),
-                Some(forum_store.clone()),
+                                                Some(forum_store.clone()),
                 Some(forum_store.clone()),
                 Some(forum_store.clone()),
                 Some(forum_store),
@@ -3057,7 +2820,7 @@ mod tests {
             .as_millis();
         let mut path = std::env::temp_dir();
         path.push(format!("sdkwork-claw-app-runtime-{millis}"));
-        path.push("sdkwork-claw-router.toml");
+        path.push("sdkwork-clawrouter.toml");
         path
     }
 

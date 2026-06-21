@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "kind": "sdkwork.component.spec",
   "component": {
-    "name": "sdkwork-clawrouter-pc-admin-organization",
+    "name": "@sdkwork/clawrouter-pc-admin-organization",
     "displayName": "Sdkwork Claw Router Admin Organization",
     "version": "1.0.0",
     "type": "node-package",
-    "root": "sdkwork-claw-router/apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization",
+    "root": "sdkwork-clawrouter/apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization",
     "domain": "iam",
     "capability": "claw-router-admin-organization",
     "surface": "backend-admin",
@@ -99,7 +99,7 @@
         "packageName": "@sdkwork/appbase-app-sdk",
         "surface": "app-api",
         "apiPrefix": "/app/v3/api",
-        "providedBy": "sdkwork-clawrouter-pc-commons/runtime",
+        "providedBy": "@sdkwork/clawrouter-pc-commons/runtime",
         "dependencyApiSurface": "sdkwork-appbase-app-sdk",
         "runtimeIntegration": {
           "mode": "external-service",
@@ -113,7 +113,7 @@
         "packageName": "@sdkwork/appbase-backend-sdk",
         "surface": "backend-api",
         "apiPrefix": "/backend/v3/api",
-        "providedBy": "sdkwork-clawrouter-pc-commons/runtime",
+        "providedBy": "@sdkwork/clawrouter-pc-commons/runtime",
         "dependencyApiSurface": "sdkwork-appbase-backend-sdk",
         "runtimeIntegration": {
           "mode": "external-service",

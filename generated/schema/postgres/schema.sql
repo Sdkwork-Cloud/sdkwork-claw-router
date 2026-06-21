@@ -1,4 +1,4 @@
--- Generated from docs/schema-registry/sdkwork-claw-router.tables.yaml.
+-- Generated from docs/schema-registry/sdkwork-clawrouter.tables.yaml.
 -- Do not edit by hand; update Schema Registry and regenerate.
 
 CREATE TABLE IF NOT EXISTS system_installation_state (

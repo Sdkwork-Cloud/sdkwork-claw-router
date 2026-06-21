@@ -264,11 +264,12 @@ pub fn admin_channel_router_with_store(
         })
 }
 
-async fn fetch_channels(State(state): State<AdminChannelState>, headers: HeaderMap) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+async fn fetch_channels(
+    State(state): State<AdminChannelState>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+) -> Response {
+    let subject = map_subject(trusted);
 
     match state
         .store
@@ -285,13 +286,11 @@ async fn fetch_channels(State(state): State<AdminChannelState>, headers: HeaderM
 
 async fn create_channel(
     State(state): State<AdminChannelState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let request = match parse_json_object(&body, "channel request body is required", false) {
         Ok(request) => request,
         Err(message) => return bad_request(message),
@@ -317,13 +316,11 @@ async fn create_channel(
 
 async fn update_channel(
     State(state): State<AdminChannelState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let request = match parse_json_object(&body, "channel update body is required", false) {
         Ok(request) => request,
         Err(message) => return bad_request(message),
@@ -350,13 +347,11 @@ async fn update_channel(
 
 async fn delete_channel(
     State(state): State<AdminChannelState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Path(channel_id): Path<String>,
+    Path(channel_id): Path<String>
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let channel_id = match parse_positive_id(&channel_id, "channel id") {
         Ok(channel_id) => channel_id,
         Err(message) => return bad_request(message),
@@ -379,13 +374,11 @@ async fn delete_channel(
 
 async fn test_channel(
     State(state): State<AdminChannelState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Path(channel_id): Path<String>,
+    Path(channel_id): Path<String>
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let channel_id = match parse_positive_id(&channel_id, "channel id") {
         Ok(channel_id) => channel_id,
         Err(message) => return bad_request(message),
@@ -409,21 +402,13 @@ async fn test_channel(
     }
 }
 
-fn resolve_subject(headers: &HeaderMap) -> Result<AdminChannelSubject, Response> {
-    TrustedRequestSubject::from_headers(headers)
-        .map(|subject| AdminChannelSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            operator_id: subject.operator_id,
-            operator_type: subject.operator_type,
-        })
-        .map_err(|error| {
-            (
-                StatusCode::UNAUTHORIZED,
-                Json(PlusApiResult::error("4010", error.to_string())),
-            )
-                .into_response()
-        })
+fn map_subject(trusted: TrustedRequestSubject) -> AdminChannelSubject {
+    AdminChannelSubject {
+            tenant_id: trusted.tenant_id,
+            organization_id: trusted.organization_id,
+            operator_id: trusted.operator_id,
+            operator_type: trusted.operator_type,
+        }
 }
 
 fn parse_json_object(

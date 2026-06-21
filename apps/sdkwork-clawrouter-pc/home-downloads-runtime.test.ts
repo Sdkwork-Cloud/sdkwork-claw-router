@@ -136,7 +136,7 @@ test("home download catalog consumes the release JSON data contract for exact po
       schemaVersion: "2026-05-18.sdkwork-download-catalog.v1",
       generatedAt: "2026-05-18T00:00:00.000Z",
       product: {
-        id: "sdkwork-claw-router",
+        id: "sdkwork-clawrouter",
         name: "SdkWork ClawRouter",
         version: "1.2.3",
       },
@@ -145,7 +145,7 @@ test("home download catalog consumes the release JSON data contract for exact po
           actions: [
             {
               fileName: "clawrouter-windows-x64-desktop-1.2.3.msi",
-              href: "https://github.com/Sdkwork-Cloud/sdkwork-claw-router/releases/download/v1.2.3/clawrouter-windows-x64-desktop-1.2.3.msi",
+              href: "https://github.com/Sdkwork-Cloud/sdkwork-clawrouter/releases/download/v1.2.3/clawrouter-windows-x64-desktop-1.2.3.msi",
               id: "desktop-windows-x64",
               label: "Windows x64",
               platform: "windows",
@@ -185,7 +185,7 @@ test("home download catalog consumes the release JSON data contract for exact po
 
   assert.equal(
     actionsById.get("desktop-windows-x64")?.href,
-    "https://github.com/Sdkwork-Cloud/sdkwork-claw-router/releases/download/v1.2.3/clawrouter-windows-x64-desktop-1.2.3.msi",
+    "https://github.com/Sdkwork-Cloud/sdkwork-clawrouter/releases/download/v1.2.3/clawrouter-windows-x64-desktop-1.2.3.msi",
   );
   assert.equal(actionsById.get("server-docker")?.disabled, true);
   assert.equal(actionsById.get("server-docker")?.href, "");
@@ -197,7 +197,7 @@ test("home download catalog preserves selectable download sources from release J
       schemaVersion: "2026-05-18.sdkwork-download-catalog.v1",
       generatedAt: "2026-05-18T00:00:00.000Z",
       product: {
-        id: "sdkwork-claw-router",
+        id: "sdkwork-clawrouter",
         name: "SdkWork ClawRouter",
         version: "1.2.3",
       },
@@ -206,13 +206,13 @@ test("home download catalog preserves selectable download sources from release J
           actions: [
             {
               fileName: "clawrouter-windows-x64-desktop-1.2.3.msi",
-              href: "https://github.com/Sdkwork-Cloud/sdkwork-claw-router/releases/download/v1.2.3/clawrouter-windows-x64-desktop-1.2.3.msi",
+              href: "https://github.com/Sdkwork-Cloud/sdkwork-clawrouter/releases/download/v1.2.3/clawrouter-windows-x64-desktop-1.2.3.msi",
               id: "desktop-windows-x64",
               label: "Windows x64",
               platform: "windows",
               sources: [
                 {
-                  href: "https://github.com/Sdkwork-Cloud/sdkwork-claw-router/releases/download/v1.2.3/clawrouter-windows-x64-desktop-1.2.3.msi",
+                  href: "https://github.com/Sdkwork-Cloud/sdkwork-clawrouter/releases/download/v1.2.3/clawrouter-windows-x64-desktop-1.2.3.msi",
                   id: "github",
                   label: "GitHub",
                   primary: true,
@@ -260,13 +260,13 @@ test("checked-in release download JSON is the default homepage data source", () 
   const actionIds = new Set(actions.map((action) => action.id));
 
   assert.equal(catalog.schemaVersion, "2026-05-18.sdkwork-download-catalog.v1");
-  assert.equal(catalog.product.id, "sdkwork-claw-router");
+  assert.equal(catalog.product.id, "sdkwork-clawrouter");
   assert.equal(catalog.product.version, "0.3.0");
   assert.equal(catalog.cards.length, 3);
   assert.equal(actions.some((action) => action.href === "#"), false);
   assert.ok(
     actions.some((action) =>
-      action.href.includes("https://github.com/Sdkwork-Cloud/sdkwork-claw-router/releases/download/v0.3.0/")
+      action.href.includes("https://github.com/Sdkwork-Cloud/sdkwork-clawrouter/releases/download/v0.3.0/")
     ),
     "default homepage catalog must include release asset URLs",
   );

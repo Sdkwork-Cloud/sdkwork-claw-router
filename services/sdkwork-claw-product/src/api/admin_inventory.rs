@@ -91,26 +91,29 @@ pub fn admin_inventory_router_with_store(
 
 async fn list_stocks(
     State(state): State<AdminInventoryState>,
-    headers: HeaderMap,
-    Query(query): Query<InventoryListQueryRequest>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Query(query): Query<InventoryListQueryRequest>
 ) -> Response {
-    list_response(headers, query, |query| state.store.list_stocks(query)).await
+    list_response(trusted, query, |query| state.store.list_stocks(query)).await
 }
 
 async fn list_reservations(
     State(state): State<AdminInventoryState>,
-    headers: HeaderMap,
-    Query(query): Query<InventoryListQueryRequest>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Query(query): Query<InventoryListQueryRequest>
 ) -> Response {
-    list_response(headers, query, |query| state.store.list_reservations(query)).await
+    list_response(trusted, query, |query| state.store.list_reservations(query)).await
 }
 
 async fn list_ledger_entries(
     State(state): State<AdminInventoryState>,
-    headers: HeaderMap,
-    Query(query): Query<InventoryListQueryRequest>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Query(query): Query<InventoryListQueryRequest>
 ) -> Response {
-    list_response(headers, query, |query| {
+    list_response(trusted, query, |query| {
         state.store.list_ledger_entries(query)
     })
     .await
@@ -118,15 +121,16 @@ async fn list_ledger_entries(
 
 async fn update_stock(
     State(state): State<AdminInventoryState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(stock_id): Path<String>,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
     let request = match parse_json_body::<StockUpdateRequest>(&body, "stock") {
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
-    let command = match stock_update_command(&headers, stock_id, request) {
+    let command = match stock_update_command(trusted, &headers, stock_id, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -139,7 +143,7 @@ async fn update_stock(
 }
 
 async fn list_response<'a, F>(
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
     query: InventoryListQueryRequest,
     load: F,
 ) -> Response
@@ -148,7 +152,7 @@ where
         ListAdminInventoryRecordsQuery,
     ) -> crate::ports::AdminInventoryFuture<'a, AdminInventoryCollection>,
 {
-    let query = match validated_list_query(&headers, query) {
+    let query = match validated_list_query(trusted, query) {
         Ok(query) => query,
         Err(response) => return response,
     };
@@ -165,10 +169,10 @@ where
 }
 
 fn validated_list_query(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
     request: InventoryListQueryRequest,
 ) -> Result<ListAdminInventoryRecordsQuery, Response> {
-    let subject = resolve_subject(headers)?;
+    let subject = map_subject(trusted);
     let page_no = request.page.unwrap_or(DEFAULT_PAGE_NO);
     if page_no < 1 {
         return Err(bad_request("page must be greater than or equal to 1"));
@@ -200,6 +204,7 @@ fn validated_list_query(
 }
 
 fn stock_update_command(
+    trusted: TrustedRequestSubject,
     headers: &HeaderMap,
     stock_id: String,
     request: StockUpdateRequest,
@@ -222,7 +227,7 @@ fn stock_update_command(
         }
     }
     Ok(UpdateAdminInventoryStockCommand {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         stock_id: normalize_required_text(stock_id, "stockId", MAX_ID_LEN)?,
         available_quantity: request.available_quantity,
         reserved_quantity: request.reserved_quantity,
@@ -238,21 +243,13 @@ fn stock_update_command(
     })
 }
 
-fn resolve_subject(headers: &HeaderMap) -> Result<AdminInventorySubject, Response> {
-    TrustedRequestSubject::from_headers(headers)
-        .map(|subject| AdminInventorySubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            operator_id: subject.operator_id,
-            operator_type: subject.operator_type,
-        })
-        .map_err(|error| {
-            (
-                StatusCode::UNAUTHORIZED,
-                Json(PlusApiResult::error("4010", error.to_string())),
-            )
-                .into_response()
-        })
+fn map_subject(trusted: TrustedRequestSubject) -> AdminInventorySubject {
+    AdminInventorySubject {
+            tenant_id: trusted.tenant_id,
+            organization_id: trusted.organization_id,
+            operator_id: trusted.operator_id,
+            operator_type: trusted.operator_type,
+        }
 }
 
 fn parse_json_body<T>(body: &Bytes, resource: &str) -> Result<T, String>

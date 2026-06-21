@@ -10,7 +10,7 @@ Canonical SDKWORK standards live under `../../../../../../sdkwork-specs/`; this 
 | --- | --- |
 | Name | `sdkwork-clawrouter-pc-admin-core` |
 | Surface | `backend-admin` |
-| Root | `sdkwork-claw-router/apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-core` |
+| Root | `sdkwork-clawrouter/apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-core` |
 | Type | `node-package` |
 | Language | `typescript` |
 

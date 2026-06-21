@@ -2,7 +2,7 @@
 
 ## Goal
 
-Converge `sdkwork-claw-router` to a **minimal relay/control-plane** product shell. Non-core domains are **owned only by sibling modules** — no legacy tables, proxies, adapters, or compatibility layers in Claw Router.
+Converge `sdkwork-clawrouter` to a **minimal relay/control-plane** product shell. Non-core domains are **owned only by sibling modules** — no legacy tables, proxies, adapters, or compatibility layers in Claw Router.
 
 - `sdkwork-kernel`: agent, chat, mcp, skills
 - `sdkwork-memory`: memory

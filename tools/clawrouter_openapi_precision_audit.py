@@ -468,7 +468,7 @@ class ClawRouterOpenApiPrecisionAudit:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Audit ClawRouter OpenAPI response precision.")
-    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-claw-router root directory")
+    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-clawrouter root directory")
     parser.add_argument("--manifest", type=Path, default=None, help="API contract manifest path")
     parser.add_argument("--schema-components", type=Path, default=None, help="OpenAPI schema components path")
     parser.add_argument("--openapi-dir", type=Path, default=None, help="directory containing generated app/backend OpenAPI JSON")

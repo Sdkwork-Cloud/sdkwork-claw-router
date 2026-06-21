@@ -326,7 +326,7 @@ class RustRouteOverlapAudit:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Audit duplicate Rust Axum method routes.")
-    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-claw-router root directory")
+    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-clawrouter root directory")
     args = parser.parse_args()
 
     result = RustRouteOverlapAudit(root=args.root).run()

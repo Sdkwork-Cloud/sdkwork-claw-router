@@ -45,7 +45,7 @@ class SchemaQualityGate:
         self.registry_path = (
             Path(registry_path).resolve()
             if registry_path is not None
-            else self.root / "docs" / "schema-registry" / "sdkwork-claw-router.tables.yaml"
+            else self.root / "docs" / "schema-registry" / "sdkwork-clawrouter.tables.yaml"
         )
 
     def run(self) -> SchemaQualityGateResult:
@@ -132,8 +132,8 @@ class SchemaQualityGate:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Run sdkwork-claw-router schema quality gates.")
-    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-claw-router root directory")
+    parser = argparse.ArgumentParser(description="Run sdkwork-clawrouter schema quality gates.")
+    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-clawrouter root directory")
     parser.add_argument("--registry", type=Path, default=None, help="schema registry YAML path")
     args = parser.parse_args()
 

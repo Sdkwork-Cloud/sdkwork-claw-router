@@ -518,7 +518,7 @@ class FrontendFieldAudit:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Audit portal TypeScript service/data view model fields.")
-    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-claw-router root directory")
+    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-clawrouter root directory")
     parser.add_argument("--contract", type=Path, default=None, help="frontend field contract YAML path")
     parser.add_argument("--output", type=Path, default=None, help="output audit JSON path")
     parser.add_argument("--check", action="store_true", help="validate generated audit and frontend model contracts")

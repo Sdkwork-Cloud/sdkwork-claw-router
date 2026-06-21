@@ -1,3 +1,5 @@
+import { defaultIfBlank, snakeCase } from '@sdkwork/clawrouter-pc-commons/sdkwork-utils';
+
 export type RankingModality = 'All' | 'LLM' | 'Image' | 'Audio' | 'Video' | 'Music' | 'Embedding' | 'Rerank';
 
 export type RankingLicense = 'All' | 'Open Source' | 'Proprietary';
@@ -544,7 +546,7 @@ function normalizeVendorModelCount(value: number, fallback: number): number {
 }
 
 function normalizeRankingVendorCode(value: string): string {
-  return value.trim().toLowerCase().replace(/[^a-z0-9]+/gu, '_').replace(/^_+|_+$/gu, '') || 'unknown';
+  return defaultIfBlank(snakeCase(value.trim().toLowerCase()), 'unknown');
 }
 
 function compareVendorLabels(first: string, second: string): number {

@@ -1,13 +1,14 @@
 use std::sync::Arc;
 
 use axum::extract::State;
-use axum::http::{HeaderMap, StatusCode};
+use axum::http::StatusCode;
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
 use sdkwork_claw_http::TrustedRequestSubject;
 
 use crate::api::response::PlusApiResult;
+use crate::api::subject::map_optional_app_user_subject;
 use crate::ports::{
     AppUserProfileReadFuture, AppUserProfileReadStore, AppUserProfileSnapshot,
     AppUserProfileSubject,
@@ -54,9 +55,9 @@ fn app_user_profile_router_with_state(
 
 async fn fetch_user_profile(
     State(state): State<AppUserProfileState>,
-    headers: HeaderMap,
+    subject: Option<TrustedRequestSubject>,
 ) -> Response {
-    let subject = match require_subject(&headers, state.require_subject) {
+    let subject = match user_profile_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -74,21 +75,13 @@ async fn fetch_user_profile(
     }
 }
 
-fn require_subject(
-    headers: &HeaderMap,
+fn user_profile_subject(
+    subject: Option<TrustedRequestSubject>,
     require_subject: bool,
 ) -> Result<Option<AppUserProfileSubject>, Response> {
-    match TrustedRequestSubject::from_headers(headers) {
-        Ok(subject) => Ok(Some(AppUserProfileSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            user_id: subject.user_id,
-        })),
-        Err(error) if require_subject => Err((
-            StatusCode::UNAUTHORIZED,
-            Json(PlusApiResult::error("4010", error.to_string())),
-        )
-            .into_response()),
-        Err(_) => Ok(None),
-    }
+    map_optional_app_user_subject(subject, require_subject, |trusted| AppUserProfileSubject {
+        tenant_id: trusted.tenant_id,
+        organization_id: trusted.organization_id,
+        user_id: trusted.user_id,
+    })
 }

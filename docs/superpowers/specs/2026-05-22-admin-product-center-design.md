@@ -2,7 +2,7 @@
 
 ## Status
 
-This specification defines the admin Product Center for `sdkwork-claw-router`.
+This specification defines the admin Product Center for `sdkwork-clawrouter`.
 It builds on the appbase commerce standard in
 `2026-05-21-appbase-commerce-standard-design.md` and the current generated
 backend SDK surface. It does not replace the appbase-owned `commerce_*` schema.

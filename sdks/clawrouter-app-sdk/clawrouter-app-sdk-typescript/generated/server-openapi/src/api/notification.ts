@@ -5,7 +5,7 @@ import type { NotificationsAcknowledgeCreateResult, NotificationsListResult, Not
 
 
 export interface NotificationPopupSeenCreateParams {
-  appId?: string;
+  idempotencyKey: string;
 }
 
 export class NotificationPopupSeenApi {
@@ -16,17 +16,20 @@ export class NotificationPopupSeenApi {
   }
 
 
-/** Mark popup seen */
-  async create(notificationId: string, params?: NotificationPopupSeenCreateParams): Promise<NotificationsPopupSeenCreateResult> {
-    const query = buildQueryString([
-      { name: 'app_id', value: params?.appId, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.post<NotificationsPopupSeenCreateResult>(appendQueryString(appApiPath(`/notification/notifications/${serializePathParameter(notificationId, { name: 'notificationId', style: 'simple', explode: false })}/popup_seen`), query));
+/** Mark portal notification popup seen */
+  async create(notificationId: string, params: NotificationPopupSeenCreateParams): Promise<NotificationsPopupSeenCreateResult> {
+    const requestHeaders = buildRequestHeaders(
+      {
+        'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
+      },
+      {}
+    );
+    return this.client.post<NotificationsPopupSeenCreateResult>(appApiPath(`/notification/notifications/${serializePathParameter(notificationId, { name: 'notificationId', style: 'simple', explode: false })}/popup_seen`), undefined, undefined, requestHeaders);
   }
 }
 
 export interface NotificationAcknowledgeCreateParams {
-  appId?: string;
+  idempotencyKey: string;
 }
 
 export class NotificationAcknowledgeApi {
@@ -37,20 +40,22 @@ export class NotificationAcknowledgeApi {
   }
 
 
-/** Acknowledge */
-  async create(notificationId: string, params?: NotificationAcknowledgeCreateParams): Promise<NotificationsAcknowledgeCreateResult> {
-    const query = buildQueryString([
-      { name: 'app_id', value: params?.appId, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.post<NotificationsAcknowledgeCreateResult>(appendQueryString(appApiPath(`/notification/notifications/${serializePathParameter(notificationId, { name: 'notificationId', style: 'simple', explode: false })}/acknowledge`), query));
+/** Acknowledge portal notification */
+  async create(notificationId: string, params: NotificationAcknowledgeCreateParams): Promise<NotificationsAcknowledgeCreateResult> {
+    const requestHeaders = buildRequestHeaders(
+      {
+        'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
+      },
+      {}
+    );
+    return this.client.post<NotificationsAcknowledgeCreateResult>(appApiPath(`/notification/notifications/${serializePathParameter(notificationId, { name: 'notificationId', style: 'simple', explode: false })}/acknowledge`), undefined, undefined, requestHeaders);
   }
 }
 
 export interface NotificationListParams {
-  appId?: string;
   includeArchived?: boolean;
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
 }
 
 export class NotificationApi {
@@ -65,10 +70,9 @@ export class NotificationApi {
   }
 
 
-/** List notifications */
+/** List portal notifications */
   async list(params?: NotificationListParams): Promise<NotificationsListResult> {
     const query = buildQueryString([
-      { name: 'app_id', value: params?.appId, style: 'form', explode: true, allowReserved: false },
       { name: 'include_archived', value: params?.includeArchived, style: 'form', explode: true, allowReserved: false },
       { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
       { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
@@ -311,4 +315,79 @@ function encodeQueryValue(value: string, allowReserved: boolean): string {
     .replace(/%2C/gi, ',')
     .replace(/%3B/gi, ';')
     .replace(/%3D/gi, '=');
+}
+function buildRequestHeaders(
+  headers: Record<string, HeaderParameterSpec | undefined>,
+  cookies: Record<string, HeaderParameterSpec | undefined> = {},
+): Record<string, string> | undefined {
+  const requestHeaders: Record<string, string> = {};
+
+  for (const [name, parameter] of Object.entries(headers)) {
+    const serialized = serializeParameterValue(parameter);
+    if (serialized !== undefined) {
+      requestHeaders[name] = serialized;
+    }
+  }
+
+  const cookieHeader = buildCookieHeader(cookies);
+  if (cookieHeader) {
+    requestHeaders.Cookie = requestHeaders.Cookie
+      ? `${requestHeaders.Cookie}; ${cookieHeader}`
+      : cookieHeader;
+  }
+
+  return Object.keys(requestHeaders).length > 0 ? requestHeaders : undefined;
+}
+
+interface HeaderParameterSpec {
+  value: unknown;
+  style: string;
+  explode: boolean;
+  contentType?: string;
+}
+
+function buildCookieHeader(cookies: Record<string, HeaderParameterSpec | undefined>): string | undefined {
+  const pairs: string[] = [];
+  for (const [name, parameter] of Object.entries(cookies)) {
+    const serialized = serializeParameterValue(parameter);
+    if (serialized !== undefined) {
+      pairs.push(`${encodeURIComponent(name)}=${encodeURIComponent(serialized)}`);
+    }
+  }
+  return pairs.length > 0 ? pairs.join('; ') : undefined;
+}
+
+function serializeParameterValue(parameter: HeaderParameterSpec | undefined): string | undefined {
+  const value = parameter?.value;
+  if (value === undefined || value === null) {
+    return undefined;
+  }
+  if (parameter?.contentType) {
+    return JSON.stringify(value);
+  }
+  if (value instanceof Date) {
+    return value.toISOString();
+  }
+  if (Array.isArray(value)) {
+    return value.map((item) => serializeHeaderPrimitive(item)).join(',');
+  }
+  if (typeof value === 'object' && value !== null) {
+    return serializeHeaderObject(value as Record<string, unknown>, parameter?.explode === true);
+  }
+  return serializeHeaderPrimitive(value);
+}
+
+function serializeHeaderObject(value: Record<string, unknown>, explode: boolean): string {
+  const entries = Object.entries(value).filter(([, entryValue]) => entryValue !== undefined && entryValue !== null);
+  if (explode) {
+    return entries.map(([key, entryValue]) => `${key}=${serializeHeaderPrimitive(entryValue)}`).join(',');
+  }
+  return entries.flatMap(([key, entryValue]) => [key, serializeHeaderPrimitive(entryValue)]).join(',');
+}
+
+function serializeHeaderPrimitive(value: unknown): string {
+  if (value instanceof Date) {
+    return value.toISOString();
+  }
+  return String(value);
 }

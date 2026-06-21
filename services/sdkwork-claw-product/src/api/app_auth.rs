@@ -29,7 +29,7 @@ use crate::ports::{
     VerificationCodeDeliveryRequest, VerificationCodeSender,
 };
 
-const APP_ID: &str = "sdkwork-claw-router";
+const APP_ID: &str = "sdkwork-clawrouter";
 const APP_SESSION_PATH: &str = "/app/v3/api/auth/sessions";
 const DEPLOYMENT_MODE: &str = "local";
 const ENVIRONMENT: &str = "dev";

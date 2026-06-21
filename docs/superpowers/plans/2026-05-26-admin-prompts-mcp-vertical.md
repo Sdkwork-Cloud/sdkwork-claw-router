@@ -26,7 +26,7 @@
 ### Task 2: Claw Router Schema Registry
 
 **Files:**
-- Modify: `docs/schema-registry/sdkwork-claw-router.tables.yaml`
+- Modify: `docs/schema-registry/sdkwork-clawrouter.tables.yaml`
 - Modify generated schema only through the project schema generator if required by local gates.
 
 - [ ] **Step 1: Write or update schema quality expectations** to include vertical prompt/MCP tables and unified `plus_category` usage.

@@ -8,7 +8,7 @@ use std::fs;
 use std::path::{Path, PathBuf};
 use std::time::{SystemTime, UNIX_EPOCH};
 
-const INSTALLED_SQLITE_TEMPLATE_REVISION: &str = "v11";
+const INSTALLED_SQLITE_TEMPLATE_REVISION: &str = "v12";
 
 pub async fn installed_sqlite_pool() -> SqlitePool {
     let template_path = installed_sqlite_template_path();

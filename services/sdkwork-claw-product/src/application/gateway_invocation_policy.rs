@@ -1,5 +1,7 @@
 use std::sync::Arc;
 
+use sdkwork_utils_rust::is_blank;
+
 use crate::application::{
     AuthenticatedApiKeyContext, GatewayInvocationRateLimiter, GatewayRateLimitSpec,
 };
@@ -150,11 +152,11 @@ fn rule_applies_to_invocation(rule: &GatewayRiskRule, auth: &AuthenticatedApiKey
 }
 
 fn rule_matches_client_ip(client_ip: Option<&str>, rule: &GatewayRiskRule) -> bool {
-    let Some(client_ip) = client_ip.filter(|value| !value.is_empty()) else {
+    let Some(client_ip) = client_ip.filter(|value| !is_blank(Some(value))) else {
         return false;
     };
     let target = rule.target_value.trim();
-    if target.is_empty() {
+    if is_blank(Some(target)) {
         return false;
     }
     match rule.target_type {
@@ -170,7 +172,7 @@ pub fn client_ip_allowed_by_allowlist(client_ip: Option<&str>, allowlist: &[Stri
     if allowlist.is_empty() {
         return true;
     }
-    let Some(client_ip) = client_ip.filter(|value| !value.is_empty()) else {
+    let Some(client_ip) = client_ip.filter(|value| !is_blank(Some(value))) else {
         return false;
     };
     allowlist
@@ -180,7 +182,7 @@ pub fn client_ip_allowed_by_allowlist(client_ip: Option<&str>, allowlist: &[Stri
 
 fn ip_matches_entry(client_ip: &str, entry: &str, match_mode: i32) -> bool {
     let entry = entry.trim();
-    if entry.is_empty() {
+    if is_blank(Some(entry)) {
         return false;
     }
     if entry.contains('/') || match_mode == MATCH_MODE_CIDR {

@@ -6,7 +6,7 @@
 
 ## 1. 结论
 
-支付、订单、账户、优惠券、VIP、充值、积分、退款、发票等资金和交易能力必须以 Java 端设计为标准。`sdkwork-claw-router` 的数据库设计采用 Java Entity first：
+支付、订单、账户、优惠券、VIP、充值、积分、退款、发票等资金和交易能力必须以 Java 端设计为标准。`sdkwork-clawrouter` 的数据库设计采用 Java Entity first：
 
 1. 新增任何资金/交易/营销/VIP/账户模型前，先在 `legacy-java-plus-entity` 检索是否已有 `Plus*` Entity。
 2. 如果 Java 端已有实体，则 schema registry 只登记既有 `plus_*` 表为 L0 legacy compatible。

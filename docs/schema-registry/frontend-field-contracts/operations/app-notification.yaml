@@ -1,0 +1,100 @@
+fragment: operations/app-notification
+frontend_operations:
+- route: /console/notifications
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
+  operation: fetchNotifications
+  operation_id: notifications.list
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/notification/notifications
+  sdk_domain: notification
+  summary: List portal notifications
+  description: Lists in-app notifications for the active portal session.
+  read_sources:
+  - ops_notification_message
+  - ops_notification_delivery
+  query_parameters:
+  - name: include_archived
+    schema: { type: boolean }
+  - name: page
+    schema: { type: integer, format: int64, minimum: 1 }
+  - name: page_size
+    schema: { type: integer, format: int64, minimum: 1, maximum: 200 }
+  response_schema:
+    name: NotificationListResponse
+    type: object
+    additionalProperties: false
+    required: [items]
+    properties:
+      items:
+        type: array
+        maxItems: 200
+        items:
+          name: NotificationItem
+          type: object
+          additionalProperties: false
+          required: [id, appId, title, desc, content, time, type, read, showAsPopup, popupSeen, archived]
+          properties:
+            id: { type: string, minLength: 1, maxLength: 128 }
+            appId: { type: string, minLength: 1, maxLength: 128 }
+            title: { type: string, minLength: 1, maxLength: 200 }
+            desc: { type: string, maxLength: 512 }
+            content: { type: string, maxLength: 20000 }
+            time: { type: string, minLength: 1, maxLength: 64 }
+            type: { type: string, enum: [info, billing, warning, alert] }
+            read: { type: boolean }
+            showAsPopup: { type: boolean }
+            popupSeen: { type: boolean }
+            archived: { type: boolean }
+            actionUrl: { type: string, nullable: true, maxLength: 512 }
+- route: /console/notifications
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
+  operation: acknowledge
+  operation_id: notifications.acknowledge.create
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/notification/notifications/{notificationId}/acknowledge
+  sdk_domain: notification
+  idempotency_required: true
+  request_body_required: false
+  summary: Acknowledge portal notification
+  description: Marks a notification as read for the active portal user.
+  read_sources:
+  - ops_notification_delivery
+  write_tables:
+  - ops_notification_delivery
+  response_schema:
+    name: NotificationMutationResponse
+    type: object
+    additionalProperties: false
+    required: [updated, state]
+    properties:
+      updated: { type: boolean }
+      state: { type: string, enum: [acknowledged, popup_seen] }
+- route: /console/notifications
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
+  operation: markPopupSeen
+  operation_id: notifications.popupSeen.create
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/notification/notifications/{notificationId}/popup_seen
+  sdk_domain: notification
+  idempotency_required: true
+  request_body_required: false
+  summary: Mark portal notification popup seen
+  description: Records that a popup notification was presented to the active portal user.
+  read_sources:
+  - ops_notification_delivery
+  write_tables:
+  - ops_notification_delivery
+  response_schema:
+    name: NotificationMutationResponse
+    type: object
+    additionalProperties: false
+    required: [updated, state]
+    properties:
+      updated: { type: boolean }
+      state: { type: string, enum: [acknowledged, popup_seen] }

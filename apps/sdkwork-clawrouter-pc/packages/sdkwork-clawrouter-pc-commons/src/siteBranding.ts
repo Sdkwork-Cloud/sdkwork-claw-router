@@ -49,8 +49,8 @@ export const DEFAULT_SITE_BRANDING: SiteBranding = {
   customCss: '',
 };
 
-const SITE_BRANDING_EVENT = 'sdkwork-claw-router-site-branding-change';
-const CUSTOM_CSS_ELEMENT_ID = 'sdkwork-claw-router-site-custom-css';
+const SITE_BRANDING_EVENT = 'sdkwork-clawrouter-site-branding-change';
+const CUSTOM_CSS_ELEMENT_ID = 'sdkwork-clawrouter-site-custom-css';
 let cachedSiteBranding: SiteBranding | null = null;
 let pendingSiteBranding: Promise<SiteBranding> | null = null;
 

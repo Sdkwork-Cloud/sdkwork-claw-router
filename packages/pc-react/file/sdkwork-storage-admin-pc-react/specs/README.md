@@ -10,7 +10,7 @@ Root SDKWork standards remain authoritative. Local component specs can narrow or
 | --- | --- |
 | Name | `@sdkwork/storage-admin-pc-react` |
 | Type | `react-package` |
-| Root | `sdkwork-claw-router/packages/pc-react/file/sdkwork-storage-admin-pc-react` |
+| Root | `sdkwork-clawrouter/packages/pc-react/file/sdkwork-storage-admin-pc-react` |
 | Domain | `file` |
 | Capability | `storage-admin` |
 | Languages | `typescript` |

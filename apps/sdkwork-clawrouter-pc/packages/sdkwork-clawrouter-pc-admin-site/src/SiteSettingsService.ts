@@ -5,7 +5,7 @@ import {
   readApiRecord,
   readMediaResource,
   type ClawRouterMediaResource,
-} from 'sdkwork-clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawrouter-pc-commons/runtime';
 
 export type SiteSettingsForm = Omit<AdminSiteSettingsResponse, 'logo' | 'icon' | 'favicon'> & {
   logo?: ClawRouterMediaResource;

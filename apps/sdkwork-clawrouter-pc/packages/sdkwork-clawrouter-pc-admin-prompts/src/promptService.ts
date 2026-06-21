@@ -3,7 +3,7 @@ import {
   ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
   requiredSafePathSegment,
-} from 'sdkwork-clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawrouter-pc-commons/runtime';
 import type {
   AdminPromptCreateRequest,
   AdminPromptBindingCreateRequest,

@@ -16,7 +16,7 @@ import {
   YAxis,
 } from 'recharts';
 import { useTranslation } from 'react-i18next';
-import { BusinessStatePanel, BusinessStateTableRow } from 'sdkwork-clawrouter-pc-commons/components/BusinessState';
+import { BusinessStatePanel, BusinessStateTableRow } from '@sdkwork/clawrouter-pc-commons/components/BusinessState';
 import {
   AdminAnalyticsService,
   type AdminAnalyticsInsight,

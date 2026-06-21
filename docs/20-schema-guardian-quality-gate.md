@@ -2,7 +2,7 @@
 
 ## 目标
 
-`tools.schema_guardian` 将数据设计中的关键约束固化为可执行校验，作为 `sdkwork-claw-router` 后续数据库、API、Entity、DTO、OpenAPI 和 SDK 生成前的第一道质量门禁。
+`tools.schema_guardian` 将数据设计中的关键约束固化为可执行校验，作为 `sdkwork-clawrouter` 后续数据库、API、Entity、DTO、OpenAPI 和 SDK 生成前的第一道质量门禁。
 
 当前门禁优先覆盖以下高风险规则：
 
@@ -21,7 +21,7 @@
 
 ## 运行方式
 
-在 `apps/sdkwork-claw-router` 目录下执行：
+在 `apps/sdkwork-clawrouter` 目录下执行：
 
 统一门禁：
 
@@ -82,7 +82,7 @@ python -B -m tools.openapi_component_generator --check
 默认校验文件：
 
 ```text
-docs/schema-registry/sdkwork-claw-router.tables.yaml
+docs/schema-registry/sdkwork-clawrouter.tables.yaml
 ```
 
 默认支持两类 Java 实体路径：

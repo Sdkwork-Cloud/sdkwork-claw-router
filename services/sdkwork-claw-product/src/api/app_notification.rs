@@ -10,6 +10,7 @@ use serde::Deserialize;
 use serde::Serialize;
 
 use crate::api::response::PlusApiResult;
+use crate::api::subject::map_optional_app_user_subject;
 use crate::domain::DomainError;
 use crate::ports::{
     AcknowledgeAppNotificationCommand, AppNotificationFuture, AppNotificationItems,
@@ -117,10 +118,10 @@ fn app_notification_router_with_state(
 async fn list_notifications(
     State(state): State<AppNotificationState>,
     subject: Option<TrustedRequestSubject>,
-    headers: HeaderMap,
+    _headers: HeaderMap,
     Query(query): Query<NotificationListQuery>,
 ) -> Response {
-    let subject = match notification_subject(subject, &headers, state.require_subject) {
+    let subject = match notification_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -156,11 +157,11 @@ async fn list_notifications(
 async fn mark_popup_seen(
     State(state): State<AppNotificationState>,
     subject: Option<TrustedRequestSubject>,
-    headers: HeaderMap,
+    _headers: HeaderMap,
     Path(notification_id): Path<String>,
     Query(query): Query<NotificationCommandQuery>,
 ) -> Response {
-    let subject = match required_subject(&state, subject, &headers) {
+    let subject = match required_subject(&state, subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -191,11 +192,11 @@ async fn mark_popup_seen(
 async fn acknowledge(
     State(state): State<AppNotificationState>,
     subject: Option<TrustedRequestSubject>,
-    headers: HeaderMap,
+    _headers: HeaderMap,
     Path(notification_id): Path<String>,
     Query(query): Query<NotificationCommandQuery>,
 ) -> Response {
-    let subject = match required_subject(&state, subject, &headers) {
+    let subject = match required_subject(&state, subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -228,9 +229,8 @@ async fn acknowledge(
 fn required_subject(
     state: &AppNotificationState,
     subject: Option<TrustedRequestSubject>,
-    headers: &HeaderMap,
 ) -> Result<AppNotificationSubject, Response> {
-    notification_subject(subject, headers, state.require_subject).and_then(|subject| {
+    notification_subject(subject, state.require_subject).and_then(|subject| {
         subject.ok_or_else(|| {
             (
                 StatusCode::UNAUTHORIZED,
@@ -246,29 +246,13 @@ fn required_subject(
 
 fn notification_subject(
     subject: Option<TrustedRequestSubject>,
-    headers: &HeaderMap,
     require_subject: bool,
 ) -> Result<Option<AppNotificationSubject>, Response> {
-    match subject {
-        Some(subject) => Ok(Some(AppNotificationSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            user_id: subject.user_id,
-        })),
-        None => match TrustedRequestSubject::from_headers(headers) {
-            Ok(subject) => Ok(Some(AppNotificationSubject {
-                tenant_id: subject.tenant_id,
-                organization_id: subject.organization_id,
-                user_id: subject.user_id,
-            })),
-            Err(error) if require_subject => Err((
-                StatusCode::UNAUTHORIZED,
-                Json(PlusApiResult::<()>::error("4010", error.to_string())),
-            )
-                .into_response()),
-            Err(_) => Ok(None),
-        },
-    }
+    map_optional_app_user_subject(subject, require_subject, |trusted| AppNotificationSubject {
+        tenant_id: trusted.tenant_id,
+        organization_id: trusted.organization_id,
+        user_id: trusted.user_id,
+    })
 }
 
 fn normalized_app_id(value: Option<&str>) -> Result<String, Response> {

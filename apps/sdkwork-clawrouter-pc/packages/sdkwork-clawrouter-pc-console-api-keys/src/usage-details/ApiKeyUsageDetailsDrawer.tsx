@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { BookOpen, CheckSquare, Key, Terminal, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { CopyButton } from 'sdkwork-clawrouter-pc-commons/components/CopyButton';
+import { CopyButton } from '@sdkwork/clawrouter-pc-commons/components/CopyButton';
 import type { ApiKey } from '../apiKeyService';
 import {
   API_KEY_USAGE_TOOL_PROFILES,

@@ -173,7 +173,7 @@ Out of scope for this plan:
   update workflow.
 
 - Modify `tests/test_model_catalog_standard_contract.py`
-  Move environment seed expectations from legacy `spring-ai-plus-server-application/src/main/resources/data/model-catalog` to `apps/sdkwork-claw-router/data/sdkwork-models`.
+  Move environment seed expectations from legacy `spring-ai-plus-server-application/src/main/resources/data/model-catalog` to `apps/sdkwork-clawrouter/data/sdkwork-models`.
 
 - Modify `scripts/verify-claw-router-product.mjs`
   Add `sdkwork-models` validation to the standard verification sequence.

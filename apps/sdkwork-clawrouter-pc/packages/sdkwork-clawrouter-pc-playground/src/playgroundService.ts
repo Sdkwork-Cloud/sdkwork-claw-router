@@ -12,18 +12,15 @@ import {
   readRequiredString,
   readStringArray,
   type ApiRecord,
-} from 'sdkwork-clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawrouter-pc-commons/runtime';
 import {
   createSdkworkGenerationService,
-  type SdkworkGenerationRun,
-  type SdkworkGenerationStatus,
   type SdkworkGenerationWorkspaceData,
 } from '@sdkwork/generations-pc-workspace/generation-service';
 import {
-  listGenerationHistory,
   listModelCatalog,
 } from './appRuntimeApiOperations.ts';
-import { mapGenerationHistoryItems } from './historyMapper.ts';
+import { fetchPlaygroundGenerationHistoryFromService } from './playgroundGenerationsService.ts';
 import { runPlaygroundGeneration } from './playgroundGenerationService.ts';
 import { runPlaygroundAssetGeneration } from './playgroundGenerationsService.ts';
 export type { PlaygroundHistoryItem, PlaygroundMedia, PlaygroundModelGroup, PlaygroundModelOption } from './playgroundTypes.ts';
@@ -39,17 +36,21 @@ import type {
   PlaygroundModelReferencePrice,
 } from './playgroundTypes.ts';
 const MODEL_BUCKETS: PlaygroundModelBucket[] = ['llms', 'images', 'videos', 'audios', 'music', 'sfx'];
-const UNKNOWN_MODEL_LABEL = 'Unknown model';
-const TITLE_MAX_LENGTH = 96;
 
 export class PlaygroundService {
   static async fetchGenerationHistory(): Promise<PlaygroundHistoryItem[]> {
     if (!hasStoredPortalSession()) {
       return [];
     }
-    const result = await listGenerationHistory();
-    ensureSdkworkApiSuccess(result, 'Failed to fetch Playground history');
-    return mapGenerationHistoryItems(readRequiredApiItems(result, 'Failed to fetch Playground history'));
+    const service = createSdkworkGenerationService({
+      getSessionTokens: readGenerationSessionTokens,
+      includeSampleRuns: false,
+      sdkClients: {
+        generationsApp: getSdkworkGenerationsAppSdkClient(),
+        tokenManager: getClawRouterGlobalTokenManager(),
+      },
+    });
+    return fetchPlaygroundGenerationHistoryFromService(service);
   }
 
   static async runAgentGeneration(input: GenerationAgentRunCreateInput): Promise<GenerationAgentRunCreateResult> {
@@ -97,11 +98,9 @@ export class PlaygroundService {
 }
 
 async function fetchGenerationWorkspaceData(): Promise<SdkworkGenerationWorkspaceData> {
-  const runs = mapHistoryToGenerationRuns(await PlaygroundService.fetchGenerationHistory());
   const service = createSdkworkGenerationService({
     getSessionTokens: readGenerationSessionTokens,
     includeSampleRuns: false,
-    listRuns: async () => runs,
     sdkClients: {
       generationsApp: getSdkworkGenerationsAppSdkClient(),
       tokenManager: getClawRouterGlobalTokenManager(),
@@ -110,56 +109,10 @@ async function fetchGenerationWorkspaceData(): Promise<SdkworkGenerationWorkspac
   return service.getWorkspace();
 }
 
-function mapHistoryToGenerationRuns(items: PlaygroundHistoryItem[]): SdkworkGenerationRun[] {
-  return items.map((item): SdkworkGenerationRun => ({
-    id: item.id,
-    latencyMs: 0,
-    model: normalizeText(item.modelInfo) || UNKNOWN_MODEL_LABEL,
-    promptPreview: item.prompt,
-    status: normalizeGenerationStatus(item.status),
-    title: createGenerationRunTitle(item),
-    tokensUsed: 0,
-    updatedAt: readGenerationUpdatedAt(item),
-  }));
-}
-
-function createGenerationRunTitle(item: PlaygroundHistoryItem): string {
-  const title = normalizeText(item.prompt) || item.id;
-  if (title.length <= TITLE_MAX_LENGTH) {
-    return title;
-  }
-  return `${title.slice(0, TITLE_MAX_LENGTH - 3).trimEnd()}...`;
-}
-
-function normalizeGenerationStatus(value: string | undefined): SdkworkGenerationStatus {
-  switch (normalizeText(value)) {
-    case 'pending':
-    case 'queued':
-      return 'queued';
-    case 'processing':
-    case 'running':
-      return 'running';
-    case 'failed':
-    case 'cancelled':
-      return 'failed';
-    case 'completed':
-    default:
-      return 'completed';
-  }
-}
-
-function readGenerationUpdatedAt(item: PlaygroundHistoryItem): string {
-  return normalizeText(item.updatedAt) || normalizeText(item.createdAt) || `${item.date}T00:00:00Z`;
-}
-
 function readGenerationSessionTokens(): { authToken?: string } {
   return {
     authToken: getStoredAppSessionAuthToken(),
   };
-}
-
-function normalizeText(value: string | undefined): string {
-  return (value ?? '').trim();
 }
 
 function groupModelCatalogItems(items: unknown[]): PlaygroundModelGroup[] {

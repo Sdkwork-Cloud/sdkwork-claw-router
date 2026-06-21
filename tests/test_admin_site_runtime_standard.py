@@ -23,7 +23,7 @@ class AdminSiteRuntimeStandardTest(unittest.TestCase):
             registry = yaml.safe_load(registry_path.read_text(encoding="utf-8"))
             table_items.extend(registry.get("tables", []))
         effective_registry = (
-            ROOT / "generated" / "schema" / "registry" / "sdkwork-claw-router.tables.effective.yaml"
+            ROOT / "generated" / "schema" / "registry" / "sdkwork-clawrouter.tables.effective.yaml"
         ).read_text(encoding="utf-8")
 
         source = "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"

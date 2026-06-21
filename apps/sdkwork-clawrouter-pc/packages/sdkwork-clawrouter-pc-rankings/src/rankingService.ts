@@ -12,7 +12,7 @@ import {
   readString,
   readStringArray,
   type ApiRecord,
-} from 'sdkwork-clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawrouter-pc-commons/runtime';
 import {
   DEFAULT_RANKING_SNAPSHOT_SOURCE,
   rankingHistoryKey,

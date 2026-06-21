@@ -442,7 +442,7 @@ class SchemaGuardian:
         self.registry_path = (
             Path(registry_path).resolve()
             if registry_path is not None
-            else self.root / "docs" / "schema-registry" / "sdkwork-claw-router.tables.yaml"
+            else self.root / "docs" / "schema-registry" / "sdkwork-clawrouter.tables.yaml"
         )
         self.test_schema_path = Path(test_schema_path).resolve() if test_schema_path is not None else None
 
@@ -1120,8 +1120,8 @@ class SchemaGuardian:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Validate sdkwork-claw-router schema registry guardrails.")
-    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-claw-router root directory")
+    parser = argparse.ArgumentParser(description="Validate sdkwork-clawrouter schema registry guardrails.")
+    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-clawrouter root directory")
     parser.add_argument("--registry", type=Path, default=None, help="schema registry YAML path")
     parser.add_argument("--test-schema", type=Path, default=None, help="Rust integration test schema source path")
     args = parser.parse_args()

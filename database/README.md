@@ -1,6 +1,6 @@
 # CLAW_ROUTER Database Module
 
-Canonical lifecycle assets for `sdkwork-claw-router` per `DATABASE_FRAMEWORK_SPEC.md`.
+Canonical lifecycle assets for `sdkwork-clawrouter` per `DATABASE_FRAMEWORK_SPEC.md`.
 
 - moduleId: `clawrouter`
 - serviceCode: `CLAW_ROUTER`

@@ -92,15 +92,13 @@ function emitProgram(parsed) {
 
 async function removeTypeOnlyRuntimeReExports(entryFile) {
   const source = await fs.readFile(entryFile, 'utf-8');
-  const runtimeLines = source.split(/?
-/u).map((line) => {
+  const runtimeLines = source.split(/\r?\n/u).map((line) => {
     if (line.trim() === "export * from './types';") {
       return "export { DEFAULT_TIMEOUT, SUCCESS_CODES } from '@sdkwork/sdk-common';";
     }
     return line;
   });
-  await fs.writeFile(entryFile, runtimeLines.join('
-'), 'utf-8');
+  await fs.writeFile(entryFile, runtimeLines.join('\n'), 'utf-8');
 }
 
 async function bundleRuntime(format, file) {

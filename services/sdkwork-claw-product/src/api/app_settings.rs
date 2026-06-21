@@ -10,6 +10,7 @@ use sdkwork_claw_http::TrustedRequestSubject;
 use serde::Deserialize;
 
 use crate::api::response::PlusApiResult;
+use crate::api::subject::map_optional_app_user_subject;
 use crate::application::EntityUuidGenerator;
 use crate::domain::DomainError;
 use crate::infrastructure::OsApiKeySecretGenerator;
@@ -101,8 +102,11 @@ fn app_settings_router_with_state(
         })
 }
 
-async fn fetch_settings(State(state): State<AppSettingsState>, headers: HeaderMap) -> Response {
-    let subject = match resolve_settings_subject(&state, &headers) {
+async fn fetch_settings(
+    State(state): State<AppSettingsState>,
+    subject: Option<TrustedRequestSubject>,
+) -> Response {
+    let subject = match resolve_settings_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -115,13 +119,11 @@ async fn fetch_settings(State(state): State<AppSettingsState>, headers: HeaderMa
 
 async fn update_settings(
     State(state): State<AppSettingsState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
     Json(request): Json<UpdateSettingsRequest>,
 ) -> Response {
-    let subject = match resolve_required_settings_subject(&state, &headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = resolve_required_settings_subject(trusted);
     let settings = match validate_update_settings_request(request) {
         Ok(settings) => settings,
         Err(message) => {
@@ -150,38 +152,21 @@ async fn update_settings(
 }
 
 fn resolve_settings_subject(
-    state: &AppSettingsState,
-    headers: &HeaderMap,
+    subject: Option<TrustedRequestSubject>,
+    require_subject: bool,
 ) -> Result<Option<SettingsSubject>, Response> {
-    match TrustedRequestSubject::from_headers(headers) {
-        Ok(subject) => Ok(Some(SettingsSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            user_id: subject.user_id,
-        })),
-        Err(error) if state.require_subject => Err((
-            StatusCode::UNAUTHORIZED,
-            Json(PlusApiResult::error("4010", error.to_string())),
-        )
-            .into_response()),
-        Err(_) => Ok(None),
-    }
+    map_optional_app_user_subject(subject, require_subject, |trusted| SettingsSubject {
+        tenant_id: trusted.tenant_id,
+        organization_id: trusted.organization_id,
+        user_id: trusted.user_id,
+    })
 }
 
-fn resolve_required_settings_subject(
-    state: &AppSettingsState,
-    headers: &HeaderMap,
-) -> Result<SettingsSubject, Response> {
-    match resolve_settings_subject(state, headers)? {
-        Some(subject) => Ok(subject),
-        None => Err((
-            StatusCode::UNAUTHORIZED,
-            Json(PlusApiResult::error(
-                "4010",
-                "trusted request subject is required for settings command",
-            )),
-        )
-            .into_response()),
+fn resolve_required_settings_subject(trusted: TrustedRequestSubject) -> SettingsSubject {
+    SettingsSubject {
+        tenant_id: trusted.tenant_id,
+        organization_id: trusted.organization_id,
+        user_id: trusted.user_id,
     }
 }
 

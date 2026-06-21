@@ -413,7 +413,7 @@ test('foundation dependency APIs target the shared sdkwork api gateway without a
     commonSdkRootEnv: 'PORTAL_PUBLIC_SDK_BASE_URL',
     authority: 'cargo-workspace',
     catalogPolicy: 'no-dedicated-gateway-catalog',
-    productApiPolicy: 'sdkwork-claw-router APIs remain product-owned SDKWork API surfaces',
+    productApiPolicy: 'sdkwork-clawrouter APIs remain product-owned SDKWork API surfaces',
     migrationState: 'shared-gateway-default',
   });
 
@@ -423,7 +423,7 @@ test('foundation dependency APIs target the shared sdkwork api gateway without a
     commonSdkRootEnv: 'PORTAL_PUBLIC_SDK_BASE_URL',
     authority: 'cargo-workspace',
     catalogPolicy: 'no-dedicated-gateway-catalog',
-    productApiPolicy: 'sdkwork-claw-router APIs remain product-owned SDKWork API surfaces',
+    productApiPolicy: 'sdkwork-clawrouter APIs remain product-owned SDKWork API surfaces',
     migrationState: 'shared-gateway-default',
   });
 
@@ -1378,18 +1378,18 @@ test('installation documentation covers release, source, initialization, usage, 
   assert.ok(enRelease.includes('./bin/clawrouterctl ensure'));
   assert.ok(zhSource.includes('pnpm release:env:write -- --check'));
   assert.ok(enSource.includes('pnpm release:env:write -- --check'));
-  assert.ok(zhSource.includes('目标机器后，不要求安装 `pnpm`'));
+  assert.ok(zhSource.includes('目标机器后，不要求安�?`pnpm`'));
   assert.ok(enSource.includes('the host does not need `pnpm`'));
-  assert.ok(zhUsage.includes('注册是否需要验证码由 IAM 运行时策略控制'));
+  assert.ok(zhUsage.includes('注册是否需要验证码�?IAM 运行时策略控�?));
   assert.ok(enUsage.includes('Whether registration requires verification code is controlled by IAM runtime policy'));
   assert.ok(zhUsage.includes('SDK 包版本独立于 Claw Router release 版本'));
   assert.ok(enUsage.includes('SDK package versions are independent from Claw Router release versions'));
   /*
   assert.ok(zhSource.includes('鐩爣鏈哄櫒鍚庯紝涓嶈姹傚畨瑁?`pnpm`'));
   assert.ok(enSource.includes('the host does not need `pnpm`'));
-  assert.ok(zhUsage.includes('娉ㄥ唽鏄惁闇€瑕侀獙璇佺爜鐢?IAM 杩愯鏃剁瓥鐣ユ帶鍒?));
+  assert.ok(zhUsage.includes('娉ㄥ唽鏄惁闇€瑕侀獙璇佺爜�?IAM 杩愯鏃剁瓥鐣ユ帶鍒?));
   assert.ok(enUsage.includes('Whether registration requires verification code is controlled by IAM runtime policy'));
-  assert.ok(zhUsage.includes('SDK 鍖呯増鏈嫭绔嬩簬 Claw Router release 鐗堟湰'));
+  assert.ok(zhUsage.includes('SDK 鍖呯増鏈嫭绔嬩�?Claw Router release 鐗堟�?));
   assert.ok(enUsage.includes('SDK package versions are independent from Claw Router release versions'));
   */
   assert.ok(rootReadme.includes('Client development commands use `sdkwork-api-gateway` for API integration.'));
@@ -1486,14 +1486,14 @@ test('download catalog generator emits selectable CDN sources only when configur
 
   const githubOnlyCatalog = module.createClawRouterDownloadCatalog({
     generatedAt: '2026-05-18T00:00:00.000Z',
-    releaseBaseUrl: 'https://github.com/Sdkwork-Cloud/sdkwork-claw-router/releases/download/v1.2.3',
+    releaseBaseUrl: 'https://github.com/Sdkwork-Cloud/sdkwork-clawrouter/releases/download/v1.2.3',
     releaseTag: 'v1.2.3',
     version: '1.2.3',
   });
   const cdnCatalog = module.createClawRouterDownloadCatalog({
     cdnBaseUrl: 'https://cdn.example.test/claw-router/v1.2.3',
     generatedAt: '2026-05-18T00:00:00.000Z',
-    releaseBaseUrl: 'https://github.com/Sdkwork-Cloud/sdkwork-claw-router/releases/download/v1.2.3',
+    releaseBaseUrl: 'https://github.com/Sdkwork-Cloud/sdkwork-clawrouter/releases/download/v1.2.3',
     releaseTag: 'v1.2.3',
     version: '1.2.3',
   });
@@ -1509,7 +1509,7 @@ test('download catalog generator emits selectable CDN sources only when configur
   assert.deepEqual(windowsSources.map((source) => source.id), ['github', 'cdn']);
   assert.equal(
     windowsSources.find((source) => source.id === 'github')?.href,
-    'https://github.com/Sdkwork-Cloud/sdkwork-claw-router/releases/download/v1.2.3/clawrouter-windows-x64-desktop-1.2.3.msi',
+    'https://github.com/Sdkwork-Cloud/sdkwork-clawrouter/releases/download/v1.2.3/clawrouter-windows-x64-desktop-1.2.3.msi',
   );
   assert.equal(
     windowsSources.find((source) => source.id === 'cdn')?.href,
@@ -1784,6 +1784,34 @@ test('claw router product launcher parses dev env file before forwarded workspac
   assert.equal(parsed.mode, 'server');
   assert.equal(parsed.devEnvFile, '.env.postgres');
   assert.deepEqual(parsed.extraArgs, ['--gateway-bind', '0.0.0.0:19080']);
+});
+
+test('claw router dev database env helper prefers split fields over stale process URL', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'dev', 'claw-router-dev-database-env.mjs')).href
+  );
+
+  const merged = module.mergeDevEnvWithDatabasePrecedence(
+    {
+      SDKWORK_CLAW_DATABASE_URL:
+        'postgresql://stale_user:wrong_pass@127.0.0.1:5432/stale_db?sslmode=disable',
+    },
+    {
+      SDKWORK_CLAW_DATABASE_ENGINE: 'postgresql',
+      SDKWORK_CLAW_DATABASE_HOST: '127.0.0.1',
+      SDKWORK_CLAW_DATABASE_PORT: '5432',
+      SDKWORK_CLAW_DATABASE_NAME: 'sdkwork_ai_dev',
+      SDKWORK_CLAW_DATABASE_USERNAME: 'sdkwork_ai_dev',
+      SDKWORK_CLAW_DATABASE_PASSWORD: 'sdkworkdev123',
+      SDKWORK_CLAW_DATABASE_SSL_MODE: 'disable',
+    },
+  );
+
+  const resolved = module.resolveClawRouterDevDatabaseEnv({ env: merged, defaultDatabase: 'none' });
+  assert.equal(
+    resolved.databaseUrl,
+    'postgresql://sdkwork_ai_dev:sdkworkdev123@127.0.0.1:5432/sdkwork_ai_dev?sslmode=disable',
+  );
 });
 
 test('claw router dev database env helper resolves split PostgreSQL fields', async () => {
@@ -2158,7 +2186,11 @@ test('claw router workspace client-only launch plan starts sdkwork-api-gateway a
   const portalStep = plan.steps.find((step) => step.name === 'portal');
 
   assert.equal(settings.runtimeMode, 'client');
-  assert.deepEqual(plan.steps.map((step) => step.name), ['sdkwork-api-gateway', 'portal']);
+  assert.deepEqual(plan.steps.map((step) => step.name), [
+    'sdkwork-api-gateway-prebuild',
+    'sdkwork-api-gateway',
+    'portal',
+  ]);
   assert.deepEqual(managedGatewayStep.args, [
     'run',
     '-p',
@@ -2218,29 +2250,41 @@ test('claw router workspace launch plan defaults to all-in-one Rust edge runtime
     assert.equal(settings.databaseUrl, defaultDevPostgresDatabaseUrl);
     assert.equal(settings.runtimeMode, 'all-in-one');
     assert.deepEqual(plan.steps.map((step) => step.name), [
+      'rust-prebuild',
       'installer',
       'model-catalog-refresh',
       'portal',
       'server',
     ]);
-    assert.deepEqual(plan.steps[0].args, [
+    const prebuildStep = plan.steps.find((step) => step.name === 'rust-prebuild');
+    const installerStep = plan.steps.find((step) => step.name === 'installer');
+    const refreshStep = plan.steps.find((step) => step.name === 'model-catalog-refresh');
+    assert.deepEqual(prebuildStep.args, [
+      'build',
+      '-p',
+      'sdkwork-claw-installer',
+      '-p',
+      'sdkwork-claw-gateway',
+    ]);
+    assert.equal(prebuildStep.blocking, true);
+    assert.deepEqual(installerStep.args, [
       'run',
       '-p',
       'sdkwork-claw-installer',
       '--',
       'ensure',
     ]);
-    assert.equal(plan.steps[0].blocking, true);
-    assert.equal(plan.steps[0].env.SDKWORK_CLAW_DATABASE_URL, settings.databaseUrl);
-    assert.equal(plan.steps[0].env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS, '10');
-    assert.equal(plan.steps[0].env.SDKWORK_CLAW_STARTUP_INSTALL_MODE, 'ensure');
-    assert.equal(plan.steps[0].env.SDKWORK_CLAW_INSTALL_ENVIRONMENT, 'development');
-    assert.equal(plan.steps[0].env.SDKWORK_CLAW_INSTALL_SEED_PROFILE, 'commercial');
+    assert.equal(installerStep.blocking, true);
+    assert.equal(installerStep.env.SDKWORK_CLAW_DATABASE_URL, settings.databaseUrl);
+    assert.equal(installerStep.env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS, '10');
+    assert.equal(installerStep.env.SDKWORK_CLAW_STARTUP_INSTALL_MODE, 'ensure');
+    assert.equal(installerStep.env.SDKWORK_CLAW_INSTALL_ENVIRONMENT, 'development');
+    assert.equal(installerStep.env.SDKWORK_CLAW_INSTALL_SEED_PROFILE, 'commercial');
     assert.equal(
-      plan.steps[0].env.SDKWORK_MODELS_CATALOG_ROOT,
+      installerStep.env.SDKWORK_MODELS_CATALOG_ROOT,
       path.join(workspaceRoot, 'data', 'sdkwork-models'),
     );
-    assert.deepEqual(plan.steps[1].args, [
+    assert.deepEqual(refreshStep.args, [
       'run',
       '-p',
       'sdkwork-claw-installer',
@@ -2250,14 +2294,14 @@ test('claw router workspace launch plan defaults to all-in-one Rust edge runtime
       path.join(workspaceRoot, 'data', 'sdkwork-models'),
       '--force',
     ]);
-    assert.equal(plan.steps[1].blocking, true);
-    assert.match(plan.steps[1].failureHint, /model catalog refresh failed/u);
-    assert.match(plan.steps[1].failureHint, /pnpm models:check/u);
-    assert.equal(plan.steps[1].env.SDKWORK_CLAW_DATABASE_URL, settings.databaseUrl);
-    assert.equal(plan.steps[1].env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS, '10');
-    assert.equal(plan.steps[1].env.SDKWORK_CLAW_STARTUP_INSTALL_MODE, 'ensure');
+    assert.equal(refreshStep.blocking, true);
+    assert.match(refreshStep.failureHint, /model catalog refresh failed/u);
+    assert.match(refreshStep.failureHint, /pnpm models:check/u);
+    assert.equal(refreshStep.env.SDKWORK_CLAW_DATABASE_URL, settings.databaseUrl);
+    assert.equal(refreshStep.env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS, '10');
+    assert.equal(refreshStep.env.SDKWORK_CLAW_STARTUP_INSTALL_MODE, 'ensure');
     assert.equal(
-      plan.steps[1].env.SDKWORK_MODELS_CATALOG_ROOT,
+      refreshStep.env.SDKWORK_MODELS_CATALOG_ROOT,
       path.join(workspaceRoot, 'data', 'sdkwork-models'),
     );
     assert.equal(plan.steps.some((step) => step.name === 'sdkwork-api-gateway'), false);
@@ -2404,6 +2448,8 @@ test('claw router workspace launch plan preserves split-services topology from p
 
   assert.equal(settings.runtimeMode, 'distributed');
   assert.deepEqual(plan.steps.map((step) => step.name), [
+    'rust-prebuild',
+    'sdkwork-api-gateway-prebuild',
     'installer',
     'model-catalog-refresh',
     'gateway',
@@ -2413,16 +2459,21 @@ test('claw router workspace launch plan preserves split-services topology from p
     'portal',
     'server',
   ]);
-  assert.equal(plan.steps[2].env.SDKWORK_CLAW_GATEWAY_BIND, '0.0.0.0:19080');
-  assert.equal(plan.steps[4].env.SDKWORK_CLAW_APP_RUNTIME_GATEWAY_BASE_URL, 'http://127.0.0.1:19080');
-  assert.equal(plan.steps[5].env.SDKWORK_API_GATEWAY_BIND, '127.0.0.1:3902');
-  assert.equal(plan.steps[6].env.PORTAL_PUBLIC_SDK_BASE_URL, 'http://127.0.0.1:3902');
-  assert.equal(plan.steps[6].env.PORTAL_DEV_PROXY_GATEWAY_TARGET, 'http://127.0.0.1:19080');
-  assert.equal(plan.steps[6].env.PORTAL_DEV_PROXY_BACKEND_API_TARGET, 'http://127.0.0.1:18081');
-  assert.equal(plan.steps[6].env.PORTAL_DEV_PROXY_APP_API_TARGET, 'http://127.0.0.1:18082');
-  assert.equal(plan.steps[7].env.PORTAL_PUBLIC_SDK_BASE_URL, 'http://127.0.0.1:3902');
-  assert.equal(plan.steps[7].env.SDKWORK_CLAW_ALL_IN_ONE_RUNTIME, '0');
-  assert.equal(plan.steps[7].env.SDKWORK_CLAW_EDGE_GATEWAY_BASE_URL, 'http://127.0.0.1:19080');
+  const gatewayStep = plan.steps.find((step) => step.name === 'gateway');
+  const appApiStep = plan.steps.find((step) => step.name === 'app-api');
+  const managedGatewayStep = plan.steps.find((step) => step.name === 'sdkwork-api-gateway');
+  const portalStep = plan.steps.find((step) => step.name === 'portal');
+  const serverStep = plan.steps.find((step) => step.name === 'server');
+  assert.equal(gatewayStep.env.SDKWORK_CLAW_GATEWAY_BIND, '0.0.0.0:19080');
+  assert.equal(appApiStep.env.SDKWORK_CLAW_APP_RUNTIME_GATEWAY_BASE_URL, 'http://127.0.0.1:19080');
+  assert.equal(managedGatewayStep.env.SDKWORK_API_GATEWAY_BIND, '127.0.0.1:3902');
+  assert.equal(portalStep.env.PORTAL_PUBLIC_SDK_BASE_URL, 'http://127.0.0.1:3902');
+  assert.equal(portalStep.env.PORTAL_DEV_PROXY_GATEWAY_TARGET, 'http://127.0.0.1:19080');
+  assert.equal(portalStep.env.PORTAL_DEV_PROXY_BACKEND_API_TARGET, 'http://127.0.0.1:18081');
+  assert.equal(portalStep.env.PORTAL_DEV_PROXY_APP_API_TARGET, 'http://127.0.0.1:18082');
+  assert.equal(serverStep.env.PORTAL_PUBLIC_SDK_BASE_URL, 'http://127.0.0.1:3902');
+  assert.equal(serverStep.env.SDKWORK_CLAW_ALL_IN_ONE_RUNTIME, '0');
+  assert.equal(serverStep.env.SDKWORK_CLAW_EDGE_GATEWAY_BASE_URL, 'http://127.0.0.1:19080');
 });
 
 test('claw router workspace reports occupied service ports before startup', async () => {
@@ -3966,7 +4017,7 @@ test('install package planner covers platforms, architectures, modes, fast init,
   });
 
   assert.equal(plan.schemaVersion, '2026-05-15.install-packages.v2');
-  assert.equal(plan.product, 'sdkwork-claw-router');
+  assert.equal(plan.product, 'sdkwork-clawrouter');
   assert.equal(plan.packageName, 'clawrouter');
   assert.equal(plan.runtimeName, 'clawrouter');
   assert.equal(plan.displayName, 'SdkWork ClawRouter');
@@ -5652,7 +5703,7 @@ test('API router product chain is covered from portal services through SDK and R
       'apps',
       'sdkwork-clawrouter-pc',
       'packages',
-      'sdkwork-clawrouter-pc-models',
+      '@sdkwork/clawrouter-pc-models',
       'src',
       'modelService.ts',
     ),
@@ -5664,7 +5715,7 @@ test('API router product chain is covered from portal services through SDK and R
       'apps',
       'sdkwork-clawrouter-pc',
       'packages',
-      'sdkwork-clawrouter-pc-playground',
+      '@sdkwork/clawrouter-pc-playground',
       'src',
       'playgroundService.ts',
     ),
@@ -5676,7 +5727,7 @@ test('API router product chain is covered from portal services through SDK and R
       'apps',
       'sdkwork-clawrouter-pc',
       'packages',
-      'sdkwork-clawrouter-pc-playground',
+      '@sdkwork/clawrouter-pc-playground',
       'src',
       'appRuntimeApiOperations.ts',
     ),
@@ -6079,7 +6130,7 @@ test('portal SDK reference uses real generated SDK package metadata for download
       'apps',
       'sdkwork-clawrouter-pc',
       'packages',
-      'sdkwork-clawrouter-pc-commons',
+      '@sdkwork/clawrouter-pc-commons',
       'src',
       'sdk-clients.ts',
     ),
@@ -6091,7 +6142,7 @@ test('portal SDK reference uses real generated SDK package metadata for download
       'apps',
       'sdkwork-clawrouter-pc',
       'packages',
-      'sdkwork-clawrouter-pc-commons',
+      '@sdkwork/clawrouter-pc-commons',
       'src',
       'documents-reference-runtime-adapter.ts',
     ),
@@ -6156,7 +6207,7 @@ test('portal model catalog API examples use the generated app SDK package', () =
       'apps',
       'sdkwork-clawrouter-pc',
       'packages',
-      'sdkwork-clawrouter-pc-models',
+      '@sdkwork/clawrouter-pc-models',
       'src',
       'modelCatalog.ts',
     ),
@@ -6168,7 +6219,7 @@ test('portal model catalog API examples use the generated app SDK package', () =
       'apps',
       'sdkwork-clawrouter-pc',
       'packages',
-      'sdkwork-clawrouter-pc-commons',
+      '@sdkwork/clawrouter-pc-commons',
       'src',
       'sdk-clients.ts',
     ),
@@ -6254,7 +6305,7 @@ test('postgres integration runner can plan an ephemeral Docker database', async 
   assert.deepEqual(plan.steps[1].args, [
     'compose',
     '-p',
-    'sdkwork-claw-router-postgres-test',
+    'sdkwork-clawrouter-postgres-test',
     '-f',
     path.join(workspaceRoot, 'docker-compose.postgres-test.yml'),
     'up',
@@ -7496,7 +7547,7 @@ test('release preflight strict mode fails missing release environment and app di
       branch: 'feature/preflight',
       mainOriginCounts: { behind: 1, ahead: 0 },
       appStatusLines: [' M scripts/release-preflight.mjs'],
-      rootStatusLines: [' M spring-ai-plus-business/apps/sdkwork-claw-router/scripts/release-preflight.mjs'],
+      rootStatusLines: [' M spring-ai-plus-business/apps/sdkwork-clawrouter/scripts/release-preflight.mjs'],
       commandVersions: {
         git: 'git version 2.51.0',
         node: 'v24.11.1',
@@ -7874,12 +7925,12 @@ test('portal service command results must not fabricate returned entities from e
   const serviceRoot = path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', 'packages');
   const serviceFiles = [
     'sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts',
-    'sdkwork-clawrouter-pc-admin-channel/src/channelService.ts',
-    'sdkwork-clawrouter-pc-admin-group/src/groupService.ts',
+    '@sdkwork/clawrouter-pc-admin-channel/src/channelService.ts',
+    '@sdkwork/clawrouter-pc-admin-group/src/groupService.ts',
     'sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts',
-    'sdkwork-clawrouter-pc-admin-model/src/modelService.ts',
-    'sdkwork-clawrouter-pc-admin-ratelimit/src/ratelimitService.ts',
-    'sdkwork-clawrouter-pc-admin-user/src/userService.ts',
+    '@sdkwork/clawrouter-pc-admin-model/src/modelService.ts',
+    '@sdkwork/clawrouter-pc-admin-ratelimit/src/ratelimitService.ts',
+    '@sdkwork/clawrouter-pc-admin-user/src/userService.ts',
   ];
 
   for (const relativeFile of serviceFiles) {
@@ -7901,9 +7952,9 @@ test('portal admin update commands must require returned entities instead of sil
   const serviceRoot = path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', 'packages');
   const serviceFiles = [
     'sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts',
-    'sdkwork-clawrouter-pc-admin-channel/src/channelService.ts',
-    'sdkwork-clawrouter-pc-admin-group/src/groupService.ts',
-    'sdkwork-clawrouter-pc-admin-user/src/userService.ts',
+    '@sdkwork/clawrouter-pc-admin-channel/src/channelService.ts',
+    '@sdkwork/clawrouter-pc-admin-group/src/groupService.ts',
+    '@sdkwork/clawrouter-pc-admin-user/src/userService.ts',
   ];
 
   for (const relativeFile of serviceFiles) {
@@ -7924,7 +7975,7 @@ test('portal admin update commands must require returned entities instead of sil
 test('portal channel test commands must require returned channel entities', () => {
   const serviceRoot = path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', 'packages');
   const serviceFiles = [
-    'sdkwork-clawrouter-pc-admin-channel/src/channelService.ts',
+    '@sdkwork/clawrouter-pc-admin-channel/src/channelService.ts',
   ];
 
   for (const relativeFile of serviceFiles) {
@@ -7945,32 +7996,32 @@ test('portal channel test commands must require returned channel entities', () =
 test('portal mutable entity services must require backend stable ids', () => {
   const portalRoot = path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc');
   const commonsSource = readFileSync(
-    path.join(portalRoot, 'packages', 'sdkwork-clawrouter-pc-commons', 'src', 'api-result.ts'),
+    path.join(portalRoot, 'packages', '@sdkwork/clawrouter-pc-commons', 'src', 'api-result.ts'),
     'utf8',
   );
   const guardedServices = [
     {
-      file: path.join('sdkwork-clawrouter-pc-admin-group', 'src', 'groupService.ts'),
+      file: path.join('@sdkwork/clawrouter-pc-admin-group', 'src', 'groupService.ts'),
       requiredMessages: ['Group id is required'],
       forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
     },
     {
-      file: path.join('sdkwork-clawrouter-pc-admin-channel', 'src', 'channelService.ts'),
+      file: path.join('@sdkwork/clawrouter-pc-admin-channel', 'src', 'channelService.ts'),
       requiredMessages: ['Channel id is required', 'Provider credential id is required'],
       forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
     },
     {
-      file: path.join('sdkwork-clawrouter-pc-admin-user', 'src', 'userService.ts'),
+      file: path.join('@sdkwork/clawrouter-pc-admin-user', 'src', 'userService.ts'),
       requiredMessages: ['User id is required', 'API key id is required'],
       forbidden: [/id:\s*readNumber\(item,\s*['"]id['"]\)/u, /id:\s*readString\(item,\s*['"]id['"]\)/u],
     },
     {
-      file: path.join('sdkwork-clawrouter-pc-admin-model', 'src', 'modelService.ts'),
+      file: path.join('@sdkwork/clawrouter-pc-admin-model', 'src', 'modelService.ts'),
       requiredMessages: ['Vendor id is required', 'Model id is required', 'Model vendor id is required'],
       forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u, /vendorId:\s*readString\(item,\s*['"]vendorId['"]\)/u],
     },
     {
-      file: path.join('sdkwork-clawrouter-pc-admin-ratelimit', 'src', 'ratelimitService.ts'),
+      file: path.join('@sdkwork/clawrouter-pc-admin-ratelimit', 'src', 'ratelimitService.ts'),
       requiredMessages: [
         'IP limit id is required',
         'Token limit id is required',
@@ -7990,17 +8041,17 @@ test('portal mutable entity services must require backend stable ids', () => {
       forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
     },
     {
-      file: path.join('sdkwork-clawrouter-pc-admin-dashboard', 'src', 'dashboardService.ts'),
+      file: path.join('@sdkwork/clawrouter-pc-admin-dashboard', 'src', 'dashboardService.ts'),
       requiredMessages: ['Recent usage trace id is required'],
       forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
     },
     {
-      file: path.join('sdkwork-clawrouter-pc-admin-monitor', 'src', 'monitorService.ts'),
+      file: path.join('@sdkwork/clawrouter-pc-admin-monitor', 'src', 'monitorService.ts'),
       requiredMessages: ['System node id is required', 'Alert id is required'],
       forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
     },
     {
-      file: path.join('sdkwork-clawrouter-pc-admin-record', 'src', 'recordService.ts'),
+      file: path.join('@sdkwork/clawrouter-pc-admin-record', 'src', 'recordService.ts'),
       requiredMessages: ['Log record id is required'],
       forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
     },
@@ -8015,7 +8066,7 @@ test('portal mutable entity services must require backend stable ids', () => {
       forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
     },
     {
-      file: path.join('sdkwork-clawrouter-pc-console-usage', 'src', 'usageService.ts'),
+      file: path.join('@sdkwork/clawrouter-pc-console-usage', 'src', 'usageService.ts'),
       requiredMessages: ['Usage log id is required'],
       forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
     },
@@ -8165,39 +8216,39 @@ test('portal workspace packages declare ESM module metadata', () => {
   const packagesRoot = path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', 'packages');
   const packageNames = [
     'sdkwork-clawrouter-pc-admin-announcement',
-    'sdkwork-clawrouter-pc-admin-channel',
-    'sdkwork-clawrouter-pc-admin-dashboard',
+    '@sdkwork/clawrouter-pc-admin-channel',
+    '@sdkwork/clawrouter-pc-admin-dashboard',
     'sdkwork-clawrouter-pc-admin-finance',
-    'sdkwork-clawrouter-pc-admin-group',
+    '@sdkwork/clawrouter-pc-admin-group',
     'sdkwork-clawrouter-pc-admin-marketing',
-    'sdkwork-clawrouter-pc-admin-model',
-    'sdkwork-clawrouter-pc-admin-monitor',
-    'sdkwork-clawrouter-pc-admin-ratelimit',
-    'sdkwork-clawrouter-pc-admin-record',
-    'sdkwork-clawrouter-pc-admin-user',
-    'sdkwork-clawrouter-pc-commons',
+    '@sdkwork/clawrouter-pc-admin-model',
+    '@sdkwork/clawrouter-pc-admin-monitor',
+    '@sdkwork/clawrouter-pc-admin-ratelimit',
+    '@sdkwork/clawrouter-pc-admin-record',
+    '@sdkwork/clawrouter-pc-admin-user',
+    '@sdkwork/clawrouter-pc-commons',
     'sdkwork-clawrouter-pc-console-account',
-    'sdkwork-clawrouter-pc-console-api-keys',
+    '@sdkwork/clawrouter-pc-console-api-keys',
     'sdkwork-clawrouter-pc-console-checkout',
-    'sdkwork-clawrouter-pc-console-core',
-    'sdkwork-clawrouter-pc-console-dashboard',
-    'sdkwork-clawrouter-pc-console-gateway',
+    '@sdkwork/clawrouter-pc-console-core',
+    '@sdkwork/clawrouter-pc-console-dashboard',
+    '@sdkwork/clawrouter-pc-console-gateway',
     'sdkwork-clawrouter-pc-console-memberships',
     'sdkwork-clawrouter-pc-console-messages',
     'sdkwork-clawrouter-pc-console-recharge',
-    'sdkwork-clawrouter-pc-console-settings',
+    '@sdkwork/clawrouter-pc-console-settings',
     'sdkwork-clawrouter-pc-console-settlements',
-    'sdkwork-clawrouter-pc-console-usage',
-    'sdkwork-clawrouter-pc-console-user',
+    '@sdkwork/clawrouter-pc-console-usage',
+    '@sdkwork/clawrouter-pc-console-user',
     'sdkwork-clawrouter-pc-console-wallet',
-    'sdkwork-clawrouter-pc-core',
+    '@sdkwork/clawrouter-pc-core',
     'sdkwork-clawrouter-pc-forum',
-    'sdkwork-clawrouter-pc-home',
-    'sdkwork-clawrouter-pc-i18n',
-    'sdkwork-clawrouter-pc-models',
-    'sdkwork-clawrouter-pc-playground',
-    'sdkwork-clawrouter-pc-rankings',
-    'sdkwork-clawrouter-pc-types',
+    '@sdkwork/clawrouter-pc-home',
+    '@sdkwork/clawrouter-pc-i18n',
+    '@sdkwork/clawrouter-pc-models',
+    '@sdkwork/clawrouter-pc-playground',
+    '@sdkwork/clawrouter-pc-rankings',
+    '@sdkwork/clawrouter-pc-types',
   ];
 
   for (const packageName of packageNames) {
@@ -8217,7 +8268,7 @@ test('portal commons package exposes runtime subpath for ESM and SSR tooling', (
         'apps',
         'sdkwork-clawrouter-pc',
         'packages',
-        'sdkwork-clawrouter-pc-commons',
+        '@sdkwork/clawrouter-pc-commons',
         'package.json',
       ),
       'utf8',
@@ -8519,10 +8570,10 @@ test('verification plan includes real browser DOM smoke after production HTTP sm
   assert.ok(browserSmokeSource.includes('/forum?__browser-smoke-live-empty=1'));
   assert.ok(browserSmokeSource.includes('/forum/__browser-smoke-missing'));
   const forumSmokeStart = browserSmokeSource.indexOf('pathName: "/forum"');
-  const skillsSmokeStart = browserSmokeSource.indexOf('pathName: "/skills-hub"');
+  const apiReferenceSmokeStart = browserSmokeSource.indexOf('pathName: "/api-reference"');
   assert.ok(forumSmokeStart >= 0);
-  assert.ok(skillsSmokeStart > forumSmokeStart);
-  const forumSmokeSource = browserSmokeSource.slice(forumSmokeStart, skillsSmokeStart);
+  assert.ok(apiReferenceSmokeStart > forumSmokeStart);
+  const forumSmokeSource = browserSmokeSource.slice(forumSmokeStart, apiReferenceSmokeStart);
   assert.equal(
     forumSmokeSource.match(/appSdkFixtureMode: APP_SDK_FIXTURE_MODE/g)?.length ?? 0,
     0,
@@ -8541,25 +8592,6 @@ test('verification plan includes real browser DOM smoke after production HTTP sm
   assert.match(browserSmokeSource, /Discussion not found\./);
   assert.match(browserSmokeSource, /No discussions found/);
   assert.match(browserSmokeSource, /Community links are not configured\./);
-  assert.match(browserSmokeSource, /\/skills-hub/);
-  assert.match(browserSmokeSource, /\/skills-hub\/skill-1/);
-  assert.match(browserSmokeSource, /Browser smoke skills unavailable/);
-  assert.match(browserSmokeSource, /Browser smoke skill details unavailable/);
-  assert.match(browserSmokeSource, /Skills could not be loaded/);
-  assert.match(browserSmokeSource, /Skill details could not be loaded/);
-  assert.match(browserSmokeSource, /\/skills-hub\/__browser-smoke-success/);
-  assert.match(browserSmokeSource, /Browser Smoke Skill/);
-  assert.match(browserSmokeSource, /clawhub\.io\/sdkwork\/browser-smoke-skill:v1\.0\.0/);
-  assert.match(browserSmokeSource, /npx clawhub@latest install clawhub\.io\/sdkwork\/browser-smoke-skill:v1\.0\.0/);
-  assert.match(browserSmokeSource, /\/skills-hub\?__browser-smoke-empty/);
-  assert.match(browserSmokeSource, /No skills found/);
-  assert.match(browserSmokeSource, /no-match-browser-smoke-skill/);
-  assert.match(browserSmokeSource, /\/skills-hub\/__browser-smoke-missing/);
-  assert.match(browserSmokeSource, /Skill not found/);
-  assert.match(browserSmokeSource, /Skill categories could not be loaded/);
-  assert.match(browserSmokeSource, /Browser smoke skill categories unavailable/);
-  assert.match(browserSmokeSource, /\/skills-hub\?__browser-smoke-retry/);
-  assert.match(browserSmokeSource, /Browser smoke skills transient failure/);
   assert.match(browserSmokeSource, /\/api-reference/);
   assert.ok(browserSmokeSource.includes('/api-reference?__browser-smoke-playground-validation=1'));
   assert.ok(browserSmokeSource.includes('/api-reference?__browser-smoke-playground-managed-header=1'));
@@ -8924,23 +8956,16 @@ test('production browser smoke validates api reference route bundle semantics', 
   assert.ok(smokeSource.includes('Math.random'));
 });
 
-test('production browser smoke validates admin skill route through backend SDK fixtures', () => {
+test('production browser smoke keeps backend SDK interception for portal session routes', () => {
   const smokeSource = readFileSync(
     path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', 'scripts', 'smoke-production-browser.mjs'),
     'utf8',
   );
 
-  assert.ok(smokeSource.includes('BACKEND_SDK_SKILL_FIXTURE_MODE'));
-  assert.ok(smokeSource.includes('/admin/skill?__browser-smoke-admin-skill=1'));
   assert.ok(smokeSource.includes('requiresPortalSession: true'));
   assert.ok(smokeSource.includes('sdkwork.clawRouter.appSession.v1'));
   assert.ok(smokeSource.includes('/app/v3/api/auth/sessions/current'));
-  assert.ok(smokeSource.includes('/backend/v3/api/system/installation/status'));
   assert.ok(smokeSource.includes('urlPattern: "*://*/backend/v3/api/*"'));
-  assert.ok(smokeSource.includes('/backend/v3/api/ecosystem/skills/categories'));
-  assert.ok(smokeSource.includes('/backend/v3/api/ecosystem/skills/package'));
-  assert.ok(smokeSource.includes('/backend/v3/api/ecosystem/skills'));
-  assert.ok(smokeSource.includes('Browser Smoke Admin Skill'));
 });
 
 test('production browser smoke keeps current-user playground CORS compatible with app session tokens', () => {

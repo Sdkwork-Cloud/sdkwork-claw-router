@@ -2,7 +2,7 @@
 
 This directory is the local SDKWork component contract for `@sdkwork/clawrouter-open-sdk`.
 
-- Component root: `sdkwork-claw-router/sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript`
+- Component root: `sdkwork-clawrouter/sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript`
 - Canonical standards: `../../../../../sdkwork-specs/README.md`
 - Machine-readable contract: `specs/component.spec.json`
 

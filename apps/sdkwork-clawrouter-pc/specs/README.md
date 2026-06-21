@@ -10,7 +10,7 @@ Root SDKWork standards remain authoritative. Local component specs can narrow or
 | --- | --- |
 | Name | `sdkwork-clawrouter-pc` |
 | Type | `react-app` |
-| Root | `sdkwork-claw-router/apps/sdkwork-clawrouter-pc` |
+| Root | `sdkwork-clawrouter/apps/sdkwork-clawrouter-pc` |
 | Domain | `platform` |
 | Capability | `router` |
 | Languages | `typescript` |

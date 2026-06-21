@@ -68,8 +68,8 @@ import {
   isAiResourceVisibleForChannelVendorScope,
   reconcileChannelVendorSelection,
 } from './channelVendorSelection.ts';
-import { AdminTableShell, AiResourceSelectorModal, BusinessStateTableRow, ConfirmDialog } from 'sdkwork-clawrouter-pc-commons';
-import { copyTextToClipboard } from 'sdkwork-clawrouter-pc-commons/clipboard';
+import { AdminTableShell, AiResourceSelectorModal, BusinessStateTableRow, ConfirmDialog } from '@sdkwork/clawrouter-pc-commons';
+import { copyTextToClipboard } from '@sdkwork/clawrouter-pc-commons/clipboard';
 
 type ToastState = { message: string; type: 'success' | 'info' | 'error' } | null;
 type AccountDrawerMode = 'create' | 'copy' | 'edit';

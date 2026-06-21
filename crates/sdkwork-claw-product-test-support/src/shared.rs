@@ -384,10 +384,7 @@ pub(crate) async fn sqlite_template_objects_current(pool: &SqlitePool) -> bool {
         ("table", "iam_verification_scene_policy"),
         ("table", "messaging_template"),
         ("table", "platform_app"),
-        ("table", "ai_agent_skill"),
         ("table", "content_forum_post"),
-        ("index", "idx_ai_agent_skill_package_category"),
-        ("index", "idx_ai_agent_skill_market"),
     ];
     for (object_type, name) in required_schema_objects {
         let exists: i64 = match sqlx::query_scalar(
@@ -440,11 +437,7 @@ pub(crate) async fn sqlite_template_objects_current(pool: &SqlitePool) -> bool {
 }
 
 fn required_generated_columns() -> &'static [(&'static str, &'static str)] {
-    &[
-        ("c_category", "icon_resource_snapshot"),
-        ("ai_agent_skill_package", "icon_resource_snapshot"),
-        ("ai_agent_skill", "icon_resource_snapshot"),
-    ]
+    &[("c_category", "icon_resource_snapshot")]
 }
 
 fn generated_schema_object_names() -> Vec<(&'static str, String)> {

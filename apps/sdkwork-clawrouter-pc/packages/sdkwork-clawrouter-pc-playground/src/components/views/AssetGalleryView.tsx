@@ -25,8 +25,8 @@ import {
 import {
   readMediaResourceUrl,
   type ClawRouterMediaResource,
-} from 'sdkwork-clawrouter-pc-commons/runtime';
-import { copyTextToClipboard } from 'sdkwork-clawrouter-pc-commons/clipboard';
+} from '@sdkwork/clawrouter-pc-commons/runtime';
+import { copyTextToClipboard } from '@sdkwork/clawrouter-pc-commons/clipboard';
 
 export type AssetType = 'image' | 'video' | 'speech' | 'sound' | 'music';
 

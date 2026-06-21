@@ -10,7 +10,7 @@ Root SDKWork standards remain authoritative. Local component specs can narrow or
 | --- | --- |
 | Name | `@sdkwork/file-api-contracts` |
 | Type | `node-package` |
-| Root | `sdkwork-claw-router/packages/common/file/sdkwork-file-api-contracts` |
+| Root | `sdkwork-clawrouter/packages/common/file/sdkwork-file-api-contracts` |
 | Domain | `file` |
 | Capability | `file-api-contracts` |
 | Languages | `typescript` |

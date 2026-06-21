@@ -25,7 +25,7 @@ async function readJson(relativePath) {
   return JSON.parse(await read(relativePath));
 }
 
-test('declares v2 topology spec and profile env files for sdkwork-claw-router', async () => {
+test('declares v2 topology spec and profile env files for sdkwork-clawrouter', async () => {
   assert.equal(await exists('specs/topology.spec.json'), true);
   assert.equal(await exists('scripts/lib/claw-router-topology.mjs'), true);
   assert.equal(await exists('scripts/claw-router-dev.mjs'), true);
@@ -34,7 +34,7 @@ test('declares v2 topology spec and profile env files for sdkwork-claw-router', 
   const spec = await readJson('specs/topology.spec.json');
   assert.equal(spec.schemaVersion, 2);
   assert.equal(spec.kind, 'sdkwork.app.topology');
-  assert.equal(spec.appId, 'sdkwork-claw-router');
+  assert.equal(spec.appId, 'sdkwork-clawrouter');
   assert.equal(spec.archetype, 'application-http-gateway');
   assert.equal(spec.defaults.developmentProfileId, 'self-hosted.unified-process.development');
   assert.ok(spec.surfaces['application.public-ingress']);

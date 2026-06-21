@@ -7,9 +7,9 @@ const SQLITE_ADMIN_MODEL_RATE_LIMIT_STORE: &str =
 const POSTGRES_ADMIN_MODEL_RATE_LIMIT_STORE: &str =
     include_str!("../src/infrastructure/sql/postgres/admin_model_rate_limit_store.rs");
 const SQLITE_ADMIN_MONITOR_READ_STORE: &str =
-    include_str!("../src/infrastructure/sql/sqlite/admin_monitor_read_store.rs");
+    include_str!("../../../crates/sdkwork-clawrouter-admin-monitor-repository-sqlx/src/sqlite.rs");
 const POSTGRES_ADMIN_MONITOR_READ_STORE: &str =
-    include_str!("../src/infrastructure/sql/postgres/admin_monitor_read_store.rs");
+    include_str!("../../../crates/sdkwork-clawrouter-admin-monitor-repository-sqlx/src/postgres.rs");
 const SQLITE_DASHBOARD_OVERVIEW_READ_STORE: &str =
     include_str!("../src/infrastructure/sql/sqlite/dashboard_overview_read_store.rs");
 const POSTGRES_DASHBOARD_OVERVIEW_READ_STORE: &str =

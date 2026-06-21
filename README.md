@@ -1,4 +1,4 @@
-# sdkwork-claw-router
+# sdkwork-clawrouter
 
 Commercial AI gateway and console workspace for Spring AI Plus.
 
@@ -700,7 +700,7 @@ pnpm release:preflight
 ```
 
 The preflight is read-only. It checks that the current branch is `main`,
-`main...origin/main` is synchronized, the `sdkwork-claw-router` application
+`main...origin/main` is synchronized, the `sdkwork-clawrouter` application
 worktree is clean, required commands are available, staging/Postgres
 environment variables are present, Git LFS is available, LFS-managed bundled
 skill seed JSON files are hydrated, and local Codex/Git IO footprint is not
@@ -1493,7 +1493,7 @@ Extension points are limited to declared public exports, runtime entrypoints, SD
 ### Verification
 
 - `cargo test --workspace`
-- `pnpm --filter sdkwork-claw-router-workspace test`
+- `pnpm --filter sdkwork-clawrouter-workspace test`
 
 ### Owner And Status
 

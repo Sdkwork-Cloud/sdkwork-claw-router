@@ -1,5 +1,5 @@
-import { API_BASE_URL } from 'sdkwork-clawrouter-pc-commons/runtime';
-import { resolveApiRequestUrl } from 'sdkwork-clawrouter-pc-commons/runtime';
+import { API_BASE_URL } from '@sdkwork/clawrouter-pc-commons/runtime';
+import { resolveApiRequestUrl } from '@sdkwork/clawrouter-pc-commons/runtime';
 
 function isRequestIdentityHeader(name: string): boolean {
   return name.trim().toLowerCase().replace(/[^a-z0-9]/g, '').endsWith('requestid');

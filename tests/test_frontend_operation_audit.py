@@ -28,7 +28,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
         index.write_text(
             textwrap.dedent(
                 """
-                schema: sdkwork-claw-router-frontend-field-contracts
+                schema: sdkwork-clawrouter-frontend-field-contracts
                 version: 0.1.0
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 rule: every actual portal route must be backed by explicit schema tables.

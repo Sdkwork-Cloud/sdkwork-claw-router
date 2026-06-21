@@ -1,6 +1,6 @@
 # SDKWork Skills
 
-This directory stores checked-in repository skills for `sdkwork-claw-router`.
+This directory stores checked-in repository skills for `sdkwork-clawrouter`.
 
 Skills must follow `../../../sdkwork-specs/SDKWORK_WORKSPACE_SPEC.md` and cite task-specific standards from `../../../sdkwork-specs/README.md` instead of copying standard text.
 

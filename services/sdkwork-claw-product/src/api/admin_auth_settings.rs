@@ -172,12 +172,10 @@ pub fn admin_auth_settings_router_with_store(
 
 async fn fetch_auth_settings(
     State(state): State<AdminAuthSettingsState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
 
     match state
         .store
@@ -193,13 +191,11 @@ async fn fetch_auth_settings(
 
 async fn update_auth_settings(
     State(state): State<AdminAuthSettingsState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let request = match parse_json_body::<AdminAuthSettingsUpdateRequest>(&body, "auth settings") {
         Ok(request) => request,
         Err(message) => return bad_request(message),
@@ -231,21 +227,13 @@ async fn update_auth_settings(
     }
 }
 
-fn resolve_subject(headers: &HeaderMap) -> Result<AdminAuthSettingsSubject, Response> {
-    TrustedRequestSubject::from_headers(headers)
-        .map(|subject| AdminAuthSettingsSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            operator_id: subject.operator_id,
-            operator_type: subject.operator_type,
-        })
-        .map_err(|error| {
-            (
-                StatusCode::UNAUTHORIZED,
-                Json(PlusApiResult::error("4010", error.to_string())),
-            )
-                .into_response()
-        })
+fn map_subject(trusted: TrustedRequestSubject) -> AdminAuthSettingsSubject {
+    AdminAuthSettingsSubject {
+            tenant_id: trusted.tenant_id,
+            organization_id: trusted.organization_id,
+            operator_id: trusted.operator_id,
+            operator_type: trusted.operator_type,
+        }
 }
 
 fn parse_json_body<T>(body: &[u8], entity_name: &str) -> Result<T, String>

@@ -150,10 +150,11 @@ pub fn admin_prompt_router_with_store(store: Arc<dyn AdminPromptStore + Send + S
 
 async fn list_prompts(
     State(state): State<AdminPromptState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Query(request): Query<ListPromptsRequest>,
+    Query(request): Query<ListPromptsRequest>
 ) -> Response {
-    let query = match build_list_prompts_query(&headers, request) {
+    let query = match build_list_prompts_query(trusted, &headers, request) {
         Ok(query) => query,
         Err(response) => return response,
     };
@@ -165,10 +166,11 @@ async fn list_prompts(
 
 async fn create_prompt(
     State(state): State<AdminPromptState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Json(request): Json<CreatePromptRequest>,
+    Json(request): Json<CreatePromptRequest>
 ) -> Response {
-    let command = match build_create_prompt_command(&headers, request) {
+    let command = match build_create_prompt_command(trusted, &headers, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -180,10 +182,11 @@ async fn create_prompt(
 
 async fn list_versions(
     State(state): State<AdminPromptState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Path(prompt_id): Path<String>,
+    Path(prompt_id): Path<String>
 ) -> Response {
-    let query = match build_list_versions_query(&headers, &prompt_id) {
+    let query = match build_list_versions_query(trusted, &headers, &prompt_id) {
         Ok(query) => query,
         Err(response) => return response,
     };
@@ -195,11 +198,12 @@ async fn list_versions(
 
 async fn create_version(
     State(state): State<AdminPromptState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(prompt_id): Path<String>,
-    Json(request): Json<CreatePromptVersionRequest>,
+    Json(request): Json<CreatePromptVersionRequest>
 ) -> Response {
-    let command = match build_create_version_command(&headers, &prompt_id, request) {
+    let command = match build_create_version_command(trusted, &headers, &prompt_id, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -211,10 +215,11 @@ async fn create_version(
 
 async fn publish_version(
     State(state): State<AdminPromptState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Path(version_id): Path<String>,
+    Path(version_id): Path<String>
 ) -> Response {
-    let command = match build_publish_version_command(&headers, &version_id) {
+    let command = match build_publish_version_command(trusted, &headers, &version_id) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -227,11 +232,12 @@ async fn publish_version(
 
 async fn render_version(
     State(state): State<AdminPromptState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(version_id): Path<String>,
-    Json(request): Json<RenderPromptVersionRequest>,
+    Json(request): Json<RenderPromptVersionRequest>
 ) -> Response {
-    let command = match build_render_version_command(&headers, &version_id, request) {
+    let command = match build_render_version_command(trusted, &headers, &version_id, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -247,10 +253,11 @@ async fn render_version(
 
 async fn list_bindings(
     State(state): State<AdminPromptState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Path(prompt_id): Path<String>,
+    Path(prompt_id): Path<String>
 ) -> Response {
-    let query = match build_list_bindings_query(&headers, &prompt_id) {
+    let query = match build_list_bindings_query(trusted, &headers, &prompt_id) {
         Ok(query) => query,
         Err(response) => return response,
     };
@@ -262,11 +269,12 @@ async fn list_bindings(
 
 async fn create_binding(
     State(state): State<AdminPromptState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(prompt_id): Path<String>,
-    Json(request): Json<CreatePromptBindingRequest>,
+    Json(request): Json<CreatePromptBindingRequest>
 ) -> Response {
-    let command = match build_create_binding_command(&headers, &prompt_id, request) {
+    let command = match build_create_binding_command(trusted, &headers, &prompt_id, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -278,11 +286,12 @@ async fn create_binding(
 
 async fn update_binding(
     State(state): State<AdminPromptState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(binding_id): Path<String>,
-    Json(request): Json<UpdatePromptBindingRequest>,
+    Json(request): Json<UpdatePromptBindingRequest>
 ) -> Response {
-    let command = match build_update_binding_command(&headers, &binding_id, request) {
+    let command = match build_update_binding_command(trusted, &headers, &binding_id, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -294,10 +303,11 @@ async fn update_binding(
 }
 
 fn build_list_prompts_query(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: &HeaderMap,
     request: ListPromptsRequest,
 ) -> Result<ListAdminPromptsQuery, Response> {
-    let subject = resolve_subject(headers)?;
+    let subject = map_subject(trusted);
     let page_no = request.page.unwrap_or(DEFAULT_PAGE_NO);
     if page_no < 1 {
         return Err(bad_request("page must be greater than or equal to 1"));
@@ -322,11 +332,12 @@ fn build_list_prompts_query(
 }
 
 fn build_create_prompt_command(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: &HeaderMap,
     request: CreatePromptRequest,
 ) -> Result<CreateAdminPromptCommand, Response> {
     Ok(CreateAdminPromptCommand {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         prompt_key: normalize_required_key(request.prompt_key, "promptKey")?,
         name: normalize_required_text(request.name, "name", MAX_NAME_LEN)?,
         description: normalize_optional_text(
@@ -344,22 +355,24 @@ fn build_create_prompt_command(
 }
 
 fn build_list_versions_query(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: &HeaderMap,
     prompt_id: &str,
 ) -> Result<ListAdminPromptVersionsQuery, Response> {
     Ok(ListAdminPromptVersionsQuery {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         prompt_id: parse_positive_i64(prompt_id, "promptId")?,
     })
 }
 
 fn build_create_version_command(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: &HeaderMap,
     prompt_id: &str,
     request: CreatePromptVersionRequest,
 ) -> Result<CreateAdminPromptVersionCommand, Response> {
     Ok(CreateAdminPromptVersionCommand {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         prompt_id: parse_positive_i64(prompt_id, "promptId")?,
         version_no: normalize_required_key(request.version_no, "versionNo")?,
         title: normalize_required_text(request.title, "title", MAX_TITLE_LEN)?,
@@ -373,44 +386,48 @@ fn build_create_version_command(
 }
 
 fn build_publish_version_command(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: &HeaderMap,
     version_id: &str,
 ) -> Result<PublishAdminPromptVersionCommand, Response> {
     Ok(PublishAdminPromptVersionCommand {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         version_id: parse_positive_i64(version_id, "versionId")?,
     })
 }
 
 fn build_render_version_command(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: &HeaderMap,
     version_id: &str,
     request: RenderPromptVersionRequest,
 ) -> Result<RenderAdminPromptVersionCommand, Response> {
     Ok(RenderAdminPromptVersionCommand {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         version_id: parse_positive_i64(version_id, "versionId")?,
         variables: json_object_or_default(request.variables, "variables")?,
     })
 }
 
 fn build_list_bindings_query(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: &HeaderMap,
     prompt_id: &str,
 ) -> Result<ListAdminPromptBindingsQuery, Response> {
     Ok(ListAdminPromptBindingsQuery {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         prompt_id: parse_positive_i64(prompt_id, "promptId")?,
     })
 }
 
 fn build_create_binding_command(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: &HeaderMap,
     prompt_id: &str,
     request: CreatePromptBindingRequest,
 ) -> Result<CreateAdminPromptBindingCommand, Response> {
     Ok(CreateAdminPromptBindingCommand {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         prompt_id: parse_positive_i64(prompt_id, "promptId")?,
         prompt_version_id: normalize_optional_positive_i64(
             request.prompt_version_id,
@@ -426,12 +443,13 @@ fn build_create_binding_command(
 }
 
 fn build_update_binding_command(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: &HeaderMap,
     binding_id: &str,
     request: UpdatePromptBindingRequest,
 ) -> Result<UpdateAdminPromptBindingCommand, Response> {
     Ok(UpdateAdminPromptBindingCommand {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         binding_id: parse_positive_i64(binding_id, "bindingId")?,
         prompt_version_id: normalize_nullable_positive_i64(
             request.prompt_version_id,
@@ -458,21 +476,13 @@ fn build_update_binding_command(
     })
 }
 
-fn resolve_subject(headers: &HeaderMap) -> Result<AdminPromptSubject, Response> {
-    TrustedRequestSubject::from_headers(headers)
-        .map(|subject| AdminPromptSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            operator_id: subject.operator_id,
-            operator_type: subject.operator_type,
-        })
-        .map_err(|error| {
-            (
-                StatusCode::UNAUTHORIZED,
-                Json(PlusApiResult::error("4010", error.to_string())),
-            )
-                .into_response()
-        })
+fn map_subject(trusted: TrustedRequestSubject) -> AdminPromptSubject {
+    AdminPromptSubject {
+            tenant_id: trusted.tenant_id,
+            organization_id: trusted.organization_id,
+            operator_id: trusted.operator_id,
+            operator_type: trusted.operator_type,
+        }
 }
 
 fn normalize_required_key(value: String, field_name: &str) -> Result<String, Response> {

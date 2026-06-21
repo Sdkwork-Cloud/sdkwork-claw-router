@@ -254,42 +254,47 @@ pub fn admin_catalog_router_with_store(store: Arc<dyn AdminCatalogStore + Send +
 
 async fn list_categories(
     State(state): State<AdminCatalogState>,
-    headers: HeaderMap,
-    Query(query): Query<CatalogListQueryRequest>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Query(query): Query<CatalogListQueryRequest>
 ) -> Response {
-    list_response(headers, query, |query| state.store.list_categories(query)).await
+    list_response(trusted, query, |query| state.store.list_categories(query)).await
 }
 
 async fn list_products(
     State(state): State<AdminCatalogState>,
-    headers: HeaderMap,
-    Query(query): Query<CatalogListQueryRequest>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Query(query): Query<CatalogListQueryRequest>
 ) -> Response {
-    list_response(headers, query, |query| state.store.list_products(query)).await
+    list_response(trusted, query, |query| state.store.list_products(query)).await
 }
 
 async fn list_skus(
     State(state): State<AdminCatalogState>,
-    headers: HeaderMap,
-    Query(query): Query<CatalogListQueryRequest>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Query(query): Query<CatalogListQueryRequest>
 ) -> Response {
-    list_response(headers, query, |query| state.store.list_skus(query)).await
+    list_response(trusted, query, |query| state.store.list_skus(query)).await
 }
 
 async fn list_attributes(
     State(state): State<AdminCatalogState>,
-    headers: HeaderMap,
-    Query(query): Query<CatalogListQueryRequest>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Query(query): Query<CatalogListQueryRequest>
 ) -> Response {
-    list_response(headers, query, |query| state.store.list_attributes(query)).await
+    list_response(trusted, query, |query| state.store.list_attributes(query)).await
 }
 
 async fn list_category_attributes(
     State(state): State<AdminCatalogState>,
-    headers: HeaderMap,
-    Query(query): Query<CatalogListQueryRequest>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Query(query): Query<CatalogListQueryRequest>
 ) -> Response {
-    list_response(headers, query, |query| {
+    list_response(trusted, query, |query| {
         state.store.list_category_attributes(query)
     })
     .await
@@ -297,22 +302,24 @@ async fn list_category_attributes(
 
 async fn list_price_lists(
     State(state): State<AdminCatalogState>,
-    headers: HeaderMap,
-    Query(query): Query<CatalogListQueryRequest>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Query(query): Query<CatalogListQueryRequest>
 ) -> Response {
-    list_response(headers, query, |query| state.store.list_price_lists(query)).await
+    list_response(trusted, query, |query| state.store.list_price_lists(query)).await
 }
 
 async fn create_category(
     State(state): State<AdminCatalogState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
     let request = match parse_json_body::<CategoryMutationRequest>(&body, "category") {
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
-    let command = match category_command(&headers, None, request) {
+    let command = match category_command(trusted, &headers, None, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -324,9 +331,10 @@ async fn create_category(
 
 async fn update_category(
     State(state): State<AdminCatalogState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(category_id): Path<String>,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
     let request = match parse_json_body::<CategoryMutationRequest>(&body, "category") {
         Ok(request) => request,
@@ -336,7 +344,7 @@ async fn update_category(
         Ok(value) => value,
         Err(response) => return response,
     };
-    let command = match category_command(&headers, Some(category_id), request) {
+    let command = match category_command(trusted, &headers, Some(category_id), request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -348,13 +356,11 @@ async fn update_category(
 
 async fn delete_category(
     State(state): State<AdminCatalogState>,
-    headers: HeaderMap,
-    Path(category_id): Path<String>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Path(category_id): Path<String>
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let category_id = match normalize_required_text(category_id, "categoryId", MAX_ID_LEN) {
         Ok(value) => value,
         Err(response) => return response,
@@ -378,8 +384,9 @@ async fn delete_category(
 
 async fn initialize_category_seeds(
     State(state): State<AdminCatalogState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
     let request = match parse_json_body::<CategorySeedInitializeRequest>(&body, "category seeds") {
         Ok(request) => request,
@@ -400,10 +407,7 @@ async fn initialize_category_seeds(
         Err(response) => return response,
     };
     let command = AdminCategorySeedInitializeCommand {
-        subject: match resolve_subject(&headers) {
-            Ok(subject) => subject,
-            Err(response) => return response,
-        },
+        subject: map_subject(trusted),
         datasets,
         bundles,
         mode,
@@ -428,14 +432,15 @@ async fn initialize_category_seeds(
 
 async fn create_product(
     State(state): State<AdminCatalogState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
     let request = match parse_json_body::<ProductMutationRequest>(&body, "product") {
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
-    let command = match product_command(&headers, None, request) {
+    let command = match product_command(trusted, &headers, None, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -447,9 +452,10 @@ async fn create_product(
 
 async fn update_product(
     State(state): State<AdminCatalogState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(product_id): Path<String>,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
     let request = match parse_json_body::<ProductMutationRequest>(&body, "product") {
         Ok(request) => request,
@@ -459,7 +465,7 @@ async fn update_product(
         Ok(value) => value,
         Err(response) => return response,
     };
-    let command = match product_command(&headers, Some(product_id), request) {
+    let command = match product_command(trusted, &headers, Some(product_id), request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -471,13 +477,11 @@ async fn update_product(
 
 async fn delete_product(
     State(state): State<AdminCatalogState>,
-    headers: HeaderMap,
-    Path(product_id): Path<String>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Path(product_id): Path<String>
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let product_id = match normalize_required_text(product_id, "productId", MAX_ID_LEN) {
         Ok(value) => value,
         Err(response) => return response,
@@ -501,14 +505,15 @@ async fn delete_product(
 
 async fn create_sku(
     State(state): State<AdminCatalogState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
     let request = match parse_json_body::<SkuMutationRequest>(&body, "sku") {
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
-    let command = match sku_command(&headers, None, request) {
+    let command = match sku_command(trusted, &headers, None, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -520,9 +525,10 @@ async fn create_sku(
 
 async fn update_sku(
     State(state): State<AdminCatalogState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(sku_id): Path<String>,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
     let request = match parse_json_body::<SkuMutationRequest>(&body, "sku") {
         Ok(request) => request,
@@ -532,7 +538,7 @@ async fn update_sku(
         Ok(value) => value,
         Err(response) => return response,
     };
-    let command = match sku_command(&headers, Some(sku_id), request) {
+    let command = match sku_command(trusted, &headers, Some(sku_id), request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -544,13 +550,11 @@ async fn update_sku(
 
 async fn delete_sku(
     State(state): State<AdminCatalogState>,
-    headers: HeaderMap,
-    Path(sku_id): Path<String>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Path(sku_id): Path<String>
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let sku_id = match normalize_required_text(sku_id, "skuId", MAX_ID_LEN) {
         Ok(value) => value,
         Err(response) => return response,
@@ -574,14 +578,15 @@ async fn delete_sku(
 
 async fn create_attribute(
     State(state): State<AdminCatalogState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
     let request = match parse_json_body::<AttributeMutationRequest>(&body, "attribute") {
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
-    let command = match attribute_command(&headers, request) {
+    let command = match attribute_command(trusted, &headers, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -593,15 +598,16 @@ async fn create_attribute(
 
 async fn create_category_attribute(
     State(state): State<AdminCatalogState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
     let request =
         match parse_json_body::<CategoryAttributeMutationRequest>(&body, "category attribute") {
             Ok(request) => request,
             Err(message) => return bad_request(message),
         };
-    let command = match category_attribute_command(&headers, None, request) {
+    let command = match category_attribute_command(trusted, &headers, None, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -613,9 +619,10 @@ async fn create_category_attribute(
 
 async fn update_category_attribute(
     State(state): State<AdminCatalogState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(binding_id): Path<String>,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
     let request =
         match parse_json_body::<CategoryAttributeMutationRequest>(&body, "category attribute") {
@@ -626,7 +633,7 @@ async fn update_category_attribute(
         Ok(value) => value,
         Err(response) => return response,
     };
-    let command = match category_attribute_command(&headers, Some(binding_id), request) {
+    let command = match category_attribute_command(trusted, &headers, Some(binding_id), request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -638,13 +645,11 @@ async fn update_category_attribute(
 
 async fn delete_category_attribute(
     State(state): State<AdminCatalogState>,
-    headers: HeaderMap,
-    Path(binding_id): Path<String>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Path(binding_id): Path<String>
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let binding_id = match normalize_required_text(binding_id, "bindingId", MAX_ID_LEN) {
         Ok(value) => value,
         Err(response) => return response,
@@ -668,14 +673,15 @@ async fn delete_category_attribute(
 
 async fn create_price_list(
     State(state): State<AdminCatalogState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
     let request = match parse_json_body::<PriceListMutationRequest>(&body, "price list") {
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
-    let command = match price_list_command(&headers, request) {
+    let command = match price_list_command(trusted, &headers, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -686,7 +692,7 @@ async fn create_price_list(
 }
 
 async fn list_response<'a, F>(
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
     query: CatalogListQueryRequest,
     load: F,
 ) -> Response
@@ -695,7 +701,7 @@ where
         ListAdminCatalogRecordsQuery,
     ) -> crate::ports::AdminCatalogFuture<'a, AdminCatalogCollection>,
 {
-    let query = match validated_list_query(&headers, query) {
+    let query = match validated_list_query(trusted, query) {
         Ok(query) => query,
         Err(response) => return response,
     };
@@ -719,10 +725,10 @@ fn resource_result(result: Result<AdminCatalogJsonRecord, DomainError>, context:
 }
 
 fn validated_list_query(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
     request: CatalogListQueryRequest,
 ) -> Result<ListAdminCatalogRecordsQuery, Response> {
-    let subject = resolve_subject(headers)?;
+    let subject = map_subject(trusted);
     let page_no = request.page.unwrap_or(DEFAULT_PAGE_NO);
     if page_no < 1 {
         return Err(bad_request("page must be greater than or equal to 1"));
@@ -762,12 +768,13 @@ fn validated_list_query(
 }
 
 fn category_command(
+    trusted: TrustedRequestSubject,
     headers: &HeaderMap,
     category_id: Option<String>,
     request: CategoryMutationRequest,
 ) -> Result<AdminCategoryMutationCommand, Response> {
     Ok(AdminCategoryMutationCommand {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         category_id,
         category_no: normalize_required_text(request.category_no, "categoryNo", MAX_ID_LEN)?,
         parent_id: normalize_optional_text(request.parent_id, "parentId", MAX_ID_LEN)?,
@@ -810,12 +817,13 @@ fn normalize_category_seed_datasets(
 }
 
 fn product_command(
+    trusted: TrustedRequestSubject,
     headers: &HeaderMap,
     product_id: Option<String>,
     request: ProductMutationRequest,
 ) -> Result<AdminProductMutationCommand, Response> {
     Ok(AdminProductMutationCommand {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         product_id,
         spu_no: normalize_required_text(request.spu_no, "spuNo", MAX_ID_LEN)?,
         product_type: normalize_enum(request.product_type, "productType", PRODUCT_TYPES)?,
@@ -858,6 +866,7 @@ fn normalize_product_category_ids(
 }
 
 fn sku_command(
+    trusted: TrustedRequestSubject,
     headers: &HeaderMap,
     sku_id: Option<String>,
     request: SkuMutationRequest,
@@ -887,7 +896,7 @@ fn sku_command(
         });
     }
     Ok(AdminSkuMutationCommand {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         sku_id,
         sku_no: normalize_required_text(request.sku_no, "skuNo", MAX_ID_LEN)?,
         product_id: normalize_required_text(request.product_id, "productId", MAX_ID_LEN)?,
@@ -921,11 +930,12 @@ fn sku_command(
 }
 
 fn attribute_command(
+    trusted: TrustedRequestSubject,
     headers: &HeaderMap,
     request: AttributeMutationRequest,
 ) -> Result<AdminAttributeMutationCommand, Response> {
     Ok(AdminAttributeMutationCommand {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         attribute_no: normalize_required_text(request.attribute_no, "attributeNo", MAX_ID_LEN)?,
         name: normalize_required_text(request.name, "name", 256)?,
         value_type: normalize_enum(request.value_type, "valueType", ATTRIBUTE_VALUE_TYPES)?,
@@ -941,12 +951,13 @@ fn attribute_command(
 }
 
 fn category_attribute_command(
+    trusted: TrustedRequestSubject,
     headers: &HeaderMap,
     binding_id: Option<String>,
     request: CategoryAttributeMutationRequest,
 ) -> Result<AdminCategoryAttributeMutationCommand, Response> {
     Ok(AdminCategoryAttributeMutationCommand {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         binding_id,
         category_id: normalize_required_text(request.category_id, "categoryId", MAX_ID_LEN)?,
         attribute_id: normalize_required_text(request.attribute_id, "attributeId", MAX_ID_LEN)?,
@@ -962,11 +973,12 @@ fn category_attribute_command(
 }
 
 fn price_list_command(
+    trusted: TrustedRequestSubject,
     headers: &HeaderMap,
     request: PriceListMutationRequest,
 ) -> Result<AdminPriceListMutationCommand, Response> {
     Ok(AdminPriceListMutationCommand {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         price_list_no: normalize_required_text(request.price_list_no, "priceListNo", MAX_ID_LEN)?,
         currency_code: normalize_required_text(request.currency_code, "currencyCode", 16)?
             .to_ascii_uppercase(),
@@ -985,21 +997,13 @@ fn price_list_command(
     })
 }
 
-fn resolve_subject(headers: &HeaderMap) -> Result<AdminCatalogSubject, Response> {
-    TrustedRequestSubject::from_headers(headers)
-        .map(|subject| AdminCatalogSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            operator_id: subject.operator_id,
-            operator_type: subject.operator_type,
-        })
-        .map_err(|error| {
-            (
-                StatusCode::UNAUTHORIZED,
-                Json(PlusApiResult::error("4010", error.to_string())),
-            )
-                .into_response()
-        })
+fn map_subject(trusted: TrustedRequestSubject) -> AdminCatalogSubject {
+    AdminCatalogSubject {
+            tenant_id: trusted.tenant_id,
+            organization_id: trusted.organization_id,
+            operator_id: trusted.operator_id,
+            operator_type: trusted.operator_type,
+        }
 }
 
 fn parse_json_body<T>(body: &Bytes, resource: &str) -> Result<T, String>

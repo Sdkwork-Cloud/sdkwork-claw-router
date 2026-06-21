@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import { ChevronDown, Database, Eye, HardDrive, Layers, RefreshCw, Search, Trash2, Zap } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { BusinessStatePanel, BusinessStateTableRow } from 'sdkwork-clawrouter-pc-commons/components/BusinessState';
-import { ConfirmDialog } from 'sdkwork-clawrouter-pc-commons/components/ConfirmDialog';
+import { BusinessStatePanel, BusinessStateTableRow } from '@sdkwork/clawrouter-pc-commons/components/BusinessState';
+import { ConfirmDialog } from '@sdkwork/clawrouter-pc-commons/components/ConfirmDialog';
 import {
   AdminCacheService,
   type CacheInstance,

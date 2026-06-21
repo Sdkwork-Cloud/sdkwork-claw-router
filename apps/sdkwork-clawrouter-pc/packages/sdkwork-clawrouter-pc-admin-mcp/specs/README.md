@@ -10,7 +10,7 @@ Root SDKWork standards remain authoritative. Local component specs can narrow or
 | --- | --- |
 | Name | `sdkwork-clawrouter-pc-admin-mcp` |
 | Type | `node-package` |
-| Root | `sdkwork-claw-router/apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-mcp` |
+| Root | `sdkwork-clawrouter/apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-mcp` |
 | Domain | `intelligence` |
 | Capability | `mcp` |
 | Languages | `javascript` |

@@ -1,4 +1,4 @@
-import { getStoredAppSessionAccessToken } from './app-session-token.ts';
+import { getStoredAppSessionAccessToken, resolveStoredPortalTenantId } from './app-session-token.ts';
 
 function normalizeBearerToken(value?: string): string {
   const normalized = (value ?? '').trim();
@@ -65,7 +65,7 @@ export function resolveSessionAccessTokenClaim(
 }
 
 export function resolveSessionTenantId(): string {
-  const tenantId = resolveSessionAccessTokenClaim('tenant_id');
+  const tenantId = resolveStoredPortalTenantId();
   if (!tenantId) {
     throw new Error(
       'Authenticated IAM access token with tenant_id claim is required. Log in through the SaaS dual-token flow instead of configuring tenant env variables.',

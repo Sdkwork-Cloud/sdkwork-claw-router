@@ -1,6 +1,6 @@
 ---
 name: clawrouter-app-sdk-integration
-description: Use when sdkwork-claw-router app/frontend product code must call product-surface APIs through the generated @sdkwork/clawrouter-app-sdk instead of raw fetch, axios, manual headers, compat facades, or local SDK forks.
+description: Use when sdkwork-clawrouter app/frontend product code must call product-surface APIs through the generated @sdkwork/clawrouter-app-sdk instead of raw fetch, axios, manual headers, compat facades, or local SDK forks.
 ---
 
 # ClawRouter App SDK Integration
@@ -29,7 +29,7 @@ Do not change `apps/sdkwork-clawrouter-pc` UI visual design while doing app SDK 
 3. Import from the shared portal SDK boundary instead of constructing a client inside feature packages:
 
 ```ts
-import { getClawRouterAppSdkClient } from 'sdkwork-claw-router-commons/runtime';
+import { getClawRouterAppSdkClient } from 'sdkwork-clawrouter-commons/runtime';
 ```
 
 4. Let feature modules call semantic generated methods such as `client.app.getApps`, `client.skill.getSkills`, `client.feed.fetchForumFeeds`, or `client.comment.fetchForumComments`.
@@ -38,7 +38,7 @@ import { getClawRouterAppSdkClient } from 'sdkwork-claw-router-commons/runtime';
 
 ## Regeneration Commands
 
-Run from `apps/sdkwork-claw-router`:
+Run from `apps/sdkwork-clawrouter`:
 
 ```powershell
 python -B -m tools.api_contract_manifest

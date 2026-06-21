@@ -1,7 +1,7 @@
 use std::sync::Arc;
 
 use axum::extract::{Query, State};
-use axum::http::{HeaderMap, StatusCode};
+use axum::http::StatusCode;
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
@@ -9,6 +9,7 @@ use sdkwork_claw_http::TrustedRequestSubject;
 use serde::Deserialize;
 
 use crate::api::response::PlusApiResult;
+use crate::api::subject::optional_subject_or_unauthorized;
 use crate::ports::{
     DashboardOverviewQuery, DashboardOverviewReadFuture, DashboardOverviewReadStore,
     DashboardOverviewSnapshot, DashboardOverviewSubject,
@@ -107,23 +108,17 @@ fn app_dashboard_overview_router_with_state(
 
 async fn fetch_dashboard_overview(
     State(state): State<AppDashboardOverviewState>,
-    headers: HeaderMap,
+    subject: Option<TrustedRequestSubject>,
     Query(query): Query<AppDashboardOverviewQuery>,
 ) -> Response {
-    let subject = match TrustedRequestSubject::from_headers(&headers) {
-        Ok(subject) => Some(DashboardOverviewSubject {
+    let subject = match optional_subject_or_unauthorized(subject, state.require_subject) {
+        Ok(Some(subject)) => Some(DashboardOverviewSubject {
             tenant_id: subject.tenant_id,
             organization_id: subject.organization_id,
             user_id: subject.user_id,
         }),
-        Err(error) if state.require_subject => {
-            return (
-                StatusCode::UNAUTHORIZED,
-                Json(PlusApiResult::error("4010", error.to_string())),
-            )
-                .into_response();
-        }
-        Err(_) => None,
+        Ok(None) => None,
+        Err(response) => return response,
     };
 
     let validated_query = match validate_dashboard_overview_query(query) {

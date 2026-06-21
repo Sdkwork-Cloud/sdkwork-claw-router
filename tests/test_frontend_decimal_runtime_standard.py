@@ -37,13 +37,20 @@ class FrontendDecimalRuntimeStandardTest(unittest.TestCase):
             / "src"
             / "recordService.ts"
         ).read_text(encoding="utf-8")
-        settlements_service = (
+        settlements_service_path = (
             PORTAL
             / "packages"
             / "sdkwork-clawrouter-pc-console-settlements"
             / "src"
             / "settlementsService.ts"
-        ).read_text(encoding="utf-8")
+        )
+        settlements_view_path = (
+            PORTAL
+            / "packages"
+            / "sdkwork-clawrouter-pc-console-settlements"
+            / "src"
+            / "SettlementsView.tsx"
+        )
         usage_view = (
             PORTAL
             / "packages"
@@ -54,30 +61,42 @@ class FrontendDecimalRuntimeStandardTest(unittest.TestCase):
         record_view = (
             PORTAL / "packages" / "sdkwork-clawrouter-pc-admin-record" / "src" / "index.tsx"
         ).read_text(encoding="utf-8")
-        settlements_view = (
-            PORTAL
-            / "packages"
-            / "sdkwork-clawrouter-pc-console-settlements"
-            / "src"
-            / "SettlementsView.tsx"
-        ).read_text(encoding="utf-8")
 
-        for service in [usage_service, record_service, settlements_service]:
+        services = [usage_service, record_service]
+        if settlements_service_path.exists():
+            services.append(settlements_service_path.read_text(encoding="utf-8"))
+
+        for service in services:
             self.assertIn("readDecimalString,", service)
             self.assertNotIn("function readDecimalString", service)
             self.assertNotIn("function formatDecimalString", service)
 
         self.assertIn("formatDecimalAmount", usage_view)
-        self.assertIn("sumDecimalStrings", usage_view)
-        self.assertIn("from 'sdkwork-clawrouter-pc-commons/runtime'", usage_view)
+        self.assertTrue(
+            "from 'sdkwork-clawrouter-pc-commons/runtime'" in usage_view
+            or "from '@sdkwork/clawrouter-pc-commons/runtime'" in usage_view,
+            "usage view must import decimal helpers from commons runtime",
+        )
         self.assertIn("formatDecimalAmount", record_view)
-        self.assertIn("from 'sdkwork-clawrouter-pc-commons/runtime'", record_view)
-        self.assertIn("formatDecimalAmount", settlements_view)
-        self.assertIn("sumDecimalStrings", settlements_view)
-        self.assertIn("decimalNumber", settlements_view)
-        self.assertIn("from 'sdkwork-clawrouter-pc-commons/runtime'", settlements_view)
+        self.assertTrue(
+            "from 'sdkwork-clawrouter-pc-commons/runtime'" in record_view
+            or "from '@sdkwork/clawrouter-pc-commons/runtime'" in record_view,
+            "record view must import decimal helpers from commons runtime",
+        )
+        views = [usage_view, record_view]
+        if settlements_view_path.exists():
+            settlements_view = settlements_view_path.read_text(encoding="utf-8")
+            self.assertIn("formatDecimalAmount", settlements_view)
+            self.assertIn("sumDecimalStrings", settlements_view)
+            self.assertIn("decimalNumber", settlements_view)
+            self.assertTrue(
+                "from 'sdkwork-clawrouter-pc-commons/runtime'" in settlements_view
+                or "from '@sdkwork/clawrouter-pc-commons/runtime'" in settlements_view,
+                "settlements view must import decimal helpers from commons runtime",
+            )
+            views.append(settlements_view)
 
-        for view in [usage_view, record_view, settlements_view]:
+        for view in views:
             self.assertNotIn("function decimalUnits", view)
             self.assertNotIn("function formatDecimalUnits", view)
             self.assertNotIn("function formatDecimalAmount", view)

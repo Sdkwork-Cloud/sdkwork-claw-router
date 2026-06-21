@@ -2,14 +2,14 @@
 
 ## Goal
 
-Make single-port integrated startup the default development topology for `sdkwork-claw-router`
+Make single-port integrated startup the default development topology for `sdkwork-clawrouter`
 and sibling `sdkwork-api-gateway`, so product developers no longer need split-mode multi-port
 dependency orchestration for normal local work.
 
 ## Problem
 
 The current gateway and product development surfaces expose or document split-mode startup paths
-that depend on many per-module upstream ports. While `sdkwork-claw-router` already defaults to an
+that depend on many per-module upstream ports. While `sdkwork-clawrouter` already defaults to an
 all-in-one edge server, the surrounding scripts, help text, docs, and sibling `sdkwork-api-gateway`
 defaults still present multi-port split topology as a normal development path. This leaks platform
 integration complexity into day-to-day product development, increases port conflicts, and makes the
@@ -31,8 +31,8 @@ it must not remain visible as the standard `dev` path.
 
 ### In Scope
 
-- `sdkwork-claw-router` root scripts and help text
-- `sdkwork-claw-router` workspace startup docs and tests that define the default dev topology
+- `sdkwork-clawrouter` root scripts and help text
+- `sdkwork-clawrouter` workspace startup docs and tests that define the default dev topology
 - sibling `sdkwork-api-gateway` default `pnpm dev` behavior and development config template
 - related documentation that currently teaches split-mode or many explicit dependency ports as the
   standard local startup path
@@ -45,7 +45,7 @@ it must not remain visible as the standard `dev` path.
 
 ## Target Behavior
 
-### sdkwork-claw-router
+### sdkwork-clawrouter
 
 - `pnpm dev` remains single-port and all-in-one
 - normal help text and examples describe one entry port only
@@ -107,7 +107,7 @@ Rejected for now.
 
 The new architecture is “single entrypoint first, split hidden behind validation boundaries”.
 
-For `sdkwork-claw-router`, the all-in-one edge runtime at one port remains the public local
+For `sdkwork-clawrouter`, the all-in-one edge runtime at one port remains the public local
 contract. Product-facing scripts and docs should describe only that path. For `sdkwork-api-gateway`,
 the default development server should also resolve to a single integrated runtime rather than a
 split upstream template. Where embedded appbase routing is already supported, that becomes the
@@ -116,7 +116,7 @@ validation commands, not `pnpm dev`.
 
 ## File Strategy
 
-### sdkwork-claw-router
+### sdkwork-clawrouter
 
 - update `package.json` script surface only where default/developer-facing commands still expose
   split paths
@@ -142,7 +142,7 @@ validation commands, not `pnpm dev`.
 
 ## Testing Strategy
 
-- `sdkwork-claw-router`: targeted script/help/dry-run tests proving default startup remains
+- `sdkwork-clawrouter`: targeted script/help/dry-run tests proving default startup remains
   all-in-one and single-port oriented
 - `sdkwork-api-gateway`: targeted config or runtime tests proving default dev config is integrated
   and does not require the large split upstream set
@@ -150,7 +150,7 @@ validation commands, not `pnpm dev`.
 
 ## Acceptance Criteria
 
-- `sdkwork-claw-router` default development docs and scripts describe one public dev port
+- `sdkwork-clawrouter` default development docs and scripts describe one public dev port
 - `sdkwork-api-gateway` default `pnpm dev` no longer uses the large split upstream template
 - split-mode remains, if at all, only in explicit validation/test paths
 - no normal developer workflow requires managing the long upstream port list

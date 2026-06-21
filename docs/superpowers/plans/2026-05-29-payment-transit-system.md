@@ -190,7 +190,7 @@ Expected checks:
 Expected modified generated files:
 
 - `generated/schema/postgres/schema.sql`
-- `generated/schema/registry/sdkwork-claw-router.tables.effective.yaml`
+- `generated/schema/registry/sdkwork-clawrouter.tables.effective.yaml`
 - `generated/openapi/schema-components.yaml`
 
 ## Task 4: Adapter Runtime Skeleton

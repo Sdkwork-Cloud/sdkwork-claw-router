@@ -60,6 +60,9 @@ const APPSTORE_FOUNDATION_SQL: &str = include_str!(
 const CLAWROUTER_LEGACY_PROJECTION_SQL: &str = include_str!(
     "../../../../../database/ddl/baseline/postgres/0002_clawrouter_legacy_projection.sql"
 );
+const FORUM_RUNTIME_PROJECTION_SQL: &str = include_str!(
+    "../../../../../database/ddl/baseline/postgres/0003_forum_runtime_projection.sql"
+);
 const BUNDLED_MODELS_CATALOG_MANIFEST: &str =
     include_str!("../../../../../data/sdkwork-models/sdkwork-models.json");
 pub const CURRENT_SCHEMA_VERSION: &str = "2026.06.20.6";
@@ -1078,6 +1081,10 @@ impl DatabaseInstaller {
                     sqlite_changed = true;
                 }
                 sqlite_changed |= ensure_sqlite_appstore_module_schema_columns(pool).await?;
+                if !sqlite_forum_runtime_projection_schema_tables_exist(pool).await? {
+                    apply_sqlite_forum_runtime_projection_schema(pool).await?;
+                    sqlite_changed = true;
+                }
                 if !sqlite_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
                     apply_sqlite_clawrouter_legacy_projection_schema(pool).await?;
                     sqlite_changed = true;
@@ -1109,6 +1116,10 @@ impl DatabaseInstaller {
                     changed = true;
                 }
                 changed |= ensure_postgres_appstore_module_schema_columns(pool).await?;
+                if !postgres_forum_runtime_projection_schema_tables_exist(pool).await? {
+                    apply_postgres_forum_runtime_projection_schema(pool).await?;
+                    changed = true;
+                }
                 if !postgres_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
                     apply_postgres_clawrouter_legacy_projection_schema(pool).await?;
                     changed = true;
@@ -1996,6 +2007,7 @@ async fn prepare_sqlite_schema_with_catalog_version(
     apply_sqlite_appbase_commerce_schema(pool).await?;
     apply_sqlite_appbase_iam_oauth_schema(pool).await?;
     apply_sqlite_appstore_module_schema(pool).await?;
+    apply_sqlite_forum_runtime_projection_schema(pool).await?;
     apply_sqlite_clawrouter_legacy_projection_schema(pool).await?;
     record_sqlite_migration_completed(
         pool,
@@ -2227,6 +2239,7 @@ async fn prepare_postgres_schema_with_catalog_version(
     apply_postgres_appbase_commerce_schema(pool).await?;
     apply_postgres_appbase_iam_oauth_schema(pool).await?;
     apply_postgres_appstore_module_schema(pool).await?;
+    apply_postgres_forum_runtime_projection_schema(pool).await?;
     apply_postgres_clawrouter_legacy_projection_schema(pool).await?;
     record_postgres_migration_completed(
         pool,
@@ -2369,6 +2382,9 @@ async fn repair_sqlite_installation(
     }
     if !sqlite_appstore_module_schema_tables_exist(pool).await? {
         apply_sqlite_appstore_module_schema(pool).await?;
+    }
+    if !sqlite_forum_runtime_projection_schema_tables_exist(pool).await? {
+        apply_sqlite_forum_runtime_projection_schema(pool).await?;
     }
     if !sqlite_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
         apply_sqlite_clawrouter_legacy_projection_schema(pool).await?;
@@ -2521,6 +2537,9 @@ async fn repair_postgres_installation(
     }
     if !postgres_appstore_module_schema_tables_exist(pool).await? {
         apply_postgres_appstore_module_schema(pool).await?;
+    }
+    if !postgres_forum_runtime_projection_schema_tables_exist(pool).await? {
+        apply_postgres_forum_runtime_projection_schema(pool).await?;
     }
     if !postgres_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
         apply_postgres_clawrouter_legacy_projection_schema(pool).await?;
@@ -5763,7 +5782,7 @@ async fn upsert_sqlite_installing_state(
         INSERT INTO system_installation_state
             (id, installation_id, environment, database_engine, schema_version, catalog_version, seed_profile, status, installed_at, upgraded_at, metadata)
         VALUES
-            (1, 'sdkwork-claw-router', ?, 'sqlite', ?, ?, ?, 'installing', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, ?)
+            (1, 'sdkwork-clawrouter', ?, 'sqlite', ?, ?, ?, 'installing', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, ?)
         ON CONFLICT(id) DO UPDATE SET
             environment = excluded.environment,
             schema_version = excluded.schema_version,
@@ -5795,7 +5814,7 @@ async fn upsert_postgres_installing_state(
         INSERT INTO system_installation_state
             (id, installation_id, environment, database_engine, schema_version, catalog_version, seed_profile, status, installed_at, upgraded_at, metadata)
         VALUES
-            (1, 'sdkwork-claw-router', $1, 'postgres', $2, $3, $4, 'installing', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, $5::jsonb)
+            (1, 'sdkwork-clawrouter', $1, 'postgres', $2, $3, $4, 'installing', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, $5::jsonb)
         ON CONFLICT(id) DO UPDATE SET
             environment = excluded.environment,
             schema_version = excluded.schema_version,
@@ -6488,6 +6507,108 @@ async fn apply_postgres_clawrouter_legacy_projection_schema(
         "clawrouter-legacy-projection-schema",
         CURRENT_SCHEMA_VERSION,
         CLAWROUTER_LEGACY_PROJECTION_SQL,
+    )
+    .await?;
+    Ok(())
+}
+
+fn forum_runtime_projection_table_names() -> Vec<&'static str> {
+    vec![
+        "content_reaction",
+        "content_forum_post",
+        "content_comment",
+        "content_favorite",
+    ]
+}
+
+fn forum_runtime_projection_postgres_schema_statements() -> Vec<String> {
+    strip_line_comments(FORUM_RUNTIME_PROJECTION_SQL)
+        .split(';')
+        .map(str::trim)
+        .filter(|statement| !statement.is_empty())
+        .map(str::to_owned)
+        .collect()
+}
+
+fn forum_runtime_projection_sqlite_schema_statements() -> Vec<String> {
+    forum_runtime_projection_postgres_schema_statements()
+        .into_iter()
+        .map(|statement| postgres_statement_to_sqlite(statement.as_str()))
+        .collect()
+}
+
+async fn sqlite_forum_runtime_projection_schema_tables_exist(
+    pool: &SqlitePool,
+) -> Result<bool, sqlx::Error> {
+    let installed_tables = sqlite_string_set(
+        pool,
+        r#"
+        SELECT name
+        FROM sqlite_master
+        WHERE type = 'table'
+        "#,
+    )
+    .await?;
+    Ok(string_set(forum_runtime_projection_table_names()).is_subset(&installed_tables))
+}
+
+async fn postgres_forum_runtime_projection_schema_tables_exist(
+    pool: &PgPool,
+) -> Result<bool, sqlx::Error> {
+    let installed_tables = postgres_string_set(
+        pool,
+        r#"
+        SELECT table_name
+        FROM information_schema.tables
+        WHERE table_schema = current_schema()
+          AND table_type = 'BASE TABLE'
+        "#,
+    )
+    .await?;
+    Ok(string_set(forum_runtime_projection_table_names()).is_subset(&installed_tables))
+}
+
+async fn apply_sqlite_forum_runtime_projection_schema(
+    pool: &SqlitePool,
+) -> Result<(), DatabaseInstallError> {
+    record_sqlite_migration_started(
+        pool,
+        "forum-runtime-projection-schema",
+        CURRENT_SCHEMA_VERSION,
+        FORUM_RUNTIME_PROJECTION_SQL,
+    )
+    .await?;
+    for statement in forum_runtime_projection_sqlite_schema_statements() {
+        execute_sqlite_statement(pool, statement.as_str()).await?;
+    }
+    record_sqlite_migration_completed(
+        pool,
+        "forum-runtime-projection-schema",
+        CURRENT_SCHEMA_VERSION,
+        FORUM_RUNTIME_PROJECTION_SQL,
+    )
+    .await?;
+    Ok(())
+}
+
+async fn apply_postgres_forum_runtime_projection_schema(
+    pool: &PgPool,
+) -> Result<(), DatabaseInstallError> {
+    record_postgres_migration_started(
+        pool,
+        "forum-runtime-projection-schema",
+        CURRENT_SCHEMA_VERSION,
+        FORUM_RUNTIME_PROJECTION_SQL,
+    )
+    .await?;
+    for statement in forum_runtime_projection_postgres_schema_statements() {
+        execute_postgres_statement(pool, statement.as_str()).await?;
+    }
+    record_postgres_migration_completed(
+        pool,
+        "forum-runtime-projection-schema",
+        CURRENT_SCHEMA_VERSION,
+        FORUM_RUNTIME_PROJECTION_SQL,
     )
     .await?;
     Ok(())

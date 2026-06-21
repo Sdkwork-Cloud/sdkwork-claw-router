@@ -89,7 +89,7 @@ class SdkworkRouterApiPackageStandardTest(unittest.TestCase):
                 self.assertEqual(spec["kind"], "sdkwork.component.spec")
                 self.assertEqual(spec["component"]["name"], package_name)
                 self.assertEqual(spec["component"]["type"], "rust-route-crate")
-                self.assertEqual(spec["component"]["root"], f"sdkwork-claw-router/crates/{package_name}")
+                self.assertEqual(spec["component"]["root"], f"sdkwork-clawrouter/crates/{package_name}")
                 self.assertEqual(spec["component"]["languages"], ["rust"])
                 canonical_specs = {entry["file"] for entry in spec["canonicalSpecs"]}
                 self.assertIn("API_SPEC.md", canonical_specs)
@@ -157,9 +157,9 @@ class SdkworkRouterApiPackageStandardTest(unittest.TestCase):
         )
 
         self.assertIn("build_sdkwork_api_gateway_router_with_embedded_routers", gateway_runtime)
-        self.assertIn('CLAW_ROUTER_APP_API_SERVICE_ID: &str = "sdkwork-claw-router-app-api"', gateway_runtime)
+        self.assertIn('CLAW_ROUTER_APP_API_SERVICE_ID: &str = "sdkwork-clawrouter-app-api"', gateway_runtime)
         self.assertIn(
-            'CLAW_ROUTER_BACKEND_API_SERVICE_ID: &str = "sdkwork-claw-router-backend-api"',
+            'CLAW_ROUTER_BACKEND_API_SERVICE_ID: &str = "sdkwork-clawrouter-backend-api"',
             gateway_runtime,
         )
         self.assertIn("claw_router_gateway_dependency_surfaces", gateway_runtime)
@@ -189,7 +189,7 @@ class SdkworkRouterApiPackageStandardTest(unittest.TestCase):
             with self.subTest(package=package_name):
                 self.assertIn(f'pub const API_AUTHORITY: &str = "{api_authority}";', manifest)
                 self.assertIn(f'pub const SDK_FAMILY: &str = "{sdk_family}";', manifest)
-                self.assertNotIn("sdkwork-claw-router.", manifest)
+                self.assertNotIn("sdkwork-clawrouter.", manifest)
 
 
 if __name__ == "__main__":

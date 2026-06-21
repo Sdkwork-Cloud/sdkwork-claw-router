@@ -1,4 +1,4 @@
-schema: sdkwork-claw-router-frontend-field-contracts
+schema: sdkwork-clawrouter-frontend-field-contracts
 version: 0.1.0
 source: apps/sdkwork-clawrouter-pc/src/App.tsx
 rule: every actual portal route must be backed by explicit schema tables; page-critical fields must map to generated columns
@@ -48,6 +48,8 @@ fragments:
 - operations/app-ecosystem.yaml
 - operations/app-iam.yaml
 - operations/app-intelligence.yaml
+- operations/app-memory.yaml
+- operations/app-notification.yaml
 - operations/app-runtime.yaml
 - operations/app-site.yaml
 - operations/backend-ai.yaml

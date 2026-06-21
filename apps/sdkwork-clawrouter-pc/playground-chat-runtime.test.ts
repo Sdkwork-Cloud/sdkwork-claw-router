@@ -1141,14 +1141,14 @@ test("chat markdown renders common inline math without corrupting code spans or 
 test("chat markdown wraps long links and identifiers inside the message column", () => {
   const html = renderToStaticMarkup(React.createElement(ChatMarkdownMessage, {
     content: [
-      "See https://example.com/docs/sdkwork-claw-router-runtime-streaming-chat-markdown-rendering-professional-long-link",
+      "See https://example.com/docs/sdkwork-clawrouter-runtime-streaming-chat-markdown-rendering-professional-long-link",
       "",
       "- extremelyLongUnbrokenIdentifierThatShouldNeverForceTheChatMessageListWiderThanTheViewport",
     ].join("\n"),
     tone: "assistant",
   }));
 
-  assert.match(html, /href="https:\/\/example.com\/docs\/sdkwork-claw-router-runtime-streaming-chat-markdown-rendering-professional-long-link"/);
+  assert.match(html, /href="https:\/\/example.com\/docs\/sdkwork-clawrouter-runtime-streaming-chat-markdown-rendering-professional-long-link"/);
   assert.match(html, /class="[^"]*\[overflow-wrap:anywhere\]/);
   assert.match(html, /<li class="[^"]*\[overflow-wrap:anywhere\]/);
 });
@@ -1458,7 +1458,7 @@ test("playground SSE runtime errors are translated before display", () => {
   assert.match(playgroundChatI18nSource, /"playground\.chat\.errors\.runtimeUnavailable"/);
 });
 
-test("agent playground uses standard Agent and Runtime SDK resources with SSE interaction", () => {
+test("agent playground uses runtime SSE without legacy agent session APIs", () => {
   const source = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/playgroundGenerationService.ts");
   const operationsSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts");
   const facadeSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/playgroundService.ts");
@@ -1468,18 +1468,14 @@ test("agent playground uses standard Agent and Runtime SDK resources with SSE in
   const commonsRuntimeSource = readPortalFile("./packages/sdkwork-clawrouter-pc-commons/src/runtime.ts");
 
   assert.match(source, /from '\.\/appRuntimeApiOperations\.ts'/);
-  assert.match(source, /listAgentDefinitions/);
-  assert.match(source, /createAgentDefinition/);
-  assert.match(source, /createAgentSession/);
-  assert.match(source, /createAgentRun/);
-  assert.match(source, /createAgentRunStep/);
   assert.match(source, /createRuntimeInvocation/);
   assert.match(source, /streamRuntimeEvents/);
   assert.match(source, /completeRuntimeInvocation/);
-  assert.match(source, /completeAgentRunStep/);
-  assert.match(source, /completeAgentRun/);
+  assert.doesNotMatch(source, /listAgentDefinitions/);
+  assert.doesNotMatch(source, /createAgentSession/);
+  assert.doesNotMatch(source, /createAgentRun/);
+  assert.doesNotMatch(source, /completeAgentRun/);
   assert.doesNotMatch(source, /getClawRouterAppSdkClient/);
-  assert.doesNotMatch(source, /ai\.generation\.agent\.runs\.create/);
   assert.doesNotMatch(source, /client\.agents\./);
   assert.doesNotMatch(source, /client\.runtime\./);
   assert.match(facadeSource, /from '@sdkwork\/generations-pc-workspace\/generation-service'/);
@@ -1489,11 +1485,7 @@ test("agent playground uses standard Agent and Runtime SDK resources with SSE in
   assert.doesNotMatch(facadeSource, /loadSdkworkGenerationServiceFactory/);
   assert.doesNotMatch(facadeSource, /createFallbackSdkworkGenerationService/);
   assert.doesNotMatch(facadeSource, /runs\.length === 0 && workspace\.runs\.length > 0/);
-  assert.match(operationsSource, /client\.agents\.agentDefinitions\.list/);
-  assert.match(operationsSource, /client\.agents\.agentSessions\.create/);
-  assert.match(operationsSource, /client\.agents\.agentRuns\.create/);
-  assert.match(operationsSource, /client\.agents\.agentRunSteps\.create/);
-  assert.match(operationsSource, /client\.agents\.agentRunSteps\.submit/);
+  assert.doesNotMatch(operationsSource, /client\.agents\./);
   assert.match(operationsSource, /client\.runtime\.invocations\.create/);
   assert.match(operationsSource, /streamRuntimeInvocationEvents/);
   assert.match(runtimeStreamSource, /sdkwork-clawrouter-pc-commons\/runtime/);
@@ -1702,7 +1694,7 @@ test("video generation reference assets sit above the prompt and follow model mo
   assert(promptPosition >= 0, "Prompt textarea should be rendered by AssetGenerationPanel");
   assert(uploaderPosition < promptPosition, "Video reference asset uploader should sit above the prompt textarea");
   assert.match(typeSource, /export interface PlaygroundReferenceAssetInput/);
-  assert.match(typeSource, /import type \{ ClawRouterMediaResource \} from 'sdkwork-clawrouter-pc-commons\/runtime';/);
+  assert.match(typeSource, /import type \{ ClawRouterMediaResource \} from '@sdkwork\/clawrouter-pc-commons\/runtime';/);
   assert.match(typeSource, /kind: 'image' \| 'audio' \| 'video';/);
   assert.match(typeSource, /role: 'first_frame' \| 'last_frame' \| 'reference_image' \| 'reference_audio' \| 'reference_video';/);
   assert.match(typeSource, /resource: ClawRouterMediaResource;/);
@@ -2093,15 +2085,13 @@ test("agent generation keeps text-only output on agent history instead of preten
   assert.match(generationServiceSource, /type:\s*mapSdkworkGenerationModalityToHistoryType\(targetType\)/);
 });
 
-test("app OpenAPI exposes product Chat Memory Runtime routes without legacy ai prefix", () => {
+test("app OpenAPI exposes product Chat and Runtime routes without legacy ai prefix or memory ownership", () => {
   const openapi = JSON.parse(readWorkspaceFile("generated/openapi/clawrouter-app-openapi.json"));
   const paths = Object.keys(openapi.paths ?? {});
 
   assert(paths.includes("/app/v3/api/chat/conversations"));
   assert(paths.includes("/app/v3/api/chat/conversations/{conversationId}/turns"));
   assert(paths.includes("/app/v3/api/chat/conversations/{conversationId}/turns/{turnId}/response"));
-  assert(paths.includes("/app/v3/api/memory/spaces"));
-  assert(paths.includes("/app/v3/api/memory/spaces/{spaceId}/entries"));
   assert(paths.includes("/app/v3/api/runtime/invocations"));
   assert(paths.includes("/app/v3/api/runtime/invocations/{invocationId}/complete"));
   assert(paths.includes("/app/v3/api/runtime/invocations/{invocationId}/events"));
@@ -2111,18 +2101,33 @@ test("app OpenAPI exposes product Chat Memory Runtime routes without legacy ai p
   assert(!paths.some((path) => path.startsWith("/app/v3/api/ai/chat")));
   assert(!paths.some((path) => path.startsWith("/app/v3/api/ai/memory")));
   assert(!paths.some((path) => path.startsWith("/app/v3/api/ai/runtime")));
+  assert(!paths.some((path) => path.startsWith("/app/v3/api/memory")));
 });
 
-test("app SDK sends JSON bodies for product Memory and Runtime mutations", () => {
-  const memorySource = readWorkspaceFile("sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/memory.ts");
+test("playground memory operations use sdkwork-memory app SDK instead of clawrouter app SDK", () => {
+  const operationsSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts");
+  const commonsSdkSource = readPortalFile("./packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts");
+  const memorySdkSource = readWorkspaceFile("../sdkwork-memory/sdks/sdkwork-memory-app-sdk/sdkwork-memory-app-sdk-typescript/generated/server-openapi/src/api/memory.ts");
+
+  assert.match(operationsSource, /getSdkworkMemoryAppSdkClient/);
+  assert.match(operationsSource, /client\.memory\.spaces\.list/);
+  assert.match(operationsSource, /client\.memory\.list\(\{ spaceId, pageSize: params\.pageSize \}\)/);
+  assert.match(operationsSource, /client\.memory\.create\(/);
+  assert.match(operationsSource, /client\.memory\.retrieve\(entryId\)/);
+  assert.match(operationsSource, /export async function listMemorySpaces[\s\S]*?const client = memoryClient\(sdkClient\)/);
+  assert.doesNotMatch(operationsSource, /const client = appClient\(sdkClient\);[\s\n]*return client\.memory\./);
+  assert.match(commonsSdkSource, /@sdkwork\/memory-app-sdk/);
+  assert.match(commonsSdkSource, /getSdkworkMemoryAppSdkClient/);
+  assert.match(commonsSdkSource, /VITE_SDKWORK_MEMORY_APP_API_BASE_URL/);
+  assert.match(memorySdkSource, /appApiPath\(`\/memory\/spaces`\)/);
+  assert.match(memorySdkSource, /appApiPath\(`\/memory\/memories`\)/);
+});
+
+test("app SDK sends JSON bodies for product Runtime mutations", () => {
   const runtimeSource = readWorkspaceFile("sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/runtime.ts");
   const runtimeEventItemSource = readWorkspaceFile("sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/types/runtime-event-item.ts");
   const openapi = JSON.parse(readWorkspaceFile("generated/openapi/clawrouter-app-openapi.json"));
 
-  assert.match(memorySource, /async create\(body: MemorySpaceCreateRequest, params: MemorySpacesCreateParams\)/);
-  assert.match(memorySource, /post<SpacesCreateResult>\(appApiPath\(`\/memory\/spaces`\), body, undefined, requestHeaders, 'application\/json'\)/);
-  assert.match(memorySource, /async create\(spaceId: string, body: MemoryEntryCreateRequest, params: MemoryEntriesCreateParams\)/);
-  assert.match(memorySource, /post<EntriesCreateResult>\(appApiPath\(`\/memory\/spaces\/\$\{serializePathParameter\(spaceId,/);
   assert.match(runtimeSource, /async create\(body: RuntimeInvocationCreateRequest, params: RuntimeInvocationsCreateParams\)/);
   assert.match(runtimeSource, /post<InvocationsCreateResult>\(appApiPath\(`\/runtime\/invocations`\), body, undefined, requestHeaders, 'application\/json'\)/);
   assert.match(runtimeSource, /async submit\(invocationId: string, body: RuntimeInvocationCompleteRequest, params: RuntimeInvocationsSubmitParams\)/);

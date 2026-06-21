@@ -6,14 +6,14 @@
 
 ## 1. Principle
 
-`sdkwork-claw-router` is the AI gateway and product shell. It **composes** bounded contexts; it does not duplicate their database contracts or business logic.
+`sdkwork-clawrouter` is the AI gateway and product shell. It **composes** bounded contexts; it does not duplicate their database contracts or business logic.
 
 | Capability | System of record | Table prefix | Repository |
 | --- | --- | --- | --- |
 | Application center / marketplace | `sdkwork-appstore` | `appstore_` | `../sdkwork-appstore` |
 | IAM | `sdkwork-appbase` | `iam_` | `../sdkwork-appbase` |
 | Commerce base | `sdkwork-commerce` | `commerce_` (base) | `../sdkwork-commerce` |
-| AI gateway / skills / routing | `sdkwork-claw-router` | `ai_`, `ops_`, … | this repo |
+| AI gateway / skills / routing | `sdkwork-clawrouter` | `ai_`, `ops_`, … | this repo |
 
 ## 2. Database lifecycle
 

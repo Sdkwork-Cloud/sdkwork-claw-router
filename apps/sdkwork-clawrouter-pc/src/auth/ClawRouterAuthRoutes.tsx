@@ -2,7 +2,9 @@ import {
   SdkworkIamAuthRoutes,
 } from '@sdkwork/auth-pc-react';
 import { useTranslation } from 'react-i18next';
-import { getClawRouterIamRuntime } from 'sdkwork-clawrouter-pc-commons/runtime';
+import { getClawRouterIamRuntime } from '@sdkwork/clawrouter-pc-commons/runtime';
+import { resolveClawRouterAuthAppearance } from './clawRouterAuthAppearance';
+import { ClawRouterAuthShell } from './ClawRouterAuthShell';
 import { useClawRouterAuthRuntimeConfig } from './clawRouterAuthConfig';
 import { clawRouterTauriAuthHostReadiness } from './clawRouterTauriAuthHost';
 
@@ -15,13 +17,18 @@ export function ClawRouterAuthRoutes() {
   const runtimeConfig = useClawRouterAuthRuntimeConfig();
 
   return (
-    <SdkworkIamAuthRoutes
-      basePath="/auth"
-      getRuntime={getClawRouterIamRuntime}
-      homePath="/console"
-      locale={i18n.language}
-      methodUnavailableMessage={AUTH_METHOD_UNAVAILABLE_MESSAGE}
-      runtimeConfig={runtimeConfig}
-    />
+    <ClawRouterAuthShell>
+      <SdkworkIamAuthRoutes
+        appearance={resolveClawRouterAuthAppearance()}
+        basePath="/auth"
+        className="!bg-transparent"
+        getRuntime={getClawRouterIamRuntime}
+        homePath="/console"
+        locale={i18n.language}
+        methodUnavailableMessage={AUTH_METHOD_UNAVAILABLE_MESSAGE}
+        runtimeConfig={runtimeConfig}
+        viewportMode="flow"
+      />
+    </ClawRouterAuthShell>
   );
 }

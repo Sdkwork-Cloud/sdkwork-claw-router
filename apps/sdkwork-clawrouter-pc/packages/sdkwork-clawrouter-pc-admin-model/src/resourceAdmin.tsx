@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { AiResourceSelectorModal, BottomPagination, ConfirmDialog } from 'sdkwork-clawrouter-pc-commons';
+import { AiResourceSelectorModal, BottomPagination, ConfirmDialog } from '@sdkwork/clawrouter-pc-commons';
 import { Check, Database, Edit, Loader2, Plus, RefreshCw, Search, Trash2, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import {

@@ -1,8 +1,9 @@
+import { isBlank, trim } from './sdkwork-utils.ts';
+
 export type ReferenceSidebarCollapsedGroups = Record<string, true>;
 
 function normalizeReferenceSidebarGroupPart(value: string, fallback: string): string {
-  const normalized = value
-    .trim()
+  const normalized = trim(value)
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '');
@@ -11,8 +12,8 @@ function normalizeReferenceSidebarGroupPart(value: string, fallback: string): st
 }
 
 export function createReferenceSidebarGroupKey(systemId: string, categoryId: string): string {
-  const normalizedSystemId = systemId.trim() || 'system';
-  const normalizedCategoryId = categoryId.trim() || 'category';
+  const normalizedSystemId = isBlank(systemId) ? 'system' : trim(systemId);
+  const normalizedCategoryId = isBlank(categoryId) ? 'category' : trim(categoryId);
   return `${normalizedSystemId}::${normalizedCategoryId}`;
 }
 
@@ -62,11 +63,11 @@ export function filterReferenceSidebarTree<T extends ReferenceSidebarSearchNode>
   nodes: T[],
   searchQuery: string,
 ): T[] {
-  if (!searchQuery.trim()) {
+  if (isBlank(searchQuery)) {
     return nodes;
   }
 
-  const query = searchQuery.trim().toLowerCase();
+  const query = trim(searchQuery).toLowerCase();
 
   return nodes
     .map((node) => filterReferenceSidebarNode(node, query))

@@ -125,7 +125,7 @@ function collectPortalButtonI18nViolations(): ButtonI18nViolation[] {
 function collectSourceFiles(): string[] {
   const consoleAdminPackageFiles = readdirSync(PACKAGES_ROOT, { withFileTypes: true })
     .filter((entry) => entry.isDirectory())
-    .filter((entry) => /^sdkwork-claw-router-(admin|console)-/.test(entry.name))
+    .filter((entry) => /^sdkwork-clawrouter-(admin|console)-/.test(entry.name))
     .flatMap((entry) => walk(path.join(PACKAGES_ROOT, entry.name, "src")));
   const sharedConsoleAdminFiles = [
     path.join(PACKAGES_ROOT, "sdkwork-clawrouter-pc-commons", "src", "components", "Navbar.tsx"),

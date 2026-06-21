@@ -121,7 +121,7 @@ test("admin service provider center is a commercial provider management surface"
 });
 
 test("service provider commercial schema, contract, OpenAPI, and SDK are registered", () => {
-  const schemaSource = readWorkspaceFile("generated/schema/registry/sdkwork-claw-router.tables.effective.yaml");
+  const schemaSource = readWorkspaceFile("generated/schema/registry/sdkwork-clawrouter.tables.effective.yaml");
   const manifest = JSON.parse(readWorkspaceFile("generated/api/api-contract-manifest.json")) as {
     operations: Array<{
       api_surface: string;

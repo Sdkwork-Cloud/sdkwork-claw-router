@@ -1,13 +1,14 @@
 use std::sync::Arc;
 
 use axum::extract::State;
-use axum::http::{HeaderMap, StatusCode};
+use axum::http::StatusCode;
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
 use sdkwork_claw_http::TrustedRequestSubject;
 
 use crate::api::response::PlusApiResult;
+use crate::api::subject::map_optional_app_user_subject;
 use crate::ports::{
     AppProviderItem, AppProvidersItems, AppProvidersReadFuture, AppProvidersReadStore,
     AppProvidersSubject,
@@ -52,8 +53,11 @@ fn app_providers_router_with_state(
         })
 }
 
-async fn fetch_providers(State(state): State<AppProvidersState>, headers: HeaderMap) -> Response {
-    let subject = match providers_subject(&headers, state.require_subject) {
+async fn fetch_providers(
+    State(state): State<AppProvidersState>,
+    subject: Option<TrustedRequestSubject>,
+) -> Response {
+    let subject = match providers_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -65,22 +69,14 @@ async fn fetch_providers(State(state): State<AppProvidersState>, headers: Header
 }
 
 fn providers_subject(
-    headers: &HeaderMap,
+    subject: Option<TrustedRequestSubject>,
     require_subject: bool,
 ) -> Result<Option<AppProvidersSubject>, Response> {
-    match TrustedRequestSubject::from_headers(headers) {
-        Ok(subject) => Ok(Some(AppProvidersSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            user_id: subject.user_id,
-        })),
-        Err(error) if require_subject => Err((
-            StatusCode::UNAUTHORIZED,
-            Json(PlusApiResult::error("4010", error.to_string())),
-        )
-            .into_response()),
-        Err(_) => Ok(None),
-    }
+    map_optional_app_user_subject(subject, require_subject, |trusted| AppProvidersSubject {
+        tenant_id: trusted.tenant_id,
+        organization_id: trusted.organization_id,
+        user_id: trusted.user_id,
+    })
 }
 
 fn app_providers_read_model_error(error: impl std::fmt::Display) -> Response {

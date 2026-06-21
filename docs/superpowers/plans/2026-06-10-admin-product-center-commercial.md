@@ -17,7 +17,7 @@
 
 ## Current Workspace Constraints
 
-- `sdkwork-claw-router` has unrelated dirty generated app SDK/IAM/runtime work. Do not stage or revert it.
+- `sdkwork-clawrouter` has unrelated dirty generated app SDK/IAM/runtime work. Do not stage or revert it.
 - `sdkwork-commerce` has active parallel work, including product-admin files. Preserve and build on it.
 - Do not hand-edit generated SDK output.
 - Do not add raw `fetch`, `axios`, manual auth headers, or local SDK forks.
@@ -424,7 +424,7 @@ Run:
 
 ```powershell
 git -C E:\sdkwork-space\sdkwork-commerce status --short
-git -C E:\sdkwork-space\sdkwork-claw-router status --short
+git -C E:\sdkwork-space\sdkwork-clawrouter status --short
 ```
 
 Stage only files from this plan. Do not stage unrelated generated SDK/IAM/runtime changes.

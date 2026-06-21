@@ -1,8 +1,8 @@
-# sdkwork-claw-router API Gateway 与接口标准设计
+# sdkwork-clawrouter API Gateway 与接口标准设计
 
 ## 1. 接口面总览
 
-`sdkwork-claw-router` 对外暴露三类稳定接口面：
+`sdkwork-clawrouter` 对外暴露三类稳定接口面：
 
 | 接口面 | 前缀 | 标准 | 返回 |
 | --- | --- | --- | --- |

@@ -15,7 +15,7 @@ packages, and frontend URLs is intentionally not preserved.
 - Move OAuth provider integration, login, account linking, delegated grants,
   client credentials, surfaces, policies, diagnostics, and token-retention
   configuration to `sdkwork-appbase`.
-- Remove all `sdkwork-claw-router` `open_platform_*` technical debt.
+- Remove all `sdkwork-clawrouter` `open_platform_*` technical debt.
 - Support China/APAC and overseas mainstream providers across PC web, mobile
   web, native mobile apps, desktop apps, mini-programs, and service-side flows.
 - Use `/admin/oauth` as the Claw Router admin module base.
@@ -75,7 +75,7 @@ extension under the same `/admin/oauth` module.
   resources.
 - reusable appbase auth UI/runtime provider lists and OAuth invocation behavior.
 
-`sdkwork-claw-router` owns:
+`sdkwork-clawrouter` owns:
 
 - the admin module shell, sidebar placement, route registration, page-level UX,
   and generated appbase backend SDK consumption.
@@ -2078,7 +2078,7 @@ Phase 5: verification
 
 - `sdkwork-appbase` is the only owner of OAuth database schema and API
   contracts.
-- `sdkwork-claw-router` contains no `open_platform_*` database, backend route,
+- `sdkwork-clawrouter` contains no `open_platform_*` database, backend route,
   generated SDK, admin package, or `/admin/open-platform*` sidebar artifact.
 - Claw Router admin has a visible independent sidebar item for `/admin/oauth`.
 - Appbase app-api exposes OAuth runtime operations under `/app/v3/api/oauth/*`.

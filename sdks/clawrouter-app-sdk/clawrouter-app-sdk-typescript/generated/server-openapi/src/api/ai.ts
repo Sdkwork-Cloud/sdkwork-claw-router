@@ -1,7 +1,7 @@
 import { appApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { ChannelGroupsListResult, DashboardOverviewRetrieveResult, GatewayTracesListResult, GenerationListResult, ModelRankingsListResult, ModelsListResult, ModelVendorsListResult, RoutingApiKeysListResult, RoutingChannelsListResult, RoutingRequestTracesListResult, RoutingUsageListResult, UsageLogsListResult } from '../types';
+import type { ChannelGroupsListResult, DashboardOverviewRetrieveResult, GatewayTracesListResult, ModelRankingsListResult, ModelsListResult, ModelVendorsListResult, RoutingApiKeysListResult, RoutingChannelsListResult, RoutingRequestTracesListResult, RoutingUsageListResult, UsageLogsListResult } from '../types';
 
 
 export interface AiUsageLogsListParams {
@@ -199,20 +199,6 @@ export class AiModelRankingsApi {
   }
 }
 
-export class AiGenerationApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** List generation history */
-  async list(): Promise<GenerationListResult> {
-    return this.client.get<GenerationListResult>(appApiPath(`/ai/generations`));
-  }
-}
-
 export class AiGatewayTracesApi {
   private client: HttpClient;
 
@@ -293,7 +279,6 @@ export class AiApi {
   public readonly channelGroups: AiChannelGroupsApi;
   public readonly dashboard: AiDashboardApi;
   public readonly gateway: AiGatewayApi;
-  public readonly generation: AiGenerationApi;
   public readonly modelRankings: AiModelRankingsApi;
   public readonly modelVendors: AiModelVendorsApi;
   public readonly models: AiModelsApi;
@@ -305,7 +290,6 @@ export class AiApi {
     this.channelGroups = new AiChannelGroupsApi(client);
     this.dashboard = new AiDashboardApi(client);
     this.gateway = new AiGatewayApi(client);
-    this.generation = new AiGenerationApi(client);
     this.modelRankings = new AiModelRankingsApi(client);
     this.modelVendors = new AiModelVendorsApi(client);
     this.models = new AiModelsApi(client);

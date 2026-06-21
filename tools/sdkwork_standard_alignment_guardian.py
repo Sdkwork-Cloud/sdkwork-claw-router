@@ -31,7 +31,7 @@ class AlignmentGuardianResult:
 
 
 class SdkworkStandardAlignmentGuardian:
-    """Audit sdkwork-claw-router against sdkwork-specs framework integration requirements."""
+    """Audit sdkwork-clawrouter against sdkwork-specs framework integration requirements."""
 
     ROOT_COMPONENT_SPEC = "specs/component.spec.json"
     WORKFLOW_MANIFEST = "sdkwork.workflow.json"
@@ -50,6 +50,7 @@ class SdkworkStandardAlignmentGuardian:
     REQUIRED_WORKFLOW_DEPENDENCY_IDS: tuple[str, ...] = (
         "sdkwork-web-framework",
         "sdkwork-database",
+        "sdkwork-utils",
     )
 
     REQUIRED_CARGO_WORKSPACE_DEPS: tuple[str, ...] = (
@@ -59,6 +60,7 @@ class SdkworkStandardAlignmentGuardian:
         "sdkwork-database-config",
         "sdkwork-database-sqlx",
         "sdkwork-database-repository",
+        "sdkwork-utils-rust",
     )
 
     HTTP_ROUTE_CRATES: tuple[str, ...] = (
@@ -76,10 +78,13 @@ class SdkworkStandardAlignmentGuardian:
         checks.extend(self._check_cargo_workspace_dependencies())
         checks.extend(self._check_web_framework_integration())
         checks.extend(self._check_handler_subject_resolution())
+        checks.extend(self._check_utils_integration())
         checks.extend(self._check_http_route_manifest_runtime())
         checks.extend(self._check_database_framework_integration())
+        checks.extend(self._check_database_store_migration())
         checks.extend(self._check_api_contract_metadata())
         checks.extend(self._check_route_manifest_workspace())
+        checks.extend(self._check_pc_package_taxonomy())
         checks.extend(self._check_rpc_discovery_policy())
         checks.extend(self._check_rust_service_naming())
         return AlignmentGuardianResult(checks=tuple(checks))
@@ -352,21 +357,33 @@ class SdkworkStandardAlignmentGuardian:
         )
         return checks
 
+    def _uses_subject_extractor(self, text: str) -> bool:
+        if "TrustedRequestSubject::from_headers" in text:
+            return False
+        if "Option<TrustedRequestSubject>" in text:
+            return True
+        return re.search(
+            r"\b(?:trusted|_subject|subject)\s*:\s*TrustedRequestSubject\b",
+            text,
+        ) is not None
+
     def _check_handler_subject_resolution(self) -> list[AlignmentCheck]:
         checks: list[AlignmentCheck] = []
         api_dir = self.root / "services" / "sdkwork-claw-product" / "src" / "api"
-        allowlist = {"app_auth.rs", "subject.rs"}
+        allowlist = {"app_auth.rs", "subject.rs", "openai_invocation.rs", "openai_chat.rs", "openai_embeddings.rs", "openai_models.rs", "openai_responses.rs"}
         legacy_files: list[str] = []
         migrated_files: list[str] = []
+        openai_api_key_files: list[str] = []
         for path in sorted(api_dir.glob("*.rs")):
             if path.name in allowlist:
                 continue
             text = path.read_text(encoding="utf-8")
             if "TrustedRequestSubject::from_headers" in text:
                 legacy_files.append(path.name)
-            if "Option<TrustedRequestSubject>" in text or "_subject: TrustedRequestSubject" in text:
-                if "TrustedRequestSubject::from_headers" not in text:
-                    migrated_files.append(path.name)
+            elif "ApiKeyIdentity::from_headers" in text:
+                openai_api_key_files.append(path.name)
+            elif self._uses_subject_extractor(text):
+                migrated_files.append(path.name)
 
         checks.append(
             AlignmentCheck(
@@ -396,12 +413,138 @@ class SdkworkStandardAlignmentGuardian:
                     severity="info",
                     status="pass",
                     message=(
-                        f"{len(migrated_files)} product API modules already use framework-aware "
-                        "subject extractors"
+                        f"{len(migrated_files)} product API modules use framework-aware "
+                        "TrustedRequestSubject extractors"
                     ),
                     remediation="",
                 )
             )
+        if openai_api_key_files:
+            checks.append(
+                AlignmentCheck(
+                    id="web-framework-openai-api-key-subject",
+                    category="web-framework",
+                    severity="info",
+                    status="pass",
+                    message=(
+                        f"{len(openai_api_key_files)} OpenAI-compatible routes intentionally use "
+                        "ApiKeyIdentity header resolution"
+                    ),
+                    remediation="",
+                )
+            )
+        return checks
+
+    def _check_utils_integration(self) -> list[AlignmentCheck]:
+        checks: list[AlignmentCheck] = []
+        cargo_text = (self.root / self.CARGO_MANIFEST).read_text(encoding="utf-8")
+        has_utils_rust_dep = "sdkwork-utils-rust" in cargo_text
+        if not has_utils_rust_dep:
+            checks.append(
+                AlignmentCheck(
+                    id="utils-rust-workspace-dep",
+                    category="utils",
+                    severity="blocking",
+                    status="fail",
+                    message="Cargo workspace missing sdkwork-utils-rust workspace dependency",
+                    remediation="declare sdkwork-utils-rust under [workspace.dependencies] in Cargo.toml",
+                )
+            )
+
+        product_src = self.root / "services" / "sdkwork-claw-product" / "src"
+        rust_usage_files = 0
+        if product_src.exists():
+            for path in product_src.rglob("*.rs"):
+                try:
+                    uses_utils = "sdkwork_utils_rust::" in path.read_text(encoding="utf-8")
+                except OSError:
+                    continue
+                if uses_utils:
+                    rust_usage_files += 1
+        checks.append(
+            AlignmentCheck(
+                id="utils-rust-product-adoption",
+                category="utils",
+                severity="warning",
+                status="pass" if rust_usage_files else "fail",
+                message=(
+                    f"product service uses sdkwork-utils-rust in {rust_usage_files} module(s)"
+                    if rust_usage_files
+                    else "product service declares sdkwork-utils-rust but does not import it yet"
+                ),
+                remediation="replace local string/token helpers with sdkwork_utils_rust exports",
+            )
+        )
+
+        pc_root = self.root / "apps" / "sdkwork-clawrouter-pc"
+        commons_pkg = pc_root / "packages" / "sdkwork-clawrouter-pc-commons" / "package.json"
+        pc_pkg = pc_root / "package.json"
+        has_ts_dep = False
+        for manifest in (commons_pkg, pc_pkg):
+            if manifest.exists() and "@sdkwork/utils" in manifest.read_text(encoding="utf-8"):
+                has_ts_dep = True
+                break
+        checks.append(
+            AlignmentCheck(
+                id="utils-pc-dependency",
+                category="utils",
+                severity="blocking",
+                status="pass" if has_ts_dep else "fail",
+                message=(
+                    "PC application declares @sdkwork/utils workspace dependency"
+                    if has_ts_dep
+                    else "PC application is missing @sdkwork/utils dependency"
+                ),
+                remediation=(
+                    "add ../../../sdkwork-utils/packages/sdkwork-utils-typescript to pnpm workspace "
+                    "and declare @sdkwork/utils in sdkwork-clawrouter-pc-commons"
+                ),
+            )
+        )
+
+        ts_usage_files = 0
+        packages_root = pc_root / "packages"
+        if packages_root.exists():
+            for path in packages_root.glob("*/src/**/*"):
+                if not path.is_file() or path.suffix not in {".ts", ".tsx", ".mts"}:
+                    continue
+                try:
+                    text = path.read_text(encoding="utf-8", errors="ignore")
+                except OSError:
+                    continue
+                if (
+                    "@sdkwork/utils" in text
+                    or "sdkwork-clawrouter-pc-commons/sdkwork-utils" in text
+                ):
+                    ts_usage_files += 1
+        app_src = pc_root / "src"
+        if app_src.exists():
+            for path in app_src.rglob("*"):
+                if not path.is_file() or path.suffix not in {".ts", ".tsx", ".mts"}:
+                    continue
+                try:
+                    text = path.read_text(encoding="utf-8", errors="ignore")
+                except OSError:
+                    continue
+                if (
+                    "@sdkwork/utils" in text
+                    or "sdkwork-clawrouter-pc-commons/sdkwork-utils" in text
+                ):
+                    ts_usage_files += 1
+        checks.append(
+            AlignmentCheck(
+                id="utils-pc-adoption",
+                category="utils",
+                severity="warning",
+                status="pass" if ts_usage_files else "fail",
+                message=(
+                    f"PC application consumes sdkwork-utils in {ts_usage_files} module(s)"
+                    if ts_usage_files
+                    else "PC application declares @sdkwork/utils but has no imports yet"
+                ),
+                remediation="import helpers from sdkwork-clawrouter-pc-commons/sdkwork-utils instead of local duplicates",
+            )
+        )
         return checks
 
     def _check_database_framework_integration(self) -> list[AlignmentCheck]:
@@ -527,6 +670,63 @@ class SdkworkStandardAlignmentGuardian:
                         remediation="replace raw SqlitePoolOptions in router startup paths with product pool helpers",
                     )
                 )
+
+        return checks
+
+    def _check_database_store_migration(self) -> list[AlignmentCheck]:
+        checks: list[AlignmentCheck] = []
+        manifest_path = self.root / "specs" / "database-store-migration.manifest.json"
+        if not manifest_path.exists():
+            checks.append(
+                AlignmentCheck(
+                    id="database-store-migration-manifest",
+                    category="database",
+                    severity="warning",
+                    status="fail",
+                    message="missing specs/database-store-migration.manifest.json for legacy SQL store phased migration",
+                    remediation="create database store migration manifest per DATABASE_SPEC.md repository-sqlx pattern",
+                )
+            )
+            return checks
+
+        data = json.loads(manifest_path.read_text(encoding="utf-8"))
+        migrated = [
+            entry
+            for entry in data.get("migratedStores", [])
+            if isinstance(entry, dict) and entry.get("status") == "MIGRATED"
+        ]
+        sql_infra = self.root / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql"
+        legacy_store_files = 0
+        if sql_infra.exists():
+            legacy_store_files = sum(
+                1 for path in sql_infra.rglob("*_store.rs") if path.is_file()
+            )
+        checks.append(
+            AlignmentCheck(
+                id="database-store-migration-manifest",
+                category="database",
+                severity="warning",
+                status="pass",
+                message=(
+                    f"database store migration manifest tracks {len(migrated)} migrated repository-sqlx "
+                    f"module(s); {legacy_store_files} legacy *_store.rs modules remain in product service"
+                ),
+                remediation="continue phased migration documented in specs/database-store-migration.manifest.json",
+            )
+        )
+        for entry in migrated:
+            crate_path = entry.get("crate")
+            if isinstance(crate_path, str) and (self.root / crate_path / "Cargo.toml").exists():
+                checks.append(
+                    AlignmentCheck(
+                        id=f"database-store-migration-{entry.get('capability', 'unknown')}",
+                        category="database",
+                        severity="info",
+                        status="pass",
+                        message=f"{crate_path} is registered as a migrated repository-sqlx crate",
+                        remediation="",
+                    )
+                )
         return checks
 
     def _check_http_route_manifest_runtime(self) -> list[AlignmentCheck]:
@@ -649,6 +849,148 @@ class SdkworkStandardAlignmentGuardian:
             )
         ]
 
+    def _check_pc_package_taxonomy(self) -> list[AlignmentCheck]:
+        checks: list[AlignmentCheck] = []
+        pc_root = self.root / "apps" / "sdkwork-clawrouter-pc" / "packages"
+        if not pc_root.exists():
+            return checks
+
+        required_shells = (
+            "sdkwork-clawrouter-pc-shell",
+            "sdkwork-clawrouter-pc-console-shell",
+            "sdkwork-clawrouter-pc-admin-shell",
+        )
+        missing_shells = [
+            package_name
+            for package_name in required_shells
+            if not (pc_root / package_name / "package.json").exists()
+        ]
+        if missing_shells:
+            checks.append(
+                AlignmentCheck(
+                    id="pc-package-shell-taxonomy",
+                    category="frontend",
+                    severity="blocking",
+                    status="fail",
+                    message=f"PC application missing required shell packages: {', '.join(missing_shells)}",
+                    remediation="create sdkwork-<application-code>-pc-shell, pc-console-shell, and pc-admin-shell per APP_PC_ARCHITECTURE_SPEC.md §3",
+                )
+            )
+        else:
+            checks.append(
+                AlignmentCheck(
+                    id="pc-package-shell-taxonomy",
+                    category="frontend",
+                    severity="blocking",
+                    status="pass",
+                    message="PC application declares app/console/admin shell packages",
+                    remediation="",
+                )
+            )
+
+        package_dirs = [
+            path.name
+            for path in pc_root.iterdir()
+            if path.is_dir() and (path / "package.json").exists()
+        ]
+        clawrouter_dirs = [name for name in package_dirs if name.startswith("sdkwork-clawrouter-pc-")]
+        scoped_names = 0
+        for package_dir in clawrouter_dirs:
+            package_json = pc_root / package_dir / "package.json"
+            if not package_json.exists():
+                continue
+            data = json.loads(package_json.read_text(encoding="utf-8"))
+            name = data.get("name")
+            if isinstance(name, str) and name.startswith("@sdkwork/clawrouter-pc-"):
+                scoped_names += 1
+        if clawrouter_dirs and scoped_names == len(clawrouter_dirs):
+            checks.append(
+                AlignmentCheck(
+                    id="pc-package-application-code",
+                    category="naming",
+                    severity="blocking",
+                    status="pass",
+                    message="PC packages use canonical clawrouter application code with @sdkwork/clawrouter-pc-* npm names",
+                    remediation="",
+                )
+            )
+        elif clawrouter_dirs:
+            checks.append(
+                AlignmentCheck(
+                    id="pc-package-application-code",
+                    category="naming",
+                    severity="blocking",
+                    status="fail",
+                    message="PC package directories exist but npm names are not fully migrated to @sdkwork/clawrouter-pc-*",
+                    remediation="run node scripts/migrate-clawrouter-naming-standard.mjs",
+                )
+            )
+        else:
+            checks.append(
+                AlignmentCheck(
+                    id="pc-package-application-code",
+                    category="naming",
+                    severity="blocking",
+                    status="fail",
+                    message="PC package taxonomy missing sdkwork-clawrouter-pc-* directories",
+                    remediation="create packages under apps/sdkwork-clawrouter-pc/packages per APP_PC_ARCHITECTURE_SPEC.md",
+                )
+            )
+
+        legacy_repo_refs = 0
+        legacy_stem = "sdkwork-claw-router"
+        for relative in ("sdkwork.app.config.json", "sdkwork.workflow.json", "specs/component.spec.json"):
+            file_path = self.root / relative
+            if file_path.exists() and legacy_stem in file_path.read_text(encoding="utf-8"):
+                legacy_repo_refs += 1
+        if legacy_repo_refs == 0:
+            checks.append(
+                AlignmentCheck(
+                    id="repository-stem-clawrouter",
+                    category="naming",
+                    severity="blocking",
+                    status="pass",
+                    message="governance manifests use canonical sdkwork-clawrouter stem",
+                    remediation="",
+                )
+            )
+        else:
+            checks.append(
+                AlignmentCheck(
+                    id="repository-stem-clawrouter",
+                    category="naming",
+                    severity="blocking",
+                    status="fail",
+                    message=f"{legacy_repo_refs} governance manifest(s) still reference retired {legacy_stem} stem",
+                    remediation="run node scripts/replace-legacy-repository-stem.mjs",
+                )
+            )
+
+        standalone_profiles = self.root / "configs" / "topology" / "self-hosted.unified-process.production.env"
+        if standalone_profiles.exists():
+            checks.append(
+                AlignmentCheck(
+                    id="deployment-standalone-profile",
+                    category="deployment",
+                    severity="blocking",
+                    status="pass",
+                    message="standalone production topology profile is present under configs/topology/",
+                    remediation="",
+                )
+            )
+        else:
+            checks.append(
+                AlignmentCheck(
+                    id="deployment-standalone-profile",
+                    category="deployment",
+                    severity="blocking",
+                    status="fail",
+                    message="missing standalone production topology profile",
+                    remediation="add configs/topology/self-hosted.unified-process.production.env per APP_RUNTIME_TOPOLOGY_SPEC.md",
+                )
+            )
+        return checks
+
     def _check_rpc_discovery_policy(self) -> list[AlignmentCheck]:
         has_grpc = False
         scan_roots = (
@@ -766,9 +1108,9 @@ class SdkworkStandardAlignmentGuardian:
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Audit sdkwork-claw-router alignment with sdkwork-specs framework standards."
+        description="Audit sdkwork-clawrouter alignment with sdkwork-specs framework standards."
     )
-    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-claw-router root directory")
+    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-clawrouter root directory")
     parser.add_argument(
         "--strict",
         action="store_true",

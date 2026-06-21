@@ -1,7 +1,7 @@
 # Codex Cache Cleanup Report
 
 Date: 2026-05-03 Asia/Shanghai
-Workspace: `<workspace-root>\sdkwork-claw-router`
+Workspace: `<workspace-root>\sdkwork-clawrouter`
 
 ## Scope
 
@@ -10,7 +10,7 @@ records.
 
 Writable paths in this run:
 
-- `<workspace-root>\sdkwork-claw-router`
+- `<workspace-root>\sdkwork-clawrouter`
 - `D:\tmp`
 - `C:\Users\admin\.codex\memories`
 

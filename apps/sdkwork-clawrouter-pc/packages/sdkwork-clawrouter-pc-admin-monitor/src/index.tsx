@@ -7,7 +7,7 @@ import {
   AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
   Legend, LineChart, Line
 } from 'recharts';
-import { AdminTableShell, BusinessStatePanel } from 'sdkwork-clawrouter-pc-commons';
+import { AdminTableShell, BusinessStatePanel } from '@sdkwork/clawrouter-pc-commons';
 import { MonitorService, SysNode, Alert, PerformanceDatum } from './monitorService';
 
 import { useTranslation } from 'react-i18next';

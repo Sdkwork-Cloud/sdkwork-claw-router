@@ -77,12 +77,10 @@ pub fn admin_runtime_region_settings_router_with_store(
 
 async fn fetch_runtime_region_settings(
     State(state): State<AdminRuntimeRegionSettingsState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     match load_settings_with_cache(&state, subject).await {
         Ok(settings) => Json(PlusApiResult::success(to_response(settings))).into_response(),
         Err(error) => runtime_region_system_response(
@@ -94,13 +92,11 @@ async fn fetch_runtime_region_settings(
 
 async fn update_runtime_region_settings(
     State(state): State<AdminRuntimeRegionSettingsState>,
-    headers: HeaderMap,
-    body: Bytes,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let request = match parse_json_body::<RuntimeRegionSettingsUpdateRequest>(
         &body,
         "runtime region settings",
@@ -176,21 +172,13 @@ impl RuntimeRegionSettingsCacheKey {
     }
 }
 
-fn resolve_subject(headers: &HeaderMap) -> Result<RuntimeRegionSettingsSubject, Response> {
-    TrustedRequestSubject::from_headers(headers)
-        .map(|subject| RuntimeRegionSettingsSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            operator_id: subject.operator_id,
-            operator_type: subject.operator_type,
-        })
-        .map_err(|error| {
-            (
-                StatusCode::UNAUTHORIZED,
-                Json(PlusApiResult::error("4010", error.to_string())),
-            )
-                .into_response()
-        })
+fn map_subject(trusted: TrustedRequestSubject) -> RuntimeRegionSettingsSubject {
+    RuntimeRegionSettingsSubject {
+            tenant_id: trusted.tenant_id,
+            organization_id: trusted.organization_id,
+            operator_id: trusted.operator_id,
+            operator_type: trusted.operator_type,
+        }
 }
 
 fn parse_json_body<T>(body: &[u8], entity_name: &str) -> Result<T, String>

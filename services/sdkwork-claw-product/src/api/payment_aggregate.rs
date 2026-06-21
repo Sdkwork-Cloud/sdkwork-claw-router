@@ -180,14 +180,12 @@ pub fn payment_aggregate_router_with_runtime_store(
 
 async fn cancel_refund(
     State(state): State<PaymentAggregateState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(refund_id): Path<String>,
     body: Bytes,
 ) -> Response {
-    let subject = match TrustedRequestSubject::from_headers(&headers) {
-        Ok(subject) => subject,
-        Err(error) => return unauthorized(error.to_string()),
-    };
+    let subject = trusted;
     let idempotency_key = match required_header(&headers, IDEMPOTENCY_KEY_HEADER) {
         Ok(value) => value,
         Err(message) => return bad_request(message),
@@ -223,13 +221,11 @@ async fn cancel_refund(
 
 async fn create_refund(
     State(state): State<PaymentAggregateState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     body: Bytes,
 ) -> Response {
-    let subject = match TrustedRequestSubject::from_headers(&headers) {
-        Ok(subject) => subject,
-        Err(error) => return unauthorized(error.to_string()),
-    };
+    let subject = trusted;
     let idempotency_key = match required_header(&headers, IDEMPOTENCY_KEY_HEADER) {
         Ok(value) => value,
         Err(message) => return bad_request(message),
@@ -274,13 +270,11 @@ async fn create_refund(
 
 async fn create_payment_intent(
     State(state): State<PaymentAggregateState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     body: Bytes,
 ) -> Response {
-    let subject = match TrustedRequestSubject::from_headers(&headers) {
-        Ok(subject) => subject,
-        Err(error) => return unauthorized(error.to_string()),
-    };
+    let subject = trusted;
     let idempotency_key = match required_header(&headers, IDEMPOTENCY_KEY_HEADER) {
         Ok(value) => value,
         Err(message) => return bad_request(message),
@@ -322,14 +316,12 @@ async fn create_payment_intent(
 
 async fn confirm_payment_intent(
     State(state): State<PaymentAggregateState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(payment_intent_id): Path<String>,
     body: Bytes,
 ) -> Response {
-    let subject = match TrustedRequestSubject::from_headers(&headers) {
-        Ok(subject) => subject,
-        Err(error) => return unauthorized(error.to_string()),
-    };
+    let subject = trusted;
     let idempotency_key = match required_header(&headers, IDEMPOTENCY_KEY_HEADER) {
         Ok(value) => value,
         Err(message) => return bad_request(message),
@@ -362,14 +354,12 @@ async fn confirm_payment_intent(
 
 async fn capture_payment_intent(
     State(state): State<PaymentAggregateState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(payment_intent_id): Path<String>,
     body: Bytes,
 ) -> Response {
-    let subject = match TrustedRequestSubject::from_headers(&headers) {
-        Ok(subject) => subject,
-        Err(error) => return unauthorized(error.to_string()),
-    };
+    let subject = trusted;
     let idempotency_key = match required_header(&headers, IDEMPOTENCY_KEY_HEADER) {
         Ok(value) => value,
         Err(message) => return bad_request(message),
@@ -407,14 +397,12 @@ async fn capture_payment_intent(
 
 async fn cancel_payment_intent(
     State(state): State<PaymentAggregateState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(payment_intent_id): Path<String>,
     body: Bytes,
 ) -> Response {
-    let subject = match TrustedRequestSubject::from_headers(&headers) {
-        Ok(subject) => subject,
-        Err(error) => return unauthorized(error.to_string()),
-    };
+    let subject = trusted;
     let idempotency_key = match required_header(&headers, IDEMPOTENCY_KEY_HEADER) {
         Ok(value) => value,
         Err(message) => return bad_request(message),
@@ -562,14 +550,6 @@ fn bad_request(message: String) -> Response {
     (
         StatusCode::BAD_REQUEST,
         Json(PlusApiResult::error("4001", message)),
-    )
-        .into_response()
-}
-
-fn unauthorized(message: String) -> Response {
-    (
-        StatusCode::UNAUTHORIZED,
-        Json(PlusApiResult::error("4010", message)),
     )
         .into_response()
 }

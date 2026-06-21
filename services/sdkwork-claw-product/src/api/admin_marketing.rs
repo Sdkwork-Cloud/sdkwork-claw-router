@@ -311,12 +311,10 @@ pub fn admin_marketing_router_with_store(
 
 async fn fetch_promotion_offers(
     State(state): State<AdminMarketingState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     match state
         .store
         .list_promotion_offers(ListPromotionOffersQuery { subject })
@@ -329,12 +327,10 @@ async fn fetch_promotion_offers(
 
 async fn fetch_promotion_coupon_stocks(
     State(state): State<AdminMarketingState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     match state
         .store
         .list_promotion_coupon_stocks(ListPromotionCouponStocksQuery { subject })
@@ -349,12 +345,10 @@ async fn fetch_promotion_coupon_stocks(
 
 async fn fetch_promotion_codes(
     State(state): State<AdminMarketingState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     match state
         .store
         .list_promotion_codes(ListPromotionCodesQuery { subject })
@@ -367,12 +361,10 @@ async fn fetch_promotion_codes(
 
 async fn fetch_promotion_code_redemptions(
     State(state): State<AdminMarketingState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     match state
         .store
         .list_promotion_code_redemptions(ListPromotionCodeRedemptionsQuery { subject })
@@ -392,13 +384,11 @@ async fn fetch_promotion_code_redemptions(
 
 async fn create_promotion_offer(
     State(state): State<AdminMarketingState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let request = match parse_json_body::<CreatePromotionOfferRequest>(&body, "promotion offer") {
         Ok(request) => request,
         Err(message) => return bad_request(message),
@@ -423,13 +413,11 @@ async fn create_promotion_offer(
 
 async fn delete_promotion_offer(
     State(state): State<AdminMarketingState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Path(offer_id): Path<String>,
+    Path(offer_id): Path<String>
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let offer_id = match normalize_path_id(&offer_id, "promotion offer id") {
         Ok(offer_id) => offer_id,
         Err(message) => return bad_request(message),
@@ -455,14 +443,12 @@ async fn delete_promotion_offer(
 
 async fn update_promotion_offer(
     State(state): State<AdminMarketingState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(offer_id): Path<String>,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let offer_id = match normalize_path_id(&offer_id, "promotion offer id") {
         Ok(offer_id) => offer_id,
         Err(message) => return bad_request(message),
@@ -497,13 +483,11 @@ async fn update_promotion_offer(
 
 async fn generate_promotion_coupon_stock(
     State(state): State<AdminMarketingState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let request = match parse_json_body::<GeneratePromotionCouponStockRequest>(
         &body,
         "promotion coupon stock",
@@ -539,14 +523,12 @@ async fn generate_promotion_coupon_stock(
 
 async fn update_promotion_code_status(
     State(state): State<AdminMarketingState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(code_id): Path<String>,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let code_id = match normalize_path_id(&code_id, "promotion code id") {
         Ok(code_id) => code_id,
         Err(message) => return bad_request(message),
@@ -583,12 +565,10 @@ async fn update_promotion_code_status(
 
 async fn fetch_recharge_records(
     State(state): State<AdminMarketingState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     match state
         .store
         .list_recharge_records(ListAdminRechargeRecordsQuery { subject })
@@ -601,13 +581,11 @@ async fn fetch_recharge_records(
 
 async fn fetch_recharge_record(
     State(state): State<AdminMarketingState>,
-    headers: HeaderMap,
-    Path(order_no): Path<String>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Path(order_no): Path<String>
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let order_no = match normalize_order_no(order_no.as_str()) {
         Ok(order_no) => order_no,
         Err(message) => return bad_request(message),
@@ -628,12 +606,10 @@ async fn fetch_recharge_record(
 async fn fetch_recharge_packages(
     State(state): State<AdminMarketingState>,
     Query(params): Query<RechargePackageListQueryRequest>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let status = match normalize_optional_recharge_package_status(params.status.as_deref()) {
         Ok(status) => status,
         Err(error) => return command_build_error_response(error),
@@ -652,13 +628,11 @@ async fn fetch_recharge_packages(
 
 async fn create_recharge_package(
     State(state): State<AdminMarketingState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let request = match parse_json_body::<RechargePackageMutationRequest>(&body, "recharge package")
     {
         Ok(request) => request,
@@ -683,14 +657,12 @@ async fn create_recharge_package(
 
 async fn update_recharge_package(
     State(state): State<AdminMarketingState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(package_id): Path<String>,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let package_id = match normalize_path_id(&package_id, "package id") {
         Ok(package_id) => package_id,
         Err(message) => return bad_request(message),
@@ -725,13 +697,11 @@ async fn update_recharge_package(
 
 async fn delete_recharge_package(
     State(state): State<AdminMarketingState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Path(package_id): Path<String>,
+    Path(package_id): Path<String>
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let package_id = match normalize_path_id(&package_id, "package id") {
         Ok(package_id) => package_id,
         Err(message) => return bad_request(message),
@@ -757,12 +727,10 @@ async fn delete_recharge_package(
 
 async fn fetch_recharge_settings(
     State(state): State<AdminMarketingState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     match state.store.load_recharge_settings(subject).await {
         Ok(item) => Json(PlusApiResult::success(item)).into_response(),
         Err(error) => {
@@ -773,13 +741,11 @@ async fn fetch_recharge_settings(
 
 async fn update_recharge_settings(
     State(state): State<AdminMarketingState>,
-    headers: HeaderMap,
-    body: Bytes,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let request = match parse_json_body::<RechargeSettingsUpdateRequest>(&body, "recharge settings")
     {
         Ok(request) => request,
@@ -800,12 +766,10 @@ async fn update_recharge_settings(
 
 async fn fetch_referral_stats(
     State(state): State<AdminMarketingState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     match state
         .store
         .list_referral_stats(ListAdminReferralStatsQuery { subject })
@@ -819,12 +783,10 @@ async fn fetch_referral_stats(
 async fn fetch_exchange_rules(
     State(state): State<AdminMarketingState>,
     Query(params): Query<ExchangeRuleListQueryRequest>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let source_asset_type = match normalize_optional_asset_type(params.source_asset_type.as_deref())
     {
         Ok(value) => value,
@@ -856,13 +818,11 @@ async fn fetch_exchange_rules(
 
 async fn update_exchange_rule(
     State(state): State<AdminMarketingState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let request = match parse_json_body::<ExchangeRuleMutationRequest>(&body, "exchange rule") {
         Ok(request) => request,
         Err(message) => return bad_request(message),
@@ -886,12 +846,10 @@ async fn update_exchange_rule(
 
 async fn fetch_payment_attempts(
     State(state): State<AdminMarketingState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     match state
         .store
         .list_payment_attempts(ListAdminPaymentAttemptsQuery { subject })
@@ -990,21 +948,13 @@ fn safe_suffix(value: &str, max_chars: usize) -> String {
     chars.into_iter().collect()
 }
 
-fn resolve_subject(headers: &HeaderMap) -> Result<AdminMarketingSubject, Response> {
-    TrustedRequestSubject::from_headers(headers)
-        .map(|subject| AdminMarketingSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            operator_id: subject.operator_id,
-            operator_type: subject.operator_type,
-        })
-        .map_err(|error| {
-            (
-                StatusCode::UNAUTHORIZED,
-                Json(PlusApiResult::error("4010", error.to_string())),
-            )
-                .into_response()
-        })
+fn map_subject(trusted: TrustedRequestSubject) -> AdminMarketingSubject {
+    AdminMarketingSubject {
+            tenant_id: trusted.tenant_id,
+            organization_id: trusted.organization_id,
+            operator_id: trusted.operator_id,
+            operator_type: trusted.operator_type,
+        }
 }
 
 fn parse_json_body<T>(body: &[u8], entity_name: &str) -> Result<T, String>

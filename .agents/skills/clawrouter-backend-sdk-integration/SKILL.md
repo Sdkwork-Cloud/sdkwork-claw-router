@@ -1,6 +1,6 @@
 ---
 name: clawrouter-backend-sdk-integration
-description: Use when sdkwork-claw-router admin/backend frontend code must call management-surface APIs through the generated @sdkwork/clawrouter-backend-sdk instead of raw fetch, axios, manual headers, compat facades, or local SDK forks.
+description: Use when sdkwork-clawrouter admin/backend frontend code must call management-surface APIs through the generated @sdkwork/clawrouter-backend-sdk instead of raw fetch, axios, manual headers, compat facades, or local SDK forks.
 ---
 
 # ClawRouter Backend SDK Integration
@@ -37,7 +37,7 @@ import { SdkworkBackendClient } from '@sdkwork/clawrouter-backend-sdk';
 
 ## Regeneration Commands
 
-Run from `apps/sdkwork-claw-router`:
+Run from `apps/sdkwork-clawrouter`:
 
 ```powershell
 python -B -m tools.api_contract_manifest

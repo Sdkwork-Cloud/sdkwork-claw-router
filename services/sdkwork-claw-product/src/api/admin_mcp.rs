@@ -195,10 +195,11 @@ pub fn admin_mcp_router_with_store(store: Arc<dyn AdminMcpStore + Send + Sync>) 
 
 async fn list_servers(
     State(state): State<AdminMcpState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Query(request): Query<ListServersRequest>,
+    Query(request): Query<ListServersRequest>
 ) -> Response {
-    let query = match build_list_servers_query(&headers, request) {
+    let query = match build_list_servers_query(trusted, &headers, request) {
         Ok(query) => query,
         Err(response) => return response,
     };
@@ -210,10 +211,11 @@ async fn list_servers(
 
 async fn get_server(
     State(state): State<AdminMcpState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Path(server_id): Path<String>,
+    Path(server_id): Path<String>
 ) -> Response {
-    let query = match build_get_server_query(&headers, &server_id) {
+    let query = match build_get_server_query(trusted, &headers, &server_id) {
         Ok(query) => query,
         Err(response) => return response,
     };
@@ -226,10 +228,11 @@ async fn get_server(
 
 async fn create_server(
     State(state): State<AdminMcpState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Json(request): Json<CreateServerRequest>,
+    Json(request): Json<CreateServerRequest>
 ) -> Response {
-    let command = match build_create_server_command(&headers, request) {
+    let command = match build_create_server_command(trusted, &headers, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -241,11 +244,12 @@ async fn create_server(
 
 async fn update_server(
     State(state): State<AdminMcpState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(server_id): Path<String>,
-    Json(request): Json<UpdateServerRequest>,
+    Json(request): Json<UpdateServerRequest>
 ) -> Response {
-    let command = match build_update_server_command(&headers, &server_id, request) {
+    let command = match build_update_server_command(trusted, &headers, &server_id, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -258,10 +262,11 @@ async fn update_server(
 
 async fn list_revisions(
     State(state): State<AdminMcpState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Path(server_id): Path<String>,
+    Path(server_id): Path<String>
 ) -> Response {
-    let query = match build_list_revisions_query(&headers, &server_id) {
+    let query = match build_list_revisions_query(trusted, &headers, &server_id) {
         Ok(query) => query,
         Err(response) => return response,
     };
@@ -273,11 +278,12 @@ async fn list_revisions(
 
 async fn create_revision(
     State(state): State<AdminMcpState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(server_id): Path<String>,
-    Json(request): Json<CreateRevisionRequest>,
+    Json(request): Json<CreateRevisionRequest>
 ) -> Response {
-    let command = match build_create_revision_command(&headers, &server_id, request) {
+    let command = match build_create_revision_command(trusted, &headers, &server_id, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -289,10 +295,11 @@ async fn create_revision(
 
 async fn publish_revision(
     State(state): State<AdminMcpState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Path(revision_id): Path<String>,
+    Path(revision_id): Path<String>
 ) -> Response {
-    let command = match build_publish_revision_command(&headers, &revision_id) {
+    let command = match build_publish_revision_command(trusted, &headers, &revision_id) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -305,10 +312,11 @@ async fn publish_revision(
 
 async fn discover_tools(
     State(state): State<AdminMcpState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Path(server_id): Path<String>,
+    Path(server_id): Path<String>
 ) -> Response {
-    let command = match build_discover_command(&headers, &server_id) {
+    let command = match build_discover_command(trusted, &headers, &server_id) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -320,10 +328,11 @@ async fn discover_tools(
 
 async fn check_health(
     State(state): State<AdminMcpState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Path(server_id): Path<String>,
+    Path(server_id): Path<String>
 ) -> Response {
-    let command = match build_health_command(&headers, &server_id) {
+    let command = match build_health_command(trusted, &headers, &server_id) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -335,10 +344,11 @@ async fn check_health(
 
 async fn list_tools(
     State(state): State<AdminMcpState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Path(server_id): Path<String>,
+    Path(server_id): Path<String>
 ) -> Response {
-    let query = match build_list_tools_query(&headers, &server_id) {
+    let query = match build_list_tools_query(trusted, &headers, &server_id) {
         Ok(query) => query,
         Err(response) => return response,
     };
@@ -350,11 +360,12 @@ async fn list_tools(
 
 async fn update_tool(
     State(state): State<AdminMcpState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(tool_id): Path<String>,
-    Json(request): Json<UpdateToolRequest>,
+    Json(request): Json<UpdateToolRequest>
 ) -> Response {
-    let command = match build_update_tool_command(&headers, &tool_id, request) {
+    let command = match build_update_tool_command(trusted, &headers, &tool_id, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -367,10 +378,11 @@ async fn update_tool(
 
 async fn list_bindings(
     State(state): State<AdminMcpState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Path(server_id): Path<String>,
+    Path(server_id): Path<String>
 ) -> Response {
-    let query = match build_list_bindings_query(&headers, &server_id) {
+    let query = match build_list_bindings_query(trusted, &headers, &server_id) {
         Ok(query) => query,
         Err(response) => return response,
     };
@@ -382,11 +394,12 @@ async fn list_bindings(
 
 async fn create_binding(
     State(state): State<AdminMcpState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(server_id): Path<String>,
-    Json(request): Json<CreateBindingRequest>,
+    Json(request): Json<CreateBindingRequest>
 ) -> Response {
-    let command = match build_create_binding_command(&headers, &server_id, request) {
+    let command = match build_create_binding_command(trusted, &headers, &server_id, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -398,11 +411,12 @@ async fn create_binding(
 
 async fn update_binding(
     State(state): State<AdminMcpState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(binding_id): Path<String>,
-    Json(request): Json<UpdateBindingRequest>,
+    Json(request): Json<UpdateBindingRequest>
 ) -> Response {
-    let command = match build_update_binding_command(&headers, &binding_id, request) {
+    let command = match build_update_binding_command(trusted, &headers, &binding_id, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -414,10 +428,11 @@ async fn update_binding(
 }
 
 fn build_list_servers_query(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: &HeaderMap,
     request: ListServersRequest,
 ) -> Result<ListAdminMcpServersQuery, Response> {
-    let subject = resolve_subject(headers)?;
+    let subject = map_subject(trusted);
     let page_no = request.page.unwrap_or(DEFAULT_PAGE_NO);
     if page_no < 1 {
         return Err(bad_request("page must be greater than or equal to 1"));
@@ -442,21 +457,23 @@ fn build_list_servers_query(
 }
 
 fn build_get_server_query(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: &HeaderMap,
     server_id: &str,
 ) -> Result<GetAdminMcpServerQuery, Response> {
     Ok(GetAdminMcpServerQuery {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         server_id: parse_positive_i64(server_id, "serverId")?,
     })
 }
 
 fn build_create_server_command(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: &HeaderMap,
     request: CreateServerRequest,
 ) -> Result<CreateAdminMcpServerCommand, Response> {
     Ok(CreateAdminMcpServerCommand {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         server_key: normalize_required_key(request.server_key, "serverKey")?,
         name: normalize_required_text(request.name, "name", MAX_NAME_LEN)?,
         description: normalize_optional_text(
@@ -474,12 +491,13 @@ fn build_create_server_command(
 }
 
 fn build_update_server_command(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: &HeaderMap,
     server_id: &str,
     request: UpdateServerRequest,
 ) -> Result<UpdateAdminMcpServerCommand, Response> {
     Ok(UpdateAdminMcpServerCommand {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         server_id: parse_positive_i64(server_id, "serverId")?,
         server_key: request
             .server_key
@@ -506,24 +524,26 @@ fn build_update_server_command(
 }
 
 fn build_list_revisions_query(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: &HeaderMap,
     server_id: &str,
 ) -> Result<ListAdminMcpServerRevisionsQuery, Response> {
     Ok(ListAdminMcpServerRevisionsQuery {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         server_id: parse_positive_i64(server_id, "serverId")?,
     })
 }
 
 fn build_create_revision_command(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: &HeaderMap,
     server_id: &str,
     request: CreateRevisionRequest,
 ) -> Result<CreateAdminMcpServerRevisionCommand, Response> {
     let transport = normalize_optional_enum(request.transport, "transport")?
         .unwrap_or_else(|| "http".to_owned());
     Ok(CreateAdminMcpServerRevisionCommand {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         server_id: parse_positive_i64(server_id, "serverId")?,
         revision_no: normalize_required_key(request.revision_no, "revisionNo")?,
         transport,
@@ -540,52 +560,57 @@ fn build_create_revision_command(
 }
 
 fn build_publish_revision_command(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: &HeaderMap,
     revision_id: &str,
 ) -> Result<PublishAdminMcpServerRevisionCommand, Response> {
     Ok(PublishAdminMcpServerRevisionCommand {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         revision_id: parse_positive_i64(revision_id, "revisionId")?,
     })
 }
 
 fn build_discover_command(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: &HeaderMap,
     server_id: &str,
 ) -> Result<DiscoverAdminMcpToolsCommand, Response> {
     Ok(DiscoverAdminMcpToolsCommand {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         server_id: parse_positive_i64(server_id, "serverId")?,
     })
 }
 
 fn build_health_command(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: &HeaderMap,
     server_id: &str,
 ) -> Result<TestAdminMcpServerHealthCommand, Response> {
     Ok(TestAdminMcpServerHealthCommand {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         server_id: parse_positive_i64(server_id, "serverId")?,
     })
 }
 
 fn build_list_tools_query(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: &HeaderMap,
     server_id: &str,
 ) -> Result<ListAdminMcpToolsQuery, Response> {
     Ok(ListAdminMcpToolsQuery {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         server_id: parse_positive_i64(server_id, "serverId")?,
     })
 }
 
 fn build_update_tool_command(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: &HeaderMap,
     tool_id: &str,
     request: UpdateToolRequest,
 ) -> Result<UpdateAdminMcpToolCommand, Response> {
     Ok(UpdateAdminMcpToolCommand {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         tool_id: parse_positive_i64(tool_id, "toolId")?,
         name: request
             .name
@@ -617,22 +642,24 @@ fn build_update_tool_command(
 }
 
 fn build_list_bindings_query(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: &HeaderMap,
     server_id: &str,
 ) -> Result<ListAdminMcpBindingsQuery, Response> {
     Ok(ListAdminMcpBindingsQuery {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         server_id: parse_positive_i64(server_id, "serverId")?,
     })
 }
 
 fn build_create_binding_command(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: &HeaderMap,
     server_id: &str,
     request: CreateBindingRequest,
 ) -> Result<CreateAdminMcpBindingCommand, Response> {
     Ok(CreateAdminMcpBindingCommand {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         server_id: parse_positive_i64(server_id, "serverId")?,
         server_revision_id: normalize_optional_positive_i64(
             request.server_revision_id,
@@ -652,12 +679,13 @@ fn build_create_binding_command(
 }
 
 fn build_update_binding_command(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: &HeaderMap,
     binding_id: &str,
     request: UpdateBindingRequest,
 ) -> Result<UpdateAdminMcpBindingCommand, Response> {
     Ok(UpdateAdminMcpBindingCommand {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         binding_id: parse_positive_i64(binding_id, "bindingId")?,
         server_revision_id: normalize_nullable_positive_i64(
             request.server_revision_id,
@@ -690,21 +718,13 @@ fn build_update_binding_command(
     })
 }
 
-fn resolve_subject(headers: &HeaderMap) -> Result<AdminMcpSubject, Response> {
-    TrustedRequestSubject::from_headers(headers)
-        .map(|subject| AdminMcpSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            operator_id: subject.operator_id,
-            operator_type: subject.operator_type,
-        })
-        .map_err(|error| {
-            (
-                StatusCode::UNAUTHORIZED,
-                Json(PlusApiResult::error("4010", error.to_string())),
-            )
-                .into_response()
-        })
+fn map_subject(trusted: TrustedRequestSubject) -> AdminMcpSubject {
+    AdminMcpSubject {
+            tenant_id: trusted.tenant_id,
+            organization_id: trusted.organization_id,
+            operator_id: trusted.operator_id,
+            operator_type: trusted.operator_type,
+        }
 }
 
 fn normalize_required_key(value: String, field_name: &str) -> Result<String, Response> {

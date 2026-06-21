@@ -121,12 +121,10 @@ pub fn admin_announcement_router_with_store(
 
 async fn fetch_announcements(
     State(state): State<AdminAnnouncementState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
 
     match state
         .store
@@ -143,13 +141,11 @@ async fn fetch_announcements(
 
 async fn create_announcement(
     State(state): State<AdminAnnouncementState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let request = match parse_json_body::<AdminAnnouncementCreateRequest>(&body) {
         Ok(request) => request,
         Err(message) => return bad_request(message),
@@ -177,14 +173,12 @@ async fn create_announcement(
 
 async fn update_announcement(
     State(state): State<AdminAnnouncementState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(announcement_id): Path<String>,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let announcement_id = match parse_announcement_id(&announcement_id) {
         Ok(announcement_id) => announcement_id,
         Err(message) => return bad_request(message),
@@ -218,13 +212,11 @@ async fn update_announcement(
 
 async fn delete_announcement(
     State(state): State<AdminAnnouncementState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Path(announcement_id): Path<String>,
+    Path(announcement_id): Path<String>
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let announcement_id = match parse_announcement_id(&announcement_id) {
         Ok(announcement_id) => announcement_id,
         Err(message) => return bad_request(message),
@@ -247,21 +239,13 @@ async fn delete_announcement(
     }
 }
 
-fn resolve_subject(headers: &HeaderMap) -> Result<AdminAnnouncementSubject, Response> {
-    TrustedRequestSubject::from_headers(headers)
-        .map(|subject| AdminAnnouncementSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            operator_id: subject.operator_id,
-            operator_type: subject.operator_type,
-        })
-        .map_err(|error| {
-            (
-                StatusCode::UNAUTHORIZED,
-                Json(PlusApiResult::error("4010", error.to_string())),
-            )
-                .into_response()
-        })
+fn map_subject(trusted: TrustedRequestSubject) -> AdminAnnouncementSubject {
+    AdminAnnouncementSubject {
+            tenant_id: trusted.tenant_id,
+            organization_id: trusted.organization_id,
+            operator_id: trusted.operator_id,
+            operator_type: trusted.operator_type,
+        }
 }
 
 fn parse_json_body<T>(body: &[u8]) -> Result<T, String>

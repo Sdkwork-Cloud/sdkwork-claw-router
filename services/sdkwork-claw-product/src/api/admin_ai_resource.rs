@@ -285,12 +285,10 @@ pub fn admin_ai_resource_router_with_store(
 
 async fn fetch_ai_resources(
     State(state): State<AdminAiResourceState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
 
     match state
         .store
@@ -307,12 +305,10 @@ async fn fetch_ai_resources(
 
 async fn fetch_ai_resource_groups(
     State(state): State<AdminAiResourceState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
 
     match state
         .store
@@ -332,12 +328,10 @@ async fn fetch_ai_resource_groups(
 async fn fetch_ai_resource_group_resources(
     State(state): State<AdminAiResourceState>,
     Path(group_id_or_code): Path<String>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let group_id_or_code = group_id_or_code.trim().to_owned();
     if group_id_or_code.is_empty() {
         return bad_request("AI resource group id or code is required".to_owned());
@@ -367,13 +361,11 @@ async fn fetch_ai_resource_group_resources(
 
 async fn create_ai_resource(
     State(state): State<AdminAiResourceState>,
-    headers: HeaderMap,
-    body: Bytes,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let request = match parse_json_body::<AiResourceCreateRequest>(&body, "AI resource") {
         Ok(request) => request,
         Err(message) => return bad_request(message),
@@ -398,13 +390,11 @@ async fn create_ai_resource(
 
 async fn create_ai_resource_group(
     State(state): State<AdminAiResourceState>,
-    headers: HeaderMap,
-    body: Bytes,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let request = match parse_json_body::<AiResourceGroupCreateRequest>(&body, "AI resource group")
     {
         Ok(request) => request,
@@ -431,13 +421,11 @@ async fn create_ai_resource_group(
 async fn update_ai_resource_group(
     State(state): State<AdminAiResourceState>,
     Path(group_id): Path<String>,
-    headers: HeaderMap,
-    body: Bytes,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let group_id = match parse_positive_id(&group_id, "AI resource group id") {
         Ok(group_id) => group_id,
         Err(message) => return bad_request(message),
@@ -469,12 +457,10 @@ async fn update_ai_resource_group(
 async fn delete_ai_resource_group(
     State(state): State<AdminAiResourceState>,
     Path(group_id): Path<String>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let group_id = match parse_positive_id(&group_id, "AI resource group id") {
         Ok(group_id) => group_id,
         Err(message) => return bad_request(message),
@@ -500,13 +486,11 @@ async fn delete_ai_resource_group(
 async fn update_ai_resource(
     State(state): State<AdminAiResourceState>,
     Path(resource_id): Path<String>,
-    headers: HeaderMap,
-    body: Bytes,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let resource_id = match parse_positive_id(&resource_id, "AI resource id") {
         Ok(resource_id) => resource_id,
         Err(message) => return bad_request(message),
@@ -534,21 +518,13 @@ async fn update_ai_resource(
     }
 }
 
-fn resolve_subject(headers: &HeaderMap) -> Result<AdminAiResourceSubject, Response> {
-    TrustedRequestSubject::from_headers(headers)
-        .map(|subject| AdminAiResourceSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            operator_id: subject.operator_id,
-            operator_type: subject.operator_type,
-        })
-        .map_err(|error| {
-            (
-                StatusCode::UNAUTHORIZED,
-                Json(PlusApiResult::error("4010", error.to_string())),
-            )
-                .into_response()
-        })
+fn map_subject(trusted: TrustedRequestSubject) -> AdminAiResourceSubject {
+    AdminAiResourceSubject {
+            tenant_id: trusted.tenant_id,
+            organization_id: trusted.organization_id,
+            operator_id: trusted.operator_id,
+            operator_type: trusted.operator_type,
+        }
 }
 
 fn to_item_response(item: AdminAiResourceItem) -> AdminAiResourceItemResponse {

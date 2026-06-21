@@ -8,7 +8,7 @@
 
 ## 1. 结论
 
-AppCenter 必须沿用 Java 侧 `PlusApp` 设计体系，数据库主数据表固定为 `plus_app`。`sdkwork-claw-router` 不再为 AppCenter 新建 `studio_app_*` 三类应用主数据表，避免与 `legacy-java-plus-entity`、`legacy-java-plus-app-api`、`legacy-java-plus-backend-api` 产生双主数据和路径不一致问题。
+AppCenter 必须沿用 Java 侧 `PlusApp` 设计体系，数据库主数据表固定为 `plus_app`。`sdkwork-clawrouter` 不再为 AppCenter 新建 `studio_app_*` 三类应用主数据表，避免与 `legacy-java-plus-entity`、`legacy-java-plus-app-api`、`legacy-java-plus-backend-api` 产生双主数据和路径不一致问题。
 
 `studio_catalog_action` 可以继续保留，但定位只能是应用/技能市场的行为事实表，用于下载、收藏、评分、评论等事件和聚合重算；它不是 AppCenter 的应用主数据表。
 
@@ -58,7 +58,7 @@ Backend/Admin 走 backend-api 标准，路径沿用 Java：
 | 后台 App CRUD | `/backend/v3/api/app` |
 | App 聚合后台能力 | `/backend/v3/api/app/admin` |
 
-因此 `sdkwork-claw-router` 不能新增 `/appcenter/*`、`/portal/apps/*`、`/claw-router/apps/*` 之类路径。前端服务适配层只能在本地把 Java DTO 转换成现有页面需要的 `App`/`AppRelease` view model，不能要求修改 `apps/sdkwork-clawrouter-pc` 的 UI 视觉设计。
+因此 `sdkwork-clawrouter` 不能新增 `/appcenter/*`、`/portal/apps/*`、`/claw-router/apps/*` 之类路径。前端服务适配层只能在本地把 Java DTO 转换成现有页面需要的 `App`/`AppRelease` view model，不能要求修改 `apps/sdkwork-clawrouter-pc` 的 UI 视觉设计。
 
 ## 4. 前端字段映射
 

@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Make single-port integrated startup the default development topology for `sdkwork-claw-router` and sibling `sdkwork-api-gateway`.
+**Goal:** Make single-port integrated startup the default development topology for `sdkwork-clawrouter` and sibling `sdkwork-api-gateway`.
 
 **Architecture:** Keep low-level split capability only behind tests or explicit internal validation, while changing public `dev` entrypoints, templates, and docs to single-port-first behavior. Product developers should see one entry port by default.
 

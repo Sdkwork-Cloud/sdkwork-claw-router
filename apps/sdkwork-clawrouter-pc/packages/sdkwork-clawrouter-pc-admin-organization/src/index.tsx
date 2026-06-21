@@ -16,7 +16,7 @@ import {
   Users,
   X,
 } from 'lucide-react';
-import { BusinessStatePanel, BusinessStateTableRow, ConfirmDialog, AdminTableShell } from 'sdkwork-clawrouter-pc-commons';
+import { BusinessStatePanel, BusinessStateTableRow, ConfirmDialog, AdminTableShell } from '@sdkwork/clawrouter-pc-commons';
 import {
   OrganizationService,
   type DepartmentAssignmentRecord,

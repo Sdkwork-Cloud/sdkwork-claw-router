@@ -13,7 +13,7 @@ import type { SimpleChatInputSubmit } from './chatTypes';
 import type { PlaygroundModelGroup, PlaygroundModelOption } from '../../playgroundTypes';
 
 const FALLBACK_CHAT_MODEL = createFallbackModel('Chat model', 'Chat model catalog is being prepared', 'AI', 'llms', 'Claw Router');
-const SIMPLE_CHAT_SELECTED_MODEL_STORAGE_KEY = 'sdkwork-claw-router.playground.chat.selectedModelId';
+const SIMPLE_CHAT_SELECTED_MODEL_STORAGE_KEY = 'sdkwork-clawrouter.playground.chat.selectedModelId';
 const flatComposer = 'rounded-[26px] bg-[#1c1c20]/95 p-3 backdrop-blur-xl';
 
 interface StoredSimpleChatModelPreference {

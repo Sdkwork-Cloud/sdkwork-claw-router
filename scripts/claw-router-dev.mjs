@@ -229,7 +229,7 @@ function main() {
     mode: settings.mode,
   };
 
-  console.log('[sdkwork-claw-router-dev] topology profile loaded');
+  console.log('[sdkwork-clawrouter-dev] topology profile loaded');
   console.log(JSON.stringify(summary, null, 2));
 
   if (settings.dryRun) {

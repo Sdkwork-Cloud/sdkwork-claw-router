@@ -10,7 +10,7 @@ Root SDKWork standards remain authoritative. Local component specs can narrow or
 | --- | --- |
 | Name | `sdkwork-clawrouter-pc-console-api-keys` |
 | Type | `node-package` |
-| Root | `sdkwork-claw-router/apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-api-keys` |
+| Root | `sdkwork-clawrouter/apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-api-keys` |
 | Domain | `platform` |
 | Capability | `router` |
 | Languages | `typescript` |

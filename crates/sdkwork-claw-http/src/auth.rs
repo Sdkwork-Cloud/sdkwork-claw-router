@@ -363,7 +363,7 @@ fn iam_app_context_from_trusted_subject(subject: TrustedRequestSubject) -> IamAp
         Some(&subject.organization_id.to_string()),
         subject.user_id.to_string(),
         format!("claw-subject-{}", subject.user_id),
-        "sdkwork-claw-router",
+        "sdkwork-clawrouter",
         Environment::Prod,
         DeploymentMode::Private,
         AuthLevel::Password,

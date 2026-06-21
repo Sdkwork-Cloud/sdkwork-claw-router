@@ -250,7 +250,7 @@ function canonicalAppSeedBundle(bundle) {
     ...bundle,
     source: {
       ...(isRecord(bundle.source) ? bundle.source : {}),
-      generatedBy: 'apps/sdkwork-claw-router/scripts/update-app-store-seed.mjs',
+      generatedBy: 'apps/sdkwork-clawrouter/scripts/update-app-store-seed.mjs',
     },
     apps: Array.isArray(bundle.apps)
       ? bundle.apps.map((entry, index) => {

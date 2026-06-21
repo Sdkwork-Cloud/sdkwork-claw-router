@@ -835,7 +835,7 @@ test("api reference schema tabs source uses commons SDK prefix boundary instead 
     "utf8",
   );
 
-  assert.match(source, /from 'sdkwork-clawrouter-pc-commons\/runtime'/);
+  assert.match(source, /from '@sdkwork\/clawrouter-pc-commons\/runtime'/);
   assert.match(source, /\bAPP_API_PREFIX\b/);
   assert.match(source, /\bBACKEND_API_PREFIX\b/);
   assert.match(source, /\bOPEN_API_PREFIX\b/);

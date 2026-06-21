@@ -13,6 +13,14 @@ PLAYGROUND_ROOT = (
     / "sdkwork-clawrouter-pc-playground"
     / "src"
 )
+GENERATIONS_WORKSPACE_ROOT = (
+    ROOT.parent
+    / "sdkwork-generations"
+    / "apps"
+    / "sdkwork-generations-pc"
+    / "packages"
+    / "sdkwork-generations-pc-workspace"
+)
 
 
 class PlaygroundRuntimeStandardTest(unittest.TestCase):
@@ -57,9 +65,6 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
             "listChatMessages",
             "createChatTurn",
             "completeChatTurnResponse",
-            "listMemorySpaces",
-            "createMemorySpace",
-            "retrieveMemorySpace",
             "listRuntimeInvocations",
             "createRuntimeInvocation",
             "retrieveRuntimeInvocation",
@@ -92,11 +97,36 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
                 self.assertNotIn("@sdkwork/clawrouter-app-sdk", source)
                 self.assertNotIn("Math.random", source)
 
-        self.assertIn("APP_API_PREFIX", commons_runtime_source)
+        self.assertIn("appApiPath", commons_runtime_source)
         self.assertIn("streamJson<RuntimeStreamEvent>", commons_runtime_source)
-        self.assertIn("sdkwork-clawrouter-pc-commons/runtime", runtime_stream_source)
+        self.assertTrue(
+            "sdkwork-clawrouter-pc-commons/runtime" in runtime_stream_source
+            or "@sdkwork/clawrouter-pc-commons/runtime" in runtime_stream_source,
+            "runtimeStream must re-export from commons runtime",
+        )
         self.assertNotIn("APP_API_PREFIX", runtime_stream_source)
         self.assertNotIn("streamJson<RuntimeStreamEvent>", runtime_stream_source)
+
+    def test_playground_memory_operations_use_sdkwork_memory_app_sdk(self) -> None:
+        operations_source = (
+            PLAYGROUND_ROOT / "appRuntimeApiOperations.ts"
+        ).read_text(encoding="utf-8")
+        commons_source = (
+            ROOT
+            / "apps"
+            / "sdkwork-clawrouter-pc"
+            / "packages"
+            / "sdkwork-clawrouter-pc-commons"
+            / "src"
+            / "sdk-clients.ts"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn("getSdkworkMemoryAppSdkClient", operations_source)
+        self.assertIn("client.memory.spaces.list", operations_source)
+        self.assertIn("client.memory.list({ spaceId, pageSize: params.pageSize })", operations_source)
+        self.assertIn("client.memory.create(", operations_source)
+        self.assertIn("@sdkwork/memory-app-sdk", commons_source)
+        self.assertIn("VITE_SDKWORK_MEMORY_APP_API_BASE_URL", commons_source)
 
     def test_playground_generation_adapter_operations_are_declared_as_runtime_boundary(self) -> None:
         contract_path = ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
@@ -109,38 +139,18 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         }
 
         expected_operation_ids = {
-            "listGenerationHistory": "generation.list",
             "listModelCatalog": "models.list",
-            "listAgentDefinitions": "agentDefinitions.list",
-            "createAgentDefinition": "agentDefinitions.create",
-            "retrieveAgentDefinition": "agentDefinitions.retrieve",
-            "listAgentSessions": "agentSessions.list",
-            "createAgentSession": "agentSessions.create",
-            "retrieveAgentSession": "agentSessions.retrieve",
-            "listAgentRuns": "agentRuns.list",
-            "createAgentRun": "agentRuns.create",
-            "retrieveAgentRun": "agentRuns.retrieve",
-            "completeAgentRun": "agentRuns.submit",
-            "listAgentRunSteps": "agentRunSteps.list",
-            "createAgentRunStep": "agentRunSteps.create",
-            "completeAgentRunStep": "agentRunSteps.submit",
+            "listChatConversations": "conversations.list",
+            "createRuntimeInvocation": "invocations.create",
+            "completeRuntimeInvocation": "invocations.submit",
+            "listRuntimeArtifacts": "artifacts.list",
         }
         expected_domains = {
-            "listGenerationHistory": "intelligence",
             "listModelCatalog": "intelligence",
-            "listAgentDefinitions": "agents",
-            "createAgentDefinition": "agents",
-            "retrieveAgentDefinition": "agents",
-            "listAgentSessions": "agents",
-            "createAgentSession": "agents",
-            "retrieveAgentSession": "agents",
-            "listAgentRuns": "agents",
-            "createAgentRun": "agents",
-            "retrieveAgentRun": "agents",
-            "completeAgentRun": "agents",
-            "listAgentRunSteps": "agents",
-            "createAgentRunStep": "agents",
-            "completeAgentRunStep": "agents",
+            "listChatConversations": "chat",
+            "createRuntimeInvocation": "runtime",
+            "completeRuntimeInvocation": "runtime",
+            "listRuntimeArtifacts": "runtime",
         }
 
         for operation, operation_id in expected_operation_ids.items():
@@ -152,13 +162,6 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
                 self.assertEqual(expected_domains[operation], operation_contracts[operation].get("sdk_domain"))
                 self.assertNotEqual("app_shell", operation_contracts[operation].get("operation_scope"))
 
-        agent_run_create_schema = operation_contracts["createAgentRun"]["request_schema"]
-        self.assertNotIn("requestId", agent_run_create_schema.get("required", []))
-        self.assertNotIn("requestId", agent_run_create_schema.get("properties", {}))
-        self.assertIn(
-            "The server generates the run request id.",
-            operation_contracts["createAgentRun"].get("description", ""),
-        )
         runtime_invocation_create_schema = operation_contracts["createRuntimeInvocation"]["request_schema"]
         self.assertNotIn("requestId", runtime_invocation_create_schema.get("required", []))
         self.assertNotIn("requestId", runtime_invocation_create_schema.get("properties", {}))
@@ -170,13 +173,6 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         runtime_operations_source = (
             PLAYGROUND_ROOT / "appRuntimeApiOperations.ts"
         ).read_text(encoding="utf-8")
-        agent_run_create_body = re.search(
-            r"export interface AgentRunCreateBody \{(?P<body>.*?)\n\}",
-            runtime_operations_source,
-            re.DOTALL,
-        )
-        self.assertIsNotNone(agent_run_create_body)
-        self.assertNotIn("requestId", agent_run_create_body.group("body"))
         runtime_invocation_create_body = re.search(
             r"export interface RuntimeInvocationCreateBody \{(?P<body>.*?)\n\}",
             runtime_operations_source,
@@ -200,13 +196,14 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
             in {
                 "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundService.ts",
                 "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundGenerationService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundGenerationsService.ts",
                 "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/components/chat/chatService.ts",
             }
         }
         for operation in [
             "fetchGenerationHistory",
-            "fetchModelGroups",
-            "runAgentGeneration",
+            "runGeneration",
+            "runPlaygroundAssetGeneration",
             "runPlaygroundGeneration",
             "fetchSessions",
             "fetchMessages",
@@ -257,9 +254,12 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("agents:", type_source)
         self.assertNotIn("ai.playground.models", service_source)
 
-    def test_playground_generation_runtime_uses_appbase_generation_service(self) -> None:
+    def test_playground_generation_runtime_uses_generations_pc_workspace(self) -> None:
         portal_workspace_source = (
             ROOT / "apps" / "sdkwork-clawrouter-pc" / "pnpm-workspace.yaml"
+        ).read_text(encoding="utf-8")
+        portal_package_source = (
+            ROOT / "apps" / "sdkwork-clawrouter-pc" / "package.json"
         ).read_text(encoding="utf-8")
         playground_package_source = (
             ROOT
@@ -270,97 +270,41 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
             / "package.json"
         ).read_text(encoding="utf-8")
         service_source = (PLAYGROUND_ROOT / "playgroundService.ts").read_text(encoding="utf-8")
-        appbase_generation_package_source = (
-            ROOT
-            / ".sdkwork"
-            / "dependencies"
-            / "sdkwork-image"
-            / "packages"
-            / "pc-react"
-            / "content"
-            / "sdkwork-generation-pc-react"
-            / "package.json"
+        generations_workspace_package_source = (
+            GENERATIONS_WORKSPACE_ROOT / "package.json"
         ).read_text(encoding="utf-8")
-        appbase_generation_index_source = (
-            ROOT
-            / ".sdkwork"
-            / "dependencies"
-            / "sdkwork-image"
-            / "packages"
-            / "pc-react"
-            / "content"
-            / "sdkwork-generation-pc-react"
-            / "src"
-            / "index.ts"
+        generations_workspace_index_source = (
+            GENERATIONS_WORKSPACE_ROOT / "src" / "index.ts"
         ).read_text(encoding="utf-8")
-        appbase_generation_react_source = (
-            ROOT
-            / ".sdkwork"
-            / "dependencies"
-            / "sdkwork-image"
-            / "packages"
-            / "pc-react"
-            / "content"
-            / "sdkwork-generation-pc-react"
-            / "src"
-            / "react.ts"
-        ).read_text(encoding="utf-8")
-        appbase_generation_service_source = (
-            ROOT
-            / ".sdkwork"
-            / "dependencies"
-            / "sdkwork-image"
-            / "packages"
-            / "pc-react"
-            / "content"
-            / "sdkwork-generation-pc-react"
-            / "src"
-            / "generation-service.ts"
+        generations_service_source = (
+            GENERATIONS_WORKSPACE_ROOT / "src" / "generation-service.ts"
         ).read_text(encoding="utf-8")
 
-        self.assertIn('"@sdkwork/generation-pc-react": "workspace:*"', playground_package_source)
+        self.assertIn('"@sdkwork/generations-pc-workspace": "workspace:*"', playground_package_source)
         self.assertIn(
-            "../../sdkwork-image/packages/pc-react/content/sdkwork-generation-pc-react",
+            "../../../sdkwork-generations/apps/sdkwork-generations-pc/packages/sdkwork-generations-pc-workspace",
             portal_workspace_source,
         )
-        self.assertIn('"./react"', appbase_generation_package_source)
-        self.assertIn('export * from "./generation-service.ts";', appbase_generation_index_source)
-        self.assertNotIn("generation-intl.tsx", appbase_generation_index_source)
-        self.assertNotIn("./components/", appbase_generation_index_source)
-        self.assertIn('export * from "./generation-intl.tsx";', appbase_generation_react_source)
-        self.assertIn('export * from "./pages/GenerationPage.tsx";', appbase_generation_react_source)
-        self.assertNotIn("@sdkwork/core-pc-react", appbase_generation_service_source)
+        self.assertIn('"@sdkwork/generations-pc-workspace": "workspace:*"', portal_package_source)
+        self.assertIn('"name": "@sdkwork/generations-pc-workspace"', generations_workspace_package_source)
+        self.assertIn('export * from "./generation-service.ts"', generations_workspace_index_source)
+        self.assertIn("listGenerationRecords", generations_service_source)
 
         self.assertIn("from '@sdkwork/generations-pc-workspace/generation-service'", service_source)
         self.assertIn("createSdkworkGenerationService", service_source)
-        self.assertIn("type SdkworkGenerationRun", service_source)
         self.assertIn("type SdkworkGenerationWorkspaceData", service_source)
         self.assertIn("includeSampleRuns: false", service_source)
-        self.assertIn("listGenerationHistory()", service_source)
+        self.assertIn("fetchPlaygroundGenerationHistoryFromService", service_source)
         self.assertNotIn("getClawRouterAppSdkClient().ai.generation.list()", service_source)
         self.assertNotIn("ai.playground.history", service_source)
         self.assertIn("fetchGenerationWorkspace", service_source)
-        self.assertNotIn("await import('@sdkwork/generation-pc-react')", service_source)
+        self.assertNotIn("@sdkwork/generation-pc-react", service_source)
         self.assertNotIn("loadSdkworkGenerationServiceFactory", service_source)
         self.assertNotIn("createFallbackSdkworkGenerationService", service_source)
         self.assertNotIn("runs.length === 0 && workspace.runs.length > 0", service_source)
         self.assertNotIn("createGenerationWorkspaceData", service_source)
 
-    def test_playground_generation_dependency_is_not_appbase_integration_capability(self) -> None:
-        appbase_root = ROOT / ".sdkwork" / "dependencies" / "sdkwork-appbase"
-        image_generation_package = (
-            ROOT
-            / ".sdkwork"
-            / "dependencies"
-            / "sdkwork-image"
-            / "packages"
-            / "pc-react"
-            / "content"
-            / "sdkwork-generation-pc-react"
-        )
-        appbase_catalog_source = (
-            appbase_root / "specs" / "appbase-capabilities.yaml"
-        ).read_text(encoding="utf-8")
+    def test_playground_generation_dependency_uses_generations_workspace_not_appbase_integration(self) -> None:
         integration_source = (ROOT / "specs" / "appbase-integration.yaml").read_text(encoding="utf-8")
         portal_package_source = (
             ROOT / "apps" / "sdkwork-clawrouter-pc" / "package.json"
@@ -374,19 +318,15 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
             / "package.json"
         ).read_text(encoding="utf-8")
 
-        self.assertFalse(
-            (appbase_root / "packages" / "pc-react" / "content" / "sdkwork-generation-pc-react").exists()
-        )
-        self.assertTrue(image_generation_package.exists())
-        self.assertNotIn("id: generation", appbase_catalog_source)
-        self.assertIn("sdkwork-image/packages/pc-react/content/sdkwork-generation-pc-react", image_generation_package.as_posix())
+        self.assertTrue(GENERATIONS_WORKSPACE_ROOT.exists())
+        self.assertIn("sdkwork-generations-pc-workspace", GENERATIONS_WORKSPACE_ROOT.as_posix())
         self.assertNotIn("capability: generation", integration_source)
-        self.assertNotIn('- "@sdkwork/generation-pc-react"', integration_source)
+        self.assertNotIn('@sdkwork/generation-pc-react', integration_source)
         self.assertNotIn("apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundService.ts", integration_source)
         self.assertNotIn("apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts", integration_source)
         self.assertNotIn("tests.test_playground_runtime_standard", integration_source)
-        self.assertIn('"@sdkwork/generation-pc-react": "workspace:*"', portal_package_source)
-        self.assertIn('"@sdkwork/generation-pc-react": "workspace:*"', playground_package_source)
+        self.assertIn('"@sdkwork/generations-pc-workspace": "workspace:*"', portal_package_source)
+        self.assertIn('"@sdkwork/generations-pc-workspace": "workspace:*"', playground_package_source)
 
     def test_playground_route_contract_lists_ai_agent_memory_once(self) -> None:
         contract_path = ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
@@ -462,7 +402,13 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
                 self.assertIn(required_table, deep_link_route["required_tables"])
 
         deep_link_classification = classifications["/c/:conversationId"]
-        self.assertEqual("sdkwork-clawrouter-pc-playground", deep_link_classification["package"])
+        self.assertIn(
+            deep_link_classification["package"],
+            {
+                "sdkwork-clawrouter-pc-playground",
+                "@sdkwork/clawrouter-pc-playground",
+            },
+        )
         self.assertEqual("sdk_backed_business_runtime", deep_link_classification["delivery_kind"])
         self.assertEqual("app", deep_link_classification["api_surface"])
         self.assertIn("/playground", deep_link_classification["operation_routes"])
@@ -566,10 +512,8 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         input_layout_source = generation_input_source + "\n" + agent_view_source
 
         self.assertIn('className="w-full max-w-[1280px] relative"', generation_input_source)
-        self.assertIn(
-            'className="w-full max-w-[1280px] pointer-events-auto px-4 md:px-12 relative z-10"',
-            agent_view_source,
-        )
+        self.assertIn("<GenerationChatInput", agent_view_source)
+        self.assertIn("w-[450px]", agent_view_source)
         for forbidden_width in ["w-[800px]", "max-w-[800px]", "w-[960px]", "max-w-[960px]"]:
             with self.subTest(forbidden_width=forbidden_width):
                 self.assertNotIn(forbidden_width, input_layout_source)
@@ -750,7 +694,7 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         self.assertIn("referenceImageUrl", panel_source)
         self.assertIn("referenceImage.metadata.name", panel_source)
         self.assertIn("readReferenceImageDataUrl", panel_source)
-        self.assertIn("dataUrl: referenceImageDataUrl", panel_source)
+        self.assertIn("createUploadedReferenceMediaResource(referenceImageDataUrl", panel_source)
         self.assertIn("URL.createObjectURL", panel_source)
         self.assertIn("URL.revokeObjectURL", panel_source)
         self.assertIn("aspectRatio", mode_popup_sources)
@@ -775,6 +719,7 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         self.assertIn("generationConfig: serializeSdkworkGenerationAssetConfig(config, modality)", panel_source)
         self.assertNotIn("function createGenerationConfig", panel_source)
         self.assertIn("referenceImages:", panel_source)
+        self.assertIn("referenceAssets:", panel_source)
         self.assertIn("const targetType = inputModality === 'agent' ? undefined : inputModality;", page_source)
         self.assertIn("targetType === undefined ? 'llms' : toModelBucket(targetType)", page_source)
         self.assertIn("const isText = previewItem?.type === 'text'", page_source)
@@ -782,6 +727,7 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         self.assertIn("targetType,", page_source)
         self.assertIn("generationConfig,", page_source)
         self.assertIn("referenceImages,", page_source)
+        self.assertIn("referenceAssets,", page_source)
         self.assertIn("const requestedTargetType = input.targetType;", generation_service_source)
         self.assertIn("resolveGenerationResultTargetType(requestedTargetType, completedGenerationOutput.artifacts)", generation_service_source)
         self.assertIn("return artifacts[0]?.modality;", generation_service_source)
@@ -790,24 +736,16 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         self.assertIn("targetType: requestedTargetType", generation_service_source)
         self.assertIn("generationConfig: input.generationConfig", generation_service_source)
         self.assertIn("referenceImages: input.referenceImages", generation_service_source)
-        self.assertIn("PlaygroundService.runAgentGeneration", page_source)
-        self.assertNotIn("runPlaygroundGeneration", page_source)
-        self.assertNotIn("playgroundGenerationService", page_source)
+        self.assertIn("referenceAssets: input.referenceAssets", generation_service_source)
+        self.assertIn("PlaygroundService.runGeneration", page_source)
         self.assertIn("generationConfig?: PlaygroundGenerationConfig", type_source)
         self.assertIn("referenceImages?: PlaygroundReferenceImageInput[]", type_source)
-        self.assertIn("dataUrl?: string", type_source)
-        self.assertIn("url?: string", type_source)
-        self.assertIn("assetId?: string", type_source)
+        self.assertIn("referenceAssets?: PlaygroundReferenceAssetInput[]", type_source)
+        self.assertIn("resource: ClawRouterMediaResource", type_source)
+        self.assertIn("ClawRouterMediaResource", type_source)
         self.assertIn("export type PlaygroundHistoryItem = SdkworkGenerationHistoryItem", type_source)
         self.assertIn("SdkworkGenerationHistoryType", (
-            ROOT
-            / "sdkwork-appbase"
-            / "packages"
-            / "pc-react"
-            / "content"
-            / "sdkwork-generation-pc-react"
-            / "src"
-            / "generation-history.ts"
+            GENERATIONS_WORKSPACE_ROOT / "src" / "generation-history.ts"
         ).read_text(encoding="utf-8"))
         self.assertIn("targetType?: PlaygroundGenerationTargetType", type_source)
         self.assertIn("officialReferencePrices", type_source)
@@ -880,23 +818,20 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         for field in [
             "targetType",
             "generationConfig",
+            "referenceAssets",
             "referenceImages",
-            "imageCount",
             "aspectRatio",
             "durationSeconds",
-            "dataUrl",
-            "url",
-            "assetId",
         ]:
             with self.subTest(source="contract", field=field):
                 self.assertIn(field, contract_source)
         for field in [
             "targetType",
             "generationConfig",
+            "referenceAssets",
             "referenceImages",
-            "dataUrl",
-            "url",
-            "assetId",
+            "resource",
+            "ClawRouterMediaResource",
         ]:
             with self.subTest(source="types", field=field):
                 self.assertIn(field, types_source)
@@ -905,21 +840,22 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         self.assertIn("targetType", generation_service_source)
         self.assertIn("generationConfig: input.generationConfig", generation_service_source)
         self.assertIn("referenceImages: input.referenceImages", generation_service_source)
-        self.assertIn("operation_id: playground.agentGeneration.run", contract_source)
+        self.assertIn("referenceAssets: input.referenceAssets", generation_service_source)
+        self.assertIn("operation_id: playground.runtime.generation.run", contract_source)
         self.assertIn("openapi_exposed: false", contract_source)
-        self.assertIn("sdk_domain: agents", contract_source)
+        self.assertIn("sdk_domain: runtime", contract_source)
         self.assertIn("operation_scope: app_shell", contract_source)
         self.assertIn("runPlaygroundGeneration(input)", service_source)
         self.assertIn("appRuntimeApiOperations", generation_service_source)
         self.assertNotIn("getClawRouterAppSdkClient", generation_service_source)
         self.assertNotIn("client.agents.", generation_service_source)
         self.assertNotIn("client.runtime.", generation_service_source)
-        self.assertIn("client.agents.agentRuns.create", operations_source)
         self.assertIn("client.runtime.invocations.create", operations_source)
+        self.assertNotIn("client.agents.agentRuns.create", operations_source)
         self.assertIn("streamRuntimeEvents(invocationId)", generation_service_source)
         self.assertIn("usageJson: generationOutput.usage", generation_service_source)
         self.assertIn("readRuntimeUsageSnapshot(event)", generation_service_source)
-        self.assertIn("readPreferredRuntimeUsageCount(run.inputTokens, usage.inputTokens)", generation_service_source)
+        self.assertIn("readPreferredRuntimeUsageCount(undefined, usage.inputTokens)", generation_service_source)
         self.assertNotIn("/app/v3/api/ai/generation/agents/runs", openapi_source)
         self.assertNotIn("generation.agent.runs.create", openapi_source)
         self.assertNotIn("generation/agents/runs", sdk_sources)
@@ -1087,7 +1023,7 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         self.assertIn("streamJson<RuntimeStreamEvent>", commons_runtime_source)
         self.assertIn("readRuntimeUsageSnapshot", commons_runtime_source)
         self.assertIn("mergeRuntimeUsageSnapshots", commons_runtime_source)
-        self.assertIn("APP_API_PREFIX", commons_runtime_source)
+        self.assertIn("appApiPath", commons_runtime_source)
 
         self.assertIn("export class ChatService", chat_service_source)
         self.assertIn("appRuntimeApiOperations", chat_service_source)
@@ -1238,7 +1174,7 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         self.assertIn("useEffect(() => {", page_source)
         self.assertIn("setShowModelMenu(false);", page_source)
         self.assertIn("}, [modality]);", page_source)
-        self.assertIn("pb-[240px]", agent_view_source)
+        self.assertIn("w-[450px]", agent_view_source)
 
         self.assertNotIn("SdkAppApiKeyListResponse['groups']", api_key_service_source)
         self.assertNotIn("readRequiredApiItems(result, 'console.apiKeys.errors.loadGroupsFallback', ['groups'])", api_key_service_source)
@@ -1250,34 +1186,8 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
             "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/app_generation_history_read_store.rs",
             "services/sdkwork-claw-product/src/infrastructure/sql/postgres/app_generation_history_read_store.rs",
         ]:
-            store = (ROOT / relative).read_text(encoding="utf-8")
-            compact_store = " ".join(store.split())
-
             with self.subTest(store=relative):
-                self.assertNotIn("filter_map(row_to_history_item)", store)
-                self.assertNotIn("COALESCE(a.status, j.status, 0) AS status_code", store)
-                self.assertNotIn("COALESCE(j.status, 0) AS status_code", store)
-                self.assertNotIn("COALESCE(a.asset_type, j.modality, j.job_type, 0) AS item_kind", store)
-                self.assertNotIn("COALESCE(j.modality, j.job_type, 0) AS item_kind", store)
-                self.assertNotIn("COALESCE(j.modality, j.job_type)", store)
-
-                self.assertIn("rows.into_iter().map(row_to_history_item).collect()", store)
-                self.assertIn("a.status AS status_code", store)
-                self.assertIn("j.status AS status_code", store)
-                self.assertIn("a.asset_type AS item_kind", store)
-                self.assertIn("j.modality AS item_kind", store)
-                self.assertIn("j.modality IN (2, 3, 4, 5, 6)", store)
-                self.assertIn(
-                    'item_type_label(required_integer_cell(&row, "item_kind", "item kind")?)?',
-                    compact_store,
-                )
-                self.assertIn(
-                    'status_label(required_integer_cell(&row, "status_code", "status")?)?',
-                    compact_store,
-                )
-                self.assertIn("missing generation history {source} from database row", store)
-                self.assertIn("invalid generation history item kind from database row", store)
-                self.assertIn("invalid generation history status from database row", store)
+                self.assertFalse((ROOT / relative).exists())
 
 
 if __name__ == "__main__":

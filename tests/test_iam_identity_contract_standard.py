@@ -12,7 +12,7 @@ from tools.schema_registry_loader import load_schema_registry
 ROOT = Path(__file__).resolve().parents[1]
 BUSINESS_ROOT = ROOT.parent.parent
 APPBASE_ROOT = ROOT / ".sdkwork" / "dependencies" / "sdkwork-appbase"
-SCHEMA_REGISTRY = ROOT / "docs" / "schema-registry" / "sdkwork-claw-router.tables.yaml"
+SCHEMA_REGISTRY = ROOT / "docs" / "schema-registry" / "sdkwork-clawrouter.tables.yaml"
 FRONTEND_FIELD_CONTRACTS = ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
 
 FORBIDDEN_LEGACY_IDENTITY_TABLES = {

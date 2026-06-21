@@ -1,5 +1,7 @@
 import type { MediaResource } from '@sdkwork/clawrouter-app-sdk';
 
+import { isBlank, trim } from './sdkwork-utils.ts';
+
 export type ClawRouterMediaResource = MediaResource;
 export type ClawRouterMediaKind = ClawRouterMediaResource['kind'];
 
@@ -39,8 +41,8 @@ export function readMediaResourceUrl(value: unknown): string {
   for (const key of ['publicUrl', 'url', 'uri', 'objectKey', 'objectBlobId', 'id']) {
     const raw = record[key];
     if (typeof raw === 'string') {
-      const normalized = raw.trim();
-      if (normalized) {
+      const normalized = trim(raw);
+      if (!isBlank(normalized)) {
         return normalized;
       }
     }
@@ -86,5 +88,5 @@ export function toExternalUrlMediaResources(
 }
 
 function normalizeMediaUrl(value: string | null | undefined): string {
-  return typeof value === 'string' ? value.trim() : '';
+  return typeof value === 'string' ? trim(value) : '';
 }

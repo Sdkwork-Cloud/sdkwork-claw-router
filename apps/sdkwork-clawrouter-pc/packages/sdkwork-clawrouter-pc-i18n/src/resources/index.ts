@@ -1,3 +1,8 @@
+import {
+  publicApiReferenceMessages,
+  publicDocsMessages,
+  publicSdkReferenceMessages,
+} from '@sdkwork/documents-pc-i18n';
 import { mergeI18nBundles } from './merge';
 import { adminCommerceCatalogMessages } from './admin-commerce/catalog';
 import { adminCommerceFinanceMessages } from './admin-commerce/finance';
@@ -8,7 +13,6 @@ import { adminCommerceOrdersMessages } from './admin-commerce/orders';
 import { adminCommercePaymentsMessages } from './admin-commerce/payments';
 import { adminCommerceVipMessages } from './admin-commerce/vip';
 import { adminCommerceWalletMessages } from './admin-commerce/wallet';
-import { adminAgentsMessages } from './admin/agents';
 import { adminAnalyticsRecordMessages } from './admin/analytics-record';
 import { adminAnnouncementMessages } from './admin/announcement';
 import { adminAuthSettingsMessages } from './admin/auth-settings';
@@ -33,7 +37,6 @@ import { adminRuntimeRegionMessages } from './admin/runtime-region';
 import { adminServiceNodesMessages } from './admin/service-nodes';
 import { adminServiceProviderMessages } from './admin/service-provider';
 import { adminSiteSettingsMessages } from './admin/site-settings';
-import { adminSkillMessages } from './admin/skill';
 import { consoleAccountMessages } from './console/account';
 import { consoleApiKeysMessages } from './console/api-keys';
 import { consoleBillingMessages } from './console/billing';
@@ -54,13 +57,8 @@ import { playgroundGenerationMessages } from './playground/generation';
 import { playgroundInputMessages } from './playground/input';
 import { playgroundModalitiesMessages } from './playground/modalities';
 import { playgroundPreviewMessages } from './playground/preview';
-import { publicApiReferenceMessages } from './public/api-reference';
-import { publicDocsMessages } from './public/docs';
-import { publicForumMessages } from './public/forum';
 import { publicModelsMessages } from './public/models';
 import { publicRankingsMessages } from './public/rankings';
-import { publicSdkReferenceMessages } from './public/sdk-reference';
-import { publicSkillsMessages } from './public/skills';
 import { sharedCommonMessages } from './shared/common';
 import { sharedNavigationMessages } from './shared/navigation';
 
@@ -74,7 +72,6 @@ export const resources = mergeI18nBundles([
   adminCommercePaymentsMessages,
   adminCommerceVipMessages,
   adminCommerceWalletMessages,
-  adminAgentsMessages,
   adminAnalyticsRecordMessages,
   adminAnnouncementMessages,
   adminAuthSettingsMessages,
@@ -99,7 +96,6 @@ export const resources = mergeI18nBundles([
   adminServiceNodesMessages,
   adminServiceProviderMessages,
   adminSiteSettingsMessages,
-  adminSkillMessages,
   consoleAccountMessages,
   consoleApiKeysMessages,
   consoleBillingMessages,
@@ -122,11 +118,9 @@ export const resources = mergeI18nBundles([
   playgroundPreviewMessages,
   publicApiReferenceMessages,
   publicDocsMessages,
-  publicForumMessages,
   publicModelsMessages,
   publicRankingsMessages,
   publicSdkReferenceMessages,
-  publicSkillsMessages,
   sharedCommonMessages,
   sharedNavigationMessages,
 ]);

@@ -2,7 +2,7 @@
 
 ## 背景
 
-当前 `sdkwork-claw-router` 仍处于新应用阶段，没有线上兼容压力，也没有外部用户依赖既有调用编排。因此本次重构采用一次性删除旧编排、全新实现统一调用链的方案。
+当前 `sdkwork-clawrouter` 仍处于新应用阶段，没有线上兼容压力，也没有外部用户依赖既有调用编排。因此本次重构采用一次性删除旧编排、全新实现统一调用链的方案。
 
 重构目标不是保留旧的三套路径再包一层 facade，而是把所有 API 请求统一抽象为一次资源调用 `Invocation`，并通过高度拆分的 `InvocationPipeline` 和 `InvocationInterceptor` 完成鉴权、资源分类、路由、账号选择、secret、请求转换、调用、计费、sticky、trace 和响应处理。
 

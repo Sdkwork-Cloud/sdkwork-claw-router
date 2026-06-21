@@ -10,7 +10,7 @@ contracts with upstream Spring AI Plus Flyway PostgreSQL DDL.
 - Detect drift when production DDL adds or changes tables, business
   `NOT NULL` columns, physical business columns, unique constraints, indexes, or
   foreign keys that are not mirrored in
-  `docs/schema-registry/sdkwork-claw-router.tables.yaml`.
+  `docs/schema-registry/sdkwork-clawrouter.tables.yaml`.
 - Optionally validate SQL physical column types for tables that declare
   `column_types` in the registry.
 - Preserve PostgreSQL index method metadata, including `USING gin` and

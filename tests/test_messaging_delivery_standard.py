@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class MessagingDeliveryStandardTest(unittest.TestCase):
     def load_registry(self) -> dict[str, Any]:
-        registry = ROOT / "docs" / "schema-registry" / "sdkwork-claw-router.tables.yaml"
+        registry = ROOT / "docs" / "schema-registry" / "sdkwork-clawrouter.tables.yaml"
         data = load_schema_registry(registry)
         self.assertIsInstance(data, dict)
         return data

@@ -10,7 +10,7 @@ Root SDKWork standards remain authoritative. Local component specs can narrow or
 | --- | --- |
 | Name | `@sdkwork/file-upload-client` |
 | Type | `node-package` |
-| Root | `sdkwork-claw-router/packages/common/file/sdkwork-file-upload-client` |
+| Root | `sdkwork-clawrouter/packages/common/file/sdkwork-file-upload-client` |
 | Domain | `drive` |
 | Capability | `file-upload-client` |
 | Languages | `typescript` |

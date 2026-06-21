@@ -6,7 +6,7 @@ import {
   readRecordArray,
   readRequiredApiItems,
   readString,
-} from 'sdkwork-clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawrouter-pc-commons/runtime';
 import type { Model, ModelCategoryKey, ModelGroupKey } from './data/models';
 import {
   findModelByCatalogRouteId,

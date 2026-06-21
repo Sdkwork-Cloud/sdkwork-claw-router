@@ -10,7 +10,7 @@ Root SDKWork standards remain authoritative. Local component specs can narrow or
 | --- | --- |
 | Name | `sdkwork-claw-provider-adapter-registry` |
 | Type | `rust-crate` |
-| Root | `sdkwork-claw-router/crates/sdkwork-claw-provider-adapter-registry` |
+| Root | `sdkwork-clawrouter/crates/sdkwork-claw-provider-adapter-registry` |
 | Domain | `platform` |
 | Capability | `router` |
 | Languages | `rust` |
@@ -52,4 +52,4 @@ Root SDKWork standards remain authoritative. Local component specs can narrow or
 
 ## Verification
 
-- `cargo test --manifest-path apps/sdkwork-claw-router/crates/sdkwork-claw-provider-adapter-registry/Cargo.toml`
+- `cargo test --manifest-path apps/sdkwork-clawrouter/crates/sdkwork-claw-provider-adapter-registry/Cargo.toml`

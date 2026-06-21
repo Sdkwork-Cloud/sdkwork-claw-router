@@ -384,7 +384,7 @@ async fn database_config_password_login_issues_app_session_and_records_password_
         login_payload["data"]["user"]["avatar"]
     );
     assert_eq!(
-        "sdkwork-claw-router",
+        "sdkwork-clawrouter",
         login_payload["data"]["context"]["appId"]
     );
     assert_eq!("password", login_payload["data"]["context"]["authLevel"]);

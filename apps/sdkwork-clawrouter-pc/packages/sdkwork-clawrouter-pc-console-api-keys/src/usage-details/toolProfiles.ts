@@ -1,4 +1,4 @@
-import { OPEN_API_BASE_URL } from 'sdkwork-clawrouter-pc-commons/utils/env';
+import { OPEN_API_BASE_URL } from '@sdkwork/clawrouter-pc-commons/utils/env';
 
 export type ApiKeyUsageToolId =
   | 'codex'

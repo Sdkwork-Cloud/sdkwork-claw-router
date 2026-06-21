@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env node
+#!/usr/bin/env node
 
 import { spawn } from 'node:child_process';
 import path from 'node:path';
@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename);
 const POSTGRES_TEST_DATABASE_URL = 'SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL';
 const POSTGRES_TEST_PORT = 'SDKWORK_CLAW_POSTGRES_TEST_PORT';
 const POSTGRES_DOCKER_COMPOSE_FILE = 'docker-compose.postgres-test.yml';
-const POSTGRES_DOCKER_PROJECT = 'sdkwork-claw-router-postgres-test';
+const POSTGRES_DOCKER_PROJECT = 'sdkwork-clawrouter-postgres-test';
 const DEFAULT_WORKSPACE_ROOT = path.resolve(__dirname, '..');
 
 function printHelp() {
@@ -104,8 +104,6 @@ function postgresIntegrationCargoArgs(extraArgs = []) {
     'test',
     '-p',
     'sdkwork-claw-product',
-    '--test',
-    'postgres_generation_history_sql_contract',
     '--test',
     'postgres_transaction_integration',
   ];

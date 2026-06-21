@@ -6,7 +6,7 @@ import type {
   AdminAuthWechatOfficial,
 } from '@sdkwork/clawrouter-backend-sdk';
 import { useTranslation } from 'react-i18next';
-import { BusinessStatePanel } from 'sdkwork-clawrouter-pc-commons/components/BusinessState';
+import { BusinessStatePanel } from '@sdkwork/clawrouter-pc-commons/components/BusinessState';
 import {
   fetchClawRouterAuthSettings,
   updateClawRouterAuthSettings,

@@ -640,7 +640,7 @@ function createDebianControl(plan) {
     'Priority: optional',
     `Architecture: ${debianArchitecture(packageItem.architecture)}`,
     'Maintainer: SdkWork Cloud <release@sdkwork.cloud>',
-    'Homepage: https://github.com/Sdkwork-Cloud/sdkwork-claw-router',
+    'Homepage: https://github.com/Sdkwork-Cloud/sdkwork-clawrouter',
     `Description: ${RUNTIME_DISPLAY_NAME} edge runtime`,
     ` Native ${packageItem.deploymentMode} installer for ${packageItem.platform}-${packageItem.architecture}.`,
     ' Installs the edge gateway, installer utility, production portal assets, runtime',

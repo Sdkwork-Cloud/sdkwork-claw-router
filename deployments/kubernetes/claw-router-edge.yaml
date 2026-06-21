@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sdkwork-claw-router-edge
+  name: sdkwork-clawrouter-edge
   labels:
-    app: sdkwork-claw-router
+    app: sdkwork-clawrouter
     component: edge
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: sdkwork-claw-router
+      app: sdkwork-clawrouter
       component: edge
   template:
     metadata:
       labels:
-        app: sdkwork-claw-router
+        app: sdkwork-clawrouter
         component: edge
     spec:
       terminationGracePeriodSeconds: 60
       containers:
         - name: edge
-          image: registry.sdkwork.com/apps/sdkwork-claw-router:latest
+          image: registry.sdkwork.com/apps/sdkwork-clawrouter:latest
           ports:
             - containerPort: 3900
               name: http
@@ -49,15 +49,15 @@ spec:
       volumes:
         - name: config
           secret:
-            secretName: sdkwork-claw-router-config
+            secretName: sdkwork-clawrouter-config
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: sdkwork-claw-router-edge
+  name: sdkwork-clawrouter-edge
 spec:
   selector:
-    app: sdkwork-claw-router
+    app: sdkwork-clawrouter
     component: edge
   ports:
     - name: http

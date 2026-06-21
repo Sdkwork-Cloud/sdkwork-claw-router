@@ -8,6 +8,7 @@ use axum::response::{IntoResponse, Response};
 use axum::routing::{get, patch, post};
 use axum::{Json, Router};
 use sdkwork_claw_http::TrustedRequestSubject;
+use sdkwork_utils_rust::slugify;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
@@ -524,12 +525,10 @@ pub fn admin_model_management_router_with_store(
 
 async fn fetch_vendors(
     State(state): State<AdminModelCommandState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     match state
         .store
         .list_vendors(ListAdminModelVendorsQuery { subject })
@@ -543,11 +542,12 @@ async fn fetch_vendors(
     }
 }
 
-async fn fetch_models(State(state): State<AdminModelCommandState>, headers: HeaderMap) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+async fn fetch_models(
+    State(state): State<AdminModelCommandState>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+) -> Response {
+    let subject = map_subject(trusted);
     match state
         .store
         .list_models(ListAdminAiModelsQuery { subject })
@@ -564,12 +564,10 @@ async fn fetch_models(State(state): State<AdminModelCommandState>, headers: Head
 async fn fetch_model_mappings(
     State(state): State<AdminModelCommandState>,
     Query(query): Query<AdminModelMappingsQuery>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let query = match build_list_model_mappings_query(subject, query) {
         Ok(query) => query,
         Err(error) => return command_build_error_response(error),
@@ -585,13 +583,11 @@ async fn fetch_model_mappings(
 
 async fn create_vendor(
     State(state): State<AdminModelCommandState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let request = match parse_json_body::<AdminModelVendorCreateRequest>(&body, "model vendor") {
         Ok(request) => request,
         Err(message) => return bad_request(message),
@@ -614,13 +610,11 @@ async fn create_vendor(
 
 async fn create_model(
     State(state): State<AdminModelCommandState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let request = match parse_json_body::<AdminAiModelCreateRequest>(&body, "ai model") {
         Ok(request) => request,
         Err(message) => return bad_request(message),
@@ -642,13 +636,11 @@ async fn create_model(
 
 async fn create_model_mapping(
     State(state): State<AdminModelCommandState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let request = match parse_json_body::<AdminModelMappingCreateRequest>(&body, "model mapping") {
         Ok(request) => request,
         Err(message) => return bad_request(message),
@@ -673,13 +665,11 @@ async fn create_model_mapping(
 async fn update_model(
     State(state): State<AdminModelCommandState>,
     Path(model_id): Path<String>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let request = match parse_json_body::<AdminAiModelUpdateRequest>(&body, "ai model update") {
         Ok(request) => request,
         Err(message) => return bad_request(message),
@@ -703,13 +693,11 @@ async fn update_model(
 async fn update_model_mapping(
     State(state): State<AdminModelCommandState>,
     Path(mapping_id): Path<String>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let request =
         match parse_json_body::<AdminModelMappingUpdateRequest>(&body, "model mapping update") {
             Ok(request) => request,
@@ -741,12 +729,10 @@ async fn update_model_mapping(
 async fn delete_model(
     State(state): State<AdminModelCommandState>,
     Path(model_id): Path<String>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    headers: HeaderMap
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let command = match build_delete_model_command(state.clone(), &headers, subject, model_id) {
         Ok(command) => command,
         Err(error) => return command_build_error_response(error),
@@ -764,12 +750,10 @@ async fn delete_model(
 async fn delete_model_mapping(
     State(state): State<AdminModelCommandState>,
     Path(mapping_id): Path<String>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    headers: HeaderMap
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let command =
         match build_delete_model_mapping_command(state.clone(), &headers, subject, mapping_id) {
             Ok(command) => command,
@@ -789,13 +773,11 @@ async fn delete_model_mapping(
 
 async fn resolve_model_mapping(
     State(state): State<AdminModelCommandState>,
-    headers: HeaderMap,
-    body: Bytes,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let request =
         match parse_json_body::<AdminModelMappingResolveRequest>(&body, "model mapping resolve") {
             Ok(request) => request,
@@ -817,13 +799,11 @@ async fn resolve_model_mapping(
 
 async fn sync_catalog(
     State(state): State<AdminModelCommandState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let request =
         match parse_optional_json_body::<AdminModelCatalogSyncRequest>(&body, "model catalog sync")
         {
@@ -840,21 +820,13 @@ async fn sync_catalog(
     }
 }
 
-fn resolve_subject(headers: &HeaderMap) -> Result<AdminModelSubject, Response> {
-    TrustedRequestSubject::from_headers(headers)
-        .map(|subject| AdminModelSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            operator_id: subject.operator_id,
-            operator_type: subject.operator_type,
-        })
-        .map_err(|error| {
-            (
-                StatusCode::UNAUTHORIZED,
-                Json(PlusApiResult::error("4010", error.to_string())),
-            )
-                .into_response()
-        })
+fn map_subject(trusted: TrustedRequestSubject) -> AdminModelSubject {
+    AdminModelSubject {
+            tenant_id: trusted.tenant_id,
+            organization_id: trusted.organization_id,
+            operator_id: trusted.operator_id,
+            operator_type: trusted.operator_type,
+        }
 }
 
 fn parse_json_body<T>(body: &[u8], entity_name: &str) -> Result<T, String>
@@ -2174,35 +2146,6 @@ fn reject_integration_provider_as_model_vendor(
         ));
     }
     Ok(())
-}
-
-fn slugify(value: &str) -> String {
-    let mut result = String::new();
-    let mut last_was_separator = false;
-    for byte in value.bytes() {
-        let next = if byte.is_ascii_alphanumeric() {
-            Some((byte as char).to_ascii_lowercase())
-        } else if matches!(byte, b'-' | b'_' | b' ' | b'.' | b'/') {
-            Some('_')
-        } else {
-            None
-        };
-        if let Some(ch) = next {
-            if ch == '_' {
-                if !result.is_empty() && !last_was_separator {
-                    result.push('_');
-                    last_was_separator = true;
-                }
-            } else {
-                result.push(ch);
-                last_was_separator = false;
-            }
-        }
-    }
-    while result.ends_with('_') {
-        result.pop();
-    }
-    result
 }
 
 fn normalize_decimal_amount(

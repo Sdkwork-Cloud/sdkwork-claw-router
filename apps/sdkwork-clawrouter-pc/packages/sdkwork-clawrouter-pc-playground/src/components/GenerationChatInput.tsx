@@ -27,7 +27,7 @@ export function GenerationChatInput({
   selectedModality: GenerationModality,
   setSelectedModality: (m: GenerationModality) => void,
   modelGroups: PlaygroundModelGroup[],
-  selectedModels: Record<Modality, string>,
+  selectedModels: Record<GenerationModality, string>,
   setSelectedModel: (targetModality: GenerationModality) => (modelId: string) => void,
   onSubmit?: (input: PlaygroundGenerationSubmitInput) => Promise<void> | void,
   submitting?: boolean,

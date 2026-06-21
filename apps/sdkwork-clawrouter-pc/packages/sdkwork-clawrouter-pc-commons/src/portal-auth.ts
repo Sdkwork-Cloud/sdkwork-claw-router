@@ -1,6 +1,6 @@
 import {
-  getStoredAppSessionAccessToken,
-  getStoredAppSessionAuthToken,
+  loadStoredAppSessionToken,
+  resolveStoredPortalTenantId,
 } from './app-session-token.ts';
 import { PORTAL_SESSION_CHANGE_EVENT } from './portal-session-events.ts';
 
@@ -14,9 +14,78 @@ export type PortalLoginRequiredActionDecision =
   | { allowed: true }
   | { allowed: false; redirectTo: string };
 
+const DEFAULT_HOME_PATH = '/';
+const AUTH_BASE_PATH = '/auth';
+const AUTH_LOGIN_PATH = '/auth/login';
+const DEFAULT_AUTHENTICATED_HOME_PATH = '/console';
+
+export const PROTECTED_PORTAL_ROUTE_PREFIXES = ['/console', '/admin'] as const;
+
+export function isProtectedPortalPath(pathname: string): boolean {
+  const normalized = normalizePortalPathname(pathname);
+  return PROTECTED_PORTAL_ROUTE_PREFIXES.some(
+    (prefix) => normalized === prefix || normalized.startsWith(`${prefix}/`),
+  );
+}
+
+export function hasPortalIamSession(): boolean {
+  const token = loadStoredAppSessionToken();
+  if (!token?.authToken || !token.accessToken) {
+    return false;
+  }
+  return Boolean(resolveStoredPortalTenantId(token));
+}
+
+export function hasStoredPortalSession(): boolean {
+  return hasPortalIamSession();
+}
+
+export function isPortalAuthRoute(pathname: string): boolean {
+  const normalized = normalizePortalPathname(pathname);
+  return normalized === AUTH_BASE_PATH || normalized.startsWith(`${AUTH_BASE_PATH}/`);
+}
+
 export function buildPortalAuthLoginRedirect(location: PortalAuthLocationLike): string {
   const returnPath = `${normalizePortalPathname(location.pathname)}${location.search ?? ''}${location.hash ?? ''}`;
-  return `/auth/login?redirect=${encodeURIComponent(returnPath)}`;
+  return `${AUTH_LOGIN_PATH}?redirect=${encodeURIComponent(returnPath)}`;
+}
+
+export function sanitizePortalAuthRedirect(
+  value: string | null | undefined,
+  homePath = DEFAULT_HOME_PATH,
+): string {
+  if (!value) {
+    return normalizePortalPathname(homePath);
+  }
+
+  let decoded = value;
+  try {
+    decoded = decodeURIComponent(value);
+  } catch {
+    return normalizePortalPathname(homePath);
+  }
+
+  if (!decoded.startsWith('/') || decoded.startsWith('//')) {
+    return normalizePortalPathname(homePath);
+  }
+
+  const redirectUrl = new URL(decoded, 'http://sdkwork-clawrouter.local');
+  if (isPortalAuthRoute(redirectUrl.pathname)) {
+    return normalizePortalPathname(homePath);
+  }
+
+  return `${redirectUrl.pathname}${redirectUrl.search}${redirectUrl.hash}`;
+}
+
+export function resolvePortalAuthenticatedAuthRouteRedirect({
+  authenticatedHomePath = DEFAULT_AUTHENTICATED_HOME_PATH,
+  location,
+}: {
+  authenticatedHomePath?: string;
+  location: PortalAuthLocationLike;
+}): string {
+  const redirect = new URLSearchParams((location.search ?? '').replace(/^\?/, '')).get('redirect');
+  return sanitizePortalAuthRedirect(redirect, authenticatedHomePath);
 }
 
 export function resolvePortalLoginRequiredAction({
@@ -36,10 +105,6 @@ export function resolvePortalLoginRequiredAction({
   };
 }
 
-export function hasStoredPortalSession(): boolean {
-  return Boolean(getStoredAppSessionAuthToken() || getStoredAppSessionAccessToken());
-}
-
 export function subscribePortalSessionChange(listener: () => void): () => void {
   if (typeof window === 'undefined') {
     return () => {};
@@ -56,7 +121,7 @@ export function subscribePortalSessionChange(listener: () => void): () => void {
 function normalizePortalPathname(pathname: string): string {
   const normalized = pathname.trim();
   if (!normalized) {
-    return '/';
+    return DEFAULT_HOME_PATH;
   }
   return normalized.startsWith('/') ? normalized : `/${normalized}`;
 }

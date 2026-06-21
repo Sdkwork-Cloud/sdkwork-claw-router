@@ -1,5 +1,5 @@
+schema: sdkwork-clawrouter-frontend-field-contracts
 version: 0.1.0
-schema: sdkwork-claw-router-frontend-field-contracts
 rule: every actual portal route must be backed by explicit schema tables; page-critical fields must map to generated columns or Java-owned physical columns.
 source: apps/sdkwork-clawrouter-pc/src/App.tsx
 x_response_entities:
@@ -6877,10 +6877,57 @@ frontend_models:
       - createdAt
       - updatedAt
     data_sources:
-      - ai_generation_session
-      - ai_generation_job
-      - ai_generation_asset
-      - ai_generation_asset_action
+      - ai_usage_fact
+  - route: /playground
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundTypes.ts
+    interface: GenerationAgentRunCreateInput
+    fields:
+      - prompt
+      - targetType
+      - selectedModel
+      - generationConfig
+      - referenceAssets
+      - referenceImages
+      - referenceMode
+    derived_fields:
+      - onDelta
+      - onArtifact
+      - referenceAssets.kind
+      - referenceAssets.role
+      - referenceAssets.name
+      - referenceAssets.mimeType
+      - referenceAssets.resource
+      - referenceAssets.sizeBytes
+      - referenceImages.name
+      - referenceImages.mimeType
+      - referenceImages.resource
+      - referenceImages.sizeBytes
+    data_sources:
+      - ai_usage_fact
+      - ai_model
+      - ai_model_capability
+  - route: /playground
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundTypes.ts
+    interface: PlaygroundReferenceImageInput
+    fields:
+      - name
+      - mimeType
+      - resource
+      - sizeBytes
+    data_sources:
+      - ai_agent_memory
+  - route: /playground
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundTypes.ts
+    interface: PlaygroundReferenceAssetInput
+    fields:
+      - kind
+      - role
+      - name
+      - mimeType
+      - resource
+      - sizeBytes
+    data_sources:
+      - ai_agent_memory
   - route: /rankings
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-rankings/src/rankingService.ts
     interface: RankingServiceFilters
@@ -9746,17 +9793,18 @@ frontend_operations:
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundService.ts
     operation: fetchGenerationHistory
     operation_scope: app_shell
-    operation_id: generation.list
+    operation_id: generations.list
     kind: read
     api_surface: app
     api_method: GET
-    api_path: /app/v3/api/ai/generations
-    sdk_domain: intelligence
+    api_path: /app/v3/api/generations
+    sdk_domain: generations
+    openapi_exposed: false
     read_sources:
-      - ai_generation_session
-      - ai_generation_job
-      - ai_generation_asset
-      - ai_generation_asset_action
+      - ai_model
+      - ai_model_capability
+    summary: List Playground generation history
+    description: Lists persisted generation records for the active app user through the sdkwork-generations app SDK.
     query_parameters: []
     response_schema:
       name: GenerationHistoryResponse
@@ -9811,12 +9859,7 @@ frontend_operations:
     read_sources:
       - ai_model
       - ai_model_capability
-      - ai_generation_job
-      - ai_generation_asset
     write_tables:
-      - ai_generation_session
-      - ai_generation_job
-      - ai_generation_asset
       - ai_usage_fact
   - route: /playground
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundGenerationsService.ts
@@ -9834,68 +9877,60 @@ frontend_operations:
     read_sources:
       - ai_model
       - ai_model_capability
-      - ai_generation_job
-      - ai_generation_asset
     write_tables:
-      - ai_generation_session
-      - ai_generation_job
-      - ai_generation_asset
       - ai_usage_fact
   - route: /playground
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
-    operation: listGenerationHistory
-    operation_id: generation.list
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundGenerationService.ts
+    operation: runPlaygroundGeneration
+    operation_scope: app_shell
+    operation_id: playground.runtime.generation.run
+    kind: create
+    api_surface: app
+    api_method: POST
+    api_path: /app/v3/api/runtime/invocations
+    sdk_domain: runtime
+    openapi_exposed: false
+    summary: Run Playground agent generation through runtime SSE
+    description: Creates a runtime invocation, streams generation output, and maps completed runtime artifacts into Playground history without legacy agent session or run APIs.
+    read_sources:
+      - ai_model
+      - ai_model_capability
+    write_tables:
+      - ai_usage_fact
+  - route: /playground
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundService.ts
+    operation: runAgentGeneration
+    operation_scope: app_shell
+    operation_id: playground.runtime.generation.run
+    kind: create
+    api_surface: app
+    api_method: POST
+    api_path: /app/v3/api/runtime/invocations
+    sdk_domain: runtime
+    openapi_exposed: false
+    summary: Run Playground agent generation alias
+    description: Thin PlaygroundService alias that forwards agent generation requests to the runtime SSE pipeline.
+    read_sources:
+      - ai_model
+      - ai_model_capability
+    write_tables:
+      - ai_usage_fact
+  - route: /playground
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundGenerationsService.ts
+    operation: fetchPlaygroundGenerationHistoryFromService
+    operation_scope: app_shell
+    operation_id: generations.workspace.read
     kind: read
     api_surface: app
     api_method: GET
-    api_path: /app/v3/api/ai/generations
+    api_path: /app/v3/api/generations/workspace
+    sdk_domain: generations
     openapi_exposed: false
-    sdk_domain: intelligence
-    summary: List Playground generation history
-    description: Lists persisted generation sessions, jobs, and assets for the active app user through the generated app SDK.
+    summary: Map generations workspace runs to Playground history
+    description: Reads sdkwork-generations workspace runs through an injected generation service facade and maps them to Playground history items.
     read_sources:
-      - ai_generation_session
-      - ai_generation_job
-      - ai_generation_asset
-      - ai_generation_asset_action
-    query_parameters: []
-    response_schema:
-      name: GenerationHistoryResponse
-      required: [items]
-      properties:
-        items:
-          type: array
-          maxItems: 100
-          items:
-            name: GenerationHistoryItem
-            type: object
-            additionalProperties: false
-            required: [id, date, prompt, type, images, videos]
-            properties:
-              id: { type: string, minLength: 1, maxLength: 128 }
-              date: { type: string, minLength: 1, maxLength: 32 }
-              prompt: { type: string, maxLength: 4096 }
-              type: { type: string, enum: [text, image, images, video, music, audio, sfx] }
-              modelInfo: { type: string, maxLength: 256 }
-              modelCatalogKey: { type: string, maxLength: 256 }
-              asset:
-                $ref: '#/components/schemas/MediaResource'
-              images:
-                type: array
-                maxItems: 20
-                items:
-                  $ref: '#/components/schemas/MediaResource'
-              videos:
-                type: array
-                maxItems: 20
-                items:
-                  $ref: '#/components/schemas/MediaResource'
-              aspectRatio: { type: string, enum: ['1:1', '16:9', '9:16'] }
-              durationSeconds: { type: integer, minimum: 0, maximum: 86400 }
-              status: { type: string, enum: [pending, processing, completed, failed, cancelled] }
-              outputText: { type: string, maxLength: 262144 }
-              createdAt: { type: string, maxLength: 64 }
-              updatedAt: { type: string, maxLength: 64 }
+      - ai_model
+      - ai_model_capability
   - route: /playground
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
     operation: listModelCatalog
@@ -10218,6 +10253,218 @@ frontend_operations:
                     supportsStreaming: { type: boolean }
                     supportsTools: { type: boolean }
                     supportsJsonSchema: { type: boolean }
+  - route: /playground
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
+    operation: listMemorySpaces
+    operation_scope: app_shell
+    operation_id: memory.spaces.list
+    kind: read
+    api_surface: app
+    api_method: GET
+    api_path: /app/v3/api/memory/spaces
+    sdk_domain: memory
+    openapi_exposed: false
+    summary: List memory spaces for Playground
+    description: Lists memory spaces through the sdkwork-memory app SDK without Claw Router memory tables.
+    read_sources:
+      - ai_agent_memory
+    query_parameters:
+      - name: page_size
+        schema: { type: integer, format: int64, minimum: 1, maximum: 200 }
+  - route: /playground
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
+    operation: createMemorySpace
+    operation_scope: app_shell
+    operation_id: memory.spaces.create
+    kind: create
+    api_surface: app
+    api_method: POST
+    api_path: /app/v3/api/memory/spaces
+    sdk_domain: memory
+    openapi_exposed: false
+    summary: Create memory space for Playground
+    description: Creates a memory space through the sdkwork-memory app SDK.
+    read_sources:
+      - ai_agent_memory
+    write_tables: []
+  - route: /playground
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
+    operation: retrieveMemorySpace
+    operation_scope: app_shell
+    operation_id: memory.spaces.retrieve
+    kind: read
+    api_surface: app
+    api_method: GET
+    api_path: /app/v3/api/memory/spaces/{spaceId}
+    sdk_domain: memory
+    openapi_exposed: false
+    summary: Retrieve memory space for Playground
+    description: Retrieves one memory space through the sdkwork-memory app SDK.
+    read_sources:
+      - ai_agent_memory
+  - route: /playground
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
+    operation: listMemoryEntries
+    operation_scope: app_shell
+    operation_id: memory.entries.list
+    kind: read
+    api_surface: app
+    api_method: GET
+    api_path: /app/v3/api/memory/spaces/{spaceId}/entries
+    sdk_domain: memory
+    openapi_exposed: false
+    summary: List memory entries for Playground
+    description: Lists memory entries in a space through the sdkwork-memory app SDK.
+    read_sources:
+      - ai_agent_memory
+    query_parameters:
+      - name: page_size
+        schema: { type: integer, format: int64, minimum: 1, maximum: 200 }
+  - route: /playground
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
+    operation: createMemoryEntry
+    operation_scope: app_shell
+    operation_id: memory.entries.create
+    kind: create
+    api_surface: app
+    api_method: POST
+    api_path: /app/v3/api/memory/spaces/{spaceId}/entries
+    sdk_domain: memory
+    openapi_exposed: false
+    summary: Create memory entry for Playground
+    description: Creates a memory entry through the sdkwork-memory app SDK.
+    read_sources:
+      - ai_agent_memory
+    write_tables: []
+  - route: /playground
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
+    operation: retrieveMemoryEntry
+    operation_scope: app_shell
+    operation_id: memory.entries.retrieve
+    kind: read
+    api_surface: app
+    api_method: GET
+    api_path: /app/v3/api/memory/entries/{entryId}
+    sdk_domain: memory
+    openapi_exposed: false
+    summary: Retrieve memory entry for Playground
+    description: Retrieves one memory entry through the sdkwork-memory app SDK.
+    read_sources:
+      - ai_agent_memory
+  - route: /console/notifications
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
+    operation: fetchNotifications
+    operation_id: notifications.list
+    kind: read
+    api_surface: app
+    api_method: GET
+    api_path: /app/v3/api/notification/notifications
+    sdk_domain: notification
+    summary: List portal notifications
+    description: Lists in-app notifications for the active portal session.
+    read_sources:
+      - ops_notification_message
+      - ops_notification_delivery
+    query_parameters:
+      - name: include_archived
+        schema: { type: boolean }
+      - name: page
+        schema: { type: integer, format: int64, minimum: 1 }
+      - name: page_size
+        schema: { type: integer, format: int64, minimum: 1, maximum: 200 }
+    response_schema:
+      name: NotificationListResponse
+      type: object
+      additionalProperties: false
+      required: [items]
+      properties:
+        items:
+          type: array
+          maxItems: 200
+          items:
+            name: NotificationItem
+            type: object
+            additionalProperties: false
+            required: [id, appId, title, desc, content, time, type, read, showAsPopup, popupSeen, archived]
+            properties:
+              id: { type: string, minLength: 1, maxLength: 128 }
+              appId: { type: string, minLength: 1, maxLength: 128 }
+              title: { type: string, minLength: 1, maxLength: 200 }
+              desc: { type: string, maxLength: 512 }
+              content: { type: string, maxLength: 20000 }
+              time: { type: string, minLength: 1, maxLength: 64 }
+              type: { type: string, enum: [info, billing, warning, alert] }
+              read: { type: boolean }
+              showAsPopup: { type: boolean }
+              popupSeen: { type: boolean }
+              archived: { type: boolean }
+              actionUrl: { type: string, nullable: true, maxLength: 512 }
+  - route: /console/notifications
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
+    operation: list
+    operation_scope: app_shell
+    operation_id: notifications.list
+    kind: read
+    api_surface: app
+    api_method: GET
+    api_path: /app/v3/api/notification/notifications
+    sdk_domain: notification
+    openapi_exposed: false
+    summary: List portal notifications through service adapter
+    description: Internal SdkworkNotificationService adapter that calls the generated notification client listNotifications operation.
+    read_sources:
+      - ops_notification_message
+      - ops_notification_delivery
+  - route: /console/notifications
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
+    operation: acknowledge
+    operation_id: notifications.acknowledge.create
+    kind: create
+    api_surface: app
+    api_method: POST
+    api_path: /app/v3/api/notification/notifications/{notificationId}/acknowledge
+    sdk_domain: notification
+    idempotency_required: true
+    request_body_required: false
+    summary: Acknowledge portal notification
+    description: Marks a notification as read for the active portal user.
+    read_sources:
+      - ops_notification_delivery
+    write_tables:
+      - ops_notification_delivery
+    response_schema:
+      name: NotificationMutationResponse
+      type: object
+      additionalProperties: false
+      required: [updated, state]
+      properties:
+        updated: { type: boolean }
+        state: { type: string, enum: [acknowledged, popup_seen] }
+  - route: /console/notifications
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
+    operation: markPopupSeen
+    operation_id: notifications.popupSeen.create
+    kind: create
+    api_surface: app
+    api_method: POST
+    api_path: /app/v3/api/notification/notifications/{notificationId}/popup_seen
+    sdk_domain: notification
+    idempotency_required: true
+    request_body_required: false
+    summary: Mark portal notification popup seen
+    description: Records that a popup notification was presented to the active portal user.
+    read_sources:
+      - ops_notification_delivery
+    write_tables:
+      - ops_notification_delivery
+    response_schema:
+      name: NotificationMutationResponse
+      type: object
+      additionalProperties: false
+      required: [updated, state]
+      properties:
+        updated: { type: boolean }
+        state: { type: string, enum: [acknowledged, popup_seen] }
   - route: /playground
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
     operation: listRuntimeInvocations
@@ -14830,6 +15077,92 @@ frontend_operations:
       required: [deleted]
       properties:
         deleted: { type: boolean }
+  - route: /admin/prompts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-core/src/admin-category-options.ts
+    operation: listAdminAiCategoryOptions
+    operation_scope: app_shell
+    operation_id: admin.ai.categories.derive
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/prompts
+    sdk_domain: prompts
+    openapi_exposed: false
+    summary: Derive unified AI category filter options
+    description: Derives read-only category filter options from prompt and MCP admin list responses until sdkwork-kernel owns canonical skill category APIs.
+    read_sources:
+      - ai_prompt
+      - ai_mcp_server
+    query_parameters: []
+    response_schema:
+      name: AdminAiCategoryOptionsResponse
+      type: object
+      additionalProperties: false
+      required: [items]
+      properties:
+        items:
+          type: array
+          maxItems: 500
+          items:
+            name: AdminCategoryOption
+            type: object
+            additionalProperties: false
+            required: [id, name]
+            properties:
+              id: { type: string, minLength: 1, maxLength: 128 }
+              name: { type: string, minLength: 1, maxLength: 255 }
+              code: { type: string, maxLength: 128, pattern: '^[A-Za-z0-9_-]+$' }
+  - route: /admin/prompts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-core/src/admin-category-options.ts
+    operation: createAdminAiCategory
+    operation_scope: app_shell
+    operation_id: admin.ai.categories.create.disabled
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/prompts
+    sdk_domain: prompts
+    openapi_exposed: false
+    summary: Reject AI category create in Claw Router
+    description: Category mutation is owned by sdkwork-kernel; Claw Router rejects create requests with an ownership error.
+    read_sources:
+      - ai_prompt
+      - ai_mcp_server
+    write_tables: []
+  - route: /admin/prompts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-core/src/admin-category-options.ts
+    operation: updateAdminAiCategory
+    operation_scope: app_shell
+    operation_id: admin.ai.categories.update.disabled
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/prompts/{categoryId}
+    sdk_domain: prompts
+    openapi_exposed: false
+    summary: Reject AI category update in Claw Router
+    description: Category mutation is owned by sdkwork-kernel; Claw Router rejects update requests with an ownership error.
+    read_sources:
+      - ai_prompt
+      - ai_mcp_server
+    write_tables: []
+  - route: /admin/prompts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-core/src/admin-category-options.ts
+    operation: deleteAdminAiCategory
+    operation_scope: app_shell
+    operation_id: admin.ai.categories.delete.disabled
+    kind: delete
+    api_surface: backend
+    api_method: DELETE
+    api_path: /backend/v3/api/prompts/{categoryId}
+    sdk_domain: prompts
+    openapi_exposed: false
+    summary: Reject AI category delete in Claw Router
+    description: Category mutation is owned by sdkwork-kernel; Claw Router rejects delete requests with an ownership error.
+    read_sources:
+      - ai_prompt
+      - ai_mcp_server
+    write_tables: []
   - route: /admin/user
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-user/src/userService.ts
     operation: fetchUsers
@@ -20874,10 +21207,6 @@ routes:
       - ai_model
       - ai_model_capability
       - ai_model_pricing
-      - ai_generation_session
-      - ai_generation_job
-      - ai_generation_asset
-      - ai_generation_asset_action
       - ai_request_trace
       - ai_usage_fact
       - ai_provider
@@ -21076,6 +21405,10 @@ routes:
         - target_url
         - event_types
         - retry_policy
+  - route: /console/notifications
+    required_tables:
+      - ops_notification_message
+      - ops_notification_delivery
   - route: /admin/dashboard
     required_tables:
       - ai_usage_fact

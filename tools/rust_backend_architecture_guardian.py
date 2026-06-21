@@ -579,8 +579,8 @@ class RustBackendArchitectureGuardian:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Validate sdkwork-claw-router Rust backend module boundaries.")
-    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-claw-router root directory")
+    parser = argparse.ArgumentParser(description="Validate sdkwork-clawrouter Rust backend module boundaries.")
+    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-clawrouter root directory")
     args = parser.parse_args()
 
     result = RustBackendArchitectureGuardian(root=args.root).run()

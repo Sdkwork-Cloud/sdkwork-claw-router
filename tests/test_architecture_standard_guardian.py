@@ -41,7 +41,7 @@ class ArchitectureStandardGuardianTest(unittest.TestCase):
             Documents the standard SDKWork directory capability.
 
             ## Owner
-            sdkwork-claw-router maintainers.
+            sdkwork-clawrouter maintainers.
 
             ## Allowed Content
             Source-controlled files for this directory capability.
@@ -231,7 +231,7 @@ class ArchitectureStandardGuardianTest(unittest.TestCase):
     def test_rejects_unresolved_component_spec_canonical_sdkwork_spec_path(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             workspace = Path(tmp)
-            root = workspace / 'sdkwork-claw-router'
+            root = workspace / 'sdkwork-clawrouter'
             root.mkdir()
             self.write_standard_workspace(root)
             self.write_doc(workspace, 'sdkwork-specs/README.md', '# SDKWork Specs')
@@ -244,7 +244,7 @@ class ArchitectureStandardGuardianTest(unittest.TestCase):
                         'kind': 'sdkwork.component.spec',
                         'component': {
                             'name': 'bad-package',
-                            'root': 'sdkwork-claw-router/apps/sdkwork-clawrouter-pc/packages/bad-package',
+                            'root': 'sdkwork-clawrouter/apps/sdkwork-clawrouter-pc/packages/bad-package',
                         },
                         'canonicalSpecs': [
                             {'file': 'README.md', 'path': '../../../../../../sdkwork-specs/README.md'}
@@ -273,7 +273,7 @@ class ArchitectureStandardGuardianTest(unittest.TestCase):
                 'apis/README.md',
                 '# APIs\n\n'
                 '## Purpose\nDocuments the standard SDKWork directory capability.\n\n'
-                '## Owner\nsdkwork-claw-router maintainers.\n\n'
+                '## Owner\nsdkwork-clawrouter maintainers.\n\n'
                 '## Allowed Content\nAuthored API contracts.\n\n'
                 '## Forbidden Content\nGenerated SDK transport output.\n\n'
                 '## Related Specs\n- `../../../../../specs/README.md`\n\n'

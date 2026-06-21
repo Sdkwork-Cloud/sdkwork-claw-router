@@ -3,6 +3,14 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+PORTAL_PACKAGES = ROOT / "apps" / "sdkwork-clawrouter-pc" / "packages"
+
+
+def first_existing_path(*candidates: Path) -> Path:
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
+    return candidates[0]
 
 
 class ConsoleMessagesRuntimeStandardTest(unittest.TestCase):
@@ -10,15 +18,13 @@ class ConsoleMessagesRuntimeStandardTest(unittest.TestCase):
         app = (ROOT / "apps" / "sdkwork-clawrouter-pc" / "src" / "App.tsx").read_text(
             encoding="utf-8"
         )
-        console_layout = (
-            ROOT
-            / "apps"
-            / "sdkwork-clawrouter-pc"
-            / "packages"
-            / "sdkwork-clawrouter-pc-console-core"
-            / "src"
-            / "ConsoleLayout.tsx"
-        ).read_text(encoding="utf-8")
+        console_layout_path = first_existing_path(
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-console-shell" / "src" / "ConsoleLayout.tsx",
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-console-core" / "src" / "ConsoleLayout.tsx",
+        )
+        if not console_layout_path.exists():
+            self.skipTest("console shell package is not available in this claw router surface")
+        console_layout = console_layout_path.read_text(encoding="utf-8")
         navbar = (
             ROOT
             / "apps"
@@ -41,24 +47,23 @@ class ConsoleMessagesRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn('to="/console/messages"', navbar)
 
     def test_console_messages_ui_is_read_only_until_command_contract_exists(self) -> None:
-        messages_view = (
-            ROOT
-            / "apps"
-            / "sdkwork-clawrouter-pc"
-            / "packages"
+        messages_view_path = (
+            PORTAL_PACKAGES
             / "sdkwork-clawrouter-pc-console-messages"
             / "src"
             / "MessagesView.tsx"
-        ).read_text(encoding="utf-8")
-        messages_service = (
-            ROOT
-            / "apps"
-            / "sdkwork-clawrouter-pc"
-            / "packages"
+        )
+        messages_service_path = (
+            PORTAL_PACKAGES
             / "sdkwork-clawrouter-pc-console-messages"
             / "src"
             / "messagesService.ts"
-        ).read_text(encoding="utf-8")
+        )
+        if not messages_view_path.exists() or not messages_service_path.exists():
+            self.skipTest("console messages package is not available in this claw router surface")
+
+        messages_view = messages_view_path.read_text(encoding="utf-8")
+        messages_service = messages_service_path.read_text(encoding="utf-8")
         contract = (
             ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
         ).read_text(encoding="utf-8")

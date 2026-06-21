@@ -509,7 +509,7 @@ async fn edge_server_proxies_real_sqlite_gateway_admin_and_app_services() {
 
     let portal_home = text_request(edge_router.clone(), Method::GET, "/").await;
     assert_eq!(StatusCode::OK, portal_home.status);
-    assert!(portal_home.body.contains("sdkwork-claw-router portal"));
+    assert!(portal_home.body.contains("sdkwork-clawrouter portal"));
 
     let gateway_openapi = json_request(
         edge_router.clone(),
@@ -654,7 +654,6 @@ async fn edge_server_proxies_app_router_console_routing_api_through_generated_sd
     .merge(sdkwork_claw_product::api::app_model_catalog_router(
         Arc::new(app_smoke_model_catalog()),
     ))
-    .merge(sdkwork_claw_product::api::app_generation_history_router())
     .merge(sdkwork_claw_product::api::app_routing_router_with_read_store(routing_store.clone()))
     .merge(
         sdkwork_claw_product::api::app_routing_strategy_router_with_store(
@@ -710,19 +709,6 @@ async fn edge_server_proxies_app_router_console_routing_api_through_generated_sd
     assert_eq!(StatusCode::OK, models.status);
     assert_eq!("2000", models.json["code"]);
     assert_eq!("gpt-4o-mini", models.json["data"]["items"][0]["model"]);
-
-    let generation_history = json_request(
-        edge_router.clone(),
-        Method::GET,
-        "/app/v3/api/ai/generations",
-        Body::empty(),
-    )
-    .with_app_session(app_session.clone())
-    .send()
-    .await;
-    assert_eq!(StatusCode::OK, generation_history.status);
-    assert_eq!("2000", generation_history.json["code"]);
-    assert!(generation_history.json["data"]["items"].is_array());
 
     let channels = json_request(
         edge_router.clone(),
@@ -1056,7 +1042,7 @@ fn portal_router() -> Router {
                 .into_response()
             }),
         )
-        .fallback(|| async { "sdkwork-claw-router portal" })
+        .fallback(|| async { "sdkwork-clawrouter portal" })
 }
 
 #[derive(Clone)]

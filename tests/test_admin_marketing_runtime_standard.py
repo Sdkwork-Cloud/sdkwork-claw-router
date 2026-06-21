@@ -119,7 +119,7 @@ FRONTEND_ROUTE_CONTRACT_PATH = (
     / "routes"
     / "routes.yaml"
 )
-TABLE_REGISTRY_PATH = ROOT / "docs" / "schema-registry" / "sdkwork-claw-router.tables.yaml"
+TABLE_REGISTRY_PATH = ROOT / "docs" / "schema-registry" / "sdkwork-clawrouter.tables.yaml"
 SCHEMA_MANIFEST_PATH = ROOT / "generated" / "schema" / "manifest" / "schema-manifest.json"
 API_CONTRACT_MANIFEST_PATH = ROOT / "generated" / "api" / "api-contract-manifest.json"
 OPENAPI_SCHEMA_COMPONENTS_PATH = ROOT / "generated" / "openapi" / "schema-components.yaml"
@@ -204,6 +204,10 @@ ADMIN_MARKETING_DESIGN_DOC_PATHS = [
 ]
 
 
+@unittest.skipUnless(
+    SERVICE_PATH.exists(),
+    "admin marketing package removed from claw router PC surface",
+)
 class AdminMarketingRuntimeStandardTest(unittest.TestCase):
     def test_product_admin_marketing_port_uses_promotion_coupon_domain_names(self) -> None:
         port = PRODUCT_ADMIN_MARKETING_PORT_PATH.read_text(encoding="utf-8")

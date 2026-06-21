@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { CheckCircle2, Edit, Key, MoreHorizontal, Plus, RefreshCw, Search, Shield, Users, X } from 'lucide-react';
-import { AdminTableShell, BusinessStateTableRow, CopyButton } from 'sdkwork-clawrouter-pc-commons';
+import { AdminTableShell, BusinessStateTableRow, CopyButton } from '@sdkwork/clawrouter-pc-commons';
 import { ApiKeyItem, UserListItem, UserService } from './userService';
 import {
   createApiKeyInputFromForm,

@@ -1,5 +1,5 @@
-import { createClientOperationToken } from 'sdkwork-clawrouter-pc-commons/idempotency';
-import { getClawRouterAppSdkClient } from 'sdkwork-clawrouter-pc-commons/sdk-clients';
+import { createClientOperationToken } from '@sdkwork/clawrouter-pc-commons/idempotency';
+import { getClawRouterAppSdkClient } from '@sdkwork/clawrouter-pc-commons/sdk-clients';
 import {
   ensureSdkworkApiSuccess,
   isRecord,
@@ -10,7 +10,7 @@ import {
   readRequiredApiItems,
   readRequiredString,
   readString,
-} from 'sdkwork-clawrouter-pc-commons/api-result';
+} from '@sdkwork/clawrouter-pc-commons/api-result';
 import type { CreateApiKeyRequest, UpdateApiKeyRequest } from '@sdkwork/clawrouter-app-sdk';
 import type { AppApiKeyListResponse as SdkAppApiKeyListResponse } from '@sdkwork/clawrouter-app-sdk';
 import { DEFAULT_CHANNEL_GROUP } from './apiKeyForm.ts';

@@ -993,7 +993,7 @@ class ClawRouterPayloadSdkAudit:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Audit explicit ClawRouter payload schemas in OpenAPI and generated SDKs.")
-    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-claw-router root directory")
+    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-clawrouter root directory")
     parser.add_argument("--manifest", type=Path, default=None, help="API contract manifest path")
     parser.add_argument("--openapi-dir", type=Path, default=None, help="directory containing generated app/backend OpenAPI JSON")
     parser.add_argument("--sdk-root", type=Path, default=None, help="directory containing generated SDK packages")

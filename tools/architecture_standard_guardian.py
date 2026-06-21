@@ -118,7 +118,7 @@ class ArchitectureStandardGuardian:
     )
     DOC_RULES: tuple[ArchitectureDocRule, ...] = (
         ArchitectureDocRule(
-            relative_path="docs/02-技术架构设计.md",
+            relative_path="docs/02-??????.md",
             required_terms=(
                 "Rust-first",
                 "sdkwork-claw-gateway",
@@ -130,7 +130,7 @@ class ArchitectureStandardGuardian:
             ),
         ),
         ArchitectureDocRule(
-            relative_path="docs/03-技术选型.md",
+            relative_path="docs/03-????.md",
             required_terms=(
                 "Rust-first",
                 "axum",
@@ -145,7 +145,7 @@ class ArchitectureStandardGuardian:
             ),
         ),
         ArchitectureDocRule(
-            relative_path="docs/07-性能设计.md",
+            relative_path="docs/07-????.md",
             required_terms=(
                 "Rust-first",
                 "Tokio",
@@ -158,7 +158,7 @@ class ArchitectureStandardGuardian:
             ),
         ),
         ArchitectureDocRule(
-            relative_path="docs/09-部署架构设计.md",
+            relative_path="docs/09-??????.md",
             required_terms=(
                 "Rust-first",
                 "Rust services",
@@ -231,7 +231,7 @@ class ArchitectureStandardGuardian:
         messages: list[str] = []
         for path in self._iter_files(self.TEXT_SCAN_ROOTS, suffixes=('.md',)):
             relative_path = self._relative_path(path)
-            text = path.read_text(encoding='utf-8')
+            text = path.read_text(encoding='utf-8', errors='replace')
             for token in self.TEMPLATE_TOKENS:
                 if token in text:
                     messages.append(
@@ -349,8 +349,8 @@ class ArchitectureStandardGuardian:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Validate sdkwork-claw-router SDKWork architecture and workspace standards.")
-    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-claw-router root directory")
+    parser = argparse.ArgumentParser(description="Validate sdkwork-clawrouter SDKWork architecture and workspace standards.")
+    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-clawrouter root directory")
     args = parser.parse_args()
 
     result = ArchitectureStandardGuardian(root=args.root).run()

@@ -10,11 +10,11 @@
 
 Build `sdkwork-appbase` into the reusable commerce foundation for accounts, ledgers,
 orders, payments, refunds, coupons, invoices, recharge catalogs, idempotency, and
-transaction boundaries. Product applications such as `sdkwork-claw-router` must
+transaction boundaries. Product applications such as `sdkwork-clawrouter` must
 consume the appbase commerce platform as a set of composable building blocks
 instead of hosting generic commerce logic locally.
 
-The end state is not just code reuse inside `sdkwork-claw-router`. Other
+The end state is not just code reuse inside `sdkwork-clawrouter`. Other
 applications must be able to integrate the same commerce capabilities quickly by
 mounting appbase routers, creating appbase SQL stores, registering provider
 adapters, and calling appbase service facades.
@@ -56,11 +56,11 @@ The platform is not complete yet:
   mountable Axum routers for all generic commerce operations.
 - Runtime operation contracts exist, but there is no complete set of generic
   service handlers wired to concrete SQL stores.
-- `sdkwork-claw-router` still owns generic commerce API/store implementations
+- `sdkwork-clawrouter` still owns generic commerce API/store implementations
   such as app billing, recharge, checkout, payment callback, account summary,
   admin marketing, and admin finance read/write paths.
-- Some `sdkwork-claw-router` tests already guard against old `plus_*` tables,
-  but the generic replacement logic still lives in `sdkwork-claw-router` instead
+- Some `sdkwork-clawrouter` tests already guard against old `plus_*` tables,
+  but the generic replacement logic still lives in `sdkwork-clawrouter` instead
   of appbase.
 
 ## Frontend/Backend Commercial Capability Alignment
@@ -100,7 +100,7 @@ reusable appbase runtime/storage/router implementation.
    The portal and appbase TypeScript service expose wallet overview/accounts,
    transactions, operations, top-ups, withdrawals, transfers, exchanges, points
    recharge records/orders/cancel, token deductions, coupon catalog/claim/usage,
-   payment record detail, and preflight operations. In `sdkwork-claw-router`,
+   payment record detail, and preflight operations. In `sdkwork-clawrouter`,
    several matching routes in `app_commerce.rs` still return an empty list,
    default zero balance, path item unavailable, or `5010` command-store
    unavailable.
@@ -269,7 +269,7 @@ fake success branches or empty placeholders. The minimum UX contract is:
 - A second SDKWork app can mount appbase commerce, inject generated SDK adapters,
   run SQLite/Postgres migrations, and complete account, wallet, points recharge,
   order, payment, coupon, refund, invoice, and ledger flows without importing
-  `sdkwork-claw-router`.
+  `sdkwork-clawrouter`.
 - Every mutation has idempotency, request hash, transaction boundary, audit
   metadata, and deterministic retry behavior.
 - Every balance change writes an immutable ledger entry before the operation is
@@ -297,7 +297,7 @@ fake success branches or empty placeholders. The minimum UX contract is:
 
 2. Product apps own adapters and product policy.
 
-   `sdkwork-claw-router` may own AI usage facts, model pricing, route/channel
+   `sdkwork-clawrouter` may own AI usage facts, model pricing, route/channel
    logic, usage settlement workers, product-specific response mapping, and
    product-specific orchestration. It must not own the generic commerce ledger,
    payment, order, coupon, or invoice implementation.
@@ -524,7 +524,7 @@ small.
 
 ## Claw-Router Migration Boundary
 
-`sdkwork-claw-router` should keep:
+`sdkwork-clawrouter` should keep:
 
 - AI usage recording and `ai_usage_fact`
 - model and route pricing
@@ -534,7 +534,7 @@ small.
 - bridge/projection tables that are unique to gateway usage settlement
 - OpenAPI/schema generation for the claw-router product surface
 
-`sdkwork-claw-router` should remove or shrink:
+`sdkwork-clawrouter` should remove or shrink:
 
 - generic billing store
 - generic wallet, points, token, exchange, transfer, and deduction store
@@ -552,7 +552,7 @@ mounted directly.
 ## Phase B: Appbase Platform Completion
 
 Phase B produces a reusable appbase commerce platform independent of
-`sdkwork-claw-router`.
+`sdkwork-clawrouter`.
 
 Deliverables:
 
@@ -605,7 +605,7 @@ Implemented in the first account/wallet/ledger slice:
   deduction
 - TypeScript appbase commerce contracts verified against the wallet operation
   catalog; no claw-router SDK dependency was introduced into appbase
-- `sdkwork-claw-router` DB-configured app API now mounts the appbase wallet
+- `sdkwork-clawrouter` DB-configured app API now mounts the appbase wallet
   router for wallet routes while retaining product-local fallback routes for
   still-unmigrated commerce capabilities
 
@@ -662,7 +662,7 @@ Appbase tests:
 Claw-router migration tests:
 
 - architecture tests that forbid generic commerce SQL implementations in
-  `sdkwork-claw-router`
+  `sdkwork-clawrouter`
 - integration tests that prove claw-router app/backend routes delegate to
   appbase
 - usage settlement tests that prove product-specific bridge behavior remains

@@ -14,21 +14,16 @@ import {
   readPreferredRuntimeUsageCount,
   readRuntimeUsageSnapshot,
   type RuntimeUsageSnapshot,
-} from 'sdkwork-clawrouter-pc-commons/runtime';
+  createClientOperationToken,
+} from '@sdkwork/clawrouter-pc-commons/runtime';
+import { trim } from '@sdkwork/clawrouter-pc-commons/sdkwork-utils';
 import {
   mapSdkworkGenerationArtifactsToHistoryMedia,
   mapSdkworkGenerationModalityToHistoryType,
 } from '@sdkwork/generations-pc-workspace/generation-history';
 import {
-  completeAgentRun as completeAgentRunOperation,
-  completeAgentRunStep as completeAgentRunStepOperation,
   completeRuntimeInvocation as completeRuntimeInvocationOperation,
-  createAgentDefinition,
-  createAgentRun as createAgentRunOperation,
-  createAgentRunStep as createAgentRunStepOperation,
-  createAgentSession as createAgentSessionOperation,
   createRuntimeInvocation,
-  listAgentDefinitions,
   listRuntimeArtifacts,
   streamRuntimeEvents,
 } from './appRuntimeApiOperations.ts';
@@ -48,23 +43,10 @@ import type {
 } from './playgroundTypes.ts';
 
 const PLAYGROUND_AGENT_NAME = 'Playground Generation Agent';
-const PLAYGROUND_AGENT_CODE = 'playground-generation-agent';
 const PLAYGROUND_SOURCE_SURFACE = 'playground';
-const PLAYGROUND_SESSION_RUNTIME = 'openai';
 const RUNTIME_ADAPTER = 'openai_compatible';
 const RUNTIME_ENDPOINT = 'agent.stream';
 const TITLE_MAX_LENGTH = 96;
-
-interface AgentItem {
-  code: string;
-  defaultVersion: {
-    id: string;
-    model?: string | null;
-  };
-  id: string;
-  name: string;
-  status: 'active' | 'disabled';
-}
 
 interface AgentRunItem {
   cachedTokens?: number | null;
@@ -87,10 +69,6 @@ interface AgentRunStepItem {
   title?: string | null;
 }
 
-interface AgentSessionItem {
-  id: string;
-}
-
 interface RuntimeInvocationItem {
   completedAt?: string | null;
   createdAt?: string | null;
@@ -104,7 +82,7 @@ interface RuntimeGenerationOutput {
 }
 
 export async function runPlaygroundGeneration(input: GenerationAgentRunCreateInput): Promise<GenerationAgentRunCreateResult> {
-  const prompt = normalizeText(input.prompt);
+  const prompt = trim(input.prompt ?? '');
   if (!prompt) {
     throw new Error('Generation agent prompt is required');
   }
@@ -112,38 +90,14 @@ export async function runPlaygroundGeneration(input: GenerationAgentRunCreateInp
     throw new Error('Portal session is required to run generation agent');
   }
 
-  const selectedModel = normalizeText(input.selectedModel);
+  const selectedModel = trim(input.selectedModel ?? '');
   const requestedTargetType = input.targetType;
-  const agent = await resolvePlaygroundAgent(selectedModel);
-  const session = await createGenerationAgentSession({
-    agent,
-    prompt,
-    requestedTargetType,
-    selectedModel,
-  });
-  const run = await createGenerationAgentRun({
-    agent,
-    prompt,
-    requestedTargetType,
-    selectedModel,
-    sessionId: session.id,
-    input,
-  });
-  const runtimeInvocation = await createAgentRuntimeInvocation({
-    agent,
-    input,
-    prompt,
-    run,
-    requestedTargetType,
-    selectedModel,
-    sessionId: session.id,
-  });
-  const step = await createGenerationAgentRunStep({
+  const runId = createClientOperationToken('playground-runtime-run');
+  const runtimeInvocation = await createPlaygroundRuntimeInvocation({
     input,
     prompt,
     requestedTargetType,
-    run,
-    runtimeInvocation,
+    runId,
     selectedModel,
   });
 
@@ -151,23 +105,19 @@ export async function runPlaygroundGeneration(input: GenerationAgentRunCreateInp
   try {
     generationOutput = await readRuntimeGenerationOutput(runtimeInvocation.id, input);
   } catch {
-    await failAgentRuntime({
+    await failPlaygroundRuntimeInvocation({
       errorCode: 'runtime_stream_failed',
       errorMessageMasked: 'Runtime stream failed before completion',
       invocationId: runtimeInvocation.id,
-      runId: run.id,
-      stepId: step.id,
     });
     throw new Error('playground.agent.errors.runtimeUnavailable');
   }
 
   if (!generationOutput.outputText.trim() && generationOutput.artifacts.length === 0) {
-    await failAgentRuntime({
+    await failPlaygroundRuntimeInvocation({
       errorCode: 'runtime_stream_empty',
       errorMessageMasked: 'Runtime stream completed without agent output',
       invocationId: runtimeInvocation.id,
-      runId: run.id,
-      stepId: step.id,
     });
     throw new Error('playground.agent.errors.runtimeUnavailable');
   }
@@ -180,12 +130,8 @@ export async function runPlaygroundGeneration(input: GenerationAgentRunCreateInp
     ...generationOutput,
     usage: mergeRuntimeUsageSnapshots(generationOutput.usage, readRuntimeUsageSnapshot(completedInvocation)),
   };
-  const completedStep = await completeAgentRunStep({
-    generationOutput: completedGenerationOutput,
-    runId: run.id,
-    stepId: step.id,
-  });
-  const completedRun = await completeAgentRun(run.id, completedGenerationOutput);
+  const completedRun = createSyntheticRun(completedInvocation, completedGenerationOutput.usage, selectedModel, runId);
+  const completedStep = createSyntheticRuntimeStep(completedInvocation.id);
   const completedAt = completedRun.completedAt || completedInvocation.completedAt || completedRun.createdAt;
 
   const resultTargetType = resolveGenerationResultTargetType(requestedTargetType, completedGenerationOutput.artifacts);
@@ -195,11 +141,16 @@ export async function runPlaygroundGeneration(input: GenerationAgentRunCreateInp
   }
 
   return {
-    agent: mapAgentSnapshot(agent, selectedModel),
+    agent: {
+      id: 'playground-runtime',
+      model: selectedModel || completedRun.model || undefined,
+      name: PLAYGROUND_AGENT_NAME,
+      versionId: 'playground-runtime',
+    },
     item: mapAgentRunToHistoryItem({
       artifacts: completedGenerationOutput.artifacts,
       generationConfig: input.generationConfig,
-      model: selectedModel || completedRun.model || agent.defaultVersion.model || undefined,
+      model: selectedModel || completedRun.model || undefined,
       prompt,
       run: completedRun,
       targetType: resultTargetType,
@@ -211,168 +162,36 @@ export async function runPlaygroundGeneration(input: GenerationAgentRunCreateInp
     steps,
     targetType: resultTargetType,
     status: mapPlaygroundGenerationStatus(completedRun.status),
-    usage: mapAgentUsageSummary(completedRun, completedGenerationOutput.artifacts, completedGenerationOutput.usage),
+    usage: mapRuntimeUsageSummary(completedGenerationOutput.artifacts, completedGenerationOutput.usage),
   };
 }
 
-function normalizeText(value: string | undefined): string {
-  return (value ?? '').trim();
-}
-
-async function resolvePlaygroundAgent(selectedModel: string): Promise<AgentItem> {
-  const listResult = await listAgentDefinitions({
-    pageSize: 100,
-    q: PLAYGROUND_AGENT_NAME,
-  });
-  ensureSdkworkApiSuccess(listResult, 'Failed to list playground agents');
-  const existing = readRequiredApiItems(listResult, 'Playground agent list response missing items')
-    .filter(isRecord)
-    .map((item) => item as unknown as AgentItem)
-    .find((item) => item.status === 'active' && (
-      item.code === PLAYGROUND_AGENT_CODE || item.name === PLAYGROUND_AGENT_NAME
-    ));
-  if (existing) {
-    return existing;
-  }
-
-  const createResult = await createAgentDefinition(
-    {
-      code: PLAYGROUND_AGENT_CODE,
-      description: 'Routes playground generation requests through Runtime SSE.',
-      model: selectedModel || undefined,
-      name: PLAYGROUND_AGENT_NAME,
-      runtimePolicy: {
-        endpoint: RUNTIME_ENDPOINT,
-        runtime: RUNTIME_ADAPTER,
-        streaming: true,
-      },
-      systemPrompt: 'You are the Playground generation runtime coordinator.',
-    },
-    { idempotencyPrefix: 'playground-agent-definition' },
-  );
-  ensureSdkworkApiSuccess(createResult, 'Failed to create playground agent');
-  const item = readApiItem(createResult);
-  if (!item) {
-    throw new Error('Playground agent response missing item');
-  }
-  return item as unknown as AgentItem;
-}
-
-async function createGenerationAgentSession(
+async function createPlaygroundRuntimeInvocation(
   {
-    agent,
-    prompt,
-    requestedTargetType,
-    selectedModel,
-  }: {
-    agent: AgentItem;
-    prompt: string;
-    requestedTargetType?: PlaygroundGenerationTargetType;
-    selectedModel: string;
-  },
-): Promise<AgentSessionItem> {
-  const result = await createAgentSessionOperation(
-    agent.id,
-    {
-      agentVersionId: agent.defaultVersion.id,
-      defaultModel: selectedModel || agent.defaultVersion.model || undefined,
-      metadata: compactJsonObject({
-        targetType: requestedTargetType,
-      }),
-      runtime: PLAYGROUND_SESSION_RUNTIME,
-      sessionKind: 'interactive',
-      sourceSurface: PLAYGROUND_SOURCE_SURFACE,
-      title: createGenerationTitle(prompt),
-    },
-    { idempotencyPrefix: 'playground-agent-session' },
-  );
-  ensureSdkworkApiSuccess(result, 'Failed to create playground agent session');
-  const item = readApiItem(result);
-  if (!item) {
-    throw new Error('Playground agent session response missing item');
-  }
-  return item as unknown as AgentSessionItem;
-}
-
-async function createGenerationAgentRun(
-  {
-    agent,
     input,
     prompt,
     requestedTargetType,
+    runId,
     selectedModel,
-    sessionId,
   }: {
-    agent: AgentItem;
     input: GenerationAgentRunCreateInput;
     prompt: string;
     requestedTargetType?: PlaygroundGenerationTargetType;
+    runId: string;
     selectedModel: string;
-    sessionId: string;
-  },
-): Promise<AgentRunItem> {
-  const result = await createAgentRunOperation(
-    sessionId,
-    {
-      agentId: agent.id,
-      agentVersionId: agent.defaultVersion.id,
-      executionMode: 'interactive',
-      inputMessage: prompt,
-      metadata: compactJsonObject({
-        generationConfig: input.generationConfig,
-        generationService: 'playground-generation-service',
-        referenceAssets: input.referenceAssets,
-        referenceImages: input.referenceImages,
-        referenceMode: input.referenceMode,
-        targetType: requestedTargetType,
-      }),
-      model: selectedModel || agent.defaultVersion.model || undefined,
-      runtime: RUNTIME_ADAPTER,
-      sourceSurface: PLAYGROUND_SOURCE_SURFACE,
-    },
-    { idempotencyPrefix: 'playground-agent-run-create' },
-  );
-  ensureSdkworkApiSuccess(result, 'Failed to create playground agent run');
-  const item = readApiItem(result);
-  if (!item) {
-    throw new Error('Playground agent run response missing item');
-  }
-  return item as unknown as AgentRunItem;
-}
-
-async function createAgentRuntimeInvocation(
-  {
-    agent,
-    input,
-    prompt,
-    run,
-    requestedTargetType,
-    selectedModel,
-    sessionId,
-  }: {
-    agent: AgentItem;
-    input: GenerationAgentRunCreateInput;
-    prompt: string;
-    run: AgentRunItem;
-    requestedTargetType?: PlaygroundGenerationTargetType;
-    selectedModel: string;
-    sessionId: string;
   },
 ): Promise<RuntimeInvocationItem> {
   const result = await createRuntimeInvocation(
     {
-      agentRunId: run.id,
-      agentSessionId: sessionId,
       endpoint: RUNTIME_ENDPOINT,
       invocationType: 'agent_run',
       metadata: compactJsonObject({
-        agentId: agent.id,
-        agentVersionId: agent.defaultVersion.id,
         generationService: 'playground-generation-service',
+        runId,
         surface: PLAYGROUND_SOURCE_SURFACE,
         targetType: requestedTargetType,
       }),
-      model: selectedModel || run.model || agent.defaultVersion.model || undefined,
+      model: selectedModel || undefined,
       provider: selectedModel ? readProviderFromModel(selectedModel) : undefined,
       requestJson: compactJsonObject({
         generationConfig: input.generationConfig,
@@ -397,54 +216,59 @@ async function createAgentRuntimeInvocation(
   return item as unknown as RuntimeInvocationItem;
 }
 
-async function createGenerationAgentRunStep(
+function createSyntheticRun(
+  invocation: RuntimeInvocationItem,
+  usage: RuntimeUsageSnapshot,
+  selectedModel: string,
+  runId: string,
+): AgentRunItem {
+  const now = new Date().toISOString();
+  return {
+    cachedTokens: readPreferredRuntimeUsageCount(undefined, usage.cachedTokens),
+    completedAt: invocation.completedAt ?? now,
+    createdAt: invocation.createdAt ?? now,
+    id: runId,
+    inputTokens: readPreferredRuntimeUsageCount(undefined, usage.inputTokens),
+    model: selectedModel || undefined,
+    outputTokens: readPreferredRuntimeUsageCount(undefined, usage.outputTokens),
+    requestId: runId,
+    status: 'completed',
+    totalTokens: readPreferredRuntimeUsageCount(undefined, usage.totalTokens),
+  };
+}
+
+function createSyntheticRuntimeStep(invocationId: string): AgentRunStepItem {
+  return {
+    id: `${invocationId}-runtime`,
+    status: 'completed',
+    stepIndex: 1,
+    stepType: 'runtime',
+    title: 'Runtime stream',
+  };
+}
+
+async function failPlaygroundRuntimeInvocation(
   {
-    input,
-    prompt,
-    requestedTargetType,
-    run,
-    runtimeInvocation,
-    selectedModel,
+    errorCode,
+    errorMessageMasked,
+    invocationId,
   }: {
-    input: GenerationAgentRunCreateInput;
-    prompt: string;
-    requestedTargetType?: PlaygroundGenerationTargetType;
-    run: AgentRunItem;
-    runtimeInvocation: RuntimeInvocationItem;
-    selectedModel: string;
+    errorCode: string;
+    errorMessageMasked: string;
+    invocationId: string;
   },
-): Promise<AgentRunStepItem> {
-  const result = await createAgentRunStepOperation(
-    run.id,
+): Promise<void> {
+  const runtimeResult = await completeRuntimeInvocationOperation(
+    invocationId,
     {
-      inputJson: compactJsonObject({
-        generationConfig: input.generationConfig,
-        prompt,
-        referenceAssets: input.referenceAssets,
-        referenceImages: input.referenceImages,
-        referenceMode: input.referenceMode,
-        selectedModel: selectedModel || undefined,
-        targetType: requestedTargetType,
-      }),
-      metadata: compactJsonObject({
-        generationService: 'playground-generation-service',
-        surface: PLAYGROUND_SOURCE_SURFACE,
-      }),
-      model: selectedModel || run.model || undefined,
-      runtimeInvocationId: runtimeInvocation.id,
-      status: 'running',
-      stepType: 'runtime',
-      title: 'Runtime stream',
-      toolName: RUNTIME_ADAPTER,
+      errorCode,
+      errorMessageMasked,
+      errorType: 'runtime_unavailable',
+      status: 'failed',
     },
-    { idempotencyPrefix: 'playground-agent-step' },
+    { idempotencyPrefix: 'playground-agent-runtime-failed' },
   );
-  ensureSdkworkApiSuccess(result, 'Failed to create playground agent run step');
-  const item = readApiItem(result);
-  if (!item) {
-    throw new Error('Playground agent run step response missing item');
-  }
-  return item as unknown as AgentRunStepItem;
+  ensureSdkworkApiSuccess(runtimeResult, 'Failed to mark playground runtime invocation failed');
 }
 
 async function readRuntimeGenerationOutput(
@@ -504,8 +328,8 @@ function readGenerationArtifactsFromRuntimeEvent(
   event: RuntimeStreamEvent,
   targetType?: PlaygroundGenerationTargetType,
 ): PlaygroundGenerationArtifact[] {
-  const eventType = normalizeText(event.eventType).toLowerCase();
-  const eventSource = normalizeText(event.eventSource).toLowerCase();
+  const eventType = trim(event.eventType ?? '').toLowerCase();
+  const eventSource = trim(event.eventSource ?? '').toLowerCase();
   const payload = event.payloadJson;
   const candidates: unknown[] = [];
   const isAssetSignal = isGenerationAssetSignal(eventType, eventSource);
@@ -535,7 +359,7 @@ function isGenerationAssetSignal(eventType: string, eventSource: string): boolea
 }
 
 function isRuntimeArtifactReferenceEvent(event: RuntimeStreamEvent): boolean {
-  const eventType = normalizeText(event.eventType).toLowerCase();
+  const eventType = trim(event.eventType ?? '').toLowerCase();
   if (eventType !== 'artifact.created' && eventType !== 'runtime.artifact') {
     return false;
   }
@@ -858,107 +682,27 @@ async function completeAgentRuntimeInvocation(
   return item as unknown as RuntimeInvocationItem;
 }
 
-async function completeAgentRun(
-  runId: string,
-  generationOutput: RuntimeGenerationOutput,
-): Promise<AgentRunItem> {
-  const result = await completeAgentRunOperation(
-    runId,
-    {
-      metadata: createGenerationOutputMetadata(generationOutput),
-      outputMessage: generationOutput.outputText || undefined,
-      status: 'completed',
-      usageJson: generationOutput.usage,
-    },
-    { idempotencyPrefix: 'playground-agent-run-complete' },
-  );
-  ensureSdkworkApiSuccess(result, 'Failed to complete playground agent run');
-  const item = readApiItem(result);
-  if (!item) {
-    throw new Error('Playground agent run completion response missing item');
-  }
-  return item as unknown as AgentRunItem;
-}
-
-async function completeAgentRunStep(
-  {
-    generationOutput,
-    runId,
-    stepId,
-  }: {
-    generationOutput: RuntimeGenerationOutput;
-    runId: string;
-    stepId: string;
-  },
-): Promise<AgentRunStepItem> {
-  const result = await completeAgentRunStepOperation(
-    runId,
-    stepId,
-    {
-      metadata: createGenerationOutputMetadata(generationOutput),
-      outputJson: createGenerationOutputJson(generationOutput),
-      status: 'completed',
-      usageJson: generationOutput.usage,
-    },
-    { idempotencyPrefix: 'playground-agent-step-complete' },
-  );
-  ensureSdkworkApiSuccess(result, 'Failed to complete playground agent run step');
-  const item = readApiItem(result);
-  if (!item) {
-    throw new Error('Playground agent run step completion response missing item');
-  }
-  return item as unknown as AgentRunStepItem;
-}
-
-async function failAgentRuntime(
-  {
-    errorCode,
-    errorMessageMasked,
-    invocationId,
-    runId,
-    stepId,
-  }: {
-    errorCode: string;
-    errorMessageMasked: string;
-    invocationId: string;
-    runId: string;
-    stepId: string;
-  },
-): Promise<void> {
-  const runtimeResult = await completeRuntimeInvocationOperation(
-    invocationId,
-    {
-      errorCode,
-      errorMessageMasked,
-      errorType: 'runtime_unavailable',
-      status: 'failed',
-    },
-    { idempotencyPrefix: 'playground-agent-runtime-failed' },
-  );
-  ensureSdkworkApiSuccess(runtimeResult, 'Failed to mark playground runtime invocation failed');
-
-  const stepResult = await completeAgentRunStepOperation(
-    runId,
-    stepId,
-    {
-      errorMessageMasked,
-      status: 'failed',
-      usageJson: emptyRuntimeUsageSnapshot(),
-    },
-    { idempotencyPrefix: 'playground-agent-step-failed' },
-  );
-  ensureSdkworkApiSuccess(stepResult, 'Failed to mark playground agent run step failed');
-
-  const runResult = await completeAgentRunOperation(
-    runId,
-    {
-      errorMessageMasked,
-      status: 'failed',
-      usageJson: emptyRuntimeUsageSnapshot(),
-    },
-    { idempotencyPrefix: 'playground-agent-run-failed' },
-  );
-  ensureSdkworkApiSuccess(runResult, 'Failed to mark playground agent run failed');
+function mapRuntimeUsageSummary(
+  artifacts: readonly PlaygroundGenerationArtifact[],
+  usage: RuntimeUsageSnapshot,
+): GenerationAgentUsageSummary {
+  const promptTokens = readPreferredRuntimeUsageCount(undefined, usage.inputTokens);
+  const cachedTokens = readPreferredRuntimeUsageCount(undefined, usage.cachedTokens);
+  const completionTokens = readPreferredRuntimeUsageCount(undefined, usage.outputTokens);
+  const totalTokens = readPreferredRuntimeUsageCount(undefined, usage.totalTokens)
+    || promptTokens + cachedTokens + completionTokens;
+  const videoSeconds = artifacts
+    .filter((artifact) => artifact.modality === 'video')
+    .reduce((total, artifact) => total + (artifact.asset.durationSeconds ?? 0), 0);
+  return {
+    cachedTokens,
+    completionTokens,
+    events: [],
+    imageCount: artifacts.filter((artifact) => artifact.modality === 'image').length,
+    promptTokens,
+    totalTokens,
+    videoSeconds: String(videoSeconds),
+  };
 }
 
 function createGenerationOutputJson(generationOutput: RuntimeGenerationOutput): Record<string, JsonValue> {
@@ -966,22 +710,6 @@ function createGenerationOutputJson(generationOutput: RuntimeGenerationOutput): 
     media: generationOutput.artifacts.length > 0 ? generationOutput.artifacts : undefined,
     outputText: generationOutput.outputText || undefined,
   });
-}
-
-function createGenerationOutputMetadata(generationOutput: RuntimeGenerationOutput): Record<string, JsonValue> {
-  return compactJsonObject({
-    generatedAssetCount: generationOutput.artifacts.length,
-    hasGeneratedAssets: generationOutput.artifacts.length > 0,
-  });
-}
-
-function mapAgentSnapshot(agent: AgentItem, selectedModel: string) {
-  return {
-    id: agent.id,
-    model: selectedModel || agent.defaultVersion.model || undefined,
-    name: agent.name,
-    versionId: agent.defaultVersion.id,
-  };
 }
 
 function mapAgentRunSnapshot(run: AgentRunItem): GenerationAgentRunSnapshot {
@@ -1051,30 +779,6 @@ function mapAgentRunToHistoryItem({
     type: mapSdkworkGenerationModalityToHistoryType(targetType),
     updatedAt: isoTimestamp,
     videos: media.videos,
-  };
-}
-
-function mapAgentUsageSummary(
-  run: AgentRunItem,
-  artifacts: readonly PlaygroundGenerationArtifact[],
-  usage: RuntimeUsageSnapshot,
-): GenerationAgentUsageSummary {
-  const promptTokens = readPreferredRuntimeUsageCount(run.inputTokens, usage.inputTokens);
-  const cachedTokens = readPreferredRuntimeUsageCount(run.cachedTokens, usage.cachedTokens);
-  const completionTokens = readPreferredRuntimeUsageCount(run.outputTokens, usage.outputTokens);
-  const totalTokens = readPreferredRuntimeUsageCount(run.totalTokens, usage.totalTokens)
-    || promptTokens + cachedTokens + completionTokens;
-  const videoSeconds = artifacts
-    .filter((artifact) => artifact.modality === 'video')
-    .reduce((total, artifact) => total + (artifact.asset.durationSeconds ?? 0), 0);
-  return {
-    cachedTokens,
-    completionTokens,
-    events: [],
-    imageCount: artifacts.filter((artifact) => artifact.modality === 'image').length,
-    promptTokens,
-    totalTokens,
-    videoSeconds: String(videoSeconds),
   };
 }
 

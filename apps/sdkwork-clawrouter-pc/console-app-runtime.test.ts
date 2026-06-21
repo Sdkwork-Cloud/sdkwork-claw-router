@@ -80,6 +80,34 @@ function videoMediaResource(
   };
 }
 
+function generationRecord(overrides: Record<string, unknown> = {}) {
+  return {
+    id: "gen-1",
+    tenantId: "tenant-1",
+    userId: "user-1",
+    modality: "image",
+    operationType: "text_to_image",
+    status: "succeeded",
+    promptPreview: "A precise router diagram",
+    sourceProvider: "openai/gpt-image-1",
+    createdAt: "2026-05-05T08:00:00Z",
+    updatedAt: "2026-05-05T08:01:00Z",
+    resultCount: 1,
+    ...overrides,
+  };
+}
+
+function generationResult(overrides: Record<string, unknown> = {}) {
+  return {
+    id: "result-1",
+    generationId: "gen-1",
+    resultType: "image",
+    createdAt: "2026-05-05T08:01:00Z",
+    resourceSnapshot: mediaResource("image", "https://example.com/result.png"),
+    ...overrides,
+  };
+}
+
 function mediaUrl(resource: { publicUrl?: string; url?: string; uri?: string } | undefined): string {
   return resource?.publicUrl || resource?.url || resource?.uri || "";
 }
@@ -1192,28 +1220,26 @@ test("console gateway service fails closed when SDK trace list contains malforme
 });
 
 test("playground service reads generation history returned by the generated app SDK", async () => {
-  await withAppSdkResponse(
-    {
-      code: "2000",
-      data: {
-        items: [
-          {
-            id: "gen-1",
-            date: "2026-05-05",
-            prompt: "A precise router diagram",
-            type: "image",
-            asset: mediaResource("image", "https://example.com/result.png"),
-            images: [mediaResource("image", "https://example.com/result.png")],
-            videos: [],
-            createdAt: "2026-05-05T08:00:00Z",
-          },
-        ],
+  await withAppSdkResponses(
+    [
+      {
+        code: "2000",
+        data: {
+          items: [generationRecord()],
+        },
       },
-    },
+      {
+        code: "2000",
+        data: {
+          items: [generationResult()],
+        },
+      },
+    ],
     async (captured) => {
       const result = await PlaygroundService.fetchGenerationHistory();
 
-      assert.equal(captured[0].url, "/app/v3/api/ai/generations");
+      assert.match(captured[0].url, /\/app\/v3\/api\/generations(?:\?|$)/);
+      assert.match(captured[1].url, /\/app\/v3\/api\/generations\/gen-1\/results(?:\?|$)/);
       assert.deepEqual(result.map((item) => item.id), ["gen-1"]);
       assert.equal(result[0].type, "images");
       assert.deepEqual(result[0].images, [mediaResource("image", "https://example.com/result.png")]);
@@ -4845,29 +4871,22 @@ test("playground service exposes generation workspace state through the appbase 
       code: "2000",
       data: {
         items: [
-          {
-            id: "gen-1",
-            date: "2026-05-05",
-            prompt: "A precise router diagram",
-            type: "image",
-            modelInfo: "openai/gpt-image-1",
-            asset: mediaResource("image", "https://example.com/result.png"),
-            images: [mediaResource("image", "https://example.com/result.png")],
-            videos: [],
-            createdAt: "2026-05-05T08:00:00Z",
-            updatedAt: "2026-05-05T08:01:00Z",
-            status: "completed",
-          },
+          generationRecord({
+            promptPreview: "A precise router diagram",
+            sourceProvider: "openai/gpt-image-1",
+            status: "succeeded",
+            resultCount: 0,
+          }),
         ],
       },
     },
     async (captured) => {
       const workspace = await PlaygroundService.fetchGenerationWorkspace();
 
-      assert.equal(captured[0].url, "/app/v3/api/ai/generations");
+      assert.match(captured[0].url, /\/app\/v3\/api\/generations(?:\?|$)/);
       assert.equal(workspace.isAuthenticated, true);
       assert.equal(workspace.runs[0]?.id, "gen-1");
-      assert.equal(workspace.runs[0]?.title, "A precise router diagram");
+      assert.equal(workspace.runs[0]?.title, "Image text to image");
       assert.equal(workspace.runs[0]?.model, "openai/gpt-image-1");
       assert.equal(workspace.runs[0]?.status, "completed");
       assert.equal(workspace.digest.totalRuns, 1);
@@ -5155,38 +5174,25 @@ test("playground service fails closed when standard model catalog item omits req
   );
 });
 
-test("playground service fails closed when SDK generation history contains unsupported types", async () => {
+test("playground service maps unknown generation modalities to text history entries", async () => {
   await withAppSdkResponse(
     {
       code: "2000",
       data: {
         items: [
-          {
-            id: "gen-1",
-            date: "2026-05-05",
-            prompt: "A precise router diagram",
-            type: "image",
-            asset: mediaResource("image", "https://example.com/result.png"),
-            images: [mediaResource("image", "https://example.com/result.png")],
-            videos: [],
-            createdAt: "2026-05-05T08:00:00Z",
-          },
-          {
+          generationRecord({
             id: "gen-2",
-            date: "2026-05-05",
-            prompt: "Invalid type",
-            type: "unknown",
-            images: [],
-            videos: [],
-          },
+            modality: "unknown",
+            operationType: "custom",
+            promptPreview: "Invalid type",
+            resultCount: 0,
+          }),
         ],
       },
     },
     async () => {
-      await assert.rejects(
-        () => PlaygroundService.fetchGenerationHistory(),
-        /Playground history type is required/,
-      );
+      const result = await PlaygroundService.fetchGenerationHistory();
+      assert.equal(result[0]?.type, "text");
     },
     { authenticated: true },
   );

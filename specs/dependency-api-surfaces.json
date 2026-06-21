@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "kind": "sdkwork.dependency-api-surfaces",
-  "application": "sdkwork-claw-router",
+  "application": "sdkwork-clawrouter",
   "description": "Runtime dependency API surface declarations for dependency SDKs consumed by SDKWork Claw Router. sdkDependencies owns generation boundaries; this manifest owns runtime mount/base-url decisions.",
   "gatewayIntegration": {
     "targetApplication": "sdkwork-api-gateway",
@@ -9,7 +9,7 @@
     "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
     "authority": "cargo-workspace",
     "catalogPolicy": "no-dedicated-gateway-catalog",
-    "productApiPolicy": "sdkwork-claw-router APIs remain product-owned SDKWork API surfaces",
+    "productApiPolicy": "sdkwork-clawrouter APIs remain product-owned SDKWork API surfaces",
     "migrationState": "shared-gateway-default"
   },
   "dependencies": [
@@ -125,7 +125,7 @@
           "method": "POST",
           "path": "/backend/v3/api/iam/api_keys",
           "operationId": "apiKeys.create",
-          "owner": "sdkwork-claw-router",
+          "owner": "sdkwork-clawrouter",
           "sdkClient": "getClawRouterBackendSdkClient().iam.apiKeys.create",
           "consumerRequired": true,
           "evidence": "services/sdkwork-claw-product/src/api/admin_user.rs create_api_key builds Claw Router gateway API key secrets, hashes, audit records, and idempotency."
@@ -134,7 +134,7 @@
           "method": "DELETE",
           "path": "/backend/v3/api/iam/api_keys/{apiKeyId}",
           "operationId": "apiKeys.delete",
-          "owner": "sdkwork-claw-router",
+          "owner": "sdkwork-clawrouter",
           "sdkClient": "getClawRouterBackendSdkClient().iam.apiKeys.delete",
           "consumerRequired": true,
           "evidence": "services/sdkwork-claw-product/src/api/admin_user.rs delete_api_key deletes Claw Router gateway API keys through the product AdminUserStore."

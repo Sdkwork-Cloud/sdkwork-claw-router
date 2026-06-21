@@ -30,6 +30,7 @@ export interface AdminCategoryManagementSidebarProps {
   onDeleteCategory: (category: AdminCategoryOption) => void;
   onEditCategory: (category: AdminCategoryOption) => void;
   onSelect: (categoryId: string) => void;
+  readOnly?: boolean;
   selectedCategoryId: string;
   usageCountByCategoryId?: ReadonlyMap<string, number>;
 }
@@ -39,6 +40,7 @@ export function AdminCategoryManagementSidebar({
   dataAttribute,
   labels,
   loading = false,
+  readOnly = false,
   onCreateChild,
   onCreateRoot,
   onDeleteCategory,

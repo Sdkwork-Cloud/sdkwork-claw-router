@@ -470,6 +470,8 @@ class ClawRouterStrictSdkGenerateTest(unittest.TestCase):
             self.assertIn("await removeTypeOnlyRuntimeReExports(path.join(tempEsmDir, 'index.js'));", build_runtime_source)
             self.assertIn("async function removeTypeOnlyRuntimeReExports(entryFile) {", build_runtime_source)
             self.assertIn("line.trim() === \"export * from './types';\"", build_runtime_source)
+            self.assertIn("source.split(/\\r?\\n/u)", build_runtime_source)
+            self.assertIn("runtimeLines.join('\\n')", build_runtime_source)
             self.assertTrue((family / "README.md").is_file())
             self.assertTrue((family / ".sdkwork-assembly.json").is_file())
             self.assertTrue((family / "openapi" / "clawrouter-app-sdk.openapi.json").is_file())

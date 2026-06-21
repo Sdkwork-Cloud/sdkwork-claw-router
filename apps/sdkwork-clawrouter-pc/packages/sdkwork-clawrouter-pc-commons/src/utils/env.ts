@@ -1,3 +1,5 @@
+import { isBlank, trim } from '../sdkwork-utils.ts';
+
 type ClawRouterRuntimeWindow = Window & {
   __CLAWROUTER_ENV__?: Record<string, unknown>;
 };
@@ -10,7 +12,10 @@ export function readClawRouterRuntimeEnv(name: string): string | undefined {
   }
 
   const value = (window as ClawRouterRuntimeWindow).__CLAWROUTER_ENV__?.[name];
-  return typeof value === 'string' && value.trim().length > 0 ? value.trim() : undefined;
+  if (typeof value !== 'string' || isBlank(value)) {
+    return undefined;
+  }
+  return trim(value);
 }
 
 export function resolveClawRouterRuntimeBoolean(name: string, defaultValue = false): boolean {
@@ -19,7 +24,7 @@ export function resolveClawRouterRuntimeBoolean(name: string, defaultValue = fal
     return defaultValue;
   }
 
-  const normalized = value.trim().toLowerCase();
+  const normalized = trim(value).toLowerCase();
   if (['1', 'true', 'yes', 'on'].includes(normalized)) {
     return true;
   }

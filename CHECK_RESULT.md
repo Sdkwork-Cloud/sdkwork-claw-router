@@ -1,9 +1,9 @@
-# sdkwork-claw-router Check Result
+# sdkwork-clawrouter Check Result
 
 > **2026-06-20:** Course module removed from claw-router. Entries below that reference `/courses`, `sdkwork-clawrouter-pc-courses`, `content_course*`, or `[courses]` TOML are historical only. References to retired local documents packages such as `sdkwork-clawrouter-pc-api-reference` and legacy local app-center typecheck commands are also historical only after the shared documents capability migration. See `docs/31-product-composition-model.md`.
 
 Last verified: 2026-05-03 Asia/Shanghai
-Workspace: `<workspace-root>\sdkwork-claw-router`
+Workspace: `<workspace-root>\sdkwork-clawrouter`
 
 ## Summary
 
@@ -3451,7 +3451,7 @@ Solution applied:
   platform/architecture/mode combinations without requiring staged production
   artifacts
 - the install init smoke writes a temporary `.env.release.local` and
-  `sdkwork-claw-router.toml`, validates PostgreSQL for server package dry-runs
+  `sdkwork-clawrouter.toml`, validates PostgreSQL for server package dry-runs
   and a file-backed SQLite initialization URL for desktop package dry-runs,
   verifies `sdkwork-claw-installer ensure` and
   `sdkwork-claw-installer refresh-catalog --force` are the initialization

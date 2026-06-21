@@ -14,7 +14,7 @@ pub struct RouterApiRouteManifest {
 pub const PACKAGE_NAME: &str = "sdkwork-router-app-api";
 pub const CAPABILITY: &str = "router";
 pub const SURFACE: &str = "app-api";
-pub const API_AUTHORITY: &str = "sdkwork-claw-router.app-api";
+pub const API_AUTHORITY: &str = "sdkwork-clawrouter.app-api";
 pub const SDK_FAMILY: &str = "clawrouter-app-sdk";
 
 pub fn route_manifest() -> RouterApiRouteManifest {

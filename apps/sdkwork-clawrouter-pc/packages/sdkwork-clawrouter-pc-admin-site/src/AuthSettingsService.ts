@@ -4,7 +4,7 @@ import {
   getClawRouterBackendSdkClient,
   readApiRecord,
   type ApiRecord,
-} from 'sdkwork-clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawrouter-pc-commons/runtime';
 
 export async function fetchClawRouterAuthSettings(): Promise<ApiRecord> {
   const result = await getClawRouterBackendSdkClient().system.auth.settings.retrieve();

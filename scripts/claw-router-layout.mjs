@@ -3,7 +3,7 @@
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 
-const WORKSPACE_ROOT_MARKERS = ['sdkwork-specs', 'sdkwork-claw-router'];
+const WORKSPACE_ROOT_MARKERS = ['sdkwork-specs', 'sdkwork-clawrouter'];
 
 function findWorkspaceRoot(startPath) {
   let current = path.resolve(startPath);

@@ -104,7 +104,7 @@ async function createBundleContext(options) {
     ?? '0.0.0-dev';
 
   const stageRoot = path.join(repoRoot, 'dist', 'cloud-config', '.stage');
-  const stageName = `sdkwork-claw-router-api-gateway-config-${version}`;
+  const stageName = `sdkwork-clawrouter-api-gateway-config-${version}`;
   const archivePath = path.join(
     repoRoot,
     'dist',

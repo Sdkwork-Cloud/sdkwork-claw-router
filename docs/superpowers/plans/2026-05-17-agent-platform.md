@@ -44,7 +44,7 @@
 ### Task 3: Schema Registry Agent Tables
 
 **Files:**
-- Modify: `docs/schema-registry/sdkwork-claw-router.tables.yaml`
+- Modify: `docs/schema-registry/sdkwork-clawrouter.tables.yaml`
 - Modify: `generated/schema/postgres/schema.sql`
 
 - [ ] Add schema contract entries for `ai_agent`, `ai_agent_version`, `ai_agent_run`, `ai_agent_run_step`, `ai_agent_memory`, `ai_agent_tool_binding`, and `ai_agent_mcp_server`.

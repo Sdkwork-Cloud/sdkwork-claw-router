@@ -397,7 +397,7 @@ class ApiContractManifestGenerator:
 
         return {
             "schema": {
-                "name": "sdkwork-claw-router-api-contract-manifest",
+                "name": "sdkwork-clawrouter-api-contract-manifest",
                 "version": "0.1.0",
                 "contract_path": self._display_path(self.contract_path),
             },
@@ -1483,7 +1483,7 @@ class ApiContractManifestGenerator:
             package_index = parts.index("packages") + 1
             if package_index < len(parts):
                 package = parts[package_index]
-                prefix = "sdkwork-claw-router-"
+                prefix = "sdkwork-clawrouter-"
                 if package.startswith(prefix):
                     return package[len(prefix) :]
                 return package
@@ -1544,8 +1544,8 @@ class ApiContractManifestGenerator:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Generate sdkwork-claw-router API contract manifest.")
-    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-claw-router root directory")
+    parser = argparse.ArgumentParser(description="Generate sdkwork-clawrouter API contract manifest.")
+    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-clawrouter root directory")
     parser.add_argument("--contract", type=Path, default=None, help="frontend field contract YAML path")
     parser.add_argument(
         "--output",

@@ -1,7 +1,7 @@
 # 数据库表目录与表说明
 
-生成来源：`docs/schema-registry/sdkwork-claw-router.tables.yaml`
-source: docs/schema-registry/sdkwork-claw-router.tables.yaml
+生成来源：`docs/schema-registry/sdkwork-clawrouter.tables.yaml`
+source: docs/schema-registry/sdkwork-clawrouter.tables.yaml
 表总数：154
 table-count: 154
 本项目生成表：154
@@ -89,22 +89,12 @@ table-count: 154
 | `ai_chat_message_part` | AI 中转与模型服务的事件日志，记录 聊天消息片段。 | `event_log` | `chat-service` | yes |
 | `ai_chat_context_snapshot` | AI 中转与模型服务的事件日志，记录 聊天上下文快照。 | `event_log` | `chat-runtime` | yes |
 | `ai_agent_session` | AI 中转与模型服务的用户级数据，记录 Agent 会话。 | `user_entity` | `agent-runtime` | yes |
-| `ai_memory_space` | AI 中转与模型服务的用户级数据，记录 记忆空间。 | `user_entity` | `memory-service` | yes |
-| `ai_memory_space_binding` | AI 中转与模型服务的租户级主数据，记录 记忆空间绑定。 | `tenant_entity` | `memory-service` | yes |
-| `ai_memory_entry` | AI 中转与模型服务的用户级数据，记录 记忆条目。 | `user_entity` | `memory-service` | yes |
-| `ai_memory_embedding` | AI 中转与模型服务的租户级主数据，记录 记忆向量。 | `tenant_entity` | `memory-service` | yes |
-| `ai_memory_event` | AI 中转与模型服务的事件日志，记录 记忆事件。 | `event_log` | `memory-service` | yes |
-| `ai_memory_link` | AI 中转与模型服务的事件日志，记录 记忆链接。 | `event_log` | `memory-service` | yes |
 | `ai_runtime_invocation` | AI 中转与模型服务的事件日志，记录 运行时调用。 | `event_log` | `ai-runtime` | yes |
 | `ai_runtime_invocation_event` | AI 中转与模型服务的事件日志，记录 运行时调用事件。 | `event_log` | `ai-runtime` | yes |
 | `ai_runtime_usage_link` | AI 中转与模型服务的事件日志，记录 运行时用量关联。 | `event_log` | `ai-runtime` | yes |
 | `ai_runtime_artifact` | AI 中转与模型服务的事件日志，记录 运行时产物。 | `event_log` | `ai-runtime` | yes |
 | `ai_agent_tool_binding` | AI 中转与模型服务的租户级主数据，记录 Agent 工具绑定。 | `tenant_entity` | `agent-service` | yes |
 | `ai_agent_mcp_server` | AI 中转与模型服务的租户级主数据，记录 Agent MCP 服务绑定。 | `tenant_entity` | `agent-service` | yes |
-| `ai_generation_session` | AI 中转与模型服务的用户级数据，记录 生成会话。 | `user_entity` | `generation-service` | yes |
-| `ai_generation_job` | AI 中转与模型服务的事件日志，记录 生成任务。 | `event_log` | `generation-service` | yes |
-| `ai_generation_asset` | AI 中转与模型服务的用户级数据，记录 生成资产。 | `user_entity` | `generation-service` | yes |
-| `ai_generation_asset_action` | AI 中转与模型服务的事件日志，记录 生成资产操作。 | `event_log` | `generation-service` | yes |
 | `ai_model_mapping_rule` | 模型映射规则主表，定义全局、vendor、账号或分组级模型别名映射。 | `rule_entity` | `ai-routing-service` | yes |
 | `ai_model_mapping_rule_item` | 模型映射规则条目，保存源模型到目标模型的具体映射。 | `relation_entity` | `ai-routing-service` | yes |
 | `ai_model_mapping_rule_binding` | 模型映射规则绑定，定义映射规则适用的账号、分组、vendor 或全局范围。 | `relation_entity` | `ai-routing-service` | yes |

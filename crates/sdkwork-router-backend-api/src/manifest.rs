@@ -14,7 +14,7 @@ pub struct RouterApiRouteManifest {
 pub const PACKAGE_NAME: &str = "sdkwork-router-backend-api";
 pub const CAPABILITY: &str = "router";
 pub const SURFACE: &str = "backend-api";
-pub const API_AUTHORITY: &str = "sdkwork-claw-router.backend-api";
+pub const API_AUTHORITY: &str = "sdkwork-clawrouter.backend-api";
 pub const SDK_FAMILY: &str = "clawrouter-backend-sdk";
 
 pub fn route_manifest() -> RouterApiRouteManifest {

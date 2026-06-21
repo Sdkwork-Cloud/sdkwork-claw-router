@@ -22,7 +22,54 @@ frontend_models:
   - createdAt
   - updatedAt
   data_sources:
-  - ai_generation_session
-  - ai_generation_job
-  - ai_generation_asset
-  - ai_generation_asset_action
+  - ai_usage_fact
+- route: /playground
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundTypes.ts
+  interface: GenerationAgentRunCreateInput
+  fields:
+  - prompt
+  - targetType
+  - selectedModel
+  - generationConfig
+  - referenceAssets
+  - referenceImages
+  - referenceMode
+  derived_fields:
+  - onDelta
+  - onArtifact
+  - referenceAssets.kind
+  - referenceAssets.role
+  - referenceAssets.name
+  - referenceAssets.mimeType
+  - referenceAssets.resource
+  - referenceAssets.sizeBytes
+  - referenceImages.name
+  - referenceImages.mimeType
+  - referenceImages.resource
+  - referenceImages.sizeBytes
+  data_sources:
+  - ai_usage_fact
+  - ai_model
+  - ai_model_capability
+- route: /playground
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundTypes.ts
+  interface: PlaygroundReferenceImageInput
+  fields:
+  - name
+  - mimeType
+  - resource
+  - sizeBytes
+  data_sources:
+  - ai_agent_memory
+- route: /playground
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundTypes.ts
+  interface: PlaygroundReferenceAssetInput
+  fields:
+  - kind
+  - role
+  - name
+  - mimeType
+  - resource
+  - sizeBytes
+  data_sources:
+  - ai_agent_memory

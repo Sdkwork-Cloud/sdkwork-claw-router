@@ -6,8 +6,8 @@ import path from 'node:path';
 import process from 'node:process';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import {
-  loadClawRouterDevEnvFile,
-  resolveClawRouterDevDatabaseEnv,
+  resolveDefaultDevEnvFilePath,
+  resolveWorkspaceDevDatabaseEnv,
 } from './dev/claw-router-dev-database-env.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -34,15 +34,7 @@ function hasForwardedDatabaseUrl(extraArgs) {
 }
 
 function defaultDevEnvFileForWorkspace(workspaceRoot) {
-  const localOverride = path.join(workspaceRoot, '.env.postgres');
-  if (existsSync(localOverride)) {
-    return localOverride;
-  }
-  const example = path.join(workspaceRoot, '.env.postgres.example');
-  if (existsSync(example)) {
-    return example;
-  }
-  return undefined;
+  return resolveDefaultDevEnvFilePath(workspaceRoot);
 }
 
 function installCandidatesForMode(mode) {
@@ -157,19 +149,16 @@ function resolveLaunchEnv({
   devEnvFile,
   extraArgs,
 }) {
-  const resolvedDevEnvFile = devEnvFile ?? (
-    hasForwardedDatabaseUrl(extraArgs) ? undefined : defaultDevEnvFileForWorkspace(workspaceRoot)
-  );
-  const mergedEnv = {
-    ...env,
-    ...loadClawRouterDevEnvFile(resolvedDevEnvFile, { workspaceRoot }),
-  };
+  const resolved = resolveWorkspaceDevDatabaseEnv({
+    env,
+    workspaceRoot,
+    devEnvFile,
+    forwardedDatabaseUrl: hasForwardedDatabaseUrl(extraArgs),
+    defaultDatabase: 'postgresql',
+  });
   return {
-    ...mergedEnv,
-    ...resolveClawRouterDevDatabaseEnv({
-      env: mergedEnv,
-      defaultDatabase: hasForwardedDatabaseUrl(extraArgs) ? 'none' : 'postgresql',
-    }).env,
+    ...resolved.mergedEnv,
+    ...resolved.env,
   };
 }
 
@@ -323,7 +312,7 @@ export function createClawRouterProductLaunchPlan({
 function printHelp() {
   console.log(`Usage: node scripts/run-claw-router-product.mjs [mode] [options] [mode-args...]
 
-Start sdkwork-claw-router through a root pnpm-compatible entrypoint.
+Start sdkwork-clawrouter through a root pnpm-compatible entrypoint.
 
 Modes:
   client   Start the sdkwork-api-gateway-backed portal client workspace

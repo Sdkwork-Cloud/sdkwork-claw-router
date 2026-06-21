@@ -2,7 +2,7 @@ use std::net::IpAddr;
 use std::sync::Arc;
 
 use axum::extract::{Path, Query, State};
-use axum::http::{HeaderMap, StatusCode};
+use axum::http::StatusCode;
 use axum::response::{IntoResponse, Response};
 use axum::routing::{get, put};
 use axum::{Json, Router};
@@ -10,6 +10,7 @@ use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
 
 use crate::api::response::PlusApiResult;
+use crate::api::subject::admin_operator_fields;
 use crate::ports::{
     AdminServiceNodeItem, AdminServiceNodeStore, AdminServiceNodeSubject,
     CreateAdminServiceNodeCommand, DeleteAdminServiceNodeCommand, ListAdminServiceNodesQuery,
@@ -92,13 +93,10 @@ pub fn admin_service_node_router_with_store(
 
 async fn list_service_nodes(
     State(state): State<AdminServiceNodeState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
     Query(query): Query<AdminServiceNodeListQuery>,
 ) -> Response {
-    let subject = match subject_from_headers(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let query = match build_list_query(subject, query) {
         Ok(query) => query,
         Err(response) => return response,
@@ -114,13 +112,10 @@ async fn list_service_nodes(
 
 async fn create_service_node(
     State(state): State<AdminServiceNodeState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
     Json(payload): Json<AdminServiceNodeCreateRequest>,
 ) -> Response {
-    let subject = match subject_from_headers(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let command = match build_create_command(subject, payload) {
         Ok(command) => command,
         Err(response) => return response,
@@ -136,14 +131,11 @@ async fn create_service_node(
 
 async fn update_service_node(
     State(state): State<AdminServiceNodeState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
     Path(node_id): Path<String>,
     Json(payload): Json<AdminServiceNodeUpdateRequest>,
 ) -> Response {
-    let subject = match subject_from_headers(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let command = match build_update_command(subject, node_id, payload) {
         Ok(command) => command,
         Err(response) => return response,
@@ -159,14 +151,11 @@ async fn update_service_node(
 
 async fn update_service_node_status(
     State(state): State<AdminServiceNodeState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
     Path(node_id): Path<String>,
     Json(payload): Json<AdminServiceNodeStatusRequest>,
 ) -> Response {
-    let subject = match subject_from_headers(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let command = match build_status_command(subject, node_id, payload) {
         Ok(command) => command,
         Err(response) => return response,
@@ -182,13 +171,10 @@ async fn update_service_node_status(
 
 async fn delete_service_node(
     State(state): State<AdminServiceNodeState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
     Path(node_id): Path<String>,
 ) -> Response {
-    let subject = match subject_from_headers(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let node_id = match required_visible_text(node_id, "node id", MAX_ID_LEN) {
         Ok(node_id) => node_id,
         Err(response) => return response,
@@ -203,21 +189,14 @@ async fn delete_service_node(
     }
 }
 
-fn subject_from_headers(headers: &HeaderMap) -> Result<AdminServiceNodeSubject, Response> {
-    TrustedRequestSubject::from_headers(headers)
-        .map(|subject| AdminServiceNodeSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            operator_id: subject.operator_id,
-            operator_type: subject.operator_type,
-        })
-        .map_err(|error| {
-            (
-                StatusCode::UNAUTHORIZED,
-                Json(PlusApiResult::error("4010", error.to_string())),
-            )
-                .into_response()
-        })
+fn map_subject(trusted: TrustedRequestSubject) -> AdminServiceNodeSubject {
+    let operator = admin_operator_fields(trusted);
+    AdminServiceNodeSubject {
+        tenant_id: operator.tenant_id,
+        organization_id: operator.organization_id,
+        operator_id: operator.operator_id,
+        operator_type: operator.operator_type,
+    }
 }
 
 fn build_list_query(

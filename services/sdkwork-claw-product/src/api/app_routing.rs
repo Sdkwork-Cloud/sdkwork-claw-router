@@ -1,13 +1,14 @@
 use std::sync::Arc;
 
 use axum::extract::State;
-use axum::http::{HeaderMap, StatusCode};
+use axum::http::StatusCode;
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
 use sdkwork_claw_http::TrustedRequestSubject;
 
 use crate::api::response::PlusApiResult;
+use crate::api::subject::map_optional_app_user_subject;
 use crate::ports::{
     AppRoutingApiKeyItem, AppRoutingChannelItem, AppRoutingItems, AppRoutingReadFuture,
     AppRoutingReadStore, AppRoutingRequestTraceItem, AppRoutingSubject, AppRoutingUsageSnapshot,
@@ -87,9 +88,9 @@ fn app_routing_router_with_state(
 
 async fn fetch_routing_channels(
     State(state): State<AppRoutingState>,
-    headers: HeaderMap,
+    subject: Option<TrustedRequestSubject>,
 ) -> Response {
-    let subject = match routing_subject(&headers, state.require_subject) {
+    let subject = match routing_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -102,9 +103,9 @@ async fn fetch_routing_channels(
 
 async fn fetch_routing_api_keys(
     State(state): State<AppRoutingState>,
-    headers: HeaderMap,
+    subject: Option<TrustedRequestSubject>,
 ) -> Response {
-    let subject = match routing_subject(&headers, state.require_subject) {
+    let subject = match routing_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -117,9 +118,9 @@ async fn fetch_routing_api_keys(
 
 async fn fetch_routing_request_traces(
     State(state): State<AppRoutingState>,
-    headers: HeaderMap,
+    subject: Option<TrustedRequestSubject>,
 ) -> Response {
-    let subject = match routing_subject(&headers, state.require_subject) {
+    let subject = match routing_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -130,8 +131,11 @@ async fn fetch_routing_request_traces(
     }
 }
 
-async fn fetch_routing_usage(State(state): State<AppRoutingState>, headers: HeaderMap) -> Response {
-    let subject = match routing_subject(&headers, state.require_subject) {
+async fn fetch_routing_usage(
+    State(state): State<AppRoutingState>,
+    subject: Option<TrustedRequestSubject>,
+) -> Response {
+    let subject = match routing_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -143,22 +147,14 @@ async fn fetch_routing_usage(State(state): State<AppRoutingState>, headers: Head
 }
 
 fn routing_subject(
-    headers: &HeaderMap,
+    subject: Option<TrustedRequestSubject>,
     require_subject: bool,
 ) -> Result<Option<AppRoutingSubject>, Response> {
-    match TrustedRequestSubject::from_headers(headers) {
-        Ok(subject) => Ok(Some(AppRoutingSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            user_id: subject.user_id,
-        })),
-        Err(error) if require_subject => Err((
-            StatusCode::UNAUTHORIZED,
-            Json(PlusApiResult::error("4010", error.to_string())),
-        )
-            .into_response()),
-        Err(_) => Ok(None),
-    }
+    map_optional_app_user_subject(subject, require_subject, |trusted| AppRoutingSubject {
+        tenant_id: trusted.tenant_id,
+        organization_id: trusted.organization_id,
+        user_id: trusted.user_id,
+    })
 }
 
 fn app_routing_read_model_error(error: impl std::fmt::Display) -> Response {

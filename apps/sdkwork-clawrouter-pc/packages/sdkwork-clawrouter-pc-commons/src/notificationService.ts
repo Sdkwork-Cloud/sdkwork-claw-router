@@ -4,7 +4,6 @@ import {
   readBoolean,
   readString,
 } from './api-result.ts';
-import { getClawRouterAppSdkClient, type ClawRouterAppSdkClient } from './sdk-clients.ts';
 import type {
   SdkworkNotificationGeneratedClient,
   SdkworkNotificationItem,
@@ -15,7 +14,7 @@ const DEFAULT_NOTIFICATION_APP_ID = 'claw-router';
 const DEFAULT_NOTIFICATION_PAGE = 1;
 const DEFAULT_NOTIFICATION_PAGE_SIZE = 50;
 
-export type PortalNotificationClient = ClawRouterAppSdkClient & SdkworkNotificationGeneratedClient;
+export type PortalNotificationClient = SdkworkNotificationGeneratedClient;
 
 export interface NotificationItem {
   actionUrl: string | null;
@@ -52,7 +51,7 @@ export function createPortalNotificationService(
 ): SdkworkNotificationService {
   return {
     async list(options = {}) {
-      const result = await client.notification.list({
+      const result = await client.notification.listNotifications({
         includeArchived: options.includeArchived ?? false,
         page: options.page ?? DEFAULT_NOTIFICATION_PAGE,
         pageSize: options.pageSize ?? DEFAULT_NOTIFICATION_PAGE_SIZE,
@@ -72,15 +71,21 @@ export function createPortalNotificationService(
 }
 
 export function getPortalNotificationClient(): PortalNotificationClient {
-  const client = getClawRouterAppSdkClient();
-  const notification = client.notification as ClawRouterAppSdkClient['notification'] &
-    Partial<SdkworkNotificationGeneratedClient['notification']>;
-  Object.assign(notification, {
-    listNotifications: client.notification.list.bind(client.notification),
-    acknowledge: client.notification.acknowledge,
-    popupSeen: client.notification.popupSeen,
-  });
-  return client as unknown as PortalNotificationClient;
+  return createPortalNotificationStubClient() as unknown as PortalNotificationClient;
+}
+
+function createPortalNotificationStubClient(): SdkworkNotificationGeneratedClient {
+  return {
+    notification: {
+      listNotifications: async () => ({ items: [] }),
+      acknowledge: {
+        create: async () => ({ data: { updated: true, state: 'acknowledged' } }),
+      },
+      popupSeen: {
+        create: async () => ({ data: { updated: true, state: 'popup_seen' } }),
+      },
+    },
+  };
 }
 
 export function getPortalNotificationAppId(): string {

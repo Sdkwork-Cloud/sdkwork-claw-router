@@ -206,7 +206,7 @@ fn unique_runtime_config_path() -> std::path::PathBuf {
     let counter = DB_COUNTER.fetch_add(1, Ordering::Relaxed);
     let mut path = std::env::temp_dir();
     path.push(format!("sdkwork-claw-gateway-runtime-{millis}-{counter}"));
-    path.push("sdkwork-claw-router.toml");
+    path.push("sdkwork-clawrouter.toml");
     path
 }
 

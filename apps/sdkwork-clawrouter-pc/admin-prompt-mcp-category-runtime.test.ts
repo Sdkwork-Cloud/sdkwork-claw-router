@@ -118,8 +118,8 @@ test("admin prompt and mcp category management uses generated backend SDK catego
   assert.match(promptServiceSource, /categoryId:\s*optionalPromptListCategoryId/);
   assert.match(mcpServiceSource, /normalizeMcpServerListParams/);
   assert.match(mcpServiceSource, /categoryId:\s*optionalMcpListCategoryId/);
-  assert.match(promptSource, /from 'sdkwork-clawrouter-pc-admin-core'/);
-  assert.match(mcpSource, /from 'sdkwork-clawrouter-pc-admin-core'/);
+  assert.match(promptSource, /from '@sdkwork\/clawrouter-pc-admin-core'/);
+  assert.match(mcpSource, /from '@sdkwork\/clawrouter-pc-admin-core'/);
   assert.deepEqual(
     tsconfig.compilerOptions.paths["sdkwork-clawrouter-pc-admin-prompts"],
     ["./packages/sdkwork-clawrouter-pc-admin-prompts/src/index.tsx"],

@@ -192,7 +192,7 @@ Changes:
 
 ### membership Credit Purchase
 
-`apps/sdkwork-clawrouter-pc/packages/sdkwork-claw-router-membership/src/MembershipView.tsx`
+`apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-membership/src/MembershipView.tsx`
 
 Changes:
 

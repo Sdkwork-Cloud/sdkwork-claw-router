@@ -1,6 +1,6 @@
 # SDKWork Plugins
 
-This directory stores checked-in repository plugins for `sdkwork-claw-router`.
+This directory stores checked-in repository plugins for `sdkwork-clawrouter`.
 
 Plugins must follow `../../../sdkwork-specs/SDKWORK_WORKSPACE_SPEC.md`. Installable plugins must provide `.codex-plugin/plugin.json` and must document contributed skills, tools, apps, scripts, or MCP servers.
 

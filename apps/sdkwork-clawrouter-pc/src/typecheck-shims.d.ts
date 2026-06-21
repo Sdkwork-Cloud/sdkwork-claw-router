@@ -1302,6 +1302,81 @@ declare module 'sdkwork-generations-app-sdk-generated-typescript' {
   export function createClient(config: SdkworkAppConfig): SdkworkAppClient;
 }
 
+declare module '@sdkwork/memory-app-sdk' {
+  export interface SdkworkAppConfig {
+    baseUrl?: string;
+    platform?: string;
+    timeout?: number;
+    tokenManager?: unknown;
+  }
+
+  export class SdkworkAppClient {
+    memory: {
+      spaces: {
+        list(params?: { pageSize?: number }): Promise<unknown>;
+        create(body: unknown, params?: { idempotencyKey?: string }): Promise<unknown>;
+        retrieve(spaceId: string): Promise<unknown>;
+      };
+      list(params?: { spaceId?: string; pageSize?: number }): Promise<unknown>;
+      create(body: unknown, params?: { idempotencyKey?: string }): Promise<unknown>;
+      retrieve(memoryId: string): Promise<unknown>;
+    };
+    http: unknown;
+    constructor(config: SdkworkAppConfig);
+    setTokenManager(manager: unknown): this;
+  }
+
+  export function createClient(config: SdkworkAppConfig): SdkworkAppClient;
+}
+
+declare module '@sdkwork/agent-app-sdk' {
+  export interface SdkworkAppConfig {
+    baseUrl?: string;
+    platform?: string;
+    timeout?: number;
+    tokenManager?: unknown;
+  }
+
+  export class SdkworkAppClient {
+    ai: {
+      agents: {
+        list(params?: { page?: number; pageSize?: number }): Promise<unknown>;
+        create(body: unknown): Promise<unknown>;
+        retrieve(agentId: string): Promise<unknown>;
+      };
+    };
+    http: unknown;
+    constructor(config: SdkworkAppConfig);
+    setTokenManager(manager: unknown): this;
+  }
+
+  export function createClient(config: SdkworkAppConfig): SdkworkAppClient;
+}
+
+declare module '@sdkwork/agent-backend-sdk' {
+  export interface SdkworkBackendConfig {
+    baseUrl?: string;
+    platform?: string;
+    timeout?: number;
+    tokenManager?: unknown;
+  }
+
+  export class SdkworkBackendClient {
+    ai: {
+      agents: {
+        list(params?: { page?: number; pageSize?: number }): Promise<unknown>;
+        create(body: unknown): Promise<unknown>;
+        retrieve(agentId: string): Promise<unknown>;
+      };
+    };
+    http: unknown;
+    constructor(config: SdkworkBackendConfig);
+    setTokenManager(manager: unknown): this;
+  }
+
+  export function createClient(config: SdkworkBackendConfig): SdkworkBackendClient;
+}
+
 declare module '@sdkwork/image-pc-generation/generation-history' {
   import type { SdkworkMediaResource } from '@sdkwork/appbase-pc-react';
 
@@ -1947,7 +2022,7 @@ declare module '@sdkwork/i18n-pc-react' {
 
   export interface SdkworkNotificationGeneratedClient {
     notification: {
-      list(params?: {
+      listNotifications(params?: {
         appId?: string;
         includeArchived?: boolean;
         page?: number;

@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Build the first reusable appbase commerce foundation block for account, wallet, ledger, and idempotency so other applications can integrate these capabilities without copying `sdkwork-claw-router` code.
+**Goal:** Build the first reusable appbase commerce foundation block for account, wallet, ledger, and idempotency so other applications can integrate these capabilities without copying `sdkwork-clawrouter` code.
 
 **Architecture:** Add typed appbase account/wallet contracts in `sdkwork-commerce-account-rust`, concrete SQLite/Postgres SQLx stores in `sdkwork-commerce-storage-sqlx-rust`, runtime operation contracts in `sdkwork-commerce-runtime-rust`, and mountable Axum app/admin routers in `sdkwork-commerce-http-rust` or a new focused Axum crate if the existing HTTP crate should stay contract-only. The first slice must use existing `commerce_account`, `commerce_account_ledger_entry`, and `commerce_idempotency_key` tables only; any table, column, index, migration, or embedded schema change requires explicit user confirmation before implementation.
 
@@ -55,7 +55,7 @@ Create or modify these appbase files:
   - Add `axum`, `serde`, `serde_json`, `sqlx`, and storage/account dependencies only if the router lives in this crate.
 - Modify `<workspace-root>/sdkwork-appbase/packages/common/commerce/sdkwork-commerce-contracts/src/index.ts`
   - Align TypeScript operation catalog only if Rust operation ids differ from existing appbase contract names.
-- Modify `<workspace-root>/sdkwork-claw-router/docs/superpowers/specs/2026-05-20-appbase-commerce-platform-design.md`
+- Modify `<workspace-root>/sdkwork-clawrouter/docs/superpowers/specs/2026-05-20-appbase-commerce-platform-design.md`
   - Add a short implementation-status note after the slice lands.
 
 ## Task 1: Account/Wallet Domain Contracts
@@ -516,8 +516,8 @@ git commit -m "feat(appbase-commerce): align wallet account contracts"
 ## Task 7: Claw-Router Integration Shim
 
 **Files:**
-- Modify: `<workspace-root>/sdkwork-claw-router/services/sdkwork-claw-app/src/lib.rs`
-- Modify only if needed: `<workspace-root>/sdkwork-claw-router/services/sdkwork-claw-product/src/api/app_commerce.rs`
+- Modify: `<workspace-root>/sdkwork-clawrouter/services/sdkwork-claw-app/src/lib.rs`
+- Modify only if needed: `<workspace-root>/sdkwork-clawrouter/services/sdkwork-claw-product/src/api/app_commerce.rs`
 - Test: app-api/router tests or focused cargo checks
 
 - [ ] **Step 1: Add failing integration test**
@@ -568,7 +568,7 @@ git commit -m "feat(claw-router): mount appbase wallet account router"
 ## Task 8: Documentation And Final Verification
 
 **Files:**
-- Modify: `<workspace-root>/sdkwork-claw-router/docs/superpowers/specs/2026-05-20-appbase-commerce-platform-design.md`
+- Modify: `<workspace-root>/sdkwork-clawrouter/docs/superpowers/specs/2026-05-20-appbase-commerce-platform-design.md`
 - Optional create: `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/README.md` section or appbase common commerce README update
 
 - [ ] **Step 1: Update implementation status**

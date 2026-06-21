@@ -610,7 +610,7 @@ class ClawRouterGatewayOpenApiGenerator:
             "paths": self._paths(),
             "components": components,
             "x-api-prefix": "/v1",
-            "x-router-product": "sdkwork-claw-router",
+            "x-router-product": "sdkwork-clawrouter",
         }
         self._materialize_public_generic_payload_schemas(spec)
         self._normalize_open_object_extension_maps(components)
@@ -6852,7 +6852,7 @@ class ClawRouterGatewayOpenApiGenerator:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Generate Claw Router gateway OpenAPI spec.")
-    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-claw-router root directory")
+    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-clawrouter root directory")
     parser.add_argument("--output", type=Path, default=None, help="Gateway OpenAPI output path")
     parser.add_argument("--check", action="store_true", help="validate generated gateway OpenAPI spec is current")
     args = parser.parse_args()

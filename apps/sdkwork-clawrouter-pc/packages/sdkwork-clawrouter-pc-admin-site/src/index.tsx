@@ -1,11 +1,11 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Image, Loader2, Palette, RefreshCw, Save, Settings2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { BusinessStatePanel } from 'sdkwork-clawrouter-pc-commons';
+import { BusinessStatePanel } from '@sdkwork/clawrouter-pc-commons';
 import {
   readMediaResourceUrl,
   toExternalUrlMediaResource,
-} from 'sdkwork-clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawrouter-pc-commons/runtime';
 import {
   DEFAULT_SITE_SETTINGS,
   SiteSettingsService,

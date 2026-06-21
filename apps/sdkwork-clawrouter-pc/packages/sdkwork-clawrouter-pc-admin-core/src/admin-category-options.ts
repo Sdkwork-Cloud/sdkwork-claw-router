@@ -5,7 +5,6 @@ import {
   readBoolean,
   readNullableString,
   readNumber,
-  readRequiredApiItem,
   readRequiredApiItems,
   readRequiredString,
   readString,
@@ -15,13 +14,9 @@ import {
   type ClawRouterMediaResource,
   getClawRouterBackendSdkClient,
   type AdminCategoryOption,
-} from 'sdkwork-clawrouter-pc-commons/runtime';
-import type {
-  AdminSkillCategoryCreateRequest,
-  AdminSkillCategoryUpdateRequest,
-} from '@sdkwork/clawrouter-backend-sdk';
+} from '@sdkwork/clawrouter-pc-commons/runtime';
 
-export type { AdminCategoryOption } from 'sdkwork-clawrouter-pc-commons/runtime';
+export type { AdminCategoryOption } from '@sdkwork/clawrouter-pc-commons/runtime';
 
 export interface AdminAiCategoryCreateInput {
   name: string;
@@ -49,40 +44,38 @@ export interface AdminAiCategoryUpdateInput {
   visible?: boolean;
 }
 
+const CATEGORY_OWNERSHIP_ERROR = 'Category management is owned by sdkwork-kernel; Claw Router exposes read-only category filters derived from prompt and MCP records.';
+
 export async function listAdminAiCategoryOptions(): Promise<AdminCategoryOption[]> {
-  const result = await getClawRouterBackendSdkClient().ecosystem.skills.categories.list();
-  ensureSdkworkApiSuccess(result, 'Failed to load c_category options');
-  return readRequiredApiItems(result, 'Failed to load c_category options')
-    .map(readAdminCategoryOption)
-    .sort(compareAdminCategoryOptions);
-}
+  const client = getClawRouterBackendSdkClient();
+  const [promptResult, mcpResult] = await Promise.all([
+    client.prompts.definitions.list({ page: '1', pageSize: '500' }),
+    client.mcp.servers.list({ page: '1', pageSize: '500' }),
+  ]);
+  ensureSdkworkApiSuccess(promptResult, 'Failed to load prompt categories');
+  ensureSdkworkApiSuccess(mcpResult, 'Failed to load MCP categories');
 
-export async function createAdminAiCategory(input: AdminAiCategoryCreateInput): Promise<AdminCategoryOption> {
-  const result = await getClawRouterBackendSdkClient().ecosystem.skills.categories.create(
-    normalizeAdminAiCategoryCreateInput(input),
-  );
-  ensureSdkworkApiSuccess(result, 'Failed to create c_category');
-  return readAdminCategoryOption(readRequiredApiItem(result, 'Created c_category response is missing data'));
-}
-
-export async function updateAdminAiCategory(categoryId: string, input: AdminAiCategoryUpdateInput): Promise<AdminCategoryOption> {
-  const result = await getClawRouterBackendSdkClient().ecosystem.skills.categories.update(
-    requiredSafePathSegment(categoryId, 'categoryId'),
-    normalizeAdminAiCategoryUpdateInput(input),
-  );
-  ensureSdkworkApiSuccess(result, 'Failed to update c_category');
-  return readAdminCategoryOption(readRequiredApiItem(result, 'Updated c_category response is missing data'));
-}
-
-export async function deleteAdminAiCategory(categoryId: string): Promise<boolean> {
-  const result = await getClawRouterBackendSdkClient().ecosystem.skills.categories.delete(
-    requiredSafePathSegment(categoryId, 'categoryId'),
-  );
-  ensureSdkworkApiSuccess(result, 'Failed to delete c_category');
-  if (readBoolean(readApiRecord(result), 'deleted') !== true) {
-    throw new Error('c_category delete confirmation is required');
+  const categories = new Map<string, AdminCategoryOption>();
+  for (const item of [
+    ...readRequiredApiItems(promptResult, 'Prompt list response is missing items'),
+    ...readRequiredApiItems(mcpResult, 'MCP list response is missing items'),
+  ]) {
+    appendDerivedCategoryOption(categories, item);
   }
-  return true;
+
+  return [...categories.values()].sort(compareAdminCategoryOptions);
+}
+
+export async function createAdminAiCategory(_input: AdminAiCategoryCreateInput): Promise<AdminCategoryOption> {
+  throw new Error(CATEGORY_OWNERSHIP_ERROR);
+}
+
+export async function updateAdminAiCategory(_categoryId: string, _input: AdminAiCategoryUpdateInput): Promise<AdminCategoryOption> {
+  throw new Error(CATEGORY_OWNERSHIP_ERROR);
+}
+
+export async function deleteAdminAiCategory(_categoryId: string): Promise<boolean> {
+  throw new Error(CATEGORY_OWNERSHIP_ERROR);
 }
 
 export function formatAdminCategoryOptionLabel(category: AdminCategoryOption): string {
@@ -126,6 +119,36 @@ export function attachAdminCategoryNamesToResult<T>(
   } as T;
 }
 
+function appendDerivedCategoryOption(
+  categories: Map<string, AdminCategoryOption>,
+  value: unknown,
+): void {
+  if (!isRecord(value)) {
+    return;
+  }
+  const categoryId = readNullableString(value, 'categoryId');
+  if (!categoryId) {
+    return;
+  }
+  if (categories.has(categoryId)) {
+    return;
+  }
+  const categoryCode = readString(value, 'categoryCode');
+  categories.set(categoryId, {
+    id: categoryId,
+    name: categoryCode || categoryId,
+    code: categoryCode,
+    description: undefined,
+    icon: undefined,
+    parentId: null,
+    path: undefined,
+    sortWeight: categories.size,
+    status: 1,
+    type: 19,
+    visible: true,
+  });
+}
+
 function attachAdminCategoryName(
   item: unknown,
   categoryOptions: readonly AdminCategoryOption[],
@@ -137,127 +160,6 @@ function attachAdminCategoryName(
     ...item,
     categoryName: getAdminCategoryDisplayName(categoryOptions, item.categoryId, item.categoryCode),
   };
-}
-
-function readAdminCategoryOption(value: unknown): AdminCategoryOption {
-  if (!isRecord(value)) {
-    throw new Error('c_category option record is required');
-  }
-  return {
-    id: readRequiredString(value, 'id', 'c_category id is required'),
-    name: readRequiredString(value, 'name', 'c_category name is required'),
-    code: readString(value, 'code'),
-    description: readString(value, 'description'),
-    icon: readMediaResource(value.icon),
-    parentId: readNullableString(value, 'parentId'),
-    path: readString(value, 'path'),
-    sortWeight: readNonNegativeInteger(value, 'sortWeight'),
-    status: readNonNegativeInteger(value, 'status'),
-    type: readNonNegativeInteger(value, 'type'),
-    visible: readBoolean(value, 'visible', true),
-  };
-}
-
-function normalizeAdminAiCategoryCreateInput(input: AdminAiCategoryCreateInput): AdminSkillCategoryCreateRequest {
-  return pruneUndefined({
-    ...input,
-    name: requiredText(input.name, 'name', 255),
-    code: optionalText(input.code, 'code', 128),
-    description: optionalText(input.description, 'description', 512),
-    icon: input.icon,
-    parentId: normalizeNullableText(input.parentId, 'parentId', 128),
-    path: optionalText(input.path, 'path', 1024),
-    sortWeight: optionalNonNegativeInteger(input.sortWeight, 'sortWeight'),
-    status: optionalNonNegativeInteger(input.status, 'status'),
-    type: normalizeCategoryType(input.type),
-    visible: input.visible,
-  });
-}
-
-function normalizeAdminAiCategoryUpdateInput(input: AdminAiCategoryUpdateInput): AdminSkillCategoryUpdateRequest {
-  return pruneUndefined({
-    ...input,
-    name: optionalText(input.name, 'name', 255),
-    code: normalizeNullableText(input.code, 'code', 128),
-    description: normalizeNullableText(input.description, 'description', 512),
-    icon: input.icon,
-    parentId: normalizeNullableText(input.parentId, 'parentId', 128),
-    path: normalizeNullableText(input.path, 'path', 1024),
-    sortWeight: optionalNonNegativeInteger(input.sortWeight, 'sortWeight'),
-    status: optionalNonNegativeInteger(input.status, 'status'),
-    type: normalizeCategoryType(input.type),
-    visible: input.visible,
-  });
-}
-
-function requiredText(value: unknown, fieldName: string, maxLength: number): string {
-  const text = optionalText(value, fieldName, maxLength);
-  if (!text) {
-    throw new Error(`${fieldName} is required`);
-  }
-  return text;
-}
-
-function optionalText(value: unknown, fieldName: string, maxLength: number): string | undefined {
-  if (value === undefined || value === null) {
-    return undefined;
-  }
-  if (typeof value !== 'string') {
-    throw new Error(`${fieldName} must be a string`);
-  }
-  const text = value.trim();
-  if (!text) {
-    return undefined;
-  }
-  if (text.length > maxLength) {
-    throw new Error(`${fieldName} must be at most ${maxLength} characters`);
-  }
-  return text;
-}
-
-function normalizeNullableText(value: unknown, fieldName: string, maxLength: number): string | null | undefined {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return optionalText(value, fieldName, maxLength) ?? null;
-}
-
-function optionalNonNegativeInteger(value: unknown, fieldName: string): number | undefined {
-  if (value === undefined || value === null || value === '') {
-    return undefined;
-  }
-  const numberValue = typeof value === 'number'
-    ? value
-    : typeof value === 'string'
-      ? Number(value.trim())
-      : Number.NaN;
-  if (!Number.isSafeInteger(numberValue) || numberValue < 0) {
-    throw new Error(`${fieldName} must be a non-negative integer`);
-  }
-  return numberValue;
-}
-
-function normalizeCategoryType(value: unknown): 19 | 20 | undefined {
-  if (value === undefined || value === null || value === '') {
-    return undefined;
-  }
-  const numberValue = typeof value === 'string' ? Number(value.trim()) : value;
-  if (numberValue === 19 || numberValue === 20) {
-    return numberValue;
-  }
-  throw new Error('type must be 19 or 20');
-}
-
-function pruneUndefined<T extends Record<string, unknown>>(value: T): T {
-  return Object.fromEntries(Object.entries(value).filter(([, item]) => item !== undefined)) as T;
-}
-
-function readNonNegativeInteger(record: ApiRecord, key: string): number {
-  const value = readNumber(record, key, 0);
-  return Number.isSafeInteger(value) && value >= 0 ? value : 0;
 }
 
 function compareAdminCategoryOptions(left: AdminCategoryOption, right: AdminCategoryOption): number {

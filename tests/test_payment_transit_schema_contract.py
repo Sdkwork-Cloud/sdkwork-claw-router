@@ -6,7 +6,7 @@ from tools.schema_registry_loader import load_schema_registry
 
 
 ROOT = Path(__file__).resolve().parents[1]
-REGISTRY_PATH = ROOT / "docs" / "schema-registry" / "sdkwork-claw-router.tables.yaml"
+REGISTRY_PATH = ROOT / "docs" / "schema-registry" / "sdkwork-clawrouter.tables.yaml"
 COMMERCE_MIGRATION = (
     ROOT.parent
     / "sdkwork-commerce"

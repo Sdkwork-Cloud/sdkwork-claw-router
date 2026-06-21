@@ -171,6 +171,65 @@ function resolvePostgresDatabaseUrlFromFields(env) {
   });
 }
 
+export function hasCompletePostgresSplitProfile(env) {
+  if (!normalizeText(env.SDKWORK_CLAW_DATABASE_ENGINE)) {
+    return false;
+  }
+  try {
+    return resolvePostgresDatabaseUrlFromFields(env) !== undefined;
+  } catch {
+    return false;
+  }
+}
+
+export function mergeDevEnvWithDatabasePrecedence(baseEnv, fileEnv) {
+  const merged = { ...baseEnv, ...fileEnv };
+  if (
+    fileEnv
+    && hasCompletePostgresSplitProfile(fileEnv)
+    && !normalizeText(fileEnv.SDKWORK_CLAW_DATABASE_URL)
+  ) {
+    delete merged.SDKWORK_CLAW_DATABASE_URL;
+  }
+  return merged;
+}
+
+export function resolveDefaultDevEnvFilePath(workspaceRoot) {
+  const localOverride = path.join(workspaceRoot, '.env.postgres');
+  if (existsSync(localOverride)) {
+    return localOverride;
+  }
+  const example = path.join(workspaceRoot, '.env.postgres.example');
+  if (existsSync(example)) {
+    return example;
+  }
+  return undefined;
+}
+
+export function resolveWorkspaceDevDatabaseEnv({
+  env = process.env,
+  workspaceRoot = path.resolve(import.meta.dirname, '..', '..'),
+  devEnvFile,
+  forwardedDatabaseUrl = false,
+  defaultDatabase = 'postgresql',
+} = {}) {
+  const resolvedDevEnvFile = devEnvFile ?? (
+    forwardedDatabaseUrl ? undefined : resolveDefaultDevEnvFilePath(workspaceRoot)
+  );
+  const fileEnv = resolvedDevEnvFile
+    ? loadClawRouterDevEnvFile(resolvedDevEnvFile, { workspaceRoot })
+    : {};
+  const mergedEnv = mergeDevEnvWithDatabasePrecedence(env, fileEnv);
+  const resolvedDatabase = resolveClawRouterDevDatabaseEnv({
+    env: mergedEnv,
+    defaultDatabase: forwardedDatabaseUrl ? 'none' : defaultDatabase,
+  });
+  return {
+    mergedEnv,
+    ...resolvedDatabase,
+  };
+}
+
 export function resolveClawRouterDevDatabaseEnv({
   env = process.env,
   defaultDatabase = 'postgresql',

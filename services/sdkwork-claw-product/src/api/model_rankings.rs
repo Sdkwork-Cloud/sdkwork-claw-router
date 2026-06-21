@@ -2,7 +2,7 @@ use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::Arc;
 
 use axum::extract::{Query, State};
-use axum::http::{HeaderMap, StatusCode};
+use axum::http::StatusCode;
 use axum::response::{IntoResponse, Response};
 use axum::routing::{get, post};
 use axum::{Json, Router};
@@ -10,6 +10,7 @@ use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
 
 use crate::api::response::PlusApiResult;
+use crate::api::subject::map_optional_app_user_subject;
 use crate::application::{
     ModelRankingRefreshWorker, ModelRankingRefreshWorkerConfig,
     MODEL_RANKING_REFRESH_TRIGGER_MANUAL,
@@ -179,23 +180,10 @@ fn model_rankings_router(
 
 async fn trigger_model_ranking_refresh(
     State(state): State<ModelRankingsState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
     Json(request): Json<ModelRankingRefreshHttpRequest>,
 ) -> Response {
-    let subject = match trusted_subject(&headers, state.require_subject) {
-        Ok(Some(subject)) => subject,
-        Ok(None) => {
-            return (
-                StatusCode::UNAUTHORIZED,
-                Json(PlusApiResult::error(
-                    "4010",
-                    "trusted subject is required to trigger model ranking refresh",
-                )),
-            )
-                .into_response();
-        }
-        Err(response) => return response,
-    };
+    let subject = map_rankings_subject(trusted);
     let Some(refresh_store) = state.refresh_store.clone() else {
         return (
             StatusCode::SERVICE_UNAVAILABLE,
@@ -259,10 +247,10 @@ async fn run_manual_refresh(
 
 async fn fetch_model_ranking_jobs(
     State(state): State<ModelRankingsState>,
-    headers: HeaderMap,
+    subject: Option<TrustedRequestSubject>,
     Query(query): Query<ModelRankingJobsHttpQuery>,
 ) -> Response {
-    let subject = match trusted_subject(&headers, state.require_subject) {
+    let subject = match optional_rankings_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -303,10 +291,10 @@ async fn fetch_model_ranking_jobs(
 
 async fn fetch_model_ranking_status(
     State(state): State<ModelRankingsState>,
-    headers: HeaderMap,
+    subject: Option<TrustedRequestSubject>,
     Query(query): Query<ModelRankingStatusHttpQuery>,
 ) -> Response {
-    let subject = match trusted_subject(&headers, state.require_subject) {
+    let subject = match optional_rankings_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -334,10 +322,10 @@ async fn fetch_model_ranking_status(
 
 async fn fetch_model_rankings(
     State(state): State<ModelRankingsState>,
-    headers: HeaderMap,
+    subject: Option<TrustedRequestSubject>,
     Query(query): Query<ModelRankingsHttpQuery>,
 ) -> Response {
-    let subject = match trusted_subject(&headers, state.require_subject) {
+    let subject = match optional_rankings_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -407,23 +395,19 @@ struct ModelRankingRefreshTriggerResponse {
     next_refresh_at: String,
 }
 
-fn trusted_subject(
-    headers: &HeaderMap,
+fn map_rankings_subject(trusted: TrustedRequestSubject) -> ModelRankingsSubject {
+    ModelRankingsSubject {
+        tenant_id: trusted.tenant_id,
+        organization_id: trusted.organization_id,
+        user_id: trusted.user_id,
+    }
+}
+
+fn optional_rankings_subject(
+    subject: Option<TrustedRequestSubject>,
     require_subject: bool,
 ) -> Result<Option<ModelRankingsSubject>, Response> {
-    match TrustedRequestSubject::from_headers(headers) {
-        Ok(subject) => Ok(Some(ModelRankingsSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            user_id: subject.user_id,
-        })),
-        Err(error) if require_subject => Err((
-            StatusCode::UNAUTHORIZED,
-            Json(PlusApiResult::error("4010", error.to_string())),
-        )
-            .into_response()),
-        Err(_) => Ok(None),
-    }
+    map_optional_app_user_subject(subject, require_subject, map_rankings_subject)
 }
 
 fn validate_query(query: ModelRankingsHttpQuery) -> Result<ModelRankingsQuery, String> {

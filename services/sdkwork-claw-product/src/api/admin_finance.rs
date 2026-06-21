@@ -69,10 +69,11 @@ pub fn admin_finance_router_with_store(store: Arc<dyn AdminFinanceStore + Send +
 
 async fn fetch_transactions(
     State(state): State<AdminFinanceState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Query(query): Query<AdminFinanceRequestQuery>,
+    Query(query): Query<AdminFinanceRequestQuery>
 ) -> Response {
-    let query = match validated_query(&headers, query) {
+    let query = match validated_query(trusted, &headers, query) {
         Ok(query) => query,
         Err(response) => return response,
     };
@@ -96,10 +97,11 @@ async fn fetch_transactions(
 
 async fn fetch_billing_records(
     State(state): State<AdminFinanceState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Query(query): Query<AdminFinanceRequestQuery>,
+    Query(query): Query<AdminFinanceRequestQuery>
 ) -> Response {
-    let query = match validated_query(&headers, query) {
+    let query = match validated_query(trusted, &headers, query) {
         Ok(query) => query,
         Err(response) => return response,
     };
@@ -124,10 +126,11 @@ async fn fetch_billing_records(
 }
 
 fn validated_query(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: &HeaderMap,
     query: AdminFinanceRequestQuery,
 ) -> Result<ValidatedFinanceListQuery, Response> {
-    let subject = resolve_subject(headers)?;
+    let subject = map_subject(trusted);
     let page_no = query.page.unwrap_or(DEFAULT_PAGE_NO);
     if page_no < 1 {
         return Err(bad_request("page must be greater than or equal to 1"));
@@ -151,21 +154,13 @@ fn validated_query(
     })
 }
 
-fn resolve_subject(headers: &HeaderMap) -> Result<AdminFinanceSubject, Response> {
-    TrustedRequestSubject::from_headers(headers)
-        .map(|subject| AdminFinanceSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            operator_id: subject.operator_id,
-            operator_type: subject.operator_type,
-        })
-        .map_err(|error| {
-            (
-                StatusCode::UNAUTHORIZED,
-                Json(PlusApiResult::error("4010", error.to_string())),
-            )
-                .into_response()
-        })
+fn map_subject(trusted: TrustedRequestSubject) -> AdminFinanceSubject {
+    AdminFinanceSubject {
+            tenant_id: trusted.tenant_id,
+            organization_id: trusted.organization_id,
+            operator_id: trusted.operator_id,
+            operator_type: trusted.operator_type,
+        }
 }
 
 fn normalize_optional_text(

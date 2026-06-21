@@ -1,12 +1,12 @@
-# sdkwork-claw-router Rust Runtime and SDK Integration Standard
+# sdkwork-clawrouter Rust Runtime and SDK Integration Standard
 
 ## 1. Purpose
 
-`sdkwork-claw-router` is the Rust-first AI gateway runtime for Spring AI Plus. It keeps the user-facing product boundary in `apps/sdkwork-clawrouter-pc` and implements the runtime architecture as a high-performance, modular Rust service set.
+`sdkwork-clawrouter` is the Rust-first AI gateway runtime for Spring AI Plus. It keeps the user-facing product boundary in `apps/sdkwork-clawrouter-pc` and implements the runtime architecture as a high-performance, modular Rust service set.
 
 This document defines the implementation boundary between:
 
-- Rust runtime services in `sdkwork-claw-router`
+- Rust runtime services in `sdkwork-clawrouter`
 - Java-compatible app/backend API paths
 - generated SDK packages from `sdk/sdkwork-sdk-generator`
 - frontend portal business modules
@@ -237,7 +237,7 @@ Recharge amounts must use the same exact decimal contract as payment callbacks. 
 
 ## 8. Deployment Modes
 
-`sdkwork-claw-router` must support these deployment modes as first-class config values:
+`sdkwork-clawrouter` must support these deployment modes as first-class config values:
 
 - `desktop`: local desktop or bundled app runtime; local SQLite/libsql and local secret store are allowed.
 - `server`: standalone server deployment; PostgreSQL/MySQL and external secret store are expected.

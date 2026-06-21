@@ -33,7 +33,7 @@ class FrontendStaticSourceManifestTest(unittest.TestCase):
             snapshots = self.write_snapshots(
                 root,
                 """
-                schema: sdkwork-claw-router-frontend-static-source-snapshots
+                schema: sdkwork-clawrouter-frontend-static-source-snapshots
                 version: 1
                 snapshots:
                   - id: static-route:/demo
@@ -48,7 +48,7 @@ class FrontendStaticSourceManifestTest(unittest.TestCase):
             manifest = FrontendStaticSourceManifest(root=root, snapshots_path=snapshots).generate()
 
             snapshot = manifest["snapshots"]["static-route:/demo"]
-            self.assertEqual("sdkwork-claw-router-frontend-static-source-manifest", manifest["schema"])
+            self.assertEqual("sdkwork-clawrouter-frontend-static-source-manifest", manifest["schema"])
             self.assertEqual(1, manifest["version"])
             self.assertEqual("/demo", snapshot["route"])
             self.assertEqual("curated_seed_content", snapshot["mode"])
@@ -68,7 +68,7 @@ class FrontendStaticSourceManifestTest(unittest.TestCase):
             snapshots = self.write_snapshots(
                 root,
                 """
-                schema: sdkwork-claw-router-frontend-static-source-snapshots
+                schema: sdkwork-clawrouter-frontend-static-source-snapshots
                 version: 1
                 snapshots:
                   - id: static-route:/demo
@@ -94,7 +94,7 @@ class FrontendStaticSourceManifestTest(unittest.TestCase):
             snapshots = self.write_snapshots(
                 root,
                 """
-                schema: sdkwork-claw-router-frontend-static-source-snapshots
+                schema: sdkwork-clawrouter-frontend-static-source-snapshots
                 version: 1
                 snapshots:
                   - id: static-route:/demo

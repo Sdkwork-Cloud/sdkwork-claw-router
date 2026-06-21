@@ -11,11 +11,11 @@ import {
   Search,
   Zap,
 } from 'lucide-react';
-import { BusinessStatePanel } from 'sdkwork-clawrouter-pc-commons';
+import { BusinessStatePanel } from '@sdkwork/clawrouter-pc-commons';
 import {
   formatDecimalAmount,
   formatUserAgentDeviceLabel,
-} from 'sdkwork-clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawrouter-pc-commons/runtime';
 import { useTranslation } from 'react-i18next';
 import { UsageService, UsageLog } from './usageService';
 import { formatUsageLogLocalTime } from './usageFormatting';

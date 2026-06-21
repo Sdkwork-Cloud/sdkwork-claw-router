@@ -42,7 +42,7 @@ def media_resource(locator: str, kind: str = "image") -> dict:
 
 class SchemaQualityGateTest(unittest.TestCase):
     def write_registry(self, root: Path, content: str) -> Path:
-        registry = root / "docs" / "schema-registry" / "sdkwork-claw-router.tables.yaml"
+        registry = root / "docs" / "schema-registry" / "sdkwork-clawrouter.tables.yaml"
         registry.parent.mkdir(parents=True, exist_ok=True)
         registry.write_text(textwrap.dedent(content).strip() + "\n", encoding="utf-8")
         return registry
@@ -79,7 +79,7 @@ class SchemaQualityGateTest(unittest.TestCase):
         index.write_text(
             textwrap.dedent(
                 """
-                schema: sdkwork-claw-router-frontend-field-contracts
+                schema: sdkwork-clawrouter-frontend-field-contracts
                 version: 0.1.0
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 rule: every actual portal route must be backed by explicit schema tables.
@@ -1057,7 +1057,7 @@ class SchemaQualityGateTest(unittest.TestCase):
             source.write_text(
                 textwrap.dedent(
                     """
-                    import { getClawRouterAppSdkClient } from '@sdkwork-claw-router/commons';
+                    import { getClawRouterAppSdkClient } from '@sdkwork-clawrouter/commons';
 
                     export async function fetchModelVendors() {
                       return getClawRouterAppSdkClient().ai.modelVendors.list();
@@ -1197,7 +1197,7 @@ class SchemaQualityGateTest(unittest.TestCase):
 
     def test_quality_gate_reports_flyway_schema_contract_drift(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp) / "legacy-java-plus-workspace" / "apps" / "sdkwork-claw-router"
+            root = Path(tmp) / "legacy-java-plus-workspace" / "apps" / "sdkwork-clawrouter"
             registry = self.write_registry(root, self.valid_registry())
             self.write_generated_artifacts(root, registry)
             self.write_app(root)

@@ -138,7 +138,7 @@ function isolatedSmokeDatabaseUrl() {
   const databaseRelativePath = path.join(
     'target',
     'dev-smoke',
-    `sdkwork-claw-router-${process.pid}-${Date.now()}.sqlite`,
+    `sdkwork-clawrouter-${process.pid}-${Date.now()}.sqlite`,
   );
   mkdirSync(path.dirname(databaseRelativePath), { recursive: true });
   return `sqlite://${toPortablePath(databaseRelativePath)}`;

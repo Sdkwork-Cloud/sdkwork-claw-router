@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "kind": "sdkwork.standard-alignment",
-  "application": "sdkwork-claw-router",
-  "lastReviewedAt": "2026-06-18",
+  "application": "sdkwork-clawrouter",
+  "lastReviewedAt": "2026-06-21",
   "authority": "../sdkwork-specs/README.md",
   "verification": {
     "auditCommand": "python tools/sdkwork_standard_alignment_guardian.py",
@@ -14,9 +14,7 @@
       "spec": "../sdkwork-specs/WEB_FRAMEWORK_SPEC.md",
       "status": "ALIGNED",
       "target": "All HTTP *-api surfaces use sdkwork-web-framework WebRequestContext pipeline",
-      "blockers": [
-        "product API handlers still parsing TrustedRequestSubject::from_headers; migrate to framework-aware extractors"
-      ]
+      "blockers": []
     },
     {
       "id": "database",
@@ -24,7 +22,7 @@
       "status": "ALIGNED",
       "target": "Connection pools and repositories use sdkwork-database crates end-to-end",
       "blockers": [
-        "legacy SQL stores still use direct sqlx queries; new stores should adopt repository-sqlx crates"
+        "108 legacy *_store.rs modules remain in product service; continue phased migration per specs/database-store-migration.manifest.json"
       ]
     },
     {
@@ -33,6 +31,16 @@
       "status": "NOT_APPLICABLE",
       "target": "Integrate sdkwork-discovery only when RPC services are introduced",
       "blockers": []
+    },
+    {
+      "id": "utils",
+      "spec": "../sdkwork-utils/README.md",
+      "status": "IN_PROGRESS",
+      "target": "Rust/TypeScript code uses sdkwork-utils for cross-cutting helpers instead of local duplicates",
+      "blockers": [
+        "expand sdkwork-utils-rust adoption beyond slugify/snake_case in product modules",
+        "continue expanding @sdkwork/utils via sdkwork-clawrouter-pc-commons/sdkwork-utils facade"
+      ]
     },
     {
       "id": "api-contracts",
@@ -59,9 +67,9 @@
       "id": "rust-naming",
       "spec": "../sdkwork-specs/NAMING_SPEC.md",
       "status": "GOVERNED_EXCEPTION",
-      "target": "Services use sdkwork-<domain>-<capability>-service naming",
+      "target": "Services use sdkwork-<domain>-<capability>-service naming (target: sdkwork-clawrouter-router-service)",
       "blockers": [
-        "approved legacy crates documented in specs/naming-migration.manifest.json until 2026-12-31"
+        "approved legacy crates documented in specs/naming-migration.manifest.json until 2026-12-31; sdkwork-claw-product must not rename to sdkwork-router-product-service (commerce product collision)"
       ]
     }
   ]

@@ -535,8 +535,8 @@ function buildReleasePreflightReport({
       ? 'application worktree was not probed because child process execution is blocked'
       : dryRun
         ? 'dry-run: application worktree was not probed'
-      : appStatusLines.length === 0 ? 'sdkwork-claw-router has no uncommitted files' : appStatusLines.join('; '),
-    'Commit or intentionally shelve sdkwork-claw-router changes before release packaging.',
+      : appStatusLines.length === 0 ? 'sdkwork-clawrouter has no uncommitted files' : appStatusLines.join('; '),
+    'Commit or intentionally shelve sdkwork-clawrouter changes before release packaging.',
   ));
 
   const rootStatusLines = probes.rootStatusLines ?? [];
@@ -714,7 +714,7 @@ function buildReleasePreflightReport({
 
 function formatTextReport(report) {
   const lines = [
-    'sdkwork-claw-router release preflight',
+    'sdkwork-clawrouter release preflight',
     `Summary: PASS=${report.summary.pass} WARN=${report.summary.warn} FAIL=${report.summary.fail}`,
     '',
     'Checks:',

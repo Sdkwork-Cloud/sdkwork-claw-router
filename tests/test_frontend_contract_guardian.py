@@ -36,7 +36,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
         index.write_text(
             textwrap.dedent(
                 """
-                schema: sdkwork-claw-router-frontend-field-contracts
+                schema: sdkwork-clawrouter-frontend-field-contracts
                 version: 0.1.0
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 rule: every actual portal route must be backed by explicit schema tables.
@@ -274,7 +274,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_route_classification(
                 root,
                 """
-                schema: sdkwork-claw-router-frontend-route-classification
+                schema: sdkwork-clawrouter-frontend-route-classification
                 routes:
                   - route: /auth/login
                     package: portal-root
@@ -507,7 +507,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
     def test_reports_node_only_codegen_import_from_browser_source(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             workspace = Path(tmp)
-            root = workspace / "sdkwork-claw-router"
+            root = workspace / "sdkwork-clawrouter"
             self.write_app(root, '<Route path="/api-reference" element={<ApiReference />} />')
             self.write_manifest(root, {"routes": {"/api-reference": {"tables": []}}, "tables": []})
             self.write_contract(root, "routes:\n  - route: /api-reference\n")
@@ -615,7 +615,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "portal Vite manualChunks must split local sdkwork-claw-router route packages before generic vendor chunks",
+                "portal Vite manualChunks must split local sdkwork-clawrouter route packages before generic vendor chunks",
                 result.messages,
             )
 
@@ -628,7 +628,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_vite_config(
                 root,
                 """
-                const LOCAL_ROUTE_PACKAGE_PATTERN = /sdkwork-claw-router-/;
+                const LOCAL_ROUTE_PACKAGE_PATTERN = /sdkwork-clawrouter-/;
 
                 export default defineConfig({
                   build: {
@@ -1341,7 +1341,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_route_classification(
                 root,
                 """
-                schema: sdkwork-claw-router-frontend-route-classification
+                schema: sdkwork-clawrouter-frontend-route-classification
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /models
@@ -1422,7 +1422,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_route_classification(
                 root,
                 """
-                schema: sdkwork-claw-router-frontend-route-classification
+                schema: sdkwork-clawrouter-frontend-route-classification
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /console/dashboard
@@ -1485,7 +1485,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_route_classification(
                 root,
                 """
-                schema: sdkwork-claw-router-frontend-route-classification
+                schema: sdkwork-clawrouter-frontend-route-classification
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /console/commerce
@@ -1709,7 +1709,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_route_classification(
                 root,
                 """
-                schema: sdkwork-claw-router-frontend-route-classification
+                schema: sdkwork-clawrouter-frontend-route-classification
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /admin/orders
@@ -1788,7 +1788,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_route_classification(
                 root,
                 """
-                schema: sdkwork-claw-router-frontend-route-classification
+                schema: sdkwork-clawrouter-frontend-route-classification
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /admin/catalog/products
@@ -1874,7 +1874,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_route_classification(
                 root,
                 """
-                schema: sdkwork-claw-router-frontend-route-classification
+                schema: sdkwork-clawrouter-frontend-route-classification
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /admin/oauth
@@ -2001,7 +2001,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_route_classification(
                 root,
                 """
-                schema: sdkwork-claw-router-frontend-route-classification
+                schema: sdkwork-clawrouter-frontend-route-classification
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /
@@ -2024,7 +2024,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_static_source_manifest(
                 root,
                 {
-                    "schema": "sdkwork-claw-router-frontend-static-source-manifest",
+                    "schema": "sdkwork-clawrouter-frontend-static-source-manifest",
                     "version": 1,
                     "snapshots": {
                         "home-page": {
@@ -2242,7 +2242,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_route_classification(
                 root,
                 """
-                schema: sdkwork-claw-router-frontend-route-classification
+                schema: sdkwork-clawrouter-frontend-route-classification
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /models
@@ -2299,7 +2299,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_route_classification(
                 root,
                 """
-                schema: sdkwork-claw-router-frontend-route-classification
+                schema: sdkwork-clawrouter-frontend-route-classification
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /models
@@ -2365,7 +2365,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_route_classification(
                 root,
                 """
-                schema: sdkwork-claw-router-frontend-route-classification
+                schema: sdkwork-clawrouter-frontend-route-classification
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /models
@@ -2430,7 +2430,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_route_classification(
                 root,
                 """
-                schema: sdkwork-claw-router-frontend-route-classification
+                schema: sdkwork-clawrouter-frontend-route-classification
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /models
@@ -2494,7 +2494,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_route_classification(
                 root,
                 """
-                schema: sdkwork-claw-router-frontend-route-classification
+                schema: sdkwork-clawrouter-frontend-route-classification
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /models
@@ -2581,7 +2581,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_route_classification(
                 root,
                 """
-                schema: sdkwork-claw-router-frontend-route-classification
+                schema: sdkwork-clawrouter-frontend-route-classification
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /forum
@@ -2650,7 +2650,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_static_source_manifest(
                 root,
                 {
-                    "schema": "sdkwork-claw-router-frontend-static-source-manifest",
+                    "schema": "sdkwork-clawrouter-frontend-static-source-manifest",
                     "version": 1,
                     "snapshots": {
                         "static-route:/forum": {
@@ -2668,7 +2668,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_route_classification(
                 root,
                 f"""
-                schema: sdkwork-claw-router-frontend-route-classification
+                schema: sdkwork-clawrouter-frontend-route-classification
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /forum
@@ -2743,7 +2743,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_route_classification(
                 root,
                 """
-                schema: sdkwork-claw-router-frontend-route-classification
+                schema: sdkwork-clawrouter-frontend-route-classification
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /forum
@@ -2818,7 +2818,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_static_source_manifest(
                 root,
                 {
-                    "schema": "sdkwork-claw-router-frontend-static-source-manifest",
+                    "schema": "sdkwork-clawrouter-frontend-static-source-manifest",
                     "version": 1,
                     "snapshots": {
                         "static-route:/docs": {
@@ -2836,7 +2836,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_route_classification(
                 root,
                 """
-                schema: sdkwork-claw-router-frontend-route-classification
+                schema: sdkwork-clawrouter-frontend-route-classification
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /docs
@@ -2906,7 +2906,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_route_classification(
                 root,
                 """
-                schema: sdkwork-claw-router-frontend-route-classification
+                schema: sdkwork-clawrouter-frontend-route-classification
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /models
@@ -2984,7 +2984,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_static_source_manifest(
                 root,
                 {
-                    "schema": "sdkwork-claw-router-frontend-static-source-manifest",
+                    "schema": "sdkwork-clawrouter-frontend-static-source-manifest",
                     "version": 1,
                     "snapshots": {
                         "static-route:/models": {
@@ -3002,7 +3002,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_route_classification(
                 root,
                 """
-                schema: sdkwork-claw-router-frontend-route-classification
+                schema: sdkwork-clawrouter-frontend-route-classification
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /models
@@ -3081,7 +3081,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_static_source_manifest(
                 root,
                 {
-                    "schema": "sdkwork-claw-router-frontend-static-source-manifest",
+                    "schema": "sdkwork-clawrouter-frontend-static-source-manifest",
                     "version": 1,
                     "snapshots": {
                         "static-route:/models": {
@@ -3099,7 +3099,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_route_classification(
                 root,
                 """
-                schema: sdkwork-claw-router-frontend-route-classification
+                schema: sdkwork-clawrouter-frontend-route-classification
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /models
@@ -3180,7 +3180,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_static_source_manifest(
                 root,
                 {
-                    "schema": "sdkwork-claw-router-frontend-static-source-manifest",
+                    "schema": "sdkwork-clawrouter-frontend-static-source-manifest",
                     "version": 1,
                     "snapshots": {
                         "static-route:/forum": {
@@ -3198,7 +3198,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_route_classification(
                 root,
                 """
-                schema: sdkwork-claw-router-frontend-route-classification
+                schema: sdkwork-clawrouter-frontend-route-classification
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /forum
@@ -3269,7 +3269,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_route_classification(
                 root,
                 """
-                schema: sdkwork-claw-router-frontend-route-classification
+                schema: sdkwork-clawrouter-frontend-route-classification
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /api-reference
@@ -3368,7 +3368,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_route_classification(
                 root,
                 """
-                schema: sdkwork-claw-router-frontend-route-classification
+                schema: sdkwork-clawrouter-frontend-route-classification
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /api-reference
@@ -3466,7 +3466,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_route_classification(
                 root,
                 """
-                schema: sdkwork-claw-router-frontend-route-classification
+                schema: sdkwork-clawrouter-frontend-route-classification
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /api-reference
@@ -3562,7 +3562,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_route_classification(
                 root,
                 """
-                schema: sdkwork-claw-router-frontend-route-classification
+                schema: sdkwork-clawrouter-frontend-route-classification
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /api-reference
@@ -3684,7 +3684,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_route_classification(
                 root,
                 """
-                schema: sdkwork-claw-router-frontend-route-classification
+                schema: sdkwork-clawrouter-frontend-route-classification
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /api-reference
@@ -3795,7 +3795,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_route_classification(
                 root,
                 """
-                schema: sdkwork-claw-router-frontend-route-classification
+                schema: sdkwork-clawrouter-frontend-route-classification
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 routes:
                   - route: /api-reference

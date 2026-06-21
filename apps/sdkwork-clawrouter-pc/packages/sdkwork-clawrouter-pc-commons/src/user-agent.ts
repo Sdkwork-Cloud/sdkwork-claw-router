@@ -1,6 +1,8 @@
+import { isBlank, trim } from './sdkwork-utils.ts';
+
 export function formatUserAgentDeviceLabel(userAgent: string): string {
-  const value = userAgent.trim();
-  if (!value) {
+  const value = trim(userAgent);
+  if (isBlank(value)) {
     return 'Unknown';
   }
 

@@ -24,7 +24,7 @@ class ApiContractDirectoryStandardTest(unittest.TestCase):
     def test_apis_manifest_declares_materialized_contracts(self) -> None:
         manifest = json.loads((ROOT / "apis/manifest.json").read_text(encoding="utf-8"))
         self.assertEqual(manifest["kind"], "sdkwork.api-contract-manifest")
-        self.assertEqual(manifest["application"], "sdkwork-claw-router")
+        self.assertEqual(manifest["application"], "sdkwork-clawrouter")
         contract_paths = {entry["path"] for entry in manifest["contracts"]}
         self.assertIn("apis/open-api/clawrouter/clawrouter-open-api.openapi.json", contract_paths)
         self.assertIn("apis/app-api/clawrouter/clawrouter-app-api.openapi.json", contract_paths)

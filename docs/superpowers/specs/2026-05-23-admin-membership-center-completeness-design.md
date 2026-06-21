@@ -3,7 +3,7 @@
 ## Status
 
 This specification defines the next iteration of the admin Membership Center in
-`sdkwork-claw-router`.
+`sdkwork-clawrouter`.
 
 The implementation must complete the admin-facing CRUD and status-management
 workflows that are already backed by the generated backend SDK and the standard

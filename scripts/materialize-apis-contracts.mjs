@@ -52,7 +52,7 @@ function buildManifest(entries) {
   return {
     schemaVersion: 1,
     kind: 'sdkwork.api-contract-manifest',
-    application: 'sdkwork-claw-router',
+    application: 'sdkwork-clawrouter',
     description:
       'Author-owned HTTP API contract materialization inputs for SDKWork Claw Router. Generated SDK output remains under sdks/.',
     contracts: entries,

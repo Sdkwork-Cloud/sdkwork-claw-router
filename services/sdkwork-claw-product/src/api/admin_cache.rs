@@ -1,5 +1,5 @@
 use axum::extract::{Path, Query, State};
-use axum::http::{HeaderMap, StatusCode};
+use axum::http::StatusCode;
 use axum::response::{IntoResponse, Response};
 use axum::routing::{delete, get, post};
 use axum::{Json, Router};
@@ -53,20 +53,20 @@ pub fn admin_cache_router_with_manager(manager: RuntimeCacheManager) -> Router {
         .with_state(AdminCacheState { manager })
 }
 
-async fn fetch_overview(State(state): State<AdminCacheState>, headers: HeaderMap) -> Response {
-    if let Err(response) = require_admin_subject(&headers) {
-        return response;
-    }
+async fn fetch_overview(
+    State(state): State<AdminCacheState>,
+    _trusted: TrustedRequestSubject,
+) -> Response {
     match state.manager.snapshot().await {
         Ok(snapshot) => cache_success(snapshot),
         Err(error) => cache_system_response("cache runtime snapshot is unavailable", error),
     }
 }
 
-async fn refresh_all(State(state): State<AdminCacheState>, headers: HeaderMap) -> Response {
-    if let Err(response) = require_admin_subject(&headers) {
-        return response;
-    }
+async fn refresh_all(
+    State(state): State<AdminCacheState>,
+    _trusted: TrustedRequestSubject,
+) -> Response {
     match state.manager.refresh_all().await {
         Ok(outcome) => cache_success(outcome),
         Err(error) => cache_system_response("cache refresh failed", error),
@@ -75,12 +75,9 @@ async fn refresh_all(State(state): State<AdminCacheState>, headers: HeaderMap) -
 
 async fn refresh_instance(
     State(state): State<AdminCacheState>,
-    headers: HeaderMap,
+    _trusted: TrustedRequestSubject,
     Path(instance_name): Path<String>,
 ) -> Response {
-    if let Err(response) = require_admin_subject(&headers) {
-        return response;
-    }
     match state.manager.refresh_instance(&instance_name).await {
         Ok(outcome) => cache_success(outcome),
         Err(error) => cache_system_response("cache instance refresh failed", error),
@@ -89,12 +86,9 @@ async fn refresh_instance(
 
 async fn delete_instance(
     State(state): State<AdminCacheState>,
-    headers: HeaderMap,
+    _trusted: TrustedRequestSubject,
     Path(instance_name): Path<String>,
 ) -> Response {
-    if let Err(response) = require_admin_subject(&headers) {
-        return response;
-    }
     match state.manager.delete_instance(&instance_name).await {
         Ok(outcome) => cache_success(outcome),
         Err(error) => cache_system_response("cache instance delete failed", error),
@@ -103,12 +97,9 @@ async fn delete_instance(
 
 async fn refresh_namespace(
     State(state): State<AdminCacheState>,
-    headers: HeaderMap,
+    _trusted: TrustedRequestSubject,
     Path(namespace): Path<String>,
 ) -> Response {
-    if let Err(response) = require_admin_subject(&headers) {
-        return response;
-    }
     match state.manager.refresh_namespace(&namespace).await {
         Ok(outcome) => cache_success(outcome),
         Err(error) => cache_system_response("cache namespace refresh failed", error),
@@ -117,12 +108,9 @@ async fn refresh_namespace(
 
 async fn delete_namespace(
     State(state): State<AdminCacheState>,
-    headers: HeaderMap,
+    _trusted: TrustedRequestSubject,
     Path(namespace): Path<String>,
 ) -> Response {
-    if let Err(response) = require_admin_subject(&headers) {
-        return response;
-    }
     match state.manager.delete_namespace(&namespace).await {
         Ok(outcome) => cache_success(outcome),
         Err(error) => cache_system_response("cache namespace delete failed", error),
@@ -131,13 +119,10 @@ async fn delete_namespace(
 
 async fn list_namespace_keys(
     State(state): State<AdminCacheState>,
-    headers: HeaderMap,
+    _trusted: TrustedRequestSubject,
     Path(namespace): Path<String>,
     Query(query): Query<CacheKeyListQuery>,
 ) -> Response {
-    if let Err(response) = require_admin_subject(&headers) {
-        return response;
-    }
     let limit = match normalize_key_list_limit(query.limit) {
         Ok(limit) => limit,
         Err(error) => return cache_system_response("cache namespace keys list failed", error),
@@ -158,26 +143,13 @@ async fn list_namespace_keys(
 
 async fn delete_key(
     State(state): State<AdminCacheState>,
-    headers: HeaderMap,
+    _trusted: TrustedRequestSubject,
     Path((namespace, key)): Path<(String, String)>,
 ) -> Response {
-    if let Err(response) = require_admin_subject(&headers) {
-        return response;
-    }
     match state.manager.delete_key(&namespace, &key).await {
         Ok(outcome) => cache_success(outcome),
         Err(error) => cache_system_response("cache key delete failed", error),
     }
-}
-
-fn require_admin_subject(headers: &HeaderMap) -> Result<TrustedRequestSubject, Response> {
-    TrustedRequestSubject::from_headers(headers).map_err(|error| {
-        (
-            StatusCode::UNAUTHORIZED,
-            Json(PlusApiResult::error("4010", error.to_string())),
-        )
-            .into_response()
-    })
 }
 
 fn cache_success<T>(data: T) -> Response

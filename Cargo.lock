@@ -2279,7 +2279,10 @@ dependencies = [
  "sdkwork-claw-provider-adapter-contract",
  "sdkwork-claw-provider-adapter-http",
  "sdkwork-claw-provider-adapter-registry",
- "sdkwork-claw-router-database-host",
+ "sdkwork-clawrouter-admin-monitor-repository-sqlx",
+ "sdkwork-clawrouter-app-gateway-traces-repository-sqlx",
+ "sdkwork-clawrouter-app-iam-directory-repository-sqlx",
+ "sdkwork-clawrouter-database-host",
  "sdkwork-commerce-bootstrap-manifest",
  "sdkwork-commerce-contract-service",
  "sdkwork-commerce-invoice-service",
@@ -2293,6 +2296,7 @@ dependencies = [
  "sdkwork-id-core",
  "sdkwork-models",
  "sdkwork-sdk-generator-client",
+ "sdkwork-utils-rust",
  "serde",
  "serde_json",
  "sha2",
@@ -2373,17 +2377,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "sdkwork-claw-router-database-host"
-version = "0.1.0"
-dependencies = [
- "dotenvy",
- "sdkwork-database-config",
- "sdkwork-database-lifecycle",
- "sdkwork-database-spi",
- "sdkwork-database-sqlx",
-]
-
-[[package]]
 name = "sdkwork-claw-security"
 version = "0.1.0"
 
@@ -2400,6 +2393,44 @@ dependencies = [
  "sha2",
  "sqlx",
  "tokio",
+]
+
+[[package]]
+name = "sdkwork-clawrouter-admin-monitor-repository-sqlx"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-database-sqlx",
+ "serde",
+ "sqlx",
+]
+
+[[package]]
+name = "sdkwork-clawrouter-app-gateway-traces-repository-sqlx"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-database-sqlx",
+ "serde",
+ "sqlx",
+]
+
+[[package]]
+name = "sdkwork-clawrouter-app-iam-directory-repository-sqlx"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-database-sqlx",
+ "serde",
+ "sqlx",
+]
+
+[[package]]
+name = "sdkwork-clawrouter-database-host"
+version = "0.1.0"
+dependencies = [
+ "dotenvy",
+ "sdkwork-database-config",
+ "sdkwork-database-lifecycle",
+ "sdkwork-database-spi",
+ "sdkwork-database-sqlx",
 ]
 
 [[package]]
@@ -2724,11 +2755,13 @@ name = "sdkwork-iam-web-adapter"
 version = "0.1.0"
 dependencies = [
  "aes-gcm",
+ "argon2",
  "async-trait",
  "axum",
  "base64",
  "chrono",
  "hmac",
+ "password-hash",
  "rand_core 0.6.4",
  "reqwest",
  "sdkwork-database-sqlx",
@@ -2912,6 +2945,7 @@ name = "sdkwork-rpc-core-rust"
 version = "0.1.0"
 dependencies = [
  "prost-types",
+ "sdkwork-utils-rust",
  "tonic",
 ]
 

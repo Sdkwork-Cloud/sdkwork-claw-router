@@ -560,7 +560,7 @@ class AppbaseCapabilityGuardian:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Validate sdkwork-appbase reusable capability building-block standards.")
-    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-claw-router root directory")
+    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-clawrouter root directory")
     parser.add_argument("--manifest", type=Path, default=None, help="appbase capability manifest path")
     args = parser.parse_args()
 

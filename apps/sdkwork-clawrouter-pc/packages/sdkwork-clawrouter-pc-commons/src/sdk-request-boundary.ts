@@ -1,3 +1,5 @@
+import { isBlank, trim } from './sdkwork-utils.ts';
+
 export const SAFE_PATH_SEGMENT_PATTERN = /^[A-Za-z0-9._~-]{1,128}$/u;
 
 export function requiredSafePathSegment(value: string, fieldName: string): string {
@@ -90,7 +92,7 @@ function optionalIntegerString(value: unknown, fieldName: string): string | unde
   if (value === undefined || value === null) {
     return undefined;
   }
-  const normalized = typeof value === 'string' ? value.trim() : value;
+  const normalized = typeof value === 'string' ? trim(value) : value;
   if (normalized === '') {
     return undefined;
   }
@@ -111,8 +113,8 @@ export function optionalText(value: unknown, fieldName: string, maxLength: numbe
   if (typeof value !== 'string') {
     throw new Error(`${fieldName} must be a string`);
   }
-  const normalized = value.trim();
-  if (!normalized) {
+  const normalized = trim(value);
+  if (isBlank(normalized)) {
     return undefined;
   }
   if (normalized.length > maxLength) {

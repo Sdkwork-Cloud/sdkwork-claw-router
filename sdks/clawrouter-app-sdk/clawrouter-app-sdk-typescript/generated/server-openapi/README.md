@@ -56,9 +56,7 @@ const client = new SdkworkAppClient({
 
 - `client.ai` - ai API
 - `client.chat` - chat API
-- `client.content` - content API
 - `client.iam` - iam API
-- `client.memory` - memory API
 - `client.notification` - notification API
 - `client.runtime` - runtime API
 - `client.sites` - sites API
@@ -83,13 +81,6 @@ const params = {
 const result = await client.chat.conversations.list(params);
 ```
 
-### content
-
-```typescript
-// List forum overview
-const result = await client.content.feeds.overview.retrieve();
-```
-
 ### iam
 
 ```typescript
@@ -97,26 +88,14 @@ const result = await client.content.feeds.overview.retrieve();
 const result = await client.iam.apiKeys.list();
 ```
 
-### memory
-
-```typescript
-// List memory spaces
-const params = {
-  page: 'page',
-  page_size: 'page_size',
-};
-const result = await client.memory.spaces.list(params);
-```
-
 ### notification
 
 ```typescript
-// List notifications
+// List portal notifications
 const params = {
-  app_id: 'app_id',
-  include_archived: false,
-  page: 3,
-  page_size: 4,
+  include_archived: true,
+  page: 'page',
+  page_size: 'page_size',
 };
 const result = await client.notification.list(params);
 ```

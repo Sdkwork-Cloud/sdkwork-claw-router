@@ -1163,8 +1163,8 @@ class ClawRouterOpenApiGenerator:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Generate sdkwork-claw-router app/backend OpenAPI specs.")
-    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-claw-router root directory")
+    parser = argparse.ArgumentParser(description="Generate sdkwork-clawrouter app/backend OpenAPI specs.")
+    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-clawrouter root directory")
     parser.add_argument("--manifest", type=Path, default=None, help="API contract manifest path")
     parser.add_argument("--output-dir", type=Path, default=None, help="OpenAPI output directory")
     parser.add_argument("--check", action="store_true", help="validate generated OpenAPI specs are current")

@@ -1,8 +1,8 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { AdminCacheService } from './cacheService';
-import { getClawRouterBackendSdkClient } from 'sdkwork-clawrouter-pc-commons/sdk-clients';
+import { getClawRouterBackendSdkClient } from '@sdkwork/clawrouter-pc-commons/sdk-clients';
 
-vi.mock('sdkwork-clawrouter-pc-commons/sdk-clients', () => ({
+vi.mock('@sdkwork/clawrouter-pc-commons/sdk-clients', () => ({
   getClawRouterBackendSdkClient: vi.fn(),
 }));
 

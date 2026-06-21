@@ -1912,9 +1912,6 @@ async fn database_config_router_serves_backend_sdk_contract_aliases() {
         "/backend/v3/api/ai/channel_groups",
         "/backend/v3/api/integration/channels",
         "/backend/v3/api/integration/provider_secrets",
-        "/backend/v3/api/ecosystem/skills/categories",
-        "/backend/v3/api/ecosystem/skills/package",
-        "/backend/v3/api/ecosystem/skills",
         "/backend/v3/api/platform/apps",
         "/backend/v3/api/billing/referrals/stats",
     ] {

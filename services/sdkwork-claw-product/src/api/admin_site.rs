@@ -202,12 +202,10 @@ pub fn admin_site_router_with_store(
 async fn fetch_sites(
     State(state): State<AdminSiteState>,
     Query(params): Query<ListSitesParams>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     match state
         .store
         .list_sites(ListAdminSitesQuery {
@@ -226,13 +224,11 @@ async fn fetch_sites(
 
 async fn create_site(
     State(state): State<AdminSiteState>,
-    headers: HeaderMap,
-    body: Bytes,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let request = match parse_json_body::<SiteRequest>(&body, "site") {
         Ok(request) => request,
         Err(message) => return bad_request(message),
@@ -254,13 +250,11 @@ async fn create_site(
 async fn update_site(
     State(state): State<AdminSiteState>,
     Path(site_id): Path<String>,
-    headers: HeaderMap,
-    body: Bytes,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let site_id = match parse_positive_id(&site_id, "site id") {
         Ok(site_id) => site_id,
         Err(message) => return bad_request(message),
@@ -287,12 +281,10 @@ async fn update_site(
 async fn delete_site(
     State(state): State<AdminSiteState>,
     Path(site_id): Path<String>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let site_id = match parse_positive_id(&site_id, "site id") {
         Ok(site_id) => site_id,
         Err(message) => return bad_request(message),
@@ -311,12 +303,10 @@ async fn delete_site(
 async fn fetch_site_channels(
     State(state): State<AdminSiteState>,
     Path(site_id): Path<String>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let site_id = match parse_positive_id(&site_id, "site id") {
         Ok(site_id) => site_id,
         Err(message) => return bad_request(message),
@@ -337,29 +327,29 @@ async fn fetch_site_channels(
 async fn test_site_connection(
     State(state): State<AdminSiteState>,
     Path(site_id): Path<String>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    headers: HeaderMap
 ) -> Response {
-    site_connection_action(state, site_id, headers, false).await
+    site_connection_action(state, site_id, trusted, headers, false).await
 }
 
 async fn health_check_site(
     State(state): State<AdminSiteState>,
     Path(site_id): Path<String>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    headers: HeaderMap
 ) -> Response {
-    site_connection_action(state, site_id, headers, true).await
+    site_connection_action(state, site_id, trusted, headers, true).await
 }
 
 async fn site_connection_action(
     state: AdminSiteState,
     site_id: String,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
     persist_health: bool,
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let site_id = match parse_positive_id(&site_id, "site id") {
         Ok(site_id) => site_id,
         Err(message) => return bad_request(message),
@@ -376,21 +366,13 @@ async fn site_connection_action(
     }
 }
 
-fn resolve_subject(headers: &HeaderMap) -> Result<AdminSiteSubject, Response> {
-    TrustedRequestSubject::from_headers(headers)
-        .map(|subject| AdminSiteSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            operator_id: subject.operator_id,
-            operator_type: subject.operator_type,
-        })
-        .map_err(|error| {
-            (
-                StatusCode::UNAUTHORIZED,
-                Json(PlusApiResult::error("4010", error.to_string())),
-            )
-                .into_response()
-        })
+fn map_subject(trusted: TrustedRequestSubject) -> AdminSiteSubject {
+    AdminSiteSubject {
+            tenant_id: trusted.tenant_id,
+            organization_id: trusted.organization_id,
+            operator_id: trusted.operator_id,
+            operator_type: trusted.operator_type,
+        }
 }
 
 fn build_create_site_command(

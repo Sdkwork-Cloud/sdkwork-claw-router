@@ -1,5 +1,5 @@
 pub fn product_name() -> &'static str {
-    "sdkwork-claw-router"
+    "sdkwork-clawrouter"
 }
 
 #[cfg(test)]
@@ -8,6 +8,6 @@ mod tests {
 
     #[test]
     fn product_name_is_stable() {
-        assert_eq!("sdkwork-claw-router", product_name());
+        assert_eq!("sdkwork-clawrouter", product_name());
     }
 }

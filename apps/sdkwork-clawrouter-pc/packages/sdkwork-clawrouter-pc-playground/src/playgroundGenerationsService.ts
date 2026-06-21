@@ -3,7 +3,8 @@ import {
   readMediaResource,
   readMediaResourceUrl,
   type ClawRouterMediaResource,
-} from 'sdkwork-clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawrouter-pc-commons/runtime';
+import { trim } from '@sdkwork/clawrouter-pc-commons/sdkwork-utils';
 import {
   mapSdkworkGenerationArtifactsToHistoryMedia,
   mapSdkworkGenerationModalityToHistoryType,
@@ -12,6 +13,8 @@ import type {
   SdkworkGenerationCommandInput,
   SdkworkGenerationCommandModality,
   SdkworkGenerationOperationType,
+  SdkworkGenerationRecord,
+  SdkworkGenerationRun,
   SdkworkGenerationService,
 } from '@sdkwork/generations-pc-workspace/generation-service';
 import type {
@@ -31,11 +34,32 @@ import type { GenerationAgentRunCreateInput } from './playgroundTypes.ts';
 
 const DEFAULT_TENANT_ID = 'current';
 
+export async function fetchPlaygroundGenerationHistoryFromService(
+  service: SdkworkGenerationService,
+): Promise<PlaygroundHistoryItem[]> {
+  const workspace = await service.getWorkspace();
+  return workspace.runs.map(mapWorkspaceRunToHistoryItem);
+}
+
+function mapWorkspaceRunToHistoryItem(run: SdkworkGenerationRun): PlaygroundHistoryItem {
+  const timestamp = run.updatedAt;
+  return {
+    id: run.id,
+    date: timestamp.slice(0, 10),
+    prompt: run.promptPreview || run.title,
+    type: 'text',
+    modelInfo: run.model,
+    status: run.status,
+    createdAt: timestamp,
+    updatedAt: timestamp,
+  };
+}
+
 export async function runPlaygroundAssetGeneration(
   input: GenerationAgentRunCreateInput,
   service: SdkworkGenerationService,
 ): Promise<GenerationAgentRunCreateResult> {
-  const prompt = normalizeText(input.prompt);
+  const prompt = trim(input.prompt ?? '');
   if (!prompt) {
     throw new Error('Generation prompt is required');
   }
@@ -250,6 +274,51 @@ function readDurationSeconds(value: Record<string, unknown>): number | undefined
   return durationMs === undefined ? undefined : durationMs / 1000;
 }
 
+function mapGenerationRecordToHistoryItem(
+  record: SdkworkGenerationRecord,
+  artifacts: readonly PlaygroundGenerationArtifact[],
+  targetType: PlaygroundGenerationTargetType | undefined,
+): PlaygroundHistoryItem {
+  const status = mapGenerationRecordStatus(record.status);
+  const timestamp = record.updatedAt || record.createdAt;
+  const prompt = trim(record.promptPreview ?? '') || record.operationType || record.id;
+  const media = targetType
+    ? mapSdkworkGenerationArtifactsToHistoryMedia(artifacts, targetType)
+    : { images: [], videos: [] };
+  return {
+    createdAt: record.createdAt,
+    date: record.createdAt.slice(0, 10),
+    durationSeconds: media.durationSeconds,
+    id: record.id,
+    asset: media.asset,
+    images: media.images,
+    modelCatalogKey: record.sourceProvider,
+    modelInfo: record.sourceProvider,
+    prompt,
+    status,
+    type: mapSdkworkGenerationModalityToHistoryType(targetType),
+    updatedAt: record.updatedAt,
+    videos: media.videos,
+  };
+}
+
+function mapRecordModalityToTargetType(
+  modality: string,
+): PlaygroundGenerationTargetType | undefined {
+  switch (modality) {
+    case 'image':
+    case 'video':
+    case 'music':
+    case 'audio':
+    case 'sfx':
+      return modality;
+    case 'voice':
+      return 'audio';
+    default:
+      return undefined;
+  }
+}
+
 function mapGenerationCommandToHistoryItem({
   artifacts,
   generationId,
@@ -438,10 +507,6 @@ function hasReferences(
   referenceAssets: readonly PlaygroundReferenceAssetInput[] | undefined,
 ): boolean {
   return (referenceImages?.length ?? 0) > 0 || (referenceAssets?.length ?? 0) > 0;
-}
-
-function normalizeText(value: string | undefined): string {
-  return (value ?? '').trim();
 }
 
 function compactRecord(record: Record<string, unknown>): Record<string, unknown> {

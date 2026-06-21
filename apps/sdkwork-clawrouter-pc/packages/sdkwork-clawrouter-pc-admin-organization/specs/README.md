@@ -2,7 +2,7 @@
 
 This directory is the local SDKWork component contract for `sdkwork-clawrouter-pc-admin-organization`.
 
-- Component root: `sdkwork-claw-router/apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization`
+- Component root: `sdkwork-clawrouter/apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization`
 - Canonical standards: `../../../../../../sdkwork-specs/README.md`
 - Machine-readable contract: `specs/component.spec.json`
 

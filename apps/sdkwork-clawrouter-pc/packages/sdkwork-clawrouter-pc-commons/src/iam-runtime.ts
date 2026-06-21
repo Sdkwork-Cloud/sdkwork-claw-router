@@ -4,13 +4,21 @@ import {
   type SdkworkAppbasePcAuthRuntimeSdkClient,
 } from '@sdkwork/auth-runtime-pc-react';
 import {
+  type SdkworkAppClient,
+} from '@sdkwork/appbase-app-sdk';
+import {
   type IamRuntime,
 } from '@sdkwork/iam-runtime';
 import {
   clearStoredAppSessionToken,
   loadStoredAppSessionToken,
   storeAppSessionFromResult,
+  toPortalIamBridgeSession,
 } from './app-session-token.ts';
+import {
+  bindClawRouterIamSessionProjection,
+  patchClawRouterIamContextStore,
+} from './iam-runtime-session-projection.ts';
 import {
   APP_API_PREFIX,
   getClawRouterAppSdkClient,
@@ -19,12 +27,15 @@ import {
   getSdkworkCommerceAppSdkClient,
   getSdkworkDriveAppSdkClient,
   getSdkworkGenerationsAppSdkClient,
+  getSdkworkMemoryAppSdkClient,
+  getSdkworkAgentAppSdkClient,
+  getSdkworkAgentBackendSdkClient,
   resetClawRouterSdkClients,
 } from './sdk-clients.ts';
 import { normalizeGeneratedSdkBaseUrl } from './sdk-base-url.ts';
 import { readClawRouterRuntimeEnv } from './utils/env.ts';
 
-const CLAW_ROUTER_IAM_RUNTIME_APP_ID = 'sdkwork-claw-router';
+const CLAW_ROUTER_IAM_RUNTIME_APP_ID = 'sdkwork-clawrouter';
 
 let runtimeComposition: SdkworkAppbasePcAuthRuntimeComposition | null = null;
 
@@ -33,7 +44,7 @@ export function createClawRouterIamRuntime(): IamRuntime {
 }
 
 export function createClawRouterIamRuntimeComposition(): SdkworkAppbasePcAuthRuntimeComposition {
-  return createSdkworkAppbasePcAuthRuntime({
+  const composition = createSdkworkAppbasePcAuthRuntime({
     app: {
       appId: CLAW_ROUTER_IAM_RUNTIME_APP_ID,
       deploymentMode: readIamDeploymentMode() ?? 'saas',
@@ -43,7 +54,7 @@ export function createClawRouterIamRuntimeComposition(): SdkworkAppbasePcAuthRun
     baseUrls: {
       appbaseAppApiBaseUrl: resolveAppbaseAppApiBaseUrl(),
     },
-    createAppbaseAppClient: () => getSdkworkAppbaseAppSdkClient(),
+    createAppbaseAppClient: () => ensureIamTenantSelectionCompat(getSdkworkAppbaseAppSdkClient()),
     hooks: {
       onSessionChanged: () => {
         resetClawRouterSdkClients();
@@ -53,15 +64,23 @@ export function createClawRouterIamRuntimeComposition(): SdkworkAppbasePcAuthRun
       getClawRouterAppSdkClient(),
       getSdkworkDriveAppSdkClient(),
       getSdkworkGenerationsAppSdkClient(),
+      getSdkworkMemoryAppSdkClient(),
+      getSdkworkAgentAppSdkClient(),
+      getSdkworkAgentBackendSdkClient(),
       getSdkworkCommerceAppSdkClient(),
     ] as SdkworkAppbasePcAuthRuntimeSdkClient[],
     sessionBridge: {
       clearSession: clearClawRouterIamRuntimeSession,
       commitSession: (session) => commitClawRouterIamRuntimeSession(session),
-      readSession: loadStoredAppSessionToken,
+      readSession: () => toPortalIamBridgeSession(loadStoredAppSessionToken()),
     },
     tokenManager: getClawRouterGlobalTokenManager(),
   });
+
+  patchClawRouterIamContextStore(composition.contextStore);
+  bindClawRouterIamSessionProjection(composition.runtime);
+
+  return composition;
 }
 
 export function getClawRouterIamRuntime(): IamRuntime {
@@ -84,6 +103,34 @@ function commitClawRouterIamRuntimeSession(session: unknown): ReturnType<typeof 
   const stored = storeAppSessionFromResult(session);
   resetClawRouterSdkClients();
   return stored;
+}
+
+function ensureIamTenantSelectionCompat(client: SdkworkAppClient): SdkworkAppClient {
+  const sessions = (client as unknown as {
+    auth?: {
+      sessions?: Record<string, unknown>;
+    };
+  }).auth?.sessions;
+  if (!sessions || sessions.tenantSelection) {
+    return client;
+  }
+
+  const organizationSelection = sessions.organizationSelection as
+    | { create?: (...args: unknown[]) => unknown }
+    | undefined;
+  if (organizationSelection?.create) {
+    sessions.tenantSelection = {
+      create: organizationSelection.create.bind(organizationSelection),
+    };
+    return client;
+  }
+
+  sessions.tenantSelection = {
+    create: async () => {
+      throw new Error('appbase app SDK is missing sessions.tenantSelection.create');
+    },
+  };
+  return client;
 }
 
 function resolveAppbaseAppApiBaseUrl(): string {

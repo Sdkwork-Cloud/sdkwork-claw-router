@@ -55,7 +55,7 @@ async fn app_auth_sessions_create_issues_dual_token_context_for_active_iam_user_
         payload["data"]["user"]["avatar"]["publicUrl"]
     );
     assert_eq!("active", payload["data"]["user"]["status"]);
-    assert_eq!("sdkwork-claw-router", payload["data"]["context"]["appId"]);
+    assert_eq!("sdkwork-clawrouter", payload["data"]["context"]["appId"]);
     assert_eq!("password", payload["data"]["context"]["authLevel"]);
     assert_eq!("local", payload["data"]["context"]["deploymentMode"]);
     assert_eq!("dev", payload["data"]["context"]["environment"]);
@@ -97,7 +97,7 @@ async fn app_auth_sessions_create_issues_dual_token_context_for_active_iam_user_
         session.get::<Option<String>, _>("organization_id")
     );
     assert_eq!("30", session.get::<String, _>("user_id"));
-    assert_eq!("sdkwork-claw-router", session.get::<String, _>("app_id"));
+    assert_eq!("sdkwork-clawrouter", session.get::<String, _>("app_id"));
     assert_eq!("dev", session.get::<String, _>("environment"));
     assert_eq!("local", session.get::<String, _>("deployment_mode"));
     assert_eq!("password", session.get::<String, _>("auth_level"));
@@ -906,7 +906,7 @@ async fn app_auth_registrations_create_without_organization_defaults_to_tenant_s
         assert_eq!(10, claims.tenant_id);
         assert_eq!(0, claims.organization_id);
         assert_eq!("TENANT", claims.login_scope);
-        assert_eq!("sdkwork-claw-router", claims.app_id);
+        assert_eq!("sdkwork-clawrouter", claims.app_id);
         assert_eq!(payload["data"]["sessionId"], claims.session_id);
     }
 

@@ -25,7 +25,7 @@ const DEFAULT_DOWNLOAD_CATALOG_PATH = path.join(
   'downloads',
   'claw-router-downloads.json',
 );
-const DEFAULT_RELEASE_REPOSITORY = 'https://github.com/Sdkwork-Cloud/sdkwork-claw-router';
+const DEFAULT_RELEASE_REPOSITORY = 'https://github.com/Sdkwork-Cloud/sdkwork-clawrouter';
 const DEFAULT_CHANNEL = 'stable';
 const DOWNLOAD_CDN_BASE_URL_ENV = 'CLAWROUTER_DOWNLOAD_CDN_BASE_URL';
 const DOWNLOAD_ARTIFACT_PLATFORMS = Object.freeze(['linux', 'windows', 'macos']);

@@ -11,7 +11,7 @@ from tools.schema_registry_loader import load_schema_registry
 
 
 ROOT = Path(__file__).resolve().parents[1]
-TABLE_REGISTRY_PATH = ROOT / "docs" / "schema-registry" / "sdkwork-claw-router.tables.yaml"
+TABLE_REGISTRY_PATH = ROOT / "docs" / "schema-registry" / "sdkwork-clawrouter.tables.yaml"
 BACKEND_OPENAPI_PATH = ROOT / "generated" / "openapi" / "clawrouter-backend-openapi.json"
 BACKEND_SDK_ROOT = (
     ROOT

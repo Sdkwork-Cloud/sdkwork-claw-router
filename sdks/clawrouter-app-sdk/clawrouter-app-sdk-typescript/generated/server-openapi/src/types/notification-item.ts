@@ -8,15 +8,15 @@ export interface NotificationItem {
   archived: boolean;
   /** Content field on notification item. */
   content: string;
-  /** User-facing short notification summary. */
+  /** Desc field on notification item. */
   desc: string;
   /** Id field on notification item. */
   id: string;
-  /** Server-side per-user state indicating that the popup has already been presented for this app. */
+  /** Popup seen field on notification item. */
   popupSeen: boolean;
   /** Read field on notification item. */
   read: boolean;
-  /** Whether this notification should be displayed as a modal popup when the frontend loads. */
+  /** Show as popup field on notification item. */
   showAsPopup: boolean;
   /** Time field on notification item. */
   time: string;

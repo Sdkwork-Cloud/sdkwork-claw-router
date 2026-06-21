@@ -237,7 +237,7 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
         manifest = read_json(DEPENDENCY_API_SURFACES)
         self.assertEqual(1, manifest["schemaVersion"])
         self.assertEqual("sdkwork.dependency-api-surfaces", manifest["kind"])
-        self.assertEqual("sdkwork-claw-router", manifest["application"])
+        self.assertEqual("sdkwork-clawrouter", manifest["application"])
 
         sdk_dependencies = collect_sdk_dependencies()
         manifest_entries = entries_by_sdk_dependency(manifest)
@@ -356,7 +356,7 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
             with self.subTest(productOperation=operation["operationId"]):
                 self.assertIn(key, clawrouter_operations)
                 self.assertEqual(operation["operationId"], clawrouter_operations[key]["operationId"])
-                self.assertEqual("sdkwork-claw-router", clawrouter_operations[key]["x-sdkwork-owner"])
+                self.assertEqual("sdkwork-clawrouter", clawrouter_operations[key]["x-sdkwork-owner"])
                 self.assertIsInstance(operation["consumerRequired"], bool)
                 self.assertIn("services/sdkwork-claw-product/src/api/admin_user.rs", operation["evidence"])
                 if operation["consumerRequired"]:

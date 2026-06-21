@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
-import { useSiteBranding } from 'sdkwork-clawrouter-pc-commons/runtime';
+import { useSiteBranding } from '@sdkwork/clawrouter-pc-commons/runtime';
 import { DownloadPanel } from './DownloadSection';
 import {
   clawRouterDownloadCatalog,

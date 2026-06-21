@@ -10,6 +10,7 @@ use sdkwork_claw_http::TrustedRequestSubject;
 use serde::Deserialize;
 
 use crate::api::response::PlusApiResult;
+use crate::api::subject::map_optional_app_user_subject;
 use crate::application::EntityUuidGenerator;
 use crate::domain::DomainError;
 use crate::infrastructure::OsApiKeySecretGenerator;
@@ -109,9 +110,9 @@ fn app_routing_strategy_router_with_state(
 
 async fn fetch_routing_strategy(
     State(state): State<AppRoutingStrategyState>,
-    headers: HeaderMap,
+    subject: Option<TrustedRequestSubject>,
 ) -> Response {
-    let subject = match resolve_routing_strategy_subject(&state, &headers) {
+    let subject = match resolve_routing_strategy_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -126,13 +127,11 @@ async fn fetch_routing_strategy(
 
 async fn update_routing_strategy(
     State(state): State<AppRoutingStrategyState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
     Json(request): Json<UpdateRoutingStrategyRequest>,
 ) -> Response {
-    let subject = match resolve_required_routing_strategy_subject(&state, &headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = resolve_required_routing_strategy_subject(trusted);
     let snapshot = match validate_update_routing_strategy_request(request) {
         Ok(snapshot) => snapshot,
         Err(message) => return bad_request(message),
@@ -153,38 +152,25 @@ async fn update_routing_strategy(
 }
 
 fn resolve_routing_strategy_subject(
-    state: &AppRoutingStrategyState,
-    headers: &HeaderMap,
+    subject: Option<TrustedRequestSubject>,
+    require_subject: bool,
 ) -> Result<Option<AppRoutingStrategySubject>, Response> {
-    match TrustedRequestSubject::from_headers(headers) {
-        Ok(subject) => Ok(Some(AppRoutingStrategySubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            user_id: subject.user_id,
-        })),
-        Err(error) if state.require_subject => Err((
-            StatusCode::UNAUTHORIZED,
-            Json(PlusApiResult::error("4010", error.to_string())),
-        )
-            .into_response()),
-        Err(_) => Ok(None),
-    }
+    map_optional_app_user_subject(subject, require_subject, |trusted| {
+        AppRoutingStrategySubject {
+            tenant_id: trusted.tenant_id,
+            organization_id: trusted.organization_id,
+            user_id: trusted.user_id,
+        }
+    })
 }
 
 fn resolve_required_routing_strategy_subject(
-    state: &AppRoutingStrategyState,
-    headers: &HeaderMap,
-) -> Result<AppRoutingStrategySubject, Response> {
-    match resolve_routing_strategy_subject(state, headers)? {
-        Some(subject) => Ok(subject),
-        None => Err((
-            StatusCode::UNAUTHORIZED,
-            Json(PlusApiResult::error(
-                "4010",
-                "trusted request subject is required for routing strategy command",
-            )),
-        )
-            .into_response()),
+    trusted: TrustedRequestSubject,
+) -> AppRoutingStrategySubject {
+    AppRoutingStrategySubject {
+        tenant_id: trusted.tenant_id,
+        organization_id: trusted.organization_id,
+        user_id: trusted.user_id,
     }
 }
 

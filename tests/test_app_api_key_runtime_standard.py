@@ -671,7 +671,7 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
 
     def test_app_api_key_creation_persists_idempotency_and_audit_request_id(self) -> None:
         schema = render_schema_registry(
-            ROOT / "docs" / "schema-registry" / "sdkwork-claw-router.tables.yaml"
+            ROOT / "docs" / "schema-registry" / "sdkwork-clawrouter.tables.yaml"
         )
         postgres_schema = (
             ROOT / "generated" / "schema" / "postgres" / "schema.sql"
@@ -721,10 +721,10 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
 
     def test_app_api_key_multi_group_bindings_are_in_database_schema(self) -> None:
         schema = render_schema_registry(
-            ROOT / "docs" / "schema-registry" / "sdkwork-claw-router.tables.yaml"
+            ROOT / "docs" / "schema-registry" / "sdkwork-clawrouter.tables.yaml"
         )
         effective_schema = (
-            ROOT / "generated" / "schema" / "registry" / "sdkwork-claw-router.tables.effective.yaml"
+            ROOT / "generated" / "schema" / "registry" / "sdkwork-clawrouter.tables.effective.yaml"
         ).read_text(encoding="utf-8")
         postgres_schema = (
             ROOT / "generated" / "schema" / "postgres" / "schema.sql"

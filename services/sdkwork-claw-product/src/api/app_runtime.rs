@@ -607,13 +607,11 @@ fn app_runtime_router_with_state(
 
 async fn list_invocations(
     State(state): State<AppRuntimeState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
     Query(query): Query<AppRuntimeListQuery>,
 ) -> Response {
-    let subject = match required_subject(&state, &headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = required_subject(trusted);
     let query = match normalize_invocation_query(query) {
         Ok(query) => query,
         Err(message) => return bad_request(message),
@@ -626,13 +624,11 @@ async fn list_invocations(
 
 async fn get_invocation(
     State(state): State<AppRuntimeState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
     Path(invocation_id): Path<String>,
 ) -> Response {
-    let subject = match required_subject(&state, &headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = required_subject(trusted);
     let invocation_id = match normalize_id(&invocation_id, "invocationId") {
         Ok(value) => value,
         Err(message) => return bad_request(message),
@@ -646,13 +642,11 @@ async fn get_invocation(
 
 async fn create_invocation(
     State(state): State<AppRuntimeState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
     Json(request): Json<AppRuntimeCreateInvocationRequest>,
 ) -> Response {
-    let subject = match required_subject(&state, &headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = required_subject(trusted);
     let command = match build_create_invocation_command(&state, subject, request) {
         Ok(command) => command,
         Err(AppRuntimeBuildError::BadRequest(message)) => return bad_request(message),
@@ -672,14 +666,12 @@ async fn create_invocation(
 
 async fn complete_invocation(
     State(state): State<AppRuntimeState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
     Path(invocation_id): Path<String>,
     Json(request): Json<AppRuntimeCompleteInvocationRequest>,
 ) -> Response {
-    let subject = match required_subject(&state, &headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = required_subject(trusted);
     let command = match build_complete_invocation_command(&state, subject, invocation_id, request) {
         Ok(command) => command,
         Err(AppRuntimeBuildError::BadRequest(message)) => return bad_request(message),
@@ -782,14 +774,12 @@ async fn request_runtime_stream_cancellation(
 
 async fn list_events(
     State(state): State<AppRuntimeState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
     Path(invocation_id): Path<String>,
     Query(query): Query<AppRuntimeListQuery>,
 ) -> Response {
-    let subject = match required_subject(&state, &headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = required_subject(trusted);
     let invocation_id = match normalize_id(&invocation_id, "invocationId") {
         Ok(value) => value,
         Err(message) => return bad_request(message),
@@ -808,14 +798,12 @@ async fn list_events(
 
 async fn stream_events(
     State(state): State<AppRuntimeState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
     Path(invocation_id): Path<String>,
     Query(query): Query<AppRuntimeListQuery>,
 ) -> Response {
-    let subject = match required_subject(&state, &headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = required_subject(trusted);
     let invocation_id = match normalize_id(&invocation_id, "invocationId") {
         Ok(value) => value,
         Err(message) => return bad_request(message),
@@ -953,14 +941,12 @@ async fn execute_or_complete_empty_stream(
 
 async fn create_event(
     State(state): State<AppRuntimeState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
     Path(invocation_id): Path<String>,
     Json(request): Json<AppRuntimeCreateEventRequest>,
 ) -> Response {
-    let subject = match required_subject(&state, &headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = required_subject(trusted);
     let command = match build_create_event_command(&state, subject, invocation_id, request) {
         Ok(command) => command,
         Err(AppRuntimeBuildError::BadRequest(message)) => return bad_request(message),
@@ -978,14 +964,12 @@ async fn create_event(
 
 async fn list_artifacts(
     State(state): State<AppRuntimeState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
     Path(invocation_id): Path<String>,
     Query(query): Query<AppRuntimeListQuery>,
 ) -> Response {
-    let subject = match required_subject(&state, &headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = required_subject(trusted);
     let invocation_id = match normalize_id(&invocation_id, "invocationId") {
         Ok(value) => value,
         Err(message) => return bad_request(message),
@@ -1004,14 +988,12 @@ async fn list_artifacts(
 
 async fn create_artifact(
     State(state): State<AppRuntimeState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
     Path(invocation_id): Path<String>,
     Json(request): Json<AppRuntimeCreateArtifactRequest>,
 ) -> Response {
-    let subject = match required_subject(&state, &headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = required_subject(trusted);
     let command = match build_create_artifact_command(&state, subject, invocation_id, request) {
         Ok(command) => command,
         Err(AppRuntimeBuildError::BadRequest(message)) => return bad_request(message),
@@ -5522,29 +5504,11 @@ fn normalize_invocation_query(
     })
 }
 
-fn required_subject(
-    state: &AppRuntimeState,
-    headers: &HeaderMap,
-) -> Result<AppRuntimeSubject, Response> {
-    match TrustedRequestSubject::from_headers(headers) {
-        Ok(subject) => Ok(AppRuntimeSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            user_id: subject.user_id,
-        }),
-        Err(error) if state.require_subject => Err((
-            StatusCode::UNAUTHORIZED,
-            Json(PlusApiResult::error("4010", error.to_string())),
-        )
-            .into_response()),
-        Err(_) => Err((
-            StatusCode::UNAUTHORIZED,
-            Json(PlusApiResult::error(
-                "4010",
-                "trusted request subject is required for app runtime",
-            )),
-        )
-            .into_response()),
+fn required_subject(trusted: TrustedRequestSubject) -> AppRuntimeSubject {
+    AppRuntimeSubject {
+        tenant_id: trusted.tenant_id,
+        organization_id: trusted.organization_id,
+        user_id: trusted.user_id,
     }
 }
 

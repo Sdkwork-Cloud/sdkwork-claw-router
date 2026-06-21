@@ -271,13 +271,11 @@ pub fn admin_channel_group_router_with_store(
 
 async fn fetch_channel_group_channel_bindings(
     State(state): State<AdminChannelGroupState>,
-    headers: HeaderMap,
-    Path(group_id): Path<String>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Path(group_id): Path<String>
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let group_id = match parse_positive_id(&group_id, "channel group id") {
         Ok(group_id) => group_id,
         Err(message) => return bad_request(message),
@@ -306,14 +304,12 @@ async fn fetch_channel_group_channel_bindings(
 
 async fn replace_channel_group_channel_bindings(
     State(state): State<AdminChannelGroupState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(group_id): Path<String>,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let group_id = match parse_positive_id(&group_id, "channel group id") {
         Ok(group_id) => group_id,
         Err(message) => return bad_request(message),
@@ -361,13 +357,11 @@ async fn replace_channel_group_channel_bindings(
 
 async fn fetch_channel_group_route_explain(
     State(state): State<AdminChannelGroupState>,
-    headers: HeaderMap,
-    Path(group_id): Path<String>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Path(group_id): Path<String>
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let group_id = match parse_positive_id(&group_id, "channel group id") {
         Ok(group_id) => group_id,
         Err(message) => return bad_request(message),
@@ -405,12 +399,10 @@ async fn fetch_channel_group_route_explain(
 
 async fn fetch_channel_groups(
     State(state): State<AdminChannelGroupState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
 
     match state
         .store
@@ -429,13 +421,11 @@ async fn fetch_channel_groups(
 
 async fn create_channel_group(
     State(state): State<AdminChannelGroupState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let request = match parse_json_body::<AdminChannelGroupCreateRequest>(&body, "channel group") {
         Ok(request) => request,
         Err(message) => return bad_request(message),
@@ -463,14 +453,12 @@ async fn create_channel_group(
 
 async fn update_channel_group(
     State(state): State<AdminChannelGroupState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(group_id): Path<String>,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let group_id = match parse_positive_id(&group_id, "channel group id") {
         Ok(group_id) => group_id,
         Err(message) => return bad_request(message),
@@ -503,13 +491,11 @@ async fn update_channel_group(
 
 async fn delete_channel_group(
     State(state): State<AdminChannelGroupState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Path(group_id): Path<String>,
+    Path(group_id): Path<String>
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let group_id = match parse_positive_id(&group_id, "channel group id") {
         Ok(group_id) => group_id,
         Err(message) => return bad_request(message),
@@ -532,21 +518,13 @@ async fn delete_channel_group(
     }
 }
 
-fn resolve_subject(headers: &HeaderMap) -> Result<AdminChannelGroupSubject, Response> {
-    TrustedRequestSubject::from_headers(headers)
-        .map(|subject| AdminChannelGroupSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            operator_id: subject.operator_id,
-            operator_type: subject.operator_type,
-        })
-        .map_err(|error| {
-            (
-                StatusCode::UNAUTHORIZED,
-                Json(PlusApiResult::error("4010", error.to_string())),
-            )
-                .into_response()
-        })
+fn map_subject(trusted: TrustedRequestSubject) -> AdminChannelGroupSubject {
+    AdminChannelGroupSubject {
+            tenant_id: trusted.tenant_id,
+            organization_id: trusted.organization_id,
+            operator_id: trusted.operator_id,
+            operator_type: trusted.operator_type,
+        }
 }
 
 fn parse_json_body<T>(body: &[u8], entity_name: &str) -> Result<T, String>

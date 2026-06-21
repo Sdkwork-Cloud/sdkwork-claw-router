@@ -5,7 +5,7 @@ from tools.schema_registry_loader import load_schema_registry
 
 
 ROOT = Path(__file__).resolve().parents[1]
-REGISTRY_PATH = ROOT / "docs" / "schema-registry" / "sdkwork-claw-router.tables.yaml"
+REGISTRY_PATH = ROOT / "docs" / "schema-registry" / "sdkwork-clawrouter.tables.yaml"
 CATALOG_PATH = ROOT / "docs" / "schema-registry" / "table-catalog.md"
 
 
@@ -54,7 +54,7 @@ class SchemaTableCatalogDocTest(unittest.TestCase):
         content = CATALOG_PATH.read_text(encoding="utf-8")
         self.assertIn(f"表总数：{table_count}", content)
         self.assertIn(
-            "生成来源：`docs/schema-registry/sdkwork-claw-router.tables.yaml`",
+            "生成来源：`docs/schema-registry/sdkwork-clawrouter.tables.yaml`",
             content,
         )
 

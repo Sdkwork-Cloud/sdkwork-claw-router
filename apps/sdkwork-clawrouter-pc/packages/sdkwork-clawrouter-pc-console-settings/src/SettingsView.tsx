@@ -2,8 +2,8 @@ import React, { useCallback, useState, useEffect } from 'react';
 import { Globe, Bell, Palette, Moon, Sun, Check, Loader2, Monitor } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useOutletContext } from 'react-router-dom';
-import { ConsoleContextProps } from 'sdkwork-clawrouter-pc-console-core';
-import { BusinessStatePanel } from 'sdkwork-clawrouter-pc-commons';
+import { ConsoleContextProps } from '@sdkwork/clawrouter-pc-console-core';
+import { BusinessStatePanel } from '@sdkwork/clawrouter-pc-commons';
 import { SettingsService, SettingsData } from './settingsService';
 
 import { useTranslation } from 'react-i18next';

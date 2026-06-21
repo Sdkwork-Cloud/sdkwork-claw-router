@@ -313,10 +313,11 @@ pub fn admin_messaging_router_with_store(
 
 async fn list_provider_accounts(
     State(state): State<AdminMessagingState>,
-    headers: HeaderMap,
-    Query(query): Query<AdminMessagingListRequestQuery>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Query(query): Query<AdminMessagingListRequestQuery>
 ) -> Response {
-    list_response(headers, query, |query| {
+    list_response(trusted, query, |query| {
         state.store.list_provider_accounts(query)
     })
     .await
@@ -324,10 +325,11 @@ async fn list_provider_accounts(
 
 async fn create_provider_account(
     State(state): State<AdminMessagingState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Json(request): Json<MessagingProviderAccountCreateRequest>,
+    Json(request): Json<MessagingProviderAccountCreateRequest>
 ) -> Response {
-    let command = match validated_provider_account_create_command(&headers, request) {
+    let command = match validated_provider_account_create_command(trusted, &headers, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -341,10 +343,11 @@ async fn create_provider_account(
 
 async fn list_sender_identities(
     State(state): State<AdminMessagingState>,
-    headers: HeaderMap,
-    Query(query): Query<AdminMessagingListRequestQuery>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Query(query): Query<AdminMessagingListRequestQuery>
 ) -> Response {
-    list_response(headers, query, |query| {
+    list_response(trusted, query, |query| {
         state.store.list_sender_identities(query)
     })
     .await
@@ -352,10 +355,11 @@ async fn list_sender_identities(
 
 async fn create_sender_identity(
     State(state): State<AdminMessagingState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Json(request): Json<MessagingSenderIdentityCreateRequest>,
+    Json(request): Json<MessagingSenderIdentityCreateRequest>
 ) -> Response {
-    let command = match validated_sender_identity_create_command(&headers, request) {
+    let command = match validated_sender_identity_create_command(trusted, &headers, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -369,18 +373,20 @@ async fn create_sender_identity(
 
 async fn list_templates(
     State(state): State<AdminMessagingState>,
-    headers: HeaderMap,
-    Query(query): Query<AdminMessagingListRequestQuery>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Query(query): Query<AdminMessagingListRequestQuery>
 ) -> Response {
-    list_response(headers, query, |query| state.store.list_templates(query)).await
+    list_response(trusted, query, |query| state.store.list_templates(query)).await
 }
 
 async fn create_template(
     State(state): State<AdminMessagingState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Json(request): Json<MessagingTemplateCreateRequest>,
+    Json(request): Json<MessagingTemplateCreateRequest>
 ) -> Response {
-    let command = match validated_template_create_command(&headers, request) {
+    let command = match validated_template_create_command(trusted, &headers, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -392,11 +398,12 @@ async fn create_template(
 
 async fn publish_template_version(
     State(state): State<AdminMessagingState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Path((template_id, version_id)): Path<(String, String)>,
+    Path((template_id, version_id)): Path<(String, String)>
 ) -> Response {
     let command =
-        match validated_publish_template_version_command(&headers, template_id, version_id) {
+        match validated_publish_template_version_command(trusted, &headers, template_id, version_id) {
             Ok(command) => command,
             Err(response) => return response,
         };
@@ -410,18 +417,20 @@ async fn publish_template_version(
 
 async fn list_route_rules(
     State(state): State<AdminMessagingState>,
-    headers: HeaderMap,
-    Query(query): Query<AdminMessagingListRequestQuery>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Query(query): Query<AdminMessagingListRequestQuery>
 ) -> Response {
-    list_response(headers, query, |query| state.store.list_route_rules(query)).await
+    list_response(trusted, query, |query| state.store.list_route_rules(query)).await
 }
 
 async fn create_route_rule(
     State(state): State<AdminMessagingState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Json(request): Json<MessagingRouteRuleCreateRequest>,
+    Json(request): Json<MessagingRouteRuleCreateRequest>
 ) -> Response {
-    let command = match validated_route_rule_create_command(&headers, request) {
+    let command = match validated_route_rule_create_command(trusted, &headers, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -433,10 +442,11 @@ async fn create_route_rule(
 
 async fn list_send_requests(
     State(state): State<AdminMessagingState>,
-    headers: HeaderMap,
-    Query(query): Query<AdminMessagingListRequestQuery>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Query(query): Query<AdminMessagingListRequestQuery>
 ) -> Response {
-    list_response(headers, query, |query| {
+    list_response(trusted, query, |query| {
         state.store.list_send_requests(query)
     })
     .await
@@ -444,10 +454,11 @@ async fn list_send_requests(
 
 async fn simulate_route(
     State(state): State<AdminMessagingState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Json(request): Json<MessagingRouteSimulationRequest>,
+    Json(request): Json<MessagingRouteSimulationRequest>
 ) -> Response {
-    let command = match validated_route_simulation_command(&headers, request) {
+    let command = match validated_route_simulation_command(trusted, &headers, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -459,10 +470,11 @@ async fn simulate_route(
 
 async fn test_send(
     State(state): State<AdminMessagingState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Json(request): Json<MessagingTestSendRequest>,
+    Json(request): Json<MessagingTestSendRequest>
 ) -> Response {
-    let command = match validated_test_send_command(&headers, request) {
+    let command = match validated_test_send_command(trusted, &headers, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -474,10 +486,11 @@ async fn test_send(
 
 async fn send_template(
     State(state): State<AdminMessagingState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Json(request): Json<MessagingTemplateSendRequest>,
+    Json(request): Json<MessagingTemplateSendRequest>
 ) -> Response {
-    let command = match validated_template_send_command(&headers, request) {
+    let command = match validated_template_send_command(trusted, &headers, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -489,18 +502,20 @@ async fn send_template(
 
 async fn list_suppressions(
     State(state): State<AdminMessagingState>,
-    headers: HeaderMap,
-    Query(query): Query<AdminMessagingListRequestQuery>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Query(query): Query<AdminMessagingListRequestQuery>
 ) -> Response {
-    list_response(headers, query, |query| state.store.list_suppressions(query)).await
+    list_response(trusted, query, |query| state.store.list_suppressions(query)).await
 }
 
 async fn create_suppression(
     State(state): State<AdminMessagingState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Json(request): Json<MessagingSuppressionCreateRequest>,
+    Json(request): Json<MessagingSuppressionCreateRequest>
 ) -> Response {
-    let command = match validated_suppression_create_command(&headers, request) {
+    let command = match validated_suppression_create_command(trusted, &headers, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -514,10 +529,11 @@ async fn create_suppression(
 
 async fn list_rate_limit_buckets(
     State(state): State<AdminMessagingState>,
-    headers: HeaderMap,
-    Query(query): Query<AdminMessagingListRequestQuery>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Query(query): Query<AdminMessagingListRequestQuery>
 ) -> Response {
-    list_response(headers, query, |query| {
+    list_response(trusted, query, |query| {
         state.store.list_rate_limit_buckets(query)
     })
     .await
@@ -525,10 +541,11 @@ async fn list_rate_limit_buckets(
 
 async fn list_verification_policies(
     State(state): State<AdminMessagingState>,
-    headers: HeaderMap,
-    Query(query): Query<AdminMessagingListRequestQuery>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Query(query): Query<AdminMessagingListRequestQuery>
 ) -> Response {
-    list_response(headers, query, |query| {
+    list_response(trusted, query, |query| {
         state.store.list_verification_policies(query)
     })
     .await
@@ -536,11 +553,12 @@ async fn list_verification_policies(
 
 async fn update_verification_policy(
     State(state): State<AdminMessagingState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(policy_id): Path<String>,
-    Json(request): Json<VerificationPolicyUpdateRequest>,
+    Json(request): Json<VerificationPolicyUpdateRequest>
 ) -> Response {
-    let command = match validated_verification_policy_update_command(&headers, policy_id, request) {
+    let command = match validated_verification_policy_update_command(trusted, &headers, policy_id, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -553,7 +571,7 @@ async fn update_verification_policy(
 }
 
 async fn list_response<'a, F>(
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
     query: AdminMessagingListRequestQuery,
     load: F,
 ) -> Response
@@ -562,7 +580,7 @@ where
         ListAdminMessagingRecordsQuery,
     ) -> AdminMessagingCommandFuture<'a, AdminMessagingCollection>,
 {
-    let query = match validated_list_query(&headers, query) {
+    let query = match validated_list_query(trusted, query) {
         Ok(query) => query,
         Err(response) => return response,
     };
@@ -583,10 +601,10 @@ fn collection_response(collection: AdminMessagingCollection) -> Response {
 }
 
 fn validated_list_query(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
     query: AdminMessagingListRequestQuery,
 ) -> Result<ListAdminMessagingRecordsQuery, Response> {
-    let subject = resolve_subject(headers)?;
+    let subject = map_subject(trusted);
     let page_no = query.page.unwrap_or(DEFAULT_PAGE_NO);
     if page_no < 1 {
         return Err(bad_request("page must be greater than or equal to 1"));
@@ -620,10 +638,11 @@ fn validated_list_query(
 }
 
 fn validated_provider_account_create_command(
+    trusted: TrustedRequestSubject,
     headers: &HeaderMap,
     request: MessagingProviderAccountCreateRequest,
 ) -> Result<CreateMessagingProviderAccountCommand, Response> {
-    let subject = resolve_subject(headers)?;
+    let subject = map_subject(trusted);
     let idempotency_key = required_header(headers, IDEMPOTENCY_KEY_HEADER)?;
     let request_id = server_request_id()?;
     Ok(CreateMessagingProviderAccountCommand {
@@ -663,10 +682,11 @@ fn validated_provider_account_create_command(
 }
 
 fn validated_sender_identity_create_command(
+    trusted: TrustedRequestSubject,
     headers: &HeaderMap,
     request: MessagingSenderIdentityCreateRequest,
 ) -> Result<CreateMessagingSenderIdentityCommand, Response> {
-    let subject = resolve_subject(headers)?;
+    let subject = map_subject(trusted);
     let idempotency_key = required_header(headers, IDEMPOTENCY_KEY_HEADER)?;
     let request_id = server_request_id()?;
     let channel = normalize_required_channel(request.channel)?;
@@ -718,10 +738,11 @@ fn validated_sender_identity_create_command(
 }
 
 fn validated_template_create_command(
+    trusted: TrustedRequestSubject,
     headers: &HeaderMap,
     request: MessagingTemplateCreateRequest,
 ) -> Result<CreateMessagingTemplateCommand, Response> {
-    let subject = resolve_subject(headers)?;
+    let subject = map_subject(trusted);
     let idempotency_key = required_header(headers, IDEMPOTENCY_KEY_HEADER)?;
     let request_id = server_request_id()?;
     let content_format = normalize_optional_text(
@@ -774,11 +795,12 @@ fn validated_template_create_command(
 }
 
 fn validated_publish_template_version_command(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: &HeaderMap,
     template_id: String,
     version_id: String,
 ) -> Result<PublishMessagingTemplateVersionCommand, Response> {
-    let subject = resolve_subject(headers)?;
+    let subject = map_subject(trusted);
     let request_id = server_request_id()?;
     Ok(PublishMessagingTemplateVersionCommand {
         subject,
@@ -789,10 +811,11 @@ fn validated_publish_template_version_command(
 }
 
 fn validated_route_rule_create_command(
+    trusted: TrustedRequestSubject,
     headers: &HeaderMap,
     request: MessagingRouteRuleCreateRequest,
 ) -> Result<CreateMessagingRouteRuleCommand, Response> {
-    let subject = resolve_subject(headers)?;
+    let subject = map_subject(trusted);
     let idempotency_key = required_header(headers, IDEMPOTENCY_KEY_HEADER)?;
     let request_id = server_request_id()?;
     if request.targets.is_empty() || request.targets.len() > MAX_ROUTE_TARGETS {
@@ -873,10 +896,11 @@ fn validated_route_rule_create_command(
 }
 
 fn validated_route_simulation_command(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: &HeaderMap,
     request: MessagingRouteSimulationRequest,
 ) -> Result<AdminMessagingRouteSimulationCommand, Response> {
-    let subject = resolve_subject(headers)?;
+    let subject = map_subject(trusted);
     let request_id = server_request_id()?;
     Ok(AdminMessagingRouteSimulationCommand {
         subject,
@@ -899,10 +923,11 @@ fn validated_route_simulation_command(
 }
 
 fn validated_test_send_command(
+    trusted: TrustedRequestSubject,
     headers: &HeaderMap,
     request: MessagingTestSendRequest,
 ) -> Result<AdminMessagingTestSendCommand, Response> {
-    let subject = resolve_subject(headers)?;
+    let subject = map_subject(trusted);
     let idempotency_key = required_header(headers, IDEMPOTENCY_KEY_HEADER)?;
     let request_id = server_request_id()?;
     let scene_code = normalize_required_text(request.scene_code, "sceneCode", MAX_CODE_LEN)?;
@@ -944,10 +969,11 @@ fn validated_test_send_command(
 }
 
 fn validated_template_send_command(
+    trusted: TrustedRequestSubject,
     headers: &HeaderMap,
     request: MessagingTemplateSendRequest,
 ) -> Result<AdminMessagingTemplateSendCommand, Response> {
-    let subject = resolve_subject(headers)?;
+    let subject = map_subject(trusted);
     let idempotency_key = required_header(headers, IDEMPOTENCY_KEY_HEADER)?;
     let request_id = server_request_id()?;
     Ok(AdminMessagingTemplateSendCommand {
@@ -992,10 +1018,11 @@ fn validated_template_send_command(
 }
 
 fn validated_suppression_create_command(
+    trusted: TrustedRequestSubject,
     headers: &HeaderMap,
     request: MessagingSuppressionCreateRequest,
 ) -> Result<CreateMessagingSuppressionCommand, Response> {
-    let subject = resolve_subject(headers)?;
+    let subject = map_subject(trusted);
     let idempotency_key = required_header(headers, IDEMPOTENCY_KEY_HEADER)?;
     let request_id = server_request_id()?;
     let (starts_at, starts_at_key) = normalize_required_timestamp(request.starts_at, "startsAt")?;
@@ -1037,11 +1064,12 @@ fn validated_suppression_create_command(
 }
 
 fn validated_verification_policy_update_command(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: &HeaderMap,
     policy_id: String,
     request: VerificationPolicyUpdateRequest,
 ) -> Result<UpdateVerificationPolicyCommand, Response> {
-    let subject = resolve_subject(headers)?;
+    let subject = map_subject(trusted);
     let request_id = server_request_id()?;
     if request.allowed_channels.is_empty() || request.allowed_channels.len() > 2 {
         return Err(bad_request("allowedChannels must contain 1 to 2 channels"));
@@ -1108,21 +1136,13 @@ fn validated_verification_policy_update_command(
     })
 }
 
-fn resolve_subject(headers: &HeaderMap) -> Result<AdminMessagingSubject, Response> {
-    TrustedRequestSubject::from_headers(headers)
-        .map(|subject| AdminMessagingSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            operator_id: subject.operator_id,
-            operator_type: subject.operator_type,
-        })
-        .map_err(|error| {
-            (
-                StatusCode::UNAUTHORIZED,
-                Json(PlusApiResult::error("4010", error.to_string())),
-            )
-                .into_response()
-        })
+fn map_subject(trusted: TrustedRequestSubject) -> AdminMessagingSubject {
+    AdminMessagingSubject {
+            tenant_id: trusted.tenant_id,
+            organization_id: trusted.organization_id,
+            operator_id: trusted.operator_id,
+            operator_type: trusted.operator_type,
+        }
 }
 
 fn required_header(headers: &HeaderMap, name: &str) -> Result<String, Response> {

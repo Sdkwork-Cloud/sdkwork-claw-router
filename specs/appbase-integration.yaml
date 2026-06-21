@@ -2,10 +2,10 @@ schemaVersion: 1
 kind: sdkwork.appbase.integration
 standardVersion: 2026-05-21
 app:
-  key: sdkwork-claw-router
+  key: sdkwork-clawrouter
   role: assembly-layer
   rule: >
-    sdkwork-claw-router composes sdkwork-appbase capabilities through generated
+    sdkwork-clawrouter composes sdkwork-appbase capabilities through generated
     SDK adapters, app-specific runtime configuration, route registration,
     product seed data, and installer hooks. It must not fork appbase-owned
     stores, SDK clients, or base capability contracts.
@@ -70,7 +70,6 @@ integrations:
         - "@sdkwork/notification-pc-react"
       adapters:
         - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
-        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-messages/src/messagesService.ts
     contractTests:
       - tests/test_console_messages_runtime_standard.py
       - tests/test_console_messages_backend_runtime_standard.py

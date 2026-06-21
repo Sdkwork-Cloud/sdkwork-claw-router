@@ -14,7 +14,7 @@ pub struct RouterApiRouteManifest {
 pub const PACKAGE_NAME: &str = "sdkwork-router-video-open-api";
 pub const CAPABILITY: &str = "video";
 pub const SURFACE: &str = "open-api";
-pub const API_AUTHORITY: &str = "sdkwork-claw-router.video-open-api";
+pub const API_AUTHORITY: &str = "sdkwork-clawrouter.video-open-api";
 pub const SDK_FAMILY: &str = "clawrouter-open-sdk";
 
 pub fn route_manifest() -> RouterApiRouteManifest {

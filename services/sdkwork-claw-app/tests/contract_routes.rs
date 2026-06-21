@@ -49,7 +49,7 @@ async fn default_router_does_not_mount_appbase_app_api_key_routes_locally() {
 }
 
 #[tokio::test]
-async fn database_config_router_exposes_sdk_reference_generation_route() {
+async fn database_config_router_does_not_mount_sdk_reference_generation_route_locally() {
     let _guard = env_guard().lock().unwrap();
     clear_generator_env();
 
@@ -79,15 +79,10 @@ async fn database_config_router_exposes_sdk_reference_generation_route() {
     let body = axum::body::to_bytes(response.into_body(), usize::MAX)
         .await
         .unwrap();
-    let payload: Value = serde_json::from_slice(&body).unwrap();
+    let payload: Value = serde_json::from_slice(&body).unwrap_or(Value::Null);
 
-    assert_eq!(StatusCode::OK, status);
-    assert_eq!("2000", payload["code"]);
-    assert_eq!("typescript", payload["data"]["language"]);
-    assert_eq!(false, payload["data"]["generated"]);
-    assert!(payload["data"]["readme"]
-        .as_str()
-        .is_some_and(|value| value.contains("Claw Router App API")));
+    assert_eq!(StatusCode::NOT_FOUND, status);
+    assert_eq!(Value::Null, payload);
 
     clear_generator_env();
 }
@@ -380,13 +375,11 @@ async fn default_router_does_not_mount_commerce_membership_foundation_routes_loc
 }
 
 #[tokio::test]
-async fn app_skills_route_is_exposed_by_default_router() {
+async fn app_skills_route_is_not_exposed_by_default_router() {
     let (status, payload) = call(Method::GET, "/app/v3/api/ecosystem/skills").await;
 
-    assert_eq!(StatusCode::OK, status);
-    assert_eq!("2000", payload["code"]);
-    assert_eq!("SUCCESS", payload["msg"]);
-    assert_eq!(0, payload["data"]["items"].as_array().unwrap().len());
+    assert_eq!(StatusCode::NOT_FOUND, status);
+    assert_eq!(Value::Null, payload);
 }
 
 #[tokio::test]

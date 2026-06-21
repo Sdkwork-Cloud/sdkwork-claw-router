@@ -2,11 +2,11 @@ import {
   isRecord,
   readRequiredString,
   type ApiRecord,
-} from 'sdkwork-clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawrouter-pc-commons/runtime';
 import {
   readMediaResource,
   type ClawRouterMediaResource,
-} from 'sdkwork-clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawrouter-pc-commons/runtime';
 import { normalizeSdkworkGenerationHistoryType } from '@sdkwork/generations-pc-workspace/generation-history';
 import type { PlaygroundHistoryItem, PlaygroundMedia } from './playgroundTypes.ts';
 

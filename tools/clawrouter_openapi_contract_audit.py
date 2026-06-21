@@ -762,7 +762,7 @@ def method_upper(method: str) -> str:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Audit Claw Router OpenAPI operation contract strength.")
-    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-claw-router root directory")
+    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-clawrouter root directory")
     parser.add_argument("--openapi-dir", type=Path, default=None, help="OpenAPI output directory")
     args = parser.parse_args()
 

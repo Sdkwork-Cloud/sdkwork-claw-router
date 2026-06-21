@@ -10,7 +10,7 @@ Root SDKWork standards remain authoritative. Local component specs can narrow or
 | --- | --- |
 | Name | `@sdkwork/file-sdk-ports` |
 | Type | `node-package` |
-| Root | `sdkwork-claw-router/packages/common/file/sdkwork-file-sdk-ports` |
+| Root | `sdkwork-clawrouter/packages/common/file/sdkwork-file-sdk-ports` |
 | Domain | `file` |
 | Capability | `file-sdk-ports` |
 | Languages | `typescript` |

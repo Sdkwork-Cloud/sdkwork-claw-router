@@ -104,7 +104,6 @@ class FrontendClipboardStandardTest(unittest.TestCase):
             / "src"
             / "pages"
             / "SdkReference.tsx",
-            FRONTEND_ROOT / "sdkwork-clawrouter-pc-skills-hub" / "src" / "pages" / "SkillDetails.tsx",
         ]
         offenders: list[str] = []
 

@@ -452,8 +452,8 @@ class ClawRouterSkillGuardian:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Check sdkwork-claw-router project-local SDK skills.")
-    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-claw-router root directory")
+    parser = argparse.ArgumentParser(description="Check sdkwork-clawrouter project-local SDK skills.")
+    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-clawrouter root directory")
     args = parser.parse_args()
 
     result = ClawRouterSkillGuardian(root=args.root).run()

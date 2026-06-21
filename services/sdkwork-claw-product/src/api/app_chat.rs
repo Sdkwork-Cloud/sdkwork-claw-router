@@ -218,13 +218,11 @@ fn app_chat_router_with_state(
 
 async fn list_conversations(
     State(state): State<AppChatState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
     Query(query): Query<AppChatListQuery>,
 ) -> Response {
-    let subject = match required_subject(&state, &headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = required_subject(trusted);
     let (page, page_size) = match normalize_page(query) {
         Ok(value) => value,
         Err(message) => return bad_request(message),
@@ -241,13 +239,11 @@ async fn list_conversations(
 
 async fn get_conversation(
     State(state): State<AppChatState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
     Path(conversation_id): Path<String>,
 ) -> Response {
-    let subject = match required_subject(&state, &headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = required_subject(trusted);
     let conversation_id = match normalize_id(&conversation_id, "conversationId") {
         Ok(value) => value,
         Err(message) => return bad_request(message),
@@ -261,13 +257,11 @@ async fn get_conversation(
 
 async fn create_conversation(
     State(state): State<AppChatState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
     Json(request): Json<AppChatCreateConversationRequest>,
 ) -> Response {
-    let subject = match required_subject(&state, &headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = required_subject(trusted);
     let command = match build_create_conversation_command(&state, subject, request) {
         Ok(command) => command,
         Err(AppChatBuildError::BadRequest(message)) => return bad_request(message),
@@ -290,13 +284,11 @@ async fn create_conversation(
 
 async fn list_messages(
     State(state): State<AppChatState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
     Path(conversation_id): Path<String>,
 ) -> Response {
-    let subject = match required_subject(&state, &headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = required_subject(trusted);
     let conversation_id = match normalize_id(&conversation_id, "conversationId") {
         Ok(value) => value,
         Err(message) => return bad_request(message),
@@ -312,14 +304,12 @@ async fn list_messages(
 
 async fn create_turn(
     State(state): State<AppChatState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
     Path(conversation_id): Path<String>,
     Json(request): Json<AppChatCreateTurnRequest>,
 ) -> Response {
-    let subject = match required_subject(&state, &headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = required_subject(trusted);
     let command = match build_create_turn_command(&state, subject, conversation_id, request) {
         Ok(command) => command,
         Err(AppChatBuildError::BadRequest(message)) => return bad_request(message),
@@ -336,14 +326,12 @@ async fn create_turn(
 
 async fn complete_turn_response(
     State(state): State<AppChatState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
     Path((conversation_id, turn_id)): Path<(String, String)>,
     Json(request): Json<AppChatCompleteTurnResponseRequest>,
 ) -> Response {
-    let subject = match required_subject(&state, &headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = required_subject(trusted);
     let command = match build_complete_turn_response_command(
         &state,
         subject,
@@ -495,26 +483,11 @@ fn build_complete_turn_response_command(
     })
 }
 
-fn required_subject(state: &AppChatState, headers: &HeaderMap) -> Result<AppChatSubject, Response> {
-    match TrustedRequestSubject::from_headers(headers) {
-        Ok(subject) => Ok(AppChatSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            user_id: subject.user_id,
-        }),
-        Err(error) if state.require_subject => Err((
-            StatusCode::UNAUTHORIZED,
-            Json(PlusApiResult::error("4010", error.to_string())),
-        )
-            .into_response()),
-        Err(_) => Err((
-            StatusCode::UNAUTHORIZED,
-            Json(PlusApiResult::error(
-                "4010",
-                "trusted request subject is required for app chat",
-            )),
-        )
-            .into_response()),
+fn required_subject(trusted: TrustedRequestSubject) -> AppChatSubject {
+    AppChatSubject {
+        tenant_id: trusted.tenant_id,
+        organization_id: trusted.organization_id,
+        user_id: trusted.user_id,
     }
 }
 

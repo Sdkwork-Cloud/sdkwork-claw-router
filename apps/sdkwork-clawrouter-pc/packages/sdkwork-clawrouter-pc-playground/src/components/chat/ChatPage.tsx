@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import {
   emptyRuntimeUsageSnapshot,
   mergeRuntimeUsageSnapshots,
-} from 'sdkwork-clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawrouter-pc-commons/runtime';
 import { PlaygroundService } from '../../playgroundService';
 import {
   clearStoredChatInFlightStream,

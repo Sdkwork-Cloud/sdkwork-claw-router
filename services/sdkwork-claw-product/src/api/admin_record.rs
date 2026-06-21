@@ -39,13 +39,11 @@ pub fn admin_record_router_with_store(store: Arc<dyn AdminRecordStore + Send + S
 
 async fn fetch_logs(
     State(state): State<AdminRecordState>,
-    headers: HeaderMap,
-    Query(request): Query<AdminRecordListQuery>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Query(request): Query<AdminRecordListQuery>
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let query = match build_query(subject, request) {
         Ok(query) => query,
         Err(message) => return bad_request(message),
@@ -57,21 +55,13 @@ async fn fetch_logs(
     }
 }
 
-fn resolve_subject(headers: &HeaderMap) -> Result<AdminRecordSubject, Response> {
-    TrustedRequestSubject::from_headers(headers)
-        .map(|subject| AdminRecordSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            operator_id: subject.operator_id,
-            operator_type: subject.operator_type,
-        })
-        .map_err(|error| {
-            (
-                StatusCode::UNAUTHORIZED,
-                Json(PlusApiResult::error("4010", error.to_string())),
-            )
-                .into_response()
-        })
+fn map_subject(trusted: TrustedRequestSubject) -> AdminRecordSubject {
+    AdminRecordSubject {
+            tenant_id: trusted.tenant_id,
+            organization_id: trusted.organization_id,
+            operator_id: trusted.operator_id,
+            operator_type: trusted.operator_type,
+        }
 }
 
 fn build_query(

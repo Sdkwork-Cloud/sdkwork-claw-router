@@ -27,8 +27,8 @@ python --version
 ## 2. 获取源码
 
 ```powershell
-git clone https://github.com/Sdkwork-Cloud/sdkwork-claw-router.git
-cd sdkwork-claw-router
+git clone https://github.com/Sdkwork-Cloud/sdkwork-clawrouter.git
+cd sdkwork-clawrouter
 ```
 
 安装 portal workspace 依赖：

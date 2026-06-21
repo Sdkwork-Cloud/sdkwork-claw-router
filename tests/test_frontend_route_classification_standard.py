@@ -97,7 +97,7 @@ class FrontendRouteClassificationStandardTest(unittest.TestCase):
         classification = self._classification()
         route_entries = self._route_entries(classification)
 
-        self.assertEqual("sdkwork-claw-router-frontend-route-classification", classification["schema"])
+        self.assertEqual("sdkwork-clawrouter-frontend-route-classification", classification["schema"])
         self.assertEqual("apps/sdkwork-clawrouter-pc/src/App.tsx", classification["source"])
 
         classified_routes = [entry.get("route") for entry in route_entries]
@@ -110,7 +110,7 @@ class FrontendRouteClassificationStandardTest(unittest.TestCase):
             with self.subTest(route=route):
                 self.assertIn(entry.get("delivery_kind"), ALLOWED_DELIVERY_KINDS)
                 self.assertIsInstance(entry.get("package"), str)
-                self.assertTrue(entry["package"].startswith("sdkwork-claw-router-") or entry["package"] == "portal-root")
+                self.assertTrue(entry["package"].startswith("sdkwork-clawrouter-") or entry["package"] == "portal-root")
                 self.assertIsInstance(entry.get("owner"), str)
                 self.assertTrue(entry["owner"].strip())
                 self.assertIsInstance(entry.get("evidence"), list)
@@ -411,7 +411,7 @@ class FrontendRouteClassificationStandardTest(unittest.TestCase):
         self.assertEqual(f"static-route:{route}", manifest_ref)
 
         manifest = self._static_source_manifest()
-        self.assertEqual("sdkwork-claw-router-frontend-static-source-manifest", manifest.get("schema"))
+        self.assertEqual("sdkwork-clawrouter-frontend-static-source-manifest", manifest.get("schema"))
         self.assertEqual(1, manifest.get("version"))
         snapshots = manifest.get("snapshots")
         self.assertIsInstance(snapshots, dict)

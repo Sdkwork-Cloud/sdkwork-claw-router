@@ -138,13 +138,11 @@ pub fn admin_provider_secret_router_with_store(
 
 async fn fetch_provider_secrets(
     State(state): State<AdminProviderSecretState>,
-    headers: HeaderMap,
-    body: Bytes,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let request = match parse_json_object(&body, "provider secret list body is invalid", true) {
         Ok(request) => request,
         Err(message) => return bad_request(message),
@@ -175,13 +173,11 @@ async fn fetch_provider_secrets(
 
 async fn fetch_provider_secrets_from_query(
     State(state): State<AdminProviderSecretState>,
-    headers: HeaderMap,
-    Query(query): Query<ProviderSecretListQuery>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Query(query): Query<ProviderSecretListQuery>
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let request = match normalize_list_query(query) {
         Ok(request) => request,
         Err(message) => return bad_request(message),
@@ -208,13 +204,11 @@ async fn fetch_provider_secrets_from_query(
 
 async fn create_provider_secret(
     State(state): State<AdminProviderSecretState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let request = match parse_json_object(&body, "provider secret request body is required", false)
     {
         Ok(request) => request,
@@ -243,13 +237,11 @@ async fn create_provider_secret(
 
 async fn update_provider_secret(
     State(state): State<AdminProviderSecretState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let request = match parse_json_object(&body, "provider secret update body is required", false) {
         Ok(request) => request,
         Err(message) => return bad_request(message),
@@ -278,13 +270,11 @@ async fn update_provider_secret(
 
 async fn delete_provider_secret(
     State(state): State<AdminProviderSecretState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Path(secret_id): Path<String>,
+    Path(secret_id): Path<String>
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let secret_id = match parse_positive_id(&secret_id, "provider secret id") {
         Ok(secret_id) => secret_id,
         Err(message) => return bad_request(message),
@@ -307,21 +297,13 @@ async fn delete_provider_secret(
     }
 }
 
-fn resolve_subject(headers: &HeaderMap) -> Result<AdminProviderSecretSubject, Response> {
-    TrustedRequestSubject::from_headers(headers)
-        .map(|subject| AdminProviderSecretSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            operator_id: subject.operator_id,
-            operator_type: subject.operator_type,
-        })
-        .map_err(|error| {
-            (
-                StatusCode::UNAUTHORIZED,
-                Json(PlusApiResult::error("4010", error.to_string())),
-            )
-                .into_response()
-        })
+fn map_subject(trusted: TrustedRequestSubject) -> AdminProviderSecretSubject {
+    AdminProviderSecretSubject {
+            tenant_id: trusted.tenant_id,
+            organization_id: trusted.organization_id,
+            operator_id: trusted.operator_id,
+            operator_type: trusted.operator_type,
+        }
 }
 
 fn parse_json_object(

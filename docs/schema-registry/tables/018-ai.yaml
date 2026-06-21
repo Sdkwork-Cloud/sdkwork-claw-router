@@ -7,6 +7,7 @@ tables:
   write_owner: model-catalog-service
   common_columns: tenant_entity
   frontend_routes:
+  - /
   - /models
   - /models/:id
   - /models/:provider/:model
@@ -78,6 +79,7 @@ tables:
   write_owner: model-catalog-service
   common_columns: tenant_entity
   frontend_routes:
+  - /
   - /models
   - /models/:id
   - /models/:provider/:model
@@ -240,6 +242,7 @@ tables:
   write_owner: model-catalog-service
   common_columns: tenant_entity
   frontend_routes:
+  - /
   - /models
   - /models/:id
   - /models/:provider/:model
@@ -502,6 +505,7 @@ tables:
   write_owner: pricing-service
   common_columns: tenant_entity
   frontend_routes:
+  - /
   - /models
   - /console/usage
   - /admin/group
@@ -573,6 +577,7 @@ tables:
   write_owner: pricing-service
   common_columns: tenant_entity
   frontend_routes:
+  - /
   - /models
   - /models/:id
   - /models/:provider/:model
@@ -3685,214 +3690,4 @@ tables:
     sensitivity: AGENT_MCP
     stores_secret_plaintext: false
     secret_reference_only: true
-    audit_required: true
-- table: ai_generation_session
-  domain: ai
-  profile: user_entity
-  compliance_level: L2
-  system_of_record: true
-  write_owner: generation-service
-  common_columns: user_entity
-  frontend_routes:
-  - /playground
-  api_surfaces:
-  - app
-  columns:
-    session_code: string(64)
-    title: string(200)
-    active_modality: enum_int32
-    selected_models: json
-    filter_config: json
-    last_prompt: text
-    last_opened_at: instant
-  indexes:
-  - name: uk_ai_generation_session_user_code
-    unique: true
-    columns:
-    - tenant_id
-    - organization_id
-    - user_id
-    - session_code
-  - name: idx_ai_generation_session_user_updated
-    columns:
-    - tenant_id
-    - organization_id
-    - user_id
-    - updated_at
-    - id
-- table: ai_generation_job
-  domain: ai
-  profile: event_log
-  compliance_level: L3
-  system_of_record: true
-  write_owner: generation-service
-  common_columns: event_log
-  frontend_routes:
-  - /playground
-  api_surfaces:
-  - app
-  - worker
-  columns:
-    session_id: int64
-    job_type: enum_int32
-    modality: enum_int32
-    model: string(256)
-    provider_id: int64
-    channel_id: int64
-    prompt: text
-    negative_prompt: text
-    input_asset_ids: json
-    parameter_snapshot: json
-    progress_percent: int32
-    started_at: instant
-    completed_at: instant
-    failure_code: string(128)
-    failure_message_masked: string(1024)
-    usage_fact_id: int64
-  indexes:
-  - name: uk_ai_generation_job_request
-    unique: true
-    columns:
-    - tenant_id
-    - organization_id
-    - request_id
-  - name: idx_ai_generation_job_user_modality_created
-    columns:
-    - tenant_id
-    - organization_id
-    - user_id
-    - modality
-    - created_at
-    - id
-  - name: idx_ai_generation_job_status_created
-    columns:
-    - tenant_id
-    - organization_id
-    - status
-    - created_at
-    - id
-  lifecycle:
-    partition_by: created_at_month
-    online_retention: 90d
-    archive_retention: 1y
-  security:
-    sensitivity: USER_CONTENT
-    pii: true
-    encryption_required: true
-    prompt_redaction_required: true
-    stores_secret_plaintext: false
-    audit_required: true
-- table: ai_generation_asset
-  domain: ai
-  profile: user_entity
-  compliance_level: L3
-  system_of_record: true
-  write_owner: generation-service
-  common_columns: user_entity
-  frontend_routes:
-  - /playground
-  api_surfaces:
-  - app
-  columns:
-    job_id: int64
-    asset_type: enum_int32
-    asset_media_resource_id: string(128)
-    asset_object_blob_id: int64
-    asset_resource_snapshot: json
-    thumbnail_media_resource_id: string(128)
-    thumbnail_object_blob_id: int64
-    thumbnail_resource_snapshot: json
-    storage_provider: string(64)
-    object_key: string(1024)
-    mime_type: string(128)
-    file_size: int64
-    duration_seconds: decimal
-    width: int32
-    height: int32
-    prompt_snapshot: text
-    model_snapshot: string(128)
-    parameter_snapshot: json
-    active_index: int32
-    visibility: enum_int32
-    favorite: bool
-    shared: bool
-    share_token_hash: string(128)
-    download_count: int64
-    last_accessed_at: instant
-    expire_at: instant
-  indexes:
-  - name: idx_ai_generation_asset_user_type_created
-    columns:
-    - tenant_id
-    - organization_id
-    - user_id
-    - asset_type
-    - created_at
-    - id
-  - name: idx_ai_generation_asset_job
-    columns:
-    - job_id
-    - id
-  - name: idx_ai_generation_asset_favorite
-    columns:
-    - tenant_id
-    - organization_id
-    - user_id
-    - favorite
-    - updated_at
-    - id
-  lifecycle:
-    online_retention: 180d
-    archive_retention: 2y
-  security:
-    sensitivity: USER_GENERATED_MEDIA
-    pii: true
-    signed_url_not_persisted: true
-    share_token_stored_as_hash: true
-    audit_required: true
-- table: ai_generation_asset_action
-  domain: ai
-  profile: event_log
-  compliance_level: L3
-  system_of_record: true
-  write_owner: generation-service
-  common_columns: event_log
-  frontend_routes:
-  - /playground
-  api_surfaces:
-  - app
-  - worker
-  columns:
-    asset_id: int64
-    job_id: int64
-    action_type: enum_int32
-    action_params: json
-    result_asset_id: int64
-    client_ip_hash: string(128)
-    client_ip_region: string(128)
-    user_agent_hash: string(128)
-    completed_at: instant
-    failure_code: string(128)
-  indexes:
-  - name: idx_ai_generation_asset_action_asset_created
-    columns:
-    - asset_id
-    - created_at
-    - id
-  - name: idx_ai_generation_asset_action_user_type
-    columns:
-    - tenant_id
-    - organization_id
-    - user_id
-    - action_type
-    - created_at
-    - id
-  lifecycle:
-    partition_by: created_at_month
-    online_retention: 180d
-    archive_retention: 2y
-  security:
-    sensitivity: USER_ASSET_ACTION
-    pii: true
-    stores_secret_plaintext: false
     audit_required: true

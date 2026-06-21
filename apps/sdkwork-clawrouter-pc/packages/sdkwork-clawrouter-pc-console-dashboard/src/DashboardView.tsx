@@ -30,7 +30,7 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
-import { BusinessStatePanel } from 'sdkwork-clawrouter-pc-commons';
+import { BusinessStatePanel } from '@sdkwork/clawrouter-pc-commons';
 
 import {
   DashboardService,

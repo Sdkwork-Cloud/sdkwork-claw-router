@@ -652,10 +652,11 @@ class ClawRouterSdkGuardian:
                 )
 
     def _check_backend_ecosystem_skill_resource_tree(self, sdk_dir: str, base: Path, messages: list[str]) -> None:
-        source = self._read_text(base / "src" / "api" / "ecosystem.ts", messages)
-        if source is None:
+        ecosystem_path = base / "src" / "api" / "ecosystem.ts"
+        if not ecosystem_path.is_file():
             return
 
+        source = ecosystem_path.read_text(encoding="utf-8")
         sdk_source = self._read_text(base / "src" / "sdk.ts", [])
         if sdk_source is not None:
             for snippet in (
@@ -990,8 +991,8 @@ class ClawRouterSdkGuardian:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Check sdkwork-claw-router generated SDK packages.")
-    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-claw-router root directory")
+    parser = argparse.ArgumentParser(description="Check sdkwork-clawrouter generated SDK packages.")
+    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-clawrouter root directory")
     args = parser.parse_args()
 
     result = ClawRouterSdkGuardian(root=args.root).run()

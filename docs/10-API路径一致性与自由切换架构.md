@@ -2,7 +2,7 @@
 
 ## 1. 目标
 
-`sdkwork-claw-router` 必须做到“只切换 base URL，不切换 API 路径、不切换 SDK、不切换 DTO”。同一套前端、同一套生成 SDK、同一套 OpenAPI 契约，必须能在以下目标之间自由切换：
+`sdkwork-clawrouter` 必须做到“只切换 base URL，不切换 API 路径、不切换 SDK、不切换 DTO”。同一套前端、同一套生成 SDK、同一套 OpenAPI 契约，必须能在以下目标之间自由切换：
 
 - 本地桌面后端。
 - Server 单体后端。

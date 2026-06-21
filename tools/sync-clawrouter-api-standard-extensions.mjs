@@ -99,7 +99,7 @@ function stampOpenApiExtensions(document, target) {
         continue;
       }
       const extensions = {
-        "x-sdkwork-owner": "sdkwork-claw-router",
+        "x-sdkwork-owner": "sdkwork-clawrouter",
         "x-sdkwork-api-authority": target.apiAuthority,
         "x-sdkwork-request-context": "WebRequestContext",
         "x-sdkwork-api-surface": target.apiSurface,
@@ -142,7 +142,7 @@ function buildRouteManifest(document, target) {
           name: null,
         },
         ownership: {
-          owner: "sdkwork-claw-router",
+          owner: "sdkwork-clawrouter",
           apiAuthority: target.apiAuthority,
         },
         requestContext: "WebRequestContext",
@@ -156,7 +156,7 @@ function buildRouteManifest(document, target) {
     kind: "sdkwork.route.manifest",
     packageName: target.packageName,
     surface: target.surface,
-    owner: "sdkwork-claw-router",
+    owner: "sdkwork-clawrouter",
     domain: "platform",
     capability: target.capability,
     apiAuthority: target.apiAuthority,

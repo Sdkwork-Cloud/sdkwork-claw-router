@@ -95,12 +95,10 @@ pub fn admin_model_rate_limit_router_with_store(
 
 async fn fetch_model_rate_limits(
     State(state): State<AdminModelRateLimitState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
 
     match state
         .store
@@ -119,13 +117,11 @@ async fn fetch_model_rate_limits(
 
 async fn create_model_rate_limit(
     State(state): State<AdminModelRateLimitState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let request =
         match parse_json_body::<AdminModelRateLimitCreateRequest>(&body, "model rate limit") {
             Ok(request) => request,
@@ -155,21 +151,13 @@ async fn create_model_rate_limit(
     }
 }
 
-fn resolve_subject(headers: &HeaderMap) -> Result<AdminModelRateLimitSubject, Response> {
-    TrustedRequestSubject::from_headers(headers)
-        .map(|subject| AdminModelRateLimitSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            operator_id: subject.operator_id,
-            operator_type: subject.operator_type,
-        })
-        .map_err(|error| {
-            (
-                StatusCode::UNAUTHORIZED,
-                Json(PlusApiResult::error("4010", error.to_string())),
-            )
-                .into_response()
-        })
+fn map_subject(trusted: TrustedRequestSubject) -> AdminModelRateLimitSubject {
+    AdminModelRateLimitSubject {
+            tenant_id: trusted.tenant_id,
+            organization_id: trusted.organization_id,
+            operator_id: trusted.operator_id,
+            operator_type: trusted.operator_type,
+        }
 }
 
 fn parse_json_body<T>(body: &[u8], entity_name: &str) -> Result<T, String>

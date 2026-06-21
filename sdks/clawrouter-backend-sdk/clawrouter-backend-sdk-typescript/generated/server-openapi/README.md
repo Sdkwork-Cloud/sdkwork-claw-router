@@ -55,15 +55,12 @@ const client = new SdkworkBackendClient({
 ## API Modules
 
 - `client.ai` - ai API
-- `client.content` - content API
 - `client.iam` - iam API
 - `client.integration` - integration API
 - `client.mcp` - mcp API
-- `client.messaging` - messaging API
 - `client.prompts` - prompts API
 - `client.serviceProviders` - service_providers API
 - `client.sites` - sites API
-- `client.oss` - oss API
 - `client.system` - system API
 
 ## Usage Examples
@@ -73,13 +70,6 @@ const client = new SdkworkBackendClient({
 ```typescript
 // List groups
 const result = await client.ai.channelGroups.list();
-```
-
-### content
-
-```typescript
-// List announcements
-const result = await client.content.announcements.list();
 ```
 
 ### iam
@@ -111,21 +101,6 @@ const params = {
   category_id: 'category_id',
 };
 const result = await client.mcp.servers.list(params);
-```
-
-### messaging
-
-```typescript
-// Messaging provider accounts list
-const params = {
-  page: 'page',
-  page_size: 'page_size',
-  q: 'q',
-  status: 'status',
-  channel: 'sms',
-  provider_code: 'provider_code',
-};
-const result = await client.messaging.providerAccounts.list(params);
 ```
 
 ### prompts
@@ -168,13 +143,6 @@ const params = {
   q: 'q',
 };
 const result = await client.sites.siteCatalog.list(params);
-```
-
-### oss
-
-```typescript
-// List storage providers
-const result = await client.oss.providers.list();
 ```
 
 ### system

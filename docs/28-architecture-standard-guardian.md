@@ -1,8 +1,8 @@
-# sdkwork-claw-router Architecture Standard Guardian
+# sdkwork-clawrouter Architecture Standard Guardian
 
 ## 1. 目标
 
-`tools.architecture_standard_guardian` 用于防止架构文档重新漂回旧的主实现路线。`sdkwork-claw-router` 的当前裁决是：
+`tools.architecture_standard_guardian` 用于防止架构文档重新漂回旧的主实现路线。`sdkwork-clawrouter` 的当前裁决是：
 
 ```text
 Rust-first Modular Runtime

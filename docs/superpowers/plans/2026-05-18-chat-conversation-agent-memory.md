@@ -15,7 +15,7 @@
 **Files:**
 - Create: `services/sdkwork-claw-product/tests/chat_agent_schema_contract.rs`
 - Modify later: `generated/schema/postgres/schema.sql`
-- Modify later: `docs/schema-registry/sdkwork-claw-router.tables.yaml`
+- Modify later: `docs/schema-registry/sdkwork-clawrouter.tables.yaml`
 - Modify later: `crates/sdkwork-claw-test-support/src/lib.rs`
 
 - [ ] Write failing tests that assert Postgres schema contains `ai_chat_conversation`, `ai_chat_turn`, `ai_chat_item`, `ai_chat_message`, `ai_chat_message_part`, `ai_chat_context_snapshot`, `ai_agent_session`, `ai_memory_space`, `ai_memory_space_binding`, `ai_memory_entry`, `ai_memory_embedding`, `ai_memory_event`, `ai_memory_link`, `ai_runtime_invocation`, `ai_runtime_invocation_event`, `ai_runtime_usage_link`, and `ai_runtime_artifact`.
@@ -84,7 +84,7 @@
 ### Task 6: Schema Registry And Generated Schema
 
 **Files:**
-- Modify: `docs/schema-registry/sdkwork-claw-router.tables.yaml`
+- Modify: `docs/schema-registry/sdkwork-clawrouter.tables.yaml`
 - Modify: `docs/schema-registry/frontend-field-contracts.yaml`
 - Modify: `generated/schema/postgres/schema.sql`
 - Modify: `crates/sdkwork-claw-test-support/src/lib.rs`

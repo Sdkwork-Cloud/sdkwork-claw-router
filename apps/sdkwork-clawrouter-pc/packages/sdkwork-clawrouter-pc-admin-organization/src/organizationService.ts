@@ -14,7 +14,7 @@ import {
   readString,
   requiredSafePathSegment,
   type ApiRecord,
-} from 'sdkwork-clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawrouter-pc-commons/runtime';
 
 const DEFAULT_PAGE_SIZE = 200;
 type AppbaseOperationCommand = Record<string, unknown>;

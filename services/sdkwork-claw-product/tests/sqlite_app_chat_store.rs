@@ -16,7 +16,6 @@ async fn sqlite_app_chat_store_creates_conversation_and_turn_timeline() {
         .await
         .unwrap();
     create_chat_tables(&pool).await;
-    seed_memory_space(&pool, 30, "memory-space-1").await;
     let store = SqliteAppChatStore::new(pool.clone());
     let subject = AppChatSubject {
         tenant_id: 10,
@@ -288,15 +287,14 @@ async fn sqlite_app_chat_store_creates_conversation_and_turn_timeline() {
             t.context_snapshot_id
         FROM ai_chat_context_snapshot s
         INNER JOIN ai_chat_turn t ON t.context_snapshot_id = s.id
+        INNER JOIN ai_chat_conversation c ON c.id = t.conversation_id
         WHERE s.tenant_id = 10
           AND s.organization_id = 20
           AND s.user_id = 30
-          AND s.conversation_id = ?1
-          AND s.turn_id = ?2
+          AND c.uuid = 'conv-uuid-1'
+          AND t.uuid = 'turn-uuid-1'
         "#,
     )
-    .bind(1_i64)
-    .bind(1_i64)
     .fetch_one(&pool)
     .await
     .unwrap();
@@ -701,34 +699,13 @@ async fn sqlite_app_chat_store_turn_lifecycle_matches_installed_product_schema()
 }
 
 #[tokio::test]
-async fn sqlite_app_chat_store_rejects_memory_space_outside_trusted_user_scope() {
+async fn sqlite_app_chat_store_persists_opaque_memory_space_reference() {
     let pool = SqlitePoolOptions::new()
         .max_connections(1)
         .connect("sqlite::memory:")
         .await
         .unwrap();
     create_chat_tables(&pool).await;
-    sqlx::query(
-        r#"
-        INSERT INTO ai_memory_space (
-            uuid,
-            tenant_id,
-            organization_id,
-            user_id,
-            space_type,
-            owner_id,
-            title,
-            status,
-            created_at,
-            updated_at,
-            metadata
-        )
-        VALUES ('memory-space-other-user', 10, 20, 31, 'user', '31', 'Other user memory', 'active', '2026-05-18 08:00:00', '2026-05-18 08:00:00', '{}')
-        "#,
-    )
-    .execute(&pool)
-    .await
-    .unwrap();
     let store = SqliteAppChatStore::new(pool);
     let subject = AppChatSubject {
         tenant_id: 10,
@@ -736,50 +713,27 @@ async fn sqlite_app_chat_store_rejects_memory_space_outside_trusted_user_scope()
         user_id: 30,
     };
 
-    let error = store
+    let conversation = store
         .create_conversation(CreateAppChatConversationCommand {
             subject,
             conversation_uuid: "conv-uuid-1".to_owned(),
-            title: Some("Should fail".to_owned()),
+            title: Some("External memory".to_owned()),
             source_surface: "chat".to_owned(),
             default_model: None,
             default_provider: None,
             agent_id: None,
             agent_session_id: None,
-            memory_space_id: Some("memory-space-other-user".to_owned()),
+            memory_space_id: Some("memory-space-external".to_owned()),
             metadata: json!({}),
             requested_at: "2026-05-18 08:01:00".to_owned(),
         })
         .await
-        .unwrap_err();
+        .unwrap();
 
-    assert!(error.is_not_found());
-}
-
-async fn seed_memory_space(pool: &sqlx::SqlitePool, user_id: i64, space_id: &str) {
-    sqlx::query(
-        r#"
-        INSERT INTO ai_memory_space (
-            uuid,
-            tenant_id,
-            organization_id,
-            user_id,
-            space_type,
-            owner_id,
-            title,
-            status,
-            created_at,
-            updated_at,
-            metadata
-        )
-        VALUES (?1, 10, 20, ?2, 'user', CAST(?2 AS TEXT), 'Chat memory', 'active', '2026-05-18 08:00:00', '2026-05-18 08:00:00', '{}')
-        "#,
-    )
-    .bind(space_id)
-    .bind(user_id)
-    .execute(pool)
-    .await
-    .unwrap();
+    assert_eq!(
+        Some("memory-space-external".to_owned()),
+        conversation.memory_space_id
+    );
 }
 
 async fn create_chat_tables(pool: &sqlx::SqlitePool) {
@@ -815,21 +769,6 @@ CREATE TABLE ai_chat_conversation (
     turn_count INTEGER NOT NULL DEFAULT 0
 );
 CREATE UNIQUE INDEX uk_ai_chat_conversation_code ON ai_chat_conversation (tenant_id, organization_id, user_id, conversation_code);
-CREATE TABLE ai_memory_space (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    uuid TEXT NOT NULL,
-    tenant_id INTEGER NOT NULL,
-    organization_id INTEGER NOT NULL,
-    user_id INTEGER NOT NULL,
-    space_type TEXT NOT NULL,
-    owner_type TEXT,
-    owner_id TEXT,
-    title TEXT NOT NULL,
-    status TEXT NOT NULL,
-    created_at TEXT NOT NULL,
-    updated_at TEXT NOT NULL,
-    metadata TEXT NOT NULL
-);
 CREATE TABLE ai_chat_turn (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     uuid TEXT NOT NULL,

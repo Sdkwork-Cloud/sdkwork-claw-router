@@ -3,7 +3,7 @@
   "kind": "sdkwork.route.manifest",
   "packageName": "sdkwork-router-app-api",
   "surface": "app-api",
-  "owner": "sdkwork-claw-router",
+  "owner": "sdkwork-clawrouter",
   "domain": "platform",
   "capability": "router",
   "apiAuthority": "sdkwork-clawrouter-app-api",
@@ -15,424 +15,6 @@
     "openApiAuthority": "apis/app-api/clawrouter/clawrouter-app-api.openapi.json"
   },
   "routes": [
-    {
-      "method": "GET",
-      "path": "/app/v3/api/accounts/current/summary",
-      "operationId": "accounts.current.summary.retrieve",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/addresses",
-      "operationId": "addresses.list",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/addresses",
-      "operationId": "addresses.create",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "DELETE",
-      "path": "/app/v3/api/addresses/{addressId}",
-      "operationId": "addresses.delete",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "PATCH",
-      "path": "/app/v3/api/addresses/{addressId}",
-      "operationId": "addresses.update",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/addresses/{addressId}/default_selection",
-      "operationId": "addresses.defaultSelection.create",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/agents",
-      "operationId": "agentDefinitions.list",
-      "tags": [
-        "agents"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/agents",
-      "operationId": "agentDefinitions.create",
-      "tags": [
-        "agents"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/agents/runs/{runId}",
-      "operationId": "agentRuns.retrieve",
-      "tags": [
-        "agents"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/agents/runs/{runId}/complete",
-      "operationId": "agentRuns.submit",
-      "tags": [
-        "agents"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/agents/runs/{runId}/steps",
-      "operationId": "agentRunSteps.list",
-      "tags": [
-        "agents"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/agents/runs/{runId}/steps",
-      "operationId": "agentRunSteps.create",
-      "tags": [
-        "agents"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/agents/runs/{runId}/steps/{stepId}/complete",
-      "operationId": "agentRunSteps.submit",
-      "tags": [
-        "agents"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/agents/sessions/{sessionId}",
-      "operationId": "agentSessions.retrieve",
-      "tags": [
-        "agents"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/agents/sessions/{sessionId}/runs",
-      "operationId": "agentRuns.list",
-      "tags": [
-        "agents"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/agents/sessions/{sessionId}/runs",
-      "operationId": "agentRuns.create",
-      "tags": [
-        "agents"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/agents/{agentId}",
-      "operationId": "agentDefinitions.retrieve",
-      "tags": [
-        "agents"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/agents/{agentId}/sessions",
-      "operationId": "agentSessions.list",
-      "tags": [
-        "agents"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/agents/{agentId}/sessions",
-      "operationId": "agentSessions.create",
-      "tags": [
-        "agents"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
     {
       "method": "GET",
       "path": "/app/v3/api/ai/channel_groups",
@@ -449,7 +31,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -471,7 +53,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -493,29 +75,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/ai/generations",
-      "operationId": "generation.list",
-      "tags": [
-        "ai"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -537,7 +97,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -559,7 +119,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -581,7 +141,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -603,7 +163,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -625,7 +185,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -647,7 +207,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -669,7 +229,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -691,117 +251,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/billing/history",
-      "operationId": "billing.history.list",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/cart/current",
-      "operationId": "cart.current.retrieve",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/cart/items",
-      "operationId": "cart.items.create",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "DELETE",
-      "path": "/app/v3/api/cart/items/{cartItemId}",
-      "operationId": "cart.items.delete",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "PATCH",
-      "path": "/app/v3/api/cart/items/{cartItemId}",
-      "operationId": "cart.items.update",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -823,7 +273,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -845,7 +295,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -867,7 +317,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -889,7 +339,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -911,7 +361,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -933,931 +383,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/checkout/sessions",
-      "operationId": "checkout.sessions.create",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/checkout/sessions/{checkoutSessionId}",
-      "operationId": "checkout.sessions.retrieve",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/checkout/sessions/{checkoutSessionId}/orders",
-      "operationId": "checkout.sessions.orders.create",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/checkout/sessions/{checkoutSessionId}/quotes",
-      "operationId": "checkout.sessions.quotes.create",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/content/comments",
-      "operationId": "comments.list",
-      "tags": [
-        "content"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/content/comments",
-      "operationId": "comments.create",
-      "tags": [
-        "content"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/content/comments/statistics",
-      "operationId": "comments.statistics.list",
-      "tags": [
-        "content"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "DELETE",
-      "path": "/app/v3/api/content/comments/{commentId}",
-      "operationId": "comments.delete",
-      "tags": [
-        "content"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/content/comments/{commentId}",
-      "operationId": "comments.retrieve",
-      "tags": [
-        "content"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/content/comments/{commentId}/likes",
-      "operationId": "comments.likes.create",
-      "tags": [
-        "content"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "DELETE",
-      "path": "/app/v3/api/content/comments/{commentId}/likes/current",
-      "operationId": "comments.likes.current.delete",
-      "tags": [
-        "content"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/content/comments/{commentId}/pins",
-      "operationId": "comments.pins.create",
-      "tags": [
-        "content"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "DELETE",
-      "path": "/app/v3/api/content/comments/{commentId}/pins/current",
-      "operationId": "comments.pins.current.delete",
-      "tags": [
-        "content"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/content/comments/{commentId}/replies",
-      "operationId": "comments.replies.list",
-      "tags": [
-        "content"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/content/comments/{commentId}/reply",
-      "operationId": "comments.reply.create",
-      "tags": [
-        "content"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/content/feeds",
-      "operationId": "feeds.list",
-      "tags": [
-        "content"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/content/feeds",
-      "operationId": "feeds.create",
-      "tags": [
-        "content"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/content/feeds/category/{categoryId}",
-      "operationId": "feeds.category.retrieve",
-      "tags": [
-        "content"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/content/feeds/hot",
-      "operationId": "feeds.hot.list",
-      "tags": [
-        "content"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/content/feeds/most_liked",
-      "operationId": "feeds.mostLiked.list",
-      "tags": [
-        "content"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/content/feeds/most_viewed",
-      "operationId": "feeds.mostViewed.list",
-      "tags": [
-        "content"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/content/feeds/overview",
-      "operationId": "feeds.overview.retrieve",
-      "tags": [
-        "content"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/content/feeds/recommend",
-      "operationId": "feeds.recommend.list",
-      "tags": [
-        "content"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/content/feeds/top",
-      "operationId": "feeds.top.list",
-      "tags": [
-        "content"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "DELETE",
-      "path": "/app/v3/api/content/feeds/{id}",
-      "operationId": "feeds.delete",
-      "tags": [
-        "content"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/content/feeds/{id}",
-      "operationId": "feeds.retrieve",
-      "tags": [
-        "content"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/content/feeds/{id}/collections",
-      "operationId": "feeds.collections.create",
-      "tags": [
-        "content"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "DELETE",
-      "path": "/app/v3/api/content/feeds/{id}/collections/current",
-      "operationId": "feeds.collections.current.delete",
-      "tags": [
-        "content"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/content/feeds/{id}/collections/current",
-      "operationId": "feeds.collections.current.retrieve",
-      "tags": [
-        "content"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/content/feeds/{id}/likes",
-      "operationId": "feeds.likes.create",
-      "tags": [
-        "content"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "DELETE",
-      "path": "/app/v3/api/content/feeds/{id}/likes/current",
-      "operationId": "feeds.likes.current.delete",
-      "tags": [
-        "content"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/content/feeds/{id}/shares",
-      "operationId": "feeds.shares.create",
-      "tags": [
-        "content"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/content/users/current/comments",
-      "operationId": "users.current.comments.list",
-      "tags": [
-        "content"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/ecosystem/skills",
-      "operationId": "skills.list",
-      "tags": [
-        "ecosystem"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/ecosystem/skills/categories",
-      "operationId": "skills.categories.list",
-      "tags": [
-        "ecosystem"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/ecosystem/skills/{skillId}",
-      "operationId": "skills.retrieve",
-      "tags": [
-        "ecosystem"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "PUT",
-      "path": "/app/v3/api/ecosystem/skills/{skillId}/config",
-      "operationId": "skills.config.update",
-      "tags": [
-        "ecosystem"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/ecosystem/skills/{skillId}/disable",
-      "operationId": "skills.disable",
-      "tags": [
-        "ecosystem"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/ecosystem/skills/{skillId}/enable",
-      "operationId": "skills.enable",
-      "tags": [
-        "ecosystem"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/ecosystem/users/current/skills",
-      "operationId": "users.current.skills.list",
-      "tags": [
-        "ecosystem"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/fulfillments",
-      "operationId": "fulfillments.list",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/fulfillments/{fulfillmentId}",
-      "operationId": "fulfillments.retrieve",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -1879,7 +405,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -1901,7 +427,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -1923,7 +449,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -1945,7 +471,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -1967,7 +493,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -1989,7 +515,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -2011,7 +537,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -2033,7 +559,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -2055,7 +581,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -2077,7 +603,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -2099,7 +625,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -2121,7 +647,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -2143,7 +669,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -2165,7 +691,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -2187,7 +713,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -2209,601 +735,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/invoices",
-      "operationId": "invoices.list",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/invoices",
-      "operationId": "invoices.create",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/invoices/{invoiceId}",
-      "operationId": "invoices.retrieve",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/memberships/benefits",
-      "operationId": "memberships.benefits.list",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/memberships/current",
-      "operationId": "memberships.current.retrieve",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/memberships/current/status",
-      "operationId": "memberships.current.status.retrieve",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/memberships/package_groups",
-      "operationId": "memberships.packageGroups.list",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/memberships/package_groups/{packageGroupId}",
-      "operationId": "memberships.packageGroups.retrieve",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/memberships/package_groups/{packageGroupId}/packages",
-      "operationId": "memberships.packageGroups.packages.list",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/memberships/packages",
-      "operationId": "memberships.packages.list",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/memberships/packages/{packageId}",
-      "operationId": "memberships.packages.retrieve",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/memberships/plans",
-      "operationId": "memberships.plans.list",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/memberships/points/balance",
-      "operationId": "memberships.points.balance.retrieve",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/memberships/points/daily_rewards",
-      "operationId": "memberships.points.dailyRewards.create",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/memberships/points/daily_rewards/status",
-      "operationId": "memberships.points.dailyRewards.status.retrieve",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/memberships/points/history",
-      "operationId": "memberships.points.history.list",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/memberships/privileges/speed_ups",
-      "operationId": "memberships.privileges.speedUps.create",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/memberships/privileges/usage",
-      "operationId": "memberships.privileges.usage.retrieve",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/memberships/purchases",
-      "operationId": "memberships.purchases.create",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/memberships/purchases/renew",
-      "operationId": "memberships.purchases.renew",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/memberships/purchases/upgrade",
-      "operationId": "memberships.purchases.upgrade",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/memory/entries/{entryId}",
-      "operationId": "entries.retrieve",
-      "tags": [
-        "memory"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/memory/spaces",
-      "operationId": "spaces.list",
-      "tags": [
-        "memory"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/memory/spaces",
-      "operationId": "spaces.create",
-      "tags": [
-        "memory"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/memory/spaces/{spaceId}",
-      "operationId": "spaces.retrieve",
-      "tags": [
-        "memory"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/memory/spaces/{spaceId}/entries",
-      "operationId": "entries.list",
-      "tags": [
-        "memory"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/memory/spaces/{spaceId}/entries",
-      "operationId": "entries.create",
-      "tags": [
-        "memory"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -2825,7 +757,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -2847,7 +779,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -2869,579 +801,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/orders",
-      "operationId": "orders.list",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/orders/{orderId}",
-      "operationId": "orders.retrieve",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/orders/{orderId}/cancellations",
-      "operationId": "orders.cancellations.create",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/orders/{orderId}/events",
-      "operationId": "orders.events.list",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/payments/attempts/{paymentAttemptId}",
-      "operationId": "payments.attempts.retrieve",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/payments/intents",
-      "operationId": "payments.intents.create",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/payments/intents/{paymentIntentId}",
-      "operationId": "payments.intents.retrieve",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/payments/intents/{paymentIntentId}/attempts",
-      "operationId": "payments.intents.attempts.create",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/payments/methods",
-      "operationId": "payments.methods.list",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/platform/apps/store",
-      "operationId": "apps.store.list",
-      "tags": [
-        "platform"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/platform/apps/store/categories",
-      "operationId": "apps.store.categories.list",
-      "tags": [
-        "platform"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/platform/apps/store/{appId}",
-      "operationId": "apps.store.retrieve",
-      "tags": [
-        "platform"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/promotions/codes/redemptions",
-      "operationId": "promotions.codes.redemptions.create",
-      "tags": [
-        "system"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/promotions/discount_applications",
-      "operationId": "promotions.discountApplications.create",
-      "tags": [
-        "system"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/promotions/discount_applications/reversals",
-      "operationId": "promotions.discountApplications.reversals.create",
-      "tags": [
-        "system"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/promotions/discount_applications/{applicationId}/releases",
-      "operationId": "promotions.discountApplications.release",
-      "tags": [
-        "system"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/promotions/discount_applications/{applicationId}/settlements",
-      "operationId": "promotions.discountApplications.settle",
-      "tags": [
-        "system"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/promotions/user_coupon_claims",
-      "operationId": "promotions.userCoupons.claims.create",
-      "tags": [
-        "system"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/promotions/user_coupons",
-      "operationId": "promotions.userCoupons.wallet.list",
-      "tags": [
-        "system"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/recharges/orders",
-      "operationId": "recharges.orders.create",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/recharges/orders/{orderId}",
-      "operationId": "recharges.orders.retrieve",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/recharges/packages",
-      "operationId": "recharges.packages.list",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/recharges/settings",
-      "operationId": "recharges.settings.retrieve",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/refunds",
-      "operationId": "refunds.list",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/refunds",
-      "operationId": "refunds.create",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/refunds/{refundId}",
-      "operationId": "refunds.retrieve",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -3463,7 +823,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -3485,7 +845,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -3507,7 +867,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -3529,7 +889,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -3551,7 +911,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -3573,7 +933,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -3595,7 +955,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -3617,7 +977,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -3639,29 +999,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/shipments/{shipmentId}",
-      "operationId": "shipments.retrieve",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
@@ -3683,139 +1021,7 @@
         "name": null
       },
       "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/wallet/accounts",
-      "operationId": "wallet.accounts.list",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/wallet/exchange_rate",
-      "operationId": "wallet.exchangeRate.retrieve",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/wallet/ledger_entries",
-      "operationId": "wallet.ledgerEntries.list",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/wallet/overview",
-      "operationId": "wallet.overview.retrieve",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/wallet/points/exchanges/rules",
-      "operationId": "wallet.points.exchangeRules.list",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/wallet/tokens",
-      "operationId": "wallet.tokens.retrieve",
-      "tags": [
-        "commerce"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-claw-router",
+        "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",

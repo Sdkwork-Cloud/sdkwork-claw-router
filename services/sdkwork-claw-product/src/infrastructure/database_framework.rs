@@ -1,6 +1,6 @@
 //! SDKWork database framework bootstrap exports for Claw Router.
 
-pub use sdkwork_claw_router_database_host::{
+pub use sdkwork_clawrouter_database_host::{
     bootstrap_claw_router_database, bootstrap_claw_router_database_from_env, ClawRouterDatabaseHost,
 };
 

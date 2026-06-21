@@ -2,7 +2,7 @@
 
 This directory is the local SDKWork component contract for `sdkwork-claw-paas-plugin`.
 
-- Component root: `sdkwork-claw-router/crates/sdkwork-claw-paas-plugin`
+- Component root: `sdkwork-clawrouter/crates/sdkwork-claw-paas-plugin`
 - Canonical standards: `../../../../sdkwork-specs/README.md`
 - Machine-readable contract: `specs/component.spec.json`
 

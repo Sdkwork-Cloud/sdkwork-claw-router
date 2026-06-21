@@ -1,5 +1,7 @@
 use std::collections::{BTreeMap, BTreeSet};
 
+use sdkwork_utils_rust::{is_blank, snake_case};
+
 use crate::application::{PricingResolver, ResolveModelPriceQuery};
 use crate::domain::{
     AiModel, BillingMeter, ChannelGroup, DomainResult, ModelPrice, ModelVendor, PriceSide,
@@ -691,10 +693,10 @@ fn normalize_category_filter_values(values: &[String]) -> Vec<String> {
 }
 
 fn normalize_filter_value(value: Option<&str>) -> Option<String> {
-    value
-        .map(str::trim)
-        .filter(|value| !value.is_empty())
-        .map(normalize_semantic_token)
+    if is_blank(value) {
+        return None;
+    }
+    Some(normalize_semantic_token(value.unwrap().trim()))
 }
 
 fn normalize_category_filter_value(value: &str) -> Option<String> {
@@ -715,7 +717,7 @@ fn normalize_category_filter_value(value: &str) -> Option<String> {
 }
 
 fn normalize_semantic_token(value: &str) -> String {
-    value.trim().to_ascii_lowercase().replace([' ', '-'], "_")
+    snake_case(value.trim())
 }
 
 fn model_group_sort_key(group: &str) -> usize {

@@ -169,7 +169,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
         schemaVersion: 1
         kind: sdkwork.appbase.integration
         app:
-          key: sdkwork-claw-router
+          key: sdkwork-clawrouter
         integrations:
           - capability: commerce
             requiredMaturity: L3
@@ -264,7 +264,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
         index.write_text(
             textwrap.dedent(
                 """
-                schema: sdkwork-claw-router-frontend-field-contracts
+                schema: sdkwork-clawrouter-frontend-field-contracts
                 version: 0.1.0
                 source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 rule: every actual portal route must be backed by explicit schema tables.
@@ -289,7 +289,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
     def test_accepts_sibling_appbase_catalog_without_materialized_dependency_copy(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             workspace_root = Path(tmp)
-            root = workspace_root / "sdkwork-claw-router"
+            root = workspace_root / "sdkwork-clawrouter"
             root.mkdir()
             self.write_sibling_appbase_catalog(workspace_root)
             self.write_integration_manifest(root, self.valid_integration_manifest())
@@ -333,7 +333,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
                 schemaVersion: 1
                 kind: sdkwork.appbase.integration
                 app:
-                  key: sdkwork-claw-router
+                  key: sdkwork-clawrouter
                 integrations:
                   - capability: notification
                     requiredMaturity: L1
@@ -375,7 +375,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
                 schemaVersion: 1
                 kind: sdkwork.appbase.integration
                 app:
-                  key: sdkwork-claw-router
+                  key: sdkwork-clawrouter
                 integrations:
                   - capability: notification
                     requiredMaturity: L3
@@ -470,7 +470,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
                 schemaVersion: 1
                 kind: sdkwork.appbase.integration
                 app:
-                  key: sdkwork-claw-router
+                  key: sdkwork-clawrouter
                 integrations:
                   - capability: commerce
                     requiredMaturity: L3
@@ -509,7 +509,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
                 schemaVersion: 1
                 kind: sdkwork.appbase.integration
                 app:
-                  key: sdkwork-claw-router
+                  key: sdkwork-clawrouter
                 integrations:
                   - capability: commerce
                     requiredMaturity: L3
@@ -548,7 +548,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
                 schemaVersion: 1
                 kind: sdkwork.appbase.integration
                 app:
-                  key: sdkwork-claw-router
+                  key: sdkwork-clawrouter
                 integrations:
                   - capability: commerce
                     requiredMaturity: L3
@@ -779,7 +779,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             self.write_valid_files(root)
-            registry = root / "docs" / "schema-registry" / "sdkwork-claw-router.tables.yaml"
+            registry = root / "docs" / "schema-registry" / "sdkwork-clawrouter.tables.yaml"
             registry.parent.mkdir(parents=True, exist_ok=True)
             registry.write_text(
                 textwrap.dedent(
@@ -881,7 +881,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
                 schemaVersion: 1
                 kind: sdkwork.appbase.integration
                 app:
-                  key: sdkwork-claw-router
+                  key: sdkwork-clawrouter
                 integrations:
                   - capability: commerce
                     requiredMaturity: L3
@@ -916,7 +916,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
                 schemaVersion: 1
                 kind: sdkwork.appbase.integration
                 app:
-                  key: sdkwork-claw-router
+                  key: sdkwork-clawrouter
                 integrations:
                   - capability: commerce
                     requiredMaturity: L3
@@ -949,7 +949,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
                 schemaVersion: 1
                 kind: sdkwork.appbase.integration
                 app:
-                  key: sdkwork-claw-router
+                  key: sdkwork-clawrouter
                 integrations:
                   - capability: commerce
                     requiredMaturity: L3

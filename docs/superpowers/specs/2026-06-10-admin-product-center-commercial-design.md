@@ -19,7 +19,7 @@ surface, backend commands, store behavior, and publish validation must line up.
 
 The current authority split is:
 
-- `sdkwork-claw-router` owns the admin shell, route mounting, local Claw Router
+- `sdkwork-clawrouter` owns the admin shell, route mounting, local Claw Router
   backend catalog and inventory APIs, generated Claw Router SDK families, and
   wrapper packages used by `apps/sdkwork-clawrouter-pc`.
 - `sdkwork-commerce` owns the reusable commerce Product Admin PC package at

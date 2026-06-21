@@ -273,11 +273,11 @@ pub fn admin_storage_router_with_store(store: Arc<dyn AdminStorageStore + Send +
 
 async fn list_providers(
     State(state): State<AdminStorageState>,
-    headers: HeaderMap,
-    Query(query): Query<AdminStorageQuery>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Query(query): Query<AdminStorageQuery>
 ) -> Response {
-    list_response(
-        headers,
+    list_response(trusted,
         query,
         |query| state.store.list_providers(query),
         None,
@@ -287,10 +287,11 @@ async fn list_providers(
 
 async fn create_provider(
     State(state): State<AdminStorageState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Json(request): Json<CreateStorageProviderRequest>,
+    Json(request): Json<CreateStorageProviderRequest>
 ) -> Response {
-    let command = match validated_provider_create_command(&headers, request) {
+    let command = match validated_provider_create_command(trusted, &headers, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -307,11 +308,12 @@ async fn create_provider(
 
 async fn update_provider(
     State(state): State<AdminStorageState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(provider_id): Path<String>,
-    Json(request): Json<UpdateStorageStatusRequest>,
+    Json(request): Json<UpdateStorageStatusRequest>
 ) -> Response {
-    let command = match validated_provider_update_command(&headers, provider_id, request) {
+    let command = match validated_provider_update_command(trusted, &headers, provider_id, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -328,10 +330,11 @@ async fn update_provider(
 
 async fn check_provider_health(
     State(state): State<AdminStorageState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Path(provider_id): Path<String>,
+    Path(provider_id): Path<String>
 ) -> Response {
-    let command = match validated_provider_health_command(&headers, provider_id) {
+    let command = match validated_provider_health_command(trusted, &headers, provider_id) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -347,11 +350,11 @@ async fn check_provider_health(
 
 async fn list_buckets(
     State(state): State<AdminStorageState>,
-    headers: HeaderMap,
-    Query(query): Query<AdminStorageQuery>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Query(query): Query<AdminStorageQuery>
 ) -> Response {
-    list_response(
-        headers,
+    list_response(trusted,
         query,
         |query| state.store.list_buckets(query),
         None,
@@ -361,10 +364,11 @@ async fn list_buckets(
 
 async fn create_bucket(
     State(state): State<AdminStorageState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Json(request): Json<CreateStorageBucketRequest>,
+    Json(request): Json<CreateStorageBucketRequest>
 ) -> Response {
-    let command = match validated_bucket_create_command(&headers, request) {
+    let command = match validated_bucket_create_command(trusted, &headers, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -381,11 +385,12 @@ async fn create_bucket(
 
 async fn update_bucket(
     State(state): State<AdminStorageState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(bucket_id): Path<String>,
-    Json(request): Json<UpdateStorageStatusRequest>,
+    Json(request): Json<UpdateStorageStatusRequest>
 ) -> Response {
-    let command = match validated_bucket_update_command(&headers, bucket_id, request) {
+    let command = match validated_bucket_update_command(trusted, &headers, bucket_id, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -402,11 +407,11 @@ async fn update_bucket(
 
 async fn list_default_buckets(
     State(state): State<AdminStorageState>,
-    headers: HeaderMap,
-    Query(query): Query<AdminStorageQuery>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Query(query): Query<AdminStorageQuery>
 ) -> Response {
-    list_response(
-        headers,
+    list_response(trusted,
         query,
         |query| state.store.list_default_buckets(query),
         None,
@@ -416,11 +421,12 @@ async fn list_default_buckets(
 
 async fn set_default_bucket(
     State(state): State<AdminStorageState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(logical_scope): Path<String>,
-    Json(request): Json<SetStorageDefaultBucketRequest>,
+    Json(request): Json<SetStorageDefaultBucketRequest>
 ) -> Response {
-    let command = match validated_default_bucket_command(&headers, logical_scope, request) {
+    let command = match validated_default_bucket_command(trusted, &headers, logical_scope, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -439,11 +445,11 @@ async fn set_default_bucket(
 
 async fn list_quota_policies(
     State(state): State<AdminStorageState>,
-    headers: HeaderMap,
-    Query(query): Query<AdminStorageQuery>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Query(query): Query<AdminStorageQuery>
 ) -> Response {
-    list_response(
-        headers,
+    list_response(trusted,
         query,
         |query| state.store.list_quota_policies(query),
         None,
@@ -453,10 +459,11 @@ async fn list_quota_policies(
 
 async fn create_quota_policy(
     State(state): State<AdminStorageState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Json(request): Json<CreateStorageQuotaPolicyRequest>,
+    Json(request): Json<CreateStorageQuotaPolicyRequest>
 ) -> Response {
-    let command = match validated_quota_create_command(&headers, request) {
+    let command = match validated_quota_create_command(trusted, &headers, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -473,11 +480,11 @@ async fn create_quota_policy(
 
 async fn list_usage_counters(
     State(state): State<AdminStorageState>,
-    headers: HeaderMap,
-    Query(query): Query<AdminStorageQuery>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Query(query): Query<AdminStorageQuery>
 ) -> Response {
-    list_response(
-        headers,
+    list_response(trusted,
         query,
         |query| state.store.list_usage_counters(query),
         Some(USAGE_SCOPE_TYPES),
@@ -487,11 +494,11 @@ async fn list_usage_counters(
 
 async fn list_usage_ledger(
     State(state): State<AdminStorageState>,
-    headers: HeaderMap,
-    Query(query): Query<AdminStorageQuery>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Query(query): Query<AdminStorageQuery>
 ) -> Response {
-    list_response(
-        headers,
+    list_response(trusted,
         query,
         |query| state.store.list_usage_ledger(query),
         Some(USAGE_SCOPE_TYPES),
@@ -501,11 +508,11 @@ async fn list_usage_ledger(
 
 async fn list_usage_snapshots(
     State(state): State<AdminStorageState>,
-    headers: HeaderMap,
-    Query(query): Query<AdminStorageQuery>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Query(query): Query<AdminStorageQuery>
 ) -> Response {
-    list_response(
-        headers,
+    list_response(trusted,
         query,
         |query| state.store.list_usage_snapshots(query),
         Some(USAGE_SCOPE_TYPES),
@@ -515,11 +522,11 @@ async fn list_usage_snapshots(
 
 async fn list_reconciliation_runs(
     State(state): State<AdminStorageState>,
-    headers: HeaderMap,
-    Query(query): Query<AdminStorageQuery>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Query(query): Query<AdminStorageQuery>
 ) -> Response {
-    list_response(
-        headers,
+    list_response(trusted,
         query,
         |query| state.store.list_reconciliation_runs(query),
         Some(USAGE_SCOPE_TYPES),
@@ -529,10 +536,11 @@ async fn list_reconciliation_runs(
 
 async fn create_reconciliation_run(
     State(state): State<AdminStorageState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Json(request): Json<CreateStorageReconciliationRunRequest>,
+    Json(request): Json<CreateStorageReconciliationRunRequest>
 ) -> Response {
-    let command = match validated_reconciliation_create_command(&headers, request) {
+    let command = match validated_reconciliation_create_command(trusted, &headers, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -551,11 +559,11 @@ async fn create_reconciliation_run(
 
 async fn list_gc_jobs(
     State(state): State<AdminStorageState>,
-    headers: HeaderMap,
-    Query(query): Query<AdminStorageQuery>,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
+    Query(query): Query<AdminStorageQuery>
 ) -> Response {
-    list_response(
-        headers,
+    list_response(trusted,
         query,
         |query| state.store.list_gc_jobs(query),
         None,
@@ -565,10 +573,11 @@ async fn list_gc_jobs(
 
 async fn create_gc_job(
     State(state): State<AdminStorageState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    Json(request): Json<CreateStorageGarbageCollectionJobRequest>,
+    Json(request): Json<CreateStorageGarbageCollectionJobRequest>
 ) -> Response {
-    let command = match validated_gc_create_command(&headers, request) {
+    let command = match validated_gc_create_command(trusted, &headers, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -585,7 +594,7 @@ async fn create_gc_job(
 }
 
 async fn list_response<'a, F>(
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
     query: AdminStorageQuery,
     load: F,
     scope_types: Option<&'static [&'static str]>,
@@ -595,7 +604,7 @@ where
         ListAdminStorageRecordsQuery,
     ) -> crate::ports::AdminStorageCommandFuture<'a, AdminStorageCollection>,
 {
-    let query = match validated_list_query(&headers, query, scope_types) {
+    let query = match validated_list_query(trusted, query, scope_types) {
         Ok(query) => query,
         Err(response) => return response,
     };
@@ -615,11 +624,11 @@ fn collection_response(collection: AdminStorageCollection) -> Response {
 }
 
 fn validated_list_query(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
     query: AdminStorageQuery,
     scope_types: Option<&'static [&'static str]>,
 ) -> Result<ListAdminStorageRecordsQuery, Response> {
-    let subject = resolve_subject(headers)?;
+    let subject = map_subject(trusted);
     let limit = query.limit.unwrap_or(DEFAULT_LIMIT);
     if !(1..=MAX_LIMIT).contains(&limit) {
         return Err(bad_request(format!(
@@ -660,10 +669,11 @@ fn validated_list_query(
 }
 
 fn validated_provider_create_command(
+    trusted: TrustedRequestSubject,
     headers: &HeaderMap,
     request: CreateStorageProviderRequest,
 ) -> Result<CreateStorageProviderCommand, Response> {
-    let subject = resolve_subject(headers)?;
+    let subject = map_subject(trusted);
     let idempotency_key = required_header(headers, IDEMPOTENCY_KEY_HEADER)?;
     let provider_type =
         normalize_required_text(request.provider_type, "providerType", MAX_TYPE_LEN)?;
@@ -693,11 +703,12 @@ fn validated_provider_create_command(
 }
 
 fn validated_provider_update_command(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: &HeaderMap,
     provider_id: String,
     request: UpdateStorageStatusRequest,
 ) -> Result<UpdateStorageProviderCommand, Response> {
-    let subject = resolve_subject(headers)?;
+    let subject = map_subject(trusted);
     let status =
         normalize_required_text(request.status, "status", MAX_TYPE_LEN)?.to_ascii_lowercase();
     ensure_enum(&status, RESOURCE_STATUSES, "status")?;
@@ -711,17 +722,19 @@ fn validated_provider_update_command(
 }
 
 fn validated_provider_health_command(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: &HeaderMap,
     provider_id: String,
 ) -> Result<CheckStorageProviderHealthCommand, Response> {
     Ok(CheckStorageProviderHealthCommand {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         provider_id: normalize_required_text(provider_id, "providerId", MAX_ID_LEN)?,
         request_id: Some(server_request_id()?),
     })
 }
 
 fn validated_bucket_create_command(
+    trusted: TrustedRequestSubject,
     headers: &HeaderMap,
     request: CreateStorageBucketRequest,
 ) -> Result<CreateStorageBucketCommand, Response> {
@@ -735,7 +748,7 @@ fn validated_bucket_create_command(
         ensure_enum(value, ENCRYPTION_MODES, "defaultEncryptionMode")?;
     }
     Ok(CreateStorageBucketCommand {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         bucket_name: normalize_required_text(request.bucket_name, "bucketName", MAX_ID_LEN)?,
         provider_id: normalize_required_text(request.provider_id, "providerId", MAX_ID_LEN)?,
         logical_scope,
@@ -771,7 +784,8 @@ fn validated_bucket_create_command(
 }
 
 fn validated_bucket_update_command(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: &HeaderMap,
     bucket_id: String,
     request: UpdateStorageStatusRequest,
 ) -> Result<UpdateStorageBucketCommand, Response> {
@@ -779,7 +793,7 @@ fn validated_bucket_update_command(
         normalize_required_text(request.status, "status", MAX_TYPE_LEN)?.to_ascii_lowercase();
     ensure_enum(&status, RESOURCE_STATUSES, "status")?;
     Ok(UpdateStorageBucketCommand {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         bucket_id: normalize_required_text(bucket_id, "bucketId", MAX_ID_LEN)?,
         status,
         reason: normalize_required_text(request.reason, "reason", MAX_REASON_LEN)?,
@@ -788,14 +802,15 @@ fn validated_bucket_update_command(
 }
 
 fn validated_default_bucket_command(
-    headers: &HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: &HeaderMap,
     logical_scope: String,
     request: SetStorageDefaultBucketRequest,
 ) -> Result<SetStorageDefaultBucketCommand, Response> {
     let logical_scope = normalize_required_text(logical_scope, "logicalScope", MAX_TYPE_LEN)?;
     ensure_enum(&logical_scope, LOGICAL_SCOPES, "logicalScope")?;
     Ok(SetStorageDefaultBucketCommand {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         logical_scope,
         bucket_id: normalize_required_text(request.bucket_id, "bucketId", MAX_ID_LEN)?,
         reason: normalize_required_text(request.reason, "reason", MAX_REASON_LEN)?,
@@ -804,6 +819,7 @@ fn validated_default_bucket_command(
 }
 
 fn validated_quota_create_command(
+    trusted: TrustedRequestSubject,
     headers: &HeaderMap,
     request: CreateStorageQuotaPolicyRequest,
 ) -> Result<CreateStorageQuotaPolicyCommand, Response> {
@@ -833,7 +849,7 @@ fn validated_quota_create_command(
         ));
     }
     Ok(CreateStorageQuotaPolicyCommand {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         scope_type,
         scope_id: normalize_required_text(request.scope_id, "scopeId", MAX_ID_LEN)?,
         quota_limit_bytes,
@@ -845,6 +861,7 @@ fn validated_quota_create_command(
 }
 
 fn validated_reconciliation_create_command(
+    trusted: TrustedRequestSubject,
     headers: &HeaderMap,
     request: CreateStorageReconciliationRunRequest,
 ) -> Result<CreateStorageReconciliationRunCommand, Response> {
@@ -853,7 +870,7 @@ fn validated_reconciliation_create_command(
         .or(request.check_mode)
         .unwrap_or_else(|| "metadata".to_owned());
     Ok(CreateStorageReconciliationRunCommand {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         provider_id: normalize_optional_text(request.provider_id, "providerId", MAX_ID_LEN)?,
         bucket_id: normalize_optional_text(request.bucket_id, "bucketId", MAX_ID_LEN)?,
         run_type: normalize_required_text(run_type, "runType", MAX_TYPE_LEN)?,
@@ -865,6 +882,7 @@ fn validated_reconciliation_create_command(
 }
 
 fn validated_gc_create_command(
+    trusted: TrustedRequestSubject,
     headers: &HeaderMap,
     request: CreateStorageGarbageCollectionJobRequest,
 ) -> Result<CreateStorageGarbageCollectionJobCommand, Response> {
@@ -873,7 +891,7 @@ fn validated_gc_create_command(
         .or_else(|| request.target.clone())
         .unwrap_or_else(|| "expired_uploads".to_owned());
     Ok(CreateStorageGarbageCollectionJobCommand {
-        subject: resolve_subject(headers)?,
+        subject: map_subject(trusted),
         job_type: normalize_required_text(job_type, "jobType", MAX_TYPE_LEN)?,
         target: normalize_optional_text(request.target, "target", MAX_TYPE_LEN)?,
         dry_run: request.dry_run.unwrap_or(true),
@@ -893,21 +911,13 @@ fn validated_gc_create_command(
     })
 }
 
-fn resolve_subject(headers: &HeaderMap) -> Result<AdminStorageSubject, Response> {
-    TrustedRequestSubject::from_headers(headers)
-        .map(|subject| AdminStorageSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            operator_id: subject.operator_id,
-            operator_type: subject.operator_type,
-        })
-        .map_err(|error| {
-            (
-                StatusCode::UNAUTHORIZED,
-                Json(PlusApiResult::error("4010", error.to_string())),
-            )
-                .into_response()
-        })
+fn map_subject(trusted: TrustedRequestSubject) -> AdminStorageSubject {
+    AdminStorageSubject {
+            tenant_id: trusted.tenant_id,
+            organization_id: trusted.organization_id,
+            operator_id: trusted.operator_id,
+            operator_type: trusted.operator_type,
+        }
 }
 fn server_request_id() -> Result<String, Response> {
     generate_server_request_id().map_err(request_id_error_response)

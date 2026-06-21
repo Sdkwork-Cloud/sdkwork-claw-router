@@ -139,12 +139,10 @@ fn app_site_settings_router_with_optional_store(
 
 async fn fetch_site_settings(
     State(state): State<AdminSiteSettingsState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
 
     match state
         .store
@@ -160,13 +158,11 @@ async fn fetch_site_settings(
 
 async fn update_site_settings(
     State(state): State<AdminSiteSettingsState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let request = match parse_json_body::<SiteSettingsUpdateRequest>(&body, "site settings") {
         Ok(request) => request,
         Err(message) => return bad_request(message),
@@ -200,7 +196,7 @@ async fn update_site_settings(
 
 async fn fetch_site_runtime_settings(
     State(state): State<AppSiteSettingsState>,
-    Query(query): Query<SiteRuntimeSettingsQuery>,
+    Query(query): Query<SiteRuntimeSettingsQuery>
 ) -> Response {
     let Some(store) = state.store.as_ref() else {
         return Json(PlusApiResult::success(to_response(SiteSettings::default()))).into_response();
@@ -236,21 +232,13 @@ async fn fetch_site_runtime_settings(
     }
 }
 
-fn resolve_subject(headers: &HeaderMap) -> Result<SiteSettingsSubject, Response> {
-    TrustedRequestSubject::from_headers(headers)
-        .map(|subject| SiteSettingsSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            operator_id: subject.operator_id,
-            operator_type: subject.operator_type,
-        })
-        .map_err(|error| {
-            (
-                StatusCode::UNAUTHORIZED,
-                Json(PlusApiResult::error("4010", error.to_string())),
-            )
-                .into_response()
-        })
+fn map_subject(trusted: TrustedRequestSubject) -> SiteSettingsSubject {
+    SiteSettingsSubject {
+            tenant_id: trusted.tenant_id,
+            organization_id: trusted.organization_id,
+            operator_id: trusted.operator_id,
+            operator_type: trusted.operator_type,
+        }
 }
 
 fn parse_json_body<T>(body: &[u8], entity_name: &str) -> Result<T, String>

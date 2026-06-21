@@ -1,6 +1,8 @@
-import React, { useState, useEffect, useLayoutEffect, Suspense, lazy } from 'react';
-import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
-import { Navbar, Footer } from 'sdkwork-clawrouter-pc-commons';
+import React, { useState, useLayoutEffect, Suspense, lazy } from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { AppShellLayout, RouteFallback, ScrollToTop } from '@sdkwork/clawrouter-pc-shell';
+import { ConsoleLayout } from '@sdkwork/clawrouter-pc-console-shell';
+import { AdminLayout } from '@sdkwork/clawrouter-pc-admin-shell';
 import {
   applyThemeColorPreference,
   applyThemePreference,
@@ -13,68 +15,57 @@ import {
   type ThemeColorPreference,
   type ThemePreference,
 } from './themePreference';
-import { RequireAdminSession, RequirePortalSession } from './auth/protectedPortalRoutes';
+import { RequireAdminSession, RequirePortalSession, PortalAuthenticatedAuthRouteGuard } from './auth/protectedPortalRoutes';
 
-const Home = lazyRoute(() => import('sdkwork-clawrouter-pc-home'), 'Home');
-const Models = lazyRoute(() => import('sdkwork-clawrouter-pc-models/models'), 'Models');
-const ModelDetails = lazyRoute(() => import('sdkwork-clawrouter-pc-models/details'), 'ModelDetails');
-const Rankings = lazyRoute(() => import('sdkwork-clawrouter-pc-rankings'), 'Rankings');
+const Home = lazyRoute(() => import('@sdkwork/clawrouter-pc-home'), 'Home');
+const Models = lazyRoute(() => import('@sdkwork/clawrouter-pc-models/models'), 'Models');
+const ModelDetails = lazyRoute(() => import('@sdkwork/clawrouter-pc-models/details'), 'ModelDetails');
+const Rankings = lazyRoute(() => import('@sdkwork/clawrouter-pc-rankings'), 'Rankings');
 const Docs = lazyRoute(() => import('@sdkwork/documents-pc-api-reference'), 'Docs');
 const ApiReference = lazyRoute(() => import('@sdkwork/documents-pc-api-reference'), 'ApiReference');
 const ProductDocs = lazyRoute(() => import('@sdkwork/documents-pc-api-reference'), 'ProductDocs');
 const SdkReference = lazyRoute(() => import('@sdkwork/documents-pc-sdk-reference'), 'SdkReference');
-const Playground = lazyRoute(() => import('sdkwork-clawrouter-pc-playground'), 'Playground');
+const Playground = lazyRoute(() => import('@sdkwork/clawrouter-pc-playground'), 'Playground');
 const ClawRouterAuthRoutes = lazyRoute(() => import('./auth/ClawRouterAuthRoutes'), 'ClawRouterAuthRoutes');
-const ClawRouterAuthSettingsPage = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-site'), 'ClawRouterAuthSettingsPage');
-
-type ShellLayoutProps = {
-  isDark: boolean;
-  toggleTheme: () => void;
-  theme: ThemePreference;
-  setTheme: (theme: ThemePreference) => void;
-  themeColor: ThemeColorPreference;
-  setThemeColor: (themeColor: ThemeColorPreference) => void;
-};
-
-type AdminLayoutProps = {
-  isDark: boolean;
-  toggleTheme: () => void;
-};
+const ClawRouterAuthSettingsPage = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-site'), 'ClawRouterAuthSettingsPage');
 
 type AdminSectionRouteProps = {
   sectionId?: string;
   surface?: 'finance' | 'marketing';
 };
 
-const ConsoleLayout = lazyRoute<ShellLayoutProps>(() => import('sdkwork-clawrouter-pc-console-core'), 'ConsoleLayout');
-const DashboardView = lazyRoute(() => import('sdkwork-clawrouter-pc-console-dashboard'), 'DashboardView');
-const UsageView = lazyRoute(() => import('sdkwork-clawrouter-pc-console-usage'), 'UsageView');
-const GatewayView = lazyRoute(() => import('sdkwork-clawrouter-pc-console-gateway'), 'GatewayView');
-const ApiKeysView = lazyRoute(() => import('sdkwork-clawrouter-pc-console-api-keys'), 'ApiKeysView');
-const UserView = lazyRoute(() => import('sdkwork-clawrouter-pc-console-user'), 'UserView');
-const SettingsView = lazyRoute(() => import('sdkwork-clawrouter-pc-console-settings'), 'SettingsView');
+const DashboardView = lazyRoute(() => import('@sdkwork/clawrouter-pc-console-dashboard'), 'DashboardView');
+const UsageView = lazyRoute(() => import('@sdkwork/clawrouter-pc-console-usage'), 'UsageView');
+const GatewayView = lazyRoute(() => import('@sdkwork/clawrouter-pc-console-gateway'), 'GatewayView');
+const ApiKeysView = lazyRoute(() => import('@sdkwork/clawrouter-pc-console-api-keys'), 'ApiKeysView');
+const UserView = lazyRoute(() => import('@sdkwork/clawrouter-pc-console-user'), 'UserView');
+const SettingsView = lazyRoute(() => import('@sdkwork/clawrouter-pc-console-settings'), 'SettingsView');
+const AccountView = lazyRoute(() => import('@sdkwork/clawrouter-pc-console-account'), 'AccountView');
+const WalletView = lazyRoute(() => import('@sdkwork/clawrouter-pc-console-wallet'), 'WalletView');
+const MembershipsView = lazyRoute(() => import('@sdkwork/clawrouter-pc-console-memberships'), 'MembershipsView');
+const SettlementsView = lazyRoute(() => import('@sdkwork/clawrouter-pc-console-settlements'), 'SettlementsView');
+const MessagesView = lazyRoute(() => import('@sdkwork/clawrouter-pc-console-messages'), 'MessagesView');
 
-const AdminLayout = lazyRoute<AdminLayoutProps>(() => import('./AdminLayout'), 'AdminLayout');
-const DashboardAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-dashboard'), 'DashboardAdmin');
-const AnalyticsAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-analytics'), 'AnalyticsAdmin');
-const CacheAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-cache'), 'CacheAdmin');
-const UserAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-user'), 'UserAdmin');
-const OrganizationAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-organization'), 'OrganizationAdmin');
-const GroupAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-group'), 'GroupAdmin');
-const ModelAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-model'), 'ModelAdmin');
-const SiteAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-model'), 'SiteAdmin');
-const ModelMappingAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-model'), 'ModelMappingAdmin');
-const ResourceAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-model'), 'ResourceAdmin');
-const PromptsAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-prompts'), 'PromptsAdmin');
-const McpAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-mcp'), 'McpAdmin');
-const ChannelAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-channel'), 'ChannelAdmin');
-const ServiceProviderAdmin = lazyRoute<AdminSectionRouteProps>(() => import('sdkwork-clawrouter-pc-admin-service-provider'), 'ServiceProviderAdmin');
-const RecordAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-record'), 'RecordAdmin');
-const MonitorAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-monitor'), 'MonitorAdmin');
-const RateLimitAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-ratelimit'), 'RateLimitAdmin');
-const ServiceNodesAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-service-nodes'), 'ServiceNodesAdmin');
-const RuntimeRegionAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-runtime-region'), 'RuntimeRegionAdmin');
-const ClawRouterSiteSettingsPage = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-site'), 'ClawRouterSiteSettingsPage');
+const DashboardAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-dashboard'), 'DashboardAdmin');
+const AnalyticsAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-analytics'), 'AnalyticsAdmin');
+const CacheAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-cache'), 'CacheAdmin');
+const UserAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-user'), 'UserAdmin');
+const OrganizationAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-organization'), 'OrganizationAdmin');
+const GroupAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-group'), 'GroupAdmin');
+const ModelAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-model'), 'ModelAdmin');
+const SiteAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-model'), 'SiteAdmin');
+const ModelMappingAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-model'), 'ModelMappingAdmin');
+const ResourceAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-model'), 'ResourceAdmin');
+const PromptsAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-prompts'), 'PromptsAdmin');
+const McpAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-mcp'), 'McpAdmin');
+const ChannelAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-channel'), 'ChannelAdmin');
+const ServiceProviderAdmin = lazyRoute<AdminSectionRouteProps>(() => import('@sdkwork/clawrouter-pc-admin-service-provider'), 'ServiceProviderAdmin');
+const RecordAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-record'), 'RecordAdmin');
+const MonitorAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-monitor'), 'MonitorAdmin');
+const RateLimitAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-ratelimit'), 'RateLimitAdmin');
+const ServiceNodesAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-service-nodes'), 'ServiceNodesAdmin');
+const RuntimeRegionAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-runtime-region'), 'RuntimeRegionAdmin');
+const ClawRouterSiteSettingsPage = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-site'), 'ClawRouterSiteSettingsPage');
 
 function lazyRoute<TProps extends object = Record<string, unknown>>(
   loader: () => Promise<Record<string, unknown>>,
@@ -86,52 +77,21 @@ function lazyRoute<TProps extends object = Record<string, unknown>>(
   });
 }
 
-function RouteFallback() {
-  const { pathname } = useLocation();
-
-  if (pathname.startsWith('/auth')) {
-    return (
-      <div className="sdkwork-auth-route-fallback fixed inset-0 z-[60] h-[100dvh] min-h-[100dvh] w-full bg-slate-950" />
-    );
-  }
-
-  return <div className="min-h-[40vh] bg-white dark:bg-slate-950" />;
-}
-
-function ScrollToTop() {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  return null;
-}
-
 function MainLayout({ isDark, toggleTheme }: { isDark: boolean, toggleTheme: () => void }) {
-  const location = useLocation();
-  const isPlayground = location.pathname.startsWith('/playground') || location.pathname.startsWith('/c/');
-
   return (
-    <>
-      <Navbar isDark={isDark} toggleTheme={toggleTheme} />
-      <div className="flex-1">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/models" element={<Models />} />
-          <Route path="/models/:id" element={<ModelDetails />} />
-          <Route path="/models/:provider/:model" element={<ModelDetails />} />
-          <Route path="/rankings" element={<Rankings />} />
-          <Route path="/product-docs" element={<ProductDocs />} />
-          <Route path="/docs" element={<Docs />} />
-          <Route path="/api-reference" element={<ApiReference />} />
-          <Route path="/sdk-reference" element={<SdkReference />} />
-          <Route path="/playground/*" element={<Playground />} />
-          <Route path="/c/:conversationId" element={<Playground />} />
-        </Routes>
-      </div>
-      {!isPlayground && <Footer />}
-    </>
+    <AppShellLayout
+      isDark={isDark}
+      toggleTheme={toggleTheme}
+      Home={Home}
+      Models={Models}
+      ModelDetails={ModelDetails}
+      Rankings={Rankings}
+      Docs={Docs}
+      ApiReference={ApiReference}
+      ProductDocs={ProductDocs}
+      SdkReference={SdkReference}
+      Playground={Playground}
+    />
   );
 }
 
@@ -191,7 +151,7 @@ export default function App() {
       <div className="min-h-screen flex flex-col selection:bg-lobster-500/30">
         <Suspense fallback={<RouteFallback />}>
           <Routes>
-            <Route path="/auth/*" element={<ClawRouterAuthRoutes />} />
+            <Route path="/auth/*" element={<PortalAuthenticatedAuthRouteGuard><ClawRouterAuthRoutes /></PortalAuthenticatedAuthRouteGuard>} />
 
             {/* Console Routes - standalone structure with global Navbar */}
             <Route path="/console" element={<RequirePortalSession><ConsoleLayout isDark={isDark} toggleTheme={toggleTheme} theme={theme} setTheme={setTheme} themeColor={themeColor} setThemeColor={setThemeColor} /></RequirePortalSession>}>
@@ -200,6 +160,11 @@ export default function App() {
               <Route path="usage" element={<UsageView />} />
               <Route path="gateway" element={<GatewayView />} />
               <Route path="api-keys" element={<ApiKeysView />} />
+              <Route path="account" element={<AccountView />} />
+              <Route path="wallet" element={<WalletView />} />
+              <Route path="memberships" element={<MembershipsView />} />
+              <Route path="settlements" element={<SettlementsView />} />
+              <Route path="notifications" element={<MessagesView />} />
               <Route path="user" element={<UserView />} />
               <Route path="settings" element={<SettingsView />} />
               <Route path="*" element={<Navigate to="/console/dashboard" replace />} />

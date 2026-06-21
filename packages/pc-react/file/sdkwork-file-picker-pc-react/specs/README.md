@@ -10,7 +10,7 @@ Root SDKWork standards remain authoritative. Local component specs can narrow or
 | --- | --- |
 | Name | `@sdkwork/file-picker-pc-react` |
 | Type | `react-package` |
-| Root | `sdkwork-claw-router/packages/pc-react/file/sdkwork-file-picker-pc-react` |
+| Root | `sdkwork-clawrouter/packages/pc-react/file/sdkwork-file-picker-pc-react` |
 | Domain | `file` |
 | Capability | `file-picker` |
 | Languages | `typescript` |

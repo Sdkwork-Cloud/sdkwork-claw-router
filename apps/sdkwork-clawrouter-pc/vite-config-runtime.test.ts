@@ -93,6 +93,21 @@ test("dependency optimizer pre-bundles recharts instead of serving its mixed ESM
   assert.equal(config.optimizeDeps?.needsInterop?.includes("es-toolkit/compat/get"), false);
 });
 
+test("generated ClawRouter SDK packages are not served from stale dependency optimizer cache", async () => {
+  const config = await resolvePortalViteConfig();
+
+  for (const packageName of [
+    "@sdkwork/clawrouter-app-sdk",
+    "@sdkwork/clawrouter-backend-sdk",
+    "@sdkwork/clawrouter-open-sdk",
+  ]) {
+    assert.ok(
+      config.optimizeDeps?.exclude?.includes(packageName),
+      `${packageName} must bypass Vite dep-scan pre-bundling and resolve through source aliases`,
+    );
+  }
+});
+
 test("API reference workspace package is not served from stale dependency optimizer cache", async () => {
   const config = await resolvePortalViteConfig();
 

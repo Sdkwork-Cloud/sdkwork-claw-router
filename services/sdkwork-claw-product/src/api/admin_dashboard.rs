@@ -1,13 +1,14 @@
 use std::sync::Arc;
 
 use axum::extract::State;
-use axum::http::{HeaderMap, StatusCode};
+use axum::http::StatusCode;
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
 use sdkwork_claw_http::TrustedRequestSubject;
 
 use crate::api::response::PlusApiResult;
+use crate::api::subject::admin_operator_fields;
 use crate::ports::{AdminDashboardQuery, AdminDashboardReadStore, AdminDashboardSubject};
 
 #[derive(Clone)]
@@ -28,11 +29,16 @@ pub fn admin_dashboard_router_with_read_store(
 
 async fn fetch_admin_dashboard_overview(
     State(state): State<AdminDashboardState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
 ) -> Response {
-    let query = match dashboard_query_from_headers(&headers) {
-        Ok(query) => query,
-        Err(response) => return response,
+    let operator = admin_operator_fields(trusted);
+    let query = AdminDashboardQuery {
+        subject: AdminDashboardSubject {
+            tenant_id: operator.tenant_id,
+            organization_id: operator.organization_id,
+            operator_id: operator.operator_id,
+            operator_type: operator.operator_type,
+        },
     };
 
     match state.read_store.load_dashboard(query).await {
@@ -46,23 +52,4 @@ async fn fetch_admin_dashboard_overview(
         )
             .into_response(),
     }
-}
-
-fn dashboard_query_from_headers(headers: &HeaderMap) -> Result<AdminDashboardQuery, Response> {
-    TrustedRequestSubject::from_headers(headers)
-        .map(|subject| AdminDashboardQuery {
-            subject: AdminDashboardSubject {
-                tenant_id: subject.tenant_id,
-                organization_id: subject.organization_id,
-                operator_id: subject.operator_id,
-                operator_type: subject.operator_type,
-            },
-        })
-        .map_err(|error| {
-            (
-                StatusCode::UNAUTHORIZED,
-                Json(PlusApiResult::error("4010", error.to_string())),
-            )
-                .into_response()
-        })
 }

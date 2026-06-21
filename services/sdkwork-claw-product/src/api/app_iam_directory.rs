@@ -1,7 +1,7 @@
 use std::sync::Arc;
 
 use axum::extract::{Query, State};
-use axum::http::{HeaderMap, StatusCode};
+use axum::http::StatusCode;
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
@@ -9,6 +9,7 @@ use sdkwork_claw_http::TrustedRequestSubject;
 
 use crate::api::app_iam_directory_query::AppIamDirectoryHttpQuery;
 use crate::api::response::PlusApiResult;
+use crate::api::subject::map_optional_app_user_subject;
 use crate::ports::{
     AppIamDepartmentAssignmentItem, AppIamDepartmentItem, AppIamDepartmentTreeItem,
     AppIamDirectoryItems, AppIamDirectoryQuery, AppIamDirectoryReadFuture,
@@ -146,10 +147,10 @@ fn app_iam_directory_router_with_state(
 
 async fn list_organizations(
     State(state): State<AppIamDirectoryState>,
+    subject: Option<TrustedRequestSubject>,
     Query(query): Query<AppIamDirectoryHttpQuery>,
-    headers: HeaderMap,
 ) -> Response {
-    let subject = match iam_directory_subject(&headers, state.require_subject) {
+    let subject = match iam_directory_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -162,10 +163,10 @@ async fn list_organizations(
 
 async fn retrieve_organization_tree(
     State(state): State<AppIamDirectoryState>,
+    subject: Option<TrustedRequestSubject>,
     Query(query): Query<AppIamDirectoryHttpQuery>,
-    headers: HeaderMap,
 ) -> Response {
-    let subject = match iam_directory_subject(&headers, state.require_subject) {
+    let subject = match iam_directory_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -182,10 +183,10 @@ async fn retrieve_organization_tree(
 
 async fn list_organization_memberships(
     State(state): State<AppIamDirectoryState>,
+    subject: Option<TrustedRequestSubject>,
     Query(query): Query<AppIamDirectoryHttpQuery>,
-    headers: HeaderMap,
 ) -> Response {
-    let subject = match iam_directory_subject(&headers, state.require_subject) {
+    let subject = match iam_directory_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -202,10 +203,10 @@ async fn list_organization_memberships(
 
 async fn list_departments(
     State(state): State<AppIamDirectoryState>,
+    subject: Option<TrustedRequestSubject>,
     Query(query): Query<AppIamDirectoryHttpQuery>,
-    headers: HeaderMap,
 ) -> Response {
-    let subject = match iam_directory_subject(&headers, state.require_subject) {
+    let subject = match iam_directory_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -218,10 +219,10 @@ async fn list_departments(
 
 async fn retrieve_department_tree(
     State(state): State<AppIamDirectoryState>,
+    subject: Option<TrustedRequestSubject>,
     Query(query): Query<AppIamDirectoryHttpQuery>,
-    headers: HeaderMap,
 ) -> Response {
-    let subject = match iam_directory_subject(&headers, state.require_subject) {
+    let subject = match iam_directory_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -238,10 +239,10 @@ async fn retrieve_department_tree(
 
 async fn list_department_assignments(
     State(state): State<AppIamDirectoryState>,
+    subject: Option<TrustedRequestSubject>,
     Query(query): Query<AppIamDirectoryHttpQuery>,
-    headers: HeaderMap,
 ) -> Response {
-    let subject = match iam_directory_subject(&headers, state.require_subject) {
+    let subject = match iam_directory_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -258,10 +259,10 @@ async fn list_department_assignments(
 
 async fn list_positions(
     State(state): State<AppIamDirectoryState>,
+    subject: Option<TrustedRequestSubject>,
     Query(query): Query<AppIamDirectoryHttpQuery>,
-    headers: HeaderMap,
 ) -> Response {
-    let subject = match iam_directory_subject(&headers, state.require_subject) {
+    let subject = match iam_directory_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -274,10 +275,10 @@ async fn list_positions(
 
 async fn list_position_assignments(
     State(state): State<AppIamDirectoryState>,
+    subject: Option<TrustedRequestSubject>,
     Query(query): Query<AppIamDirectoryHttpQuery>,
-    headers: HeaderMap,
 ) -> Response {
-    let subject = match iam_directory_subject(&headers, state.require_subject) {
+    let subject = match iam_directory_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -294,10 +295,10 @@ async fn list_position_assignments(
 
 async fn list_role_bindings(
     State(state): State<AppIamDirectoryState>,
+    subject: Option<TrustedRequestSubject>,
     Query(query): Query<AppIamDirectoryHttpQuery>,
-    headers: HeaderMap,
 ) -> Response {
-    let subject = match iam_directory_subject(&headers, state.require_subject) {
+    let subject = match iam_directory_subject(subject, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -309,22 +310,14 @@ async fn list_role_bindings(
 }
 
 fn iam_directory_subject(
-    headers: &HeaderMap,
+    subject: Option<TrustedRequestSubject>,
     require_subject: bool,
 ) -> Result<Option<AppIamDirectorySubject>, Response> {
-    match TrustedRequestSubject::from_headers(headers) {
-        Ok(subject) => Ok(Some(AppIamDirectorySubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            user_id: subject.user_id,
-        })),
-        Err(error) if require_subject => Err((
-            StatusCode::UNAUTHORIZED,
-            Json(PlusApiResult::error("4010", error.to_string())),
-        )
-            .into_response()),
-        Err(_) => Ok(None),
-    }
+    map_optional_app_user_subject(subject, require_subject, |trusted| AppIamDirectorySubject {
+        tenant_id: trusted.tenant_id,
+        organization_id: trusted.organization_id,
+        user_id: trusted.user_id,
+    })
 }
 
 fn app_iam_directory_read_model_error(error: impl std::fmt::Display) -> Response {

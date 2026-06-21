@@ -14,6 +14,18 @@ import {
   type SdkworkAppConfig as SdkworkGenerationsAppConfig,
 } from 'sdkwork-generations-app-sdk-generated-typescript';
 import {
+  SdkworkAppClient as SdkworkMemoryAppClient,
+  type SdkworkAppConfig as SdkworkMemoryAppConfig,
+} from '@sdkwork/memory-app-sdk';
+import {
+  SdkworkAppClient as SdkworkAgentAppClient,
+  type SdkworkAppConfig as SdkworkAgentAppConfig,
+} from '@sdkwork/agent-app-sdk';
+import {
+  SdkworkBackendClient as SdkworkAgentBackendClient,
+  type SdkworkBackendConfig as SdkworkAgentBackendConfig,
+} from '@sdkwork/agent-backend-sdk';
+import {
   SdkworkAppClient as SdkworkAppbaseAppClient,
   type SdkworkAppConfig as SdkworkAppbaseAppConfig,
 } from '@sdkwork/appbase-app-sdk';
@@ -39,7 +51,7 @@ import {
   loadStoredAppSessionToken,
 } from './app-session-token.ts';
 import { resetClawRouterIamRuntime } from './iam-runtime.ts';
-import { buildPortalAuthLoginRedirect } from './portal-auth.ts';
+import { buildPortalAuthLoginRedirect, isProtectedPortalPath } from './portal-auth.ts';
 import { normalizeGeneratedSdkBaseUrl } from './sdk-base-url.ts';
 import { readClawRouterRuntimeEnv } from './utils/env.ts';
 
@@ -280,6 +292,27 @@ export interface SdkworkGenerationsAppSdkClientOptions {
   timeout?: number;
 }
 
+export interface SdkworkMemoryAppSdkClientOptions {
+  appBaseUrl?: string;
+  platform?: string;
+  tokenManager?: AuthTokenManager;
+  timeout?: number;
+}
+
+export interface SdkworkAgentAppSdkClientOptions {
+  appBaseUrl?: string;
+  platform?: string;
+  tokenManager?: AuthTokenManager;
+  timeout?: number;
+}
+
+export interface SdkworkAgentBackendSdkClientOptions {
+  backendBaseUrl?: string;
+  platform?: string;
+  tokenManager?: AuthTokenManager;
+  timeout?: number;
+}
+
 export interface SdkworkDriveAppSdkClientOptions {
   appBaseUrl?: string;
   platform?: string;
@@ -392,6 +425,9 @@ export type ClawRouterBackendSdkClient = SdkworkBackendClient;
 export type SdkworkAppbaseAppSdkClient = SdkworkAppbaseAppClient;
 export type SdkworkAppbaseBackendSdkClient = SdkworkAppbaseBackendClient;
 export type SdkworkGenerationsAppSdkClient = SdkworkGenerationsAppClient;
+export type SdkworkMemoryAppSdkClient = SdkworkMemoryAppClient;
+export type SdkworkAgentAppSdkClient = SdkworkAgentAppClient;
+export type SdkworkAgentBackendSdkClient = SdkworkAgentBackendClient;
 export type SdkworkDriveAppSdkClient = SdkworkDriveAppClient;
 export type SdkworkCommerceAppSdkClient = SdkworkCommerceAppClient;
 export type SdkworkCommerceBackendSdkClient = SdkworkCommerceGeneratedBackendClient;
@@ -403,6 +439,9 @@ type ClawRouterSdkRuntimeHost = typeof globalThis & {
   __SDKWORK_APPBASE_APP_SDK_CLIENT__?: SdkworkAppbaseAppSdkClient | null;
   __SDKWORK_APPBASE_BACKEND_SDK_CLIENT__?: SdkworkAppbaseBackendSdkClient | null;
   __SDKWORK_GENERATIONS_APP_SDK_CLIENT__?: SdkworkGenerationsAppSdkClient | null;
+  __SDKWORK_MEMORY_APP_SDK_CLIENT__?: SdkworkMemoryAppSdkClient | null;
+  __SDKWORK_AGENT_APP_SDK_CLIENT__?: SdkworkAgentAppSdkClient | null;
+  __SDKWORK_AGENT_BACKEND_SDK_CLIENT__?: SdkworkAgentBackendSdkClient | null;
   __SDKWORK_DRIVE_APP_SDK_CLIENT__?: SdkworkDriveAppSdkClient | null;
   __SDKWORK_COMMERCE_APP_SDK_CLIENT__?: SdkworkCommerceAppSdkClient | null;
   __SDKWORK_COMMERCE_BACKEND_SDK_CLIENT__?: SdkworkCommerceBackendSdkClient | null;
@@ -447,6 +486,9 @@ let backendClient: ClawRouterBackendSdkClient | null = null;
 let appbaseAppClient: SdkworkAppbaseAppClient | null = null;
 let appbaseBackendClient: SdkworkAppbaseBackendClient | null = null;
 let generationsAppClient: SdkworkGenerationsAppClient | null = null;
+let memoryAppClient: SdkworkMemoryAppClient | null = null;
+let agentAppClient: SdkworkAgentAppClient | null = null;
+let agentBackendClient: SdkworkAgentBackendClient | null = null;
 let driveAppClient: SdkworkDriveAppClient | null = null;
 let commerceAppClient: SdkworkCommerceAppClient | null = null;
 let commerceBackendClient: SdkworkCommerceGeneratedBackendClient | null = null;
@@ -487,6 +529,24 @@ export function createSdkworkGenerationsAppSdkClient(
   options: SdkworkGenerationsAppSdkClientOptions = {},
 ): SdkworkGenerationsAppClient {
   return attachClawRouterSdkSessionAuthBoundary(new SdkworkGenerationsAppClient(buildGenerationsAppConfig(options)));
+}
+
+export function createSdkworkMemoryAppSdkClient(
+  options: SdkworkMemoryAppSdkClientOptions = {},
+): SdkworkMemoryAppClient {
+  return attachClawRouterSdkSessionAuthBoundary(new SdkworkMemoryAppClient(buildMemoryAppConfig(options)));
+}
+
+export function createSdkworkAgentAppSdkClient(
+  options: SdkworkAgentAppSdkClientOptions = {},
+): SdkworkAgentAppClient {
+  return attachClawRouterSdkSessionAuthBoundary(new SdkworkAgentAppClient(buildAgentAppConfig(options)));
+}
+
+export function createSdkworkAgentBackendSdkClient(
+  options: SdkworkAgentBackendSdkClientOptions = {},
+): SdkworkAgentBackendClient {
+  return attachClawRouterSdkSessionAuthBoundary(new SdkworkAgentBackendClient(buildAgentBackendConfig(options)));
 }
 
 export function createSdkworkDriveAppSdkClient(
@@ -611,6 +671,54 @@ export function getSdkworkGenerationsAppSdkClient(
   return generationsAppClient;
 }
 
+export function getSdkworkMemoryAppSdkClient(
+  options: SdkworkMemoryAppSdkClientOptions = {},
+): SdkworkMemoryAppSdkClient {
+  if (hasRuntimeOverrides(options)) {
+    return createSdkworkMemoryAppSdkClient(options);
+  }
+  const injected = readInjectedMemoryAppSdkClient();
+  if (injected) {
+    return injected;
+  }
+  if (!memoryAppClient) {
+    memoryAppClient = createSdkworkMemoryAppSdkClient();
+  }
+  return memoryAppClient;
+}
+
+export function getSdkworkAgentAppSdkClient(
+  options: SdkworkAgentAppSdkClientOptions = {},
+): SdkworkAgentAppSdkClient {
+  if (hasRuntimeOverrides(options)) {
+    return createSdkworkAgentAppSdkClient(options);
+  }
+  const injected = readInjectedAgentAppSdkClient();
+  if (injected) {
+    return injected;
+  }
+  if (!agentAppClient) {
+    agentAppClient = createSdkworkAgentAppSdkClient();
+  }
+  return agentAppClient;
+}
+
+export function getSdkworkAgentBackendSdkClient(
+  options: SdkworkAgentBackendSdkClientOptions = {},
+): SdkworkAgentBackendSdkClient {
+  if (hasRuntimeOverrides(options)) {
+    return createSdkworkAgentBackendSdkClient(options);
+  }
+  const injected = readInjectedAgentBackendSdkClient();
+  if (injected) {
+    return injected;
+  }
+  if (!agentBackendClient) {
+    agentBackendClient = createSdkworkAgentBackendSdkClient();
+  }
+  return agentBackendClient;
+}
+
 export function getSdkworkDriveAppSdkClient(
   options: SdkworkDriveAppSdkClientOptions = {},
 ): SdkworkDriveAppClient {
@@ -681,6 +789,9 @@ export function resetClawRouterSdkClients(): void {
   appbaseAppClient = null;
   appbaseBackendClient = null;
   generationsAppClient = null;
+  memoryAppClient = null;
+  agentAppClient = null;
+  agentBackendClient = null;
   driveAppClient = null;
   commerceAppClient = null;
   commerceBackendClient = null;
@@ -791,7 +902,7 @@ function redirectBrowserToPortalLoginAfterSessionAuthError(
     return;
   }
   const pathname = normalizeBrowserLocationPathname(location.pathname);
-  if (pathname === '/auth' || pathname.startsWith('/auth/')) {
+  if (pathname === '/auth' || pathname.startsWith('/auth/') || !isProtectedPortalPath(pathname)) {
     return;
   }
 
@@ -964,6 +1075,51 @@ function buildGenerationsAppConfig(options: SdkworkGenerationsAppSdkClientOption
   };
 }
 
+function buildMemoryAppConfig(options: SdkworkMemoryAppSdkClientOptions): SdkworkMemoryAppConfig {
+  return {
+    baseUrl: normalizeGeneratedSdkBaseUrl(
+      options.appBaseUrl
+      ?? readClawRouterRuntimeEnv('VITE_SDKWORK_MEMORY_APP_API_BASE_URL')
+      ?? readClawRouterRuntimeEnv('VITE_CLAWROUTER_APP_API_BASE_URL')
+      ?? APP_API_PREFIX,
+      APP_API_PREFIX,
+    ),
+    platform: options.platform ?? 'web',
+    tokenManager: resolveClawRouterSdkTokenManager(options.tokenManager),
+    timeout: options.timeout,
+  };
+}
+
+function buildAgentAppConfig(options: SdkworkAgentAppSdkClientOptions): SdkworkAgentAppConfig {
+  return {
+    baseUrl: normalizeGeneratedSdkBaseUrl(
+      options.appBaseUrl
+      ?? readClawRouterRuntimeEnv('VITE_SDKWORK_AGENT_APP_API_BASE_URL')
+      ?? readClawRouterRuntimeEnv('VITE_CLAWROUTER_APP_API_BASE_URL')
+      ?? APP_API_PREFIX,
+      APP_API_PREFIX,
+    ),
+    platform: options.platform ?? 'web',
+    tokenManager: resolveClawRouterSdkTokenManager(options.tokenManager),
+    timeout: options.timeout,
+  };
+}
+
+function buildAgentBackendConfig(options: SdkworkAgentBackendSdkClientOptions): SdkworkAgentBackendConfig {
+  return {
+    baseUrl: normalizeGeneratedSdkBaseUrl(
+      options.backendBaseUrl
+      ?? readClawRouterRuntimeEnv('VITE_SDKWORK_AGENT_BACKEND_API_BASE_URL')
+      ?? readClawRouterRuntimeEnv('VITE_CLAWROUTER_BACKEND_API_BASE_URL')
+      ?? BACKEND_API_PREFIX,
+      BACKEND_API_PREFIX,
+    ),
+    platform: options.platform ?? 'web',
+    tokenManager: resolveClawRouterSdkTokenManager(options.tokenManager),
+    timeout: options.timeout,
+  };
+}
+
 function buildDriveAppConfig(options: SdkworkDriveAppSdkClientOptions): SdkworkDriveAppConfig {
   return {
     baseUrl: normalizeGeneratedSdkBaseUrl(
@@ -1047,6 +1203,9 @@ function hasRuntimeOverrides(
     | SdkworkAppbaseAppSdkClientOptions
     | SdkworkAppbaseBackendSdkClientOptions
     | SdkworkGenerationsAppSdkClientOptions
+    | SdkworkMemoryAppSdkClientOptions
+    | SdkworkAgentAppSdkClientOptions
+    | SdkworkAgentBackendSdkClientOptions
     | SdkworkDriveAppSdkClientOptions
     | SdkworkCommerceAppSdkClientOptions
     | SdkworkCommerceBackendSdkClientOptions
@@ -1102,6 +1261,18 @@ function readInjectedAppbaseBackendSdkClient(): SdkworkAppbaseBackendSdkClient |
 
 function readInjectedGenerationsAppSdkClient(): SdkworkGenerationsAppSdkClient | undefined {
   return (globalThis as ClawRouterSdkRuntimeHost).__SDKWORK_GENERATIONS_APP_SDK_CLIENT__ ?? undefined;
+}
+
+function readInjectedMemoryAppSdkClient(): SdkworkMemoryAppSdkClient | undefined {
+  return (globalThis as ClawRouterSdkRuntimeHost).__SDKWORK_MEMORY_APP_SDK_CLIENT__ ?? undefined;
+}
+
+function readInjectedAgentAppSdkClient(): SdkworkAgentAppSdkClient | undefined {
+  return (globalThis as ClawRouterSdkRuntimeHost).__SDKWORK_AGENT_APP_SDK_CLIENT__ ?? undefined;
+}
+
+function readInjectedAgentBackendSdkClient(): SdkworkAgentBackendSdkClient | undefined {
+  return (globalThis as ClawRouterSdkRuntimeHost).__SDKWORK_AGENT_BACKEND_SDK_CLIENT__ ?? undefined;
 }
 
 function readInjectedDriveAppSdkClient(): SdkworkDriveAppSdkClient | undefined {

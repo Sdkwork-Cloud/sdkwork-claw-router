@@ -59,7 +59,7 @@ Admin/App API 契约表名：`appstore_app`、`c_category`（OpenAPI `x-table` �
 
 ## 6. 门禁与验证
 
-- **Schema Registry**：`docs/schema-registry/sdkwork-claw-router.tables.yaml` 不得再注册 v4.1 已退役的 `plus_app`、`plus_category`、`studio_catalog_*`、`platform_*`、`content_course*` 等表。
+- **Schema Registry**：`docs/schema-registry/sdkwork-clawrouter.tables.yaml` 不得再注册 v4.1 已退役的 `plus_app`、`plus_category`、`studio_catalog_*`、`platform_*`、`content_course*` 等表。
 - **Schema Guardian**：`tools/schema_guardian.py` 的 `V41_PLATFORM_LEGACY_ALIASES` 会扫描 registry、frontend-field-contracts 片段、编译快照、OpenAPI 与 API manifest，禁止引用退役别名（含 `studio_app_template` → `appstore_app_template`）。
 - **迁移脚本**：`scripts/migrate-v41-frontend-contract-tables.mjs` 用于一次性替换契约 YAML 中的 legacy 表名。
 - **测试**：`database_installer`、`sqlite_app_store_*`、`sqlite_admin_skill_store`、OpenAPI/SDK guardian 必须通过。

@@ -10,7 +10,7 @@ Root SDKWork standards remain authoritative. Local component specs can narrow or
 | --- | --- |
 | Name | `clawrouter-backend-sdk` |
 | Type | `sdk-family` |
-| Root | `sdkwork-claw-router/sdks/clawrouter-backend-sdk` |
+| Root | `sdkwork-clawrouter/sdks/clawrouter-backend-sdk` |
 | Domain | `platform` |
 | Capability | `router` |
 | Languages | `csharp, flutter, go, java, kotlin, python, rust, swift, typescript` |

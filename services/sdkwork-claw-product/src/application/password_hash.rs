@@ -51,7 +51,7 @@ impl Pbkdf2Sha256PasswordHasher {
 impl PasswordHasher for Pbkdf2Sha256PasswordHasher {
     fn hash_password(&self, password: &str, salt_hint: &str) -> DomainResult<String> {
         let mut salt = Vec::with_capacity(32);
-        salt.extend_from_slice(b"sdkwork-claw-router:");
+        salt.extend_from_slice(b"sdkwork-clawrouter:");
         salt.extend_from_slice(salt_hint.as_bytes());
         if salt.len() < 16 {
             return Err(DomainError::new("password salt hint is too short"));

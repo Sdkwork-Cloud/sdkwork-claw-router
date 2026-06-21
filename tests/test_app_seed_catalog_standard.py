@@ -178,7 +178,7 @@ class AppSeedCatalogStandardTest(unittest.TestCase):
         seed = json.loads(SEED_PATH.read_text(encoding="utf-8"))
         self.assertEqual(1, seed.get("schemaVersion"))
         self.assertEqual("sdkwork.platform_app.seed", seed.get("kind"))
-        self.assertEqual("sdkwork-claw-router", seed.get("source", {}).get("rootAppKey"))
+        self.assertEqual("sdkwork-clawrouter", seed.get("source", {}).get("rootAppKey"))
         self.assertIsInstance(seed.get("apps"), list)
         self.assertGreater(len(seed["apps"]), 0)
         self.assertEqual(
@@ -189,7 +189,7 @@ class AppSeedCatalogStandardTest(unittest.TestCase):
 
         app_keys = [item.get("appKey") for item in seed["apps"]]
         self.assertEqual(len(app_keys), len(set(app_keys)), "appKey values must be unique")
-        self.assertIn("sdkwork-claw-router", app_keys)
+        self.assertIn("sdkwork-clawrouter", app_keys)
 
         for index, item in enumerate(seed["apps"]):
             with self.subTest(app=item.get("appKey") or index):
@@ -299,11 +299,11 @@ class AppSeedCatalogStandardTest(unittest.TestCase):
     def test_app_seed_catalog_matches_standard_exporter_output(self):
         if not APP_SEED_EXPORTER_PATH.exists():
             self.skipTest(
-                "standard app seed exporter lives outside the writable sdkwork-claw-router workspace"
+                "standard app seed exporter lives outside the writable sdkwork-clawrouter workspace"
             )
         if not APP_SEED_EXPORTER_PATH.is_relative_to(REPO_ROOT):
             self.skipTest(
-                "standard app seed exporter lives outside the writable sdkwork-claw-router workspace"
+                "standard app seed exporter lives outside the writable sdkwork-clawrouter workspace"
             )
         result = subprocess.run(
             [

@@ -6,8 +6,19 @@ from tools.api_contract_manifest import ApiContractManifestGenerator
 
 
 ROOT = Path(__file__).resolve().parents[1]
+ANNOUNCEMENT_PACKAGE = (
+    ROOT
+    / "apps"
+    / "sdkwork-clawrouter-pc"
+    / "packages"
+    / "sdkwork-clawrouter-pc-admin-announcement"
+)
 
 
+@unittest.skipUnless(
+    (ANNOUNCEMENT_PACKAGE / "src" / "announcementService.ts").exists(),
+    "admin announcement package removed from claw router PC surface",
+)
 class AdminAnnouncementRuntimeStandardTest(unittest.TestCase):
     def test_admin_announcement_write_contracts_use_operation_specific_payloads(self) -> None:
         manifest = ApiContractManifestGenerator(root=ROOT).generate()

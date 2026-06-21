@@ -7,8 +7,8 @@ import {
   readString,
   readStringArray,
   type ApiRecord,
-} from 'sdkwork-clawrouter-pc-commons/api-result';
-import { getClawRouterBackendSdkClient } from 'sdkwork-clawrouter-pc-commons/sdk-clients';
+} from '@sdkwork/clawrouter-pc-commons/api-result';
+import { getClawRouterBackendSdkClient } from '@sdkwork/clawrouter-pc-commons/sdk-clients';
 
 export type CacheProviderKind = 'local_cache' | 'redis_cache';
 export type CacheRuntimeTarget = 'desktop_packaged' | 'service';

@@ -125,12 +125,12 @@ class WorkspaceDeliveryStandardTest(unittest.TestCase):
         self.assertIn("--require-database", source)
         self.assertIn("--with-docker", source)
         self.assertIn("docker-compose.postgres-test.yml", source)
-        self.assertIn("sdkwork-claw-router-postgres-test", source)
+        self.assertIn("sdkwork-clawrouter-postgres-test", source)
         self.assertIn("Docker engine is not available", source)
         self.assertIn("docker version", source)
         self.assertIn("cargo", source)
         self.assertIn("sdkwork-claw-product", source)
-        self.assertIn("postgres_generation_history_sql_contract", source)
+        self.assertNotIn("postgres_generation_history_sql_contract", source)
         self.assertIn("postgres_transaction_integration", source)
 
     def test_postgres_docker_compose_is_ephemeral_and_health_checked(self) -> None:

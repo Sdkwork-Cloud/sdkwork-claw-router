@@ -3,9 +3,9 @@ import type { ChatMessage, ChatSessionSummary } from './chatTypes';
 import {
   emptyRuntimeUsageSnapshot,
   type RuntimeUsageSnapshot,
-} from 'sdkwork-clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawrouter-pc-commons/runtime';
 
-const CHAT_LOCAL_STORE_PREFIX = 'sdkwork-claw-router.playground.chat';
+const CHAT_LOCAL_STORE_PREFIX = 'sdkwork-clawrouter.playground.chat';
 
 interface StoredChatConversation {
   inFlightStreams?: Record<string, StoredChatInFlightStream>;

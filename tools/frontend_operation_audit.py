@@ -105,9 +105,16 @@ class FrontendOperationAudit:
     GENERATIONS_INJECTED_SERVICE_PATTERN = re.compile(
         r"\bSdkworkGenerationService\b[\s\S]*\bservice\s*\.\s*createGenerationCommand\s*\("
     )
+    GENERATIONS_WORKSPACE_PATTERN = re.compile(r"\bservice\s*\.\s*getWorkspace\s*\(")
     GENERATIONS_API_PATH_PREFIXES = (
         "/app/v3/api/generations",
     )
+    MEMORY_DEPENDENCY_DOMAINS = frozenset({"memory"})
+    MEMORY_APP_SDK_PATTERN = re.compile(r"\bgetSdkworkMemoryAppSdkClient\s*\(")
+    MEMORY_CLIENT_PATTERN = re.compile(r"\bclient\s*\.\s*memory\s*\.")
+    NOTIFICATION_DEPENDENCY_DOMAINS = frozenset({"notification"})
+    NOTIFICATION_SERVICE_PATTERN = re.compile(r"\bcreatePortalNotificationService\s*\(")
+    NOTIFICATION_PC_REACT_PATTERN = re.compile(r"@sdkwork/notification-pc-react")
     APPBASE_APP_DEPENDENCY_DOMAINS = frozenset({"auth", "iam", "appbase"})
     APPBASE_APP_SERVICE_CLIENT = "getSdkworkAppbaseAppSdkClient"
     APPBASE_BACKEND_SERVICE_CLIENT = "getSdkworkAppbaseBackendSdkClient"
@@ -605,6 +612,17 @@ class FrontendOperationAudit:
                 self.GENERATIONS_SERVICE_PATTERN.search(source_text) is not None
                 or self.GENERATIONS_APP_SDK_PATTERN.search(source_text) is not None
                 or self.GENERATIONS_INJECTED_SERVICE_PATTERN.search(source_text) is not None
+                or self.GENERATIONS_WORKSPACE_PATTERN.search(source_text) is not None
+            )
+        if self._is_memory_dependency_operation(sdk_domain=sdk_domain, source_operation=source_operation):
+            return (
+                self.MEMORY_APP_SDK_PATTERN.search(source_text) is not None
+                or self.MEMORY_CLIENT_PATTERN.search(source_text) is not None
+            )
+        if self._is_notification_dependency_operation(sdk_domain=sdk_domain, source_operation=source_operation):
+            return (
+                self.NOTIFICATION_SERVICE_PATTERN.search(source_text) is not None
+                or self.NOTIFICATION_PC_REACT_PATTERN.search(source_text) is not None
             )
 
         sdk_client = self.SDK_CLIENTS[api_surface]
@@ -690,6 +708,32 @@ class FrontendOperationAudit:
         ]
         return any(table.startswith("generation_") for table in dependency_tables)
 
+    def _is_memory_dependency_domain(self, sdk_domain: Any) -> bool:
+        return isinstance(sdk_domain, str) and sdk_domain in self.MEMORY_DEPENDENCY_DOMAINS
+
+    def _is_memory_dependency_operation(self, *, sdk_domain: Any, source_operation: dict[str, Any] | None) -> bool:
+        if self._is_memory_dependency_domain(sdk_domain):
+            return True
+        if isinstance(sdk_domain, str) and sdk_domain:
+            return False
+        if not isinstance(source_operation, dict):
+            return False
+        api_path = source_operation.get("api_path")
+        return isinstance(api_path, str) and api_path.startswith("/app/v3/api/memory")
+
+    def _is_notification_dependency_domain(self, sdk_domain: Any) -> bool:
+        return isinstance(sdk_domain, str) and sdk_domain in self.NOTIFICATION_DEPENDENCY_DOMAINS
+
+    def _is_notification_dependency_operation(self, *, sdk_domain: Any, source_operation: dict[str, Any] | None) -> bool:
+        if self._is_notification_dependency_domain(sdk_domain):
+            return True
+        if isinstance(sdk_domain, str) and sdk_domain:
+            return False
+        if not isinstance(source_operation, dict):
+            return False
+        api_path = source_operation.get("api_path")
+        return isinstance(api_path, str) and api_path.startswith("/app/v3/api/notification")
+
     def _is_appbase_dependency_operation(
         self,
         *,
@@ -730,6 +774,16 @@ class FrontendOperationAudit:
             return (
                 f"frontend operation {key} must use {self.GENERATIONS_SERVICE_CLIENT} "
                 f"or {self.GENERATIONS_APP_SDK_CLIENT} for generations dependency {api_surface} api_surface"
+            )
+        if self._is_memory_dependency_operation(sdk_domain=sdk_domain, source_operation=source_operation):
+            return (
+                f"frontend operation {key} must use getSdkworkMemoryAppSdkClient() "
+                f"for memory dependency {api_surface} api_surface"
+            )
+        if self._is_notification_dependency_operation(sdk_domain=sdk_domain, source_operation=source_operation):
+            return (
+                f"frontend operation {key} must use @sdkwork/notification-pc-react service boundary "
+                f"for notification dependency {api_surface} api_surface"
             )
         if isinstance(sdk_domain, str) and sdk_domain in self.APPBASE_APP_DEPENDENCY_DOMAINS:
             sdk_client = (
@@ -797,7 +851,7 @@ class FrontendOperationAudit:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Audit portal TypeScript service operations against route data contracts.")
-    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-claw-router root directory")
+    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-clawrouter root directory")
     parser.add_argument("--contract", type=Path, default=None, help="frontend field contract YAML path")
     parser.add_argument("--output", type=Path, default=None, help="output audit JSON path")
     parser.add_argument("--check", action="store_true", help="validate generated operation audit and operation contracts")

@@ -30,18 +30,7 @@ class PostgresIntegrationStandardTest(unittest.TestCase):
             "postgres_billing_redeem_concurrent_first_account_creation_credits_one_account",
             source,
         )
-        self.assertIn(
-            "postgres_generation_history_loads_visible_statuses_without_sensitive_fields",
-            source,
-        )
-        self.assertIn(
-            "postgres_generation_history_orders_newest_first_and_limits_to_100",
-            source,
-        )
         self.assertIn("PostgresPaymentCallbackStore", source)
-        self.assertNotIn("PostgresBillingStore", source)
-        self.assertIn("PostgresAppGenerationHistoryReadStore", source)
-        self.assertIn("AppGenerationHistorySubject", source)
         self.assertIn("tokio::join!", source)
         self.assertIn("UNIQUE (tenant_id, organization_id, owner_user_id, asset_type, currency_code)", source)
         self.assertNotIn("uk_plus_account_user_type", source)

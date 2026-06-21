@@ -195,13 +195,11 @@ fn app_routing_channel_command_router_with_state(
 
 async fn create_routing_channel(
     State(state): State<AppRoutingChannelCommandState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     body: Bytes,
 ) -> Response {
-    let subject = match resolve_required_subject(&state, &headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_routing_subject(trusted);
     let request = match parse_json_object(&body, "routing channel request body is required", false)
     {
         Ok(request) => request,
@@ -227,14 +225,12 @@ async fn create_routing_channel(
 
 async fn update_routing_channel(
     State(state): State<AppRoutingChannelCommandState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(channel_id): Path<String>,
     body: Bytes,
 ) -> Response {
-    let subject = match resolve_required_subject(&state, &headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_routing_subject(trusted);
     let channel_id = match parse_positive_id(&channel_id, "channel id") {
         Ok(channel_id) => channel_id,
         Err(message) => return bad_request(message),
@@ -264,14 +260,12 @@ async fn update_routing_channel(
 
 async fn set_routing_channel_status(
     State(state): State<AppRoutingChannelCommandState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(channel_id): Path<String>,
     Json(request): Json<SetRoutingChannelStatusRequest>,
 ) -> Response {
-    let subject = match resolve_required_subject(&state, &headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_routing_subject(trusted);
     let channel_id = match parse_positive_id(&channel_id, "channel id") {
         Ok(channel_id) => channel_id,
         Err(message) => return bad_request(message),
@@ -297,13 +291,11 @@ async fn set_routing_channel_status(
 
 async fn delete_routing_channel(
     State(state): State<AppRoutingChannelCommandState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(channel_id): Path<String>,
 ) -> Response {
-    let subject = match resolve_required_subject(&state, &headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_routing_subject(trusted);
     let channel_id = match parse_positive_id(&channel_id, "channel id") {
         Ok(channel_id) => channel_id,
         Err(message) => return bad_request(message),
@@ -325,13 +317,11 @@ async fn delete_routing_channel(
 
 async fn test_routing_channel(
     State(state): State<AppRoutingChannelCommandState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
     Path(channel_id): Path<String>,
 ) -> Response {
-    let subject = match resolve_required_subject(&state, &headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_routing_subject(trusted);
     let channel_id = match parse_positive_id(&channel_id, "channel id") {
         Ok(channel_id) => channel_id,
         Err(message) => return bad_request(message),
@@ -351,39 +341,11 @@ async fn test_routing_channel(
     }
 }
 
-fn resolve_subject(
-    state: &AppRoutingChannelCommandState,
-    headers: &HeaderMap,
-) -> Result<Option<AppRoutingSubject>, Response> {
-    match TrustedRequestSubject::from_headers(headers) {
-        Ok(subject) => Ok(Some(AppRoutingSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            user_id: subject.user_id,
-        })),
-        Err(error) if state.require_subject => Err((
-            StatusCode::UNAUTHORIZED,
-            Json(PlusApiResult::error("4010", error.to_string())),
-        )
-            .into_response()),
-        Err(_) => Ok(None),
-    }
-}
-
-fn resolve_required_subject(
-    state: &AppRoutingChannelCommandState,
-    headers: &HeaderMap,
-) -> Result<AppRoutingSubject, Response> {
-    match resolve_subject(state, headers)? {
-        Some(subject) => Ok(subject),
-        None => Err((
-            StatusCode::UNAUTHORIZED,
-            Json(PlusApiResult::error(
-                "4010",
-                "trusted request subject is required for routing channel command",
-            )),
-        )
-            .into_response()),
+fn map_routing_subject(trusted: TrustedRequestSubject) -> AppRoutingSubject {
+    AppRoutingSubject {
+        tenant_id: trusted.tenant_id,
+        organization_id: trusted.organization_id,
+        user_id: trusted.user_id,
     }
 }
 

@@ -7,7 +7,7 @@ from tools.schema_registry_loader import load_schema_registry
 
 
 ROOT = Path(__file__).resolve().parents[1]
-TABLE_REGISTRY = ROOT / "docs" / "schema-registry" / "sdkwork-claw-router.tables.yaml"
+TABLE_REGISTRY = ROOT / "docs" / "schema-registry" / "sdkwork-clawrouter.tables.yaml"
 
 
 class AdminPromptMcpSchemaStandardTest(unittest.TestCase):

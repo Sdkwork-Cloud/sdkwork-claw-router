@@ -120,6 +120,8 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
                 self.assertIn("await removeTypeOnlyRuntimeReExports(path.join(tempEsmDir, 'index.js'));", build_runtime)
                 self.assertIn("async function removeTypeOnlyRuntimeReExports(entryFile) {", build_runtime)
                 self.assertIn("line.trim() === \"export * from './types';\"", build_runtime)
+                self.assertIn("source.split(/\\r?\\n/u)", build_runtime)
+                self.assertIn("runtimeLines.join('\\n')", build_runtime)
                 http_client = (base / "src" / "http" / "client.ts").read_text(encoding="utf-8")
                 self.assertIn("contentType?: string", http_client)
                 self.assertIn("headers: this.withContentType(headers, contentType)", http_client)

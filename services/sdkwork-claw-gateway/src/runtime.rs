@@ -79,8 +79,8 @@ type ResponseRelay = Arc<dyn ResponsesRelay + Send + Sync>;
 type UsageRecorder = Arc<dyn GatewayUsageRecorder + Send + Sync>;
 type SettlementStore = Arc<dyn UsageSettlementStore + Send + Sync>;
 
-const CLAW_ROUTER_APP_API_SERVICE_ID: &str = "sdkwork-claw-router-app-api";
-const CLAW_ROUTER_BACKEND_API_SERVICE_ID: &str = "sdkwork-claw-router-backend-api";
+const CLAW_ROUTER_APP_API_SERVICE_ID: &str = "sdkwork-clawrouter-app-api";
+const CLAW_ROUTER_BACKEND_API_SERVICE_ID: &str = "sdkwork-clawrouter-backend-api";
 
 fn router_with_invocation_runtime_routes<C>(
     base_router: Router,
@@ -1054,7 +1054,7 @@ fn claw_router_gateway_dependency_surfaces() -> [DependencyApiSurfaceConfig; 3] 
         claw_router_appbase_backend_dependency_surface(),
         DependencyApiSurfaceConfig {
             service_id: CLAW_ROUTER_BACKEND_API_SERVICE_ID.to_owned(),
-            workspace: "sdkwork-claw-router".to_owned(),
+            workspace: "sdkwork-clawrouter".to_owned(),
             sdk_family: sdkwork_router_backend_api::manifest::SDK_FAMILY.to_owned(),
             api_authority: sdkwork_router_backend_api::manifest::API_AUTHORITY.to_owned(),
             surface: "backend".to_owned(),
@@ -1067,12 +1067,12 @@ fn claw_router_gateway_dependency_surfaces() -> [DependencyApiSurfaceConfig; 3] 
             ),
             cargo_feature: None,
             cargo_dependency: Some("sdkwork-router-backend-api".to_owned()),
-            coverage: "sdkwork-claw-router-backend-api-route-crate".to_owned(),
+            coverage: "sdkwork-clawrouter-backend-api-route-crate".to_owned(),
             required_base_url_key: None,
         },
         DependencyApiSurfaceConfig {
             service_id: CLAW_ROUTER_APP_API_SERVICE_ID.to_owned(),
-            workspace: "sdkwork-claw-router".to_owned(),
+            workspace: "sdkwork-clawrouter".to_owned(),
             sdk_family: sdkwork_router_app_api::manifest::SDK_FAMILY.to_owned(),
             api_authority: sdkwork_router_app_api::manifest::API_AUTHORITY.to_owned(),
             surface: "app".to_owned(),
@@ -1084,7 +1084,7 @@ fn claw_router_gateway_dependency_surfaces() -> [DependencyApiSurfaceConfig; 3] 
             ),
             cargo_feature: None,
             cargo_dependency: Some("sdkwork-router-app-api".to_owned()),
-            coverage: "sdkwork-claw-router-app-api-route-crate".to_owned(),
+            coverage: "sdkwork-clawrouter-app-api-route-crate".to_owned(),
             required_base_url_key: None,
         },
     ]
@@ -2489,7 +2489,7 @@ mod tests {
         assert_eq!(
             SQLITE_RUNTIME_MIN_POOL_CONNECTIONS,
             effective_sqlite_runtime_pool_max_connections(
-                "sqlite://D:/tmp/sdkwork-claw-router.db",
+                "sqlite://D:/tmp/sdkwork-clawrouter.db",
                 1
             )
         );

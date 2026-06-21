@@ -39,21 +39,21 @@ Modify these files first because they define the public contract and the enforce
   - Update router assertions to the new standard surface groups.
 - Modify `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-http-rust/tests/app_recharge_checkout_router.rs`
   - Update recharge/checkout assertions to the new standard route taxonomy.
-- Modify `<workspace-root>/sdkwork-claw-router/specs/appbase-integration.yaml`
+- Modify `<workspace-root>/sdkwork-clawrouter/specs/appbase-integration.yaml`
   - Remove `billing` verification names and align the integration manifest to the new standard contract.
-- Modify `<workspace-root>/sdkwork-claw-router/tests/test_appbase_integration_guardian.py`
+- Modify `<workspace-root>/sdkwork-clawrouter/tests/test_appbase_integration_guardian.py`
   - Add failing tests for `billing` namespace, `/billing` route paths, legacy verification command names, and compatibility-mode assumptions.
-- Modify `<workspace-root>/sdkwork-claw-router/tests/test_appbase_capability_guardian.py`
+- Modify `<workspace-root>/sdkwork-clawrouter/tests/test_appbase_capability_guardian.py`
   - Add failing tests for `billing`-named SDK namespaces, forbidden appbase shadow paths, and reusable-package import boundaries.
-- Modify `<workspace-root>/sdkwork-claw-router/tools/appbase_integration_guardian.py`
+- Modify `<workspace-root>/sdkwork-clawrouter/tools/appbase_integration_guardian.py`
   - Enforce no-`billing`, no compatibility envelope, and no surface-prefixed operationId rules.
-- Modify `<workspace-root>/sdkwork-claw-router/tools/appbase_capability_guardian.py`
+- Modify `<workspace-root>/sdkwork-clawrouter/tools/appbase_capability_guardian.py`
   - Enforce no-`billing` namespace/package leakage and no concrete Claw Router SDK imports inside reusable appbase packages.
-- Modify `<workspace-root>/sdkwork-claw-router/docs/superpowers/specs/2026-05-20-appbase-commerce-platform-design.md`
+- Modify `<workspace-root>/sdkwork-clawrouter/docs/superpowers/specs/2026-05-20-appbase-commerce-platform-design.md`
   - Keep the superseded note in sync so nobody reuses the old billing-centered draft.
-- Modify `<workspace-root>/sdkwork-claw-router/docs/schema-registry/frontend-route-classification.yaml`
+- Modify `<workspace-root>/sdkwork-clawrouter/docs/schema-registry/frontend-route-classification.yaml`
   - Reclassify commerce routes by domain instead of billing-first grouping if the current route taxonomy still contains the old split.
-- Modify `<workspace-root>/sdkwork-claw-router/docs/schema-registry/frontend-field-contracts.yaml`
+- Modify `<workspace-root>/sdkwork-clawrouter/docs/schema-registry/frontend-field-contracts.yaml`
   - Remove any contract aliasing that exists only to preserve the old billing shape.
 
 ## Task 1: Replace the Commerce Contract Namespace
@@ -180,13 +180,13 @@ Keep the route tests as a permanent guard so future changes cannot reintroduce `
 ## Task 3: Harden the Capability and Integration Guards
 
 **Files:**
-- Modify: `<workspace-root>/sdkwork-claw-router/specs/appbase-integration.yaml`
-- Modify: `<workspace-root>/sdkwork-claw-router/tests/test_appbase_integration_guardian.py`
-- Modify: `<workspace-root>/sdkwork-claw-router/tests/test_appbase_capability_guardian.py`
-- Modify: `<workspace-root>/sdkwork-claw-router/tools/appbase_integration_guardian.py`
-- Modify: `<workspace-root>/sdkwork-claw-router/tools/appbase_capability_guardian.py`
-- Modify: `<workspace-root>/sdkwork-claw-router/docs/schema-registry/frontend-route-classification.yaml`
-- Modify: `<workspace-root>/sdkwork-claw-router/docs/schema-registry/frontend-field-contracts.yaml`
+- Modify: `<workspace-root>/sdkwork-clawrouter/specs/appbase-integration.yaml`
+- Modify: `<workspace-root>/sdkwork-clawrouter/tests/test_appbase_integration_guardian.py`
+- Modify: `<workspace-root>/sdkwork-clawrouter/tests/test_appbase_capability_guardian.py`
+- Modify: `<workspace-root>/sdkwork-clawrouter/tools/appbase_integration_guardian.py`
+- Modify: `<workspace-root>/sdkwork-clawrouter/tools/appbase_capability_guardian.py`
+- Modify: `<workspace-root>/sdkwork-clawrouter/docs/schema-registry/frontend-route-classification.yaml`
+- Modify: `<workspace-root>/sdkwork-clawrouter/docs/schema-registry/frontend-field-contracts.yaml`
 - Modify: `<workspace-root>/sdkwork-appbase/specs/appbase-capabilities.yaml`
 
 - [ ] **Step 1: Add failing guardian tests**
@@ -247,9 +247,9 @@ Do not weaken these guards later to ease migration. This standard is intentional
 ## Task 4: Update Verification Commands and Superseded Documentation
 
 **Files:**
-- Modify: `<workspace-root>/sdkwork-claw-router/docs/superpowers/specs/2026-05-20-appbase-commerce-platform-design.md`
-- Modify: `<workspace-root>/sdkwork-claw-router/docs/superpowers/specs/2026-05-21-appbase-commerce-standard-design.md`
-- Modify: `<workspace-root>/sdkwork-claw-router/specs/appbase-integration.yaml`
+- Modify: `<workspace-root>/sdkwork-clawrouter/docs/superpowers/specs/2026-05-20-appbase-commerce-platform-design.md`
+- Modify: `<workspace-root>/sdkwork-clawrouter/docs/superpowers/specs/2026-05-21-appbase-commerce-standard-design.md`
+- Modify: `<workspace-root>/sdkwork-clawrouter/specs/appbase-integration.yaml`
 - Modify: any renamed verification test modules that still contain `billing` in the filename
 
 - [ ] **Step 1: Rename verification targets away from billing**
@@ -271,7 +271,7 @@ Ensure the 2026-05-21 spec is the only document developers should consult when b
 Run:
 
 ```powershell
-rg -n "/billing|billing namespace|billing-centered|test_commerce_billing_standard|CommerceSdkNamespace = /"billing/"" <workspace-root>/sdkwork-claw-router <workspace-root>/sdkwork-appbase -S
+rg -n "/billing|billing namespace|billing-centered|test_commerce_billing_standard|CommerceSdkNamespace = /"billing/"" <workspace-root>/sdkwork-clawrouter <workspace-root>/sdkwork-appbase -S
 ```
 
 Expected: only the superseded-note and explicit removal rules mention billing; no active contract, route, or verification target should still depend on it.

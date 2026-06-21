@@ -95,7 +95,7 @@ class SchemaCompiler:
         self.registry_path = (
             Path(registry_path).resolve()
             if registry_path is not None
-            else self.root / "docs" / "schema-registry" / "sdkwork-claw-router.tables.yaml"
+            else self.root / "docs" / "schema-registry" / "sdkwork-clawrouter.tables.yaml"
         )
 
     def compile_postgres(self) -> str:
@@ -109,7 +109,7 @@ class SchemaCompiler:
             common_column_groups = {}
 
         statements: list[str] = [
-            "-- Generated from docs/schema-registry/sdkwork-claw-router.tables.yaml.\n"
+            "-- Generated from docs/schema-registry/sdkwork-clawrouter.tables.yaml.\n"
             "-- Do not edit by hand; update Schema Registry and regenerate."
         ]
 
@@ -382,8 +382,8 @@ class SchemaCompiler:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Compile sdkwork-claw-router Schema Registry to PostgreSQL DDL.")
-    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-claw-router root directory")
+    parser = argparse.ArgumentParser(description="Compile sdkwork-clawrouter Schema Registry to PostgreSQL DDL.")
+    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-clawrouter root directory")
     parser.add_argument("--registry", type=Path, default=None, help="schema registry YAML path")
     parser.add_argument(
         "--output",

@@ -294,12 +294,17 @@ async function importFreshAppSessionTokenModule(): Promise<typeof import("./pack
 
 test("portal exposes appbase auth routes as standalone React routes", () => {
   const appSource = readPortalFile("./src/App.tsx");
+  const shellSource = readPortalFile("./packages/sdkwork-clawrouter-pc-shell/src/AppShellLayout.tsx");
   const authRouteSource = readPortalFile("./src/auth/ClawRouterAuthRoutes.tsx");
+  const authShellSource = readPortalFile("./src/auth/ClawRouterAuthShell.tsx");
+  const authAppearanceSource = readPortalFile("./src/auth/clawRouterAuthAppearance.ts");
+  const indexCssSource = readPortalFile("./src/index.css");
 
   assert.match(appSource, /lazyRoute\(\(\) => import\('\.\/auth\/ClawRouterAuthRoutes'\), 'ClawRouterAuthRoutes'\)/);
-  assert.match(appSource, /<Route path="\/auth\/\*" element={<ClawRouterAuthRoutes \/>} \/>/);
-  assert.match(appSource, /pathname\.startsWith\('\/auth'\)/);
-  assert.match(appSource, /sdkwork-auth-route-fallback fixed inset-0 z-\[60\] h-\[100dvh\] min-h-\[100dvh\]/);
+  assert.match(appSource, /<Route path="\/auth\/\*" element=\{<PortalAuthenticatedAuthRouteGuard><ClawRouterAuthRoutes \/><\/PortalAuthenticatedAuthRouteGuard>\} \/>/);
+  assert.match(appSource, /PortalAuthenticatedAuthRouteGuard/);
+  assert.match(shellSource, /pathname\.startsWith\('\/auth'\)/);
+  assert.match(shellSource, /sdkwork-auth-route-fallback sdkwork-clawrouter-auth-route-fallback fixed inset-0 z-\[60\] h-\[100dvh\] min-h-\[100dvh\]/);
   assert.doesNotMatch(appSource, /ClawRouterAuthOAuthCallbackRoute/);
   assert.doesNotMatch(appSource, /<Route path="\/auth\/login"/);
   assert.doesNotMatch(appSource, /<Route path="\/auth\/register"/);
@@ -307,6 +312,19 @@ test("portal exposes appbase auth routes as standalone React routes", () => {
   assert.doesNotMatch(appSource, /<Route path="\/auth\/oauth\/callback\/:provider"/);
   assert.match(authRouteSource, /from '@sdkwork\/auth-pc-react'/);
   assert.match(authRouteSource, /SdkworkIamAuthRoutes/);
+  assert.match(authRouteSource, /ClawRouterAuthShell/);
+  assert.match(authRouteSource, /resolveClawRouterAuthAppearance/);
+  assert.match(authRouteSource, /appearance=\{resolveClawRouterAuthAppearance\(\)\}/);
+  assert.match(authRouteSource, /viewportMode="flow"/);
+  assert.match(authShellSource, /sdkwork-clawrouter-auth-active/);
+  assert.match(indexCssSource, /html\.sdkwork-clawrouter-auth-active/);
+  assert.match(indexCssSource, /position: fixed;/);
+  assert.match(authRouteSource, /className="!bg-transparent"/);
+  assert.match(authShellSource, /sdkwork-clawrouter-auth-shell/);
+  assert.match(authAppearanceSource, /sdkwork-clawrouter-auth-aside-panel/);
+  assert.match(authAppearanceSource, /var\(--sdkwork-clawrouter-auth-content-text\)/);
+  assert.match(indexCssSource, /\.sdkwork-clawrouter-auth-shell \{/);
+  assert.match(indexCssSource, /@source "\.\.\/\.\.\/\.\.\/\.\.\/sdkwork-appbase\/packages\/pc-react\/iam\/sdkwork-auth-pc-react\/src"/);
   assert.match(authRouteSource, /from 'react-i18next'/);
   assert.match(authRouteSource, /const \{ i18n \} = useTranslation\(\)/);
   assert.doesNotMatch(authRouteSource, /SDKWORK_AUTH_I18N_CATALOG/);
@@ -335,7 +353,10 @@ test("claw router auth controller reuses appbase runtime while preserving app SD
   assert.match(controllerSource, /createSdkworkIamRuntimeAuthController/);
   assert.match(controllerSource, /getClawRouterIamRuntime/);
   assert.match(iamRuntimeSource, /createSdkworkAppbasePcAuthRuntime/);
-  assert.match(iamRuntimeSource, /createAppbaseAppClient:\s*\(\)\s*=>\s*getSdkworkAppbaseAppSdkClient\(\)/);
+  assert.match(iamRuntimeSource, /createAppbaseAppClient:\s*\(\)\s*=>\s*ensureIamTenantSelectionCompat\(getSdkworkAppbaseAppSdkClient\(\)\)/);
+  assert.match(iamRuntimeSource, /bindClawRouterIamSessionProjection/);
+  assert.match(iamRuntimeSource, /patchClawRouterIamContextStore/);
+  assert.match(iamRuntimeSource, /readSession:\s*\(\)\s*=>\s*toPortalIamBridgeSession\(loadStoredAppSessionToken\(\)\)/);
   assert.match(iamRuntimeSource, /sdkClients:\s*\[/);
   assert.match(iamRuntimeSource, /getClawRouterAppSdkClient\(\)/);
   assert.match(iamRuntimeSource, /getSdkworkDriveAppSdkClient\(\)/);
@@ -399,6 +420,8 @@ test("claw router auth controller reuses appbase runtime while preserving app SD
   assert.match(routeSource, /useClawRouterAuthRuntimeConfig/);
   assert.match(routeSource, /runtimeConfig=\{runtimeConfig\}/);
   assert.doesNotMatch(routeSource, /const clawRouterAuthRuntimeConfig/);
+  assert.match(routeSource, /appearance=\{resolveClawRouterAuthAppearance\(\)\}/);
+  assert.match(routeSource, /ClawRouterAuthShell/);
   assert.match(configSource, /DEFAULT_CLAW_ROUTER_AUTH_RUNTIME_CONFIG/);
   assert.match(configSource, /leftRailMode:\s*'highlights-only'/);
   assert.match(configSource, /loginMethods:\s*\['password'\]/);
@@ -435,7 +458,6 @@ test("claw router auth controller reuses appbase runtime while preserving app SD
   assert.doesNotMatch(adminSettingsServiceSource, /\/backend\/v3\/api\/system\/auth\/settings/);
   assert.match(routeSource, /AUTH_METHOD_UNAVAILABLE_MESSAGE/);
   assert.match(routeSource, /methodUnavailableMessage=\{AUTH_METHOD_UNAVAILABLE_MESSAGE\}/);
-  assert.doesNotMatch(routeSource, /appearance=/);
   assert.doesNotMatch(routeSource, /surfaceAppearance/);
   assert.doesNotMatch(configSource, /leftRailMode:\s*'qr-only'/);
 });
@@ -1102,8 +1124,6 @@ test("portal auth guard classifies every console and admin path as login protect
     "/",
     "/models",
     "/models/openai/gpt-4o",
-    "/skills-hub",
-    "/skills-hub/skill-1",
     "/product-docs",
     "/docs",
     "/api-reference",
@@ -1363,6 +1383,40 @@ test("generated SDK auth errors clear the app session and redirect protected pag
   }
 });
 
+test("generated SDK auth errors clear stale sessions on public pages without forcing login", () => {
+  const redirects: string[] = [];
+  const restoreWindow = installPortalAuthRedirectWindow({
+    hash: "",
+    pathname: "/",
+    replace: (to) => redirects.push(to),
+    search: "",
+  });
+
+  try {
+    resetClawRouterSdkSessionAuthRedirectState();
+    storeAppSessionFromResult({
+      code: "200",
+      data: {
+        accessToken: "access-token",
+        authToken: "auth-token",
+        expiresAt: Math.floor(Date.now() / 1000) + 3600,
+      },
+    });
+
+    assert.equal(handleClawRouterSdkSessionAuthError({
+      code: "4010",
+      msg: "app session token has expired",
+    }), true);
+
+    assert.equal(loadStoredAppSessionToken(), null);
+    assert.deepEqual(redirects, []);
+  } finally {
+    clearStoredAppSessionToken();
+    resetClawRouterSdkSessionAuthRedirectState();
+    restoreWindow();
+  }
+});
+
 test("generated SDK unauthorized errors redirect once and skip auth pages", () => {
   const redirects: string[] = [];
   const restoreWindow = installPortalAuthRedirectWindow({
@@ -1473,7 +1527,10 @@ test("portal wires console and admin routes through the protected session guard"
   assert.match(appSource, /<Route path="\/admin" element=\{<RequireAdminSession><AdminLayout/);
   assert.match(appSource, /<Route path="\*" element=\{<Navigate to="\/console\/dashboard" replace \/>} \/>/);
   assert.match(appSource, /<Route path="\*" element=\{<Navigate to="\/admin\/dashboard" replace \/>} \/>/);
-  assert.match(guardSource, /hasStoredPortalSession/);
+  assert.match(guardSource, /hasPortalIamSession/);
+  assert.match(guardSource, /PortalAuthenticatedAuthRouteGuard/);
+  assert.match(guardSource, /resolvePortalAuthenticatedAuthRouteRedirect/);
+  assert.match(sharedAuthSource, /sanitizePortalAuthRedirect/);
   assert.match(guardSource, /buildPortalAuthLoginRedirect/);
   assert.match(guardSource, /verifyCurrentPortalAdminAccess/);
   assert.match(guardSource, /RequireAdminSession/);
@@ -1482,8 +1539,8 @@ test("portal wires console and admin routes through the protected session guard"
   assert.match(guardSource, /\.\.\/\.\.\/packages\/sdkwork-clawrouter-pc-commons\/src\/portal-auth\.ts/);
   assert.match(guardSource, /\.\.\/\.\.\/packages\/sdkwork-clawrouter-pc-commons\/src\/portal-session\.ts/);
   assert.doesNotMatch(guardSource, /sdkwork-clawrouter-pc-commons\/runtime/);
-  assert.match(sharedAuthSource, /getStoredAppSessionAuthToken/);
-  assert.match(sharedAuthSource, /getStoredAppSessionAccessToken/);
+  assert.match(sharedAuthSource, /hasPortalIamSession/);
+  assert.match(sharedAuthSource, /resolveStoredPortalTenantId/);
   assert.doesNotMatch(guardSource, /\bfetch\s*\(/);
   assert.doesNotMatch(guardSource, /\baxios\b/);
   assert.doesNotMatch(guardSource, /Authorization/);

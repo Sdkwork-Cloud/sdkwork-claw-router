@@ -1,5 +1,5 @@
 import { createSdkworkIamRuntimeAuthController } from '@sdkwork/auth-pc-react';
-import { getClawRouterIamRuntime } from 'sdkwork-clawrouter-pc-commons/runtime';
+import { getClawRouterIamRuntime } from '@sdkwork/clawrouter-pc-commons/runtime';
 
 const AUTH_METHOD_UNAVAILABLE_MESSAGE = 'This Claw Router sign-in method is temporarily unavailable.';
 

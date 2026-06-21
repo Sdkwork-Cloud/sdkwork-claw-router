@@ -12,7 +12,7 @@ from tools.schema_registry_loader import load_schema_registry, render_schema_reg
 ROOT = Path(__file__).resolve().parents[1]
 FIELD_CONTRACTS_PATH = ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
 ROUTE_CLASSIFICATION_PATH = ROOT / "docs" / "schema-registry" / "frontend-route-classification.yaml"
-TABLE_REGISTRY_PATH = ROOT / "docs" / "schema-registry" / "sdkwork-claw-router.tables.yaml"
+TABLE_REGISTRY_PATH = ROOT / "docs" / "schema-registry" / "sdkwork-clawrouter.tables.yaml"
 APPBASE_CAPABILITY_PATH = (
     ROOT
     / ".sdkwork"
@@ -272,7 +272,11 @@ def render_table_registry() -> str:
     return render_schema_registry(TABLE_REGISTRY_PATH)
 
 
-class CommerceStandardTest(unittest.TestCase):
+def commerce_sibling_workspace_available() -> bool:
+    return COMMERCE_ROOT.exists() and COMMERCE_APP_OPENAPI_PATH.exists()
+
+
+class CommercePortalRetirementTest(unittest.TestCase):
     def test_portal_no_longer_mounts_retired_commerce_modules(self) -> None:
         retired_tokens = [
             '"@sdkwork/vip-admin-pc-react"',
@@ -322,6 +326,21 @@ class CommerceStandardTest(unittest.TestCase):
 
         self.assertEqual([], violations)
 
+    def test_appbase_integration_verification_uses_standard_commerce_module(self) -> None:
+        manifest = (ROOT / "specs" / "appbase-integration.yaml").read_text(encoding="utf-8")
+
+        self.assertNotIn("capability: commerce", manifest)
+        self.assertNotIn("tests.test_commerce_standard", manifest)
+        self.assertNotIn("tests.test_payment_callback_runtime_standard", manifest)
+        self.assertNotIn("tests.test_commerce_billing_standard", manifest)
+        self.assertNotIn("tests.test_billing_runtime_standard", manifest)
+
+
+@unittest.skipUnless(
+    commerce_sibling_workspace_available(),
+    "sdkwork-commerce sibling workspace is required for commerce standard verification",
+)
+class CommerceStandardTest(unittest.TestCase):
     def test_vip_purchase_page_remains_dedicated_product_module(self) -> None:
         app = (PORTAL_PATH / "src" / "App.tsx").read_text(encoding="utf-8")
         navbar = (
@@ -346,15 +365,6 @@ class CommerceStandardTest(unittest.TestCase):
         self.assertIn('"sdkwork-clawrouter-pc-vip": "workspace:*"', package_json)
         self.assertIn('"sdkwork-clawrouter-pc-vip"', tsconfig)
         self.assertRegex(route_classification, r"route: /vip[\s\S]*package: sdkwork-clawrouter-pc-vip")
-
-    def test_appbase_integration_verification_uses_standard_commerce_module(self) -> None:
-        manifest = (ROOT / "specs" / "appbase-integration.yaml").read_text(encoding="utf-8")
-
-        self.assertNotIn("capability: commerce", manifest)
-        self.assertNotIn("tests.test_commerce_standard", manifest)
-        self.assertNotIn("tests.test_payment_callback_runtime_standard", manifest)
-        self.assertNotIn("tests.test_commerce_billing_standard", manifest)
-        self.assertNotIn("tests.test_billing_runtime_standard", manifest)
 
     def test_schema_registry_uses_standard_commerce_routes(self) -> None:
         field_contracts = FIELD_CONTRACTS_PATH.read_text(encoding="utf-8")

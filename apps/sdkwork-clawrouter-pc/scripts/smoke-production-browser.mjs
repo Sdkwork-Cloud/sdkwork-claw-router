@@ -56,14 +56,8 @@ function mediaResource(url, kind = "image") {
 const TRANSPARENT_PIXEL_DATA_URL = "data:image/gif;base64,R0lGODlhAQABAAAAACw=";
 const TRANSPARENT_IMAGE_RESOURCE = mediaResource(TRANSPARENT_PIXEL_DATA_URL, "image");
 const APP_SDK_FIXTURE_MODE = "app-sdk-success";
-const APP_SDK_EMPTY_FIXTURE_MODE = "app-sdk-empty";
-const APP_SDK_FAILURE_FIXTURE_MODE = "app-sdk-failure";
-const APP_SDK_CATEGORY_FAILURE_FIXTURE_MODE = "app-sdk-category-failure";
-const APP_SDK_MISSING_FIXTURE_MODE = "app-sdk-missing";
-const APP_SDK_RETRY_FIXTURE_MODE = "app-sdk-retry";
 const APP_SDK_MODEL_FIXTURE_MODE = "app-sdk-model-success";
 const APP_SDK_MODEL_EMPTY_FIXTURE_MODE = "app-sdk-model-empty";
-const BACKEND_SDK_SKILL_FIXTURE_MODE = "backend-sdk-skill-success";
 const API_PLAYGROUND_FIXTURE_MODE = "api-playground-success";
 const API_PLAYGROUND_PRIMITIVE_FIXTURE_MODE = "api-playground-primitive";
 const API_PLAYGROUND_AUTH_FIXTURE_MODE = "api-playground-auth";
@@ -77,113 +71,6 @@ const BROWSER_SMOKE_SESSION = {
   refreshToken: "browser-smoke-refresh-token",
   sessionId: "browser-smoke-session",
   storedAt: 1_778_716_800,
-};
-
-const BROWSER_SMOKE_SKILL_RECORD = {
-  id: "__browser-smoke-success",
-  name: "Browser Smoke Skill",
-  developer: "Smoke Systems",
-  category: "Observability",
-  image: TRANSPARENT_PIXEL_DATA_URL,
-  ratingAvg: 4.9,
-  installCount: 1_200,
-  description: "Browser smoke verifies successful SDK skill rendering.",
-  capabilities: ["SDK fixture", "Install command"],
-  latestPublishedAt: "2026-05-03T00:00:00Z",
-  artifactRef: "clawhub.io/sdkwork/browser-smoke-skill:v1.0.0",
-  version: "1.0.0",
-  artifactSizeBytes: 1_048_576,
-  licenseName: "Commercial",
-  frameworks: ["Node.js", "TypeScript"],
-  screenshots: [TRANSPARENT_PIXEL_DATA_URL],
-};
-
-const BROWSER_SMOKE_INSTALLED_SKILL_RECORD = {
-  id: "browser-smoke-installed-skill",
-  skillId: "__browser-smoke-success",
-  enabled: false,
-  config: {},
-  installedAt: "2026-05-09T00:00:00Z",
-  lastEnabledAt: "2026-05-09T00:00:00Z",
-  skill: BROWSER_SMOKE_SKILL_RECORD,
-};
-
-const BROWSER_SMOKE_ADMIN_SKILL_CATEGORY = {
-  id: "1901",
-  name: "Browser Smoke Category",
-  description: "Production browser smoke category.",
-  code: "browser-smoke-category",
-  icon: "/icons/browser-smoke.svg",
-  sortWeight: 1,
-  parentId: null,
-  path: "/skills/browser-smoke",
-  visible: true,
-  status: 1,
-  type: 19,
-};
-
-const BROWSER_SMOKE_ADMIN_SKILL_PACKAGE = {
-  id: "7101",
-  packageKey: "browser_smoke_admin_package",
-  name: "Browser Smoke Package",
-  summary: "Production smoke validates backend SDK skill package rendering.",
-  description: "Production smoke validates backend SDK skill package rendering.",
-  icon: "/skills/browser-smoke-package.svg",
-  coverImage: "/skills/browser-smoke-package-cover.png",
-  categoryId: "1901",
-  enabled: true,
-  featured: true,
-  sortWeight: 1,
-  tags: ["browser-smoke", "agent-skill"],
-  latestPublishedAt: "2026-05-09T00:00:00Z",
-  createdAt: "2026-05-09T00:00:00Z",
-  updatedAt: "2026-05-09T00:00:00Z",
-};
-
-const BROWSER_SMOKE_ADMIN_SKILL_RECORD = {
-  id: "8101",
-  skillKey: "browser_smoke_admin_skill",
-  name: "Browser Smoke Admin Skill",
-  summary: "Production smoke validates backend SDK skill management rendering.",
-  description: "Production smoke validates backend SDK skill management rendering.",
-  icon: "/skills/browser-smoke.svg",
-  coverImage: "/skills/browser-smoke-cover.png",
-  categoryId: "1901",
-  packageId: "7101",
-  provider: "sdkwork",
-  version: "1.0.0",
-  versionName: "Initial",
-  runtime: "agent-skill",
-  entrypoint: "skill.json",
-  manifestUrl: "artifact://skills/browser-smoke/manifest.json",
-  repositoryUrl: "https://example.com/browser-smoke",
-  homepageUrl: "https://example.com/browser-smoke/home",
-  documentationUrl: "https://example.com/browser-smoke/docs",
-  licenseName: "MIT",
-  sourceType: "OFFICIAL",
-  marketStatus: "PUBLISHED",
-  visibility: "PUBLIC",
-  reviewStatus: "APPROVED",
-  reviewComment: "Approved by production browser smoke.",
-  reviewedBy: "browser-smoke",
-  reviewedAt: "2026-05-09T00:00:00Z",
-  builtin: false,
-  isBuiltin: false,
-  enabled: true,
-  featured: true,
-  recommendWeight: 100,
-  price: "0",
-  currency: "CNY",
-  installCount: "1200",
-  ratingAvg: "4.9",
-  ratingCount: "88",
-  tags: ["browser-smoke", "admin"],
-  capabilities: ["manage", "verify"],
-  configSchema: { type: "object" },
-  defaultConfig: { mode: "smoke" },
-  latestPublishedAt: "2026-05-09T00:00:00Z",
-  createdAt: "2026-05-09T00:00:00Z",
-  updatedAt: "2026-05-09T00:00:00Z",
 };
 
 const PRIVATE_PRICING_TOKENS = [
@@ -411,176 +298,6 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       },
     },
   }],
-  [`${APP_SDK_FIXTURE_MODE} GET /app/v3/api/ecosystem/skills`, {
-    statusCode: 200,
-    body: {
-      code: "2000",
-      msg: "success",
-      data: {
-        items: [BROWSER_SMOKE_SKILL_RECORD],
-      },
-    },
-  }],
-  [`${APP_SDK_FIXTURE_MODE} GET /app/v3/api/ecosystem/skills/categories`, {
-    statusCode: 200,
-    body: {
-      code: "2000",
-      msg: "success",
-      data: {
-        items: ["Observability"],
-      },
-    },
-  }],
-  [`${APP_SDK_FIXTURE_MODE} GET /app/v3/api/ecosystem/users/current/skills`, {
-    statusCode: 200,
-    body: {
-      code: "2000",
-      msg: "success",
-      data: {
-        items: [],
-      },
-    },
-  }],
-  [`${APP_SDK_FIXTURE_MODE} GET /app/v3/api/ecosystem/skills/__browser-smoke-success`, {
-    statusCode: 200,
-    body: {
-      code: "2000",
-      msg: "success",
-      data: BROWSER_SMOKE_SKILL_RECORD,
-    },
-  }],
-  [`${APP_SDK_EMPTY_FIXTURE_MODE} GET /app/v3/api/ecosystem/skills`, {
-    statusCode: 200,
-    body: {
-      code: "2000",
-      msg: "success",
-      data: {
-        items: [],
-      },
-    },
-  }],
-  [`${APP_SDK_EMPTY_FIXTURE_MODE} GET /app/v3/api/ecosystem/skills/categories`, {
-    statusCode: 200,
-    body: {
-      code: "2000",
-      msg: "success",
-      data: {
-        items: [],
-      },
-    },
-  }],
-  [`${APP_SDK_EMPTY_FIXTURE_MODE} GET /app/v3/api/ecosystem/users/current/skills`, {
-    statusCode: 200,
-    body: {
-      code: "2000",
-      msg: "success",
-      data: {
-        items: [],
-      },
-    },
-  }],
-  [`${APP_SDK_FAILURE_FIXTURE_MODE} GET /app/v3/api/ecosystem/skills`, {
-    statusCode: 200,
-    body: {
-      code: "4001",
-      msg: "Browser smoke skills unavailable",
-      data: null,
-    },
-  }],
-  [`${APP_SDK_FAILURE_FIXTURE_MODE} GET /app/v3/api/ecosystem/skills/categories`, {
-    statusCode: 200,
-    body: {
-      code: "2000",
-      msg: "success",
-      data: {
-        items: ["Observability"],
-      },
-    },
-  }],
-  [`${APP_SDK_FAILURE_FIXTURE_MODE} GET /app/v3/api/ecosystem/users/current/skills`, {
-    statusCode: 200,
-    body: {
-      code: "2000",
-      msg: "success",
-      data: {
-        items: [],
-      },
-    },
-  }],
-  [`${APP_SDK_FAILURE_FIXTURE_MODE} GET /app/v3/api/ecosystem/skills/skill-1`, {
-    statusCode: 200,
-    body: {
-      code: "4001",
-      msg: "Browser smoke skill details unavailable",
-      data: null,
-    },
-  }],
-  [`${APP_SDK_CATEGORY_FAILURE_FIXTURE_MODE} GET /app/v3/api/ecosystem/skills`, {
-    statusCode: 200,
-    body: {
-      code: "2000",
-      msg: "success",
-      data: {
-        items: [BROWSER_SMOKE_SKILL_RECORD],
-      },
-    },
-  }],
-  [`${APP_SDK_CATEGORY_FAILURE_FIXTURE_MODE} GET /app/v3/api/ecosystem/skills/categories`, {
-    statusCode: 200,
-    body: {
-      code: "4001",
-      msg: "Browser smoke skill categories unavailable",
-      data: null,
-    },
-  }],
-  [`${APP_SDK_CATEGORY_FAILURE_FIXTURE_MODE} GET /app/v3/api/ecosystem/users/current/skills`, {
-    statusCode: 200,
-    body: {
-      code: "2000",
-      msg: "success",
-      data: {
-        items: [],
-      },
-    },
-  }],
-  [`${APP_SDK_MISSING_FIXTURE_MODE} GET /app/v3/api/ecosystem/skills/__browser-smoke-missing`, {
-    statusCode: 200,
-    body: {
-      code: "2000",
-      msg: "success",
-      data: null,
-    },
-  }],
-  [`${APP_SDK_MISSING_FIXTURE_MODE} GET /app/v3/api/ecosystem/users/current/skills`, {
-    statusCode: 200,
-    body: {
-      code: "2000",
-      msg: "success",
-      data: {
-        items: [BROWSER_SMOKE_INSTALLED_SKILL_RECORD],
-      },
-    },
-  }],
-  [`${APP_SDK_RETRY_FIXTURE_MODE} GET /app/v3/api/ecosystem/skills/categories`, {
-    statusCode: 200,
-    body: {
-      code: "2000",
-      msg: "success",
-      data: {
-        items: ["Observability"],
-      },
-    },
-  }],
-  [`${APP_SDK_RETRY_FIXTURE_MODE} GET /app/v3/api/ecosystem/users/current/skills`, {
-    statusCode: 200,
-    body: {
-      code: "2000",
-      msg: "success",
-      data: {
-        items: [],
-      },
-    },
-  }],
 ]);
 
 const APP_SDK_SHARED_BROWSER_FIXTURES = new Map([
@@ -596,55 +313,7 @@ const APP_SDK_SHARED_BROWSER_FIXTURES = new Map([
   }],
 ]);
 
-const BACKEND_SDK_BROWSER_FIXTURES = new Map([
-  [`${BACKEND_SDK_SKILL_FIXTURE_MODE} GET /backend/v3/api/system/installation/status`, {
-    statusCode: 200,
-    body: {
-      code: "2000",
-      msg: "success",
-      data: {
-        catalogSource: "browser-smoke",
-        catalogVersion: "2026.05.08.1",
-        environment: "production-smoke",
-        externalCatalog: false,
-        lastCatalogRefreshStatus: "ok",
-        schemaVersion: "2026-05-08",
-        seedProfile: "browser-smoke",
-        status: "ready",
-      },
-    },
-  }],
-  [`${BACKEND_SDK_SKILL_FIXTURE_MODE} GET /backend/v3/api/ecosystem/skills/categories`, {
-    statusCode: 200,
-    body: {
-      code: "2000",
-      msg: "success",
-      data: {
-        items: [BROWSER_SMOKE_ADMIN_SKILL_CATEGORY],
-      },
-    },
-  }],
-  [`${BACKEND_SDK_SKILL_FIXTURE_MODE} GET /backend/v3/api/ecosystem/skills/package`, {
-    statusCode: 200,
-    body: {
-      code: "2000",
-      msg: "success",
-      data: {
-        items: [BROWSER_SMOKE_ADMIN_SKILL_PACKAGE],
-      },
-    },
-  }],
-  [`${BACKEND_SDK_SKILL_FIXTURE_MODE} GET /backend/v3/api/ecosystem/skills`, {
-    statusCode: 200,
-    body: {
-      code: "2000",
-      msg: "success",
-      data: {
-        items: [BROWSER_SMOKE_ADMIN_SKILL_RECORD],
-      },
-    },
-  }],
-]);
+const BACKEND_SDK_BROWSER_FIXTURES = new Map([]);
 
 const API_PLAYGROUND_BROWSER_RESPONSE = {
   id: "browser-smoke-playground-response",
@@ -791,27 +460,6 @@ const BROWSER_SMOKE_ROUTES = [
     requiredTextTokens: ["Published catalog benchmark", "Snapshot Benchmark"],
   },
   {
-    pathName: "/admin/skill?__browser-smoke-admin-skill=1",
-    appSdkFixtureMode: APP_SDK_FIXTURE_MODE,
-    backendSdkFixtureMode: BACKEND_SDK_SKILL_FIXTURE_MODE,
-    requiresPortalSession: true,
-    requiredTextTokens: [
-      "Agent Skills",
-      "Browser Smoke Admin Skill",
-      "browser_smoke_admin_skill",
-      "Browser Smoke Category",
-      "PUBLISHED",
-      "APPROVED",
-      "ENABLED",
-      "agent-skill",
-      "skill.json",
-    ],
-    forbiddenTextTokens: [
-      "Failed to load agent skills.",
-      "No skills found",
-    ],
-  },
-  {
     pathName: "/forum",
     requiredTextTokens: [
       "Developer Community",
@@ -854,89 +502,6 @@ const BROWSER_SMOKE_ROUTES = [
       "Math.random",
       "toLocaleDateString",
     ],
-  },
-  {
-    pathName: "/skills-hub",
-    appSdkFixtureMode: APP_SDK_FAILURE_FIXTURE_MODE,
-    requiredTextTokens: ["Skills could not be loaded", "Browser smoke skills unavailable", "Retry"],
-  },
-  {
-    pathName: "/skills-hub/skill-1",
-    appSdkFixtureMode: APP_SDK_FAILURE_FIXTURE_MODE,
-    requiredTextTokens: ["Skill details could not be loaded", "Browser smoke skill details unavailable", "Retry"],
-  },
-  {
-    pathName: "/skills-hub",
-    appSdkFixtureMode: APP_SDK_FIXTURE_MODE,
-    requiredTextTokens: ["Browser Smoke Skill", "Smoke Systems", "Observability", "1.2K"],
-  },
-  {
-    pathName: "/skills-hub/__browser-smoke-success",
-    appSdkFixtureMode: APP_SDK_FIXTURE_MODE,
-    setupExpressions: [
-      `(() => {
-        const button = Array.from(document.querySelectorAll('button'))
-          .find((item) => item.textContent?.trim() === 'npm');
-        button?.click();
-        return Boolean(button);
-      })()`,
-    ],
-    requiredTextTokens: [
-      "Browser Smoke Skill",
-      "browser-smoke-skill",
-      "npx clawhub@latest install clawhub.io/sdkwork/browser-smoke-skill:v1.0.0",
-    ],
-  },
-  {
-    pathName: "/skills-hub?__browser-smoke-empty=1",
-    appSdkFixtureMode: APP_SDK_EMPTY_FIXTURE_MODE,
-    requiredTextTokens: [
-      "No skills found",
-      "We couldn't find any skills matching your current filters.",
-    ],
-    forbiddenTextTokens: ["Browser Smoke Skill", "Skills could not be loaded"],
-  },
-  {
-    pathName: "/skills-hub?__browser-smoke-filter=1",
-    appSdkFixtureMode: APP_SDK_FIXTURE_MODE,
-    setupExpressions: [
-      setRouteTextInputByPlaceholder("Search skills...", "no-match-browser-smoke-skill"),
-    ],
-    requiredTextTokens: [
-      "No skills found",
-      "We couldn't find any skills matching your current filters.",
-    ],
-    requiredDomExpressions: [
-      `document.querySelector('input[placeholder="Search skills..."]')?.value === "no-match-browser-smoke-skill"`,
-    ],
-    forbiddenTextTokens: ["Browser Smoke Skill", "Skills could not be loaded"],
-  },
-  {
-    pathName: "/skills-hub?__browser-smoke-categories=1",
-    appSdkFixtureMode: APP_SDK_CATEGORY_FAILURE_FIXTURE_MODE,
-    requiredTextTokens: [
-      "Browser Smoke Skill",
-      "Skill categories could not be loaded",
-      "Browser smoke skill categories unavailable",
-      "Retry",
-    ],
-    forbiddenTextTokens: ["Skills could not be loaded"],
-  },
-  {
-    pathName: "/skills-hub/__browser-smoke-missing",
-    appSdkFixtureMode: APP_SDK_MISSING_FIXTURE_MODE,
-    requiredTextTokens: ["Skill not found", "Back to Skills Hub"],
-    forbiddenTextTokens: ["Skill details could not be loaded", "Browser Smoke Skill"],
-  },
-  {
-    pathName: "/skills-hub?__browser-smoke-retry=1",
-    appSdkFixtureMode: APP_SDK_RETRY_FIXTURE_MODE,
-    setupExpressions: [
-      bodyTextIncludesExpression("Browser smoke skills transient failure"),
-      clickRouteButtonByExactText("Retry"),
-    ],
-    requiredTextTokens: ["Browser Smoke Skill", "Smoke Systems", "Observability", "1.2K"],
-    forbiddenTextTokens: ["Skills could not be loaded", "Browser smoke skills transient failure"],
   },
   {
     pathName: "/api-reference",
@@ -2285,47 +1850,7 @@ function parseFixtureUrl(rawUrl) {
   }
 }
 
-function createRetryFixtureResolver() {
-  const attempts = new Map();
-
-  return function resolveRetryFixture(request) {
-    const method = String(request.method ?? "GET").toUpperCase();
-    const pathName = normalizeFixtureUrlPath(request.url);
-    if (method !== "GET") {
-      return null;
-    }
-
-    if (pathName === "/app/v3/api/ecosystem/skills") {
-      const key = `${method} ${pathName}`;
-      const nextAttempt = (attempts.get(key) ?? 0) + 1;
-      attempts.set(key, nextAttempt);
-      if (nextAttempt === 1) {
-        return {
-          statusCode: 200,
-          body: {
-            code: "4001",
-            msg: "Browser smoke skills transient failure",
-            data: null,
-          },
-        };
-      }
-      return {
-        statusCode: 200,
-        body: {
-          code: "2000",
-          msg: "success",
-          data: {
-            items: [BROWSER_SMOKE_SKILL_RECORD],
-          },
-        },
-      };
-    }
-
-    return null;
-  };
-}
-
-function resolveAppSdkFixture(appSdkFixtureMode, request, resolveRetryFixture = () => null) {
+function resolveAppSdkFixture(appSdkFixtureMode, request) {
   const method = String(request.method ?? "GET").toUpperCase();
   const pathName = normalizeFixtureUrlPath(request.url);
   const sharedFixture = APP_SDK_SHARED_BROWSER_FIXTURES.get(`${method} ${pathName}`);
@@ -2334,12 +1859,6 @@ function resolveAppSdkFixture(appSdkFixtureMode, request, resolveRetryFixture = 
   }
   if (!appSdkFixtureMode) {
     return null;
-  }
-  if (appSdkFixtureMode === APP_SDK_RETRY_FIXTURE_MODE) {
-    const retryFixture = resolveRetryFixture(request);
-    if (retryFixture) {
-      return retryFixture;
-    }
   }
   return APP_SDK_BROWSER_FIXTURES.get(`${appSdkFixtureMode} ${method} ${pathName}`) ?? null;
 }
@@ -2508,7 +2027,6 @@ async function installAppSdkFixtureInterceptor(cdp, resetConsoleIssueFilter = ()
     apiPlaygroundFixtureMode: null,
   };
   const apiPlaygroundFixtureInterceptor = installApiPlaygroundFetchInterceptor(state, resetConsoleIssueFilter);
-  let resolveRetryFixture = createRetryFixtureResolver();
 
   await cdp.send("Fetch.enable", {
     patterns: [
@@ -2533,7 +2051,7 @@ async function installAppSdkFixtureInterceptor(cdp, resetConsoleIssueFilter = ()
 
   cdp.on("Fetch.requestPaused", (params) => {
     const request = params.request ?? {};
-    const fixture = resolveAppSdkFixture(state.appSdkFixtureMode, request, resolveRetryFixture)
+    const fixture = resolveAppSdkFixture(state.appSdkFixtureMode, request)
       ?? resolveBackendSdkFixture(state.backendSdkFixtureMode, request)
       ?? resolveApiPlaygroundFixture(state.apiPlaygroundFixtureMode, request);
     if (!fixture) {
@@ -2566,7 +2084,6 @@ async function installAppSdkFixtureInterceptor(cdp, resetConsoleIssueFilter = ()
   return {
     setActiveMode(mode) {
       state.appSdkFixtureMode = mode ?? null;
-      resolveRetryFixture = createRetryFixtureResolver();
     },
     setActiveBackendMode(mode) {
       state.backendSdkFixtureMode = mode ?? null;

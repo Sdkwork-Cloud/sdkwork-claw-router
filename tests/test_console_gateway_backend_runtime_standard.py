@@ -10,9 +10,9 @@ class ConsoleGatewayBackendRuntimeStandardTest(unittest.TestCase):
         product_api_mod = (
             ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "mod.rs"
         ).read_text(encoding="utf-8")
-        app_api = (ROOT / "services" / "sdkwork-claw-app" / "src" / "lib.rs").read_text(
-            encoding="utf-8"
-        )
+        app_api = (
+            ROOT / "crates" / "sdkwork-router-app-api" / "src" / "routes.rs"
+        ).read_text(encoding="utf-8")
         app_gateway_path = (
             ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_gateway.rs"
         )
@@ -25,10 +25,11 @@ class ConsoleGatewayBackendRuntimeStandardTest(unittest.TestCase):
         self.assertIn("app_gateway_traces_router_with_read_store", product_api_mod)
         self.assertIn("/app/v3/api/ai/gateway/traces", app_gateway)
         self.assertIn("TrustedRequestSubject", app_gateway)
-        self.assertIn("require_subject", app_gateway)
+        self.assertIn("map_optional_app_user_subject", app_gateway)
         self.assertIn("AppGatewayTracesReadStore", app_gateway)
         self.assertIn("EmptyAppGatewayTracesReadStore", app_gateway)
-        self.assertIn('PlusApiResult::error("4010"', app_gateway)
+        self.assertIn("PlusApiResult::error", app_gateway)
+        self.assertIn('"5000"', app_gateway)
         self.assertIn("app gateway traces read model is unavailable", app_gateway)
 
         self.assertIn("AppGatewayTracesReadStore", app_api)
@@ -51,11 +52,21 @@ class ConsoleGatewayBackendRuntimeStandardTest(unittest.TestCase):
             / "ports"
             / "app_gateway_traces_read_store.rs"
         )
+        types_path = (
+            ROOT
+            / "crates"
+            / "sdkwork-clawrouter-app-gateway-traces-repository-sqlx"
+            / "src"
+            / "types.rs"
+        )
 
         self.assertTrue(port_path.exists())
+        self.assertTrue(types_path.exists())
         port = port_path.read_text(encoding="utf-8")
+        types = types_path.read_text(encoding="utf-8")
 
         self.assertIn("mod app_gateway_traces_read_store;", ports_mod)
+        self.assertIn("sdkwork_clawrouter_app_gateway_traces_repository_sqlx", port)
         for export_name in [
             "AppGatewayTraceItem",
             "AppGatewayTraceItems",
@@ -67,9 +78,9 @@ class ConsoleGatewayBackendRuntimeStandardTest(unittest.TestCase):
             self.assertIn(export_name, port)
 
         for field_name in ["id", "time", "ip", "endpoint", "method", "status", "duration", "channel"]:
-            self.assertIn(field_name, port)
+            self.assertIn(field_name, types)
 
-        self.assertIn("#[serde(rename_all = \"camelCase\")]", port)
+        self.assertIn("#[serde(rename_all = \"camelCase\")]", types)
         for sensitive_field in [
             "request_payload_hash",
             "response_payload_hash",
@@ -78,17 +89,18 @@ class ConsoleGatewayBackendRuntimeStandardTest(unittest.TestCase):
             "payload_hash",
             "metadata",
         ]:
-            self.assertNotIn(sensitive_field, port)
+            self.assertNotIn(sensitive_field, types)
         self.assertNotIn("mock", port.lower())
+        self.assertNotIn("mock", types.lower())
 
     def test_console_gateway_sql_read_stores_use_real_tables_scope_and_safe_columns(self) -> None:
         for relative, store_name in [
             (
-                "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/app_gateway_traces_read_store.rs",
+                "crates/sdkwork-clawrouter-app-gateway-traces-repository-sqlx/src/sqlite.rs",
                 "SqliteAppGatewayTracesReadStore",
             ),
             (
-                "services/sdkwork-claw-product/src/infrastructure/sql/postgres/app_gateway_traces_read_store.rs",
+                "crates/sdkwork-clawrouter-app-gateway-traces-repository-sqlx/src/postgres.rs",
                 "PostgresAppGatewayTracesReadStore",
             ),
         ]:
@@ -137,8 +149,8 @@ class ConsoleGatewayBackendRuntimeStandardTest(unittest.TestCase):
 
     def test_console_gateway_read_models_reject_missing_trace_status_and_latency(self) -> None:
         for relative in [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/app_gateway_traces_read_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/app_gateway_traces_read_store.rs",
+            "crates/sdkwork-clawrouter-app-gateway-traces-repository-sqlx/src/sqlite.rs",
+            "crates/sdkwork-clawrouter-app-gateway-traces-repository-sqlx/src/postgres.rs",
         ]:
             store = (ROOT / relative).read_text(encoding="utf-8")
             compact_store = " ".join(store.split())
@@ -158,8 +170,8 @@ class ConsoleGatewayBackendRuntimeStandardTest(unittest.TestCase):
 
     def test_console_gateway_selected_instance_health_status_fails_closed(self) -> None:
         for relative in [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/app_gateway_traces_read_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/app_gateway_traces_read_store.rs",
+            "crates/sdkwork-clawrouter-app-gateway-traces-repository-sqlx/src/sqlite.rs",
+            "crates/sdkwork-clawrouter-app-gateway-traces-repository-sqlx/src/postgres.rs",
         ]:
             store = (ROOT / relative).read_text(encoding="utf-8")
             compact_store = " ".join(store.split())
@@ -177,8 +189,8 @@ class ConsoleGatewayBackendRuntimeStandardTest(unittest.TestCase):
 
     def test_console_gateway_selected_instance_deployment_mode_fails_closed(self) -> None:
         for relative in [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/app_gateway_traces_read_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/app_gateway_traces_read_store.rs",
+            "crates/sdkwork-clawrouter-app-gateway-traces-repository-sqlx/src/sqlite.rs",
+            "crates/sdkwork-clawrouter-app-gateway-traces-repository-sqlx/src/postgres.rs",
         ]:
             store = (ROOT / relative).read_text(encoding="utf-8")
             compact_store = " ".join(store.split())

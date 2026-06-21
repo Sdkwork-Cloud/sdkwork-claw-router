@@ -115,7 +115,7 @@ fn attach_trusted_request_subject_exposes_appbase_iam_context() {
     assert_eq!("10", context.tenant_id);
     assert_eq!(Some("20"), context.organization_id.as_deref());
     assert_eq!("30", context.user_id);
-    assert_eq!("sdkwork-claw-router", context.app_id);
+    assert_eq!("sdkwork-clawrouter", context.app_id);
 }
 
 #[test]
@@ -270,7 +270,7 @@ fn app_session_claim_token_accepts_tenant_level_organization_zero() {
         organization_id: 0,
         user_id: 30,
         session_id: "session-tenant-scope".to_owned(),
-        app_id: "sdkwork-claw-router".to_owned(),
+        app_id: "sdkwork-clawrouter".to_owned(),
         login_scope: "TENANT".to_owned(),
         environment: "dev".to_owned(),
         deployment_mode: "saas".to_owned(),
@@ -307,7 +307,7 @@ fn app_request_subject_boundary_rejects_swapped_auth_and_access_token_types() {
         organization_id: 20,
         user_id: 30,
         session_id: "session-token-type".to_owned(),
-        app_id: "sdkwork-claw-router".to_owned(),
+        app_id: "sdkwork-clawrouter".to_owned(),
         login_scope: "ORGANIZATION".to_owned(),
         environment: "dev".to_owned(),
         deployment_mode: "saas".to_owned(),
@@ -367,7 +367,7 @@ fn app_request_subject_boundary_rejects_access_token_from_different_session() {
         organization_id: 20,
         user_id: 30,
         session_id: "session-auth".to_owned(),
-        app_id: "sdkwork-claw-router".to_owned(),
+        app_id: "sdkwork-clawrouter".to_owned(),
         login_scope: "ORGANIZATION".to_owned(),
         environment: "dev".to_owned(),
         deployment_mode: "saas".to_owned(),

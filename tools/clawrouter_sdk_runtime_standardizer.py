@@ -34,11 +34,11 @@ SDK_TYPES = {
     "clawrouter-backend-sdk": "backend",
     "clawrouter-open-sdk": "ai",
 }
-SDK_OWNER = "sdkwork-claw-router"
+SDK_OWNER = "sdkwork-clawrouter"
 SDK_API_AUTHORITIES = {
-    "clawrouter-app-sdk": "sdkwork-claw-router.app",
-    "clawrouter-backend-sdk": "sdkwork-claw-router.backend",
-    "clawrouter-open-sdk": "sdkwork-claw-router.ai",
+    "clawrouter-app-sdk": "sdkwork-clawrouter.app",
+    "clawrouter-backend-sdk": "sdkwork-clawrouter.backend",
+    "clawrouter-open-sdk": "sdkwork-clawrouter.ai",
 }
 SDK_TYPESCRIPT_DIRECTORIES = {
     "clawrouter-app-sdk": "clawrouter-app-sdk-typescript",
@@ -2289,8 +2289,8 @@ class SdkRuntimeStandardizer:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Apply sdkwork-claw-router generated SDK runtime build standard.")
-    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-claw-router root directory")
+    parser = argparse.ArgumentParser(description="Apply sdkwork-clawrouter generated SDK runtime build standard.")
+    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-clawrouter root directory")
     parser.add_argument(
         "--sdk-dir",
         action="append",

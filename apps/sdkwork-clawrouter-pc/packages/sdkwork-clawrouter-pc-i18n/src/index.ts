@@ -80,7 +80,12 @@ i18n
     resources,
     fallbackLng: "en",
     supportedLngs: ["en", "zh"],
-    interpolation: { escapeValue: false },
+    interpolation: {
+      escapeValue: false,
+      defaultVariables: {
+        platformName: "Claw Router",
+      },
+    },
   });
 
 export default i18n;

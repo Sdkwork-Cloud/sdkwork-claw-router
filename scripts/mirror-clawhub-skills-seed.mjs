@@ -50,7 +50,7 @@ Options:
   --fetch                 Fetch the ClawHub public full list API and detail API into local raw mirror files.
   --from-mirror           Rebuild SDKWork seed projection from existing local raw mirror files.
   --check                 Check local mirror and seed projection without network or writes.
-  --workspace-root <path> Workspace root, default current sdkwork-claw-router root.
+  --workspace-root <path> Workspace root, default current sdkwork-clawrouter root.
   --page-size <number>    List page size for full-cursor-mirror crawling, default ${DEFAULT_PAGE_SIZE}.
   --max-items <number>    Development-only cap for bounded crawls. Omit for full-cursor-mirror.
   --seed-limit <number|all>
@@ -227,7 +227,7 @@ async function fetchJson(url, { timeoutMs = DEFAULT_HTTP_TIMEOUT_MS, attempts = 
         signal: controller.signal,
         headers: {
           accept: 'application/json',
-          'user-agent': 'sdkwork-claw-router-skill-mirror/1.0',
+          'user-agent': 'sdkwork-clawrouter-skill-mirror/1.0',
         },
       });
       if (!response.ok) {

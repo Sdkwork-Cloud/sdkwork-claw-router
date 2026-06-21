@@ -104,12 +104,10 @@ pub fn admin_ip_rate_limit_router_with_store(
 
 async fn fetch_ip_rate_limits(
     State(state): State<AdminIpRateLimitState>,
-    headers: HeaderMap,
+    trusted: TrustedRequestSubject,
+    _headers: HeaderMap,
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
 
     match state
         .store
@@ -128,13 +126,11 @@ async fn fetch_ip_rate_limits(
 
 async fn create_ip_rate_limit(
     State(state): State<AdminIpRateLimitState>,
+    trusted: TrustedRequestSubject,
     headers: HeaderMap,
-    body: Bytes,
+    body: Bytes
 ) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_subject(trusted);
     let request = match parse_json_body::<AdminIpRateLimitCreateRequest>(&body, "ip rate limit") {
         Ok(request) => request,
         Err(message) => return bad_request(message),
@@ -160,21 +156,13 @@ async fn create_ip_rate_limit(
     }
 }
 
-fn resolve_subject(headers: &HeaderMap) -> Result<AdminIpRateLimitSubject, Response> {
-    TrustedRequestSubject::from_headers(headers)
-        .map(|subject| AdminIpRateLimitSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            operator_id: subject.operator_id,
-            operator_type: subject.operator_type,
-        })
-        .map_err(|error| {
-            (
-                StatusCode::UNAUTHORIZED,
-                Json(PlusApiResult::error("4010", error.to_string())),
-            )
-                .into_response()
-        })
+fn map_subject(trusted: TrustedRequestSubject) -> AdminIpRateLimitSubject {
+    AdminIpRateLimitSubject {
+            tenant_id: trusted.tenant_id,
+            organization_id: trusted.organization_id,
+            operator_id: trusted.operator_id,
+            operator_type: trusted.operator_type,
+        }
 }
 
 fn parse_json_body<T>(body: &[u8], entity_name: &str) -> Result<T, String>

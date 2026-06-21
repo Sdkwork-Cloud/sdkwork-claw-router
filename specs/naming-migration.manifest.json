@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
   "kind": "sdkwork.naming-migration",
-  "application": "sdkwork-claw-router",
+  "application": "sdkwork-clawrouter",
   "authority": "../sdkwork-specs/NAMING_SPEC.md",
   "approvedAt": "2026-06-18",
   "reviewBy": "2026-12-31",
   "legacyCrates": [
     {
       "path": "services/sdkwork-claw-product",
-      "target": "services/sdkwork-router-product-service",
-      "reason": "Pre-standard product service crate; rename requires ADR, Cargo workspace migration, and deployment artifact updates."
+      "target": "services/sdkwork-clawrouter-router-service",
+      "reason": "Pre-standard sdkwork-claw-product crate uses forbidden app-product suffix per NAMING_SPEC.md §4.3. Target uses capability router (AI gateway/routing domain), not commerce product/catalog."
     },
     {
       "path": "services/sdkwork-claw-app",
@@ -20,6 +20,14 @@
       "path": "services/sdkwork-claw-admin",
       "target": "services/sdkwork-clawrouter-admin-api-server",
       "reason": "Pre-standard admin-api process crate; rename blocked on backend route manifest and release workflow updates."
+    }
+  ],
+  "canonicalApplicationCode": "clawrouter",
+  "legacyRepositoryStems": [
+    {
+      "path": "sdkwork-clawrouter",
+      "target": "sdkwork-clawrouter",
+      "reason": "Retired hyphenated repository stem; canonical application code and repository stem is clawrouter."
     }
   ]
 }

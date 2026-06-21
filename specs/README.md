@@ -1,6 +1,6 @@
 # SDKWork Claw Router Component Specs
 
-This directory is the local standards index for `sdkwork-claw-router`.
+This directory is the local standards index for `sdkwork-clawrouter`.
 
 Root SDKWork standards remain authoritative. Local component specs can narrow or document this component, but they must not contradict [the root standards](../../sdkwork-specs/README.md).
 
@@ -8,9 +8,9 @@ Root SDKWork standards remain authoritative. Local component specs can narrow or
 
 | Field | Value |
 | --- | --- |
-| Name | `sdkwork-claw-router` |
+| Name | `sdkwork-clawrouter` |
 | Type | `app` |
-| Root | `sdkwork-claw-router` |
+| Root | `sdkwork-clawrouter` |
 | Domain | `platform` |
 | Capability | `router` |
 | Languages | `javascript, rust` |
@@ -95,4 +95,4 @@ Root SDKWork standards remain authoritative. Local component specs can narrow or
 - `cargo test --workspace`
 - `pnpm topology:validate`
 - `pnpm test:topology`
-- `pnpm --filter sdkwork-claw-router-workspace test`
+- `pnpm --filter sdkwork-clawrouter-workspace test`

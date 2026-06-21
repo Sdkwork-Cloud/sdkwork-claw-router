@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "kind": "sdkwork.database-store-migration",
+  "application": "sdkwork-clawrouter",
+  "authority": "../sdkwork-specs/DATABASE_SPEC.md",
+  "approvedAt": "2026-06-21",
+  "reviewBy": "2026-12-31",
+  "targetPattern": "crates/sdkwork-clawrouter-<capability>-repository-sqlx",
+  "legacyInventory": {
+    "path": "services/sdkwork-claw-product/src/infrastructure/sql",
+    "glob": "**/*_store.rs"
+  },
+  "migratedStores": [
+    {
+      "capability": "admin-monitor",
+      "crate": "crates/sdkwork-clawrouter-admin-monitor-repository-sqlx",
+      "legacyPaths": [
+        "services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_monitor_read_store.rs",
+        "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_monitor_read_store.rs"
+      ],
+      "status": "MIGRATED"
+    },
+    {
+      "capability": "app-gateway-traces",
+      "crate": "crates/sdkwork-clawrouter-app-gateway-traces-repository-sqlx",
+      "legacyPaths": [
+        "services/sdkwork-claw-product/src/infrastructure/sql/postgres/app_gateway_traces_read_store.rs",
+        "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/app_gateway_traces_read_store.rs"
+      ],
+      "status": "MIGRATED"
+    },
+    {
+      "capability": "app-iam-directory",
+      "crate": "crates/sdkwork-clawrouter-app-iam-directory-repository-sqlx",
+      "legacyPaths": [
+        "services/sdkwork-claw-product/src/infrastructure/sql/postgres/app_iam_directory_read_store.rs",
+        "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/app_iam_directory_read_store.rs"
+      ],
+      "status": "MIGRATED"
+    }
+  ]
+}

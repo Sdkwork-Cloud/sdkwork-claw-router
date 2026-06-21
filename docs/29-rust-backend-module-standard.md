@@ -2,7 +2,7 @@
 
 ## 1. Goal
 
-`sdkwork-claw-router` follows a Rust-first backend architecture. The codebase must be ready for implementation work without drifting into handwritten HTTP clients, UI-driven data shortcuts, or unclear backend ownership.
+`sdkwork-clawrouter` follows a Rust-first backend architecture. The codebase must be ready for implementation work without drifting into handwritten HTTP clients, UI-driven data shortcuts, or unclear backend ownership.
 
 The runtime is split into small Rust packages with explicit boundaries:
 

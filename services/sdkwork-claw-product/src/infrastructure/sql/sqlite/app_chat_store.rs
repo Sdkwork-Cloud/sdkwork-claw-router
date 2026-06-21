@@ -2,6 +2,7 @@ use serde_json::{json, Value};
 use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
+use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
 use crate::ports::{
     AppChatConversationItem, AppChatConversationList, AppChatFuture, AppChatMessageItem,
     AppChatStore, AppChatSubject, AppChatTurnItem, AppChatTurnOutcome, AppChatUsageSnapshot,
@@ -95,9 +96,11 @@ impl AppChatStore for SqliteAppChatStore {
                 .unwrap_or_else(|| "New conversation".to_owned());
             let metadata = serde_json::to_string(&command.metadata)
                 .map_err(|error| DomainError::new(format!("invalid chat metadata: {error}")))?;
+            let conversation_pk = next_claw_runtime_id("ai_chat_conversation")?;
             sqlx::query(
                 r#"
                 INSERT INTO ai_chat_conversation (
+                    id,
                     uuid,
                     tenant_id,
                     organization_id,
@@ -118,9 +121,10 @@ impl AppChatStore for SqliteAppChatStore {
                     message_count,
                     turn_count
                 )
-                VALUES (?1, ?2, ?3, ?4, 'active', ?5, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, NULL, 0, 0)
+                VALUES (?1, ?2, ?3, ?4, ?5, 'active', ?6, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, ?15, NULL, 0, 0)
                 "#,
             )
+            .bind(conversation_pk)
             .bind(&command.conversation_uuid)
             .bind(command.subject.tenant_id)
             .bind(command.subject.organization_id)
@@ -233,9 +237,11 @@ async fn create_turn(
     let next_sequence_no = next_count(&mut tx, "ai_chat_item", conversation_pk).await?;
     let next_message_no = next_count(&mut tx, "ai_chat_message", conversation_pk).await?;
 
-    let turn_id = sqlx::query(
+    let turn_id = next_claw_runtime_id("ai_chat_turn")?;
+    sqlx::query(
         r#"
         INSERT INTO ai_chat_turn (
+            id,
             uuid,
             tenant_id,
             organization_id,
@@ -251,9 +257,10 @@ async fn create_turn(
             agent_session_id,
             metadata
         )
-        VALUES (?1, ?2, ?3, ?4, ?5, ?6, 'running', ?7, ?7, ?8, ?9, ?10, ?11, ?12)
+        VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, 'running', ?8, ?8, ?9, ?10, ?11, ?12, ?13)
         "#,
     )
+    .bind(turn_id)
     .bind(&command.turn_uuid)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
@@ -268,8 +275,7 @@ async fn create_turn(
     .bind(&metadata)
     .execute(&mut *tx)
     .await
-    .map_err(sql_error)?
-    .last_insert_rowid();
+    .map_err(sql_error)?;
 
     let input_item_id = insert_item(
         &mut tx,
@@ -301,9 +307,11 @@ async fn create_turn(
     )
     .await?;
 
-    let message_id = sqlx::query(
+    let input_message_id = next_claw_runtime_id("ai_chat_message")?;
+    sqlx::query(
         r#"
         INSERT INTO ai_chat_message (
+            id,
             uuid,
             tenant_id,
             organization_id,
@@ -323,9 +331,10 @@ async fn create_turn(
             updated_at,
             metadata
         )
-        VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, 'user', 'prompt', 'input', 'completed', ?9, NULL, NULL, ?10, ?10, ?11)
+        VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, 'user', 'prompt', 'input', 'completed', ?10, NULL, NULL, ?11, ?11, ?12)
         "#,
     )
+    .bind(input_message_id)
     .bind(&command.input_message_uuid)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
@@ -339,12 +348,13 @@ async fn create_turn(
     .bind(&metadata)
     .execute(&mut *tx)
     .await
-    .map_err(sql_error)?
-    .last_insert_rowid();
+    .map_err(sql_error)?;
 
+    let input_message_part_id = next_claw_runtime_id("ai_chat_message_part")?;
     sqlx::query(
         r#"
         INSERT INTO ai_chat_message_part (
+            id,
             uuid,
             tenant_id,
             organization_id,
@@ -358,14 +368,15 @@ async fn create_turn(
             created_at,
             metadata
         )
-        VALUES (?1, ?2, ?3, ?4, ?5, ?6, 1, 'text', ?7, NULL, ?8, ?9)
+        VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, 1, 'text', ?8, NULL, ?9, ?10)
         "#,
     )
+    .bind(input_message_part_id)
     .bind(format!("{}-part-1", command.input_message_uuid))
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
     .bind(command.subject.user_id)
-    .bind(message_id)
+    .bind(input_message_id)
     .bind(input_item_id)
     .bind(&command.message)
     .bind(&command.requested_at)
@@ -531,9 +542,11 @@ async fn complete_turn_response(
     .await
     .map_err(sql_error)?;
 
-    let message_id = sqlx::query(
+    let output_message_id = next_claw_runtime_id("ai_chat_message")?;
+    sqlx::query(
         r#"
         INSERT INTO ai_chat_message (
+            id,
             uuid,
             tenant_id,
             organization_id,
@@ -556,9 +569,10 @@ async fn complete_turn_response(
             updated_at,
             metadata
         )
-        VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, 'assistant', 'response', 'output', ?9, ?10, ?11, ?12, ?13, ?14, ?15, ?16, ?16, ?17)
+        VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, 'assistant', 'response', 'output', ?10, ?11, ?12, ?13, ?14, ?15, ?16, ?17, ?17, ?18)
         "#,
     )
+    .bind(output_message_id)
     .bind(&command.output_message_uuid)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
@@ -578,12 +592,13 @@ async fn complete_turn_response(
     .bind(&metadata)
     .execute(&mut *tx)
     .await
-    .map_err(sql_error)?
-    .last_insert_rowid();
+    .map_err(sql_error)?;
 
+    let output_message_part_id = next_claw_runtime_id("ai_chat_message_part")?;
     sqlx::query(
         r#"
         INSERT INTO ai_chat_message_part (
+            id,
             uuid,
             tenant_id,
             organization_id,
@@ -597,14 +612,15 @@ async fn complete_turn_response(
             created_at,
             metadata
         )
-        VALUES (?1, ?2, ?3, ?4, ?5, ?6, 1, 'text', ?7, NULL, ?8, ?9)
+        VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, 1, 'text', ?8, NULL, ?9, ?10)
         "#,
     )
+    .bind(output_message_part_id)
     .bind(&command.output_part_uuid)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
     .bind(command.subject.user_id)
-    .bind(message_id)
+    .bind(output_message_id)
     .bind(output_item_pk)
     .bind(&command.message)
     .bind(&command.requested_at)
@@ -1272,9 +1288,11 @@ async fn insert_context_snapshot(
         }),
         "chat context json",
     )?;
-    let snapshot_id = sqlx::query(
+    let snapshot_id = next_claw_runtime_id("ai_chat_context_snapshot")?;
+    sqlx::query(
         r#"
         INSERT INTO ai_chat_context_snapshot (
+            id,
             uuid,
             tenant_id,
             organization_id,
@@ -1299,9 +1317,10 @@ async fn insert_context_snapshot(
             truncation_reason,
             context_json
         )
-        VALUES (?1, ?2, ?3, ?4, 'active', ?5, ?6, ?7, ?8, NULL, ?9, 'full_turn_context', ?10, ?11, ?11, ?11, ?12, 0, ?13, ?14, ?15, NULL, ?16)
+        VALUES (?1, ?2, ?3, ?4, ?5, 'active', ?6, ?7, ?8, ?9, NULL, ?10, 'full_turn_context', ?11, ?12, ?12, ?12, ?13, 0, ?14, ?15, ?16, NULL, ?17)
         "#,
     )
+    .bind(snapshot_id)
     .bind(format!("{}-context-snapshot-{snapshot_no}", command.turn_id))
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
@@ -1320,8 +1339,7 @@ async fn insert_context_snapshot(
     .bind(&context_json)
     .execute(&mut **tx)
     .await
-    .map_err(sql_error)?
-    .last_insert_rowid();
+    .map_err(sql_error)?;
     Ok(snapshot_id)
 }
 
@@ -1375,9 +1393,11 @@ async fn insert_usage_link_for_message(
 ) -> DomainResult<()> {
     let metadata = serde_json::to_string(&command.metadata)
         .map_err(|error| DomainError::new(format!("invalid runtime usage metadata: {error}")))?;
+    let usage_link_id = next_claw_runtime_id("ai_runtime_usage_link")?;
     sqlx::query(
         r#"
         INSERT INTO ai_runtime_usage_link (
+            id,
             uuid,
             tenant_id,
             organization_id,
@@ -1400,9 +1420,10 @@ async fn insert_usage_link_for_message(
             occurred_at,
             metadata
         )
-        VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, 'chat_response', ?10, ?11, ?12, ?13, ?14, ?15, ?16, ?17, ?18, ?19, ?20)
+        VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, 'chat_response', ?11, ?12, ?13, ?14, ?15, ?16, ?17, ?18, ?19, ?20, ?21)
         "#,
     )
+    .bind(usage_link_id)
     .bind(usage_link_uuid)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
@@ -1558,9 +1579,11 @@ async fn insert_item(
 ) -> DomainResult<i64> {
     let metadata = serde_json::to_string(&command.metadata)
         .map_err(|error| DomainError::new(format!("invalid chat item metadata: {error}")))?;
+    let item_id = next_claw_runtime_id("ai_chat_item")?;
     sqlx::query(
         r#"
         INSERT INTO ai_chat_item (
+            id,
             uuid,
             tenant_id,
             organization_id,
@@ -1578,9 +1601,10 @@ async fn insert_item(
             completed_at,
             metadata
         )
-        VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, NULL, ?13, ?13, ?14)
+        VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, NULL, ?14, ?14, ?15)
         "#,
     )
+    .bind(item_id)
     .bind(uuid)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
@@ -1597,8 +1621,8 @@ async fn insert_item(
     .bind(&metadata)
     .execute(&mut **tx)
     .await
-    .map_err(sql_error)
-    .map(|result| result.last_insert_rowid())
+    .map_err(sql_error)?;
+    Ok(item_id)
 }
 
 fn row_to_conversation(row: sqlx::sqlite::SqliteRow) -> DomainResult<AppChatConversationItem> {

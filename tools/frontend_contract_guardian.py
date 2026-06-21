@@ -91,7 +91,7 @@ class FrontendContractGuardian:
     IMPORT_PATTERN = re.compile(r'^\s*import\s+(?:[^"\']+\s+from\s+)?["\']([^"\']+)["\']', re.MULTILINE)
     COMMONS_ROOT_NAMED_IMPORT_PATTERN = re.compile(
         r"^\s*import\s+(?:type\s+)?(?:[^{}\n]+,\s*)?\{(?P<imports>[\s\S]*?)\}\s+from\s+"
-        r"['\"]sdkwork-clawrouter-pc-commons['\"]",
+        r"['\"]@sdkwork/clawrouter-pc-commons['\"]",
         re.MULTILINE,
     )
     EXPORT_ALL_PATTERN = re.compile(r"^\s*export\s+\*\s+from\s+['\"](?P<module>[^'\"]+)['\"]", re.MULTILINE)
@@ -113,9 +113,19 @@ class FrontendContractGuardian:
     )
     BROWSER_FETCH_CALL_PATTERN = re.compile(r"\bfetch\s*\(\s*([^,\)\n]+)")
     NODE_ONLY_BROWSER_PACKAGES = frozenset({"sdkwork-code-generator"})
-    ROUTE_PACKAGE_PREFIX = "sdkwork-claw-router-"
-    ROUTE_PACKAGE_PREFIXES = ("sdkwork-claw-router-", "sdkwork-clawrouter-")
-    STATIC_ROUTE_IMPORT_ALLOWLIST = frozenset({"sdkwork-clawrouter-pc-commons"})
+    ROUTE_PACKAGE_PREFIX = "@sdkwork/clawrouter-"
+    ROUTE_PACKAGE_PREFIXES = ("@sdkwork/clawrouter-", "sdkwork-clawrouter-")
+    STATIC_ROUTE_IMPORT_ALLOWLIST = frozenset(
+        {
+            "@sdkwork/clawrouter-pc-commons",
+            "@sdkwork/clawrouter-pc-shell",
+            "@sdkwork/clawrouter-pc-console-shell",
+            "@sdkwork/clawrouter-pc-admin-shell",
+        }
+    )
+    APP_SHELL_LAYOUT_RELATIVE = (
+        "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-shell/src/AppShellLayout.tsx"
+    )
     BROWSER_SOURCE_EXTENSIONS = frozenset({".ts", ".tsx", ".js", ".jsx"})
     BROWSER_SOURCE_EXCLUDED_DIRECTORIES = frozenset(
         {
@@ -128,7 +138,7 @@ class FrontendContractGuardian:
         }
     )
     VITE_LOCAL_ROUTE_CHUNK_MESSAGE = (
-        "portal Vite manualChunks must split local sdkwork-claw-router route packages before generic vendor chunks"
+        "portal Vite manualChunks must split local sdkwork-clawrouter route packages before generic vendor chunks"
     )
     PORTAL_NODE_SERVER_FORBIDDEN_MESSAGE = (
         "portal Node server runtime is forbidden; serve portal static and forwarding through Rust edge server"
@@ -344,6 +354,9 @@ class FrontendContractGuardian:
     EXTERNAL_DEPENDENCY_SDK_FAMILIES_WITHOUT_LOCAL_OPERATIONS = frozenset(
         {
             "sdkwork-documents-app-sdk",
+            "sdkwork-appbase-app-sdk",
+            "sdkwork-clawrouter-app-sdk",
+            "sdkwork-clawrouter-backend-sdk",
         }
     )
     WORKSPACE_DOCUMENTS_PACKAGE_SRC: dict[str, str] = {
@@ -363,7 +376,7 @@ class FrontendContractGuardian:
         "build-server.mjs",
         "smoke-production-server.mjs",
     )
-    ROUTE_CLASSIFICATION_SCHEMA = "sdkwork-claw-router-frontend-route-classification"
+    ROUTE_CLASSIFICATION_SCHEMA = "sdkwork-clawrouter-frontend-route-classification"
     ALLOWED_DELIVERY_KINDS = frozenset(
         {
             "sdk_backed_business_runtime",
@@ -407,7 +420,7 @@ class FrontendContractGuardian:
         r"^\d{4}-\d{2}-\d{2}(?:[T ][0-2]\d:[0-5]\d:[0-5]\d(?:\.\d{1,6})?(?:Z|[+-][0-2]\d:[0-5]\d)?)?$"
     )
     SOURCE_HASH_PATTERN = re.compile(r"^sha256:[0-9a-f]{64}$")
-    STATIC_SOURCE_MANIFEST_SCHEMA = "sdkwork-claw-router-frontend-static-source-manifest"
+    STATIC_SOURCE_MANIFEST_SCHEMA = "sdkwork-clawrouter-frontend-static-source-manifest"
     DEPENDENCY_OPERATION_FRAGMENTS = (
         Path("docs")
         / "schema-registry"
@@ -604,6 +617,8 @@ class FrontendContractGuardian:
                     route_stack.pop()
 
         routes.update(self._contracted_child_routes_for_wildcard_mounts(wildcard_mounts))
+        shell_routes, _ = self._extract_app_shell_route_data()
+        routes.update(shell_routes)
         return sorted(routes)
 
     def _load_manifest(self) -> dict[str, Any]:
@@ -861,7 +876,7 @@ class FrontendContractGuardian:
         return (
             route_pattern_index != -1
             and route_match_index != -1
-            and "sdkwork-claw-router-" in source
+            and "sdkwork-clawrouter-" in source
             and vendor_index != -1
             and route_match_index < vendor_index
         )
@@ -999,7 +1014,7 @@ class FrontendContractGuardian:
                 )
 
             if service_name_pattern.search(relative) and re.search(
-                r"from\s+['\"]sdkwork-clawrouter-pc-commons['\"]",
+                r"from\s+['\"]@sdkwork/clawrouter-pc-commons['\"]",
                 source,
             ):
                 messages.append(f"{self.COMMONS_RUNTIME_IMPORT_BOUNDARY_MESSAGE}: {relative}")
@@ -1982,7 +1997,47 @@ class FrontendContractGuardian:
             for child_route in self._contracted_child_routes_for_wildcard_mounts({mount_path}):
                 route_packages.setdefault(child_route, package_name)
 
+        _, shell_packages = self._extract_app_shell_route_data()
+        route_packages.update(shell_packages)
+
         return route_packages
+
+    def _app_shell_layout_path(self) -> Path:
+        return self.root / self.APP_SHELL_LAYOUT_RELATIVE
+
+    def _extract_app_shell_route_data(self) -> tuple[set[str], dict[str, str]]:
+        shell_path = self._app_shell_layout_path()
+        if not self.app_path.exists() or not shell_path.exists():
+            return set(), {}
+
+        app_source = self.app_path.read_text(encoding="utf-8")
+        component_packages = {
+            match.group(1): self._root_package_name(match.group(2))
+            for match in self.LAZY_ROUTE_PATTERN.finditer(app_source)
+        }
+
+        routes: set[str] = set()
+        route_packages: dict[str, str] = {}
+        for line in shell_path.read_text(encoding="utf-8").splitlines():
+            for match in self.ROUTE_PATTERN.finditer(line):
+                attrs = match.group(1)
+                path_match = self.PATH_PATTERN.search(attrs)
+                if path_match is None:
+                    continue
+                path = path_match.group(1).strip()
+                if not path:
+                    continue
+                normalized_path = path[:-2] if path.endswith("/*") else path
+                component_match = self.ROUTE_ELEMENT_COMPONENT_PATTERN.search(attrs)
+                if component_match is None:
+                    continue
+                package_name = component_packages.get(component_match.group(1))
+                if package_name is None:
+                    continue
+                routes.add(normalized_path)
+                route_packages[normalized_path] = package_name
+
+        return routes, route_packages
 
     def _check_route_classification_evidence(self, entry: dict[str, Any]) -> list[str]:
         route = entry["route"]
@@ -2113,7 +2168,7 @@ class FrontendContractGuardian:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Validate portal routes and field contracts against schema manifest.")
-    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-claw-router root directory")
+    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-clawrouter root directory")
     parser.add_argument("--app", type=Path, default=None, help="portal App.tsx path")
     parser.add_argument("--manifest", type=Path, default=None, help="schema manifest JSON path")
     parser.add_argument("--contract", type=Path, default=None, help="frontend field contract YAML path")

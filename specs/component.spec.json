@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "kind": "sdkwork.component.spec",
   "component": {
-    "name": "sdkwork-claw-router",
+    "name": "sdkwork-clawrouter",
     "displayName": "SDKWork Claw Router",
     "version": "0.1.0",
     "type": "app",
-    "root": "sdkwork-claw-router",
+    "root": "sdkwork-clawrouter",
     "domain": "platform",
     "declaredDomain": null,
     "capability": "router",
@@ -199,14 +199,14 @@
       "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
       "authority": "cargo-workspace",
       "catalogPolicy": "no-dedicated-gateway-catalog",
-      "productApiPolicy": "sdkwork-claw-router APIs remain product-owned SDKWork API surfaces",
+      "productApiPolicy": "sdkwork-clawrouter APIs remain product-owned SDKWork API surfaces",
       "migrationState": "shared-gateway-default"
     }
   },
   "verification": {
     "commands": [
       "cargo test --workspace",
-      "pnpm --filter sdkwork-claw-router-workspace test"
+      "pnpm --filter sdkwork-clawrouter-workspace test"
     ]
   },
   "metadata": {

@@ -9,7 +9,7 @@ import { fileURLToPath } from 'node:url';
 import {
   defaultClawRouterDevPostgresDatabaseUrl,
   defaultClawRouterDevPostgresMaxConnections,
-  resolveClawRouterDevDatabaseEnv,
+  resolveWorkspaceDevDatabaseEnv,
 } from './claw-router-dev-database-env.mjs';
 import {
   mergePortalPublicRuntimeEnv,
@@ -39,7 +39,7 @@ const DEFAULT_EXTERNAL_SCHEME = 'http';
 const DEFAULT_DEV_DATABASE_RELATIVE_PATH = path.join('target', 'dev', 'clawrouter.sqlite');
 const DEFAULT_MODELS_CATALOG_RELATIVE_PATH = path.join('data', 'sdkwork-models');
 const DEFAULT_DEV_SECRET =
-  'sdkwork-claw-router-local-dev-secret-20260507';
+  'sdkwork-clawrouter-local-dev-secret-20260507';
 const DEFAULT_DEV_REDIS_HOST = '127.0.0.1';
 const DEFAULT_DEV_REDIS_PORT = '6379';
 const DEFAULT_DEV_REDIS_DATABASE = '0';
@@ -214,13 +214,96 @@ function cargoCommand(platform = process.platform) {
   return platform === 'win32' ? 'cargo.exe' : 'cargo';
 }
 
+export function clawRouterRustDevPackages(settings) {
+  if (settings.runtimeMode === 'client') {
+    return [];
+  }
+
+  const packages = ['sdkwork-claw-installer'];
+  if (settings.runtimeMode === 'all-in-one') {
+    packages.push('sdkwork-claw-gateway');
+    return packages;
+  }
+
+  if (settings.runtimeMode === 'distributed') {
+    packages.push(
+      'sdkwork-claw-gateway',
+      'sdkwork-claw-admin',
+      'sdkwork-claw-app',
+    );
+  }
+
+  return packages;
+}
+
+export function cargoRunPackageArgs(packageName, trailingArgs = []) {
+  const args = ['run', '-p', packageName];
+  if (trailingArgs.length > 0) {
+    args.push('--', ...trailingArgs);
+  }
+  return args;
+}
+
+function rustPrebuildStep(settings, { workspaceRoot, platform }) {
+  const packages = clawRouterRustDevPackages(settings);
+  if (packages.length === 0) {
+    return null;
+  }
+
+  return {
+    name: 'rust-prebuild',
+    command: cargoCommand(platform),
+    args: ['build', ...packages.flatMap((packageName) => ['-p', packageName])],
+    cwd: workspaceRoot,
+    env: process.env,
+    shell: false,
+    windowsHide: platform === 'win32',
+    blocking: true,
+  };
+}
+
+function sdkworkApiGatewayTargetDir(workspaceRoot) {
+  const apiGatewayWorkspaceRoot = path.resolve(workspaceRoot, '..', 'sdkwork-api-gateway');
+  return process.env.SDKWORK_API_GATEWAY_CARGO_TARGET_DIR
+    ?? path.join(apiGatewayWorkspaceRoot, 'target', 'claw-router-dev');
+}
+
+function sdkworkApiGatewayPrebuildStep(settings, { workspaceRoot, platform }) {
+  if (settings.runtimeMode === 'all-in-one') {
+    return null;
+  }
+
+  const apiGatewayWorkspaceRoot = path.resolve(workspaceRoot, '..', 'sdkwork-api-gateway');
+  return {
+    name: 'sdkwork-api-gateway-prebuild',
+    command: cargoCommand(platform),
+    args: [
+      'build',
+      '-p',
+      'sdkwork-api-gateway-service',
+      '--bin',
+      'sdkwork-api-gateway',
+    ],
+    cwd: apiGatewayWorkspaceRoot,
+    env: {
+      ...process.env,
+      CARGO_TARGET_DIR: sdkworkApiGatewayTargetDir(workspaceRoot),
+    },
+    shell: false,
+    windowsHide: platform === 'win32',
+    blocking: true,
+  };
+}
+
 function localSqliteDatabaseUrl(workspaceRoot) {
   return `sqlite://${toPortablePath(DEFAULT_DEV_DATABASE_RELATIVE_PATH)}`;
 }
 
-function environmentDatabaseConfig() {
-  return resolveClawRouterDevDatabaseEnv({
+function environmentDatabaseConfig(workspaceRoot = repositoryRoot) {
+  return resolveWorkspaceDevDatabaseEnv({
     env: process.env,
+    workspaceRoot,
+    forwardedDatabaseUrl: false,
     defaultDatabase: 'none',
   });
 }
@@ -408,7 +491,8 @@ export function parseWorkspaceArgs(argv = []) {
       ?? settings.serviceLayout;
   }
   if (settings.runtimeMode !== 'client' && settings.databaseUrl === null) {
-    settings.databaseUrl = environmentDatabaseConfig().databaseUrl ?? defaultPostgresDatabaseUrl();
+    settings.databaseUrl = environmentDatabaseConfig(repositoryRoot).databaseUrl
+      ?? defaultPostgresDatabaseUrl();
   }
   const topologyProfile = loadTopologyProfileForWorkspace({
     hosting: settings.hosting,
@@ -568,8 +652,7 @@ function sdkworkApiGatewayStep(settings, {
     cwd: apiGatewayWorkspaceRoot,
     env: {
       ...process.env,
-      CARGO_TARGET_DIR: process.env.SDKWORK_API_GATEWAY_CARGO_TARGET_DIR
-        ?? path.join(apiGatewayWorkspaceRoot, 'target', 'claw-router-dev'),
+      CARGO_TARGET_DIR: sdkworkApiGatewayTargetDir(workspaceRoot),
       SDKWORK_API_GATEWAY_BIND: settings.sdkworkApiGatewayBind,
       SDKWORK_API_GATEWAY_MODE: process.env.SDKWORK_API_GATEWAY_MODE ?? 'split',
     },
@@ -585,7 +668,8 @@ export function buildWorkspaceCommandPlan(settings, {
   const portalRelativeDir = 'apps/sdkwork-clawrouter-pc';
   splitBind(settings.portalBind, '--portal-bind');
   if (settings.runtimeMode !== 'client') {
-    settings.databaseUrl ??= environmentDatabaseConfig().databaseUrl ?? defaultPostgresDatabaseUrl();
+    settings.databaseUrl ??= environmentDatabaseConfig(workspaceRoot).databaseUrl
+      ?? defaultPostgresDatabaseUrl();
     settings.modelsCatalogRoot = resolveModelsCatalogRoot(settings, workspaceRoot);
     ensureLocalSqliteDatabaseDirectory(settings, workspaceRoot);
   }
@@ -605,6 +689,10 @@ export function buildWorkspaceCommandPlan(settings, {
   }
 
   if (settings.runtimeMode === 'client') {
+    const apiGatewayPrebuildStep = sdkworkApiGatewayPrebuildStep(settings, { workspaceRoot, platform });
+    if (apiGatewayPrebuildStep) {
+      steps.push(apiGatewayPrebuildStep);
+    }
     steps.push(
       sdkworkApiGatewayStep(settings, { workspaceRoot, platform }),
       {
@@ -624,11 +712,16 @@ export function buildWorkspaceCommandPlan(settings, {
     };
   }
 
+  const prebuildSteps = [
+    rustPrebuildStep(settings, { workspaceRoot, platform }),
+    sdkworkApiGatewayPrebuildStep(settings, { workspaceRoot, platform }),
+  ].filter(Boolean);
+
   const blockingRuntimeSteps = [
     {
       name: 'installer',
       command: cargoCommand(platform),
-      args: ['run', '-p', 'sdkwork-claw-installer', '--', 'ensure'],
+      args: cargoRunPackageArgs('sdkwork-claw-installer', ['ensure']),
       cwd: workspaceRoot,
       env: serviceEnv(settings, 'SDKWORK_CLAW_INSTALLER_BIND', '127.0.0.1:0'),
       shell: false,
@@ -638,16 +731,12 @@ export function buildWorkspaceCommandPlan(settings, {
     {
       name: 'model-catalog-refresh',
       command: cargoCommand(platform),
-      args: [
-        'run',
-        '-p',
-        'sdkwork-claw-installer',
-        '--',
+      args: cargoRunPackageArgs('sdkwork-claw-installer', [
         'refresh-catalog',
         '--catalog-root',
         settings.modelsCatalogRoot,
         '--force',
-      ],
+      ]),
       cwd: workspaceRoot,
       env: serviceEnv(settings, 'SDKWORK_CLAW_INSTALLER_BIND', '127.0.0.1:0'),
       shell: false,
@@ -662,7 +751,7 @@ export function buildWorkspaceCommandPlan(settings, {
     {
       name: 'gateway',
       command: cargoCommand(platform),
-      args: ['run', '-p', 'sdkwork-claw-gateway'],
+      args: cargoRunPackageArgs('sdkwork-claw-gateway'),
       cwd: workspaceRoot,
       env: serviceEnv(settings, 'SDKWORK_CLAW_GATEWAY_BIND', settings.gatewayBind, {
         startupInstallMode: 'skip',
@@ -673,7 +762,7 @@ export function buildWorkspaceCommandPlan(settings, {
     {
       name: 'admin-api',
       command: cargoCommand(platform),
-      args: ['run', '-p', 'sdkwork-claw-admin'],
+      args: cargoRunPackageArgs('sdkwork-claw-admin'),
       cwd: workspaceRoot,
       env: serviceEnv(settings, 'SDKWORK_CLAW_ADMIN_API_BIND', settings.adminApiBind, {
         startupInstallMode: 'skip',
@@ -684,7 +773,7 @@ export function buildWorkspaceCommandPlan(settings, {
     {
       name: 'app-api',
       command: cargoCommand(platform),
-      args: ['run', '-p', 'sdkwork-claw-app'],
+      args: cargoRunPackageArgs('sdkwork-claw-app'),
       cwd: workspaceRoot,
       env: {
         ...serviceEnv(settings, 'SDKWORK_CLAW_APP_API_BIND', settings.appApiBind, {
@@ -713,7 +802,7 @@ export function buildWorkspaceCommandPlan(settings, {
     {
       name: 'server',
       command: cargoCommand(platform),
-      args: ['run', '-p', 'sdkwork-claw-gateway'],
+      args: cargoRunPackageArgs('sdkwork-claw-gateway'),
       cwd: workspaceRoot,
       env: edgeServerEnv(settings),
       shell: false,
@@ -721,7 +810,7 @@ export function buildWorkspaceCommandPlan(settings, {
     },
   ];
 
-  steps.push(...blockingRuntimeSteps, ...distributedRuntimeSteps, ...interactiveRuntimeSteps);
+  steps.push(...prebuildSteps, ...blockingRuntimeSteps, ...distributedRuntimeSteps, ...interactiveRuntimeSteps);
 
   return {
     nodeExecutable: process.execPath,

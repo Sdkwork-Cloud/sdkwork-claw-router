@@ -8,7 +8,7 @@ import type {
   SdkworkGenerationModelBucket,
   SdkworkGenerationSerializedAssetConfig,
 } from '@sdkwork/generations-pc-workspace/generation-asset-config';
-import type { ClawRouterMediaResource } from 'sdkwork-clawrouter-pc-commons/runtime';
+import type { ClawRouterMediaResource } from '@sdkwork/clawrouter-pc-commons/runtime';
 
 export type PlaygroundMedia = SdkworkGenerationMedia;
 

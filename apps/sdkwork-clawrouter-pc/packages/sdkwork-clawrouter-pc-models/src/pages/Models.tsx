@@ -21,7 +21,8 @@ import {
   type ModelCatalogPricingCell,
 } from '../modelCatalog';
 import { ModelService, type ModelCatalogGroup } from '../modelService';
-import { FilterSidebar, CollapsibleSection, FilterCheckbox } from 'sdkwork-clawrouter-pc-commons';
+import { FilterSidebar, CollapsibleSection, FilterCheckbox } from '@sdkwork/clawrouter-pc-commons';
+import { snakeCase } from '@sdkwork/clawrouter-pc-commons/sdkwork-utils';
 
 import { ModalityIcon } from '../components/ModalityIcon';
 
@@ -433,5 +434,5 @@ function resolveSelectedProviderCodes(models: Model[], providers: string[]): str
 }
 
 function fallbackVendorCode(provider: string): string {
-  return provider.trim().toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '');
+  return snakeCase(provider.trim()) || provider.trim().toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '');
 }

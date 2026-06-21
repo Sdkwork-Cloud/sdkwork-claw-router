@@ -12,7 +12,7 @@ import {
   readRequiredNonNegativeNumber,
   readRequiredString,
   type ApiRecord,
-} from 'sdkwork-clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawrouter-pc-commons/runtime';
 import type { UsageLogsResponse as SdkUsageLogsResponse } from '@sdkwork/clawrouter-app-sdk';
 
 const MAX_USAGE_LOG_PAGE_SIZE = 100;
