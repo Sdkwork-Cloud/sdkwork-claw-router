@@ -539,6 +539,7 @@ export default defineConfig(({mode}) => {
         { find: '@sdkwork/commerce-pc-coupon', replacement: path.resolve(sdkworkCommerceRoot, 'apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-coupon/src/index.ts') },
         { find: '@sdkwork/commerce-pc-invoice', replacement: path.resolve(sdkworkCommerceRoot, 'apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-invoice/src/index.ts') },
         { find: '@sdkwork/commerce-pc-membership', replacement: path.resolve(sdkworkCommerceRoot, 'apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-membership/src/index.ts') },
+        { find: '@sdkwork/commerce-pc-membership-purchase', replacement: path.resolve(sdkworkCommerceRoot, 'apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-membership-purchase/src/index.ts') },
         { find: '@sdkwork/commerce-pc-offer', replacement: path.resolve(sdkworkCommerceRoot, 'apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-offer/src/index.ts') },
         { find: '@sdkwork/commerce-pc-order', replacement: path.resolve(sdkworkCommerceRoot, 'apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-order/src/index.ts') },
         { find: '@sdkwork/commerce-pc-payment', replacement: path.resolve(sdkworkCommerceRoot, 'apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-payment/src/index.ts') },

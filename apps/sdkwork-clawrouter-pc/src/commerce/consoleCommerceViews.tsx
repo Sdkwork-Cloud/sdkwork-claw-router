@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { SdkworkCheckoutPage } from '@sdkwork/commerce-pc-checkout';
 import { SdkworkMembershipPage } from '@sdkwork/commerce-pc-membership';
+import { SdkworkMembershipPurchaseHeaderEntry } from '@sdkwork/commerce-pc-membership-purchase';
 import {
   createSdkworkPaymentController,
   SdkworkPaymentPage,
@@ -83,6 +84,26 @@ export function ConsoleMembershipView() {
     <SdkworkMembershipPage
       checkoutBasePath="/console/checkout"
       onNavigate={handleNavigate}
+    />
+  );
+}
+
+export function ConsoleMembershipPurchaseHeaderEntry() {
+  const navigate = useNavigate();
+  const handleNavigate = useCallback(
+    (route: string) => {
+      navigate(mapCommerceRouteToConsole(route));
+    },
+    [navigate],
+  );
+
+  return (
+    <SdkworkMembershipPurchaseHeaderEntry
+      checkoutBasePath="/console/checkout"
+      onNavigate={handleNavigate}
+      onOpenCenter={() => {
+        navigate('/console/memberships');
+      }}
     />
   );
 }

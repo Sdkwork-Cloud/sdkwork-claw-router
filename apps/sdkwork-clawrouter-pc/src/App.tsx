@@ -16,7 +16,7 @@ import {
   type ThemePreference,
 } from './themePreference';
 import { RequireAdminSession, RequirePortalSession, PortalAuthenticatedAuthRouteGuard } from './auth/protectedPortalRoutes';
-import { ConsoleCheckoutView, ConsoleMembershipView, ConsolePaymentView } from './commerce/consoleCommerceViews';
+import { ConsoleCheckoutView, ConsoleMembershipPurchaseHeaderEntry, ConsoleMembershipView, ConsolePaymentView } from './commerce/consoleCommerceViews';
 
 const Home = lazyRoute(() => import('@sdkwork/clawrouter-pc-home'), 'Home');
 const Models = lazyRoute(() => import('@sdkwork/clawrouter-pc-models/models'), 'Models');
@@ -154,7 +154,7 @@ export default function App() {
             <Route path="/auth/*" element={<PortalAuthenticatedAuthRouteGuard><ClawRouterAuthRoutes /></PortalAuthenticatedAuthRouteGuard>} />
 
             {/* Console Routes - standalone structure with global Navbar */}
-            <Route path="/console" element={<RequirePortalSession><ConsoleLayout isDark={isDark} toggleTheme={toggleTheme} theme={theme} setTheme={setTheme} themeColor={themeColor} setThemeColor={setThemeColor} /></RequirePortalSession>}>
+            <Route path="/console" element={<RequirePortalSession><ConsoleLayout isDark={isDark} toggleTheme={toggleTheme} theme={theme} setTheme={setTheme} themeColor={themeColor} setThemeColor={setThemeColor} navbarAuthenticatedActionsStart={<ConsoleMembershipPurchaseHeaderEntry />} /></RequirePortalSession>}>
               <Route index element={<Navigate to="/console/dashboard" replace />} />
               <Route path="dashboard" element={<DashboardView />} />
               <Route path="usage" element={<UsageView />} />

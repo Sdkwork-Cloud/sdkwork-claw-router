@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AnimatePresence, motion } from 'motion/react';
 import {
@@ -28,11 +28,12 @@ import { useSiteBranding } from '../siteBranding.ts';
 import { readMediaResourceUrl } from '../media-resource.ts';
 
 interface NavbarProps {
+  authenticatedActionsStart?: ReactNode;
   isDark: boolean;
   toggleTheme: () => void;
 }
 
-export function Navbar({ isDark, toggleTheme }: NavbarProps) {
+export function Navbar({ authenticatedActionsStart, isDark, toggleTheme }: NavbarProps) {
   const { t, i18n } = useTranslation();
   const siteBranding = useSiteBranding();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -285,6 +286,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
             </>
           ) : (
             <div className="flex items-center gap-2">
+              {authenticatedActionsStart}
               <div ref={notificationBellRef} data-claw-notification-bell>
                 <SdkworkNotificationBell
                   appId={getPortalNotificationAppId()}

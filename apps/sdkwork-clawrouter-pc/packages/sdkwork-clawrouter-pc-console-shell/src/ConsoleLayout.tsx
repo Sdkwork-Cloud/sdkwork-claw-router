@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, type ReactNode } from 'react';
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   Activity,
@@ -82,6 +82,7 @@ export interface ConsoleContextProps {
 
 interface ConsoleLayoutProps {
   isDark: boolean;
+  navbarAuthenticatedActionsStart?: ReactNode;
   toggleTheme: () => void;
   theme: ConsoleThemePreference;
   setTheme: (theme: ConsoleThemePreference) => void;
@@ -171,7 +172,15 @@ function ConsoleSidebarGroup({
   );
 }
 
-export function ConsoleLayout({ isDark, toggleTheme, theme, setTheme, themeColor, setThemeColor }: ConsoleLayoutProps) {
+export function ConsoleLayout({
+  isDark,
+  navbarAuthenticatedActionsStart,
+  toggleTheme,
+  theme,
+  setTheme,
+  themeColor,
+  setThemeColor,
+}: ConsoleLayoutProps) {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -223,7 +232,11 @@ export function ConsoleLayout({ isDark, toggleTheme, theme, setTheme, themeColor
 
   return (
     <div className="sdkwork-console-shell min-h-screen bg-slate-50 dark:bg-[#121212] flex flex-col selection:bg-lobster-500/30">
-      <Navbar isDark={isDark} toggleTheme={toggleTheme} />
+      <Navbar
+        authenticatedActionsStart={navbarAuthenticatedActionsStart}
+        isDark={isDark}
+        toggleTheme={toggleTheme}
+      />
 
       <div className="flex-1 flex pt-[72px]">
         {/* Sidebar */}

@@ -874,7 +874,26 @@ declare module '@sdkwork/commerce-pc-wallet' {
 declare module '@sdkwork/commerce-pc-membership' {
   import type { ComponentType } from 'react';
 
-  export const SdkworkMembershipPage: ComponentType<Record<string, unknown>>;
+  export interface SdkworkMembershipPageProps {
+    checkoutBasePath?: string;
+    onNavigate?: (route: string) => void;
+    purchaseFlow?: 'checkout' | 'direct';
+  }
+
+  export const SdkworkMembershipPage: ComponentType<SdkworkMembershipPageProps>;
+}
+
+declare module '@sdkwork/commerce-pc-membership-purchase' {
+  import type { ComponentType } from 'react';
+
+  export interface SdkworkMembershipPurchaseHeaderEntryProps {
+    checkoutBasePath?: string;
+    onNavigate?: (route: string) => void;
+    onOpenCenter?: () => void;
+    purchaseFlow?: 'checkout' | 'direct';
+  }
+
+  export const SdkworkMembershipPurchaseHeaderEntry: ComponentType<SdkworkMembershipPurchaseHeaderEntryProps>;
 }
 
 declare module '@sdkwork/commerce-pc-billing' {
@@ -888,6 +907,7 @@ declare module '@sdkwork/commerce-pc-checkout' {
 
   export interface SdkworkCheckoutPageProps {
     onNavigate?: (route: string) => void;
+    routeSearchParams?: URLSearchParams;
   }
 
   export const SdkworkCheckoutPage: ComponentType<SdkworkCheckoutPageProps>;

@@ -746,11 +746,14 @@ test("console commerce routes mount sdkwork-commerce PC pages directly", () => {
 
   assert.match(appSource, /import\('@sdkwork\/commerce-pc-wallet'\), 'SdkworkWalletPage'/);
   assert.match(appSource, /ConsoleMembershipView/);
+  assert.match(appSource, /ConsoleMembershipPurchaseHeaderEntry/);
+  assert.match(appSource, /navbarAuthenticatedActionsStart=\{<ConsoleMembershipPurchaseHeaderEntry \/>}/);
   assert.match(appSource, /import\('@sdkwork\/commerce-pc-billing'\), 'SdkworkBillingPage'/);
   assert.match(appSource, /path="checkout" element=\{<ConsoleCheckoutView \/>}/);
   assert.match(appSource, /path="payment" element=\{<ConsolePaymentView \/>}/);
   assert.match(commerceViewsSource, /SdkworkCheckoutPage/);
   assert.match(commerceViewsSource, /SdkworkMembershipPage/);
+  assert.match(commerceViewsSource, /SdkworkMembershipPurchaseHeaderEntry/);
   assert.match(commerceViewsSource, /routeSearchParams=\{searchParams\}/);
   assert.match(commerceViewsSource, /checkoutBasePath="\/console\/checkout"/);
   assert.match(commerceViewsSource, /SdkworkPaymentPage/);

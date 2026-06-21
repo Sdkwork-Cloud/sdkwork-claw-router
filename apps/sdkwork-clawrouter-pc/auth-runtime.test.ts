@@ -2477,6 +2477,7 @@ test("portal resolves Commerce workspace modules and their peer dependencies fro
   assert.equal(packageJson.dependencies["@sdkwork/commerce-pc-admin-product"], "workspace:*");
   assert.equal(packageJson.dependencies["@sdkwork/commerce-pc-wallet"], "workspace:*");
   assert.equal(packageJson.dependencies["@sdkwork/commerce-pc-membership"], "workspace:*");
+  assert.equal(packageJson.dependencies["@sdkwork/commerce-pc-membership-purchase"], "workspace:*");
   assert.equal(packageJson.dependencies["@sdkwork/commerce-pc-billing"], "workspace:*");
   assert.equal(packageJson.dependencies["@sdkwork/commerce-pc-checkout"], "workspace:*");
   assert.equal(packageJson.dependencies["@sdkwork/commerce-pc-payment"], "workspace:*");
@@ -2486,6 +2487,7 @@ test("portal resolves Commerce workspace modules and their peer dependencies fro
   assert.match(tsconfigSource, /sdkwork-commerce-pc-admin-product\/src\/index\.tsx/);
   assert.match(tsconfigSource, /sdkwork-commerce-pc-wallet\/src\/index\.ts/);
   assert.match(tsconfigSource, /sdkwork-commerce-pc-membership\/src\/index\.ts/);
+  assert.match(tsconfigSource, /sdkwork-commerce-pc-membership-purchase\/src\/index\.ts/);
   assert.match(tsconfigSource, /sdkwork-commerce-pc-billing\/src\/index\.ts/);
   assert.match(tsconfigSource, /sdkwork-commerce-service\/src\/index\.ts/);
   assert.match(tsconfigSource, /sdkwork-commerce-sdk-ports\/src\/index\.ts/);
@@ -2493,6 +2495,7 @@ test("portal resolves Commerce workspace modules and their peer dependencies fro
   assert.match(viteConfigSource, /find: '@sdkwork\/commerce-pc-admin-product'/);
   assert.match(viteConfigSource, /find: '@sdkwork\/commerce-pc-wallet'/);
   assert.match(viteConfigSource, /find: '@sdkwork\/commerce-pc-membership'/);
+  assert.match(viteConfigSource, /find: '@sdkwork\/commerce-pc-membership-purchase'/);
   assert.match(viteConfigSource, /find: '@sdkwork\/commerce-pc-billing'/);
   assert.match(viteConfigSource, /find: '@sdkwork\/commerce-pc-checkout'/);
   assert.match(viteConfigSource, /find: '@sdkwork\/commerce-pc-payment'/);
@@ -2505,6 +2508,7 @@ test("portal resolves Commerce workspace modules and their peer dependencies fro
   assert.match(workspaceSource, /sdkwork-commerce\/apps\/sdkwork-commerce-pc\/packages\/sdkwork-commerce-pc-admin-product/);
   assert.match(workspaceSource, /sdkwork-commerce\/apps\/sdkwork-commerce-pc\/packages\/sdkwork-commerce-pc-wallet/);
   assert.match(workspaceSource, /sdkwork-commerce\/apps\/sdkwork-commerce-pc\/packages\/sdkwork-commerce-pc-membership/);
+  assert.match(workspaceSource, /sdkwork-commerce\/apps\/sdkwork-commerce-pc\/packages\/sdkwork-commerce-pc-membership-purchase/);
   assert.match(workspaceSource, /sdkwork-commerce\/apps\/sdkwork-commerce-pc\/packages\/sdkwork-commerce-pc-billing/);
   assert.match(workspaceSource, /sdkwork-commerce\/packages\/common\/commerce\/\*/);
   assert.doesNotMatch(viteConfigSource, /find: 'react-i18next'/);
