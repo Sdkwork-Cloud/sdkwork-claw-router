@@ -57,8 +57,8 @@ async fn app_notification_route_uses_notification_domain_and_store_contract() {
     assert_eq!(
         vec![AppNotificationQuery {
             subject: AppNotificationSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 user_id: 30,
             },
             app_id: "claw-router".to_owned(),
@@ -109,8 +109,8 @@ async fn app_notification_route_allows_console_reads_without_frontend_app_id() {
     assert_eq!(
         vec![AppNotificationQuery {
             subject: AppNotificationSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 user_id: 30,
             },
             app_id: "default".to_owned(),
@@ -148,8 +148,8 @@ async fn app_notification_commands_mark_popup_seen_for_trusted_subject() {
     assert_eq!(
         vec![MarkAppNotificationPopupSeenCommand {
             subject: AppNotificationSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 user_id: 30,
             },
             app_id: "claw-router".to_owned(),
@@ -208,8 +208,8 @@ async fn app_notification_acknowledge_marks_read_and_popup_seen_for_trusted_subj
     assert_eq!(
         vec![AcknowledgeAppNotificationCommand {
             subject: AppNotificationSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 user_id: 30,
             },
             app_id: "claw-router".to_owned(),

@@ -51,8 +51,8 @@ async fn sqlite_pool() -> SqlitePool {
 
 fn owner_subject() -> AppGatewayTracesSubject {
     AppGatewayTracesSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
     }
 }
@@ -111,7 +111,7 @@ async fn insert_trace_with_latency(pool: &SqlitePool, latency_ms: Option<i64>) {
             http_status, latency_ms, channel_name_snapshot
         )
         VALUES (
-            1, 10, 20, 30, 'req-gateway-trace-1', 'trace-gateway-1', 1,
+            1, 100001, 0, 30, 'req-gateway-trace-1', 'trace-gateway-1', 1,
             '2026-05-05T10:00:00Z', '2026-05-05T10:00:00Z', '203.0.113.10',
             '/v1/chat/completions', '/v1/chat/completions', 'POST', 200, ?, ''
         )
@@ -131,7 +131,7 @@ async fn insert_gateway_instance(pool: &SqlitePool, deployment_mode: Option<i64>
             region, node_name, health_status, last_heartbeat_at
         )
         VALUES (
-            9001, 10, 20, 1, NULL, ?, '', '', 1, '2026-05-05T10:00:01Z'
+            9001, 100001, 0, 1, NULL, ?, '', '', 1, '2026-05-05T10:00:01Z'
         )
         "#,
     )

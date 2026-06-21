@@ -126,7 +126,7 @@ async fn app_auth_sessions_create_issues_dual_token_context_for_active_iam_user_
         .contains(access_token));
 
     let security_event_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM iam_security_event WHERE tenant_id = '10' AND user_id = '30' AND event_type = 'sessions.create'",
+        "SELECT COUNT(1) FROM iam_security_event WHERE tenant_id = '100001' AND user_id = '30' AND event_type = 'sessions.create'",
     )
     .fetch_one(&pool)
     .await
@@ -1410,7 +1410,7 @@ async fn seed_user(
         INSERT OR IGNORE INTO iam_tenant
             (id, code, name, status, created_at, updated_at)
         VALUES
-            ('10', 'default', 'Default Tenant', 'active', '2026-05-01T00:00:00Z', '2026-05-01T00:00:00Z')
+            ('100001', 'SDKWORK', 'SDKWork', 'active', '2026-05-01T00:00:00Z', '2026-05-01T00:00:00Z')
         "#,
     )
     .execute(pool)
@@ -1421,7 +1421,7 @@ async fn seed_user(
         INSERT OR IGNORE INTO iam_organization
             (id, tenant_id, parent_id, code, name, path, status, created_at, updated_at)
         VALUES
-            ('20', '10', NULL, 'root', 'Root Organization', '/20', 'active', '2026-05-01T00:00:00Z', '2026-05-01T00:00:00Z')
+            ('0', '100001', NULL, 'root', 'Root Organization', '/0', 'active', '2026-05-01T00:00:00Z', '2026-05-01T00:00:00Z')
         "#,
     )
     .execute(pool)

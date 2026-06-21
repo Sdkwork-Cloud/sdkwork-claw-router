@@ -55,7 +55,7 @@ mod tests {
     #[test]
     fn trusted_request_subject_from_web_context_maps_principal_ids() {
         let principal = WebRequestPrincipal::builder()
-            .tenant_id("20001")
+            .tenant_id("100001")
             .organization_id(Some("30002".to_owned()))
             .user_id("40003")
             .login_scope(WebLoginScope::Organization)
@@ -82,7 +82,7 @@ mod tests {
         };
 
         let subject = trusted_request_subject_from_web_context(&context).expect("subject");
-        assert_eq!(20_001, subject.tenant_id);
+        assert_eq!(100_001, subject.tenant_id);
         assert_eq!(30_002, subject.organization_id);
         assert_eq!(40_003, subject.user_id);
     }
@@ -90,7 +90,7 @@ mod tests {
     #[test]
     fn inject_legacy_handler_context_projects_headers_and_extension() {
         let principal = WebRequestPrincipal::builder()
-            .tenant_id("20001")
+            .tenant_id("100001")
             .organization_id(Some("30002".to_owned()))
             .user_id("40003")
             .login_scope(WebLoginScope::Organization)
@@ -123,9 +123,9 @@ mod tests {
             .get::<TrustedRequestSubject>()
             .copied()
             .expect("trusted subject extension");
-        assert_eq!(20_001, subject.tenant_id);
+        assert_eq!(100_001, subject.tenant_id);
         assert_eq!(
-            "20001",
+            "100001",
             request
                 .headers()
                 .get("x-sdkwork-tenant-id")
@@ -161,7 +161,7 @@ mod tests {
     #[test]
     fn resolve_optional_prefers_web_request_context_principal() {
         let principal = WebRequestPrincipal::builder()
-            .tenant_id("20001")
+            .tenant_id("100001")
             .organization_id(Some("30002".to_owned()))
             .user_id("40003")
             .login_scope(WebLoginScope::Organization)
@@ -192,7 +192,7 @@ mod tests {
         let subject =
             TrustedRequestSubject::resolve_optional(request.headers(), request.extensions())
                 .expect("subject from web context");
-        assert_eq!(20_001, subject.tenant_id);
+        assert_eq!(100_001, subject.tenant_id);
         assert_eq!(30_002, subject.organization_id);
         assert_eq!(40_003, subject.user_id);
     }

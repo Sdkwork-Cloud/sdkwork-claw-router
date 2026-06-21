@@ -141,9 +141,9 @@ async fn sqlite_loader_loads_explicit_api_key_channel_group_bindings() {
     seed_catalog(&pool).await;
 
     for statement in [
-        "INSERT INTO ai_channel_group (id, tenant_id, organization_id, group_name, group_code, pricing_plan_code, rate_multiplier, official_price_multiplier, status) VALUES (20, 10, 20, 'Premium Group', 'premium-group', 'standard', '1.000000', '1.000000', 1)",
-        "INSERT INTO iam_gateway_api_key_channel_group (id, tenant_id, organization_id, user_id, api_key_id, channel_group_id, channel_group_code, binding_role, routing_strategy, priority, weight, status) VALUES (2000, 10, 20, 30, 100, 20, 'premium-group', 'route', 'auto', 1, 100, 1)",
-        "INSERT INTO iam_gateway_api_key_channel_group (id, tenant_id, organization_id, user_id, api_key_id, channel_group_id, channel_group_code, binding_role, routing_strategy, priority, weight, status) VALUES (2001, 10, 20, 30, 100, 10, 'standard-group', 'route', 'auto', 50, 10, 1)",
+        "INSERT INTO ai_channel_group (id, tenant_id, organization_id, group_name, group_code, pricing_plan_code, rate_multiplier, official_price_multiplier, status) VALUES (20, 100001, 0, 'Premium Group', 'premium-group', 'standard', '1.000000', '1.000000', 1)",
+        "INSERT INTO iam_gateway_api_key_channel_group (id, tenant_id, organization_id, user_id, api_key_id, channel_group_id, channel_group_code, binding_role, routing_strategy, priority, weight, status) VALUES (2000, 100001, 0, 30, 100, 20, 'premium-group', 'route', 'auto', 1, 100, 1)",
+        "INSERT INTO iam_gateway_api_key_channel_group (id, tenant_id, organization_id, user_id, api_key_id, channel_group_id, channel_group_code, binding_role, routing_strategy, priority, weight, status) VALUES (2001, 100001, 0, 30, 100, 10, 'standard-group', 'route', 'auto', 50, 10, 1)",
     ] {
         sqlx::query(statement).execute(&pool).await.unwrap();
     }
@@ -233,7 +233,7 @@ async fn sqlite_loader_matches_group_vendor_resource_to_model_api_resource() {
         INSERT INTO ai_resource
             (id, tenant_id, organization_id, resource_code, resource_type, vendor_code, status)
         VALUES
-            (9101, 10, 20, 'vendor.openai', 'vendor', 'openai', 1)
+            (9101, 100001, 0, 'vendor.openai', 'vendor', 'openai', 1)
         "#,
     )
     .execute(&pool)
@@ -288,7 +288,7 @@ async fn sqlite_loader_does_not_match_distinct_model_resources_only_by_shared_ap
             (id, tenant_id, organization_id, resource_code, resource_type, vendor_code,
              modality_code, api_code, catalog_key, model, provider_native_model, status)
         VALUES
-            (9105, 10, 20, 'model.openai.gpt-4.1.chat', 'model_api', 'openai',
+            (9105, 100001, 0, 'model.openai.gpt-4.1.chat', 'model_api', 'openai',
              'chat', 'openai.chat_completions', 'openai/gpt-4.1', 'gpt-4.1', 'gpt-4.1', 1)
         "#,
     )
@@ -340,7 +340,7 @@ async fn sqlite_loader_expands_direct_bundle_resource_bindings_to_member_resourc
         INSERT INTO ai_resource
             (id, tenant_id, organization_id, resource_code, resource_type, vendor_code, status)
         VALUES
-            (9104, 10, 20, 'bundle.openrouter.openai.standard', 'bundle', 'openai', 1)
+            (9104, 100001, 0, 'bundle.openrouter.openai.standard', 'bundle', 'openai', 1)
         "#,
     )
     .execute(&pool)
@@ -351,7 +351,7 @@ async fn sqlite_loader_expands_direct_bundle_resource_bindings_to_member_resourc
         INSERT INTO ai_resource_group
             (id, tenant_id, organization_id, group_code, group_name, group_type, status)
         VALUES
-            (9301, 10, 20, 'bundle.openrouter.openai.standard', 'OpenRouter OpenAI Standard', 'bundle', 1)
+            (9301, 100001, 0, 'bundle.openrouter.openai.standard', 'OpenRouter OpenAI Standard', 'bundle', 1)
         "#,
     )
     .execute(&pool)
@@ -363,7 +363,7 @@ async fn sqlite_loader_expands_direct_bundle_resource_bindings_to_member_resourc
             (id, tenant_id, organization_id, resource_group_id, resource_group_code,
              item_type, resource_id, resource_code, status)
         VALUES
-            (9302, 10, 20, 9301, 'bundle.openrouter.openai.standard',
+            (9302, 100001, 0, 9301, 'bundle.openrouter.openai.standard',
              'resource', 9102, 'model.openai.gpt-4o-mini.chat', 1)
         "#,
     )
@@ -989,8 +989,8 @@ async fn create_schema(pool: &SqlitePool) {
         )"#,
         r#"CREATE TABLE ai_model (
             id INTEGER PRIMARY KEY,
-            tenant_id INTEGER NOT NULL DEFAULT 10,
-            organization_id INTEGER NOT NULL DEFAULT 20,
+            tenant_id INTEGER NOT NULL DEFAULT 100001,
+            organization_id INTEGER NOT NULL DEFAULT 0,
             catalog_key TEXT NOT NULL,
             model TEXT NOT NULL,
             display_name TEXT NOT NULL,
@@ -1030,8 +1030,8 @@ async fn create_schema(pool: &SqlitePool) {
         )"#,
         r#"CREATE TABLE ai_provider (
             id INTEGER PRIMARY KEY,
-            tenant_id INTEGER NOT NULL DEFAULT 10,
-            organization_id INTEGER NOT NULL DEFAULT 20,
+            tenant_id INTEGER NOT NULL DEFAULT 100001,
+            organization_id INTEGER NOT NULL DEFAULT 0,
             provider_code TEXT NOT NULL,
             default_vendor_code TEXT,
             integration_type INTEGER,
@@ -1041,8 +1041,8 @@ async fn create_schema(pool: &SqlitePool) {
         )"#,
         r#"CREATE TABLE ai_channel (
             id INTEGER PRIMARY KEY,
-            tenant_id INTEGER NOT NULL DEFAULT 10,
-            organization_id INTEGER NOT NULL DEFAULT 20,
+            tenant_id INTEGER NOT NULL DEFAULT 100001,
+            organization_id INTEGER NOT NULL DEFAULT 0,
             provider_code TEXT NOT NULL,
             channel_code TEXT NOT NULL,
             channel_name TEXT NOT NULL,
@@ -1068,8 +1068,8 @@ async fn create_schema(pool: &SqlitePool) {
         )"#,
         r#"CREATE TABLE ai_channel_credential (
             id INTEGER PRIMARY KEY,
-            tenant_id INTEGER NOT NULL DEFAULT 10,
-            organization_id INTEGER NOT NULL DEFAULT 20,
+            tenant_id INTEGER NOT NULL DEFAULT 100001,
+            organization_id INTEGER NOT NULL DEFAULT 0,
             channel_id INTEGER NOT NULL,
             provider_code TEXT,
             channel_code TEXT,
@@ -1129,8 +1129,8 @@ async fn create_schema(pool: &SqlitePool) {
         )"#,
         r#"CREATE TABLE ai_model_mapping_rule (
             id INTEGER PRIMARY KEY,
-            tenant_id INTEGER NOT NULL DEFAULT 10,
-            organization_id INTEGER NOT NULL DEFAULT 20,
+            tenant_id INTEGER NOT NULL DEFAULT 100001,
+            organization_id INTEGER NOT NULL DEFAULT 0,
             target_vendor_code TEXT,
             mapping_mode TEXT NOT NULL DEFAULT 'alias',
             match_type TEXT NOT NULL DEFAULT 'exact',
@@ -1141,8 +1141,8 @@ async fn create_schema(pool: &SqlitePool) {
         )"#,
         r#"CREATE TABLE ai_model_mapping_rule_binding (
             id INTEGER PRIMARY KEY,
-            tenant_id INTEGER NOT NULL DEFAULT 10,
-            organization_id INTEGER NOT NULL DEFAULT 20,
+            tenant_id INTEGER NOT NULL DEFAULT 100001,
+            organization_id INTEGER NOT NULL DEFAULT 0,
             rule_id INTEGER NOT NULL,
             binding_type TEXT NOT NULL DEFAULT 'global',
             binding_id INTEGER,
@@ -1154,8 +1154,8 @@ async fn create_schema(pool: &SqlitePool) {
         )"#,
         r#"CREATE TABLE ai_model_mapping_rule_item (
             id INTEGER PRIMARY KEY,
-            tenant_id INTEGER NOT NULL DEFAULT 10,
-            organization_id INTEGER NOT NULL DEFAULT 20,
+            tenant_id INTEGER NOT NULL DEFAULT 100001,
+            organization_id INTEGER NOT NULL DEFAULT 0,
             rule_id INTEGER NOT NULL,
             source_model TEXT NOT NULL,
             source_catalog_key TEXT,
@@ -1410,26 +1410,26 @@ async fn seed_catalog(pool: &SqlitePool) {
             (id, catalog_key, model, display_name, vendor_code, capability, capabilities, modalities, input_modalities, output_modalities, description, capability_intro, limitations, supported_languages, use_cases, training_data_cutoff, context_tokens, max_output_tokens, supports_streaming, supports_tools, supports_json_schema, api_format, release_stage, shelf_state, routing_state, status, rank_score)
             VALUES (1, 'openai/gpt-4o-mini', 'gpt-4o-mini', 'GPT-4o mini', 'openai', 1, '["chat","tools","json_schema"]', '["text","image"]', '["text","image"]', '["text"]', 'Fast public model.', 'Low latency chat model.', '["Validate facts"]', '["English","Chinese"]', '["Support","Extraction"]', '2025', 128000, 16384, 1, 1, 1, 'openai_compatible', 1, 1, 1, 1, '100.0')"#,
         "INSERT INTO ai_model_capability (id, model_id, catalog_key, capability_code, status) VALUES (1, 1, 'openai/gpt-4o-mini', 'chat', 1)",
-        "INSERT INTO ai_provider (id, tenant_id, organization_id, provider_code, default_vendor_code, integration_type, base_url, status) VALUES (1, 10, 20, 'azure_openai', 'openai', 2, 'http://provider-proxy.internal/azure-template', 1)",
-        "INSERT INTO ai_provider (id, tenant_id, organization_id, provider_code, default_vendor_code, integration_type, base_url, status) VALUES (2, 10, 20, 'openrouter', 'openai', 3, 'http://provider-proxy.internal/openrouter-template', 1)",
-        "INSERT INTO ai_channel (id, tenant_id, organization_id, provider_code, channel_code, channel_name, channel_type, base_url, credential_ref, status, priority, weight) VALUES (2001, 10, 20, 'azure_openai', 'azure-main', 'Azure main', 'official', 'http://provider-proxy.internal/azure', 'vault://providers/azure/account/main', 1, 10, 100)",
-        "INSERT INTO ai_channel (id, tenant_id, organization_id, provider_code, channel_code, channel_name, channel_type, base_url, timeout_ms, retry_policy, credential_ref, status, priority, weight) VALUES (3001, 10, 20, 'openrouter', 'openrouter-main', 'OpenRouter main', 'relay', 'http://provider-proxy.internal/openrouter', 30000, '{\"max_attempts\":3,\"retryable_status_codes\":[429,503],\"backoff_ms\":0}', 'vault://providers/openrouter/account/main', 1, 20, 100)",
-        "INSERT INTO ai_channel_credential (id, tenant_id, organization_id, channel_id, provider_code, channel_code, credential_name, base_url, auth_config, credential_ref, credential_hash, priority, weight, health_status, status) VALUES (200101, 10, 20, 2001, 'azure_openai', 'azure-main', 'primary', 'http://provider-proxy.internal/azure', '{}', 'vault://providers/azure/account/main', 'hash:azure', 1, 100, 1, 1)",
-        "INSERT INTO ai_channel_credential (id, tenant_id, organization_id, channel_id, provider_code, channel_code, credential_name, base_url, auth_config, credential_ref, credential_hash, priority, weight, health_status, status) VALUES (300101, 10, 20, 3001, 'openrouter', 'openrouter-main', 'primary', 'http://provider-proxy.internal/openrouter', '{}', 'vault://providers/openrouter/account/main', 'hash:openrouter', 1, 100, 1, 1)",
-        "INSERT INTO ai_resource (id, tenant_id, organization_id, resource_code, resource_type, vendor_code, modality_code, api_code, catalog_key, model, provider_native_model, status) VALUES (9102, 10, 20, 'model.openai.gpt-4o-mini.chat', 'model_api', 'openai', 'chat', 'openai.chat_completions', 'openai/gpt-4o-mini', 'gpt-4o-mini', 'gpt-4o-mini', 1)",
-        "INSERT INTO ai_routing_profile (id, tenant_id, organization_id, policy_id, profile_code, profile_version, status) VALUES (9101, 10, 20, 9001, 'standard-profile', 1, 1)",
-        "INSERT INTO ai_routing_policy (id, tenant_id, organization_id, policy_code, policy_scope, subject_id, default_profile_id, fallback_mode, status) VALUES (9001, 10, 20, 'standard-group-policy', 5, 10, 9101, 1, 1)",
-        "INSERT INTO ai_routing_rule (id, tenant_id, organization_id, profile_id, rule_code, priority, match_expression, target_model, candidate_channels, fallback_chain, constraints, status) VALUES (9102, 10, 20, 9101, 'standard-group-gpt-4o-mini', 1, '{\"catalogKey\":\"openai/gpt-4o-mini\"}', 'openai/gpt-4o-mini', '[{\"channel_id\":3001,\"weight\":100}]', '[]', '{}', 1)",
+        "INSERT INTO ai_provider (id, tenant_id, organization_id, provider_code, default_vendor_code, integration_type, base_url, status) VALUES (1, 100001, 0, 'azure_openai', 'openai', 2, 'http://provider-proxy.internal/azure-template', 1)",
+        "INSERT INTO ai_provider (id, tenant_id, organization_id, provider_code, default_vendor_code, integration_type, base_url, status) VALUES (2, 100001, 0, 'openrouter', 'openai', 3, 'http://provider-proxy.internal/openrouter-template', 1)",
+        "INSERT INTO ai_channel (id, tenant_id, organization_id, provider_code, channel_code, channel_name, channel_type, base_url, credential_ref, status, priority, weight) VALUES (2001, 100001, 0, 'azure_openai', 'azure-main', 'Azure main', 'official', 'http://provider-proxy.internal/azure', 'vault://providers/azure/account/main', 1, 10, 100)",
+        "INSERT INTO ai_channel (id, tenant_id, organization_id, provider_code, channel_code, channel_name, channel_type, base_url, timeout_ms, retry_policy, credential_ref, status, priority, weight) VALUES (3001, 100001, 0, 'openrouter', 'openrouter-main', 'OpenRouter main', 'relay', 'http://provider-proxy.internal/openrouter', 30000, '{\"max_attempts\":3,\"retryable_status_codes\":[429,503],\"backoff_ms\":0}', 'vault://providers/openrouter/account/main', 1, 20, 100)",
+        "INSERT INTO ai_channel_credential (id, tenant_id, organization_id, channel_id, provider_code, channel_code, credential_name, base_url, auth_config, credential_ref, credential_hash, priority, weight, health_status, status) VALUES (200101, 100001, 0, 2001, 'azure_openai', 'azure-main', 'primary', 'http://provider-proxy.internal/azure', '{}', 'vault://providers/azure/account/main', 'hash:azure', 1, 100, 1, 1)",
+        "INSERT INTO ai_channel_credential (id, tenant_id, organization_id, channel_id, provider_code, channel_code, credential_name, base_url, auth_config, credential_ref, credential_hash, priority, weight, health_status, status) VALUES (300101, 100001, 0, 3001, 'openrouter', 'openrouter-main', 'primary', 'http://provider-proxy.internal/openrouter', '{}', 'vault://providers/openrouter/account/main', 'hash:openrouter', 1, 100, 1, 1)",
+        "INSERT INTO ai_resource (id, tenant_id, organization_id, resource_code, resource_type, vendor_code, modality_code, api_code, catalog_key, model, provider_native_model, status) VALUES (9102, 100001, 0, 'model.openai.gpt-4o-mini.chat', 'model_api', 'openai', 'chat', 'openai.chat_completions', 'openai/gpt-4o-mini', 'gpt-4o-mini', 'gpt-4o-mini', 1)",
+        "INSERT INTO ai_routing_profile (id, tenant_id, organization_id, policy_id, profile_code, profile_version, status) VALUES (9101, 100001, 0, 9001, 'standard-profile', 1, 1)",
+        "INSERT INTO ai_routing_policy (id, tenant_id, organization_id, policy_code, policy_scope, subject_id, default_profile_id, fallback_mode, status) VALUES (9001, 100001, 0, 'standard-group-policy', 5, 10, 9101, 1, 1)",
+        "INSERT INTO ai_routing_rule (id, tenant_id, organization_id, profile_id, rule_code, priority, match_expression, target_model, candidate_channels, fallback_chain, constraints, status) VALUES (9102, 100001, 0, 9101, 'standard-group-gpt-4o-mini', 1, '{\"catalogKey\":\"openai/gpt-4o-mini\"}', 'openai/gpt-4o-mini', '[{\"channel_id\":3001,\"weight\":100}]', '[]', '{}', 1)",
         "INSERT INTO ai_pricing_plan (id, plan_code, base_price_side, default_multiplier, default_markup_amount, currency, status, priority) VALUES (1, 'standard', 1, '1.200000', '0.000000', 'USD', 1, 1)",
-        "INSERT INTO ai_channel_group (id, tenant_id, organization_id, group_name, group_code, pricing_plan_code, rate_multiplier, official_price_multiplier, status) VALUES (10, 10, 20, 'Standard Group', 'standard-group', 'standard', '1.000000', '1.100000', 1)",
-        "INSERT INTO ai_channel_group_member (id, tenant_id, organization_id, channel_group_id, channel_id, priority, weight, status) VALUES (600, 10, 20, 10, 3001, 1, 100, 1)",
-        "INSERT INTO ai_channel_group_resource (id, tenant_id, organization_id, channel_group_id, resource_id, resource_code, grant_type, status) VALUES (610, 10, 20, 10, 9102, 'model.openai.gpt-4o-mini.chat', 'allow', 1)",
-        "INSERT INTO ai_channel_resource (id, tenant_id, organization_id, channel_id, resource_id, resource_code, grant_type, status) VALUES (621, 10, 20, 2001, 9102, 'model.openai.gpt-4o-mini.chat', 'allow', 1)",
-        "INSERT INTO ai_channel_resource (id, tenant_id, organization_id, channel_id, resource_id, resource_code, grant_type, status) VALUES (620, 10, 20, 3001, 9102, 'model.openai.gpt-4o-mini.chat', 'allow', 1)",
+        "INSERT INTO ai_channel_group (id, tenant_id, organization_id, group_name, group_code, pricing_plan_code, rate_multiplier, official_price_multiplier, status) VALUES (10, 100001, 0, 'Standard Group', 'standard-group', 'standard', '1.000000', '1.100000', 1)",
+        "INSERT INTO ai_channel_group_member (id, tenant_id, organization_id, channel_group_id, channel_id, priority, weight, status) VALUES (600, 100001, 0, 10, 3001, 1, 100, 1)",
+        "INSERT INTO ai_channel_group_resource (id, tenant_id, organization_id, channel_group_id, resource_id, resource_code, grant_type, status) VALUES (610, 100001, 0, 10, 9102, 'model.openai.gpt-4o-mini.chat', 'allow', 1)",
+        "INSERT INTO ai_channel_resource (id, tenant_id, organization_id, channel_id, resource_id, resource_code, grant_type, status) VALUES (621, 100001, 0, 2001, 9102, 'model.openai.gpt-4o-mini.chat', 'allow', 1)",
+        "INSERT INTO ai_channel_resource (id, tenant_id, organization_id, channel_id, resource_id, resource_code, grant_type, status) VALUES (620, 100001, 0, 3001, 9102, 'model.openai.gpt-4o-mini.chat', 'allow', 1)",
         "INSERT INTO iam_gateway_access_policy (id, allowed_capabilities, ip_allowlist, status) VALUES (700, '[\"text\",\"image\"]', '[\"192.168.1.1\",\"10.0.0.0/24\"]', 1)",
         "INSERT INTO ai_quota_policy (id, quota_limit, status) VALUES (900, '1000.000000', 1)",
         "INSERT INTO ai_channel_group_metric_snapshot (id, channel_group_id, capacity_used, capacity_limit, usage_amount_total, snapshot_at, status) VALUES (800, 10, '37.500000', '1000.000000', '37.500000', '2026-04-29 00:00:00', 1)",
-        "INSERT INTO iam_gateway_api_key (id, tenant_id, organization_id, user_id, channel_group_id, name, key_prefix, key_display_masked, key_hash, idempotency_key, policy_id, quota_policy_id, status) VALUES (100, 10, 20, 30, 10, 'Production Key', 'sk-test', 'sk-test********ABCD', 'hash:sk-test', 'seed-api-key-100', 700, 900, 1)",
+        "INSERT INTO iam_gateway_api_key (id, tenant_id, organization_id, user_id, channel_group_id, name, key_prefix, key_display_masked, key_hash, idempotency_key, policy_id, quota_policy_id, status) VALUES (100, 100001, 0, 30, 10, 'Production Key', 'sk-test', 'sk-test********ABCD', 'hash:sk-test', 'seed-api-key-100', 700, 900, 1)",
         "INSERT INTO ai_model_pricing (id, catalog_key, model, region_code, price_side, billing_meter_code, unit_price, currency, status, priority) VALUES (1, 'openai/gpt-4o-mini', 'gpt-4o-mini', 'global', 1, 'llm_input_token', '0.150000', 'USD', 1, 1)",
         "INSERT INTO ai_model_pricing (id, catalog_key, model, region_code, price_side, billing_meter_code, unit_price, currency, provider_code, channel_id, status, priority) VALUES (2, 'openai/gpt-4o-mini', 'gpt-4o-mini', 'global', 2, 'llm_input_token', '0.110000', 'USD', 'openrouter', 3001, 1, 1)",
         "INSERT INTO ai_model_pricing (id, catalog_key, model, region_code, price_side, billing_meter_code, unit_price, currency, provider_code, channel_id, status, priority) VALUES (3, 'openai/gpt-4o-mini', 'gpt-4o-mini', 'global', 2, 'llm_input_token', '0.120000', 'USD', 'azure_openai', 2001, 1, 1)",

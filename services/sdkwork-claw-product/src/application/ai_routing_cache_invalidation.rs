@@ -1,28 +1,27 @@
 use std::sync::Arc;
 
-use crate::domain::DomainResult;
+use sdkwork_models_contract_service::{
+    AdminAiModelItem, AdminModelCatalogSyncItem, AdminModelCommandFuture, AdminModelMappingRuleItem,
+    AdminModelVendorItem, CreateAdminAiModelCommand, CreateAdminModelMappingCommand,
+    CreateAdminModelVendorCommand, DeleteAdminAiModelCommand, DeleteAdminModelMappingCommand,
+    DomainResult, ListAdminAiModelsQuery, ListAdminModelMappingsQuery, ListAdminModelVendorsQuery,
+    ModelCatalogAdminStore, ResolveAdminModelMappingQuery, ResolveAdminModelMappingResult,
+    SyncAdminModelCatalogCommand, UpdateAdminAiModelCommand, UpdateAdminModelMappingCommand,
+};
 use crate::ports::{
-    AdminAiModelItem, AdminAiResourceGroupItem, AdminAiResourceGroupResourceItem,
-    AdminAiResourceItem, AdminAiResourceReadFuture, AdminAiResourceStore,
-    AdminChannelCommandFuture, AdminChannelGroupChannelBindingItem, AdminChannelGroupCommandFuture,
-    AdminChannelGroupItem, AdminChannelGroupStore, AdminChannelItem, AdminChannelStore,
-    AdminChannelTestOutcome, AdminModelCatalogSyncItem, AdminModelCommandFuture,
-    AdminModelMappingRuleItem, AdminModelStore, AdminModelVendorItem,
+    AdminAiResourceGroupItem, AdminAiResourceGroupResourceItem, AdminAiResourceItem,
+    AdminAiResourceReadFuture, AdminAiResourceStore, AdminChannelCommandFuture,
+    AdminChannelGroupChannelBindingItem, AdminChannelGroupCommandFuture, AdminChannelGroupItem,
+    AdminChannelGroupStore, AdminChannelItem, AdminChannelStore, AdminChannelTestOutcome,
     AdminProviderSecretCommandFuture, AdminProviderSecretItem, AdminProviderSecretStore,
-    CreateAdminAiModelCommand, CreateAdminAiResourceCommand, CreateAdminAiResourceGroupCommand,
-    CreateAdminChannelCommand, CreateAdminChannelGroupCommand, CreateAdminModelMappingCommand,
-    CreateAdminModelVendorCommand, CreateAdminProviderSecretCommand, DeleteAdminAiModelCommand,
-    DeleteAdminAiResourceGroupCommand, DeleteAdminChannelCommand, DeleteAdminChannelGroupCommand,
-    DeleteAdminModelMappingCommand, DeleteAdminProviderSecretCommand, ListAdminAiModelsQuery,
-    ListAdminAiResourceGroupResourcesQuery, ListAdminAiResourceGroupsQuery,
-    ListAdminAiResourcesQuery, ListAdminChannelGroupChannelBindingsQuery,
-    ListAdminChannelGroupsQuery, ListAdminChannelsQuery, ListAdminModelMappingsQuery,
-    ListAdminModelVendorsQuery, ListAdminProviderSecretsQuery,
-    ReplaceAdminChannelGroupChannelBindingsCommand, ResolveAdminModelMappingQuery,
-    ResolveAdminModelMappingResult, SyncAdminModelCatalogCommand, TestAdminChannelCommand,
-    UpdateAdminAiModelCommand, UpdateAdminAiResourceCommand, UpdateAdminAiResourceGroupCommand,
-    UpdateAdminChannelCommand, UpdateAdminChannelGroupCommand, UpdateAdminModelMappingCommand,
-    UpdateAdminProviderSecretCommand,
+    CreateAdminAiResourceCommand, CreateAdminAiResourceGroupCommand, CreateAdminChannelCommand,
+    CreateAdminChannelGroupCommand, CreateAdminProviderSecretCommand, DeleteAdminAiResourceGroupCommand,
+    DeleteAdminChannelCommand, DeleteAdminChannelGroupCommand, DeleteAdminProviderSecretCommand,
+    ListAdminAiResourceGroupResourcesQuery, ListAdminAiResourceGroupsQuery, ListAdminAiResourcesQuery,
+    ListAdminChannelGroupChannelBindingsQuery, ListAdminChannelGroupsQuery, ListAdminChannelsQuery,
+    ListAdminProviderSecretsQuery, ReplaceAdminChannelGroupChannelBindingsCommand,
+    TestAdminChannelCommand, UpdateAdminAiResourceCommand, UpdateAdminAiResourceGroupCommand,
+    UpdateAdminChannelCommand, UpdateAdminChannelGroupCommand, UpdateAdminProviderSecretCommand,
 };
 
 use super::{
@@ -233,13 +232,13 @@ impl AdminAiResourceStore for AiRoutingCacheInvalidatingAdminAiResourceStore {
 
 #[derive(Clone)]
 pub struct AiRoutingCacheInvalidatingAdminModelStore {
-    inner: Arc<dyn AdminModelStore + Send + Sync>,
+    inner: Arc<dyn ModelCatalogAdminStore + Send + Sync>,
     invalidator: AiRoutingCacheInvalidator,
 }
 
 impl AiRoutingCacheInvalidatingAdminModelStore {
     pub fn new(
-        inner: Arc<dyn AdminModelStore + Send + Sync>,
+        inner: Arc<dyn ModelCatalogAdminStore + Send + Sync>,
         manager: RuntimeCacheManager,
     ) -> Self {
         Self {
@@ -249,7 +248,7 @@ impl AiRoutingCacheInvalidatingAdminModelStore {
     }
 }
 
-impl AdminModelStore for AiRoutingCacheInvalidatingAdminModelStore {
+impl ModelCatalogAdminStore for AiRoutingCacheInvalidatingAdminModelStore {
     fn list_vendors<'a>(
         &'a self,
         query: ListAdminModelVendorsQuery,

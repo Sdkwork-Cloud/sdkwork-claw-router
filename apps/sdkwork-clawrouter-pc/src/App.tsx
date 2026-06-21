@@ -16,7 +16,10 @@ import {
   type ThemePreference,
 } from './themePreference';
 import { RequireAdminSession, RequirePortalSession, PortalAuthenticatedAuthRouteGuard } from './auth/protectedPortalRoutes';
-import { ConsoleCheckoutView, ConsoleMembershipPurchaseHeaderEntry, ConsoleMembershipView, ConsolePaymentView } from './commerce/consoleCommerceViews';
+import {
+  SdkworkCommerceHostNavbarActions,
+} from '@sdkwork/commerce-pc-host';
+import { ClawRouterConsoleCommerceHostRoutes } from './commerce/commerceHostMount';
 
 const Home = lazyRoute(() => import('@sdkwork/clawrouter-pc-home'), 'Home');
 const Models = lazyRoute(() => import('@sdkwork/clawrouter-pc-models/models'), 'Models');
@@ -42,7 +45,6 @@ const ApiKeysView = lazyRoute(() => import('@sdkwork/clawrouter-pc-console-api-k
 const UserView = lazyRoute(() => import('@sdkwork/clawrouter-pc-console-user'), 'UserView');
 const SettingsView = lazyRoute(() => import('@sdkwork/clawrouter-pc-console-settings'), 'SettingsView');
 const AccountView = lazyRoute(() => import('@sdkwork/commerce-pc-billing'), 'SdkworkBillingPage');
-const WalletView = lazyRoute(() => import('@sdkwork/commerce-pc-wallet'), 'SdkworkWalletPage');
 const SettlementsView = lazyRoute(() => import('@sdkwork/commerce-pc-billing'), 'SdkworkBillingPage');
 const MessagesView = lazyRoute(() => import('@sdkwork/clawrouter-pc-console-messages'), 'MessagesView');
 
@@ -52,10 +54,10 @@ const CacheAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-cache'),
 const UserAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-user'), 'UserAdmin');
 const OrganizationAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-organization'), 'OrganizationAdmin');
 const GroupAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-group'), 'GroupAdmin');
-const ModelAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-model'), 'ModelAdmin');
-const SiteAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-model'), 'SiteAdmin');
-const ModelMappingAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-model'), 'ModelMappingAdmin');
-const ResourceAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-model'), 'ResourceAdmin');
+const ModelAdmin = lazyRoute(() => import('@sdkwork/models-pc-admin-catalog'), 'ModelAdmin');
+const ModelMappingAdmin = lazyRoute(() => import('@sdkwork/models-pc-admin-catalog'), 'ModelMappingAdmin');
+const ResourceAdmin = lazyRoute(() => import('@sdkwork/models-pc-admin-resource'), 'ResourceAdmin');
+const SiteAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-relay-site'), 'SiteAdmin');
 const PromptsAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-prompts'), 'PromptsAdmin');
 const McpAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-mcp'), 'McpAdmin');
 const ChannelAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-channel'), 'ChannelAdmin');
@@ -82,6 +84,7 @@ function MainLayout({ isDark, toggleTheme }: { isDark: boolean, toggleTheme: () 
     <AppShellLayout
       isDark={isDark}
       toggleTheme={toggleTheme}
+      navbarAuthenticatedActionsStart={<SdkworkCommerceHostNavbarActions routePrefix="/console" />}
       Home={Home}
       Models={Models}
       ModelDetails={ModelDetails}
@@ -154,17 +157,14 @@ export default function App() {
             <Route path="/auth/*" element={<PortalAuthenticatedAuthRouteGuard><ClawRouterAuthRoutes /></PortalAuthenticatedAuthRouteGuard>} />
 
             {/* Console Routes - standalone structure with global Navbar */}
-            <Route path="/console" element={<RequirePortalSession><ConsoleLayout isDark={isDark} toggleTheme={toggleTheme} theme={theme} setTheme={setTheme} themeColor={themeColor} setThemeColor={setThemeColor} navbarAuthenticatedActionsStart={<ConsoleMembershipPurchaseHeaderEntry />} /></RequirePortalSession>}>
+            <Route path="/console" element={<RequirePortalSession><ConsoleLayout isDark={isDark} toggleTheme={toggleTheme} theme={theme} setTheme={setTheme} themeColor={themeColor} setThemeColor={setThemeColor} navbarAuthenticatedActionsStart={<SdkworkCommerceHostNavbarActions routePrefix="/console" />} /></RequirePortalSession>}>
               <Route index element={<Navigate to="/console/dashboard" replace />} />
               <Route path="dashboard" element={<DashboardView />} />
               <Route path="usage" element={<UsageView />} />
               <Route path="gateway" element={<GatewayView />} />
               <Route path="api-keys" element={<ApiKeysView />} />
               <Route path="account" element={<AccountView />} />
-              <Route path="wallet" element={<WalletView />} />
-              <Route path="memberships" element={<ConsoleMembershipView />} />
-              <Route path="checkout" element={<ConsoleCheckoutView />} />
-              <Route path="payment" element={<ConsolePaymentView />} />
+              <ClawRouterConsoleCommerceHostRoutes />
               <Route path="settlements" element={<SettlementsView />} />
               <Route path="notifications" element={<MessagesView />} />
               <Route path="user" element={<UserView />} />

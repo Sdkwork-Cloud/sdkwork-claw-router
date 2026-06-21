@@ -19,8 +19,8 @@ async fn sqlite_dashboard_overview_reads_announcements_from_standard_notificatio
         .load_dashboard_overview(
             DashboardOverviewQuery::default(),
             Some(DashboardOverviewSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 user_id: 30,
             }),
         )
@@ -48,8 +48,8 @@ async fn sqlite_dashboard_overview_reads_configuration_nodes_from_gateway_instan
         .load_dashboard_overview(
             DashboardOverviewQuery::default(),
             Some(DashboardOverviewSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 user_id: 30,
             }),
         )
@@ -108,8 +108,8 @@ async fn sqlite_dashboard_overview_excludes_deprecated_hidden_and_catalog_only_t
         .load_dashboard_overview(
             DashboardOverviewQuery::default(),
             Some(DashboardOverviewSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 user_id: 30,
             }),
         )
@@ -265,9 +265,9 @@ async fn seed_dashboard_notification(pool: &sqlx::SqlitePool) {
         INSERT INTO ops_notification_message
             (id, uuid, tenant_id, organization_id, status, app_id, scope_type, message_code, message_type, title, summary, content, severity, priority, show_as_popup, published_at, expire_at, created_at)
         VALUES
-            (2007, 'dashboard-announcement-2007', 10, 20, 1, NULL, 2, 'announcement:2007', 1, 'Planned model upgrade', 'Planned model upgrade summary', 'Planned model upgrade content', 3, 100, 1, '2026-04-29 08:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00'),
-            (2008, 'dashboard-draft-2008', 10, 20, 0, NULL, 2, 'announcement:2008', 1, 'Draft notice', 'Draft notice summary', 'Draft notice content', 1, 100, 1, '2026-04-29 08:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00'),
-            (2009, 'dashboard-role-2009', 10, 20, 1, NULL, 2, 'announcement:2009', 1, 'Role notice', 'Role notice summary', 'Role notice content', 1, 100, 1, '2026-04-29 08:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00')
+            (2007, 'dashboard-announcement-2007', 100001, 0, 1, NULL, 2, 'announcement:2007', 1, 'Planned model upgrade', 'Planned model upgrade summary', 'Planned model upgrade content', 3, 100, 1, '2026-04-29 08:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00'),
+            (2008, 'dashboard-draft-2008', 100001, 0, 0, NULL, 2, 'announcement:2008', 1, 'Draft notice', 'Draft notice summary', 'Draft notice content', 1, 100, 1, '2026-04-29 08:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00'),
+            (2009, 'dashboard-role-2009', 100001, 0, 1, NULL, 2, 'announcement:2009', 1, 'Role notice', 'Role notice summary', 'Role notice content', 1, 100, 1, '2026-04-29 08:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00')
         "#,
     )
     .execute(pool)
@@ -279,9 +279,9 @@ async fn seed_dashboard_notification(pool: &sqlx::SqlitePool) {
         INSERT INTO ops_notification_recipient
             (id, uuid, tenant_id, organization_id, status, message_id, app_id, recipient_type, recipient_value)
         VALUES
-            (2007, 'dashboard-announcement-recipient-2007', 10, 20, 1, 2007, NULL, 1, 'all'),
-            (2008, 'dashboard-draft-recipient-2008', 10, 20, 1, 2008, NULL, 1, 'all'),
-            (2009, 'dashboard-role-recipient-2009', 10, 20, 1, 2009, NULL, 3, 'vip')
+            (2007, 'dashboard-announcement-recipient-2007', 100001, 0, 1, 2007, NULL, 1, 'all'),
+            (2008, 'dashboard-draft-recipient-2008', 100001, 0, 1, 2008, NULL, 1, 'all'),
+            (2009, 'dashboard-role-recipient-2009', 100001, 0, 1, 2009, NULL, 3, 'vip')
         "#,
     )
     .execute(pool)
@@ -295,8 +295,8 @@ async fn seed_gateway_instance(pool: &sqlx::SqlitePool) {
         INSERT INTO ops_gateway_instance
             (id, uuid, tenant_id, organization_id, status, deleted_at, metadata, instance_code, region, cell, host_name, ip_address_masked, node_name, last_heartbeat_at, health_status, updated_at)
         VALUES
-            (101, 'node-101', 10, 20, 1, NULL, '{"domain":"https://sh-gateway.example.com","remark":"East China relay"}', 'claw-node-shanghai', 'cn-east', 'sh-a', 'gateway-host-a', '10.10.0.11', 'Shanghai Gateway', '2026-05-26 08:00:00', 1, '2026-05-26 08:00:00'),
-            (102, 'node-102', 10, 20, 0, NULL, '{"domain":"https://disabled.example.com","remark":"Disabled relay"}', 'claw-node-disabled', 'cn-east', 'sh-b', 'disabled-host', '10.10.0.12', 'Disabled Gateway', '2026-05-26 07:00:00', 0, '2026-05-26 07:00:00'),
+            (101, 'node-101', 100001, 0, 1, NULL, '{"domain":"https://sh-gateway.example.com","remark":"East China relay"}', 'claw-node-shanghai', 'cn-east', 'sh-a', 'gateway-host-a', '10.10.0.11', 'Shanghai Gateway', '2026-05-26 08:00:00', 1, '2026-05-26 08:00:00'),
+            (102, 'node-102', 100001, 0, 0, NULL, '{"domain":"https://disabled.example.com","remark":"Disabled relay"}', 'claw-node-disabled', 'cn-east', 'sh-b', 'disabled-host', '10.10.0.12', 'Disabled Gateway', '2026-05-26 07:00:00', 0, '2026-05-26 07:00:00'),
             (103, 'node-103', 99, 99, 1, NULL, '{"domain":"https://other-tenant.example.com","remark":"Other tenant"}', 'claw-node-other', 'cn-north', 'bj-a', 'other-host', '10.10.0.13', 'Other Gateway', '2026-05-26 06:00:00', 1, '2026-05-26 06:00:00')
         "#,
     )

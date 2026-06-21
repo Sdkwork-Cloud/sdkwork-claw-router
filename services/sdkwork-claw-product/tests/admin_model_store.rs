@@ -690,7 +690,7 @@ async fn sqlite_admin_model_store_uses_subject_latest_commercial_ranking_snapsho
             (1, 0, 0, 1, '2026-05-07', 1, 'commercial-default', 'gpt-current', 'openai', 1, 100, 100),
             (2, 0, 0, 1, '2026-05-06', 1, 'commercial-default', 'gpt-old-only', 'openai', 2, 999, 999),
             (3, 0, 0, 1, '2026-05-08', 1, 'playground-local', 'gpt-old-only', 'openai', 1, 777, 777),
-            (4, 10, 20, 1, '2026-05-07', 1, 'commercial-default', 'gpt-tenant-current', 'openai', 1, 321, 321),
+            (4, 100001, 0, 1, '2026-05-07', 1, 'commercial-default', 'gpt-tenant-current', 'openai', 1, 321, 321),
             (5, 0, 0, 1, '2026-05-08', 1, 'commercial-default', 'gpt-current', 'openai', 1, 654, 654)
         "#,
     )
@@ -701,8 +701,8 @@ async fn sqlite_admin_model_store_uses_subject_latest_commercial_ranking_snapsho
     let models = SqliteAdminModelStore::new(pool)
         .list_models(ListAdminAiModelsQuery {
             subject: AdminModelSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 operator_id: 1,
                 operator_type: 1,
             },
@@ -764,8 +764,8 @@ async fn sqlite_admin_model_store_does_not_use_global_tenant_organization_rankin
     let models = SqliteAdminModelStore::new(pool)
         .list_models(ListAdminAiModelsQuery {
             subject: AdminModelSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 operator_id: 1,
                 operator_type: 1,
             },

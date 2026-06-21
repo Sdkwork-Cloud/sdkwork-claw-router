@@ -15,8 +15,8 @@ async fn sqlite_admin_analytics_aggregates_user_and_model_rankings_from_usage_fa
     let snapshot = store
         .load_admin_analytics(AdminAnalyticsQuery {
             subject: AdminAnalyticsSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 operator_id: 30,
                 operator_type: 1,
             },
@@ -93,8 +93,8 @@ async fn sqlite_admin_analytics_counts_distinct_users_even_when_display_names_ma
     let snapshot = store
         .load_admin_analytics(AdminAnalyticsQuery {
             subject: AdminAnalyticsSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 operator_id: 30,
                 operator_type: 1,
             },
@@ -121,8 +121,8 @@ async fn sqlite_admin_analytics_keeps_owner_fallbacks_and_untimed_usage_visible(
     let snapshot = store
         .load_admin_analytics(AdminAnalyticsQuery {
             subject: AdminAnalyticsSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 operator_id: 30,
                 operator_type: 1,
             },
@@ -182,8 +182,8 @@ async fn sqlite_admin_analytics_includes_default_organization_usage_for_admin_sc
     let snapshot = store
         .load_admin_analytics(AdminAnalyticsQuery {
             subject: AdminAnalyticsSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 operator_id: 30,
                 operator_type: 1,
             },
@@ -229,8 +229,8 @@ async fn sqlite_admin_analytics_does_not_extract_vendor_from_regional_catalog_ke
     let snapshot = store
         .load_admin_analytics(AdminAnalyticsQuery {
             subject: AdminAnalyticsSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 operator_id: 30,
                 operator_type: 1,
             },
@@ -323,7 +323,7 @@ async fn seed_regional_catalog_key_usage(pool: &SqlitePool) {
             total_tokens, customer_charge_amount, upstream_cost_amount, occurred_at
         )
         VALUES
-            (1, 10, 20, 101, 1, 101, 'req-regional-catalog-key', 1, 'Alice', ?1, 'gpt-4o', 1, 1, 100, '10.0', '5.0', '2026-05-10 10:00:00')
+            (1, 100001, 0, 101, 1, 101, 'req-regional-catalog-key', 1, 'Alice', ?1, 'gpt-4o', 1, 1, 100, '10.0', '5.0', '2026-05-10 10:00:00')
         "#,
     )
     .bind(regional_catalog_key)
@@ -450,10 +450,10 @@ async fn seed_usage(pool: &SqlitePool) {
             id, tenant_id, organization_id, request_id, status, http_status, error_type, provider_error_code, started_at
         )
         VALUES
-            (1, 10, 20, 'req-1', 1, 200, NULL, NULL, '2026-05-01 10:00:00'),
-            (2, 10, 20, 'req-2', 1, 500, NULL, NULL, '2026-05-01 11:00:00'),
+            (1, 100001, 0, 'req-1', 1, 200, NULL, NULL, '2026-05-01 10:00:00'),
+            (2, 100001, 0, 'req-2', 1, 500, NULL, NULL, '2026-05-01 11:00:00'),
             (3, 99, 20, 'req-ignored', 1, 500, NULL, NULL, '2026-05-01 12:00:00'),
-            (4, 10, 20, 'trace-only', 1, 500, NULL, NULL, '2026-05-01 13:00:00')
+            (4, 100001, 0, 'trace-only', 1, 500, NULL, NULL, '2026-05-01 13:00:00')
         "#,
     )
     .execute(pool)
@@ -470,8 +470,8 @@ async fn seed_untimed_usage_with_null_users(pool: &SqlitePool) {
             total_tokens, customer_charge_amount, upstream_cost_amount, occurred_at
         )
         VALUES
-            (1, 10, 20, NULL, 1, NULL, 'req-service-key', 1, 'Service Key', 'openai/gpt-4o', 'gpt-4o', 1, 2, 200, '8.0', '4.0', NULL),
-            (2, 10, 20, 0, 1, 0, 'req-unknown', 1, '', 'anthropic/claude-3-5-sonnet', 'claude-3-5-sonnet', NULL, 1, 100, '3.0', '1.5', NULL),
+            (1, 100001, 0, NULL, 1, NULL, 'req-service-key', 1, 'Service Key', 'openai/gpt-4o', 'gpt-4o', 1, 2, 200, '8.0', '4.0', NULL),
+            (2, 100001, 0, 0, 1, 0, 'req-unknown', 1, '', 'anthropic/claude-3-5-sonnet', 'claude-3-5-sonnet', NULL, 1, 100, '3.0', '1.5', NULL),
             (3, 99, 20, NULL, 1, NULL, 'req-ignored', 1, 'Other Tenant', 'openai/gpt-4o', 'gpt-4o', 1, 100, 10000, '999.0', '999.0', NULL)
         "#,
     )
@@ -485,8 +485,8 @@ async fn seed_untimed_usage_with_null_users(pool: &SqlitePool) {
             id, tenant_id, organization_id, request_id, status, http_status, error_type, provider_error_code, started_at
         )
         VALUES
-            (1, 10, 20, 'req-unknown', 1, 500, NULL, NULL, '2026-05-02 10:00:00'),
-            (2, 10, 20, 'trace-only', 1, 500, NULL, NULL, '2026-05-02 11:00:00')
+            (1, 100001, 0, 'req-unknown', 1, 500, NULL, NULL, '2026-05-02 10:00:00'),
+            (2, 100001, 0, 'trace-only', 1, 500, NULL, NULL, '2026-05-02 11:00:00')
         "#,
     )
     .execute(pool)
@@ -534,8 +534,8 @@ async fn seed_duplicate_display_name_usage(pool: &SqlitePool) {
             total_tokens, customer_charge_amount, upstream_cost_amount, occurred_at
         )
         VALUES
-            (1, 10, 20, 101, 1, 101, 'req-shared-1', 1, 'Shared Display', 'openai/gpt-4o', 'gpt-4o', 1, 1, 100, '10.0', '5.0', '2026-05-10 10:00:00'),
-            (2, 10, 20, 102, 1, 102, 'req-shared-2', 1, 'Shared Display', 'openai/gpt-4o', 'gpt-4o', 1, 1, 120, '12.0', '6.0', '2026-05-10 11:00:00')
+            (1, 100001, 0, 101, 1, 101, 'req-shared-1', 1, 'Shared Display', 'openai/gpt-4o', 'gpt-4o', 1, 1, 100, '10.0', '5.0', '2026-05-10 10:00:00'),
+            (2, 100001, 0, 102, 1, 102, 'req-shared-2', 1, 'Shared Display', 'openai/gpt-4o', 'gpt-4o', 1, 1, 120, '12.0', '6.0', '2026-05-10 11:00:00')
         "#,
     )
     .execute(pool)
@@ -548,8 +548,8 @@ async fn seed_duplicate_display_name_usage(pool: &SqlitePool) {
             id, tenant_id, organization_id, request_id, status, http_status, error_type, provider_error_code, started_at
         )
         VALUES
-            (1, 10, 20, 'req-shared-1', 1, 200, NULL, NULL, '2026-05-10 10:00:00'),
-            (2, 10, 20, 'req-shared-2', 1, 200, NULL, NULL, '2026-05-10 11:00:00')
+            (1, 100001, 0, 'req-shared-1', 1, 200, NULL, NULL, '2026-05-10 10:00:00'),
+            (2, 100001, 0, 'req-shared-2', 1, 200, NULL, NULL, '2026-05-10 11:00:00')
         "#,
     )
     .execute(pool)

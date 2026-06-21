@@ -289,8 +289,8 @@ async fn seed_exchange_rule(
 
 fn admin_subject() -> AdminMarketingSubject {
     AdminMarketingSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         operator_id: 30,
         operator_type: 1,
     }

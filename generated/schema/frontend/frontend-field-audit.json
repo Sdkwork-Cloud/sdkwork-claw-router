@@ -1501,817 +1501,6 @@
     },
     {
       "data_sources": [
-        "ai_model_vendor",
-        "ai_model",
-        "ai_model_capability",
-        "ai_model_pricing",
-        "ai_model_rank_snapshot",
-        "ai_pricing_import_snapshot",
-        "ops_audit_log"
-      ],
-      "fields": [
-        "initialized",
-        "vendors",
-        "vendors.id",
-        "vendors.vendorCode",
-        "vendors.name",
-        "vendors.status",
-        "vendors.color",
-        "vendors.description",
-        "models",
-        "models.id",
-        "models.vendorId",
-        "models.vendorCode",
-        "models.model",
-        "models.displayName",
-        "models.name",
-        "models.type",
-        "models.regionPrices",
-        "models.regionPrices.regionCode",
-        "models.regionPrices.currency",
-        "models.regionPrices.priceIn",
-        "models.regionPrices.priceOut",
-        "models.regionPrices.cacheReadPrice",
-        "models.regionPrices.cacheWritePrice",
-        "models.status",
-        "models.calls",
-        "models.description",
-        "models.modalities",
-        "models.inputModalities",
-        "models.outputModalities",
-        "models.apiFormat",
-        "models.capabilityIntro",
-        "models.limitations",
-        "models.supportedLanguages",
-        "models.useCases",
-        "models.trainingDataCutoff",
-        "models.contextTokens",
-        "models.maxOutputTokens",
-        "models.supportsStreaming",
-        "models.supportsTools",
-        "models.supportsJsonSchema",
-        "models.releaseStage",
-        "models.shelfState",
-        "models.routingState",
-        "models.replacementModel"
-      ],
-      "file_targets": [],
-      "interface": "InitializedModelCatalog",
-      "route": "/admin/model",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_model",
-        "ai_model_pricing",
-        "ai_model_rank_snapshot"
-      ],
-      "fields": [
-        "id",
-        "vendorId",
-        "vendorCode",
-        "model",
-        "displayName",
-        "name",
-        "type",
-        "regionPrices",
-        "regionPrices.regionCode",
-        "regionPrices.currency",
-        "regionPrices.priceIn",
-        "regionPrices.priceOut",
-        "regionPrices.cacheReadPrice",
-        "regionPrices.cacheWritePrice",
-        "status",
-        "calls",
-        "description",
-        "modalities",
-        "inputModalities",
-        "outputModalities",
-        "apiFormat",
-        "capabilityIntro",
-        "limitations",
-        "supportedLanguages",
-        "useCases",
-        "trainingDataCutoff",
-        "contextTokens",
-        "maxOutputTokens",
-        "supportsStreaming",
-        "supportsTools",
-        "supportsJsonSchema",
-        "releaseStage",
-        "shelfState",
-        "routingState",
-        "replacementModel"
-      ],
-      "file_targets": [],
-      "interface": "Model",
-      "route": "/admin/model",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_model_vendor",
-        "ai_model",
-        "ai_model_capability",
-        "ai_model_pricing",
-        "ai_pricing_import_snapshot",
-        "ops_audit_log"
-      ],
-      "fields": [
-        "acceptedCount",
-        "capabilityCount",
-        "catalogRoot",
-        "catalogVersion",
-        "dryRun",
-        "familyCount",
-        "meterCount",
-        "mode",
-        "modelCount",
-        "priceCount",
-        "rankingCount",
-        "requestedCatalogVersion",
-        "snapshotId",
-        "source",
-        "sourceHash",
-        "syncRunId",
-        "synced",
-        "vendorCodes",
-        "vendorCount",
-        "vendors",
-        "vendors.id",
-        "vendors.vendorCode",
-        "vendors.name",
-        "vendors.status",
-        "vendors.color",
-        "vendors.description",
-        "models",
-        "models.id",
-        "models.vendorId",
-        "models.vendorCode",
-        "models.model",
-        "models.displayName",
-        "models.name",
-        "models.type",
-        "models.regionPrices",
-        "models.regionPrices.regionCode",
-        "models.regionPrices.currency",
-        "models.regionPrices.priceIn",
-        "models.regionPrices.priceOut",
-        "models.regionPrices.cacheReadPrice",
-        "models.regionPrices.cacheWritePrice",
-        "models.status",
-        "models.calls",
-        "models.description",
-        "models.modalities",
-        "models.inputModalities",
-        "models.outputModalities",
-        "models.apiFormat",
-        "models.capabilityIntro",
-        "models.limitations",
-        "models.supportedLanguages",
-        "models.useCases",
-        "models.trainingDataCutoff",
-        "models.contextTokens",
-        "models.maxOutputTokens",
-        "models.supportsStreaming",
-        "models.supportsTools",
-        "models.supportsJsonSchema",
-        "models.releaseStage",
-        "models.shelfState",
-        "models.routingState",
-        "models.replacementModel"
-      ],
-      "file_targets": [],
-      "interface": "ModelCatalogSyncReport",
-      "route": "/admin/model",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_model_vendor",
-        "ai_model",
-        "ai_model_capability",
-        "ai_model_pricing"
-      ],
-      "fields": [
-        "vendorId",
-        "model",
-        "displayName",
-        "type",
-        "regionPrices",
-        "regionPrices.regionCode",
-        "regionPrices.currency",
-        "regionPrices.priceIn",
-        "regionPrices.priceOut",
-        "regionPrices.cacheReadPrice",
-        "regionPrices.cacheWritePrice",
-        "contextTokens",
-        "maxOutputTokens",
-        "description",
-        "capabilityIntro",
-        "limitations",
-        "supportedLanguages",
-        "useCases",
-        "supportsStreaming",
-        "supportsTools",
-        "supportsJsonSchema"
-      ],
-      "file_targets": [],
-      "interface": "ModelCreateInput",
-      "route": "/admin/model",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_model_mapping_rule",
-        "ai_model_mapping_rule_binding",
-        "ai_model_mapping_rule_item"
-      ],
-      "fields": [
-        "sourceVendorId",
-        "sourceVendorCode",
-        "targetVendorId",
-        "targetVendorCode",
-        "mappingMode",
-        "matchType",
-        "enabled",
-        "bindings",
-        "bindings.bindingType",
-        "bindings.bindingId",
-        "bindings.bindingCode",
-        "bindings.bindingName",
-        "mappingItems",
-        "mappingItems.sourceModel",
-        "mappingItems.sourceCatalogKey",
-        "mappingItems.targetModel",
-        "mappingItems.targetCatalogKey",
-        "mappingItems.targetProviderModel",
-        "mappingItems.targetProviderNativeModel"
-      ],
-      "file_targets": [],
-      "interface": "ModelMappingCreateInput",
-      "route": "/admin/model/mappings",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_model",
-        "ai_model_vendor"
-      ],
-      "fields": [
-        "id",
-        "vendorId",
-        "vendorCode",
-        "model",
-        "displayName",
-        "name",
-        "type",
-        "status"
-      ],
-      "file_targets": [],
-      "interface": "ModelMappingModelOption",
-      "route": "/admin/model/mappings",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_model",
-        "ai_model_vendor"
-      ],
-      "fields": [
-        "vendors",
-        "vendors.id",
-        "vendors.vendorCode",
-        "vendors.name",
-        "vendors.status",
-        "vendors.color",
-        "vendors.description",
-        "models",
-        "models.id",
-        "models.vendorId",
-        "models.vendorCode",
-        "models.model",
-        "models.displayName",
-        "models.name",
-        "models.type",
-        "models.status"
-      ],
-      "file_targets": [],
-      "interface": "ModelMappingModelOptionsCatalog",
-      "route": "/admin/model/mappings",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_model_mapping_rule",
-        "ai_model_mapping_rule_binding",
-        "ai_model_mapping_rule_item"
-      ],
-      "fields": [
-        "sourceModel",
-        "vendorCode",
-        "channelId",
-        "channelCode"
-      ],
-      "file_targets": [],
-      "interface": "ModelMappingResolveInput",
-      "route": "/admin/model/mappings",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_model_mapping_rule",
-        "ai_model_mapping_rule_binding",
-        "ai_model_mapping_rule_item"
-      ],
-      "fields": [
-        "matched",
-        "matchedBindingType",
-        "sourceModel",
-        "targetModel",
-        "targetCatalogKey",
-        "targetVendorCode",
-        "targetProviderModel",
-        "targetProviderNativeModel",
-        "rule"
-      ],
-      "file_targets": [],
-      "interface": "ModelMappingResolveResult",
-      "route": "/admin/model/mappings",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_model_mapping_rule",
-        "ai_model_mapping_rule_binding",
-        "ai_model_mapping_rule_item"
-      ],
-      "fields": [
-        "id",
-        "bindingType",
-        "sourceVendorId",
-        "sourceVendorCode",
-        "targetVendorId",
-        "targetVendorCode",
-        "mappingMode",
-        "matchType",
-        "enabled",
-        "bindings",
-        "bindings.id",
-        "bindings.bindingType",
-        "bindings.bindingId",
-        "bindings.bindingCode",
-        "bindings.bindingName",
-        "bindings.sortOrder",
-        "bindings.enabled",
-        "bindings.createdAt",
-        "bindings.updatedAt",
-        "mappingItems",
-        "mappingItems.id",
-        "mappingItems.sourceModel",
-        "mappingItems.sourceCatalogKey",
-        "mappingItems.targetModel",
-        "mappingItems.targetCatalogKey",
-        "mappingItems.targetProviderModel",
-        "mappingItems.targetProviderNativeModel",
-        "mappingItems.sortOrder",
-        "mappingItems.enabled",
-        "mappingItems.createdAt",
-        "mappingItems.updatedAt",
-        "createdAt",
-        "updatedAt"
-      ],
-      "file_targets": [],
-      "interface": "ModelMappingRule",
-      "route": "/admin/model/mappings",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_model_mapping_rule",
-        "ai_model_mapping_rule_binding"
-      ],
-      "fields": [
-        "id",
-        "bindingType",
-        "bindingId",
-        "bindingCode",
-        "bindingName",
-        "sortOrder",
-        "enabled",
-        "createdAt",
-        "updatedAt"
-      ],
-      "file_targets": [],
-      "interface": "ModelMappingRuleBinding",
-      "route": "/admin/model/mappings",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_model_mapping_rule",
-        "ai_model_mapping_rule_item"
-      ],
-      "fields": [
-        "id",
-        "sourceModel",
-        "sourceCatalogKey",
-        "targetModel",
-        "targetCatalogKey",
-        "targetProviderModel",
-        "targetProviderNativeModel",
-        "sortOrder",
-        "enabled",
-        "createdAt",
-        "updatedAt"
-      ],
-      "file_targets": [],
-      "interface": "ModelMappingRuleItem",
-      "route": "/admin/model/mappings",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_model_mapping_rule",
-        "ai_model_mapping_rule_binding",
-        "ai_model_mapping_rule_item"
-      ],
-      "fields": [
-        "sourceVendorId",
-        "sourceVendorCode",
-        "targetVendorId",
-        "targetVendorCode",
-        "mappingMode",
-        "matchType",
-        "enabled",
-        "bindings",
-        "bindings.id",
-        "bindings.bindingType",
-        "bindings.bindingId",
-        "bindings.bindingCode",
-        "bindings.bindingName",
-        "mappingItems",
-        "mappingItems.id",
-        "mappingItems.sourceModel",
-        "mappingItems.sourceCatalogKey",
-        "mappingItems.targetModel",
-        "mappingItems.targetCatalogKey",
-        "mappingItems.targetProviderModel",
-        "mappingItems.targetProviderNativeModel"
-      ],
-      "file_targets": [],
-      "interface": "ModelMappingUpdateInput",
-      "route": "/admin/model/mappings",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_model_rank_snapshot",
-        "ops_job_execution"
-      ],
-      "fields": [
-        "cacheMaxAgeSeconds",
-        "generatedAt",
-        "generatedCount",
-        "latestJob",
-        "nextRefreshAt",
-        "organizationId",
-        "rankScope",
-        "refreshIntervalSeconds",
-        "snapshotDate",
-        "snapshotPeriod",
-        "sourceCount",
-        "sourceTables",
-        "status",
-        "tenantId",
-        "windowEnd",
-        "windowStart"
-      ],
-      "file_targets": [],
-      "interface": "ModelRankingRefreshStatusView",
-      "route": "/admin/model",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_model_vendor",
-        "ai_model",
-        "ai_model_capability",
-        "ai_model_pricing"
-      ],
-      "fields": [
-        "regionCode",
-        "currency",
-        "priceIn",
-        "priceOut",
-        "cacheReadPrice",
-        "cacheWritePrice"
-      ],
-      "file_targets": [],
-      "interface": "ModelRegionPriceInput",
-      "route": "/admin/model",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_resource",
-        "ai_resource_group_item"
-      ],
-      "fields": [
-        "id",
-        "resourceCode",
-        "resourceType",
-        "displayName",
-        "vendorCode",
-        "modalityCode",
-        "apiEndpointCode",
-        "catalogKey",
-        "model",
-        "providerNativeModel",
-        "status"
-      ],
-      "file_targets": [],
-      "interface": "ResourceGroupAssignableResourceItem",
-      "route": "/admin/model/resources",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_resource_group",
-        "ai_resource_group_item",
-        "ai_resource"
-      ],
-      "fields": [
-        "groupCode",
-        "groupName",
-        "groupType",
-        "selectionMode",
-        "description",
-        "sortOrder",
-        "status",
-        "members",
-        "members.resourceCode",
-        "members.itemRole",
-        "members.sortOrder"
-      ],
-      "file_targets": [],
-      "interface": "ResourceGroupCreateInput",
-      "route": "/admin/model/resources",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_resource_group",
-        "ai_resource_group_item",
-        "ai_resource"
-      ],
-      "fields": [
-        "id",
-        "groupCode",
-        "groupName",
-        "groupType",
-        "selectionMode",
-        "description",
-        "sortOrder",
-        "status",
-        "resourceCount",
-        "dynamic"
-      ],
-      "file_targets": [],
-      "interface": "ResourceGroupItem",
-      "route": "/admin/model/resources",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_resource_group_item"
-      ],
-      "fields": [
-        "resourceCode",
-        "itemRole",
-        "sortOrder"
-      ],
-      "file_targets": [],
-      "interface": "ResourceGroupMemberInput",
-      "route": "/admin/model/resources",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_resource_group",
-        "ai_resource_group_item",
-        "ai_resource"
-      ],
-      "fields": [
-        "id",
-        "resourceCode",
-        "resourceType",
-        "displayName",
-        "vendorCode",
-        "modalityCode",
-        "apiEndpointCode",
-        "catalogKey",
-        "model",
-        "providerNativeModel",
-        "status",
-        "sortOrder",
-        "memberRole"
-      ],
-      "file_targets": [],
-      "interface": "ResourceGroupResourceItem",
-      "route": "/admin/model/resources",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_resource_group",
-        "ai_resource_group_item",
-        "ai_resource"
-      ],
-      "fields": [
-        "groupCode",
-        "groupName",
-        "groupType",
-        "selectionMode",
-        "description",
-        "sortOrder",
-        "status",
-        "members",
-        "members.resourceCode",
-        "members.itemRole",
-        "members.sortOrder"
-      ],
-      "file_targets": [],
-      "interface": "ResourceGroupUpdateInput",
-      "route": "/admin/model/resources",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_channel",
-        "ai_site",
-        "ai_site_service"
-      ],
-      "fields": [
-        "id",
-        "channelCode",
-        "channelName",
-        "providerCode",
-        "siteCode",
-        "siteServiceCode",
-        "siteChannelRole",
-        "healthStatus",
-        "status"
-      ],
-      "file_targets": [],
-      "interface": "SiteChannelItem",
-      "route": "/admin/model/sites",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_site",
-        "ai_site_service",
-        "ops_audit_log"
-      ],
-      "fields": [
-        "siteId",
-        "status",
-        "healthStatus",
-        "latencyMs",
-        "checkedAt",
-        "message"
-      ],
-      "file_targets": [],
-      "interface": "SiteConnectionCheckResult",
-      "route": "/admin/model/sites",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_site",
-        "ai_site_service"
-      ],
-      "fields": [
-        "siteName",
-        "displayName",
-        "description",
-        "baseUrl",
-        "websiteUrl",
-        "docsUrl",
-        "logo",
-        "domains",
-        "vendorCodes",
-        "siteType",
-        "ownerKind",
-        "regionCode",
-        "environment",
-        "status",
-        "credentialRef",
-        "maskedLabel"
-      ],
-      "file_targets": [],
-      "interface": "SiteCreateInput",
-      "route": "/admin/model/sites",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_site",
-        "ai_site_service"
-      ],
-      "fields": [
-        "id",
-        "siteCode",
-        "siteName",
-        "displayName",
-        "description",
-        "baseUrl",
-        "websiteUrl",
-        "docsUrl",
-        "logo",
-        "domains",
-        "vendorCodes",
-        "siteType",
-        "ownerKind",
-        "regionCode",
-        "environment",
-        "healthStatus",
-        "lastLatencyMs",
-        "consecutiveErrorCount",
-        "lastCheckedAt",
-        "lastSyncAt",
-        "sortOrder",
-        "status"
-      ],
-      "file_targets": [],
-      "interface": "SiteItem",
-      "route": "/admin/model/sites",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_site",
-        "ai_site_service"
-      ],
-      "fields": [
-        "siteCode",
-        "siteName",
-        "displayName",
-        "description",
-        "baseUrl",
-        "websiteUrl",
-        "docsUrl",
-        "logo",
-        "domains",
-        "vendorCodes",
-        "siteType",
-        "ownerKind",
-        "regionCode",
-        "environment",
-        "status",
-        "credentialRef",
-        "maskedLabel"
-      ],
-      "file_targets": [],
-      "interface": "SiteUpdateInput",
-      "route": "/admin/model/sites",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_model_vendor"
-      ],
-      "fields": [
-        "id",
-        "vendorCode",
-        "name",
-        "status",
-        "color",
-        "description"
-      ],
-      "file_targets": [],
-      "interface": "Vendor",
-      "route": "/admin/model",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_model_vendor"
-      ],
-      "fields": [
-        "name",
-        "status",
-        "color",
-        "description"
-      ],
-      "file_targets": [],
-      "interface": "VendorCreateInput",
-      "route": "/admin/model",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
-    },
-    {
-      "data_sources": [
         "ops_alert_event"
       ],
       "fields": [
@@ -3216,6 +2405,138 @@
       "interface": "LogRecord",
       "route": "/admin/record",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-record/src/recordService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_channel",
+        "ai_site",
+        "ai_site_service"
+      ],
+      "fields": [
+        "id",
+        "channelCode",
+        "channelName",
+        "providerCode",
+        "siteCode",
+        "siteServiceCode",
+        "siteChannelRole",
+        "healthStatus",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "SiteChannelItem",
+      "route": "/admin/model/sites",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-relay-site/src/siteService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_site",
+        "ai_site_service",
+        "ops_audit_log"
+      ],
+      "fields": [
+        "siteId",
+        "status",
+        "healthStatus",
+        "latencyMs",
+        "checkedAt",
+        "message"
+      ],
+      "file_targets": [],
+      "interface": "SiteConnectionCheckResult",
+      "route": "/admin/model/sites",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-relay-site/src/siteService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_site",
+        "ai_site_service"
+      ],
+      "fields": [
+        "siteName",
+        "displayName",
+        "description",
+        "baseUrl",
+        "websiteUrl",
+        "docsUrl",
+        "logo",
+        "domains",
+        "vendorCodes",
+        "siteType",
+        "ownerKind",
+        "regionCode",
+        "environment",
+        "status",
+        "credentialRef",
+        "maskedLabel"
+      ],
+      "file_targets": [],
+      "interface": "SiteCreateInput",
+      "route": "/admin/model/sites",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-relay-site/src/siteService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_site",
+        "ai_site_service"
+      ],
+      "fields": [
+        "id",
+        "siteCode",
+        "siteName",
+        "displayName",
+        "description",
+        "baseUrl",
+        "websiteUrl",
+        "docsUrl",
+        "logo",
+        "domains",
+        "vendorCodes",
+        "siteType",
+        "ownerKind",
+        "regionCode",
+        "environment",
+        "healthStatus",
+        "lastLatencyMs",
+        "consecutiveErrorCount",
+        "lastCheckedAt",
+        "lastSyncAt",
+        "sortOrder",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "SiteItem",
+      "route": "/admin/model/sites",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-relay-site/src/siteService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_site",
+        "ai_site_service"
+      ],
+      "fields": [
+        "siteCode",
+        "siteName",
+        "displayName",
+        "description",
+        "baseUrl",
+        "websiteUrl",
+        "docsUrl",
+        "logo",
+        "domains",
+        "vendorCodes",
+        "siteType",
+        "ownerKind",
+        "regionCode",
+        "environment",
+        "status",
+        "credentialRef",
+        "maskedLabel"
+      ],
+      "file_targets": [],
+      "interface": "SiteUpdateInput",
+      "route": "/admin/model/sites",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-relay-site/src/siteService.ts"
     },
     {
       "data_sources": [
@@ -4174,10 +3495,1124 @@
       "interface": "RuntimeRankingSnapshot",
       "route": "/rankings",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-rankings/src/rankingService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_payment_intent",
+        "commerce_payment_attempt"
+      ],
+      "fields": [],
+      "file_targets": [],
+      "interface": "SdkworkCommerceHostRoutes",
+      "route": "/console/payment",
+      "source": "apps/sdkwork-clawrouter-pc/src/commerce/commerceHostMount.tsx"
+    },
+    {
+      "data_sources": [
+        "commerce_billing_history"
+      ],
+      "fields": [
+        "id",
+        "historyNo",
+        "type",
+        "direction",
+        "assetType",
+        "amount",
+        "currencyCode",
+        "pointsDelta",
+        "status",
+        "title",
+        "referenceNo",
+        "sourceType",
+        "sourceId",
+        "relatedOrderNo",
+        "paymentMethod",
+        "occurredAt",
+        "method"
+      ],
+      "file_targets": [],
+      "interface": "BillingHistoryItem",
+      "route": "/console/recharge",
+      "source": "apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_order",
+        "commerce_payment_intent",
+        "commerce_payment_attempt"
+      ],
+      "fields": [
+        "orderNo",
+        "outTradeNo",
+        "amount",
+        "points",
+        "providerCode",
+        "paymentMethod",
+        "paymentProduct",
+        "orderStatus",
+        "paymentStatus",
+        "rechargeStatus",
+        "status",
+        "createdAt",
+        "expiresAt",
+        "paidAt",
+        "nextAction",
+        "cashierUrl",
+        "qrCodePayload",
+        "requestPaymentPayload"
+      ],
+      "file_targets": [],
+      "interface": "CheckoutStatus",
+      "route": "/console/checkout",
+      "source": "apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_recharge_package",
+        "commerce_order",
+        "commerce_payment_intent",
+        "commerce_payment_attempt"
+      ],
+      "fields": [
+        "success",
+        "orderNo",
+        "providerCode",
+        "paymentMethod",
+        "paymentProduct",
+        "nextAction",
+        "cashierUrl",
+        "qrCodePayload",
+        "requestPaymentPayload"
+      ],
+      "file_targets": [],
+      "interface": "RechargeOrderCreateResult",
+      "route": "/console/recharge",
+      "source": "apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_recharge_package",
+        "commerce_product_spu",
+        "commerce_product_sku"
+      ],
+      "fields": [
+        "id",
+        "priceAmount",
+        "currencyCode",
+        "bonusPoints",
+        "grantAmount",
+        "points"
+      ],
+      "file_targets": [],
+      "interface": "RechargePackage",
+      "route": "/console/recharge",
+      "source": "apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_exchange_rule",
+        "commerce_recharge_package"
+      ],
+      "fields": [
+        "baseCurrencyCode",
+        "basePointsPerCny",
+        "currencyToCnyRates",
+        "previewExamples"
+      ],
+      "file_targets": [],
+      "interface": "RechargeSettingsSnapshot",
+      "route": "/console/recharge",
+      "source": "apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_usage_statement_item",
+        "ai_usage_fact"
+      ],
+      "fields": [
+        "changeRate",
+        "costCny",
+        "id",
+        "kind",
+        "label",
+        "share",
+        "units"
+      ],
+      "file_targets": [],
+      "interface": "SdkworkBillingBreakdownRow",
+      "route": "/console/settlements",
+      "source": "apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_account",
+        "commerce_invoice",
+        "commerce_payment_intent",
+        "commerce_membership",
+        "commerce_wallet_account",
+        "iam_user",
+        "iam_organization",
+        "ai_usage_fact"
+      ],
+      "fields": [
+        "summary",
+        "summary.activeSubscriptionPlans",
+        "summary.availablePoints",
+        "summary.bestOfferSavingsCny",
+        "summary.currentLevelName",
+        "summary.totalSpentCny",
+        "digest",
+        "digest.budgetAmountCny",
+        "digest.budgetRemainingCny",
+        "digest.monthSpendCny",
+        "digest.outstandingAmountCny",
+        "digest.projectedMonthSpendCny",
+        "digest.savingsOpportunityCny",
+        "digest.todaySpendCny",
+        "breakdowns",
+        "paymentAttention",
+        "paymentAttention.actionablePayments",
+        "paymentAttention.outstandingAmountCny",
+        "invoiceAttention",
+        "invoiceAttention.pendingInvoices",
+        "posture",
+        "alerts",
+        "recentUsage",
+        "topAction"
+      ],
+      "file_targets": [],
+      "interface": "SdkworkBillingDashboardData",
+      "route": "/console/account",
+      "source": "apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_usage_statement",
+        "commerce_usage_statement_item",
+        "ai_usage_fact"
+      ],
+      "fields": [
+        "budgetAmountCny",
+        "budgetRemainingCny",
+        "monthSpendCny",
+        "outstandingAmountCny",
+        "projectedMonthSpendCny",
+        "savingsOpportunityCny",
+        "todaySpendCny"
+      ],
+      "file_targets": [],
+      "interface": "SdkworkBillingDigest",
+      "route": "/console/settlements",
+      "source": "apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts"
+    },
+    {
+      "data_sources": [
+        "ai_usage_fact",
+        "commerce_usage_statement",
+        "commerce_usage_statement_item"
+      ],
+      "fields": [
+        "capability",
+        "costCny",
+        "id",
+        "model",
+        "provider",
+        "title",
+        "unitLabel",
+        "units",
+        "usageAt",
+        "workspace"
+      ],
+      "file_targets": [],
+      "interface": "SdkworkBillingUsageRecord",
+      "route": "/console/settlements",
+      "source": "apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_membership_entitlement",
+        "commerce_membership_entitlement_usage"
+      ],
+      "fields": [
+        "benefitKey",
+        "claimed",
+        "description",
+        "id",
+        "name",
+        "type",
+        "usageLimit",
+        "usedCount"
+      ],
+      "file_targets": [],
+      "interface": "SdkworkMembershipBenefit",
+      "route": "/console/memberships",
+      "source": "apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_membership",
+        "commerce_membership_plan",
+        "commerce_membership_package",
+        "commerce_membership_entitlement",
+        "commerce_product_sku"
+      ],
+      "fields": [
+        "benefits",
+        "benefits.id",
+        "benefits.name",
+        "benefits.claimed",
+        "levels",
+        "levels.id",
+        "levels.name",
+        "levels.levelValue",
+        "levels.isCurrent",
+        "plans",
+        "plans.id",
+        "plans.name",
+        "plans.priceCny",
+        "plans.packageId",
+        "summary",
+        "summary.isMember",
+        "summary.remainingDays",
+        "summary.status"
+      ],
+      "file_targets": [],
+      "interface": "SdkworkMembershipDashboardData",
+      "route": "/console/memberships",
+      "source": "apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_membership_plan",
+        "commerce_membership_package",
+        "commerce_product_sku"
+      ],
+      "fields": [
+        "description",
+        "durationDays",
+        "id",
+        "includedPoints",
+        "levelName",
+        "name",
+        "originalPriceCny",
+        "packageId",
+        "priceCny",
+        "recommended",
+        "tags"
+      ],
+      "file_targets": [],
+      "interface": "SdkworkMembershipPlan",
+      "route": "/console/memberships",
+      "source": "apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_membership",
+        "commerce_order",
+        "commerce_payment_intent"
+      ],
+      "fields": [
+        "amountCny",
+        "durationDays",
+        "orderId",
+        "packageId",
+        "packageName",
+        "status",
+        "targetLevelName"
+      ],
+      "file_targets": [],
+      "interface": "SdkworkMembershipPurchaseResult",
+      "route": "/console/memberships",
+      "source": "apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_membership",
+        "commerce_membership_plan",
+        "commerce_account"
+      ],
+      "fields": [
+        "currentLevelName",
+        "currentLevelValue",
+        "expireTime",
+        "growthValue",
+        "isAuthenticated",
+        "isMember",
+        "pointBalance",
+        "points",
+        "remainingDays",
+        "status",
+        "totalSpent",
+        "upgradeGrowthValue"
+      ],
+      "file_targets": [],
+      "interface": "SdkworkMembershipSummary",
+      "route": "/console/memberships",
+      "source": "apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_wallet_account",
+        "commerce_wallet_transaction"
+      ],
+      "fields": [
+        "account",
+        "account.availablePoints",
+        "account.cashAvailable",
+        "account.cashFrozen",
+        "account.frozenPoints",
+        "account.hasPayPassword",
+        "account.level",
+        "account.levelName",
+        "account.status",
+        "account.tokenBalance",
+        "account.totalEarned",
+        "account.totalPoints",
+        "account.totalSpent",
+        "isAuthenticated",
+        "pointsToCashRate",
+        "rechargePackages",
+        "rechargePackages.id",
+        "rechargePackages.points",
+        "rechargePackages.priceCny",
+        "rechargePackages.title",
+        "transactions",
+        "transactions.id",
+        "transactions.cashAmountCny",
+        "transactions.createdAt",
+        "transactions.pointsDelta",
+        "transactions.status",
+        "transactions.title"
+      ],
+      "file_targets": [],
+      "interface": "SdkworkWalletOverview",
+      "route": "/console/wallet",
+      "source": "apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_order",
+        "commerce_payment_intent",
+        "commerce_wallet_transaction"
+      ],
+      "fields": [
+        "cashAmountCny",
+        "paymentMethod",
+        "points",
+        "processedAt",
+        "remainingPoints",
+        "requestNo",
+        "status",
+        "transactionId"
+      ],
+      "file_targets": [],
+      "interface": "SdkworkWalletRechargeResult",
+      "route": "/console/wallet",
+      "source": "apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_wallet_account",
+        "commerce_wallet_transaction"
+      ],
+      "fields": [
+        "amountCny",
+        "destinationCode",
+        "estimatedArrivalTime",
+        "frozenCashAmountCny",
+        "processedAt",
+        "requestNo",
+        "remainingCashAvailable",
+        "status",
+        "transactionId"
+      ],
+      "file_targets": [],
+      "interface": "SdkworkWalletWithdrawResult",
+      "route": "/console/wallet",
+      "source": "apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts"
+    },
+    {
+      "data_sources": [
+        "ai_model_vendor",
+        "ai_model",
+        "ai_model_capability",
+        "ai_model_pricing",
+        "ai_model_rank_snapshot",
+        "ai_pricing_import_snapshot",
+        "ops_audit_log"
+      ],
+      "fields": [
+        "initialized",
+        "vendors",
+        "vendors.id",
+        "vendors.vendorCode",
+        "vendors.name",
+        "vendors.status",
+        "vendors.color",
+        "vendors.description",
+        "models",
+        "models.id",
+        "models.vendorId",
+        "models.vendorCode",
+        "models.model",
+        "models.displayName",
+        "models.name",
+        "models.type",
+        "models.regionPrices",
+        "models.regionPrices.regionCode",
+        "models.regionPrices.currency",
+        "models.regionPrices.priceIn",
+        "models.regionPrices.priceOut",
+        "models.regionPrices.cacheReadPrice",
+        "models.regionPrices.cacheWritePrice",
+        "models.status",
+        "models.calls",
+        "models.description",
+        "models.modalities",
+        "models.inputModalities",
+        "models.outputModalities",
+        "models.apiFormat",
+        "models.capabilityIntro",
+        "models.limitations",
+        "models.supportedLanguages",
+        "models.useCases",
+        "models.trainingDataCutoff",
+        "models.contextTokens",
+        "models.maxOutputTokens",
+        "models.supportsStreaming",
+        "models.supportsTools",
+        "models.supportsJsonSchema",
+        "models.releaseStage",
+        "models.shelfState",
+        "models.routingState",
+        "models.replacementModel"
+      ],
+      "file_targets": [],
+      "interface": "InitializedModelCatalog",
+      "route": "/admin/model",
+      "source": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_model",
+        "ai_model_pricing",
+        "ai_model_rank_snapshot"
+      ],
+      "fields": [
+        "id",
+        "vendorId",
+        "vendorCode",
+        "model",
+        "displayName",
+        "name",
+        "type",
+        "regionPrices",
+        "regionPrices.regionCode",
+        "regionPrices.currency",
+        "regionPrices.priceIn",
+        "regionPrices.priceOut",
+        "regionPrices.cacheReadPrice",
+        "regionPrices.cacheWritePrice",
+        "status",
+        "calls",
+        "description",
+        "modalities",
+        "inputModalities",
+        "outputModalities",
+        "apiFormat",
+        "capabilityIntro",
+        "limitations",
+        "supportedLanguages",
+        "useCases",
+        "trainingDataCutoff",
+        "contextTokens",
+        "maxOutputTokens",
+        "supportsStreaming",
+        "supportsTools",
+        "supportsJsonSchema",
+        "releaseStage",
+        "shelfState",
+        "routingState",
+        "replacementModel"
+      ],
+      "file_targets": [],
+      "interface": "Model",
+      "route": "/admin/model",
+      "source": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_model_vendor",
+        "ai_model",
+        "ai_model_capability",
+        "ai_model_pricing",
+        "ai_pricing_import_snapshot",
+        "ops_audit_log"
+      ],
+      "fields": [
+        "acceptedCount",
+        "capabilityCount",
+        "catalogRoot",
+        "catalogVersion",
+        "dryRun",
+        "familyCount",
+        "meterCount",
+        "mode",
+        "modelCount",
+        "priceCount",
+        "rankingCount",
+        "requestedCatalogVersion",
+        "snapshotId",
+        "source",
+        "sourceHash",
+        "syncRunId",
+        "synced",
+        "vendorCodes",
+        "vendorCount",
+        "vendors",
+        "vendors.id",
+        "vendors.vendorCode",
+        "vendors.name",
+        "vendors.status",
+        "vendors.color",
+        "vendors.description",
+        "models",
+        "models.id",
+        "models.vendorId",
+        "models.vendorCode",
+        "models.model",
+        "models.displayName",
+        "models.name",
+        "models.type",
+        "models.regionPrices",
+        "models.regionPrices.regionCode",
+        "models.regionPrices.currency",
+        "models.regionPrices.priceIn",
+        "models.regionPrices.priceOut",
+        "models.regionPrices.cacheReadPrice",
+        "models.regionPrices.cacheWritePrice",
+        "models.status",
+        "models.calls",
+        "models.description",
+        "models.modalities",
+        "models.inputModalities",
+        "models.outputModalities",
+        "models.apiFormat",
+        "models.capabilityIntro",
+        "models.limitations",
+        "models.supportedLanguages",
+        "models.useCases",
+        "models.trainingDataCutoff",
+        "models.contextTokens",
+        "models.maxOutputTokens",
+        "models.supportsStreaming",
+        "models.supportsTools",
+        "models.supportsJsonSchema",
+        "models.releaseStage",
+        "models.shelfState",
+        "models.routingState",
+        "models.replacementModel"
+      ],
+      "file_targets": [],
+      "interface": "ModelCatalogSyncReport",
+      "route": "/admin/model",
+      "source": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_model_vendor",
+        "ai_model",
+        "ai_model_capability",
+        "ai_model_pricing"
+      ],
+      "fields": [
+        "vendorId",
+        "model",
+        "displayName",
+        "type",
+        "regionPrices",
+        "regionPrices.regionCode",
+        "regionPrices.currency",
+        "regionPrices.priceIn",
+        "regionPrices.priceOut",
+        "regionPrices.cacheReadPrice",
+        "regionPrices.cacheWritePrice",
+        "contextTokens",
+        "maxOutputTokens",
+        "description",
+        "capabilityIntro",
+        "limitations",
+        "supportedLanguages",
+        "useCases",
+        "supportsStreaming",
+        "supportsTools",
+        "supportsJsonSchema"
+      ],
+      "file_targets": [],
+      "interface": "ModelCreateInput",
+      "route": "/admin/model",
+      "source": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding",
+        "ai_model_mapping_rule_item"
+      ],
+      "fields": [
+        "sourceVendorId",
+        "sourceVendorCode",
+        "targetVendorId",
+        "targetVendorCode",
+        "mappingMode",
+        "matchType",
+        "enabled",
+        "bindings",
+        "bindings.bindingType",
+        "bindings.bindingId",
+        "bindings.bindingCode",
+        "bindings.bindingName",
+        "mappingItems",
+        "mappingItems.sourceModel",
+        "mappingItems.sourceCatalogKey",
+        "mappingItems.targetModel",
+        "mappingItems.targetCatalogKey",
+        "mappingItems.targetProviderModel",
+        "mappingItems.targetProviderNativeModel"
+      ],
+      "file_targets": [],
+      "interface": "ModelMappingCreateInput",
+      "route": "/admin/model/mappings",
+      "source": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_model",
+        "ai_model_vendor"
+      ],
+      "fields": [
+        "id",
+        "vendorId",
+        "vendorCode",
+        "model",
+        "displayName",
+        "name",
+        "type",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "ModelMappingModelOption",
+      "route": "/admin/model/mappings",
+      "source": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_model",
+        "ai_model_vendor"
+      ],
+      "fields": [
+        "vendors",
+        "vendors.id",
+        "vendors.vendorCode",
+        "vendors.name",
+        "vendors.status",
+        "vendors.color",
+        "vendors.description",
+        "models",
+        "models.id",
+        "models.vendorId",
+        "models.vendorCode",
+        "models.model",
+        "models.displayName",
+        "models.name",
+        "models.type",
+        "models.status"
+      ],
+      "file_targets": [],
+      "interface": "ModelMappingModelOptionsCatalog",
+      "route": "/admin/model/mappings",
+      "source": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding",
+        "ai_model_mapping_rule_item"
+      ],
+      "fields": [
+        "sourceModel",
+        "vendorCode",
+        "channelId",
+        "channelCode"
+      ],
+      "file_targets": [],
+      "interface": "ModelMappingResolveInput",
+      "route": "/admin/model/mappings",
+      "source": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding",
+        "ai_model_mapping_rule_item"
+      ],
+      "fields": [
+        "matched",
+        "matchedBindingType",
+        "sourceModel",
+        "targetModel",
+        "targetCatalogKey",
+        "targetVendorCode",
+        "targetProviderModel",
+        "targetProviderNativeModel",
+        "rule"
+      ],
+      "file_targets": [],
+      "interface": "ModelMappingResolveResult",
+      "route": "/admin/model/mappings",
+      "source": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding",
+        "ai_model_mapping_rule_item"
+      ],
+      "fields": [
+        "id",
+        "bindingType",
+        "sourceVendorId",
+        "sourceVendorCode",
+        "targetVendorId",
+        "targetVendorCode",
+        "mappingMode",
+        "matchType",
+        "enabled",
+        "bindings",
+        "bindings.id",
+        "bindings.bindingType",
+        "bindings.bindingId",
+        "bindings.bindingCode",
+        "bindings.bindingName",
+        "bindings.sortOrder",
+        "bindings.enabled",
+        "bindings.createdAt",
+        "bindings.updatedAt",
+        "mappingItems",
+        "mappingItems.id",
+        "mappingItems.sourceModel",
+        "mappingItems.sourceCatalogKey",
+        "mappingItems.targetModel",
+        "mappingItems.targetCatalogKey",
+        "mappingItems.targetProviderModel",
+        "mappingItems.targetProviderNativeModel",
+        "mappingItems.sortOrder",
+        "mappingItems.enabled",
+        "mappingItems.createdAt",
+        "mappingItems.updatedAt",
+        "createdAt",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "ModelMappingRule",
+      "route": "/admin/model/mappings",
+      "source": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding"
+      ],
+      "fields": [
+        "id",
+        "bindingType",
+        "bindingId",
+        "bindingCode",
+        "bindingName",
+        "sortOrder",
+        "enabled",
+        "createdAt",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "ModelMappingRuleBinding",
+      "route": "/admin/model/mappings",
+      "source": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_model_mapping_rule",
+        "ai_model_mapping_rule_item"
+      ],
+      "fields": [
+        "id",
+        "sourceModel",
+        "sourceCatalogKey",
+        "targetModel",
+        "targetCatalogKey",
+        "targetProviderModel",
+        "targetProviderNativeModel",
+        "sortOrder",
+        "enabled",
+        "createdAt",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "ModelMappingRuleItem",
+      "route": "/admin/model/mappings",
+      "source": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding",
+        "ai_model_mapping_rule_item"
+      ],
+      "fields": [
+        "sourceVendorId",
+        "sourceVendorCode",
+        "targetVendorId",
+        "targetVendorCode",
+        "mappingMode",
+        "matchType",
+        "enabled",
+        "bindings",
+        "bindings.id",
+        "bindings.bindingType",
+        "bindings.bindingId",
+        "bindings.bindingCode",
+        "bindings.bindingName",
+        "mappingItems",
+        "mappingItems.id",
+        "mappingItems.sourceModel",
+        "mappingItems.sourceCatalogKey",
+        "mappingItems.targetModel",
+        "mappingItems.targetCatalogKey",
+        "mappingItems.targetProviderModel",
+        "mappingItems.targetProviderNativeModel"
+      ],
+      "file_targets": [],
+      "interface": "ModelMappingUpdateInput",
+      "route": "/admin/model/mappings",
+      "source": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_model_rank_snapshot",
+        "ops_job_execution"
+      ],
+      "fields": [
+        "cacheMaxAgeSeconds",
+        "generatedAt",
+        "generatedCount",
+        "latestJob",
+        "nextRefreshAt",
+        "organizationId",
+        "rankScope",
+        "refreshIntervalSeconds",
+        "snapshotDate",
+        "snapshotPeriod",
+        "sourceCount",
+        "sourceTables",
+        "status",
+        "tenantId",
+        "windowEnd",
+        "windowStart"
+      ],
+      "file_targets": [],
+      "interface": "ModelRankingRefreshStatusView",
+      "route": "/admin/model",
+      "source": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_model_vendor",
+        "ai_model",
+        "ai_model_capability",
+        "ai_model_pricing"
+      ],
+      "fields": [
+        "regionCode",
+        "currency",
+        "priceIn",
+        "priceOut",
+        "cacheReadPrice",
+        "cacheWritePrice"
+      ],
+      "file_targets": [],
+      "interface": "ModelRegionPriceInput",
+      "route": "/admin/model",
+      "source": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_model_vendor"
+      ],
+      "fields": [
+        "id",
+        "vendorCode",
+        "name",
+        "status",
+        "color",
+        "description"
+      ],
+      "file_targets": [],
+      "interface": "Vendor",
+      "route": "/admin/model",
+      "source": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_model_vendor"
+      ],
+      "fields": [
+        "name",
+        "status",
+        "color",
+        "description"
+      ],
+      "file_targets": [],
+      "interface": "VendorCreateInput",
+      "route": "/admin/model",
+      "source": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_resource",
+        "ai_resource_group_item"
+      ],
+      "fields": [
+        "id",
+        "resourceCode",
+        "resourceType",
+        "displayName",
+        "vendorCode",
+        "modalityCode",
+        "apiEndpointCode",
+        "catalogKey",
+        "model",
+        "providerNativeModel",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "ResourceGroupAssignableResourceItem",
+      "route": "/admin/model/resources",
+      "source": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-resource/src/resourceGroupService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_resource_group",
+        "ai_resource_group_item",
+        "ai_resource"
+      ],
+      "fields": [
+        "groupCode",
+        "groupName",
+        "groupType",
+        "selectionMode",
+        "description",
+        "sortOrder",
+        "status",
+        "members",
+        "members.resourceCode",
+        "members.itemRole",
+        "members.sortOrder"
+      ],
+      "file_targets": [],
+      "interface": "ResourceGroupCreateInput",
+      "route": "/admin/model/resources",
+      "source": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-resource/src/resourceGroupService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_resource_group",
+        "ai_resource_group_item",
+        "ai_resource"
+      ],
+      "fields": [
+        "id",
+        "groupCode",
+        "groupName",
+        "groupType",
+        "selectionMode",
+        "description",
+        "sortOrder",
+        "status",
+        "resourceCount",
+        "dynamic"
+      ],
+      "file_targets": [],
+      "interface": "ResourceGroupItem",
+      "route": "/admin/model/resources",
+      "source": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-resource/src/resourceGroupService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_resource_group_item"
+      ],
+      "fields": [
+        "resourceCode",
+        "itemRole",
+        "sortOrder"
+      ],
+      "file_targets": [],
+      "interface": "ResourceGroupMemberInput",
+      "route": "/admin/model/resources",
+      "source": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-resource/src/resourceGroupService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_resource_group",
+        "ai_resource_group_item",
+        "ai_resource"
+      ],
+      "fields": [
+        "id",
+        "resourceCode",
+        "resourceType",
+        "displayName",
+        "vendorCode",
+        "modalityCode",
+        "apiEndpointCode",
+        "catalogKey",
+        "model",
+        "providerNativeModel",
+        "status",
+        "sortOrder",
+        "memberRole"
+      ],
+      "file_targets": [],
+      "interface": "ResourceGroupResourceItem",
+      "route": "/admin/model/resources",
+      "source": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-resource/src/resourceGroupService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_resource_group",
+        "ai_resource_group_item",
+        "ai_resource"
+      ],
+      "fields": [
+        "groupCode",
+        "groupName",
+        "groupType",
+        "selectionMode",
+        "description",
+        "sortOrder",
+        "status",
+        "members",
+        "members.resourceCode",
+        "members.itemRole",
+        "members.sortOrder"
+      ],
+      "file_targets": [],
+      "interface": "ResourceGroupUpdateInput",
+      "route": "/admin/model/resources",
+      "source": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-resource/src/resourceGroupService.ts"
     }
   ],
   "summary": {
-    "interface_count": 168,
-    "source_file_count": 28
+    "interface_count": 186,
+    "source_file_count": 32
   }
 }

@@ -110,7 +110,7 @@ async fn database_config_app_model_catalog_refreshes_runtime_snapshot_after_data
         INSERT INTO ai_resource
             (uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, catalog_key, model, provider_native_model, status, sort_order)
         VALUES
-            ('resource-model-openai-gpt-4o-refresh-chat-app-api-test', 10, 20, 'model.openai.gpt-4o-refresh.chat', 'model_api', 'GPT-4o refresh Chat', 'openai', 'chat', 'openai.chat_completions', 'openai/gpt-4o-refresh', 'gpt-4o-refresh', 'gpt-4o-refresh', 1, 99)
+            ('resource-model-openai-gpt-4o-refresh-chat-app-api-test', 100001, 0, 'model.openai.gpt-4o-refresh.chat', 'model_api', 'GPT-4o refresh Chat', 'openai', 'chat', 'openai.chat_completions', 'openai/gpt-4o-refresh', 'gpt-4o-refresh', 'gpt-4o-refresh', 1, 99)
         "#,
     )
     .execute(&update_pool)
@@ -122,7 +122,7 @@ async fn database_config_app_model_catalog_refreshes_runtime_snapshot_after_data
         INSERT INTO ai_channel_resource
             (uuid, tenant_id, organization_id, channel_id, provider_code, channel_code, resource_id, resource_code, grant_type, priority, status)
         VALUES
-            ('channel-resource-openrouter-gpt-4o-refresh-app-api-test', 10, 20, 3001, 'openrouter', 'openrouter-main', ?1, 'model.openai.gpt-4o-refresh.chat', 'allow', 1, 1)
+            ('channel-resource-openrouter-gpt-4o-refresh-app-api-test', 100001, 0, 3001, 'openrouter', 'openrouter-main', ?1, 'model.openai.gpt-4o-refresh.chat', 'allow', 1, 1)
         "#,
     )
     .bind(refresh_resource_id)
@@ -134,7 +134,7 @@ async fn database_config_app_model_catalog_refreshes_runtime_snapshot_after_data
         INSERT INTO ai_channel_group_resource
             (uuid, tenant_id, organization_id, channel_group_id, resource_id, resource_code, grant_type, priority, status)
         VALUES
-            ('channel-group-resource-openrouter-gpt-4o-refresh-app-api-test', 10, 20, 10, ?1, 'model.openai.gpt-4o-refresh.chat', 'allow', 1, 1)
+            ('channel-group-resource-openrouter-gpt-4o-refresh-app-api-test', 100001, 0, 10, ?1, 'model.openai.gpt-4o-refresh.chat', 'allow', 1, 1)
         "#,
     )
     .bind(refresh_resource_id)
@@ -264,8 +264,8 @@ async fn database_config_app_iam_directory_requires_session_and_lists_subject_di
             "GET",
             "/app/v3/api/iam/organizations",
             Body::empty(),
-            10,
-            20,
+            100001,
+            0,
             30,
         ),
     )
@@ -291,8 +291,8 @@ async fn database_config_app_iam_directory_requires_session_and_lists_subject_di
             "GET",
             "/app/v3/api/iam/organization_memberships",
             Body::empty(),
-            10,
-            20,
+            100001,
+            0,
             30,
         ),
     )
@@ -304,7 +304,7 @@ async fn database_config_app_iam_directory_requires_session_and_lists_subject_di
     assert!(
         memberships
             .iter()
-            .all(|item| item["userId"] == "30" && item["tenantId"] == "10"),
+            .all(|item| item["userId"] == "30" && item["tenantId"] == "100001"),
         "{memberships_body_text}"
     );
     assert!(!memberships_body_text.contains("member-31"));
@@ -319,7 +319,7 @@ async fn database_config_app_iam_directory_requires_session_and_lists_subject_di
     ] {
         let (status, payload, body_text) = request_json(
             router.clone(),
-            session_request("GET", uri, Body::empty(), 10, 20, 30),
+            session_request("GET", uri, Body::empty(), 100001, 0, 30),
         )
         .await;
         assert_eq!(StatusCode::OK, status, "{uri}: {body_text}");
@@ -390,15 +390,15 @@ async fn database_config_password_login_issues_app_session_and_records_password_
     assert_eq!("password", login_payload["data"]["context"]["authLevel"]);
     assert_eq!("local", login_payload["data"]["context"]["deploymentMode"]);
     assert_eq!("dev", login_payload["data"]["context"]["environment"]);
-    assert_eq!("10", login_payload["data"]["context"]["tenantId"]);
-    assert_eq!("20", login_payload["data"]["context"]["organizationId"]);
+    assert_eq!("100001", login_payload["data"]["context"]["tenantId"]);
+    assert_eq!("0", login_payload["data"]["context"]["organizationId"]);
     assert_eq!("30", login_payload["data"]["context"]["userId"]);
     assert_eq!(
         login_payload["data"]["sessionId"],
         login_payload["data"]["context"]["sessionId"]
     );
     assert_eq!(
-        "tenant:10",
+        "tenant:100001",
         login_payload["data"]["context"]["dataScope"][0]
     );
     assert!(!login_body_text.contains("correct-password"));
@@ -425,7 +425,7 @@ async fn database_config_password_login_issues_app_session_and_records_password_
 
     let verification_pool = create_sqlite_pool(&database_url).await;
     let security_event_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM iam_security_event WHERE tenant_id = '10' AND user_id = '30' AND event_type = 'sessions.create'",
+        "SELECT COUNT(1) FROM iam_security_event WHERE tenant_id = '100001' AND user_id = '30' AND event_type = 'sessions.create'",
     )
     .fetch_one(&verification_pool)
     .await
@@ -474,7 +474,7 @@ async fn database_config_app_session_current_refresh_update_and_logout_use_persi
     let access_token = login_payload["data"]["accessToken"].as_str().unwrap();
     let refresh_token = login_payload["data"]["refreshToken"].as_str().unwrap();
     let session_id = login_payload["data"]["sessionId"].as_str().unwrap();
-    assert_eq!("20", login_payload["data"]["context"]["organizationId"]);
+    assert_eq!("0", login_payload["data"]["context"]["organizationId"]);
 
     let (current_status, current_payload, current_body_text) = request_json(
         router.clone(),
@@ -495,7 +495,7 @@ async fn database_config_app_session_current_refresh_update_and_logout_use_persi
         "owner@example.com",
         current_payload["data"]["user"]["email"]
     );
-    assert_eq!("20", current_payload["data"]["context"]["organizationId"]);
+    assert_eq!("0", current_payload["data"]["context"]["organizationId"]);
     assert!(current_payload["data"].get("refreshToken").is_none());
     assert!(!current_body_text.contains("correct-password"));
     assert!(!current_body_text.contains("pbkdf2-sha256"));
@@ -730,7 +730,7 @@ async fn database_config_auth_identity_routes_register_verify_and_reset_password
         register_payload["data"]["user"]["email"]
     );
     assert_eq!("password", register_payload["data"]["context"]["authLevel"]);
-    assert_eq!("10", register_payload["data"]["context"]["tenantId"]);
+    assert_eq!("100001", register_payload["data"]["context"]["tenantId"]);
     assert_eq!("0", register_payload["data"]["context"]["organizationId"]);
     assert!(!register_body_text.contains("new-user-password"));
     assert!(!register_body_text.contains("pbkdf2-sha256"));
@@ -811,19 +811,19 @@ async fn database_config_auth_identity_routes_register_verify_and_reset_password
 
     let verification_pool = create_sqlite_pool(&database_url).await;
     let user_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM iam_user WHERE tenant_id = '10' AND username = 'new-user'",
+        "SELECT COUNT(1) FROM iam_user WHERE tenant_id = '100001' AND username = 'new-user'",
     )
     .fetch_one(&verification_pool)
     .await
     .unwrap();
     let credential_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM iam_credential WHERE tenant_id = '10' AND user_id = (SELECT id FROM iam_user WHERE username = 'new-user') AND credential_type = 'password' AND status = 'active'",
+        "SELECT COUNT(1) FROM iam_credential WHERE tenant_id = '100001' AND user_id = (SELECT id FROM iam_user WHERE username = 'new-user') AND credential_type = 'password' AND status = 'active'",
     )
     .fetch_one(&verification_pool)
     .await
     .unwrap();
     let identity_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM iam_user_identity WHERE tenant_id = '10' AND provider = 'email' AND subject = 'new-user@example.com'",
+        "SELECT COUNT(1) FROM iam_user_identity WHERE tenant_id = '100001' AND provider = 'email' AND subject = 'new-user@example.com'",
     )
     .fetch_one(&verification_pool)
     .await
@@ -880,13 +880,13 @@ async fn database_config_auth_registration_allows_email_without_verification_cod
 
     let verification_pool = create_sqlite_pool(&database_url).await;
     let user_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM iam_user WHERE tenant_id = '10' AND username = 'no-code-user'",
+        "SELECT COUNT(1) FROM iam_user WHERE tenant_id = '100001' AND username = 'no-code-user'",
     )
     .fetch_one(&verification_pool)
     .await
     .unwrap();
     let identity_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM iam_user_identity WHERE tenant_id = '10' AND provider = 'email' AND subject = 'no-code-user@example.com'",
+        "SELECT COUNT(1) FROM iam_user_identity WHERE tenant_id = '100001' AND provider = 'email' AND subject = 'no-code-user@example.com'",
     )
     .fetch_one(&verification_pool)
     .await
@@ -1460,7 +1460,7 @@ async fn database_config_auth_verification_codes_queue_messaging_delivery_in_ser
                resolved_provider_account_id, resolved_sender_identity_id,
                request_payload_redacted, dry_run, delivery_status
         FROM messaging_send_request
-        WHERE tenant_id = 10 AND organization_id = 20
+        WHERE tenant_id = 100001 AND organization_id = 0
         LIMIT 1
         "#,
     )
@@ -1507,8 +1507,8 @@ async fn database_config_auth_verification_codes_queue_messaging_delivery_in_ser
         r#"
         SELECT COUNT(*)
         FROM messaging_send_attempt
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND provider_code = 'sendgrid'
           AND provider_account_id = 9101
           AND provider_status = 'queued'
@@ -1523,8 +1523,8 @@ async fn database_config_auth_verification_codes_queue_messaging_delivery_in_ser
         r#"
         SELECT payload_redacted
         FROM messaging_delivery_event
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND provider_code = 'sendgrid'
           AND event_type = 'queued'
         LIMIT 1
@@ -1633,7 +1633,7 @@ async fn database_config_auth_verification_codes_return_429_when_messaging_rate_
         r#"
         SELECT delivery_status
         FROM messaging_send_request
-        WHERE tenant_id = 10 AND organization_id = 20
+        WHERE tenant_id = 100001 AND organization_id = 0
         ORDER BY id ASC
         "#,
     )
@@ -1649,7 +1649,7 @@ async fn database_config_auth_verification_codes_return_429_when_messaging_rate_
         r#"
         SELECT COUNT(*)
         FROM messaging_send_attempt
-        WHERE tenant_id = 10 AND organization_id = 20
+        WHERE tenant_id = 100001 AND organization_id = 0
         "#,
     )
     .fetch_one(&pool)
@@ -1661,7 +1661,7 @@ async fn database_config_auth_verification_codes_return_429_when_messaging_rate_
         r#"
         SELECT send_count, reject_count
         FROM messaging_rate_limit_bucket
-        WHERE tenant_id = 10 AND organization_id = 20
+        WHERE tenant_id = 100001 AND organization_id = 0
         LIMIT 1
         "#,
     )
@@ -1675,8 +1675,8 @@ async fn database_config_auth_verification_codes_return_429_when_messaging_rate_
         r#"
         SELECT payload_redacted
         FROM messaging_delivery_event
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND event_type = 'rate_limited'
         LIMIT 1
         "#,
@@ -1942,13 +1942,13 @@ async fn database_config_billing_redeem_persists_points_and_history_for_subject(
 
     let verification_pool = create_sqlite_pool(&database_url).await;
     let available_points: i64 = sqlx::query_scalar(
-        "SELECT CAST(available_amount AS INTEGER) FROM commerce_account WHERE tenant_id = '10' AND organization_id = '20' AND owner_user_id = '30' AND asset_type = 'points'",
+        "SELECT CAST(available_amount AS INTEGER) FROM commerce_account WHERE tenant_id = '100001' AND organization_id = '0' AND owner_user_id = '30' AND asset_type = 'points'",
     )
     .fetch_one(&verification_pool)
     .await
     .unwrap();
     let other_available_points: i64 = sqlx::query_scalar(
-        "SELECT CAST(available_amount AS INTEGER) FROM commerce_account WHERE tenant_id = '10' AND organization_id = '20' AND owner_user_id = '31' AND asset_type = 'points'",
+        "SELECT CAST(available_amount AS INTEGER) FROM commerce_account WHERE tenant_id = '100001' AND organization_id = '0' AND owner_user_id = '31' AND asset_type = 'points'",
     )
     .fetch_one(&verification_pool)
     .await
@@ -2003,19 +2003,19 @@ async fn database_config_billing_redeem_replays_same_idempotency_key_via_appbase
 
     let verification_pool = create_sqlite_pool(&database_url).await;
     let ledger_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM commerce_account_ledger_entry WHERE tenant_id = '10' AND organization_id = '20' AND owner_user_id = '30' AND asset_type = 'points'",
+        "SELECT COUNT(1) FROM commerce_account_ledger_entry WHERE tenant_id = '100001' AND organization_id = '0' AND owner_user_id = '30' AND asset_type = 'points'",
     )
     .fetch_one(&verification_pool)
     .await
     .unwrap();
     let coupon_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM promotion_user_coupon WHERE tenant_id = '10' AND organization_id = '20' AND owner_user_id = '30'",
+        "SELECT COUNT(1) FROM promotion_user_coupon WHERE tenant_id = '100001' AND organization_id = '0' AND owner_user_id = '30'",
     )
     .fetch_one(&verification_pool)
     .await
     .unwrap();
     let available_points: i64 = sqlx::query_scalar(
-        "SELECT CAST(available_amount AS INTEGER) FROM commerce_account WHERE tenant_id = '10' AND organization_id = '20' AND owner_user_id = '30' AND asset_type = 'points'",
+        "SELECT CAST(available_amount AS INTEGER) FROM commerce_account WHERE tenant_id = '100001' AND organization_id = '0' AND owner_user_id = '30' AND asset_type = 'points'",
     )
     .fetch_one(&verification_pool)
     .await
@@ -2140,7 +2140,7 @@ async fn database_config_billing_reads_return_empty_defaults_when_optional_read_
     ] {
         let (status, payload, body_text) = request_json(
             router.clone(),
-            session_request("GET", uri, Body::empty(), 10, 20, 30),
+            session_request("GET", uri, Body::empty(), 100001, 0, 30),
         )
         .await;
         assert_eq!(StatusCode::OK, status, "{uri}: {body_text}");
@@ -2306,7 +2306,7 @@ async fn database_config_payment_aggregate_create_uses_sqlite_runtime_store_and_
 
     let (create_status, create_payload, create_body_text) = request_json(
         router.clone(),
-        session_request_builder("POST", "/payments/v3/payment_intents", 10, 20, 30)
+        session_request_builder("POST", "/payments/v3/payment_intents", 100001, 0, 30)
             .header("content-type", "application/json")
             .header("Idempotency-Key", "aggregate-create-idem-1001")
             .body(Body::from(request_body.clone()))
@@ -2332,7 +2332,7 @@ async fn database_config_payment_aggregate_create_uses_sqlite_runtime_store_and_
 
     let (duplicate_status, duplicate_payload, duplicate_body_text) = request_json(
         router.clone(),
-        session_request_builder("POST", "/payments/v3/payment_intents", 10, 20, 30)
+        session_request_builder("POST", "/payments/v3/payment_intents", 100001, 0, 30)
             .header("content-type", "application/json")
             .header("Idempotency-Key", "aggregate-create-idem-1001")
             .body(Body::from(request_body))
@@ -2348,7 +2348,7 @@ async fn database_config_payment_aggregate_create_uses_sqlite_runtime_store_and_
 
     let (refund_status, refund_payload, refund_body_text) = request_json(
         router,
-        session_request_builder("POST", "/payments/v3/refunds", 10, 20, 30)
+        session_request_builder("POST", "/payments/v3/refunds", 100001, 0, 30)
             .header("content-type", "application/json")
             .header("Idempotency-Key", "aggregate-refund-idem-1001")
             .body(Body::from(
@@ -2394,7 +2394,7 @@ async fn database_config_payment_aggregate_create_uses_sqlite_runtime_store_and_
         1,
         scalar_i64(
             &pool,
-            "SELECT COUNT(1) FROM commerce_payment_intent WHERE tenant_id = '10' AND organization_id = '20' AND owner_user_id = '30' AND merchant_order_no = 'aggregate-order-1001' AND subject = 'standard checkout' AND provider_code = 'stripe' AND payment_method = 'card' AND scene_code = 'web' AND idempotency_key = 'aggregate-create-idem-1001'"
+            "SELECT COUNT(1) FROM commerce_payment_intent WHERE tenant_id = '100001' AND organization_id = '0' AND owner_user_id = '30' AND merchant_order_no = 'aggregate-order-1001' AND subject = 'standard checkout' AND provider_code = 'stripe' AND payment_method = 'card' AND scene_code = 'web' AND idempotency_key = 'aggregate-create-idem-1001'"
         )
         .await
     );
@@ -2402,7 +2402,7 @@ async fn database_config_payment_aggregate_create_uses_sqlite_runtime_store_and_
         1,
         scalar_i64(
             &pool,
-            "SELECT COUNT(1) FROM commerce_payment_attempt WHERE tenant_id = '10' AND provider = 'stripe' AND out_trade_no = 'aggregate-order-1001'"
+            "SELECT COUNT(1) FROM commerce_payment_attempt WHERE tenant_id = '100001' AND provider = 'stripe' AND out_trade_no = 'aggregate-order-1001'"
         )
         .await
     );
@@ -2410,7 +2410,7 @@ async fn database_config_payment_aggregate_create_uses_sqlite_runtime_store_and_
         1,
         scalar_i64(
             &pool,
-            "SELECT COUNT(1) FROM commerce_payment_route_decision WHERE tenant_id = '10' AND provider_code = 'stripe' AND method_code = 'card' AND scene_code = 'web'"
+            "SELECT COUNT(1) FROM commerce_payment_route_decision WHERE tenant_id = '100001' AND provider_code = 'stripe' AND method_code = 'card' AND scene_code = 'web'"
         )
         .await
     );
@@ -2418,7 +2418,7 @@ async fn database_config_payment_aggregate_create_uses_sqlite_runtime_store_and_
         1,
         scalar_i64(
             &pool,
-            "SELECT COUNT(1) FROM commerce_refund WHERE tenant_id = '10' AND refund_no = 'aggregate-refund-1001' AND status = 'failed'"
+            "SELECT COUNT(1) FROM commerce_refund WHERE tenant_id = '100001' AND refund_no = 'aggregate-refund-1001' AND status = 'failed'"
         )
         .await
     );
@@ -2426,7 +2426,7 @@ async fn database_config_payment_aggregate_create_uses_sqlite_runtime_store_and_
         1,
         scalar_i64(
             &pool,
-            "SELECT COUNT(1) FROM commerce_refund_attempt WHERE tenant_id = '10' AND out_refund_no = 'aggregate-refund-1001' AND status = 'FAILED'"
+            "SELECT COUNT(1) FROM commerce_refund_attempt WHERE tenant_id = '100001' AND out_refund_no = 'aggregate-refund-1001' AND status = 'FAILED'"
         )
         .await
     );
@@ -2434,7 +2434,7 @@ async fn database_config_payment_aggregate_create_uses_sqlite_runtime_store_and_
         1,
         scalar_i64(
             &pool,
-            "SELECT COUNT(1) FROM commerce_refund_event WHERE tenant_id = '10' AND event_type = 'refund.failed'"
+            "SELECT COUNT(1) FROM commerce_refund_event WHERE tenant_id = '100001' AND event_type = 'refund.failed'"
         )
         .await
     );
@@ -2442,7 +2442,7 @@ async fn database_config_payment_aggregate_create_uses_sqlite_runtime_store_and_
         2,
         scalar_i64(
             &pool,
-            "SELECT COUNT(1) FROM commerce_refund_item WHERE tenant_id = '10' AND refund_id = (SELECT id FROM commerce_refund WHERE refund_no = 'aggregate-refund-1001')"
+            "SELECT COUNT(1) FROM commerce_refund_item WHERE tenant_id = '100001' AND refund_id = (SELECT id FROM commerce_refund WHERE refund_no = 'aggregate-refund-1001')"
         )
         .await
     );
@@ -2609,7 +2609,7 @@ async fn database_config_app_routing_routes_require_session_scope_and_redact_sen
 
     let (update_status, update_payload, update_body_text) = request_json(
         router.clone(),
-        session_request_builder("PUT", "/app/v3/api/ai/routing/strategy", 10, 20, 30)
+        session_request_builder("PUT", "/app/v3/api/ai/routing/strategy", 100001, 0, 30)
             .header("content-type", "application/json")
             .body(Body::from(
                 serde_json::json!({
@@ -2671,7 +2671,7 @@ async fn database_config_app_routing_routes_require_session_scope_and_redact_sen
 
     let (repeat_update_status, repeat_update_payload, repeat_update_body_text) = request_json(
         router.clone(),
-        session_request_builder("PUT", "/app/v3/api/ai/routing/strategy", 10, 20, 30)
+        session_request_builder("PUT", "/app/v3/api/ai/routing/strategy", 100001, 0, 30)
             .header("content-type", "application/json")
             .body(Body::from(
                 serde_json::json!({
@@ -2698,7 +2698,7 @@ async fn database_config_app_routing_routes_require_session_scope_and_redact_sen
     let (collision_update_status, collision_update_payload, collision_update_body_text) =
         request_json(
             router.clone(),
-            session_request_builder("PUT", "/app/v3/api/ai/routing/strategy", 10, 20, 30)
+            session_request_builder("PUT", "/app/v3/api/ai/routing/strategy", 100001, 0, 30)
                 .header("content-type", "application/json")
                 .body(Body::from(
                     serde_json::json!({
@@ -2729,19 +2729,19 @@ async fn database_config_app_routing_routes_require_session_scope_and_redact_sen
 
     let verification_pool = create_sqlite_pool(&database_url).await;
     let active_profile_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(*) FROM ai_routing_profile WHERE tenant_id = 10 AND organization_id = 20 AND policy_id = 4020 AND deleted_at IS NULL",
+        "SELECT COUNT(*) FROM ai_routing_profile WHERE tenant_id = 100001 AND organization_id = 0 AND policy_id = 4020 AND deleted_at IS NULL",
     )
     .fetch_one(&verification_pool)
     .await
     .unwrap();
     let active_rule_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(*) FROM ai_routing_rule WHERE tenant_id = 10 AND organization_id = 20 AND status = 1 AND deleted_at IS NULL",
+        "SELECT COUNT(*) FROM ai_routing_rule WHERE tenant_id = 100001 AND organization_id = 0 AND status = 1 AND deleted_at IS NULL",
     )
     .fetch_one(&verification_pool)
     .await
     .unwrap();
     let current_default_profile_id: i64 = sqlx::query_scalar(
-        "SELECT default_profile_id FROM ai_routing_policy WHERE tenant_id = 10 AND organization_id = 20 AND policy_code = 'console-routing-default'",
+        "SELECT default_profile_id FROM ai_routing_policy WHERE tenant_id = 100001 AND organization_id = 0 AND policy_code = 'console-routing-default'",
     )
     .fetch_one(&verification_pool)
     .await
@@ -2803,7 +2803,7 @@ async fn database_config_app_routing_channel_commands_persist_and_scope_without_
     let (invalid_base_url_status, invalid_base_url_payload, invalid_base_url_body_text) =
         request_json(
             router.clone(),
-            session_request_builder("POST", "/app/v3/api/ai/routing/channels", 10, 20, 30)
+            session_request_builder("POST", "/app/v3/api/ai/routing/channels", 100001, 0, 30)
                 .header("content-type", "application/json")
                 .body(Body::from(invalid_base_url_body.to_string()))
                 .unwrap(),
@@ -2827,7 +2827,7 @@ async fn database_config_app_routing_channel_commands_persist_and_scope_without_
     });
     let (create_status, create_payload, create_body_text) = request_json(
         router.clone(),
-        session_request_builder("POST", "/app/v3/api/ai/routing/channels", 10, 20, 30)
+        session_request_builder("POST", "/app/v3/api/ai/routing/channels", 100001, 0, 30)
             .header("content-type", "application/json")
             .header("X-Request-Id", "app-routing-channel-create-1")
             .body(Body::from(create_body.to_string()))
@@ -3061,7 +3061,7 @@ async fn database_config_app_routing_channel_commands_persist_and_scope_without_
     let verification_pool = create_sqlite_pool(&database_url).await;
     let parsed_channel_id = created_channel_id.parse::<i64>().unwrap();
     let deleted_status: i64 = sqlx::query_scalar(
-        "SELECT status FROM ai_channel WHERE id = ?1 AND tenant_id = 10 AND organization_id = 20",
+        "SELECT status FROM ai_channel WHERE id = ?1 AND tenant_id = 100001 AND organization_id = 0",
     )
     .bind(parsed_channel_id)
     .fetch_one(&verification_pool)
@@ -3081,7 +3081,7 @@ async fn database_config_app_routing_channel_commands_persist_and_scope_without_
     .await
     .unwrap();
     let other_tenant_channel_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM ai_channel WHERE tenant_id = 10 AND organization_id = 21 AND deleted_at IS NULL",
+        "SELECT COUNT(1) FROM ai_channel WHERE tenant_id = 100001 AND organization_id = 21 AND deleted_at IS NULL",
     )
     .fetch_one(&verification_pool)
     .await
@@ -3225,8 +3225,8 @@ async fn database_config_app_routing_channel_test_runs_real_provider_probe_and_r
         r#"
         SELECT request_id, health_status, latency_ms, http_status, error_code, error_message_masked
         FROM integration_provider_health_snapshot
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND provider_id = 4001
           AND channel_id = 4003
           AND provider_account_id = 4003
@@ -3370,8 +3370,8 @@ async fn database_config_app_routing_channel_test_records_masked_provider_failur
         r#"
         SELECT request_id, health_status, latency_ms, http_status, error_code, error_message_masked
         FROM integration_provider_health_snapshot
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND provider_id = 4001
           AND channel_id = 4003
           AND provider_account_id = 4003
@@ -3437,7 +3437,7 @@ async fn database_config_app_providers_require_session_scope_and_hide_secret_ref
 
     let (status, payload, body_text) = request_json(
         router,
-        session_request("GET", "/app/v3/api/ai/providers", Body::empty(), 10, 20, 30),
+        session_request("GET", "/app/v3/api/ai/providers", Body::empty(), 100001, 0, 30),
     )
     .await;
 
@@ -3533,7 +3533,7 @@ async fn database_config_notification_delivery_schema_supports_app_acknowledgeme
         INSERT INTO ops_notification_delivery
             (uuid, tenant_id, organization_id, user_id, status, app_id, message_id, delivery_channel, delivery_status, read_at, popup_seen_at, delivered_at, created_at, updated_at)
         VALUES
-            ('ack-1', 10, 20, 30, 1, 'default', 2007, 1, 2, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+            ('ack-1', 100001, 0, 30, 1, 'default', 2007, 1, 2, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
         ON CONFLICT(tenant_id, organization_id, message_id, user_id, app_id, delivery_channel) DO UPDATE SET
             read_at = COALESCE(ops_notification_delivery.read_at, CURRENT_TIMESTAMP),
             popup_seen_at = COALESCE(ops_notification_delivery.popup_seen_at, CURRENT_TIMESTAMP),
@@ -3549,7 +3549,7 @@ async fn database_config_notification_delivery_schema_supports_app_acknowledgeme
         INSERT INTO ops_notification_delivery
             (uuid, tenant_id, organization_id, user_id, status, app_id, message_id, delivery_channel, delivery_status, read_at, popup_seen_at, delivered_at, created_at, updated_at)
         VALUES
-            ('ack-2', 10, 20, 30, 1, 'default', 2007, 1, 2, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+            ('ack-2', 100001, 0, 30, 1, 'default', 2007, 1, 2, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
         ON CONFLICT(tenant_id, organization_id, message_id, user_id, app_id, delivery_channel) DO UPDATE SET
             read_at = COALESCE(ops_notification_delivery.read_at, CURRENT_TIMESTAMP),
             popup_seen_at = COALESCE(ops_notification_delivery.popup_seen_at, CURRENT_TIMESTAMP),
@@ -3564,8 +3564,8 @@ async fn database_config_notification_delivery_schema_supports_app_acknowledgeme
         r#"
         SELECT COUNT(*)
         FROM ops_notification_delivery
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND message_id = 2007
           AND user_id = 30
           AND app_id = 'default'
@@ -3778,7 +3778,7 @@ async fn database_config_recharge_lists_packages_and_persists_pending_payment_or
 
     let (recharge_status, recharge_payload, recharge_body_text) = request_json(
         router,
-        session_request_builder("POST", "/app/v3/api/recharges/orders", 10, 20, 30)
+        session_request_builder("POST", "/app/v3/api/recharges/orders", 100001, 0, 30)
             .header("content-type", "application/json")
             .header("Idempotency-Key", "recharge-owner-idem-1")
             .header("Sdkwork-Request-No", "recharge-owner-request-1")
@@ -3803,13 +3803,13 @@ async fn database_config_recharge_lists_packages_and_persists_pending_payment_or
 
     let verification_pool = create_sqlite_pool(&database_url).await;
     let owner_order_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM commerce_order WHERE tenant_id = '10' AND organization_id = '20' AND owner_user_id = '30' AND subject = 'points_recharge' AND status = 'pending_payment'",
+        "SELECT COUNT(1) FROM commerce_order WHERE tenant_id = '100001' AND organization_id = '0' AND owner_user_id = '30' AND subject = 'points_recharge' AND status = 'pending_payment'",
     )
     .fetch_one(&verification_pool)
     .await
     .unwrap();
     let owner_order_item_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM commerce_order_item oi JOIN commerce_order o ON o.id = oi.order_id WHERE o.tenant_id = '10' AND o.organization_id = '20' AND o.owner_user_id = '30' AND oi.title = 'Starter Recharge Pack'",
+        "SELECT COUNT(1) FROM commerce_order_item oi JOIN commerce_order o ON o.id = oi.order_id WHERE o.tenant_id = '100001' AND o.organization_id = '0' AND o.owner_user_id = '30' AND oi.title = 'Starter Recharge Pack'",
     )
     .fetch_one(&verification_pool)
     .await
@@ -3827,7 +3827,7 @@ async fn database_config_recharge_lists_packages_and_persists_pending_payment_or
     .await
     .unwrap();
     let other_user_order_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM commerce_order WHERE tenant_id = '10' AND organization_id = '20' AND owner_user_id = '31'",
+        "SELECT COUNT(1) FROM commerce_order WHERE tenant_id = '100001' AND organization_id = '0' AND owner_user_id = '31'",
     )
     .fetch_one(&verification_pool)
     .await
@@ -3963,7 +3963,7 @@ async fn database_config_settings_requires_session_and_upserts_subject_preferenc
 
     let (update_status, update_payload, _update_body_text) = request_json(
         router.clone(),
-        session_request_builder("PUT", "/app/v3/api/iam/users/settings", 10, 20, 30)
+        session_request_builder("PUT", "/app/v3/api/iam/users/settings", 100001, 0, 30)
             .header("content-type", "application/json")
             .body(Body::from(
                 serde_json::json!({
@@ -4020,13 +4020,13 @@ async fn database_config_settings_requires_session_and_upserts_subject_preferenc
 
     let verification_pool = create_sqlite_pool(&database_url).await;
     let other_language: String = sqlx::query_scalar(
-        "SELECT language FROM iam_user_preference WHERE tenant_id = 10 AND organization_id = 20 AND user_id = 31",
+        "SELECT language FROM iam_user_preference WHERE tenant_id = 100001 AND organization_id = 0 AND user_id = 31",
     )
     .fetch_one(&verification_pool)
     .await
     .unwrap();
     let other_webhook_url: String = sqlx::query_scalar(
-        "SELECT target_url FROM integration_webhook_endpoint WHERE tenant_id = 10 AND organization_id = 20 AND endpoint_code = 'console-settings-user-31'",
+        "SELECT target_url FROM integration_webhook_endpoint WHERE tenant_id = 100001 AND organization_id = 0 AND endpoint_code = 'console-settings-user-31'",
     )
     .fetch_one(&verification_pool)
     .await
@@ -4571,8 +4571,8 @@ async fn create_schema(pool: &SqlitePool) {
         r#"CREATE TABLE ai_model_mapping_rule (
             id INTEGER PRIMARY KEY,
             uuid TEXT NOT NULL DEFAULT 'seed-model-mapping-rule',
-            tenant_id INTEGER NOT NULL DEFAULT 10,
-            organization_id INTEGER NOT NULL DEFAULT 20,
+            tenant_id INTEGER NOT NULL DEFAULT 100001,
+            organization_id INTEGER NOT NULL DEFAULT 0,
             data_scope INTEGER NOT NULL DEFAULT 0,
             status INTEGER NOT NULL DEFAULT 1,
             created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -4592,8 +4592,8 @@ async fn create_schema(pool: &SqlitePool) {
         r#"CREATE TABLE ai_model_mapping_rule_binding (
             id INTEGER PRIMARY KEY,
             uuid TEXT NOT NULL DEFAULT 'seed-model-mapping-rule-binding',
-            tenant_id INTEGER NOT NULL DEFAULT 10,
-            organization_id INTEGER NOT NULL DEFAULT 20,
+            tenant_id INTEGER NOT NULL DEFAULT 100001,
+            organization_id INTEGER NOT NULL DEFAULT 0,
             data_scope INTEGER NOT NULL DEFAULT 0,
             status INTEGER NOT NULL DEFAULT 1,
             created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -4614,8 +4614,8 @@ async fn create_schema(pool: &SqlitePool) {
         r#"CREATE TABLE ai_model_mapping_rule_item (
             id INTEGER PRIMARY KEY,
             uuid TEXT NOT NULL DEFAULT 'seed-model-mapping-rule-item',
-            tenant_id INTEGER NOT NULL DEFAULT 10,
-            organization_id INTEGER NOT NULL DEFAULT 20,
+            tenant_id INTEGER NOT NULL DEFAULT 100001,
+            organization_id INTEGER NOT NULL DEFAULT 0,
             data_scope INTEGER NOT NULL DEFAULT 0,
             status INTEGER NOT NULL DEFAULT 1,
             created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -4784,8 +4784,8 @@ async fn create_schema(pool: &SqlitePool) {
         r#"CREATE TABLE ai_resource_group_item (
             id INTEGER PRIMARY KEY,
             uuid TEXT,
-            tenant_id INTEGER NOT NULL DEFAULT 10,
-            organization_id INTEGER NOT NULL DEFAULT 20,
+            tenant_id INTEGER NOT NULL DEFAULT 100001,
+            organization_id INTEGER NOT NULL DEFAULT 0,
             data_scope INTEGER,
             status INTEGER NOT NULL,
             created_at TEXT,
@@ -4807,8 +4807,8 @@ async fn create_schema(pool: &SqlitePool) {
         r#"CREATE TABLE ai_channel_resource (
             id INTEGER PRIMARY KEY,
             uuid TEXT,
-            tenant_id INTEGER NOT NULL DEFAULT 10,
-            organization_id INTEGER NOT NULL DEFAULT 20,
+            tenant_id INTEGER NOT NULL DEFAULT 100001,
+            organization_id INTEGER NOT NULL DEFAULT 0,
             data_scope INTEGER,
             status INTEGER NOT NULL,
             created_at TEXT,
@@ -4833,8 +4833,8 @@ async fn create_schema(pool: &SqlitePool) {
         r#"CREATE TABLE ai_channel_credential (
             id INTEGER PRIMARY KEY,
             uuid TEXT,
-            tenant_id INTEGER NOT NULL DEFAULT 10,
-            organization_id INTEGER NOT NULL DEFAULT 20,
+            tenant_id INTEGER NOT NULL DEFAULT 100001,
+            organization_id INTEGER NOT NULL DEFAULT 0,
             data_scope INTEGER,
             status INTEGER NOT NULL,
             created_at TEXT,
@@ -6407,7 +6407,7 @@ async fn seed_messaging_verification_delivery(pool: &SqlitePool) {
         INSERT INTO integration_provider
             (id, uuid, tenant_id, organization_id, provider_code, display_name, status)
         VALUES
-            (9100, 'provider-sendgrid', 10, 20, 'sendgrid', 'SendGrid', 1)
+            (9100, 'provider-sendgrid', 100001, 0, 'sendgrid', 'SendGrid', 1)
         "#,
     )
     .execute(pool)
@@ -6419,7 +6419,7 @@ async fn seed_messaging_verification_delivery(pool: &SqlitePool) {
             (id, uuid, tenant_id, organization_id, provider_id, provider_code, account_code,
              account_name, auth_type, secret_ref, status)
         VALUES
-            (9101, 'provider-account-sendgrid', 10, 20, 9100, 'sendgrid', 'email-primary',
+            (9101, 'provider-account-sendgrid', 100001, 0, 9100, 'sendgrid', 'email-primary',
              'Primary SendGrid', 1, 'vault://providers/sendgrid/account/primary', 1)
         "#,
     )
@@ -6433,7 +6433,7 @@ async fn seed_messaging_verification_delivery(pool: &SqlitePool) {
              channel, delivery_purpose, supports_delivery_receipt, supports_test_send,
              health_status, status)
         VALUES
-            (3101, 'cap-sendgrid-email-verification', 10, 20, 'sendgrid', 9101,
+            (3101, 'cap-sendgrid-email-verification', 100001, 0, 'sendgrid', 9101,
              'email', 'verification', 1, 1, 'healthy', 1)
         "#,
     )
@@ -6446,7 +6446,7 @@ async fn seed_messaging_verification_delivery(pool: &SqlitePool) {
             (id, uuid, tenant_id, organization_id, provider_account_id, provider_code, channel,
              identity_code, display_name, from_email, from_name, approval_status, status)
         VALUES
-            (8101, 'sender-noreply', 10, 20, 9101, 'sendgrid', 'email',
+            (8101, 'sender-noreply', 100001, 0, 9101, 'sendgrid', 'email',
              'noreply', 'No Reply', 'noreply@example.com', 'SDKWORK', 'approved', 1)
         "#,
     )
@@ -6460,7 +6460,7 @@ async fn seed_messaging_verification_delivery(pool: &SqlitePool) {
              code_length, ttl_seconds, resend_interval_seconds, max_send_per_hour,
              max_verify_attempts, template_code, risk_policy, status)
         VALUES
-            (6101, 10, 20, 'register', '["email"]', 'email',
+            (6101, 100001, 0, 'register', '["email"]', 'email',
              6, 300, 60, 5, 5, 'REGISTER_EMAIL', '{}', 1)
         "#,
     )
@@ -6473,7 +6473,7 @@ async fn seed_messaging_verification_delivery(pool: &SqlitePool) {
             (id, uuid, tenant_id, organization_id, template_code, scene_code, channel,
              delivery_purpose, category, template_name, current_version_id, publish_status, status)
         VALUES
-            (7000, 'template-register-email', 10, 20, 'REGISTER_EMAIL', 'register', 'email',
+            (7000, 'template-register-email', 100001, 0, 'REGISTER_EMAIL', 'register', 'email',
              'verification', 'otp', 'Register Email', 7001, 'published', 1)
         "#,
     )
@@ -6487,7 +6487,7 @@ async fn seed_messaging_verification_delivery(pool: &SqlitePool) {
              text_template, html_template, variable_schema, content_hash, review_status,
              published_at, status)
         VALUES
-            (7001, 'template-register-email-v1', 10, 20, 7000, 1, 'Your verification code',
+            (7001, 'template-register-email-v1', 100001, 0, 7000, 1, 'Your verification code',
              'Code {{code}} expires at {{expiresAt}}',
              '<p>Code {{code}} expires at {{expiresAt}}</p>',
              '{"required":["code","expiresAt"]}', 'hash-register-email-v1',
@@ -6503,7 +6503,7 @@ async fn seed_messaging_verification_delivery(pool: &SqlitePool) {
             (id, uuid, tenant_id, organization_id, template_version_id, channel, locale,
              content_format, body_template, status)
         VALUES
-            (7101, 'template-register-email-v1-default', 10, 20, 7001, 'email', 'default',
+            (7101, 'template-register-email-v1-default', 100001, 0, 7001, 'email', 'default',
              'html', '<p>Code {{code}} expires at {{expiresAt}}</p>', 1)
         "#,
     )
@@ -6517,7 +6517,7 @@ async fn seed_messaging_verification_delivery(pool: &SqlitePool) {
              delivery_purpose, country_code, locale, user_segment, priority, weight,
              failover_policy, status)
         VALUES
-            (4001, 'route-register-email', 10, 20, 'register-email', 'register', 'email',
+            (4001, 'route-register-email', 100001, 0, 'register-email', 'register', 'email',
              'verification', '*', '*', '*', 10, 100, '{}', 1)
         "#,
     )
@@ -6530,7 +6530,7 @@ async fn seed_messaging_verification_delivery(pool: &SqlitePool) {
             (id, uuid, tenant_id, organization_id, route_rule_id, provider_account_id,
              provider_code, sender_identity_id, target_order, weight, status)
         VALUES
-            (5001, 'route-register-email-target', 10, 20, 4001, 9101,
+            (5001, 'route-register-email-target', 100001, 0, 4001, 9101,
              'sendgrid', 8101, 1, 100, 1)
         "#,
     )
@@ -6543,25 +6543,25 @@ async fn seed_catalog_with_two_user_api_keys(pool: &SqlitePool) {
     let owner_key_metadata = api_key_metadata_json("sk-owner-secret");
     let other_key_metadata = api_key_metadata_json("sk-other-secret");
     for statement in [
-        "INSERT INTO ai_model_vendor (id, uuid, tenant_id, organization_id, vendor_code, display_name, status, sort_order) VALUES (1, 'vendor-openai-app-api-test', 10, 20, 'openai', 'OpenAI', 1, 1)",
-        "INSERT INTO ai_model_vendor (id, uuid, tenant_id, organization_id, vendor_code, display_name, status, sort_order) VALUES (2, 'vendor-cohere-app-api-test', 10, 20, 'cohere', 'Cohere', 1, 2)",
+        "INSERT INTO ai_model_vendor (id, uuid, tenant_id, organization_id, vendor_code, display_name, status, sort_order) VALUES (1, 'vendor-openai-app-api-test', 100001, 0, 'openai', 'OpenAI', 1, 1)",
+        "INSERT INTO ai_model_vendor (id, uuid, tenant_id, organization_id, vendor_code, display_name, status, sort_order) VALUES (2, 'vendor-cohere-app-api-test', 100001, 0, 'cohere', 'Cohere', 1, 2)",
         r#"INSERT INTO ai_model
             (id, uuid, tenant_id, organization_id, catalog_key, model, display_name, vendor_code, capabilities, release_stage, shelf_state, routing_state, status, rank_score)
             VALUES (1, 'model-openai-gpt-4o-mini-app-api-test', 0, 0, 'openai/gpt-4o-mini', 'gpt-4o-mini', 'GPT-4o mini', 'openai', '["chat"]', 1, 1, 1, 1, '100.0')"#,
-        "INSERT INTO ai_provider (id, tenant_id, organization_id, provider_code, default_vendor_code, provider_type, protocol_code, base_url, status) VALUES (2, 10, 20, 'openrouter', 'openai', 'relay_aggregator', 'openai_v1', 'http://provider-proxy.internal/openrouter-template', 1)",
-        "INSERT INTO ai_channel (id, tenant_id, organization_id, provider_id, provider_code, channel_code, channel_name, channel_type, base_url, credential_ref, region_code, status, priority, weight, health_status) VALUES (3001, 10, 20, 2, 'openrouter', 'openrouter-main', 'OpenRouter Main', 'relay', 'http://provider-proxy.internal/openrouter', 'vault://providers/openrouter/account/main', 'global', 1, 10, 100, 1)",
-        "INSERT INTO ai_channel_credential (id, uuid, tenant_id, organization_id, channel_id, provider_code, channel_code, credential_name, auth_config, credential_ref, credential_hash, base_url, priority, weight, health_status, status) VALUES (300101, 'channel-credential-openrouter-main', 10, 20, 3001, 'openrouter', 'openrouter-main', 'primary', '{}', 'vault://providers/openrouter/account/main', 'hash:openrouter-main', 'http://provider-proxy.internal/openrouter', 1, 100, 1, 1)",
-        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, status, sort_order) VALUES (9101, 'resource-vendor-openai-app-api-test', 10, 20, 'vendor.openai', 'vendor', 'OpenAI', 'openai', 1, 1)",
-        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, status, sort_order) VALUES (9106, 'resource-vendor-cohere-app-api-test', 10, 20, 'vendor.cohere', 'vendor', 'Cohere', 'cohere', 1, 6)",
-        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, catalog_key, model, provider_native_model, status, sort_order) VALUES (9102, 'resource-model-openai-gpt-4o-mini-app-api-test', 10, 20, 'model.openai.gpt-4o-mini.chat', 'model_api', 'GPT-4o mini Chat', 'openai', 'chat', 'openai.chat_completions', 'openai/gpt-4o-mini', 'gpt-4o-mini', 'gpt-4o-mini', 1, 2)",
-        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, modality_code, status, sort_order) VALUES (9103, 'resource-modality-llm-app-api-test', 10, 20, 'modality.llm', 'modality', 'LLM', 'llm', 1, 3)",
-        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, modality_code, status, sort_order) VALUES (9104, 'resource-modality-image-app-api-test', 10, 20, 'modality.image', 'modality', 'Image', 'image', 1, 4)",
-        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, catalog_key, model, provider_native_model, status, sort_order) VALUES (9105, 'resource-model-openai-gpt-4o-mini-image-app-api-test', 10, 20, 'model.openai.gpt-4o-mini.image', 'model_api', 'GPT-4o mini Image', 'openai', 'image', 'openai.images', 'openai/gpt-4o-mini', 'gpt-4o-mini', 'gpt-4o-mini', 1, 5)",
-        "INSERT INTO ai_channel_resource (id, uuid, tenant_id, organization_id, channel_id, provider_code, channel_code, resource_id, resource_code, grant_type, priority, status) VALUES (9202, 'channel-resource-openrouter-gpt-4o-mini-app-api-test', 10, 20, 3001, 'openrouter', 'openrouter-main', 9102, 'model.openai.gpt-4o-mini.chat', 'allow', 1, 1)",
-        "INSERT INTO ai_channel_group_resource (id, uuid, tenant_id, organization_id, channel_group_id, resource_id, resource_code, grant_type, priority, status) VALUES (9203, 'channel-group-resource-openrouter-gpt-4o-mini-app-api-test', 10, 20, 10, 9102, 'model.openai.gpt-4o-mini.chat', 'allow', 1, 1)",
+        "INSERT INTO ai_provider (id, tenant_id, organization_id, provider_code, default_vendor_code, provider_type, protocol_code, base_url, status) VALUES (2, 100001, 0, 'openrouter', 'openai', 'relay_aggregator', 'openai_v1', 'http://provider-proxy.internal/openrouter-template', 1)",
+        "INSERT INTO ai_channel (id, tenant_id, organization_id, provider_id, provider_code, channel_code, channel_name, channel_type, base_url, credential_ref, region_code, status, priority, weight, health_status) VALUES (3001, 100001, 0, 2, 'openrouter', 'openrouter-main', 'OpenRouter Main', 'relay', 'http://provider-proxy.internal/openrouter', 'vault://providers/openrouter/account/main', 'global', 1, 10, 100, 1)",
+        "INSERT INTO ai_channel_credential (id, uuid, tenant_id, organization_id, channel_id, provider_code, channel_code, credential_name, auth_config, credential_ref, credential_hash, base_url, priority, weight, health_status, status) VALUES (300101, 'channel-credential-openrouter-main', 100001, 0, 3001, 'openrouter', 'openrouter-main', 'primary', '{}', 'vault://providers/openrouter/account/main', 'hash:openrouter-main', 'http://provider-proxy.internal/openrouter', 1, 100, 1, 1)",
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, status, sort_order) VALUES (9101, 'resource-vendor-openai-app-api-test', 100001, 0, 'vendor.openai', 'vendor', 'OpenAI', 'openai', 1, 1)",
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, status, sort_order) VALUES (9106, 'resource-vendor-cohere-app-api-test', 100001, 0, 'vendor.cohere', 'vendor', 'Cohere', 'cohere', 1, 6)",
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, catalog_key, model, provider_native_model, status, sort_order) VALUES (9102, 'resource-model-openai-gpt-4o-mini-app-api-test', 100001, 0, 'model.openai.gpt-4o-mini.chat', 'model_api', 'GPT-4o mini Chat', 'openai', 'chat', 'openai.chat_completions', 'openai/gpt-4o-mini', 'gpt-4o-mini', 'gpt-4o-mini', 1, 2)",
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, modality_code, status, sort_order) VALUES (9103, 'resource-modality-llm-app-api-test', 100001, 0, 'modality.llm', 'modality', 'LLM', 'llm', 1, 3)",
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, modality_code, status, sort_order) VALUES (9104, 'resource-modality-image-app-api-test', 100001, 0, 'modality.image', 'modality', 'Image', 'image', 1, 4)",
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, catalog_key, model, provider_native_model, status, sort_order) VALUES (9105, 'resource-model-openai-gpt-4o-mini-image-app-api-test', 100001, 0, 'model.openai.gpt-4o-mini.image', 'model_api', 'GPT-4o mini Image', 'openai', 'image', 'openai.images', 'openai/gpt-4o-mini', 'gpt-4o-mini', 'gpt-4o-mini', 1, 5)",
+        "INSERT INTO ai_channel_resource (id, uuid, tenant_id, organization_id, channel_id, provider_code, channel_code, resource_id, resource_code, grant_type, priority, status) VALUES (9202, 'channel-resource-openrouter-gpt-4o-mini-app-api-test', 100001, 0, 3001, 'openrouter', 'openrouter-main', 9102, 'model.openai.gpt-4o-mini.chat', 'allow', 1, 1)",
+        "INSERT INTO ai_channel_group_resource (id, uuid, tenant_id, organization_id, channel_group_id, resource_id, resource_code, grant_type, priority, status) VALUES (9203, 'channel-group-resource-openrouter-gpt-4o-mini-app-api-test', 100001, 0, 10, 9102, 'model.openai.gpt-4o-mini.chat', 'allow', 1, 1)",
         "INSERT INTO ai_pricing_plan (id, plan_code, base_price_side, default_multiplier, default_markup_amount, currency, status, priority) VALUES (1, 'standard', 1, '1.200000', '0.000000', 'USD', 1, 1)",
-        "INSERT INTO ai_channel_group (id, tenant_id, organization_id, group_code, group_name, pricing_plan_code, rate_multiplier, official_price_multiplier, status, updated_at) VALUES (10, 10, 20, 'standard-group', 'Standard Group', 'standard', '1.000000', '1.100000', 1, '2026-04-29 09:00:00')",
-        "INSERT INTO ai_channel_group_member (id, tenant_id, organization_id, channel_group_id, channel_id, priority, weight, enabled, status) VALUES (600, 10, 20, 10, 3001, 1, 100, 1, 1)",
+        "INSERT INTO ai_channel_group (id, tenant_id, organization_id, group_code, group_name, pricing_plan_code, rate_multiplier, official_price_multiplier, status, updated_at) VALUES (10, 100001, 0, 'standard-group', 'Standard Group', 'standard', '1.000000', '1.100000', 1, '2026-04-29 09:00:00')",
+        "INSERT INTO ai_channel_group_member (id, tenant_id, organization_id, channel_group_id, channel_id, priority, weight, enabled, status) VALUES (600, 100001, 0, 10, 3001, 1, 100, 1, 1)",
         "INSERT INTO ai_model_pricing (id, catalog_key, model, region_code, price_side, billing_meter_code, unit_price, currency, status, priority) VALUES (1, 'openai/gpt-4o-mini', 'gpt-4o-mini', 'global', 1, 'llm_input_token', '0.150000', 'USD', 1, 1)",
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
@@ -6570,7 +6570,7 @@ async fn seed_catalog_with_two_user_api_keys(pool: &SqlitePool) {
         r#"
         INSERT INTO iam_gateway_api_key
             (id, tenant_id, organization_id, user_id, channel_group_id, name, key_prefix, key_display_masked, key_hash, idempotency_key, status, created_at, updated_at, metadata)
-            VALUES (100, 10, 20, 30, 10, 'Owner Key', 'sk-owner', 'sk-owner********ABCD', 'hash:owner', 'seed-owner-key', 1, '2026-04-10 20:55:41', '2026-04-29 09:00:00', ?)
+            VALUES (100, 100001, 0, 30, 10, 'Owner Key', 'sk-owner', 'sk-owner********ABCD', 'hash:owner', 'seed-owner-key', 1, '2026-04-10 20:55:41', '2026-04-29 09:00:00', ?)
         "#,
     )
     .bind(&owner_key_metadata)
@@ -6581,7 +6581,7 @@ async fn seed_catalog_with_two_user_api_keys(pool: &SqlitePool) {
         r#"
         INSERT INTO iam_gateway_api_key
             (id, tenant_id, organization_id, user_id, channel_group_id, name, key_prefix, key_display_masked, key_hash, idempotency_key, status, created_at, updated_at, metadata)
-            VALUES (101, 10, 20, 31, 10, 'Other User Key', 'sk-other', 'sk-other********WXYZ', 'hash:other', 'seed-other-key', 1, '2026-04-10 20:55:42', '2026-04-29 09:01:00', ?)
+            VALUES (101, 100001, 0, 31, 10, 'Other User Key', 'sk-other', 'sk-other********WXYZ', 'hash:other', 'seed-other-key', 1, '2026-04-10 20:55:42', '2026-04-29 09:01:00', ?)
         "#,
     )
     .bind(&other_key_metadata)
@@ -6589,8 +6589,8 @@ async fn seed_catalog_with_two_user_api_keys(pool: &SqlitePool) {
     .await
     .unwrap();
     for statement in [
-        "INSERT INTO iam_gateway_api_key_channel_group (id, uuid, tenant_id, organization_id, user_id, api_key_id, channel_group_id, channel_group_code, binding_role, routing_strategy, priority, weight, status) VALUES (1000, 'gateway-api-key-channel-group-owner-app-api-test', 10, 20, 30, 100, 10, 'standard-group', 'route', 'auto', 100, 100, 1)",
-        "INSERT INTO iam_gateway_api_key_channel_group (id, uuid, tenant_id, organization_id, user_id, api_key_id, channel_group_id, channel_group_code, binding_role, routing_strategy, priority, weight, status) VALUES (1001, 'gateway-api-key-channel-group-other-app-api-test', 10, 20, 31, 101, 10, 'standard-group', 'route', 'auto', 100, 100, 1)",
+        "INSERT INTO iam_gateway_api_key_channel_group (id, uuid, tenant_id, organization_id, user_id, api_key_id, channel_group_id, channel_group_code, binding_role, routing_strategy, priority, weight, status) VALUES (1000, 'gateway-api-key-channel-group-owner-app-api-test', 100001, 0, 30, 100, 10, 'standard-group', 'route', 'auto', 100, 100, 1)",
+        "INSERT INTO iam_gateway_api_key_channel_group (id, uuid, tenant_id, organization_id, user_id, api_key_id, channel_group_id, channel_group_code, binding_role, routing_strategy, priority, weight, status) VALUES (1001, 'gateway-api-key-channel-group-other-app-api-test', 100001, 0, 31, 101, 10, 'standard-group', 'route', 'auto', 100, 100, 1)",
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }
@@ -6615,29 +6615,29 @@ async fn seed_app_user_data(pool: &SqlitePool) {
     for statement in [
         r#"INSERT INTO iam_tenant
             (id, code, name, status, created_at, updated_at)
-            VALUES ('10', 'default', 'Default Tenant', 'active', '2026-04-01 00:00:00', '2026-04-29 08:00:00')"#,
+            VALUES ('100001', 'SDKWORK', 'SDKWork', 'active', '2026-04-01 00:00:00', '2026-04-29 08:00:00')"#,
         r#"INSERT INTO iam_organization
             (id, tenant_id, parent_id, code, name, path, status, created_at, updated_at)
-            VALUES ('20', '10', NULL, 'root', 'Root Organization', '/20', 'active', '2026-04-01 00:00:00', '2026-04-29 08:00:00')"#,
+            VALUES ('0', '100001', NULL, 'root', 'Root Organization', '/0', 'active', '2026-04-01 00:00:00', '2026-04-29 08:00:00')"#,
         r#"INSERT INTO iam_user
             (id, tenant_id, username, display_name, email, phone, avatar_media_resource_id, avatar_object_blob_id, avatar_resource_snapshot, status, created_at, updated_at)
-            VALUES ('30', '10', 'owner', 'Owner User', 'owner@example.com', '+15550000030', 'media-owner-avatar', 'iam-user-avatar:owner', '{"kind":"image","source":"provider_asset","uri":"iam-user-avatar:owner"}', 'active', '2026-04-01 08:00:00', '2026-04-29 08:00:00')"#,
+            VALUES ('30', '100001', 'owner', 'Owner User', 'owner@example.com', '+15550000030', 'media-owner-avatar', 'iam-user-avatar:owner', '{"kind":"image","source":"provider_asset","uri":"iam-user-avatar:owner"}', 'active', '2026-04-01 08:00:00', '2026-04-29 08:00:00')"#,
         r#"INSERT INTO iam_user
             (id, tenant_id, username, display_name, email, phone, avatar_media_resource_id, avatar_object_blob_id, avatar_resource_snapshot, status, created_at, updated_at)
-            VALUES ('31', '10', 'other', 'Other User', 'other@example.com', '+15550000031', 'media-other-avatar', 'iam-user-avatar:other', '{"kind":"image","source":"provider_asset","uri":"iam-user-avatar:other"}', 'active', '2026-04-02 08:00:00', '2026-04-29 08:00:00')"#,
+            VALUES ('31', '100001', 'other', 'Other User', 'other@example.com', '+15550000031', 'media-other-avatar', 'iam-user-avatar:other', '{"kind":"image","source":"provider_asset","uri":"iam-user-avatar:other"}', 'active', '2026-04-02 08:00:00', '2026-04-29 08:00:00')"#,
         r#"INSERT INTO iam_organization_membership
             (id, tenant_id, organization_id, user_id, membership_kind, display_name, is_primary, status, joined_at, created_at, updated_at)
-            VALUES ('member-30', '10', '20', '30', 'owner', 'Owner User', 1, 'active', '2026-04-01 08:00:00', '2026-04-01 08:00:00', '2026-04-29 08:00:00')"#,
+            VALUES ('member-30', '100001', '0', '30', 'owner', 'Owner User', 1, 'active', '2026-04-01 08:00:00', '2026-04-01 08:00:00', '2026-04-29 08:00:00')"#,
         r#"INSERT INTO iam_organization_membership
             (id, tenant_id, organization_id, user_id, membership_kind, display_name, is_primary, status, joined_at, created_at, updated_at)
-            VALUES ('member-31', '10', '20', '31', 'member', 'Other User', 0, 'active', '2026-04-02 08:00:00', '2026-04-02 08:00:00', '2026-04-29 08:00:00')"#,
-        "INSERT INTO iam_user_preference (id, tenant_id, organization_id, user_id, language) VALUES (1001, 10, 20, 30, 'zh-CN')",
+            VALUES ('member-31', '100001', '0', '31', 'member', 'Other User', 0, 'active', '2026-04-02 08:00:00', '2026-04-02 08:00:00', '2026-04-29 08:00:00')"#,
+        "INSERT INTO iam_user_preference (id, tenant_id, organization_id, user_id, language) VALUES (1001, 100001, 0, 30, 'zh-CN')",
         r#"INSERT INTO iam_user_security_setting
             (id, tenant_id, organization_id, user_id, last_login_at, password_last_changed_at, mfa_enabled, security_level)
-            VALUES (1002, 10, 20, 30, '2026-04-20 12:00:00', '2026-04-20 12:00:00', 1, 1)"#,
+            VALUES (1002, 100001, 0, 30, '2026-04-20 12:00:00', '2026-04-20 12:00:00', 1, 1)"#,
         r#"INSERT INTO iam_user_login_event
             (id, tenant_id, organization_id, user_id, request_id, occurred_at, created_at, client_ip_masked)
-            VALUES (1003, 10, 20, 30, 'owner-login-request', '2026-04-29 10:00:00', '2026-04-29 10:00:00', '203.0.113.***')"#,
+            VALUES (1003, 100001, 0, 30, 'owner-login-request', '2026-04-29 10:00:00', '2026-04-29 10:00:00', '203.0.113.***')"#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }
@@ -6677,7 +6677,7 @@ async fn seed_second_app_organization_membership(pool: &SqlitePool) {
             VALUES ('21', '10', NULL, 'workspace', 'Workspace Organization', '/21', 'active', '2026-04-02 00:00:00', '2026-04-29 08:00:00')"#,
         r#"INSERT INTO iam_organization_membership
             (id, tenant_id, organization_id, user_id, membership_kind, display_name, is_primary, status, joined_at, created_at, updated_at)
-            VALUES ('member-30-workspace', '10', '21', '30', 'member', 'Owner User', 0, 'active', '2026-03-31 08:00:00', '2026-03-31 08:00:00', '2026-04-29 08:00:00')"#,
+            VALUES ('member-30-workspace', '100001', '21', '30', 'member', 'Owner User', 0, 'active', '2026-03-31 08:00:00', '2026-03-31 08:00:00', '2026-04-29 08:00:00')"#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }
@@ -6689,7 +6689,7 @@ async fn seed_auth_settings_snapshot(pool: &SqlitePool, payload: Value) {
         INSERT INTO ops_config_snapshot
             (uuid, tenant_id, organization_id, user_id, request_id, status, created_at, snapshot_no, config_scope, config_type, source_table, source_ids, config_payload, config_hash, published_at, published_by)
         VALUES
-            ('auth-settings-policy-snapshot', 10, 20, 30, 'auth-settings-policy-seed', 1, '2026-04-29 09:00:00', 'auth-settings-policy-seed', 30, 65, 'iam_auth_runtime_settings', '["auth-settings"]', ?, 'hash:auth-settings-policy-seed', '2026-04-29 09:00:00', 30)
+            ('auth-settings-policy-snapshot', 100001, 0, 30, 'auth-settings-policy-seed', 1, '2026-04-29 09:00:00', 'auth-settings-policy-seed', 30, 65, 'iam_auth_runtime_settings', '["auth-settings"]', ?, 'hash:auth-settings-policy-seed', '2026-04-29 09:00:00', 30)
         "#,
     )
     .bind(payload.to_string())
@@ -6702,36 +6702,36 @@ async fn seed_dashboard_data(pool: &SqlitePool) {
     for statement in [
         r#"INSERT INTO ai_usage_fact
             (id, tenant_id, organization_id, user_id, request_id, status, request_count, total_tokens, customer_charge_amount, cost_amount, modality, occurred_at)
-            VALUES (2001, 10, 20, 30, 'owner-text-request', 1, 5, 1000, '1.000000', '0.700000', 1, '2026-04-29 09:00:00')"#,
+            VALUES (2001, 100001, 0, 30, 'owner-text-request', 1, 5, 1000, '1.000000', '0.700000', 1, '2026-04-29 09:00:00')"#,
         r#"INSERT INTO ai_usage_fact
             (id, tenant_id, organization_id, user_id, request_id, status, request_count, total_tokens, customer_charge_amount, cost_amount, modality, occurred_at)
-            VALUES (2002, 10, 20, 30, 'owner-image-request', 1, 2, 0, '0.250000', '0.120000', 2, '2026-04-29 11:00:00')"#,
+            VALUES (2002, 100001, 0, 30, 'owner-image-request', 1, 2, 0, '0.250000', '0.120000', 2, '2026-04-29 11:00:00')"#,
         r#"INSERT INTO ai_usage_fact
             (id, tenant_id, organization_id, user_id, request_id, status, request_count, total_tokens, customer_charge_amount, cost_amount, modality, occurred_at)
-            VALUES (2010, 10, 20, 30, 'owner-history-request', 1, 3, 300, '1.750000', '1.200000', 1, '2026-03-01 08:00:00')"#,
+            VALUES (2010, 100001, 0, 30, 'owner-history-request', 1, 3, 300, '1.750000', '1.200000', 1, '2026-03-01 08:00:00')"#,
         r#"INSERT INTO ai_usage_fact
             (id, tenant_id, organization_id, user_id, request_id, status, request_count, total_tokens, customer_charge_amount, cost_amount, modality, occurred_at)
-            VALUES (2003, 10, 20, 31, 'other-user-request', 1, 99, 9900, '99.000000', '50.000000', 1, '2026-04-29 10:00:00')"#,
+            VALUES (2003, 100001, 0, 31, 'other-user-request', 1, 99, 9900, '99.000000', '50.000000', 1, '2026-04-29 10:00:00')"#,
         r#"INSERT INTO ai_request_trace
             (id, tenant_id, organization_id, user_id, request_id, status, started_at, http_status, provider_error_code, error_type)
-            VALUES (2004, 10, 20, 30, 'owner-error-request', 1, '2026-04-29 12:00:00', 500, 'provider_500', 'provider_error')"#,
+            VALUES (2004, 100001, 0, 30, 'owner-error-request', 1, '2026-04-29 12:00:00', 500, 'provider_500', 'provider_error')"#,
         r#"INSERT INTO ai_request_trace
             (id, tenant_id, organization_id, user_id, request_id, status, started_at, http_status, provider_error_code, error_type)
-            VALUES (2005, 10, 20, 31, 'other-user-request', 1, '2026-04-29 12:05:00', 500, 'other_provider_500', 'provider_error')"#,
+            VALUES (2005, 100001, 0, 31, 'other-user-request', 1, '2026-04-29 12:05:00', 500, 'other_provider_500', 'provider_error')"#,
         r#"INSERT INTO ai_model
             (id, uuid, tenant_id, organization_id, catalog_key, model, display_name, vendor_code, capabilities, release_stage, shelf_state, routing_state, status, rank_score)
             VALUES (2006, 'model-alibaba-qwen3-7-max-dashboard-test', 0, 0, 'alibaba/qwen3.7-max', 'qwen3.7-max', 'Qwen3.7 Max', 'alibaba', '["chat"]', 1, 1, 1, 1, '95.0')"#,
         r#"INSERT INTO ai_model_rank_snapshot
             (id, tenant_id, organization_id, status, snapshot_date, snapshot_period, rank_scope, catalog_key, model, vendor_code, region_code, vendor_name_snapshot, modality, rank_no, previous_rank_no, request_count, cost_amount)
-            VALUES (2006, 10, 20, 1, '2026-04-29', 'daily', 'commercial-default', 'alibaba/qwen3.7-max', 'qwen3.7-max', 'alibaba', 'global', 'Alibaba', 1, 1, 2, 7, '1.250000')"#,
+            VALUES (2006, 100001, 0, 1, '2026-04-29', 'daily', 'commercial-default', 'alibaba/qwen3.7-max', 'qwen3.7-max', 'alibaba', 'global', 'Alibaba', 1, 1, 2, 7, '1.250000')"#,
         r#"INSERT INTO ops_notification_message
             (id, uuid, tenant_id, organization_id, status, app_id, scope_type, message_code, message_type, title, summary, content, severity, priority, show_as_popup, published_at, expire_at, created_at, updated_at)
-            VALUES (2007, 'dashboard-announcement-2007', 10, 20, 1, NULL, 2, 'announcement:2007', 1, 'Planned model upgrade', 'Planned model upgrade', 'Planned model upgrade content', 3, 100, 1, '2026-04-29 08:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
+            VALUES (2007, 'dashboard-announcement-2007', 100001, 0, 1, NULL, 2, 'announcement:2007', 1, 'Planned model upgrade', 'Planned model upgrade', 'Planned model upgrade content', 3, 100, 1, '2026-04-29 08:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
         r#"INSERT INTO ops_notification_recipient
             (id, uuid, tenant_id, organization_id, status, message_id, app_id, recipient_type, recipient_value)
-            VALUES (2007, 'dashboard-announcement-recipient-2007', 10, 20, 1, 2007, NULL, 1, 'all')"#,
-        "INSERT INTO ops_metric_snapshot (id, tenant_id, organization_id, status, metric_name, metric_value, period_start) VALUES (2008, 10, 20, 1, 'latency_p50_ms', '123.45', '2026-04-29 12:00:00')",
-        "INSERT INTO ops_metric_snapshot (id, tenant_id, organization_id, status, metric_name, metric_value, period_start) VALUES (2009, 10, 20, 1, 'latency_p95_ms', '456.78', '2026-04-29 12:00:00')",
+            VALUES (2007, 'dashboard-announcement-recipient-2007', 100001, 0, 1, 2007, NULL, 1, 'all')"#,
+        "INSERT INTO ops_metric_snapshot (id, tenant_id, organization_id, status, metric_name, metric_value, period_start) VALUES (2008, 100001, 0, 1, 'latency_p50_ms', '123.45', '2026-04-29 12:00:00')",
+        "INSERT INTO ops_metric_snapshot (id, tenant_id, organization_id, status, metric_name, metric_value, period_start) VALUES (2009, 100001, 0, 1, 'latency_p95_ms', '456.78', '2026-04-29 12:00:00')",
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }
@@ -6742,33 +6742,33 @@ async fn seed_billing_data(pool: &SqlitePool) {
         r#"INSERT INTO promotion_offer
             (id, tenant_id, organization_id, offer_no, offer_code, name, offer_type, audience_scope, combinability, priority, status, current_offer_version_id, starts_at, ends_at, created_at, updated_at)
             VALUES
-            ('offer-welcome', '10', '20', 'offer-welcome', 'welcome_points', 'Welcome points', 'coupon', 'new_user', 'exclusive', 100, 'active', 'offer-version-welcome-v1', '2026-01-01 00:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
-            ('offer-other-user', '10', '20', 'offer-other-user', 'other_user_points', 'Other user welcome points', 'coupon', 'new_user', 'exclusive', 90, 'active', 'offer-version-other-user-v1', '2026-01-01 00:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
+            ('offer-welcome', '100001', '0', 'offer-welcome', 'welcome_points', 'Welcome points', 'coupon', 'new_user', 'exclusive', 100, 'active', 'offer-version-welcome-v1', '2026-01-01 00:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('offer-other-user', '100001', '0', 'offer-other-user', 'other_user_points', 'Other user welcome points', 'coupon', 'new_user', 'exclusive', 90, 'active', 'offer-version-other-user-v1', '2026-01-01 00:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
         r#"INSERT INTO promotion_offer_version
             (id, tenant_id, organization_id, offer_id, version_no, lifecycle_status, discount_type, discount_value, minimum_amount, maximum_discount_amount, currency_code, rule_json, stack_rule_json, published_at, created_at, updated_at)
             VALUES
-            ('offer-version-welcome-v1', '10', '20', 'offer-welcome', 'v1', 'published', 'fixed_amount', '5.00', '0', NULL, 'CNY', '{}', NULL, '2026-04-29 08:00:00', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
-            ('offer-version-other-user-v1', '10', '20', 'offer-other-user', 'v1', 'published', 'fixed_amount', '9.00', '0', NULL, 'CNY', '{}', NULL, '2026-04-29 08:00:00', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
+            ('offer-version-welcome-v1', '100001', '0', 'offer-welcome', 'v1', 'published', 'fixed_amount', '5.00', '0', NULL, 'CNY', '{}', NULL, '2026-04-29 08:00:00', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('offer-version-other-user-v1', '100001', '0', 'offer-other-user', 'v1', 'published', 'fixed_amount', '9.00', '0', NULL, 'CNY', '{}', NULL, '2026-04-29 08:00:00', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
         r#"INSERT INTO promotion_coupon_stock
             (id, tenant_id, organization_id, stock_no, name, offer_id, offer_version_id, stock_type, total_quantity, available_quantity, claimed_quantity, redeemed_quantity, locked_quantity, status, starts_at, expires_at, created_at, updated_at)
             VALUES
-            ('stock-welcome', '10', '20', 'stock-welcome', 'Welcome stock', 'offer-welcome', 'offer-version-welcome-v1', 'limited', 100, 100, 0, 0, 0, 'active', '2026-01-01 00:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
-            ('stock-other-user', '10', '20', 'stock-other-user', 'Other user stock', 'offer-other-user', 'offer-version-other-user-v1', 'limited', 100, 99, 1, 0, 0, 'active', '2026-01-01 00:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
+            ('stock-welcome', '100001', '0', 'stock-welcome', 'Welcome stock', 'offer-welcome', 'offer-version-welcome-v1', 'limited', 100, 100, 0, 0, 0, 'active', '2026-01-01 00:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('stock-other-user', '100001', '0', 'stock-other-user', 'Other user stock', 'offer-other-user', 'offer-version-other-user-v1', 'limited', 100, 99, 1, 0, 0, 'active', '2026-01-01 00:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
         r#"INSERT INTO promotion_code
             (id, tenant_id, organization_id, code_no, stock_id, offer_id, offer_version_id, promotion_code, code_type, max_claims, claimed_quantity, status, starts_at, expires_at, created_at, updated_at)
             VALUES
-            ('code-welcome', '10', '20', 'code-welcome', 'stock-welcome', 'offer-welcome', 'offer-version-welcome-v1', 'WELCOME', 'public', 100, 0, 'active', '2026-01-01 00:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
-            ('code-other-user', '10', '20', 'code-other-user', 'stock-other-user', 'offer-other-user', 'offer-version-other-user-v1', 'OTHERUSER', 'public', 100, 1, 'active', '2026-01-01 00:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
+            ('code-welcome', '100001', '0', 'code-welcome', 'stock-welcome', 'offer-welcome', 'offer-version-welcome-v1', 'WELCOME', 'public', 100, 0, 'active', '2026-01-01 00:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('code-other-user', '100001', '0', 'code-other-user', 'stock-other-user', 'offer-other-user', 'offer-version-other-user-v1', 'OTHERUSER', 'public', 100, 1, 'active', '2026-01-01 00:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
         r#"INSERT INTO commerce_account
             (id, tenant_id, organization_id, owner_user_id, asset_type, currency_code, available_amount, frozen_amount, version, status, created_at, updated_at)
             VALUES
-            ('owner-points-account', '10', '20', '30', 'points', 'POINT', '100', '0', 0, 'active', '2026-04-01 08:00:00', '2026-04-29 08:00:00'),
-            ('owner-token-account', '10', '20', '30', 'token', NULL, '120', '8', 0, 'active', '2026-04-01 08:00:00', '2026-04-29 08:00:00'),
-            ('other-points-account', '10', '20', '31', 'points', 'POINT', '900', '0', 0, 'active', '2026-04-01 08:00:00', '2026-04-29 08:00:00'),
-            ('other-token-account', '10', '21', '30', 'token', NULL, '999', '0', 0, 'active', '2026-04-01 08:00:00', '2026-04-29 08:00:00')"#,
+            ('owner-points-account', '100001', '0', '30', 'points', 'POINT', '100', '0', 0, 'active', '2026-04-01 08:00:00', '2026-04-29 08:00:00'),
+            ('owner-token-account', '100001', '0', '30', 'token', NULL, '120', '8', 0, 'active', '2026-04-01 08:00:00', '2026-04-29 08:00:00'),
+            ('other-points-account', '100001', '0', '31', 'points', 'POINT', '900', '0', 0, 'active', '2026-04-01 08:00:00', '2026-04-29 08:00:00'),
+            ('other-token-account', '100001', '21', '30', 'token', NULL, '999', '0', 0, 'active', '2026-04-01 08:00:00', '2026-04-29 08:00:00')"#,
         r#"INSERT INTO promotion_user_coupon
             (id, tenant_id, organization_id, coupon_no, stock_id, code_id, offer_id, offer_version_id, subject_type, subject_id, owner_user_id, coupon_code, status, claimed_at, valid_from, expires_at, redeemed_at, disabled_at, request_no, idempotency_key, created_at, updated_at)
-            VALUES ('other-user-coupon', '10', '20', 'coupon-other-user', 'stock-other-user', 'code-other-user', 'offer-other-user', 'offer-version-other-user-v1', 'user', '31', '31', 'OTHERUSER-31', 'claimed', '2026-04-28 08:00:00', '2026-04-28 08:00:00', '2099-01-01 00:00:00', NULL, NULL, 'other-user-coupon-claim', 'other-user-coupon-claim', '2026-04-28 08:00:00', '2026-04-28 08:00:00')"#,
+            VALUES ('other-user-coupon', '100001', '0', 'coupon-other-user', 'stock-other-user', 'code-other-user', 'offer-other-user', 'offer-version-other-user-v1', 'user', '31', '31', 'OTHERUSER-31', 'claimed', '2026-04-28 08:00:00', '2026-04-28 08:00:00', '2099-01-01 00:00:00', NULL, NULL, 'other-user-coupon-claim', 'other-user-coupon-claim', '2026-04-28 08:00:00', '2026-04-28 08:00:00')"#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }
@@ -6778,24 +6778,24 @@ async fn seed_app_routing_runtime_data(pool: &SqlitePool) {
     for statement in [
         r#"INSERT INTO ai_provider
             (id, tenant_id, organization_id, provider_code, default_vendor_code, provider_type, protocol_code, display_name, description, base_url, auth_type, status, sort_order)
-            VALUES (4001, 10, 20, 'openai', 'openai', 'official', 'openai_v1', 'Routing OpenAI Provider', 'Owner routing provider', 'https://api.openai.example/v1', 1, 1, 1)"#,
+            VALUES (4001, 100001, 0, 'openai', 'openai', 'official', 'openai_v1', 'Routing OpenAI Provider', 'Owner routing provider', 'https://api.openai.example/v1', 1, 1, 1)"#,
         r#"INSERT INTO ai_channel
             (id, tenant_id, organization_id, provider_id, provider_code, channel_code,
              channel_name, channel_type, protocol_code, auth_type, base_url, credential_ref,
              masked_label, upstream_balance_amount, upstream_balance_currency, capabilities,
              status, priority, weight, health_status, last_latency_ms, rpm_limit,
              consecutive_error_count)
-            VALUES (4003, 10, 20, 4001, 'openai', 'openai-primary',
+            VALUES (4003, 100001, 0, 4001, 'openai', 'openai-primary',
              'OpenAI Primary', 'official', 'openai_v1', 1,
              'https://api.openai.example/v1', 'vault://providers/openai/main',
              'vault-label-openai-main', '42.50', 'USD', '["llm","vision"]',
              1, 1, 100, 1, 321, 600, 0)"#,
         r#"INSERT INTO ai_channel_resource
             (id, uuid, tenant_id, organization_id, channel_id, provider_code, channel_code, resource_code, grant_type, priority, status)
-            VALUES (4005, 'channel-resource-openai-primary-gpt-4o-mini', 10, 20, 4003, 'openai', 'openai-primary', 'model.openai.gpt-4o-mini.chat', 'allow', 1, 1)"#,
+            VALUES (4005, 'channel-resource-openai-primary-gpt-4o-mini', 100001, 0, 4003, 'openai', 'openai-primary', 'model.openai.gpt-4o-mini.chat', 'allow', 1, 1)"#,
         r#"INSERT INTO ai_channel_resource
             (id, uuid, tenant_id, organization_id, channel_id, provider_code, channel_code, resource_code, grant_type, priority, status)
-            VALUES (4004, 'channel-resource-openai-primary-vendor-openai', 10, 20, 4003, 'openai', 'openai-primary', 'vendor.openai', 'allow', 0, 1)"#,
+            VALUES (4004, 'channel-resource-openai-primary-vendor-openai', 100001, 0, 4003, 'openai', 'openai-primary', 'vendor.openai', 'allow', 0, 1)"#,
         r#"INSERT INTO ai_channel
             (id, tenant_id, organization_id, provider_id, provider_code, channel_code,
              channel_name, channel_type, protocol_code, auth_type, base_url,
@@ -6807,28 +6807,28 @@ async fn seed_app_routing_runtime_data(pool: &SqlitePool) {
              '["llm"]', 1, 1, 100, 1, 111, 100, 0)"#,
         r#"INSERT INTO ai_usage_fact
             (id, tenant_id, organization_id, user_id, api_key_id, request_id, model, status, request_count, total_tokens, customer_charge_amount, cost_amount, modality, occurred_at)
-            VALUES (4014, 10, 20, 30, 100, 'owner-runtime-request', 'gpt-4o-mini', 1, 5, 1000, '1.000000', '0.700000', 1, '2026-04-29 13:00:00')"#,
+            VALUES (4014, 100001, 0, 30, 100, 'owner-runtime-request', 'gpt-4o-mini', 1, 5, 1000, '1.000000', '0.700000', 1, '2026-04-29 13:00:00')"#,
         r#"INSERT INTO ai_usage_fact
             (id, tenant_id, organization_id, user_id, api_key_id, request_id, model, status, request_count, total_tokens, customer_charge_amount, cost_amount, modality, occurred_at)
-            VALUES (4015, 10, 20, 31, 101, 'other-user-runtime-request', 'gpt-4o-mini', 1, 77, 7700, '77.000000', '7.000000', 1, '2026-04-29 13:05:00')"#,
+            VALUES (4015, 100001, 0, 31, 101, 'other-user-runtime-request', 'gpt-4o-mini', 1, 77, 7700, '77.000000', '7.000000', 1, '2026-04-29 13:05:00')"#,
         r#"INSERT INTO ai_request_trace
             (id, tenant_id, organization_id, user_id, request_id, trace_id, status, created_at, channel_name_snapshot, requested_model, provider_model, started_at, http_status, provider_error_code, error_type, latency_ms, total_tokens, client_ip_masked, request_path, endpoint, http_method)
-            VALUES (4005, 10, 20, 30, 'owner-runtime-request', 'trace-owner-routing', 1, '2026-04-29 13:00:00', 'OpenAI Primary', 'gpt-4o-mini', 'gpt-4o-mini', '2026-04-29 13:00:00', 200, NULL, NULL, 321, 1000, '203.0.113.***', '/v1/chat/completions', '/v1/chat/completions', 'POST')"#,
+            VALUES (4005, 100001, 0, 30, 'owner-runtime-request', 'trace-owner-routing', 1, '2026-04-29 13:00:00', 'OpenAI Primary', 'gpt-4o-mini', 'gpt-4o-mini', '2026-04-29 13:00:00', 200, NULL, NULL, 321, 1000, '203.0.113.***', '/v1/chat/completions', '/v1/chat/completions', 'POST')"#,
         r#"INSERT INTO ai_request_trace
             (id, tenant_id, organization_id, user_id, request_id, trace_id, status, created_at, channel_name_snapshot, requested_model, provider_model, started_at, http_status, provider_error_code, error_type, latency_ms, total_tokens, client_ip_masked, request_path, endpoint, http_method)
-            VALUES (4006, 10, 20, 31, 'other-user-runtime-request', 'trace-other-routing', 1, '2026-04-29 13:05:00', 'Other User Channel', 'gpt-4o-mini', 'gpt-4o-mini', '2026-04-29 13:05:00', 500, 'other_error', 'provider_error', 999, 7700, '198.51.100.***', '/v1/chat/completions', '/v1/chat/completions', 'POST')"#,
+            VALUES (4006, 100001, 0, 31, 'other-user-runtime-request', 'trace-other-routing', 1, '2026-04-29 13:05:00', 'Other User Channel', 'gpt-4o-mini', 'gpt-4o-mini', '2026-04-29 13:05:00', 500, 'other_error', 'provider_error', 999, 7700, '198.51.100.***', '/v1/chat/completions', '/v1/chat/completions', 'POST')"#,
         r#"INSERT INTO ai_routing_decision_log
             (id, tenant_id, organization_id, user_id, request_id, status, created_at, requested_model, resolved_model, selected_channel_id)
-            VALUES (4007, 10, 20, 30, 'owner-runtime-request', 1, '2026-04-29 13:00:00', 'gpt-4o-mini', 'gpt-4o-mini', 4003)"#,
+            VALUES (4007, 100001, 0, 30, 'owner-runtime-request', 1, '2026-04-29 13:00:00', 'gpt-4o-mini', 'gpt-4o-mini', 4003)"#,
         r#"INSERT INTO ai_routing_policy
             (id, uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, policy_code, name, policy_scope, subject_id, capability, default_profile_id, fallback_mode, currency)
-            VALUES (4020, 'owner-routing-policy', 10, 20, 1, 1, '2026-04-29 08:00:00', '2026-04-29 08:00:00', 0, '{}', 'console-routing-default', 'Owner Routing Strategy', 1, 30, 1, 4021, 2, 'USD')"#,
+            VALUES (4020, 'owner-routing-policy', 100001, 0, 1, 1, '2026-04-29 08:00:00', '2026-04-29 08:00:00', 0, '{}', 'console-routing-default', 'Owner Routing Strategy', 1, 30, 1, 4021, 2, 'USD')"#,
         r#"INSERT INTO ai_routing_profile
             (id, uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, policy_id, profile_version, profile_name, release_status, traffic_percent, config_hash, published_at, published_by)
-            VALUES (4021, 'owner-routing-profile', 10, 20, 1, 1, '2026-04-29 08:00:00', '2026-04-29 08:00:00', 0, '{}', 4020, 1, 'Owner Strategy', 2, '100', 'owner-hash', '2026-04-29 08:00:00', 30)"#,
+            VALUES (4021, 'owner-routing-profile', 100001, 0, 1, 1, '2026-04-29 08:00:00', '2026-04-29 08:00:00', 0, '{}', 4020, 1, 'Owner Strategy', 2, '100', 'owner-hash', '2026-04-29 08:00:00', 30)"#,
         r#"INSERT INTO ai_routing_rule
             (id, uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, profile_id, rule_code, priority, match_expression, target_model)
-            VALUES (4022, 'owner-routing-rule', 10, 20, 1, 1, '2026-04-29 08:00:00', '2026-04-29 08:00:00', 0, '{}', 4021, 'model-map-gpt-4', 1, '{"sourceModel":"gpt-4"}', 'azure-gpt4-32k')"#,
+            VALUES (4022, 'owner-routing-rule', 100001, 0, 1, 1, '2026-04-29 08:00:00', '2026-04-29 08:00:00', 0, '{}', 4021, 'model-map-gpt-4', 1, '{"sourceModel":"gpt-4"}', 'azure-gpt4-32k')"#,
         r#"INSERT INTO ai_routing_policy
             (id, uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, policy_code, name, policy_scope, subject_id, capability, default_profile_id, fallback_mode, currency)
             VALUES (4023, 'other-routing-policy', 10, 21, 1, 1, '2026-04-29 08:00:00', '2026-04-29 08:00:00', 0, '{}', 'console-routing-default', 'Other Tenant Strategy', 1, 30, 1, 4024, 3, 'USD')"#,
@@ -6847,24 +6847,24 @@ async fn seed_app_providers_runtime_data(pool: &SqlitePool) {
     for statement in [
         r#"INSERT INTO ai_provider
             (id, tenant_id, organization_id, provider_code, default_vendor_code, provider_type, protocol_code, display_name, description, base_url, auth_type, status, sort_order)
-            VALUES (4101, 10, 20, 'openai', 'openai', 'official', 'openai_v1', 'Tenant OpenAI Provider', 'Tenant-owned OpenAI compatible provider', 'https://api.openai.example/v1', 1, 1, 1)"#,
+            VALUES (4101, 100001, 0, 'openai', 'openai', 'official', 'openai_v1', 'Tenant OpenAI Provider', 'Tenant-owned OpenAI compatible provider', 'https://api.openai.example/v1', 1, 1, 1)"#,
         r#"INSERT INTO ai_channel
             (id, tenant_id, organization_id, provider_id, provider_code, channel_code,
              channel_name, channel_type, protocol_code, auth_type, base_url, credential_ref,
              masked_label, upstream_balance_amount, upstream_balance_currency, capabilities,
              status, priority, weight, health_status, last_latency_ms, rpm_limit,
              consecutive_error_count)
-            VALUES (4103, 10, 20, 4101, 'openai', 'tenant-openai-primary',
+            VALUES (4103, 100001, 0, 4101, 'openai', 'tenant-openai-primary',
              'Tenant OpenAI Primary', 'official', 'openai_v1', 1,
              'https://tenant-openai.example/v1', 'vault://providers/openai/main',
              'sk-provider-secret', '10.00', 'USD', '["llm"]',
              1, 1, 100, 1, 111, 600, 0)"#,
         r#"INSERT INTO ai_channel_resource
             (id, uuid, tenant_id, organization_id, channel_id, provider_code, channel_code, resource_code, grant_type, priority, status)
-            VALUES (4106, 'channel-resource-tenant-openai-primary-gpt-4o-mini', 10, 20, 4103, 'openai', 'tenant-openai-primary', 'model.openai.gpt-4o-mini.chat', 'allow', 1, 1)"#,
+            VALUES (4106, 'channel-resource-tenant-openai-primary-gpt-4o-mini', 100001, 0, 4103, 'openai', 'tenant-openai-primary', 'model.openai.gpt-4o-mini.chat', 'allow', 1, 1)"#,
         r#"INSERT INTO ai_channel_resource
             (id, uuid, tenant_id, organization_id, channel_id, provider_code, channel_code, resource_code, grant_type, priority, status)
-            VALUES (4104, 'channel-resource-tenant-openai-primary-vendor-openai', 10, 20, 4103, 'openai', 'tenant-openai-primary', 'vendor.openai', 'allow', 0, 1)"#,
+            VALUES (4104, 'channel-resource-tenant-openai-primary-vendor-openai', 100001, 0, 4103, 'openai', 'tenant-openai-primary', 'vendor.openai', 'allow', 0, 1)"#,
         r#"INSERT INTO ai_provider
             (id, tenant_id, organization_id, provider_code, default_vendor_code, provider_type, protocol_code, display_name, description, base_url, auth_type, status, sort_order)
             VALUES (4105, 10, 21, 'anthropic', 'anthropic', 'official', 'anthropic', 'Other Tenant Provider', 'Other tenant provider', 'https://other-provider.example/v1', 1, 1, 1)"#,
@@ -6877,13 +6877,13 @@ async fn seed_app_gateway_traces_runtime_data(pool: &SqlitePool) {
     for statement in [
         r#"INSERT INTO ops_gateway_instance
             (id, tenant_id, organization_id, status, deployment_mode, region, node_name, health_status, last_heartbeat_at)
-            VALUES (4301, 10, 20, 1, 3, 'us-east-1', 'gateway-docker-1', 1, '2026-04-29 13:30:00')"#,
+            VALUES (4301, 100001, 0, 1, 3, 'us-east-1', 'gateway-docker-1', 1, '2026-04-29 13:30:00')"#,
         r#"INSERT INTO ai_request_trace
             (id, tenant_id, organization_id, user_id, request_id, trace_id, status, created_at, channel_name_snapshot, requested_model, provider_model, started_at, http_status, provider_error_code, error_type, latency_ms, total_tokens, client_ip_masked, request_path, endpoint, http_method)
-            VALUES (4302, 10, 20, 30, 'gateway-owner-request', 'trace-owner-1', 1, '2026-04-29 13:35:00', 'OpenAI Primary', 'gpt-4o-mini', 'gpt-4o-mini', '2026-04-29 13:35:00', 200, NULL, NULL, 210, 777, '203.0.113.***', '/v1/chat/completions', '/v1/chat/completions', 'POST')"#,
+            VALUES (4302, 100001, 0, 30, 'gateway-owner-request', 'trace-owner-1', 1, '2026-04-29 13:35:00', 'OpenAI Primary', 'gpt-4o-mini', 'gpt-4o-mini', '2026-04-29 13:35:00', 200, NULL, NULL, 210, 777, '203.0.113.***', '/v1/chat/completions', '/v1/chat/completions', 'POST')"#,
         r#"INSERT INTO ai_request_trace
             (id, tenant_id, organization_id, user_id, request_id, trace_id, status, created_at, channel_name_snapshot, requested_model, provider_model, started_at, http_status, provider_error_code, error_type, latency_ms, total_tokens, client_ip_masked, request_path, endpoint, http_method)
-            VALUES (4303, 10, 20, 31, 'gateway-other-request', 'trace-other-user', 1, '2026-04-29 13:36:00', 'Other User Channel', 'gpt-4o-mini', 'gpt-4o-mini', '2026-04-29 13:36:00', 500, 'other_error', 'provider_error', 888, 8888, '198.51.100.***', '/v1/chat/completions', '/v1/chat/completions', 'POST')"#,
+            VALUES (4303, 100001, 0, 31, 'gateway-other-request', 'trace-other-user', 1, '2026-04-29 13:36:00', 'Other User Channel', 'gpt-4o-mini', 'gpt-4o-mini', '2026-04-29 13:36:00', 500, 'other_error', 'provider_error', 888, 8888, '198.51.100.***', '/v1/chat/completions', '/v1/chat/completions', 'POST')"#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }
@@ -6894,18 +6894,18 @@ async fn seed_checkout_runtime_data(pool: &SqlitePool) {
         r#"INSERT INTO commerce_order
             (id, tenant_id, organization_id, owner_user_id, order_no, status, subject, currency_code, request_no, idempotency_key, created_at, paid_at, cancelled_at, expired_at, updated_at)
             VALUES
-            ('checkout-owner-order', '10', '20', '30', 'ORDER-OWNER-1', 'paid', 'points_recharge', 'CNY', 'ORDER-OWNER-1', 'TRADE-OWNER-1', '2026-04-29 09:00:00', '2026-04-29 09:05:00', NULL, '2026-04-29 09:30:00', '2026-04-29 09:05:00'),
-            ('checkout-other-order', '10', '20', '31', 'ORDER-OTHER-1', 'paid', 'points_recharge', 'CNY', 'ORDER-OTHER-1', 'TRADE-OTHER-1', '2026-04-29 10:00:00', '2026-04-29 10:05:00', NULL, '2026-04-29 10:30:00', '2026-04-29 10:05:00')"#,
+            ('checkout-owner-order', '100001', '0', '30', 'ORDER-OWNER-1', 'paid', 'points_recharge', 'CNY', 'ORDER-OWNER-1', 'TRADE-OWNER-1', '2026-04-29 09:00:00', '2026-04-29 09:05:00', NULL, '2026-04-29 09:30:00', '2026-04-29 09:05:00'),
+            ('checkout-other-order', '100001', '0', '31', 'ORDER-OTHER-1', 'paid', 'points_recharge', 'CNY', 'ORDER-OTHER-1', 'TRADE-OTHER-1', '2026-04-29 10:00:00', '2026-04-29 10:05:00', NULL, '2026-04-29 10:30:00', '2026-04-29 10:05:00')"#,
         r#"INSERT INTO commerce_payment_intent
             (id, tenant_id, organization_id, owner_user_id, order_id, provider, amount, currency_code, status, request_no, idempotency_key, created_at, updated_at)
             VALUES
-            ('checkout-owner-payment-intent', '10', '20', '30', 'checkout-owner-order', 'wechat', '10.00', 'CNY', 'succeeded', 'ORDER-OWNER-1', 'TRADE-OWNER-1', '2026-04-29 09:00:00', '2026-04-29 09:05:00'),
-            ('checkout-other-payment-intent', '10', '20', '31', 'checkout-other-order', 'wechat', '99.00', 'CNY', 'succeeded', 'ORDER-OTHER-1', 'TRADE-OTHER-1', '2026-04-29 10:00:00', '2026-04-29 10:05:00')"#,
+            ('checkout-owner-payment-intent', '100001', '0', '30', 'checkout-owner-order', 'wechat', '10.00', 'CNY', 'succeeded', 'ORDER-OWNER-1', 'TRADE-OWNER-1', '2026-04-29 09:00:00', '2026-04-29 09:05:00'),
+            ('checkout-other-payment-intent', '100001', '0', '31', 'checkout-other-order', 'wechat', '99.00', 'CNY', 'succeeded', 'ORDER-OTHER-1', 'TRADE-OTHER-1', '2026-04-29 10:00:00', '2026-04-29 10:05:00')"#,
         r#"INSERT INTO commerce_payment_attempt
             (id, tenant_id, organization_id, owner_user_id, payment_intent_id, order_id, provider, out_trade_no, amount, currency_code, status, callback_payload, created_at, paid_at, updated_at)
             VALUES
-            ('checkout-owner-payment-attempt', '10', '20', '30', 'checkout-owner-payment-intent', 'checkout-owner-order', 'wechat', 'TRADE-OWNER-1', '10.00', 'CNY', 'succeeded', '{"points":125}', '2026-04-29 09:00:00', '2026-04-29 09:05:00', '2026-04-29 09:05:00'),
-            ('checkout-other-payment-attempt', '10', '20', '31', 'checkout-other-payment-intent', 'checkout-other-order', 'wechat', 'TRADE-OTHER-1', '99.00', 'CNY', 'succeeded', '{"points":999}', '2026-04-29 10:00:00', '2026-04-29 10:05:00', '2026-04-29 10:05:00')"#,
+            ('checkout-owner-payment-attempt', '100001', '0', '30', 'checkout-owner-payment-intent', 'checkout-owner-order', 'wechat', 'TRADE-OWNER-1', '10.00', 'CNY', 'succeeded', '{"points":125}', '2026-04-29 09:00:00', '2026-04-29 09:05:00', '2026-04-29 09:05:00'),
+            ('checkout-other-payment-attempt', '100001', '0', '31', 'checkout-other-payment-intent', 'checkout-other-order', 'wechat', 'TRADE-OTHER-1', '99.00', 'CNY', 'succeeded', '{"points":999}', '2026-04-29 10:00:00', '2026-04-29 10:05:00', '2026-04-29 10:05:00')"#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }
@@ -6916,31 +6916,31 @@ async fn seed_bootstrap_recharge_packages(pool: &SqlitePool) {
         r#"INSERT INTO commerce_product_spu
             (id, tenant_id, organization_id, spu_no, title, product_type, sales_status, visible_surfaces, created_at, updated_at)
             VALUES
-            ('bootstrap-admin-recharge-spu-10-cny', '10', '20', 'bootstrap-admin-recharge-cny', 'Bootstrap admin recharge catalog (CNY)', 'points_recharge', 'active', '["app","console","admin"]', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
+            ('bootstrap-admin-recharge-spu-10-cny', '100001', '0', 'bootstrap-admin-recharge-cny', 'Bootstrap admin recharge catalog (CNY)', 'points_recharge', 'active', '["app","console","admin"]', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
         r#"INSERT INTO commerce_product_sku
             (id, tenant_id, organization_id, spu_id, sku_no, name, title, price_amount, currency_code, delivery_mode, inventory_tracking, sales_status, created_at, updated_at)
             VALUES
-            ('bootstrap-admin-recharge-sku-10-501', '10', '20', 'bootstrap-admin-recharge-spu-10-cny', 'bootstrap-admin-recharge-501', '5 RMB points package', '5 RMB points package', '5.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
-            ('bootstrap-admin-recharge-sku-10-502', '10', '20', 'bootstrap-admin-recharge-spu-10-cny', 'bootstrap-admin-recharge-502', '10 RMB points package', '10 RMB points package', '10.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
-            ('bootstrap-admin-recharge-sku-10-503', '10', '20', 'bootstrap-admin-recharge-spu-10-cny', 'bootstrap-admin-recharge-503', '20 RMB points package', '20 RMB points package', '20.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
-            ('bootstrap-admin-recharge-sku-10-504', '10', '20', 'bootstrap-admin-recharge-spu-10-cny', 'bootstrap-admin-recharge-504', '30 RMB points package', '30 RMB points package', '30.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
-            ('bootstrap-admin-recharge-sku-10-505', '10', '20', 'bootstrap-admin-recharge-spu-10-cny', 'bootstrap-admin-recharge-505', '50 RMB points package', '50 RMB points package', '50.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
-            ('bootstrap-admin-recharge-sku-10-506', '10', '20', 'bootstrap-admin-recharge-spu-10-cny', 'bootstrap-admin-recharge-506', '100 RMB points package', '100 RMB points package', '100.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
-            ('bootstrap-admin-recharge-sku-10-507', '10', '20', 'bootstrap-admin-recharge-spu-10-cny', 'bootstrap-admin-recharge-507', '200 RMB points package', '200 RMB points package', '200.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
-            ('bootstrap-admin-recharge-sku-10-508', '10', '20', 'bootstrap-admin-recharge-spu-10-cny', 'bootstrap-admin-recharge-508', '500 RMB points package', '500 RMB points package', '500.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
-            ('bootstrap-admin-recharge-sku-10-509', '10', '20', 'bootstrap-admin-recharge-spu-10-cny', 'bootstrap-admin-recharge-509', '1000 RMB points package', '1000 RMB points package', '1000.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
+            ('bootstrap-admin-recharge-sku-10-501', '100001', '0', 'bootstrap-admin-recharge-spu-10-cny', 'bootstrap-admin-recharge-501', '5 RMB points package', '5 RMB points package', '5.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-sku-10-502', '100001', '0', 'bootstrap-admin-recharge-spu-10-cny', 'bootstrap-admin-recharge-502', '10 RMB points package', '10 RMB points package', '10.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-sku-10-503', '100001', '0', 'bootstrap-admin-recharge-spu-10-cny', 'bootstrap-admin-recharge-503', '20 RMB points package', '20 RMB points package', '20.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-sku-10-504', '100001', '0', 'bootstrap-admin-recharge-spu-10-cny', 'bootstrap-admin-recharge-504', '30 RMB points package', '30 RMB points package', '30.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-sku-10-505', '100001', '0', 'bootstrap-admin-recharge-spu-10-cny', 'bootstrap-admin-recharge-505', '50 RMB points package', '50 RMB points package', '50.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-sku-10-506', '100001', '0', 'bootstrap-admin-recharge-spu-10-cny', 'bootstrap-admin-recharge-506', '100 RMB points package', '100 RMB points package', '100.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-sku-10-507', '100001', '0', 'bootstrap-admin-recharge-spu-10-cny', 'bootstrap-admin-recharge-507', '200 RMB points package', '200 RMB points package', '200.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-sku-10-508', '100001', '0', 'bootstrap-admin-recharge-spu-10-cny', 'bootstrap-admin-recharge-508', '500 RMB points package', '500 RMB points package', '500.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-sku-10-509', '100001', '0', 'bootstrap-admin-recharge-spu-10-cny', 'bootstrap-admin-recharge-509', '1000 RMB points package', '1000 RMB points package', '1000.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
         r#"INSERT INTO commerce_recharge_package
             (id, tenant_id, organization_id, package_no, sku_id, name, price_amount, currency_code, bonus_points, status, valid_from, valid_to, sort_weight, created_at, updated_at)
             VALUES
-            ('bootstrap-admin-recharge-package-10-501', '10', '20', 'bootstrap-admin-recharge-501', 'bootstrap-admin-recharge-sku-10-501', '5 RMB points package', '5.00', 'CNY', 0, 'active', NULL, NULL, 101, '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
-            ('bootstrap-admin-recharge-package-10-502', '10', '20', 'bootstrap-admin-recharge-502', 'bootstrap-admin-recharge-sku-10-502', '10 RMB points package', '10.00', 'CNY', 0, 'active', NULL, NULL, 102, '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
-            ('bootstrap-admin-recharge-package-10-503', '10', '20', 'bootstrap-admin-recharge-503', 'bootstrap-admin-recharge-sku-10-503', '20 RMB points package', '20.00', 'CNY', 0, 'active', NULL, NULL, 103, '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
-            ('bootstrap-admin-recharge-package-10-504', '10', '20', 'bootstrap-admin-recharge-504', 'bootstrap-admin-recharge-sku-10-504', '30 RMB points package', '30.00', 'CNY', 0, 'active', NULL, NULL, 104, '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
-            ('bootstrap-admin-recharge-package-10-505', '10', '20', 'bootstrap-admin-recharge-505', 'bootstrap-admin-recharge-sku-10-505', '50 RMB points package', '50.00', 'CNY', 0, 'active', NULL, NULL, 105, '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
-            ('bootstrap-admin-recharge-package-10-506', '10', '20', 'bootstrap-admin-recharge-506', 'bootstrap-admin-recharge-sku-10-506', '100 RMB points package', '100.00', 'CNY', 0, 'active', NULL, NULL, 106, '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
-            ('bootstrap-admin-recharge-package-10-507', '10', '20', 'bootstrap-admin-recharge-507', 'bootstrap-admin-recharge-sku-10-507', '200 RMB points package', '200.00', 'CNY', 0, 'active', NULL, NULL, 107, '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
-            ('bootstrap-admin-recharge-package-10-508', '10', '20', 'bootstrap-admin-recharge-508', 'bootstrap-admin-recharge-sku-10-508', '500 RMB points package', '500.00', 'CNY', 0, 'active', NULL, NULL, 108, '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
-            ('bootstrap-admin-recharge-package-10-509', '10', '20', 'bootstrap-admin-recharge-509', 'bootstrap-admin-recharge-sku-10-509', '1000 RMB points package', '1000.00', 'CNY', 0, 'active', NULL, NULL, 109, '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
+            ('bootstrap-admin-recharge-package-10-501', '100001', '0', 'bootstrap-admin-recharge-501', 'bootstrap-admin-recharge-sku-10-501', '5 RMB points package', '5.00', 'CNY', 0, 'active', NULL, NULL, 101, '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-package-10-502', '100001', '0', 'bootstrap-admin-recharge-502', 'bootstrap-admin-recharge-sku-10-502', '10 RMB points package', '10.00', 'CNY', 0, 'active', NULL, NULL, 102, '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-package-10-503', '100001', '0', 'bootstrap-admin-recharge-503', 'bootstrap-admin-recharge-sku-10-503', '20 RMB points package', '20.00', 'CNY', 0, 'active', NULL, NULL, 103, '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-package-10-504', '100001', '0', 'bootstrap-admin-recharge-504', 'bootstrap-admin-recharge-sku-10-504', '30 RMB points package', '30.00', 'CNY', 0, 'active', NULL, NULL, 104, '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-package-10-505', '100001', '0', 'bootstrap-admin-recharge-505', 'bootstrap-admin-recharge-sku-10-505', '50 RMB points package', '50.00', 'CNY', 0, 'active', NULL, NULL, 105, '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-package-10-506', '100001', '0', 'bootstrap-admin-recharge-506', 'bootstrap-admin-recharge-sku-10-506', '100 RMB points package', '100.00', 'CNY', 0, 'active', NULL, NULL, 106, '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-package-10-507', '100001', '0', 'bootstrap-admin-recharge-507', 'bootstrap-admin-recharge-sku-10-507', '200 RMB points package', '200.00', 'CNY', 0, 'active', NULL, NULL, 107, '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-package-10-508', '100001', '0', 'bootstrap-admin-recharge-508', 'bootstrap-admin-recharge-sku-10-508', '500 RMB points package', '500.00', 'CNY', 0, 'active', NULL, NULL, 108, '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-package-10-509', '100001', '0', 'bootstrap-admin-recharge-509', 'bootstrap-admin-recharge-sku-10-509', '1000 RMB points package', '1000.00', 'CNY', 0, 'active', NULL, NULL, 109, '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }
@@ -6952,24 +6952,24 @@ async fn seed_recharge_runtime_data(pool: &SqlitePool) {
         r#"INSERT INTO commerce_product_spu
             (id, tenant_id, organization_id, spu_no, title, product_type, sales_status, visible_surfaces, created_at, updated_at)
             VALUES
-            ('6301', '10', '20', 'points-recharge-owner', 'Points recharge product', 'points_recharge', 'active', '["app"]', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('6301', '100001', '0', 'points-recharge-owner', 'Points recharge product', 'points_recharge', 'active', '["app"]', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
             ('6302', '10', NULL, 'points-recharge-global', 'Global points recharge product', 'points_recharge', 'active', '["app"]', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
-            ('6303', '10', '21', 'points-recharge-other-org', 'Other Org Recharge Pack', 'points_recharge', 'active', '["app"]', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
+            ('6303', '100001', '21', 'points-recharge-other-org', 'Other Org Recharge Pack', 'points_recharge', 'active', '["app"]', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
         r#"INSERT INTO commerce_product_sku
             (id, tenant_id, organization_id, spu_id, sku_no, name, title, price_amount, currency_code, delivery_mode, inventory_tracking, sales_status, created_at, updated_at)
             VALUES
-            ('6401', '10', '20', '6301', 'starter-recharge-pack', 'Starter Recharge Pack', 'Starter Recharge Pack', '10.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('6401', '100001', '0', '6301', 'starter-recharge-pack', 'Starter Recharge Pack', 'Starter Recharge Pack', '10.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
             ('6402', '10', NULL, '6302', 'global-recharge-pack', 'Global Recharge Pack', 'Global Recharge Pack', '20.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
-            ('6403', '10', '21', '6303', 'other-org-recharge-pack', 'Other Org Recharge Pack', 'Other Org Recharge Pack', '30.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
+            ('6403', '100001', '21', '6303', 'other-org-recharge-pack', 'Other Org Recharge Pack', 'Other Org Recharge Pack', '30.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
         r#"INSERT INTO commerce_recharge_package
             (id, tenant_id, organization_id, package_no, sku_id, name, price_amount, currency_code, bonus_points, status, valid_from, valid_to, sort_weight, created_at, updated_at)
             VALUES
-            ('6101', '10', '20', 'starter-recharge-pack', '6401', 'Starter Recharge Pack', '10.00', 'CNY', 25, 'active', '2026-01-01 00:00:00', '2099-01-01 00:00:00', 1, '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('6101', '100001', '0', 'starter-recharge-pack', '6401', 'Starter Recharge Pack', '10.00', 'CNY', 25, 'active', '2026-01-01 00:00:00', '2099-01-01 00:00:00', 1, '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
             ('6102', '10', NULL, 'global-recharge-pack', '6402', 'Global Recharge Pack', '20.00', 'CNY', 50, 'active', '2026-01-01 00:00:00', '2099-01-01 00:00:00', 2, '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
-            ('6103', '10', '21', 'other-org-recharge-pack', '6403', 'Other Org Recharge Pack', '30.00', 'CNY', 75, 'active', '2026-01-01 00:00:00', '2099-01-01 00:00:00', 3, '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
+            ('6103', '100001', '21', 'other-org-recharge-pack', '6403', 'Other Org Recharge Pack', '30.00', 'CNY', 75, 'active', '2026-01-01 00:00:00', '2099-01-01 00:00:00', 3, '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
         r#"INSERT INTO commerce_payment_method
             (id, tenant_id, organization_id, method_key, display_name, provider, status, sort_weight, created_at, updated_at)
-            VALUES ('6201', '10', '20', 'wechat', 'Wechat Pay', 'wechat', 'active', 1, '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
+            VALUES ('6201', '100001', '0', 'wechat', 'Wechat Pay', 'wechat', 'active', 1, '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }
@@ -6979,8 +6979,8 @@ async fn seed_exchange_rule_runtime_data(pool: &SqlitePool) {
     for statement in [r#"INSERT INTO commerce_exchange_rule
             (id, tenant_id, organization_id, rule_no, source_asset_type, target_asset_type, rate, status, remark, request_no, idempotency_key, created_at, updated_at)
             VALUES
-            ('exchange-1', '10', '20', 'POINTS_TO_CASH', 'points', 'cash', '120.000000', 'active', 'Owner Exchange Rule', 'exchange-1', 'exchange-1', '2026-04-29 10:00:00', '2026-04-29 10:00:00'),
-            ('exchange-other-org', '10', '21', 'POINTS_TO_CASH', 'points', 'cash', '999.000000', 'active', 'Other Org Exchange Rule', 'exchange-other-org', 'exchange-other-org', '2026-04-29 10:00:00', '2026-04-29 10:00:00')"#]
+            ('exchange-1', '100001', '0', 'POINTS_TO_CASH', 'points', 'cash', '120.000000', 'active', 'Owner Exchange Rule', 'exchange-1', 'exchange-1', '2026-04-29 10:00:00', '2026-04-29 10:00:00'),
+            ('exchange-other-org', '100001', '21', 'POINTS_TO_CASH', 'points', 'cash', '999.000000', 'active', 'Other Org Exchange Rule', 'exchange-other-org', 'exchange-other-org', '2026-04-29 10:00:00', '2026-04-29 10:00:00')"#]
     {
         sqlx::query(statement).execute(pool).await.unwrap();
     }
@@ -6990,16 +6990,16 @@ async fn seed_settings_runtime_data(pool: &SqlitePool) {
     for statement in [
         r#"INSERT INTO iam_user_preference
             (id, uuid, tenant_id, organization_id, user_id, owner_type, owner_id, data_scope, status, created_at, updated_at, version, metadata, language, timezone, notification_preferences)
-            VALUES (6201, 'owner-settings-pref', 10, 20, 30, 1, 30, 1, 1, '2026-04-01 08:00:00', '2026-04-29 08:00:00', 0, '{}', 'zh-CN', 'Asia/Shanghai', '{"billReminder":true,"quotaWarning":false,"apiMonitor":true}')"#,
+            VALUES (6201, 'owner-settings-pref', 100001, 0, 30, 1, 30, 1, 1, '2026-04-01 08:00:00', '2026-04-29 08:00:00', 0, '{}', 'zh-CN', 'Asia/Shanghai', '{"billReminder":true,"quotaWarning":false,"apiMonitor":true}')"#,
         r#"INSERT INTO iam_user_preference
             (id, uuid, tenant_id, organization_id, user_id, owner_type, owner_id, data_scope, status, created_at, updated_at, version, metadata, language, timezone, notification_preferences)
-            VALUES (6202, 'other-settings-pref', 10, 20, 31, 1, 31, 1, 1, '2026-04-01 08:00:00', '2026-04-29 08:00:00', 0, '{}', 'ja-JP', 'Asia/Tokyo', '{"billReminder":false,"quotaWarning":false,"apiMonitor":false}')"#,
+            VALUES (6202, 'other-settings-pref', 100001, 0, 31, 1, 31, 1, 1, '2026-04-01 08:00:00', '2026-04-29 08:00:00', 0, '{}', 'ja-JP', 'Asia/Tokyo', '{"billReminder":false,"quotaWarning":false,"apiMonitor":false}')"#,
         r#"INSERT INTO integration_webhook_endpoint
             (id, uuid, tenant_id, organization_id, user_id, owner_type, owner_id, data_scope, status, created_at, updated_at, version, metadata, endpoint_code, name, target_url, event_types, signing_alg, retry_policy, failure_count)
-            VALUES (6203, 'owner-settings-webhook', 10, 20, 30, 1, 30, 1, 1, '2026-04-01 08:00:00', '2026-04-29 08:00:00', 0, '{}', 'console-settings-user-30', 'Owner Settings Webhook', 'https://owner.example.com/hook', '["billing.reminder","api.monitor"]', 'hmac-sha256', '{"maxAttempts":3}', 0)"#,
+            VALUES (6203, 'owner-settings-webhook', 100001, 0, 30, 1, 30, 1, 1, '2026-04-01 08:00:00', '2026-04-29 08:00:00', 0, '{}', 'console-settings-user-30', 'Owner Settings Webhook', 'https://owner.example.com/hook', '["billing.reminder","api.monitor"]', 'hmac-sha256', '{"maxAttempts":3}', 0)"#,
         r#"INSERT INTO integration_webhook_endpoint
             (id, uuid, tenant_id, organization_id, user_id, owner_type, owner_id, data_scope, status, created_at, updated_at, version, metadata, endpoint_code, name, target_url, event_types, signing_alg, retry_policy, failure_count)
-            VALUES (6204, 'other-settings-webhook', 10, 20, 31, 1, 31, 1, 1, '2026-04-01 08:00:00', '2026-04-29 08:00:00', 0, '{}', 'console-settings-user-31', 'Other Settings Webhook', 'https://other.example.com/hook', '[]', 'hmac-sha256', '{"maxAttempts":3}', 0)"#,
+            VALUES (6204, 'other-settings-webhook', 100001, 0, 31, 1, 31, 1, 1, '2026-04-01 08:00:00', '2026-04-29 08:00:00', 0, '{}', 'console-settings-user-31', 'Other Settings Webhook', 'https://other.example.com/hook', '[]', 'hmac-sha256', '{"maxAttempts":3}', 0)"#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }
@@ -7009,31 +7009,31 @@ async fn seed_usage_logs_runtime_data(pool: &SqlitePool) {
     for statement in [
         r#"INSERT INTO ai_usage_fact
             (id, tenant_id, organization_id, user_id, api_key_id, request_id, model, status, request_count, total_tokens, prompt_tokens, cached_tokens, completion_tokens, customer_charge_amount, cost_amount, modality, rate_multiplier, base_input_unit_price, base_output_unit_price, cache_read_unit_price, occurred_at)
-            VALUES (6401, 10, 20, 30, 100, 'usage-owner-success', 'gpt-4o-mini', 1, 1, 160, 100, 10, 50, '0.012345', '0.010000', 1, '1.250000', '0.150000', '0.600000', '0.050000', '2026-04-29 10:15:00')"#,
+            VALUES (6401, 100001, 0, 30, 100, 'usage-owner-success', 'gpt-4o-mini', 1, 1, 160, 100, 10, 50, '0.012345', '0.010000', 1, '1.250000', '0.150000', '0.600000', '0.050000', '2026-04-29 10:15:00')"#,
         r#"INSERT INTO ai_request_trace
             (id, tenant_id, organization_id, user_id, request_id, trace_id, status, created_at, api_key_name_snapshot, channel_group_snapshot, channel_name_snapshot, requested_model, provider_model, started_at, http_status, provider_error_code, error_type, latency_ms, ttft_ms, streaming, prompt_tokens, cached_tokens, completion_tokens, reasoning_effort, total_tokens, client_ip_masked, request_path, endpoint, http_method)
-            VALUES (6402, 10, 20, 30, 'usage-owner-success', 'trace-usage-owner-success', 1, '2026-04-29 10:15:00', 'Owner Usage Key', 'standard-group', 'OpenAI Primary', 'gpt-4o-mini', 'gpt-4o-mini', '2026-04-29 10:15:00', 200, NULL, NULL, 345, 120, 1, 90, 5, 45, 'medium', 160, '203.0.113.***', '/v1/chat/completions', '/v1/chat/completions', 'POST')"#,
+            VALUES (6402, 100001, 0, 30, 'usage-owner-success', 'trace-usage-owner-success', 1, '2026-04-29 10:15:00', 'Owner Usage Key', 'standard-group', 'OpenAI Primary', 'gpt-4o-mini', 'gpt-4o-mini', '2026-04-29 10:15:00', 200, NULL, NULL, 345, 120, 1, 90, 5, 45, 'medium', 160, '203.0.113.***', '/v1/chat/completions', '/v1/chat/completions', 'POST')"#,
         r#"INSERT INTO ai_usage_fact
             (id, tenant_id, organization_id, user_id, api_key_id, request_id, model, status, request_count, total_tokens, prompt_tokens, cached_tokens, completion_tokens, customer_charge_amount, cost_amount, modality, rate_multiplier, base_input_unit_price, base_output_unit_price, cache_read_unit_price, occurred_at)
-            VALUES (6403, 10, 20, 30, 100, 'usage-owner-error', 'gpt-4o-mini', 1, 1, 25, 20, 0, 5, '0.004000', '0.003000', 1, '1.000000', '0.150000', '0.600000', '0.050000', '2026-04-29 11:15:00')"#,
+            VALUES (6403, 100001, 0, 30, 100, 'usage-owner-error', 'gpt-4o-mini', 1, 1, 25, 20, 0, 5, '0.004000', '0.003000', 1, '1.000000', '0.150000', '0.600000', '0.050000', '2026-04-29 11:15:00')"#,
         r#"INSERT INTO ai_request_trace
             (id, tenant_id, organization_id, user_id, request_id, trace_id, status, created_at, api_key_name_snapshot, channel_group_snapshot, channel_name_snapshot, requested_model, provider_model, started_at, http_status, provider_error_code, error_type, error_message_masked, latency_ms, ttft_ms, streaming, prompt_tokens, cached_tokens, completion_tokens, reasoning_effort, total_tokens, client_ip_masked, request_path, endpoint, http_method)
-            VALUES (6404, 10, 20, 30, 'usage-owner-error', 'trace-usage-owner-error', 1, '2026-04-29 11:15:00', 'Owner Usage Key', 'standard-group', 'OpenAI Primary', 'gpt-4o-mini', 'gpt-4o-mini', '2026-04-29 11:15:00', 502, 'upstream_502', 'provider_error', 'provider timed out before completion', NULL, 0, 0, 20, 0, 5, 'provider_error', 25, '203.0.113.***', '/v1/chat/completions', '/v1/chat/completions', 'POST')"#,
+            VALUES (6404, 100001, 0, 30, 'usage-owner-error', 'trace-usage-owner-error', 1, '2026-04-29 11:15:00', 'Owner Usage Key', 'standard-group', 'OpenAI Primary', 'gpt-4o-mini', 'gpt-4o-mini', '2026-04-29 11:15:00', 502, 'upstream_502', 'provider_error', 'provider timed out before completion', NULL, 0, 0, 20, 0, 5, 'provider_error', 25, '203.0.113.***', '/v1/chat/completions', '/v1/chat/completions', 'POST')"#,
         r#"INSERT INTO ai_usage_fact
             (id, tenant_id, organization_id, user_id, api_key_id, request_id, model, status, request_count, total_tokens, prompt_tokens, cached_tokens, completion_tokens, customer_charge_amount, cost_amount, modality, rate_multiplier, base_input_unit_price, base_output_unit_price, cache_read_unit_price, occurred_at)
-            VALUES (6405, 10, 20, 31, 101, 'other-user-usage-request', 'gpt-4o-mini', 1, 1, 999, 900, 0, 99, '9.999999', '8.000000', 1, '2.000000', '0.150000', '0.600000', '0.050000', '2026-04-29 10:30:00')"#,
+            VALUES (6405, 100001, 0, 31, 101, 'other-user-usage-request', 'gpt-4o-mini', 1, 1, 999, 900, 0, 99, '9.999999', '8.000000', 1, '2.000000', '0.150000', '0.600000', '0.050000', '2026-04-29 10:30:00')"#,
         r#"INSERT INTO ai_request_trace
             (id, tenant_id, organization_id, user_id, request_id, trace_id, status, created_at, api_key_name_snapshot, channel_group_snapshot, channel_name_snapshot, requested_model, provider_model, started_at, http_status, provider_error_code, error_type, latency_ms, ttft_ms, streaming, prompt_tokens, cached_tokens, completion_tokens, reasoning_effort, total_tokens, client_ip_masked, request_path, endpoint, http_method)
-            VALUES (6406, 10, 20, 31, 'other-user-usage-request', 'trace-other-user-usage', 1, '2026-04-29 10:30:00', 'Other Usage Key', 'standard-group', 'Other User Channel', 'gpt-4o-mini', 'gpt-4o-mini', '2026-04-29 10:30:00', 200, NULL, NULL, 111, 22, 1, 900, 0, 99, 'high', 999, '203.0.113.42', '/v1/chat/completions', '/v1/chat/completions', 'POST')"#,
+            VALUES (6406, 100001, 0, 31, 'other-user-usage-request', 'trace-other-user-usage', 1, '2026-04-29 10:30:00', 'Other Usage Key', 'standard-group', 'Other User Channel', 'gpt-4o-mini', 'gpt-4o-mini', '2026-04-29 10:30:00', 200, NULL, NULL, 111, 22, 1, 900, 0, 99, 'high', 999, '203.0.113.42', '/v1/chat/completions', '/v1/chat/completions', 'POST')"#,
         r#"INSERT INTO ai_routing_decision_log
             (id, tenant_id, organization_id, user_id, request_id, status, created_at, requested_model, resolved_model, selected_channel_id)
-            VALUES (6407, 10, 20, 30, 'usage-owner-success', 1, '2026-04-29 10:15:00', 'gpt-4o-mini', 'gpt-4o-mini', 4003)"#,
+            VALUES (6407, 100001, 0, 30, 'usage-owner-success', 1, '2026-04-29 10:15:00', 'gpt-4o-mini', 'gpt-4o-mini', 4003)"#,
         r#"INSERT INTO ai_usage_fact
             (id, tenant_id, organization_id, user_id, api_key_id, request_id, model, status, request_count, total_tokens, prompt_tokens, cached_tokens, completion_tokens, customer_charge_amount, cost_amount, modality, rate_multiplier, base_input_unit_price, base_output_unit_price, cache_read_unit_price, occurred_at)
-            VALUES (6408, 10, 20, 30, 100, 'usage-owner-cost-only', 'gpt-4o-cost-only', 1, 1, 16, 10, 0, 6, NULL, '777.123456', 1, '1.000000', '0.150000', '0.600000', '0.050000', '2026-04-29 12:15:00')"#,
+            VALUES (6408, 100001, 0, 30, 100, 'usage-owner-cost-only', 'gpt-4o-cost-only', 1, 1, 16, 10, 0, 6, NULL, '777.123456', 1, '1.000000', '0.150000', '0.600000', '0.050000', '2026-04-29 12:15:00')"#,
         r#"INSERT INTO ai_request_trace
             (id, tenant_id, organization_id, user_id, request_id, trace_id, status, created_at, api_key_name_snapshot, channel_group_snapshot, channel_name_snapshot, requested_model, provider_model, started_at, http_status, provider_error_code, error_type, latency_ms, ttft_ms, streaming, prompt_tokens, cached_tokens, completion_tokens, reasoning_effort, total_tokens, client_ip_masked, request_path, endpoint, http_method)
-            VALUES (6409, 10, 20, 30, 'usage-owner-cost-only', 'trace-usage-owner-cost-only', 1, '2026-04-29 12:15:00', 'Owner Usage Key', 'standard-group', 'OpenAI Primary', 'gpt-4o-cost-only', 'gpt-4o-cost-only', '2026-04-29 12:15:00', 200, NULL, NULL, 87, 30, 0, 10, 0, 6, 'low', 16, '203.0.113.***', '/v1/chat/completions', '/v1/chat/completions', 'POST')"#,
+            VALUES (6409, 100001, 0, 30, 'usage-owner-cost-only', 'trace-usage-owner-cost-only', 1, '2026-04-29 12:15:00', 'Owner Usage Key', 'standard-group', 'OpenAI Primary', 'gpt-4o-cost-only', 'gpt-4o-cost-only', '2026-04-29 12:15:00', 200, NULL, NULL, 87, 30, 0, 10, 0, 6, 'low', 16, '203.0.113.***', '/v1/chat/completions', '/v1/chat/completions', 'POST')"#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }

@@ -458,7 +458,7 @@ async fn seed_channel_with_optional_circuit_breaker_policy(
         INSERT INTO ai_channel
             (id, uuid, tenant_id, organization_id, status, provider_id, provider_code, health_status, circuit_breaker_policy, consecutive_error_count)
         VALUES
-            (3001, 'channel-3001', 10, 20, 1, 7001, 'openrouter', 1, ?, 0)
+            (3001, 'channel-3001', 100001, 0, 1, 7001, 'openrouter', 1, ?, 0)
         "#,
     )
     .bind(policy_json)
@@ -474,8 +474,8 @@ fn invocation_context() -> OpenAiInvocationContext {
         OpenAiInvocationEndpoint::ChatCompletions,
         AuthenticatedApiKeyContext {
             api_key_id: 101,
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             user_id: 30,
             api_key_name_snapshot: "sk-live".to_owned(),
             group_id: 10,

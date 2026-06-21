@@ -166,8 +166,8 @@ fn object_reference_image_input_uses_camel_case_discriminator() {
 #[test]
 fn provider_request_context_keeps_routing_auth_and_region_separate_from_standard_body() {
     let context = PaasProviderRequestContext {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         provider_code: "alibaba".to_owned(),
         region_code: Some("cn-hangzhou".to_owned()),
         credential_ref: Some("secret://paas/alibaba/main".to_owned()),

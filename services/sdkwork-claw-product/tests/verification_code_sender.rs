@@ -15,8 +15,8 @@ async fn configured_verification_code_sender_selects_active_config_and_dispatche
     let config_store = Arc::new(TestConfigStore::with_config(VerificationDeliveryConfig {
         route_rule_id: 4002,
         account_id: 9002,
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         provider_code: "sendgrid".to_owned(),
         channel: "email".to_owned(),
         scene: "login".to_owned(),
@@ -73,8 +73,8 @@ async fn configured_verification_code_sender_fails_closed_when_provider_driver_i
     let config_store = Arc::new(TestConfigStore::with_config(VerificationDeliveryConfig {
         route_rule_id: 4004,
         account_id: 9004,
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         provider_code: "aliyun_sms".to_owned(),
         channel: "sms".to_owned(),
         scene: "register".to_owned(),
@@ -115,8 +115,8 @@ async fn configured_verification_code_sender_uses_default_provider_sender_for_co
     let config_store = Arc::new(TestConfigStore::with_config(VerificationDeliveryConfig {
         route_rule_id: 4005,
         account_id: 9005,
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         provider_code: "ses".to_owned(),
         channel: "email".to_owned(),
         scene: "register".to_owned(),

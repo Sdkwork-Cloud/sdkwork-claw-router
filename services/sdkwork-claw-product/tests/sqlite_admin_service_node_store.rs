@@ -109,8 +109,8 @@ async fn sqlite_pool() -> SqlitePool {
 
 fn subject() -> AdminServiceNodeSubject {
     AdminServiceNodeSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         operator_id: 30,
         operator_type: 1,
     }
@@ -169,12 +169,12 @@ async fn seed_gateway_instances(pool: &SqlitePool) {
             started_at, last_heartbeat_at, health_status, config_hash
         )
         VALUES
-            (101, 'uuid-shanghai', 10, 20, 1, 1, '2026-05-26 07:00:00', '2026-05-26 08:00:00',
+            (101, 'uuid-shanghai', 100001, 0, 1, 1, '2026-05-26 07:00:00', '2026-05-26 08:00:00',
              1, NULL, NULL, '{"domain":"edge-shanghai.example.com","remark":"Shanghai relay node"}',
              'node-shanghai', 2, 'cn-east', 'sh-a', '2026.05', 'sh-host', NULL, '10.0.0.10',
              'edge-shanghai-01', NULL, NULL, NULL, 2, 'kubernetes', '2026-05-26 07:00:00',
              '2026-05-26 08:00:00', 1, 'config-shanghai'),
-            (102, 'uuid-disabled', 10, 20, 1, 0, '2026-05-26 07:00:00', '2026-05-26 08:00:00',
+            (102, 'uuid-disabled', 100001, 0, 1, 0, '2026-05-26 07:00:00', '2026-05-26 08:00:00',
              1, NULL, NULL, '{"domain":"edge-disabled.example.com","remark":"Disabled relay node"}',
              'node-disabled', 2, 'cn-east', 'sh-b', '2026.05', 'disabled-host', NULL, '10.0.0.11',
              'edge-disabled-01', NULL, NULL, NULL, 2, 'kubernetes', '2026-05-26 07:00:00',
@@ -184,7 +184,7 @@ async fn seed_gateway_instances(pool: &SqlitePool) {
              'node-other', 2, 'cn-north', 'bj-a', '2026.05', 'other-host', NULL, '10.0.2.10',
              'edge-other-01', NULL, NULL, NULL, 2, 'kubernetes', '2026-05-26 07:00:00',
              '2026-05-26 08:00:00', 1, 'config-other'),
-            (104, 'uuid-deleted', 10, 20, 1, 1, '2026-05-26 07:00:00', '2026-05-26 08:00:00',
+            (104, 'uuid-deleted', 100001, 0, 1, 1, '2026-05-26 07:00:00', '2026-05-26 08:00:00',
              1, '2026-05-26 08:30:00', 30, '{"domain":"edge-deleted.example.com","remark":"Deleted"}',
              'node-deleted', 2, 'cn-east', 'sh-c', '2026.05', 'deleted-host', NULL, '10.0.0.12',
              'edge-deleted-01', NULL, NULL, NULL, 2, 'kubernetes', '2026-05-26 07:00:00',

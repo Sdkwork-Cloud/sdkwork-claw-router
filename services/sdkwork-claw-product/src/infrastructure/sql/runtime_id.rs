@@ -31,13 +31,9 @@ pub(crate) fn to_standard_database_config(
     }
 }
 
-const ADMIN_APP_NODE_ID: u16 = 21;
-const ADMIN_SKILL_NODE_ID: u16 = 22;
 const DEFAULT_CLAW_RUNTIME_NODE_ID: u16 = 23;
 const CLAW_RUNTIME_NODE_ID_ENV: &str = "SDKWORK_CLAW_SNOWFLAKE_NODE_ID";
 
-static ADMIN_APP_ID_GENERATOR: OnceLock<SnowflakeIdGenerator> = OnceLock::new();
-static ADMIN_SKILL_ID_GENERATOR: OnceLock<SnowflakeIdGenerator> = OnceLock::new();
 static CLAW_RUNTIME_ID_GENERATOR: OnceLock<Result<SnowflakeIdGenerator, String>> = OnceLock::new();
 
 pub(crate) fn next_claw_runtime_id(context: &str) -> DomainResult<i64> {

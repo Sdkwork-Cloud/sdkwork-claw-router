@@ -137,7 +137,7 @@ async fn insert_channel_credential(
              credential_name, auth_config, credential_ref, credential_hash, base_url,
              priority, weight, health_status, status)
         VALUES
-            (?, ?, 10, 20, ?, ?, ?, 'primary', ?, ?, ?, ?, 1, 100, 1, 1)
+            (?, ?, 100001, 0, ?, ?, ?, 'primary', ?, ?, ?, ?, 1, 100, 1, 1)
         "#,
     )
     .bind(credential_id)
@@ -2128,8 +2128,8 @@ async fn gateway_database_provider_native_direct_passthrough_records_api_request
         "trace-provider-native-direct-api-request",
         usage.get::<String, _>("trace_id")
     );
-    assert_eq!(10_i64, usage.get::<i64, _>("tenant_id"));
-    assert_eq!(20_i64, usage.get::<i64, _>("organization_id"));
+    assert_eq!(100001_i64, usage.get::<i64, _>("tenant_id"));
+    assert_eq!(0_i64, usage.get::<i64, _>("organization_id"));
     assert_eq!(30_i64, usage.get::<i64, _>("user_id"));
     assert_eq!(100_i64, usage.get::<i64, _>("api_key_id"));
     assert_eq!(
@@ -3243,8 +3243,8 @@ async fn gateway_database_route_scoped_openai_chat_passthrough_records_usage() {
         "trace-route-scoped-chat-usage-1",
         usage.get::<String, _>("trace_id")
     );
-    assert_eq!(10_i64, usage.get::<i64, _>("tenant_id"));
-    assert_eq!(20_i64, usage.get::<i64, _>("organization_id"));
+    assert_eq!(100001_i64, usage.get::<i64, _>("tenant_id"));
+    assert_eq!(0_i64, usage.get::<i64, _>("organization_id"));
     assert_eq!(30_i64, usage.get::<i64, _>("user_id"));
     assert_eq!(100_i64, usage.get::<i64, _>("api_key_id"));
     assert_eq!(
@@ -3266,16 +3266,16 @@ async fn gateway_database_route_scoped_openai_chat_passthrough_records_usage() {
         "llm_input_token",
         usage.get::<String, _>("billing_meter_code")
     );
-    assert_eq!("11", usage.get::<String, _>("billable_quantity"));
+    assert_eq!("5", usage.get::<String, _>("billable_quantity"));
     assert_eq!(7_i64, usage.get::<i64, _>("prompt_tokens"));
     assert_eq!(4_i64, usage.get::<i64, _>("completion_tokens"));
     assert_eq!(2_i64, usage.get::<i64, _>("cached_tokens"));
     assert_eq!(11_i64, usage.get::<i64, _>("total_tokens"));
     assert_eq!(
-        "0.000004554000",
+        "0.000000990000",
         usage.get::<String, _>("customer_charge_amount")
     );
-    assert_eq!("0.000004554000", usage.get::<String, _>("cost_amount"));
+    assert_eq!("0.000000990000", usage.get::<String, _>("cost_amount"));
     assert_eq!("USD", usage.get::<String, _>("currency"));
     assert_eq!("standard", usage.get::<String, _>("pricing_plan_code"));
     assert_eq!(0_i64, usage.get::<i64, _>("settlement_status"));
@@ -3383,8 +3383,8 @@ async fn gateway_database_route_scoped_openai_legacy_completion_passthrough_reco
         "trace-route-scoped-completion-usage-1",
         usage.get::<String, _>("trace_id")
     );
-    assert_eq!(10_i64, usage.get::<i64, _>("tenant_id"));
-    assert_eq!(20_i64, usage.get::<i64, _>("organization_id"));
+    assert_eq!(100001_i64, usage.get::<i64, _>("tenant_id"));
+    assert_eq!(0_i64, usage.get::<i64, _>("organization_id"));
     assert_eq!(30_i64, usage.get::<i64, _>("user_id"));
     assert_eq!(100_i64, usage.get::<i64, _>("api_key_id"));
     assert_eq!(
@@ -3406,16 +3406,16 @@ async fn gateway_database_route_scoped_openai_legacy_completion_passthrough_reco
         "llm_input_token",
         usage.get::<String, _>("billing_meter_code")
     );
-    assert_eq!("11", usage.get::<String, _>("billable_quantity"));
+    assert_eq!("7", usage.get::<String, _>("billable_quantity"));
     assert_eq!(7_i64, usage.get::<i64, _>("prompt_tokens"));
     assert_eq!(4_i64, usage.get::<i64, _>("completion_tokens"));
     assert_eq!(0_i64, usage.get::<i64, _>("cached_tokens"));
     assert_eq!(11_i64, usage.get::<i64, _>("total_tokens"));
     assert_eq!(
-        "0.000004554000",
+        "0.000001386000",
         usage.get::<String, _>("customer_charge_amount")
     );
-    assert_eq!("0.000004554000", usage.get::<String, _>("cost_amount"));
+    assert_eq!("0.000001386000", usage.get::<String, _>("cost_amount"));
     assert_eq!("USD", usage.get::<String, _>("currency"));
     assert_eq!("standard", usage.get::<String, _>("pricing_plan_code"));
     assert_eq!(0_i64, usage.get::<i64, _>("settlement_status"));
@@ -3644,24 +3644,24 @@ async fn gateway_database_route_scoped_openai_management_passthrough_records_api
         "trace-route-scoped-files-usage-1",
         usage.get::<String, _>("trace_id")
     );
-    assert_eq!(10_i64, usage.get::<i64, _>("tenant_id"));
-    assert_eq!(20_i64, usage.get::<i64, _>("organization_id"));
+    assert_eq!(100001_i64, usage.get::<i64, _>("tenant_id"));
+    assert_eq!(0_i64, usage.get::<i64, _>("organization_id"));
     assert_eq!(30_i64, usage.get::<i64, _>("user_id"));
     assert_eq!(100_i64, usage.get::<i64, _>("api_key_id"));
     assert_eq!(
         "standard-group",
         usage.get::<String, _>("channel_group_snapshot")
     );
-    assert_eq!("openai/gpt-4o-mini", usage.get::<String, _>("catalog_key"));
-    assert_eq!("gpt-4o-mini", usage.get::<String, _>("model"));
     assert_eq!(
-        "openai/gpt-4o-mini",
+        "openai/management/files",
+        usage.get::<String, _>("catalog_key")
+    );
+    assert_eq!("management/files", usage.get::<String, _>("model"));
+    assert_eq!(
+        "openai/management/files",
         usage.get::<String, _>("requested_model_catalog_key")
     );
-    assert_eq!(
-        "gpt-4o-mini",
-        usage.get::<String, _>("provider_native_model")
-    );
+    assert_eq!("", usage.get::<String, _>("provider_native_model"));
     assert_eq!(3001_i64, usage.get::<i64, _>("channel_id"));
     assert_eq!("api_request", usage.get::<String, _>("billing_meter_code"));
     assert_eq!("1", usage.get::<String, _>("billable_quantity"));
@@ -6082,7 +6082,7 @@ async fn insert_resource(pool: &sqlx::SqlitePool, seed: &ResourceSeed<'_>) {
              display_name, vendor_code, modality_code, api_code, catalog_key, model,
              provider_native_model, status, sort_order)
         VALUES
-            (?, ?, 10, 20, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?)
+            (?, ?, 100001, 0, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?)
         "#,
     )
     .bind(seed.id)
@@ -6115,7 +6115,7 @@ async fn add_resource_to_openrouter_standard_bundle(
             (id, uuid, tenant_id, organization_id, resource_group_id, resource_group_code,
              item_type, resource_id, resource_code, item_role, status, sort_order)
         VALUES
-            (?, ?, 10, 20, ?, ?, 'resource', ?, ?, 'include', 1, ?)
+            (?, ?, 100001, 0, ?, ?, 'resource', ?, ?, 'include', 1, ?)
         "#,
     )
     .bind(item_id)
@@ -6147,7 +6147,7 @@ async fn grant_openrouter_standard_bundle_to_channel(
             (id, uuid, tenant_id, organization_id, channel_id, provider_code, channel_code,
              resource_group_id, resource_group_code, grant_type, priority, weight, status)
         VALUES
-            (?, ?, 10, 20, ?, 'openrouter', ?, ?, ?, 'allow', ?, ?, 1)
+            (?, ?, 100001, 0, ?, 'openrouter', ?, ?, ?, 'allow', ?, ?, 1)
         "#,
     )
     .bind(grant_id)
@@ -6175,7 +6175,7 @@ async fn grant_openrouter_standard_bundle_to_group(
             (id, uuid, tenant_id, organization_id, channel_group_id,
              resource_group_id, resource_group_code, grant_type, priority, status)
         VALUES
-            (?, ?, 10, 20, ?, ?, ?, 'allow', ?, 1)
+            (?, ?, 100001, 0, ?, ?, ?, 'allow', ?, 1)
         "#,
     )
     .bind(grant_id)
@@ -6214,7 +6214,7 @@ async fn insert_channel_scoped_model_mapping(
             (id, uuid, tenant_id, organization_id, source_vendor_code, target_vendor_code,
              mapping_mode, match_type, enabled, status)
         VALUES
-            (?, ?, 10, 20, 'openai', 'openai', 'alias', 'exact', 1, 1)
+            (?, ?, 100001, 0, 'openai', 'openai', 'alias', 'exact', 1, 1)
         "#,
     )
     .bind(seed.rule_id)
@@ -6228,7 +6228,7 @@ async fn insert_channel_scoped_model_mapping(
             (id, uuid, tenant_id, organization_id, rule_id, binding_type, binding_id,
              binding_code, binding_name_snapshot, sort_order, enabled, status)
         VALUES
-            (?, ?, 10, 20, ?, 'channel', ?, ?, ?, ?, 1, 1)
+            (?, ?, 100001, 0, ?, 'channel', ?, ?, ?, ?, 1, 1)
         "#,
     )
     .bind(seed.rule_id)
@@ -6251,7 +6251,7 @@ async fn insert_channel_scoped_model_mapping(
              source_catalog_key, target_model, target_catalog_key, target_provider_model,
              target_provider_native_model, sort_order, enabled, status)
         VALUES
-            (?, ?, 10, 20, ?, ?, ?, ?, ?, ?, ?, ?, 1, 1)
+            (?, ?, 100001, 0, ?, ?, ?, ?, ?, ?, ?, ?, 1, 1)
         "#,
     )
     .bind(seed.rule_id)
@@ -6285,7 +6285,7 @@ async fn grant_provider_native_api_resource(
             (id, uuid, tenant_id, organization_id, resource_code, resource_type,
              display_name, vendor_code, modality_code, api_code, status, sort_order)
         VALUES
-            (?, ?, 10, 20, ?, 'api_endpoint', ?, ?, 'video', ?, 1, ?)
+            (?, ?, 100001, 0, ?, 'api_endpoint', ?, ?, 'video', ?, 1, ?)
         "#,
     )
     .bind(id)
@@ -6304,7 +6304,7 @@ async fn grant_provider_native_api_resource(
             (id, uuid, tenant_id, organization_id, channel_id, provider_code, channel_code,
              resource_id, resource_code, grant_type, priority, weight, status)
         VALUES
-            (?, ?, 10, 20, ?, ?, ?, ?, ?, 'allow', 1, 100, 1)
+            (?, ?, 100001, 0, ?, ?, ?, ?, ?, 'allow', 1, 100, 1)
         "#,
     )
     .bind(id)
@@ -6323,7 +6323,7 @@ async fn grant_provider_native_api_resource(
             (id, uuid, tenant_id, organization_id, channel_group_id,
              resource_id, resource_code, grant_type, priority, status)
         VALUES
-            (?, ?, 10, 20, 10, ?, ?, 'allow', 1, 1)
+            (?, ?, 100001, 0, 10, ?, ?, 'allow', 1, 1)
         "#,
     )
     .bind(id)
@@ -6354,7 +6354,7 @@ async fn grant_provider_native_api_resource_with_modality(
             (id, uuid, tenant_id, organization_id, resource_code, resource_type,
              display_name, vendor_code, modality_code, api_code, status, sort_order)
         VALUES
-            (?, ?, 10, 20, ?, 'api_endpoint', ?, ?, ?, ?, 1, ?)
+            (?, ?, 100001, 0, ?, 'api_endpoint', ?, ?, ?, ?, 1, ?)
         "#,
     )
     .bind(id)
@@ -6374,7 +6374,7 @@ async fn grant_provider_native_api_resource_with_modality(
             (id, uuid, tenant_id, organization_id, channel_id, provider_code, channel_code,
              resource_id, resource_code, grant_type, priority, weight, status)
         VALUES
-            (?, ?, 10, 20, ?, ?, ?, ?, ?, 'allow', 1, 100, 1)
+            (?, ?, 100001, 0, ?, ?, ?, ?, ?, 'allow', 1, 100, 1)
         "#,
     )
     .bind(id)
@@ -6393,7 +6393,7 @@ async fn grant_provider_native_api_resource_with_modality(
             (id, uuid, tenant_id, organization_id, channel_group_id,
              resource_id, resource_code, grant_type, priority, status)
         VALUES
-            (?, ?, 10, 20, 10, ?, ?, 'allow', 1, 1)
+            (?, ?, 100001, 0, 10, ?, ?, 'allow', 1, 1)
         "#,
     )
     .bind(id)
@@ -6429,7 +6429,7 @@ async fn grant_provider_native_model_api_resource(
              display_name, vendor_code, modality_code, api_code, catalog_key, model,
              provider_native_model, status, sort_order)
         VALUES
-            (?, ?, 10, 20, ?, 'model_api', ?, ?, ?, ?, ?, ?, ?, 1, ?)
+            (?, ?, 100001, 0, ?, 'model_api', ?, ?, ?, ?, ?, ?, ?, 1, ?)
         "#,
     )
     .bind(id)
@@ -6452,7 +6452,7 @@ async fn grant_provider_native_model_api_resource(
             (id, uuid, tenant_id, organization_id, channel_id, provider_code, channel_code,
              resource_id, resource_code, grant_type, priority, weight, status)
         VALUES
-            (?, ?, 10, 20, ?, ?, ?, ?, ?, 'allow', 1, 100, 1)
+            (?, ?, 100001, 0, ?, ?, ?, ?, ?, 'allow', 1, 100, 1)
         "#,
     )
     .bind(id)
@@ -6471,7 +6471,7 @@ async fn grant_provider_native_model_api_resource(
             (id, uuid, tenant_id, organization_id, channel_group_id,
              resource_id, resource_code, grant_type, priority, status)
         VALUES
-            (?, ?, 10, 20, 10, ?, ?, 'allow', 1, 1)
+            (?, ?, 100001, 0, 10, ?, ?, 'allow', 1, 1)
         "#,
     )
     .bind(id)
@@ -6545,7 +6545,7 @@ async fn seed_gemini_generate_content_channel_route(
              channel_name, channel_type, protocol_code, auth_type, auth_config,
              credential_ref, base_url, status, priority, weight, health_status)
         VALUES
-            (9601, 10, 20, 9601, 'google', 'google-main', 'Google Main',
+            (9601, 100001, 0, 9601, 'google', 'google-main', 'Google Main',
              'official', 'vendor_native', 'header', '{"name":"x-goog-api-key"}',
              'vault://providers/google/account/main', ?, 1, 10, 100, 1)
         "#,
@@ -6572,7 +6572,7 @@ async fn seed_gemini_generate_content_channel_route(
              updated_at, version, metadata, policy_id, profile_version, profile_name,
              release_status, traffic_percent, config_hash)
         VALUES
-            (9601, 'routing-profile-gemini-chat', 10, 20, 1, 1,
+            (9601, 'routing-profile-gemini-chat', 100001, 0, 1, 1,
              '2026-05-10 00:00:00', '2026-05-10 00:00:00', 0, '{}',
              9601, 1, 'Gemini Chat Profile', 2, '100.000000',
              'gemini-chat-profile-hash')
@@ -6587,7 +6587,7 @@ async fn seed_gemini_generate_content_channel_route(
             (id, tenant_id, organization_id, policy_code, policy_scope, subject_id,
              capability, default_profile_id, fallback_mode, status)
         VALUES
-            (9601, 10, 20, 'gemini-chat-group-policy', 5, 10, 1, 9601, 1, 1)
+            (9601, 100001, 0, 'gemini-chat-group-policy', 5, 10, 1, 9601, 1, 1)
         "#,
     )
     .execute(&pool)
@@ -6600,7 +6600,7 @@ async fn seed_gemini_generate_content_channel_route(
              match_expression, target_model, candidate_channels, fallback_chain,
              constraints, status)
         VALUES
-            (9601, 10, 20, 9601, 'gemini-generate-content', 1,
+            (9601, 100001, 0, 9601, 'gemini-generate-content', 1,
              '{"routeKey":"gemini.generate_content"}',
              'gemini.generate_content', '[{"channel_id":9601,"weight":100}]',
              '[]', '{}', 1)
@@ -6615,7 +6615,7 @@ async fn seed_gemini_generate_content_channel_route(
             (id, tenant_id, organization_id, channel_group_id, channel_id, priority, weight,
              enabled, status)
         VALUES
-            (9601, 10, 20, 10, 9601, 1, 100, 1, 1)
+            (9601, 100001, 0, 10, 9601, 1, 100, 1, 1)
         "#,
     )
     .execute(&pool)
@@ -6643,7 +6643,7 @@ async fn seed_gemini_generate_content_billing_catalog(
         INSERT INTO ai_model_vendor
             (id, uuid, tenant_id, organization_id, vendor_code, display_name, status, sort_order)
         VALUES
-            (9601, 'vendor-google-gemini', 10, 20, 'google', 'Google Gemini', 1, 9601)
+            (9601, 'vendor-google-gemini', 100001, 0, 'google', 'Google Gemini', 1, 9601)
         "#,
     )
     .execute(&pool)
@@ -6655,7 +6655,7 @@ async fn seed_gemini_generate_content_billing_catalog(
             (id, uuid, tenant_id, organization_id, vendor_id, vendor_code, family_code,
              display_name, status, sort_order)
         VALUES
-            (9601, 'family-google-gemini', 10, 20, 9601, 'google',
+            (9601, 'family-google-gemini', 100001, 0, 9601, 'google',
              'gemini', 'Gemini', 1, 9601)
         "#,
     )
@@ -6671,7 +6671,7 @@ async fn seed_gemini_generate_content_billing_catalog(
              supports_streaming, supports_tools, supports_json_schema, api_format,
              shelf_state, routing_state, status, rank_score)
         VALUES
-            (9601, 'model-google-gemini-2-5-flash', 10, 20,
+            (9601, 'model-google-gemini-2-5-flash', 100001, 0,
              'google/gemini-2.5-flash', 'gemini-2.5-flash', 'Gemini 2.5 Flash',
              9601, 'google', 'Google Gemini', 9601, 'gemini', 1,
              '["llm","chat"]', '["text"]', '["text"]', '["text"]',
@@ -6688,7 +6688,7 @@ async fn seed_gemini_generate_content_billing_catalog(
              vendor_code, capability, capability_code, modality, input_modalities,
              output_modalities, supported, status, sort_order)
         VALUES
-            (9601, 'cap-google-gemini-2-5-flash-chat', 10, 20, 9601,
+            (9601, 'cap-google-gemini-2-5-flash-chat', 100001, 0, 9601,
              'google/gemini-2.5-flash', 'gemini-2.5-flash', 'google',
              1, 'chat', 1, '["text"]', '["text"]', 1, 1, 9601)
         "#,
@@ -6717,7 +6717,7 @@ async fn seed_gemini_generate_content_billing_catalog(
              vendor_code, region_code, price_side, billing_meter_code, unit_price,
              currency, status, priority)
         VALUES
-            (9601, 'price-google-gemini-api-request-reference', 10, 20, 9601,
+            (9601, 'price-google-gemini-api-request-reference', 100001, 0, 9601,
              'google/gemini-2.5-flash', 'gemini-2.5-flash', 'google',
              'global', 1, 'api_request', '0.005000', 'USD', 1, 1)
         "#,
@@ -6732,7 +6732,7 @@ async fn seed_gemini_generate_content_billing_catalog(
              vendor_code, region_code, price_side, billing_meter_code, unit_price,
              currency, provider_code, channel_id, status, priority)
         VALUES
-            (9602, 'price-google-gemini-api-request-upstream', 10, 20, 9601,
+            (9602, 'price-google-gemini-api-request-upstream', 100001, 0, 9601,
              'google/gemini-2.5-flash', 'gemini-2.5-flash', 'google',
              'global', 2, 'api_request', '0.003000', 'USD',
              'google', 9601, 1, 1)
@@ -6768,7 +6768,7 @@ async fn seed_kling_text_to_video_channel_route(
              channel_name, channel_type, protocol_code, auth_type, auth_config,
              credential_ref, base_url, status, priority, weight, health_status)
         VALUES
-            (9501, 10, 20, 9501, 'kling', 'kling-main', 'Kling Main',
+            (9501, 100001, 0, 9501, 'kling', 'kling-main', 'Kling Main',
              'official', 'vendor_native', 'bearer', '{}',
              'vault://providers/kling/account/main', ?, 1, 10, 100, 1)
         "#,
@@ -6795,7 +6795,7 @@ async fn seed_kling_text_to_video_channel_route(
              updated_at, version, metadata, policy_id, profile_version, profile_name,
              release_status, traffic_percent, config_hash)
         VALUES
-            (9501, 'routing-profile-kling-video', 10, 20, 1, 1,
+            (9501, 'routing-profile-kling-video', 100001, 0, 1, 1,
              '2026-05-10 00:00:00', '2026-05-10 00:00:00', 0, '{}',
              9501, 1, 'Kling Video Profile', 2, '100.000000',
              'kling-video-profile-hash')
@@ -6810,7 +6810,7 @@ async fn seed_kling_text_to_video_channel_route(
             (id, tenant_id, organization_id, policy_code, policy_scope, subject_id,
              capability, default_profile_id, fallback_mode, status)
         VALUES
-            (9501, 10, 20, 'kling-video-group-policy', 5, 10, 5, 9501, 1, 1)
+            (9501, 100001, 0, 'kling-video-group-policy', 5, 10, 5, 9501, 1, 1)
         "#,
     )
     .execute(&pool)
@@ -6823,7 +6823,7 @@ async fn seed_kling_text_to_video_channel_route(
              match_expression, target_model, candidate_channels, fallback_chain,
              constraints, status)
         VALUES
-            (9501, 10, 20, 9501, 'kling-text-to-video', 1,
+            (9501, 100001, 0, 9501, 'kling-text-to-video', 1,
              '{"routeKey":"kling.text_to_video"}',
              'kling.text_to_video', '[{"channel_id":9501,"weight":100}]',
              '[]', '{}', 1)
@@ -6838,7 +6838,7 @@ async fn seed_kling_text_to_video_channel_route(
             (id, tenant_id, organization_id, channel_group_id, channel_id, priority, weight,
              enabled, status)
         VALUES
-            (9501, 10, 20, 10, 9501, 1, 100, 1, 1)
+            (9501, 100001, 0, 10, 9501, 1, 100, 1, 1)
         "#,
     )
     .execute(&pool)
@@ -6884,7 +6884,7 @@ async fn seed_start_end2video_channel_route(
              channel_name, channel_type, protocol_code, auth_type, auth_config,
              credential_ref, base_url, status, priority, weight, health_status)
         VALUES
-            (?, 10, 20, ?, ?, ?, ?, 'relay', ?, ?, ?, ?, ?, 1, 10, 100, 1)
+            (?, 100001, 0, ?, ?, ?, ?, 'relay', ?, ?, ?, ?, ?, 1, 10, 100, 1)
         "#,
     )
     .bind(id)
@@ -6918,7 +6918,7 @@ async fn seed_start_end2video_channel_route(
              updated_at, version, metadata, policy_id, profile_version, profile_name,
              release_status, traffic_percent, config_hash)
         VALUES
-            (9301, 'routing-profile-vidu-video', 10, 20, 1, 1,
+            (9301, 'routing-profile-vidu-video', 100001, 0, 1, 1,
              '2026-05-10 00:00:00', '2026-05-10 00:00:00', 0, '{}',
              9301, 1, 'Vidu Video Profile', 2, '100.000000',
              'vidu-video-profile-hash')
@@ -6933,7 +6933,7 @@ async fn seed_start_end2video_channel_route(
             (id, tenant_id, organization_id, policy_code, policy_scope, subject_id,
              capability, default_profile_id, fallback_mode, status)
         VALUES
-            (9301, 10, 20, 'vidu-video-group-policy', 5, 10, 5, 9301, 1, 1)
+            (9301, 100001, 0, 'vidu-video-group-policy', 5, 10, 5, 9301, 1, 1)
         "#,
     )
     .execute(&pool)
@@ -6946,7 +6946,7 @@ async fn seed_start_end2video_channel_route(
              match_expression, target_model, candidate_channels, fallback_chain,
              constraints, status)
         VALUES
-            (9301, 10, 20, 9301, 'vidu-start-end2video', 1,
+            (9301, 100001, 0, 9301, 'vidu-start-end2video', 1,
              '{"routeKey":"vidu.start_end_to_video"}',
              'vidu.start_end_to_video', '[{"channel_id":9301,"weight":100}]',
              '[]', '{}', 1)
@@ -6961,7 +6961,7 @@ async fn seed_start_end2video_channel_route(
             (id, tenant_id, organization_id, channel_group_id, channel_id, priority, weight,
              enabled, status)
         VALUES
-            (?, 10, 20, 10, ?, 1, 100, 1, 1)
+            (?, 100001, 0, 10, ?, 1, 100, 1, 1)
         "#,
     )
     .bind(id)
@@ -6990,7 +6990,7 @@ async fn seed_tencent_cloud_vidu_billing_catalog(
         INSERT INTO ai_model_vendor
             (id, uuid, tenant_id, organization_id, vendor_code, display_name, status, sort_order)
         VALUES
-            (9401, 'vendor-tencent-cloud', 10, 20, 'tencent-cloud', 'Tencent Cloud', 1, 9401)
+            (9401, 'vendor-tencent-cloud', 100001, 0, 'tencent-cloud', 'Tencent Cloud', 1, 9401)
         "#,
     )
     .execute(&pool)
@@ -7002,7 +7002,7 @@ async fn seed_tencent_cloud_vidu_billing_catalog(
             (id, uuid, tenant_id, organization_id, vendor_id, vendor_code, family_code,
              display_name, status, sort_order)
         VALUES
-            (9401, 'family-tencent-cloud-vidu', 10, 20, 9401,
+            (9401, 'family-tencent-cloud-vidu', 100001, 0, 9401,
              'tencent-cloud', 'vidu', 'Vidu', 1, 9401)
         "#,
     )
@@ -7018,7 +7018,7 @@ async fn seed_tencent_cloud_vidu_billing_catalog(
              supports_streaming, supports_tools, supports_json_schema, api_format,
              shelf_state, routing_state, status, rank_score)
         VALUES
-            (9401, 'model-tencent-cloud-vidu2', 10, 20,
+            (9401, 'model-tencent-cloud-vidu2', 100001, 0,
              'tencent-cloud/vidu2.0', 'vidu2.0', 'Vidu 2.0',
              9401, 'tencent-cloud', 'Tencent Cloud', 9401, 'vidu', 5,
              '["video"]', '["video"]', '["image","text"]', '["video"]',
@@ -7035,7 +7035,7 @@ async fn seed_tencent_cloud_vidu_billing_catalog(
              vendor_code, capability, capability_code, modality, input_modalities,
              output_modalities, supported, status, sort_order)
         VALUES
-            (9401, 'cap-tencent-cloud-global-vidu2-video', 10, 20, 9401,
+            (9401, 'cap-tencent-cloud-global-vidu2-video', 100001, 0, 9401,
              'tencent-cloud/vidu2.0', 'vidu2.0', 'tencent-cloud',
              5, 'video', 5, '["image","text"]', '["video"]', 1, 1, 9401)
         "#,
@@ -7064,10 +7064,10 @@ async fn seed_tencent_cloud_vidu_billing_catalog(
              vendor_code, region_code, price_side, billing_meter_code, unit_price,
              currency, status, priority)
         VALUES
-            (9401, 'price-tencent-cloud-vidu-api-request-reference', 10, 20, 9401,
+            (9401, 'price-tencent-cloud-vidu-api-request-reference', 100001, 0, 9401,
              'tencent-cloud/vidu2.0', 'vidu2.0', 'tencent-cloud',
              'global', 1, 'api_request', '0.020000', 'USD', 1, 1),
-            (9402, 'price-tencent-cloud-vidu-video-second-reference', 10, 20, 9401,
+            (9402, 'price-tencent-cloud-vidu-video-second-reference', 100001, 0, 9401,
              'tencent-cloud/vidu2.0', 'vidu2.0', 'tencent-cloud',
              'global', 1, 'video_output_second', '0.100000', 'USD', 1, 1)
         "#,
@@ -7082,11 +7082,11 @@ async fn seed_tencent_cloud_vidu_billing_catalog(
              vendor_code, region_code, price_side, billing_meter_code, unit_price,
              currency, provider_code, channel_id, status, priority)
         VALUES
-            (9403, 'price-tencent-cloud-vidu-api-request-upstream', 10, 20, 9401,
+            (9403, 'price-tencent-cloud-vidu-api-request-upstream', 100001, 0, 9401,
              'tencent-cloud/vidu2.0', 'vidu2.0', 'tencent-cloud',
              'global', 2, 'api_request', '0.010000', 'USD', 'tencent-cloud',
              9301, 1, 1),
-            (9404, 'price-tencent-cloud-vidu-video-second-upstream', 10, 20, 9401,
+            (9404, 'price-tencent-cloud-vidu-video-second-upstream', 100001, 0, 9401,
              'tencent-cloud/vidu2.0', 'vidu2.0', 'tencent-cloud',
              'global', 2, 'video_output_second', '0.060000', 'USD',
              'tencent-cloud', 9301, 1, 1)
@@ -7116,7 +7116,7 @@ async fn seed_vidu_billing_catalog_for_provider(
         INSERT INTO ai_model_vendor
             (id, uuid, tenant_id, organization_id, vendor_code, display_name, status, sort_order)
         VALUES
-            (?, ?, 10, 20, ?, ?, 1, ?)
+            (?, ?, 100001, 0, ?, ?, 1, ?)
         "#,
     )
     .bind(seed_id)
@@ -7133,7 +7133,7 @@ async fn seed_vidu_billing_catalog_for_provider(
             (id, uuid, tenant_id, organization_id, vendor_id, vendor_code, family_code,
              display_name, status, sort_order)
         VALUES
-            (?, ?, 10, 20, ?, ?, 'vidu', 'Vidu', 1, ?)
+            (?, ?, 100001, 0, ?, ?, 'vidu', 'Vidu', 1, ?)
         "#,
     )
     .bind(seed_id)
@@ -7154,7 +7154,7 @@ async fn seed_vidu_billing_catalog_for_provider(
              supports_streaming, supports_tools, supports_json_schema, api_format,
              shelf_state, routing_state, status, rank_score)
         VALUES
-            (?, ?, 10, 20, ?, 'vidu2.0', 'Vidu 2.0',
+            (?, ?, 100001, 0, ?, 'vidu2.0', 'Vidu 2.0',
              ?, ?, ?, ?, 'vidu', 5,
              '["video"]', '["video"]', '["image","text"]', '["video"]',
              0, 0, 0, 'provider-native', 1, 1, 1, '70.0')
@@ -7177,7 +7177,7 @@ async fn seed_vidu_billing_catalog_for_provider(
              vendor_code, capability, capability_code, modality, input_modalities,
              output_modalities, supported, status, sort_order)
         VALUES
-            (?, ?, 10, 20, ?, ?, 'vidu2.0', ?,
+            (?, ?, 100001, 0, ?, ?, 'vidu2.0', ?,
              5, 'video', 5, '["image","text"]', '["video"]', 1, 1, ?)
         "#,
     )
@@ -7211,7 +7211,7 @@ async fn seed_vidu_billing_catalog_for_provider(
              vendor_code, region_code, price_side, billing_meter_code, unit_price,
              currency, status, priority)
         VALUES
-            (?, ?, 10, 20, ?, ?, 'vidu2.0', ?,
+            (?, ?, 100001, 0, ?, ?, 'vidu2.0', ?,
              'global', 1, 'api_request', '0.020000', 'USD', 1, 1)
         "#,
     )
@@ -7230,7 +7230,7 @@ async fn seed_vidu_billing_catalog_for_provider(
              vendor_code, region_code, price_side, billing_meter_code, unit_price,
              currency, provider_code, channel_id, status, priority)
         VALUES
-            (?, ?, 10, 20, ?, ?, 'vidu2.0', ?,
+            (?, ?, 100001, 0, ?, ?, 'vidu2.0', ?,
              'global', 2, 'api_request', '0.010000', 'USD', ?, 9301, 1, 1)
         "#,
     )
@@ -7266,7 +7266,7 @@ async fn seed_openai_passthrough_group_channel_routes(
              supports_tools, supports_json_schema, api_format, shelf_state, routing_state,
              status, rank_score)
         VALUES
-            (9001, 'model-openai-global-gpt-image-1', 10, 20,
+            (9001, 'model-openai-global-gpt-image-1', 100001, 0,
              'openai/gpt-image-1', 'gpt-image-1', 'GPT Image 1',
              1, 'openai', 'OpenAI', 1, 'gpt-4o', 2,
              '["image"]', '["image"]', 0, 0, 0, 'openai-compatible',
@@ -7283,7 +7283,7 @@ async fn seed_openai_passthrough_group_channel_routes(
              vendor_code, capability, capability_code, modality,
              input_modalities, output_modalities, supported, status, sort_order)
         VALUES
-            (9001, 'cap-openai-global-gpt-image-1-image', 10, 20, 9001,
+            (9001, 'cap-openai-global-gpt-image-1-image', 100001, 0, 9001,
              'openai/gpt-image-1', 'gpt-image-1', 'openai',
              2, 'image', 2, '["text","image"]', '["image"]', 1, 1, 9001)
         "#,
@@ -7681,7 +7681,7 @@ async fn seed_openai_passthrough_group_channel_routes(
              channel_name, channel_type, credential_ref, base_url, status, priority,
              weight, health_status)
         VALUES
-            (3002, 'channel-openrouter-premium', 10, 20, 'openrouter',
+            (3002, 'channel-openrouter-premium', 100001, 0, 'openrouter',
              'openrouter-premium', 'OpenRouter Premium', 'relay',
              'vault://providers/openrouter/account/premium', ?, 1, 10, 100, 1)
         "#,
@@ -7742,7 +7742,7 @@ async fn seed_openai_passthrough_group_channel_routes(
             (id, tenant_id, organization_id, group_code, group_name, pricing_plan_code,
              rate_multiplier, official_price_multiplier, status)
         VALUES
-            (11, 10, 20, 'premium-group', 'Premium Group', 'standard',
+            (11, 100001, 0, 'premium-group', 'Premium Group', 'standard',
              '1.000000', '1.100000', 1)
         "#,
     )
@@ -7756,7 +7756,7 @@ async fn seed_openai_passthrough_group_channel_routes(
             (id, tenant_id, organization_id, user_id, channel_group_id, key_prefix, key_hash,
              idempotency_key, status)
         VALUES
-            (101, 10, 20, 31, 11, 'sk-premium', ?, 'seed-api-key-101', 1)
+            (101, 100001, 0, 31, 11, 'sk-premium', ?, 'seed-api-key-101', 1)
         "#,
     )
     .bind(premium_key_hash)
@@ -7769,7 +7769,7 @@ async fn seed_openai_passthrough_group_channel_routes(
             (id, uuid, tenant_id, organization_id, channel_group_id, channel_id, priority, weight,
              enabled, status)
         VALUES
-            (601, 'channel-group-member-openrouter-premium', 10, 20, 11, 3002, 1, 100, 1, 1)
+            (601, 'channel-group-member-openrouter-premium', 100001, 0, 11, 3002, 1, 100, 1, 1)
         "#,
     )
     .execute(&pool)
@@ -7782,7 +7782,7 @@ async fn seed_openai_passthrough_group_channel_routes(
              vendor_code, region_code, price_side, billing_meter_code, unit_price,
              currency, status, priority)
         VALUES
-            (9001, 'price-openai-global-gpt-image-1-reference', 10, 20, 9001,
+            (9001, 'price-openai-global-gpt-image-1-reference', 100001, 0, 9001,
              'openai/gpt-image-1', 'gpt-image-1', 'openai', 'global',
              1, 'image_result', '0.050000', 'USD', 1, 1)
         "#,
@@ -7797,14 +7797,105 @@ async fn seed_openai_passthrough_group_channel_routes(
              vendor_code, region_code, price_side, billing_meter_code, unit_price,
              currency, provider_code, channel_id, status, priority)
         VALUES
-            (9002, 'price-openai-global-gpt-image-1-standard-upstream', 10, 20,
+            (9002, 'price-openai-global-gpt-image-1-standard-upstream', 100001, 0,
              9001, 'openai/gpt-image-1', 'gpt-image-1', 'openai',
              'global', 2, 'image_result', '0.030000', 'USD', 'openrouter',
              3001, 1, 1),
-            (9003, 'price-openai-global-gpt-image-1-premium-upstream', 10, 20,
+            (9003, 'price-openai-global-gpt-image-1-premium-upstream', 100001, 0,
              9001, 'openai/gpt-image-1', 'gpt-image-1', 'openai',
              'global', 2, 'image_result', '0.040000', 'USD', 'openrouter',
              3002, 1, 1)
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    sqlx::query(
+        r#"
+        INSERT INTO ai_model
+            (id, uuid, tenant_id, organization_id, catalog_key, model, display_name,
+             vendor_id, vendor_code, vendor_name_snapshot, family_id,
+             family_code, capability, capabilities, modalities, supports_streaming,
+             supports_tools, supports_json_schema, api_format, shelf_state, routing_state,
+             status, rank_score)
+        VALUES
+            (9013, 'model-openai-management-threads', 100001, 0,
+             'openai/management/threads', 'management/threads', 'OpenAI Threads API',
+             1, 'openai', 'OpenAI', 1, 'gpt-4o', 1,
+             '["chat"]', '["chat"]', 0, 0, 0, 'openai-compatible',
+             1, 1, 1, '80.0'),
+            (9014, 'model-openai-management-evals', 100001, 0,
+             'openai/management/evals', 'management/evals', 'OpenAI Evals API',
+             1, 'openai', 'OpenAI', 1, 'gpt-4o', 10,
+             '["network"]', '["network"]', 0, 0, 0, 'openai-compatible',
+             1, 1, 1, '80.0'),
+            (9015, 'model-openai-management-files', 100001, 0,
+             'openai/management/files', 'management/files', 'OpenAI Files API',
+             1, 'openai', 'OpenAI', 1, 'gpt-4o', 10,
+             '["network"]', '["network"]', 0, 0, 0, 'openai-compatible',
+             1, 1, 1, '80.0'),
+            (9016, 'model-openai-management-uploads', 100001, 0,
+             'openai/management/uploads', 'management/uploads', 'OpenAI Uploads API',
+             1, 'openai', 'OpenAI', 1, 'gpt-4o', 10,
+             '["network"]', '["network"]', 0, 0, 0, 'openai-compatible',
+             1, 1, 1, '80.0'),
+            (9017, 'model-openai-management-models', 100001, 0,
+             'openai/management/models', 'management/models', 'OpenAI Models API',
+             1, 'openai', 'OpenAI', 1, 'gpt-4o', 10,
+             '["network"]', '["network"]', 0, 0, 0, 'openai-compatible',
+             1, 1, 1, '80.0'),
+            (9018, 'model-openai-management-audio-voices', 100001, 0,
+             'openai/management/audio_voices', 'management/audio_voices', 'OpenAI Audio Voices API',
+             1, 'openai', 'OpenAI', 1, 'gpt-4o', 3,
+             '["audio"]', '["audio"]', 0, 0, 0, 'openai-compatible',
+             1, 1, 1, '80.0'),
+            (9019, 'model-openai-management-videos', 100001, 0,
+             'openai/management/videos', 'management/videos', 'OpenAI Videos API',
+             1, 'openai', 'OpenAI', 1, 'gpt-4o', 5,
+             '["video"]', '["video"]', 0, 0, 0, 'openai-compatible',
+             1, 1, 1, '80.0'),
+            (9020, 'model-openai-management-responses', 100001, 0,
+             'openai/management/responses', 'management/responses', 'OpenAI Responses API',
+             1, 'openai', 'OpenAI', 1, 'gpt-4o', 1,
+             '["chat"]', '["chat"]', 0, 0, 0, 'openai-compatible',
+             1, 1, 1, '80.0')
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO ai_model_pricing
+            (id, uuid, tenant_id, organization_id, model_id, catalog_key, model,
+             vendor_code, region_code, price_side, billing_meter_code, unit_price,
+             currency, status, priority)
+        VALUES
+            (9012, 'price-openai-management-threads-api-request', 100001, 0,
+             9013, 'openai/management/threads', 'management/threads', 'openai',
+             'global', 1, 'api_request', '0.001000', 'USD', 1, 1),
+            (9013, 'price-openai-management-evals-api-request', 100001, 0,
+             9014, 'openai/management/evals', 'management/evals', 'openai',
+             'global', 1, 'api_request', '0.001000', 'USD', 1, 1),
+            (9014, 'price-openai-management-files-api-request', 100001, 0,
+             9015, 'openai/management/files', 'management/files', 'openai',
+             'global', 1, 'api_request', '0.001000', 'USD', 1, 1),
+            (9015, 'price-openai-management-uploads-api-request', 100001, 0,
+             9016, 'openai/management/uploads', 'management/uploads', 'openai',
+             'global', 1, 'api_request', '0.001000', 'USD', 1, 1),
+            (9016, 'price-openai-management-models-api-request', 100001, 0,
+             9017, 'openai/management/models', 'management/models', 'openai',
+             'global', 1, 'api_request', '0.001000', 'USD', 1, 1),
+            (9017, 'price-openai-management-audio-voices-api-request', 100001, 0,
+             9018, 'openai/management/audio_voices', 'management/audio_voices', 'openai',
+             'global', 1, 'api_request', '0.001000', 'USD', 1, 1),
+            (9018, 'price-openai-management-videos-api-request', 100001, 0,
+             9019, 'openai/management/videos', 'management/videos', 'openai',
+             'global', 1, 'api_request', '0.001000', 'USD', 1, 1),
+            (9019, 'price-openai-management-responses-api-request', 100001, 0,
+             9020, 'openai/management/responses', 'management/responses', 'openai',
+             'global', 1, 'api_request', '0.001000', 'USD', 1, 1)
         "#,
     )
     .execute(&pool)
@@ -7818,11 +7909,11 @@ async fn seed_openai_passthrough_group_channel_routes(
              updated_at, version, metadata, policy_id, profile_version, profile_name,
              release_status, traffic_percent, config_hash)
         VALUES
-            (9201, 'routing-profile-standard-image', 10, 20, 1, 1,
+            (9201, 'routing-profile-standard-image', 100001, 0, 1, 1,
              '2026-05-10 00:00:00', '2026-05-10 00:00:00', 0, '{}',
              9201, 1, 'Standard Image Profile', 2, '100.000000',
              'standard-image-profile-hash'),
-            (9202, 'routing-profile-premium-image', 10, 20, 1, 1,
+            (9202, 'routing-profile-premium-image', 100001, 0, 1, 1,
              '2026-05-10 00:00:00', '2026-05-10 00:00:00', 0, '{}',
              9202, 1, 'Premium Image Profile', 2, '100.000000',
              'premium-image-profile-hash')
@@ -7837,8 +7928,8 @@ async fn seed_openai_passthrough_group_channel_routes(
             (id, tenant_id, organization_id, policy_code, policy_scope, subject_id,
              capability, default_profile_id, fallback_mode, status)
         VALUES
-            (9201, 10, 20, 'standard-image-group-policy', 5, 10, 2, 9201, 1, 1),
-            (9202, 10, 20, 'premium-image-group-policy', 5, 11, 2, 9202, 1, 1)
+            (9201, 100001, 0, 'standard-image-group-policy', 5, 10, 2, 9201, 1, 1),
+            (9202, 100001, 0, 'premium-image-group-policy', 5, 11, 2, 9202, 1, 1)
         "#,
     )
     .execute(&pool)
@@ -7851,11 +7942,11 @@ async fn seed_openai_passthrough_group_channel_routes(
              match_expression, target_model, candidate_channels, fallback_chain,
              constraints, status)
         VALUES
-            (9211, 10, 20, 9201, 'standard-gpt-image-1', 1,
+            (9211, 100001, 0, 9201, 'standard-gpt-image-1', 1,
              '{"catalogKey":"openai/gpt-image-1"}',
              'openai/gpt-image-1', '[{"channel_id":3001,"weight":100}]',
              '[]', '{}', 1),
-            (9212, 10, 20, 9202, 'premium-gpt-image-1', 1,
+            (9212, 100001, 0, 9202, 'premium-gpt-image-1', 1,
              '{"catalogKey":"openai/gpt-image-1"}',
              'openai/gpt-image-1', '[{"channel_id":3002,"weight":100}]',
              '[]', '{}', 1)
@@ -7907,7 +7998,7 @@ async fn seed_openai_chat_fallback_route(catalog: &sdkwork_claw_test_support::Se
              vendor_code, region_code, price_side, billing_meter_code, unit_price,
              currency, provider_code, channel_id, status, priority)
         VALUES
-            (9011, 'price-openai-gpt-4o-mini-fallback-input-upstream', 10, 20,
+            (9011, 'price-openai-gpt-4o-mini-fallback-input-upstream', 100001, 0,
              1, 'openai/gpt-4o-mini', 'gpt-4o-mini', 'openai',
              'global', 2, 'llm_input_token', '0.120000', 'USD', 'openrouter',
              3002, 1, 1)
@@ -7922,7 +8013,7 @@ async fn seed_openai_chat_fallback_route(catalog: &sdkwork_claw_test_support::Se
             (id, uuid, tenant_id, organization_id, channel_group_id, channel_id, priority, weight,
              enabled, status)
         VALUES
-            (602, 'channel-group-member-openrouter-standard-fallback', 10, 20, 10, 3002, 2, 50, 1, 1)
+            (602, 'channel-group-member-openrouter-standard-fallback', 100001, 0, 10, 3002, 2, 50, 1, 1)
         "#,
     )
     .execute(&pool)
@@ -7934,7 +8025,7 @@ async fn seed_openai_chat_fallback_route(catalog: &sdkwork_claw_test_support::Se
             (id, uuid, tenant_id, organization_id, channel_id, provider_code, channel_code,
              resource_group_id, resource_group_code, grant_type, priority, weight, status)
         VALUES
-            (9021, 'channel-resource-openrouter-chat-fallback', 10, 20, 3002,
+            (9021, 'channel-resource-openrouter-chat-fallback', 100001, 0, 3002,
              'openrouter', 'openrouter-premium', 5, 'bundle.openrouter.openai.standard',
              'allow', 2, 50, 1)
         "#,
@@ -7991,7 +8082,7 @@ async fn seed_openai_passthrough_default_channel_route_fallback(
              channel_name, channel_type, credential_ref, base_url, status, priority,
              weight, health_status)
         VALUES
-            (3004, 'channel-openrouter-default', 10, 20, 'openrouter',
+            (3004, 'channel-openrouter-default', 100001, 0, 'openrouter',
              'openrouter-default', 'OpenRouter Default', 'relay',
              'vault://providers/openrouter/account/default', ?, 1, 20, 100, 1)
         "#,
@@ -8061,7 +8152,7 @@ async fn seed_openai_passthrough_default_channel_route_fallback(
             (id, tenant_id, organization_id, channel_group_id, channel_id, priority, weight,
              enabled, status)
         VALUES
-            (604, 10, 20, 10, 3004, 1, 100, 1, 1)
+            (604, 100001, 0, 10, 3004, 1, 100, 1, 1)
         "#,
     )
     .execute(&pool)
@@ -8090,7 +8181,7 @@ async fn seed_openai_passthrough_default_channel_route_fallback(
             (id, uuid, tenant_id, organization_id, channel_id, provider_code, channel_code,
              resource_id, resource_code, grant_type, priority, weight, status)
         VALUES
-            (9004, 'channel-resource-openrouter-default-files', 10, 20, 3004,
+            (9004, 'channel-resource-openrouter-default-files', 100001, 0, 3004,
              'openrouter', 'openrouter-default', 9004, 'api.openai.files',
              'allow', 1, 100, 1)
         "#,
@@ -8104,8 +8195,43 @@ async fn seed_openai_passthrough_default_channel_route_fallback(
             (id, uuid, tenant_id, organization_id, channel_group_id,
              resource_id, resource_code, grant_type, priority, status)
         VALUES
-            (9004, 'channel-group-resource-openrouter-default-files', 10, 20, 10,
+            (9004, 'channel-group-resource-openrouter-default-files', 100001, 0, 10,
              9004, 'api.openai.files', 'allow', 1, 1)
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    sqlx::query(
+        r#"
+        INSERT INTO ai_model
+            (id, uuid, tenant_id, organization_id, catalog_key, model, display_name,
+             vendor_id, vendor_code, vendor_name_snapshot, family_id,
+             family_code, capability, capabilities, modalities, supports_streaming,
+             supports_tools, supports_json_schema, api_format, shelf_state, routing_state,
+             status, rank_score)
+        VALUES
+            (9034, 'model-openai-management-files-fallback', 100001, 0,
+             'openai/management/files', 'management/files', 'OpenAI Files API',
+             1, 'openai', 'OpenAI', 1, 'gpt-4o', 10,
+             '["network"]', '["network"]', 0, 0, 0, 'openai-compatible',
+             1, 1, 1, '80.0')
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO ai_model_pricing
+            (id, uuid, tenant_id, organization_id, model_id, catalog_key, model,
+             vendor_code, region_code, price_side, billing_meter_code, unit_price,
+             currency, status, priority)
+        VALUES
+            (9034, 'price-openai-management-files-fallback-api-request', 100001, 0,
+             9034, 'openai/management/files', 'management/files', 'openai',
+             'global', 1, 'api_request', '0.001000', 'USD', 1, 1)
         "#,
     )
     .execute(&pool)
@@ -8228,7 +8354,7 @@ async fn seed_openai_passthrough_header_auth_channel_route_with_auth_config(
             (id, uuid, tenant_id, organization_id, channel_id, provider_code, channel_code,
              resource_id, resource_code, grant_type, priority, weight, status)
         VALUES
-            (9005, 'channel-resource-google-files', 10, 20, 3001,
+            (9005, 'channel-resource-google-files', 100001, 0, 3001,
              'google', 'google-main', 9005, 'api.google.files',
              'allow', 1, 100, 1)
         "#,
@@ -8242,7 +8368,7 @@ async fn seed_openai_passthrough_header_auth_channel_route_with_auth_config(
             (id, uuid, tenant_id, organization_id, channel_group_id,
              resource_id, resource_code, grant_type, priority, status)
         VALUES
-            (9005, 'channel-group-resource-google-files', 10, 20, 10,
+            (9005, 'channel-group-resource-google-files', 100001, 0, 10,
              9005, 'api.google.files', 'allow', 1, 1)
         "#,
     )

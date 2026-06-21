@@ -12,8 +12,8 @@ fn invocation() -> Invocation {
     Invocation::new(
         InvocationRequest::new(Method::POST, "/v1/chat/completions").with_request_id("req-trace"),
         InvocationSubject::from_api_key_context(AuthenticatedApiKeyContext {
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             user_id: 30,
             api_key_id: 100,
             api_key_name_snapshot: "Test key".to_owned(),

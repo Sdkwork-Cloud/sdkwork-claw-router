@@ -287,8 +287,8 @@ async fn transaction_center_provider_account_create_persists_to_database() {
         r#"
         SELECT action, request_id, target_uuid, change_summary, operator_id, operator_type, uuid
         FROM ops_audit_log
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND target_uuid = ?
           AND action = 'payments.provider_account.create'
         ORDER BY id ASC

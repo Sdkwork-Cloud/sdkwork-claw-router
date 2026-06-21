@@ -350,7 +350,7 @@ async fn sqlite_forum_store_does_not_apply_feed_side_effects_across_tenants() {
 
 fn owner_subject() -> ForumSubject {
     ForumSubject {
-        tenant_id: 20_001,
+        tenant_id: 100_001,
         organization_id: 0,
         user_id: 30,
     }

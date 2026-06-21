@@ -601,6 +601,9 @@ routes:
   required_tables:
   - commerce_account
   - commerce_invoice
+  - commerce_payment_intent
+  - commerce_membership
+  - commerce_wallet_account
   - iam_user
   - iam_organization
   - iam_user_security_setting
@@ -613,6 +616,8 @@ routes:
   - commerce_billing_history
   - commerce_wallet_account
   - commerce_wallet_transaction
+  - commerce_order
+  - commerce_payment_intent
 - route: /console/memberships
   dependency_owned: true
   dependency_sdk_family: sdkwork-commerce-app-sdk
@@ -620,8 +625,13 @@ routes:
   - commerce_membership
   - commerce_membership_plan
   - commerce_membership_entitlement
+  - commerce_membership_entitlement_usage
   - commerce_membership_package
   - commerce_membership_package_group
+  - commerce_account
+  - commerce_product_sku
+  - commerce_order
+  - commerce_payment_intent
 - route: /console/checkout
   dependency_owned: true
   dependency_sdk_family: sdkwork-commerce-app-sdk
@@ -629,6 +639,21 @@ routes:
   - commerce_checkout_session
   - commerce_checkout_line
   - commerce_checkout_quote
+  - commerce_order
+  - commerce_payment_intent
+  - commerce_payment_attempt
+- route: /console/recharge
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-commerce-app-sdk
+  required_tables:
+  - commerce_recharge_package
+  - commerce_product_spu
+  - commerce_product_sku
+  - commerce_order
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  - commerce_exchange_rule
+  - commerce_billing_history
 - route: /console/payment
   dependency_owned: true
   dependency_sdk_family: sdkwork-commerce-app-sdk

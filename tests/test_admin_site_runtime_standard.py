@@ -26,46 +26,46 @@ class AdminSiteRuntimeStandardTest(unittest.TestCase):
             ROOT / "generated" / "schema" / "registry" / "sdkwork-clawrouter.tables.effective.yaml"
         ).read_text(encoding="utf-8")
 
-        source = "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
+        source = "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-relay-site/src/siteService.ts"
         expected_operation_keys = [
-            f"{source}#fetchSites",
-            f"{source}#createSite",
-            f"{source}#updateSite",
-            f"{source}#deleteSite",
-            f"{source}#fetchSiteChannels",
-            f"{source}#testSiteConnection",
-            f"{source}#healthCheckSite",
+            f"{source}#fetchSites@/admin/model/sites",
+            f"{source}#createSite@/admin/model/sites",
+            f"{source}#updateSite@/admin/model/sites",
+            f"{source}#deleteSite@/admin/model/sites",
+            f"{source}#fetchSiteChannels@/admin/model/sites",
+            f"{source}#testSiteConnection@/admin/model/sites",
+            f"{source}#healthCheckSite@/admin/model/sites",
         ]
         for operation_key in expected_operation_keys:
             self.assertIn(operation_key, operations)
 
         self.assertEqual(
             "/backend/v3/api/sites",
-            operations[f"{source}#fetchSites"]["api_path"],
+            operations[f"{source}#fetchSites@/admin/model/sites"]["api_path"],
         )
         self.assertEqual(
             "/backend/v3/api/sites",
-            operations[f"{source}#createSite"]["api_path"],
+            operations[f"{source}#createSite@/admin/model/sites"]["api_path"],
         )
         self.assertEqual(
             "/backend/v3/api/sites/{siteId}",
-            operations[f"{source}#updateSite"]["api_path"],
+            operations[f"{source}#updateSite@/admin/model/sites"]["api_path"],
         )
         self.assertEqual(
             "/backend/v3/api/sites/{siteId}",
-            operations[f"{source}#deleteSite"]["api_path"],
+            operations[f"{source}#deleteSite@/admin/model/sites"]["api_path"],
         )
         self.assertEqual(
             "/backend/v3/api/sites/{siteId}/channels",
-            operations[f"{source}#fetchSiteChannels"]["api_path"],
+            operations[f"{source}#fetchSiteChannels@/admin/model/sites"]["api_path"],
         )
         self.assertEqual(
             "/backend/v3/api/sites/{siteId}/test_connection",
-            operations[f"{source}#testSiteConnection"]["api_path"],
+            operations[f"{source}#testSiteConnection@/admin/model/sites"]["api_path"],
         )
         self.assertEqual(
             "/backend/v3/api/sites/{siteId}/health_check",
-            operations[f"{source}#healthCheckSite"]["api_path"],
+            operations[f"{source}#healthCheckSite@/admin/model/sites"]["api_path"],
         )
 
         serialized_operations = str(operations)

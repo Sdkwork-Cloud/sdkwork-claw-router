@@ -50,8 +50,8 @@ async fn usage_settlement_worker_skips_disabled_run_without_touching_store() {
         store.clone(),
         UsageSettlementWorkerConfig {
             enabled: false,
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             batch_size: 50,
             interval_millis: 10_000,
         },

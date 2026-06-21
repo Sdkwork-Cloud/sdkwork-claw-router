@@ -111,27 +111,32 @@ where
     )
 }
 
-fn router_with_invocation_runtime_and_provider_native_routes<C>(
-    base_router: Router,
+fn merge_relay_authenticated_openai_passthrough<C>(
+    router: Router,
     catalog: Arc<C>,
     api_key_hasher: ApiKeyHasher,
-    provider_secret_resolver: Option<Arc<RefreshableProviderSecretMapResolver>>,
-    invocation_sticky_store: Option<Arc<dyn StickyRouteStore>>,
-    usage_recorder: Option<UsageRecorder>,
-    _provider_passthrough_config: Option<ProviderRelayConfig>,
+    provider_passthrough_config: Option<ProviderRelayConfig>,
     provider_adapter_config: Option<ProviderAdapterConfig>,
+    usage_recorder: Option<UsageRecorder>,
+    secret_resolver_configured: bool,
 ) -> Router
 where
     C: PricingCatalog + Send + Sync + 'static,
 {
-    router_with_invocation_runtime_routes(
-        base_router,
-        catalog,
-        api_key_hasher,
-        provider_secret_resolver,
-        invocation_sticky_store,
-        usage_recorder,
-        provider_adapter_config,
+    if secret_resolver_configured {
+        return router;
+    }
+    let Some(config) = provider_passthrough_config else {
+        return router;
+    };
+    router.merge(
+        crate::passthrough::authenticated_gateway_passthrough_router_with_adapter_config(
+            config,
+            catalog,
+            api_key_hasher,
+            provider_adapter_config,
+            usage_recorder,
+        ),
     )
 }
 
@@ -149,48 +154,93 @@ fn router_with_database_runtime_routes<C>(
 where
     C: PricingCatalog + Send + Sync + 'static,
 {
-    if provider_secret_resolver.is_some() {
-        return Ok(router_with_invocation_runtime_and_provider_native_routes(
-            base_router,
-            catalog,
-            api_key_hasher,
+    let secret_resolver_configured = provider_secret_resolver.is_some();
+    let router = if secret_resolver_configured {
+        let prefer_secret_ref_relays = provider_passthrough_config.is_none();
+        let relays = build_openai_runtime_relays(
+            provider_passthrough_config.clone(),
+            provider_secret_resolver.clone(),
+            provider_runtime_config.clone(),
+            prefer_secret_ref_relays,
+        )?;
+        let relays = apply_provider_adapter_config(
+            relays,
+            provider_adapter_config.clone(),
+            None,
+        )?;
+        let router = if provider_passthrough_config.is_some()
+            && openai_runtime_relays_configured(&relays)
+        {
+            router_with_openai_runtime_routes(
+                base_router,
+                Arc::clone(&catalog),
+                Arc::clone(&api_key_hasher),
+                relays,
+                usage_recorder.clone(),
+                Vec::new(),
+                provider_runtime_config.failure_strategy,
+                provider_runtime_config.default_retry_policy.clone(),
+                provider_passthrough_config.clone(),
+                provider_adapter_config.clone(),
+                None,
+                prefer_secret_ref_relays,
+                invocation_sticky_store.clone(),
+                false,
+            )
+        } else {
+            base_router
+        };
+        router_with_invocation_runtime_routes(
+            router,
+            Arc::clone(&catalog),
+            Arc::clone(&api_key_hasher),
             provider_secret_resolver,
             invocation_sticky_store,
-            usage_recorder,
-            provider_passthrough_config,
-            provider_adapter_config,
-        ));
-    }
-    let relays = build_openai_runtime_relays(
-        provider_passthrough_config.clone(),
-        None,
-        provider_runtime_config.clone(),
-        false,
-    )?;
-    let relays = apply_provider_adapter_config(relays, provider_adapter_config.clone(), None)?;
-    let router = router_with_openai_runtime_routes(
-        base_router,
-        Arc::clone(&catalog),
-        Arc::clone(&api_key_hasher),
-        relays,
-        usage_recorder.clone(),
-        Vec::new(),
-        provider_runtime_config.failure_strategy,
-        provider_runtime_config.default_retry_policy.clone(),
-        provider_passthrough_config,
-        provider_adapter_config.clone(),
-        None,
-        false,
-        None,
-    );
-    Ok(router_with_invocation_runtime_routes(
+            usage_recorder.clone(),
+            provider_adapter_config.clone(),
+        )
+    } else {
+        let relays = build_openai_runtime_relays(
+            provider_passthrough_config.clone(),
+            None,
+            provider_runtime_config.clone(),
+            false,
+        )?;
+        let relays = apply_provider_adapter_config(relays, provider_adapter_config.clone(), None)?;
+        let router = router_with_openai_runtime_routes(
+            base_router,
+            Arc::clone(&catalog),
+            Arc::clone(&api_key_hasher),
+            relays,
+            usage_recorder.clone(),
+            Vec::new(),
+            provider_runtime_config.failure_strategy,
+            provider_runtime_config.default_retry_policy.clone(),
+            provider_passthrough_config.clone(),
+            provider_adapter_config.clone(),
+            None,
+            false,
+            invocation_sticky_store.clone(),
+            false,
+        );
+        router_with_invocation_runtime_routes(
+            router,
+            Arc::clone(&catalog),
+            Arc::clone(&api_key_hasher),
+            None,
+            invocation_sticky_store,
+            usage_recorder.clone(),
+            provider_adapter_config.clone(),
+        )
+    };
+    Ok(merge_relay_authenticated_openai_passthrough(
         router,
         catalog,
         api_key_hasher,
-        None,
-        invocation_sticky_store,
-        usage_recorder,
+        provider_passthrough_config,
         provider_adapter_config,
+        usage_recorder,
+        secret_resolver_configured,
     ))
 }
 
@@ -269,6 +319,13 @@ struct OpenAiRuntimeRelays {
     responses: Option<ResponseRelay>,
 }
 
+fn openai_runtime_relays_configured(relays: &OpenAiRuntimeRelays) -> bool {
+    relays.chat.is_some()
+        || relays.chat_stream.is_some()
+        || relays.embeddings.is_some()
+        || relays.responses.is_some()
+}
+
 pub fn router_with_product_catalog_and_api_key_hasher<C>(
     catalog: Arc<C>,
     api_key_hasher: ApiKeyHasher,
@@ -290,6 +347,7 @@ where
         None,
         false,
         None,
+        true,
     )
 }
 
@@ -320,6 +378,7 @@ where
         None,
         false,
         None,
+        true,
     )
 }
 
@@ -350,6 +409,7 @@ where
         None,
         false,
         None,
+        true,
     )
 }
 
@@ -380,6 +440,7 @@ where
         None,
         false,
         None,
+        true,
     )
 }
 
@@ -410,6 +471,7 @@ where
         None,
         false,
         None,
+        true,
     )
 }
 
@@ -427,22 +489,11 @@ fn router_with_openai_runtime_routes<C>(
     provider_secret_resolver: Option<Arc<RefreshableProviderSecretMapResolver>>,
     _prefer_secret_ref_openai_runtime: bool,
     sticky_store: Option<Arc<dyn StickyRouteStore>>,
+    include_openai_models_router: bool,
 ) -> Router
 where
     C: PricingCatalog + Send + Sync + 'static,
 {
-    if provider_secret_resolver.is_some() {
-        return router_with_invocation_runtime_routes(
-            base_router,
-            catalog,
-            api_key_hasher,
-            provider_secret_resolver,
-            sticky_store,
-            usage_recorder,
-            provider_adapter_config,
-        );
-    }
-
     let chat_router = match (relays.chat, relays.chat_stream) {
         (Some(relay), Some(stream_relay)) => {
             if let Some(usage_recorder) = usage_recorder.clone() {
@@ -555,16 +606,19 @@ where
         ),
     };
 
-    let router = base_router
-        .merge(sdkwork_claw_product::api::openai_models_router(
+    let router = if include_openai_models_router {
+        base_router.merge(sdkwork_claw_product::api::openai_models_router(
             Arc::clone(&catalog),
             Arc::clone(&api_key_hasher),
         ))
-        .merge(embeddings_router)
-        .merge(responses_router)
-        .merge(chat_router);
+    } else {
+        base_router
+    };
 
     router
+        .merge(embeddings_router)
+        .merge(responses_router)
+        .merge(chat_router)
 }
 
 pub async fn router_with_database_and_api_key_config(
@@ -756,7 +810,10 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                 InvocationStickyObjectRouteStore::sqlite(pool.clone()),
             ));
             router_with_database_runtime_routes(
-                router_with_database_status_and_passthrough_placeholder(Some(&config), true),
+                router_with_database_status_and_passthrough_placeholder(
+                    Some(&config),
+                    provider_secret_resolver.is_none() && provider_passthrough_config.is_none(),
+                ),
                 catalog,
                 api_key_hasher,
                 provider_secret_resolver.clone(),
@@ -818,7 +875,10 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                 InvocationStickyObjectRouteStore::postgres(pool.clone()),
             ));
             router_with_database_runtime_routes(
-                router_with_database_status_and_passthrough_placeholder(Some(&config), true),
+                router_with_database_status_and_passthrough_placeholder(
+                    Some(&config),
+                    provider_secret_resolver.is_none() && provider_passthrough_config.is_none(),
+                ),
                 catalog,
                 api_key_hasher,
                 provider_secret_resolver.clone(),

@@ -208,15 +208,15 @@ json_file = "/etc/sdkwork/router/provider-secrets.json"
 
 [usage_settlement]
 enabled = true
-tenant_id = 10
-organization_id = 20
+tenant_id = 100001
+organization_id = 0
 batch_size = 50
 interval_millis = 30000
 
 [model_ranking]
 enabled = true
-tenant_id = 10
-organization_id = 20
+tenant_id = 100001
+organization_id = 0
 rank_scope = "global"
 snapshot_period = "daily"
 limit = 200

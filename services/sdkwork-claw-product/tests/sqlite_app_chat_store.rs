@@ -18,8 +18,8 @@ async fn sqlite_app_chat_store_creates_conversation_and_turn_timeline() {
     create_chat_tables(&pool).await;
     let store = SqliteAppChatStore::new(pool.clone());
     let subject = AppChatSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
     };
 
@@ -288,8 +288,8 @@ async fn sqlite_app_chat_store_creates_conversation_and_turn_timeline() {
         FROM ai_chat_context_snapshot s
         INNER JOIN ai_chat_turn t ON t.context_snapshot_id = s.id
         INNER JOIN ai_chat_conversation c ON c.id = t.conversation_id
-        WHERE s.tenant_id = 10
-          AND s.organization_id = 20
+        WHERE s.tenant_id = 100001
+          AND s.organization_id = 0
           AND s.user_id = 30
           AND c.uuid = 'conv-uuid-1'
           AND t.uuid = 'turn-uuid-1'
@@ -325,8 +325,8 @@ async fn sqlite_app_chat_store_preserves_multiline_markdown_response_content() {
     create_chat_tables(&pool).await;
     let store = SqliteAppChatStore::new(pool.clone());
     let subject = AppChatSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
     };
 
@@ -434,8 +434,8 @@ async fn sqlite_app_chat_store_finalizes_streaming_turn_response_without_duplica
     create_chat_tables(&pool).await;
     let store = SqliteAppChatStore::new(pool.clone());
     let subject = AppChatSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
     };
 
@@ -625,8 +625,8 @@ async fn sqlite_app_chat_store_turn_lifecycle_matches_installed_product_schema()
     let pool = schema_sqlite_pool().await;
     let store = SqliteAppChatStore::new(pool);
     let subject = AppChatSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
     };
 
@@ -708,8 +708,8 @@ async fn sqlite_app_chat_store_persists_opaque_memory_space_reference() {
     create_chat_tables(&pool).await;
     let store = SqliteAppChatStore::new(pool);
     let subject = AppChatSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
     };
 

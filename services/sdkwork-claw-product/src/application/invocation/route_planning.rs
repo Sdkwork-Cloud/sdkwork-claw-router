@@ -9,7 +9,10 @@ use crate::application::{
     AuthenticatedApiKeyContext, ProviderRouteSelector, SelectProviderChannelRouteQuery,
     SelectProviderRouteQuery, SelectedProviderChannelRoute, SelectedProviderRoute,
 };
-use crate::domain::{AiModel, BillingMeter, ProviderAuthProfile, ProviderChannelRoute};
+use crate::domain::{
+    AiModel, BillingMeter, ModelProviderRoute, ProviderAuthProfile, ProviderChannelRoute,
+    ResolveModelMappingContext, provider_native_model_id,
+};
 use crate::ports::PricingCatalog;
 
 #[derive(Clone)]
@@ -85,11 +88,12 @@ where
         .meter
         .clone()
         .unwrap_or(BillingMeter::LlmInputToken);
+    let mapping_context = context.clone();
     let plan = ProviderRouteSelector::new(catalog)
         .select_plan(SelectProviderRouteQuery {
             context,
             catalog_key,
-            requested_model,
+            requested_model: requested_model.clone(),
             api_code: invocation.resource.api_code.clone(),
             capability: invocation.resource.capability,
             billing_meter,
@@ -101,7 +105,9 @@ where
     invocation.routing.route_plan = Some(InvocationRoutePlan::new(
         plan.routes
             .into_iter()
-            .map(model_candidate)
+            .map(|selection| {
+                mapped_model_candidate(catalog, &requested_model, selection, &mapping_context)
+            })
             .collect::<Vec<_>>(),
     ));
     Ok(())
@@ -196,6 +202,103 @@ where
         retry_policy: channel_route
             .as_ref()
             .and_then(|route| route.retry_policy.clone()),
+    }
+}
+
+fn mapped_model_candidate<C>(
+    catalog: &C,
+    requested_model: &str,
+    selection: SelectedProviderRoute,
+    context: &AuthenticatedApiKeyContext,
+) -> InvocationRouteCandidate
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    let route = &selection.route;
+    let channel_routes = catalog.list_provider_channel_routes();
+    let channel_metadata = find_channel_route_metadata(route, &channel_routes);
+    let vendor_code = catalog
+        .find_model(&route.catalog_key)
+        .map(|model| model.vendor_code)
+        .unwrap_or_default();
+    let channel_mapping = catalog.resolve_model_mapping(
+        requested_model,
+        &ResolveModelMappingContext::new()
+            .with_vendor_code(vendor_code.as_str())
+            .with_channel_id(route.channel_id)
+            .with_channel_code(
+                channel_metadata
+                    .as_ref()
+                    .and_then(|route| route.channel_code.as_deref())
+                    .unwrap_or_default(),
+            )
+            .with_channel_group_id(context.group_id)
+            .with_channel_group_code(context.group_code.as_str()),
+    );
+    let catalog_key = route.catalog_key.clone();
+    let model = route.model.clone();
+    let provider_model = route.provider_model.clone();
+    let mut candidate = model_candidate(selection);
+    candidate.provider_model = Some(
+        channel_mapping
+            .as_ref()
+            .and_then(|rule| rule.effective_provider_model().map(str::to_owned))
+            .unwrap_or_else(|| {
+                normalized_resolved_provider_model(&catalog_key, &model, &provider_model)
+            }),
+    );
+    candidate
+}
+
+fn find_channel_route_metadata(
+    model_route: &ModelProviderRoute,
+    channel_routes: &[ProviderChannelRoute],
+) -> Option<ProviderChannelRoute> {
+    let mut candidates = channel_routes
+        .iter()
+        .filter(|route| {
+            route.channel_id == model_route.channel_id
+                && route.credential_id == model_route.credential_id
+                && route.provider_code == model_route.provider_code
+                && same_region(&route.region_code, &model_route.region_code)
+        })
+        .cloned()
+        .collect::<Vec<_>>();
+    candidates.sort_by_key(|route| {
+        (
+            route.credential_priority,
+            std::cmp::Reverse(route.credential_weight),
+            route.credential_id.unwrap_or(i64::MAX),
+            route.region_code.clone(),
+            route.provider_code.clone(),
+        )
+    });
+    candidates.into_iter().next()
+}
+
+fn normalized_resolved_provider_model(
+    catalog_key: &str,
+    model: &str,
+    provider_model: &str,
+) -> String {
+    let provider_model = provider_model.trim();
+    if provider_model.is_empty() {
+        let model = model.trim();
+        return if model.is_empty() {
+            provider_native_model_id(catalog_key)
+        } else {
+            model.to_owned()
+        };
+    }
+    let native_model = provider_native_model_id(provider_model);
+    if provider_model == catalog_key.trim()
+        || (!native_model.is_empty()
+            && native_model == model.trim()
+            && native_model != provider_model)
+    {
+        native_model
+    } else {
+        provider_model.to_owned()
     }
 }
 

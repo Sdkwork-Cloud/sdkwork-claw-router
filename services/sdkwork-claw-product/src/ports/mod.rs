@@ -192,6 +192,7 @@ pub use admin_model_store::{
     ListAdminModelVendorsQuery, ResolveAdminModelMappingQuery, ResolveAdminModelMappingResult,
     SyncAdminModelCatalogCommand, UpdateAdminAiModelCommand, UpdateAdminModelMappingCommand,
 };
+pub use sdkwork_models_contract_service::ModelCatalogAdminStore;
 pub use admin_monitor_read_store::{
     AdminMonitorAlert, AdminMonitorNode, AdminMonitorPerformanceDatum, AdminMonitorQuery,
     AdminMonitorReadFuture, AdminMonitorReadStore, AdminMonitorSubject,

@@ -1,232 +1,99 @@
 fragment: models/console-memberships
 frontend_models:
 - route: /console/memberships
-  source: apps/sdkwork-clawrouter-pc/src/App.tsx
-  interface: MembershipSummary
+  source: apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts
+  interface: SdkworkMembershipSummary
   fields:
-  - membershipNo
-  - planId
-  - planName
+  - currentLevelName
+  - currentLevelValue
+  - expireTime
+  - growthValue
+  - isAuthenticated
+  - isMember
+  - pointBalance
+  - points
+  - remainingDays
   - status
-  - startsAt
-  - expiresAt
+  - totalSpent
+  - upgradeGrowthValue
   data_sources:
   - commerce_membership
   - commerce_membership_plan
-  - commerce_membership_entitlement
+  - commerce_account
 - route: /console/memberships
-  source: apps/sdkwork-clawrouter-pc/src/App.tsx
-  interface: MembershipPackageGroup
+  source: apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts
+  interface: SdkworkMembershipPlan
   fields:
-  - id
-  - groupNo
-  - name
   - description
-  - status
-  - sortOrder
-  - packages
-  - packages.id
-  - packages.packageNo
-  - packages.packageGroupId
-  - packages.planId
-  - packages.planName
-  - packages.skuId
-  - packages.priceAmount
-  - packages.currencyCode
-  - packages.durationDays
-  - packages.recurrenceCycle
-  - packages.status
-  - packages.isPurchasable
-  data_sources:
-  - commerce_membership_package_group
-  - commerce_membership_package
-  - commerce_membership_plan
-  - commerce_product_sku
-- route: /console/memberships
-  source: apps/sdkwork-clawrouter-pc/src/App.tsx
-  interface: MembershipPackage
-  fields:
-  - id
-  - packageNo
-  - packageGroupId
-  - planId
-  - planName
-  - skuId
-  - priceAmount
-  - currencyCode
   - durationDays
-  - recurrenceCycle
-  - status
-  - isPurchasable
+  - id
+  - includedPoints
+  - levelName
+  - name
+  - originalPriceCny
+  - packageId
+  - priceCny
+  - recommended
+  - tags
   data_sources:
-  - commerce_membership_package
-  - commerce_membership_package_group
   - commerce_membership_plan
+  - commerce_membership_package
   - commerce_product_sku
 - route: /console/memberships
-  source: apps/sdkwork-clawrouter-pc/src/App.tsx
-  interface: MembershipBenefit
+  source: apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts
+  interface: SdkworkMembershipBenefit
   fields:
-  - code
-  - name
-  - quotaAmount
-  - quotaPeriod
-  - resetPolicy
-  - status
-  data_sources:
-  - commerce_membership_plan
-  - commerce_membership_entitlement
-  - commerce_membership_entitlement_usage
-- route: /console/memberships
-  source: apps/sdkwork-clawrouter-pc/src/App.tsx
-  interface: MembershipPointsBalance
-  fields:
-  - balance
-  - status
-  - updatedAt
-  data_sources:
-  - commerce_account
-  - commerce_account_ledger_entry
-  - commerce_membership
-- route: /console/memberships
-  source: apps/sdkwork-clawrouter-pc/src/App.tsx
-  interface: MembershipPointsHistoryItem
-  fields:
+  - benefitKey
+  - claimed
+  - description
   - id
-  - title
-  - amount
-  - occurredAt
-  - status
-  data_sources:
-  - commerce_account
-  - commerce_account_ledger_entry
-  - commerce_membership
-- route: /console/memberships
-  source: apps/sdkwork-clawrouter-pc/src/App.tsx
-  interface: MembershipDailyRewardStatus
-  fields:
-  - available
-  - claimedToday
-  - rewardPoints
-  - status
-  - nextAvailableAt
-  data_sources:
-  - commerce_membership
-  - commerce_account
-  - commerce_account_ledger_entry
-  - commerce_membership_entitlement_usage
-- route: /console/memberships
-  source: apps/sdkwork-clawrouter-pc/src/App.tsx
-  interface: MembershipPrivilegeUsageItem
-  fields:
-  - code
   - name
-  - used
-  - quota
-  - remaining
-  - status
+  - type
+  - usageLimit
+  - usedCount
   data_sources:
-  - commerce_membership
   - commerce_membership_entitlement
   - commerce_membership_entitlement_usage
 - route: /console/memberships
-  source: apps/sdkwork-clawrouter-pc/src/App.tsx
-  interface: MembershipPrivilegeUsage
+  source: apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts
+  interface: SdkworkMembershipDashboardData
   fields:
-  - speedUpAvailable
-  - speedUpRemaining
-  - items
-  - items.code
-  - items.name
-  - items.used
-  - items.quota
-  - items.remaining
-  - items.status
+  - benefits
+  - benefits.id
+  - benefits.name
+  - benefits.claimed
+  - levels
+  - levels.id
+  - levels.name
+  - levels.levelValue
+  - levels.isCurrent
+  - plans
+  - plans.id
+  - plans.name
+  - plans.priceCny
+  - plans.packageId
+  - summary
+  - summary.isMember
+  - summary.remainingDays
+  - summary.status
   data_sources:
   - commerce_membership
+  - commerce_membership_plan
+  - commerce_membership_package
   - commerce_membership_entitlement
-  - commerce_membership_entitlement_usage
+  - commerce_product_sku
 - route: /console/memberships
-  source: apps/sdkwork-clawrouter-pc/src/App.tsx
-  interface: MembershipActionResult
+  source: apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts
+  interface: SdkworkMembershipPurchaseResult
   fields:
-  - success
-  - requestNo
+  - amountCny
+  - durationDays
+  - orderId
+  - packageId
+  - packageName
   - status
-  - rewardPoints
+  - targetLevelName
   data_sources:
   - commerce_membership
   - commerce_order
   - commerce_payment_intent
-  - commerce_account
-  - commerce_account_ledger_entry
-  - commerce_membership_entitlement_usage
-  - ops_audit_log
-- route: /console/memberships
-  source: apps/sdkwork-clawrouter-pc/src/App.tsx
-  interface: MembershipOverview
-  fields:
-  - summary
-  - packageGroups
-  - packageGroups.id
-  - packageGroups.groupNo
-  - packageGroups.name
-  - packageGroups.description
-  - packageGroups.status
-  - packageGroups.sortOrder
-  - packageGroups.packages
-  - packageGroups.packages.id
-  - packageGroups.packages.packageNo
-  - packageGroups.packages.packageGroupId
-  - packageGroups.packages.planId
-  - packageGroups.packages.planName
-  - packageGroups.packages.skuId
-  - packageGroups.packages.priceAmount
-  - packageGroups.packages.currencyCode
-  - packageGroups.packages.durationDays
-  - packageGroups.packages.recurrenceCycle
-  - packageGroups.packages.status
-  - packageGroups.packages.isPurchasable
-  - benefits
-  - benefits.code
-  - benefits.name
-  - benefits.quotaAmount
-  - benefits.quotaPeriod
-  - benefits.resetPolicy
-  - benefits.status
-  - pointsBalance
-  - pointsBalance.balance
-  - pointsBalance.status
-  - pointsBalance.updatedAt
-  - pointsHistory
-  - pointsHistory.id
-  - pointsHistory.title
-  - pointsHistory.amount
-  - pointsHistory.occurredAt
-  - pointsHistory.status
-  - dailyReward
-  - dailyReward.available
-  - dailyReward.claimedToday
-  - dailyReward.rewardPoints
-  - dailyReward.status
-  - dailyReward.nextAvailableAt
-  - privilegeUsage
-  - privilegeUsage.speedUpAvailable
-  - privilegeUsage.speedUpRemaining
-  - privilegeUsage.items
-  - privilegeUsage.items.code
-  - privilegeUsage.items.name
-  - privilegeUsage.items.used
-  - privilegeUsage.items.quota
-  - privilegeUsage.items.remaining
-  - privilegeUsage.items.status
-  data_sources:
-  - commerce_product_sku
-  - commerce_membership_plan
-  - commerce_membership_package
-  - commerce_membership_package_group
-  - commerce_membership
-  - commerce_membership_entitlement
-  - commerce_membership_entitlement_usage
-  - commerce_account
-  - commerce_account_ledger_entry

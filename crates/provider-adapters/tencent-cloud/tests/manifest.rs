@@ -58,8 +58,8 @@ async fn start_end2video_adapter_returns_standard_video_usage_lines() {
             trace_id: Some("trace-1".to_owned()),
         },
         subject: AdapterSubject {
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             user_id: 30,
             api_key_id: 100,
             group_id: 10,

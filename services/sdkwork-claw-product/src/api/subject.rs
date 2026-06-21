@@ -13,27 +13,12 @@ pub struct AdminOperatorFields {
     pub operator_type: i32,
 }
 
-#[derive(Debug, Clone, Copy)]
-pub struct AppUserFields {
-    pub tenant_id: i64,
-    pub organization_id: i64,
-    pub user_id: i64,
-}
-
 pub fn admin_operator_fields(trusted: TrustedRequestSubject) -> AdminOperatorFields {
     AdminOperatorFields {
         tenant_id: trusted.tenant_id,
         organization_id: trusted.organization_id,
         operator_id: trusted.operator_id,
         operator_type: trusted.operator_type,
-    }
-}
-
-pub fn app_user_fields(trusted: TrustedRequestSubject) -> AppUserFields {
-    AppUserFields {
-        tenant_id: trusted.tenant_id,
-        organization_id: trusted.organization_id,
-        user_id: trusted.user_id,
     }
 }
 

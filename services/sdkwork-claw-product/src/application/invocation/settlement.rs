@@ -4,7 +4,9 @@ use super::{
     BillingMode, Invocation, InvocationError, InvocationErrorKind, InvocationFuture,
     InvocationInterceptor, InvocationPricingQuote, InvocationUsageLine, InvocationUsageLineRole,
 };
-use crate::domain::{BillingMeter, DecimalValue, DomainResult};
+use crate::domain::{
+    provider_native_model_id, BillingMeter, DecimalValue, DomainResult, RoutingCapability,
+};
 use crate::ports::{GatewayUsageQuantity, GatewayUsageRecordCommand};
 
 const TOKEN_BILLING_UNIT_SIZE: i64 = 1_000_000;
@@ -30,22 +32,30 @@ impl InvocationInterceptor for PricingSettlementInterceptor {
             invocation.usage.settlement_commands.clear();
             let mut commands = Vec::new();
             for line in invocation.usage.lines.clone() {
-                let quote = line
+                let Some(quote) = line
                     .pricing_quote
                     .clone()
                     .or_else(|| invocation.usage.quote_for_meter(&line.meter).cloned())
-                    .ok_or_else(|| {
-                        settlement_error(format!(
-                            "settlement requires pricing quote for meter {}",
-                            line.meter.code()
-                        ))
-                    })?;
+                else {
+                    if skippable_without_quote(&line.meter, invocation.billing.mode.clone()) {
+                        continue;
+                    }
+                    return Err(settlement_error(format!(
+                        "settlement requires pricing quote for meter {}",
+                        line.meter.code()
+                    )));
+                };
                 commands.push(command_for_line(invocation, &line, &quote)?);
             }
             invocation.usage.settlement_commands = commands;
             Ok(())
         })
     }
+}
+
+fn skippable_without_quote(meter: &BillingMeter, mode: BillingMode) -> bool {
+    mode == BillingMode::ExternalUsageLine
+        || (mode == BillingMode::Composite && *meter == BillingMeter::LlmCacheReadToken)
 }
 
 fn command_for_line(
@@ -77,8 +87,9 @@ fn command_for_line(
     };
     let (base_input_unit_price, base_output_unit_price, cache_read_unit_price) =
         unit_price_columns(line, quote);
+    let token_totals = aggregate_billing_token_totals(invocation);
     let (prompt_tokens, completion_tokens, cached_tokens, total_tokens) =
-        token_columns(line, &quantity);
+        token_columns(line, &quantity, &token_totals);
 
     Ok(GatewayUsageRecordCommand {
         request_id: invocation.request.request_id.clone(),
@@ -107,13 +118,12 @@ fn command_for_line(
             .unwrap_or_else(|| quote.catalog_key.clone()),
         provider_code: account.provider_code.clone(),
         channel_id: account.channel_id,
-        provider_model: account.provider_model.clone().unwrap_or_default(),
-        provider_native_model: invocation
-            .resource
-            .provider_native_model
-            .clone()
-            .or_else(|| account.provider_model.clone())
+        provider_model: account
+            .provider_model
+            .as_deref()
+            .map(provider_native_model_id)
             .unwrap_or_default(),
+        provider_native_model: provider_native_model_for_settlement(invocation, account),
         region_code: account.region_code.clone(),
         request_path: invocation.request.path.clone(),
         http_method: invocation.request.method.as_str().to_owned(),
@@ -131,7 +141,7 @@ fn command_for_line(
             invocation.dispatch.invocation_shape,
             super::InvocationShape::SseStream
         ),
-        modality: modality_for_meter(&line.meter),
+        modality: modality_for_invocation(invocation, &line.meter),
         usage_type: usage_type_for_line(line),
         billing_meter_code: line.meter.code().to_owned(),
         billable_quantity: quantity.billable_quantity.clone(),
@@ -207,18 +217,71 @@ fn unit_price_columns(
 fn token_columns(
     line: &InvocationUsageLine,
     quantity: &GatewayUsageQuantity,
+    totals: &BillingTokenTotals,
 ) -> (i64, i64, i64, i64) {
     if !is_token_meter(&line.meter) {
         return (0, 0, 0, 0);
     }
-    let tokens = quantity
-        .billable_quantity
-        .parse::<i64>()
-        .unwrap_or_default();
     match line.role {
-        InvocationUsageLineRole::Output => (0, tokens, 0, tokens),
-        InvocationUsageLineRole::CacheRead => (0, 0, tokens, tokens),
-        _ => (tokens, 0, 0, tokens),
+        InvocationUsageLineRole::Output => (
+            0,
+            totals.completion_tokens,
+            0,
+            totals.completion_tokens,
+        ),
+        InvocationUsageLineRole::CacheRead => (0, 0, totals.cached_tokens, totals.cached_tokens),
+        InvocationUsageLineRole::Input
+        | InvocationUsageLineRole::Request
+        | InvocationUsageLineRole::CacheWrite => (
+            totals.prompt_tokens,
+            totals.completion_tokens,
+            totals.cached_tokens,
+            totals.total_tokens,
+        ),
+        InvocationUsageLineRole::Result | InvocationUsageLineRole::Adapter => {
+            let tokens = quantity
+                .billable_quantity
+                .parse::<i64>()
+                .unwrap_or_default();
+            (0, 0, 0, tokens)
+        }
+    }
+}
+
+#[derive(Debug, Clone, Copy, Default)]
+struct BillingTokenTotals {
+    prompt_tokens: i64,
+    completion_tokens: i64,
+    cached_tokens: i64,
+    total_tokens: i64,
+}
+
+fn aggregate_billing_token_totals(invocation: &Invocation) -> BillingTokenTotals {
+    let mut billable_input = 0_i64;
+    let mut completion_tokens = 0_i64;
+    let mut cached_tokens = 0_i64;
+    for line in &invocation.usage.lines {
+        if !is_token_meter(&line.meter) {
+            continue;
+        }
+        let Ok(tokens) = line.quantity.billable_quantity.parse::<i64>() else {
+            continue;
+        };
+        match line.role {
+            InvocationUsageLineRole::Output => completion_tokens += tokens,
+            InvocationUsageLineRole::CacheRead => cached_tokens += tokens,
+            InvocationUsageLineRole::Input
+            | InvocationUsageLineRole::Request
+            | InvocationUsageLineRole::CacheWrite => billable_input += tokens,
+            InvocationUsageLineRole::Result | InvocationUsageLineRole::Adapter => {}
+        }
+    }
+    let prompt_tokens = billable_input + cached_tokens;
+    BillingTokenTotals {
+        prompt_tokens,
+        completion_tokens,
+        cached_tokens,
+        total_tokens: prompt_tokens + completion_tokens,
     }
 }
 
@@ -239,6 +302,42 @@ fn is_token_meter(meter: &BillingMeter) -> bool {
             | BillingMeter::VideoInputToken
             | BillingMeter::VideoOutputToken
     )
+}
+
+fn provider_native_model_for_settlement(
+    invocation: &Invocation,
+    account: &super::InvocationAccount,
+) -> String {
+    let catalog_key = invocation
+        .resource
+        .requested_model_catalog_key
+        .clone()
+        .unwrap_or_else(|| invocation.resource.route_key.clone());
+    if catalog_key.contains("/management/") {
+        return String::new();
+    }
+    invocation
+        .resource
+        .provider_native_model
+        .clone()
+        .or_else(|| account.provider_model.clone())
+        .map(|value| provider_native_model_id(value.trim()))
+        .unwrap_or_default()
+}
+
+fn modality_for_invocation(invocation: &Invocation, meter: &BillingMeter) -> i64 {
+    modality_for_capability(invocation.resource.capability).unwrap_or_else(|| modality_for_meter(meter))
+}
+
+fn modality_for_capability(capability: RoutingCapability) -> Option<i64> {
+    match capability {
+        RoutingCapability::Chat => Some(1),
+        RoutingCapability::Image => Some(2),
+        RoutingCapability::Audio | RoutingCapability::Music => Some(3),
+        RoutingCapability::Video => Some(4),
+        RoutingCapability::Embedding => Some(6),
+        RoutingCapability::Network | RoutingCapability::Rerank => None,
+    }
 }
 
 fn modality_for_meter(meter: &BillingMeter) -> i64 {

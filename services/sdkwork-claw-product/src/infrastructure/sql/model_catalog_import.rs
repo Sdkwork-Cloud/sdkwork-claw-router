@@ -6,17 +6,12 @@ use sha2::{Digest, Sha256};
 
 use sdkwork_models::{ClientApiCompatibility, ModelCatalog, ModelInfo, VendorCatalog};
 
-use crate::ports::{
-    AdminAiModelItem, AdminAiModelRegionPriceCommand, AdminModelSubject, AdminModelVendorItem,
-};
-
 pub(crate) const SYSTEM_TENANT_ID: i64 = 0;
 pub(crate) const SYSTEM_ORGANIZATION_ID: i64 = 0;
 pub(crate) const SYSTEM_DATA_SCOPE: i32 = 1;
 pub(crate) const ACTIVE_STATUS: i32 = 1;
 pub(crate) const INACTIVE_STATUS: i32 = 0;
 pub(crate) const DEFAULT_CATALOG_REFRESH_SOURCE: &str = "sdkwork_models";
-pub(crate) const SYNC_MODE_DRY_RUN: &str = "dry_run";
 
 pub(crate) fn pricing_catalog_key(vendor_code: &str, model_id: &str) -> String {
     model_catalog_key(vendor_code, model_id)
@@ -1229,113 +1224,6 @@ fn modality_sort_order(modality_code: &str) -> Option<i32> {
     }
 }
 
-pub(crate) fn is_dry_run_mode(mode: &str) -> bool {
-    mode == SYNC_MODE_DRY_RUN
-}
-
-pub(crate) fn catalog_preview_admin_items(
-    catalog: &ModelCatalog,
-    subject: AdminModelSubject,
-) -> (Vec<AdminModelVendorItem>, Vec<AdminAiModelItem>) {
-    let vendors = catalog_vendor_records(catalog)
-        .into_iter()
-        .map(|vendor| AdminModelVendorItem {
-            id: 0,
-            uuid: stable_uuid("sdk-vendor-preview", &[&vendor.vendor_code]),
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            vendor_code: vendor.vendor_code,
-            name: vendor.display_name,
-            status: "active".to_owned(),
-            color: "bg-slate-700".to_owned(),
-            description: vendor.description.unwrap_or_default(),
-            supported_protocols: json_array(&vendor.supported_protocols),
-            client_api_compatibility: serde_json::to_string(&vendor.client_api_compatibility)
-                .unwrap_or_else(|_| "{}".to_owned()),
-            deleted_at: None,
-        })
-        .map(|item| (item.vendor_code.clone(), item))
-        .collect::<BTreeMap<_, _>>()
-        .into_values()
-        .enumerate()
-        .map(|(index, mut item)| {
-            item.id = (index as i64) + 1;
-            item
-        })
-        .collect::<Vec<_>>();
-    let models = public_catalog_identity_models(catalog)
-        .into_iter()
-        .map(|(catalog_key, (vendor, model))| {
-            let prices = vendor
-                .pricing
-                .iter()
-                .find(|pricing| pricing.model_id == model.model_id);
-            let item = AdminAiModelItem {
-                id: 0,
-                uuid: stable_uuid(
-                    "sdk-model-preview",
-                    &[&vendor.vendor.vendor_code, &model.model_id],
-                ),
-                tenant_id: subject.tenant_id,
-                organization_id: subject.organization_id,
-                vendor_id: vendor.vendor.vendor_code.clone(),
-                vendor_code: vendor.vendor.vendor_code.clone(),
-                catalog_key: catalog_key.clone(),
-                model: model.model_id.clone(),
-                display_name: model.display_name.clone(),
-                name: if model.display_name.trim().is_empty() {
-                    model.model_id.clone()
-                } else {
-                    model.display_name.clone()
-                },
-                model_type: preview_model_type(model),
-                region_prices: vec![AdminAiModelRegionPriceCommand {
-                    region_code: vendor.vendor.region_code.clone(),
-                    currency: preview_currency(prices, &vendor.vendor.region_code),
-                    price_in: preview_price(prices, true),
-                    price_out: preview_price(prices, false),
-                    cache_read_price: non_empty_preview_cache_price(prices, "llm_cache_read_token"),
-                    cache_write_price: non_empty_preview_cache_price(
-                        prices,
-                        "llm_cache_write_token",
-                    ),
-                }],
-                status: "active".to_owned(),
-                calls: "0".to_owned(),
-                description: model.description.clone(),
-                modalities: preview_modalities(model),
-                input_modalities: model.input_modalities.clone(),
-                output_modalities: model.output_modalities.clone(),
-                api_format: Some(model.api_format.clone()),
-                capability_intro: None,
-                limitations: Vec::new(),
-                supported_languages: Vec::new(),
-                use_cases: model.strengths.clone(),
-                training_data_cutoff: None,
-                context_tokens: model.context_tokens,
-                max_output_tokens: model.max_output_tokens,
-                supports_streaming: model.supports_streaming,
-                supports_tools: model.supports_tools,
-                supports_json_schema: model.supports_json_schema,
-                release_stage: Some(release_stage_code(&model.release_stage)),
-                shelf_state: Some(shelf_state_code(&model.shelf_state)),
-                routing_state: Some(routing_state_code(&model.routing_state)),
-                replacement_model: model.replacement_model.clone(),
-                deleted_at: None,
-            };
-            (catalog_key, item)
-        })
-        .collect::<BTreeMap<_, _>>()
-        .into_values()
-        .enumerate()
-        .map(|(index, mut item)| {
-            item.id = (index as i64) + 1;
-            item
-        })
-        .collect::<Vec<_>>();
-    (vendors, models)
-}
-
 fn validate_catalog_version_pin(
     catalog: &ModelCatalog,
     catalog_version: Option<&str>,
@@ -1398,115 +1286,6 @@ pub(crate) fn catalog_scope_source_hash(source_code: &str, catalog: &ModelCatalo
     let mut hasher = Sha256::new();
     hasher.update(&bytes);
     hex::encode(hasher.finalize())
-}
-
-fn preview_model_type(model: &ModelInfo) -> String {
-    if model
-        .input_modalities
-        .iter()
-        .chain(model.output_modalities.iter())
-        .any(|modality| modality == "embedding")
-    {
-        return "Embedding".to_owned();
-    }
-    match model.primary_capability.as_str() {
-        "image" => "Image",
-        "audio" => "Audio",
-        "music" => "Music",
-        "sfx" | "sound_effect" => "SoundEffect",
-        "video" => "Video",
-        "embedding" => "Embedding",
-        _ => "Chat",
-    }
-    .to_owned()
-}
-
-fn preview_currency(pricing: Option<&sdkwork_models::ModelPricing>, region_code: &str) -> String {
-    pricing
-        .map(|pricing| pricing.currency.trim().to_ascii_uppercase())
-        .filter(|currency| {
-            currency.len() == 3 && currency.bytes().all(|byte| byte.is_ascii_uppercase())
-        })
-        .unwrap_or_else(|| match region_code {
-            "cn" => "CNY".to_owned(),
-            _ => "USD".to_owned(),
-        })
-}
-
-fn preview_modalities(model: &ModelInfo) -> Vec<String> {
-    let mut values = model.input_modalities.clone();
-    for modality in &model.output_modalities {
-        if !values.contains(modality) {
-            values.push(modality.clone());
-        }
-    }
-    values
-}
-
-fn preview_price(pricing: Option<&sdkwork_models::ModelPricing>, input: bool) -> String {
-    let Some(pricing) = pricing else {
-        return String::new();
-    };
-    let meters: &[&str] = if input {
-        &[
-            "llm_input_token",
-            "embedding_input_token",
-            "image_input_token",
-            "image_megapixel",
-            "audio_input_token",
-            "audio_input_second",
-            "audio_input_minute",
-            "stt_audio_minute",
-            "tts_input_character",
-            "api_request",
-            "video_input_token",
-        ]
-    } else {
-        &[
-            "llm_output_token",
-            "image_output_token",
-            "image_result",
-            "image_megapixel",
-            "audio_output_token",
-            "audio_output_second",
-            "music_output_second",
-            "sfx_result",
-            "video_output_token",
-            "video_output_second",
-            "video_result",
-            "api_result",
-        ]
-    };
-    pricing
-        .prices
-        .iter()
-        .find(|price| meters.contains(&price.meter_code.as_str()))
-        .map(|price| price.unit_price.clone())
-        .unwrap_or_default()
-}
-
-fn preview_cache_price(pricing: Option<&sdkwork_models::ModelPricing>, meter_code: &str) -> String {
-    pricing
-        .and_then(|pricing| {
-            pricing
-                .prices
-                .iter()
-                .find(|price| price.meter_code == meter_code)
-        })
-        .map(|price| price.unit_price.clone())
-        .unwrap_or_default()
-}
-
-fn non_empty_preview_cache_price(
-    pricing: Option<&sdkwork_models::ModelPricing>,
-    meter_code: &str,
-) -> Option<String> {
-    let value = preview_cache_price(pricing, meter_code);
-    if value.is_empty() {
-        None
-    } else {
-        Some(value)
-    }
 }
 
 pub(crate) fn stable_uuid(prefix: &str, parts: &[&str]) -> String {

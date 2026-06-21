@@ -8,8 +8,8 @@ from tools.api_contract_manifest import ApiContractManifestGenerator
 
 ROOT = Path(__file__).resolve().parents[1]
 MODEL_SERVICE_SOURCE = (
-    "apps/sdkwork-clawrouter-pc/packages/"
-    "sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
+    "data/sdkwork-models/apps/sdkwork-models-pc/packages/"
+    "sdkwork-models-pc-admin-catalog/src/modelService.ts"
 )
 
 
@@ -134,11 +134,11 @@ class AdminModelMappingRuntimeStandardTest(unittest.TestCase):
             self.assertIn(index_name, binding_index_names)
 
         expected_operation_paths = {
-            f"{MODEL_SERVICE_SOURCE}#fetchModelMappings": "/backend/v3/api/ai/model_mappings",
-            f"{MODEL_SERVICE_SOURCE}#createModelMapping": "/backend/v3/api/ai/model_mappings",
-            f"{MODEL_SERVICE_SOURCE}#updateModelMapping": "/backend/v3/api/ai/model_mappings/{mappingId}",
-            f"{MODEL_SERVICE_SOURCE}#deleteModelMapping": "/backend/v3/api/ai/model_mappings/{mappingId}",
-            f"{MODEL_SERVICE_SOURCE}#resolveModelMapping": "/backend/v3/api/ai/model_mappings/resolve",
+            f"{MODEL_SERVICE_SOURCE}#fetchModelMappings@/admin/model/mappings": "/backend/v3/api/ai/model_mappings",
+            f"{MODEL_SERVICE_SOURCE}#createModelMapping@/admin/model/mappings": "/backend/v3/api/ai/model_mappings",
+            f"{MODEL_SERVICE_SOURCE}#updateModelMapping@/admin/model/mappings": "/backend/v3/api/ai/model_mappings/{mappingId}",
+            f"{MODEL_SERVICE_SOURCE}#deleteModelMapping@/admin/model/mappings": "/backend/v3/api/ai/model_mappings/{mappingId}",
+            f"{MODEL_SERVICE_SOURCE}#resolveModelMapping@/admin/model/mappings": "/backend/v3/api/ai/model_mappings/resolve",
         }
         for operation_key, expected_path in expected_operation_paths.items():
             self.assertIn(operation_key, operations)

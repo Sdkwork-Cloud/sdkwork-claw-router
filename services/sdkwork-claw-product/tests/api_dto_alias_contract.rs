@@ -31,7 +31,9 @@ const PRODUCT_API_SOURCES: &[(&str, &str)] = &[
     ),
     (
         "admin_model_command.rs",
-        include_str!("../src/api/admin_model_command.rs"),
+        include_str!(
+            "../../../data/sdkwork-models/crates/sdkwork-models-catalog-service/src/api/admin_model_command.rs"
+        ),
     ),
     (
         "admin_payment_runtime.rs",

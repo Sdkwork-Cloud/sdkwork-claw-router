@@ -2,7 +2,7 @@ use super::{
     BillingMode, BillingQuantitySource, Invocation, InvocationBilling, InvocationFuture,
     InvocationInterceptor, InvocationShape, InvocationSurface, ResourceType,
 };
-use crate::domain::{BillingMeter, RoutingCapability};
+use crate::domain::{AiRouteModelRequirement, BillingMeter, RoutingCapability};
 
 #[derive(Debug, Clone, Default)]
 pub struct BillingPolicyInterceptor;
@@ -66,7 +66,11 @@ fn openai_compatible_policy(invocation: &Invocation) -> InvocationBilling {
         | ResourceType::Response
         | ResourceType::Thread
         | ResourceType::RealtimeSession => {
-            model_composite_policy(invocation, BillingMeter::LlmInputToken)
+            if optional_model_absent(invocation) {
+                api_request_policy()
+            } else {
+                model_composite_policy(invocation, BillingMeter::LlmInputToken)
+            }
         }
         ResourceType::Embedding => InvocationBilling {
             mode: BillingMode::Token,
@@ -110,8 +114,28 @@ fn openai_compatible_policy(invocation: &Invocation) -> InvocationBilling {
         | ResourceType::StorageBucket
         | ResourceType::StorageObject
         | ResourceType::IaasInstance
-        | ResourceType::Unknown => api_request_policy(),
+        | ResourceType::Unknown => {
+            if optional_model_present(invocation) {
+                model_composite_policy(invocation, BillingMeter::LlmInputToken)
+            } else {
+                api_request_policy()
+            }
+        }
     }
+}
+
+fn optional_model_absent(invocation: &Invocation) -> bool {
+    invocation.resource.model_requirement == AiRouteModelRequirement::Optional
+        && !optional_model_present(invocation)
+}
+
+fn optional_model_present(invocation: &Invocation) -> bool {
+    invocation
+        .resource
+        .requested_model
+        .as_deref()
+        .map(str::trim)
+        .is_some_and(|value| !value.is_empty())
 }
 
 fn api_request_policy() -> InvocationBilling {

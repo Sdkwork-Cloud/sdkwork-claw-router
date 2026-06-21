@@ -19,8 +19,8 @@ async fn sqlite_admin_dashboard_counts_iam_active_users_without_usage_facts() {
     let snapshot = store
         .load_dashboard(AdminDashboardQuery {
             subject: AdminDashboardSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 operator_id: 1,
                 operator_type: 1,
             },

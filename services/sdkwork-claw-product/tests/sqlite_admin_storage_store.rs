@@ -208,7 +208,7 @@ async fn sqlite_admin_storage_store_manages_storage_center_records() {
     assert_eq!("created", gc["status"]);
 
     let audit_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(*) FROM ops_audit_log WHERE action LIKE 'storage.%' AND tenant_id = 10",
+        "SELECT COUNT(*) FROM ops_audit_log WHERE action LIKE 'storage.%' AND tenant_id = 100001",
     )
     .fetch_one(&pool)
     .await
@@ -235,8 +235,8 @@ fn list_query() -> ListAdminStorageRecordsQuery {
 
 fn subject() -> AdminStorageSubject {
     AdminStorageSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         operator_id: 30,
         operator_type: 1,
     }
@@ -476,7 +476,7 @@ async fn seed_storage_center(pool: &sqlx::SqlitePool) {
         INSERT INTO object_provider
             (id, uuid, tenant_id, organization_id, provider_code, provider_type, endpoint_url, region, credential_ref, supports_multipart, supports_lifecycle, health_status)
         VALUES
-            (1, 'provider-aws-primary', 10, 20, 'aws-primary', 'aws_s3', 'https://s3.amazonaws.com', 'us-east-1', 'secret://oss/aws-primary', 1, 1, 'healthy')
+            (1, 'provider-aws-primary', 100001, 0, 'aws-primary', 'aws_s3', 'https://s3.amazonaws.com', 'us-east-1', 'secret://oss/aws-primary', 1, 1, 'healthy')
         "#,
     )
     .execute(pool)
@@ -487,7 +487,7 @@ async fn seed_storage_center(pool: &sqlx::SqlitePool) {
         INSERT INTO object_bucket
             (id, uuid, tenant_id, organization_id, provider_id, bucket_name, bucket_region, logical_scope, data_residency_region, object_key_prefix, default_storage_class, default_encryption_mode, lifecycle_enabled)
         VALUES
-            (1, 'bucket-tenant-assets', 10, 20, 1, 'tenant-assets', 'us-east-1', 'tenant_private', 'US', 'tenants/{tenantId}/', 'STANDARD', 'sse_s3', 1)
+            (1, 'bucket-tenant-assets', 100001, 0, 1, 'tenant-assets', 'us-east-1', 'tenant_private', 'US', 'tenants/{tenantId}/', 'STANDARD', 'sse_s3', 1)
         "#,
     )
     .execute(pool)
@@ -498,7 +498,7 @@ async fn seed_storage_center(pool: &sqlx::SqlitePool) {
         INSERT INTO storage_usage_counter
             (id, uuid, tenant_id, organization_id, scope_type, scope_id, used_logical_bytes, reserved_bytes, file_count)
         VALUES
-            (1, 'usage-org-20', 10, 20, 'organization', '20', 2048, 128, 4)
+            (1, 'usage-org-20', 100001, 0, 'organization', '20', 2048, 128, 4)
         "#,
     )
     .execute(pool)
@@ -509,7 +509,7 @@ async fn seed_storage_center(pool: &sqlx::SqlitePool) {
         INSERT INTO storage_usage_ledger
             (id, uuid, tenant_id, organization_id, user_id, scope_type, scope_id, usage_event_type, delta_logical_bytes, delta_file_count, reason, idempotency_key)
         VALUES
-            (1, 'ledger-user-30', 10, 20, 30, 'user', '30', 'file.upload.completed', 512, 1, 'upload', 'seed-ledger')
+            (1, 'ledger-user-30', 100001, 0, 30, 'user', '30', 'file.upload.completed', 512, 1, 'upload', 'seed-ledger')
         "#,
     )
     .execute(pool)
@@ -520,7 +520,7 @@ async fn seed_storage_center(pool: &sqlx::SqlitePool) {
         INSERT INTO storage_usage_snapshot
             (id, uuid, tenant_id, organization_id, scope_type, scope_id, snapshot_type, used_logical_bytes, reserved_bytes, file_count)
         VALUES
-            (1, 'snapshot-tenant-10', 10, 20, 'tenant', '10', 'daily', 2048, 128, 4)
+            (1, 'snapshot-tenant-10', 100001, 0, 'tenant', '10', 'daily', 2048, 128, 4)
         "#,
     )
     .execute(pool)

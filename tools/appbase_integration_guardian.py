@@ -59,6 +59,7 @@ REQUIRED_FRONTEND_ADAPTERS: dict[str, tuple[str, ...]] = {
         "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wallet/src/walletService.ts",
         "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-finance/src/financeService.ts",
         "apps/sdkwork-clawrouter-pc/src/App.tsx",
+        "apps/sdkwork-clawrouter-pc/src/commerce/commerceHostMount.tsx",
     ),
 }
 

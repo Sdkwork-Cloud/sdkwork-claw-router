@@ -248,8 +248,8 @@ async fn sqlite_admin_messaging_store_writes_delivery_building_blocks_and_replay
         r#"
         SELECT COALESCE(SUM(send_count + reject_count), 0)
         FROM messaging_rate_limit_bucket
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND scene_code = 'login'
           AND channel = 'sms'
           AND target_hash = 'target-hash-login'
@@ -334,7 +334,7 @@ async fn sqlite_admin_messaging_store_writes_delivery_building_blocks_and_replay
             (id, uuid, tenant_id, organization_id, status, scene_code, channel, target_hash,
              ip_hash, device_hash, window_start, window_seconds, send_count, verify_count, reject_count)
         VALUES
-            (2003, 'bucket-login-rate-limited', 10, 20, 1, 'login', 'sms', 'target-hash-rate-limited',
+            (2003, 'bucket-login-rate-limited', 100001, 0, 1, 'login', 'sms', 'target-hash-rate-limited',
              '*', '*', strftime('%Y-%m-%d %H:00:00', 'now'), 3600, 5, 0, 0)
         "#,
     )
@@ -396,8 +396,8 @@ async fn sqlite_admin_messaging_store_writes_delivery_building_blocks_and_replay
         r#"
         SELECT reject_count
         FROM messaging_rate_limit_bucket
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND scene_code = 'login'
           AND channel = 'sms'
           AND target_hash = 'target-hash-rate-limited'
@@ -1043,8 +1043,8 @@ async fn sqlite_admin_messaging_store_sends_marketing_email_template_with_same_r
         r#"
         SELECT reject_count
         FROM messaging_rate_limit_bucket
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND scene_code = 'campaign'
           AND channel = 'email'
           AND target_hash = 'email-target-hash'
@@ -1501,8 +1501,8 @@ async fn create_pool() -> sqlx::SqlitePool {
 
 fn subject() -> AdminMessagingSubject {
     AdminMessagingSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         operator_id: 30,
         operator_type: 1,
     }
@@ -1875,7 +1875,7 @@ async fn seed_messaging_reference_data(pool: &sqlx::SqlitePool) {
         INSERT INTO messaging_suppression
             (id, uuid, tenant_id, organization_id, status, channel, target_hash, target_masked, reason_code, starts_at, source)
         VALUES
-            (1001, 'suppression-email', 10, 20, 1, 'email', 'email-target-hash', 'u***@example.com', 'hard_bounce', '2026-05-01 00:00:00', 'provider_webhook'),
+            (1001, 'suppression-email', 100001, 0, 1, 'email', 'email-target-hash', 'u***@example.com', 'hard_bounce', '2026-05-01 00:00:00', 'provider_webhook'),
             (1002, 'suppression-other-tenant', 11, 20, 1, 'email', 'email-target-hash', 'leak@example.com', 'hard_bounce', '2026-05-01 00:00:00', 'provider_webhook')
         "#,
     )
@@ -1888,8 +1888,8 @@ async fn seed_messaging_reference_data(pool: &sqlx::SqlitePool) {
         INSERT INTO messaging_rate_limit_bucket
             (id, uuid, tenant_id, organization_id, status, scene_code, channel, target_hash, ip_hash, device_hash, window_start, window_seconds, send_count, verify_count, reject_count)
         VALUES
-            (2001, 'bucket-login-sms', 10, 20, 1, 'login', 'sms', 'target-hash-login', 'ip-hash', 'device-hash', '2026-05-25 10:00:00', 3600, 3, 2, 1),
-            (2002, 'bucket-register-sms', 10, 20, 1, 'register', 'sms', 'target-hash-register', 'ip-hash', 'device-hash', '2026-05-25 10:00:00', 3600, 7, 0, 3)
+            (2001, 'bucket-login-sms', 100001, 0, 1, 'login', 'sms', 'target-hash-login', 'ip-hash', 'device-hash', '2026-05-25 10:00:00', 3600, 3, 2, 1),
+            (2002, 'bucket-register-sms', 100001, 0, 1, 'register', 'sms', 'target-hash-register', 'ip-hash', 'device-hash', '2026-05-25 10:00:00', 3600, 7, 0, 3)
         "#,
     )
     .execute(pool)
@@ -1901,7 +1901,7 @@ async fn seed_messaging_reference_data(pool: &sqlx::SqlitePool) {
         INSERT INTO iam_verification_scene_policy
             (id, uuid, tenant_id, organization_id, status, scene_code, scene_name, allowed_channels, default_channel, code_length, ttl_seconds, resend_interval_seconds, max_send_per_hour, max_verify_attempts, template_code, risk_policy)
         VALUES
-            (3001, 'policy-login', 10, 20, 1, 'login', 'Login', '["sms"]', 'sms', 6, 300, 60, 5, 5, 'LOGIN_SMS_OTP', '{}'),
+            (3001, 'policy-login', 100001, 0, 1, 'login', 'Login', '["sms"]', 'sms', 6, 300, 60, 5, 5, 'LOGIN_SMS_OTP', '{}'),
             (3002, 'policy-other-tenant', 11, 20, 1, 'login', 'Login Leak', '["email"]', 'email', 6, 300, 60, 5, 5, 'LEAK', '{}')
         "#,
     )

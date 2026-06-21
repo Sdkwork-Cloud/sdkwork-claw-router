@@ -23,8 +23,8 @@ async fn sqlite_app_runtime_store_records_invocations_events_and_artifacts() {
     seed_runtime_context(&pool, 30).await;
     let store = SqliteAppRuntimeStore::new(pool.clone());
     let subject = AppRuntimeSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
     };
 
@@ -82,8 +82,8 @@ async fn sqlite_app_runtime_store_records_invocations_events_and_artifacts() {
     let cross_user_execution = store
         .get_invocation_execution(
             AppRuntimeSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 user_id: 31,
             },
             "runtime-invocation-uuid-1".to_owned(),
@@ -275,8 +275,8 @@ async fn sqlite_app_runtime_store_serializes_concurrent_events_for_one_invocatio
     seed_runtime_context(&pool, 30).await;
     let store = SqliteAppRuntimeStore::new(pool.clone());
     let subject = AppRuntimeSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
     };
     store
@@ -373,8 +373,8 @@ async fn sqlite_app_runtime_store_reuses_existing_terminal_event_for_invocation(
     seed_runtime_context(&pool, 30).await;
     let store = SqliteAppRuntimeStore::new(pool);
     let subject = AppRuntimeSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
     };
     store
@@ -463,8 +463,8 @@ async fn sqlite_app_runtime_store_rejects_context_outside_trusted_user_scope() {
     seed_runtime_context(&pool, 31).await;
     let store = SqliteAppRuntimeStore::new(pool);
     let subject = AppRuntimeSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
     };
 
@@ -546,8 +546,8 @@ async fn sqlite_app_runtime_store_rejects_agent_step_without_trusted_user_owner(
     seed_runtime_context(&pool, 30).await;
     let store = SqliteAppRuntimeStore::new(pool.clone());
     let subject = AppRuntimeSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
     };
 
@@ -555,8 +555,8 @@ async fn sqlite_app_runtime_store_rejects_agent_step_without_trusted_user_owner(
         r#"
         UPDATE ai_agent_run_step
         SET user_id = NULL
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND uuid = 'agent-step-1'
         "#,
     )
@@ -609,8 +609,8 @@ async fn sqlite_app_runtime_store_rejects_deleted_string_lifecycle_contexts() {
     seed_runtime_context(&pool, 30).await;
     let store = SqliteAppRuntimeStore::new(pool.clone());
     let subject = AppRuntimeSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
     };
 
@@ -618,8 +618,8 @@ async fn sqlite_app_runtime_store_rejects_deleted_string_lifecycle_contexts() {
         r#"
         UPDATE ai_chat_conversation
         SET status = 'deleted'
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND user_id = 30
           AND conversation_code = 'chat-conversation-1'
         "#,
@@ -665,8 +665,8 @@ async fn sqlite_app_runtime_store_rejects_deleted_string_lifecycle_contexts() {
         r#"
         UPDATE ai_chat_conversation
         SET status = 'active'
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND user_id = 30
           AND conversation_code = 'chat-conversation-1'
         "#,
@@ -678,8 +678,8 @@ async fn sqlite_app_runtime_store_rejects_deleted_string_lifecycle_contexts() {
         r#"
         UPDATE ai_agent_run_step
         SET status = 'deleted'
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND user_id = 30
           AND uuid = 'agent-step-1'
         "#,
@@ -747,7 +747,7 @@ async fn seed_runtime_context(pool: &sqlx::SqlitePool, user_id: i64) {
             title,
             source_surface
         )
-        VALUES (?1, 10, 20, ?2, 'active', '2026-05-18 08:00:00', '2026-05-18 08:00:00', '{}', 'chat-conversation-1', 'Source conversation', 'chat')
+        VALUES (?1, 100001, 0, ?2, 'active', '2026-05-18 08:00:00', '2026-05-18 08:00:00', '{}', 'chat-conversation-1', 'Source conversation', 'chat')
         "#,
     )
     .bind(format!("chat-conversation-uuid-{user_id}"))
@@ -772,8 +772,8 @@ async fn seed_runtime_context(pool: &sqlx::SqlitePool, user_id: i64) {
         )
         SELECT 'chat-turn-1', tenant_id, organization_id, user_id, id, 1, 'completed', '2026-05-18 08:01:00', '2026-05-18 08:01:00', '{}'
         FROM ai_chat_conversation
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND user_id = ?1
           AND conversation_code = 'chat-conversation-1'
         "#,
@@ -804,8 +804,8 @@ async fn seed_runtime_context(pool: &sqlx::SqlitePool, user_id: i64) {
         SELECT 'chat-item-1', c.tenant_id, c.organization_id, c.user_id, c.id, t.id, 1, 'message', 'user', 'input', 'completed', 'hello', '2026-05-18 08:01:00', '{}'
         FROM ai_chat_conversation c
         INNER JOIN ai_chat_turn t ON t.conversation_id = c.id
-        WHERE c.tenant_id = 10
-          AND c.organization_id = 20
+        WHERE c.tenant_id = 100001
+          AND c.organization_id = 0
           AND c.user_id = ?1
           AND c.conversation_code = 'chat-conversation-1'
           AND t.uuid = 'chat-turn-1'
@@ -839,7 +839,7 @@ async fn seed_runtime_context(pool: &sqlx::SqlitePool, user_id: i64) {
             updated_at,
             metadata
         )
-        VALUES (?1, 10, 20, ?2, '101', '201', 'agent-session-1', 'Agent session', 'coding', 'chat', 'active', 'codex', 'gpt-5.1-codex', 0, 0, 0, '2026-05-18 08:00:00', '2026-05-18 08:00:00', '{}')
+        VALUES (?1, 100001, 0, ?2, '101', '201', 'agent-session-1', 'Agent session', 'coding', 'chat', 'active', 'codex', 'gpt-5.1-codex', 0, 0, 0, '2026-05-18 08:00:00', '2026-05-18 08:00:00', '{}')
         "#,
     )
     .bind(format!("agent-session-uuid-{user_id}"))
@@ -872,7 +872,7 @@ async fn seed_runtime_context(pool: &sqlx::SqlitePool, user_id: i64) {
             started_at,
             total_steps
         )
-        VALUES (?1, 10, 20, ?2, ?3, NULL, 'active', '2026-05-18 08:02:00', '{}', 101, 201, 'agent-session-1', 'codex', 'gpt-5.1-codex', 'agent-run-1', 'running', 'chat', 'interactive', '2026-05-18 08:02:00', 1)
+        VALUES (?1, 100001, 0, ?2, ?3, NULL, 'active', '2026-05-18 08:02:00', '{}', 101, 201, 'agent-session-1', 'codex', 'gpt-5.1-codex', 'agent-run-1', 'running', 'chat', 'interactive', '2026-05-18 08:02:00', 1)
         "#,
     )
     .bind(format!("agent-run-uuid-{user_id}"))
@@ -901,8 +901,8 @@ async fn seed_runtime_context(pool: &sqlx::SqlitePool, user_id: i64) {
         )
         SELECT 'agent-step-1', tenant_id, organization_id, user_id, 'active', '2026-05-18 08:03:00', '{}', id, 101, 201, 1, 2, 'completed'
         FROM ai_agent_run
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND user_id = ?1
           AND run_uuid = 'agent-run-1'
         "#,

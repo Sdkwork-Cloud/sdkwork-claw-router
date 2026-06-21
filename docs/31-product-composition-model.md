@@ -13,20 +13,22 @@
 | Application center / marketplace | `sdkwork-appstore` | `appstore_` | `../sdkwork-appstore` |
 | IAM | `sdkwork-appbase` | `iam_` | `../sdkwork-appbase` |
 | Commerce base | `sdkwork-commerce` | `commerce_` (base) | `../sdkwork-commerce` |
-| AI gateway / skills / routing | `sdkwork-clawrouter` | `ai_`, `ops_`, … | this repo |
+| AI model catalog (vendors, models, pricing evidence, rankings) | `sdkwork-models` | `ai_model_*` (catalog tables) | `../sdkwork-models` |
+| AI gateway / skills / routing | `sdkwork-clawrouter` | `ai_` (runtime), `ops_`, … | this repo |
 
 ## 2. Database lifecycle
 
-`database/database.manifest.json` declares module dependencies for appbase, commerce, and appstore. Claw-router bootstrap applies only those imported baselines plus claw-router generated schema (`ai_*`, …).
+`database/database.manifest.json` declares module dependencies for appbase, commerce, appstore, and sdkwork-models. Claw-router bootstrap applies only those imported baselines plus claw-router generated schema (`ai_*` runtime tables, …).
 
 Bootstrap order in claw-router:
 
 1. appbase-iam  
 2. commerce-core  
 3. appstore  
-4. claw-router generated schema (`ai_*`, …)
+4. sdkwork-models (catalog dictionary via `sdkwork-models-database-bootstrap`)  
+5. claw-router generated schema (`ai_*` runtime tables, …)
 
-Claw-router Schema Registry entries for imported domains use `generated_by_this_project: false` and the correct `write_owner`. Imported DDL is applied from sibling module baselines in `installer.rs`, not compiled into `generated/schema/postgres/schema.sql`.
+Claw-router Schema Registry entries for imported domains use `generated_by_this_project: false` and the correct `write_owner`. Imported DDL is applied from composed sibling modules through their bootstrap crates (for example `commerce_initial_migration_sql()` and `models_catalog_foundation_migration_sql()`), not by embedding sibling `database/ddl` paths in claw-router.
 
 ## 3. Retired in claw-router
 

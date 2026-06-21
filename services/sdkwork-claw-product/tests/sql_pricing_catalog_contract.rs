@@ -944,8 +944,8 @@ fn row_mappers_convert_sql_rows_into_domain_objects() {
 
     let api_key = GatewayApiKeyRow {
         id: 100,
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
         group_id: 10,
         group_bindings_json: r#"[{"groupId":20,"groupCode":"premium-group","bindingRole":"route","routingStrategy":"auto","priority":1,"weight":100},{"groupId":10,"groupCode":"standard-group","bindingRole":"route","routingStrategy":"auto","priority":50,"weight":10}]"#.to_owned(),
@@ -1016,8 +1016,8 @@ fn row_mappers_convert_sql_rows_into_domain_objects() {
 
     let group = ChannelGroupRow {
         id: 10,
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         name: "Standard Group".to_owned(),
         code: "standard-group".to_owned(),
         pricing_plan_code: "standard".to_owned(),
@@ -1063,8 +1063,8 @@ fn row_mappers_convert_sql_rows_into_domain_objects() {
 
     let routing_policy = RoutingPolicyRow {
         id: 9001,
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         policy_code: "standard-group-routing".to_owned(),
         policy_scope: 5,
         subject_id: Some(10),
@@ -1088,8 +1088,8 @@ fn row_mappers_convert_sql_rows_into_domain_objects() {
 
     let routing_rule = RoutingRuleRow {
         id: 9102,
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         profile_id: 9101,
         rule_code: "gpt-4o-mini-account-pool".to_owned(),
         priority: 10,
@@ -1116,8 +1116,8 @@ fn row_mappers_convert_sql_rows_into_domain_objects() {
 fn row_mappers_reject_invalid_decimal_and_unknown_price_side() {
     let invalid_group = ChannelGroupRow {
         id: 10,
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         name: "Standard Group".to_owned(),
         code: "standard-group".to_owned(),
         pricing_plan_code: "standard".to_owned(),
@@ -1731,8 +1731,8 @@ fn priced_catalog_rows() -> PricingCatalogRows {
         ],
         routing_policies: vec![RoutingPolicyRow {
             id: 9001,
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             policy_code: "standard-group-routing".to_owned(),
             policy_scope: 5,
             subject_id: Some(10),
@@ -1742,8 +1742,8 @@ fn priced_catalog_rows() -> PricingCatalogRows {
         }],
         routing_rules: vec![RoutingRuleRow {
             id: 9102,
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             profile_id: 9101,
             rule_code: "gpt-4o-mini-account-pool".to_owned(),
             priority: 10,
@@ -1763,8 +1763,8 @@ fn priced_catalog_rows() -> PricingCatalogRows {
         }],
         channel_groups: vec![ChannelGroupRow {
             id: 10,
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             name: "Standard Group".to_owned(),
             code: "standard-group".to_owned(),
             pricing_plan_code: "standard".to_owned(),
@@ -1773,8 +1773,8 @@ fn priced_catalog_rows() -> PricingCatalogRows {
         }],
         api_keys: vec![GatewayApiKeyRow {
             id: 100,
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             user_id: 30,
             group_id: 10,
             group_bindings_json: "[]".to_owned(),

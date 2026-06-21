@@ -8,15 +8,15 @@ import { resetClawRouterSdkClients } from "./packages/sdkwork-clawrouter-pc-comm
 import {
   KNOWN_VENDORS as ADMIN_KNOWN_VENDORS,
   ModelService,
-  ResourceGroupService,
   selectPreferredModelVendorId,
-} from "./packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts";
-import { deriveModelRankingRefreshDiagnostics } from "./packages/sdkwork-clawrouter-pc-admin-model/src/modelRankingRefreshDiagnostics.ts";
+} from "./../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts";
+import { ResourceGroupService } from "./../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-resource/src/resourceGroupService.ts";
+import { deriveModelRankingRefreshDiagnostics } from "./../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelRankingRefreshDiagnostics.ts";
 import {
   createModelInputFromForm,
   createVendorInputFromForm,
   updateModelInputFromForm,
-} from "./packages/sdkwork-clawrouter-pc-admin-model/src/modelForm.ts";
+} from "./../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelForm.ts";
 
 const KNOWN_VENDORS = [
   { id: "v_openai", name: "OpenAI", desc: "Industry leading LLMs inclusive of GPT-4 and DALL-E." },
@@ -239,7 +239,7 @@ test("admin model vendor selection uses persisted vendor ids instead of shortcut
 
 test("admin model page does not expose unsupported vendor settings action", () => {
   const source = readFileSync(
-    resolve(PORTAL_ROOT, "packages/sdkwork-clawrouter-pc-admin-model/src/index.tsx"),
+    resolve(PORTAL_ROOT, "../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/index.tsx"),
     "utf8",
   );
 
@@ -248,7 +248,7 @@ test("admin model page does not expose unsupported vendor settings action", () =
 
 test("admin model page groups rows by vendor code when persisted vendor ids differ", () => {
   const source = readFileSync(
-    resolve(PORTAL_ROOT, "packages/sdkwork-clawrouter-pc-admin-model/src/index.tsx"),
+    resolve(PORTAL_ROOT, "../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/index.tsx"),
     "utf8",
   );
 
@@ -260,7 +260,7 @@ test("admin model page groups rows by vendor code when persisted vendor ids diff
 
 test("admin model page visible copy uses the admin model i18n namespace", () => {
   const source = readFileSync(
-    resolve(PORTAL_ROOT, "packages/sdkwork-clawrouter-pc-admin-model/src/index.tsx"),
+    resolve(PORTAL_ROOT, "../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/index.tsx"),
     "utf8",
   );
   const i18nSource = readFileSync(
@@ -366,7 +366,7 @@ test("admin model page visible copy uses the admin model i18n namespace", () => 
 
 test("admin model list summarizes prices and opens regional pricing popovers", () => {
   const source = readFileSync(
-    resolve(PORTAL_ROOT, "packages/sdkwork-clawrouter-pc-admin-model/src/index.tsx"),
+    resolve(PORTAL_ROOT, "../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/index.tsx"),
     "utf8",
   );
   const i18nSource = readFileSync(
@@ -594,15 +594,15 @@ test("admin ai model form rejects missing context tokens instead of defaulting",
 
 test("admin model editor creates default mainland China and global pricing regions", () => {
   const source = readFileSync(
-    resolve(PORTAL_ROOT, "packages/sdkwork-clawrouter-pc-admin-model/src/index.tsx"),
+    resolve(PORTAL_ROOT, "../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/index.tsx"),
     "utf8",
   );
   const formSource = readFileSync(
-    resolve(PORTAL_ROOT, "packages/sdkwork-clawrouter-pc-admin-model/src/modelForm.ts"),
+    resolve(PORTAL_ROOT, "../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelForm.ts"),
     "utf8",
   );
   const serviceSource = readFileSync(
-    resolve(PORTAL_ROOT, "packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"),
+    resolve(PORTAL_ROOT, "../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts"),
     "utf8",
   );
   const i18nSource = readFileSync(
@@ -955,11 +955,11 @@ test("admin model service calls generated backend SDK paths and normalizes model
 
 test("admin model service does not own AI channel resource operations", () => {
   const source = readFileSync(
-    resolve(PORTAL_ROOT, "packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"),
+    resolve(PORTAL_ROOT, "../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts"),
     "utf8",
   );
   const indexSource = readFileSync(
-    resolve(PORTAL_ROOT, "packages/sdkwork-clawrouter-pc-admin-model/src/index.tsx"),
+    resolve(PORTAL_ROOT, "../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/index.tsx"),
     "utf8",
   );
 
@@ -2195,7 +2195,7 @@ test("admin model catalog sync rejects fractional fact counters", async () => {
 
 test("admin model table fills the available admin viewport", () => {
   const source = readFileSync(
-    resolve(PORTAL_ROOT, "packages/sdkwork-clawrouter-pc-admin-model/src/index.tsx"),
+    resolve(PORTAL_ROOT, "../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/index.tsx"),
     "utf8",
   );
 
@@ -2214,7 +2214,7 @@ test("admin model table fills the available admin viewport", () => {
 
 test("admin model right pane stays as a paginated table list", () => {
   const source = readFileSync(
-    resolve(PORTAL_ROOT, "packages/sdkwork-clawrouter-pc-admin-model/src/index.tsx"),
+    resolve(PORTAL_ROOT, "../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/index.tsx"),
     "utf8",
   );
 
@@ -2238,7 +2238,7 @@ test("admin model right pane stays as a paginated table list", () => {
 
 test("admin model table supports multi-select modality filtering before pagination", () => {
   const source = readFileSync(
-    resolve(PORTAL_ROOT, "packages/sdkwork-clawrouter-pc-admin-model/src/index.tsx"),
+    resolve(PORTAL_ROOT, "../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/index.tsx"),
     "utf8",
   );
 
@@ -2266,15 +2266,15 @@ test("admin model table supports multi-select modality filtering before paginati
 
 test("admin model editor supports cache read and write prices", () => {
   const source = readFileSync(
-    resolve(PORTAL_ROOT, "packages/sdkwork-clawrouter-pc-admin-model/src/index.tsx"),
+    resolve(PORTAL_ROOT, "../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/index.tsx"),
     "utf8",
   );
   const serviceSource = readFileSync(
-    resolve(PORTAL_ROOT, "packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"),
+    resolve(PORTAL_ROOT, "../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts"),
     "utf8",
   );
   const formSource = readFileSync(
-    resolve(PORTAL_ROOT, "packages/sdkwork-clawrouter-pc-admin-model/src/modelForm.ts"),
+    resolve(PORTAL_ROOT, "../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelForm.ts"),
     "utf8",
   );
 
@@ -2312,7 +2312,7 @@ test("admin model editor supports cache read and write prices", () => {
 
 test("admin model editor uses six-decimal pricing precision", () => {
   const source = readFileSync(
-    resolve(PORTAL_ROOT, "packages/sdkwork-clawrouter-pc-admin-model/src/index.tsx"),
+    resolve(PORTAL_ROOT, "../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/index.tsx"),
     "utf8",
   );
 
@@ -2323,7 +2323,7 @@ test("admin model editor uses six-decimal pricing precision", () => {
 
 test("admin model modality filter closes when clicking outside", () => {
   const source = readFileSync(
-    resolve(PORTAL_ROOT, "packages/sdkwork-clawrouter-pc-admin-model/src/index.tsx"),
+    resolve(PORTAL_ROOT, "../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/index.tsx"),
     "utf8",
   );
 
@@ -2343,7 +2343,7 @@ test("admin model modality filter closes when clicking outside", () => {
 
 test("admin model catalog sync action lives in the vendor sidebar header", () => {
   const source = readFileSync(
-    resolve(PORTAL_ROOT, "packages/sdkwork-clawrouter-pc-admin-model/src/index.tsx"),
+    resolve(PORTAL_ROOT, "../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/index.tsx"),
     "utf8",
   );
 
@@ -2374,9 +2374,9 @@ test("admin model catalog sync action lives in the vendor sidebar header", () =>
 
 test("admin model resource management is registered as a model management menu route", () => {
   const appSource = readFileSync(resolve(PORTAL_ROOT, "src/App.tsx"), "utf8");
-  const registrySource = readFileSync(resolve(PORTAL_ROOT, "src/adminModuleRegistry.ts"), "utf8");
+  const registrySource = readFileSync(resolve(PORTAL_ROOT, "packages/sdkwork-clawrouter-pc-admin-shell/src/adminModuleRegistry.ts"), "utf8");
   const packageSource = readFileSync(
-    resolve(PORTAL_ROOT, "packages/sdkwork-clawrouter-pc-admin-model/src/index.tsx"),
+    resolve(PORTAL_ROOT, "../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/index.tsx"),
     "utf8",
   );
   const navSource = readFileSync(
@@ -2384,19 +2384,19 @@ test("admin model resource management is registered as a model management menu r
     "utf8",
   );
 
-  assert.match(appSource, /const ResourceAdmin = lazyRoute\(\(\) => import\('sdkwork-clawrouter-pc-admin-model'\), 'ResourceAdmin'\)/);
+  assert.match(appSource, /const ResourceAdmin = lazyRoute\(\(\) => import\('@sdkwork\/models-pc-admin-resource'\), 'ResourceAdmin'\)/);
   assert.match(appSource, /<Route path="model\/resources" element=\{<ResourceAdmin \/>\} \/>/);
   assert.match(registrySource, /path: '\/admin\/model\/resources'/);
   assert.match(registrySource, /labelKey: 'admin\.menu\.modelResources'/);
   assert.match(registrySource, /icon: Boxes/);
-  assert.match(packageSource, /export \{ ResourceAdmin \} from '\.\/resourceAdmin';/);
+  assert.match(packageSource, /export function ModelAdmin/);
   assert.match(navSource, /"admin\.menu\.modelResources": "Resource Management"/);
   assert.match(navSource, /"admin\.menu\.modelResources": "资源管理"/);
 });
 
 test("admin model resource page exposes group CRUD and static all-api safeguards", () => {
   const source = readFileSync(
-    resolve(PORTAL_ROOT, "packages/sdkwork-clawrouter-pc-admin-model/src/resourceAdmin.tsx"),
+    resolve(PORTAL_ROOT, "../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-resource/src/resourceAdmin.tsx"),
     "utf8",
   );
   const i18nSource = readFileSync(
@@ -2406,12 +2406,12 @@ test("admin model resource page exposes group CRUD and static all-api safeguards
 
   for (const expected of [
     "data-admin-model-resource-page",
-    "ResourceGroupService.fetchGroups()",
-    "ResourceGroupService.fetchResources(selectedGroup.groupCode)",
-    "ResourceGroupService.fetchResources('api.all')",
-    "ResourceGroupService.createGroup(input as ResourceGroupCreateInput)",
-    "ResourceGroupService.updateGroup(form.id, input)",
-    "ResourceGroupService.deleteGroup(deleteTarget.id)",
+    "ResourceGroupService.fetchResourceGroups()",
+    "ResourceGroupService.fetchResourceGroupResources(selectedGroup.groupCode)",
+    "ResourceGroupService.fetchResourceGroupResources('api.all')",
+    "ResourceGroupService.createResourceGroup(input as ResourceGroupCreateInput)",
+    "ResourceGroupService.updateResourceGroup(form.id, input)",
+    "ResourceGroupService.deleteResourceGroup(deleteTarget.id)",
     "disabled={selectedGroup.dynamic || selectedGroup.groupCode === 'api.all'}",
     "disabled={form.groupCode === 'api.all'}",
     "selectionMode: form.groupCode === 'api.all' ? 'all' : 'manual'",
@@ -2460,7 +2460,7 @@ test("admin model resource page exposes group CRUD and static all-api safeguards
   assert.match(source, /onPageSizeChange=\{\(nextPageSize\) => \{/);
   assert.match(source, /setResourcePageSize\(nextPageSize\)/);
   assert.match(source, /filteredResources\.length === 0/);
-  assert.match(source, /paginatedResources\.map\(resource =>/);
+  assert.match(source, /paginatedResources\.map\(\(resource\) =>/);
   assert.doesNotMatch(source, /filteredResources\.map\(resource =>/);
   const sidebarHeaderStart = source.indexOf("data-admin-model-resource-sidebar-header");
   const mainStart = source.indexOf("data-admin-model-resource-main");
@@ -2472,8 +2472,8 @@ test("admin model resource page exposes group CRUD and static all-api safeguards
   assert.match(sidebarHeader, /onClick=\{startCreate\}/);
   assert.match(sidebarHeader, /void loadGroups\(\);/);
   assert.match(sidebarHeader, /void loadAllResources\(\);/);
-  assert.match(sidebarHeader, /<Plus className="[^"]*\bw-4\b[^"]*\bh-4\b[^"]*"/);
-  assert.match(sidebarHeader, /<RefreshCw className="[^"]*\bw-4\b[^"]*\bh-4\b[^"]*"/);
+  assert.match(sidebarHeader, /<Plus className="[^"]*\b(?:w-4 h-4|h-4 w-4)\b[^"]*"/);
+  assert.match(sidebarHeader, /<RefreshCw className="[^"]*\b(?:w-4 h-4|h-4 w-4)\b[^"]*"/);
 
   assert.match(source, /\{deleteTarget && \(\s*<ConfirmDialog/);
   assert.match(source, /isBusy=\{saving\}/);
@@ -2503,7 +2503,7 @@ test("admin model resource page exposes group CRUD and static all-api safeguards
 
 test("admin model resource group detail panel manages members with multi-select resource picker", () => {
   const source = readFileSync(
-    resolve(PORTAL_ROOT, "packages/sdkwork-clawrouter-pc-admin-model/src/resourceAdmin.tsx"),
+    resolve(PORTAL_ROOT, "../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-resource/src/resourceAdmin.tsx"),
     "utf8",
   );
 
@@ -2519,7 +2519,7 @@ test("admin model resource group detail panel manages members with multi-select 
     "setResourceAssignmentDraftCodes(resources.map(resource => resource.resourceCode))",
     "selectedCodes={resourceAssignmentDraftCodes}",
     "onClose={() => void saveResourceAssignmentDraft()}",
-    "ResourceGroupService.updateGroup(selectedGroup.id, {",
+    "ResourceGroupService.updateResourceGroup(selectedGroup.id, {",
     "members: memberCodes.map((resourceCode, index) => ({",
     "disabled={!canManageSelectedGroupResources || loadingResources || saving}",
     "selectionMode=\"multiple\"",
@@ -2662,10 +2662,10 @@ test("admin model resource group service calls generated backend SDK resource gr
       throw new Error(`Unexpected SDK request ${method} ${url}`);
     },
     async (captured) => {
-      const groups = await ResourceGroupService.fetchGroups();
-      const resources = await ResourceGroupService.fetchResources("api.all");
+      const groups = await ResourceGroupService.fetchResourceGroups();
+      const resources = await ResourceGroupService.fetchResourceGroupResources("api.all");
       const assignableResources = await ResourceGroupService.fetchAssignableResources();
-      const created = await ResourceGroupService.createGroup({
+      const created = await ResourceGroupService.createResourceGroup({
         groupCode: "API.Custom.Chat",
         groupName: " Custom Chat ",
         groupType: "api_group",
@@ -2681,11 +2681,11 @@ test("admin model resource group service calls generated backend SDK resource gr
           },
         ],
       });
-      const updated = await ResourceGroupService.updateGroup("group-custom-chat", {
+      const updated = await ResourceGroupService.updateResourceGroup("group-custom-chat", {
         groupName: "Custom Chat Updated",
         members: [],
       });
-      const deleted = await ResourceGroupService.deleteGroup("group-custom-chat");
+      const deleted = await ResourceGroupService.deleteResourceGroup("group-custom-chat");
 
       assert.equal(groups.length, 1);
       assert.equal(groups[0].groupCode, "api.all");
@@ -2752,7 +2752,7 @@ test("admin model resource group service fails closed on malformed resource grou
     },
     async () => {
       await assert.rejects(
-        () => ResourceGroupService.fetchGroups(),
+        () => ResourceGroupService.fetchResourceGroups(),
         /Unsupported AI resource group type: provider_group/,
       );
     },

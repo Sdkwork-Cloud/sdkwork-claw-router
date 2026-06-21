@@ -5,15 +5,12 @@ mod invocation_http;
 mod invocation_provider_adapter;
 mod invocation_router;
 mod invocation_sticky_store;
-mod openai_passthrough_payload;
 mod openai_passthrough_routes;
-mod openai_route_taxonomy;
 mod passthrough;
 mod provider_account_auth;
 pub mod provider_adapter_transport;
 mod provider_passthrough_transport;
 mod request_identity;
-mod route_scoped_openai_passthrough;
 pub mod runtime;
 
 pub use edge_server::{

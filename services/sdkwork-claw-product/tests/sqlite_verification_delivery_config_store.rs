@@ -13,8 +13,8 @@ async fn sqlite_verification_delivery_config_selects_active_email_config_from_me
 
     let config = store
         .active_config_for(VerificationDeliveryConfigQuery {
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             channel: "EMAIL".to_owned(),
             scene: "LOGIN".to_owned(),
         })
@@ -52,8 +52,8 @@ async fn sqlite_verification_delivery_config_selects_active_sms_config_for_regis
 
     let config = store
         .active_config_for(VerificationDeliveryConfigQuery {
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             channel: "SMS".to_owned(),
             scene: "REGISTER".to_owned(),
         })
@@ -83,8 +83,8 @@ async fn sqlite_verification_delivery_config_returns_none_when_no_active_provide
 
     let config = store
         .active_config_for(VerificationDeliveryConfigQuery {
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             channel: "PUSH".to_owned(),
             scene: "LOGIN".to_owned(),
         })
@@ -107,8 +107,8 @@ async fn sqlite_verification_delivery_config_fails_closed_when_secret_ref_is_mis
 
     let error = store
         .active_config_for(VerificationDeliveryConfigQuery {
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             channel: "email".to_owned(),
             scene: "login".to_owned(),
         })
@@ -259,8 +259,8 @@ async fn seed_configs(pool: &SqlitePool) {
         INSERT INTO iam_verification_scene_policy
             (id, tenant_id, organization_id, scene_code, allowed_channels, default_channel, template_code, status)
         VALUES
-            (6001, 10, 20, 'login', '["email","sms"]', 'email', 'LOGIN_TEMPLATE', 1),
-            (6002, 10, 20, 'register', '["sms"]', 'sms', 'SMS_REGISTER', 1)
+            (6001, 100001, 0, 'login', '["email","sms"]', 'email', 'LOGIN_TEMPLATE', 1),
+            (6002, 100001, 0, 'register', '["sms"]', 'sms', 'SMS_REGISTER', 1)
         "#,
     )
     .execute(pool)
@@ -272,10 +272,10 @@ async fn seed_configs(pool: &SqlitePool) {
         INSERT INTO integration_provider_account
             (id, tenant_id, organization_id, provider_code, account_code, base_url, secret_ref, status)
         VALUES
-            (9001, 10, 20, 'ses', 'email-secondary', 'https://email.us-east-1.amazonaws.test', 'vault://providers/ses/account/secondary', 1),
-            (9002, 10, 20, 'sendgrid', 'email-primary', 'https://api.sendgrid.test', 'vault://providers/sendgrid/account/primary', 1),
-            (9003, 10, 20, 'aliyun_sms', 'sms-disabled', NULL, 'vault://providers/aliyun-sms/account/disabled', 1),
-            (9004, 10, 20, 'aliyun_sms', 'sms-default', NULL, 'vault://providers/aliyun-sms/account/default', 1)
+            (9001, 100001, 0, 'ses', 'email-secondary', 'https://email.us-east-1.amazonaws.test', 'vault://providers/ses/account/secondary', 1),
+            (9002, 100001, 0, 'sendgrid', 'email-primary', 'https://api.sendgrid.test', 'vault://providers/sendgrid/account/primary', 1),
+            (9003, 100001, 0, 'aliyun_sms', 'sms-disabled', NULL, 'vault://providers/aliyun-sms/account/disabled', 1),
+            (9004, 100001, 0, 'aliyun_sms', 'sms-default', NULL, 'vault://providers/aliyun-sms/account/default', 1)
         "#,
     )
     .execute(pool)
@@ -287,10 +287,10 @@ async fn seed_configs(pool: &SqlitePool) {
         INSERT INTO messaging_provider_capability
             (id, tenant_id, organization_id, provider_code, provider_account_id, channel, delivery_purpose, status, health_status)
         VALUES
-            (3001, 10, 20, 'ses', 9001, 'email', 'verification', 1, 'healthy'),
-            (3002, 10, 20, 'sendgrid', 9002, 'email', 'verification', 1, 'healthy'),
-            (3003, 10, 20, 'aliyun_sms', 9003, 'sms', 'verification', 2, 'disabled'),
-            (3004, 10, 20, 'aliyun_sms', 9004, 'sms', 'verification', 1, 'healthy')
+            (3001, 100001, 0, 'ses', 9001, 'email', 'verification', 1, 'healthy'),
+            (3002, 100001, 0, 'sendgrid', 9002, 'email', 'verification', 1, 'healthy'),
+            (3003, 100001, 0, 'aliyun_sms', 9003, 'sms', 'verification', 2, 'disabled'),
+            (3004, 100001, 0, 'aliyun_sms', 9004, 'sms', 'verification', 1, 'healthy')
         "#,
     )
     .execute(pool)
@@ -303,10 +303,10 @@ async fn seed_configs(pool: &SqlitePool) {
             (id, tenant_id, organization_id, provider_account_id, provider_code, channel, identity_code,
              from_email, sign_name, status, approval_status)
         VALUES
-            (8001, 10, 20, 9001, 'ses', 'email', 'ses-mailer', 'ses@example.com', NULL, 1, 'approved'),
-            (8002, 10, 20, 9002, 'sendgrid', 'email', 'primary-mailer', 'noreply@example.com', NULL, 1, 'approved'),
-            (8003, 10, 20, 9003, 'aliyun_sms', 'sms', 'disabled-sign', NULL, 'SDKWORK', 1, 'approved'),
-            (8004, 10, 20, 9004, 'aliyun_sms', 'sms', 'default-sign', NULL, 'SDKWORK', 1, 'approved')
+            (8001, 100001, 0, 9001, 'ses', 'email', 'ses-mailer', 'ses@example.com', NULL, 1, 'approved'),
+            (8002, 100001, 0, 9002, 'sendgrid', 'email', 'primary-mailer', 'noreply@example.com', NULL, 1, 'approved'),
+            (8003, 100001, 0, 9003, 'aliyun_sms', 'sms', 'disabled-sign', NULL, 'SDKWORK', 1, 'approved'),
+            (8004, 100001, 0, 9004, 'aliyun_sms', 'sms', 'default-sign', NULL, 'SDKWORK', 1, 'approved')
         "#,
     )
     .execute(pool)
@@ -319,10 +319,10 @@ async fn seed_configs(pool: &SqlitePool) {
             (id, tenant_id, organization_id, template_code, scene_code, channel, delivery_purpose, category,
              template_name, status, publish_status)
         VALUES
-            (7001, 10, 20, 'SES_LOGIN', 'login', 'email', 'verification', 'otp', 'SES Login', 1, 'published'),
-            (7002, 10, 20, 'LOGIN_TEMPLATE', 'login', 'email', 'verification', 'otp', 'Login Email', 1, 'published'),
-            (7003, 10, 20, 'SMS_DISABLED', 'register', 'sms', 'verification', 'otp', 'Disabled SMS', 1, 'published'),
-            (7004, 10, 20, 'SMS_REGISTER', 'register', 'sms', 'verification', 'otp', 'Register SMS', 1, 'published')
+            (7001, 100001, 0, 'SES_LOGIN', 'login', 'email', 'verification', 'otp', 'SES Login', 1, 'published'),
+            (7002, 100001, 0, 'LOGIN_TEMPLATE', 'login', 'email', 'verification', 'otp', 'Login Email', 1, 'published'),
+            (7003, 100001, 0, 'SMS_DISABLED', 'register', 'sms', 'verification', 'otp', 'Disabled SMS', 1, 'published'),
+            (7004, 100001, 0, 'SMS_REGISTER', 'register', 'sms', 'verification', 'otp', 'Register SMS', 1, 'published')
         "#,
     )
     .execute(pool)
@@ -335,10 +335,10 @@ async fn seed_configs(pool: &SqlitePool) {
             (id, tenant_id, organization_id, rule_code, scene_code, channel, delivery_purpose, country_code,
              locale, user_segment, priority, weight, status)
         VALUES
-            (4001, 10, 20, 'login-email-secondary', 'login', 'email', 'verification', '*', '*', '*', 20, 80, 1),
-            (4002, 10, 20, 'login-email-primary', 'login', 'email', 'verification', '*', '*', '*', 10, 20, 1),
-            (4003, 10, 20, 'register-sms-disabled', 'register', 'sms', 'verification', '*', '*', '*', 5, 100, 1),
-            (4004, 10, 20, 'register-sms-default', 'register', 'sms', 'verification', '*', '*', '*', 10, 10, 1)
+            (4001, 100001, 0, 'login-email-secondary', 'login', 'email', 'verification', '*', '*', '*', 20, 80, 1),
+            (4002, 100001, 0, 'login-email-primary', 'login', 'email', 'verification', '*', '*', '*', 100001, 0, 1),
+            (4003, 100001, 0, 'register-sms-disabled', 'register', 'sms', 'verification', '*', '*', '*', 5, 100, 1),
+            (4004, 100001, 0, 'register-sms-default', 'register', 'sms', 'verification', '*', '*', '*', 10, 10, 1)
         "#,
     )
     .execute(pool)
@@ -351,10 +351,10 @@ async fn seed_configs(pool: &SqlitePool) {
             (id, tenant_id, organization_id, route_rule_id, provider_account_id, provider_code,
              sender_identity_id, target_order, weight, status)
         VALUES
-            (5001, 10, 20, 4001, 9001, 'ses', 8001, 1, 80, 1),
-            (5002, 10, 20, 4002, 9002, 'sendgrid', 8002, 1, 20, 1),
-            (5003, 10, 20, 4003, 9003, 'aliyun_sms', 8003, 1, 100, 1),
-            (5004, 10, 20, 4004, 9004, 'aliyun_sms', 8004, 1, 10, 1)
+            (5001, 100001, 0, 4001, 9001, 'ses', 8001, 1, 80, 1),
+            (5002, 100001, 0, 4002, 9002, 'sendgrid', 8002, 1, 20, 1),
+            (5003, 100001, 0, 4003, 9003, 'aliyun_sms', 8003, 1, 100, 1),
+            (5004, 100001, 0, 4004, 9004, 'aliyun_sms', 8004, 1, 10, 1)
         "#,
     )
     .execute(pool)

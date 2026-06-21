@@ -66,8 +66,8 @@ async fn sqlite_admin_provider_secret_store_records_routing_config_version_for_s
             r#"
             SELECT config_version, changed_object_type, changed_object_id
             FROM ai_config_version
-            WHERE tenant_id = 10
-              AND organization_id = 20
+            WHERE tenant_id = 100001
+              AND organization_id = 0
               AND config_scope = 'routing'
             "#,
         )
@@ -99,8 +99,8 @@ async fn sqlite_admin_provider_secret_store_records_routing_config_version_for_s
         r#"
         SELECT event_payload ->> 'action' AS event_action
         FROM ai_config_change_event
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND config_scope = 'routing'
           AND changed_object_type = 'integration_provider_account'
           AND changed_object_id = ?
@@ -123,8 +123,8 @@ async fn sqlite_admin_provider_secret_store_records_routing_config_version_for_s
 
 fn subject() -> AdminProviderSecretSubject {
     AdminProviderSecretSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         operator_id: 30,
         operator_type: 1,
     }

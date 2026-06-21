@@ -216,17 +216,8 @@ where
 }
 
 fn priced_catalog_key(invocation: &Invocation) -> Result<String, InvocationError> {
-    if invocation.resource.model_requirement == AiRouteModelRequirement::Ignored {
-        return [
-            Some(invocation.resource.route_key.as_str()),
-            Some(invocation.resource.api_code.as_str()),
-        ]
-        .into_iter()
-        .flatten()
-        .map(str::trim)
-        .find(|value| !value.is_empty())
-        .map(str::to_owned)
-        .ok_or_else(|| pricing_error("pricing requires a resource catalog key"));
+    if should_price_by_route_key_only(invocation) {
+        return route_key_catalog_key(invocation);
     }
 
     [
@@ -272,7 +263,7 @@ fn quote_from_resolved(
 }
 
 fn priced_requested_model(invocation: &Invocation, resolved: &ResolvedModelPrice) -> String {
-    if invocation.resource.model_requirement == AiRouteModelRequirement::Ignored {
+    if should_price_by_route_key_only(invocation) {
         return resolved.model.clone();
     }
     invocation
@@ -292,4 +283,31 @@ fn is_missing_official_price(error: &InvocationError) -> bool {
 
 fn pricing_error(message: impl Into<String>) -> InvocationError {
     InvocationError::new(InvocationErrorKind::Pricing, message)
+}
+
+fn should_price_by_route_key_only(invocation: &Invocation) -> bool {
+    if invocation.resource.model_requirement == AiRouteModelRequirement::Ignored {
+        return true;
+    }
+    invocation.resource.model_requirement == AiRouteModelRequirement::Optional
+        && invocation
+            .resource
+            .requested_model
+            .as_deref()
+            .map(str::trim)
+            .filter(|value| !value.is_empty())
+            .is_none()
+}
+
+fn route_key_catalog_key(invocation: &Invocation) -> Result<String, InvocationError> {
+    [
+        Some(invocation.resource.route_key.as_str()),
+        Some(invocation.resource.api_code.as_str()),
+    ]
+    .into_iter()
+    .flatten()
+    .map(str::trim)
+    .find(|value| !value.is_empty())
+    .map(str::to_owned)
+    .ok_or_else(|| pricing_error("pricing requires a resource catalog key"))
 }

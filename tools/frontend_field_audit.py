@@ -53,9 +53,13 @@ class FrontendFieldAudit:
     ARRAY_TYPE_REFERENCE_PATTERN = re.compile(r"^\s*(?:ReadonlyArray|Array)<\s*([A-Z][A-Za-z0-9_]*)\s*>\s*[;,]?$")
     CONTRACT_TYPE_ALIAS_MODULES = frozenset({
         "@sdkwork/commerce-service",
+        "@sdkwork/commerce-pc-billing",
+        "@sdkwork/commerce-pc-wallet",
+        "@sdkwork/commerce-pc-membership",
         "@sdkwork/clawrouter-app-sdk",
         "@sdkwork/clawrouter-backend-sdk",
         "@sdkwork/clawrouter-open-sdk",
+        "@sdkwork/models-backend-sdk",
         "@sdkwork/generation-pc-react/react",
         "@sdkwork/generations-pc-workspace/generation-history",
     })

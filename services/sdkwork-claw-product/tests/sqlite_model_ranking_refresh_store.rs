@@ -478,7 +478,7 @@ async fn sqlite_model_ranking_refresh_store_normalizes_invalid_global_organizati
     let outcome = SqliteModelRankingRefreshStore::new(pool.clone())
         .refresh_model_rankings(ModelRankingRefreshCommand {
             tenant_id: 0,
-            organization_id: 20,
+            organization_id: 0,
             rank_scope: "commercial-default".to_owned(),
             snapshot_date: "2026-05-08".to_owned(),
             snapshot_period: "daily".to_owned(),

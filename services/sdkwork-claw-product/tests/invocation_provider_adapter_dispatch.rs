@@ -23,8 +23,8 @@ impl ProviderAdapterRouteResolver for FixedAdapterResolver {
 
 fn subject() -> InvocationSubject {
     InvocationSubject::from_api_key_context(AuthenticatedApiKeyContext {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
         api_key_id: 100,
         api_key_name_snapshot: "Test key".to_owned(),
@@ -76,6 +76,7 @@ async fn provider_native_invocation_uses_resolved_internal_adapter_target() {
         endpoint_key: "kling.text2video".to_owned(),
         base_url: "https://adapter.example".to_owned(),
         path_template: "/providers/{provider_code}{standard_path}".to_owned(),
+        standard_path: "/v1/videos/text2video".to_owned(),
         gateway_token: Some("adapter-token".to_owned()),
         shape: InvocationShape::Json,
     };
@@ -117,6 +118,7 @@ async fn openai_invocation_does_not_consult_provider_adapter_dispatch() {
             endpoint_key: "should-not-apply".to_owned(),
             base_url: "https://adapter.example".to_owned(),
             path_template: "/providers/{provider_code}{standard_path}".to_owned(),
+            standard_path: "/v1/chat/completions".to_owned(),
             gateway_token: None,
             shape: InvocationShape::Json,
         }),

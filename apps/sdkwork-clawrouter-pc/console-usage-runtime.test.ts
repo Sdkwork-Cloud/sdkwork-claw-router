@@ -319,40 +319,50 @@ test("console dashboard stays product-focused without read-only caveats", () => 
   assertNoImplementationCaveats(source);
 });
 
-test("console settlement reports stay product-focused without read-only caveats", { skip: !portalFileExists("./packages/sdkwork-clawrouter-pc-console-settlements/src/SettlementsView.tsx") }, () => {
-  const source = readPortalFile("./packages/sdkwork-clawrouter-pc-console-settlements/src/SettlementsView.tsx");
+test("console settlement reports stay product-focused without read-only caveats", () => {
+  const billingPagePath = "../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-billing/src/pages/BillingPage.tsx";
+  if (!portalFileExists(billingPagePath)) {
+    return;
+  }
+  const source = readPortalFile(billingPagePath);
 
   assertNoImplementationCaveats(source);
 });
 
-test("console settlement reports keep the visual dashboard visible when there is no data", { skip: !portalFileExists("./packages/sdkwork-clawrouter-pc-console-settlements/src/SettlementsView.tsx") }, () => {
-  const source = readPortalFile("./packages/sdkwork-clawrouter-pc-console-settlements/src/SettlementsView.tsx");
+test("console settlement reports keep billing breakdown visible when there is no data", () => {
+  const billingPagePath = "../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-billing/src/pages/BillingPage.tsx";
+  if (!portalFileExists(billingPagePath)) {
+    return;
+  }
+  const source = readPortalFile(billingPagePath);
 
-  assert.match(source, /buildSettlementDisplayData/);
-  assert.match(source, /isUsingDefaultVisuals/);
-  assert.match(source, /console\.settlements\.states\.defaultVisualTitle/);
-  assert.doesNotMatch(source, /!\s*hasSettlementData\s*\?\s*\(\s*<BusinessStatePanel\s+kind="empty"/);
+  assert.match(source, /SdkworkBillingBreakdownTable/);
+  assert.match(source, /breakdowns/);
+  assert.doesNotMatch(source, /read-only/i);
 });
 
-test("console settlement page keeps menu copy in navigation without page title chrome", { skip: !portalFileExists("./packages/sdkwork-clawrouter-pc-console-settlements/src/SettlementsView.tsx") }, () => {
-  const source = readPortalFile("./packages/sdkwork-clawrouter-pc-console-settlements/src/SettlementsView.tsx");
+test("console settlement page keeps menu copy in navigation without page title chrome", () => {
   const menuSource = readPortalFile(CONSOLE_LAYOUT_FILE);
   const coreMessages = readPortalFile("./packages/sdkwork-clawrouter-pc-i18n/src/resources/console/core.ts");
+  const appSource = readPortalFile("./src/App.tsx");
 
   assert.match(menuSource, /labelKey: 'console\.menu\.settlements'/);
   assert.match(coreMessages, /"console\.menu\.settlements": "Bills and Reports"/);
   assert.match(coreMessages, /"console\.menu\.settlements": "账单与报表"/);
-  assert.doesNotMatch(source, /<h1[^>]*>\{t\('console\.menu\.settlements', 'Bills and Reports'\)\}<\/h1>/);
-  assert.doesNotMatch(source, /<h1[^>]*>\{t\("console\.settlements\.settlementsview\.text\.fqxisc"/);
+  assert.match(appSource, /path="settlements" element=\{<SettlementsView/);
+  assert.match(appSource, /import\('@sdkwork\/commerce-pc-billing'\), 'SdkworkBillingPage'/);
 });
 
-test("console settlement year selector stays inside dashboard controls instead of its own row", { skip: !portalFileExists("./packages/sdkwork-clawrouter-pc-console-settlements/src/SettlementsView.tsx") }, () => {
-  const source = readPortalFile("./packages/sdkwork-clawrouter-pc-console-settlements/src/SettlementsView.tsx");
+test("console billing dashboard is owned by sdkwork-commerce billing package", () => {
+  const billingPagePath = "../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-billing/src/pages/BillingPage.tsx";
+  if (!portalFileExists(billingPagePath)) {
+    return;
+  }
+  const source = readPortalFile(billingPagePath);
 
-  assert.match(source, /function SettlementYearSelect/);
-  assert.match(source, /action=\{<SettlementYearSelect/);
-  assert.match(source, /aria-label=\{t\("console\.settlements\.settlementsview\.text\.12ywuzu"/);
-  assert.doesNotMatch(source, /<div className="flex justify-end">\s*<div className="flex items-center gap-2 bg-\[#252525\]/);
+  assert.match(source, /SdkworkBillingSummaryCards/);
+  assert.match(source, /useSdkworkBillingController/);
+  assertNoImplementationCaveats(source);
 });
 
 test("console commerce business pages stay product-focused without command-contract caveats", () => {
@@ -393,10 +403,13 @@ test("console gateway tooling stays product-focused without implementation cavea
 
 test("console account and recharge surfaces are owned by sdkwork-commerce PC packages", () => {
   const appSource = readPortalFile("./src/App.tsx");
+  const mountSource = readPortalFile("./src/commerce/commerceHostMount.tsx");
   const packageJson = JSON.parse(readPortalFile("./package.json")) as { dependencies: Record<string, string> };
 
   assert.match(appSource, /import\('@sdkwork\/commerce-pc-billing'\), 'SdkworkBillingPage'/);
-  assert.match(appSource, /import\('@sdkwork\/commerce-pc-wallet'\), 'SdkworkWalletPage'/);
+  assert.match(appSource, /ClawRouterConsoleCommerceHostRoutes/);
+  assert.match(mountSource, /SdkworkCommerceHostRoutes/);
+  assert.doesNotMatch(appSource, /import\('@sdkwork\/commerce-pc-wallet'\), 'SdkworkWalletPage'/);
   assert.equal(packageJson.dependencies["@sdkwork/commerce-pc-billing"], "workspace:*");
   assert.equal(packageJson.dependencies["@sdkwork/commerce-pc-wallet"], "workspace:*");
   assert.doesNotMatch(appSource, /clawrouter-pc-console-account/);
@@ -488,8 +501,8 @@ test("console commerce recharge UI is owned by sdkwork-commerce wallet package",
   }
   const source = readPortalFile(walletPagePath);
 
-  assert.match(source, /SdkworkWalletRechargeDialog/);
-  assert.match(source, /openRecharge/);
+  assert.match(source, /navigateWalletRechargeCheckout/);
+  assert.match(source, /wallet-checkout-navigation/);
   assertNoImplementationCaveats(source);
 });
 

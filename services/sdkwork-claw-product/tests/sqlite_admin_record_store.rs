@@ -155,7 +155,7 @@ async fn seed_users_and_traces(pool: &SqlitePool) {
         )
         VALUES
             (
-                1, 'trace-1', 10, 20, 42, 'req-1', 1,
+                1, 'trace-1', 100001, 0, 42, 'req-1', 1,
                 '2026-05-27T10:00:00Z', '2026-05-27T10:00:00Z', '42', 'Production',
                 'default', 'gpt-4o-mini', 'openai/gpt-4o-mini',
                 '', 'gpt-4o-mini', 'global', '/v1/chat/completions', '/v1/chat/completions',
@@ -164,7 +164,7 @@ async fn seed_users_and_traces(pool: &SqlitePool) {
                 125, 40, 1, 10, 2, 20, 'medium', '203.0.113.***'
             ),
             (
-                2, 'trace-2', 10, 20, 43, 'req-2', 1,
+                2, 'trace-2', 100001, 0, 43, 'req-2', 1,
                 '2026-05-27T11:00:00Z', '2026-05-27T11:00:00Z', '', 'Production',
                 'default', 'gpt-4o-mini', 'openai/gpt-4o-mini',
                 '', 'gpt-4o-mini', 'global', '/v1/chat/completions', '/v1/chat/completions',
@@ -182,8 +182,8 @@ async fn seed_users_and_traces(pool: &SqlitePool) {
 fn query(user: Option<&str>) -> ListAdminRecordLogsQuery {
     ListAdminRecordLogsQuery {
         subject: AdminRecordSubject {
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             operator_id: 30,
             operator_type: 1,
         },

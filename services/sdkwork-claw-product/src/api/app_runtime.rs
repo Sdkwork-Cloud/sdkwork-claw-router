@@ -67,7 +67,6 @@ struct AppRuntimeState {
     executor: Option<Arc<dyn AppRuntimeExecutor + Send + Sync>>,
     stream_bus: Arc<dyn RuntimeStreamBus + Send + Sync>,
     stream_owner_id: String,
-    require_subject: bool,
 }
 
 trait AppRuntimeExecutor {
@@ -397,7 +396,6 @@ pub fn app_runtime_router() -> Router {
         Arc::new(OsApiKeySecretGenerator),
         None,
         Arc::new(InMemoryRuntimeStreamBus::default()),
-        false,
     )
 }
 
@@ -410,7 +408,6 @@ pub fn app_runtime_router_with_store(
         entity_uuid_generator,
         None,
         Arc::new(InMemoryRuntimeStreamBus::default()),
-        true,
     )
 }
 
@@ -419,7 +416,7 @@ pub fn app_runtime_router_with_store_and_runtime_stream_bus(
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
     stream_bus: Arc<dyn RuntimeStreamBus + Send + Sync>,
 ) -> Router {
-    app_runtime_router_with_state(store, entity_uuid_generator, None, stream_bus, true)
+    app_runtime_router_with_state(store, entity_uuid_generator, None, stream_bus)
 }
 
 pub fn app_runtime_router_with_store_and_chat_stream_relay<C>(
@@ -441,7 +438,6 @@ where
         entity_uuid_generator,
         Some(executor),
         Arc::new(InMemoryRuntimeStreamBus::default()),
-        true,
     )
 }
 
@@ -465,7 +461,6 @@ where
         entity_uuid_generator,
         Some(executor),
         stream_bus,
-        true,
     )
 }
 
@@ -487,7 +482,6 @@ where
         entity_uuid_generator,
         Some(executor),
         Arc::new(InMemoryRuntimeStreamBus::default()),
-        true,
     )
 }
 
@@ -510,7 +504,6 @@ where
         entity_uuid_generator,
         Some(executor),
         Arc::new(InMemoryRuntimeStreamBus::default()),
-        true,
     )
 }
 
@@ -533,7 +526,6 @@ where
         entity_uuid_generator,
         Some(executor),
         stream_bus,
-        true,
     )
 }
 
@@ -559,7 +551,6 @@ where
         entity_uuid_generator,
         Some(executor),
         stream_bus,
-        true,
     )
 }
 
@@ -568,7 +559,6 @@ fn app_runtime_router_with_state(
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
     executor: Option<Arc<dyn AppRuntimeExecutor + Send + Sync>>,
     stream_bus: Arc<dyn RuntimeStreamBus + Send + Sync>,
-    require_subject: bool,
 ) -> Router {
     Router::new()
         .route(
@@ -601,7 +591,6 @@ fn app_runtime_router_with_state(
             executor,
             stream_bus,
             stream_owner_id: runtime_stream_owner_id(),
-            require_subject,
         })
 }
 

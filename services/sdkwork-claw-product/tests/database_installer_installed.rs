@@ -344,8 +344,8 @@ async fn sqlite_installer_imports_bundled_ai_routing_seed_catalog() {
          AND cc.organization_id = c.organization_id
          AND cc.status = 1
          AND cc.deleted_at IS NULL
-        WHERE c.tenant_id = 10
-          AND c.organization_id = 20
+        WHERE c.tenant_id = 100001
+          AND c.organization_id = 0
           AND c.channel_code = 'openai-default'
           AND c.deleted_at IS NULL
           AND NULLIF(cc.base_url, '') IS NOT NULL
@@ -482,8 +482,8 @@ async fn sqlite_installer_imports_bundled_ai_routing_seed_catalog() {
         r#"
         SELECT COUNT(1)
         FROM ai_channel
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND channel_code = 'openai-default'
           AND provider_code = 'openai'
           AND channel_type = 'official'
@@ -508,8 +508,8 @@ async fn sqlite_installer_imports_bundled_ai_routing_seed_catalog() {
           ON c.id = cc.channel_id
          AND c.tenant_id = cc.tenant_id
          AND c.organization_id = cc.organization_id
-        WHERE cc.tenant_id = 10
-          AND cc.organization_id = 20
+        WHERE cc.tenant_id = 100001
+          AND cc.organization_id = 0
           AND cc.provider_code = 'openai'
           AND cc.channel_code = 'openai-default'
           AND cc.base_url = 'https://api.openai.com/v1'
@@ -610,8 +610,8 @@ async fn sqlite_installed_admin_ai_resource_store_exposes_seeded_api_groups_to_a
     let pool = installed_sqlite_pool().await;
     let store = SqliteAdminAiResourceStore::new(pool);
     let subject = AdminAiResourceSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         operator_id: 30,
         operator_type: 1,
     };

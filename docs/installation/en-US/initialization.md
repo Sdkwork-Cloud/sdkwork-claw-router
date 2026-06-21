@@ -432,8 +432,8 @@ sudo journalctl -u clawrouter -n 200 --no-pager
 On first install or first startup, Claw Router creates or repairs a bootstrap administrator login if the configured bootstrap admin is not complete. The default account is:
 
 - username: `admin`
-- tenant: `default` (`tenantId: "10"`)
-- organization: `root` (`organizationId: "20"`)
+- tenant: `default` (`tenantId: "100001"`)
+- organization: `root` (`organizationId: "0"`)
 
 The initial password is generated from the operating-system random source unless `SDKWORK_CLAW_BOOTSTRAP_ADMIN_PASSWORD` is set. When a new password is written, it is exposed once in two places:
 

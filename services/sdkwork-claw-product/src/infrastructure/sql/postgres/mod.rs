@@ -1,4 +1,3 @@
-mod admin_ai_resource_store;
 mod admin_analytics_read_store;
 mod admin_announcement_store;
 mod admin_api_key_rate_limit_store;
@@ -15,7 +14,6 @@ mod admin_marketing_store;
 mod admin_mcp_store;
 mod admin_messaging_store;
 mod admin_model_rate_limit_store;
-mod admin_model_store;
 mod admin_prompt_store;
 mod admin_provider_secret_store;
 mod admin_record_store;
@@ -42,8 +40,10 @@ mod forum_store;
 mod gateway_usage_recorder;
 mod loader;
 pub(crate) mod model_catalog_import;
-mod model_ranking_refresh_store;
-mod model_rankings_read_store;
+pub use sdkwork_models_catalog_repository_sqlx::{
+    PostgresAdminAiResourceStore, PostgresModelCatalogAdminStore as PostgresAdminModelStore,
+    PostgresModelRankingRefreshStore, PostgresModelRankingsReadStore,
+};
 mod openai_invocation_telemetry_plugin;
 mod payment_callback_store;
 mod payment_intent_runtime_store;
@@ -58,7 +58,6 @@ mod usage_settlement_store;
 mod verification_delivery_config_store;
 mod verification_delivery_queue_sender;
 
-pub use admin_ai_resource_store::PostgresAdminAiResourceStore;
 pub use admin_analytics_read_store::PostgresAdminAnalyticsReadStore;
 pub use admin_announcement_store::PostgresAdminAnnouncementStore;
 pub use admin_api_key_rate_limit_store::PostgresAdminApiKeyRateLimitStore;
@@ -75,7 +74,6 @@ pub use admin_marketing_store::PostgresAdminMarketingStore;
 pub use admin_mcp_store::PostgresAdminMcpStore;
 pub use admin_messaging_store::PostgresAdminMessagingStore;
 pub use admin_model_rate_limit_store::PostgresAdminModelRateLimitStore;
-pub use admin_model_store::PostgresAdminModelStore;
 pub use super::admin_monitor_repository_adapter::PostgresAdminMonitorReadStore;
 pub use admin_prompt_store::PostgresAdminPromptStore;
 pub use admin_provider_secret_store::PostgresAdminProviderSecretStore;
@@ -104,8 +102,6 @@ pub use error::PostgresCatalogLoadError;
 pub use forum_store::PostgresForumStore;
 pub use gateway_usage_recorder::PostgresGatewayUsageRecorder;
 pub use loader::PostgresPricingCatalogLoader;
-pub use model_ranking_refresh_store::PostgresModelRankingRefreshStore;
-pub use model_rankings_read_store::PostgresModelRankingsReadStore;
 pub use openai_invocation_telemetry_plugin::PostgresOpenAiInvocationTelemetryPlugin;
 pub use payment_callback_store::PostgresPaymentCallbackStore;
 pub use payment_intent_runtime_store::PostgresPaymentIntentRuntimeStore;

@@ -316,6 +316,12 @@ class CommercePortalRetirementTest(unittest.TestCase):
             "sdkwork-clawrouter-pc-admin-vip",
             "sdkwork-clawrouter-pc-console-billing",
             "sdkwork-clawrouter-pc-console-commerce",
+            "sdkwork-clawrouter-pc-console-account",
+            "sdkwork-clawrouter-pc-console-wallet",
+            "sdkwork-clawrouter-pc-console-recharge",
+            "sdkwork-clawrouter-pc-console-checkout",
+            "sdkwork-clawrouter-pc-console-memberships",
+            "sdkwork-clawrouter-pc-console-settlements",
         ]
 
         violations = [
@@ -325,6 +331,63 @@ class CommercePortalRetirementTest(unittest.TestCase):
         ]
 
         self.assertEqual([], violations)
+
+    def test_console_commerce_host_adapter_mounts_sdkwork_commerce_without_local_ui_packages(self) -> None:
+        app = (PORTAL_PATH / "src" / "App.tsx").read_text(encoding="utf-8")
+        mount = (PORTAL_PATH / "src" / "commerce" / "commerceHostMount.tsx").read_text(encoding="utf-8")
+        portal_package = (PORTAL_PATH / "package.json").read_text(encoding="utf-8")
+        console_layout = (
+            PORTAL_PATH
+            / "packages"
+            / "sdkwork-clawrouter-pc-console-shell"
+            / "src"
+            / "ConsoleLayout.tsx"
+        ).read_text(encoding="utf-8")
+
+        for required in [
+            "SdkworkCommerceHostNavbarActions",
+            "ClawRouterConsoleCommerceHostRoutes",
+            "@sdkwork/commerce-pc-host",
+            "import('@sdkwork/commerce-pc-billing')",
+        ]:
+            self.assertIn(required, app, f"App.tsx must mount commerce host blocks: {required!r}")
+
+        for required in [
+            "SdkworkCommerceHostRoutes",
+            "CLAWROUTER_CONSOLE_COMMERCE_ROUTE_PREFIX",
+        ]:
+            self.assertIn(required, mount, f"commerceHostMount must delegate to commerce host routes: {required!r}")
+
+        self.assertNotIn("consoleCommerceViews", app)
+        self.assertNotIn("ConsoleWalletView", app)
+
+        for dependency in [
+            '"@sdkwork/commerce-pc-host": "workspace:*"',
+            '"@sdkwork/commerce-pc-wallet": "workspace:*"',
+            '"@sdkwork/commerce-pc-membership": "workspace:*"',
+            '"@sdkwork/commerce-pc-membership-purchase": "workspace:*"',
+            '"@sdkwork/commerce-pc-billing": "workspace:*"',
+            '"@sdkwork/commerce-pc-checkout": "workspace:*"',
+            '"@sdkwork/commerce-pc-payment": "workspace:*"',
+        ]:
+            self.assertIn(dependency, portal_package)
+
+        self.assertNotIn("/console/checkout", console_layout)
+        self.assertNotIn("/console/payment", console_layout)
+
+        for retired in [
+            "sdkwork-clawrouter-pc-console-wallet",
+            "sdkwork-clawrouter-pc-console-account",
+            "sdkwork-clawrouter-pc-console-recharge",
+            "sdkwork-clawrouter-pc-console-checkout",
+            "sdkwork-clawrouter-pc-console-memberships",
+            "sdkwork-clawrouter-pc-console-settlements",
+            "sdkwork-clawrouter-pc-console-commerce",
+        ]:
+            self.assertFalse(
+                (PORTAL_PATH / "packages" / retired).exists(),
+                f"{retired} must not exist after sdkwork-commerce migration",
+            )
 
     def test_appbase_integration_verification_uses_standard_commerce_module(self) -> None:
         manifest = (ROOT / "specs" / "appbase-integration.yaml").read_text(encoding="utf-8")
@@ -1344,6 +1407,7 @@ class CommerceStandardTest(unittest.TestCase):
         app = (PORTAL_PATH / "src" / "App.tsx").read_text(encoding="utf-8")
         admin_layout_path = PORTAL_PATH / "packages" / "sdkwork-clawrouter-pc-admin-shell" / "src" / "AdminLayout.tsx"
         admin_layout = admin_layout_path.read_text(encoding="utf-8") if admin_layout_path.exists() else ""
+        mount = (PORTAL_PATH / "src" / "commerce" / "commerceHostMount.tsx").read_text(encoding="utf-8")
         console_layout = (
             PORTAL_PATH
             / "packages"
@@ -1379,19 +1443,42 @@ class CommerceStandardTest(unittest.TestCase):
         self.assertNotIn("@sdkwork/clawrouter-pc-console-commerce", tsconfig)
         self.assertIn('"@sdkwork/commerce-pc-wallet": "workspace:*"', portal_package)
         self.assertIn('"@sdkwork/commerce-pc-membership": "workspace:*"', portal_package)
+        self.assertIn('"@sdkwork/commerce-pc-membership-purchase": "workspace:*"', portal_package)
         self.assertIn('"@sdkwork/commerce-pc-billing": "workspace:*"', portal_package)
-        self.assertIn("import('@sdkwork/commerce-pc-wallet')", app)
-        self.assertIn("import('@sdkwork/commerce-pc-membership')", app)
+        self.assertIn('"@sdkwork/commerce-pc-host": "workspace:*"', portal_package)
+        self.assertIn('"@sdkwork/commerce-pc-checkout": "workspace:*"', portal_package)
+        self.assertIn('"@sdkwork/commerce-pc-payment": "workspace:*"', portal_package)
+        self.assertIn("ClawRouterConsoleCommerceHostRoutes", app)
+        self.assertNotIn("import('@sdkwork/commerce-pc-wallet')", app)
+        self.assertNotIn("import('@sdkwork/commerce-pc-membership')", app)
         self.assertIn("import('@sdkwork/commerce-pc-billing')", app)
-        self.assertIn("ConsoleCheckoutView", app)
-        self.assertIn("ConsoleMembershipView", app)
-        self.assertIn("ConsolePaymentView", app)
-        self.assertIn("SdkworkWalletPage", app)
+        self.assertIn("SdkworkCommerceHostNavbarActions", app)
+        self.assertIn("SdkworkCommerceHostRoutes", mount)
         self.assertIn("SdkworkBillingPage", app)
+        self.assertIn("@sdkwork/commerce-pc-host", app)
+        self.assertNotIn("SdkworkWalletPage", app)
+        self.assertNotIn("SdkworkMembershipPage", app)
 
-        for route_path in console_routes:
+        for route_path in ["/console/account", "/console/settlements"]:
             self.assertIn(route_path, app)
+
+        for route_path in ["/console/wallet", "/console/memberships"]:
             self.assertIn(route_path, console_layout)
+
+        host_routes_path = (
+            PORTAL_PATH.parent.parent
+            / "sdkwork-commerce"
+            / "apps"
+            / "sdkwork-commerce-pc"
+            / "packages"
+            / "sdkwork-commerce-pc-host"
+            / "src"
+            / "commerce-host-routes.tsx"
+        )
+        if host_routes_path.exists():
+            host_routes = host_routes_path.read_text(encoding="utf-8")
+            for segment in ["wallet", "memberships", "checkout", "payment"]:
+                self.assertIn(f'path="{segment}"', host_routes)
 
         for route_path in hidden_console_routes:
             self.assertNotIn(route_path, console_layout)
@@ -1497,16 +1584,18 @@ class CommerceStandardTest(unittest.TestCase):
 
     def test_console_business_packages_move_existing_pages_without_legacy_billing_route(self) -> None:
         app = (PORTAL_PATH / "src" / "App.tsx").read_text(encoding="utf-8")
+        mount = (PORTAL_PATH / "src" / "commerce" / "commerceHostMount.tsx").read_text(encoding="utf-8")
 
         for required in [
-            "SdkworkWalletPage",
-            "SdkworkMembershipPage",
+            "ClawRouterConsoleCommerceHostRoutes",
+            "SdkworkCommerceHostNavbarActions",
             "SdkworkBillingPage",
-            "@sdkwork/commerce-pc-wallet",
-            "@sdkwork/commerce-pc-membership",
+            "@sdkwork/commerce-pc-host",
             "@sdkwork/commerce-pc-billing",
         ]:
-            self.assertIn(required, app, f"console commerce routes should mount {required!r} from sdkwork-commerce")
+            self.assertIn(required, app, f"console commerce routes should mount {required!r} from sdkwork-commerce host blocks")
+
+        self.assertIn("SdkworkCommerceHostRoutes", mount)
 
         self.assertNotIn("sdkwork-clawrouter-pc-console-wallet", app)
         self.assertNotIn("sdkwork-clawrouter-pc-console-recharge", app)

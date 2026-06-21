@@ -104,8 +104,8 @@ impl AdminAnalyticsReadStore for TestAdminAnalyticsStore {
         Box::pin(async move {
             assert_eq!(
                 AdminAnalyticsSubject {
-                    tenant_id: 10,
-                    organization_id: 20,
+                    tenant_id: 100001,
+                    organization_id: 0,
                     operator_id: 30,
                     operator_type: 1,
                 },

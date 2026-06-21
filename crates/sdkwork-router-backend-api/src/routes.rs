@@ -16,6 +16,19 @@ use sdkwork_claw_config::{
     StartupInstallMode, TrustedSubjectConfig,
 };
 use sdkwork_claw_http::TrustedRequestSubject;
+use sdkwork_models_catalog_repository_sqlx::{
+    PostgresAdminAiResourceStore as CatalogPostgresAdminAiResourceStore,
+    PostgresModelCatalogAdminStore, PostgresModelRankingRefreshStore, PostgresModelRankingsReadStore,
+    SqliteAdminAiResourceStore as CatalogSqliteAdminAiResourceStore, SqliteModelCatalogAdminStore,
+    SqliteModelRankingRefreshStore, SqliteModelRankingsReadStore,
+};
+use sdkwork_models_contract_service::{AdminAiResourceStore, ModelCatalogAdminStore};
+use sdkwork_router_catalog_backend_api::{
+    admin_ai_resource_router_with_store, admin_model_catalog_router,
+    admin_model_catalog_router_with_api_key_hasher, admin_model_management_router_with_store,
+    admin_model_rankings_router, admin_model_rankings_router_with_read_store,
+    admin_model_rankings_router_with_read_store_and_refresh_store,
+};
 use sdkwork_claw_product::application::{
     default_desktop_cache_manager, default_service_cache_manager,
     AiRoutingCacheInvalidatingAdminAiResourceStore,
@@ -38,41 +51,39 @@ use sdkwork_claw_product::infrastructure::sql::installer::{
 };
 use sdkwork_claw_product::infrastructure::sql::pool::connect_claw_sqlite_runtime_pool;
 use sdkwork_claw_product::infrastructure::sql::postgres::{
-    PostgresAdminAiResourceStore, PostgresAdminAnalyticsReadStore, PostgresAdminAnnouncementStore,
+    PostgresAdminAnalyticsReadStore, PostgresAdminAnnouncementStore,
     PostgresAdminApiKeyRateLimitStore, PostgresAdminAuthSettingsStore,
     PostgresAdminCatalogStore, PostgresAdminChannelGroupStore, PostgresAdminChannelStore,
     PostgresAdminDashboardReadStore, PostgresAdminFinanceStore, PostgresAdminFirewallRuleStore,
     PostgresAdminInventoryStore, PostgresAdminIpRateLimitStore, PostgresAdminMarketingStore,
-    PostgresAdminMcpStore, PostgresAdminModelRateLimitStore, PostgresAdminModelStore,
+    PostgresAdminMcpStore, PostgresAdminModelRateLimitStore,
     PostgresAdminMonitorReadStore, PostgresAdminPromptStore, PostgresAdminProviderSecretStore,
     PostgresAdminRecordStore, PostgresAdminServiceNodeStore, PostgresAdminServiceProviderStore,
     PostgresAdminSiteStore, PostgresAdminStorageStore,
     PostgresAdminTransactionCenterStore, PostgresCatalogLoadError,
-    PostgresGatewayApiKeyCommandStore, PostgresModelRankingRefreshStore,
-    PostgresModelRankingsReadStore, PostgresPricingCatalogLoader,
+    PostgresGatewayApiKeyCommandStore, PostgresPricingCatalogLoader,
     PostgresRuntimeRegionSettingsStore, PostgresSiteSettingsStore,
 };
 use sdkwork_claw_product::infrastructure::sql::sqlite::{
-    SqlCatalogLoadError, SqliteAdminAiResourceStore, SqliteAdminAnalyticsReadStore,
+    SqlCatalogLoadError, SqliteAdminAnalyticsReadStore,
     SqliteAdminAnnouncementStore, SqliteAdminApiKeyRateLimitStore,
     SqliteAdminAuthSettingsStore, SqliteAdminCatalogStore, SqliteAdminChannelGroupStore,
     SqliteAdminChannelStore, SqliteAdminDashboardReadStore, SqliteAdminFinanceStore,
     SqliteAdminFirewallRuleStore, SqliteAdminInventoryStore, SqliteAdminIpRateLimitStore,
     SqliteAdminMarketingStore, SqliteAdminMcpStore, SqliteAdminModelRateLimitStore,
-    SqliteAdminModelStore, SqliteAdminMonitorReadStore, SqliteAdminPromptStore,
+    SqliteAdminMonitorReadStore, SqliteAdminPromptStore,
     SqliteAdminProviderSecretStore, SqliteAdminRecordStore, SqliteAdminServiceNodeStore,
     SqliteAdminServiceProviderStore, SqliteAdminSiteStore,
     SqliteAdminStorageStore, SqliteAdminTransactionCenterStore,
-    SqliteGatewayApiKeyCommandStore, SqliteModelRankingRefreshStore, SqliteModelRankingsReadStore,
-    SqlitePricingCatalogLoader, SqliteRuntimeRegionSettingsStore, SqliteSiteSettingsStore,
+    SqliteGatewayApiKeyCommandStore, SqlitePricingCatalogLoader, SqliteRuntimeRegionSettingsStore, SqliteSiteSettingsStore,
 };
 use sdkwork_claw_product::infrastructure::OsApiKeySecretGenerator;
 use sdkwork_claw_product::ports::{
-    AdminAiResourceStore, AdminAnalyticsReadStore, AdminAnnouncementStore,
+    AdminAnalyticsReadStore, AdminAnnouncementStore,
     AdminApiKeyRateLimitStore, AdminAuthSettingsStore, AdminCatalogStore,
     AdminChannelGroupStore, AdminChannelStore, AdminDashboardReadStore, AdminFinanceStore,
     AdminFirewallRuleStore, AdminInventoryStore, AdminIpRateLimitStore, AdminMarketingStore,
-    AdminMcpStore, AdminModelRateLimitStore, AdminModelStore, AdminMonitorReadStore,
+    AdminMcpStore, AdminModelRateLimitStore, AdminMonitorReadStore,
     AdminPromptStore, AdminProviderSecretStore, AdminRecordStore, AdminServiceNodeStore,
     AdminServiceProviderStore, AdminSiteStore, AdminStorageStore,
     AdminTransactionCenterStore, GatewayApiKeyCommandStore, ModelRankingRefreshStore,
@@ -107,7 +118,7 @@ type AdminIpRateLimitRuntimeStore = Arc<dyn AdminIpRateLimitStore + Send + Sync>
 type AdminFirewallRuleRuntimeStore = Arc<dyn AdminFirewallRuleStore + Send + Sync>;
 type AdminApiKeyRateLimitRuntimeStore = Arc<dyn AdminApiKeyRateLimitStore + Send + Sync>;
 type AdminModelRateLimitRuntimeStore = Arc<dyn AdminModelRateLimitStore + Send + Sync>;
-type AdminModelRuntimeStore = Arc<dyn AdminModelStore + Send + Sync>;
+type AdminModelRuntimeStore = Arc<dyn ModelCatalogAdminStore + Send + Sync>;
 type AdminFinanceRuntimeStore = Arc<dyn AdminFinanceStore + Send + Sync>;
 type AdminMarketingRuntimeStore = Arc<dyn AdminMarketingStore + Send + Sync>;
 type AdminPromptRuntimeStore = Arc<dyn AdminPromptStore + Send + Sync>;
@@ -333,11 +344,11 @@ where
     let route_explain_router =
         sdkwork_claw_product::api::admin_route_explain_router(Arc::clone(&catalog));
     let catalog_router = match api_key_hasher.as_ref() {
-        Some(hasher) => sdkwork_claw_product::api::admin_model_catalog_router_with_api_key_hasher(
+        Some(hasher) => admin_model_catalog_router_with_api_key_hasher(
             Arc::clone(&catalog),
             Arc::clone(hasher),
         ),
-        None => sdkwork_claw_product::api::admin_model_catalog_router(Arc::clone(&catalog)),
+        None => admin_model_catalog_router(Arc::clone(&catalog)),
     };
     let mut router = router_with_database_status(database_config, readiness_check);
     router = router.merge(route_explain_router);
@@ -396,7 +407,7 @@ where
     {
         let store = ai_routing_cache_invalidating_model_store(store, routing_cache_manager.clone());
         router = router.merge(
-            sdkwork_claw_product::api::admin_model_management_router_with_store(
+            admin_model_management_router_with_store(
                 store,
                 Arc::new(OsApiKeySecretGenerator),
             )
@@ -412,7 +423,7 @@ where
         admin_subject_boundary_config.clone(),
     ) {
         (Some(read_store), Some(refresh_store), Some(admin_subject_boundary_config)) => router.merge(
-            sdkwork_claw_product::api::admin_model_rankings_router_with_read_store_and_refresh_store(
+            admin_model_rankings_router_with_read_store_and_refresh_store(
                 read_store,
                 refresh_store,
             )
@@ -422,22 +433,22 @@ where
             )),
         ),
         (Some(read_store), Some(refresh_store), None) => router.merge(
-            sdkwork_claw_product::api::admin_model_rankings_router_with_read_store_and_refresh_store(
+            admin_model_rankings_router_with_read_store_and_refresh_store(
                 read_store,
                 refresh_store,
             ),
         ),
         (Some(read_store), None, Some(admin_subject_boundary_config)) => router.merge(
-            sdkwork_claw_product::api::admin_model_rankings_router_with_read_store(read_store)
+            admin_model_rankings_router_with_read_store(read_store)
                 .layer(from_fn_with_state(
                     admin_subject_boundary_config,
                     admin_request_subject_boundary,
                 )),
         ),
         (Some(read_store), None, None) => router.merge(
-            sdkwork_claw_product::api::admin_model_rankings_router_with_read_store(read_store),
+            admin_model_rankings_router_with_read_store(read_store),
         ),
-        (None, _, _) => router.merge(sdkwork_claw_product::api::admin_model_rankings_router()),
+        (None, _, _) => router.merge(admin_model_rankings_router()),
     };
     let payment_runtime_router = sdkwork_claw_product::api::admin_payment_runtime_router();
     router = match admin_subject_boundary_config.clone() {
@@ -530,7 +541,7 @@ where
                 routing_cache_manager.clone(),
             );
             router = router.merge(
-                sdkwork_claw_product::api::admin_ai_resource_router_with_store(
+                admin_ai_resource_router_with_store(
                     store,
                     Arc::new(OsApiKeySecretGenerator),
                 )
@@ -903,7 +914,7 @@ pub fn router_with_sqlite_shared_runtime(
     let runtime_region_settings_store: RuntimeRegionSettingsRuntimeStore =
         Arc::new(SqliteRuntimeRegionSettingsStore::new(pool.clone()));
     let ai_resource_store: AdminAiResourceRuntimeStore =
-        Arc::new(SqliteAdminAiResourceStore::new(pool.clone()));
+        Arc::new(CatalogSqliteAdminAiResourceStore::new(pool.clone()));
     let channel_store: AdminChannelRuntimeStore = Arc::new(
         SqliteAdminChannelStore::with_provider_health_probe_and_api_key_secret_codec(
             pool.clone(),
@@ -924,7 +935,7 @@ pub fn router_with_sqlite_shared_runtime(
     let model_rate_limit_store: AdminModelRateLimitRuntimeStore =
         Arc::new(SqliteAdminModelRateLimitStore::new(pool.clone()));
     let model_store: AdminModelRuntimeStore = Arc::new(
-        SqliteAdminModelStore::with_models_catalog_root(pool.clone(), models_catalog_root),
+        SqliteModelCatalogAdminStore::with_models_catalog_root(pool.clone(), models_catalog_root),
     );
     let finance_store: AdminFinanceRuntimeStore =
         Arc::new(SqliteAdminFinanceStore::new(pool.clone()));
@@ -1032,7 +1043,7 @@ pub fn router_with_postgres_shared_runtime(
     let runtime_region_settings_store: RuntimeRegionSettingsRuntimeStore =
         Arc::new(PostgresRuntimeRegionSettingsStore::new(pool.clone()));
     let ai_resource_store: AdminAiResourceRuntimeStore =
-        Arc::new(PostgresAdminAiResourceStore::new(pool.clone()));
+        Arc::new(CatalogPostgresAdminAiResourceStore::new(pool.clone()));
     let channel_store: AdminChannelRuntimeStore = Arc::new(
         PostgresAdminChannelStore::with_provider_health_probe_and_api_key_secret_codec(
             pool.clone(),
@@ -1053,7 +1064,7 @@ pub fn router_with_postgres_shared_runtime(
     let model_rate_limit_store: AdminModelRateLimitRuntimeStore =
         Arc::new(PostgresAdminModelRateLimitStore::new(pool.clone()));
     let model_store: AdminModelRuntimeStore = Arc::new(
-        PostgresAdminModelStore::with_models_catalog_root(pool.clone(), models_catalog_root),
+        PostgresModelCatalogAdminStore::with_models_catalog_root(pool.clone(), models_catalog_root),
     );
     let finance_store: AdminFinanceRuntimeStore =
         Arc::new(PostgresAdminFinanceStore::new(pool.clone()));
@@ -1303,7 +1314,7 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
             let runtime_region_settings_store: RuntimeRegionSettingsRuntimeStore =
                 Arc::new(SqliteRuntimeRegionSettingsStore::new(pool.clone()));
             let ai_resource_store: AdminAiResourceRuntimeStore =
-                Arc::new(SqliteAdminAiResourceStore::new(pool.clone()));
+                Arc::new(CatalogSqliteAdminAiResourceStore::new(pool.clone()));
             let channel_store: AdminChannelRuntimeStore = Arc::new(
                 SqliteAdminChannelStore::with_provider_health_probe_and_api_key_secret_codec(
                     pool.clone(),
@@ -1324,7 +1335,7 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
             let model_rate_limit_store: AdminModelRateLimitRuntimeStore =
                 Arc::new(SqliteAdminModelRateLimitStore::new(pool.clone()));
             let model_store: AdminModelRuntimeStore =
-                Arc::new(SqliteAdminModelStore::with_models_catalog_root(
+                Arc::new(SqliteModelCatalogAdminStore::with_models_catalog_root(
                     pool.clone(),
                     configured_models_catalog_root(runtime_toml),
                 ));
@@ -1446,7 +1457,7 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
             let runtime_region_settings_store: RuntimeRegionSettingsRuntimeStore =
                 Arc::new(PostgresRuntimeRegionSettingsStore::new(pool.clone()));
             let ai_resource_store: AdminAiResourceRuntimeStore =
-                Arc::new(PostgresAdminAiResourceStore::new(pool.clone()));
+                Arc::new(CatalogPostgresAdminAiResourceStore::new(pool.clone()));
             let channel_store: AdminChannelRuntimeStore = Arc::new(
                 PostgresAdminChannelStore::with_provider_health_probe_and_api_key_secret_codec(
                     pool.clone(),
@@ -1467,7 +1478,7 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
             let model_rate_limit_store: AdminModelRateLimitRuntimeStore =
                 Arc::new(PostgresAdminModelRateLimitStore::new(pool.clone()));
             let model_store: AdminModelRuntimeStore =
-                Arc::new(PostgresAdminModelStore::with_models_catalog_root(
+                Arc::new(PostgresModelCatalogAdminStore::with_models_catalog_root(
                     pool.clone(),
                     configured_models_catalog_root(runtime_toml),
                 ));

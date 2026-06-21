@@ -61,22 +61,6 @@ pub(crate) fn media_resource_object_blob_id(resource: &Value) -> Option<i64> {
         .filter(|value| *value > 0)
 }
 
-pub(crate) fn media_resource_locator(resource: &Value) -> Option<String> {
-    resource
-        .get("publicUrl")
-        .or_else(|| resource.get("url"))
-        .or_else(|| resource.get("uri"))
-        .or_else(|| resource.get("objectKey"))
-        .or_else(|| resource.get("objectBlobId"))
-        .or_else(|| resource.get("id"))
-        .and_then(|value| match value {
-            Value::String(text) => Some(text.trim().to_owned()),
-            Value::Number(number) => Some(number.to_string()),
-            _ => None,
-        })
-        .filter(|value| !value.is_empty())
-}
-
 pub(crate) fn media_resource_from_snapshot(snapshot: &str, kind: &str) -> Value {
     let trimmed = snapshot.trim();
     if trimmed.is_empty() {

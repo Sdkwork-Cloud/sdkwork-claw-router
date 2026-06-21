@@ -185,25 +185,6 @@ where
     })
 }
 
-pub(crate) fn route_scoped_openai_passthrough_router<C>(
-    catalog: Arc<C>,
-    api_key_hasher: Arc<dyn ApiKeySecretHasher + Send + Sync>,
-    secret_resolver: Arc<dyn ProviderSecretResolver + Send + Sync>,
-    usage_recorder: Option<UsageRecorder>,
-    sticky_store: Option<crate::route_scoped_openai_passthrough::StickyObjectRouteStore>,
-) -> Router
-where
-    C: PricingCatalog + Send + Sync + 'static,
-{
-    crate::route_scoped_openai_passthrough::router(
-        catalog,
-        api_key_hasher,
-        secret_resolver,
-        usage_recorder,
-        sticky_store,
-    )
-}
-
 fn openai_passthrough_placeholder_router() -> Router<()> {
     let router = apply_openai_passthrough_routes(
         Router::new(),
@@ -1803,8 +1784,8 @@ mod tests {
             .for_provider("tencent-cloud", 9301),
         );
         let context = AuthenticatedApiKeyContext {
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             user_id: 30,
             api_key_id: 100,
             api_key_name_snapshot: "Test key".to_owned(),
@@ -2115,8 +2096,8 @@ mod tests {
 
     fn test_api_key_context() -> AuthenticatedApiKeyContext {
         AuthenticatedApiKeyContext {
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             user_id: 30,
             api_key_id: 100,
             api_key_name_snapshot: "Test key".to_owned(),
@@ -2142,8 +2123,8 @@ mod tests {
                 trace_id: Some("trace-test".to_owned()),
             },
             subject: AdapterSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 user_id: 30,
                 api_key_id: 100,
                 group_id: 10,

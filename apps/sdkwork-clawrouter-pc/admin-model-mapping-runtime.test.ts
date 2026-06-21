@@ -5,7 +5,7 @@ import test from 'node:test';
 
 import { clearStoredAppSessionToken } from './packages/sdkwork-clawrouter-pc-commons/src/app-session-token.ts';
 import { resetClawRouterSdkClients } from './packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts';
-import { ModelMappingService } from './packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts';
+import { ModelMappingService } from './../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts';
 
 const PORTAL_ROOT = import.meta.dirname;
 const originalFetch = globalThis.fetch;
@@ -76,7 +76,7 @@ async function withBackendSdkFetch<T>(
 }
 
 test('admin model mapping service is backend SDK backed', () => {
-  const modelService = readPortalFile('packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts');
+  const modelService = readPortalFile('../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts');
 
   for (const token of [
     'export class ModelMappingService',
@@ -111,7 +111,7 @@ test('admin model mapping service is backend SDK backed', () => {
 test('admin model mapping page exposes route, navigation, and core layout markers', () => {
   const appSource = readPortalFile('src/App.tsx');
   const registrySource = readPortalFile('src/adminModuleRegistry.ts');
-  const modelAdminSource = readPortalFile('packages/sdkwork-clawrouter-pc-admin-model/src/index.tsx');
+  const modelAdminSource = readPortalFile('../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/index.tsx');
   const coreI18nSource = readPortalFile('packages/sdkwork-clawrouter-pc-i18n/src/resources/admin/core-navigation.ts');
   const modelI18nSource = readPortalFile('packages/sdkwork-clawrouter-pc-i18n/src/resources/admin/model.ts');
 
@@ -137,7 +137,7 @@ test('admin model mapping page exposes route, navigation, and core layout marker
 });
 
 test('admin model mapping page is reduced to tabs search add and table without resolve preview chrome', () => {
-  const modelAdminSource = readPortalFile('packages/sdkwork-clawrouter-pc-admin-model/src/index.tsx');
+  const modelAdminSource = readPortalFile('../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/index.tsx');
   const modelI18nSource = readPortalFile('packages/sdkwork-clawrouter-pc-i18n/src/resources/admin/model.ts');
   const mappingPageSource = sourceBetween(modelAdminSource, 'export function ModelMappingAdmin', 'function ModelMappingFormModal');
 
@@ -181,7 +181,7 @@ test('admin model mapping page is reduced to tabs search add and table without r
 });
 
 test('admin model mapping modal uses multi-row editable model mapping table', () => {
-  const modelAdminSource = readPortalFile('packages/sdkwork-clawrouter-pc-admin-model/src/index.tsx');
+  const modelAdminSource = readPortalFile('../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/index.tsx');
   const modelI18nSource = readPortalFile('packages/sdkwork-clawrouter-pc-i18n/src/resources/admin/model.ts');
   const modalSource = sourceBetween(modelAdminSource, 'function ModelMappingFormModal', 'function ModelMappingRowsTable');
   const rowsTableSource = sourceBetween(modelAdminSource, 'function ModelMappingRowsTable', 'function ModelComboboxCell');
@@ -298,7 +298,7 @@ test('admin model mapping modal uses multi-row editable model mapping table', ()
 });
 
 test('admin model mapping edit save updates existing rule without creating records', () => {
-  const modelAdminSource = readPortalFile('packages/sdkwork-clawrouter-pc-admin-model/src/index.tsx');
+  const modelAdminSource = readPortalFile('../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/index.tsx');
   const saveSource = sourceBetween(modelAdminSource, 'const handleSaveMapping', 'const handleDeleteMapping');
   const editBranchSource = sourceBetween(saveSource, 'if (editingMapping) {', '} else {');
 
@@ -310,7 +310,7 @@ test('admin model mapping edit save updates existing rule without creating recor
 });
 
 test('admin model mapping list renders rule rows with child relation cell list', () => {
-  const modelAdminSource = readPortalFile('packages/sdkwork-clawrouter-pc-admin-model/src/index.tsx');
+  const modelAdminSource = readPortalFile('../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/index.tsx');
   const mappingAdminSource = sourceBetween(modelAdminSource, 'export function ModelMappingAdmin', 'function SiteFormModal');
   const tableSource = sourceBetween(mappingAdminSource, '<tbody', '</tbody>');
 
@@ -329,7 +329,7 @@ test('admin model mapping list renders rule rows with child relation cell list',
 });
 
 test('admin model mapping scope tabs request server-filtered rule rows', () => {
-  const modelAdminSource = readPortalFile('packages/sdkwork-clawrouter-pc-admin-model/src/index.tsx');
+  const modelAdminSource = readPortalFile('../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/index.tsx');
   const mappingAdminSource = sourceBetween(modelAdminSource, 'export function ModelMappingAdmin', 'function SiteFormModal');
   const loadSource = sourceBetween(mappingAdminSource, 'const loadMappings = async', 'const loadCatalog = async');
   const catalogSource = sourceBetween(mappingAdminSource, 'const loadCatalog = async', 'const filteredMappings = mappings.filter((mapping) => {');
@@ -411,7 +411,7 @@ test('admin model mapping catalog tolerates models without region prices', async
 });
 
 test('admin model mapping relation cell opens focused relation editor modal', () => {
-  const modelAdminSource = readPortalFile('packages/sdkwork-clawrouter-pc-admin-model/src/index.tsx');
+  const modelAdminSource = readPortalFile('../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/index.tsx');
   const relationCellSource = sourceBetween(modelAdminSource, 'function ModelMappingRelationsCell', 'function ModelMappingRelationEditorModal');
   const relationModalSource = sourceBetween(modelAdminSource, 'function ModelMappingRelationEditorModal', 'function ModelMappingBindingsCell');
 

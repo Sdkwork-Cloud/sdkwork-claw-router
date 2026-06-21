@@ -390,8 +390,8 @@ impl AdminAiResourceStore for TestAiResourceStore {
         Box::pin(async move {
             assert_eq!(
                 AdminAiResourceSubject {
-                    tenant_id: 10,
-                    organization_id: 20,
+                    tenant_id: 100001,
+                    organization_id: 0,
                     operator_id: 30,
                     operator_type: 1,
                 },
@@ -538,8 +538,8 @@ impl AdminAiResourceStore for TestAiResourceStore {
     ) -> AdminAiResourceReadFuture<'a, Vec<AdminAiResourceGroupItem>> {
         assert_eq!(
             AdminAiResourceSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 operator_id: 30,
                 operator_type: 1,
             },

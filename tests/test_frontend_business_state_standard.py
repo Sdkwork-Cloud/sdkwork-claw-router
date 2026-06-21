@@ -63,8 +63,13 @@ class FrontendBusinessStateStandardTest(unittest.TestCase):
             / "sdkwork-clawrouter-pc-admin-group"
             / "src"
             / "index.tsx",
-            PORTAL_PACKAGES
-            / "sdkwork-clawrouter-pc-admin-model"
+            ROOT
+            / "data"
+            / "sdkwork-models"
+            / "apps"
+            / "sdkwork-models-pc"
+            / "packages"
+            / "sdkwork-models-pc-admin-catalog"
             / "src"
             / "index.tsx",
             PORTAL_PACKAGES

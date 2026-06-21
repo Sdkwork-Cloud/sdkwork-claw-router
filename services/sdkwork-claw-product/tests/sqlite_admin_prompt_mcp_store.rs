@@ -324,7 +324,7 @@ async fn insert_mcp_tool(pool: &sqlx::SqlitePool, server_id: i64, revision_id: i
              description, input_schema, output_schema, risk_level, requires_approval, enabled,
              rate_limit_policy, schema_hash, discovered_at, sort_weight)
         VALUES
-            ('mcp-tool-test', 10, 20, ?1, ?2, 'searchWorkspace', 'Search Workspace',
+            ('mcp-tool-test', 100001, 0, ?1, ?2, 'searchWorkspace', 'Search Workspace',
              'Search workspace knowledge', '{"type":"object"}', '{"type":"object"}',
              'low', 0, 1, '{}', 'hash', CURRENT_TIMESTAMP, 10)
         "#,
@@ -339,8 +339,8 @@ async fn insert_mcp_tool(pool: &sqlx::SqlitePool, server_id: i64, revision_id: i
 
 fn prompt_subject() -> AdminPromptSubject {
     AdminPromptSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         operator_id: 30,
         operator_type: 1,
     }
@@ -348,8 +348,8 @@ fn prompt_subject() -> AdminPromptSubject {
 
 fn mcp_subject() -> AdminMcpSubject {
     AdminMcpSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         operator_id: 30,
         operator_type: 1,
     }

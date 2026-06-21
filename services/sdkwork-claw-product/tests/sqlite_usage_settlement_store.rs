@@ -517,8 +517,8 @@ async fn sqlite_usage_settlement_marks_invalid_amount_failed_without_blocking_va
 
 fn settlement_command() -> UsageSettlementCommand {
     UsageSettlementCommand {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         limit: 50,
         requested_at: "2026-04-30T12:00:00Z".to_owned(),
     }
@@ -657,7 +657,7 @@ async fn seed_points_account(pool: &SqlitePool, account_id: &str, available_poin
         INSERT INTO commerce_account
             (id, tenant_id, organization_id, owner_user_id, asset_type, currency_code, available_amount, frozen_amount, version, status, created_at, updated_at)
         VALUES
-            (?, '10', '20', '30', 'points', 'POINT', ?, '0', 0, 'active', '2026-04-30T11:59:00Z', '2026-04-30T11:59:00Z')
+            (?, '100001', '0', '30', 'points', 'POINT', ?, '0', 0, 'active', '2026-04-30T11:59:00Z', '2026-04-30T11:59:00Z')
         "#,
     )
     .bind(account_id)
@@ -686,7 +686,7 @@ async fn seed_usage_fact(
              base_input_unit_price, base_output_unit_price, customer_charge_amount, cost_amount,
              currency, pricing_plan_code, pricing_snapshot, occurred_at, settlement_status)
         VALUES
-            (?, ?, 10, 20, 30, ?, ?, 1, 101, 'Owner Usage Key', 10, 'standard-group',
+            (?, ?, 100001, 0, 30, ?, ?, 1, 101, 'Owner Usage Key', 10, 'standard-group',
              1, 30, 'Demo User', 'gpt-4o-mini', 9001, 3001, 1, 1, 'llm_input_token',
              ?, 11, 2, 7, ?, 1, '0.198000', '0.198000', '0.792000',
              ?, '4.290000', 'USD', 'standard', '{}', '2026-04-30T11:58:00Z', ?)

@@ -7928,22 +7928,36 @@ test('portal service command results must not fabricate returned entities from e
     '@sdkwork/clawrouter-pc-admin-channel/src/channelService.ts',
     '@sdkwork/clawrouter-pc-admin-group/src/groupService.ts',
     'sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts',
-    '@sdkwork/clawrouter-pc-admin-model/src/modelService.ts',
     '@sdkwork/clawrouter-pc-admin-ratelimit/src/ratelimitService.ts',
     '@sdkwork/clawrouter-pc-admin-user/src/userService.ts',
   ];
+  const servicePaths = [
+    ...serviceFiles.map((relativeFile) => path.join(serviceRoot, relativeFile)),
+    path.join(
+      workspaceRoot,
+      'data',
+      'sdkwork-models',
+      'apps',
+      'sdkwork-models-pc',
+      'packages',
+      'sdkwork-models-pc-admin-catalog',
+      'src',
+      'modelService.ts',
+    ),
+  ];
 
-  for (const relativeFile of serviceFiles) {
-    const source = readFileSync(path.join(serviceRoot, relativeFile), 'utf8');
+  for (const servicePath of servicePaths) {
+    const source = readFileSync(servicePath, 'utf8');
+    const label = path.relative(workspaceRoot, servicePath);
     assert.doesNotMatch(
       source,
       /readApiItem\([^)]*\)\s*\?\?\s*\{\}/u,
-      `${relativeFile} must use readRequiredApiItem for command responses that require returned entities`,
+      `${label} must use readRequiredApiItem for command responses that require returned entities`,
     );
     assert.doesNotMatch(
       source,
       /normalize[A-Za-z0-9_]+\([^)]*\?\?\s*\{\}\)/u,
-      `${relativeFile} must not normalize missing command data into an empty entity`,
+      `${label} must not normalize missing command data into an empty entity`,
     );
   }
 });
@@ -8016,7 +8030,17 @@ test('portal mutable entity services must require backend stable ids', () => {
       forbidden: [/id:\s*readNumber\(item,\s*['"]id['"]\)/u, /id:\s*readString\(item,\s*['"]id['"]\)/u],
     },
     {
-      file: path.join('@sdkwork/clawrouter-pc-admin-model', 'src', 'modelService.ts'),
+      file: path.join(
+        workspaceRoot,
+        'data',
+        'sdkwork-models',
+        'apps',
+        'sdkwork-models-pc',
+        'packages',
+        'sdkwork-models-pc-admin-catalog',
+        'src',
+        'modelService.ts',
+      ),
       requiredMessages: ['Vendor id is required', 'Model id is required', 'Model vendor id is required'],
       forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u, /vendorId:\s*readString\(item,\s*['"]vendorId['"]\)/u],
     },
@@ -8056,11 +8080,6 @@ test('portal mutable entity services must require backend stable ids', () => {
       forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
     },
     {
-      file: path.join('sdkwork-clawrouter-pc-console-wallet', 'src', 'walletService.ts'),
-      requiredMessages: ['Redeem history id is required', 'Recharge history id is required'],
-      forbidden: [/id:\s*readNumber\(item,\s*['"]id['"]\)/u],
-    },
-    {
       file: path.join('sdkwork-clawrouter-pc-admin-wallet', 'src', 'walletService.ts'),
       requiredMessages: ['Recharge record id is required'],
       forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
@@ -8079,7 +8098,10 @@ test('portal mutable entity services must require backend stable ids', () => {
   );
 
   for (const service of guardedServices) {
-    const source = readFileSync(path.join(portalRoot, 'packages', service.file), 'utf8');
+    const sourcePath = service.file.startsWith(workspaceRoot)
+      ? service.file
+      : path.join(portalRoot, 'packages', service.file);
+    const source = readFileSync(sourcePath, 'utf8');
     for (const message of service.requiredMessages) {
       assert.ok(
         source.includes(`readRequiredString(item, 'id', '${message}')`)
@@ -8221,26 +8243,20 @@ test('portal workspace packages declare ESM module metadata', () => {
     'sdkwork-clawrouter-pc-admin-finance',
     '@sdkwork/clawrouter-pc-admin-group',
     'sdkwork-clawrouter-pc-admin-marketing',
-    '@sdkwork/clawrouter-pc-admin-model',
+    '@sdkwork/clawrouter-pc-admin-relay-site',
     '@sdkwork/clawrouter-pc-admin-monitor',
     '@sdkwork/clawrouter-pc-admin-ratelimit',
     '@sdkwork/clawrouter-pc-admin-record',
     '@sdkwork/clawrouter-pc-admin-user',
     '@sdkwork/clawrouter-pc-commons',
-    'sdkwork-clawrouter-pc-console-account',
     '@sdkwork/clawrouter-pc-console-api-keys',
-    'sdkwork-clawrouter-pc-console-checkout',
     '@sdkwork/clawrouter-pc-console-core',
     '@sdkwork/clawrouter-pc-console-dashboard',
     '@sdkwork/clawrouter-pc-console-gateway',
-    'sdkwork-clawrouter-pc-console-memberships',
     'sdkwork-clawrouter-pc-console-messages',
-    'sdkwork-clawrouter-pc-console-recharge',
     '@sdkwork/clawrouter-pc-console-settings',
-    'sdkwork-clawrouter-pc-console-settlements',
     '@sdkwork/clawrouter-pc-console-usage',
     '@sdkwork/clawrouter-pc-console-user',
-    'sdkwork-clawrouter-pc-console-wallet',
     '@sdkwork/clawrouter-pc-core',
     'sdkwork-clawrouter-pc-forum',
     '@sdkwork/clawrouter-pc-home',

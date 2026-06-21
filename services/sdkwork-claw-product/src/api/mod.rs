@@ -1,5 +1,4 @@
-﻿mod admin_ai_resource;
-mod admin_analytics;
+﻿mod admin_analytics;
 mod admin_announcement;
 mod admin_api_key_rate_limit;
 mod admin_auth_settings;
@@ -15,8 +14,6 @@ mod admin_ip_rate_limit;
 mod admin_marketing;
 mod admin_mcp;
 mod admin_messaging;
-mod admin_model_catalog;
-mod admin_model_command;
 mod admin_model_rate_limit;
 mod admin_monitor;
 mod admin_payment_runtime;
@@ -41,7 +38,6 @@ mod app_gateway;
 mod app_generation_history;
 mod app_iam_directory;
 mod app_iam_directory_query;
-mod app_models;
 mod app_notification;
 mod app_payment_callback;
 mod app_providers;
@@ -53,7 +49,6 @@ mod app_settings;
 mod app_settlements;
 mod app_usage_logs;
 mod app_user_profile;
-mod model_rankings;
 mod openai_chat;
 pub mod openai_contract;
 mod openai_embeddings;
@@ -69,7 +64,7 @@ mod response;
 mod site_settings;
 mod subject;
 
-pub use admin_ai_resource::admin_ai_resource_router_with_store;
+pub use sdkwork_models_catalog_service::admin_ai_resource_router_with_store;
 pub use admin_analytics::admin_analytics_router_with_read_store;
 pub use admin_announcement::admin_announcement_router_with_store;
 pub use admin_api_key_rate_limit::admin_api_key_rate_limit_router_with_store;
@@ -86,9 +81,13 @@ pub use admin_ip_rate_limit::admin_ip_rate_limit_router_with_store;
 pub use admin_marketing::admin_marketing_router_with_store;
 pub use admin_mcp::admin_mcp_router_with_store;
 pub use admin_messaging::admin_messaging_router_with_store;
-pub use admin_model_catalog::admin_model_catalog_router;
-pub use admin_model_catalog::admin_model_catalog_router_with_api_key_hasher;
-pub use admin_model_command::admin_model_management_router_with_store;
+pub use sdkwork_models_catalog_service::{
+    admin_model_catalog_router, admin_model_catalog_router_with_api_key_hasher,
+    admin_model_management_router_with_store, admin_model_rankings_router,
+    admin_model_rankings_router_with_read_store,
+    admin_model_rankings_router_with_read_store_and_refresh_store, app_model_catalog_router,
+    app_model_rankings_router, app_model_rankings_router_with_read_store,
+};
 pub use admin_model_rate_limit::admin_model_rate_limit_router_with_store;
 pub use admin_monitor::admin_monitor_router_with_read_store;
 pub use admin_payment_runtime::{
@@ -130,7 +129,6 @@ pub use app_generation_history::app_generation_history_router;
 pub use app_generation_history::app_generation_history_router_with_read_store;
 pub use app_iam_directory::app_iam_directory_router;
 pub use app_iam_directory::app_iam_directory_router_with_read_store;
-pub use app_models::app_model_catalog_router;
 pub use app_notification::app_notification_router;
 pub use app_notification::app_notification_router_with_store;
 pub use app_payment_callback::app_payment_callback_router;
@@ -161,11 +159,6 @@ pub use app_usage_logs::app_usage_logs_router;
 pub use app_usage_logs::app_usage_logs_router_with_read_store;
 pub use app_user_profile::app_user_profile_router;
 pub use app_user_profile::app_user_profile_router_with_read_store;
-pub use model_rankings::admin_model_rankings_router;
-pub use model_rankings::admin_model_rankings_router_with_read_store;
-pub use model_rankings::admin_model_rankings_router_with_read_store_and_refresh_store;
-pub use model_rankings::app_model_rankings_router;
-pub use model_rankings::app_model_rankings_router_with_read_store;
 pub use openai_chat::openai_chat_completions_router;
 pub use openai_chat::openai_chat_completions_router_with_relay;
 pub use openai_chat::openai_chat_completions_router_with_relay_and_plugins;

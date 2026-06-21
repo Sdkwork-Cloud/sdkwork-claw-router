@@ -534,7 +534,7 @@ fn mcp_tool(server_id: i64, tenant_id: i64) -> AdminMcpToolItem {
         id: 1,
         uuid: "mcp-tool-1".to_owned(),
         tenant_id,
-        organization_id: 20,
+        organization_id: 0,
         server_id,
         server_revision_id: Some(1),
         tool_key: "searchWorkspace".to_owned(),

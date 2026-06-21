@@ -1,6 +1,10 @@
 use axum::http::Method;
 use serde_json::Value;
 
+use super::multipart_form::{
+    optional_model_from_multipart_form, require_multipart_boundary,
+    request_content_type_is_multipart_form, require_non_blank_model,
+};
 use super::{
     Invocation, InvocationBody, InvocationDispatch, InvocationError, InvocationErrorKind,
     InvocationFuture, InvocationInterceptor, InvocationShape, InvocationSurface, StickyMode,
@@ -53,15 +57,27 @@ fn extract_requested_model(invocation: &mut Invocation) -> Result<(), Invocation
         return Ok(());
     }
 
+    if request_content_type_is_multipart_form(&invocation.request.headers) {
+        require_multipart_boundary(&invocation.request.headers)?;
+        if let InvocationBody::Bytes(bytes) = &invocation.request.body {
+            if let Some(model) =
+                optional_model_from_multipart_form(&invocation.request.headers, bytes)?
+            {
+                apply_extracted_model(invocation, model);
+            }
+        }
+        return Ok(());
+    }
+
     match &invocation.request.body {
         InvocationBody::Json(value) => {
-            if let Some(model) = model_from_json_value(value)? {
+            if let Some(model) = model_from_json_value(value, &invocation.request.path)? {
                 apply_extracted_model(invocation, model);
             }
         }
         InvocationBody::Bytes(bytes) => {
             if let Ok(value) = serde_json::from_slice::<Value>(bytes) {
-                if let Some(model) = model_from_json_value(&value)? {
+                if let Some(model) = model_from_json_value(&value, &invocation.request.path)? {
                     apply_extracted_model(invocation, model);
                 }
             }
@@ -177,16 +193,72 @@ fn validate_required_model(invocation: &Invocation) -> Result<(), InvocationErro
     Ok(())
 }
 
-fn model_from_json_value(value: &Value) -> Result<Option<String>, InvocationError> {
+fn model_from_json_value(value: &Value, path: &str) -> Result<Option<String>, InvocationError> {
+    if let Some(model) = top_level_model_from_json_value(value)? {
+        return Ok(Some(model));
+    }
+    for field in nested_model_search_fields(path) {
+        let Some(nested) = value.get(field) else {
+            continue;
+        };
+        if let Some(model) = find_nested_model(nested)? {
+            return Ok(Some(model));
+        }
+    }
+    Ok(None)
+}
+
+fn top_level_model_from_json_value(value: &Value) -> Result<Option<String>, InvocationError> {
     let Some(model) = value.get("model") else {
         return Ok(None);
     };
     match model {
-        Value::String(model) => Ok(non_empty_text(model).map(str::to_owned)),
+        Value::String(model) => require_non_blank_model(model).map(Some),
         _ => Err(InvocationError::new(
             InvocationErrorKind::InvalidRequest,
             "model must be a string",
         )),
+    }
+}
+
+fn nested_model_search_fields(path: &str) -> &'static [&'static str] {
+    if path == "/v1/fine_tuning/alpha/graders/run"
+        || path == "/v1/fine_tuning/alpha/graders/validate"
+    {
+        return &["grader"];
+    }
+    if path == "/v1/evals" || path.starts_with("/v1/evals/") {
+        return &["data_source", "data_source_config", "testing_criteria"];
+    }
+    &[]
+}
+
+fn find_nested_model(value: &Value) -> Result<Option<String>, InvocationError> {
+    match value {
+        Value::Object(object) => {
+            if let Some(model) = object
+                .get("model")
+                .and_then(Value::as_str)
+                .and_then(non_empty_text)
+            {
+                return Ok(Some(model.to_owned()));
+            }
+            for (key, value) in object.iter().filter(|(key, _)| key.as_str() != "metadata") {
+                if let Some(model) = find_nested_model(value)? {
+                    return Ok(Some(model));
+                }
+            }
+            Ok(None)
+        }
+        Value::Array(values) => {
+            for value in values {
+                if let Some(model) = find_nested_model(value)? {
+                    return Ok(Some(model));
+                }
+            }
+            Ok(None)
+        }
+        _ => Ok(None),
     }
 }
 

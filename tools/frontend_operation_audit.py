@@ -115,6 +115,10 @@ class FrontendOperationAudit:
     NOTIFICATION_DEPENDENCY_DOMAINS = frozenset({"notification"})
     NOTIFICATION_SERVICE_PATTERN = re.compile(r"\bcreatePortalNotificationService\s*\(")
     NOTIFICATION_PC_REACT_PATTERN = re.compile(r"@sdkwork/notification-pc-react")
+    MODELS_DEPENDENCY_DOMAINS = frozenset({"intelligence", "ai"})
+    MODELS_BACKEND_SDK_CLIENT = "getModelsBackendSdkClient"
+    MODELS_BACKEND_SDK_PATTERN = re.compile(r"\bgetModelsBackendSdkClient\s*\(")
+    MODELS_SOURCE_PREFIX = "data/sdkwork-models/"
     APPBASE_APP_DEPENDENCY_DOMAINS = frozenset({"auth", "iam", "appbase"})
     APPBASE_APP_SERVICE_CLIENT = "getSdkworkAppbaseAppSdkClient"
     APPBASE_BACKEND_SERVICE_CLIENT = "getSdkworkAppbaseBackendSdkClient"
@@ -624,6 +628,13 @@ class FrontendOperationAudit:
                 self.NOTIFICATION_SERVICE_PATTERN.search(source_text) is not None
                 or self.NOTIFICATION_PC_REACT_PATTERN.search(source_text) is not None
             )
+        if self._is_models_dependency_operation(
+            sdk_domain=sdk_domain,
+            api_surface=api_surface,
+            source=source,
+            source_operation=source_operation,
+        ):
+            return self.MODELS_BACKEND_SDK_PATTERN.search(source_text) is not None
 
         sdk_client = self.SDK_CLIENTS[api_surface]
         if re.search(rf"\b{re.escape(sdk_client)}\s*\(", source_text):
@@ -734,6 +745,23 @@ class FrontendOperationAudit:
         api_path = source_operation.get("api_path")
         return isinstance(api_path, str) and api_path.startswith("/app/v3/api/notification")
 
+    def _is_models_dependency_domain(self, sdk_domain: Any) -> bool:
+        return isinstance(sdk_domain, str) and sdk_domain in self.MODELS_DEPENDENCY_DOMAINS
+
+    def _is_models_dependency_operation(
+        self,
+        *,
+        sdk_domain: Any,
+        api_surface: str | None = None,
+        source: str | None = None,
+        source_operation: dict[str, Any] | None = None,
+    ) -> bool:
+        if isinstance(source, str) and source.replace("\\", "/").startswith(self.MODELS_SOURCE_PREFIX):
+            return True
+        if api_surface != "backend":
+            return False
+        return self._is_models_dependency_domain(sdk_domain)
+
     def _is_appbase_dependency_operation(
         self,
         *,
@@ -784,6 +812,17 @@ class FrontendOperationAudit:
             return (
                 f"frontend operation {key} must use @sdkwork/notification-pc-react service boundary "
                 f"for notification dependency {api_surface} api_surface"
+            )
+        operation_source = key.split("#", 1)[0]
+        if self._is_models_dependency_operation(
+            sdk_domain=sdk_domain,
+            api_surface=api_surface,
+            source=operation_source,
+            source_operation=source_operation,
+        ):
+            return (
+                f"frontend operation {key} must use {self.MODELS_BACKEND_SDK_CLIENT} "
+                f"for models dependency {api_surface} api_surface"
             )
         if isinstance(sdk_domain, str) and sdk_domain in self.APPBASE_APP_DEPENDENCY_DOMAINS:
             sdk_client = (

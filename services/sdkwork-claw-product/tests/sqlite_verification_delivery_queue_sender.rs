@@ -194,8 +194,8 @@ fn verification_config() -> VerificationDeliveryConfig {
     VerificationDeliveryConfig {
         route_rule_id: 4001,
         account_id: 9101,
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         provider_code: "sendgrid".to_owned(),
         channel: "email".to_owned(),
         scene: "register".to_owned(),
@@ -375,7 +375,7 @@ async fn seed_template(pool: &SqlitePool) {
         INSERT INTO iam_verification_scene_policy
             (id, tenant_id, organization_id, scene_code, max_send_per_hour, status)
         VALUES
-            (6101, 10, 20, 'register', 1, 1)
+            (6101, 100001, 0, 'register', 1, 1)
         "#,
     )
     .execute(pool)
@@ -387,7 +387,7 @@ async fn seed_template(pool: &SqlitePool) {
             (id, tenant_id, organization_id, template_code, scene_code, channel, delivery_purpose,
              category, template_name, current_version_id, publish_status, status)
         VALUES
-            (7000, 10, 20, 'REGISTER_EMAIL', 'register', 'email', 'verification',
+            (7000, 100001, 0, 'REGISTER_EMAIL', 'register', 'email', 'verification',
              'otp', 'Register Email', 7001, 'published', 1)
         "#,
     )
@@ -401,7 +401,7 @@ async fn seed_template(pool: &SqlitePool) {
              text_template, html_template, variable_schema, content_hash, review_status,
              published_at, status)
         VALUES
-            (7001, 10, 20, 7000, 1, 'Your verification code',
+            (7001, 100001, 0, 7000, 1, 'Your verification code',
              'Code {{code}} expires at {{expiresAt}}',
              '<p>Code {{code}} expires at {{expiresAt}}</p>',
              '{"required":["code","expiresAt"]}', 'hash-register-email-v1',
@@ -417,7 +417,7 @@ async fn seed_template(pool: &SqlitePool) {
             (id, tenant_id, organization_id, template_version_id, channel, locale,
              content_format, body_template, status)
         VALUES
-            (7101, 10, 20, 7001, 'email', 'default', 'html',
+            (7101, 100001, 0, 7001, 'email', 'default', 'html',
              '<p>Code {{code}} expires at {{expiresAt}}</p>', 1)
         "#,
     )

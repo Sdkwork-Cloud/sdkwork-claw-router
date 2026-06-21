@@ -1,59 +1,49 @@
 fragment: models/console-settlements
 frontend_models:
 - route: /console/settlements
-  source: apps/sdkwork-clawrouter-pc/src/App.tsx
-  interface: Bill
+  source: apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts
+  interface: SdkworkBillingUsageRecord
   fields:
+  - capability
+  - costCny
   - id
-  - period
-  - startDate
-  - endDate
-  - totalTokens
-  - totalCost
-  - status
-  - breakdown
-  - breakdown.text
-  - breakdown.text.cost
-  - breakdown.text.usage
-  - breakdown.text.models
-  - breakdown.image
-  - breakdown.image.cost
-  - breakdown.image.usage
-  - breakdown.image.models
-  - breakdown.video
-  - breakdown.video.cost
-  - breakdown.video.usage
-  - breakdown.video.models
-  - breakdown.audio
-  - breakdown.audio.cost
-  - breakdown.audio.usage
-  - breakdown.audio.models
-  - breakdown.music
-  - breakdown.music.cost
-  - breakdown.music.usage
-  - breakdown.music.models
+  - model
+  - provider
+  - title
+  - unitLabel
+  - units
+  - usageAt
+  - workspace
   data_sources:
+  - ai_usage_fact
   - commerce_usage_statement
   - commerce_usage_statement_item
 - route: /console/settlements
-  source: apps/sdkwork-clawrouter-pc/src/App.tsx
-  interface: BillBreakdownItem
+  source: apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts
+  interface: SdkworkBillingBreakdownRow
   fields:
-  - cost
-  - usage
-  - models
+  - changeRate
+  - costCny
+  - id
+  - kind
+  - label
+  - share
+  - units
   data_sources:
   - commerce_usage_statement_item
-- route: /console/settlements
-  source: apps/sdkwork-clawrouter-pc/src/App.tsx
-  interface: SettlementChartData
-  fields:
-  - day
-  - text
-  - image
-  - video
-  - audio
-  - music
-  data_sources:
   - ai_usage_fact
+- route: /console/settlements
+  source: apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts
+  interface: SdkworkBillingDigest
+  fields:
+  - budgetAmountCny
+  - budgetRemainingCny
+  - monthSpendCny
+  - outstandingAmountCny
+  - projectedMonthSpendCny
+  - savingsOpportunityCny
+  - todaySpendCny
+  data_sources:
+  - commerce_usage_statement
   - commerce_usage_statement_item
+  - ai_usage_fact

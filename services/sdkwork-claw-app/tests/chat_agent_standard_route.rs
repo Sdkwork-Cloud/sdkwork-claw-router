@@ -376,8 +376,8 @@ async fn app_api_exposes_standard_chat_and_agent_session_routes_with_sqlite_stor
         r#"
         SELECT agent_run_id, agent_run_step_id
         FROM ai_runtime_invocation_event
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND user_id = 30
           AND uuid = ?1
         "#,
@@ -405,8 +405,8 @@ async fn app_api_exposes_standard_chat_and_agent_session_routes_with_sqlite_stor
         r#"
         SELECT agent_run_id, agent_run_step_id
         FROM ai_runtime_artifact
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND user_id = 30
           AND uuid = ?1
         "#,
@@ -435,8 +435,8 @@ async fn app_api_exposes_standard_chat_and_agent_session_routes_with_sqlite_stor
         SELECT agent_run_id, agent_run_step_id
         FROM ai_runtime_invocation
         WHERE uuid = ?1
-          AND tenant_id = 10
-          AND organization_id = 20
+          AND tenant_id = 100001
+          AND organization_id = 0
           AND user_id = 30
         "#,
     )

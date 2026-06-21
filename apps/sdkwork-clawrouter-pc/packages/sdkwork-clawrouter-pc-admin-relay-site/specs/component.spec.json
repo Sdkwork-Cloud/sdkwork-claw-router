@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "kind": "sdkwork.component.spec",
   "component": {
-    "name": "@sdkwork/clawrouter-pc-admin-model",
-    "displayName": "SDKWork Claw Router Admin Model",
+    "name": "@sdkwork/clawrouter-pc-admin-relay-site",
+    "displayName": "SDKWork Claw Router Admin Relay Site",
     "version": "1.0.0",
     "type": "node-package",
-    "root": "sdkwork-clawrouter/apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model",
-    "domain": "intelligence",
+    "root": "sdkwork-clawrouter/apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-relay-site",
+    "domain": "platform",
     "declaredDomain": null,
-    "capability": "model",
+    "capability": "router",
     "surface": "backend-admin",
     "status": "standardizing",
     "languages": [
@@ -115,7 +115,9 @@
     "runtimeEntrypoints": [
       "package.json#scripts.typecheck"
     ],
-    "sdkClients": [],
+    "sdkClients": [
+      "@sdkwork/clawrouter-backend-sdk"
+    ],
     "events": [],
     "configKeys": [],
     "routeManifest": null
@@ -123,12 +125,12 @@
   "integration": {
     "authority": "Root SDKWork specs remain authoritative. Local specs may extend but must not contradict them.",
     "dependencyPolicy": "Consumers integrate through public package exports, declared runtime entrypoints, generated SDK clients, or documented adapters only.",
-    "sdkPolicy": "Generated SDK clients are injected through service/runtime boundaries; reusable UI must not create raw HTTP clients or manual auth headers.",
+    "sdkPolicy": "Site administration calls gateway-owned /backend/v3/api/sites through @sdkwork/clawrouter-backend-sdk; catalog vendor picker reuse stays on @sdkwork/models-pc-admin-catalog.",
     "languagePolicy": "Language-specific packages follow their native manifest and build tools while preserving the same component contract."
   },
   "verification": {
     "commands": [
-      "pnpm --filter sdkwork-clawrouter-pc-admin-model typecheck"
+      "pnpm --filter sdkwork-clawrouter-pc-admin-relay-site typecheck"
     ]
   },
   "metadata": {

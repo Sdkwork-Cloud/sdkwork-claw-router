@@ -37,7 +37,6 @@ const MAX_MONEY_LEN: usize = 64;
 struct AppChatState {
     store: Arc<dyn AppChatStore + Send + Sync>,
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
-    require_subject: bool,
 }
 
 #[derive(Debug, Deserialize)]
@@ -169,24 +168,15 @@ impl AppChatStore for EmptyAppChatStore {
 }
 
 pub fn app_chat_router() -> Router {
-    app_chat_router_with_state(
+    app_chat_router_with_store(
         Arc::new(EmptyAppChatStore),
         Arc::new(OsApiKeySecretGenerator),
-        false,
     )
 }
 
 pub fn app_chat_router_with_store(
     store: Arc<dyn AppChatStore + Send + Sync>,
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
-) -> Router {
-    app_chat_router_with_state(store, entity_uuid_generator, true)
-}
-
-fn app_chat_router_with_state(
-    store: Arc<dyn AppChatStore + Send + Sync>,
-    entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
-    require_subject: bool,
 ) -> Router {
     Router::new()
         .route(
@@ -212,7 +202,6 @@ fn app_chat_router_with_state(
         .with_state(AppChatState {
             store,
             entity_uuid_generator,
-            require_subject,
         })
 }
 

@@ -40,7 +40,7 @@ class BackendRequestIdentityStandardTest(unittest.TestCase):
     def test_gateway_runtime_usage_ids_are_server_generated(self) -> None:
         source_files = [
             GATEWAY_SOURCE_ROOT / "passthrough.rs",
-            GATEWAY_SOURCE_ROOT / "route_scoped_openai_passthrough.rs",
+            GATEWAY_SOURCE_ROOT / "invocation_http.rs",
         ]
         identity_source = (GATEWAY_SOURCE_ROOT / "request_identity.rs").read_text(encoding="utf-8")
         forbidden_patterns = [

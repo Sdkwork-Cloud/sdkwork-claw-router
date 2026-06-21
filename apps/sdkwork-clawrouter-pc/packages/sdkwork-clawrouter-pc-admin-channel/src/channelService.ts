@@ -1,6 +1,7 @@
 import {
   ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
+  getModelsBackendSdkClient,
   isRecord,
   readApiRecord,
   readRequiredApiItems,
@@ -29,18 +30,20 @@ import type {
   AdminChannelCreateRequest,
   AdminChannelCredentialInput,
   AdminChannelUpdateRequest,
+  AdminProviderSecretCreateRequest,
+  AdminProviderSecretUpdateRequest,
+  IntegrationProviderSecretsListParams,
+  ProviderCircuitBreakerPolicy,
+  ProviderRetryPolicy,
+} from '@sdkwork/clawrouter-backend-sdk';
+import type {
   AdminModelMappingCreateRequest,
   AdminModelMappingRule,
   AdminModelMappingRuleBindingInput,
   AdminModelMappingRuleItemInput,
   AdminModelMappingUpdateRequest,
-  AdminProviderSecretCreateRequest,
-  AdminProviderSecretUpdateRequest,
   AiModelMappingsListParams,
-  IntegrationProviderSecretsListParams,
-  ProviderCircuitBreakerPolicy,
-  ProviderRetryPolicy,
-} from '@sdkwork/clawrouter-backend-sdk';
+} from '@sdkwork/models-backend-sdk';
 
 type ChannelType = NonNullable<AdminChannelCreateRequest['channelType']>;
 export type CredentialRotationStrategy = NonNullable<AdminChannelCreateRequest['credentialRotation']>;
@@ -505,19 +508,19 @@ async function fetchAccountModelMappings(channelId: string): Promise<AdminModelM
     bindingType: 'channel',
     channelId,
   };
-  const result = await channelBackendClient().ai.modelMappings.list(params);
+  const result = await modelsBackendClient().ai.modelMappings.list(params);
   ensureSdkworkApiSuccess(result, 'Failed to fetch account model mappings');
   return readRequiredApiItems(result, 'Failed to fetch account model mappings')
     .map(readModelMappingRule);
 }
 
 async function createAccountModelMapping(input: AdminModelMappingCreateRequest): Promise<void> {
-  const result = await channelBackendClient().ai.modelMappings.create(input);
+  const result = await modelsBackendClient().ai.modelMappings.create(input);
   ensureSdkworkApiSuccess(result, 'Failed to create account model mapping');
 }
 
 async function updateAccountModelMapping(id: string, input: AdminModelMappingUpdateRequest): Promise<void> {
-  const result = await channelBackendClient().ai.modelMappings.update(
+  const result = await modelsBackendClient().ai.modelMappings.update(
     requiredSafePathSegment(id, 'mappingId'),
     input,
   );
@@ -525,7 +528,7 @@ async function updateAccountModelMapping(id: string, input: AdminModelMappingUpd
 }
 
 async function deleteAccountModelMapping(id: string): Promise<void> {
-  const result = await channelBackendClient().ai.modelMappings.delete(
+  const result = await modelsBackendClient().ai.modelMappings.delete(
     requiredSafePathSegment(id, 'mappingId'),
   );
   ensureSdkworkApiSuccess(result, 'Failed to delete stale account model mapping');
@@ -1104,6 +1107,10 @@ function ensureDeleteResult(result: unknown, message: string): void {
 
 function channelBackendClient() {
   return getClawRouterBackendSdkClient();
+}
+
+function modelsBackendClient() {
+  return getModelsBackendSdkClient();
 }
 
 function normalizeChannel(value: unknown): ChannelItem {

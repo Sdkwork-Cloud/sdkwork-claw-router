@@ -114,6 +114,15 @@ fn classify_openai_spec(method: &Method, path: &str) -> Result<OpenAiRouteSpec, 
             BillingMeter::LlmInputToken,
         ));
     }
+    if method == Method::POST && path == "/v1/completions" {
+        return Ok(model(
+            "openai/model/completions",
+            "openai.completions",
+            ResourceType::ChatCompletion,
+            RoutingCapability::Chat,
+            BillingMeter::LlmInputToken,
+        ));
+    }
     if method == Method::POST && path == "/v1/embeddings" {
         return Ok(model(
             "openai/model/embeddings",
@@ -325,6 +334,16 @@ fn classify_openai_spec(method: &Method, path: &str) -> Result<OpenAiRouteSpec, 
             "thread",
         ));
     }
+    if method == Method::POST && path == "/v1/threads/runs" {
+        return Ok(create_composite_api(
+            "openai/management/threads",
+            "openai.threads",
+            ResourceType::Thread,
+            RoutingCapability::Chat,
+            BillingMeter::LlmInputToken,
+            "thread",
+        ));
+    }
     if method == Method::POST && path.starts_with("/v1/threads/") && path.ends_with("/runs") {
         return Ok(parent_composite_api(
             "openai/management/threads",
@@ -343,6 +362,41 @@ fn classify_openai_spec(method: &Method, path: &str) -> Result<OpenAiRouteSpec, 
             RoutingCapability::Chat,
             BillingMeter::LlmInputToken,
             "thread",
+        ));
+    }
+    if path == "/v1/evals" {
+        if method == Method::POST {
+            return Ok(create_model_optional_api(
+                "openai/management/evals",
+                "openai.evals",
+                ResourceType::Unknown,
+                RoutingCapability::Network,
+                "eval",
+            ));
+        }
+        return Ok(api(
+            "openai/management/evals",
+            "openai.evals",
+            ResourceType::Unknown,
+            RoutingCapability::Network,
+        ));
+    }
+    if method == Method::POST && path.starts_with("/v1/evals/") && path.ends_with("/runs") {
+        return Ok(parent_optional_api(
+            "openai/management/evals",
+            "openai.evals",
+            ResourceType::Unknown,
+            RoutingCapability::Network,
+            "eval",
+        ));
+    }
+    if path.starts_with("/v1/evals/") {
+        return Ok(lookup_api(
+            "openai/management/evals",
+            "openai.evals",
+            ResourceType::Unknown,
+            RoutingCapability::Network,
+            "eval",
         ));
     }
     if path == "/v1/assistants" {
@@ -509,6 +563,32 @@ fn classify_openai_spec(method: &Method, path: &str) -> Result<OpenAiRouteSpec, 
             ResourceType::Container,
             RoutingCapability::Network,
             "container",
+        ));
+    }
+    if path == "/v1/videos" {
+        if method == Method::POST {
+            return Ok(create_api(
+                "openai/management/videos",
+                "openai.videos",
+                ResourceType::Video,
+                RoutingCapability::Video,
+                "video",
+            ));
+        }
+        return Ok(api(
+            "openai/management/videos",
+            "openai.videos",
+            ResourceType::Video,
+            RoutingCapability::Video,
+        ));
+    }
+    if path.starts_with("/v1/videos/") {
+        return Ok(lookup_api(
+            "openai/management/videos",
+            "openai.videos",
+            ResourceType::Video,
+            RoutingCapability::Video,
+            "video",
         ));
     }
     if path == "/v1/realtime/calls"
@@ -714,6 +794,24 @@ fn parent_composite_api(
         model_requirement: AiRouteModelRequirement::Optional,
         meter: Some(meter),
         billing_mode: ClassifiedBillingMode::Composite,
+        ..api(route_key, api_code, resource_type, capability)
+    }
+}
+
+fn parent_optional_api(
+    route_key: &'static str,
+    api_code: &'static str,
+    resource_type: ResourceType,
+    capability: RoutingCapability,
+    sticky_object_type: &'static str,
+) -> OpenAiRouteSpec {
+    OpenAiRouteSpec {
+        strategy: AiRouteStrategy::ParentSticky,
+        sticky_object_type: Some(sticky_object_type),
+        sticky_scope: ClassifiedStickyScope::ParentLookup,
+        model_requirement: AiRouteModelRequirement::Optional,
+        meter: Some(BillingMeter::ApiRequest),
+        billing_mode: ClassifiedBillingMode::ApiRequest,
         ..api(route_key, api_code, resource_type, capability)
     }
 }

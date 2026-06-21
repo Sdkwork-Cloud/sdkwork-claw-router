@@ -20,8 +20,8 @@ async fn sqlite_admin_channel_store_encrypts_channel_api_key_material() {
     let item = store
         .create_channel(CreateAdminChannelCommand {
             subject: AdminChannelSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 operator_id: 30,
                 operator_type: 1,
             },
@@ -116,8 +116,8 @@ async fn sqlite_admin_channel_store_encrypts_channel_api_key_material() {
     let listed = store
         .list_channels(ListAdminChannelsQuery {
             subject: AdminChannelSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 operator_id: 30,
                 operator_type: 1,
             },
@@ -180,8 +180,8 @@ async fn sqlite_admin_channel_store_encrypts_channel_api_key_material() {
             r#"
             SELECT config_version, changed_object_type, changed_object_id
             FROM ai_config_version
-            WHERE tenant_id = 10
-              AND organization_id = 20
+            WHERE tenant_id = 100001
+              AND organization_id = 0
               AND config_scope = 'routing'
             "#,
         )
@@ -196,8 +196,8 @@ async fn sqlite_admin_channel_store_encrypts_channel_api_key_material() {
         r#"
         SELECT config_version, event_status, event_payload ->> 'action' AS event_action
         FROM ai_config_change_event
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND config_scope = 'routing'
           AND changed_object_type = 'ai_channel'
           AND changed_object_id = ?
@@ -235,8 +235,8 @@ async fn sqlite_admin_channel_store_does_not_bind_models_to_accounts() {
     let listed = store
         .list_channels(ListAdminChannelsQuery {
             subject: AdminChannelSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 operator_id: 30,
                 operator_type: 1,
             },
@@ -311,8 +311,8 @@ async fn sqlite_admin_channel_store_updates_modality_resources_without_clearing_
     let created = store
         .create_channel(CreateAdminChannelCommand {
             subject: AdminChannelSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 operator_id: 30,
                 operator_type: 1,
             },
@@ -359,8 +359,8 @@ async fn sqlite_admin_channel_store_updates_modality_resources_without_clearing_
     let updated = store
         .update_channel(UpdateAdminChannelCommand {
             subject: AdminChannelSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 operator_id: 30,
                 operator_type: 1,
             },
@@ -435,8 +435,8 @@ async fn sqlite_admin_channel_store_allows_duplicate_secret_hash_for_distinct_ch
         r#"
         SELECT COUNT(1)
         FROM ai_channel_credential
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND credential_hash = 'duplicate-secret-hash'
           AND deleted_at IS NULL
         "#,
@@ -467,8 +467,8 @@ async fn sqlite_admin_channel_store_soft_delete_cascades_channel_relationships()
     let deleted = store
         .delete_channel(DeleteAdminChannelCommand {
             subject: AdminChannelSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 operator_id: 30,
                 operator_type: 1,
             },
@@ -487,15 +487,15 @@ async fn sqlite_admin_channel_store_soft_delete_cascades_channel_relationships()
         SELECT (
             SELECT COUNT(1)
             FROM ai_channel_credential
-            WHERE tenant_id = 10
-              AND organization_id = 20
+            WHERE tenant_id = 100001
+              AND organization_id = 0
               AND channel_id = ?
               AND deleted_at IS NULL
         ) + (
             SELECT COUNT(1)
             FROM ai_channel_resource
-            WHERE tenant_id = 10
-              AND organization_id = 20
+            WHERE tenant_id = 100001
+              AND organization_id = 0
               AND channel_id = ?
               AND deleted_at IS NULL
         )
@@ -515,8 +515,8 @@ async fn sqlite_admin_channel_store_soft_delete_cascades_channel_relationships()
 fn duplicate_secret_channel_command(suffix: &str, requested_at: &str) -> CreateAdminChannelCommand {
     CreateAdminChannelCommand {
         subject: AdminChannelSubject {
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             operator_id: 30,
             operator_type: 1,
         },
@@ -562,7 +562,7 @@ async fn seed_channel_capability_prerequisites(pool: &sqlx::SqlitePool) {
         INSERT INTO ai_model_vendor
             (id, uuid, tenant_id, organization_id, vendor_code, display_name, status)
         VALUES
-            (990200, 'vendor-openai-channel-test', 10, 20, 'openai', 'OpenAI', 1)
+            (990200, 'vendor-openai-channel-test', 100001, 0, 'openai', 'OpenAI', 1)
         ON CONFLICT(tenant_id, organization_id, vendor_code) DO UPDATE SET
             display_name = excluded.display_name,
             status = excluded.status,
@@ -572,7 +572,7 @@ async fn seed_channel_capability_prerequisites(pool: &sqlx::SqlitePool) {
         INSERT INTO ai_resource
             (id, uuid, tenant_id, organization_id, status, resource_code, resource_type, display_name, vendor_code)
         VALUES
-            (990201, 'resource-vendor-openai-channel-test', 10, 20, 1, 'vendor.openai', 'vendor', 'OpenAI', 'openai')
+            (990201, 'resource-vendor-openai-channel-test', 100001, 0, 1, 'vendor.openai', 'vendor', 'OpenAI', 'openai')
         ON CONFLICT(tenant_id, organization_id, resource_code) DO UPDATE SET
             resource_type = excluded.resource_type,
             display_name = excluded.display_name,
@@ -584,7 +584,7 @@ async fn seed_channel_capability_prerequisites(pool: &sqlx::SqlitePool) {
         INSERT INTO ai_resource
             (id, uuid, tenant_id, organization_id, status, resource_code, resource_type, display_name, modality_code)
         VALUES
-            (990202, 'resource-modality-llm-channel-test', 10, 20, 1, 'modality.llm', 'modality', 'LLM', 'llm')
+            (990202, 'resource-modality-llm-channel-test', 100001, 0, 1, 'modality.llm', 'modality', 'LLM', 'llm')
         ON CONFLICT(tenant_id, organization_id, resource_code) DO UPDATE SET
             resource_type = excluded.resource_type,
             display_name = excluded.display_name,
@@ -596,7 +596,7 @@ async fn seed_channel_capability_prerequisites(pool: &sqlx::SqlitePool) {
         INSERT INTO ai_resource
             (id, uuid, tenant_id, organization_id, status, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, catalog_key, model, provider_native_model)
         VALUES
-            (990203, 'resource-model-openai-gpt-4o-mini-channel-test', 10, 20, 1, 'model.openai.gpt-4o-mini.chat', 'model_api', 'GPT-4o mini Chat', 'openai', 'chat', 'openai.chat_completions', 'openai/gpt-4o-mini', 'gpt-4o-mini', 'gpt-4o-mini')
+            (990203, 'resource-model-openai-gpt-4o-mini-channel-test', 100001, 0, 1, 'model.openai.gpt-4o-mini.chat', 'model_api', 'GPT-4o mini Chat', 'openai', 'chat', 'openai.chat_completions', 'openai/gpt-4o-mini', 'gpt-4o-mini', 'gpt-4o-mini')
         ON CONFLICT(tenant_id, organization_id, resource_code) DO UPDATE SET
             resource_type = excluded.resource_type,
             display_name = excluded.display_name,
@@ -613,7 +613,7 @@ async fn seed_channel_capability_prerequisites(pool: &sqlx::SqlitePool) {
         INSERT INTO ai_resource
             (id, uuid, tenant_id, organization_id, status, resource_code, resource_type, display_name, api_code)
         VALUES
-            (990204, 'resource-api-openai-chat-channel-test', 10, 20, 1, 'api.openai.chat_completions', 'api_endpoint', 'OpenAI Chat Completions', 'openai.chat_completions')
+            (990204, 'resource-api-openai-chat-channel-test', 100001, 0, 1, 'api.openai.chat_completions', 'api_endpoint', 'OpenAI Chat Completions', 'openai.chat_completions')
         ON CONFLICT(tenant_id, organization_id, resource_code) DO UPDATE SET
             resource_type = excluded.resource_type,
             display_name = excluded.display_name,
@@ -625,7 +625,7 @@ async fn seed_channel_capability_prerequisites(pool: &sqlx::SqlitePool) {
         INSERT INTO ai_resource
             (id, uuid, tenant_id, organization_id, status, resource_code, resource_type, display_name, modality_code)
         VALUES
-            (990205, 'resource-modality-image-channel-test', 10, 20, 1, 'modality.image', 'modality', 'Image', 'image')
+            (990205, 'resource-modality-image-channel-test', 100001, 0, 1, 'modality.image', 'modality', 'Image', 'image')
         ON CONFLICT(tenant_id, organization_id, resource_code) DO UPDATE SET
             resource_type = excluded.resource_type,
             display_name = excluded.display_name,
@@ -644,7 +644,7 @@ async fn seed_bundle_resource_group(pool: &sqlx::SqlitePool, resource_code: &str
         INSERT INTO ai_resource
             (id, uuid, tenant_id, organization_id, status, resource_code, resource_type, display_name)
         VALUES
-            (990300, 'resource-bundle-test-standard', 10, 20, 1, ?, 'bundle', 'Test Bundle')
+            (990300, 'resource-bundle-test-standard', 100001, 0, 1, ?, 'bundle', 'Test Bundle')
         "#,
     )
     .bind(resource_code)
@@ -656,7 +656,7 @@ async fn seed_bundle_resource_group(pool: &sqlx::SqlitePool, resource_code: &str
         INSERT INTO ai_resource_group
             (id, uuid, tenant_id, organization_id, status, group_code, group_name, group_type)
         VALUES
-            (990301, 'resource-group-bundle-test-standard', 10, 20, 1, ?, 'Test Bundle', 'bundle')
+            (990301, 'resource-group-bundle-test-standard', 100001, 0, 1, ?, 'Test Bundle', 'bundle')
         "#,
     )
     .bind(resource_code)

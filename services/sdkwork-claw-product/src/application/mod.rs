@@ -1,16 +1,12 @@
 mod ai_route_taxonomy;
 mod ai_routing_cache_invalidation;
 mod alipay_payment_adapter;
-mod api_key_authenticator;
 mod api_key_secret_generator;
 mod cache_runtime;
 mod category_seed;
 mod gateway_invocation_policy;
 mod gateway_invocation_rate_limit;
 mod invocation;
-mod model_catalog_query;
-mod model_ranking_refresh_worker;
-mod model_rankings_service;
 mod password_hash;
 mod password_login_rate_limit;
 mod payment_adapter;
@@ -22,7 +18,6 @@ mod payment_provider_runtime_snapshot;
 mod payment_reconciliation_runtime;
 mod payment_refund_runtime;
 mod paypal_payment_adapter;
-mod pricing_resolver;
 mod provider_route_selector;
 mod runtime_stream_bus;
 mod stripe_payment_adapter;
@@ -43,9 +38,14 @@ pub use alipay_payment_adapter::{
     AlipayHyperOpenApiClient, AlipayOpenApiClient, AlipayPaymentProviderAdapter,
     AlipayPaymentProviderConfig, AlipaySigner,
 };
-pub use api_key_authenticator::{
+pub use sdkwork_models_catalog_service::{
     ApiKeyAuthenticator, ApiKeySecretCodec, ApiKeySecretHasher, AuthenticateApiKeyQuery,
-    AuthenticatedApiKeyContext,
+    AuthenticatedApiKeyContext, ListModelCatalogQuery, ModelCatalogGroup, ModelCatalogItem,
+    ModelCatalogPage, ModelCatalogPriceView, ModelCatalogQueryService,
+    ModelCatalogReferencePriceView, ModelRankingRefreshWorker, ModelRankingRefreshWorkerConfig,
+    ModelRankingsService, PriceAvailability, PricingResolver, ResolveModelPriceQuery,
+    ResolvedModelPrice, ResolvedPriceSource, MODEL_RANKING_REFRESH_TRIGGER_MANUAL,
+    MODEL_RANKING_REFRESH_TRIGGER_SCHEDULED,
 };
 pub use api_key_secret_generator::{ApiKeySecretGenerator, EntityUuidGenerator};
 pub use cache_runtime::{
@@ -87,16 +87,6 @@ pub use invocation::{
     StickyRouteConstraint, StickyRouting, StickyScope, TraceTelemetryInterceptor,
     UsageExtractionInterceptor, UsageRecordingInterceptor,
 };
-pub use model_catalog_query::{
-    ListModelCatalogQuery, ModelCatalogGroup, ModelCatalogItem, ModelCatalogPage,
-    ModelCatalogPriceView, ModelCatalogQueryService, ModelCatalogReferencePriceView,
-    PriceAvailability,
-};
-pub use model_ranking_refresh_worker::{
-    ModelRankingRefreshWorker, ModelRankingRefreshWorkerConfig,
-    MODEL_RANKING_REFRESH_TRIGGER_MANUAL, MODEL_RANKING_REFRESH_TRIGGER_SCHEDULED,
-};
-pub use model_rankings_service::ModelRankingsService;
 pub use password_hash::{PasswordHasher, Pbkdf2Sha256PasswordHasher};
 pub use password_login_rate_limit::PasswordLoginRateLimiter;
 pub use payment_adapter::{
@@ -153,9 +143,6 @@ pub use payment_refund_runtime::{
 pub use paypal_payment_adapter::{
     PayPalHyperPaymentHttpClient, PayPalPaymentHttpClient, PayPalPaymentProviderAdapter,
     PayPalPaymentProviderConfig,
-};
-pub use pricing_resolver::{
-    PricingResolver, ResolveModelPriceQuery, ResolvedModelPrice, ResolvedPriceSource,
 };
 pub use provider_route_selector::{
     ProviderRouteSelectionError, ProviderRouteSelectionErrorKind, ProviderRouteSelector,

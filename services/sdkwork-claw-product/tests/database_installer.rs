@@ -613,7 +613,7 @@ async fn sqlite_installer_bootstraps_initial_admin_login_once() {
          AND c.user_id = u.id
          AND c.credential_type = 'password'
          AND c.status = 'active'
-        WHERE u.tenant_id = '10'
+        WHERE u.tenant_id = '100001'
           AND u.username = 'admin'
         "#,
     )
@@ -670,8 +670,8 @@ async fn sqlite_installed_admin_user_store_lists_iam_bootstrap_admin_without_plu
     let users = store
         .list_users(ListAdminUsersQuery {
             subject: AdminUserSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 operator_id: 1,
                 operator_type: 1,
             },
@@ -722,8 +722,8 @@ async fn sqlite_admin_user_store_lists_registered_tenant_users_outside_current_o
     let users = store
         .list_users(ListAdminUsersQuery {
             subject: AdminUserSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 operator_id: 1,
                 operator_type: 1,
             },
@@ -745,8 +745,8 @@ async fn sqlite_admin_user_store_lists_registered_tenant_users_outside_current_o
     let matched_users = store
         .list_users(ListAdminUsersQuery {
             subject: AdminUserSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 operator_id: 1,
                 operator_type: 1,
             },
@@ -765,8 +765,8 @@ async fn sqlite_admin_user_store_creates_and_updates_iam_users_without_plus_user
     let pool = repair_sqlite_pool().await;
     let store = SqliteAdminUserStore::new(pool.clone());
     let subject = AdminUserSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         operator_id: 1,
         operator_type: 1,
     };
@@ -803,8 +803,8 @@ async fn sqlite_admin_user_store_creates_and_updates_iam_users_without_plus_user
           ON m.tenant_id = u.tenant_id
          AND m.user_id = u.id
         WHERE u.id = ?
-          AND u.tenant_id = '10'
-          AND m.organization_id = '20'
+          AND u.tenant_id = '100001'
+          AND m.organization_id = '0'
           AND m.membership_kind = 'standard'
         "#,
     )
@@ -838,8 +838,8 @@ async fn sqlite_admin_user_store_creates_and_updates_iam_users_without_plus_user
         r#"
         SELECT membership_kind
         FROM iam_organization_membership
-        WHERE tenant_id = '10'
-          AND organization_id = '20'
+        WHERE tenant_id = '100001'
+          AND organization_id = '0'
           AND user_id = ?
         "#,
     )
@@ -855,8 +855,8 @@ async fn sqlite_admin_user_store_creates_default_channel_group_when_missing() {
     let pool = repair_sqlite_pool().await;
     let store = SqliteAdminUserStore::new(pool.clone());
     let subject = AdminUserSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         operator_id: 1,
         operator_type: 1,
     };
@@ -899,8 +899,8 @@ async fn sqlite_admin_user_store_creates_default_channel_group_when_missing() {
             printf('%.6f', rate_multiplier) AS rate_multiplier,
             printf('%.6f', official_price_multiplier) AS official_price_multiplier
         FROM ai_channel_group
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND group_code = 'default'
           AND status = 1
           AND deleted_at IS NULL
@@ -942,7 +942,7 @@ async fn sqlite_installer_repairs_incomplete_bootstrap_admin_login() {
         r#"
         UPDATE iam_user_identity
         SET id = 'identity-1-email'
-        WHERE tenant_id = '10'
+        WHERE tenant_id = '100001'
           AND user_id = '1'
           AND provider = 'email'
           AND subject = 'admin@sdkwork.com'
@@ -954,7 +954,7 @@ async fn sqlite_installer_repairs_incomplete_bootstrap_admin_login() {
     sqlx::query(
         r#"
         DELETE FROM iam_credential
-        WHERE tenant_id = '10'
+        WHERE tenant_id = '100001'
           AND user_id = '1'
           AND credential_type = 'password'
         "#,
@@ -965,9 +965,9 @@ async fn sqlite_installer_repairs_incomplete_bootstrap_admin_login() {
     sqlx::query(
         r#"
         DELETE FROM iam_organization_membership
-        WHERE tenant_id = '10'
+        WHERE tenant_id = '100001'
           AND user_id = '1'
-          AND organization_id = '20'
+          AND organization_id = '0'
         "#,
     )
     .execute(&pool)
@@ -995,7 +995,7 @@ async fn sqlite_installer_repairs_incomplete_bootstrap_admin_login() {
         r#"
         SELECT COUNT(1)
         FROM iam_user
-        WHERE tenant_id = '10'
+        WHERE tenant_id = '100001'
           AND username = 'admin'
         "#,
     )
@@ -1022,10 +1022,10 @@ async fn sqlite_installer_repairs_incomplete_bootstrap_admin_login() {
          AND c.user_id = u.id
          AND c.credential_type = 'password'
          AND c.status = 'active'
-        WHERE u.tenant_id = '10'
+        WHERE u.tenant_id = '100001'
           AND u.id = '1'
           AND u.username = 'admin'
-          AND m.organization_id = '20'
+          AND m.organization_id = '0'
         "#,
     )
     .fetch_one(&pool)
@@ -1054,7 +1054,7 @@ async fn sqlite_installer_repairs_bootstrap_admin_membership_without_resetting_p
         r#"
         SELECT credential_hash
         FROM iam_credential
-        WHERE tenant_id = '10'
+        WHERE tenant_id = '100001'
           AND user_id = '1'
           AND credential_type = 'password'
           AND status = 'active'
@@ -1068,9 +1068,9 @@ async fn sqlite_installer_repairs_bootstrap_admin_membership_without_resetting_p
         UPDATE iam_organization_membership
         SET id = 'member-1',
             membership_kind = 'owner'
-        WHERE tenant_id = '10'
+        WHERE tenant_id = '100001'
           AND user_id = '1'
-          AND organization_id = '20'
+          AND organization_id = '0'
         "#,
     )
     .execute(&pool)
@@ -1092,7 +1092,7 @@ async fn sqlite_installer_repairs_bootstrap_admin_membership_without_resetting_p
         r#"
         SELECT credential_hash
         FROM iam_credential
-        WHERE tenant_id = '10'
+        WHERE tenant_id = '100001'
           AND user_id = '1'
           AND credential_type = 'password'
           AND status = 'active'
@@ -1109,9 +1109,9 @@ async fn sqlite_installer_repairs_bootstrap_admin_membership_without_resetting_p
         r#"
         SELECT COUNT(1)
         FROM iam_organization_membership
-        WHERE tenant_id = '10'
+        WHERE tenant_id = '100001'
           AND user_id = '1'
-          AND organization_id = '20'
+          AND organization_id = '0'
           AND membership_kind = 'admin'
           AND status = 'active'
         "#,
@@ -1161,7 +1161,7 @@ async fn sqlite_installer_reset_admin_password_rotates_existing_password() {
         r#"
         SELECT COUNT(1)
         FROM iam_credential
-        WHERE tenant_id = '10'
+        WHERE tenant_id = '100001'
           AND user_id = '1'
           AND credential_type = 'password'
           AND status = 'active'
@@ -1179,7 +1179,7 @@ async fn sqlite_installer_reset_admin_password_rotates_existing_password() {
         r#"
         SELECT COUNT(1)
         FROM iam_password_history
-        WHERE tenant_id = '10'
+        WHERE tenant_id = '100001'
           AND user_id = '1'
         "#,
     )
@@ -1252,7 +1252,7 @@ async fn sqlite_installer_bootstraps_admin_without_touching_existing_plus_user_t
         INSERT INTO plus_user
             (id, uuid, tenant_id, organization_id, nickname, username, email, phone, avatar, password, salt, status, created_at, updated_at)
         VALUES
-            (99, 'legacy-user-99', 10, 20, 'Legacy User', 'legacy-user', 'legacy@example.com', '', '', '', '', 1, '2026-05-17T00:00:00Z', '2026-05-17T00:00:00Z')
+            (99, 'legacy-user-99', 100001, 0, 'Legacy User', 'legacy-user', 'legacy@example.com', '', '', '', '', 1, '2026-05-17T00:00:00Z', '2026-05-17T00:00:00Z')
         "#,
     )
     .execute(&pool)
@@ -1279,8 +1279,8 @@ async fn sqlite_installer_bootstraps_admin_without_touching_existing_plus_user_t
           ON m.tenant_id = u.tenant_id
          AND m.user_id = u.id
         WHERE u.id = '1'
-          AND u.tenant_id = '10'
-          AND m.organization_id = '20'
+          AND u.tenant_id = '100001'
+          AND m.organization_id = '0'
         "#,
     )
     .fetch_one(&pool)
@@ -2860,9 +2860,9 @@ async fn sqlite_installer_refresh_catalog_bootstraps_admin_on_empty_full_install
          AND c.user_id = u.id
          AND c.credential_type = 'password'
          AND c.status = 'active'
-        WHERE u.tenant_id = '10'
+        WHERE u.tenant_id = '100001'
           AND u.username = 'admin'
-          AND m.organization_id = '20'
+          AND m.organization_id = '0'
         "#,
     )
     .fetch_one(&pool)
@@ -3434,7 +3434,7 @@ async fn active_admin_password_hash(pool: &SqlitePool) -> String {
          AND c.user_id = u.id
          AND c.credential_type = 'password'
          AND c.status = 'active'
-        WHERE u.tenant_id = '10'
+        WHERE u.tenant_id = '100001'
           AND u.username = 'admin'
         ORDER BY c.updated_at DESC, c.id DESC
         LIMIT 1
@@ -4110,8 +4110,8 @@ async fn assert_commerce_experience_seed_rows(pool: &SqlitePool) {
 
     let store = SqliteAdminMarketingStore::new(pool.clone());
     let subject = AdminMarketingSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         operator_id: 1,
         operator_type: 1,
     };
@@ -4293,18 +4293,18 @@ async fn assert_forum_tutorial_seed_rows(pool: &SqlitePool) {
     .await
     .unwrap();
     assert_eq!(
-        "Claw Router 快速入门：从安装到第一次模型调用",
+        "Claw Router 快速入门：从安装到第一次模型调�?,
         tutorial.get::<String, _>("title")
     );
     assert!(
-        tutorial.get::<String, _>("summary").contains("安装完成后"),
+        tutorial.get::<String, _>("summary").contains("安装完成�?),
         "quick-start tutorial summary must explain post-install onboarding"
     );
     assert_eq!(1004, tutorial.get::<i64, _>("category_id"));
     assert!(tutorial.get::<bool, _>("is_top"));
     assert!(tutorial.get::<bool, _>("is_recommended"));
     assert!(
-        tutorial.get::<String, _>("tags").contains("快速入门"),
+        tutorial.get::<String, _>("tags").contains("快速入�?),
         "tutorial tags must be written as JSON text for SQLite"
     );
 
@@ -4392,13 +4392,13 @@ async fn assert_forum_tutorial_seed_rows(pool: &SqlitePool) {
     assert!(
         posts
             .iter()
-            .any(|post| post.title.contains("第一次模型调用")),
+            .any(|post| post.title.contains("第一次模型调�?)),
         "default tutorial posts must be visible through the forum read store"
     );
 
     let quick_start_post = posts
         .iter()
-        .find(|post| post.title.contains("第一次模型调用"))
+        .find(|post| post.title.contains("第一次模型调�?))
         .expect("quick-start tutorial must be returned by the forum read store");
     let quick_start_detail = store
         .load_feed_detail(quick_start_post.id, None)
@@ -4406,7 +4406,7 @@ async fn assert_forum_tutorial_seed_rows(pool: &SqlitePool) {
         .unwrap()
         .expect("quick-start tutorial detail must be readable after install");
     assert!(
-        quick_start_detail.content.contains("第一步")
+        quick_start_detail.content.contains("第一�?)
             && quick_start_detail.content.contains("OpenAI 兼容接口"),
         "default tutorial detail must expose the full onboarding article body"
     );

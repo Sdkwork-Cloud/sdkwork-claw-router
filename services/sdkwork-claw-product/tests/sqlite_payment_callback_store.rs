@@ -645,7 +645,7 @@ async fn seed_pending_recharge_payment(
         INSERT INTO commerce_order
             (id, tenant_id, organization_id, owner_user_id, order_no, status, subject, currency_code, request_no, idempotency_key, created_at, paid_at, cancelled_at, expired_at, updated_at)
         VALUES
-            (?, '10', '20', '30', ?, 'pending_payment', 'points_recharge', 'CNY', ?, ?, '2026-04-29 00:00:00', NULL, NULL, NULL, '2026-04-29 00:00:00')
+            (?, '100001', '0', '30', ?, 'pending_payment', 'points_recharge', 'CNY', ?, ?, '2026-04-29 00:00:00', NULL, NULL, NULL, '2026-04-29 00:00:00')
         "#,
     )
     .bind(&order_id)
@@ -660,7 +660,7 @@ async fn seed_pending_recharge_payment(
         INSERT INTO commerce_payment_intent
             (id, tenant_id, organization_id, owner_user_id, order_id, provider, amount, currency_code, status, request_no, idempotency_key, created_at, updated_at)
         VALUES
-            (?, '10', '20', '30', ?, 'stripe', ?, 'CNY', 'pending', ?, ?, '2026-04-29 00:00:00', '2026-04-29 00:00:00')
+            (?, '100001', '0', '30', ?, 'stripe', ?, 'CNY', 'pending', ?, ?, '2026-04-29 00:00:00', '2026-04-29 00:00:00')
         "#,
     )
     .bind(payment_intent_id)
@@ -676,7 +676,7 @@ async fn seed_pending_recharge_payment(
         INSERT INTO commerce_payment_attempt
             (id, tenant_id, organization_id, owner_user_id, payment_intent_id, order_id, provider, out_trade_no, amount, currency_code, status, callback_payload, created_at, paid_at, updated_at)
         VALUES
-            (?, '10', '20', '30', ?, ?, 'stripe', ?, ?, 'CNY', 'pending', ?, '2026-04-29 00:00:00', NULL, '2026-04-29 00:00:00')
+            (?, '100001', '0', '30', ?, ?, 'stripe', ?, ?, 'CNY', 'pending', ?, '2026-04-29 00:00:00', NULL, '2026-04-29 00:00:00')
         "#,
     )
     .bind(format!("attempt-{out_trade_no}"))

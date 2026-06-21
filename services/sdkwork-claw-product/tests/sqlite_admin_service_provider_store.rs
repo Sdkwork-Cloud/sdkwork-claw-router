@@ -269,8 +269,8 @@ async fn sqlite_admin_service_provider_store_creates_downstream_chain_plan_and_a
         r#"
         SELECT COUNT(*)
         FROM integration_service_provider_closure
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND descendant_provider_id = ?
           AND ancestor_provider_id IN (1, ?)
         "#,
@@ -493,8 +493,8 @@ async fn sqlite_admin_service_provider_store_filters_finance_lists_by_chain_dime
 
 fn subject() -> AdminServiceProviderSubject {
     AdminServiceProviderSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         operator_id: 30,
         operator_type: 1,
     }
@@ -816,9 +816,9 @@ async fn seed_service_provider_chain(pool: &sqlx::SqlitePool) {
         INSERT INTO integration_service_provider
             (id, uuid, tenant_id, organization_id, status, created_at, updated_at, provider_no, display_name, provider_type, default_currency, default_timezone, risk_level)
         VALUES
-            (1, 'sp-root-uuid', 10, 20, 1, '2026-05-01 00:00:00', '2026-05-01 00:00:00', 'sp-root', 'Root Provider', 'reseller', 'USD', 'UTC', 1),
-            (2, 'sp-child-uuid', 10, 20, 1, '2026-05-01 00:00:00', '2026-05-01 00:00:00', 'sp-child', 'Child Provider', 'reseller', 'USD', 'UTC', 1),
-            (3, 'sp-outsider-uuid', 10, 20, 1, '2026-05-01 00:00:00', '2026-05-01 00:00:00', 'sp-outsider', 'Outsider Provider', 'reseller', 'USD', 'UTC', 1)
+            (1, 'sp-root-uuid', 100001, 0, 1, '2026-05-01 00:00:00', '2026-05-01 00:00:00', 'sp-root', 'Root Provider', 'reseller', 'USD', 'UTC', 1),
+            (2, 'sp-child-uuid', 100001, 0, 1, '2026-05-01 00:00:00', '2026-05-01 00:00:00', 'sp-child', 'Child Provider', 'reseller', 'USD', 'UTC', 1),
+            (3, 'sp-outsider-uuid', 100001, 0, 1, '2026-05-01 00:00:00', '2026-05-01 00:00:00', 'sp-outsider', 'Outsider Provider', 'reseller', 'USD', 'UTC', 1)
         "#,
     )
     .execute(pool)
@@ -829,7 +829,7 @@ async fn seed_service_provider_chain(pool: &sqlx::SqlitePool) {
         INSERT INTO integration_service_provider_member
             (id, uuid, tenant_id, organization_id, status, service_provider_id, member_user_id, role_code)
         VALUES
-            (100, 'member-root', 10, 20, 1, 1, 30, 'owner')
+            (100, 'member-root', 100001, 0, 1, 1, 30, 'owner')
         "#,
     )
     .execute(pool)
@@ -840,9 +840,9 @@ async fn seed_service_provider_chain(pool: &sqlx::SqlitePool) {
         INSERT INTO integration_service_provider_closure
             (id, uuid, tenant_id, organization_id, status, ancestor_provider_id, descendant_provider_id, depth, path, direct_edge_id)
         VALUES
-            (200, 'closure-root', 10, 20, 1, 1, 1, 0, '1', NULL),
-            (201, 'closure-child', 10, 20, 1, 1, 2, 1, '1/2', 500),
-            (202, 'closure-outsider', 10, 20, 1, 3, 3, 0, '3', NULL)
+            (200, 'closure-root', 100001, 0, 1, 1, 1, 0, '1', NULL),
+            (201, 'closure-child', 100001, 0, 1, 1, 2, 1, '1/2', 500),
+            (202, 'closure-outsider', 100001, 0, 1, 3, 3, 0, '3', NULL)
         "#,
     )
     .execute(pool)
@@ -853,7 +853,7 @@ async fn seed_service_provider_chain(pool: &sqlx::SqlitePool) {
         INSERT INTO integration_service_provider_edge
             (id, uuid, tenant_id, organization_id, status, edge_no, seller_provider_id, buyer_provider_id, edge_type, settlement_mode)
         VALUES
-            (500, 'edge-root-child', 10, 20, 1, 'edge-root-child', 1, 2, 'resale', 'prepaid')
+            (500, 'edge-root-child', 100001, 0, 1, 'edge-root-child', 1, 2, 'resale', 'prepaid')
         "#,
     )
     .execute(pool)
@@ -864,9 +864,9 @@ async fn seed_service_provider_chain(pool: &sqlx::SqlitePool) {
         INSERT INTO analytics_service_provider_daily
             (id, uuid, tenant_id, organization_id, status, provider_id, ancestor_provider_id, report_date, currency, request_count, income_amount, expense_amount, margin_amount)
         VALUES
-            (300, 'daily-root', 10, 20, 1, 1, 1, '2026-05-23', 'USD', 1200, '80.00', '30.00', '50.00'),
-            (301, 'daily-child', 10, 20, 1, 2, 1, '2026-05-23', 'USD', 640, '42.00', '18.00', '24.00'),
-            (302, 'daily-outsider', 10, 20, 1, 3, 3, '2026-05-23', 'USD', 999, '999.00', '1.00', '998.00')
+            (300, 'daily-root', 100001, 0, 1, 1, 1, '2026-05-23', 'USD', 1200, '80.00', '30.00', '50.00'),
+            (301, 'daily-child', 100001, 0, 1, 2, 1, '2026-05-23', 'USD', 640, '42.00', '18.00', '24.00'),
+            (302, 'daily-outsider', 100001, 0, 1, 3, 3, '2026-05-23', 'USD', 999, '999.00', '1.00', '998.00')
         "#,
     )
     .execute(pool)
@@ -877,7 +877,7 @@ async fn seed_service_provider_chain(pool: &sqlx::SqlitePool) {
         INSERT INTO analytics_service_provider_edge_daily
             (id, uuid, tenant_id, organization_id, status, edge_id, seller_provider_id, buyer_provider_id, report_date, currency, request_count, income_amount, expense_amount, margin_amount)
         VALUES
-            (400, 'edge-daily-child', 10, 20, 1, 500, 1, 2, '2026-05-23', 'USD', 640, '42.00', '18.00', '24.00')
+            (400, 'edge-daily-child', 100001, 0, 1, 500, 1, 2, '2026-05-23', 'USD', 640, '42.00', '18.00', '24.00')
         "#,
     )
     .execute(pool)
@@ -888,7 +888,7 @@ async fn seed_service_provider_chain(pool: &sqlx::SqlitePool) {
         INSERT INTO integration_service_provider_price_plan
             (id, uuid, tenant_id, organization_id, status, seller_provider_id, buyer_provider_id, edge_id, plan_code, plan_name, currency)
         VALUES
-            (8001, 'plan-root-child', 10, 20, 1, 1, 2, 500, 'plan-root-child', 'Root Child Plan', 'USD')
+            (8001, 'plan-root-child', 100001, 0, 1, 1, 2, 500, 'plan-root-child', 'Root Child Plan', 'USD')
         "#,
     )
     .execute(pool)
@@ -899,7 +899,7 @@ async fn seed_service_provider_chain(pool: &sqlx::SqlitePool) {
         INSERT INTO integration_service_provider_price_rule
             (id, uuid, tenant_id, organization_id, status, seller_provider_id, buyer_provider_id, edge_id, price_plan_id, catalog_key, model, billing_meter_code, token_kind, unit_price, unit_size, minimum_charge, priority)
         VALUES
-            (9001, 'rule-input-token', 10, 20, 1, 1, 2, 500, 8001, 'openai:gpt-4.1', 'gpt-4.1', 'llm_input_token', 'input', '0.0125', '1', '0', 10)
+            (9001, 'rule-input-token', 100001, 0, 1, 1, 2, 500, 8001, 'openai:gpt-4.1', 'gpt-4.1', 'llm_input_token', 'input', '0.0125', '1', '0', 10)
         "#,
     )
     .execute(pool)
@@ -910,8 +910,8 @@ async fn seed_service_provider_chain(pool: &sqlx::SqlitePool) {
         INSERT INTO ai_usage_service_provider_edge
             (id, uuid, tenant_id, organization_id, status, usage_fact_id, edge_id, seller_provider_id, buyer_provider_id, billing_meter_code, token_kind, billable_quantity, unit_price, charge_amount, currency)
         VALUES
-            (9101, 'usage-child-uuid', 10, 20, 1, 'usage-child', 500, 1, 2, 'llm_input_token', 'input', '100', '0.0125', '1.25', 'USD'),
-            (9102, 'usage-outsider-uuid', 10, 20, 1, 'usage-outsider', 501, 3, 3, 'llm_input_token', 'input', '100', '0.9999', '99.99', 'USD')
+            (9101, 'usage-child-uuid', 100001, 0, 1, 'usage-child', 500, 1, 2, 'llm_input_token', 'input', '100', '0.0125', '1.25', 'USD'),
+            (9102, 'usage-outsider-uuid', 100001, 0, 1, 'usage-outsider', 501, 3, 3, 'llm_input_token', 'input', '100', '0.9999', '99.99', 'USD')
         "#,
     )
     .execute(pool)
@@ -922,8 +922,8 @@ async fn seed_service_provider_chain(pool: &sqlx::SqlitePool) {
         INSERT INTO commerce_usage_service_provider_statement
             (id, uuid, tenant_id, organization_id, status, statement_no, seller_provider_id, buyer_provider_id, period, total_requests, total_tokens, receivable_amount, payable_amount, currency, statement_status, payment_status)
         VALUES
-            (9201, 'stmt-child-uuid', 10, 20, 1, 'stmt-child', 1, 2, '2026-05', 640, 1200, '42.00', '18.00', 'USD', 'issued', 'unpaid'),
-            (9202, 'stmt-outsider-uuid', 10, 20, 1, 'stmt-outsider', 3, 3, '2026-05', 999, 999, '999.00', '1.00', 'USD', 'issued', 'unpaid')
+            (9201, 'stmt-child-uuid', 100001, 0, 1, 'stmt-child', 1, 2, '2026-05', 640, 1200, '42.00', '18.00', 'USD', 'issued', 'unpaid'),
+            (9202, 'stmt-outsider-uuid', 100001, 0, 1, 'stmt-outsider', 3, 3, '2026-05', 999, 999, '999.00', '1.00', 'USD', 'issued', 'unpaid')
         "#,
     )
     .execute(pool)
@@ -934,8 +934,8 @@ async fn seed_service_provider_chain(pool: &sqlx::SqlitePool) {
         INSERT INTO commerce_usage_service_provider_adjustment
             (id, uuid, tenant_id, organization_id, status, adjustment_no, usage_edge_id, statement_id, seller_provider_id, buyer_provider_id, adjustment_type, amount, currency, reason_code, approval_status)
         VALUES
-            (9301, 'adj-child-uuid', 10, 20, 1, 'adj-child', 9101, 9201, 1, 2, 'credit', '1.00', 'USD', 'manual', 'approved'),
-            (9302, 'adj-outsider-uuid', 10, 20, 1, 'adj-outsider', 9102, 9202, 3, 3, 'credit', '99.00', 'USD', 'manual', 'approved')
+            (9301, 'adj-child-uuid', 100001, 0, 1, 'adj-child', 9101, 9201, 1, 2, 'credit', '1.00', 'USD', 'manual', 'approved'),
+            (9302, 'adj-outsider-uuid', 100001, 0, 1, 'adj-outsider', 9102, 9202, 3, 3, 'credit', '99.00', 'USD', 'manual', 'approved')
         "#,
     )
     .execute(pool)
@@ -946,9 +946,9 @@ async fn seed_service_provider_chain(pool: &sqlx::SqlitePool) {
         INSERT INTO commerce_service_provider_exposure_snapshot
             (id, uuid, tenant_id, organization_id, status, service_provider_id, balance_amount, frozen_amount, credit_limit_amount, used_credit_amount, exposure_amount, overdue_amount, currency, risk_status)
         VALUES
-            (10001, 'exposure-root', 10, 20, 1, 1, '200.00', '0.00', '1000.00', '100.00', '100.00', '0.00', 'USD', 'healthy'),
-            (10002, 'exposure-child', 10, 20, 1, 2, '10.00', '0.00', '100.00', '125.00', '125.00', '25.00', 'USD', 'overdue'),
-            (10003, 'exposure-outsider', 10, 20, 1, 3, '5.00', '0.00', '100.00', '140.00', '140.00', '40.00', 'USD', 'overdue')
+            (10001, 'exposure-root', 100001, 0, 1, 1, '200.00', '0.00', '1000.00', '100.00', '100.00', '0.00', 'USD', 'healthy'),
+            (10002, 'exposure-child', 100001, 0, 1, 2, '10.00', '0.00', '100.00', '125.00', '125.00', '25.00', 'USD', 'overdue'),
+            (10003, 'exposure-outsider', 100001, 0, 1, 3, '5.00', '0.00', '100.00', '140.00', '140.00', '40.00', 'USD', 'overdue')
         "#,
     )
     .execute(pool)
@@ -959,9 +959,9 @@ async fn seed_service_provider_chain(pool: &sqlx::SqlitePool) {
         INSERT INTO ops_audit_log
             (id, uuid, tenant_id, organization_id, request_id, operator_id, operator_type, action, target_type, target_id, target_uuid, created_at)
         VALUES
-            (11001, 'audit-child-price', 10, 20, 'audit-child-price', 30, 1, 'service_provider.price_rule.update', 1801, 2, 'sp-child-uuid', '2026-05-23 00:00:00'),
-            (11002, 'audit-outsider-price', 10, 20, 'audit-outsider-price', 30, 1, 'service_provider.price_rule.update', 1801, 3, 'sp-outsider-uuid', '2026-05-23 00:00:01'),
-            (11003, 'audit-unrelated-user', 10, 20, 'audit-unrelated-user', 30, 1, 'admin.user.update', 10, 2, 'user-uuid', '2026-05-23 00:00:02')
+            (11001, 'audit-child-price', 100001, 0, 'audit-child-price', 30, 1, 'service_provider.price_rule.update', 1801, 2, 'sp-child-uuid', '2026-05-23 00:00:00'),
+            (11002, 'audit-outsider-price', 100001, 0, 'audit-outsider-price', 30, 1, 'service_provider.price_rule.update', 1801, 3, 'sp-outsider-uuid', '2026-05-23 00:00:01'),
+            (11003, 'audit-unrelated-user', 100001, 0, 'audit-unrelated-user', 30, 1, 'admin.user.update', 10, 2, 'user-uuid', '2026-05-23 00:00:02')
         "#,
     )
     .execute(pool)
@@ -975,26 +975,26 @@ async fn seed_second_downstream_with_fractional_daily_amount(pool: &sqlx::Sqlite
         INSERT INTO integration_service_provider
             (id, uuid, tenant_id, organization_id, status, created_at, updated_at, provider_no, display_name, provider_type, default_currency, default_timezone, risk_level)
         VALUES
-            (4, 'sp-child-2-uuid', 10, 20, 1, '2026-05-01 00:00:00', '2026-05-01 00:00:00', 'sp-child-2', 'Child Provider 2', 'reseller', 'USD', 'UTC', 1)
+            (4, 'sp-child-2-uuid', 100001, 0, 1, '2026-05-01 00:00:00', '2026-05-01 00:00:00', 'sp-child-2', 'Child Provider 2', 'reseller', 'USD', 'UTC', 1)
         "#,
         r#"
         INSERT INTO integration_service_provider_edge
             (id, uuid, tenant_id, organization_id, status, edge_no, seller_provider_id, buyer_provider_id, edge_type, settlement_mode)
         VALUES
-            (501, 'edge-root-child-2', 10, 20, 1, 'edge-root-child-2', 1, 4, 'resale', 'prepaid')
+            (501, 'edge-root-child-2', 100001, 0, 1, 'edge-root-child-2', 1, 4, 'resale', 'prepaid')
         "#,
         r#"
         INSERT INTO integration_service_provider_closure
             (id, uuid, tenant_id, organization_id, status, ancestor_provider_id, descendant_provider_id, depth, path, direct_edge_id)
         VALUES
-            (203, 'closure-child-2-self', 10, 20, 1, 4, 4, 0, '4', NULL),
-            (204, 'closure-root-child-2', 10, 20, 1, 1, 4, 1, '1/4', 501)
+            (203, 'closure-child-2-self', 100001, 0, 1, 4, 4, 0, '4', NULL),
+            (204, 'closure-root-child-2', 100001, 0, 1, 1, 4, 1, '1/4', 501)
         "#,
         r#"
         INSERT INTO analytics_service_provider_daily
             (id, uuid, tenant_id, organization_id, status, provider_id, ancestor_provider_id, report_date, currency, request_count, income_amount, expense_amount, margin_amount)
         VALUES
-            (303, 'daily-child-2', 10, 20, 1, 4, 1, '2026-05-23', 'USD', 1, '0.000000000001', '0.000000000001', '0.000000000000')
+            (303, 'daily-child-2', 100001, 0, 1, 4, 1, '2026-05-23', 'USD', 1, '0.000000000001', '0.000000000001', '0.000000000000')
         "#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();

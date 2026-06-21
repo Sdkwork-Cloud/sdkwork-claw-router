@@ -289,7 +289,7 @@ async fn model_rankings_service_normalizes_invalid_global_organization_subject_f
             query.clone(),
             Some(sdkwork_claw_product::ports::ModelRankingsSubject {
                 tenant_id: 0,
-                organization_id: 20,
+                organization_id: 0,
                 user_id: 30,
             }),
         )
@@ -317,7 +317,7 @@ async fn model_rankings_service_normalizes_invalid_global_organization_invalidat
         .unwrap();
     service.invalidate_model_rankings_cache(ModelRankingsCacheInvalidation {
         tenant_id: 0,
-        organization_id: 20,
+        organization_id: 0,
         rank_scope: Some(" Commercial-Default ".to_owned()),
     });
     let second = service.load_model_rankings(query, None).await.unwrap();
@@ -339,7 +339,7 @@ async fn model_rankings_service_normalizes_subject_before_read_store() {
                 ..ModelRankingsQuery::default()
             },
             Some(ModelRankingsSubject {
-                tenant_id: 10,
+                tenant_id: 100001,
                 organization_id: -1,
                 user_id: -2,
             }),
@@ -351,7 +351,7 @@ async fn model_rankings_service_normalizes_subject_before_read_store() {
             ModelRankingRefreshStatusQuery::default(),
             Some(ModelRankingsSubject {
                 tenant_id: 0,
-                organization_id: 20,
+                organization_id: 0,
                 user_id: -2,
             }),
         )
@@ -365,7 +365,7 @@ async fn model_rankings_service_normalizes_subject_before_read_store() {
             },
             Some(ModelRankingsSubject {
                 tenant_id: 0,
-                organization_id: 20,
+                organization_id: 0,
                 user_id: -2,
             }),
         )
@@ -374,7 +374,7 @@ async fn model_rankings_service_normalizes_subject_before_read_store() {
 
     assert_eq!(
         vec![Some(ModelRankingsSubject {
-            tenant_id: 10,
+            tenant_id: 100001,
             organization_id: 0,
             user_id: 0,
         })],

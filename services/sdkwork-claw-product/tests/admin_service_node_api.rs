@@ -66,7 +66,7 @@ async fn admin_service_node_routes_support_full_crud() {
                 "name": " 北京中转-01 ",
                 "domain": "HTTPS://EDGE-BEIJING.EXAMPLE.COM/admin",
                 "ip": "2001:db8::1",
-                "remark": " 华北主节点 ",
+                "remark": " 华北主节�?",
                 "status": "enabled"
             })),
         ))
@@ -335,14 +335,14 @@ impl AdminServiceNodeStore for TestAdminServiceNodeStore {
             if command.name == "北京中转-01" {
                 assert_eq!("edge-beijing.example.com", command.domain);
                 assert_eq!("2001:db8::1", command.ip);
-                assert_eq!("华北主节点", command.remark);
+                assert_eq!("华北主节�?, command.remark);
                 assert_eq!(Some("enabled".to_owned()), command.status);
                 return Ok(service_node_item(
                     "node-created-cn",
                     "北京中转-01",
                     "edge-beijing.example.com",
                     "2001:db8::1",
-                    "华北主节点",
+                    "华北主节�?,
                     "enabled",
                     "unknown",
                 ));
@@ -424,8 +424,8 @@ impl AdminServiceNodeStore for TestAdminServiceNodeStore {
 
 fn subject() -> AdminServiceNodeSubject {
     AdminServiceNodeSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         operator_id: 30,
         operator_type: 1,
     }

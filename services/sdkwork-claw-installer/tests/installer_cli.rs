@@ -284,7 +284,7 @@ async fn installer_cli_resets_admin_password_without_printing_secret() {
          AND c.user_id = u.id
          AND c.credential_type = 'password'
          AND c.status = 'active'
-        WHERE u.tenant_id = '10'
+        WHERE u.tenant_id = '100001'
           AND u.username = 'admin'
         ORDER BY c.updated_at DESC, c.id DESC
         LIMIT 1

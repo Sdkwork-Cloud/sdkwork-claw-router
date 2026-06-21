@@ -78,7 +78,7 @@ RUNTIME_MODEL_IDENTITY_FIXTURE_PATHS = (
     ROOT / "services" / "sdkwork-claw-product" / "tests" / "sqlite_admin_channel_group_store.rs",
     ROOT / "services" / "sdkwork-claw-product" / "tests" / "sqlite_openai_invocation_telemetry.rs",
     ROOT / "services" / "sdkwork-claw-gateway" / "src" / "runtime.rs",
-    ROOT / "services" / "sdkwork-claw-gateway" / "src" / "route_scoped_openai_passthrough.rs",
+    ROOT / "services" / "sdkwork-claw-gateway" / "src" / "invocation_http.rs",
 )
 PORTAL_RUNTIME_MODEL_IDENTITY_FIXTURE_PATHS = (
     ROOT / "apps" / "sdkwork-clawrouter-pc" / "admin-channel-runtime.test.ts",
@@ -1863,8 +1863,8 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
         offenders = []
         for path in (
             ROOT / "services" / "sdkwork-claw-gateway" / "src" / "runtime.rs",
-            ROOT / "services" / "sdkwork-claw-gateway" / "src" / "route_scoped_openai_passthrough.rs",
-            ROOT / "services" / "sdkwork-claw-gateway" / "src" / "openai_passthrough_payload.rs",
+            ROOT / "services" / "sdkwork-claw-gateway" / "src" / "invocation_http.rs",
+            ROOT / "services" / "sdkwork-claw-gateway" / "src" / "invocation_router.rs",
         ):
             text = read_text(path)
             negative_ranges = [

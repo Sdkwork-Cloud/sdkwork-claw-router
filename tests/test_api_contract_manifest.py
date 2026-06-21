@@ -37,7 +37,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                     read_sources: [iam_gateway_api_key]
                     write_tables: [iam_gateway_api_key, ops_audit_log]
                   - route: /admin/model
-                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
+                    source: data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts
                     operation: syncModels
                     kind: sync
                     api_surface: backend
@@ -84,7 +84,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
 
             admin_operation = operations[
                 operation_key(
-                    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts",
+                    "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts",
                     "syncModels",
                     "/admin/model",
                 )
@@ -927,7 +927,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 "/backend/v3/api/integration/provider_secrets",
                 "providerSecrets.list",
             ),
-            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts#fetchModels@/admin/model": (
+            "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts#fetchModels@/admin/model": (
                 "/backend/v3/api/ai/models",
                 "models.list",
             ),

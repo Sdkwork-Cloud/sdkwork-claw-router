@@ -60,8 +60,8 @@ async fn openai_compatible_relay_uses_provider_model_and_upstream_secret() {
     let response = relay
         .create_chat_completion(ChatCompletionRelayRequest {
             api_key_id: 101,
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             user_id: 30,
             group_id: 10,
             group_code: "standard-group".to_owned(),
@@ -136,8 +136,8 @@ async fn openai_compatible_relay_uses_provider_account_header_auth_profile() {
     let response = relay
         .create_chat_completion(ChatCompletionRelayRequest {
             api_key_id: 101,
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             user_id: 30,
             group_id: 10,
             group_code: "premium-group".to_owned(),
@@ -194,8 +194,8 @@ async fn openai_compatible_relay_does_not_duplicate_openai_v1_base_path() {
     let response = relay
         .create_chat_completion(ChatCompletionRelayRequest {
             api_key_id: 101,
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             user_id: 30,
             group_id: 10,
             group_code: "standard-group".to_owned(),
@@ -250,8 +250,8 @@ async fn openai_compatible_relay_times_out_slow_upstream_responses_without_leaki
     let error = relay
         .create_chat_completion(ChatCompletionRelayRequest {
             api_key_id: 101,
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             user_id: 30,
             group_id: 10,
             group_code: "standard-group".to_owned(),
@@ -300,8 +300,8 @@ async fn openai_compatible_relay_retries_retryable_upstream_status_once_without_
     let response = relay
         .create_chat_completion(ChatCompletionRelayRequest {
             api_key_id: 101,
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             user_id: 30,
             group_id: 10,
             group_code: "standard-group".to_owned(),
@@ -367,8 +367,8 @@ async fn openai_compatible_relay_uses_request_retry_policy_for_non_stream_json_a
     let response = relay
         .create_chat_completion(ChatCompletionRelayRequest {
             api_key_id: 101,
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             user_id: 30,
             group_id: 10,
             group_code: "standard-group".to_owned(),
@@ -421,8 +421,8 @@ async fn openai_compatible_relay_uses_configured_retryable_statuses_without_defa
     let response = relay
         .create_chat_completion(ChatCompletionRelayRequest {
             api_key_id: 101,
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             user_id: 30,
             group_id: 10,
             group_code: "standard-group".to_owned(),
@@ -475,8 +475,8 @@ async fn openai_compatible_relay_does_not_retry_non_retryable_upstream_status() 
     let response = relay
         .create_chat_completion(ChatCompletionRelayRequest {
             api_key_id: 101,
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             user_id: 30,
             group_id: 10,
             group_code: "standard-group".to_owned(),
@@ -532,8 +532,8 @@ async fn openai_compatible_relay_uses_request_provider_timeout_over_runtime_defa
     let error = relay
         .create_chat_completion(ChatCompletionRelayRequest {
             api_key_id: 101,
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             user_id: 30,
             group_id: 10,
             group_code: "standard-group".to_owned(),
@@ -597,8 +597,8 @@ async fn openai_compatible_relay_times_out_slow_upstream_bodies_without_leaking_
     let error = relay
         .create_chat_completion(ChatCompletionRelayRequest {
             api_key_id: 101,
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             user_id: 30,
             group_id: 10,
             group_code: "standard-group".to_owned(),

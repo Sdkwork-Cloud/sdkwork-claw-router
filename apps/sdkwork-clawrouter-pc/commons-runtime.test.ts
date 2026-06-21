@@ -319,6 +319,8 @@ test("portal shell offsets embedded documents routes below the fixed navbar", ()
   const shellSource = readPortalSource("./packages/sdkwork-clawrouter-pc-shell/src/AppShellLayout.tsx");
   const indexCssSource = readPortalSource("./src/index.css");
 
+  assert.match(shellSource, /navbarAuthenticatedActionsStart/);
+  assert.match(shellSource, /authenticatedActionsStart=\{navbarAuthenticatedActionsStart\}/);
   assert.match(shellSource, /DOCUMENTS_HOST_OFFSET_ROUTE_PATTERN/);
   assert.match(shellSource, /product-docs\|docs\|api-reference/);
   assert.match(shellSource, /sdkwork-clawrouter-documents-host-offset flex-1/);
@@ -742,22 +744,18 @@ test("console sidebar keeps dashboard top-level and groups the remaining menus b
 
 test("console commerce routes mount sdkwork-commerce PC pages directly", () => {
   const appSource = readPortalSource("./src/App.tsx");
-  const commerceViewsSource = readPortalSource("./src/commerce/consoleCommerceViews.tsx");
+  const mountSource = readPortalSource("./src/commerce/commerceHostMount.tsx");
 
-  assert.match(appSource, /import\('@sdkwork\/commerce-pc-wallet'\), 'SdkworkWalletPage'/);
-  assert.match(appSource, /ConsoleMembershipView/);
-  assert.match(appSource, /ConsoleMembershipPurchaseHeaderEntry/);
-  assert.match(appSource, /navbarAuthenticatedActionsStart=\{<ConsoleMembershipPurchaseHeaderEntry \/>}/);
+  assert.match(appSource, /ClawRouterConsoleCommerceHostRoutes/);
+  assert.match(appSource, /SdkworkCommerceHostNavbarActions/);
+  assert.match(appSource, /navbarAuthenticatedActionsStart=\{<SdkworkCommerceHostNavbarActions routePrefix="\/console" \/>}/);
+  assert.match(appSource, /from '@sdkwork\/commerce-pc-host'/);
+  assert.match(mountSource, /SdkworkCommerceHostRoutes/);
+  assert.doesNotMatch(appSource, /import\('@sdkwork\/commerce-pc-wallet'\), 'SdkworkWalletPage'/);
   assert.match(appSource, /import\('@sdkwork\/commerce-pc-billing'\), 'SdkworkBillingPage'/);
-  assert.match(appSource, /path="checkout" element=\{<ConsoleCheckoutView \/>}/);
-  assert.match(appSource, /path="payment" element=\{<ConsolePaymentView \/>}/);
-  assert.match(commerceViewsSource, /SdkworkCheckoutPage/);
-  assert.match(commerceViewsSource, /SdkworkMembershipPage/);
-  assert.match(commerceViewsSource, /SdkworkMembershipPurchaseHeaderEntry/);
-  assert.match(commerceViewsSource, /routeSearchParams=\{searchParams\}/);
-  assert.match(commerceViewsSource, /checkoutBasePath="\/console\/checkout"/);
-  assert.match(commerceViewsSource, /SdkworkPaymentPage/);
-  assert.match(commerceViewsSource, /mapCommerceRouteToConsole/);
+  assert.doesNotMatch(appSource, /path="checkout"/);
+  assert.doesNotMatch(appSource, /path="payment"/);
+  assert.doesNotMatch(appSource, /consoleCommerceViews/);
   assert.doesNotMatch(appSource, /clawrouter-pc-console-wallet/);
   assert.doesNotMatch(appSource, /clawrouter-pc-console-recharge/);
   assert.doesNotMatch(appSource, /clawrouter-pc-console-commerce/);

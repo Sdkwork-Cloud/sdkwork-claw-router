@@ -847,8 +847,8 @@ fn channel_binding_item(
     AdminChannelGroupChannelBindingItem {
         id,
         uuid: format!("binding-{id}"),
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         group_id,
         channel_id,
         channel_name: channel_name.to_owned(),
@@ -878,8 +878,8 @@ fn channel_group_item(
     AdminChannelGroupItem {
         id,
         uuid: format!("group-{id}"),
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         group_code: group_code.to_owned(),
         group_name: group_name.to_owned(),
         provider_code: "openai".to_owned(),

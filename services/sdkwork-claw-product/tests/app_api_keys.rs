@@ -231,8 +231,8 @@ fn signed_request(method: &str, path: &str, body: &str) -> Request<Body> {
         .header("content-type", "application/json")
         .internal_trusted_subject(10, 20, 30)
         .extension(TrustedRequestSubject {
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             user_id: 30,
             operator_id: 30,
             operator_type: 1,
@@ -284,8 +284,8 @@ impl GatewayApiKeyManagementReadStore for TestApiKeyReadStore {
             if self.include_owner_key {
                 snapshot.api_keys.push(GatewayApiKey {
                     id: 701,
-                    tenant_id: 10,
-                    organization_id: 20,
+                    tenant_id: 100001,
+                    organization_id: 0,
                     user_id: 30,
                     group_id: 501,
                     name: "Console Key".to_owned(),

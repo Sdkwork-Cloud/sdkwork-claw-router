@@ -16,8 +16,8 @@ async fn sqlite_admin_announcement_store_uses_standard_notification_tables() {
 
     let store = SqliteAdminAnnouncementStore::new(pool.clone());
     let subject = AdminAnnouncementSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         operator_id: 30,
         operator_type: 1,
     };

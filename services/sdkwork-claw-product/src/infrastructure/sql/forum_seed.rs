@@ -655,10 +655,16 @@ fn vote_insert_sqlite() -> &'static str {
          reaction_type, reaction_value)
     VALUES
         (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    ON CONFLICT(tenant_id, organization_id, user_id, target_type, target_id, reaction_type) DO UPDATE SET
+    ON CONFLICT(id) DO UPDATE SET
         uuid = excluded.uuid,
+        tenant_id = excluded.tenant_id,
+        organization_id = excluded.organization_id,
+        user_id = excluded.user_id,
         status = excluded.status,
         metadata = excluded.metadata,
+        target_type = excluded.target_type,
+        target_id = excluded.target_id,
+        reaction_type = excluded.reaction_type,
         reaction_value = excluded.reaction_value,
         cancelled_at = NULL
     "#
@@ -671,10 +677,16 @@ fn vote_insert_postgres() -> &'static str {
          reaction_type, reaction_value)
     VALUES
         ($1, $2, $3, $4, $5, $6, $7::jsonb, $8, $9, $10, $11)
-    ON CONFLICT(tenant_id, organization_id, user_id, target_type, target_id, reaction_type) DO UPDATE SET
+    ON CONFLICT(id) DO UPDATE SET
         uuid = excluded.uuid,
+        tenant_id = excluded.tenant_id,
+        organization_id = excluded.organization_id,
+        user_id = excluded.user_id,
         status = excluded.status,
         metadata = excluded.metadata,
+        target_type = excluded.target_type,
+        target_id = excluded.target_id,
+        reaction_type = excluded.reaction_type,
         reaction_value = excluded.reaction_value,
         cancelled_at = NULL
     "#
@@ -687,11 +699,14 @@ fn favorite_insert_sqlite() -> &'static str {
          metadata, source)
     VALUES
         (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'forum-seed')
-    ON CONFLICT(user_id, content_type, content_id) DO UPDATE SET
+    ON CONFLICT(id) DO UPDATE SET
         uuid = excluded.uuid,
         tenant_id = excluded.tenant_id,
         organization_id = excluded.organization_id,
         data_scope = excluded.data_scope,
+        user_id = excluded.user_id,
+        content_type = excluded.content_type,
+        content_id = excluded.content_id,
         status = excluded.status,
         metadata = excluded.metadata,
         source = excluded.source,
@@ -706,11 +721,14 @@ fn favorite_insert_postgres() -> &'static str {
          metadata, source)
     VALUES
         ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10::jsonb, 'forum-seed')
-    ON CONFLICT(user_id, content_type, content_id) DO UPDATE SET
+    ON CONFLICT(id) DO UPDATE SET
         uuid = excluded.uuid,
         tenant_id = excluded.tenant_id,
         organization_id = excluded.organization_id,
         data_scope = excluded.data_scope,
+        user_id = excluded.user_id,
+        content_type = excluded.content_type,
+        content_id = excluded.content_id,
         status = excluded.status,
         metadata = excluded.metadata,
         source = excluded.source,
@@ -771,7 +789,7 @@ async fn postgres_feed_seed_standard_count(
     for item in &seed.feeds {
         let row = sqlx::query(
             r#"
-            SELECT COUNT(1) AS count
+            SELECT (COUNT(1))::bigint AS count
             FROM content_forum_post
             WHERE id = $1
               AND uuid = $2
@@ -840,7 +858,7 @@ async fn postgres_seed_count(
     if values.is_empty() {
         return Ok(0);
     }
-    let sql = format!("SELECT COUNT(1) AS count FROM {table_name} WHERE {column_name} = ANY($1)");
+    let sql = format!("SELECT (COUNT(1))::bigint AS count FROM {table_name} WHERE {column_name} = ANY($1)");
     let row = sqlx::query(sql.as_str())
         .bind(values)
         .fetch_one(pool)

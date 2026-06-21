@@ -63,8 +63,8 @@ async fn secret_ref_responses_relay_resolves_endpoint_and_secret_from_request_co
     let response = relay
         .create_response(ResponsesRelayRequest {
             api_key_id: 101,
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             user_id: 30,
             group_id: 10,
             group_code: "standard-group".to_owned(),
@@ -124,8 +124,8 @@ async fn secret_ref_responses_relay_rejects_missing_endpoint_or_secret_ref_witho
     let missing_endpoint = relay
         .create_response(ResponsesRelayRequest {
             api_key_id: 101,
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             user_id: 30,
             group_id: 10,
             group_code: "standard-group".to_owned(),
@@ -149,8 +149,8 @@ async fn secret_ref_responses_relay_rejects_missing_endpoint_or_secret_ref_witho
     let missing_secret_ref = relay
         .create_response(ResponsesRelayRequest {
             api_key_id: 101,
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             user_id: 30,
             group_id: 10,
             group_code: "standard-group".to_owned(),

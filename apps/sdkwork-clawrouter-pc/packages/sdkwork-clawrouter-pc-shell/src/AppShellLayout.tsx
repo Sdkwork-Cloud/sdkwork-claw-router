@@ -1,4 +1,4 @@
-import type { ComponentType } from 'react';
+import type { ComponentType, ReactNode } from 'react';
 import { useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { Footer, Navbar } from '@sdkwork/clawrouter-pc-commons';
@@ -18,6 +18,7 @@ export type AppShellLayoutProps = AppShellRouteProps & {
   ProductDocs: ComponentType;
   SdkReference: ComponentType;
   Playground: ComponentType;
+  navbarAuthenticatedActionsStart?: ReactNode;
 };
 
 export function ScrollToTop() {
@@ -57,6 +58,7 @@ export function AppShellLayout({
   ProductDocs,
   SdkReference,
   Playground,
+  navbarAuthenticatedActionsStart,
 }: AppShellLayoutProps) {
   const location = useLocation();
   const isPlayground = location.pathname.startsWith('/playground') || location.pathname.startsWith('/c/');
@@ -64,7 +66,11 @@ export function AppShellLayout({
 
   return (
     <>
-      <Navbar isDark={isDark} toggleTheme={toggleTheme} />
+      <Navbar
+        authenticatedActionsStart={navbarAuthenticatedActionsStart}
+        isDark={isDark}
+        toggleTheme={toggleTheme}
+      />
       <div
         className={
           usesDocumentsHostOffset

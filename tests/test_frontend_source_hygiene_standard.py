@@ -32,6 +32,16 @@ GENERATIONS_ROOT = dependency_root("sdkwork-generations")
 IMAGE_ROOT = dependency_root("sdkwork-image")
 MUSIC_ROOT = dependency_root("sdkwork-music")
 VOICE_ROOT = dependency_root("sdkwork-voice")
+MODELS_ROOT = WORKSPACE_ROOT / "sdkwork-models"
+MODELS_CATALOG_SERVICE = (
+    MODELS_ROOT
+    / "apps"
+    / "sdkwork-models-pc"
+    / "packages"
+    / "sdkwork-models-pc-admin-catalog"
+    / "src"
+    / "modelService.ts"
+)
 COMMERCE_PC_PACKAGES = COMMERCE_ROOT / "apps" / "sdkwork-commerce-pc" / "packages"
 COMMERCE_ADMIN_PRODUCT = COMMERCE_PC_PACKAGES / "sdkwork-commerce-pc-admin-product" / "src"
 APPBASE_PC_CONTENT = APPBASE_ROOT / "packages" / "pc-react" / "content"
@@ -1587,7 +1597,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_portal_money_message_and_history_services_fail_closed_for_remote_contract_drift(self) -> None:
         guarded_services = {
-            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-model" / "src" / "modelService.ts": [
+            MODELS_CATALOG_SERVICE: [
                 "return readRequiredApiItems(result, 'Failed to fetch vendors')\n      .map(normalizeVendor)",
                 "const models = readRequiredApiItems(modelsResult, 'Failed to fetch models')\n      .map(normalizeModel)",
                 "models: readRequiredApiItems(data, 'Failed to sync vendors and models', ['models'])\n        .map(normalizeModel)",
@@ -1760,7 +1770,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             ],
         }
         forbidden_fragments = {
-            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-model" / "src" / "modelService.ts": [
+            MODELS_CATALOG_SERVICE: [
                 ".filter(isRecord)",
                 "return 'Chat';",
                 "models: (Array.isArray(data.models) ? data.models : [])",
@@ -1905,7 +1915,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-group" / "src" / "groupService.ts": [
                 "requiredSafePathSegment(id, 'channelGroupId')",
             ],
-            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-model" / "src" / "modelService.ts": [
+            MODELS_CATALOG_SERVICE: [
                 "requiredSafePathSegment(id, 'modelId')",
             ],
             PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-user" / "src" / "userService.ts": [
@@ -1931,7 +1941,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 ".access" + "Groups.updateGroup(\n      id,",
                 ".access" + "Groups.deleteGroup(id)",
             ],
-            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-model" / "src" / "modelService.ts": [
+            MODELS_CATALOG_SERVICE: [
                 ".model.deleteModel(id)",
             ],
             PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-user" / "src" / "userService.ts": [

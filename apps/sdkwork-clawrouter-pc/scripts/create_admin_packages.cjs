@@ -5,7 +5,7 @@ const packages = [
   "sdkwork-clawrouter-pc-admin-dashboard",
   "sdkwork-clawrouter-pc-admin-user",
   "sdkwork-clawrouter-pc-admin-group",
-  "sdkwork-clawrouter-pc-admin-model",
+  "sdkwork-clawrouter-pc-admin-relay-site",
   "sdkwork-clawrouter-pc-admin-channel",
   "sdkwork-clawrouter-pc-admin-announcement",
   "sdkwork-clawrouter-pc-admin-marketing",

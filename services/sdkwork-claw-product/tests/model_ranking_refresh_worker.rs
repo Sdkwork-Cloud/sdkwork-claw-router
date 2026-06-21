@@ -99,7 +99,7 @@ async fn model_ranking_refresh_worker_normalizes_invalid_global_organization_sco
         ModelRankingRefreshWorkerConfig {
             enabled: true,
             tenant_id: 0,
-            organization_id: 20,
+            organization_id: 0,
             ..ModelRankingRefreshWorkerConfig::default()
         },
     );

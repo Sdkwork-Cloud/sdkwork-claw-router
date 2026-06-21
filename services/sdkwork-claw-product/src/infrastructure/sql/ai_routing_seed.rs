@@ -1510,7 +1510,7 @@ async fn postgres_resource_group_item_count(
 ) -> Result<i64, sqlx::Error> {
     let row = sqlx::query(
         r#"
-        SELECT COUNT(1) AS count
+        SELECT (COUNT(1))::bigint AS count
         FROM ai_resource_group_item
         WHERE tenant_id = 0
           AND organization_id = 0

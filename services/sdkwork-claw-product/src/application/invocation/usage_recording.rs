@@ -6,7 +6,7 @@ use super::{
     Invocation, InvocationError, InvocationErrorKind, InvocationFuture, InvocationInterceptor,
     InvocationShape,
 };
-use crate::domain::BillingMeter;
+use crate::domain::{provider_native_model_id, BillingMeter};
 use crate::ports::{GatewayRequestTraceCommand, GatewayUsageQuantity, GatewayUsageRecorder};
 
 #[derive(Clone)]
@@ -114,12 +114,7 @@ fn trace_command_from_invocation(
     let catalog_key = catalog_key(invocation);
     let requested_model = requested_model(invocation, &catalog_key);
     let provider_model = provider_model(invocation, account);
-    let provider_native_model = invocation
-        .resource
-        .provider_native_model
-        .clone()
-        .filter(|value| !value.trim().is_empty())
-        .unwrap_or_else(|| provider_model.clone());
+    let provider_native_model = provider_native_model_for_recording(invocation, &provider_model);
 
     GatewayRequestTraceCommand {
         request_id: invocation.request.request_id.clone(),
@@ -316,7 +311,10 @@ fn requested_model(invocation: &Invocation, catalog_key: &str) -> String {
 }
 
 fn provider_model(invocation: &Invocation, account: Option<&super::InvocationAccount>) -> String {
-    account
+    if is_management_catalog_key(&catalog_key(invocation)) {
+        return String::new();
+    }
+    let raw = account
         .and_then(|account| account.provider_model.clone())
         .filter(|value| !value.trim().is_empty())
         .or_else(|| invocation.resource.provider_native_model.clone())
@@ -324,7 +322,27 @@ fn provider_model(invocation: &Invocation, account: Option<&super::InvocationAcc
         .or_else(|| invocation.resource.requested_model.clone())
         .filter(|value| !value.trim().is_empty())
         .or_else(|| invocation.resource.endpoint_key.clone())
-        .unwrap_or_default()
+        .unwrap_or_default();
+    provider_native_model_id(raw.trim())
+}
+
+fn provider_native_model_for_recording(
+    invocation: &Invocation,
+    provider_model: &str,
+) -> String {
+    if is_management_catalog_key(&catalog_key(invocation)) {
+        return String::new();
+    }
+    invocation
+        .resource
+        .provider_native_model
+        .clone()
+        .filter(|value| !value.trim().is_empty())
+        .unwrap_or_else(|| provider_model.to_owned())
+}
+
+fn is_management_catalog_key(catalog_key: &str) -> bool {
+    catalog_key.contains("/management/")
 }
 
 fn model_from_catalog_key(catalog_key: &str) -> String {

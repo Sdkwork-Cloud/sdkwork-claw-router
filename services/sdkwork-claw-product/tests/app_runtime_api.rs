@@ -272,8 +272,8 @@ async fn app_runtime_lists_invocations_events_and_artifacts_for_trusted_subject(
     let subjects = store.list_invocation_subjects.lock().unwrap();
     assert_eq!(
         vec![AppRuntimeSubject {
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             user_id: 30
         }],
         *subjects
@@ -320,8 +320,8 @@ async fn app_runtime_streams_invocation_events_as_sse_for_trusted_subject() {
     let subjects = store.list_event_subjects.lock().unwrap();
     assert_eq!(
         vec![AppRuntimeSubject {
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             user_id: 30
         }],
         *subjects

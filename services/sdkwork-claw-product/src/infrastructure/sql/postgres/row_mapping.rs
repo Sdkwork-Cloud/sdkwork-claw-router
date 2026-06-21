@@ -1,6 +1,18 @@
 use sqlx::postgres::PgRow;
 use sqlx::{PgPool, Row};
 
+pub(crate) fn postgres_row_i64(row: &PgRow, column: &str) -> Result<i64, sqlx::Error> {
+    row.try_get::<i64, _>(column)
+        .or_else(|_| row.try_get::<i32, _>(column).map(i64::from))
+}
+
+pub(crate) fn postgres_count_sql(sql: &str) -> String {
+    if sql.contains("::bigint") {
+        return sql.to_string();
+    }
+    sql.replacen("COUNT(1)", "(COUNT(1))::bigint", 1)
+}
+
 use crate::infrastructure::sql::rows::{
     AiModelRow, ChannelGroupMetricSnapshotRow, ChannelGroupRow, GatewayAccessPolicyRow,
     GatewayApiKeyRow, GatewayRiskRuleRow, ModelMappingRuleRow, ModelPriceRow,

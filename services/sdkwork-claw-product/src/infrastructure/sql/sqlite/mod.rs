@@ -1,4 +1,3 @@
-mod admin_ai_resource_store;
 mod admin_analytics_read_store;
 mod admin_announcement_store;
 mod admin_api_key_rate_limit_store;
@@ -15,7 +14,6 @@ mod admin_marketing_store;
 mod admin_mcp_store;
 mod admin_messaging_store;
 mod admin_model_rate_limit_store;
-mod admin_model_store;
 mod admin_prompt_store;
 mod admin_provider_secret_store;
 mod admin_record_store;
@@ -42,8 +40,10 @@ mod forum_store;
 mod gateway_usage_recorder;
 mod loader;
 pub(crate) mod model_catalog_import;
-mod model_ranking_refresh_store;
-mod model_rankings_read_store;
+pub use sdkwork_models_catalog_repository_sqlx::{
+    SqliteAdminAiResourceStore, SqliteModelCatalogAdminStore as SqliteAdminModelStore,
+    SqliteModelRankingRefreshStore, SqliteModelRankingsReadStore,
+};
 mod openai_invocation_telemetry_plugin;
 mod payment_callback_store;
 mod payment_intent_runtime_store;
@@ -59,7 +59,6 @@ mod usage_settlement_store;
 mod verification_delivery_config_store;
 mod verification_delivery_queue_sender;
 
-pub use admin_ai_resource_store::SqliteAdminAiResourceStore;
 pub use admin_analytics_read_store::SqliteAdminAnalyticsReadStore;
 pub use admin_announcement_store::SqliteAdminAnnouncementStore;
 pub use admin_api_key_rate_limit_store::SqliteAdminApiKeyRateLimitStore;
@@ -76,7 +75,6 @@ pub use admin_marketing_store::SqliteAdminMarketingStore;
 pub use admin_mcp_store::SqliteAdminMcpStore;
 pub use admin_messaging_store::SqliteAdminMessagingStore;
 pub use admin_model_rate_limit_store::SqliteAdminModelRateLimitStore;
-pub use admin_model_store::SqliteAdminModelStore;
 pub use super::admin_monitor_repository_adapter::SqliteAdminMonitorReadStore;
 pub use admin_prompt_store::SqliteAdminPromptStore;
 pub use admin_provider_secret_store::SqliteAdminProviderSecretStore;
@@ -105,8 +103,6 @@ pub use error::SqlCatalogLoadError;
 pub use forum_store::SqliteForumStore;
 pub use gateway_usage_recorder::SqliteGatewayUsageRecorder;
 pub use loader::SqlitePricingCatalogLoader;
-pub use model_ranking_refresh_store::SqliteModelRankingRefreshStore;
-pub use model_rankings_read_store::SqliteModelRankingsReadStore;
 pub use openai_invocation_telemetry_plugin::SqliteOpenAiInvocationTelemetryPlugin;
 pub use payment_callback_store::SqlitePaymentCallbackStore;
 pub use payment_intent_runtime_store::SqlitePaymentIntentRuntimeStore;

@@ -102,7 +102,7 @@ async fn invocation_body_from_http(
     }
     if request_body_should_parse_json(headers, &bytes) {
         let value = serde_json::from_slice::<Value>(&bytes)
-            .map_err(|error| invalid_request(format!("request JSON body is invalid: {error}")))?;
+            .map_err(|error| invalid_request(format!("invalid request body: {error}")))?;
         return Ok(InvocationBody::Json(value));
     }
     Ok(InvocationBody::Bytes(bytes.to_vec()))
@@ -193,9 +193,7 @@ fn invocation_request_from_http(
     headers: HeaderMap,
     body: InvocationBody,
 ) -> InvocationRequest {
-    let request_id = header_text(&headers, "x-request-id")
-        .or_else(|| header_text(&headers, "x-correlation-id"))
-        .unwrap_or_else(generate_server_request_id);
+    let request_id = generate_server_request_id();
     let trace_id =
         header_text(&headers, "x-trace-id").or_else(|| header_text(&headers, "traceparent"));
     let idempotency_key = header_text(&headers, "idempotency-key");

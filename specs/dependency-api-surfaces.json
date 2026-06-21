@@ -245,6 +245,62 @@
       }
     },
     {
+      "workspace": "sdkwork-models-app-sdk",
+      "consumerSdkFamily": "clawrouter-app-sdk",
+      "role": "intelligence-catalog-app-capability",
+      "dependencyMode": "consumer-sdk",
+      "surface": "app-api",
+      "apiPrefix": "/app/v3/api",
+      "runtimeIntegration": {
+        "mode": "composed-local-mount",
+        "sameOriginAllowed": true,
+        "targetRuntimeIntegration": {
+          "mode": "shared-gateway",
+          "gatewayApplication": "sdkwork-api-gateway",
+          "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
+          "catalogPolicy": "no-dedicated-gateway-catalog"
+        },
+        "requiredBaseUrlEnv": "VITE_SDKWORK_MODELS_APP_API_BASE_URL",
+        "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
+        "mountCoverage": {
+          "status": "mounted",
+          "evidence": [
+            "Model catalog and rankings app routes are owned by sdkwork-models route crates and mounted in sdkwork-router-app-api through sdkwork_router_catalog_app_api.",
+            "Catalog handlers and domain types live in sdkwork-models-catalog-service; Claw Router supplies RefreshableSqlPricingCatalog as the host pricing snapshot port.",
+            "cargo test -p sdkwork-router-catalog-app-api --test route_manifest verifies app route manifest alignment."
+          ]
+        }
+      }
+    },
+    {
+      "workspace": "sdkwork-models-backend-sdk",
+      "consumerSdkFamily": "clawrouter-backend-sdk",
+      "role": "intelligence-catalog-backend-management-capability",
+      "dependencyMode": "consumer-sdk",
+      "surface": "backend-api",
+      "apiPrefix": "/backend/v3/api",
+      "runtimeIntegration": {
+        "mode": "composed-local-mount",
+        "sameOriginAllowed": true,
+        "targetRuntimeIntegration": {
+          "mode": "shared-gateway",
+          "gatewayApplication": "sdkwork-api-gateway",
+          "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
+          "catalogPolicy": "no-dedicated-gateway-catalog"
+        },
+        "requiredBaseUrlEnv": "VITE_SDKWORK_MODELS_BACKEND_API_BASE_URL",
+        "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
+        "mountCoverage": {
+          "status": "mounted",
+          "evidence": [
+            "Model catalog admin CRUD, mappings, sync, and rankings routes are owned by sdkwork-models route crates and mounted in sdkwork-router-backend-api through sdkwork_router_catalog_backend_api.",
+            "Catalog admin stores live in sdkwork-models-catalog-repository-sqlx; Claw Router wires Sqlite/Postgres stores and cache invalidation adapters at compose time.",
+            "cargo test -p sdkwork-router-catalog-backend-api --test route_manifest verifies backend route manifest alignment."
+          ]
+        }
+      }
+    },
+    {
       "workspace": "sdkwork-documents-app-sdk",
       "consumerSdkFamily": "clawrouter-app-sdk",
       "role": "documents-reference-capability",

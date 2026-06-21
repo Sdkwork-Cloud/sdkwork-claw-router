@@ -11,6 +11,7 @@ pub struct InvocationAdapterTarget {
     pub endpoint_key: String,
     pub base_url: String,
     pub path_template: String,
+    pub standard_path: String,
     pub gateway_token: Option<String>,
     pub shape: InvocationShape,
 }
@@ -23,6 +24,7 @@ impl Debug for InvocationAdapterTarget {
             .field("endpoint_key", &self.endpoint_key)
             .field("base_url", &self.base_url)
             .field("path_template", &self.path_template)
+            .field("standard_path", &self.standard_path)
             .field(
                 "gateway_token",
                 &self.gateway_token.as_ref().map(|_| "<redacted>"),

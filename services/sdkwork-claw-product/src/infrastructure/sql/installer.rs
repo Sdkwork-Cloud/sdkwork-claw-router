@@ -8,7 +8,8 @@ use std::sync::OnceLock;
 use std::time::{SystemTime, UNIX_EPOCH};
 
 use sdkwork_appbase_iam_bootstrap::{
-    iam_baseline_postgres_sql, import_postgres_default_iam_seed, import_sqlite_default_iam_seed,
+    iam_baseline_postgres_sql, iam_rbac_federation_postgres_sql, import_postgres_default_iam_seed,
+    import_sqlite_default_iam_seed,
     postgres_default_iam_seed_complete, sqlite_default_iam_seed_complete,
     DEFAULT_BOOTSTRAP_ADMIN_DISPLAY_NAME, DEFAULT_BOOTSTRAP_ADMIN_EMAIL,
     DEFAULT_BOOTSTRAP_ADMIN_USERNAME, DEFAULT_BOOTSTRAP_ADMIN_USER_ID, DEFAULT_IAM_ORGANIZATION_ID,
@@ -24,6 +25,10 @@ use sdkwork_commerce_storage_sqlx::{
 };
 use sdkwork_iam_directory_repository_sqlx::iam_database_tables;
 use sdkwork_models::ModelCatalog;
+use sdkwork_models_database_bootstrap::{
+    models_catalog_foundation_migration_sql, models_catalog_foundation_migration_sqlite,
+    models_catalog_module_table_names,
+};
 use sha2::{Digest, Sha256};
 use sqlx::{PgPool, Postgres, Row, Sqlite, SqlitePool, Transaction};
 
@@ -1081,6 +1086,10 @@ impl DatabaseInstaller {
                     sqlite_changed = true;
                 }
                 sqlite_changed |= ensure_sqlite_appstore_module_schema_columns(pool).await?;
+                if !sqlite_sdkwork_models_catalog_module_schema_tables_exist(pool).await? {
+                    apply_sqlite_sdkwork_models_catalog_module_schema(pool).await?;
+                    sqlite_changed = true;
+                }
                 if !sqlite_forum_runtime_projection_schema_tables_exist(pool).await? {
                     apply_sqlite_forum_runtime_projection_schema(pool).await?;
                     sqlite_changed = true;
@@ -1116,6 +1125,10 @@ impl DatabaseInstaller {
                     changed = true;
                 }
                 changed |= ensure_postgres_appstore_module_schema_columns(pool).await?;
+                if !postgres_sdkwork_models_catalog_module_schema_tables_exist(pool).await? {
+                    apply_postgres_sdkwork_models_catalog_module_schema(pool).await?;
+                    changed = true;
+                }
                 if !postgres_forum_runtime_projection_schema_tables_exist(pool).await? {
                     apply_postgres_forum_runtime_projection_schema(pool).await?;
                     changed = true;
@@ -1893,6 +1906,9 @@ async fn sqlite_status(
     if !sqlite_appstore_module_schema_tables_exist(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
+    if !sqlite_sdkwork_models_catalog_module_schema_tables_exist(pool).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
     if !sqlite_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
@@ -2007,6 +2023,7 @@ async fn prepare_sqlite_schema_with_catalog_version(
     apply_sqlite_appbase_commerce_schema(pool).await?;
     apply_sqlite_appbase_iam_oauth_schema(pool).await?;
     apply_sqlite_appstore_module_schema(pool).await?;
+    apply_sqlite_sdkwork_models_catalog_module_schema(pool).await?;
     apply_sqlite_forum_runtime_projection_schema(pool).await?;
     apply_sqlite_clawrouter_legacy_projection_schema(pool).await?;
     record_sqlite_migration_completed(
@@ -2093,6 +2110,9 @@ async fn postgres_status(
         return Ok(InstallationStatus::UpgradeRequired);
     }
     if !postgres_appstore_module_schema_tables_exist(pool).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
+    if !postgres_sdkwork_models_catalog_module_schema_tables_exist(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
     if !postgres_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
@@ -2239,6 +2259,7 @@ async fn prepare_postgres_schema_with_catalog_version(
     apply_postgres_appbase_commerce_schema(pool).await?;
     apply_postgres_appbase_iam_oauth_schema(pool).await?;
     apply_postgres_appstore_module_schema(pool).await?;
+    apply_postgres_sdkwork_models_catalog_module_schema(pool).await?;
     apply_postgres_forum_runtime_projection_schema(pool).await?;
     apply_postgres_clawrouter_legacy_projection_schema(pool).await?;
     record_postgres_migration_completed(
@@ -2382,6 +2403,9 @@ async fn repair_sqlite_installation(
     }
     if !sqlite_appstore_module_schema_tables_exist(pool).await? {
         apply_sqlite_appstore_module_schema(pool).await?;
+    }
+    if !sqlite_sdkwork_models_catalog_module_schema_tables_exist(pool).await? {
+        apply_sqlite_sdkwork_models_catalog_module_schema(pool).await?;
     }
     if !sqlite_forum_runtime_projection_schema_tables_exist(pool).await? {
         apply_sqlite_forum_runtime_projection_schema(pool).await?;
@@ -2537,6 +2561,9 @@ async fn repair_postgres_installation(
     }
     if !postgres_appstore_module_schema_tables_exist(pool).await? {
         apply_postgres_appstore_module_schema(pool).await?;
+    }
+    if !postgres_sdkwork_models_catalog_module_schema_tables_exist(pool).await? {
+        apply_postgres_sdkwork_models_catalog_module_schema(pool).await?;
     }
     if !postgres_forum_runtime_projection_schema_tables_exist(pool).await? {
         apply_postgres_forum_runtime_projection_schema(pool).await?;
@@ -2743,7 +2770,7 @@ async fn ensure_sqlite_bootstrap_admin_recharge_catalog(
     .await?;
     let package_count: i64 = sqlx::query_scalar(
         r#"
-        SELECT COUNT(1)
+        SELECT (COUNT(1))::bigint
         FROM commerce_recharge_package
         WHERE tenant_id = ?
           AND organization_id = ?
@@ -2756,7 +2783,7 @@ async fn ensure_sqlite_bootstrap_admin_recharge_catalog(
     .await?;
     let settings_count: i64 = sqlx::query_scalar(
         r#"
-        SELECT COUNT(1)
+        SELECT (COUNT(1))::bigint
         FROM commerce_exchange_rule
         WHERE tenant_id = ?
           AND organization_id = ?
@@ -2806,7 +2833,7 @@ async fn ensure_postgres_bootstrap_admin_recharge_catalog(
     .await?;
     let package_count: i64 = sqlx::query_scalar(
         r#"
-        SELECT COUNT(1)
+        SELECT (COUNT(1))::bigint
         FROM commerce_recharge_package
         WHERE tenant_id = $1
           AND organization_id = $2
@@ -2819,7 +2846,7 @@ async fn ensure_postgres_bootstrap_admin_recharge_catalog(
     .await?;
     let settings_count: i64 = sqlx::query_scalar(
         r#"
-        SELECT COUNT(1)
+        SELECT (COUNT(1))::bigint
         FROM commerce_exchange_rule
         WHERE tenant_id = $1
           AND organization_id = $2
@@ -2921,8 +2948,7 @@ async fn upsert_sqlite_bootstrap_admin_recharge_settings(
                 (id, tenant_id, organization_id, rule_no, source_asset_type, target_asset_type, rate, status, remark, request_no, idempotency_key, created_at, updated_at)
             VALUES
                 (?, ?, ?, ?, ?, ?, ?, 'active', ?, ?, ?, ?, ?)
-            ON CONFLICT(tenant_id, organization_id, source_asset_type, target_asset_type) DO UPDATE SET
-                id = excluded.id,
+            ON CONFLICT(id) DO UPDATE SET
                 rule_no = excluded.rule_no,
                 rate = excluded.rate,
                 status = excluded.status,
@@ -2987,8 +3013,7 @@ async fn upsert_postgres_bootstrap_admin_recharge_settings(
                 (id, tenant_id, organization_id, rule_no, source_asset_type, target_asset_type, rate, status, remark, request_no, idempotency_key, created_at, updated_at)
             VALUES
                 ($1, $2, $3, $4, $5, $6, $7, 'active', $8, $9, $10, $11, $12)
-            ON CONFLICT(tenant_id, organization_id, source_asset_type, target_asset_type) DO UPDATE SET
-                id = excluded.id,
+            ON CONFLICT(id) DO UPDATE SET
                 rule_no = excluded.rule_no,
                 rate = excluded.rate,
                 status = excluded.status,
@@ -3100,9 +3125,10 @@ async fn upsert_sqlite_bootstrap_admin_recharge_packages(
                 (id, tenant_id, organization_id, spu_no, title, subtitle, description, product_type, status, visible_surfaces, created_at, updated_at)
             VALUES
                 (?, ?, ?, ?, ?, ?, ?, 'points_recharge', ?, '["app","console","admin"]', ?, ?)
-            ON CONFLICT(tenant_id, spu_no) DO UPDATE SET
-                id = excluded.id,
+            ON CONFLICT(id) DO UPDATE SET
+                tenant_id = excluded.tenant_id,
                 organization_id = excluded.organization_id,
+                spu_no = excluded.spu_no,
                 title = excluded.title,
                 subtitle = excluded.subtitle,
                 description = excluded.description,
@@ -3131,7 +3157,7 @@ async fn upsert_sqlite_bootstrap_admin_recharge_packages(
                 (id, tenant_id, organization_id, spu_id, category_id, primary_flag, sort_order, status, created_at, updated_at)
             VALUES
                 (?, ?, ?, ?, 'commerce-recharge', 1, 0, 'active', ?, ?)
-            ON CONFLICT(tenant_id, spu_id, category_id) DO UPDATE SET
+            ON CONFLICT(id) DO UPDATE SET
                 organization_id = excluded.organization_id,
                 primary_flag = excluded.primary_flag,
                 sort_order = excluded.sort_order,
@@ -3154,8 +3180,7 @@ async fn upsert_sqlite_bootstrap_admin_recharge_packages(
                 (id, tenant_id, organization_id, spu_id, sku_no, name, title, price_amount, original_price_amount, currency_code, fulfillment_type, inventory_tracking, status, spec_json, created_at, updated_at)
             VALUES
                 (?, ?, ?, ?, ?, ?, ?, ?, NULL, ?, 'points_credit', 'untracked', ?, ?, ?, ?)
-            ON CONFLICT(tenant_id, sku_no) DO UPDATE SET
-                id = excluded.id,
+            ON CONFLICT(id) DO UPDATE SET
                 organization_id = excluded.organization_id,
                 spu_id = excluded.spu_id,
                 name = excluded.name,
@@ -3192,8 +3217,7 @@ async fn upsert_sqlite_bootstrap_admin_recharge_packages(
                 (id, tenant_id, organization_id, external_id, package_no, sku_id, name, price_amount, currency_code, bonus_points, status, valid_from, valid_to, sort_weight, request_no, idempotency_key, created_at, updated_at)
             VALUES
                 (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, NULL, ?, ?, ?, ?, ?)
-            ON CONFLICT(tenant_id, package_no) DO UPDATE SET
-                id = excluded.id,
+            ON CONFLICT(id) DO UPDATE SET
                 organization_id = excluded.organization_id,
                 external_id = excluded.external_id,
                 sku_id = excluded.sku_id,
@@ -3302,9 +3326,10 @@ async fn upsert_postgres_bootstrap_admin_recharge_packages(
                 (id, tenant_id, organization_id, spu_no, title, subtitle, description, product_type, status, visible_surfaces, created_at, updated_at)
             VALUES
                 ($1, $2, $3, $4, $5, $6, $7, 'points_recharge', $8, '["app","console","admin"]', $9, $10)
-            ON CONFLICT(tenant_id, spu_no) DO UPDATE SET
-                id = excluded.id,
+            ON CONFLICT(id) DO UPDATE SET
+                tenant_id = excluded.tenant_id,
                 organization_id = excluded.organization_id,
+                spu_no = excluded.spu_no,
                 title = excluded.title,
                 subtitle = excluded.subtitle,
                 description = excluded.description,
@@ -3333,7 +3358,7 @@ async fn upsert_postgres_bootstrap_admin_recharge_packages(
                 (id, tenant_id, organization_id, spu_id, category_id, primary_flag, sort_order, status, created_at, updated_at)
             VALUES
                 ($1, $2, $3, $4, 'commerce-recharge', 1, 0, 'active', $5, $6)
-            ON CONFLICT(tenant_id, spu_id, category_id) DO UPDATE SET
+            ON CONFLICT(id) DO UPDATE SET
                 organization_id = excluded.organization_id,
                 primary_flag = excluded.primary_flag,
                 sort_order = excluded.sort_order,
@@ -3356,8 +3381,7 @@ async fn upsert_postgres_bootstrap_admin_recharge_packages(
                 (id, tenant_id, organization_id, spu_id, sku_no, name, title, price_amount, original_price_amount, currency_code, fulfillment_type, inventory_tracking, status, spec_json, created_at, updated_at)
             VALUES
                 ($1, $2, $3, $4, $5, $6, $7, $8, NULL, $9, 'points_credit', 'untracked', $10, $11, $12, $13)
-            ON CONFLICT(tenant_id, sku_no) DO UPDATE SET
-                id = excluded.id,
+            ON CONFLICT(id) DO UPDATE SET
                 organization_id = excluded.organization_id,
                 spu_id = excluded.spu_id,
                 name = excluded.name,
@@ -3394,8 +3418,7 @@ async fn upsert_postgres_bootstrap_admin_recharge_packages(
                 (id, tenant_id, organization_id, external_id, package_no, sku_id, name, price_amount, currency_code, bonus_points, status, valid_from, valid_to, sort_weight, request_no, idempotency_key, created_at, updated_at)
             VALUES
                 ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, NULL, NULL, $12, $13, $14, $15, $16)
-            ON CONFLICT(tenant_id, package_no) DO UPDATE SET
-                id = excluded.id,
+            ON CONFLICT(id) DO UPDATE SET
                 organization_id = excluded.organization_id,
                 external_id = excluded.external_id,
                 sku_id = excluded.sku_id,
@@ -3763,7 +3786,7 @@ async fn sqlite_bootstrap_admin_seed_complete(
 ) -> Result<bool, sqlx::Error> {
     let count: i64 = sqlx::query_scalar(
         r#"
-        SELECT COUNT(1)
+        SELECT (COUNT(1))::bigint
         FROM iam_user u
         JOIN iam_organization_membership m
           ON m.tenant_id = u.tenant_id
@@ -3795,7 +3818,7 @@ async fn postgres_bootstrap_admin_seed_complete(
 ) -> Result<bool, sqlx::Error> {
     let count: i64 = sqlx::query_scalar(
         r#"
-        SELECT COUNT(1)
+        SELECT (COUNT(1))::bigint
         FROM iam_user u
         JOIN iam_organization_membership m
           ON m.tenant_id = u.tenant_id
@@ -3871,7 +3894,7 @@ async fn sqlite_bootstrap_admin_has_active_password_credential_in_transaction(
 ) -> Result<bool, sqlx::Error> {
     let count: i64 = sqlx::query_scalar(
         r#"
-        SELECT COUNT(1)
+        SELECT (COUNT(1))::bigint
         FROM iam_credential
         WHERE tenant_id = ?
           AND user_id = ?
@@ -3892,7 +3915,7 @@ async fn postgres_bootstrap_admin_has_active_password_credential_in_transaction(
 ) -> Result<bool, sqlx::Error> {
     let count: i64 = sqlx::query_scalar(
         r#"
-        SELECT COUNT(1)
+        SELECT (COUNT(1))::bigint
         FROM iam_credential
         WHERE tenant_id = $1
           AND user_id = $2
@@ -4263,7 +4286,7 @@ async fn sqlite_table_exists(pool: &SqlitePool, table_name: &str) -> Result<bool
 async fn postgres_table_exists(pool: &PgPool, table_name: &str) -> Result<bool, sqlx::Error> {
     let count: i64 = sqlx::query_scalar(
         r#"
-        SELECT COUNT(1)
+        SELECT (COUNT(1))::bigint
         FROM information_schema.tables
         WHERE table_schema = current_schema()
           AND table_name = $1
@@ -4532,6 +4555,9 @@ async fn sqlite_refresh_schema_needs_prepare(
     if !sqlite_appstore_module_schema_tables_exist(pool).await? {
         return Ok(true);
     }
+    if !sqlite_sdkwork_models_catalog_module_schema_tables_exist(pool).await? {
+        return Ok(true);
+    }
     if !sqlite_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
         return Ok(true);
     }
@@ -4589,6 +4615,9 @@ async fn postgres_refresh_schema_needs_prepare(
         return Ok(true);
     }
     if !postgres_appstore_module_schema_tables_exist(pool).await? {
+        return Ok(true);
+    }
+    if !postgres_sdkwork_models_catalog_module_schema_tables_exist(pool).await? {
         return Ok(true);
     }
     if !postgres_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
@@ -6312,6 +6341,101 @@ async fn ensure_postgres_appstore_module_schema_columns(
     Ok(changed)
 }
 
+fn sdkwork_models_catalog_module_postgres_schema_statements() -> Vec<String> {
+    strip_line_comments(models_catalog_foundation_migration_sql())
+        .split(';')
+        .map(str::trim)
+        .filter(|statement| !statement.is_empty())
+        .map(str::to_owned)
+        .collect()
+}
+
+fn sdkwork_models_catalog_module_sqlite_schema_statements() -> Vec<String> {
+    strip_line_comments(models_catalog_foundation_migration_sqlite())
+        .split(';')
+        .map(str::trim)
+        .filter(|statement| !statement.is_empty())
+        .map(str::to_owned)
+        .collect()
+}
+
+async fn sqlite_sdkwork_models_catalog_module_schema_tables_exist(
+    pool: &SqlitePool,
+) -> Result<bool, sqlx::Error> {
+    let installed_tables = sqlite_string_set(
+        pool,
+        r#"
+        SELECT name
+        FROM sqlite_master
+        WHERE type = 'table'
+        "#,
+    )
+    .await?;
+    Ok(string_set(models_catalog_module_table_names()).is_subset(&installed_tables))
+}
+
+async fn postgres_sdkwork_models_catalog_module_schema_tables_exist(
+    pool: &PgPool,
+) -> Result<bool, sqlx::Error> {
+    let installed_tables = postgres_string_set(
+        pool,
+        r#"
+        SELECT table_name
+        FROM information_schema.tables
+        WHERE table_schema = current_schema()
+          AND table_type = 'BASE TABLE'
+        "#,
+    )
+    .await?;
+    Ok(string_set(models_catalog_module_table_names()).is_subset(&installed_tables))
+}
+
+async fn apply_sqlite_sdkwork_models_catalog_module_schema(
+    pool: &SqlitePool,
+) -> Result<(), DatabaseInstallError> {
+    record_sqlite_migration_started(
+        pool,
+        "sdkwork-models-catalog-module-schema",
+        CURRENT_SCHEMA_VERSION,
+        models_catalog_foundation_migration_sqlite(),
+    )
+    .await?;
+    for statement in sdkwork_models_catalog_module_sqlite_schema_statements() {
+        execute_sqlite_statement(pool, statement.as_str()).await?;
+    }
+    record_sqlite_migration_completed(
+        pool,
+        "sdkwork-models-catalog-module-schema",
+        CURRENT_SCHEMA_VERSION,
+        models_catalog_foundation_migration_sqlite(),
+    )
+    .await?;
+    Ok(())
+}
+
+async fn apply_postgres_sdkwork_models_catalog_module_schema(
+    pool: &PgPool,
+) -> Result<(), DatabaseInstallError> {
+    record_postgres_migration_started(
+        pool,
+        "sdkwork-models-catalog-module-schema",
+        CURRENT_SCHEMA_VERSION,
+        models_catalog_foundation_migration_sql(),
+    )
+    .await?;
+    for statement in sdkwork_models_catalog_module_postgres_schema_statements() {
+        execute_postgres_statement(pool, statement.as_str()).await?;
+    }
+    record_postgres_migration_completed(
+        pool,
+        "sdkwork-models-catalog-module-schema",
+        CURRENT_SCHEMA_VERSION,
+        models_catalog_foundation_migration_sql(),
+    )
+    .await?;
+    Ok(())
+}
+
 fn appbase_iam_foundation_postgres_schema_statements() -> Vec<String> {
     strip_line_comments(iam_baseline_postgres_sql())
         .split(';')
@@ -6323,6 +6447,22 @@ fn appbase_iam_foundation_postgres_schema_statements() -> Vec<String> {
 
 fn appbase_iam_foundation_sqlite_schema_statements() -> Vec<String> {
     appbase_iam_foundation_postgres_schema_statements()
+        .into_iter()
+        .map(|statement| postgres_statement_to_sqlite(statement.as_str()))
+        .collect()
+}
+
+fn appbase_iam_rbac_federation_postgres_schema_statements() -> Vec<String> {
+    strip_line_comments(iam_rbac_federation_postgres_sql())
+        .split(';')
+        .map(str::trim)
+        .filter(|statement| !statement.is_empty())
+        .map(str::to_owned)
+        .collect()
+}
+
+fn appbase_iam_rbac_federation_sqlite_schema_statements() -> Vec<String> {
+    appbase_iam_rbac_federation_postgres_schema_statements()
         .into_iter()
         .map(|statement| postgres_statement_to_sqlite(statement.as_str()))
         .collect()
@@ -6378,6 +6518,9 @@ async fn apply_sqlite_appbase_iam_foundation_schema(
     for statement in appbase_iam_foundation_sqlite_schema_statements() {
         execute_sqlite_iam_shared_database_compat_statement(pool, statement.as_str()).await?;
     }
+    for statement in appbase_iam_rbac_federation_sqlite_schema_statements() {
+        execute_sqlite_iam_shared_database_compat_statement(pool, statement.as_str()).await?;
+    }
     record_sqlite_migration_completed(
         pool,
         "appbase-iam-foundation-schema",
@@ -6399,6 +6542,9 @@ async fn apply_postgres_appbase_iam_foundation_schema(
     )
     .await?;
     for statement in appbase_iam_foundation_postgres_schema_statements() {
+        execute_postgres_statement(pool, statement.as_str()).await?;
+    }
+    for statement in appbase_iam_rbac_federation_postgres_schema_statements() {
         execute_postgres_statement(pool, statement.as_str()).await?;
     }
     record_postgres_migration_completed(

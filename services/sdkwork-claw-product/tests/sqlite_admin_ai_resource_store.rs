@@ -17,8 +17,8 @@ async fn sqlite_admin_ai_resource_store_lists_resources_with_composition_members
     let items = store
         .list_ai_resources(ListAdminAiResourcesQuery {
             subject: AdminAiResourceSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 operator_id: 30,
                 operator_type: 1,
             },
@@ -53,7 +53,7 @@ async fn sqlite_admin_ai_resource_store_lists_system_seeded_resources_for_admin_
     for statement in [
         "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, resource_schema, status, sort_order) VALUES (9701, 'test-system-resource-chat', 0, 0, 'api.test.system.chat', 'api_endpoint', 'System Chat API', 'openai', 'llm', 'openai.chat_completions', '{}', 1, 1)",
         "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, resource_schema, status, sort_order) VALUES (9702, 'test-system-resource-override', 0, 0, 'api.test.override', 'api_endpoint', 'System Override API', 'openai', 'llm', 'openai.responses', '{}', 1, 2)",
-        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, resource_schema, status, sort_order) VALUES (9703, 'test-tenant-resource-override', 10, 20, 'api.test.override', 'api_endpoint', 'Tenant Override API', 'openai', 'llm', 'openai.responses', '{}', 1, 9)",
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, resource_schema, status, sort_order) VALUES (9703, 'test-tenant-resource-override', 100001, 0, 'api.test.override', 'api_endpoint', 'Tenant Override API', 'openai', 'llm', 'openai.responses', '{}', 1, 9)",
     ] {
         sqlx::query(statement).execute(&pool).await.unwrap();
     }
@@ -188,8 +188,8 @@ async fn sqlite_admin_ai_resource_store_creates_updates_and_audits_resource_grap
         r#"
         SELECT COUNT(1)
         FROM ai_resource_group_item
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND resource_group_code = 'bundle.openrouter.openai.extended'
           AND status = 1
           AND deleted_at IS NULL
@@ -210,8 +210,8 @@ async fn sqlite_admin_ai_resource_store_creates_updates_and_audits_resource_grap
          AND item.resource_group_id = g.id
          AND item.resource_group_code = g.group_code
          AND item.deleted_at IS NULL
-        WHERE g.tenant_id = 10
-          AND g.organization_id = 20
+        WHERE g.tenant_id = 100001
+          AND g.organization_id = 0
           AND g.group_code = 'bundle.openrouter.openai.realtime'
           AND g.deleted_at IS NULL
         "#,
@@ -226,8 +226,8 @@ async fn sqlite_admin_ai_resource_store_creates_updates_and_audits_resource_grap
         r#"
         SELECT COUNT(1)
         FROM ops_audit_log
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND request_id IN ('req-ai-resource-create', 'req-ai-resource-update')
         "#,
     )
@@ -241,8 +241,8 @@ async fn sqlite_admin_ai_resource_store_creates_updates_and_audits_resource_grap
             r#"
             SELECT config_version, changed_object_type, changed_object_id
             FROM ai_config_version
-            WHERE tenant_id = 10
-              AND organization_id = 20
+            WHERE tenant_id = 100001
+              AND organization_id = 0
               AND config_scope = 'routing'
             "#,
         )
@@ -257,8 +257,8 @@ async fn sqlite_admin_ai_resource_store_creates_updates_and_audits_resource_grap
         r#"
         SELECT event_payload ->> 'action' AS event_action
         FROM ai_config_change_event
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND config_scope = 'routing'
           AND changed_object_type = 'ai_resource'
           AND changed_object_id = ?
@@ -331,8 +331,8 @@ async fn sqlite_admin_ai_resource_store_prefers_child_resource_group_members() {
         r#"
         SELECT item_type, resource_id, resource_code, child_resource_group_id, child_resource_group_code
         FROM ai_resource_group_item
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND resource_group_code = 'bundle.openrouter.openai.composite'
           AND status = 1
           AND deleted_at IS NULL
@@ -412,8 +412,8 @@ async fn sqlite_admin_ai_resource_store_rejects_unknown_member_resource_code() {
         r#"
         SELECT COUNT(1)
         FROM ai_resource
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND resource_code = 'bundle.openrouter.openai.invalid'
         "#,
     )
@@ -471,8 +471,8 @@ async fn sqlite_admin_ai_resource_store_syncs_group_members_when_composite_resou
                   AND item.deleted_at IS NULL
             ) AS active_member_count
         FROM ai_resource_group g
-        WHERE g.tenant_id = 10
-          AND g.organization_id = 20
+        WHERE g.tenant_id = 100001
+          AND g.organization_id = 0
           AND g.group_code = 'bundle.openrouter.openai.standard'
         "#,
     )
@@ -516,8 +516,8 @@ async fn sqlite_admin_ai_resource_store_syncs_group_members_when_composite_resou
         r#"
         SELECT COUNT(1)
         FROM ai_resource_group_item
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND resource_group_id = 9204
           AND status = 1
           AND deleted_at IS NULL
@@ -537,10 +537,10 @@ async fn sqlite_admin_ai_resource_store_treats_api_all_all_mode_as_static_member
     let pool = schema_sqlite_pool().await;
     seed_ai_resources(&pool).await;
     for statement in [
-        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, resource_schema, status, sort_order) VALUES (9401, 'test-api-all-chat', 10, 20, 'api.test.chat', 'api_endpoint', 'Test Chat API', 'openai', 'chat', 'openai.chat_completions', '{}', 1, 30)",
-        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, resource_schema, status, sort_order) VALUES (9402, 'test-api-all-image', 10, 20, 'api.test.image', 'api_endpoint', 'Test Image API', 'openai', 'image', 'openai.images', '{}', 1, 31)",
-        "INSERT INTO ai_resource_group (id, uuid, tenant_id, organization_id, group_code, group_name, group_type, selection_mode, status, sort_order) VALUES (9404, 'test-api-all-static-group', 10, 20, 'api.all', 'All APIs', 'api_group', 'all', 1, 1)",
-        "INSERT INTO ai_resource_group_item (id, uuid, tenant_id, organization_id, resource_group_id, resource_group_code, item_type, resource_id, resource_code, child_resource_group_code, item_role, metadata, status, sort_order) VALUES (9401, 'test-api-all-static-member', 10, 20, 9404, 'api.all', 'resource', 9401, 'api.test.chat', '', 'included', '{}', 1, 1)",
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, resource_schema, status, sort_order) VALUES (9401, 'test-api-all-chat', 100001, 0, 'api.test.chat', 'api_endpoint', 'Test Chat API', 'openai', 'chat', 'openai.chat_completions', '{}', 1, 30)",
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, resource_schema, status, sort_order) VALUES (9402, 'test-api-all-image', 100001, 0, 'api.test.image', 'api_endpoint', 'Test Image API', 'openai', 'image', 'openai.images', '{}', 1, 31)",
+        "INSERT INTO ai_resource_group (id, uuid, tenant_id, organization_id, group_code, group_name, group_type, selection_mode, status, sort_order) VALUES (9404, 'test-api-all-static-group', 100001, 0, 'api.all', 'All APIs', 'api_group', 'all', 1, 1)",
+        "INSERT INTO ai_resource_group_item (id, uuid, tenant_id, organization_id, resource_group_id, resource_group_code, item_type, resource_id, resource_code, child_resource_group_code, item_role, metadata, status, sort_order) VALUES (9401, 'test-api-all-static-member', 100001, 0, 9404, 'api.all', 'resource', 9401, 'api.test.chat', '', 'included', '{}', 1, 1)",
     ] {
         sqlx::query(statement).execute(&pool).await.unwrap();
     }
@@ -690,9 +690,9 @@ async fn sqlite_admin_ai_resource_store_clears_members_when_group_becomes_dynami
     let pool = schema_sqlite_pool().await;
     seed_ai_resources(&pool).await;
     for statement in [
-        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, resource_schema, status, sort_order) VALUES (9301, 'test-api-resource-chat', 10, 20, 'api.test.chat', 'api_endpoint', 'Test Chat API', 'openai', 'chat', 'openai.chat_completions', '{}', 1, 30)",
-        "INSERT INTO ai_resource_group (id, uuid, tenant_id, organization_id, group_code, group_name, group_type, selection_mode, status, sort_order) VALUES (9304, 'test-api-resource-group-manual', 10, 20, 'api.manual.test', 'Manual API Group', 'api_group', 'manual', 1, 30)",
-        "INSERT INTO ai_resource_group_item (id, uuid, tenant_id, organization_id, resource_group_id, resource_group_code, item_type, resource_id, resource_code, child_resource_group_code, item_role, metadata, status, sort_order) VALUES (9301, 'test-api-resource-group-member', 10, 20, 9304, 'api.manual.test', 'resource', 9301, 'api.test.chat', '', 'included', '{}', 1, 1)",
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, resource_schema, status, sort_order) VALUES (9301, 'test-api-resource-chat', 100001, 0, 'api.test.chat', 'api_endpoint', 'Test Chat API', 'openai', 'chat', 'openai.chat_completions', '{}', 1, 30)",
+        "INSERT INTO ai_resource_group (id, uuid, tenant_id, organization_id, group_code, group_name, group_type, selection_mode, status, sort_order) VALUES (9304, 'test-api-resource-group-manual', 100001, 0, 'api.manual.test', 'Manual API Group', 'api_group', 'manual', 1, 30)",
+        "INSERT INTO ai_resource_group_item (id, uuid, tenant_id, organization_id, resource_group_id, resource_group_code, item_type, resource_id, resource_code, child_resource_group_code, item_role, metadata, status, sort_order) VALUES (9301, 'test-api-resource-group-member', 100001, 0, 9304, 'api.manual.test', 'resource', 9301, 'api.test.chat', '', 'included', '{}', 1, 1)",
     ] {
         sqlx::query(statement).execute(&pool).await.unwrap();
     }
@@ -727,8 +727,8 @@ async fn sqlite_admin_ai_resource_store_clears_members_when_group_becomes_dynami
         r#"
         SELECT COUNT(1)
         FROM ai_resource_group_item
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND resource_group_id = 9304
           AND status = 1
           AND deleted_at IS NULL
@@ -745,8 +745,8 @@ async fn sqlite_admin_ai_resource_store_clears_members_when_group_becomes_dynami
 
 fn subject() -> AdminAiResourceSubject {
     AdminAiResourceSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         operator_id: 30,
         operator_type: 1,
     }
@@ -754,13 +754,13 @@ fn subject() -> AdminAiResourceSubject {
 
 async fn seed_ai_resources(pool: &sqlx::SqlitePool) {
     for statement in [
-        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, resource_schema, status, sort_order) VALUES (9101, 'test-resource-openai-vendor', 10, 20, 'vendor.openai', 'vendor', 'OpenAI', 'openai', '{\"compositionMode\":\"single\"}', 1, 1)",
-        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, catalog_key, model, provider_native_model, resource_schema, status, sort_order) VALUES (9102, 'test-resource-openai-gpt-4o-mini-chat', 10, 20, 'model.openai.gpt-4o-mini.chat', 'model_api', 'GPT-4o mini Chat', 'openai', 'chat', 'openai.chat_completions', 'openai/gpt-4o-mini', 'gpt-4o-mini', 'gpt-4o-mini', '{\"compositionMode\":\"single\"}', 1, 2)",
-        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, catalog_key, model, provider_native_model, resource_schema, status, sort_order) VALUES (9103, 'test-resource-openai-embedding-small', 10, 20, 'model.openai.text-embedding-3-small.embedding', 'model_api', 'Text Embedding 3 Small', 'openai', 'embedding', 'openai.embeddings', 'openai/text-embedding-3-small', 'text-embedding-3-small', 'text-embedding-3-small', '{\"compositionMode\":\"single\"}', 1, 3)",
-        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, resource_schema, status, sort_order) VALUES (9104, 'test-resource-openrouter-openai-standard', 10, 20, 'bundle.openrouter.openai.standard', 'bundle', 'OpenRouter OpenAI Standard', 'openai', '{\"compositionMode\":\"all\"}', 1, 4)",
-        "INSERT INTO ai_resource_group (id, uuid, tenant_id, organization_id, group_code, group_name, group_type, selection_mode, status, sort_order) VALUES (9204, 'test-resource-group-openrouter-openai-standard', 10, 20, 'bundle.openrouter.openai.standard', 'OpenRouter OpenAI Standard', 'bundle', 'all', 1, 4)",
-        "INSERT INTO ai_resource_group_item (id, uuid, tenant_id, organization_id, resource_group_id, resource_group_code, item_type, resource_id, resource_code, child_resource_group_code, item_role, metadata, status, sort_order) VALUES (9101, 'test-resource-member-openrouter-gpt-4o-mini', 10, 20, 9204, 'bundle.openrouter.openai.standard', 'resource', 9102, 'model.openai.gpt-4o-mini.chat', '', 'included', '{\"required\":true}', 1, 1)",
-        "INSERT INTO ai_resource_group_item (id, uuid, tenant_id, organization_id, resource_group_id, resource_group_code, item_type, resource_id, resource_code, child_resource_group_code, item_role, metadata, status, sort_order) VALUES (9102, 'test-resource-member-openrouter-embedding-small', 10, 20, 9204, 'bundle.openrouter.openai.standard', 'resource', 9103, 'model.openai.text-embedding-3-small.embedding', '', 'included', '{\"required\":true}', 1, 2)",
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, resource_schema, status, sort_order) VALUES (9101, 'test-resource-openai-vendor', 100001, 0, 'vendor.openai', 'vendor', 'OpenAI', 'openai', '{\"compositionMode\":\"single\"}', 1, 1)",
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, catalog_key, model, provider_native_model, resource_schema, status, sort_order) VALUES (9102, 'test-resource-openai-gpt-4o-mini-chat', 100001, 0, 'model.openai.gpt-4o-mini.chat', 'model_api', 'GPT-4o mini Chat', 'openai', 'chat', 'openai.chat_completions', 'openai/gpt-4o-mini', 'gpt-4o-mini', 'gpt-4o-mini', '{\"compositionMode\":\"single\"}', 1, 2)",
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, catalog_key, model, provider_native_model, resource_schema, status, sort_order) VALUES (9103, 'test-resource-openai-embedding-small', 100001, 0, 'model.openai.text-embedding-3-small.embedding', 'model_api', 'Text Embedding 3 Small', 'openai', 'embedding', 'openai.embeddings', 'openai/text-embedding-3-small', 'text-embedding-3-small', 'text-embedding-3-small', '{\"compositionMode\":\"single\"}', 1, 3)",
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, resource_schema, status, sort_order) VALUES (9104, 'test-resource-openrouter-openai-standard', 100001, 0, 'bundle.openrouter.openai.standard', 'bundle', 'OpenRouter OpenAI Standard', 'openai', '{\"compositionMode\":\"all\"}', 1, 4)",
+        "INSERT INTO ai_resource_group (id, uuid, tenant_id, organization_id, group_code, group_name, group_type, selection_mode, status, sort_order) VALUES (9204, 'test-resource-group-openrouter-openai-standard', 100001, 0, 'bundle.openrouter.openai.standard', 'OpenRouter OpenAI Standard', 'bundle', 'all', 1, 4)",
+        "INSERT INTO ai_resource_group_item (id, uuid, tenant_id, organization_id, resource_group_id, resource_group_code, item_type, resource_id, resource_code, child_resource_group_code, item_role, metadata, status, sort_order) VALUES (9101, 'test-resource-member-openrouter-gpt-4o-mini', 100001, 0, 9204, 'bundle.openrouter.openai.standard', 'resource', 9102, 'model.openai.gpt-4o-mini.chat', '', 'included', '{\"required\":true}', 1, 1)",
+        "INSERT INTO ai_resource_group_item (id, uuid, tenant_id, organization_id, resource_group_id, resource_group_code, item_type, resource_id, resource_code, child_resource_group_code, item_role, metadata, status, sort_order) VALUES (9102, 'test-resource-member-openrouter-embedding-small', 100001, 0, 9204, 'bundle.openrouter.openai.standard', 'resource', 9103, 'model.openai.text-embedding-3-small.embedding', '', 'included', '{\"required\":true}', 1, 2)",
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }

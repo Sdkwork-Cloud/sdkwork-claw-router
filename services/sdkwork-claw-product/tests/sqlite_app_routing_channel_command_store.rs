@@ -14,8 +14,8 @@ async fn sqlite_app_routing_channel_command_store_create_binds_vendor_and_resour
     let outcome = store
         .create_channel(CreateAppRoutingChannelCommand {
             subject: AppRoutingSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 user_id: 30,
             },
             channel_uuid: "app-routing-channel-resource-create".to_owned(),
@@ -85,7 +85,7 @@ async fn seed_app_routing_resource_catalog(pool: &sqlx::SqlitePool) {
         INSERT INTO ai_model_vendor
             (id, uuid, tenant_id, organization_id, vendor_code, display_name, status, sort_order)
         VALUES
-            (42001, 'app-routing-vendor-openai', 10, 20, 'openai', 'OpenAI', 1, 1)
+            (42001, 'app-routing-vendor-openai', 100001, 0, 'openai', 'OpenAI', 1, 1)
         ON CONFLICT(tenant_id, organization_id, vendor_code) DO UPDATE SET
             status = 1,
             deleted_at = NULL,
@@ -95,7 +95,7 @@ async fn seed_app_routing_resource_catalog(pool: &sqlx::SqlitePool) {
         INSERT INTO ai_resource
             (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_id, vendor_code, status, sort_order)
         VALUES
-            (42011, 'app-routing-resource-vendor-openai', 10, 20, 'vendor.openai', 'vendor', 'OpenAI', 42001, 'openai', 1, 1)
+            (42011, 'app-routing-resource-vendor-openai', 100001, 0, 'vendor.openai', 'vendor', 'OpenAI', 42001, 'openai', 1, 1)
         ON CONFLICT(tenant_id, organization_id, resource_code) DO UPDATE SET
             status = 1,
             deleted_at = NULL,
@@ -105,7 +105,7 @@ async fn seed_app_routing_resource_catalog(pool: &sqlx::SqlitePool) {
         INSERT INTO ai_resource
             (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_id, vendor_code, modality_code, catalog_key, model, provider_native_model, status, sort_order)
         VALUES
-            (42012, 'app-routing-resource-openai-gpt-4o-mini-chat', 10, 20, 'model.openai.gpt-4o-mini.chat', 'model_api', 'GPT-4o mini Chat', 42001, 'openai', 'chat', 'openai/gpt-4o-mini', 'gpt-4o-mini', 'gpt-4o-mini', 1, 2)
+            (42012, 'app-routing-resource-openai-gpt-4o-mini-chat', 100001, 0, 'model.openai.gpt-4o-mini.chat', 'model_api', 'GPT-4o mini Chat', 42001, 'openai', 'chat', 'openai/gpt-4o-mini', 'gpt-4o-mini', 'gpt-4o-mini', 1, 2)
         ON CONFLICT(tenant_id, organization_id, resource_code) DO UPDATE SET
             status = 1,
             deleted_at = NULL,
@@ -115,7 +115,7 @@ async fn seed_app_routing_resource_catalog(pool: &sqlx::SqlitePool) {
         INSERT INTO ai_resource
             (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, modality_code, status, sort_order)
         VALUES
-            (42013, 'app-routing-resource-modality-llm', 10, 20, 'modality.llm', 'modality', 'LLM', 'llm', 1, 3)
+            (42013, 'app-routing-resource-modality-llm', 100001, 0, 'modality.llm', 'modality', 'LLM', 'llm', 1, 3)
         ON CONFLICT(tenant_id, organization_id, resource_code) DO UPDATE SET
             status = 1,
             deleted_at = NULL,
@@ -135,8 +135,8 @@ async fn sqlite_app_routing_channel_command_store_update_keeps_primary_credentia
     let created = store
         .create_channel(CreateAppRoutingChannelCommand {
             subject: AppRoutingSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 user_id: 30,
             },
             channel_uuid: "app-routing-channel-credential-update".to_owned(),
@@ -168,8 +168,8 @@ async fn sqlite_app_routing_channel_command_store_update_keeps_primary_credentia
     store
         .update_channel(UpdateAppRoutingChannelCommand {
             subject: AppRoutingSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 user_id: 30,
             },
             channel_id,
@@ -201,8 +201,8 @@ async fn sqlite_app_routing_channel_command_store_update_keeps_primary_credentia
         SELECT base_url, credential_ref
         FROM ai_channel_credential
         WHERE channel_id = ?
-          AND tenant_id = 10
-          AND organization_id = 20
+          AND tenant_id = 100001
+          AND organization_id = 0
           AND status = 1
           AND deleted_at IS NULL
         ORDER BY priority ASC, id ASC
@@ -229,8 +229,8 @@ async fn sqlite_app_routing_channel_command_store_delete_cascades_channel_relati
     let outcome = store
         .delete_channel(DeleteAppRoutingChannelCommand {
             subject: AppRoutingSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 user_id: 30,
             },
             channel_id: 41001,
@@ -249,8 +249,8 @@ async fn sqlite_app_routing_channel_command_store_delete_cascades_channel_relati
         SELECT (
             SELECT COUNT(1)
             FROM ai_channel_resource
-            WHERE tenant_id = 10
-              AND organization_id = 20
+            WHERE tenant_id = 100001
+              AND organization_id = 0
               AND channel_id = 41001
               AND deleted_at IS NULL
         )
@@ -271,19 +271,19 @@ async fn seed_app_routing_channel_with_relationships(pool: &sqlx::SqlitePool) {
         INSERT INTO ai_channel
             (id, uuid, tenant_id, organization_id, status, provider_code, channel_code, channel_name, channel_type, base_url, credential_ref, masked_label)
         VALUES
-            (41001, 'app-routing-channel-delete-cascade', 10, 20, 1, 'openai', 'app-routing-openai', 'App Routing OpenAI', 'official', 'https://api.openai.com/v1', 'secret://app-routing/openai', 'sk-***openai')
+            (41001, 'app-routing-channel-delete-cascade', 100001, 0, 1, 'openai', 'app-routing-openai', 'App Routing OpenAI', 'official', 'https://api.openai.com/v1', 'secret://app-routing/openai', 'sk-***openai')
         "#,
         r#"
         INSERT INTO ai_channel_resource
             (id, uuid, tenant_id, organization_id, status, channel_id, provider_code, channel_code, resource_code, grant_type)
         VALUES
-            (41021, 'app-routing-channel-resource-delete-cascade', 10, 20, 1, 41001, 'openai', 'app-routing-openai', 'model.openai.gpt-4o-mini.chat', 'allow')
+            (41021, 'app-routing-channel-resource-delete-cascade', 100001, 0, 1, 41001, 'openai', 'app-routing-openai', 'model.openai.gpt-4o-mini.chat', 'allow')
         "#,
         r#"
         INSERT INTO ai_channel_resource
             (id, uuid, tenant_id, organization_id, status, channel_id, provider_code, channel_code, resource_code, grant_type)
         VALUES
-            (41031, 'app-routing-channel-vendor-delete-cascade', 10, 20, 1, 41001, 'openai', 'app-routing-openai', 'vendor.openai', 'allow')
+            (41031, 'app-routing-channel-vendor-delete-cascade', 100001, 0, 1, 41001, 'openai', 'app-routing-openai', 'vendor.openai', 'allow')
         "#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();

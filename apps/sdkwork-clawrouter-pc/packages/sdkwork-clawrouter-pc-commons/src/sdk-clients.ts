@@ -8,6 +8,7 @@ import {
 } from '@sdkwork/commerce-service';
 import { SdkworkAppClient, type SdkworkAppConfig } from '@sdkwork/clawrouter-app-sdk';
 import { SdkworkBackendClient, type SdkworkBackendConfig } from '@sdkwork/clawrouter-backend-sdk';
+import { SdkworkBackendClient as ModelsBackendClient } from '@sdkwork/models-backend-sdk';
 import { SdkworkAiClient, type SdkworkAiConfig } from '@sdkwork/clawrouter-open-sdk';
 import {
   SdkworkAppClient as SdkworkGenerationsAppClient,
@@ -623,6 +624,29 @@ export function getClawRouterBackendSdkClient(options: ClawRouterBackendSdkClien
   return backendClient;
 }
 
+export type ModelsBackendSdkClient = ModelsBackendClient;
+export type ModelsBackendSdkClientOptions = ClawRouterBackendSdkClientOptions;
+
+let modelsBackendClient: ModelsBackendSdkClient | null = null;
+
+export function createModelsBackendSdkClient(
+  options: ModelsBackendSdkClientOptions = {},
+): ModelsBackendSdkClient {
+  return attachClawRouterSdkSessionAuthBoundary(new ModelsBackendClient(buildBackendConfig(options)));
+}
+
+export function getModelsBackendSdkClient(
+  options: ModelsBackendSdkClientOptions = {},
+): ModelsBackendSdkClient {
+  if (hasRuntimeOverrides(options)) {
+    return createModelsBackendSdkClient(options);
+  }
+  if (!modelsBackendClient) {
+    modelsBackendClient = createModelsBackendSdkClient();
+  }
+  return modelsBackendClient;
+}
+
 export function getSdkworkAppbaseAppSdkClient(
   options: SdkworkAppbaseAppSdkClientOptions = {},
 ): SdkworkAppbaseAppClient {
@@ -786,6 +810,7 @@ export function getClawRouterAiSdkClient(options: ClawRouterAiSdkClientOptions =
 export function resetClawRouterSdkClients(): void {
   appClient = null;
   backendClient = null;
+  modelsBackendClient = null;
   appbaseAppClient = null;
   appbaseBackendClient = null;
   generationsAppClient = null;

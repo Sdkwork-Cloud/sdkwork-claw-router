@@ -66,8 +66,8 @@ impl StickyRouteStore for MemoryStickyRouteStore {
 fn test_subject() -> sdkwork_claw_product::application::InvocationSubject {
     sdkwork_claw_product::application::InvocationSubject::from_api_key_context(
         AuthenticatedApiKeyContext {
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             user_id: 30,
             api_key_id: 100,
             api_key_name_snapshot: "Test key".to_owned(),
@@ -97,8 +97,8 @@ fn classified_invocation(method: Method, path: &str, body: InvocationBody) -> In
 
 fn sticky_binding(object_type: &str, object_id: &str) -> StickyObjectRouteBinding {
     StickyObjectRouteBinding {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         object_type: object_type.to_owned(),
         object_id: object_id.to_owned(),
         parent_object_type: None,

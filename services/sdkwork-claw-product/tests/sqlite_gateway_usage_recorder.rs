@@ -674,8 +674,8 @@ fn usage_command(request_id: &str, http_status: u16) -> GatewayUsageRecordComman
     GatewayUsageRecordCommand {
         request_id: request_id.to_owned(),
         trace_id: Some("trace-chat-usage-sqlite".to_owned()),
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
         api_key_id: 101,
         api_key_name_snapshot: "Owner Usage Key".to_owned(),
@@ -734,8 +734,8 @@ fn failed_trace_command(request_id: &str) -> GatewayRequestTraceCommand {
     GatewayRequestTraceCommand {
         request_id: request_id.to_owned(),
         trace_id: Some("trace-chat-usage-sqlite".to_owned()),
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
         api_key_id: 101,
         api_key_name_snapshot: "Owner Usage Key".to_owned(),

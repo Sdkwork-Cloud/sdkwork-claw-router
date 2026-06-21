@@ -80,8 +80,8 @@ fn api_key_identity_rejects_invalid_context_without_echoing_input() {
 #[test]
 fn trusted_request_subject_is_read_from_request_extensions() {
     let subject = TrustedRequestSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
         operator_id: 30,
         operator_type: 1,
@@ -98,8 +98,8 @@ fn trusted_request_subject_is_read_from_request_extensions() {
 #[test]
 fn attach_trusted_request_subject_exposes_appbase_iam_context() {
     let subject = TrustedRequestSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
         operator_id: 30,
         operator_type: 1,
@@ -129,8 +129,8 @@ fn trusted_request_subject_is_read_from_internal_headers() {
 
     assert_eq!(
         TrustedRequestSubject {
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             user_id: 30,
             operator_id: 30,
             operator_type: 1,
@@ -154,8 +154,8 @@ fn trusted_request_subject_boundary_strips_direct_headers_and_returns_signed_sub
     let config =
         TrustedSubjectConfig::from_signing_secret("0123456789abcdef0123456789abcdef").unwrap();
     let subject = TrustedRequestSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
         operator_id: 30,
         operator_type: 1,
@@ -246,8 +246,8 @@ fn app_session_token_verifies_subject_without_leaking_token_material() {
     let config =
         AppSessionConfig::from_signing_secret("app-session-secret-0123456789abcd").unwrap();
     let subject = TrustedRequestSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
         operator_id: 30,
         operator_type: 1,
@@ -266,7 +266,7 @@ fn app_session_claim_token_accepts_tenant_level_organization_zero() {
         AppSessionConfig::from_signing_secret("app-session-secret-0123456789abcd").unwrap();
     let claims = AppSessionTokenClaims {
         token_kind: AppSessionTokenKind::Access,
-        tenant_id: 10,
+        tenant_id: 100001,
         organization_id: 0,
         user_id: 30,
         session_id: "session-tenant-scope".to_owned(),
@@ -303,8 +303,8 @@ fn app_request_subject_boundary_rejects_swapped_auth_and_access_token_types() {
         AppSubjectBoundaryConfig::new(trusted_subject_config, app_session_config.clone());
     let common_claims = AppSessionTokenClaims {
         token_kind: AppSessionTokenKind::Access,
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
         session_id: "session-token-type".to_owned(),
         app_id: "sdkwork-clawrouter".to_owned(),
@@ -363,8 +363,8 @@ fn app_request_subject_boundary_rejects_access_token_from_different_session() {
         AppSubjectBoundaryConfig::new(trusted_subject_config, app_session_config.clone());
     let auth_claims = AppSessionTokenClaims {
         token_kind: AppSessionTokenKind::Auth,
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
         session_id: "session-auth".to_owned(),
         app_id: "sdkwork-clawrouter".to_owned(),
@@ -424,8 +424,8 @@ fn app_request_subject_boundary_returns_session_subject_after_stripping_direct_h
     let boundary_config =
         AppSubjectBoundaryConfig::new(trusted_subject_config, app_session_config.clone());
     let subject = TrustedRequestSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
         operator_id: 30,
         operator_type: 1,
@@ -471,8 +471,8 @@ fn app_request_subject_boundary_rejects_incomplete_session_token_headers() {
     let boundary_config =
         AppSubjectBoundaryConfig::new(trusted_subject_config, app_session_config.clone());
     let subject = TrustedRequestSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
         operator_id: 30,
         operator_type: 1,
@@ -536,8 +536,8 @@ fn optional_app_request_subject_boundary_strips_incomplete_session_token_headers
     let boundary_config =
         AppSubjectBoundaryConfig::new(trusted_subject_config, app_session_config.clone());
     let subject = TrustedRequestSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
         operator_id: 30,
         operator_type: 1,
@@ -574,15 +574,15 @@ fn app_request_subject_boundary_rejects_mismatched_auth_and_access_subjects() {
     let boundary_config =
         AppSubjectBoundaryConfig::new(trusted_subject_config, app_session_config.clone());
     let auth_subject = TrustedRequestSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
         operator_id: 30,
         operator_type: 1,
     };
     let access_subject = TrustedRequestSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 31,
         operator_id: 31,
         operator_type: 1,
@@ -631,8 +631,8 @@ fn app_session_authorization_header_accepts_case_insensitive_bearer_scheme() {
     let config =
         AppSessionConfig::from_signing_secret("app-session-secret-0123456789abcd").unwrap();
     let subject = TrustedRequestSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
         operator_id: 30,
         operator_type: 1,
@@ -654,8 +654,8 @@ fn app_session_token_rejects_tampering_without_echoing_token() {
     let config =
         AppSessionConfig::from_signing_secret("app-session-secret-0123456789abcd").unwrap();
     let subject = TrustedRequestSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
         operator_id: 30,
         operator_type: 1,

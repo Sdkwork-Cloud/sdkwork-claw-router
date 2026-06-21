@@ -426,7 +426,7 @@ fn app_session_request(method: &str, path: &str, body: Body) -> Request<Body> {
     let issued_at = current_unix_seconds();
     let expires_at = issued_at + 3600;
     let (authorization, access_token) = app_session_dual_token_headers(
-        trusted_request_subject(20_001, 20, 30),
+        trusted_request_subject(100_001, 0, 30),
         issued_at,
         expires_at,
     )

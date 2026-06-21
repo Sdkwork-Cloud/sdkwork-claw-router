@@ -2,8 +2,9 @@ use std::sync::Arc;
 
 use super::{
     Invocation, InvocationAccount, InvocationError, InvocationErrorKind, InvocationFuture,
-    InvocationInterceptor, InvocationRouteCandidate,
+    InvocationInterceptor, InvocationRouteCandidate, InvocationSurface,
 };
+use crate::domain::provider_native_model_id;
 use crate::ports::PricingCatalog;
 
 #[derive(Clone)]
@@ -55,14 +56,43 @@ where
                 retry_policy: candidate.retry_policy.clone(),
                 provider_model: candidate.provider_model.clone(),
             });
-            if let Some(catalog_key) = candidate.catalog_key.as_ref() {
+            if invocation.resource.surface == InvocationSurface::ProviderNative {
+                if let Some(model) = invocation
+                    .resource
+                    .requested_model
+                    .as_deref()
+                    .map(str::trim)
+                    .filter(|value| !value.is_empty())
+                {
+                    invocation.resource.requested_model_catalog_key = Some(
+                        canonical_provider_catalog_key(&candidate.provider_code, model),
+                    );
+                } else if let Some(catalog_key) = candidate.catalog_key.as_ref() {
+                    invocation.resource.requested_model_catalog_key = Some(catalog_key.clone());
+                }
+            } else if let Some(catalog_key) = candidate.catalog_key.as_ref() {
                 invocation.resource.requested_model_catalog_key = Some(catalog_key.clone());
             }
             if let Some(provider_model) = candidate.provider_model.as_ref() {
-                invocation.resource.provider_native_model = Some(provider_model.clone());
+                invocation.resource.provider_native_model =
+                    Some(provider_native_model_id(provider_model));
             }
             Ok(())
         })
+    }
+}
+
+fn canonical_provider_catalog_key(provider_code: &str, model: &str) -> String {
+    let provider_code = provider_code.trim();
+    let model = model.trim();
+    let model_provider = model
+        .split('/')
+        .map(str::trim)
+        .find(|part| !part.is_empty());
+    if model_provider == Some(provider_code) {
+        model.to_owned()
+    } else {
+        format!("{provider_code}/{model}")
     }
 }
 

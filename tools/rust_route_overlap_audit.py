@@ -311,7 +311,7 @@ class RustRouteOverlapAudit:
             and source_paths
             == {
                 "services/sdkwork-claw-gateway/src/passthrough.rs",
-                "services/sdkwork-claw-gateway/src/route_scoped_openai_passthrough.rs",
+                "services/sdkwork-claw-gateway/src/invocation_http.rs",
             }
         ):
             return True

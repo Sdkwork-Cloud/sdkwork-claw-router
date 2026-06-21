@@ -203,8 +203,8 @@ async fn sqlite_model_rankings_read_store_does_not_expose_global_tenant_organiza
                 ..ModelRankingsQuery::default()
             },
             Some(ModelRankingsSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 user_id: 30,
             }),
         )
@@ -243,7 +243,7 @@ async fn sqlite_model_rankings_read_store_normalizes_negative_organization_to_te
                 ..ModelRankingsQuery::default()
             },
             Some(ModelRankingsSubject {
-                tenant_id: 10,
+                tenant_id: 100001,
                 organization_id: -1,
                 user_id: 30,
             }),
@@ -481,8 +481,8 @@ async fn sqlite_model_rankings_read_store_keeps_history_in_selected_visibility_s
             (id, tenant_id, organization_id, status, snapshot_date, snapshot_period, rank_scope, catalog_key, model, vendor_code, vendor_name_snapshot, modality, rank_no, request_count, base_volume)
         VALUES
             (100, 0, 0, 1, '2026-05-06', 1, 'commercial-default', 'openai/global-old', 'global-old', 'openai', 'OpenAI', 1, 1, 999, 999),
-            (101, 10, 20, 1, '2026-05-07', 1, 'commercial-default', 'openai/tenant-old', 'tenant-old', 'openai', 'OpenAI', 1, 1, 100, 100),
-            (102, 10, 20, 1, '2026-05-08', 1, 'commercial-default', 'openai/tenant-new', 'tenant-new', 'openai', 'OpenAI', 1, 1, 120, 120)
+            (101, 100001, 0, 1, '2026-05-07', 1, 'commercial-default', 'openai/tenant-old', 'tenant-old', 'openai', 'OpenAI', 1, 1, 100, 100),
+            (102, 100001, 0, 1, '2026-05-08', 1, 'commercial-default', 'openai/tenant-new', 'tenant-new', 'openai', 'OpenAI', 1, 1, 120, 120)
         "#,
     )
     .execute(&pool)
@@ -496,8 +496,8 @@ async fn sqlite_model_rankings_read_store_keeps_history_in_selected_visibility_s
                 ..ModelRankingsQuery::default()
             },
             Some(ModelRankingsSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 user_id: 30,
             }),
         )
@@ -594,7 +594,7 @@ async fn sqlite_model_rankings_read_store_embeds_latest_refresh_job_in_refresh_s
         INSERT INTO ai_model_rank_snapshot
             (id, tenant_id, organization_id, status, metadata, snapshot_date, snapshot_period, rank_scope, catalog_key, model, vendor_code, vendor_name_snapshot, modality, rank_no, request_count, base_volume, rank_payload)
         VALUES
-            (30, 10, 20, 1, '{"snapshotPeriod":"daily","windowStart":"2026-05-07T00:00:00Z","windowEnd":"2026-05-08T00:00:00Z","generatedAt":"2026-05-08T00:05:00Z","refreshIntervalSeconds":3600,"nextRefreshAt":"2026-05-08T01:05:00Z","cacheMaxAgeSeconds":60,"sourceTables":["ai_usage_fact","ai_model","ai_model_rank_snapshot"]}', '2026-05-08', 1, 'commercial-default', 'openai/gpt-5.2', 'gpt-5.2', 'openai', 'OpenAI', 1, 1, 120, 120, '{"sourceRows":3}')
+            (30, 100001, 0, 1, '{"snapshotPeriod":"daily","windowStart":"2026-05-07T00:00:00Z","windowEnd":"2026-05-08T00:00:00Z","generatedAt":"2026-05-08T00:05:00Z","refreshIntervalSeconds":3600,"nextRefreshAt":"2026-05-08T01:05:00Z","cacheMaxAgeSeconds":60,"sourceTables":["ai_usage_fact","ai_model","ai_model_rank_snapshot"]}', '2026-05-08', 1, 'commercial-default', 'openai/gpt-5.2', 'gpt-5.2', 'openai', 'OpenAI', 1, 1, 120, 120, '{"sourceRows":3}')
         "#,
     )
     .execute(&pool)
@@ -607,10 +607,10 @@ async fn sqlite_model_rankings_read_store_embeds_latest_refresh_job_in_refresh_s
              started_at, ended_at, duration_ms, execution_status, processed_count, success_count,
              failure_count, failure_reason, payload)
         VALUES
-            (30, 'job-succeeded', 10, 20, 1, '{"module":"model_rankings"}', 'model_ranking_refresh', 20, 1,
+            (30, 'job-succeeded', 100001, 0, 1, '{"module":"model_rankings"}', 'model_ranking_refresh', 20, 1,
              '2026-05-08 00:00:00', '2026-05-08 00:00:02', 2000, 2, 3, 1, 0, NULL,
              '{"rankScope":"commercial-default","snapshotDate":"2026-05-08","snapshotPeriod":"daily","windowStart":"2026-05-07T00:00:00Z","windowEnd":"2026-05-08T00:00:00Z","nextRefreshAt":"2026-05-08T01:00:00Z","generatedCount":1,"sourceCount":3}'),
-            (31, 'job-failed-latest', 10, 20, 1, '{"module":"model_rankings"}', 'model_ranking_refresh', 20, 1,
+            (31, 'job-failed-latest', 100001, 0, 1, '{"module":"model_rankings"}', 'model_ranking_refresh', 20, 1,
              '2026-05-08 01:00:00', '2026-05-08 01:00:01', 1000, 3, 0, 0, 1, 'usage aggregate failed',
              '{"rankScope":"commercial-default","snapshotDate":"2026-05-08","snapshotPeriod":"daily","windowStart":"2026-05-08T00:00:00Z","windowEnd":"2026-05-09T00:00:00Z","nextRefreshAt":"2026-05-08T02:00:00Z","generatedCount":0,"sourceCount":0}'),
             (32, 'job-global-newer', 0, 0, 1, '{"module":"model_rankings"}', 'model_ranking_refresh', 20, 1,
@@ -626,8 +626,8 @@ async fn sqlite_model_rankings_read_store_embeds_latest_refresh_job_in_refresh_s
         .load_model_ranking_refresh_status(
             ModelRankingRefreshStatusQuery::default(),
             Some(ModelRankingsSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 user_id: 30,
             }),
         )
@@ -666,7 +666,7 @@ async fn sqlite_model_rankings_read_store_does_not_mix_latest_job_from_different
         INSERT INTO ai_model_rank_snapshot
             (id, tenant_id, organization_id, status, metadata, snapshot_date, snapshot_period, rank_scope, catalog_key, model, vendor_code, vendor_name_snapshot, modality, rank_no, request_count, base_volume, rank_payload)
         VALUES
-            (45, 10, 20, 1, '{"snapshotPeriod":"daily","windowStart":"2026-05-07T00:00:00Z","windowEnd":"2026-05-08T00:00:00Z","generatedAt":"2026-05-08T00:05:00Z","refreshIntervalSeconds":3600,"nextRefreshAt":"2026-05-08T01:05:00Z","cacheMaxAgeSeconds":60,"sourceTables":["ai_usage_fact","ai_model","ai_model_rank_snapshot"]}', '2026-05-08', 1, 'commercial-default', 'openai/gpt-5.2', 'gpt-5.2', 'openai', 'OpenAI', 1, 1, 120, 120, '{"sourceRows":3}')
+            (45, 100001, 0, 1, '{"snapshotPeriod":"daily","windowStart":"2026-05-07T00:00:00Z","windowEnd":"2026-05-08T00:00:00Z","generatedAt":"2026-05-08T00:05:00Z","refreshIntervalSeconds":3600,"nextRefreshAt":"2026-05-08T01:05:00Z","cacheMaxAgeSeconds":60,"sourceTables":["ai_usage_fact","ai_model","ai_model_rank_snapshot"]}', '2026-05-08', 1, 'commercial-default', 'openai/gpt-5.2', 'gpt-5.2', 'openai', 'OpenAI', 1, 1, 120, 120, '{"sourceRows":3}')
         "#,
     )
     .execute(&pool)
@@ -692,8 +692,8 @@ async fn sqlite_model_rankings_read_store_does_not_mix_latest_job_from_different
         .load_model_ranking_refresh_status(
             ModelRankingRefreshStatusQuery::default(),
             Some(ModelRankingsSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 user_id: 30,
             }),
         )
@@ -724,10 +724,10 @@ async fn sqlite_model_rankings_read_store_keeps_refresh_job_history_in_selected_
              started_at, ended_at, duration_ms, execution_status, processed_count, success_count,
              failure_count, failure_reason, payload)
         VALUES
-            (50, 'job-tenant-old', 10, 20, 1, '{"module":"model_rankings"}', 'model_ranking_refresh', 20, 1,
+            (50, 'job-tenant-old', 100001, 0, 1, '{"module":"model_rankings"}', 'model_ranking_refresh', 20, 1,
              '2026-05-08 00:00:00', '2026-05-08 00:00:02', 2000, 2, 10, 2, 0, NULL,
              '{"rankScope":"commercial-default","snapshotDate":"2026-05-08","snapshotPeriod":"daily","windowStart":"2026-05-07T00:00:00Z","windowEnd":"2026-05-08T00:00:00Z","nextRefreshAt":"2026-05-08T01:00:00Z","generatedCount":2,"sourceCount":10}'),
-            (51, 'job-tenant-new', 10, 20, 1, '{"module":"model_rankings"}', 'model_ranking_refresh', 20, 1,
+            (51, 'job-tenant-new', 100001, 0, 1, '{"module":"model_rankings"}', 'model_ranking_refresh', 20, 1,
              '2026-05-08 01:00:00', '2026-05-08 01:00:01', 1000, 3, 0, 0, 1, 'usage aggregate failed',
              '{"rankScope":"commercial-default","snapshotDate":"2026-05-08","snapshotPeriod":"daily","windowStart":"2026-05-08T00:00:00Z","windowEnd":"2026-05-09T00:00:00Z","nextRefreshAt":"2026-05-08T02:00:00Z","generatedCount":0,"sourceCount":0}'),
             (52, 'job-global-newest', 0, 0, 1, '{"module":"model_rankings"}', 'model_ranking_refresh', 20, 1,
@@ -749,8 +749,8 @@ async fn sqlite_model_rankings_read_store_keeps_refresh_job_history_in_selected_
                 limit: 10,
             },
             Some(ModelRankingsSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 user_id: 30,
             }),
         )
@@ -785,7 +785,7 @@ async fn sqlite_model_rankings_read_store_does_not_mix_job_history_from_differen
         INSERT INTO ai_model_rank_snapshot
             (id, tenant_id, organization_id, status, metadata, snapshot_date, snapshot_period, rank_scope, catalog_key, model, vendor_code, vendor_name_snapshot, modality, rank_no, request_count, base_volume, rank_payload)
         VALUES
-            (70, 10, 20, 1, '{"snapshotPeriod":"daily","windowStart":"2026-05-07T00:00:00Z","windowEnd":"2026-05-08T00:00:00Z","generatedAt":"2026-05-08T00:05:00Z","refreshIntervalSeconds":3600,"nextRefreshAt":"2026-05-08T01:05:00Z","cacheMaxAgeSeconds":60,"sourceTables":["ai_usage_fact","ai_model","ai_model_rank_snapshot"]}', '2026-05-08', 1, 'commercial-default', 'openai/gpt-5.2', 'gpt-5.2', 'openai', 'OpenAI', 1, 1, 120, 120, '{"sourceRows":3}')
+            (70, 100001, 0, 1, '{"snapshotPeriod":"daily","windowStart":"2026-05-07T00:00:00Z","windowEnd":"2026-05-08T00:00:00Z","generatedAt":"2026-05-08T00:05:00Z","refreshIntervalSeconds":3600,"nextRefreshAt":"2026-05-08T01:05:00Z","cacheMaxAgeSeconds":60,"sourceTables":["ai_usage_fact","ai_model","ai_model_rank_snapshot"]}', '2026-05-08', 1, 'commercial-default', 'openai/gpt-5.2', 'gpt-5.2', 'openai', 'OpenAI', 1, 1, 120, 120, '{"sourceRows":3}')
         "#,
     )
     .execute(&pool)
@@ -814,8 +814,8 @@ async fn sqlite_model_rankings_read_store_does_not_mix_job_history_from_differen
                 limit: 10,
             },
             Some(ModelRankingsSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 user_id: 30,
             }),
         )
@@ -842,7 +842,7 @@ async fn sqlite_model_rankings_read_store_reports_latest_job_when_no_snapshot_ex
              started_at, ended_at, duration_ms, execution_status, processed_count, success_count,
              failure_count, failure_reason, payload)
         VALUES
-            (40, 'job-empty-first-run', 10, 20, 1, '{"module":"model_rankings"}', 'model_ranking_refresh', 20, 1,
+            (40, 'job-empty-first-run', 100001, 0, 1, '{"module":"model_rankings"}', 'model_ranking_refresh', 20, 1,
              '2026-05-08 01:00:00', '2026-05-08 01:00:01', 1000, 4, 0, 0, 0, NULL,
              '{"rankScope":"commercial-default","snapshotDate":"2026-05-08","snapshotPeriod":"daily","windowStart":"2026-05-08T00:00:00Z","windowEnd":"2026-05-09T00:00:00Z","nextRefreshAt":"2026-05-08T02:00:00Z","generatedCount":0,"sourceCount":0}')
         "#,
@@ -855,8 +855,8 @@ async fn sqlite_model_rankings_read_store_reports_latest_job_when_no_snapshot_ex
         .load_model_ranking_refresh_status(
             ModelRankingRefreshStatusQuery::default(),
             Some(ModelRankingsSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 user_id: 30,
             }),
         )
@@ -905,8 +905,8 @@ async fn sqlite_model_rankings_read_store_uses_latest_job_scope_when_no_snapshot
         .load_model_ranking_refresh_status(
             ModelRankingRefreshStatusQuery::default(),
             Some(ModelRankingsSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 user_id: 30,
             }),
         )
@@ -941,13 +941,13 @@ async fn sqlite_model_rankings_read_store_reads_recent_refresh_job_history_from_
              started_at, ended_at, duration_ms, execution_status, processed_count, success_count,
              failure_count, failure_reason, payload)
         VALUES
-            (1, 'job-old', 10, 20, 1, '{"module":"model_rankings"}', 'model_ranking_refresh', 20, 1,
+            (1, 'job-old', 100001, 0, 1, '{"module":"model_rankings"}', 'model_ranking_refresh', 20, 1,
              '2026-05-08 00:00:00', '2026-05-08 00:00:02', 2000, 2, 10, 2, 0, NULL,
              '{"rankScope":"commercial-default","snapshotDate":"2026-05-08","snapshotPeriod":"daily","windowStart":"2026-05-07T00:00:00Z","windowEnd":"2026-05-08T00:00:00Z","nextRefreshAt":"2026-05-08T01:00:00Z","generatedCount":2,"sourceCount":10}'),
-            (2, 'job-failed', 10, 20, 1, '{"module":"model_rankings"}', 'model_ranking_refresh', 20, 1,
+            (2, 'job-failed', 100001, 0, 1, '{"module":"model_rankings"}', 'model_ranking_refresh', 20, 1,
              '2026-05-08 01:00:00', '2026-05-08 01:00:01', 1000, 3, 0, 0, 1, 'usage aggregate failed',
              '{"rankScope":"commercial-default","snapshotDate":"2026-05-08","snapshotPeriod":"daily","windowStart":"2026-05-07T00:00:00Z","windowEnd":"2026-05-08T00:00:00Z","nextRefreshAt":"2026-05-08T02:00:00Z","generatedCount":0,"sourceCount":0}'),
-            (3, 'job-other-scope', 10, 20, 1, '{"module":"model_rankings"}', 'model_ranking_refresh', 20, 1,
+            (3, 'job-other-scope', 100001, 0, 1, '{"module":"model_rankings"}', 'model_ranking_refresh', 20, 1,
              '2026-05-08 02:00:00', '2026-05-08 02:00:01', 1000, 2, 5, 1, 0, NULL,
              '{"rankScope":"quality-default","snapshotDate":"2026-05-08","snapshotPeriod":"daily","windowStart":"2026-05-07T00:00:00Z","windowEnd":"2026-05-08T00:00:00Z","nextRefreshAt":"2026-05-08T03:00:00Z","generatedCount":1,"sourceCount":5}'),
             (4, 'job-global', 0, 0, 1, '{"module":"model_rankings"}', 'model_ranking_refresh', 20, 1,
@@ -966,8 +966,8 @@ async fn sqlite_model_rankings_read_store_reads_recent_refresh_job_history_from_
                 limit: 2,
             },
             Some(ModelRankingsSubject {
-                tenant_id: 10,
-                organization_id: 20,
+                tenant_id: 100001,
+                organization_id: 0,
                 user_id: 30,
             }),
         )

@@ -108,19 +108,19 @@ routes:
   - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts
   - docs/schema-registry/frontend-field-contracts.yaml
 - route: /admin/model
-  package: "@sdkwork/clawrouter-pc-admin-model"
-  owner: admin-control-plane
+  package: "@sdkwork/models-pc-admin-catalog"
+  owner: sdkwork-models
   route_scope: admin
-  delivery_kind: sdk_backed_business_runtime
+  delivery_kind: composed_local_mount
   api_surface: backend
   evidence:
-  - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
+  - data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts
   - docs/schema-registry/frontend-field-contracts.yaml
 - route: /admin/model/resources
-  package: "@sdkwork/clawrouter-pc-admin-model"
-  owner: admin-control-plane
+  package: "@sdkwork/models-pc-admin-resource"
+  owner: sdkwork-models
   route_scope: admin
-  delivery_kind: sdk_backed_business_runtime
+  delivery_kind: composed_local_mount
   api_surface: backend
   operation_routes:
   - /admin/model/resources
@@ -130,10 +130,10 @@ routes:
   - ai_resource_group_item
   - ops_audit_log
   evidence:
-  - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
+  - data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-resource/src/resourceGroupService.ts
   - docs/schema-registry/frontend-field-contracts.yaml
 - route: /admin/model/sites
-  package: "@sdkwork/clawrouter-pc-admin-model"
+  package: "@sdkwork/clawrouter-pc-admin-relay-site"
   owner: admin-control-plane
   route_scope: admin
   delivery_kind: sdk_backed_business_runtime
@@ -146,13 +146,13 @@ routes:
   - ai_channel
   - ops_audit_log
   evidence:
-  - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
+  - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-relay-site/src/siteService.ts
   - docs/schema-registry/frontend-field-contracts.yaml
 - route: /admin/model/mappings
-  package: "@sdkwork/clawrouter-pc-admin-model"
-  owner: admin-control-plane
+  package: "@sdkwork/models-pc-admin-catalog"
+  owner: sdkwork-models
   route_scope: admin
-  delivery_kind: sdk_backed_business_runtime
+  delivery_kind: composed_local_mount
   api_surface: backend
   operation_routes:
   - /admin/model/mappings
@@ -165,7 +165,7 @@ routes:
   - ai_channel
   - ops_audit_log
   evidence:
-  - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
+  - data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts
   - docs/schema-registry/frontend-field-contracts.yaml
 - route: /admin/monitor
   package: "@sdkwork/clawrouter-pc-admin-monitor"
@@ -387,6 +387,7 @@ routes:
   dependency_sdk_family: sdkwork-commerce-app-sdk
   evidence:
   - apps/sdkwork-clawrouter-pc/src/App.tsx
+  - apps/sdkwork-clawrouter-pc/src/commerce/commerceHostMount.tsx
   - docs/schema-registry/frontend-field-contracts/models/console-wallet.yaml
 - route: /console/memberships
   package: "@sdkwork/commerce-pc-membership"
@@ -398,6 +399,7 @@ routes:
   dependency_sdk_family: sdkwork-commerce-app-sdk
   evidence:
   - apps/sdkwork-clawrouter-pc/src/App.tsx
+  - apps/sdkwork-clawrouter-pc/src/commerce/commerceHostMount.tsx
   - docs/schema-registry/frontend-field-contracts/models/console-memberships.yaml
 - route: /console/checkout
   package: "@sdkwork/commerce-pc-checkout"
@@ -411,7 +413,8 @@ routes:
   - /console/memberships
   - /console/wallet
   evidence:
-  - apps/sdkwork-clawrouter-pc/src/commerce/consoleCommerceViews.tsx
+  - apps/sdkwork-clawrouter-pc/src/App.tsx
+  - apps/sdkwork-clawrouter-pc/src/commerce/commerceHostMount.tsx
   - docs/schema-registry/frontend-field-contracts/models/console-checkout.yaml
 - route: /console/payment
   package: "@sdkwork/commerce-pc-payment"
@@ -424,7 +427,9 @@ routes:
   operation_routes:
   - /console/checkout
   evidence:
-  - apps/sdkwork-clawrouter-pc/src/commerce/consoleCommerceViews.tsx
+  - apps/sdkwork-clawrouter-pc/src/App.tsx
+  - apps/sdkwork-clawrouter-pc/src/commerce/commerceHostMount.tsx
+  - docs/schema-registry/frontend-field-contracts/models/console-payment.yaml
 - route: /console/settlements
   package: "@sdkwork/commerce-pc-billing"
   owner: customer-console

@@ -60,7 +60,7 @@ async fn postgres_payment_callback_concurrent_first_account_creation_credits_one
         1,
         scalar_i64(
             &ctx.pool,
-            "SELECT COUNT(1) FROM commerce_account WHERE tenant_id = '10' AND organization_id = '20' AND owner_user_id = '30' AND asset_type = 'points' AND currency_code = 'POINT'"
+            "SELECT COUNT(1) FROM commerce_account WHERE tenant_id = '100001' AND organization_id = '0' AND owner_user_id = '30' AND asset_type = 'points' AND currency_code = 'POINT'"
         )
         .await
     );
@@ -68,7 +68,7 @@ async fn postgres_payment_callback_concurrent_first_account_creation_credits_one
         300,
         scalar_i64(
             &ctx.pool,
-            "SELECT available_amount::bigint FROM commerce_account WHERE tenant_id = '10' AND organization_id = '20' AND owner_user_id = '30' AND asset_type = 'points' AND currency_code = 'POINT'"
+            "SELECT available_amount::bigint FROM commerce_account WHERE tenant_id = '100001' AND organization_id = '0' AND owner_user_id = '30' AND asset_type = 'points' AND currency_code = 'POINT'"
         )
         .await
     );
@@ -194,8 +194,8 @@ async fn postgres_admin_ai_resource_read_models_decode_int4_status_columns() {
 
     let store = PostgresAdminAiResourceStore::new(ctx.pool.clone());
     let subject = AdminAiResourceSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         operator_id: 30,
         operator_type: 1,
     };
@@ -627,19 +627,19 @@ async fn seed_admin_ai_resource_group(pool: &PgPool) {
         INSERT INTO ai_resource
             (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, resource_schema, status, sort_order)
         VALUES
-            (9104, 'resource-model-openai-gpt-4o-mini-admin-ai-resource-status', 10, 20, 'model.openai.gpt-4o-mini.chat', 'model_api', 'GPT-4o mini Chat', 'openai', 'chat', 'openai.chat_completions', '{"capability":"chat"}'::jsonb, 1, 4)
+            (9104, 'resource-model-openai-gpt-4o-mini-admin-ai-resource-status', 100001, 0, 'model.openai.gpt-4o-mini.chat', 'model_api', 'GPT-4o mini Chat', 'openai', 'chat', 'openai.chat_completions', '{"capability":"chat"}'::jsonb, 1, 4)
         "#,
         r#"
         INSERT INTO ai_resource_group
             (id, uuid, tenant_id, organization_id, group_code, group_name, group_type, selection_mode, status, sort_order)
         VALUES
-            (9201, 'resource-group-openrouter-openai-admin-ai-resource-status', 10, 20, 'bundle.openrouter.openai.standard', 'OpenRouter OpenAI Standard', 'api_group', 'manual', 1, 1)
+            (9201, 'resource-group-openrouter-openai-admin-ai-resource-status', 100001, 0, 'bundle.openrouter.openai.standard', 'OpenRouter OpenAI Standard', 'api_group', 'manual', 1, 1)
         "#,
         r#"
         INSERT INTO ai_resource_group_item
             (id, uuid, tenant_id, organization_id, resource_group_id, resource_group_code, item_type, resource_id, resource_code, item_role, status, sort_order)
         VALUES
-            (9202, 'resource-group-item-openrouter-gpt-4o-mini-admin-ai-resource-status', 10, 20, 9201, 'bundle.openrouter.openai.standard', 'resource', 9104, 'model.openai.gpt-4o-mini.chat', 'included', 1, 1)
+            (9202, 'resource-group-item-openrouter-gpt-4o-mini-admin-ai-resource-status', 100001, 0, 9201, 'bundle.openrouter.openai.standard', 'resource', 9104, 'model.openai.gpt-4o-mini.chat', 'included', 1, 1)
         "#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
@@ -734,8 +734,8 @@ fn usage_command(request_id: &str, http_status: u16) -> GatewayUsageRecordComman
     GatewayUsageRecordCommand {
         request_id: request_id.to_owned(),
         trace_id: Some("trace-chat-usage-postgres".to_owned()),
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
         api_key_id: 101,
         api_key_name_snapshot: "Owner Usage Key".to_owned(),

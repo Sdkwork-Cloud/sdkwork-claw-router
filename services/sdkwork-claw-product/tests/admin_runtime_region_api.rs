@@ -110,7 +110,7 @@ async fn admin_runtime_region_settings_cache_is_scoped_by_tenant_and_organizatio
 
     let first = request_json(
         router.clone(),
-        request_for_subject(Method::GET, SETTINGS_PATH, None, 10, 20, 30),
+        request_for_subject(Method::GET, SETTINGS_PATH, None, 100001, 0, 30),
     )
     .await;
     assert_eq!("cn", first["data"]["currentRegionCode"]);
@@ -124,7 +124,7 @@ async fn admin_runtime_region_settings_cache_is_scoped_by_tenant_and_organizatio
 
     let third = request_json(
         router,
-        request_for_subject(Method::GET, SETTINGS_PATH, None, 10, 20, 30),
+        request_for_subject(Method::GET, SETTINGS_PATH, None, 100001, 0, 30),
     )
     .await;
     assert_eq!("cn", third["data"]["currentRegionCode"]);
@@ -189,7 +189,7 @@ impl RuntimeRegionSettingsStore for CountingRuntimeRegionSettingsStore {
 }
 
 fn request(method: Method, path: &str, body: Option<Value>) -> Request<Body> {
-    request_for_subject(method, path, body, 10, 20, 30)
+    request_for_subject(method, path, body, 100001, 0, 30)
 }
 
 fn request_for_subject(

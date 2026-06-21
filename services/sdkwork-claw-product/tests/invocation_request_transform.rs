@@ -30,8 +30,8 @@ impl ProviderSecretResolver for MapSecretResolver {
 
 fn subject() -> InvocationSubject {
     InvocationSubject::from_api_key_context(AuthenticatedApiKeyContext {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
         api_key_id: 100,
         api_key_name_snapshot: "Test key".to_owned(),
@@ -393,6 +393,7 @@ async fn builds_adapter_request_as_standard_json_body() {
         endpoint_key: "openai.chat_completions".to_owned(),
         base_url: "https://adapter.example".to_owned(),
         path_template: "/providers/{provider_code}{standard_path}".to_owned(),
+        standard_path: "/v1/chat/completions".to_owned(),
         gateway_token: Some("adapter-token".to_owned()),
         shape: InvocationShape::Json,
     });

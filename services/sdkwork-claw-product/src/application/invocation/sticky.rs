@@ -74,16 +74,22 @@ impl InvocationInterceptor for StickyResolutionInterceptor {
                         "failed to resolve sticky route binding for {} {}: {error}",
                         query.object_type, query.object_id
                     ))
-                })?
-                .ok_or_else(|| {
-                    sticky_error(format!(
-                        "sticky route binding not found for {} {}",
-                        query.object_type, query.object_id
-                    ))
                 })?;
 
-            apply_sticky_binding(invocation, binding);
-            Ok(())
+            match binding {
+                Some(binding) => {
+                    apply_sticky_binding(invocation, binding);
+                    Ok(())
+                }
+                None if sticky.mode == StickyMode::ParentSticky => {
+                    invocation.routing.sticky = None;
+                    Ok(())
+                }
+                None => Err(sticky_error(format!(
+                    "sticky route binding not found for {} {}",
+                    query.object_type, query.object_id
+                ))),
+            }
         })
     }
 }

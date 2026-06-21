@@ -23,12 +23,17 @@ COMMERCE_FRONTEND_DEPENDENCIES = [
     "sdkwork-clawrouter-pc-admin-memberships",
     "sdkwork-clawrouter-pc-admin-wallet",
     "sdkwork-clawrouter-pc-admin-finance",
+    "@sdkwork/commerce-pc-host",
     "@sdkwork/commerce-pc-wallet",
     "@sdkwork/commerce-pc-membership",
+    "@sdkwork/commerce-pc-membership-purchase",
     "@sdkwork/commerce-pc-billing",
+    "@sdkwork/commerce-pc-checkout",
+    "@sdkwork/commerce-pc-payment",
 ]
 
 COMMERCE_CONSOLE_SHELL_ADAPTER = "apps/sdkwork-clawrouter-pc/src/App.tsx"
+COMMERCE_CONSOLE_HOST_MOUNT = "apps/sdkwork-clawrouter-pc/src/commerce/commerceHostMount.tsx"
 
 COMMERCE_FRONTEND_SERVICE_ADAPTERS = [
     "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts",
@@ -39,6 +44,7 @@ COMMERCE_FRONTEND_SERVICE_ADAPTERS = [
     "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wallet/src/walletService.ts",
     "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-finance/src/financeService.ts",
     COMMERCE_CONSOLE_SHELL_ADAPTER,
+    COMMERCE_CONSOLE_HOST_MOUNT,
 ]
 
 

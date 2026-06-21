@@ -4,6 +4,7 @@ use sdkwork_models::ModelCatalog;
 use sqlx::{PgConnection, PgPool, Postgres, Row, Transaction};
 
 use crate::infrastructure::sql::model_catalog_import::*;
+use crate::infrastructure::sql::postgres::row_mapping::postgres_row_i64;
 
 pub async fn import_postgres_model_catalog(
     pool: &PgPool,
@@ -273,8 +274,13 @@ async fn load_vendor_ids(conn: &mut PgConnection) -> Result<BTreeMap<String, i64
     .await?;
     Ok(rows
         .into_iter()
-        .map(|row| (row.get("vendor_code"), row.get("id")))
-        .collect())
+        .map(|row| {
+            Ok((
+                row.get("vendor_code"),
+                postgres_row_i64(&row, "id")?,
+            ))
+        })
+        .collect::<Result<BTreeMap<_, _>, sqlx::Error>>()?)
 }
 
 async fn import_families(
@@ -344,16 +350,16 @@ async fn load_family_ids(
     Ok(rows
         .into_iter()
         .map(|row| {
-            (
+            Ok((
                 (
                     row.get("vendor_code"),
                     String::new(),
                     row.get("family_code"),
                 ),
-                row.get("id"),
-            )
+                postgres_row_i64(&row, "id")?,
+            ))
         })
-        .collect())
+        .collect::<Result<BTreeMap<_, _>, sqlx::Error>>()?)
 }
 
 async fn import_models(
@@ -474,8 +480,13 @@ async fn load_model_ids(conn: &mut PgConnection) -> Result<BTreeMap<String, i64>
     .await?;
     Ok(rows
         .into_iter()
-        .map(|row| (row.get("catalog_key"), row.get("id")))
-        .collect())
+        .map(|row| {
+            Ok((
+                row.get("catalog_key"),
+                postgres_row_i64(&row, "id")?,
+            ))
+        })
+        .collect::<Result<BTreeMap<_, _>, sqlx::Error>>()?)
 }
 
 async fn import_capabilities(
@@ -607,8 +618,13 @@ async fn load_modality_ids(conn: &mut PgConnection) -> Result<BTreeMap<String, i
     .await?;
     Ok(rows
         .into_iter()
-        .map(|row| (row.get("modality_code"), row.get("id")))
-        .collect())
+        .map(|row| {
+            Ok((
+                row.get("modality_code"),
+                postgres_row_i64(&row, "id")?,
+            ))
+        })
+        .collect::<Result<BTreeMap<_, _>, sqlx::Error>>()?)
 }
 
 async fn import_api_endpoints(
@@ -672,8 +688,13 @@ async fn load_api_endpoint_ids(
     .await?;
     Ok(rows
         .into_iter()
-        .map(|row| (row.get("endpoint_code"), row.get("id")))
-        .collect())
+        .map(|row| {
+            Ok((
+                row.get("endpoint_code"),
+                postgres_row_i64(&row, "id")?,
+            ))
+        })
+        .collect::<Result<BTreeMap<_, _>, sqlx::Error>>()?)
 }
 
 async fn import_vendor_modalities(
@@ -1062,7 +1083,7 @@ async fn import_pricing(
                 );
                 let model_id = model_ids.get(&model_catalog_key).copied();
                 let meter_id: Option<i64> = sqlx::query_scalar(
-                    "SELECT id FROM ai_billing_meter WHERE tenant_id = 0 AND organization_id = 0 AND meter_code = $1",
+                    "SELECT id::bigint FROM ai_billing_meter WHERE tenant_id = 0 AND organization_id = 0 AND meter_code = $1",
                 )
                 .bind(&price.meter_code)
                 .fetch_optional(&mut *conn)

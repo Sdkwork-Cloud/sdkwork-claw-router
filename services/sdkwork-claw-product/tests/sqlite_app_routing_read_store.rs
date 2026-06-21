@@ -203,8 +203,8 @@ async fn sqlite_pool() -> SqlitePool {
 
 fn owner_subject() -> AppRoutingSubject {
     AppRoutingSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
     }
 }
@@ -260,7 +260,7 @@ async fn seed_routing_api_key(pool: &SqlitePool, copyable_key_ciphertext: &str) 
             metadata, status, created_at, updated_at
         )
         VALUES (
-            100, 10, 20, 30, 'Owner Key', 'sk-owner', 'sk-owner********ABCD',
+            100, 100001, 0, 30, 'Owner Key', 'sk-owner', 'sk-owner********ABCD',
             ?, 1, '2026-04-29 12:00:00', '2026-04-29 12:05:00'
         )
         "#,
@@ -274,7 +274,7 @@ async fn seed_routing_api_key(pool: &SqlitePool, copyable_key_ciphertext: &str) 
         INSERT INTO ai_usage_fact (
             id, tenant_id, organization_id, user_id, api_key_id, request_count, status
         )
-        VALUES (9001, 10, 20, 30, 100, 5, 1)
+        VALUES (9001, 100001, 0, 30, 100, 5, 1)
         "#,
     )
     .execute(pool)
@@ -433,7 +433,7 @@ async fn seed_routing_channel(pool: &SqlitePool) {
         INSERT INTO ai_resource (
             id, tenant_id, organization_id, resource_code, resource_type, modality_code, status
         )
-        VALUES (5001, 10, 20, 'llm', 'modality', 'llm', 1)
+        VALUES (5001, 100001, 0, 'llm', 'modality', 'llm', 1)
         "#,
     )
     .execute(pool)
@@ -448,7 +448,7 @@ async fn seed_routing_channel(pool: &SqlitePool) {
             rpm_limit, consecutive_error_count, priority
         )
         VALUES (
-            2001, 10, 20, 'OpenAI primary', 'openai', 'openai', 1,
+            2001, 100001, 0, 'OpenAI primary', 'openai', 'openai', 1,
             'https://api.openai.test/v1', 'sk-***test', 60000,
             '{"max_attempts":3,"retryable_status_codes":[429,503],"backoff_ms":25}',
             '{"failure_threshold":2}',
@@ -466,7 +466,7 @@ async fn seed_routing_channel(pool: &SqlitePool) {
         INSERT INTO ai_channel_resource (
             id, tenant_id, organization_id, channel_id, resource_code, grant_type, status
         )
-        VALUES (6001, 10, 20, 2001, 'llm', 'allow', 1)
+        VALUES (6001, 100001, 0, 2001, 'llm', 'allow', 1)
         "#,
     )
     .execute(pool)

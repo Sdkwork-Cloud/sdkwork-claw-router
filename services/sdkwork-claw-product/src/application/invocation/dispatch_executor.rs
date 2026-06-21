@@ -3,9 +3,10 @@ use std::time::{Duration, Instant};
 
 use super::provider_request::ProviderRequestBuilder;
 use super::{
-    DispatchMode, Invocation, InvocationAccount, InvocationDispatchResponse, InvocationError,
-    InvocationErrorKind, InvocationFuture, InvocationInterceptor, InvocationRouteAttempt,
-    InvocationRouteCandidate, InvocationShape, InvocationSurface, ResolvedProviderSecret,
+    BillingQuantitySource, DispatchMode, Invocation, InvocationAccount, InvocationDispatchResponse,
+    InvocationError, InvocationErrorKind, InvocationFuture, InvocationInterceptor,
+    InvocationRouteAttempt, InvocationRouteCandidate, InvocationShape, InvocationSurface,
+    ResolvedProviderSecret,
 };
 use crate::domain::AiRouteFailureStrategy;
 use crate::ports::{
@@ -225,8 +226,10 @@ fn refresh_adapter_target(
         return;
     };
     if let Some(target) = adapter_resolver.resolve_adapter_target(invocation) {
+        invocation.dispatch.mode = DispatchMode::InternalProviderAdapter;
         invocation.dispatch.invocation_shape = target.shape.clone();
         invocation.dispatch.adapter_target = Some(target);
+        invocation.billing.quantity_source = BillingQuantitySource::AdapterUsageLines;
     } else {
         invocation.dispatch.mode = DispatchMode::DirectHttpPassthrough;
         invocation.dispatch.invocation_shape = InvocationShape::Json;

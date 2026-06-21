@@ -95,8 +95,8 @@ async fn app_chat_list_conversations_uses_trusted_subject_and_returns_items() {
     let subjects = store.list_subjects.lock().unwrap();
     assert_eq!(
         vec![AppChatSubject {
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             user_id: 30
         }],
         *subjects

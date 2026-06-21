@@ -40,7 +40,6 @@ const MAX_WEIGHT: i64 = 10_000;
 struct AppRoutingChannelCommandState {
     store: Arc<dyn AppRoutingChannelCommandStore + Send + Sync>,
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
-    require_subject: bool,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -150,24 +149,15 @@ impl AppRoutingChannelCommandStore for EmptyAppRoutingChannelCommandStore {
 }
 
 pub fn app_routing_channel_command_router() -> Router {
-    app_routing_channel_command_router_with_state(
+    app_routing_channel_command_router_with_store(
         Arc::new(EmptyAppRoutingChannelCommandStore),
         Arc::new(OsApiKeySecretGenerator),
-        false,
     )
 }
 
 pub fn app_routing_channel_command_router_with_store(
     store: Arc<dyn AppRoutingChannelCommandStore + Send + Sync>,
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
-) -> Router {
-    app_routing_channel_command_router_with_state(store, entity_uuid_generator, true)
-}
-
-fn app_routing_channel_command_router_with_state(
-    store: Arc<dyn AppRoutingChannelCommandStore + Send + Sync>,
-    entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
-    require_subject: bool,
 ) -> Router {
     Router::new()
         .route(
@@ -189,7 +179,6 @@ fn app_routing_channel_command_router_with_state(
         .with_state(AppRoutingChannelCommandState {
             store,
             entity_uuid_generator,
-            require_subject,
         })
 }
 

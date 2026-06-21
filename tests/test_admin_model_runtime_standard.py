@@ -12,11 +12,11 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
     def test_admin_model_write_contracts_use_operation_specific_payloads(self) -> None:
         manifest = ApiContractManifestGenerator(root=ROOT).generate()
         operations = {operation["key"]: operation for operation in manifest["operations"]}
-        source = "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
+        source = "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts"
 
-        sync_models = operations[f"{source}#syncVendorsAndModels"]
-        add_vendor = operations[f"{source}#addVendor"]
-        add_model = operations[f"{source}#addModel"]
+        sync_models = operations[f"{source}#syncVendorsAndModels@/admin/model"]
+        add_vendor = operations[f"{source}#addVendor@/admin/model"]
+        add_model = operations[f"{source}#addModel@/admin/model"]
 
         self.assertEqual("AdminModelCatalogSyncRequest", sync_models["request_schema"]["name"])
         self.assertEqual([], sync_models["request_schema"]["schema"]["required"])
@@ -50,10 +50,12 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
     def test_admin_model_frontend_and_backend_sdk_do_not_use_generic_write_payloads(self) -> None:
         service = (
             ROOT
+            / "data"
+            / "sdkwork-models"
             / "apps"
-            / "sdkwork-clawrouter-pc"
+            / "sdkwork-models-pc"
             / "packages"
-            / "sdkwork-clawrouter-pc-admin-model"
+            / "sdkwork-models-pc-admin-catalog"
             / "src"
             / "modelService.ts"
         ).read_text(encoding="utf-8")
@@ -129,10 +131,10 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("router.addVendor(vendor)", service)
         self.assertNotIn("model.add(model)", service)
         self.assertNotIn("as unknown as Record<string, unknown>", service)
-        self.assertIn("getClawRouterBackendSdkClient().ai.modelVendors.list()", service)
-        self.assertIn("getClawRouterBackendSdkClient().ai.models.refresh(", service)
-        self.assertIn("getClawRouterBackendSdkClient().ai.modelVendors.create(", service)
-        self.assertIn("getClawRouterBackendSdkClient().ai.modelRankings.list(", service)
+        self.assertIn("getModelsBackendSdkClient().ai.modelVendors.list()", service)
+        self.assertIn("getModelsBackendSdkClient().ai.models.refresh(", service)
+        self.assertIn("getModelsBackendSdkClient().ai.modelVendors.create(", service)
+        self.assertIn("getModelsBackendSdkClient().ai.modelRankings.list(", service)
         for count_field in [
             "meterCount",
             "vendorCount",
@@ -241,10 +243,12 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
     def test_admin_model_create_forms_use_dedicated_inputs(self) -> None:
         package_root = (
             ROOT
+            / "data"
+            / "sdkwork-models"
             / "apps"
-            / "sdkwork-clawrouter-pc"
+            / "sdkwork-models-pc"
             / "packages"
-            / "sdkwork-clawrouter-pc-admin-model"
+            / "sdkwork-models-pc-admin-catalog"
         )
         package = json.loads((package_root / "package.json").read_text(encoding="utf-8"))
         service = (package_root / "src" / "modelService.ts").read_text(encoding="utf-8")
@@ -278,8 +282,8 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
 
     def test_admin_model_read_model_validates_modalities_json(self) -> None:
         store_paths = [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_model_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_model_store.rs",
+            "data/sdkwork-models/crates/sdkwork-models-catalog-repository-sqlx/src/sqlite/model_catalog_admin_store.rs",
+            "data/sdkwork-models/crates/sdkwork-models-catalog-repository-sqlx/src/postgres/model_catalog_admin_store.rs",
         ]
 
         for relative_path in store_paths:
@@ -301,8 +305,8 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
 
     def test_admin_model_read_model_fails_closed_for_vendor_and_model_status(self) -> None:
         store_paths = [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_model_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_model_store.rs",
+            "data/sdkwork-models/crates/sdkwork-models-catalog-repository-sqlx/src/sqlite/model_catalog_admin_store.rs",
+            "data/sdkwork-models/crates/sdkwork-models-catalog-repository-sqlx/src/postgres/model_catalog_admin_store.rs",
         ]
 
         for relative_path in store_paths:

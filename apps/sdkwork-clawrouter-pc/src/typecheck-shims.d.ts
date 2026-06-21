@@ -868,7 +868,21 @@ declare module '@sdkwork/commerce-pc-admin-product' {
 declare module '@sdkwork/commerce-pc-wallet' {
   import type { ComponentType } from 'react';
 
-  export const SdkworkWalletPage: ComponentType<Record<string, unknown>>;
+  export interface SdkworkWalletPageProps {
+    checkoutBasePath?: string;
+    onNavigate?: (route: string) => void;
+    rechargeFlow?: 'checkout' | 'direct';
+  }
+
+  export interface SdkworkWalletHeaderEntryProps {
+    checkoutBasePath?: string;
+    onNavigate?: (route: string) => void;
+    onOpenPage?: () => void;
+    rechargeFlow?: 'checkout' | 'direct';
+  }
+
+  export const SdkworkWalletPage: ComponentType<SdkworkWalletPageProps>;
+  export const SdkworkWalletHeaderEntry: ComponentType<SdkworkWalletHeaderEntryProps>;
 }
 
 declare module '@sdkwork/commerce-pc-membership' {
@@ -894,6 +908,26 @@ declare module '@sdkwork/commerce-pc-membership-purchase' {
   }
 
   export const SdkworkMembershipPurchaseHeaderEntry: ComponentType<SdkworkMembershipPurchaseHeaderEntryProps>;
+}
+
+declare module '@sdkwork/commerce-pc-host' {
+  import type { ComponentType } from 'react';
+
+  export interface SdkworkCommerceHostPageProps {
+    routePrefix?: string;
+  }
+
+  export const SdkworkCommerceHostWalletPage: ComponentType<SdkworkCommerceHostPageProps>;
+  export const SdkworkCommerceHostMembershipPage: ComponentType<SdkworkCommerceHostPageProps>;
+  export const SdkworkCommerceHostCheckoutPage: ComponentType<SdkworkCommerceHostPageProps>;
+  export const SdkworkCommerceHostPaymentPage: ComponentType<SdkworkCommerceHostPageProps>;
+  export const SdkworkCommerceHostNavbarActions: ComponentType<SdkworkCommerceHostPageProps>;
+  export const SdkworkCommerceHostRoutes: ComponentType<SdkworkCommerceHostPageProps>;
+  export const SDKWORK_COMMERCE_HOST_ROUTE_CATALOG: readonly {
+    id: string;
+    segment: string;
+    hidden: boolean;
+  }[];
 }
 
 declare module '@sdkwork/commerce-pc-billing' {

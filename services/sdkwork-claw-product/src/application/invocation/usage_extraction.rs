@@ -20,7 +20,11 @@ impl InvocationInterceptor for UsageExtractionInterceptor {
         Box::pin(async move {
             if invocation.billing.mode == BillingMode::Free
                 || invocation.billing.quantity_source == BillingQuantitySource::None
-                || !provider_response_is_success(invocation)
+                || (!provider_response_is_success(invocation)
+                    && !matches!(
+                        invocation.billing.quantity_source,
+                        BillingQuantitySource::FixedRequest
+                    ))
             {
                 return Ok(());
             }
@@ -83,7 +87,7 @@ fn ensure_fixed_request_line(invocation: &mut Invocation) -> Result<(), Invocati
 }
 
 fn extract_composite_usage(invocation: &mut Invocation) -> Result<(), InvocationError> {
-    let body = response_body(invocation)?.clone();
+    let body = response_body(invocation)?;
     extract_composite_usage_from_body(invocation, &body)
 }
 
@@ -91,10 +95,13 @@ fn extract_composite_usage_from_body(
     invocation: &mut Invocation,
     body: &Value,
 ) -> Result<(), InvocationError> {
-    let usage = body
+    let usage = match body
         .get("usage")
         .or_else(|| body.get("usageMetadata"))
-        .ok_or_else(|| usage_error("response body does not contain usage object"))?;
+    {
+        Some(usage) => usage,
+        None => return Ok(()),
+    };
     let input_tokens = integer_field(
         usage,
         &["prompt_tokens", "input_tokens", "promptTokenCount"],
@@ -195,7 +202,7 @@ fn extract_response_body_usage(invocation: &mut Invocation) -> Result<(), Invoca
         .meter
         .clone()
         .ok_or_else(|| usage_error("response body usage extraction requires billing meter"))?;
-    let body = response_body(invocation)?.clone();
+    let body = response_body(invocation)?;
     let line = match invocation.billing.mode {
         BillingMode::Token => token_line(&meter, &body)?,
         BillingMode::ResultCount => result_line(&meter, &body)?,
@@ -210,9 +217,11 @@ fn extract_response_body_usage(invocation: &mut Invocation) -> Result<(), Invoca
 }
 
 fn extract_adapter_usage_lines(invocation: &mut Invocation) -> Result<(), InvocationError> {
-    let body = response_body(invocation)?.clone();
+    let body = response_body(invocation)?;
     let lines = body
-        .pointer("/body/_gateway_usage/lines")
+        .pointer("/usage/usageLines")
+        .or_else(|| body.pointer("/usage/usage_lines"))
+        .or_else(|| body.pointer("/body/_gateway_usage/lines"))
         .or_else(|| body.pointer("/body/usage/lines"))
         .or_else(|| body.pointer("/_gateway_usage/lines"))
         .or_else(|| body.pointer("/usage/lines"))
@@ -220,14 +229,39 @@ fn extract_adapter_usage_lines(invocation: &mut Invocation) -> Result<(), Invoca
         .ok_or_else(|| usage_error("adapter response does not contain usage lines"))?;
     let mut extracted = Vec::new();
     for line in lines {
-        let meter = text_field(line, &["meter", "billing_meter", "billingMeter"])
-            .map(|code| BillingMeter::from_code(&code))
-            .ok_or_else(|| usage_error("adapter usage line is missing meter"))?;
-        let quantity = text_field(line, &["quantity", "billable_quantity", "billableQuantity"])
-            .or_else(|| {
-                number_field_as_string(line, &["quantity", "billable_quantity", "billableQuantity"])
-            })
-            .ok_or_else(|| usage_error("adapter usage line is missing quantity"))?;
+        let meter = text_field(
+            line,
+            &[
+                "meter",
+                "meterCode",
+                "billing_meter",
+                "billingMeter",
+                "billing_meter_code",
+            ],
+        )
+        .map(|code| BillingMeter::from_code(&code))
+        .ok_or_else(|| usage_error("adapter usage line is missing meter"))?;
+        let quantity = text_field(
+            line,
+            &[
+                "quantity",
+                "billable_quantity",
+                "billableQuantity",
+                "billable_quantity",
+            ],
+        )
+        .or_else(|| {
+            number_field_as_string(
+                line,
+                &[
+                    "quantity",
+                    "billable_quantity",
+                    "billableQuantity",
+                    "billable_quantity",
+                ],
+            )
+        })
+        .ok_or_else(|| usage_error("adapter usage line is missing quantity"))?;
         let quantity = GatewayUsageQuantity::for_meter(meter.clone(), quantity)
             .map_err(|error| usage_error(error.to_string()))?;
         extracted.push(InvocationUsageLine::new(meter, quantity));
@@ -336,13 +370,38 @@ fn generic_line(
     ))
 }
 
-fn response_body(invocation: &Invocation) -> Result<&Value, InvocationError> {
-    invocation
-        .dispatch
-        .response
-        .as_ref()
-        .and_then(|response| response.body.as_ref())
-        .ok_or_else(|| usage_error("usage extraction requires provider response body"))
+fn response_body(invocation: &Invocation) -> Result<Value, InvocationError> {
+    let response = invocation.dispatch.response.as_ref().ok_or_else(|| {
+        usage_error("usage extraction requires provider response body")
+    })?;
+    if let Some(body) = response.body.as_ref() {
+        return Ok(body.clone());
+    }
+    if let Some(bytes) = response.body_bytes.as_ref() {
+        return parse_json_response_bytes(bytes);
+    }
+    if let Some(normalized) = invocation.telemetry.normalized_response.as_ref() {
+        if let Some(body) = normalized.body.as_ref() {
+            return Ok(body.clone());
+        }
+        if let Some(bytes) = normalized.body_bytes.as_ref() {
+            return parse_json_response_bytes(bytes);
+        }
+    }
+    Err(usage_error(
+        "usage extraction requires provider response body",
+    ))
+}
+
+fn parse_json_response_bytes(bytes: &[u8]) -> Result<Value, InvocationError> {
+    if bytes.is_empty() {
+        return Err(usage_error(
+            "usage extraction requires provider response body",
+        ));
+    }
+    serde_json::from_slice(bytes).map_err(|error| {
+        usage_error(format!("provider response body is not JSON: {error}"))
+    })
 }
 
 fn streaming_usage_body(invocation: &Invocation) -> Result<Option<Value>, InvocationError> {

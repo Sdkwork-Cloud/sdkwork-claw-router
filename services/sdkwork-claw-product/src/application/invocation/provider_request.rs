@@ -1,6 +1,9 @@
 use axum::http::{header, HeaderMap, HeaderName, HeaderValue};
 use serde_json::{json, Value};
 
+use super::multipart_form::{
+    request_content_type_is_multipart_form, rewrite_multipart_model,
+};
 use super::{
     DispatchMode, Invocation, InvocationAccount, InvocationBody, InvocationError,
     InvocationErrorKind, InvocationProviderRequest, ResolvedProviderSecret,
@@ -33,10 +36,11 @@ impl ProviderRequestBuilder {
             &account.auth_profile,
             resolved_secret.map(|secret| secret.value.as_str()),
         )?;
-        let body = rewrite_json_body_model(
+        let body = rewrite_body_model(
             invocation.request.body.clone(),
+            &invocation.request.headers,
             account.provider_model.as_deref(),
-        );
+        )?;
         Ok(InvocationProviderRequest {
             method: invocation.request.method.clone(),
             url: provider_url(
@@ -81,7 +85,7 @@ fn build_adapter_provider_request(
     let path = adapter_path(
         &target.path_template,
         &target.provider_code,
-        &invocation.request.path,
+        &target.standard_path,
     );
     Ok(InvocationProviderRequest {
         method: axum::http::Method::POST,
@@ -197,13 +201,28 @@ fn apply_auth(
     Ok(())
 }
 
-fn rewrite_json_body_model(body: InvocationBody, provider_model: Option<&str>) -> InvocationBody {
+fn rewrite_body_model(
+    body: InvocationBody,
+    headers: &HeaderMap,
+    provider_model: Option<&str>,
+) -> Result<InvocationBody, InvocationError> {
     let Some(provider_model) = provider_model
         .map(str::trim)
         .filter(|value| !value.is_empty())
     else {
-        return body;
+        return Ok(body);
     };
+    if request_content_type_is_multipart_form(headers) {
+        let InvocationBody::Bytes(bytes) = body else {
+            return Ok(body);
+        };
+        return rewrite_multipart_model(headers, &bytes, provider_model)
+            .map(InvocationBody::Bytes);
+    }
+    Ok(rewrite_json_body_model(body, provider_model))
+}
+
+fn rewrite_json_body_model(body: InvocationBody, provider_model: &str) -> InvocationBody {
     match body {
         InvocationBody::Json(mut value) => {
             if let Some(object) = value.as_object_mut() {

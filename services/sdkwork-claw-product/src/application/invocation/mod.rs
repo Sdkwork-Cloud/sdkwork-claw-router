@@ -9,6 +9,7 @@ mod dispatch_executor;
 mod error;
 mod interceptor;
 mod invocation;
+mod multipart_form;
 mod openai_classifier;
 mod payload;
 mod pipeline;

@@ -12,6 +12,9 @@ use sdkwork_claw_config::{
     PaymentWebhookConfig, ProviderSecretMapConfig, RedisConfig, RequestLimitsConfig,
     RuntimeConfigProfile, RuntimeTomlConfig, StartupInstallMode, TrustedSubjectConfig,
 };
+use sdkwork_router_catalog_app_api::{
+    app_model_catalog_router, app_model_rankings_router, app_model_rankings_router_with_read_store,
+};
 use sdkwork_claw_http::AppSubjectBoundaryConfig;
 use sdkwork_claw_product::application::{
     ApiKeySecretCodec, EntityUuidGenerator, InMemoryRuntimeStreamBus, ModelRankingRefreshWorker,
@@ -144,7 +147,7 @@ pub fn router() -> Router {
     .merge(sdkwork_claw_product::api::app_payment_callback_router())
     .merge(sdkwork_claw_product::api::payment_aggregate_router())
     .merge(sdkwork_claw_product::api::app_dashboard_overview_router())
-    .merge(sdkwork_claw_product::api::app_model_rankings_router())
+    .merge(app_model_rankings_router())
     .merge(sdkwork_claw_product::api::app_settlements_dashboard_router())
     .merge(sdkwork_claw_product::api::app_settings_router())
     .merge(sdkwork_claw_product::api::app_usage_logs_router())
@@ -235,7 +238,7 @@ where
     .merge(sdkwork_claw_product::api::app_site_settings_router())
     .merge(sdkwork_claw_product::api::app_payment_callback_router())
     .merge(sdkwork_claw_product::api::app_dashboard_overview_router())
-    .merge(sdkwork_claw_product::api::app_model_rankings_router())
+    .merge(app_model_rankings_router())
     .merge(sdkwork_claw_product::api::app_settlements_dashboard_router())
     .merge(sdkwork_claw_product::api::app_settings_router())
     .merge(sdkwork_claw_product::api::app_usage_logs_router())
@@ -248,7 +251,7 @@ where
     .merge(sdkwork_claw_product::api::app_routing_router())
     .merge(sdkwork_claw_product::api::app_routing_strategy_router())
     .merge(sdkwork_claw_product::api::app_routing_channel_command_router())
-    .merge(sdkwork_claw_product::api::app_model_catalog_router(
+    .merge(app_model_catalog_router(
         Arc::clone(&catalog),
     ))
 }
@@ -737,7 +740,7 @@ pub async fn router_with_sqlite_product_catalog(
     let model_rankings_store =
         model_rankings_service(Arc::new(SqliteModelRankingsReadStore::new(pool.clone())));
     let model_catalog_router =
-        sdkwork_claw_product::api::app_model_catalog_router(Arc::new(model_catalog_snapshot))
+        app_model_catalog_router(Arc::new(model_catalog_snapshot))
             .merge(app_model_rankings_router_with_subject_boundary(
                 model_rankings_store,
                 &trusted_subject_config,
@@ -824,7 +827,7 @@ pub async fn router_with_postgres_product_catalog(
     let model_rankings_store =
         model_rankings_service(Arc::new(PostgresModelRankingsReadStore::new(pool.clone())));
     let model_catalog_router =
-        sdkwork_claw_product::api::app_model_catalog_router(Arc::new(model_catalog_snapshot))
+        app_model_catalog_router(Arc::new(model_catalog_snapshot))
             .merge(app_model_rankings_router_with_subject_boundary(
                 model_rankings_store,
                 &trusted_subject_config,
@@ -922,7 +925,7 @@ pub async fn router_with_sqlite_shared_runtime(
         Some(Arc::clone(&model_rankings_store)),
     )
     .await?;
-    let model_catalog_router = sdkwork_claw_product::api::app_model_catalog_router(Arc::clone(
+    let model_catalog_router = app_model_catalog_router(Arc::clone(
         &catalog,
     ))
     .merge(app_model_rankings_router_with_subject_boundary(
@@ -1030,7 +1033,7 @@ pub async fn router_with_postgres_shared_runtime(
         Some(Arc::clone(&model_rankings_store)),
     )
     .await?;
-    let model_catalog_router = sdkwork_claw_product::api::app_model_catalog_router(Arc::clone(
+    let model_catalog_router = app_model_catalog_router(Arc::clone(
         &catalog,
     ))
     .merge(app_model_rankings_router_with_subject_boundary(
@@ -1320,7 +1323,7 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 Some(Arc::clone(&model_rankings_store)),
             )
             .await?;
-            let model_catalog_router = sdkwork_claw_product::api::app_model_catalog_router(
+            let model_catalog_router = app_model_catalog_router(
                 Arc::clone(&app_runtime_execution_catalog),
             )
             .merge(app_model_rankings_router_with_subject_boundary(
@@ -1454,7 +1457,7 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 Some(Arc::clone(&model_rankings_store)),
             )
             .await?;
-            let model_catalog_router = sdkwork_claw_product::api::app_model_catalog_router(
+            let model_catalog_router = app_model_catalog_router(
                 Arc::clone(&app_runtime_execution_catalog),
             )
             .merge(app_model_rankings_router_with_subject_boundary(
@@ -1922,7 +1925,7 @@ fn app_model_rankings_router_with_subject_boundary(
     app_session_config: &AppSessionConfig,
 ) -> Router {
     sdkwork_claw_http::apply_optional_app_subject_boundary_if_legacy(
-        sdkwork_claw_product::api::app_model_rankings_router_with_read_store(read_store),
+        app_model_rankings_router_with_read_store(read_store),
         AppSubjectBoundaryConfig::new(trusted_subject_config.clone(), app_session_config.clone()),
     )
 }

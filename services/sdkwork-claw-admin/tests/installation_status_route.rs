@@ -271,8 +271,8 @@ async fn fresh_sqlite_install_refreshes_model_rankings_from_usage_and_serves_adm
         r#"
         SELECT COUNT(1)
         FROM ai_model_rank_snapshot
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND rank_scope = 'commercial-default'
           AND catalog_key = ?
           AND status = 1
@@ -288,8 +288,8 @@ async fn fresh_sqlite_install_refreshes_model_rankings_from_usage_and_serves_adm
         r#"
         SELECT job_type, trigger_type, payload
         FROM ops_job_execution
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND job_name = 'model_ranking_refresh'
         ORDER BY id DESC
         LIMIT 1
@@ -408,7 +408,7 @@ async fn insert_usage_fact_for_model(pool: &sqlx::SqlitePool, model: &InstalledM
              prompt_tokens, completion_tokens, total_tokens, billable_quantity, cost_amount,
              currency, pricing_snapshot, occurred_at)
         VALUES
-            (9001, 'usage-model-ranking-e2e', 10, 20, 30, 'model-ranking-e2e-request', 1, '{}',
+            (9001, 'usage-model-ranking-e2e', 100001, 0, 30, 'model-ranking-e2e-request', 1, '{}',
              ?, ?, 1, 1, 'llm_input_token', 7,
              700, 300, 1000, '1000', '1.250000',
              'USD', '{"source":"migration-test"}', strftime('%Y-%m-%dT%H:%M:%SZ', 'now', '-1 day'))

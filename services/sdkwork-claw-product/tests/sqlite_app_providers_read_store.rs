@@ -75,8 +75,8 @@ async fn sqlite_pool() -> SqlitePool {
 
 fn owner_subject() -> AppProvidersSubject {
     AppProvidersSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         user_id: 30,
     }
 }
@@ -209,7 +209,7 @@ async fn seed_provider_with_type(pool: &SqlitePool, integration_type: i64) {
             id, tenant_id, organization_id, provider_code, default_vendor_code, provider_type, auth_type,
             display_name, description, base_url, status, sort_order
         )
-        VALUES (?, 10, 20, ?, ?, ?, ?, ?, 'Provider integration', ?, 1, ?)
+        VALUES (?, 100001, 0, ?, ?, ?, ?, ?, 'Provider integration', ?, 1, ?)
         "#,
     )
     .bind(id)
@@ -230,7 +230,7 @@ async fn seed_provider_with_type(pool: &SqlitePool, integration_type: i64) {
             id, tenant_id, organization_id, provider_id, provider_code, channel_code,
             base_url, status, health_status, priority, weight
         )
-        VALUES (?, 10, 20, ?, ?, ?, ?, 1, 1, 10, 100)
+        VALUES (?, 100001, 0, ?, ?, ?, ?, 1, 1, 10, 100)
         "#,
     )
     .bind(2000 + id)
@@ -247,7 +247,7 @@ async fn seed_provider_with_type(pool: &SqlitePool, integration_type: i64) {
         INSERT INTO ai_resource (
             id, tenant_id, organization_id, resource_code, resource_type, catalog_key, status
         )
-        VALUES (?, 10, 20, ?, 'model_api', 'openai/gpt-4o-mini', 1)
+        VALUES (?, 100001, 0, ?, 'model_api', 'openai/gpt-4o-mini', 1)
         "#,
     )
     .bind(3000 + id)
@@ -261,7 +261,7 @@ async fn seed_provider_with_type(pool: &SqlitePool, integration_type: i64) {
         INSERT INTO ai_channel_resource (
             id, tenant_id, organization_id, channel_id, resource_id, resource_code, grant_type, status
         )
-        VALUES (?, 10, 20, ?, ?, ?, 'allow', 1)
+        VALUES (?, 100001, 0, ?, ?, ?, 'allow', 1)
         "#,
     )
     .bind(4000 + id)

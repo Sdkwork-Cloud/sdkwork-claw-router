@@ -12,14 +12,15 @@ class AdminDestructiveActionStandardTest(unittest.TestCase):
             "sdkwork-clawrouter-pc-admin-channel",
             "sdkwork-clawrouter-pc-admin-group",
             "sdkwork-clawrouter-pc-admin-marketing",
-            "sdkwork-clawrouter-pc-admin-model",
+            "sdkwork-clawrouter-pc-admin-relay-site",
             "sdkwork-clawrouter-pc-admin-ratelimit",
         ]
         base = ROOT / "apps" / "sdkwork-clawrouter-pc" / "packages"
 
         for package in package_roots:
             with self.subTest(package=package):
-                index_path = base / package / "src" / "index.tsx"
+                source_name = "siteAdmin.tsx" if package == "sdkwork-clawrouter-pc-admin-relay-site" else "index.tsx"
+                index_path = base / package / "src" / source_name
                 if not index_path.exists():
                     self.skipTest(f"{package} removed from claw router PC surface")
                 source = index_path.read_text(encoding="utf-8")

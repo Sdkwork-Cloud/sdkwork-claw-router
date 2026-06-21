@@ -12,8 +12,8 @@ async fn sqlite_admin_channel_group_store_allows_one_channel_in_multiple_groups(
     seed_channel_group_channel_fixture(&pool).await;
     let store = SqliteAdminChannelGroupStore::new(pool.clone());
     let subject = AdminChannelGroupSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         operator_id: 30,
         operator_type: 1,
     };
@@ -50,8 +50,8 @@ async fn sqlite_admin_channel_group_store_allows_one_channel_in_multiple_groups(
         r#"
         SELECT COUNT(1)
         FROM ai_channel_group_member
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND channel_id = 3001
           AND status = 1
           AND deleted_at IS NULL
@@ -98,8 +98,8 @@ async fn sqlite_admin_channel_group_store_prefers_resource_group_for_group_backe
     seed_channel_group_channel_fixture(&pool).await;
     let store = SqliteAdminChannelGroupStore::new(pool.clone());
     let subject = AdminChannelGroupSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         operator_id: 30,
         operator_type: 1,
     };
@@ -149,8 +149,8 @@ async fn sqlite_admin_channel_group_store_keeps_resource_authorization_normalize
     seed_channel_group_channel_fixture(&pool).await;
     let store = SqliteAdminChannelGroupStore::new(pool.clone());
     let subject = AdminChannelGroupSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         operator_id: 30,
         operator_type: 1,
     };
@@ -169,8 +169,8 @@ async fn sqlite_admin_channel_group_store_keeps_resource_authorization_normalize
         r#"
         SELECT NULLIF(resource_code, '')
         FROM ai_channel_group_resource
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND channel_group_id = 10
           AND status = 1
           AND deleted_at IS NULL
@@ -202,8 +202,8 @@ async fn sqlite_admin_channel_group_store_keeps_resource_authorization_normalize
          AND rg.tenant_id = gr.tenant_id
          AND rg.organization_id = gr.organization_id
          AND rg.deleted_at IS NULL
-        WHERE gr.tenant_id = 10
-          AND gr.organization_id = 20
+        WHERE gr.tenant_id = 100001
+          AND gr.organization_id = 0
           AND gr.channel_group_id = 10
           AND gr.status = 1
           AND gr.deleted_at IS NULL
@@ -236,15 +236,15 @@ async fn sqlite_admin_channel_group_store_keeps_resource_authorization_normalize
         SELECT (
             SELECT COUNT(1)
             FROM ai_channel_group_member
-            WHERE tenant_id = 10
-              AND organization_id = 20
+            WHERE tenant_id = 100001
+              AND organization_id = 0
               AND channel_group_id = 10
               AND deleted_at IS NULL
         ) + (
             SELECT COUNT(1)
             FROM ai_channel_group_resource
-            WHERE tenant_id = 10
-              AND organization_id = 20
+            WHERE tenant_id = 100001
+              AND organization_id = 0
               AND channel_group_id = 10
               AND deleted_at IS NULL
         )
@@ -265,8 +265,8 @@ async fn sqlite_admin_channel_group_store_creates_and_updates_direct_resource_ac
     seed_system_resource_access_fixture(&pool).await;
     let store = SqliteAdminChannelGroupStore::new(pool.clone());
     let subject = AdminChannelGroupSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         operator_id: 30,
         operator_type: 1,
     };
@@ -302,8 +302,8 @@ async fn sqlite_admin_channel_group_store_creates_and_updates_direct_resource_ac
         r#"
         SELECT resource_group_id, NULLIF(resource_group_code, ''), resource_id, NULLIF(resource_code, '')
         FROM ai_channel_group_resource
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND channel_group_id = ?
           AND status = 1
           AND deleted_at IS NULL
@@ -383,8 +383,8 @@ async fn sqlite_admin_channel_group_store_syncs_relationship_status_when_group_s
     seed_channel_group_channel_fixture(&pool).await;
     let store = SqliteAdminChannelGroupStore::new(pool.clone());
     let subject = AdminChannelGroupSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         operator_id: 30,
         operator_type: 1,
     };
@@ -419,8 +419,8 @@ async fn sqlite_admin_channel_group_store_syncs_relationship_status_when_group_s
             (
                 SELECT COUNT(1)
                 FROM ai_channel_group_member
-                WHERE tenant_id = 10
-                  AND organization_id = 20
+                WHERE tenant_id = 100001
+                  AND organization_id = 0
                   AND channel_group_id = 10
                   AND status = 1
                   AND deleted_at IS NULL
@@ -428,8 +428,8 @@ async fn sqlite_admin_channel_group_store_syncs_relationship_status_when_group_s
             (
                 SELECT COUNT(1)
                 FROM ai_channel_group_resource
-                WHERE tenant_id = 10
-                  AND organization_id = 20
+                WHERE tenant_id = 100001
+                  AND organization_id = 0
                   AND channel_group_id = 10
                   AND status = 1
                   AND deleted_at IS NULL
@@ -459,8 +459,8 @@ async fn sqlite_admin_channel_group_store_syncs_relationship_status_when_group_s
             (
                 SELECT COUNT(1)
                 FROM ai_channel_group_member
-                WHERE tenant_id = 10
-                  AND organization_id = 20
+                WHERE tenant_id = 100001
+                  AND organization_id = 0
                   AND channel_group_id = 10
                   AND status = 1
                   AND deleted_at IS NULL
@@ -468,8 +468,8 @@ async fn sqlite_admin_channel_group_store_syncs_relationship_status_when_group_s
             (
                 SELECT COUNT(1)
                 FROM ai_channel_group_resource
-                WHERE tenant_id = 10
-                  AND organization_id = 20
+                WHERE tenant_id = 100001
+                  AND organization_id = 0
                   AND channel_group_id = 10
                   AND status = 1
                   AND deleted_at IS NULL
@@ -493,8 +493,8 @@ async fn sqlite_admin_channel_group_store_keeps_replaced_relationships_disabled_
     seed_channel_group_channel_fixture(&pool).await;
     let store = SqliteAdminChannelGroupStore::new(pool.clone());
     let subject = AdminChannelGroupSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         operator_id: 30,
         operator_type: 1,
     };
@@ -525,8 +525,8 @@ async fn sqlite_admin_channel_group_store_keeps_replaced_relationships_disabled_
             (
                 SELECT COUNT(1)
                 FROM ai_channel_group_member
-                WHERE tenant_id = 10
-                  AND organization_id = 20
+                WHERE tenant_id = 100001
+                  AND organization_id = 0
                   AND channel_group_id = 10
                   AND status = 1
                   AND deleted_at IS NULL
@@ -534,8 +534,8 @@ async fn sqlite_admin_channel_group_store_keeps_replaced_relationships_disabled_
             (
                 SELECT COUNT(1)
                 FROM ai_channel_group_resource
-                WHERE tenant_id = 10
-                  AND organization_id = 20
+                WHERE tenant_id = 100001
+                  AND organization_id = 0
                   AND channel_group_id = 10
                   AND status = 1
                   AND deleted_at IS NULL
@@ -564,8 +564,8 @@ async fn sqlite_admin_channel_group_store_keeps_replaced_relationships_disabled_
             (
                 SELECT COUNT(1)
                 FROM ai_channel_group_member
-                WHERE tenant_id = 10
-                  AND organization_id = 20
+                WHERE tenant_id = 100001
+                  AND organization_id = 0
                   AND channel_group_id = 10
                   AND status = 1
                   AND deleted_at IS NULL
@@ -573,8 +573,8 @@ async fn sqlite_admin_channel_group_store_keeps_replaced_relationships_disabled_
             (
                 SELECT COUNT(1)
                 FROM ai_channel_group_resource
-                WHERE tenant_id = 10
-                  AND organization_id = 20
+                WHERE tenant_id = 100001
+                  AND organization_id = 0
                   AND channel_group_id = 10
                   AND status = 1
                   AND deleted_at IS NULL
@@ -595,8 +595,8 @@ async fn sqlite_admin_channel_group_store_records_routing_config_version_for_gro
     seed_channel_group_channel_fixture(&pool).await;
     let store = SqliteAdminChannelGroupStore::new(pool.clone());
     let subject = AdminChannelGroupSubject {
-        tenant_id: 10,
-        organization_id: 20,
+        tenant_id: 100001,
+        organization_id: 0,
         operator_id: 30,
         operator_type: 1,
     };
@@ -625,8 +625,8 @@ async fn sqlite_admin_channel_group_store_records_routing_config_version_for_gro
             r#"
             SELECT config_version, changed_object_type, changed_object_id
             FROM ai_config_version
-            WHERE tenant_id = 10
-              AND organization_id = 20
+            WHERE tenant_id = 100001
+              AND organization_id = 0
               AND config_scope = 'routing'
             "#,
         )
@@ -641,8 +641,8 @@ async fn sqlite_admin_channel_group_store_records_routing_config_version_for_gro
         r#"
         SELECT event_payload ->> 'action' AS event_action
         FROM ai_config_change_event
-        WHERE tenant_id = 10
-          AND organization_id = 20
+        WHERE tenant_id = 100001
+          AND organization_id = 0
           AND config_scope = 'routing'
           AND changed_object_type = 'ai_channel_group'
           AND changed_object_id = 10
@@ -745,8 +745,8 @@ async fn seed_channel_group_channel_fixture(pool: &sqlx::SqlitePool) {
         INSERT INTO ai_channel_group
             (id, uuid, tenant_id, organization_id, status, group_name, group_code, provider_code, billing_type, group_type, capacity_limit, rate_multiplier)
         VALUES
-            (10, 'group-standard', 10, 20, 1, 'Standard group', 'standard-group', 'openai', 1, 1, 100000, '1.000000'),
-            (11, 'group-premium', 10, 20, 1, 'Premium group', 'premium-group', 'openai', 1, 1, 100000, '1.000000')
+            (10, 'group-standard', 100001, 0, 1, 'Standard group', 'standard-group', 'openai', 1, 1, 100000, '1.000000'),
+            (11, 'group-premium', 100001, 0, 1, 'Premium group', 'premium-group', 'openai', 1, 1, 100000, '1.000000')
         "#,
     )
     .execute(pool)
@@ -758,8 +758,8 @@ async fn seed_channel_group_channel_fixture(pool: &sqlx::SqlitePool) {
         INSERT INTO ai_provider
             (id, uuid, tenant_id, organization_id, status, provider_code, display_name, base_url)
         VALUES
-            (1001, 'provider-openai', 10, 20, 1, 'openai', 'OpenAI', 'https://api.openai.com/v1'),
-            (1003, 'provider-google', 10, 20, 1, 'google', 'Google', 'https://generativelanguage.googleapis.com/v1')
+            (1001, 'provider-openai', 100001, 0, 1, 'openai', 'OpenAI', 'https://api.openai.com/v1'),
+            (1003, 'provider-google', 100001, 0, 1, 'google', 'Google', 'https://generativelanguage.googleapis.com/v1')
         "#,
     )
     .execute(pool)
@@ -771,8 +771,8 @@ async fn seed_channel_group_channel_fixture(pool: &sqlx::SqlitePool) {
         INSERT INTO ai_channel
             (id, uuid, tenant_id, organization_id, status, provider_id, provider_code, channel_code, channel_name, channel_type, base_url, credential_ref, masked_label, priority, weight, health_status)
         VALUES
-            (3001, 'channel-openai-primary', 10, 20, 1, 1001, 'openai', 'openai-primary', 'OpenAI primary', 'official', 'https://api.openai.com/v1', 'secret://ai-channels/openai/main', 'sk-***main', 10, 80, 1),
-            (3003, 'channel-google-fallback', 10, 20, 1, 1003, 'google', 'google-fallback', 'Google fallback', 'official', 'https://generativelanguage.googleapis.com/v1', 'secret://ai-channels/google/main', 'sk-***main', 20, 30, 1)
+            (3001, 'channel-openai-primary', 100001, 0, 1, 1001, 'openai', 'openai-primary', 'OpenAI primary', 'official', 'https://api.openai.com/v1', 'secret://ai-channels/openai/main', 'sk-***main', 10, 80, 1),
+            (3003, 'channel-google-fallback', 100001, 0, 1, 1003, 'google', 'google-fallback', 'Google fallback', 'official', 'https://generativelanguage.googleapis.com/v1', 'secret://ai-channels/google/main', 'sk-***main', 20, 30, 1)
         "#,
     )
     .execute(pool)
@@ -784,7 +784,7 @@ async fn seed_channel_group_channel_fixture(pool: &sqlx::SqlitePool) {
         INSERT INTO ai_resource
             (id, uuid, tenant_id, organization_id, status, resource_code, resource_type, display_name, api_code)
         VALUES
-            (990410, 'resource-api-openai-chat-access-group-test', 10, 20, 1, 'api.openai.chat_completions', 'api_endpoint', 'OpenAI Chat Completions', 'openai.chat_completions')
+            (990410, 'resource-api-openai-chat-access-group-test', 100001, 0, 1, 'api.openai.chat_completions', 'api_endpoint', 'OpenAI Chat Completions', 'openai.chat_completions')
         ON CONFLICT(tenant_id, organization_id, resource_code) DO UPDATE SET
             resource_type = excluded.resource_type,
             display_name = excluded.display_name,
@@ -796,7 +796,7 @@ async fn seed_channel_group_channel_fixture(pool: &sqlx::SqlitePool) {
         INSERT INTO ai_resource
             (id, uuid, tenant_id, organization_id, status, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, catalog_key, model, provider_native_model)
         VALUES
-            (990411, 'resource-model-openai-gpt-4o-mini-access-group-test', 10, 20, 1, 'model.openai.gpt-4o-mini.chat', 'model_api', 'GPT-4o mini Chat', 'openai', 'chat', 'openai.chat_completions', 'openai/gpt-4o-mini', 'gpt-4o-mini', 'gpt-4o-mini')
+            (990411, 'resource-model-openai-gpt-4o-mini-access-group-test', 100001, 0, 1, 'model.openai.gpt-4o-mini.chat', 'model_api', 'GPT-4o mini Chat', 'openai', 'chat', 'openai.chat_completions', 'openai/gpt-4o-mini', 'gpt-4o-mini', 'gpt-4o-mini')
         ON CONFLICT(tenant_id, organization_id, resource_code) DO UPDATE SET
             resource_type = excluded.resource_type,
             display_name = excluded.display_name,
@@ -822,7 +822,7 @@ async fn seed_bundle_resource_group(pool: &sqlx::SqlitePool, resource_code: &str
         INSERT INTO ai_resource
             (id, uuid, tenant_id, organization_id, status, resource_code, resource_type, display_name)
         VALUES
-            (990400, 'resource-bundle-openrouter-openai-standard', 10, 20, 1, ?, 'bundle', 'OpenRouter OpenAI Standard')
+            (990400, 'resource-bundle-openrouter-openai-standard', 100001, 0, 1, ?, 'bundle', 'OpenRouter OpenAI Standard')
         ON CONFLICT(tenant_id, organization_id, resource_code) DO UPDATE SET
             resource_type = excluded.resource_type,
             display_name = excluded.display_name,
@@ -839,7 +839,7 @@ async fn seed_bundle_resource_group(pool: &sqlx::SqlitePool, resource_code: &str
         INSERT INTO ai_resource_group
             (id, uuid, tenant_id, organization_id, status, group_code, group_name, group_type)
         VALUES
-            (990401, 'resource-group-openrouter-openai-standard', 10, 20, 1, ?, 'OpenRouter OpenAI Standard', 'bundle')
+            (990401, 'resource-group-openrouter-openai-standard', 100001, 0, 1, ?, 'OpenRouter OpenAI Standard', 'bundle')
         ON CONFLICT(tenant_id, organization_id, group_code) DO UPDATE SET
             group_name = excluded.group_name,
             group_type = excluded.group_type,

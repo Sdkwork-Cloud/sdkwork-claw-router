@@ -42,8 +42,8 @@ async fn openai_compatible_responses_relay_uses_provider_model_and_upstream_secr
     let response = relay
         .create_response(ResponsesRelayRequest {
             api_key_id: 101,
-            tenant_id: 10,
-            organization_id: 20,
+            tenant_id: 100001,
+            organization_id: 0,
             user_id: 30,
             group_id: 10,
             group_code: "standard-group".to_owned(),
