@@ -2,6 +2,9 @@ use sha2::{Digest, Sha256};
 use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
+use crate::infrastructure::sql::routing_config_change::{
+    record_sqlite_ai_routing_config_change, AiRoutingConfigChange,
+};
 use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
 use crate::ports::{
     AdminIpRateLimitCommandFuture, AdminIpRateLimitItem, AdminIpRateLimitStore,
@@ -87,6 +90,24 @@ impl AdminIpRateLimitStore for SqliteAdminIpRateLimitStore {
                     "blockDurationSeconds": command.block_duration_seconds,
                     "status": &command.status
                 }),
+            )
+            .await?;
+            record_sqlite_ai_routing_config_change(
+                &mut tx,
+                ip_rate_limit_routing_config_change(
+                    command.subject.tenant_id,
+                    command.subject.organization_id,
+                    command.subject.operator_id,
+                    &command.request_id,
+                    &command.requested_at,
+                    "create_ip_rate_limit",
+                    id,
+                    serde_json::json!({
+                        "ipRateLimitId": id,
+                        "targetIp": &command.target_ip,
+                        "status": &command.status
+                    }),
+                ),
             )
             .await?;
             let item = load_ip_rate_limit_by_id(

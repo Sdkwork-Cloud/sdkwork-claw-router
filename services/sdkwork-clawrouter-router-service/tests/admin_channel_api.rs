@@ -346,10 +346,11 @@ async fn admin_channel_route_returns_manageable_plaintext_api_key_for_channels()
     let payload = json_payload(response).await;
     assert_eq!("2000", payload["code"]);
     assert_eq!("OpenAI primary", payload["data"]["item"]["name"]);
-    assert_eq!(
-        "sk-live-secret",
-        payload["data"]["item"]["credentials"][0]["apiKey"]
-    );
+    assert!(payload["data"]["item"]["credentials"][0]["apiKey"].is_null()
+        || payload["data"]["item"]["credentials"][0].get("apiKey").is_none());
+    assert!(payload["data"]["item"]["credentials"][0]["maskedLabel"]
+        .as_str()
+        .is_some_and(|value| !value.trim().is_empty()));
     assert!(payload["data"]["item"].get("authKey").is_none());
     assert!(payload["data"]["item"].get("apiKey").is_none());
 
@@ -459,11 +460,17 @@ async fn admin_channel_route_creates_channel_with_multiple_upstream_credentials_
     assert_eq!(2, credentials.len());
     assert_eq!("primary", credentials[0]["name"]);
     assert_eq!("https://api1.openai.example/v1", credentials[0]["baseUrl"]);
-    assert_eq!("sk-primary", credentials[0]["apiKey"]);
+    assert!(credentials[0].get("apiKey").is_none());
+    assert!(credentials[0]["maskedLabel"]
+        .as_str()
+        .is_some_and(|value| !value.trim().is_empty()));
     assert_eq!(80, credentials[0]["weight"]);
     assert_eq!("backup", credentials[1]["name"]);
     assert_eq!("https://api2.openai.example/v1", credentials[1]["baseUrl"]);
-    assert_eq!("sk-backup", credentials[1]["apiKey"]);
+    assert!(credentials[1].get("apiKey").is_none());
+    assert!(credentials[1]["maskedLabel"]
+        .as_str()
+        .is_some_and(|value| !value.trim().is_empty()));
 
     let items = store.items.lock().unwrap();
     let created = items.first().expect("created channel should be stored");

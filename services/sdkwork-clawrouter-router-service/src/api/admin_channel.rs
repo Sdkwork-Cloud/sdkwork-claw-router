@@ -98,13 +98,13 @@ enum ChannelCommandBuildError {
 #[derive(Debug, Serialize)]
 #[serde(rename_all = "camelCase")]
 struct AdminChannelListResponse {
-    items: Vec<AdminChannelItemResponse>,
+    items: Vec<AdminChannelSafeItemResponse>,
 }
 
 #[derive(Debug, Serialize)]
 #[serde(rename_all = "camelCase")]
 struct AdminChannelItemEnvelope {
-    item: AdminChannelItemResponse,
+    item: AdminChannelSafeItemResponse,
 }
 
 #[derive(Debug, Serialize)]
@@ -121,36 +121,6 @@ struct AdminChannelTestResponse {
     status: String,
     latency: String,
     item: AdminChannelSafeItemResponse,
-}
-
-#[derive(Debug, Serialize)]
-#[serde(rename_all = "camelCase")]
-struct AdminChannelItemResponse {
-    id: String,
-    channel_id: String,
-    name: String,
-    vendor: String,
-    channel_type: String,
-    protocol: String,
-    access_type: String,
-    credential_rotation: String,
-    credentials: Vec<AdminChannelCredentialResponse>,
-    created_at: String,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    expires_at: Option<String>,
-    capabilities: Vec<String>,
-    resource_codes: Vec<String>,
-    is_multimodal: bool,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    timeout_ms: Option<i64>,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    retry_policy: Option<AdminChannelRetryPolicyResponse>,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    circuit_breaker_policy: Option<AdminChannelCircuitBreakerPolicyResponse>,
-    weight: i64,
-    status: String,
-    balance: String,
-    errors: i64,
 }
 
 #[derive(Debug, Serialize)]
@@ -195,23 +165,6 @@ struct AdminChannelRetryPolicyResponse {
 #[serde(rename_all = "camelCase")]
 struct AdminChannelCircuitBreakerPolicyResponse {
     failure_threshold: usize,
-}
-
-#[derive(Debug, Serialize)]
-#[serde(rename_all = "camelCase")]
-struct AdminChannelCredentialResponse {
-    id: String,
-    credential_id: String,
-    name: String,
-    base_url: String,
-    secret_ref: String,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    api_key: Option<String>,
-    masked_label: String,
-    priority: i64,
-    weight: i64,
-    status: String,
-    errors: i64,
 }
 
 #[derive(Debug, Serialize)]
@@ -277,7 +230,7 @@ async fn fetch_channels(
         .await
     {
         Ok(items) => Json(PlusApiResult::success(AdminChannelListResponse {
-            items: items.into_iter().map(to_item_response).collect(),
+            items: items.into_iter().map(to_safe_item_response).collect(),
         }))
         .into_response(),
         Err(error) => channel_system_response("channel read model is unavailable", error),
@@ -306,7 +259,7 @@ async fn create_channel(
 
     match state.store.create_channel(command).await {
         Ok(item) => Json(PlusApiResult::success(AdminChannelItemEnvelope {
-            item: to_item_response(item),
+            item: to_safe_item_response(item),
         }))
         .into_response(),
         Err(error) if error.is_conflict() => conflict_response(error),
@@ -336,7 +289,7 @@ async fn update_channel(
 
     match state.store.update_channel(command).await {
         Ok(Some(item)) => Json(PlusApiResult::success(AdminChannelItemEnvelope {
-            item: to_item_response(item),
+            item: to_safe_item_response(item),
         }))
         .into_response(),
         Ok(None) => not_found_response("channel was not found"),
@@ -1559,42 +1512,6 @@ fn request_id_error(error: RequestIdError) -> ChannelCommandBuildError {
     }
 }
 
-fn to_item_response(item: AdminChannelItem) -> AdminChannelItemResponse {
-    AdminChannelItemResponse {
-        id: item.id.to_string(),
-        channel_id: item.channel_id.to_string(),
-        name: item.name,
-        vendor: item.vendor,
-        channel_type: item.channel_type,
-        protocol: item.protocol,
-        access_type: item.access_type,
-        credential_rotation: item.credential_rotation,
-        credentials: item
-            .credentials
-            .into_iter()
-            .map(to_credential_response)
-            .collect(),
-        created_at: item.created_at,
-        expires_at: item.expires_at,
-        capabilities: item.capabilities,
-        resource_codes: item.resource_codes,
-        is_multimodal: item.is_multimodal,
-        timeout_ms: item.timeout_ms,
-        retry_policy: item
-            .retry_policy_json
-            .as_deref()
-            .and_then(retry_policy_response_from_json),
-        circuit_breaker_policy: item
-            .circuit_breaker_policy_json
-            .as_deref()
-            .and_then(circuit_breaker_policy_response_from_json),
-        weight: item.weight,
-        status: item.status,
-        balance: item.balance,
-        errors: item.errors,
-    }
-}
-
 fn to_safe_item_response(item: AdminChannelItem) -> AdminChannelSafeItemResponse {
     AdminChannelSafeItemResponse {
         id: item.id.to_string(),
@@ -1627,22 +1544,6 @@ fn to_safe_item_response(item: AdminChannelItem) -> AdminChannelSafeItemResponse
         weight: item.weight,
         status: item.status,
         balance: item.balance,
-        errors: item.errors,
-    }
-}
-
-fn to_credential_response(item: AdminChannelCredentialItem) -> AdminChannelCredentialResponse {
-    AdminChannelCredentialResponse {
-        id: item.id.to_string(),
-        credential_id: item.credential_id.to_string(),
-        name: item.name,
-        base_url: item.base_url,
-        secret_ref: item.secret_ref,
-        api_key: item.api_key,
-        masked_label: item.masked_label,
-        priority: item.priority,
-        weight: item.weight,
-        status: item.status,
         errors: item.errors,
     }
 }
