@@ -2,6 +2,7 @@ use sha2::{Digest, Sha256};
 use sqlx::{Postgres, Sqlite, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
+use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
 
 pub(crate) const AI_ROUTING_CONFIG_SCOPE: &str = "routing";
@@ -348,5 +349,5 @@ fn digest_hex(payload: &str) -> String {
 }
 
 fn store_error(context: &str, error: sqlx::Error) -> DomainError {
-    DomainError::new(format!("{context}: {error}"))
+    redacted_store_error(context, error)
 }

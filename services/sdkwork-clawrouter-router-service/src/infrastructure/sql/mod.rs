@@ -20,6 +20,7 @@ mod queries;
 pub(crate) mod routing_config_change;
 pub mod rows;
 pub(crate) mod runtime_id;
+pub(crate) mod store_error;
 pub mod settlements_dashboard_repository_adapter;
 pub(crate) mod sql_admin_auth_settings;
 pub(crate) mod sql_admin_messaging;
