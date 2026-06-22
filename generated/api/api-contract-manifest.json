@@ -904,6 +904,179 @@
       "write_tables": []
     },
     {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/content/announcements",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts#addAnnouncement@/admin/announcement",
+      "kind": "create",
+      "module": "pc-admin-announcement",
+      "openapi_exposed": true,
+      "operation": "addAnnouncement",
+      "operation_id": "announcements.create",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "content_announcement"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "request_schema": {
+        "name": "AdminAnnouncementCreateRequest",
+        "schema": {
+          "$ref": "#/x_response_entities/admin_announcement_create_request"
+        }
+      },
+      "response_schema": {
+        "name": "AdminAnnouncementMutationResponse",
+        "schema": {
+          "$ref": "#/x_response_entities/admin_announcement_mutation_response"
+        }
+      },
+      "route": "/admin/announcement",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "content",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts",
+      "summary": "Create admin announcement",
+      "tag": "content",
+      "write_tables": [
+        "content_announcement",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "DELETE",
+      "api_path": "/backend/v3/api/content/announcements/{announcementId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts#deleteAnnouncement@/admin/announcement",
+      "kind": "delete",
+      "module": "pc-admin-announcement",
+      "openapi_exposed": true,
+      "operation": "deleteAnnouncement",
+      "operation_id": "announcements.delete",
+      "path_params": [
+        "announcementId"
+      ],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "content_announcement"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "AnnouncementsDeleteResult",
+        "schema": {
+          "$ref": "#/x_response_entities/admin_announcements_delete_response"
+        }
+      },
+      "route": "/admin/announcement",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "content",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts",
+      "summary": "Delete admin announcement",
+      "tag": "content",
+      "write_tables": [
+        "content_announcement",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/content/announcements",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts#fetchAnnouncements@/admin/announcement",
+      "kind": "read",
+      "module": "pc-admin-announcement",
+      "openapi_exposed": true,
+      "operation": "fetchAnnouncements",
+      "operation_id": "announcements.list",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "content_announcement"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "AdminAnnouncementsResponse",
+        "schema": {
+          "$ref": "#/x_response_entities/admin_announcements_response"
+        }
+      },
+      "route": "/admin/announcement",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "content",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts",
+      "summary": "List admin announcements",
+      "tag": "content",
+      "write_tables": []
+    },
+    {
+      "api_method": "PATCH",
+      "api_path": "/backend/v3/api/content/announcements/{announcementId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts#updateAnnouncement@/admin/announcement",
+      "kind": "update",
+      "module": "pc-admin-announcement",
+      "openapi_exposed": true,
+      "operation": "updateAnnouncement",
+      "operation_id": "announcements.update",
+      "path_params": [
+        "announcementId"
+      ],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "content_announcement"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "request_schema": {
+        "name": "AdminAnnouncementUpdateRequest",
+        "schema": {
+          "$ref": "#/x_response_entities/admin_announcement_update_request"
+        }
+      },
+      "response_schema": {
+        "name": "AdminAnnouncementMutationResponse",
+        "schema": {
+          "$ref": "#/x_response_entities/admin_announcement_mutation_response"
+        }
+      },
+      "route": "/admin/announcement",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "content",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts",
+      "summary": "Update admin announcement",
+      "tag": "content",
+      "write_tables": [
+        "content_announcement",
+        "ops_audit_log"
+      ]
+    },
+    {
       "api_method": "DELETE",
       "api_path": "/backend/v3/api/system/cache/instances/{instanceName}",
       "api_surface": "backend",
@@ -2764,7 +2937,7 @@
       "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts#createAiResource@/admin/model/resources",
       "kind": "create",
       "module": "pc-admin-channel",
-      "openapi_exposed": true,
+      "openapi_exposed": false,
       "operation": "createAiResource",
       "operation_id": "aiResources.create",
       "path_params": [],
@@ -3642,7 +3815,7 @@
       "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts#fetchAiResources@/admin/channel",
       "kind": "read",
       "module": "pc-admin-channel",
-      "openapi_exposed": true,
+      "openapi_exposed": false,
       "operation": "fetchAiResources",
       "operation_id": "aiResources.list",
       "path_params": [],
@@ -4889,7 +5062,7 @@
       "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts#updateAiResource@/admin/model/resources",
       "kind": "update",
       "module": "pc-admin-channel",
-      "openapi_exposed": true,
+      "openapi_exposed": false,
       "operation": "updateAiResource",
       "operation_id": "aiResources.update",
       "path_params": [
@@ -8760,6 +8933,43 @@
       ]
     },
     {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/system/marketing/referral_stats",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts#fetchReferralStats@/admin/marketing/referrals",
+      "kind": "read",
+      "module": "pc-admin-marketing",
+      "openapi_exposed": true,
+      "operation": "fetchReferralStats",
+      "operation_id": "marketing.referralStats.list",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "ops_referral_stat_snapshot"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "AdminReferralStatsResponse",
+        "schema": {
+          "$ref": "#/x_response_entities/admin_referral_stats_response"
+        }
+      },
+      "route": "/admin/marketing/referrals",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "system",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts",
+      "summary": "List referral stats",
+      "tag": "system",
+      "write_tables": []
+    },
+    {
       "api_method": "POST",
       "api_path": "/backend/v3/api/mcp/servers/{serverId}/health_check",
       "api_surface": "backend",
@@ -11184,6 +11394,1822 @@
       "write_tables": [
         "ai_mcp_tool",
         "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/messaging/provider_accounts",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts#createMessagingProviderAccount@/admin/messaging/providers",
+      "kind": "action",
+      "module": "pc-admin-messaging",
+      "openapi_exposed": true,
+      "operation": "createMessagingProviderAccount",
+      "operation_id": "providerAccounts.create",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "messaging_provider_capability"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "request_schema": {
+        "name": "MessagingProviderAccountCreateRequest",
+        "schema": {
+          "additionalProperties": false,
+          "name": "MessagingProviderAccountCreateRequest",
+          "properties": {
+            "accountCode": {
+              "maxLength": 64,
+              "type": "string"
+            },
+            "accountName": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "baseUrl": {
+              "maxLength": 512,
+              "type": "string"
+            },
+            "channel": {
+              "maxLength": 32,
+              "type": "string"
+            },
+            "credential": {
+              "additionalProperties": false,
+              "properties": {
+                "authType": {
+                  "maxLength": 64,
+                  "type": "string"
+                },
+                "secretRef": {
+                  "maxLength": 256,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "secretRef"
+              ],
+              "type": "object"
+            },
+            "deliveryPurpose": {
+              "maxLength": 64,
+              "type": "string"
+            },
+            "providerCode": {
+              "maxLength": 64,
+              "type": "string"
+            }
+          },
+          "required": [
+            "providerCode",
+            "accountCode",
+            "accountName",
+            "channel",
+            "credential"
+          ],
+          "type": "object"
+        }
+      },
+      "response_schema": {
+        "name": "MessagingProviderAccountCreateResponse",
+        "schema": {
+          "additionalProperties": true,
+          "name": "MessagingProviderAccountCreateResponse",
+          "properties": {
+            "channel": {
+              "maxLength": 32,
+              "type": "string"
+            },
+            "id": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "status": {
+              "maxLength": 32,
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "route": "/admin/messaging/providers",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "messaging",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "summary": "Create messaging provider account",
+      "tag": "messaging",
+      "write_tables": [
+        "messaging_provider_capability"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/messaging/route_rules",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts#createMessagingRouteRule@/admin/messaging/route-rules",
+      "kind": "action",
+      "module": "pc-admin-messaging",
+      "openapi_exposed": true,
+      "operation": "createMessagingRouteRule",
+      "operation_id": "routeRules.create",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "messaging_route_rule",
+        "messaging_route_rule_target"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "request_schema": {
+        "name": "MessagingRouteRuleCreateRequest",
+        "schema": {
+          "additionalProperties": false,
+          "name": "MessagingRouteRuleCreateRequest",
+          "properties": {
+            "channel": {
+              "maxLength": 32,
+              "type": "string"
+            },
+            "deliveryPurpose": {
+              "maxLength": 64,
+              "type": "string"
+            },
+            "priority": {
+              "format": "int64",
+              "pattern": "^-?[0-9]+$",
+              "type": "string",
+              "x-sdkwork-int64-string": true,
+              "x-sdkwork-rust-type": "i64"
+            },
+            "ruleCode": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "sceneCode": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "targets": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "providerAccountId": {
+                    "maxLength": 128,
+                    "type": "string"
+                  },
+                  "senderIdentityId": {
+                    "maxLength": 128,
+                    "type": "string"
+                  },
+                  "targetOrder": {
+                    "format": "int64",
+                    "pattern": "^-?[0-9]+$",
+                    "type": "string",
+                    "x-sdkwork-int64-string": true,
+                    "x-sdkwork-rust-type": "i64"
+                  },
+                  "weight": {
+                    "format": "int64",
+                    "pattern": "^-?[0-9]+$",
+                    "type": "string",
+                    "x-sdkwork-int64-string": true,
+                    "x-sdkwork-rust-type": "i64"
+                  }
+                },
+                "required": [
+                  "providerAccountId",
+                  "targetOrder"
+                ],
+                "type": "object"
+              },
+              "maxItems": 10,
+              "type": "array"
+            }
+          },
+          "required": [
+            "ruleCode",
+            "sceneCode",
+            "channel",
+            "targets"
+          ],
+          "type": "object"
+        }
+      },
+      "response_schema": {
+        "name": "MessagingRouteRuleCreateResponse",
+        "schema": {
+          "additionalProperties": true,
+          "name": "MessagingRouteRuleCreateResponse",
+          "properties": {
+            "channel": {
+              "maxLength": 32,
+              "type": "string"
+            },
+            "id": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "status": {
+              "maxLength": 32,
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "route": "/admin/messaging/route-rules",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "messaging",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "summary": "Create messaging route rule",
+      "tag": "messaging",
+      "write_tables": [
+        "messaging_route_rule",
+        "messaging_route_rule_target"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/messaging/sender_identities",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts#createMessagingSenderIdentity@/admin/messaging/sender-identities",
+      "kind": "action",
+      "module": "pc-admin-messaging",
+      "openapi_exposed": true,
+      "operation": "createMessagingSenderIdentity",
+      "operation_id": "senderIdentities.create",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "messaging_sender_identity"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "request_schema": {
+        "name": "MessagingSenderIdentityCreateRequest",
+        "schema": {
+          "additionalProperties": false,
+          "name": "MessagingSenderIdentityCreateRequest",
+          "properties": {
+            "channel": {
+              "maxLength": 32,
+              "type": "string"
+            },
+            "displayName": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "fromEmail": {
+              "maxLength": 256,
+              "type": "string"
+            },
+            "fromName": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "identityCode": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "providerAccountId": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "senderId": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "signName": {
+              "maxLength": 128,
+              "type": "string"
+            }
+          },
+          "required": [
+            "providerAccountId",
+            "channel",
+            "identityCode"
+          ],
+          "type": "object"
+        }
+      },
+      "response_schema": {
+        "name": "MessagingSenderIdentityCreateResponse",
+        "schema": {
+          "additionalProperties": true,
+          "name": "MessagingSenderIdentityCreateResponse",
+          "properties": {
+            "channel": {
+              "maxLength": 32,
+              "type": "string"
+            },
+            "id": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "status": {
+              "maxLength": 32,
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "route": "/admin/messaging/sender-identities",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "messaging",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "summary": "Create messaging sender identity",
+      "tag": "messaging",
+      "write_tables": [
+        "messaging_sender_identity"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/messaging/suppressions",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts#createMessagingSuppression@/admin/messaging/suppressions",
+      "kind": "action",
+      "module": "pc-admin-messaging",
+      "openapi_exposed": true,
+      "operation": "createMessagingSuppression",
+      "operation_id": "suppressions.create",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "messaging_suppression"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "request_schema": {
+        "name": "MessagingSuppressionCreateRequest",
+        "schema": {
+          "additionalProperties": false,
+          "name": "MessagingSuppressionCreateRequest",
+          "properties": {
+            "channel": {
+              "maxLength": 32,
+              "type": "string"
+            },
+            "reasonCode": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "startsAt": {
+              "maxLength": 64,
+              "type": "string"
+            },
+            "targetHash": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "targetMasked": {
+              "maxLength": 128,
+              "type": "string"
+            }
+          },
+          "required": [
+            "channel",
+            "targetMasked",
+            "targetHash",
+            "reasonCode",
+            "startsAt"
+          ],
+          "type": "object"
+        }
+      },
+      "response_schema": {
+        "name": "MessagingSuppressionCreateResponse",
+        "schema": {
+          "additionalProperties": true,
+          "name": "MessagingSuppressionCreateResponse",
+          "properties": {
+            "channel": {
+              "maxLength": 32,
+              "type": "string"
+            },
+            "id": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "status": {
+              "maxLength": 32,
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "route": "/admin/messaging/suppressions",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "messaging",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "summary": "Create messaging suppression",
+      "tag": "messaging",
+      "write_tables": [
+        "messaging_suppression"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/messaging/templates",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts#createMessagingTemplate@/admin/messaging/templates",
+      "kind": "action",
+      "module": "pc-admin-messaging",
+      "openapi_exposed": true,
+      "operation": "createMessagingTemplate",
+      "operation_id": "templates.create",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "messaging_template",
+        "messaging_template_version"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "request_schema": {
+        "name": "MessagingTemplateCreateRequest",
+        "schema": {
+          "additionalProperties": false,
+          "name": "MessagingTemplateCreateRequest",
+          "properties": {
+            "bodyTemplate": {
+              "maxLength": 20000,
+              "type": "string"
+            },
+            "category": {
+              "maxLength": 64,
+              "type": "string"
+            },
+            "channel": {
+              "maxLength": 32,
+              "type": "string"
+            },
+            "contentFormat": {
+              "maxLength": 32,
+              "type": "string"
+            },
+            "deliveryPurpose": {
+              "maxLength": 64,
+              "type": "string"
+            },
+            "locale": {
+              "maxLength": 32,
+              "type": "string"
+            },
+            "sceneCode": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "subjectTemplate": {
+              "maxLength": 512,
+              "type": "string"
+            },
+            "templateCode": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "templateName": {
+              "maxLength": 128,
+              "type": "string"
+            }
+          },
+          "required": [
+            "templateCode",
+            "sceneCode",
+            "channel",
+            "category",
+            "templateName",
+            "bodyTemplate"
+          ],
+          "type": "object"
+        }
+      },
+      "response_schema": {
+        "name": "MessagingTemplateCreateResponse",
+        "schema": {
+          "additionalProperties": true,
+          "name": "MessagingTemplateCreateResponse",
+          "properties": {
+            "channel": {
+              "maxLength": 32,
+              "type": "string"
+            },
+            "id": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "status": {
+              "maxLength": 32,
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "route": "/admin/messaging/templates",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "messaging",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "summary": "Create messaging template",
+      "tag": "messaging",
+      "write_tables": [
+        "messaging_template",
+        "messaging_template_version"
+      ]
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/messaging/provider_accounts",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts#listMessagingProviderAccounts@/admin/messaging/providers",
+      "kind": "read",
+      "module": "pc-admin-messaging",
+      "openapi_exposed": true,
+      "operation": "listMessagingProviderAccounts",
+      "operation_id": "providerAccounts.list",
+      "path_params": [],
+      "query_parameters": [
+        {
+          "in": "query",
+          "name": "page",
+          "required": false,
+          "schema": {
+            "format": "int64",
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string",
+            "x-sdkwork-int64-string": true,
+            "x-sdkwork-rust-type": "i64"
+          }
+        },
+        {
+          "in": "query",
+          "name": "page_size",
+          "required": false,
+          "schema": {
+            "format": "int64",
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string",
+            "x-sdkwork-int64-string": true,
+            "x-sdkwork-rust-type": "i64"
+          }
+        },
+        {
+          "in": "query",
+          "name": "q",
+          "required": false,
+          "schema": {
+            "maxLength": 128,
+            "type": "string"
+          }
+        },
+        {
+          "in": "query",
+          "name": "status",
+          "required": false,
+          "schema": {
+            "maxLength": 32,
+            "type": "string"
+          }
+        },
+        {
+          "in": "query",
+          "name": "channel",
+          "required": false,
+          "schema": {
+            "maxLength": 32,
+            "type": "string"
+          }
+        },
+        {
+          "in": "query",
+          "name": "provider_code",
+          "required": false,
+          "schema": {
+            "maxLength": 64,
+            "type": "string"
+          }
+        }
+      ],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "messaging_provider_capability"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "MessagingProviderAccountListResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "MessagingProviderAccountListResponse",
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": true,
+                "properties": {
+                  "channel": {
+                    "maxLength": 32,
+                    "type": "string"
+                  },
+                  "id": {
+                    "maxLength": 128,
+                    "type": "string"
+                  },
+                  "status": {
+                    "maxLength": 32,
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "maxItems": 200,
+              "type": "array"
+            },
+            "page": {
+              "format": "int64",
+              "pattern": "^[1-9][0-9]*$",
+              "type": "string",
+              "x-sdkwork-int64-string": true,
+              "x-sdkwork-rust-type": "i64"
+            },
+            "pageSize": {
+              "format": "int64",
+              "pattern": "^[1-9][0-9]*$",
+              "type": "string",
+              "x-sdkwork-int64-string": true,
+              "x-sdkwork-rust-type": "i64"
+            },
+            "total": {
+              "format": "int64",
+              "pattern": "^[0-9]+$",
+              "type": "string",
+              "x-sdkwork-int64-string": true,
+              "x-sdkwork-rust-type": "i64"
+            }
+          },
+          "required": [
+            "items",
+            "total",
+            "page",
+            "pageSize"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/messaging/providers",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "messaging",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "summary": "List messaging provider accounts",
+      "tag": "messaging",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/messaging/rate_limit_buckets",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts#listMessagingRateLimitBuckets@/admin/messaging/rate-limits",
+      "kind": "read",
+      "module": "pc-admin-messaging",
+      "openapi_exposed": true,
+      "operation": "listMessagingRateLimitBuckets",
+      "operation_id": "rateLimitBuckets.list",
+      "path_params": [],
+      "query_parameters": [
+        {
+          "in": "query",
+          "name": "page",
+          "required": false,
+          "schema": {
+            "format": "int64",
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string",
+            "x-sdkwork-int64-string": true,
+            "x-sdkwork-rust-type": "i64"
+          }
+        },
+        {
+          "in": "query",
+          "name": "page_size",
+          "required": false,
+          "schema": {
+            "format": "int64",
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string",
+            "x-sdkwork-int64-string": true,
+            "x-sdkwork-rust-type": "i64"
+          }
+        }
+      ],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "messaging_rate_limit_bucket"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "MessagingRateLimitBucketListResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "MessagingRateLimitBucketListResponse",
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": true,
+                "properties": {
+                  "channel": {
+                    "maxLength": 32,
+                    "type": "string"
+                  },
+                  "id": {
+                    "maxLength": 128,
+                    "type": "string"
+                  },
+                  "status": {
+                    "maxLength": 32,
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "items"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/messaging/rate-limits",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "messaging",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "summary": "List messaging rate limit buckets",
+      "tag": "messaging",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/messaging/route_rules",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts#listMessagingRouteRules@/admin/messaging/route-rules",
+      "kind": "read",
+      "module": "pc-admin-messaging",
+      "openapi_exposed": true,
+      "operation": "listMessagingRouteRules",
+      "operation_id": "routeRules.list",
+      "path_params": [],
+      "query_parameters": [
+        {
+          "in": "query",
+          "name": "page",
+          "required": false,
+          "schema": {
+            "format": "int64",
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string",
+            "x-sdkwork-int64-string": true,
+            "x-sdkwork-rust-type": "i64"
+          }
+        },
+        {
+          "in": "query",
+          "name": "page_size",
+          "required": false,
+          "schema": {
+            "format": "int64",
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string",
+            "x-sdkwork-int64-string": true,
+            "x-sdkwork-rust-type": "i64"
+          }
+        }
+      ],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "messaging_route_rule",
+        "messaging_route_rule_target"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "MessagingRouteRuleListResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "MessagingRouteRuleListResponse",
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": true,
+                "properties": {
+                  "channel": {
+                    "maxLength": 32,
+                    "type": "string"
+                  },
+                  "id": {
+                    "maxLength": 128,
+                    "type": "string"
+                  },
+                  "status": {
+                    "maxLength": 32,
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "items"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/messaging/route-rules",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "messaging",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "summary": "List messaging route rules",
+      "tag": "messaging",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/messaging/send_requests",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts#listMessagingSendRequests@/admin/messaging/send-requests",
+      "kind": "read",
+      "module": "pc-admin-messaging",
+      "openapi_exposed": true,
+      "operation": "listMessagingSendRequests",
+      "operation_id": "sendRequests.list",
+      "path_params": [],
+      "query_parameters": [
+        {
+          "in": "query",
+          "name": "page",
+          "required": false,
+          "schema": {
+            "format": "int64",
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string",
+            "x-sdkwork-int64-string": true,
+            "x-sdkwork-rust-type": "i64"
+          }
+        },
+        {
+          "in": "query",
+          "name": "page_size",
+          "required": false,
+          "schema": {
+            "format": "int64",
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string",
+            "x-sdkwork-int64-string": true,
+            "x-sdkwork-rust-type": "i64"
+          }
+        },
+        {
+          "in": "query",
+          "name": "scene_code",
+          "required": false,
+          "schema": {
+            "maxLength": 128,
+            "type": "string"
+          }
+        },
+        {
+          "in": "query",
+          "name": "target_hash",
+          "required": false,
+          "schema": {
+            "maxLength": 128,
+            "type": "string"
+          }
+        }
+      ],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "messaging_send_request",
+        "messaging_send_attempt",
+        "messaging_delivery_event"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "MessagingSendRequestListResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "MessagingSendRequestListResponse",
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": true,
+                "properties": {
+                  "channel": {
+                    "maxLength": 32,
+                    "type": "string"
+                  },
+                  "deliveryStatus": {
+                    "maxLength": 64,
+                    "type": "string"
+                  },
+                  "id": {
+                    "maxLength": 128,
+                    "type": "string"
+                  },
+                  "sceneCode": {
+                    "maxLength": 128,
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "items"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/messaging/send-requests",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "messaging",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "summary": "List messaging send requests",
+      "tag": "messaging",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/messaging/sender_identities",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts#listMessagingSenderIdentities@/admin/messaging/sender-identities",
+      "kind": "read",
+      "module": "pc-admin-messaging",
+      "openapi_exposed": true,
+      "operation": "listMessagingSenderIdentities",
+      "operation_id": "senderIdentities.list",
+      "path_params": [],
+      "query_parameters": [
+        {
+          "in": "query",
+          "name": "page",
+          "required": false,
+          "schema": {
+            "format": "int64",
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string",
+            "x-sdkwork-int64-string": true,
+            "x-sdkwork-rust-type": "i64"
+          }
+        },
+        {
+          "in": "query",
+          "name": "page_size",
+          "required": false,
+          "schema": {
+            "format": "int64",
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string",
+            "x-sdkwork-int64-string": true,
+            "x-sdkwork-rust-type": "i64"
+          }
+        }
+      ],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "messaging_sender_identity"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "MessagingSenderIdentityListResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "MessagingSenderIdentityListResponse",
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": true,
+                "properties": {
+                  "channel": {
+                    "maxLength": 32,
+                    "type": "string"
+                  },
+                  "id": {
+                    "maxLength": 128,
+                    "type": "string"
+                  },
+                  "status": {
+                    "maxLength": 32,
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "items"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/messaging/sender-identities",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "messaging",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "summary": "List messaging sender identities",
+      "tag": "messaging",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/messaging/suppressions",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts#listMessagingSuppressions@/admin/messaging/suppressions",
+      "kind": "read",
+      "module": "pc-admin-messaging",
+      "openapi_exposed": true,
+      "operation": "listMessagingSuppressions",
+      "operation_id": "suppressions.list",
+      "path_params": [],
+      "query_parameters": [
+        {
+          "in": "query",
+          "name": "page",
+          "required": false,
+          "schema": {
+            "format": "int64",
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string",
+            "x-sdkwork-int64-string": true,
+            "x-sdkwork-rust-type": "i64"
+          }
+        },
+        {
+          "in": "query",
+          "name": "page_size",
+          "required": false,
+          "schema": {
+            "format": "int64",
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string",
+            "x-sdkwork-int64-string": true,
+            "x-sdkwork-rust-type": "i64"
+          }
+        }
+      ],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "messaging_suppression"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "MessagingSuppressionListResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "MessagingSuppressionListResponse",
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": true,
+                "properties": {
+                  "channel": {
+                    "maxLength": 32,
+                    "type": "string"
+                  },
+                  "id": {
+                    "maxLength": 128,
+                    "type": "string"
+                  },
+                  "status": {
+                    "maxLength": 32,
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "items"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/messaging/suppressions",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "messaging",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "summary": "List messaging suppressions",
+      "tag": "messaging",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/messaging/templates",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts#listMessagingTemplates@/admin/messaging/templates",
+      "kind": "read",
+      "module": "pc-admin-messaging",
+      "openapi_exposed": true,
+      "operation": "listMessagingTemplates",
+      "operation_id": "templates.list",
+      "path_params": [],
+      "query_parameters": [
+        {
+          "in": "query",
+          "name": "page",
+          "required": false,
+          "schema": {
+            "format": "int64",
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string",
+            "x-sdkwork-int64-string": true,
+            "x-sdkwork-rust-type": "i64"
+          }
+        },
+        {
+          "in": "query",
+          "name": "page_size",
+          "required": false,
+          "schema": {
+            "format": "int64",
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string",
+            "x-sdkwork-int64-string": true,
+            "x-sdkwork-rust-type": "i64"
+          }
+        }
+      ],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "messaging_template",
+        "messaging_template_version",
+        "messaging_template_variant"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "MessagingTemplateListResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "MessagingTemplateListResponse",
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": true,
+                "properties": {
+                  "channel": {
+                    "maxLength": 32,
+                    "type": "string"
+                  },
+                  "id": {
+                    "maxLength": 128,
+                    "type": "string"
+                  },
+                  "status": {
+                    "maxLength": 32,
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "items"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/messaging/templates",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "messaging",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "summary": "List messaging templates",
+      "tag": "messaging",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/messaging/verification_policies",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts#listVerificationPolicies@/admin/messaging/verification-policies",
+      "kind": "read",
+      "module": "pc-admin-messaging",
+      "openapi_exposed": true,
+      "operation": "listVerificationPolicies",
+      "operation_id": "verificationPolicies.list",
+      "path_params": [],
+      "query_parameters": [
+        {
+          "in": "query",
+          "name": "page",
+          "required": false,
+          "schema": {
+            "format": "int64",
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string",
+            "x-sdkwork-int64-string": true,
+            "x-sdkwork-rust-type": "i64"
+          }
+        },
+        {
+          "in": "query",
+          "name": "page_size",
+          "required": false,
+          "schema": {
+            "format": "int64",
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string",
+            "x-sdkwork-int64-string": true,
+            "x-sdkwork-rust-type": "i64"
+          }
+        }
+      ],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "iam_verification_scene_policy"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "VerificationPolicyListResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "VerificationPolicyListResponse",
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": true,
+                "properties": {
+                  "channel": {
+                    "maxLength": 32,
+                    "type": "string"
+                  },
+                  "id": {
+                    "maxLength": 128,
+                    "type": "string"
+                  },
+                  "status": {
+                    "maxLength": 32,
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "items"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/messaging/verification-policies",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "messaging",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "summary": "List verification policies",
+      "tag": "messaging",
+      "write_tables": []
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/messaging/templates/{templateId}/versions/{versionId}/publish",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts#publishMessagingTemplateVersion@/admin/messaging/templates",
+      "kind": "action",
+      "module": "pc-admin-messaging",
+      "openapi_exposed": true,
+      "operation": "publishMessagingTemplateVersion",
+      "operation_id": "templates.versions.publish",
+      "path_params": [
+        "templateId",
+        "versionId"
+      ],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "messaging_template_version"
+      ],
+      "request_body_required": false,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "MessagingTemplateVersionPublishResponse",
+        "schema": {
+          "additionalProperties": true,
+          "name": "MessagingTemplateVersionPublishResponse",
+          "properties": {
+            "channel": {
+              "maxLength": 32,
+              "type": "string"
+            },
+            "id": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "status": {
+              "maxLength": 32,
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "route": "/admin/messaging/templates",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "messaging",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "summary": "Publish messaging template version",
+      "tag": "messaging",
+      "write_tables": [
+        "messaging_template_version"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/messaging/template_sends",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts#sendMessagingTemplate@/admin/messaging/templates",
+      "kind": "action",
+      "module": "pc-admin-messaging",
+      "openapi_exposed": true,
+      "operation": "sendMessagingTemplate",
+      "operation_id": "templateSends.create",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "messaging_send_request",
+        "messaging_send_attempt"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "request_schema": {
+        "name": "MessagingTemplateSendRequest",
+        "schema": {
+          "additionalProperties": false,
+          "name": "MessagingTemplateSendRequest",
+          "properties": {
+            "channel": {
+              "maxLength": 32,
+              "type": "string"
+            },
+            "deliveryPurpose": {
+              "maxLength": 64,
+              "type": "string"
+            },
+            "dryRun": {
+              "type": "boolean"
+            },
+            "sceneCode": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "targetHash": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "targetMasked": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "templateCode": {
+              "maxLength": 128,
+              "type": "string"
+            }
+          },
+          "required": [
+            "sceneCode",
+            "channel",
+            "deliveryPurpose",
+            "templateCode",
+            "targetMasked",
+            "targetHash"
+          ],
+          "type": "object"
+        }
+      },
+      "response_schema": {
+        "name": "MessagingTemplateSendResponse",
+        "schema": {
+          "additionalProperties": true,
+          "name": "MessagingTemplateSendResponse",
+          "properties": {
+            "channel": {
+              "maxLength": 32,
+              "type": "string"
+            },
+            "id": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "status": {
+              "maxLength": 32,
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "route": "/admin/messaging/templates",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "messaging",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "summary": "Send messaging template",
+      "tag": "messaging",
+      "write_tables": [
+        "messaging_send_request",
+        "messaging_send_attempt"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/messaging/diagnostics/route_simulation",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts#simulateMessagingRoute@/admin/messaging/diagnostics",
+      "kind": "action",
+      "module": "pc-admin-messaging",
+      "openapi_exposed": true,
+      "operation": "simulateMessagingRoute",
+      "operation_id": "diagnostics.routeSimulation.create",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "messaging_route_rule",
+        "messaging_route_rule_target"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "request_schema": {
+        "name": "MessagingRouteSimulationRequest",
+        "schema": {
+          "additionalProperties": false,
+          "name": "MessagingRouteSimulationRequest",
+          "properties": {
+            "channel": {
+              "maxLength": 32,
+              "type": "string"
+            },
+            "deliveryPurpose": {
+              "maxLength": 64,
+              "type": "string"
+            },
+            "sceneCode": {
+              "maxLength": 128,
+              "type": "string"
+            }
+          },
+          "required": [
+            "sceneCode",
+            "channel"
+          ],
+          "type": "object"
+        }
+      },
+      "response_schema": {
+        "name": "MessagingRouteSimulationResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "MessagingRouteSimulationResponse",
+          "properties": {
+            "matched": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "matched"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/messaging/diagnostics",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "messaging",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "summary": "Simulate messaging route",
+      "tag": "messaging",
+      "write_tables": [
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/messaging/diagnostics/test_sends",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts#testMessagingSend@/admin/messaging/diagnostics",
+      "kind": "action",
+      "module": "pc-admin-messaging",
+      "openapi_exposed": true,
+      "operation": "testMessagingSend",
+      "operation_id": "diagnostics.testSends.create",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "messaging_send_request"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "request_schema": {
+        "name": "MessagingTestSendRequest",
+        "schema": {
+          "additionalProperties": false,
+          "name": "MessagingTestSendRequest",
+          "properties": {
+            "channel": {
+              "maxLength": 32,
+              "type": "string"
+            },
+            "dryRun": {
+              "type": "boolean"
+            },
+            "sceneCode": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "targetHash": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "targetMasked": {
+              "maxLength": 128,
+              "type": "string"
+            }
+          },
+          "required": [
+            "sceneCode",
+            "channel",
+            "targetMasked",
+            "targetHash"
+          ],
+          "type": "object"
+        }
+      },
+      "response_schema": {
+        "name": "MessagingTestSendResponse",
+        "schema": {
+          "additionalProperties": true,
+          "name": "MessagingTestSendResponse",
+          "properties": {
+            "channel": {
+              "maxLength": 32,
+              "type": "string"
+            },
+            "id": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "status": {
+              "maxLength": 32,
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "route": "/admin/messaging/diagnostics",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "messaging",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "summary": "Test messaging send",
+      "tag": "messaging",
+      "write_tables": [
+        "messaging_send_request"
+      ]
+    },
+    {
+      "api_method": "PUT",
+      "api_path": "/backend/v3/api/messaging/verification_policies/{policyId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts#updateVerificationPolicy@/admin/messaging/verification-policies",
+      "kind": "update",
+      "module": "pc-admin-messaging",
+      "openapi_exposed": true,
+      "operation": "updateVerificationPolicy",
+      "operation_id": "verificationPolicies.update",
+      "path_params": [
+        "policyId"
+      ],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "iam_verification_scene_policy"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "request_schema": {
+        "name": "VerificationPolicyUpdateRequest",
+        "schema": {
+          "additionalProperties": false,
+          "name": "VerificationPolicyUpdateRequest",
+          "properties": {
+            "allowedChannels": {
+              "items": {
+                "maxLength": 32,
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "codeLength": {
+              "format": "int64",
+              "pattern": "^-?[0-9]+$",
+              "type": "string",
+              "x-sdkwork-int64-string": true,
+              "x-sdkwork-rust-type": "i64"
+            },
+            "defaultChannel": {
+              "maxLength": 32,
+              "type": "string"
+            },
+            "maxSendPerHour": {
+              "format": "int64",
+              "pattern": "^-?[0-9]+$",
+              "type": "string",
+              "x-sdkwork-int64-string": true,
+              "x-sdkwork-rust-type": "i64"
+            },
+            "maxVerifyAttempts": {
+              "format": "int64",
+              "pattern": "^-?[0-9]+$",
+              "type": "string",
+              "x-sdkwork-int64-string": true,
+              "x-sdkwork-rust-type": "i64"
+            },
+            "resendIntervalSeconds": {
+              "format": "int64",
+              "pattern": "^-?[0-9]+$",
+              "type": "string",
+              "x-sdkwork-int64-string": true,
+              "x-sdkwork-rust-type": "i64"
+            },
+            "riskPolicy": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "templateCode": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "ttlSeconds": {
+              "format": "int64",
+              "pattern": "^-?[0-9]+$",
+              "type": "string",
+              "x-sdkwork-int64-string": true,
+              "x-sdkwork-rust-type": "i64"
+            }
+          },
+          "required": [
+            "allowedChannels",
+            "codeLength",
+            "ttlSeconds",
+            "maxVerifyAttempts",
+            "templateCode"
+          ],
+          "type": "object"
+        }
+      },
+      "response_schema": {
+        "name": "VerificationPolicyUpdateResponse",
+        "schema": {
+          "additionalProperties": true,
+          "name": "VerificationPolicyUpdateResponse",
+          "properties": {
+            "channel": {
+              "maxLength": 32,
+              "type": "string"
+            },
+            "id": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "status": {
+              "maxLength": 32,
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "route": "/admin/messaging/verification-policies",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "messaging",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "summary": "Update verification policy",
+      "tag": "messaging",
+      "write_tables": [
+        "iam_verification_scene_policy"
       ]
     },
     {
@@ -24435,6 +26461,316 @@
       "write_tables": []
     },
     {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/notification/notifications/{notificationId}/acknowledge",
+      "api_surface": "app",
+      "description": "Marks a notification as read through the notification-pc-react service boundary.",
+      "file_targets": [],
+      "idempotency_required": true,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts#acknowledge@/console/notifications",
+      "kind": "create",
+      "module": "pc-commons",
+      "openapi_exposed": true,
+      "operation": "acknowledge",
+      "operation_id": "notifications.acknowledge.create",
+      "path_params": [
+        "notificationId"
+      ],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "ops_notification_delivery"
+      ],
+      "request_body_required": false,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "NotificationMutationResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "NotificationMutationResponse",
+          "properties": {
+            "state": {
+              "enum": [
+                "acknowledged",
+                "popup_seen"
+              ],
+              "type": "string"
+            },
+            "updated": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "updated",
+            "state"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/console/notifications",
+      "route_scope": "console",
+      "sdk_api_prefix": "/app/v3/api",
+      "sdk_client": "SdkworkAppClient",
+      "sdk_domain": "notification",
+      "sdk_family": "clawrouter-app-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts",
+      "summary": "Acknowledge portal notification",
+      "tag": "notification",
+      "write_tables": [
+        "ops_notification_delivery"
+      ]
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/notification/notifications",
+      "api_surface": "app",
+      "description": "Lists in-app notifications through the notification-pc-react service boundary.",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts#fetchNotifications@/console/notifications",
+      "kind": "read",
+      "module": "pc-commons",
+      "openapi_exposed": true,
+      "operation": "fetchNotifications",
+      "operation_id": "notifications.list",
+      "path_params": [],
+      "query_parameters": [
+        {
+          "in": "query",
+          "name": "include_archived",
+          "required": false,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "in": "query",
+          "name": "page",
+          "required": false,
+          "schema": {
+            "format": "int64",
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string",
+            "x-sdkwork-int64-string": true,
+            "x-sdkwork-rust-type": "i64"
+          }
+        },
+        {
+          "in": "query",
+          "name": "page_size",
+          "required": false,
+          "schema": {
+            "format": "int64",
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string",
+            "x-sdkwork-int64-string": true,
+            "x-sdkwork-rust-type": "i64"
+          }
+        }
+      ],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "ops_notification_message",
+        "ops_notification_delivery"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "NotificationListResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "NotificationListResponse",
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": false,
+                "name": "NotificationItem",
+                "properties": {
+                  "actionUrl": {
+                    "maxLength": 512,
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "appId": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "archived": {
+                    "type": "boolean"
+                  },
+                  "content": {
+                    "maxLength": 20000,
+                    "type": "string"
+                  },
+                  "desc": {
+                    "maxLength": 512,
+                    "type": "string"
+                  },
+                  "id": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "popupSeen": {
+                    "type": "boolean"
+                  },
+                  "read": {
+                    "type": "boolean"
+                  },
+                  "showAsPopup": {
+                    "type": "boolean"
+                  },
+                  "time": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "title": {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "type": {
+                    "enum": [
+                      "info",
+                      "billing",
+                      "warning",
+                      "alert"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "appId",
+                  "title",
+                  "desc",
+                  "content",
+                  "time",
+                  "type",
+                  "read",
+                  "showAsPopup",
+                  "popupSeen",
+                  "archived"
+                ],
+                "type": "object"
+              },
+              "maxItems": 200,
+              "type": "array"
+            }
+          },
+          "required": [
+            "items"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/console/notifications",
+      "route_scope": "console",
+      "sdk_api_prefix": "/app/v3/api",
+      "sdk_client": "SdkworkAppClient",
+      "sdk_domain": "notification",
+      "sdk_family": "clawrouter-app-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts",
+      "summary": "List portal notifications",
+      "tag": "notification",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/notification/notifications",
+      "api_surface": "app",
+      "description": "Internal composed notification service list operation used by the notification-pc-react boundary.",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts#list@/console/notifications",
+      "kind": "read",
+      "module": "pc-commons",
+      "openapi_exposed": false,
+      "operation": "list",
+      "operation_id": "notifications.list",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "ops_notification_message",
+        "ops_notification_delivery"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "route": "/console/notifications",
+      "route_scope": "console",
+      "sdk_api_prefix": "/app/v3/api",
+      "sdk_client": "SdkworkAppClient",
+      "sdk_domain": "notification",
+      "sdk_family": "clawrouter-app-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts",
+      "summary": "List portal notifications through composed notification service",
+      "tag": "notification",
+      "write_tables": []
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/notification/notifications/{notificationId}/popup_seen",
+      "api_surface": "app",
+      "description": "Records popup presentation through the notification-pc-react service boundary.",
+      "file_targets": [],
+      "idempotency_required": true,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts#markPopupSeen@/console/notifications",
+      "kind": "create",
+      "module": "pc-commons",
+      "openapi_exposed": true,
+      "operation": "markPopupSeen",
+      "operation_id": "notifications.popupSeen.create",
+      "path_params": [
+        "notificationId"
+      ],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "ops_notification_delivery"
+      ],
+      "request_body_required": false,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "NotificationMutationResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "NotificationMutationResponse",
+          "properties": {
+            "state": {
+              "enum": [
+                "acknowledged",
+                "popup_seen"
+              ],
+              "type": "string"
+            },
+            "updated": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "updated",
+            "state"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/console/notifications",
+      "route_scope": "console",
+      "sdk_api_prefix": "/app/v3/api",
+      "sdk_client": "SdkworkAppClient",
+      "sdk_domain": "notification",
+      "sdk_family": "clawrouter-app-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts",
+      "summary": "Mark portal notification popup seen",
+      "tag": "notification",
+      "write_tables": [
+        "ops_notification_delivery"
+      ]
+    },
+    {
       "api_method": "GET",
       "api_path": "/app/v3/api/ai/routing/api_keys",
       "api_surface": "app",
@@ -26507,13 +28843,13 @@
       "api_method": "POST",
       "api_path": "/app/v3/api/notification/notifications/{notificationId}/acknowledge",
       "api_surface": "app",
-      "description": "Marks a notification as read for the active portal user.",
+      "description": "Console messages facade that delegates to the notification service boundary.",
       "file_targets": [],
       "idempotency_required": true,
       "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-messages/src/messagesService.ts#acknowledge@/console/notifications",
       "kind": "create",
       "module": "pc-console-messages",
-      "openapi_exposed": true,
+      "openapi_exposed": false,
       "operation": "acknowledge",
       "operation_id": "notifications.acknowledge.create",
       "path_params": [
@@ -26526,30 +28862,6 @@
       ],
       "request_body_required": false,
       "request_id_header": false,
-      "response_schema": {
-        "name": "NotificationMutationResponse",
-        "schema": {
-          "additionalProperties": false,
-          "name": "NotificationMutationResponse",
-          "properties": {
-            "state": {
-              "enum": [
-                "acknowledged",
-                "popup_seen"
-              ],
-              "type": "string"
-            },
-            "updated": {
-              "type": "boolean"
-            }
-          },
-          "required": [
-            "updated",
-            "state"
-          ],
-          "type": "object"
-        }
-      },
       "route": "/console/notifications",
       "route_scope": "console",
       "sdk_api_prefix": "/app/v3/api",
@@ -26557,7 +28869,7 @@
       "sdk_domain": "notification",
       "sdk_family": "clawrouter-app-sdk",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-messages/src/messagesService.ts",
-      "summary": "Acknowledge portal notification",
+      "summary": "Acknowledge portal notification through console messages facade",
       "tag": "notification",
       "write_tables": [
         "ops_notification_delivery"
@@ -26567,148 +28879,24 @@
       "api_method": "GET",
       "api_path": "/app/v3/api/notification/notifications",
       "api_surface": "app",
-      "description": "Lists in-app notifications for the active portal session.",
+      "description": "Console messages facade that delegates to the notification service boundary.",
       "file_targets": [],
       "idempotency_required": false,
       "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-messages/src/messagesService.ts#fetchMessages@/console/notifications",
       "kind": "read",
       "module": "pc-console-messages",
-      "openapi_exposed": true,
+      "openapi_exposed": false,
       "operation": "fetchMessages",
       "operation_id": "notifications.list",
       "path_params": [],
-      "query_parameters": [
-        {
-          "in": "query",
-          "name": "include_archived",
-          "required": false,
-          "schema": {
-            "type": "boolean"
-          }
-        },
-        {
-          "in": "query",
-          "name": "page",
-          "required": false,
-          "schema": {
-            "format": "int64",
-            "pattern": "^[1-9][0-9]*$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          }
-        },
-        {
-          "in": "query",
-          "name": "page_size",
-          "required": false,
-          "schema": {
-            "format": "int64",
-            "pattern": "^[1-9][0-9]*$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          }
-        }
-      ],
-      "query_parameters_declared": true,
+      "query_parameters": [],
+      "query_parameters_declared": false,
       "read_sources": [
         "ops_notification_message",
         "ops_notification_delivery"
       ],
       "request_body_required": null,
       "request_id_header": false,
-      "response_schema": {
-        "name": "NotificationListResponse",
-        "schema": {
-          "additionalProperties": false,
-          "name": "NotificationListResponse",
-          "properties": {
-            "items": {
-              "items": {
-                "additionalProperties": false,
-                "name": "NotificationItem",
-                "properties": {
-                  "actionUrl": {
-                    "maxLength": 512,
-                    "nullable": true,
-                    "type": "string"
-                  },
-                  "appId": {
-                    "maxLength": 128,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "archived": {
-                    "type": "boolean"
-                  },
-                  "content": {
-                    "maxLength": 20000,
-                    "type": "string"
-                  },
-                  "desc": {
-                    "maxLength": 512,
-                    "type": "string"
-                  },
-                  "id": {
-                    "maxLength": 128,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "popupSeen": {
-                    "type": "boolean"
-                  },
-                  "read": {
-                    "type": "boolean"
-                  },
-                  "showAsPopup": {
-                    "type": "boolean"
-                  },
-                  "time": {
-                    "maxLength": 64,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "title": {
-                    "maxLength": 200,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "type": {
-                    "enum": [
-                      "info",
-                      "billing",
-                      "warning",
-                      "alert"
-                    ],
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "id",
-                  "appId",
-                  "title",
-                  "desc",
-                  "content",
-                  "time",
-                  "type",
-                  "read",
-                  "showAsPopup",
-                  "popupSeen",
-                  "archived"
-                ],
-                "type": "object"
-              },
-              "maxItems": 200,
-              "type": "array"
-            }
-          },
-          "required": [
-            "items"
-          ],
-          "type": "object"
-        }
-      },
       "route": "/console/notifications",
       "route_scope": "console",
       "sdk_api_prefix": "/app/v3/api",
@@ -26716,7 +28904,7 @@
       "sdk_domain": "notification",
       "sdk_family": "clawrouter-app-sdk",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-messages/src/messagesService.ts",
-      "summary": "List portal notifications",
+      "summary": "List portal notifications through console messages facade",
       "tag": "notification",
       "write_tables": []
     },
@@ -26724,13 +28912,13 @@
       "api_method": "POST",
       "api_path": "/app/v3/api/notification/notifications/{notificationId}/popup_seen",
       "api_surface": "app",
-      "description": "Records that a popup notification was presented to the active portal user.",
+      "description": "Console messages facade that delegates to the notification service boundary.",
       "file_targets": [],
       "idempotency_required": true,
       "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-messages/src/messagesService.ts#markPopupSeen@/console/notifications",
       "kind": "create",
       "module": "pc-console-messages",
-      "openapi_exposed": true,
+      "openapi_exposed": false,
       "operation": "markPopupSeen",
       "operation_id": "notifications.popupSeen.create",
       "path_params": [
@@ -26743,30 +28931,6 @@
       ],
       "request_body_required": false,
       "request_id_header": false,
-      "response_schema": {
-        "name": "NotificationMutationResponse",
-        "schema": {
-          "additionalProperties": false,
-          "name": "NotificationMutationResponse",
-          "properties": {
-            "state": {
-              "enum": [
-                "acknowledged",
-                "popup_seen"
-              ],
-              "type": "string"
-            },
-            "updated": {
-              "type": "boolean"
-            }
-          },
-          "required": [
-            "updated",
-            "state"
-          ],
-          "type": "object"
-        }
-      },
       "route": "/console/notifications",
       "route_scope": "console",
       "sdk_api_prefix": "/app/v3/api",
@@ -26774,7 +28938,7 @@
       "sdk_domain": "notification",
       "sdk_family": "clawrouter-app-sdk",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-messages/src/messagesService.ts",
-      "summary": "Mark portal notification popup seen",
+      "summary": "Mark portal notification popup seen through console messages facade",
       "tag": "notification",
       "write_tables": [
         "ops_notification_delivery"
@@ -27282,7 +29446,88 @@
       "response_schema": {
         "name": "IamUserResponse",
         "schema": {
-          "$ref": "#/components/schemas/IamUserResponse"
+          "additionalProperties": false,
+          "name": "IamUserResponse",
+          "properties": {
+            "avatar": {
+              "$ref": "#/components/schemas/MediaResource"
+            },
+            "displayName": {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            "email": {
+              "maxLength": 256,
+              "type": "string"
+            },
+            "id": {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            "isVerified": {
+              "type": "boolean"
+            },
+            "language": {
+              "maxLength": 32,
+              "type": "string"
+            },
+            "lastLogin": {
+              "maxLength": 64,
+              "type": "string"
+            },
+            "lastLoginIp": {
+              "description": "Masked client IP address from the latest login event.",
+              "type": "string"
+            },
+            "passwordLastChanged": {
+              "maxLength": 64,
+              "type": "string"
+            },
+            "phone": {
+              "description": "Safe display phone value, empty when unavailable.",
+              "type": "string"
+            },
+            "registeredAt": {
+              "format": "date-time",
+              "type": "string"
+            },
+            "status": {
+              "maxLength": 32,
+              "type": "string"
+            },
+            "thirdPartyBound": {
+              "description": "Safe OAuth provider binding summary without provider subject IDs or tokens.",
+              "type": "string"
+            },
+            "twoFactorEnabled": {
+              "type": "boolean"
+            },
+            "username": {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "username",
+            "displayName",
+            "email",
+            "avatar",
+            "phone",
+            "language",
+            "isVerified",
+            "status",
+            "registeredAt",
+            "lastLogin",
+            "lastLoginIp",
+            "passwordLastChanged",
+            "twoFactorEnabled",
+            "thirdPartyBound"
+          ],
+          "type": "object"
         }
       },
       "route": "/console/user",
@@ -27305,7 +29550,7 @@
       "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-models/src/modelService.ts#fetchModels@/models",
       "kind": "read",
       "module": "pc-models",
-      "openapi_exposed": true,
+      "openapi_exposed": false,
       "operation": "fetchModels",
       "operation_id": "models.list",
       "path_params": [],
@@ -33118,7 +35363,7 @@
       "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-rankings/src/rankingService.ts#fetchModelRankings@/rankings",
       "kind": "read",
       "module": "pc-rankings",
-      "openapi_exposed": true,
+      "openapi_exposed": false,
       "operation": "fetchModelRankings",
       "operation_id": "modelRankings.list",
       "path_params": [],
@@ -33541,7 +35786,7 @@
       "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-rankings/src/rankingService.ts#fetchModelVendors@/rankings",
       "kind": "read",
       "module": "pc-rankings",
-      "openapi_exposed": true,
+      "openapi_exposed": false,
       "operation": "fetchModelVendors",
       "operation_id": "modelVendors.list",
       "path_params": [],
@@ -35109,7 +37354,7 @@
       "key": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts#addModel@/admin/model",
       "kind": "create",
       "module": "sdkwork-models-pc-admin-catalog",
-      "openapi_exposed": true,
+      "openapi_exposed": false,
       "operation": "addModel",
       "operation_id": "models.create",
       "path_params": [],
@@ -35667,7 +37912,7 @@
       "key": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts#addVendor@/admin/model",
       "kind": "create",
       "module": "sdkwork-models-pc-admin-catalog",
-      "openapi_exposed": true,
+      "openapi_exposed": false,
       "operation": "addVendor",
       "operation_id": "modelVendors.create",
       "path_params": [],
@@ -35804,7 +38049,7 @@
       "key": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts#createModelMapping@/admin/model/mappings",
       "kind": "create",
       "module": "sdkwork-models-pc-admin-catalog",
-      "openapi_exposed": true,
+      "openapi_exposed": false,
       "operation": "createModelMapping",
       "operation_id": "modelMappings.create",
       "path_params": [],
@@ -36239,7 +38484,7 @@
       "key": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts#deleteModel@/admin/model",
       "kind": "delete",
       "module": "sdkwork-models-pc-admin-catalog",
-      "openapi_exposed": true,
+      "openapi_exposed": false,
       "operation": "deleteModel",
       "operation_id": "models.delete",
       "path_params": [
@@ -36294,7 +38539,7 @@
       "key": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts#deleteModelMapping@/admin/model/mappings",
       "kind": "delete",
       "module": "sdkwork-models-pc-admin-catalog",
-      "openapi_exposed": true,
+      "openapi_exposed": false,
       "operation": "deleteModelMapping",
       "operation_id": "modelMappings.delete",
       "path_params": [
@@ -36341,426 +38586,6 @@
       ]
     },
     {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/ai/models/list",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts#fetchInitializedCatalog@/admin/model",
-      "kind": "action",
-      "module": "sdkwork-models-pc-admin-catalog",
-      "openapi_exposed": false,
-      "operation": "fetchInitializedCatalog",
-      "operation_id": "models.create",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "ai_model_vendor",
-        "ai_model",
-        "ai_model_capability",
-        "ai_model_pricing",
-        "ai_model_rank_snapshot",
-        "ai_pricing_import_snapshot"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "request_schema": {
-        "name": "AdminModelCatalogInitializationRequest",
-        "schema": {
-          "additionalProperties": false,
-          "name": "AdminModelCatalogInitializationRequest",
-          "properties": {
-            "force": {
-              "description": "Refresh is forced so an empty persisted catalog is populated immediately.",
-              "type": "boolean"
-            },
-            "mode": {
-              "description": "Empty catalog initialization performs the same official refresh used by the manual sync action.",
-              "enum": [
-                "official_refresh"
-              ],
-              "type": "string"
-            },
-            "source": {
-              "description": "Frontend initialization uses the bundled sdkwork-models catalog source when persisted lists are empty.",
-              "enum": [
-                "sdkwork_models"
-              ],
-              "type": "string"
-            }
-          },
-          "required": [],
-          "type": "object"
-        }
-      },
-      "response_schema": {
-        "name": "InitializedModelCatalog",
-        "schema": {
-          "additionalProperties": false,
-          "name": "InitializedModelCatalog",
-          "properties": {
-            "initialized": {
-              "description": "True when the service had to refresh an empty persisted model catalog before returning data.",
-              "type": "boolean"
-            },
-            "models": {
-              "description": "AI model snapshots after optional initialization.",
-              "items": {
-                "additionalProperties": false,
-                "name": "AdminAiModelItem",
-                "properties": {
-                  "apiFormat": {
-                    "maxLength": 128,
-                    "nullable": true,
-                    "type": "string"
-                  },
-                  "calls": {
-                    "maxLength": 64,
-                    "type": "string"
-                  },
-                  "capabilityIntro": {
-                    "maxLength": 4096,
-                    "nullable": true,
-                    "type": "string"
-                  },
-                  "contextTokens": {
-                    "format": "int64",
-                    "nullable": true,
-                    "pattern": "^[0-9]+$",
-                    "type": "string",
-                    "x-sdkwork-int64-string": true,
-                    "x-sdkwork-rust-type": "i64"
-                  },
-                  "description": {
-                    "maxLength": 2048,
-                    "nullable": true,
-                    "type": "string"
-                  },
-                  "displayName": {
-                    "description": "Product display name. Falls back to model when no display name is configured.",
-                    "maxLength": 128,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "id": {
-                    "maxLength": 128,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "inputModalities": {
-                    "items": {
-                      "maxLength": 64,
-                      "minLength": 1,
-                      "type": "string"
-                    },
-                    "maxItems": 16,
-                    "type": "array"
-                  },
-                  "limitations": {
-                    "items": {
-                      "maxLength": 512,
-                      "minLength": 1,
-                      "type": "string"
-                    },
-                    "maxItems": 64,
-                    "type": "array"
-                  },
-                  "maxOutputTokens": {
-                    "format": "int64",
-                    "nullable": true,
-                    "pattern": "^[0-9]+$",
-                    "type": "string",
-                    "x-sdkwork-int64-string": true,
-                    "x-sdkwork-rust-type": "i64"
-                  },
-                  "modalities": {
-                    "items": {
-                      "maxLength": 64,
-                      "minLength": 1,
-                      "type": "string"
-                    },
-                    "maxItems": 16,
-                    "type": "array"
-                  },
-                  "model": {
-                    "description": "Runtime model identifier used for provider calls, routing, and pricing keys.",
-                    "maxLength": 256,
-                    "minLength": 1,
-                    "pattern": "^[A-Za-z0-9._:/-]+$",
-                    "type": "string"
-                  },
-                  "name": {
-                    "description": "Compatibility display alias. Equal to displayName.",
-                    "maxLength": 128,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "outputModalities": {
-                    "items": {
-                      "maxLength": 64,
-                      "minLength": 1,
-                      "type": "string"
-                    },
-                    "maxItems": 16,
-                    "type": "array"
-                  },
-                  "regionPrices": {
-                    "items": {
-                      "additionalProperties": false,
-                      "description": "Regional official reference pricing returned by admin AI model payloads.",
-                      "name": "AdminAiModelRegionPrice",
-                      "properties": {
-                        "cacheReadPrice": {
-                          "description": "Optional official reference cache-read unit price in native official reference currency.",
-                          "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
-                          "type": "string"
-                        },
-                        "cacheWritePrice": {
-                          "description": "Optional official reference cache-write unit price in native official reference currency.",
-                          "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
-                          "type": "string"
-                        },
-                        "currency": {
-                          "description": "Official reference price currency code for this region.",
-                          "maxLength": 3,
-                          "minLength": 3,
-                          "pattern": "^[A-Z]{3}$",
-                          "type": "string"
-                        },
-                        "priceIn": {
-                          "description": "Official reference input unit price in native official reference currency.",
-                          "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
-                          "type": "string"
-                        },
-                        "priceOut": {
-                          "description": "Official reference output unit price in native official reference currency.",
-                          "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
-                          "type": "string"
-                        },
-                        "regionCode": {
-                          "description": "Model catalog pricing region code.",
-                          "maxLength": 64,
-                          "minLength": 1,
-                          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "regionCode",
-                        "currency",
-                        "priceIn",
-                        "priceOut"
-                      ],
-                      "type": "object"
-                    },
-                    "maxItems": 32,
-                    "minItems": 1,
-                    "type": "array"
-                  },
-                  "releaseStage": {
-                    "format": "int64",
-                    "nullable": true,
-                    "pattern": "^-?[0-9]+$",
-                    "type": "string",
-                    "x-sdkwork-int64-string": true,
-                    "x-sdkwork-rust-type": "i64"
-                  },
-                  "replacementModel": {
-                    "maxLength": 128,
-                    "nullable": true,
-                    "type": "string"
-                  },
-                  "routingState": {
-                    "format": "int64",
-                    "nullable": true,
-                    "pattern": "^-?[0-9]+$",
-                    "type": "string",
-                    "x-sdkwork-int64-string": true,
-                    "x-sdkwork-rust-type": "i64"
-                  },
-                  "shelfState": {
-                    "format": "int64",
-                    "nullable": true,
-                    "pattern": "^-?[0-9]+$",
-                    "type": "string",
-                    "x-sdkwork-int64-string": true,
-                    "x-sdkwork-rust-type": "i64"
-                  },
-                  "status": {
-                    "enum": [
-                      "active",
-                      "inactive"
-                    ],
-                    "type": "string"
-                  },
-                  "supportedLanguages": {
-                    "items": {
-                      "maxLength": 128,
-                      "minLength": 1,
-                      "type": "string"
-                    },
-                    "maxItems": 128,
-                    "type": "array"
-                  },
-                  "supportsJsonSchema": {
-                    "type": "boolean"
-                  },
-                  "supportsStreaming": {
-                    "type": "boolean"
-                  },
-                  "supportsTools": {
-                    "type": "boolean"
-                  },
-                  "trainingDataCutoff": {
-                    "maxLength": 128,
-                    "nullable": true,
-                    "type": "string"
-                  },
-                  "type": {
-                    "enum": [
-                      "Chat",
-                      "Image",
-                      "Audio",
-                      "Embedding",
-                      "Music",
-                      "SoundEffect",
-                      "Video"
-                    ],
-                    "type": "string"
-                  },
-                  "useCases": {
-                    "items": {
-                      "maxLength": 256,
-                      "minLength": 1,
-                      "type": "string"
-                    },
-                    "maxItems": 64,
-                    "type": "array"
-                  },
-                  "vendorCode": {
-                    "maxLength": 64,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "vendorId": {
-                    "maxLength": 128,
-                    "minLength": 1,
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "id",
-                  "vendorId",
-                  "vendorCode",
-                  "model",
-                  "displayName",
-                  "name",
-                  "type",
-                  "regionPrices",
-                  "status",
-                  "calls",
-                  "description",
-                  "modalities",
-                  "inputModalities",
-                  "outputModalities",
-                  "apiFormat",
-                  "capabilityIntro",
-                  "limitations",
-                  "supportedLanguages",
-                  "useCases",
-                  "trainingDataCutoff",
-                  "contextTokens",
-                  "maxOutputTokens",
-                  "supportsStreaming",
-                  "supportsTools",
-                  "supportsJsonSchema",
-                  "releaseStage",
-                  "shelfState",
-                  "routingState",
-                  "replacementModel"
-                ],
-                "type": "object"
-              },
-              "type": "array"
-            },
-            "vendors": {
-              "description": "Model vendor snapshots after optional initialization.",
-              "items": {
-                "additionalProperties": false,
-                "name": "AdminModelVendorItem",
-                "properties": {
-                  "color": {
-                    "maxLength": 64,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "description": {
-                    "maxLength": 512,
-                    "type": "string"
-                  },
-                  "id": {
-                    "maxLength": 128,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "name": {
-                    "maxLength": 128,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "status": {
-                    "enum": [
-                      "active",
-                      "inactive"
-                    ],
-                    "type": "string"
-                  },
-                  "vendorCode": {
-                    "maxLength": 64,
-                    "minLength": 1,
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "id",
-                  "vendorCode",
-                  "name",
-                  "status",
-                  "color",
-                  "description"
-                ],
-                "type": "object"
-              },
-              "type": "array"
-            }
-          },
-          "required": [
-            "initialized",
-            "vendors",
-            "models"
-          ],
-          "type": "object"
-        }
-      },
-      "route": "/admin/model",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "intelligence",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts",
-      "tag": "ai",
-      "write_tables": [
-        "ai_model_vendor",
-        "ai_model",
-        "ai_model_capability",
-        "ai_model_pricing",
-        "ai_pricing_import_snapshot",
-        "ops_audit_log"
-      ]
-    },
-    {
       "api_method": "GET",
       "api_path": "/backend/v3/api/ai/model_mappings",
       "api_surface": "backend",
@@ -36769,7 +38594,7 @@
       "key": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts#fetchModelMappings@/admin/model/mappings",
       "kind": "read",
       "module": "sdkwork-models-pc-admin-catalog",
-      "openapi_exposed": true,
+      "openapi_exposed": false,
       "operation": "fetchModelMappings",
       "operation_id": "modelMappings.list",
       "path_params": [],
@@ -37254,7 +39079,7 @@
       "key": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts#fetchModelRankingRefreshJobs@/admin/model",
       "kind": "read",
       "module": "sdkwork-models-pc-admin-catalog",
-      "openapi_exposed": true,
+      "openapi_exposed": false,
       "operation": "fetchModelRankingRefreshJobs",
       "operation_id": "modelRankings.jobs.list",
       "path_params": [],
@@ -37463,7 +39288,7 @@
       "key": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts#fetchModelRankingRefreshStatus@/admin/model",
       "kind": "read",
       "module": "sdkwork-models-pc-admin-catalog",
-      "openapi_exposed": true,
+      "openapi_exposed": false,
       "operation": "fetchModelRankingRefreshStatus",
       "operation_id": "modelRankings.status.retrieve",
       "path_params": [],
@@ -37776,7 +39601,7 @@
       "key": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts#fetchModelRankings@/admin/model",
       "kind": "read",
       "module": "sdkwork-models-pc-admin-catalog",
-      "openapi_exposed": true,
+      "openapi_exposed": false,
       "operation": "fetchModelRankings",
       "operation_id": "modelRankings.list",
       "path_params": [],
@@ -38198,11 +40023,52 @@
       "key": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts#fetchModels@/admin/model",
       "kind": "read",
       "module": "sdkwork-models-pc-admin-catalog",
-      "openapi_exposed": true,
+      "openapi_exposed": false,
       "operation": "fetchModels",
       "operation_id": "models.list",
       "path_params": [],
-      "query_parameters": [],
+      "query_parameters": [
+        {
+          "in": "query",
+          "name": "vendor_id",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "query",
+          "name": "vendor_code",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "query",
+          "name": "q",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "query",
+          "name": "limit",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "query",
+          "name": "offset",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
       "query_parameters_declared": true,
       "read_sources": [
         "ai_model_vendor",
@@ -38497,6 +40363,13 @@
                 "type": "object"
               },
               "type": "array"
+            },
+            "totalCount": {
+              "format": "int64",
+              "pattern": "^[0-9]+$",
+              "type": "string",
+              "x-sdkwork-int64-string": true,
+              "x-sdkwork-rust-type": "i64"
             }
           },
           "required": [
@@ -38524,7 +40397,7 @@
       "key": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts#fetchVendors@/admin/model",
       "kind": "read",
       "module": "sdkwork-models-pc-admin-catalog",
-      "openapi_exposed": true,
+      "openapi_exposed": false,
       "operation": "fetchVendors",
       "operation_id": "modelVendors.list",
       "path_params": [],
@@ -38617,7 +40490,7 @@
       "key": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts#resolveModelMapping@/admin/model/mappings",
       "kind": "action",
       "module": "sdkwork-models-pc-admin-catalog",
-      "openapi_exposed": true,
+      "openapi_exposed": false,
       "operation": "resolveModelMapping",
       "operation_id": "modelMappings.resolve.create",
       "path_params": [],
@@ -38986,7 +40859,7 @@
       "key": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts#syncVendorsAndModels@/admin/model",
       "kind": "action",
       "module": "sdkwork-models-pc-admin-catalog",
-      "openapi_exposed": true,
+      "openapi_exposed": false,
       "operation": "syncVendorsAndModels",
       "operation_id": "models.refresh",
       "path_params": [],
@@ -39570,7 +41443,7 @@
       "key": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts#triggerModelRankingRefresh@/admin/model",
       "kind": "action",
       "module": "sdkwork-models-pc-admin-catalog",
-      "openapi_exposed": true,
+      "openapi_exposed": false,
       "operation": "triggerModelRankingRefresh",
       "operation_id": "modelRankings.refresh",
       "path_params": [],
@@ -39778,7 +41651,7 @@
       "key": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts#updateModel@/admin/model",
       "kind": "update",
       "module": "sdkwork-models-pc-admin-catalog",
-      "openapi_exposed": true,
+      "openapi_exposed": false,
       "operation": "updateModel",
       "operation_id": "models.update",
       "path_params": [
@@ -40339,7 +42212,7 @@
       "key": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts#updateModelMapping@/admin/model/mappings",
       "kind": "update",
       "module": "sdkwork-models-pc-admin-catalog",
-      "openapi_exposed": true,
+      "openapi_exposed": false,
       "operation": "updateModelMapping",
       "operation_id": "modelMappings.update",
       "path_params": [
@@ -40771,7 +42644,7 @@
       "key": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-resource/src/resourceGroupService.ts#createResourceGroup@/admin/model/resources",
       "kind": "create",
       "module": "sdkwork-models-pc-admin-resource",
-      "openapi_exposed": true,
+      "openapi_exposed": false,
       "operation": "createResourceGroup",
       "operation_id": "aiResourceGroups.create",
       "path_params": [],
@@ -41015,7 +42888,7 @@
       "key": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-resource/src/resourceGroupService.ts#deleteResourceGroup@/admin/model/resources",
       "kind": "delete",
       "module": "sdkwork-models-pc-admin-resource",
-      "openapi_exposed": true,
+      "openapi_exposed": false,
       "operation": "deleteResourceGroup",
       "operation_id": "aiResourceGroups.delete",
       "path_params": [
@@ -41262,7 +43135,7 @@
       "key": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-resource/src/resourceGroupService.ts#fetchResourceGroupResources@/admin/model/resources",
       "kind": "read",
       "module": "sdkwork-models-pc-admin-resource",
-      "openapi_exposed": true,
+      "openapi_exposed": false,
       "operation": "fetchResourceGroupResources",
       "operation_id": "aiResourceGroups.resources.list",
       "path_params": [
@@ -41404,7 +43277,7 @@
       "key": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-resource/src/resourceGroupService.ts#fetchResourceGroups@/admin/model/resources",
       "kind": "read",
       "module": "sdkwork-models-pc-admin-resource",
-      "openapi_exposed": true,
+      "openapi_exposed": false,
       "operation": "fetchResourceGroups",
       "operation_id": "aiResourceGroups.list",
       "path_params": [],
@@ -41553,7 +43426,7 @@
       "key": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-resource/src/resourceGroupService.ts#updateResourceGroup@/admin/model/resources",
       "kind": "update",
       "module": "sdkwork-models-pc-admin-resource",
-      "openapi_exposed": true,
+      "openapi_exposed": false,
       "operation": "updateResourceGroup",
       "operation_id": "aiResourceGroups.update",
       "path_params": [
@@ -41820,25 +43693,25 @@
   },
   "summary": {
     "api_method_counts": {
-      "DELETE": 24,
-      "GET": 116,
-      "PATCH": 24,
-      "POST": 84,
-      "PUT": 12
+      "DELETE": 25,
+      "GET": 128,
+      "PATCH": 25,
+      "POST": 95,
+      "PUT": 13
     },
     "api_surface_counts": {
-      "app": 84,
-      "backend": 176
+      "app": 88,
+      "backend": 198
     },
-    "operation_count": 260,
+    "operation_count": 286,
     "route_scope_counts": {
-      "admin": 176,
-      "console": 27,
+      "admin": 198,
+      "console": 31,
       "public": 57
     },
     "sdk_client_counts": {
-      "SdkworkAppClient": 84,
-      "SdkworkBackendClient": 176
+      "SdkworkAppClient": 88,
+      "SdkworkBackendClient": 198
     }
   }
 }

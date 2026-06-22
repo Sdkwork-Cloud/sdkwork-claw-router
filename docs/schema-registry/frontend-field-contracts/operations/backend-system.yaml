@@ -2430,3 +2430,20 @@ frontend_operations:
     properties:
       deleted:
         type: boolean
+- route: /admin/marketing/referrals
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts
+  operation: fetchReferralStats
+  operation_id: marketing.referralStats.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/system/marketing/referral_stats
+  sdk_domain: system
+  summary: List referral stats
+  read_sources:
+  - ops_referral_stat_snapshot
+  query_parameters: []
+  response_schema:
+    name: AdminReferralStatsResponse
+    schema:
+      $ref: '#/x_response_entities/admin_referral_stats_response'

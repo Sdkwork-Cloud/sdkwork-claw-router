@@ -89,11 +89,11 @@ test('admin model mapping service is backend SDK backed', () => {
     'bindings: ModelMappingRuleBinding[]',
     'fetchModelOptionsCatalog',
     'normalizeModelMappingModelOption',
-    'getClawRouterBackendSdkClient().ai.modelMappings.list(',
-    'getClawRouterBackendSdkClient().ai.modelMappings.create(',
-    'getClawRouterBackendSdkClient().ai.modelMappings.update(',
-    'getClawRouterBackendSdkClient().ai.modelMappings.delete(',
-    'getClawRouterBackendSdkClient().ai.modelMappings.resolve.create(',
+    'getModelsBackendSdkClient().ai.modelMappings.list(',
+    'getModelsBackendSdkClient().ai.modelMappings.create(',
+    'getModelsBackendSdkClient().ai.modelMappings.update(',
+    'getModelsBackendSdkClient().ai.modelMappings.delete(',
+    'getModelsBackendSdkClient().ai.modelMappings.resolve.create(',
   ]) {
     assert.ok(modelService.includes(token), `missing model mapping service marker: ${token}`);
   }
@@ -110,7 +110,7 @@ test('admin model mapping service is backend SDK backed', () => {
 
 test('admin model mapping page exposes route, navigation, and core layout markers', () => {
   const appSource = readPortalFile('src/App.tsx');
-  const registrySource = readPortalFile('src/adminModuleRegistry.ts');
+  const registrySource = readPortalFile('packages/sdkwork-clawrouter-pc-admin-shell/src/adminModuleRegistry.ts');
   const modelAdminSource = readPortalFile('../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/index.tsx');
   const coreI18nSource = readPortalFile('packages/sdkwork-clawrouter-pc-i18n/src/resources/admin/core-navigation.ts');
   const modelI18nSource = readPortalFile('packages/sdkwork-clawrouter-pc-i18n/src/resources/admin/model.ts');
@@ -182,17 +182,19 @@ test('admin model mapping page is reduced to tabs search add and table without r
 
 test('admin model mapping modal uses multi-row editable model mapping table', () => {
   const modelAdminSource = readPortalFile('../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/index.tsx');
+  const vendorPickerSource = readPortalFile('../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/vendorPickerModal.tsx');
   const modelI18nSource = readPortalFile('packages/sdkwork-clawrouter-pc-i18n/src/resources/admin/model.ts');
   const modalSource = sourceBetween(modelAdminSource, 'function ModelMappingFormModal', 'function ModelMappingRowsTable');
   const rowsTableSource = sourceBetween(modelAdminSource, 'function ModelMappingRowsTable', 'function ModelComboboxCell');
-  const comboboxSource = sourceBetween(modelAdminSource, 'function ModelComboboxCell', 'function VendorPickerModal');
+  const comboboxSource = sourceBetween(modelAdminSource, 'function ModelComboboxCell', 'function ModelMappingRelationsCell');
   const mappingInputSource = sourceBetween(modelAdminSource, 'function modelMappingInputFromForm', 'function readMappingPrimaryBindingType');
+  const combinedModalSource = `${modelAdminSource}\n${vendorPickerSource}`;
 
   for (const token of [
     'function ModelMappingFormModal',
     'function ModelMappingRowsTable',
     'function ModelComboboxCell',
-    'function VendorPickerModal',
+    'export function VendorPickerModal',
     'function modelMappingInputFromForm',
     'type ModelMappingRowDraft',
     'createMappingRowDrafts(',
@@ -223,7 +225,7 @@ test('admin model mapping modal uses multi-row editable model mapping table', ()
     'admin.model.mapping.form.addRow',
     'admin.model.mapping.form.removeRow',
   ]) {
-    assert.ok(modelAdminSource.includes(token) || modelI18nSource.includes(`"${token}"`), `missing modal interaction marker: ${token}`);
+    assert.ok(combinedModalSource.includes(token) || modelI18nSource.includes(`"${token}"`), `missing modal interaction marker: ${token}`);
   }
 
   assert.ok(rowsTableSource.includes('admin.model.mapping.form.sourceModel'), 'mapping rows table should show source model header');
@@ -311,7 +313,7 @@ test('admin model mapping edit save updates existing rule without creating recor
 
 test('admin model mapping list renders rule rows with child relation cell list', () => {
   const modelAdminSource = readPortalFile('../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/index.tsx');
-  const mappingAdminSource = sourceBetween(modelAdminSource, 'export function ModelMappingAdmin', 'function SiteFormModal');
+  const mappingAdminSource = sourceBetween(modelAdminSource, 'export function ModelMappingAdmin', 'function ModelMappingFormModal');
   const tableSource = sourceBetween(mappingAdminSource, '<tbody', '</tbody>');
 
   assert.equal(modelAdminSource.includes('admin.model.mapping.table.source'), false, 'mapping table should not keep a standalone source model column');
@@ -330,7 +332,7 @@ test('admin model mapping list renders rule rows with child relation cell list',
 
 test('admin model mapping scope tabs request server-filtered rule rows', () => {
   const modelAdminSource = readPortalFile('../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/index.tsx');
-  const mappingAdminSource = sourceBetween(modelAdminSource, 'export function ModelMappingAdmin', 'function SiteFormModal');
+  const mappingAdminSource = sourceBetween(modelAdminSource, 'export function ModelMappingAdmin', 'function ModelMappingFormModal');
   const loadSource = sourceBetween(mappingAdminSource, 'const loadMappings = async', 'const loadCatalog = async');
   const catalogSource = sourceBetween(mappingAdminSource, 'const loadCatalog = async', 'const filteredMappings = mappings.filter((mapping) => {');
   const filteredSource = sourceBetween(mappingAdminSource, 'const filteredMappings = mappings.filter((mapping) => {', 'const openCreateMapping = () => {');

@@ -259,6 +259,42 @@
         }
       },
       {
+        "sdkFamily": "sdkwork-models-backend-sdk",
+        "packageName": "@sdkwork/models-backend-sdk",
+        "surface": "backend-api",
+        "apiPrefix": "/backend/v3/api",
+        "sourceExport": "./sdk-clients",
+        "factory": "createModelsBackendSdkClient",
+        "getter": "getModelsBackendSdkClient",
+        "dependencyApiSurface": "sdkwork-models-backend-sdk",
+        "runtimeIntegration": {
+          "mode": "same-origin-mounted",
+          "sameOriginAllowed": true,
+          "baseUrlEnv": "VITE_SDKWORK_MODELS_BACKEND_API_BASE_URL",
+          "fallbackBaseUrlEnv": "VITE_CLAWROUTER_BACKEND_API_BASE_URL",
+          "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
+          "tokenManager": "claw-router-global"
+        }
+      },
+      {
+        "sdkFamily": "sdkwork-models-app-sdk",
+        "packageName": "@sdkwork/models-app-sdk",
+        "surface": "app-api",
+        "apiPrefix": "/app/v3/api",
+        "sourceExport": "./sdk-clients",
+        "factory": "createModelsAppSdkClient",
+        "getter": "getModelsAppSdkClient",
+        "dependencyApiSurface": "sdkwork-models-app-sdk",
+        "runtimeIntegration": {
+          "mode": "same-origin-mounted",
+          "sameOriginAllowed": true,
+          "baseUrlEnv": "VITE_SDKWORK_MODELS_APP_API_BASE_URL",
+          "fallbackBaseUrlEnv": "VITE_CLAWROUTER_APP_API_BASE_URL",
+          "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
+          "tokenManager": "claw-router-global"
+        }
+      },
+      {
         "sdkFamily": "sdkwork-drive-app-sdk",
         "packageName": "@sdkwork/drive-app-sdk",
         "surface": "app-api",

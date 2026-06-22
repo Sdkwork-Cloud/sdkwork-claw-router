@@ -308,8 +308,8 @@ class AdminUserRuntimeStandardTest(unittest.TestCase):
 
     def test_admin_user_balance_read_model_rejects_invalid_database_amounts(self) -> None:
         store_paths = [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_user_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_user_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/admin_user_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/admin_user_store.rs",
         ]
 
         for relative_path in store_paths:
@@ -323,8 +323,8 @@ class AdminUserRuntimeStandardTest(unittest.TestCase):
 
     def test_admin_user_and_api_key_statuses_fail_closed(self) -> None:
         store_paths = [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_user_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_user_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/admin_user_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/admin_user_store.rs",
         ]
 
         for relative_path in store_paths:

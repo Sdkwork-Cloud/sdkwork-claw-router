@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8101,
+  "uuid": "skill-prompt-optimizer",
+  "skillKey": "prompt-optimizer",
+  "name": "Prompt Optimizer",
+  "version": "1.0.0",
+  "runtime": "builtin",
+  "entrypoint": "sdkwork.skills.prompt_optimizer",
+  "capabilities": [
+    "prompt.analysis"
+  ],
+  "configSchema": {
+    "type": "object"
+  },
+  "defaultConfig": {},
+  "artifacts": [
+    {
+      "artifactRef": "builtin://sdkwork.skills.prompt_optimizer@1.0.0",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/prompt-optimizer-1.0.0.json"
+      },
+      "version": "1.0.0",
+      "runtime": "builtin",
+      "checksumHash": "sha256:05339906b03b821c282d4fd5c48b82420ee7533694da130ce08e2ccaa93b695b",
+      "artifactSizeBytes": 385
+    }
+  ]
+}

@@ -176,12 +176,12 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
 
     def test_console_account_operation_is_backed_by_real_app_api_router(self) -> None:
         product_api_mod = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "mod.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "mod.rs"
         ).read_text(encoding="utf-8")
         product_sql_mod = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "mod.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "mod.rs"
         ).read_text(encoding="utf-8")
-        app_api = (ROOT / "services" / "sdkwork-claw-app" / "src" / "lib.rs").read_text(
+        app_api = (ROOT / "services" / "sdkwork-clawrouter-app-api-server" / "src" / "lib.rs").read_text(
             encoding="utf-8"
         )
         router_app_api = (
@@ -197,10 +197,10 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
             COMMERCE_STORAGE_SQLX / "src" / "sqlite_account.rs"
         ).read_text(encoding="utf-8")
         product_account_path = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_account.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "app_account.rs"
         )
         product_read_model_path = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "read_model.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "read_model.rs"
         )
 
         self.assertFalse(product_account_path.exists())
@@ -230,7 +230,7 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
             COMMERCE_ACCOUNT_SERVICE / "src" / "domain" / "mod.rs"
         ).read_text(encoding="utf-8")
         product_port_path = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "account_summary_read_store.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "ports" / "account_summary_read_store.rs"
         )
         summary_start = account_domain.index("pub struct AccountSummarySnapshot")
         summary_end = account_domain.index("#[derive(Clone, Debug, Eq, PartialEq)]", summary_start)

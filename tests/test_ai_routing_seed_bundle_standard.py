@@ -9,7 +9,7 @@ AI_ROUTING_ROOT = ROOT / "data" / "ai-routing"
 ROUTE_TAXONOMY_SOURCE = (
     ROOT
     / "services"
-    / "sdkwork-claw-product"
+    / "sdkwork-clawrouter-router-service"
     / "src"
     / "application"
     / "ai_route_taxonomy.rs"
@@ -17,7 +17,7 @@ ROUTE_TAXONOMY_SOURCE = (
 SNAPSHOT_QUERY_SOURCE = (
     ROOT
     / "services"
-    / "sdkwork-claw-product"
+    / "sdkwork-clawrouter-router-service"
     / "src"
     / "infrastructure"
     / "sql"
@@ -27,7 +27,7 @@ SNAPSHOT_QUERY_SOURCE = (
 SQLITE_QUERY_SOURCE = (
     ROOT
     / "services"
-    / "sdkwork-claw-product"
+    / "sdkwork-clawrouter-router-service"
     / "src"
     / "infrastructure"
     / "sql"
@@ -191,7 +191,7 @@ class AiRoutingSeedBundleStandardTest(unittest.TestCase):
         installer = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -200,7 +200,7 @@ class AiRoutingSeedBundleStandardTest(unittest.TestCase):
         ai_seed = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -233,7 +233,7 @@ class AiRoutingSeedBundleStandardTest(unittest.TestCase):
         ai_seed = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -295,7 +295,7 @@ class AiRoutingSeedBundleStandardTest(unittest.TestCase):
         ai_seed = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -313,7 +313,7 @@ class AiRoutingSeedBundleStandardTest(unittest.TestCase):
         ai_seed = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -345,7 +345,7 @@ class AiRoutingSeedBundleStandardTest(unittest.TestCase):
         ai_seed = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -374,7 +374,7 @@ class AiRoutingSeedBundleStandardTest(unittest.TestCase):
         ai_seed = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -389,7 +389,7 @@ class AiRoutingSeedBundleStandardTest(unittest.TestCase):
         ai_seed = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"

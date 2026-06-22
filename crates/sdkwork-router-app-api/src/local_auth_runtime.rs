@@ -2,14 +2,14 @@ use std::sync::Arc;
 
 use axum::Router;
 use sdkwork_claw_config::{AppSessionConfig, TrustedSubjectConfig};
-use sdkwork_claw_product::application::{EntityUuidGenerator, PasswordHasher};
-use sdkwork_claw_product::infrastructure::sql::postgres::{
+use sdkwork_clawrouter_router_service::application::{EntityUuidGenerator, PasswordHasher};
+use sdkwork_clawrouter_router_service::infrastructure::sql::postgres::{
     PostgresAdminAuthSettingsStore, PostgresAppAuthStore, PostgresAppSessionEventStore,
 };
-use sdkwork_claw_product::infrastructure::sql::sqlite::{
+use sdkwork_clawrouter_router_service::infrastructure::sql::sqlite::{
     SqliteAdminAuthSettingsStore, SqliteAppAuthStore, SqliteAppSessionEventStore,
 };
-use sdkwork_claw_product::ports::{
+use sdkwork_clawrouter_router_service::ports::{
     AdminAuthSettingsStore, AppAuthStore, AppSessionEventStore, VerificationCodeSender,
 };
 use sqlx::{PgPool, SqlitePool};
@@ -33,7 +33,7 @@ pub(crate) fn build_local_auth_router(
     expose_debug_verification_code: bool,
 ) -> Router {
     let public_auth_router =
-        sdkwork_claw_product::api::app_public_auth_router_with_store_auth_settings_store_and_verification_sender(
+        sdkwork_clawrouter_router_service::api::app_public_auth_router_with_store_auth_settings_store_and_verification_sender(
             app_auth_store.clone(),
             app_auth_settings_store.clone(),
             Arc::clone(&app_session_event_store),
@@ -44,7 +44,7 @@ pub(crate) fn build_local_auth_router(
             Arc::clone(&verification_code_sender),
             expose_debug_verification_code,
         );
-    sdkwork_claw_product::api::app_sessions_router_with_store_and_verification_sender(
+    sdkwork_clawrouter_router_service::api::app_sessions_router_with_store_and_verification_sender(
         app_auth_store,
         app_auth_settings_store,
         app_session_event_store,

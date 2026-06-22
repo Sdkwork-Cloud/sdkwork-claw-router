@@ -66,6 +66,40 @@ CLAWROUTER_BACKEND_OPENAPI = (
     / "openapi"
     / "clawrouter-backend-sdk.sdkgen.json"
 )
+MODELS_BACKEND_OPENAPI = (
+    ROOT.parent
+    / "sdkwork-models"
+    / "apis"
+    / "backend-api"
+    / "intelligence"
+    / "openapi.json"
+)
+MODELS_APP_OPENAPI = (
+    ROOT.parent
+    / "sdkwork-models"
+    / "apis"
+    / "app-api"
+    / "intelligence"
+    / "openapi.json"
+)
+MODEL_CATALOG_SERVICE = (
+    ROOT
+    / "data"
+    / "sdkwork-models"
+    / "apps"
+    / "sdkwork-models-pc"
+    / "packages"
+    / "sdkwork-models-pc-admin-catalog"
+    / "src"
+    / "modelService.ts"
+)
+GROUP_SERVICE = (
+    PORTAL_ROOT
+    / "packages"
+    / "sdkwork-clawrouter-pc-admin-group"
+    / "src"
+    / "groupService.ts"
+)
 ADMIN_USER_SERVICE = (
     PORTAL_ROOT
     / "packages"
@@ -73,11 +107,11 @@ ADMIN_USER_SERVICE = (
     / "src"
     / "userService.ts"
 )
-ADMIN_API_LIB = ROOT / "services" / "sdkwork-claw-admin" / "src" / "lib.rs"
+ADMIN_API_LIB = ROOT / "services" / "sdkwork-clawrouter-admin-api-server" / "src" / "lib.rs"
 PRODUCT_ADMIN_APPBASE_BACKEND_IAM = (
     ROOT
     / "services"
-    / "sdkwork-claw-product"
+    / "sdkwork-clawrouter-router-service"
     / "src"
     / "api"
     / "admin_appbase_backend_iam.rs"
@@ -85,18 +119,18 @@ PRODUCT_ADMIN_APPBASE_BACKEND_IAM = (
 PRODUCT_ADMIN_APPBASE_BACKEND_IAM_OAUTH = (
     ROOT
     / "services"
-    / "sdkwork-claw-product"
+    / "sdkwork-clawrouter-router-service"
     / "src"
     / "api"
     / "admin_appbase_backend_iam_oauth.rs"
 )
 PRODUCT_ADMIN_USER_API = (
-    ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "admin_user.rs"
+    ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "admin_user.rs"
 )
 PRODUCT_INSTALLER = (
     ROOT
     / "services"
-    / "sdkwork-claw-product"
+    / "sdkwork-clawrouter-router-service"
     / "src"
     / "infrastructure"
     / "sql"
@@ -358,7 +392,7 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
                 self.assertEqual(operation["operationId"], clawrouter_operations[key]["operationId"])
                 self.assertEqual("sdkwork-clawrouter", clawrouter_operations[key]["x-sdkwork-owner"])
                 self.assertIsInstance(operation["consumerRequired"], bool)
-                self.assertIn("services/sdkwork-claw-product/src/api/admin_user.rs", operation["evidence"])
+                self.assertIn("services/sdkwork-clawrouter-router-service/src/api/admin_user.rs", operation["evidence"])
                 if operation["consumerRequired"]:
                     self.assertIn(operation["sdkClient"], service)
 
@@ -368,6 +402,39 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
         self.assertNotIn("getClawRouterBackendSdkClient().iam.apiKeys.list", service)
         self.assertNotIn("getClawRouterBackendSdkClient().iam.apiKeys.revoke", service)
         self.assertNotIn("getSdkworkAppbaseBackendSdkClient().iam.apiKeys.revoke", service)
+
+    def test_backend_models_catalog_method_level_ownership_is_declared_and_consumed_by_the_right_sdk(
+        self,
+    ) -> None:
+        manifest = read_json(DEPENDENCY_API_SURFACES)
+        backend_entry = entries_by_sdk_dependency(manifest)[
+            ("clawrouter-backend-sdk", "sdkwork-models-backend-sdk")
+        ]
+        dependency_operations = backend_entry["dependencyOwnedOperations"]
+        models_operations = operation_map(read_json(MODELS_BACKEND_OPENAPI), "/backend/v3/api")
+        clawrouter_operations = operation_map(read_json(CLAWROUTER_BACKEND_OPENAPI), "/backend/v3/api")
+        model_service = read_text(MODEL_CATALOG_SERVICE)
+        group_service = read_text(GROUP_SERVICE)
+
+        self.assertGreaterEqual(len(dependency_operations), 20)
+        for operation in dependency_operations:
+            key = (operation["method"], normalize_openapi_path(operation["path"]))
+            with self.subTest(dependencyOperation=operation["operationId"]):
+                self.assertIn(key, models_operations)
+                self.assertEqual(operation["operationId"], models_operations[key]["operationId"])
+                self.assertEqual("sdkwork-models", models_operations[key]["x-sdkwork-owner"])
+                self.assertEqual("sdkwork-models", operation["owner"])
+                self.assertNotIn(key, clawrouter_operations)
+                if operation["consumerRequired"]:
+                    self.assertTrue(
+                        operation["sdkClient"] in model_service or operation["sdkClient"] in group_service,
+                        operation["sdkClient"],
+                    )
+
+        self.assertNotIn("getClawRouterBackendSdkClient().ai.models.list", model_service)
+        self.assertNotIn("getClawRouterBackendSdkClient().ai.modelMappings.list", model_service)
+        self.assertNotIn("getClawRouterBackendSdkClient().ai.aiResourceGroups.list", group_service)
+        self.assertNotIn("getClawRouterBackendSdkClient().ai.aiResources.list", group_service)
 
     def test_backend_appbase_iam_oauth_surface_is_gateway_owned_not_product_mounted(self) -> None:
         manifest = read_json(DEPENDENCY_API_SURFACES)
@@ -541,6 +608,8 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
             "sdkwork-generations-app-sdk",
             "sdkwork-commerce-app-sdk",
             "sdkwork-commerce-backend-sdk",
+            "sdkwork-models-app-sdk",
+            "sdkwork-models-backend-sdk",
         }
         self.assertTrue(expected_commons_client_families.issubset(commons_clients))
         self.assertEqual("./sdk-clients", commons_clients["sdkwork-appbase-backend-sdk"]["sourceExport"])

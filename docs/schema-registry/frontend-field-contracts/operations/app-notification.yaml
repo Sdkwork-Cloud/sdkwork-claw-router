@@ -9,8 +9,59 @@ frontend_operations:
   api_method: GET
   api_path: /app/v3/api/notification/notifications
   sdk_domain: notification
+  openapi_exposed: false
+  summary: List portal notifications through console messages facade
+  description: Console messages facade that delegates to the notification service boundary.
+  read_sources:
+  - ops_notification_message
+  - ops_notification_delivery
+- route: /console/notifications
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-messages/src/messagesService.ts
+  operation: acknowledge
+  operation_id: notifications.acknowledge.create
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/notification/notifications/{notificationId}/acknowledge
+  sdk_domain: notification
+  openapi_exposed: false
+  idempotency_required: true
+  request_body_required: false
+  summary: Acknowledge portal notification through console messages facade
+  description: Console messages facade that delegates to the notification service boundary.
+  read_sources:
+  - ops_notification_delivery
+  write_tables:
+  - ops_notification_delivery
+- route: /console/notifications
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-messages/src/messagesService.ts
+  operation: markPopupSeen
+  operation_id: notifications.popupSeen.create
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/notification/notifications/{notificationId}/popup_seen
+  sdk_domain: notification
+  openapi_exposed: false
+  idempotency_required: true
+  request_body_required: false
+  summary: Mark portal notification popup seen through console messages facade
+  description: Console messages facade that delegates to the notification service boundary.
+  read_sources:
+  - ops_notification_delivery
+  write_tables:
+  - ops_notification_delivery
+- route: /console/notifications
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
+  operation: fetchNotifications
+  operation_id: notifications.list
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/notification/notifications
+  sdk_domain: notification
   summary: List portal notifications
-  description: Lists in-app notifications for the active portal session.
+  description: Lists in-app notifications through the notification-pc-react service boundary.
   read_sources:
   - ops_notification_message
   - ops_notification_delivery
@@ -49,7 +100,23 @@ frontend_operations:
             archived: { type: boolean }
             actionUrl: { type: string, nullable: true, maxLength: 512 }
 - route: /console/notifications
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-messages/src/messagesService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
+  operation: list
+  operation_id: notifications.list
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/notification/notifications
+  sdk_domain: notification
+  openapi_exposed: false
+  summary: List portal notifications through composed notification service
+  description: Internal composed notification service list operation used by the notification-pc-react boundary.
+  read_sources:
+  - ops_notification_message
+  - ops_notification_delivery
+  query_parameters: []
+- route: /console/notifications
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
   operation: acknowledge
   operation_id: notifications.acknowledge.create
   kind: create
@@ -60,7 +127,7 @@ frontend_operations:
   idempotency_required: true
   request_body_required: false
   summary: Acknowledge portal notification
-  description: Marks a notification as read for the active portal user.
+  description: Marks a notification as read through the notification-pc-react service boundary.
   read_sources:
   - ops_notification_delivery
   write_tables:
@@ -74,7 +141,7 @@ frontend_operations:
       updated: { type: boolean }
       state: { type: string, enum: [acknowledged, popup_seen] }
 - route: /console/notifications
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-messages/src/messagesService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
   operation: markPopupSeen
   operation_id: notifications.popupSeen.create
   kind: create
@@ -85,7 +152,7 @@ frontend_operations:
   idempotency_required: true
   request_body_required: false
   summary: Mark portal notification popup seen
-  description: Records that a popup notification was presented to the active portal user.
+  description: Records popup presentation through the notification-pc-react service boundary.
   read_sources:
   - ops_notification_delivery
   write_tables:
@@ -98,65 +165,3 @@ frontend_operations:
     properties:
       updated: { type: boolean }
       state: { type: string, enum: [acknowledged, popup_seen] }
-- route: /console/notifications
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
-  operation: fetchNotifications
-  operation_id: notifications.list
-  kind: read
-  api_surface: app
-  api_method: GET
-  api_path: /app/v3/api/notification/notifications
-  sdk_domain: notification
-  summary: List portal notifications through notification service boundary
-  description: Lists in-app notifications through the notification-pc-react service boundary.
-  read_sources:
-  - ops_notification_message
-  - ops_notification_delivery
-- route: /console/notifications
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
-  operation: list
-  operation_id: notifications.list
-  kind: read
-  api_surface: app
-  api_method: GET
-  api_path: /app/v3/api/notification/notifications
-  sdk_domain: notification
-  summary: List portal notifications through composed notification service
-  description: Lists in-app notifications through the composed notification service facade.
-  read_sources:
-  - ops_notification_message
-  - ops_notification_delivery
-- route: /console/notifications
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
-  operation: acknowledge
-  operation_id: notifications.acknowledge.create
-  kind: create
-  api_surface: app
-  api_method: POST
-  api_path: /app/v3/api/notification/notifications/{notificationId}/acknowledge
-  sdk_domain: notification
-  idempotency_required: true
-  request_body_required: false
-  summary: Acknowledge portal notification through notification service boundary
-  description: Marks a notification as read through the notification-pc-react service boundary.
-  read_sources:
-  - ops_notification_delivery
-  write_tables:
-  - ops_notification_delivery
-- route: /console/notifications
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
-  operation: markPopupSeen
-  operation_id: notifications.popupSeen.create
-  kind: create
-  api_surface: app
-  api_method: POST
-  api_path: /app/v3/api/notification/notifications/{notificationId}/popup_seen
-  sdk_domain: notification
-  idempotency_required: true
-  request_body_required: false
-  summary: Mark portal notification popup seen through notification service boundary
-  description: Records popup presentation through the notification-pc-react service boundary.
-  read_sources:
-  - ops_notification_delivery
-  write_tables:
-  - ops_notification_delivery

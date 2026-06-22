@@ -7,7 +7,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PRODUCT = ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql"
+PRODUCT = ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql"
 CRATE = ROOT / "crates" / "sdkwork-clawrouter-app-iam-directory-repository-sqlx" / "src"
 
 TYPE_IMPORT = """use crate::error::{RepositoryError, RepositoryResult, sql_error};

@@ -16,9 +16,68 @@ use sdkwork_claw_config::{
     StartupInstallMode, TrustedSubjectConfig,
 };
 use sdkwork_claw_http::TrustedRequestSubject;
+use sdkwork_clawrouter_router_service::application::{
+    default_desktop_cache_manager, default_service_cache_manager,
+    AiRoutingCacheInvalidatingAdminAiResourceStore,
+    AiRoutingCacheInvalidatingAdminChannelGroupStore, AiRoutingCacheInvalidatingAdminChannelStore,
+    AiRoutingCacheInvalidatingAdminModelStore, AiRoutingCacheInvalidatingAdminProviderSecretStore,
+    ApiKeySecretCodec, ApiKeySecretHasher, ModelRankingsService, RedisCacheBackend,
+    RuntimeCacheManager, DEFAULT_CACHE_KEY_PREFIX, DEFAULT_REDIS_CONNECTION_PROFILE_NAME,
+    DEFAULT_SERVICE_CACHE_INSTANCE_NAME,
+};
+use sdkwork_clawrouter_router_service::infrastructure::crypto::{
+    HmacSha256ApiKeySecretHasher, RingAeadApiKeySecretCodec,
+};
+use sdkwork_clawrouter_router_service::infrastructure::provider::{
+    ProviderSecretMapResolver, SecretRefOpenAiCompatibleProviderHealthProbe,
+    DEFAULT_HEALTH_PROBE_TIMEOUT_MILLIS,
+};
+use sdkwork_clawrouter_router_service::infrastructure::sql::catalog::RefreshableSqlPricingCatalog;
+use sdkwork_clawrouter_router_service::infrastructure::sql::installer::{
+    log_bootstrap_admin_report, DatabaseInstallError, DatabaseInstaller,
+};
+use sdkwork_clawrouter_router_service::infrastructure::sql::pool::connect_claw_sqlite_runtime_pool;
+use sdkwork_clawrouter_router_service::infrastructure::sql::postgres::{
+    PostgresAdminAnalyticsReadStore, PostgresAdminAnnouncementStore,
+    PostgresAdminApiKeyRateLimitStore, PostgresAdminAuthSettingsStore, PostgresAdminCatalogStore,
+    PostgresAdminChannelGroupStore, PostgresAdminChannelStore, PostgresAdminDashboardReadStore,
+    PostgresAdminFinanceStore, PostgresAdminFirewallRuleStore, PostgresAdminInventoryStore,
+    PostgresAdminIpRateLimitStore, PostgresAdminMarketingStore, PostgresAdminMcpStore,
+    PostgresAdminModelRateLimitStore, PostgresAdminMonitorReadStore, PostgresAdminPromptStore,
+    PostgresAdminProviderSecretStore, PostgresAdminRecordStore, PostgresAdminServiceNodeStore,
+    PostgresAdminServiceProviderStore, PostgresAdminSiteStore, PostgresAdminStorageStore,
+    PostgresAdminTransactionCenterStore, PostgresCatalogLoadError,
+    PostgresGatewayApiKeyCommandStore, PostgresPricingCatalogLoader,
+    PostgresRuntimeRegionSettingsStore, PostgresSiteSettingsStore,
+};
+use sdkwork_clawrouter_router_service::infrastructure::sql::sqlite::{
+    SqlCatalogLoadError, SqliteAdminAnalyticsReadStore, SqliteAdminAnnouncementStore,
+    SqliteAdminApiKeyRateLimitStore, SqliteAdminAuthSettingsStore, SqliteAdminCatalogStore,
+    SqliteAdminChannelGroupStore, SqliteAdminChannelStore, SqliteAdminDashboardReadStore,
+    SqliteAdminFinanceStore, SqliteAdminFirewallRuleStore, SqliteAdminInventoryStore,
+    SqliteAdminIpRateLimitStore, SqliteAdminMarketingStore, SqliteAdminMcpStore,
+    SqliteAdminModelRateLimitStore, SqliteAdminMonitorReadStore, SqliteAdminPromptStore,
+    SqliteAdminProviderSecretStore, SqliteAdminRecordStore, SqliteAdminServiceNodeStore,
+    SqliteAdminServiceProviderStore, SqliteAdminSiteStore, SqliteAdminStorageStore,
+    SqliteAdminTransactionCenterStore, SqliteGatewayApiKeyCommandStore, SqlitePricingCatalogLoader,
+    SqliteRuntimeRegionSettingsStore, SqliteSiteSettingsStore,
+};
+use sdkwork_clawrouter_router_service::infrastructure::OsApiKeySecretGenerator;
+use sdkwork_clawrouter_router_service::ports::{
+    AdminAnalyticsReadStore, AdminAnnouncementStore, AdminApiKeyRateLimitStore,
+    AdminAuthSettingsStore, AdminCatalogStore, AdminChannelGroupStore, AdminChannelStore,
+    AdminDashboardReadStore, AdminFinanceStore, AdminFirewallRuleStore, AdminInventoryStore,
+    AdminIpRateLimitStore, AdminMarketingStore, AdminMcpStore, AdminModelRateLimitStore,
+    AdminMonitorReadStore, AdminPromptStore, AdminProviderSecretStore, AdminRecordStore,
+    AdminServiceNodeStore, AdminServiceProviderStore, AdminSiteStore, AdminStorageStore,
+    AdminTransactionCenterStore, GatewayApiKeyCommandStore, ModelRankingRefreshStore,
+    ModelRankingsReadModelStore, PricingCatalog, ProviderHealthProbe, RuntimeRegionSettingsStore,
+    SiteSettingsStore, UnconfiguredProviderHealthProbe,
+};
 use sdkwork_models_catalog_repository_sqlx::{
     PostgresAdminAiResourceStore as CatalogPostgresAdminAiResourceStore,
-    PostgresModelCatalogAdminStore, PostgresModelRankingRefreshStore, PostgresModelRankingsReadStore,
+    PostgresModelCatalogAdminStore, PostgresModelRankingRefreshStore,
+    PostgresModelRankingsReadStore,
     SqliteAdminAiResourceStore as CatalogSqliteAdminAiResourceStore, SqliteModelCatalogAdminStore,
     SqliteModelRankingRefreshStore, SqliteModelRankingsReadStore,
 };
@@ -28,67 +87,6 @@ use sdkwork_router_catalog_backend_api::{
     admin_model_catalog_router_with_api_key_hasher, admin_model_management_router_with_store,
     admin_model_rankings_router, admin_model_rankings_router_with_read_store,
     admin_model_rankings_router_with_read_store_and_refresh_store,
-};
-use sdkwork_claw_product::application::{
-    default_desktop_cache_manager, default_service_cache_manager,
-    AiRoutingCacheInvalidatingAdminAiResourceStore,
-    AiRoutingCacheInvalidatingAdminChannelGroupStore, AiRoutingCacheInvalidatingAdminChannelStore,
-    AiRoutingCacheInvalidatingAdminModelStore, AiRoutingCacheInvalidatingAdminProviderSecretStore,
-    ApiKeySecretCodec, ApiKeySecretHasher, ModelRankingsService, RedisCacheBackend,
-    RuntimeCacheManager, DEFAULT_CACHE_KEY_PREFIX, DEFAULT_REDIS_CONNECTION_PROFILE_NAME,
-    DEFAULT_SERVICE_CACHE_INSTANCE_NAME,
-};
-use sdkwork_claw_product::infrastructure::crypto::{
-    HmacSha256ApiKeySecretHasher, RingAeadApiKeySecretCodec,
-};
-use sdkwork_claw_product::infrastructure::provider::{
-    ProviderSecretMapResolver, SecretRefOpenAiCompatibleProviderHealthProbe,
-    DEFAULT_HEALTH_PROBE_TIMEOUT_MILLIS,
-};
-use sdkwork_claw_product::infrastructure::sql::catalog::RefreshableSqlPricingCatalog;
-use sdkwork_claw_product::infrastructure::sql::installer::{
-    log_bootstrap_admin_report, DatabaseInstallError, DatabaseInstaller,
-};
-use sdkwork_claw_product::infrastructure::sql::pool::connect_claw_sqlite_runtime_pool;
-use sdkwork_claw_product::infrastructure::sql::postgres::{
-    PostgresAdminAnalyticsReadStore, PostgresAdminAnnouncementStore,
-    PostgresAdminApiKeyRateLimitStore, PostgresAdminAuthSettingsStore,
-    PostgresAdminCatalogStore, PostgresAdminChannelGroupStore, PostgresAdminChannelStore,
-    PostgresAdminDashboardReadStore, PostgresAdminFinanceStore, PostgresAdminFirewallRuleStore,
-    PostgresAdminInventoryStore, PostgresAdminIpRateLimitStore, PostgresAdminMarketingStore,
-    PostgresAdminMcpStore, PostgresAdminModelRateLimitStore,
-    PostgresAdminMonitorReadStore, PostgresAdminPromptStore, PostgresAdminProviderSecretStore,
-    PostgresAdminRecordStore, PostgresAdminServiceNodeStore, PostgresAdminServiceProviderStore,
-    PostgresAdminSiteStore, PostgresAdminStorageStore,
-    PostgresAdminTransactionCenterStore, PostgresCatalogLoadError,
-    PostgresGatewayApiKeyCommandStore, PostgresPricingCatalogLoader,
-    PostgresRuntimeRegionSettingsStore, PostgresSiteSettingsStore,
-};
-use sdkwork_claw_product::infrastructure::sql::sqlite::{
-    SqlCatalogLoadError, SqliteAdminAnalyticsReadStore,
-    SqliteAdminAnnouncementStore, SqliteAdminApiKeyRateLimitStore,
-    SqliteAdminAuthSettingsStore, SqliteAdminCatalogStore, SqliteAdminChannelGroupStore,
-    SqliteAdminChannelStore, SqliteAdminDashboardReadStore, SqliteAdminFinanceStore,
-    SqliteAdminFirewallRuleStore, SqliteAdminInventoryStore, SqliteAdminIpRateLimitStore,
-    SqliteAdminMarketingStore, SqliteAdminMcpStore, SqliteAdminModelRateLimitStore,
-    SqliteAdminMonitorReadStore, SqliteAdminPromptStore,
-    SqliteAdminProviderSecretStore, SqliteAdminRecordStore, SqliteAdminServiceNodeStore,
-    SqliteAdminServiceProviderStore, SqliteAdminSiteStore,
-    SqliteAdminStorageStore, SqliteAdminTransactionCenterStore,
-    SqliteGatewayApiKeyCommandStore, SqlitePricingCatalogLoader, SqliteRuntimeRegionSettingsStore, SqliteSiteSettingsStore,
-};
-use sdkwork_claw_product::infrastructure::OsApiKeySecretGenerator;
-use sdkwork_claw_product::ports::{
-    AdminAnalyticsReadStore, AdminAnnouncementStore,
-    AdminApiKeyRateLimitStore, AdminAuthSettingsStore, AdminCatalogStore,
-    AdminChannelGroupStore, AdminChannelStore, AdminDashboardReadStore, AdminFinanceStore,
-    AdminFirewallRuleStore, AdminInventoryStore, AdminIpRateLimitStore, AdminMarketingStore,
-    AdminMcpStore, AdminModelRateLimitStore, AdminMonitorReadStore,
-    AdminPromptStore, AdminProviderSecretStore, AdminRecordStore, AdminServiceNodeStore,
-    AdminServiceProviderStore, AdminSiteStore, AdminStorageStore,
-    AdminTransactionCenterStore, GatewayApiKeyCommandStore, ModelRankingRefreshStore,
-    ModelRankingsReadModelStore, PricingCatalog, ProviderHealthProbe, RuntimeRegionSettingsStore,
-    SiteSettingsStore, UnconfiguredProviderHealthProbe,
 };
 use sqlx::{PgPool, SqlitePool};
 
@@ -100,7 +98,7 @@ pub struct RouterApiRouteModule {
     pub route_prefix: &'static str,
 }
 
-pub const SERVICE_NAME: &str = "sdkwork-claw-admin";
+pub const SERVICE_NAME: &str = "sdkwork-clawrouter-admin-api-server";
 type ApiKeyHasher = Arc<dyn ApiKeySecretHasher + Send + Sync>;
 type ApiKeyCodec = Arc<dyn ApiKeySecretCodec + Send + Sync>;
 type AdminAnnouncementRuntimeStore = Arc<dyn AdminAnnouncementStore + Send + Sync>;
@@ -342,19 +340,14 @@ where
 
     let routing_cache_manager = cache_manager.clone();
     let route_explain_router =
-        sdkwork_claw_product::api::admin_route_explain_router(Arc::clone(&catalog));
+        sdkwork_clawrouter_router_service::api::admin_route_explain_router(Arc::clone(&catalog));
     let catalog_router = match api_key_hasher.as_ref() {
-        Some(hasher) => admin_model_catalog_router_with_api_key_hasher(
-            Arc::clone(&catalog),
-            Arc::clone(hasher),
-        ),
+        Some(hasher) => {
+            admin_model_catalog_router_with_api_key_hasher(Arc::clone(&catalog), Arc::clone(hasher))
+        }
         None => admin_model_catalog_router(Arc::clone(&catalog)),
     };
     let mut router = router_with_database_status(database_config, readiness_check);
-    router = router.merge(route_explain_router);
-    if model_store.is_none() {
-        router = router.merge(catalog_router);
-    }
     let subject_boundary_config = match (trusted_subject_config.clone(), app_session_config.clone())
     {
         (Some(trusted_subject_config), Some(app_session_config)) => {
@@ -375,9 +368,23 @@ where
         }),
         _ => None,
     };
+    router = match admin_subject_boundary_config.clone() {
+        Some(admin_subject_boundary_config) => router.merge(route_explain_router.layer(
+            from_fn_with_state(admin_subject_boundary_config, admin_request_subject_boundary),
+        )),
+        None => router.merge(route_explain_router),
+    };
+    if model_store.is_none() {
+        router = match admin_subject_boundary_config.clone() {
+            Some(admin_subject_boundary_config) => router.merge(catalog_router.layer(
+                from_fn_with_state(admin_subject_boundary_config, admin_request_subject_boundary),
+            )),
+            None => router.merge(catalog_router),
+        };
+    }
     if let Some(installer) = database_installer {
         let system_router =
-            sdkwork_claw_product::api::admin_system_router_with_installer(installer);
+            sdkwork_clawrouter_router_service::api::admin_system_router_with_installer(installer);
         router = match admin_subject_boundary_config.clone() {
             Some(admin_subject_boundary_config) => {
                 router.merge(system_router.layer(from_fn_with_state(
@@ -390,7 +397,8 @@ where
     }
 
     if let Some(manager) = cache_manager.clone() {
-        let cache_router = sdkwork_claw_product::api::admin_cache_router_with_manager(manager);
+        let cache_router =
+            sdkwork_clawrouter_router_service::api::admin_cache_router_with_manager(manager);
         router = match admin_subject_boundary_config.clone() {
             Some(admin_subject_boundary_config) => {
                 router.merge(cache_router.layer(from_fn_with_state(
@@ -407,14 +415,11 @@ where
     {
         let store = ai_routing_cache_invalidating_model_store(store, routing_cache_manager.clone());
         router = router.merge(
-            admin_model_management_router_with_store(
-                store,
-                Arc::new(OsApiKeySecretGenerator),
-            )
-            .layer(from_fn_with_state(
-                admin_subject_boundary_config,
-                admin_request_subject_boundary,
-            )),
+            admin_model_management_router_with_store(store, Arc::new(OsApiKeySecretGenerator))
+                .layer(from_fn_with_state(
+                    admin_subject_boundary_config,
+                    admin_request_subject_boundary,
+                )),
         );
     }
     router = match (
@@ -422,16 +427,17 @@ where
         model_ranking_refresh_store,
         admin_subject_boundary_config.clone(),
     ) {
-        (Some(read_store), Some(refresh_store), Some(admin_subject_boundary_config)) => router.merge(
-            admin_model_rankings_router_with_read_store_and_refresh_store(
-                read_store,
-                refresh_store,
-            )
-            .layer(from_fn_with_state(
-                admin_subject_boundary_config,
-                admin_request_subject_boundary,
-            )),
-        ),
+        (Some(read_store), Some(refresh_store), Some(admin_subject_boundary_config)) => router
+            .merge(
+                admin_model_rankings_router_with_read_store_and_refresh_store(
+                    read_store,
+                    refresh_store,
+                )
+                .layer(from_fn_with_state(
+                    admin_subject_boundary_config,
+                    admin_request_subject_boundary,
+                )),
+            ),
         (Some(read_store), Some(refresh_store), None) => router.merge(
             admin_model_rankings_router_with_read_store_and_refresh_store(
                 read_store,
@@ -439,18 +445,18 @@ where
             ),
         ),
         (Some(read_store), None, Some(admin_subject_boundary_config)) => router.merge(
-            admin_model_rankings_router_with_read_store(read_store)
-                .layer(from_fn_with_state(
-                    admin_subject_boundary_config,
-                    admin_request_subject_boundary,
-                )),
+            admin_model_rankings_router_with_read_store(read_store).layer(from_fn_with_state(
+                admin_subject_boundary_config,
+                admin_request_subject_boundary,
+            )),
         ),
-        (Some(read_store), None, None) => router.merge(
-            admin_model_rankings_router_with_read_store(read_store),
-        ),
+        (Some(read_store), None, None) => {
+            router.merge(admin_model_rankings_router_with_read_store(read_store))
+        }
         (None, _, _) => router.merge(admin_model_rankings_router()),
     };
-    let payment_runtime_router = sdkwork_claw_product::api::admin_payment_runtime_router();
+    let payment_runtime_router =
+        sdkwork_clawrouter_router_service::api::admin_payment_runtime_router();
     router = match admin_subject_boundary_config.clone() {
         Some(admin_subject_boundary_config) => {
             router.merge(payment_runtime_router.layer(from_fn_with_state(
@@ -461,7 +467,8 @@ where
         None => router.merge(payment_runtime_router),
     };
     if let Some(store) = inventory_store {
-        let inventory_router = sdkwork_claw_product::api::admin_inventory_router_with_store(store);
+        let inventory_router =
+            sdkwork_clawrouter_router_service::api::admin_inventory_router_with_store(store);
         router = match admin_subject_boundary_config.clone() {
             Some(admin_subject_boundary_config) => {
                 router.merge(inventory_router.layer(from_fn_with_state(
@@ -476,7 +483,7 @@ where
         if let (Some(store), Some(api_key_hasher)) = (api_key_command_store, api_key_hasher.clone())
         {
             router = router.merge(
-                sdkwork_claw_product::api::admin_user_api_key_command_router_with_store(
+                sdkwork_clawrouter_router_service::api::admin_user_api_key_command_router_with_store(
                     store,
                     api_key_hasher,
                     Arc::new(OsApiKeySecretGenerator),
@@ -489,7 +496,7 @@ where
         }
         if let Some(store) = announcement_store {
             router = router.merge(
-                sdkwork_claw_product::api::admin_announcement_router_with_store(
+                sdkwork_clawrouter_router_service::api::admin_announcement_router_with_store(
                     store,
                     Arc::new(OsApiKeySecretGenerator),
                 )
@@ -501,7 +508,7 @@ where
         }
         if let Some(store) = auth_settings_store {
             router = router.merge(
-                sdkwork_claw_product::api::admin_auth_settings_router_with_store(
+                sdkwork_clawrouter_router_service::api::admin_auth_settings_router_with_store(
                     store,
                     Arc::new(OsApiKeySecretGenerator),
                 )
@@ -513,7 +520,7 @@ where
         }
         if let Some(store) = site_settings_store {
             router = router.merge(
-                sdkwork_claw_product::api::admin_site_settings_router_with_store(
+                sdkwork_clawrouter_router_service::api::admin_site_settings_router_with_store(
                     store,
                     Arc::new(OsApiKeySecretGenerator),
                 )
@@ -525,7 +532,7 @@ where
         }
         if let Some(store) = runtime_region_settings_store {
             router = router.merge(
-                sdkwork_claw_product::api::admin_runtime_region_settings_router_with_store(
+                sdkwork_clawrouter_router_service::api::admin_runtime_region_settings_router_with_store(
                     store,
                     Arc::new(OsApiKeySecretGenerator),
                 )
@@ -541,21 +548,18 @@ where
                 routing_cache_manager.clone(),
             );
             router = router.merge(
-                admin_ai_resource_router_with_store(
-                    store,
-                    Arc::new(OsApiKeySecretGenerator),
-                )
-                .layer(from_fn_with_state(
-                    admin_subject_boundary_config.clone(),
-                    admin_request_subject_boundary,
-                )),
+                admin_ai_resource_router_with_store(store, Arc::new(OsApiKeySecretGenerator))
+                    .layer(from_fn_with_state(
+                        admin_subject_boundary_config.clone(),
+                        admin_request_subject_boundary,
+                    )),
             );
         }
         if let Some(store) = channel_store {
             let store =
                 ai_routing_cache_invalidating_channel_store(store, routing_cache_manager.clone());
             router = router.merge(
-                sdkwork_claw_product::api::admin_channel_router_with_store(
+                sdkwork_clawrouter_router_service::api::admin_channel_router_with_store(
                     store,
                     Arc::new(OsApiKeySecretGenerator),
                 )
@@ -571,7 +575,7 @@ where
                 routing_cache_manager.clone(),
             );
             router = router.merge(
-                sdkwork_claw_product::api::admin_provider_secret_router_with_store(
+                sdkwork_clawrouter_router_service::api::admin_provider_secret_router_with_store(
                     store,
                     Arc::new(OsApiKeySecretGenerator),
                 )
@@ -587,7 +591,7 @@ where
                 routing_cache_manager.clone(),
             );
             router = router.merge(
-                sdkwork_claw_product::api::admin_channel_group_router_with_store(
+                sdkwork_clawrouter_router_service::api::admin_channel_group_router_with_store(
                     store,
                     Arc::new(OsApiKeySecretGenerator),
                 )
@@ -599,7 +603,7 @@ where
         }
         if let Some(store) = ip_rate_limit_store {
             router = router.merge(
-                sdkwork_claw_product::api::admin_ip_rate_limit_router_with_store(
+                sdkwork_clawrouter_router_service::api::admin_ip_rate_limit_router_with_store(
                     store,
                     Arc::new(OsApiKeySecretGenerator),
                 )
@@ -611,7 +615,7 @@ where
         }
         if let Some(store) = firewall_rule_store {
             router = router.merge(
-                sdkwork_claw_product::api::admin_firewall_rule_router_with_store(
+                sdkwork_clawrouter_router_service::api::admin_firewall_rule_router_with_store(
                     store,
                     Arc::new(OsApiKeySecretGenerator),
                 )
@@ -623,7 +627,7 @@ where
         }
         if let Some(store) = api_key_rate_limit_store {
             router = router.merge(
-                sdkwork_claw_product::api::admin_api_key_rate_limit_router_with_store(
+                sdkwork_clawrouter_router_service::api::admin_api_key_rate_limit_router_with_store(
                     store,
                     Arc::new(OsApiKeySecretGenerator),
                 )
@@ -635,7 +639,7 @@ where
         }
         if let Some(store) = model_rate_limit_store {
             router = router.merge(
-                sdkwork_claw_product::api::admin_model_rate_limit_router_with_store(
+                sdkwork_clawrouter_router_service::api::admin_model_rate_limit_router_with_store(
                     store,
                     Arc::new(OsApiKeySecretGenerator),
                 )
@@ -647,17 +651,16 @@ where
         }
         if let Some(store) = finance_store {
             router = router.merge(
-                sdkwork_claw_product::api::admin_finance_router_with_store(store).layer(
-                    from_fn_with_state(
+                sdkwork_clawrouter_router_service::api::admin_finance_router_with_store(store)
+                    .layer(from_fn_with_state(
                         admin_subject_boundary_config.clone(),
                         admin_request_subject_boundary,
-                    ),
-                ),
+                    )),
             );
         }
         if let Some(store) = marketing_store {
             router = router.merge(
-                sdkwork_claw_product::api::admin_marketing_router_with_store(
+                sdkwork_clawrouter_router_service::api::admin_marketing_router_with_store(
                     store,
                     Arc::new(OsApiKeySecretGenerator),
                 )
@@ -669,17 +672,16 @@ where
         }
         if let Some(store) = prompt_store {
             router = router.merge(
-                sdkwork_claw_product::api::admin_prompt_router_with_store(store).layer(
-                    from_fn_with_state(
+                sdkwork_clawrouter_router_service::api::admin_prompt_router_with_store(store)
+                    .layer(from_fn_with_state(
                         admin_subject_boundary_config.clone(),
                         admin_request_subject_boundary,
-                    ),
-                ),
+                    )),
             );
         }
         if let Some(store) = mcp_store {
             router = router.merge(
-                sdkwork_claw_product::api::admin_mcp_router_with_store(store).layer(
+                sdkwork_clawrouter_router_service::api::admin_mcp_router_with_store(store).layer(
                     from_fn_with_state(
                         admin_subject_boundary_config.clone(),
                         admin_request_subject_boundary,
@@ -689,27 +691,27 @@ where
         }
         if let Some(store) = service_node_store {
             router = router.merge(
-                sdkwork_claw_product::api::admin_service_node_router_with_store(store).layer(
-                    from_fn_with_state(
+                sdkwork_clawrouter_router_service::api::admin_service_node_router_with_store(store)
+                    .layer(from_fn_with_state(
                         admin_subject_boundary_config.clone(),
                         admin_request_subject_boundary,
-                    ),
-                ),
+                    )),
             );
         }
         if let Some(store) = service_provider_store {
             router = router.merge(
-                sdkwork_claw_product::api::admin_service_provider_router_with_store(store).layer(
-                    from_fn_with_state(
-                        admin_subject_boundary_config.clone(),
-                        admin_request_subject_boundary,
-                    ),
-                ),
+                sdkwork_clawrouter_router_service::api::admin_service_provider_router_with_store(
+                    store,
+                )
+                .layer(from_fn_with_state(
+                    admin_subject_boundary_config.clone(),
+                    admin_request_subject_boundary,
+                )),
             );
         }
         if let Some(store) = site_store {
             router = router.merge(
-                sdkwork_claw_product::api::admin_site_router_with_store(
+                sdkwork_clawrouter_router_service::api::admin_site_router_with_store(
                     store,
                     Arc::new(OsApiKeySecretGenerator),
                 )
@@ -721,62 +723,62 @@ where
         }
         if let Some(store) = storage_store {
             router = router.merge(
-                sdkwork_claw_product::api::admin_storage_router_with_store(store).layer(
-                    from_fn_with_state(
+                sdkwork_clawrouter_router_service::api::admin_storage_router_with_store(store)
+                    .layer(from_fn_with_state(
                         admin_subject_boundary_config.clone(),
                         admin_request_subject_boundary,
-                    ),
-                ),
+                    )),
             );
         }
         if let Some(store) = transaction_center_store {
             router = router.merge(
-                sdkwork_claw_product::api::admin_transaction_center_router_with_store(store).layer(
-                    from_fn_with_state(
-                        admin_subject_boundary_config.clone(),
-                        admin_request_subject_boundary,
-                    ),
-                ),
+                sdkwork_clawrouter_router_service::api::admin_transaction_center_router_with_store(
+                    store,
+                )
+                .layer(from_fn_with_state(
+                    admin_subject_boundary_config.clone(),
+                    admin_request_subject_boundary,
+                )),
             );
         }
         if let Some(store) = dashboard_read_store {
             router = router.merge(
-                sdkwork_claw_product::api::admin_dashboard_router_with_read_store(store).layer(
-                    from_fn_with_state(
-                        admin_subject_boundary_config.clone(),
-                        admin_request_subject_boundary,
-                    ),
-                ),
+                sdkwork_clawrouter_router_service::api::admin_dashboard_router_with_read_store(
+                    store,
+                )
+                .layer(from_fn_with_state(
+                    admin_subject_boundary_config.clone(),
+                    admin_request_subject_boundary,
+                )),
             );
         }
         if let Some(store) = analytics_read_store {
             router = router.merge(
-                sdkwork_claw_product::api::admin_analytics_router_with_read_store(store).layer(
-                    from_fn_with_state(
-                        admin_subject_boundary_config.clone(),
-                        admin_request_subject_boundary,
-                    ),
-                ),
+                sdkwork_clawrouter_router_service::api::admin_analytics_router_with_read_store(
+                    store,
+                )
+                .layer(from_fn_with_state(
+                    admin_subject_boundary_config.clone(),
+                    admin_request_subject_boundary,
+                )),
             );
         }
         if let Some(store) = monitor_read_store {
             router = router.merge(
-                sdkwork_claw_product::api::admin_monitor_router_with_read_store(store).layer(
-                    from_fn_with_state(
+                sdkwork_clawrouter_router_service::api::admin_monitor_router_with_read_store(store)
+                    .layer(from_fn_with_state(
                         admin_subject_boundary_config.clone(),
                         admin_request_subject_boundary,
-                    ),
-                ),
+                    )),
             );
         }
         if let Some(store) = record_store {
             router = router.merge(
-                sdkwork_claw_product::api::admin_record_router_with_store(store).layer(
-                    from_fn_with_state(
+                sdkwork_clawrouter_router_service::api::admin_record_router_with_store(store)
+                    .layer(from_fn_with_state(
                         admin_subject_boundary_config.clone(),
                         admin_request_subject_boundary,
-                    ),
-                ),
+                    )),
             );
         }
     }
@@ -1300,7 +1302,7 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
             .await?;
             let announcement_store: AdminAnnouncementRuntimeStore =
                 Arc::new(SqliteAdminAnnouncementStore::new(pool.clone()));
-                            let auth_settings_store: AdminAuthSettingsRuntimeStore =
+            let auth_settings_store: AdminAuthSettingsRuntimeStore =
                 Arc::new(SqliteAdminAuthSettingsStore::new(pool.clone()));
             let api_key_command_store: ApiKeyCommandRuntimeStore = Arc::new(
                 SqliteGatewayApiKeyCommandStore::new(pool.clone(), api_key_secret_codec.clone()),
@@ -1364,7 +1366,7 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                 Arc::new(SqliteAdminMonitorReadStore::new(pool.clone()));
             let record_store: AdminRecordRuntimeStore =
                 Arc::new(SqliteAdminRecordStore::new(pool.clone()));
-                    let model_rankings_store: ModelRankingsRuntimeStore =
+            let model_rankings_store: ModelRankingsRuntimeStore =
                 model_rankings_service(Arc::new(SqliteModelRankingsReadStore::new(pool.clone())));
             let model_ranking_refresh_store: ModelRankingRefreshRuntimeStore =
                 Arc::new(SqliteModelRankingRefreshStore::new(pool.clone()));
@@ -1412,7 +1414,7 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                     admin_access_checker: Some(admin_access_checker),
                     request_limits_config,
                     readiness_check: Some(
-                        sdkwork_claw_product::infrastructure::sql::pool::sqlite_database_readiness_check(
+                        sdkwork_clawrouter_router_service::infrastructure::sql::pool::sqlite_database_readiness_check(
                             pool.clone(),
                         ),
                     ),
@@ -1421,7 +1423,7 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
         }
         DatabaseEngine::Postgres => {
             let pool =
-                sdkwork_claw_product::infrastructure::sql::pool::connect_postgres_runtime_pool(
+                sdkwork_clawrouter_router_service::infrastructure::sql::pool::connect_postgres_runtime_pool(
                     &config.url,
                     config.max_connections,
                 )
@@ -1443,7 +1445,7 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
             .await?;
             let announcement_store: AdminAnnouncementRuntimeStore =
                 Arc::new(PostgresAdminAnnouncementStore::new(pool.clone()));
-                            let auth_settings_store: AdminAuthSettingsRuntimeStore =
+            let auth_settings_store: AdminAuthSettingsRuntimeStore =
                 Arc::new(PostgresAdminAuthSettingsStore::new(pool.clone()));
             let api_key_command_store: ApiKeyCommandRuntimeStore = Arc::new(
                 PostgresGatewayApiKeyCommandStore::new(pool.clone(), api_key_secret_codec.clone()),
@@ -1508,7 +1510,7 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                 Arc::new(PostgresAdminMonitorReadStore::new(pool.clone()));
             let record_store: AdminRecordRuntimeStore =
                 Arc::new(PostgresAdminRecordStore::new(pool.clone()));
-                    let model_rankings_store: ModelRankingsRuntimeStore =
+            let model_rankings_store: ModelRankingsRuntimeStore =
                 model_rankings_service(Arc::new(PostgresModelRankingsReadStore::new(pool.clone())));
             let model_ranking_refresh_store: ModelRankingRefreshRuntimeStore =
                 Arc::new(PostgresModelRankingRefreshStore::new(pool.clone()));
@@ -1556,7 +1558,7 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                     admin_access_checker: Some(admin_access_checker),
                     request_limits_config,
                     readiness_check: Some(
-                        sdkwork_claw_product::infrastructure::sql::pool::postgres_database_readiness_check(
+                        sdkwork_clawrouter_router_service::infrastructure::sql::pool::postgres_database_readiness_check(
                             pool.clone(),
                         ),
                     ),
@@ -1670,7 +1672,7 @@ fn deployment_mode_from_env_or_toml(
 
 fn configured_models_catalog_root(runtime_toml: Option<&RuntimeTomlConfig>) -> Option<String> {
     sdkwork_claw_config::runtime::config_value(
-        sdkwork_claw_product::infrastructure::sql::installer::ENV_MODELS_CATALOG_ROOT,
+        sdkwork_clawrouter_router_service::infrastructure::sql::installer::ENV_MODELS_CATALOG_ROOT,
         runtime_toml.and_then(|config| config.install.models_catalog_root.as_deref()),
     )
 }
@@ -2041,7 +2043,9 @@ mod tests {
             .unwrap()
             .as_millis();
         let mut path = std::env::temp_dir();
-        path.push(format!("sdkwork-claw-admin-runtime-{millis}"));
+        path.push(format!(
+            "sdkwork-clawrouter-admin-api-server-runtime-{millis}"
+        ));
         path.push("sdkwork-clawrouter.toml");
         path
     }

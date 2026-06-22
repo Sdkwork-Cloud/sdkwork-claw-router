@@ -1041,6 +1041,308 @@
       ]
     },
     {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/messaging/provider_accounts",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "createMessagingProviderAccount",
+      "operation_scope": null,
+      "read_sources": [
+        "messaging_provider_capability"
+      ],
+      "route": "/admin/messaging/providers",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "write_tables": [
+        "messaging_provider_capability"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/messaging/route_rules",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "createMessagingRouteRule",
+      "operation_scope": null,
+      "read_sources": [
+        "messaging_route_rule",
+        "messaging_route_rule_target"
+      ],
+      "route": "/admin/messaging/route-rules",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "write_tables": [
+        "messaging_route_rule",
+        "messaging_route_rule_target"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/messaging/sender_identities",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "createMessagingSenderIdentity",
+      "operation_scope": null,
+      "read_sources": [
+        "messaging_sender_identity"
+      ],
+      "route": "/admin/messaging/sender-identities",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "write_tables": [
+        "messaging_sender_identity"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/messaging/suppressions",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "createMessagingSuppression",
+      "operation_scope": null,
+      "read_sources": [
+        "messaging_suppression"
+      ],
+      "route": "/admin/messaging/suppressions",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "write_tables": [
+        "messaging_suppression"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/messaging/templates",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "createMessagingTemplate",
+      "operation_scope": null,
+      "read_sources": [
+        "messaging_template",
+        "messaging_template_version"
+      ],
+      "route": "/admin/messaging/templates",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "write_tables": [
+        "messaging_template",
+        "messaging_template_version"
+      ]
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/messaging/provider_accounts",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "listMessagingProviderAccounts",
+      "operation_scope": null,
+      "read_sources": [
+        "messaging_provider_capability"
+      ],
+      "route": "/admin/messaging/providers",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/messaging/rate_limit_buckets",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "listMessagingRateLimitBuckets",
+      "operation_scope": null,
+      "read_sources": [
+        "messaging_rate_limit_bucket"
+      ],
+      "route": "/admin/messaging/rate-limits",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/messaging/route_rules",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "listMessagingRouteRules",
+      "operation_scope": null,
+      "read_sources": [
+        "messaging_route_rule",
+        "messaging_route_rule_target"
+      ],
+      "route": "/admin/messaging/route-rules",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/messaging/send_requests",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "listMessagingSendRequests",
+      "operation_scope": null,
+      "read_sources": [
+        "messaging_send_request",
+        "messaging_send_attempt",
+        "messaging_delivery_event"
+      ],
+      "route": "/admin/messaging/send-requests",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/messaging/sender_identities",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "listMessagingSenderIdentities",
+      "operation_scope": null,
+      "read_sources": [
+        "messaging_sender_identity"
+      ],
+      "route": "/admin/messaging/sender-identities",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/messaging/suppressions",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "listMessagingSuppressions",
+      "operation_scope": null,
+      "read_sources": [
+        "messaging_suppression"
+      ],
+      "route": "/admin/messaging/suppressions",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/messaging/templates",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "listMessagingTemplates",
+      "operation_scope": null,
+      "read_sources": [
+        "messaging_template",
+        "messaging_template_version",
+        "messaging_template_variant"
+      ],
+      "route": "/admin/messaging/templates",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/messaging/verification_policies",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "listVerificationPolicies",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_verification_scene_policy"
+      ],
+      "route": "/admin/messaging/verification-policies",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/messaging/templates/{templateId}/versions/{versionId}/publish",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "publishMessagingTemplateVersion",
+      "operation_scope": null,
+      "read_sources": [
+        "messaging_template_version"
+      ],
+      "route": "/admin/messaging/templates",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "write_tables": [
+        "messaging_template_version"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/messaging/template_sends",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "sendMessagingTemplate",
+      "operation_scope": null,
+      "read_sources": [
+        "messaging_send_request",
+        "messaging_send_attempt"
+      ],
+      "route": "/admin/messaging/templates",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "write_tables": [
+        "messaging_send_request",
+        "messaging_send_attempt"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/messaging/diagnostics/route_simulation",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "simulateMessagingRoute",
+      "operation_scope": null,
+      "read_sources": [
+        "messaging_route_rule",
+        "messaging_route_rule_target"
+      ],
+      "route": "/admin/messaging/diagnostics",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "write_tables": [
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/messaging/diagnostics/test_sends",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "testMessagingSend",
+      "operation_scope": null,
+      "read_sources": [
+        "messaging_send_request"
+      ],
+      "route": "/admin/messaging/diagnostics",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "write_tables": [
+        "messaging_send_request"
+      ]
+    },
+    {
+      "api_method": "PUT",
+      "api_path": "/backend/v3/api/messaging/verification_policies/{policyId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "updateVerificationPolicy",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_verification_scene_policy"
+      ],
+      "route": "/admin/messaging/verification-policies",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts",
+      "write_tables": [
+        "iam_verification_scene_policy"
+      ]
+    },
+    {
       "api_method": "GET",
       "api_path": "/backend/v3/api/router/monitor/alerts",
       "api_surface": "backend",
@@ -4766,8 +5068,8 @@
     }
   ],
   "summary": {
-    "operation_count": 264,
-    "source_file_count": 42,
-    "write_operation_count": 146
+    "operation_count": 282,
+    "source_file_count": 43,
+    "write_operation_count": 156
   }
 }

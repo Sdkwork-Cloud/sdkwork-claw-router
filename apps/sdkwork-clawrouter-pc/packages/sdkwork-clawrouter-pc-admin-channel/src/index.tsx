@@ -2871,12 +2871,12 @@ export function ChannelAdmin() {
       showToast(t('admin.channel.credentials.apiKeyUnavailable'), 'error');
       return;
     }
-    const result = await copyTextToClipboard(apiKey);
-    if (result.ok) {
+    try {
+      await navigator.clipboard.writeText(apiKey);
       showToast(t('common.actions.copiedApiKey'));
-      return;
+    } catch {
+      showToast(t('common.actions.copyFailed'), 'error');
     }
-    showToast(t('common.actions.copyFailed'), 'error');
   }, [showToast, t]);
 
   const loadChannels = useCallback(async (isActive: () => boolean = () => true) => {

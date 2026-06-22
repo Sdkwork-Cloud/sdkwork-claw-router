@@ -280,7 +280,7 @@ node data/sdkwork-models/tools/freshness-report.mjs --max-age-policy catalog-fre
 node data/sdkwork-models/tools/catalog-audit.mjs --as-of 2026-05-08
 node data/sdkwork-models/tools/release-catalog.mjs --check --as-of 2026-05-08
 cargo test -p sdkwork-models --offline
-cargo test -p sdkwork-claw-product --test database_installer --offline
+cargo test -p sdkwork-clawrouter-router-service --test database_installer --offline
 ```
 
 Model catalog release evidence is mandatory. `sources/vendor-sources.json`,
@@ -377,7 +377,7 @@ Command intent:
   `apps/sdkwork-clawrouter-pc/dist` through a single all-in-one Rust edge
   process by default, using the release binary when it exists.
 - `pnpm release` validates the release environment, regenerates
-  `.env.release.local` from the release host process environment, runs strict
+  `.env.release` from the release host process environment, runs strict
   `release:preflight`, and then runs the full `verify` gate.
 - `pnpm dev:desktop` and `pnpm dev:desktop` is the canonical gateway-backed desktop client entrypoint.
 - `pnpm dev:server` is an alias of `pnpm dev`.
@@ -642,13 +642,13 @@ the smallest useful Rust surface automatically:
 
 - exact `services/*/tests/*.rs` edits run only that integration-test target
 - common `services/*/src/*.rs` edits try to infer nearby test targets by name
-- shared `services/*/tests/common/*.rs` helper edits, plus `crates/sdkwork-claw-product-test-support/src/*.rs` fixture-crate edits, try to target only the integration tests that directly consume that shared test helper; product fixture module edits such as `schema.rs`, `repair.rs`, and `installed.rs` narrow further by the exported pool helper they affect
+- shared `services/*/tests/common/*.rs` helper edits, plus `crates/sdkwork-clawrouter-router-service-test-support/src/*.rs` fixture-crate edits, try to target only the integration tests that directly consume that shared test helper; product fixture module edits such as `schema.rs`, `repair.rs`, and `installed.rs` narrow further by the exported pool helper they affect
 - broader or ambiguous changes fall back to the existing scoped profiles
 
 When the worktree is noisy, choose one narrowing mode:
 
 ```powershell
-pnpm test:rust:auto -- --changed-file services/sdkwork-claw-product/src/api/app_runtime.rs
+pnpm test:rust:auto -- --changed-file services/sdkwork-clawrouter-router-service/src/api/app_runtime.rs
 pnpm test:rust:auto -- --staged
 pnpm test:rust:auto -- --base-ref main
 ```
@@ -721,7 +721,7 @@ packaging a commercial release.
 Use strict mode on CI, staging, or release packaging hosts:
 
 ```powershell
-pnpm.cmd release:preflight -- --strict --env-file .env.release.local --strict-root-clean
+pnpm.cmd release:preflight -- --strict --env-file .env.release --strict-root-clean
 ```
 
 ## Release Environment Contract
@@ -729,7 +729,7 @@ pnpm.cmd release:preflight -- --strict --env-file .env.release.local --strict-ro
 Release and staging hosts must satisfy the executable environment contract in
 `scripts/release-environment-contract.mjs`. The checked-in template is
 `.env.release.example`; use it as a reviewable reference for release variable
-names and example value shapes. Generate `.env.release.local` on the release
+names and example value shapes. Generate `.env.release` on the release
 host from the host process environment, and never commit the local file.
 
 Required release verification variable:
@@ -760,14 +760,14 @@ Run strict preflight against the local release env file before packaging:
 ```powershell
 pnpm.cmd release:env:write -- --check
 pnpm.cmd release:env:write
-pnpm.cmd release:preflight -- --strict --env-file .env.release.local --strict-root-clean
+pnpm.cmd release:preflight -- --strict --env-file .env.release --strict-root-clean
 ```
 
 `PORTAL_PUBLIC_*` values are intentionally visible to the browser through
 `/runtime-env.js`; do not place secrets in them. The Postgres URL is used only
 for release verification and Postgres contract tests.
 `pnpm release:env:write` reads the contract variables from the release
-host process environment, refuses to overwrite `.env.release.local` unless
+host process environment, refuses to overwrite `.env.release` unless
 `--force` is passed, refuses to write the checked-in `.env.release.example`
 template, and prints only a safe summary without variable values.
 
@@ -1047,7 +1047,7 @@ platform supports them. Health and readiness checks are always `/healthz` and
 `/readyz`.
 
 Security defaults are part of the matrix: packages must not include secrets,
-must not include `.env.release.local`, must generate local env files on the
+must not include `.env.release`, must generate local env files on the
 install or release host, must treat `.env.release.example` as reference-only,
 and must keep trusted forwarded headers disabled by default. Enable forwarded
 header trust only when a controlled reverse proxy is the sole inbound client.
@@ -1076,7 +1076,7 @@ entrypoint (`container/entrypoint` on Linux/macOS,
 `container/entrypoint.ps1` on Windows), and `container/metadata.json` without
 starting services. Desktop packages generate `desktop/metadata.json` with the
 desktop SQLite policy and OS config/data directories. The builder excludes
-`.env.release.local` even if it exists in the staging directory. Add `--json`
+`.env.release` even if it exists in the staging directory. Add `--json`
 for pure machine-readable output.
 
 `service` and `desktop` release assets must be final platform installers, not
@@ -1133,7 +1133,7 @@ runtime config and local SQLite data under `~/.sdkwork/router`.
 `scripts/smoke-install-package-init.mjs` validates the fast initialization
 contract separately from service startup. The default root command is a dry-run
 smoke that creates a temporary install root, writes a safe
-`.env.release.local`, writes a temporary `clawrouter.toml`, verifies
+`.env.release`, writes a temporary `clawrouter.toml`, verifies
 that server package dry-runs use PostgreSQL while desktop package dry-runs use
 a file-backed SQLite URL, verifies `clawrouterctl ensure` plus
 `clawrouterctl refresh-catalog --force` are the only installer
@@ -1326,11 +1326,11 @@ defaults to:
 ```
 
 For private deployments whose browser needs to call a different API origin,
-set `PORTAL_CSP_CONNECT_SRC` to a comma- or space-separated list of additional
+set `SDKWORK_CLAW_EDGE_CSP_CONNECT_SRC` to a comma- or space-separated list of additional
 HTTP/HTTPS origins, for example:
 
 ```powershell
-$env:PORTAL_CSP_CONNECT_SRC="https://tenant-api.example.com https://admin-api.example.com"
+$env:SDKWORK_CLAW_EDGE_CSP_CONNECT_SRC="https://tenant-api.example.com https://admin-api.example.com"
 ```
 
 Entries must be origins only, without paths, query strings, fragments, semicolon
@@ -1349,11 +1349,11 @@ $env:PORTAL_PUBLIC_OPEN_API_BASE_URL=""
 $env:PORTAL_PUBLIC_APP_API_BASE_URL=""
 $env:PORTAL_PUBLIC_BACKEND_API_BASE_URL=""
 $env:PORTAL_PUBLIC_TOOL_API_ENABLED="false"
-$env:PORTAL_TOOL_API_RATE_LIMIT_REQUESTS="120"
-$env:PORTAL_TOOL_API_RATE_LIMIT_WINDOW_SECONDS="60"
-$env:PORTAL_TOOL_API_SDK_GENERATOR_BASE_URL=""
-$env:PORTAL_TOOL_API_SDK_GENERATOR_API_KEY=""
-$env:PORTAL_TOOL_API_SDK_ARCHIVE_ROOT = Join-Path (Get-Location) "apps/sdkwork-clawrouter-pc/dist/sdk-archives"
+$env:SDKWORK_CLAW_TOOL_API_RATE_LIMIT_REQUESTS="120"
+$env:SDKWORK_CLAW_TOOL_API_RATE_LIMIT_WINDOW_SECONDS="60"
+$env:SDKWORK_CLAW_TOOL_API_SDK_GENERATOR_BASE_URL=""
+$env:SDKWORK_CLAW_TOOL_API_SDK_GENERATOR_API_KEY=""
+$env:SDKWORK_CLAW_TOOL_API_SDK_ARCHIVE_ROOT = Join-Path (Get-Location) "apps/sdkwork-clawrouter-pc/dist/sdk-archives"
 ```
 
 `PORTAL_PUBLIC_SDK_BASE_URL` is the default public SDK root. Runtime bootstrap
@@ -1369,23 +1369,23 @@ values before they are constructed.
 When `PORTAL_PUBLIC_TOOL_API_ENABLED=true`, the Rust edge server serves the
 local portal tool API under `/api/code-snippet`, `/api/sdk-readme`, and
 `/api/generate-sdk`. These routes are disabled by default and are rate limited
-by `PORTAL_TOOL_API_RATE_LIMIT_REQUESTS` per
-`PORTAL_TOOL_API_RATE_LIMIT_WINDOW_SECONDS`. The limiter buckets by remote
+by `SDKWORK_CLAW_TOOL_API_RATE_LIMIT_REQUESTS` per
+`SDKWORK_CLAW_TOOL_API_RATE_LIMIT_WINDOW_SECONDS`. The limiter buckets by remote
 client IP. When `SDKWORK_CLAW_EDGE_TRUST_FORWARDED_HEADERS=1`, the limiter uses
 the first valid IP from `x-forwarded-for`; only enable that mode behind a
 controlled reverse proxy. Limited requests return HTTP 429 with `Retry-After`,
 `RateLimit-Limit`, `RateLimit-Remaining`, and `RateLimit-Reset` headers.
 
 `/api/generate-sdk` calls the Rust SDK generator service and returns the
-generated ZIP archive directly. `PORTAL_TOOL_API_SDK_GENERATOR_BASE_URL` may be
+generated ZIP archive directly. `SDKWORK_CLAW_TOOL_API_SDK_GENERATOR_BASE_URL` may be
 set to an explicit generator origin; when it is empty, the edge server defaults
 to the current web page origin derived from the incoming request host and
-scheme. Configure `PORTAL_TOOL_API_SDK_GENERATOR_API_KEY` when the generator
+scheme. Configure `SDKWORK_CLAW_TOOL_API_SDK_GENERATOR_API_KEY` when the generator
 requires a bearer token. Standard `pnpm build` also creates generated
 TypeScript app and backend SDK runtime packages and writes prebuilt SDK ZIP archives
 into `apps/sdkwork-clawrouter-pc/dist/sdk-archives`; `pnpm start`
-uses that directory as `PORTAL_TOOL_API_SDK_ARCHIVE_ROOT` by default. When a
-live generator request fails and `PORTAL_TOOL_API_SDK_ARCHIVE_ROOT` is
+uses that directory as `SDKWORK_CLAW_TOOL_API_SDK_ARCHIVE_ROOT` by default. When a
+live generator request fails and `SDKWORK_CLAW_TOOL_API_SDK_ARCHIVE_ROOT` is
 configured, the edge server falls back to a matching prebuilt ZIP.
 
 Archive fallback lookup is constrained to the configured directory, rejects
@@ -1408,7 +1408,7 @@ The generated backend SDK archive is:
 sdkwork-clawrouter-backend-sdk-typescript-0.1.0.zip
 ```
 
-If the live generator fails and `PORTAL_TOOL_API_SDK_ARCHIVE_ROOT` is not
+If the live generator fails and `SDKWORK_CLAW_TOOL_API_SDK_ARCHIVE_ROOT` is not
 configured, `/api/generate-sdk` returns `sdk_generator_failed`. If fallback is
 configured but the normalized archive is missing, it returns
 `sdk_archive_not_found`.
@@ -1417,7 +1417,7 @@ configured but the normalized archive is missing, it returns
 
 1. On CI or a release host, run `pnpm release`. The root release script
    runs `pnpm release:env:write -- --check`, regenerates
-   `.env.release.local` with `--force`, runs strict release preflight, and then
+   `.env.release` with `--force`, runs strict release preflight, and then
    runs `pnpm verify`.
 2. For local handoff without real release secrets, run
    `pnpm release:preflight` and `pnpm verify:fast`.

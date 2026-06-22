@@ -306,8 +306,8 @@ node data/sdkwork-models/tools/freshness-report.mjs --max-age-policy catalog-fre
 node data/sdkwork-models/tools/catalog-audit.mjs --as-of 2026-05-08
 node data/sdkwork-models/tools/release-catalog.mjs --check --as-of 2026-05-08
 cargo test -p sdkwork-models --offline
-cargo test -p sdkwork-claw-product --test database_installer --offline
-cargo test -p sdkwork-claw-product --test admin_model_store --offline
+cargo test -p sdkwork-clawrouter-router-service --test database_installer --offline
+cargo test -p sdkwork-clawrouter-router-service --test admin_model_store --offline
 cargo test -p sdkwork-claw-installer --test installer_cli --offline
 ```
 

@@ -148,12 +148,12 @@ Added `app-api`, `gateway`, and `product-relay` profiles so daily work can targe
 Added `scripts/measure-claw-router-test-targets.mjs` and `pnpm test:rust:measure` for curated slow targets:
 
 ```text
-sdkwork-claw-admin:database_config_router
-sdkwork-claw-app:database_config_router
-sdkwork-claw-gateway:database_config_router
-sdkwork-claw-gateway:provider_passthrough_route
-sdkwork-claw-gateway:edge_server
-sdkwork-claw-product:openai_compatible_http_relay
+sdkwork-clawrouter-admin-api-server:database_config_router
+sdkwork-clawrouter-app-api-server:database_config_router
+sdkwork-clawrouter-gateway:database_config_router
+sdkwork-clawrouter-gateway:provider_passthrough_route
+sdkwork-clawrouter-gateway:edge_server
+sdkwork-clawrouter-router-service:openai_compatible_http_relay
 sdkwork-claw-installer:installer_cli
 ```
 
@@ -162,9 +162,9 @@ sdkwork-claw-installer:installer_cli
 Measured selected targets with `target-rust-tests/measure`:
 
 ```text
-sdkwork-claw-gateway edge_server: cold 142.2s, hot 0.7s
-sdkwork-claw-product sqlite_pricing_catalog_loader: cold 97.9s, hot 0.3s
-sdkwork-claw-gateway provider_adapter_invocation: 4.0s
+sdkwork-clawrouter-gateway edge_server: cold 142.2s, hot 0.7s
+sdkwork-clawrouter-router-service sqlite_pricing_catalog_loader: cold 97.9s, hot 0.3s
+sdkwork-clawrouter-gateway provider_adapter_invocation: 4.0s
 ```
 
 The evidence shows these targets are not slow at runtime; cold compilation dominates. Fixed sleeps in `edge_server.rs` are tied to streaming and timeout semantics and are not currently the bottleneck.
@@ -182,5 +182,5 @@ Made `stop-claw-router-test-processes.mjs` tolerate already-exited repo-local pr
 - `node scripts/run-claw-router-product.test.mjs`: PASS.
 - `node scripts/run-claw-router-rust-tests.mjs quick`: PASS.
 - `node scripts/run-claw-router-rust-tests.mjs quick` hot cache: 3.9s.
-- `node scripts/measure-claw-router-test-targets.mjs --dry-run --target sdkwork-claw-admin:database_config_router --target sdkwork-claw-app:database_config_router`: PASS.
+- `node scripts/measure-claw-router-test-targets.mjs --dry-run --target sdkwork-clawrouter-admin-api-server:database_config_router --target sdkwork-clawrouter-app-api-server:database_config_router`: PASS.
 - `cargo check -p sdkwork-claw-http`: PASS.

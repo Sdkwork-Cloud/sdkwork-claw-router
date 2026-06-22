@@ -336,8 +336,8 @@ Linux/macOS:
 mkdir -p /opt/sdkwork/router
 tar -xzf clawrouter-linux-x64-archive-0.3.0.tar.gz -C /opt/sdkwork/router
 cd /opt/sdkwork/router
-cp .env.release.example .env.release.local
-editor .env.release.local
+cp .env.release.example .env.release
+editor .env.release
 ./bin/clawrouterctl ensure
 ./bin/clawrouterctl refresh-catalog --force
 ./bin/clawrouter
@@ -349,8 +349,8 @@ Windows:
 $installRoot = Join-Path $env:USERPROFILE "sdkwork\router"
 Expand-Archive .\clawrouter-windows-x64-archive-0.3.0.zip -DestinationPath $installRoot
 Set-Location $installRoot
-Copy-Item .env.release.example .env.release.local
-notepad .env.release.local
+Copy-Item .env.release.example .env.release
+notepad .env.release
 .\bin\clawrouterctl.exe ensure
 .\bin\clawrouterctl.exe refresh-catalog --force
 .\bin\clawrouter.exe
@@ -379,7 +379,7 @@ Release packages include the runtime files needed to start Claw Router:
 
 Every package manifest includes an `installConfiguration` section with the runtime TOML, template, database policy, required fields, password path, first-start commands, and next steps. Native installer manifests also include `nativeInstall`, a machine-readable final install layout covering paths such as `/usr/bin/clawrouter`, `/usr/lib/sdkwork/router/portal/dist`, `/etc/sdkwork/router/clawrouter.toml`, `/etc/sdkwork/router/database.secret`, `/lib/systemd/system/clawrouter.service`, service startup policy, permissions, and operator commands. Use these fields for deployment automation instead of scraping `INSTALL.md`.
 
-Never package or commit `.env.release.local`. Archive deployments may generate it on the target host, while Linux service deployments use `/etc/sdkwork/router/clawrouter.env` for protected process overrides and `/etc/sdkwork/router/clawrouter.toml` for the primary runtime configuration. Keep `PORTAL_PUBLIC_*` values browser-safe; do not put database passwords, provider secrets, or admin credentials in `PORTAL_PUBLIC_*` variables.
+Never package or commit `.env.release`. Archive deployments may generate it on the target host, while Linux service deployments use `/etc/sdkwork/router/clawrouter.env` for protected process overrides and `/etc/sdkwork/router/clawrouter.toml` for the primary runtime configuration. Keep `PORTAL_PUBLIC_*` values browser-safe; do not put database passwords, provider secrets, or admin credentials in `PORTAL_PUBLIC_*` variables.
 
 ## 4. Database Policy
 
@@ -565,7 +565,7 @@ Service and container deployments must mount runtime configuration, logs, and mu
 2. Back up the database and runtime configuration.
 3. Stop the old service.
 4. Install or extract the new release package.
-5. Preserve target-local `/etc/sdkwork/router/clawrouter.env`, `/etc/sdkwork/router/database.secret`, `.env.release.local` if used by archive deployments, and runtime TOML files.
+5. Preserve target-local `/etc/sdkwork/router/clawrouter.env`, `/etc/sdkwork/router/database.secret`, `.env.release` if used by archive deployments, and runtime TOML files.
 6. For Linux service packages, start the service and let systemd run `ensure` and `refresh-catalog --force`.
 7. For archive/manual deployments, run `clawrouterctl ensure` and `clawrouterctl refresh-catalog --force`.
 8. Start the new version and check `/healthz` and `/readyz`.

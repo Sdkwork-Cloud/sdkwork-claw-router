@@ -122,7 +122,7 @@ class SdkworkRouterApiPackageStandardTest(unittest.TestCase):
             with self.subTest(package=package_name):
                 self.assertIn("axum.workspace = true", cargo_manifest)
                 self.assertIn("sdkwork-claw-config.workspace = true", cargo_manifest)
-                self.assertIn("sdkwork-claw-product.workspace = true", cargo_manifest)
+                self.assertIn("sdkwork-clawrouter-router-service.workspace = true", cargo_manifest)
                 self.assertIn("pub mod routes;", lib_source)
                 for runtime_entrypoint in runtime_entrypoints:
                     self.assertIn(runtime_entrypoint, spec["contracts"]["runtimeEntrypoints"])
@@ -132,27 +132,27 @@ class SdkworkRouterApiPackageStandardTest(unittest.TestCase):
                 self.assertIn("Router", routes_source)
 
     def test_gateway_mounts_claw_apis_through_route_crates_not_service_crates(self) -> None:
-        gateway_manifest = (ROOT / "services" / "sdkwork-claw-gateway" / "Cargo.toml").read_text(
+        gateway_manifest = (ROOT / "services" / "sdkwork-clawrouter-gateway" / "Cargo.toml").read_text(
             encoding="utf-8",
         )
-        gateway_runtime = (ROOT / "services" / "sdkwork-claw-gateway" / "src" / "runtime.rs").read_text(
+        gateway_runtime = (ROOT / "services" / "sdkwork-clawrouter-gateway" / "src" / "runtime.rs").read_text(
             encoding="utf-8",
         )
 
         self.assertIn("sdkwork-router-app-api.workspace = true", gateway_manifest)
         self.assertIn("sdkwork-router-backend-api.workspace = true", gateway_manifest)
-        self.assertNotIn("sdkwork-claw-app.workspace = true", gateway_manifest)
-        self.assertNotIn("sdkwork-claw-admin.workspace = true", gateway_manifest)
+        self.assertNotIn("sdkwork-clawrouter-app-api-server.workspace = true", gateway_manifest)
+        self.assertNotIn("sdkwork-clawrouter-admin-api-server.workspace = true", gateway_manifest)
         self.assertIn("sdkwork_router_app_api::", gateway_runtime)
         self.assertIn("sdkwork_router_backend_api::", gateway_runtime)
-        self.assertNotIn("sdkwork_claw_app::", gateway_runtime)
-        self.assertNotIn("sdkwork_claw_admin::", gateway_runtime)
+        self.assertNotIn("sdkwork_clawrouter_app_api_server::", gateway_runtime)
+        self.assertNotIn("sdkwork_clawrouter_admin_api_server::", gateway_runtime)
 
     def test_gateway_embeds_claw_api_route_crates_inside_sdkwork_api_gateway(self) -> None:
-        gateway_runtime = (ROOT / "services" / "sdkwork-claw-gateway" / "src" / "runtime.rs").read_text(
+        gateway_runtime = (ROOT / "services" / "sdkwork-clawrouter-gateway" / "src" / "runtime.rs").read_text(
             encoding="utf-8",
         )
-        edge_server = (ROOT / "services" / "sdkwork-claw-gateway" / "src" / "edge_server.rs").read_text(
+        edge_server = (ROOT / "services" / "sdkwork-clawrouter-gateway" / "src" / "edge_server.rs").read_text(
             encoding="utf-8",
         )
 

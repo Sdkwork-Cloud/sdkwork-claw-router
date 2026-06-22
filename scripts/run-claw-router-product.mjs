@@ -5,6 +5,7 @@ import { existsSync } from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { ensureClawRouterBrowserDevelopmentEnv, ensureClawRouterBrowserProductionEnv } from './dev/claw-router-application-env.mjs';
 import {
   resolveDefaultDevEnvFilePath,
   resolveWorkspaceDevDatabaseEnv,
@@ -65,6 +66,28 @@ function portalDependenciesAreReady(absoluteDir) {
   }
 
   return portalCommandShimCandidates(absoluteDir).some((candidate) => existsSync(candidate));
+}
+
+function resolveProductLaunchEnv({
+  mode,
+  workspaceRoot,
+  baseLaunchEnv,
+}) {
+  if (mode === 'check') {
+    ensureClawRouterBrowserProductionEnv({
+      workspaceRoot,
+      env: baseLaunchEnv,
+    });
+    return baseLaunchEnv;
+  }
+
+  return {
+    ...baseLaunchEnv,
+    ...ensureClawRouterBrowserDevelopmentEnv({
+      workspaceRoot,
+      env: baseLaunchEnv,
+    }).mergedEnv,
+  };
 }
 
 export function parseClawRouterProductArgs(argv) {
@@ -201,9 +224,14 @@ export function createClawRouterProductLaunchPlan({
   const shell = shellForPnpm(platform);
   const nodeCommand = process.execPath;
   const plan = [];
-  const launchEnv = mode === 'client' || mode === 'desktop'
+  const baseLaunchEnv = mode === 'client' || mode === 'desktop'
     ? { ...env }
     : resolveLaunchEnv({ env, workspaceRoot, devEnvFile, extraArgs });
+  const launchEnv = resolveProductLaunchEnv({
+    mode,
+    workspaceRoot,
+    baseLaunchEnv,
+  });
 
   for (const relativeDir of installCandidatesForMode(mode)) {
     const absoluteDir = path.join(workspaceRoot, relativeDir);

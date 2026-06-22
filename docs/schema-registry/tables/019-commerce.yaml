@@ -109,8 +109,9 @@ tables:
   source_tables:
   - ai_usage_fact
   - commerce_usage_settlement
-  - commerce_account_ledger_entry
-  - commerce_invoice
+  source_refs:
+  - sdkwork-commerce:commerce_account_ledger_entry
+  - sdkwork-commerce:commerce_invoice
   projection_policy:
     does_not_replace: []
     purpose: usage_billing_statement_read_model_only

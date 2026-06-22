@@ -32,6 +32,28 @@ class ClawRouterOpenApiGenerator:
         "app": "clawrouter-app-openapi.json",
         "backend": "clawrouter-backend-openapi.json",
     }
+    MODELS_CATALOG_OUTPUTS = {
+        "app": "clawrouter-models-catalog-app-openapi.json",
+        "backend": "clawrouter-models-catalog-backend-openapi.json",
+    }
+    MODELS_CATALOG_SOURCE_MARKERS = (
+        "data/sdkwork-models/",
+        "sdkwork-models-pc-admin-catalog",
+        "sdkwork-models-pc-admin-resource",
+    )
+    MODELS_CATALOG_APP_PATHS = {
+        "/app/v3/api/ai/models",
+        "/app/v3/api/ai/model_vendors",
+        "/app/v3/api/ai/model_rankings",
+    }
+    MODELS_CATALOG_BACKEND_PATH_PREFIXES = (
+        "/backend/v3/api/ai/model_vendors",
+        "/backend/v3/api/ai/models",
+        "/backend/v3/api/ai/model_mappings",
+        "/backend/v3/api/ai/model_rankings",
+        "/backend/v3/api/ai/resources",
+        "/backend/v3/api/ai/resource_groups",
+    )
     TITLES = {
         "app": "SDKWork Claw Router App API",
         "backend": "SDKWork Claw Router Backend API",
@@ -149,6 +171,117 @@ class ClawRouterOpenApiGenerator:
     def render_json(self, surface: str) -> str:
         return json.dumps(self.generate(surface), ensure_ascii=False, indent=2, sort_keys=True) + "\n"
 
+    def _is_models_catalog_operation(self, operation: dict[str, Any], surface: str) -> bool:
+        source = self._string(operation.get("source")).replace("\\", "/")
+        api_path = self._string(operation.get("api_path"))
+        if any(marker in source for marker in self.MODELS_CATALOG_SOURCE_MARKERS):
+            return True
+        if surface == "app" and api_path in self.MODELS_CATALOG_APP_PATHS:
+            return True
+        if surface == "backend" and any(
+            api_path == prefix or api_path.startswith(f"{prefix}/")
+            for prefix in self.MODELS_CATALOG_BACKEND_PATH_PREFIXES
+        ):
+            return True
+        return False
+
+    def _dedupe_models_catalog_operations(self, operations: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        selected: dict[tuple[str, str], dict[str, Any]] = {}
+        for operation in operations:
+            api_path = self._string(operation.get("api_path"))
+            method = self._string(operation.get("api_method")).upper()
+            if not api_path or not method:
+                continue
+            key = (api_path, method)
+            source = self._string(operation.get("source")).replace("\\", "/")
+            current = selected.get(key)
+            if current is None:
+                selected[key] = operation
+                continue
+            current_source = self._string(current.get("source")).replace("\\", "/")
+            current_is_models = any(marker in current_source for marker in self.MODELS_CATALOG_SOURCE_MARKERS)
+            next_is_models = any(marker in source for marker in self.MODELS_CATALOG_SOURCE_MARKERS)
+            if next_is_models and not current_is_models:
+                selected[key] = operation
+        return list(selected.values())
+
+    def generate_models_catalog(self, surface: str) -> dict[str, Any]:
+        if surface not in self.SURFACES:
+            raise ValueError(f"unsupported OpenAPI surface: {surface}")
+        manifest = self._load_manifest()
+        boundary = self._boundary(manifest, surface)
+        operations = self._dedupe_models_catalog_operations(
+            [
+                operation
+                for operation in manifest.get("operations", [])
+                if isinstance(operation, dict)
+                and operation.get("api_surface") == surface
+                and self._is_models_catalog_operation(operation, surface)
+            ]
+        )
+        operations.sort(
+            key=lambda item: (
+                self._string(item.get("api_path")),
+                self._string(item.get("api_method")),
+                self._string(item.get("operation")),
+            )
+        )
+        operation_ids = self._operation_ids(operations)
+        schema_components = self._schema_component_schemas()
+
+        paths: dict[str, Any] = {}
+        for operation in operations:
+            api_path = self._string(operation.get("api_path"))
+            method = self._string(operation.get("api_method")).lower()
+            if not api_path or not method:
+                continue
+            operation_spec = self._operation_spec(
+                operation,
+                operation_ids[id(operation)],
+                schema_components,
+            )
+            operation_spec["x-sdkwork-owner"] = "sdkwork-models"
+            operation_spec["x-sdkwork-api-authority"] = (
+                "sdkwork-models-app-api" if surface == "app" else "sdkwork-models-backend-api"
+            )
+            operation_spec["x-sdkwork-source-route-crate"] = (
+                "sdkwork-router-catalog-app-api" if surface == "app" else "sdkwork-router-catalog-backend-api"
+            )
+            paths.setdefault(api_path, {})[method] = operation_spec
+
+        components = self._components(operations, operation_ids, schema_components)
+        self._normalize_component_schemas(components)
+
+        return {
+            "openapi": "3.1.2",
+            "jsonSchemaDialect": "https://json-schema.org/draft/2020-12/schema",
+            "info": {
+                "title": (
+                    "SDKWork Models App API"
+                    if surface == "app"
+                    else "SDKWork Models Backend API"
+                ),
+                "version": self._version(manifest),
+                "description": (
+                    "Composed intelligence catalog mount surface extracted from "
+                    "generated/api/api-contract-manifest.json for sdkwork-models authority."
+                ),
+            },
+            "servers": [{"url": self.SERVERS[surface], "description": f"Local {surface} API server"}],
+            "security": [{"AuthToken": [], "AccessToken": []}],
+            "tags": self._tags(operations),
+            "x-sdk-client": boundary["sdk_client"],
+            "x-sdk-family": (
+                "sdkwork-models-app-sdk" if surface == "app" else "sdkwork-models-backend-sdk"
+            ),
+            "x-api-prefix": boundary["api_prefix"],
+            "paths": paths,
+            "components": components,
+        }
+
+    def render_models_catalog_json(self, surface: str) -> str:
+        return json.dumps(self.generate_models_catalog(surface), ensure_ascii=False, indent=2, sort_keys=True) + "\n"
+
     def write(self) -> dict[str, Path]:
         self.output_dir.mkdir(parents=True, exist_ok=True)
         outputs: dict[str, Path] = {}
@@ -156,6 +289,13 @@ class ClawRouterOpenApiGenerator:
             output = self.output_path(surface)
             output.write_text(self.render_json(surface), encoding="utf-8", newline="\n")
             outputs[surface] = output
+            models_catalog_output = self.models_catalog_output_path(surface)
+            models_catalog_output.write_text(
+                self.render_models_catalog_json(surface),
+                encoding="utf-8",
+                newline="\n",
+            )
+            outputs[f"models-catalog-{surface}"] = models_catalog_output
         return outputs
 
     def check(self) -> ClawRouterOpenApiCheckResult:
@@ -170,6 +310,18 @@ class ClawRouterOpenApiGenerator:
                 actual = output.read_text(encoding="utf-8")
                 if actual != expected:
                     messages.append(f"clawrouter {surface} OpenAPI spec is stale: {output}")
+                models_catalog_output = self.models_catalog_output_path(surface)
+                models_catalog_expected = self.render_models_catalog_json(surface)
+                if not models_catalog_output.exists():
+                    messages.append(
+                        f"clawrouter models catalog {surface} OpenAPI spec is missing: {models_catalog_output}"
+                    )
+                    continue
+                models_catalog_actual = models_catalog_output.read_text(encoding="utf-8")
+                if models_catalog_actual != models_catalog_expected:
+                    messages.append(
+                        f"clawrouter models catalog {surface} OpenAPI spec is stale: {models_catalog_output}"
+                    )
         except (OSError, ValueError, json.JSONDecodeError) as exc:
             messages.append(str(exc))
         return ClawRouterOpenApiCheckResult(ok=not messages, messages=messages)
@@ -178,6 +330,11 @@ class ClawRouterOpenApiGenerator:
         if surface not in self.OUTPUTS:
             raise ValueError(f"unsupported OpenAPI surface: {surface}")
         return self.output_dir / self.OUTPUTS[surface]
+
+    def models_catalog_output_path(self, surface: str) -> Path:
+        if surface not in self.MODELS_CATALOG_OUTPUTS:
+            raise ValueError(f"unsupported OpenAPI surface: {surface}")
+        return self.output_dir / self.MODELS_CATALOG_OUTPUTS[surface]
 
     def _operation_spec(
         self,

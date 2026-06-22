@@ -1,7 +1,7 @@
 import { appApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { ChannelGroupsListResult, DashboardOverviewRetrieveResult, GatewayTracesListResult, ModelRankingsListResult, ModelsListResult, ModelVendorsListResult, RoutingApiKeysListResult, RoutingChannelsListResult, RoutingRequestTracesListResult, RoutingUsageListResult, UsageLogsListResult } from '../types';
+import type { ChannelGroupsListResult, DashboardOverviewRetrieveResult, GatewayTracesListResult, RoutingApiKeysListResult, RoutingChannelsListResult, RoutingRequestTracesListResult, RoutingUsageListResult, UsageLogsListResult } from '../types';
 
 
 export interface AiUsageLogsListParams {
@@ -119,86 +119,6 @@ export class AiRoutingApi {
 
 }
 
-export interface AiModelsListParams {
-  billingMeter?: string;
-  vendorCode?: string;
-  vendorCodes?: string[];
-  modalities?: string[];
-  capabilities?: string[];
-  categories?: string[];
-  groups?: string[];
-  q?: string;
-  limit?: string;
-}
-
-export class AiModelsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** List models */
-  async list(params?: AiModelsListParams): Promise<ModelsListResult> {
-    const query = buildQueryString([
-      { name: 'billing_meter', value: params?.billingMeter, style: 'form', explode: true, allowReserved: false },
-      { name: 'vendor_code', value: params?.vendorCode, style: 'form', explode: true, allowReserved: false },
-      { name: 'vendor_codes', value: params?.vendorCodes, style: 'form', explode: false, allowReserved: false },
-      { name: 'modalities', value: params?.modalities, style: 'form', explode: false, allowReserved: false },
-      { name: 'capabilities', value: params?.capabilities, style: 'form', explode: false, allowReserved: false },
-      { name: 'categories', value: params?.categories, style: 'form', explode: false, allowReserved: false },
-      { name: 'groups', value: params?.groups, style: 'form', explode: false, allowReserved: false },
-      { name: 'q', value: params?.q, style: 'form', explode: true, allowReserved: false },
-      { name: 'limit', value: params?.limit, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<ModelsListResult>(appendQueryString(appApiPath(`/ai/models`), query));
-  }
-}
-
-export class AiModelVendorsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** List ranking vendor filters */
-  async list(): Promise<ModelVendorsListResult> {
-    return this.client.get<ModelVendorsListResult>(appApiPath(`/ai/model_vendors`));
-  }
-}
-
-export interface AiModelRankingsListParams {
-  rankScope?: string;
-  vendorCode?: string;
-  modality?: string;
-  q?: string;
-  limit?: string;
-}
-
-export class AiModelRankingsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** List model rankings */
-  async list(params?: AiModelRankingsListParams): Promise<ModelRankingsListResult> {
-    const query = buildQueryString([
-      { name: 'rank_scope', value: params?.rankScope, style: 'form', explode: true, allowReserved: false },
-      { name: 'vendor_code', value: params?.vendorCode, style: 'form', explode: true, allowReserved: false },
-      { name: 'modality', value: params?.modality, style: 'form', explode: true, allowReserved: false },
-      { name: 'q', value: params?.q, style: 'form', explode: true, allowReserved: false },
-      { name: 'limit', value: params?.limit, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<ModelRankingsListResult>(appendQueryString(appApiPath(`/ai/model_rankings`), query));
-  }
-}
-
 export class AiGatewayTracesApi {
   private client: HttpClient;
 
@@ -279,9 +199,6 @@ export class AiApi {
   public readonly channelGroups: AiChannelGroupsApi;
   public readonly dashboard: AiDashboardApi;
   public readonly gateway: AiGatewayApi;
-  public readonly modelRankings: AiModelRankingsApi;
-  public readonly modelVendors: AiModelVendorsApi;
-  public readonly models: AiModelsApi;
   public readonly routing: AiRoutingApi;
   public readonly usage: AiUsageApi;
 
@@ -290,9 +207,6 @@ export class AiApi {
     this.channelGroups = new AiChannelGroupsApi(client);
     this.dashboard = new AiDashboardApi(client);
     this.gateway = new AiGatewayApi(client);
-    this.modelRankings = new AiModelRankingsApi(client);
-    this.modelVendors = new AiModelVendorsApi(client);
-    this.models = new AiModelsApi(client);
     this.routing = new AiRoutingApi(client);
     this.usage = new AiUsageApi(client);
   }

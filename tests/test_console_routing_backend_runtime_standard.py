@@ -8,13 +8,13 @@ ROOT = Path(__file__).resolve().parents[1]
 class ConsoleRoutingBackendRuntimeStandardTest(unittest.TestCase):
     def test_console_routing_operations_are_backed_by_real_app_api_router(self) -> None:
         product_api_mod = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "mod.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "mod.rs"
         ).read_text(encoding="utf-8")
-        app_api = (ROOT / "services" / "sdkwork-claw-app" / "src" / "lib.rs").read_text(
+        app_api = (ROOT / "services" / "sdkwork-clawrouter-app-api-server" / "src" / "lib.rs").read_text(
             encoding="utf-8"
         )
         app_routing_path = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_routing.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "app_routing.rs"
         )
 
         self.assertTrue(app_routing_path.exists())
@@ -49,12 +49,12 @@ class ConsoleRoutingBackendRuntimeStandardTest(unittest.TestCase):
 
     def test_console_routing_port_exposes_typed_frontend_models_without_mock_data(self) -> None:
         ports_mod = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "mod.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "ports" / "mod.rs"
         ).read_text(encoding="utf-8")
         port_path = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "ports"
             / "app_routing_read_store.rs"
@@ -97,11 +97,11 @@ class ConsoleRoutingBackendRuntimeStandardTest(unittest.TestCase):
     def test_console_routing_sql_read_stores_use_real_tables_and_subject_scope(self) -> None:
         for relative, store_name in [
             (
-                "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/app_routing_read_store.rs",
+                "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/app_routing_read_store.rs",
                 "SqliteAppRoutingReadStore",
             ),
             (
-                "services/sdkwork-claw-product/src/infrastructure/sql/postgres/app_routing_read_store.rs",
+                "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/app_routing_read_store.rs",
                 "PostgresAppRoutingReadStore",
             ),
         ]:
@@ -143,11 +143,11 @@ class ConsoleRoutingBackendRuntimeStandardTest(unittest.TestCase):
     def test_console_routing_strategy_write_store_uses_versioned_profiles_and_safe_rule_codes(self) -> None:
         for relative, store_name in [
             (
-                "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/app_routing_strategy_store.rs",
+                "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/app_routing_strategy_store.rs",
                 "SqliteAppRoutingStrategyStore",
             ),
             (
-                "services/sdkwork-claw-product/src/infrastructure/sql/postgres/app_routing_strategy_store.rs",
+                "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/app_routing_strategy_store.rs",
                 "PostgresAppRoutingStrategyStore",
             ),
         ]:
@@ -168,8 +168,8 @@ class ConsoleRoutingBackendRuntimeStandardTest(unittest.TestCase):
 
     def test_console_routing_strategy_read_model_rejects_missing_or_unknown_strategy_codes(self) -> None:
         for relative in [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/app_routing_strategy_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/app_routing_strategy_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/app_routing_strategy_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/app_routing_strategy_store.rs",
         ]:
             store_path = ROOT / relative
             self.assertTrue(store_path.exists())
@@ -198,7 +198,7 @@ class ConsoleRoutingBackendRuntimeStandardTest(unittest.TestCase):
         port = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "ports"
             / "app_routing_strategy_store.rs"
@@ -208,8 +208,8 @@ class ConsoleRoutingBackendRuntimeStandardTest(unittest.TestCase):
 
     def test_console_routing_strategy_mapping_rules_fail_closed_for_malformed_rows(self) -> None:
         for relative in [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/app_routing_strategy_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/app_routing_strategy_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/app_routing_strategy_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/app_routing_strategy_store.rs",
         ]:
             store_path = ROOT / relative
             self.assertTrue(store_path.exists())
@@ -242,18 +242,18 @@ class ConsoleRoutingBackendRuntimeStandardTest(unittest.TestCase):
 
     def test_console_routing_channel_commands_are_real_app_api_and_store_backed(self) -> None:
         product_api_mod = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "mod.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "mod.rs"
         ).read_text(encoding="utf-8")
         ports_mod = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "mod.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "ports" / "mod.rs"
         ).read_text(encoding="utf-8")
-        app_api = (ROOT / "services" / "sdkwork-claw-app" / "src" / "lib.rs").read_text(
+        app_api = (ROOT / "services" / "sdkwork-clawrouter-app-api-server" / "src" / "lib.rs").read_text(
             encoding="utf-8"
         )
         router_path = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "api"
             / "app_routing_channel_command.rs"
@@ -261,7 +261,7 @@ class ConsoleRoutingBackendRuntimeStandardTest(unittest.TestCase):
         port_path = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "ports"
             / "app_routing_channel_command_store.rs"
@@ -314,11 +314,11 @@ class ConsoleRoutingBackendRuntimeStandardTest(unittest.TestCase):
     def test_console_routing_channel_sql_command_stores_use_real_tables_scope_and_safe_secret_refs(self) -> None:
         for relative, store_name in [
             (
-                "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/app_routing_channel_command_store.rs",
+                "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/app_routing_channel_command_store.rs",
                 "SqliteAppRoutingChannelCommandStore",
             ),
             (
-                "services/sdkwork-claw-product/src/infrastructure/sql/postgres/app_routing_channel_command_store.rs",
+                "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/app_routing_channel_command_store.rs",
                 "PostgresAppRoutingChannelCommandStore",
             ),
         ]:

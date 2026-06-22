@@ -1,8 +1,6 @@
 use sqlx::{PgPool, Row};
 
-
-
-use crate::error::{RepositoryError, RepositoryResult, row_error, store_error};
+use crate::error::{row_error, store_error, RepositoryError, RepositoryResult};
 use crate::types::{
     AdminMonitorAlert, AdminMonitorNode, AdminMonitorPerformanceDatum, AdminMonitorQuery,
     AdminMonitorReadFuture, AdminMonitorReadStore,
@@ -177,7 +175,9 @@ fn alert_from_row(row: sqlx::postgres::PgRow) -> RepositoryResult<AdminMonitorAl
     })
 }
 
-fn performance_from_row(row: sqlx::postgres::PgRow) -> RepositoryResult<AdminMonitorPerformanceDatum> {
+fn performance_from_row(
+    row: sqlx::postgres::PgRow,
+) -> RepositoryResult<AdminMonitorPerformanceDatum> {
     let period_start = row
         .try_get::<String, _>("period_start")
         .map_err(row_error)?;

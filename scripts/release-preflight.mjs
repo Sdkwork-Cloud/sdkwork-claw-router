@@ -166,6 +166,28 @@ function releaseEnvironmentIssues(env) {
     issues.push('PORTAL_PUBLIC_TOOL_API_ENABLED must be true or false');
   }
 
+  for (const name of [
+    'SDKWORK_CLAW_TOOL_API_RATE_LIMIT_REQUESTS',
+    'SDKWORK_CLAW_TOOL_API_RATE_LIMIT_WINDOW_SECONDS',
+  ]) {
+    const value = String(env[name] ?? '').trim();
+    if (value && !/^[1-9]\d*$/u.test(value)) {
+      issues.push(`${name} must be a positive integer`);
+    }
+  }
+
+  const generatorBaseUrl = String(env.SDKWORK_CLAW_TOOL_API_SDK_GENERATOR_BASE_URL ?? '').trim();
+  if (generatorBaseUrl) {
+    try {
+      const parsed = new URL(generatorBaseUrl);
+      if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') {
+        issues.push('SDKWORK_CLAW_TOOL_API_SDK_GENERATOR_BASE_URL must be an HTTP or HTTPS URL');
+      }
+    } catch {
+      issues.push('SDKWORK_CLAW_TOOL_API_SDK_GENERATOR_BASE_URL must be an HTTP or HTTPS URL');
+    }
+  }
+
   return issues;
 }
 
@@ -577,7 +599,7 @@ function buildReleasePreflightReport({
   }
 
   const missingReleaseEnv = missingEnv(env, REQUIRED_RELEASE_ENV);
-  const envFileLabel = settings.envFile || RELEASE_ENVIRONMENT_CONTRACT.localFile;
+  const envFileLabel = settings.envFile || RELEASE_ENVIRONMENT_CONTRACT.profileFile;
   const contractIssues = releaseEnvironmentIssues(env);
   checks.push(createCheck(
     'env.releaseContract',
@@ -586,7 +608,7 @@ function buildReleasePreflightReport({
     contractIssues.length === 0
       ? `release environment contract v${RELEASE_ENVIRONMENT_CONTRACT.version} is satisfied; env file: ${envFileLabel}`
       : `${contractIssues.join('; ')}; use ${RELEASE_ENVIRONMENT_CONTRACT.exampleFile} as the reference template and run pnpm.cmd release:env:write from release host process environment`,
-    `Run pnpm.cmd release:env:write -- --check, then pnpm.cmd release:env:write, then release preflight with --env-file ${RELEASE_ENVIRONMENT_CONTRACT.localFile}.`,
+    `Run pnpm.cmd release:env:write -- --check, then pnpm.cmd release:env:write, then release preflight with --env-file ${RELEASE_ENVIRONMENT_CONTRACT.profileFile}.`,
   ));
 
   checks.push(createCheck(

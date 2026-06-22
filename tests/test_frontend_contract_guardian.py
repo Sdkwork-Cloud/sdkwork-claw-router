@@ -686,7 +686,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 {
                   "scripts": {
                     "dev": "node --experimental-strip-types server.ts",
-                    "browser:dev": "node --experimental-strip-types server.ts",
+                    "dev:browser": "node --experimental-strip-types server.ts",
                     "build": "vite build && node scripts/build-server.mjs",
                     "start": "node dist/server.mjs"
                   }
@@ -702,7 +702,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 result.messages,
             )
             self.assertIn(
-                "portal dev and browser:dev scripts must run Vite directly with native config loading",
+                "portal dev and dev:browser scripts must run Vite directly with native config loading",
                 result.messages,
             )
 
@@ -718,7 +718,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 {
                   "scripts": {
                     "dev": "vite",
-                    "browser:dev": "vite",
+                    "dev:browser": "vite",
                     "build": "node scripts/build-portal.mjs"
                   }
                 }
@@ -757,7 +757,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 {
                   "scripts": {
                     "dev": "vite --configLoader native",
-                    "browser:dev": "vite --configLoader native",
+                    "dev:browser": "vite --configLoader native",
                     "build": "node scripts/build-portal.mjs",
                     "start": "node ../../scripts/start-claw-router-production.mjs"
                   }
@@ -3607,7 +3607,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 {
                   "scripts": {
                     "dev": "pnpm deps:check && vite --configLoader native",
-                    "browser:dev": "pnpm deps:check && vite --configLoader native",
+                    "dev:browser": "pnpm deps:check && vite --configLoader native",
                     "build": "vite build --configLoader native"
                   }
                 }
@@ -3617,7 +3617,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             result = FrontendContractGuardian(root=root).run()
 
             self.assertNotIn(
-                "portal dev and browser:dev scripts must run Vite directly with native config loading",
+                "portal dev and dev:browser scripts must run Vite directly with native config loading",
                 result.messages,
             )
 

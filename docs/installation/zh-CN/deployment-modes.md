@@ -126,7 +126,7 @@ Kubernetes 部署时建议：
 - 使用 ConfigMap 或挂载文件提供 `clawrouter.toml`。
 - 配置 readinessProbe 指向 `/readyz`。
 - 配置 livenessProbe 指向 `/healthz`。
-- 不把 `.env.release.local` bake 到镜像。
+- 不把 `.env.release` bake 到镜像。
 
 ## Source
 

@@ -18,11 +18,11 @@
 - Create: `data/categories/agent-skills/categories.json`
 - Create: `data/categories/mcp/categories.json`
 - Create: `data/categories/apps/categories.json`
-- Modify: `services/sdkwork-claw-product/src/api/admin_catalog.rs`
-- Modify: `services/sdkwork-claw-product/src/ports/admin_catalog_store.rs`
-- Modify: `services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_catalog_store.rs`
-- Modify: `services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_catalog_store.rs`
-- Modify: `services/sdkwork-claw-admin/tests/product_center_routes.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/api/admin_catalog.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/ports/admin_catalog_store.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/admin_catalog_store.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/admin_catalog_store.rs`
+- Modify: `services/sdkwork-clawrouter-admin-api-server/tests/product_center_routes.rs`
 - Modify: `docs/schema-registry/frontend-field-contracts/operations/backend-commerce-catalog.yaml`
 - Regenerate: `generated/api/api-contract-manifest.json`
 - Regenerate: `generated/openapi/clawrouter-backend-openapi.json`

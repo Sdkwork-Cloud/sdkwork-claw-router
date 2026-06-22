@@ -121,9 +121,9 @@ class ArchitectureStandardGuardian:
             relative_path="docs/02-??????.md",
             required_terms=(
                 "Rust-first",
-                "sdkwork-claw-gateway",
-                "sdkwork-claw-app",
-                "sdkwork-claw-admin",
+                "sdkwork-clawrouter-gateway",
+                "sdkwork-clawrouter-app-api-server",
+                "sdkwork-clawrouter-admin-api-server",
                 "/app/v3/api",
                 "/backend/v3/api",
                 "/v1",

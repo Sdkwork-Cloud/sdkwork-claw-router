@@ -11,9 +11,9 @@ class UsageLogsRuntimeStandardTest(unittest.TestCase):
             encoding="utf-8"
         )
         product_api_mod = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "mod.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "mod.rs"
         ).read_text(encoding="utf-8")
-        app_api = (ROOT / "services" / "sdkwork-claw-app" / "src" / "lib.rs").read_text(
+        app_api = (ROOT / "services" / "sdkwork-clawrouter-app-api-server" / "src" / "lib.rs").read_text(
             encoding="utf-8"
         )
 
@@ -25,7 +25,7 @@ class UsageLogsRuntimeStandardTest(unittest.TestCase):
         )
 
         self.assertTrue(
-            (ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_usage_logs.rs").exists()
+            (ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "app_usage_logs.rs").exists()
         )
         self.assertIn("app_usage_logs_router", product_api_mod)
         self.assertIn("app_usage_logs_router_with_read_store", product_api_mod)
@@ -38,13 +38,13 @@ class UsageLogsRuntimeStandardTest(unittest.TestCase):
 
     def test_usage_logs_api_validates_query_and_empty_runtime_returns_standard_page(self) -> None:
         app_usage_logs = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_usage_logs.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "app_usage_logs.rs"
         ).read_text(encoding="utf-8")
-        ports_mod = (ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "mod.rs").read_text(
+        ports_mod = (ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "ports" / "mod.rs").read_text(
             encoding="utf-8"
         )
         usage_port = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "usage_logs_read_store.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "ports" / "usage_logs_read_store.rs"
         ).read_text(encoding="utf-8")
 
         self.assertIn('"/app/v3/api/ai/usage/logs"', app_usage_logs)
@@ -73,8 +73,8 @@ class UsageLogsRuntimeStandardTest(unittest.TestCase):
 
     def test_usage_logs_read_stores_use_trace_usage_join_with_tenant_scope_and_pagination(self) -> None:
         for relative in [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/usage_logs_read_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/usage_logs_read_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/usage_logs_read_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/usage_logs_read_store.rs",
         ]:
             store = (ROOT / relative).read_text(encoding="utf-8")
             self.assertIn("FROM ai_request_trace", store)
@@ -102,8 +102,8 @@ class UsageLogsRuntimeStandardTest(unittest.TestCase):
 
     def test_usage_logs_read_models_reject_missing_or_invalid_trace_latency(self) -> None:
         for relative in [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/usage_logs_read_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/usage_logs_read_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/usage_logs_read_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/usage_logs_read_store.rs",
         ]:
             store = (ROOT / relative).read_text(encoding="utf-8")
             compact_store = " ".join(store.split())
@@ -123,8 +123,8 @@ class UsageLogsRuntimeStandardTest(unittest.TestCase):
 
     def test_usage_logs_read_models_do_not_default_missing_modality_to_text(self) -> None:
         for relative in [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/usage_logs_read_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/usage_logs_read_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/usage_logs_read_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/usage_logs_read_store.rs",
         ]:
             store = (ROOT / relative).read_text(encoding="utf-8")
             compact_store = " ".join(store.split())
@@ -135,7 +135,7 @@ class UsageLogsRuntimeStandardTest(unittest.TestCase):
         modality_helper = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"

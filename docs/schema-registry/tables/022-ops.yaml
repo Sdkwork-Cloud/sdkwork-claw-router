@@ -148,6 +148,16 @@ tables:
   - /admin/app
   - /admin/prompts
   - /admin/mcp
+  - /admin/messaging
+  - /admin/messaging/diagnostics
+  - /admin/messaging/providers
+  - /admin/messaging/rate-limits
+  - /admin/messaging/route-rules
+  - /admin/messaging/send-requests
+  - /admin/messaging/sender-identities
+  - /admin/messaging/suppressions
+  - /admin/messaging/templates
+  - /admin/messaging/verification-policies
   - /admin/channel
   - /admin/channel/resources
   - /admin/storage
@@ -496,7 +506,7 @@ tables:
         - ai_model
         - ai_model_rank_snapshot
       runtime_contract:
-        scheduler_owner: sdkwork-claw-app
+        scheduler_owner: sdkwork-clawrouter-app-api-server
         startup_policy:
           run_on_startup_default: true
           env: SDKWORK_CLAW_MODEL_RANKING_RUN_ON_STARTUP

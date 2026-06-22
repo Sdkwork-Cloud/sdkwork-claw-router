@@ -10,13 +10,13 @@ ROOT = Path(__file__).resolve().parents[1]
 class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
     def test_console_user_operation_is_backed_by_real_app_api_router(self) -> None:
         product_api_mod = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "mod.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "mod.rs"
         ).read_text(encoding="utf-8")
-        app_api = (ROOT / "services" / "sdkwork-claw-app" / "src" / "lib.rs").read_text(
+        app_api = (ROOT / "services" / "sdkwork-clawrouter-app-api-server" / "src" / "lib.rs").read_text(
             encoding="utf-8"
         )
         app_user_path = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_user_profile.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "app_user_profile.rs"
         )
 
         self.assertTrue(app_user_path.exists())
@@ -43,12 +43,12 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
 
     def test_console_user_port_exposes_only_safe_frontend_fields(self) -> None:
         ports_mod = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "mod.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "ports" / "mod.rs"
         ).read_text(encoding="utf-8")
         port_path = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "ports"
             / "app_user_profile_read_store.rs"
@@ -110,11 +110,11 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
     def test_console_user_sql_read_stores_use_real_tables_scope_and_safe_columns(self) -> None:
         for relative, store_name in [
             (
-                "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/app_user_profile_read_store.rs",
+                "crates/sdkwork-clawrouter-app-user-profile-repository-sqlx/src/sqlite.rs",
                 "SqliteAppUserProfileReadStore",
             ),
             (
-                "services/sdkwork-claw-product/src/infrastructure/sql/postgres/app_user_profile_read_store.rs",
+                "crates/sdkwork-clawrouter-app-user-profile-repository-sqlx/src/postgres.rs",
                 "PostgresAppUserProfileReadStore",
             ),
         ]:

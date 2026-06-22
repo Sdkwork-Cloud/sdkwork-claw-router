@@ -8,7 +8,6 @@ $toDelete = @(
   'sdkwork-clawrouter-pc-admin-inventory',
   'sdkwork-clawrouter-pc-admin-marketing',
   'sdkwork-clawrouter-pc-admin-memberships',
-  'sdkwork-clawrouter-pc-admin-messaging',
   'sdkwork-clawrouter-pc-admin-oauth',
   'sdkwork-clawrouter-pc-admin-orders',
   'sdkwork-clawrouter-pc-admin-payments',

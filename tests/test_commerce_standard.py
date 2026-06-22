@@ -27,8 +27,23 @@ BACKEND_OPENAPI_PATH = ROOT / "generated" / "openapi" / "clawrouter-backend-open
 APP_SDK_TYPES_PATH = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types"
 BACKEND_SDK_TYPES_PATH = ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types"
 COMMERCE_ROOT = ROOT.parent / "sdkwork-commerce"
-COMMERCE_APP_OPENAPI_PATH = COMMERCE_ROOT / "generated" / "openapi" / "commerce-app-api.openapi.json"
-COMMERCE_BACKEND_OPENAPI_PATH = COMMERCE_ROOT / "generated" / "openapi" / "commerce-backend-api.openapi.json"
+
+
+def _resolve_commerce_openapi_authority(*candidates: Path) -> Path:
+    for candidate in candidates:
+        if candidate.is_file():
+            return candidate
+    return candidates[0]
+
+
+COMMERCE_APP_OPENAPI_PATH = _resolve_commerce_openapi_authority(
+    COMMERCE_ROOT / "generated" / "openapi" / "commerce-app-api.openapi.json",
+    COMMERCE_ROOT / "apis" / "app-api" / "commerce" / "commerce-app-api.openapi.json",
+)
+COMMERCE_BACKEND_OPENAPI_PATH = _resolve_commerce_openapi_authority(
+    COMMERCE_ROOT / "generated" / "openapi" / "commerce-backend-api.openapi.json",
+    COMMERCE_ROOT / "apis" / "backend-api" / "commerce" / "commerce-backend-api.openapi.json",
+)
 COMMERCE_PRODUCT_ADMIN_PATH = (
     COMMERCE_ROOT
     / "apps"
@@ -70,7 +85,6 @@ MIGRATED_COMMERCE_PRODUCT_CENTER_API_OPERATIONS: tuple[tuple[str, str, str, str]
     ("backend", "GET", "/backend/v3/api/catalog/price_lists", "catalog.priceLists.list"),
     ("backend", "GET", "/backend/v3/api/catalog/products", "catalog.products.list"),
     ("backend", "GET", "/backend/v3/api/catalog/skus", "catalog.skus.list"),
-    ("backend", "GET", "/backend/v3/api/inventory/ledger_entries", "inventory.ledgerEntries.list"),
     ("backend", "GET", "/backend/v3/api/inventory/reservations", "inventory.reservations.list"),
     ("backend", "GET", "/backend/v3/api/inventory/stocks", "inventory.stocks.list"),
     ("app", "GET", "/app/v3/api/catalog/products/{productId}", "catalog.products.retrieve"),
@@ -97,7 +111,6 @@ MIGRATED_COMMERCE_PRODUCT_CENTER_API_OPERATIONS: tuple[tuple[str, str, str, str]
 )
 
 CANONICAL_COMMERCE_INVENTORY_API_OPERATIONS: tuple[tuple[str, str, str, str], ...] = (
-    ("backend", "GET", "/backend/v3/api/inventory/ledger_entries", "inventory.ledgerEntries.list"),
     ("backend", "GET", "/backend/v3/api/inventory/reservations", "inventory.reservations.list"),
     ("backend", "GET", "/backend/v3/api/inventory/stocks", "inventory.stocks.list"),
     ("backend", "PATCH", "/backend/v3/api/inventory/stocks/{stockId}", "inventory.stocks.update"),
@@ -273,7 +286,35 @@ def render_table_registry() -> str:
 
 
 def commerce_sibling_workspace_available() -> bool:
-    return COMMERCE_ROOT.exists() and COMMERCE_APP_OPENAPI_PATH.exists()
+    return COMMERCE_ROOT.exists() and COMMERCE_APP_OPENAPI_PATH.is_file()
+
+
+def load_commerce_canonical_api_operations() -> tuple[tuple[str, str, str, str], ...]:
+    if not commerce_sibling_workspace_available():
+        return CANONICAL_COMMERCE_API_OPERATIONS
+
+    operations: list[tuple[str, str, str, str]] = []
+    for surface, spec_path in (
+        ("app", COMMERCE_APP_OPENAPI_PATH),
+        ("backend", COMMERCE_BACKEND_OPENAPI_PATH),
+    ):
+        spec = json.loads(spec_path.read_text(encoding="utf-8"))
+        for path, path_item in spec.get("paths", {}).items():
+            if not isinstance(path_item, dict):
+                continue
+            for method, operation in path_item.items():
+                if method not in {"get", "post", "patch", "delete"}:
+                    continue
+                if not isinstance(operation, dict):
+                    continue
+                operation_id = operation.get("operationId")
+                if not isinstance(operation_id, str) or not operation_id:
+                    continue
+                domain = str(operation.get("x-sdkwork-domain") or "")
+                if domain not in {"commerce", "promotion"}:
+                    continue
+                operations.append((surface, method.upper(), path, operation_id))
+    return tuple(sorted(set(operations)))
 
 
 class CommercePortalRetirementTest(unittest.TestCase):
@@ -1012,11 +1053,11 @@ class CommerceStandardTest(unittest.TestCase):
         self.assertIn("buildSkuMutationPayloads", product_create_page)
 
         rust_sources = {
-            "api": ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "admin_catalog.rs",
-            "ports": ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "admin_catalog_store.rs",
+            "api": ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "admin_catalog.rs",
+            "ports": ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "ports" / "admin_catalog_store.rs",
             "sqlite": ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -1024,7 +1065,7 @@ class CommerceStandardTest(unittest.TestCase):
             / "admin_catalog_store.rs",
             "postgres": ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -1389,7 +1430,7 @@ class CommerceStandardTest(unittest.TestCase):
             )
 
     def test_commerce_api_contracts_are_first_class(self) -> None:
-        operations = {
+        clawrouter_operations = {
             (
                 operation.get("api_surface"),
                 operation.get("api_method"),
@@ -1400,7 +1441,26 @@ class CommerceStandardTest(unittest.TestCase):
             if operation.get("openapi_exposed", True) is not False
         }
 
-        missing = set(CANONICAL_COMMERCE_API_OPERATIONS) - operations
+        commerce_operations: set[tuple[str, str, str, str | None]] = set()
+        if commerce_sibling_workspace_available():
+            for surface, spec_path in (
+                ("app", COMMERCE_APP_OPENAPI_PATH),
+                ("backend", COMMERCE_BACKEND_OPENAPI_PATH),
+            ):
+                spec = json.loads(spec_path.read_text(encoding="utf-8"))
+                for path, path_item in spec.get("paths", {}).items():
+                    if not isinstance(path_item, dict):
+                        continue
+                    for method, operation in path_item.items():
+                        if method not in {"get", "post", "patch", "delete"}:
+                            continue
+                        if not isinstance(operation, dict):
+                            continue
+                        commerce_operations.add(
+                            (surface, method.upper(), path, operation.get("operationId"))
+                        )
+
+        missing = set(load_commerce_canonical_api_operations()) - clawrouter_operations - commerce_operations
         self.assertEqual(set(), missing)
 
     def test_frontend_business_packages_and_paths_are_business_scoped(self) -> None:

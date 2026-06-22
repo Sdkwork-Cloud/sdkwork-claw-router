@@ -1,6 +1,6 @@
 import {
   ensureSdkworkApiSuccess,
-  getClawRouterAppSdkClient,
+  getModelsAppSdkClient,
   isRecord,
   readApiRecord,
   readBoolean,
@@ -40,7 +40,7 @@ export interface RankingServiceFilters {
 
 export class RankingService {
   static async fetchModelRankings(filters: RankingServiceFilters = {}): Promise<RuntimeRankingSnapshot> {
-    const result = await getClawRouterAppSdkClient().ai.modelRankings.list({
+    const result = await getModelsAppSdkClient().ai.modelRankings.list({
       rankScope: normalizeQueryString(filters.rankScope),
       vendorCode: normalizeQueryString(filters.vendorCode),
       modality: normalizeQueryString(filters.modality),
@@ -61,7 +61,7 @@ export class RankingService {
   }
 
   static async fetchModelVendors(): Promise<RankingVendorOption[]> {
-    const result = await getClawRouterAppSdkClient().ai.modelVendors.list();
+    const result = await getModelsAppSdkClient().ai.modelVendors.list();
     ensureSdkworkApiSuccess(result, 'Failed to fetch ranking model vendors');
 
     return readRequiredApiItems(result, 'Failed to fetch ranking model vendors')

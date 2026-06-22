@@ -243,6 +243,29 @@ function buildSdkRuntimeBuildPlan(env = process.env) {
   ];
 }
 
+function buildApplicationEnvVerificationPlan(env = process.env) {
+  return [
+    {
+      label: 'application env standard check',
+      command: pnpmCommand(),
+      args: ['check:application-env'],
+      env,
+    },
+    {
+      label: 'application env unit tests',
+      command: 'node',
+      args: [
+        '--test',
+        'scripts/dev/claw-router-application-env.test.mjs',
+        'scripts/dev/ensure-claw-router-env.test.mjs',
+        'scripts/lib/claw-router-browser-env-contract.test.mjs',
+        'scripts/lib/claw-router-edge-env-contract.test.mjs',
+      ],
+      env,
+    },
+  ];
+}
+
 function buildFastVerificationPlan(env = process.env) {
   return [
     {
@@ -287,6 +310,7 @@ function buildFastVerificationPlan(env = process.env) {
       args: ['check:pnpm-script-standard'],
       env,
     },
+    ...buildApplicationEnvVerificationPlan(env),
     ...buildTopologyVerificationPlan(env),
     {
       label: 'tooling contract tests',
@@ -354,6 +378,7 @@ function buildPrecommitVerificationPlan(env = process.env) {
       args: ['check:pnpm-script-standard'],
       env,
     },
+    ...buildApplicationEnvVerificationPlan(env),
     ...buildTopologyVerificationPlan(env),
     {
       label: 'tooling contract tests',
@@ -426,6 +451,7 @@ function buildVerificationPlan(settings, env = process.env) {
       args: ['check:pnpm-script-standard'],
       env,
     },
+    ...buildApplicationEnvVerificationPlan(env),
     ...buildTopologyVerificationPlan(env),
     {
       label: 'tooling contract tests',
@@ -480,7 +506,7 @@ function buildVerificationPlan(settings, env = process.env) {
   plan.push({
     label: 'portal production edge smoke',
     command: 'cargo',
-    args: ['test', '-p', 'sdkwork-claw-gateway', '--test', 'edge_server', 'edge_server_can_serve_portal_dist_without_node_server'],
+    args: ['test', '-p', 'sdkwork-clawrouter-gateway', '--test', 'edge_server', 'edge_server_can_serve_portal_dist_without_node_server'],
     env: rustEnv,
   });
   plan.push({
@@ -622,9 +648,21 @@ function buildVerificationPlan(settings, env = process.env) {
     env,
   });
   plan.push({
+    label: 'portal admin marketing runtime tests',
+    command: 'node',
+    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/admin-marketing-runtime.test.ts'],
+    env,
+  });
+  plan.push({
     label: 'portal admin operations runtime tests',
     command: 'node',
     args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/admin-operations-runtime.test.ts'],
+    env,
+  });
+  plan.push({
+    label: 'portal admin announcement runtime tests',
+    command: 'node',
+    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/admin-announcement-runtime.test.ts'],
     env,
   });
   plan.push({
@@ -699,7 +737,9 @@ const PARALLEL_SAFE_LABELS = new Set([
   'portal admin user runtime tests',
   'portal admin model runtime tests',
   'portal admin ratelimit runtime tests',
+  'portal admin marketing runtime tests',
   'portal admin operations runtime tests',
+  'portal admin announcement runtime tests',
   'portal models SSR smoke tests',
 ]);
 

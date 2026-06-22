@@ -1,4 +1,6 @@
 import json
+import os
+import shutil
 import subprocess
 import unittest
 from pathlib import Path
@@ -8,10 +10,12 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 SDKWORK_MODELS = ROOT / "data" / "sdkwork-models"
+SDKWORK_MODELS_SDK = SDKWORK_MODELS / "sdks" / "sdkwork-models-sdk"
+CLIENT_API_SUPPORT_STATUSES = ("supported", "unsupported", "partial", "convert")
 RUST_INSTALLER_PATH = (
     ROOT
     / "services"
-    / "sdkwork-claw-product"
+    / "sdkwork-clawrouter-router-service"
     / "src"
     / "infrastructure"
     / "sql"
@@ -29,6 +33,55 @@ def load_json(path: Path) -> dict:
 
 def load_json_from_yaml(path: Path) -> dict:
     return yaml.safe_load(read_text(path))
+
+
+def lang_sdk(language: str) -> Path:
+    return SDKWORK_MODELS_SDK / f"sdkwork-models-sdk-{language}"
+
+
+def lang_sdk_rel(language: str, *parts: str) -> str:
+    return (Path("sdks/sdkwork-models-sdk") / f"sdkwork-models-sdk-{language}" / Path(*parts)).as_posix()
+
+
+def catalog_subprocess_env() -> dict[str, str]:
+    return os.environ.copy()
+
+
+CATALOG_TEMP_COPY_IGNORE = shutil.ignore_patterns(
+    "node_modules",
+    "sdks/sdkwork-models-sdk/sdkwork-models-sdk-typescript/dist",
+    "sdks/sdkwork-models-sdk/sdkwork-models-sdk-rust/target",
+    "sdks/sdkwork-models-sdk/sdkwork-models-sdk-java/target",
+    "target-codex",
+    "__pycache__",
+)
+
+
+def link_catalog_node_modules(temp_root: Path) -> None:
+    source = (SDKWORK_MODELS / "node_modules").resolve()
+    target = temp_root / "node_modules"
+    if not source.is_dir():
+        raise unittest.SkipTest("data/sdkwork-models node_modules missing; run pnpm install")
+    if target.exists():
+        return
+    if os.name == "nt":
+        completed = subprocess.run(
+            ["cmd", "/c", "mklink", "/J", str(target), str(source)],
+            text=True,
+            capture_output=True,
+        )
+        if completed.returncode != 0:
+            raise RuntimeError(
+                "failed to junction catalog node_modules: "
+                f"{completed.stdout}{completed.stderr}"
+            )
+        return
+    target.symlink_to(source, target_is_directory=True)
+
+
+def copy_catalog_workspace(temp_root: Path) -> None:
+    shutil.copytree(SDKWORK_MODELS, temp_root, ignore=CATALOG_TEMP_COPY_IGNORE)
+    link_catalog_node_modules(temp_root)
 
 
 def model_id_from_catalog_file(root: Path, file_path: Path) -> str:
@@ -131,47 +184,47 @@ class SdkworkModelsStandardTest(unittest.TestCase):
 
     def test_language_sdk_entrypoints_exist(self) -> None:
         expected = {
-            "sdkwork-models-typescript": [
+            "typescript": [
                 "README.md",
                 "package.json",
                 "tsconfig.json",
                 "src/index.ts",
             ],
-            "sdkwork-models-python": [
+            "python": [
                 "README.md",
                 "pyproject.toml",
                 "sdkwork_models/__init__.py",
             ],
-            "sdkwork-models-java": [
+            "java": [
                 "README.md",
                 "pom.xml",
                 "src/main/java/com/sdkwork/models/SdkworkModels.java",
             ],
-            "sdkwork-models-rust": [
+            "rust": [
                 "README.md",
                 "Cargo.toml",
                 "src/lib.rs",
             ],
-            "sdkwork-models-flutter": [
+            "flutter": [
                 "README.md",
                 "pubspec.yaml",
                 "lib/sdkwork_models.dart",
             ],
         }
-        for package, files in expected.items():
+        for language, files in expected.items():
             for rel in files:
-                path = SDKWORK_MODELS / package / rel
-                with self.subTest(path=f"{package}/{rel}"):
+                path = lang_sdk(language) / rel
+                with self.subTest(path=f"{language}/{rel}"):
                     self.assertTrue(path.exists(), str(path))
 
     def test_language_sdk_docs_use_standard_catalog_key_contract(self) -> None:
         readmes = [
             SDKWORK_MODELS / "README.md",
-            SDKWORK_MODELS / "sdkwork-models-typescript" / "README.md",
-            SDKWORK_MODELS / "sdkwork-models-python" / "README.md",
-            SDKWORK_MODELS / "sdkwork-models-java" / "README.md",
-            SDKWORK_MODELS / "sdkwork-models-rust" / "README.md",
-            SDKWORK_MODELS / "sdkwork-models-flutter" / "README.md",
+            lang_sdk("typescript") / "README.md",
+            lang_sdk("python") / "README.md",
+            lang_sdk("java") / "README.md",
+            lang_sdk("rust") / "README.md",
+            lang_sdk("flutter") / "README.md",
         ]
         forbidden = [
             "loadVendorCatalog(pathOrUrl, vendorCode)",
@@ -205,11 +258,11 @@ class SdkworkModelsStandardTest(unittest.TestCase):
     def test_language_sdk_docs_publish_complete_query_api_contract(self) -> None:
         readmes = [
             SDKWORK_MODELS / "README.md",
-            SDKWORK_MODELS / "sdkwork-models-typescript" / "README.md",
-            SDKWORK_MODELS / "sdkwork-models-python" / "README.md",
-            SDKWORK_MODELS / "sdkwork-models-java" / "README.md",
-            SDKWORK_MODELS / "sdkwork-models-rust" / "README.md",
-            SDKWORK_MODELS / "sdkwork-models-flutter" / "README.md",
+            lang_sdk("typescript") / "README.md",
+            lang_sdk("python") / "README.md",
+            lang_sdk("java") / "README.md",
+            lang_sdk("rust") / "README.md",
+            lang_sdk("flutter") / "README.md",
         ]
         common_tokens = [
             "vendorCode",
@@ -225,16 +278,16 @@ class SdkworkModelsStandardTest(unittest.TestCase):
         ]
         language_tokens = {
             "README.md": ["listMeters(catalog)", "findMeter(catalog, meterCode)"],
-            "sdkwork-models-typescript/README.md": ["listMeters(catalog)", "findMeter(catalog, meterCode)", "listAvailableModels(catalog)"],
-            "sdkwork-models-python/README.md": ["list_meters(catalog)", "find_meter(catalog, meter_code)", "list_available_models(catalog)"],
-            "sdkwork-models-java/README.md": [
+            lang_sdk_rel("typescript", "README.md"): ["listMeters(catalog)", "findMeter(catalog, meterCode)", "listAvailableModels(catalog)"],
+            lang_sdk_rel("python", "README.md"): ["list_meters(catalog)", "find_meter(catalog, meter_code)", "list_available_models(catalog)"],
+            lang_sdk_rel("java", "README.md"): [
                 "SdkworkModels.listModels(ModelCatalog catalog, Map<String, String> filter)",
                 "SdkworkModels.listAvailableModels(ModelCatalog catalog)",
                 "SdkworkModels.listMeters(ModelCatalog catalog)",
                 "SdkworkModels.findMeter(ModelCatalog catalog, String meterCode)",
             ],
-            "sdkwork-models-rust/README.md": ["list_meters(&catalog)", "find_meter(&catalog, meter_code)", "list_available_models(&catalog"],
-            "sdkwork-models-flutter/README.md": ["listMeters(catalog)", "findMeter(catalog, meterCode)", "listAvailableModels(catalog)"],
+            lang_sdk_rel("rust", "README.md"): ["list_meters(&catalog)", "find_meter(&catalog, meter_code)", "list_available_models(&catalog"],
+            lang_sdk_rel("flutter", "README.md"): ["listMeters(catalog)", "findMeter(catalog, meterCode)", "listAvailableModels(catalog)"],
         }
         for readme in readmes:
             rel = readme.relative_to(SDKWORK_MODELS).as_posix()
@@ -246,10 +299,9 @@ class SdkworkModelsStandardTest(unittest.TestCase):
     def test_language_sdk_query_api_uses_regionless_catalog_key(self) -> None:
         source_paths = [
             SDKWORK_MODELS / "tools" / "catalog-lib.mjs",
-            SDKWORK_MODELS / "sdkwork-models-typescript" / "src" / "query.ts",
-            SDKWORK_MODELS / "sdkwork-models-python" / "sdkwork_models" / "query.py",
-            SDKWORK_MODELS
-            / "sdkwork-models-java"
+            lang_sdk("typescript") / "src" / "query.ts",
+            lang_sdk("python") / "sdkwork_models" / "query.py",
+            lang_sdk("java")
             / "src"
             / "main"
             / "java"
@@ -257,8 +309,8 @@ class SdkworkModelsStandardTest(unittest.TestCase):
             / "sdkwork"
             / "models"
             / "ModelCatalogQuery.java",
-            SDKWORK_MODELS / "sdkwork-models-rust" / "src" / "query.rs",
-            SDKWORK_MODELS / "sdkwork-models-flutter" / "lib" / "src" / "query.dart",
+            lang_sdk("rust") / "src" / "query.rs",
+            lang_sdk("flutter") / "lib" / "src" / "query.dart",
         ]
 
         forbidden_signatures = [
@@ -292,22 +344,22 @@ class SdkworkModelsStandardTest(unittest.TestCase):
 
     def test_language_sdk_catalog_key_parser_splits_on_first_slash(self) -> None:
         source_forbidden_tokens = {
-            "sdkwork-models-typescript/src/query.ts": [
+            lang_sdk_rel("typescript", "src/query.ts"): [
                 "parts.length !== 2",
             ],
-            "sdkwork-models-python/sdkwork_models/query.py": [
+            lang_sdk_rel("python", "sdkwork_models/query.py"): [
                 "len(parts) != 2",
                 "catalog_key_value.split(\"/\")",
             ],
-            "sdkwork-models-java/src/main/java/com/sdkwork/models/ModelCatalogQuery.java": [
+            lang_sdk_rel("java", "src/main/java/com/sdkwork/models/ModelCatalogQuery.java"): [
                 "parts.length != 2",
                 "catalogKey.split(\"/\", -1)",
             ],
-            "sdkwork-models-rust/src/query.rs": [
+            lang_sdk_rel("rust", "src/query.rs"): [
                 "parts.next().is_some()",
                 "catalog_key.split('/')",
             ],
-            "sdkwork-models-flutter/lib/src/query.dart": [
+            lang_sdk_rel("flutter", "lib/src/query.dart"): [
                 "parts.length != 2",
                 "catalogKeyValue.split('/')",
             ],
@@ -420,22 +472,11 @@ class SdkworkModelsStandardTest(unittest.TestCase):
         )
 
     def test_catalog_tools_accept_slash_delimited_model_ids_as_safe_nested_paths(self) -> None:
-        import shutil
         import tempfile
 
         with tempfile.TemporaryDirectory() as temp_dir:
             temp_root = Path(temp_dir) / "sdkwork-models"
-            shutil.copytree(
-                SDKWORK_MODELS,
-                temp_root,
-                ignore=shutil.ignore_patterns(
-                    "sdkwork-models-typescript/dist",
-                    "sdkwork-models-rust/target",
-                    "sdkwork-models-java/target",
-                    "target-codex",
-                    "__pycache__",
-                ),
-            )
+            copy_catalog_workspace(temp_root)
             vendor_root = temp_root / "models" / "openrouter" / "global"
             model_dir = vendor_root / "models" / "anthropic"
             pricing_dir = vendor_root / "pricing" / "anthropic"
@@ -555,13 +596,18 @@ class SdkworkModelsStandardTest(unittest.TestCase):
                 cwd=temp_root,
                 text=True,
                 capture_output=True,
+                env=catalog_subprocess_env(),
             )
             validate_result = subprocess.run(
                 ["node", "tools/validate-catalog.mjs"],
                 cwd=temp_root,
                 text=True,
                 capture_output=True,
+                env=catalog_subprocess_env(),
             )
+
+            self.assertEqual(0, build_result.returncode, build_result.stdout + build_result.stderr)
+            self.assertEqual(0, validate_result.returncode, validate_result.stdout + validate_result.stderr)
 
             index = load_json(temp_root / "models" / "index.json")
             openrouter = next(
@@ -569,12 +615,9 @@ class SdkworkModelsStandardTest(unittest.TestCase):
                 for vendor in index["vendors"]
                 if vendor["vendorCode"] == "openrouter" and vendor["regionCode"] == "global"
             )
-
-        self.assertEqual(0, build_result.returncode, build_result.stdout + build_result.stderr)
-        self.assertEqual(0, validate_result.returncode, validate_result.stdout + validate_result.stderr)
-        self.assertIn("openrouter/global/models/anthropic/claude-3-opus.json", openrouter["modelFiles"])
-        self.assertIn("openrouter/global/pricing/anthropic/claude-3-opus.json", openrouter["pricingFiles"])
-        self.assertEqual("openrouter/", openrouter["catalogKeyPrefix"])
+            self.assertIn("openrouter/global/models/anthropic/claude-3-opus.json", openrouter["modelFiles"])
+            self.assertIn("openrouter/global/pricing/anthropic/claude-3-opus.json", openrouter["pricingFiles"])
+            self.assertEqual("openrouter/", openrouter["catalogKeyPrefix"])
 
     def test_official_snapshot_schema_defines_source_evidence_contract(self) -> None:
         schema = load_json(SDKWORK_MODELS / "schemas" / "official-model-snapshot.schema.json")
@@ -678,22 +721,11 @@ class SdkworkModelsStandardTest(unittest.TestCase):
         )
 
     def test_validator_reports_explicit_index_file_manifest_mismatch(self) -> None:
-        import shutil
         import tempfile
 
         with tempfile.TemporaryDirectory() as temp_dir:
             temp_root = Path(temp_dir) / "sdkwork-models"
-            shutil.copytree(
-                SDKWORK_MODELS,
-                temp_root,
-                ignore=shutil.ignore_patterns(
-                    "sdkwork-models-typescript/dist",
-                    "sdkwork-models-rust/target",
-                    "sdkwork-models-java/target",
-                    "target-codex",
-                    "__pycache__",
-                ),
-            )
+            copy_catalog_workspace(temp_root)
             index_path = temp_root / "models" / "index.json"
             index = load_json(index_path)
             target_vendor = next(vendor for vendor in index["vendors"] if vendor["modelFiles"])
@@ -711,12 +743,13 @@ class SdkworkModelsStandardTest(unittest.TestCase):
                 cwd=temp_root,
                 text=True,
                 capture_output=True,
+                env=catalog_subprocess_env(),
             )
 
-        self.assertEqual(0, result.returncode, result.stdout + result.stderr)
-        report = json.loads(result.stdout)
-        issue_codes = {issue["code"] for issue in report["issues"]}
-        self.assertIn("index.model_files.mismatch", issue_codes)
+            self.assertEqual(0, result.returncode, result.stdout + result.stderr)
+            report = json.loads(result.stdout)
+            issue_codes = {issue["code"] for issue in report["issues"]}
+            self.assertIn("index.model_files.mismatch", issue_codes)
 
     def test_catalog_uses_vendor_region_directories(self) -> None:
         vendors = load_json(SDKWORK_MODELS / "models" / "vendors.json").get("vendors", [])
@@ -805,7 +838,7 @@ class SdkworkModelsStandardTest(unittest.TestCase):
                     self.assertIsInstance(item, dict)
                     self.assertEqual(client_code, item.get("clientApiCode"))
                     self.assertEqual(client_standard["displayName"], item.get("displayName"))
-                    self.assertIn(item.get("supportStatus"), ["supported", "unsupported", "partial"])
+                    self.assertIn(item.get("supportStatus"), CLIENT_API_SUPPORT_STATUSES)
                     self.assertIsInstance(item.get("notes"), str)
                     self.assertTrue(item.get("source", {}).get("sourceUrl"))
                     self.assertTrue(item.get("source", {}).get("observedAt"))
@@ -823,11 +856,11 @@ class SdkworkModelsStandardTest(unittest.TestCase):
                     for resource_code in item.get("resourceCodes", []):
                         self.assertIn(resource_code, resource_codes)
 
-        ts_types = read_text(SDKWORK_MODELS / "sdkwork-models-typescript" / "src" / "types.ts")
-        ts_query = read_text(SDKWORK_MODELS / "sdkwork-models-typescript" / "src" / "query.ts")
-        py_query = read_text(SDKWORK_MODELS / "sdkwork-models-python" / "sdkwork_models" / "query.py")
-        rust_types = read_text(SDKWORK_MODELS / "sdkwork-models-rust" / "src" / "types.rs")
-        rust_query = read_text(SDKWORK_MODELS / "sdkwork-models-rust" / "src" / "query.rs")
+        ts_types = read_text(lang_sdk("typescript") / "src" / "types.ts")
+        ts_query = read_text(lang_sdk("typescript") / "src" / "query.ts")
+        py_query = read_text(lang_sdk("python") / "sdkwork_models" / "query.py")
+        rust_types = read_text(lang_sdk("rust") / "src" / "types.rs")
+        rust_query = read_text(lang_sdk("rust") / "src" / "query.rs")
         for source, token in [
             (ts_types, "clientApiCompatibility"),
             (ts_query, "listClientApiCompatibilityByVendor"),
@@ -837,18 +870,30 @@ class SdkworkModelsStandardTest(unittest.TestCase):
         ]:
             self.assertIn(token, source)
 
-        registry = load_json_from_yaml(ROOT / "docs" / "schema-registry" / "tables" / "016-ai.yaml")
+        registry = load_json_from_yaml(
+            ROOT.parent / "sdkwork-models" / "docs" / "schema-registry" / "tables" / "001-catalog.yaml"
+        )
         ai_model_vendor = next(
             table for table in registry["tables"] if table.get("table") == "ai_model_vendor"
         )
         self.assertIn("supported_protocols", ai_model_vendor["columns"])
         self.assertIn("client_api_compatibility", ai_model_vendor["columns"])
+        models_baseline = read_text(
+            ROOT.parent
+            / "sdkwork-models"
+            / "database"
+            / "ddl"
+            / "baseline"
+            / "postgres"
+            / "0001_sdkwork_models_catalog_baseline.sql"
+        )
+        self.assertIn("supported_protocols JSONB", models_baseline)
+        self.assertIn("client_api_compatibility JSONB", models_baseline)
         generated_schema = read_text(ROOT / "generated" / "schema" / "postgres" / "schema.sql")
-        self.assertIn("supported_protocols JSONB", generated_schema)
-        self.assertIn("client_api_compatibility JSONB", generated_schema)
+        self.assertNotIn("CREATE TABLE IF NOT EXISTS ai_model_vendor (", generated_schema)
         for importer in [
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "model_catalog_import.rs",
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "model_catalog_import.rs",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "sqlite" / "model_catalog_import.rs",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "postgres" / "model_catalog_import.rs",
         ]:
             source = read_text(importer)
             self.assertIn("supported_protocols", source)
@@ -924,6 +969,7 @@ class SdkworkModelsStandardTest(unittest.TestCase):
                     cwd=SDKWORK_MODELS,
                     text=True,
                     capture_output=True,
+                    env=catalog_subprocess_env(),
                 )
                 self.assertEqual(0, result.returncode, result.stdout + result.stderr)
 

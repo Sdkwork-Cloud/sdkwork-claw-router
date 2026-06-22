@@ -5,14 +5,7 @@ coverage/
 .DS_Store
 *.log
 .env*
-!.env.example
+!.env*.example
 
-# SDKWork local environment and runtime config overrides
-.env.local
-.env.development.local
-.env.test.local
-.env.staging.local
-.env.production.local
-.env.postgres
-.env.release.local
+# Host profile env files (.env.development, …) are ignored via .env*
 config/*.local.toml

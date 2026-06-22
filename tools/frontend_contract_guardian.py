@@ -126,6 +126,27 @@ class FrontendContractGuardian:
     APP_SHELL_LAYOUT_RELATIVE = (
         "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-shell/src/AppShellLayout.tsx"
     )
+    COMMERCE_HOST_MOUNT_COMPONENTS = frozenset(
+        {
+            "ClawRouterConsoleCommerceHostRoutes",
+            "SdkworkCommerceHostRoutes",
+        }
+    )
+    COMMERCE_HOST_MOUNT_RELATIVE = "apps/sdkwork-clawrouter-pc/src/commerce/commerceHostMount.tsx"
+    COMMERCE_HOST_CATALOG_RELATIVES = (
+        "sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-host/src/commerce-host-route-catalog.ts",
+    )
+    COMMERCE_HOST_ROUTE_PREFIX_PATTERN = re.compile(
+        r"export\s+const\s+[A-Z0-9_]+\s*=\s*['\"]([^'\"]+)['\"]"
+    )
+    COMMERCE_HOST_CATALOG_SEGMENT_PATTERN = re.compile(r"segment:\s*['\"]([^'\"]+)['\"]")
+    COMMERCE_HOST_LOGICAL_ROUTE_PATTERN = re.compile(r"['\"](/console/[^'\"]+)['\"]")
+    COMMERCE_HOST_ROUTE_PACKAGES = {
+        "wallet": "@sdkwork/commerce-pc-wallet",
+        "memberships": "@sdkwork/commerce-pc-membership",
+        "checkout": "@sdkwork/commerce-pc-checkout",
+        "payment": "@sdkwork/commerce-pc-payment",
+    }
     BROWSER_SOURCE_EXTENSIONS = frozenset({".ts", ".tsx", ".js", ".jsx"})
     BROWSER_SOURCE_EXCLUDED_DIRECTORIES = frozenset(
         {
@@ -253,6 +274,15 @@ class FrontendContractGuardian:
             "@sdkwork/generations-pc-react",
             "@sdkwork/generations-pc-workspace",
         },
+        "notification": {
+            "createPortalNotificationService",
+            "NotificationService",
+            "@sdkwork/notification-pc-react",
+        },
+        "models": {
+            "getModelsBackendSdkClient",
+            "@sdkwork/models-backend-sdk",
+        },
     }
     BUSINESS_API_PREFIXES = ("/app/v3/api", "/backend/v3/api")
     SDK_CLIENT_BOUNDARY_FILE = (
@@ -356,6 +386,7 @@ class FrontendContractGuardian:
             "sdkwork-commerce-app-sdk",
             "sdkwork-documents-app-sdk",
             "sdkwork-appbase-app-sdk",
+            "sdkwork-appbase-backend-sdk",
             "sdkwork-clawrouter-app-sdk",
             "sdkwork-clawrouter-backend-sdk",
         }
@@ -383,6 +414,7 @@ class FrontendContractGuardian:
             "sdk_backed_business_runtime",
             "schema_provenanced_content",
             "local_developer_tool_api",
+            "composed_local_mount",
         }
     )
     ALLOWED_STATIC_DELIVERY_MODES = frozenset(
@@ -585,8 +617,16 @@ class FrontendContractGuardian:
         routes: set[str] = set()
         wildcard_mounts: set[str] = set()
         route_stack: list[str] = []
+        commerce_mount_prefix: str | None = None
 
         for line in self.app_path.read_text(encoding="utf-8").splitlines():
+            if commerce_mount_prefix is None and any(
+                component in line for component in self.COMMERCE_HOST_MOUNT_COMPONENTS
+            ):
+                parent = route_stack[-1] if route_stack else ""
+                if parent == "/console" or parent.startswith("/console/"):
+                    commerce_mount_prefix = parent
+
             for match in self.ROUTE_PATTERN.finditer(line):
                 attrs = match.group(1)
                 path_match = self.PATH_PATTERN.search(attrs)
@@ -618,6 +658,8 @@ class FrontendContractGuardian:
                     route_stack.pop()
 
         routes.update(self._contracted_child_routes_for_wildcard_mounts(wildcard_mounts))
+        if commerce_mount_prefix is not None:
+            routes.update(self._commerce_host_routes_for_prefix(commerce_mount_prefix))
         shell_routes, _ = self._extract_app_shell_route_data()
         routes.update(shell_routes)
         return sorted(routes)
@@ -735,6 +777,58 @@ class FrontendContractGuardian:
                 if route == mount or route.startswith(prefix)
             )
         return child_routes
+
+    def _commerce_host_mount_path(self) -> Path:
+        return self._resolve_workspace_sibling_path(self.COMMERCE_HOST_MOUNT_RELATIVE)
+
+    def _commerce_host_catalog_path(self) -> Path | None:
+        for relative in self.COMMERCE_HOST_CATALOG_RELATIVES:
+            candidate = self._resolve_workspace_sibling_path(relative)
+            if candidate.exists():
+                return candidate
+        return None
+
+    def _resolve_commerce_host_route_prefix(self, mount_prefix: str) -> str:
+        mount_path = self._commerce_host_mount_path()
+        if mount_path.exists():
+            for match in self.COMMERCE_HOST_ROUTE_PREFIX_PATTERN.finditer(
+                mount_path.read_text(encoding="utf-8")
+            ):
+                return match.group(1).rstrip("/") or mount_prefix.rstrip("/")
+        return mount_prefix.rstrip("/")
+
+    def _commerce_host_route_segments(self) -> list[str]:
+        catalog_path = self._commerce_host_catalog_path()
+        if catalog_path is None:
+            return ["wallet", "memberships", "checkout", "payment"]
+        return [
+            match.group(1)
+            for match in self.COMMERCE_HOST_CATALOG_SEGMENT_PATTERN.finditer(
+                catalog_path.read_text(encoding="utf-8")
+            )
+        ]
+
+    def _commerce_host_logical_routes(self) -> set[str]:
+        mount_path = self._commerce_host_mount_path()
+        if not mount_path.exists():
+            return set()
+        logical_routes: set[str] = set()
+        for match in self.COMMERCE_HOST_LOGICAL_ROUTE_PATTERN.finditer(
+            mount_path.read_text(encoding="utf-8")
+        ):
+            route = match.group(1).rstrip("/")
+            if route.startswith("/console/"):
+                logical_routes.add(route)
+        return logical_routes
+
+    def _commerce_host_routes_for_prefix(self, mount_prefix: str) -> set[str]:
+        route_prefix = self._resolve_commerce_host_route_prefix(mount_prefix)
+        routes = {
+            self._join_route(route_prefix, segment)
+            for segment in self._commerce_host_route_segments()
+        }
+        routes.update(self._commerce_host_logical_routes())
+        return routes
 
     def _manifest_route_tables(self, route_entry: Any) -> set[str]:
         if not isinstance(route_entry, dict):
@@ -910,17 +1004,17 @@ class FrontendContractGuardian:
             messages.append(self.PORTAL_SERVER_SCRIPT_FORBIDDEN_MESSAGE)
 
         dev_script = scripts.get("dev")
-        browser_dev_script = scripts.get("browser:dev")
+        dev_browser_script = scripts.get("dev:browser")
         if not (
             isinstance(dev_script, str)
-            and isinstance(browser_dev_script, str)
+            and isinstance(dev_browser_script, str)
             and self._is_vite_native_script(dev_script)
-            and self._is_vite_native_script(browser_dev_script)
+            and self._is_vite_native_script(dev_browser_script)
             and "--configLoader native" in dev_script
-            and "--configLoader native" in browser_dev_script
+            and "--configLoader native" in dev_browser_script
         ):
             messages.append(
-                "portal dev and browser:dev scripts must run Vite directly with native config loading"
+                "portal dev and dev:browser scripts must run Vite directly with native config loading"
             )
 
         build_script = scripts.get("build")
@@ -1210,7 +1304,25 @@ class FrontendContractGuardian:
                 messages.extend(self._check_schema_content_route_classification(entry, manifest_route, operation_items))
             elif delivery_kind == "local_developer_tool_api":
                 messages.extend(self._check_local_tool_route_classification(entry, browser_tool_endpoint_sources))
+            elif delivery_kind == "composed_local_mount":
+                messages.extend(
+                    self._check_composed_local_mount_route_classification(entry, contract, operation_items)
+                )
 
+        return messages
+
+    def _check_composed_local_mount_route_classification(
+        self,
+        entry: dict[str, Any],
+        contract: dict[str, Any],
+        frontend_operations: list[dict[str, Any]],
+    ) -> list[str]:
+        messages = self._check_dependency_owned_route_classification(entry, contract, frontend_operations)
+        dependency_sdk_family = entry.get("dependency_sdk_family")
+        if not isinstance(dependency_sdk_family, str) or not dependency_sdk_family.startswith("sdkwork-models-"):
+            messages.append(
+                f"composed local mount route {entry['route']} must declare dependency_sdk_family sdkwork-models-*"
+            )
         return messages
 
     def _dependency_owned_contract_routes(self, contract: dict[str, Any]) -> set[str]:
@@ -1282,6 +1394,8 @@ class FrontendContractGuardian:
             return messages
 
         expected_client = "getClawRouterAppSdkClient" if api_surface == "app" else "getClawRouterBackendSdkClient"
+        if dependency_sdk_family == "sdkwork-models-backend-sdk":
+            expected_client = "getModelsBackendSdkClient"
         if not any(
             self._operation_uses_allowed_sdk_client_boundary(operation, expected_client)
             for operation in matching_operations
@@ -1438,6 +1552,10 @@ class FrontendContractGuardian:
             return normalized
         if normalized in {"generation", "generations"}:
             return "generations"
+        if normalized in {"notification", "notifications"}:
+            return "notification"
+        if normalized in {"models", "model", "modelcatalog", "modelscatalog"}:
+            return "models"
         return ""
 
     def _resolve_relative_import(self, source_path: Path, import_spec: str) -> Path | None:
@@ -1957,7 +2075,15 @@ class FrontendContractGuardian:
         route_packages: dict[str, str] = {}
         wildcard_mount_packages: dict[str, str] = {}
         route_stack: list[str] = []
+        commerce_mount_prefix: str | None = None
         for line in source.splitlines():
+            if commerce_mount_prefix is None and any(
+                component in line for component in self.COMMERCE_HOST_MOUNT_COMPONENTS
+            ):
+                parent = route_stack[-1] if route_stack else ""
+                if parent == "/console" or parent.startswith("/console/"):
+                    commerce_mount_prefix = parent
+
             for match in self.ROUTE_PATTERN.finditer(line):
                 attrs = match.group(1)
                 path_match = self.PATH_PATTERN.search(attrs)
@@ -1997,6 +2123,17 @@ class FrontendContractGuardian:
         for mount_path, package_name in wildcard_mount_packages.items():
             for child_route in self._contracted_child_routes_for_wildcard_mounts({mount_path}):
                 route_packages.setdefault(child_route, package_name)
+
+        if commerce_mount_prefix is not None:
+            route_prefix = self._resolve_commerce_host_route_prefix(commerce_mount_prefix)
+            for segment in self._commerce_host_route_segments():
+                full_route = self._join_route(route_prefix, segment)
+                route_packages.setdefault(
+                    full_route,
+                    self.COMMERCE_HOST_ROUTE_PACKAGES.get(segment, "@sdkwork/commerce-pc-host"),
+                )
+            for logical_route in self._commerce_host_logical_routes():
+                route_packages.setdefault(logical_route, "@sdkwork/commerce-pc-wallet")
 
         _, shell_packages = self._extract_app_shell_route_data()
         route_packages.update(shell_packages)
@@ -2056,7 +2193,7 @@ class FrontendContractGuardian:
                 )
                 continue
 
-            if evidence.startswith("sdkwork-documents/"):
+            if evidence.startswith("sdkwork-documents/") or evidence.startswith("data/sdkwork-models/"):
                 resolved = self._resolve_workspace_sibling_path(evidence)
             elif ".." in evidence_path.parts:
                 messages.append(

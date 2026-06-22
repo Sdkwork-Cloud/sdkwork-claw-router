@@ -151,7 +151,7 @@ function createInstallInitSmokePlan({
   const databaseUrl = databaseEngine === 'sqlite'
     ? `sqlite://${toPosixPath(databasePath)}`
     : DEFAULT_RELEASE_POSTGRES_RUNTIME_URL;
-  const releaseEnvPath = path.join(absoluteTmpRoot, '.env.release.local');
+  const releaseEnvPath = path.join(absoluteTmpRoot, '.env.release');
   const modelsCatalogRoot = path.join(root, 'data', 'sdkwork-models');
   const env = createSmokeEnvironment({
     databaseUrl,

@@ -21,31 +21,31 @@ class SettlementsRuntimeStandardTest(unittest.TestCase):
     def test_settlements_backend_uses_exact_decimal_strings(self) -> None:
         settlements_port = (
             ROOT
-            / "services"
-            / "sdkwork-claw-product"
+            / "crates"
+            / "sdkwork-clawrouter-settlements-dashboard-repository-sqlx"
             / "src"
-            / "ports"
-            / "settlements_dashboard_read_store.rs"
+            / "types.rs"
+        ).read_text(encoding="utf-8")
+        repository_mapping = (
+            ROOT
+            / "crates"
+            / "sdkwork-clawrouter-settlements-dashboard-repository-sqlx"
+            / "src"
+            / "mapping.rs"
         ).read_text(encoding="utf-8")
         sqlite_store = (
             ROOT
-            / "services"
-            / "sdkwork-claw-product"
+            / "crates"
+            / "sdkwork-clawrouter-settlements-dashboard-repository-sqlx"
             / "src"
-            / "infrastructure"
-            / "sql"
-            / "sqlite"
-            / "settlements_dashboard_read_store.rs"
+            / "sqlite.rs"
         ).read_text(encoding="utf-8")
         postgres_store = (
             ROOT
-            / "services"
-            / "sdkwork-claw-product"
+            / "crates"
+            / "sdkwork-clawrouter-settlements-dashboard-repository-sqlx"
             / "src"
-            / "infrastructure"
-            / "sql"
-            / "postgres"
-            / "settlements_dashboard_read_store.rs"
+            / "postgres.rs"
         ).read_text(encoding="utf-8")
 
         for field in ["text", "image", "video", "audio", "music"]:
@@ -56,58 +56,62 @@ class SettlementsRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("pub total_cost: f64", settlements_port)
         self.assertNotIn("pub cost: f64", settlements_port)
 
+        compact_mapping = " ".join(repository_mapping.split())
         for store in [sqlite_store, postgres_store]:
             compact_store = " ".join(store.split())
-            self.assertIn("DecimalValue", store)
-            self.assertIn('decimal_string_cell(&row, "total_cost", 6, "settlement bill total cost")?', compact_store)
-            self.assertIn('decimal_string_cell(&row, "cost_amount", 6, "settlement item cost")?', compact_store)
-            self.assertIn('decimal_add_strings(&target.cost, &item_cost, 6)', store)
-            self.assertIn('decimal_string_cell(&row, "text_cost", 6, "settlement chart text cost")?', compact_store)
-            self.assertIn('decimal_string_cell(&row, "image_cost", 6, "settlement chart image cost")?', compact_store)
-            self.assertIn('decimal_string_cell(&row, "video_cost", 6, "settlement chart video cost")?', compact_store)
-            self.assertIn('decimal_string_cell(&row, "audio_cost", 6, "settlement chart audio cost")?', compact_store)
-            self.assertIn('decimal_string_cell(&row, "music_cost", 6, "settlement chart music cost")?', compact_store)
-            self.assertIn("fn decimal_value_string(", compact_store)
-            self.assertIn("value: &str", compact_store)
-            self.assertIn("digits: u32", compact_store)
-            self.assertIn("field_name: &str", compact_store)
-            self.assertIn("-> Result<String, DomainError>", compact_store)
-            self.assertIn('format!("invalid {field_name}: {value}")', store)
-            self.assertNotIn("DecimalValue::ZERO.to_fixed_string(digits)", store)
-            self.assertNotIn("DecimalValue::parse(left).unwrap_or(DecimalValue::ZERO)", store)
-            self.assertNotIn("DecimalValue::parse(right).unwrap_or(DecimalValue::ZERO)", store)
-            self.assertIn("fn model_list(raw: &str, fallback: &str) -> Result<Vec<String>, DomainError>", compact_store)
-            self.assertIn("invalid settlement model list json from database row", store)
-            self.assertNotIn("serde_json::from_str::<Vec<String>>(raw).unwrap_or_default()", store)
+            self.assertIn("DecimalValue", repository_mapping)
+            self.assertIn('row.decimal_string_cell("total_cost", 6, "settlement bill total cost")?', compact_mapping)
+            self.assertIn('row.decimal_string_cell("cost_amount", 6, "settlement item cost")?', compact_mapping)
+            self.assertIn('decimal_add_strings(&target.cost, &item_cost, 6)', repository_mapping)
+            self.assertIn('row.decimal_string_cell("text_cost", 6, "settlement chart text cost")?', compact_mapping)
+            self.assertIn('row.decimal_string_cell("image_cost", 6, "settlement chart image cost")?', compact_mapping)
+            self.assertIn('row.decimal_string_cell("video_cost", 6, "settlement chart video cost")?', compact_mapping)
+            self.assertIn('row.decimal_string_cell("audio_cost", 6, "settlement chart audio cost")?', compact_mapping)
+            self.assertIn('row.decimal_string_cell("music_cost", 6, "settlement chart music cost")?', compact_mapping)
+            self.assertIn("fn decimal_value_string(", compact_mapping)
+            self.assertIn("value: &str", compact_mapping)
+            self.assertIn("digits: u32", compact_mapping)
+            self.assertIn("field_name: &str", compact_mapping)
+            self.assertIn("-> RepositoryResult<String>", compact_mapping)
+            self.assertIn('format!("invalid {field_name}: {value}")', repository_mapping)
+            self.assertNotIn("DecimalValue::ZERO.to_fixed_string(digits)", repository_mapping)
+            self.assertNotIn("DecimalValue::parse(left).unwrap_or(DecimalValue::ZERO)", repository_mapping)
+            self.assertNotIn("DecimalValue::parse(right).unwrap_or(DecimalValue::ZERO)", repository_mapping)
+            self.assertIn(
+                "fn model_list(raw: &str, fallback: &str) -> RepositoryResult<Vec<String>>",
+                compact_mapping,
+            )
+            self.assertIn("invalid settlement model list json from database row", repository_mapping)
+            self.assertNotIn("serde_json::from_str::<Vec<String>>(raw).unwrap_or_default()", repository_mapping)
             self.assertNotIn("COALESCE(s.statement_status, 0) AS statement_status", store)
             self.assertNotIn("COALESCE(s.payment_status, 0) AS payment_status", store)
             self.assertIn("s.statement_status AS statement_status", store)
             self.assertIn("s.payment_status AS payment_status", store)
             self.assertIn(
-                'required_statement_status_cell(&row, "payment_status", "payment")?',
-                compact_store,
+                'row.required_statement_status_cell("payment_status", "payment")?',
+                compact_mapping,
             )
             self.assertIn(
-                'required_statement_status_cell(&row, "statement_status", "statement")?',
-                compact_store,
+                'row.required_statement_status_cell("statement_status", "statement")?',
+                compact_mapping,
             )
-            self.assertIn("fn statement_status_label(", compact_store)
-            self.assertIn("payment_status: i64", compact_store)
-            self.assertIn("statement_status: i64", compact_store)
-            self.assertIn(") -> Result<String, DomainError>", compact_store)
-            self.assertIn("missing settlement bill status payment", store)
-            self.assertIn("missing settlement bill status statement", store)
-            self.assertIn("unsupported settlement bill status", store)
-            self.assertIn('required_modality_cell(&row, "modality", "settlement item")?', compact_store)
-            self.assertIn("unsupported settlement item modality", store)
-            self.assertIn("missing settlement item modality", store)
+            self.assertIn("fn statement_status_label(", compact_mapping)
+            self.assertIn("payment_status: i64", compact_mapping)
+            self.assertIn("statement_status: i64", compact_mapping)
+            self.assertIn(") -> RepositoryResult<String>", compact_mapping)
+            self.assertIn("missing settlement bill status payment", repository_mapping)
+            self.assertIn("missing settlement bill status statement", repository_mapping)
+            self.assertIn("unsupported settlement bill status", repository_mapping)
+            self.assertIn('row.required_modality_cell("modality", "settlement item")?', compact_mapping)
+            self.assertIn("unsupported settlement item modality", repository_mapping)
+            self.assertIn("missing settlement item modality", repository_mapping)
             self.assertNotIn("payment_status.unwrap_or(0)", store)
             self.assertNotIn("statement_status.unwrap_or(0)", store)
-            self.assertNotIn('optional_integer_cell(&row, "modality").unwrap_or(MODALITY_TEXT)', store)
-            self.assertNotIn("_ => &mut breakdown.text", store)
+            self.assertNotIn('optional_integer_cell(&row, "modality").unwrap_or(MODALITY_TEXT)', repository_mapping)
+            self.assertNotIn("_ => &mut breakdown.text", repository_mapping)
             self.assertNotIn("fn decimal_cell", store)
             self.assertNotIn("parse::<f64>()", store)
-            self.assertNotIn("target.cost +=", store)
+            self.assertNotIn("target.cost +=", repository_mapping)
 
     def test_console_settlements_uses_exact_decimal_strings(self) -> None:
         skip_unless_console_settlements_package(self)

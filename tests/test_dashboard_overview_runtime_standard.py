@@ -359,7 +359,7 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         ports = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "ports"
             / "dashboard_overview_read_store.rs"
@@ -367,7 +367,7 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         postgres_store = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -377,7 +377,7 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         sqlite_store = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -397,10 +397,10 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
             self.assertIn("total_request_count,", store)
 
     def test_backend_app_router_exposes_real_dashboard_overview_route(self) -> None:
-        product_api = (ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "mod.rs").read_text(
+        product_api = (ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "mod.rs").read_text(
             encoding="utf-8"
         )
-        app_api = (ROOT / "services" / "sdkwork-claw-app" / "src" / "lib.rs").read_text(encoding="utf-8")
+        app_api = (ROOT / "services" / "sdkwork-clawrouter-app-api-server" / "src" / "lib.rs").read_text(encoding="utf-8")
 
         self.assertIn("app_dashboard_overview_router", product_api)
         self.assertIn("app_dashboard_overview_router_with_read_store", product_api)
@@ -415,12 +415,12 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
             encoding="utf-8"
         )
         app_dashboard = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_dashboard.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "app_dashboard.rs"
         ).read_text(encoding="utf-8")
         postgres_store = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -465,7 +465,7 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         metrics = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -474,7 +474,7 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         postgres_store = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -484,7 +484,7 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         sqlite_store = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -492,7 +492,7 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
             / "dashboard_overview_read_store.rs"
         ).read_text(encoding="utf-8")
         sql_mod = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "mod.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "mod.rs"
         ).read_text(encoding="utf-8")
 
         self.assertIn("mod dashboard_overview_metrics;", sql_mod)
@@ -516,7 +516,7 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         postgres_store = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -526,7 +526,7 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         sqlite_store = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -560,8 +560,8 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
 
         for relative in [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/dashboard_overview_read_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/dashboard_overview_read_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/dashboard_overview_read_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/dashboard_overview_read_store.rs",
         ]:
             store = (ROOT / relative).read_text(encoding="utf-8")
             with self.subTest(store=relative):
@@ -585,8 +585,8 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
 
         for relative in [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/dashboard_overview_read_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/dashboard_overview_read_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/dashboard_overview_read_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/dashboard_overview_read_store.rs",
         ]:
             store = (ROOT / relative).read_text(encoding="utf-8")
             with self.subTest(store=relative):

@@ -32,6 +32,7 @@ import { formatRechargeCurrencyAmount } from "./packages/sdkwork-clawrouter-pc-c
 import {
   createClawRouterAiSdkClient,
   getClawRouterAiSdkClient,
+  getClawRouterGlobalTokenManager,
   resetClawRouterSdkClients,
   SDK_SYSTEM_CONFIG,
 } from "./packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts";
@@ -223,6 +224,10 @@ test("normalizeGeneratedSdkBaseUrl strips generated SDK API prefixes from deploy
   );
   assert.equal(normalizeGeneratedSdkBaseUrl("/backend/v3/api", "/backend/v3/api"), "");
   assert.equal(normalizeGeneratedSdkBaseUrl("https://admin.example.com/backend/v3/api/", "/backend/v3/api"), "https://admin.example.com");
+  assert.equal(
+    normalizeGeneratedSdkBaseUrl("http://127.0.0.1:3900/app/v3/api", "/app/v3/api"),
+    "http://127.0.0.1:3900",
+  );
 });
 
 test("normalizeGeneratedSdkBaseUrl preserves raw origins and unrelated root-relative bases", () => {
@@ -301,6 +306,7 @@ test("documents runtime adapter caches a singleton SDK client bound to the clawr
   assert.match(source, /if \(!documentsAppSdkClient\) \{/);
   assert.match(source, /documentsAppSdkClient = createClient\(\{/);
   assert.match(source, /baseUrl: resolveDocumentsAppApiBaseUrl\(\),/);
+  assert.match(source, /normalizeGeneratedSdkBaseUrl\(/);
   assert.match(source, /tokenManager: getClawRouterGlobalTokenManager\(\),/);
   assert.match(source, /return documentsAppSdkClient as unknown as DocumentsAppSdkClient;/);
 });
@@ -365,6 +371,52 @@ test("sdk clients use a static IAM runtime reset dependency so Vite can chunk th
     /CLAW_ROUTER_IAM_RUNTIME_APP_ID\s*=\s*['"]sdkwork-clawrouter['"]/u,
     "Claw Router IAM runtime must use the compile-time manifest app identifier.",
   );
+});
+
+test("global token manager seeds bootstrap access token before login session exists", () => {
+  clearStoredAppSessionToken();
+  resetClawRouterSdkClients();
+  const previousAccessToken = process.env.SDKWORK_ACCESS_TOKEN;
+  process.env.SDKWORK_ACCESS_TOKEN = "bootstrap-access-token";
+
+  try {
+    assert.equal(getClawRouterGlobalTokenManager().getAccessToken(), "bootstrap-access-token");
+    assert.equal(getClawRouterGlobalTokenManager().getAuthToken(), undefined);
+  } finally {
+    if (previousAccessToken === undefined) {
+      delete process.env.SDKWORK_ACCESS_TOKEN;
+    } else {
+      process.env.SDKWORK_ACCESS_TOKEN = previousAccessToken;
+    }
+    clearStoredAppSessionToken();
+    resetClawRouterSdkClients();
+  }
+});
+
+test("stored login session replaces bootstrap access token in global token manager", () => {
+  clearStoredAppSessionToken();
+  resetClawRouterSdkClients();
+  const previousAccessToken = process.env.SDKWORK_ACCESS_TOKEN;
+  process.env.SDKWORK_ACCESS_TOKEN = "bootstrap-access-token";
+
+  try {
+    storeAppSessionFromResult({
+      accessToken: "session-access-token",
+      authToken: "session-auth-token",
+      expiresAt: new Date(Date.now() + 3600_000).toISOString(),
+    });
+
+    assert.equal(getClawRouterGlobalTokenManager().getAccessToken(), "session-access-token");
+    assert.equal(getClawRouterGlobalTokenManager().getAuthToken(), "session-auth-token");
+  } finally {
+    if (previousAccessToken === undefined) {
+      delete process.env.SDKWORK_ACCESS_TOKEN;
+    } else {
+      process.env.SDKWORK_ACCESS_TOKEN = previousAccessToken;
+    }
+    clearStoredAppSessionToken();
+    resetClawRouterSdkClients();
+  }
 });
 
 test("open gateway SDK clients never inherit portal session tokens", () => {

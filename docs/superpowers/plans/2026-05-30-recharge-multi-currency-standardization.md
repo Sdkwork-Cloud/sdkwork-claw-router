@@ -17,7 +17,7 @@
 - Modify: `docs/schema-registry/frontend-field-contracts/operations/app-commerce-recharges.yaml`
 - Modify: `docs/schema-registry/frontend-field-contracts/operations/backend-commerce-recharges.yaml`
 - Modify: `sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-http-rust/tests/app_recharge_checkout_router.rs`
-- Modify: `services/sdkwork-claw-admin/tests/database_config_router.rs`
+- Modify: `services/sdkwork-clawrouter-admin-api-server/tests/database_config_router.rs`
 - Modify: `apps/sdkwork-clawrouter-pc/billing-runtime.test.ts`
 - Modify: `apps/sdkwork-clawrouter-pc/admin-membership-recharge-runtime.test.ts`
 
@@ -53,10 +53,10 @@
 ### Task 4: Implement admin recharge package/settings backend
 
 **Files:**
-- Modify: `services/sdkwork-claw-product/src/ports/admin_marketing_store.rs`
-- Modify: `services/sdkwork-claw-product/src/api/admin_marketing.rs`
-- Modify: `services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_marketing_store.rs`
-- Modify: `services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_marketing_store.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/ports/admin_marketing_store.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/api/admin_marketing.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/admin_marketing_store.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/admin_marketing_store.rs`
 
 - [ ] **Step 1: Replace legacy admin recharge package mutation/list models with standardized fields**
 - [ ] **Step 2: Add dedicated recharge settings read/update endpoints in admin marketing API**

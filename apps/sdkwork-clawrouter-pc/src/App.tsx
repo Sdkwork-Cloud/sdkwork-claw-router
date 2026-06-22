@@ -61,10 +61,24 @@ const SiteAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-relay-sit
 const PromptsAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-prompts'), 'PromptsAdmin');
 const McpAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-mcp'), 'McpAdmin');
 const ChannelAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-channel'), 'ChannelAdmin');
+const OAuthAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-oauth'), 'OAuthAdmin');
+const AnnouncementAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-announcement'), 'AnnouncementAdmin');
+const CatalogAdmin = lazyRoute<AdminSectionRouteProps>(() => import('@sdkwork/clawrouter-pc-admin-catalog'), 'CatalogAdmin');
+const InventoryAdmin = lazyRoute<AdminSectionRouteProps>(() => import('@sdkwork/clawrouter-pc-admin-inventory'), 'InventoryAdmin');
+const OrdersAdmin = lazyRoute<AdminSectionRouteProps>(() => import('@sdkwork/clawrouter-pc-admin-orders'), 'OrdersAdmin');
+const PaymentsAdmin = lazyRoute<AdminSectionRouteProps>(() => import('@sdkwork/clawrouter-pc-admin-payments'), 'PaymentsAdmin');
+const MembershipsAdmin = lazyRoute<AdminSectionRouteProps>(() => import('@sdkwork/clawrouter-pc-admin-memberships'), 'MembershipsAdmin');
+const WalletAdmin = lazyRoute<AdminSectionRouteProps>(() => import('@sdkwork/clawrouter-pc-admin-wallet'), 'WalletAdmin');
+const FinanceAdmin = lazyRoute<AdminSectionRouteProps>(() => import('@sdkwork/clawrouter-pc-admin-finance'), 'FinanceAdmin');
+const MarketingAdmin = lazyRoute<AdminSectionRouteProps>(() => import('@sdkwork/clawrouter-pc-admin-marketing'), 'MarketingAdmin');
 const ServiceProviderAdmin = lazyRoute<AdminSectionRouteProps>(() => import('@sdkwork/clawrouter-pc-admin-service-provider'), 'ServiceProviderAdmin');
 const RecordAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-record'), 'RecordAdmin');
 const MonitorAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-monitor'), 'MonitorAdmin');
 const RateLimitAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-ratelimit'), 'RateLimitAdmin');
+const MessagingAdmin = lazyRoute(
+  () => import('@sdkwork/clawrouter-pc-admin-messaging'),
+  'MessagingAdmin',
+); // apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging
 const ServiceNodesAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-service-nodes'), 'ServiceNodesAdmin');
 const RuntimeRegionAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-runtime-region'), 'RuntimeRegionAdmin');
 const ClawRouterSiteSettingsPage = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-site'), 'ClawRouterSiteSettingsPage');
@@ -164,7 +178,7 @@ export default function App() {
               <Route path="gateway" element={<GatewayView />} />
               <Route path="api-keys" element={<ApiKeysView />} />
               <Route path="account" element={<AccountView />} />
-              <ClawRouterConsoleCommerceHostRoutes />
+              {ClawRouterConsoleCommerceHostRoutes()}
               <Route path="settlements" element={<SettlementsView />} />
               <Route path="notifications" element={<MessagesView />} />
               <Route path="user" element={<UserView />} />
@@ -187,6 +201,70 @@ export default function App() {
               <Route path="prompts" element={<PromptsAdmin />} />
               <Route path="mcp" element={<McpAdmin />} />
               <Route path="channel" element={<ChannelAdmin />} />
+              <Route path="oauth" element={<Navigate to="/admin/oauth/login-platforms" replace />} />
+              <Route path="oauth/login-platforms" element={<OAuthAdmin sectionId="oauthLoginPlatforms" />} />
+              <Route path="oauth/official-accounts" element={<OAuthAdmin sectionId="officialAccounts" />} />
+              <Route path="oauth/mini-programs" element={<OAuthAdmin sectionId="miniPrograms" />} />
+              <Route path="announcement" element={<AnnouncementAdmin />} />
+              <Route path="catalog" element={<Navigate to="/admin/catalog/products" replace />} />
+              <Route path="catalog/categories" element={<CatalogAdmin sectionId="categories" />} />
+              <Route path="catalog/products/new" element={<CatalogAdmin sectionId="productCreate" />} />
+              <Route path="catalog/products/:productId/edit" element={<CatalogAdmin sectionId="productEdit" />} />
+              <Route path="catalog/products" element={<CatalogAdmin sectionId="products" />} />
+              <Route path="catalog/skus" element={<CatalogAdmin sectionId="skus" />} />
+              <Route path="catalog/attributes" element={<CatalogAdmin sectionId="attributes" />} />
+              <Route path="catalog/prices" element={<CatalogAdmin sectionId="prices" />} />
+              <Route path="inventory" element={<Navigate to="/admin/inventory/stocks" replace />} />
+              <Route path="inventory/stocks" element={<InventoryAdmin sectionId="stocks" />} />
+              <Route path="inventory/reservations" element={<InventoryAdmin sectionId="reservations" />} />
+              <Route path="inventory/ledger" element={<InventoryAdmin sectionId="ledger" />} />
+              <Route path="orders" element={<Navigate to="/admin/orders/orders" replace />} />
+              <Route path="orders/orders" element={<OrdersAdmin sectionId="orders" />} />
+              <Route path="orders/refunds" element={<OrdersAdmin sectionId="refunds" />} />
+              <Route path="orders/fulfillments" element={<OrdersAdmin sectionId="fulfillments" />} />
+              <Route path="orders/shipments" element={<OrdersAdmin sectionId="shipments" />} />
+              <Route path="payments" element={<Navigate to="/admin/payments/provider-accounts" replace />} />
+              <Route path="payments/providers" element={<PaymentsAdmin sectionId="providers" />} />
+              <Route path="payments/provider-accounts" element={<PaymentsAdmin sectionId="providerAccounts" />} />
+              <Route path="payments/methods" element={<PaymentsAdmin sectionId="methods" />} />
+              <Route path="payments/channels" element={<PaymentsAdmin sectionId="channels" />} />
+              <Route path="payments/route-rules" element={<PaymentsAdmin sectionId="routeRules" />} />
+              <Route path="payments/intents" element={<PaymentsAdmin sectionId="intents" />} />
+              <Route path="payments/attempts" element={<PaymentsAdmin sectionId="attempts" />} />
+              <Route path="payments/webhook-events" element={<PaymentsAdmin sectionId="webhookEvents" />} />
+              <Route path="payments/reconciliation-runs" element={<PaymentsAdmin sectionId="reconciliationRuns" />} />
+              <Route path="memberships" element={<Navigate to="/admin/memberships/packages" replace />} />
+              <Route path="memberships/packages" element={<MembershipsAdmin sectionId="packages" />} />
+              <Route path="memberships/vip-packages" element={<MembershipsAdmin sectionId="vipPackages" />} />
+              <Route path="memberships/plans" element={<MembershipsAdmin sectionId="plans" />} />
+              <Route path="memberships/members" element={<MembershipsAdmin sectionId="members" />} />
+              <Route path="memberships/entitlements" element={<MembershipsAdmin sectionId="entitlements" />} />
+              <Route path="memberships/recharge-packages" element={<MembershipsAdmin sectionId="rechargePackages" />} />
+              <Route path="wallet" element={<Navigate to="/admin/wallet/wallet-accounts" replace />} />
+              <Route path="wallet/recharge-orders" element={<WalletAdmin sectionId="rechargeOrders" />} />
+              <Route path="wallet/wallet-accounts" element={<WalletAdmin sectionId="walletAccounts" />} />
+              <Route path="wallet/wallet-ledger" element={<WalletAdmin sectionId="walletLedger" />} />
+              <Route path="wallet/exchange-rules" element={<WalletAdmin sectionId="exchangeRules" />} />
+              <Route path="finance" element={<Navigate to="/admin/finance/order-revenue" replace />} />
+              <Route path="finance/invoice-titles" element={<FinanceAdmin sectionId="invoiceTitles" />} />
+              <Route path="finance/invoices" element={<FinanceAdmin sectionId="invoices" />} />
+              <Route path="finance/payment-reconciliation" element={<FinanceAdmin sectionId="paymentReconciliationReport" />} />
+              <Route path="finance/order-revenue" element={<FinanceAdmin sectionId="orderRevenueReport" />} />
+              <Route path="finance/refunds-report" element={<FinanceAdmin sectionId="refundsReport" />} />
+              <Route path="finance/audit-events" element={<FinanceAdmin sectionId="auditEvents" />} />
+              <Route path="marketing" element={<MarketingAdmin />} />
+              <Route path="marketing/offers" element={<MarketingAdmin sectionId="promotionOffers" />} />
+              <Route path="marketing/promotion-coupon-stocks" element={<MarketingAdmin sectionId="promotionCouponStocks" />} />
+              <Route path="marketing/promotion-codes" element={<MarketingAdmin sectionId="promotionCodes" />} />
+              <Route path="marketing/promotion-code-redemptions" element={<MarketingAdmin sectionId="promotionCodeRedemptions" />} />
+              <Route path="marketing/user-coupons" element={<MarketingAdmin sectionId="userCoupons" />} />
+              <Route path="marketing/discount-applications" element={<MarketingAdmin sectionId="discountApplications" />} />
+              <Route path="marketing/discount-allocations" element={<MarketingAdmin sectionId="discountAllocations" />} />
+              <Route path="marketing/promotion-coupon-ledger" element={<MarketingAdmin sectionId="promotionCouponLedger" />} />
+              <Route path="marketing/budget-ledger" element={<MarketingAdmin sectionId="budgetLedger" />} />
+              <Route path="marketing/external-bindings" element={<MarketingAdmin sectionId="externalBindings" />} />
+              <Route path="marketing/events" element={<MarketingAdmin sectionId="promotionEvents" />} />
+              <Route path="marketing/referrals" element={<MarketingAdmin sectionId="referrals" />} />
               <Route path="service-providers" element={<Navigate to="/admin/service-providers/dashboard" replace />} />
               <Route path="service-providers/dashboard" element={<ServiceProviderAdmin sectionId="dashboard" />} />
               <Route path="service-providers/providers" element={<ServiceProviderAdmin sectionId="providers" />} />
@@ -206,6 +284,16 @@ export default function App() {
               <Route path="record" element={<RecordAdmin />} />
               <Route path="monitor" element={<MonitorAdmin />} />
               <Route path="cache" element={<CacheAdmin />} />
+              <Route path="messaging" element={<Navigate to="/admin/messaging/providers" replace />} />
+              <Route path="messaging/providers" element={<MessagingAdmin sectionId="providers" />} />
+              <Route path="messaging/sender-identities" element={<MessagingAdmin sectionId="sender-identities" />} />
+              <Route path="messaging/templates" element={<MessagingAdmin sectionId="templates" />} />
+              <Route path="messaging/route-rules" element={<MessagingAdmin sectionId="route-rules" />} />
+              <Route path="messaging/send-requests" element={<MessagingAdmin sectionId="send-requests" />} />
+              <Route path="messaging/diagnostics" element={<MessagingAdmin sectionId="diagnostics" />} />
+              <Route path="messaging/suppressions" element={<MessagingAdmin sectionId="suppressions" />} />
+              <Route path="messaging/rate-limits" element={<MessagingAdmin sectionId="rate-limits" />} />
+              <Route path="messaging/verification-policies" element={<MessagingAdmin sectionId="verification-policies" />} />
               <Route path="ratelimit" element={<RateLimitAdmin />} />
               <Route path="service-nodes" element={<ServiceNodesAdmin />} />
               <Route path="settings" element={<ClawRouterAuthSettingsPage />} />

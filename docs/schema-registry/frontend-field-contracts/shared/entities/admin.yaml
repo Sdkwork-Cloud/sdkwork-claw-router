@@ -43,6 +43,106 @@ x_response_entities:
         type: string
         minLength: 1
         maxLength: 20000
+  admin_announcement_create_request:
+    name: AdminAnnouncementCreateRequest
+    type: object
+    additionalProperties: false
+    required:
+    - title
+    - target
+    - status
+    - showAsPopup
+    - content
+    properties:
+      title:
+        type: string
+        minLength: 1
+        maxLength: 200
+      target:
+        type: string
+        enum:
+        - all
+        - vip
+        - free
+        - beta
+      status:
+        type: string
+        enum:
+        - published
+        - draft
+      showAsPopup:
+        type: boolean
+      content:
+        type: string
+        minLength: 1
+        maxLength: 20000
+  admin_announcement_update_request:
+    name: AdminAnnouncementUpdateRequest
+    type: object
+    additionalProperties: false
+    properties:
+      title:
+        type: string
+        minLength: 1
+        maxLength: 200
+      target:
+        type: string
+        enum:
+        - all
+        - vip
+        - free
+        - beta
+      status:
+        type: string
+        enum:
+        - published
+        - draft
+      showAsPopup:
+        type: boolean
+      content:
+        type: string
+        minLength: 1
+        maxLength: 20000
+  admin_announcement_mutation_response:
+    name: AdminAnnouncementMutationResponse
+    type: object
+    additionalProperties: false
+    required:
+    - item
+    properties:
+      item:
+        $ref: '#/x_response_entities/admin_announcement_item'
+  admin_announcements_response:
+    name: AdminAnnouncementsResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          $ref: '#/x_response_entities/admin_announcement_item'
+  admin_announcements_delete_response:
+    name: AnnouncementsDeleteResult
+    type: object
+    additionalProperties: false
+    required:
+    - deleted
+    properties:
+      deleted:
+        type: boolean
+  admin_referral_stats_response:
+    name: AdminReferralStatsResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          $ref: '#/x_response_entities/admin_referral_stat_item'
   admin_agent_version_item: &id002
     name: AdminAgentVersionItem
     type: object

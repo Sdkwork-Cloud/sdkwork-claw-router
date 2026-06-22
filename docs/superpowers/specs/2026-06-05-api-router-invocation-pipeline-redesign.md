@@ -609,7 +609,7 @@ GET /some/free/metadata
 新增产品层模块：
 
 ```text
-services/sdkwork-claw-product/src/application/invocation/
+services/sdkwork-clawrouter-router-service/src/application/invocation/
   mod.rs
   account.rs
   billing.rs
@@ -633,21 +633,21 @@ services/sdkwork-claw-product/src/application/invocation/
 新增 gateway HTTP 适配层：
 
 ```text
-services/sdkwork-claw-gateway/src/invocation_http.rs
-services/sdkwork-claw-gateway/src/invocation_router.rs
+services/sdkwork-clawrouter-gateway/src/invocation_http.rs
+services/sdkwork-clawrouter-gateway/src/invocation_router.rs
 ```
 
 删除或大幅替换：
 
 ```text
-services/sdkwork-claw-product/src/api/openai_chat.rs
-services/sdkwork-claw-product/src/api/openai_embeddings.rs
-services/sdkwork-claw-product/src/api/openai_responses.rs
-services/sdkwork-claw-product/src/api/openai_invocation.rs
-services/sdkwork-claw-product/src/api/openai_runtime.rs
-services/sdkwork-claw-product/src/api/openai_usage.rs
-services/sdkwork-claw-gateway/src/passthrough.rs
-services/sdkwork-claw-gateway/src/route_scoped_openai_passthrough.rs
+services/sdkwork-clawrouter-router-service/src/api/openai_chat.rs
+services/sdkwork-clawrouter-router-service/src/api/openai_embeddings.rs
+services/sdkwork-clawrouter-router-service/src/api/openai_responses.rs
+services/sdkwork-clawrouter-router-service/src/api/openai_invocation.rs
+services/sdkwork-clawrouter-router-service/src/api/openai_runtime.rs
+services/sdkwork-clawrouter-router-service/src/api/openai_usage.rs
+services/sdkwork-clawrouter-gateway/src/passthrough.rs
+services/sdkwork-clawrouter-gateway/src/route_scoped_openai_passthrough.rs
 ```
 
 这些文件可先替换为薄路由入口，再逐步删除旧私有函数。最终不保留旧编排。

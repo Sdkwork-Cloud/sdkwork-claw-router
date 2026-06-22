@@ -29,11 +29,11 @@
 ### Task 2: Claw Router Agent Run Contract
 
 **Files:**
-- Modify: `services/sdkwork-claw-product/src/ports/app_generation_agent_run_store.rs`
-- Modify: `services/sdkwork-claw-product/src/api/app_generation_agent.rs`
-- Modify: `services/sdkwork-claw-product/tests/app_generation_history_api.rs`
-- Modify: `services/sdkwork-claw-product/src/infrastructure/sql/sqlite/app_generation_agent_run_store.rs`
-- Modify: `services/sdkwork-claw-product/src/infrastructure/sql/postgres/app_generation_agent_run_store.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/ports/app_generation_agent_run_store.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/api/app_generation_agent.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/tests/app_generation_history_api.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/app_generation_agent_run_store.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/app_generation_agent_run_store.rs`
 
 - [ ] Write failing route tests requiring `agent`, `run`, `steps`, `usage`, and `meteringEvents` in the response.
 - [ ] Run the focused Rust test and confirm failure.

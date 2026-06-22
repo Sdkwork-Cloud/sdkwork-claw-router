@@ -9,6 +9,7 @@ import {
 import { SdkworkAppClient, type SdkworkAppConfig } from '@sdkwork/clawrouter-app-sdk';
 import { SdkworkBackendClient, type SdkworkBackendConfig } from '@sdkwork/clawrouter-backend-sdk';
 import { SdkworkBackendClient as ModelsBackendClient } from '@sdkwork/models-backend-sdk';
+import { SdkworkAppClient as ModelsAppClient } from '@sdkwork/models-app-sdk';
 import { SdkworkAiClient, type SdkworkAiConfig } from '@sdkwork/clawrouter-open-sdk';
 import {
   SdkworkAppClient as SdkworkGenerationsAppClient,
@@ -50,6 +51,7 @@ import {
 import {
   clearStoredAppSessionToken,
   loadStoredAppSessionToken,
+  subscribeStoredAppSessionChange,
 } from './app-session-token.ts';
 import { resetClawRouterIamRuntime } from './iam-runtime.ts';
 import { buildPortalAuthLoginRedirect, isProtectedPortalPath } from './portal-auth.ts';
@@ -58,6 +60,8 @@ import { readClawRouterRuntimeEnv } from './utils/env.ts';
 
 export const APP_API_PREFIX = '/app/v3/api';
 export const BACKEND_API_PREFIX = '/backend/v3/api';
+const SDKWORK_ACCESS_TOKEN_ENV_KEY = 'SDKWORK_ACCESS_TOKEN';
+const SDKWORK_AUTH_TOKEN_ENV_KEY = 'SDKWORK_AUTH_TOKEN';
 export const OPEN_API_PREFIX = '/v1';
 export const DRIVE_OPEN_API_PREFIX = '/open/v3/api';
 export const MEMORY_OPEN_API_PREFIX = '/mem/v3/api';
@@ -114,6 +118,19 @@ export const CLAWROUTER_BACKEND_SDK_REFERENCE_METADATA: ClawRouterGeneratedSdkMe
   archiveLanguage: 'typescript',
   archiveName: 'sdkwork-clawrouter-backend-sdk-typescript-0.1.0.zip',
   description: 'SDKWork Claw Router backend API SDK',
+};
+
+export const MODELS_APP_SDK_REFERENCE_METADATA: ClawRouterGeneratedSdkMetadata = {
+  name: 'SdkworkAppClient',
+  packageName: '@sdkwork/models-app-sdk',
+  version: '0.1.0',
+  sdkType: 'app',
+  apiPrefix: APP_API_PREFIX,
+  runtimeEnvName: 'VITE_SDKWORK_MODELS_APP_API_BASE_URL',
+  sourceDir: 'sdks/sdkwork-models-app-sdk/sdkwork-models-app-sdk-typescript/generated/server-openapi',
+  archiveLanguage: 'typescript',
+  archiveName: 'sdkwork-models-app-sdk-typescript-0.1.0.zip',
+  description: 'SDKWork Models app catalog API SDK',
 };
 
 export const CLAWROUTER_AI_SDK_REFERENCE_METADATA: ClawRouterGeneratedSdkMetadata = {
@@ -422,7 +439,9 @@ type BackendCommerceDependencyOverlay = CommerceBackendSdkPublicResource & {
     };
   };
 };
-export type ClawRouterBackendSdkClient = SdkworkBackendClient;
+export type ClawRouterBackendSdkClient = SdkworkBackendClient & {
+  readonly commerce: BackendCommerceDependencyOverlay;
+};
 export type SdkworkAppbaseAppSdkClient = SdkworkAppbaseAppClient;
 export type SdkworkAppbaseBackendSdkClient = SdkworkAppbaseBackendClient;
 export type SdkworkGenerationsAppSdkClient = SdkworkGenerationsAppClient;
@@ -511,7 +530,13 @@ export function createClawRouterAppSdkClient(options: ClawRouterAppSdkClientOpti
 }
 
 export function createClawRouterBackendSdkClient(options: ClawRouterBackendSdkClientOptions = {}): ClawRouterBackendSdkClient {
-  return attachClawRouterSdkSessionAuthBoundary(new SdkworkBackendClient(buildBackendConfig(options)));
+  const client = attachClawRouterSdkSessionAuthBoundary(new SdkworkBackendClient(buildBackendConfig(options)));
+  return attachCommerceBackendSdkDependency(client, createSdkworkCommerceBackendSdkClient({
+    backendBaseUrl: options.backendBaseUrl,
+    platform: options.platform,
+    tokenManager: options.tokenManager,
+    timeout: options.timeout,
+  }));
 }
 
 export function createSdkworkAppbaseAppSdkClient(
@@ -632,7 +657,7 @@ let modelsBackendClient: ModelsBackendSdkClient | null = null;
 export function createModelsBackendSdkClient(
   options: ModelsBackendSdkClientOptions = {},
 ): ModelsBackendSdkClient {
-  return attachClawRouterSdkSessionAuthBoundary(new ModelsBackendClient(buildBackendConfig(options)));
+  return attachClawRouterSdkSessionAuthBoundary(new ModelsBackendClient(buildModelsBackendConfig(options)));
 }
 
 export function getModelsBackendSdkClient(
@@ -645,6 +670,29 @@ export function getModelsBackendSdkClient(
     modelsBackendClient = createModelsBackendSdkClient();
   }
   return modelsBackendClient;
+}
+
+export type ModelsAppSdkClient = ModelsAppClient;
+export type ModelsAppSdkClientOptions = ClawRouterAppSdkClientOptions;
+
+let modelsAppClient: ModelsAppSdkClient | null = null;
+
+export function createModelsAppSdkClient(
+  options: ModelsAppSdkClientOptions = {},
+): ModelsAppSdkClient {
+  return attachClawRouterSdkSessionAuthBoundary(new ModelsAppClient(buildModelsAppConfig(options)));
+}
+
+export function getModelsAppSdkClient(
+  options: ModelsAppSdkClientOptions = {},
+): ModelsAppSdkClient {
+  if (hasRuntimeOverrides(options)) {
+    return createModelsAppSdkClient(options);
+  }
+  if (!modelsAppClient) {
+    modelsAppClient = createModelsAppSdkClient();
+  }
+  return modelsAppClient;
 }
 
 export function getSdkworkAppbaseAppSdkClient(
@@ -999,7 +1047,7 @@ function isClawRouterSdkErrorRecord(error: unknown): error is Record<string, unk
 }
 
 export function createClawRouterAppSdkModelExample(modelId: string, nodeEnvReference = 'process.env'): string {
-  const sdk = CLAWROUTER_APP_SDK_REFERENCE_METADATA;
+  const sdk = MODELS_APP_SDK_REFERENCE_METADATA;
   const apiKeyProperty = 'api' + 'Key';
   return [
     `import { ${sdk.name} } from '${sdk.packageName}';`,
@@ -1011,7 +1059,7 @@ export function createClawRouterAppSdkModelExample(modelId: string, nodeEnvRefer
     '',
     'async function main() {',
     '  const params = {',
-    `    searchQuery: ${JSON.stringify(modelId)},`,
+    `    q: ${JSON.stringify(modelId)},`,
     '    limit: 1',
     '  };',
     '  const response = await client.ai.models.list(params);',
@@ -1041,6 +1089,36 @@ function buildBackendConfig(options: ClawRouterBackendSdkClientOptions): Sdkwork
       BACKEND_API_PREFIX,
     ),
     platform: options.platform ?? 'web-admin',
+    tokenManager: resolveClawRouterSdkTokenManager(options.tokenManager),
+    timeout: options.timeout,
+  };
+}
+
+function buildModelsBackendConfig(options: ModelsBackendSdkClientOptions): SdkworkBackendConfig {
+  return {
+    baseUrl: normalizeGeneratedSdkBaseUrl(
+      options.backendBaseUrl
+        ?? readClawRouterRuntimeEnv('VITE_SDKWORK_MODELS_BACKEND_API_BASE_URL')
+        ?? readClawRouterRuntimeEnv('VITE_CLAWROUTER_BACKEND_API_BASE_URL')
+        ?? BACKEND_API_PREFIX,
+      BACKEND_API_PREFIX,
+    ),
+    platform: options.platform ?? 'web-admin',
+    tokenManager: resolveClawRouterSdkTokenManager(options.tokenManager),
+    timeout: options.timeout,
+  };
+}
+
+function buildModelsAppConfig(options: ModelsAppSdkClientOptions): SdkworkAppConfig {
+  return {
+    baseUrl: normalizeGeneratedSdkBaseUrl(
+      options.appBaseUrl
+        ?? readClawRouterRuntimeEnv('VITE_SDKWORK_MODELS_APP_API_BASE_URL')
+        ?? readClawRouterRuntimeEnv('VITE_CLAWROUTER_APP_API_BASE_URL')
+        ?? APP_API_PREFIX,
+      APP_API_PREFIX,
+    ),
+    platform: options.platform ?? 'web',
     tokenManager: resolveClawRouterSdkTokenManager(options.tokenManager),
     timeout: options.timeout,
   };
@@ -1252,13 +1330,42 @@ function syncTokenManagerFromStoredSession(tokenManager: AuthTokenManager): void
   tokenManager.clearTokens();
 }
 
+function readBootstrapAccessToken(): string | undefined {
+  const processEnv = (globalThis as typeof globalThis & {
+    process?: { env?: Record<string, string | undefined> };
+  }).process?.env;
+  const value = processEnv?.[SDKWORK_ACCESS_TOKEN_ENV_KEY]?.trim();
+  return value || undefined;
+}
+
+function readBootstrapAuthToken(): string | undefined {
+  const processEnv = (globalThis as typeof globalThis & {
+    process?: { env?: Record<string, string | undefined> };
+  }).process?.env;
+  const value = processEnv?.[SDKWORK_AUTH_TOKEN_ENV_KEY]?.trim();
+  return value || undefined;
+}
+
 function readStoredAuthTokens(): AuthTokens {
   const stored = loadStoredAppSessionToken();
-  return {
+  const tokens: AuthTokens = {
     ...(stored?.accessToken ? { accessToken: stored.accessToken } : {}),
     ...(stored?.authToken ? { authToken: stored.authToken } : {}),
     ...(stored?.refreshToken ? { refreshToken: stored.refreshToken } : {}),
   };
+  if (!tokens.authToken) {
+    const bootstrapAuthToken = readBootstrapAuthToken();
+    if (bootstrapAuthToken) {
+      tokens.authToken = bootstrapAuthToken;
+    }
+  }
+  if (!tokens.accessToken) {
+    const bootstrapAccessToken = readBootstrapAccessToken();
+    if (bootstrapAccessToken) {
+      tokens.accessToken = bootstrapAccessToken;
+    }
+  }
+  return tokens;
 }
 
 function createOpenGatewayClientKey(): string {
@@ -1323,6 +1430,16 @@ function attachCommerceAppSdkDependency(
   return attachReadOnlyProperty(client, 'commerce', commerceClient) as ClawRouterAppSdkClient;
 }
 
+function attachCommerceBackendSdkDependency(
+  client: SdkworkBackendClient,
+  commerceClient: SdkworkCommerceBackendSdkClient,
+): ClawRouterBackendSdkClient {
+  const facade = createBackendCommerceCanonicalFacade(
+    commerceClient as unknown as BackendCommerceDependencyOverlay,
+  );
+  return attachReadOnlyProperty(client, 'commerce', facade) as ClawRouterBackendSdkClient;
+}
+
 function createAppCommerceCanonicalFacade(client: SdkworkCommerceAppClient): SdkworkCommerceAppClient {
   const facade = client as SdkworkCommerceAppClient & Record<string, unknown>;
   const invoices = readCommerceObject(facade.invoices);
@@ -1357,6 +1474,13 @@ function createBackendCommerceCanonicalFacade(commerce: BackendCommerceDependenc
   attachManagementAlias(facade.wallet.ledgerEntries, 'list');
   attachManagementAlias(facade.wallet.exchangeRules, 'list');
   attachManagementAlias(facade.wallet.adjustments, 'create');
+  const inventory = readCommerceObject(facade.inventory);
+  if (inventory && !readCommerceResourceProperty(inventory, 'ledgerEntries')) {
+    const movements = readCommerceResourceProperty(inventory, 'movements');
+    if (movements) {
+      attachReadOnlyProperty(inventory, 'ledgerEntries', movements);
+    }
+  }
   return commerce;
 }
 
@@ -1465,3 +1589,7 @@ function isCommerceObjectResource(value: unknown): value is object {
 function readCommerceResourceProperty(value: object, property: PropertyKey): unknown {
   return (value as Record<PropertyKey, unknown>)[property];
 }
+
+subscribeStoredAppSessionChange(() => {
+  syncClawRouterGlobalTokenManagerFromStoredSession();
+});

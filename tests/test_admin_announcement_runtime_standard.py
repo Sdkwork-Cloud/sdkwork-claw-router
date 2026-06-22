@@ -145,8 +145,8 @@ class AdminAnnouncementRuntimeStandardTest(unittest.TestCase):
 
     def test_admin_announcement_read_model_fails_closed_for_target_and_status(self) -> None:
         store_paths = [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_announcement_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_announcement_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/admin_announcement_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/admin_announcement_store.rs",
         ]
 
         for relative_path in store_paths:

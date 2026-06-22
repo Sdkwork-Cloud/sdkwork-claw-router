@@ -9,12 +9,14 @@ __pycache__/
 .tmp_*
 .tmp*
 .cursor-*-guardian.txt
+.*-old.ts
+.*-old.tsx
 .pnpm-store/
 .tmp/
 .env
 .env.*
 !.env.*.example
-.env.release.local
+# Host profile env files (.env.development, .env.release, …) are ignored via .env.*
 
 node_modules/
 dist/
@@ -60,12 +62,6 @@ apps/*/keys.txt
 data/skills/clawhub/raw/details/*.json
 !data/skills/clawhub/raw/details/*-[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f].json
 
-# SDKWork local environment and runtime config overrides
-.env.local
-.env.development.local
-.env.test.local
-.env.staging.local
-.env.production.local
-.env.postgres
-.env.release.local
+# SDKWork profile env files (see specs/application-env-standard.md)
+# Host profiles such as .env.development and .env.release are ignored via .env.*
 config/*.local.toml

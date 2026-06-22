@@ -12,6 +12,10 @@ import type {
   SdkworkMembershipSummary as CommerceSdkworkMembershipSummary,
 } from '@sdkwork/commerce-pc-membership';
 import type {
+  SdkworkPaymentDetail as CommerceSdkworkPaymentDetail,
+  SdkworkPaymentSummary as CommerceSdkworkPaymentSummary,
+} from '@sdkwork/commerce-pc-payment';
+import type {
   SdkworkWalletOverview as CommerceSdkworkWalletOverview,
   SdkworkWalletRechargeResult as CommerceSdkworkWalletRechargeResult,
   SdkworkWalletWithdrawResult as CommerceSdkworkWalletWithdrawResult,
@@ -31,6 +35,9 @@ export type SdkworkMembershipPlan = CommerceSdkworkMembershipPlan;
 export type SdkworkMembershipBenefit = CommerceSdkworkMembershipBenefit;
 export type SdkworkMembershipDashboardData = CommerceSdkworkMembershipDashboardData;
 export type SdkworkMembershipPurchaseResult = CommerceSdkworkMembershipPurchaseResult;
+
+export type SdkworkPaymentSummary = CommerceSdkworkPaymentSummary;
+export type SdkworkPaymentDetail = CommerceSdkworkPaymentDetail;
 
 export interface RechargeSettingsSnapshot {
   baseCurrencyCode: string;

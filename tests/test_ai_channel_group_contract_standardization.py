@@ -147,16 +147,16 @@ class AiChannelGroupContractStandardizationTest(unittest.TestCase):
             "/backend/v3/api/iam/" + "channel_groups",
         ]
         scoped_files = [
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "application" / "mod.rs",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "application" / "mod.rs",
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "api"
             / "admin_model_rate_limit.rs",
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -164,7 +164,7 @@ class AiChannelGroupContractStandardizationTest(unittest.TestCase):
             / "admin_model_rate_limit_store.rs",
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -172,7 +172,7 @@ class AiChannelGroupContractStandardizationTest(unittest.TestCase):
             / "admin_model_rate_limit_store.rs",
             ROOT
             / "services"
-            / "sdkwork-claw-admin"
+            / "sdkwork-clawrouter-admin-api-server"
             / "tests"
             / "database_config_router.rs",
         ]

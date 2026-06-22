@@ -64,19 +64,19 @@ Schema and registry:
 
 Backend payment center:
 
-- Modify: `services/sdkwork-claw-product/src/api/admin_transaction_center.rs`
-- Modify: `services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_transaction_center_store.rs`
-- Modify: `services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_transaction_center_store.rs`
-- Modify: `services/sdkwork-claw-product/src/ports/admin_transaction_center_store.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/api/admin_transaction_center.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/admin_transaction_center_store.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/admin_transaction_center_store.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/ports/admin_transaction_center_store.rs`
 
 Payment callback and adapter runtime:
 
-- Create: `services/sdkwork-claw-product/src/application/payment_adapter.rs`
-- Create: `services/sdkwork-claw-product/src/application/payment_provider_registry.rs`
-- Modify: `services/sdkwork-claw-product/src/api/app_payment_callback.rs`
-- Modify: `services/sdkwork-claw-product/src/infrastructure/sql/postgres/payment_callback_store.rs`
-- Modify: `services/sdkwork-claw-product/src/infrastructure/sql/sqlite/payment_callback_store.rs`
-- Modify: `services/sdkwork-claw-product/src/ports/payment_callback_store.rs`
+- Create: `services/sdkwork-clawrouter-router-service/src/application/payment_adapter.rs`
+- Create: `services/sdkwork-clawrouter-router-service/src/application/payment_provider_registry.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/api/app_payment_callback.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/payment_callback_store.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/payment_callback_store.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/ports/payment_callback_store.rs`
 
 Bootstrap catalog:
 
@@ -87,8 +87,8 @@ Tests:
 
 - Modify: `crates/sdkwork-claw-http/tests/service_router.rs`
 - Modify: `apps/sdkwork-clawrouter-pc/api-reference-playground-runtime.test.ts`
-- Create: `services/sdkwork-claw-product/tests/payment_provider_catalog_contract.rs`
-- Create: `services/sdkwork-claw-product/tests/payment_adapter_registry.rs`
+- Create: `services/sdkwork-clawrouter-router-service/tests/payment_provider_catalog_contract.rs`
+- Create: `services/sdkwork-clawrouter-router-service/tests/payment_adapter_registry.rs`
 - Create: `tests/test_payment_transit_schema_contract.py`
 
 ## Task 1: Contract Scope Alignment
@@ -123,7 +123,7 @@ Result: payment aggregate focused filter passed with `cargo test -p sdkwork-claw
 
 - [x] Update backend validation so active runtime provider allowlists match the mainstream provider set.
 
-Target file: `services/sdkwork-claw-product/src/api/admin_transaction_center.rs`
+Target file: `services/sdkwork-clawrouter-router-service/src/api/admin_transaction_center.rs`
 
 Expected mainstream providers: `wechat_pay`, `alipay`, `stripe`, `paypal`, `apple_pay`, `google_pay`.
 
@@ -139,7 +139,7 @@ Expected: mainstream providers have deterministic seed ids and inactive placehol
 
 - [x] Add provider catalog contract test.
 
-Target file: `services/sdkwork-claw-product/tests/payment_provider_catalog_contract.rs`
+Target file: `services/sdkwork-clawrouter-router-service/tests/payment_provider_catalog_contract.rs`
 
 Expected checks:
 
@@ -197,7 +197,7 @@ Expected modified generated files:
 
 - [x] Create `PaymentProviderAdapter` interface.
 
-Target file: `services/sdkwork-claw-product/src/application/payment_adapter.rs`
+Target file: `services/sdkwork-clawrouter-router-service/src/application/payment_adapter.rs`
 
 Required operations:
 
@@ -217,7 +217,7 @@ Required operations:
 
 - [x] Create provider registry.
 
-Target file: `services/sdkwork-claw-product/src/application/payment_provider_registry.rs`
+Target file: `services/sdkwork-clawrouter-router-service/src/application/payment_provider_registry.rs`
 
 Expected behavior:
 
@@ -231,7 +231,7 @@ Expected: adapters normalize unsupported runtime calls as capability errors unti
 
 - [x] Add registry tests.
 
-Target file: `services/sdkwork-claw-product/tests/payment_adapter_registry.rs`
+Target file: `services/sdkwork-clawrouter-router-service/tests/payment_adapter_registry.rs`
 
 Expected checks:
 
@@ -245,8 +245,8 @@ Expected checks:
 
 Targets:
 
-- `services/sdkwork-claw-product/src/infrastructure/sql/postgres/payment_callback_store.rs`
-- `services/sdkwork-claw-product/src/infrastructure/sql/sqlite/payment_callback_store.rs`
+- `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/payment_callback_store.rs`
+- `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/payment_callback_store.rs`
 
 Expected behavior:
 
@@ -256,7 +256,7 @@ Expected behavior:
 
 - [x] Replace hardcoded callback provider parsing with registry lookup.
 
-Target file: `services/sdkwork-claw-product/src/api/app_payment_callback.rs`
+Target file: `services/sdkwork-clawrouter-router-service/src/api/app_payment_callback.rs`
 
 Expected behavior:
 

@@ -1,4 +1,4 @@
-import type { SdkworkDownloadCard } from '@sdkwork/distribution-pc-react/downloads';
+import type { SdkworkDownloadCard } from '@sdkwork/clawrouter-pc-downloads';
 import defaultDownloadCatalog from './claw-router-downloads.json' with { type: 'json' };
 
 type Translate = (

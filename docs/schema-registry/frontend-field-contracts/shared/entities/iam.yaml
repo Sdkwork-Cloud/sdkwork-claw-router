@@ -95,3 +95,178 @@ x_response_entities:
           - email
           - phone
       verificationPolicy: *id001
+  iam_user_response:
+    name: IamUserResponse
+    type: object
+    additionalProperties: false
+    required:
+    - id
+    - username
+    - displayName
+    - email
+    - avatar
+    - phone
+    - language
+    - isVerified
+    - status
+    - registeredAt
+    - lastLogin
+    - lastLoginIp
+    - passwordLastChanged
+    - twoFactorEnabled
+    - thirdPartyBound
+    properties:
+      id:
+        type: string
+        minLength: 1
+        maxLength: 128
+      username:
+        type: string
+        minLength: 1
+        maxLength: 128
+      displayName:
+        type: string
+        minLength: 1
+        maxLength: 128
+      email:
+        type: string
+        maxLength: 256
+      avatar:
+        $ref: '#/components/schemas/MediaResource'
+      phone:
+        type: string
+        description: Safe display phone value, empty when unavailable.
+      language:
+        type: string
+        maxLength: 32
+      isVerified:
+        type: boolean
+      status:
+        type: string
+        maxLength: 32
+      registeredAt:
+        type: string
+        format: date-time
+      lastLogin:
+        type: string
+        maxLength: 64
+      lastLoginIp:
+        type: string
+        description: Masked client IP address from the latest login event.
+      passwordLastChanged:
+        type: string
+        maxLength: 64
+      twoFactorEnabled:
+        type: boolean
+      thirdPartyBound:
+        type: string
+        description: Safe OAuth provider binding summary without provider subject IDs or tokens.
+  admin_auth_wechat_official:
+    name: AdminAuthWechatOfficial
+    type: object
+    additionalProperties: false
+    required:
+    - key
+    - name
+    - appId
+    - secretRef
+    - tokenRef
+    - enabled
+    - primary
+    properties:
+      key:
+        type: string
+        minLength: 1
+        maxLength: 64
+        pattern: ^[A-Za-z0-9_-]+$
+      name:
+        type: string
+        minLength: 1
+        maxLength: 64
+      appId:
+        type: string
+        minLength: 1
+        maxLength: 64
+        pattern: ^[A-Za-z0-9_-]+$
+      originalId:
+        type: string
+        maxLength: 64
+        pattern: ^[A-Za-z0-9_-]*$
+      secretRef:
+        type: string
+        minLength: 1
+        maxLength: 256
+        pattern: ^(secret|vault)://[!-~]+$
+      tokenRef:
+        type: string
+        minLength: 1
+        maxLength: 256
+        pattern: ^(secret|vault)://[!-~]+$
+      aesKeyRef:
+        type: string
+        maxLength: 256
+        pattern: ^(|secret://[!-~]+|vault://[!-~]+)$
+      url:
+        type: string
+        maxLength: 2048
+        pattern: ^$|^https://[^#]+$
+      enabled:
+        type: boolean
+      primary:
+        type: boolean
+      scene:
+        type: string
+        maxLength: 64
+        pattern: ^[A-Za-z0-9_-]*$
+  admin_auth_wechat_mini:
+    name: AdminAuthWechatMini
+    type: object
+    additionalProperties: false
+    required:
+    - key
+    - name
+    - appId
+    - secretRef
+    - enabled
+    - primary
+    - path
+    - env
+    properties:
+      key:
+        type: string
+        minLength: 1
+        maxLength: 64
+        pattern: ^[A-Za-z0-9_-]+$
+      name:
+        type: string
+        minLength: 1
+        maxLength: 64
+      appId:
+        type: string
+        minLength: 1
+        maxLength: 64
+        pattern: ^[A-Za-z0-9_-]+$
+      secretRef:
+        type: string
+        minLength: 1
+        maxLength: 256
+        pattern: ^(secret|vault)://[!-~]+$
+      url:
+        type: string
+        maxLength: 2048
+        pattern: ^$|^https://[^#]+$
+      enabled:
+        type: boolean
+      primary:
+        type: boolean
+      path:
+        type: string
+        minLength: 1
+        maxLength: 128
+        pattern: ^[^/?#][^?#]*$
+      env:
+        type: string
+        enum:
+        - release
+        - trial
+        - develop

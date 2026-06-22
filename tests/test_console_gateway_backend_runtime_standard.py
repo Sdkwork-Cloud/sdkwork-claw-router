@@ -8,13 +8,13 @@ ROOT = Path(__file__).resolve().parents[1]
 class ConsoleGatewayBackendRuntimeStandardTest(unittest.TestCase):
     def test_console_gateway_operation_is_backed_by_real_app_api_router(self) -> None:
         product_api_mod = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "mod.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "mod.rs"
         ).read_text(encoding="utf-8")
         app_api = (
             ROOT / "crates" / "sdkwork-router-app-api" / "src" / "routes.rs"
         ).read_text(encoding="utf-8")
         app_gateway_path = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_gateway.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "app_gateway.rs"
         )
 
         self.assertTrue(app_gateway_path.exists())
@@ -42,12 +42,12 @@ class ConsoleGatewayBackendRuntimeStandardTest(unittest.TestCase):
 
     def test_console_gateway_port_exposes_only_safe_trace_fields(self) -> None:
         ports_mod = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "mod.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "ports" / "mod.rs"
         ).read_text(encoding="utf-8")
         port_path = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "ports"
             / "app_gateway_traces_read_store.rs"

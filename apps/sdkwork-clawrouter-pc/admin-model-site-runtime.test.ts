@@ -173,7 +173,7 @@ test("admin model site form supports upstream provider profile fields", () => {
   const siteAdminSource = readSiteAdminSource();
   const siteServiceSource = readPortalFile("packages/sdkwork-clawrouter-pc-admin-relay-site/src/siteService.ts");
   const adminSiteApiSource = readFileSync(
-    resolve(PORTAL_ROOT, "../../services/sdkwork-claw-product/src/api/admin_site.rs"),
+    resolve(PORTAL_ROOT, "../../services/sdkwork-clawrouter-router-service/src/api/admin_site.rs"),
     "utf8",
   );
   const siteFormSource = readSiteFormSource(siteAdminSource);

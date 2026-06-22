@@ -65,7 +65,7 @@ BACKEND_SDK_REFERRAL_RESPONSE_PATH = (
 PRODUCT_ADMIN_MARKETING_PORT_PATH = (
     ROOT
     / "services"
-    / "sdkwork-claw-product"
+    / "sdkwork-clawrouter-router-service"
     / "src"
     / "ports"
     / "admin_marketing_store.rs"
@@ -73,7 +73,7 @@ PRODUCT_ADMIN_MARKETING_PORT_PATH = (
 PRODUCT_ADMIN_MARKETING_API_PATH = (
     ROOT
     / "services"
-    / "sdkwork-claw-product"
+    / "sdkwork-clawrouter-router-service"
     / "src"
     / "api"
     / "admin_marketing.rs"
@@ -81,7 +81,7 @@ PRODUCT_ADMIN_MARKETING_API_PATH = (
 PRODUCT_ADMIN_MARKETING_SQLITE_STORE_PATH = (
     ROOT
     / "services"
-    / "sdkwork-claw-product"
+    / "sdkwork-clawrouter-router-service"
     / "src"
     / "infrastructure"
     / "sql"
@@ -91,7 +91,7 @@ PRODUCT_ADMIN_MARKETING_SQLITE_STORE_PATH = (
 PRODUCT_ADMIN_MARKETING_POSTGRES_STORE_PATH = (
     ROOT
     / "services"
-    / "sdkwork-claw-product"
+    / "sdkwork-clawrouter-router-service"
     / "src"
     / "infrastructure"
     / "sql"

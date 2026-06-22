@@ -1049,6 +1049,7 @@ frontend_operations:
   api_surface: backend
   api_method: GET
   api_path: /backend/v3/api/ai/resources
+  openapi_exposed: false
   read_sources:
   - ai_resource
   - ai_resource_group_item
@@ -1178,6 +1179,7 @@ frontend_operations:
   api_surface: backend
   api_method: POST
   api_path: /backend/v3/api/ai/resources
+  openapi_exposed: false
   read_sources:
   - ai_resource
   - ai_resource_group_item
@@ -1301,6 +1303,7 @@ frontend_operations:
   api_surface: backend
   api_method: PUT
   api_path: /backend/v3/api/ai/resources/{resourceId}
+  openapi_exposed: false
   path_params:
   - resourceId
   read_sources:
@@ -1374,6 +1377,7 @@ frontend_operations:
   api_surface: backend
   api_method: GET
   api_path: /backend/v3/api/ai/resource_groups
+  openapi_exposed: false
   read_sources:
   - ai_resource_group
   - ai_resource_group_item
@@ -1497,6 +1501,7 @@ frontend_operations:
   api_surface: backend
   api_method: GET
   api_path: /backend/v3/api/ai/resource_groups/{groupIdOrCode}/resources
+  openapi_exposed: false
   path_params:
   - groupIdOrCode
   query_parameters: []
@@ -1617,6 +1622,7 @@ frontend_operations:
   api_surface: backend
   api_method: POST
   api_path: /backend/v3/api/ai/resource_groups
+  openapi_exposed: false
   read_sources:
   - ai_resource_group
   - ai_resource_group_item
@@ -1708,6 +1714,7 @@ frontend_operations:
   api_surface: backend
   api_method: PATCH
   api_path: /backend/v3/api/ai/resource_groups/{groupId}
+  openapi_exposed: false
   path_params:
   - groupId
   read_sources:
@@ -1729,6 +1736,7 @@ frontend_operations:
   api_surface: backend
   api_method: DELETE
   api_path: /backend/v3/api/ai/resource_groups/{groupId}
+  openapi_exposed: false
   path_params:
   - groupId
   read_sources:
@@ -2201,6 +2209,7 @@ frontend_operations:
   api_surface: backend
   api_method: GET
   api_path: /backend/v3/api/ai/model_mappings
+  openapi_exposed: false
   read_sources:
   - ai_model_mapping_rule
   - ai_model_mapping_rule_binding
@@ -2525,6 +2534,7 @@ frontend_operations:
   api_surface: backend
   api_method: POST
   api_path: /backend/v3/api/ai/model_mappings
+  openapi_exposed: false
   read_sources:
   - ai_model_mapping_rule
   - ai_model_mapping_rule_binding
@@ -2665,6 +2675,7 @@ frontend_operations:
   api_surface: backend
   api_method: PATCH
   api_path: /backend/v3/api/ai/model_mappings/{mappingId}
+  openapi_exposed: false
   path_params:
   - mappingId
   read_sources:
@@ -2690,6 +2701,7 @@ frontend_operations:
   api_surface: backend
   api_method: DELETE
   api_path: /backend/v3/api/ai/model_mappings/{mappingId}
+  openapi_exposed: false
   path_params:
   - mappingId
   read_sources:
@@ -2719,6 +2731,7 @@ frontend_operations:
   api_surface: backend
   api_method: POST
   api_path: /backend/v3/api/ai/model_mappings/resolve
+  openapi_exposed: false
   read_sources:
   - ai_model_mapping_rule
   - ai_model_mapping_rule_binding
@@ -2985,6 +2998,7 @@ frontend_operations:
   api_surface: backend
   api_method: GET
   api_path: /backend/v3/api/ai/model_vendors
+  openapi_exposed: false
   read_sources:
   - ai_model_vendor
   query_parameters: []
@@ -3035,21 +3049,42 @@ frontend_operations:
 - route: /admin/model
   source: data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts
   operation: fetchModels
+  operation_id: models.list
   kind: read
   api_surface: backend
   api_method: GET
   api_path: /backend/v3/api/ai/models
+  openapi_exposed: false
   read_sources:
   - ai_model_vendor
   - ai_model
   - ai_model_pricing
   - ai_model_rank_snapshot
-  query_parameters: []
+  query_parameters:
+  - name: vendor_id
+    type: string
+    required: false
+  - name: vendor_code
+    type: string
+    required: false
+  - name: q
+    type: string
+    required: false
+  - name: limit
+    type: integer
+    required: false
+  - name: offset
+    type: integer
+    required: false
   response_schema:
     name: AdminAiModelsResponse
     required:
     - items
     properties:
+      totalCount:
+        type: integer
+        format: int64
+        minimum: 0
       items:
         type: array
         items:
@@ -3269,78 +3304,12 @@ frontend_operations:
         description: AI model catalog snapshots returned by the backend.
 - route: /admin/model
   source: data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts
-  operation: fetchInitializedCatalog
-  kind: action
-  api_surface: backend
-  api_method: POST
-  api_path: /backend/v3/api/ai/models/refresh
-  openapi_exposed: false
-  read_sources:
-  - ai_model_vendor
-  - ai_model
-  - ai_model_capability
-  - ai_model_pricing
-  - ai_model_rank_snapshot
-  - ai_pricing_import_snapshot
-  write_tables:
-  - ai_model_vendor
-  - ai_model
-  - ai_model_capability
-  - ai_model_pricing
-  - ai_pricing_import_snapshot
-  - ops_audit_log
-  request_schema:
-    name: AdminModelCatalogInitializationRequest
-    required: []
-    properties:
-      source:
-        type: string
-        enum:
-        - sdkwork_models
-        description: Frontend initialization uses the bundled sdkwork-models catalog source when persisted lists are empty.
-      mode:
-        type: string
-        enum:
-        - official_refresh
-        description: Empty catalog initialization performs the same official refresh used by the manual sync action.
-      force:
-        type: boolean
-        description: Refresh is forced so an empty persisted catalog is populated immediately.
-  response_schema:
-    name: InitializedModelCatalog
-    required:
-    - initialized
-    - vendors
-    - models
-    properties:
-      initialized:
-        type: boolean
-        description: True when the service had to refresh an empty persisted model catalog before returning data.
-      vendors:
-        type: array
-        items:
-          name: AdminModelVendorItem
-          type: object
-          additionalProperties: false
-          required: *id001
-          properties: *id002
-        description: Model vendor snapshots after optional initialization.
-      models:
-        type: array
-        items:
-          name: AdminAiModelItem
-          type: object
-          additionalProperties: false
-          required: *id003
-          properties: *id004
-        description: AI model snapshots after optional initialization.
-- route: /admin/model
-  source: data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts
   operation: fetchModelRankings
   kind: read
   api_surface: backend
   api_method: GET
   api_path: /backend/v3/api/ai/model_rankings
+  openapi_exposed: false
   read_sources:
   - ai_model_rank_snapshot
   query_parameters:
@@ -3624,6 +3593,7 @@ frontend_operations:
   api_surface: backend
   api_method: GET
   api_path: /backend/v3/api/ai/model_rankings/status
+  openapi_exposed: false
   read_sources:
   - ai_model_rank_snapshot
   - ops_job_execution
@@ -3838,6 +3808,7 @@ frontend_operations:
   api_surface: backend
   api_method: GET
   api_path: /backend/v3/api/ai/model_rankings/jobs
+  openapi_exposed: false
   read_sources:
   - ops_job_execution
   query_parameters:
@@ -3970,6 +3941,7 @@ frontend_operations:
   api_surface: backend
   api_method: POST
   api_path: /backend/v3/api/ai/model_rankings/refresh
+  openapi_exposed: false
   read_sources:
   - ai_model
   - ai_usage_fact
@@ -4100,10 +4072,12 @@ frontend_operations:
 - route: /admin/model
   source: data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts
   operation: syncVendorsAndModels
+  operation_id: models.refresh
   kind: action
   api_surface: backend
   api_method: POST
   api_path: /backend/v3/api/ai/models/refresh
+  openapi_exposed: false
   read_sources:
   - ai_model_vendor
   - ai_model
@@ -4295,6 +4269,7 @@ frontend_operations:
   api_surface: backend
   api_method: POST
   api_path: /backend/v3/api/ai/model_vendors
+  openapi_exposed: false
   read_sources:
   - ai_model_vendor
   write_tables:
@@ -4349,6 +4324,7 @@ frontend_operations:
   api_surface: backend
   api_method: POST
   api_path: /backend/v3/api/ai/models
+  openapi_exposed: false
   read_sources:
   - ai_model_vendor
   - ai_model
@@ -4511,6 +4487,7 @@ frontend_operations:
   api_surface: backend
   api_method: PATCH
   api_path: /backend/v3/api/ai/models/{modelId}
+  openapi_exposed: false
   read_sources:
   - ai_model_vendor
   - ai_model
@@ -4673,6 +4650,7 @@ frontend_operations:
   api_surface: backend
   api_method: DELETE
   api_path: /backend/v3/api/ai/models/{modelId}
+  openapi_exposed: false
   read_sources:
   - ai_model
   - ai_model_capability

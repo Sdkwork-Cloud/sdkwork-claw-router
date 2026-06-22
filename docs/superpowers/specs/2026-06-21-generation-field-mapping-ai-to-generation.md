@@ -90,7 +90,7 @@ Delete `ai_generation_*` from Claw Router and wire `@sdkwork/generations-*` in o
 
 | Location | Action |
 |----------|--------|
-| `services/sdkwork-claw-product/.../sqlite_app_generation_history_read_store.rs` | Replace ai_* queries with generations adapter |
+| `services/sdkwork-clawrouter-router-service/.../sqlite_app_generation_history_read_store.rs` | Replace ai_* queries with generations adapter |
 | `apps/.../sdkwork-clawrouter-pc-playground` | Switch to generations app SDK |
 | `crates/sdkwork-router-*-open-api` | Remove generation paths from router OpenAPI after cutover |
 

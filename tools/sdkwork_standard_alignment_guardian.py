@@ -332,7 +332,7 @@ class SdkworkStandardAlignmentGuardian:
                 )
             )
 
-        gateway_runtime = self.root / "services" / "sdkwork-claw-gateway" / "src" / "runtime.rs"
+        gateway_runtime = self.root / "services" / "sdkwork-clawrouter-gateway" / "src" / "runtime.rs"
         gateway_text = (
             gateway_runtime.read_text(encoding="utf-8") if gateway_runtime.exists() else ""
         )
@@ -369,7 +369,7 @@ class SdkworkStandardAlignmentGuardian:
 
     def _check_handler_subject_resolution(self) -> list[AlignmentCheck]:
         checks: list[AlignmentCheck] = []
-        api_dir = self.root / "services" / "sdkwork-claw-product" / "src" / "api"
+        api_dir = self.root / "services" / "sdkwork-clawrouter-router-service" / "src" / "api"
         allowlist = {"app_auth.rs", "subject.rs", "openai_invocation.rs", "openai_chat.rs", "openai_embeddings.rs", "openai_models.rs", "openai_responses.rs"}
         legacy_files: list[str] = []
         migrated_files: list[str] = []
@@ -401,7 +401,7 @@ class SdkworkStandardAlignmentGuardian:
                 ),
                 remediation=(
                     "replace header parsing with sdkwork-web-framework-aware extractors; "
-                    "see services/sdkwork-claw-product/src/api/subject.rs"
+                    "see services/sdkwork-clawrouter-router-service/src/api/subject.rs"
                 ),
             )
         )
@@ -451,7 +451,7 @@ class SdkworkStandardAlignmentGuardian:
                 )
             )
 
-        product_src = self.root / "services" / "sdkwork-claw-product" / "src"
+        product_src = self.root / "services" / "sdkwork-clawrouter-router-service" / "src"
         rust_usage_files = 0
         if product_src.exists():
             for path in product_src.rglob("*.rs"):
@@ -468,9 +468,9 @@ class SdkworkStandardAlignmentGuardian:
                 severity="warning",
                 status="pass" if rust_usage_files else "fail",
                 message=(
-                    f"product service uses sdkwork-utils-rust in {rust_usage_files} module(s)"
+                    f"router service uses sdkwork-utils-rust in {rust_usage_files} module(s)"
                     if rust_usage_files
-                    else "product service declares sdkwork-utils-rust but does not import it yet"
+                    else "router service declares sdkwork-utils-rust but does not import it yet"
                 ),
                 remediation="replace local string/token helpers with sdkwork_utils_rust exports",
             )
@@ -549,7 +549,7 @@ class SdkworkStandardAlignmentGuardian:
 
     def _check_database_framework_integration(self) -> list[AlignmentCheck]:
         checks: list[AlignmentCheck] = []
-        gateway_runtime = self.root / "services" / "sdkwork-claw-gateway" / "src" / "runtime.rs"
+        gateway_runtime = self.root / "services" / "sdkwork-clawrouter-gateway" / "src" / "runtime.rs"
         gateway_text = gateway_runtime.read_text(encoding="utf-8") if gateway_runtime.exists() else ""
         if "sdkwork_database_sqlx" in gateway_text:
             checks.append(
@@ -574,10 +574,10 @@ class SdkworkStandardAlignmentGuardian:
                 )
             )
 
-        product_cargo = self.root / "services" / "sdkwork-claw-product" / "Cargo.toml"
+        product_cargo = self.root / "services" / "sdkwork-clawrouter-router-service" / "Cargo.toml"
         product_text = product_cargo.read_text(encoding="utf-8") if product_cargo.exists() else ""
         if "sdkwork-database-repository" in product_text:
-            product_rs_files = list((self.root / "services" / "sdkwork-claw-product" / "src").rglob("*.rs"))
+            product_rs_files = list((self.root / "services" / "sdkwork-clawrouter-router-service" / "src").rglob("*.rs"))
             uses_repository = any(
                 "sdkwork_database_repository" in path.read_text(encoding="utf-8") for path in product_rs_files
             )
@@ -591,7 +591,7 @@ class SdkworkStandardAlignmentGuardian:
                         category="database",
                         severity="warning",
                         status="pass",
-                        message="product service uses sdkwork-database-repository and PoolBuilder",
+                        message="router service uses sdkwork-database-repository and PoolBuilder",
                         remediation="",
                     )
                 )
@@ -602,7 +602,7 @@ class SdkworkStandardAlignmentGuardian:
                         category="database",
                         severity="warning",
                         status="pass",
-                        message="product service uses sdkwork-database-repository",
+                        message="router service uses sdkwork-database-repository",
                         remediation="",
                     )
                 )
@@ -613,12 +613,12 @@ class SdkworkStandardAlignmentGuardian:
                         category="database",
                         severity="warning",
                         status="fail",
-                        message="product service declares sdkwork-database-repository but does not use it yet",
+                        message="router service declares sdkwork-database-repository but does not use it yet",
                         remediation="migrate SQL stores to repository pattern or remove unused dependency",
                     )
                 )
 
-        gateway_runtime = self.root / "services" / "sdkwork-claw-gateway" / "src" / "runtime.rs"
+        gateway_runtime = self.root / "services" / "sdkwork-clawrouter-gateway" / "src" / "runtime.rs"
         gateway_text = gateway_runtime.read_text(encoding="utf-8") if gateway_runtime.exists() else ""
         if "connect_claw_sqlite_runtime" in gateway_text:
             checks.append(
@@ -639,7 +639,7 @@ class SdkworkStandardAlignmentGuardian:
                     severity="warning",
                     status="fail",
                     message="gateway still creates sqlite pools with raw SqlitePoolOptions",
-                    remediation="use sdkwork_claw_product::infrastructure::sql::pool::connect_claw_sqlite_runtime_pool",
+                    remediation="use sdkwork_clawrouter_router_service::infrastructure::sql::pool::connect_claw_sqlite_runtime_pool",
                 )
             )
 
@@ -695,7 +695,7 @@ class SdkworkStandardAlignmentGuardian:
             for entry in data.get("migratedStores", [])
             if isinstance(entry, dict) and entry.get("status") == "MIGRATED"
         ]
-        sql_infra = self.root / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql"
+        sql_infra = self.root / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql"
         legacy_store_files = 0
         if sql_infra.exists():
             legacy_store_files = sum(
@@ -709,7 +709,7 @@ class SdkworkStandardAlignmentGuardian:
                 status="pass",
                 message=(
                     f"database store migration manifest tracks {len(migrated)} migrated repository-sqlx "
-                    f"module(s); {legacy_store_files} legacy *_store.rs modules remain in product service"
+                    f"module(s); {legacy_store_files} legacy *_store.rs modules remain in router service"
                 ),
                 remediation="continue phased migration documented in specs/database-store-migration.manifest.json",
             )
@@ -1066,41 +1066,59 @@ class SdkworkStandardAlignmentGuardian:
 
     def _check_rust_service_naming(self) -> list[AlignmentCheck]:
         checks: list[AlignmentCheck] = []
-        legacy_names = (
+        forbidden_legacy_paths = (
             "services/sdkwork-claw-product",
             "services/sdkwork-claw-app",
             "services/sdkwork-claw-admin",
+            "crates/sdkwork-claw-product-test-support",
+        )
+        canonical_service_paths = (
+            "services/sdkwork-clawrouter-router-service",
+            "services/sdkwork-clawrouter-app-api-server",
+            "services/sdkwork-clawrouter-admin-api-server",
+            "services/sdkwork-clawrouter-gateway",
         )
         migration_manifest = self.root / "specs" / "naming-migration.manifest.json"
-        approved_legacy: set[str] = set()
+        pending_paths: set[str] = set()
         if migration_manifest.exists():
             data = json.loads(migration_manifest.read_text(encoding="utf-8"))
-            for entry in data.get("legacyCrates", []):
+            for entry in data.get("pendingMigrations", []):
                 if isinstance(entry, dict) and isinstance(entry.get("path"), str):
-                    approved_legacy.add(entry["path"])
-        for legacy in legacy_names:
-            if not (self.root / legacy).exists():
-                continue
-            if legacy in approved_legacy:
-                checks.append(
-                    AlignmentCheck(
-                        id=f"rust-naming-{legacy.replace('/', '-')}",
-                        category="naming",
-                        severity="info",
-                        status="pass",
-                        message=f"{legacy} is an approved legacy crate pending rename per specs/naming-migration.manifest.json",
-                        remediation="execute rename migration before reviewBy date",
-                    )
-                )
-            else:
+                    pending_paths.add(entry["path"])
+        for legacy in forbidden_legacy_paths:
+            if (self.root / legacy).exists():
                 checks.append(
                     AlignmentCheck(
                         id=f"rust-naming-{legacy.replace('/', '-')}",
                         category="naming",
                         severity="warning",
                         status="fail",
-                        message=f"{legacy} uses legacy generic service naming instead of sdkwork-<domain>-<capability>-service",
-                        remediation="plan rename/migration per NAMING_SPEC.md and RUST_CODE_SPEC.md",
+                        message=f"{legacy} still uses retired generic service naming",
+                        remediation="rename per specs/naming-migration.manifest.json and NAMING_SPEC.md",
+                    )
+                )
+        for canonical in canonical_service_paths:
+            if (self.root / canonical).exists():
+                checks.append(
+                    AlignmentCheck(
+                        id=f"rust-naming-{canonical.replace('/', '-')}",
+                        category="naming",
+                        severity="info",
+                        status="pass",
+                        message=f"{canonical} uses canonical router service naming",
+                        remediation="",
+                    )
+                )
+        for pending in sorted(pending_paths):
+            if (self.root / pending).exists():
+                checks.append(
+                    AlignmentCheck(
+                        id=f"rust-naming-pending-{pending.replace('/', '-')}",
+                        category="naming",
+                        severity="info",
+                        status="pass",
+                        message=f"{pending} is documented as a pending rename in specs/naming-migration.manifest.json",
+                        remediation="execute pending rename migration per NAMING_SPEC.md",
                     )
                 )
         return checks

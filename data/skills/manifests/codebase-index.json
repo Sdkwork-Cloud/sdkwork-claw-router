@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8102,
+  "uuid": "skill-codebase-index",
+  "skillKey": "codebase-index",
+  "name": "Codebase Index",
+  "version": "1.0.0",
+  "runtime": "builtin",
+  "entrypoint": "sdkwork.skills.codebase_index",
+  "capabilities": [
+    "code.search",
+    "code.index"
+  ],
+  "configSchema": {
+    "type": "object"
+  },
+  "defaultConfig": {},
+  "artifacts": [
+    {
+      "artifactRef": "builtin://sdkwork.skills.codebase_index@1.0.0",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/codebase-index-1.0.0.json"
+      },
+      "version": "1.0.0",
+      "runtime": "builtin",
+      "checksumHash": "sha256:bf6a1868a16b572c9084527c1adcfd417e06912ad6fc9125e78ad1f00daef663",
+      "artifactSizeBytes": 474
+    }
+  ]
+}

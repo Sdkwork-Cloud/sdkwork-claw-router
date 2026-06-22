@@ -35,7 +35,7 @@
           "status": "not-mounted",
           "evidence": [
             "Default Claw Router app runtime treats appbase app API as a dependency surface served by sdkwork-api-gateway through PORTAL_PUBLIC_SDK_BASE_URL.",
-            "services/sdkwork-claw-app/tests/contract_routes.rs verifies the default app router does not locally mount appbase IAM app routes."
+            "services/sdkwork-clawrouter-app-api-server/tests/contract_routes.rs verifies the default app router does not locally mount appbase IAM app routes."
           ]
         }
       }
@@ -65,7 +65,7 @@
             "Commerce app API routes are owned by sdkwork-commerce and consumed through sdkwork-commerce-app-sdk.",
             "Claw Router portal bootstrap derives VITE_SDKWORK_COMMERCE_APP_API_BASE_URL from PORTAL_PUBLIC_SDK_BASE_URL + /app/v3/api when no Commerce-specific override is configured.",
             "Claw Router app runtime uses product-local contract fallback filtering so Commerce dependency app routes return 404 by default instead of local 501 contract stubs.",
-            "cargo test -p sdkwork-claw-app --test contract_routes default_router_does_not_mount_commerce_foundation_routes_locally verifies default app runtime does not locally serve Commerce foundation routes.",
+            "cargo test -p sdkwork-clawrouter-app-api-server --test contract_routes default_router_does_not_mount_commerce_foundation_routes_locally verifies default app runtime does not locally serve Commerce foundation routes.",
             "No Claw Router runtime mount coverage is declared for Commerce app API handlers."
           ]
         }
@@ -128,7 +128,7 @@
           "owner": "sdkwork-clawrouter",
           "sdkClient": "getClawRouterBackendSdkClient().iam.apiKeys.create",
           "consumerRequired": true,
-          "evidence": "services/sdkwork-claw-product/src/api/admin_user.rs create_api_key builds Claw Router gateway API key secrets, hashes, audit records, and idempotency."
+          "evidence": "services/sdkwork-clawrouter-router-service/src/api/admin_user.rs create_api_key builds Claw Router gateway API key secrets, hashes, audit records, and idempotency."
         },
         {
           "method": "DELETE",
@@ -137,7 +137,7 @@
           "owner": "sdkwork-clawrouter",
           "sdkClient": "getClawRouterBackendSdkClient().iam.apiKeys.delete",
           "consumerRequired": true,
-          "evidence": "services/sdkwork-claw-product/src/api/admin_user.rs delete_api_key deletes Claw Router gateway API keys through the product AdminUserStore."
+          "evidence": "services/sdkwork-clawrouter-router-service/src/api/admin_user.rs delete_api_key deletes Claw Router gateway API keys through the product AdminUserStore."
         }
       ],
       "runtimeIntegration": {
@@ -155,7 +155,7 @@
           "status": "not-mounted",
           "evidence": [
             "Default Claw Router backend runtime treats appbase backend IAM API as a dependency surface served by sdkwork-api-gateway through PORTAL_PUBLIC_SDK_BASE_URL.",
-            "services/sdkwork-claw-admin/tests/contract_routes.rs verifies the default admin router does not locally mount appbase backend IAM routes."
+            "services/sdkwork-clawrouter-admin-api-server/tests/contract_routes.rs verifies the default admin router does not locally mount appbase backend IAM routes."
           ]
         }
       }
@@ -185,7 +185,7 @@
             "Commerce backend API routes are owned by sdkwork-commerce and consumed through sdkwork-commerce-backend-sdk plus @sdkwork/commerce-service.",
             "Claw Router portal bootstrap derives VITE_SDKWORK_COMMERCE_BACKEND_API_BASE_URL from PORTAL_PUBLIC_SDK_BASE_URL + /backend/v3/api when no Commerce-specific override is configured.",
             "Claw Router admin runtime uses product-local contract fallback filtering so Commerce dependency backend routes return 404 by default instead of local 501 contract stubs.",
-            "cargo test -p sdkwork-claw-admin --test contract_routes default_router_does_not_mount_commerce_backend_routes_locally verifies default admin runtime does not locally serve Commerce backend routes.",
+            "cargo test -p sdkwork-clawrouter-admin-api-server --test contract_routes default_router_does_not_mount_commerce_backend_routes_locally verifies default admin runtime does not locally serve Commerce backend routes.",
             "No Claw Router runtime mount coverage is declared for Commerce backend API handlers."
           ]
         }
@@ -252,7 +252,7 @@
       "surface": "app-api",
       "apiPrefix": "/app/v3/api",
       "runtimeIntegration": {
-        "mode": "composed-local-mount",
+        "mode": "same-origin-mounted",
         "sameOriginAllowed": true,
         "targetRuntimeIntegration": {
           "mode": "shared-gateway",
@@ -260,17 +260,49 @@
           "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
           "catalogPolicy": "no-dedicated-gateway-catalog"
         },
-        "requiredBaseUrlEnv": "VITE_SDKWORK_MODELS_APP_API_BASE_URL",
+        "baseUrlEnv": "VITE_SDKWORK_MODELS_APP_API_BASE_URL",
+        "fallbackBaseUrlEnv": "VITE_CLAWROUTER_APP_API_BASE_URL",
         "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
+        "rustRouteContractCrate": {
+          "crate": "sdkwork-router-catalog-app-api",
+          "executableRouterExport": "admin_model_catalog_router"
+        },
+        "handlerAdapterExports": [],
         "mountCoverage": {
-          "status": "mounted",
+          "status": "verified",
           "evidence": [
             "Model catalog and rankings app routes are owned by sdkwork-models route crates and mounted in sdkwork-router-app-api through sdkwork_router_catalog_app_api.",
             "Catalog handlers and domain types live in sdkwork-models-catalog-service; Claw Router supplies RefreshableSqlPricingCatalog as the host pricing snapshot port.",
             "cargo test -p sdkwork-router-catalog-app-api --test route_manifest verifies app route manifest alignment."
           ]
         }
-      }
+      },
+      "dependencyOwnedOperations": [
+        {
+          "method": "GET",
+          "path": "/app/v3/api/ai/models",
+          "operationId": "models.list",
+          "owner": "sdkwork-models",
+          "sdkClient": "getModelsAppSdkClient().ai.models.list",
+          "consumerRequired": true
+        },
+        {
+          "method": "GET",
+          "path": "/app/v3/api/ai/model_vendors",
+          "operationId": "modelVendors.list",
+          "owner": "sdkwork-models",
+          "sdkClient": "getModelsAppSdkClient().ai.modelVendors.list",
+          "consumerRequired": true
+        },
+        {
+          "method": "GET",
+          "path": "/app/v3/api/ai/model_rankings",
+          "operationId": "modelRankings.list",
+          "owner": "sdkwork-models",
+          "sdkClient": "getModelsAppSdkClient().ai.modelRankings.list",
+          "consumerRequired": true
+        }
+      ]
     },
     {
       "workspace": "sdkwork-models-backend-sdk",
@@ -280,7 +312,7 @@
       "surface": "backend-api",
       "apiPrefix": "/backend/v3/api",
       "runtimeIntegration": {
-        "mode": "composed-local-mount",
+        "mode": "same-origin-mounted",
         "sameOriginAllowed": true,
         "targetRuntimeIntegration": {
           "mode": "shared-gateway",
@@ -288,17 +320,223 @@
           "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
           "catalogPolicy": "no-dedicated-gateway-catalog"
         },
-        "requiredBaseUrlEnv": "VITE_SDKWORK_MODELS_BACKEND_API_BASE_URL",
+        "baseUrlEnv": "VITE_SDKWORK_MODELS_BACKEND_API_BASE_URL",
+        "fallbackBaseUrlEnv": "VITE_CLAWROUTER_BACKEND_API_BASE_URL",
         "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
+        "rustRouteContractCrate": {
+          "crate": "sdkwork-router-catalog-backend-api",
+          "executableRouterExport": "admin_model_catalog_router"
+        },
+        "handlerAdapterExports": [
+          {
+            "export": "AiRoutingCacheInvalidatingModelCatalogAdminStore",
+            "hostCrate": "sdkwork-clawrouter-router-service",
+            "evidence": "services/sdkwork-clawrouter-router-service/src/application/ai_routing_cache_invalidation.rs wraps catalog admin mutations with routing cache invalidation."
+          }
+        ],
         "mountCoverage": {
-          "status": "mounted",
+          "status": "verified",
           "evidence": [
             "Model catalog admin CRUD, mappings, sync, and rankings routes are owned by sdkwork-models route crates and mounted in sdkwork-router-backend-api through sdkwork_router_catalog_backend_api.",
             "Catalog admin stores live in sdkwork-models-catalog-repository-sqlx; Claw Router wires Sqlite/Postgres stores and cache invalidation adapters at compose time.",
             "cargo test -p sdkwork-router-catalog-backend-api --test route_manifest verifies backend route manifest alignment."
           ]
         }
-      }
+      },
+      "dependencyOwnedOperations": [
+        {
+          "method": "GET",
+          "path": "/backend/v3/api/ai/model_vendors",
+          "operationId": "modelVendors.list",
+          "owner": "sdkwork-models",
+          "sdkClient": "getModelsBackendSdkClient().ai.modelVendors.list",
+          "consumerRequired": true
+        },
+        {
+          "method": "POST",
+          "path": "/backend/v3/api/ai/model_vendors",
+          "operationId": "modelVendors.create",
+          "owner": "sdkwork-models",
+          "sdkClient": "getModelsBackendSdkClient().ai.modelVendors.create",
+          "consumerRequired": true
+        },
+        {
+          "method": "GET",
+          "path": "/backend/v3/api/ai/models",
+          "operationId": "models.list",
+          "owner": "sdkwork-models",
+          "sdkClient": "getModelsBackendSdkClient().ai.models.list",
+          "consumerRequired": true
+        },
+        {
+          "method": "POST",
+          "path": "/backend/v3/api/ai/models",
+          "operationId": "models.create",
+          "owner": "sdkwork-models",
+          "sdkClient": "getModelsBackendSdkClient().ai.models.create",
+          "consumerRequired": true
+        },
+        {
+          "method": "PATCH",
+          "path": "/backend/v3/api/ai/models/{modelId}",
+          "operationId": "models.update",
+          "owner": "sdkwork-models",
+          "sdkClient": "getModelsBackendSdkClient().ai.models.update",
+          "consumerRequired": true
+        },
+        {
+          "method": "DELETE",
+          "path": "/backend/v3/api/ai/models/{modelId}",
+          "operationId": "models.delete",
+          "owner": "sdkwork-models",
+          "sdkClient": "getModelsBackendSdkClient().ai.models.delete",
+          "consumerRequired": true
+        },
+        {
+          "method": "POST",
+          "path": "/backend/v3/api/ai/models/refresh",
+          "operationId": "models.refresh",
+          "owner": "sdkwork-models",
+          "sdkClient": "getModelsBackendSdkClient().ai.models.refresh",
+          "consumerRequired": true
+        },
+        {
+          "method": "GET",
+          "path": "/backend/v3/api/ai/model_mappings",
+          "operationId": "modelMappings.list",
+          "owner": "sdkwork-models",
+          "sdkClient": "getModelsBackendSdkClient().ai.modelMappings.list",
+          "consumerRequired": true
+        },
+        {
+          "method": "POST",
+          "path": "/backend/v3/api/ai/model_mappings",
+          "operationId": "modelMappings.create",
+          "owner": "sdkwork-models",
+          "sdkClient": "getModelsBackendSdkClient().ai.modelMappings.create",
+          "consumerRequired": true
+        },
+        {
+          "method": "PATCH",
+          "path": "/backend/v3/api/ai/model_mappings/{mappingId}",
+          "operationId": "modelMappings.update",
+          "owner": "sdkwork-models",
+          "sdkClient": "getModelsBackendSdkClient().ai.modelMappings.update",
+          "consumerRequired": true
+        },
+        {
+          "method": "DELETE",
+          "path": "/backend/v3/api/ai/model_mappings/{mappingId}",
+          "operationId": "modelMappings.delete",
+          "owner": "sdkwork-models",
+          "sdkClient": "getModelsBackendSdkClient().ai.modelMappings.delete",
+          "consumerRequired": true
+        },
+        {
+          "method": "POST",
+          "path": "/backend/v3/api/ai/model_mappings/resolve",
+          "operationId": "modelMappings.resolve.create",
+          "owner": "sdkwork-models",
+          "sdkClient": "getModelsBackendSdkClient().ai.modelMappings.resolve.create",
+          "consumerRequired": true
+        },
+        {
+          "method": "GET",
+          "path": "/backend/v3/api/ai/model_rankings",
+          "operationId": "modelRankings.list",
+          "owner": "sdkwork-models",
+          "sdkClient": "getModelsBackendSdkClient().ai.modelRankings.list",
+          "consumerRequired": true
+        },
+        {
+          "method": "GET",
+          "path": "/backend/v3/api/ai/model_rankings/status",
+          "operationId": "modelRankings.status.retrieve",
+          "owner": "sdkwork-models",
+          "sdkClient": "getModelsBackendSdkClient().ai.modelRankings.status.retrieve",
+          "consumerRequired": true
+        },
+        {
+          "method": "GET",
+          "path": "/backend/v3/api/ai/model_rankings/jobs",
+          "operationId": "modelRankings.jobs.list",
+          "owner": "sdkwork-models",
+          "sdkClient": "getModelsBackendSdkClient().ai.modelRankings.jobs.list",
+          "consumerRequired": true
+        },
+        {
+          "method": "POST",
+          "path": "/backend/v3/api/ai/model_rankings/refresh",
+          "operationId": "modelRankings.refresh",
+          "owner": "sdkwork-models",
+          "sdkClient": "getModelsBackendSdkClient().ai.modelRankings.refresh",
+          "consumerRequired": true
+        },
+        {
+          "method": "GET",
+          "path": "/backend/v3/api/ai/resources",
+          "operationId": "aiResources.list",
+          "owner": "sdkwork-models",
+          "sdkClient": "getModelsBackendSdkClient().ai.aiResources.list",
+          "consumerRequired": true
+        },
+        {
+          "method": "POST",
+          "path": "/backend/v3/api/ai/resources",
+          "operationId": "aiResources.create",
+          "owner": "sdkwork-models",
+          "sdkClient": "getModelsBackendSdkClient().ai.aiResources.create",
+          "consumerRequired": false
+        },
+        {
+          "method": "PUT",
+          "path": "/backend/v3/api/ai/resources/{resourceId}",
+          "operationId": "aiResources.update",
+          "owner": "sdkwork-models",
+          "sdkClient": "getModelsBackendSdkClient().ai.aiResources.update",
+          "consumerRequired": false
+        },
+        {
+          "method": "GET",
+          "path": "/backend/v3/api/ai/resource_groups",
+          "operationId": "aiResourceGroups.list",
+          "owner": "sdkwork-models",
+          "sdkClient": "getModelsBackendSdkClient().ai.aiResourceGroups.list",
+          "consumerRequired": true
+        },
+        {
+          "method": "POST",
+          "path": "/backend/v3/api/ai/resource_groups",
+          "operationId": "aiResourceGroups.create",
+          "owner": "sdkwork-models",
+          "sdkClient": "getModelsBackendSdkClient().ai.aiResourceGroups.create",
+          "consumerRequired": false
+        },
+        {
+          "method": "PATCH",
+          "path": "/backend/v3/api/ai/resource_groups/{groupId}",
+          "operationId": "aiResourceGroups.update",
+          "owner": "sdkwork-models",
+          "sdkClient": "getModelsBackendSdkClient().ai.aiResourceGroups.update",
+          "consumerRequired": false
+        },
+        {
+          "method": "DELETE",
+          "path": "/backend/v3/api/ai/resource_groups/{groupId}",
+          "operationId": "aiResourceGroups.delete",
+          "owner": "sdkwork-models",
+          "sdkClient": "getModelsBackendSdkClient().ai.aiResourceGroups.delete",
+          "consumerRequired": false
+        },
+        {
+          "method": "GET",
+          "path": "/backend/v3/api/ai/resource_groups/{groupIdOrCode}/resources",
+          "operationId": "aiResourceGroups.resources.list",
+          "owner": "sdkwork-models",
+          "sdkClient": "getModelsBackendSdkClient().ai.aiResourceGroups.resources.list",
+          "consumerRequired": false
+        }
+      ]
     },
     {
       "workspace": "sdkwork-documents-app-sdk",
@@ -319,10 +557,10 @@
         "requiredBaseUrlEnv": "VITE_SDKWORK_DOCUMENTS_APP_API_BASE_URL",
         "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
         "mountCoverage": {
-          "status": "not-mounted",
+          "status": "mounted",
           "evidence": [
             "Product docs, API reference, and SDK reference UI are owned by sdkwork-documents PC packages.",
-            "SDK reference generation APIs are owned by sdkwork-documents-app-sdk and implemented in sdkwork-content-documents-sdk-reference.",
+            "SDK reference generation APIs are owned by sdkwork-documents-app-sdk and mounted via sdkwork-content-documents-sdk-reference in sdkwork-router-app-api.",
             "Claw Router consumes @sdkwork/documents-pc-* packages and @sdkwork/documents-app-sdk through documents-reference-runtime-adapter.ts."
           ]
         }

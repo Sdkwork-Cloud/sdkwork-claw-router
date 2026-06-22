@@ -9,9 +9,9 @@ ROOT = Path(__file__).resolve().parents[1]
 class PaymentCallbackRuntimeStandardTest(unittest.TestCase):
     def test_payment_callback_contract_is_backed_by_real_app_routes(self) -> None:
         product_api_mod = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "mod.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "mod.rs"
         ).read_text(encoding="utf-8")
-        app_api = (ROOT / "services" / "sdkwork-claw-app" / "src" / "lib.rs").read_text(
+        app_api = (ROOT / "services" / "sdkwork-clawrouter-app-api-server" / "src" / "lib.rs").read_text(
             encoding="utf-8"
         )
 
@@ -19,7 +19,7 @@ class PaymentCallbackRuntimeStandardTest(unittest.TestCase):
             (
                 ROOT
                 / "services"
-                / "sdkwork-claw-product"
+                / "sdkwork-clawrouter-router-service"
                 / "src"
                 / "api"
                 / "app_payment_callback.rs"
@@ -36,13 +36,13 @@ class PaymentCallbackRuntimeStandardTest(unittest.TestCase):
 
     def test_payment_callback_port_and_api_define_idempotent_runtime_contract(self) -> None:
         ports_mod = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "mod.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "ports" / "mod.rs"
         ).read_text(encoding="utf-8")
         callback_port = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "payment_callback_store.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "ports" / "payment_callback_store.rs"
         ).read_text(encoding="utf-8")
         app_callback = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_payment_callback.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "app_payment_callback.rs"
         ).read_text(encoding="utf-8")
 
         self.assertIn("PaymentCallbackStore", ports_mod)
@@ -80,7 +80,7 @@ class PaymentCallbackRuntimeStandardTest(unittest.TestCase):
 
     def test_payment_callback_security_defaults_require_configured_signature(self) -> None:
         app_callback = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_payment_callback.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "app_payment_callback.rs"
         ).read_text(encoding="utf-8")
 
         self.assertIn("validate_payment_callback_signature", app_callback)
@@ -102,9 +102,9 @@ class PaymentCallbackRuntimeStandardTest(unittest.TestCase):
             ROOT / "crates" / "sdkwork-claw-config" / "src" / "payment_webhook.rs"
         )
         app_callback = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_payment_callback.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "app_payment_callback.rs"
         ).read_text(encoding="utf-8")
-        app_api = (ROOT / "services" / "sdkwork-claw-app" / "src" / "lib.rs").read_text(
+        app_api = (ROOT / "services" / "sdkwork-clawrouter-app-api-server" / "src" / "lib.rs").read_text(
             encoding="utf-8"
         )
 
@@ -157,7 +157,7 @@ class PaymentCallbackRuntimeStandardTest(unittest.TestCase):
         route_test_path = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "tests"
             / "app_payment_callback_route.rs"
         )
@@ -194,7 +194,7 @@ class PaymentCallbackRuntimeStandardTest(unittest.TestCase):
         integration_test_path = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "tests"
             / "sqlite_payment_callback_store.rs"
         )
@@ -225,8 +225,8 @@ class PaymentCallbackRuntimeStandardTest(unittest.TestCase):
 
     def test_sql_payment_callback_stores_are_atomic_idempotent_and_fulfill_recharge_once(self) -> None:
         for relative in [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/payment_callback_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/payment_callback_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/payment_callback_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/payment_callback_store.rs",
         ]:
             store = (ROOT / relative).read_text(encoding="utf-8")
             self.assertIn("commerce_payment_webhook_event", store)
@@ -279,11 +279,11 @@ class PaymentCallbackRuntimeStandardTest(unittest.TestCase):
 
         sqlite_store = (
             ROOT
-            / "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/payment_callback_store.rs"
+            / "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/payment_callback_store.rs"
         ).read_text(encoding="utf-8")
         postgres_store = (
             ROOT
-            / "services/sdkwork-claw-product/src/infrastructure/sql/postgres/payment_callback_store.rs"
+            / "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/payment_callback_store.rs"
         ).read_text(encoding="utf-8")
         self.assertIn("pa.status AS status", sqlite_store)
         self.assertIn("pa.status AS status", postgres_store)
@@ -291,11 +291,11 @@ class PaymentCallbackRuntimeStandardTest(unittest.TestCase):
     def test_sqlite_and_postgres_payment_callback_stores_preserve_same_fulfillment_semantics(self) -> None:
         sqlite_store = (
             ROOT
-            / "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/payment_callback_store.rs"
+            / "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/payment_callback_store.rs"
         ).read_text(encoding="utf-8")
         postgres_store = (
             ROOT
-            / "services/sdkwork-claw-product/src/infrastructure/sql/postgres/payment_callback_store.rs"
+            / "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/payment_callback_store.rs"
         ).read_text(encoding="utf-8")
 
         def function_names(source: str) -> set[str]:
@@ -353,21 +353,21 @@ class PaymentCallbackRuntimeStandardTest(unittest.TestCase):
 
     def test_payment_callback_amount_uses_exact_decimal_contract_not_binary_float(self) -> None:
         callback_port = (
-            ROOT / "services/sdkwork-claw-product/src/ports/payment_callback_store.rs"
+            ROOT / "services/sdkwork-clawrouter-router-service/src/ports/payment_callback_store.rs"
         ).read_text(encoding="utf-8")
         app_callback = (
-            ROOT / "services/sdkwork-claw-product/src/api/app_payment_callback.rs"
+            ROOT / "services/sdkwork-clawrouter-router-service/src/api/app_payment_callback.rs"
         ).read_text(encoding="utf-8")
         sqlite_store = (
             ROOT
-            / "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/payment_callback_store.rs"
+            / "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/payment_callback_store.rs"
         ).read_text(encoding="utf-8")
         postgres_store = (
             ROOT
-            / "services/sdkwork-claw-product/src/infrastructure/sql/postgres/payment_callback_store.rs"
+            / "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/payment_callback_store.rs"
         ).read_text(encoding="utf-8")
         route_test = (
-            ROOT / "services/sdkwork-claw-product/tests/app_payment_callback_route.rs"
+            ROOT / "services/sdkwork-clawrouter-router-service/tests/app_payment_callback_route.rs"
         ).read_text(encoding="utf-8")
 
         self.assertIn("pub amount: Option<String>", callback_port)

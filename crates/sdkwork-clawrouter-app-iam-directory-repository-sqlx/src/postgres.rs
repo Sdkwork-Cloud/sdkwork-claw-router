@@ -2,8 +2,7 @@ use std::collections::BTreeSet;
 
 use sqlx::{PgPool, Row};
 
-
-use crate::error::{RepositoryError, RepositoryResult, sql_error};
+use crate::error::{sql_error, RepositoryError, RepositoryResult};
 use crate::types::{
     AppIamDepartmentAssignmentItem, AppIamDepartmentItem, AppIamDepartmentTreeItem,
     AppIamDirectoryQuery, AppIamDirectoryReadFuture, AppIamDirectoryReadStore,

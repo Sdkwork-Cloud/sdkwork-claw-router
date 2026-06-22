@@ -21,7 +21,7 @@ $env:CARGO_BUILD_JOBS='1'; cargo test --workspace
 
 There is also a structural multiplier:
 
-- many service packages depend on `sdkwork-claw-product`
+- many service packages depend on `sdkwork-clawrouter-router-service`
 - many integration tests live in `tests/*.rs`
 - each `tests/*.rs` file becomes an independent test binary
 - `--workspace` compiles and links the full surface, including packages that are not part of the current edit
@@ -38,11 +38,11 @@ The workspace includes application services, provider adapters, SDK-related pack
 
 3. Test-target fan-out is amplifying compile and link time.
 
-This repository uses many Rust integration test files under `tests/`. Cargo builds each file as a separate binary, so large packages such as `sdkwork-claw-product` and `sdkwork-claw-gateway` pay repeated link cost.
+This repository uses many Rust integration test files under `tests/`. Cargo builds each file as a separate binary, so large packages such as `sdkwork-clawrouter-router-service` and `sdkwork-clawrouter-gateway` pay repeated link cost.
 
 4. Some test helpers were making compile scope broader than necessary.
 
-Before this change, `crates/sdkwork-claw-test-support` depended directly on `services/sdkwork-claw-product` only to reuse API-key hashing logic. That pulled the product dependency chain into unrelated test builds that only needed lightweight helpers.
+Before this change, `crates/sdkwork-claw-test-support` depended directly on `services/sdkwork-clawrouter-router-service` only to reuse API-key hashing logic. That pulled the product dependency chain into unrelated test builds that only needed lightweight helpers.
 
 5. Some SQLite-backed tests were rebuilding the same seed state repeatedly.
 
@@ -59,7 +59,7 @@ Updated:
 
 Change:
 
-- removed direct dependency on `sdkwork-claw-product`
+- removed direct dependency on `sdkwork-clawrouter-router-service`
 - replaced reused hasher wiring with a local HMAC-SHA256 helper using workspace crypto crates already available
 
 Effect:
@@ -130,7 +130,7 @@ Updated:
 - `package.json`
 - `scripts/run-claw-router-rust-tests.mjs`
 - `scripts/run-claw-router-product.test.mjs`
-- `services/sdkwork-claw-product/tests/openai_compatible_http_relay.rs`
+- `services/sdkwork-clawrouter-router-service/tests/openai_compatible_http_relay.rs`
 
 Change:
 
@@ -148,7 +148,7 @@ Effect:
 Updated:
 
 - `crates/sdkwork-claw-test-support/src/lib.rs`
-- `services/sdkwork-claw-gateway/tests/provider_passthrough_route.rs`
+- `services/sdkwork-clawrouter-gateway/tests/provider_passthrough_route.rs`
 
 Change:
 
@@ -168,10 +168,10 @@ Effect:
 
 Updated:
 
-- `services/sdkwork-claw-product/src/application/cache_runtime.rs`
-- `services/sdkwork-claw-product/src/application/model_rankings_service.rs`
-- `services/sdkwork-claw-product/tests/cache_runtime.rs`
-- `services/sdkwork-claw-product/tests/model_rankings_service.rs`
+- `services/sdkwork-clawrouter-router-service/src/application/cache_runtime.rs`
+- `services/sdkwork-clawrouter-router-service/src/application/model_rankings_service.rs`
+- `services/sdkwork-clawrouter-router-service/tests/cache_runtime.rs`
+- `services/sdkwork-clawrouter-router-service/tests/model_rankings_service.rs`
 
 Change:
 
@@ -194,7 +194,7 @@ Effect:
 
 Updated:
 
-- `services/sdkwork-claw-product/tests/app_runtime_api.rs`
+- `services/sdkwork-clawrouter-router-service/tests/app_runtime_api.rs`
 
 Change:
 
@@ -215,7 +215,7 @@ Effect:
 
 Updated:
 
-- `services/sdkwork-claw-product/tests/app_runtime_api.rs`
+- `services/sdkwork-clawrouter-router-service/tests/app_runtime_api.rs`
 
 Change:
 
@@ -235,7 +235,7 @@ Effect:
 
 Updated:
 
-- `services/sdkwork-claw-product/tests/openai_compatible_http_relay.rs`
+- `services/sdkwork-clawrouter-router-service/tests/openai_compatible_http_relay.rs`
 
 Change:
 
@@ -254,7 +254,7 @@ Effect:
 
 Updated:
 
-- `services/sdkwork-claw-product/tests/model_rankings_api.rs`
+- `services/sdkwork-clawrouter-router-service/tests/model_rankings_api.rs`
 
 Change:
 
@@ -272,7 +272,7 @@ Effect:
 
 Updated:
 
-- `services/sdkwork-claw-product/tests/model_ranking_refresh_worker.rs`
+- `services/sdkwork-clawrouter-router-service/tests/model_ranking_refresh_worker.rs`
 
 Change:
 
@@ -330,7 +330,7 @@ Change:
     - `app_runtime.rs` -> `app_runtime_api`, `postgres_app_runtime_sql_contract`, `sqlite_app_runtime_store`
     - `edge_server.rs` -> `edge_server`
   - detects shared `services/*/tests/common/*.rs` helper edits and narrows to the integration-test targets that directly include that helper
-  - detects `crates/sdkwork-claw-product-test-support/src/*.rs` edits and narrows to the product integration-test targets that import that shared fixture crate
+  - detects `crates/sdkwork-clawrouter-router-service-test-support/src/*.rs` edits and narrows to the product integration-test targets that import that shared fixture crate
   - falls back to existing scoped profiles like `gateway`, `product-relay`, `runtime`, or `quick` when the change is broader or ambiguous
   - rejects mixing multiple auto change selectors in the same invocation
 - added tooling contract coverage for:
@@ -352,33 +352,33 @@ Effect:
 Executed after the change:
 
 - `cargo test -p sdkwork-claw-test-support --lib`
-- `cargo test -p sdkwork-claw-admin --test sqlite_product_model_route`
+- `cargo test -p sdkwork-clawrouter-admin-api-server --test sqlite_product_model_route`
 - `node scripts/run-claw-router-product.test.mjs`
 - `node scripts/run-claw-router-rust-tests.mjs quick`
 - `node scripts/run-claw-router-rust-tests.mjs smoke`
-- `cargo test -p sdkwork-claw-product --test openai_compatible_http_relay openai_compatible_relay_times_out`
-- `cargo test -p sdkwork-claw-product --test model_rankings_service --target-dir target-rust-tests/iter-product`
-- `cargo test -p sdkwork-claw-product --test cache_runtime --target-dir target-rust-tests/iter-product`
-- `cargo test -p sdkwork-claw-product --test app_runtime_api --target-dir target-rust-tests/iter-product`
-- `cargo test -p sdkwork-claw-product --test app_runtime_api app_runtime_stream_execution_continues_after_client_disconnect_and_reconnect_replays_completion --target-dir target-rust-tests/iter-product -- --exact`
-- `cargo test -p sdkwork-claw-product --test app_runtime_api app_runtime_stream_completion_preserves_existing_cancelled_terminal_event_status --target-dir target-rust-tests/iter-product -- --exact`
-- `cargo test -p sdkwork-claw-product --test openai_compatible_http_relay --target-dir target-rust-tests/iter-product`
-- `cargo test -p sdkwork-claw-product --test openai_compatible_http_relay openai_compatible_relay_times_out_slow_upstream_bodies_without_leaking_secret --target-dir target-rust-tests/iter-product -- --exact` (run three times)
-- `cargo test -p sdkwork-claw-product --test model_rankings_api --target-dir target-rust-tests/iter-product`
-- `cargo test -p sdkwork-claw-product --test model_rankings_api admin_model_ranking_manual_refresh_route_rejects_concurrent_refresh --target-dir target-rust-tests/iter-product -- --exact`
-- `cargo test -p sdkwork-claw-product --test model_ranking_refresh_worker --target-dir target-rust-tests/iter-product`
-- `cargo test -p sdkwork-claw-product --test model_ranking_refresh_worker model_ranking_refresh_worker_recommends_alert_after_delayed_failure_threshold --target-dir target-rust-tests/iter-product -- --exact`
-- `cargo test -p sdkwork-claw-product --test model_ranking_refresh_worker model_ranking_refresh_worker_skips_overlapping_run_for_same_worker --target-dir target-rust-tests/iter-product -- --exact`
+- `cargo test -p sdkwork-clawrouter-router-service --test openai_compatible_http_relay openai_compatible_relay_times_out`
+- `cargo test -p sdkwork-clawrouter-router-service --test model_rankings_service --target-dir target-rust-tests/iter-product`
+- `cargo test -p sdkwork-clawrouter-router-service --test cache_runtime --target-dir target-rust-tests/iter-product`
+- `cargo test -p sdkwork-clawrouter-router-service --test app_runtime_api --target-dir target-rust-tests/iter-product`
+- `cargo test -p sdkwork-clawrouter-router-service --test app_runtime_api app_runtime_stream_execution_continues_after_client_disconnect_and_reconnect_replays_completion --target-dir target-rust-tests/iter-product -- --exact`
+- `cargo test -p sdkwork-clawrouter-router-service --test app_runtime_api app_runtime_stream_completion_preserves_existing_cancelled_terminal_event_status --target-dir target-rust-tests/iter-product -- --exact`
+- `cargo test -p sdkwork-clawrouter-router-service --test openai_compatible_http_relay --target-dir target-rust-tests/iter-product`
+- `cargo test -p sdkwork-clawrouter-router-service --test openai_compatible_http_relay openai_compatible_relay_times_out_slow_upstream_bodies_without_leaking_secret --target-dir target-rust-tests/iter-product -- --exact` (run three times)
+- `cargo test -p sdkwork-clawrouter-router-service --test model_rankings_api --target-dir target-rust-tests/iter-product`
+- `cargo test -p sdkwork-clawrouter-router-service --test model_rankings_api admin_model_ranking_manual_refresh_route_rejects_concurrent_refresh --target-dir target-rust-tests/iter-product -- --exact`
+- `cargo test -p sdkwork-clawrouter-router-service --test model_ranking_refresh_worker --target-dir target-rust-tests/iter-product`
+- `cargo test -p sdkwork-clawrouter-router-service --test model_ranking_refresh_worker model_ranking_refresh_worker_recommends_alert_after_delayed_failure_threshold --target-dir target-rust-tests/iter-product -- --exact`
+- `cargo test -p sdkwork-clawrouter-router-service --test model_ranking_refresh_worker model_ranking_refresh_worker_skips_overlapping_run_for_same_worker --target-dir target-rust-tests/iter-product -- --exact`
 - `node scripts/run-claw-router-product.test.mjs`
-- `node scripts/run-claw-router-rust-tests.mjs auto --dry-run --changed-file services/sdkwork-claw-product/src/api/app_runtime.rs`
-- `node scripts/run-claw-router-rust-tests.mjs auto --dry-run --changed-file services/sdkwork-claw-gateway/src/runtime.rs`
+- `node scripts/run-claw-router-rust-tests.mjs auto --dry-run --changed-file services/sdkwork-clawrouter-router-service/src/api/app_runtime.rs`
+- `node scripts/run-claw-router-rust-tests.mjs auto --dry-run --changed-file services/sdkwork-clawrouter-gateway/src/runtime.rs`
 - `node scripts/run-claw-router-rust-tests.mjs auto --dry-run --staged`
 - `node scripts/run-claw-router-rust-tests.mjs auto --dry-run --base-ref main`
 
 Observed result:
 
 - `sdkwork-claw-test-support` tests passed
-- representative `sdkwork-claw-admin` integration test passed
+- representative `sdkwork-clawrouter-admin-api-server` integration test passed
 - repository tooling tests passed
 - scoped quick Rust test profile passed end-to-end
 - scoped smoke Rust test profile passed end-to-end
@@ -405,8 +405,8 @@ Observed result:
 - `test:rust:auto` dry-run for `gateway/src/runtime.rs` fell back to the curated `gateway` profile as intended
 - contract coverage confirmed `--staged` ignores unrelated unstaged files and keeps only the staged exact target
 - contract coverage confirmed `--base-ref main` ignores dirty worktree noise and keeps only committed exact targets from the branch diff
-- `test:rust:auto` dry-run for `crates/sdkwork-claw-product-test-support/src/lib.rs` narrowed to sqlite/product-store and product API targets that import that shared fixture crate
-- `test:rust:auto` dry-run for `services/sdkwork-claw-product/tests/common/mod.rs` narrowed to API targets that directly include `mod common;`
+- `test:rust:auto` dry-run for `crates/sdkwork-clawrouter-router-service-test-support/src/lib.rs` narrowed to sqlite/product-store and product API targets that import that shared fixture crate
+- `test:rust:auto` dry-run for `services/sdkwork-clawrouter-router-service/tests/common/mod.rs` narrowed to API targets that directly include `mod common;`
 
 ### 15. Reduced seeded SQLite template lock contention cost during concurrent test startup
 
@@ -435,7 +435,7 @@ Effect:
 Executed after the change:
 
 - `cargo test -p sdkwork-claw-test-support`
-- `cargo test -p sdkwork-claw-admin --test sqlite_product_model_route -- --exact`
+- `cargo test -p sdkwork-clawrouter-admin-api-server --test sqlite_product_model_route -- --exact`
 
 Observed result:
 
@@ -448,12 +448,12 @@ Observed result:
 
 Updated:
 
-- `crates/sdkwork-claw-product-test-support/src/lib.rs`
-- `services/sdkwork-claw-product/tests/sqlite_admin_access_group_store.rs`
+- `crates/sdkwork-clawrouter-router-service-test-support/src/lib.rs`
+- `services/sdkwork-clawrouter-router-service/tests/sqlite_admin_access_group_store.rs`
 
 Change:
 
-- moved the installed SQLite fixture helper into `sdkwork-claw-product-test-support` so product integration tests reuse one shared test-support crate instead of path-including the same helper module into many test binaries
+- moved the installed SQLite fixture helper into `sdkwork-clawrouter-router-service-test-support` so product integration tests reuse one shared test-support crate instead of path-including the same helper module into many test binaries
 - replaced the fixed `100ms` installed-sqlite template lock retry sleep with the same capped exponential backoff used by the shared seeded SQLite fixture:
   - `10ms`
   - `20ms`
@@ -473,8 +473,8 @@ Effect:
 
 Executed after the change:
 
-- `cargo test -p sdkwork-claw-product-test-support`
-- `cargo test -p sdkwork-claw-product --test sqlite_admin_access_group_store sqlite_admin_access_group_store_allows_one_channel_in_multiple_groups -- --exact`
+- `cargo test -p sdkwork-clawrouter-router-service-test-support`
+- `cargo test -p sdkwork-clawrouter-router-service --test sqlite_admin_access_group_store sqlite_admin_access_group_store_allows_one_channel_in_multiple_groups -- --exact`
 
 Observed result:
 
@@ -491,13 +491,13 @@ Verification note:
 
 The most obvious remaining waits inside the optimized product test targets are now either intentional or too small to justify broader production-surface changes:
 
-- `services/sdkwork-claw-product/tests/app_runtime_api.rs`
+- `services/sdkwork-clawrouter-router-service/tests/app_runtime_api.rs`
   - the delayed second SSE chunk remains at `120ms`
   - it is still carrying reconnect/cancel timing semantics shared by several distributed stream tests, so pushing it lower now has a higher flake risk than payoff
-- `services/sdkwork-claw-product/tests/cache_runtime.rs`
+- `services/sdkwork-clawrouter-router-service/tests/cache_runtime.rs`
   - one `5ms` cursor-expiry wait remains
   - removing it cleanly would require injecting a wall-clock source into `RuntimeCacheManager` for cursor issuance/validation, while the full target is already only `0.02s`
-- `services/sdkwork-claw-product/tests/model_ranking_refresh_worker.rs`
+- `services/sdkwork-clawrouter-router-service/tests/model_ranking_refresh_worker.rs`
   - the retry-path test still exercises real retry flow
   - that remaining cost is intentional because this is the one place where waiting is the behavior under test, not just a fixture convenience
 
@@ -543,11 +543,11 @@ Then move up to `quick`, and only then to package- or domain-level profiles if t
 
 Updated:
 
-- `crates/sdkwork-claw-product-test-support/src/lib.rs`
-- `crates/sdkwork-claw-product-test-support/src/shared.rs`
-- `crates/sdkwork-claw-product-test-support/src/schema.rs`
-- `crates/sdkwork-claw-product-test-support/src/repair.rs`
-- `crates/sdkwork-claw-product-test-support/src/installed.rs`
+- `crates/sdkwork-clawrouter-router-service-test-support/src/lib.rs`
+- `crates/sdkwork-clawrouter-router-service-test-support/src/shared.rs`
+- `crates/sdkwork-clawrouter-router-service-test-support/src/schema.rs`
+- `crates/sdkwork-clawrouter-router-service-test-support/src/repair.rs`
+- `crates/sdkwork-clawrouter-router-service-test-support/src/installed.rs`
 - `scripts/run-claw-router-rust-tests.mjs`
 - `scripts/run-claw-router-product.test.mjs`
 
@@ -557,7 +557,7 @@ Change:
   - `schema_sqlite_pool`
   - `repair_sqlite_pool`
   - `installed_sqlite_pool`
-- kept the public crate-root API stable, so downstream tests still import from `sdkwork_claw_product_test_support`
+- kept the public crate-root API stable, so downstream tests still import from `sdkwork_clawrouter_router_service_test_support`
 - taught `test:rust:auto` to treat `schema.rs`, `repair.rs`, and `installed.rs` edits differently by scanning downstream tests for the affected exported helper symbol instead of treating every fixture-crate edit as a full fanout event
 
 Effect:
@@ -571,10 +571,10 @@ Effect:
 Executed after the change:
 
 - `node scripts/run-claw-router-product.test.mjs`
-- `cargo test -p sdkwork-claw-product-test-support`
-- `node scripts/run-claw-router-rust-tests.mjs auto --dry-run --changed-file crates/sdkwork-claw-product-test-support/src/schema.rs`
-- `node scripts/run-claw-router-rust-tests.mjs auto --dry-run --changed-file crates/sdkwork-claw-product-test-support/src/repair.rs`
-- `node scripts/run-claw-router-rust-tests.mjs auto --dry-run --changed-file crates/sdkwork-claw-product-test-support/src/installed.rs`
+- `cargo test -p sdkwork-clawrouter-router-service-test-support`
+- `node scripts/run-claw-router-rust-tests.mjs auto --dry-run --changed-file crates/sdkwork-clawrouter-router-service-test-support/src/schema.rs`
+- `node scripts/run-claw-router-rust-tests.mjs auto --dry-run --changed-file crates/sdkwork-clawrouter-router-service-test-support/src/repair.rs`
+- `node scripts/run-claw-router-rust-tests.mjs auto --dry-run --changed-file crates/sdkwork-clawrouter-router-service-test-support/src/installed.rs`
 
 Observed result:
 
@@ -588,8 +588,8 @@ Observed result:
 
 Updated:
 
-- `services/sdkwork-claw-product/tests/database_installer.rs`
-- `services/sdkwork-claw-product/tests/database_installer_installed.rs`
+- `services/sdkwork-clawrouter-router-service/tests/database_installer.rs`
+- `services/sdkwork-clawrouter-router-service/tests/database_installer_installed.rs`
 - `scripts/run-claw-router-product.test.mjs`
 
 Change:
@@ -599,7 +599,7 @@ Change:
   - catalog sync rollback path
   - canonical ranking catalog-key import path
 - left the existing repair-backed installer target focused on repair, bootstrap, and catalog status behaviors
-- updated the `test:rust:auto` contract so changes to `crates/sdkwork-claw-product-test-support/src/installed.rs` now narrow to `database_installer_installed` instead of the broader `database_installer`
+- updated the `test:rust:auto` contract so changes to `crates/sdkwork-clawrouter-router-service-test-support/src/installed.rs` now narrow to `database_installer_installed` instead of the broader `database_installer`
 
 Effect:
 
@@ -612,24 +612,24 @@ Effect:
 Executed after the change:
 
 - `node scripts/run-claw-router-product.test.mjs`
-- `cargo test -p sdkwork-claw-product --test database_installer_installed sqlite_installer_upgrades_existing_installation_when_versions_change -- --exact`
-- `cargo test -p sdkwork-claw-product --test database_installer_installed sqlite_installer_catalog_sync_failure_rolls_back_catalog_rows -- --exact`
-- `cargo test -p sdkwork-claw-product --test database_installer sqlite_installer_imports_course_comment_seed_with_canonical_scope_fields -- --exact`
-- `node scripts/run-claw-router-rust-tests.mjs auto --dry-run --changed-file crates/sdkwork-claw-product-test-support/src/installed.rs`
+- `cargo test -p sdkwork-clawrouter-router-service --test database_installer_installed sqlite_installer_upgrades_existing_installation_when_versions_change -- --exact`
+- `cargo test -p sdkwork-clawrouter-router-service --test database_installer_installed sqlite_installer_catalog_sync_failure_rolls_back_catalog_rows -- --exact`
+- `cargo test -p sdkwork-clawrouter-router-service --test database_installer sqlite_installer_imports_course_comment_seed_with_canonical_scope_fields -- --exact`
+- `node scripts/run-claw-router-rust-tests.mjs auto --dry-run --changed-file crates/sdkwork-clawrouter-router-service-test-support/src/installed.rs`
 
 Observed result:
 
 - tooling contract coverage passed with the new dedicated installed-installer target expectation
 - the moved installed-fixture upgrade and rollback regressions both passed in `database_installer_installed`
 - a representative repair-backed installer regression still passed in the original `database_installer` target
-- `installed.rs` now narrows to `cargo test -p sdkwork-claw-product --test database_installer_installed`
+- `installed.rs` now narrows to `cargo test -p sdkwork-clawrouter-router-service --test database_installer_installed`
 
 ### 19. Added event-driven wake-up for the gateway usage settlement worker
 
 Updated:
 
-- `services/sdkwork-claw-gateway/src/runtime.rs`
-- `services/sdkwork-claw-gateway/tests/database_config_router.rs`
+- `services/sdkwork-clawrouter-gateway/src/runtime.rs`
+- `services/sdkwork-clawrouter-gateway/tests/database_config_router.rs`
 
 Change:
 
@@ -648,8 +648,8 @@ Effect:
 
 Executed after the change:
 
-- `cargo test -p sdkwork-claw-gateway --test database_config_router database_config_router_background_settlement_worker_wakes_on_new_usage_without_waiting_full_interval --target-dir target-rust-tests/iter-gateway -- --exact`
-- `cargo test -p sdkwork-claw-gateway --test database_config_router database_config_router_background_settlement_worker_settles_recorded_chat_usage --target-dir target-rust-tests/iter-gateway -- --exact`
+- `cargo test -p sdkwork-clawrouter-gateway --test database_config_router database_config_router_background_settlement_worker_wakes_on_new_usage_without_waiting_full_interval --target-dir target-rust-tests/iter-gateway -- --exact`
+- `cargo test -p sdkwork-clawrouter-gateway --test database_config_router database_config_router_background_settlement_worker_settles_recorded_chat_usage --target-dir target-rust-tests/iter-gateway -- --exact`
 
 Observed result:
 
@@ -665,7 +665,7 @@ Verification note:
 
 Updated:
 
-- `services/sdkwork-claw-gateway/src/runtime.rs`
+- `services/sdkwork-clawrouter-gateway/src/runtime.rs`
 
 Change:
 
@@ -689,8 +689,8 @@ Effect:
 
 Executed after the change:
 
-- `cargo test -p sdkwork-claw-gateway gateway_runtime_sqlite_pool_options --target-dir target-rust-tests/iter-gateway`
-- `cargo test -p sdkwork-claw-gateway --test database_config_router database_config_router_background_settlement_worker_wakes_on_new_usage_without_waiting_full_interval --target-dir target-rust-tests/iter-gateway -- --exact`
+- `cargo test -p sdkwork-clawrouter-gateway gateway_runtime_sqlite_pool_options --target-dir target-rust-tests/iter-gateway`
+- `cargo test -p sdkwork-clawrouter-gateway --test database_config_router database_config_router_background_settlement_worker_wakes_on_new_usage_without_waiting_full_interval --target-dir target-rust-tests/iter-gateway -- --exact`
 
 Observed result:
 
@@ -700,7 +700,7 @@ Observed result:
 
 Verification note:
 
-- an additional rerun later in the session hit unrelated compile failures in `services/sdkwork-claw-product/src/application/payment_intent_runtime.rs` and `services/sdkwork-claw-product/src/infrastructure/sql/sqlite/payment_intent_runtime_store.rs`, so broader rebuild-based verification for that moment was not a valid signal for this gateway pool change itself
+- an additional rerun later in the session hit unrelated compile failures in `services/sdkwork-clawrouter-router-service/src/application/payment_intent_runtime.rs` and `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/payment_intent_runtime_store.rs`, so broader rebuild-based verification for that moment was not a valid signal for this gateway pool change itself
 
 ## 21. Prepared a startup-install skip path for seeded gateway settlement tests
 
@@ -712,13 +712,13 @@ Root-cause refinement:
 
 Change:
 
-- added a regression in `services/sdkwork-claw-gateway/tests/database_config_router.rs` that exercises the seeded gateway catalog with `StartupInstallMode::Skip`
+- added a regression in `services/sdkwork-clawrouter-gateway/tests/database_config_router.rs` that exercises the seeded gateway catalog with `StartupInstallMode::Skip`
 - switched the two hottest settlement-path tests in that file to call the explicit startup-mode helper with `StartupInstallMode::Skip`
 - kept the scope tight to the exact background-settlement scenarios rather than changing the whole gateway test surface at once
 
 Verification:
 
-- `cargo fmt -p sdkwork-claw-gateway`
+- `cargo fmt -p sdkwork-clawrouter-gateway`
 - `cargo test -p sdkwork-claw-test-support seeded_sqlite_catalog_contains_embedding_model_and_route --target-dir target-rust-tests/iter-support`
 - `cargo test -p sdkwork-claw-test-support seeded_sqlite_catalog_can_seed_usage_settlement_appbase_points_account --target-dir target-rust-tests/iter-support`
 
@@ -730,19 +730,19 @@ Observed result:
 
 Historical blocker at that point:
 
-- end-to-end gateway test remeasurement is currently blocked by unrelated compile failures in `services/sdkwork-claw-app/src/lib.rs`
+- end-to-end gateway test remeasurement is currently blocked by unrelated compile failures in `services/sdkwork-clawrouter-app-api-server/src/lib.rs`
 - the failure pattern is mechanical argument/type drift in `router_with_api_key_management_store_and_database_status(...)` call sites, but that is outside the gateway test-performance scope and should be repaired separately before taking a clean before/after timing on this skip-mode change
 
 ## 22. Remeasured the skip-install settlement path after clearing compile-path noise
 
 Follow-up verification:
 
-- `cargo check -p sdkwork-claw-product --lib --target-dir target-rust-tests/iter-product-2`
-- `cargo check -p sdkwork-claw-app --lib --target-dir target-rust-tests/iter-app-api-3`
-- `cargo test -p sdkwork-claw-gateway --test database_config_router database_config_router_seeded_catalog_supports_skip_startup_install_mode --target-dir target-rust-tests/iter-gateway-skip-2 -- --exact`
-- `cargo test -p sdkwork-claw-gateway --test database_config_router database_config_router_background_settlement_worker_wakes_on_new_usage_without_waiting_full_interval --target-dir target-rust-tests/iter-gateway-skip-2 -- --exact`
-- `cargo test -p sdkwork-claw-gateway --test database_config_router database_config_router_background_settlement_worker_wakes_on_new_usage_without_waiting_full_interval --target-dir target-rust-tests/iter-gateway-skip-2 -- --exact`
-- `cargo test -p sdkwork-claw-gateway --test database_config_router database_config_router_background_settlement_worker_settles_recorded_chat_usage --target-dir target-rust-tests/iter-gateway-skip-2 -- --exact`
+- `cargo check -p sdkwork-clawrouter-router-service --lib --target-dir target-rust-tests/iter-product-2`
+- `cargo check -p sdkwork-clawrouter-app-api-server --lib --target-dir target-rust-tests/iter-app-api-3`
+- `cargo test -p sdkwork-clawrouter-gateway --test database_config_router database_config_router_seeded_catalog_supports_skip_startup_install_mode --target-dir target-rust-tests/iter-gateway-skip-2 -- --exact`
+- `cargo test -p sdkwork-clawrouter-gateway --test database_config_router database_config_router_background_settlement_worker_wakes_on_new_usage_without_waiting_full_interval --target-dir target-rust-tests/iter-gateway-skip-2 -- --exact`
+- `cargo test -p sdkwork-clawrouter-gateway --test database_config_router database_config_router_background_settlement_worker_wakes_on_new_usage_without_waiting_full_interval --target-dir target-rust-tests/iter-gateway-skip-2 -- --exact`
+- `cargo test -p sdkwork-clawrouter-gateway --test database_config_router database_config_router_background_settlement_worker_settles_recorded_chat_usage --target-dir target-rust-tests/iter-gateway-skip-2 -- --exact`
 
 Observed result:
 
@@ -759,13 +759,13 @@ Important interpretation:
 
 Verification note:
 
-- a broader `cargo test -p sdkwork-claw-gateway --test database_config_router --target-dir target-rust-tests/iter-gateway-skip-2` run exceeded the session timeout, so this round's performance conclusions are intentionally scoped to the exact hot targets above
+- a broader `cargo test -p sdkwork-clawrouter-gateway --test database_config_router --target-dir target-rust-tests/iter-gateway-skip-2` run exceeded the session timeout, so this round's performance conclusions are intentionally scoped to the exact hot targets above
 
 ## 23. Expanded the seeded-catalog skip-install path across the full gateway database-config router suite
 
 Root-cause confirmation:
 
-- after the settlement-path win, the rest of `services/sdkwork-claw-gateway/tests/database_config_router.rs` still used public gateway helpers that default to `StartupInstallMode::Ensure`
+- after the settlement-path win, the rest of `services/sdkwork-clawrouter-gateway/tests/database_config_router.rs` still used public gateway helpers that default to `StartupInstallMode::Ensure`
 - fresh measurements confirmed that this was not limited to the background-settlement tests:
   - `database_config_router_loads_sqlite_catalog_for_openai_models` previously finished its test body in about `39.08s`
   - `database_config_router_uses_provider_relay_config_for_chat_completions` previously finished its test body in about `56.47s`
@@ -773,7 +773,7 @@ Root-cause confirmation:
 
 Change:
 
-- added a local helper in `services/sdkwork-claw-gateway/tests/database_config_router.rs` that builds routers for `SeededSqliteCatalog` fixtures through:
+- added a local helper in `services/sdkwork-clawrouter-gateway/tests/database_config_router.rs` that builds routers for `SeededSqliteCatalog` fixtures through:
   - `router_with_database_api_key_provider_configs_usage_settlement_worker_config_and_startup_install_mode(...)`
   - with `StartupInstallMode::Skip`
 - rerouted the remaining seeded gateway tests in that file through the helper, including:
@@ -785,13 +785,13 @@ Change:
 
 Verification:
 
-- `cargo fmt -p sdkwork-claw-gateway`
-- `cargo test -p sdkwork-claw-gateway --test database_config_router database_config_router_seeded_catalog_supports_skip_startup_install_mode --target-dir target-rust-tests/iter-gateway-wave5 -- --exact`
-- `cargo test -p sdkwork-claw-gateway --test database_config_router database_config_router_loads_sqlite_catalog_for_openai_models --target-dir target-rust-tests/iter-gateway-wave5 -- --exact`
-- `cargo test -p sdkwork-claw-gateway --test database_config_router database_config_router_uses_provider_relay_config_for_chat_completions --target-dir target-rust-tests/iter-gateway-wave5 -- --exact`
-- `cargo test -p sdkwork-claw-gateway --test database_config_router database_config_router_uses_provider_secret_map_for_route_scoped_chat_relay --target-dir target-rust-tests/iter-gateway-wave5 -- --exact`
-- `cargo test -p sdkwork-claw-gateway --test database_config_router database_config_router_background_settlement_worker_wakes_on_new_usage_without_waiting_full_interval --target-dir target-rust-tests/iter-gateway-wave5 -- --exact`
-- `cargo test -p sdkwork-claw-gateway --test database_config_router --target-dir target-rust-tests/iter-gateway-wave5`
+- `cargo fmt -p sdkwork-clawrouter-gateway`
+- `cargo test -p sdkwork-clawrouter-gateway --test database_config_router database_config_router_seeded_catalog_supports_skip_startup_install_mode --target-dir target-rust-tests/iter-gateway-wave5 -- --exact`
+- `cargo test -p sdkwork-clawrouter-gateway --test database_config_router database_config_router_loads_sqlite_catalog_for_openai_models --target-dir target-rust-tests/iter-gateway-wave5 -- --exact`
+- `cargo test -p sdkwork-clawrouter-gateway --test database_config_router database_config_router_uses_provider_relay_config_for_chat_completions --target-dir target-rust-tests/iter-gateway-wave5 -- --exact`
+- `cargo test -p sdkwork-clawrouter-gateway --test database_config_router database_config_router_uses_provider_secret_map_for_route_scoped_chat_relay --target-dir target-rust-tests/iter-gateway-wave5 -- --exact`
+- `cargo test -p sdkwork-clawrouter-gateway --test database_config_router database_config_router_background_settlement_worker_wakes_on_new_usage_without_waiting_full_interval --target-dir target-rust-tests/iter-gateway-wave5 -- --exact`
+- `cargo test -p sdkwork-clawrouter-gateway --test database_config_router --target-dir target-rust-tests/iter-gateway-wave5`
 
 Observed result:
 
@@ -810,10 +810,10 @@ Important interpretation:
 New blocker discovered while probing the next hotspot:
 
 - follow-up measurement attempts on `provider_passthrough_route` and `edge_server_sqlite_smoke` are currently blocked by unrelated compile errors in:
-  - `services/sdkwork-claw-product/src/application/payment_intent_runtime.rs`
-  - `services/sdkwork-claw-product/src/infrastructure/sql/postgres/payment_intent_runtime_store.rs`
-  - `services/sdkwork-claw-product/src/infrastructure/sql/sqlite/payment_intent_runtime_store.rs`
-  - `services/sdkwork-claw-product/src/api/payment_aggregate.rs`
+  - `services/sdkwork-clawrouter-router-service/src/application/payment_intent_runtime.rs`
+  - `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/payment_intent_runtime_store.rs`
+  - `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/payment_intent_runtime_store.rs`
+  - `services/sdkwork-clawrouter-router-service/src/api/payment_aggregate.rs`
 - the current failure pattern is refund-runtime signature and struct-field drift around the new `items` field, which is outside the gateway test-performance change itself
 - until that compile surface is repaired, clean timing for the next gateway integration-test hotspots will remain partially blocked
 
@@ -821,7 +821,7 @@ New blocker discovered while probing the next hotspot:
 
 Root-cause investigation:
 
-- the next measured hotspot was `services/sdkwork-claw-gateway/tests/edge_server_sqlite_smoke.rs`
+- the next measured hotspot was `services/sdkwork-clawrouter-gateway/tests/edge_server_sqlite_smoke.rs`
 - warm exact timing showed the main proxy smoke test was still very expensive even after compile work dropped out:
   - `edge_server_proxies_real_sqlite_gateway_admin_and_app_services` finished in about `79.69s`
 - this file starts multiple service routers against the same copied SQLite fixture:
@@ -838,7 +838,7 @@ Important failed hypothesis:
 
 Change:
 
-- kept the scope inside `services/sdkwork-claw-gateway/tests/edge_server_sqlite_smoke.rs`
+- kept the scope inside `services/sdkwork-clawrouter-gateway/tests/edge_server_sqlite_smoke.rs`
 - introduced local test helpers that:
   - build a shared SQLite runtime once per smoke test
   - run `DatabaseInstaller::ensure_installed()` once on that shared pool
@@ -848,11 +848,11 @@ Change:
 
 Verification:
 
-- `cargo fmt -p sdkwork-claw-gateway`
-- `cargo test -p sdkwork-claw-gateway --test edge_server_sqlite_smoke edge_server_proxies_real_sqlite_gateway_admin_and_app_services --target-dir target-rust-tests/iter-gateway-wave8 -- --exact`
-- `cargo test -p sdkwork-claw-gateway --test edge_server_sqlite_smoke all_in_one_edge_router_serves_sqlite_gateway_admin_and_app_without_service_ports --target-dir target-rust-tests/iter-gateway-wave8 -- --exact`
-- `cargo test -p sdkwork-claw-gateway --test edge_server_sqlite_smoke edge_server_proxies_app_router_console_routing_api_through_generated_sdk_paths --target-dir target-rust-tests/iter-gateway-wave8 -- --exact`
-- `cargo test -p sdkwork-claw-gateway --test edge_server_sqlite_smoke --target-dir target-rust-tests/iter-gateway-wave8`
+- `cargo fmt -p sdkwork-clawrouter-gateway`
+- `cargo test -p sdkwork-clawrouter-gateway --test edge_server_sqlite_smoke edge_server_proxies_real_sqlite_gateway_admin_and_app_services --target-dir target-rust-tests/iter-gateway-wave8 -- --exact`
+- `cargo test -p sdkwork-clawrouter-gateway --test edge_server_sqlite_smoke all_in_one_edge_router_serves_sqlite_gateway_admin_and_app_without_service_ports --target-dir target-rust-tests/iter-gateway-wave8 -- --exact`
+- `cargo test -p sdkwork-clawrouter-gateway --test edge_server_sqlite_smoke edge_server_proxies_app_router_console_routing_api_through_generated_sdk_paths --target-dir target-rust-tests/iter-gateway-wave8 -- --exact`
+- `cargo test -p sdkwork-clawrouter-gateway --test edge_server_sqlite_smoke --target-dir target-rust-tests/iter-gateway-wave8`
 
 Observed result:
 
@@ -870,9 +870,9 @@ Important interpretation:
 For one-off direct Cargo runs, prefer:
 
 ```powershell
-cargo test -p sdkwork-claw-admin --test sqlite_product_model_route
-cargo test -p sdkwork-claw-gateway --test database_config_router
-cargo test -p sdkwork-claw-product --test openai_compatible_http_relay
+cargo test -p sdkwork-clawrouter-admin-api-server --test sqlite_product_model_route
+cargo test -p sdkwork-clawrouter-gateway --test database_config_router
+cargo test -p sdkwork-clawrouter-router-service --test openai_compatible_http_relay
 ```
 
 Only run full workspace tests for merge gates, release validation, or broad refactors.
@@ -934,8 +934,8 @@ Root-cause investigation:
 
 Change:
 
-- kept the scope inside `services/sdkwork-claw-gateway/tests/edge_server_sqlite_smoke.rs`
-- removed the abandoned `installed_*` gateway smoke experiment and its extra dev-dependency from `services/sdkwork-claw-gateway/Cargo.toml`
+- kept the scope inside `services/sdkwork-clawrouter-gateway/tests/edge_server_sqlite_smoke.rs`
+- removed the abandoned `installed_*` gateway smoke experiment and its extra dev-dependency from `services/sdkwork-clawrouter-gateway/Cargo.toml`
 - added a file-locked local template builder that:
   - starts from `seeded_sqlite_catalog()`
   - runs one real `DatabaseInstaller::ensure_installed()` pass
@@ -950,13 +950,13 @@ Change:
 
 Verification:
 
-- `cargo check -p sdkwork-claw-gateway --test edge_server_sqlite_smoke --target-dir target-rust-tests/iter-gateway-wave9`
-- `cargo test -p sdkwork-claw-gateway --test edge_server_sqlite_smoke seeded_installed_gateway_catalog_supports_skip_startup_install_mode_for_smoke_suite --target-dir target-rust-tests/iter-gateway-wave9 -- --exact`
-- `cargo test -p sdkwork-claw-gateway --test edge_server_sqlite_smoke edge_server_proxies_real_sqlite_gateway_admin_and_app_services --target-dir target-rust-tests/iter-gateway-wave9 -- --exact`
-- `cargo test -p sdkwork-claw-gateway --test edge_server_sqlite_smoke all_in_one_edge_router_serves_sqlite_gateway_admin_and_app_without_service_ports --target-dir target-rust-tests/iter-gateway-wave9 -- --exact`
-- `cargo test -p sdkwork-claw-gateway --test edge_server_sqlite_smoke edge_server_proxies_app_router_console_routing_api_through_generated_sdk_paths --target-dir target-rust-tests/iter-gateway-wave9 -- --exact`
-- `cargo fmt -p sdkwork-claw-gateway`
-- `cargo test -p sdkwork-claw-gateway --test edge_server_sqlite_smoke --target-dir target-rust-tests/iter-gateway-wave9`
+- `cargo check -p sdkwork-clawrouter-gateway --test edge_server_sqlite_smoke --target-dir target-rust-tests/iter-gateway-wave9`
+- `cargo test -p sdkwork-clawrouter-gateway --test edge_server_sqlite_smoke seeded_installed_gateway_catalog_supports_skip_startup_install_mode_for_smoke_suite --target-dir target-rust-tests/iter-gateway-wave9 -- --exact`
+- `cargo test -p sdkwork-clawrouter-gateway --test edge_server_sqlite_smoke edge_server_proxies_real_sqlite_gateway_admin_and_app_services --target-dir target-rust-tests/iter-gateway-wave9 -- --exact`
+- `cargo test -p sdkwork-clawrouter-gateway --test edge_server_sqlite_smoke all_in_one_edge_router_serves_sqlite_gateway_admin_and_app_without_service_ports --target-dir target-rust-tests/iter-gateway-wave9 -- --exact`
+- `cargo test -p sdkwork-clawrouter-gateway --test edge_server_sqlite_smoke edge_server_proxies_app_router_console_routing_api_through_generated_sdk_paths --target-dir target-rust-tests/iter-gateway-wave9 -- --exact`
+- `cargo fmt -p sdkwork-clawrouter-gateway`
+- `cargo test -p sdkwork-clawrouter-gateway --test edge_server_sqlite_smoke --target-dir target-rust-tests/iter-gateway-wave9`
 
 Observed result:
 

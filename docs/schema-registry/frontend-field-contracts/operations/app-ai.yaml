@@ -53,6 +53,7 @@ frontend_operations:
   api_surface: app
   api_method: GET
   api_path: /app/v3/api/ai/models
+  openapi_exposed: false
   read_sources:
   - ai_model_vendor
   - ai_model
@@ -392,6 +393,7 @@ frontend_operations:
   api_surface: app
   api_method: GET
   api_path: /app/v3/api/ai/model_vendors
+  openapi_exposed: false
   summary: List ranking vendor filters
   description: Lists service-backed model vendor filter options for the public rankings page.
   read_sources:
@@ -436,6 +438,7 @@ frontend_operations:
   api_surface: app
   api_method: GET
   api_path: /app/v3/api/ai/model_rankings
+  openapi_exposed: false
   read_sources:
   - ai_model_rank_snapshot
   query_parameters:

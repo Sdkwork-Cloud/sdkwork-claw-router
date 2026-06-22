@@ -282,7 +282,7 @@ class RustRouteOverlapAudit:
         source_paths = {location.source_path for location in locations}
         if (
             path.startswith("/app/v3/api/auth/")
-            and source_paths == {"services/sdkwork-claw-product/src/api/app_auth.rs"}
+            and source_paths == {"services/sdkwork-clawrouter-router-service/src/api/app_auth.rs"}
         ):
             return True
         if (
@@ -292,17 +292,7 @@ class RustRouteOverlapAudit:
                 "/app/v3/api/ai/channel_groups",
                 "/app/v3/api/iam/api_keys",
             }
-            and source_paths == {"services/sdkwork-claw-product/src/api/app_api_keys.rs"}
-        ):
-            return True
-        if (
-            method == "GET"
-            and path == "/backend/v3/api/ai/models"
-            and source_paths
-            == {
-                "services/sdkwork-claw-product/src/api/admin_model_catalog.rs",
-                "services/sdkwork-claw-product/src/api/admin_model_command.rs",
-            }
+            and source_paths == {"services/sdkwork-clawrouter-router-service/src/api/app_api_keys.rs"}
         ):
             return True
         if (
@@ -310,12 +300,40 @@ class RustRouteOverlapAudit:
             and path == "/v1/models/{model}"
             and source_paths
             == {
-                "services/sdkwork-claw-gateway/src/passthrough.rs",
-                "services/sdkwork-claw-gateway/src/invocation_http.rs",
+                "services/sdkwork-clawrouter-gateway/src/passthrough.rs",
+                "services/sdkwork-clawrouter-gateway/src/invocation_http.rs",
             }
         ):
             return True
+        if self._is_dependency_authority_route_overlap(method, path, source_paths):
+            return True
         return False
+
+    def _is_dependency_authority_route_overlap(
+        self,
+        method: str,
+        path: str,
+        source_paths: set[str],
+    ) -> bool:
+        claw_sources = {
+            source_path
+            for source_path in source_paths
+            if source_path.startswith("services/sdkwork-clawrouter-router-service/")
+        }
+        appbase_sources = {
+            source_path
+            for source_path in source_paths
+            if "sdkwork-appbase/" in source_path.replace("\\", "/")
+        }
+        if not claw_sources or not appbase_sources:
+            return False
+        dependency_prefixes = (
+            "/app/v3/api/auth/",
+            "/app/v3/api/oauth/",
+            "/app/v3/api/system/iam/",
+            "/app/v3/api/iam/",
+        )
+        return any(path.startswith(prefix) for prefix in dependency_prefixes)
 
     def _display_path(self, path: Path) -> str:
         try:

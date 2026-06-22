@@ -2615,6 +2615,29 @@ async fn seed_billing_meters(pool: &SqlitePool) -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Asserts gateway/router responses use a server-generated RFC 4122 UUID v4 request id
+/// instead of honoring a client-supplied `x-request-id`.
+pub fn assert_server_generated_request_id(actual: &str, client_request_id: &str) {
+    assert_ne!(
+        client_request_id, actual,
+        "gateway must ignore client supplied x-request-id and use a server request id"
+    );
+    assert_eq!(36, actual.len(), "server request id must be a UUID");
+    assert_eq!(Some('-'), actual.chars().nth(8));
+    assert_eq!(Some('-'), actual.chars().nth(13));
+    assert_eq!(Some('-'), actual.chars().nth(18));
+    assert_eq!(Some('-'), actual.chars().nth(23));
+    assert_eq!(Some('4'), actual.chars().nth(14));
+    let variant = actual
+        .chars()
+        .nth(19)
+        .expect("server request id must include UUID variant");
+    assert!(
+        matches!(variant, '8' | '9' | 'a' | 'b'),
+        "server request id must be an RFC 4122 variant UUID"
+    );
+}
+
 #[cfg(test)]
 mod tests {
     use sdkwork_claw_http::{

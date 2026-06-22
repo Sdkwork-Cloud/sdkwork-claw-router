@@ -394,10 +394,10 @@ class BillingRuntimeStandardTest(unittest.TestCase):
 
     def test_admin_finance_money_uses_exact_decimal_strings(self) -> None:
         sqlite_store = (
-            ROOT / "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_finance_store.rs"
+            ROOT / "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/admin_finance_store.rs"
         ).read_text(encoding="utf-8")
         postgres_store = (
-            ROOT / "services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_finance_store.rs"
+            ROOT / "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/admin_finance_store.rs"
         ).read_text(encoding="utf-8")
         finance_service = (
             ROOT

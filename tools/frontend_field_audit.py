@@ -56,6 +56,7 @@ class FrontendFieldAudit:
         "@sdkwork/commerce-pc-billing",
         "@sdkwork/commerce-pc-wallet",
         "@sdkwork/commerce-pc-membership",
+        "@sdkwork/commerce-pc-payment",
         "@sdkwork/clawrouter-app-sdk",
         "@sdkwork/clawrouter-backend-sdk",
         "@sdkwork/clawrouter-open-sdk",

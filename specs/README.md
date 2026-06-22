@@ -16,6 +16,11 @@ Root SDKWork standards remain authoritative. Local component specs can narrow or
 | Languages | `javascript, rust` |
 | Status | `ACTIVE` |
 
+## Application Environment Profiles
+
+- [application-env-standard.md](./application-env-standard.md) defines profile file naming (`.env.{profile}` without `.local`), runtime roots, merge rules, framework mapping, and `SDKWORK_ACCESS_TOKEN` bootstrap rules.
+- Verification: `pnpm check:application-env` and `node scripts/ensure-claw-router-env.mjs --lifecycle all`.
+
 ## Contract Manifest
 
 - [component.spec.json](./component.spec.json) is the machine-readable component contract.

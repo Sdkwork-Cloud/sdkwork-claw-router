@@ -642,7 +642,7 @@ function validatePackageItem(packageItem, seenIds, issues) {
       issues.push(`${packageItem.id} must include required ${artifactKind} artifact`);
     }
   }
-  if (packageItem.artifacts?.some((artifact) => String(artifact.path).includes('.env.release.local'))) {
+  if (packageItem.artifacts?.some((artifact) => String(artifact.path).includes('.env.release'))) {
     issues.push(`${packageItem.id} must not include host-local release env output`);
   }
   if (!Array.isArray(packageItem.initCommands) || packageItem.initCommands.length < 2) {

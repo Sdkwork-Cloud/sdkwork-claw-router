@@ -131,7 +131,7 @@ For Kubernetes:
 - Provide `clawrouter.toml` through a ConfigMap or mounted file.
 - Point readinessProbe at `/readyz`.
 - Point livenessProbe at `/healthz`.
-- Do not bake `.env.release.local` into the image.
+- Do not bake `.env.release` into the image.
 
 ## Source
 

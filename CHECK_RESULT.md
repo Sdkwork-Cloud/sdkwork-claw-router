@@ -51,7 +51,7 @@ The main improvements made in this pass are:
   `sdkwork-claw-installer refresh-catalog --force`, and `/healthz` plus
   `/readyz` checks are declared for every package mode
 - package security defaults are explicit: no secrets in package artifacts,
-  `.env.release.local` excluded, `.env.release.example` reference-only, local
+  `.env.release` excluded, `.env.release.example` reference-only, local
   env generated on the install host, and trusted forwarded headers disabled by
   default
 - route delivery classification is now executable: every actual portal route is
@@ -720,7 +720,7 @@ node --experimental-strip-types apps\sdkwork-clawrouter-pc\api-reference-playgro
 node apps\sdkwork-clawrouter-pc\api-reference-ssr-smoke.test.cjs
 python -B -m unittest tests.test_frontend_source_hygiene_standard
 pnpm.cmd --dir apps\sdkwork-clawrouter-pc build
-cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
+cargo test -p sdkwork-clawrouter-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
 node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
 $env:CLAWROUTER_BROWSER_SMOKE_REQUIRED='1'; node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
 node --experimental-strip-types apps\sdkwork-clawrouter-pc\server.test.ts
@@ -790,7 +790,7 @@ node apps\sdkwork-clawrouter-pc\api-reference-ssr-smoke.test.cjs
 python -B -m unittest tests.test_api_reference_playground_standard tests.test_frontend_source_hygiene_standard
 pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-api-reference typecheck
 pnpm.cmd --dir apps\sdkwork-clawrouter-pc build
-cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
+cargo test -p sdkwork-clawrouter-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
 node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
 $env:CLAWROUTER_BROWSER_SMOKE_REQUIRED='1'; node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
 pnpm.cmd verify
@@ -946,7 +946,7 @@ node --experimental-strip-types apps\sdkwork-clawrouter-pc\models-runtime.test.t
 node apps\sdkwork-clawrouter-pc\models-ssr-smoke.test.cjs
 python -B -m unittest tests.test_models_catalog_runtime_standard tests.test_frontend_source_hygiene_standard
 pnpm.cmd --dir apps\sdkwork-clawrouter-pc build
-cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
+cargo test -p sdkwork-clawrouter-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
 node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
 $env:CLAWROUTER_BROWSER_SMOKE_REQUIRED='1'; node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
 node --experimental-strip-types apps\sdkwork-clawrouter-pc\server.test.ts
@@ -1025,7 +1025,7 @@ python -B -m unittest tests.test_courses_runtime_standard
 python -B -m unittest tests.test_frontend_source_hygiene_standard
 pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-courses typecheck
 pnpm.cmd --dir apps\sdkwork-clawrouter-pc build
-cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
+cargo test -p sdkwork-clawrouter-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
 node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
 $env:CLAWROUTER_BROWSER_SMOKE_REQUIRED='1'; node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
 ```
@@ -1082,7 +1082,7 @@ python -B -m unittest tests.test_forum_runtime_standard
 python -B -m unittest tests.test_frontend_source_hygiene_standard tests.test_forum_runtime_standard
 pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-forum typecheck
 pnpm.cmd --dir apps\sdkwork-clawrouter-pc build
-cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
+cargo test -p sdkwork-clawrouter-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
 node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
 $env:CLAWROUTER_BROWSER_SMOKE_REQUIRED='1'; node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
 ```
@@ -1141,7 +1141,7 @@ pnpm.cmd --dir apps\sdkwork-clawrouter-pc build
 node --experimental-strip-types apps\sdkwork-clawrouter-pc\app-runtime.test.ts
 node --experimental-strip-types apps\sdkwork-clawrouter-pc\skills-runtime.test.ts
 python -B -m unittest tests.test_app_center_runtime_standard tests.test_skills_runtime_standard
-cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
+cargo test -p sdkwork-clawrouter-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
 node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
 $env:CLAWROUTER_BROWSER_SMOKE_REQUIRED="1"; node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs; $exit=$LASTEXITCODE; Remove-Item Env:\CLAWROUTER_BROWSER_SMOKE_REQUIRED; exit $exit
 node --experimental-strip-types apps\sdkwork-clawrouter-pc\server.test.ts
@@ -1186,7 +1186,7 @@ Results:
   5 passed, 0 failed.
 - `python -B -m unittest tests.test_app_center_runtime_standard tests.test_skills_runtime_standard`:
   15 tests passed, 0 failed.
-- `cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server`:
+- `cargo test -p sdkwork-clawrouter-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server`:
   production HTTP smoke passed at `http://127.0.0.1:3200`.
 - `node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs`:
   local non-required run started the production server and then emitted
@@ -1212,7 +1212,7 @@ node scripts\run-claw-router-product.test.mjs
 node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
 $env:CLAWROUTER_BROWSER_SMOKE_REQUIRED="1"; node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs; $exit=$LASTEXITCODE; Remove-Item Env:\CLAWROUTER_BROWSER_SMOKE_REQUIRED; exit $exit
 pnpm.cmd --dir apps\sdkwork-clawrouter-pc build
-cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
+cargo test -p sdkwork-clawrouter-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
 node --experimental-strip-types apps\sdkwork-clawrouter-pc\server.test.ts
 python -B -m unittest tests.test_app_center_runtime_standard tests.test_skills_runtime_standard
 pnpm.cmd verify
@@ -1243,7 +1243,7 @@ Results:
   missing browser evidence instead of silently skipping it.
 - `pnpm.cmd --dir apps\sdkwork-clawrouter-pc build`: production build
   passed and emitted `dist\server.mjs`.
-- `cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server`:
+- `cargo test -p sdkwork-clawrouter-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server`:
   production HTTP smoke passed at `http://127.0.0.1:3200`.
 - `node --experimental-strip-types apps\sdkwork-clawrouter-pc\server.test.ts`:
   50 passed, 0 failed.
@@ -1265,7 +1265,7 @@ python -B -m unittest tests.test_courses_runtime_standard
 node --experimental-strip-types apps\sdkwork-clawrouter-pc\courses-runtime.test.ts
 node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
 $env:CLAWROUTER_BROWSER_SMOKE_REQUIRED="1"; node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs; $exit=$LASTEXITCODE; Remove-Item Env:\CLAWROUTER_BROWSER_SMOKE_REQUIRED; exit $exit
-cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
+cargo test -p sdkwork-clawrouter-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
 node --experimental-strip-types apps\sdkwork-clawrouter-pc\server.test.ts
 pnpm.cmd --dir apps\sdkwork-clawrouter-pc typecheck --force
 pnpm.cmd --dir apps\sdkwork-clawrouter-pc build
@@ -1320,7 +1320,7 @@ Results:
 node --experimental-strip-types apps\sdkwork-clawrouter-pc\server.test.ts
 pnpm.cmd --dir apps\sdkwork-clawrouter-pc build
 pnpm.cmd --dir apps\sdkwork-clawrouter-pc typecheck --force
-cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
+cargo test -p sdkwork-clawrouter-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
 pnpm.cmd verify
 pnpm.cmd test:postgres
 pnpm.cmd test:postgres:docker
@@ -1423,8 +1423,8 @@ python -B -m tools.schema_quality_gate
 python -B -m tools.clawrouter_sdk_guardian
 python -B -m tools.clawrouter_openapi_generator --check
 python -B -m tools.api_contract_manifest --check
-cargo test -p sdkwork-claw-product app_model_catalog_route --test app_model_catalog_api
-cargo test -p sdkwork-claw-app injected_product_catalog_serves_app_model_catalog_without_secret_material --test api_key_route
+cargo test -p sdkwork-clawrouter-router-service app_model_catalog_route --test app_model_catalog_api
+cargo test -p sdkwork-clawrouter-app-api-server injected_product_catalog_serves_app_model_catalog_without_secret_material --test api_key_route
 ```
 
 Observed result:
@@ -1571,7 +1571,7 @@ Frontend field audit is current
 git diff --check -- CHECK_RESULT.md apps/sdkwork-clawrouter-pc/models-runtime.test.ts apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-models/src/modelCatalog.ts apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-models/src/pages/ModelDetails.tsx apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-models/src/pages/Models.tsx apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-i18n/src/index.ts tests/test_models_catalog_runtime_standard.py
 passed
 
-cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
+cargo test -p sdkwork-clawrouter-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
 passed; production `models-*.js` chunk includes runtime SDK loading,
 filter/reset/group/show-more catalog semantics, detail source labels, safe SDK
 example serialization, and excludes private pricing tokens; production
@@ -1649,10 +1649,10 @@ Flyway schema contract audit passed
 ClawRouter OpenAPI specs are current
 API contract manifest is current
 
-cargo test -p sdkwork-claw-product app_model_catalog_route --test app_model_catalog_api
+cargo test -p sdkwork-clawrouter-router-service app_model_catalog_route --test app_model_catalog_api
 2 passed
 
-cargo test -p sdkwork-claw-app injected_product_catalog_serves_app_model_catalog_without_secret_material --test api_key_route
+cargo test -p sdkwork-clawrouter-app-api-server injected_product_catalog_serves_app_model_catalog_without_secret_material --test api_key_route
 1 passed
 ```
 
@@ -1909,7 +1909,7 @@ node --experimental-strip-types apps\sdkwork-clawrouter-pc\app-runtime.test.ts
 node --experimental-strip-types apps\sdkwork-clawrouter-pc\api-reference-playground-runtime.test.ts
 node --experimental-strip-types apps\sdkwork-clawrouter-pc\console-routing-runtime.test.ts
 node --experimental-strip-types apps\sdkwork-clawrouter-pc\admin-group-runtime.test.ts
-cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
+cargo test -p sdkwork-clawrouter-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
 node scripts\run-claw-router-product.test.mjs
 ```
 
@@ -2014,7 +2014,7 @@ Command:
 ```powershell
 node --experimental-strip-types apps\sdkwork-clawrouter-pc\rankings-runtime.test.ts
 python -B -m unittest tests.test_rankings_runtime_standard
-cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
+cargo test -p sdkwork-clawrouter-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
 ```
 
 Observed result:
@@ -2057,7 +2057,7 @@ pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-courses
 python -B -m unittest tests.test_courses_runtime_standard tests.test_frontend_route_classification_standard tests.test_frontend_static_source_manifest
 python -B -m tools.frontend_static_source_manifest --check
 node apps\sdkwork-clawrouter-pc\scripts\audit-bundle-budget.mjs
-cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
+cargo test -p sdkwork-clawrouter-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
 ```
 
 Observed result:
@@ -2144,7 +2144,7 @@ pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-forum t
 python -B -m unittest tests.test_frontend_route_classification_standard tests.test_frontend_static_source_manifest tests.test_forum_runtime_standard
 python -B -m tools.frontend_static_source_manifest --check
 node apps\sdkwork-clawrouter-pc\scripts\audit-bundle-budget.mjs
-cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
+cargo test -p sdkwork-clawrouter-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
 node scripts\verify-claw-router-product.mjs
 ```
 
@@ -2207,7 +2207,7 @@ python -B -m tools.frontend_operation_audit --check
 python -B -m tools.frontend_static_source_manifest --check
 python -B -m tools.frontend_contract_guardian
 node apps\sdkwork-clawrouter-pc\scripts\audit-bundle-budget.mjs
-cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
+cargo test -p sdkwork-clawrouter-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
 node scripts\verify-claw-router-product.mjs
 ```
 
@@ -2264,7 +2264,7 @@ node --experimental-strip-types apps\sdkwork-clawrouter-pc\api-reference-playgro
 node apps\sdkwork-clawrouter-pc\api-reference-ssr-smoke.test.cjs
 python -B -m unittest tests.test_api_reference_playground_standard
 node --experimental-strip-types apps\sdkwork-clawrouter-pc\server.test.ts
-cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
+cargo test -p sdkwork-clawrouter-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
 pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-api-reference typecheck
 pnpm.cmd --dir apps\sdkwork-clawrouter-pc typecheck --force
 python -B -m unittest tests.test_frontend_route_classification_standard tests.test_frontend_clipboard_standard tests.test_app_session_exchange_standard
@@ -2980,15 +2980,15 @@ The contract guards now cover:
 Command:
 
 ```powershell
-cargo test -p sdkwork-claw-product app_model_catalog_route --test app_model_catalog_api
-cargo test -p sdkwork-claw-app injected_product_catalog_serves_app_model_catalog_without_secret_material --test api_key_route
+cargo test -p sdkwork-clawrouter-router-service app_model_catalog_route --test app_model_catalog_api
+cargo test -p sdkwork-clawrouter-app-api-server injected_product_catalog_serves_app_model_catalog_without_secret_material --test api_key_route
 ```
 
 Observed result:
 
 ```text
-sdkwork-claw-product app_model_catalog_api: 2 passed
-sdkwork-claw-app api_key_route: 1 passed
+sdkwork-clawrouter-router-service app_model_catalog_api: 2 passed
+sdkwork-clawrouter-app-api-server api_key_route: 1 passed
 ```
 
 The public app model catalog now enforces:
@@ -3197,7 +3197,7 @@ node --experimental-strip-types apps\sdkwork-clawrouter-pc\app-runtime.test.ts
 node --experimental-strip-types apps\sdkwork-clawrouter-pc\skills-runtime.test.ts
 pnpm.cmd --dir apps\sdkwork-clawrouter-pc typecheck --force
 pnpm.cmd --dir apps\sdkwork-clawrouter-pc build
-cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
+cargo test -p sdkwork-clawrouter-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
 node --experimental-strip-types apps\sdkwork-clawrouter-pc\server.test.ts
 node scripts\run-claw-router-product.test.mjs
 ```
@@ -3410,7 +3410,7 @@ Issue found:
   Windows, Linux, macOS, x64, arm64, archive, service, container, fast
   initialization, health checks, and secret exclusion
 - without a shared matrix, future package builders could drift by platform,
-  accidentally include `.env.release.local`, skip catalog refresh, trust
+  accidentally include `.env.release`, skip catalog refresh, trust
   forwarded headers by default, or run expensive live `pnpm dev` smoke during
   package initialization
 
@@ -3444,13 +3444,13 @@ Solution applied:
   Containerfile, platform-specific entrypoint, and container metadata artifacts,
   preserves executable mode on Linux/macOS binaries and container entrypoints,
   supports ustar prefix paths for long production asset names, supports pure
-  `--json` output, and excludes `.env.release.local`
+  `--json` output, and excludes `.env.release`
 - the builder also supports `--all --check --dry-run` so the root
   `pnpm.cmd install:package:check` command validates archive, service,
   container, and desktop package plans across all 24
   platform/architecture/mode combinations without requiring staged production
   artifacts
-- the install init smoke writes a temporary `.env.release.local` and
+- the install init smoke writes a temporary `.env.release` and
   `sdkwork-clawrouter.toml`, validates PostgreSQL for server package dry-runs
   and a file-backed SQLite initialization URL for desktop package dry-runs,
   verifies `sdkwork-claw-installer ensure` and
@@ -3487,7 +3487,7 @@ Expected install package builder contract:
   and SHA-256 checksums
 - generate service manifests and container metadata from the shared plan instead
   of maintaining separate platform-specific package lists
-- never include `.env.release.local` or secret values
+- never include `.env.release` or secret values
 - run fast install initialization through `sdkwork-claw-installer ensure` and
   `sdkwork-claw-installer refresh-catalog --force`
 - gate package initialization with `pnpm.cmd install:init:smoke` by default, and
@@ -3553,24 +3553,33 @@ pnpm.cmd verify
 Remaining delivery policy:
 
 - Use `pnpm.cmd release:preflight` before every local release handoff.
-- Use `pnpm.cmd release:preflight -- --strict --env-file .env.release.local --strict-root-clean`
+- Use `pnpm.cmd release:preflight -- --strict --env-file .env.release --strict-root-clean`
   on CI or a release packaging host.
 - Keep release environment variables aligned with
-  `scripts/release-environment-contract.mjs`. Treat `.env.release.example` as
-  the checked-in reference template, generate `.env.release.local` on release
+  `scripts/release-environment-contract.mjs` (v4). Treat `.env.release.example` as
+  the checked-in reference template, generate `.env.release` on release
   hosts from the process environment with `pnpm.cmd release:env:write`, and run
-  `pnpm.cmd release:preflight -- --strict --env-file .env.release.local --strict-root-clean`
+  `pnpm.cmd release:preflight -- --strict --env-file .env.release --strict-root-clean`
   before packaging. The contract requires
   `SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL`, `PORTAL_PUBLIC_API_BASE_URL`,
   `PORTAL_PUBLIC_APP_API_BASE_URL`, `PORTAL_PUBLIC_BACKEND_API_BASE_URL`, and
-  `PORTAL_PUBLIC_TOOL_API_ENABLED`.
+  `PORTAL_PUBLIC_TOOL_API_ENABLED`, plus optional canonical edge private keys
+  (`SDKWORK_CLAW_EDGE_CSP_CONNECT_SRC`, `SDKWORK_CLAW_TOOL_API_RATE_LIMIT_*`,
+  `SDKWORK_CLAW_TOOL_API_SDK_GENERATOR_*`, `SDKWORK_CLAW_TOOL_API_SDK_ARCHIVE_ROOT`).
+  `ensureClawRouterReleaseEnv()` and `write-release-env.mjs` emit the full
+  19-key release profile order, including empty optional edge values.
+- Run `pnpm check:application-env` (35 unit tests + entrypoint marker guard) and
+  `pnpm check:gateway-request-identity` (server-owned request id source guard +
+  `edge_env` / `request_identity` / `invocation_router` tests) before merge when
+  touching env contracts or gateway invocation behavior. Root `pnpm check` now
+  includes both gates.
 - Prefer `pnpm.cmd release:env:write -- --check` followed by
   `pnpm.cmd release:env:write` on CI or release hosts. The writer reads the
   same contract variables from the process environment, refuses accidental
   overwrite without `--force`, refuses `.env.release.example` as an output
   target, and prints only a safe summary without secret values.
 - `pnpm.cmd release` is the canonical release host entrypoint: it runs the
-  release env writer in `--check` mode, regenerates `.env.release.local` with
+  release env writer in `--check` mode, regenerates `.env.release` with
   `--force`, runs strict release preflight, and then runs the full `pnpm verify`
   gate.
 - Continue to use `pnpm.cmd verify` as the final commercial gate; preflight is

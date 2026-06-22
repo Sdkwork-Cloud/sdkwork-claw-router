@@ -59,31 +59,64 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
             / "src"
             / "modelService.ts"
         ).read_text(encoding="utf-8")
-        ai_api = (ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "ai.ts").read_text(
-            encoding="utf-8"
-        )
-        sync_request_type = (
-            ROOT
+        ai_api = (
+            ROOT.parent
+            / "sdkwork-models"
             / "sdks"
-            / "clawrouter-backend-sdk"
-            / "clawrouter-backend-sdk-typescript"
+            / "sdkwork-models-backend-sdk"
+            / "sdkwork-models-backend-sdk-typescript"
+            / "generated"
+            / "server-openapi"
+            / "src"
+            / "api"
+            / "ai.ts"
+        ).read_text(encoding="utf-8")
+        sync_request_type = (
+            ROOT.parent
+            / "sdkwork-models"
+            / "sdks"
+            / "sdkwork-models-backend-sdk"
+            / "sdkwork-models-backend-sdk-typescript"
+            / "generated"
+            / "server-openapi"
             / "src"
             / "types"
             / "admin-model-catalog-sync-request.ts"
         ).read_text(encoding="utf-8")
         type_exports = (
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "index.ts"
+            ROOT.parent
+            / "sdkwork-models"
+            / "sdks"
+            / "sdkwork-models-backend-sdk"
+            / "sdkwork-models-backend-sdk-typescript"
+            / "generated"
+            / "server-openapi"
+            / "src"
+            / "types"
+            / "index.ts"
         ).read_text(encoding="utf-8")
         ai_model_item_type = (
-            ROOT
+            ROOT.parent
+            / "sdkwork-models"
             / "sdks"
-            / "clawrouter-backend-sdk"
-            / "clawrouter-backend-sdk-typescript"
+            / "sdkwork-models-backend-sdk"
+            / "sdkwork-models-backend-sdk-typescript"
+            / "generated"
+            / "server-openapi"
             / "src"
             / "types"
             / "admin-ai-model-item.ts"
         ).read_text(encoding="utf-8")
-        backend_openapi = json.loads((ROOT / "generated" / "openapi" / "clawrouter-backend-openapi.json").read_text(encoding="utf-8"))
+        backend_openapi = json.loads(
+            (
+                ROOT.parent
+                / "sdkwork-models"
+                / "apis"
+                / "backend-api"
+                / "intelligence"
+                / "openapi.json"
+            ).read_text(encoding="utf-8")
+        )
         openapi_sync_request = backend_openapi["components"]["schemas"]["AdminModelCatalogSyncRequest"]
         openapi_model_item = backend_openapi["components"]["schemas"]["AdminAiModelItem"]
         openapi_create_request = backend_openapi["components"]["schemas"]["AdminAiModelCreateRequest"]
@@ -331,11 +364,11 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
                 self.assertNotIn('status_label(optional_integer_cell(&row, "status"))', store)
 
     def test_admin_model_catalog_route_uses_standard_router_not_fallback_compat_layer(self) -> None:
-        product_api_mod = (ROOT / "services/sdkwork-claw-product/src/api/mod.rs").read_text(encoding="utf-8")
+        product_api_mod = (ROOT / "services/sdkwork-clawrouter-router-service/src/api/mod.rs").read_text(encoding="utf-8")
         admin_api = (ROOT / "crates/sdkwork-router-backend-api/src/routes.rs").read_text(
             encoding="utf-8"
         )
-        product_api_dir = ROOT / "services/sdkwork-claw-product/src/api"
+        product_api_dir = ROOT / "services/sdkwork-clawrouter-router-service/src/api"
 
         self.assertFalse(
             (product_api_dir / "admin_model_catalog_fallback.rs").exists(),

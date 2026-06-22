@@ -110,7 +110,7 @@ reusable appbase runtime/storage/router implementation.
    Admin promotion management, coupon stocks/codes, recharge records/packages,
    exchange rules, payment attempts, finance ledger, usage statements, account
    summary, checkout, recharge, and payment callback have real Rust API/store
-   shape in `sdkwork-claw-product`. Those are generic commerce concerns and
+   shape in `sdkwork-clawrouter-router-service`. Those are generic commerce concerns and
    should move to appbase stores/services/routers.
 
 3. Appbase runtime is not yet the source of truth for all exposed operations.

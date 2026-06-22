@@ -13,7 +13,7 @@ APP_SEED_EXPORTER_PATH = APPS_ROOT / "scripts" / "initialize-sdkwork-app-standar
 APP_SEED_SOURCE_PATH = (
     REPO_ROOT
     / "services"
-    / "sdkwork-claw-product"
+    / "sdkwork-clawrouter-router-service"
     / "src"
     / "infrastructure"
     / "sql"

@@ -167,7 +167,7 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
         playground_runtime_test_source = (
             ROOT / "apps" / "sdkwork-clawrouter-pc" / "console-app-runtime.test.ts"
         ).read_text(encoding="utf-8")
-        rust_api_source = (ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_models.rs").read_text(encoding="utf-8")
+        rust_api_source = (ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "app_models.rs").read_text(encoding="utf-8")
         sdk_ai_source = (
             ROOT
             / "sdks"
@@ -234,7 +234,7 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
         model_service_path = MODELS_PACKAGE / "src" / "modelService.ts"
         runtime_catalog_path = MODELS_PACKAGE / "src" / "runtimeModelCatalog.ts"
         app_sdk_types_path = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types"
-        app_models_api_path = ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_models.rs"
+        app_models_api_path = ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "app_models.rs"
 
         self.assertTrue(
             model_service_path.exists(),
@@ -651,7 +651,7 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
         for sensitive_field, _ in SENSITIVE_APP_MODEL_PRICE_FIELDS:
             self.assertIn(sensitive_field, smoke_source)
 
-        self.assertIn("getClawRouterAppSdkClient().ai.models.list", service_source)
+        self.assertIn("getModelsAppSdkClient().ai.models.list", service_source)
         self.assertIn("normalizeQueryValues(filters.vendorCodes)", service_source)
         self.assertIn("normalizeQueryValues(filters.categories)", service_source)
         self.assertIn("normalizeQueryValues(filters.groups)", service_source)

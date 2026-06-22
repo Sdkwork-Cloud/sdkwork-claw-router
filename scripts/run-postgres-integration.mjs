@@ -16,7 +16,7 @@ const DEFAULT_WORKSPACE_ROOT = path.resolve(__dirname, '..');
 function printHelp() {
   console.log(`Usage: node scripts/run-postgres-integration.mjs [options] [-- cargo-test-args...]
 
-Run the sdkwork-claw-product real Postgres transaction integration tests.
+Run the sdkwork-clawrouter-router-service real Postgres transaction integration tests.
 
 Options:
   --with-docker       Start the app-local Docker Postgres test database before cargo.
@@ -103,7 +103,7 @@ function postgresIntegrationCargoArgs(extraArgs = []) {
   const args = [
     'test',
     '-p',
-    'sdkwork-claw-product',
+    'sdkwork-clawrouter-router-service',
     '--test',
     'postgres_transaction_integration',
   ];

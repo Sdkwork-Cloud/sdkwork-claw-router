@@ -8,8 +8,8 @@ ROOT = Path(__file__).resolve().parents[1]
 class AdminFirewallRuntimeStandardTest(unittest.TestCase):
     def test_admin_firewall_read_model_rejects_missing_required_rule_codes(self) -> None:
         store_paths = [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_firewall_rule_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_firewall_rule_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/admin_firewall_rule_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/admin_firewall_rule_store.rs",
         ]
 
         for relative_path in store_paths:
@@ -38,8 +38,8 @@ class AdminFirewallRuntimeStandardTest(unittest.TestCase):
 
     def test_admin_firewall_read_model_fails_closed_for_unknown_rule_codes(self) -> None:
         store_paths = [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_firewall_rule_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_firewall_rule_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/admin_firewall_rule_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/admin_firewall_rule_store.rs",
         ]
 
         for relative_path in store_paths:

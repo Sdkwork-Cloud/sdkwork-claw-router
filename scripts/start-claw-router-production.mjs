@@ -6,11 +6,17 @@ import path from 'node:path';
 import process from 'node:process';
 import { fileURLToPath } from 'node:url';
 import { createRuntimeConfigTemplate } from './build-claw-router-install-package.mjs';
+import { ensureClawRouterEnvForLifecycle } from './dev/claw-router-application-env.mjs';
 import { productionGatewayBinaryPath } from './claw-router-production-artifacts.mjs';
 import {
   mergePortalPublicRuntimeEnv,
   portalPublicRuntimeEnvLineValue,
 } from './portal-public-runtime-env.mjs';
+import {
+  CLAW_ROUTER_EDGE_ENV_KEYS,
+  buildRuntimeEdgePrivateEnv,
+  resolveEdgeEnvValue,
+} from './lib/claw-router-edge-env-contract.mjs';
 import {
   LINUX_SERVICE_CONFIG_ROOT,
   LINUX_SERVICE_DATA_ROOT,
@@ -965,12 +971,14 @@ function resolveStartProductionEnv(
       settings.trustForwardedHeaders
         ? '1'
         : baseEnv.SDKWORK_CLAW_EDGE_TRUST_FORWARDED_HEADERS ?? '0',
-    PORTAL_TOOL_API_RATE_LIMIT_REQUESTS:
-      baseEnv.PORTAL_TOOL_API_RATE_LIMIT_REQUESTS ?? '120',
-    PORTAL_TOOL_API_RATE_LIMIT_WINDOW_SECONDS:
-      baseEnv.PORTAL_TOOL_API_RATE_LIMIT_WINDOW_SECONDS ?? '60',
-    PORTAL_TOOL_API_SDK_ARCHIVE_ROOT:
-      baseEnv.PORTAL_TOOL_API_SDK_ARCHIVE_ROOT ?? defaultSdkArchiveRoot,
+    ...buildRuntimeEdgePrivateEnv(baseEnv, {
+      [CLAW_ROUTER_EDGE_ENV_KEYS.toolApiSdkArchiveRoot]:
+        resolveEdgeEnvValue(
+          baseEnv,
+          CLAW_ROUTER_EDGE_ENV_KEYS.toolApiSdkArchiveRoot,
+          defaultSdkArchiveRoot,
+        ),
+    }),
   };
 }
 
@@ -1025,9 +1033,9 @@ function buildStartProductionAccessLines(env) {
     `[start-production]   PORTAL_PUBLIC_APP_API_BASE_URL=${portalPublicRuntimeEnvLineValue(env, 'PORTAL_PUBLIC_APP_API_BASE_URL')}`,
     `[start-production]   PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL=${env.PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL || '(not configured)'}`,
     `[start-production]   PORTAL_PUBLIC_TOOL_API_ENABLED=${env.PORTAL_PUBLIC_TOOL_API_ENABLED}`,
-    `[start-production]   PORTAL_TOOL_API_RATE_LIMIT_REQUESTS=${env.PORTAL_TOOL_API_RATE_LIMIT_REQUESTS}`,
-    `[start-production]   PORTAL_TOOL_API_RATE_LIMIT_WINDOW_SECONDS=${env.PORTAL_TOOL_API_RATE_LIMIT_WINDOW_SECONDS}`,
-    `[start-production]   PORTAL_TOOL_API_SDK_ARCHIVE_ROOT=${env.PORTAL_TOOL_API_SDK_ARCHIVE_ROOT || '(not configured)'}`,
+    `[start-production]   ${CLAW_ROUTER_EDGE_ENV_KEYS.toolApiRateLimitRequests}=${env[CLAW_ROUTER_EDGE_ENV_KEYS.toolApiRateLimitRequests]}`,
+    `[start-production]   ${CLAW_ROUTER_EDGE_ENV_KEYS.toolApiRateLimitWindowSeconds}=${env[CLAW_ROUTER_EDGE_ENV_KEYS.toolApiRateLimitWindowSeconds]}`,
+    `[start-production]   ${CLAW_ROUTER_EDGE_ENV_KEYS.toolApiSdkArchiveRoot}=${env[CLAW_ROUTER_EDGE_ENV_KEYS.toolApiSdkArchiveRoot] || '(not configured)'}`,
     `[start-production]   SDKWORK_CLAW_EDGE_EXTERNAL_SCHEME=${env.SDKWORK_CLAW_EDGE_EXTERNAL_SCHEME}`,
     `[start-production]   SDKWORK_CLAW_EDGE_TRUST_FORWARDED_HEADERS=${env.SDKWORK_CLAW_EDGE_TRUST_FORWARDED_HEADERS}`,
   );
@@ -1074,7 +1082,7 @@ function resolveStartProductionCommand(
 
   return {
     command: cargoCommand(platform),
-    args: ['run', '-p', 'sdkwork-claw-gateway'],
+    args: ['run', '-p', 'sdkwork-clawrouter-gateway'],
     source: 'cargo',
   };
 }
@@ -1108,7 +1116,22 @@ function main(argv = process.argv.slice(2)) {
   }
 
   assertPortalDistReadyForStart(settings.dryRun, portalDist);
-  const env = mergeRuntimeConfigEnv(resolveStartProductionEnv(process.env, portalDist, settings), runtimeConfig);
+  const ensuredApplicationEnv = ensureClawRouterEnvForLifecycle('start', {
+    workspaceRoot,
+    env: process.env,
+    deploymentProfile: 'standalone',
+    runtimeTarget: settings.deploymentMode === 'desktop' ? 'desktop' : 'server',
+    dryRun: settings.dryRun,
+  });
+  const releaseApplicationEnv = ensuredApplicationEnv.release;
+  const env = mergeRuntimeConfigEnv(
+    {
+      ...resolveStartProductionEnv(process.env, portalDist, settings),
+      ...releaseApplicationEnv.mergedEnv,
+      ...ensuredApplicationEnv.production.mergedEnv,
+    },
+    runtimeConfig,
+  );
   for (const line of buildStartProductionAccessLines(env)) {
     console.log(line);
   }

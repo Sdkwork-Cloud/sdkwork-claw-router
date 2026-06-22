@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8103,
+  "uuid": "skill-agent-harness",
+  "skillKey": "agent-harness",
+  "name": "Agent Harness",
+  "version": "1.0.0",
+  "runtime": "builtin",
+  "entrypoint": "sdkwork.skills.agent_harness",
+  "capabilities": [
+    "agent.harness",
+    "routing.planning"
+  ],
+  "configSchema": {
+    "type": "object"
+  },
+  "defaultConfig": {},
+  "artifacts": [
+    {
+      "artifactRef": "builtin://sdkwork.skills.agent_harness@1.0.0",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/agent-harness-1.0.0.json"
+      },
+      "version": "1.0.0",
+      "runtime": "builtin",
+      "checksumHash": "sha256:dd4a28c0477a81f555c6e9c456d4421a5fe09c5fca1529ed07746082bef567ba",
+      "artifactSizeBytes": 499
+    }
+  ]
+}

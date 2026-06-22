@@ -128,7 +128,7 @@ pnpm start -- --init-config-only --deployment-mode server
 pnpm start -- --init-config-only --deployment-mode desktop
 ```
 
-源码或 CI release host 可以从受保护的进程环境生成 `.env.release.local`：
+源码或 CI release host 可以从受保护的进程环境生成 `.env.release`：
 
 ```powershell
 pnpm release:env:write -- --check
@@ -229,7 +229,7 @@ pnpm verify
 release 主机：
 
 ```powershell
-pnpm release:preflight -- --strict --env-file .env.release.local --strict-root-clean
+pnpm release:preflight -- --strict --env-file .env.release --strict-root-clean
 ```
 
 Docker PostgreSQL 集成测试：

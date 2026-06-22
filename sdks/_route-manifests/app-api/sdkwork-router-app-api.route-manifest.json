@@ -89,8 +89,8 @@
         "ai"
       ],
       "auth": {
-        "mode": "dual-token",
-        "required": true
+        "mode": "public",
+        "required": false
       },
       "handler": {
         "module": "crate::routes",
@@ -111,8 +111,8 @@
         "ai"
       ],
       "auth": {
-        "mode": "dual-token",
-        "required": true
+        "mode": "public",
+        "required": false
       },
       "handler": {
         "module": "crate::routes",
@@ -133,8 +133,8 @@
         "ai"
       ],
       "auth": {
-        "mode": "dual-token",
-        "required": true
+        "mode": "public",
+        "required": false
       },
       "handler": {
         "module": "crate::routes",
@@ -265,8 +265,8 @@
         "chat"
       ],
       "auth": {
-        "mode": "dual-token",
-        "required": true
+        "mode": "public",
+        "required": false
       },
       "handler": {
         "module": "crate::routes",
@@ -287,8 +287,8 @@
         "chat"
       ],
       "auth": {
-        "mode": "dual-token",
-        "required": true
+        "mode": "public",
+        "required": false
       },
       "handler": {
         "module": "crate::routes",
@@ -309,8 +309,8 @@
         "chat"
       ],
       "auth": {
-        "mode": "dual-token",
-        "required": true
+        "mode": "public",
+        "required": false
       },
       "handler": {
         "module": "crate::routes",
@@ -331,8 +331,8 @@
         "chat"
       ],
       "auth": {
-        "mode": "dual-token",
-        "required": true
+        "mode": "public",
+        "required": false
       },
       "handler": {
         "module": "crate::routes",
@@ -353,8 +353,8 @@
         "chat"
       ],
       "auth": {
-        "mode": "dual-token",
-        "required": true
+        "mode": "public",
+        "required": false
       },
       "handler": {
         "module": "crate::routes",
@@ -375,8 +375,8 @@
         "chat"
       ],
       "auth": {
-        "mode": "dual-token",
-        "required": true
+        "mode": "public",
+        "required": false
       },
       "handler": {
         "module": "crate::routes",
@@ -815,8 +815,8 @@
         "runtime"
       ],
       "auth": {
-        "mode": "dual-token",
-        "required": true
+        "mode": "public",
+        "required": false
       },
       "handler": {
         "module": "crate::routes",
@@ -837,8 +837,8 @@
         "runtime"
       ],
       "auth": {
-        "mode": "dual-token",
-        "required": true
+        "mode": "public",
+        "required": false
       },
       "handler": {
         "module": "crate::routes",
@@ -859,8 +859,8 @@
         "runtime"
       ],
       "auth": {
-        "mode": "dual-token",
-        "required": true
+        "mode": "public",
+        "required": false
       },
       "handler": {
         "module": "crate::routes",
@@ -881,8 +881,8 @@
         "runtime"
       ],
       "auth": {
-        "mode": "dual-token",
-        "required": true
+        "mode": "public",
+        "required": false
       },
       "handler": {
         "module": "crate::routes",
@@ -903,8 +903,8 @@
         "runtime"
       ],
       "auth": {
-        "mode": "dual-token",
-        "required": true
+        "mode": "public",
+        "required": false
       },
       "handler": {
         "module": "crate::routes",
@@ -925,8 +925,8 @@
         "runtime"
       ],
       "auth": {
-        "mode": "dual-token",
-        "required": true
+        "mode": "public",
+        "required": false
       },
       "handler": {
         "module": "crate::routes",
@@ -947,8 +947,8 @@
         "runtime"
       ],
       "auth": {
-        "mode": "dual-token",
-        "required": true
+        "mode": "public",
+        "required": false
       },
       "handler": {
         "module": "crate::routes",
@@ -969,8 +969,8 @@
         "runtime"
       ],
       "auth": {
-        "mode": "dual-token",
-        "required": true
+        "mode": "public",
+        "required": false
       },
       "handler": {
         "module": "crate::routes",
@@ -991,8 +991,8 @@
         "runtime"
       ],
       "auth": {
-        "mode": "dual-token",
-        "required": true
+        "mode": "public",
+        "required": false
       },
       "handler": {
         "module": "crate::routes",
@@ -1013,8 +1013,8 @@
         "system"
       ],
       "auth": {
-        "mode": "dual-token",
-        "required": true
+        "mode": "public",
+        "required": false
       },
       "handler": {
         "module": "crate::routes",
@@ -1023,6 +1023,50 @@
       "ownership": {
         "owner": "sdkwork-clawrouter",
         "apiAuthority": "sdkwork-clawrouter-app-api"
+      },
+      "requestContext": "WebRequestContext",
+      "apiSurface": "app"
+    },
+    {
+      "method": "POST",
+      "path": "/app/v3/api/sdk_reference/archives",
+      "operationId": "archives.create",
+      "tags": [
+        "sdkReference"
+      ],
+      "auth": {
+        "mode": "dual-token",
+        "required": true
+      },
+      "handler": {
+        "module": "sdkwork_content_documents_sdk_reference",
+        "name": "app_sdk_reference_router"
+      },
+      "ownership": {
+        "owner": "sdkwork-documents",
+        "apiAuthority": "sdkwork-documents.app"
+      },
+      "requestContext": "WebRequestContext",
+      "apiSurface": "app"
+    },
+    {
+      "method": "POST",
+      "path": "/app/v3/api/sdk_reference/documentation",
+      "operationId": "documentation.create",
+      "tags": [
+        "sdkReference"
+      ],
+      "auth": {
+        "mode": "dual-token",
+        "required": true
+      },
+      "handler": {
+        "module": "sdkwork_content_documents_sdk_reference",
+        "name": "app_sdk_reference_router"
+      },
+      "ownership": {
+        "owner": "sdkwork-documents",
+        "apiAuthority": "sdkwork-documents.app"
       },
       "requestContext": "WebRequestContext",
       "apiSurface": "app"

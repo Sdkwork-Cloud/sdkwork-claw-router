@@ -1,0 +1,16 @@
+[package]
+name = "sdkwork-clawrouter-app-user-profile-repository-sqlx"
+version.workspace = true
+edition.workspace = true
+license-file.workspace = true
+description = "SDKWork Claw Router app user profile read-model SQLx repository"
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+sqlx = { workspace = true }
+sdkwork-database-sqlx.workspace = true
+sdkwork-utils-rust.workspace = true

@@ -12,66 +12,65 @@ use sdkwork_claw_config::{
     PaymentWebhookConfig, ProviderSecretMapConfig, RedisConfig, RequestLimitsConfig,
     RuntimeConfigProfile, RuntimeTomlConfig, StartupInstallMode, TrustedSubjectConfig,
 };
-use sdkwork_router_catalog_app_api::{
-    app_model_catalog_router, app_model_rankings_router, app_model_rankings_router_with_read_store,
-};
 use sdkwork_claw_http::AppSubjectBoundaryConfig;
-use sdkwork_claw_product::application::{
+use sdkwork_clawrouter_router_service::application::{
     ApiKeySecretCodec, EntityUuidGenerator, InMemoryRuntimeStreamBus, ModelRankingRefreshWorker,
     ModelRankingRefreshWorkerConfig, ModelRankingsService, PasswordHasher,
     PaymentAggregateRuntimeStore, Pbkdf2Sha256PasswordHasher, RuntimeStreamBus,
 };
-use sdkwork_claw_product::infrastructure::crypto::RingAeadApiKeySecretCodec;
-use sdkwork_claw_product::infrastructure::provider::{
+use sdkwork_clawrouter_router_service::infrastructure::crypto::RingAeadApiKeySecretCodec;
+use sdkwork_clawrouter_router_service::infrastructure::provider::{
     ProviderSecretMapResolver, SecretRefOpenAiCompatibleProviderHealthProbe,
     DEFAULT_HEALTH_PROBE_TIMEOUT_MILLIS,
 };
-use sdkwork_claw_product::infrastructure::sql::catalog::{
+use sdkwork_clawrouter_router_service::infrastructure::sql::catalog::{
     RefreshableSqlPricingCatalog, SqlPricingCatalogSnapshotSummary,
 };
-use sdkwork_claw_product::infrastructure::sql::installer::{
+use sdkwork_clawrouter_router_service::infrastructure::sql::installer::{
     log_bootstrap_admin_report, DatabaseInstallError, DatabaseInstaller,
 };
-use sdkwork_claw_product::infrastructure::sql::pool::{
+use sdkwork_clawrouter_router_service::infrastructure::sql::pool::{
     connect_claw_sqlite_runtime_pool, effective_sqlite_runtime_pool_max_connections,
 };
-use sdkwork_claw_product::infrastructure::sql::postgres::{
-    PostgresAppChatStore, PostgresAppGatewayTracesReadStore,
-PostgresAppNotificationStore, PostgresAppProvidersReadStore,
-    PostgresAppRoutingChannelCommandStore, PostgresAppRoutingReadStore,
-    PostgresAppRoutingStrategyStore, PostgresAppRuntimeStore, PostgresCatalogLoadError,
-    PostgresDashboardOverviewReadStore, PostgresForumStore, PostgresModelRankingRefreshStore,
-    PostgresModelRankingsReadStore, PostgresPaymentCallbackStore,
+use sdkwork_clawrouter_router_service::infrastructure::sql::postgres::{
+    PostgresAppChatStore, PostgresAppGatewayTracesReadStore, PostgresAppNotificationStore,
+    PostgresAppProvidersReadStore, PostgresAppRoutingChannelCommandStore,
+    PostgresAppRoutingReadStore, PostgresAppRoutingStrategyStore, PostgresAppRuntimeStore,
+    PostgresCatalogLoadError, PostgresDashboardOverviewReadStore, PostgresForumStore,
+    PostgresModelRankingRefreshStore, PostgresModelRankingsReadStore, PostgresPaymentCallbackStore,
     PostgresPaymentIntentRuntimeStore, PostgresPricingCatalogLoader, PostgresSettingsStore,
     PostgresSettlementsDashboardReadStore, PostgresSiteSettingsStore, PostgresUsageLogsReadStore,
     PostgresVerificationDeliveryConfigStore, PostgresVerificationDeliveryQueueSender,
 };
-use sdkwork_claw_product::infrastructure::sql::sqlite::{
+use sdkwork_clawrouter_router_service::infrastructure::sql::sqlite::{
     SqlCatalogLoadError, SqliteAppChatStore, SqliteAppGatewayTracesReadStore,
-    SqliteAppNotificationStore,
-    SqliteAppProvidersReadStore, SqliteAppRoutingChannelCommandStore, SqliteAppRoutingReadStore,
-    SqliteAppRoutingStrategyStore, SqliteAppRuntimeStore, SqliteDashboardOverviewReadStore,
-    SqliteForumStore, SqliteModelRankingRefreshStore, SqliteModelRankingsReadStore,
-    SqlitePaymentCallbackStore, SqlitePaymentIntentRuntimeStore, SqlitePricingCatalogLoader,
-    SqliteSettingsStore, SqliteSettlementsDashboardReadStore, SqliteSiteSettingsStore,
-    SqliteUsageLogsReadStore, SqliteVerificationDeliveryConfigStore,
+    SqliteAppNotificationStore, SqliteAppProvidersReadStore, SqliteAppRoutingChannelCommandStore,
+    SqliteAppRoutingReadStore, SqliteAppRoutingStrategyStore, SqliteAppRuntimeStore,
+    SqliteDashboardOverviewReadStore, SqliteForumStore, SqliteModelRankingRefreshStore,
+    SqliteModelRankingsReadStore, SqlitePaymentCallbackStore, SqlitePaymentIntentRuntimeStore,
+    SqlitePricingCatalogLoader, SqliteSettingsStore, SqliteSettlementsDashboardReadStore,
+    SqliteSiteSettingsStore, SqliteUsageLogsReadStore, SqliteVerificationDeliveryConfigStore,
     SqliteVerificationDeliveryQueueSender,
 };
-use sdkwork_claw_product::infrastructure::{
+use sdkwork_clawrouter_router_service::infrastructure::{
     AppRuntimeGatewayHttpClient, OsApiKeySecretGenerator, RedisRuntimeStreamBus,
 };
-use sdkwork_claw_product::ports::ChatCompletionStreamRelay;
-use sdkwork_claw_product::ports::PricingCatalog;
-use sdkwork_claw_product::ports::{
-    AdminAuthSettingsStore,
-    AppAuthStore, AppChatStore, AppGatewayTracesReadStore,
-AppNotificationStore, AppProvidersReadStore, AppRoutingChannelCommandStore,
-    AppRoutingReadStore, AppRoutingStrategyStore, AppRuntimeStore, AppSessionEventStore, DashboardOverviewReadStore,
-    ForumCommentCommandStore, ForumCommentReadStore, ForumFeedCommandStore, ForumFeedReadStore,
-    ModelRankingRefreshOutcome, ModelRankingRefreshRunStatus, ModelRankingRefreshStore,
-    ModelRankingsCacheInvalidation, ModelRankingsReadModelStore, PaymentCallbackStore,
-    ProviderHealthProbe, SettingsStore, SettlementsDashboardReadStore, SiteSettingsStore,
-    UnconfiguredProviderHealthProbe, UsageLogsReadStore, VerificationCodeSender,
+use sdkwork_clawrouter_router_service::ports::ChatCompletionStreamRelay;
+use sdkwork_clawrouter_router_service::ports::PricingCatalog;
+use sdkwork_clawrouter_router_service::ports::{
+    AdminAuthSettingsStore, AppAuthStore, AppChatStore, AppGatewayTracesReadStore,
+    AppNotificationStore, AppProvidersReadStore, AppRoutingChannelCommandStore,
+    AppRoutingReadStore, AppRoutingStrategyStore, AppRuntimeStore, AppSessionEventStore,
+    DashboardOverviewReadStore, ForumCommentCommandStore, ForumCommentReadStore,
+    ForumFeedCommandStore, ForumFeedReadStore, ModelRankingRefreshOutcome,
+    ModelRankingRefreshRunStatus, ModelRankingRefreshStore, ModelRankingsCacheInvalidation,
+    ModelRankingsReadModelStore, PaymentCallbackStore, ProviderHealthProbe, SettingsStore,
+    SettlementsDashboardReadStore, SiteSettingsStore, UnconfiguredProviderHealthProbe,
+    UsageLogsReadStore, VerificationCodeSender,
+};
+use sdkwork_content_documents_sdk_reference::app_sdk_reference_router;
+use sdkwork_router_catalog_app_api::{
+    app_model_catalog_router, app_model_rankings_router, app_model_rankings_router_with_read_store,
 };
 use sqlx::postgres::PgRow;
 use sqlx::sqlite::SqliteRow;
@@ -86,7 +85,7 @@ pub struct RouterApiRouteModule {
     pub route_prefix: &'static str,
 }
 
-pub const SERVICE_NAME: &str = "sdkwork-claw-app";
+pub const SERVICE_NAME: &str = "sdkwork-clawrouter-app-api-server";
 const DEFAULT_APP_RUNTIME_CATALOG_REFRESH_INTERVAL_MILLIS: u64 = 60_000;
 type ApiKeyCodec = Arc<dyn ApiKeySecretCodec + Send + Sync>;
 type AppGatewayTracesStore = Arc<dyn AppGatewayTracesReadStore + Send + Sync>;
@@ -96,7 +95,7 @@ type AppRuntimeRuntimeStore = Arc<dyn AppRuntimeStore + Send + Sync>;
 type AppRuntimeExecutionCatalog = Arc<RefreshableSqlPricingCatalog>;
 type AppRuntimeChatStreamRelay = Arc<dyn ChatCompletionStreamRelay + Send + Sync>;
 type AppRuntimeGatewayRuntimeClient =
-    Arc<dyn sdkwork_claw_product::ports::AppRuntimeGatewayClient + Send + Sync>;
+    Arc<dyn sdkwork_clawrouter_router_service::ports::AppRuntimeGatewayClient + Send + Sync>;
 type AppRuntimeStreamBus = Arc<dyn RuntimeStreamBus + Send + Sync>;
 type AppProvidersStore = Arc<dyn AppProvidersReadStore + Send + Sync>;
 type AppRoutingChannelCommandRuntimeStore = Arc<dyn AppRoutingChannelCommandStore + Send + Sync>;
@@ -141,25 +140,29 @@ pub async fn build_sdkwork_claw_router_app_api_router_from_env(
     router_from_env().await
 }
 
+fn merge_app_sdk_reference_router(router: Router) -> Router {
+    router.merge(app_sdk_reference_router())
+}
+
 pub fn router() -> Router {
-    router_with_database_status(None, None)
-    .merge(sdkwork_claw_product::api::app_site_settings_router())
-    .merge(sdkwork_claw_product::api::app_payment_callback_router())
-    .merge(sdkwork_claw_product::api::payment_aggregate_router())
-    .merge(sdkwork_claw_product::api::app_dashboard_overview_router())
-    .merge(app_model_rankings_router())
-    .merge(sdkwork_claw_product::api::app_settlements_dashboard_router())
-    .merge(sdkwork_claw_product::api::app_settings_router())
-    .merge(sdkwork_claw_product::api::app_usage_logs_router())
-    .merge(sdkwork_claw_product::api::app_gateway_traces_router())
-    .merge(sdkwork_claw_product::api::app_notification_router())
-    .merge(sdkwork_claw_product::api::app_chat_router())
-    .merge(sdkwork_claw_product::api::app_runtime_router())
-    .merge(sdkwork_claw_product::api::app_forum_router())
-    .merge(sdkwork_claw_product::api::app_providers_router())
-    .merge(sdkwork_claw_product::api::app_routing_router())
-    .merge(sdkwork_claw_product::api::app_routing_strategy_router())
-    .merge(sdkwork_claw_product::api::app_routing_channel_command_router())
+    merge_app_sdk_reference_router(router_with_database_status(None, None))
+        .merge(sdkwork_clawrouter_router_service::api::app_site_settings_router())
+        .merge(sdkwork_clawrouter_router_service::api::app_payment_callback_router())
+        .merge(sdkwork_clawrouter_router_service::api::payment_aggregate_router())
+        .merge(sdkwork_clawrouter_router_service::api::app_dashboard_overview_router())
+        .merge(app_model_rankings_router())
+        .merge(sdkwork_clawrouter_router_service::api::app_settlements_dashboard_router())
+        .merge(sdkwork_clawrouter_router_service::api::app_settings_router())
+        .merge(sdkwork_clawrouter_router_service::api::app_usage_logs_router())
+        .merge(sdkwork_clawrouter_router_service::api::app_gateway_traces_router())
+        .merge(sdkwork_clawrouter_router_service::api::app_notification_router())
+        .merge(sdkwork_clawrouter_router_service::api::app_chat_router())
+        .merge(sdkwork_clawrouter_router_service::api::app_runtime_router())
+        .merge(sdkwork_clawrouter_router_service::api::app_forum_router())
+        .merge(sdkwork_clawrouter_router_service::api::app_providers_router())
+        .merge(sdkwork_clawrouter_router_service::api::app_routing_router())
+        .merge(sdkwork_clawrouter_router_service::api::app_routing_strategy_router())
+        .merge(sdkwork_clawrouter_router_service::api::app_routing_channel_command_router())
 }
 
 fn router_with_database_status(
@@ -181,7 +184,6 @@ fn product_local_contract_operation(operation: &sdkwork_claw_http::ContractOpera
         Some("commerce" | "promotion")
     ) && !is_commerce_dependency_contract_path(&operation.path)
         && !is_appbase_dependency_contract_path(&operation.path)
-
 }
 
 fn is_appbase_dependency_contract_path(path: &str) -> bool {
@@ -234,26 +236,24 @@ fn router_with_product_catalog_and_database_status<C>(
 where
     C: PricingCatalog + Send + Sync + 'static,
 {
-    router_with_database_status(config, None)
-    .merge(sdkwork_claw_product::api::app_site_settings_router())
-    .merge(sdkwork_claw_product::api::app_payment_callback_router())
-    .merge(sdkwork_claw_product::api::app_dashboard_overview_router())
-    .merge(app_model_rankings_router())
-    .merge(sdkwork_claw_product::api::app_settlements_dashboard_router())
-    .merge(sdkwork_claw_product::api::app_settings_router())
-    .merge(sdkwork_claw_product::api::app_usage_logs_router())
-    .merge(sdkwork_claw_product::api::app_gateway_traces_router())
-    .merge(sdkwork_claw_product::api::app_notification_router())
-    .merge(sdkwork_claw_product::api::app_chat_router())
-    .merge(sdkwork_claw_product::api::app_runtime_router())
-    .merge(sdkwork_claw_product::api::app_forum_router())
-    .merge(sdkwork_claw_product::api::app_providers_router())
-    .merge(sdkwork_claw_product::api::app_routing_router())
-    .merge(sdkwork_claw_product::api::app_routing_strategy_router())
-    .merge(sdkwork_claw_product::api::app_routing_channel_command_router())
-    .merge(app_model_catalog_router(
-        Arc::clone(&catalog),
-    ))
+    merge_app_sdk_reference_router(router_with_database_status(config, None))
+        .merge(sdkwork_clawrouter_router_service::api::app_site_settings_router())
+        .merge(sdkwork_clawrouter_router_service::api::app_payment_callback_router())
+        .merge(sdkwork_clawrouter_router_service::api::app_dashboard_overview_router())
+        .merge(app_model_rankings_router())
+        .merge(sdkwork_clawrouter_router_service::api::app_settlements_dashboard_router())
+        .merge(sdkwork_clawrouter_router_service::api::app_settings_router())
+        .merge(sdkwork_clawrouter_router_service::api::app_usage_logs_router())
+        .merge(sdkwork_clawrouter_router_service::api::app_gateway_traces_router())
+        .merge(sdkwork_clawrouter_router_service::api::app_notification_router())
+        .merge(sdkwork_clawrouter_router_service::api::app_chat_router())
+        .merge(sdkwork_clawrouter_router_service::api::app_runtime_router())
+        .merge(sdkwork_clawrouter_router_service::api::app_forum_router())
+        .merge(sdkwork_clawrouter_router_service::api::app_providers_router())
+        .merge(sdkwork_clawrouter_router_service::api::app_routing_router())
+        .merge(sdkwork_clawrouter_router_service::api::app_routing_strategy_router())
+        .merge(sdkwork_clawrouter_router_service::api::app_routing_channel_command_router())
+        .merge(app_model_catalog_router(Arc::clone(&catalog)))
 }
 
 async fn sqlite_verification_code_sender(
@@ -262,14 +262,14 @@ async fn sqlite_verification_code_sender(
 ) -> Result<(AppVerificationCodeSender, bool), sqlx::Error> {
     Ok(match deployment_mode {
         DeploymentMode::Desktop => (
-            Arc::new(sdkwork_claw_product::ports::DebugVerificationCodeSender),
+            Arc::new(sdkwork_clawrouter_router_service::ports::DebugVerificationCodeSender),
             true,
         ),
         DeploymentMode::Server | DeploymentMode::Docker | DeploymentMode::Kubernetes => {
             let subject = sqlite_default_verification_delivery_subject(pool).await?;
             (
                 Arc::new(
-                    sdkwork_claw_product::ports::ConfiguredVerificationCodeSender::new(Arc::new(
+                    sdkwork_clawrouter_router_service::ports::ConfiguredVerificationCodeSender::new(Arc::new(
                         SqliteVerificationDeliveryConfigStore::new(pool.clone()),
                     ))
                     .with_subject(subject.0, subject.1)
@@ -289,14 +289,14 @@ async fn postgres_verification_code_sender(
 ) -> Result<(AppVerificationCodeSender, bool), sqlx::Error> {
     Ok(match deployment_mode {
         DeploymentMode::Desktop => (
-            Arc::new(sdkwork_claw_product::ports::DebugVerificationCodeSender),
+            Arc::new(sdkwork_clawrouter_router_service::ports::DebugVerificationCodeSender),
             true,
         ),
         DeploymentMode::Server | DeploymentMode::Docker | DeploymentMode::Kubernetes => {
             let subject = postgres_default_verification_delivery_subject(pool).await?;
             (
                 Arc::new(
-                    sdkwork_claw_product::ports::ConfiguredVerificationCodeSender::new(Arc::new(
+                    sdkwork_clawrouter_router_service::ports::ConfiguredVerificationCodeSender::new(Arc::new(
                         PostgresVerificationDeliveryConfigStore::new(pool.clone()),
                     ))
                     .with_subject(subject.0, subject.1)
@@ -509,10 +509,10 @@ fn router_with_runtime_stores_and_database_status(
     let mut router = router_with_database_status(config, readiness_check);
     router = router.merge(app_auth_router);
     router = match app_site_settings_store {
-        Some(store) => {
-            router.merge(sdkwork_claw_product::api::app_site_settings_router_with_store(store))
-        }
-        None => router.merge(sdkwork_claw_product::api::app_site_settings_router()),
+        Some(store) => router.merge(
+            sdkwork_clawrouter_router_service::api::app_site_settings_router_with_store(store),
+        ),
+        None => router.merge(sdkwork_clawrouter_router_service::api::app_site_settings_router()),
     };
     if let Some(model_catalog_router) = model_catalog_router {
         router = router.merge(model_catalog_router);
@@ -521,67 +521,75 @@ fn router_with_runtime_stores_and_database_status(
     router = match payment_callback_store {
         Some(store) => match payment_webhook_config {
             Some(payment_webhook_config) => router.merge(
-                sdkwork_claw_product::api::app_payment_callback_router_with_store_and_body_limit(
+                sdkwork_clawrouter_router_service::api::app_payment_callback_router_with_store_and_body_limit(
                     store,
                     Arc::new(OsApiKeySecretGenerator),
                     payment_webhook_config,
                     request_limits_config.payment_callback_body_max_bytes(),
                 ),
             ),
-            None => router.merge(sdkwork_claw_product::api::app_payment_callback_router()),
+            None => router.merge(sdkwork_clawrouter_router_service::api::app_payment_callback_router()),
         },
-        None => router.merge(sdkwork_claw_product::api::app_payment_callback_router()),
+        None => router.merge(sdkwork_clawrouter_router_service::api::app_payment_callback_router()),
     };
     router = match payment_intent_runtime_store {
         Some(store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
-            sdkwork_claw_product::api::payment_aggregate_router_with_runtime_store(
+            sdkwork_clawrouter_router_service::api::payment_aggregate_router_with_runtime_store(
                 store,
                 Arc::clone(&entity_uuid_generator),
             ),
             subject_boundary_config.clone(),
         )),
         None => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
-            sdkwork_claw_product::api::payment_aggregate_router(),
+            sdkwork_clawrouter_router_service::api::payment_aggregate_router(),
             subject_boundary_config.clone(),
         )),
     };
     router = match dashboard_read_store {
         Some(read_store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
-            sdkwork_claw_product::api::app_dashboard_overview_router_with_read_store(read_store),
+            sdkwork_clawrouter_router_service::api::app_dashboard_overview_router_with_read_store(
+                read_store,
+            ),
             subject_boundary_config.clone(),
         )),
-        None => router.merge(sdkwork_claw_product::api::app_dashboard_overview_router()),
+        None => {
+            router.merge(sdkwork_clawrouter_router_service::api::app_dashboard_overview_router())
+        }
     };
     router = match usage_logs_read_store {
         Some(read_store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
-            sdkwork_claw_product::api::app_usage_logs_router_with_read_store(read_store),
+            sdkwork_clawrouter_router_service::api::app_usage_logs_router_with_read_store(
+                read_store,
+            ),
             subject_boundary_config.clone(),
         )),
-        None => router.merge(sdkwork_claw_product::api::app_usage_logs_router()),
+        None => router.merge(sdkwork_clawrouter_router_service::api::app_usage_logs_router()),
     };
     router = match app_gateway_traces_read_store {
         Some(read_store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
-            sdkwork_claw_product::api::app_gateway_traces_router_with_read_store(read_store),
+            sdkwork_clawrouter_router_service::api::app_gateway_traces_router_with_read_store(
+                read_store,
+            ),
             subject_boundary_config.clone(),
         )),
-        None => router.merge(sdkwork_claw_product::api::app_gateway_traces_router()),
+        None => router.merge(sdkwork_clawrouter_router_service::api::app_gateway_traces_router()),
     };
     router = match app_notification_store {
         Some(store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
-            sdkwork_claw_product::api::app_notification_router_with_store(store),
+            sdkwork_clawrouter_router_service::api::app_notification_router_with_store(store),
             subject_boundary_config.clone(),
         )),
-        None => router.merge(sdkwork_claw_product::api::app_notification_router()),
+        None => router.merge(sdkwork_clawrouter_router_service::api::app_notification_router()),
     };
     router = match app_chat_store {
         Some(store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
-            sdkwork_claw_product::api::app_chat_router_with_store(
+            sdkwork_clawrouter_router_service::api::app_chat_router_with_store(
                 store,
                 Arc::clone(&entity_uuid_generator),
             ),
             subject_boundary_config.clone(),
         )),
-        None => router.merge(sdkwork_claw_product::api::app_chat_router()),
+        None => router.merge(sdkwork_clawrouter_router_service::api::app_chat_router()),
     };
     router = match app_runtime_store {
         Some(store) => {
@@ -592,7 +600,7 @@ fn router_with_runtime_stores_and_database_status(
                 app_runtime_execution_catalog.clone(),
                 app_runtime_gateway_client.clone(),
             ) {
-                sdkwork_claw_product::api::app_runtime_router_with_store_and_gateway_client_and_runtime_stream_bus(
+                sdkwork_clawrouter_router_service::api::app_runtime_router_with_store_and_gateway_client_and_runtime_stream_bus(
                     store,
                     Arc::clone(&entity_uuid_generator),
                     catalog,
@@ -603,7 +611,7 @@ fn router_with_runtime_stores_and_database_status(
                 app_runtime_execution_catalog.clone(),
                 app_runtime_chat_stream_relay.clone(),
             ) {
-                sdkwork_claw_product::api::app_runtime_router_with_store_and_chat_stream_relay_and_runtime_stream_bus(
+                sdkwork_clawrouter_router_service::api::app_runtime_router_with_store_and_chat_stream_relay_and_runtime_stream_bus(
                     store,
                     Arc::clone(&entity_uuid_generator),
                     catalog,
@@ -611,7 +619,7 @@ fn router_with_runtime_stores_and_database_status(
                     Arc::clone(&stream_bus),
                 )
             } else {
-                sdkwork_claw_product::api::app_runtime_router_with_store_and_runtime_stream_bus(
+                sdkwork_clawrouter_router_service::api::app_runtime_router_with_store_and_runtime_stream_bus(
                     store,
                     Arc::clone(&entity_uuid_generator),
                     Arc::clone(&stream_bus),
@@ -622,7 +630,7 @@ fn router_with_runtime_stores_and_database_status(
                 subject_boundary_config.clone(),
             ))
         }
-        None => router.merge(sdkwork_claw_product::api::app_runtime_router()),
+        None => router.merge(sdkwork_clawrouter_router_service::api::app_runtime_router()),
     };
     router = match (
         forum_feed_read_store,
@@ -644,62 +652,64 @@ fn router_with_runtime_stores_and_database_status(
             subject_boundary_config.app_session().clone(),
             request_limits_config.forum_json_body_max_bytes(),
         )),
-        _ => router.merge(sdkwork_claw_product::api::app_forum_router()),
+        _ => router.merge(sdkwork_clawrouter_router_service::api::app_forum_router()),
     };
     router = match app_providers_read_store {
         Some(read_store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
-            sdkwork_claw_product::api::app_providers_router_with_read_store(read_store),
+            sdkwork_clawrouter_router_service::api::app_providers_router_with_read_store(
+                read_store,
+            ),
             subject_boundary_config.clone(),
         )),
-        None => router.merge(sdkwork_claw_product::api::app_providers_router()),
+        None => router.merge(sdkwork_clawrouter_router_service::api::app_providers_router()),
     };
     router = match app_routing_read_store {
         Some(read_store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
-            sdkwork_claw_product::api::app_routing_router_with_read_store(read_store),
+            sdkwork_clawrouter_router_service::api::app_routing_router_with_read_store(read_store),
             subject_boundary_config.clone(),
         )),
-        None => router.merge(sdkwork_claw_product::api::app_routing_router()),
+        None => router.merge(sdkwork_clawrouter_router_service::api::app_routing_router()),
     };
     router = match app_routing_strategy_store {
         Some(store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
-            sdkwork_claw_product::api::app_routing_strategy_router_with_store(
+            sdkwork_clawrouter_router_service::api::app_routing_strategy_router_with_store(
                 store,
                 Arc::new(OsApiKeySecretGenerator),
             ),
             subject_boundary_config.clone(),
         )),
-        None => router.merge(sdkwork_claw_product::api::app_routing_strategy_router()),
+        None => router.merge(sdkwork_clawrouter_router_service::api::app_routing_strategy_router()),
     };
     router = match app_routing_channel_command_store {
         Some(store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
-            sdkwork_claw_product::api::app_routing_channel_command_router_with_store(
+            sdkwork_clawrouter_router_service::api::app_routing_channel_command_router_with_store(
                 store,
                 Arc::new(OsApiKeySecretGenerator),
             ),
             subject_boundary_config.clone(),
         )),
-        None => router.merge(sdkwork_claw_product::api::app_routing_channel_command_router()),
+        None => router
+            .merge(sdkwork_clawrouter_router_service::api::app_routing_channel_command_router()),
     };
     router = match settings_store {
         Some(store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
-            sdkwork_claw_product::api::app_settings_router_with_store(
+            sdkwork_clawrouter_router_service::api::app_settings_router_with_store(
                 store,
                 Arc::new(OsApiKeySecretGenerator),
             ),
             subject_boundary_config.clone(),
         )),
-        None => router.merge(sdkwork_claw_product::api::app_settings_router()),
+        None => router.merge(sdkwork_clawrouter_router_service::api::app_settings_router()),
     };
     router = match settlements_dashboard_read_store {
         Some(read_store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
-            sdkwork_claw_product::api::app_settlements_dashboard_router_with_read_store(read_store),
+            sdkwork_clawrouter_router_service::api::app_settlements_dashboard_router_with_read_store(read_store),
             subject_boundary_config,
         )),
-        None => router.merge(sdkwork_claw_product::api::app_settlements_dashboard_router()),
+        None => router.merge(sdkwork_clawrouter_router_service::api::app_settlements_dashboard_router()),
     };
-    router
+    merge_app_sdk_reference_router(router)
 }
-
 
 pub fn app_forum_router_with_store_and_subject_boundary(
     feed_read_store: Arc<dyn ForumFeedReadStore + Send + Sync>,
@@ -711,13 +721,13 @@ pub fn app_forum_router_with_store_and_subject_boundary(
     json_body_max_bytes: usize,
 ) -> Router {
     sdkwork_claw_http::apply_optional_app_subject_boundary_if_legacy(
-        sdkwork_claw_product::api::app_forum_router_with_store_community_links_and_json_body_limit(
+        sdkwork_clawrouter_router_service::api::app_forum_router_with_store_community_links_and_json_body_limit(
             feed_read_store,
             feed_command_store,
             comment_read_store,
             comment_command_store,
             Arc::new(OsApiKeySecretGenerator),
-            sdkwork_claw_product::api::configured_forum_community_links(),
+            sdkwork_clawrouter_router_service::api::configured_forum_community_links(),
             json_body_max_bytes,
         ),
         AppSubjectBoundaryConfig::new(trusted_subject_config, app_session_config),
@@ -739,13 +749,13 @@ pub async fn router_with_sqlite_product_catalog(
     let model_catalog_snapshot = read_store.load_snapshot().await?;
     let model_rankings_store =
         model_rankings_service(Arc::new(SqliteModelRankingsReadStore::new(pool.clone())));
-    let model_catalog_router =
-        app_model_catalog_router(Arc::new(model_catalog_snapshot))
-            .merge(app_model_rankings_router_with_subject_boundary(
-                model_rankings_store,
-                &trusted_subject_config,
-                &app_session_config,
-            ));
+    let model_catalog_router = app_model_catalog_router(Arc::new(model_catalog_snapshot)).merge(
+        app_model_rankings_router_with_subject_boundary(
+            model_rankings_store,
+            &trusted_subject_config,
+            &app_session_config,
+        ),
+    );
     let payment_callback_store = Arc::new(SqlitePaymentCallbackStore::new(pool.clone()));
     let payment_intent_runtime_store = Arc::new(SqlitePaymentIntentRuntimeStore::new(pool.clone()));
     let dashboard_read_store = Arc::new(SqliteDashboardOverviewReadStore::new(pool.clone()));
@@ -779,7 +789,7 @@ pub async fn router_with_sqlite_product_catalog(
         trusted_subject_config,
         app_session_config,
         Arc::new(Pbkdf2Sha256PasswordHasher),
-        Arc::new(sdkwork_claw_product::ports::DebugVerificationCodeSender),
+        Arc::new(sdkwork_clawrouter_router_service::ports::DebugVerificationCodeSender),
         true,
         Some(payment_webhook_config),
         Some(payment_callback_store),
@@ -826,13 +836,13 @@ pub async fn router_with_postgres_product_catalog(
     let model_catalog_snapshot = read_store.load_snapshot().await?;
     let model_rankings_store =
         model_rankings_service(Arc::new(PostgresModelRankingsReadStore::new(pool.clone())));
-    let model_catalog_router =
-        app_model_catalog_router(Arc::new(model_catalog_snapshot))
-            .merge(app_model_rankings_router_with_subject_boundary(
-                model_rankings_store,
-                &trusted_subject_config,
-                &app_session_config,
-            ));
+    let model_catalog_router = app_model_catalog_router(Arc::new(model_catalog_snapshot)).merge(
+        app_model_rankings_router_with_subject_boundary(
+            model_rankings_store,
+            &trusted_subject_config,
+            &app_session_config,
+        ),
+    );
     let payment_callback_store = Arc::new(PostgresPaymentCallbackStore::new(pool.clone()));
     let payment_intent_runtime_store =
         Arc::new(PostgresPaymentIntentRuntimeStore::new(pool.clone()));
@@ -867,7 +877,7 @@ pub async fn router_with_postgres_product_catalog(
         trusted_subject_config,
         app_session_config,
         Arc::new(Pbkdf2Sha256PasswordHasher),
-        Arc::new(sdkwork_claw_product::ports::DebugVerificationCodeSender),
+        Arc::new(sdkwork_clawrouter_router_service::ports::DebugVerificationCodeSender),
         true,
         Some(payment_webhook_config),
         Some(payment_callback_store),
@@ -911,7 +921,7 @@ pub async fn router_with_sqlite_shared_runtime(
     deployment_mode: DeploymentMode,
     request_limits_config: RequestLimitsConfig,
     app_runtime_gateway_client: Arc<
-        dyn sdkwork_claw_product::ports::AppRuntimeGatewayClient + Send + Sync,
+        dyn sdkwork_clawrouter_router_service::ports::AppRuntimeGatewayClient + Send + Sync,
     >,
     app_runtime_stream_bus: Arc<dyn RuntimeStreamBus + Send + Sync>,
     model_ranking_refresh_worker_config: ModelRankingRefreshWorkerConfig,
@@ -925,14 +935,13 @@ pub async fn router_with_sqlite_shared_runtime(
         Some(Arc::clone(&model_rankings_store)),
     )
     .await?;
-    let model_catalog_router = app_model_catalog_router(Arc::clone(
-        &catalog,
-    ))
-    .merge(app_model_rankings_router_with_subject_boundary(
-        model_rankings_store,
-        &trusted_subject_config,
-        &app_session_config,
-    ));
+    let model_catalog_router = app_model_catalog_router(Arc::clone(&catalog)).merge(
+        app_model_rankings_router_with_subject_boundary(
+            model_rankings_store,
+            &trusted_subject_config,
+            &app_session_config,
+        ),
+    );
     let payment_callback_store = Arc::new(SqlitePaymentCallbackStore::new(pool.clone()));
     let payment_intent_runtime_store = Arc::new(SqlitePaymentIntentRuntimeStore::new(pool.clone()));
     let dashboard_read_store = Arc::new(SqliteDashboardOverviewReadStore::new(pool.clone()));
@@ -1019,7 +1028,7 @@ pub async fn router_with_postgres_shared_runtime(
     deployment_mode: DeploymentMode,
     request_limits_config: RequestLimitsConfig,
     app_runtime_gateway_client: Arc<
-        dyn sdkwork_claw_product::ports::AppRuntimeGatewayClient + Send + Sync,
+        dyn sdkwork_clawrouter_router_service::ports::AppRuntimeGatewayClient + Send + Sync,
     >,
     app_runtime_stream_bus: Arc<dyn RuntimeStreamBus + Send + Sync>,
     model_ranking_refresh_worker_config: ModelRankingRefreshWorkerConfig,
@@ -1033,14 +1042,13 @@ pub async fn router_with_postgres_shared_runtime(
         Some(Arc::clone(&model_rankings_store)),
     )
     .await?;
-    let model_catalog_router = app_model_catalog_router(Arc::clone(
-        &catalog,
-    ))
-    .merge(app_model_rankings_router_with_subject_boundary(
-        model_rankings_store,
-        &trusted_subject_config,
-        &app_session_config,
-    ));
+    let model_catalog_router = app_model_catalog_router(Arc::clone(&catalog)).merge(
+        app_model_rankings_router_with_subject_boundary(
+            model_rankings_store,
+            &trusted_subject_config,
+            &app_session_config,
+        ),
+    );
     let payment_callback_store = Arc::new(PostgresPaymentCallbackStore::new(pool.clone()));
     let payment_intent_runtime_store =
         Arc::new(PostgresPaymentIntentRuntimeStore::new(pool.clone()));
@@ -1323,9 +1331,9 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 Some(Arc::clone(&model_rankings_store)),
             )
             .await?;
-            let model_catalog_router = app_model_catalog_router(
-                Arc::clone(&app_runtime_execution_catalog),
-            )
+            let model_catalog_router = app_model_catalog_router(Arc::clone(
+                &app_runtime_execution_catalog,
+            ))
             .merge(app_model_rankings_router_with_subject_boundary(
                 model_rankings_store,
                 &trusted_subject_config,
@@ -1369,7 +1377,7 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
             let (app_auth_store, app_auth_settings_store, app_session_event_store) =
                 sqlite_local_auth_runtime_components(pool.clone());
             let readiness_check = Some(
-                sdkwork_claw_product::infrastructure::sql::pool::sqlite_database_readiness_check(
+                sdkwork_clawrouter_router_service::infrastructure::sql::pool::sqlite_database_readiness_check(
                     pool.clone(),
                 ),
             );
@@ -1394,12 +1402,12 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 Some(app_gateway_traces_read_store),
                 Some(app_notification_store),
                 Some(app_chat_store),
-                                                        Some(app_runtime_store),
+                Some(app_runtime_store),
                 Some(app_runtime_execution_catalog),
                 None,
                 Some(Arc::clone(&app_runtime_gateway_client)),
                 Some(Arc::clone(&app_runtime_stream_bus)),
-                                                Some(forum_store.clone()),
+                Some(forum_store.clone()),
                 Some(forum_store.clone()),
                 Some(forum_store.clone()),
                 Some(forum_store),
@@ -1415,7 +1423,7 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
         }
         DatabaseEngine::Postgres => {
             let pool =
-                sdkwork_claw_product::infrastructure::sql::pool::connect_postgres_runtime_pool(
+                sdkwork_clawrouter_router_service::infrastructure::sql::pool::connect_postgres_runtime_pool(
                     &config.url,
                     config.max_connections,
                 )
@@ -1457,9 +1465,9 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 Some(Arc::clone(&model_rankings_store)),
             )
             .await?;
-            let model_catalog_router = app_model_catalog_router(
-                Arc::clone(&app_runtime_execution_catalog),
-            )
+            let model_catalog_router = app_model_catalog_router(Arc::clone(
+                &app_runtime_execution_catalog,
+            ))
             .merge(app_model_rankings_router_with_subject_boundary(
                 model_rankings_store,
                 &trusted_subject_config,
@@ -1506,7 +1514,7 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
             let (app_auth_store, app_auth_settings_store, app_session_event_store) =
                 postgres_local_auth_runtime_components(pool.clone());
             let readiness_check = Some(
-                sdkwork_claw_product::infrastructure::sql::pool::postgres_database_readiness_check(
+                sdkwork_clawrouter_router_service::infrastructure::sql::pool::postgres_database_readiness_check(
                     pool.clone(),
                 ),
             );
@@ -1531,12 +1539,12 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 Some(app_gateway_traces_read_store),
                 Some(app_notification_store),
                 Some(app_chat_store),
-                                                        Some(app_runtime_store),
+                Some(app_runtime_store),
                 Some(app_runtime_execution_catalog),
                 None,
                 Some(Arc::clone(&app_runtime_gateway_client)),
                 Some(Arc::clone(&app_runtime_stream_bus)),
-                                                Some(forum_store.clone()),
+                Some(forum_store.clone()),
                 Some(forum_store.clone()),
                 Some(forum_store.clone()),
                 Some(forum_store),
@@ -1680,7 +1688,10 @@ fn build_app_runtime_gateway_client(
 
 pub fn shared_runtime_gateway_client_from_runtime_toml(
     runtime_toml: Option<&RuntimeTomlConfig>,
-) -> Result<Arc<dyn sdkwork_claw_product::ports::AppRuntimeGatewayClient + Send + Sync>, String> {
+) -> Result<
+    Arc<dyn sdkwork_clawrouter_router_service::ports::AppRuntimeGatewayClient + Send + Sync>,
+    String,
+> {
     build_app_runtime_gateway_client(runtime_toml)
 }
 
@@ -2375,7 +2386,7 @@ fn require_database_config(
         let help_text = DatabaseConfig::startup_help_text(profile);
         ProductCatalogRouterError::Config(
             format!(
-                "SDKWORK_CLAW_DATABASE_URL is required for sdkwork-claw-app startup so install checks can run.\n{help_text}"
+                "SDKWORK_CLAW_DATABASE_URL is required for sdkwork-clawrouter-app-api-server startup so install checks can run.\n{help_text}"
             ),
         )
     })
@@ -2461,8 +2472,10 @@ mod tests {
         sqlite_model_ranking_schema_ready,
     };
     use sdkwork_claw_config::DeploymentMode;
-    use sdkwork_claw_product::infrastructure::sql::pool::effective_sqlite_runtime_pool_max_connections;
-    use sdkwork_claw_product::ports::{ModelRankingRefreshOutcome, ModelRankingRefreshRunStatus};
+    use sdkwork_clawrouter_router_service::infrastructure::sql::pool::effective_sqlite_runtime_pool_max_connections;
+    use sdkwork_clawrouter_router_service::ports::{
+        ModelRankingRefreshOutcome, ModelRankingRefreshRunStatus,
+    };
     use sqlx::sqlite::SqlitePoolOptions;
     use std::sync::{Mutex, OnceLock};
     use std::time::{Duration, SystemTime, UNIX_EPOCH};
@@ -2822,7 +2835,9 @@ mod tests {
             .unwrap()
             .as_millis();
         let mut path = std::env::temp_dir();
-        path.push(format!("sdkwork-claw-app-runtime-{millis}"));
+        path.push(format!(
+            "sdkwork-clawrouter-app-api-server-runtime-{millis}"
+        ));
         path.push("sdkwork-clawrouter.toml");
         path
     }

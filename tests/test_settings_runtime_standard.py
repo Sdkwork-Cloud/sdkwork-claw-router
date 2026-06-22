@@ -126,24 +126,24 @@ class SettingsRuntimeStandardTest(unittest.TestCase):
 
     def test_console_settings_has_real_app_backend_route_and_sql_stores(self) -> None:
         product_api_mod = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "mod.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "mod.rs"
         ).read_text(encoding="utf-8")
-        app_api = (ROOT / "services" / "sdkwork-claw-app" / "src" / "lib.rs").read_text(
+        app_api = (ROOT / "services" / "sdkwork-clawrouter-app-api-server" / "src" / "lib.rs").read_text(
             encoding="utf-8"
         )
-        ports_mod = (ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "mod.rs").read_text(
+        ports_mod = (ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "ports" / "mod.rs").read_text(
             encoding="utf-8"
         )
         settings_port = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "settings_store.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "ports" / "settings_store.rs"
         ).read_text(encoding="utf-8")
         app_settings = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_settings.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "app_settings.rs"
         ).read_text(encoding="utf-8")
         sqlite_store = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -153,7 +153,7 @@ class SettingsRuntimeStandardTest(unittest.TestCase):
         postgres_store = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"

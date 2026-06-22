@@ -67,7 +67,7 @@ fn main() {
             .join("schema-components.yaml"),
         workspace_root
             .join("services")
-            .join("sdkwork-claw-product")
+            .join("sdkwork-clawrouter-router-service")
             .join("src")
             .join("api")
             .join("openai_contract.rs"),

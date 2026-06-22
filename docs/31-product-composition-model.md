@@ -28,7 +28,13 @@ Bootstrap order in claw-router:
 4. sdkwork-models (catalog dictionary via `sdkwork-models-database-bootstrap`)  
 5. claw-router generated schema (`ai_*` runtime tables, …)
 
-Claw-router Schema Registry entries for imported domains use `generated_by_this_project: false` and the correct `write_owner`. Imported DDL is applied from composed sibling modules through their bootstrap crates (for example `commerce_initial_migration_sql()` and `models_catalog_foundation_migration_sql()`), not by embedding sibling `database/ddl` paths in claw-router.
+Claw-router Schema Registry entries for imported domains use `generated_by_this_project: false`, `imported: true`, and the correct `write_owner`. Owner registries live in sibling modules:
+
+- `../sdkwork-appbase/docs/schema-registry/appbase-iam.tables.yaml` — IAM verification tables
+- `../sdkwork-appbase/docs/schema-registry/appbase-messaging.tables.yaml` — external SMS/email delivery tables
+- `../sdkwork-models/docs/schema-registry/sdkwork-models.tables.yaml` — model catalog dictionary tables
+
+Assembly registry declares explicit `registry_dependencies` and generates only claw-router-owned DDL (`generated/schema/postgres/schema.sql`). Imported DDL is applied from composed sibling modules through their bootstrap crates (for example `commerce_initial_migration_sql()` and `models_catalog_foundation_migration_sql()`), not by embedding sibling `database/ddl` paths in claw-router.
 
 ## 3. Retired in claw-router
 
@@ -46,4 +52,5 @@ Do not add or regenerate DDL for:
 - App center UI and APIs consume `sdkwork-appstore-*-sdk` and appstore route crates.
 - Admin OAuth (`/admin/oauth/*`) is owned by `sdkwork-appbase` IAM: `dependency_owned` routes use `sdkwork-appbase-backend-sdk`, `iam_oauth_resource_account`, and backend operation contracts in `operations/backend-iam-oauth.yaml`; UI lives in `sdkwork-clawrouter-pc-admin-oauth`.
 - Claw-router OpenAPI must not duplicate appstore/appbase IAM operations; declare them in `specs/dependency-api-surfaces.json`.
+- Schema registry composition follows `../sdkwork-specs/SCHEMA_REGISTRY_SPEC.md` and the canonical composer in `../sdkwork-web-framework` (`sdkwork-web-schema-registry`, `tools/schema_registry/`). Assembly registries declare owned overlays and `source_refs`; sibling module tables load through `database/database.manifest.json` module order instead of per-app duplication.
 

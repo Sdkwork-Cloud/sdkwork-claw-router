@@ -93,8 +93,9 @@ tables:
   common_columns: projection
   source_tables:
   - integration_service_provider
-  - commerce_account
-  - commerce_account_ledger_entry
+  source_refs:
+  - sdkwork-commerce:commerce_account
+  - sdkwork-commerce:commerce_account_ledger_entry
   frontend_routes:
   - /admin/service-providers/dashboard
   - /admin/service-providers/wallet

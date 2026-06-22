@@ -238,7 +238,7 @@ class FrontendRouteClassificationStandardTest(unittest.TestCase):
         actual_endpoint_sources = self._browser_tool_endpoint_sources()
         self.assertEqual(actual_endpoint_sources, declared_endpoint_sources)
 
-        edge_server_source = (ROOT / "services" / "sdkwork-claw-gateway" / "src" / "edge_server.rs").read_text(
+        edge_server_source = (ROOT / "services" / "sdkwork-clawrouter-gateway" / "src" / "edge_server.rs").read_text(
             encoding="utf-8"
         )
         self.assertIn("PORTAL_PUBLIC_TOOL_API_ENABLED", (PORTAL_ROOT / "vite.config.ts").read_text(encoding="utf-8"))

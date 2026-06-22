@@ -47,7 +47,7 @@ python tools/sdkwork_standard_alignment_guardian.py --strict
 
 ### 剩余工作（持续治理）
 
-1. ~~product API handler `TrustedRequestSubject::from_headers` 迁移~~ �?已完成；handler 使用 `TrustedRequestSubject` / `Option<TrustedRequestSubject>` Axum 提取器（`services/sdkwork-claw-product/src/api/subject.rs`：2. ~~gateway all-in-one 双重包裹~~ �?已通过 `finalize_all_in_one_route_surfaces` 解决
+1. ~~product API handler `TrustedRequestSubject::from_headers` 迁移~~ �?已完成；handler 使用 `TrustedRequestSubject` / `Option<TrustedRequestSubject>` Axum 提取器（`services/sdkwork-clawrouter-router-service/src/api/subject.rs`：2. ~~gateway all-in-one 双重包裹~~ �?已通过 `finalize_all_in_one_route_surfaces` 解决
 3. 存量 SQL store 分批迁移 repository-sqlx crate
 
 ## 3. sdkwork-database
@@ -55,9 +55,9 @@ python tools/sdkwork_standard_alignment_guardian.py --strict
 ### 现状
 
 - `Cargo.toml` 已声�?`sdkwork-database-config`、`sdkwork-database-sqlx`、`sdkwork-database-repository`
-- `sdkwork-claw-gateway` 使用 `sdkwork_database_sqlx::DatabasePool`
-- `sdkwork-claw-gateway` sqlite 建连已统一�?`connect_claw_sqlite_runtime_*` �?`PoolBuilder`
-- `sdkwork-claw-product` �?`pool.rs` �?`PoolBuilder` 建连，并导出 `connect_standard_database_pool`（`RepositoryError`：- 存量 SQL store 仍以 sqlx 直写为主；新模块优先 `sdkwork-database-repository` 或独�?repository-sqlx crate
+- `sdkwork-clawrouter-gateway` 使用 `sdkwork_database_sqlx::DatabasePool`
+- `sdkwork-clawrouter-gateway` sqlite 建连已统一�?`connect_claw_sqlite_runtime_*` �?`PoolBuilder`
+- `sdkwork-clawrouter-router-service` �?`pool.rs` �?`PoolBuilder` 建连，并导出 `connect_standard_database_pool`（`RepositoryError`：- 存量 SQL store 仍以 sqlx 直写为主；新模块优先 `sdkwork-database-repository` 或独�?repository-sqlx crate
 
 ### 剩余工作
 
@@ -106,4 +106,20 @@ cargo check -p sdkwork-router-app-api -p sdkwork-router-backend-api
 完整门禁：
 ```bash
 pnpm verify
+pnpm check:gateway-request-identity
 ```
+
+## 8. Application Environment（已对齐）
+
+- 权威规范：`../sdkwork-specs/ENVIRONMENT_SPEC.md` §11 与本地 `specs/application-env-standard.md`
+- Browser profiles（`.env.development` / `.env.production`）：仅 `VITE_*` + `SDKWORK_CLAW_*`；禁止 `PORTAL_PUBLIC_*` 与 legacy `PORTAL_*`
+- Release host（`.env.release`）：`PORTAL_PUBLIC_*` + canonical `SDKWORK_CLAW_EDGE_*` / `SDKWORK_CLAW_TOOL_API_*`；ensure 回填 19 键完整顺序
+- 运行时：`buildRuntimeEdgePrivateEnv()` 统一发射 edge 私有键；legacy `PORTAL_*` 仅 gateway 只读 fallback
+- Release 安全：`releaseEnvironmentIssues()` 校验 rate limit 正整数与 SDK generator URL
+- 验证：`pnpm check:application-env`
+
+## 9. Gateway Request Identity（已对齐）
+
+- 规范：`../sdkwork-specs/FRONTEND_SPEC.md` / `../sdkwork-specs/TEST_SPEC.md` — request id 由服务端生成，客户端不得注入 `x-request-id`
+- 实现：`services/sdkwork-clawrouter-gateway/src/request_identity.rs` + `invocation_http.rs`
+- 测试：`pnpm check:gateway-request-identity`（`edge_env` + `invocation_router` + source marker guard）

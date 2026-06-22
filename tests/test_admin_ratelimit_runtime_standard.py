@@ -212,12 +212,12 @@ class AdminRateLimitRuntimeStandardTest(unittest.TestCase):
 
     def test_admin_ratelimit_read_models_reject_missing_required_policy_numbers(self) -> None:
         store_paths = [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_api_key_rate_limit_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_api_key_rate_limit_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_ip_rate_limit_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_ip_rate_limit_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_model_rate_limit_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_model_rate_limit_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/admin_api_key_rate_limit_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/admin_api_key_rate_limit_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/admin_ip_rate_limit_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/admin_ip_rate_limit_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/admin_model_rate_limit_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/admin_model_rate_limit_store.rs",
         ]
 
         forbidden_fragments = [
@@ -247,8 +247,8 @@ class AdminRateLimitRuntimeStandardTest(unittest.TestCase):
                 self.assertNotIn("status_label(optional_integer_cell(&row, \"status\")", compact_store)
 
         for relative_path in [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_api_key_rate_limit_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_api_key_rate_limit_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/admin_api_key_rate_limit_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/admin_api_key_rate_limit_store.rs",
         ]:
             store = (ROOT / relative_path).read_text(encoding="utf-8")
             compact_store = " ".join(store.split())

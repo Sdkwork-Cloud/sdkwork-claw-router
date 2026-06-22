@@ -237,7 +237,7 @@ class MessagingDeliveryStandardTest(unittest.TestCase):
         self.assertIn("form.channel === 'sms' ? 'text' : form.contentFormat", admin_source)
 
     def test_appbase_declares_messaging_as_first_class_l3_capability(self) -> None:
-        catalog_path = ROOT / ".sdkwork" / "dependencies" / "sdkwork-appbase" / "specs" / "appbase-capabilities.yaml"
+        catalog_path = ROOT.parent / "sdkwork-appbase" / "specs" / "appbase-capabilities.yaml"
         catalog = yaml.safe_load(catalog_path.read_text(encoding="utf-8"))
         capabilities = {
             item.get("id"): item
@@ -255,7 +255,7 @@ class MessagingDeliveryStandardTest(unittest.TestCase):
         helper_path = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -264,7 +264,7 @@ class MessagingDeliveryStandardTest(unittest.TestCase):
         sqlite_sender_path = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -274,18 +274,18 @@ class MessagingDeliveryStandardTest(unittest.TestCase):
         postgres_sender_path = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
             / "postgres"
             / "verification_delivery_queue_sender.rs"
         )
-        app_api_path = ROOT / "services" / "sdkwork-claw-app" / "src" / "lib.rs"
+        app_api_path = ROOT / "crates" / "sdkwork-router-app-api" / "src" / "routes.rs"
         app_auth_path = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "api"
             / "app_auth.rs"

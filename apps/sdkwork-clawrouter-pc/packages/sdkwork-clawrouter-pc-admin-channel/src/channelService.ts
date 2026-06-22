@@ -43,7 +43,7 @@ import type {
   AdminModelMappingRuleItemInput,
   AdminModelMappingUpdateRequest,
   AiModelMappingsListParams,
-} from '@sdkwork/models-backend-sdk';
+} from '@sdkwork/models-backend-sdk/api/ai';
 
 type ChannelType = NonNullable<AdminChannelCreateRequest['channelType']>;
 export type CredentialRotationStrategy = NonNullable<AdminChannelCreateRequest['credentialRotation']>;
@@ -321,7 +321,7 @@ export class ChannelService {
 
 export class ChannelModelCatalogService {
   static async fetchModels(): Promise<ChannelModelCatalogItem[]> {
-    const result = await channelBackendClient().ai.models.list();
+    const result = await modelsBackendClient().ai.models.list();
     ensureSdkworkApiSuccess(result, 'Failed to fetch model catalog');
     return readRequiredApiItems(result, 'Failed to fetch model catalog')
       .map(normalizeModelCatalogItem)
@@ -331,21 +331,21 @@ export class ChannelModelCatalogService {
 
 export class ChannelAiResourceService {
   static async fetchAiResources(): Promise<AiResource[]> {
-    const result = await channelBackendClient().ai.aiResources.list();
+    const result = await modelsBackendClient().ai.aiResources.list();
     ensureSdkworkApiSuccess(result, 'Failed to fetch AI resources');
     return readRequiredApiItems(result, 'Failed to fetch AI resources')
       .map(normalizeAiResource);
   }
 
   static async fetchAiResourceGroups(): Promise<AiResourceGroup[]> {
-    const result = await channelBackendClient().ai.aiResourceGroups.list();
+    const result = await modelsBackendClient().ai.aiResourceGroups.list();
     ensureSdkworkApiSuccess(result, 'Failed to fetch AI resource groups');
     return readRequiredApiItems(result, 'Failed to fetch AI resource groups')
       .map(normalizeAiResourceGroup);
   }
 
   static async createAiResource(input: AiResourceCreateInput): Promise<AiResource> {
-    const result = await channelBackendClient().ai.aiResources.create(
+    const result = await modelsBackendClient().ai.aiResources.create(
       toCreateAiResourceRequest(input),
     );
     ensureSdkworkApiSuccess(result, 'Failed to create AI resource');
@@ -357,7 +357,7 @@ export class ChannelAiResourceService {
     input: AiResourceUpdateInput,
   ): Promise<AiResource> {
     const aiResourceId = requiredSafePathSegment(id, 'aiResourceId');
-    const result = await channelBackendClient().ai.aiResources.update(
+    const result = await modelsBackendClient().ai.aiResources.update(
       aiResourceId,
       toUpdateAiResourceRequest(input),
     );

@@ -109,7 +109,7 @@ class SchemaQualityGateTest(unittest.TestCase):
 
     def write_architecture_docs(self, root: Path) -> None:
         docs = {
-            "02-技术架构设计.md": "Rust-first sdkwork-claw-gateway sdkwork-claw-app sdkwork-claw-admin /app/v3/api /backend/v3/api /v1",
+            "02-技术架构设计.md": "Rust-first sdkwork-clawrouter-gateway sdkwork-clawrouter-app-api-server sdkwork-clawrouter-admin-api-server /app/v3/api /backend/v3/api /v1",
             "03-技术选型.md": "Rust-first axum tokio sqlx tower hyper utoipa tracing moka rust_decimal",
             "07-性能设计.md": "Rust-first Tokio Axum moka Redis streaming batch writer connection pool",
             "09-部署架构设计.md": "Rust-first Rust services desktop server docker kubernetes SDKWORK_CLAW_DEPLOYMENT_MODE SDKWORK_CLAW_GATEWAY_BIND SDKWORK_CLAW_APP_API_BIND SDKWORK_CLAW_ADMIN_API_BIND",
@@ -175,10 +175,10 @@ class SchemaQualityGateTest(unittest.TestCase):
                     "crates/sdkwork-claw-security",
                     "crates/sdkwork-claw-http",
                     "crates/sdkwork-claw-observability",
-                    "services/sdkwork-claw-gateway",
-                    "services/sdkwork-claw-admin",
-                    "services/sdkwork-claw-app",
-                    "services/sdkwork-claw-product",
+                    "services/sdkwork-clawrouter-gateway",
+                    "services/sdkwork-clawrouter-admin-api-server",
+                    "services/sdkwork-clawrouter-app-api-server",
+                    "services/sdkwork-clawrouter-router-service",
                 ]
 
                 [workspace.dependencies]
@@ -211,7 +211,7 @@ class SchemaQualityGateTest(unittest.TestCase):
             "crates/sdkwork-claw-security",
             "crates/sdkwork-claw-http",
             "crates/sdkwork-claw-observability",
-            "services/sdkwork-claw-product",
+            "services/sdkwork-clawrouter-router-service",
         ):
             cargo = root / member / "Cargo.toml"
             cargo.parent.mkdir(parents=True, exist_ok=True)
@@ -231,7 +231,7 @@ class SchemaQualityGateTest(unittest.TestCase):
             "crates/sdkwork-claw-security": ("headers", "redaction"),
             "crates/sdkwork-claw-http": ("auth", "contract_routes", "error", "health", "headers", "router"),
             "crates/sdkwork-claw-observability": ("tracing_setup",),
-            "services/sdkwork-claw-product": (
+            "services/sdkwork-clawrouter-router-service": (
                 "api",
                 "application",
                 "domain",
@@ -250,7 +250,7 @@ class SchemaQualityGateTest(unittest.TestCase):
             for module in modules:
                 src.joinpath(f"{module}.rs").write_text("// module\n", encoding="utf-8")
 
-        product_src = root / "services" / "sdkwork-claw-product" / "src"
+        product_src = root / "services" / "sdkwork-clawrouter-router-service" / "src"
         product_src.joinpath("infrastructure.rs").unlink()
         product_src.joinpath("ports.rs").unlink()
         product_ports = product_src / "ports"
@@ -315,7 +315,7 @@ class SchemaQualityGateTest(unittest.TestCase):
         product_postgres.joinpath("row_mapping.rs").write_text("// postgres row mapping\n", encoding="utf-8")
         product_postgres.joinpath("usage_settlement_store.rs").write_text("// PostgresUsageSettlementStore commerce_usage_settlement plus_account_history settlement_status INSUFFICIENT_POINTS\n", encoding="utf-8")
 
-        for service in ("sdkwork-claw-gateway", "sdkwork-claw-admin", "sdkwork-claw-app"):
+        for service in ("sdkwork-clawrouter-gateway", "sdkwork-clawrouter-admin-api-server", "sdkwork-clawrouter-app-api-server"):
             service_root = root / "services" / service
             (service_root / "src").mkdir(parents=True, exist_ok=True)
             (service_root / "Cargo.toml").write_text(
@@ -337,7 +337,7 @@ class SchemaQualityGateTest(unittest.TestCase):
                 encoding="utf-8",
             )
             lib_text = "pub fn router() { sdkwork_claw_http::service_router(\"service\"); }\n"
-            if service == "sdkwork-claw-gateway":
+            if service == "sdkwork-clawrouter-gateway":
                 lib_text = "pub mod runtime;\npub fn router() { sdkwork_claw_http::service_router(\"service\"); }\n"
                 (service_root / "src" / "runtime.rs").write_text("// gateway runtime\n", encoding="utf-8")
             (service_root / "src" / "lib.rs").write_text(lib_text, encoding="utf-8")
@@ -637,7 +637,7 @@ class SchemaQualityGateTest(unittest.TestCase):
         commons = portal / "packages" / "sdkwork-clawrouter-pc-commons"
         (commons / "src").mkdir(parents=True, exist_ok=True)
         (portal / "package.json").write_text(
-            '{"scripts":{"dev":"vite --configLoader native","browser:dev":"vite --configLoader native","build":"vite build --configLoader native"},"dependencies":{"@sdkwork/clawrouter-app-sdk":"workspace:*","@sdkwork/clawrouter-backend-sdk":"workspace:*","@sdkwork/clawrouter-open-sdk":"workspace:*"}}\n',
+            '{"scripts":{"dev":"vite --configLoader native","dev:browser":"vite --configLoader native","build":"vite build --configLoader native"},"dependencies":{"@sdkwork/clawrouter-app-sdk":"workspace:*","@sdkwork/clawrouter-backend-sdk":"workspace:*","@sdkwork/clawrouter-open-sdk":"workspace:*"}}\n',
             encoding="utf-8",
         )
         (commons / "package.json").write_text(

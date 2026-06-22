@@ -15,7 +15,7 @@ const OPEN_SDK_AUTHORITY_OPENAPI_JSON: &str =
 
 #[tokio::test]
 async fn service_router_exposes_standard_health_and_ready_endpoints() {
-    let router = sdkwork_claw_http::service_router("sdkwork-claw-app");
+    let router = sdkwork_claw_http::service_router("sdkwork-clawrouter-app-api-server");
 
     let health = router
         .clone()
@@ -43,7 +43,7 @@ async fn service_router_exposes_standard_health_and_ready_endpoints() {
 
 #[tokio::test]
 async fn service_router_exposes_gateway_openapi_document() {
-    let response = sdkwork_claw_http::service_router("sdkwork-claw-gateway")
+    let response = sdkwork_claw_http::service_router("sdkwork-clawrouter-gateway")
         .oneshot(
             Request::builder()
                 .uri("/openapi.json")
@@ -104,7 +104,7 @@ async fn service_router_exposes_gateway_openapi_document() {
 #[tokio::test]
 #[ignore = "legacy 6-tab taxonomy was replaced by sdkwork-router API capability tabs"]
 async fn service_router_exposes_ordered_openapi_schema_tabs_from_route_config() {
-    let response = sdkwork_claw_http::service_router("sdkwork-claw-gateway")
+    let response = sdkwork_claw_http::service_router("sdkwork-clawrouter-gateway")
         .oneshot(
             Request::builder()
                 .uri("/openapi/schema-tabs.json")
@@ -274,7 +274,7 @@ async fn service_router_exposes_ordered_openapi_schema_tabs_from_route_config() 
 
 #[tokio::test]
 async fn service_router_exposes_ordered_sdkwork_router_api_schema_tabs() {
-    let response = sdkwork_claw_http::service_router("sdkwork-claw-gateway")
+    let response = sdkwork_claw_http::service_router("sdkwork-clawrouter-gateway")
         .oneshot(
             Request::builder()
                 .uri("/openapi/schema-tabs.json")
@@ -555,7 +555,7 @@ async fn service_router_exposes_ordered_sdkwork_router_api_schema_tabs() {
 #[tokio::test]
 async fn service_router_exposes_s3_compatible_cloud_services_openapi_document() {
     let payload = fetch_runtime_openapi_json(
-        sdkwork_claw_http::service_router("sdkwork-claw-gateway"),
+        sdkwork_claw_http::service_router("sdkwork-clawrouter-gateway"),
         "/cloud/v3/openapi.json",
     )
     .await;
@@ -790,7 +790,7 @@ async fn service_router_exposes_s3_compatible_cloud_services_openapi_document() 
 #[tokio::test]
 async fn service_router_exposes_iaas_compute_cloud_services_openapi_document() {
     let payload = fetch_runtime_openapi_json(
-        sdkwork_claw_http::service_router("sdkwork-claw-gateway"),
+        sdkwork_claw_http::service_router("sdkwork-clawrouter-gateway"),
         "/cloud/v3/openapi.json",
     )
     .await;
@@ -1571,7 +1571,7 @@ async fn service_router_exposes_iaas_compute_cloud_services_openapi_document() {
 
 #[tokio::test]
 async fn service_router_exposes_paas_openapi_document() {
-    let response = sdkwork_claw_http::service_router("sdkwork-claw-gateway")
+    let response = sdkwork_claw_http::service_router("sdkwork-clawrouter-gateway")
         .oneshot(
             Request::builder()
                 .uri("/paas/v3/openapi.json")
@@ -1614,7 +1614,7 @@ async fn service_router_exposes_paas_openapi_document() {
 
 #[tokio::test]
 async fn service_router_exposes_payment_aggregate_openapi_document() {
-    let response = sdkwork_claw_http::service_router("sdkwork-claw-gateway")
+    let response = sdkwork_claw_http::service_router("sdkwork-clawrouter-gateway")
         .oneshot(
             Request::builder()
                 .uri("/payments/v3/openapi.json")
@@ -1667,7 +1667,7 @@ async fn service_router_exposes_payment_aggregate_openapi_document() {
 #[tokio::test]
 async fn service_router_payment_aggregate_openapi_contract_defines_standard_payment_surface() {
     let payload = fetch_runtime_openapi_json(
-        sdkwork_claw_http::service_router("sdkwork-claw-gateway"),
+        sdkwork_claw_http::service_router("sdkwork-clawrouter-gateway"),
         "/payments/v3/openapi.json",
     )
     .await;
@@ -2097,20 +2097,22 @@ async fn service_router_payment_aggregate_openapi_contract_defines_standard_paym
 
 #[tokio::test]
 async fn service_router_keeps_gateway_openapi_off_app_and_backend_root_paths() {
-    let app_response =
-        sdkwork_claw_http::service_router_with_contract_routes("sdkwork-claw-app", ApiSurface::App)
-            .oneshot(
-                Request::builder()
-                    .uri("/openapi.json")
-                    .body(Body::empty())
-                    .unwrap(),
-            )
-            .await
-            .unwrap();
+    let app_response = sdkwork_claw_http::service_router_with_contract_routes(
+        "sdkwork-clawrouter-app-api-server",
+        ApiSurface::App,
+    )
+    .oneshot(
+        Request::builder()
+            .uri("/openapi.json")
+            .body(Body::empty())
+            .unwrap(),
+    )
+    .await
+    .unwrap();
     assert_eq!(StatusCode::NOT_FOUND, app_response.status());
 
     let backend_response = sdkwork_claw_http::service_router_with_contract_routes(
-        "sdkwork-claw-admin",
+        "sdkwork-clawrouter-admin-api-server",
         ApiSurface::Backend,
     )
     .oneshot(
@@ -2123,20 +2125,22 @@ async fn service_router_keeps_gateway_openapi_off_app_and_backend_root_paths() {
     .unwrap();
     assert_eq!(StatusCode::NOT_FOUND, backend_response.status());
 
-    let app_payment_response =
-        sdkwork_claw_http::service_router_with_contract_routes("sdkwork-claw-app", ApiSurface::App)
-            .oneshot(
-                Request::builder()
-                    .uri("/payments/v3/openapi.json")
-                    .body(Body::empty())
-                    .unwrap(),
-            )
-            .await
-            .unwrap();
+    let app_payment_response = sdkwork_claw_http::service_router_with_contract_routes(
+        "sdkwork-clawrouter-app-api-server",
+        ApiSurface::App,
+    )
+    .oneshot(
+        Request::builder()
+            .uri("/payments/v3/openapi.json")
+            .body(Body::empty())
+            .unwrap(),
+    )
+    .await
+    .unwrap();
     assert_eq!(StatusCode::NOT_FOUND, app_payment_response.status());
 
     let backend_payment_response = sdkwork_claw_http::service_router_with_contract_routes(
-        "sdkwork-claw-admin",
+        "sdkwork-clawrouter-admin-api-server",
         ApiSurface::Backend,
     )
     .oneshot(
@@ -2152,16 +2156,18 @@ async fn service_router_keeps_gateway_openapi_off_app_and_backend_root_paths() {
 
 #[tokio::test]
 async fn service_router_exposes_surface_openapi_documents() {
-    let app_response =
-        sdkwork_claw_http::service_router_with_contract_routes("sdkwork-claw-app", ApiSurface::App)
-            .oneshot(
-                Request::builder()
-                    .uri("/app/v3/api/openapi.json")
-                    .body(Body::empty())
-                    .unwrap(),
-            )
-            .await
-            .unwrap();
+    let app_response = sdkwork_claw_http::service_router_with_contract_routes(
+        "sdkwork-clawrouter-app-api-server",
+        ApiSurface::App,
+    )
+    .oneshot(
+        Request::builder()
+            .uri("/app/v3/api/openapi.json")
+            .body(Body::empty())
+            .unwrap(),
+    )
+    .await
+    .unwrap();
     assert_eq!(StatusCode::OK, app_response.status());
     assert_eq!(
         "public, max-age=30, stale-while-revalidate=60",
@@ -2180,7 +2186,7 @@ async fn service_router_exposes_surface_openapi_documents() {
     assert!(app_payload["paths"].get("/app/v3/api/ai/models").is_some());
 
     let backend_response = sdkwork_claw_http::service_router_with_contract_routes(
-        "sdkwork-claw-admin",
+        "sdkwork-clawrouter-admin-api-server",
         ApiSurface::Backend,
     )
     .oneshot(
@@ -2205,7 +2211,7 @@ async fn service_router_exposes_surface_openapi_documents() {
 #[tokio::test]
 async fn service_router_surface_openapi_documents_exclude_commerce_dependency_contracts() {
     let app_payload = fetch_surface_openapi(
-        "sdkwork-claw-app",
+        "sdkwork-clawrouter-app-api-server",
         ApiSurface::App,
         "/app/v3/api/openapi.json",
     )
@@ -2249,7 +2255,7 @@ async fn service_router_surface_openapi_documents_exclude_commerce_dependency_co
     );
 
     let backend_payload = fetch_surface_openapi(
-        "sdkwork-claw-admin",
+        "sdkwork-clawrouter-admin-api-server",
         ApiSurface::Backend,
         "/backend/v3/api/openapi.json",
     )
@@ -2297,7 +2303,7 @@ async fn service_router_surface_openapi_documents_exclude_commerce_dependency_co
 #[tokio::test]
 async fn service_router_openapi_documents_match_sdk_authority_contracts() {
     let gateway_payload = fetch_runtime_openapi_json(
-        sdkwork_claw_http::service_router("sdkwork-claw-gateway"),
+        sdkwork_claw_http::service_router("sdkwork-clawrouter-gateway"),
         "/openapi.json",
     )
     .await;
@@ -2308,7 +2314,10 @@ async fn service_router_openapi_documents_match_sdk_authority_contracts() {
     );
 
     let app_payload = fetch_runtime_openapi_json(
-        sdkwork_claw_http::service_router_with_contract_routes("sdkwork-claw-app", ApiSurface::App),
+        sdkwork_claw_http::service_router_with_contract_routes(
+            "sdkwork-clawrouter-app-api-server",
+            ApiSurface::App,
+        ),
         "/app/v3/api/openapi.json",
     )
     .await;
@@ -2320,7 +2329,7 @@ async fn service_router_openapi_documents_match_sdk_authority_contracts() {
 
     let backend_payload = fetch_runtime_openapi_json(
         sdkwork_claw_http::service_router_with_contract_routes(
-            "sdkwork-claw-admin",
+            "sdkwork-clawrouter-admin-api-server",
             ApiSurface::Backend,
         ),
         "/backend/v3/api/openapi.json",
@@ -2335,7 +2344,7 @@ async fn service_router_openapi_documents_match_sdk_authority_contracts() {
 
 #[tokio::test]
 async fn service_router_health_body_contains_service_identity() {
-    let response = sdkwork_claw_http::service_router("sdkwork-claw-admin")
+    let response = sdkwork_claw_http::service_router("sdkwork-clawrouter-admin-api-server")
         .oneshot(
             Request::builder()
                 .uri("/healthz")
@@ -2350,7 +2359,7 @@ async fn service_router_health_body_contains_service_identity() {
     let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
 
     assert_eq!("ok", payload["status"]);
-    assert_eq!("sdkwork-claw-admin", payload["service"]);
+    assert_eq!("sdkwork-clawrouter-admin-api-server", payload["service"]);
     assert!(payload["deployment_mode"].is_string());
     assert_eq!(false, payload["database"]["configured"]);
 }
@@ -2369,7 +2378,7 @@ async fn service_router_health_body_contains_safe_database_status() {
     );
     let database = DatabaseConfig::from_url_with_max_connections(&database_url, 8).unwrap();
     let router = sdkwork_claw_http::service_router_with_database_config(
-        "sdkwork-claw-admin",
+        "sdkwork-clawrouter-admin-api-server",
         Some(&database),
     );
 

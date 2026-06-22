@@ -906,7 +906,7 @@ Provider-specific raw APIs should not be shown as the primary user experience. T
 Provider enum alignment:
 
 - `crates/sdkwork-claw-http/specs/payment-aggregate-openapi.json`
-- `services/sdkwork-claw-product/src/api/admin_transaction_center.rs`
+- `services/sdkwork-clawrouter-router-service/src/api/admin_transaction_center.rs`
 - Appbase bootstrap payment provider seeds
 - Appbase bootstrap payment method seeds
 - frontend API reference grouping and schema tabs

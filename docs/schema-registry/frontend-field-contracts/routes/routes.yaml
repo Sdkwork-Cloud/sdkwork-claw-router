@@ -1054,6 +1054,8 @@ routes:
   - ops_audit_log
   - ops_config_snapshot
 - route: /admin/model
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-models-backend-sdk
   required_tables:
   - ai_model_vendor
   - ai_model
@@ -1090,6 +1092,8 @@ routes:
   - ops_config_snapshot
   - ops_audit_log
 - route: /admin/model/resources
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-models-backend-sdk
   required_tables:
   - ai_resource
   - ai_resource_group
@@ -1145,6 +1149,8 @@ routes:
     - channel_name
     - status
 - route: /admin/model/mappings
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-models-backend-sdk
   required_tables:
   - ai_model
   - ai_model_vendor
@@ -1333,5 +1339,406 @@ routes:
   - commerce_service_provider_exposure_snapshot
   - ops_audit_log
 - route: /admin/service-providers/audit
+  required_tables:
+  - ops_audit_log
+- route: /admin/messaging
+  required_tables:
+  - messaging_provider_capability
+  - messaging_provider
+  - messaging_provider_account
+  - ops_audit_log
+- route: /admin/messaging/providers
+  required_tables:
+  - messaging_provider_capability
+  - ops_audit_log
+- route: /admin/messaging/sender-identities
+  required_tables:
+  - messaging_sender_identity
+  - ops_audit_log
+- route: /admin/messaging/templates
+  required_tables:
+  - messaging_template
+  - messaging_template_version
+  - messaging_template_variant
+  - messaging_send_request
+  - messaging_send_attempt
+  - ops_audit_log
+- route: /admin/messaging/route-rules
+  required_tables:
+  - messaging_route_rule
+  - messaging_route_rule_target
+  - ops_audit_log
+- route: /admin/messaging/send-requests
+  required_tables:
+  - messaging_send_request
+  - messaging_send_attempt
+  - messaging_delivery_event
+  - ops_audit_log
+- route: /admin/messaging/diagnostics
+  required_tables:
+  - messaging_route_rule
+  - messaging_route_rule_target
+  - messaging_send_request
+  - ops_audit_log
+- route: /admin/messaging/suppressions
+  required_tables:
+  - messaging_suppression
+  - ops_audit_log
+- route: /admin/messaging/rate-limits
+  required_tables:
+  - messaging_rate_limit_bucket
+  - ops_audit_log
+- route: /admin/messaging/verification-policies
+  required_tables:
+  - iam_verification_scene_policy
+  - ops_audit_log
+- route: /admin/announcement
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/catalog
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - c_category
+  - ops_audit_log
+- route: /admin/catalog/attributes
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/catalog/categories
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/catalog/prices
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/catalog/products
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/catalog/products/:productId/edit
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/catalog/products/new
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/catalog/skus
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/finance
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - commerce_usage_settlement
+  - commerce_usage_statement
+  - ops_audit_log
+- route: /admin/finance/audit-events
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - commerce_usage_settlement
+  - commerce_usage_statement
+  - ops_audit_log
+- route: /admin/finance/invoice-titles
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - commerce_usage_settlement
+  - commerce_usage_statement
+  - ops_audit_log
+- route: /admin/finance/invoices
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - commerce_usage_settlement
+  - commerce_usage_statement
+  - ops_audit_log
+- route: /admin/finance/order-revenue
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - commerce_usage_settlement
+  - commerce_usage_statement
+  - ops_audit_log
+- route: /admin/finance/payment-reconciliation
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - commerce_usage_settlement
+  - commerce_usage_statement
+  - ops_audit_log
+- route: /admin/finance/refunds-report
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - commerce_usage_settlement
+  - commerce_usage_statement
+  - ops_audit_log
+- route: /admin/inventory
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/inventory/ledger
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/inventory/reservations
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/inventory/stocks
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/marketing
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/marketing/budget-ledger
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - commerce_usage_settlement
+  - ops_audit_log
+- route: /admin/marketing/discount-allocations
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - commerce_usage_settlement
+  - ops_audit_log
+- route: /admin/marketing/discount-applications
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - commerce_usage_settlement
+  - commerce_usage_statement
+  - ops_audit_log
+- route: /admin/marketing/events
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - commerce_usage_settlement
+  - ops_audit_log
+- route: /admin/marketing/external-bindings
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - commerce_usage_settlement
+  - ops_audit_log
+- route: /admin/marketing/offers
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - commerce_usage_settlement
+  - commerce_usage_statement
+  - ops_audit_log
+- route: /admin/marketing/promotion-code-redemptions
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - commerce_usage_settlement
+  - ops_audit_log
+- route: /admin/marketing/promotion-codes
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - commerce_usage_settlement
+  - commerce_usage_statement
+  - ops_audit_log
+- route: /admin/marketing/promotion-coupon-ledger
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - commerce_usage_settlement
+  - ops_audit_log
+- route: /admin/marketing/promotion-coupon-stocks
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - commerce_usage_settlement
+  - commerce_usage_statement
+  - ops_audit_log
+- route: /admin/marketing/referrals
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/marketing/user-coupons
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - commerce_usage_settlement
+  - ops_audit_log
+- route: /admin/memberships
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/memberships/entitlements
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/memberships/members
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/memberships/packages
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/memberships/plans
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/memberships/recharge-packages
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/memberships/vip-packages
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/oauth
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/oauth/login-platforms
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/oauth/mini-programs
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/oauth/official-accounts
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/orders
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/orders/fulfillments
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/orders/orders
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/orders/refunds
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/orders/shipments
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/payments
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/payments/attempts
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/payments/channels
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/payments/intents
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/payments/methods
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/payments/provider-accounts
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/payments/providers
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/payments/reconciliation-runs
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/payments/route-rules
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/payments/webhook-events
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/wallet
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/wallet/exchange-rules
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/wallet/recharge-orders
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/wallet/wallet-accounts
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/wallet/wallet-ledger
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
   required_tables:
   - ops_audit_log

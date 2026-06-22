@@ -1,11 +1,13 @@
 import {
   createClientOperationToken,
   getClawRouterAppSdkClient,
+  getModelsAppSdkClient,
   getSdkworkMemoryAppSdkClient,
   streamRuntimeInvocationEvents,
   type ClawRouterMediaResource,
   type ClawRouterAppSdkClient,
   type JsonValue,
+  type ModelsAppSdkClient,
   type RuntimeStreamEvent,
   type RuntimeUsageSnapshot,
   type SdkworkMemoryAppSdkClient,
@@ -155,12 +157,12 @@ function mutationParams(prefix: string, options: MutationOptions = {}): { idempo
 
 export async function listModelCatalog(
   params: ModelCatalogParams = {},
-  sdkClient?: ClawRouterAppSdkClient,
+  sdkClient?: ModelsAppSdkClient,
 ): Promise<unknown> {
   if (sdkClient) {
     return sdkClient.ai.models.list(sdkModelCatalogParams(params));
   }
-  return getClawRouterAppSdkClient().ai.models.list(sdkModelCatalogParams(params));
+  return getModelsAppSdkClient().ai.models.list(sdkModelCatalogParams(params));
 }
 
 export async function listChatConversations(

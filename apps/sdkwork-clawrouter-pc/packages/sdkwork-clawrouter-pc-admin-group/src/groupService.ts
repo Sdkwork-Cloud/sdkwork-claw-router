@@ -1,6 +1,7 @@
 import {
   ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
+  getModelsBackendSdkClient,
   isRecord,
   readApiRecord,
   readBoolean,
@@ -422,14 +423,14 @@ export class GroupService {
   }
 
   static async fetchAssignableResourceGroups(): Promise<GroupResourceGroupOption[]> {
-    const result = await getClawRouterBackendSdkClient().ai.aiResourceGroups.list();
+    const result = await getModelsBackendSdkClient().ai.aiResourceGroups.list();
     ensureSdkworkApiSuccess(result, 'Failed to fetch resource groups');
     return readRequiredApiItems(result, 'Failed to fetch resource groups')
       .map(normalizeResourceGroupOption);
   }
 
   static async fetchAssignableResources(): Promise<GroupAiResourceOption[]> {
-    const result = await getClawRouterBackendSdkClient().ai.aiResources.list();
+    const result = await getModelsBackendSdkClient().ai.aiResources.list();
     ensureSdkworkApiSuccess(result, 'Failed to fetch AI resources');
     return readRequiredApiItems(result, 'Failed to fetch AI resources')
       .map(normalizeAiResourceOption);

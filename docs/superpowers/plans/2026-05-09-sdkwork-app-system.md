@@ -42,8 +42,8 @@ Expected: PASS.
 
 **Files:**
 - Modify: `generated/schema/postgres/schema.sql`
-- Modify: `services/sdkwork-claw-product/src/infrastructure/sql/installer.rs`
-- Test: `services/sdkwork-claw-product/tests/database_installer.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/installer.rs`
+- Test: `services/sdkwork-clawrouter-router-service/tests/database_installer.rs`
 
 - [ ] **Step 1: Write the failing Rust installer test**
 
@@ -51,7 +51,7 @@ Assert `ensure_installed()` creates `plus_app`, `plus_category`, `studio_catalog
 
 - [ ] **Step 2: Run the test to verify RED**
 
-Run: `cargo test -p sdkwork-claw-product sqlite_installer_installs_schema_and_sdkwork_models_catalog_once -- --nocapture`
+Run: `cargo test -p sdkwork-clawrouter-router-service sqlite_installer_installs_schema_and_sdkwork_models_catalog_once -- --nocapture`
 
 Expected: FAIL because app tables/seed rows are missing.
 
@@ -61,17 +61,17 @@ Add Java-compatible tables and indexes to generated schema, then add installer c
 
 - [ ] **Step 4: Run the installer test to verify GREEN**
 
-Run: `cargo test -p sdkwork-claw-product sqlite_installer_installs_schema_and_sdkwork_models_catalog_once -- --nocapture`
+Run: `cargo test -p sdkwork-clawrouter-router-service sqlite_installer_installs_schema_and_sdkwork_models_catalog_once -- --nocapture`
 
 Expected: PASS.
 
 ### Task 3: App Store Reads From Installed Seed
 
 **Files:**
-- Test: `services/sdkwork-claw-product/tests/sqlite_app_store_read_store.rs`
-- Modify: `services/sdkwork-claw-product/src/infrastructure/sql/app_catalog_mapping.rs`
-- Modify: `services/sdkwork-claw-product/src/infrastructure/sql/sqlite/app_store_read_store.rs`
-- Modify: `services/sdkwork-claw-product/src/infrastructure/sql/postgres/app_store_read_store.rs`
+- Test: `services/sdkwork-clawrouter-router-service/tests/sqlite_app_store_read_store.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/app_catalog_mapping.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/app_store_read_store.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/app_store_read_store.rs`
 
 - [ ] **Step 1: Write failing coverage for appKey lookup**
 
@@ -79,7 +79,7 @@ Assert app detail can be loaded by numeric `id` and by `config.standard.appKey`,
 
 - [ ] **Step 2: Run the read-store test to verify RED**
 
-Run: `cargo test -p sdkwork-claw-product sqlite_app_store_loads_active_apps_for_subject_with_public_contract_fields -- --nocapture`
+Run: `cargo test -p sdkwork-clawrouter-router-service sqlite_app_store_loads_active_apps_for_subject_with_public_contract_fields -- --nocapture`
 
 Expected: FAIL for app-key lookup before implementation.
 
@@ -89,7 +89,7 @@ Keep public DTOs stable. Read `config.standard.appKey` as an alternate detail lo
 
 - [ ] **Step 4: Run read-store tests**
 
-Run: `cargo test -p sdkwork-claw-product sqlite_app_store_read_store -- --nocapture`
+Run: `cargo test -p sdkwork-clawrouter-router-service sqlite_app_store_read_store -- --nocapture`
 
 Expected: PASS.
 
@@ -134,11 +134,11 @@ Run: `python -m unittest tests.test_app_seed_catalog_standard tests.test_app_cen
 
 - [ ] **Step 2: Run targeted Rust tests**
 
-Run: `cargo test -p sdkwork-claw-product app_store -- --nocapture`
+Run: `cargo test -p sdkwork-clawrouter-router-service app_store -- --nocapture`
 
 - [ ] **Step 3: Run installer smoke**
 
-Run: `cargo test -p sdkwork-claw-product database_installer -- --nocapture`
+Run: `cargo test -p sdkwork-clawrouter-router-service database_installer -- --nocapture`
 
 - [ ] **Step 4: Report exact verification evidence**
 

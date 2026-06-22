@@ -67,7 +67,7 @@ JAVA_BOOTSTRAP_CONTRACT_ROOTS = [
     BUSINESS_ROOT / "spring-ai-plus-server-application" / "src" / "main" / "resources" / "database",
 ]
 
-CLAW_APP_API_DATABASE_FIXTURE = ROOT / "services" / "sdkwork-claw-app" / "tests" / "database_config_router.rs"
+CLAW_APP_API_DATABASE_FIXTURE = ROOT / "services" / "sdkwork-clawrouter-app-api-server" / "tests" / "database_config_router.rs"
 APPBASE_TAURI_AUTHORITY = (
     APPBASE_ROOT
     / "packages"

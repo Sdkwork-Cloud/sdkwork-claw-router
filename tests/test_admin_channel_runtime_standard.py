@@ -452,8 +452,8 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
 
     def test_admin_channel_read_model_does_not_fallback_when_capabilities_column_is_invalid(self) -> None:
         store_paths = [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_channel_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_channel_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/admin_channel_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/admin_channel_store.rs",
         ]
 
         for relative_path in store_paths:
@@ -468,8 +468,8 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
 
     def test_admin_channel_read_model_fails_closed_for_channel_status_and_health_status(self) -> None:
         store_paths = [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_channel_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_channel_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/admin_channel_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/admin_channel_store.rs",
         ]
 
         for relative_path in store_paths:
@@ -506,8 +506,8 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
 
     def test_admin_channel_read_model_fails_closed_for_protocol_and_access_type(self) -> None:
         store_paths = [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_channel_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_channel_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/admin_channel_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/admin_channel_store.rs",
         ]
 
         for relative_path in store_paths:
@@ -539,8 +539,8 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
 
     def test_admin_provider_secret_read_model_fails_closed_for_auth_type_and_status(self) -> None:
         store_paths = [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_provider_secret_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_provider_secret_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/admin_provider_secret_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/admin_provider_secret_store.rs",
         ]
 
         for relative_path in store_paths:

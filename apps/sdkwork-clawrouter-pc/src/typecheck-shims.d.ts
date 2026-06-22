@@ -462,13 +462,33 @@ declare module '@sdkwork/iam-runtime' {
     set(session: IamStoredSession): Promise<void> | void;
   }
 
+  export interface IamContextStore {
+    clear(): Promise<void> | void;
+  }
+
+  export interface IamRuntimeService {
+    auth: {
+      registrations: Record<string, unknown>;
+      sessions: Record<string, unknown> & {
+        current: Record<string, unknown>;
+      };
+    };
+    oauth: {
+      deviceAuthorizations: Record<string, unknown> & {
+        passwordCompletions: Record<string, unknown>;
+        scans: Record<string, unknown>;
+      };
+    };
+  }
+
   export interface IamRuntime {
     config: IamRuntimeConfig;
     getAuthHeaders(): Promise<Record<string, string>>;
     hydrateTokenManager(): Promise<Record<string, string | undefined>>;
-    service: unknown;
+    service: IamRuntimeService;
     tokenManager: unknown;
     tokenStore: IamTokenStore;
+    contextStore?: IamContextStore;
   }
 
   export interface CreateIamRuntimeInput {
@@ -868,6 +888,27 @@ declare module '@sdkwork/commerce-pc-admin-product' {
 declare module '@sdkwork/commerce-pc-wallet' {
   import type { ComponentType } from 'react';
 
+  export interface SdkworkWalletOverview {
+    account: Record<string, unknown>;
+    isAuthenticated: boolean;
+    pointsToCashRate: number | null;
+    rechargePackages: readonly Record<string, unknown>[];
+    transactions: readonly Record<string, unknown>[];
+  }
+
+  export interface SdkworkWalletRechargeResult {
+    status: 'completed' | 'failed' | 'pending';
+    points: number;
+    cashAmountCny: number | null;
+    remainingPoints: number | null;
+  }
+
+  export interface SdkworkWalletWithdrawResult {
+    status: 'completed' | 'failed' | 'pending';
+    amountCny: number | null;
+    frozenCashAmountCny: number | null;
+  }
+
   export interface SdkworkWalletPageProps {
     checkoutBasePath?: string;
     onNavigate?: (route: string) => void;
@@ -887,6 +928,37 @@ declare module '@sdkwork/commerce-pc-wallet' {
 
 declare module '@sdkwork/commerce-pc-membership' {
   import type { ComponentType } from 'react';
+
+  export interface SdkworkMembershipSummary {
+    id: string;
+    name: string;
+    status: string;
+  }
+
+  export interface SdkworkMembershipPlan {
+    id: string;
+    name: string;
+    priceAmount: string;
+    currencyCode: string;
+  }
+
+  export interface SdkworkMembershipBenefit {
+    id: string;
+    name: string;
+    code: string;
+  }
+
+  export interface SdkworkMembershipDashboardData {
+    summary: SdkworkMembershipSummary | null;
+    plans: readonly SdkworkMembershipPlan[];
+    benefits: readonly SdkworkMembershipBenefit[];
+  }
+
+  export interface SdkworkMembershipPurchaseResult {
+    success: boolean;
+    orderNo: string;
+    status: string;
+  }
 
   export interface SdkworkMembershipPageProps {
     checkoutBasePath?: string;
@@ -933,6 +1005,31 @@ declare module '@sdkwork/commerce-pc-host' {
 declare module '@sdkwork/commerce-pc-billing' {
   import type { ComponentType } from 'react';
 
+  export interface SdkworkBillingBreakdownRow {
+    id: string;
+    label: string;
+    amount: string;
+    currencyCode: string;
+  }
+
+  export interface SdkworkBillingUsageRecord {
+    id: string;
+    title: string;
+    amount: string;
+    occurredAt: string;
+  }
+
+  export interface SdkworkBillingDigest {
+    totalSpend: string;
+    currencyCode: string;
+  }
+
+  export interface SdkworkBillingDashboardData {
+    digest: SdkworkBillingDigest;
+    breakdown: readonly SdkworkBillingBreakdownRow[];
+    usageRecords: readonly SdkworkBillingUsageRecord[];
+  }
+
   export const SdkworkBillingPage: ComponentType<Record<string, unknown>>;
 }
 
@@ -949,6 +1046,18 @@ declare module '@sdkwork/commerce-pc-checkout' {
 
 declare module '@sdkwork/commerce-pc-payment' {
   import type { ComponentType } from 'react';
+
+  export interface SdkworkPaymentSummary {
+    id: string;
+    status: string;
+    amount: string;
+    currencyCode: string;
+  }
+
+  export interface SdkworkPaymentDetail extends SdkworkPaymentSummary {
+    providerCode: string;
+    paymentMethod: string;
+  }
 
   export interface SdkworkPaymentController {
     bootstrap(): Promise<unknown>;
@@ -1803,7 +1912,7 @@ declare module '@sdkwork/ui-pc-react/theme' {
   export {};
 }
 
-declare module '@sdkwork/distribution-pc-react/downloads' {
+declare module '@sdkwork/clawrouter-pc-downloads' {
   import type { ReactNode } from 'react';
 
   export type SdkworkDownloadTargetKind =
@@ -1919,11 +2028,6 @@ declare module '@sdkwork/distribution-pc-react/downloads' {
     props: SdkworkProductDownloadSectionProps,
   ): ReactNode;
 }
-
-declare module '@sdkwork/distribution-pc-react' {
-  export * from '@sdkwork/distribution-pc-react/downloads';
-}
-
 declare module '@sdkwork/auth-pc-react' {
   import type { CSSProperties, ReactNode } from 'react';
 
@@ -1933,6 +2037,17 @@ declare module '@sdkwork/auth-pc-react' {
   export type SdkworkAuthLeftRailMode = 'auto' | 'highlights-only' | 'qr-only';
   export type SdkworkAuthOAuthProviderRegion = 'mainland' | 'overseas';
   export type SdkworkAuthQrLoginType = 'sdkwork_app' | 'wechat_mini_program' | 'wechat_official_account';
+
+  export interface SdkworkAuthAppearanceConfig {
+    asidePanelClassName?: string;
+    bodyClassName?: string;
+    contentContainerClassName?: string;
+    pageClassName?: string;
+    qrFrameClassName?: string;
+    shellClassName?: string;
+    slotProps?: Record<string, { className?: string }>;
+    theme?: Record<string, string>;
+  }
 
   export interface SdkworkAuthDevelopmentPrefillConfig {
     account?: string;
@@ -1977,6 +2092,7 @@ declare module '@sdkwork/auth-pc-react' {
   }
 
   export interface SdkworkIamAuthRoutesProps {
+    appearance?: SdkworkAuthAppearanceConfig;
     basePath?: string;
     children?: ReactNode;
     className?: string;
@@ -1986,6 +2102,7 @@ declare module '@sdkwork/auth-pc-react' {
     methodUnavailableMessage?: string;
     runtimeConfig?: SdkworkAuthRuntimeConfig;
     style?: CSSProperties;
+    viewportMode?: string;
   }
 
   export function createSdkworkIamRuntimeAuthController(
@@ -2069,6 +2186,15 @@ declare module '@sdkwork/host-tauri-pc-react' {
 
 declare module '@sdkwork/auth-runtime-pc-react' {
   import type { IamRuntime } from '@sdkwork/iam-runtime';
+
+  export interface SdkworkAppbasePcAuthSessionBridgeSession {
+    accessToken?: string;
+    authToken?: string;
+    refreshToken?: string;
+    expiresAt?: string | number;
+    user?: unknown;
+    userInfo?: unknown;
+  }
 
   export interface SdkworkAppbasePcAuthRuntimeComposition {
     runtime: IamRuntime;
@@ -2197,6 +2323,13 @@ declare module '@sdkwork/notification-pc-react/service' {
 }
 
 declare module '@sdkwork/iam-contracts' {
+  export interface IamAppContext {
+    appId: string;
+    deploymentMode: 'local' | 'private' | 'saas';
+    environment: 'dev' | 'prod' | 'test';
+    platform?: string;
+  }
+
   const iamContracts: unknown;
   export default iamContracts;
 }

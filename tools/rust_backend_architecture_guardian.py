@@ -23,16 +23,26 @@ class RustBackendArchitectureGuardian:
         "crates/sdkwork-claw-security",
         "crates/sdkwork-claw-http",
         "crates/sdkwork-claw-observability",
-        "services/sdkwork-claw-gateway",
-        "services/sdkwork-claw-admin",
-        "services/sdkwork-claw-app",
-        "services/sdkwork-claw-product",
+        "services/sdkwork-clawrouter-gateway",
+        "services/sdkwork-clawrouter-admin-api-server",
+        "services/sdkwork-clawrouter-app-api-server",
+        "services/sdkwork-clawrouter-router-service",
     )
     HTTP_BOUNDARY_SERVICES: tuple[str, ...] = (
-        "services/sdkwork-claw-gateway",
-        "services/sdkwork-claw-admin",
-        "services/sdkwork-claw-app",
+        "services/sdkwork-clawrouter-gateway",
+        "services/sdkwork-clawrouter-admin-api-server",
+        "services/sdkwork-clawrouter-app-api-server",
     )
+    THIN_ROUTE_API_SERVERS: dict[str, tuple[str, str]] = {
+        "services/sdkwork-clawrouter-admin-api-server": (
+            "sdkwork_router_backend_api",
+            "crates/sdkwork-router-backend-api",
+        ),
+        "services/sdkwork-clawrouter-app-api-server": (
+            "sdkwork_router_app_api",
+            "crates/sdkwork-router-app-api",
+        ),
+    }
     REQUIRED_WORKSPACE_DEPENDENCIES: tuple[str, ...] = (
         "axum",
         "tokio",
@@ -67,8 +77,8 @@ class RustBackendArchitectureGuardian:
         "crates/sdkwork-claw-security": ("headers", "redaction"),
         "crates/sdkwork-claw-http": ("auth", "contract_routes", "error", "health", "headers", "router"),
         "crates/sdkwork-claw-observability": ("tracing_setup",),
-        "services/sdkwork-claw-gateway": ("runtime",),
-        "services/sdkwork-claw-product": (
+        "services/sdkwork-clawrouter-gateway": ("runtime",),
+        "services/sdkwork-clawrouter-router-service": (
             "api",
             "application",
             "domain",
@@ -317,18 +327,59 @@ class RustBackendArchitectureGuardian:
             service_toml = self._load_toml(cargo_path, messages)
             if service_toml is not None:
                 dependencies = service_toml.get("dependencies", {})
-                if not isinstance(dependencies, dict) or "sdkwork-claw-http" not in dependencies:
-                    messages.append(f"{service}/Cargo.toml must depend on sdkwork-claw-http")
                 if not isinstance(dependencies, dict) or "sdkwork-claw-config" not in dependencies:
                     messages.append(f"{service}/Cargo.toml must depend on sdkwork-claw-config")
+
+                thin_route = self.THIN_ROUTE_API_SERVERS.get(service)
+                if thin_route is None:
+                    if not isinstance(dependencies, dict) or "sdkwork-claw-http" not in dependencies:
+                        messages.append(f"{service}/Cargo.toml must depend on sdkwork-claw-http")
+                else:
+                    route_dep = thin_route[1].split("/")[-1].replace("-", "_")
+                    route_crate_key = next(
+                        (
+                            key
+                            for key in (dependencies or {})
+                            if key.replace("-", "_") == route_dep.replace("-", "_")
+                            or key == thin_route[1].split("/")[-1]
+                        ),
+                        None,
+                    )
+                    expected_keys = {
+                        thin_route[1].split("/")[-1],
+                        thin_route[0].replace("_", "-"),
+                    }
+                    if not isinstance(dependencies, dict) or not any(
+                        key in dependencies for key in expected_keys
+                    ):
+                        messages.append(
+                            f"{service}/Cargo.toml must depend on route crate {thin_route[1]}"
+                        )
 
             lib_path = self.root / service / "src" / "lib.rs"
             if not lib_path.exists():
                 messages.append(f"{service}/src/lib.rs is missing")
                 continue
             text = lib_path.read_text(encoding="utf-8")
-            if "sdkwork_claw_http::service_router" not in text:
-                messages.append(f"{service}/src/lib.rs must build routers through sdkwork_claw_http::service_router")
+            thin_route = self.THIN_ROUTE_API_SERVERS.get(service)
+            if thin_route is None:
+                if "sdkwork_claw_http::service_router" not in text:
+                    messages.append(
+                        f"{service}/src/lib.rs must build routers through sdkwork_claw_http::service_router"
+                    )
+                continue
+
+            route_module = thin_route[0]
+            route_crate = self.root / thin_route[1]
+            bootstrap_path = route_crate / "src" / "web_bootstrap.rs"
+            if route_module not in text:
+                messages.append(
+                    f"{service}/src/lib.rs must re-export thin route crate module {route_module}"
+                )
+            if not bootstrap_path.exists():
+                messages.append(
+                    f"{thin_route[1]}/src/web_bootstrap.rs is required for sdkwork-web-framework HTTP boundary"
+                )
         return messages
 
     def _check_module_standard_doc(self) -> list[str]:
@@ -347,14 +398,14 @@ class RustBackendArchitectureGuardian:
         ports_dir = (
             self.root
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "ports"
         )
         ports_mod = ports_dir / "mod.rs"
         if not ports_mod.exists():
             return [
-                "services/sdkwork-claw-product/src/ports/mod.rs is required for product port boundaries"
+                "services/sdkwork-clawrouter-router-service/src/ports/mod.rs is required for product port boundaries"
             ]
 
         text = ports_mod.read_text(encoding="utf-8")
@@ -371,11 +422,11 @@ class RustBackendArchitectureGuardian:
         for module, purpose in required_modules.items():
             if f"mod {module};" not in text and f"pub mod {module};" not in text:
                 messages.append(
-                    f"services/sdkwork-claw-product/src/ports/mod.rs must declare {module} module"
+                    f"services/sdkwork-clawrouter-router-service/src/ports/mod.rs must declare {module} module"
                 )
             if not ports_dir.joinpath(f"{module}.rs").exists():
                 messages.append(
-                    f"services/sdkwork-claw-product/src/ports/{module}.rs is required for {purpose}"
+                    f"services/sdkwork-clawrouter-router-service/src/ports/{module}.rs is required for {purpose}"
                 )
         return messages
 
@@ -384,26 +435,26 @@ class RustBackendArchitectureGuardian:
         infrastructure_mod = (
             self.root
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "mod.rs"
         )
         if not infrastructure_mod.exists():
             messages.append(
-                "services/sdkwork-claw-product/src/infrastructure/mod.rs is required for product infrastructure submodules"
+                "services/sdkwork-clawrouter-router-service/src/infrastructure/mod.rs is required for product infrastructure submodules"
             )
         else:
             text = infrastructure_mod.read_text(encoding="utf-8")
             if "pub mod sql;" not in text and "mod sql;" not in text:
                 messages.append(
-                    "services/sdkwork-claw-product/src/infrastructure/mod.rs must declare sql module"
+                    "services/sdkwork-clawrouter-router-service/src/infrastructure/mod.rs must declare sql module"
                 )
 
         sql_mod = (
             self.root
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -411,21 +462,21 @@ class RustBackendArchitectureGuardian:
         )
         if not sql_mod.exists():
             messages.append(
-                "services/sdkwork-claw-product/src/infrastructure/sql/mod.rs is required for PricingCatalog SQL boundaries"
+                "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/mod.rs is required for PricingCatalog SQL boundaries"
             )
         else:
             text = sql_mod.read_text(encoding="utf-8")
             if "catalog" not in text:
                 messages.append(
-                    "services/sdkwork-claw-product/src/infrastructure/sql/mod.rs must declare catalog module"
+                    "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/mod.rs must declare catalog module"
                 )
             if "queries" not in text:
                 messages.append(
-                    "services/sdkwork-claw-product/src/infrastructure/sql/mod.rs must declare queries module"
+                    "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/mod.rs must declare queries module"
                 )
             if "rows" not in text:
                 messages.append(
-                    "services/sdkwork-claw-product/src/infrastructure/sql/mod.rs must declare rows module"
+                    "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/mod.rs must declare rows module"
                 )
 
         required_files = {
@@ -435,7 +486,7 @@ class RustBackendArchitectureGuardian:
         sql_dir = (
             self.root
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -443,7 +494,7 @@ class RustBackendArchitectureGuardian:
         for filename, purpose in required_files.items():
             if not sql_dir.joinpath(filename).exists():
                 messages.append(
-                    f"services/sdkwork-claw-product/src/infrastructure/sql/{filename} is required for {purpose}"
+                    f"services/sdkwork-clawrouter-router-service/src/infrastructure/sql/{filename} is required for {purpose}"
                 )
         query_dir = sql_dir / "queries"
         required_query_files = {
@@ -454,7 +505,7 @@ class RustBackendArchitectureGuardian:
         for filename, purpose in required_query_files.items():
             if not query_dir.joinpath(filename).exists():
                 messages.append(
-                    f"services/sdkwork-claw-product/src/infrastructure/sql/queries/{filename} is required for {purpose}"
+                    f"services/sdkwork-clawrouter-router-service/src/infrastructure/sql/queries/{filename} is required for {purpose}"
                 )
         sqlite_dir = sql_dir / "sqlite"
         required_sqlite_files = {
@@ -469,7 +520,7 @@ class RustBackendArchitectureGuardian:
         for filename, purpose in required_sqlite_files.items():
             if not sqlite_dir.joinpath(filename).exists():
                 messages.append(
-                    f"services/sdkwork-claw-product/src/infrastructure/sql/sqlite/{filename} is required for {purpose}"
+                    f"services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/{filename} is required for {purpose}"
                 )
         postgres_dir = sql_dir / "postgres"
         required_postgres_files = {
@@ -483,7 +534,7 @@ class RustBackendArchitectureGuardian:
         for filename, purpose in required_postgres_files.items():
             if not postgres_dir.joinpath(filename).exists():
                 messages.append(
-                    f"services/sdkwork-claw-product/src/infrastructure/sql/postgres/{filename} is required for {purpose}"
+                    f"services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/{filename} is required for {purpose}"
                 )
         return messages
 
@@ -492,26 +543,26 @@ class RustBackendArchitectureGuardian:
         infrastructure_mod = (
             self.root
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "mod.rs"
         )
         if not infrastructure_mod.exists():
             messages.append(
-                "services/sdkwork-claw-product/src/infrastructure/mod.rs is required for product infrastructure submodules"
+                "services/sdkwork-clawrouter-router-service/src/infrastructure/mod.rs is required for product infrastructure submodules"
             )
         else:
             text = infrastructure_mod.read_text(encoding="utf-8")
             if "pub mod provider;" not in text and "mod provider;" not in text:
                 messages.append(
-                    "services/sdkwork-claw-product/src/infrastructure/mod.rs must declare provider module"
+                    "services/sdkwork-clawrouter-router-service/src/infrastructure/mod.rs must declare provider module"
                 )
 
         provider_mod = (
             self.root
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "provider"
@@ -519,34 +570,34 @@ class RustBackendArchitectureGuardian:
         )
         if not provider_mod.exists():
             messages.append(
-                "services/sdkwork-claw-product/src/infrastructure/provider/mod.rs is required for provider relay adapters"
+                "services/sdkwork-clawrouter-router-service/src/infrastructure/provider/mod.rs is required for provider relay adapters"
             )
         else:
             text = provider_mod.read_text(encoding="utf-8")
             if "openai_compatible_relay" not in text:
                 messages.append(
-                    "services/sdkwork-claw-product/src/infrastructure/provider/mod.rs must declare openai_compatible_relay module"
+                    "services/sdkwork-clawrouter-router-service/src/infrastructure/provider/mod.rs must declare openai_compatible_relay module"
                 )
             if "provider_secret_map_resolver" not in text:
                 messages.append(
-                    "services/sdkwork-claw-product/src/infrastructure/provider/mod.rs must declare provider_secret_map_resolver module"
+                    "services/sdkwork-clawrouter-router-service/src/infrastructure/provider/mod.rs must declare provider_secret_map_resolver module"
                 )
 
         provider_dir = (
             self.root
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "provider"
         )
         if not provider_dir.joinpath("openai_compatible_relay.rs").exists():
             messages.append(
-                "services/sdkwork-claw-product/src/infrastructure/provider/openai_compatible_relay.rs is required for OpenAI-compatible provider relay"
+                "services/sdkwork-clawrouter-router-service/src/infrastructure/provider/openai_compatible_relay.rs is required for OpenAI-compatible provider relay"
             )
         if not provider_dir.joinpath("provider_secret_map_resolver.rs").exists():
             messages.append(
-                "services/sdkwork-claw-product/src/infrastructure/provider/provider_secret_map_resolver.rs is required for provider secret map resolver"
+                "services/sdkwork-clawrouter-router-service/src/infrastructure/provider/provider_secret_map_resolver.rs is required for provider secret map resolver"
             )
         return messages
 

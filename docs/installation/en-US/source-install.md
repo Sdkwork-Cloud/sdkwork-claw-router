@@ -128,7 +128,7 @@ pnpm start -- --init-config-only --deployment-mode server
 pnpm start -- --init-config-only --deployment-mode desktop
 ```
 
-A source checkout or CI release host can generate `.env.release.local` from protected process environment variables:
+A source checkout or CI release host can generate `.env.release` from protected process environment variables:
 
 ```bash
 pnpm release:env:write -- --check
@@ -242,7 +242,7 @@ pnpm verify
 Release host:
 
 ```bash
-pnpm release:preflight -- --strict --env-file .env.release.local --strict-root-clean
+pnpm release:preflight -- --strict --env-file .env.release --strict-root-clean
 ```
 
 Docker PostgreSQL integration tests:

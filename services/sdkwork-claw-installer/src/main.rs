@@ -1,5 +1,5 @@
 use sdkwork_claw_config::{DatabaseConfig, DatabaseEngine, DeploymentMode, RuntimeConfigProfile};
-use sdkwork_claw_product::infrastructure::sql::installer::{
+use sdkwork_clawrouter_router_service::infrastructure::sql::installer::{
     BootstrapAdminReport, CatalogRefreshOptions, CatalogRefreshReport, DatabaseInstallError,
     DatabaseInstaller, InstallationReport, InstallationStatus, ResetAdminPasswordReport,
 };

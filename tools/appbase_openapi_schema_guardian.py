@@ -7,7 +7,13 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-from tests.test_commerce_standard import CANONICAL_COMMERCE_API_OPERATIONS
+from tests.test_commerce_standard import (
+    CANONICAL_COMMERCE_API_OPERATIONS,
+    COMMERCE_APP_OPENAPI_PATH,
+    COMMERCE_BACKEND_OPENAPI_PATH,
+    commerce_sibling_workspace_available,
+    load_commerce_canonical_api_operations,
+)
 
 
 @dataclass(frozen=True)
@@ -47,6 +53,10 @@ class AppbaseOpenApiSchemaGuardian:
     }
     BODY_METHODS = {"POST", "PUT", "PATCH"}
     JSON_EXTENSION_COMPONENTS = {"JsonNull", "JsonObject", "JsonValue"}
+    COMMERCE_OPENAPI_PATHS = {
+        "app": COMMERCE_APP_OPENAPI_PATH,
+        "backend": COMMERCE_BACKEND_OPENAPI_PATH,
+    }
 
     def __init__(
         self,
@@ -75,34 +85,99 @@ class AppbaseOpenApiSchemaGuardian:
                 surface: self._load_json(self.openapi_dir / filename)
                 for surface, filename in self.SPEC_FILES.items()
             }
+            commerce_specs = self._load_commerce_dependency_specs()
         except (OSError, json.JSONDecodeError, ValueError) as exc:
             return AppbaseOpenApiSchemaGuardianResult(ok=False, messages=[str(exc)])
 
-        for surface, method, path, operation_id in self.canonical_operations:
+        for surface, method, path, operation_id in self._effective_canonical_operations():
             label = f"appbase commerce {surface} {operation_id}"
-            manifest_operation = manifest_operations.get((surface, method, path, operation_id))
-            if manifest_operation is None:
-                messages.append(f"{label} is missing from API contract manifest: {method} {path}")
-                continue
-            messages.extend(self._validate_manifest_operation(label, manifest_operation, method, path, operation_id))
-            spec = specs.get(surface, {})
-            operation = self._operation_spec(spec, method, path)
-            messages.extend(self._validate_openapi_operation(label, spec, method, path, operation_id, operation))
-            if isinstance(operation, dict):
+            operation_key = (surface, method, path, operation_id)
+            manifest_operation = manifest_operations.get(operation_key)
+            commerce_spec = commerce_specs.get(surface, {})
+            commerce_operation = self._operation_spec(commerce_spec, method, path)
+            commerce_operation_id = (
+                self._string(commerce_operation.get("operationId"))
+                if isinstance(commerce_operation, dict)
+                else ""
+            )
+
+            if manifest_operation is not None:
                 messages.extend(
-                    self._validate_manifest_openapi_schema_mapping(
+                    self._validate_manifest_operation(label, manifest_operation, method, path, operation_id)
+                )
+                spec = specs.get(surface, {})
+                operation = self._operation_spec(spec, method, path)
+                messages.extend(self._validate_openapi_operation(label, spec, method, path, operation_id, operation))
+                if isinstance(operation, dict):
+                    messages.extend(
+                        self._validate_manifest_openapi_schema_mapping(
+                            label,
+                            manifest_operation,
+                            operation,
+                            method,
+                            self._schemas(spec),
+                        )
+                    )
+                messages.extend(self._validate_sdk_method(label, surface, operation_id))
+                if isinstance(operation, dict):
+                    messages.extend(self._validate_sdk_types(label, surface, spec, operation))
+                continue
+
+            if commerce_operation_id == operation_id and isinstance(commerce_operation, dict):
+                messages.extend(
+                    self._validate_dependency_commerce_operation(
                         label,
-                        manifest_operation,
-                        operation,
+                        surface,
                         method,
-                        self._schemas(spec),
+                        path,
+                        operation_id,
+                        commerce_operation,
                     )
                 )
-            messages.extend(self._validate_sdk_method(label, surface, operation_id))
-            if isinstance(operation, dict):
-                messages.extend(self._validate_sdk_types(label, surface, spec, operation))
+                continue
+
+            if commerce_sibling_workspace_available() and commerce_operation_id and commerce_operation_id != operation_id:
+                messages.append(
+                    f"{label} dependency OpenAPI operationId mismatch at {method} {path}: "
+                    f"expected {operation_id}, found {commerce_operation_id}"
+                )
+                continue
+
+            messages.append(f"{label} is missing from API contract manifest: {method} {path}")
 
         return AppbaseOpenApiSchemaGuardianResult(ok=not messages, messages=messages)
+
+    def _effective_canonical_operations(self) -> tuple[tuple[str, str, str, str], ...]:
+        derived = load_commerce_canonical_api_operations()
+        if commerce_sibling_workspace_available() and derived:
+            return derived
+        return self.canonical_operations
+
+    def _validate_dependency_commerce_operation(
+        self,
+        label: str,
+        surface: str,
+        method: str,
+        path: str,
+        operation_id: str,
+        operation: dict[str, Any],
+    ) -> list[str]:
+        messages: list[str] = []
+        if self._string(operation.get("operationId")) != operation_id:
+            messages.append(f"{label} dependency OpenAPI operationId must be {operation_id}")
+        if not isinstance(operation.get("tags"), list) or not operation.get("tags"):
+            messages.append(f"{label} dependency OpenAPI tags must be non-empty")
+        messages.extend(self._validate_sdk_method(label, surface, operation_id))
+        return messages
+
+    def _load_commerce_dependency_specs(self) -> dict[str, dict[str, Any]]:
+        if not commerce_sibling_workspace_available():
+            return {}
+        specs: dict[str, dict[str, Any]] = {}
+        for surface, path in self.COMMERCE_OPENAPI_PATHS.items():
+            if path.is_file():
+                specs[surface] = self._load_json(path)
+        return specs
 
     def _validate_manifest_operation(
         self,

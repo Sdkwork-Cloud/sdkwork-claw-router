@@ -13,7 +13,7 @@
 ### Task 1: Schema Contract Tests
 
 **Files:**
-- Create: `services/sdkwork-claw-product/tests/chat_agent_schema_contract.rs`
+- Create: `services/sdkwork-clawrouter-router-service/tests/chat_agent_schema_contract.rs`
 - Modify later: `generated/schema/postgres/schema.sql`
 - Modify later: `docs/schema-registry/sdkwork-clawrouter.tables.yaml`
 - Modify later: `crates/sdkwork-claw-test-support/src/lib.rs`
@@ -21,43 +21,43 @@
 - [ ] Write failing tests that assert Postgres schema contains `ai_chat_conversation`, `ai_chat_turn`, `ai_chat_item`, `ai_chat_message`, `ai_chat_message_part`, `ai_chat_context_snapshot`, `ai_agent_session`, `ai_memory_space`, `ai_memory_space_binding`, `ai_memory_entry`, `ai_memory_embedding`, `ai_memory_event`, `ai_memory_link`, `ai_runtime_invocation`, `ai_runtime_invocation_event`, `ai_runtime_usage_link`, and `ai_runtime_artifact`.
 - [ ] Assert schema registry contains the same table names.
 - [ ] Assert no app API path containing `/app/v3/api/playground` is introduced.
-- [ ] Run `cargo test -p sdkwork-claw-product chat_agent_schema_contract -- --nocapture` and confirm failure from missing schema entries.
+- [ ] Run `cargo test -p sdkwork-clawrouter-router-service chat_agent_schema_contract -- --nocapture` and confirm failure from missing schema entries.
 
 ### Task 2: Chat API Tests
 
 **Files:**
-- Create: `services/sdkwork-claw-product/tests/app_chat_api.rs`
-- Modify later: `services/sdkwork-claw-product/src/api/app_chat.rs`
-- Modify later: `services/sdkwork-claw-product/src/ports/app_chat_store.rs`
+- Create: `services/sdkwork-clawrouter-router-service/tests/app_chat_api.rs`
+- Modify later: `services/sdkwork-clawrouter-router-service/src/api/app_chat.rs`
+- Modify later: `services/sdkwork-clawrouter-router-service/src/ports/app_chat_store.rs`
 
 - [ ] Write a failing test for `POST /app/v3/api/chat/conversations` creating a conversation through a fake store.
 - [ ] Write a failing test for `GET /app/v3/api/chat/conversations` returning only the trusted subject's conversations.
 - [ ] Write a failing test for `POST /app/v3/api/chat/conversations/{conversationId}/turns` passing a user message, optional `mode=agent`, optional `agentId`, optional `agentSessionId`, and selected model into the store.
 - [ ] Write a failing test proving `/app/v3/api/playground/chat/conversations` returns 404.
-- [ ] Run `cargo test -p sdkwork-claw-product app_chat_api -- --nocapture` and confirm the tests fail because the API does not exist.
+- [ ] Run `cargo test -p sdkwork-clawrouter-router-service app_chat_api -- --nocapture` and confirm the tests fail because the API does not exist.
 
 ### Task 3: Agent Session API Tests
 
 **Files:**
-- Create: `services/sdkwork-claw-product/tests/app_agent_session_api.rs`
-- Modify later: `services/sdkwork-claw-product/src/api/app_agent_sessions.rs`
-- Modify later: `services/sdkwork-claw-product/src/ports/app_agent_session_store.rs`
+- Create: `services/sdkwork-clawrouter-router-service/tests/app_agent_session_api.rs`
+- Modify later: `services/sdkwork-clawrouter-router-service/src/api/app_agent_sessions.rs`
+- Modify later: `services/sdkwork-clawrouter-router-service/src/ports/app_agent_session_store.rs`
 
 - [ ] Write a failing test for `POST /app/v3/api/agents/{agentId}/sessions` creating an agent session.
 - [ ] Write a failing test for `GET /app/v3/api/agents/{agentId}/sessions` listing sessions.
 - [ ] Write a failing test for `GET /app/v3/api/agents/sessions/{sessionId}` retrieving a session.
 - [ ] Assert the create command carries optional `chatConversationId`, optional `memorySpaceId`, `sessionKind`, `sourceSurface`, runtime, cwd, sandbox policy, approval policy, and model.
-- [ ] Run `cargo test -p sdkwork-claw-product app_agent_session_api -- --nocapture` and confirm failure because the API does not exist.
+- [ ] Run `cargo test -p sdkwork-clawrouter-router-service app_agent_session_api -- --nocapture` and confirm failure because the API does not exist.
 
 ### Task 4: Ports And API Implementation
 
 **Files:**
-- Create: `services/sdkwork-claw-product/src/ports/app_chat_store.rs`
-- Create: `services/sdkwork-claw-product/src/ports/app_agent_session_store.rs`
-- Create: `services/sdkwork-claw-product/src/api/app_chat.rs`
-- Create: `services/sdkwork-claw-product/src/api/app_agent_sessions.rs`
-- Modify: `services/sdkwork-claw-product/src/ports/mod.rs`
-- Modify: `services/sdkwork-claw-product/src/api/mod.rs`
+- Create: `services/sdkwork-clawrouter-router-service/src/ports/app_chat_store.rs`
+- Create: `services/sdkwork-clawrouter-router-service/src/ports/app_agent_session_store.rs`
+- Create: `services/sdkwork-clawrouter-router-service/src/api/app_chat.rs`
+- Create: `services/sdkwork-clawrouter-router-service/src/api/app_agent_sessions.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/ports/mod.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/api/mod.rs`
 
 - [ ] Define `AppChatSubject`, `AppChatConversationItem`, `CreateAppChatConversationCommand`, `CreateAppChatTurnCommand`, `AppChatTurnOutcome`, and `AppChatStore`.
 - [ ] Define `AppAgentSessionSubject`, `AppAgentSessionItem`, `CreateAppAgentSessionCommand`, `AppAgentSessionStore`, and query types.
@@ -69,11 +69,11 @@
 ### Task 5: SQLite Store Implementation
 
 **Files:**
-- Create: `services/sdkwork-claw-product/src/infrastructure/sql/sqlite/app_chat_store.rs`
-- Create: `services/sdkwork-claw-product/src/infrastructure/sql/sqlite/app_agent_session_store.rs`
-- Modify: `services/sdkwork-claw-product/src/infrastructure/sql/sqlite/mod.rs`
-- Create: `services/sdkwork-claw-product/tests/sqlite_app_chat_store.rs`
-- Create: `services/sdkwork-claw-product/tests/sqlite_app_agent_session_store.rs`
+- Create: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/app_chat_store.rs`
+- Create: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/app_agent_session_store.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/mod.rs`
+- Create: `services/sdkwork-clawrouter-router-service/tests/sqlite_app_chat_store.rs`
+- Create: `services/sdkwork-clawrouter-router-service/tests/sqlite_app_agent_session_store.rs`
 
 - [ ] Write failing SQLite tests against in-memory tables.
 - [ ] Implement insert/list/get for chat conversations.
@@ -100,9 +100,9 @@
 **Files:**
 - All files touched above.
 
-- [ ] Run `cargo test -p sdkwork-claw-product app_chat_api -- --nocapture`.
-- [ ] Run `cargo test -p sdkwork-claw-product app_agent_session_api -- --nocapture`.
-- [ ] Run `cargo test -p sdkwork-claw-product chat_agent_schema_contract -- --nocapture`.
+- [ ] Run `cargo test -p sdkwork-clawrouter-router-service app_chat_api -- --nocapture`.
+- [ ] Run `cargo test -p sdkwork-clawrouter-router-service app_agent_session_api -- --nocapture`.
+- [ ] Run `cargo test -p sdkwork-clawrouter-router-service chat_agent_schema_contract -- --nocapture`.
 - [ ] Run SQLite store tests.
 - [ ] Run `cargo fmt`.
-- [ ] Run focused `cargo test -p sdkwork-claw-product app_chat app_agent_session chat_agent_schema sqlite_app_chat sqlite_app_agent_session -- --nocapture` if filter supports it; otherwise run each focused test explicitly.
+- [ ] Run focused `cargo test -p sdkwork-clawrouter-router-service app_chat app_agent_session chat_agent_schema sqlite_app_chat sqlite_app_agent_session -- --nocapture` if filter supports it; otherwise run each focused test explicitly.

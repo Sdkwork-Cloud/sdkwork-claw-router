@@ -33,35 +33,35 @@ Modify these backend contract and runtime files first:
   - Regenerated output only; do not hand edit. Verify the new `commerce.catalog` and `commerce.inventory` methods exist.
 - Modify `sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/types/*`
   - Regenerated output only; verify the new contract types exist.
-- Modify `services/sdkwork-claw-product/src/api/mod.rs`
+- Modify `services/sdkwork-clawrouter-router-service/src/api/mod.rs`
   - Register any new product-center API modules.
-- Create or modify `services/sdkwork-claw-product/src/api/admin_catalog.rs`
+- Create or modify `services/sdkwork-clawrouter-router-service/src/api/admin_catalog.rs`
   - Host catalog detail and command endpoints that are not already covered by the generic list/update handlers.
-- Create or modify `services/sdkwork-claw-product/src/api/admin_inventory.rs`
+- Create or modify `services/sdkwork-clawrouter-router-service/src/api/admin_inventory.rs`
   - Host inventory adjustment and inventory workflow endpoints.
-- Create or modify `services/sdkwork-claw-product/src/ports/admin_catalog_store.rs`
+- Create or modify `services/sdkwork-clawrouter-router-service/src/ports/admin_catalog_store.rs`
   - Define the store trait for catalog detail and command operations.
-- Create or modify `services/sdkwork-claw-product/src/ports/admin_inventory_store.rs`
+- Create or modify `services/sdkwork-clawrouter-router-service/src/ports/admin_inventory_store.rs`
   - Define the store trait for stock adjustment and inventory workflow operations.
-- Create or modify `services/sdkwork-claw-product/src/infrastructure/sql/sql_admin_catalog.rs`
+- Create or modify `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sql_admin_catalog.rs`
   - Shared SQL helpers for catalog operations.
-- Create or modify `services/sdkwork-claw-product/src/infrastructure/sql/sql_admin_inventory.rs`
+- Create or modify `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sql_admin_inventory.rs`
   - Shared SQL helpers for inventory operations.
-- Create or modify `services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_catalog_store.rs`
+- Create or modify `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/admin_catalog_store.rs`
   - SQLite implementation of the catalog store contract.
-- Create or modify `services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_catalog_store.rs`
+- Create or modify `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/admin_catalog_store.rs`
   - Postgres implementation of the catalog store contract.
-- Create or modify `services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_inventory_store.rs`
+- Create or modify `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/admin_inventory_store.rs`
   - SQLite implementation of the inventory store contract.
-- Create or modify `services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_inventory_store.rs`
+- Create or modify `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/admin_inventory_store.rs`
   - Postgres implementation of the inventory store contract.
-- Create or modify `services/sdkwork-claw-product/tests/admin_catalog_api.rs`
+- Create or modify `services/sdkwork-clawrouter-router-service/tests/admin_catalog_api.rs`
   - API tests for catalog read/detail/command behavior.
-- Create or modify `services/sdkwork-claw-product/tests/admin_inventory_api.rs`
+- Create or modify `services/sdkwork-clawrouter-router-service/tests/admin_inventory_api.rs`
   - API tests for inventory adjustment and ledger behavior.
-- Create or modify `services/sdkwork-claw-product/tests/admin_catalog_store_sql_contract.rs`
+- Create or modify `services/sdkwork-clawrouter-router-service/tests/admin_catalog_store_sql_contract.rs`
   - Contract tests for catalog store behavior.
-- Create or modify `services/sdkwork-claw-product/tests/admin_inventory_store_sql_contract.rs`
+- Create or modify `services/sdkwork-clawrouter-router-service/tests/admin_inventory_store_sql_contract.rs`
   - Contract tests for inventory store behavior.
 
 Modify these frontend product-center files next:
@@ -97,11 +97,11 @@ Modify these frontend product-center files next:
 - Modify: `generated/openapi/clawrouter-backend-openapi.json`
 - Modify: `sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/api/commerce.ts`
 - Modify: `sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/types/*`
-- Modify: `services/sdkwork-claw-product/src/api/mod.rs`
-- Create or modify: `services/sdkwork-claw-product/src/api/admin_catalog.rs`
-- Create or modify: `services/sdkwork-claw-product/src/api/admin_inventory.rs`
-- Create or modify: `services/sdkwork-claw-product/tests/admin_catalog_api.rs`
-- Create or modify: `services/sdkwork-claw-product/tests/admin_inventory_api.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/api/mod.rs`
+- Create or modify: `services/sdkwork-clawrouter-router-service/src/api/admin_catalog.rs`
+- Create or modify: `services/sdkwork-clawrouter-router-service/src/api/admin_inventory.rs`
+- Create or modify: `services/sdkwork-clawrouter-router-service/tests/admin_catalog_api.rs`
+- Create or modify: `services/sdkwork-clawrouter-router-service/tests/admin_inventory_api.rs`
 
 - [ ] **Step 1: Write failing contract tests**
 
@@ -122,8 +122,8 @@ assert!(operation_ids.contains(&"inventory.stocks.adjust"));
 Run:
 
 ```powershell
-cargo test -p sdkwork-claw-product admin_catalog_api -- --nocapture
-cargo test -p sdkwork-claw-product admin_inventory_api -- --nocapture
+cargo test -p sdkwork-clawrouter-router-service admin_catalog_api -- --nocapture
+cargo test -p sdkwork-clawrouter-router-service admin_inventory_api -- --nocapture
 python -B -m tools.clawrouter_openapi_generator
 node sdks\clawrouter-backend-sdk\bin\generate-sdk.mjs --language typescript
 ```
@@ -219,7 +219,7 @@ Commit the product workspace shell and its runtime tests.
 - Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/CategoryTreePanel.tsx`
 - Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/AttributeLibraryPanel.tsx`
 - Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/ProductSkuMatrix.tsx`
-- Create: `services/sdkwork-claw-product/tests/admin_catalog_store_sql_contract.rs`
+- Create: `services/sdkwork-clawrouter-router-service/tests/admin_catalog_store_sql_contract.rs`
 
 - [ ] **Step 1: Write the failing tests**
 
@@ -234,7 +234,7 @@ Add tests for:
 Run:
 
 ```powershell
-cargo test -p sdkwork-claw-product admin_catalog_store_sql_contract -- --nocapture
+cargo test -p sdkwork-clawrouter-router-service admin_catalog_store_sql_contract -- --nocapture
 pnpm --dir apps\sdkwork-clawrouter-pc exec tsx --test admin-catalog-runtime.test.ts
 ```
 
@@ -256,8 +256,8 @@ Commit only these domain changes.
 - Modify: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts`
 - Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/PriceListWorkspace.tsx`
 - Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/PublicationPanel.tsx`
-- Modify: `services/sdkwork-claw-product/src/api/admin_catalog.rs`
-- Modify: `services/sdkwork-claw-product/tests/admin_catalog_api.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/api/admin_catalog.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/tests/admin_catalog_api.rs`
 
 - [ ] **Step 1: Write failing tests for price and publication actions**
 
@@ -272,7 +272,7 @@ Add assertions for:
 Run:
 
 ```powershell
-cargo test -p sdkwork-claw-product admin_catalog_api -- --nocapture
+cargo test -p sdkwork-clawrouter-router-service admin_catalog_api -- --nocapture
 pnpm --dir apps\sdkwork-clawrouter-pc exec tsx --test admin-catalog-runtime.test.ts
 ```
 
@@ -299,7 +299,7 @@ Commit the workflow-focused changes together so the state machine stays coherent
 - Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-inventory/src/StockAdjustmentDrawer.tsx`
 - Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-inventory/src/ReservationMonitor.tsx`
 - Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-inventory/src/InventoryLedgerTimeline.tsx`
-- Create: `services/sdkwork-claw-product/tests/admin_inventory_store_sql_contract.rs`
+- Create: `services/sdkwork-clawrouter-router-service/tests/admin_inventory_store_sql_contract.rs`
 
 - [ ] **Step 1: Write failing tests**
 
@@ -315,7 +315,7 @@ Add tests for:
 Run:
 
 ```powershell
-cargo test -p sdkwork-claw-product admin_inventory_store_sql_contract -- --nocapture
+cargo test -p sdkwork-clawrouter-router-service admin_inventory_store_sql_contract -- --nocapture
 pnpm --dir apps\sdkwork-clawrouter-pc exec tsx --test admin-inventory-runtime.test.ts
 ```
 

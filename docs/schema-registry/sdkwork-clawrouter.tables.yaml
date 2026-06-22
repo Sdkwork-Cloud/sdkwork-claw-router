@@ -43,7 +43,12 @@ schema_registry:
     - portal
   legacy_compatibility_guardrails:
     java_entity_first_required: false
-    rule: Greenfield composition model uses ai_, ops_, integration_, storage_, and c_ (skill/agent/mcp) as claw-router system of record. App center is owned by sdkwork-appstore (appstore_*). Commerce, promotion, messaging, and IAM base tables are owned by sibling modules and must not be registered here; plus_* and studio_* legacy tables are retired.
+    rule: Greenfield composition model uses ai_* runtime, ops_*, integration_*, storage_,
+      object_, upload_, media_, c_, and content_forum projection tables as claw-router
+      generated ownership. Model catalog dictionary tables are owned by sdkwork-models.
+      IAM verification tables are owned by appbase-iam. Commerce, promotion, messaging,
+      and IAM base tables are owned by sibling modules and must not be generated in
+      claw-router schema.sql.
     protected_domains:
     - platform
     - classification
@@ -60,7 +65,12 @@ schema_registry:
     - sdkwork_account
     - sdkwork_refund
     - sdkwork_invoice
-    allowed_projection_exception: commerce_*, promotion_*, messaging_*, and iam_* base capability tables are owned by sdkwork-commerce, sdkwork-appbase, or sdkwork-appbase-messaging and must not be registered in claw-router schema registry. Router-owned commerce_* tables may only add usage settlement, statement, export, and analytics projections. Portal content and forum tables are owned by sibling content modules. platform_* DDL is owned by sdkwork-appstore and must not be generated in claw-router schema.sql.
+    allowed_projection_exception: commerce_*, promotion_*, messaging_*, and iam_*
+      base capability tables are owned by sdkwork-commerce, sdkwork-appbase, or sdkwork-appbase-messaging
+      and must not be registered in claw-router schema registry. Router-owned commerce_*
+      tables may only add usage settlement, statement, export, and analytics projections.
+      Portal content and forum tables are owned by sibling content modules. platform_*
+      DDL is owned by sdkwork-appstore and must not be generated in claw-router schema.sql.
   common_column_groups:
     tenant_entity:
     - id
@@ -159,7 +169,8 @@ domain_names:
   model_vendor:
     canonical_name: ModelVendor
     zh_name: 模型厂商
-    description: Stable model vendor identity. It represents the original model producer or capability owner, not an access channel, cloud platform, relay, or account.
+    description: Stable model vendor identity. It represents the original model producer
+      or capability owner, not an access channel, cloud platform, relay, or account.
     persistence:
       table: ai_model_vendor
       code_column: vendor_code
@@ -253,7 +264,9 @@ domain_names:
   integration_provider_type:
     canonical_name: IntegrationProviderType
     zh_name: 接入供应商类型
-    description: Stable integration provider business type. A provider can be the original model vendor direct API, a cloud platform, another relay or aggregator, a self-hosted gateway, a local runtime, or a custom integration.
+    description: Stable integration provider business type. A provider can be the
+      original model vendor direct API, a cloud platform, another relay or aggregator,
+      a self-hosted gateway, a local runtime, or a custom integration.
     db_type: enum_int32
     api_serialization: stable_string_code
     persistence:
@@ -293,7 +306,8 @@ domain_names:
   price_side:
     canonical_name: PriceSide
     zh_name: 价格侧
-    description: Price source side for a model or billing meter, such as official reference, upstream cost, customer charge, or internal transfer price.
+    description: Price source side for a model or billing meter, such as official
+      reference, upstream cost, customer charge, or internal transfer price.
     db_type: enum_int32
     api_serialization: stable_string_code
     builtin_values:
@@ -308,7 +322,8 @@ domain_names:
   billing_mode:
     canonical_name: BillingMode
     zh_name: 计费模式
-    description: How usage is metered and charged, such as token, request, result, duration, character, storage, bandwidth, tiered, or expression billing.
+    description: How usage is metered and charged, such as token, request, result,
+      duration, character, storage, bandwidth, tiered, or expression billing.
     db_type: enum_int32
     api_serialization: stable_string_code
     builtin_values:
@@ -343,7 +358,9 @@ domain_names:
   billing_meter:
     canonical_name: BillingMeter
     zh_name: 计量项
-    description: Measurable usage unit, such as input tokens, output tokens, image results, audio duration, video duration, API requests, tool calls, storage, or bandwidth.
+    description: Measurable usage unit, such as input tokens, output tokens, image
+      results, audio duration, video duration, API requests, tool calls, storage,
+      or bandwidth.
     persistence:
       table: ai_billing_meter
       code_column: meter_code
@@ -441,7 +458,8 @@ domain_names:
   pricing_plan:
     canonical_name: PricingPlan
     zh_name: 定价方案
-    description: Reusable pricing strategy set. Account groups, tenants, packages, or SKUs can bind a pricing plan and override defaults through rules and tiers.
+    description: Reusable pricing strategy set. Account groups, tenants, packages,
+      or SKUs can bind a pricing plan and override defaults through rules and tiers.
     persistence:
       table: ai_pricing_plan
       code_column: plan_code
@@ -449,7 +467,8 @@ domain_names:
   pricing_formula_mode:
     canonical_name: PricingFormulaMode
     zh_name: 定价公式模式
-    description: Pricing rule calculation mode, including fixed price, multiplier, multiplier plus offset, tiered price, and expression.
+    description: Pricing rule calculation mode, including fixed price, multiplier,
+      multiplier plus offset, tiered price, and expression.
     db_type: enum_int32
     api_serialization: stable_string_code
     builtin_values:
@@ -482,3 +501,30 @@ table_fragments:
 - tables/026-commerce.yaml
 - tables/027-integration.yaml
 - tables/028-commerce.yaml
+- tables/031-content-forum.yaml
+registry_dependencies:
+- module_id: appbase-iam
+  locator: ../sdkwork-appbase
+  registry_path: docs/schema-registry/appbase-iam.tables.yaml
+  order: 10
+  ownership: read_only
+- module_id: appbase-messaging
+  locator: ../sdkwork-appbase
+  registry_path: docs/schema-registry/appbase-messaging.tables.yaml
+  order: 12
+  ownership: read_only
+- module_id: commerce-core
+  locator: ../sdkwork-commerce
+  registry_path: docs/schema-registry/commerce-core.tables.yaml
+  order: 20
+  ownership: read_only
+- module_id: appstore
+  locator: ../sdkwork-appstore
+  registry_path: docs/schema-registry/appstore.tables.yaml
+  order: 30
+  ownership: read_only
+- module_id: sdkwork-models
+  locator: ../sdkwork-models
+  registry_path: docs/schema-registry/sdkwork-models.tables.yaml
+  order: 35
+  ownership: read_only

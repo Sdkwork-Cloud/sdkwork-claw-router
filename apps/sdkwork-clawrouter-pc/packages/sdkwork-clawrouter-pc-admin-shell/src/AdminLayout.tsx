@@ -8,7 +8,7 @@ import {
 import { useTranslation } from 'react-i18next';
 import { AdminHeader, getActiveModuleFromPath, type AdminModuleId } from './AdminHeader.tsx';
 import { getAdminModuleMenu, type AdminMenuGroup, type AdminMenuItem } from './adminModuleRegistry.ts';
-import { hasActiveSidebarGroupItem, isSidebarItemActive } from './adminSidebarActive.ts';
+import { hasActiveSidebarGroupItem, isSidebarItemActive } from './adminSidebarActive';
 import { revokeAppSession } from '@sdkwork/clawrouter-pc-commons/runtime';
 
 const ADMIN_SIDEBAR_GROUPS_DEFAULT_OPEN = true;

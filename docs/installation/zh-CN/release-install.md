@@ -323,8 +323,8 @@ Linux/macOS：
 mkdir -p /opt/sdkwork/router
 tar -xzf clawrouter-linux-x64-archive-0.3.0.tar.gz -C /opt/sdkwork/router
 cd /opt/sdkwork/router
-cp .env.release.example .env.release.local
-editor .env.release.local
+cp .env.release.example .env.release
+editor .env.release
 ./bin/clawrouterctl ensure
 ./bin/clawrouterctl refresh-catalog --force
 ./bin/clawrouter
@@ -336,8 +336,8 @@ Windows：
 $installRoot = Join-Path $env:USERPROFILE "sdkwork\router"
 Expand-Archive .\clawrouter-windows-x64-archive-0.3.0.zip -DestinationPath $installRoot
 Set-Location $installRoot
-Copy-Item .env.release.example .env.release.local
-notepad .env.release.local
+Copy-Item .env.release.example .env.release
+notepad .env.release
 .\bin\clawrouterctl.exe ensure
 .\bin\clawrouterctl.exe refresh-catalog --force
 .\bin\clawrouter.exe
@@ -366,7 +366,7 @@ release 包包含运行 Claw Router 所需文件：
 
 每个包的 `install-manifest.json` 都包含 `installConfiguration`，记录运行时 TOML、模板、数据库策略、必填字段、密码路径、首次启动命令和后续步骤。原生安装包还包含 `nativeInstall`，用机器可读方式描述最终安装布局，例如 `/usr/bin/clawrouter`、`/usr/lib/sdkwork/router/portal/dist`、`/etc/sdkwork/router/clawrouter.toml`、`/etc/sdkwork/router/database.secret`、`/lib/systemd/system/clawrouter.service`、服务启动策略、权限和运维命令。部署自动化应读取这些字段，而不是解析 `INSTALL.md`。
 
-不要把 `.env.release.local` 打包或提交。归档部署可以在目标机器上生成它；Linux service 部署使用 `/etc/sdkwork/router/clawrouter.env` 保存受保护的进程覆盖项，并使用 `/etc/sdkwork/router/clawrouter.toml` 作为主要运行时配置。`PORTAL_PUBLIC_*` 只能放浏览器可见配置，不要放数据库密码、供应商密钥或管理员凭据。
+不要把 `.env.release` 打包或提交。归档部署可以在目标机器上生成它；Linux service 部署使用 `/etc/sdkwork/router/clawrouter.env` 保存受保护的进程覆盖项，并使用 `/etc/sdkwork/router/clawrouter.toml` 作为主要运行时配置。`PORTAL_PUBLIC_*` 只能放浏览器可见配置，不要放数据库密码、供应商密钥或管理员凭据。
 
 ## 4. 数据库策略
 
@@ -552,7 +552,7 @@ docker run --rm -p 3900:3900 \
 2. 备份数据库和运行时配置。
 3. 停止旧版本服务。
 4. 安装或解压新 release 包。
-5. 保留目标机器上的 `/etc/sdkwork/router/clawrouter.env`、`/etc/sdkwork/router/database.secret`、归档部署可能使用的 `.env.release.local` 和运行时 TOML。
+5. 保留目标机器上的 `/etc/sdkwork/router/clawrouter.env`、`/etc/sdkwork/router/database.secret`、归档部署可能使用的 `.env.release` 和运行时 TOML。
 6. Linux service 包直接启动服务，让 systemd 自动执行 `ensure` 和 `refresh-catalog --force`。
 7. archive/manual 部署手动执行 `clawrouterctl ensure` 和 `clawrouterctl refresh-catalog --force`。
 8. 启动新版本并检查 `/healthz` 和 `/readyz`。

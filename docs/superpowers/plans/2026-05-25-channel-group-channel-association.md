@@ -13,12 +13,12 @@
 ### Task 1: Backend API Contract Tests
 
 **Files:**
-- Modify: `services/sdkwork-claw-product/tests/admin_channel_group_api.rs`
-- Modify: `services/sdkwork-claw-product/src/ports/admin_channel_group_store.rs`
-- Modify: `services/sdkwork-claw-product/src/api/admin_channel_group.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/tests/admin_channel_group_api.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/ports/admin_channel_group_store.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/api/admin_channel_group.rs`
 
 - [ ] Write failing API tests for listing and replacing group channel bindings.
-- [ ] Run `cargo test -p sdkwork-claw-product --test admin_channel_group_api admin_channel_group_route_lists_and_replaces_channel_bindings`.
+- [ ] Run `cargo test -p sdkwork-clawrouter-router-service --test admin_channel_group_api admin_channel_group_route_lists_and_replaces_channel_bindings`.
 - [ ] Add port DTOs and trait methods for group channel bindings.
 - [ ] Add Axum routes under `/backend/v3/api/router/channel_groups/{group_id}/channel_bindings`.
 - [ ] Re-run the focused API test until it passes.
@@ -29,10 +29,10 @@
 - Modify: `docs/schema-registry/sdkwork-clawrouter.tables.yaml`
 - Modify/generated: `generated/schema/postgres/schema.sql`
 - Modify/generated: `generated/schema/manifest/schema-manifest.json`
-- Modify: `services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_channel_group_store.rs`
-- Modify: `services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_channel_group_store.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/admin_channel_group_store.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/admin_channel_group_store.rs`
 - Modify: `crates/sdkwork-claw-test-support/src/lib.rs`
-- Test: `services/sdkwork-claw-product/tests/sqlite_admin_channel_group_store.rs`
+- Test: `services/sdkwork-clawrouter-router-service/tests/sqlite_admin_channel_group_store.rs`
 
 - [ ] Write failing SQLite store tests proving one channel can be bound to two groups and replace is idempotent.
 - [ ] Add `ai_channel_group_member` to schema registry with tenant entity columns, indexes, and frontend route ownership.
@@ -43,11 +43,11 @@
 ### Task 3: Runtime Route Selection
 
 **Files:**
-- Modify: `services/sdkwork-claw-product/src/infrastructure/sql/queries/snapshot.rs`
-- Modify: `services/sdkwork-claw-product/src/infrastructure/sql/sqlite/queries.rs`
-- Modify: `services/sdkwork-claw-product/src/infrastructure/sql/rows.rs`
-- Modify: `services/sdkwork-claw-product/src/application/provider_route_selector.rs`
-- Test: `services/sdkwork-claw-product/tests/provider_route_selector.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/queries/snapshot.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/queries.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/rows.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/application/provider_route_selector.rs`
+- Test: `services/sdkwork-clawrouter-router-service/tests/provider_route_selector.rs`
 
 - [ ] Write failing selector test proving group-bound channels restrict candidates for that group.
 - [ ] Load group binding priority/weight into provider account pool route rows.

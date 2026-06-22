@@ -21,12 +21,12 @@ class RechargeRuntimeStandardTest(unittest.TestCase):
             encoding="utf-8"
         )
         product_api_mod = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "mod.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "mod.rs"
         ).read_text(encoding="utf-8")
         product_ports_mod = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "mod.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "ports" / "mod.rs"
         ).read_text(encoding="utf-8")
-        app_api = (ROOT / "services" / "sdkwork-claw-app" / "src" / "lib.rs").read_text(
+        app_api = (ROOT / "services" / "sdkwork-clawrouter-app-api-server" / "src" / "lib.rs").read_text(
             encoding="utf-8"
         )
         app_routes = (
@@ -57,16 +57,16 @@ class RechargeRuntimeStandardTest(unittest.TestCase):
             self.assertIn(table_name, submit_recharge_contract)
 
         self.assertFalse(
-            (ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_recharge.rs").exists()
+            (ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "app_recharge.rs").exists()
         )
         self.assertFalse(
-            (ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "recharge_store.rs").exists()
+            (ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "ports" / "recharge_store.rs").exists()
         )
         self.assertFalse(
             (
                 ROOT
                 / "services"
-                / "sdkwork-claw-product"
+                / "sdkwork-clawrouter-router-service"
                 / "src"
                 / "infrastructure"
                 / "sql"
@@ -78,7 +78,7 @@ class RechargeRuntimeStandardTest(unittest.TestCase):
             (
                 ROOT
                 / "services"
-                / "sdkwork-claw-product"
+                / "sdkwork-clawrouter-router-service"
                 / "src"
                 / "infrastructure"
                 / "sql"

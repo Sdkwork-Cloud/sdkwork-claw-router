@@ -1,5 +1,5 @@
 use sdkwork_claw_config::DatabaseConfig;
-use sdkwork_claw_product::application::{PasswordHasher, Pbkdf2Sha256PasswordHasher};
+use sdkwork_clawrouter_router_service::application::{PasswordHasher, Pbkdf2Sha256PasswordHasher};
 use std::process::Command;
 use std::sync::atomic::{AtomicU64, Ordering};
 use std::time::{SystemTime, UNIX_EPOCH};

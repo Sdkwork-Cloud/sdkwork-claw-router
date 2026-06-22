@@ -431,7 +431,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         )
 
     def test_admin_api_database_config_test_schema_uses_media_resource_columns(self) -> None:
-        source = ROOT / "services" / "sdkwork-claw-admin" / "tests" / "database_config_router.rs"
+        source = ROOT / "services" / "sdkwork-clawrouter-admin-api-server" / "tests" / "database_config_router.rs"
         relative = rel(source)
         content = source.read_text(encoding="utf-8", errors="ignore")
         required_snippets = [
@@ -577,35 +577,35 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_app_auth_and_profile_backend_media_fields_preserve_media_resource_objects(self) -> None:
         source_expectations = {
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "app_auth_store.rs": [
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "ports" / "app_auth_store.rs": [
                 r"\bpub\s+avatar_url\s*:\s*String\b",
             ],
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "app_session_event_store.rs": [
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "ports" / "app_session_event_store.rs": [
                 r"\bpub\s+avatar_url\s*:\s*String\b",
             ],
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "app_user_profile_read_store.rs": [
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "ports" / "app_user_profile_read_store.rs": [
                 r"\bpub\s+avatar_url\s*:\s*String\b",
             ],
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_auth.rs": [
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "app_auth.rs": [
                 r"\bpub\s+avatar_url\s*:\s*String\b",
                 r"\bavatar_url\s*:",
             ],
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "app_auth_store.rs": [
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "sqlite" / "app_auth_store.rs": [
                 r"\bavatar_url\b",
             ],
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "app_auth_store.rs": [
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "postgres" / "app_auth_store.rs": [
                 r"\bavatar_url\b",
             ],
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "app_session_event_store.rs": [
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "sqlite" / "app_session_event_store.rs": [
                 r"\bavatar_url\b",
             ],
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "app_session_event_store.rs": [
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "postgres" / "app_session_event_store.rs": [
                 r"\bavatar_url\b",
             ],
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "app_user_profile_read_store.rs": [
+            ROOT / "crates" / "sdkwork-clawrouter-app-user-profile-repository-sqlx" / "src" / "sqlite.rs": [
                 r"\bavatar_url\b",
             ],
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "app_user_profile_read_store.rs": [
+            ROOT / "crates" / "sdkwork-clawrouter-app-user-profile-repository-sqlx" / "src" / "postgres.rs": [
                 r"\bavatar_url\b",
             ],
         }
@@ -1399,9 +1399,9 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_forum_backend_persistence_uses_canonical_media_resource_columns(self) -> None:
         forum_sources = [
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "forum_store.rs",
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "forum_store.rs",
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "forum_seed.rs",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "sqlite" / "forum_store.rs",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "postgres" / "forum_store.rs",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "forum_seed.rs",
         ]
         violations: list[str] = []
 
@@ -1422,12 +1422,12 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_backend_site_settings_media_fields_preserve_media_resource_objects(self) -> None:
         source_expectations = {
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "site_settings_store.rs": [
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "ports" / "site_settings_store.rs": [
                 "pub logo: Value,",
                 "pub icon: Value,",
                 "pub favicon: Value,",
             ],
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "site_settings.rs": [
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "site_settings.rs": [
                 "logo: Option<Value>,",
                 "icon: Option<Value>,",
                 "favicon: Option<Value>,",
@@ -1435,7 +1435,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "icon: Value,",
                 "favicon: Value,",
             ],
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sql_site_settings.rs": [
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "sql_site_settings.rs": [
                 "pub logo: Value,",
                 "pub icon: Value,",
                 "pub favicon: Value,",

@@ -22,7 +22,7 @@ RUST_DOMAIN_PATH = ROOT / "generated" / "types" / "rust" / "domain.rs"
 JAVA_BILLING_METER_PATH = ROOT / "generated" / "types" / "java" / "com" / "sdkwork" / "claw" / "router" / "domain" / "enums" / "BillingMeter.java"
 TS_DOMAIN_PATH = ROOT / "generated" / "types" / "typescript" / "domain-types.ts"
 RUST_TEST_SUPPORT_PATH = ROOT / "crates" / "sdkwork-claw-test-support" / "src" / "lib.rs"
-RUST_INSTALLER_PATH = ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "installer.rs"
+RUST_INSTALLER_PATH = ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "installer.rs"
 RUST_INSTALLER_CLI_PATH = ROOT / "services" / "sdkwork-claw-installer" / "src" / "main.rs"
 AI_CHANNEL_ROUTE_CONTRACT_PATHS = (
     ROOT / "docs" / "schema-registry" / "frontend-field-contracts" / "models" / "admin-channel.yaml",
@@ -33,17 +33,17 @@ AI_CHANNEL_ROUTE_CONTRACT_PATHS = (
     ROOT / "docs" / "schema-registry" / "frontend-field-contracts" / "operations" / "backend-ai.yaml",
     ROOT / "docs" / "schema-registry" / "frontend-field-contracts" / "operations" / "backend-integration.yaml",
     ROOT / "docs" / "schema-registry" / "frontend-route-classification.yaml",
-    ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "queries" / "snapshot.rs",
-    ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "queries" / "lookup.rs",
-    ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "queries.rs",
-    ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "app_routing_read_store.rs",
-    ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "app_routing_read_store.rs",
-    ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "admin_channel_group_store.rs",
-    ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "admin_channel_group_store.rs",
-    ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "admin_channel_store.rs",
-    ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "admin_channel_store.rs",
-    ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "admin_ai_resource_store.rs",
-    ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "admin_ai_resource_store.rs",
+    ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "queries" / "snapshot.rs",
+    ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "queries" / "lookup.rs",
+    ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "sqlite" / "queries.rs",
+    ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "postgres" / "app_routing_read_store.rs",
+    ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "sqlite" / "app_routing_read_store.rs",
+    ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "postgres" / "admin_channel_group_store.rs",
+    ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "sqlite" / "admin_channel_group_store.rs",
+    ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "postgres" / "admin_channel_store.rs",
+    ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "sqlite" / "admin_channel_store.rs",
+    ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "postgres" / "admin_ai_resource_store.rs",
+    ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "sqlite" / "admin_ai_resource_store.rs",
 )
 AI_CHANNEL_ROUTE_REQUIRED_TABLES = (
     "ai_provider",
@@ -72,13 +72,13 @@ OBSOLETE_ROUTER_TABLES = {
     "integration_service_provider_price_change_request",
 }
 RUNTIME_MODEL_IDENTITY_FIXTURE_PATHS = (
-    ROOT / "services" / "sdkwork-claw-product" / "tests" / "openai_chat_adapter_api.rs",
-    ROOT / "services" / "sdkwork-claw-product" / "tests" / "openai_embeddings_adapter_api.rs",
-    ROOT / "services" / "sdkwork-claw-product" / "tests" / "openai_responses_adapter_api.rs",
-    ROOT / "services" / "sdkwork-claw-product" / "tests" / "sqlite_admin_channel_group_store.rs",
-    ROOT / "services" / "sdkwork-claw-product" / "tests" / "sqlite_openai_invocation_telemetry.rs",
-    ROOT / "services" / "sdkwork-claw-gateway" / "src" / "runtime.rs",
-    ROOT / "services" / "sdkwork-claw-gateway" / "src" / "invocation_http.rs",
+    ROOT / "services" / "sdkwork-clawrouter-router-service" / "tests" / "openai_chat_adapter_api.rs",
+    ROOT / "services" / "sdkwork-clawrouter-router-service" / "tests" / "openai_embeddings_adapter_api.rs",
+    ROOT / "services" / "sdkwork-clawrouter-router-service" / "tests" / "openai_responses_adapter_api.rs",
+    ROOT / "services" / "sdkwork-clawrouter-router-service" / "tests" / "sqlite_admin_channel_group_store.rs",
+    ROOT / "services" / "sdkwork-clawrouter-router-service" / "tests" / "sqlite_openai_invocation_telemetry.rs",
+    ROOT / "services" / "sdkwork-clawrouter-gateway" / "src" / "runtime.rs",
+    ROOT / "services" / "sdkwork-clawrouter-gateway" / "src" / "invocation_http.rs",
 )
 PORTAL_RUNTIME_MODEL_IDENTITY_FIXTURE_PATHS = (
     ROOT / "apps" / "sdkwork-clawrouter-pc" / "admin-channel-runtime.test.ts",
@@ -91,15 +91,15 @@ PORTAL_RUNTIME_MODEL_IDENTITY_FIXTURE_PATHS = (
     ROOT / "apps" / "sdkwork-clawrouter-pc" / "console-app-runtime.test.ts",
 )
 API_GATEWAY_MODEL_IDENTITY_FIXTURE_PATHS = (
-    ROOT / "services" / "sdkwork-claw-admin" / "tests" / "database_config_router.rs",
-    ROOT / "services" / "sdkwork-claw-app" / "tests" / "api_key_route.rs",
-    ROOT / "services" / "sdkwork-claw-gateway" / "tests" / "provider_passthrough_route.rs",
-    ROOT / "services" / "sdkwork-claw-gateway" / "tests" / "edge_server_sqlite_smoke.rs",
+    ROOT / "services" / "sdkwork-clawrouter-admin-api-server" / "tests" / "database_config_router.rs",
+    ROOT / "services" / "sdkwork-clawrouter-app-api-server" / "tests" / "api_key_route.rs",
+    ROOT / "services" / "sdkwork-clawrouter-gateway" / "tests" / "provider_passthrough_route.rs",
+    ROOT / "services" / "sdkwork-clawrouter-gateway" / "tests" / "edge_server_sqlite_smoke.rs",
 )
 AI_CHANNEL_ROUTE_RUNTIME_ROOTS = (
-    ROOT / "services" / "sdkwork-claw-product" / "src",
-    ROOT / "services" / "sdkwork-claw-gateway" / "src",
-    ROOT / "services" / "sdkwork-claw-app" / "src",
+    ROOT / "services" / "sdkwork-clawrouter-router-service" / "src",
+    ROOT / "services" / "sdkwork-clawrouter-gateway" / "src",
+    ROOT / "services" / "sdkwork-clawrouter-app-api-server" / "src",
 )
 SERVER_RESOURCES = ROOT.parents[1] / "spring-ai-plus-server-application" / "src" / "main" / "resources"
 POSTGRES_MIGRATION_DIR = SERVER_RESOURCES / "database" / "postgresql"
@@ -769,7 +769,7 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
                 self.assertNotIn(table_name, frontend_contract)
 
         runtime_roots = (
-            ROOT / "services" / "sdkwork-claw-product" / "src",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src",
             ROOT / "crates" / "sdkwork-claw-test-support" / "src",
         )
         for root in runtime_roots:
@@ -810,7 +810,7 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
         importer_paths = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -818,7 +818,7 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
             / "model_catalog_import.rs",
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -842,7 +842,7 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
         source = read_text(
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -875,7 +875,7 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
         product_sql_dir = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -926,7 +926,7 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
         product_sql_dir = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -1339,7 +1339,7 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
         importer_source = read_text(
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -1390,8 +1390,8 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
                     )
 
     def test_gateway_usage_does_not_recreate_regional_requested_catalog_key_compatibility(self) -> None:
-        source = read_text(ROOT / "services" / "sdkwork-claw-gateway" / "src" / "passthrough.rs")
-        domain_source = read_text(ROOT / "services" / "sdkwork-claw-product" / "src" / "domain" / "catalog.rs")
+        source = read_text(ROOT / "services" / "sdkwork-clawrouter-gateway" / "src" / "passthrough.rs")
+        domain_source = read_text(ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "domain" / "catalog.rs")
         self.assertNotIn(
             "canonical_adapter_usage_catalog_key",
             source,
@@ -1430,8 +1430,8 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
 
     def test_regional_catalog_key_guards_use_shared_domain_region_standard(self) -> None:
         direct_region_guard_sources = [
-            ROOT / "services" / "sdkwork-claw-app" / "tests" / "model_rankings_route.rs",
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "domain" / "catalog.rs",
+            ROOT / "services" / "sdkwork-clawrouter-app-api-server" / "tests" / "model_rankings_route.rs",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "domain" / "catalog.rs",
         ]
         for path in direct_region_guard_sources:
             source = read_text(path)
@@ -1447,7 +1447,7 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
                     source,
                     "Regional catalog-key guards must reject region segments through the shared domain standard.",
                 )
-        passthrough_source = read_text(ROOT / "services" / "sdkwork-claw-gateway" / "src" / "passthrough.rs")
+        passthrough_source = read_text(ROOT / "services" / "sdkwork-clawrouter-gateway" / "src" / "passthrough.rs")
         self.assertIn(
             "ensure_canonical_model_catalog_key",
             passthrough_source,
@@ -1458,18 +1458,16 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
         parser_sources = [
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
             / "rows.rs",
             ROOT
-            / "services"
-            / "sdkwork-claw-product"
+            / "crates"
+            / "sdkwork-clawrouter-admin-analytics-repository-sqlx"
             / "src"
-            / "infrastructure"
-            / "sql"
-            / "sql_admin_analytics.rs",
+            / "snapshot.rs",
         ]
         for path in parser_sources:
             source = read_text(path)
@@ -1494,7 +1492,7 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
         channel_store_sources = [
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -1502,7 +1500,7 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
             / "app_routing_channel_command_store.rs",
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -1543,7 +1541,7 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
         channel_store_sources = [
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -1551,7 +1549,7 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
             / "admin_channel_store.rs",
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -1644,7 +1642,7 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
         source = read_text(
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "api"
             / "admin_model_command.rs"
@@ -1652,7 +1650,7 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
         runtime_test = read_text(
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "tests"
             / "admin_model_command_api.rs"
         )
@@ -1690,7 +1688,7 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
         app_model_api_source = read_text(
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "api"
             / "app_models.rs"
@@ -1729,7 +1727,7 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
         sqlite_recorder_source = read_text(
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -1739,7 +1737,7 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
         postgres_recorder_source = read_text(
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -1749,7 +1747,7 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
         port_source = read_text(
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "ports"
             / "gateway_usage_recorder.rs"
@@ -1782,12 +1780,12 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
         backend_openapi = load_generated_openapi(BACKEND_OPENAPI_PATH)
         app_openapi = load_generated_openapi(APP_OPENAPI_PATH)
         sources = {
-            "admin_port": read_text(ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "admin_record_store.rs"),
-            "usage_port": read_text(ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "usage_logs_read_store.rs"),
-            "sqlite_admin": read_text(ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "admin_record_store.rs"),
-            "postgres_admin": read_text(ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "admin_record_store.rs"),
-            "sqlite_usage": read_text(ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "usage_logs_read_store.rs"),
-            "postgres_usage": read_text(ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "usage_logs_read_store.rs"),
+            "admin_port": read_text(ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "ports" / "admin_record_store.rs"),
+            "usage_port": read_text(ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "ports" / "usage_logs_read_store.rs"),
+            "sqlite_admin": read_text(ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "sqlite" / "admin_record_store.rs"),
+            "postgres_admin": read_text(ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "postgres" / "admin_record_store.rs"),
+            "sqlite_usage": read_text(ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "sqlite" / "usage_logs_read_store.rs"),
+            "postgres_usage": read_text(ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "postgres" / "usage_logs_read_store.rs"),
             "admin_service": read_text(ROOT / "apps" / "sdkwork-clawrouter-pc" / "packages" / "sdkwork-clawrouter-pc-admin-record" / "src" / "recordService.ts"),
             "usage_service": read_text(ROOT / "apps" / "sdkwork-clawrouter-pc" / "packages" / "sdkwork-clawrouter-pc-console-usage" / "src" / "usageService.ts"),
         }
@@ -1862,9 +1860,9 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
         )
         offenders = []
         for path in (
-            ROOT / "services" / "sdkwork-claw-gateway" / "src" / "runtime.rs",
-            ROOT / "services" / "sdkwork-claw-gateway" / "src" / "invocation_http.rs",
-            ROOT / "services" / "sdkwork-claw-gateway" / "src" / "invocation_router.rs",
+            ROOT / "services" / "sdkwork-clawrouter-gateway" / "src" / "runtime.rs",
+            ROOT / "services" / "sdkwork-clawrouter-gateway" / "src" / "invocation_http.rs",
+            ROOT / "services" / "sdkwork-clawrouter-gateway" / "src" / "invocation_router.rs",
         ):
             text = read_text(path)
             negative_ranges = [
@@ -1891,7 +1889,7 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
         )
         offenders = []
         for path in (
-            ROOT / "services" / "sdkwork-claw-product" / "tests" / "model_rankings_read_store.rs",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "tests" / "model_rankings_read_store.rs",
         ):
             text = read_text(path)
             for match in regional_catalog_key.finditer(text):
@@ -1911,13 +1909,13 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
         )
         offenders = []
         for path in (
-            ROOT / "services" / "sdkwork-claw-product" / "tests" / "openai_compatible_http_relay.rs",
-            ROOT / "services" / "sdkwork-claw-product" / "tests" / "openai_compatible_chat_stream_http_relay.rs",
-            ROOT / "services" / "sdkwork-claw-product" / "tests" / "openai_compatible_embeddings_http_relay.rs",
-            ROOT / "services" / "sdkwork-claw-product" / "tests" / "openai_compatible_responses_http_relay.rs",
-            ROOT / "services" / "sdkwork-claw-product" / "tests" / "secret_ref_openai_compatible_http_relay.rs",
-            ROOT / "services" / "sdkwork-claw-product" / "tests" / "secret_ref_openai_compatible_embeddings_http_relay.rs",
-            ROOT / "services" / "sdkwork-claw-product" / "tests" / "secret_ref_openai_compatible_responses_http_relay.rs",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "tests" / "openai_compatible_http_relay.rs",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "tests" / "openai_compatible_chat_stream_http_relay.rs",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "tests" / "openai_compatible_embeddings_http_relay.rs",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "tests" / "openai_compatible_responses_http_relay.rs",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "tests" / "secret_ref_openai_compatible_http_relay.rs",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "tests" / "secret_ref_openai_compatible_embeddings_http_relay.rs",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "tests" / "secret_ref_openai_compatible_responses_http_relay.rs",
         ):
             text = read_text(path)
             for match in regional_catalog_key.finditer(text):
@@ -1937,10 +1935,10 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
         )
         offenders = []
         for path in (
-            ROOT / "services" / "sdkwork-claw-product" / "tests" / "sqlite_gateway_usage_recorder.rs",
-            ROOT / "services" / "sdkwork-claw-product" / "tests" / "postgres_transaction_integration.rs",
-            ROOT / "services" / "sdkwork-claw-product" / "tests" / "sqlite_admin_analytics_read_store.rs",
-            ROOT / "services" / "sdkwork-claw-product" / "tests" / "admin_record_api.rs",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "tests" / "sqlite_gateway_usage_recorder.rs",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "tests" / "postgres_transaction_integration.rs",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "tests" / "sqlite_admin_analytics_read_store.rs",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "tests" / "admin_record_api.rs",
         ):
             text = read_text(path)
             for match in regional_catalog_key.finditer(text):
@@ -2251,9 +2249,9 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
         self.assertNotIn("catalog_version={}", cli_source)
 
         for service_runtime in (
-            ROOT / "services" / "sdkwork-claw-gateway" / "src" / "runtime.rs",
-            ROOT / "services" / "sdkwork-claw-app" / "src" / "lib.rs",
-            ROOT / "services" / "sdkwork-claw-admin" / "src" / "lib.rs",
+            ROOT / "services" / "sdkwork-clawrouter-gateway" / "src" / "runtime.rs",
+            ROOT / "services" / "sdkwork-clawrouter-app-api-server" / "src" / "lib.rs",
+            ROOT / "services" / "sdkwork-clawrouter-admin-api-server" / "src" / "lib.rs",
         ):
             source = read_text(service_runtime)
             self.assertIn("DatabaseInstaller", source)

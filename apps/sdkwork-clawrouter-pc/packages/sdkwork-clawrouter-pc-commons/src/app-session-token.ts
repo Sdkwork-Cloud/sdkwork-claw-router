@@ -18,6 +18,14 @@ export interface StoredAppSessionToken {
 
 let memoryToken: StoredAppSessionToken | null = null;
 let storageLoaded = false;
+const storedAppSessionChangeListeners = new Set<() => void>();
+
+export function subscribeStoredAppSessionChange(listener: () => void): () => void {
+  storedAppSessionChangeListeners.add(listener);
+  return () => {
+    storedAppSessionChangeListeners.delete(listener);
+  };
+}
 
 export function storeAppSessionFromResult(result: unknown): StoredAppSessionToken {
   const previousToken = loadStoredAppSessionToken();
@@ -53,6 +61,7 @@ export function storeAppSessionFromResult(result: unknown): StoredAppSessionToke
   storageLoaded = true;
   writeBrowserStorage(stored);
   dispatchPortalSessionChange();
+  notifyStoredAppSessionChange();
   return stored;
 }
 
@@ -115,6 +124,7 @@ export function clearStoredAppSessionToken(): void {
   storageLoaded = true;
   removeBrowserStorage();
   dispatchPortalSessionChange();
+  notifyStoredAppSessionChange();
 }
 
 export function toPortalIamBridgeSession(
@@ -334,6 +344,12 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 
 function currentUnixSeconds(): number {
   return Math.floor(Date.now() / 1000);
+}
+
+function notifyStoredAppSessionChange(): void {
+  for (const listener of storedAppSessionChangeListeners) {
+    listener();
+  }
 }
 
 function readBrowserStorage(): string | null {

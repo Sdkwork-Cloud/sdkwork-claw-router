@@ -16,7 +16,12 @@ const LOCAL_ROUTE_PACKAGE_PATTERN = /(?:^|\/)node_modules\/(?:\.pnpm\/[^/]+\/nod
 const HTML_MODULE_SCRIPT_PATTERN = /<script\b(?=[^>]*\btype=["']module["'])(?=[^>]*\bsrc=["'][^"']+["'])[^>]*><\/script>/i;
 const RUNTIME_ENV_SCRIPT_PATH = '/runtime-env.js';
 const DEFAULT_PORTAL_DEV_PORT = 3901;
-const DEFAULT_PORTAL_DEV_PROXY_GATEWAY_TARGET = 'http://127.0.0.1:3900';
+const DEFAULT_BROWSER_DEV_PROXY_GATEWAY_TARGET = 'http://127.0.0.1:3900';
+const BROWSER_DEV_PROXY_ENV_KEYS = {
+  openApi: 'SDKWORK_CLAW_BROWSER_DEV_PROXY_OPEN_API_ORIGIN',
+  backendApi: 'SDKWORK_CLAW_BROWSER_DEV_PROXY_BACKEND_API_ORIGIN',
+  appApi: 'SDKWORK_CLAW_BROWSER_DEV_PROXY_APP_API_ORIGIN',
+} as const;
 const OPEN_API_PREFIX = '/v1';
 const APP_API_PREFIX = '/app/v3/api';
 const BACKEND_API_PREFIX = '/backend/v3/api';
@@ -27,6 +32,7 @@ const LOCAL_PORTAL_PACKAGE_PREFIXES = [
   'sdkwork-clawrouter-pc-',
   'sdkwork-clawrouter-',
 ];
+const LOCAL_PORTAL_SCOPED_PACKAGE_PREFIX = '@sdkwork/clawrouter-pc-';
 const PORTAL_OPTIMIZED_BARE_DEPENDENCIES = new Set([
   'react',
   'react/jsx-runtime',
@@ -240,7 +246,24 @@ function shouldResolvePortalLocalPackage(source: string): boolean {
   }
 
   const {packageName} = parsePackageSpecifier(source);
+  if (packageName.startsWith(LOCAL_PORTAL_SCOPED_PACKAGE_PREFIX)) {
+    return true;
+  }
   return LOCAL_PORTAL_PACKAGE_PREFIXES.some((prefix) => packageName.startsWith(prefix));
+}
+
+function portalLocalPackageRoot(packageName: string, configDir: string): string | null {
+  if (packageName.startsWith(LOCAL_PORTAL_SCOPED_PACKAGE_PREFIX)) {
+    return path.join(
+      configDir,
+      'packages',
+      `sdkwork-${packageName.slice('@sdkwork/'.length)}`,
+    );
+  }
+  if (LOCAL_PORTAL_PACKAGE_PREFIXES.some((prefix) => packageName.startsWith(prefix))) {
+    return path.join(configDir, 'packages', packageName);
+  }
+  return null;
 }
 
 function shouldResolvePortalWorkspaceDependency(
@@ -295,13 +318,17 @@ function resolvePortalLocalPackageModule(specifier: string, configDir: string): 
   }
 
   const parsedSpecifier = parsePackageSpecifier(specifier);
-  const packageJsonPath = path.join(configDir, 'packages', parsedSpecifier.packageName, 'package.json');
+  const packageRoot = portalLocalPackageRoot(parsedSpecifier.packageName, configDir);
+  if (!packageRoot) {
+    localPortalPackageModuleCache.set(specifier, null);
+    return null;
+  }
+  const packageJsonPath = path.join(packageRoot, 'package.json');
   if (!fs.existsSync(packageJsonPath)) {
     localPortalPackageModuleCache.set(specifier, null);
     return null;
   }
 
-  const packageRoot = path.dirname(packageJsonPath);
   const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8')) as {
     exports?: unknown;
     module?: string;
@@ -470,9 +497,16 @@ export default defineConfig(({mode}) => {
   const sdkworkDocumentsRoot = resolvePortalWorkspaceDependencyRoot(configDir, 'sdkwork-documents');
   const sdkworkUtilsRoot = resolvePortalWorkspaceDependencyRoot(configDir, 'sdkwork-utils');
   const env = loadEnv(mode, configDir, '');
+  const bootstrapAccessTokenDefine = mode === 'development'
+    ? {
+        'process.env.SDKWORK_ACCESS_TOKEN': JSON.stringify(
+          env.SDKWORK_ACCESS_TOKEN ?? process.env.SDKWORK_ACCESS_TOKEN ?? '',
+        ),
+      }
+    : {};
   return {
     define: {
-      'process.env.SDKWORK_ACCESS_TOKEN': JSON.stringify(env.SDKWORK_ACCESS_TOKEN ?? ''),
+      ...bootstrapAccessTokenDefine,
     },
         plugins: [
       clawrouterRuntimeEnvPlugin(),
@@ -554,8 +588,7 @@ export default defineConfig(({mode}) => {
         { find: 'sdkwork-commerce-app-sdk-generated-typescript', replacement: path.resolve(sdkworkCommerceRoot, 'sdks/sdkwork-commerce-app-sdk/sdkwork-commerce-app-sdk-typescript/generated/server-openapi/src/index.ts') },
         { find: 'sdkwork-commerce-backend-sdk-generated-typescript', replacement: path.resolve(sdkworkCommerceRoot, 'sdks/sdkwork-commerce-backend-sdk/sdkwork-commerce-backend-sdk-typescript/generated/server-openapi/src/index.ts') },
         { find: '@sdkwork/core-pc-react', replacement: path.resolve(sdkworkCoreRoot, 'sdkwork-core-pc-react/src/index.ts') },
-        { find: '@sdkwork/distribution-pc-react/downloads', replacement: path.resolve(appbaseRoot, 'packages/pc-react/device/sdkwork-distribution-pc-react/src/downloads/index.ts') },
-        { find: '@sdkwork/distribution-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/device/sdkwork-distribution-pc-react/src/index.ts') },
+        { find: '@sdkwork/clawrouter-pc-downloads', replacement: path.resolve(configDir, 'packages/sdkwork-clawrouter-pc-downloads/src/index.ts') },
         { find: '@sdkwork/drive-app-sdk', replacement: path.resolve(sdkworkDriveRoot, 'sdks/sdkwork-drive-app-sdk/sdkwork-drive-app-sdk-typescript/src/index.ts') },
         { find: '@sdkwork/file-contracts', replacement: path.resolve(workspaceRoot, 'packages/common/file/sdkwork-file-contracts/src/index.ts') },
         { find: '@sdkwork/file-platform-pc-react', replacement: path.resolve(workspaceRoot, 'packages/pc-react/file/sdkwork-file-platform-pc-react/src/index.ts') },
@@ -837,16 +870,16 @@ function resolvePortalDevPort(env: NodeJS.ProcessEnv = process.env): number {
 
 function resolvePortalDevProxy(env: NodeJS.ProcessEnv = process.env): Record<string, string | ProxyOptions> {
   const gatewayTarget = resolvePortalDevProxyTarget(
-    env.PORTAL_DEV_PROXY_GATEWAY_TARGET,
-    'PORTAL_DEV_PROXY_GATEWAY_TARGET',
+    env[BROWSER_DEV_PROXY_ENV_KEYS.openApi],
+    BROWSER_DEV_PROXY_ENV_KEYS.openApi,
   );
   const backendApiTarget = resolvePortalDevProxyTarget(
-    env.PORTAL_DEV_PROXY_BACKEND_API_TARGET,
-    'PORTAL_DEV_PROXY_BACKEND_API_TARGET',
+    env[BROWSER_DEV_PROXY_ENV_KEYS.backendApi],
+    BROWSER_DEV_PROXY_ENV_KEYS.backendApi,
   );
   const appApiTarget = resolvePortalDevProxyTarget(
-    env.PORTAL_DEV_PROXY_APP_API_TARGET,
-    'PORTAL_DEV_PROXY_APP_API_TARGET',
+    env[BROWSER_DEV_PROXY_ENV_KEYS.appApi],
+    BROWSER_DEV_PROXY_ENV_KEYS.appApi,
   );
 
   return {
@@ -891,9 +924,9 @@ function resolvePortalDevProxyTarget(
     ?? env.SDKWORK_CLAW_ROUTER_PLATFORM_API_GATEWAY_HTTP_URL,
   );
   const fallbackByName: Record<string, string | undefined> = {
-    PORTAL_DEV_PROXY_GATEWAY_TARGET: applicationOpenHttpUrl ?? applicationPublicHttpUrl ?? platformHttpUrl ?? DEFAULT_PORTAL_DEV_PROXY_GATEWAY_TARGET,
-    PORTAL_DEV_PROXY_BACKEND_API_TARGET: applicationBackendHttpUrl ?? applicationPublicHttpUrl ?? platformHttpUrl ?? DEFAULT_PORTAL_DEV_PROXY_GATEWAY_TARGET,
-    PORTAL_DEV_PROXY_APP_API_TARGET: applicationPublicHttpUrl ?? platformHttpUrl ?? DEFAULT_PORTAL_DEV_PROXY_GATEWAY_TARGET,
+    [BROWSER_DEV_PROXY_ENV_KEYS.openApi]: applicationOpenHttpUrl ?? applicationPublicHttpUrl ?? platformHttpUrl ?? DEFAULT_BROWSER_DEV_PROXY_GATEWAY_TARGET,
+    [BROWSER_DEV_PROXY_ENV_KEYS.backendApi]: applicationBackendHttpUrl ?? applicationPublicHttpUrl ?? platformHttpUrl ?? DEFAULT_BROWSER_DEV_PROXY_GATEWAY_TARGET,
+    [BROWSER_DEV_PROXY_ENV_KEYS.appApi]: applicationPublicHttpUrl ?? platformHttpUrl ?? DEFAULT_BROWSER_DEV_PROXY_GATEWAY_TARGET,
   };
   const target = value?.trim() || fallbackByName[name];
   if (!target) {
@@ -1003,7 +1036,10 @@ function appendPortalPublicSdkBaseUrl(
 }
 
 function buildPortalRuntimeEnvScript(runtimeEnv = resolvePortalRuntimeEnv()): string {
-  const serializedEnv = JSON.stringify(runtimeEnv)
+  const browserSafeEnv = Object.fromEntries(
+    Object.entries(runtimeEnv).filter(([key]) => key.startsWith('VITE_')),
+  );
+  const serializedEnv = JSON.stringify(browserSafeEnv)
     .replace(/</g, '\\u003C')
     .replace(/>/g, '\\u003E')
     .replace(/&/g, '\\u0026')

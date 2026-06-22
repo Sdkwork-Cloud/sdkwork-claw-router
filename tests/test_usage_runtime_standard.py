@@ -10,7 +10,7 @@ class UsageRuntimeStandardTest(unittest.TestCase):
         usage_port = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "ports"
             / "usage_logs_read_store.rs"
@@ -18,7 +18,7 @@ class UsageRuntimeStandardTest(unittest.TestCase):
         sqlite_store = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -28,7 +28,7 @@ class UsageRuntimeStandardTest(unittest.TestCase):
         postgres_store = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -38,7 +38,7 @@ class UsageRuntimeStandardTest(unittest.TestCase):
         sqlite_admin_record_store = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -48,7 +48,7 @@ class UsageRuntimeStandardTest(unittest.TestCase):
         postgres_admin_record_store = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"

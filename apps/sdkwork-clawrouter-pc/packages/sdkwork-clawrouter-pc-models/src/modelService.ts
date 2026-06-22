@@ -1,6 +1,6 @@
 import {
   ensureSdkworkApiSuccess,
-  getClawRouterAppSdkClient,
+  getModelsAppSdkClient,
   readApiRecord,
   readNumber,
   readRecordArray,
@@ -51,7 +51,7 @@ export class ModelService {
 }
 
 async function fetchModelCatalogResult(filters: ModelCatalogServiceFilters): Promise<ModelCatalogResult> {
-  const result = await getClawRouterAppSdkClient().ai.models.list({
+  const result = await getModelsAppSdkClient().ai.models.list({
     billingMeter: normalizeQueryString(filters.billingMeter),
     vendorCodes: normalizeQueryValues(filters.vendorCodes),
     modalities: normalizeQueryValues(filters.modalities),

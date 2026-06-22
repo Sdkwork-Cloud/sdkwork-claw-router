@@ -48,11 +48,11 @@ const OBSERVABILITY_LOG_ANSI = false;
 const OBSERVABILITY_LOG_TARGET = true;
 const OBSERVABILITY_LOG_THREAD_NAMES = false;
 const OBSERVABILITY_LOG_THREAD_IDS = false;
-const PORTAL_SECURITY_HSTS_ENABLED = false;
-const PORTAL_SECURITY_HSTS_MAX_AGE_SECONDS = 31_536_000;
-const PORTAL_SECURITY_HSTS_INCLUDE_SUBDOMAINS = true;
-const PORTAL_SECURITY_HSTS_PRELOAD = false;
-const PORTAL_SECURITY_CSP_FRAME_SRC = ['https://player.bilibili.com'];
+const CLAW_EDGE_DEFAULT_HSTS_ENABLED = false;
+const CLAW_EDGE_DEFAULT_HSTS_MAX_AGE_SECONDS = 31_536_000;
+const CLAW_EDGE_DEFAULT_HSTS_INCLUDE_SUBDOMAINS = true;
+const CLAW_EDGE_DEFAULT_HSTS_PRELOAD = false;
+const CLAW_EDGE_DEFAULT_CSP_FRAME_SRC = ['https://player.bilibili.com'];
 const REQUEST_LIMIT_ADMIN_APP_JSON_BODY_MAX_BYTES = 128 * 1024;
 const REQUEST_LIMIT_ADMIN_SKILL_JSON_BODY_MAX_BYTES = 64 * 1024;
 const REQUEST_LIMIT_FORUM_JSON_BODY_MAX_BYTES = 256 * 1024;
@@ -189,7 +189,7 @@ function createArchiveEntriesForPackage(packageItem, stagingRoot, { requireStage
   const entries = [];
   const usedArchivePaths = new Set();
   for (const artifact of packageItem.artifacts) {
-    if (artifact.path === '.env.release.local') {
+    if (artifact.path === '.env.release') {
       continue;
     }
     if (artifact.kind === 'install-manifest') {
@@ -326,7 +326,7 @@ function createGeneratedContainerEntries(packageItem) {
 
 function artifactEntries({ artifact, stagingRoot, usedArchivePaths, requireStagedFiles }) {
   const relativePath = normalizeArchivePath(artifact.path);
-  if (relativePath === '.env.release.local') {
+  if (relativePath === '.env.release') {
     return [];
   }
   const sourcePath = path.join(stagingRoot, relativePath);
@@ -383,7 +383,7 @@ function collectArchivePaths(sourcePath, relativePath) {
   }
   const result = [];
   for (const child of readdirSync(sourcePath).sort()) {
-    if (child === '.env.release.local' || child === 'node_modules' || child === '.git') {
+    if (child === '.env.release' || child === 'node_modules' || child === '.git') {
       continue;
     }
     result.push(...collectArchivePaths(
@@ -405,8 +405,8 @@ function validateInstallPackageBuildPlan(buildPlan) {
   if (!buildPlan.archivePath || !buildPlan.archivePath.endsWith(buildPlan.package.archiveName)) {
     issues.push('archivePath must end with package archiveName');
   }
-  if (buildPlan.entries.some((entry) => entry.archivePath === '.env.release.local')) {
-    issues.push('.env.release.local must not be packaged');
+  if (buildPlan.entries.some((entry) => entry.archivePath === '.env.release')) {
+    issues.push('.env.release must not be packaged');
   }
   if (buildPlan.entries.some((entry) => /secret/u.test(entry.archivePath))) {
     issues.push('archive entry paths must not contain secret material markers');
@@ -702,11 +702,11 @@ function createInstallConfiguration(packageItem) {
       assetCacheControl: 'public, max-age=31536000, immutable',
       security: {
         configSection: 'portal.security',
-        hstsEnabled: PORTAL_SECURITY_HSTS_ENABLED,
-        hstsMaxAgeSeconds: PORTAL_SECURITY_HSTS_MAX_AGE_SECONDS,
-        hstsIncludeSubdomains: PORTAL_SECURITY_HSTS_INCLUDE_SUBDOMAINS,
-        hstsPreload: PORTAL_SECURITY_HSTS_PRELOAD,
-        cspFrameSrc: [...PORTAL_SECURITY_CSP_FRAME_SRC],
+        hstsEnabled: CLAW_EDGE_DEFAULT_HSTS_ENABLED,
+        hstsMaxAgeSeconds: CLAW_EDGE_DEFAULT_HSTS_MAX_AGE_SECONDS,
+        hstsIncludeSubdomains: CLAW_EDGE_DEFAULT_HSTS_INCLUDE_SUBDOMAINS,
+        hstsPreload: CLAW_EDGE_DEFAULT_HSTS_PRELOAD,
+        cspFrameSrc: [...CLAW_EDGE_DEFAULT_CSP_FRAME_SRC],
       },
       toolApiEnabledByDefault: false,
       toolApiMaxBodyBytes: 1_048_576,
@@ -1085,7 +1085,7 @@ function createInstallGuide(packageItem) {
     '',
     '## Security',
     '',
-    'Do not package .env.release.local.',
+    'Do not package .env.release.',
     'Generate host-local env files on the target machine and keep secret values outside browser-visible PORTAL_PUBLIC_* variables.',
     'Prefer password_file for database secrets. Use [database].password only when the runtime TOML is protected as a secret-bearing file.',
     'Prefer [redis].password_file for Redis secrets. Use [redis].password only when the runtime TOML is protected as a secret-bearing file.',
@@ -1252,11 +1252,11 @@ function createRuntimeConfigTemplate(packageItem) {
     '',
     '[portal.security]',
     '# Enable HSTS only after HTTPS is available at the public edge hostname.',
-    `hsts_enabled = ${PORTAL_SECURITY_HSTS_ENABLED ? 'true' : 'false'}`,
-    `hsts_max_age_seconds = ${PORTAL_SECURITY_HSTS_MAX_AGE_SECONDS}`,
-    `hsts_include_subdomains = ${PORTAL_SECURITY_HSTS_INCLUDE_SUBDOMAINS ? 'true' : 'false'}`,
-    `hsts_preload = ${PORTAL_SECURITY_HSTS_PRELOAD ? 'true' : 'false'}`,
-    `csp_frame_src = [${PORTAL_SECURITY_CSP_FRAME_SRC.map((origin) => `"${origin}"`).join(', ')}]`,
+    `hsts_enabled = ${CLAW_EDGE_DEFAULT_HSTS_ENABLED ? 'true' : 'false'}`,
+    `hsts_max_age_seconds = ${CLAW_EDGE_DEFAULT_HSTS_MAX_AGE_SECONDS}`,
+    `hsts_include_subdomains = ${CLAW_EDGE_DEFAULT_HSTS_INCLUDE_SUBDOMAINS ? 'true' : 'false'}`,
+    `hsts_preload = ${CLAW_EDGE_DEFAULT_HSTS_PRELOAD ? 'true' : 'false'}`,
+    `csp_frame_src = [${CLAW_EDGE_DEFAULT_CSP_FRAME_SRC.map((origin) => `"${origin}"`).join(', ')}]`,
     '',
     '[portal.tools]',
     'rate_limit_requests = 120',

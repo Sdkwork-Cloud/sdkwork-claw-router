@@ -4,30 +4,37 @@
   "application": "sdkwork-clawrouter",
   "authority": "../sdkwork-specs/NAMING_SPEC.md",
   "approvedAt": "2026-06-18",
+  "completedAt": "2026-06-22",
   "reviewBy": "2026-12-31",
-  "legacyCrates": [
+  "legacyCrates": [],
+  "completedMigrations": [
     {
-      "path": "services/sdkwork-claw-product",
-      "target": "services/sdkwork-clawrouter-router-service",
-      "reason": "Pre-standard sdkwork-claw-product crate uses forbidden app-product suffix per NAMING_SPEC.md §4.3. Target uses capability router (AI gateway/routing domain), not commerce product/catalog."
+      "from": "services/sdkwork-claw-product",
+      "to": "services/sdkwork-clawrouter-router-service",
+      "completedAt": "2026-06-22"
     },
     {
-      "path": "services/sdkwork-claw-app",
-      "target": "services/sdkwork-clawrouter-app-api-server",
-      "reason": "Pre-standard app-api process crate; rename blocked on route crate and topology naming alignment."
+      "from": "services/sdkwork-claw-app",
+      "to": "services/sdkwork-clawrouter-app-api-server",
+      "completedAt": "2026-06-22"
     },
     {
-      "path": "services/sdkwork-claw-admin",
-      "target": "services/sdkwork-clawrouter-admin-api-server",
-      "reason": "Pre-standard admin-api process crate; rename blocked on backend route manifest and release workflow updates."
+      "from": "services/sdkwork-claw-admin",
+      "to": "services/sdkwork-clawrouter-admin-api-server",
+      "completedAt": "2026-06-22"
+    },
+    {
+      "from": "crates/sdkwork-claw-product-test-support",
+      "to": "crates/sdkwork-clawrouter-router-service-test-support",
+      "completedAt": "2026-06-22"
+    },
+    {
+      "from": "services/sdkwork-claw-gateway",
+      "to": "services/sdkwork-clawrouter-gateway",
+      "completedAt": "2026-06-22"
     }
   ],
+  "pendingMigrations": [],
   "canonicalApplicationCode": "clawrouter",
-  "legacyRepositoryStems": [
-    {
-      "path": "sdkwork-clawrouter",
-      "target": "sdkwork-clawrouter",
-      "reason": "Retired hyphenated repository stem; canonical application code and repository stem is clawrouter."
-    }
-  ]
+  "legacyRepositoryStems": []
 }

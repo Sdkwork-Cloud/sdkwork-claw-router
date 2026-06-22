@@ -129,7 +129,7 @@ class WorkspaceDeliveryStandardTest(unittest.TestCase):
         self.assertIn("Docker engine is not available", source)
         self.assertIn("docker version", source)
         self.assertIn("cargo", source)
-        self.assertIn("sdkwork-claw-product", source)
+        self.assertIn("sdkwork-clawrouter-router-service", source)
         self.assertNotIn("postgres_generation_history_sql_contract", source)
         self.assertIn("postgres_transaction_integration", source)
 
@@ -210,7 +210,7 @@ class WorkspaceDeliveryStandardTest(unittest.TestCase):
             "PORTAL_PUBLIC_TOOL_API_ENABLED",
             "scripts/release-environment-contract.mjs",
             ".env.release.example",
-            ".env.release.local",
+            ".env.release",
             "--env-file",
             "pnpm release:env:write",
             "pnpm install:packages:plan",

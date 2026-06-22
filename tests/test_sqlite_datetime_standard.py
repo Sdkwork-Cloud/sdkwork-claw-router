@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SQLITE_SOURCE_ROOT = ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite"
+SQLITE_SOURCE_ROOT = ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "sqlite"
 
 TEXT_TIMESTAMP_COLUMNS = (
     "effective_from",

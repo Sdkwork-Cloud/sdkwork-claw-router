@@ -183,26 +183,26 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
             rust:
               crates:
                 - name: sdkwork_commerce_http
-                  manifest: services/sdkwork-claw-app/Cargo.toml
+                  manifest: services/sdkwork-clawrouter-app-api-server/Cargo.toml
                 - name: sdkwork_commerce_membership_sqlx
-                  manifest: services/sdkwork-claw-app/Cargo.toml
+                  manifest: services/sdkwork-clawrouter-app-api-server/Cargo.toml
                 - name: sdkwork_commerce_membership_sqlx
-                  manifest: services/sdkwork-claw-admin/Cargo.toml
+                  manifest: services/sdkwork-clawrouter-admin-api-server/Cargo.toml
             contractTests:
-              - services/sdkwork-claw-app/tests/contract_routes.rs
+              - services/sdkwork-clawrouter-app-api-server/tests/contract_routes.rs
             verification:
               - python -B -m unittest tests.test_commerce_standard
             forbiddenProductForks:
-              - services/sdkwork-claw-product/src/api/app_vip*.rs
-              - services/sdkwork-claw-product/src/infrastructure/sql/*/app_vip*.rs
-              - services/sdkwork-claw-product/src/api/app_checkout.rs
-              - services/sdkwork-claw-product/src/api/app_recharge.rs
-              - services/sdkwork-claw-product/src/ports/checkout_store.rs
-              - services/sdkwork-claw-product/src/ports/recharge_store.rs
-              - services/sdkwork-claw-product/src/infrastructure/sql/sqlite/checkout_store.rs
-              - services/sdkwork-claw-product/src/infrastructure/sql/sqlite/recharge_store.rs
-              - services/sdkwork-claw-product/src/infrastructure/sql/postgres/checkout_store.rs
-              - services/sdkwork-claw-product/src/infrastructure/sql/postgres/recharge_store.rs
+              - services/sdkwork-clawrouter-router-service/src/api/app_vip*.rs
+              - services/sdkwork-clawrouter-router-service/src/infrastructure/sql/*/app_vip*.rs
+              - services/sdkwork-clawrouter-router-service/src/api/app_checkout.rs
+              - services/sdkwork-clawrouter-router-service/src/api/app_recharge.rs
+              - services/sdkwork-clawrouter-router-service/src/ports/checkout_store.rs
+              - services/sdkwork-clawrouter-router-service/src/ports/recharge_store.rs
+              - services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/checkout_store.rs
+              - services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/recharge_store.rs
+              - services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/checkout_store.rs
+              - services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/recharge_store.rs
             sdkBoundary: generated-sdk-through-ports
         """
 
@@ -238,7 +238,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
             self.write_runtime_adapter(root, adapter)
         self.write_cargo(
             root,
-            "services/sdkwork-claw-app/Cargo.toml",
+            "services/sdkwork-clawrouter-app-api-server/Cargo.toml",
             """
             [dependencies]
             sdkwork_commerce_http = { path = "../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-http-rust" }
@@ -247,13 +247,13 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
         )
         self.write_cargo(
             root,
-            "services/sdkwork-claw-admin/Cargo.toml",
+            "services/sdkwork-clawrouter-admin-api-server/Cargo.toml",
             """
             [dependencies]
             sdkwork_commerce_membership_sqlx = { path = "../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-membership-sqlx-rust" }
             """,
         )
-        self.write_runtime_adapter(root, "services/sdkwork-claw-app/tests/contract_routes.rs")
+        self.write_runtime_adapter(root, "services/sdkwork-clawrouter-app-api-server/tests/contract_routes.rs")
         self.write_runtime_adapter(root, "tests/test_commerce_standard.py")
 
     def write_frontend_contract_index(self, root: Path, content: str) -> Path:
@@ -301,7 +301,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
                 self.write_runtime_adapter(root, adapter)
             self.write_cargo(
                 root,
-                "services/sdkwork-claw-app/Cargo.toml",
+                "services/sdkwork-clawrouter-app-api-server/Cargo.toml",
                 """
                 [dependencies]
                 sdkwork_commerce_http = { workspace = true }
@@ -310,13 +310,13 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
             )
             self.write_cargo(
                 root,
-                "services/sdkwork-claw-admin/Cargo.toml",
+                "services/sdkwork-clawrouter-admin-api-server/Cargo.toml",
                 """
                 [dependencies]
                 sdkwork_commerce_membership_sqlx = { workspace = true }
                 """,
             )
-            self.write_runtime_adapter(root, "services/sdkwork-claw-app/tests/contract_routes.rs")
+            self.write_runtime_adapter(root, "services/sdkwork-clawrouter-app-api-server/tests/contract_routes.rs")
             self.write_runtime_adapter(root, "tests/test_commerce_standard.py")
 
             result = AppbaseIntegrationGuardian(root=root).run()
@@ -405,7 +405,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
             root = Path(tmp)
             self.write_valid_files(root)
             self.write_portal_package(root, {"@sdkwork/clawrouter-app-sdk": "workspace:*"})
-            product_fork = root / "services" / "sdkwork-claw-product" / "src" / "api" / "app_vip.rs"
+            product_fork = root / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "app_vip.rs"
             product_fork.parent.mkdir(parents=True, exist_ok=True)
             product_fork.write_text("// product fork\n", encoding="utf-8")
 
@@ -417,7 +417,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
                 result.messages,
             )
             self.assertIn(
-                "appbase integration commerce forbids product fork path matching services/sdkwork-claw-product/src/api/app_vip*.rs: services/sdkwork-claw-product/src/api/app_vip.rs",
+                "appbase integration commerce forbids product fork path matching services/sdkwork-clawrouter-router-service/src/api/app_vip*.rs: services/sdkwork-clawrouter-router-service/src/api/app_vip.rs",
                 result.messages,
             )
 
@@ -482,7 +482,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
                       adapters: []
                       sdkInjectionAdapters: []
                     contractTests:
-                      - services/sdkwork-claw-app/tests/contract_routes.rs
+                      - services/sdkwork-clawrouter-app-api-server/tests/contract_routes.rs
                     verification:
                       - python -B -m unittest tests.test_commerce_standard
                     forbiddenProductForks: []

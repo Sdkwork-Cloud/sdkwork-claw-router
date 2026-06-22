@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SQL_SOURCE_ROOT = ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql"
+SQL_SOURCE_ROOT = ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql"
 GENERATED_POSTGRES_SCHEMA = ROOT / "generated" / "schema" / "postgres" / "schema.sql"
 SCHEMA_COMPILER_DOC = ROOT / "docs" / "21-schema-compiler-postgres-ddl.md"
 

@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class AppApiKeyRuntimeStandardTest(unittest.TestCase):
     def test_app_api_key_creation_does_not_use_in_memory_command_store(self) -> None:
-        api_key_route = ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_api_keys.rs"
+        api_key_route = ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "app_api_keys.rs"
         source = api_key_route.read_text(encoding="utf-8")
 
         self.assertNotIn("InMemoryGatewayApiKeyCommandStore", source)
@@ -29,7 +29,7 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         self.assertIn("PostgresAppRoutingChannelCommandStore::new", source)
 
     def test_app_api_key_creation_uses_refreshable_read_store_not_overlay(self) -> None:
-        api_key_route = ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_api_keys.rs"
+        api_key_route = ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "app_api_keys.rs"
         source = api_key_route.read_text(encoding="utf-8")
 
         self.assertNotIn("AppApiKeyOverlay", source)
@@ -56,7 +56,7 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         store_paths = [
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -64,7 +64,7 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
             / "api_key_command_store.rs",
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -404,10 +404,10 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
             ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml",
         )
         api_key_route = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_api_keys.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "app_api_keys.rs"
         ).read_text(encoding="utf-8")
         database_route_test = (
-            ROOT / "services" / "sdkwork-claw-app" / "tests" / "database_config_router.rs"
+            ROOT / "services" / "sdkwork-clawrouter-app-api-server" / "tests" / "database_config_router.rs"
         ).read_text(encoding="utf-8")
         service = (
             ROOT
@@ -439,7 +439,7 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         access_domain = (
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "domain"
             / "access.rs"
@@ -677,7 +677,7 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
             ROOT / "generated" / "schema" / "postgres" / "schema.sql"
         ).read_text(encoding="utf-8")
         api_key_route = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_api_keys.rs"
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "app_api_keys.rs"
         ).read_text(encoding="utf-8")
 
         self.assertIn("idempotency_key: string(128)", schema)
@@ -705,9 +705,9 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("REQUEST_ID_HEADER", api_key_route)
 
         for relative_path in [
-            "services/sdkwork-claw-product/src/ports/api_key_command_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/api_key_command_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/api_key_command_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/ports/api_key_command_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/api_key_command_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/api_key_command_store.rs",
         ]:
             source = (ROOT / relative_path).read_text(encoding="utf-8")
             with self.subTest(path=relative_path):
@@ -763,7 +763,7 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
     def test_app_api_key_creation_uses_signed_trusted_subject_boundary(self) -> None:
         service = ROOT / "crates" / "sdkwork-router-app-api" / "src" / "routes.rs"
         service_source = service.read_text(encoding="utf-8")
-        route_test = ROOT / "services" / "sdkwork-claw-app" / "tests" / "database_config_router.rs"
+        route_test = ROOT / "services" / "sdkwork-clawrouter-app-api-server" / "tests" / "database_config_router.rs"
         route_test_source = route_test.read_text(encoding="utf-8")
         http_auth = ROOT / "crates" / "sdkwork-claw-http" / "src" / "auth.rs"
         http_auth_source = http_auth.read_text(encoding="utf-8")
@@ -790,7 +790,7 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         http_auth_source = http_auth.read_text(encoding="utf-8")
         service = ROOT / "crates" / "sdkwork-router-app-api" / "src" / "routes.rs"
         service_source = service.read_text(encoding="utf-8")
-        route_test = ROOT / "services" / "sdkwork-claw-app" / "tests" / "database_config_router.rs"
+        route_test = ROOT / "services" / "sdkwork-clawrouter-app-api-server" / "tests" / "database_config_router.rs"
         route_test_source = route_test.read_text(encoding="utf-8")
         sdk_clients = (
             ROOT
@@ -828,7 +828,7 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("organizationId: options.organizationId", sdk_clients)
 
     def test_product_direct_handler_tests_use_internal_subject_helper(self) -> None:
-        product_tests = ROOT / "services" / "sdkwork-claw-product" / "tests"
+        product_tests = ROOT / "services" / "sdkwork-clawrouter-router-service" / "tests"
         common = (product_tests / "common" / "mod.rs").read_text(encoding="utf-8")
 
         self.assertIn("InternalTrustedSubjectHeaders", common)

@@ -2047,6 +2047,7 @@ dependencies = [
  "pkcs1",
  "pkcs8",
  "rand_core 0.6.4",
+ "sha2",
  "signature",
  "spki",
  "subtle",
@@ -2215,41 +2216,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "sdkwork-claw-admin"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "axum",
- "sdkwork-claw-app",
- "sdkwork-claw-config",
- "sdkwork-claw-http",
- "sdkwork-claw-product",
- "sdkwork-claw-test-support",
- "sdkwork-router-backend-api",
- "serde_json",
- "sqlx",
- "tokio",
- "tower",
-]
-
-[[package]]
-name = "sdkwork-claw-app"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "axum",
- "sdkwork-claw-config",
- "sdkwork-claw-product",
- "sdkwork-claw-test-support",
- "sdkwork-models",
- "sdkwork-router-app-api",
- "serde_json",
- "sqlx",
- "tokio",
- "tower",
-]
-
-[[package]]
 name = "sdkwork-claw-config"
 version = "0.1.0"
 dependencies = [
@@ -2276,43 +2242,6 @@ dependencies = [
  "sdkwork-claw-config",
  "serde",
  "serde_json",
-]
-
-[[package]]
-name = "sdkwork-claw-gateway"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "axum",
- "bytes",
- "futures-core",
- "getrandom 0.3.4",
- "hex",
- "http-body-util",
- "hyper",
- "hyper-rustls",
- "hyper-util",
- "sdkwork-api-gateway",
- "sdkwork-api-gateway-config",
- "sdkwork-claw-config",
- "sdkwork-claw-http",
- "sdkwork-claw-observability",
- "sdkwork-claw-product",
- "sdkwork-claw-provider-adapter-contract",
- "sdkwork-claw-provider-adapter-http",
- "sdkwork-claw-provider-adapter-registry",
- "sdkwork-claw-test-support",
- "sdkwork-database-config",
- "sdkwork-database-sqlx",
- "sdkwork-router-app-api",
- "sdkwork-router-backend-api",
- "sdkwork-sdk-generator-client",
- "serde_json",
- "sha2",
- "sqlx",
- "tokio",
- "tower",
- "tracing",
 ]
 
 [[package]]
@@ -2346,7 +2275,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "sdkwork-claw-config",
- "sdkwork-claw-product",
+ "sdkwork-clawrouter-router-service",
  "sdkwork-commerce-contract-service",
  "serde",
  "serde_json",
@@ -2369,73 +2298,6 @@ version = "0.1.0"
 dependencies = [
  "serde",
  "serde_json",
- "tokio",
-]
-
-[[package]]
-name = "sdkwork-claw-product"
-version = "0.1.0"
-dependencies = [
- "axum",
- "base64",
- "bytes",
- "futures-util",
- "getrandom 0.3.4",
- "hex",
- "hmac",
- "http-body-util",
- "hyper",
- "hyper-rustls",
- "hyper-util",
- "redis",
- "ring",
- "sdkwork-appbase-iam-bootstrap",
- "sdkwork-claw-config",
- "sdkwork-claw-contract",
- "sdkwork-claw-core",
- "sdkwork-claw-http",
- "sdkwork-claw-product-test-support",
- "sdkwork-claw-provider-adapter-contract",
- "sdkwork-claw-provider-adapter-http",
- "sdkwork-claw-provider-adapter-registry",
- "sdkwork-clawrouter-admin-monitor-repository-sqlx",
- "sdkwork-clawrouter-app-gateway-traces-repository-sqlx",
- "sdkwork-clawrouter-app-iam-directory-repository-sqlx",
- "sdkwork-clawrouter-database-host",
- "sdkwork-commerce-bootstrap-manifest",
- "sdkwork-commerce-contract-service",
- "sdkwork-commerce-invoice-service",
- "sdkwork-commerce-membership-repository-sqlx",
- "sdkwork-commerce-payment-service",
- "sdkwork-commerce-storage-repository-sqlx",
- "sdkwork-database-config",
- "sdkwork-database-repository",
- "sdkwork-database-sqlx",
- "sdkwork-iam-directory-repository-sqlx",
- "sdkwork-id-core",
- "sdkwork-models",
- "sdkwork-models-catalog-repository-sqlx",
- "sdkwork-models-catalog-service",
- "sdkwork-models-contract-service",
- "sdkwork-models-database-bootstrap",
- "sdkwork-sdk-generator-client",
- "sdkwork-utils-rust",
- "serde",
- "serde_json",
- "sha2",
- "sqlx",
- "tokio",
- "tower",
- "tracing",
-]
-
-[[package]]
-name = "sdkwork-claw-product-test-support"
-version = "0.1.0"
-dependencies = [
- "sdkwork-claw-product",
- "sdkwork-commerce-bootstrap-manifest",
- "sqlx",
  "tokio",
 ]
 
@@ -2519,12 +2381,68 @@ dependencies = [
 ]
 
 [[package]]
+name = "sdkwork-clawrouter-admin-analytics-repository-sqlx"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-database-sqlx",
+ "sdkwork-models-catalog-service",
+ "sdkwork-utils-rust",
+ "serde",
+ "sqlx",
+]
+
+[[package]]
+name = "sdkwork-clawrouter-admin-api-server"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "axum",
+ "sdkwork-claw-config",
+ "sdkwork-claw-http",
+ "sdkwork-claw-test-support",
+ "sdkwork-clawrouter-app-api-server",
+ "sdkwork-clawrouter-router-service",
+ "sdkwork-router-backend-api",
+ "serde_json",
+ "sqlx",
+ "tokio",
+ "tower",
+]
+
+[[package]]
+name = "sdkwork-clawrouter-admin-dashboard-repository-sqlx"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-database-sqlx",
+ "sdkwork-utils-rust",
+ "serde",
+ "sqlx",
+]
+
+[[package]]
 name = "sdkwork-clawrouter-admin-monitor-repository-sqlx"
 version = "0.1.0"
 dependencies = [
  "sdkwork-database-sqlx",
  "serde",
  "sqlx",
+]
+
+[[package]]
+name = "sdkwork-clawrouter-app-api-server"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "axum",
+ "sdkwork-claw-config",
+ "sdkwork-claw-test-support",
+ "sdkwork-clawrouter-router-service",
+ "sdkwork-models",
+ "sdkwork-router-app-api",
+ "serde_json",
+ "sqlx",
+ "tokio",
+ "tower",
 ]
 
 [[package]]
@@ -2546,6 +2464,27 @@ dependencies = [
 ]
 
 [[package]]
+name = "sdkwork-clawrouter-app-providers-repository-sqlx"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-database-sqlx",
+ "sdkwork-models-catalog-service",
+ "serde",
+ "sqlx",
+]
+
+[[package]]
+name = "sdkwork-clawrouter-app-user-profile-repository-sqlx"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-database-sqlx",
+ "sdkwork-utils-rust",
+ "serde",
+ "serde_json",
+ "sqlx",
+]
+
+[[package]]
 name = "sdkwork-clawrouter-database-host"
 version = "0.1.0"
 dependencies = [
@@ -2554,6 +2493,126 @@ dependencies = [
  "sdkwork-database-lifecycle",
  "sdkwork-database-spi",
  "sdkwork-database-sqlx",
+]
+
+[[package]]
+name = "sdkwork-clawrouter-gateway"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "axum",
+ "bytes",
+ "futures-core",
+ "getrandom 0.3.4",
+ "hex",
+ "http-body-util",
+ "hyper",
+ "hyper-rustls",
+ "hyper-util",
+ "sdkwork-api-gateway",
+ "sdkwork-api-gateway-config",
+ "sdkwork-claw-config",
+ "sdkwork-claw-http",
+ "sdkwork-claw-observability",
+ "sdkwork-claw-provider-adapter-contract",
+ "sdkwork-claw-provider-adapter-http",
+ "sdkwork-claw-provider-adapter-registry",
+ "sdkwork-claw-test-support",
+ "sdkwork-clawrouter-router-service",
+ "sdkwork-database-config",
+ "sdkwork-database-sqlx",
+ "sdkwork-router-app-api",
+ "sdkwork-router-backend-api",
+ "sdkwork-sdk-generator-client",
+ "serde_json",
+ "sha2",
+ "sqlx",
+ "tokio",
+ "tower",
+ "tracing",
+]
+
+[[package]]
+name = "sdkwork-clawrouter-router-service"
+version = "0.1.0"
+dependencies = [
+ "axum",
+ "base64",
+ "bytes",
+ "futures-util",
+ "getrandom 0.3.4",
+ "hex",
+ "hmac",
+ "http-body-util",
+ "hyper",
+ "hyper-rustls",
+ "hyper-util",
+ "redis",
+ "ring",
+ "sdkwork-appbase-iam-bootstrap",
+ "sdkwork-claw-config",
+ "sdkwork-claw-contract",
+ "sdkwork-claw-core",
+ "sdkwork-claw-http",
+ "sdkwork-claw-provider-adapter-contract",
+ "sdkwork-claw-provider-adapter-http",
+ "sdkwork-claw-provider-adapter-registry",
+ "sdkwork-claw-test-support",
+ "sdkwork-clawrouter-admin-analytics-repository-sqlx",
+ "sdkwork-clawrouter-admin-dashboard-repository-sqlx",
+ "sdkwork-clawrouter-admin-monitor-repository-sqlx",
+ "sdkwork-clawrouter-app-gateway-traces-repository-sqlx",
+ "sdkwork-clawrouter-app-iam-directory-repository-sqlx",
+ "sdkwork-clawrouter-app-providers-repository-sqlx",
+ "sdkwork-clawrouter-app-user-profile-repository-sqlx",
+ "sdkwork-clawrouter-database-host",
+ "sdkwork-clawrouter-router-service-test-support",
+ "sdkwork-clawrouter-settlements-dashboard-repository-sqlx",
+ "sdkwork-commerce-bootstrap-manifest",
+ "sdkwork-commerce-contract-service",
+ "sdkwork-commerce-invoice-service",
+ "sdkwork-commerce-membership-repository-sqlx",
+ "sdkwork-commerce-payment-service",
+ "sdkwork-commerce-storage-repository-sqlx",
+ "sdkwork-database-config",
+ "sdkwork-database-repository",
+ "sdkwork-database-sqlx",
+ "sdkwork-iam-directory-repository-sqlx",
+ "sdkwork-id-core",
+ "sdkwork-models",
+ "sdkwork-models-catalog-repository-sqlx",
+ "sdkwork-models-catalog-service",
+ "sdkwork-models-contract-service",
+ "sdkwork-models-database-bootstrap",
+ "sdkwork-sdk-generator-client",
+ "sdkwork-utils-rust",
+ "serde",
+ "serde_json",
+ "sha2",
+ "sqlx",
+ "tokio",
+ "tower",
+ "tracing",
+]
+
+[[package]]
+name = "sdkwork-clawrouter-router-service-test-support"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-clawrouter-router-service",
+ "sdkwork-commerce-bootstrap-manifest",
+ "sqlx",
+ "tokio",
+]
+
+[[package]]
+name = "sdkwork-clawrouter-settlements-dashboard-repository-sqlx"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-models-catalog-service",
+ "serde",
+ "serde_json",
+ "sqlx",
 ]
 
 [[package]]
@@ -2776,6 +2835,18 @@ dependencies = [
  "sdkwork-commerce-api-server",
  "sdkwork-commerce-contract-service",
  "sdkwork-commerce-service-host",
+]
+
+[[package]]
+name = "sdkwork-content-documents-sdk-reference"
+version = "0.1.0"
+dependencies = [
+ "axum",
+ "base64",
+ "sdkwork-sdk-generator-client",
+ "sdkwork-utils-rust",
+ "serde",
+ "serde_json",
 ]
 
 [[package]]
@@ -3035,7 +3106,8 @@ dependencies = [
  "sdkwork-claw-config",
  "sdkwork-claw-http",
  "sdkwork-claw-observability",
- "sdkwork-claw-product",
+ "sdkwork-clawrouter-router-service",
+ "sdkwork-content-documents-sdk-reference",
  "sdkwork-iam-web-adapter",
  "sdkwork-router-catalog-app-api",
  "sdkwork-web-axum",
@@ -3059,7 +3131,7 @@ dependencies = [
  "sdkwork-claw-config",
  "sdkwork-claw-http",
  "sdkwork-claw-observability",
- "sdkwork-claw-product",
+ "sdkwork-clawrouter-router-service",
  "sdkwork-iam-web-adapter",
  "sdkwork-models-catalog-repository-sqlx",
  "sdkwork-models-contract-service",
@@ -3118,7 +3190,6 @@ dependencies = [
  "sdkwork-database-config",
  "sdkwork-database-sqlx",
  "sdkwork-iam-context-service",
- "sdkwork-iam-directory-repository-sqlx",
  "sdkwork-iam-web-adapter",
  "sdkwork-utils-rust",
  "sdkwork-web-axum",
@@ -3247,10 +3318,14 @@ dependencies = [
  "async-trait",
  "axum",
  "getrandom 0.2.17",
+ "hmac",
  "http",
+ "rsa",
  "sdkwork-web-contract",
  "serde",
  "serde_json",
+ "sha2",
+ "tokio",
  "tracing",
 ]
 

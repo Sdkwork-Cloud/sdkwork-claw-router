@@ -416,8 +416,70 @@ frontend_operations:
   query_parameters: []
   response_schema:
     name: IamUserResponse
-    schema:
-      $ref: '#/components/schemas/IamUserResponse'
+    type: object
+    additionalProperties: false
+    required:
+    - id
+    - username
+    - displayName
+    - email
+    - avatar
+    - phone
+    - language
+    - isVerified
+    - status
+    - registeredAt
+    - lastLogin
+    - lastLoginIp
+    - passwordLastChanged
+    - twoFactorEnabled
+    - thirdPartyBound
+    properties:
+      id:
+        type: string
+        minLength: 1
+        maxLength: 128
+      username:
+        type: string
+        minLength: 1
+        maxLength: 128
+      displayName:
+        type: string
+        minLength: 1
+        maxLength: 128
+      email:
+        type: string
+        maxLength: 256
+      avatar:
+        $ref: '#/components/schemas/MediaResource'
+      phone:
+        type: string
+        description: Safe display phone value, empty when unavailable.
+      language:
+        type: string
+        maxLength: 32
+      isVerified:
+        type: boolean
+      status:
+        type: string
+        maxLength: 32
+      registeredAt:
+        type: string
+        format: date-time
+      lastLogin:
+        type: string
+        maxLength: 64
+      lastLoginIp:
+        type: string
+        description: Masked client IP address from the latest login event.
+      passwordLastChanged:
+        type: string
+        maxLength: 64
+      twoFactorEnabled:
+        type: boolean
+      thirdPartyBound:
+        type: string
+        description: Safe OAuth provider binding summary without provider subject IDs or tokens.
 - route: /console/user
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts
   operation: fetchIamOrganizations

@@ -804,7 +804,7 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
             ).glob("*.ts")
         )
         app_api_source = (
-            ROOT / "services" / "sdkwork-claw-app" / "src" / "lib.rs"
+            ROOT / "services" / "sdkwork-clawrouter-app-api-server" / "src" / "lib.rs"
         ).read_text(encoding="utf-8")
         operations_source = (
             PLAYGROUND_ROOT / "appRuntimeApiOperations.ts"
@@ -863,23 +863,23 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
 
     def test_playground_agent_generation_legacy_backend_entrypoint_is_removed(self) -> None:
         old_backend_files = [
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_generation_agent.rs",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "app_generation_agent.rs",
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "ports"
             / "app_generation_agent_run_store.rs",
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
             / "app_generation_agent_runtime.rs",
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -887,7 +887,7 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
             / "app_generation_agent_run_store.rs",
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -895,7 +895,7 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
             / "app_generation_agent_run_store.rs",
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "tests"
             / "sqlite_app_generation_agent_run_store.rs",
         ]
@@ -905,12 +905,12 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
                 self.assertFalse(old_file.exists())
 
         checked_sources = [
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "mod.rs",
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "mod.rs",
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "mod.rs",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "mod.rs",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "ports" / "mod.rs",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "mod.rs",
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -918,7 +918,7 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
             / "mod.rs",
             ROOT
             / "services"
-            / "sdkwork-claw-product"
+            / "sdkwork-clawrouter-router-service"
             / "src"
             / "infrastructure"
             / "sql"
@@ -1183,8 +1183,8 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
 
     def test_playground_history_rust_read_models_fail_closed_for_invalid_database_rows(self) -> None:
         for relative in [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/app_generation_history_read_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/app_generation_history_read_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/app_generation_history_read_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/app_generation_history_read_store.rs",
         ]:
             with self.subTest(store=relative):
                 self.assertFalse((ROOT / relative).exists())

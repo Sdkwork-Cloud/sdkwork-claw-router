@@ -13,10 +13,10 @@
 ### Task 1: Rust Verification Sender Port
 
 **Files:**
-- Modify: `services/sdkwork-claw-product/src/api/app_auth.rs`
-- Modify: `services/sdkwork-claw-product/src/ports/mod.rs`
-- Create: `services/sdkwork-claw-product/src/ports/verification_code_sender.rs`
-- Test: `services/sdkwork-claw-product/tests/app_auth_api.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/api/app_auth.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/ports/mod.rs`
+- Create: `services/sdkwork-clawrouter-router-service/src/ports/verification_code_sender.rs`
+- Test: `services/sdkwork-clawrouter-router-service/tests/app_auth_api.rs`
 
 - [ ] Write failing tests proving verification code creation uses an injected sender and does not expose `debugCode` when delivery mode is production.
 - [ ] Add `VerificationCodeDeliveryRequest`, `VerificationCodeDeliveryReceipt`, and `VerificationCodeSender`.
@@ -24,16 +24,16 @@
 - [ ] Inject the sender through auth router state without breaking existing route constructors.
 - [ ] Send login/register/password-reset codes through the sender after persistence.
 - [ ] Keep local/dev tests able to inspect debug delivery without production API leakage.
-- [ ] Run `cargo test -p sdkwork-claw-product --test app_auth_api`.
+- [ ] Run `cargo test -p sdkwork-clawrouter-router-service --test app_auth_api`.
 
 ### Task 2: Rust Provider Config Read Model
 
 **Files:**
-- Create: `services/sdkwork-claw-product/src/ports/verification_delivery_config_store.rs`
-- Create: `services/sdkwork-claw-product/src/infrastructure/sql/sqlite/verification_delivery_config_store.rs`
-- Create: `services/sdkwork-claw-product/src/infrastructure/sql/postgres/verification_delivery_config_store.rs`
-- Modify: `services/sdkwork-claw-product/src/infrastructure/sql/sqlite/mod.rs`
-- Modify: `services/sdkwork-claw-product/src/infrastructure/sql/postgres/mod.rs`
+- Create: `services/sdkwork-clawrouter-router-service/src/ports/verification_delivery_config_store.rs`
+- Create: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/verification_delivery_config_store.rs`
+- Create: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/verification_delivery_config_store.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/mod.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/mod.rs`
 - Test: new focused Rust SQL store tests
 
 - [ ] Write failing tests for selecting active EMAIL/SMS verification delivery configuration by tenant, organization, channel, scene, and priority.

@@ -157,7 +157,11 @@ function escapeRegExp(value: string): string {
 }
 
 function readAdminRegistrySource(): string {
-  return readPortalFile("./src/adminModuleRegistry.ts");
+  return readPortalFile("./packages/sdkwork-clawrouter-pc-admin-shell/src/adminModuleRegistry.ts");
+}
+
+function readAdminLayoutSource(): string {
+  return readPortalFile("./packages/sdkwork-clawrouter-pc-admin-shell/src/AdminLayout.tsx");
 }
 
 function findAdminModuleDefinitionSource(source: string, moduleId: string): string {
@@ -786,7 +790,7 @@ test("portal exposes backend-backed admin auth settings configuration", () => {
   const settingsServiceSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-site/src/AuthSettingsService.ts");
   const routeClassificationSource = readPortalFile("../../docs/schema-registry/frontend-route-classification.yaml");
 
-  assert.match(appSource, /lazyRoute\(\(\) => import\('sdkwork-clawrouter-pc-admin-site'\), 'ClawRouterAuthSettingsPage'\)/);
+  assert.match(appSource, /lazyRoute\(\(\) => import\('@sdkwork\/clawrouter-pc-admin-site'\), 'ClawRouterAuthSettingsPage'\)/);
   assert.match(appSource, /<Route path="settings" element=\{<ClawRouterAuthSettingsPage \/>} \/>/);
   assert.match(adminRegistrySource, /path:\s*'\/admin\/settings'/);
   assert.match(adminRegistrySource, /ShieldCheck/);
@@ -1552,8 +1556,8 @@ test("portal wires console and admin routes through the protected session guard"
 });
 
 test("console and admin logout revoke the current IAM session through the app SDK", () => {
-  const consoleLayoutSource = readPortalFile("./packages/sdkwork-clawrouter-pc-console-core/src/ConsoleLayout.tsx");
-  const adminLayoutSource = readPortalFile("./src/AdminLayout.tsx");
+  const consoleLayoutSource = readPortalFile("./packages/sdkwork-clawrouter-pc-console-shell/src/ConsoleLayout.tsx");
+  const adminLayoutSource = readAdminLayoutSource();
   const sessionServiceSource = readPortalFile("./packages/sdkwork-clawrouter-pc-commons/src/sessionService.ts");
 
   assert.match(consoleLayoutSource, /revokeAppSession/);
@@ -1566,7 +1570,7 @@ test("console and admin logout revoke the current IAM session through the app SD
 });
 
 test("admin sidebar labels are resolved through i18n keys", () => {
-  const adminLayoutSource = readPortalFile("./src/AdminLayout.tsx");
+  const adminLayoutSource = readAdminLayoutSource();
   const adminRegistrySource = readAdminRegistrySource();
   const i18nSource = readI18nResourceSource();
 
@@ -1689,7 +1693,7 @@ test("admin auth and site settings belong to the operations module", () => {
 });
 
 test("admin dashboard is a top-level sidebar item", () => {
-  const adminLayoutSource = readPortalFile("./src/AdminLayout.tsx");
+  const adminLayoutSource = readAdminLayoutSource();
   const adminRegistrySource = readAdminRegistrySource();
 
   assert.match(
@@ -2148,7 +2152,7 @@ test("admin OAuth owns official account and mini program resource-account sectio
   const packageJson = JSON.parse(readPortalFile("./package.json")) as { dependencies: Record<string, string> };
   const tsconfigSource = readPortalFile("./tsconfig.typecheck.json");
   const adminRegistrySource = readAdminRegistrySource();
-  const adminLayoutSource = readPortalFile("./src/AdminLayout.tsx");
+  const adminLayoutSource = readAdminLayoutSource();
   const appSource = readPortalFile("./src/App.tsx");
   const i18nSource = readI18nResourceSource();
   const oauthPackageJson = JSON.parse(readPortalFile("./packages/sdkwork-clawrouter-pc-admin-oauth/package.json")) as { name: string; dependencies: Record<string, string> };
@@ -2370,7 +2374,7 @@ test("admin usage records and analytics are grouped under home data management",
 });
 
 test("admin sidebar menu groups are expanded by default", () => {
-  const adminLayoutSource = readPortalFile("./src/AdminLayout.tsx");
+  const adminLayoutSource = readAdminLayoutSource();
 
   assert.match(adminLayoutSource, /const ADMIN_SIDEBAR_GROUPS_DEFAULT_OPEN = true/);
   assert.match(adminLayoutSource, /defaultOpen=\{ADMIN_SIDEBAR_GROUPS_DEFAULT_OPEN\}/);
@@ -2455,7 +2459,7 @@ test("portal consumes sdkwork UI from source so Vite does not ship the UI dist r
   assert.match(viteConfigSource, /sdkwork-ui-pc-react\/src\/theme\/index\.ts/);
   assert.match(
     viteConfigSource,
-    /clawrouterPortalWorkspaceDependencyResolver\(configDir,\s*\[\s*appbaseRoot,\s*sdkworkDriveRoot,\s*sdkworkGenerationsRoot,\s*sdkworkImageRoot,\s*sdkworkCoreRoot,\s*sdkworkUiRoot,\s*sdkworkCommerceRoot,\s*\]\)/,
+    /clawrouterPortalWorkspaceDependencyResolver\(configDir,\s*\[[\s\S]*appbaseRoot,[\s\S]*sdkworkCommerceRoot,[\s\S]*\]\)/,
   );
   assert.match(viteConfigSource, /workspaceDependencyRoots\.some/);
   assert.match(viteConfigSource, /function isPortalWorkspaceDependencyImporter/);

@@ -197,60 +197,6 @@ const HTTP_ROUTES: &[HttpRoute] = &[
         "routeExplain.create",
     ),
     HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/audit/commerce_events",
-        "commerce",
-        "audit.commerceEvents.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/commerce_reports/order_revenue",
-        "commerce",
-        "commerceReports.orderRevenue.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/commerce_reports/payment_reconciliation",
-        "commerce",
-        "commerceReports.paymentReconciliation.retrieve",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/commerce_reports/refunds",
-        "commerce",
-        "commerceReports.refunds.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/content/announcements",
-        "content",
-        "announcements.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Post,
-        "/backend/v3/api/content/announcements",
-        "content",
-        "announcements.create",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Delete,
-        "/backend/v3/api/content/announcements/{announcementId}",
-        "content",
-        "announcements.delete",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Patch,
-        "/backend/v3/api/content/announcements/{announcementId}",
-        "content",
-        "announcements.update",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/fulfillments",
-        "commerce",
-        "fulfillments.list",
-    ),
-    HttpRoute::dual_token(
         HttpMethod::Post,
         "/backend/v3/api/iam/api_keys",
         "iam",
@@ -315,48 +261,6 @@ const HTTP_ROUTES: &[HttpRoute] = &[
         "/backend/v3/api/integration/provider_secrets/{secretId}",
         "integration",
         "providerSecrets.delete",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/inventory/ledger_entries",
-        "commerce",
-        "inventory.ledgerEntries.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/inventory/reservations",
-        "commerce",
-        "inventory.reservations.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/inventory/stocks",
-        "commerce",
-        "inventory.stocks.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Patch,
-        "/backend/v3/api/inventory/stocks/{stockId}",
-        "commerce",
-        "inventory.stocks.update",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/invoices",
-        "commerce",
-        "invoices.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/invoices/titles",
-        "commerce",
-        "invoices.titles.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/invoices/{invoiceId}",
-        "commerce",
-        "invoices.retrieve",
     ),
     HttpRoute::dual_token(
         HttpMethod::Put,
@@ -444,372 +348,6 @@ const HTTP_ROUTES: &[HttpRoute] = &[
     ),
     HttpRoute::dual_token(
         HttpMethod::Get,
-        "/backend/v3/api/memberships/entitlements",
-        "commerce",
-        "memberships.entitlements.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/memberships/members",
-        "commerce",
-        "memberships.members.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Patch,
-        "/backend/v3/api/memberships/members/{membershipId}",
-        "commerce",
-        "memberships.members.update",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/memberships/package_groups",
-        "commerce",
-        "memberships.packageGroups.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Post,
-        "/backend/v3/api/memberships/package_groups",
-        "commerce",
-        "memberships.packageGroups.create",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Delete,
-        "/backend/v3/api/memberships/package_groups/{packageGroupId}",
-        "commerce",
-        "memberships.packageGroups.delete",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Patch,
-        "/backend/v3/api/memberships/package_groups/{packageGroupId}",
-        "commerce",
-        "memberships.packageGroups.update",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/memberships/packages",
-        "commerce",
-        "memberships.packages.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Post,
-        "/backend/v3/api/memberships/packages",
-        "commerce",
-        "memberships.packages.create",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Delete,
-        "/backend/v3/api/memberships/packages/{packageId}",
-        "commerce",
-        "memberships.packages.delete",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Patch,
-        "/backend/v3/api/memberships/packages/{packageId}",
-        "commerce",
-        "memberships.packages.update",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/memberships/plans",
-        "commerce",
-        "memberships.plans.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Post,
-        "/backend/v3/api/memberships/plans",
-        "commerce",
-        "memberships.plans.create",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Delete,
-        "/backend/v3/api/memberships/plans/{planId}",
-        "commerce",
-        "memberships.plans.delete",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Patch,
-        "/backend/v3/api/memberships/plans/{planId}",
-        "commerce",
-        "memberships.plans.update",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Post,
-        "/backend/v3/api/messaging/diagnostics/route_simulation",
-        "messaging",
-        "diagnostics.routeSimulation.create",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Post,
-        "/backend/v3/api/messaging/diagnostics/test_sends",
-        "messaging",
-        "diagnostics.testSends.create",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/messaging/provider_accounts",
-        "messaging",
-        "providerAccounts.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Post,
-        "/backend/v3/api/messaging/provider_accounts",
-        "messaging",
-        "providerAccounts.create",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/messaging/rate_limit_buckets",
-        "messaging",
-        "rateLimitBuckets.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/messaging/route_rules",
-        "messaging",
-        "routeRules.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Post,
-        "/backend/v3/api/messaging/route_rules",
-        "messaging",
-        "routeRules.create",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/messaging/send_requests",
-        "messaging",
-        "sendRequests.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/messaging/sender_identities",
-        "messaging",
-        "senderIdentities.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Post,
-        "/backend/v3/api/messaging/sender_identities",
-        "messaging",
-        "senderIdentities.create",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/messaging/suppressions",
-        "messaging",
-        "suppressions.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Post,
-        "/backend/v3/api/messaging/suppressions",
-        "messaging",
-        "suppressions.create",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Post,
-        "/backend/v3/api/messaging/template_sends",
-        "messaging",
-        "templateSends.create",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/messaging/templates",
-        "messaging",
-        "templates.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Post,
-        "/backend/v3/api/messaging/templates",
-        "messaging",
-        "templates.create",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Post,
-        "/backend/v3/api/messaging/templates/{templateId}/versions/{versionId}/publish",
-        "messaging",
-        "templates.versions.publish",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/messaging/verification_policies",
-        "messaging",
-        "verificationPolicies.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Put,
-        "/backend/v3/api/messaging/verification_policies/{policyId}",
-        "messaging",
-        "verificationPolicies.update",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/orders",
-        "commerce",
-        "orders.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/orders/{orderId}",
-        "commerce",
-        "orders.retrieve",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/orders/{orderId}/events",
-        "commerce",
-        "orders.events.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/payments/attempts",
-        "commerce",
-        "payments.attempts.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/payments/channels",
-        "commerce",
-        "payments.channels.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/payments/intents",
-        "commerce",
-        "payments.intents.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/payments/methods",
-        "commerce",
-        "payments.methods.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/payments/provider_accounts",
-        "commerce",
-        "payments.providerAccounts.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Post,
-        "/backend/v3/api/payments/provider_accounts",
-        "commerce",
-        "payments.providerAccounts.create",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Delete,
-        "/backend/v3/api/payments/provider_accounts/{providerAccountId}",
-        "commerce",
-        "payments.providerAccounts.delete",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Patch,
-        "/backend/v3/api/payments/provider_accounts/{providerAccountId}",
-        "commerce",
-        "payments.providerAccounts.update",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Patch,
-        "/backend/v3/api/payments/provider_accounts/{providerAccountId}/status",
-        "commerce",
-        "payments.providerAccounts.status.update",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/payments/providers",
-        "commerce",
-        "payments.providers.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/payments/reconciliation_runs",
-        "commerce",
-        "payments.reconciliationRuns.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/payments/route_rules",
-        "commerce",
-        "payments.routeRules.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/payments/runtime/snapshot",
-        "commerce",
-        "payments.runtime.snapshot.retrieve",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/payments/webhook_events",
-        "commerce",
-        "payments.webhookEvents.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/promotions/budget_ledger_entries",
-        "system",
-        "promotions.budgetLedgerEntries.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/promotions/codes",
-        "system",
-        "promotions.codes.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/promotions/codes/redemptions",
-        "system",
-        "promotions.codes.redemptions.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/promotions/coupon_ledger_entries",
-        "system",
-        "promotions.couponLedgerEntries.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/promotions/coupon_stocks",
-        "system",
-        "promotions.couponStocks.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/promotions/discount_allocations",
-        "system",
-        "promotions.discountAllocations.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/promotions/discount_applications",
-        "system",
-        "promotions.discountApplications.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/promotions/events",
-        "system",
-        "promotions.events.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/promotions/external_bindings",
-        "system",
-        "promotions.externalBindings.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/promotions/offers",
-        "system",
-        "promotions.offers.management.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/promotions/user_coupons",
-        "system",
-        "promotions.userCoupons.management.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
         "/backend/v3/api/prompts",
         "prompts",
         "definitions.list",
@@ -861,60 +399,6 @@ const HTTP_ROUTES: &[HttpRoute] = &[
         "/backend/v3/api/prompts/{promptId}/versions",
         "prompts",
         "versions.create",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/recharges/orders",
-        "commerce",
-        "recharges.orders.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/recharges/packages",
-        "commerce",
-        "recharges.packages.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Post,
-        "/backend/v3/api/recharges/packages",
-        "commerce",
-        "recharges.packages.create",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Delete,
-        "/backend/v3/api/recharges/packages/{packageId}",
-        "commerce",
-        "recharges.packages.delete",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Patch,
-        "/backend/v3/api/recharges/packages/{packageId}",
-        "commerce",
-        "recharges.packages.update",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/recharges/settings",
-        "commerce",
-        "recharges.settings.retrieve",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Put,
-        "/backend/v3/api/recharges/settings",
-        "commerce",
-        "recharges.settings.update",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/refunds",
-        "commerce",
-        "refunds.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/refunds/{refundId}",
-        "commerce",
-        "refunds.retrieve",
     ),
     HttpRoute::dual_token(
         HttpMethod::Get,
@@ -1032,18 +516,6 @@ const HTTP_ROUTES: &[HttpRoute] = &[
     ),
     HttpRoute::dual_token(
         HttpMethod::Get,
-        "/backend/v3/api/shipments",
-        "commerce",
-        "shipments.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/shipments/{shipmentId}/tracking_events",
-        "commerce",
-        "shipments.trackingEvents.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
         "/backend/v3/api/sites",
         "sites",
         "siteCatalog.list",
@@ -1083,114 +555,6 @@ const HTTP_ROUTES: &[HttpRoute] = &[
         "/backend/v3/api/sites/{siteId}/test_connection",
         "sites",
         "testConnection.create",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/storage/buckets",
-        "storage",
-        "oss.buckets.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Post,
-        "/backend/v3/api/storage/buckets",
-        "storage",
-        "oss.buckets.create",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Patch,
-        "/backend/v3/api/storage/buckets/{bucketId}",
-        "storage",
-        "oss.buckets.update",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/storage/default_buckets",
-        "storage",
-        "oss.defaultBuckets.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Patch,
-        "/backend/v3/api/storage/default_buckets/{logicalScope}",
-        "storage",
-        "oss.defaultBuckets.update",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/storage/gc_jobs",
-        "storage",
-        "oss.gcJobs.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Post,
-        "/backend/v3/api/storage/gc_jobs",
-        "storage",
-        "oss.gcJobs.create",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/storage/providers",
-        "storage",
-        "oss.providers.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Post,
-        "/backend/v3/api/storage/providers",
-        "storage",
-        "oss.providers.create",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Patch,
-        "/backend/v3/api/storage/providers/{providerId}",
-        "storage",
-        "oss.providers.update",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Post,
-        "/backend/v3/api/storage/providers/{providerId}/health_check",
-        "storage",
-        "oss.providers.healthChecks.create",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/storage/quotas",
-        "storage",
-        "oss.quotas.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Post,
-        "/backend/v3/api/storage/quotas",
-        "storage",
-        "oss.quotas.create",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/storage/reconciliation_runs",
-        "storage",
-        "oss.reconciliationRuns.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Post,
-        "/backend/v3/api/storage/reconciliation_runs",
-        "storage",
-        "oss.reconciliationRuns.create",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/storage/usage",
-        "storage",
-        "oss.usage.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/storage/usage/ledger",
-        "storage",
-        "oss.usage.ledger.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/storage/usage/snapshots",
-        "storage",
-        "oss.usage.snapshots.list",
     ),
     HttpRoute::dual_token(
         HttpMethod::Get,
@@ -1287,12 +651,6 @@ const HTTP_ROUTES: &[HttpRoute] = &[
         "/backend/v3/api/system/installation/status",
         "system",
         "installation.status.retrieve",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/system/marketing/referral_stats",
-        "system",
-        "marketing.referralStats.list",
     ),
     HttpRoute::dual_token(
         HttpMethod::Get,
@@ -1408,33 +766,40 @@ const HTTP_ROUTES: &[HttpRoute] = &[
         "system",
         "site.settings.update",
     ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/wallet/accounts",
-        "commerce",
-        "wallet.accounts.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Post,
-        "/backend/v3/api/wallet/adjustments",
-        "commerce",
-        "wallet.adjustments.create",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/wallet/exchange_rules",
-        "commerce",
-        "wallet.exchangeRules.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/wallet/ledger_entries",
-        "commerce",
-        "wallet.ledgerEntries.list",
-    ),
 ];
 
 pub fn http_route_manifest() -> HttpRouteManifest {
     HttpRouteManifest::new(HTTP_ROUTES)
+}
+
+#[cfg(test)]
+mod tests {
+    use sdkwork_web_contract::RouteAuth;
+    use sdkwork_web_core::{resolve_public_path, WebRequestContextProfile};
+
+    fn assert_public_route(method: &str, path: &str) {
+        let manifest = super::http_route_manifest();
+        let route = manifest
+            .match_route(method, path)
+            .unwrap_or_else(|| panic!("{method} {path} must be registered"));
+        assert_eq!(RouteAuth::Public, route.auth, "{method} {path} must be public");
+        assert!(
+            resolve_public_path(
+                method,
+                path,
+                &WebRequestContextProfile::default(),
+                Some(manifest),
+            ),
+            "{method} {path} must resolve as a public path",
+        );
+    }
+
+    #[test]
+    fn public_catalog_routes_allow_anonymous_access() {
+        assert_public_route("GET", "/app/v3/api/ai/models");
+        assert_public_route("GET", "/app/v3/api/ai/model_rankings");
+        assert_public_route("GET", "/app/v3/api/ai/model_vendors");
+        assert_public_route("GET", "/app/v3/api/system/site/runtime");
+    }
 }
 

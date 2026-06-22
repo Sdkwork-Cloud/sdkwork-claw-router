@@ -63,6 +63,8 @@ const API_PLAYGROUND_PRIMITIVE_FIXTURE_MODE = "api-playground-primitive";
 const API_PLAYGROUND_AUTH_FIXTURE_MODE = "api-playground-auth";
 const API_PLAYGROUND_NETWORK_FAILURE_FIXTURE_MODE = "api-playground-network-failure";
 const API_PLAYGROUND_EXPECTED_API_KEY = "browser-smoke-api-key";
+const APP_SDK_PORTAL_SESSION_FIXTURE_MODE = "app-sdk-portal-session";
+const BACKEND_SDK_PORTAL_SESSION_FIXTURE_MODE = "backend-sdk-portal-session";
 const APP_SESSION_STORAGE_KEY = "sdkwork.clawRouter.appSession.v1";
 const BROWSER_SMOKE_SESSION = {
   accessToken: "browser-smoke-access-token",
@@ -71,6 +73,14 @@ const BROWSER_SMOKE_SESSION = {
   refreshToken: "browser-smoke-refresh-token",
   sessionId: "browser-smoke-session",
   storedAt: 1_778_716_800,
+  context: {
+    tenantId: "100001",
+    userId: "30",
+    sessionId: "browser-smoke-session",
+  },
+};
+const BROWSER_SMOKE_STORED_SESSION = {
+  ...BROWSER_SMOKE_SESSION,
 };
 
 const PRIVATE_PRICING_TOKENS = [
@@ -298,6 +308,14 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       },
     },
   }],
+  [`${APP_SDK_PORTAL_SESSION_FIXTURE_MODE} GET /app/v3/api/auth/sessions/current`, {
+    statusCode: 200,
+    body: {
+      code: "2000",
+      msg: "success",
+      data: BROWSER_SMOKE_SESSION,
+    },
+  }],
 ]);
 
 const APP_SDK_SHARED_BROWSER_FIXTURES = new Map([
@@ -313,7 +331,38 @@ const APP_SDK_SHARED_BROWSER_FIXTURES = new Map([
   }],
 ]);
 
-const BACKEND_SDK_BROWSER_FIXTURES = new Map([]);
+const BACKEND_SDK_BROWSER_FIXTURES = new Map([
+  [`${BACKEND_SDK_PORTAL_SESSION_FIXTURE_MODE} GET /backend/v3/api/system/installation/status`, {
+    statusCode: 200,
+    body: {
+      code: "2000",
+      msg: "success",
+      data: {
+        status: "ready",
+        schemaVersion: "2026.06.22.1",
+      },
+    },
+  }],
+  [`${BACKEND_SDK_PORTAL_SESSION_FIXTURE_MODE} GET /backend/v3/api/messaging/provider_accounts`, {
+    statusCode: 200,
+    body: {
+      code: "2000",
+      msg: "success",
+      data: {
+        items: [
+          {
+            id: "browser-smoke-provider",
+            displayName: "Browser Smoke Provider",
+            providerCode: "browser-smoke",
+            channel: "email",
+            status: "active",
+          },
+        ],
+        total: 1,
+      },
+    },
+  }],
+]);
 
 const API_PLAYGROUND_BROWSER_RESPONSE = {
   id: "browser-smoke-playground-response",
@@ -821,6 +870,16 @@ const BROWSER_SMOKE_ROUTES = [
       `!Boolean(document.querySelector('[class*="max-w-[100vw]"], [class*="max-w-\\\\[100vw\\\\]"]'))`,
     ],
   },
+  {
+    pathName: "/admin/messaging/providers?__browser-smoke-portal-session=1",
+    requiresPortalSession: true,
+    appSdkFixtureMode: APP_SDK_PORTAL_SESSION_FIXTURE_MODE,
+    backendSdkFixtureMode: BACKEND_SDK_PORTAL_SESSION_FIXTURE_MODE,
+    requiredTextTokens: [
+      "Messaging Delivery",
+      "Browser Smoke Provider",
+    ],
+  },
 ];
 
 async function canBindPortOnHost(port, host) {
@@ -958,7 +1017,7 @@ function spawnRustEdgeServer() {
     CARGO_TARGET_DIR: resolveRustEdgeCargoTargetDir(),
   };
   try {
-    server = spawn(process.platform === "win32" ? "cargo.exe" : "cargo", ["run", "-p", "sdkwork-claw-gateway"], {
+    server = spawn(process.platform === "win32" ? "cargo.exe" : "cargo", ["run", "-p", "sdkwork-clawrouter-gateway"], {
       cwd: workspaceRoot,
       env,
       stdio: ["ignore", "ignore", "pipe"],
@@ -1238,10 +1297,11 @@ async function navigate(cdp, baseUrl, pathName) {
 
 async function seedPortalSession(cdp) {
   const storageKey = JSON.stringify(APP_SESSION_STORAGE_KEY);
-  const sessionJson = JSON.stringify(JSON.stringify(BROWSER_SMOKE_SESSION));
+  const sessionPayload = JSON.stringify(BROWSER_SMOKE_STORED_SESSION);
   await evaluateExpression(cdp, `(() => {
-    window.sessionStorage.setItem(${storageKey}, ${sessionJson});
-    return window.sessionStorage.getItem(${storageKey}) === ${sessionJson};
+    const payload = ${sessionPayload};
+    window.sessionStorage.setItem(${storageKey}, JSON.stringify(payload));
+    return window.sessionStorage.getItem(${storageKey}) === JSON.stringify(payload);
   })()`);
 }
 

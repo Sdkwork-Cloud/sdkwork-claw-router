@@ -1,7 +1,7 @@
 import type {
   AppModelCatalogItem,
   AppModelCatalogPriceAvailability,
-} from '@sdkwork/clawrouter-app-sdk';
+} from '@sdkwork/models-app-sdk';
 import { parseModelCatalogIdentity } from '@sdkwork/clawrouter-pc-commons/model-catalog-identity';
 import { type Model, type ModelCategoryKey, type ModelGroupKey, type ModelPricingStatus } from './data/models.ts';
 

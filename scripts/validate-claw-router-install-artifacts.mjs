@@ -408,8 +408,8 @@ function validateTarGzArtifact(packageItem, artifactBytes) {
       issues.push(`${packageItem.id} archive missing ${requiredEntry}`);
     }
   }
-  if (entries.has('.env.release.local')) {
-    issues.push(`${packageItem.id} archive must not include .env.release.local`);
+  if (entries.has('.env.release')) {
+    issues.push(`${packageItem.id} archive must not include .env.release`);
   }
   return issues;
 }
@@ -424,8 +424,8 @@ function validateZipArtifact(packageItem, artifactBytes) {
       issues.push(`${packageItem.id} zip missing ${requiredEntry}`);
     }
   }
-  if (entries.has('.env.release.local')) {
-    issues.push(`${packageItem.id} zip must not include .env.release.local`);
+  if (entries.has('.env.release')) {
+    issues.push(`${packageItem.id} zip must not include .env.release`);
   }
   return issues;
 }

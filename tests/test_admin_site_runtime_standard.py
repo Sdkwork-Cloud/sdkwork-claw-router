@@ -135,7 +135,7 @@ class AdminSiteRuntimeStandardTest(unittest.TestCase):
                 (
                     ROOT
                     / "services"
-                    / "sdkwork-claw-product"
+                    / "sdkwork-clawrouter-router-service"
                     / "src"
                     / "api"
                     / "admin_site.rs"
@@ -143,7 +143,7 @@ class AdminSiteRuntimeStandardTest(unittest.TestCase):
                 (
                     ROOT
                     / "services"
-                    / "sdkwork-claw-product"
+                    / "sdkwork-clawrouter-router-service"
                     / "src"
                     / "infrastructure"
                     / "sql"

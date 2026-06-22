@@ -13,9 +13,19 @@ import {
 } from './claw-router-dev-database-env.mjs';
 import {
   mergePortalPublicRuntimeEnv,
+  omitPortalPublicRuntimeEnv,
   portalPublicRuntimeEnvLineValue,
   resolvePortalPublicRuntimeEnv,
 } from '../portal-public-runtime-env.mjs';
+import { ensureClawRouterBrowserDevelopmentEnv } from './claw-router-application-env.mjs';
+import {
+  CLAW_ROUTER_BROWSER_DEV_PROXY_ENV_KEYS,
+} from '../lib/claw-router-browser-env-contract.mjs';
+import {
+  CLAW_ROUTER_EDGE_ENV_KEYS,
+  buildRuntimeEdgePrivateEnv,
+  resolveEdgeEnvValue,
+} from '../lib/claw-router-edge-env-contract.mjs';
 import {
   applyTopologyProfileToWorkspaceSettings,
   bridgeLegacyWorkspaceEnv,
@@ -136,6 +146,14 @@ function sharedFoundationBackendApiBaseUrl(settings) {
   return appendPath(sharedFoundationGatewayBaseUrl(settings), BACKEND_API_PREFIX);
 }
 
+function withBrowserDevelopmentViteRuntimeEnv(env, settings, {
+  productSurfaceMode = 'same-origin',
+} = {}) {
+  return omitPortalPublicRuntimeEnv(
+    withSharedFoundationPortalRuntimeEnv(env, settings, { productSurfaceMode }),
+  );
+}
+
 function withSharedFoundationPortalRuntimeEnv(env, settings, {
   productSurfaceMode = 'same-origin',
 } = {}) {
@@ -214,6 +232,18 @@ function cargoCommand(platform = process.platform) {
   return platform === 'win32' ? 'cargo.exe' : 'cargo';
 }
 
+export function clawRouterDevCargoTargetDir(workspaceRoot) {
+  return process.env.SDKWORK_CLAWROUTER_DEV_CARGO_TARGET_DIR
+    ?? path.join(workspaceRoot, 'target', 'dev-workspace');
+}
+
+function clawRouterDevCargoEnv(workspaceRoot, baseEnv = process.env) {
+  return {
+    ...baseEnv,
+    CARGO_TARGET_DIR: clawRouterDevCargoTargetDir(workspaceRoot),
+  };
+}
+
 export function clawRouterRustDevPackages(settings) {
   if (settings.runtimeMode === 'client') {
     return [];
@@ -221,15 +251,15 @@ export function clawRouterRustDevPackages(settings) {
 
   const packages = ['sdkwork-claw-installer'];
   if (settings.runtimeMode === 'all-in-one') {
-    packages.push('sdkwork-claw-gateway');
+    packages.push('sdkwork-clawrouter-gateway');
     return packages;
   }
 
   if (settings.runtimeMode === 'distributed') {
     packages.push(
-      'sdkwork-claw-gateway',
-      'sdkwork-claw-admin',
-      'sdkwork-claw-app',
+      'sdkwork-clawrouter-gateway',
+      'sdkwork-clawrouter-admin-api-server',
+      'sdkwork-clawrouter-app-api-server',
     );
   }
 
@@ -255,7 +285,7 @@ function rustPrebuildStep(settings, { workspaceRoot, platform }) {
     command: cargoCommand(platform),
     args: ['build', ...packages.flatMap((packageName) => ['-p', packageName])],
     cwd: workspaceRoot,
-    env: process.env,
+    env: clawRouterDevCargoEnv(workspaceRoot),
     shell: false,
     windowsHide: platform === 'win32',
     blocking: true,
@@ -299,11 +329,14 @@ function localSqliteDatabaseUrl(workspaceRoot) {
   return `sqlite://${toPortablePath(DEFAULT_DEV_DATABASE_RELATIVE_PATH)}`;
 }
 
-function environmentDatabaseConfig(workspaceRoot = repositoryRoot) {
+function environmentDatabaseConfig(
+  workspaceRoot = repositoryRoot,
+  { skipDevEnvFile = false } = {},
+) {
   return resolveWorkspaceDevDatabaseEnv({
     env: process.env,
     workspaceRoot,
-    forwardedDatabaseUrl: false,
+    forwardedDatabaseUrl: skipDevEnvFile,
     defaultDatabase: 'none',
   });
 }
@@ -332,7 +365,10 @@ function ensureLocalSqliteDatabaseDirectory(settings, workspaceRoot) {
   });
 }
 
-export function parseWorkspaceArgs(argv = []) {
+export function parseWorkspaceArgs(argv = [], {
+  workspaceRoot = repositoryRoot,
+  skipDevEnvFile = false,
+} = {}) {
   const settings = {
     databaseUrl: null,
     gatewayBind: DEFAULT_GATEWAY_BIND,
@@ -491,7 +527,7 @@ export function parseWorkspaceArgs(argv = []) {
       ?? settings.serviceLayout;
   }
   if (settings.runtimeMode !== 'client' && settings.databaseUrl === null) {
-    settings.databaseUrl = environmentDatabaseConfig(repositoryRoot).databaseUrl
+    settings.databaseUrl = environmentDatabaseConfig(workspaceRoot, { skipDevEnvFile }).databaseUrl
       ?? defaultPostgresDatabaseUrl();
   }
   const topologyProfile = loadTopologyProfileForWorkspace({
@@ -586,22 +622,26 @@ function serviceEnv(settings, bindEnvName, bindValue, {
   return env;
 }
 
-function portalEnv(settings) {
+function portalEnv(settings, bootstrapEnv = {}) {
   const { host, port } = splitBind(settings.portalBind, '--portal-bind');
   const isClientMode = settings.runtimeMode === 'client';
+  const proxyEnv = {
+    [CLAW_ROUTER_BROWSER_DEV_PROXY_ENV_KEYS.openApi]: settings.gatewayForwardUrl,
+    [CLAW_ROUTER_BROWSER_DEV_PROXY_ENV_KEYS.backendApi]: settings.backendApiForwardUrl,
+    [CLAW_ROUTER_BROWSER_DEV_PROXY_ENV_KEYS.appApi]: settings.appApiForwardUrl,
+  };
   return {
-    ...withSharedFoundationPortalRuntimeEnv(process.env, settings, {
+    ...withBrowserDevelopmentViteRuntimeEnv(process.env, settings, {
       productSurfaceMode: isClientMode ? 'shared-gateway' : 'same-origin',
     }),
+    ...bootstrapEnv,
+    ...proxyEnv,
     HOST: host,
     PORT: port,
     OPENAPI_DEV_URL: appendPath(settings.gatewayForwardUrl, '/openapi.json'),
     SDKWORK_CLAW_DEPLOYMENT_MODE:
       process.env.SDKWORK_CLAW_DEPLOYMENT_MODE ?? (isClientMode ? 'web' : 'server'),
     SDKWORK_CLAW_PORTAL_BIND: settings.portalBind,
-    PORTAL_DEV_PROXY_GATEWAY_TARGET: settings.gatewayForwardUrl,
-    PORTAL_DEV_PROXY_BACKEND_API_TARGET: settings.backendApiForwardUrl,
-    PORTAL_DEV_PROXY_APP_API_TARGET: settings.appApiForwardUrl,
   };
 }
 
@@ -624,10 +664,7 @@ function edgeServerEnv(settings) {
     ),
     SDKWORK_CLAW_EDGE_EXTERNAL_SCHEME: settings.externalScheme,
     SDKWORK_CLAW_EDGE_TRUST_FORWARDED_HEADERS: settings.trustForwardedHeaders ? '1' : '0',
-    PORTAL_TOOL_API_RATE_LIMIT_REQUESTS: process.env.PORTAL_TOOL_API_RATE_LIMIT_REQUESTS ?? '120',
-    PORTAL_TOOL_API_RATE_LIMIT_WINDOW_SECONDS:
-      process.env.PORTAL_TOOL_API_RATE_LIMIT_WINDOW_SECONDS ?? '60',
-    PORTAL_TOOL_API_SDK_ARCHIVE_ROOT: process.env.PORTAL_TOOL_API_SDK_ARCHIVE_ROOT ?? '',
+    ...buildRuntimeEdgePrivateEnv(process.env),
   };
 }
 
@@ -673,6 +710,13 @@ export function buildWorkspaceCommandPlan(settings, {
     settings.modelsCatalogRoot = resolveModelsCatalogRoot(settings, workspaceRoot);
     ensureLocalSqliteDatabaseDirectory(settings, workspaceRoot);
   }
+  const portalBootstrap = ensureClawRouterBrowserDevelopmentEnv({
+    workspaceRoot,
+    portalRuntimeEnv: portalEnv(settings),
+    env: process.env,
+    dryRun: settings.dryRun === true,
+  });
+  const portalLaunchEnv = (runtimeSettings) => portalEnv(runtimeSettings, portalBootstrap.mergedEnv);
   const steps = [];
 
   if (settings.install) {
@@ -700,7 +744,7 @@ export function buildWorkspaceCommandPlan(settings, {
         command: pnpmCommand(platform),
         args: ['--dir', portalRelativeDir, 'dev:browser'],
         cwd: workspaceRoot,
-        env: portalEnv(settings),
+        env: portalLaunchEnv(settings),
         shell: shellForPnpm(platform),
         windowsHide: platform === 'win32',
       },
@@ -708,6 +752,7 @@ export function buildWorkspaceCommandPlan(settings, {
 
     return {
       nodeExecutable: process.execPath,
+      applicationEnvFile: portalBootstrap.profileFilePath,
       steps,
     };
   }
@@ -723,7 +768,10 @@ export function buildWorkspaceCommandPlan(settings, {
       command: cargoCommand(platform),
       args: cargoRunPackageArgs('sdkwork-claw-installer', ['ensure']),
       cwd: workspaceRoot,
-      env: serviceEnv(settings, 'SDKWORK_CLAW_INSTALLER_BIND', '127.0.0.1:0'),
+      env: clawRouterDevCargoEnv(
+        workspaceRoot,
+        serviceEnv(settings, 'SDKWORK_CLAW_INSTALLER_BIND', '127.0.0.1:0'),
+      ),
       shell: false,
       windowsHide: platform === 'win32',
       blocking: true,
@@ -738,7 +786,10 @@ export function buildWorkspaceCommandPlan(settings, {
         '--force',
       ]),
       cwd: workspaceRoot,
-      env: serviceEnv(settings, 'SDKWORK_CLAW_INSTALLER_BIND', '127.0.0.1:0'),
+      env: clawRouterDevCargoEnv(
+        workspaceRoot,
+        serviceEnv(settings, 'SDKWORK_CLAW_INSTALLER_BIND', '127.0.0.1:0'),
+      ),
       shell: false,
       windowsHide: platform === 'win32',
       blocking: true,
@@ -751,36 +802,42 @@ export function buildWorkspaceCommandPlan(settings, {
     {
       name: 'gateway',
       command: cargoCommand(platform),
-      args: cargoRunPackageArgs('sdkwork-claw-gateway'),
+      args: cargoRunPackageArgs('sdkwork-clawrouter-gateway'),
       cwd: workspaceRoot,
-      env: serviceEnv(settings, 'SDKWORK_CLAW_GATEWAY_BIND', settings.gatewayBind, {
-        startupInstallMode: 'skip',
-      }),
+      env: clawRouterDevCargoEnv(
+        workspaceRoot,
+        serviceEnv(settings, 'SDKWORK_CLAW_GATEWAY_BIND', settings.gatewayBind, {
+          startupInstallMode: 'skip',
+        }),
+      ),
       shell: false,
       windowsHide: platform === 'win32',
     },
     {
       name: 'admin-api',
       command: cargoCommand(platform),
-      args: cargoRunPackageArgs('sdkwork-claw-admin'),
+      args: cargoRunPackageArgs('sdkwork-clawrouter-admin-api-server'),
       cwd: workspaceRoot,
-      env: serviceEnv(settings, 'SDKWORK_CLAW_ADMIN_API_BIND', settings.adminApiBind, {
-        startupInstallMode: 'skip',
-      }),
+      env: clawRouterDevCargoEnv(
+        workspaceRoot,
+        serviceEnv(settings, 'SDKWORK_CLAW_ADMIN_API_BIND', settings.adminApiBind, {
+          startupInstallMode: 'skip',
+        }),
+      ),
       shell: false,
       windowsHide: platform === 'win32',
     },
     {
       name: 'app-api',
       command: cargoCommand(platform),
-      args: cargoRunPackageArgs('sdkwork-claw-app'),
+      args: cargoRunPackageArgs('sdkwork-clawrouter-app-api-server'),
       cwd: workspaceRoot,
-      env: {
+      env: clawRouterDevCargoEnv(workspaceRoot, {
         ...serviceEnv(settings, 'SDKWORK_CLAW_APP_API_BIND', settings.appApiBind, {
           startupInstallMode: 'skip',
         }),
         SDKWORK_CLAW_APP_RUNTIME_GATEWAY_BASE_URL: settings.gatewayForwardUrl,
-      },
+      }),
       shell: false,
       windowsHide: platform === 'win32',
     },
@@ -795,16 +852,16 @@ export function buildWorkspaceCommandPlan(settings, {
       command: pnpmCommand(platform),
       args: ['--dir', portalRelativeDir, 'dev:browser'],
       cwd: workspaceRoot,
-      env: portalEnv(settings),
+      env: portalLaunchEnv(settings),
       shell: shellForPnpm(platform),
       windowsHide: platform === 'win32',
     },
     {
       name: 'server',
       command: cargoCommand(platform),
-      args: cargoRunPackageArgs('sdkwork-claw-gateway'),
+      args: cargoRunPackageArgs('sdkwork-clawrouter-gateway'),
       cwd: workspaceRoot,
-      env: edgeServerEnv(settings),
+      env: clawRouterDevCargoEnv(workspaceRoot, edgeServerEnv(settings)),
       shell: false,
       windowsHide: platform === 'win32',
     },
@@ -814,6 +871,7 @@ export function buildWorkspaceCommandPlan(settings, {
 
   return {
     nodeExecutable: process.execPath,
+    applicationEnvFile: portalBootstrap.profileFilePath,
     steps,
   };
 }
@@ -1034,28 +1092,27 @@ export function renderWorkspaceDryRun(settings, plan) {
   }
 
   if (isClientMode) {
+    const portalViteRuntimeEnv = withBrowserDevelopmentViteRuntimeEnv(process.env, settings, {
+      productSurfaceMode: 'shared-gateway',
+    });
     return [
       '[start-workspace] client launch settings',
       '  SDKWORK_CLAW_RUNTIME_MODE=client',
       `  SDKWORK_CLAW_PORTAL_BIND=${settings.portalBind}`,
       `  SDKWORK_API_GATEWAY_BIND=${settings.sdkworkApiGatewayBind}`,
-      `  PORTAL_PUBLIC_SDK_BASE_URL=${portalRuntimeEnv.PORTAL_PUBLIC_SDK_BASE_URL ?? '(not configured)'}`,
-      `  PORTAL_PUBLIC_API_BASE_URL=${portalPublicRuntimeEnvLineValue(portalRuntimeEnv, 'PORTAL_PUBLIC_API_BASE_URL')}`,
-      `  PORTAL_PUBLIC_OPEN_API_BASE_URL=${portalPublicRuntimeEnvLineValue(portalRuntimeEnv, 'PORTAL_PUBLIC_OPEN_API_BASE_URL')}`,
-      `  PORTAL_PUBLIC_BACKEND_API_BASE_URL=${portalPublicRuntimeEnvLineValue(portalRuntimeEnv, 'PORTAL_PUBLIC_BACKEND_API_BASE_URL')}`,
-      `  PORTAL_PUBLIC_APP_API_BASE_URL=${portalPublicRuntimeEnvLineValue(portalRuntimeEnv, 'PORTAL_PUBLIC_APP_API_BASE_URL')}`,
-      `  PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL=${portalRuntimeEnv.PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL ?? '(not configured)'}`,
-      `  VITE_CLAWROUTER_OPEN_API_BASE_URL=${portalRuntimeEnv.VITE_CLAWROUTER_OPEN_API_BASE_URL}`,
-      `  VITE_CLAWROUTER_BACKEND_API_BASE_URL=${portalRuntimeEnv.VITE_CLAWROUTER_BACKEND_API_BASE_URL}`,
-      `  VITE_CLAWROUTER_APP_API_BASE_URL=${portalRuntimeEnv.VITE_CLAWROUTER_APP_API_BASE_URL}`,
-      `  PORTAL_DEV_PROXY_GATEWAY_TARGET=${settings.gatewayForwardUrl}`,
-      `  PORTAL_DEV_PROXY_BACKEND_API_TARGET=${settings.backendApiForwardUrl}`,
-      `  PORTAL_DEV_PROXY_APP_API_TARGET=${settings.appApiForwardUrl}`,
-      `  PORTAL_PUBLIC_TOOL_API_ENABLED=${portalRuntimeEnv.PORTAL_PUBLIC_TOOL_API_ENABLED}`,
+      `  VITE_CLAWROUTER_OPEN_API_BASE_URL=${portalViteRuntimeEnv.VITE_CLAWROUTER_OPEN_API_BASE_URL ?? '(not configured)'}`,
+      `  VITE_CLAWROUTER_BACKEND_API_BASE_URL=${portalViteRuntimeEnv.VITE_CLAWROUTER_BACKEND_API_BASE_URL ?? '(not configured)'}`,
+      `  VITE_CLAWROUTER_APP_API_BASE_URL=${portalViteRuntimeEnv.VITE_CLAWROUTER_APP_API_BASE_URL ?? '(not configured)'}`,
+      `  ${CLAW_ROUTER_BROWSER_DEV_PROXY_ENV_KEYS.openApi}=${settings.gatewayForwardUrl}`,
+      `  ${CLAW_ROUTER_BROWSER_DEV_PROXY_ENV_KEYS.backendApi}=${settings.backendApiForwardUrl}`,
+      `  ${CLAW_ROUTER_BROWSER_DEV_PROXY_ENV_KEYS.appApi}=${settings.appApiForwardUrl}`,
+      `  VITE_TOOL_API_ENABLED=${portalViteRuntimeEnv.VITE_TOOL_API_ENABLED ?? 'false'}`,
       ...workspaceAccessLines(settings),
       ...plan.steps.flatMap((step) => [
         `[start-workspace] ${step.name}: ${formatCommand(step)}`,
-        ...(step.failureHint ? [`[start-workspace] ${step.name} failure hint: ${step.failureHint}`] : []),
+        ...(settings.dryRun && step.failureHint
+          ? [`[start-workspace] ${step.name} failure hint: ${step.failureHint}`]
+          : []),
       ]),
     ];
   }
@@ -1077,13 +1134,13 @@ export function renderWorkspaceDryRun(settings, plan) {
     `  PORTAL_PUBLIC_BACKEND_API_BASE_URL=${portalPublicRuntimeEnvLineValue(portalRuntimeEnv, 'PORTAL_PUBLIC_BACKEND_API_BASE_URL')}`,
     `  PORTAL_PUBLIC_APP_API_BASE_URL=${portalPublicRuntimeEnvLineValue(portalRuntimeEnv, 'PORTAL_PUBLIC_APP_API_BASE_URL')}`,
     `  PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL=${portalRuntimeEnv.PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL ?? '(not configured)'}`,
-    `  PORTAL_DEV_PROXY_GATEWAY_TARGET=${settings.gatewayForwardUrl}`,
-    `  PORTAL_DEV_PROXY_BACKEND_API_TARGET=${settings.backendApiForwardUrl}`,
-    `  PORTAL_DEV_PROXY_APP_API_TARGET=${settings.appApiForwardUrl}`,
+    `  ${CLAW_ROUTER_BROWSER_DEV_PROXY_ENV_KEYS.openApi}=${settings.gatewayForwardUrl}`,
+    `  ${CLAW_ROUTER_BROWSER_DEV_PROXY_ENV_KEYS.backendApi}=${settings.backendApiForwardUrl}`,
+    `  ${CLAW_ROUTER_BROWSER_DEV_PROXY_ENV_KEYS.appApi}=${settings.appApiForwardUrl}`,
     `  PORTAL_PUBLIC_TOOL_API_ENABLED=${portalRuntimeEnv.PORTAL_PUBLIC_TOOL_API_ENABLED}`,
-    `  PORTAL_TOOL_API_RATE_LIMIT_REQUESTS=${process.env.PORTAL_TOOL_API_RATE_LIMIT_REQUESTS ?? '120'}`,
-    `  PORTAL_TOOL_API_RATE_LIMIT_WINDOW_SECONDS=${process.env.PORTAL_TOOL_API_RATE_LIMIT_WINDOW_SECONDS ?? '60'}`,
-    `  PORTAL_TOOL_API_SDK_ARCHIVE_ROOT=${process.env.PORTAL_TOOL_API_SDK_ARCHIVE_ROOT ?? '(not configured)'}`,
+    `  ${CLAW_ROUTER_EDGE_ENV_KEYS.toolApiRateLimitRequests}=${resolveEdgeEnvValue(process.env, CLAW_ROUTER_EDGE_ENV_KEYS.toolApiRateLimitRequests, '120')}`,
+    `  ${CLAW_ROUTER_EDGE_ENV_KEYS.toolApiRateLimitWindowSeconds}=${resolveEdgeEnvValue(process.env, CLAW_ROUTER_EDGE_ENV_KEYS.toolApiRateLimitWindowSeconds, '60')}`,
+    `  ${CLAW_ROUTER_EDGE_ENV_KEYS.toolApiSdkArchiveRoot}=${resolveEdgeEnvValue(process.env, CLAW_ROUTER_EDGE_ENV_KEYS.toolApiSdkArchiveRoot) ?? '(not configured)'}`,
     `  SDKWORK_CLAW_ALL_IN_ONE_RUNTIME=${settings.runtimeMode === 'all-in-one' ? '1' : '0'}`,
     `  SDKWORK_CLAW_EDGE_GATEWAY_BASE_URL=${settings.gatewayForwardUrl}`,
     `  SDKWORK_CLAW_EDGE_BACKEND_API_BASE_URL=${settings.backendApiForwardUrl}`,
@@ -1094,7 +1151,9 @@ export function renderWorkspaceDryRun(settings, plan) {
     ...workspaceAccessLines(settings),
     ...plan.steps.flatMap((step) => [
       `[start-workspace] ${step.name}: ${formatCommand(step)}`,
-      ...(step.failureHint ? [`[start-workspace] ${step.name} failure hint: ${step.failureHint}`] : []),
+      ...(settings.dryRun && step.failureHint
+        ? [`[start-workspace] ${step.name} failure hint: ${step.failureHint}`]
+        : []),
     ]),
   ];
 }

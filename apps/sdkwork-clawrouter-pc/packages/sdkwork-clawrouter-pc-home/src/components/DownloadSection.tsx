@@ -1,4 +1,4 @@
-import { SdkworkProductDownloadSection } from '@sdkwork/distribution-pc-react/downloads';
+import { SdkworkProductDownloadSection } from '@sdkwork/clawrouter-pc-downloads';
 import { useTranslation } from 'react-i18next';
 import { createClawRouterDownloadCards, createClawRouterDownloadCatalog } from '../downloads/clawRouterDownloads';
 

@@ -83,6 +83,37 @@ ${entries}
 pub fn http_route_manifest() -> HttpRouteManifest {
     HttpRouteManifest::new(HTTP_ROUTES)
 }
+
+#[cfg(test)]
+mod tests {
+    use sdkwork_web_contract::RouteAuth;
+    use sdkwork_web_core::{resolve_public_path, WebRequestContextProfile};
+
+    fn assert_public_route(method: &str, path: &str) {
+        let manifest = super::http_route_manifest();
+        let route = manifest
+            .match_route(method, path)
+            .unwrap_or_else(|| panic!("{method} {path} must be registered"));
+        assert_eq!(RouteAuth::Public, route.auth, "{method} {path} must be public");
+        assert!(
+            resolve_public_path(
+                method,
+                path,
+                &WebRequestContextProfile::default(),
+                Some(manifest),
+            ),
+            "{method} {path} must resolve as a public path",
+        );
+    }
+
+    #[test]
+    fn public_catalog_routes_allow_anonymous_access() {
+        assert_public_route("GET", "/app/v3/api/ai/models");
+        assert_public_route("GET", "/app/v3/api/ai/model_rankings");
+        assert_public_route("GET", "/app/v3/api/ai/model_vendors");
+        assert_public_route("GET", "/app/v3/api/system/site/runtime");
+    }
+}
 `;
 }
 

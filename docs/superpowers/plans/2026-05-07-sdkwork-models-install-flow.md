@@ -123,43 +123,43 @@ Out of scope for this plan:
 
 ### ClawRouter Runtime
 
-- Modify `services/sdkwork-claw-product/Cargo.toml`
+- Modify `services/sdkwork-clawrouter-router-service/Cargo.toml`
   Add path dependency on `sdkwork-models`.
 
-- Modify `services/sdkwork-claw-product/src/infrastructure/sql/mod.rs`
+- Modify `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/mod.rs`
   Export catalog import modules.
 
-- Create `services/sdkwork-claw-product/src/infrastructure/sql/model_catalog_import.rs`
+- Create `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/model_catalog_import.rs`
   Backend-agnostic mapping from `sdkwork_models::ModelCatalog` to canonical SQL rows.
 
-- Create `services/sdkwork-claw-product/src/infrastructure/sql/sqlite/model_catalog_import.rs`
+- Create `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/model_catalog_import.rs`
   SQLite importer using sqlx bind parameters.
 
-- Create `services/sdkwork-claw-product/src/infrastructure/sql/postgres/model_catalog_import.rs`
+- Create `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/model_catalog_import.rs`
   PostgreSQL importer using sqlx bind parameters.
 
-- Create `services/sdkwork-claw-product/src/infrastructure/sql/model_catalog_overlay_import.rs`
+- Create `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/model_catalog_overlay_import.rs`
   ClawRouter overlay importer for providers, channels, and routes.
 
-- Modify `services/sdkwork-claw-product/src/infrastructure/sql/installer.rs`
+- Modify `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/installer.rs`
   Replace hard-coded model catalog, meter, pricing, and ranking seed arrays with catalog loading and importer calls. Keep non-catalog schema setup and product-specific seed paths until their overlays are implemented.
 
-- Modify `services/sdkwork-claw-product/tests/database_installer.rs`
+- Modify `services/sdkwork-clawrouter-router-service/tests/database_installer.rs`
   Assert the installer imports from `sdkwork-models`, records the new catalog version, remains idempotent, and repairs missing rows.
 
-- Create `services/sdkwork-claw-product/tests/sdkwork_models_catalog_import.rs`
+- Create `services/sdkwork-clawrouter-router-service/tests/sdkwork_models_catalog_import.rs`
   Focused importer tests for SQLite.
 
 - Modify `services/sdkwork-claw-installer/src/main.rs`
   Show catalog root and catalog version in status/install output. Add an
   explicit catalog refresh command.
 
-- Modify `services/sdkwork-claw-gateway/src/runtime.rs`
-- Modify `services/sdkwork-claw-admin/src/lib.rs`
-- Modify `services/sdkwork-claw-app/src/lib.rs`
+- Modify `services/sdkwork-clawrouter-gateway/src/runtime.rs`
+- Modify `services/sdkwork-clawrouter-admin-api-server/src/lib.rs`
+- Modify `services/sdkwork-clawrouter-app-api-server/src/lib.rs`
   Ensure startup install can receive catalog options from environment.
 
-- Modify `services/sdkwork-claw-product/src/api/admin_system.rs`
+- Modify `services/sdkwork-clawrouter-router-service/src/api/admin_system.rs`
   Expose catalog version, catalog source, and last refresh status in admin
   installation/status APIs.
 
@@ -548,7 +548,7 @@ unknown
 
 - [ ] **Step 2: Port model facts**
 
-Move the current facts from `OPENAI_ACTIVE_MODEL_SEEDS` and `GLOBAL_MODEL_SEEDS` in `services/sdkwork-claw-product/src/infrastructure/sql/installer.rs` into vendor directories. Preserve the model IDs that current tests assert, including:
+Move the current facts from `OPENAI_ACTIVE_MODEL_SEEDS` and `GLOBAL_MODEL_SEEDS` in `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/installer.rs` into vendor directories. Preserve the model IDs that current tests assert, including:
 
 ```text
 gpt-5.2
@@ -819,17 +819,17 @@ git commit -m "add sdkwork models Rust loader"
 ### Task 8: ClawRouter Catalog Importer
 
 **Files:**
-- Modify: `services/sdkwork-claw-product/Cargo.toml`
-- Modify: `services/sdkwork-claw-product/src/infrastructure/sql/mod.rs`
-- Create: `services/sdkwork-claw-product/src/infrastructure/sql/model_catalog_import.rs`
-- Create: `services/sdkwork-claw-product/src/infrastructure/sql/sqlite/model_catalog_import.rs`
-- Create: `services/sdkwork-claw-product/src/infrastructure/sql/postgres/model_catalog_import.rs`
-- Create: `services/sdkwork-claw-product/src/infrastructure/sql/model_catalog_overlay_import.rs`
-- Create: `services/sdkwork-claw-product/tests/sdkwork_models_catalog_import.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/Cargo.toml`
+- Modify: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/mod.rs`
+- Create: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/model_catalog_import.rs`
+- Create: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/model_catalog_import.rs`
+- Create: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/model_catalog_import.rs`
+- Create: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/model_catalog_overlay_import.rs`
+- Create: `services/sdkwork-clawrouter-router-service/tests/sdkwork_models_catalog_import.rs`
 
 - [ ] **Step 1: Add Rust dependency**
 
-In `services/sdkwork-claw-product/Cargo.toml`:
+In `services/sdkwork-clawrouter-router-service/Cargo.toml`:
 
 ```toml
 sdkwork-models = { path = "../../data/sdkwork-models/sdkwork-models-rust" }
@@ -898,7 +898,7 @@ Import ClawRouter overlay data only for product-specific tables:
 Run:
 
 ```powershell
-cargo test -p sdkwork-claw-product --test sdkwork_models_catalog_import
+cargo test -p sdkwork-clawrouter-router-service --test sdkwork_models_catalog_import
 ```
 
 Expected: importer test passes for SQLite. PostgreSQL-specific SQL contract can be covered by existing Postgres integration gates after Task 9.
@@ -906,20 +906,20 @@ Expected: importer test passes for SQLite. PostgreSQL-specific SQL contract can 
 - [ ] **Step 8: Commit**
 
 ```powershell
-git add services/sdkwork-claw-product data/sdkwork-models/sdkwork-models-rust Cargo.toml Cargo.lock
+git add services/sdkwork-clawrouter-router-service data/sdkwork-models/sdkwork-models-rust Cargo.toml Cargo.lock
 git commit -m "add ClawRouter sdkwork models importer"
 ```
 
 ### Task 9: Replace Installer Model Seed Flow
 
 **Files:**
-- Modify: `services/sdkwork-claw-product/src/infrastructure/sql/installer.rs`
-- Modify: `services/sdkwork-claw-product/tests/database_installer.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/installer.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/tests/database_installer.rs`
 - Modify: `services/sdkwork-claw-installer/src/main.rs`
-- Modify: `services/sdkwork-claw-gateway/src/runtime.rs`
-- Modify: `services/sdkwork-claw-admin/src/lib.rs`
-- Modify: `services/sdkwork-claw-app/src/lib.rs`
-- Modify: `services/sdkwork-claw-product/src/infrastructure/sql/mod.rs`
+- Modify: `services/sdkwork-clawrouter-gateway/src/runtime.rs`
+- Modify: `services/sdkwork-clawrouter-admin-api-server/src/lib.rs`
+- Modify: `services/sdkwork-clawrouter-app-api-server/src/lib.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/mod.rs`
 
 - [ ] **Step 1: Write installer behavior tests first**
 
@@ -1073,9 +1073,9 @@ and that `with_env_options()` now includes `SDKWORK_MODELS_CATALOG_ROOT`.
 Run:
 
 ```powershell
-cargo test -p sdkwork-claw-product --test database_installer
-cargo test -p sdkwork-claw-admin --test installation_status_route
-cargo test -p sdkwork-claw-gateway --test database_installer_startup
+cargo test -p sdkwork-clawrouter-router-service --test database_installer
+cargo test -p sdkwork-clawrouter-admin-api-server --test installation_status_route
+cargo test -p sdkwork-clawrouter-gateway --test database_installer_startup
 ```
 
 Expected: all pass and report catalog version from `sdkwork-models.json`.
@@ -1083,7 +1083,7 @@ Expected: all pass and report catalog version from `sdkwork-models.json`.
 - [ ] **Step 10: Commit**
 
 ```powershell
-git add services/sdkwork-claw-product services/sdkwork-claw-installer services/sdkwork-claw-gateway services/sdkwork-claw-admin services/sdkwork-claw-app
+git add services/sdkwork-clawrouter-router-service services/sdkwork-claw-installer services/sdkwork-clawrouter-gateway services/sdkwork-clawrouter-admin-api-server services/sdkwork-clawrouter-app-api-server
 git commit -m "migrate installer to sdkwork-models catalog"
 ```
 
@@ -1297,14 +1297,14 @@ git commit -m "add sdkwork models update workflow"
 ### Task 11: Post-Install Catalog Refresh API and CLI
 
 **Files:**
-- Modify: `services/sdkwork-claw-product/src/ports/admin_model_store.rs`
-- Modify: `services/sdkwork-claw-product/src/api/admin_model_command.rs`
-- Modify: `services/sdkwork-claw-product/src/api/admin_system.rs`
-- Modify: `services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_model_store.rs`
-- Modify: `services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_model_store.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/ports/admin_model_store.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/api/admin_model_command.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/api/admin_system.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/admin_model_store.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/admin_model_store.rs`
 - Modify: `services/sdkwork-claw-installer/src/main.rs`
-- Modify: `services/sdkwork-claw-product/tests/admin_model_command_api.rs`
-- Modify: `services/sdkwork-claw-admin/tests/installation_status_route.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/tests/admin_model_command_api.rs`
+- Modify: `services/sdkwork-clawrouter-admin-api-server/tests/installation_status_route.rs`
 
 - [ ] **Step 1: Write refresh behavior tests**
 
@@ -1380,9 +1380,9 @@ Refresh must not:
 Run:
 
 ```powershell
-cargo test -p sdkwork-claw-product --test admin_model_command_api
-cargo test -p sdkwork-claw-admin --test installation_status_route
-cargo test -p sdkwork-claw-product --test database_installer
+cargo test -p sdkwork-clawrouter-router-service --test admin_model_command_api
+cargo test -p sdkwork-clawrouter-admin-api-server --test installation_status_route
+cargo test -p sdkwork-clawrouter-router-service --test database_installer
 ```
 
 Expected: install and refresh paths both use the `sdkwork-models` importer.
@@ -1390,7 +1390,7 @@ Expected: install and refresh paths both use the `sdkwork-models` importer.
 - [ ] **Step 7: Commit**
 
 ```powershell
-git add services/sdkwork-claw-product services/sdkwork-claw-installer services/sdkwork-claw-admin
+git add services/sdkwork-clawrouter-router-service services/sdkwork-claw-installer services/sdkwork-clawrouter-admin-api-server
 git commit -m "add sdkwork models catalog refresh flow"
 ```
 
@@ -1520,9 +1520,9 @@ pnpm.cmd models:check
 node data/sdkwork-models/tools/freshness-report.mjs --max-age-policy data/sdkwork-models/catalog-freshness-policy.json --as-of 2026-05-07
 node data/sdkwork-models/tools/release-catalog.mjs --check
 python -B -m unittest tests.test_sdkwork_models_standard tests.test_sdkwork_models_update_workflow tests.test_model_catalog_standard_contract
-cargo test -p sdkwork-claw-product --test sdkwork_models_catalog_import
-cargo test -p sdkwork-claw-product --test database_installer
-cargo test -p sdkwork-claw-product --test admin_model_command_api
+cargo test -p sdkwork-clawrouter-router-service --test sdkwork_models_catalog_import
+cargo test -p sdkwork-clawrouter-router-service --test database_installer
+cargo test -p sdkwork-clawrouter-router-service --test admin_model_command_api
 pnpm.cmd verify:fast
 ```
 
@@ -1549,11 +1549,11 @@ python -B -m unittest tests.test_sdkwork_models_standard
 python -B -m unittest tests.test_sdkwork_models_update_workflow
 python -B -m unittest tests.test_model_catalog_standard_contract
 cargo test --manifest-path data/sdkwork-models/sdkwork-models-rust/Cargo.toml
-cargo test -p sdkwork-claw-product --test sdkwork_models_catalog_import
-cargo test -p sdkwork-claw-product --test database_installer
-cargo test -p sdkwork-claw-product --test admin_model_command_api
-cargo test -p sdkwork-claw-admin --test installation_status_route
-cargo test -p sdkwork-claw-gateway --test database_installer_startup
+cargo test -p sdkwork-clawrouter-router-service --test sdkwork_models_catalog_import
+cargo test -p sdkwork-clawrouter-router-service --test database_installer
+cargo test -p sdkwork-clawrouter-router-service --test admin_model_command_api
+cargo test -p sdkwork-clawrouter-admin-api-server --test installation_status_route
+cargo test -p sdkwork-clawrouter-gateway --test database_installer_startup
 pnpm.cmd verify:fast
 ```
 

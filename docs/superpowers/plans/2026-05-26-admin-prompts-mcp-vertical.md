@@ -37,14 +37,14 @@
 ### Task 3: Backend Domain APIs
 
 **Files:**
-- Create: `services/sdkwork-claw-product/src/ports/admin_prompt_store.rs`
-- Create: `services/sdkwork-claw-product/src/ports/admin_mcp_store.rs`
-- Create: `services/sdkwork-claw-product/src/api/admin_prompts.rs`
-- Create: `services/sdkwork-claw-product/src/api/admin_mcp.rs`
-- Modify: `services/sdkwork-claw-product/src/api/mod.rs`
-- Modify: `services/sdkwork-claw-product/src/ports/mod.rs`
-- Test: `services/sdkwork-claw-product/tests/admin_prompt_api.rs`
-- Test: `services/sdkwork-claw-product/tests/admin_mcp_api.rs`
+- Create: `services/sdkwork-clawrouter-router-service/src/ports/admin_prompt_store.rs`
+- Create: `services/sdkwork-clawrouter-router-service/src/ports/admin_mcp_store.rs`
+- Create: `services/sdkwork-clawrouter-router-service/src/api/admin_prompts.rs`
+- Create: `services/sdkwork-clawrouter-router-service/src/api/admin_mcp.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/api/mod.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/ports/mod.rs`
+- Test: `services/sdkwork-clawrouter-router-service/tests/admin_prompt_api.rs`
+- Test: `services/sdkwork-clawrouter-router-service/tests/admin_mcp_api.rs`
 
 - [ ] **Step 1: Write failing route tests** for listing, creating, publishing/testing Prompt versions, and listing categories by the shared Category contract where applicable.
 - [ ] **Step 2: Write failing route tests** for MCP service CRUD, revision publishing, tool discovery, tool updates, health-check, and bindings.
@@ -54,13 +54,13 @@
 ### Task 4: SQL Stores And Initialization Data
 
 **Files:**
-- Create: `services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_prompt_store.rs`
-- Create: `services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_prompt_store.rs`
-- Create: `services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_mcp_store.rs`
-- Create: `services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_mcp_store.rs`
-- Modify: `services/sdkwork-claw-product/src/infrastructure/sql/sqlite/mod.rs`
-- Modify: `services/sdkwork-claw-product/src/infrastructure/sql/postgres/mod.rs`
-- Modify: `services/sdkwork-claw-admin/src/lib.rs`
+- Create: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/admin_prompt_store.rs`
+- Create: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/admin_prompt_store.rs`
+- Create: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/admin_mcp_store.rs`
+- Create: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/admin_mcp_store.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/mod.rs`
+- Modify: `services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/mod.rs`
+- Modify: `services/sdkwork-clawrouter-admin-api-server/src/lib.rs`
 - Test: SQLite SQL contract tests for Prompt and MCP.
 
 - [ ] **Step 1: Write failing SQL store tests** proving category reuse, audit reuse, versioning, bindings, seeded demo data, and no dedicated category tables.

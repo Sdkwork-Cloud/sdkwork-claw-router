@@ -39,11 +39,11 @@
 
 **Files:**
 - Modify: `sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-membership-sqlx-rust/src/seed.rs`
-- Test: `services/sdkwork-claw-product/tests/database_installer.rs`
+- Test: `services/sdkwork-clawrouter-router-service/tests/database_installer.rs`
 
 - [ ] Write failing installer tests expecting inactive payment methods, providers, provider accounts, channels, and route rules after install.
 - [ ] Add failing repair preservation coverage for edited provider account fields and active statuses.
-- [ ] Run `cargo test -p sdkwork_claw_product --test database_installer sqlite_installer_seeds_complete_inactive_payment_center_defaults`.
+- [ ] Run `cargo test -p sdkwork_clawrouter_router_service --test database_installer sqlite_installer_seeds_complete_inactive_payment_center_defaults`.
 - [ ] Add SQLite and PostgreSQL upsert functions for the new seed rows.
 - [ ] Add integrity checks for inactive/default payment center rows.
 - [ ] Re-run targeted installer tests.

@@ -12,14 +12,14 @@ import {
   resolvePortalWorkspaceDependencyRoot,
 } from "./vite.config.ts";
 
-async function resolvePortalViteConfig(): Promise<UserConfig> {
+async function resolvePortalViteConfig(mode = 'development', command: 'serve' | 'build' = 'serve'): Promise<UserConfig> {
   if (typeof portalViteConfig !== "function") {
     return portalViteConfig as UserConfig;
   }
 
   return portalViteConfig({
-    command: "serve",
-    mode: "development",
+    command,
+    mode,
     isSsrBuild: false,
     isPreview: false,
   }) as UserConfig | Promise<UserConfig>;
@@ -151,6 +151,27 @@ test("portal workspace packages resolve to source files outside node_modules in 
   assert.ok(!String(resolvedSubpath).includes(`${path.sep}node_modules${path.sep}`));
 });
 
+test("portal local packages resolve scoped clawrouter pc downloads to source files", async () => {
+  const config = await resolvePortalViteConfig();
+  const plugins: unknown[] = Array.isArray(config.plugins) ? config.plugins.flat() : [];
+  const resolver = plugins.find((plugin) => hasPluginName(plugin, "clawrouter-portal-local-package-resolver"));
+
+  assert.ok(resolver && typeof resolver === "object");
+  assert.ok("resolveId" in resolver);
+
+  const resolvedRoot = await callResolveId(
+    resolver.resolveId,
+    "@sdkwork/clawrouter-pc-downloads",
+    new URL("./packages/sdkwork-clawrouter-pc-home/src/components/DownloadSection.tsx", import.meta.url).pathname,
+  );
+
+  assert.equal(
+    resolvedRoot,
+    path.resolve(import.meta.dirname, "packages/sdkwork-clawrouter-pc-downloads/src/index.ts"),
+  );
+  assert.ok(existsSync(resolvedRoot));
+});
+
 test("portal workspace packages resolve to source files during production build", async () => {
   const config = await resolvePortalViteConfig();
   const plugins: unknown[] = Array.isArray(config.plugins) ? config.plugins.flat() : [];
@@ -162,13 +183,13 @@ test("portal workspace packages resolve to source files during production build"
 
   const resolvedRoot = await callResolveId(
     resolver.resolveId,
-    "sdkwork-clawrouter-pc-admin-messaging",
+    "sdkwork-clawrouter-pc-commons",
     new URL("./src/App.tsx", import.meta.url).pathname,
   );
 
   assert.equal(
     resolvedRoot,
-    path.resolve(import.meta.dirname, "packages/sdkwork-clawrouter-pc-admin-messaging/src/index.tsx"),
+    path.resolve(import.meta.dirname, "packages/sdkwork-clawrouter-pc-commons/src/index.ts"),
   );
   assert.ok(!String(resolvedRoot).includes(`${path.sep}node_modules${path.sep}`));
 });
@@ -416,9 +437,31 @@ test("portal scripts run dependency preflight before Vite entrypoints", () => {
   const portalPackage = JSON.parse(readFileSync(new URL("./package.json", import.meta.url), "utf8"));
 
   assert.equal(portalPackage.scripts["deps:check"], "node scripts/check-portal-deps.mjs");
+  assert.equal(portalPackage.scripts.predev, "node ../../scripts/ensure-claw-router-env.mjs --lifecycle dev");
+  assert.equal(portalPackage.scripts.prebuild, "node ../../scripts/ensure-claw-router-env.mjs --lifecycle build");
   assert.equal(portalPackage.scripts.dev, "pnpm deps:check && vite --configLoader native");
   assert.equal(portalPackage.scripts["dev:browser"], "pnpm deps:check && vite --configLoader native");
   assert.equal(portalPackage.scripts.build, "pnpm deps:check && node scripts/build-portal.mjs");
+});
+
+test("development mode injects bootstrap access token while production build does not", async () => {
+  const developmentConfig = await resolvePortalViteConfig("development", "serve");
+  const productionConfig = await resolvePortalViteConfig("production", "build");
+
+  assert.ok(developmentConfig.define?.["process.env.SDKWORK_ACCESS_TOKEN"]);
+  assert.equal(productionConfig.define?.["process.env.SDKWORK_ACCESS_TOKEN"], undefined);
+});
+
+test("portal runtime env script never exposes bootstrap access token", () => {
+  const script = buildPortalRuntimeEnvScript({
+    PORTAL_PUBLIC_API_BASE_URL: "/v1",
+    SDKWORK_ACCESS_TOKEN: "must-not-leak",
+    VITE_API_BASE_URL: "/v1",
+  });
+
+  assert.doesNotMatch(script, /SDKWORK_ACCESS_TOKEN/u);
+  assert.doesNotMatch(script, /must-not-leak/u);
+  assert.match(script, /VITE_API_BASE_URL/u);
 });
 
 test("portal dependency preflight verifies Vite command shims before passing", () => {
@@ -687,6 +730,7 @@ test("portal runtime env keeps appbase backend SDK base URL independent from cla
   assert.match(envExample, /PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL/);
   assert.match(envExample, /PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL=""/);
   assert.match(releaseEnvExample, /PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL=""/);
+  assert.match(releaseEnvExample, /SDKWORK_ACCESS_TOKEN=/);
   assert.doesNotMatch(envExample, /PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL="\/backend\/v3\/api"/);
   assert.doesNotMatch(releaseEnvExample, /PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL="\/backend\/v3\/api"/);
   assert.match(startProductionSource, /PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL/);

@@ -273,8 +273,8 @@ class AdminGroupRuntimeStandardTest(unittest.TestCase):
 
     def test_admin_group_read_model_uses_canonical_public_fields_without_public_billing_type(self) -> None:
         store_paths = [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_channel_group_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_channel_group_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/admin_channel_group_store.rs",
+            "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/admin_channel_group_store.rs",
         ]
 
         for relative_path in store_paths:

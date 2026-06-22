@@ -516,8 +516,8 @@ git commit -m "feat(appbase-commerce): align wallet account contracts"
 ## Task 7: Claw-Router Integration Shim
 
 **Files:**
-- Modify: `<workspace-root>/sdkwork-clawrouter/services/sdkwork-claw-app/src/lib.rs`
-- Modify only if needed: `<workspace-root>/sdkwork-clawrouter/services/sdkwork-claw-product/src/api/app_commerce.rs`
+- Modify: `<workspace-root>/sdkwork-clawrouter/services/sdkwork-clawrouter-app-api-server/src/lib.rs`
+- Modify only if needed: `<workspace-root>/sdkwork-clawrouter/services/sdkwork-clawrouter-router-service/src/api/app_commerce.rs`
 - Test: app-api/router tests or focused cargo checks
 
 - [ ] **Step 1: Add failing integration test**
@@ -529,14 +529,14 @@ Add or update a test that proves `/app/v3/api/billing/wallet/accounts` is served
 Run:
 
 ```powershell
-cargo test -p sdkwork-claw-app wallet_accounts_uses_appbase_commerce_store
+cargo test -p sdkwork-clawrouter-app-api-server wallet_accounts_uses_appbase_commerce_store
 ```
 
 Expected: fails before integration because route still uses product-local empty implementation.
 
 - [ ] **Step 3: Mount appbase account/wallet router before product fallback**
 
-In `sdkwork-claw-app`, when SQLite/Postgres pool is available:
+In `sdkwork-clawrouter-app-api-server`, when SQLite/Postgres pool is available:
 
 - construct `SqliteCommerceAccountStore` or `PostgresCommerceAccountStore`
 - merge appbase account/wallet router
@@ -550,8 +550,8 @@ Do not remove product-local code in this task unless all its covered operations 
 Run:
 
 ```powershell
-cargo check -p sdkwork-claw-app
-cargo test -p sdkwork-claw-app wallet_accounts_uses_appbase_commerce_store
+cargo check -p sdkwork-clawrouter-app-api-server
+cargo test -p sdkwork-clawrouter-app-api-server wallet_accounts_uses_appbase_commerce_store
 python -B -m tools.frontend_operation_audit --check
 python -B -m tools.appbase_capability_guardian --root .
 ```
@@ -561,7 +561,7 @@ Expected: checks pass. If unrelated existing test failures appear, record them w
 - [ ] **Step 5: Commit**
 
 ```powershell
-git add services\sdkwork-claw-app ..\sdkwork-appbase\packages\native-rust\commerce
+git add services\sdkwork-clawrouter-app-api-server ..\sdkwork-appbase\packages\native-rust\commerce
 git commit -m "feat(claw-router): mount appbase wallet account router"
 ```
 
@@ -599,7 +599,7 @@ cargo test --manifest-path ..\sdkwork-appbase\packages\native-rust\commerce\sdkw
 cargo test --manifest-path ..\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-storage-sqlx-rust\Cargo.toml
 cargo test --manifest-path ..\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-runtime-rust\Cargo.toml
 cargo test --manifest-path ..\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-http-rust\Cargo.toml
-cargo check -p sdkwork-claw-app
+cargo check -p sdkwork-clawrouter-app-api-server
 python -B -m tools.frontend_operation_audit --check
 python -B -m tools.appbase_capability_guardian --root .
 ```
@@ -612,7 +612,7 @@ Run:
 
 ```powershell
 git diff --stat
-rg -n "@sdkwork/clawrouter-(app|backend|open)-sdk|sdkwork_claw_product|claw-router|ClawRouter" ..\sdkwork-appbase\packages\common\commerce ..\sdkwork-appbase\packages\native-rust\commerce
+rg -n "@sdkwork/clawrouter-(app|backend|open)-sdk|sdkwork_clawrouter_router_service|claw-router|ClawRouter" ..\sdkwork-appbase\packages\common\commerce ..\sdkwork-appbase\packages\native-rust\commerce
 ```
 
 Expected:
@@ -636,7 +636,7 @@ git commit -m "docs(appbase-commerce): plan wallet account foundation slice"
 - All balance math should use canonical string decimal/integer helpers. Do not use floating point for balances.
 - For this slice, ledger append may support `cash`, `points`, and `token`, but command handlers for top-up/withdrawal/transfer/exchange remain disabled until their own plan.
 - If SQLx compile-time macros require a live database, use runtime `sqlx::query`/`query_as` patterns consistent with the existing codebase.
-- Do not remove old `sdkwork-claw-product` commerce routes until appbase has functional parity and tests prove the mounted appbase route is used.
+- Do not remove old `sdkwork-clawrouter-router-service` commerce routes until appbase has functional parity and tests prove the mounted appbase route is used.
 
 ## Follow-Up Plans
 

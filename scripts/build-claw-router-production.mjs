@@ -7,6 +7,7 @@ import path from 'node:path';
 import {
   productionGatewayBinaryPath,
 } from './claw-router-production-artifacts.mjs';
+import { ensureClawRouterBrowserProductionEnv } from './dev/claw-router-application-env.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -112,7 +113,7 @@ function createProductionBuildPlan(
     {
       label: 'Rust edge release binary',
       command: cargoCommand(platform),
-      args: ['build', '-p', 'sdkwork-claw-gateway', '--bin', 'clawrouter', '--release'],
+      args: ['build', '-p', 'sdkwork-clawrouter-gateway', '--bin', 'clawrouter', '--release'],
       env,
       cwd: root,
     },
@@ -196,6 +197,7 @@ async function main(argv = process.argv.slice(2)) {
   if (settings.dryRun) {
     return;
   }
+  ensureClawRouterBrowserProductionEnv({ workspaceRoot });
   for (const step of plan) {
     await runStep(step);
   }

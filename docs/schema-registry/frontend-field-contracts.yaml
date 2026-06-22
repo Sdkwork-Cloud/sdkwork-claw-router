@@ -1,6 +1,6 @@
-source: apps/sdkwork-clawrouter-pc/src/App.tsx
 schema: sdkwork-clawrouter-frontend-field-contracts
 version: 0.1.0
+source: apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts
 rule: every actual portal route must be backed by explicit schema tables; page-critical fields must map to generated columns or Java-owned physical columns.
 x_response_entities:
   admin_announcement_item:
@@ -16,6 +16,62 @@ x_response_entities:
       showAsPopup: { type: boolean }
       date: { type: string, minLength: 1, maxLength: 64 }
       content: { type: string, minLength: 1, maxLength: 20000 }
+  admin_announcement_create_request:
+    name: AdminAnnouncementCreateRequest
+    type: object
+    additionalProperties: false
+    required: [title, target, status, showAsPopup, content]
+    properties:
+      title: { type: string, minLength: 1, maxLength: 200 }
+      target: { type: string, enum: [all, vip, free, beta] }
+      status: { type: string, enum: [published, draft] }
+      showAsPopup: { type: boolean }
+      content: { type: string, minLength: 1, maxLength: 20000 }
+  admin_announcement_update_request:
+    name: AdminAnnouncementUpdateRequest
+    type: object
+    additionalProperties: false
+    properties:
+      title: { type: string, minLength: 1, maxLength: 200 }
+      target: { type: string, enum: [all, vip, free, beta] }
+      status: { type: string, enum: [published, draft] }
+      showAsPopup: { type: boolean }
+      content: { type: string, minLength: 1, maxLength: 20000 }
+  admin_announcement_mutation_response:
+    name: AdminAnnouncementMutationResponse
+    type: object
+    additionalProperties: false
+    required: [item]
+    properties:
+      item:
+        $ref: '#/x_response_entities/admin_announcement_item'
+  admin_announcements_response:
+    name: AdminAnnouncementsResponse
+    type: object
+    additionalProperties: false
+    required: [items]
+    properties:
+      items:
+        type: array
+        items:
+          $ref: '#/x_response_entities/admin_announcement_item'
+  admin_announcements_delete_response:
+    name: AnnouncementsDeleteResult
+    type: object
+    additionalProperties: false
+    required: [deleted]
+    properties:
+      deleted: { type: boolean }
+  admin_referral_stats_response:
+    name: AdminReferralStatsResponse
+    type: object
+    additionalProperties: false
+    required: [items]
+    properties:
+      items:
+        type: array
+        items:
+          $ref: '#/x_response_entities/admin_referral_stat_item'
   admin_agent_version_item:
     name: AdminAgentVersionItem
     type: object
@@ -2808,6 +2864,66 @@ x_response_entities:
           emailRegistrationVerificationRequired: { type: boolean }
           phoneCodeLoginEnabled: { type: boolean }
           phoneRegistrationVerificationRequired: { type: boolean }
+  iam_user_response:
+    name: IamUserResponse
+    type: object
+    additionalProperties: false
+    required: [id, username, displayName, email, avatar, phone, language, isVerified, status, registeredAt, lastLogin, lastLoginIp, passwordLastChanged, twoFactorEnabled, thirdPartyBound]
+    properties:
+      id: { type: string, minLength: 1, maxLength: 128 }
+      username: { type: string, minLength: 1, maxLength: 128 }
+      displayName: { type: string, minLength: 1, maxLength: 128 }
+      email: { type: string, maxLength: 256 }
+      avatar:
+        $ref: '#/components/schemas/MediaResource'
+      phone:
+        type: string
+        description: Safe display phone value, empty when unavailable.
+      language: { type: string, maxLength: 32 }
+      isVerified: { type: boolean }
+      status: { type: string, maxLength: 32 }
+      registeredAt: { type: string, format: date-time }
+      lastLogin: { type: string, maxLength: 64 }
+      lastLoginIp:
+        type: string
+        description: Masked client IP address from the latest login event.
+      passwordLastChanged: { type: string, maxLength: 64 }
+      twoFactorEnabled: { type: boolean }
+      thirdPartyBound:
+        type: string
+        description: Safe OAuth provider binding summary without provider subject IDs or tokens.
+  admin_auth_wechat_official:
+    name: AdminAuthWechatOfficial
+    type: object
+    additionalProperties: false
+    required: [key, name, appId, secretRef, tokenRef, enabled, primary]
+    properties:
+      key: { type: string, minLength: 1, maxLength: 64, pattern: '^[A-Za-z0-9_-]+$' }
+      name: { type: string, minLength: 1, maxLength: 64 }
+      appId: { type: string, minLength: 1, maxLength: 64, pattern: '^[A-Za-z0-9_-]+$' }
+      originalId: { type: string, maxLength: 64, pattern: '^[A-Za-z0-9_-]*$' }
+      secretRef: { type: string, minLength: 1, maxLength: 256, pattern: '^(secret|vault)://[!-~]+$' }
+      tokenRef: { type: string, minLength: 1, maxLength: 256, pattern: '^(secret|vault)://[!-~]+$' }
+      aesKeyRef: { type: string, maxLength: 256, pattern: '^(|secret://[!-~]+|vault://[!-~]+)$' }
+      url: { type: string, maxLength: 2048, pattern: '^$|^https://[^#]+$' }
+      enabled: { type: boolean }
+      primary: { type: boolean }
+      scene: { type: string, maxLength: 64, pattern: '^[A-Za-z0-9_-]*$' }
+  admin_auth_wechat_mini:
+    name: AdminAuthWechatMini
+    type: object
+    additionalProperties: false
+    required: [key, name, appId, secretRef, enabled, primary, path, env]
+    properties:
+      key: { type: string, minLength: 1, maxLength: 64, pattern: '^[A-Za-z0-9_-]+$' }
+      name: { type: string, minLength: 1, maxLength: 64 }
+      appId: { type: string, minLength: 1, maxLength: 64, pattern: '^[A-Za-z0-9_-]+$' }
+      secretRef: { type: string, minLength: 1, maxLength: 256, pattern: '^(secret|vault)://[!-~]+$' }
+      url: { type: string, maxLength: 2048, pattern: '^$|^https://[^#]+$' }
+      enabled: { type: boolean }
+      primary: { type: boolean }
+      path: { type: string, minLength: 1, maxLength: 128, pattern: '^[^/?#][^?#]*$' }
+      env: { type: string, enum: [release, trial, develop] }
   provider_retry_policy:
     name: ProviderRetryPolicy
     type: object
@@ -3618,6 +3734,41 @@ x_response_entities:
       quotaWarning: { type: boolean }
       apiMonitor: { type: boolean }
 frontend_models:
+  - route: /admin/announcement
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts
+    interface: Announcement
+    fields:
+      - id
+      - title
+      - target
+      - status
+      - showAsPopup
+      - date
+      - content
+    data_sources:
+      - content_announcement
+  - route: /admin/announcement
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts
+    interface: AnnouncementCreateInput
+    fields:
+      - title
+      - target
+      - status
+      - showAsPopup
+      - content
+    data_sources:
+      - content_announcement
+  - route: /admin/announcement
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts
+    interface: AnnouncementUpdateInput
+    fields:
+      - title
+      - target
+      - status
+      - showAsPopup
+      - content
+    data_sources:
+      - content_announcement
   - route: /admin/analytics
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-analytics/src/analyticsService.ts
     interface: AdminAnalyticsQuery
@@ -4236,7 +4387,7 @@ frontend_models:
     data_sources:
       - ai_resource_group_item
   - route: /admin/model/resources
-    source: data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-resource/src/resourceGroupService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
     interface: AiResourceCreateInput
     fields:
       - resourceCode
@@ -4261,7 +4412,7 @@ frontend_models:
       - ai_resource_group_item
       - ops_audit_log
   - route: /admin/model/resources
-    source: data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-resource/src/resourceGroupService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
     interface: AiResourceUpdateInput
     fields:
       - resourceCode
@@ -6453,7 +6604,7 @@ frontend_models:
       - iam_user
       - iam_user_role
   - route: /console/notifications
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-messages/src/messagesService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
     interface: NotificationItem
     fields:
       - actionUrl
@@ -6472,7 +6623,7 @@ frontend_models:
       - ops_notification_message
       - ops_notification_delivery
   - route: /console/account
-    source: apps/sdkwork-clawrouter-pc/src/App.tsx
+    source: apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts
     interface: SdkworkBillingDashboardData
     fields:
       - summary
@@ -6659,7 +6810,7 @@ frontend_models:
       - ai_request_trace
       - ops_gateway_instance
   - route: /console/memberships
-    source: apps/sdkwork-clawrouter-pc/src/App.tsx
+    source: apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts
     interface: SdkworkMembershipSummary
     fields:
       - currentLevelName
@@ -6679,7 +6830,7 @@ frontend_models:
       - commerce_membership_plan
       - commerce_account
   - route: /console/memberships
-    source: apps/sdkwork-clawrouter-pc/src/App.tsx
+    source: apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts
     interface: SdkworkMembershipPlan
     fields:
       - description
@@ -6698,7 +6849,7 @@ frontend_models:
       - commerce_membership_package
       - commerce_product_sku
   - route: /console/memberships
-    source: apps/sdkwork-clawrouter-pc/src/App.tsx
+    source: apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts
     interface: SdkworkMembershipBenefit
     fields:
       - benefitKey
@@ -6713,7 +6864,7 @@ frontend_models:
       - commerce_membership_entitlement
       - commerce_membership_entitlement_usage
   - route: /console/memberships
-    source: apps/sdkwork-clawrouter-pc/src/App.tsx
+    source: apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts
     interface: SdkworkMembershipDashboardData
     fields:
       - benefits
@@ -6741,7 +6892,7 @@ frontend_models:
       - commerce_membership_entitlement
       - commerce_product_sku
   - route: /console/memberships
-    source: apps/sdkwork-clawrouter-pc/src/App.tsx
+    source: apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts
     interface: SdkworkMembershipPurchaseResult
     fields:
       - amountCny
@@ -6756,7 +6907,7 @@ frontend_models:
       - commerce_order
       - commerce_payment_intent
   - route: /console/recharge
-    source: apps/sdkwork-clawrouter-pc/src/App.tsx
+    source: apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts
     interface: RechargePackage
     fields:
       - id
@@ -6770,7 +6921,7 @@ frontend_models:
       - commerce_product_spu
       - commerce_product_sku
   - route: /console/recharge
-    source: apps/sdkwork-clawrouter-pc/src/App.tsx
+    source: apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts
     interface: RechargeOrderCreateResult
     fields:
       - success
@@ -6788,7 +6939,7 @@ frontend_models:
       - commerce_payment_intent
       - commerce_payment_attempt
   - route: /console/recharge
-    source: apps/sdkwork-clawrouter-pc/src/App.tsx
+    source: apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts
     interface: RechargeSettingsSnapshot
     fields:
       - baseCurrencyCode
@@ -6799,7 +6950,7 @@ frontend_models:
       - commerce_exchange_rule
       - commerce_recharge_package
   - route: /console/recharge
-    source: apps/sdkwork-clawrouter-pc/src/App.tsx
+    source: apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts
     interface: BillingHistoryItem
     fields:
       - id
@@ -6823,7 +6974,7 @@ frontend_models:
     data_sources:
       - commerce_billing_history
   - route: /console/settlements
-    source: apps/sdkwork-clawrouter-pc/src/App.tsx
+    source: apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts
     interface: SdkworkBillingUsageRecord
     fields:
       - capability
@@ -6841,7 +6992,7 @@ frontend_models:
       - commerce_usage_statement
       - commerce_usage_statement_item
   - route: /console/settlements
-    source: apps/sdkwork-clawrouter-pc/src/App.tsx
+    source: apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts
     interface: SdkworkBillingBreakdownRow
     fields:
       - changeRate
@@ -6855,7 +7006,7 @@ frontend_models:
       - commerce_usage_statement_item
       - ai_usage_fact
   - route: /console/settlements
-    source: apps/sdkwork-clawrouter-pc/src/App.tsx
+    source: apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts
     interface: SdkworkBillingDigest
     fields:
       - budgetAmountCny
@@ -6945,7 +7096,7 @@ frontend_models:
       - iam_user_identity
       - iam_session
   - route: /console/wallet
-    source: apps/sdkwork-clawrouter-pc/src/App.tsx
+    source: apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts
     interface: SdkworkWalletOverview
     fields:
       - account
@@ -6979,7 +7130,7 @@ frontend_models:
       - commerce_wallet_account
       - commerce_wallet_transaction
   - route: /console/wallet
-    source: apps/sdkwork-clawrouter-pc/src/App.tsx
+    source: apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts
     interface: SdkworkWalletRechargeResult
     fields:
       - cashAmountCny
@@ -6995,7 +7146,7 @@ frontend_models:
       - commerce_payment_intent
       - commerce_wallet_transaction
   - route: /console/wallet
-    source: apps/sdkwork-clawrouter-pc/src/App.tsx
+    source: apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts
     interface: SdkworkWalletWithdrawResult
     fields:
       - amountCny
@@ -7011,7 +7162,7 @@ frontend_models:
       - commerce_wallet_account
       - commerce_wallet_transaction
   - route: /console/checkout
-    source: apps/sdkwork-clawrouter-pc/src/App.tsx
+    source: apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts
     interface: CheckoutStatus
     fields:
       - orderNo
@@ -7062,6 +7213,64 @@ frontend_models:
     source: apps/sdkwork-clawrouter-pc/src/commerce/commerceHostMount.tsx
     interface: SdkworkCommerceHostRoutes
     fields: []
+    data_sources:
+      - commerce_payment_intent
+      - commerce_payment_attempt
+  - route: /console/payment
+    source: apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts
+    interface: SdkworkPaymentSummary
+    fields:
+      - amountCny
+      - canClose
+      - canReconcile
+      - canRefreshStatus
+      - createdAt
+      - expireTime
+      - id
+      - orderId
+      - outTradeNo
+      - paymentMethod
+      - paymentProvider
+      - paymentProviderLabel
+      - paymentSn
+      - productType
+      - status
+      - statusLabel
+      - successTime
+      - transactionId
+    data_sources:
+      - commerce_payment_intent
+      - commerce_payment_attempt
+  - route: /console/payment
+    source: apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts
+    interface: SdkworkPaymentDetail
+    fields:
+      - amountCny
+      - canClose
+      - canReconcile
+      - canRefreshStatus
+      - createdAt
+      - expireTime
+      - id
+      - needQuery
+      - orderId
+      - outTradeNo
+      - paymentMethod
+      - paymentOrderId
+      - paymentParams
+      - paymentProvider
+      - paymentProviderLabel
+      - paymentSn
+      - paymentUrl
+      - productType
+      - qrContent
+      - queryIntervalSeconds
+      - remark
+      - status
+      - statusLabel
+      - subject
+      - successTime
+      - transactionId
     data_sources:
       - commerce_payment_intent
       - commerce_payment_attempt
@@ -9620,8 +9829,32 @@ frontend_operations:
     query_parameters: []
     response_schema:
       name: IamUserResponse
-      schema:
-        $ref: '#/components/schemas/IamUserResponse'
+      type: object
+      additionalProperties: false
+      required: [id, username, displayName, email, avatar, phone, language, isVerified, status, registeredAt, lastLogin, lastLoginIp, passwordLastChanged, twoFactorEnabled, thirdPartyBound]
+      properties:
+        id: { type: string, minLength: 1, maxLength: 128 }
+        username: { type: string, minLength: 1, maxLength: 128 }
+        displayName: { type: string, minLength: 1, maxLength: 128 }
+        email: { type: string, maxLength: 256 }
+        avatar:
+          $ref: '#/components/schemas/MediaResource'
+        phone:
+          type: string
+          description: Safe display phone value, empty when unavailable.
+        language: { type: string, maxLength: 32 }
+        isVerified: { type: boolean }
+        status: { type: string, maxLength: 32 }
+        registeredAt: { type: string, format: date-time }
+        lastLogin: { type: string, maxLength: 64 }
+        lastLoginIp:
+          type: string
+          description: Masked client IP address from the latest login event.
+        passwordLastChanged: { type: string, maxLength: 64 }
+        twoFactorEnabled: { type: boolean }
+        thirdPartyBound:
+          type: string
+          description: Safe OAuth provider binding summary without provider subject IDs or tokens.
   - route: /console/user
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts
     operation: fetchIamOrganizations
@@ -10729,8 +10962,59 @@ frontend_operations:
     api_method: GET
     api_path: /app/v3/api/notification/notifications
     sdk_domain: notification
+    openapi_exposed: false
+    summary: List portal notifications through console messages facade
+    description: Console messages facade that delegates to the notification service boundary.
+    read_sources:
+      - ops_notification_message
+      - ops_notification_delivery
+  - route: /console/notifications
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-messages/src/messagesService.ts
+    operation: acknowledge
+    operation_id: notifications.acknowledge.create
+    kind: create
+    api_surface: app
+    api_method: POST
+    api_path: /app/v3/api/notification/notifications/{notificationId}/acknowledge
+    sdk_domain: notification
+    openapi_exposed: false
+    idempotency_required: true
+    request_body_required: false
+    summary: Acknowledge portal notification through console messages facade
+    description: Console messages facade that delegates to the notification service boundary.
+    read_sources:
+      - ops_notification_delivery
+    write_tables:
+      - ops_notification_delivery
+  - route: /console/notifications
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-messages/src/messagesService.ts
+    operation: markPopupSeen
+    operation_id: notifications.popupSeen.create
+    kind: create
+    api_surface: app
+    api_method: POST
+    api_path: /app/v3/api/notification/notifications/{notificationId}/popup_seen
+    sdk_domain: notification
+    openapi_exposed: false
+    idempotency_required: true
+    request_body_required: false
+    summary: Mark portal notification popup seen through console messages facade
+    description: Console messages facade that delegates to the notification service boundary.
+    read_sources:
+      - ops_notification_delivery
+    write_tables:
+      - ops_notification_delivery
+  - route: /console/notifications
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
+    operation: fetchNotifications
+    operation_id: notifications.list
+    kind: read
+    api_surface: app
+    api_method: GET
+    api_path: /app/v3/api/notification/notifications
+    sdk_domain: notification
     summary: List portal notifications
-    description: Lists in-app notifications for the active portal session.
+    description: Lists in-app notifications through the notification-pc-react service boundary.
     read_sources:
       - ops_notification_message
       - ops_notification_delivery
@@ -10769,7 +11053,23 @@ frontend_operations:
               archived: { type: boolean }
               actionUrl: { type: string, nullable: true, maxLength: 512 }
   - route: /console/notifications
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-messages/src/messagesService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
+    operation: list
+    operation_id: notifications.list
+    kind: read
+    api_surface: app
+    api_method: GET
+    api_path: /app/v3/api/notification/notifications
+    sdk_domain: notification
+    openapi_exposed: false
+    summary: List portal notifications through composed notification service
+    description: Internal composed notification service list operation used by the notification-pc-react boundary.
+    read_sources:
+      - ops_notification_message
+      - ops_notification_delivery
+    query_parameters: []
+  - route: /console/notifications
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
     operation: acknowledge
     operation_id: notifications.acknowledge.create
     kind: create
@@ -10780,7 +11080,7 @@ frontend_operations:
     idempotency_required: true
     request_body_required: false
     summary: Acknowledge portal notification
-    description: Marks a notification as read for the active portal user.
+    description: Marks a notification as read through the notification-pc-react service boundary.
     read_sources:
       - ops_notification_delivery
     write_tables:
@@ -10794,7 +11094,7 @@ frontend_operations:
         updated: { type: boolean }
         state: { type: string, enum: [acknowledged, popup_seen] }
   - route: /console/notifications
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-messages/src/messagesService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
     operation: markPopupSeen
     operation_id: notifications.popupSeen.create
     kind: create
@@ -10805,7 +11105,7 @@ frontend_operations:
     idempotency_required: true
     request_body_required: false
     summary: Mark portal notification popup seen
-    description: Records that a popup notification was presented to the active portal user.
+    description: Records popup presentation through the notification-pc-react service boundary.
     read_sources:
       - ops_notification_delivery
     write_tables:
@@ -12199,7 +12499,7 @@ frontend_operations:
                     required: { type: boolean }
                     sortOrder: { type: integer, format: int64 }
   - route: /admin/model/resources
-    source: data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-resource/src/resourceGroupService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
     operation: createAiResource
     operation_id: aiResources.create
     kind: create
@@ -12290,7 +12590,7 @@ frontend_operations:
                   required: { type: boolean }
                   sortOrder: { type: integer, format: int64 }
   - route: /admin/model/resources
-    source: data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-resource/src/resourceGroupService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
     operation: updateAiResource
     operation_id: aiResources.update
     kind: update
@@ -15430,6 +15730,92 @@ frontend_operations:
       required: [deleted]
       properties:
         deleted: { type: boolean }
+  - route: /admin/announcement
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts
+    operation: fetchAnnouncements
+    operation_id: announcements.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/content/announcements
+    sdk_domain: content
+    summary: List admin announcements
+    read_sources:
+      - content_announcement
+    query_parameters: []
+    response_schema:
+      name: AdminAnnouncementsResponse
+      schema:
+        $ref: '#/x_response_entities/admin_announcements_response'
+  - route: /admin/announcement
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts
+    operation: addAnnouncement
+    operation_id: announcements.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/content/announcements
+    sdk_domain: content
+    summary: Create admin announcement
+    read_sources:
+      - content_announcement
+    write_tables:
+      - content_announcement
+      - ops_audit_log
+    request_schema:
+      name: AdminAnnouncementCreateRequest
+      schema:
+        $ref: '#/x_response_entities/admin_announcement_create_request'
+    response_schema:
+      name: AdminAnnouncementMutationResponse
+      schema:
+        $ref: '#/x_response_entities/admin_announcement_mutation_response'
+  - route: /admin/announcement
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts
+    operation: updateAnnouncement
+    operation_id: announcements.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/content/announcements/{announcementId}
+    path_params:
+      - announcementId
+    sdk_domain: content
+    summary: Update admin announcement
+    read_sources:
+      - content_announcement
+    write_tables:
+      - content_announcement
+      - ops_audit_log
+    request_schema:
+      name: AdminAnnouncementUpdateRequest
+      schema:
+        $ref: '#/x_response_entities/admin_announcement_update_request'
+    response_schema:
+      name: AdminAnnouncementMutationResponse
+      schema:
+        $ref: '#/x_response_entities/admin_announcement_mutation_response'
+  - route: /admin/announcement
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts
+    operation: deleteAnnouncement
+    operation_id: announcements.delete
+    kind: delete
+    api_surface: backend
+    api_method: DELETE
+    api_path: /backend/v3/api/content/announcements/{announcementId}
+    path_params:
+      - announcementId
+    sdk_domain: content
+    summary: Delete admin announcement
+    read_sources:
+      - content_announcement
+    write_tables:
+      - content_announcement
+      - ops_audit_log
+    response_schema:
+      name: AnnouncementsDeleteResult
+      schema:
+        $ref: '#/x_response_entities/admin_announcements_delete_response'
   - route: /admin/prompts
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-core/src/admin-category-options.ts
     operation: listAdminAiCategoryOptions
@@ -18026,6 +18412,634 @@ frontend_operations:
       name: AdminMcpBindingMutationResponse
       schema:
         $ref: '#/components/schemas/AdminMcpBindingMutationResponse'
+  - route: /admin/messaging/providers
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
+    operation: listMessagingProviderAccounts
+    operation_id: providerAccounts.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/messaging/provider_accounts
+    sdk_domain: messaging
+    summary: List messaging provider accounts
+    read_sources:
+      - messaging_provider_capability
+    query_parameters:
+      - name: page
+        schema: { type: integer, format: int64, minimum: 1 }
+      - name: page_size
+        schema: { type: integer, format: int64, minimum: 1, maximum: 200 }
+      - name: q
+        schema: { type: string, maxLength: 128 }
+      - name: status
+        schema: { type: string, maxLength: 32 }
+      - name: channel
+        schema: { type: string, maxLength: 32 }
+      - name: provider_code
+        schema: { type: string, maxLength: 64 }
+    response_schema:
+      name: MessagingProviderAccountListResponse
+      type: object
+      additionalProperties: false
+      required: [items, total, page, pageSize]
+      properties:
+        items:
+          type: array
+          maxItems: 200
+          items:
+            type: object
+            additionalProperties: true
+            properties:
+              id: { type: string, maxLength: 128 }
+              status: { type: string, maxLength: 32 }
+              channel: { type: string, maxLength: 32 }
+        total: { type: integer, format: int64, minimum: 0 }
+        page: { type: integer, format: int64, minimum: 1 }
+        pageSize: { type: integer, format: int64, minimum: 1 }
+  - route: /admin/messaging/providers
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
+    operation: createMessagingProviderAccount
+    operation_id: providerAccounts.create
+    kind: action
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/messaging/provider_accounts
+    sdk_domain: messaging
+    summary: Create messaging provider account
+    read_sources:
+      - messaging_provider_capability
+    write_tables:
+      - messaging_provider_capability
+    request_schema:
+      name: MessagingProviderAccountCreateRequest
+      type: object
+      additionalProperties: false
+      required: [providerCode, accountCode, accountName, channel, credential]
+      properties:
+        providerCode: { type: string, maxLength: 64 }
+        accountCode: { type: string, maxLength: 64 }
+        accountName: { type: string, maxLength: 128 }
+        channel: { type: string, maxLength: 32 }
+        deliveryPurpose: { type: string, maxLength: 64 }
+        baseUrl: { type: string, maxLength: 512 }
+        credential:
+          type: object
+          required: [secretRef]
+          properties:
+            secretRef: { type: string, maxLength: 256 }
+            authType: { type: string, maxLength: 64 }
+    response_schema:
+      type: object
+      additionalProperties: true
+      properties:
+        id: { type: string, maxLength: 128 }
+        status: { type: string, maxLength: 32 }
+        channel: { type: string, maxLength: 32 }
+      name: MessagingProviderAccountCreateResponse
+  - route: /admin/messaging/sender-identities
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
+    operation: listMessagingSenderIdentities
+    operation_id: senderIdentities.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/messaging/sender_identities
+    sdk_domain: messaging
+    summary: List messaging sender identities
+    read_sources:
+      - messaging_sender_identity
+    query_parameters:
+      - name: page
+        schema: { type: integer, format: int64, minimum: 1 }
+      - name: page_size
+        schema: { type: integer, format: int64, minimum: 1, maximum: 200 }
+    response_schema:
+      name: MessagingSenderIdentityListResponse
+      type: object
+      required: [items]
+      properties:
+        items:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+            properties:
+              id: { type: string, maxLength: 128 }
+              status: { type: string, maxLength: 32 }
+              channel: { type: string, maxLength: 32 }
+  - route: /admin/messaging/sender-identities
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
+    operation: createMessagingSenderIdentity
+    operation_id: senderIdentities.create
+    kind: action
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/messaging/sender_identities
+    sdk_domain: messaging
+    summary: Create messaging sender identity
+    read_sources:
+      - messaging_sender_identity
+    write_tables:
+      - messaging_sender_identity
+    request_schema:
+      name: MessagingSenderIdentityCreateRequest
+      type: object
+      required: [providerAccountId, channel, identityCode]
+      properties:
+        providerAccountId: { type: string, maxLength: 128 }
+        channel: { type: string, maxLength: 32 }
+        identityCode: { type: string, maxLength: 128 }
+        displayName: { type: string, maxLength: 128 }
+        fromEmail: { type: string, maxLength: 256 }
+        fromName: { type: string, maxLength: 128 }
+        signName: { type: string, maxLength: 128 }
+        senderId: { type: string, maxLength: 128 }
+    response_schema:
+      type: object
+      additionalProperties: true
+      properties:
+        id: { type: string, maxLength: 128 }
+        status: { type: string, maxLength: 32 }
+        channel: { type: string, maxLength: 32 }
+      name: MessagingSenderIdentityCreateResponse
+  - route: /admin/messaging/templates
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
+    operation: listMessagingTemplates
+    operation_id: templates.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/messaging/templates
+    sdk_domain: messaging
+    summary: List messaging templates
+    read_sources:
+      - messaging_template
+      - messaging_template_version
+      - messaging_template_variant
+    query_parameters:
+      - name: page
+        schema: { type: integer, format: int64, minimum: 1 }
+      - name: page_size
+        schema: { type: integer, format: int64, minimum: 1, maximum: 200 }
+    response_schema:
+      name: MessagingTemplateListResponse
+      type: object
+      required: [items]
+      properties:
+        items:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+            properties:
+              id: { type: string, maxLength: 128 }
+              status: { type: string, maxLength: 32 }
+              channel: { type: string, maxLength: 32 }
+  - route: /admin/messaging/templates
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
+    operation: createMessagingTemplate
+    operation_id: templates.create
+    kind: action
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/messaging/templates
+    sdk_domain: messaging
+    summary: Create messaging template
+    read_sources:
+      - messaging_template
+      - messaging_template_version
+    write_tables:
+      - messaging_template
+      - messaging_template_version
+    request_schema:
+      name: MessagingTemplateCreateRequest
+      type: object
+      required: [templateCode, sceneCode, channel, category, templateName, bodyTemplate]
+      properties:
+        templateCode: { type: string, maxLength: 128 }
+        sceneCode: { type: string, maxLength: 128 }
+        channel: { type: string, maxLength: 32 }
+        deliveryPurpose: { type: string, maxLength: 64 }
+        category: { type: string, maxLength: 64 }
+        templateName: { type: string, maxLength: 128 }
+        subjectTemplate: { type: string, maxLength: 512 }
+        bodyTemplate: { type: string, maxLength: 20000 }
+        contentFormat: { type: string, maxLength: 32 }
+        locale: { type: string, maxLength: 32 }
+    response_schema:
+      type: object
+      additionalProperties: true
+      properties:
+        id: { type: string, maxLength: 128 }
+        status: { type: string, maxLength: 32 }
+        channel: { type: string, maxLength: 32 }
+      name: MessagingTemplateCreateResponse
+  - route: /admin/messaging/templates
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
+    operation: publishMessagingTemplateVersion
+    operation_id: templates.versions.publish
+    kind: action
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/messaging/templates/{templateId}/versions/{versionId}/publish
+    sdk_domain: messaging
+    summary: Publish messaging template version
+    read_sources:
+      - messaging_template_version
+    write_tables:
+      - messaging_template_version
+    request_body_required: false
+    path_parameters:
+      - name: templateId
+        schema: { type: string, maxLength: 128 }
+      - name: versionId
+        schema: { type: string, maxLength: 128 }
+    response_schema:
+      type: object
+      additionalProperties: true
+      properties:
+        id: { type: string, maxLength: 128 }
+        status: { type: string, maxLength: 32 }
+        channel: { type: string, maxLength: 32 }
+      name: MessagingTemplateVersionPublishResponse
+  - route: /admin/messaging/route-rules
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
+    operation: listMessagingRouteRules
+    operation_id: routeRules.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/messaging/route_rules
+    sdk_domain: messaging
+    summary: List messaging route rules
+    read_sources:
+      - messaging_route_rule
+      - messaging_route_rule_target
+    query_parameters:
+      - name: page
+        schema: { type: integer, format: int64, minimum: 1 }
+      - name: page_size
+        schema: { type: integer, format: int64, minimum: 1, maximum: 200 }
+    response_schema:
+      name: MessagingRouteRuleListResponse
+      type: object
+      required: [items]
+      properties:
+        items:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+            properties:
+              id: { type: string, maxLength: 128 }
+              status: { type: string, maxLength: 32 }
+              channel: { type: string, maxLength: 32 }
+  - route: /admin/messaging/route-rules
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
+    operation: createMessagingRouteRule
+    operation_id: routeRules.create
+    kind: action
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/messaging/route_rules
+    sdk_domain: messaging
+    summary: Create messaging route rule
+    read_sources:
+      - messaging_route_rule
+      - messaging_route_rule_target
+    write_tables:
+      - messaging_route_rule
+      - messaging_route_rule_target
+    request_schema:
+      name: MessagingRouteRuleCreateRequest
+      type: object
+      required: [ruleCode, sceneCode, channel, targets]
+      properties:
+        ruleCode: { type: string, maxLength: 128 }
+        sceneCode: { type: string, maxLength: 128 }
+        channel: { type: string, maxLength: 32 }
+        deliveryPurpose: { type: string, maxLength: 64 }
+        priority: { type: integer, format: int64 }
+        targets:
+          type: array
+          maxItems: 10
+          items:
+            type: object
+            required: [providerAccountId, targetOrder]
+            properties:
+              providerAccountId: { type: string, maxLength: 128 }
+              senderIdentityId: { type: string, maxLength: 128 }
+              targetOrder: { type: integer, format: int64 }
+              weight: { type: integer, format: int64 }
+    response_schema:
+      type: object
+      additionalProperties: true
+      properties:
+        id: { type: string, maxLength: 128 }
+        status: { type: string, maxLength: 32 }
+        channel: { type: string, maxLength: 32 }
+      name: MessagingRouteRuleCreateResponse
+  - route: /admin/messaging/send-requests
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
+    operation: listMessagingSendRequests
+    operation_id: sendRequests.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/messaging/send_requests
+    sdk_domain: messaging
+    summary: List messaging send requests
+    read_sources:
+      - messaging_send_request
+      - messaging_send_attempt
+      - messaging_delivery_event
+    query_parameters:
+      - name: page
+        schema: { type: integer, format: int64, minimum: 1 }
+      - name: page_size
+        schema: { type: integer, format: int64, minimum: 1, maximum: 200 }
+      - name: scene_code
+        schema: { type: string, maxLength: 128 }
+      - name: target_hash
+        schema: { type: string, maxLength: 128 }
+    response_schema:
+      name: MessagingSendRequestListResponse
+      type: object
+      required: [items]
+      properties:
+        items:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+            properties:
+              id: { type: string, maxLength: 128 }
+              deliveryStatus: { type: string, maxLength: 64 }
+              channel: { type: string, maxLength: 32 }
+              sceneCode: { type: string, maxLength: 128 }
+  - route: /admin/messaging/templates
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
+    operation: sendMessagingTemplate
+    operation_id: templateSends.create
+    kind: action
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/messaging/template_sends
+    sdk_domain: messaging
+    summary: Send messaging template
+    read_sources:
+      - messaging_send_request
+      - messaging_send_attempt
+    write_tables:
+      - messaging_send_request
+      - messaging_send_attempt
+    request_schema:
+      name: MessagingTemplateSendRequest
+      type: object
+      required: [sceneCode, channel, deliveryPurpose, templateCode, targetMasked, targetHash]
+      properties:
+        sceneCode: { type: string, maxLength: 128 }
+        channel: { type: string, maxLength: 32 }
+        deliveryPurpose: { type: string, maxLength: 64 }
+        templateCode: { type: string, maxLength: 128 }
+        targetMasked: { type: string, maxLength: 128 }
+        targetHash: { type: string, maxLength: 128 }
+        dryRun: { type: boolean }
+    response_schema:
+      type: object
+      additionalProperties: true
+      properties:
+        id: { type: string, maxLength: 128 }
+        status: { type: string, maxLength: 32 }
+        channel: { type: string, maxLength: 32 }
+      name: MessagingTemplateSendResponse
+  - route: /admin/messaging/diagnostics
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
+    operation: simulateMessagingRoute
+    operation_id: diagnostics.routeSimulation.create
+    kind: action
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/messaging/diagnostics/route_simulation
+    sdk_domain: messaging
+    summary: Simulate messaging route
+    read_sources:
+      - messaging_route_rule
+      - messaging_route_rule_target
+    write_tables:
+      - ops_audit_log
+    request_schema:
+      name: MessagingRouteSimulationRequest
+      type: object
+      required: [sceneCode, channel]
+      properties:
+        sceneCode: { type: string, maxLength: 128 }
+        channel: { type: string, maxLength: 32 }
+        deliveryPurpose: { type: string, maxLength: 64 }
+    response_schema:
+      name: MessagingRouteSimulationResponse
+      type: object
+      required: [matched]
+      properties:
+        matched: { type: boolean }
+  - route: /admin/messaging/diagnostics
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
+    operation: testMessagingSend
+    operation_id: diagnostics.testSends.create
+    kind: action
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/messaging/diagnostics/test_sends
+    sdk_domain: messaging
+    summary: Test messaging send
+    read_sources:
+      - messaging_send_request
+    write_tables:
+      - messaging_send_request
+    request_schema:
+      name: MessagingTestSendRequest
+      type: object
+      required: [sceneCode, channel, targetMasked, targetHash]
+      properties:
+        sceneCode: { type: string, maxLength: 128 }
+        channel: { type: string, maxLength: 32 }
+        targetMasked: { type: string, maxLength: 128 }
+        targetHash: { type: string, maxLength: 128 }
+        dryRun: { type: boolean }
+    response_schema:
+      type: object
+      additionalProperties: true
+      properties:
+        id: { type: string, maxLength: 128 }
+        status: { type: string, maxLength: 32 }
+        channel: { type: string, maxLength: 32 }
+      name: MessagingTestSendResponse
+  - route: /admin/messaging/suppressions
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
+    operation: listMessagingSuppressions
+    operation_id: suppressions.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/messaging/suppressions
+    sdk_domain: messaging
+    summary: List messaging suppressions
+    read_sources:
+      - messaging_suppression
+    query_parameters:
+      - name: page
+        schema: { type: integer, format: int64, minimum: 1 }
+      - name: page_size
+        schema: { type: integer, format: int64, minimum: 1, maximum: 200 }
+    response_schema:
+      name: MessagingSuppressionListResponse
+      type: object
+      required: [items]
+      properties:
+        items:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+            properties:
+              id: { type: string, maxLength: 128 }
+              status: { type: string, maxLength: 32 }
+              channel: { type: string, maxLength: 32 }
+  - route: /admin/messaging/suppressions
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
+    operation: createMessagingSuppression
+    operation_id: suppressions.create
+    kind: action
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/messaging/suppressions
+    sdk_domain: messaging
+    summary: Create messaging suppression
+    read_sources:
+      - messaging_suppression
+    write_tables:
+      - messaging_suppression
+    request_schema:
+      name: MessagingSuppressionCreateRequest
+      type: object
+      required: [channel, targetMasked, targetHash, reasonCode, startsAt]
+      properties:
+        channel: { type: string, maxLength: 32 }
+        targetMasked: { type: string, maxLength: 128 }
+        targetHash: { type: string, maxLength: 128 }
+        reasonCode: { type: string, maxLength: 128 }
+        startsAt: { type: string, maxLength: 64 }
+    response_schema:
+      type: object
+      additionalProperties: true
+      properties:
+        id: { type: string, maxLength: 128 }
+        status: { type: string, maxLength: 32 }
+        channel: { type: string, maxLength: 32 }
+      name: MessagingSuppressionCreateResponse
+  - route: /admin/messaging/rate-limits
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
+    operation: listMessagingRateLimitBuckets
+    operation_id: rateLimitBuckets.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/messaging/rate_limit_buckets
+    sdk_domain: messaging
+    summary: List messaging rate limit buckets
+    read_sources:
+      - messaging_rate_limit_bucket
+    query_parameters:
+      - name: page
+        schema: { type: integer, format: int64, minimum: 1 }
+      - name: page_size
+        schema: { type: integer, format: int64, minimum: 1, maximum: 200 }
+    response_schema:
+      name: MessagingRateLimitBucketListResponse
+      type: object
+      required: [items]
+      properties:
+        items:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+            properties:
+              id: { type: string, maxLength: 128 }
+              status: { type: string, maxLength: 32 }
+              channel: { type: string, maxLength: 32 }
+  - route: /admin/messaging/verification-policies
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
+    operation: listVerificationPolicies
+    operation_id: verificationPolicies.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/messaging/verification_policies
+    sdk_domain: messaging
+    summary: List verification policies
+    read_sources:
+      - iam_verification_scene_policy
+    query_parameters:
+      - name: page
+        schema: { type: integer, format: int64, minimum: 1 }
+      - name: page_size
+        schema: { type: integer, format: int64, minimum: 1, maximum: 200 }
+    response_schema:
+      name: VerificationPolicyListResponse
+      type: object
+      required: [items]
+      properties:
+        items:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+            properties:
+              id: { type: string, maxLength: 128 }
+              status: { type: string, maxLength: 32 }
+              channel: { type: string, maxLength: 32 }
+  - route: /admin/messaging/verification-policies
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
+    operation: updateVerificationPolicy
+    operation_id: verificationPolicies.update
+    kind: update
+    api_surface: backend
+    api_method: PUT
+    api_path: /backend/v3/api/messaging/verification_policies/{policyId}
+    sdk_domain: messaging
+    summary: Update verification policy
+    read_sources:
+      - iam_verification_scene_policy
+    write_tables:
+      - iam_verification_scene_policy
+    path_parameters:
+      - name: policyId
+        schema: { type: string, maxLength: 128 }
+    request_schema:
+      name: VerificationPolicyUpdateRequest
+      type: object
+      required: [allowedChannels, codeLength, ttlSeconds, maxVerifyAttempts, templateCode]
+      properties:
+        allowedChannels:
+          type: array
+          items: { type: string, maxLength: 32 }
+        defaultChannel: { type: string, maxLength: 32 }
+        codeLength: { type: integer, format: int64 }
+        ttlSeconds: { type: integer, format: int64 }
+        resendIntervalSeconds: { type: integer, format: int64 }
+        maxSendPerHour: { type: integer, format: int64 }
+        maxVerifyAttempts: { type: integer, format: int64 }
+        templateCode: { type: string, maxLength: 128 }
+        riskPolicy: { type: object, additionalProperties: true }
+    response_schema:
+      type: object
+      additionalProperties: true
+      properties:
+        id: { type: string, maxLength: 128 }
+        status: { type: string, maxLength: 32 }
+        channel: { type: string, maxLength: 32 }
+      name: VerificationPolicyUpdateResponse
   - route: /admin/service-providers/dashboard
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-provider/src/serviceProviderService.ts
     operation: backendServiceProviderDashboardRetrieve
@@ -21020,6 +22034,23 @@ frontend_operations:
       required: [deleted]
       properties:
         deleted: { type: boolean }
+  - route: /admin/marketing/referrals
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts
+    operation: fetchReferralStats
+    operation_id: marketing.referralStats.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/system/marketing/referral_stats
+    sdk_domain: system
+    summary: List referral stats
+    read_sources:
+      - ops_referral_stat_snapshot
+    query_parameters: []
+    response_schema:
+      name: AdminReferralStatsResponse
+      schema:
+        $ref: '#/x_response_entities/admin_referral_stats_response'
   - route: /admin/user
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-user/src/userService.ts
     operation: addUser
@@ -21731,6 +22762,9 @@ routes:
     required_tables:
       - commerce_account
       - commerce_invoice
+      - commerce_payment_intent
+      - commerce_membership
+      - commerce_wallet_account
       - iam_user
       - iam_organization
       - iam_user_security_setting
@@ -21743,6 +22777,8 @@ routes:
       - commerce_billing_history
       - commerce_wallet_account
       - commerce_wallet_transaction
+      - commerce_order
+      - commerce_payment_intent
   - route: /console/memberships
     dependency_owned: true
     dependency_sdk_family: sdkwork-commerce-app-sdk
@@ -21750,8 +22786,13 @@ routes:
       - commerce_membership
       - commerce_membership_plan
       - commerce_membership_entitlement
+      - commerce_membership_entitlement_usage
       - commerce_membership_package
       - commerce_membership_package_group
+      - commerce_account
+      - commerce_product_sku
+      - commerce_order
+      - commerce_payment_intent
   - route: /console/checkout
     dependency_owned: true
     dependency_sdk_family: sdkwork-commerce-app-sdk
@@ -21759,6 +22800,21 @@ routes:
       - commerce_checkout_session
       - commerce_checkout_line
       - commerce_checkout_quote
+      - commerce_order
+      - commerce_payment_intent
+      - commerce_payment_attempt
+  - route: /console/recharge
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-commerce-app-sdk
+    required_tables:
+      - commerce_recharge_package
+      - commerce_product_spu
+      - commerce_product_sku
+      - commerce_order
+      - commerce_payment_intent
+      - commerce_payment_attempt
+      - commerce_exchange_rule
+      - commerce_billing_history
   - route: /console/payment
     dependency_owned: true
     dependency_sdk_family: sdkwork-commerce-app-sdk
@@ -22159,6 +23215,8 @@ routes:
       - ops_audit_log
       - ops_config_snapshot
   - route: /admin/model
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-models-backend-sdk
     required_tables:
       - ai_model_vendor
       - ai_model
@@ -22195,6 +23253,8 @@ routes:
       - ops_config_snapshot
       - ops_audit_log
   - route: /admin/model/resources
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-models-backend-sdk
     required_tables:
       - ai_resource
       - ai_resource_group
@@ -22250,6 +23310,8 @@ routes:
         - channel_name
         - status
   - route: /admin/model/mappings
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-models-backend-sdk
     required_tables:
       - ai_model
       - ai_model_vendor
@@ -22440,5 +23502,404 @@ routes:
   - route: /admin/service-providers/audit
     required_tables:
       - ops_audit_log
-
-
+  - route: /admin/messaging
+    required_tables:
+      - messaging_provider_capability
+      - messaging_provider
+      - messaging_provider_account
+      - ops_audit_log
+  - route: /admin/messaging/providers
+    required_tables:
+      - messaging_provider_capability
+      - ops_audit_log
+  - route: /admin/messaging/sender-identities
+    required_tables:
+      - messaging_sender_identity
+      - ops_audit_log
+  - route: /admin/messaging/templates
+    required_tables:
+      - messaging_template
+      - messaging_template_version
+      - messaging_template_variant
+      - messaging_send_request
+      - messaging_send_attempt
+      - ops_audit_log
+  - route: /admin/messaging/route-rules
+    required_tables:
+      - messaging_route_rule
+      - messaging_route_rule_target
+      - ops_audit_log
+  - route: /admin/messaging/send-requests
+    required_tables:
+      - messaging_send_request
+      - messaging_send_attempt
+      - messaging_delivery_event
+      - ops_audit_log
+  - route: /admin/messaging/diagnostics
+    required_tables:
+      - messaging_route_rule
+      - messaging_route_rule_target
+      - messaging_send_request
+      - ops_audit_log
+  - route: /admin/messaging/suppressions
+    required_tables:
+      - messaging_suppression
+      - ops_audit_log
+  - route: /admin/messaging/rate-limits
+    required_tables:
+      - messaging_rate_limit_bucket
+      - ops_audit_log
+  - route: /admin/messaging/verification-policies
+    required_tables:
+      - iam_verification_scene_policy
+      - ops_audit_log
+  - route: /admin/announcement
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/catalog
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - c_category
+      - ops_audit_log
+  - route: /admin/catalog/attributes
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/catalog/categories
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/catalog/prices
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/catalog/products
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/catalog/products/:productId/edit
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/catalog/products/new
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/catalog/skus
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/finance
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - commerce_usage_settlement
+      - commerce_usage_statement
+      - ops_audit_log
+  - route: /admin/finance/audit-events
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - commerce_usage_settlement
+      - commerce_usage_statement
+      - ops_audit_log
+  - route: /admin/finance/invoice-titles
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - commerce_usage_settlement
+      - commerce_usage_statement
+      - ops_audit_log
+  - route: /admin/finance/invoices
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - commerce_usage_settlement
+      - commerce_usage_statement
+      - ops_audit_log
+  - route: /admin/finance/order-revenue
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - commerce_usage_settlement
+      - commerce_usage_statement
+      - ops_audit_log
+  - route: /admin/finance/payment-reconciliation
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - commerce_usage_settlement
+      - commerce_usage_statement
+      - ops_audit_log
+  - route: /admin/finance/refunds-report
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - commerce_usage_settlement
+      - commerce_usage_statement
+      - ops_audit_log
+  - route: /admin/inventory
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/inventory/ledger
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/inventory/reservations
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/inventory/stocks
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/marketing
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/marketing/budget-ledger
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - commerce_usage_settlement
+      - ops_audit_log
+  - route: /admin/marketing/discount-allocations
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - commerce_usage_settlement
+      - ops_audit_log
+  - route: /admin/marketing/discount-applications
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - commerce_usage_settlement
+      - commerce_usage_statement
+      - ops_audit_log
+  - route: /admin/marketing/events
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - commerce_usage_settlement
+      - ops_audit_log
+  - route: /admin/marketing/external-bindings
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - commerce_usage_settlement
+      - ops_audit_log
+  - route: /admin/marketing/offers
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - commerce_usage_settlement
+      - commerce_usage_statement
+      - ops_audit_log
+  - route: /admin/marketing/promotion-code-redemptions
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - commerce_usage_settlement
+      - ops_audit_log
+  - route: /admin/marketing/promotion-codes
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - commerce_usage_settlement
+      - commerce_usage_statement
+      - ops_audit_log
+  - route: /admin/marketing/promotion-coupon-ledger
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - commerce_usage_settlement
+      - ops_audit_log
+  - route: /admin/marketing/promotion-coupon-stocks
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - commerce_usage_settlement
+      - commerce_usage_statement
+      - ops_audit_log
+  - route: /admin/marketing/referrals
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/marketing/user-coupons
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - commerce_usage_settlement
+      - ops_audit_log
+  - route: /admin/memberships
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/memberships/entitlements
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/memberships/members
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/memberships/packages
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/memberships/plans
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/memberships/recharge-packages
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/memberships/vip-packages
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/oauth
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-appbase-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/oauth/login-platforms
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-appbase-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/oauth/mini-programs
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-appbase-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/oauth/official-accounts
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-appbase-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/orders
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/orders/fulfillments
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/orders/orders
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/orders/refunds
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/orders/shipments
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/payments
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/payments/attempts
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/payments/channels
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/payments/intents
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/payments/methods
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/payments/provider-accounts
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/payments/providers
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/payments/reconciliation-runs
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/payments/route-rules
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/payments/webhook-events
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/wallet
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/wallet/exchange-rules
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/wallet/recharge-orders
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/wallet/wallet-accounts
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/wallet/wallet-ledger
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log

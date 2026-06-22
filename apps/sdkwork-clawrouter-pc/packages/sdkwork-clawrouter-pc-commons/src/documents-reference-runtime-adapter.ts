@@ -5,14 +5,18 @@ import {
   getClawRouterGlobalTokenManager,
   SDK_SYSTEM_CONFIG,
 } from './sdk-clients.ts';
+import { normalizeGeneratedSdkBaseUrl } from './sdk-base-url.ts';
 import { readClawRouterRuntimeEnv, resolveClawRouterRuntimeBoolean } from './utils/env.ts';
 
 let documentsAppSdkClient: SdkworkDocumentsAppClient | null = null;
 
 function resolveDocumentsAppApiBaseUrl(): string {
-  return readClawRouterRuntimeEnv('VITE_SDKWORK_DOCUMENTS_APP_API_BASE_URL')
-    ?? readClawRouterRuntimeEnv('VITE_CLAWROUTER_APP_API_BASE_URL')
-    ?? APP_API_PREFIX;
+  return normalizeGeneratedSdkBaseUrl(
+    readClawRouterRuntimeEnv('VITE_SDKWORK_DOCUMENTS_APP_API_BASE_URL')
+      ?? readClawRouterRuntimeEnv('VITE_CLAWROUTER_APP_API_BASE_URL')
+      ?? APP_API_PREFIX,
+    APP_API_PREFIX,
+  );
 }
 
 export function getDocumentsAppSdkClient(): DocumentsAppSdkClient {

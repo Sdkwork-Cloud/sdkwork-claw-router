@@ -125,20 +125,20 @@
                  },
     "components":  {
                        "edgeServer":  {
-                                          "crate":  "sdkwork-claw-gateway",
-                                          "binary":  "sdkwork-claw-gateway"
+                                          "crate":  "sdkwork-clawrouter-gateway",
+                                          "binary":  "clawrouter"
                                       },
                        "gatewayService":  {
-                                              "crate":  "sdkwork-claw-gateway",
-                                              "binary":  "sdkwork-claw-gateway"
+                                              "crate":  "sdkwork-clawrouter-gateway",
+                                              "binary":  "clawrouter"
                                           },
                        "adminApiService":  {
-                                               "crate":  "sdkwork-claw-admin",
-                                               "binary":  "sdkwork-claw-admin"
+                                               "crate":  "sdkwork-clawrouter-admin-api-server",
+                                               "binary":  "sdkwork-clawrouter-admin-api-server"
                                            },
                        "appApiService":  {
-                                             "crate":  "sdkwork-claw-app",
-                                             "binary":  "sdkwork-claw-app"
+                                             "crate":  "sdkwork-clawrouter-app-api-server",
+                                             "binary":  "sdkwork-clawrouter-app-api-server"
                                          },
                        "portalRenderer":  {
                                               "package":  "apps/sdkwork-clawrouter-pc",
@@ -157,8 +157,8 @@
                                                                                            "processes":  [
                                                                                                              {
                                                                                                                  "id":  "application.public-ingress",
-                                                                                                                 "crate":  "sdkwork-claw-gateway",
-                                                                                                                 "binary":  "sdkwork-claw-gateway",
+                                                                                                                 "crate":  "sdkwork-clawrouter-gateway",
+                                                                                                                 "binary":  "clawrouter",
                                                                                                                  "required":  true
                                                                                                              },
                                                                                                              {
@@ -176,20 +176,20 @@
                                                                                           "processes":  [
                                                                                                             {
                                                                                                                 "id":  "application.open-http",
-                                                                                                                "crate":  "sdkwork-claw-gateway",
-                                                                                                                "binary":  "sdkwork-claw-gateway",
+                                                                                                                "crate":  "sdkwork-clawrouter-gateway",
+                                                                                                                "binary":  "clawrouter",
                                                                                                                 "required":  true
                                                                                                             },
                                                                                                             {
                                                                                                                 "id":  "application.backend-http",
-                                                                                                                "crate":  "sdkwork-claw-admin",
-                                                                                                                "binary":  "sdkwork-claw-admin",
+                                                                                                                "crate":  "sdkwork-clawrouter-admin-api-server",
+                                                                                                                "binary":  "sdkwork-clawrouter-admin-api-server",
                                                                                                                 "required":  true
                                                                                                             },
                                                                                                             {
                                                                                                                 "id":  "app-api",
-                                                                                                                "crate":  "sdkwork-claw-app",
-                                                                                                                "binary":  "sdkwork-claw-app",
+                                                                                                                "crate":  "sdkwork-clawrouter-app-api-server",
+                                                                                                                "binary":  "sdkwork-clawrouter-app-api-server",
                                                                                                                 "required":  true
                                                                                                             },
                                                                                                             {
@@ -200,8 +200,8 @@
                                                                                                             },
                                                                                                             {
                                                                                                                 "id":  "application.public-ingress",
-                                                                                                                "crate":  "sdkwork-claw-gateway",
-                                                                                                                "binary":  "sdkwork-claw-gateway",
+                                                                                                                "crate":  "sdkwork-clawrouter-gateway",
+                                                                                                                "binary":  "clawrouter",
                                                                                                                 "required":  true
                                                                                                             },
                                                                                                             {
@@ -227,8 +227,8 @@
                                                                                                               },
                                                                                                               {
                                                                                                                   "id":  "application.public-ingress",
-                                                                                                                  "crate":  "sdkwork-claw-gateway",
-                                                                                                                  "binary":  "sdkwork-claw-gateway",
+                                                                                                                  "crate":  "sdkwork-clawrouter-gateway",
+                                                                                                                  "binary":  "clawrouter",
                                                                                                                   "required":  true
                                                                                                               },
                                                                                                               {
@@ -252,26 +252,26 @@
                                                                                                              },
                                                                                                              {
                                                                                                                  "id":  "application.open-http",
-                                                                                                                 "crate":  "sdkwork-claw-gateway",
-                                                                                                                 "binary":  "sdkwork-claw-gateway",
+                                                                                                                 "crate":  "sdkwork-clawrouter-gateway",
+                                                                                                                 "binary":  "clawrouter",
                                                                                                                  "required":  true
                                                                                                              },
                                                                                                              {
                                                                                                                  "id":  "application.backend-http",
-                                                                                                                 "crate":  "sdkwork-claw-admin",
-                                                                                                                 "binary":  "sdkwork-claw-admin",
+                                                                                                                 "crate":  "sdkwork-clawrouter-admin-api-server",
+                                                                                                                 "binary":  "sdkwork-clawrouter-admin-api-server",
                                                                                                                  "required":  true
                                                                                                              },
                                                                                                              {
                                                                                                                  "id":  "app-api",
-                                                                                                                 "crate":  "sdkwork-claw-app",
-                                                                                                                 "binary":  "sdkwork-claw-app",
+                                                                                                                 "crate":  "sdkwork-clawrouter-app-api-server",
+                                                                                                                 "binary":  "sdkwork-clawrouter-app-api-server",
                                                                                                                  "required":  true
                                                                                                              },
                                                                                                              {
                                                                                                                  "id":  "application.public-ingress",
-                                                                                                                 "crate":  "sdkwork-claw-gateway",
-                                                                                                                 "binary":  "sdkwork-claw-gateway",
+                                                                                                                 "crate":  "sdkwork-clawrouter-gateway",
+                                                                                                                 "binary":  "clawrouter",
                                                                                                                  "required":  true
                                                                                                              },
                                                                                                              {

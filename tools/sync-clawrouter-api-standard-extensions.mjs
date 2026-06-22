@@ -76,6 +76,10 @@ function parseArgs(argv) {
 }
 
 function inferAuth(operation) {
+  const routeScope = String(operation["x-route-scope"] ?? "").trim().toLowerCase();
+  if (routeScope === "public") {
+    return { mode: "public", required: false };
+  }
   const security = Array.isArray(operation.security) ? operation.security : [];
   if (security.length === 0) {
     return { mode: "public", required: false };

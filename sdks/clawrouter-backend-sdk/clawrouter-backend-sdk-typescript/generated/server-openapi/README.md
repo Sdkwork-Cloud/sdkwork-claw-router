@@ -55,9 +55,11 @@ const client = new SdkworkBackendClient({
 ## API Modules
 
 - `client.ai` - ai API
+- `client.content` - content API
 - `client.iam` - iam API
 - `client.integration` - integration API
 - `client.mcp` - mcp API
+- `client.messaging` - messaging API
 - `client.prompts` - prompts API
 - `client.serviceProviders` - service_providers API
 - `client.sites` - sites API
@@ -70,6 +72,13 @@ const client = new SdkworkBackendClient({
 ```typescript
 // List groups
 const result = await client.ai.channelGroups.list();
+```
+
+### content
+
+```typescript
+// List admin announcements
+const result = await client.content.announcements.list();
 ```
 
 ### iam
@@ -101,6 +110,17 @@ const params = {
   category_id: 'category_id',
 };
 const result = await client.mcp.servers.list(params);
+```
+
+### messaging
+
+```typescript
+// List messaging rate limit buckets
+const params = {
+  page: 'page',
+  page_size: 'page_size',
+};
+const result = await client.messaging.rateLimitBuckets.list(params);
 ```
 
 ### prompts

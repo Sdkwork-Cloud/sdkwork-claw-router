@@ -2,9 +2,16 @@ from __future__ import annotations
 
 import argparse
 import re
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
+
+_FRAMEWORK_TOOLS_ROOT = Path(__file__).resolve().parents[2] / "sdkwork-web-framework" / "tools"
+if _FRAMEWORK_TOOLS_ROOT.is_dir() and str(_FRAMEWORK_TOOLS_ROOT) not in sys.path:
+    sys.path.insert(0, str(_FRAMEWORK_TOOLS_ROOT))
+
+from schema_registry.composer import compose_frontend_field_contract as _compose_frontend_field_contract  # noqa: E402
 
 try:
     import yaml
@@ -94,33 +101,7 @@ def load_frontend_field_contract(root: Path, contract_path: Path | None = None) 
 def compile_frontend_field_contract(root: Path, index_path: Path | None = None) -> dict[str, Any]:
     root = Path(root).resolve()
     selected_index = Path(index_path).resolve() if index_path is not None else root / DEFAULT_CONTRACT_INDEX
-    index = _load_yaml_mapping(selected_index, "frontend field contract index")
-    if not _is_fragment_index(index):
-        raise ValueError("frontend field contract index must declare fragments")
-
-    compiled: dict[str, Any] = {}
-    for key in METADATA_KEYS:
-        if key in index:
-            compiled[key] = index[key]
-
-    fragments = index.get("fragments")
-    if not isinstance(fragments, list) or not fragments:
-        raise ValueError("frontend field contract index fragments must be a non-empty list")
-
-    seen_fragments: set[Path] = set()
-    for raw_fragment in fragments:
-        fragment_path = _fragment_path(selected_index, raw_fragment)
-        if fragment_path in seen_fragments:
-            raise ValueError(f"duplicate frontend field contract fragment: {_display(root, fragment_path)}")
-        seen_fragments.add(fragment_path)
-        fragment = _load_yaml_mapping(fragment_path, f"frontend field contract fragment {_display(root, fragment_path)}")
-        _merge_fragment(compiled, fragment, root=root, fragment_path=fragment_path)
-
-    for section in MERGEABLE_LIST_SECTIONS:
-        compiled.setdefault(section, [])
-    for section in MERGEABLE_MAPPING_SECTIONS:
-        compiled.setdefault(section, {})
-    return compiled
+    return _compose_frontend_field_contract(root, selected_index)
 
 
 def render_frontend_field_contract(root: Path, index_path: Path | None = None) -> str:

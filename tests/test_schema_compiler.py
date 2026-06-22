@@ -14,19 +14,28 @@ class SchemaCompilerTest(unittest.TestCase):
         registry.write_text(textwrap.dedent(content).strip() + "\n", encoding="utf-8")
         return registry
 
-    def test_real_registry_compiles_appbase_iam_backend_tables(self) -> None:
+    def test_real_registry_compiles_clawrouter_owned_tables_only(self) -> None:
         root = Path(__file__).resolve().parents[1]
 
         sql = SchemaCompiler(root=root).compile_postgres()
+        registry = SchemaCompiler(root=root)._load_registry()
 
-        self.assertIn("CREATE TABLE IF NOT EXISTS iam_organization_membership (", sql)
-        self.assertNotIn("CREATE TABLE IF NOT EXISTS iam_organization_member (", sql)
+        imported = {
+            table["table"]
+            for table in registry.get("tables", [])
+            if isinstance(table, dict) and table.get("imported")
+        }
+        self.assertIn("ai_model_vendor", imported)
+        self.assertIn("iam_verification_scene_policy", imported)
+
+        for table in sorted(imported):
+            self.assertNotIn(f"CREATE TABLE IF NOT EXISTS {table} (", sql)
+
         for table in [
-            "iam_department",
-            "iam_department_assignment",
-            "iam_position",
-            "iam_position_assignment",
-            "iam_role_binding",
+            "ai_channel",
+            "ai_routing_policy",
+            "iam_gateway_api_key",
+            "content_forum_post",
         ]:
             self.assertIn(f"CREATE TABLE IF NOT EXISTS {table} (", sql)
 

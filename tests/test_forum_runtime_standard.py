@@ -455,10 +455,10 @@ class ForumRuntimeStandardTest(unittest.TestCase):
 
     def test_rust_forum_ports_do_not_keep_removed_feed_categories_capability(self) -> None:
         rust_sources = [
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "forum_store.rs",
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_forum.rs",
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "forum_store.rs",
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "forum_store.rs",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "ports" / "forum_store.rs",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "app_forum.rs",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "sqlite" / "forum_store.rs",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "postgres" / "forum_store.rs",
         ]
         for source_path in rust_sources:
             with self.subTest(source_path=source_path):
@@ -469,7 +469,7 @@ class ForumRuntimeStandardTest(unittest.TestCase):
                 )
 
     def test_rust_forum_feed_item_matches_generated_feed_item_fields(self) -> None:
-        port_source = (ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "forum_store.rs").read_text(
+        port_source = (ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "ports" / "forum_store.rs").read_text(
             encoding="utf-8"
         )
         start = port_source.index("pub struct ForumFeedItem")
@@ -485,8 +485,8 @@ class ForumRuntimeStandardTest(unittest.TestCase):
 
     def test_rust_forum_media_persistence_rejects_legacy_url_field_fallbacks(self) -> None:
         for store_path in [
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "forum_store.rs",
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "forum_store.rs",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "sqlite" / "forum_store.rs",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "postgres" / "forum_store.rs",
         ]:
             with self.subTest(store_path=store_path):
                 store_source = store_path.read_text(encoding="utf-8")
@@ -496,7 +496,7 @@ class ForumRuntimeStandardTest(unittest.TestCase):
                 self.assertNotIn("coverImage", store_source)
 
     def test_rust_forum_api_uses_only_generated_pagination_parameter_names(self) -> None:
-        api_source = (ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_forum.rs").read_text(
+        api_source = (ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "app_forum.rs").read_text(
             encoding="utf-8"
         )
 
@@ -508,8 +508,8 @@ class ForumRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("query.pageSize", api_source)
         self.assertNotIn(".or(query.limit)", api_source)
         for store_path in [
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "forum_store.rs",
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "forum_store.rs",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "sqlite" / "forum_store.rs",
+            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "postgres" / "forum_store.rs",
         ]:
             with self.subTest(store_path=store_path):
                 store_source = store_path.read_text(encoding="utf-8")

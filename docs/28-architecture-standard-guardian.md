@@ -47,9 +47,9 @@ docs/09-部署架构设计.md
 
 - `docs/02-技术架构设计.md`
   - `Rust-first`
-  - `sdkwork-claw-gateway`
-  - `sdkwork-claw-app`
-  - `sdkwork-claw-admin`
+  - `sdkwork-clawrouter-gateway`
+  - `sdkwork-clawrouter-app-api-server`
+  - `sdkwork-clawrouter-admin-api-server`
   - `/app/v3/api`
   - `/backend/v3/api`
   - `/v1`

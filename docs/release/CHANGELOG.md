@@ -81,15 +81,15 @@ All notable changes to `sdkwork-clawrouter` release records will be documented h
 ### Verification
 
 - `cargo fmt --all`
-- `cargo test -p sdkwork-claw-app --test app_session_route -- --nocapture`
-- `cargo test -p sdkwork-claw-product --test app_auth_api -- --nocapture`
+- `cargo test -p sdkwork-clawrouter-app-api-server --test app_session_route -- --nocapture`
+- `cargo test -p sdkwork-clawrouter-router-service --test app_auth_api -- --nocapture`
 - `cargo test -p sdkwork-claw-installer --test installer_cli installer_cli_reports_invalid_env_catalog_root_as_machine_readable_config_error -- --nocapture`
 - `node scripts/plan-claw-router-install-packages.mjs --check`
 - `node scripts/build-claw-router-install-package.mjs --all --check --dry-run --json`
 - `node scripts/build-claw-router-native-installer.mjs --all --check --dry-run --json`
 - `node scripts/run-claw-router-product.test.mjs`
 - `node scripts/release-preflight.mjs --dry-run --json`
-- `cargo test -p sdkwork-claw-product --test database_installer sqlite_installer_repairs`
+- `cargo test -p sdkwork-clawrouter-router-service --test database_installer sqlite_installer_repairs`
 - Local Windows WiX fixture build for `windows-x64-desktop` `.msi`
 - GitHub Actions `Release Package` run `25957200472`, covering Linux x64, Linux arm64, Windows x64, Windows arm64, macOS x64, and macOS arm64.
 
@@ -111,7 +111,7 @@ All notable changes to `sdkwork-clawrouter` release records will be documented h
 - Added runtime configuration management with OS-standard config paths for server and desktop deployments.
 - Made server deployments default to PostgreSQL and block startup when database configuration is missing or still uses placeholder host/password values.
 - Made desktop deployments default to SQLite and auto-initialize a platform-appropriate config and data location.
-- Added release environment contract tooling so `.env.release.local` can be generated and validated from the executable contract instead of hand-written.
+- Added release environment contract tooling so `.env.release` can be generated and validated from the executable contract instead of hand-written.
 - Added release preflight checks for environment completeness, root cleanliness, and release-safe configuration values.
 - Added manifest-backed install package planning and archive generation for Windows, Linux, and macOS across x64 and arm64.
 - Added install package coverage for archive, service, container, and desktop deployment modes.

@@ -1,6 +1,6 @@
 use sqlx::{Row, SqlitePool};
 
-use crate::error::{RepositoryError, RepositoryResult, sql_error};
+use crate::error::{sql_error, RepositoryError, RepositoryResult};
 use crate::types::{
     AppGatewayTraceItem, AppGatewayTracesReadFuture, AppGatewayTracesReadStore,
     AppGatewayTracesSubject,

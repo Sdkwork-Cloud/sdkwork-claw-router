@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "kind": "sdkwork.standard-alignment",
   "application": "sdkwork-clawrouter",
-  "lastReviewedAt": "2026-06-21",
+  "lastReviewedAt": "2026-06-22",
   "authority": "../sdkwork-specs/README.md",
   "verification": {
     "auditCommand": "python tools/sdkwork_standard_alignment_guardian.py",
@@ -22,7 +22,7 @@
       "status": "ALIGNED",
       "target": "Connection pools and repositories use sdkwork-database crates end-to-end",
       "blockers": [
-        "108 legacy *_store.rs modules remain in product service; continue phased migration per specs/database-store-migration.manifest.json"
+        "96 legacy *_store.rs modules remain in router service; continue phased migration per specs/database-store-migration.manifest.json"
       ]
     },
     {
@@ -38,8 +38,7 @@
       "status": "IN_PROGRESS",
       "target": "Rust/TypeScript code uses sdkwork-utils for cross-cutting helpers instead of local duplicates",
       "blockers": [
-        "expand sdkwork-utils-rust adoption beyond slugify/snake_case in product modules",
-        "continue expanding @sdkwork/utils via sdkwork-clawrouter-pc-commons/sdkwork-utils facade"
+        "continue replacing local trim/is_empty helpers with infrastructure/sql/string_value.rs and sdkwork-utils-rust across legacy *_store.rs modules"
       ]
     },
     {
@@ -66,11 +65,23 @@
     {
       "id": "rust-naming",
       "spec": "../sdkwork-specs/NAMING_SPEC.md",
-      "status": "GOVERNED_EXCEPTION",
-      "target": "Services use sdkwork-<domain>-<capability>-service naming (target: sdkwork-clawrouter-router-service)",
-      "blockers": [
-        "approved legacy crates documented in specs/naming-migration.manifest.json until 2026-12-31; sdkwork-claw-product must not rename to sdkwork-router-product-service (commerce product collision)"
-      ]
+      "status": "ALIGNED",
+      "target": "Router domain services use sdkwork-clawrouter-* canonical crate names",
+      "blockers": []
+    },
+    {
+      "id": "application-env",
+      "spec": "../sdkwork-specs/ENVIRONMENT_SPEC.md",
+      "status": "ALIGNED",
+      "target": "Browser/release env profiles, canonical SDKWORK_CLAW_* edge keys, and release contract v4 stay aligned with specs/application-env-standard.md",
+      "blockers": []
+    },
+    {
+      "id": "gateway-request-identity",
+      "spec": "../sdkwork-specs/FRONTEND_SPEC.md",
+      "status": "ALIGNED",
+      "target": "Gateway invocation pipeline ignores client x-request-id and emits server UUID request ids",
+      "blockers": []
     }
   ]
 }
