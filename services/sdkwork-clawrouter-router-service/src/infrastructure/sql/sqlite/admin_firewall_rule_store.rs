@@ -2,6 +2,9 @@ use sha2::{Digest, Sha256};
 use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
+use crate::infrastructure::sql::routing_config_change::{
+    record_sqlite_ai_routing_config_change, AiRoutingConfigChange,
+};
 use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
 use crate::ports::{
     AdminFirewallRuleCommandFuture, AdminFirewallRuleItem, AdminFirewallRuleStore,
@@ -93,6 +96,24 @@ impl AdminFirewallRuleStore for SqliteAdminFirewallRuleStore {
                 }),
             )
             .await?;
+            record_sqlite_ai_routing_config_change(
+                &mut tx,
+                firewall_rule_routing_config_change(
+                    command.subject.tenant_id,
+                    command.subject.organization_id,
+                    command.subject.operator_id,
+                    &command.request_id,
+                    &command.requested_at,
+                    "create_firewall_rule",
+                    id,
+                    serde_json::json!({
+                        "firewallRuleId": id,
+                        "type": &command.firewall_type,
+                        "value": &command.value
+                    }),
+                ),
+            )
+            .await?;
             let item = load_firewall_rule_by_id(
                 &mut tx,
                 id,
@@ -150,6 +171,23 @@ impl AdminFirewallRuleStore for SqliteAdminFirewallRuleStore {
                         "action": "delete_firewall_rule",
                         "firewallRuleId": command.rule_id
                     }),
+                )
+                .await?;
+                record_sqlite_ai_routing_config_change(
+                    &mut tx,
+                    firewall_rule_routing_config_change(
+                        command.subject.tenant_id,
+                        command.subject.organization_id,
+                        command.subject.operator_id,
+                        &command.request_id,
+                        &command.requested_at,
+                        "delete_firewall_rule",
+                        command.rule_id,
+                        serde_json::json!({
+                            "firewallRuleId": command.rule_id,
+                            "deleted": true
+                        }),
+                    ),
                 )
                 .await?;
             }
@@ -612,4 +650,27 @@ fn store_error(context: &str, error: sqlx::Error) -> DomainError {
         }
     }
     DomainError::new(format!("{context}: {error}"))
+}
+
+fn firewall_rule_routing_config_change<'a>(
+    tenant_id: i64,
+    organization_id: i64,
+    operator_id: i64,
+    request_id: &'a str,
+    requested_at: &'a str,
+    action: &'a str,
+    firewall_rule_id: i64,
+    event_payload: serde_json::Value,
+) -> AiRoutingConfigChange<'a> {
+    AiRoutingConfigChange {
+        tenant_id,
+        organization_id,
+        operator_id,
+        request_id,
+        requested_at,
+        changed_object_type: "firewall_rule",
+        changed_object_id: firewall_rule_id,
+        action,
+        event_payload,
+    }
 }

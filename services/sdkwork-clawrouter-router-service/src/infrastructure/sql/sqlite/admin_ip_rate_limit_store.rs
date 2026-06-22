@@ -511,3 +511,26 @@ fn store_error(context: &str, error: sqlx::Error) -> DomainError {
     }
     DomainError::new(format!("{context}: {error}"))
 }
+
+fn ip_rate_limit_routing_config_change<'a>(
+    tenant_id: i64,
+    organization_id: i64,
+    operator_id: i64,
+    request_id: &'a str,
+    requested_at: &'a str,
+    action: &'a str,
+    ip_rate_limit_id: i64,
+    event_payload: serde_json::Value,
+) -> AiRoutingConfigChange<'a> {
+    AiRoutingConfigChange {
+        tenant_id,
+        organization_id,
+        operator_id,
+        request_id,
+        requested_at,
+        changed_object_type: "ip_rate_limit",
+        changed_object_id: ip_rate_limit_id,
+        action,
+        event_payload,
+    }
+}

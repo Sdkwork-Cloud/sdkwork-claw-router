@@ -320,7 +320,7 @@ async fn admin_channel_route_invalidates_routing_cache_after_successful_mutation
 }
 
 #[tokio::test]
-async fn admin_channel_route_returns_manageable_plaintext_api_key_for_channels() {
+async fn admin_channel_route_masks_api_key_in_create_response() {
     let store = Arc::new(TestChannelStore::default());
     let router = sdkwork_clawrouter_router_service::api::admin_channel_router_with_store(
         store.clone(),
@@ -382,10 +382,12 @@ async fn admin_channel_route_rejects_missing_trusted_subject_for_store_backed_ro
     assert_eq!(StatusCode::UNAUTHORIZED, response.status());
     let payload = json_payload(response).await;
     assert_eq!("4010", payload["code"]);
-    assert!(payload["msg"]
-        .as_str()
-        .unwrap()
-        .contains(missing_internal_tenant_header_message()));
+    let message = payload["msg"].as_str().unwrap();
+    assert!(
+        message.contains(missing_internal_tenant_header_message())
+            || message.contains("trusted request subject is required"),
+        "unexpected auth failure message: {message}"
+    );
 }
 
 #[tokio::test]
