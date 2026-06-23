@@ -1327,52 +1327,52 @@ async fn seed_transaction_center_data(pool: &SqlitePool) {
     for statement in [
         r#"INSERT INTO commerce_order
             (id, tenant_id, organization_id, owner_user_id, order_no, status, subject, currency_code, request_no, idempotency_key, created_at, paid_at, cancelled_at, expired_at, updated_at)
-            VALUES ('order-900', '10', '20', '30', 'order-900', 'paid', 'points_recharge', 'USD', 'order-900', 'order-900', '2026-04-29 09:00:00', '2026-04-29 09:10:00', NULL, NULL, '2026-04-29 09:10:00')"#,
+            VALUES ('order-900', '100001', '0', '30', 'order-900', 'paid', 'points_recharge', 'USD', 'order-900', 'order-900', '2026-04-29 09:00:00', '2026-04-29 09:10:00', NULL, NULL, '2026-04-29 09:10:00')"#,
         r#"INSERT INTO commerce_order_amount_breakdown
             (id, tenant_id, order_id, original_amount, discount_amount, payable_amount, currency_code, created_at)
             VALUES ('amount-900', '10', 'order-900', '25.50', '0.00', '25.50', 'USD', '2026-04-29 09:00:00')"#,
         r#"INSERT INTO commerce_order_event
             (id, tenant_id, organization_id, event_no, order_id, event_type, from_status, to_status, actor_type, actor_id, reason_code, message, payload_json, request_id, idempotency_key, created_at)
-            VALUES ('order-event-1', '10', '20', 'order-event-1', 'order-900', 'paid', 'pending', 'paid', 'system', '30', NULL, 'Order paid', '{}', 'order-900', 'order-event-1', '2026-04-29 09:10:00')"#,
+            VALUES ('order-event-1', '100001', '0', 'order-event-1', 'order-900', 'paid', 'pending', 'paid', 'system', '30', NULL, 'Order paid', '{}', 'order-900', 'order-event-1', '2026-04-29 09:10:00')"#,
         r#"INSERT INTO commerce_payment_provider
             (id, tenant_id, organization_id, provider_code, display_name, provider_type, supported_countries, supported_currencies, supported_methods, status, sort_order, created_at, updated_at)
-            VALUES ('provider-stripe', '10', '20', 'stripe', 'Stripe', 'card_processor', '["US"]', '["USD"]', '["card"]', 'active', 1, '2026-04-29 09:00:00', '2026-04-29 09:00:00')"#,
+            VALUES ('provider-stripe', '100001', '0', 'stripe', 'Stripe', 'card_processor', '["US"]', '["USD"]', '["card"]', 'active', 1, '2026-04-29 09:00:00', '2026-04-29 09:00:00')"#,
         r#"INSERT INTO commerce_payment_provider_account
             (id, tenant_id, organization_id, account_no, provider_code, merchant_id, environment, country_code, settlement_currency, secret_ref, webhook_secret_ref, certificate_ref, status, rotated_at, created_at, updated_at)
-            VALUES ('provider-account-stripe', '10', '20', 'acct-stripe-main', 'stripe', 'merchant-stripe-1', 'sandbox', 'US', 'USD', 'vault://payments/stripe/main', 'vault://payments/stripe/webhook', NULL, 'active', NULL, '2026-04-29 09:00:00', '2026-04-29 09:00:00')"#,
+            VALUES ('provider-account-stripe', '100001', '0', 'acct-stripe-main', 'stripe', 'merchant-stripe-1', 'sandbox', 'US', 'USD', 'vault://payments/stripe/main', 'vault://payments/stripe/webhook', NULL, 'active', NULL, '2026-04-29 09:00:00', '2026-04-29 09:00:00')"#,
         r#"INSERT INTO commerce_payment_method
             (id, tenant_id, organization_id, method_key, display_name, provider, status, sort_weight, request_no, idempotency_key, created_at, updated_at)
-            VALUES ('payment-method-card', '10', '20', 'card', 'Card', 'stripe', 'active', 1, 'method-card', 'method-card', '2026-04-29 09:00:00', '2026-04-29 09:00:00')"#,
+            VALUES ('payment-method-card', '100001', '0', 'card', 'Card', 'stripe', 'active', 1, 'method-card', 'method-card', '2026-04-29 09:00:00', '2026-04-29 09:00:00')"#,
         r#"INSERT INTO commerce_payment_channel
             (id, tenant_id, organization_id, channel_no, provider_account_id, method_id, scene_code, currency_code, country_code, status, priority, created_at, updated_at)
-            VALUES ('payment-channel-card', '10', '20', 'channel-card-usd', 'provider-account-stripe', 'payment-method-card', 'points_recharge', 'USD', 'US', 'active', 1, '2026-04-29 09:00:00', '2026-04-29 09:00:00')"#,
+            VALUES ('payment-channel-card', '100001', '0', 'channel-card-usd', 'provider-account-stripe', 'payment-method-card', 'points_recharge', 'USD', 'US', 'active', 1, '2026-04-29 09:00:00', '2026-04-29 09:00:00')"#,
         r#"INSERT INTO commerce_payment_route_rule
             (id, tenant_id, organization_id, rule_no, priority, purchase_type, country_code, currency_code, client_platform, amount_min, amount_max, user_segment, risk_level, channel_id, status, starts_at, ends_at, created_at, updated_at)
-            VALUES ('route-card-usd', '10', '20', 'route-card-usd', 1, 'points_recharge', 'US', 'USD', 'web', '0', '1000', 'all', 'low', 'payment-channel-card', 'active', NULL, NULL, '2026-04-29 09:00:00', '2026-04-29 09:00:00')"#,
+            VALUES ('route-card-usd', '100001', '0', 'route-card-usd', 1, 'points_recharge', 'US', 'USD', 'web', '0', '1000', 'all', 'low', 'payment-channel-card', 'active', NULL, NULL, '2026-04-29 09:00:00', '2026-04-29 09:00:00')"#,
         r#"INSERT INTO commerce_payment_intent
             (id, tenant_id, organization_id, owner_user_id, order_id, provider, amount, currency_code, status, request_no, idempotency_key, created_at, updated_at)
-            VALUES ('payment-intent-910', '10', '20', '30', 'order-900', 'stripe', '25.50', 'USD', 'succeeded', 'intent-910', 'intent-910', '2026-04-29 09:00:00', '2026-04-29 09:10:00')"#,
+            VALUES ('payment-intent-910', '100001', '0', '30', 'order-900', 'stripe', '25.50', 'USD', 'succeeded', 'intent-910', 'intent-910', '2026-04-29 09:00:00', '2026-04-29 09:10:00')"#,
         r#"INSERT INTO commerce_payment_attempt
             (id, tenant_id, organization_id, owner_user_id, payment_intent_id, order_id, provider, out_trade_no, amount, currency_code, status, callback_payload, created_at, paid_at, updated_at)
-            VALUES ('payment-910', '10', '20', '30', 'payment-intent-910', 'order-900', 'stripe', 'recharge-100', '25.50', 'USD', 'succeeded', '{"points":1000}', '2026-04-29 09:00:00', '2026-04-29 09:10:00', '2026-04-29 09:10:00')"#,
+            VALUES ('payment-910', '100001', '0', '30', 'payment-intent-910', 'order-900', 'stripe', 'recharge-100', '25.50', 'USD', 'succeeded', '{"points":1000}', '2026-04-29 09:00:00', '2026-04-29 09:10:00', '2026-04-29 09:10:00')"#,
         r#"INSERT INTO commerce_refund
             (id, tenant_id, payment_attempt_id, refund_no, amount, status, request_no, idempotency_key, created_at, updated_at)
             VALUES ('refund-920', '10', 'payment-910', 'refund-920', '5.00', 'succeeded', 'refund-920', 'refund-920', '2026-04-29 09:30:00', '2026-04-29 09:40:00')"#,
         r#"INSERT INTO commerce_fulfillment_order
             (id, tenant_id, organization_id, fulfillment_no, order_id, fulfillment_type, status, warehouse_id, address_snapshot_id, provider_code, created_at, completed_at, updated_at)
-            VALUES ('fulfillment-1', '10', '20', 'fulfillment-1', 'order-900', 'virtual', 'completed', NULL, NULL, 'internal', '2026-04-29 09:11:00', '2026-04-29 09:12:00', '2026-04-29 09:12:00')"#,
+            VALUES ('fulfillment-1', '100001', '0', 'fulfillment-1', 'order-900', 'virtual', 'completed', NULL, NULL, 'internal', '2026-04-29 09:11:00', '2026-04-29 09:12:00', '2026-04-29 09:12:00')"#,
         r#"INSERT INTO commerce_shipment
             (id, tenant_id, organization_id, shipment_no, fulfillment_id, carrier_code, tracking_no, status, shipped_at, delivered_at, created_at, updated_at)
-            VALUES ('shipment-1', '10', '20', 'shipment-1', 'fulfillment-1', 'ups', '1Z999', 'in_transit', '2026-04-29 09:20:00', NULL, '2026-04-29 09:20:00', '2026-04-29 09:20:00')"#,
+            VALUES ('shipment-1', '100001', '0', 'shipment-1', 'fulfillment-1', 'ups', '1Z999', 'in_transit', '2026-04-29 09:20:00', NULL, '2026-04-29 09:20:00', '2026-04-29 09:20:00')"#,
         r#"INSERT INTO commerce_shipment_tracking_event
             (id, tenant_id, organization_id, shipment_id, event_time, event_code, location, description, raw_payload_json, created_at)
-            VALUES ('shipment-event-1', '10', '20', 'shipment-1', '2026-04-29 09:21:00', 'picked_up', 'New York', 'Picked up', '{}', '2026-04-29 09:21:00')"#,
+            VALUES ('shipment-event-1', '100001', '0', 'shipment-1', '2026-04-29 09:21:00', 'picked_up', 'New York', 'Picked up', '{}', '2026-04-29 09:21:00')"#,
         r#"INSERT INTO commerce_payment_webhook_event
             (id, tenant_id, organization_id, provider, event_id, nonce, signature, request_timestamp, out_trade_no, transaction_id, payload_digest, status, message, request_no, idempotency_key, created_at, processed_at, updated_at)
-            VALUES ('webhook-1', '10', '20', 'stripe', 'evt-1', 'nonce-1', NULL, 1777444200, 'recharge-100', 'txn-1', 'digest-1', 'processed', 'payment succeeded', 'webhook-1', 'webhook-1', '2026-04-29 09:10:01', '2026-04-29 09:10:02', '2026-04-29 09:10:02')"#,
+            VALUES ('webhook-1', '100001', '0', 'stripe', 'evt-1', 'nonce-1', NULL, 1777444200, 'recharge-100', 'txn-1', 'digest-1', 'processed', 'payment succeeded', 'webhook-1', 'webhook-1', '2026-04-29 09:10:01', '2026-04-29 09:10:02', '2026-04-29 09:10:02')"#,
         r#"INSERT INTO commerce_payment_reconciliation_run
             (id, tenant_id, organization_id, run_no, provider_code, provider_account_id, settlement_currency, period_start, period_end, status, total_provider_amount, total_internal_amount, difference_amount, matched_count, mismatched_count, missing_provider_count, missing_internal_count, report_file_ref, started_at, completed_at, request_no, idempotency_key, created_at, updated_at)
-            VALUES ('recon-1', '10', '20', 'recon-1', 'stripe', 'provider-account-stripe', 'USD', '2026-04-29', '2026-04-29', 'succeeded', '25.50', '25.50', '0.00', 1, 0, 0, 0, NULL, '2026-04-30 01:00:00', '2026-04-30 01:01:00', 'recon-1', 'recon-1', '2026-04-30 01:00:00', '2026-04-30 01:01:00')"#,
+            VALUES ('recon-1', '100001', '0', 'recon-1', 'stripe', 'provider-account-stripe', 'USD', '2026-04-29', '2026-04-29', 'succeeded', '25.50', '25.50', '0.00', 1, 0, 0, 0, NULL, '2026-04-30 01:00:00', '2026-04-30 01:01:00', 'recon-1', 'recon-1', '2026-04-30 01:00:00', '2026-04-30 01:01:00')"#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }

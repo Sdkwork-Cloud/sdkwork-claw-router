@@ -694,6 +694,46 @@ async fn app_model_catalog_route_returns_public_taxonomy_and_filters_server_side
 }
 
 #[tokio::test]
+async fn app_model_catalog_route_applies_offset_after_server_side_filters() {
+    let router =
+        sdkwork_clawrouter_router_service::api::app_model_catalog_router(Arc::new(catalog()));
+    let first_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/app/v3/api/ai/models?limit=1&offset=0")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    let second_response = router
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/app/v3/api/ai/models?limit=1&offset=1")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, first_response.status());
+    assert_eq!(StatusCode::OK, second_response.status());
+    let first_payload: serde_json::Value =
+        serde_json::from_slice(&axum::body::to_bytes(first_response.into_body(), usize::MAX).await.unwrap()).unwrap();
+    let second_payload: serde_json::Value =
+        serde_json::from_slice(&axum::body::to_bytes(second_response.into_body(), usize::MAX).await.unwrap()).unwrap();
+    assert_eq!(1, first_payload["data"]["items"].as_array().unwrap().len());
+    assert_eq!(1, second_payload["data"]["items"].as_array().unwrap().len());
+    assert_ne!(
+        first_payload["data"]["items"][0]["catalogKey"],
+        second_payload["data"]["items"][0]["catalogKey"]
+    );
+}
+
+#[tokio::test]
 async fn app_model_catalog_router_exposes_only_standard_ai_catalog_paths() {
     let router =
         sdkwork_clawrouter_router_service::api::app_model_catalog_router(Arc::new(catalog()));

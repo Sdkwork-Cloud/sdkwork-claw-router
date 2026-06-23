@@ -63,7 +63,7 @@ test('root package.json wires @sdkwork/app-topology and canonical dev scripts', 
   const packageJson = await readJson('package.json');
   const spec = await readJson('specs/topology.spec.json');
   assert.equal(packageJson.dependencies['@sdkwork/app-topology'], 'file:../sdkwork-app-topology');
-  assert.equal(packageJson.scripts.dev, 'pnpm dev:browser');
+  assert.equal(packageJson.scripts.dev, 'pnpm install:deps:ensure && pnpm dev:browser');
   assert.equal(packageJson.scripts['dev:browser'], 'pnpm dev:browser:postgres:unified-process:standalone');
   assert.match(packageJson.scripts['dev:browser:postgres:unified-process:standalone'], /scripts\/claw-router-dev\.mjs/);
   assert.match(packageJson.scripts['dev:browser:postgres:unified-process:standalone'], /--deployment-profile standalone/u);
@@ -246,7 +246,7 @@ test('sdkwork.workflow.json references topology cloud-config packaging target', 
 });
 
 test('claw-router dev orchestrator loads topology profile and forwards workspace flags', async () => {
-  const devScript = await read('scripts/claw-router-dev.mjs');
+  const devScript = await read('scripts/lib/claw-router-dev-main.mjs');
   assert.match(devScript, /loadTopologyProfileForWorkspace/);
   assert.match(devScript, /--deployment-profile/);
   assert.match(devScript, /--service-layout/);

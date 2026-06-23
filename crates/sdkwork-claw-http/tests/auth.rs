@@ -112,8 +112,8 @@ fn attach_trusted_request_subject_exposes_appbase_iam_context() {
         .extensions()
         .get::<IamAppContext>()
         .expect("appbase iam context");
-    assert_eq!("10", context.tenant_id);
-    assert_eq!(Some("20"), context.organization_id.as_deref());
+    assert_eq!("100001", context.tenant_id);
+    assert_eq!(None, context.organization_id.as_deref());
     assert_eq!("30", context.user_id);
     assert_eq!("sdkwork-clawrouter", context.app_id);
 }
@@ -121,8 +121,8 @@ fn attach_trusted_request_subject_exposes_appbase_iam_context() {
 #[test]
 fn trusted_request_subject_is_read_from_internal_headers() {
     let mut headers = HeaderMap::new();
-    headers.insert("x-sdkwork-tenant-id", HeaderValue::from_static("10"));
-    headers.insert("x-sdkwork-organization-id", HeaderValue::from_static("20"));
+    headers.insert("x-sdkwork-tenant-id", HeaderValue::from_static("100001"));
+    headers.insert("x-sdkwork-organization-id", HeaderValue::from_static("0"));
     headers.insert("x-sdkwork-user-id", HeaderValue::from_static("30"));
 
     let subject = TrustedRequestSubject::from_headers(&headers).unwrap();
@@ -172,11 +172,11 @@ fn trusted_request_subject_boundary_strips_direct_headers_and_returns_signed_sub
     headers.insert("x-sdkwork-tenant-id", HeaderValue::from_static("999"));
     headers.insert(
         "x-sdkwork-subject-tenant-id",
-        HeaderValue::from_static("10"),
+        HeaderValue::from_static("100001"),
     );
     headers.insert(
         "x-sdkwork-subject-organization-id",
-        HeaderValue::from_static("20"),
+        HeaderValue::from_static("0"),
     );
     headers.insert("x-sdkwork-subject-user-id", HeaderValue::from_static("30"));
     headers.insert(
@@ -212,11 +212,11 @@ fn trusted_request_subject_boundary_rejects_bad_signature_without_echoing_input(
     let mut headers = HeaderMap::new();
     headers.insert(
         "x-sdkwork-subject-tenant-id",
-        HeaderValue::from_static("10"),
+        HeaderValue::from_static("100001"),
     );
     headers.insert(
         "x-sdkwork-subject-organization-id",
-        HeaderValue::from_static("20"),
+        HeaderValue::from_static("0"),
     );
     headers.insert("x-sdkwork-subject-user-id", HeaderValue::from_static("30"));
     headers.insert(
@@ -308,13 +308,12 @@ fn app_request_subject_boundary_rejects_swapped_auth_and_access_token_types() {
         user_id: 30,
         session_id: "session-token-type".to_owned(),
         app_id: "sdkwork-clawrouter".to_owned(),
-        login_scope: "ORGANIZATION".to_owned(),
+        login_scope: "TENANT".to_owned(),
         environment: "dev".to_owned(),
         deployment_mode: "saas".to_owned(),
         auth_level: "password".to_owned(),
         data_scope: vec![
-            "tenant:10".to_owned(),
-            "organization:20".to_owned(),
+            "tenant:100001".to_owned(),
             "user:30".to_owned(),
         ],
         permission_scope: vec!["clawrouter:console".to_owned()],
@@ -368,13 +367,12 @@ fn app_request_subject_boundary_rejects_access_token_from_different_session() {
         user_id: 30,
         session_id: "session-auth".to_owned(),
         app_id: "sdkwork-clawrouter".to_owned(),
-        login_scope: "ORGANIZATION".to_owned(),
+        login_scope: "TENANT".to_owned(),
         environment: "dev".to_owned(),
         deployment_mode: "saas".to_owned(),
         auth_level: "password".to_owned(),
         data_scope: vec![
-            "tenant:10".to_owned(),
-            "organization:20".to_owned(),
+            "tenant:100001".to_owned(),
             "user:30".to_owned(),
         ],
         permission_scope: vec!["clawrouter:console".to_owned()],

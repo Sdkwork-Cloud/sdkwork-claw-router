@@ -1063,7 +1063,10 @@ impl DatabaseInstaller {
     async fn apply_schema_startup_repairs(&self) -> Result<bool, DatabaseInstallError> {
         let mut changed = match &self.backend {
             InstallerBackend::Sqlite(pool) => {
-                repair_sqlite_generated_schema_index_definitions(pool).await?
+                let mut sqlite_changed = repair_sqlite_generated_schema_index_definitions(pool).await?;
+                sqlite_changed |=
+                    repair_sqlite_sdkwork_models_catalog_module_index_definitions(pool).await?;
+                sqlite_changed
             }
             InstallerBackend::Postgres(pool) => {
                 ensure_postgres_generated_schema_columns(pool).await?
@@ -1087,7 +1090,9 @@ impl DatabaseInstaller {
                     sqlite_changed = true;
                 }
                 sqlite_changed |= ensure_sqlite_appstore_module_schema_columns(pool).await?;
-                if !sqlite_sdkwork_models_catalog_module_schema_tables_exist(pool).await? {
+                if !sqlite_sdkwork_models_catalog_module_schema_tables_exist(pool).await?
+                    || !sqlite_sdkwork_models_catalog_module_schema_indexes_exist(pool).await?
+                {
                     apply_sqlite_sdkwork_models_catalog_module_schema(pool).await?;
                     sqlite_changed = true;
                 }
@@ -1130,7 +1135,9 @@ impl DatabaseInstaller {
                     changed = true;
                 }
                 changed |= ensure_postgres_appstore_module_schema_columns(pool).await?;
-                if !postgres_sdkwork_models_catalog_module_schema_tables_exist(pool).await? {
+                if !postgres_sdkwork_models_catalog_module_schema_tables_exist(pool).await?
+                    || !postgres_sdkwork_models_catalog_module_schema_indexes_exist(pool).await?
+                {
                     apply_postgres_sdkwork_models_catalog_module_schema(pool).await?;
                     changed = true;
                 }
@@ -1918,6 +1925,9 @@ async fn sqlite_status(
     if !sqlite_sdkwork_models_catalog_module_schema_tables_exist(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
+    if !sqlite_sdkwork_models_catalog_module_schema_indexes_exist(pool).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
     if !sqlite_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
@@ -2123,6 +2133,9 @@ async fn postgres_status(
         return Ok(InstallationStatus::UpgradeRequired);
     }
     if !postgres_sdkwork_models_catalog_module_schema_tables_exist(pool).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
+    if !postgres_sdkwork_models_catalog_module_schema_indexes_exist(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
     if !postgres_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
@@ -2415,7 +2428,9 @@ async fn repair_sqlite_installation(
     if !sqlite_appstore_module_schema_tables_exist(pool).await? {
         apply_sqlite_appstore_module_schema(pool).await?;
     }
-    if !sqlite_sdkwork_models_catalog_module_schema_tables_exist(pool).await? {
+    if !sqlite_sdkwork_models_catalog_module_schema_tables_exist(pool).await?
+        || !sqlite_sdkwork_models_catalog_module_schema_indexes_exist(pool).await?
+    {
         apply_sqlite_sdkwork_models_catalog_module_schema(pool).await?;
     }
     if !sqlite_forum_runtime_projection_schema_tables_exist(pool).await? {
@@ -2576,7 +2591,9 @@ async fn repair_postgres_installation(
     if !postgres_appstore_module_schema_tables_exist(pool).await? {
         apply_postgres_appstore_module_schema(pool).await?;
     }
-    if !postgres_sdkwork_models_catalog_module_schema_tables_exist(pool).await? {
+    if !postgres_sdkwork_models_catalog_module_schema_tables_exist(pool).await?
+        || !postgres_sdkwork_models_catalog_module_schema_indexes_exist(pool).await?
+    {
         apply_postgres_sdkwork_models_catalog_module_schema(pool).await?;
     }
     if !postgres_forum_runtime_projection_schema_tables_exist(pool).await? {
@@ -2787,7 +2804,7 @@ async fn ensure_sqlite_bootstrap_admin_recharge_catalog(
     .await?;
     let package_count: i64 = sqlx::query_scalar(
         r#"
-        SELECT (COUNT(1))::bigint
+        SELECT COUNT(1)
         FROM commerce_recharge_package
         WHERE tenant_id = ?
           AND organization_id = ?
@@ -2800,7 +2817,7 @@ async fn ensure_sqlite_bootstrap_admin_recharge_catalog(
     .await?;
     let settings_count: i64 = sqlx::query_scalar(
         r#"
-        SELECT (COUNT(1))::bigint
+        SELECT COUNT(1)
         FROM commerce_exchange_rule
         WHERE tenant_id = ?
           AND organization_id = ?
@@ -2825,8 +2842,12 @@ async fn ensure_sqlite_bootstrap_admin_recharge_catalog(
         payload.as_str(),
     )
     .await?;
-    upsert_sqlite_bootstrap_admin_recharge_settings(pool).await?;
-    upsert_sqlite_bootstrap_admin_recharge_packages(pool).await?;
+    if settings_count == 0 {
+        upsert_sqlite_bootstrap_admin_recharge_settings(pool).await?;
+    }
+    if package_count == 0 {
+        upsert_sqlite_bootstrap_admin_recharge_packages(pool).await?;
+    }
     record_sqlite_migration_completed(
         pool,
         "bootstrap-admin-recharge-catalog",
@@ -2850,7 +2871,7 @@ async fn ensure_postgres_bootstrap_admin_recharge_catalog(
     .await?;
     let package_count: i64 = sqlx::query_scalar(
         r#"
-        SELECT (COUNT(1))::bigint
+        SELECT COUNT(1)
         FROM commerce_recharge_package
         WHERE tenant_id = $1
           AND organization_id = $2
@@ -2863,7 +2884,7 @@ async fn ensure_postgres_bootstrap_admin_recharge_catalog(
     .await?;
     let settings_count: i64 = sqlx::query_scalar(
         r#"
-        SELECT (COUNT(1))::bigint
+        SELECT COUNT(1)
         FROM commerce_exchange_rule
         WHERE tenant_id = $1
           AND organization_id = $2
@@ -2888,8 +2909,12 @@ async fn ensure_postgres_bootstrap_admin_recharge_catalog(
         payload.as_str(),
     )
     .await?;
-    upsert_postgres_bootstrap_admin_recharge_settings(pool).await?;
-    upsert_postgres_bootstrap_admin_recharge_packages(pool).await?;
+    if settings_count == 0 {
+        upsert_postgres_bootstrap_admin_recharge_settings(pool).await?;
+    }
+    if package_count == 0 {
+        upsert_postgres_bootstrap_admin_recharge_packages(pool).await?;
+    }
     record_postgres_migration_completed(
         pool,
         "bootstrap-admin-recharge-catalog",
@@ -3803,7 +3828,7 @@ async fn sqlite_bootstrap_admin_seed_complete(
 ) -> Result<bool, sqlx::Error> {
     let count: i64 = sqlx::query_scalar(
         r#"
-        SELECT (COUNT(1))::bigint
+        SELECT COUNT(1)
         FROM iam_user u
         JOIN iam_organization_membership m
           ON m.tenant_id = u.tenant_id
@@ -3835,7 +3860,7 @@ async fn postgres_bootstrap_admin_seed_complete(
 ) -> Result<bool, sqlx::Error> {
     let count: i64 = sqlx::query_scalar(
         r#"
-        SELECT (COUNT(1))::bigint
+        SELECT COUNT(1)
         FROM iam_user u
         JOIN iam_organization_membership m
           ON m.tenant_id = u.tenant_id
@@ -3911,7 +3936,7 @@ async fn sqlite_bootstrap_admin_has_active_password_credential_in_transaction(
 ) -> Result<bool, sqlx::Error> {
     let count: i64 = sqlx::query_scalar(
         r#"
-        SELECT (COUNT(1))::bigint
+        SELECT COUNT(1)
         FROM iam_credential
         WHERE tenant_id = ?
           AND user_id = ?
@@ -3932,7 +3957,7 @@ async fn postgres_bootstrap_admin_has_active_password_credential_in_transaction(
 ) -> Result<bool, sqlx::Error> {
     let count: i64 = sqlx::query_scalar(
         r#"
-        SELECT (COUNT(1))::bigint
+        SELECT COUNT(1)
         FROM iam_credential
         WHERE tenant_id = $1
           AND user_id = $2
@@ -4575,6 +4600,9 @@ async fn sqlite_refresh_schema_needs_prepare(
     if !sqlite_sdkwork_models_catalog_module_schema_tables_exist(pool).await? {
         return Ok(true);
     }
+    if !sqlite_sdkwork_models_catalog_module_schema_indexes_exist(pool).await? {
+        return Ok(true);
+    }
     if !sqlite_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
         return Ok(true);
     }
@@ -4635,6 +4663,9 @@ async fn postgres_refresh_schema_needs_prepare(
         return Ok(true);
     }
     if !postgres_sdkwork_models_catalog_module_schema_tables_exist(pool).await? {
+        return Ok(true);
+    }
+    if !postgres_sdkwork_models_catalog_module_schema_indexes_exist(pool).await? {
         return Ok(true);
     }
     if !postgres_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
@@ -6376,6 +6407,20 @@ fn sdkwork_models_catalog_module_sqlite_schema_statements() -> Vec<String> {
         .collect()
 }
 
+fn sdkwork_models_catalog_module_sqlite_index_statements() -> Vec<String> {
+    sdkwork_models_catalog_module_sqlite_schema_statements()
+        .into_iter()
+        .filter(|statement| create_index_name(statement).is_some())
+        .collect()
+}
+
+fn sdkwork_models_catalog_module_postgres_index_names() -> BTreeSet<String> {
+    sdkwork_models_catalog_module_postgres_schema_statements()
+        .iter()
+        .filter_map(|statement| create_index_name(statement))
+        .collect()
+}
+
 async fn sqlite_sdkwork_models_catalog_module_schema_tables_exist(
     pool: &SqlitePool,
 ) -> Result<bool, sqlx::Error> {
@@ -6405,6 +6450,42 @@ async fn postgres_sdkwork_models_catalog_module_schema_tables_exist(
     )
     .await?;
     Ok(string_set(models_catalog_module_table_names()).is_subset(&installed_tables))
+}
+
+async fn sqlite_sdkwork_models_catalog_module_schema_indexes_exist(
+    pool: &SqlitePool,
+) -> Result<bool, sqlx::Error> {
+    for statement in sdkwork_models_catalog_module_sqlite_index_statements() {
+        if !sqlite_index_statement_matches(pool, statement.as_str()).await? {
+            return Ok(false);
+        }
+    }
+    Ok(true)
+}
+
+async fn postgres_sdkwork_models_catalog_module_schema_indexes_exist(
+    pool: &PgPool,
+) -> Result<bool, sqlx::Error> {
+    let installed_indexes = postgres_string_set(
+        pool,
+        r#"
+        SELECT indexname
+        FROM pg_indexes
+        WHERE schemaname = current_schema()
+        "#,
+    )
+    .await?;
+    Ok(sdkwork_models_catalog_module_postgres_index_names().is_subset(&installed_indexes))
+}
+
+async fn repair_sqlite_sdkwork_models_catalog_module_index_definitions(
+    pool: &SqlitePool,
+) -> Result<bool, sqlx::Error> {
+    let mut changed = false;
+    for statement in sdkwork_models_catalog_module_sqlite_index_statements() {
+        changed |= ensure_sqlite_index_statement(pool, statement.as_str()).await?;
+    }
+    Ok(changed)
 }
 
 async fn apply_sqlite_sdkwork_models_catalog_module_schema(
@@ -6977,6 +7058,16 @@ async fn execute_sqlite_iam_shared_database_compat_statement(
     pool: &SqlitePool,
     statement: &str,
 ) -> Result<(), DatabaseInstallError> {
+    for statement in split_postgres_multi_add_column_alter(statement) {
+        execute_sqlite_iam_shared_database_compat_statement_once(pool, statement.as_str()).await?;
+    }
+    Ok(())
+}
+
+async fn execute_sqlite_iam_shared_database_compat_statement_once(
+    pool: &SqlitePool,
+    statement: &str,
+) -> Result<(), DatabaseInstallError> {
     if let Some((table, column, definition)) = parse_add_column_if_not_exists(statement) {
         let existing_columns = sqlite_existing_columns(pool, table).await?;
         if existing_columns.contains(&column.to_ascii_lowercase()) {
@@ -7004,6 +7095,35 @@ async fn execute_sqlite_iam_shared_database_compat_statement(
         return Err(DatabaseInstallError::Database(error));
     }
     Ok(())
+}
+
+fn split_postgres_multi_add_column_alter(statement: &str) -> Vec<String> {
+    let trimmed = statement.trim().trim_end_matches(';').trim();
+    if !trimmed.to_ascii_uppercase().starts_with("ALTER TABLE ") {
+        return vec![trimmed.to_string()];
+    }
+
+    const ADD_COLUMN_MARKER: &str = "ADD COLUMN IF NOT EXISTS ";
+    if trimmed.matches(ADD_COLUMN_MARKER).count() <= 1 {
+        return vec![trimmed.to_string()];
+    }
+
+    let without_prefix = trimmed
+        .strip_prefix("ALTER TABLE ")
+        .unwrap_or(trimmed)
+        .trim();
+    let table_end = without_prefix
+        .find(char::is_whitespace)
+        .unwrap_or(without_prefix.len());
+    let table = without_prefix[..table_end].trim();
+    let columns_section = without_prefix[table_end..].trim();
+
+    columns_section
+        .split(',')
+        .map(str::trim)
+        .filter(|part| part.starts_with(ADD_COLUMN_MARKER))
+        .map(|part| format!("ALTER TABLE {table} {part}"))
+        .collect()
 }
 
 fn parse_add_column_if_not_exists(statement: &str) -> Option<(&str, &str, &str)> {
@@ -7169,6 +7289,7 @@ fn strip_line_comments(sql: &str) -> String {
 }
 
 fn postgres_statement_to_sqlite(statement: &str) -> String {
+    let had_trailing_semicolon = statement.trim_end().ends_with(';');
     let mut sqlite = statement.replace(
         "id BIGINT NOT NULL PRIMARY KEY",
         "id __SDKWORK_SQLITE_ID_PRIMARY_KEY__",
@@ -7194,7 +7315,19 @@ fn postgres_statement_to_sqlite(statement: &str) -> String {
     sqlite = sqlite.replace("'[]'::jsonb", "'[]'");
     sqlite = sqlite.replace("DEFAULT FALSE", "DEFAULT 0");
     sqlite = sqlite.replace("DEFAULT TRUE", "DEFAULT 1");
-    sqlite
+
+    let mut body = sqlite.trim().trim_end_matches(';').to_string();
+    if body.to_ascii_uppercase().starts_with("DROP ")
+        && body.to_ascii_uppercase().ends_with(" CASCADE")
+    {
+        body = body[..body.len() - " CASCADE".len()]
+            .trim_end()
+            .to_string();
+    }
+    if had_trailing_semicolon {
+        body.push(';');
+    }
+    body
 }
 
 fn next_install_runtime_id(context: &str) -> Result<i64, sqlx::Error> {
@@ -7848,6 +7981,135 @@ mod tests {
         .await
         .expect("iam_organization table");
         assert_eq!("iam_organization", table);
+    }
+
+    #[test]
+    fn split_postgres_multi_add_column_alter_expands_to_sqlite_safe_statements() {
+        let statements = split_postgres_multi_add_column_alter(
+            r#"
+            ALTER TABLE iam_permission
+              ADD COLUMN IF NOT EXISTS module_id TEXT NOT NULL DEFAULT 'legacy',
+              ADD COLUMN IF NOT EXISTS domain TEXT NOT NULL DEFAULT 'unknown',
+              ADD COLUMN IF NOT EXISTS status TEXT NOT NULL DEFAULT 'active'
+            "#,
+        );
+
+        assert_eq!(3, statements.len());
+        assert_eq!(
+            "ALTER TABLE iam_permission ADD COLUMN IF NOT EXISTS module_id TEXT NOT NULL DEFAULT 'legacy'",
+            statements[0]
+        );
+        assert_eq!(
+            "ALTER TABLE iam_permission ADD COLUMN IF NOT EXISTS domain TEXT NOT NULL DEFAULT 'unknown'",
+            statements[1]
+        );
+        assert_eq!(
+            "ALTER TABLE iam_permission ADD COLUMN IF NOT EXISTS status TEXT NOT NULL DEFAULT 'active'",
+            statements[2]
+        );
+    }
+
+    #[tokio::test]
+    async fn sqlite_remaining_module_schema_statements_apply_to_memory_database() {
+        let pool = sqlx::sqlite::SqlitePoolOptions::new()
+            .max_connections(1)
+            .connect("sqlite::memory:")
+            .await
+            .expect("sqlite memory pool");
+        for statement in appbase_iam_oauth_sqlite_schema_statements() {
+            if let Err(error) = execute_sqlite_statement(&pool, statement.as_str()).await {
+                panic!("iam oauth schema statement failed: {error}\n{statement}");
+            }
+        }
+        for statement in appstore_module_sqlite_schema_statements() {
+            if let Err(error) = execute_sqlite_statement(&pool, statement.as_str()).await {
+                panic!("appstore schema statement failed: {error}\n{statement}");
+            }
+        }
+        for statement in sdkwork_models_catalog_module_sqlite_schema_statements() {
+            if let Err(error) = execute_sqlite_statement(&pool, statement.as_str()).await {
+                panic!("models catalog schema statement failed: {error}\n{statement}");
+            }
+        }
+        for statement in forum_runtime_projection_sqlite_schema_statements() {
+            if let Err(error) = execute_sqlite_statement(&pool, statement.as_str()).await {
+                panic!("forum projection schema statement failed: {error}\n{statement}");
+            }
+        }
+        for statement in messaging_runtime_projection_sqlite_schema_statements() {
+            if let Err(error) = execute_sqlite_statement(&pool, statement.as_str()).await {
+                panic!("messaging projection schema statement failed: {error}\n{statement}");
+            }
+        }
+        for statement in clawrouter_legacy_projection_sqlite_schema_statements() {
+            if let Err(error) = execute_sqlite_statement(&pool, statement.as_str()).await {
+                panic!("legacy projection schema statement failed: {error}\n{statement}");
+            }
+        }
+    }
+
+    #[tokio::test]
+    async fn sqlite_commerce_schema_statements_apply_to_memory_database() {
+        let pool = sqlx::sqlite::SqlitePoolOptions::new()
+            .max_connections(1)
+            .connect("sqlite::memory:")
+            .await
+            .expect("sqlite memory pool");
+        for statement in appbase_commerce_sqlite_schema_statements() {
+            if let Err(error) = execute_sqlite_statement(&pool, statement.as_str()).await {
+                panic!("commerce schema statement failed: {error}\n{statement}");
+            }
+        }
+    }
+
+    #[tokio::test]
+    async fn sqlite_iam_foundation_schema_statements_apply_to_memory_database() {
+        let pool = sqlx::sqlite::SqlitePoolOptions::new()
+            .max_connections(1)
+            .connect("sqlite::memory:")
+            .await
+            .expect("sqlite memory pool");
+        for statement in appbase_iam_foundation_sqlite_schema_statements() {
+            if let Err(error) =
+                execute_sqlite_iam_shared_database_compat_statement(&pool, statement.as_str()).await
+            {
+                panic!("iam foundation schema statement failed: {error}\n{statement}");
+            }
+        }
+        for statement in appbase_iam_rbac_federation_sqlite_schema_statements() {
+            if let Err(error) =
+                execute_sqlite_iam_shared_database_compat_statement(&pool, statement.as_str()).await
+            {
+                panic!("iam rbac federation schema statement failed: {error}\n{statement}");
+            }
+        }
+    }
+
+    #[tokio::test]
+    async fn sqlite_generated_schema_statements_apply_to_memory_database() {
+        let pool = sqlx::sqlite::SqlitePoolOptions::new()
+            .max_connections(1)
+            .connect("sqlite::memory:")
+            .await
+            .expect("sqlite memory pool");
+        for statement in sqlite_schema_statements() {
+            if let Err(error) = sqlx::query(statement.as_str()).execute(&pool).await {
+                panic!("generated schema statement failed: {error}\n{statement}");
+            }
+        }
+    }
+
+    #[test]
+    fn postgres_statement_to_sqlite_strips_drop_cascade_for_sqlite() {
+        let sqlite = postgres_statement_to_sqlite(
+            "DROP TABLE IF EXISTS iam_application_package CASCADE;",
+        );
+
+        assert_eq!(
+            "DROP TABLE IF EXISTS iam_application_package;",
+            sqlite,
+            "SQLite DDL must not retain Postgres-only DROP CASCADE"
+        );
     }
 
     #[test]

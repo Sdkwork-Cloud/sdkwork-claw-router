@@ -3,7 +3,7 @@ use std::sync::Arc;
 use axum::body::Body;
 use axum::http::Request;
 use axum::Router;
-use sdkwork_claw_config::ProviderAdapterConfig;
+use sdkwork_claw_config::{ProviderAdapterConfig, RedisConfig, RuntimeTomlConfig};
 use sdkwork_clawrouter_router_service::application::ApiKeySecretHasher;
 use sdkwork_clawrouter_router_service::application::{
     AccountResolutionInterceptor, BillingPolicyInterceptor, DispatchExecutor,
@@ -46,16 +46,32 @@ where
     }
 }
 
+fn invocation_policy_guard_from_rate_limiter(
+    rate_limiter: Arc<GatewayInvocationRateLimiter>,
+) -> Arc<GatewayInvocationPolicyGuard> {
+    Arc::new(GatewayInvocationPolicyGuard::new(rate_limiter))
+}
+
 fn default_invocation_policy_guard() -> Arc<GatewayInvocationPolicyGuard> {
-    Arc::new(GatewayInvocationPolicyGuard::new(Arc::new(
-        GatewayInvocationRateLimiter::new(),
-    )))
+    invocation_policy_guard_from_rate_limiter(Arc::new(GatewayInvocationRateLimiter::new()))
+}
+
+pub fn invocation_policy_guard_from_runtime_toml(
+    runtime_toml: Option<&RuntimeTomlConfig>,
+) -> Arc<GatewayInvocationPolicyGuard> {
+    let redis_config = RedisConfig::from_env_or_runtime_toml(runtime_toml)
+        .ok()
+        .flatten();
+    invocation_policy_guard_from_rate_limiter(Arc::new(
+        GatewayInvocationRateLimiter::try_with_redis_config(redis_config.as_ref()),
+    ))
 }
 
 fn invocation_router_state<C>(
     catalog: Arc<C>,
     api_key_hasher: Arc<dyn ApiKeySecretHasher + Send + Sync>,
     pipeline: InvocationPipeline,
+    invocation_policy_guard: Arc<GatewayInvocationPolicyGuard>,
 ) -> InvocationRouterState<C>
 where
     C: PricingCatalog + Send + Sync + 'static,
@@ -64,7 +80,7 @@ where
         catalog,
         api_key_hasher,
         pipeline,
-        invocation_policy_guard: default_invocation_policy_guard(),
+        invocation_policy_guard,
     }
 }
 
@@ -81,6 +97,7 @@ where
         Arc::clone(&catalog),
         api_key_hasher,
         invocation_pipeline(catalog, dispatcher, Some(secret_resolver), None, None, None),
+        default_invocation_policy_guard(),
     ))
 }
 
@@ -96,6 +113,7 @@ where
         Arc::clone(&catalog),
         api_key_hasher,
         invocation_pipeline(catalog, dispatcher, None, None, None, None),
+        default_invocation_policy_guard(),
     ))
 }
 
@@ -122,6 +140,7 @@ where
             None,
             None,
         ),
+        default_invocation_policy_guard(),
     ))
 }
 
@@ -147,6 +166,7 @@ where
             usage_recorder,
             None,
         ),
+        default_invocation_policy_guard(),
     ))
 }
 
@@ -158,6 +178,7 @@ pub fn invocation_router_with_full_pipeline_and_provider_adapter_config<C>(
     sticky_store: Option<Arc<dyn StickyRouteStore>>,
     usage_recorder: Option<Arc<dyn GatewayUsageRecorder + Send + Sync>>,
     provider_adapter_config: Option<ProviderAdapterConfig>,
+    invocation_policy_guard: Option<Arc<GatewayInvocationPolicyGuard>>,
 ) -> Router
 where
     C: PricingCatalog + Send + Sync + 'static,
@@ -176,6 +197,7 @@ where
             usage_recorder,
             adapter_resolver,
         ),
+        invocation_policy_guard.unwrap_or_else(default_invocation_policy_guard),
     ))
 }
 

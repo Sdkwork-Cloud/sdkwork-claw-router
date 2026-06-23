@@ -79,7 +79,9 @@ pub use invocation::{
     UsageExtractionInterceptor, UsageRecordingInterceptor,
 };
 pub use password_hash::{PasswordHasher, Pbkdf2Sha256PasswordHasher};
-pub use password_login_rate_limit::PasswordLoginRateLimiter;
+pub use password_login_rate_limit::{
+    shared_password_login_rate_limiter, PasswordLoginRateLimiter,
+};
 pub use payment_adapter::{
     PaymentAdapterFuture, PaymentAdapterOperation, PaymentCancelPaymentIntentRequest,
     PaymentCancelRefundRequest, PaymentCapturePaymentIntentRequest,

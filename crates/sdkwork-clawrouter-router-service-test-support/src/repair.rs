@@ -1,14 +1,14 @@
 use crate::installed::{ensure_installed_sqlite_template, installed_sqlite_template_path};
 use crate::shared::{
     acquire_template_file_lock, copy_sqlite_template_pool, reset_sqlite_template_path,
-    retain_core_skill_seed_rows, sqlite_file_pool, sqlite_template_current, sqlite_template_path,
-    SqliteTemplateKind, INSTALLED_SQLITE_TEMPLATE_LOCK,
+    sqlite_file_pool, sqlite_template_current, sqlite_template_path, SqliteTemplateKind,
+    INSTALLED_SQLITE_TEMPLATE_LOCK,
 };
 use sqlx::{query, SqlitePool};
 use std::fs;
 use std::path::Path;
 
-const REPAIR_SQLITE_TEMPLATE_REVISION: &str = "v11";
+const REPAIR_SQLITE_TEMPLATE_REVISION: &str = "v13";
 
 pub async fn repair_sqlite_pool() -> SqlitePool {
     let template_path = sqlite_template_path("repair", REPAIR_SQLITE_TEMPLATE_REVISION);
@@ -39,7 +39,6 @@ async fn ensure_repair_sqlite_template(template_path: &Path) {
         )
     });
     let pool = sqlite_file_pool(template_path).await;
-    retain_core_skill_seed_rows(&pool).await;
     query("VACUUM").execute(&pool).await.unwrap();
     pool.close().await;
 }

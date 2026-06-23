@@ -32708,6 +32708,18 @@
             "x-sdkwork-int64-string": true,
             "x-sdkwork-rust-type": "i64"
           }
+        },
+        {
+          "in": "query",
+          "name": "offset",
+          "required": false,
+          "schema": {
+            "format": "int64",
+            "pattern": "^[0-9]+$",
+            "type": "string",
+            "x-sdkwork-int64-string": true,
+            "x-sdkwork-rust-type": "i64"
+          }
         }
       ],
       "query_parameters_declared": true,

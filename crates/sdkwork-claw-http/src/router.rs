@@ -36,12 +36,20 @@ pub fn service_router_with_database_config(
     service_name: &'static str,
     database_config: Option<&DatabaseConfig>,
 ) -> Router {
+    service_router_with_database_config_and_readiness_check(service_name, database_config, None)
+}
+
+pub fn service_router_with_database_config_and_readiness_check(
+    service_name: &'static str,
+    database_config: Option<&DatabaseConfig>,
+    readiness_check: Option<ReadinessCheckFn>,
+) -> Router {
     base_router().with_state(service_state(
         service_name,
         None,
         database_config,
         None,
-        None,
+        readiness_check,
     ))
 }
 

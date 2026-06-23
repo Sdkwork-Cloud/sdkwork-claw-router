@@ -1,5 +1,6 @@
 use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
+use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::domain::{DomainError, DomainResult};
 use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
 use crate::ports::{
@@ -703,5 +704,5 @@ fn optional_non_empty_string_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -
 }
 
 fn store_error(context: &str, error: sqlx::Error) -> DomainError {
-    DomainError::new(format!("{context}: {error}"))
+    redacted_store_error(context, error)
 }

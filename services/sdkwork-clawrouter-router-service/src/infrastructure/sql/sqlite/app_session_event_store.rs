@@ -1,5 +1,6 @@
 use sqlx::{Row, SqlitePool};
 
+use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::domain::DomainError;
 use crate::infrastructure::sql::sql_admin_product_center::media_resource_from_snapshot;
 use crate::ports::{
@@ -661,5 +662,5 @@ fn days_from_civil(year: i64, month: i64, day: i64) -> i64 {
 }
 
 fn store_error(context: &str, error: sqlx::Error) -> DomainError {
-    DomainError::new(format!("{context}: {error}"))
+    redacted_store_error(context, error)
 }

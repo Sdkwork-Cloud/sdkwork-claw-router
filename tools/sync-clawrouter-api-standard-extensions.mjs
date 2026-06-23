@@ -20,7 +20,7 @@ const HTTP_METHODS = new Set([
 const TARGETS = [
   {
     surface: "app-api",
-    apiSurface: "app",
+    apiSurface: "app-api",
     packageName: "sdkwork-router-app-api",
     capability: "router",
     apiAuthority: "sdkwork-clawrouter-app-api",
@@ -36,7 +36,7 @@ const TARGETS = [
   },
   {
     surface: "backend-api",
-    apiSurface: "backend",
+    apiSurface: "backend-api",
     packageName: "sdkwork-router-backend-api",
     capability: "router",
     apiAuthority: "sdkwork-clawrouter-backend-api",
@@ -52,7 +52,7 @@ const TARGETS = [
   },
   {
     surface: "open-api",
-    apiSurface: "open",
+    apiSurface: "open-api",
     packageName: "sdkwork-router-open-api",
     capability: "router",
     apiAuthority: "sdkwork-clawrouter-open-api",

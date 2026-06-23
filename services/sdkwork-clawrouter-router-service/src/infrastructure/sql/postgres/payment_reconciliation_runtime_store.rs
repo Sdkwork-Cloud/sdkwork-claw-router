@@ -4,6 +4,7 @@ use crate::application::{
     PaymentReconciliationItemRecord, PaymentReconciliationRuntimeStore,
     PaymentReconciliationRuntimeStoreFuture, PaymentStatementItemRecord, PaymentStatementRecord,
 };
+use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::domain::{DomainError, DomainResult};
 
 #[derive(Debug, Clone)]
@@ -335,5 +336,5 @@ fn optional_string_cell(row: &sqlx::postgres::PgRow, name: &str) -> Option<Strin
 }
 
 fn store_error(context: &str, error: sqlx::Error) -> DomainError {
-    DomainError::new(format!("{context}: {error}"))
+    redacted_store_error(context, error)
 }

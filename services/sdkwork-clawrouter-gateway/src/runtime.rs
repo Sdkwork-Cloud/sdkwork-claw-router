@@ -90,6 +90,7 @@ fn router_with_invocation_runtime_routes<C>(
     sticky_store: Option<Arc<dyn StickyRouteStore>>,
     usage_recorder: Option<UsageRecorder>,
     provider_adapter_config: Option<ProviderAdapterConfig>,
+    runtime_toml: Option<&RuntimeTomlConfig>,
 ) -> Router
 where
     C: PricingCatalog + Send + Sync + 'static,
@@ -107,6 +108,9 @@ where
             sticky_store,
             usage_recorder,
             provider_adapter_config,
+            Some(crate::invocation_router::invocation_policy_guard_from_runtime_toml(
+                runtime_toml,
+            )),
         ),
     )
 }
@@ -150,6 +154,7 @@ fn router_with_database_runtime_routes<C>(
     provider_passthrough_config: Option<ProviderRelayConfig>,
     provider_adapter_config: Option<ProviderAdapterConfig>,
     provider_runtime_config: ProviderRelayRuntimeConfig,
+    runtime_toml: Option<&RuntimeTomlConfig>,
 ) -> Result<Router, GatewayRouterError>
 where
     C: PricingCatalog + Send + Sync + 'static,
@@ -164,6 +169,7 @@ where
             invocation_sticky_store,
             usage_recorder.clone(),
             provider_adapter_config.clone(),
+            runtime_toml,
         )
     } else {
         let relays = build_openai_runtime_relays(
@@ -197,6 +203,7 @@ where
             invocation_sticky_store,
             usage_recorder.clone(),
             provider_adapter_config.clone(),
+            runtime_toml,
         )
     };
     Ok(merge_relay_authenticated_openai_passthrough(
@@ -777,10 +784,17 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
             let invocation_sticky: Option<Arc<dyn StickyRouteStore>> = Some(Arc::new(
                 InvocationStickyObjectRouteStore::sqlite(pool.clone()),
             ));
+            let readiness_check =
+                sdkwork_clawrouter_router_service::infrastructure::sql::pool::sqlite_runtime_readiness_check(
+                    pool.clone(),
+                    runtime_toml,
+                    usage_settlement_worker_config,
+                );
             router_with_database_runtime_routes(
                 router_with_database_status_and_passthrough_placeholder(
                     Some(&config),
                     provider_secret_resolver.is_none() && provider_passthrough_config.is_none(),
+                    readiness_check,
                 ),
                 catalog,
                 api_key_hasher,
@@ -790,6 +804,7 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                 provider_passthrough_config,
                 provider_adapter_config.clone(),
                 provider_runtime,
+                runtime_toml,
             )
         }
         DatabaseEngine::Postgres => {
@@ -842,10 +857,17 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
             let invocation_sticky: Option<Arc<dyn StickyRouteStore>> = Some(Arc::new(
                 InvocationStickyObjectRouteStore::postgres(pool.clone()),
             ));
+            let readiness_check =
+                sdkwork_clawrouter_router_service::infrastructure::sql::pool::postgres_runtime_readiness_check(
+                    pool.clone(),
+                    runtime_toml,
+                    usage_settlement_worker_config,
+                );
             router_with_database_runtime_routes(
                 router_with_database_status_and_passthrough_placeholder(
                     Some(&config),
                     provider_secret_resolver.is_none() && provider_passthrough_config.is_none(),
+                    readiness_check,
                 ),
                 catalog,
                 api_key_hasher,
@@ -855,6 +877,7 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                 provider_passthrough_config,
                 provider_adapter_config.clone(),
                 provider_runtime,
+                runtime_toml,
             )
         }
     }
@@ -1045,13 +1068,7 @@ async fn build_embedded_sdkwork_api_gateway_router(
         [
             (
                 APPBASE_APP_API_SERVICE_ID.to_owned(),
-                sdkwork_api_gateway::build_embedded_sdkwork_appbase_app_api_router()
-                    .await
-                    .map_err(|error| {
-                        GatewayRouterError::Config(format!(
-                            "failed to build embedded SDKWork Appbase app API router: {error}"
-                        ))
-                    })?,
+                build_claw_embedded_appbase_app_api_router().await?,
             ),
             (
                 APPBASE_BACKEND_API_SERVICE_ID.to_owned(),
@@ -1075,6 +1092,23 @@ async fn build_embedded_sdkwork_api_gateway_router(
             "failed to build embedded SDKWork API Gateway router: {error}"
         ))
     })
+}
+
+async fn build_claw_embedded_appbase_app_api_router() -> Result<Router, GatewayRouterError> {
+    let resolver = sdkwork_claw_http::ClawRouterWebRequestContextResolver::from_env()
+        .await
+        .map_err(|error| {
+            GatewayRouterError::Config(format!(
+                "failed to build claw router IAM web resolver for embedded appbase app-api: {error}"
+            ))
+        })?;
+    sdkwork_router_iam_app_api::build_sdkwork_appbase_app_api_router_with_web_resolver(resolver)
+        .await
+        .map_err(|error| {
+            GatewayRouterError::Config(format!(
+                "failed to build embedded SDKWork Appbase app API router: {error}"
+            ))
+        })
 }
 
 fn claw_router_gateway_dependency_surfaces() -> [DependencyApiSurfaceConfig; 3] {
@@ -1431,10 +1465,21 @@ fn build_gateway_router_from_all_in_one_context(
         context.usage_settlement_wakeup.clone(),
     );
 
+    let runtime_toml = RuntimeTomlConfig::from_env_config_file().map_err(anyhow::Error::msg)?;
+    let settlement_config = usage_settlement_worker_config_from_env_or_toml(runtime_toml.as_ref())
+        .map_err(anyhow::Error::msg)?;
+    let readiness_check =
+        sdkwork_clawrouter_router_service::infrastructure::sql::pool::runtime_readiness_check(
+            context.database_pool.clone(),
+            runtime_toml.as_ref(),
+            settlement_config,
+        );
+
     router_with_database_runtime_routes(
         router_with_database_status_and_passthrough_placeholder(
             Some(&context.database_config),
             true,
+            readiness_check,
         ),
         Arc::clone(&context.catalog),
         api_key_hasher,
@@ -1446,6 +1491,7 @@ fn build_gateway_router_from_all_in_one_context(
         context.provider_relay_config.clone(),
         context.provider_adapter_config.clone(),
         context.provider_runtime_config.clone(),
+        runtime_toml.as_ref(),
     )
     .map_err(anyhow::Error::new)
 }
@@ -1496,7 +1542,7 @@ async fn maybe_spawn_sqlite_usage_settlement_worker(
     if !config.enabled {
         return Ok(None);
     }
-    if !sqlite_usage_settlement_schema_ready(pool)
+    if !sdkwork_clawrouter_router_service::infrastructure::sql::pool::sqlite_usage_settlement_schema_ready(pool)
         .await
         .map_err(|error| GatewayRouterError::Sqlite(SqlCatalogLoadError::Database(error)))?
     {
@@ -1519,7 +1565,7 @@ async fn maybe_spawn_postgres_usage_settlement_worker(
     if !config.enabled {
         return Ok(None);
     }
-    if !postgres_usage_settlement_schema_ready(pool)
+    if !sdkwork_clawrouter_router_service::infrastructure::sql::pool::postgres_usage_settlement_schema_ready(pool)
         .await
         .map_err(|error| GatewayRouterError::Postgres(PostgresCatalogLoadError::Database(error)))?
     {
@@ -1761,65 +1807,6 @@ fn log_gateway_runtime_catalog_snapshot_summary(
         );
     }
 }
-
-async fn sqlite_usage_settlement_schema_ready(pool: &SqlitePool) -> Result<bool, sqlx::Error> {
-    let table_count: i64 = sqlx::query_scalar(
-        r#"
-        SELECT COUNT(1)
-        FROM sqlite_master
-        WHERE type = 'table'
-          AND name IN (
-              'ai_usage_fact',
-              'commerce_usage_settlement',
-              'commerce_account',
-              'commerce_account_ledger_entry'
-          )
-        "#,
-    )
-    .fetch_one(pool)
-    .await?;
-    let usage_column_count: i64 = sqlx::query_scalar(
-        r#"
-        SELECT COUNT(1)
-        FROM pragma_table_info('ai_usage_fact')
-        WHERE name IN ('settlement_status', 'settlement_id', 'pricing_snapshot')
-        "#,
-    )
-    .fetch_one(pool)
-    .await?;
-    Ok(table_count == 4 && usage_column_count == 3)
-}
-
-async fn postgres_usage_settlement_schema_ready(pool: &PgPool) -> Result<bool, sqlx::Error> {
-    let table_count: i64 = sqlx::query_scalar(
-        r#"
-        SELECT COUNT(1)
-        FROM information_schema.tables
-        WHERE table_schema = current_schema()
-          AND table_name IN (
-              'ai_usage_fact',
-              'commerce_usage_settlement',
-              'commerce_account',
-              'commerce_account_ledger_entry'
-          )
-        "#,
-    )
-    .fetch_one(pool)
-    .await?;
-    let usage_column_count: i64 = sqlx::query_scalar(
-        r#"
-        SELECT COUNT(1)
-        FROM information_schema.columns
-        WHERE table_schema = current_schema()
-          AND table_name = 'ai_usage_fact'
-          AND column_name IN ('settlement_status', 'settlement_id', 'pricing_snapshot')
-        "#,
-    )
-    .fetch_one(pool)
-    .await?;
-    Ok(table_count == 4 && usage_column_count == 3)
-}
-
 fn usage_settlement_worker_config_from_env_or_toml(
     runtime_toml: Option<&RuntimeTomlConfig>,
 ) -> Result<UsageSettlementWorkerConfig, String> {

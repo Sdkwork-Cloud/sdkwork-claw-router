@@ -8,8 +8,8 @@
     "@sdkwork/app-topology": "file:../sdkwork-app-topology"
   },
   "scripts": {
-    "predev": "node scripts/lib/ensure-claw-router-node-deps.mjs",
-    "dev": "pnpm dev:browser",
+    "install:deps:ensure": "node scripts/lib/ensure-claw-router-node-deps.mjs",
+    "dev": "pnpm install:deps:ensure && pnpm dev:browser",
     "dev:browser": "pnpm dev:browser:postgres:unified-process:standalone",
     "dev:browser:postgres": "pnpm dev:browser:postgres:unified-process:standalone",
     "dev:browser:sqlite": "node scripts/claw-router-dev.mjs --target browser --deployment-profile standalone --service-layout unified-process --database sqlite",
@@ -63,7 +63,7 @@
     "gateway:validate:cloud": "node scripts/gateway-cloud-bundle.mjs validate",
     "gateway:matrix": "node ../sdkwork-app-topology/scripts/sdkwork-topology.mjs print-matrix --root . --spec specs/topology.spec.json --profile all",
     "gateway:matrix:cloud": "node ../sdkwork-app-topology/scripts/sdkwork-topology.mjs print-matrix --root . --spec specs/topology.spec.json --profile platform-config-bundle",
-    "smoke:dev": "node scripts/smoke-edge-dev-server.mjs",
+    "sbom:release": "node scripts/generate-release-sbom.mjs",
     "test:tooling": "node scripts/run-claw-router-product.test.mjs",
     "test:rust:auto": "node scripts/run-claw-router-rust-tests.mjs auto",
     "test:rust:smoke": "node scripts/run-claw-router-rust-tests.mjs smoke",
@@ -76,6 +76,7 @@
     "test:rust:full": "node scripts/run-claw-router-rust-tests.mjs full",
     "test:rust:measure": "node scripts/measure-claw-router-test-targets.mjs",
     "test:rust:stop": "node scripts/stop-claw-router-test-processes.mjs",
+    "smoke:dev": "node scripts/smoke-edge-dev-server.mjs",
     "test:postgres": "node scripts/run-postgres-integration.mjs",
     "test:postgres:required": "node scripts/run-postgres-integration.mjs --require-database",
     "test:postgres:docker": "node scripts/run-postgres-integration.mjs --with-docker",

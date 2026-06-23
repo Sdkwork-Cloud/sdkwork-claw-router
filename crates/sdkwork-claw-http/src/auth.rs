@@ -256,7 +256,7 @@ impl TrustedRequestSubject {
     pub fn from_headers(headers: &HeaderMap) -> Result<Self, TrustedSubjectBoundaryError> {
         let tenant_id = required_signed_positive_i64_header(headers, X_SDKWORK_TENANT_ID)?;
         let organization_id =
-            required_signed_positive_i64_header(headers, X_SDKWORK_ORGANIZATION_ID)?;
+            required_signed_non_negative_i64_header(headers, X_SDKWORK_ORGANIZATION_ID)?;
         let user_id = required_signed_positive_i64_header(headers, X_SDKWORK_USER_ID)?;
         Ok(Self {
             tenant_id,
@@ -573,7 +573,7 @@ pub fn verified_signed_trusted_request_subject(
 
     let tenant_id = required_signed_positive_i64_header(headers, X_SDKWORK_SUBJECT_TENANT_ID)?;
     let organization_id =
-        required_signed_positive_i64_header(headers, X_SDKWORK_SUBJECT_ORGANIZATION_ID)?;
+        required_signed_non_negative_i64_header(headers, X_SDKWORK_SUBJECT_ORGANIZATION_ID)?;
     let user_id = required_signed_positive_i64_header(headers, X_SDKWORK_SUBJECT_USER_ID)?;
     let timestamp = required_signed_timestamp(headers)?;
     let signature = required_signed_header(headers, X_SDKWORK_SUBJECT_SIGNATURE)?.to_owned();
@@ -653,6 +653,30 @@ pub fn verify_app_session_authorization_header(
     verify_app_session_token(config, token, now_unix_seconds)
 }
 
+pub fn verify_dual_app_session_token_pair(
+    config: &AppSessionConfig,
+    authorization: &str,
+    access_token: &str,
+    now_unix_seconds: i64,
+) -> Result<TrustedRequestSubject, AppSessionTokenError> {
+    let mut headers = HeaderMap::new();
+    headers.insert(
+        AUTHORIZATION,
+        authorization
+            .trim()
+            .parse()
+            .map_err(|_| AppSessionTokenError::InvalidHeaderValue(AUTHORIZATION))?,
+    );
+    headers.insert(
+        ACCESS_TOKEN,
+        access_token
+            .trim()
+            .parse()
+            .map_err(|_| AppSessionTokenError::InvalidHeaderValue(ACCESS_TOKEN))?,
+    );
+    verify_dual_app_session_headers(&headers, config, now_unix_seconds)
+}
+
 pub fn verify_dual_app_session_headers(
     headers: &HeaderMap,
     config: &AppSessionConfig,
@@ -727,7 +751,12 @@ pub fn verify_app_session_token(
         return Err(AppSessionTokenError::InvalidTokenFormat);
     }
     let tenant_id = parse_session_positive_i64(parts[1], "tenant_id")?;
-    let organization_id = parse_session_positive_i64(parts[2], "organization_id")?;
+    let organization_id = parse_session_non_negative_i64(
+        parts[2]
+            .parse::<i64>()
+            .map_err(|_| AppSessionTokenError::InvalidPositiveInteger("organization_id"))?,
+        "organization_id",
+    )?;
     let user_id = parse_session_positive_i64(parts[3], "user_id")?;
     let issued_at = parse_session_timestamp(parts[4], "issued_at")?;
     let expires_at = parse_session_timestamp(parts[5], "expires_at")?;
@@ -951,6 +980,20 @@ fn required_signed_positive_i64_header(
         .parse::<i64>()
         .map_err(|_| TrustedSubjectBoundaryError::InvalidPositiveInteger(name))?;
     if parsed <= 0 {
+        return Err(TrustedSubjectBoundaryError::InvalidPositiveInteger(name));
+    }
+    Ok(parsed)
+}
+
+fn required_signed_non_negative_i64_header(
+    headers: &HeaderMap,
+    name: &'static str,
+) -> Result<i64, TrustedSubjectBoundaryError> {
+    let value = required_signed_header(headers, name)?;
+    let parsed = value
+        .parse::<i64>()
+        .map_err(|_| TrustedSubjectBoundaryError::InvalidPositiveInteger(name))?;
+    if parsed < 0 {
         return Err(TrustedSubjectBoundaryError::InvalidPositiveInteger(name));
     }
     Ok(parsed)

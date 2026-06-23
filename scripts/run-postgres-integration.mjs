@@ -72,12 +72,15 @@ function parseArgs(argv) {
     if (applyRunnerOption(arg)) {
       continue;
     }
-    if (forwardOnly) {
-      result.extraArgs.push(arg);
-      continue;
-    }
     if (arg === '--') {
       forwardOnly = true;
+      continue;
+    }
+    if (forwardOnly) {
+      if (applyRunnerOption(arg)) {
+        continue;
+      }
+      result.extraArgs.push(arg);
       continue;
     }
     result.extraArgs.push(arg);

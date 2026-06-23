@@ -34,7 +34,7 @@ async fn create_refund_records_failed_provider_attempt_for_mainstream_sandbox_ad
 
     let error = refund_service
         .create_refund(RuntimeCreateRefundCommand {
-            tenant_id: "10".to_owned(),
+            tenant_id: "100001".to_owned(),
             payment_intent_id: intent.id.clone(),
             merchant_refund_no: "refund-1001".to_owned(),
             amount: "12.34".to_owned(),
@@ -81,7 +81,7 @@ async fn create_refund_records_item_level_allocations() {
 
     let _ = refund_service
         .create_refund(RuntimeCreateRefundCommand {
-            tenant_id: "10".to_owned(),
+            tenant_id: "100001".to_owned(),
             payment_intent_id: intent.id,
             merchant_refund_no: "refund-1002-items".to_owned(),
             amount: "13.60".to_owned(),
@@ -137,7 +137,7 @@ async fn create_refund_rejects_item_allocation_total_mismatch_before_persistence
 
     let error = refund_service
         .create_refund(RuntimeCreateRefundCommand {
-            tenant_id: "10".to_owned(),
+            tenant_id: "100001".to_owned(),
             payment_intent_id: intent.id,
             merchant_refund_no: "refund-1002-mismatch".to_owned(),
             amount: "13.60".to_owned(),
@@ -175,7 +175,7 @@ async fn create_refund_is_idempotent_by_tenant_and_idempotency_key() {
         .await
         .unwrap();
     let command = RuntimeCreateRefundCommand {
-        tenant_id: "10".to_owned(),
+        tenant_id: "100001".to_owned(),
         payment_intent_id: intent.id,
         merchant_refund_no: "refund-1002".to_owned(),
         amount: "12.34".to_owned(),
@@ -214,7 +214,7 @@ async fn create_refund_rejects_amount_currency_mismatch_before_persistence() {
 
     let error = refund_service
         .create_refund(RuntimeCreateRefundCommand {
-            tenant_id: "10".to_owned(),
+            tenant_id: "100001".to_owned(),
             payment_intent_id: intent.id,
             merchant_refund_no: "refund-1003".to_owned(),
             amount: "12.34".to_owned(),
@@ -247,7 +247,7 @@ async fn cancel_refund_rejects_terminal_failed_refund_without_provider_attempt()
         .unwrap();
     let _ = refund_service
         .create_refund(RuntimeCreateRefundCommand {
-            tenant_id: "10".to_owned(),
+            tenant_id: "100001".to_owned(),
             payment_intent_id: intent.id,
             merchant_refund_no: "refund-1004".to_owned(),
             amount: "12.34".to_owned(),
@@ -262,7 +262,7 @@ async fn cancel_refund_rejects_terminal_failed_refund_without_provider_attempt()
 
     let error = refund_service
         .cancel_refund(RuntimeCancelRefundCommand {
-            tenant_id: "10".to_owned(),
+            tenant_id: "100001".to_owned(),
             refund_id: store.refunds()[0].id.clone(),
             reason: Some("operator canceled".to_owned()),
             idempotency_key: "refund-cancel-idem-1004".to_owned(),
@@ -282,8 +282,8 @@ async fn cancel_refund_rejects_terminal_failed_refund_without_provider_attempt()
 
 fn create_intent_command() -> RuntimeCreatePaymentIntentCommand {
     RuntimeCreatePaymentIntentCommand {
-        tenant_id: "10".to_owned(),
-        organization_id: Some("20".to_owned()),
+        tenant_id: "100001".to_owned(),
+        organization_id: Some("0".to_owned()),
         owner_user_id: "30".to_owned(),
         merchant_order_no: "order-1001".to_owned(),
         amount: "88.50".to_owned(),

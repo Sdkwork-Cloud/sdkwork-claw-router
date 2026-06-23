@@ -44,11 +44,15 @@ where
     };
 
     let client_ip = extract_client_ip_from_headers(&parts.headers);
-    if let Err(violation) = state.invocation_policy_guard.enforce(
-        state.catalog.as_ref(),
-        &auth_context,
-        client_ip.as_deref(),
-    ) {
+    if let Err(violation) = state
+        .invocation_policy_guard
+        .enforce(
+            state.catalog.as_ref(),
+            &auth_context,
+            client_ip.as_deref(),
+        )
+        .await
+    {
         return response_from_policy_violation(&violation);
     }
 

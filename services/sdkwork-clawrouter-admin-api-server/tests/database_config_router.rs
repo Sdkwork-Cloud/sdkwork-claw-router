@@ -189,7 +189,7 @@ async fn database_config_router_rejects_regular_user_session_for_backend_admin_r
     .await
     .unwrap();
 
-    let regular_user_subject = trusted_request_subject(10, 20, 31);
+    let regular_user_subject = trusted_request_subject(100_001, 0, 31);
     let response = router
         .oneshot(app_session_request_for_subject(
             "GET",
@@ -3143,7 +3143,7 @@ fn app_session_request_for_subject(
 }
 
 fn bootstrap_admin_subject() -> TrustedRequestSubject {
-    trusted_request_subject(10, 20, 1)
+    trusted_request_subject(100_001, 0, 1)
 }
 
 async fn capture_provider_health_probe(
@@ -5738,22 +5738,22 @@ async fn seed_admin_users(pool: &SqlitePool) {
             VALUES ('30', '100001', 'owner', 'Owner', 'owner@example.com', '', 'media-owner-avatar', 'iam-user-avatar:owner', '{"kind":"image","source":"provider_asset","uri":"iam-user-avatar:owner"}', 'active', '2026-04-01 08:00:00', '2026-04-29 08:30:00')"#,
         r#"INSERT INTO iam_organization_membership
             (id, tenant_id, organization_id, user_id, membership_kind, display_name, is_primary, status, joined_at, left_at, remark, created_at, updated_at)
-            VALUES ('member-30-admin', '10', '20', '30', 'admin', 'Owner', 1, 'active', '2026-04-01 08:00:00', NULL, 'seed admin membership', '2026-04-01 08:00:00', '2026-04-29 08:30:00')"#,
+            VALUES ('member-30-admin', '100001', '0', '30', 'admin', 'Owner', 1, 'active', '2026-04-01 08:00:00', NULL, 'seed admin membership', '2026-04-01 08:00:00', '2026-04-29 08:30:00')"#,
         r#"INSERT INTO commerce_account
             (id, tenant_id, organization_id, owner_user_id, asset_type, currency_code, available_amount, frozen_amount, version, status, created_at, updated_at)
-            VALUES ('account-400', '10', '20', '30', 'cash', 'USD', '25.5000', '0', 0, 'active', '2026-04-01 08:00:00', '2026-04-29 08:30:00')"#,
+            VALUES ('account-400', '100001', '0', '30', 'cash', 'USD', '25.5000', '0', 0, 'active', '2026-04-01 08:00:00', '2026-04-29 08:30:00')"#,
         r#"INSERT INTO iam_role
             (id, tenant_id, code, name, status, created_at, updated_at)
-            VALUES ('role-admin', '10', 'admin', 'Admin', 'active', '2026-04-01 08:00:00', '2026-04-01 08:00:00')"#,
+            VALUES ('role-admin', '100001', 'admin', 'Admin', 'active', '2026-04-01 08:00:00', '2026-04-01 08:00:00')"#,
         r#"INSERT INTO iam_permission
             (id, code, name, resource, action, created_at)
             VALUES ('permission-iam-read', 'iam.read', 'Read IAM', 'iam', 'read', '2026-04-01 08:00:00')"#,
         r#"INSERT INTO iam_role_permission
             (id, tenant_id, role_id, permission_id, created_at)
-            VALUES ('role-admin-permission-iam-read', '10', 'role-admin', 'permission-iam-read', '2026-04-01 08:00:00')"#,
+            VALUES ('role-admin-permission-iam-read', '100001', 'role-admin', 'permission-iam-read', '2026-04-01 08:00:00')"#,
         r#"INSERT INTO iam_user_role
             (id, tenant_id, user_id, role_id, organization_id, created_at)
-            VALUES ('user-role-30-admin', '10', '30', 'role-admin', '20', '2026-04-01 08:00:00')"#,
+            VALUES ('user-role-30-admin', '100001', '30', 'role-admin', '0', '2026-04-01 08:00:00')"#,
         r#"INSERT INTO iam_user_login_event
             (id, uuid, tenant_id, organization_id, user_id, request_id, auth_method, auth_provider, login_result, risk_level, mfa_verified, session_id_hash, occurred_at, created_at)
             VALUES (1, 'login-30', 100001, 0, 30, 'request-login-30', 2, 'trusted-subject-exchange', 1, 0, 1, 'session-hash-30', '2026-04-29 09:00:00', '2026-04-29 08:59:00')"#,
@@ -5772,49 +5772,49 @@ async fn seed_admin_marketing(pool: &SqlitePool) {
     for statement in [
         r#"INSERT INTO promotion_offer
             (id, tenant_id, organization_id, offer_no, offer_code, name, offer_type, audience_scope, combinability, priority, status, current_offer_version_id, starts_at, ends_at, created_at, updated_at)
-            VALUES ('coupon-template-1', '10', '20', 'offer-coupon-template-1', 'welcome-template', 'Welcome credit', 'coupon', 'all', 'exclusive', 0, 'active', 'coupon-template-1-version-v1', '2026-04-01 08:00:00', '2099-01-01 00:00:00', '2026-04-01 08:00:00', '2026-04-29 08:00:00')"#,
+            VALUES ('coupon-template-1', '100001', '0', 'offer-coupon-template-1', 'welcome-template', 'Welcome credit', 'coupon', 'all', 'exclusive', 0, 'active', 'coupon-template-1-version-v1', '2026-04-01 08:00:00', '2099-01-01 00:00:00', '2026-04-01 08:00:00', '2026-04-29 08:00:00')"#,
         r#"INSERT INTO promotion_offer_version
             (id, tenant_id, organization_id, offer_id, version_no, lifecycle_status, discount_type, discount_value, minimum_amount, maximum_discount_amount, currency_code, rule_json, stack_rule_json, published_at, created_at, updated_at)
-            VALUES ('coupon-template-1-version-v1', '10', '20', 'coupon-template-1', 'v1', 'published', 'fixed_amount', '5.00', '0', NULL, 'USD', '{}', NULL, '2026-04-01 08:00:00', '2026-04-01 08:00:00', '2026-04-29 08:00:00')"#,
+            VALUES ('coupon-template-1-version-v1', '100001', '0', 'coupon-template-1', 'v1', 'published', 'fixed_amount', '5.00', '0', NULL, 'USD', '{}', NULL, '2026-04-01 08:00:00', '2026-04-01 08:00:00', '2026-04-29 08:00:00')"#,
         r#"INSERT INTO promotion_coupon_stock
             (id, tenant_id, organization_id, stock_no, name, offer_id, offer_version_id, stock_type, total_quantity, available_quantity, claimed_quantity, redeemed_quantity, locked_quantity, status, starts_at, expires_at, created_at, updated_at)
-            VALUES ('stock-welcome-001', '10', '20', 'stock-WELCOME-001', 'Welcome stock', 'coupon-template-1', 'coupon-template-1-version-v1', 'code_claim', 2, 1, 0, 1, 0, 'active', '2026-04-29 09:00:00', NULL, '2026-04-29 09:00:00', '2026-04-29 09:00:00')"#,
+            VALUES ('stock-welcome-001', '100001', '0', 'stock-WELCOME-001', 'Welcome stock', 'coupon-template-1', 'coupon-template-1-version-v1', 'code_claim', 2, 1, 0, 1, 0, 'active', '2026-04-29 09:00:00', NULL, '2026-04-29 09:00:00', '2026-04-29 09:00:00')"#,
         r#"INSERT INTO promotion_code
             (id, tenant_id, organization_id, code_no, stock_id, offer_id, offer_version_id, promotion_code, code_type, max_claims, claimed_quantity, status, starts_at, expires_at, created_at, updated_at)
-            VALUES ('501', '10', '20', 'code-WELCOME-001-0001', 'stock-welcome-001', 'coupon-template-1', 'coupon-template-1-version-v1', 'WELCOME-0001', 'single_use', 1, 0, 'active', '2026-04-29 09:00:00', NULL, '2026-04-29 09:00:00', '2026-04-29 09:00:00')"#,
+            VALUES ('501', '100001', '0', 'code-WELCOME-001-0001', 'stock-welcome-001', 'coupon-template-1', 'coupon-template-1-version-v1', 'WELCOME-0001', 'single_use', 1, 0, 'active', '2026-04-29 09:00:00', NULL, '2026-04-29 09:00:00', '2026-04-29 09:00:00')"#,
         r#"INSERT INTO promotion_code
             (id, tenant_id, organization_id, code_no, stock_id, offer_id, offer_version_id, promotion_code, code_type, max_claims, claimed_quantity, status, starts_at, expires_at, created_at, updated_at)
-            VALUES ('502', '10', '20', 'code-WELCOME-001-0002', 'stock-welcome-001', 'coupon-template-1', 'coupon-template-1-version-v1', 'WELCOME-0002', 'single_use', 1, 1, 'active', '2026-04-29 09:00:00', NULL, '2026-04-29 09:00:00', '2026-04-29 09:30:00')"#,
+            VALUES ('502', '100001', '0', 'code-WELCOME-001-0002', 'stock-welcome-001', 'coupon-template-1', 'coupon-template-1-version-v1', 'WELCOME-0002', 'single_use', 1, 1, 'active', '2026-04-29 09:00:00', NULL, '2026-04-29 09:00:00', '2026-04-29 09:30:00')"#,
         r#"INSERT INTO promotion_user_coupon
             (id, tenant_id, organization_id, coupon_no, stock_id, code_id, offer_id, offer_version_id, subject_type, subject_id, owner_user_id, coupon_code, status, claimed_at, valid_from, expires_at, redeemed_at, disabled_at, request_no, idempotency_key, created_at, updated_at)
-            VALUES ('user-coupon-502', '10', '20', 'WELCOME-0002-user-coupon', 'stock-welcome-001', '502', 'coupon-template-1', 'coupon-template-1-version-v1', 'user', '30', '30', 'WELCOME-0002', 'redeemed', '2026-04-29 09:00:00', '2026-04-29 09:00:00', NULL, '2026-04-29 09:30:00', NULL, 'WELCOME-502', 'WELCOME-502', '2026-04-29 09:00:00', '2026-04-29 09:30:00')"#,
+            VALUES ('user-coupon-502', '100001', '0', 'WELCOME-0002-user-coupon', 'stock-welcome-001', '502', 'coupon-template-1', 'coupon-template-1-version-v1', 'user', '30', '30', 'WELCOME-0002', 'redeemed', '2026-04-29 09:00:00', '2026-04-29 09:00:00', NULL, '2026-04-29 09:30:00', NULL, 'WELCOME-502', 'WELCOME-502', '2026-04-29 09:00:00', '2026-04-29 09:30:00')"#,
         r#"INSERT INTO commerce_payment_method
             (id, tenant_id, organization_id, method_key, display_name, provider, status, sort_weight, created_at, updated_at)
-            VALUES ('payment-method-7', '10', '20', '7', 'provider-7', 'provider-7', 'active', 1, '2026-04-01 08:00:00', '2026-04-01 08:00:00')"#,
+            VALUES ('payment-method-7', '100001', '0', '7', 'provider-7', 'provider-7', 'active', 1, '2026-04-01 08:00:00', '2026-04-01 08:00:00')"#,
         r#"INSERT INTO commerce_product_spu
             (id, tenant_id, organization_id, spu_no, title, subtitle, description, product_type, sales_status, visible_surfaces, created_at, updated_at)
-            VALUES ('recharge-product-10-20-801', '10', '20', 'recharge-product-801', 'Starter Recharge Pack', '', 'seed recharge product', 'points_recharge', 'active', '["app","console","admin"]', '2026-04-29 10:00:00', '2026-04-29 10:00:00')"#,
+            VALUES ('recharge-product-10-20-801', '100001', '0', 'recharge-product-801', 'Starter Recharge Pack', '', 'seed recharge product', 'points_recharge', 'active', '["app","console","admin"]', '2026-04-29 10:00:00', '2026-04-29 10:00:00')"#,
         r#"INSERT INTO commerce_product_spu_category
             (id, tenant_id, organization_id, spu_id, category_id, primary_flag, sort_order, status, created_at, updated_at)
-            VALUES ('recharge-product-category-10-20-801', '10', '20', 'recharge-product-10-20-801', 'commerce-recharge', 1, 0, 'active', '2026-04-29 10:00:00', '2026-04-29 10:00:00')"#,
+            VALUES ('recharge-product-category-10-20-801', '100001', '0', 'recharge-product-10-20-801', 'commerce-recharge', 1, 0, 'active', '2026-04-29 10:00:00', '2026-04-29 10:00:00')"#,
         r#"INSERT INTO commerce_product_sku
             (id, tenant_id, organization_id, spu_id, sku_no, name, title, price_amount, original_price_amount, currency_code, delivery_mode, inventory_tracking, sales_status, spec_json, created_at, updated_at)
-            VALUES ('recharge-sku-10-20-801', '10', '20', 'recharge-product-10-20-801', 'recharge-sku-801', 'Starter Recharge Pack', 'Starter Recharge Pack', '10.00', '10.00', 'CNY', 'points_credit', 'untracked', 'active', '{}', '2026-04-29 10:00:00', '2026-04-29 10:00:00')"#,
+            VALUES ('recharge-sku-10-20-801', '100001', '0', 'recharge-product-10-20-801', 'recharge-sku-801', 'Starter Recharge Pack', 'Starter Recharge Pack', '10.00', '10.00', 'CNY', 'points_credit', 'untracked', 'active', '{}', '2026-04-29 10:00:00', '2026-04-29 10:00:00')"#,
         r#"INSERT INTO commerce_recharge_package
             (id, tenant_id, organization_id, external_id, package_no, sku_id, name, price_amount, currency_code, bonus_points, status, valid_from, valid_to, sort_weight, request_no, idempotency_key, created_at, updated_at)
-            VALUES ('recharge-package-10-20-801', '10', '20', 801, 'recharge-package-801', 'recharge-sku-10-20-801', 'Starter Recharge Pack', '10.00', 'CNY', 25, 'active', NULL, NULL, 1, 'recharge-package-801', 'recharge-package-801', '2026-04-29 10:00:00', '2026-04-29 10:00:00')"#,
+            VALUES ('recharge-package-10-20-801', '100001', '0', 801, 'recharge-package-801', 'recharge-sku-10-20-801', 'Starter Recharge Pack', '10.00', 'CNY', 25, 'active', NULL, NULL, 1, 'recharge-package-801', 'recharge-package-801', '2026-04-29 10:00:00', '2026-04-29 10:00:00')"#,
         r#"INSERT INTO commerce_exchange_rule
             (id, tenant_id, organization_id, rule_no, source_asset_type, target_asset_type, rate, status, remark, request_no, idempotency_key, created_at, updated_at)
-            VALUES ('exchange-1', '10', '20', 'POINTS_TO_CASH', 'points', 'cash', '120.000000', 'active', 'Points to cash rate', 'exchange-1', 'exchange-1', '2026-04-29 10:00:00', '2026-04-29 10:00:00')"#,
+            VALUES ('exchange-1', '100001', '0', 'POINTS_TO_CASH', 'points', 'cash', '120.000000', 'active', 'Points to cash rate', 'exchange-1', 'exchange-1', '2026-04-29 10:00:00', '2026-04-29 10:00:00')"#,
         r#"INSERT INTO commerce_order
             (id, tenant_id, organization_id, owner_user_id, order_no, status, subject, currency_code, request_no, idempotency_key, created_at, paid_at, cancelled_at, expired_at, updated_at)
-            VALUES ('order-900', '10', '20', '30', 'order-900', 'paid', 'points_recharge', 'USD', 'order-900', 'order-900', '2026-04-29 09:00:00', '2026-04-29 09:10:00', NULL, NULL, '2026-04-29 09:10:00')"#,
+            VALUES ('order-900', '100001', '0', '30', 'order-900', 'paid', 'points_recharge', 'USD', 'order-900', 'order-900', '2026-04-29 09:00:00', '2026-04-29 09:10:00', NULL, NULL, '2026-04-29 09:10:00')"#,
         r#"INSERT INTO commerce_payment_intent
             (id, tenant_id, organization_id, owner_user_id, order_id, provider, amount, currency_code, status, request_no, idempotency_key, created_at, updated_at)
-            VALUES ('payment-intent-910', '10', '20', '30', 'order-900', '7', '25.50', 'USD', 'succeeded', 'order-900', 'order-900', '2026-04-29 09:00:00', '2026-04-29 09:10:00')"#,
+            VALUES ('payment-intent-910', '100001', '0', '30', 'order-900', '7', '25.50', 'USD', 'succeeded', 'order-900', 'order-900', '2026-04-29 09:00:00', '2026-04-29 09:10:00')"#,
         r#"INSERT INTO commerce_payment_attempt
             (id, tenant_id, organization_id, owner_user_id, payment_intent_id, order_id, provider, out_trade_no, amount, currency_code, status, callback_payload, created_at, paid_at, updated_at)
-            VALUES ('payment-910', '10', '20', '30', 'payment-intent-910', 'order-900', '7', 'recharge-100', '25.50', 'USD', 'succeeded', '{"points":1000}', '2026-04-29 09:00:00', '2026-04-29 09:10:00', '2026-04-29 09:10:00')"#,
+            VALUES ('payment-910', '100001', '0', '30', 'payment-intent-910', 'order-900', '7', 'recharge-100', '25.50', 'USD', 'succeeded', '{"points":1000}', '2026-04-29 09:00:00', '2026-04-29 09:10:00', '2026-04-29 09:10:00')"#,
         r#"INSERT INTO ops_referral_stat_snapshot
             (id, uuid, tenant_id, organization_id, source_type, source_id, source_version, status, created_at, updated_at, rebuild_version, metadata, inviter_user_id, inviter_name_snapshot, inviter_email_snapshot, invitation_code_id, invitation_code, invite_link, snapshot_period, period_start, period_end, total_invited_count, direct_invited_count, secondary_invited_count, paid_invitee_count, total_revenue_amount, reward_awarded_amount, reward_pending_amount, currency, snapshot_at)
             VALUES (801, 'referral-801', 100001, 0, 'daily', 30, 1, 1, '2026-04-29 10:00:00', '2026-04-29 10:00:00', 0, '{}', 30, 'Owner', 'owner@example.com', 1, 'OWNER', 'https://claw.local/invite/OWNER', 'daily', '2026-04-29 00:00:00', '2026-04-29 23:59:59', 3, 2, 1, 1, '120.00', '12.00', '1.00', 'USD', '2026-04-29 10:00:00')"#,
@@ -5827,13 +5827,13 @@ async fn seed_admin_finance(pool: &SqlitePool) {
     for statement in [
         r#"INSERT INTO commerce_account_ledger_entry
             (id, tenant_id, organization_id, account_id, owner_user_id, asset_type, direction, amount, balance_after, business_type, transaction_no, request_no, idempotency_key, source_type, source_id, remark, created_at)
-            VALUES ('ledger-1000', '10', '20', 'account-400', '30', 'cash', 'credit', '25.50', '125.50', 'recharge', 'pay-txn-900', 'pay-txn-900', 'pay-txn-900', 'payment', 'payment-910', 'Payment success', '2026-04-29 09:10:00')"#,
+            VALUES ('ledger-1000', '100001', '0', 'account-400', '30', 'cash', 'credit', '25.50', '125.50', 'recharge', 'pay-txn-900', 'pay-txn-900', 'pay-txn-900', 'payment', 'payment-910', 'Payment success', '2026-04-29 09:10:00')"#,
         r#"INSERT INTO commerce_account_ledger_entry
             (id, tenant_id, organization_id, account_id, owner_user_id, asset_type, direction, amount, balance_after, business_type, transaction_no, request_no, idempotency_key, source_type, source_id, remark, created_at)
-            VALUES ('ledger-1001', '10', '20', 'account-400', '30', 'cash', 'debit', '5.00', '120.50', 'refund', 'refund-txn-920', 'refund-txn-920', 'refund-txn-920', 'refund', 'refund-920', 'Refund completed', '2026-04-29 08:55:00')"#,
+            VALUES ('ledger-1001', '100001', '0', 'account-400', '30', 'cash', 'debit', '5.00', '120.50', 'refund', 'refund-txn-920', 'refund-txn-920', 'refund-txn-920', 'refund', 'refund-920', 'Refund completed', '2026-04-29 08:55:00')"#,
         r#"INSERT INTO commerce_invoice
             (id, tenant_id, organization_id, owner_user_id, invoice_no, title, invoice_type, status, amount_excluding_tax, tax_amount, total_amount, currency_code, issued_at, cancelled_at, failure_reason, request_no, idempotency_key, created_at, updated_at)
-            VALUES ('invoice-1200', '10', '20', '30', 'INV-202604', 'April usage', 'standard', 'draft', '80.00', '8.25', '88.25', 'USD', '2026-04-29 10:00:00', NULL, NULL, 'invoice-1200', 'invoice-1200', '2026-04-29 10:00:00', '2026-04-29 10:00:00')"#,
+            VALUES ('invoice-1200', '100001', '0', '30', 'INV-202604', 'April usage', 'standard', 'draft', '80.00', '8.25', '88.25', 'USD', '2026-04-29 10:00:00', NULL, NULL, 'invoice-1200', 'invoice-1200', '2026-04-29 10:00:00', '2026-04-29 10:00:00')"#,
         r#"INSERT INTO commerce_usage_statement
             (id, uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, statement_no, period, period_start, period_end, owner_type, owner_id, total_tokens, total_requests, total_cost, currency, statement_status, generated_at, due_at, payment_status, invoice_id)
             VALUES (1300, 'statement-1300', 100001, 0, 1, 1, '2026-04-29 10:00:00', '2026-04-29 10:00:00', 0, 'stmt-202604', '2026-04', '2026-04-01 00:00:00', '2026-04-30 23:59:59', 1, 30, 12000, 80, '88.25', 'USD', 1, '2026-04-29 10:00:00', '2026-05-10 00:00:00', 1, 'invoice-1200')"#,

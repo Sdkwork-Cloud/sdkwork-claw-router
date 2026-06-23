@@ -1540,8 +1540,7 @@ test("portal wires console and admin routes through the protected session guard"
   assert.match(guardSource, /RequireAdminSession/);
   assert.match(guardSource, /adminAccessState === 'forbidden'/);
   assert.match(guardSource, /to: '\/console\/dashboard'/);
-  assert.match(guardSource, /\.\.\/\.\.\/packages\/sdkwork-clawrouter-pc-commons\/src\/portal-auth\.ts/);
-  assert.match(guardSource, /\.\.\/\.\.\/packages\/sdkwork-clawrouter-pc-commons\/src\/portal-session\.ts/);
+  assert.match(guardSource, /@sdkwork\/clawrouter-pc-commons\/runtime/);
   assert.doesNotMatch(guardSource, /sdkwork-clawrouter-pc-commons\/runtime/);
   assert.match(sharedAuthSource, /hasPortalIamSession/);
   assert.match(sharedAuthSource, /resolveStoredPortalTenantId/);
@@ -2038,11 +2037,11 @@ test("admin service provider center is an independent package backed by backend 
   const serviceProviderHeaderModule = findAdminModuleDefinitionSource(adminRegistrySource, "serviceProviderCenter");
   const serviceProviderMenu = findAdminModuleMenuSource(adminRegistrySource, "serviceProviderCenter");
 
-  assert.equal(packageJson.dependencies["sdkwork-clawrouter-pc-admin-service-provider"], "workspace:*");
-  assert.equal(serviceProviderPackageJson.name, "sdkwork-clawrouter-pc-admin-service-provider");
+  assert.equal(packageJson.dependencies["@sdkwork/clawrouter-pc-admin-service-provider"], "workspace:*");
+  assert.equal(serviceProviderPackageJson.name, "@sdkwork/clawrouter-pc-admin-service-provider");
   assert.equal(serviceProviderPackageJson.dependencies["@sdkwork/clawrouter-backend-sdk"], undefined);
-  assert.equal(serviceProviderPackageJson.dependencies["sdkwork-clawrouter-pc-commons"], "workspace:*");
-  assert.match(tsconfigSource, /"sdkwork-clawrouter-pc-admin-service-provider":\s*\[\s*"\.\/packages\/sdkwork-clawrouter-pc-admin-service-provider\/src\/index\.tsx"\s*\]/);
+  assert.equal(serviceProviderPackageJson.dependencies["@sdkwork/clawrouter-pc-commons"], "workspace:*");
+  assert.match(tsconfigSource, /"@sdkwork\/clawrouter-pc-admin-service-provider":\s*\[\s*"\.\/packages\/sdkwork-clawrouter-pc-admin-service-provider\/src\/index\.tsx"\s*\]/);
 
   assert.match(
     serviceProviderHeaderModule,
@@ -2081,7 +2080,7 @@ test("admin service provider center is an independent package backed by backend 
     );
   }
 
-  assert.match(appSource, /const ServiceProviderAdmin = lazyRoute<AdminSectionRouteProps>\(\(\) => import\('sdkwork-clawrouter-pc-admin-service-provider'\), 'ServiceProviderAdmin'\);/);
+  assert.match(appSource, /const ServiceProviderAdmin = lazyRoute<AdminSectionRouteProps>\(\(\) => import\('@sdkwork\/clawrouter-pc-admin-service-provider'\), 'ServiceProviderAdmin'\);/);
   assert.match(appSource, /<Route path="service-providers" element=\{<Navigate to="\/admin\/service-providers\/dashboard" replace \/>} \/>/);
   for (const sectionId of [
     "dashboard",
@@ -2163,14 +2162,14 @@ test("admin OAuth owns official account and mini program resource-account sectio
   const legacyMiniProgramPackage = "sdkwork-clawrouter-pc-admin-wechat-mini-program";
   const retiredBackendSdkResource = "getClawRouterBackendSdkClient()." + "open" + "Platform";
 
-  assert.equal(packageJson.dependencies["sdkwork-clawrouter-pc-admin-oauth"], "workspace:*");
+  assert.equal(packageJson.dependencies["@sdkwork/clawrouter-pc-admin-oauth"], "workspace:*");
   assert.equal(packageJson.dependencies[legacyAdminProviderPackage], undefined);
   assert.equal(packageJson.dependencies[legacyOfficialPackage], undefined);
   assert.equal(packageJson.dependencies[legacyMiniProgramPackage], undefined);
-  assert.equal(oauthPackageJson.name, "sdkwork-clawrouter-pc-admin-oauth");
+  assert.equal(oauthPackageJson.name, "@sdkwork/clawrouter-pc-admin-oauth");
   assert.equal(oauthPackageJson.dependencies["@sdkwork/clawrouter-backend-sdk"], undefined);
-  assert.equal(oauthPackageJson.dependencies["sdkwork-clawrouter-pc-commons"], "workspace:*");
-  assert.match(tsconfigSource, /"sdkwork-clawrouter-pc-admin-oauth":\s*\[\s*"\.\/packages\/sdkwork-clawrouter-pc-admin-oauth\/src\/index\.tsx"\s*\]/);
+  assert.equal(oauthPackageJson.dependencies["@sdkwork/clawrouter-pc-commons"], "workspace:*");
+  assert.match(tsconfigSource, /"@sdkwork\/clawrouter-pc-admin-oauth":\s*\[\s*"\.\/packages\/sdkwork-clawrouter-pc-admin-oauth\/src\/index\.tsx"\s*\]/);
 
   const operationsHeaderModule = findAdminModuleDefinitionSource(adminRegistrySource, "operations");
   assert.match(operationsHeaderModule, /'\/admin\/oauth'/);
@@ -2186,7 +2185,7 @@ test("admin OAuth owns official account and mini program resource-account sectio
   assert.match(adminLayoutSource, /aria-current=\{isActive \? 'page' : undefined\}/);
   assert.doesNotMatch(adminLayoutSource, /end=\{isSidebarItemExact\(item\)\}/);
 
-  assert.match(appSource, /const OAuthAdmin = lazyRoute\(\(\) => import\('sdkwork-clawrouter-pc-admin-oauth'\), 'OAuthAdmin'\);/);
+  assert.match(appSource, /const OAuthAdmin = lazyRoute\(\(\) => import\('@sdkwork\/clawrouter-pc-admin-oauth'\), 'OAuthAdmin'\);/);
   assert.match(appSource, /<Route path="oauth" element=\{<Navigate to="\/admin\/oauth\/login-platforms" replace \/>} \/>/);
   assert.match(appSource, /<Route path="oauth\/login-platforms" element=\{<OAuthAdmin sectionId="oauthLoginPlatforms" \/>} \/>/);
   assert.match(appSource, /<Route path="oauth\/official-accounts" element=\{<OAuthAdmin sectionId="officialAccounts" \/>} \/>/);

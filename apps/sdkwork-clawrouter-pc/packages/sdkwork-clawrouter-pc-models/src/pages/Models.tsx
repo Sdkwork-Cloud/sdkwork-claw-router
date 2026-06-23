@@ -35,6 +35,7 @@ export function Models() {
   const [showAllProviders, setShowAllProviders] = useState(false);
   const [catalogModels, setCatalogModels] = useState<Model[]>([]);
   const [catalogGroups, setCatalogGroups] = useState<ModelCatalogGroup[]>([]);
+  const [catalogLoadError, setCatalogLoadError] = useState<string | null>(null);
 
   const updateFilters = (updates: Partial<ModelCatalogFilters>) => {
     setFilters(prev => ({ ...prev, ...updates }));
@@ -96,6 +97,7 @@ export function Models() {
 
   useEffect(() => {
     let cancelled = false;
+    setCatalogLoadError(null);
 
     ModelService.fetchModelCatalog({
       vendorCodes: selectedProviderCodes,
@@ -104,18 +106,19 @@ export function Models() {
       categories: filters.selectedCategories,
       groups: filters.selectedGroups,
       searchQuery: filters.searchQuery,
-      limit: 1000,
     })
       .then((catalog) => {
         if (!cancelled) {
           setCatalogModels(catalog.models);
           setCatalogGroups(catalog.groups);
+          setCatalogLoadError(null);
         }
       })
-      .catch(() => {
+      .catch((error: unknown) => {
         if (!cancelled) {
           setCatalogModels([]);
           setCatalogGroups([]);
+          setCatalogLoadError(error instanceof Error ? error.message : t('models.loadError', 'Failed to load models'));
         }
       });
 
@@ -241,6 +244,11 @@ export function Models() {
 
       {/* Main Content */}
       <main className="flex-1">
+        {catalogLoadError ? (
+          <div className="mb-6 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-500/30 dark:bg-red-950/30 dark:text-red-200">
+            {catalogLoadError}
+          </div>
+        ) : null}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4">
           <div className="relative w-full sm:w-72 lg:w-96 group">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-lobster-500 transition-colors" />

@@ -1,3 +1,4 @@
+use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::domain::{DomainError, DomainResult};
 use crate::infrastructure::sql::model_catalog_import::stable_uuid;
 use crate::ports::{ProviderVerificationDeliveryReceipt, ProviderVerificationDeliveryRequest};
@@ -271,9 +272,9 @@ fn mask_phone(value: &str) -> String {
 }
 
 pub(crate) fn store_error(context: &str, error: sqlx::Error) -> DomainError {
-    DomainError::new(format!("{context}: {error}"))
+    redacted_store_error(context, error)
 }
 
 pub(crate) fn write_error(context: &str, error: sqlx::Error) -> DomainError {
-    DomainError::new(format!("{context}: {error}"))
+    redacted_store_error(context, error)
 }

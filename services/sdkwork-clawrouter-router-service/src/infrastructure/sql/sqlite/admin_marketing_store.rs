@@ -5,6 +5,7 @@ use sdkwork_commerce_core::{CommercePaymentStatus, CommerceRechargeStatus, Promo
 use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 use std::time::{SystemTime, UNIX_EPOCH};
 
+use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::domain::{DomainError, DomainResult};
 use crate::infrastructure::sql::admin_marketing_recharge::{
     canonical_decimal_string, parse_recharge_settings_model,
@@ -3567,7 +3568,7 @@ fn discount_value_string(value: &str) -> String {
 }
 
 fn store_error(context: &str, error: sqlx::Error) -> DomainError {
-    DomainError::new(format!("{context}: {error}"))
+    redacted_store_error(context, error)
 }
 
 #[cfg(test)]

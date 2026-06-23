@@ -7,6 +7,7 @@ use crate::api::{
     OpenAiInvocationPlugin, OpenAiInvocationPluginFuture, OpenAiInvocationRelayOutcome,
     OpenAiProviderRoute,
 };
+use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::domain::{DomainError, DomainResult, ProviderCircuitBreakerPolicy};
 
 const HEALTHY: i64 = 1;
@@ -344,5 +345,5 @@ fn masked_message(message: &str) -> String {
 }
 
 fn store_error(context: &str, error: sqlx::Error) -> DomainError {
-    DomainError::new(format!("{context}: {error}"))
+    redacted_store_error(context, error)
 }

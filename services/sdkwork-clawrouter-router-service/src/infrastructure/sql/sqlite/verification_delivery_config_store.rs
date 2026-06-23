@@ -1,5 +1,6 @@
 use sqlx::{Row, SqlitePool};
 
+use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::domain::{DomainError, DomainResult};
 use crate::ports::{
     VerificationDeliveryConfig, VerificationDeliveryConfigFuture, VerificationDeliveryConfigQuery,
@@ -184,5 +185,5 @@ fn optional_integer_cell(row: &sqlx::sqlite::SqliteRow, name: &str) -> Option<i6
 }
 
 fn store_error(context: &str, error: sqlx::Error) -> DomainError {
-    DomainError::new(format!("{context}: {error}"))
+    redacted_store_error(context, error)
 }

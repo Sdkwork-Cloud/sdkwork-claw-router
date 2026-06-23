@@ -772,6 +772,11 @@ pub fn http_route_manifest() -> HttpRouteManifest {
     HttpRouteManifest::new(HTTP_ROUTES)
 }
 
+/// Product app-api manifest including appbase IAM bootstrap/auth/oauth metadata.
+pub fn claw_router_app_http_route_manifest() -> HttpRouteManifest {
+    http_route_manifest()
+}
+
 #[cfg(test)]
 mod tests {
     use sdkwork_web_contract::RouteAuth;

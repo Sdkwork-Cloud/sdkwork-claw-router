@@ -1,5 +1,9 @@
 use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
+use crate::infrastructure::sql::iam_scope_resolver::{
+    resolve_sqlite_iam_scope_domain, IamScopeResolveOptions,
+};
+use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::domain::{DomainError, DomainResult};
 use crate::infrastructure::sql::sql_hash::digest_hex;
 use crate::infrastructure::sql::sql_site_settings::{
@@ -114,47 +118,15 @@ async fn resolve_site_settings_scope(
     tenant_code: Option<&str>,
     organization_code: Option<&str>,
 ) -> DomainResult<(i64, i64)> {
-    let tenant_row = match tenant_code {
-        Some(code) if !code.trim().is_empty() => sqlx::query(
-            "SELECT id FROM iam_tenant WHERE code = ? AND status = 'active' ORDER BY id LIMIT 1",
-        )
-        .bind(code.trim())
-        .fetch_optional(pool)
-        .await,
-        _ => {
-            sqlx::query("SELECT id FROM iam_tenant WHERE status = 'active' ORDER BY id LIMIT 1")
-                .fetch_optional(pool)
-                .await
-        }
-    }
-    .map_err(|error| store_error("failed to load site settings IAM tenant", error))?;
-    let tenant_id = tenant_row
-        .as_ref()
-        .and_then(|row| numeric_cell(row, "id"))
-        .ok_or_else(|| DomainError::not_found("active IAM tenant was not found"))?;
-
-    let organization_row = match organization_code {
-        Some(code) if !code.trim().is_empty() => sqlx::query(
-            "SELECT id FROM iam_organization WHERE tenant_id = ? AND code = ? AND status = 'active' ORDER BY id LIMIT 1",
-        )
-        .bind(tenant_id.to_string())
-        .bind(code.trim())
-        .fetch_optional(pool)
-        .await,
-        _ => sqlx::query(
-            "SELECT id FROM iam_organization WHERE tenant_id = ? AND status = 'active' ORDER BY id LIMIT 1",
-        )
-        .bind(tenant_id.to_string())
-        .fetch_optional(pool)
-        .await,
-    }
-    .map_err(|error| store_error("failed to load site settings IAM organization", error))?;
-    let organization_id = organization_row
-        .as_ref()
-        .and_then(|row| numeric_cell(row, "id"))
-        .ok_or_else(|| DomainError::not_found("active IAM organization was not found"))?;
-
-    Ok((tenant_id, organization_id))
+    resolve_sqlite_iam_scope_domain(
+        pool,
+        tenant_code,
+        organization_code,
+        IamScopeResolveOptions::default(),
+        "failed to load site settings IAM tenant",
+        "failed to load site settings IAM organization",
+    )
+    .await
 }
 
 async fn insert_config_snapshot(
@@ -228,17 +200,5 @@ fn change_summary(settings: &SiteSettings) -> DomainResult<String> {
 }
 
 fn store_error(context: &str, error: sqlx::Error) -> DomainError {
-    DomainError::new(format!("{context}: {error}"))
-}
-
-fn numeric_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> Option<i64> {
-    row.try_get::<i64, _>(column)
-        .ok()
-        .or_else(|| row.try_get::<i32, _>(column).ok().map(i64::from))
-        .or_else(|| {
-            row.try_get::<Option<String>, _>(column)
-                .ok()
-                .flatten()
-                .and_then(|value| value.parse::<i64>().ok())
-        })
+    redacted_store_error(context, error)
 }

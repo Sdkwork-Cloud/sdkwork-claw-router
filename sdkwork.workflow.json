@@ -166,10 +166,10 @@
     ],
     "sbom": [
       {
-        "name": "SBOM placeholder",
+        "name": "Generate release SBOM",
         "shell": "pwsh",
         "workingDirectory": ".",
-        "run": "Write-Host \"SBOM generation is not required for $env:SDKWORK_PACKAGE_ID\""
+        "run": "node scripts/generate-release-sbom.mjs"
       }
     ]
   },
@@ -468,7 +468,7 @@
   "security": {
     "oidcRequired": true,
     "artifactAttestations": true,
-    "sbomRequired": false,
+    "sbomRequired": true,
     "signingRequired": false
   },
   "publish": {

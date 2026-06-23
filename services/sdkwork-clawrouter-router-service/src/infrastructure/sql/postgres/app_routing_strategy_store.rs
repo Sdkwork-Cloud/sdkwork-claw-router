@@ -1,5 +1,6 @@
 use sqlx::{PgPool, Postgres, Row, Transaction};
 
+use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::domain::{DomainError, DomainResult};
 use crate::ports::{
     AppRoutingMappingRule, AppRoutingStrategyFuture, AppRoutingStrategySnapshot,
@@ -475,7 +476,7 @@ fn sql_error(error: sqlx::Error) -> DomainError {
 }
 
 fn store_error(context: &str, error: sqlx::Error) -> DomainError {
-    DomainError::new(format!("{context}: {error}"))
+    redacted_store_error(context, error)
 }
 
 #[cfg(test)]

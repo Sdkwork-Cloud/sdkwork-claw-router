@@ -9,7 +9,13 @@ import yaml
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SDKWORK_MODELS = ROOT / "data" / "sdkwork-models"
+_SDKWORK_MODELS_MOUNT = ROOT / "data" / "sdkwork-models"
+_SDKWORK_MODELS_SIBLING = ROOT.parent / "sdkwork-models"
+SDKWORK_MODELS = (
+    _SDKWORK_MODELS_MOUNT
+    if _SDKWORK_MODELS_MOUNT.is_dir()
+    else _SDKWORK_MODELS_SIBLING
+)
 SDKWORK_MODELS_SDK = SDKWORK_MODELS / "sdks" / "sdkwork-models-sdk"
 CLIENT_API_SUPPORT_STATUSES = ("supported", "unsupported", "partial", "convert")
 RUST_INSTALLER_PATH = (
@@ -45,6 +51,56 @@ def lang_sdk_rel(language: str, *parts: str) -> str:
 
 def catalog_subprocess_env() -> dict[str, str]:
     return os.environ.copy()
+
+
+def resolve_sdkwork_utils_package() -> Path | None:
+    for candidate in (
+        ROOT.parent / "sdkwork-utils" / "packages" / "sdkwork-utils-typescript",
+        SDKWORK_MODELS.parent.parent / "sdkwork-utils" / "packages" / "sdkwork-utils-typescript",
+    ):
+        if (candidate / "package.json").is_file():
+            return candidate.resolve()
+    return None
+
+
+def ensure_catalog_utils_dependency() -> None:
+    utils_package = resolve_sdkwork_utils_package()
+    if utils_package is None:
+        raise unittest.SkipTest(
+            "sdkwork-utils package missing; install sibling sdkwork-utils workspace"
+        )
+    if not (utils_package / "dist" / "crypto.js").is_file():
+        completed = subprocess.run(
+            ["pnpm", "build"],
+            cwd=utils_package,
+            text=True,
+            capture_output=True,
+        )
+        if completed.returncode != 0:
+            raise RuntimeError(
+                "failed to build @sdkwork/utils for catalog tools: "
+                f"{completed.stdout}{completed.stderr}"
+            )
+
+    link_target = SDKWORK_MODELS / "node_modules" / "@sdkwork" / "utils"
+    if link_target.exists():
+        return
+
+    link_target.parent.mkdir(parents=True, exist_ok=True)
+    if os.name == "nt":
+        completed = subprocess.run(
+            ["cmd", "/c", "mklink", "/J", str(link_target), str(utils_package)],
+            text=True,
+            capture_output=True,
+        )
+        if completed.returncode != 0:
+            raise RuntimeError(
+                "failed to junction @sdkwork/utils for catalog tools: "
+                f"{completed.stdout}{completed.stderr}"
+            )
+        return
+
+    link_target.symlink_to(utils_package, target_is_directory=True)
 
 
 CATALOG_TEMP_COPY_IGNORE = shutil.ignore_patterns(
@@ -949,6 +1005,7 @@ class SdkworkModelsStandardTest(unittest.TestCase):
                     self.assertTrue((pricing_dir / f"{default_model}.json").exists())
 
     def test_validator_and_index_check_pass(self) -> None:
+        ensure_catalog_utils_dependency()
         for command in (
             ["node", "tools/build-index.mjs", "--check"],
             ["node", "tools/validate-catalog.mjs"],

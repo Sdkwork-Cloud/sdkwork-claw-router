@@ -80,8 +80,8 @@ Startup merge rule for managed keys:
 
 - `loadEnv(mode, appRoot)` loads `.env.development` when `mode=development`.
 - Production builds load `.env.production` when `mode=production`.
-- Private bootstrap credential `SDKWORK_ACCESS_TOKEN` belongs in `.env.development` and `.env.production`, never in `VITE_*` or `PORTAL_PUBLIC_*`.
-- Vite may inject `SDKWORK_ACCESS_TOKEN` into the development client bundle only. Production portal builds must not embed bootstrap tokens in static assets; release host tokens stay in `.env.release` for server processes.
+- Private bootstrap credential `SDKWORK_ACCESS_TOKEN` is stored in gitignored `.env.{profile}.bootstrap.local` files (for example `.env.development.bootstrap.local` and `.env.production.bootstrap.local`). Tracked profile files keep `SDKWORK_ACCESS_TOKEN` blank; never place live tokens in `VITE_*` or `PORTAL_PUBLIC_*`.
+- Vite may inject `SDKWORK_ACCESS_TOKEN` into the development client bundle only from the bootstrap local layer. Production portal builds must not embed bootstrap tokens in static assets; release host tokens stay in `.env.release` for server processes.
 
 ### Node (workspace launchers)
 
@@ -147,7 +147,7 @@ Aligned with `../sdkwork-specs/ENVIRONMENT_SPEC.md`:
 | --- | --- | --- |
 | `SDKWORK_CLAW_*` | development, production, release | Private application metadata and process-only settings |
 | `SDKWORK_CLAW_EDGE_*` / `SDKWORK_CLAW_TOOL_API_*` | release host only (`.env.release`) | Private Rust edge-server CSP, tool API, and archive settings |
-| `SDKWORK_ACCESS_TOKEN` | development, production, release | Private bootstrap credential; never `VITE_*` or `PORTAL_PUBLIC_*` |
+| `SDKWORK_ACCESS_TOKEN` | development, production, release | Private bootstrap credential in `.env.{profile}.bootstrap.local` (browser profiles) or `.env.release` (release host); tracked profile files keep this blank; never `VITE_*` or `PORTAL_PUBLIC_*` |
 | `SDKWORK_CLAW_BROWSER_DEV_PROXY_*_ORIGIN` | development only | Private Vite dev-server proxy upstream origins |
 | `VITE_*` | development (inlined), release (via `/runtime-env.js`) | Browser-visible SDK and runtime configuration |
 | `PORTAL_PUBLIC_*` | release host only (`.env.release`) | Server inputs mapped to `VITE_*` by `/runtime-env.js` |

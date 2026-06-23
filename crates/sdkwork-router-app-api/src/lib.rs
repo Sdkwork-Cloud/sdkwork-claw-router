@@ -1,6 +1,8 @@
 #![forbid(unsafe_code)]
 
+mod claw_password_session_bridge;
 mod http_route_manifest;
+mod iam_oauth_device_runtime;
 mod local_auth_runtime;
 pub mod manifest;
 pub mod paths;

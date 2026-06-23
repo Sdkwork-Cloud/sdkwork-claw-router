@@ -2,7 +2,11 @@ use sha2::{Digest, Sha256};
 use sqlx::{PgPool, Postgres, Row, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
+use crate::infrastructure::sql::routing_config_change::{
+    record_postgres_ai_routing_config_change, AiRoutingConfigChange,
+};
 use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
+use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::ports::{
     AdminApiKeyRateLimitCommandFuture, AdminApiKeyRateLimitItem, AdminApiKeyRateLimitStore,
     CreateAdminApiKeyRateLimitCommand, ListAdminApiKeyRateLimitsQuery,
@@ -94,6 +98,23 @@ impl AdminApiKeyRateLimitStore for PostgresAdminApiKeyRateLimitStore {
                 }),
             )
             .await?;
+            record_postgres_ai_routing_config_change(
+                &mut tx,
+                api_key_rate_limit_routing_config_change(
+                    command.subject.tenant_id,
+                    command.subject.organization_id,
+                    command.subject.operator_id,
+                    &command.request_id,
+                    &command.requested_at,
+                    "create_api_key_rate_limit",
+                    policy_id,
+                    serde_json::json!({
+                        "apiKeyRateLimitId": policy_id,
+                        "apiKeyId": api_key.id
+                    }),
+                ),
+            )
+            .await?;
             let item = load_api_key_rate_limit_by_id(
                 &mut tx,
                 policy_id,
@@ -170,7 +191,10 @@ async fn find_api_key(
             "api key prefix matches multiple API keys",
         ));
     }
-    let row = rows.into_iter().next().unwrap();
+    let row = rows
+        .into_iter()
+        .next()
+        .ok_or_else(|| DomainError::new("api key prefix was not found"))?;
     Ok(ApiKeyIdentity {
         id: row.try_get("id").map_err(row_error)?,
         user_id: row.try_get("user_id").map_err(row_error)?,
@@ -579,5 +603,28 @@ fn store_error(context: &str, error: sqlx::Error) -> DomainError {
             return DomainError::conflict(format!("{context}: api key rate limit already exists"));
         }
     }
-    DomainError::new(format!("{context}: {error}"))
+    redacted_store_error(context, error)
+}
+
+fn api_key_rate_limit_routing_config_change<'a>(
+    tenant_id: i64,
+    organization_id: i64,
+    operator_id: i64,
+    request_id: &'a str,
+    requested_at: &'a str,
+    action: &'a str,
+    api_key_rate_limit_id: i64,
+    event_payload: serde_json::Value,
+) -> AiRoutingConfigChange<'a> {
+    AiRoutingConfigChange {
+        tenant_id,
+        organization_id,
+        operator_id,
+        request_id,
+        requested_at,
+        changed_object_type: "api_key_rate_limit",
+        changed_object_id: api_key_rate_limit_id,
+        action,
+        event_payload,
+    }
 }

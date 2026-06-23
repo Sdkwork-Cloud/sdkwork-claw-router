@@ -59,14 +59,14 @@ async fn app_auth_sessions_create_issues_dual_token_context_for_active_iam_user_
     assert_eq!("password", payload["data"]["context"]["authLevel"]);
     assert_eq!("local", payload["data"]["context"]["deploymentMode"]);
     assert_eq!("dev", payload["data"]["context"]["environment"]);
-    assert_eq!("10", payload["data"]["context"]["tenantId"]);
-    assert_eq!("20", payload["data"]["context"]["organizationId"]);
+    assert_eq!("100001", payload["data"]["context"]["tenantId"]);
+    assert_eq!("0", payload["data"]["context"]["organizationId"]);
     assert_eq!("30", payload["data"]["context"]["userId"]);
     assert_eq!(
         payload["data"]["sessionId"],
         payload["data"]["context"]["sessionId"]
     );
-    assert_eq!("tenant:10", payload["data"]["context"]["dataScope"][0]);
+    assert_eq!("tenant:100001", payload["data"]["context"]["dataScope"][0]);
     assert!(payload["data"]["user"].get("password").is_none());
 
     let auth_token = payload["data"]["authToken"].as_str().unwrap();
@@ -75,8 +75,8 @@ async fn app_auth_sessions_create_issues_dual_token_context_for_active_iam_user_
         let subject =
             verify_app_session_token(&app_session_config(), token, current_unix_seconds())
                 .expect("login response must issue valid IAM session tokens");
-        assert_eq!(10, subject.tenant_id);
-        assert_eq!(20, subject.organization_id);
+        assert_eq!(100_001, subject.tenant_id);
+        assert_eq!(0, subject.organization_id);
         assert_eq!(30, subject.user_id);
     }
 
@@ -91,9 +91,9 @@ async fn app_auth_sessions_create_issues_dual_token_context_for_active_iam_user_
     .fetch_one(&pool)
     .await
     .unwrap();
-    assert_eq!("10", session.get::<String, _>("tenant_id"));
+    assert_eq!("100001", session.get::<String, _>("tenant_id"));
     assert_eq!(
-        Some("20".to_owned()),
+        Some("0".to_owned()),
         session.get::<Option<String>, _>("organization_id")
     );
     assert_eq!("30", session.get::<String, _>("user_id"));
@@ -110,11 +110,11 @@ async fn app_auth_sessions_create_issues_dual_token_context_for_active_iam_user_
             .unwrap()
             .len()
     );
-    assert_eq!("10", session.get::<String, _>("sharding_key"));
+    assert_eq!("100001", session.get::<String, _>("sharding_key"));
     assert_eq!("tenant", session.get::<String, _>("sharding_strategy"));
     assert!(session
         .get::<String, _>("data_scope_json")
-        .contains("tenant:10"));
+        .contains("tenant:100001"));
     assert!(session
         .get::<String, _>("permission_scope_json")
         .contains("clawrouter:console"));
@@ -159,7 +159,7 @@ async fn app_auth_sessions_current_retrieve_returns_active_persisted_session() {
     let auth_token = login_payload["data"]["authToken"].as_str().unwrap();
     let access_token = login_payload["data"]["accessToken"].as_str().unwrap();
     let session_id = login_payload["data"]["sessionId"].as_str().unwrap();
-    assert_eq!("20", login_payload["data"]["context"]["organizationId"]);
+    assert_eq!("0", login_payload["data"]["context"]["organizationId"]);
 
     let response = router
         .clone()
@@ -184,8 +184,8 @@ async fn app_auth_sessions_current_retrieve_returns_active_persisted_session() {
     assert_eq!("alice@example.com", payload["data"]["user"]["email"]);
     assert_eq!("Alice Router", payload["data"]["user"]["displayName"]);
     assert_eq!("password", payload["data"]["context"]["authLevel"]);
-    assert_eq!("10", payload["data"]["context"]["tenantId"]);
-    assert_eq!("20", payload["data"]["context"]["organizationId"]);
+    assert_eq!("100001", payload["data"]["context"]["tenantId"]);
+    assert_eq!("0", payload["data"]["context"]["organizationId"]);
     assert_eq!("30", payload["data"]["context"]["userId"]);
     assert_eq!(auth_token, payload["data"]["authToken"]);
     assert_eq!(access_token, payload["data"]["accessToken"]);
@@ -308,7 +308,7 @@ async fn app_auth_sessions_refresh_rotates_tokens_for_active_session() {
     assert_ne!(refresh_token, refresh_payload["data"]["refreshToken"]);
     assert_eq!(old_session_id, refresh_payload["data"]["sessionId"]);
     assert_eq!("30", refresh_payload["data"]["user"]["id"]);
-    assert_eq!("20", refresh_payload["data"]["context"]["organizationId"]);
+    assert_eq!("0", refresh_payload["data"]["context"]["organizationId"]);
 
     let old_revoked_at: Option<String> =
         sqlx::query_scalar("SELECT revoked_at FROM iam_session WHERE id = ?")
@@ -885,9 +885,9 @@ async fn app_auth_registrations_create_without_organization_defaults_to_tenant_s
     assert_eq!(StatusCode::OK, response.status());
     let payload = response_json(response).await;
     assert_eq!("2000", payload["code"]);
-    assert_eq!("10", payload["data"]["context"]["tenantId"]);
+    assert_eq!("100001", payload["data"]["context"]["tenantId"]);
     assert_eq!("0", payload["data"]["context"]["organizationId"]);
-    assert_eq!("tenant:10", payload["data"]["context"]["dataScope"][0]);
+    assert_eq!("tenant:100001", payload["data"]["context"]["dataScope"][0]);
     assert!(!payload["data"]["context"]["dataScope"]
         .as_array()
         .unwrap()
@@ -903,7 +903,7 @@ async fn app_auth_registrations_create_without_organization_defaults_to_tenant_s
             current_unix_seconds(),
         )
         .expect("registration response must issue claim-bearing IAM session tokens");
-        assert_eq!(10, claims.tenant_id);
+        assert_eq!(100_001, claims.tenant_id);
         assert_eq!(0, claims.organization_id);
         assert_eq!("TENANT", claims.login_scope);
         assert_eq!("sdkwork-clawrouter", claims.app_id);
@@ -1439,7 +1439,7 @@ async fn seed_user(
         INSERT INTO iam_user
             (id, tenant_id, username, display_name, email, phone, avatar_media_resource_id, avatar_object_blob_id, avatar_resource_snapshot, status, created_at, updated_at)
         VALUES
-            (?, '10', ?, ?, ?, '+15550000030', 'media-avatar-test', NULL, '{"kind":"image","source":"external_url","url":"https://cdn.example.com/avatar.png","publicUrl":"https://cdn.example.com/avatar.png"}', ?, '2026-05-01T00:00:00Z', '2026-05-01T00:00:00Z')
+            (?, '100001', ?, ?, ?, '+15550000030', 'media-avatar-test', NULL, '{"kind":"image","source":"external_url","url":"https://cdn.example.com/avatar.png","publicUrl":"https://cdn.example.com/avatar.png"}', ?, '2026-05-01T00:00:00Z', '2026-05-01T00:00:00Z')
         "#,
     )
     .bind(user_id.to_string())
@@ -1456,7 +1456,7 @@ async fn seed_user(
         INSERT INTO iam_organization_membership
             (id, tenant_id, organization_id, user_id, membership_kind, display_name, is_primary, status, joined_at, created_at, updated_at)
         VALUES
-            (?, '10', '20', ?, 'owner', ?, 1, 'active', '2026-05-01T00:00:00Z', '2026-05-01T00:00:00Z', '2026-05-01T00:00:00Z')
+            (?, '100001', '0', ?, 'owner', ?, 1, 'active', '2026-05-01T00:00:00Z', '2026-05-01T00:00:00Z', '2026-05-01T00:00:00Z')
         "#,
     )
     .bind(format!("member-{user_id}"))
@@ -1471,7 +1471,7 @@ async fn seed_user(
         INSERT INTO iam_credential
             (id, tenant_id, user_id, credential_type, credential_hash, status, created_at, updated_at)
         VALUES
-            (?, '10', ?, 'password', ?, ?, '2026-05-01T00:00:00Z', '2026-05-01T00:00:00Z')
+            (?, '100001', ?, 'password', ?, ?, '2026-05-01T00:00:00Z', '2026-05-01T00:00:00Z')
         "#,
     )
     .bind(format!("credential-{user_id}"))
@@ -1489,7 +1489,7 @@ async fn seed_second_organization_membership(pool: &SqlitePool, user_id: i64) {
         INSERT OR IGNORE INTO iam_organization
             (id, tenant_id, parent_id, code, name, path, status, created_at, updated_at)
         VALUES
-            ('21', '10', NULL, 'workspace', 'Workspace Organization', '/21', 'active', '2026-05-01T00:00:00Z', '2026-05-01T00:00:00Z')
+            ('21', '100001', NULL, 'workspace', 'Workspace Organization', '/21', 'active', '2026-05-01T00:00:00Z', '2026-05-01T00:00:00Z')
         "#,
     )
     .execute(pool)
@@ -1501,7 +1501,7 @@ async fn seed_second_organization_membership(pool: &SqlitePool, user_id: i64) {
         INSERT INTO iam_organization_membership
             (id, tenant_id, organization_id, user_id, membership_kind, display_name, is_primary, status, joined_at, created_at, updated_at)
         VALUES
-            (?, '10', '21', ?, 'member', ?, 0, 'active', '2026-04-30T00:00:00Z', '2026-04-30T00:00:00Z', '2026-04-30T00:00:00Z')
+            (?, '100001', '21', ?, 'member', ?, 0, 'active', '2026-04-30T00:00:00Z', '2026-04-30T00:00:00Z', '2026-04-30T00:00:00Z')
         "#,
     )
     .bind(format!("workspace-member-{user_id}"))

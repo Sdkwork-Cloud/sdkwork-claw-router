@@ -97,7 +97,7 @@ version = "1.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "40c48f72fd53cd289104fc64099abca73db4166ad86ea0b4341abe65af83dadc"
 dependencies = [
- "windows-sys 0.60.2",
+ "windows-sys 0.61.2",
 ]
 
 [[package]]
@@ -108,7 +108,7 @@ checksum = "291e6a250ff86cd4a820112fb8898808a366d8f9f58ce16d1f538353ad55747d"
 dependencies = [
  "anstyle",
  "once_cell_polyfill",
- "windows-sys 0.60.2",
+ "windows-sys 0.61.2",
 ]
 
 [[package]]
@@ -1003,7 +1003,7 @@ dependencies = [
  "libc",
  "percent-encoding",
  "pin-project-lite",
- "socket2",
+ "socket2 0.6.4",
  "tokio",
  "tower-service",
  "tracing",
@@ -1174,6 +1174,15 @@ name = "is_terminal_polyfill"
 version = "1.70.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a6cb138bb79a146c1bd460005623e142ef0181e3d0219cb493e02f7d08a35695"
+
+[[package]]
+name = "itertools"
+version = "0.13.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "413ee7dfc52ee1a4949ceeb7dbc8a33f2d6c088194d9f922fb8318faf1f01186"
+dependencies = [
+ "either",
+]
 
 [[package]]
 name = "itertools"
@@ -1373,6 +1382,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7957b9740744892f114936ab4a57b3f487491bbeafaf8083688b16841a4240e5"
 dependencies = [
  "windows-sys 0.61.2",
+]
+
+[[package]]
+name = "num-bigint"
+version = "0.4.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a5e44f723f1133c9deac646763579fdb3ac745e418f2a7af9cd0c431da1f20b9"
+dependencies = [
+ "num-integer",
+ "num-traits",
 ]
 
 [[package]]
@@ -1648,7 +1667,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "03da047801ff44bb6a4d407d4860c05fd70bb81714e6b2f3812603d5b145b042"
 dependencies = [
  "heck",
- "itertools",
+ "itertools 0.14.0",
  "log",
  "multimap",
  "petgraph",
@@ -1669,7 +1688,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b570b25f7617e43d59005d0990ccb79e950a423952cea19671b7a876da390adf"
 dependencies = [
  "anyhow",
- "itertools",
+ "itertools 0.14.0",
  "proc-macro2",
  "quote",
  "syn",
@@ -1781,7 +1800,7 @@ dependencies = [
  "quinn-udp",
  "rustc-hash",
  "rustls",
- "socket2",
+ "socket2 0.6.4",
  "thiserror 2.0.18",
  "tokio",
  "tracing",
@@ -1818,7 +1837,7 @@ dependencies = [
  "cfg_aliases",
  "libc",
  "once_cell",
- "socket2",
+ "socket2 0.6.4",
  "tracing",
  "windows-sys 0.60.2",
 ]
@@ -1905,6 +1924,30 @@ dependencies = [
 
 [[package]]
 name = "redis"
+version = "0.27.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "09d8f99a4090c89cc489a94833c901ead69bfbf3877b4867d5482e321ee875bc"
+dependencies = [
+ "arc-swap",
+ "async-trait",
+ "bytes",
+ "combine",
+ "futures-util",
+ "itertools 0.13.0",
+ "itoa",
+ "num-bigint",
+ "percent-encoding",
+ "pin-project-lite",
+ "ryu",
+ "sha1_smol",
+ "socket2 0.5.10",
+ "tokio",
+ "tokio-util",
+ "url",
+]
+
+[[package]]
+name = "redis"
 version = "1.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "72d32a1ac9123f0d84fda64bfc02a271d9868483162dd2d9099b5c362ece064c"
@@ -1923,7 +1966,7 @@ dependencies = [
  "pin-project-lite",
  "ryu",
  "sha1_smol",
- "socket2",
+ "socket2 0.6.4",
  "tokio",
  "tokio-util",
  "url",
@@ -2079,6 +2122,7 @@ version = "0.23.40"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ef86cd5876211988985292b91c96a8f2d298df24e75989a43a3c73f2d4d8168b"
 dependencies = [
+ "log",
  "once_cell",
  "ring",
  "rustls-pki-types",
@@ -2248,6 +2292,7 @@ dependencies = [
 name = "sdkwork-claw-http"
 version = "0.1.0"
 dependencies = [
+ "async-trait",
  "axum",
  "base64",
  "hex",
@@ -2521,9 +2566,12 @@ dependencies = [
  "sdkwork-clawrouter-router-service",
  "sdkwork-database-config",
  "sdkwork-database-sqlx",
+ "sdkwork-iam-web-adapter",
  "sdkwork-router-app-api",
  "sdkwork-router-backend-api",
+ "sdkwork-router-iam-app-api",
  "sdkwork-sdk-generator-client",
+ "sdkwork-web-core",
  "serde_json",
  "sha2",
  "sqlx",
@@ -2547,7 +2595,7 @@ dependencies = [
  "hyper",
  "hyper-rustls",
  "hyper-util",
- "redis",
+ "redis 1.2.1",
  "ring",
  "sdkwork-appbase-iam-bootstrap",
  "sdkwork-claw-config",
@@ -2586,6 +2634,8 @@ dependencies = [
  "sdkwork-models-database-bootstrap",
  "sdkwork-sdk-generator-client",
  "sdkwork-utils-rust",
+ "sdkwork-web-core",
+ "sdkwork-web-store-redis",
  "serde",
  "serde_json",
  "sha2",
@@ -2599,6 +2649,7 @@ dependencies = [
 name = "sdkwork-clawrouter-router-service-test-support"
 version = "0.1.0"
 dependencies = [
+ "sdkwork-appbase-iam-bootstrap",
  "sdkwork-clawrouter-router-service",
  "sdkwork-commerce-bootstrap-manifest",
  "sqlx",
@@ -2793,6 +2844,8 @@ dependencies = [
  "sdkwork-database-sqlx",
  "sdkwork-iam-context-service",
  "sdkwork-iam-web-adapter",
+ "sdkwork-rpc-discovery",
+ "sdkwork-rpc-server",
  "sdkwork-web-core",
  "serde_json",
  "sqlx",
@@ -2961,6 +3014,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "sdkwork-discovery-rpc-proto"
+version = "0.1.0"
+dependencies = [
+ "prost",
+ "prost-types",
+ "protoc-bin-vendored",
+ "tonic",
+ "tonic-prost",
+ "tonic-prost-build",
+]
+
+[[package]]
 name = "sdkwork-iam-context-service"
 version = "0.1.0"
 dependencies = [
@@ -3102,17 +3167,22 @@ name = "sdkwork-router-app-api"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "async-trait",
  "axum",
  "sdkwork-claw-config",
  "sdkwork-claw-http",
  "sdkwork-claw-observability",
  "sdkwork-clawrouter-router-service",
  "sdkwork-content-documents-sdk-reference",
+ "sdkwork-database-config",
+ "sdkwork-database-sqlx",
  "sdkwork-iam-web-adapter",
  "sdkwork-router-catalog-app-api",
+ "sdkwork-router-iam-app-api",
  "sdkwork-web-axum",
  "sdkwork-web-contract",
  "sdkwork-web-core",
+ "serde_json",
  "sqlx",
  "tokio",
  "tracing",
@@ -3253,12 +3323,46 @@ name = "sdkwork-router-video-open-api"
 version = "0.1.0"
 
 [[package]]
+name = "sdkwork-rpc-core"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-rpc-core-rust",
+ "thiserror 2.0.18",
+]
+
+[[package]]
 name = "sdkwork-rpc-core-rust"
 version = "0.1.0"
 dependencies = [
  "prost-types",
  "sdkwork-utils-rust",
  "tonic",
+]
+
+[[package]]
+name = "sdkwork-rpc-discovery"
+version = "0.1.0"
+dependencies = [
+ "prost-types",
+ "sdkwork-discovery-rpc-proto",
+ "sdkwork-rpc-core",
+ "sdkwork-utils-rust",
+ "thiserror 2.0.18",
+ "tokio",
+ "tonic",
+ "tracing",
+ "uuid",
+]
+
+[[package]]
+name = "sdkwork-rpc-server"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-rpc-discovery",
+ "tokio",
+ "tokio-stream",
+ "tonic",
+ "tracing",
 ]
 
 [[package]]
@@ -3325,6 +3429,19 @@ dependencies = [
  "serde",
  "serde_json",
  "sha2",
+ "tokio",
+ "tracing",
+]
+
+[[package]]
+name = "sdkwork-web-store-redis"
+version = "0.1.0"
+dependencies = [
+ "async-trait",
+ "redis 0.27.6",
+ "sdkwork-web-core",
+ "serde",
+ "serde_json",
  "tokio",
  "tracing",
 ]
@@ -3499,6 +3616,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8ed6a63f02c8539c91a8685a86f4099661ba3da017932f6ebbea6de3f0fa7c90"
 dependencies = [
  "serde",
+]
+
+[[package]]
+name = "socket2"
+version = "0.5.10"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e22376abed350d73dd1cd119b57ffccad95b4e585a7cda43e286245ce23c0678"
+dependencies = [
+ "libc",
+ "windows-sys 0.52.0",
 ]
 
 [[package]]
@@ -3913,7 +4040,7 @@ dependencies = [
  "parking_lot",
  "pin-project-lite",
  "signal-hook-registry",
- "socket2",
+ "socket2 0.6.4",
  "tokio-macros",
  "windows-sys 0.61.2",
 ]
@@ -4036,9 +4163,10 @@ dependencies = [
  "hyper-util",
  "percent-encoding",
  "pin-project",
- "socket2",
+ "socket2 0.6.4",
  "sync_wrapper",
  "tokio",
+ "tokio-rustls",
  "tokio-stream",
  "tower",
  "tower-layer",

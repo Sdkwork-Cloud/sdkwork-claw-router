@@ -3,6 +3,7 @@ use std::sync::Arc;
 use sqlx::{PgPool, Postgres, Row, Transaction};
 
 use crate::application::ApiKeySecretCodec;
+use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::domain::{
     ChannelGroup, DomainError, DomainResult, GatewayAccessPolicy, GatewayApiKey, QuotaPolicy,
 };
@@ -1098,7 +1099,7 @@ fn api_key_metadata_json(
 }
 
 fn store_error(context: &str, error: sqlx::Error) -> DomainError {
-    DomainError::new(format!("{context}: {error}"))
+    redacted_store_error(context, error)
 }
 
 fn row_error(error: sqlx::Error) -> DomainError {

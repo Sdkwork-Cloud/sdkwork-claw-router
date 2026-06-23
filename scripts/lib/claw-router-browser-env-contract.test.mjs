@@ -46,7 +46,7 @@ test('sanitizeBrowserProductionEnvRecord strips all legacy PORTAL keys', () => {
     [CLAW_ROUTER_BROWSER_DEV_PROXY_ENV_KEYS.openApi]: 'http://127.0.0.1:3900',
   });
 
-  assert.equal(sanitized.SDKWORK_ACCESS_TOKEN, 'token');
+  assert.equal(sanitized.SDKWORK_ACCESS_TOKEN, '');
   assert.equal(sanitized.PORTAL_PUBLIC_API_BASE_URL, undefined);
   assert.equal(sanitized.PORTAL_DEV_PROXY_GATEWAY_TARGET, undefined);
   assert.equal(sanitized.PORTAL_FORWARD_APP_API_BASE_URL, undefined);

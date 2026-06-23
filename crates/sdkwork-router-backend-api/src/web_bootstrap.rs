@@ -1,9 +1,8 @@
 use std::sync::Arc;
 
 use axum::Router;
-use sdkwork_iam_web_adapter::{
-    build_web_framework_layer, IamAppContextInjector, IamDatabaseWebRequestContextResolver,
-};
+use sdkwork_claw_http::ClawRouterWebRequestContextResolver;
+use sdkwork_iam_web_adapter::{build_web_framework_layer, IamAppContextInjector};
 use sdkwork_web_axum::with_web_request_context;
 use sdkwork_web_core::{DomainContextInjector, WebRequestContext};
 
@@ -31,7 +30,7 @@ impl DomainContextInjector for ClawRouterBackendDomainInjector {
 }
 
 pub fn wrap_router_with_web_framework(
-    resolver: IamDatabaseWebRequestContextResolver,
+    resolver: ClawRouterWebRequestContextResolver,
     router: Router,
 ) -> Router {
     let prefixes = claw_router_backend_public_path_prefixes();
@@ -44,7 +43,9 @@ pub fn wrap_router_with_web_framework(
 }
 
 pub async fn wrap_router_with_web_framework_from_env(router: Router) -> Router {
-    let resolver = sdkwork_iam_web_adapter::iam_database_resolver_from_env().await;
+    let resolver = ClawRouterWebRequestContextResolver::from_env()
+        .await
+        .expect("claw router web framework requires SDKWORK_CLAW_APP_SESSION_SECRET");
     wrap_router_with_web_framework(resolver, router)
 }
 

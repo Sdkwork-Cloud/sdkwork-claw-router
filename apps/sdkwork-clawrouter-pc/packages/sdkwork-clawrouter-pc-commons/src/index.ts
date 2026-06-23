@@ -21,3 +21,4 @@ export * from './documents-reference-runtime-adapter';
 export * from './share-url';
 export * from './recharge-math';
 export * from './queryClient';
+export * from './PortalErrorBoundary';

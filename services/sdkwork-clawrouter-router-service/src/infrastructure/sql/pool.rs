@@ -1,11 +1,14 @@
 use std::time::Duration;
 
+use sdkwork_claw_config::{RedisConfig, RuntimeTomlConfig};
 use sdkwork_database_config::{
     DatabaseConfig as StandardDatabaseConfig, DatabaseEngine as StandardDatabaseEngine,
 };
 use sdkwork_database_repository::RepositoryError;
 use sdkwork_database_sqlx::{DatabasePool, PoolBuilder, PoolError};
 use sqlx::PgPool;
+
+use crate::application::UsageSettlementWorkerConfig;
 
 use super::runtime_id::to_standard_database_config;
 
@@ -116,4 +119,177 @@ pub fn standard_database_readiness_check(
             postgres_database_readiness_check(postgres_pool)
         }
     }
+}
+
+pub fn redis_readiness_check(redis_url: String) -> sdkwork_claw_http::ReadinessCheckFn {
+    std::sync::Arc::new(move || {
+        let redis_url = redis_url.clone();
+        Box::pin(async move {
+            let client = match redis::Client::open(redis_url.as_str()) {
+                Ok(client) => client,
+                Err(_) => return false,
+            };
+            let mut conn = match client.get_multiplexed_async_connection().await {
+                Ok(conn) => conn,
+                Err(_) => return false,
+            };
+            match redis::cmd("PING").query_async::<String>(&mut conn).await {
+                Ok(pong) => pong.eq_ignore_ascii_case("PONG"),
+                Err(_) => false,
+            }
+        })
+    })
+}
+
+pub async fn sqlite_usage_settlement_schema_ready(pool: &sqlx::SqlitePool) -> Result<bool, sqlx::Error> {
+    let table_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM sqlite_master
+        WHERE type = 'table'
+          AND name IN (
+              'ai_usage_fact',
+              'commerce_usage_settlement',
+              'commerce_account',
+              'commerce_account_ledger_entry'
+          )
+        "#,
+    )
+    .fetch_one(pool)
+    .await?;
+    let usage_column_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM pragma_table_info('ai_usage_fact')
+        WHERE name IN ('settlement_status', 'settlement_id', 'pricing_snapshot')
+        "#,
+    )
+    .fetch_one(pool)
+    .await?;
+    Ok(table_count == 4 && usage_column_count == 3)
+}
+
+pub async fn postgres_usage_settlement_schema_ready(pool: &PgPool) -> Result<bool, sqlx::Error> {
+    let table_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM information_schema.tables
+        WHERE table_schema = current_schema()
+          AND table_name IN (
+              'ai_usage_fact',
+              'commerce_usage_settlement',
+              'commerce_account',
+              'commerce_account_ledger_entry'
+          )
+        "#,
+    )
+    .fetch_one(pool)
+    .await?;
+    let usage_column_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM information_schema.columns
+        WHERE table_schema = current_schema()
+          AND table_name = 'ai_usage_fact'
+          AND column_name IN ('settlement_status', 'settlement_id', 'pricing_snapshot')
+        "#,
+    )
+    .fetch_one(pool)
+    .await?;
+    Ok(table_count == 4 && usage_column_count == 3)
+}
+
+pub fn sqlite_usage_settlement_readiness_check(
+    pool: sqlx::SqlitePool,
+    required: bool,
+) -> sdkwork_claw_http::ReadinessCheckFn {
+    std::sync::Arc::new(move || {
+        let pool = pool.clone();
+        Box::pin(async move {
+            if !required {
+                return true;
+            }
+            sqlite_usage_settlement_schema_ready(&pool)
+                .await
+                .unwrap_or(false)
+        })
+    })
+}
+
+pub fn postgres_usage_settlement_readiness_check(
+    pool: PgPool,
+    required: bool,
+) -> sdkwork_claw_http::ReadinessCheckFn {
+    std::sync::Arc::new(move || {
+        let pool = pool.clone();
+        Box::pin(async move {
+            if !required {
+                return true;
+            }
+            postgres_usage_settlement_schema_ready(&pool)
+                .await
+                .unwrap_or(false)
+        })
+    })
+}
+
+pub fn runtime_readiness_check(
+    pool: DatabasePool,
+    runtime_toml: Option<&RuntimeTomlConfig>,
+    settlement_config: UsageSettlementWorkerConfig,
+) -> Option<sdkwork_claw_http::ReadinessCheckFn> {
+    let settlement_required = settlement_config.normalized().enabled;
+    let mut checks: Vec<sdkwork_claw_http::ReadinessCheckFn> = Vec::new();
+    match pool {
+        DatabasePool::Sqlite(sqlite_pool, _) => {
+            checks.push(sqlite_database_readiness_check(sqlite_pool.clone()));
+            checks.push(sqlite_usage_settlement_readiness_check(
+                sqlite_pool,
+                settlement_required,
+            ));
+        }
+        DatabasePool::Postgres(postgres_pool, _) => {
+            checks.push(postgres_database_readiness_check(postgres_pool.clone()));
+            checks.push(postgres_usage_settlement_readiness_check(
+                postgres_pool,
+                settlement_required,
+            ));
+        }
+    }
+    if let Ok(Some(redis_config)) = RedisConfig::from_env_or_runtime_toml(runtime_toml) {
+        checks.push(redis_readiness_check(redis_config.url().to_owned()));
+    }
+    sdkwork_claw_http::combine_readiness_checks(checks)
+}
+
+pub fn sqlite_runtime_readiness_check(
+    pool: sqlx::SqlitePool,
+    runtime_toml: Option<&RuntimeTomlConfig>,
+    settlement_config: UsageSettlementWorkerConfig,
+) -> Option<sdkwork_claw_http::ReadinessCheckFn> {
+    let settlement_required = settlement_config.normalized().enabled;
+    let mut checks = vec![
+        sqlite_database_readiness_check(pool.clone()),
+        sqlite_usage_settlement_readiness_check(pool, settlement_required),
+    ];
+    if let Ok(Some(redis_config)) = RedisConfig::from_env_or_runtime_toml(runtime_toml) {
+        checks.push(redis_readiness_check(redis_config.url().to_owned()));
+    }
+    sdkwork_claw_http::combine_readiness_checks(checks)
+}
+
+pub fn postgres_runtime_readiness_check(
+    pool: PgPool,
+    runtime_toml: Option<&RuntimeTomlConfig>,
+    settlement_config: UsageSettlementWorkerConfig,
+) -> Option<sdkwork_claw_http::ReadinessCheckFn> {
+    let settlement_required = settlement_config.normalized().enabled;
+    let mut checks = vec![
+        postgres_database_readiness_check(pool.clone()),
+        postgres_usage_settlement_readiness_check(pool, settlement_required),
+    ];
+    if let Ok(Some(redis_config)) = RedisConfig::from_env_or_runtime_toml(runtime_toml) {
+        checks.push(redis_readiness_check(redis_config.url().to_owned()));
+    }
+    sdkwork_claw_http::combine_readiness_checks(checks)
 }

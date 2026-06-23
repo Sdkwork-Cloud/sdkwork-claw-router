@@ -3,7 +3,7 @@
  *
  * Development profile (.env.development):
  *   - SDKWORK_CLAW_* profile metadata
- *   - SDKWORK_AUTH_TOKEN / SDKWORK_ACCESS_TOKEN private bootstrap dual session
+ *   - SDKWORK_ACCESS_TOKEN private bootstrap access credential
  *   - SDKWORK_CLAW_BROWSER_DEV_PROXY_* private Vite proxy origins
  *   - VITE_* browser-visible SDK/runtime values
  *
@@ -59,7 +59,6 @@ export const CLAW_ROUTER_BROWSER_DEVELOPMENT_ENV_KEY_ORDER = Object.freeze([
   'SDKWORK_CLAW_ENVIRONMENT',
   'SDKWORK_CLAW_DEPLOYMENT_PROFILE',
   'SDKWORK_CLAW_RUNTIME_TARGET',
-  'SDKWORK_AUTH_TOKEN',
   'SDKWORK_ACCESS_TOKEN',
   CLAW_ROUTER_BROWSER_DEV_PROXY_ENV_KEYS.openApi,
   CLAW_ROUTER_BROWSER_DEV_PROXY_ENV_KEYS.backendApi,
@@ -77,15 +76,11 @@ export const CLAW_ROUTER_BROWSER_DEVELOPMENT_ENV_SECTIONS = Object.freeze([
     lines: ['# SDKWork application profile metadata.'],
   },
   {
-    beforeKey: 'SDKWORK_AUTH_TOKEN',
-    lines: [
-      '# Private bootstrap session credentials for protected app-api/backend-api before login.',
-      '# Generated on workspace startup; never commit live values.',
-    ],
-  },
-  {
     beforeKey: 'SDKWORK_ACCESS_TOKEN',
-    lines: [],
+    lines: [
+      '# Private bootstrap access credential for protected app-api/backend-api before login.',
+      '# Live values are written to .env.development.bootstrap.local on workspace startup.',
+    ],
   },
   {
     beforeKey: CLAW_ROUTER_BROWSER_DEV_PROXY_ENV_KEYS.openApi,
@@ -199,7 +194,7 @@ export function resolveBrowserDevProxyOrigin(env, canonicalKey, fallback) {
 export function pickBrowserDevelopmentPortalRuntimeEnv(portalRuntimeEnv = {}) {
   const picked = {};
   for (const key of CLAW_ROUTER_BROWSER_DEVELOPMENT_ENV_KEY_ORDER) {
-    if (key.startsWith('SDKWORK_CLAW_CONFIG_') || key === 'SDKWORK_AUTH_TOKEN' || key === 'SDKWORK_ACCESS_TOKEN') {
+    if (key.startsWith('SDKWORK_CLAW_CONFIG_') || key === 'SDKWORK_ACCESS_TOKEN') {
       continue;
     }
     const value = normalizeText(portalRuntimeEnv[key]);
@@ -253,11 +248,23 @@ export function migrateLegacyBrowserDevelopmentEnvRecord(record = {}) {
 }
 
 export function sanitizeBrowserDevelopmentEnvRecord(record = {}) {
-  return migrateLegacyBrowserDevelopmentEnvRecord(record);
+  const migrated = migrateLegacyBrowserDevelopmentEnvRecord(record);
+  delete migrated.SDKWORK_AUTH_TOKEN;
+  if (Object.prototype.hasOwnProperty.call(migrated, 'SDKWORK_ACCESS_TOKEN')
+    && `${migrated.SDKWORK_ACCESS_TOKEN ?? ''}`.trim()) {
+    // Tracked profile files must keep bootstrap credentials blank.
+    migrated.SDKWORK_ACCESS_TOKEN = '';
+  }
+  return migrated;
 }
 
 export function sanitizeBrowserProductionEnvRecord(record = {}) {
-  const sanitized = sanitizeBrowserDevelopmentEnvRecord(record);
+  const sanitized = { ...record };
+  delete sanitized.SDKWORK_AUTH_TOKEN;
+  if (Object.prototype.hasOwnProperty.call(sanitized, 'SDKWORK_ACCESS_TOKEN')
+    && `${sanitized.SDKWORK_ACCESS_TOKEN ?? ''}`.trim()) {
+    sanitized.SDKWORK_ACCESS_TOKEN = '';
+  }
   for (const key of Object.keys(sanitized)) {
     if (isForbiddenBrowserProductionEnvKey(key)) {
       delete sanitized[key];

@@ -693,7 +693,7 @@ async fn seed_pending_recharge_payment(
         INSERT INTO commerce_account
             (id, tenant_id, organization_id, owner_user_id, asset_type, currency_code, available_amount, frozen_amount, version, status, created_at, updated_at)
         VALUES
-            ('account-30-points', '10', '20', '30', 'points', 'POINT', '1000', '0', 0, 'active', '2026-04-29 00:00:00', '2026-04-29 00:00:00')
+            ('account-30-points', '100001', '0', '30', 'points', 'POINT', '1000', '0', 0, 'active', '2026-04-29 00:00:00', '2026-04-29 00:00:00')
         "#,
     )
     .execute(pool)

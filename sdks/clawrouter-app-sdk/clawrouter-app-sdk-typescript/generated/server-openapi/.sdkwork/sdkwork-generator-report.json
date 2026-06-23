@@ -12,7 +12,7 @@
   "mode": "apply",
   "hasChanges": true,
   "hasDestructiveChanges": false,
-  "changeFingerprint": "cc8fb34e8a635c8b812eb6ac777bf2ff29eaadd142ecd05580f243ec40f0ad6d",
+  "changeFingerprint": "cc979cc75d8bd2f1ad086077b9af5e1c1417c248e8cc1e878f5806142d83e0b7",
   "changeImpact": {
     "schemaVersion": 1,
     "areas": [
@@ -103,6 +103,14 @@
           "src/types/media-kind.ts",
           "src/types/media-resource.ts",
           "src/types/media-source.ts",
+          "src/types/model-ranking-history-entry.ts",
+          "src/types/model-ranking-history-point.ts",
+          "src/types/model-ranking-item.ts",
+          "src/types/model-rankings-list-result.ts",
+          "src/types/model-rankings-snapshot.ts",
+          "src/types/model-rankings-source.ts",
+          "src/types/model-vendors-list-result.ts",
+          "src/types/models-list-result.ts",
           "src/types/notification-item.ts",
           "src/types/notification-list-response.ts",
           "src/types/notification-mutation-response.ts",
@@ -110,6 +118,8 @@
           "src/types/notifications-list-result.ts",
           "src/types/notifications-popup-seen-create-result.ts",
           "src/types/problem-detail.ts",
+          "src/types/ranking-vendor-option.ts",
+          "src/types/ranking-vendor-options-response.ts",
           "src/types/routing-api-key-item.ts",
           "src/types/routing-api-keys-list-result.ts",
           "src/types/routing-api-keys-response.ts",
@@ -321,15 +331,23 @@
     "localVersions": []
   },
   "stats": {
-    "totalFiles": 136,
-    "models": 107,
+    "totalFiles": 147,
+    "models": 118,
     "apis": 6,
-    "types": 109
+    "types": 120
   },
   "warnings": [
     {
       "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
       "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/json-object.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/models-list-result.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/index.ts"
     },
     {
       "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
@@ -355,12 +373,12 @@
   "syncSummary": {
     "dryRun": false,
     "controlPlaneEnabled": true,
-    "writtenFiles": 136,
+    "writtenFiles": 146,
     "skippedScaffoldFiles": 0,
     "skippedUnchangedGeneratedFiles": 0,
     "deletedGeneratedFiles": 0,
     "changeSummaryPath": ".sdkwork/sdkwork-generator-changes.json",
-    "changeFingerprint": "cc8fb34e8a635c8b812eb6ac777bf2ff29eaadd142ecd05580f243ec40f0ad6d",
+    "changeFingerprint": "cc979cc75d8bd2f1ad086077b9af5e1c1417c248e8cc1e878f5806142d83e0b7",
     "changes": {
       "createdGeneratedFiles": [
         "bin/publish-core.mjs",
@@ -445,6 +463,14 @@
         "src/types/media-kind.ts",
         "src/types/media-resource.ts",
         "src/types/media-source.ts",
+        "src/types/model-ranking-history-entry.ts",
+        "src/types/model-ranking-history-point.ts",
+        "src/types/model-ranking-item.ts",
+        "src/types/model-rankings-list-result.ts",
+        "src/types/model-rankings-snapshot.ts",
+        "src/types/model-rankings-source.ts",
+        "src/types/model-vendors-list-result.ts",
+        "src/types/models-list-result.ts",
         "src/types/notification-item.ts",
         "src/types/notification-list-response.ts",
         "src/types/notification-mutation-response.ts",
@@ -452,6 +478,8 @@
         "src/types/notifications-list-result.ts",
         "src/types/notifications-popup-seen-create-result.ts",
         "src/types/problem-detail.ts",
+        "src/types/ranking-vendor-option.ts",
+        "src/types/ranking-vendor-options-response.ts",
         "src/types/routing-api-key-item.ts",
         "src/types/routing-api-keys-list-result.ts",
         "src/types/routing-api-keys-response.ts",
@@ -598,6 +626,14 @@
             "src/types/media-kind.ts",
             "src/types/media-resource.ts",
             "src/types/media-source.ts",
+            "src/types/model-ranking-history-entry.ts",
+            "src/types/model-ranking-history-point.ts",
+            "src/types/model-ranking-item.ts",
+            "src/types/model-rankings-list-result.ts",
+            "src/types/model-rankings-snapshot.ts",
+            "src/types/model-rankings-source.ts",
+            "src/types/model-vendors-list-result.ts",
+            "src/types/models-list-result.ts",
             "src/types/notification-item.ts",
             "src/types/notification-list-response.ts",
             "src/types/notification-mutation-response.ts",
@@ -605,6 +641,8 @@
             "src/types/notifications-list-result.ts",
             "src/types/notifications-popup-seen-create-result.ts",
             "src/types/problem-detail.ts",
+            "src/types/ranking-vendor-option.ts",
+            "src/types/ranking-vendor-options-response.ts",
             "src/types/routing-api-key-item.ts",
             "src/types/routing-api-keys-list-result.ts",
             "src/types/routing-api-keys-response.ts",

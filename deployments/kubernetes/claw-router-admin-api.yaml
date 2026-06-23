@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sdkwork-clawrouter-admin-api
+  labels:
+    app: sdkwork-clawrouter
+    component: admin-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sdkwork-clawrouter
+      component: admin-api
+  template:
+    metadata:
+      labels:
+        app: sdkwork-clawrouter
+        component: admin-api
+    spec:
+      terminationGracePeriodSeconds: 60
+      containers:
+        - name: admin-api
+          image: registry.sdkwork.com/apps/sdkwork-clawrouter:0.3.0
+          command: ["sdkwork-clawrouter-admin-api-server"]
+          ports:
+            - containerPort: 18081
+              name: http
+          env:
+            - name: SDKWORK_CLAW_DEPLOYMENT_MODE
+              value: cloud
+            - name: SDKWORK_CLAW_CONFIG_FILE
+              value: /etc/sdkwork/clawrouter.toml
+            - name: SDKWORK_CLAW_ADMIN_API_BIND
+              value: 0.0.0.0:18081
+          volumeMounts:
+            - name: config
+              mountPath: /etc/sdkwork
+              readOnly: true
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+            periodSeconds: 10
+            timeoutSeconds: 3
+          readinessProbe:
+            httpGet:
+              path: /readyz
+              port: http
+            periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 3
+      volumes:
+        - name: config
+          secret:
+            secretName: sdkwork-clawrouter-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sdkwork-clawrouter-admin-api
+spec:
+  selector:
+    app: sdkwork-clawrouter
+    component: admin-api
+  ports:
+    - name: http
+      port: 18081
+      targetPort: http

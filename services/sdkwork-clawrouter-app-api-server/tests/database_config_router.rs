@@ -6634,7 +6634,7 @@ async fn seed_app_user_data(pool: &SqlitePool) {
     sqlx::query(
         r#"INSERT INTO iam_credential
             (id, tenant_id, user_id, credential_type, credential_hash, status, created_at, updated_at)
-            VALUES ('credential-30-password', '10', '30', 'password', ?, 'active', '2026-04-01 08:00:00', '2026-04-29 08:00:00')"#,
+            VALUES ('credential-30-password', '100001', '30', 'password', ?, 'active', '2026-04-01 08:00:00', '2026-04-29 08:00:00')"#,
     )
     .bind(owner_password_hash)
     .execute(pool)
@@ -6643,7 +6643,7 @@ async fn seed_app_user_data(pool: &SqlitePool) {
     sqlx::query(
         r#"INSERT INTO iam_credential
             (id, tenant_id, user_id, credential_type, credential_hash, status, created_at, updated_at)
-            VALUES ('credential-31-password', '10', '31', 'password', 'other-password-hash', 'active', '2026-04-02 08:00:00', '2026-04-29 08:00:00')"#,
+            VALUES ('credential-31-password', '100001', '31', 'password', 'other-password-hash', 'active', '2026-04-02 08:00:00', '2026-04-29 08:00:00')"#,
     )
     .execute(pool)
     .await
@@ -6651,10 +6651,10 @@ async fn seed_app_user_data(pool: &SqlitePool) {
     for statement in [
         r#"INSERT INTO iam_user_identity
             (id, tenant_id, user_id, provider, subject, email, created_at)
-            VALUES ('identity-30-github', '10', '30', 'github', 'github-owner-open-id', 'owner@example.com', '2026-04-01 08:00:00')"#,
+            VALUES ('identity-30-github', '100001', '30', 'github', 'github-owner-open-id', 'owner@example.com', '2026-04-01 08:00:00')"#,
         r#"INSERT INTO iam_user_identity
             (id, tenant_id, user_id, provider, subject, email, created_at)
-            VALUES ('identity-30-google', '10', '30', 'google', 'google-owner-open-id', 'owner@example.com', '2026-04-01 08:00:00')"#,
+            VALUES ('identity-30-google', '100001', '30', 'google', 'google-owner-open-id', 'owner@example.com', '2026-04-01 08:00:00')"#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }
@@ -6664,7 +6664,7 @@ async fn seed_second_app_organization_membership(pool: &SqlitePool) {
     for statement in [
         r#"INSERT INTO iam_organization
             (id, tenant_id, parent_id, code, name, path, status, created_at, updated_at)
-            VALUES ('21', '10', NULL, 'workspace', 'Workspace Organization', '/21', 'active', '2026-04-02 00:00:00', '2026-04-29 08:00:00')"#,
+            VALUES ('21', '100001', NULL, 'workspace', 'Workspace Organization', '/21', 'active', '2026-04-02 00:00:00', '2026-04-29 08:00:00')"#,
         r#"INSERT INTO iam_organization_membership
             (id, tenant_id, organization_id, user_id, membership_kind, display_name, is_primary, status, joined_at, created_at, updated_at)
             VALUES ('member-30-workspace', '100001', '21', '30', 'member', 'Owner User', 0, 'active', '2026-03-31 08:00:00', '2026-03-31 08:00:00', '2026-04-29 08:00:00')"#,
@@ -6943,19 +6943,19 @@ async fn seed_recharge_runtime_data(pool: &SqlitePool) {
             (id, tenant_id, organization_id, spu_no, title, product_type, sales_status, visible_surfaces, created_at, updated_at)
             VALUES
             ('6301', '100001', '0', 'points-recharge-owner', 'Points recharge product', 'points_recharge', 'active', '["app"]', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
-            ('6302', '10', NULL, 'points-recharge-global', 'Global points recharge product', 'points_recharge', 'active', '["app"]', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('6302', '100001', NULL, 'points-recharge-global', 'Global points recharge product', 'points_recharge', 'active', '["app"]', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
             ('6303', '100001', '21', 'points-recharge-other-org', 'Other Org Recharge Pack', 'points_recharge', 'active', '["app"]', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
         r#"INSERT INTO commerce_product_sku
             (id, tenant_id, organization_id, spu_id, sku_no, name, title, price_amount, currency_code, delivery_mode, inventory_tracking, sales_status, created_at, updated_at)
             VALUES
             ('6401', '100001', '0', '6301', 'starter-recharge-pack', 'Starter Recharge Pack', 'Starter Recharge Pack', '10.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
-            ('6402', '10', NULL, '6302', 'global-recharge-pack', 'Global Recharge Pack', 'Global Recharge Pack', '20.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('6402', '100001', NULL, '6302', 'global-recharge-pack', 'Global Recharge Pack', 'Global Recharge Pack', '20.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
             ('6403', '100001', '21', '6303', 'other-org-recharge-pack', 'Other Org Recharge Pack', 'Other Org Recharge Pack', '30.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
         r#"INSERT INTO commerce_recharge_package
             (id, tenant_id, organization_id, package_no, sku_id, name, price_amount, currency_code, bonus_points, status, valid_from, valid_to, sort_weight, created_at, updated_at)
             VALUES
             ('6101', '100001', '0', 'starter-recharge-pack', '6401', 'Starter Recharge Pack', '10.00', 'CNY', 25, 'active', '2026-01-01 00:00:00', '2099-01-01 00:00:00', 1, '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
-            ('6102', '10', NULL, 'global-recharge-pack', '6402', 'Global Recharge Pack', '20.00', 'CNY', 50, 'active', '2026-01-01 00:00:00', '2099-01-01 00:00:00', 2, '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('6102', '100001', NULL, 'global-recharge-pack', '6402', 'Global Recharge Pack', '20.00', 'CNY', 50, 'active', '2026-01-01 00:00:00', '2099-01-01 00:00:00', 2, '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
             ('6103', '100001', '21', 'other-org-recharge-pack', '6403', 'Other Org Recharge Pack', '30.00', 'CNY', 75, 'active', '2026-01-01 00:00:00', '2099-01-01 00:00:00', 3, '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
         r#"INSERT INTO commerce_payment_method
             (id, tenant_id, organization_id, method_key, display_name, provider, status, sort_weight, created_at, updated_at)

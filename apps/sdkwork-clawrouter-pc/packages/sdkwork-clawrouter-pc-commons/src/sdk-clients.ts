@@ -61,7 +61,6 @@ import { readClawRouterRuntimeEnv } from './utils/env.ts';
 export const APP_API_PREFIX = '/app/v3/api';
 export const BACKEND_API_PREFIX = '/backend/v3/api';
 const SDKWORK_ACCESS_TOKEN_ENV_KEY = 'SDKWORK_ACCESS_TOKEN';
-const SDKWORK_AUTH_TOKEN_ENV_KEY = 'SDKWORK_AUTH_TOKEN';
 export const OPEN_API_PREFIX = '/v1';
 export const DRIVE_OPEN_API_PREFIX = '/open/v3/api';
 export const MEMORY_OPEN_API_PREFIX = '/mem/v3/api';
@@ -1338,14 +1337,6 @@ function readBootstrapAccessToken(): string | undefined {
   return value || undefined;
 }
 
-function readBootstrapAuthToken(): string | undefined {
-  const processEnv = (globalThis as typeof globalThis & {
-    process?: { env?: Record<string, string | undefined> };
-  }).process?.env;
-  const value = processEnv?.[SDKWORK_AUTH_TOKEN_ENV_KEY]?.trim();
-  return value || undefined;
-}
-
 function readStoredAuthTokens(): AuthTokens {
   const stored = loadStoredAppSessionToken();
   const tokens: AuthTokens = {
@@ -1353,12 +1344,6 @@ function readStoredAuthTokens(): AuthTokens {
     ...(stored?.authToken ? { authToken: stored.authToken } : {}),
     ...(stored?.refreshToken ? { refreshToken: stored.refreshToken } : {}),
   };
-  if (!tokens.authToken) {
-    const bootstrapAuthToken = readBootstrapAuthToken();
-    if (bootstrapAuthToken) {
-      tokens.authToken = bootstrapAuthToken;
-    }
-  }
   if (!tokens.accessToken) {
     const bootstrapAccessToken = readBootstrapAccessToken();
     if (bootstrapAccessToken) {

@@ -1,6 +1,7 @@
 use sdkwork_commerce_core::{CommerceAccountAssetType, CommerceLedgerDirection};
 use sqlx::{PgPool, Postgres, Row, Transaction};
 
+use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::domain::{DecimalValue, DomainError, DomainResult};
 use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
 use crate::infrastructure::sql::sql_admin_product_center::{
@@ -1387,7 +1388,7 @@ fn row_error(error: sqlx::Error) -> DomainError {
 }
 
 fn store_error(context: &str, error: sqlx::Error) -> DomainError {
-    DomainError::new(format!("{context}: {error}"))
+    redacted_store_error(context, error)
 }
 
 fn store_create_error(error: sqlx::Error) -> DomainError {

@@ -39,7 +39,7 @@ impl GatewayInvocationPolicyGuard {
         Self { rate_limiter }
     }
 
-    pub fn enforce<C: PricingCatalog>(
+    pub async fn enforce<C: PricingCatalog>(
         &self,
         catalog: &C,
         auth: &AuthenticatedApiKeyContext,
@@ -94,6 +94,7 @@ impl GatewayInvocationPolicyGuard {
             let scope_key = format!("api-key:{}", auth.api_key_id);
             self.rate_limiter
                 .check_and_record(&scope_key, &rate_spec)
+                .await
                 .map_err(
                     |retry_after_secs| GatewayInvocationPolicyViolation::RateLimited {
                         message: "gateway invocation rate limit exceeded".to_owned(),

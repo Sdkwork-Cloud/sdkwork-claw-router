@@ -368,116 +368,81 @@ where
         }),
         _ => None,
     };
-    router = match admin_subject_boundary_config.clone() {
-        Some(admin_subject_boundary_config) => router.merge(route_explain_router.layer(
-            from_fn_with_state(admin_subject_boundary_config, admin_request_subject_boundary),
-        )),
-        None => router.merge(route_explain_router),
-    };
+    router = merge_admin_router_with_subject_boundary(
+        router,
+        &admin_subject_boundary_config,
+        route_explain_router,
+    );
     if model_store.is_none() {
-        router = match admin_subject_boundary_config.clone() {
-            Some(admin_subject_boundary_config) => router.merge(catalog_router.layer(
-                from_fn_with_state(admin_subject_boundary_config, admin_request_subject_boundary),
-            )),
-            None => router.merge(catalog_router),
-        };
+        router = merge_admin_router_with_subject_boundary(
+            router,
+            &admin_subject_boundary_config,
+            catalog_router,
+        );
     }
     if let Some(installer) = database_installer {
         let system_router =
             sdkwork_clawrouter_router_service::api::admin_system_router_with_installer(installer);
-        router = match admin_subject_boundary_config.clone() {
-            Some(admin_subject_boundary_config) => {
-                router.merge(system_router.layer(from_fn_with_state(
-                    admin_subject_boundary_config,
-                    admin_request_subject_boundary,
-                )))
-            }
-            None => router.merge(system_router),
-        };
+        router = merge_admin_router_with_subject_boundary(
+            router,
+            &admin_subject_boundary_config,
+            system_router,
+        );
     }
 
     if let Some(manager) = cache_manager.clone() {
         let cache_router =
             sdkwork_clawrouter_router_service::api::admin_cache_router_with_manager(manager);
-        router = match admin_subject_boundary_config.clone() {
-            Some(admin_subject_boundary_config) => {
-                router.merge(cache_router.layer(from_fn_with_state(
-                    admin_subject_boundary_config,
-                    admin_request_subject_boundary,
-                )))
-            }
-            None => router.merge(cache_router),
-        };
-    }
-
-    if let (Some(store), Some(admin_subject_boundary_config)) =
-        (model_store.clone(), admin_subject_boundary_config.clone())
-    {
-        let store = ai_routing_cache_invalidating_model_store(store, routing_cache_manager.clone());
-        router = router.merge(
-            admin_model_management_router_with_store(store, Arc::new(OsApiKeySecretGenerator))
-                .layer(from_fn_with_state(
-                    admin_subject_boundary_config,
-                    admin_request_subject_boundary,
-                )),
+        router = merge_admin_router_with_subject_boundary(
+            router,
+            &admin_subject_boundary_config,
+            cache_router,
         );
     }
-    router = match (
-        model_rankings_store,
-        model_ranking_refresh_store,
-        admin_subject_boundary_config.clone(),
-    ) {
-        (Some(read_store), Some(refresh_store), Some(admin_subject_boundary_config)) => router
-            .merge(
-                admin_model_rankings_router_with_read_store_and_refresh_store(
-                    read_store,
-                    refresh_store,
-                )
-                .layer(from_fn_with_state(
-                    admin_subject_boundary_config,
-                    admin_request_subject_boundary,
-                )),
-            ),
-        (Some(read_store), Some(refresh_store), None) => router.merge(
+
+    if let Some(store) = model_store.clone() {
+        let store = ai_routing_cache_invalidating_model_store(store, routing_cache_manager.clone());
+        router = merge_admin_router_with_subject_boundary(
+            router,
+            &admin_subject_boundary_config,
+            admin_model_management_router_with_store(store, Arc::new(OsApiKeySecretGenerator)),
+        );
+    }
+    router = match (model_rankings_store, model_ranking_refresh_store) {
+        (Some(read_store), Some(refresh_store)) => merge_admin_router_with_subject_boundary(
+            router,
+            &admin_subject_boundary_config,
             admin_model_rankings_router_with_read_store_and_refresh_store(
                 read_store,
                 refresh_store,
             ),
         ),
-        (Some(read_store), None, Some(admin_subject_boundary_config)) => router.merge(
-            admin_model_rankings_router_with_read_store(read_store).layer(from_fn_with_state(
-                admin_subject_boundary_config,
-                admin_request_subject_boundary,
-            )),
+        (Some(read_store), None) => merge_admin_router_with_subject_boundary(
+            router,
+            &admin_subject_boundary_config,
+            admin_model_rankings_router_with_read_store(read_store),
         ),
-        (Some(read_store), None, None) => {
-            router.merge(admin_model_rankings_router_with_read_store(read_store))
-        }
-        (None, _, _) => router.merge(admin_model_rankings_router()),
+        (None, _) => merge_admin_router_with_subject_boundary(
+            router,
+            &admin_subject_boundary_config,
+            admin_model_rankings_router(),
+        ),
     };
     let payment_runtime_router =
         sdkwork_clawrouter_router_service::api::admin_payment_runtime_router();
-    router = match admin_subject_boundary_config.clone() {
-        Some(admin_subject_boundary_config) => {
-            router.merge(payment_runtime_router.layer(from_fn_with_state(
-                admin_subject_boundary_config,
-                admin_request_subject_boundary,
-            )))
-        }
-        None => router.merge(payment_runtime_router),
-    };
+    router = merge_admin_router_with_subject_boundary(
+        router,
+        &admin_subject_boundary_config,
+        payment_runtime_router,
+    );
     if let Some(store) = inventory_store {
         let inventory_router =
             sdkwork_clawrouter_router_service::api::admin_inventory_router_with_store(store);
-        router = match admin_subject_boundary_config.clone() {
-            Some(admin_subject_boundary_config) => {
-                router.merge(inventory_router.layer(from_fn_with_state(
-                    admin_subject_boundary_config,
-                    admin_request_subject_boundary,
-                )))
-            }
-            None => router.merge(inventory_router),
-        };
+        router = merge_admin_router_with_subject_boundary(
+            router,
+            &admin_subject_boundary_config,
+            inventory_router,
+        );
     }
     if let Some(admin_subject_boundary_config) = admin_subject_boundary_config {
         if let (Some(store), Some(api_key_hasher)) = (api_key_command_store, api_key_hasher.clone())
@@ -1413,11 +1378,12 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                     app_session_config: Some(app_session_config),
                     admin_access_checker: Some(admin_access_checker),
                     request_limits_config,
-                    readiness_check: Some(
-                        sdkwork_clawrouter_router_service::infrastructure::sql::pool::sqlite_database_readiness_check(
+                    readiness_check:
+                        sdkwork_clawrouter_router_service::infrastructure::sql::pool::sqlite_runtime_readiness_check(
                             pool.clone(),
+                            runtime_toml,
+                            sdkwork_clawrouter_router_service::application::UsageSettlementWorkerConfig::disabled(),
                         ),
-                    ),
                 },
             ))
         }
@@ -1557,11 +1523,12 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                     app_session_config: Some(app_session_config),
                     admin_access_checker: Some(admin_access_checker),
                     request_limits_config,
-                    readiness_check: Some(
-                        sdkwork_clawrouter_router_service::infrastructure::sql::pool::postgres_database_readiness_check(
+                    readiness_check:
+                        sdkwork_clawrouter_router_service::infrastructure::sql::pool::postgres_runtime_readiness_check(
                             pool.clone(),
+                            runtime_toml,
+                            sdkwork_clawrouter_router_service::application::UsageSettlementWorkerConfig::disabled(),
                         ),
-                    ),
                 },
             ))
         }
@@ -1744,6 +1711,22 @@ fn provider_health_probe_timeout_from_env_or_toml(
 
 fn model_rankings_service(read_store: ModelRankingsRuntimeStore) -> ModelRankingsRuntimeStore {
     Arc::new(ModelRankingsService::new(read_store))
+}
+
+fn merge_admin_router_with_subject_boundary(
+    router: Router,
+    admin_subject_boundary_config: &Option<AdminSubjectBoundaryConfig>,
+    admin_router: Router,
+) -> Router {
+    match admin_subject_boundary_config {
+        Some(config) => router.merge(
+            admin_router.layer(from_fn_with_state(
+                config.clone(),
+                admin_request_subject_boundary,
+            )),
+        ),
+        None => router,
+    }
 }
 
 async fn admin_request_subject_boundary(

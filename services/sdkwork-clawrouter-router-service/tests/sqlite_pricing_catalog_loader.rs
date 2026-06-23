@@ -36,6 +36,7 @@ async fn sqlite_loader_builds_pricing_catalog_snapshot_from_schema_tables() {
             groups: Vec::new(),
             search_query: None,
             limit: None,
+            offset: None,
         })
         .unwrap();
 

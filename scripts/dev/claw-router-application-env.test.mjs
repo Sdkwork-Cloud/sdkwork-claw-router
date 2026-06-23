@@ -11,6 +11,7 @@ import {
 } from '../lib/claw-router-browser-env-contract.mjs';
 import {
   CLAW_ROUTER_RELEASE_ENV_KEY_ORDER,
+  buildClawRouterBootstrapSessionTokenEnv,
   ensureClawRouterBrowserDevelopmentEnv,
   ensureClawRouterBrowserProductionEnv,
   ensureClawRouterReleaseEnv,
@@ -131,7 +132,13 @@ test('ensureClawRouterBrowserDevelopmentEnv writes .env.development and preserve
     const written = readFileSync(profileFilePath, 'utf8');
 
     assert.equal(result.profileFilePath, profileFilePath);
-    assert.equal(result.mergedEnv.SDKWORK_ACCESS_TOKEN, COMPLIANT_BOOTSTRAP_ACCESS_TOKEN);
+    assert.equal(result.mergedEnv.SDKWORK_ACCESS_TOKEN, '');
+    const bootstrapLocal = loadEnvFile(path.join(applicationRoot, '.env.development.bootstrap.local'));
+    const expectedBootstrap = buildClawRouterBootstrapSessionTokenEnv({
+      workspaceRoot: tempRoot,
+      runtimeTarget: 'browser',
+    });
+    assert.equal(bootstrapLocal.SDKWORK_ACCESS_TOKEN, expectedBootstrap.SDKWORK_ACCESS_TOKEN);
     assert.equal(result.mergedEnv[CLAW_ROUTER_BROWSER_DEV_PROXY_ENV_KEYS.openApi], 'http://127.0.0.1:3999');
     assert.equal(result.mergedEnv[CLAW_ROUTER_BROWSER_DEV_PROXY_ENV_KEYS.backendApi], 'http://127.0.0.1:3900');
     assert.equal(result.mergedEnv.PORTAL_PUBLIC_API_BASE_URL, undefined);
@@ -218,7 +225,9 @@ test('ensureClawRouterBrowserProductionEnv writes .env.production with access to
     const written = readFileSync(profileFilePath, 'utf8');
 
     assert.equal(result.profileFilePath, profileFilePath);
-    assert.equal(result.mergedEnv.SDKWORK_ACCESS_TOKEN, COMPLIANT_BOOTSTRAP_ACCESS_TOKEN);
+    assert.equal(result.mergedEnv.SDKWORK_ACCESS_TOKEN, '');
+    const bootstrapLocal = loadEnvFile(path.join(applicationRoot, '.env.production.bootstrap.local'));
+    assert.match(bootstrapLocal.SDKWORK_ACCESS_TOKEN, /^v2\./u);
     assert.equal(result.mergedEnv.SDKWORK_CLAW_ENVIRONMENT, 'production');
     assert.equal(result.mergedEnv.PORTAL_PUBLIC_API_BASE_URL, undefined);
     assert.doesNotMatch(written, /^PORTAL_/mu);
@@ -413,11 +422,13 @@ test('ensureClawRouterBrowserDevelopmentEnv refreshes stale bootstrap access tok
       workspaceRoot: tempRoot,
       applicationRoot: appRoot,
     });
-    assert.notEqual(result.mergedEnv.SDKWORK_ACCESS_TOKEN, staleToken);
-    assert.match(result.mergedEnv.SDKWORK_ACCESS_TOKEN, /^v2\./u);
-    const encodedPayload = result.mergedEnv.SDKWORK_ACCESS_TOKEN.split('.')[1];
+    const bootstrapLocal = loadEnvFile(path.join(appRoot, '.env.development.bootstrap.local'));
+    assert.notEqual(bootstrapLocal.SDKWORK_ACCESS_TOKEN, staleToken);
+    assert.match(bootstrapLocal.SDKWORK_ACCESS_TOKEN, /^v2\./u);
+    const encodedPayload = bootstrapLocal.SDKWORK_ACCESS_TOKEN.split('.')[1];
     const payload = JSON.parse(Buffer.from(encodedPayload, 'base64url').toString('utf8'));
     assert.equal(payload.token_version, 1);
+    assert.equal(result.mergedEnv.SDKWORK_ACCESS_TOKEN, '');
   } finally {
     rmSync(tempRoot, { recursive: true, force: true });
   }

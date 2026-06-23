@@ -1,5 +1,6 @@
 use sqlx::{PgPool, Row};
 
+use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::domain::DomainError;
 use crate::infrastructure::sql::sql_admin_product_center::media_resource_from_snapshot;
 use crate::ports::{
@@ -621,5 +622,5 @@ fn session_is_active(expires_at: &str, now: i64) -> bool {
 }
 
 fn store_error(context: &str, error: sqlx::Error) -> DomainError {
-    DomainError::new(format!("{context}: {error}"))
+    redacted_store_error(context, error)
 }

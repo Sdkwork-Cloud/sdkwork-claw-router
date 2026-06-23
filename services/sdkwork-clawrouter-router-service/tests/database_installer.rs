@@ -1,18 +1,18 @@
-use sdkwork_claw_product::application::{PasswordHasher, Pbkdf2Sha256PasswordHasher};
-use sdkwork_claw_product::domain::DecimalValue;
-use sdkwork_claw_product::infrastructure::sql::installer::{
+use sdkwork_clawrouter_router_service::application::{PasswordHasher, Pbkdf2Sha256PasswordHasher};
+use sdkwork_clawrouter_router_service::domain::DecimalValue;
+use sdkwork_clawrouter_router_service::infrastructure::sql::installer::{
     CatalogRefreshOptions, DatabaseInstallOptions, DatabaseInstaller, InstallationStatus,
     CURRENT_SCHEMA_VERSION,
 };
-use sdkwork_claw_product::infrastructure::sql::sqlite::{
+use sdkwork_clawrouter_router_service::infrastructure::sql::sqlite::{
     SqliteAdminMarketingStore, SqliteAdminUserStore, SqliteForumStore, SqlitePricingCatalogLoader,
 };
-use sdkwork_claw_product::ports::{
+use sdkwork_clawrouter_router_service::ports::{
     AdminMarketingStore, AdminMarketingSubject, AdminUserStore, AdminUserSubject,
     CreateAdminUserApiKeyCommand, CreateAdminUserCommand, ForumFeedQuery, ForumFeedReadStore,
-    ListAdminUsersQuery, PricingCatalog, UpdateAdminUserCommand,
+    ForumSubject, ListAdminUsersQuery, PricingCatalog, UpdateAdminUserCommand,
 };
-use sdkwork_claw_product_test_support::repair_sqlite_pool;
+use sdkwork_clawrouter_router_service_test_support::repair_sqlite_pool;
 use sdkwork_commerce_bootstrap::{
     commerce_payment_channel_seeds, commerce_payment_method_seeds,
     commerce_payment_provider_account_seeds, commerce_payment_provider_seeds,
@@ -87,9 +87,6 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
     assert_table_exists(&pool, "ai_request_trace").await;
     assert_table_exists(&pool, "appstore_app").await;
     assert_table_exists(&pool, "c_category").await;
-    assert_table_exists(&pool, "ai_agent_skill_package").await;
-    assert_table_exists(&pool, "ai_agent_skill").await;
-    assert_table_exists(&pool, "ai_user_agent_skill").await;
     assert_table_exists(&pool, "content_forum_post").await;
     assert_table_exists(&pool, "content_comment").await;
     assert_table_exists(&pool, "content_reaction").await;
@@ -123,9 +120,6 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
     assert_sqlite_index_exists(&pool, "idx_ops_job_execution_model_ranking_scope_started").await;
     assert_sqlite_index_exists(&pool, "idx_c_category_type_scope").await;
     assert_sqlite_index_exists(&pool, "uk_ops_notification_delivery_user_message_app").await;
-    assert_sqlite_index_exists(&pool, "uk_ai_agent_skill_key").await;
-    assert_sqlite_index_exists(&pool, "idx_ai_agent_skill_market").await;
-    assert_sqlite_index_exists(&pool, "uk_ai_user_agent_skill").await;
     assert_sqlite_index_exists(&pool, "uk_ai_runtime_usage_link_agent_scope").await;
     assert_sqlite_index_exists(&pool, "idx_commerce_order_owner_status_created_at").await;
     assert_sqlite_index_exists(&pool, "uk_iam_oauth_provider_catalog_owner_code").await;
@@ -148,6 +142,9 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
     assert_table_exists(&pool, "ai_resource_group").await;
     assert_table_exists(&pool, "ai_resource_group_item").await;
     assert_table_exists(&pool, "ai_channel_resource").await;
+    assert_table_absent(&pool, "ai_agent_skill_package").await;
+    assert_table_absent(&pool, "ai_agent_skill").await;
+    assert_table_absent(&pool, "ai_user_agent_skill").await;
     assert_table_absent(&pool, "ai_channel_endpoint").await;
     assert_table_absent(&pool, "ai_channel_model").await;
     assert_table_absent(&pool, "ai_channel_vendor").await;
@@ -587,8 +584,8 @@ async fn sqlite_installer_bootstraps_initial_admin_login_once() {
         .expect("first install must expose one-time bootstrap admin credentials");
     assert_eq!("created", bootstrap.status);
     assert_eq!("admin", bootstrap.username);
-    assert_eq!("10", bootstrap.tenant_id);
-    assert_eq!("20", bootstrap.organization_id);
+    assert_eq!("100001", bootstrap.tenant_id);
+    assert_eq!("0", bootstrap.organization_id);
     assert_eq!("Admin-Init-Test-Password-2026!", bootstrap.initial_password);
 
     let admin = sqlx::query(
@@ -622,12 +619,12 @@ async fn sqlite_installer_bootstraps_initial_admin_login_once() {
     .unwrap();
 
     assert_eq!("1", admin.get::<String, _>("id"));
-    assert_eq!("10", admin.get::<String, _>("tenant_id"));
+    assert_eq!("100001", admin.get::<String, _>("tenant_id"));
     assert_eq!("admin", admin.get::<String, _>("username"));
     assert_eq!("Administrator", admin.get::<String, _>("display_name"));
     assert_eq!("admin@sdkwork.com", admin.get::<String, _>("email"));
     assert_eq!("active", admin.get::<String, _>("status"));
-    assert_eq!("20", admin.get::<String, _>("organization_id"));
+    assert_eq!("0", admin.get::<String, _>("organization_id"));
     assert_eq!("admin", admin.get::<String, _>("membership_kind"));
     assert!(
         Pbkdf2Sha256PasswordHasher
@@ -700,7 +697,7 @@ async fn sqlite_admin_user_store_lists_registered_tenant_users_outside_current_o
         INSERT INTO iam_user
             (id, tenant_id, username, display_name, email, phone, avatar_media_resource_id, avatar_object_blob_id, avatar_resource_snapshot, status, created_at, updated_at)
         VALUES
-            ('2', '10', 'registered-cross-org', 'Registered Cross Org', 'registered-cross-org@example.com', NULL, 'media-registered-cross-org-avatar', 'iam-user-avatar:registered-cross-org', '{"kind":"image","source":"provider_asset","uri":"iam-user-avatar:registered-cross-org"}', 'active', '2026-05-17T09:00:00Z', '2026-05-17T09:00:00Z')
+            ('2', '100001', 'registered-cross-org', 'Registered Cross Org', 'registered-cross-org@example.com', NULL, 'media-registered-cross-org-avatar', 'iam-user-avatar:registered-cross-org', '{"kind":"image","source":"provider_asset","uri":"iam-user-avatar:registered-cross-org"}', 'active', '2026-05-17T09:00:00Z', '2026-05-17T09:00:00Z')
         "#,
     )
     .execute(&pool)
@@ -711,7 +708,7 @@ async fn sqlite_admin_user_store_lists_registered_tenant_users_outside_current_o
         INSERT INTO iam_organization_membership
             (id, tenant_id, organization_id, user_id, membership_kind, display_name, is_primary, status, joined_at, created_at, updated_at)
         VALUES
-            ('member-2-registered', '10', '21', '2', 'owner', 'Registered Cross Org', 1, 'active', '2026-05-17T09:00:00Z', '2026-05-17T09:00:00Z', '2026-05-17T09:00:00Z')
+            ('member-2-registered', '100001', '21', '2', 'owner', 'Registered Cross Org', 1, 'active', '2026-05-17T09:00:00Z', '2026-05-17T09:00:00Z', '2026-05-17T09:00:00Z')
         "#,
     )
     .execute(&pool)
@@ -1145,8 +1142,8 @@ async fn sqlite_installer_reset_admin_password_rotates_existing_password() {
     assert_eq!("admin", report.username);
     assert_eq!("admin@sdkwork.com", report.email);
     assert_eq!("1", report.user_id);
-    assert_eq!("10", report.tenant_id);
-    assert_eq!("20", report.organization_id);
+    assert_eq!("100001", report.tenant_id);
+    assert_eq!("0", report.organization_id);
     assert_eq!("Admin-Rotated-Password-2026!", report.initial_password);
     assert_eq!(false, report.generated_password);
 
@@ -1210,8 +1207,8 @@ async fn sqlite_installer_reset_admin_password_bootstraps_empty_database() {
     assert_eq!("reset", report.status);
     assert_eq!("admin", report.username);
     assert_eq!("admin@sdkwork.com", report.email);
-    assert_eq!("10", report.tenant_id);
-    assert_eq!("20", report.organization_id);
+    assert_eq!("100001", report.tenant_id);
+    assert_eq!("0", report.organization_id);
     assert_eq!(
         InstallationStatus::Installed,
         installer.status().await.unwrap()
@@ -1727,53 +1724,6 @@ async fn sqlite_installer_reimports_ai_routing_seed_when_admin_api_group_payload
 }
 
 #[tokio::test]
-async fn sqlite_installer_repairs_core_skill_seed_without_reimporting_full_skill_catalog_when_payload_current(
-) {
-    let pool = repair_sqlite_pool().await;
-    let installer = installer(pool.clone());
-
-    let lean_skill_count = sqlite_core_skill_seed_row_count(&pool).await;
-    assert_eq!(
-        3, lean_skill_count,
-        "lean startup repair fixture must retain only the canonical core skill rows"
-    );
-
-    sqlx::query(
-        r#"
-        UPDATE ai_agent_skill
-        SET source_type = 'LEGACY_EXTERNAL',
-            market_status = 'DRAFT',
-            visibility = 'PRIVATE',
-            review_status = 'PENDING',
-            enabled = 0,
-            builtin = 0,
-            is_builtin = 0
-        WHERE tenant_id = 0
-          AND organization_id = 0
-          AND skill_key = 'prompt-optimizer'
-        "#,
-    )
-    .execute(&pool)
-    .await
-    .unwrap();
-
-    assert_eq!(
-        InstallationStatus::UpgradeRequired,
-        installer.status().await.unwrap(),
-        "installer status must detect drift in the core startup skills seed"
-    );
-
-    let repaired = installer.ensure_installed().await.unwrap();
-    assert_eq!(InstallationStatus::Installed, repaired.status);
-    assert!(repaired.changed);
-    assert_eq!(
-        3,
-        sqlite_core_skill_seed_row_count(&pool).await,
-        "payload-current startup repair must not reimport the full bundled skills catalog"
-    );
-}
-
-#[tokio::test]
 async fn sqlite_installer_repairs_missing_forum_tutorial_seed_rows_on_startup_check() {
     let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
@@ -1828,7 +1778,7 @@ async fn sqlite_installer_repairs_missing_default_iam_subject_on_startup_check()
         SELECT COUNT(1)
         FROM iam_tenant t
         JOIN iam_organization o ON o.tenant_id = t.id
-        WHERE t.code = 'default'
+        WHERE t.code = 'SDKWORK'
           AND t.status = 'active'
           AND o.code = 'root'
           AND o.status = 'active'
@@ -1864,7 +1814,7 @@ async fn sqlite_installer_repairs_default_iam_subject_with_appbase_organization_
         r#"
         SELECT organization_kind
         FROM iam_organization
-        WHERE id = '20'
+        WHERE id = '0'
         "#,
     )
     .fetch_one(&pool)
@@ -1874,205 +1824,6 @@ async fn sqlite_installer_repairs_default_iam_subject_with_appbase_organization_
         "team", organization_kind,
         "installer repair must seed appbase-compatible organization metadata"
     );
-}
-
-#[tokio::test]
-async fn sqlite_installer_repairs_drifted_skill_package_identity_on_startup_check() {
-    let pool = repair_sqlite_pool().await;
-    let installer = installer(pool.clone());
-
-    sqlx::query(
-        r#"
-        UPDATE ai_agent_skill_package
-        SET package_key = 'legacy-sdkwork-official-skills',
-            name = 'Legacy SDKWork Official Skills',
-            enabled = 0,
-            featured = 0
-        WHERE tenant_id = 0
-          AND organization_id = 0
-          AND id = 7101
-        "#,
-    )
-    .execute(&pool)
-    .await
-    .unwrap();
-
-    assert_eq!(
-        InstallationStatus::UpgradeRequired,
-        installer.status().await.unwrap(),
-        "installer status must detect seed package identity drift before startup repair"
-    );
-
-    let repaired = installer.ensure_installed().await.unwrap();
-    assert_eq!(InstallationStatus::Installed, repaired.status);
-    assert!(repaired.changed);
-
-    let package = sqlx::query(
-        r#"
-        SELECT package_key, name, enabled, featured
-        FROM ai_agent_skill_package
-        WHERE tenant_id = 0
-          AND organization_id = 0
-          AND id = 7101
-        "#,
-    )
-    .fetch_one(&pool)
-    .await
-    .unwrap();
-    assert_eq!(
-        "sdkwork-official-skills",
-        package.get::<String, _>("package_key")
-    );
-    assert_eq!("SDKWork Official Skills", package.get::<String, _>("name"));
-    assert_eq!(1, package.get::<i64, _>("enabled"));
-    assert_eq!(1, package.get::<i64, _>("featured"));
-}
-
-#[tokio::test]
-async fn sqlite_installer_reclaims_skill_package_key_from_stale_seed_duplicate_on_startup_check() {
-    let pool = repair_sqlite_pool().await;
-    let installer = installer(pool.clone());
-
-    sqlx::query(
-        r#"
-        UPDATE ai_agent_skill_package
-        SET package_key = 'legacy-sdkwork-official-skills',
-            name = 'Legacy SDKWork Official Skills',
-            enabled = 0
-        WHERE tenant_id = 0
-          AND organization_id = 0
-          AND id = 7101
-        "#,
-    )
-    .execute(&pool)
-    .await
-    .unwrap();
-    sqlx::query(
-        r#"
-        INSERT INTO ai_agent_skill_package
-            (id, uuid, tenant_id, organization_id, data_scope, user_id, package_key, name, enabled, featured, sort_weight, tags)
-        VALUES
-            (97101, 'stale-seed-package-sdkwork-official-skills', 0, 0, 0, 0, 'sdkwork-official-skills', 'Stale SDKWork Official Skills Duplicate', 0, 0, 999, '[]')
-        "#,
-    )
-    .execute(&pool)
-    .await
-    .unwrap();
-
-    assert_eq!(
-        InstallationStatus::UpgradeRequired,
-        installer.status().await.unwrap(),
-        "installer status must detect stale duplicate seed packages that occupy the canonical package key"
-    );
-
-    let repaired = installer.ensure_installed().await.unwrap();
-    assert_eq!(InstallationStatus::Installed, repaired.status);
-    assert!(repaired.changed);
-
-    let canonical_count: i64 = sqlx::query_scalar(
-        r#"
-        SELECT COUNT(1)
-        FROM ai_agent_skill_package
-        WHERE tenant_id = 0
-          AND organization_id = 0
-          AND package_key = 'sdkwork-official-skills'
-        "#,
-    )
-    .fetch_one(&pool)
-    .await
-    .unwrap();
-    assert_eq!(1, canonical_count);
-
-    let stale_count: i64 = sqlx::query_scalar(
-        r#"
-        SELECT COUNT(1)
-        FROM ai_agent_skill_package
-        WHERE tenant_id = 0
-          AND organization_id = 0
-          AND id = 97101
-        "#,
-    )
-    .fetch_one(&pool)
-    .await
-    .unwrap();
-    assert_eq!(0, stale_count);
-
-    let package = sqlx::query(
-        r#"
-        SELECT package_key, name, enabled, featured
-        FROM ai_agent_skill_package
-        WHERE tenant_id = 0
-          AND organization_id = 0
-          AND id = 7101
-        "#,
-    )
-    .fetch_one(&pool)
-    .await
-    .unwrap();
-    assert_eq!(
-        "sdkwork-official-skills",
-        package.get::<String, _>("package_key")
-    );
-    assert_eq!("SDKWork Official Skills", package.get::<String, _>("name"));
-    assert_eq!(1, package.get::<i64, _>("enabled"));
-    assert_eq!(1, package.get::<i64, _>("featured"));
-}
-
-#[tokio::test]
-async fn sqlite_installer_repairs_drifted_skills_artifact_standard_fields_on_startup_check() {
-    let pool = repair_sqlite_pool().await;
-    let installer = installer(pool.clone());
-
-    sqlx::query(
-        r#"
-        UPDATE ai_skill_artifact
-        SET artifact_ref = 'builtin://sdkwork.skills.prompt_optimizer@0.0.0',
-            artifact_size_bytes = 1,
-            checksum_hash = 'sha256:0000000000000000000000000000000000000000000000000000000000000000',
-            status = 0,
-            deleted_at = CURRENT_TIMESTAMP
-        WHERE tenant_id = 0
-          AND organization_id = 0
-          AND uuid = 'skill-artifact-prompt-optimizer-100'
-        "#,
-    )
-    .execute(&pool)
-    .await
-    .unwrap();
-
-    assert_eq!(
-        InstallationStatus::UpgradeRequired,
-        installer.status().await.unwrap(),
-        "installer status must detect official skills artifact rows drifted away from the bundled checksum and install metadata"
-    );
-
-    let repaired = installer.ensure_installed().await.unwrap();
-    assert_eq!(InstallationStatus::Installed, repaired.status);
-    assert!(repaired.changed);
-
-    let artifact = sqlx::query(
-        r#"
-        SELECT artifact_ref, artifact_size_bytes, checksum_hash, status, deleted_at
-        FROM ai_skill_artifact
-        WHERE tenant_id = 0
-          AND organization_id = 0
-          AND uuid = 'skill-artifact-prompt-optimizer-100'
-        "#,
-    )
-    .fetch_one(&pool)
-    .await
-    .unwrap();
-    assert_eq!(
-        "builtin://sdkwork.skills.prompt_optimizer@1.0.0",
-        artifact.get::<String, _>("artifact_ref")
-    );
-    assert_eq!(1748, artifact.get::<i64, _>("artifact_size_bytes"));
-    assert_eq!(
-        "sha256:3dae84ec4a2bbff9c17a65db78aded0974cbcac33007decee51bff6f779bfc0f",
-        artifact.get::<String, _>("checksum_hash")
-    );
-    assert_eq!(1, artifact.get::<i64, _>("status"));
-    assert!(artifact.get::<Option<String>, _>("deleted_at").is_none());
 }
 
 #[tokio::test]
@@ -2283,10 +2034,9 @@ async fn sqlite_installer_repairs_missing_appbase_commerce_order_schema_indexes_
 async fn sqlite_installer_installs_seed_projection_indexes_for_fast_startup_checks() {
     let pool = repair_sqlite_pool().await;
 
-    assert_sqlite_index_exists(&pool, "idx_ai_skill_asset_target").await;
-    assert_sqlite_index_exists(&pool, "idx_ai_skill_artifact_target").await;
-    assert_sqlite_index_exists(&pool, "idx_appstore_app_status").await;
+    assert_sqlite_index_exists(&pool, "idx_c_category_type_scope").await;
     assert_sqlite_index_exists(&pool, "idx_c_category_parent").await;
+    assert_sqlite_index_exists(&pool, "uk_ops_notification_delivery_user_message_app").await;
 }
 
 #[tokio::test]
@@ -2901,7 +2651,7 @@ async fn sqlite_installer_auto_initializes_recharge_catalog_for_non_default_admi
 
     let packages = store
         .list_recharge_packages(
-            sdkwork_claw_product::ports::ListAdminRechargePackagesQuery {
+            sdkwork_clawrouter_router_service::ports::ListAdminRechargePackagesQuery {
                 subject,
                 status: None,
             },
@@ -3843,26 +3593,12 @@ async fn assert_pricing_snapshot_contains_catalog_models(
     }
 }
 
-async fn sqlite_core_skill_seed_row_count(pool: &SqlitePool) -> i64 {
-    sqlx::query_scalar(
-        r#"
-        SELECT COUNT(1)
-        FROM ai_agent_skill
-        WHERE tenant_id = 0
-          AND organization_id = 0
-        "#,
-    )
-    .fetch_one(pool)
-    .await
-    .unwrap()
-}
-
 async fn assert_commerce_experience_seed_rows(pool: &SqlitePool) {
     let membership_plan_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
         FROM membership_plan
-        WHERE tenant_id = '0'
+        WHERE tenant_id = '100001'
           AND organization_id = '0'
           AND status = 'active'
         "#,
@@ -3879,7 +3615,7 @@ async fn assert_commerce_experience_seed_rows(pool: &SqlitePool) {
         r#"
         SELECT COUNT(1)
         FROM commerce_product_spu
-        WHERE tenant_id = '0'
+        WHERE tenant_id = '100001'
           AND organization_id = '0'
           AND spu_no = 'membership'
           AND status = 'active'
@@ -3897,7 +3633,7 @@ async fn assert_commerce_experience_seed_rows(pool: &SqlitePool) {
         r#"
         SELECT COUNT(1)
         FROM membership_package
-        WHERE tenant_id = '0'
+        WHERE tenant_id = '100001'
           AND organization_id = '0'
           AND package_no LIKE 'membership-%'
           AND status = 'active'
@@ -3930,7 +3666,7 @@ async fn assert_commerce_experience_seed_rows(pool: &SqlitePool) {
             r#"
             SELECT COUNT(1)
             FROM membership_package
-            WHERE tenant_id = '0'
+            WHERE tenant_id = '100001'
               AND organization_id = '0'
               AND package_no LIKE ?
               AND status = 'active'
@@ -3949,7 +3685,7 @@ async fn assert_commerce_experience_seed_rows(pool: &SqlitePool) {
             r#"
             SELECT sku_no, spec_json
             FROM commerce_product_sku
-            WHERE tenant_id = '0'
+            WHERE tenant_id = '100001'
               AND organization_id = '0'
               AND spu_id = 'seed-product-membership'
               AND sku_no LIKE ?
@@ -4006,7 +3742,7 @@ async fn assert_commerce_experience_seed_rows(pool: &SqlitePool) {
             r#"
             SELECT name, rank
             FROM membership_plan
-            WHERE tenant_id = '0'
+            WHERE tenant_id = '100001'
               AND organization_id = '0'
               AND plan_no = ?
               AND status = 'active'
@@ -4024,7 +3760,7 @@ async fn assert_commerce_experience_seed_rows(pool: &SqlitePool) {
         r#"
         SELECT COUNT(1)
         FROM commerce_product_spu
-        WHERE tenant_id = '0'
+        WHERE tenant_id = '100001'
           AND organization_id = '0'
           AND spu_no IN ('points-recharge-cny', 'points-recharge-non-cny')
           AND status = 'active'
@@ -4042,7 +3778,7 @@ async fn assert_commerce_experience_seed_rows(pool: &SqlitePool) {
         r#"
         SELECT COUNT(1)
         FROM commerce_recharge_package
-        WHERE tenant_id = '0'
+        WHERE tenant_id = '100001'
           AND organization_id = '0'
           AND status = 'active'
         "#,
@@ -4059,7 +3795,7 @@ async fn assert_commerce_experience_seed_rows(pool: &SqlitePool) {
         r#"
         SELECT COUNT(1)
         FROM commerce_recharge_package
-        WHERE tenant_id = '0'
+        WHERE tenant_id = '100001'
           AND organization_id = '0'
           AND status <> 'deleted'
         "#,
@@ -4076,7 +3812,7 @@ async fn assert_commerce_experience_seed_rows(pool: &SqlitePool) {
         r#"
         SELECT rate, remark
         FROM commerce_exchange_rule
-        WHERE tenant_id = '0'
+        WHERE tenant_id = '100001'
           AND organization_id = '0'
           AND rule_no = 'CASH_TO_POINTS'
           AND source_asset_type = 'cash'
@@ -4117,7 +3853,7 @@ async fn assert_commerce_experience_seed_rows(pool: &SqlitePool) {
     };
     let admin_packages = store
         .list_recharge_packages(
-            sdkwork_claw_product::ports::ListAdminRechargePackagesQuery {
+            sdkwork_clawrouter_router_service::ports::ListAdminRechargePackagesQuery {
                 subject,
                 status: None,
             },
@@ -4239,7 +3975,7 @@ async fn assert_seed_statuses(
             r#"
             SELECT {key_column} AS seed_key, {status_column} AS seed_status
             FROM {table}
-            WHERE tenant_id = '0'
+            WHERE tenant_id = '100001'
               AND organization_id = '0'
             "#
         )
@@ -4270,7 +4006,7 @@ async fn assert_forum_tutorial_seed_rows(pool: &SqlitePool) {
         FROM content_forum_post
         WHERE uuid LIKE 'sdkwork-forum-tutorial-%'
           AND COALESCE(status, 0) = 2
-          AND tenant_id = 0
+          AND tenant_id = 100001
           AND organization_id = 0
         "#,
     )
@@ -4293,18 +4029,18 @@ async fn assert_forum_tutorial_seed_rows(pool: &SqlitePool) {
     .await
     .unwrap();
     assert_eq!(
-        "Claw Router ????????????????",
+        "Claw Router 快速入门：从安装到第一次模型调用",
         tutorial.get::<String, _>("title")
     );
     assert!(
-        tutorial.get::<String, _>("summary").contains("????"),
+        tutorial.get::<String, _>("summary").contains("安装完成后"),
         "quick-start tutorial summary must explain post-install onboarding"
     );
     assert_eq!(1004, tutorial.get::<i64, _>("category_id"));
     assert!(tutorial.get::<bool, _>("is_top"));
     assert!(tutorial.get::<bool, _>("is_recommended"));
     assert!(
-        tutorial.get::<String, _>("tags").contains("????"),
+        tutorial.get::<String, _>("tags").contains("快速入门"),
         "tutorial tags must be written as JSON text for SQLite"
     );
 
@@ -4314,7 +4050,7 @@ async fn assert_forum_tutorial_seed_rows(pool: &SqlitePool) {
         FROM content_comment
         WHERE uuid LIKE 'sdkwork-forum-comment-%'
           AND COALESCE(content_type, 0) = 5
-          AND tenant_id = 0
+          AND tenant_id = 100001
           AND organization_id = 0
         "#,
     )
@@ -4332,7 +4068,7 @@ async fn assert_forum_tutorial_seed_rows(pool: &SqlitePool) {
         FROM content_reaction
         WHERE uuid LIKE 'sdkwork-forum-vote-%'
           AND COALESCE(target_type, 0) = 5
-          AND tenant_id = 0
+          AND tenant_id = 100001
           AND organization_id = 0
         "#,
     )
@@ -4350,7 +4086,7 @@ async fn assert_forum_tutorial_seed_rows(pool: &SqlitePool) {
         FROM content_favorite
         WHERE uuid LIKE 'sdkwork-forum-favorite-%'
           AND COALESCE(content_type, 0) = 5
-          AND tenant_id = 0
+          AND tenant_id = 100001
           AND organization_id = 0
         "#,
     )
@@ -4376,36 +4112,41 @@ async fn assert_forum_tutorial_seed_rows(pool: &SqlitePool) {
     assert_eq!("completed", migration_status);
 
     let store = SqliteForumStore::new(pool.clone());
+    let forum_subject = ForumSubject {
+        tenant_id: 100001,
+        organization_id: 0,
+        user_id: 900001,
+    };
     let posts = store
         .load_feeds(
             ForumFeedQuery {
                 content_type: Some("feeds".to_owned()),
-                keyword: Some("????".to_owned()),
+                keyword: Some("快速入门".to_owned()),
                 page: Some(1),
                 size: Some(10),
                 ..ForumFeedQuery::default()
             },
-            None,
+            Some(forum_subject),
         )
         .await
         .unwrap();
     assert!(
-        posts.iter().any(|post| post.title.contains("???????")),
+        posts.iter().any(|post| post.title.contains("快速入门")),
         "default tutorial posts must be visible through the forum read store"
     );
 
     let quick_start_post = posts
         .iter()
-        .find(|post| post.title.contains("???????"))
+        .find(|post| post.title.contains("快速入门"))
         .expect("quick-start tutorial must be returned by the forum read store");
     let quick_start_detail = store
-        .load_feed_detail(quick_start_post.id, None)
+        .load_feed_detail(quick_start_post.id, Some(forum_subject))
         .await
         .unwrap()
         .expect("quick-start tutorial detail must be readable after install");
     assert!(
-        quick_start_detail.content.contains("??")
-            && quick_start_detail.content.contains("OpenAI ????"),
+        quick_start_detail.content.contains("Playground")
+            && quick_start_detail.content.contains("OpenAI 兼容"),
         "default tutorial detail must expose the full onboarding article body"
     );
 }

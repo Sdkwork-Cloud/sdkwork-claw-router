@@ -6,6 +6,26 @@ import path from 'path';
 import ts from 'typescript';
 import {defineConfig, loadEnv, type Plugin, type ProxyOptions} from 'vite';
 
+function readBootstrapLocalEnv(configDir: string, mode: string): Record<string, string> {
+  const bootstrapPath = path.join(configDir, `.env.${mode}.bootstrap.local`);
+  if (!fs.existsSync(bootstrapPath)) {
+    return {};
+  }
+  const parsed: Record<string, string> = {};
+  for (const line of fs.readFileSync(bootstrapPath, 'utf8').split(/\r?\n/u)) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith('#')) {
+      continue;
+    }
+    const separatorIndex = trimmed.indexOf('=');
+    if (separatorIndex <= 0) {
+      continue;
+    }
+    parsed[trimmed.slice(0, separatorIndex).trim()] = trimmed.slice(separatorIndex + 1).trim();
+  }
+  return parsed;
+}
+
 const TYPESCRIPT_SOURCE_PATTERN = /\.(?:ts|tsx|mts|cts)$/;
 const SOURCE_MAP_PATTERN = /\n?\/\/# sourceMappingURL=.*$/;
 const ENABLE_TYPESCRIPT_TRANSFORM_SOURCE_MAPS = false;
@@ -497,6 +517,7 @@ export default defineConfig(({mode}) => {
   const sdkworkDocumentsRoot = resolvePortalWorkspaceDependencyRoot(configDir, 'sdkwork-documents');
   const sdkworkUtilsRoot = resolvePortalWorkspaceDependencyRoot(configDir, 'sdkwork-utils');
   const env = loadEnv(mode, configDir, '');
+  Object.assign(env, readBootstrapLocalEnv(configDir, mode));
   const bootstrapAccessTokenDefine = mode === 'development'
     ? {
         'process.env.SDKWORK_ACCESS_TOKEN': JSON.stringify(
@@ -663,7 +684,7 @@ export default defineConfig(({mode}) => {
     },
     build: {
       target: 'esnext',
-      minify: false,
+      minify: 'esbuild',
       cssMinify: true,
       commonjsOptions: {
         transformMixedEsModules: true,

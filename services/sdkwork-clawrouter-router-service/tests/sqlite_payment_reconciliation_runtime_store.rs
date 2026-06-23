@@ -33,7 +33,7 @@ async fn sqlite_payment_reconciliation_runtime_persists_statement_items_and_diff
 
     let generated = service
         .generate_reconciliation_items(RuntimeGeneratePaymentReconciliationItemsCommand {
-            tenant_id: "10".to_owned(),
+            tenant_id: "100001".to_owned(),
             reconciliation_run_id: "run-sql-1001".to_owned(),
             statement_id: statement.id.clone(),
             generated_at: "2026-05-29T00:00:00Z".to_owned(),
@@ -90,8 +90,8 @@ async fn sqlite_payment_reconciliation_runtime_persists_statement_items_and_diff
 
 fn import_command() -> RuntimeImportPaymentStatementCommand {
     RuntimeImportPaymentStatementCommand {
-        tenant_id: "10".to_owned(),
-        organization_id: Some("20".to_owned()),
+        tenant_id: "100001".to_owned(),
+        organization_id: Some("0".to_owned()),
         statement_no: "stmt-sql-1001".to_owned(),
         provider_code: "stripe".to_owned(),
         provider_account_id: Some("acct-sql-1".to_owned()),

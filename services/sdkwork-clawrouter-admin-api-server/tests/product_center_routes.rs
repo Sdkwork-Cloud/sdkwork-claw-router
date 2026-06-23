@@ -287,7 +287,7 @@ async fn product_center_product_create_route_persists_multiple_leaf_categories()
     sqlx::query(
         r#"INSERT INTO commerce_product_category
             (id, tenant_id, organization_id, category_no, parent_category_id, name, sort_weight, status, created_at, updated_at)
-            VALUES ('category-product-center-clearance', '10', '20', 'PC-CAT-CLEARANCE', NULL, 'Clearance', 20, 'active', '2026-05-31 09:00:00', '2026-05-31 09:00:00')"#,
+            VALUES ('category-product-center-clearance', '100001', '0', 'PC-CAT-CLEARANCE', NULL, 'Clearance', 20, 'active', '2026-05-31 09:00:00', '2026-05-31 09:00:00')"#,
     )
     .execute(&pool)
     .await
@@ -535,7 +535,7 @@ async fn product_center_category_routes_support_unicode_multi_level_crud_guards(
     sqlx::query(
         r#"INSERT INTO commerce_product_spu
             (id, tenant_id, organization_id, spu_no, title, subtitle, description, product_type, sales_status, visible_surfaces, created_at, updated_at)
-            VALUES ('spu-category-delete-guard', '10', '20', 'SPU-CATEGORY-DELETE-GUARD', 'Category Delete Guard', NULL, NULL, 'physical_good', 'active', '["backend"]', '2026-06-01 00:00:00', '2026-06-01 00:00:00')"#,
+            VALUES ('spu-category-delete-guard', '100001', '0', 'SPU-CATEGORY-DELETE-GUARD', 'Category Delete Guard', NULL, NULL, 'physical_good', 'active', '["backend"]', '2026-06-01 00:00:00', '2026-06-01 00:00:00')"#,
     )
     .execute(&pool)
     .await
@@ -543,7 +543,7 @@ async fn product_center_category_routes_support_unicode_multi_level_crud_guards(
     sqlx::query(
         r#"INSERT INTO commerce_product_spu_category
             (id, tenant_id, organization_id, spu_id, category_id, primary_flag, sort_order, status, created_at, updated_at)
-            VALUES ('spu-category-delete-guard-binding', '10', '20', 'spu-category-delete-guard', ?, 1, 0, 'active', '2026-06-01 00:00:00', '2026-06-01 00:00:00')"#,
+            VALUES ('spu-category-delete-guard-binding', '100001', '0', 'spu-category-delete-guard', ?, 1, 0, 'active', '2026-06-01 00:00:00', '2026-06-01 00:00:00')"#,
     )
     .bind(grandchild_id)
     .execute(&pool)
@@ -909,34 +909,34 @@ async fn seed_product_center_data(pool: &SqlitePool) {
     for statement in [
         r#"INSERT INTO commerce_product_category
             (id, tenant_id, organization_id, category_no, parent_category_id, name, sort_weight, status, created_at, updated_at)
-            VALUES ('category-product-center-apparel', '10', '20', 'PC-CAT-APPAREL', NULL, 'Apparel', 10, 'active', '2026-05-31 09:00:00', '2026-05-31 09:00:00')"#,
+            VALUES ('category-product-center-apparel', '100001', '0', 'PC-CAT-APPAREL', NULL, 'Apparel', 10, 'active', '2026-05-31 09:00:00', '2026-05-31 09:00:00')"#,
         r#"INSERT INTO commerce_product_attribute
             (id, tenant_id, organization_id, attribute_no, name, value_type, status, sort_weight, created_at, updated_at)
-            VALUES ('attribute-product-center-color', '10', '20', 'PC-ATTR-COLOR', 'Color', 'enum', 'active', 10, '2026-05-31 09:00:00', '2026-05-31 09:00:00')"#,
+            VALUES ('attribute-product-center-color', '100001', '0', 'PC-ATTR-COLOR', 'Color', 'enum', 'active', 10, '2026-05-31 09:00:00', '2026-05-31 09:00:00')"#,
         r#"INSERT INTO commerce_product_attribute_value
             (id, tenant_id, organization_id, attribute_id, value_code, display_value, sort_order, status, created_at, updated_at)
-            VALUES ('attribute-value-product-center-red', '10', '20', 'attribute-product-center-color', 'red', 'Red', 10, 'active', '2026-05-31 09:00:00', '2026-05-31 09:00:00')"#,
+            VALUES ('attribute-value-product-center-red', '100001', '0', 'attribute-product-center-color', 'red', 'Red', 10, 'active', '2026-05-31 09:00:00', '2026-05-31 09:00:00')"#,
         r#"INSERT INTO commerce_product_spu
             (id, tenant_id, organization_id, spu_no, title, subtitle, description, product_type, sales_status, visible_surfaces, created_at, updated_at)
-            VALUES ('spu-product-center-shirt', '10', '20', 'PC-SPU-OXFORD-SHIRT', 'Product Center Oxford Shirt', 'Standard publish workflow sample', 'A seeded apparel product for Product Center runtime tests.', 'physical_good', 'active', '["backend","app"]', '2026-05-31 09:00:00', '2026-05-31 09:00:00')"#,
+            VALUES ('spu-product-center-shirt', '100001', '0', 'PC-SPU-OXFORD-SHIRT', 'Product Center Oxford Shirt', 'Standard publish workflow sample', 'A seeded apparel product for Product Center runtime tests.', 'physical_good', 'active', '["backend","app"]', '2026-05-31 09:00:00', '2026-05-31 09:00:00')"#,
         r#"INSERT INTO commerce_product_spu_category
             (id, tenant_id, organization_id, spu_id, category_id, primary_flag, sort_order, status, created_at, updated_at)
-            VALUES ('spu-category-product-center-shirt-apparel', '10', '20', 'spu-product-center-shirt', 'category-product-center-apparel', 1, 0, 'active', '2026-05-31 09:00:00', '2026-05-31 09:00:00')"#,
+            VALUES ('spu-category-product-center-shirt-apparel', '100001', '0', 'spu-product-center-shirt', 'category-product-center-apparel', 1, 0, 'active', '2026-05-31 09:00:00', '2026-05-31 09:00:00')"#,
         r#"INSERT INTO commerce_product_sku
             (id, tenant_id, organization_id, spu_id, sku_no, name, title, price_amount, original_price_amount, currency_code, delivery_mode, inventory_tracking, sales_status, spec_json, created_at, updated_at)
-            VALUES ('sku-product-center-shirt-red-s', '10', '20', 'spu-product-center-shirt', 'PC-SKU-OXFORD-RED-S', 'Oxford Shirt / Red / S', 'Oxford Shirt Red S', '199.00', '249.00', 'USD', 'physical_shipment', 'tracked', 'active', '{"salesUnit":"piece","taxCategory":"standard"}', '2026-05-31 09:00:00', '2026-05-31 09:00:00')"#,
+            VALUES ('sku-product-center-shirt-red-s', '100001', '0', 'spu-product-center-shirt', 'PC-SKU-OXFORD-RED-S', 'Oxford Shirt / Red / S', 'Oxford Shirt Red S', '199.00', '249.00', 'USD', 'physical_shipment', 'tracked', 'active', '{"salesUnit":"piece","taxCategory":"standard"}', '2026-05-31 09:00:00', '2026-05-31 09:00:00')"#,
         r#"INSERT INTO commerce_product_sku_attribute
             (id, tenant_id, organization_id, sku_id, attribute_id, attribute_value_id, custom_value, created_at, updated_at)
-            VALUES ('sku-attribute-product-center-red', '10', '20', 'sku-product-center-shirt-red-s', 'attribute-product-center-color', 'attribute-value-product-center-red', NULL, '2026-05-31 09:00:00', '2026-05-31 09:00:00')"#,
+            VALUES ('sku-attribute-product-center-red', '100001', '0', 'sku-product-center-shirt-red-s', 'attribute-product-center-color', 'attribute-value-product-center-red', NULL, '2026-05-31 09:00:00', '2026-05-31 09:00:00')"#,
         r#"INSERT INTO commerce_inventory_stock
             (id, tenant_id, organization_id, sku_id, warehouse_id, available_quantity, reserved_quantity, sold_quantity, version, status, created_at, updated_at)
-            VALUES ('stock-product-center-shirt-main', '10', '20', 'sku-product-center-shirt-red-s', 'warehouse-east', 12, 2, 5, 2, 'active', '2026-05-31 09:00:00', '2026-05-31 09:00:00')"#,
+            VALUES ('stock-product-center-shirt-main', '100001', '0', 'sku-product-center-shirt-red-s', 'warehouse-east', 12, 2, 5, 2, 'active', '2026-05-31 09:00:00', '2026-05-31 09:00:00')"#,
         r#"INSERT INTO commerce_inventory_reservation
             (id, tenant_id, organization_id, reservation_no, order_id, sku_id, warehouse_id, quantity, status, request_no, idempotency_key, expires_at, consumed_at, released_at, created_at, updated_at)
-            VALUES ('reservation-product-center-shirt', '10', '20', 'PC-RES-OXFORD-1', 'order-product-center-1', 'sku-product-center-shirt-red-s', 'warehouse-east', 2, 'reserved', 'reservation-product-center-shirt', 'reservation-product-center-shirt', '2026-05-31 10:00:00', NULL, NULL, '2026-05-31 09:00:00', '2026-05-31 09:00:00')"#,
+            VALUES ('reservation-product-center-shirt', '100001', '0', 'PC-RES-OXFORD-1', 'order-product-center-1', 'sku-product-center-shirt-red-s', 'warehouse-east', 2, 'reserved', 'reservation-product-center-shirt', 'reservation-product-center-shirt', '2026-05-31 10:00:00', NULL, NULL, '2026-05-31 09:00:00', '2026-05-31 09:00:00')"#,
         r#"INSERT INTO commerce_inventory_movement
             (id, tenant_id, organization_id, movement_no, sku_id, warehouse_id, movement_type, quantity, business_type, source_id, request_no, idempotency_key, created_at)
-            VALUES ('movement-product-center-shirt-initial', '10', '20', 'PC-MOVE-OXFORD-INITIAL', 'sku-product-center-shirt-red-s', 'warehouse-east', 'in', 12, 'opening_balance', 'seed-product-center', 'movement-product-center-shirt-initial', 'movement-product-center-shirt-initial', '2026-05-31 09:00:00')"#,
+            VALUES ('movement-product-center-shirt-initial', '100001', '0', 'PC-MOVE-OXFORD-INITIAL', 'sku-product-center-shirt-red-s', 'warehouse-east', 'in', 12, 'opening_balance', 'seed-product-center', 'movement-product-center-shirt-initial', 'movement-product-center-shirt-initial', '2026-05-31 09:00:00')"#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }

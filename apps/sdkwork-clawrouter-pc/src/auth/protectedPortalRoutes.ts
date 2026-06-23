@@ -1,4 +1,5 @@
 import { Fragment, createElement, useEffect, useState, type ReactNode } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Navigate, useLocation } from 'react-router-dom';
 import {
   buildPortalAuthLoginRedirect,
@@ -7,11 +8,9 @@ import {
   isProtectedPortalPath,
   PROTECTED_PORTAL_ROUTE_PREFIXES,
   resolvePortalAuthenticatedAuthRouteRedirect,
-} from '../../packages/sdkwork-clawrouter-pc-commons/src/portal-auth.ts';
-import {
   verifyCurrentPortalAdminAccess,
   type PortalAdminAccessState,
-} from '../../packages/sdkwork-clawrouter-pc-commons/src/portal-session.ts';
+} from '@sdkwork/clawrouter-pc-commons/runtime';
 
 export { PROTECTED_PORTAL_ROUTE_PREFIXES, isProtectedPortalPath };
 
@@ -76,6 +75,7 @@ export function RequirePortalSession({ children }: { children: ReactNode }) {
 
 export function RequireAdminSession({ children }: { children: ReactNode }) {
   const location = useLocation();
+  const { t } = useTranslation();
   const [adminAccessState, setAdminAccessState] = useState<PortalAdminAccessState>('checking');
   const loginDecision = resolveProtectedPortalAccess({
     hasSession: hasPortalIamSession(),
@@ -112,7 +112,7 @@ export function RequireAdminSession({ children }: { children: ReactNode }) {
         className:
           'min-h-screen bg-slate-50 px-6 py-24 text-sm font-medium text-slate-600 dark:bg-[#0a0a0a] dark:text-slate-300',
       },
-      'Checking admin access...',
+      t('shared.auth.adminAccess.checking'),
     );
   }
 
@@ -135,7 +135,7 @@ export function RequireAdminSession({ children }: { children: ReactNode }) {
           'min-h-screen bg-slate-50 px-6 py-24 text-sm font-medium text-red-600 dark:bg-[#0a0a0a] dark:text-red-400',
         role: 'alert',
       },
-      'Unable to verify admin access.',
+      t('shared.auth.adminAccess.verifyError'),
     );
   }
 

@@ -1,4 +1,5 @@
 pub mod auth;
+pub mod claw_web_resolver;
 pub mod contract_routes;
 pub mod error;
 pub mod headers;
@@ -31,16 +32,18 @@ pub use contract_routes::{
 pub use error::{NotImplementedData, PlusErrorEnvelope};
 pub use headers::{default_security_headers, redact_http_header};
 pub use metrics::{metrics, record_http_request};
-pub use readiness::ReadinessCheckFn;
+pub use readiness::{combine_readiness_checks, ReadinessCheckFn};
 pub use router::{
     service_router, service_router_with_contract_routes,
     service_router_with_contract_routes_and_database_config, service_router_with_database_config,
+    service_router_with_database_config_and_readiness_check,
     service_router_with_filtered_contract_routes_and_database_config,
     service_router_with_filtered_contract_routes_database_config_and_readiness_check,
     ContractOperationFilter,
 };
 pub use sdkwork_claw_contract::{ApiSurface, ContractOperation};
 pub use shutdown::wait_for_shutdown_signal;
+pub use claw_web_resolver::ClawRouterWebRequestContextResolver;
 pub use web_bridge::{
     inject_legacy_handler_context_from_web_context, trusted_request_subject_from_web_context,
 };

@@ -4,6 +4,7 @@ use sha2::{Digest, Sha256};
 use sqlx::{PgPool, Postgres, Row, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
+use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::infrastructure::sql::routing_config_change::{
     record_postgres_ai_routing_config_change, AiRoutingConfigChange,
 };
@@ -2090,5 +2091,5 @@ fn store_error(context: &str, error: sqlx::Error) -> DomainError {
             return DomainError::conflict(format!("{context}: channel group already exists"));
         }
     }
-    DomainError::new(format!("{context}: {error}"))
+    redacted_store_error(context, error)
 }

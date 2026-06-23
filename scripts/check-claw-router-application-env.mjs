@@ -28,7 +28,7 @@ const PORTAL_ROOT = path.join(WORKSPACE_ROOT, 'apps', 'sdkwork-clawrouter-pc');
 const REQUIRED_ENTRYPOINT_MARKERS = Object.freeze([
   {
     label: 'claw-router-dev',
-    file: path.join(WORKSPACE_ROOT, 'scripts', 'claw-router-dev.mjs'),
+    file: path.join(WORKSPACE_ROOT, 'scripts', 'lib', 'claw-router-dev-main.mjs'),
     markers: ['ensureClawRouterBrowserDevelopmentEnv'],
   },
   {

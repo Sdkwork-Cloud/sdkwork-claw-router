@@ -49,14 +49,19 @@ pub use runtime::{
 pub const SERVICE_NAME: &str = "sdkwork-clawrouter-gateway";
 
 pub fn router() -> axum::Router {
-    router_with_database_status_and_passthrough_placeholder(None, true)
+    router_with_database_status_and_passthrough_placeholder(None, true, None)
 }
 
 pub(crate) fn router_with_database_status_and_passthrough_placeholder(
     config: Option<&sdkwork_claw_config::DatabaseConfig>,
     include_passthrough_placeholder: bool,
+    readiness_check: Option<sdkwork_claw_http::ReadinessCheckFn>,
 ) -> axum::Router {
-    let router = sdkwork_claw_http::service_router_with_database_config(SERVICE_NAME, config);
+    let router = sdkwork_claw_http::service_router_with_database_config_and_readiness_check(
+        SERVICE_NAME,
+        config,
+        readiness_check,
+    );
     if include_passthrough_placeholder {
         router.merge(passthrough::gateway_passthrough_router())
     } else {

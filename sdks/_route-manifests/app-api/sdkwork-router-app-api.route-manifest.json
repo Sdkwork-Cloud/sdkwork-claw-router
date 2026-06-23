@@ -35,7 +35,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "GET",
@@ -57,7 +57,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "GET",
@@ -79,73 +79,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/ai/model_rankings",
-      "operationId": "modelRankings.list",
-      "tags": [
-        "ai"
-      ],
-      "auth": {
-        "mode": "public",
-        "required": false
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-clawrouter",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/ai/model_vendors",
-      "operationId": "modelVendors.list",
-      "tags": [
-        "ai"
-      ],
-      "auth": {
-        "mode": "public",
-        "required": false
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-clawrouter",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "GET",
-      "path": "/app/v3/api/ai/models",
-      "operationId": "models.list",
-      "tags": [
-        "ai"
-      ],
-      "auth": {
-        "mode": "public",
-        "required": false
-      },
-      "handler": {
-        "module": "crate::routes",
-        "name": null
-      },
-      "ownership": {
-        "owner": "sdkwork-clawrouter",
-        "apiAuthority": "sdkwork-clawrouter-app-api"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "GET",
@@ -167,7 +101,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "GET",
@@ -189,7 +123,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "GET",
@@ -211,7 +145,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "GET",
@@ -233,7 +167,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "GET",
@@ -255,7 +189,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "GET",
@@ -277,7 +211,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "POST",
@@ -299,7 +233,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "GET",
@@ -321,7 +255,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "GET",
@@ -343,7 +277,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "POST",
@@ -365,7 +299,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "POST",
@@ -387,7 +321,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "GET",
@@ -409,7 +343,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "POST",
@@ -431,7 +365,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "DELETE",
@@ -453,7 +387,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "PATCH",
@@ -475,7 +409,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "GET",
@@ -497,7 +431,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "GET",
@@ -519,7 +453,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "GET",
@@ -541,7 +475,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "GET",
@@ -563,7 +497,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "GET",
@@ -585,7 +519,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "GET",
@@ -607,7 +541,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "GET",
@@ -629,7 +563,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "GET",
@@ -651,7 +585,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "GET",
@@ -673,7 +607,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "GET",
@@ -695,7 +629,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "GET",
@@ -717,7 +651,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "PUT",
@@ -739,7 +673,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "GET",
@@ -761,7 +695,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "POST",
@@ -783,7 +717,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "POST",
@@ -805,7 +739,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "GET",
@@ -827,7 +761,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "POST",
@@ -849,7 +783,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "GET",
@@ -871,7 +805,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "GET",
@@ -893,7 +827,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "POST",
@@ -915,7 +849,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "POST",
@@ -937,7 +871,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "GET",
@@ -959,7 +893,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "POST",
@@ -981,7 +915,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "GET",
@@ -1003,7 +937,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     },
     {
       "method": "GET",
@@ -1025,51 +959,7 @@
         "apiAuthority": "sdkwork-clawrouter-app-api"
       },
       "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/sdk_reference/archives",
-      "operationId": "archives.create",
-      "tags": [
-        "sdkReference"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "sdkwork_content_documents_sdk_reference",
-        "name": "app_sdk_reference_router"
-      },
-      "ownership": {
-        "owner": "sdkwork-documents",
-        "apiAuthority": "sdkwork-documents.app"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
-    },
-    {
-      "method": "POST",
-      "path": "/app/v3/api/sdk_reference/documentation",
-      "operationId": "documentation.create",
-      "tags": [
-        "sdkReference"
-      ],
-      "auth": {
-        "mode": "dual-token",
-        "required": true
-      },
-      "handler": {
-        "module": "sdkwork_content_documents_sdk_reference",
-        "name": "app_sdk_reference_router"
-      },
-      "ownership": {
-        "owner": "sdkwork-documents",
-        "apiAuthority": "sdkwork-documents.app"
-      },
-      "requestContext": "WebRequestContext",
-      "apiSurface": "app"
+      "apiSurface": "app-api"
     }
   ]
 }

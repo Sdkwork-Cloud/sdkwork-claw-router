@@ -1,6 +1,11 @@
 use sha2::Digest;
 use sqlx::{PgPool, Row};
 
+use crate::infrastructure::sql::iam_scope_resolver::{
+    resolve_postgres_iam_organization_id_string, resolve_postgres_iam_tenant_id_string,
+    IamScopeResolveOptions,
+};
+use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::domain::{DomainError, DomainResult};
 use crate::infrastructure::sql::sql_admin_product_center::{
     media_resource_from_snapshot, media_resource_object_blob_id, media_resource_stable_id,
@@ -635,23 +640,9 @@ async fn select_tenant_id(
     tx: &mut sqlx::Transaction<'_, sqlx::Postgres>,
     tenant_code: Option<&str>,
 ) -> DomainResult<String> {
-    let row = match tenant_code {
-        Some(code) if !code.trim().is_empty() => sqlx::query(
-            "SELECT id FROM iam_tenant WHERE code = $1 AND status = 'active' ORDER BY id LIMIT 1",
-        )
-        .bind(code.trim())
-        .fetch_optional(&mut **tx)
-        .await,
-        _ => {
-            sqlx::query("SELECT id FROM iam_tenant WHERE status = 'active' ORDER BY id LIMIT 1")
-                .fetch_optional(&mut **tx)
-                .await
-        }
-    }
-    .map_err(|error| store_error("failed to load IAM tenant", error))?;
-    row.map(|row| string_cell(&row, "id"))
-        .filter(|value| !value.is_empty())
-        .ok_or_else(|| DomainError::not_found("active IAM tenant was not found"))
+    resolve_postgres_iam_tenant_id_string(&mut **tx, tenant_code, IamScopeResolveOptions::default())
+        .await
+        .map_err(iam_tenant_store_error)
 }
 
 async fn select_organization_id(
@@ -659,46 +650,20 @@ async fn select_organization_id(
     tenant_id: &str,
     organization_code: Option<&str>,
 ) -> DomainResult<String> {
-    let Some(code) = organization_code
-        .map(str::trim)
-        .filter(|code| !code.is_empty())
-    else {
-        return Ok("0".to_owned());
-    };
-    let row = match organization_code {
-        Some(_) => sqlx::query(
-            "SELECT id FROM iam_organization WHERE tenant_id = $1 AND code = $2 AND status = 'active' ORDER BY id LIMIT 1",
-        )
-        .bind(tenant_id)
-        .bind(code)
-        .fetch_optional(&mut **tx)
-        .await,
-        None => unreachable!("empty organization code returned before query"),
-    }
-    .map_err(|error| store_error("failed to load IAM organization", error))?;
-    row.map(|row| string_cell(&row, "id"))
-        .filter(|value| !value.is_empty())
-        .ok_or_else(|| DomainError::not_found("active IAM organization was not found"))
+    resolve_postgres_iam_organization_id_string(
+        &mut **tx,
+        tenant_id,
+        organization_code,
+        IamScopeResolveOptions::default(),
+    )
+    .await
+    .map_err(iam_organization_store_error)
 }
 
 async fn default_tenant_id(pool: &PgPool, tenant_code: Option<&str>) -> DomainResult<String> {
-    let row = match tenant_code {
-        Some(code) if !code.trim().is_empty() => sqlx::query(
-            "SELECT id FROM iam_tenant WHERE code = $1 AND status = 'active' ORDER BY id LIMIT 1",
-        )
-        .bind(code.trim())
-        .fetch_optional(pool)
-        .await,
-        _ => {
-            sqlx::query("SELECT id FROM iam_tenant WHERE status = 'active' ORDER BY id LIMIT 1")
-                .fetch_optional(pool)
-                .await
-        }
-    }
-    .map_err(|error| store_error("failed to load default IAM tenant", error))?;
-    row.map(|row| string_cell(&row, "id"))
-        .filter(|value| !value.is_empty())
-        .ok_or_else(|| DomainError::not_found("active IAM tenant was not found"))
+    resolve_postgres_iam_tenant_id_string(pool, tenant_code, IamScopeResolveOptions::default())
+        .await
+        .map_err(iam_tenant_store_error)
 }
 
 async fn account_exists(
@@ -854,6 +819,26 @@ fn bool_cell(row: &sqlx::postgres::PgRow, column: &str) -> bool {
         .unwrap_or(false)
 }
 
+fn iam_tenant_store_error(error: sqlx::Error) -> DomainError {
+    match error {
+        sqlx::Error::Protocol(message) if message.contains("active IAM tenant was not found") => {
+            DomainError::not_found("active IAM tenant was not found")
+        }
+        error => store_error("failed to load IAM tenant", error),
+    }
+}
+
+fn iam_organization_store_error(error: sqlx::Error) -> DomainError {
+    match error {
+        sqlx::Error::Protocol(message)
+            if message.contains("active IAM organization was not found") =>
+        {
+            DomainError::not_found("active IAM organization was not found")
+        }
+        error => store_error("failed to load IAM organization", error),
+    }
+}
+
 fn store_error(context: &str, error: sqlx::Error) -> DomainError {
-    DomainError::new(format!("{context}: {error}"))
+    redacted_store_error(context, error)
 }

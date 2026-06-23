@@ -345,15 +345,8 @@ routes:
   route_scope: admin
   delivery_kind: sdk_backed_business_runtime
   api_surface: backend
-  required_tables:
-  - iam_user
-  - iam_organization
-  - iam_organization_membership
-  - iam_role
-  - iam_permission
-  - iam_role_permission
-  - iam_user_role
-  - ops_audit_log
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-appbase-backend-sdk
   evidence:
   - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/index.tsx
   - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts

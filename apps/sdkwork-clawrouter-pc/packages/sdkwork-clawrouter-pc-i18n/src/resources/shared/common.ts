@@ -3,6 +3,11 @@ import type { I18nMessageBundle } from '../types';
 export const sharedCommonMessages = {
   en: {
     "common.retry": "Retry",
+    "shared.errorBoundary.title": "Something went wrong",
+    "shared.errorBoundary.description": "The application hit an unexpected error. You can retry loading this view.",
+    "shared.errorBoundary.retry": "Try again",
+    "shared.auth.adminAccess.checking": "Checking admin access...",
+    "shared.auth.adminAccess.verifyError": "Unable to verify admin access.",
     "commons.navbar.language.zh": "Chinese",
     "commons.navbar.notificationCenter": "Notification Center",
     "commons.navbar.loadingNotifications": "Loading notifications...",
@@ -155,6 +160,11 @@ export const sharedCommonMessages = {
   },
   zh: {
     "common.retry": "重试",
+    "shared.errorBoundary.title": "页面发生错误",
+    "shared.errorBoundary.description": "应用遇到意外错误，您可以尝试重新加载此页面。",
+    "shared.errorBoundary.retry": "重试",
+    "shared.auth.adminAccess.checking": "正在验证管理员权限...",
+    "shared.auth.adminAccess.verifyError": "无法验证管理员访问权限。",
     "commons.navbar.language.zh": "中文",
     "commons.navbar.notificationCenter": "通知中心",
     "commons.navbar.loadingNotifications": "正在加载通知...",

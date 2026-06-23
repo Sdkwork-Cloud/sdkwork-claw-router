@@ -4,6 +4,7 @@ use sdkwork_commerce_core::{
 use serde_json::Value;
 use sqlx::{PgPool, Postgres, Row, Transaction};
 
+use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::domain::{DecimalValue, DomainError};
 use crate::ports::{
     PaymentCallbackCommand, PaymentCallbackFuture, PaymentCallbackOutcome, PaymentCallbackStatus,
@@ -1022,5 +1023,5 @@ fn missing_status_error(source: &str) -> DomainError {
 }
 
 fn store_error(context: &str, error: sqlx::Error) -> DomainError {
-    DomainError::new(format!("{context}: {error}"))
+    redacted_store_error(context, error)
 }

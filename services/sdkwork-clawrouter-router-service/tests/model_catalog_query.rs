@@ -147,6 +147,7 @@ fn lists_models_with_customer_price_provider_count_and_vendor_filter() {
             groups: Vec::new(),
             search_query: None,
             limit: None,
+            offset: None,
         })
         .unwrap();
 
@@ -215,6 +216,7 @@ fn list_keeps_unpriced_models_explicitly_unavailable_instead_of_fake_success() {
             groups: Vec::new(),
             search_query: None,
             limit: None,
+            offset: None,
         })
         .unwrap();
 
@@ -257,6 +259,7 @@ fn list_models_reads_backend_group_bindings_and_applies_catalog_filters() {
             groups: vec!["premium-lab".to_owned()],
             search_query: Some("gpt".to_owned()),
             limit: Some(10),
+            offset: None,
         })
         .unwrap();
 
@@ -293,6 +296,7 @@ fn list_models_matches_resource_scoped_group_binding_against_capabilities() {
             groups: vec!["standard-group".to_owned()],
             search_query: None,
             limit: Some(10),
+            offset: None,
         })
         .unwrap();
 
@@ -333,6 +337,7 @@ fn list_models_returns_complete_admin_group_catalog_independent_of_item_filters(
             groups: vec!["premium-lab".to_owned()],
             search_query: Some("gpt".to_owned()),
             limit: Some(10),
+            offset: None,
         })
         .unwrap();
 
@@ -348,4 +353,45 @@ fn list_models_returns_complete_admin_group_catalog_independent_of_item_filters(
     assert_eq!("empty-admin-group", page.groups[2].key);
     assert_eq!("Empty Admin Group", page.groups[2].label);
     assert_eq!(0, page.groups[2].model_count);
+}
+
+#[test]
+fn list_models_applies_offset_after_filtering() {
+    let catalog = catalog_for_model_list();
+    let service = ModelCatalogQueryService::new(&catalog);
+
+    let first_page = service
+        .list_models(ListModelCatalogQuery {
+            api_key_id: None,
+            billing_meter: BillingMeter::LlmInputToken,
+            vendor_code: None,
+            vendor_codes: Vec::new(),
+            modalities: Vec::new(),
+            capabilities: Vec::new(),
+            categories: Vec::new(),
+            groups: Vec::new(),
+            search_query: None,
+            limit: Some(1),
+            offset: None,
+        })
+        .unwrap();
+    let second_page = service
+        .list_models(ListModelCatalogQuery {
+            api_key_id: None,
+            billing_meter: BillingMeter::LlmInputToken,
+            vendor_code: None,
+            vendor_codes: Vec::new(),
+            modalities: Vec::new(),
+            capabilities: Vec::new(),
+            categories: Vec::new(),
+            groups: Vec::new(),
+            search_query: None,
+            limit: Some(1),
+            offset: Some(1),
+        })
+        .unwrap();
+
+    assert_eq!(1, first_page.items.len());
+    assert_eq!(1, second_page.items.len());
+    assert_ne!(first_page.items[0].catalog_key, second_page.items[0].catalog_key);
 }

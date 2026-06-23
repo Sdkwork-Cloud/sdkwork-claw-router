@@ -46,7 +46,7 @@ async fn generate_reconciliation_items_reports_missing_fee_and_status_cases() {
 
     let generated = service
         .generate_reconciliation_items(RuntimeGeneratePaymentReconciliationItemsCommand {
-            tenant_id: "10".to_owned(),
+            tenant_id: "100001".to_owned(),
             reconciliation_run_id: "run-2026-05-001".to_owned(),
             statement_id: statement.id.clone(),
             generated_at: "2026-05-29T00:00:00Z".to_owned(),
@@ -149,7 +149,7 @@ async fn generate_reconciliation_items_reports_duplicate_amount_and_currency_cas
 
     let generated = service
         .generate_reconciliation_items(RuntimeGeneratePaymentReconciliationItemsCommand {
-            tenant_id: "10".to_owned(),
+            tenant_id: "100001".to_owned(),
             reconciliation_run_id: "run-2026-05-002".to_owned(),
             statement_id: statement.id.clone(),
             generated_at: "2026-05-29T00:00:00Z".to_owned(),
@@ -233,7 +233,7 @@ async fn generate_reconciliation_items_reports_settlement_and_chargeback_cases()
 
     let generated = service
         .generate_reconciliation_items(RuntimeGeneratePaymentReconciliationItemsCommand {
-            tenant_id: "10".to_owned(),
+            tenant_id: "100001".to_owned(),
             reconciliation_run_id: "run-2026-05-003".to_owned(),
             statement_id: statement.id.clone(),
             generated_at: "2026-05-29T00:00:00Z".to_owned(),
@@ -488,8 +488,8 @@ fn import_command_with_settlement_and_chargeback_rows() -> RuntimeImportPaymentS
 
 fn import_command() -> RuntimeImportPaymentStatementCommand {
     RuntimeImportPaymentStatementCommand {
-        tenant_id: "10".to_owned(),
-        organization_id: Some("20".to_owned()),
+        tenant_id: "100001".to_owned(),
+        organization_id: Some("0".to_owned()),
         statement_no: "stmt-2026-05-001".to_owned(),
         provider_code: "stripe".to_owned(),
         provider_account_id: Some("acct-1".to_owned()),

@@ -161,6 +161,31 @@
       "purpose": "Reusable GitHub Actions packaging, release, and artifact publication."
     },
     {
+      "file": "SECURITY_SPEC.md",
+      "path": "../sdkwork-specs/SECURITY_SPEC.md",
+      "purpose": "Security, auth, rate limiting, and supply-chain controls."
+    },
+    {
+      "file": "RELEASE_SPEC.md",
+      "path": "../sdkwork-specs/RELEASE_SPEC.md",
+      "purpose": "Release trains, versioning, SBOM, signing, and rollout evidence."
+    },
+    {
+      "file": "IAM_SPEC.md",
+      "path": "../sdkwork-specs/IAM_SPEC.md",
+      "purpose": "IAM integration and tenant-bound access control."
+    },
+    {
+      "file": "OBSERVABILITY_SPEC.md",
+      "path": "../sdkwork-specs/OBSERVABILITY_SPEC.md",
+      "purpose": "Metrics, tracing, and operational telemetry."
+    },
+    {
+      "file": "SUPPLY_CHAIN_SECURITY_SPEC.md",
+      "path": "../sdkwork-specs/SUPPLY_CHAIN_SECURITY_SPEC.md",
+      "purpose": "SBOM, provenance, and artifact integrity requirements."
+    },
+    {
       "file": "APP_RUNTIME_TOPOLOGY_SPEC.md",
       "path": "../sdkwork-specs/APP_RUNTIME_TOPOLOGY_SPEC.md",
       "purpose": "Ingress, multi-plane URLs, dev orchestration, and gateway surface ownership."
@@ -177,7 +202,11 @@
       "package.json#scripts.test",
       "Cargo.toml"
     ],
-    "sdkClients": [],
+    "sdkClients": [
+      "@sdkwork/clawrouter-app-sdk",
+      "@sdkwork/clawrouter-backend-sdk",
+      "@sdkwork/clawrouter-open-sdk"
+    ],
     "sdkDependencies": [],
     "dependencyApiExports": [],
     "events": [],
@@ -205,8 +234,10 @@
   },
   "verification": {
     "commands": [
-      "cargo test --workspace",
-      "pnpm --filter sdkwork-clawrouter-workspace test"
+      "pnpm check:alignment",
+      "pnpm api:standard-extensions:check",
+      "pnpm verify:precommit",
+      "cargo test --workspace"
     ]
   },
   "metadata": {

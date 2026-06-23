@@ -251,18 +251,6 @@ function buildApplicationEnvVerificationPlan(env = process.env) {
       args: ['check:application-env'],
       env,
     },
-    {
-      label: 'application env unit tests',
-      command: 'node',
-      args: [
-        '--test',
-        'scripts/dev/claw-router-application-env.test.mjs',
-        'scripts/dev/ensure-claw-router-env.test.mjs',
-        'scripts/lib/claw-router-browser-env-contract.test.mjs',
-        'scripts/lib/claw-router-edge-env-contract.test.mjs',
-      ],
-      env,
-    },
   ];
 }
 

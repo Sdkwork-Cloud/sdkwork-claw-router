@@ -1,13 +1,12 @@
 use std::sync::Arc;
 
 use axum::Router;
-use sdkwork_iam_web_adapter::{
-    build_web_framework_layer, IamAppContextInjector, IamDatabaseWebRequestContextResolver,
-};
+use sdkwork_claw_http::ClawRouterWebRequestContextResolver;
+use sdkwork_iam_web_adapter::{build_web_framework_layer, IamAppContextInjector};
 use sdkwork_web_axum::with_web_request_context;
 use sdkwork_web_core::{DomainContextInjector, WebRequestContext};
 
-use crate::http_route_manifest::http_route_manifest;
+use crate::http_route_manifest::claw_router_app_http_route_manifest;
 
 pub fn claw_router_app_public_path_prefixes() -> Vec<String> {
     vec![
@@ -31,20 +30,24 @@ impl DomainContextInjector for ClawRouterAppDomainInjector {
 }
 
 pub fn wrap_router_with_web_framework(
-    resolver: IamDatabaseWebRequestContextResolver,
+    resolver: ClawRouterWebRequestContextResolver,
     router: Router,
 ) -> Router {
     let prefixes = claw_router_app_public_path_prefixes();
-    if let Err(error) = http_route_manifest().validate_public_path_prefixes(&prefixes) {
+    if let Err(error) =
+        claw_router_app_http_route_manifest().validate_public_path_prefixes(&prefixes)
+    {
         tracing::warn!(%error, "claw router app-api public path prefixes overlap protected routes");
     }
-    let layer = build_web_framework_layer(resolver, http_route_manifest(), prefixes)
+    let layer = build_web_framework_layer(resolver, claw_router_app_http_route_manifest(), prefixes)
         .with_domain_injector(Arc::new(ClawRouterAppDomainInjector::default()));
     with_web_request_context(router, layer)
 }
 
 pub async fn wrap_router_with_web_framework_from_env(router: Router) -> Router {
-    let resolver = sdkwork_iam_web_adapter::iam_database_resolver_from_env().await;
+    let resolver = ClawRouterWebRequestContextResolver::from_env()
+        .await
+        .expect("claw router web framework requires SDKWORK_CLAW_APP_SESSION_SECRET");
     wrap_router_with_web_framework(resolver, router)
 }
 

@@ -100,10 +100,12 @@ pub use admin_user::{admin_user_api_key_command_router_with_store, admin_user_ro
 pub use app_api_keys::app_api_key_router;
 pub use app_api_keys::app_api_key_router_with_read_store_and_command_store;
 pub use app_auth::{
+    authenticate_password_and_issue_iam_session,
     app_auth_router_with_store, app_auth_router_with_store_and_verification_sender,
     app_auth_router_with_store_auth_settings_store_and_verification_sender,
     app_public_auth_router_with_store_auth_settings_store_and_verification_sender,
     app_sessions_router_with_store, app_sessions_router_with_store_and_verification_sender,
+    AppSessionCreateError, IamSessionResponse,
 };
 pub use app_chat::app_chat_router;
 pub use app_chat::app_chat_router_with_store;

@@ -5,6 +5,10 @@ use crate::local_auth_runtime::{
     build_local_auth_router, postgres_local_auth_runtime_components,
     sqlite_local_auth_runtime_components,
 };
+use crate::iam_oauth_device_runtime::{
+    merge_appbase_oauth_device_authorization_router, postgres_database_pool,
+    sqlite_database_pool, sqlite_password_session_bridge_for_engine,
+};
 use crate::{manifest, paths};
 use axum::Router;
 use sdkwork_claw_config::{
@@ -25,6 +29,9 @@ use sdkwork_clawrouter_router_service::infrastructure::provider::{
 };
 use sdkwork_clawrouter_router_service::infrastructure::sql::catalog::{
     RefreshableSqlPricingCatalog, SqlPricingCatalogSnapshotSummary,
+};
+use sdkwork_clawrouter_router_service::infrastructure::sql::iam_scope_resolver::{
+    resolve_postgres_iam_scope, resolve_sqlite_iam_scope, IamScopeResolveOptions,
 };
 use sdkwork_clawrouter_router_service::infrastructure::sql::installer::{
     log_bootstrap_admin_report, DatabaseInstallError, DatabaseInstaller,
@@ -72,9 +79,7 @@ use sdkwork_content_documents_sdk_reference::app_sdk_reference_router;
 use sdkwork_router_catalog_app_api::{
     app_model_catalog_router, app_model_rankings_router, app_model_rankings_router_with_read_store,
 };
-use sqlx::postgres::PgRow;
-use sqlx::sqlite::SqliteRow;
-use sqlx::{PgPool, Row, SqlitePool};
+use sqlx::{PgPool, SqlitePool};
 use tokio::time::sleep;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -313,145 +318,13 @@ async fn postgres_verification_code_sender(
 async fn sqlite_default_verification_delivery_subject(
     pool: &SqlitePool,
 ) -> Result<(i64, i64), sqlx::Error> {
-    resolve_sqlite_verification_delivery_subject(pool, Some("default"), Some("root")).await
+    resolve_sqlite_iam_scope(pool, None, None, IamScopeResolveOptions::default()).await
 }
 
 async fn postgres_default_verification_delivery_subject(
     pool: &PgPool,
 ) -> Result<(i64, i64), sqlx::Error> {
-    resolve_postgres_verification_delivery_subject(pool, Some("default"), Some("root")).await
-}
-
-async fn resolve_sqlite_verification_delivery_subject(
-    pool: &SqlitePool,
-    tenant_code: Option<&str>,
-    organization_code: Option<&str>,
-) -> Result<(i64, i64), sqlx::Error> {
-    let tenant_row = match tenant_code {
-        Some(code) if !code.trim().is_empty() => sqlx::query(
-            "SELECT id FROM iam_tenant WHERE code = ? AND status = 'active' ORDER BY id LIMIT 1",
-        )
-        .bind(code.trim())
-        .fetch_optional(pool)
-        .await?,
-        _ => {
-            sqlx::query("SELECT id FROM iam_tenant WHERE status = 'active' ORDER BY id LIMIT 1")
-                .fetch_optional(pool)
-                .await?
-        }
-    };
-    let tenant_id = tenant_row
-        .as_ref()
-        .and_then(|row| sqlite_numeric_iam_subject_id(row, "id"))
-        .ok_or_else(|| {
-            sqlx::Error::Protocol(
-                "active IAM tenant was not found or has a non-numeric id".to_owned(),
-            )
-        })?;
-
-    let organization_row = match organization_code {
-        Some(code) if !code.trim().is_empty() => sqlx::query(
-            "SELECT id FROM iam_organization WHERE tenant_id = ? AND code = ? AND status = 'active' ORDER BY id LIMIT 1",
-        )
-        .bind(tenant_id.to_string())
-        .bind(code.trim())
-        .fetch_optional(pool)
-        .await?,
-        _ => sqlx::query(
-            "SELECT id FROM iam_organization WHERE tenant_id = ? AND status = 'active' ORDER BY id LIMIT 1",
-        )
-        .bind(tenant_id.to_string())
-        .fetch_optional(pool)
-        .await?,
-    };
-    let organization_id = organization_row
-        .as_ref()
-        .and_then(|row| sqlite_numeric_iam_subject_id(row, "id"))
-        .ok_or_else(|| {
-            sqlx::Error::Protocol(
-                "active IAM organization was not found or has a non-numeric id".to_owned(),
-            )
-        })?;
-
-    Ok((tenant_id, organization_id))
-}
-
-async fn resolve_postgres_verification_delivery_subject(
-    pool: &PgPool,
-    tenant_code: Option<&str>,
-    organization_code: Option<&str>,
-) -> Result<(i64, i64), sqlx::Error> {
-    let tenant_row = match tenant_code {
-        Some(code) if !code.trim().is_empty() => sqlx::query(
-            "SELECT id FROM iam_tenant WHERE code = $1 AND status = 'active' ORDER BY id LIMIT 1",
-        )
-        .bind(code.trim())
-        .fetch_optional(pool)
-        .await?,
-        _ => {
-            sqlx::query("SELECT id FROM iam_tenant WHERE status = 'active' ORDER BY id LIMIT 1")
-                .fetch_optional(pool)
-                .await?
-        }
-    };
-    let tenant_id = tenant_row
-        .as_ref()
-        .and_then(|row| postgres_numeric_iam_subject_id(row, "id"))
-        .ok_or_else(|| {
-            sqlx::Error::Protocol(
-                "active IAM tenant was not found or has a non-numeric id".to_owned(),
-            )
-        })?;
-
-    let organization_row = match organization_code {
-        Some(code) if !code.trim().is_empty() => sqlx::query(
-            "SELECT id FROM iam_organization WHERE tenant_id = $1 AND code = $2 AND status = 'active' ORDER BY id LIMIT 1",
-        )
-        .bind(tenant_id.to_string())
-        .bind(code.trim())
-        .fetch_optional(pool)
-        .await?,
-        _ => sqlx::query(
-            "SELECT id FROM iam_organization WHERE tenant_id = $1 AND status = 'active' ORDER BY id LIMIT 1",
-        )
-        .bind(tenant_id.to_string())
-        .fetch_optional(pool)
-        .await?,
-    };
-    let organization_id = organization_row
-        .as_ref()
-        .and_then(|row| postgres_numeric_iam_subject_id(row, "id"))
-        .ok_or_else(|| {
-            sqlx::Error::Protocol(
-                "active IAM organization was not found or has a non-numeric id".to_owned(),
-            )
-        })?;
-
-    Ok((tenant_id, organization_id))
-}
-
-fn sqlite_numeric_iam_subject_id(row: &SqliteRow, column: &str) -> Option<i64> {
-    row.try_get::<i64, _>(column)
-        .ok()
-        .or_else(|| row.try_get::<i32, _>(column).ok().map(i64::from))
-        .or_else(|| {
-            row.try_get::<Option<String>, _>(column)
-                .ok()
-                .flatten()
-                .and_then(|value| value.trim().parse::<i64>().ok())
-        })
-}
-
-fn postgres_numeric_iam_subject_id(row: &PgRow, column: &str) -> Option<i64> {
-    row.try_get::<i64, _>(column)
-        .ok()
-        .or_else(|| row.try_get::<i32, _>(column).ok().map(i64::from))
-        .or_else(|| {
-            row.try_get::<Option<String>, _>(column)
-                .ok()
-                .flatten()
-                .and_then(|value| value.trim().parse::<i64>().ok())
-        })
+    resolve_postgres_iam_scope(pool, None, None, IamScopeResolveOptions::default()).await
 }
 
 fn router_with_runtime_stores_and_database_status(
@@ -973,17 +846,27 @@ pub async fn router_with_sqlite_shared_runtime(
             .map_err(|error| {
                 ProductCatalogRouterError::Sqlite(SqlCatalogLoadError::Database(error))
             })?;
+    let entity_uuid_generator = Arc::new(OsApiKeySecretGenerator);
+    let password_hasher = Arc::new(Pbkdf2Sha256PasswordHasher);
     let (app_auth_store, app_auth_settings_store, app_session_event_store) =
         sqlite_local_auth_runtime_components(pool.clone());
-    Ok(router_with_runtime_stores_and_database_status(
+    let password_session_bridge = sqlite_password_session_bridge_for_engine(
+        &config,
+        app_auth_store.clone(),
+        password_hasher.clone(),
+        app_session_config.clone(),
+        app_session_event_store.clone(),
+        entity_uuid_generator.clone(),
+    );
+    let router = router_with_runtime_stores_and_database_status(
         Some(app_auth_store),
         Some(app_auth_settings_store),
         app_session_event_store,
         Some(Arc::new(SqliteSiteSettingsStore::new(pool.clone()))),
-        Arc::new(OsApiKeySecretGenerator),
+        entity_uuid_generator,
         trusted_subject_config,
         app_session_config,
-        Arc::new(Pbkdf2Sha256PasswordHasher),
+        password_hasher,
         verification_code_sender,
         expose_debug_verification_code,
         Some(payment_webhook_config),
@@ -1013,7 +896,16 @@ pub async fn router_with_sqlite_shared_runtime(
         Some(&config),
         request_limits_config,
         None,
-    ))
+    );
+    Ok(
+        merge_appbase_oauth_device_authorization_router(
+            router,
+            &config,
+            sqlite_database_pool(&config, pool),
+            password_session_bridge,
+        )
+        .await,
+    )
 }
 
 pub async fn router_with_postgres_shared_runtime(
@@ -1083,7 +975,7 @@ pub async fn router_with_postgres_shared_runtime(
             })?;
     let (app_auth_store, app_auth_settings_store, app_session_event_store) =
         postgres_local_auth_runtime_components(pool.clone());
-    Ok(router_with_runtime_stores_and_database_status(
+    let router = router_with_runtime_stores_and_database_status(
         Some(app_auth_store),
         Some(app_auth_settings_store),
         app_session_event_store,
@@ -1121,7 +1013,16 @@ pub async fn router_with_postgres_shared_runtime(
         Some(&config),
         request_limits_config,
         None,
-    ))
+    );
+    Ok(
+        merge_appbase_oauth_device_authorization_router(
+            router,
+            &config,
+            postgres_database_pool(&config, pool),
+            None,
+        )
+        .await,
+    )
 }
 
 pub async fn router_with_database_config(
@@ -1376,11 +1277,12 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                     })?;
             let (app_auth_store, app_auth_settings_store, app_session_event_store) =
                 sqlite_local_auth_runtime_components(pool.clone());
-            let readiness_check = Some(
-                sdkwork_clawrouter_router_service::infrastructure::sql::pool::sqlite_database_readiness_check(
+            let readiness_check =
+                sdkwork_clawrouter_router_service::infrastructure::sql::pool::sqlite_runtime_readiness_check(
                     pool.clone(),
-                ),
-            );
+                    runtime_toml,
+                    sdkwork_clawrouter_router_service::application::UsageSettlementWorkerConfig::disabled(),
+                );
             Ok(router_with_runtime_stores_and_database_status(
                 Some(app_auth_store),
                 Some(app_auth_settings_store),
@@ -1513,11 +1415,12 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                     })?;
             let (app_auth_store, app_auth_settings_store, app_session_event_store) =
                 postgres_local_auth_runtime_components(pool.clone());
-            let readiness_check = Some(
-                sdkwork_clawrouter_router_service::infrastructure::sql::pool::postgres_database_readiness_check(
+            let readiness_check =
+                sdkwork_clawrouter_router_service::infrastructure::sql::pool::postgres_runtime_readiness_check(
                     pool.clone(),
-                ),
-            );
+                    runtime_toml,
+                    sdkwork_clawrouter_router_service::application::UsageSettlementWorkerConfig::disabled(),
+                );
             Ok(router_with_runtime_stores_and_database_status(
                 Some(app_auth_store),
                 Some(app_auth_settings_store),

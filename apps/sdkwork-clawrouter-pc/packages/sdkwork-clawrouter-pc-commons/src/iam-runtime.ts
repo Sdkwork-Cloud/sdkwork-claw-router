@@ -112,7 +112,7 @@ function ensureIamTenantSelectionCompat(client: SdkworkAppClient): SdkworkAppCli
     };
   }).auth?.sessions;
   if (!sessions || sessions.tenantSelection) {
-    return client;
+    return wrapCredentialEntrySessions(client);
   }
 
   const organizationSelection = sessions.organizationSelection as
@@ -122,7 +122,7 @@ function ensureIamTenantSelectionCompat(client: SdkworkAppClient): SdkworkAppCli
     sessions.tenantSelection = {
       create: organizationSelection.create.bind(organizationSelection),
     };
-    return client;
+    return wrapCredentialEntrySessions(client);
   }
 
   sessions.tenantSelection = {
@@ -130,7 +130,37 @@ function ensureIamTenantSelectionCompat(client: SdkworkAppClient): SdkworkAppCli
       throw new Error('appbase app SDK is missing sessions.tenantSelection.create');
     },
   };
+  return wrapCredentialEntrySessions(client);
+}
+
+function wrapCredentialEntrySessions(client: SdkworkAppClient): SdkworkAppClient {
+  const sessions = (client as unknown as {
+    auth?: {
+      sessions?: {
+        create?: (...args: unknown[]) => Promise<unknown>;
+      };
+    };
+  }).auth?.sessions;
+  const originalCreate = sessions?.create;
+  if (!originalCreate) {
+    return client;
+  }
+
+  sessions.create = async (...args: unknown[]) => {
+    prepareClawRouterCredentialEntryTokens();
+    return originalCreate.apply(sessions, args);
+  };
   return client;
+}
+
+function prepareClawRouterCredentialEntryTokens(): void {
+  const tokenManager = getClawRouterGlobalTokenManager();
+  const accessToken = tokenManager.getAccessToken?.();
+  tokenManager.clearTokens?.();
+  if (accessToken) {
+    tokenManager.setTokens?.({ accessToken });
+  }
+  resetClawRouterSdkClients();
 }
 
 function resolveAppbaseAppApiBaseUrl(): string {

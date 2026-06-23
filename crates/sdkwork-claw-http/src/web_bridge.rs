@@ -79,6 +79,8 @@ mod tests {
             },
             principal: Some(principal),
             locale: None,
+            client_kind: None,
+            operation: None,
         };
 
         let subject = trusted_request_subject_from_web_context(&context).expect("subject");
@@ -114,6 +116,8 @@ mod tests {
             },
             principal: Some(principal),
             locale: None,
+            client_kind: None,
+            operation: None,
         };
         let mut request = Request::new(Body::empty());
         inject_legacy_handler_context_from_web_context(&mut request, &context);
@@ -185,6 +189,8 @@ mod tests {
             },
             principal: Some(principal),
             locale: None,
+            client_kind: None,
+            operation: None,
         };
         let mut request = Request::new(Body::empty());
         request.extensions_mut().insert(context);

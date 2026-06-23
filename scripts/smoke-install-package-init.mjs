@@ -419,7 +419,7 @@ function inspectReleaseEnvContent(content, plan) {
     containsLocalDatabaseUrl: Boolean(plan.env.SDKWORK_CLAW_DATABASE_URL)
       && content.includes(`SDKWORK_CLAW_DATABASE_URL="${plan.env.SDKWORK_CLAW_DATABASE_URL}"`),
     containsConfigFile: /^SDKWORK_CLAW_CONFIG_FILE=/mu.test(content),
-    containsHostSecret: /SDKWORK_SECRET|SECRET_KEY|PRIVATE_KEY|TOKEN=/u.test(content),
+    containsHostSecret: /SDKWORK_SECRET|SECRET_KEY|PRIVATE_KEY|(?<!ACCESS_)TOKEN=/u.test(content),
     containsExamplePath: content.includes('.env.release.example'),
     variableCount: content
       .split(/\r?\n/u)

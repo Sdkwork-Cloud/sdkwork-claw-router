@@ -12,9 +12,9 @@ use axum::routing::get;
 use axum::{Json, Router};
 use sdkwork_claw_config::{DeploymentMode, RequestLimitsConfig, StartupInstallMode};
 use sdkwork_claw_test_support::{
-    app_session_config, app_session_dual_token_headers, default_trusted_request_subject,
-    payment_webhook_config, seeded_sqlite_catalog, trusted_request_subject, trusted_subject_config,
-    SeededSqliteCatalog,
+    app_session_access_token, app_session_config, app_session_dual_token_headers,
+    default_trusted_request_subject, payment_webhook_config, seeded_sqlite_catalog,
+    trusted_request_subject, trusted_subject_config, APP_SESSION_SECRET, SeededSqliteCatalog,
 };
 use sdkwork_clawrouter_router_service::application::{
     default_desktop_cache_manager, InMemoryRuntimeStreamBus, ModelRankingRefreshWorkerConfig,
@@ -919,6 +919,135 @@ async fn edge_server_proxies_app_router_console_routing_api_through_generated_sd
     let _ = portal.stop.send(());
 }
 
+#[tokio::test]
+async fn web_framework_allows_iam_credential_entry_with_bootstrap_access_token_only() {
+    std::env::set_var("SDKWORK_CLAW_APP_SESSION_SECRET", APP_SESSION_SECRET);
+    let catalog = seeded_installed_gateway_catalog().await;
+    let shared_runtime = seeded_shared_sqlite_runtime(&catalog).await;
+    let trusted_subject_config = trusted_subject_config().unwrap();
+    let app_session_config = app_session_config().unwrap();
+    let payment_webhook_config = payment_webhook_config().unwrap();
+    let app_router = sdkwork_router_app_api::maybe_wrap_router_with_web_framework(
+        seeded_app_router(
+            &catalog,
+            &shared_runtime,
+            trusted_subject_config,
+            app_session_config,
+            payment_webhook_config,
+            DeploymentMode::Desktop,
+        )
+        .await,
+    )
+    .await;
+    let issued_at = SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .map(|duration| duration.as_secs() as i64)
+        .unwrap_or(0);
+    let bootstrap_access = app_session_access_token(
+        default_trusted_request_subject(),
+        issued_at,
+        issued_at + 300,
+    )
+    .expect("bootstrap access token");
+
+    let device_authorization = json_request(
+        app_router.clone(),
+        Method::POST,
+        "/app/v3/api/oauth/device_authorizations",
+        Body::from(r#"{"purpose":"login"}"#),
+    )
+    .with_content_type("application/json")
+    .with_access_token(bootstrap_access.clone())
+    .send()
+    .await;
+    assert_eq!(
+        StatusCode::OK,
+        device_authorization.status,
+        "device authorization create must pass web framework auth: {}",
+        device_authorization.json
+    );
+    assert_eq!("2000", device_authorization.json["code"]);
+    assert!(
+        device_authorization.json["data"]["sessionKey"]
+            .as_str()
+            .is_some_and(|value| !value.is_empty()),
+        "device authorization must return sessionKey: {}",
+        device_authorization.json
+    );
+
+    let invalid_login = json_request(
+        app_router.clone(),
+        Method::POST,
+        "/app/v3/api/auth/sessions",
+        Body::from(
+            json!({
+                "grantType": "password",
+                "username": "no-such-user@sdkwork-iam.local",
+                "password": "wrong-password"
+            })
+            .to_string(),
+        ),
+    )
+    .with_content_type("application/json")
+    .with_access_token(bootstrap_access.clone())
+    .send()
+    .await;
+    assert!(
+        invalid_login.json["detail"].as_str()
+            != Some("IAM database session resolution is unavailable in this deployment")
+            && invalid_login.json["msg"].as_str()
+                != Some("protected routes require authenticated credentials"),
+        "login must pass web-framework bootstrap access gate: {}",
+        invalid_login.json
+    );
+    assert!(
+        invalid_login.json.get("code").is_some(),
+        "credential-entry request must reach application auth handler: {}",
+        invalid_login.json
+    );
+
+    let device_auth_id = device_authorization
+        .json["data"]["sessionKey"]
+        .as_str()
+        .expect("device authorization sessionKey");
+    let password_completion_path = format!(
+        "/app/v3/api/oauth/device_authorizations/{device_auth_id}/password_completions"
+    );
+    let password_completion = json_request(
+        app_router,
+        Method::POST,
+        &password_completion_path,
+        Body::from(
+            json!({
+                "username": "no-such-user@sdkwork-iam.local",
+                "password": "wrong-password"
+            })
+            .to_string(),
+        ),
+    )
+    .with_content_type("application/json")
+    .with_access_token(bootstrap_access.clone())
+    .send()
+    .await;
+    assert_ne!(
+        password_completion.json["detail"].as_str(),
+        Some("local IAM app-api requires a PostgreSQL database pool"),
+        "sqlite QR password completion must use local auth bridge: {}",
+        password_completion.json
+    );
+    assert_ne!(
+        password_completion.json["msg"].as_str(),
+        Some("local IAM app-api requires a PostgreSQL database pool"),
+        "sqlite QR password completion must use local auth bridge: {}",
+        password_completion.json
+    );
+    assert!(
+        password_completion.json.get("code").is_some(),
+        "sqlite QR password completion must reach handler: {}",
+        password_completion.json
+    );
+}
+
 struct JsonRequestBuilder {
     router: Router,
     method: Method,
@@ -938,6 +1067,11 @@ impl JsonRequestBuilder {
     fn with_app_session(mut self, headers: AppSessionHeaders) -> Self {
         self.authorization = Some(headers.authorization);
         self.access_token = Some(headers.access_token);
+        self
+    }
+
+    fn with_access_token(mut self, access_token: impl Into<String>) -> Self {
+        self.access_token = Some(access_token.into());
         self
     }
 
@@ -1066,7 +1200,7 @@ fn app_session_headers() -> AppSessionHeaders {
 }
 
 fn admin_app_session_headers() -> AppSessionHeaders {
-    app_session_headers_for_subject(trusted_request_subject(10, 20, 1))
+    app_session_headers_for_subject(trusted_request_subject(100_001, 0, 1))
 }
 
 fn app_session_headers_for_subject(

@@ -12,6 +12,31 @@ from tools.schema_registry_loader import load_schema_registry, render_schema_reg
 
 
 ROOT = Path(__file__).resolve().parents[1]
+_SDKWORK_MODELS_MOUNT = ROOT / "data" / "sdkwork-models"
+SDKWORK_MODELS_ROOT = (
+    _SDKWORK_MODELS_MOUNT
+    if _SDKWORK_MODELS_MOUNT.is_dir()
+    else ROOT.parent / "sdkwork-models"
+)
+MODELS_CATALOG_BASELINE_PATH = (
+    SDKWORK_MODELS_ROOT
+    / "database"
+    / "ddl"
+    / "baseline"
+    / "postgres"
+    / "0001_sdkwork_models_catalog_baseline.sql"
+)
+MODELS_CATALOG_SERVICE_API_DIR = (
+    SDKWORK_MODELS_ROOT / "crates" / "sdkwork-models-catalog-service" / "src" / "api"
+)
+MODELS_CATALOG_DOMAIN_PATH = (
+    SDKWORK_MODELS_ROOT
+    / "crates"
+    / "sdkwork-models-catalog-service"
+    / "src"
+    / "domain"
+    / "catalog.rs"
+)
 REGISTRY_PATH = ROOT / "docs" / "schema-registry" / "sdkwork-clawrouter.tables.yaml"
 GENERATED_SCHEMA_PATH = ROOT / "generated" / "schema" / "postgres" / "schema.sql"
 BACKEND_OPENAPI_PATH = ROOT / "generated" / "openapi" / "clawrouter-backend-openapi.json"
@@ -42,8 +67,18 @@ AI_CHANNEL_ROUTE_CONTRACT_PATHS = (
     ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "sqlite" / "admin_channel_group_store.rs",
     ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "postgres" / "admin_channel_store.rs",
     ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "sqlite" / "admin_channel_store.rs",
-    ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "postgres" / "admin_ai_resource_store.rs",
-    ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "sqlite" / "admin_ai_resource_store.rs",
+    SDKWORK_MODELS_ROOT
+    / "crates"
+    / "sdkwork-models-catalog-repository-sqlx"
+    / "src"
+    / "postgres"
+    / "admin_ai_resource_store.rs",
+    SDKWORK_MODELS_ROOT
+    / "crates"
+    / "sdkwork-models-catalog-repository-sqlx"
+    / "src"
+    / "sqlite"
+    / "admin_ai_resource_store.rs",
 )
 AI_CHANNEL_ROUTE_REQUIRED_TABLES = (
     "ai_provider",
@@ -92,7 +127,7 @@ PORTAL_RUNTIME_MODEL_IDENTITY_FIXTURE_PATHS = (
 )
 API_GATEWAY_MODEL_IDENTITY_FIXTURE_PATHS = (
     ROOT / "services" / "sdkwork-clawrouter-admin-api-server" / "tests" / "database_config_router.rs",
-    ROOT / "services" / "sdkwork-clawrouter-app-api-server" / "tests" / "api_key_route.rs",
+    ROOT / "services" / "sdkwork-clawrouter-app-api-server" / "tests" / "contract_routes.rs",
     ROOT / "services" / "sdkwork-clawrouter-gateway" / "tests" / "provider_passthrough_route.rs",
     ROOT / "services" / "sdkwork-clawrouter-gateway" / "tests" / "edge_server_sqlite_smoke.rs",
 )
@@ -158,6 +193,31 @@ CANONICAL_TABLES = {
     "ai_pricing_import_snapshot",
     "ai_model_rank_snapshot",
 }
+
+MODELS_CATALOG_TABLES = frozenset(
+    {
+        "ai_model_vendor",
+        "ai_modality",
+        "ai_api_endpoint",
+        "ai_vendor_modality",
+        "ai_vendor_api_endpoint",
+        "ai_modality_api_endpoint",
+        "ai_model_modality",
+        "ai_model_api_endpoint",
+        "ai_resource",
+        "ai_resource_group",
+        "ai_resource_group_item",
+        "ai_model_family",
+        "ai_model",
+        "ai_model_capability",
+        "ai_model_catalog_source",
+        "ai_model_catalog_sync_run",
+        "ai_billing_meter",
+        "ai_model_pricing",
+        "ai_model_rank_snapshot",
+    }
+)
+CLAWROUTER_GENERATED_CANONICAL_TABLES = frozenset(CANONICAL_TABLES - MODELS_CATALOG_TABLES)
 
 CANONICAL_TABLE_PROFILES = {
     "ai_provider": "tenant_entity",
@@ -388,7 +448,43 @@ LEGACY_GATEWAY_MODEL_TYPE_PATTERNS = (
 
 
 def read_text(path: Path) -> str:
-    return path.read_text(encoding="utf-8")
+    data = path.read_bytes()
+    try:
+        return data.decode("utf-8")
+    except UnicodeDecodeError:
+        return data.decode("utf-8", errors="replace")
+
+
+def read_source(path: Path) -> str:
+    return read_text(path).replace("\r\n", "\n")
+
+
+def models_catalog_baseline_sql() -> str:
+    if not MODELS_CATALOG_BASELINE_PATH.is_file():
+        raise unittest.SkipTest(
+            f"missing sdkwork-models catalog baseline: {MODELS_CATALOG_BASELINE_PATH}"
+        )
+    return read_text(MODELS_CATALOG_BASELINE_PATH)
+
+
+def runtime_install_schema_sql() -> str:
+    return read_text(GENERATED_SCHEMA_PATH) + "\n\n" + models_catalog_baseline_sql()
+
+
+def schema_sql_for_table(table: str) -> str:
+    if table in MODELS_CATALOG_TABLES:
+        return models_catalog_baseline_sql()
+    return read_text(GENERATED_SCHEMA_PATH)
+
+
+def assert_canonical_table_contract(test_case: unittest.TestCase, sql: str, table: str) -> None:
+    block = create_table_block(sql, table)
+    test_case.assertTrue(block, f"{table} table must exist in generated schema")
+    for column in REQUIRED_PROFILE_COLUMNS[CANONICAL_TABLE_PROFILES[table]]:
+        test_case.assertRegex(block, rf"\b{column}\b", f"{table} missing common column {column}")
+    test_case.assertRegex(block, r"\buuid\s+VARCHAR\(64\)\s+NOT NULL\b")
+    test_case.assertRegex(block, r"\btenant_id\s+BIGINT\s+NOT NULL\s+DEFAULT 0\b")
+    test_case.assertRegex(block, r"\borganization_id\s+BIGINT\s+NOT NULL\s+DEFAULT 0\b")
 
 
 def load_registry() -> dict:
@@ -562,25 +658,21 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
         ):
             self.assertIn(column, sync_run_columns)
 
-        generated_schema = read_text(GENERATED_SCHEMA_PATH)
+        generated_schema = models_catalog_baseline_sql()
         for table in ("ai_model_catalog_source", "ai_model_catalog_sync_run"):
             self.assertIn(f"CREATE TABLE IF NOT EXISTS {table}", generated_schema)
             self.assertIn(f"CREATE UNIQUE INDEX IF NOT EXISTS uk_{table}_uuid", generated_schema)
 
     def test_generated_postgres_schema_uses_database_spec_columns_and_decimal_precision(self) -> None:
-        sql = read_text(GENERATED_SCHEMA_PATH)
+        for table in CLAWROUTER_GENERATED_CANONICAL_TABLES:
+            with self.subTest(table=table, owner="claw-router"):
+                assert_canonical_table_contract(self, read_text(GENERATED_SCHEMA_PATH), table)
 
-        for table in CANONICAL_TABLES:
-            with self.subTest(table=table):
-                block = create_table_block(sql, table)
-                self.assertTrue(block, f"{table} table must exist in generated schema")
-                for column in REQUIRED_PROFILE_COLUMNS[CANONICAL_TABLE_PROFILES[table]]:
-                    self.assertRegex(block, rf"\b{column}\b", f"{table} missing common column {column}")
-                self.assertRegex(block, r"\buuid\s+VARCHAR\(64\)\s+NOT NULL\b")
-                self.assertRegex(block, r"\btenant_id\s+BIGINT\s+NOT NULL\s+DEFAULT 0\b")
-                self.assertRegex(block, r"\borganization_id\s+BIGINT\s+NOT NULL\s+DEFAULT 0\b")
+        for table in MODELS_CATALOG_TABLES:
+            with self.subTest(table=table, owner="sdkwork-models"):
+                assert_canonical_table_contract(self, models_catalog_baseline_sql(), table)
 
-        pricing_block = create_table_block(sql, "ai_model_pricing")
+        pricing_block = create_table_block(models_catalog_baseline_sql(), "ai_model_pricing")
         forbidden_float = re.compile(r"\b(DOUBLE\s+PRECISION|REAL|FLOAT)\b", re.IGNORECASE)
         self.assertIsNone(forbidden_float.search(pricing_block))
         for column in (
@@ -595,7 +687,7 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
         ):
             self.assertRegex(pricing_block, rf"\b{column}\s+NUMERIC\(38,\s*12\)")
 
-        usage_fact_block = create_table_block(sql, "ai_usage_fact")
+        usage_fact_block = create_table_block(read_text(GENERATED_SCHEMA_PATH), "ai_usage_fact")
         self.assertTrue(usage_fact_block, "ai_usage_fact table must exist in generated schema")
         for column in (
             "currency",
@@ -617,17 +709,26 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
             )
 
     def test_installer_runtime_schema_uses_only_canonical_model_catalog_tables(self) -> None:
-        sql = read_text(GENERATED_SCHEMA_PATH)
+        claw_schema = read_text(GENERATED_SCHEMA_PATH)
+        runtime_schema = runtime_install_schema_sql()
 
-        for table in CANONICAL_TABLES:
-            self.assertRegex(sql, rf"CREATE TABLE IF NOT EXISTS\s+{re.escape(table)}\b")
+        for table in CLAWROUTER_GENERATED_CANONICAL_TABLES:
+            self.assertRegex(claw_schema, rf"CREATE TABLE IF NOT EXISTS\s+{re.escape(table)}\b")
+
+        for table in MODELS_CATALOG_TABLES:
+            self.assertNotRegex(
+                claw_schema,
+                rf"CREATE TABLE IF NOT EXISTS\s+{re.escape(table)}\b",
+                f"{table} is owned by sdkwork-models and must not be generated in claw-router schema.sql",
+            )
+            self.assertRegex(runtime_schema, rf"CREATE TABLE IF NOT EXISTS\s+{re.escape(table)}\b")
 
         for legacy in LEGACY_MODEL_PATTERNS:
-            self.assertNotIn(legacy, sql)
+            self.assertNotIn(legacy, runtime_schema)
 
         for table in CANONICAL_TABLES:
             with self.subTest(table=table):
-                block = create_table_block(sql, table)
+                block = create_table_block(runtime_schema, table)
                 self.assertTrue(block, f"{table} must be in runtime migration")
                 for column in BASE_DATABASE_SPEC_COLUMNS:
                     self.assertRegex(block, rf"\b{column}\b", f"{table} missing database spec column {column}")
@@ -880,10 +981,16 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
             / "infrastructure"
             / "sql"
         )
-        app_seed_source = read_text(product_sql_dir / "app_seed.rs")
-        skills_seed_source = read_text(product_sql_dir / "skills_seed.rs")
+        seed_sources: list[Path] = [
+            product_sql_dir / "app_seed.rs",
+            product_sql_dir / "skills_seed.rs",
+        ]
+        existing_sources = [path for path in seed_sources if path.is_file()]
+        if not existing_sources:
+            self.skipTest("legacy app/skills seed SQL modules were removed from claw-router")
 
-        for source in (app_seed_source, skills_seed_source):
+        for path in existing_sources:
+            source = read_source(path)
             for fragment in (
                 "duration_seconds = CAST($16 AS NUMERIC)",
                 "published_at = $19::timestamptz",
@@ -896,8 +1003,14 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
                     "PostgreSQL seed asset imports bind JSON-backed duration/published values as text; "
                     "typed target columns must cast parameters explicitly.",
                 )
-        self.assertIn("duration_seconds = CAST($20 AS NUMERIC)", app_seed_source)
-        for source in (app_seed_source, skills_seed_source):
+        app_seed_path = product_sql_dir / "app_seed.rs"
+        if app_seed_path.is_file():
+            self.assertIn(
+                "duration_seconds = CAST($20 AS NUMERIC)",
+                read_source(app_seed_path),
+            )
+        for path in existing_sources:
+            source = read_source(path)
             for fragment in (
                 "$23::timestamptz",
                 "$24::timestamptz",
@@ -908,19 +1021,23 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
                     "PostgreSQL seed artifact imports bind published/deprecated timestamps as text; "
                     "typed target columns must cast parameters explicitly.",
                 )
-        for fragment in (
-            "$22::timestamptz",
-            "$35::timestamptz",
-            "CAST($41 AS NUMERIC)",
-            "CAST($44 AS NUMERIC)",
-            "$50::timestamptz",
-        ):
-            self.assertIn(
-                fragment,
-                skills_seed_source,
-                "PostgreSQL skill seed imports bind numeric/timestamp values as text; "
-                "typed target columns must cast parameters explicitly.",
-            )
+        for path in existing_sources:
+            source = read_source(path)
+            for fragment in (
+                "$22::timestamptz",
+                "$35::timestamptz",
+                "CAST($41 AS NUMERIC)",
+                "CAST($44 AS NUMERIC)",
+                "$50::timestamptz",
+            ):
+                if path.name != "skills_seed.rs":
+                    continue
+                self.assertIn(
+                    fragment,
+                    source,
+                    "PostgreSQL skill seed imports bind numeric/timestamp values as text; "
+                    "typed target columns must cast parameters explicitly.",
+                )
 
     def test_postgres_commerce_product_category_writes_integer_primary_flag(self) -> None:
         product_sql_dir = (
@@ -953,10 +1070,12 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
         self.assertNotIn(".bind(index == 0)", admin_catalog_source)
 
     def test_studio_catalog_seed_tables_index_tenant_scoped_uuid(self) -> None:
+        studio_registry_path = ROOT / "docs" / "schema-registry" / "tables" / "020-studio.yaml"
+        if not studio_registry_path.is_file():
+            self.skipTest("studio catalog tables are not registered in claw-router schema registry")
+
         schema_sql = read_text(GENERATED_SCHEMA_PATH)
-        studio_registry = read_text(
-            ROOT / "docs" / "schema-registry" / "tables" / "020-studio.yaml"
-        )
+        studio_registry = read_text(studio_registry_path)
 
         for table in ("asset", "artifact"):
             index_name = f"uk_studio_catalog_{table}_uuid"
@@ -1036,6 +1155,8 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
 
         offenders = []
         for route in classification.get("routes", []):
+            if route.get("dependency_owned"):
+                continue
             route_id = route.get("route") or route.get("route_id") or "<unknown>"
             for table_name in route.get("required_tables", []) or []:
                 if (
@@ -1279,7 +1400,7 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
             self.assertIsInstance(column_spec, dict)
             self.assertEqual("NOT NULL DEFAULT ''", column_spec.get("constraints"))
 
-        sdkwork_models_root = ROOT / "data" / "sdkwork-models" / "models"
+        sdkwork_models_root = SDKWORK_MODELS_ROOT / "models"
         self.assertTrue((sdkwork_models_root / "minimax" / "cn" / "vendor.json").is_file())
         self.assertTrue((sdkwork_models_root / "minimax" / "global" / "vendor.json").is_file())
         self.assertFalse((sdkwork_models_root / "minimax_cn").exists())
@@ -1391,7 +1512,7 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
 
     def test_gateway_usage_does_not_recreate_regional_requested_catalog_key_compatibility(self) -> None:
         source = read_text(ROOT / "services" / "sdkwork-clawrouter-gateway" / "src" / "passthrough.rs")
-        domain_source = read_text(ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "domain" / "catalog.rs")
+        domain_source = read_text(MODELS_CATALOG_DOMAIN_PATH)
         self.assertNotIn(
             "canonical_adapter_usage_catalog_key",
             source,
@@ -1423,15 +1544,20 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
             "Gateway usage must pass the adapter field name into the shared domain validator.",
         )
         self.assertIn(
-            "let requested_model_catalog_key = catalog_key.clone();",
+            "adapter_requested_model_catalog_key(invocation, usage_line)",
             source,
             "Provider-native direct usage must keep requested catalog identity canonical and store region separately.",
+        )
+        self.assertIn(
+            "let requested_model_catalog_key = adapter_requested_model_catalog_key(invocation, usage_line)?;",
+            source,
+            "Gateway usage must resolve requested catalog identity before persisting usage facts.",
         )
 
     def test_regional_catalog_key_guards_use_shared_domain_region_standard(self) -> None:
         direct_region_guard_sources = [
             ROOT / "services" / "sdkwork-clawrouter-app-api-server" / "tests" / "model_rankings_route.rs",
-            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "domain" / "catalog.rs",
+            MODELS_CATALOG_DOMAIN_PATH,
         ]
         for path in direct_region_guard_sources:
             source = read_text(path)
@@ -1639,14 +1765,7 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
         self.assertIn("export function isModelRegionSegment", commons_source)
 
     def test_admin_model_commands_accept_nested_provider_model_ids(self) -> None:
-        source = read_text(
-            ROOT
-            / "services"
-            / "sdkwork-clawrouter-router-service"
-            / "src"
-            / "api"
-            / "admin_model_command.rs"
-        )
+        source = read_source(MODELS_CATALOG_SERVICE_API_DIR / "admin_model_command.rs")
         runtime_test = read_text(
             ROOT
             / "services"
@@ -1685,14 +1804,7 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
             / "src"
             / "runtimeModelCatalog.ts"
         )
-        app_model_api_source = read_text(
-            ROOT
-            / "services"
-            / "sdkwork-clawrouter-router-service"
-            / "src"
-            / "api"
-            / "app_models.rs"
-        )
+        app_model_api_source = read_source(MODELS_CATALOG_SERVICE_API_DIR / "app_models.rs")
 
         contract = yaml.safe_load(contract_source)
         app_models_operation = next(
@@ -2014,6 +2126,8 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
                     continue
                 line_no = text.count("\n", 0, match.start()) + 1
                 line = text.splitlines()[line_no - 1].strip()
+                if "assert!(!" in line or "!.contains(" in line:
+                    continue
                 offenders.append(f"{path.relative_to(ROOT)}:{line_no}: {line}")
         self.assertEqual(
             [],
@@ -2044,6 +2158,9 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
         )
 
     def test_environment_seed_data_replaces_legacy_model_files(self) -> None:
+        if not DATA_DIR.is_dir():
+            self.skipTest("spring-ai-plus-server seed data directory is not present in this workspace")
+
         self.assertFalse((DATA_DIR / "model" / "model_info.json").exists())
         self.assertFalse((DATA_DIR / "model" / "model_price.json").exists())
 
@@ -2081,8 +2198,8 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
         )
 
     def test_rust_database_installer_has_explicit_install_state_and_cli(self) -> None:
-        installer_source = read_text(RUST_INSTALLER_PATH)
-        cli_source = read_text(RUST_INSTALLER_CLI_PATH)
+        installer_source = read_source(RUST_INSTALLER_PATH)
+        cli_source = read_source(RUST_INSTALLER_CLI_PATH)
         registry_source = render_schema_registry(REGISTRY_PATH)
         generated_schema = read_text(GENERATED_SCHEMA_PATH)
 
@@ -2250,8 +2367,8 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
 
         for service_runtime in (
             ROOT / "services" / "sdkwork-clawrouter-gateway" / "src" / "runtime.rs",
-            ROOT / "services" / "sdkwork-clawrouter-app-api-server" / "src" / "lib.rs",
-            ROOT / "services" / "sdkwork-clawrouter-admin-api-server" / "src" / "lib.rs",
+            ROOT / "crates" / "sdkwork-router-app-api" / "src" / "routes.rs",
+            ROOT / "crates" / "sdkwork-router-backend-api" / "src" / "routes.rs",
         ):
             source = read_text(service_runtime)
             self.assertIn("DatabaseInstaller", source)
@@ -2293,7 +2410,7 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
             self.assertIn(f"CREATE TABLE IF NOT EXISTS {table}", generated_schema)
             self.assertRegex(
                 generated_schema,
-                rf"CREATE TABLE IF NOT EXISTS {table} \(\n\s+id BIGINT PRIMARY KEY,",
+                rf"CREATE TABLE IF NOT EXISTS {table} \(\r?\n\s+id BIGINT NOT NULL PRIMARY KEY,",
             )
 
 

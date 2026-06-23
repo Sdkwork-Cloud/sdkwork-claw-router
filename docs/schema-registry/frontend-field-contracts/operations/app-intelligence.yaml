@@ -271,6 +271,11 @@ frontend_operations:
       format: int64
       minimum: 1
       maximum: 1000
+  - name: offset
+    schema:
+      type: integer
+      format: int64
+      minimum: 0
 - route: /playground
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundService.ts
   operation: fetchModelGroups

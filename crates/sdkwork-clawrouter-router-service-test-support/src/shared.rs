@@ -1,5 +1,8 @@
 #![allow(dead_code)]
 
+use sdkwork_appbase_iam_bootstrap::{
+    DEFAULT_IAM_ORGANIZATION_ID, DEFAULT_IAM_TENANT_ID,
+};
 use sdkwork_clawrouter_router_service::infrastructure::sql::installer::{
     DatabaseInstallOptions, DatabaseInstaller, CURRENT_SCHEMA_VERSION,
 };
@@ -154,10 +157,7 @@ pub(crate) async fn sqlite_template_current(
     };
     let current = match kind {
         SqliteTemplateKind::Installed => installed_sqlite_template_state_current(&pool).await,
-        SqliteTemplateKind::RepairBaseline => {
-            installed_sqlite_template_state_current(&pool).await
-                && repair_sqlite_template_state_current(&pool).await
-        }
+        SqliteTemplateKind::RepairBaseline => installed_sqlite_template_state_current(&pool).await,
         SqliteTemplateKind::SchemaOnly => schema_sqlite_template_state_current(&pool).await,
     } && sqlite_template_objects_current(&pool).await;
     pool.close().await;
@@ -197,11 +197,13 @@ async fn installed_sqlite_recharge_catalog_current(pool: &SqlitePool) -> bool {
         r#"
         SELECT COUNT(1)
         FROM commerce_recharge_package
-        WHERE tenant_id = '0'
-          AND organization_id = '0'
+        WHERE tenant_id = ?
+          AND organization_id = ?
           AND status <> 'deleted'
         "#,
     )
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(DEFAULT_IAM_ORGANIZATION_ID)
     .fetch_one(pool)
     .await
     {
@@ -217,12 +219,14 @@ async fn installed_sqlite_recharge_catalog_current(pool: &SqlitePool) -> bool {
             r#"
             SELECT status
             FROM commerce_recharge_package
-            WHERE tenant_id = '0'
-              AND organization_id = '0'
+            WHERE tenant_id = ?
+              AND organization_id = ?
               AND package_no = ?
               AND currency_code = ?
             "#,
         )
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(DEFAULT_IAM_ORGANIZATION_ID)
         .bind(package.package_no)
         .bind(package.currency_code)
         .fetch_optional(pool)
@@ -307,54 +311,6 @@ async fn installed_sqlite_ai_routing_admin_groups_current(pool: &SqlitePool) -> 
     row.get::<String, _>("selection_mode") == "all"
         && row.get::<i64, _>("active_item_count") == api_endpoint_count
         && admin_api_group_count == 21
-}
-
-pub(crate) async fn repair_sqlite_template_state_current(pool: &SqlitePool) -> bool {
-    let skill_count: i64 = match sqlx::query_scalar(
-        r#"
-        SELECT COUNT(1)
-        FROM ai_agent_skill
-        WHERE tenant_id = 0
-          AND organization_id = 0
-        "#,
-    )
-    .fetch_one(pool)
-    .await
-    {
-        Ok(count) => count,
-        Err(_) => return false,
-    };
-    let asset_count: i64 = match sqlx::query_scalar(
-        r#"
-        SELECT COUNT(1)
-        FROM ai_skill_asset
-        WHERE tenant_id = 0
-          AND organization_id = 0
-          AND metadata ->> 'itemType' = 'skill_asset'
-        "#,
-    )
-    .fetch_one(pool)
-    .await
-    {
-        Ok(count) => count,
-        Err(_) => return false,
-    };
-    let artifact_count: i64 = match sqlx::query_scalar(
-        r#"
-        SELECT COUNT(1)
-        FROM ai_skill_artifact
-        WHERE tenant_id = 0
-          AND organization_id = 0
-          AND metadata ->> 'itemType' = 'skill_artifact'
-        "#,
-    )
-    .fetch_one(pool)
-    .await
-    {
-        Ok(count) => count,
-        Err(_) => return false,
-    };
-    skill_count == 3 && asset_count == 3 && artifact_count == 3
 }
 
 pub(crate) async fn schema_sqlite_template_state_current(pool: &SqlitePool) -> bool {
@@ -532,44 +488,6 @@ fn sqlite_template_label(path: &Path) -> Option<&'static str> {
     } else {
         None
     }
-}
-
-pub(crate) async fn retain_core_skill_seed_rows(pool: &SqlitePool) {
-    sqlx::query(
-        r#"
-        DELETE FROM ai_skill_asset
-        WHERE tenant_id = 0
-          AND organization_id = 0
-          AND metadata ->> 'itemType' = 'skill_asset'
-          AND target_id NOT IN (8101, 8102, 8103)
-        "#,
-    )
-    .execute(pool)
-    .await
-    .unwrap();
-    sqlx::query(
-        r#"
-        DELETE FROM ai_skill_artifact
-        WHERE tenant_id = 0
-          AND organization_id = 0
-          AND metadata ->> 'itemType' = 'skill_artifact'
-          AND target_id NOT IN (8101, 8102, 8103)
-        "#,
-    )
-    .execute(pool)
-    .await
-    .unwrap();
-    sqlx::query(
-        r#"
-        DELETE FROM ai_agent_skill
-        WHERE tenant_id = 0
-          AND organization_id = 0
-          AND id NOT IN (8101, 8102, 8103)
-        "#,
-    )
-    .execute(pool)
-    .await
-    .unwrap();
 }
 
 pub(crate) fn sqlite_template_path(label: &str, revision: &str) -> PathBuf {

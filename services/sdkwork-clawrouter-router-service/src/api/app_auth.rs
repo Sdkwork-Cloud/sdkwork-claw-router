@@ -17,7 +17,7 @@ use sha2::{Digest, Sha256};
 
 use crate::api::request_id::{generate_server_request_id, RequestIdError};
 use crate::api::response::PlusApiResult;
-use crate::application::{EntityUuidGenerator, PasswordHasher, PasswordLoginRateLimiter};
+use crate::application::{EntityUuidGenerator, PasswordHasher, PasswordLoginRateLimiter, shared_password_login_rate_limiter};
 use crate::domain::DomainError;
 use crate::ports::{
     ActiveAppSession, AdminAuthSettings, AdminAuthSettingsStore, AppAuthPasswordResetCodeCommand,
@@ -189,7 +189,7 @@ struct IamRuntimeAuthVerificationPolicyResponse {
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub(crate) struct IamSessionResponse {
+pub struct IamSessionResponse {
     pub access_token: String,
     pub auth_token: String,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -230,7 +230,7 @@ struct NoData {}
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub(crate) struct IamAppContext {
+pub struct IamAppContext {
     pub app_id: String,
     pub auth_level: String,
     pub data_scope: Vec<String>,
@@ -245,7 +245,7 @@ pub(crate) struct IamAppContext {
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 #[serde(rename_all = "camelCase")]
-pub(crate) struct IamUserResponse {
+pub struct IamUserResponse {
     pub id: String,
     pub username: String,
     pub display_name: String,
@@ -372,7 +372,7 @@ pub fn app_auth_router_with_store_auth_settings_store_and_verification_sender(
         trusted_subject_config,
         app_session_config,
         password_hasher,
-        password_login_rate_limiter: Arc::new(PasswordLoginRateLimiter::new()),
+        password_login_rate_limiter: shared_password_login_rate_limiter(None),
         expose_debug_code,
     })
 }
@@ -395,7 +395,7 @@ pub fn app_sessions_router_with_store(
         trusted_subject_config,
         app_session_config,
         password_hasher,
-        password_login_rate_limiter: Arc::new(PasswordLoginRateLimiter::new()),
+        password_login_rate_limiter: shared_password_login_rate_limiter(None),
         expose_debug_code: true,
     })
 }
@@ -420,7 +420,7 @@ pub fn app_sessions_router_with_store_and_verification_sender(
         trusted_subject_config,
         app_session_config,
         password_hasher,
-        password_login_rate_limiter: Arc::new(PasswordLoginRateLimiter::new()),
+        password_login_rate_limiter: shared_password_login_rate_limiter(None),
         expose_debug_code,
     })
 }
@@ -445,7 +445,7 @@ pub fn app_public_auth_router_with_store_auth_settings_store_and_verification_se
         trusted_subject_config,
         app_session_config,
         password_hasher,
-        password_login_rate_limiter: Arc::new(PasswordLoginRateLimiter::new()),
+        password_login_rate_limiter: shared_password_login_rate_limiter(None),
         expose_debug_code,
     })
 }
@@ -856,6 +856,7 @@ async fn create_session_inner(
     state
         .password_login_rate_limiter
         .check_and_record(&rate_limit_key)
+        .await
         .map_err(AppSessionCreateError::TooManyRequests)?;
 
     let password = normalize_required_field(
@@ -891,6 +892,50 @@ async fn create_session_inner(
         &state.app_session_config,
         state.event_store.as_ref(),
         state.entity_uuid_generator.as_ref(),
+        user.into(),
+        "password",
+        request_id,
+    )
+    .await
+}
+
+pub async fn authenticate_password_and_issue_iam_session(
+    auth_store: &(dyn AppAuthStore + Send + Sync),
+    password_hasher: &(dyn PasswordHasher + Send + Sync),
+    app_session_config: &AppSessionConfig,
+    event_store: &(dyn AppSessionEventStore + Send + Sync),
+    entity_uuid_generator: &(dyn EntityUuidGenerator + Send + Sync),
+    account: &str,
+    password: &str,
+) -> Result<IamSessionResponse, AppSessionCreateError> {
+    let account = normalize_required_field("username", account, MAX_ACCOUNT_LENGTH)?;
+    let password = normalize_required_field("password", password, MAX_PASSWORD_LENGTH)?;
+    let request_id = generate_server_request_id()
+        .map(Some)
+        .map_err(app_session_request_id_error)?;
+    let Some(user) = auth_store
+        .find_user_for_password_login(&account)
+        .await
+        .map_err(|error| AppSessionCreateError::System(error.to_string()))?
+    else {
+        return Err(AppSessionCreateError::Unauthorized);
+    };
+
+    if user.status != "active" {
+        return Err(AppSessionCreateError::Unauthorized);
+    }
+
+    let verified = password_hasher
+        .verify_password(&password, &user.password_hash)
+        .map_err(|error| AppSessionCreateError::System(error.to_string()))?;
+    if !verified {
+        return Err(AppSessionCreateError::Unauthorized);
+    }
+
+    issue_iam_session(
+        app_session_config,
+        event_store,
+        entity_uuid_generator,
         user.into(),
         "password",
         request_id,
@@ -2258,7 +2303,7 @@ fn to_verification_policy_response(
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
-pub(crate) enum AppSessionCreateError {
+pub enum AppSessionCreateError {
     Unauthorized,
     TrustedSubjectRequired,
     BadRequest(String),

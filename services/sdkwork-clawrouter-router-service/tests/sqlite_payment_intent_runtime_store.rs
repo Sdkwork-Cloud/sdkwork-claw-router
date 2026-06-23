@@ -83,7 +83,7 @@ async fn sqlite_payment_intent_runtime_records_failed_operation_attempt() {
 
     let error = service
         .confirm_payment_intent(RuntimeConfirmPaymentIntentCommand {
-            tenant_id: "10".to_owned(),
+            tenant_id: "100001".to_owned(),
             payment_intent_id: intent.id,
             idempotency_key: "idem-sql-confirm-1002".to_owned(),
             requested_at: "2026-05-29T00:00:00Z".to_owned(),
@@ -126,7 +126,7 @@ async fn sqlite_payment_refund_runtime_persists_failed_refund_attempt_event_and_
 
     let error = refund_service
         .create_refund(RuntimeCreateRefundCommand {
-            tenant_id: "10".to_owned(),
+            tenant_id: "100001".to_owned(),
             payment_intent_id: intent.id,
             merchant_refund_no: "refund-sql-1003".to_owned(),
             amount: "10.00".to_owned(),
@@ -213,8 +213,8 @@ fn create_command(
     merchant_order_no: &str,
 ) -> RuntimeCreatePaymentIntentCommand {
     RuntimeCreatePaymentIntentCommand {
-        tenant_id: "10".to_owned(),
-        organization_id: Some("20".to_owned()),
+        tenant_id: "100001".to_owned(),
+        organization_id: Some("0".to_owned()),
         owner_user_id: "30".to_owned(),
         merchant_order_no: merchant_order_no.to_owned(),
         amount: "88.50".to_owned(),

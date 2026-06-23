@@ -2785,8 +2785,8 @@ mod tests {
         .unwrap();
 
         assert_eq!("member-1-admin", row.get::<String, _>("id"));
-        assert_eq!("10", row.get::<String, _>("tenant_id"));
-        assert_eq!("20", row.get::<String, _>("organization_id"));
+        assert_eq!("100001", row.get::<String, _>("tenant_id"));
+        assert_eq!("0", row.get::<String, _>("organization_id"));
         assert_eq!("1", row.get::<String, _>("user_id"));
         assert_eq!("admin", row.get::<String, _>("membership_kind"));
         assert_eq!("active", row.get::<String, _>("status"));

@@ -82,10 +82,14 @@ MODELS_APP_OPENAPI = (
     / "intelligence"
     / "openapi.json"
 )
+_SDKWORK_MODELS_MOUNT = ROOT / "data" / "sdkwork-models"
+_SDKWORK_MODELS_ROOT = (
+    _SDKWORK_MODELS_MOUNT
+    if _SDKWORK_MODELS_MOUNT.is_dir()
+    else ROOT.parent / "sdkwork-models"
+)
 MODEL_CATALOG_SERVICE = (
-    ROOT
-    / "data"
-    / "sdkwork-models"
+    _SDKWORK_MODELS_ROOT
     / "apps"
     / "sdkwork-models-pc"
     / "packages"

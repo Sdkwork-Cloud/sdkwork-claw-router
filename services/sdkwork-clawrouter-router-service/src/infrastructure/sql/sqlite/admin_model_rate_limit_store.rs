@@ -2,7 +2,11 @@ use sha2::{Digest, Sha256};
 use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
+use crate::infrastructure::sql::routing_config_change::{
+    record_sqlite_ai_routing_config_change, AiRoutingConfigChange,
+};
 use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
+use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::ports::{
     AdminModelRateLimitCommandFuture, AdminModelRateLimitItem, AdminModelRateLimitStore,
     CreateAdminModelRateLimitCommand, ListAdminModelRateLimitsQuery,
@@ -90,6 +94,24 @@ impl AdminModelRateLimitStore for SqliteAdminModelRateLimitStore {
                     "rpm": command.rpm,
                     "tpm": command.tpm
                 }),
+            )
+            .await?;
+            record_sqlite_ai_routing_config_change(
+                &mut tx,
+                model_rate_limit_routing_config_change(
+                    command.subject.tenant_id,
+                    command.subject.organization_id,
+                    command.subject.operator_id,
+                    &command.request_id,
+                    &command.requested_at,
+                    "create_model_rate_limit",
+                    policy_id,
+                    serde_json::json!({
+                        "modelRateLimitId": policy_id,
+                        "groupId": group.id,
+                        "model": &command.model
+                    }),
+                ),
             )
             .await?;
             let item = load_model_rate_limit_by_id(
@@ -596,5 +618,28 @@ fn store_error(context: &str, error: sqlx::Error) -> DomainError {
             return DomainError::conflict(format!("{context}: model rate limit already exists"));
         }
     }
-    DomainError::new(format!("{context}: {error}"))
+    redacted_store_error(context, error)
+}
+
+fn model_rate_limit_routing_config_change<'a>(
+    tenant_id: i64,
+    organization_id: i64,
+    operator_id: i64,
+    request_id: &'a str,
+    requested_at: &'a str,
+    action: &'a str,
+    model_rate_limit_id: i64,
+    event_payload: serde_json::Value,
+) -> AiRoutingConfigChange<'a> {
+    AiRoutingConfigChange {
+        tenant_id,
+        organization_id,
+        operator_id,
+        request_id,
+        requested_at,
+        changed_object_type: "model_rate_limit",
+        changed_object_id: model_rate_limit_id,
+        action,
+        event_payload,
+    }
 }

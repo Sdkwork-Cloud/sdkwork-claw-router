@@ -4,7 +4,7 @@ use std::sync::Arc;
 
 use axum::body::Body;
 use axum::http::{Request, StatusCode};
-use sdkwork_claw_product::ports::{
+use sdkwork_clawrouter_router_service::ports::{
     AdminServiceNodeCommandFuture, AdminServiceNodeDeleteOutcome, AdminServiceNodeItem,
     AdminServiceNodeStore, AdminServiceNodeSubject, CreateAdminServiceNodeCommand,
     DeleteAdminServiceNodeCommand, ListAdminServiceNodesQuery, UpdateAdminServiceNodeCommand,
@@ -15,7 +15,7 @@ use tower::ServiceExt;
 
 #[tokio::test]
 async fn admin_service_node_routes_support_full_crud() {
-    let router = sdkwork_claw_product::api::admin_service_node_router_with_store(Arc::new(
+    let router = sdkwork_clawrouter_router_service::api::admin_service_node_router_with_store(Arc::new(
         TestAdminServiceNodeStore,
     ));
 
@@ -145,7 +145,7 @@ async fn admin_service_node_routes_support_full_crud() {
 
 #[tokio::test]
 async fn admin_service_node_routes_reject_missing_trusted_subject() {
-    let router = sdkwork_claw_product::api::admin_service_node_router_with_store(Arc::new(
+    let router = sdkwork_clawrouter_router_service::api::admin_service_node_router_with_store(Arc::new(
         TestAdminServiceNodeStore,
     ));
 
@@ -167,7 +167,7 @@ async fn admin_service_node_routes_reject_missing_trusted_subject() {
 
 #[tokio::test]
 async fn admin_service_node_routes_reject_invalid_management_inputs() {
-    let router = sdkwork_claw_product::api::admin_service_node_router_with_store(Arc::new(
+    let router = sdkwork_clawrouter_router_service::api::admin_service_node_router_with_store(Arc::new(
         TestAdminServiceNodeStore,
     ));
 
@@ -424,7 +424,7 @@ impl AdminServiceNodeStore for TestAdminServiceNodeStore {
 
 fn subject() -> AdminServiceNodeSubject {
     AdminServiceNodeSubject {
-        tenant_id: 100001,
+        tenant_id: 100_001,
         organization_id: 0,
         operator_id: 30,
         operator_type: 1,

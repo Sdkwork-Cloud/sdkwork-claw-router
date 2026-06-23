@@ -329,6 +329,16 @@ const APP_SDK_SHARED_BROWSER_FIXTURES = new Map([
       },
     },
   }],
+  [`GET /app/v3/api/ecosystem/skills`, {
+    statusCode: 200,
+    body: {
+      code: "2000",
+      msg: "success",
+      data: {
+        items: [],
+      },
+    },
+  }],
 ]);
 
 const BACKEND_SDK_BROWSER_FIXTURES = new Map([

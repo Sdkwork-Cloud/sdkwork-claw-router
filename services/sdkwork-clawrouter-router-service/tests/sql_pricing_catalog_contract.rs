@@ -1267,6 +1267,7 @@ fn sql_catalog_snapshot_implements_pricing_catalog_from_database_rows() {
             groups: Vec::new(),
             search_query: None,
             limit: None,
+            offset: None,
         })
         .unwrap();
 

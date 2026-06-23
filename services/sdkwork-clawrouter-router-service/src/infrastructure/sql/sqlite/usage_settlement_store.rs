@@ -4,6 +4,7 @@ use std::hash::{Hash, Hasher};
 use sdkwork_commerce_core::{CommerceAccountAssetType, CommerceLedgerDirection};
 use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
+use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::domain::DomainError;
 use crate::ports::{
     UsageSettlementCommand, UsageSettlementFuture, UsageSettlementOutcome, UsageSettlementStore,
@@ -922,5 +923,5 @@ fn parse_integer_text(value: &str) -> Result<i64, DomainError> {
 }
 
 fn store_error(context: &str, error: sqlx::Error) -> DomainError {
-    DomainError::new(format!("{context}: {error}"))
+    redacted_store_error(context, error)
 }

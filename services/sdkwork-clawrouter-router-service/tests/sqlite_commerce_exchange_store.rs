@@ -49,8 +49,8 @@ async fn sqlite_admin_marketing_upserts_exchange_rule_into_appbase_commerce_rule
     .fetch_one(&pool)
     .await
     .unwrap();
-    assert_eq!("10", string_cell(&row, "tenant_id"));
-    assert_eq!("20", string_cell(&row, "organization_id"));
+    assert_eq!("100001", string_cell(&row, "tenant_id"));
+    assert_eq!("0", string_cell(&row, "organization_id"));
     assert_eq!("POINTS_TO_CASH", string_cell(&row, "rule_no"));
     assert_eq!("points", string_cell(&row, "source_asset_type"));
     assert_eq!("cash", string_cell(&row, "target_asset_type"));
@@ -121,8 +121,8 @@ async fn sqlite_app_exchange_store_reads_subject_rule_before_global_rule() {
     seed_exchange_rule(
         &pool,
         "exchange-rule-tenant",
-        "10",
-        Some("20"),
+        "100001",
+        Some("0"),
         "250.000000",
         "2026-05-18T10:00:00Z",
     )
@@ -132,8 +132,8 @@ async fn sqlite_app_exchange_store_reads_subject_rule_before_global_rule() {
     let item = store
         .load_points_exchange_rate(AppCommerceExchangeRuleQuery {
             subject: Some(AppCommerceSubject {
-                tenant_id: "10".to_owned(),
-                organization_id: Some("20".to_owned()),
+                tenant_id: "100001".to_owned(),
+                organization_id: Some("0".to_owned()),
                 user_id: "30".to_owned(),
             }),
             source_asset_type: Some("POINTS".to_owned()),
@@ -164,8 +164,8 @@ async fn sqlite_app_exchange_store_reads_subject_rule_before_global_rule() {
     let rules = store
         .list_exchange_rules(AppCommerceExchangeRuleQuery {
             subject: Some(AppCommerceSubject {
-                tenant_id: "10".to_owned(),
-                organization_id: Some("20".to_owned()),
+                tenant_id: "100001".to_owned(),
+                organization_id: Some("0".to_owned()),
                 user_id: "30".to_owned(),
             }),
             source_asset_type: Some("POINTS".to_owned()),
@@ -188,8 +188,8 @@ async fn sqlite_admin_marketing_lists_exchange_rules_from_appbase_commerce_table
     seed_exchange_rule(
         &pool,
         "exchange-rule-tenant",
-        "10",
-        Some("20"),
+        "100001",
+        Some("0"),
         "250.000000",
         "2026-05-18T10:00:00Z",
     )

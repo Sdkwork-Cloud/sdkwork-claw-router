@@ -54,6 +54,17 @@ class ClawRouterOpenApiGenerator:
         "/backend/v3/api/ai/resources",
         "/backend/v3/api/ai/resource_groups",
     )
+    COMMERCE_DEPENDENCY_OPENAPI_CANDIDATES = {
+        "app": (
+            "generated/openapi/commerce-app-api.openapi.json",
+            "apis/app-api/commerce/commerce-app-api.openapi.json",
+        ),
+        "backend": (
+            "generated/openapi/commerce-backend-api.openapi.json",
+            "apis/backend-api/commerce/commerce-backend-api.openapi.json",
+        ),
+    }
+    COMMERCE_DEPENDENCY_DOMAINS = {"commerce", "promotion"}
     TITLES = {
         "app": "SDKWork Claw Router App API",
         "backend": "SDKWork Claw Router Backend API",
@@ -116,6 +127,7 @@ class ClawRouterOpenApiGenerator:
             if schema_components_path is not None
             else self.root / "generated" / "openapi" / "schema-components.yaml"
         )
+        self._response_entities_cache: dict[str, Any] | None = None
 
     def generate(self, surface: str) -> dict[str, Any]:
         if surface not in self.SURFACES:
@@ -150,7 +162,7 @@ class ClawRouterOpenApiGenerator:
         components = self._components(operations, operation_ids, schema_components)
         self._normalize_component_schemas(components)
 
-        return {
+        spec = {
             "openapi": "3.1.2",
             "jsonSchemaDialect": "https://json-schema.org/draft/2020-12/schema",
             "info": {
@@ -167,6 +179,112 @@ class ClawRouterOpenApiGenerator:
             "paths": paths,
             "components": components,
         }
+        return self._merge_commerce_dependency_surface_spec(
+            self._merge_models_catalog_surface_spec(spec, surface),
+            surface,
+        )
+
+    def _commerce_dependency_root(self) -> Path:
+        return self.root.parent / "sdkwork-commerce"
+
+    def _commerce_dependency_openapi_path(self, surface: str) -> Path | None:
+        commerce_root = self._commerce_dependency_root()
+        for relative in self.COMMERCE_DEPENDENCY_OPENAPI_CANDIDATES[surface]:
+            candidate = commerce_root / relative
+            if candidate.is_file():
+                return candidate
+        return None
+
+    def _load_commerce_dependency_spec(self, surface: str) -> dict[str, Any] | None:
+        path = self._commerce_dependency_openapi_path(surface)
+        if path is None:
+            return None
+        return json.loads(path.read_text(encoding="utf-8"))
+
+    def _is_commerce_dependency_operation(self, operation: dict[str, Any]) -> bool:
+        return self._string(operation.get("x-sdkwork-domain")) in self.COMMERCE_DEPENDENCY_DOMAINS
+
+    def _extract_commerce_dependency_surface_spec(self, surface: str) -> dict[str, Any]:
+        spec = self._load_commerce_dependency_spec(surface)
+        if spec is None:
+            return {"paths": {}, "components": {}, "tags": []}
+
+        paths: dict[str, Any] = {}
+        for api_path, path_item in spec.get("paths", {}).items():
+            if not isinstance(path_item, dict):
+                continue
+            filtered_methods: dict[str, Any] = {}
+            for method, operation in path_item.items():
+                if method not in {"get", "post", "patch", "delete", "put"}:
+                    continue
+                if isinstance(operation, dict) and self._is_commerce_dependency_operation(operation):
+                    filtered_methods[method] = copy.deepcopy(operation)
+            if filtered_methods:
+                paths[api_path] = filtered_methods
+
+        return {
+            "paths": paths,
+            "components": copy.deepcopy(spec.get("components", {})),
+            "tags": copy.deepcopy(spec.get("tags", [])),
+        }
+
+    def _merge_commerce_dependency_surface_spec(self, spec: dict[str, Any], surface: str) -> dict[str, Any]:
+        commerce = self._extract_commerce_dependency_surface_spec(surface)
+        merged = copy.deepcopy(spec)
+        merged_paths = dict(merged.get("paths", {}))
+        for api_path, methods in commerce.get("paths", {}).items():
+            merged_paths.setdefault(api_path, {}).update(methods)
+        merged["paths"] = merged_paths
+
+        merged_components = copy.deepcopy(merged.get("components", {}))
+        commerce_components = commerce.get("components", {})
+        for section, values in commerce_components.items():
+            if not isinstance(values, dict):
+                continue
+            merged_components.setdefault(section, {})
+            merged_components[section].update(values)
+        merged["components"] = merged_components
+
+        merged_tags = list(merged.get("tags", []))
+        seen = {self._string(tag.get("name")) for tag in merged_tags if isinstance(tag, dict)}
+        for tag in commerce.get("tags", []):
+            if not isinstance(tag, dict):
+                continue
+            name = self._string(tag.get("name"))
+            if name and name not in seen:
+                merged_tags.append(tag)
+                seen.add(name)
+        merged["tags"] = merged_tags
+        return merged
+
+    def _merge_models_catalog_surface_spec(self, spec: dict[str, Any], surface: str) -> dict[str, Any]:
+        catalog = self.generate_models_catalog(surface)
+        merged = copy.deepcopy(spec)
+        merged_paths = dict(merged.get("paths", {}))
+        for api_path, methods in catalog.get("paths", {}).items():
+            merged_paths.setdefault(api_path, {}).update(methods)
+        merged["paths"] = merged_paths
+
+        merged_components = copy.deepcopy(merged.get("components", {}))
+        catalog_components = catalog.get("components", {})
+        for section, values in catalog_components.items():
+            if not isinstance(values, dict):
+                continue
+            merged_components.setdefault(section, {})
+            merged_components[section].update(values)
+        merged["components"] = merged_components
+
+        merged_tags = list(merged.get("tags", []))
+        seen = {self._string(tag.get("name")) for tag in merged_tags if isinstance(tag, dict)}
+        for tag in catalog.get("tags", []):
+            if not isinstance(tag, dict):
+                continue
+            name = self._string(tag.get("name"))
+            if name and name not in seen:
+                merged_tags.append(tag)
+                seen.add(name)
+        merged["tags"] = merged_tags
+        return merged
 
     def render_json(self, surface: str) -> str:
         return json.dumps(self.generate(surface), ensure_ascii=False, indent=2, sort_keys=True) + "\n"
@@ -185,6 +303,18 @@ class ClawRouterOpenApiGenerator:
             return True
         return False
 
+    def _models_catalog_operation_rank(self, operation: dict[str, Any]) -> int:
+        source = self._string(operation.get("source")).replace("\\", "/")
+        score = 0
+        if any(marker in source for marker in self.MODELS_CATALOG_SOURCE_MARKERS):
+            score += 1_000
+        declared = operation.get("query_parameters")
+        if isinstance(declared, list):
+            score += len(declared)
+        if operation.get("query_parameters_declared") is True:
+            score += 1
+        return score
+
     def _dedupe_models_catalog_operations(self, operations: list[dict[str, Any]]) -> list[dict[str, Any]]:
         selected: dict[tuple[str, str], dict[str, Any]] = {}
         for operation in operations:
@@ -193,15 +323,13 @@ class ClawRouterOpenApiGenerator:
             if not api_path or not method:
                 continue
             key = (api_path, method)
-            source = self._string(operation.get("source")).replace("\\", "/")
             current = selected.get(key)
             if current is None:
                 selected[key] = operation
                 continue
-            current_source = self._string(current.get("source")).replace("\\", "/")
-            current_is_models = any(marker in current_source for marker in self.MODELS_CATALOG_SOURCE_MARKERS)
-            next_is_models = any(marker in source for marker in self.MODELS_CATALOG_SOURCE_MARKERS)
-            if next_is_models and not current_is_models:
+            if self._models_catalog_operation_rank(operation) > self._models_catalog_operation_rank(
+                current
+            ):
                 selected[key] = operation
         return list(selected.values())
 
@@ -1029,6 +1157,16 @@ class ClawRouterOpenApiGenerator:
         if not isinstance(value, dict):
             return value
         if isinstance(value.get("$ref"), str):
+            ref = value["$ref"]
+            if ref.startswith("#/x_response_entities/"):
+                entity_key = ref.removeprefix("#/x_response_entities/")
+                entity = self._response_entities().get(entity_key)
+                if isinstance(entity, dict):
+                    return self._lift_named_nested_schemas(
+                        copy.deepcopy(entity),
+                        components,
+                        parent_names,
+                    )
             return dict(value)
 
         nested_name = value.get("name")
@@ -1249,6 +1387,18 @@ class ClawRouterOpenApiGenerator:
 
     def _record_component_name(self, table_name: str) -> str:
         return "".join(part.capitalize() for part in table_name.split("_")) + "Record"
+
+    def _response_entities(self) -> dict[str, Any]:
+        if self._response_entities_cache is not None:
+            return self._response_entities_cache
+        contract_path = self.root / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
+        if not contract_path.exists() or yaml is None:
+            self._response_entities_cache = {}
+            return self._response_entities_cache
+        payload = yaml.safe_load(contract_path.read_text(encoding="utf-8")) or {}
+        entities = payload.get("x_response_entities", {}) if isinstance(payload, dict) else {}
+        self._response_entities_cache = entities if isinstance(entities, dict) else {}
+        return self._response_entities_cache
 
     def _schema_component_schemas(self) -> dict[str, Any]:
         if not self.schema_components_path.exists():

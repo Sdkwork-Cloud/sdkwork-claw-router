@@ -21,7 +21,7 @@ test('ensureClawRouterEnvForLifecycle start resolves release and production prof
   assert.ok(results.release);
   assert.ok(results.production);
   assert.match(results.release.mergedEnv.SDKWORK_ACCESS_TOKEN ?? '', /^v2\./u);
-  assert.match(results.production.mergedEnv.SDKWORK_ACCESS_TOKEN ?? '', /^v2\./u);
+  assert.equal(results.production.mergedEnv.SDKWORK_ACCESS_TOKEN ?? '', '');
 });
 
 test('application env templates document SDKWORK_ACCESS_TOKEN without live values', () => {
