@@ -1,4 +1,4 @@
-import type { ClawRouterMediaResource } from 'sdkwork-clawrouter-pc-commons/runtime';
+import type { ClawRouterMediaResource } from '@sdkwork/clawrouter-pc-commons/runtime';
 
 export type ForumCategory =
   | 'Announcements'

@@ -21,7 +21,7 @@ import {
   buildPortalAuthLoginRedirect,
   hasStoredPortalSession,
   readMediaResourceUrl,
-} from 'sdkwork-clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawrouter-pc-commons/runtime';
 import {
   deriveForumCatalogViewModel,
   type ForumCategory,

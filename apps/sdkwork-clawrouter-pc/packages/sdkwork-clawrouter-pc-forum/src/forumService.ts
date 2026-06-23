@@ -29,7 +29,7 @@ import {
   requiredSafePathSegment,
   toExternalUrlMediaResource,
   type ClawRouterMediaResource,
-} from 'sdkwork-clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawrouter-pc-commons/runtime';
 import {
   filterForumPostsForCatalog,
   type ForumAuthor,

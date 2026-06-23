@@ -13,7 +13,7 @@ import {
   buildPortalAuthLoginRedirect,
   hasStoredPortalSession,
   readMediaResourceUrl,
-} from 'sdkwork-clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawrouter-pc-commons/runtime';
 import { useTranslation } from 'react-i18next';
 
 import {
