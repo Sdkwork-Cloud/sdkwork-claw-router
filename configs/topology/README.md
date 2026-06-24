@@ -4,7 +4,7 @@ Authoritative profile env files for `specs/topology.spec.json`.
 
 Pattern: `{hosting}.{serviceLayout}.{environment}.env`
 
-Default local development profile: `self-hosted.unified-process.development` (single-port integrated runtime).
+Default local development profile: `standalone.unified-process.development` (single-port integrated runtime).
 
 Validate:
 

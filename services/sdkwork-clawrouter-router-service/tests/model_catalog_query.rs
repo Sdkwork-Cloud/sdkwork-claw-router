@@ -393,5 +393,8 @@ fn list_models_applies_offset_after_filtering() {
 
     assert_eq!(1, first_page.items.len());
     assert_eq!(1, second_page.items.len());
-    assert_ne!(first_page.items[0].catalog_key, second_page.items[0].catalog_key);
+    assert_ne!(
+        first_page.items[0].catalog_key,
+        second_page.items[0].catalog_key
+    );
 }

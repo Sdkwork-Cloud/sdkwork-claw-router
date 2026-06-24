@@ -9,7 +9,8 @@ import { fileURLToPath } from 'node:url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const WORKSPACE_ROOT = path.resolve(__dirname, '..');
-const GATEWAY_ROOT = path.join(WORKSPACE_ROOT, 'services', 'sdkwork-clawrouter-gateway');
+const GATEWAY_ROOT = path.join(WORKSPACE_ROOT, 'crates', 'sdkwork-clawrouter-cloud-gateway');
+const STANDALONE_GATEWAY_ROOT = path.join(WORKSPACE_ROOT, 'crates', 'sdkwork-clawrouter-standalone-gateway');
 
 const REQUIRED_SOURCE_MARKERS = Object.freeze([
   {
@@ -57,7 +58,7 @@ function assertSourceMarkers() {
 
 function runGatewayRequestIdentityTests() {
   execSync(
-    'cargo test -p sdkwork-clawrouter-gateway --bin clawrouter request_identity',
+    'cargo test -p sdkwork-clawrouter-cloud-gateway request_identity',
     {
       cwd: WORKSPACE_ROOT,
       stdio: 'inherit',
@@ -65,7 +66,7 @@ function runGatewayRequestIdentityTests() {
     },
   );
   execSync(
-    'cargo test -p sdkwork-clawrouter-gateway --bin clawrouter edge_env',
+    'cargo test -p sdkwork-clawrouter-standalone-gateway edge_env',
     {
       cwd: WORKSPACE_ROOT,
       stdio: 'inherit',
@@ -73,7 +74,7 @@ function runGatewayRequestIdentityTests() {
     },
   );
   execSync(
-    'cargo test -p sdkwork-clawrouter-gateway --test invocation_router',
+    'cargo test -p sdkwork-clawrouter-cloud-gateway --test invocation_router',
     {
       cwd: WORKSPACE_ROOT,
       stdio: 'inherit',

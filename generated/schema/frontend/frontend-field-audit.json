@@ -187,6 +187,56 @@
     },
     {
       "data_sources": [
+        "ops_notification_message"
+      ],
+      "fields": [
+        "id",
+        "title",
+        "target",
+        "status",
+        "showAsPopup",
+        "date",
+        "content"
+      ],
+      "file_targets": [],
+      "interface": "Announcement",
+      "route": "/admin/announcement",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts"
+    },
+    {
+      "data_sources": [
+        "ops_notification_message"
+      ],
+      "fields": [
+        "title",
+        "target",
+        "status",
+        "showAsPopup",
+        "content"
+      ],
+      "file_targets": [],
+      "interface": "AnnouncementCreateInput",
+      "route": "/admin/announcement",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts"
+    },
+    {
+      "data_sources": [
+        "ops_notification_message"
+      ],
+      "fields": [
+        "title",
+        "target",
+        "status",
+        "showAsPopup",
+        "content"
+      ],
+      "file_targets": [],
+      "interface": "AnnouncementUpdateInput",
+      "route": "/admin/announcement",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts"
+    },
+    {
+      "data_sources": [
         "ops_config_snapshot",
         "ops_audit_log"
       ],
@@ -968,6 +1018,98 @@
     },
     {
       "data_sources": [
+        "dr_drive_space"
+      ],
+      "fields": [
+        "cursor",
+        "limit",
+        "logicalScope",
+        "providerId",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "StorageBucketListParams",
+      "route": "/admin/storage/buckets",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts"
+    },
+    {
+      "data_sources": [
+        "dr_drive_space_app_upload_profile"
+      ],
+      "fields": [
+        "logicalScope"
+      ],
+      "file_targets": [],
+      "interface": "StorageDefaultBucketListParams",
+      "route": "/admin/storage/default-buckets",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts"
+    },
+    {
+      "data_sources": [
+        "dr_drive_maintenance_job"
+      ],
+      "fields": [
+        "cursor",
+        "limit",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "StorageGarbageCollectionJobListParams",
+      "route": "/admin/storage/garbage-collection",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts"
+    },
+    {
+      "data_sources": [
+        "dr_drive_storage_provider"
+      ],
+      "fields": [],
+      "file_targets": [],
+      "interface": "StorageProviderListParams",
+      "route": "/admin/storage/providers",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts"
+    },
+    {
+      "data_sources": [
+        "dr_drive_space_version_policy"
+      ],
+      "fields": [],
+      "file_targets": [],
+      "interface": "StorageQuotaListParams",
+      "route": "/admin/storage/quotas",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts"
+    },
+    {
+      "data_sources": [
+        "dr_drive_maintenance_job"
+      ],
+      "fields": [
+        "cursor",
+        "limit",
+        "status",
+        "runType"
+      ],
+      "file_targets": [],
+      "interface": "StorageReconciliationRunListParams",
+      "route": "/admin/storage/reconciliation",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts"
+    },
+    {
+      "data_sources": [
+        "dr_drive_storage_object"
+      ],
+      "fields": [
+        "cursor",
+        "limit",
+        "scopeType",
+        "scopeId"
+      ],
+      "file_targets": [],
+      "interface": "StorageUsageListParams",
+      "route": "/admin/storage/usage",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts"
+    },
+    {
+      "data_sources": [
         "ai_resource"
       ],
       "fields": [
@@ -1364,6 +1506,23 @@
     },
     {
       "data_sources": [
+        "ops_referral_stat_snapshot"
+      ],
+      "fields": [
+        "id",
+        "inviter",
+        "total_invited",
+        "total_revenue",
+        "bonus_awarded",
+        "link"
+      ],
+      "file_targets": [],
+      "interface": "ReferralStat",
+      "route": "/admin/marketing/referrals",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts"
+    },
+    {
+      "data_sources": [
         "ai_mcp_server",
         "ai_mcp_server_revision",
         "ai_mcp_tool",
@@ -1501,6 +1660,357 @@
     },
     {
       "data_sources": [
+        "ops_audit_log"
+      ],
+      "fields": [
+        "membershipId",
+        "planId",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminEntitlementsListParams",
+      "route": "/admin/memberships/entitlements",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
+        "ops_audit_log"
+      ],
+      "fields": [
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminMemberStatusInput",
+      "route": "/admin/memberships/members",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
+        "ops_audit_log"
+      ],
+      "fields": [
+        "userId",
+        "planId",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminMembersListParams",
+      "route": "/admin/memberships/members",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
+        "ops_audit_log"
+      ],
+      "fields": [
+        "groups",
+        "groups.id",
+        "groups.code",
+        "groups.name",
+        "groups.description",
+        "groups.planId",
+        "groups.billingCycle",
+        "groups.durationDays",
+        "groups.sortWeight",
+        "groups.status",
+        "groups.packageCount",
+        "packages",
+        "packages.id",
+        "packages.packageNo",
+        "packages.groupId",
+        "packages.planId",
+        "packages.skuId",
+        "packages.name",
+        "packages.priceAmount",
+        "packages.currencyCode",
+        "packages.durationDays",
+        "packages.recurrenceCycle",
+        "packages.status",
+        "plans",
+        "plans.id",
+        "plans.planNo",
+        "plans.levelCode",
+        "plans.name",
+        "plans.rank",
+        "plans.status",
+        "plans.benefitCount",
+        "plans.benefits",
+        "plans.benefits.id",
+        "plans.benefits.name",
+        "plans.benefits.benefitKey",
+        "plans.benefits.type",
+        "plans.benefits.description",
+        "plans.benefits.icon",
+        "plans.benefits.usageLimit",
+        "plans.benefits.usedCount",
+        "plans.benefits.claimed",
+        "plans.updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminPackageCatalog",
+      "route": "/admin/memberships/packages",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
+        "ops_audit_log"
+      ],
+      "fields": [
+        "id",
+        "code",
+        "name",
+        "description",
+        "planId",
+        "billingCycle",
+        "durationDays",
+        "sortWeight",
+        "status",
+        "packageCount"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminPackageGroup",
+      "route": "/admin/memberships/packages",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
+        "ops_audit_log"
+      ],
+      "fields": [
+        "code",
+        "name",
+        "description",
+        "billingCycle",
+        "durationDays",
+        "sortWeight",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminPackageGroupMutationInput",
+      "route": "/admin/memberships/packages",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
+        "ops_audit_log"
+      ],
+      "fields": [
+        "id",
+        "packageNo",
+        "groupId",
+        "planId",
+        "skuId",
+        "name",
+        "priceAmount",
+        "currencyCode",
+        "durationDays",
+        "recurrenceCycle",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminPackageItem",
+      "route": "/admin/memberships/packages",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
+        "ops_audit_log"
+      ],
+      "fields": [
+        "code",
+        "packageGroupId",
+        "planId",
+        "name",
+        "priceAmount",
+        "currencyCode",
+        "durationDays",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminPackageMutationInput",
+      "route": "/admin/memberships/packages",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
+        "ops_audit_log"
+      ],
+      "fields": [
+        "packageGroupId",
+        "planId",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminPackagesListParams",
+      "route": "/admin/memberships/packages",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
+        "ops_audit_log"
+      ],
+      "fields": [
+        "id",
+        "name",
+        "benefitKey",
+        "type",
+        "description",
+        "icon",
+        "usageLimit",
+        "usedCount",
+        "claimed"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminPlanBenefitInput",
+      "route": "/admin/memberships/plans",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
+        "ops_audit_log"
+      ],
+      "fields": [
+        "code",
+        "name",
+        "rank",
+        "status",
+        "benefits",
+        "benefits.id",
+        "benefits.name",
+        "benefits.benefitKey",
+        "benefits.type",
+        "benefits.description",
+        "benefits.icon",
+        "benefits.usageLimit",
+        "benefits.usedCount",
+        "benefits.claimed"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminPlanCreateInput",
+      "route": "/admin/memberships/plans",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
+        "ops_audit_log"
+      ],
+      "fields": [
+        "id",
+        "planNo",
+        "levelCode",
+        "name",
+        "rank",
+        "status",
+        "benefitCount",
+        "benefits",
+        "benefits.id",
+        "benefits.name",
+        "benefits.benefitKey",
+        "benefits.type",
+        "benefits.description",
+        "benefits.icon",
+        "benefits.usageLimit",
+        "benefits.usedCount",
+        "benefits.claimed",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminPlanItem",
+      "route": "/admin/memberships/plans",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
+        "ops_audit_log"
+      ],
+      "fields": [
+        "code",
+        "name",
+        "rank",
+        "status",
+        "benefits",
+        "benefits.id",
+        "benefits.name",
+        "benefits.benefitKey",
+        "benefits.type",
+        "benefits.description",
+        "benefits.icon",
+        "benefits.usageLimit",
+        "benefits.usedCount",
+        "benefits.claimed"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminPlanMutationInput",
+      "route": "/admin/memberships/plans",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
+        "ops_audit_log"
+      ],
+      "fields": [
+        "id",
+        "packageNo",
+        "name",
+        "skuId",
+        "priceAmount",
+        "currencyCode",
+        "bonusPoints",
+        "grantAmount",
+        "points",
+        "status",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminRechargePackageItem",
+      "route": "/admin/memberships/recharge-packages",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
+        "ops_audit_log"
+      ],
+      "fields": [
+        "priceAmount",
+        "currencyCode",
+        "bonusPoints",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminRechargePackageMutationInput",
+      "route": "/admin/memberships/recharge-packages",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
+        "ops_audit_log"
+      ],
+      "fields": [
+        "baseCurrencyCode",
+        "basePointsPerCny",
+        "currencyToCnyRates"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminRechargeSettingsItem",
+      "route": "/admin/memberships/recharge-packages",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
+        "ops_audit_log"
+      ],
+      "fields": [
+        "baseCurrencyCode",
+        "basePointsPerCny",
+        "currencyToCnyRates"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminRechargeSettingsUpdateInput",
+      "route": "/admin/memberships/recharge-packages",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
         "ops_alert_event"
       ],
       "fields": [
@@ -1551,6 +2061,23 @@
       "interface": "SysNode",
       "route": "/admin/monitor",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-monitor/src/monitorService.ts"
+    },
+    {
+      "data_sources": [
+        "ops_audit_log"
+      ],
+      "fields": [
+        "page",
+        "pageSize",
+        "providerCode",
+        "status",
+        "resourceAccountKind",
+        "q"
+      ],
+      "file_targets": [],
+      "interface": "OAuthListParams",
+      "route": "/admin/oauth",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts"
     },
     {
       "data_sources": [
@@ -2986,7 +3513,7 @@
     },
     {
       "data_sources": [
-        "content_announcement"
+        "ops_notification_message"
       ],
       "fields": [
         "id",
@@ -3304,7 +3831,8 @@
         "categories",
         "groups",
         "searchQuery",
-        "limit"
+        "limit",
+        "offset"
       ],
       "file_targets": [],
       "interface": "ModelCatalogServiceFilters",
@@ -3421,7 +3949,7 @@
     },
     {
       "data_sources": [
-        "ai_agent_memory"
+        "ai_runtime_artifact"
       ],
       "fields": [
         "kind",
@@ -3438,7 +3966,7 @@
     },
     {
       "data_sources": [
-        "ai_agent_memory"
+        "ai_runtime_artifact"
       ],
       "fields": [
         "name",
@@ -4680,7 +5208,7 @@
     }
   ],
   "summary": {
-    "interface_count": 188,
-    "source_file_count": 32
+    "interface_count": 217,
+    "source_file_count": 37
   }
 }

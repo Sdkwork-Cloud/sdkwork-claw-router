@@ -1,1 +1,0 @@
--- Retired: forum runtime projection tables are generated from docs/schema-registry/tables/031-content-forum.yaml.

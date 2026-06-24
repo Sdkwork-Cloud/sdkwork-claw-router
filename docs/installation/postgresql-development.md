@@ -5,11 +5,11 @@ profile for explicit product server commands. `pnpm dev`, `pnpm dev:browser`,
 `pnpm dev:server`, and `pnpm dev:server:postgres` use PostgreSQL by default for
 the integrated Claw Router product server runtime. Gateway-backed desktop
 client commands (`pnpm dev:desktop` and `pnpm dev:desktop:sqlite`) start
-`sdkwork-api-gateway` plus the portal shell only; they do not start the product
+`sdkwork-api-cloud-gateway` plus the portal shell only; they do not start the product
 server database profile.
 
 Workspace desktop commands are gateway-backed client commands. They start the
-desktop shell plus `sdkwork-api-gateway`, not a product backend service. Use
+desktop shell plus `sdkwork-api-cloud-gateway`, not a product backend service. Use
 `pnpm dev:server` for PostgreSQL-backed product server debugging and
 `pnpm dev:server:sqlite` when validating the explicit product server SQLite
 profile. This is not the packaged desktop local-data policy.

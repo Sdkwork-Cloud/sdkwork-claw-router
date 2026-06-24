@@ -33,6 +33,7 @@ import {
   createClawRouterAiSdkClient,
   getClawRouterAiSdkClient,
   getClawRouterGlobalTokenManager,
+  prepareClawRouterCredentialEntryTokens,
   resetClawRouterSdkClients,
   SDK_SYSTEM_CONFIG,
 } from "./packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts";
@@ -314,7 +315,7 @@ test("documents runtime adapter caches a singleton SDK client bound to the clawr
 test("portal bootstrap mounts the documents runtime provider with the clawrouter adapter", () => {
   const source = readPortalSource("./src/main.tsx");
 
-  assert.match(source, /import \{ PortalQueryProvider, clawRouterDocumentsReferenceRuntime \} from '@sdkwork\/clawrouter-pc-commons';/);
+  assert.match(source, /import \{ PortalQueryProvider, PortalErrorBoundary, clawRouterDocumentsReferenceRuntime \} from '@sdkwork\/clawrouter-pc-commons';/);
   assert.match(source, /import \{ DocumentsReferenceRuntimeProvider \} from '@sdkwork\/documents-pc-commons';/);
   assert.match(source, /<DocumentsReferenceRuntimeProvider value=\{clawRouterDocumentsReferenceRuntime\}>/);
   assert.match(source, /<App \/>/);
@@ -408,6 +409,34 @@ test("stored login session replaces bootstrap access token in global token manag
 
     assert.equal(getClawRouterGlobalTokenManager().getAccessToken(), "session-access-token");
     assert.equal(getClawRouterGlobalTokenManager().getAuthToken(), "session-auth-token");
+  } finally {
+    if (previousAccessToken === undefined) {
+      delete process.env.SDKWORK_ACCESS_TOKEN;
+    } else {
+      process.env.SDKWORK_ACCESS_TOKEN = previousAccessToken;
+    }
+    clearStoredAppSessionToken();
+    resetClawRouterSdkClients();
+  }
+});
+
+test("credential entry token preparation restores bootstrap access token over stored session tokens", () => {
+  clearStoredAppSessionToken();
+  resetClawRouterSdkClients();
+  const previousAccessToken = process.env.SDKWORK_ACCESS_TOKEN;
+  process.env.SDKWORK_ACCESS_TOKEN = "bootstrap-access-token";
+
+  try {
+    storeAppSessionFromResult({
+      accessToken: "session-access-token",
+      authToken: "session-auth-token",
+      expiresAt: new Date(Date.now() + 3600_000).toISOString(),
+    });
+
+    prepareClawRouterCredentialEntryTokens();
+
+    assert.equal(getClawRouterGlobalTokenManager().getAccessToken(), "bootstrap-access-token");
+    assert.equal(getClawRouterGlobalTokenManager().getAuthToken(), undefined);
   } finally {
     if (previousAccessToken === undefined) {
       delete process.env.SDKWORK_ACCESS_TOKEN;
@@ -846,10 +875,10 @@ test("portal auth helpers preserve the current route for login-required actions"
   assert.equal(
     buildPortalAuthLoginRedirect({
       hash: "#comments",
-      pathname: "/forum/42",
+      pathname: "/models/openai/gpt-4o",
       search: "?sort=top",
     }),
-    "/auth/login?redirect=%2Fforum%2F42%3Fsort%3Dtop%23comments",
+    "/auth/login?redirect=%2Fmodels%2Fopenai%2Fgpt-4o%3Fsort%3Dtop%23comments",
   );
   assert.deepEqual(
     resolvePortalLoginRequiredAction({
@@ -868,7 +897,7 @@ test("portal auth helpers preserve the current route for login-required actions"
   assert.deepEqual(
     resolvePortalLoginRequiredAction({
       hasSession: true,
-      location: { pathname: "/forum", search: "", hash: "" },
+      location: { pathname: "/playground", search: "", hash: "" },
     }),
     { allowed: true },
   );
@@ -1530,3 +1559,48 @@ test("BusinessStatePanel resolves invalid or missing kind before reading style m
   assert.doesNotMatch(source, /const style = stateStyle\[kind\]/);
   assert.match(source, /aria-live=\{resolvedKind === 'loading' \? 'polite' : 'assertive'\}/);
 });
+
+test("storageService consumes drive backend SDK instead of clawrouter oss", () => {
+  const source = readPackageSource("packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts");
+
+  assert.match(source, /getSdkworkDriveBackendSdkClient/u);
+  assert.doesNotMatch(source, /getClawRouterBackendSdkClient/u);
+  assert.doesNotMatch(source, /\.oss\./u);
+});
+
+test("app-surface services do not supply client auth context selectors", () => {
+  const sdkClientsSource = readPackageSource("packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts");
+  const appSurfaceServiceSources = [
+    "packages/sdkwork-clawrouter-pc-admin-file-platform/src/driveService.ts",
+    "packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+    "packages/sdkwork-clawrouter-pc-admin-agents/src/agentService.ts",
+    "packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts",
+    "packages/sdkwork-clawrouter-pc-playground/src/playgroundGenerationsService.ts",
+    "../../packages/common/file/sdkwork-file-sdk-adapter/src/index.ts",
+  ];
+
+  assert.match(sdkClientsSource, /sanitizeSdkHttpRequestOptions/);
+  assert.match(sdkClientsSource, /auth-projection/);
+
+  for (const relativePath of appSurfaceServiceSources) {
+    const source = readPackageSource(relativePath);
+    assert.doesNotMatch(source, /resolveStoredPortalTenantId/u, `${relativePath} must not resolve portal tenant for API calls`);
+    assert.doesNotMatch(source, /resolveDriveTenantId/u, `${relativePath} must not resolve drive tenant for API calls`);
+    assert.doesNotMatch(source, /resolveAgentTenantId/u, `${relativePath} must not resolve agent tenant for API calls`);
+    assert.doesNotMatch(source, /tenantId:\s*resolve/u, `${relativePath} must not pass resolved tenantId to SDK calls`);
+  }
+
+  const fileAdapterSource = readPackageSource("../../packages/common/file/sdkwork-file-sdk-adapter/src/index.ts");
+  for (const marker of [
+    "organizationId: input.organizationId",
+    "userId: input.userId",
+    "operatorId:",
+    "tenantId:",
+  ]) {
+    assert.doesNotMatch(fileAdapterSource, new RegExp(marker.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "u"), `file adapter must not forward ${marker} to Drive upload`);
+  }
+});
+
+function readPackageSource(relativePath: string): string {
+  return readFileSync(new URL(relativePath, import.meta.url), "utf8");
+}

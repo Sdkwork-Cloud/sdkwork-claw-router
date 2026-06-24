@@ -61,6 +61,18 @@ pub(crate) fn media_resource_object_blob_id(resource: &Value) -> Option<i64> {
         .filter(|value| *value > 0)
 }
 
+/// Extracts canonical Drive URI from a MediaResource snapshot or drive-backed field.
+pub(crate) fn drive_uri_from_resource(resource: &Value) -> Option<String> {
+    resource
+        .get("driveUri")
+        .or_else(|| resource.get("drive_uri"))
+        .or_else(|| resource.get("uri"))
+        .and_then(Value::as_str)
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+        .map(str::to_owned)
+}
+
 pub(crate) fn media_resource_from_snapshot(snapshot: &str, kind: &str) -> Value {
     let trimmed = snapshot.trim();
     if trimmed.is_empty() {

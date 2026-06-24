@@ -79,6 +79,17 @@ pub struct AppAuthPasswordResetCommand {
     pub now: i64,
 }
 
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct AppOrganizationMembership {
+    pub id: String,
+    pub tenant_id: i64,
+    pub organization_id: i64,
+    pub organization_code: String,
+    pub organization_name: String,
+    pub membership_kind: String,
+    pub is_primary: bool,
+}
+
 pub trait AppAuthStore {
     fn find_user_for_password_login<'a>(
         &'a self,
@@ -117,4 +128,16 @@ pub trait AppAuthStore {
         &'a self,
         command: AppAuthPasswordResetCommand,
     ) -> AppAuthFuture<'a, bool>;
+
+    fn list_active_organization_memberships<'a>(
+        &'a self,
+        tenant_id: i64,
+        user_id: i64,
+    ) -> AppAuthFuture<'a, Vec<AppOrganizationMembership>>;
+
+    fn find_user_by_id<'a>(
+        &'a self,
+        tenant_id: i64,
+        user_id: i64,
+    ) -> AppAuthFuture<'a, Option<AppAuthUserCredential>>;
 }

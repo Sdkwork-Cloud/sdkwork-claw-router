@@ -7,7 +7,7 @@ namespace Sdkwork.ClawRouter.App.Models
     public class ModelsListResult
     {
         public string Code { get; set; }
-        public AppModelCatalogResponse? Data { get; set; }
+        public NoData? Data { get; set; }
         public string? Msg { get; set; }
     }
 }

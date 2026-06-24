@@ -44,7 +44,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "8e28c65f0f760f22e4f37afdd3c9437d7264e4add3f3b905908c4e1ea0179f15"
+      "sha256": "8452366dc74954c603d86ff02c00600271c08065e4d32fe8479040657936d220"
     },
     {
       "path": "sdkwork-sdk.json",
@@ -68,7 +68,7 @@
     },
     {
       "path": "src/api/index.ts",
-      "sha256": "bd750264ae1e6e0fb68f151ecc096234a643c37e78858111bdece019ebb2a425"
+      "sha256": "2f6513584ff9f260af58f2a77e255e170724b50de0b7c61089762ef93faf312f"
     },
     {
       "path": "src/api/integration.ts",
@@ -81,6 +81,10 @@
     {
       "path": "src/api/messaging.ts",
       "sha256": "0849ab829b955ad9782e1f17ca03c951a386766d5e61417493602213107c0ad1"
+    },
+    {
+      "path": "src/api/oss.ts",
+      "sha256": "7ff7fb2cc8c2b3ce176e4998a823fbd85cbcd00d5b3e8eb1fd20771a4767fd03"
     },
     {
       "path": "src/api/paths.ts",
@@ -120,7 +124,7 @@
     },
     {
       "path": "src/sdk.ts",
-      "sha256": "9400ad6abd4ff9cf37b76744702ebd9581377d2ffc493b43fb427adfa13982a5"
+      "sha256": "e3887e00adaa401bb2b3aeaa02883858096eda1b157495e8fe7ac249d2006db6"
     },
     {
       "path": "src/types/adjustments-list-result.ts",
@@ -1055,6 +1059,14 @@
       "sha256": "40453e09de5d544de62756a6f7f50119c1183cbeaf9f118fa1a6c8c05a202d56"
     },
     {
+      "path": "src/types/default-buckets-list-result.ts",
+      "sha256": "39b3252eaa3eb064cc25fcea322b56402df2f9cd73f1ba4469eb22c04c4275b2"
+    },
+    {
+      "path": "src/types/default-buckets-update-result.ts",
+      "sha256": "9494aac6390a23b72719a866f90e047e87e06d5ccbc11f5ba777e43b59aba5a3"
+    },
+    {
       "path": "src/types/definition-bindings-create-result.ts",
       "sha256": "eb8c1dfd5fdc54e696cc7f9a47b26d6aabfefe1b71930ac96fd5ce50b4b2b6b8"
     },
@@ -1107,12 +1119,20 @@
       "sha256": "0907e3c8c662ded5b4d67175d5c52a9270af58aac7299aaf0432881b21883ffb"
     },
     {
+      "path": "src/types/gc-jobs-create-result.ts",
+      "sha256": "00eaee9ccae25627315b43c1d00903bb894637c1f04650f346d7ae76bef07488"
+    },
+    {
+      "path": "src/types/gc-jobs-list-result.ts",
+      "sha256": "efb542bf319452f7a43e6a63e554909b241d46f57c4babca1a8c70cea239c98b"
+    },
+    {
       "path": "src/types/health-check-create-result.ts",
       "sha256": "d81f32dff6ecc7561c7e085b024bc4214df0988c579183414a0af2d8252486af"
     },
     {
       "path": "src/types/index.ts",
-      "sha256": "ff6e80311738b6819e743fbc3868045d8d90c78589ae4b3003aa8eb0771ab1d4"
+      "sha256": "eecbb7df333930aa444787537cddb7ab260dd5a53204ab5f36bdfca3d388ef2f"
     },
     {
       "path": "src/types/installation-status-response.ts",
@@ -1391,6 +1411,50 @@
       "sha256": "c9197e4a19f2f5f43175e6cefa5f5cfb78f5599166ce21f7e57a65181d23896b"
     },
     {
+      "path": "src/types/oss-buckets-create-result.ts",
+      "sha256": "0fc371c4c854201f63e78d7ecdde6cb5d10d6b4d18339e89eb65fefbe7ad2d3b"
+    },
+    {
+      "path": "src/types/oss-buckets-list-result.ts",
+      "sha256": "cee40379480733e36688237f66bd6ebb2033f5e6eb9a203543fd4805a525d8bf"
+    },
+    {
+      "path": "src/types/oss-buckets-update-result.ts",
+      "sha256": "fa114523110635ce75df32a40c0cc0e220c203e119b3f50015943702a9dc486f"
+    },
+    {
+      "path": "src/types/oss-providers-create-result.ts",
+      "sha256": "3981fa154e9fa260963c68f81361908c86757d4b3a3537b894925f762e2a27a0"
+    },
+    {
+      "path": "src/types/oss-providers-list-result.ts",
+      "sha256": "69a3a2391ed36abe0996510c60d550e1c5cd0a1b8cb45a5378325faf979243c7"
+    },
+    {
+      "path": "src/types/oss-providers-update-result.ts",
+      "sha256": "8deeb7747356d2be6b3b5ec600ee54b8895a873801cb868fba2a4c083e368c98"
+    },
+    {
+      "path": "src/types/oss-quotas-create-result.ts",
+      "sha256": "1e6fb2f5638eefe29be17207f7e0fbd3ec8d477549d6508621666bfd854a7ede"
+    },
+    {
+      "path": "src/types/oss-quotas-list-result.ts",
+      "sha256": "82dbf59c65258544ca9b94a5300fd174962170c3df4d6f4d479c8771e105b074"
+    },
+    {
+      "path": "src/types/oss-storage-reconciliation-runs-create-result.ts",
+      "sha256": "bdc102a5ccd38821bd283e3c7d80008ecf91f924614b0af884da4d0ae1978625"
+    },
+    {
+      "path": "src/types/oss-storage-reconciliation-runs-list-result.ts",
+      "sha256": "3db880b7183bcefa90d789923717058364fadb1a71410a192aa30ed94615a683"
+    },
+    {
+      "path": "src/types/oss-usage-list-result.ts",
+      "sha256": "b95e728128aea3a4690a6a9f667004c4d710286c634bc00e8051ea37dd6ab156"
+    },
+    {
       "path": "src/types/price-simulation-create-result.ts",
       "sha256": "e108c3db0642d334d652812536418f977b077aad14c6ba31064ef8c0e3140ff2"
     },
@@ -1449,6 +1513,10 @@
     {
       "path": "src/types/provider-wallet-accounts-list-result.ts",
       "sha256": "f985779e2a7acc72ea7461d3191f1849ad8628b57ec981a9ab3a1eab2ab83cb2"
+    },
+    {
+      "path": "src/types/providers-health-check-create-result.ts",
+      "sha256": "537fe8fa00107f7ee7c2c5712e7fe299089e9d841439071719e8c43e786a796b"
     },
     {
       "path": "src/types/rate-limit-buckets-list-result.ts",
@@ -1665,6 +1733,102 @@
     {
       "path": "src/types/statements-list-result.ts",
       "sha256": "7d0ddb5966cf0f890eea30fe76edf26135addedf170e5cc85eaca1e80c8c6b02"
+    },
+    {
+      "path": "src/types/storage-bucket-create-request.ts",
+      "sha256": "ef33b2e739032fbedc93edb107eb793585f9f12b9235aa9a04c6ff92addce518"
+    },
+    {
+      "path": "src/types/storage-bucket-create-response.ts",
+      "sha256": "67875891aed8bf198c8f912e8ae490776f2c21e44d07b329a3aecbd27b410458"
+    },
+    {
+      "path": "src/types/storage-bucket-list-response.ts",
+      "sha256": "ee5fa11b9c47b4839698edead00548921a615e745d011312587cdf7b7ba16a44"
+    },
+    {
+      "path": "src/types/storage-bucket-update-request.ts",
+      "sha256": "396565f83962bbd3f75d42c0302833b7282def45c581eecd38e1396bc4d3cc43"
+    },
+    {
+      "path": "src/types/storage-bucket-update-response.ts",
+      "sha256": "31f64bedfc3751653b4c1689db4e97352803e1af798ea2dfe52d6271f22950e8"
+    },
+    {
+      "path": "src/types/storage-default-bucket-list-response.ts",
+      "sha256": "cf33fa14175400720200763c16bb49459ec44e2892b8bec89f205b0406c21e1e"
+    },
+    {
+      "path": "src/types/storage-default-bucket-update-request.ts",
+      "sha256": "90acd194549000d5f1a303530ba09afdd76fa19e43d5cf6c1556554ece6cd144"
+    },
+    {
+      "path": "src/types/storage-default-bucket-update-response.ts",
+      "sha256": "0d8b3757166669c255980a59463c1b42fbebb588b152ffe00fc4b7b1cbc8fca7"
+    },
+    {
+      "path": "src/types/storage-garbage-collection-job-create-request.ts",
+      "sha256": "7cee953c31635c6d08f89bfe7d23495db346d62c226ad213e04a03ac73f92a63"
+    },
+    {
+      "path": "src/types/storage-garbage-collection-job-create-response.ts",
+      "sha256": "f065a221e88f0802835dcd9b96dc2b8693b73bed6c5c96d1baf91252a9c92fab"
+    },
+    {
+      "path": "src/types/storage-garbage-collection-job-list-response.ts",
+      "sha256": "985cc43d51a59825ea68d660b3a71c9460f925877bc0c4a63cd9331526fd9f0e"
+    },
+    {
+      "path": "src/types/storage-provider-create-request.ts",
+      "sha256": "b454aa5865ef70649f8a66afc1a043c53b5b8db4adde58daa4e746d807941274"
+    },
+    {
+      "path": "src/types/storage-provider-create-response.ts",
+      "sha256": "97f91c4920a502b477e65d8849cd04e8ea4dec91d5ac0dc65d4e3b74d4305ec0"
+    },
+    {
+      "path": "src/types/storage-provider-health-check-response.ts",
+      "sha256": "e778840139167f3e3cd1e4985b054a4bf32ec029c6451f426835dea12a88f02a"
+    },
+    {
+      "path": "src/types/storage-provider-list-response.ts",
+      "sha256": "662959a53da0c034f2d97a5dbc993f56dc2442ce2462338589555887e94b2f65"
+    },
+    {
+      "path": "src/types/storage-provider-update-request.ts",
+      "sha256": "ff7172475d742bdb9ee0c7455d96df9cdd7529238473934894e50531e6c316ba"
+    },
+    {
+      "path": "src/types/storage-provider-update-response.ts",
+      "sha256": "c2698a3956003eb5ecbacb997fd9fd49f6a6adace1607e0829c15b80995630b9"
+    },
+    {
+      "path": "src/types/storage-quota-create-request.ts",
+      "sha256": "e261f5bf32af0fbb8f5a786c0a8924a58b4336d30424fa68054df2a5505c136d"
+    },
+    {
+      "path": "src/types/storage-quota-create-response.ts",
+      "sha256": "27a5f058eb6bfbe464edbf0fda29999a01e7100af90ea5db431daf1fbd4c383f"
+    },
+    {
+      "path": "src/types/storage-quota-list-response.ts",
+      "sha256": "9f973391053c4c3ef2e6c2c6f991a3c5cce3d0ea3b8c8cc6a1b3e0f6ba70bc3a"
+    },
+    {
+      "path": "src/types/storage-reconciliation-run-create-request.ts",
+      "sha256": "71e5e37db6d913a8702c73a1fb3c93cc1a3710223aa303917cc1e6af546aee4d"
+    },
+    {
+      "path": "src/types/storage-reconciliation-run-create-response.ts",
+      "sha256": "5f60f1c98b80c2b4726c833d03f7b82cf1dee181c7e5cfc821459abdfcbf87af"
+    },
+    {
+      "path": "src/types/storage-reconciliation-run-list-response.ts",
+      "sha256": "809b8b3602f423d21eecd1c27bede008e0580f83b3e0c406f3d74e80d5720895"
+    },
+    {
+      "path": "src/types/storage-usage-list-response.ts",
+      "sha256": "e1a7852e72ad21bca5de6d9d1b3d2561740abab3d6ae3b56c917e164d4a13204"
     },
     {
       "path": "src/types/suppressions-create-result.ts",

@@ -8,19 +8,17 @@ Canonical lifecycle assets for `sdkwork-clawrouter` per `DATABASE_FRAMEWORK_SPEC
 
 ## Composition
 
-Claw-router **does not** own app center, IAM, or commerce base tables. Those domains bootstrap from sibling modules declared in `database.manifest.json`:
+Claw-router owns **only** generated gateway schema. Sibling product tables (appbase IAM base, commerce, models catalog, messaging, appstore, drive) are **not** composed in `database.manifest.json` or schema registry dependencies.
 
-| Order | Module | Locator |
+| Domain | Owner | Claw-router |
 | --- | --- | --- |
-| 10 | appbase-iam | `../sdkwork-appbase/database` |
-| 20 | commerce-core | `../sdkwork-commerce/database` |
-| 30 | appstore | `../sdkwork-appstore/database` |
+| Gateway / routing / ops | `clawrouter` | `generated/schema/postgres/schema.sql` |
+| Usage settlement projections | `clawrouter` | `commerce_usage_*`, `analytics_*` in generated schema |
+| IAM / commerce / models / messaging / appstore / drive | Sibling products | External SDK/API only |
 
-Course persistence (`course_*`) is owned by `../sdkwork-course` and is **not** bootstrapped by claw-router.
+See `docs/31-product-composition-model.md`.
 
-Generated claw-router DDL (`generated/schema/postgres/schema.sql`) contains only product-owned prefixes (`ai_*`, `ops_*`, …). See `docs/31-product-composition-model.md`.
-
-`0002_clawrouter_legacy_projection.sql` is retired (empty stub). Composed-module DDL for appstore comes from sibling baselines.
+`0002_clawrouter_legacy_projection.sql` is retired (empty stub).
 
 ## Commands
 
@@ -32,6 +30,7 @@ pnpm run db:migrate
 pnpm run db:seed
 pnpm run db:status
 pnpm run db:drift:check
+pnpm run check:database-ownership
 ```
 
-Runtime services MUST create pools through `sdkwork-database-sqlx` and register `DefaultDatabaseModule` at bootstrap.
+Runtime services create pools through `sdkwork-database-sqlx` and register `DefaultDatabaseModule` at bootstrap.

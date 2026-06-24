@@ -1446,8 +1446,7 @@ tables:
     description: string(1024)
     visibility: enum_int32
     default_version_id: int64
-    avatar_media_resource_id: string(128)
-    avatar_object_blob_id: int64
+    avatar_drive_uri: string(512)
     avatar_resource_snapshot: json
     template_source: string(128)
     governance_status: enum_int32
@@ -1477,67 +1476,6 @@ tables:
     - id
   security:
     sensitivity: AGENT_DEFINITION
-    stores_secret_plaintext: false
-    audit_required: true
-- table: ai_agent_version
-  domain: ai
-  profile: tenant_entity
-  compliance_level: L3
-  system_of_record: true
-  write_owner: agent-service
-  common_columns: tenant_entity
-  frontend_routes:
-  - /playground
-  - /c/:conversationId
-  api_surfaces:
-  - app
-  - backend
-  - worker
-  required_columns:
-  - uuid
-  - tenant_id
-  - organization_id
-  - agent_id
-  - version_no
-  - release_status
-  - status
-  columns:
-    agent_id: int64
-    version_no: int64
-    release_status: enum_int32
-    system_prompt: text
-    model_policy: json
-    tool_policy: json
-    memory_policy: json
-    mcp_policy: json
-    skill_policy: json
-    runtime_policy: json
-    config_hash: string(128)
-    published_at: instant
-    published_by: int64
-  indexes:
-  - name: uk_ai_agent_version_agent_no
-    unique: true
-    columns:
-    - tenant_id
-    - organization_id
-    - agent_id
-    - version_no
-  - name: idx_ai_agent_version_release_status
-    columns:
-    - tenant_id
-    - organization_id
-    - agent_id
-    - release_status
-    - version_no
-  - name: idx_ai_agent_version_config_hash
-    columns:
-    - tenant_id
-    - organization_id
-    - config_hash
-  security:
-    sensitivity: AGENT_DEFINITION
-    payload_redaction_required: true
     stores_secret_plaintext: false
     audit_required: true
 - table: ai_agent_run
@@ -1745,70 +1683,6 @@ tables:
   security:
     sensitivity: AGENT_STEP
     payload_redaction_required: true
-    stores_secret_plaintext: false
-    audit_required: true
-- table: ai_agent_memory
-  domain: ai
-  profile: user_entity
-  compliance_level: L3
-  system_of_record: true
-  write_owner: agent-memory-service
-  common_columns: user_entity
-  frontend_routes:
-  - /playground
-  - /console/agents
-  api_surfaces:
-  - app
-  - backend
-  - worker
-  required_columns:
-  - uuid
-  - tenant_id
-  - organization_id
-  - owner_user_id
-  - agent_id
-  - memory_scope
-  - memory_type
-  - status
-  columns:
-    owner_user_id: int64
-    agent_id: int64
-    memory_scope: enum_int32
-    memory_type: enum_int32
-    content_ref: string(512)
-    embedding_ref: string(512)
-    memory_hash: string(128)
-    retention_policy: json
-    expires_at: instant
-    last_used_at: instant
-  indexes:
-  - name: uk_ai_agent_memory_hash
-    unique: true
-    columns:
-    - tenant_id
-    - organization_id
-    - owner_user_id
-    - agent_id
-    - memory_hash
-  - name: idx_ai_agent_memory_agent_scope
-    columns:
-    - tenant_id
-    - organization_id
-    - agent_id
-    - owner_user_id
-    - memory_scope
-    - updated_at
-    - id
-  - name: idx_ai_agent_memory_retention
-    columns:
-    - tenant_id
-    - organization_id
-    - status
-    - expires_at
-    - id
-  security:
-    sensitivity: AGENT_MEMORY
-    pii: true
     stores_secret_plaintext: false
     audit_required: true
 - table: ai_chat_conversation
@@ -2149,8 +2023,7 @@ tables:
     json_content: json
     mime_type: string(128)
     asset_id: string(128)
-    media_resource_id: string(128)
-    object_blob_id: int64
+    drive_uri: string(512)
     resource_snapshot: json
     file_name: string(512)
     file_size: int64
@@ -2638,8 +2511,7 @@ tables:
     mime_type: string(128)
     content_text: text
     content_json: json
-    media_resource_id: string(128)
-    object_blob_id: int64
+    drive_uri: string(512)
     resource_snapshot: json
     sha256: string(128)
     size_bytes: int64
@@ -2672,129 +2544,4 @@ tables:
     pii: true
     payload_redaction_required: true
     stores_secret_plaintext: false
-    audit_required: true
-- table: ai_agent_tool_binding
-  domain: ai
-  profile: tenant_entity
-  compliance_level: L3
-  system_of_record: true
-  write_owner: agent-service
-  common_columns: tenant_entity
-  frontend_routes:
-  - /playground
-  - /console/agents
-  api_surfaces:
-  - app
-  - backend
-  - worker
-  required_columns:
-  - uuid
-  - tenant_id
-  - organization_id
-  - agent_id
-  - binding_key
-  - binding_type
-  - status
-  columns:
-    agent_id: int64
-    agent_version_id: int64
-    binding_key: string(128)
-    binding_type: enum_int32
-    skill_id: int64
-    mcp_server_id: int64
-    tool_name: string(128)
-    permission_policy: json
-    runtime_config: json
-    credential_ref: string(256)
-    enabled: bool
-    health_status: enum_int32
-    last_checked_at: instant
-  indexes:
-  - name: uk_ai_agent_tool_binding_key
-    unique: true
-    columns:
-    - tenant_id
-    - organization_id
-    - agent_id
-    - agent_version_id
-    - binding_key
-  - name: idx_ai_agent_tool_binding_type
-    columns:
-    - tenant_id
-    - organization_id
-    - binding_type
-    - status
-    - enabled
-  - name: idx_ai_agent_tool_binding_skill
-    columns:
-    - tenant_id
-    - organization_id
-    - skill_id
-    - status
-  - name: idx_ai_agent_tool_binding_mcp
-    columns:
-    - tenant_id
-    - organization_id
-    - mcp_server_id
-    - status
-  security:
-    sensitivity: AGENT_TOOL_BINDING
-    stores_secret_plaintext: false
-    secret_reference_only: true
-    audit_required: true
-- table: ai_agent_mcp_server
-  domain: ai
-  profile: tenant_entity
-  compliance_level: L3
-  system_of_record: true
-  write_owner: agent-service
-  common_columns: tenant_entity
-  frontend_routes:
-  - /playground
-  - /console/agents
-  api_surfaces:
-  - app
-  - backend
-  - worker
-  required_columns:
-  - uuid
-  - tenant_id
-  - organization_id
-  - server_code
-  - name
-  - transport_type
-  - status
-  columns:
-    server_code: string(96)
-    name: string(128)
-    description: string(1024)
-    transport_type: enum_int32
-    connection_config: json
-    credential_ref: string(256)
-    tool_catalog: json
-    prompt_catalog: json
-    resource_catalog: json
-    permission_policy: json
-    health_status: enum_int32
-    last_checked_at: instant
-    last_error_masked: string(1024)
-  indexes:
-  - name: uk_ai_agent_mcp_server_code
-    unique: true
-    columns:
-    - tenant_id
-    - organization_id
-    - server_code
-  - name: idx_ai_agent_mcp_server_status_health
-    columns:
-    - tenant_id
-    - organization_id
-    - status
-    - health_status
-    - updated_at
-    - id
-  security:
-    sensitivity: AGENT_MCP
-    stores_secret_plaintext: false
-    secret_reference_only: true
     audit_required: true

@@ -2,8 +2,8 @@ use sha2::{Digest, Sha256};
 use sqlx::{Postgres, Sqlite, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
-use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
+use crate::infrastructure::sql::store_error::redacted_store_error;
 
 pub(crate) const AI_ROUTING_CONFIG_SCOPE: &str = "routing";
 const GLOBAL_ROUTING_CONFIG_TENANT_ID: i64 = 0;

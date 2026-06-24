@@ -22,10 +22,6 @@ const PRODUCT_API_SOURCES: &[(&str, &str)] = &[
         include_str!("../src/api/admin_messaging.rs"),
     ),
     (
-        "admin_prompts.rs",
-        include_str!("../src/api/admin_prompts.rs"),
-    ),
-    (
         "admin_record.rs",
         include_str!("../src/api/admin_record.rs"),
     ),
@@ -54,7 +50,6 @@ const PRODUCT_API_SOURCES: &[(&str, &str)] = &[
     ("admin_user.rs", include_str!("../src/api/admin_user.rs")),
     ("app_auth.rs", include_str!("../src/api/app_auth.rs")),
     ("app_chat.rs", include_str!("../src/api/app_chat.rs")),
-    ("app_forum.rs", include_str!("../src/api/app_forum.rs")),
     (
         "app_iam_directory_query.rs",
         include_str!("../src/api/app_iam_directory_query.rs"),

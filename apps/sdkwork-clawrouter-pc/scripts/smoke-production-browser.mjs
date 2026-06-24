@@ -95,6 +95,11 @@ const PRIVATE_PRICING_TOKENS = [
   "groupCode",
 ];
 
+const API_REFERENCE_ROUTE_BUNDLE_FORBIDDEN_TOKENS = [
+  "Math.random",
+  "toLocaleDateString",
+];
+
 const BROWSER_SMOKE_MODEL_RECORDS = [
   {
     model: "gpt-5.5-pro",
@@ -517,50 +522,6 @@ const BROWSER_SMOKE_ROUTES = [
   {
     pathName: "/rankings",
     requiredTextTokens: ["Published catalog benchmark", "Snapshot Benchmark"],
-  },
-  {
-    pathName: "/forum",
-    requiredTextTokens: [
-      "Developer Community",
-      "New Discussion",
-      "Live community feed",
-      "Community links are not configured.",
-    ],
-    forbiddenTextTokens: [
-      "Math.random",
-      "toLocaleDateString",
-    ],
-  },
-  {
-    pathName: "/forum?__browser-smoke-live-empty=1",
-    setupExpressions: [
-      setRouteTextInputByPlaceholder("Search discussions...", "no-match-browser-smoke-discussion"),
-    ],
-    requiredTextTokens: [
-      "Live community feed",
-      "No discussions found",
-      "Try a different search or category filter.",
-      "0 discussions",
-    ],
-    requiredDomExpressions: [
-      `document.querySelector('input[placeholder="Search discussions..."]')?.value === "no-match-browser-smoke-discussion"`,
-    ],
-    forbiddenTextTokens: [
-      "Math.random",
-      "toLocaleDateString",
-    ],
-  },
-  {
-    pathName: "/forum/__browser-smoke-missing",
-    requiredTextTokens: [
-      "Back to Forum",
-      "Discussion not found.",
-    ],
-    forbiddenTextTokens: [
-      "Related discussions",
-      "Math.random",
-      "toLocaleDateString",
-    ],
   },
   {
     pathName: "/api-reference",
@@ -1027,7 +988,7 @@ function spawnRustEdgeServer() {
     CARGO_TARGET_DIR: resolveRustEdgeCargoTargetDir(),
   };
   try {
-    server = spawn(process.platform === "win32" ? "cargo.exe" : "cargo", ["run", "-p", "sdkwork-clawrouter-gateway"], {
+    server = spawn(process.platform === "win32" ? "cargo.exe" : "cargo", ["run", "-p", "sdkwork-clawrouter-cloud-gateway"], {
       cwd: workspaceRoot,
       env,
       stdio: ["ignore", "ignore", "pipe"],
@@ -2288,6 +2249,10 @@ async function verifyRouteDom(cdp, baseUrl, route, issueCollector, toolApiReques
     expectedBrowserLogTexts,
     requiresPortalSession,
   } = route;
+  const routeForbiddenTextTokens = [
+    ...(forbiddenTextTokens ?? []),
+    ...(pathName.startsWith("/api-reference") ? API_REFERENCE_ROUTE_BUNDLE_FORBIDDEN_TOKENS : []),
+  ];
   const hasForbiddenToolApiPaths = Array.isArray(forbiddenToolApiPaths) && forbiddenToolApiPaths.length > 0;
   for (const expectedBrowserLogText of expectedBrowserLogTexts ?? []) {
     issueCollector?.ignoreBrowserLogTextFor(expectedBrowserLogText, ROUTE_RENDER_TIMEOUT_MS);
@@ -2325,7 +2290,7 @@ async function verifyRouteDom(cdp, baseUrl, route, issueCollector, toolApiReques
     }
     await runRouteSetupExpressions(cdp, pathName, setupExpressions);
     await waitForRouteTextTokens(cdp, pathName, requiredTextTokens);
-    await waitForRouteForbiddenTextTokens(cdp, pathName, forbiddenTextTokens);
+    await waitForRouteForbiddenTextTokens(cdp, pathName, routeForbiddenTextTokens);
     await waitForRouteDomExpressions(cdp, pathName, requiredDomExpressions);
 
     const bodyText = await evaluateExpression(cdp, "document.body.innerText");
@@ -2334,7 +2299,7 @@ async function verifyRouteDom(cdp, baseUrl, route, issueCollector, toolApiReques
         throw new Error(`${pathName} rendered DOM is missing required text: ${token}`);
       }
     }
-    for (const forbiddenToken of forbiddenTextTokens ?? []) {
+    for (const forbiddenToken of routeForbiddenTextTokens) {
       if (bodyText.includes(forbiddenToken)) {
         throw new Error(`${pathName} rendered DOM includes forbidden text: ${forbiddenToken}`);
       }

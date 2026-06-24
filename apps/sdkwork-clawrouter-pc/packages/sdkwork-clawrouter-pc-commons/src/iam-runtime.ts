@@ -24,6 +24,7 @@ import {
   getClawRouterAppSdkClient,
   getClawRouterGlobalTokenManager,
   getSdkworkAppbaseAppSdkClient,
+  prepareClawRouterCredentialEntryTokens,
   getSdkworkCommerceAppSdkClient,
   getSdkworkDriveAppSdkClient,
   getSdkworkGenerationsAppSdkClient,
@@ -36,6 +37,8 @@ import { normalizeGeneratedSdkBaseUrl } from './sdk-base-url.ts';
 import { readClawRouterRuntimeEnv } from './utils/env.ts';
 
 const CLAW_ROUTER_IAM_RUNTIME_APP_ID = 'sdkwork-clawrouter';
+
+type CredentialEntryMethod = (...args: unknown[]) => Promise<unknown>;
 
 let runtimeComposition: SdkworkAppbasePcAuthRuntimeComposition | null = null;
 
@@ -54,7 +57,7 @@ export function createClawRouterIamRuntimeComposition(): SdkworkAppbasePcAuthRun
     baseUrls: {
       appbaseAppApiBaseUrl: resolveAppbaseAppApiBaseUrl(),
     },
-    createAppbaseAppClient: () => ensureIamTenantSelectionCompat(getSdkworkAppbaseAppSdkClient()),
+    createAppbaseAppClient: () => wrapCredentialEntryClient(getSdkworkAppbaseAppSdkClient()),
     hooks: {
       onSessionChanged: () => {
         resetClawRouterSdkClients();
@@ -77,7 +80,7 @@ export function createClawRouterIamRuntimeComposition(): SdkworkAppbasePcAuthRun
     tokenManager: getClawRouterGlobalTokenManager(),
   });
 
-  patchClawRouterIamContextStore(composition.contextStore);
+  patchClawRouterIamContextStore(composition.contextStore as import('@sdkwork/iam-runtime').IamContextStore);
   bindClawRouterIamSessionProjection(composition.runtime);
 
   return composition;
@@ -105,62 +108,47 @@ function commitClawRouterIamRuntimeSession(session: unknown): ReturnType<typeof 
   return stored;
 }
 
-function ensureIamTenantSelectionCompat(client: SdkworkAppClient): SdkworkAppClient {
-  const sessions = (client as unknown as {
-    auth?: {
-      sessions?: Record<string, unknown>;
-    };
-  }).auth?.sessions;
-  if (!sessions || sessions.tenantSelection) {
-    return wrapCredentialEntrySessions(client);
+export function wrapCredentialEntryClient(client: SdkworkAppClient): SdkworkAppClient {
+  const auth = client.auth;
+  if (auth) {
+    wrapCredentialEntryMethod(auth.passwordResetRequests, 'create');
+    wrapCredentialEntryMethod(auth.passwordResets, 'create');
+    wrapCredentialEntryMethod(auth.registrations, 'create');
+    wrapCredentialEntryMethod(auth.sessions, 'create');
+    wrapCredentialEntryMethod(auth.sessions?.loginContextSelection, 'create');
+    wrapCredentialEntryMethod(auth.sessions?.organizationSelection, 'create');
   }
 
-  const organizationSelection = sessions.organizationSelection as
-    | { create?: (...args: unknown[]) => unknown }
-    | undefined;
-  if (organizationSelection?.create) {
-    sessions.tenantSelection = {
-      create: organizationSelection.create.bind(organizationSelection),
-    };
-    return wrapCredentialEntrySessions(client);
+  const oauth = client.oauth;
+  if (oauth) {
+    wrapCredentialEntryMethod(oauth.authorizationUrls, 'create');
+    wrapCredentialEntryMethod(oauth.deviceAuthorizations, 'create');
+    wrapCredentialEntryMethod(oauth.deviceAuthorizations?.passwordCompletions, 'create');
+    wrapCredentialEntryMethod(oauth.miniProgramSessions, 'create');
+    wrapCredentialEntryMethod(oauth.sessions, 'create');
   }
 
-  sessions.tenantSelection = {
-    create: async () => {
-      throw new Error('appbase app SDK is missing sessions.tenantSelection.create');
-    },
-  };
-  return wrapCredentialEntrySessions(client);
-}
-
-function wrapCredentialEntrySessions(client: SdkworkAppClient): SdkworkAppClient {
-  const sessions = (client as unknown as {
-    auth?: {
-      sessions?: {
-        create?: (...args: unknown[]) => Promise<unknown>;
-      };
-    };
-  }).auth?.sessions;
-  const originalCreate = sessions?.create;
-  if (!originalCreate) {
-    return client;
-  }
-
-  sessions.create = async (...args: unknown[]) => {
-    prepareClawRouterCredentialEntryTokens();
-    return originalCreate.apply(sessions, args);
-  };
   return client;
 }
 
-function prepareClawRouterCredentialEntryTokens(): void {
-  const tokenManager = getClawRouterGlobalTokenManager();
-  const accessToken = tokenManager.getAccessToken?.();
-  tokenManager.clearTokens?.();
-  if (accessToken) {
-    tokenManager.setTokens?.({ accessToken });
+function wrapCredentialEntryMethod(
+  resource: object | undefined,
+  methodName: string,
+): void {
+  if (!resource) {
+    return;
   }
-  resetClawRouterSdkClients();
+
+  const mutableResource = resource as Record<string, CredentialEntryMethod | undefined>;
+  const original = mutableResource[methodName];
+  if (typeof original !== 'function') {
+    return;
+  }
+
+  mutableResource[methodName] = async (...args: unknown[]) => {
+    prepareClawRouterCredentialEntryTokens();
+    return original.apply(resource, args);
+  };
 }
 
 function resolveAppbaseAppApiBaseUrl(): string {

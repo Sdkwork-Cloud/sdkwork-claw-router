@@ -312,6 +312,24 @@
         }
       },
       {
+        "sdkFamily": "sdkwork-drive-backend-sdk",
+        "packageName": "sdkwork-drive-backend-sdk-generated-typescript",
+        "surface": "backend-api",
+        "apiPrefix": "/backend/v3/api",
+        "sourceExport": "./sdk-clients",
+        "factory": "createSdkworkDriveBackendSdkClient",
+        "getter": "getSdkworkDriveBackendSdkClient",
+        "dependencyApiSurface": "sdkwork-drive-backend-sdk",
+        "runtimeIntegration": {
+          "mode": "dependency-backend-api",
+          "sameOriginAllowed": true,
+          "baseUrlEnv": "VITE_SDKWORK_DRIVE_BACKEND_API_BASE_URL",
+          "fallbackBaseUrlEnv": "VITE_CLAWROUTER_BACKEND_API_BASE_URL",
+          "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
+          "tokenManager": "claw-router-global"
+        }
+      },
+      {
         "sdkFamily": "sdkwork-generations-app-sdk",
         "packageName": "sdkwork-generations-app-sdk-generated-typescript",
         "surface": "app-api",

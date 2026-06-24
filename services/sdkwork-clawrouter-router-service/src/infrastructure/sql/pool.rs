@@ -141,7 +141,9 @@ pub fn redis_readiness_check(redis_url: String) -> sdkwork_claw_http::ReadinessC
     })
 }
 
-pub async fn sqlite_usage_settlement_schema_ready(pool: &sqlx::SqlitePool) -> Result<bool, sqlx::Error> {
+pub async fn sqlite_usage_settlement_schema_ready(
+    pool: &sqlx::SqlitePool,
+) -> Result<bool, sqlx::Error> {
     let table_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
@@ -149,9 +151,7 @@ pub async fn sqlite_usage_settlement_schema_ready(pool: &sqlx::SqlitePool) -> Re
         WHERE type = 'table'
           AND name IN (
               'ai_usage_fact',
-              'commerce_usage_settlement',
-              'commerce_account',
-              'commerce_account_ledger_entry'
+              'commerce_usage_settlement'
           )
         "#,
     )
@@ -166,7 +166,7 @@ pub async fn sqlite_usage_settlement_schema_ready(pool: &sqlx::SqlitePool) -> Re
     )
     .fetch_one(pool)
     .await?;
-    Ok(table_count == 4 && usage_column_count == 3)
+    Ok(table_count == 2 && usage_column_count == 3)
 }
 
 pub async fn postgres_usage_settlement_schema_ready(pool: &PgPool) -> Result<bool, sqlx::Error> {
@@ -177,9 +177,7 @@ pub async fn postgres_usage_settlement_schema_ready(pool: &PgPool) -> Result<boo
         WHERE table_schema = current_schema()
           AND table_name IN (
               'ai_usage_fact',
-              'commerce_usage_settlement',
-              'commerce_account',
-              'commerce_account_ledger_entry'
+              'commerce_usage_settlement'
           )
         "#,
     )
@@ -196,7 +194,7 @@ pub async fn postgres_usage_settlement_schema_ready(pool: &PgPool) -> Result<boo
     )
     .fetch_one(pool)
     .await?;
-    Ok(table_count == 4 && usage_column_count == 3)
+    Ok(table_count == 2 && usage_column_count == 3)
 }
 
 pub fn sqlite_usage_settlement_readiness_check(

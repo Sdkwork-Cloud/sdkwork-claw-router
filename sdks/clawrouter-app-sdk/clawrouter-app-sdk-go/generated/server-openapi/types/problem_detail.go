@@ -1,6 +1,6 @@
 package types
 
-// RFC 9457 problem details error response.
+
 type ProblemDetail struct {
 	Code string `json:"code"`
 	Detail string `json:"detail"`

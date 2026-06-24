@@ -310,7 +310,7 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
         self.assertEqual(
             {
                 "mode": "shared-gateway",
-                "gatewayApplication": "sdkwork-api-gateway",
+                "gatewayApplication": "sdkwork-api-cloud-gateway",
                 "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
                 "catalogPolicy": "no-dedicated-gateway-catalog",
             },
@@ -319,7 +319,7 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
         self.assertEqual("not-mounted", coverage["status"])
         self.assertGreater(len(coverage["evidence"]), 0)
         evidence_text = "\n".join(coverage["evidence"])
-        self.assertIn("sdkwork-api-gateway", evidence_text)
+        self.assertIn("sdkwork-api-cloud-gateway", evidence_text)
         self.assertIn("does not locally mount appbase backend IAM routes", evidence_text)
 
         admin_api_source = read_text(ADMIN_API_LIB)

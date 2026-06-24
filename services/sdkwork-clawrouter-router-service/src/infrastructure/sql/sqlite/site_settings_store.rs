@@ -1,15 +1,15 @@
-use sqlx::{Row, Sqlite, SqlitePool, Transaction};
+use sqlx::{Sqlite, SqlitePool, Transaction};
 
+use crate::domain::{DomainError, DomainResult};
 use crate::infrastructure::sql::iam_scope_resolver::{
     resolve_sqlite_iam_scope_domain, IamScopeResolveOptions,
 };
-use crate::infrastructure::sql::store_error::redacted_store_error;
-use crate::domain::{DomainError, DomainResult};
 use crate::infrastructure::sql::sql_hash::digest_hex;
 use crate::infrastructure::sql::sql_site_settings::{
     settings_from_payload, settings_payload, settings_snapshot_payload, CONFIG_SCOPE_SITE,
     CONFIG_TYPE_SITE_SETTINGS, SITE_SETTINGS_AUDIT_TARGET_TYPE, SITE_SETTINGS_SOURCE_TABLE,
 };
+use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::ports::{
     GetSiteSettingsQuery, GetSiteSettingsScopeQuery, SiteSettings, SiteSettingsFuture,
     SiteSettingsStore, UpdateSiteSettingsCommand,

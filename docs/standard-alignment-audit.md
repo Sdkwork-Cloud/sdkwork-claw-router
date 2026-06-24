@@ -55,8 +55,8 @@ python tools/sdkwork_standard_alignment_guardian.py --strict
 ### 现状
 
 - `Cargo.toml` 已声�?`sdkwork-database-config`、`sdkwork-database-sqlx`、`sdkwork-database-repository`
-- `sdkwork-clawrouter-gateway` 使用 `sdkwork_database_sqlx::DatabasePool`
-- `sdkwork-clawrouter-gateway` sqlite 建连已统一�?`connect_claw_sqlite_runtime_*` �?`PoolBuilder`
+- `sdkwork-clawrouter-cloud-gateway` 使用 `sdkwork_database_sqlx::DatabasePool`
+- `sdkwork-clawrouter-cloud-gateway` sqlite 建连已统一�?`connect_claw_sqlite_runtime_*` �?`PoolBuilder`
 - `sdkwork-clawrouter-router-service` �?`pool.rs` �?`PoolBuilder` 建连，并导出 `connect_standard_database_pool`（`RepositoryError`：- 存量 SQL store 仍以 sqlx 直写为主；新模块优先 `sdkwork-database-repository` 或独�?repository-sqlx crate
 
 ### 剩余工作
@@ -121,5 +121,5 @@ pnpm check:gateway-request-identity
 ## 9. Gateway Request Identity（已对齐）
 
 - 规范：`../sdkwork-specs/FRONTEND_SPEC.md` / `../sdkwork-specs/TEST_SPEC.md` — request id 由服务端生成，客户端不得注入 `x-request-id`
-- 实现：`services/sdkwork-clawrouter-gateway/src/request_identity.rs` + `invocation_http.rs`
+- 实现：`crates/sdkwork-clawrouter-cloud-gateway/src/request_identity.rs` + `invocation_http.rs`
 - 测试：`pnpm check:gateway-request-identity`（`edge_env` + `invocation_router` + source marker guard）

@@ -132,10 +132,10 @@ class SdkworkRouterApiPackageStandardTest(unittest.TestCase):
                 self.assertIn("Router", routes_source)
 
     def test_gateway_mounts_claw_apis_through_route_crates_not_service_crates(self) -> None:
-        gateway_manifest = (ROOT / "services" / "sdkwork-clawrouter-gateway" / "Cargo.toml").read_text(
+        gateway_manifest = (ROOT / "crates" / "sdkwork-clawrouter-cloud-gateway" / "Cargo.toml").read_text(
             encoding="utf-8",
         )
-        gateway_runtime = (ROOT / "services" / "sdkwork-clawrouter-gateway" / "src" / "runtime.rs").read_text(
+        gateway_runtime = (ROOT / "crates" / "sdkwork-clawrouter-cloud-gateway" / "src" / "runtime.rs").read_text(
             encoding="utf-8",
         )
 
@@ -148,15 +148,15 @@ class SdkworkRouterApiPackageStandardTest(unittest.TestCase):
         self.assertNotIn("sdkwork_clawrouter_app_api_server::", gateway_runtime)
         self.assertNotIn("sdkwork_clawrouter_admin_api_server::", gateway_runtime)
 
-    def test_gateway_embeds_claw_api_route_crates_inside_sdkwork_api_gateway(self) -> None:
-        gateway_runtime = (ROOT / "services" / "sdkwork-clawrouter-gateway" / "src" / "runtime.rs").read_text(
+    def test_gateway_embeds_claw_api_route_crates_inside_sdkwork_api_cloud_gateway(self) -> None:
+        gateway_runtime = (ROOT / "crates" / "sdkwork-clawrouter-cloud-gateway" / "src" / "runtime.rs").read_text(
             encoding="utf-8",
         )
-        edge_server = (ROOT / "services" / "sdkwork-clawrouter-gateway" / "src" / "edge_server.rs").read_text(
+        edge_server = (ROOT / "crates" / "sdkwork-clawrouter-cloud-gateway" / "src" / "edge_server.rs").read_text(
             encoding="utf-8",
         )
 
-        self.assertIn("build_sdkwork_api_gateway_router_with_embedded_routers", gateway_runtime)
+        self.assertIn("build_sdkwork_api_cloud_gateway_router_with_embedded_routers", gateway_runtime)
         self.assertIn('CLAW_ROUTER_APP_API_SERVICE_ID: &str = "sdkwork-clawrouter-app-api"', gateway_runtime)
         self.assertIn(
             'CLAW_ROUTER_BACKEND_API_SERVICE_ID: &str = "sdkwork-clawrouter-backend-api"',
@@ -167,7 +167,7 @@ class SdkworkRouterApiPackageStandardTest(unittest.TestCase):
         self.assertIn("sdkwork_router_backend_api::manifest::API_AUTHORITY", gateway_runtime)
         self.assertIn("sdkwork_router_app_api::paths::ROUTE_PREFIX", gateway_runtime)
         self.assertIn("sdkwork_router_backend_api::paths::ROUTE_PREFIX", gateway_runtime)
-        self.assertIn("sdkwork_api_gateway_surface_path", edge_server)
+        self.assertIn("sdkwork_api_cloud_gateway_surface_path", edge_server)
         self.assertIn("path_matches_prefix(path, APP_API_PREFIX)", edge_server)
         self.assertIn("path_matches_prefix(path, BACKEND_API_PREFIX)", edge_server)
 

@@ -150,9 +150,9 @@ Added `scripts/measure-claw-router-test-targets.mjs` and `pnpm test:rust:measure
 ```text
 sdkwork-clawrouter-admin-api-server:database_config_router
 sdkwork-clawrouter-app-api-server:database_config_router
-sdkwork-clawrouter-gateway:database_config_router
-sdkwork-clawrouter-gateway:provider_passthrough_route
-sdkwork-clawrouter-gateway:edge_server
+sdkwork-clawrouter-cloud-gateway:database_config_router
+sdkwork-clawrouter-cloud-gateway:provider_passthrough_route
+sdkwork-clawrouter-cloud-gateway:edge_server
 sdkwork-clawrouter-router-service:openai_compatible_http_relay
 sdkwork-claw-installer:installer_cli
 ```
@@ -162,9 +162,9 @@ sdkwork-claw-installer:installer_cli
 Measured selected targets with `target-rust-tests/measure`:
 
 ```text
-sdkwork-clawrouter-gateway edge_server: cold 142.2s, hot 0.7s
+sdkwork-clawrouter-cloud-gateway edge_server: cold 142.2s, hot 0.7s
 sdkwork-clawrouter-router-service sqlite_pricing_catalog_loader: cold 97.9s, hot 0.3s
-sdkwork-clawrouter-gateway provider_adapter_invocation: 4.0s
+sdkwork-clawrouter-cloud-gateway provider_adapter_invocation: 4.0s
 ```
 
 The evidence shows these targets are not slow at runtime; cold compilation dominates. Fixed sleeps in `edge_server.rs` are tied to streaming and timeout semantics and are not currently the bottleneck.

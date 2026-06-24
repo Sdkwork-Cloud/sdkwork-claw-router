@@ -57,9 +57,7 @@ client.SetHeader("X-Custom-Header", "value")
 
 - `client.Ai` - ai API
 - `client.Chat` - chat API
-- `client.Content` - content API
 - `client.Iam` - iam API
-- `client.Memory` - memory API
 - `client.Notification` - notification API
 - `client.Runtime` - runtime API
 - `client.System` - system API
@@ -92,17 +90,6 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### content
-
-```go
-// List forum overview
-result, err := client.Content.FeedsOverviewRetrieve()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
 ### iam
 
 ```go
@@ -114,30 +101,14 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### memory
-
-```go
-// List memory spaces
-params := map[string]interface{}{
-    "page": "page",
-    "page_size": "page_size",
-}
-result, err := client.Memory.SpacesList(params)
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
 ### notification
 
 ```go
-// List notifications
+// List portal notifications
 params := map[string]interface{}{
-    "app_id": "app_id",
-    "include_archived": false,
-    "page": 3,
-    "page_size": 4,
+    "include_archived": true,
+    "page": "page",
+    "page_size": "page_size",
 }
 result, err := client.Notification.NotificationsList(params)
 if err != nil {

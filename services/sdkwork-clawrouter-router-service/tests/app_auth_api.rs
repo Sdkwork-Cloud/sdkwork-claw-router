@@ -33,15 +33,7 @@ async fn app_auth_sessions_create_issues_dual_token_context_for_active_iam_user_
     seed_user(&pool, 30, "alice", "alice@example.com", "Alice Router", 1).await;
     let router = app_auth_router(pool.clone());
 
-    let response = router
-        .clone()
-        .oneshot(login_request("alice@example.com", "correct-password"))
-        .await
-        .unwrap();
-
-    assert_eq!(StatusCode::OK, response.status());
-    let payload = response_json(response).await;
-    assert_eq!("2000", payload["code"]);
+    let payload = login_tenant_session(&router, "alice@example.com", "correct-password").await;
     assert!(payload["data"]["authToken"].as_str().unwrap().len() > 32);
     assert!(payload["data"]["accessToken"].as_str().unwrap().len() > 32);
     assert_ne!(payload["data"]["authToken"], payload["data"]["accessToken"]);
@@ -57,7 +49,7 @@ async fn app_auth_sessions_create_issues_dual_token_context_for_active_iam_user_
     assert_eq!("active", payload["data"]["user"]["status"]);
     assert_eq!("sdkwork-clawrouter", payload["data"]["context"]["appId"]);
     assert_eq!("password", payload["data"]["context"]["authLevel"]);
-    assert_eq!("local", payload["data"]["context"]["deploymentMode"]);
+    assert_eq!("desktop", payload["data"]["context"]["deploymentMode"]);
     assert_eq!("dev", payload["data"]["context"]["environment"]);
     assert_eq!("100001", payload["data"]["context"]["tenantId"]);
     assert_eq!("0", payload["data"]["context"]["organizationId"]);
@@ -99,7 +91,7 @@ async fn app_auth_sessions_create_issues_dual_token_context_for_active_iam_user_
     assert_eq!("30", session.get::<String, _>("user_id"));
     assert_eq!("sdkwork-clawrouter", session.get::<String, _>("app_id"));
     assert_eq!("dev", session.get::<String, _>("environment"));
-    assert_eq!("local", session.get::<String, _>("deployment_mode"));
+    assert_eq!("desktop", session.get::<String, _>("deployment_mode"));
     assert_eq!("password", session.get::<String, _>("auth_level"));
     assert_eq!(64, session.get::<String, _>("auth_token_hash").len());
     assert_eq!(64, session.get::<String, _>("access_token_hash").len());
@@ -149,13 +141,8 @@ async fn app_auth_sessions_current_retrieve_returns_active_persisted_session() {
     seed_user(&pool, 30, "alice", "alice@example.com", "Alice Router", 1).await;
     let router = app_auth_router(pool);
 
-    let login_response = router
-        .clone()
-        .oneshot(login_request("alice@example.com", "correct-password"))
-        .await
-        .unwrap();
-    assert_eq!(StatusCode::OK, login_response.status());
-    let login_payload = response_json(login_response).await;
+    let login_payload =
+        login_tenant_session(&router, "alice@example.com", "correct-password").await;
     let auth_token = login_payload["data"]["authToken"].as_str().unwrap();
     let access_token = login_payload["data"]["accessToken"].as_str().unwrap();
     let session_id = login_payload["data"]["sessionId"].as_str().unwrap();
@@ -200,13 +187,8 @@ async fn app_auth_sessions_current_delete_revokes_active_session() {
     seed_user(&pool, 30, "alice", "alice@example.com", "Alice Router", 1).await;
     let router = app_auth_router(pool.clone());
 
-    let login_response = router
-        .clone()
-        .oneshot(login_request("alice@example.com", "correct-password"))
-        .await
-        .unwrap();
-    assert_eq!(StatusCode::OK, login_response.status());
-    let login_payload = response_json(login_response).await;
+    let login_payload =
+        login_tenant_session(&router, "alice@example.com", "correct-password").await;
     let auth_token = login_payload["data"]["authToken"].as_str().unwrap();
     let access_token = login_payload["data"]["accessToken"].as_str().unwrap();
     let session_id = login_payload["data"]["sessionId"].as_str().unwrap();
@@ -268,13 +250,8 @@ async fn app_auth_sessions_refresh_rotates_tokens_for_active_session() {
     seed_user(&pool, 30, "alice", "alice@example.com", "Alice Router", 1).await;
     let router = app_auth_router(pool.clone());
 
-    let login_response = router
-        .clone()
-        .oneshot(login_request("alice@example.com", "correct-password"))
-        .await
-        .unwrap();
-    assert_eq!(StatusCode::OK, login_response.status());
-    let login_payload = response_json(login_response).await;
+    let login_payload =
+        login_tenant_session(&router, "alice@example.com", "correct-password").await;
     let auth_token = login_payload["data"]["authToken"].as_str().unwrap();
     let access_token = login_payload["data"]["accessToken"].as_str().unwrap();
     let refresh_token = login_payload["data"]["refreshToken"].as_str().unwrap();
@@ -372,13 +349,8 @@ async fn app_auth_sessions_current_update_rotates_session_to_active_member_organ
     seed_second_organization_membership(&pool, 30).await;
     let router = app_auth_router(pool.clone());
 
-    let login_response = router
-        .clone()
-        .oneshot(login_request("alice@example.com", "correct-password"))
-        .await
-        .unwrap();
-    assert_eq!(StatusCode::OK, login_response.status());
-    let login_payload = response_json(login_response).await;
+    let login_payload =
+        login_tenant_session(&router, "alice@example.com", "correct-password").await;
     let auth_token = login_payload["data"]["authToken"].as_str().unwrap();
     let access_token = login_payload["data"]["accessToken"].as_str().unwrap();
     let session_id = login_payload["data"]["sessionId"].as_str().unwrap();
@@ -1510,6 +1482,59 @@ async fn seed_second_organization_membership(pool: &SqlitePool, user_id: i64) {
     .execute(pool)
     .await
     .unwrap();
+}
+
+async fn login_with_scope(
+    router: &axum::Router,
+    username: &str,
+    password: &str,
+    login_scope: &str,
+    organization_id: Option<&str>,
+) -> serde_json::Value {
+    let response = router
+        .clone()
+        .oneshot(login_request(username, password))
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, response.status());
+    let payload = response_json(response).await;
+    assert_eq!("2000", payload["code"]);
+
+    if payload["data"]["challengeType"].as_str() == Some("LOGIN_CONTEXT_SELECTION") {
+        let mut body = json!({
+            "continuationToken": payload["data"]["continuationToken"],
+            "loginScope": login_scope,
+        });
+        if let Some(organization_id) = organization_id {
+            body["organizationId"] = json!(organization_id);
+        }
+        let selection_response = router
+            .clone()
+            .oneshot(
+                Request::builder()
+                    .method("POST")
+                    .uri("/app/v3/api/auth/sessions/login_context_selection")
+                    .header("content-type", "application/json")
+                    .body(Body::from(body.to_string()))
+                    .unwrap(),
+            )
+            .await
+            .unwrap();
+        assert_eq!(StatusCode::OK, selection_response.status());
+        let selected = response_json(selection_response).await;
+        assert_eq!("2000", selected["code"]);
+        return selected;
+    }
+
+    payload
+}
+
+async fn login_tenant_session(
+    router: &axum::Router,
+    username: &str,
+    password: &str,
+) -> serde_json::Value {
+    login_with_scope(router, username, password, "TENANT", None).await
 }
 
 async fn response_json(response: axum::response::Response) -> serde_json::Value {

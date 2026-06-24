@@ -67,6 +67,7 @@ mod tests {
             .build();
         let context = WebRequestContext {
             request_id: ServerRequestId("test-request".to_owned()),
+            trace_id: None,
             api_surface: WebApiSurface::AppApi,
             auth_mode: WebAuthMode::DualToken,
             transport: WebTransportFacts {
@@ -104,6 +105,7 @@ mod tests {
             .build();
         let context = WebRequestContext {
             request_id: ServerRequestId("test-request".to_owned()),
+            trace_id: None,
             api_surface: WebApiSurface::AppApi,
             auth_mode: WebAuthMode::DualToken,
             transport: WebTransportFacts {
@@ -177,6 +179,7 @@ mod tests {
             .build();
         let context = WebRequestContext {
             request_id: ServerRequestId("test-request".to_owned()),
+            trace_id: None,
             api_surface: WebApiSurface::AppApi,
             auth_mode: WebAuthMode::DualToken,
             transport: WebTransportFacts {

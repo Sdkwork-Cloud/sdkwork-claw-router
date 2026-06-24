@@ -11,12 +11,6 @@ tables:
   - name: ai_agent
     lifecycle_status: active
     owner: claw-router-platform
-  - name: ai_agent_mcp_server
-    lifecycle_status: active
-    owner: claw-router-platform
-  - name: ai_agent_memory
-    lifecycle_status: active
-    owner: claw-router-platform
   - name: ai_agent_run
     lifecycle_status: active
     owner: claw-router-platform
@@ -24,12 +18,6 @@ tables:
     lifecycle_status: active
     owner: claw-router-platform
   - name: ai_agent_session
-    lifecycle_status: active
-    owner: claw-router-platform
-  - name: ai_agent_tool_binding
-    lifecycle_status: active
-    owner: claw-router-platform
-  - name: ai_agent_version
     lifecycle_status: active
     owner: claw-router-platform
   - name: ai_channel
@@ -113,15 +101,6 @@ tables:
   - name: ai_pricing_tier
     lifecycle_status: active
     owner: claw-router-platform
-  - name: ai_prompt
-    lifecycle_status: active
-    owner: claw-router-platform
-  - name: ai_prompt_binding
-    lifecycle_status: active
-    owner: claw-router-platform
-  - name: ai_prompt_version
-    lifecycle_status: active
-    owner: claw-router-platform
   - name: ai_provider
     lifecycle_status: active
     owner: claw-router-platform
@@ -182,12 +161,6 @@ tables:
   - name: commerce_service_provider_exposure_snapshot
     lifecycle_status: active
     owner: claw-router-platform
-  - name: commerce_settlement_export
-    lifecycle_status: active
-    owner: claw-router-platform
-  - name: commerce_usage_pricing_plan
-    lifecycle_status: active
-    owner: claw-router-platform
   - name: commerce_usage_service_provider_adjustment
     lifecycle_status: active
     owner: claw-router-platform
@@ -207,18 +180,6 @@ tables:
     lifecycle_status: active
     owner: claw-router-platform
   - name: commerce_usage_statement_item
-    lifecycle_status: active
-    owner: claw-router-platform
-  - name: content_comment
-    lifecycle_status: active
-    owner: claw-router-platform
-  - name: content_favorite
-    lifecycle_status: active
-    owner: claw-router-platform
-  - name: content_forum_post
-    lifecycle_status: active
-    owner: claw-router-platform
-  - name: content_reaction
     lifecycle_status: active
     owner: claw-router-platform
   - name: iam_gateway_access_policy
@@ -246,12 +207,6 @@ tables:
     lifecycle_status: active
     owner: claw-router-platform
   - name: integration_provider_health_snapshot
-    lifecycle_status: active
-    owner: claw-router-platform
-  - name: integration_provider_invoice_import
-    lifecycle_status: active
-    owner: claw-router-platform
-  - name: integration_provider_invoice_item
     lifecycle_status: active
     owner: claw-router-platform
   - name: integration_proxy
@@ -287,21 +242,6 @@ tables:
   - name: integration_webhook_endpoint
     lifecycle_status: active
     owner: claw-router-platform
-  - name: media_resource
-    lifecycle_status: active
-    owner: claw-router-platform
-  - name: object_blob
-    lifecycle_status: active
-    owner: claw-router-platform
-  - name: object_bucket
-    lifecycle_status: active
-    owner: claw-router-platform
-  - name: object_provider
-    lifecycle_status: active
-    owner: claw-router-platform
-  - name: object_tag
-    lifecycle_status: active
-    owner: claw-router-platform
   - name: ops_alert_event
     lifecycle_status: active
     owner: claw-router-platform
@@ -317,9 +257,6 @@ tables:
   - name: ops_gateway_instance
     lifecycle_status: active
     owner: claw-router-platform
-  - name: ops_inbox_event
-    lifecycle_status: active
-    owner: claw-router-platform
   - name: ops_job_execution
     lifecycle_status: active
     owner: claw-router-platform
@@ -332,57 +269,12 @@ tables:
   - name: ops_notification_message
     lifecycle_status: active
     owner: claw-router-platform
-  - name: ops_notification_preference
-    lifecycle_status: active
-    owner: claw-router-platform
   - name: ops_notification_recipient
-    lifecycle_status: active
-    owner: claw-router-platform
-  - name: ops_outbox_event
-    lifecycle_status: active
-    owner: claw-router-platform
-  - name: storage_default_bucket_policy
-    lifecycle_status: active
-    owner: claw-router-platform
-  - name: storage_gc_job
-    lifecycle_status: active
-    owner: claw-router-platform
-  - name: storage_quota_policy
-    lifecycle_status: active
-    owner: claw-router-platform
-  - name: storage_quota_reservation
-    lifecycle_status: active
-    owner: claw-router-platform
-  - name: storage_reconciliation_item
-    lifecycle_status: active
-    owner: claw-router-platform
-  - name: storage_reconciliation_run
-    lifecycle_status: active
-    owner: claw-router-platform
-  - name: storage_usage_counter
-    lifecycle_status: active
-    owner: claw-router-platform
-  - name: storage_usage_ledger
-    lifecycle_status: active
-    owner: claw-router-platform
-  - name: storage_usage_snapshot
     lifecycle_status: active
     owner: claw-router-platform
   - name: system_installation_state
     lifecycle_status: active
     owner: claw-router-platform
   - name: system_schema_migration
-    lifecycle_status: active
-    owner: claw-router-platform
-  - name: upload_completion_attempt
-    lifecycle_status: active
-    owner: claw-router-platform
-  - name: upload_part
-    lifecycle_status: active
-    owner: claw-router-platform
-  - name: upload_presign_grant
-    lifecycle_status: active
-    owner: claw-router-platform
-  - name: upload_session
     lifecycle_status: active
     owner: claw-router-platform

@@ -4,7 +4,7 @@
   "application": "sdkwork-clawrouter",
   "description": "Runtime dependency API surface declarations for dependency SDKs consumed by SDKWork Claw Router. sdkDependencies owns generation boundaries; this manifest owns runtime mount/base-url decisions.",
   "gatewayIntegration": {
-    "targetApplication": "sdkwork-api-gateway",
+    "targetApplication": "sdkwork-api-cloud-gateway",
     "targetMode": "shared-gateway",
     "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
     "authority": "cargo-workspace",
@@ -25,7 +25,7 @@
         "sameOriginAllowed": false,
         "targetRuntimeIntegration": {
           "mode": "shared-gateway",
-          "gatewayApplication": "sdkwork-api-gateway",
+          "gatewayApplication": "sdkwork-api-cloud-gateway",
           "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
           "catalogPolicy": "no-dedicated-gateway-catalog"
         },
@@ -34,7 +34,7 @@
         "mountCoverage": {
           "status": "not-mounted",
           "evidence": [
-            "Default Claw Router app runtime treats appbase app API as a dependency surface served by sdkwork-api-gateway through PORTAL_PUBLIC_SDK_BASE_URL.",
+            "Default Claw Router app runtime treats appbase app API as a dependency surface served by sdkwork-api-cloud-gateway through PORTAL_PUBLIC_SDK_BASE_URL.",
             "services/sdkwork-clawrouter-app-api-server/tests/contract_routes.rs verifies the default app router does not locally mount appbase IAM app routes."
           ]
         }
@@ -52,7 +52,7 @@
         "sameOriginAllowed": false,
         "targetRuntimeIntegration": {
           "mode": "shared-gateway",
-          "gatewayApplication": "sdkwork-api-gateway",
+          "gatewayApplication": "sdkwork-api-cloud-gateway",
           "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
           "catalogPolicy": "no-dedicated-gateway-catalog"
         },
@@ -145,7 +145,7 @@
         "sameOriginAllowed": false,
         "targetRuntimeIntegration": {
           "mode": "shared-gateway",
-          "gatewayApplication": "sdkwork-api-gateway",
+          "gatewayApplication": "sdkwork-api-cloud-gateway",
           "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
           "catalogPolicy": "no-dedicated-gateway-catalog"
         },
@@ -154,7 +154,7 @@
         "mountCoverage": {
           "status": "not-mounted",
           "evidence": [
-            "Default Claw Router backend runtime treats appbase backend IAM API as a dependency surface served by sdkwork-api-gateway through PORTAL_PUBLIC_SDK_BASE_URL.",
+            "Default Claw Router backend runtime treats appbase backend IAM API as a dependency surface served by sdkwork-api-cloud-gateway through PORTAL_PUBLIC_SDK_BASE_URL.",
             "services/sdkwork-clawrouter-admin-api-server/tests/contract_routes.rs verifies the default admin router does not locally mount appbase backend IAM routes."
           ]
         }
@@ -172,7 +172,7 @@
         "sameOriginAllowed": false,
         "targetRuntimeIntegration": {
           "mode": "shared-gateway",
-          "gatewayApplication": "sdkwork-api-gateway",
+          "gatewayApplication": "sdkwork-api-cloud-gateway",
           "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
           "catalogPolicy": "no-dedicated-gateway-catalog"
         },
@@ -203,7 +203,7 @@
         "sameOriginAllowed": false,
         "targetRuntimeIntegration": {
           "mode": "shared-gateway",
-          "gatewayApplication": "sdkwork-api-gateway",
+          "gatewayApplication": "sdkwork-api-cloud-gateway",
           "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
           "catalogPolicy": "no-dedicated-gateway-catalog"
         },
@@ -230,7 +230,7 @@
         "sameOriginAllowed": false,
         "targetRuntimeIntegration": {
           "mode": "shared-gateway",
-          "gatewayApplication": "sdkwork-api-gateway",
+          "gatewayApplication": "sdkwork-api-cloud-gateway",
           "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
           "catalogPolicy": "no-dedicated-gateway-catalog"
         },
@@ -256,7 +256,7 @@
         "sameOriginAllowed": false,
         "targetRuntimeIntegration": {
           "mode": "shared-gateway",
-          "gatewayApplication": "sdkwork-api-gateway",
+          "gatewayApplication": "sdkwork-api-cloud-gateway",
           "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
           "catalogPolicy": "no-dedicated-gateway-catalog"
         },
@@ -311,7 +311,7 @@
         "sameOriginAllowed": false,
         "targetRuntimeIntegration": {
           "mode": "shared-gateway",
-          "gatewayApplication": "sdkwork-api-gateway",
+          "gatewayApplication": "sdkwork-api-cloud-gateway",
           "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
           "catalogPolicy": "no-dedicated-gateway-catalog"
         },
@@ -524,6 +524,52 @@
       ]
     },
     {
+      "workspace": "sdkwork-drive-backend-sdk",
+      "consumerSdkFamily": "clawrouter-backend-sdk",
+      "role": "drive-backend-management-capability",
+      "dependencyMode": "consumer-sdk",
+      "surface": "backend-api",
+      "apiPrefix": "/backend/v3/api",
+      "runtimeIntegration": {
+        "mode": "external-service",
+        "sameOriginAllowed": false,
+        "targetRuntimeIntegration": {
+          "mode": "shared-gateway",
+          "gatewayApplication": "sdkwork-api-cloud-gateway",
+          "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
+          "catalogPolicy": "no-dedicated-gateway-catalog"
+        },
+        "requiredBaseUrlEnv": "VITE_SDKWORK_DRIVE_BACKEND_API_BASE_URL",
+        "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
+        "mountCoverage": {
+          "status": "not-mounted",
+          "evidence": [
+            "Drive storage, maintenance, and provider administration APIs are owned by sdkwork-drive-backend-sdk.",
+            "Claw Router admin runtime no longer mounts /backend/v3/api/storage/* locally; storageService consumes getSdkworkDriveBackendSdkClient().",
+            "services/sdkwork-clawrouter-admin-api-server/tests/storage_route.rs verifies legacy storage routes return 404 on the default admin router."
+          ]
+        }
+      },
+      "dependencyOwnedOperations": [
+        {
+          "method": "GET",
+          "path": "/backend/v3/api/drive/storage_providers",
+          "operationId": "storageProviders.list",
+          "owner": "sdkwork-drive",
+          "sdkClient": "getSdkworkDriveBackendSdkClient().drive.storageProviders.list",
+          "consumerRequired": true
+        },
+        {
+          "method": "GET",
+          "path": "/backend/v3/api/drive/maintenance/jobs",
+          "operationId": "maintenance.jobs.list",
+          "owner": "sdkwork-drive",
+          "sdkClient": "getSdkworkDriveBackendSdkClient().drive.maintenance.jobs.list",
+          "consumerRequired": true
+        }
+      ]
+    },
+    {
       "workspace": "sdkwork-documents-app-sdk",
       "consumerSdkFamily": "clawrouter-app-sdk",
       "role": "documents-reference-capability",
@@ -535,7 +581,7 @@
         "sameOriginAllowed": false,
         "targetRuntimeIntegration": {
           "mode": "shared-gateway",
-          "gatewayApplication": "sdkwork-api-gateway",
+          "gatewayApplication": "sdkwork-api-cloud-gateway",
           "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
           "catalogPolicy": "no-dedicated-gateway-catalog"
         },

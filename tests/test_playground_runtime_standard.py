@@ -328,7 +328,7 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         self.assertIn('"@sdkwork/generations-pc-workspace": "workspace:*"', portal_package_source)
         self.assertIn('"@sdkwork/generations-pc-workspace": "workspace:*"', playground_package_source)
 
-    def test_playground_route_contract_lists_ai_agent_memory_once(self) -> None:
+    def test_playground_route_contract_excludes_retired_zombie_tables(self) -> None:
         contract_path = ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
         contract = yaml.safe_load(contract_path.read_text(encoding="utf-8"))
 
@@ -340,8 +340,14 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
 
         self.assertEqual(1, len(playground_routes))
         required_tables = playground_routes[0].get("required_tables", [])
-        self.assertEqual(1, required_tables.count("ai_agent_memory"))
-        self.assertIn("ai_agent_memory", required_tables)
+        retired_tables = {
+            "ai_agent_version",
+            "ai_agent_memory",
+            "ai_agent_tool_binding",
+            "ai_agent_mcp_server",
+        }
+        for table_name in retired_tables:
+            self.assertNotIn(table_name, required_tables)
 
         checked_sources = [
             PLAYGROUND_ROOT / "components" / "ChatHistoryItem.tsx",

@@ -95,12 +95,9 @@ async fn database_config_router_mounts_sdk_reference_generation_route() {
 
     let issued_at = 1_700_000_000_i64;
     let expires_at = issued_at + 3_600;
-    let (authorization, access_token) = app_session_dual_token_headers(
-        default_trusted_request_subject(),
-        issued_at,
-        expires_at,
-    )
-    .unwrap();
+    let (authorization, access_token) =
+        app_session_dual_token_headers(default_trusted_request_subject(), issued_at, expires_at)
+            .unwrap();
 
     let response = router
         .oneshot(

@@ -1,5 +1,6 @@
-const POSTGRES_ADMIN_ANALYTICS_READ_STORE: &str =
-    include_str!("../../../crates/sdkwork-clawrouter-admin-analytics-repository-sqlx/src/postgres.rs");
+const POSTGRES_ADMIN_ANALYTICS_READ_STORE: &str = include_str!(
+    "../../../crates/sdkwork-clawrouter-admin-analytics-repository-sqlx/src/postgres.rs"
+);
 
 fn compact_sql(value: &str) -> String {
     value.split_whitespace().collect::<Vec<_>>().join(" ")

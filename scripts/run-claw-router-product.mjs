@@ -343,8 +343,8 @@ function printHelp() {
 Start sdkwork-clawrouter through a root pnpm-compatible entrypoint.
 
 Modes:
-  client   Start the sdkwork-api-gateway-backed portal client workspace
-  desktop  Start the sdkwork-api-gateway-backed desktop client workspace (default)
+  client   Start the sdkwork-api-cloud-gateway-backed portal client workspace
+  desktop  Start the sdkwork-api-cloud-gateway-backed desktop client workspace (default)
   service  Start the full install-checked workspace with service-mode environment flags
   server   Start the all-in-one Rust edge runtime plus the portal dev server
   plan     Print the resolved server development URLs and command plan

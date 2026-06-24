@@ -8,9 +8,7 @@ import com.sdkwork.clawrouter.app.http.HttpClient
 class Api(private val client: HttpClient) {
     val ai: AiApi = AiApi(client)
     val chat: ChatApi = ChatApi(client)
-    val content: ContentApi = ContentApi(client)
     val iam: IamApi = IamApi(client)
-    val memory: MemoryApi = MemoryApi(client)
     val notification: NotificationApi = NotificationApi(client)
     val runtime: RuntimeApi = RuntimeApi(client)
     val system: SystemApi = SystemApi(client)

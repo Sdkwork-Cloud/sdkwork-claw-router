@@ -54,8 +54,6 @@ class FrontendContractGuardian:
             "storage_default_bucket_policy",
             "storage_gc_job",
             "storage_quota_policy",
-            "storage_quota_reservation",
-            "storage_reconciliation_item",
             "storage_reconciliation_run",
             "storage_usage_counter",
             "storage_usage_ledger",
@@ -80,10 +78,7 @@ class FrontendContractGuardian:
             "iam_oauth_surface",
             "iam_oauth_tenant_binding",
             "iam_oauth_webhook_config",
-            "upload_completion_attempt",
             "upload_part",
-            "upload_presign_grant",
-            "upload_session",
         }
     )
     ROUTE_PATTERN = re.compile(r"<Route\b([^>]*)>")
@@ -281,7 +276,17 @@ class FrontendContractGuardian:
         },
         "models": {
             "getModelsBackendSdkClient",
+            "getModelsAppSdkClient",
             "@sdkwork/models-backend-sdk",
+            "@sdkwork/models-app-sdk",
+        },
+        "agent": {
+            "getSdkworkAgentBackendSdkClient",
+            "@sdkwork/agent-backend-sdk",
+        },
+        "drive": {
+            "getSdkworkDriveAppSdkClient",
+            "@sdkwork/drive-app-sdk",
         },
     }
     BUSINESS_API_PREFIXES = ("/app/v3/api", "/backend/v3/api")
@@ -1439,6 +1444,9 @@ class FrontendContractGuardian:
             return messages
 
         expected_client = "getClawRouterAppSdkClient" if api_surface == "app" else "getClawRouterBackendSdkClient"
+        package = entry.get("package")
+        if package in {"@sdkwork/clawrouter-pc-models", "@sdkwork/clawrouter-pc-rankings"} and api_surface == "app":
+            expected_client = "getModelsAppSdkClient"
         if not any(
             self._operation_uses_allowed_sdk_client_boundary(operation, expected_client)
             for operation in matching_operations
@@ -1556,6 +1564,10 @@ class FrontendContractGuardian:
             return "notification"
         if normalized in {"models", "model", "modelcatalog", "modelscatalog"}:
             return "models"
+        if normalized in {"agent", "agents"}:
+            return "agent"
+        if normalized in {"drive"}:
+            return "drive"
         return ""
 
     def _resolve_relative_import(self, source_path: Path, import_spec: str) -> Path | None:

@@ -472,9 +472,12 @@ fn assert_model_ranking_response_contains_catalog(
 fn app_session_request(method: &str, path: &str, body: Body) -> Request<Body> {
     let issued_at = current_unix_seconds();
     let expires_at = issued_at + 3600;
-    let (authorization, access_token) =
-        app_session_dual_token_headers(trusted_request_subject(100_001, 0, 1), issued_at, expires_at)
-            .unwrap();
+    let (authorization, access_token) = app_session_dual_token_headers(
+        trusted_request_subject(100_001, 0, 1),
+        issued_at,
+        expires_at,
+    )
+    .unwrap();
     Request::builder()
         .method(method)
         .uri(path)

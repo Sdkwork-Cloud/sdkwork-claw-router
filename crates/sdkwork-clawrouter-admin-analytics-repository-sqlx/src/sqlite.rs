@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 use sqlx::{Row, SqlitePool};
 
-use crate::error::{store_error, RepositoryError, RepositoryResult};
+use crate::error::{store_error, RepositoryError};
 use crate::snapshot::{
     color_for_index, concentration_severity, format_percent, modality_label, safe_percent,
     safe_ratio, scope_filter, vendor_from_catalog_key,

@@ -831,20 +831,6 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 r"\burl\s*:\s*string\s*\|\s*undefined\b",
                 r"\breadAssetThumbnail\s*\([^)]*,\s*url\s*\)",
             ],
-            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-forum" / "src" / "forumCatalog.ts": [
-                r"\bavatar\s*:\s*string\b",
-            ],
-            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-forum" / "src" / "forumService.ts": [
-                r"\bimages\??\s*:\s*string\[\]",
-                r"\bavatar\s*:\s*readString\s*\(\s*record\s*,\s*'avatar'\s*\)",
-            ],
-            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-forum" / "src" / "components" / "ForumView.tsx": [
-                r"\bsrc=\{post\.author\.avatar\}",
-            ],
-            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-forum" / "src" / "components" / "ForumPostView.tsx": [
-                r"\bsrc=\{comment\.author\.avatar\}",
-                r"\bsrc=\{post\.author\.avatar\}",
-            ],
             PORTAL_PACKAGES / "sdkwork-clawrouter-pc-vip" / "src" / "vipService.ts": [
                 r"\bicon\??\s*:\s*string\b",
             ],
@@ -1399,29 +1385,6 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             [],
             violations,
             "Appbase native user center public avatar/logo payloads and local schema must preserve media resource objects instead of URL strings.",
-        )
-
-    def test_forum_backend_persistence_uses_canonical_media_resource_columns(self) -> None:
-        forum_sources = [
-            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "sqlite" / "forum_store.rs",
-            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "postgres" / "forum_store.rs",
-            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "forum_seed.rs",
-        ]
-        violations: list[str] = []
-
-        for source in forum_sources:
-            relative = rel(source)
-            content = source.read_text(encoding="utf-8", errors="ignore")
-            if "cover_resources" not in content:
-                violations.append(f"{relative}: missing canonical content_forum_post.cover_resources usage")
-            for line_number, line in enumerate(content.splitlines(), start=1):
-                if "cover_images" in line:
-                    violations.append(f"{relative}:{line_number}: {line.strip()}")
-
-        self.assertEqual(
-            [],
-            violations,
-            "Forum persistence must store feed cover media as MediaResource objects in content_forum_post.cover_resources, not legacy cover_images.",
         )
 
     def test_backend_site_settings_media_fields_preserve_media_resource_objects(self) -> None:

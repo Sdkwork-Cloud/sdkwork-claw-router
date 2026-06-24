@@ -29,7 +29,6 @@ pub struct RuntimeTomlConfig {
     pub provider_secret_map: ProviderSecretMapSectionConfig,
     pub usage_settlement: UsageSettlementSectionConfig,
     pub model_ranking: ModelRankingSectionConfig,
-    pub forum: ForumSectionConfig,
     pub install: InstallSectionConfig,
     pub bootstrap_admin: BootstrapAdminSectionConfig,
 }
@@ -139,7 +138,6 @@ pub struct PathsSectionConfig {
 pub struct RequestLimitsSectionConfig {
     pub admin_app_json_body_max_bytes: Option<u64>,
     pub admin_skill_json_body_max_bytes: Option<u64>,
-    pub forum_json_body_max_bytes: Option<u64>,
     pub payment_callback_body_max_bytes: Option<u64>,
 }
 
@@ -284,13 +282,6 @@ pub struct ModelRankingSectionConfig {
     pub retry_backoff_millis: Option<u64>,
     pub run_on_startup: Option<bool>,
     pub alert_after_consecutive_failures: Option<i64>,
-}
-
-#[derive(Debug, Clone, Default, PartialEq, Eq, Deserialize)]
-#[serde(default)]
-pub struct ForumSectionConfig {
-    pub community_links_json: Option<String>,
-    pub community_links_json_file: Option<String>,
 }
 
 #[derive(Debug, Clone, Default, PartialEq, Eq, Deserialize)]

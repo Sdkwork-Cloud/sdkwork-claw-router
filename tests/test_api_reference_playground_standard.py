@@ -147,7 +147,8 @@ class ApiReferencePlaygroundStandardTest(unittest.TestCase):
         api_reference_source = (API_REFERENCE_ROOT / "pages" / "ApiReference.tsx").read_text(encoding="utf-8")
         portal_css = (ROOT / "apps" / "sdkwork-clawrouter-pc" / "src" / "index.css").read_text(encoding="utf-8")
 
-        self.assertIn("md:flex sticky top-[110px]", api_reference_source)
+        self.assertIn("documentsShellLayout.stickySidebarBelowSubHeader", api_reference_source)
+        self.assertIn("documentsShellLayout.stickySubHeader", api_reference_source)
         self.assertIn("w-[360px] max-w-[360px] basis-[360px]", api_reference_source)
         self.assertIn("flex-1 overflow-y-auto custom-scrollbar p-4", api_reference_source)
         self.assertNotIn("useReferenceSidebarResize", api_reference_source)

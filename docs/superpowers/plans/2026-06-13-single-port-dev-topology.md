@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Make single-port integrated startup the default development topology for `sdkwork-clawrouter` and sibling `sdkwork-api-gateway`.
+**Goal:** Make single-port integrated startup the default development topology for `sdkwork-clawrouter` and sibling `sdkwork-api-cloud-gateway`.
 
 **Architecture:** Keep low-level split capability only behind tests or explicit internal validation, while changing public `dev` entrypoints, templates, and docs to single-port-first behavior. Product developers should see one entry port by default.
 
@@ -45,14 +45,14 @@
 
 - [ ] **Step 4: Run targeted text searches to confirm default docs no longer teach multi-port dev as the standard path**
 
-### Task 3: Change sdkwork-api-gateway default dev to single-port integrated mode
+### Task 3: Change sdkwork-api-cloud-gateway default dev to single-port integrated mode
 
 **Files:**
-- Modify: `../sdkwork-api-gateway/package.json`
-- Modify: `../sdkwork-api-gateway/configs/sdkwork-api-gateway.development.toml.example`
-- Modify: `../sdkwork-api-gateway/README.md`
-- Modify: `../sdkwork-api-gateway/crates/sdkwork-api-gateway-api-server/README.md`
-- Test: `../sdkwork-api-gateway/crates/sdkwork-api-gateway-config/tests/config_tests.rs` if required
+- Modify: `../sdkwork-api-cloud-gateway/package.json`
+- Modify: `../sdkwork-api-cloud-gateway/configs/sdkwork-api-cloud-gateway.development.toml.example`
+- Modify: `../sdkwork-api-cloud-gateway/README.md`
+- Modify: `../sdkwork-api-cloud-gateway/crates/sdkwork-api-cloud-gateway-api-server/README.md`
+- Test: `../sdkwork-api-cloud-gateway/crates/sdkwork-api-cloud-gateway-config/tests/config_tests.rs` if required
 
 - [ ] **Step 1: Write or update a failing config/runtime expectation test if the repo already checks default config semantics**
 
@@ -73,7 +73,7 @@
 
 - [ ] **Step 2: Confirm the rendered default Claw Router dev topology still exposes one public entry port**
 
-- [ ] **Step 3: Run the narrowest `sdkwork-api-gateway` dev/config verification command used by its repo**
+- [ ] **Step 3: Run the narrowest `sdkwork-api-cloud-gateway` dev/config verification command used by its repo**
 
 - [ ] **Step 4: Confirm default gateway dev no longer depends on the large split upstream port list**
 

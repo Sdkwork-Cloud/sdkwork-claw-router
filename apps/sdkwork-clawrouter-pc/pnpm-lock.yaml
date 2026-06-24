@@ -96,6 +96,9 @@ importers:
       '@sdkwork/clawrouter-open-sdk':
         specifier: workspace:*
         version: link:../../sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript/generated/server-openapi
+      '@sdkwork/clawrouter-pc-admin-agents':
+        specifier: workspace:*
+        version: link:packages/sdkwork-clawrouter-pc-admin-agents
       '@sdkwork/clawrouter-pc-admin-analytics':
         specifier: workspace:*
         version: link:packages/sdkwork-clawrouter-pc-admin-analytics
@@ -117,6 +120,9 @@ importers:
       '@sdkwork/clawrouter-pc-admin-dashboard':
         specifier: workspace:*
         version: link:packages/sdkwork-clawrouter-pc-admin-dashboard
+      '@sdkwork/clawrouter-pc-admin-file-platform':
+        specifier: workspace:*
+        version: link:packages/sdkwork-clawrouter-pc-admin-file-platform
       '@sdkwork/clawrouter-pc-admin-finance':
         specifier: workspace:*
         version: link:packages/sdkwork-clawrouter-pc-admin-finance
@@ -180,6 +186,9 @@ importers:
       '@sdkwork/clawrouter-pc-admin-site':
         specifier: workspace:*
         version: link:packages/sdkwork-clawrouter-pc-admin-site
+      '@sdkwork/clawrouter-pc-admin-skill':
+        specifier: workspace:*
+        version: link:packages/sdkwork-clawrouter-pc-admin-skill
       '@sdkwork/clawrouter-pc-admin-user':
         specifier: workspace:*
         version: link:packages/sdkwork-clawrouter-pc-admin-user
@@ -1117,6 +1126,22 @@ importers:
         specifier: ^5.8.2
         version: 5.8.3
 
+  ../../../sdkwork-drive/sdks/sdkwork-drive-backend-sdk/sdkwork-drive-backend-sdk-typescript/generated/server-openapi:
+    dependencies:
+      '@sdkwork/sdk-common':
+        specifier: ^1.0.2
+        version: 1.0.3
+    devDependencies:
+      '@types/node':
+        specifier: ^20.0.0
+        version: 20.19.39
+      rollup:
+        specifier: ^4.0.0
+        version: 4.60.1
+      typescript:
+        specifier: ^5.3.0
+        version: 5.8.3
+
   ../../../sdkwork-generations/apps/sdkwork-generations-pc/packages/sdkwork-generations-pc-workspace:
     dependencies:
       '@sdkwork/ui-pc-react':
@@ -1216,9 +1241,6 @@ importers:
 
   ../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog:
     dependencies:
-      '@sdkwork/clawrouter-pc-commons':
-        specifier: workspace:*
-        version: link:../../../../../sdkwork-claw-router/apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons
       '@sdkwork/models-backend-sdk':
         specifier: workspace:*
         version: link:../../../../sdks/sdkwork-models-backend-sdk/sdkwork-models-backend-sdk-typescript
@@ -1657,6 +1679,15 @@ importers:
         specifier: 5.8.3
         version: 5.8.3
 
+  packages/sdkwork-clawrouter-pc-admin-agents:
+    dependencies:
+      '@sdkwork/agent-backend-sdk':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-kernel/sdks/sdkwork-agent-backend-sdk/sdkwork-agent-backend-sdk-typescript/generated/server-openapi
+      '@sdkwork/clawrouter-pc-commons':
+        specifier: workspace:*
+        version: link:../sdkwork-clawrouter-pc-commons
+
   packages/sdkwork-clawrouter-pc-admin-analytics:
     dependencies:
       '@sdkwork/clawrouter-pc-commons':
@@ -1702,6 +1733,24 @@ importers:
       '@sdkwork/clawrouter-pc-commons':
         specifier: workspace:*
         version: link:../sdkwork-clawrouter-pc-commons
+
+  packages/sdkwork-clawrouter-pc-admin-file-platform:
+    dependencies:
+      '@sdkwork/clawrouter-pc-commons':
+        specifier: workspace:*
+        version: link:../sdkwork-clawrouter-pc-commons
+      '@sdkwork/drive-app-sdk':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-drive/sdks/sdkwork-drive-app-sdk/sdkwork-drive-app-sdk-typescript
+      '@sdkwork/file-platform-pc-react':
+        specifier: workspace:*
+        version: link:../../../../packages/pc-react/file/sdkwork-file-platform-pc-react
+      '@sdkwork/file-sdk-ports':
+        specifier: workspace:*
+        version: link:../../../../packages/common/file/sdkwork-file-sdk-ports
+      sdkwork-drive-backend-sdk-generated-typescript:
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-drive/sdks/sdkwork-drive-backend-sdk/sdkwork-drive-backend-sdk-typescript/generated/server-openapi
 
   packages/sdkwork-clawrouter-pc-admin-finance:
     dependencies:
@@ -1844,6 +1893,15 @@ importers:
         specifier: workspace:*
         version: link:../sdkwork-clawrouter-pc-commons
 
+  packages/sdkwork-clawrouter-pc-admin-skill:
+    dependencies:
+      '@sdkwork/agent-backend-sdk':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-kernel/sdks/sdkwork-agent-backend-sdk/sdkwork-agent-backend-sdk-typescript/generated/server-openapi
+      '@sdkwork/clawrouter-pc-commons':
+        specifier: workspace:*
+        version: link:../sdkwork-clawrouter-pc-commons
+
   packages/sdkwork-clawrouter-pc-admin-user:
     dependencies:
       '@sdkwork/clawrouter-pc-commons':
@@ -1924,6 +1982,9 @@ importers:
       sdkwork-commerce-backend-sdk-generated-typescript:
         specifier: workspace:*
         version: link:../../../../../sdkwork-commerce/sdks/sdkwork-commerce-backend-sdk/sdkwork-commerce-backend-sdk-typescript/generated/server-openapi
+      sdkwork-drive-backend-sdk-generated-typescript:
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-drive/sdks/sdkwork-drive-backend-sdk/sdkwork-drive-backend-sdk-typescript/generated/server-openapi
       sdkwork-generations-app-sdk-generated-typescript:
         specifier: workspace:*
         version: link:../../../../../sdkwork-generations/sdks/sdkwork-generations-app-sdk/sdkwork-generations-app-sdk-typescript/generated/server-openapi

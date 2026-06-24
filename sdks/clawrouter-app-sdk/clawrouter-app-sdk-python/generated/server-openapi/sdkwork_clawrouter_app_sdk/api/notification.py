@@ -182,6 +182,59 @@ def encode_query_value(value: str, allow_reserved: bool) -> str:
 
     return quote(value, safe=':/?#[]@!$&\'()*+,;=' if allow_reserved else '')
 
+def build_request_headers(headers: Dict[str, Dict[str, Any]], cookies: Optional[Dict[str, Dict[str, Any]]] = None) -> Optional[Dict[str, str]]:
+    request_headers: Dict[str, str] = {}
+    for name, parameter in headers.items():
+        serialized = serialize_parameter_value(parameter)
+        if serialized is not None:
+            request_headers[name] = serialized
+
+    cookie_header = build_cookie_header(cookies or {})
+    if cookie_header:
+        request_headers['Cookie'] = (
+            f"{request_headers['Cookie']}; {cookie_header}"
+            if 'Cookie' in request_headers
+            else cookie_header
+        )
+
+    return request_headers or None
+
+
+def build_cookie_header(cookies: Dict[str, Dict[str, Any]]) -> Optional[str]:
+    from urllib.parse import quote
+
+    pairs: List[str] = []
+    for name, parameter in cookies.items():
+        serialized = serialize_parameter_value(parameter)
+        if serialized is not None:
+            pairs.append(f"{quote(str(name), safe='')}={quote(serialized, safe='')}")
+    return '; '.join(pairs) if pairs else None
+
+
+def serialize_parameter_value(parameter: Optional[Dict[str, Any]]) -> Optional[str]:
+    value = None if parameter is None else parameter.get('value')
+    if value is None:
+        return None
+    if parameter and parameter.get('content_type'):
+        import json
+
+        return json.dumps(value, separators=(',', ':'))
+    if isinstance(value, (list, tuple)):
+        return ','.join(serialize_header_primitive(item) for item in value if item is not None)
+    if isinstance(value, dict):
+        return serialize_header_object(value, bool(parameter and parameter.get('explode')))
+    return serialize_header_primitive(value)
+
+
+def serialize_header_object(value: Dict[str, Any], explode: bool) -> str:
+    entries = [(key, entry_value) for key, entry_value in value.items() if entry_value is not None]
+    if explode:
+        return ','.join(f"{key}={serialize_header_primitive(entry_value)}" for key, entry_value in entries)
+    return ','.join(item for key, entry_value in entries for item in (str(key), serialize_header_primitive(entry_value)))
+
+
+def serialize_header_primitive(value: Any) -> str:
+    return str(value)
 
 
 class NotificationApi:
@@ -193,10 +246,9 @@ class NotificationApi:
         self.popup_seen = NotificationPopupSeenApi(client)
 
 
-    def list_notifications(self, app_id: Optional[str] = None, include_archived: Optional[bool] = None, page: Optional[int] = None, page_size: Optional[int] = None) -> NotificationsListResult:
-        """List notifications"""
+    def list_notifications(self, include_archived: Optional[bool] = None, page: Optional[str] = None, page_size: Optional[str] = None) -> NotificationsListResult:
+        """List portal notifications"""
         query = build_query_string([
-            {'name': 'app_id', 'value': app_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
             {'name': 'include_archived', 'value': include_archived, 'style': 'form', 'explode': True, 'allow_reserved': False},
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
             {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -210,12 +262,15 @@ class NotificationAcknowledgeApi:
         self._client = client
 
 
-    def create(self, notification_id: str, app_id: Optional[str] = None) -> NotificationsAcknowledgeCreateResult:
-        """Acknowledge"""
-        query = build_query_string([
-            {'name': 'app_id', 'value': app_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
-        ])
-        return self._client.post(_append_query_string(f"/app/v3/api/notification/notifications/{serialize_path_parameter(notification_id, {'name': 'notificationId', 'style': 'simple', 'explode': False})}/acknowledge", query))
+    def create(self, notification_id: str, idempotency_key: str) -> NotificationsAcknowledgeCreateResult:
+        """Acknowledge portal notification"""
+        request_headers = build_request_headers(
+            {
+                'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.post(f"/app/v3/api/notification/notifications/{serialize_path_parameter(notification_id, {'name': 'notificationId', 'style': 'simple', 'explode': False})}/acknowledge", headers=request_headers)
 
 class NotificationPopupSeenApi:
     """notification notifications.popup_seen API client."""
@@ -224,9 +279,12 @@ class NotificationPopupSeenApi:
         self._client = client
 
 
-    def create(self, notification_id: str, app_id: Optional[str] = None) -> NotificationsPopupSeenCreateResult:
-        """Mark popup seen"""
-        query = build_query_string([
-            {'name': 'app_id', 'value': app_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
-        ])
-        return self._client.post(_append_query_string(f"/app/v3/api/notification/notifications/{serialize_path_parameter(notification_id, {'name': 'notificationId', 'style': 'simple', 'explode': False})}/popup_seen", query))
+    def create(self, notification_id: str, idempotency_key: str) -> NotificationsPopupSeenCreateResult:
+        """Mark portal notification popup seen"""
+        request_headers = build_request_headers(
+            {
+                'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.post(f"/app/v3/api/notification/notifications/{serialize_path_parameter(notification_id, {'name': 'notificationId', 'style': 'simple', 'explode': False})}/popup_seen", headers=request_headers)

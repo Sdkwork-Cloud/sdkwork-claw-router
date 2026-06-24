@@ -332,7 +332,7 @@ class SdkworkStandardAlignmentGuardian:
                 )
             )
 
-        gateway_runtime = self.root / "services" / "sdkwork-clawrouter-gateway" / "src" / "runtime.rs"
+        gateway_runtime = self.root / "crates" / "sdkwork-clawrouter-cloud-gateway" / "src" / "runtime.rs"
         gateway_text = (
             gateway_runtime.read_text(encoding="utf-8") if gateway_runtime.exists() else ""
         )
@@ -549,7 +549,7 @@ class SdkworkStandardAlignmentGuardian:
 
     def _check_database_framework_integration(self) -> list[AlignmentCheck]:
         checks: list[AlignmentCheck] = []
-        gateway_runtime = self.root / "services" / "sdkwork-clawrouter-gateway" / "src" / "runtime.rs"
+        gateway_runtime = self.root / "crates" / "sdkwork-clawrouter-cloud-gateway" / "src" / "runtime.rs"
         gateway_text = gateway_runtime.read_text(encoding="utf-8") if gateway_runtime.exists() else ""
         if "sdkwork_database_sqlx" in gateway_text:
             checks.append(
@@ -618,7 +618,7 @@ class SdkworkStandardAlignmentGuardian:
                     )
                 )
 
-        gateway_runtime = self.root / "services" / "sdkwork-clawrouter-gateway" / "src" / "runtime.rs"
+        gateway_runtime = self.root / "crates" / "sdkwork-clawrouter-cloud-gateway" / "src" / "runtime.rs"
         gateway_text = gateway_runtime.read_text(encoding="utf-8") if gateway_runtime.exists() else ""
         if "connect_claw_sqlite_runtime" in gateway_text:
             checks.append(
@@ -1070,13 +1070,15 @@ class SdkworkStandardAlignmentGuardian:
             "services/sdkwork-claw-product",
             "services/sdkwork-claw-app",
             "services/sdkwork-claw-admin",
+            "services/sdkwork-clawrouter-gateway",
             "crates/sdkwork-claw-product-test-support",
         )
         canonical_service_paths = (
             "services/sdkwork-clawrouter-router-service",
             "services/sdkwork-clawrouter-app-api-server",
             "services/sdkwork-clawrouter-admin-api-server",
-            "services/sdkwork-clawrouter-gateway",
+            "crates/sdkwork-clawrouter-cloud-gateway",
+            "crates/sdkwork-clawrouter-standalone-gateway",
         )
         migration_manifest = self.root / "specs" / "naming-migration.manifest.json"
         pending_paths: set[str] = set()

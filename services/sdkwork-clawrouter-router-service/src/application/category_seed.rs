@@ -22,9 +22,6 @@ pub fn c_category_type_scope(
         if group.contains(":agents") {
             return Ok("agent");
         }
-        if group.contains("forum") {
-            return Ok("forum");
-        }
         if group.contains(":mcp") {
             return Ok("mcp");
         }

@@ -46,14 +46,6 @@ namespace Sdkwork.ClawRouter.App.Api
         }
 
         /// <summary>
-        /// List generation history
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.GenerationListResult?> GenerationListAsync()
-        {
-            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.GenerationListResult>(ApiPaths.AppPath("/ai/generations"));
-        }
-
-        /// <summary>
         /// List model rankings
         /// </summary>
         public async Task<Sdkwork.ClawRouter.App.Models.ModelRankingsListResult?> ModelRankingsListAsync(string? rankScope = null, string? vendorCode = null, string? modality = null, string? q = null, string? limit = null)
@@ -78,9 +70,9 @@ namespace Sdkwork.ClawRouter.App.Api
         }
 
         /// <summary>
-        /// List models
+        /// List model catalog for Playground
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.ModelsListResult?> ModelsListAsync(string? billingMeter = null, string? vendorCode = null, List<string>? vendorCodes = null, List<string>? modalities = null, List<string>? capabilities = null, List<string>? categories = null, List<string>? groups = null, string? q = null, string? limit = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.ModelsListResult?> ModelsListAsync(string? billingMeter = null, string? vendorCode = null, List<string>? vendorCodes = null, List<string>? modalities = null, List<string>? capabilities = null, List<string>? categories = null, List<string>? groups = null, string? q = null, string? limit = null, string? offset = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -93,6 +85,7 @@ namespace Sdkwork.ClawRouter.App.Api
                 new QueryParameterSpec("groups", groups, "form", false, false, null),
                 new QueryParameterSpec("q", q, "form", true, false, null),
                 new QueryParameterSpec("limit", limit, "form", true, false, null),
+                new QueryParameterSpec("offset", offset, "form", true, false, null),
             });
             return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.ModelsListResult>(ApiPaths.AppendQueryString(ApiPaths.AppPath("/ai/models"), queryString));
         }

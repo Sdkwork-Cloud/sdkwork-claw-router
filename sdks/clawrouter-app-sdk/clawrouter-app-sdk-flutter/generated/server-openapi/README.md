@@ -46,9 +46,7 @@ client.setHeader('X-Custom-Header', 'value');
 
 - `client.ai` - ai API
 - `client.chat` - chat API
-- `client.content` - content API
 - `client.iam` - iam API
-- `client.memory` - memory API
 - `client.notification` - notification API
 - `client.runtime` - runtime API
 - `client.system` - system API
@@ -73,13 +71,6 @@ final result = await client.chat.conversationsList(params);
 print(result);
 ```
 
-### content
-```dart
-// List forum overview
-final result = await client.content.feedsOverviewRetrieve();
-print(result);
-```
-
 ### iam
 ```dart
 // List keys
@@ -87,25 +78,13 @@ final result = await client.iam.apiKeysList();
 print(result);
 ```
 
-### memory
-```dart
-// List memory spaces
-final params = <String, dynamic>{
-  'page': 'page',
-  'page_size': 'page-size',
-};
-final result = await client.memory.spacesList(params);
-print(result);
-```
-
 ### notification
 ```dart
-// List notifications
+// List portal notifications
 final params = <String, dynamic>{
-  'app_id': '1',
-  'include_archived': false,
-  'page': 3,
-  'page_size': 4,
+  'include_archived': true,
+  'page': 'page',
+  'page_size': 'page-size',
 };
 final result = await client.notification.notificationsList(params);
 print(result);

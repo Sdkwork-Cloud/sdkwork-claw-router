@@ -52,8 +52,7 @@ tables:
     tags:
       type: json
       constraints: NOT NULL DEFAULT '[]'::jsonb
-    icon_media_resource_id: string(128)
-    icon_object_blob_id: int64
+    icon_drive_uri: string(512)
     icon_resource_snapshot: json
     sort_weight:
       type: int32

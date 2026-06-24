@@ -23,7 +23,7 @@ BACKEND_SDK_SRC = (
 class AdminFilePlatformStorageRuntimeStandardTest(unittest.TestCase):
     def test_storage_admin_uses_canonical_oss_backend_sdk_surface(self) -> None:
         service = (STORAGE_PACKAGE / "storageService.ts").read_text(encoding="utf-8")
-        definitions = (STORAGE_PACKAGE / "storageSectionDefinitions.ts").read_text(encoding="utf-8")
+        definitions = (STORAGE_PACKAGE / "storageSectionDefinitions.tsx").read_text(encoding="utf-8")
         sdk_source = (BACKEND_SDK_SRC / "sdk.ts").read_text(encoding="utf-8")
         oss_api_source = (BACKEND_SDK_SRC / "api" / "oss.ts").read_text(encoding="utf-8")
 
@@ -31,7 +31,8 @@ class AdminFilePlatformStorageRuntimeStandardTest(unittest.TestCase):
         self.assertIn("public readonly oss: OssApi;", sdk_source)
         self.assertIn("public readonly providers: OssProvidersApi;", oss_api_source)
         self.assertIn("public readonly quotas: OssQuotasApi;", oss_api_source)
-        self.assertIn("public readonly ledger: OssUsageLedgerApi;", oss_api_source)
+        self.assertIn("public readonly usage: OssUsageApi;", oss_api_source)
+        self.assertIn("public readonly storageReconciliationRuns: OssStorageReconciliationRunsApi;", oss_api_source)
 
         for forbidden in [
             "SDK_NOT_REGISTERED",

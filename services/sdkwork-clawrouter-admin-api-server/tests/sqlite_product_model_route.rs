@@ -1,6 +1,10 @@
 use axum::body::Body;
 use axum::http::{Request, StatusCode};
-use sdkwork_claw_test_support::seeded_sqlite_catalog;
+use sdkwork_claw_http::TrustedRequestSubject;
+use sdkwork_claw_test_support::{
+    seeded_sqlite_catalog, trusted_request_subject, trusted_subject_signature,
+};
+use std::time::{SystemTime, UNIX_EPOCH};
 use tower::ServiceExt;
 
 #[tokio::test]
@@ -12,13 +16,11 @@ async fn sqlite_product_catalog_route_serves_real_backend_model_list() {
         .await
         .unwrap();
     let response = router
-        .oneshot(
-            Request::builder()
-                .method("GET")
-                .uri("/backend/v3/api/ai/models?api_key_id=100&billing_meter=llm_input_token&vendor_code=openai")
-                .body(Body::empty())
-                .unwrap(),
-        )
+        .oneshot(signed_request(
+            "GET",
+            "/backend/v3/api/ai/models?api_key_id=100&billing_meter=llm_input_token&vendor_code=openai",
+            Body::empty(),
+        ))
         .await
         .unwrap();
 
@@ -34,4 +36,48 @@ async fn sqlite_product_catalog_route_serves_real_backend_model_list() {
         "0.198000",
         payload["data"]["items"][0]["priceAvailability"]["customerUnitPrice"]
     );
+}
+
+fn bootstrap_admin_subject() -> TrustedRequestSubject {
+    trusted_request_subject(100_001, 0, 1)
+}
+
+fn signed_request(method: &str, path: &str, body: Body) -> Request<Body> {
+    signed_request_builder(method, path, bootstrap_admin_subject())
+        .body(body)
+        .unwrap()
+}
+
+fn signed_request_builder(
+    method: &str,
+    path: &str,
+    subject: TrustedRequestSubject,
+) -> axum::http::request::Builder {
+    let timestamp = current_unix_seconds();
+    let signature = trusted_subject_signature(subject, timestamp, method, path).unwrap();
+    Request::builder()
+        .method(method)
+        .uri(path)
+        .header("content-type", "application/json")
+        .header("x-sdkwork-tenant-id", subject.tenant_id.to_string())
+        .header(
+            "x-sdkwork-organization-id",
+            subject.organization_id.to_string(),
+        )
+        .header("x-sdkwork-user-id", subject.user_id.to_string())
+        .header("x-sdkwork-subject-tenant-id", subject.tenant_id.to_string())
+        .header(
+            "x-sdkwork-subject-organization-id",
+            subject.organization_id.to_string(),
+        )
+        .header("x-sdkwork-subject-user-id", subject.user_id.to_string())
+        .header("x-sdkwork-subject-timestamp", timestamp.to_string())
+        .header("x-sdkwork-subject-signature", signature)
+}
+
+fn current_unix_seconds() -> i64 {
+    SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .unwrap()
+        .as_secs() as i64
 }

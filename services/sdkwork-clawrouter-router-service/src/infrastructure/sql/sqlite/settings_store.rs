@@ -1,7 +1,7 @@
 use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
-use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::domain::{DomainError, DomainResult};
+use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::ports::{
     SettingsCommandFuture, SettingsData, SettingsNotifications, SettingsReadFuture, SettingsStore,
     SettingsSubject, UpdateSettingsCommand, UpdateSettingsOutcome,

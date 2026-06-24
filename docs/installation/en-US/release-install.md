@@ -391,7 +391,7 @@ Linux: ~/.sdkwork/router/data/clawrouter.sqlite
 macOS: ~/.sdkwork/router/data/clawrouter.sqlite
 ```
 
-This desktop SQLite policy is independent from the explicit product server PostgreSQL development profile used by `pnpm dev`, `pnpm dev:server`, and `pnpm dev:server:postgres` for the backend service runtime. Gateway-backed client commands such as `pnpm dev:desktop` and `pnpm dev:desktop:sqlite` run through `sdkwork-api-gateway` and do not start a Claw Router backend service. Desktop packages must not require PostgreSQL for first run unless the user explicitly configures an external database.
+This desktop SQLite policy is independent from the explicit product server PostgreSQL development profile used by `pnpm dev`, `pnpm dev:server`, and `pnpm dev:server:postgres` for the backend service runtime. Gateway-backed client commands such as `pnpm dev:desktop` and `pnpm dev:desktop:sqlite` run through `sdkwork-api-cloud-gateway` and do not start a Claw Router backend service. Desktop packages must not require PostgreSQL for first run unless the user explicitly configures an external database.
 
 `archive`, `service`, and `container` packages use PostgreSQL by default. Configure PostgreSQL with structured TOML fields: `host`, `port`, `database`, `username`, and either `password_file` or `password`. Keep `password_file` as the normal production path. Use direct `password` only when `clawrouter.toml` is protected as a secret-bearing file.
 

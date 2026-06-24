@@ -346,8 +346,12 @@ async fn admin_channel_route_masks_api_key_in_create_response() {
     let payload = json_payload(response).await;
     assert_eq!("2000", payload["code"]);
     assert_eq!("OpenAI primary", payload["data"]["item"]["name"]);
-    assert!(payload["data"]["item"]["credentials"][0]["apiKey"].is_null()
-        || payload["data"]["item"]["credentials"][0].get("apiKey").is_none());
+    assert!(
+        payload["data"]["item"]["credentials"][0]["apiKey"].is_null()
+            || payload["data"]["item"]["credentials"][0]
+                .get("apiKey")
+                .is_none()
+    );
     assert!(payload["data"]["item"]["credentials"][0]["maskedLabel"]
         .as_str()
         .is_some_and(|value| !value.trim().is_empty()));

@@ -43,7 +43,7 @@ async fn service_router_exposes_standard_health_and_ready_endpoints() {
 
 #[tokio::test]
 async fn service_router_exposes_gateway_openapi_document() {
-    let response = sdkwork_claw_http::service_router("sdkwork-clawrouter-gateway")
+    let response = sdkwork_claw_http::service_router("sdkwork-clawrouter-cloud-gateway")
         .oneshot(
             Request::builder()
                 .uri("/openapi.json")
@@ -104,7 +104,7 @@ async fn service_router_exposes_gateway_openapi_document() {
 #[tokio::test]
 #[ignore = "legacy 6-tab taxonomy was replaced by sdkwork-router API capability tabs"]
 async fn service_router_exposes_ordered_openapi_schema_tabs_from_route_config() {
-    let response = sdkwork_claw_http::service_router("sdkwork-clawrouter-gateway")
+    let response = sdkwork_claw_http::service_router("sdkwork-clawrouter-cloud-gateway")
         .oneshot(
             Request::builder()
                 .uri("/openapi/schema-tabs.json")
@@ -274,7 +274,7 @@ async fn service_router_exposes_ordered_openapi_schema_tabs_from_route_config() 
 
 #[tokio::test]
 async fn service_router_exposes_ordered_sdkwork_router_api_schema_tabs() {
-    let response = sdkwork_claw_http::service_router("sdkwork-clawrouter-gateway")
+    let response = sdkwork_claw_http::service_router("sdkwork-clawrouter-cloud-gateway")
         .oneshot(
             Request::builder()
                 .uri("/openapi/schema-tabs.json")
@@ -555,7 +555,7 @@ async fn service_router_exposes_ordered_sdkwork_router_api_schema_tabs() {
 #[tokio::test]
 async fn service_router_exposes_s3_compatible_cloud_services_openapi_document() {
     let payload = fetch_runtime_openapi_json(
-        sdkwork_claw_http::service_router("sdkwork-clawrouter-gateway"),
+        sdkwork_claw_http::service_router("sdkwork-clawrouter-cloud-gateway"),
         "/cloud/v3/openapi.json",
     )
     .await;
@@ -790,7 +790,7 @@ async fn service_router_exposes_s3_compatible_cloud_services_openapi_document() 
 #[tokio::test]
 async fn service_router_exposes_iaas_compute_cloud_services_openapi_document() {
     let payload = fetch_runtime_openapi_json(
-        sdkwork_claw_http::service_router("sdkwork-clawrouter-gateway"),
+        sdkwork_claw_http::service_router("sdkwork-clawrouter-cloud-gateway"),
         "/cloud/v3/openapi.json",
     )
     .await;
@@ -1571,7 +1571,7 @@ async fn service_router_exposes_iaas_compute_cloud_services_openapi_document() {
 
 #[tokio::test]
 async fn service_router_exposes_paas_openapi_document() {
-    let response = sdkwork_claw_http::service_router("sdkwork-clawrouter-gateway")
+    let response = sdkwork_claw_http::service_router("sdkwork-clawrouter-cloud-gateway")
         .oneshot(
             Request::builder()
                 .uri("/paas/v3/openapi.json")
@@ -1614,7 +1614,7 @@ async fn service_router_exposes_paas_openapi_document() {
 
 #[tokio::test]
 async fn service_router_exposes_payment_aggregate_openapi_document() {
-    let response = sdkwork_claw_http::service_router("sdkwork-clawrouter-gateway")
+    let response = sdkwork_claw_http::service_router("sdkwork-clawrouter-cloud-gateway")
         .oneshot(
             Request::builder()
                 .uri("/payments/v3/openapi.json")
@@ -1667,7 +1667,7 @@ async fn service_router_exposes_payment_aggregate_openapi_document() {
 #[tokio::test]
 async fn service_router_payment_aggregate_openapi_contract_defines_standard_payment_surface() {
     let payload = fetch_runtime_openapi_json(
-        sdkwork_claw_http::service_router("sdkwork-clawrouter-gateway"),
+        sdkwork_claw_http::service_router("sdkwork-clawrouter-cloud-gateway"),
         "/payments/v3/openapi.json",
     )
     .await;
@@ -2303,7 +2303,7 @@ async fn service_router_surface_openapi_documents_exclude_commerce_dependency_co
 #[tokio::test]
 async fn service_router_openapi_documents_match_sdk_authority_contracts() {
     let gateway_payload = fetch_runtime_openapi_json(
-        sdkwork_claw_http::service_router("sdkwork-clawrouter-gateway"),
+        sdkwork_claw_http::service_router("sdkwork-clawrouter-cloud-gateway"),
         "/openapi.json",
     )
     .await;

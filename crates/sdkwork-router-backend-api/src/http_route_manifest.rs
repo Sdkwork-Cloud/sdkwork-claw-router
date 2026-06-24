@@ -348,60 +348,6 @@ const HTTP_ROUTES: &[HttpRoute] = &[
     ),
     HttpRoute::dual_token(
         HttpMethod::Get,
-        "/backend/v3/api/prompts",
-        "prompts",
-        "definitions.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Post,
-        "/backend/v3/api/prompts",
-        "prompts",
-        "definitions.create",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Put,
-        "/backend/v3/api/prompts/bindings/{bindingId}",
-        "prompts",
-        "definitionBindings.update",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Post,
-        "/backend/v3/api/prompts/versions/{versionId}/publish",
-        "prompts",
-        "versions.publish",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Post,
-        "/backend/v3/api/prompts/versions/{versionId}/render",
-        "prompts",
-        "versionRenders.create",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/prompts/{promptId}/bindings",
-        "prompts",
-        "definitionBindings.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Post,
-        "/backend/v3/api/prompts/{promptId}/bindings",
-        "prompts",
-        "definitionBindings.create",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
-        "/backend/v3/api/prompts/{promptId}/versions",
-        "prompts",
-        "versions.list",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Post,
-        "/backend/v3/api/prompts/{promptId}/versions",
-        "prompts",
-        "versions.create",
-    ),
-    HttpRoute::dual_token(
-        HttpMethod::Get,
         "/backend/v3/api/service_providers/adjustments",
         "serviceProviders",
         "adjustments.list",
@@ -772,11 +718,6 @@ pub fn http_route_manifest() -> HttpRouteManifest {
     HttpRouteManifest::new(HTTP_ROUTES)
 }
 
-/// Product app-api manifest including appbase IAM bootstrap/auth/oauth metadata.
-pub fn claw_router_app_http_route_manifest() -> HttpRouteManifest {
-    http_route_manifest()
-}
-
 #[cfg(test)]
 mod tests {
     use sdkwork_web_contract::RouteAuth;
@@ -787,7 +728,11 @@ mod tests {
         let route = manifest
             .match_route(method, path)
             .unwrap_or_else(|| panic!("{method} {path} must be registered"));
-        assert_eq!(RouteAuth::Public, route.auth, "{method} {path} must be public");
+        assert_eq!(
+            RouteAuth::Public,
+            route.auth,
+            "{method} {path} must be public"
+        );
         assert!(
             resolve_public_path(
                 method,
@@ -807,4 +752,3 @@ mod tests {
         assert_public_route("GET", "/app/v3/api/system/site/runtime");
     }
 }
-

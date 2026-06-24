@@ -220,6 +220,41 @@ connect_timeout_millis = 0
         .contains("connect timeout"));
 }
 
+#[test]
+fn server_production_requires_enabled_redis_config() {
+    use sdkwork_claw_config::{ensure_server_production_redis_config, DeploymentMode};
+
+    let runtime = RuntimeTomlConfig::from_toml_str(
+        r#"
+[install]
+environment = "production"
+"#,
+    )
+    .unwrap();
+    assert!(
+        ensure_server_production_redis_config(DeploymentMode::Server, Some(&runtime))
+            .unwrap_err()
+            .contains("requires valid [redis] configuration")
+    );
+
+    let runtime_with_redis = RuntimeTomlConfig::from_toml_str(
+        r#"
+[install]
+environment = "production"
+
+[redis]
+host = "redis.internal"
+port = 6379
+database = 0
+"#,
+    )
+    .unwrap();
+    ensure_server_production_redis_config(DeploymentMode::Kubernetes, Some(&runtime_with_redis))
+        .unwrap();
+
+    ensure_server_production_redis_config(DeploymentMode::Desktop, Some(&runtime)).unwrap();
+}
+
 fn unique_secret_path(name: &str) -> std::path::PathBuf {
     std::env::temp_dir().join(format!(
         "clawrouter-{name}-{}-{}.secret",

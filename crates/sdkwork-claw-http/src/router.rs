@@ -13,7 +13,7 @@ use crate::contract_routes::{
     OPENAPI_SCHEMA_TABS_PATH, PAAS_OPENAPI_PATH, PAYMENT_AGGREGATE_OPENAPI_PATH,
 };
 use crate::health::{healthz, readyz};
-use crate::metrics::{metrics, record_http_request};
+use crate::metrics::{metrics, record_http_response_status};
 use crate::readiness::ReadinessCheckFn;
 
 pub type ContractOperationFilter = fn(&ContractOperation) -> bool;
@@ -144,10 +144,10 @@ fn base_router() -> Router<ServiceState> {
         .route(APP_OPENAPI_PATH, get(openapi_document))
         .route(BACKEND_OPENAPI_PATH, get(openapi_document))
         .layer(TraceLayer::new_for_http().on_response(
-            |_response: &axum::http::Response<_>,
+            |response: &axum::http::Response<_>,
              _latency: std::time::Duration,
              _span: &tracing::Span| {
-                record_http_request();
+                record_http_response_status(response.status().as_u16());
             },
         ))
 }

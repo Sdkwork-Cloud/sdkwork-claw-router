@@ -1,6 +1,6 @@
-use sqlx::{Row, SqlitePool};
+use sqlx::SqlitePool;
 
-use crate::error::{store_error, RepositoryResult};
+use crate::error::store_error;
 use crate::mapping::{require_subject, row_to_provider};
 use crate::types::{
     AppProviderItem, AppProvidersReadFuture, AppProvidersReadStore, AppProvidersSubject,

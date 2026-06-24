@@ -52,9 +52,7 @@ client.SetHeader("X-Custom-Header", "value");
 
 - `client.Ai` - ai API
 - `client.Chat` - chat API
-- `client.Content` - content API
 - `client.Iam` - iam API
-- `client.Memory` - memory API
 - `client.Notification` - notification API
 - `client.Runtime` - runtime API
 - `client.System` - system API
@@ -82,14 +80,6 @@ var result = await client.Chat.ConversationsListAsync(query);
 Console.WriteLine(result);
 ```
 
-### content
-
-```csharp
-// List forum overview
-var result = await client.Content.FeedsOverviewRetrieveAsync();
-Console.WriteLine(result);
-```
-
 ### iam
 
 ```csharp
@@ -98,29 +88,15 @@ var result = await client.Iam.ApiKeysListAsync();
 Console.WriteLine(result);
 ```
 
-### memory
-
-```csharp
-// List memory spaces
-var query = new Dictionary<string, object>
-{
-    ["page"] = "page",
-    ["page_size"] = "page-size",
-};
-var result = await client.Memory.SpacesListAsync(query);
-Console.WriteLine(result);
-```
-
 ### notification
 
 ```csharp
-// List notifications
+// List portal notifications
 var query = new Dictionary<string, object>
 {
-    ["app_id"] = "1",
-    ["include_archived"] = false,
-    ["page"] = 3,
-    ["page_size"] = 4,
+    ["include_archived"] = true,
+    ["page"] = "page",
+    ["page_size"] = "page-size",
 };
 var result = await client.Notification.NotificationsListAsync(query);
 Console.WriteLine(result);

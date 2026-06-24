@@ -3,10 +3,10 @@ use std::sync::Arc;
 use sqlx::{PgPool, Postgres, Row, Transaction};
 
 use crate::application::ApiKeySecretCodec;
-use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::domain::{
     ChannelGroup, DomainError, DomainResult, GatewayAccessPolicy, GatewayApiKey, QuotaPolicy,
 };
+use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::ports::{
     ApiKeyCommandStoreFuture, CreateGatewayApiKeyCommand, CreatedGatewayApiKey,
     DeleteGatewayApiKeyCommand, DeleteGatewayApiKeyForOrganizationCommand,

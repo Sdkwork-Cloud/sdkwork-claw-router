@@ -11,7 +11,8 @@ frontend_operations:
   sdk_domain: content
   summary: List admin announcements
   read_sources:
-  - content_announcement
+  - ops_notification_message
+  - ops_notification_recipient
   query_parameters: []
   response_schema:
     name: AdminAnnouncementsResponse
@@ -28,9 +29,10 @@ frontend_operations:
   sdk_domain: content
   summary: Create admin announcement
   read_sources:
-  - content_announcement
+  - ops_notification_message
   write_tables:
-  - content_announcement
+  - ops_notification_message
+  - ops_notification_recipient
   - ops_audit_log
   request_schema:
     name: AdminAnnouncementCreateRequest
@@ -53,9 +55,11 @@ frontend_operations:
   sdk_domain: content
   summary: Update admin announcement
   read_sources:
-  - content_announcement
+  - ops_notification_message
+  - ops_notification_recipient
   write_tables:
-  - content_announcement
+  - ops_notification_message
+  - ops_notification_recipient
   - ops_audit_log
   request_schema:
     name: AdminAnnouncementUpdateRequest
@@ -78,9 +82,11 @@ frontend_operations:
   sdk_domain: content
   summary: Delete admin announcement
   read_sources:
-  - content_announcement
+  - ops_notification_message
+  - ops_notification_recipient
   write_tables:
-  - content_announcement
+  - ops_notification_message
+  - ops_notification_recipient
   - ops_audit_log
   response_schema:
     name: AnnouncementsDeleteResult

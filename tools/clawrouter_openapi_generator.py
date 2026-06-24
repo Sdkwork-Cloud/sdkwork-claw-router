@@ -306,6 +306,8 @@ class ClawRouterOpenApiGenerator:
     def _models_catalog_operation_rank(self, operation: dict[str, Any]) -> int:
         source = self._string(operation.get("source")).replace("\\", "/")
         score = 0
+        if self._payload_schema(operation.get("response_schema")) is not None:
+            score += 10_000
         if any(marker in source for marker in self.MODELS_CATALOG_SOURCE_MARKERS):
             score += 1_000
         declared = operation.get("query_parameters")

@@ -1,3 +1,4 @@
+import { sanitizeSdkHttpRequestOptions } from './auth-projection.ts';
 import { createTokenManager, type AuthTokenManager, type AuthTokens } from '@sdkwork/sdk-common';
 import {
   type CommerceAppSdkClient,
@@ -8,6 +9,7 @@ import {
 } from '@sdkwork/commerce-service';
 import { SdkworkAppClient, type SdkworkAppConfig } from '@sdkwork/clawrouter-app-sdk';
 import { SdkworkBackendClient, type SdkworkBackendConfig } from '@sdkwork/clawrouter-backend-sdk';
+import { SdkworkBackendClient as DriveBackendClient } from 'sdkwork-drive-backend-sdk-generated-typescript';
 import { SdkworkBackendClient as ModelsBackendClient } from '@sdkwork/models-backend-sdk';
 import { SdkworkAppClient as ModelsAppClient } from '@sdkwork/models-app-sdk';
 import { SdkworkAiClient, type SdkworkAiConfig } from '@sdkwork/clawrouter-open-sdk';
@@ -509,6 +511,7 @@ let memoryAppClient: SdkworkMemoryAppClient | null = null;
 let agentAppClient: SdkworkAgentAppClient | null = null;
 let agentBackendClient: SdkworkAgentBackendClient | null = null;
 let driveAppClient: SdkworkDriveAppClient | null = null;
+let driveBackendClient: DriveBackendSdkClient | null = null;
 let commerceAppClient: SdkworkCommerceAppClient | null = null;
 let commerceBackendClient: SdkworkCommerceGeneratedBackendClient | null = null;
 let aiClient: SdkworkAiClient | null = null;
@@ -790,6 +793,27 @@ export function getSdkworkAgentBackendSdkClient(
   return agentBackendClient;
 }
 
+export type DriveBackendSdkClient = DriveBackendClient;
+export type DriveBackendSdkClientOptions = ClawRouterBackendSdkClientOptions;
+
+export function createSdkworkDriveBackendSdkClient(
+  options: DriveBackendSdkClientOptions = {},
+): DriveBackendSdkClient {
+  return attachClawRouterSdkSessionAuthBoundary(new DriveBackendClient(buildDriveBackendConfig(options)));
+}
+
+export function getSdkworkDriveBackendSdkClient(
+  options: DriveBackendSdkClientOptions = {},
+): DriveBackendSdkClient {
+  if (hasRuntimeOverrides(options)) {
+    return createSdkworkDriveBackendSdkClient(options);
+  }
+  if (!driveBackendClient) {
+    driveBackendClient = createSdkworkDriveBackendSdkClient();
+  }
+  return driveBackendClient;
+}
+
 export function getSdkworkDriveAppSdkClient(
   options: SdkworkDriveAppSdkClientOptions = {},
 ): SdkworkDriveAppClient {
@@ -865,6 +889,7 @@ export function resetClawRouterSdkClients(): void {
   agentAppClient = null;
   agentBackendClient = null;
   driveAppClient = null;
+  driveBackendClient = null;
   commerceAppClient = null;
   commerceBackendClient = null;
   aiClient = null;
@@ -929,7 +954,7 @@ function attachClawRouterSdkSessionAuthBoundary<TClient extends ClawRouterSdkCli
   const originalRequest = http.request.bind(http) as ClawRouterSdkHttpRequestBoundary['request'];
   http.request = async <TResponse>(path: string, options?: unknown): Promise<TResponse> => {
     try {
-      return await originalRequest<TResponse>(path, options);
+      return await originalRequest<TResponse>(path, sanitizeSdkHttpRequestOptions(path, options));
     } catch (error) {
       handleClawRouterSdkSessionAuthError(error);
       throw error;
@@ -945,7 +970,7 @@ function attachClawRouterSdkSessionAuthBoundary<TClient extends ClawRouterSdkCli
       options?: unknown,
     ): AsyncIterable<TResponse> {
       try {
-        yield* originalStreamJson<TResponse>(path, options);
+        yield* originalStreamJson<TResponse>(path, sanitizeSdkHttpRequestOptions(path, options));
       } catch (error) {
         handleClawRouterSdkSessionAuthError(error);
         throw error;
@@ -1237,6 +1262,21 @@ function buildDriveAppConfig(options: SdkworkDriveAppSdkClientOptions): SdkworkD
   };
 }
 
+function buildDriveBackendConfig(options: DriveBackendSdkClientOptions): SdkworkBackendConfig {
+  return {
+    baseUrl: normalizeGeneratedSdkBaseUrl(
+      options.backendBaseUrl
+      ?? readClawRouterRuntimeEnv('VITE_SDKWORK_DRIVE_BACKEND_API_BASE_URL')
+      ?? readClawRouterRuntimeEnv('VITE_CLAWROUTER_BACKEND_API_BASE_URL')
+      ?? BACKEND_API_PREFIX,
+      BACKEND_API_PREFIX,
+    ),
+    platform: options.platform ?? 'web-admin',
+    tokenManager: resolveClawRouterSdkTokenManager(options.tokenManager),
+    timeout: options.timeout,
+  };
+}
+
 function buildCommerceAppConfig(options: SdkworkCommerceAppSdkClientOptions): SdkworkCommerceAppConfig {
   return {
     baseUrl: normalizeGeneratedSdkBaseUrl(
@@ -1327,6 +1367,20 @@ function syncTokenManagerFromStoredSession(tokenManager: AuthTokenManager): void
     return;
   }
   tokenManager.clearTokens();
+}
+
+export function getClawRouterBootstrapAccessToken(): string | undefined {
+  return readBootstrapAccessToken();
+}
+
+export function prepareClawRouterCredentialEntryTokens(): void {
+  const tokenManager = getClawRouterGlobalTokenManager();
+  const bootstrapAccessToken = getClawRouterBootstrapAccessToken();
+  tokenManager.clearTokens?.();
+  if (bootstrapAccessToken) {
+    tokenManager.setTokens?.({ accessToken: bootstrapAccessToken });
+  }
+  resetClawRouterSdkClients();
 }
 
 function readBootstrapAccessToken(): string | undefined {

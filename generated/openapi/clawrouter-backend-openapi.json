@@ -13754,6 +13754,60 @@
         "type": "object",
         "x-operation-id": "dashboard.retrieve"
       },
+      "DefaultBucketsListResult": {
+        "additionalProperties": false,
+        "description": "Default buckets list result schema exposed by Claw Router.",
+        "properties": {
+          "code": {
+            "description": "Business response code.",
+            "type": "string"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StorageDefaultBucketListResponse"
+              }
+            ],
+            "description": "Data field on default buckets list result."
+          },
+          "msg": {
+            "description": "Human-readable response message.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "x-operation-id": "defaultBuckets.list"
+      },
+      "DefaultBucketsUpdateResult": {
+        "additionalProperties": false,
+        "description": "Default buckets update result schema exposed by Claw Router.",
+        "properties": {
+          "code": {
+            "description": "Business response code.",
+            "type": "string"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StorageDefaultBucketUpdateResponse"
+              }
+            ],
+            "description": "Data field on default buckets update result."
+          },
+          "msg": {
+            "description": "Human-readable response message.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "x-operation-id": "defaultBuckets.update"
+      },
       "DefinitionBindingsCreateResult": {
         "additionalProperties": false,
         "description": "Definition bindings create result schema exposed by Claw Router.",
@@ -14096,6 +14150,60 @@
         ],
         "type": "object",
         "x-operation-id": "firewalls.rules.list"
+      },
+      "GcJobsCreateResult": {
+        "additionalProperties": false,
+        "description": "Gc jobs create result schema exposed by Claw Router.",
+        "properties": {
+          "code": {
+            "description": "Business response code.",
+            "type": "string"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StorageGarbageCollectionJobCreateResponse"
+              }
+            ],
+            "description": "Data field on gc jobs create result."
+          },
+          "msg": {
+            "description": "Human-readable response message.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "x-operation-id": "gcJobs.create"
+      },
+      "GcJobsListResult": {
+        "additionalProperties": false,
+        "description": "Gc jobs list result schema exposed by Claw Router.",
+        "properties": {
+          "code": {
+            "description": "Business response code.",
+            "type": "string"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StorageGarbageCollectionJobListResponse"
+              }
+            ],
+            "description": "Data field on gc jobs list result."
+          },
+          "msg": {
+            "description": "Human-readable response message.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "x-operation-id": "gcJobs.list"
       },
       "HealthCheckCreateResult": {
         "additionalProperties": false,
@@ -17331,6 +17439,303 @@
         "properties": {},
         "type": "object"
       },
+      "OssBucketsCreateResult": {
+        "additionalProperties": false,
+        "description": "Oss buckets create result schema exposed by Claw Router.",
+        "properties": {
+          "code": {
+            "description": "Business response code.",
+            "type": "string"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StorageBucketCreateResponse"
+              }
+            ],
+            "description": "Data field on oss buckets create result."
+          },
+          "msg": {
+            "description": "Human-readable response message.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "x-operation-id": "oss.buckets.create"
+      },
+      "OssBucketsListResult": {
+        "additionalProperties": false,
+        "description": "Oss buckets list result schema exposed by Claw Router.",
+        "properties": {
+          "code": {
+            "description": "Business response code.",
+            "type": "string"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StorageBucketListResponse"
+              }
+            ],
+            "description": "Data field on oss buckets list result."
+          },
+          "msg": {
+            "description": "Human-readable response message.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "x-operation-id": "oss.buckets.list"
+      },
+      "OssBucketsUpdateResult": {
+        "additionalProperties": false,
+        "description": "Oss buckets update result schema exposed by Claw Router.",
+        "properties": {
+          "code": {
+            "description": "Business response code.",
+            "type": "string"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StorageBucketUpdateResponse"
+              }
+            ],
+            "description": "Data field on oss buckets update result."
+          },
+          "msg": {
+            "description": "Human-readable response message.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "x-operation-id": "oss.buckets.update"
+      },
+      "OssProvidersCreateResult": {
+        "additionalProperties": false,
+        "description": "Oss providers create result schema exposed by Claw Router.",
+        "properties": {
+          "code": {
+            "description": "Business response code.",
+            "type": "string"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StorageProviderCreateResponse"
+              }
+            ],
+            "description": "Data field on oss providers create result."
+          },
+          "msg": {
+            "description": "Human-readable response message.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "x-operation-id": "oss.providers.create"
+      },
+      "OssProvidersListResult": {
+        "additionalProperties": false,
+        "description": "Oss providers list result schema exposed by Claw Router.",
+        "properties": {
+          "code": {
+            "description": "Business response code.",
+            "type": "string"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StorageProviderListResponse"
+              }
+            ],
+            "description": "Data field on oss providers list result."
+          },
+          "msg": {
+            "description": "Human-readable response message.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "x-operation-id": "oss.providers.list"
+      },
+      "OssProvidersUpdateResult": {
+        "additionalProperties": false,
+        "description": "Oss providers update result schema exposed by Claw Router.",
+        "properties": {
+          "code": {
+            "description": "Business response code.",
+            "type": "string"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StorageProviderUpdateResponse"
+              }
+            ],
+            "description": "Data field on oss providers update result."
+          },
+          "msg": {
+            "description": "Human-readable response message.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "x-operation-id": "oss.providers.update"
+      },
+      "OssQuotasCreateResult": {
+        "additionalProperties": false,
+        "description": "Oss quotas create result schema exposed by Claw Router.",
+        "properties": {
+          "code": {
+            "description": "Business response code.",
+            "type": "string"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StorageQuotaCreateResponse"
+              }
+            ],
+            "description": "Data field on oss quotas create result."
+          },
+          "msg": {
+            "description": "Human-readable response message.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "x-operation-id": "oss.quotas.create"
+      },
+      "OssQuotasListResult": {
+        "additionalProperties": false,
+        "description": "Oss quotas list result schema exposed by Claw Router.",
+        "properties": {
+          "code": {
+            "description": "Business response code.",
+            "type": "string"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StorageQuotaListResponse"
+              }
+            ],
+            "description": "Data field on oss quotas list result."
+          },
+          "msg": {
+            "description": "Human-readable response message.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "x-operation-id": "oss.quotas.list"
+      },
+      "OssStorageReconciliationRunsCreateResult": {
+        "additionalProperties": false,
+        "description": "Oss storage reconciliation runs create result schema exposed by Claw Router.",
+        "properties": {
+          "code": {
+            "description": "Business response code.",
+            "type": "string"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StorageReconciliationRunCreateResponse"
+              }
+            ],
+            "description": "Data field on oss storage reconciliation runs create result."
+          },
+          "msg": {
+            "description": "Human-readable response message.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "x-operation-id": "oss.storageReconciliationRuns.create"
+      },
+      "OssStorageReconciliationRunsListResult": {
+        "additionalProperties": false,
+        "description": "Oss storage reconciliation runs list result schema exposed by Claw Router.",
+        "properties": {
+          "code": {
+            "description": "Business response code.",
+            "type": "string"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StorageReconciliationRunListResponse"
+              }
+            ],
+            "description": "Data field on oss storage reconciliation runs list result."
+          },
+          "msg": {
+            "description": "Human-readable response message.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "x-operation-id": "oss.storageReconciliationRuns.list"
+      },
+      "OssUsageListResult": {
+        "additionalProperties": false,
+        "description": "Oss usage list result schema exposed by Claw Router.",
+        "properties": {
+          "code": {
+            "description": "Business response code.",
+            "type": "string"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StorageUsageListResponse"
+              }
+            ],
+            "description": "Data field on oss usage list result."
+          },
+          "msg": {
+            "description": "Human-readable response message.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "x-operation-id": "oss.usage.list"
+      },
       "PlusApiResult": {
         "additionalProperties": false,
         "description": "Base Claw Router response envelope. Operation-specific Result schemas carry concrete business data.",
@@ -17789,6 +18194,33 @@
         ],
         "type": "object",
         "x-operation-id": "providerWalletAccounts.list"
+      },
+      "ProvidersHealthCheckCreateResult": {
+        "additionalProperties": false,
+        "description": "Providers health check create result schema exposed by Claw Router.",
+        "properties": {
+          "code": {
+            "description": "Business response code.",
+            "type": "string"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StorageProviderHealthCheckResponse"
+              }
+            ],
+            "description": "Data field on providers health check create result."
+          },
+          "msg": {
+            "description": "Human-readable response message.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "x-operation-id": "providers.healthCheck.create"
       },
       "RateLimitBucketsListResult": {
         "additionalProperties": false,
@@ -22373,6 +22805,433 @@
         ],
         "type": "object",
         "x-operation-id": "statements.list"
+      },
+      "StorageBucketCreateRequest": {
+        "additionalProperties": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/JsonValue"
+            }
+          ],
+          "description": "Schema fragment used by storage bucket create request."
+        },
+        "description": "Storage bucket create request schema exposed by Claw Router.",
+        "name": "StorageBucketCreateRequest",
+        "properties": {},
+        "type": "object"
+      },
+      "StorageBucketCreateResponse": {
+        "additionalProperties": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/JsonValue"
+            }
+          ],
+          "description": "Schema fragment used by storage bucket create response."
+        },
+        "description": "Storage bucket create response schema exposed by Claw Router.",
+        "name": "StorageBucketCreateResponse",
+        "properties": {},
+        "type": "object"
+      },
+      "StorageBucketListResponse": {
+        "additionalProperties": false,
+        "description": "Storage bucket list response schema exposed by Claw Router.",
+        "name": "StorageBucketListResponse",
+        "properties": {
+          "items": {
+            "description": "Items field on storage bucket list response.",
+            "items": {
+              "additionalProperties": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/JsonValue"
+                  }
+                ],
+                "description": "Items field on storage bucket list response."
+              },
+              "description": "Items field on storage bucket list response.",
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "type": "object"
+      },
+      "StorageBucketUpdateRequest": {
+        "additionalProperties": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/JsonValue"
+            }
+          ],
+          "description": "Schema fragment used by storage bucket update request."
+        },
+        "description": "Storage bucket update request schema exposed by Claw Router.",
+        "name": "StorageBucketUpdateRequest",
+        "properties": {},
+        "type": "object"
+      },
+      "StorageBucketUpdateResponse": {
+        "additionalProperties": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/JsonValue"
+            }
+          ],
+          "description": "Schema fragment used by storage bucket update response."
+        },
+        "description": "Storage bucket update response schema exposed by Claw Router.",
+        "name": "StorageBucketUpdateResponse",
+        "properties": {},
+        "type": "object"
+      },
+      "StorageDefaultBucketListResponse": {
+        "additionalProperties": false,
+        "description": "Storage default bucket list response schema exposed by Claw Router.",
+        "name": "StorageDefaultBucketListResponse",
+        "properties": {
+          "items": {
+            "description": "Items field on storage default bucket list response.",
+            "items": {
+              "additionalProperties": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/JsonValue"
+                  }
+                ],
+                "description": "Items field on storage default bucket list response."
+              },
+              "description": "Items field on storage default bucket list response.",
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "type": "object"
+      },
+      "StorageDefaultBucketUpdateRequest": {
+        "additionalProperties": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/JsonValue"
+            }
+          ],
+          "description": "Schema fragment used by storage default bucket update request."
+        },
+        "description": "Storage default bucket update request schema exposed by Claw Router.",
+        "name": "StorageDefaultBucketUpdateRequest",
+        "properties": {},
+        "type": "object"
+      },
+      "StorageDefaultBucketUpdateResponse": {
+        "additionalProperties": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/JsonValue"
+            }
+          ],
+          "description": "Schema fragment used by storage default bucket update response."
+        },
+        "description": "Storage default bucket update response schema exposed by Claw Router.",
+        "name": "StorageDefaultBucketUpdateResponse",
+        "properties": {},
+        "type": "object"
+      },
+      "StorageGarbageCollectionJobCreateRequest": {
+        "additionalProperties": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/JsonValue"
+            }
+          ],
+          "description": "Schema fragment used by storage garbage collection job create request."
+        },
+        "description": "Storage garbage collection job create request schema exposed by Claw Router.",
+        "name": "StorageGarbageCollectionJobCreateRequest",
+        "properties": {},
+        "type": "object"
+      },
+      "StorageGarbageCollectionJobCreateResponse": {
+        "additionalProperties": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/JsonValue"
+            }
+          ],
+          "description": "Schema fragment used by storage garbage collection job create response."
+        },
+        "description": "Storage garbage collection job create response schema exposed by Claw Router.",
+        "name": "StorageGarbageCollectionJobCreateResponse",
+        "properties": {},
+        "type": "object"
+      },
+      "StorageGarbageCollectionJobListResponse": {
+        "additionalProperties": false,
+        "description": "Storage garbage collection job list response schema exposed by Claw Router.",
+        "name": "StorageGarbageCollectionJobListResponse",
+        "properties": {
+          "items": {
+            "description": "Items field on storage garbage collection job list response.",
+            "items": {
+              "additionalProperties": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/JsonValue"
+                  }
+                ],
+                "description": "Items field on storage garbage collection job list response."
+              },
+              "description": "Items field on storage garbage collection job list response.",
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "type": "object"
+      },
+      "StorageProviderCreateRequest": {
+        "additionalProperties": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/JsonValue"
+            }
+          ],
+          "description": "Schema fragment used by storage provider create request."
+        },
+        "description": "Storage provider create request schema exposed by Claw Router.",
+        "name": "StorageProviderCreateRequest",
+        "properties": {},
+        "type": "object"
+      },
+      "StorageProviderCreateResponse": {
+        "additionalProperties": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/JsonValue"
+            }
+          ],
+          "description": "Schema fragment used by storage provider create response."
+        },
+        "description": "Storage provider create response schema exposed by Claw Router.",
+        "name": "StorageProviderCreateResponse",
+        "properties": {},
+        "type": "object"
+      },
+      "StorageProviderHealthCheckResponse": {
+        "additionalProperties": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/JsonValue"
+            }
+          ],
+          "description": "Schema fragment used by storage provider health check response."
+        },
+        "description": "Storage provider health check response schema exposed by Claw Router.",
+        "name": "StorageProviderHealthCheckResponse",
+        "properties": {},
+        "type": "object"
+      },
+      "StorageProviderListResponse": {
+        "additionalProperties": false,
+        "description": "Storage provider list response schema exposed by Claw Router.",
+        "name": "StorageProviderListResponse",
+        "properties": {
+          "items": {
+            "description": "Items field on storage provider list response.",
+            "items": {
+              "additionalProperties": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/JsonValue"
+                  }
+                ],
+                "description": "Items field on storage provider list response."
+              },
+              "description": "Items field on storage provider list response.",
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "type": "object"
+      },
+      "StorageProviderUpdateRequest": {
+        "additionalProperties": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/JsonValue"
+            }
+          ],
+          "description": "Schema fragment used by storage provider update request."
+        },
+        "description": "Storage provider update request schema exposed by Claw Router.",
+        "name": "StorageProviderUpdateRequest",
+        "properties": {},
+        "type": "object"
+      },
+      "StorageProviderUpdateResponse": {
+        "additionalProperties": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/JsonValue"
+            }
+          ],
+          "description": "Schema fragment used by storage provider update response."
+        },
+        "description": "Storage provider update response schema exposed by Claw Router.",
+        "name": "StorageProviderUpdateResponse",
+        "properties": {},
+        "type": "object"
+      },
+      "StorageQuotaCreateRequest": {
+        "additionalProperties": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/JsonValue"
+            }
+          ],
+          "description": "Schema fragment used by storage quota create request."
+        },
+        "description": "Storage quota create request schema exposed by Claw Router.",
+        "name": "StorageQuotaCreateRequest",
+        "properties": {},
+        "type": "object"
+      },
+      "StorageQuotaCreateResponse": {
+        "additionalProperties": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/JsonValue"
+            }
+          ],
+          "description": "Schema fragment used by storage quota create response."
+        },
+        "description": "Storage quota create response schema exposed by Claw Router.",
+        "name": "StorageQuotaCreateResponse",
+        "properties": {},
+        "type": "object"
+      },
+      "StorageQuotaListResponse": {
+        "additionalProperties": false,
+        "description": "Storage quota list response schema exposed by Claw Router.",
+        "name": "StorageQuotaListResponse",
+        "properties": {
+          "items": {
+            "description": "Items field on storage quota list response.",
+            "items": {
+              "additionalProperties": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/JsonValue"
+                  }
+                ],
+                "description": "Items field on storage quota list response."
+              },
+              "description": "Items field on storage quota list response.",
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "type": "object"
+      },
+      "StorageReconciliationRunCreateRequest": {
+        "additionalProperties": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/JsonValue"
+            }
+          ],
+          "description": "Schema fragment used by storage reconciliation run create request."
+        },
+        "description": "Storage reconciliation run create request schema exposed by Claw Router.",
+        "name": "StorageReconciliationRunCreateRequest",
+        "properties": {},
+        "type": "object"
+      },
+      "StorageReconciliationRunCreateResponse": {
+        "additionalProperties": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/JsonValue"
+            }
+          ],
+          "description": "Schema fragment used by storage reconciliation run create response."
+        },
+        "description": "Storage reconciliation run create response schema exposed by Claw Router.",
+        "name": "StorageReconciliationRunCreateResponse",
+        "properties": {},
+        "type": "object"
+      },
+      "StorageReconciliationRunListResponse": {
+        "additionalProperties": false,
+        "description": "Storage reconciliation run list response schema exposed by Claw Router.",
+        "name": "StorageReconciliationRunListResponse",
+        "properties": {
+          "items": {
+            "description": "Items field on storage reconciliation run list response.",
+            "items": {
+              "additionalProperties": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/JsonValue"
+                  }
+                ],
+                "description": "Items field on storage reconciliation run list response."
+              },
+              "description": "Items field on storage reconciliation run list response.",
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "type": "object"
+      },
+      "StorageUsageListResponse": {
+        "additionalProperties": false,
+        "description": "Storage usage list response schema exposed by Claw Router.",
+        "name": "StorageUsageListResponse",
+        "properties": {
+          "items": {
+            "description": "Items field on storage usage list response.",
+            "items": {
+              "additionalProperties": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/JsonValue"
+                  }
+                ],
+                "description": "Items field on storage usage list response."
+              },
+              "description": "Items field on storage usage list response.",
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "type": "object"
       },
       "SubmitShopReviewRequest": {
         "additionalProperties": false,
@@ -31508,7 +32367,7 @@
     },
     "/backend/v3/api/content/announcements": {
       "get": {
-        "description": "List admin announcements. Reads content_announcement. Writes none. File targets none.",
+        "description": "List admin announcements. Reads ops_notification_message, ops_notification_recipient. Writes none. File targets none.",
         "operationId": "announcements.list",
         "parameters": [],
         "responses": {
@@ -31576,7 +32435,8 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "content_announcement"
+          "ops_notification_message",
+          "ops_notification_recipient"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "content",
@@ -31586,7 +32446,7 @@
         "x-write-tables": []
       },
       "post": {
-        "description": "Create admin announcement. Reads content_announcement. Writes content_announcement, ops_audit_log. File targets none.",
+        "description": "Create admin announcement. Reads ops_notification_message, ops_notification_recipient. Writes ops_notification_message, ops_notification_recipient, ops_audit_log. File targets none.",
         "operationId": "announcements.create",
         "parameters": [],
         "requestBody": {
@@ -31665,7 +32525,8 @@
         "x-contract-kind": "create",
         "x-file-targets": [],
         "x-read-sources": [
-          "content_announcement"
+          "ops_notification_message",
+          "ops_notification_recipient"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "content",
@@ -31673,14 +32534,15 @@
         "x-sdkwork-resource": "announcements",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts",
         "x-write-tables": [
-          "content_announcement",
+          "ops_notification_message",
+          "ops_notification_recipient",
           "ops_audit_log"
         ]
       }
     },
     "/backend/v3/api/content/announcements/{announcementId}": {
       "delete": {
-        "description": "Delete admin announcement. Reads content_announcement. Writes content_announcement, ops_audit_log. File targets none.",
+        "description": "Delete admin announcement. Reads ops_notification_message, ops_notification_recipient. Writes ops_notification_message, ops_notification_recipient, ops_audit_log. File targets none.",
         "operationId": "announcements.delete",
         "parameters": [
           {
@@ -31758,7 +32620,8 @@
         "x-contract-kind": "delete",
         "x-file-targets": [],
         "x-read-sources": [
-          "content_announcement"
+          "ops_notification_message",
+          "ops_notification_recipient"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "content",
@@ -31766,12 +32629,13 @@
         "x-sdkwork-resource": "announcements",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts",
         "x-write-tables": [
-          "content_announcement",
+          "ops_notification_message",
+          "ops_notification_recipient",
           "ops_audit_log"
         ]
       },
       "patch": {
-        "description": "Update admin announcement. Reads content_announcement. Writes content_announcement, ops_audit_log. File targets none.",
+        "description": "Update admin announcement. Reads ops_notification_message, ops_notification_recipient. Writes ops_notification_message, ops_notification_recipient, ops_audit_log. File targets none.",
         "operationId": "announcements.update",
         "parameters": [
           {
@@ -31860,7 +32724,8 @@
         "x-contract-kind": "update",
         "x-file-targets": [],
         "x-read-sources": [
-          "content_announcement"
+          "ops_notification_message",
+          "ops_notification_recipient"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "content",
@@ -31868,7 +32733,8 @@
         "x-sdkwork-resource": "announcements",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts",
         "x-write-tables": [
-          "content_announcement",
+          "ops_notification_message",
+          "ops_notification_recipient",
           "ops_audit_log"
         ]
       }
@@ -58323,6 +59189,1611 @@
         ]
       }
     },
+    "/backend/v3/api/storage/buckets": {
+      "get": {
+        "description": "List storage buckets. Reads object_bucket. Writes none. File targets none.",
+        "operationId": "oss.buckets.list",
+        "parameters": [
+          {
+            "description": "Cursor query parameter.",
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "schema": {
+              "maxLength": 512,
+              "type": "string"
+            }
+          },
+          {
+            "description": "Limit query parameter.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "format": "int64",
+              "pattern": "^[1-9][0-9]*$",
+              "type": "string",
+              "x-sdkwork-int64-string": true,
+              "x-sdkwork-rust-type": "i64"
+            }
+          },
+          {
+            "description": "Logical scope query parameter.",
+            "in": "query",
+            "name": "logical_scope",
+            "required": false,
+            "schema": {
+              "maxLength": 64,
+              "type": "string"
+            }
+          },
+          {
+            "description": "Provider id query parameter.",
+            "in": "query",
+            "name": "provider_id",
+            "required": false,
+            "schema": {
+              "maxLength": 128,
+              "type": "string"
+            }
+          },
+          {
+            "description": "Status query parameter.",
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "schema": {
+              "maxLength": 32,
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OssBucketsListResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          },
+          "default": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Error response."
+          }
+        },
+        "security": [
+          {
+            "AccessToken": [],
+            "AuthToken": []
+          }
+        ],
+        "summary": "List storage buckets",
+        "tags": [
+          "storage"
+        ],
+        "x-contract-kind": "read",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "object_bucket"
+        ],
+        "x-route-scope": "admin",
+        "x-sdk-domain": "oss",
+        "x-sdkwork-domain": "oss",
+        "x-sdkwork-resource": "oss.buckets",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+        "x-write-tables": []
+      },
+      "post": {
+        "description": "Create storage bucket. Reads object_bucket. Writes object_bucket. File targets none.",
+        "operationId": "oss.buckets.create",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StorageBucketCreateRequest"
+              }
+            }
+          },
+          "description": "Typed request payload for create storage bucket.",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OssBucketsCreateResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          },
+          "default": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Error response."
+          }
+        },
+        "security": [
+          {
+            "AccessToken": [],
+            "AuthToken": []
+          }
+        ],
+        "summary": "Create storage bucket",
+        "tags": [
+          "storage"
+        ],
+        "x-contract-kind": "action",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "object_bucket"
+        ],
+        "x-route-scope": "admin",
+        "x-sdk-domain": "oss",
+        "x-sdkwork-domain": "oss",
+        "x-sdkwork-resource": "oss.buckets",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+        "x-write-tables": [
+          "object_bucket"
+        ]
+      }
+    },
+    "/backend/v3/api/storage/buckets/{bucketId}": {
+      "patch": {
+        "description": "Update storage bucket. Reads object_bucket. Writes object_bucket. File targets none.",
+        "operationId": "oss.buckets.update",
+        "parameters": [
+          {
+            "description": "Bucket id path parameter.",
+            "in": "path",
+            "name": "bucketId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StorageBucketUpdateRequest"
+              }
+            }
+          },
+          "description": "Typed request payload for update storage bucket.",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OssBucketsUpdateResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          },
+          "default": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Error response."
+          }
+        },
+        "security": [
+          {
+            "AccessToken": [],
+            "AuthToken": []
+          }
+        ],
+        "summary": "Update storage bucket",
+        "tags": [
+          "storage"
+        ],
+        "x-contract-kind": "update",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "object_bucket"
+        ],
+        "x-route-scope": "admin",
+        "x-sdk-domain": "oss",
+        "x-sdkwork-domain": "oss",
+        "x-sdkwork-resource": "oss.buckets",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+        "x-write-tables": [
+          "object_bucket"
+        ]
+      }
+    },
+    "/backend/v3/api/storage/default_buckets": {
+      "get": {
+        "description": "List storage default buckets. Reads storage_default_bucket_policy, object_bucket. Writes none. File targets none.",
+        "operationId": "defaultBuckets.list",
+        "parameters": [
+          {
+            "description": "Logical scope query parameter.",
+            "in": "query",
+            "name": "logical_scope",
+            "required": false,
+            "schema": {
+              "maxLength": 64,
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultBucketsListResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          },
+          "default": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Error response."
+          }
+        },
+        "security": [
+          {
+            "AccessToken": [],
+            "AuthToken": []
+          }
+        ],
+        "summary": "List storage default buckets",
+        "tags": [
+          "storage"
+        ],
+        "x-contract-kind": "read",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "storage_default_bucket_policy",
+          "object_bucket"
+        ],
+        "x-route-scope": "admin",
+        "x-sdk-domain": "oss",
+        "x-sdkwork-domain": "oss",
+        "x-sdkwork-resource": "defaultBuckets",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+        "x-write-tables": []
+      }
+    },
+    "/backend/v3/api/storage/default_buckets/{logicalScope}": {
+      "patch": {
+        "description": "Set storage default bucket. Reads storage_default_bucket_policy, object_bucket. Writes storage_default_bucket_policy. File targets none.",
+        "operationId": "defaultBuckets.update",
+        "parameters": [
+          {
+            "description": "Logical scope path parameter.",
+            "in": "path",
+            "name": "logicalScope",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StorageDefaultBucketUpdateRequest"
+              }
+            }
+          },
+          "description": "Typed request payload for set storage default bucket.",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultBucketsUpdateResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          },
+          "default": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Error response."
+          }
+        },
+        "security": [
+          {
+            "AccessToken": [],
+            "AuthToken": []
+          }
+        ],
+        "summary": "Set storage default bucket",
+        "tags": [
+          "storage"
+        ],
+        "x-contract-kind": "update",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "storage_default_bucket_policy",
+          "object_bucket"
+        ],
+        "x-route-scope": "admin",
+        "x-sdk-domain": "oss",
+        "x-sdkwork-domain": "oss",
+        "x-sdkwork-resource": "defaultBuckets",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+        "x-write-tables": [
+          "storage_default_bucket_policy"
+        ]
+      }
+    },
+    "/backend/v3/api/storage/gc_jobs": {
+      "get": {
+        "description": "List storage garbage collection jobs. Reads storage_gc_job. Writes none. File targets none.",
+        "operationId": "gcJobs.list",
+        "parameters": [
+          {
+            "description": "Cursor query parameter.",
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "schema": {
+              "maxLength": 512,
+              "type": "string"
+            }
+          },
+          {
+            "description": "Limit query parameter.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "format": "int64",
+              "pattern": "^[1-9][0-9]*$",
+              "type": "string",
+              "x-sdkwork-int64-string": true,
+              "x-sdkwork-rust-type": "i64"
+            }
+          },
+          {
+            "description": "Status query parameter.",
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "schema": {
+              "maxLength": 32,
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GcJobsListResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          },
+          "default": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Error response."
+          }
+        },
+        "security": [
+          {
+            "AccessToken": [],
+            "AuthToken": []
+          }
+        ],
+        "summary": "List storage garbage collection jobs",
+        "tags": [
+          "storage"
+        ],
+        "x-contract-kind": "read",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "storage_gc_job"
+        ],
+        "x-route-scope": "admin",
+        "x-sdk-domain": "oss",
+        "x-sdkwork-domain": "oss",
+        "x-sdkwork-resource": "gcJobs",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+        "x-write-tables": []
+      },
+      "post": {
+        "description": "Create storage garbage collection job. Reads storage_gc_job. Writes storage_gc_job. File targets none.",
+        "operationId": "gcJobs.create",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StorageGarbageCollectionJobCreateRequest"
+              }
+            }
+          },
+          "description": "Typed request payload for create storage garbage collection job.",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GcJobsCreateResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          },
+          "default": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Error response."
+          }
+        },
+        "security": [
+          {
+            "AccessToken": [],
+            "AuthToken": []
+          }
+        ],
+        "summary": "Create storage garbage collection job",
+        "tags": [
+          "storage"
+        ],
+        "x-contract-kind": "action",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "storage_gc_job"
+        ],
+        "x-route-scope": "admin",
+        "x-sdk-domain": "oss",
+        "x-sdkwork-domain": "oss",
+        "x-sdkwork-resource": "gcJobs",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+        "x-write-tables": [
+          "storage_gc_job"
+        ]
+      }
+    },
+    "/backend/v3/api/storage/providers": {
+      "get": {
+        "description": "List storage providers. Reads object_provider. Writes none. File targets none.",
+        "operationId": "oss.providers.list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OssProvidersListResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          },
+          "default": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Error response."
+          }
+        },
+        "security": [
+          {
+            "AccessToken": [],
+            "AuthToken": []
+          }
+        ],
+        "summary": "List storage providers",
+        "tags": [
+          "storage"
+        ],
+        "x-contract-kind": "read",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "object_provider"
+        ],
+        "x-route-scope": "admin",
+        "x-sdk-domain": "oss",
+        "x-sdkwork-domain": "oss",
+        "x-sdkwork-resource": "oss.providers",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+        "x-write-tables": []
+      },
+      "post": {
+        "description": "Create storage provider. Reads object_provider. Writes object_provider. File targets none.",
+        "operationId": "oss.providers.create",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StorageProviderCreateRequest"
+              }
+            }
+          },
+          "description": "Typed request payload for create storage provider.",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OssProvidersCreateResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          },
+          "default": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Error response."
+          }
+        },
+        "security": [
+          {
+            "AccessToken": [],
+            "AuthToken": []
+          }
+        ],
+        "summary": "Create storage provider",
+        "tags": [
+          "storage"
+        ],
+        "x-contract-kind": "action",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "object_provider"
+        ],
+        "x-route-scope": "admin",
+        "x-sdk-domain": "oss",
+        "x-sdkwork-domain": "oss",
+        "x-sdkwork-resource": "oss.providers",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+        "x-write-tables": [
+          "object_provider"
+        ]
+      }
+    },
+    "/backend/v3/api/storage/providers/{providerId}": {
+      "patch": {
+        "description": "Update storage provider. Reads object_provider. Writes object_provider. File targets none.",
+        "operationId": "oss.providers.update",
+        "parameters": [
+          {
+            "description": "Provider id path parameter.",
+            "in": "path",
+            "name": "providerId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StorageProviderUpdateRequest"
+              }
+            }
+          },
+          "description": "Typed request payload for update storage provider.",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OssProvidersUpdateResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          },
+          "default": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Error response."
+          }
+        },
+        "security": [
+          {
+            "AccessToken": [],
+            "AuthToken": []
+          }
+        ],
+        "summary": "Update storage provider",
+        "tags": [
+          "storage"
+        ],
+        "x-contract-kind": "update",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "object_provider"
+        ],
+        "x-route-scope": "admin",
+        "x-sdk-domain": "oss",
+        "x-sdkwork-domain": "oss",
+        "x-sdkwork-resource": "oss.providers",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+        "x-write-tables": [
+          "object_provider"
+        ]
+      }
+    },
+    "/backend/v3/api/storage/providers/{providerId}/health_check": {
+      "post": {
+        "description": "Health check storage provider. Reads object_provider. Writes ops_audit_log. File targets none.",
+        "operationId": "providers.healthCheck.create",
+        "parameters": [
+          {
+            "description": "Provider id path parameter.",
+            "in": "path",
+            "name": "providerId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProvidersHealthCheckCreateResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          },
+          "default": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Error response."
+          }
+        },
+        "security": [
+          {
+            "AccessToken": [],
+            "AuthToken": []
+          }
+        ],
+        "summary": "Health check storage provider",
+        "tags": [
+          "storage"
+        ],
+        "x-contract-kind": "action",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "object_provider"
+        ],
+        "x-route-scope": "admin",
+        "x-sdk-domain": "oss",
+        "x-sdkwork-domain": "oss",
+        "x-sdkwork-resource": "providers.healthCheck",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+        "x-write-tables": [
+          "ops_audit_log"
+        ]
+      }
+    },
+    "/backend/v3/api/storage/quotas": {
+      "get": {
+        "description": "List storage quota policies. Reads storage_quota_policy. Writes none. File targets none.",
+        "operationId": "oss.quotas.list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OssQuotasListResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          },
+          "default": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Error response."
+          }
+        },
+        "security": [
+          {
+            "AccessToken": [],
+            "AuthToken": []
+          }
+        ],
+        "summary": "List storage quota policies",
+        "tags": [
+          "storage"
+        ],
+        "x-contract-kind": "read",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "storage_quota_policy"
+        ],
+        "x-route-scope": "admin",
+        "x-sdk-domain": "oss",
+        "x-sdkwork-domain": "oss",
+        "x-sdkwork-resource": "oss.quotas",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+        "x-write-tables": []
+      },
+      "post": {
+        "description": "Create storage quota policy. Reads storage_quota_policy. Writes storage_quota_policy. File targets none.",
+        "operationId": "oss.quotas.create",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StorageQuotaCreateRequest"
+              }
+            }
+          },
+          "description": "Typed request payload for create storage quota policy.",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OssQuotasCreateResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          },
+          "default": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Error response."
+          }
+        },
+        "security": [
+          {
+            "AccessToken": [],
+            "AuthToken": []
+          }
+        ],
+        "summary": "Create storage quota policy",
+        "tags": [
+          "storage"
+        ],
+        "x-contract-kind": "action",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "storage_quota_policy"
+        ],
+        "x-route-scope": "admin",
+        "x-sdk-domain": "oss",
+        "x-sdkwork-domain": "oss",
+        "x-sdkwork-resource": "oss.quotas",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+        "x-write-tables": [
+          "storage_quota_policy"
+        ]
+      }
+    },
+    "/backend/v3/api/storage/reconciliation_runs": {
+      "get": {
+        "description": "List storage reconciliation runs. Reads storage_reconciliation_run. Writes none. File targets none.",
+        "operationId": "oss.storageReconciliationRuns.list",
+        "parameters": [
+          {
+            "description": "Cursor query parameter.",
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "schema": {
+              "maxLength": 512,
+              "type": "string"
+            }
+          },
+          {
+            "description": "Limit query parameter.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "format": "int64",
+              "pattern": "^[1-9][0-9]*$",
+              "type": "string",
+              "x-sdkwork-int64-string": true,
+              "x-sdkwork-rust-type": "i64"
+            }
+          },
+          {
+            "description": "Status query parameter.",
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "schema": {
+              "maxLength": 32,
+              "type": "string"
+            }
+          },
+          {
+            "description": "Run type query parameter.",
+            "in": "query",
+            "name": "run_type",
+            "required": false,
+            "schema": {
+              "maxLength": 64,
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OssStorageReconciliationRunsListResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          },
+          "default": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Error response."
+          }
+        },
+        "security": [
+          {
+            "AccessToken": [],
+            "AuthToken": []
+          }
+        ],
+        "summary": "List storage reconciliation runs",
+        "tags": [
+          "storage"
+        ],
+        "x-contract-kind": "read",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "storage_reconciliation_run"
+        ],
+        "x-route-scope": "admin",
+        "x-sdk-domain": "oss",
+        "x-sdkwork-domain": "oss",
+        "x-sdkwork-resource": "oss.storageReconciliationRuns",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+        "x-write-tables": []
+      },
+      "post": {
+        "description": "Create storage reconciliation run. Reads storage_reconciliation_run. Writes storage_reconciliation_run. File targets none.",
+        "operationId": "oss.storageReconciliationRuns.create",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StorageReconciliationRunCreateRequest"
+              }
+            }
+          },
+          "description": "Typed request payload for create storage reconciliation run.",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OssStorageReconciliationRunsCreateResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          },
+          "default": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Error response."
+          }
+        },
+        "security": [
+          {
+            "AccessToken": [],
+            "AuthToken": []
+          }
+        ],
+        "summary": "Create storage reconciliation run",
+        "tags": [
+          "storage"
+        ],
+        "x-contract-kind": "action",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "storage_reconciliation_run"
+        ],
+        "x-route-scope": "admin",
+        "x-sdk-domain": "oss",
+        "x-sdkwork-domain": "oss",
+        "x-sdkwork-resource": "oss.storageReconciliationRuns",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+        "x-write-tables": [
+          "storage_reconciliation_run"
+        ]
+      }
+    },
+    "/backend/v3/api/storage/usage": {
+      "get": {
+        "description": "List storage usage counters. Reads storage_usage_counter. Writes none. File targets none.",
+        "operationId": "oss.usage.list",
+        "parameters": [
+          {
+            "description": "Cursor query parameter.",
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "schema": {
+              "maxLength": 512,
+              "type": "string"
+            }
+          },
+          {
+            "description": "Limit query parameter.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "format": "int64",
+              "pattern": "^[1-9][0-9]*$",
+              "type": "string",
+              "x-sdkwork-int64-string": true,
+              "x-sdkwork-rust-type": "i64"
+            }
+          },
+          {
+            "description": "Scope type query parameter.",
+            "in": "query",
+            "name": "scope_type",
+            "required": false,
+            "schema": {
+              "maxLength": 64,
+              "type": "string"
+            }
+          },
+          {
+            "description": "Scope id query parameter.",
+            "in": "query",
+            "name": "scope_id",
+            "required": false,
+            "schema": {
+              "maxLength": 128,
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OssUsageListResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          },
+          "default": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Error response."
+          }
+        },
+        "security": [
+          {
+            "AccessToken": [],
+            "AuthToken": []
+          }
+        ],
+        "summary": "List storage usage counters",
+        "tags": [
+          "storage"
+        ],
+        "x-contract-kind": "read",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "storage_usage_counter"
+        ],
+        "x-route-scope": "admin",
+        "x-sdk-domain": "oss",
+        "x-sdkwork-domain": "oss",
+        "x-sdkwork-resource": "oss.usage",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+        "x-write-tables": []
+      }
+    },
     "/backend/v3/api/system/analytics/admin/overview": {
       "get": {
         "description": "List overview. Reads ai_usage_fact, ai_request_trace. Writes none. File targets none.",
@@ -62415,6 +64886,10 @@
     {
       "description": "sites operations exposed by Claw Router.",
       "name": "sites"
+    },
+    {
+      "description": "storage operations exposed by Claw Router.",
+      "name": "storage"
     },
     {
       "description": "system operations exposed by Claw Router.",

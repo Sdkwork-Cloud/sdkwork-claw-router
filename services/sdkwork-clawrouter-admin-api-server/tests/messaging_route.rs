@@ -11,7 +11,7 @@ fn admin_api_database_runtime_does_not_mount_foundation_messaging_center() {
     ] {
         assert!(
             !ADMIN_API_LIB.contains(marker),
-            "admin api runtime must not mount or construct foundation messaging marker {marker}; sdkwork-api-gateway owns that surface"
+            "admin api runtime must not mount or construct foundation messaging marker {marker}; sdkwork-api-cloud-gateway owns that surface"
         );
     }
 }

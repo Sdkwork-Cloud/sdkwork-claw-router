@@ -3,7 +3,7 @@ package com.sdkwork.clawrouter.app.model;
 
 public class NotificationsListResult {
     private String code;
-    private NotificationsResponse data;
+    private NotificationListResponse data;
     private String msg;
 
     public String getCode() {
@@ -14,11 +14,11 @@ public class NotificationsListResult {
         this.code = code;
     }
 
-    public NotificationsResponse getData() {
+    public NotificationListResponse getData() {
         return this.data;
     }
 
-    public void setData(NotificationsResponse data) {
+    public void setData(NotificationListResponse data) {
         this.data = data;
     }
 

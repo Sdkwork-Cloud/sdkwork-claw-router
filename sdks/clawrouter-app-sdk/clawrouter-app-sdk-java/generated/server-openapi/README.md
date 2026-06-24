@@ -63,9 +63,7 @@ client.getHttpClient().setHeader("X-Custom-Header", "value");
 
 - `client.getAi()` - ai API
 - `client.getChat()` - chat API
-- `client.getContent()` - content API
 - `client.getIam()` - iam API
-- `client.getMemory()` - memory API
 - `client.getNotification()` - notification API
 - `client.getRuntime()` - runtime API
 - `client.getSystem()` - system API
@@ -91,14 +89,6 @@ ConversationsListResult result = client.getChat().conversationsList(params);
 System.out.println(result);
 ```
 
-### content
-
-```java
-// List forum overview
-FeedsOverviewRetrieveResult result = client.getContent().feedsOverviewRetrieve();
-System.out.println(result);
-```
-
 ### iam
 
 ```java
@@ -107,26 +97,14 @@ ApiKeysListResult result = client.getIam().apiKeysList();
 System.out.println(result);
 ```
 
-### memory
-
-```java
-// List memory spaces
-Map<String, Object> params = new LinkedHashMap<>();
-params.put("page", "page");
-params.put("page_size", "page-size");
-SpacesListResult result = client.getMemory().spacesList(params);
-System.out.println(result);
-```
-
 ### notification
 
 ```java
-// List notifications
+// List portal notifications
 Map<String, Object> params = new LinkedHashMap<>();
-params.put("app_id", "1");
-params.put("include_archived", false);
-params.put("page", 3);
-params.put("page_size", 4);
+params.put("include_archived", true);
+params.put("page", "page");
+params.put("page_size", "page-size");
 NotificationsListResult result = client.getNotification().notificationsList(params);
 System.out.println(result);
 ```

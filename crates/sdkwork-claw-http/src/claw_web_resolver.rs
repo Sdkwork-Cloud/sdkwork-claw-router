@@ -6,9 +6,12 @@ use sdkwork_web_core::{
     WebRequestContextResolver, WebRequestPrincipal, WebSubjectType,
 };
 
+use crate::app_session_tenant_signing::AppSessionTenantSigningKeyResolver;
 use crate::auth::{
-    verify_app_session_token, verify_app_session_token_claims, verify_dual_app_session_token_pair,
-    AppSessionTokenClaims, AppSessionTokenKind, TrustedRequestSubject,
+    decode_app_session_token_claims_unverified, verify_app_session_token,
+    verify_app_session_token_claims, verify_app_session_token_claims_with_signing_secret,
+    verify_dual_app_session_token_pair, AppSessionTokenClaims, AppSessionTokenKind,
+    TrustedRequestSubject,
 };
 
 /// Claw Router web-framework resolver that accepts signed v2 app-session bootstrap tokens
@@ -17,14 +20,24 @@ use crate::auth::{
 pub struct ClawRouterWebRequestContextResolver {
     iam: IamDatabaseWebRequestContextResolver,
     app_session: AppSessionConfig,
+    tenant_signing_key_resolver: Option<std::sync::Arc<dyn AppSessionTenantSigningKeyResolver>>,
 }
 
 impl ClawRouterWebRequestContextResolver {
-    pub fn new(
-        iam: IamDatabaseWebRequestContextResolver,
-        app_session: AppSessionConfig,
+    pub fn new(iam: IamDatabaseWebRequestContextResolver, app_session: AppSessionConfig) -> Self {
+        Self {
+            iam,
+            app_session,
+            tenant_signing_key_resolver: None,
+        }
+    }
+
+    pub fn with_tenant_signing_key_resolver(
+        mut self,
+        tenant_signing_key_resolver: std::sync::Arc<dyn AppSessionTenantSigningKeyResolver>,
     ) -> Self {
-        Self { iam, app_session }
+        self.tenant_signing_key_resolver = Some(tenant_signing_key_resolver);
+        self
     }
 
     pub async fn from_env() -> Result<Self, String> {
@@ -64,10 +77,13 @@ impl WebRequestContextResolver for ClawRouterWebRequestContextResolver {
     ) -> Result<WebRequestPrincipal, WebFrameworkError> {
         if let Some(principal) = resolve_claw_dual_token(
             &self.app_session,
+            self.tenant_signing_key_resolver.as_ref(),
             raw_auth_token,
             raw_access_token,
             current_unix_seconds(),
-        ) {
+        )
+        .await
+        {
             return Ok(principal);
         }
         self.iam
@@ -79,8 +95,13 @@ impl WebRequestContextResolver for ClawRouterWebRequestContextResolver {
         &self,
         raw_access_token: &str,
     ) -> Result<WebRequestPrincipal, WebFrameworkError> {
-        if let Some(principal) =
-            resolve_claw_access_token(&self.app_session, raw_access_token, current_unix_seconds())
+        if let Some(principal) = resolve_claw_access_token(
+            &self.app_session,
+            self.tenant_signing_key_resolver.as_ref(),
+            raw_access_token,
+            current_unix_seconds(),
+        )
+        .await
         {
             return Ok(principal);
         }
@@ -88,12 +109,23 @@ impl WebRequestContextResolver for ClawRouterWebRequestContextResolver {
     }
 }
 
-fn resolve_claw_access_token(
+async fn resolve_claw_access_token(
     config: &AppSessionConfig,
+    tenant_signing_key_resolver: Option<&std::sync::Arc<dyn AppSessionTenantSigningKeyResolver>>,
     raw_access_token: &str,
     now_unix_seconds: i64,
 ) -> Option<WebRequestPrincipal> {
     let token = strip_optional_bearer_prefix(raw_access_token)?;
+    if let Some(principal) = verify_claw_access_token_with_tenant_signing(
+        config,
+        tenant_signing_key_resolver,
+        token,
+        now_unix_seconds,
+    )
+    .await
+    {
+        return Some(principal);
+    }
     if let Ok(claims) = verify_app_session_token_claims(config, token, now_unix_seconds) {
         if claims.token_kind == AppSessionTokenKind::Access {
             return Some(web_principal_from_app_session_claims(&claims));
@@ -104,12 +136,24 @@ fn resolve_claw_access_token(
         .map(|subject| web_principal_from_trusted_subject(&subject))
 }
 
-fn resolve_claw_dual_token(
+async fn resolve_claw_dual_token(
     config: &AppSessionConfig,
+    tenant_signing_key_resolver: Option<&std::sync::Arc<dyn AppSessionTenantSigningKeyResolver>>,
     raw_auth_token: &str,
     raw_access_token: &str,
     now_unix_seconds: i64,
 ) -> Option<WebRequestPrincipal> {
+    if let Some(principal) = verify_claw_dual_token_with_tenant_signing(
+        config,
+        tenant_signing_key_resolver,
+        raw_auth_token,
+        raw_access_token,
+        now_unix_seconds,
+    )
+    .await
+    {
+        return Some(principal);
+    }
     let subject = verify_dual_app_session_token_pair(
         config,
         raw_auth_token,
@@ -120,6 +164,72 @@ fn resolve_claw_dual_token(
     Some(web_principal_from_trusted_subject(&subject))
 }
 
+async fn verify_claw_access_token_with_tenant_signing(
+    config: &AppSessionConfig,
+    tenant_signing_key_resolver: Option<&std::sync::Arc<dyn AppSessionTenantSigningKeyResolver>>,
+    token: &str,
+    now_unix_seconds: i64,
+) -> Option<WebRequestPrincipal> {
+    let resolver = tenant_signing_key_resolver?;
+    let claims = decode_app_session_token_claims_unverified(token).ok()?;
+    if claims.token_kind != AppSessionTokenKind::Access {
+        return None;
+    }
+    let kid = claims.kid.as_deref()?;
+    let signing_secret = resolver.resolve_signing_secret_by_kid(kid).await?;
+    let verified = verify_app_session_token_claims_with_signing_secret(
+        config,
+        &signing_secret,
+        token,
+        now_unix_seconds,
+    )
+    .ok()?;
+    Some(web_principal_from_app_session_claims(&verified))
+}
+
+async fn verify_claw_dual_token_with_tenant_signing(
+    config: &AppSessionConfig,
+    tenant_signing_key_resolver: Option<&std::sync::Arc<dyn AppSessionTenantSigningKeyResolver>>,
+    raw_auth_token: &str,
+    raw_access_token: &str,
+    now_unix_seconds: i64,
+) -> Option<WebRequestPrincipal> {
+    let resolver = tenant_signing_key_resolver?;
+    let auth_token = strip_optional_bearer_prefix(raw_auth_token)?;
+    let access_token = strip_optional_bearer_prefix(raw_access_token)?;
+    let auth_claims = decode_app_session_token_claims_unverified(auth_token).ok()?;
+    let access_claims = decode_app_session_token_claims_unverified(access_token).ok()?;
+    if auth_claims.token_kind != AppSessionTokenKind::Auth
+        || access_claims.token_kind != AppSessionTokenKind::Access
+    {
+        return None;
+    }
+    let auth_kid = auth_claims.kid.as_deref()?;
+    let access_kid = access_claims.kid.as_deref()?;
+    if auth_kid != access_kid {
+        return None;
+    }
+    let signing_secret = resolver.resolve_signing_secret_by_kid(auth_kid).await?;
+    let auth_verified = verify_app_session_token_claims_with_signing_secret(
+        config,
+        &signing_secret,
+        auth_token,
+        now_unix_seconds,
+    )
+    .ok()?;
+    let access_verified = verify_app_session_token_claims_with_signing_secret(
+        config,
+        &signing_secret,
+        access_token,
+        now_unix_seconds,
+    )
+    .ok()?;
+    if auth_verified.trusted_subject() != access_verified.trusted_subject() {
+        return None;
+    }
+    Some(web_principal_from_app_session_claims(&access_verified))
+}
+
 fn web_principal_from_app_session_claims(claims: &AppSessionTokenClaims) -> WebRequestPrincipal {
     WebRequestPrincipal::builder()
         .tenant_id(claims.tenant_id.to_string())
@@ -127,7 +237,10 @@ fn web_principal_from_app_session_claims(claims: &AppSessionTokenClaims) -> WebR
         .user_id(claims.user_id.to_string())
         .session_id(Some(claims.session_id.clone()))
         .app_id(claims.app_id.clone())
-        .login_scope(parse_login_scope(&claims.login_scope, claims.organization_id))
+        .login_scope(parse_login_scope(
+            &claims.login_scope,
+            claims.organization_id,
+        ))
         .environment(parse_environment(&claims.environment))
         .deployment_mode(parse_deployment_mode(&claims.deployment_mode))
         .auth_level(parse_auth_level(&claims.auth_level))
@@ -229,8 +342,8 @@ mod tests {
         }
     }
 
-    #[test]
-    fn resolve_claw_access_token_accepts_signed_bootstrap_access_claim_token() {
+    #[tokio::test]
+    async fn resolve_claw_access_token_accepts_signed_bootstrap_access_claim_token() {
         let config = test_config();
         let now = 1_800_000_000_i64;
         let claims = AppSessionTokenClaims {
@@ -248,20 +361,25 @@ mod tests {
             permission_scope: vec!["clawrouter:console".to_owned()],
             issued_at: now + 1,
             expires_at: now + 300,
+            kid: None,
         };
         let token = sign_app_session_token_with_claims(&config, &claims);
-        let principal = resolve_claw_access_token(&config, &token, now + 2).expect("principal");
+        let principal = resolve_claw_access_token(&config, None, &token, now + 2)
+            .await
+            .expect("principal");
         assert_eq!("100001", principal.tenant_id());
         assert_eq!("30", principal.user_id());
         assert_eq!("sdkwork-clawrouter", principal.app_id());
     }
 
-    #[test]
-    fn resolve_claw_access_token_accepts_legacy_subject_access_token() {
+    #[tokio::test]
+    async fn resolve_claw_access_token_accepts_legacy_subject_access_token() {
         let config = test_config();
         let now = 1_800_000_000_i64;
         let token = sign_app_session_token(&config, test_subject(), now + 1, now + 300);
-        let principal = resolve_claw_access_token(&config, &token, now + 2).expect("principal");
+        let principal = resolve_claw_access_token(&config, None, &token, now + 2)
+            .await
+            .expect("principal");
         assert_eq!("100001", principal.tenant_id());
         assert_eq!("30", principal.user_id());
     }

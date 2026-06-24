@@ -448,10 +448,7 @@ routes:
   - ai_usage_fact
   - ai_provider
   - ai_agent
-  - ai_agent_version
-  - ai_agent_tool_binding
-  - ai_agent_mcp_server
-  - ai_agent_memory
+  - media_resource
   - ai_agent_run
   - ai_agent_run_step
   - ai_agent_session
@@ -478,7 +475,7 @@ routes:
   - ai_usage_fact
   - ai_request_trace
   - ai_model_rank_snapshot
-  - content_announcement
+  - ops_notification_message
   - ops_metric_snapshot
   - ops_gateway_instance
   required_columns:
@@ -495,10 +492,10 @@ routes:
     - error_type
     - provider_error_code
     - started_at
-    content_announcement:
+    ops_notification_message:
     - title
-    - content
-    - announcement_type
+    - body
+    - message_type
     - published_at
     ops_gateway_instance:
     - instance_code
@@ -773,7 +770,7 @@ routes:
   - ops_audit_log
 - route: /admin/organization
   dependency_owned: true
-  dependency_sdk_family: sdkwork-appbase-app-sdk
+  dependency_sdk_family: sdkwork-appbase-backend-sdk
   required_tables:
   - iam_user
   - iam_organization
@@ -1322,8 +1319,6 @@ routes:
   - ops_audit_log
 - route: /admin/service-providers/reconciliation
   required_tables:
-  - integration_provider_invoice_import
-  - integration_provider_invoice_item
   - commerce_usage_service_provider_reconciliation_run
   - commerce_usage_service_provider_reconciliation_item
   - ops_audit_log
@@ -1396,6 +1391,8 @@ routes:
   dependency_owned: true
   dependency_sdk_family: sdkwork-clawrouter-backend-sdk
   required_tables:
+  - ops_notification_message
+  - ops_notification_recipient
   - ops_audit_log
 - route: /admin/catalog
   dependency_owned: true
@@ -1580,6 +1577,7 @@ routes:
   dependency_owned: true
   dependency_sdk_family: sdkwork-clawrouter-backend-sdk
   required_tables:
+  - ops_referral_stat_snapshot
   - ops_audit_log
 - route: /admin/marketing/user-coupons
   dependency_owned: true
@@ -1612,6 +1610,11 @@ routes:
   dependency_sdk_family: sdkwork-clawrouter-backend-sdk
   required_tables:
   - ops_audit_log
+- route: /admin/memberships/packages
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+  required_tables:
+  - ops_audit_log
 - route: /admin/memberships/recharge-packages
   dependency_owned: true
   dependency_sdk_family: sdkwork-clawrouter-backend-sdk
@@ -1640,6 +1643,46 @@ routes:
 - route: /admin/oauth/official-accounts
   dependency_owned: true
   dependency_sdk_family: sdkwork-appbase-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/agents
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-agent-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/skill
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-agent-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/drive
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-drive-app-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/drive/spaces
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-drive-app-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/drive/nodes
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-drive-app-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/drive/permissions
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-drive-app-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/drive/share-links
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-drive-app-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/drive/audit
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-drive-app-sdk
   required_tables:
   - ops_audit_log
 - route: /admin/orders
@@ -1741,4 +1784,60 @@ routes:
   dependency_owned: true
   dependency_sdk_family: sdkwork-clawrouter-backend-sdk
   required_tables:
+  - ops_audit_log
+- route: /admin/storage
+  dependency_owned: true
+  dependency_module: sdkwork-drive
+  dependency_sdk_family: sdkwork-drive-backend-sdk
+  required_tables:
+  - ops_audit_log
+- route: /admin/storage/providers
+  dependency_owned: true
+  dependency_module: sdkwork-drive
+  dependency_sdk_family: sdkwork-drive-backend-sdk
+  required_tables:
+  - dr_drive_storage_provider
+  - ops_audit_log
+- route: /admin/storage/buckets
+  dependency_owned: true
+  dependency_module: sdkwork-drive
+  dependency_sdk_family: sdkwork-drive-backend-sdk
+  required_tables:
+  - dr_drive_space
+  - ops_audit_log
+- route: /admin/storage/default-buckets
+  dependency_owned: true
+  dependency_module: sdkwork-drive
+  dependency_sdk_family: sdkwork-drive-backend-sdk
+  required_tables:
+  - dr_drive_space_app_upload_profile
+  - dr_drive_space
+  - ops_audit_log
+- route: /admin/storage/quotas
+  dependency_owned: true
+  dependency_module: sdkwork-drive
+  dependency_sdk_family: sdkwork-drive-backend-sdk
+  required_tables:
+  - dr_drive_space_version_policy
+  - ops_audit_log
+- route: /admin/storage/usage
+  dependency_owned: true
+  dependency_module: sdkwork-drive
+  dependency_sdk_family: sdkwork-drive-backend-sdk
+  required_tables:
+  - dr_drive_storage_object
+  - ops_audit_log
+- route: /admin/storage/reconciliation
+  dependency_owned: true
+  dependency_module: sdkwork-drive
+  dependency_sdk_family: sdkwork-drive-backend-sdk
+  required_tables:
+  - dr_drive_maintenance_job
+  - ops_audit_log
+- route: /admin/storage/garbage-collection
+  dependency_owned: true
+  dependency_module: sdkwork-drive
+  dependency_sdk_family: sdkwork-drive-backend-sdk
+  required_tables:
+  - dr_drive_maintenance_job
   - ops_audit_log

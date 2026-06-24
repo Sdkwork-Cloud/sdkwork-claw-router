@@ -12,7 +12,7 @@ SDKWork Claw Router release 包覆盖 `archive`、`service`、`container`、`des
 | `container` | `container-image` | PostgreSQL | Containerfile / entrypoint | Docker、Kubernetes、容器平台 |
 | `source` | 源码工作区 | PostgreSQL 一体化开发（默认）；`dev:desktop` 为网关客户端 | `pnpm dev` / `pnpm dev` / `pnpm start` | 开发、验证、私有构建 |
 
-源码工作区说明：`pnpm dev`（别名 `pnpm dev`、`pnpm dev:server`）启动一体化 product server 开发配置。`pnpm dev:desktop`（别名 `pnpm dev:desktop`、`pnpm dev:desktop`）仅启动 `sdkwork-api-gateway` 客户端工作区。
+源码工作区说明：`pnpm dev`（别名 `pnpm dev`、`pnpm dev:server`）启动一体化 product server 开发配置。`pnpm dev:desktop`（别名 `pnpm dev:desktop`、`pnpm dev:desktop`）仅启动 `sdkwork-api-cloud-gateway` 客户端工作区。
 
 archive、service、container 服务端部署默认启用并要求 Redis，因为服务端缓存运行时使用 Redis 承载共享状态。desktop 包仍保持 Redis 可选且默认关闭。
 

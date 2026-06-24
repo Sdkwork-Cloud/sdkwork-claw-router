@@ -15,7 +15,7 @@ const __dirname = path.dirname(__filename);
 
 export const REPO_ROOT = path.resolve(__dirname, '..', '..');
 export const SPEC_PATH = path.join(REPO_ROOT, 'specs/topology.spec.json');
-export const API_GATEWAY_REPO = path.resolve(REPO_ROOT, '..', 'sdkwork-api-gateway');
+export const API_GATEWAY_REPO = path.resolve(REPO_ROOT, '..', 'sdkwork-api-cloud-gateway');
 
 const spec = loadTopologySpec(SPEC_PATH);
 const runtime = createTopologyRuntime(spec, REPO_ROOT);
@@ -144,7 +144,7 @@ export function applyTopologyProfileToWorkspaceSettings(settings, profileEnv = {
   const publicBind = readTrimmedValue(profileEnv.SDKWORK_CLAW_ROUTER_APPLICATION_PUBLIC_INGRESS_BIND);
   const appApiBind = readTrimmedValue(profileEnv.SDKWORK_CLAW_ROUTER_INTERNAL_APP_API_BIND);
   const portalBind = readTrimmedValue(profileEnv.SDKWORK_CLAW_ROUTER_INTERNAL_PORTAL_RENDERER_BIND);
-  const platformBind = readTrimmedValue(profileEnv.SDKWORK_API_GATEWAY_BIND);
+  const platformBind = readTrimmedValue(profileEnv.SDKWORK_API_CLOUD_GATEWAY_BIND);
 
   if (openBind && !settings.gatewayBindExplicit) {
     settings.gatewayBind = openBind;

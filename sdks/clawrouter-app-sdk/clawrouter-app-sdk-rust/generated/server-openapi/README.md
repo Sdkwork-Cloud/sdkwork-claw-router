@@ -45,9 +45,7 @@ client.set_header("X-Custom-Header", "value");
 
 - `client.ai()` - ai API
 - `client.chat()` - chat API
-- `client.content()` - content API
 - `client.iam()` - iam API
-- `client.memory()` - memory API
 - `client.notification()` - notification API
 - `client.runtime()` - runtime API
 - `client.system()` - system API
@@ -74,14 +72,6 @@ let result = client.chat().conversations_list(Some(&query)).await?;
 println!("{result:?}");
 ```
 
-### content
-
-```rust
-// List forum overview
-let result = client.content().feeds_overview_retrieve().await?;
-println!("{result:?}");
-```
-
 ### iam
 
 ```rust
@@ -90,28 +80,15 @@ let result = client.iam().api_keys_list().await?;
 println!("{result:?}");
 ```
 
-### memory
-
-```rust
-use std::collections::HashMap;
-// List memory spaces
-let mut query = HashMap::new();
-query.insert("page".to_string(), serde_json::json!("page"));
-query.insert("page_size".to_string(), serde_json::json!("page-size"));
-let result = client.memory().spaces_list(Some(&query)).await?;
-println!("{result:?}");
-```
-
 ### notification
 
 ```rust
 use std::collections::HashMap;
-// List notifications
+// List portal notifications
 let mut query = HashMap::new();
-query.insert("app_id".to_string(), serde_json::json!("1"));
-query.insert("include_archived".to_string(), serde_json::json!(false));
-query.insert("page".to_string(), serde_json::json!(3));
-query.insert("page_size".to_string(), serde_json::json!(4));
+query.insert("include_archived".to_string(), serde_json::json!(true));
+query.insert("page".to_string(), serde_json::json!("page"));
+query.insert("page_size".to_string(), serde_json::json!("page-size"));
 let result = client.notification().notifications_list(Some(&query)).await?;
 println!("{result:?}");
 ```

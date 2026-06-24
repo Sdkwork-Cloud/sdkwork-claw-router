@@ -3,7 +3,7 @@ use sdkwork_claw_config::{DeploymentMode, RuntimeConfig, RuntimeTomlConfig};
 #[test]
 fn runtime_config_uses_default_bind_and_desktop_mode_when_env_parts_are_absent() {
     let config = RuntimeConfig::from_optional_parts(
-        "sdkwork-clawrouter-gateway",
+        "sdkwork-clawrouter-cloud-gateway",
         "SDKWORK_CLAW_GATEWAY_BIND",
         "0.0.0.0:18080",
         None,
@@ -11,7 +11,7 @@ fn runtime_config_uses_default_bind_and_desktop_mode_when_env_parts_are_absent()
     )
     .unwrap();
 
-    assert_eq!("sdkwork-clawrouter-gateway", config.service_name);
+    assert_eq!("sdkwork-clawrouter-cloud-gateway", config.service_name);
     assert_eq!(DeploymentMode::Desktop, config.deployment_mode);
     assert_eq!("0.0.0.0:18080", config.bind_addr);
 }
@@ -19,7 +19,7 @@ fn runtime_config_uses_default_bind_and_desktop_mode_when_env_parts_are_absent()
 #[test]
 fn runtime_config_accepts_service_bind_override_and_kubernetes_alias() {
     let config = RuntimeConfig::from_optional_parts(
-        "sdkwork-clawrouter-gateway",
+        "sdkwork-clawrouter-cloud-gateway",
         "SDKWORK_CLAW_GATEWAY_BIND",
         "0.0.0.0:18080",
         Some("127.0.0.1:19090".to_owned()),
@@ -34,7 +34,7 @@ fn runtime_config_accepts_service_bind_override_and_kubernetes_alias() {
 #[test]
 fn runtime_config_rejects_blank_or_invalid_bind_address() {
     let blank = RuntimeConfig::from_optional_parts(
-        "sdkwork-clawrouter-gateway",
+        "sdkwork-clawrouter-cloud-gateway",
         "SDKWORK_CLAW_GATEWAY_BIND",
         "0.0.0.0:18080",
         Some("   ".to_owned()),
@@ -44,7 +44,7 @@ fn runtime_config_rejects_blank_or_invalid_bind_address() {
     assert!(blank.contains("SDKWORK_CLAW_GATEWAY_BIND"));
 
     let invalid = RuntimeConfig::from_optional_parts(
-        "sdkwork-clawrouter-gateway",
+        "sdkwork-clawrouter-cloud-gateway",
         "SDKWORK_CLAW_GATEWAY_BIND",
         "0.0.0.0:18080",
         Some("not-a-socket".to_owned()),
@@ -57,7 +57,7 @@ fn runtime_config_rejects_blank_or_invalid_bind_address() {
 #[test]
 fn runtime_config_rejects_invalid_deployment_mode() {
     let error = RuntimeConfig::from_optional_parts(
-        "sdkwork-clawrouter-gateway",
+        "sdkwork-clawrouter-cloud-gateway",
         "SDKWORK_CLAW_GATEWAY_BIND",
         "0.0.0.0:18080",
         None,
@@ -138,7 +138,6 @@ data_directory = "/var/lib/sdkwork/router"
 [request_limits]
 admin_app_json_body_max_bytes = 131072
 admin_skill_json_body_max_bytes = 65536
-forum_json_body_max_bytes = 262144
 payment_callback_body_max_bytes = 65536
 
 [observability]
@@ -228,9 +227,6 @@ max_retry_attempts = 2
 retry_backoff_millis = 1000
 run_on_startup = true
 alert_after_consecutive_failures = 3
-
-[forum]
-community_links_json_file = "/etc/sdkwork/router/forum-community-links.json"
 
 [install]
 environment = "production"
@@ -358,10 +354,6 @@ password_file = "/etc/sdkwork/router/bootstrap-admin.secret"
     assert_eq!(
         Some(65536),
         config.request_limits.admin_skill_json_body_max_bytes
-    );
-    assert_eq!(
-        Some(262144),
-        config.request_limits.forum_json_body_max_bytes
     );
     assert_eq!(
         Some(65536),
@@ -520,10 +512,6 @@ password_file = "/etc/sdkwork/router/bootstrap-admin.secret"
     assert_eq!(
         Some(3),
         config.model_ranking.alert_after_consecutive_failures
-    );
-    assert_eq!(
-        Some("/etc/sdkwork/router/forum-community-links.json"),
-        config.forum.community_links_json_file.as_deref()
     );
     assert_eq!(Some("production"), config.install.environment.as_deref());
     assert_eq!(Some("commercial"), config.install.seed_profile.as_deref());

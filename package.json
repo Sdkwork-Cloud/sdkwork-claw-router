@@ -61,6 +61,12 @@
     "test:topology": "node --test --experimental-test-isolation=none scripts/verify-claw-router-topology.test.mjs",
     "gateway:package:cloud": "node scripts/gateway-cloud-bundle.mjs bundle",
     "gateway:validate:cloud": "node scripts/gateway-cloud-bundle.mjs validate",
+    "gateway:run:standalone": "cargo run -p sdkwork-clawrouter-standalone-gateway --bin sdkwork-clawrouter-standalone-gateway",
+    "gateway:build:standalone": "cargo build -p sdkwork-clawrouter-standalone-gateway --bin sdkwork-clawrouter-standalone-gateway",
+    "gateway:package:standalone": "cargo build -p sdkwork-clawrouter-standalone-gateway --release --bin sdkwork-clawrouter-standalone-gateway",
+    "gateway:validate:standalone": "cargo check -p sdkwork-clawrouter-standalone-gateway",
+    "gateway:run:cloud": "cargo run -p sdkwork-clawrouter-cloud-gateway --bin sdkwork-clawrouter-cloud-gateway",
+    "gateway:build:cloud": "cargo build -p sdkwork-clawrouter-cloud-gateway --bin sdkwork-clawrouter-cloud-gateway",
     "gateway:matrix": "node ../sdkwork-app-topology/scripts/sdkwork-topology.mjs print-matrix --root . --spec specs/topology.spec.json --profile all",
     "gateway:matrix:cloud": "node ../sdkwork-app-topology/scripts/sdkwork-topology.mjs print-matrix --root . --spec specs/topology.spec.json --profile platform-config-bundle",
     "sbom:release": "node scripts/generate-release-sbom.mjs",
@@ -83,6 +89,7 @@
     "verify": "node scripts/verify-claw-router-product.mjs",
     "verify:fast": "node scripts/verify-claw-router-product.mjs --fast",
     "verify:precommit": "node scripts/verify-claw-router-product.mjs --precommit",
+    "verify:ci": "node scripts/verify-claw-router-product.mjs --ci",
     "verify:parallel": "node scripts/verify-claw-router-product.mjs --parallel",
     "check:pnpm-script-standard": "node ../sdkwork-specs/tools/check-pnpm-script-standard.mjs --root . --product-prefix clawrouter,claw",
     "check:agent-workflow-standard": "node ../sdkwork-specs/tools/check-agent-workflow-standard.mjs --root .",
@@ -113,7 +120,7 @@
     "nginx:deploy": "node scripts/configure-nginx.mjs --deploy",
     "check:alignment:audit": "python tools/sdkwork_standard_alignment_guardian.py",
     "check:alignment": "python tools/sdkwork_standard_alignment_guardian.py --strict",
-    "db:materialize:contract": "node ../sdkwork-specs/tools/materialize-database-contract-from-baseline.mjs --root . --baseline database/ddl/baseline/postgres/0001_clawrouter_legacy_baseline.sql --module-id clawrouter --owner claw-router-platform --prefixes ai_,analytics_,c_,content_,integration_,media_,object_,ops_,storage_,system_,upload_,iam_gateway_,iam_user_,commerce_usage_,commerce_settlement_export,commerce_service_provider_exposure",
+    "db:materialize:contract": "node ../sdkwork-specs/tools/materialize-database-contract-from-baseline.mjs --root . --baseline database/ddl/baseline/postgres/0001_clawrouter_legacy_baseline.sql --module-id clawrouter --owner claw-router-platform --prefixes ai_,analytics_,c_,integration_,ops_,system_,iam_gateway_,iam_user_,commerce_usage_,commerce_service_provider_exposure",
     "db:validate": "node ../sdkwork-specs/tools/check-database-framework-standard.mjs --root .",
     "check:database-ownership": "node scripts/check-database-ownership.mjs",
     "check:application-env": "node --test scripts/lib/claw-router-browser-env-contract.test.mjs scripts/lib/claw-router-edge-env-contract.test.mjs scripts/dev/claw-router-application-env.test.mjs scripts/dev/ensure-claw-router-env.test.mjs scripts/write-release-env.test.mjs scripts/release-environment-validation.test.mjs && node scripts/check-claw-router-application-env.mjs",
@@ -124,6 +131,7 @@
     "db:drift": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . drift",
     "db:drift:check": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . drift-check",
     "db:bootstrap": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . bootstrap",
-    "test:contract:database": "node ../sdkwork-specs/tools/check-database-framework-standard.mjs --root ."
+    "test:contract:database": "node ../sdkwork-specs/tools/check-database-framework-standard.mjs --root .",
+    "topology:plan": "node ../sdkwork-app-topology/scripts/sdkwork-topology.mjs plan --root . --spec specs/topology.spec.json"
   }
 }

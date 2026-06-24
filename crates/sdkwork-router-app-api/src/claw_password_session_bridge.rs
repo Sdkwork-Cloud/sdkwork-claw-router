@@ -1,12 +1,17 @@
 use std::sync::Arc;
 
 use async_trait::async_trait;
-use sdkwork_claw_config::AppSessionConfig;
+use sdkwork_claw_config::{AppSessionConfig, DeploymentMode};
 use sdkwork_clawrouter_router_service::api::{
     authenticate_password_and_issue_iam_session, AppSessionCreateError, IamSessionResponse,
 };
-use sdkwork_clawrouter_router_service::application::{EntityUuidGenerator, PasswordHasher};
-use sdkwork_clawrouter_router_service::ports::{AppAuthStore, AppSessionEventStore};
+use sdkwork_clawrouter_router_service::application::{
+    EntityUuidGenerator, IamRuntimeContext, PasswordHasher,
+};
+use sdkwork_clawrouter_router_service::infrastructure::sql::LegacyGlobalTenantSigningKeyStore;
+use sdkwork_clawrouter_router_service::ports::{
+    AppAuthStore, AppSessionEventStore, TenantSigningKeyStore,
+};
 use sdkwork_router_iam_app_api::{PasswordSessionBridge, PasswordSessionBridgeResult};
 use serde_json::{json, Value};
 
@@ -14,8 +19,10 @@ pub(crate) struct ClawPasswordSessionBridge {
     auth_store: Arc<dyn AppAuthStore + Send + Sync>,
     password_hasher: Arc<dyn PasswordHasher + Send + Sync>,
     app_session_config: AppSessionConfig,
+    iam_runtime: IamRuntimeContext,
     event_store: Arc<dyn AppSessionEventStore + Send + Sync>,
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
+    tenant_signing_key_store: Arc<dyn TenantSigningKeyStore + Send + Sync>,
 }
 
 impl ClawPasswordSessionBridge {
@@ -25,13 +32,27 @@ impl ClawPasswordSessionBridge {
         app_session_config: AppSessionConfig,
         event_store: Arc<dyn AppSessionEventStore + Send + Sync>,
         entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
+        tenant_signing_key_store: Option<Arc<dyn TenantSigningKeyStore + Send + Sync>>,
     ) -> Self {
+        let deployment_mode = DeploymentMode::from_env();
         Self {
             auth_store,
             password_hasher,
-            app_session_config,
+            app_session_config: app_session_config.clone(),
+            iam_runtime: IamRuntimeContext::from_runtime_toml(deployment_mode, None),
             event_store,
             entity_uuid_generator,
+            tenant_signing_key_store: tenant_signing_key_store.unwrap_or_else(|| {
+                if deployment_mode.is_production_like() {
+                    panic!(
+                        "tenant signing key store is required for production-like deployments ({})",
+                        deployment_mode.as_str()
+                    );
+                }
+                Arc::new(LegacyGlobalTenantSigningKeyStore::from_app_session_config(
+                    &app_session_config,
+                ))
+            }),
         }
     }
 
@@ -52,11 +73,13 @@ impl PasswordSessionBridge for ClawPasswordSessionBridge {
         password: &str,
     ) -> PasswordSessionBridgeResult {
         match authenticate_password_and_issue_iam_session(
-            self.auth_store.as_ref(),
-            self.password_hasher.as_ref(),
-            &self.app_session_config,
-            self.event_store.as_ref(),
-            self.entity_uuid_generator.as_ref(),
+            Arc::clone(&self.auth_store),
+            Arc::clone(&self.password_hasher),
+            self.app_session_config.clone(),
+            self.iam_runtime.clone(),
+            Arc::clone(&self.event_store),
+            Arc::clone(&self.entity_uuid_generator),
+            Arc::clone(&self.tenant_signing_key_store),
             account,
             password,
         )

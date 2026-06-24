@@ -118,7 +118,14 @@ class FrontendOperationAudit:
     MODELS_DEPENDENCY_DOMAINS = frozenset({"intelligence", "ai"})
     MODELS_BACKEND_SDK_CLIENT = "getModelsBackendSdkClient"
     MODELS_BACKEND_SDK_PATTERN = re.compile(r"\bgetModelsBackendSdkClient\s*\(")
+    MODELS_APP_SDK_PATTERN = re.compile(r"\bgetModelsAppSdkClient\s*\(")
     MODELS_SOURCE_PREFIX = "data/sdkwork-models/"
+    CLAWROUTER_PORTAL_MODELS_SOURCE_PREFIX = (
+        "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-models/"
+    )
+    CLAWROUTER_PORTAL_RANKINGS_SOURCE_PREFIX = (
+        "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-rankings/"
+    )
     APPBASE_APP_DEPENDENCY_DOMAINS = frozenset({"auth", "iam", "appbase"})
     APPBASE_APP_SERVICE_CLIENT = "getSdkworkAppbaseAppSdkClient"
     APPBASE_BACKEND_SERVICE_CLIENT = "getSdkworkAppbaseBackendSdkClient"
@@ -140,7 +147,32 @@ class FrontendOperationAudit:
         r"(?:from\s+|import\s*\(\s*)['\"](\.{1,2}/[^'\"]*RuntimeApiOperations(?:\.[cm]?[tj]sx?)?)['\"]"
     )
     COMMERCE_RUNTIME_SOURCE = (
-        "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts"
+        "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts"
+    )
+    MISSING_COMMERCE_DEPENDENCY_PATTERN = re.compile(
+        r"\bmissingCommerceDependencyOperation\s*\(\s*['\"]([^'\"]+)['\"]\s*\)"
+    )
+    AGENT_DEPENDENCY_DOMAINS = frozenset({"agent"})
+    AGENT_BACKEND_SDK_PATTERN = re.compile(r"\bgetSdkworkAgentBackendSdkClient\s*\(")
+    DRIVE_DEPENDENCY_DOMAINS = frozenset({"drive"})
+    DRIVE_APP_SDK_PATTERN = re.compile(r"\bgetSdkworkDriveAppSdkClient\s*\(")
+    DRIVE_BACKEND_SDK_PATTERN = re.compile(
+        r"\b(?:getSdkworkDriveBackendSdkClient|getDriveStorageSdk)\s*\("
+    )
+    ADMIN_APP_API_SURFACE_ROUTES = frozenset(
+        {
+            "/admin/drive/spaces",
+            "/admin/drive/nodes",
+            "/admin/drive/permissions",
+            "/admin/drive/share-links",
+            "/admin/drive/audit",
+        }
+    )
+    CLAWROUTER_BACKEND_COMMERCE_PATTERN = re.compile(
+        r"\bgetClawRouterBackendSdkClient\s*\(\s*\)\s*\.commerce\b"
+    )
+    CLAWROUTER_APP_COMMERCE_PATTERN = re.compile(
+        r"\bgetClawRouterAppSdkClient\s*\(\s*\)\s*\.commerce\b"
     )
     APPBASE_IAM_RUNTIME_PATTERN = re.compile(r"\bgetClawRouterIamRuntime\s*\(\s*\)\s*\.service\b")
     APPBASE_IAM_CONTROLLER_PATTERN = re.compile(
@@ -316,7 +348,11 @@ class FrontendOperationAudit:
             if not isinstance(api_path, str):
                 messages.append(f"frontend operation {key} must declare api_path")
             if isinstance(route, str) and isinstance(api_surface, str):
-                if route.startswith("/admin") and api_surface != "backend":
+                if (
+                    route.startswith("/admin")
+                    and api_surface != "backend"
+                    and route not in self.ADMIN_APP_API_SURFACE_ROUTES
+                ):
                     messages.append(f"frontend operation {key} route {route} must use backend api_surface")
                 elif not route.startswith("/admin") and api_surface == "backend":
                     messages.append(f"frontend operation {key} route {route} must not use backend api_surface")
@@ -610,7 +646,12 @@ class FrontendOperationAudit:
                 source_text=source_text,
             )
         if self._is_commerce_dependency_operation(sdk_domain=sdk_domain, source_operation=source_operation):
-            return self.COMMERCE_SERVICE_PATTERN.search(source_text) is not None
+            return (
+                self.COMMERCE_SERVICE_PATTERN.search(source_text) is not None
+                or self.CLAWROUTER_BACKEND_COMMERCE_PATTERN.search(source_text) is not None
+                or self.CLAWROUTER_APP_COMMERCE_PATTERN.search(source_text) is not None
+                or self.MISSING_COMMERCE_DEPENDENCY_PATTERN.search(source_text) is not None
+            )
         if self._is_generations_dependency_operation(sdk_domain=sdk_domain, source_operation=source_operation):
             return (
                 self.GENERATIONS_SERVICE_PATTERN.search(source_text) is not None
@@ -634,7 +675,18 @@ class FrontendOperationAudit:
             source=source,
             source_operation=source_operation,
         ):
-            return self.MODELS_BACKEND_SDK_PATTERN.search(source_text) is not None
+            return (
+                self.MODELS_BACKEND_SDK_PATTERN.search(source_text) is not None
+                or self.MODELS_APP_SDK_PATTERN.search(source_text) is not None
+            )
+        if self._is_agent_dependency_operation(sdk_domain=sdk_domain, source_operation=source_operation):
+            return self.AGENT_BACKEND_SDK_PATTERN.search(source_text) is not None
+        if self._is_drive_dependency_operation(sdk_domain=sdk_domain, source_operation=source_operation):
+            if api_surface == "backend":
+                return self.DRIVE_BACKEND_SDK_PATTERN.search(source_text) is not None
+            return self.DRIVE_APP_SDK_PATTERN.search(source_text) is not None
+        if self._is_missing_commerce_dependency_operation(source_text=source_text, source_operation=source_operation):
+            return True
 
         sdk_client = self.SDK_CLIENTS[api_surface]
         if re.search(rf"\b{re.escape(sdk_client)}\s*\(", source_text):
@@ -748,6 +800,50 @@ class FrontendOperationAudit:
     def _is_models_dependency_domain(self, sdk_domain: Any) -> bool:
         return isinstance(sdk_domain, str) and sdk_domain in self.MODELS_DEPENDENCY_DOMAINS
 
+    def _is_agent_dependency_domain(self, sdk_domain: Any) -> bool:
+        return isinstance(sdk_domain, str) and sdk_domain in self.AGENT_DEPENDENCY_DOMAINS
+
+    def _is_agent_dependency_operation(self, *, sdk_domain: Any, source_operation: dict[str, Any] | None) -> bool:
+        if self._is_agent_dependency_domain(sdk_domain):
+            return True
+        if isinstance(sdk_domain, str) and sdk_domain:
+            return False
+        if not isinstance(source_operation, dict):
+            return False
+        api_path = source_operation.get("api_path")
+        return isinstance(api_path, str) and api_path.startswith("/backend/v3/api/ai/agents")
+
+    def _is_drive_dependency_domain(self, sdk_domain: Any) -> bool:
+        return isinstance(sdk_domain, str) and sdk_domain in self.DRIVE_DEPENDENCY_DOMAINS
+
+    def _is_drive_dependency_operation(self, *, sdk_domain: Any, source_operation: dict[str, Any] | None) -> bool:
+        if self._is_drive_dependency_domain(sdk_domain):
+            return True
+        if isinstance(sdk_domain, str) and sdk_domain:
+            return False
+        if not isinstance(source_operation, dict):
+            return False
+        api_path = source_operation.get("api_path")
+        return isinstance(api_path, str) and (
+            api_path.startswith("/app/v3/api/drive/")
+            or api_path.startswith("/backend/v3/api/drive/")
+        )
+
+    def _is_missing_commerce_dependency_operation(
+        self,
+        *,
+        source_text: str,
+        source_operation: dict[str, Any] | None,
+    ) -> bool:
+        if self.MISSING_COMMERCE_DEPENDENCY_PATTERN.search(source_text) is None:
+            return False
+        if not isinstance(source_operation, dict):
+            return True
+        return self._is_commerce_dependency_operation(
+            sdk_domain=source_operation.get("sdk_domain"),
+            source_operation=source_operation,
+        )
+
     def _is_models_dependency_operation(
         self,
         *,
@@ -757,6 +853,11 @@ class FrontendOperationAudit:
         source_operation: dict[str, Any] | None = None,
     ) -> bool:
         if isinstance(source, str) and source.replace("\\", "/").startswith(self.MODELS_SOURCE_PREFIX):
+            return True
+        normalized_source = source.replace("\\", "/") if isinstance(source, str) else ""
+        if normalized_source.startswith(self.CLAWROUTER_PORTAL_MODELS_SOURCE_PREFIX):
+            return True
+        if normalized_source.startswith(self.CLAWROUTER_PORTAL_RANKINGS_SOURCE_PREFIX):
             return True
         if api_surface != "backend":
             return False
@@ -797,7 +898,26 @@ class FrontendOperationAudit:
                     f"frontend operation {key} must use {self.COMMERCE_SERVICE_CLIENT} "
                     f"for {sdk_domain} dependency {api_surface} api_surface"
                 )
-            return f"frontend operation {key} must use {self.COMMERCE_SERVICE_CLIENT} for {api_surface} api_surface"
+            return (
+                f"frontend operation {key} must use {self.COMMERCE_SERVICE_CLIENT}, "
+                f"getClawRouterBackendSdkClient().commerce, or missingCommerceDependencyOperation "
+                f"for {api_surface} api_surface"
+            )
+        if self._is_agent_dependency_operation(sdk_domain=sdk_domain, source_operation=source_operation):
+            return (
+                f"frontend operation {key} must use getSdkworkAgentBackendSdkClient "
+                f"for {api_surface} api_surface"
+            )
+        if self._is_drive_dependency_operation(sdk_domain=sdk_domain, source_operation=source_operation):
+            if api_surface == "backend":
+                return (
+                    f"frontend operation {key} must use getSdkworkDriveBackendSdkClient "
+                    f"for drive dependency {api_surface} api_surface"
+                )
+            return (
+                f"frontend operation {key} must use getSdkworkDriveAppSdkClient "
+                f"for {api_surface} api_surface"
+            )
         if self._is_generations_dependency_operation(sdk_domain=sdk_domain, source_operation=source_operation):
             return (
                 f"frontend operation {key} must use {self.GENERATIONS_SERVICE_CLIENT} "

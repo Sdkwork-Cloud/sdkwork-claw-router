@@ -3,7 +3,7 @@ use std::sync::Arc;
 use crate::api::paths::app_path;
 use crate::api::paths::append_query_string;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{ChannelGroupsListResult, DashboardOverviewRetrieveResult, GatewayTracesListResult, GenerationListResult, ModelRankingsListResult, ModelVendorsListResult, ModelsListResult, RoutingApiKeysListResult, RoutingChannelsListResult, RoutingRequestTracesListResult, RoutingUsageListResult, UsageLogsListResult};
+use crate::models::{ChannelGroupsListResult, DashboardOverviewRetrieveResult, GatewayTracesListResult, ModelRankingsListResult, ModelVendorsListResult, ModelsListResult, RoutingApiKeysListResult, RoutingChannelsListResult, RoutingRequestTracesListResult, RoutingUsageListResult, UsageLogsListResult};
 
 #[derive(Clone)]
 pub struct AiApi {
@@ -38,12 +38,6 @@ impl AiApi {
         self.client.get(&path, None, None).await
     }
 
-    /// List generation history
-    pub async fn generation_list(&self) -> Result<GenerationListResult, SdkworkError> {
-        let path = app_path(&"/ai/generations".to_string());
-        self.client.get(&path, None, None).await
-    }
-
     /// List model rankings
     pub async fn model_rankings_list(&self, rank_scope: Option<&str>, vendor_code: Option<&str>, modality: Option<&str>, q: Option<&str>, limit: Option<&str>) -> Result<ModelRankingsListResult, SdkworkError> {
         let query = build_query_string(&[
@@ -63,8 +57,8 @@ impl AiApi {
         self.client.get(&path, None, None).await
     }
 
-    /// List models
-    pub async fn models_list(&self, billing_meter: Option<&str>, vendor_code: Option<&str>, vendor_codes: Option<&[String]>, modalities: Option<&[String]>, capabilities: Option<&[String]>, categories: Option<&[String]>, groups: Option<&[String]>, q: Option<&str>, limit: Option<&str>) -> Result<ModelsListResult, SdkworkError> {
+    /// List model catalog for Playground
+    pub async fn models_list(&self, billing_meter: Option<&str>, vendor_code: Option<&str>, vendor_codes: Option<&[String]>, modalities: Option<&[String]>, capabilities: Option<&[String]>, categories: Option<&[String]>, groups: Option<&[String]>, q: Option<&str>, limit: Option<&str>, offset: Option<&str>) -> Result<ModelsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("billing_meter", billing_meter, "form", true, false, None),
             QueryParameterSpec::new("vendor_code", vendor_code, "form", true, false, None),
@@ -75,6 +69,7 @@ impl AiApi {
             QueryParameterSpec::new("groups", groups, "form", false, false, None),
             QueryParameterSpec::new("q", q, "form", true, false, None),
             QueryParameterSpec::new("limit", limit, "form", true, false, None),
+            QueryParameterSpec::new("offset", offset, "form", true, false, None),
         ]);
         let path = append_query_string(app_path(&"/ai/models".to_string()), &query);
         self.client.get(&path, None, None).await

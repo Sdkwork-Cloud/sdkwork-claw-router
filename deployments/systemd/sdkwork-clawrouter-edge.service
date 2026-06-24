@@ -9,7 +9,7 @@ User=sdkwork
 Group=sdkwork
 Environment=SDKWORK_CLAW_DEPLOYMENT_MODE=server
 Environment=SDKWORK_CLAW_CONFIG_FILE=/etc/sdkwork/clawrouter.toml
-ExecStart=/usr/local/bin/sdkwork-clawrouter-gateway
+ExecStart=/usr/local/bin/sdkwork-clawrouter-standalone-gateway
 Restart=on-failure
 RestartSec=5
 TimeoutStopSec=60

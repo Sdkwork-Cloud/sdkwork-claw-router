@@ -62,7 +62,7 @@ def same_origin_runtime(required_env: str) -> dict:
         "sameOriginAllowed": True,
         "targetRuntimeIntegration": {
             "mode": "shared-gateway",
-            "gatewayApplication": "sdkwork-api-gateway",
+            "gatewayApplication": "sdkwork-api-cloud-gateway",
             "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
             "catalogPolicy": "no-dedicated-gateway-catalog",
         },

@@ -4,8 +4,8 @@ use std::hash::{Hash, Hasher};
 use sdkwork_commerce_core::{CommerceAccountAssetType, CommerceLedgerDirection};
 use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
-use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::domain::DomainError;
+use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::ports::{
     UsageSettlementCommand, UsageSettlementFuture, UsageSettlementOutcome, UsageSettlementStore,
 };
@@ -76,6 +76,13 @@ struct SettlementGroup {
 struct PointsAccount {
     id: String,
     available_amount: i64,
+}
+
+fn projection_wallet_account(usage_fact: &UsageFactForSettlement) -> PointsAccount {
+    PointsAccount {
+        id: stable_account_id(usage_fact),
+        available_amount: i64::MAX,
+    }
 }
 
 async fn settle_pending_usage(
@@ -219,7 +226,7 @@ async fn mark_invalid_usage_fact_failed(
     usage_fact: &UsageFactForSettlement,
     failure_message: &str,
 ) -> Result<(), DomainError> {
-    let account = ensure_points_account(tx, command, usage_fact).await?;
+    let account = projection_wallet_account(usage_fact);
     let settlement_id =
         upsert_processing_settlement(tx, command, usage_fact, &account.id, 0).await?;
     mark_settlement_failed(
@@ -237,7 +244,7 @@ async fn settle_zero_usage_fact(
     command: &UsageSettlementCommand,
     usage_fact: &UsageFactForSettlement,
 ) -> Result<(), DomainError> {
-    let account = ensure_points_account(tx, command, usage_fact).await?;
+    let account = projection_wallet_account(usage_fact);
     let settlement_id =
         upsert_processing_settlement(tx, command, usage_fact, &account.id, 0).await?;
     mark_settlement_success(tx, command, usage_fact, settlement_id, None).await
@@ -259,7 +266,7 @@ async fn settle_usage_group(
     }
 
     let first_usage_fact = &group.candidates[0].usage_fact;
-    let account = ensure_points_account(tx, command, first_usage_fact).await?;
+    let account = projection_wallet_account(first_usage_fact);
     let allocations = allocate_candidate_points(&group.candidates, points)?;
     let mut settlement_ids = Vec::with_capacity(group.candidates.len());
     for (candidate, allocated_points) in group.candidates.iter().zip(allocations.iter()) {
@@ -275,63 +282,8 @@ async fn settle_usage_group(
         );
     }
 
-    if account.available_amount < points {
-        for (candidate, settlement_id) in group.candidates.iter().zip(settlement_ids.iter()) {
-            mark_settlement_failed(
-                tx,
-                &candidate.usage_fact,
-                *settlement_id,
-                "INSUFFICIENT_POINTS",
-                "available points are lower than usage charge points",
-            )
-            .await?;
-        }
-        return Ok(UsageSettlementOutcome {
-            settled_count: 0,
-            failed_count: group.candidates.len() as i64,
-            debited_points: 0,
-        });
-    }
-
-    let transaction_id = settlement_batch_no(&group.candidates);
-    if let Some(ledger_entry_id) =
-        existing_account_ledger_entry_id(tx, &account.id, &transaction_id).await?
-    {
-        for (candidate, settlement_id) in group.candidates.iter().zip(settlement_ids.iter()) {
-            mark_settlement_success(
-                tx,
-                command,
-                &candidate.usage_fact,
-                *settlement_id,
-                Some(ledger_entry_id.as_str()),
-            )
-            .await?;
-        }
-        return Ok(empty_outcome());
-    }
-
-    let balance_after = account.available_amount - points;
-    update_account_points(tx, &account.id, points, balance_after).await?;
-    let ledger_entry_id = stable_ledger_entry_id(&transaction_id);
-    let ledger_entry_id = insert_account_ledger_entry(
-        tx,
-        &ledger_entry_id,
-        first_usage_fact,
-        &account.id,
-        balance_after,
-        points,
-        &transaction_id,
-    )
-    .await?;
     for (candidate, settlement_id) in group.candidates.iter().zip(settlement_ids.iter()) {
-        mark_settlement_success(
-            tx,
-            command,
-            &candidate.usage_fact,
-            *settlement_id,
-            Some(ledger_entry_id.as_str()),
-        )
-        .await?;
+        mark_settlement_success(tx, command, &candidate.usage_fact, *settlement_id, None).await?;
     }
     Ok(UsageSettlementOutcome {
         settled_count: group.candidates.len() as i64,

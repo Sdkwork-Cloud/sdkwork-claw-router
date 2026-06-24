@@ -11,10 +11,9 @@ class NotificationApi {
 
   NotificationApi(this._client);
 
-  /// List notifications
-  Future<NotificationsListResult?> notificationsList([String? appId, bool? includeArchived, int? page, int? pageSize]) async {
+  /// List portal notifications
+  Future<NotificationsListResult?> notificationsList([bool? includeArchived, String? page, String? pageSize]) async {
     final query = buildQueryString([
-      QueryParameterSpec('app_id', appId, 'form', true, false, null),
       QueryParameterSpec('include_archived', includeArchived, 'form', true, false, null),
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null)
@@ -26,24 +25,30 @@ class NotificationApi {
     })();
   }
 
-  /// Acknowledge
-  Future<NotificationsAcknowledgeCreateResult?> notificationsAcknowledgeCreate(String notificationId, [String? appId]) async {
-    final query = buildQueryString([
-      QueryParameterSpec('app_id', appId, 'form', true, false, null)
-    ]);
-    final response = await _client.post(ApiPaths.appendQueryString(ApiPaths.appPath('/notification/notifications/${serializePathParameter(notificationId, const PathParameterSpec('notificationId', 'simple', false))}/acknowledge'), query));
+  /// Acknowledge portal notification
+  Future<NotificationsAcknowledgeCreateResult?> notificationsAcknowledgeCreate(String notificationId, String idempotencyKey) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final response = await _client.post(ApiPaths.appPath('/notification/notifications/${serializePathParameter(notificationId, const PathParameterSpec('notificationId', 'simple', false))}/acknowledge'), headers: requestHeaders);
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : NotificationsAcknowledgeCreateResult.fromJson(map);
     })();
   }
 
-  /// Mark popup seen
-  Future<NotificationsPopupSeenCreateResult?> notificationsPopupSeenCreate(String notificationId, [String? appId]) async {
-    final query = buildQueryString([
-      QueryParameterSpec('app_id', appId, 'form', true, false, null)
-    ]);
-    final response = await _client.post(ApiPaths.appendQueryString(ApiPaths.appPath('/notification/notifications/${serializePathParameter(notificationId, const PathParameterSpec('notificationId', 'simple', false))}/popup_seen'), query));
+  /// Mark portal notification popup seen
+  Future<NotificationsPopupSeenCreateResult?> notificationsPopupSeenCreate(String notificationId, String idempotencyKey) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final response = await _client.post(ApiPaths.appPath('/notification/notifications/${serializePathParameter(notificationId, const PathParameterSpec('notificationId', 'simple', false))}/popup_seen'), headers: requestHeaders);
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : NotificationsPopupSeenCreateResult.fromJson(map);
@@ -254,3 +259,75 @@ String encodeQueryValue(String value, bool allowReserved) {
 }
 
 String urlEncode(String value) => Uri.encodeQueryComponent(value);
+class HeaderParameterSpec {
+  final dynamic value;
+  final String style;
+  final bool explode;
+  final String? contentType;
+
+  HeaderParameterSpec(this.value, this.style, this.explode, this.contentType);
+}
+
+Map<String, String>? buildRequestHeaders(
+  Map<String, HeaderParameterSpec> headers, [
+  Map<String, HeaderParameterSpec> cookies = const {},
+]) {
+  final requestHeaders = <String, String>{};
+
+  headers.forEach((name, parameter) {
+    final serialized = serializeParameterValue(parameter);
+    if (serialized != null) {
+      requestHeaders[name] = serialized;
+    }
+  });
+
+  final cookieHeader = buildCookieHeader(cookies);
+  if (cookieHeader != null && cookieHeader.isNotEmpty) {
+    requestHeaders['Cookie'] = requestHeaders.containsKey('Cookie')
+        ? '${requestHeaders['Cookie']}; $cookieHeader'
+        : cookieHeader;
+  }
+
+  return requestHeaders.isEmpty ? null : requestHeaders;
+}
+
+String? buildCookieHeader(Map<String, HeaderParameterSpec> cookies) {
+  final pairs = <String>[];
+  cookies.forEach((name, parameter) {
+    final serialized = serializeParameterValue(parameter);
+    if (serialized != null) {
+      pairs.add('${Uri.encodeComponent(name)}=${Uri.encodeComponent(serialized)}');
+    }
+  });
+  return pairs.isEmpty ? null : pairs.join('; ');
+}
+
+String? serializeParameterValue(HeaderParameterSpec? parameter) {
+  final value = parameter?.value;
+  if (value == null) return null;
+  if (parameter!.contentType != null && parameter.contentType!.trim().isNotEmpty) {
+    return jsonEncode(value);
+  }
+  if (value is DateTime) return value.toIso8601String();
+  if (value is Iterable) {
+    return value
+        .where((item) => item != null)
+        .map((item) => item.toString())
+        .whereType<String>()
+        .join(',');
+  }
+  if (value is Map) {
+    final serialized = <String>[];
+    value.forEach((key, item) {
+      if (item == null) return;
+      if (parameter.explode) {
+        serialized.add('$key=$item');
+      } else {
+        serialized.add(key.toString());
+        serialized.add(item.toString());
+      }
+    });
+    return serialized.join(',');
+  }
+  return value.toString();
+}

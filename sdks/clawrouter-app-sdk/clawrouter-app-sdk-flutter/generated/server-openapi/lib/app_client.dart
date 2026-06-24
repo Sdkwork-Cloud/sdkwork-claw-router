@@ -2,9 +2,7 @@ import 'package:sdkwork_common_flutter/sdkwork_common_flutter.dart';
 import 'src/http/client.dart';
 import 'src/api/ai.dart';
 import 'src/api/chat.dart';
-import 'src/api/content.dart';
 import 'src/api/iam.dart';
-import 'src/api/memory.dart';
 import 'src/api/notification.dart';
 import 'src/api/runtime.dart';
 import 'src/api/system.dart';
@@ -14,9 +12,7 @@ class SdkworkAppClient {
 
   late final AiApi ai;
   late final ChatApi chat;
-  late final ContentApi content;
   late final IamApi iam;
-  late final MemoryApi memory;
   late final NotificationApi notification;
   late final RuntimeApi runtime;
   late final SystemApi system;
@@ -26,9 +22,7 @@ class SdkworkAppClient {
   }) : _httpClient = HttpClient(config: config) {
     ai = AiApi(_httpClient);
     chat = ChatApi(_httpClient);
-    content = ContentApi(_httpClient);
     iam = IamApi(_httpClient);
-    memory = MemoryApi(_httpClient);
     notification = NotificationApi(_httpClient);
     runtime = RuntimeApi(_httpClient);
     system = SystemApi(_httpClient);

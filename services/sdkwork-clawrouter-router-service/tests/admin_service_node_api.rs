@@ -15,9 +15,9 @@ use tower::ServiceExt;
 
 #[tokio::test]
 async fn admin_service_node_routes_support_full_crud() {
-    let router = sdkwork_clawrouter_router_service::api::admin_service_node_router_with_store(Arc::new(
-        TestAdminServiceNodeStore,
-    ));
+    let router = sdkwork_clawrouter_router_service::api::admin_service_node_router_with_store(
+        Arc::new(TestAdminServiceNodeStore),
+    );
 
     let list_response = router
         .clone()
@@ -145,9 +145,9 @@ async fn admin_service_node_routes_support_full_crud() {
 
 #[tokio::test]
 async fn admin_service_node_routes_reject_missing_trusted_subject() {
-    let router = sdkwork_clawrouter_router_service::api::admin_service_node_router_with_store(Arc::new(
-        TestAdminServiceNodeStore,
-    ));
+    let router = sdkwork_clawrouter_router_service::api::admin_service_node_router_with_store(
+        Arc::new(TestAdminServiceNodeStore),
+    );
 
     let response = router
         .oneshot(
@@ -167,9 +167,9 @@ async fn admin_service_node_routes_reject_missing_trusted_subject() {
 
 #[tokio::test]
 async fn admin_service_node_routes_reject_invalid_management_inputs() {
-    let router = sdkwork_clawrouter_router_service::api::admin_service_node_router_with_store(Arc::new(
-        TestAdminServiceNodeStore,
-    ));
+    let router = sdkwork_clawrouter_router_service::api::admin_service_node_router_with_store(
+        Arc::new(TestAdminServiceNodeStore),
+    );
 
     let bad_domain = router
         .clone()

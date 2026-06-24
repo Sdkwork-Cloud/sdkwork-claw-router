@@ -6,6 +6,7 @@ mod cache_runtime;
 mod category_seed;
 mod gateway_invocation_policy;
 mod gateway_invocation_rate_limit;
+mod iam_runtime_context;
 mod invocation;
 mod password_hash;
 mod password_login_rate_limit;
@@ -21,6 +22,7 @@ mod paypal_payment_adapter;
 mod provider_route_selector;
 mod runtime_stream_bus;
 mod stripe_payment_adapter;
+mod usage_settlement_config;
 mod usage_settlement_worker;
 mod wechat_pay_adapter;
 
@@ -59,6 +61,7 @@ pub use gateway_invocation_policy::{
     client_ip_allowed_by_allowlist, GatewayInvocationPolicyGuard, GatewayInvocationPolicyViolation,
 };
 pub use gateway_invocation_rate_limit::{GatewayInvocationRateLimiter, GatewayRateLimitSpec};
+pub use iam_runtime_context::IamRuntimeContext;
 pub use invocation::{
     AccountResolutionInterceptor, BillingMode, BillingPolicyInterceptor, BillingQuantitySource,
     DispatchExecutor, DispatchMode, Invocation, InvocationAccount, InvocationAdapterTarget,
@@ -79,9 +82,7 @@ pub use invocation::{
     UsageExtractionInterceptor, UsageRecordingInterceptor,
 };
 pub use password_hash::{PasswordHasher, Pbkdf2Sha256PasswordHasher};
-pub use password_login_rate_limit::{
-    shared_password_login_rate_limiter, PasswordLoginRateLimiter,
-};
+pub use password_login_rate_limit::{shared_password_login_rate_limiter, PasswordLoginRateLimiter};
 pub use payment_adapter::{
     PaymentAdapterFuture, PaymentAdapterOperation, PaymentCancelPaymentIntentRequest,
     PaymentCancelRefundRequest, PaymentCapturePaymentIntentRequest,
@@ -155,6 +156,9 @@ pub use sdkwork_models_catalog_service::{
 pub use stripe_payment_adapter::{
     StripeHyperPaymentHttpClient, StripePaymentHttpClient, StripePaymentProviderAdapter,
     StripePaymentProviderConfig,
+};
+pub use usage_settlement_config::{
+    resolve_usage_settlement_worker_config, usage_settlement_worker_config_from_env_or_toml,
 };
 pub use usage_settlement_worker::{UsageSettlementWorker, UsageSettlementWorkerConfig};
 pub use wechat_pay_adapter::{

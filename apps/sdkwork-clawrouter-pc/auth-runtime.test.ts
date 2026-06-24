@@ -357,7 +357,9 @@ test("claw router auth controller reuses appbase runtime while preserving app SD
   assert.match(controllerSource, /createSdkworkIamRuntimeAuthController/);
   assert.match(controllerSource, /getClawRouterIamRuntime/);
   assert.match(iamRuntimeSource, /createSdkworkAppbasePcAuthRuntime/);
-  assert.match(iamRuntimeSource, /createAppbaseAppClient:\s*\(\)\s*=>\s*ensureIamTenantSelectionCompat\(getSdkworkAppbaseAppSdkClient\(\)\)/);
+  assert.match(iamRuntimeSource, /createAppbaseAppClient:\s*\(\)\s*=>\s*wrapCredentialEntryClient\(getSdkworkAppbaseAppSdkClient\(\)\)/);
+  assert.match(iamRuntimeSource, /wrapCredentialEntryMethod\(auth\.registrations, 'create'\)/);
+  assert.match(iamRuntimeSource, /prepareClawRouterCredentialEntryTokens\(\)/);
   assert.match(iamRuntimeSource, /bindClawRouterIamSessionProjection/);
   assert.match(iamRuntimeSource, /patchClawRouterIamContextStore/);
   assert.match(iamRuntimeSource, /readSession:\s*\(\)\s*=>\s*toPortalIamBridgeSession\(loadStoredAppSessionToken\(\)\)/);
@@ -1132,7 +1134,6 @@ test("portal auth guard classifies every console and admin path as login protect
     "/docs",
     "/api-reference",
     "/sdk-reference",
-    "/forum",
     "/playground",
     "/auth/login",
     "/console-public",

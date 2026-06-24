@@ -3,7 +3,7 @@
 SDKWork Claw Router uses PostgreSQL for explicit product server development and
 production service deployments. Integrated development (`pnpm dev`,
 aliases `pnpm dev` and `pnpm dev:server`) uses PostgreSQL by default.
-Gateway-backed desktop client commands go through `sdkwork-api-gateway`;
+Gateway-backed desktop client commands go through `sdkwork-api-cloud-gateway`;
 desktop/runtime local user data remains SQLite by default.
 
 SDKWork Claw Router supports two PostgreSQL configuration paths:

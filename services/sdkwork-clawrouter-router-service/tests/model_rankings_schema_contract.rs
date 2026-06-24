@@ -1,9 +1,16 @@
 const GENERATED_POSTGRES_SCHEMA: &str =
     include_str!("../../../generated/schema/postgres/schema.sql");
+const MODELS_CATALOG_FOUNDATION_SQL: &str = include_str!(
+    "../../../data/sdkwork-models/database/ddl/baseline/postgres/0001_sdkwork_models_catalog_baseline.sql"
+);
 const SCHEMA_MANIFEST: &str =
     include_str!("../../../generated/schema/manifest/schema-manifest.json");
 const SCHEMA_REGISTRY_TABLES: &str =
     include_str!("../../../generated/schema/registry/sdkwork-clawrouter.tables.effective.yaml");
+
+fn runtime_ranking_schema_sql() -> String {
+    format!("{GENERATED_POSTGRES_SCHEMA}\n\n{MODELS_CATALOG_FOUNDATION_SQL}")
+}
 
 fn compact_sql(value: &str) -> String {
     value.split_whitespace().collect::<Vec<_>>().join(" ")
@@ -20,6 +27,7 @@ fn assert_contains(source: &str, expected: &str, context: &str) {
 
 #[test]
 fn generated_schema_has_table_field_contract_for_model_ranking_refresh_and_reads() {
+    let runtime_schema = runtime_ranking_schema_sql();
     for expected in [
         "CREATE TABLE IF NOT EXISTS ai_usage_fact",
         "catalog_key VARCHAR(256) NOT NULL",
@@ -27,15 +35,6 @@ fn generated_schema_has_table_field_contract_for_model_ranking_refresh_and_reads
         "cost_amount NUMERIC(38, 12)",
         "currency VARCHAR(10)",
         "pricing_snapshot JSONB",
-        "CREATE TABLE IF NOT EXISTS ai_model_rank_snapshot",
-        "snapshot_date DATE",
-        "snapshot_period INTEGER",
-        "rank_scope VARCHAR(64)",
-        "catalog_key VARCHAR(256) NOT NULL",
-        "region_code VARCHAR(64) NOT NULL",
-        "rank_no INTEGER",
-        "metadata JSONB NOT NULL DEFAULT '{}'::jsonb",
-        "rank_payload JSONB",
         "CREATE TABLE IF NOT EXISTS ops_job_execution",
         "job_type INTEGER",
         "trigger_type INTEGER",
@@ -49,19 +48,46 @@ fn generated_schema_has_table_field_contract_for_model_ranking_refresh_and_reads
             "generated Postgres schema",
         );
     }
+    for expected in [
+        "CREATE TABLE IF NOT EXISTS ai_model_rank_snapshot",
+        "snapshot_date DATE",
+        "snapshot_period INTEGER",
+        "rank_scope VARCHAR(64)",
+        "catalog_key VARCHAR(256) NOT NULL",
+        "region_code VARCHAR(64) NOT NULL",
+        "rank_no INTEGER",
+        "metadata JSONB NOT NULL DEFAULT '{}'::jsonb",
+        "rank_payload JSONB",
+    ] {
+        assert_contains(
+            &runtime_schema,
+            expected,
+            "runtime ranking schema (claw-router generated + sdkwork-models catalog baseline)",
+        );
+    }
 }
 
 #[test]
 fn generated_schema_has_index_contract_for_model_ranking_refresh_and_reads() {
+    let runtime_schema = runtime_ranking_schema_sql();
     for expected in [
-        "CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_model_rank_snapshot_scope_catalog_key ON ai_model_rank_snapshot (tenant_id, organization_id, snapshot_date, snapshot_period, rank_scope, vendor_code, region_code, catalog_key)",
-        "CREATE INDEX IF NOT EXISTS idx_ai_model_rank_snapshot_latest_scope ON ai_model_rank_snapshot (tenant_id, organization_id, status, rank_scope, snapshot_date, snapshot_period, rank_no)",
-        "CREATE INDEX IF NOT EXISTS idx_ai_model_rank_snapshot_filter_rank ON ai_model_rank_snapshot (tenant_id, organization_id, status, snapshot_date, snapshot_period, rank_scope, vendor_code, region_code, modality, rank_no)",
         "CREATE INDEX IF NOT EXISTS idx_ai_usage_fact_model_occurred ON ai_usage_fact (tenant_id, organization_id, catalog_key, occurred_at, id)",
         "CREATE INDEX IF NOT EXISTS idx_ops_job_execution_model_ranking_scope_started ON ops_job_execution (tenant_id, organization_id, status, job_type, job_name, started_at, id)",
     ] {
         assert_contains(expected, expected, "test fixture sanity");
         assert_contains(GENERATED_POSTGRES_SCHEMA, expected, "generated Postgres schema");
+    }
+    for expected in [
+        "CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_model_rank_snapshot_scope_catalog_key ON ai_model_rank_snapshot (tenant_id, organization_id, snapshot_date, snapshot_period, rank_scope, vendor_code, region_code, catalog_key)",
+        "CREATE INDEX IF NOT EXISTS idx_ai_model_rank_snapshot_latest_scope ON ai_model_rank_snapshot (tenant_id, organization_id, status, rank_scope, snapshot_date, snapshot_period, rank_no)",
+        "CREATE INDEX IF NOT EXISTS idx_ai_model_rank_snapshot_filter_rank ON ai_model_rank_snapshot (tenant_id, organization_id, status, snapshot_date, snapshot_period, rank_scope, vendor_code, region_code, modality, rank_no)",
+    ] {
+        assert_contains(expected, expected, "test fixture sanity");
+        assert_contains(
+            &runtime_schema,
+            expected,
+            "runtime ranking schema (claw-router generated + sdkwork-models catalog baseline)",
+        );
     }
 }
 

@@ -99,6 +99,7 @@ const PORTAL_SOURCE_OPTIMIZE_EXCLUDE = [
   'sdkwork-commerce-app-sdk-generated-typescript',
   'sdkwork-commerce-backend-sdk-generated-typescript',
   'sdkwork-generations-app-sdk-generated-typescript',
+  'sdkwork-drive-backend-sdk-generated-typescript',
 ];
 
 const PORTAL_RUNTIME_URL_ENV = [
@@ -611,6 +612,7 @@ export default defineConfig(({mode}) => {
         { find: '@sdkwork/core-pc-react', replacement: path.resolve(sdkworkCoreRoot, 'sdkwork-core-pc-react/src/index.ts') },
         { find: '@sdkwork/clawrouter-pc-downloads', replacement: path.resolve(configDir, 'packages/sdkwork-clawrouter-pc-downloads/src/index.ts') },
         { find: '@sdkwork/drive-app-sdk', replacement: path.resolve(sdkworkDriveRoot, 'sdks/sdkwork-drive-app-sdk/sdkwork-drive-app-sdk-typescript/src/index.ts') },
+        { find: 'sdkwork-drive-backend-sdk-generated-typescript', replacement: path.resolve(sdkworkDriveRoot, 'sdks/sdkwork-drive-backend-sdk/sdkwork-drive-backend-sdk-typescript/generated/server-openapi/src/index.ts') },
         { find: '@sdkwork/file-contracts', replacement: path.resolve(workspaceRoot, 'packages/common/file/sdkwork-file-contracts/src/index.ts') },
         { find: '@sdkwork/file-platform-pc-react', replacement: path.resolve(workspaceRoot, 'packages/pc-react/file/sdkwork-file-platform-pc-react/src/index.ts') },
         { find: '@sdkwork/file-sdk-adapter', replacement: path.resolve(workspaceRoot, 'packages/common/file/sdkwork-file-sdk-adapter/src/index.ts') },
@@ -708,6 +710,31 @@ export default defineConfig(({mode}) => {
             const normalizedSdkworkCoreRoot = normalizePath(sdkworkCoreRoot);
             const normalizedSdkworkUiRoot = normalizePath(sdkworkUiRoot);
             const normalizedClawRouterSdkRoot = normalizePath(path.resolve(configDir, '../../sdks'));
+            const localPackageMatch = normalizedId.match(
+              /\/packages\/sdkwork-clawrouter-pc-(?<packageName>[^/]+)\//,
+            );
+            if (localPackageMatch) {
+              const packageName = localPackageMatch.groups?.packageName;
+              if (packageName === 'models') {
+                if (normalizedId.includes('/src/pages/ModelDetails') || normalizedId.includes('/src/modelDetailsRoute')) {
+                  return 'models-details';
+                }
+                if (normalizedId.includes('/src/pages/Models') || normalizedId.includes('/src/modelsRoute')) {
+                  return 'models';
+                }
+                if (normalizedId.includes('/src/components/ModelShowcase')) {
+                  return 'models-showcase';
+                }
+                return 'models-core';
+              }
+              if (packageName?.startsWith('admin-')) {
+                return packageName;
+              }
+              if (packageName?.startsWith('console-')) {
+                return packageName;
+              }
+              return packageName;
+            }
             const routePackageMatch = normalizedId.match(LOCAL_ROUTE_PACKAGE_PATTERN);
             if (routePackageMatch) {
               const packageName = routePackageMatch.groups?.packageName;

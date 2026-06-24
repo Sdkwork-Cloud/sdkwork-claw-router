@@ -11,6 +11,7 @@ import { MessagingApi, createMessagingApi } from './api/messaging';
 import { PromptsApi, createPromptsApi } from './api/prompts';
 import { ServiceProvidersApi, createServiceProvidersApi } from './api/service-providers';
 import { SitesApi, createSitesApi } from './api/sites';
+import { OssApi, createOssApi } from './api/oss';
 import { SystemApi, createSystemApi } from './api/system';
 
 export class SdkworkBackendClient {
@@ -25,6 +26,7 @@ export class SdkworkBackendClient {
   public readonly prompts: PromptsApi;
   public readonly serviceProviders: ServiceProvidersApi;
   public readonly sites: SitesApi;
+  public readonly oss: OssApi;
   public readonly system: SystemApi;
 
   constructor(config: SdkworkBackendConfig) {
@@ -46,6 +48,8 @@ export class SdkworkBackendClient {
     this.serviceProviders = createServiceProvidersApi(this.httpClient);
 
     this.sites = createSitesApi(this.httpClient);
+
+    this.oss = createOssApi(this.httpClient);
 
     this.system = createSystemApi(this.httpClient);
   }

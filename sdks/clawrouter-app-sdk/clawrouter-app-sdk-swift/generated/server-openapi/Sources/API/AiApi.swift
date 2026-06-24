@@ -27,11 +27,6 @@ public class AiApi {
         return try await client.get(ApiPaths.appPath("/ai/gateway/traces"), responseType: GatewayTracesListResult.self)
     }
 
-    /// List generation history
-    public func generationList() async throws -> GenerationListResult? {
-        return try await client.get(ApiPaths.appPath("/ai/generations"), responseType: GenerationListResult.self)
-    }
-
     /// List model rankings
     public func modelRankingsList(rankScope: String? = nil, vendorCode: String? = nil, modality: String? = nil, q: String? = nil, limit: String? = nil) async throws -> ModelRankingsListResult? {
         let query = buildQueryString([
@@ -49,8 +44,8 @@ public class AiApi {
         return try await client.get(ApiPaths.appPath("/ai/model_vendors"), responseType: ModelVendorsListResult.self)
     }
 
-    /// List models
-    public func modelsList(billingMeter: String? = nil, vendorCode: String? = nil, vendorCodes: [String]? = nil, modalities: [String]? = nil, capabilities: [String]? = nil, categories: [String]? = nil, groups: [String]? = nil, q: String? = nil, limit: String? = nil) async throws -> ModelsListResult? {
+    /// List model catalog for Playground
+    public func modelsList(billingMeter: String? = nil, vendorCode: String? = nil, vendorCodes: [String]? = nil, modalities: [String]? = nil, capabilities: [String]? = nil, categories: [String]? = nil, groups: [String]? = nil, q: String? = nil, limit: String? = nil, offset: String? = nil) async throws -> ModelsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "billing_meter", value: billingMeter, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "vendor_code", value: vendorCode, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -60,7 +55,8 @@ public class AiApi {
             QueryParameterSpec(name: "categories", value: categories, style: "form", explode: false, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "groups", value: groups, style: "form", explode: false, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "q", value: q, style: "form", explode: true, allowReserved: false, contentType: nil),
-            QueryParameterSpec(name: "limit", value: limit, style: "form", explode: true, allowReserved: false, contentType: nil)
+            QueryParameterSpec(name: "limit", value: limit, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "offset", value: offset, style: "form", explode: true, allowReserved: false, contentType: nil)
         ])
         return try await client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/ai/models"), query), responseType: ModelsListResult.self)
     }

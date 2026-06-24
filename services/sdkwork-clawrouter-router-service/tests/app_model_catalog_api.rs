@@ -721,10 +721,18 @@ async fn app_model_catalog_route_applies_offset_after_server_side_filters() {
 
     assert_eq!(StatusCode::OK, first_response.status());
     assert_eq!(StatusCode::OK, second_response.status());
-    let first_payload: serde_json::Value =
-        serde_json::from_slice(&axum::body::to_bytes(first_response.into_body(), usize::MAX).await.unwrap()).unwrap();
-    let second_payload: serde_json::Value =
-        serde_json::from_slice(&axum::body::to_bytes(second_response.into_body(), usize::MAX).await.unwrap()).unwrap();
+    let first_payload: serde_json::Value = serde_json::from_slice(
+        &axum::body::to_bytes(first_response.into_body(), usize::MAX)
+            .await
+            .unwrap(),
+    )
+    .unwrap();
+    let second_payload: serde_json::Value = serde_json::from_slice(
+        &axum::body::to_bytes(second_response.into_body(), usize::MAX)
+            .await
+            .unwrap(),
+    )
+    .unwrap();
     assert_eq!(1, first_payload["data"]["items"].as_array().unwrap().len());
     assert_eq!(1, second_payload["data"]["items"].as_array().unwrap().len());
     assert_ne!(

@@ -63,6 +63,7 @@ const client = new SdkworkBackendClient({
 - `client.prompts` - prompts API
 - `client.serviceProviders` - service_providers API
 - `client.sites` - sites API
+- `client.oss` - oss API
 - `client.system` - system API
 
 ## Usage Examples
@@ -163,6 +164,13 @@ const params = {
   q: 'q',
 };
 const result = await client.sites.siteCatalog.list(params);
+```
+
+### oss
+
+```typescript
+// List storage providers
+const result = await client.oss.providers.list();
 ```
 
 ### system

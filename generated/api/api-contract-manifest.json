@@ -919,7 +919,8 @@
       "query_parameters": [],
       "query_parameters_declared": false,
       "read_sources": [
-        "content_announcement"
+        "ops_notification_message",
+        "ops_notification_recipient"
       ],
       "request_body_required": null,
       "request_id_header": false,
@@ -945,7 +946,8 @@
       "summary": "Create admin announcement",
       "tag": "content",
       "write_tables": [
-        "content_announcement",
+        "ops_notification_message",
+        "ops_notification_recipient",
         "ops_audit_log"
       ]
     },
@@ -967,7 +969,8 @@
       "query_parameters": [],
       "query_parameters_declared": false,
       "read_sources": [
-        "content_announcement"
+        "ops_notification_message",
+        "ops_notification_recipient"
       ],
       "request_body_required": null,
       "request_id_header": false,
@@ -987,7 +990,8 @@
       "summary": "Delete admin announcement",
       "tag": "content",
       "write_tables": [
-        "content_announcement",
+        "ops_notification_message",
+        "ops_notification_recipient",
         "ops_audit_log"
       ]
     },
@@ -1007,7 +1011,8 @@
       "query_parameters": [],
       "query_parameters_declared": true,
       "read_sources": [
-        "content_announcement"
+        "ops_notification_message",
+        "ops_notification_recipient"
       ],
       "request_body_required": null,
       "request_id_header": false,
@@ -1046,7 +1051,8 @@
       "query_parameters": [],
       "query_parameters_declared": false,
       "read_sources": [
-        "content_announcement"
+        "ops_notification_message",
+        "ops_notification_recipient"
       ],
       "request_body_required": null,
       "request_id_header": false,
@@ -1072,7 +1078,8 @@
       "summary": "Update admin announcement",
       "tag": "content",
       "write_tables": [
-        "content_announcement",
+        "ops_notification_message",
+        "ops_notification_recipient",
         "ops_audit_log"
       ]
     },
@@ -6656,6 +6663,993 @@
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-dashboard/src/dashboardService.ts",
       "tag": "system",
       "write_tables": []
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/storage/buckets",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts#createStorageBucket@/admin/storage/buckets",
+      "kind": "action",
+      "module": "pc-admin-file-platform",
+      "openapi_exposed": true,
+      "operation": "createStorageBucket",
+      "operation_id": "oss.buckets.create",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "object_bucket"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "request_schema": {
+        "name": "StorageBucketCreateRequest",
+        "schema": {
+          "additionalProperties": true,
+          "name": "StorageBucketCreateRequest",
+          "properties": {},
+          "type": "object"
+        }
+      },
+      "response_schema": {
+        "name": "StorageBucketCreateResponse",
+        "schema": {
+          "additionalProperties": true,
+          "name": "StorageBucketCreateResponse",
+          "properties": {},
+          "type": "object"
+        }
+      },
+      "route": "/admin/storage/buckets",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "oss",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+      "summary": "Create storage bucket",
+      "tag": "storage",
+      "write_tables": [
+        "object_bucket"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/storage/gc_jobs",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts#createStorageGarbageCollectionJob@/admin/storage/garbage-collection",
+      "kind": "action",
+      "module": "pc-admin-file-platform",
+      "openapi_exposed": true,
+      "operation": "createStorageGarbageCollectionJob",
+      "operation_id": "gcJobs.create",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "storage_gc_job"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "request_schema": {
+        "name": "StorageGarbageCollectionJobCreateRequest",
+        "schema": {
+          "additionalProperties": true,
+          "name": "StorageGarbageCollectionJobCreateRequest",
+          "properties": {},
+          "type": "object"
+        }
+      },
+      "response_schema": {
+        "name": "StorageGarbageCollectionJobCreateResponse",
+        "schema": {
+          "additionalProperties": true,
+          "name": "StorageGarbageCollectionJobCreateResponse",
+          "properties": {},
+          "type": "object"
+        }
+      },
+      "route": "/admin/storage/garbage-collection",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "oss",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+      "summary": "Create storage garbage collection job",
+      "tag": "storage",
+      "write_tables": [
+        "storage_gc_job"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/storage/providers",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts#createStorageProvider@/admin/storage/providers",
+      "kind": "action",
+      "module": "pc-admin-file-platform",
+      "openapi_exposed": true,
+      "operation": "createStorageProvider",
+      "operation_id": "oss.providers.create",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "object_provider"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "request_schema": {
+        "name": "StorageProviderCreateRequest",
+        "schema": {
+          "additionalProperties": true,
+          "name": "StorageProviderCreateRequest",
+          "properties": {},
+          "type": "object"
+        }
+      },
+      "response_schema": {
+        "name": "StorageProviderCreateResponse",
+        "schema": {
+          "additionalProperties": true,
+          "name": "StorageProviderCreateResponse",
+          "properties": {},
+          "type": "object"
+        }
+      },
+      "route": "/admin/storage/providers",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "oss",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+      "summary": "Create storage provider",
+      "tag": "storage",
+      "write_tables": [
+        "object_provider"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/storage/quotas",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts#createStorageQuota@/admin/storage/quotas",
+      "kind": "action",
+      "module": "pc-admin-file-platform",
+      "openapi_exposed": true,
+      "operation": "createStorageQuota",
+      "operation_id": "oss.quotas.create",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "storage_quota_policy"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "request_schema": {
+        "name": "StorageQuotaCreateRequest",
+        "schema": {
+          "additionalProperties": true,
+          "name": "StorageQuotaCreateRequest",
+          "properties": {},
+          "type": "object"
+        }
+      },
+      "response_schema": {
+        "name": "StorageQuotaCreateResponse",
+        "schema": {
+          "additionalProperties": true,
+          "name": "StorageQuotaCreateResponse",
+          "properties": {},
+          "type": "object"
+        }
+      },
+      "route": "/admin/storage/quotas",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "oss",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+      "summary": "Create storage quota policy",
+      "tag": "storage",
+      "write_tables": [
+        "storage_quota_policy"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/storage/reconciliation_runs",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts#createStorageReconciliationRun@/admin/storage/reconciliation",
+      "kind": "action",
+      "module": "pc-admin-file-platform",
+      "openapi_exposed": true,
+      "operation": "createStorageReconciliationRun",
+      "operation_id": "oss.storageReconciliationRuns.create",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "storage_reconciliation_run"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "request_schema": {
+        "name": "StorageReconciliationRunCreateRequest",
+        "schema": {
+          "additionalProperties": true,
+          "name": "StorageReconciliationRunCreateRequest",
+          "properties": {},
+          "type": "object"
+        }
+      },
+      "response_schema": {
+        "name": "StorageReconciliationRunCreateResponse",
+        "schema": {
+          "additionalProperties": true,
+          "name": "StorageReconciliationRunCreateResponse",
+          "properties": {},
+          "type": "object"
+        }
+      },
+      "route": "/admin/storage/reconciliation",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "oss",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+      "summary": "Create storage reconciliation run",
+      "tag": "storage",
+      "write_tables": [
+        "storage_reconciliation_run"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/storage/providers/{providerId}/health_check",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts#healthCheckStorageProvider@/admin/storage/providers",
+      "kind": "action",
+      "module": "pc-admin-file-platform",
+      "openapi_exposed": true,
+      "operation": "healthCheckStorageProvider",
+      "operation_id": "providers.healthCheck.create",
+      "path_params": [
+        "providerId"
+      ],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "object_provider"
+      ],
+      "request_body_required": false,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "StorageProviderHealthCheckResponse",
+        "schema": {
+          "additionalProperties": true,
+          "name": "StorageProviderHealthCheckResponse",
+          "properties": {},
+          "type": "object"
+        }
+      },
+      "route": "/admin/storage/providers",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "oss",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+      "summary": "Health check storage provider",
+      "tag": "storage",
+      "write_tables": [
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/storage/buckets",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts#listStorageBuckets@/admin/storage/buckets",
+      "kind": "read",
+      "module": "pc-admin-file-platform",
+      "openapi_exposed": true,
+      "operation": "listStorageBuckets",
+      "operation_id": "oss.buckets.list",
+      "path_params": [],
+      "query_parameters": [
+        {
+          "in": "query",
+          "name": "cursor",
+          "required": false,
+          "schema": {
+            "maxLength": 512,
+            "type": "string"
+          }
+        },
+        {
+          "in": "query",
+          "name": "limit",
+          "required": false,
+          "schema": {
+            "format": "int64",
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string",
+            "x-sdkwork-int64-string": true,
+            "x-sdkwork-rust-type": "i64"
+          }
+        },
+        {
+          "in": "query",
+          "name": "logical_scope",
+          "required": false,
+          "schema": {
+            "maxLength": 64,
+            "type": "string"
+          }
+        },
+        {
+          "in": "query",
+          "name": "provider_id",
+          "required": false,
+          "schema": {
+            "maxLength": 128,
+            "type": "string"
+          }
+        },
+        {
+          "in": "query",
+          "name": "status",
+          "required": false,
+          "schema": {
+            "maxLength": 32,
+            "type": "string"
+          }
+        }
+      ],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "object_bucket"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "StorageBucketListResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "StorageBucketListResponse",
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "items"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/storage/buckets",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "oss",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+      "summary": "List storage buckets",
+      "tag": "storage",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/storage/default_buckets",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts#listStorageDefaultBuckets@/admin/storage/default-buckets",
+      "kind": "read",
+      "module": "pc-admin-file-platform",
+      "openapi_exposed": true,
+      "operation": "listStorageDefaultBuckets",
+      "operation_id": "defaultBuckets.list",
+      "path_params": [],
+      "query_parameters": [
+        {
+          "in": "query",
+          "name": "logical_scope",
+          "required": false,
+          "schema": {
+            "maxLength": 64,
+            "type": "string"
+          }
+        }
+      ],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "storage_default_bucket_policy",
+        "object_bucket"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "StorageDefaultBucketListResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "StorageDefaultBucketListResponse",
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "items"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/storage/default-buckets",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "oss",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+      "summary": "List storage default buckets",
+      "tag": "storage",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/storage/gc_jobs",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts#listStorageGarbageCollectionJobs@/admin/storage/garbage-collection",
+      "kind": "read",
+      "module": "pc-admin-file-platform",
+      "openapi_exposed": true,
+      "operation": "listStorageGarbageCollectionJobs",
+      "operation_id": "gcJobs.list",
+      "path_params": [],
+      "query_parameters": [
+        {
+          "in": "query",
+          "name": "cursor",
+          "required": false,
+          "schema": {
+            "maxLength": 512,
+            "type": "string"
+          }
+        },
+        {
+          "in": "query",
+          "name": "limit",
+          "required": false,
+          "schema": {
+            "format": "int64",
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string",
+            "x-sdkwork-int64-string": true,
+            "x-sdkwork-rust-type": "i64"
+          }
+        },
+        {
+          "in": "query",
+          "name": "status",
+          "required": false,
+          "schema": {
+            "maxLength": 32,
+            "type": "string"
+          }
+        }
+      ],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "storage_gc_job"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "StorageGarbageCollectionJobListResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "StorageGarbageCollectionJobListResponse",
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "items"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/storage/garbage-collection",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "oss",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+      "summary": "List storage garbage collection jobs",
+      "tag": "storage",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/storage/providers",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts#listStorageProviders@/admin/storage/providers",
+      "kind": "read",
+      "module": "pc-admin-file-platform",
+      "openapi_exposed": true,
+      "operation": "listStorageProviders",
+      "operation_id": "oss.providers.list",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "object_provider"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "StorageProviderListResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "StorageProviderListResponse",
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "items"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/storage/providers",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "oss",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+      "summary": "List storage providers",
+      "tag": "storage",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/storage/quotas",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts#listStorageQuotas@/admin/storage/quotas",
+      "kind": "read",
+      "module": "pc-admin-file-platform",
+      "openapi_exposed": true,
+      "operation": "listStorageQuotas",
+      "operation_id": "oss.quotas.list",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "storage_quota_policy"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "StorageQuotaListResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "StorageQuotaListResponse",
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "items"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/storage/quotas",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "oss",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+      "summary": "List storage quota policies",
+      "tag": "storage",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/storage/reconciliation_runs",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts#listStorageReconciliationRuns@/admin/storage/reconciliation",
+      "kind": "read",
+      "module": "pc-admin-file-platform",
+      "openapi_exposed": true,
+      "operation": "listStorageReconciliationRuns",
+      "operation_id": "oss.storageReconciliationRuns.list",
+      "path_params": [],
+      "query_parameters": [
+        {
+          "in": "query",
+          "name": "cursor",
+          "required": false,
+          "schema": {
+            "maxLength": 512,
+            "type": "string"
+          }
+        },
+        {
+          "in": "query",
+          "name": "limit",
+          "required": false,
+          "schema": {
+            "format": "int64",
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string",
+            "x-sdkwork-int64-string": true,
+            "x-sdkwork-rust-type": "i64"
+          }
+        },
+        {
+          "in": "query",
+          "name": "status",
+          "required": false,
+          "schema": {
+            "maxLength": 32,
+            "type": "string"
+          }
+        },
+        {
+          "in": "query",
+          "name": "run_type",
+          "required": false,
+          "schema": {
+            "maxLength": 64,
+            "type": "string"
+          }
+        }
+      ],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "storage_reconciliation_run"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "StorageReconciliationRunListResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "StorageReconciliationRunListResponse",
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "items"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/storage/reconciliation",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "oss",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+      "summary": "List storage reconciliation runs",
+      "tag": "storage",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/storage/usage",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts#listStorageUsage@/admin/storage/usage",
+      "kind": "read",
+      "module": "pc-admin-file-platform",
+      "openapi_exposed": true,
+      "operation": "listStorageUsage",
+      "operation_id": "oss.usage.list",
+      "path_params": [],
+      "query_parameters": [
+        {
+          "in": "query",
+          "name": "cursor",
+          "required": false,
+          "schema": {
+            "maxLength": 512,
+            "type": "string"
+          }
+        },
+        {
+          "in": "query",
+          "name": "limit",
+          "required": false,
+          "schema": {
+            "format": "int64",
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string",
+            "x-sdkwork-int64-string": true,
+            "x-sdkwork-rust-type": "i64"
+          }
+        },
+        {
+          "in": "query",
+          "name": "scope_type",
+          "required": false,
+          "schema": {
+            "maxLength": 64,
+            "type": "string"
+          }
+        },
+        {
+          "in": "query",
+          "name": "scope_id",
+          "required": false,
+          "schema": {
+            "maxLength": 128,
+            "type": "string"
+          }
+        }
+      ],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "storage_usage_counter"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "StorageUsageListResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "StorageUsageListResponse",
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "items"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/storage/usage",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "oss",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+      "summary": "List storage usage counters",
+      "tag": "storage",
+      "write_tables": []
+    },
+    {
+      "api_method": "PATCH",
+      "api_path": "/backend/v3/api/storage/buckets/{bucketId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts#updateStorageBucket@/admin/storage/buckets",
+      "kind": "update",
+      "module": "pc-admin-file-platform",
+      "openapi_exposed": true,
+      "operation": "updateStorageBucket",
+      "operation_id": "oss.buckets.update",
+      "path_params": [
+        "bucketId"
+      ],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "object_bucket"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "request_schema": {
+        "name": "StorageBucketUpdateRequest",
+        "schema": {
+          "additionalProperties": true,
+          "name": "StorageBucketUpdateRequest",
+          "properties": {},
+          "type": "object"
+        }
+      },
+      "response_schema": {
+        "name": "StorageBucketUpdateResponse",
+        "schema": {
+          "additionalProperties": true,
+          "name": "StorageBucketUpdateResponse",
+          "properties": {},
+          "type": "object"
+        }
+      },
+      "route": "/admin/storage/buckets",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "oss",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+      "summary": "Update storage bucket",
+      "tag": "storage",
+      "write_tables": [
+        "object_bucket"
+      ]
+    },
+    {
+      "api_method": "PATCH",
+      "api_path": "/backend/v3/api/storage/default_buckets/{logicalScope}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts#updateStorageDefaultBucket@/admin/storage/default-buckets",
+      "kind": "update",
+      "module": "pc-admin-file-platform",
+      "openapi_exposed": true,
+      "operation": "updateStorageDefaultBucket",
+      "operation_id": "defaultBuckets.update",
+      "path_params": [
+        "logicalScope"
+      ],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "storage_default_bucket_policy",
+        "object_bucket"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "request_schema": {
+        "name": "StorageDefaultBucketUpdateRequest",
+        "schema": {
+          "additionalProperties": true,
+          "name": "StorageDefaultBucketUpdateRequest",
+          "properties": {},
+          "type": "object"
+        }
+      },
+      "response_schema": {
+        "name": "StorageDefaultBucketUpdateResponse",
+        "schema": {
+          "additionalProperties": true,
+          "name": "StorageDefaultBucketUpdateResponse",
+          "properties": {},
+          "type": "object"
+        }
+      },
+      "route": "/admin/storage/default-buckets",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "oss",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+      "summary": "Set storage default bucket",
+      "tag": "storage",
+      "write_tables": [
+        "storage_default_bucket_policy"
+      ]
+    },
+    {
+      "api_method": "PATCH",
+      "api_path": "/backend/v3/api/storage/providers/{providerId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts#updateStorageProvider@/admin/storage/providers",
+      "kind": "update",
+      "module": "pc-admin-file-platform",
+      "openapi_exposed": true,
+      "operation": "updateStorageProvider",
+      "operation_id": "oss.providers.update",
+      "path_params": [
+        "providerId"
+      ],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "object_provider"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "request_schema": {
+        "name": "StorageProviderUpdateRequest",
+        "schema": {
+          "additionalProperties": true,
+          "name": "StorageProviderUpdateRequest",
+          "properties": {},
+          "type": "object"
+        }
+      },
+      "response_schema": {
+        "name": "StorageProviderUpdateResponse",
+        "schema": {
+          "additionalProperties": true,
+          "name": "StorageProviderUpdateResponse",
+          "properties": {},
+          "type": "object"
+        }
+      },
+      "route": "/admin/storage/providers",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "oss",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",
+      "summary": "Update storage provider",
+      "tag": "storage",
+      "write_tables": [
+        "object_provider"
+      ]
     },
     {
       "api_method": "POST",
@@ -28387,7 +29381,7 @@
         "ai_usage_fact",
         "ai_request_trace",
         "ai_model_rank_snapshot",
-        "content_announcement",
+        "ops_notification_message",
         "ops_metric_snapshot",
         "ops_gateway_instance"
       ],
@@ -43706,24 +44700,24 @@
   "summary": {
     "api_method_counts": {
       "DELETE": 25,
-      "GET": 128,
-      "PATCH": 25,
-      "POST": 95,
+      "GET": 135,
+      "PATCH": 28,
+      "POST": 101,
       "PUT": 13
     },
     "api_surface_counts": {
       "app": 88,
-      "backend": 198
+      "backend": 214
     },
-    "operation_count": 286,
+    "operation_count": 302,
     "route_scope_counts": {
-      "admin": 198,
+      "admin": 214,
       "console": 31,
       "public": 57
     },
     "sdk_client_counts": {
       "SdkworkAppClient": 88,
-      "SdkworkBackendClient": 198
+      "SdkworkBackendClient": 214
     }
   }
 }

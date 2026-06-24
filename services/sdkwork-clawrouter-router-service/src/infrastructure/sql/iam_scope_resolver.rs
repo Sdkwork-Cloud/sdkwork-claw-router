@@ -200,7 +200,6 @@ where
         .ok_or_else(|| sqlx::Error::Protocol(iam_organization_not_found_message()))
 }
 
-
 fn tenant_deleted_filter_sqlite(options: IamScopeResolveOptions) -> &'static str {
     if options.exclude_soft_deleted {
         " AND deleted_at IS NULL"
@@ -261,9 +260,7 @@ fn scope_store_error(
     error: sqlx::Error,
 ) -> DomainError {
     match error {
-        sqlx::Error::Protocol(message)
-            if message.contains("active IAM tenant was not found") =>
-        {
+        sqlx::Error::Protocol(message) if message.contains("active IAM tenant was not found") => {
             DomainError::not_found("active IAM tenant was not found")
         }
         sqlx::Error::Protocol(message)
@@ -271,9 +268,7 @@ fn scope_store_error(
         {
             DomainError::not_found("active IAM organization was not found")
         }
-        error if tenant_context.contains("tenant") => {
-            redacted_store_error(tenant_context, error)
-        }
+        error if tenant_context.contains("tenant") => redacted_store_error(tenant_context, error),
         error => redacted_store_error(organization_context, error),
     }
 }
@@ -281,25 +276,39 @@ fn scope_store_error(
 fn sqlite_string_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> String {
     row.try_get::<String, _>(column)
         .ok()
-        .or_else(|| row.try_get::<i64, _>(column).ok().map(|value| value.to_string()))
-        .or_else(|| row.try_get::<i32, _>(column).ok().map(|value| value.to_string()))
+        .or_else(|| {
+            row.try_get::<i64, _>(column)
+                .ok()
+                .map(|value| value.to_string())
+        })
+        .or_else(|| {
+            row.try_get::<i32, _>(column)
+                .ok()
+                .map(|value| value.to_string())
+        })
         .unwrap_or_default()
 }
 
 fn postgres_string_cell(row: &sqlx::postgres::PgRow, column: &str) -> String {
     row.try_get::<String, _>(column)
         .ok()
-        .or_else(|| row.try_get::<i64, _>(column).ok().map(|value| value.to_string()))
-        .or_else(|| row.try_get::<i32, _>(column).ok().map(|value| value.to_string()))
+        .or_else(|| {
+            row.try_get::<i64, _>(column)
+                .ok()
+                .map(|value| value.to_string())
+        })
+        .or_else(|| {
+            row.try_get::<i32, _>(column)
+                .ok()
+                .map(|value| value.to_string())
+        })
         .unwrap_or_default()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
-    use sdkwork_appbase_iam_bootstrap::{
-        DEFAULT_IAM_ORGANIZATION_CODE, DEFAULT_IAM_TENANT_CODE,
-    };
+    use sdkwork_appbase_iam_bootstrap::{DEFAULT_IAM_ORGANIZATION_CODE, DEFAULT_IAM_TENANT_CODE};
 
     #[test]
     fn effective_codes_default_to_bootstrap_subject() {

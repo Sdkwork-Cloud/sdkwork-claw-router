@@ -5,12 +5,12 @@ use sdkwork_clawrouter_router_service::infrastructure::sql::installer::{
     CURRENT_SCHEMA_VERSION,
 };
 use sdkwork_clawrouter_router_service::infrastructure::sql::sqlite::{
-    SqliteAdminMarketingStore, SqliteAdminUserStore, SqliteForumStore, SqlitePricingCatalogLoader,
+    SqliteAdminMarketingStore, SqliteAdminUserStore, SqlitePricingCatalogLoader,
 };
 use sdkwork_clawrouter_router_service::ports::{
     AdminMarketingStore, AdminMarketingSubject, AdminUserStore, AdminUserSubject,
-    CreateAdminUserApiKeyCommand, CreateAdminUserCommand, ForumFeedQuery, ForumFeedReadStore,
-    ForumSubject, ListAdminUsersQuery, PricingCatalog, UpdateAdminUserCommand,
+    CreateAdminUserApiKeyCommand, CreateAdminUserCommand, ListAdminUsersQuery, PricingCatalog,
+    UpdateAdminUserCommand,
 };
 use sdkwork_clawrouter_router_service_test_support::repair_sqlite_pool;
 use sdkwork_commerce_bootstrap::{
@@ -85,12 +85,7 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
     .await;
     assert_table_exists(&pool, "ops_job_execution").await;
     assert_table_exists(&pool, "ai_request_trace").await;
-    assert_table_exists(&pool, "appstore_app").await;
     assert_table_exists(&pool, "c_category").await;
-    assert_table_exists(&pool, "content_forum_post").await;
-    assert_table_exists(&pool, "content_comment").await;
-    assert_table_exists(&pool, "content_reaction").await;
-    assert_table_exists(&pool, "content_favorite").await;
     assert_table_exists(&pool, "ai_chat_conversation").await;
     assert_table_exists(&pool, "ai_chat_turn").await;
     assert_table_exists(&pool, "ai_chat_message").await;
@@ -318,41 +313,6 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
     .await;
     assert_sqlite_columns_exist(
         &pool,
-        "appstore_app",
-        &[
-            "tenant_id",
-            "organization_id",
-            "owner_user_id",
-            "display_name",
-            "description",
-            "latest_released_version",
-            "icon",
-            "icon_resource_snapshot",
-            "resource_list",
-            "project_id",
-            "access_url",
-            "config",
-            "runtime_status",
-            "app_type",
-            "platforms",
-            "install_platforms",
-            "install_skill",
-            "install_config",
-            "release_notes",
-            "package_name",
-            "bundle_id",
-            "store_url",
-            "artifact_resource_snapshot",
-            "download_count",
-            "rating_avg",
-            "rating_count",
-            "legacy_uuid",
-            "plus_app_id",
-        ],
-    )
-    .await;
-    assert_sqlite_columns_exist(
-        &pool,
         "ai_runtime_usage_link",
         &[
             "tenant_id",
@@ -450,7 +410,6 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
 
     let catalog = bundled_catalog();
     assert_catalog_rows(&pool, &catalog).await;
-    assert_forum_tutorial_seed_rows(&pool).await;
     assert_commerce_experience_seed_rows(&pool).await;
     assert_pricing_snapshot_contains_catalog_models(&pool, &catalog).await;
 
@@ -1721,33 +1680,6 @@ async fn sqlite_installer_reimports_ai_routing_seed_when_admin_api_group_payload
         api_endpoint_count, active_item_count,
         "ai.routing seed refresh must restore explicit api.all relationships for every bundled API endpoint"
     );
-}
-
-#[tokio::test]
-async fn sqlite_installer_repairs_missing_forum_tutorial_seed_rows_on_startup_check() {
-    let pool = repair_sqlite_pool().await;
-    let installer = installer(pool.clone());
-
-    sqlx::query("DELETE FROM content_forum_post WHERE uuid = 'sdkwork-forum-tutorial-quick-start'")
-        .execute(&pool)
-        .await
-        .unwrap();
-
-    assert_eq!(
-        InstallationStatus::UpgradeRequired,
-        installer.status().await.unwrap(),
-        "installer status must detect missing bundled forum tutorial rows"
-    );
-
-    let repaired = installer.ensure_installed().await.unwrap();
-    assert_eq!(
-        InstallationStatus::Installed,
-        repaired.status,
-        "forum seed repair must restore the default tutorial rows"
-    );
-    assert!(repaired.changed);
-
-    assert_forum_tutorial_seed_rows(&pool).await;
 }
 
 #[tokio::test]
@@ -3996,158 +3928,6 @@ async fn assert_seed_statuses(
     assert_eq!(
         expected, actual,
         "installer must seed all standard {label} with the bootstrap-defined status"
-    );
-}
-
-async fn assert_forum_tutorial_seed_rows(pool: &SqlitePool) {
-    let feed_count: i64 = sqlx::query_scalar(
-        r#"
-        SELECT COUNT(1)
-        FROM content_forum_post
-        WHERE uuid LIKE 'sdkwork-forum-tutorial-%'
-          AND COALESCE(status, 0) = 2
-          AND tenant_id = 100001
-          AND organization_id = 0
-        "#,
-    )
-    .fetch_one(pool)
-    .await
-    .unwrap();
-    assert_eq!(
-        8, feed_count,
-        "installer must create default professional forum tutorial posts"
-    );
-
-    let tutorial = sqlx::query(
-        r#"
-        SELECT title, summary, category_id, is_top, is_recommended, tags
-        FROM content_forum_post
-        WHERE uuid = 'sdkwork-forum-tutorial-quick-start'
-        "#,
-    )
-    .fetch_one(pool)
-    .await
-    .unwrap();
-    assert_eq!(
-        "Claw Router 快速入门：从安装到第一次模型调用",
-        tutorial.get::<String, _>("title")
-    );
-    assert!(
-        tutorial.get::<String, _>("summary").contains("安装完成后"),
-        "quick-start tutorial summary must explain post-install onboarding"
-    );
-    assert_eq!(1004, tutorial.get::<i64, _>("category_id"));
-    assert!(tutorial.get::<bool, _>("is_top"));
-    assert!(tutorial.get::<bool, _>("is_recommended"));
-    assert!(
-        tutorial.get::<String, _>("tags").contains("快速入门"),
-        "tutorial tags must be written as JSON text for SQLite"
-    );
-
-    let forum_comment_count: i64 = sqlx::query_scalar(
-        r#"
-        SELECT COUNT(1)
-        FROM content_comment
-        WHERE uuid LIKE 'sdkwork-forum-comment-%'
-          AND COALESCE(content_type, 0) = 5
-          AND tenant_id = 100001
-          AND organization_id = 0
-        "#,
-    )
-    .fetch_one(pool)
-    .await
-    .unwrap();
-    assert_eq!(
-        8, forum_comment_count,
-        "installer must create default forum tutorial comments"
-    );
-
-    let vote_count: i64 = sqlx::query_scalar(
-        r#"
-        SELECT COUNT(1)
-        FROM content_reaction
-        WHERE uuid LIKE 'sdkwork-forum-vote-%'
-          AND COALESCE(target_type, 0) = 5
-          AND tenant_id = 100001
-          AND organization_id = 0
-        "#,
-    )
-    .fetch_one(pool)
-    .await
-    .unwrap();
-    assert!(
-        vote_count >= 8,
-        "installer must create default forum engagement votes"
-    );
-
-    let favorite_count: i64 = sqlx::query_scalar(
-        r#"
-        SELECT COUNT(1)
-        FROM content_favorite
-        WHERE uuid LIKE 'sdkwork-forum-favorite-%'
-          AND COALESCE(content_type, 0) = 5
-          AND tenant_id = 100001
-          AND organization_id = 0
-        "#,
-    )
-    .fetch_one(pool)
-    .await
-    .unwrap();
-    assert!(
-        favorite_count >= 4,
-        "installer must create default forum collection examples"
-    );
-
-    let migration_status: String = sqlx::query_scalar(
-        r#"
-        SELECT status
-        FROM system_schema_migration
-        WHERE migration_key = ?
-        "#,
-    )
-    .bind(format!("forum:{SCHEMA_VERSION}"))
-    .fetch_one(pool)
-    .await
-    .unwrap();
-    assert_eq!("completed", migration_status);
-
-    let store = SqliteForumStore::new(pool.clone());
-    let forum_subject = ForumSubject {
-        tenant_id: 100001,
-        organization_id: 0,
-        user_id: 900001,
-    };
-    let posts = store
-        .load_feeds(
-            ForumFeedQuery {
-                content_type: Some("feeds".to_owned()),
-                keyword: Some("快速入门".to_owned()),
-                page: Some(1),
-                size: Some(10),
-                ..ForumFeedQuery::default()
-            },
-            Some(forum_subject),
-        )
-        .await
-        .unwrap();
-    assert!(
-        posts.iter().any(|post| post.title.contains("快速入门")),
-        "default tutorial posts must be visible through the forum read store"
-    );
-
-    let quick_start_post = posts
-        .iter()
-        .find(|post| post.title.contains("快速入门"))
-        .expect("quick-start tutorial must be returned by the forum read store");
-    let quick_start_detail = store
-        .load_feed_detail(quick_start_post.id, Some(forum_subject))
-        .await
-        .unwrap()
-        .expect("quick-start tutorial detail must be readable after install");
-    assert!(
-        quick_start_detail.content.contains("Playground")
-            && quick_start_detail.content.contains("OpenAI 兼容"),
-        "default tutorial detail must expose the full onboarding article body"
     );
 }
 

@@ -4,8 +4,8 @@ use crate::application::{
     PaymentReconciliationItemRecord, PaymentReconciliationRuntimeStore,
     PaymentReconciliationRuntimeStoreFuture, PaymentStatementItemRecord, PaymentStatementRecord,
 };
-use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::domain::{DomainError, DomainResult};
+use crate::infrastructure::sql::store_error::redacted_store_error;
 
 #[derive(Debug, Clone)]
 pub struct PostgresPaymentReconciliationRuntimeStore {

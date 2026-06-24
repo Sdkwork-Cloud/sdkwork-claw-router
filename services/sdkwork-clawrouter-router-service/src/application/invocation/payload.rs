@@ -248,7 +248,7 @@ fn find_nested_model(value: &Value) -> Result<Option<String>, InvocationError> {
             {
                 return Ok(Some(model.to_owned()));
             }
-            for (key, value) in object.iter().filter(|(key, _)| key.as_str() != "metadata") {
+            for (_key, value) in object.iter().filter(|(key, _)| key.as_str() != "metadata") {
                 if let Some(model) = find_nested_model(value)? {
                     return Ok(Some(model));
                 }

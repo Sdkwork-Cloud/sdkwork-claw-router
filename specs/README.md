@@ -27,14 +27,14 @@ Root SDKWork standards remain authoritative. Local component specs can narrow or
 - [dependency-api-surfaces.json](./dependency-api-surfaces.json) records dependency SDK runtime API
   surface imports, Rust backend route-contract exports, same-origin mount coverage, and explicit
   external-service base URL requirements.
-- Shared foundation and default client API composition targets `sdkwork-api-gateway` through the
+- Shared foundation and default client API composition targets `sdkwork-api-cloud-gateway` through the
   existing `PORTAL_PUBLIC_SDK_BASE_URL` common SDK root and Cargo workspace/feature evidence. Do
   not add a standalone gateway catalog for Claw Router dependency API facts.
 - Product API authorities remain owned by Claw Router. Integrated development
   (`pnpm dev`, aliases `pnpm dev` and `pnpm dev:server`) starts the
   topology-aware product server. Gateway-backed desktop commands
   (`pnpm dev:desktop`, `pnpm dev:desktop`, `pnpm dev:desktop`) expose
-  app/backend/open surfaces through `sdkwork-api-gateway`. Product-local
+  app/backend/open surfaces through `sdkwork-api-cloud-gateway`. Product-local
   app/admin routers are for Claw Router-owned contracts and explicit server
   debugging only;
   dependency app/backend routes default to `404` locally and are consumed through the shared

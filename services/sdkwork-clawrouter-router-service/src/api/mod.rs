@@ -17,7 +17,6 @@ mod admin_messaging;
 mod admin_model_rate_limit;
 mod admin_monitor;
 mod admin_payment_runtime;
-mod admin_prompts;
 mod admin_provider_secret;
 mod admin_record;
 mod admin_route_explain;
@@ -33,7 +32,6 @@ mod app_api_keys;
 mod app_auth;
 mod app_chat;
 mod app_dashboard;
-mod app_forum;
 mod app_gateway;
 mod app_generation_history;
 mod app_iam_directory;
@@ -85,7 +83,6 @@ pub use admin_monitor::admin_monitor_router_with_read_store;
 pub use admin_payment_runtime::{
     admin_payment_runtime_router, admin_payment_runtime_router_with_snapshot_store,
 };
-pub use admin_prompts::admin_prompt_router_with_store;
 pub use admin_provider_secret::admin_provider_secret_router_with_store;
 pub use admin_record::admin_record_router_with_store;
 pub use admin_route_explain::admin_route_explain_router;
@@ -100,23 +97,18 @@ pub use admin_user::{admin_user_api_key_command_router_with_store, admin_user_ro
 pub use app_api_keys::app_api_key_router;
 pub use app_api_keys::app_api_key_router_with_read_store_and_command_store;
 pub use app_auth::{
-    authenticate_password_and_issue_iam_session,
-    app_auth_router_with_store, app_auth_router_with_store_and_verification_sender,
+    app_auth_router_with_runtime, app_auth_router_with_store,
+    app_auth_router_with_store_and_verification_sender,
     app_auth_router_with_store_auth_settings_store_and_verification_sender,
     app_public_auth_router_with_store_auth_settings_store_and_verification_sender,
     app_sessions_router_with_store, app_sessions_router_with_store_and_verification_sender,
+    authenticate_password_and_issue_iam_session, unconfigured_app_auth_store,
     AppSessionCreateError, IamSessionResponse,
 };
 pub use app_chat::app_chat_router;
 pub use app_chat::app_chat_router_with_store;
 pub use app_dashboard::app_dashboard_overview_router;
 pub use app_dashboard::app_dashboard_overview_router_with_read_store;
-pub use app_forum::app_forum_router;
-pub use app_forum::app_forum_router_with_store;
-pub use app_forum::app_forum_router_with_store_and_community_links;
-pub use app_forum::app_forum_router_with_store_community_links_and_json_body_limit;
-pub use app_forum::configured_forum_community_links;
-pub use app_forum::parse_forum_community_links_config;
 pub use app_gateway::app_gateway_traces_router;
 pub use app_gateway::app_gateway_traces_router_with_read_store;
 pub use app_generation_history::app_generation_history_router;

@@ -250,8 +250,6 @@ export function createFilePlatformService({
           filename: input.filename,
           idempotencyKey: input.idempotencyKey,
           onProgress: input.onProgress,
-          ...(input.organizationId ? { organizationId: input.organizationId } : {}),
-          operatorId: resolveOperatorId(slot, input),
           ...(input.parentNodeId ? { parentNodeId: input.parentNodeId } : {}),
           purpose: slot.slotCode,
           requestId: input.requestId,
@@ -261,9 +259,7 @@ export function createFilePlatformService({
           ...(input.spaceId ? { spaceId: input.spaceId } : {}),
           source: input.source ?? `${slot.appId}-file-upload`,
           target: input.target,
-          ...(input.tenantId ? { tenantId: input.tenantId } : {}),
           uploadProfileCode: input.uploadProfileCode ?? inferUploadProfile(input.contentType, input.filename),
-          ...(input.userId ? { userId: input.userId } : {}),
         });
 
         return {
@@ -416,11 +412,4 @@ function normalizeUsageLabel(value: string): string {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "_")
     .replace(/^_+|_+$/g, "") || "file_upload";
-}
-
-function resolveOperatorId(slot: SdkworkFileSlotDefinition, input: ManagedDriveUploadInput): string {
-  return input.operatorId?.trim()
-    || input.userId?.trim()
-    || input.anonymousId?.trim()
-    || `${slot.appId}-uploader`;
 }

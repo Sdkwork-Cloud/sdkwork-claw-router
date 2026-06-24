@@ -7,6 +7,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+from tools.clawrouter_openapi_generator import ClawRouterOpenApiGenerator
+
 try:
     import yaml
 except ImportError as exc:  # pragma: no cover - exercised only on missing tooling
@@ -93,7 +95,7 @@ class ClawRouterOpenApiPrecisionAudit:
                 )
             ]
             operations_by_surface = {
-                surface: [operation for operation in operations if operation.get("api_surface") == surface]
+                surface: self._surface_operations(manifest, surface)
                 for surface in self.SURFACES
             }
             operation_ids = {
@@ -117,6 +119,36 @@ class ClawRouterOpenApiPrecisionAudit:
         except (OSError, ValueError, json.JSONDecodeError) as exc:
             messages.append(str(exc))
         return ClawRouterOpenApiPrecisionAuditResult(ok=not messages, messages=messages)
+
+    def _surface_operations(self, manifest: dict[str, Any], surface: str) -> list[dict[str, Any]]:
+        generator = ClawRouterOpenApiGenerator(root=self.root, manifest_path=self.manifest_path)
+        manifest_operations = [
+            operation
+            for operation in manifest.get("operations", [])
+            if (
+                isinstance(operation, dict)
+                and operation.get("api_surface") == surface
+                and operation.get("openapi_exposed", True) is not False
+            )
+        ]
+        catalog_operations = generator._dedupe_models_catalog_operations(
+            [
+                operation
+                for operation in manifest.get("operations", [])
+                if (
+                    isinstance(operation, dict)
+                    and operation.get("api_surface") == surface
+                    and generator._is_models_catalog_operation(operation, surface)
+                )
+            ]
+        )
+        merged: dict[tuple[str, str], dict[str, Any]] = {}
+        for operation in [*manifest_operations, *catalog_operations]:
+            api_path = self._string(operation.get("api_path"))
+            method = self._string(operation.get("api_method")).upper()
+            if api_path and method:
+                merged[(api_path, method)] = operation
+        return list(merged.values())
 
     def _validate_surface(
         self,

@@ -12,7 +12,7 @@ frontend_models:
   - date
   - content
   data_sources:
-  - content_announcement
+  - ops_notification_message
 - route: /admin/announcement
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts
   interface: AnnouncementCreateInput
@@ -23,7 +23,7 @@ frontend_models:
   - showAsPopup
   - content
   data_sources:
-  - content_announcement
+  - ops_notification_message
 - route: /admin/announcement
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts
   interface: AnnouncementUpdateInput
@@ -34,4 +34,4 @@ frontend_models:
   - showAsPopup
   - content
   data_sources:
-  - content_announcement
+  - ops_notification_message

@@ -6,7 +6,7 @@ use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 use crate::application::c_category_type_scope;
 use crate::domain::{DomainError, DomainResult};
 use crate::infrastructure::sql::sql_admin_product_center::{
-    is_missing_table_error, is_unique_constraint_error, media_resource_stable_id,
+    drive_uri_from_resource, is_missing_table_error, is_unique_constraint_error,
     sql_error_message, stable_product_center_id,
 };
 use crate::ports::{
@@ -666,9 +666,9 @@ async fn import_c_category_seed(
         sqlx::query(
             r#"
             INSERT INTO c_category
-                (id, uuid, tenant_id, organization_id, data_scope, category_type, name, description, code, tags, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, sort_weight, parent_id, path, visible, status, created_at, updated_at)
+                (id, uuid, tenant_id, organization_id, data_scope, category_type, name, description, code, tags, icon_drive_uri, icon_resource_snapshot, sort_weight, parent_id, path, visible, status, created_at, updated_at)
             VALUES
-                (?1, ?2, 0, 0, 0, ?3, ?4, ?5, ?6, ?7, NULL, NULL, NULL, ?8, ?9, ?10, ?11, ?12, ?13, ?13)
+                (?1, ?2, 0, 0, 0, ?3, ?4, ?5, ?6, ?7, NULL, NULL, ?8, ?9, ?10, ?11, ?12, ?13, ?13)
             ON CONFLICT(id) DO UPDATE SET
                 uuid = excluded.uuid,
                 category_type = excluded.category_type,
@@ -1318,7 +1318,7 @@ async fn replace_sku_image(
             "sku_image",
         ],
     );
-    let media_resource_id = media_resource_stable_id(image);
+    let drive_uri = drive_uri_from_resource(image);
     let alt_text = image
         .get("altText")
         .and_then(Value::as_str)
@@ -1327,11 +1327,11 @@ async fn replace_sku_image(
     sqlx::query(
         r#"
         INSERT INTO commerce_product_media
-            (id, tenant_id, organization_id, owner_type, owner_id, media_role, media_resource_id, object_blob_id, resource_snapshot, alt_text, sort_order, status, created_at, updated_at)
+            (id, tenant_id, organization_id, owner_type, owner_id, media_role, drive_uri, resource_snapshot, alt_text, sort_order, status, created_at, updated_at)
         VALUES
-            (?1, CAST(?2 AS TEXT), CAST(?3 AS TEXT), 'sku', ?4, 'sku_image', ?5, NULL, ?6, ?7, 0, 'active', ?8, ?8)
+            (?1, CAST(?2 AS TEXT), CAST(?3 AS TEXT), 'sku', ?4, 'sku_image', ?5, ?6, ?7, 0, 'active', ?8, ?8)
         ON CONFLICT(tenant_id, owner_type, owner_id, media_role, sort_order) DO UPDATE SET
-            media_resource_id = excluded.media_resource_id,
+            drive_uri = excluded.drive_uri,
             resource_snapshot = excluded.resource_snapshot,
             alt_text = excluded.alt_text,
             status = excluded.status,
@@ -1342,7 +1342,7 @@ async fn replace_sku_image(
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
     .bind(sku_id)
-    .bind(media_resource_id)
+    .bind(drive_uri)
     .bind(image.to_string())
     .bind(alt_text)
     .bind(&command.requested_at)

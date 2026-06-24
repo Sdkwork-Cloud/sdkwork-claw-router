@@ -22,7 +22,3 @@ pub type RepositoryResult<T> = Result<T, RepositoryError>;
 pub(crate) fn store_error(context: &str, error: sqlx::Error) -> RepositoryError {
     RepositoryError::new(format!("{context}: {error}"))
 }
-
-pub(crate) fn row_error(error: sqlx::Error) -> RepositoryError {
-    RepositoryError::new(error.to_string())
-}

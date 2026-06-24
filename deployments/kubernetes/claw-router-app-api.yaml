@@ -18,6 +18,14 @@ spec:
         component: app-api
     spec:
       terminationGracePeriodSeconds: 60
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels:
+              app: sdkwork-clawrouter
+              component: app-api
       containers:
         - name: app-api
           image: registry.sdkwork.com/apps/sdkwork-clawrouter:0.3.0
@@ -26,16 +34,32 @@ spec:
             - containerPort: 18082
               name: http
           env:
-            - name: SDKWORK_CLAW_DEPLOYMENT_MODE
+            - name: SDKWORK_CLAW_DEPLOYMENT_PROFILE
               value: cloud
+            - name: SDKWORK_CLAW_RUNTIME_TARGET
+              value: container
             - name: SDKWORK_CLAW_CONFIG_FILE
               value: /etc/sdkwork/clawrouter.toml
             - name: SDKWORK_CLAW_APP_API_BIND
               value: 0.0.0.0:18082
-          volumeMounts:
-            - name: config
-              mountPath: /etc/sdkwork
-              readOnly: true
+            - name: SDKWORK_CLAW_REDIS_URL
+              valueFrom:
+                secretKeyRef:
+                  name: sdkwork-clawrouter-config
+                  key: redis-url
+          resources:
+            requests:
+              cpu: 250m
+              memory: 512Mi
+            limits:
+              cpu: "2"
+              memory: 2Gi
+          startupProbe:
+            httpGet:
+              path: /healthz
+              port: http
+            periodSeconds: 5
+            failureThreshold: 30
           livenessProbe:
             httpGet:
               path: /healthz
@@ -49,6 +73,10 @@ spec:
             periodSeconds: 5
             timeoutSeconds: 3
             failureThreshold: 3
+          volumeMounts:
+            - name: config
+              mountPath: /etc/sdkwork
+              readOnly: true
       volumes:
         - name: config
           secret:
@@ -66,3 +94,33 @@ spec:
     - name: http
       port: 18082
       targetPort: http
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: sdkwork-clawrouter-app-api
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: sdkwork-clawrouter
+      component: app-api
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: sdkwork-clawrouter-app-api
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: sdkwork-clawrouter-app-api
+  minReplicas: 2
+  maxReplicas: 8
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 70

@@ -14,7 +14,7 @@ frontend_operations:
   summary: List memory spaces for Playground
   description: Lists memory spaces through the sdkwork-memory app SDK without Claw Router memory tables.
   read_sources:
-  - ai_agent_memory
+  - ai_agent
   query_parameters:
   - name: page_size
     schema:
@@ -36,7 +36,7 @@ frontend_operations:
   summary: Create memory space for Playground
   description: Creates a memory space through the sdkwork-memory app SDK.
   read_sources:
-  - ai_agent_memory
+  - ai_agent
   write_tables: []
 - route: /playground
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
@@ -52,7 +52,7 @@ frontend_operations:
   summary: Retrieve memory space for Playground
   description: Retrieves one memory space through the sdkwork-memory app SDK.
   read_sources:
-  - ai_agent_memory
+  - ai_agent
 - route: /playground
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: listMemoryEntries
@@ -67,7 +67,7 @@ frontend_operations:
   summary: List memory entries for Playground
   description: Lists memory entries in a space through the sdkwork-memory app SDK.
   read_sources:
-  - ai_agent_memory
+  - ai_agent
   query_parameters:
   - name: page_size
     schema:
@@ -89,7 +89,7 @@ frontend_operations:
   summary: Create memory entry for Playground
   description: Creates a memory entry through the sdkwork-memory app SDK.
   read_sources:
-  - ai_agent_memory
+  - ai_agent
   write_tables: []
 - route: /playground
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
@@ -105,4 +105,4 @@ frontend_operations:
   summary: Retrieve memory entry for Playground
   description: Retrieves one memory entry through the sdkwork-memory app SDK.
   read_sources:
-  - ai_agent_memory
+  - ai_agent

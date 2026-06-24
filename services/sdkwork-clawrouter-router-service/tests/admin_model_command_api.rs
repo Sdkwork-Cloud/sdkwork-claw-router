@@ -7,13 +7,13 @@ use axum::http::{Request, StatusCode};
 use sdkwork_clawrouter_router_service::application::EntityUuidGenerator;
 use sdkwork_clawrouter_router_service::domain::DomainResult;
 use sdkwork_clawrouter_router_service::ports::{
-    AdminAiModelItem, AdminAiModelListPage, AdminAiModelRegionPriceCommand, AdminModelCatalogSyncItem,
-    AdminModelCommandFuture, AdminModelMappingRuleItem, AdminModelStore, AdminModelVendorItem,
-    CreateAdminAiModelCommand, CreateAdminModelMappingCommand, CreateAdminModelVendorCommand,
-    DeleteAdminAiModelCommand, DeleteAdminModelMappingCommand, ListAdminAiModelsQuery,
-    ListAdminModelMappingsQuery, ListAdminModelVendorsQuery, ResolveAdminModelMappingQuery,
-    ResolveAdminModelMappingResult, SyncAdminModelCatalogCommand, UpdateAdminAiModelCommand,
-    UpdateAdminModelMappingCommand,
+    AdminAiModelItem, AdminAiModelListPage, AdminAiModelRegionPriceCommand,
+    AdminModelCatalogSyncItem, AdminModelCommandFuture, AdminModelMappingRuleItem, AdminModelStore,
+    AdminModelVendorItem, CreateAdminAiModelCommand, CreateAdminModelMappingCommand,
+    CreateAdminModelVendorCommand, DeleteAdminAiModelCommand, DeleteAdminModelMappingCommand,
+    ListAdminAiModelsQuery, ListAdminModelMappingsQuery, ListAdminModelVendorsQuery,
+    ResolveAdminModelMappingQuery, ResolveAdminModelMappingResult, SyncAdminModelCatalogCommand,
+    UpdateAdminAiModelCommand, UpdateAdminModelMappingCommand,
 };
 use serde_json::Value;
 use tower::ServiceExt;
@@ -517,10 +517,7 @@ impl AdminModelStore for TestAdminModelStore {
                 .cloned()
                 .collect::<Vec<_>>();
             let total_count = items.len() as i64;
-            Ok(AdminAiModelListPage {
-                items,
-                total_count,
-            })
+            Ok(AdminAiModelListPage { items, total_count })
         })
     }
 

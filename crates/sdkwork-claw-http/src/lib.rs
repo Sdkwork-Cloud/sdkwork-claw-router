@@ -1,3 +1,4 @@
+pub mod app_session_tenant_signing;
 pub mod auth;
 pub mod claw_web_resolver;
 pub mod contract_routes;
@@ -11,17 +12,22 @@ pub mod shutdown;
 pub mod web_bridge;
 pub mod web_framework_compat;
 
+pub use app_session_tenant_signing::AppSessionTenantSigningKeyResolver;
 pub use auth::{
-    app_request_subject_boundary, attach_trusted_request_subject, optional_app_request_subject,
+    app_request_subject_boundary, attach_trusted_request_subject,
+    decode_app_session_token_claims_unverified, optional_app_request_subject,
     optional_app_request_subject_boundary, project_trusted_subject_for_legacy_handlers,
-    sign_app_session_token, sign_app_session_token_with_claims, sign_trusted_request_subject,
+    sign_app_session_token, sign_app_session_token_with_claims,
+    sign_app_session_token_with_claims_and_secret, sign_trusted_request_subject,
     trusted_request_subject_boundary, verified_app_request_subject,
     verified_signed_trusted_request_subject, verify_app_session_authorization_header,
-    verify_app_session_token, verify_app_session_token_claims, ApiKeyCredential,
-    ApiKeyCredentialSource, ApiKeyIdentity, ApiKeyIdentityError, AppSessionTokenClaims,
-    AppSessionTokenError, AppSessionTokenKind, AppSubjectBoundaryConfig, TrustedRequestSubject,
+    verify_app_session_token, verify_app_session_token_claims,
+    verify_app_session_token_claims_with_signing_secret, ApiKeyCredential, ApiKeyCredentialSource,
+    ApiKeyIdentity, ApiKeyIdentityError, AppSessionTokenClaims, AppSessionTokenError,
+    AppSessionTokenKind, AppSubjectBoundaryConfig, TrustedRequestSubject,
     TrustedRequestSubjectError, TrustedSubjectBoundaryError,
 };
+pub use claw_web_resolver::ClawRouterWebRequestContextResolver;
 pub use contract_routes::{
     app_openapi_response, backend_openapi_response, cloud_services_openapi_response,
     contract_fallback, gateway_openapi_response, openapi_schema_tabs_response_for_surface,
@@ -31,7 +37,9 @@ pub use contract_routes::{
 };
 pub use error::{NotImplementedData, PlusErrorEnvelope};
 pub use headers::{default_security_headers, redact_http_header};
-pub use metrics::{metrics, record_http_request};
+pub use metrics::{
+    metrics, record_http_request, record_http_response_status, record_readiness_check,
+};
 pub use readiness::{combine_readiness_checks, ReadinessCheckFn};
 pub use router::{
     service_router, service_router_with_contract_routes,
@@ -43,7 +51,6 @@ pub use router::{
 };
 pub use sdkwork_claw_contract::{ApiSurface, ContractOperation};
 pub use shutdown::wait_for_shutdown_signal;
-pub use claw_web_resolver::ClawRouterWebRequestContextResolver;
 pub use web_bridge::{
     inject_legacy_handler_context_from_web_context, trusted_request_subject_from_web_context,
 };

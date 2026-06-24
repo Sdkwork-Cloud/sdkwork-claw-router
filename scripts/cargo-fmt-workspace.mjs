@@ -107,6 +107,17 @@ function workspaceCargoFmtArgs(args) {
   return args.filter((arg) => arg !== '--all');
 }
 
+function shouldFormatWorkspacePackage(pkg) {
+  const manifestPath = pkg.manifest_path.replace(/\\/g, '/');
+  // Packages under data/sdkwork-models resolve through the nested sdkwork-models
+  // workspace when formatted with --manifest-path, which requires optional data/*
+  // sibling repos. Format them from the repository root with cargo fmt -p instead.
+  if (manifestPath.includes('/data/sdkwork-models/')) {
+    return false;
+  }
+  return true;
+}
+
 function formatWorkspace({ args }) {
   const cargoFmtCommand = resolveCargoFmtCommand();
   if (shouldDelegateToCargoFmt(args)) {
@@ -120,16 +131,30 @@ function formatWorkspace({ args }) {
     .map((id) => packagesById.get(id))
     .filter(Boolean)
     .sort((left, right) => left.name.localeCompare(right.name));
+  const formattablePackages = workspacePackages.filter(shouldFormatWorkspacePackage);
+  const rootFormattedPackages = workspacePackages.filter((pkg) => !shouldFormatWorkspacePackage(pkg));
   const forwardedArgs = workspaceCargoFmtArgs(args);
   const quiet = forwardedArgs.includes('-q') || forwardedArgs.includes('--quiet');
 
-  for (const pkg of workspacePackages) {
+  for (const pkg of formattablePackages) {
     const manifestPath = relative(process.cwd(), pkg.manifest_path);
     const packageArgs = ['--manifest-path', manifestPath, ...forwardedArgs];
     if (!quiet) {
       console.error(`[cargo-fmt-workspace] ${pkg.name}: ${cargoFmtCommand} ${packageArgs.join(' ')}`);
     }
     runInherited(cargoFmtCommand, packageArgs);
+  }
+
+  if (rootFormattedPackages.length > 0) {
+    const rootArgs = [
+      'fmt',
+      ...forwardedArgs,
+      ...rootFormattedPackages.flatMap((pkg) => ['-p', pkg.name]),
+    ];
+    if (!quiet) {
+      console.error(`[cargo-fmt-workspace] root: cargo ${rootArgs.join(' ')}`);
+    }
+    runInherited('cargo', rootArgs);
   }
 }
 

@@ -13,32 +13,7 @@
   "tablePrefix": "ai_",
   "contractVersion": "1.0.0",
   "baselineStrategy": "baseline-plus-migrations",
-  "modules": [
-    {
-      "moduleId": "appbase-iam",
-      "locator": "../sdkwork-appbase/database",
-      "order": 10,
-      "owner": "appbase-platform"
-    },
-    {
-      "moduleId": "commerce-core",
-      "locator": "../sdkwork-commerce/database",
-      "order": 20,
-      "owner": "commerce-platform"
-    },
-    {
-      "moduleId": "appstore",
-      "locator": "../sdkwork-appstore/database",
-      "order": 30,
-      "owner": "appstore-platform"
-    },
-    {
-      "moduleId": "sdkwork-models",
-      "locator": "../sdkwork-models/database",
-      "order": 35,
-      "owner": "sdkwork-models-platform"
-    }
-  ],
+  "modules": [],
   "lifecycle": {
     "autoMigrate": true,
     "seedOnBoot": false,

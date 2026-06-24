@@ -1,9 +1,7 @@
 from .http_client import HttpClient, SdkConfig
 from .api.ai import AiApi
 from .api.chat import ChatApi
-from .api.content import ContentApi
 from .api.iam import IamApi
-from .api.memory import MemoryApi
 from .api.notification import NotificationApi
 from .api.runtime import RuntimeApi
 from .api.system import SystemApi
@@ -16,9 +14,7 @@ class SdkworkAppClient:
         self._client = HttpClient(config)
         self.ai: AiApi
         self.chat: ChatApi
-        self.content: ContentApi
         self.iam: IamApi
-        self.memory: MemoryApi
         self.notification: NotificationApi
         self.runtime: RuntimeApi
         self.system: SystemApi
@@ -26,9 +22,7 @@ class SdkworkAppClient:
         # Initialize API modules
         self.ai = AiApi(self._client)
         self.chat = ChatApi(self._client)
-        self.content = ContentApi(self._client)
         self.iam = IamApi(self._client)
-        self.memory = MemoryApi(self._client)
         self.notification = NotificationApi(self._client)
         self.runtime = RuntimeApi(self._client)
         self.system = SystemApi(self._client)

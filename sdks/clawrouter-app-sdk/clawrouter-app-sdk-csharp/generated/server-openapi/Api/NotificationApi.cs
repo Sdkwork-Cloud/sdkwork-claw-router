@@ -16,13 +16,12 @@ namespace Sdkwork.ClawRouter.App.Api
         }
 
         /// <summary>
-        /// List notifications
+        /// List portal notifications
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.NotificationsListResult?> NotificationsListAsync(string? appId = null, bool? includeArchived = null, int? page = null, int? pageSize = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.NotificationsListResult?> NotificationsListAsync(bool? includeArchived = null, string? page = null, string? pageSize = null)
         {
             var queryString = BuildQueryString(new[]
             {
-                new QueryParameterSpec("app_id", appId, "form", true, false, null),
                 new QueryParameterSpec("include_archived", includeArchived, "form", true, false, null),
                 new QueryParameterSpec("page", page, "form", true, false, null),
                 new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -31,27 +30,33 @@ namespace Sdkwork.ClawRouter.App.Api
         }
 
         /// <summary>
-        /// Acknowledge
+        /// Acknowledge portal notification
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.NotificationsAcknowledgeCreateResult?> NotificationsAcknowledgeCreateAsync(string notificationId, string? appId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.NotificationsAcknowledgeCreateResult?> NotificationsAcknowledgeCreateAsync(string notificationId, string idempotencyKey)
         {
-            var queryString = BuildQueryString(new[]
-            {
-                new QueryParameterSpec("app_id", appId, "form", true, false, null),
-            });
-            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.NotificationsAcknowledgeCreateResult>(ApiPaths.AppendQueryString(ApiPaths.AppPath($"/notification/notifications/{SerializePathParameter(notificationId, new PathParameterSpec("notificationId", "simple", false))}/acknowledge"), queryString), null);
+            var requestHeaders = BuildRequestHeaders(
+                new Dictionary<string, HeaderParameterSpec>
+                {
+                    ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
+                },
+                new Dictionary<string, HeaderParameterSpec>()
+            );
+            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.NotificationsAcknowledgeCreateResult>(ApiPaths.AppPath($"/notification/notifications/{SerializePathParameter(notificationId, new PathParameterSpec("notificationId", "simple", false))}/acknowledge"), null, null, requestHeaders);
         }
 
         /// <summary>
-        /// Mark popup seen
+        /// Mark portal notification popup seen
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.NotificationsPopupSeenCreateResult?> NotificationsPopupSeenCreateAsync(string notificationId, string? appId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.NotificationsPopupSeenCreateResult?> NotificationsPopupSeenCreateAsync(string notificationId, string idempotencyKey)
         {
-            var queryString = BuildQueryString(new[]
-            {
-                new QueryParameterSpec("app_id", appId, "form", true, false, null),
-            });
-            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.NotificationsPopupSeenCreateResult>(ApiPaths.AppendQueryString(ApiPaths.AppPath($"/notification/notifications/{SerializePathParameter(notificationId, new PathParameterSpec("notificationId", "simple", false))}/popup_seen"), queryString), null);
+            var requestHeaders = BuildRequestHeaders(
+                new Dictionary<string, HeaderParameterSpec>
+                {
+                    ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
+                },
+                new Dictionary<string, HeaderParameterSpec>()
+            );
+            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.NotificationsPopupSeenCreateResult>(ApiPaths.AppPath($"/notification/notifications/{SerializePathParameter(notificationId, new PathParameterSpec("notificationId", "simple", false))}/popup_seen"), null, null, requestHeaders);
         }
 
         private sealed record PathParameterSpec(string Name, string Style, bool Explode);
@@ -281,5 +286,92 @@ namespace Sdkwork.ClawRouter.App.Api
                 .Replace("%3B", ";").Replace("%3D", "=");
         }
 
+        private sealed record HeaderParameterSpec(object? Value, string Style, bool Explode, string? ContentType);
+
+        private static Dictionary<string, string>? BuildRequestHeaders(
+            Dictionary<string, HeaderParameterSpec> headers,
+            Dictionary<string, HeaderParameterSpec> cookies)
+        {
+            var requestHeaders = new Dictionary<string, string>();
+            foreach (var item in headers)
+            {
+                var serialized = SerializeParameterValue(item.Value);
+                if (serialized is not null)
+                {
+                    requestHeaders[item.Key] = serialized;
+                }
+            }
+
+            var cookieHeader = BuildCookieHeader(cookies);
+            if (!string.IsNullOrEmpty(cookieHeader))
+            {
+                requestHeaders["Cookie"] = requestHeaders.TryGetValue("Cookie", out var existing) && !string.IsNullOrEmpty(existing)
+                    ? existing + "; " + cookieHeader
+                    : cookieHeader;
+            }
+
+            return requestHeaders.Count == 0 ? null : requestHeaders;
+        }
+
+        private static string BuildCookieHeader(Dictionary<string, HeaderParameterSpec> cookies)
+        {
+            var pairs = new List<string>();
+            foreach (var item in cookies)
+            {
+                var serialized = SerializeParameterValue(item.Value);
+                if (serialized is not null)
+                {
+                    pairs.Add(Uri.EscapeDataString(item.Key) + "=" + Uri.EscapeDataString(serialized));
+                }
+            }
+            return string.Join("; ", pairs);
+        }
+
+        private static string? SerializeParameterValue(HeaderParameterSpec? parameter)
+        {
+            var value = parameter?.Value;
+            if (value is null)
+            {
+                return null;
+            }
+            if (!string.IsNullOrWhiteSpace(parameter!.ContentType))
+            {
+                return System.Text.Json.JsonSerializer.Serialize(value);
+            }
+            if (value is System.Collections.IEnumerable enumerable && value is not string)
+            {
+                var values = new List<string>();
+                foreach (var item in enumerable)
+                {
+                    if (item is not null)
+                    {
+                        values.Add(item.ToString() ?? string.Empty);
+                    }
+                }
+                return string.Join(",", values);
+            }
+            if (value is System.Collections.IDictionary dictionary)
+            {
+                var values = new List<string>();
+                foreach (System.Collections.DictionaryEntry item in dictionary)
+                {
+                    if (item.Value is null)
+                    {
+                        continue;
+                    }
+                    if (parameter.Explode)
+                    {
+                        values.Add((item.Key.ToString() ?? string.Empty) + "=" + (item.Value.ToString() ?? string.Empty));
+                    }
+                    else
+                    {
+                        values.Add(item.Key.ToString() ?? string.Empty);
+                        values.Add(item.Value.ToString() ?? string.Empty);
+                    }
+                }
+                return string.Join(",", values);
+            }
+            return value.ToString();
+        }
     }
 }

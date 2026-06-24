@@ -43,15 +43,6 @@ class AiApi {
     })();
   }
 
-  /// List generation history
-  Future<GenerationListResult?> generationList() async {
-    final response = await _client.get(ApiPaths.appPath('/ai/generations'));
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : GenerationListResult.fromJson(map);
-    })();
-  }
-
   /// List model rankings
   Future<ModelRankingsListResult?> modelRankingsList([String? rankScope, String? vendorCode, String? modality, String? q, String? limit]) async {
     final query = buildQueryString([
@@ -77,8 +68,8 @@ class AiApi {
     })();
   }
 
-  /// List models
-  Future<ModelsListResult?> modelsList([String? billingMeter, String? vendorCode, List<String>? vendorCodes, List<String>? modalities, List<String>? capabilities, List<String>? categories, List<String>? groups, String? q, String? limit]) async {
+  /// List model catalog for Playground
+  Future<ModelsListResult?> modelsList([String? billingMeter, String? vendorCode, List<String>? vendorCodes, List<String>? modalities, List<String>? capabilities, List<String>? categories, List<String>? groups, String? q, String? limit, String? offset]) async {
     final query = buildQueryString([
       QueryParameterSpec('billing_meter', billingMeter, 'form', true, false, null),
       QueryParameterSpec('vendor_code', vendorCode, 'form', true, false, null),
@@ -88,7 +79,8 @@ class AiApi {
       QueryParameterSpec('categories', categories, 'form', false, false, null),
       QueryParameterSpec('groups', groups, 'form', false, false, null),
       QueryParameterSpec('q', q, 'form', true, false, null),
-      QueryParameterSpec('limit', limit, 'form', true, false, null)
+      QueryParameterSpec('limit', limit, 'form', true, false, null),
+      QueryParameterSpec('offset', offset, 'form', true, false, null)
     ]);
     final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.appPath('/ai/models'), query));
     return (() {

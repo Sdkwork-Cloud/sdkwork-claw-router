@@ -10,14 +10,14 @@ const PROFILES = new Set(['auto', 'smoke', 'quick', 'admin-api', 'app-api', 'gat
 const PACKAGE_BY_SERVICE_DIR = Object.freeze({
   'sdkwork-clawrouter-admin-api-server': 'sdkwork-clawrouter-admin-api-server',
   'sdkwork-clawrouter-app-api-server': 'sdkwork-clawrouter-app-api-server',
-  'sdkwork-clawrouter-gateway': 'sdkwork-clawrouter-gateway',
+  'sdkwork-clawrouter-cloud-gateway': 'sdkwork-clawrouter-cloud-gateway',
   'sdkwork-claw-installer': 'sdkwork-claw-installer',
   'sdkwork-clawrouter-router-service': 'sdkwork-clawrouter-router-service',
 });
 const PROFILE_BY_SERVICE_PACKAGE = Object.freeze({
   'sdkwork-clawrouter-admin-api-server': 'admin-api',
   'sdkwork-clawrouter-app-api-server': 'app-api',
-  'sdkwork-clawrouter-gateway': 'gateway',
+  'sdkwork-clawrouter-cloud-gateway': 'gateway',
   'sdkwork-claw-installer': 'runtime',
   'sdkwork-clawrouter-router-service': 'runtime',
 });
@@ -27,6 +27,8 @@ const PROFILE_BY_PATH_PREFIX = Object.freeze([
   ['crates/sdkwork-claw-test-support/', 'smoke'],
   ['crates/sdkwork-claw-http/', 'runtime'],
   ['services/sdkwork-claw-provider-adapter/', 'product-relay'],
+  ['crates/sdkwork-clawrouter-cloud-gateway/', 'gateway'],
+  ['crates/sdkwork-clawrouter-standalone-gateway/', 'gateway'],
   ['Cargo.toml', 'quick'],
   ['Cargo.lock', 'quick'],
   ['.cargo/', 'quick'],
@@ -298,9 +300,9 @@ function exactAutoTargetsFromChangedTestFile(changedFile) {
   if (productTestMatch) {
     return [{ packageName: 'sdkwork-clawrouter-router-service', testTarget: productTestMatch[1] }];
   }
-  const gatewayTestMatch = normalized.match(/^services\/sdkwork-clawrouter-gateway\/tests\/([^/]+)\.rs$/u);
+  const gatewayTestMatch = normalized.match(/^services\/sdkwork-clawrouter-cloud-gateway\/tests\/([^/]+)\.rs$/u);
   if (gatewayTestMatch) {
-    return [{ packageName: 'sdkwork-clawrouter-gateway', testTarget: gatewayTestMatch[1] }];
+    return [{ packageName: 'sdkwork-clawrouter-cloud-gateway', testTarget: gatewayTestMatch[1] }];
   }
   const adminApiTestMatch = normalized.match(/^services\/sdkwork-clawrouter-admin-api-server\/tests\/([^/]+)\.rs$/u);
   if (adminApiTestMatch) {
@@ -605,28 +607,28 @@ function buildAppApiSteps(env, settings) {
 
 function buildGatewaySteps(env, settings) {
   return [
-    cargoStep('gateway health tests', ['test', '-p', 'sdkwork-clawrouter-gateway', '--test', 'health'], env, settings),
+    cargoStep('gateway health tests', ['test', '-p', 'sdkwork-clawrouter-cloud-gateway', '--test', 'health'], env, settings),
     cargoStep(
       'gateway edge server tests',
-      ['test', '-p', 'sdkwork-clawrouter-gateway', '--test', 'edge_server'],
+      ['test', '-p', 'sdkwork-clawrouter-cloud-gateway', '--test', 'edge_server'],
       env,
       settings,
     ),
     cargoStep(
       'gateway database router integration tests',
-      ['test', '-p', 'sdkwork-clawrouter-gateway', '--test', 'database_config_router'],
+      ['test', '-p', 'sdkwork-clawrouter-cloud-gateway', '--test', 'database_config_router'],
       env,
       settings,
     ),
     cargoStep(
       'gateway provider passthrough route tests',
-      ['test', '-p', 'sdkwork-clawrouter-gateway', '--test', 'provider_passthrough_route'],
+      ['test', '-p', 'sdkwork-clawrouter-cloud-gateway', '--test', 'provider_passthrough_route'],
       env,
       settings,
     ),
     cargoStep(
       'gateway provider adapter invocation tests',
-      ['test', '-p', 'sdkwork-clawrouter-gateway', '--test', 'provider_adapter_invocation'],
+      ['test', '-p', 'sdkwork-clawrouter-cloud-gateway', '--test', 'provider_adapter_invocation'],
       env,
       settings,
     ),
@@ -635,7 +637,7 @@ function buildGatewaySteps(env, settings) {
       [
         'test',
         '-p',
-        'sdkwork-clawrouter-gateway',
+        'sdkwork-clawrouter-cloud-gateway',
         '--test',
         'openai_chat_relay_route',
         '--test',
@@ -715,7 +717,7 @@ function buildRuntimeSteps(env, settings) {
         '-p',
         'sdkwork-clawrouter-router-service',
         '-p',
-        'sdkwork-clawrouter-gateway',
+        'sdkwork-clawrouter-cloud-gateway',
         '-p',
         'sdkwork-clawrouter-admin-api-server',
         '-p',
@@ -732,7 +734,7 @@ function buildRuntimeSteps(env, settings) {
 function buildFullSteps(env, settings) {
   const runtimePackages = [
     'sdkwork-clawrouter-router-service',
-    'sdkwork-clawrouter-gateway',
+    'sdkwork-clawrouter-cloud-gateway',
     'sdkwork-clawrouter-admin-api-server',
     'sdkwork-clawrouter-app-api-server',
     'sdkwork-claw-installer',

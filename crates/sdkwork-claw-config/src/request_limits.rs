@@ -2,7 +2,6 @@
 pub struct RequestLimitsConfig {
     admin_app_json_body_max_bytes: usize,
     admin_skill_json_body_max_bytes: usize,
-    forum_json_body_max_bytes: usize,
     payment_callback_body_max_bytes: usize,
 }
 
@@ -11,14 +10,11 @@ impl RequestLimitsConfig {
         "SDKWORK_CLAW_ADMIN_APP_JSON_BODY_MAX_BYTES";
     pub const ENV_ADMIN_SKILL_JSON_BODY_MAX_BYTES: &'static str =
         "SDKWORK_CLAW_ADMIN_SKILL_JSON_BODY_MAX_BYTES";
-    pub const ENV_FORUM_JSON_BODY_MAX_BYTES: &'static str =
-        "SDKWORK_CLAW_FORUM_JSON_BODY_MAX_BYTES";
     pub const ENV_PAYMENT_CALLBACK_BODY_MAX_BYTES: &'static str =
         "SDKWORK_CLAW_PAYMENT_CALLBACK_BODY_MAX_BYTES";
 
     pub const DEFAULT_ADMIN_APP_JSON_BODY_MAX_BYTES: usize = 128 * 1024;
     pub const DEFAULT_ADMIN_SKILL_JSON_BODY_MAX_BYTES: usize = 64 * 1024;
-    pub const DEFAULT_FORUM_JSON_BODY_MAX_BYTES: usize = 256 * 1024;
     pub const DEFAULT_PAYMENT_CALLBACK_BODY_MAX_BYTES: usize = 64 * 1024;
 
     pub fn from_env() -> Result<Self, String> {
@@ -40,11 +36,6 @@ impl RequestLimitsConfig {
                     .and_then(|config| config.request_limits.admin_skill_json_body_max_bytes),
                 Self::DEFAULT_ADMIN_SKILL_JSON_BODY_MAX_BYTES,
             )?,
-            forum_json_body_max_bytes: configured_usize_limit(
-                Self::ENV_FORUM_JSON_BODY_MAX_BYTES,
-                runtime_toml.and_then(|config| config.request_limits.forum_json_body_max_bytes),
-                Self::DEFAULT_FORUM_JSON_BODY_MAX_BYTES,
-            )?,
             payment_callback_body_max_bytes: configured_usize_limit(
                 Self::ENV_PAYMENT_CALLBACK_BODY_MAX_BYTES,
                 runtime_toml
@@ -62,10 +53,6 @@ impl RequestLimitsConfig {
         self.admin_skill_json_body_max_bytes
     }
 
-    pub fn forum_json_body_max_bytes(&self) -> usize {
-        self.forum_json_body_max_bytes
-    }
-
     pub fn payment_callback_body_max_bytes(&self) -> usize {
         self.payment_callback_body_max_bytes
     }
@@ -76,7 +63,6 @@ impl Default for RequestLimitsConfig {
         Self {
             admin_app_json_body_max_bytes: Self::DEFAULT_ADMIN_APP_JSON_BODY_MAX_BYTES,
             admin_skill_json_body_max_bytes: Self::DEFAULT_ADMIN_SKILL_JSON_BODY_MAX_BYTES,
-            forum_json_body_max_bytes: Self::DEFAULT_FORUM_JSON_BODY_MAX_BYTES,
             payment_callback_body_max_bytes: Self::DEFAULT_PAYMENT_CALLBACK_BODY_MAX_BYTES,
         }
     }

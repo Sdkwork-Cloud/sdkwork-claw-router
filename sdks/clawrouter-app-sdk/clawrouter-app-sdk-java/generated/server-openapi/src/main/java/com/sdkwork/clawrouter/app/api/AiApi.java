@@ -36,12 +36,6 @@ public class AiApi {
         return client.convertValue(raw, new TypeReference<GatewayTracesListResult>() {});
     }
 
-    /** List generation history */
-    public GenerationListResult generationList() throws Exception {
-        Object raw = client.get(ApiPaths.appPath("/ai/generations"));
-        return client.convertValue(raw, new TypeReference<GenerationListResult>() {});
-    }
-
     /** List model rankings */
     public ModelRankingsListResult modelRankingsList(String rankScope, String vendorCode, String modality, String q, String limit) throws Exception {
         String query = buildQueryString(List.of(
@@ -61,8 +55,8 @@ public class AiApi {
         return client.convertValue(raw, new TypeReference<ModelVendorsListResult>() {});
     }
 
-    /** List models */
-    public ModelsListResult modelsList(String billingMeter, String vendorCode, List<String> vendorCodes, List<String> modalities, List<String> capabilities, List<String> categories, List<String> groups, String q, String limit) throws Exception {
+    /** List model catalog for Playground */
+    public ModelsListResult modelsList(String billingMeter, String vendorCode, List<String> vendorCodes, List<String> modalities, List<String> capabilities, List<String> categories, List<String> groups, String q, String limit, String offset) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("billing_meter", billingMeter, "form", true, false, null),
             new QueryParameterSpec("vendor_code", vendorCode, "form", true, false, null),
@@ -72,7 +66,8 @@ public class AiApi {
             new QueryParameterSpec("categories", categories, "form", false, false, null),
             new QueryParameterSpec("groups", groups, "form", false, false, null),
             new QueryParameterSpec("q", q, "form", true, false, null),
-            new QueryParameterSpec("limit", limit, "form", true, false, null)
+            new QueryParameterSpec("limit", limit, "form", true, false, null),
+            new QueryParameterSpec("offset", offset, "form", true, false, null)
         ));
         Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/ai/models"), query));
         return client.convertValue(raw, new TypeReference<ModelsListResult>() {});

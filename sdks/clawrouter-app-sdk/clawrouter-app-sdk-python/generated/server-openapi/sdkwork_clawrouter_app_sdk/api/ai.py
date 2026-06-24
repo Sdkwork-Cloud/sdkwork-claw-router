@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import ChannelGroupsListResult, DashboardOverviewRetrieveResult, GatewayTracesListResult, GenerationListResult, ModelRankingsListResult, ModelsListResult, ModelVendorsListResult, RoutingApiKeysListResult, RoutingChannelsListResult, RoutingRequestTracesListResult, RoutingUsageListResult, UsageLogsListResult
+from ..models import ChannelGroupsListResult, DashboardOverviewRetrieveResult, GatewayTracesListResult, ModelRankingsListResult, ModelsListResult, ModelVendorsListResult, RoutingApiKeysListResult, RoutingChannelsListResult, RoutingRequestTracesListResult, RoutingUsageListResult, UsageLogsListResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -131,7 +131,6 @@ class AiApi:
         self.channel_groups = AiChannelGroupsApi(client)
         self.dashboard = AiDashboardApi(client)
         self.gateway = AiGatewayApi(client)
-        self.generation = AiGenerationApi(client)
         self.model_rankings = AiModelRankingsApi(client)
         self.model_vendors = AiModelVendorsApi(client)
         self.models = AiModelsApi(client)
@@ -193,17 +192,6 @@ class AiGatewayTracesApi:
         """List traces"""
         return self._client.get(f"/app/v3/api/ai/gateway/traces")
 
-class AiGenerationApi:
-    """ai ai.generation API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-
-
-    def list(self) -> GenerationListResult:
-        """List generation history"""
-        return self._client.get(f"/app/v3/api/ai/generations")
-
 class AiModelRankingsApi:
     """ai ai.model_rankings API client."""
 
@@ -240,8 +228,8 @@ class AiModelsApi:
         self._client = client
 
 
-    def list(self, billing_meter: Optional[str] = None, vendor_code: Optional[str] = None, vendor_codes: Optional[List[str]] = None, modalities: Optional[List[str]] = None, capabilities: Optional[List[str]] = None, categories: Optional[List[str]] = None, groups: Optional[List[str]] = None, q: Optional[str] = None, limit: Optional[str] = None) -> ModelsListResult:
-        """List models"""
+    def list(self, billing_meter: Optional[str] = None, vendor_code: Optional[str] = None, vendor_codes: Optional[List[str]] = None, modalities: Optional[List[str]] = None, capabilities: Optional[List[str]] = None, categories: Optional[List[str]] = None, groups: Optional[List[str]] = None, q: Optional[str] = None, limit: Optional[str] = None, offset: Optional[str] = None) -> ModelsListResult:
+        """List model catalog for Playground"""
         query = build_query_string([
             {'name': 'billing_meter', 'value': billing_meter, 'style': 'form', 'explode': True, 'allow_reserved': False},
             {'name': 'vendor_code', 'value': vendor_code, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -252,6 +240,7 @@ class AiModelsApi:
             {'name': 'groups', 'value': groups, 'style': 'form', 'explode': False, 'allow_reserved': False},
             {'name': 'q', 'value': q, 'style': 'form', 'explode': True, 'allow_reserved': False},
             {'name': 'limit', 'value': limit, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'offset', 'value': offset, 'style': 'form', 'explode': True, 'allow_reserved': False},
         ])
         return self._client.get(_append_query_string(f"/app/v3/api/ai/models", query))
 

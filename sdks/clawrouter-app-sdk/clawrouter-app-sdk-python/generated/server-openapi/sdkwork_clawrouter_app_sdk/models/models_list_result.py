@@ -3,12 +3,12 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
 if TYPE_CHECKING:
-    from .app_model_catalog_response import AppModelCatalogResponse
+    from .no_data import NoData
 
 
 @dataclass
 class ModelsListResult:
     """Models list result schema exposed by Claw Router."""
     code: str
-    data: Optional[AppModelCatalogResponse] = None
+    data: Optional[NoData] = None
     msg: Optional[str] = None

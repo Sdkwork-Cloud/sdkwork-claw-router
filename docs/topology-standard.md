@@ -46,13 +46,13 @@ Authoritative mapping is also declared in `specs/topology.spec.json` ->
 standard profile scripts above. Product-prefixed `clawrouter:*`, platform-first
 `desktop:*`, and tool-first `tauri:*` scripts are retired.
 
-Gateway packaging (cloud config bundle only, binary owned by `sdkwork-api-gateway`):
+Gateway packaging (cloud config bundle only, binary owned by `sdkwork-api-cloud-gateway`):
 
 | Script | Purpose |
 | --- | --- |
 | `pnpm gateway:matrix` | print all packaging targets from topology spec |
 | `pnpm gateway:matrix:cloud` | print `platform-config-bundle` targets |
-| `pnpm gateway:package:cloud` | bundle `configs/sdkwork-api-gateway.claw-router.*.toml` |
+| `pnpm gateway:package:cloud` | bundle `configs/sdkwork-api-cloud-gateway.claw-router.*.toml` |
 | `pnpm topology:validate` | validate `specs/topology.spec.json` |
 
 ## Local URLs (standalone unified dev)
@@ -79,5 +79,5 @@ route crates or feature packages.
 
 Cloud gateway config bundles (for `cloud` profiles):
 
-- `configs/sdkwork-api-gateway.claw-router.development.toml`
-- `configs/sdkwork-api-gateway.claw-router.production.toml`
+- `configs/sdkwork-api-cloud-gateway.claw-router.development.toml`
+- `configs/sdkwork-api-cloud-gateway.claw-router.production.toml`

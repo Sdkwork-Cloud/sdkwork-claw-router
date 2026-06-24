@@ -206,6 +206,7 @@ declare module '@sdkwork/file-sdk-ports' {
   export interface AdminStorageUsageQuery {
     cursor?: string;
     limit?: number;
+    requestId: string;
     scopeId?: string;
     scopeType?: SdkworkStorageUsageScopeType;
   }
@@ -226,11 +227,17 @@ declare module '@sdkwork/file-sdk-ports' {
     limit?: number;
     logicalScope?: SdkworkStorageBucketLogicalScope;
     providerId?: string;
+    requestId: string;
     status?: string;
   }
 
   export interface AdminStorageDefaultBucketQuery {
     logicalScope?: SdkworkStorageBucketLogicalScope;
+    requestId: string;
+  }
+
+  export interface AdminStorageListQuery {
+    requestId: string;
   }
 
   export interface AdminStorageProviderHealthCheckResult {
@@ -241,18 +248,6 @@ declare module '@sdkwork/file-sdk-ports' {
     status: string;
   }
 
-  export interface AdminStorageUpdateProviderInput {
-    providerId: string;
-    reason: string;
-    status: SdkworkStorageResourceStatus;
-  }
-
-  export interface AdminStorageUpdateBucketInput {
-    bucketId: string;
-    reason: string;
-    status: SdkworkStorageResourceStatus;
-  }
-
   export interface AdminStorageCreateProviderInput {
     credentialRef: string;
     endpointUrl?: string;
@@ -261,6 +256,7 @@ declare module '@sdkwork/file-sdk-ports' {
     providerCode: string;
     providerType: SdkworkStorageProviderType;
     region?: string;
+    requestId: string;
     supportsLifecycle?: boolean;
     supportsMultipart?: boolean;
     supportsObjectLock?: boolean;
@@ -280,12 +276,14 @@ declare module '@sdkwork/file-sdk-ports' {
     objectLockEnabled?: boolean;
     providerId: string;
     publicAccessBlocked?: boolean;
+    requestId: string;
     versioningEnabled?: boolean;
   }
 
   export interface AdminStorageCreateQuotaPolicyInput {
     idempotencyKey: string;
     quotaLimitBytes: number;
+    requestId: string;
     scopeId: string;
     scopeType: Exclude<SdkworkStorageUsageScopeType, 'business_domain'>;
     singleFileLimitBytes?: number;
@@ -294,6 +292,7 @@ declare module '@sdkwork/file-sdk-ports' {
   export interface AdminStorageReconciliationRunQuery {
     cursor?: string;
     limit?: number;
+    requestId: string;
     runType?: string;
     status?: string;
   }
@@ -303,6 +302,7 @@ declare module '@sdkwork/file-sdk-ports' {
     dryRun: boolean;
     idempotencyKey: string;
     providerId?: string;
+    requestId: string;
     runType: string;
   }
 
@@ -311,12 +311,28 @@ declare module '@sdkwork/file-sdk-ports' {
     dryRun: boolean;
     idempotencyKey: string;
     jobType: string;
+    requestId: string;
   }
 
   export interface AdminStorageSetDefaultBucketInput {
     bucketId: string;
     logicalScope: SdkworkStorageBucketLogicalScope;
     reason: string;
+    requestId: string;
+  }
+
+  export interface AdminStorageUpdateProviderInput {
+    providerId: string;
+    reason: string;
+    requestId: string;
+    status: SdkworkStorageResourceStatus;
+  }
+
+  export interface AdminStorageUpdateBucketInput {
+    bucketId: string;
+    reason: string;
+    requestId: string;
+    status: SdkworkStorageResourceStatus;
   }
 
   export interface AdminStoragePort {
@@ -327,11 +343,11 @@ declare module '@sdkwork/file-sdk-ports' {
     createQuotaPolicy(input: AdminStorageCreateQuotaPolicyInput): Promise<{ quotaPolicy: unknown; requestId: string }>;
     createReconciliationRun(input: AdminStorageCreateReconciliationRunInput): Promise<{ reconciliationRun: unknown; requestId: string }>;
     createGarbageCollectionJob(input: AdminStorageCreateGarbageCollectionJobInput): Promise<{ job: unknown; requestId: string }>;
-    healthCheckProvider(input: { providerId: string }): Promise<AdminStorageProviderHealthCheckResult>;
-    listProviders(input?: Record<string, unknown>): Promise<{ items: unknown[]; requestId: string }>;
+    healthCheckProvider(input: { providerId: string; requestId: string }): Promise<AdminStorageProviderHealthCheckResult>;
+    listProviders(input: AdminStorageListQuery): Promise<{ items: unknown[]; requestId: string }>;
     listBuckets(input: AdminStorageBucketQuery): Promise<{ items: unknown[]; nextCursor?: string; requestId: string }>;
     listDefaultBuckets(input: AdminStorageDefaultBucketQuery): Promise<{ items: AdminStorageDefaultBucket[]; requestId: string }>;
-    listQuotaPolicies(input?: Record<string, unknown>): Promise<{ items: unknown[]; requestId: string }>;
+    listQuotaPolicies(input: AdminStorageListQuery): Promise<{ items: unknown[]; requestId: string }>;
     listReconciliationRuns(input: AdminStorageReconciliationRunQuery): Promise<{ items: unknown[]; nextCursor?: string; requestId: string }>;
     listUsageCounters(input: AdminStorageUsageQuery): Promise<{ items: unknown[]; nextCursor?: string; requestId: string }>;
     listUsageLedger(input: AdminStorageUsageLedgerQuery): Promise<{ items: unknown[]; nextCursor?: string; requestId: string }>;
@@ -385,15 +401,20 @@ declare module '@sdkwork/drive-app-sdk' {
   export interface SdkworkDriveAppClient {
     drive: {
       nodes: {
-        list(spaceId: string, params: {
+        list(spaceId: string, params?: {
           pageSize?: string;
           pageToken?: string;
           parentNodeId?: string;
-          tenantId: string;
         }): Promise<{ items: DriveNode[]; nextPageToken?: string }>;
       };
       spaces: {
-        list(params: { tenantId: string }): Promise<{ items: DriveSpace[] }>;
+        list(params?: Record<string, never>): Promise<{ items: DriveSpace[] }>;
+      };
+      permissions: {
+        list(nodeId: string): Promise<{ items: Record<string, unknown>[] }>;
+      };
+      shareLinks: {
+        list(nodeId: string): Promise<{ items: Record<string, unknown>[] }>;
       };
     };
     http: unknown;
@@ -470,7 +491,10 @@ declare module '@sdkwork/iam-runtime' {
     auth: {
       registrations: Record<string, unknown>;
       sessions: Record<string, unknown> & {
-        current: Record<string, unknown>;
+        current: {
+          retrieve(): Promise<unknown>;
+          update?(input: unknown): Promise<unknown>;
+        };
       };
     };
     oauth: {
@@ -994,7 +1018,9 @@ declare module '@sdkwork/commerce-pc-host' {
   export const SdkworkCommerceHostCheckoutPage: ComponentType<SdkworkCommerceHostPageProps>;
   export const SdkworkCommerceHostPaymentPage: ComponentType<SdkworkCommerceHostPageProps>;
   export const SdkworkCommerceHostNavbarActions: ComponentType<SdkworkCommerceHostPageProps>;
-  export const SdkworkCommerceHostRoutes: ComponentType<SdkworkCommerceHostPageProps>;
+  export function SdkworkCommerceHostRoutes(
+    props: SdkworkCommerceHostPageProps,
+  ): import('react').ReactNode;
   export const SDKWORK_COMMERCE_HOST_ROUTE_CATALOG: readonly {
     id: string;
     segment: string;
@@ -1178,7 +1204,7 @@ declare module '@sdkwork/generations-pc-workspace/generation-service' {
     organizationId?: string;
     parameters?: Record<string, unknown>;
     prompt: string;
-    tenantId: string;
+    tenantId?: string;
   }
 
   export interface SdkworkGenerationRecord {
@@ -1571,7 +1597,7 @@ declare module '@sdkwork/agent-backend-sdk' {
   export class SdkworkBackendClient {
     ai: {
       agents: {
-        list(params?: { page?: number; pageSize?: number }): Promise<unknown>;
+        list(params?: { page?: number | string; pageSize?: number | string; q?: string; tenantId?: string }): Promise<unknown>;
         create(body: unknown): Promise<unknown>;
         retrieve(agentId: string): Promise<unknown>;
       };
@@ -2192,6 +2218,8 @@ declare module '@sdkwork/auth-runtime-pc-react' {
     authToken?: string;
     refreshToken?: string;
     expiresAt?: string | number;
+    context?: unknown;
+    sessionId?: string;
     user?: unknown;
     userInfo?: unknown;
   }
@@ -2200,7 +2228,7 @@ declare module '@sdkwork/auth-runtime-pc-react' {
     runtime: IamRuntime;
     tokenStore: unknown;
     tokenManager: unknown;
-    contextStore: unknown;
+    contextStore: import('@sdkwork/iam-runtime').IamContextStore;
   }
 
   export type SdkworkAppbasePcAuthRuntimeSdkClient = Partial<{
@@ -2322,12 +2350,80 @@ declare module '@sdkwork/notification-pc-react/service' {
   } from '@sdkwork/notification-pc-react';
 }
 
+declare module '@sdkwork/models-pc-admin-catalog' {
+  import type { ComponentType, Dispatch, ReactNode, SetStateAction } from 'react';
+
+  export const ModelAdmin: ComponentType;
+  export const ModelMappingAdmin: ComponentType;
+  export type Vendor = Record<string, unknown> & {
+    code?: string;
+    name?: string;
+    status?: string;
+    vendorCode?: string;
+  };
+  export type Model = Record<string, unknown> & { type?: string };
+  export class ModelService {
+    static fetchVendors(): Promise<Vendor[]>;
+    listVendors(): Promise<unknown>;
+  }
+  export interface VendorPickerModalProps {
+    onSelect?: (vendor: Vendor) => void;
+    onClose?: () => void;
+    selectionMode?: string;
+    vendors?: readonly Vendor[];
+    title?: string;
+    searchPlaceholder?: string;
+    selectedVendorCodes?: string[];
+    onSelectionChange?: Dispatch<SetStateAction<string[]>>;
+  }
+  export const VendorPickerModal: ComponentType<VendorPickerModalProps>;
+}
+
+declare module '@sdkwork/models-pc-admin-catalog/modelService' {
+  export type Vendor = Record<string, unknown> & {
+    code?: string;
+    name?: string;
+    status?: string;
+    vendorCode?: string;
+  };
+  export type Model = Record<string, unknown> & { type?: string };
+  export class ModelService {
+    static fetchVendors(): Promise<Vendor[]>;
+    listVendors(): Promise<unknown>;
+  }
+}
+
+declare module '@sdkwork/models-pc-admin-catalog/vendorPickerModal' {
+  import type { ComponentType, Dispatch, SetStateAction } from 'react';
+  import type { Vendor } from '@sdkwork/models-pc-admin-catalog/modelService';
+
+  export interface VendorPickerModalProps {
+    onSelect?: (vendor: Vendor) => void;
+    onClose?: () => void;
+    selectionMode?: string;
+    vendors?: readonly Vendor[];
+    title?: string;
+    searchPlaceholder?: string;
+    selectedVendorCodes?: string[];
+    onSelectionChange?: Dispatch<SetStateAction<string[]>>;
+  }
+
+  export const VendorPickerModal: ComponentType<VendorPickerModalProps>;
+}
+
 declare module '@sdkwork/iam-contracts' {
   export interface IamAppContext {
     appId: string;
+    authLevel?: 'anonymous' | 'password' | 'mfa' | 'system';
+    dataScope?: string[];
     deploymentMode: 'local' | 'private' | 'saas';
     environment: 'dev' | 'prod' | 'test';
+    organizationId?: string;
+    permissionScope?: string[];
     platform?: string;
+    sessionId?: string;
+    tenantId?: string;
+    userId?: string;
   }
 
   const iamContracts: unknown;

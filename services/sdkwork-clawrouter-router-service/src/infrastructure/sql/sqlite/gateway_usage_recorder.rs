@@ -5,9 +5,9 @@ use serde_json::json;
 use sha2::{Digest, Sha256};
 use sqlx::SqlitePool;
 
-use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::domain::DomainError;
 use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
+use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::ports::{
     GatewayRequestTraceCommand, GatewayUsageRecordCommand, GatewayUsageRecordFuture,
     GatewayUsageRecorder,

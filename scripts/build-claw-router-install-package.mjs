@@ -55,7 +55,6 @@ const CLAW_EDGE_DEFAULT_HSTS_PRELOAD = false;
 const CLAW_EDGE_DEFAULT_CSP_FRAME_SRC = ['https://player.bilibili.com'];
 const REQUEST_LIMIT_ADMIN_APP_JSON_BODY_MAX_BYTES = 128 * 1024;
 const REQUEST_LIMIT_ADMIN_SKILL_JSON_BODY_MAX_BYTES = 64 * 1024;
-const REQUEST_LIMIT_FORUM_JSON_BODY_MAX_BYTES = 256 * 1024;
 const REQUEST_LIMIT_PAYMENT_CALLBACK_BODY_MAX_BYTES = 64 * 1024;
 
 function printHelp() {
@@ -751,12 +750,10 @@ function requestLimitsPolicyFor() {
     configSection: 'request_limits',
     adminAppJsonBodyMaxBytes: REQUEST_LIMIT_ADMIN_APP_JSON_BODY_MAX_BYTES,
     adminSkillJsonBodyMaxBytes: REQUEST_LIMIT_ADMIN_SKILL_JSON_BODY_MAX_BYTES,
-    forumJsonBodyMaxBytes: REQUEST_LIMIT_FORUM_JSON_BODY_MAX_BYTES,
     paymentCallbackBodyMaxBytes: REQUEST_LIMIT_PAYMENT_CALLBACK_BODY_MAX_BYTES,
     envOverrides: [
       'SDKWORK_CLAW_ADMIN_APP_JSON_BODY_MAX_BYTES',
       'SDKWORK_CLAW_ADMIN_SKILL_JSON_BODY_MAX_BYTES',
-      'SDKWORK_CLAW_FORUM_JSON_BODY_MAX_BYTES',
       'SDKWORK_CLAW_PAYMENT_CALLBACK_BODY_MAX_BYTES',
     ],
   };
@@ -991,7 +988,7 @@ function createInstallGuide(packageItem) {
   lines.push(
     'Request body limits are configured in [request_limits].',
     `Admin app JSON defaults to ${installConfiguration.requestLimits.adminAppJsonBodyMaxBytes} bytes; admin skill JSON defaults to ${installConfiguration.requestLimits.adminSkillJsonBodyMaxBytes} bytes.`,
-    `Forum JSON defaults to ${installConfiguration.requestLimits.forumJsonBodyMaxBytes} bytes; payment callback payloads default to ${installConfiguration.requestLimits.paymentCallbackBodyMaxBytes} bytes.`,
+    `Payment callback payloads default to ${installConfiguration.requestLimits.paymentCallbackBodyMaxBytes} bytes.`,
     'Keep load balancer, reverse proxy, and container ingress body limits aligned with these values.',
     '',
   );
@@ -1332,10 +1329,6 @@ function createRuntimeConfigTemplate(packageItem) {
     'run_on_startup = true',
     'alert_after_consecutive_failures = 3',
     '',
-    '[forum]',
-    '# Optional public community links shown in the app forum overview.',
-    `# community_links_json_file = "${secretRoot}/forum-community-links.json"`,
-    '',
     '[install]',
     'environment = "production"',
     'seed_profile = "commercial"',
@@ -1356,7 +1349,6 @@ function createRuntimeConfigTemplate(packageItem) {
     '# Runtime API request body limits. Keep reverse proxy and container ingress limits aligned.',
     `admin_app_json_body_max_bytes = ${requestLimitsPolicy.adminAppJsonBodyMaxBytes}`,
     `admin_skill_json_body_max_bytes = ${requestLimitsPolicy.adminSkillJsonBodyMaxBytes}`,
-    `forum_json_body_max_bytes = ${requestLimitsPolicy.forumJsonBodyMaxBytes}`,
     `payment_callback_body_max_bytes = ${requestLimitsPolicy.paymentCallbackBodyMaxBytes}`,
     '',
     '[runtime]',

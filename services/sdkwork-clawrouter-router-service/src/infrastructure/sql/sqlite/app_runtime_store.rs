@@ -2,9 +2,7 @@ use serde_json::Value;
 use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
-use crate::infrastructure::sql::sql_admin_product_center::{
-    media_resource_object_blob_id, media_resource_stable_id,
-};
+use crate::infrastructure::sql::sql_admin_product_center::drive_uri_from_resource;
 use crate::ports::{
     AppRuntimeArtifactItem, AppRuntimeArtifactList, AppRuntimeEventItem, AppRuntimeEventList,
     AppRuntimeFuture, AppRuntimeInvocationExecution, AppRuntimeInvocationItem,
@@ -562,11 +560,7 @@ async fn create_artifact(
     let content_json = json_string(&command.content_json, "runtime artifact content json")?;
     let metadata = json_string(&command.metadata, "runtime artifact metadata")?;
     let resource_snapshot = command.resource.as_ref().map(Value::to_string);
-    let media_resource_id = command.resource.as_ref().map(media_resource_stable_id);
-    let object_blob_id = command
-        .resource
-        .as_ref()
-        .and_then(media_resource_object_blob_id);
+    let drive_uri = command.resource.as_ref().and_then(drive_uri_from_resource);
     let invocation = load_invocation_row_by_uuid(pool, command.subject, &command.invocation_id)
         .await?
         .ok_or_else(|| DomainError::not_found("runtime invocation was not found"))?;
@@ -589,15 +583,14 @@ async fn create_artifact(
             mime_type,
             content_text,
             content_json,
-            media_resource_id,
-            object_blob_id,
+            drive_uri,
             resource_snapshot,
             sha256,
             size_bytes,
             created_at,
             metadata
         )
-        VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, ?15, ?16, ?17, ?18, ?19, ?20, ?21, ?22, ?23)
+        VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, ?15, ?16, ?17, ?18, ?19, ?20, ?21, ?22)
         "#,
     )
     .bind(&command.artifact_uuid)
@@ -616,8 +609,7 @@ async fn create_artifact(
     .bind(&command.mime_type)
     .bind(&command.content_text)
     .bind(&content_json)
-    .bind(media_resource_id)
-    .bind(object_blob_id)
+    .bind(drive_uri)
     .bind(resource_snapshot)
     .bind(&command.sha256)
     .bind(command.size_bytes)

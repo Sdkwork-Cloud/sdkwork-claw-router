@@ -17,10 +17,9 @@ func NewNotificationApi(client *sdkhttp.Client) *NotificationApi {
     return &NotificationApi{client: client}
 }
 
-// List notifications
-func (a *NotificationApi) NotificationsList(appId *string, includeArchived *bool, page *int, pageSize *int) (sdktypes.NotificationsListResult, error) {
+// List portal notifications
+func (a *NotificationApi) NotificationsList(includeArchived *bool, page *string, pageSize *string) (sdktypes.NotificationsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
-        {Name: "app_id", Value: func() interface{} { if appId == nil { return nil }; return *appId }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "include_archived", Value: func() interface{} { if includeArchived == nil { return nil }; return *includeArchived }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -33,12 +32,13 @@ func (a *NotificationApi) NotificationsList(appId *string, includeArchived *bool
     return decodeResult[sdktypes.NotificationsListResult](raw)
 }
 
-// Acknowledge
-func (a *NotificationApi) NotificationsAcknowledgeCreate(notificationId string, appId *string) (sdktypes.NotificationsAcknowledgeCreateResult, error) {
-    query := BuildQueryString([]QueryParameterSpec{
-        {Name: "app_id", Value: func() interface{} { if appId == nil { return nil }; return *appId }(), Style: "form", Explode: true, AllowReserved: false},
-    })
-    raw, err := a.client.Post(AppendQueryString(AppApiPath(fmt.Sprintf("/notification/notifications/%s/acknowledge", SerializePathParameter(notificationId, PathParameterSpec{Name: "notificationId", Style: "simple", Explode: false}))), query), nil, nil, nil, "")
+// Acknowledge portal notification
+func (a *NotificationApi) NotificationsAcknowledgeCreate(notificationId string, idempotencyKey string) (sdktypes.NotificationsAcknowledgeCreateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/notification/notifications/%s/acknowledge", SerializePathParameter(notificationId, PathParameterSpec{Name: "notificationId", Style: "simple", Explode: false}))), nil, nil, headers, "")
     if err != nil {
         var zero sdktypes.NotificationsAcknowledgeCreateResult
         return zero, err
@@ -46,12 +46,13 @@ func (a *NotificationApi) NotificationsAcknowledgeCreate(notificationId string, 
     return decodeResult[sdktypes.NotificationsAcknowledgeCreateResult](raw)
 }
 
-// Mark popup seen
-func (a *NotificationApi) NotificationsPopupSeenCreate(notificationId string, appId *string) (sdktypes.NotificationsPopupSeenCreateResult, error) {
-    query := BuildQueryString([]QueryParameterSpec{
-        {Name: "app_id", Value: func() interface{} { if appId == nil { return nil }; return *appId }(), Style: "form", Explode: true, AllowReserved: false},
-    })
-    raw, err := a.client.Post(AppendQueryString(AppApiPath(fmt.Sprintf("/notification/notifications/%s/popup_seen", SerializePathParameter(notificationId, PathParameterSpec{Name: "notificationId", Style: "simple", Explode: false}))), query), nil, nil, nil, "")
+// Mark portal notification popup seen
+func (a *NotificationApi) NotificationsPopupSeenCreate(notificationId string, idempotencyKey string) (sdktypes.NotificationsPopupSeenCreateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/notification/notifications/%s/popup_seen", SerializePathParameter(notificationId, PathParameterSpec{Name: "notificationId", Style: "simple", Explode: false}))), nil, nil, headers, "")
     if err != nil {
         var zero sdktypes.NotificationsPopupSeenCreateResult
         return zero, err
@@ -285,7 +286,92 @@ func EncodeQueryValue(value string, allowReserved bool) string {
 }
 
 
+type ParameterSpec struct {
+    Value       interface{}
+    Style       string
+    Explode     bool
+    ContentType string
+}
 
+func BuildRequestHeaders(headers map[string]ParameterSpec, cookies map[string]ParameterSpec) map[string]string {
+    requestHeaders := map[string]string{}
+    for name, parameter := range headers {
+        if serialized, ok := SerializeParameterValue(parameter); ok {
+            requestHeaders[name] = serialized
+        }
+    }
+
+    if cookieHeader := BuildCookieHeader(cookies); cookieHeader != "" {
+        if existing, ok := requestHeaders["Cookie"]; ok && existing != "" {
+            requestHeaders["Cookie"] = existing + "; " + cookieHeader
+        } else {
+            requestHeaders["Cookie"] = cookieHeader
+        }
+    }
+
+    if len(requestHeaders) == 0 {
+        return nil
+    }
+    return requestHeaders
+}
+
+func BuildCookieHeader(cookies map[string]ParameterSpec) string {
+    pairs := make([]string, 0, len(cookies))
+    for name, parameter := range cookies {
+        if serialized, ok := SerializeParameterValue(parameter); ok {
+            pairs = append(pairs, url.QueryEscape(name)+"="+url.QueryEscape(serialized))
+        }
+    }
+    return strings.Join(pairs, "; ")
+}
+
+func SerializeParameterValue(parameter ParameterSpec) (string, bool) {
+    value := parameter.Value
+    if value == nil {
+        return "", false
+    }
+    if parameter.ContentType != "" {
+        encoded, _ := json.Marshal(value)
+        return string(encoded), true
+    }
+    switch typed := value.(type) {
+    case string:
+        return typed, true
+    case fmt.Stringer:
+        return typed.String(), true
+    case []string:
+        return strings.Join(typed, ","), true
+    case []int:
+        values := make([]string, 0, len(typed))
+        for _, item := range typed {
+            values = append(values, fmt.Sprint(item))
+        }
+        return strings.Join(values, ","), true
+    case map[string]string:
+        return SerializeHeaderObject(stringMapToInterface(typed), parameter.Explode), true
+    case map[string]int:
+        return SerializeHeaderObject(intMapToInterface(typed), parameter.Explode), true
+    case map[string]interface{}:
+        return SerializeHeaderObject(typed, parameter.Explode), true
+    default:
+        return fmt.Sprint(value), true
+    }
+}
+
+func SerializeHeaderObject(values map[string]interface{}, explode bool) string {
+    serialized := make([]string, 0, len(values)*2)
+    for key, value := range values {
+        if value == nil {
+            continue
+        }
+        if explode {
+            serialized = append(serialized, key+"="+fmt.Sprint(value))
+        } else {
+            serialized = append(serialized, key, fmt.Sprint(value))
+        }
+    }
+    return strings.Join(serialized, ",")
+}
 func stringSliceToInterface(values []string) []interface{} {
     result := make([]interface{}, 0, len(values))
     for _, value := range values {

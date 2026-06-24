@@ -408,7 +408,7 @@ routes:
     source: sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiPlayground.tsx
     purpose: explicit_api_playground_request
   evidence:
-  - services/sdkwork-clawrouter-gateway/src/edge_server.rs
+  - crates/sdkwork-clawrouter-cloud-gateway/src/edge_server.rs
   - apps/sdkwork-clawrouter-pc/vite.config.ts
   - sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiEndpointView.tsx
   - sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiPlayground.tsx
@@ -1002,6 +1002,127 @@ routes:
   evidence:
   - apps/sdkwork-clawrouter-pc/src/App.tsx
   - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-provider/src/serviceProviderService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/storage
+  package: "@sdkwork/clawrouter-pc-admin-file-platform"
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  dependency_owned: true
+  dependency_module: sdkwork-drive
+  dependency_sdk_family: sdkwork-drive-backend-sdk
+  api_surface: backend
+  operation_routes:
+  - /admin/storage/providers
+  evidence:
+  - apps/sdkwork-clawrouter-pc/src/App.tsx
+  - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-shell/src/adminModuleRegistry.ts
+  - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/storage/providers
+  package: "@sdkwork/clawrouter-pc-admin-file-platform"
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  dependency_owned: true
+  dependency_module: sdkwork-drive
+  dependency_sdk_family: sdkwork-drive-backend-sdk
+  api_surface: backend
+  operation_routes:
+  - /admin/storage/providers
+  evidence:
+  - apps/sdkwork-clawrouter-pc/src/App.tsx
+  - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/storage/buckets
+  package: "@sdkwork/clawrouter-pc-admin-file-platform"
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  dependency_owned: true
+  dependency_module: sdkwork-drive
+  dependency_sdk_family: sdkwork-drive-backend-sdk
+  api_surface: backend
+  operation_routes:
+  - /admin/storage/buckets
+  evidence:
+  - apps/sdkwork-clawrouter-pc/src/App.tsx
+  - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/storage/default-buckets
+  package: "@sdkwork/clawrouter-pc-admin-file-platform"
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  dependency_owned: true
+  dependency_module: sdkwork-drive
+  dependency_sdk_family: sdkwork-drive-backend-sdk
+  api_surface: backend
+  operation_routes:
+  - /admin/storage/default-buckets
+  evidence:
+  - apps/sdkwork-clawrouter-pc/src/App.tsx
+  - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/storage/quotas
+  package: "@sdkwork/clawrouter-pc-admin-file-platform"
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  dependency_owned: true
+  dependency_module: sdkwork-drive
+  dependency_sdk_family: sdkwork-drive-backend-sdk
+  api_surface: backend
+  operation_routes:
+  - /admin/storage/quotas
+  evidence:
+  - apps/sdkwork-clawrouter-pc/src/App.tsx
+  - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/storage/usage
+  package: "@sdkwork/clawrouter-pc-admin-file-platform"
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  dependency_owned: true
+  dependency_module: sdkwork-drive
+  dependency_sdk_family: sdkwork-drive-backend-sdk
+  api_surface: backend
+  operation_routes:
+  - /admin/storage/usage
+  evidence:
+  - apps/sdkwork-clawrouter-pc/src/App.tsx
+  - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/storage/reconciliation
+  package: "@sdkwork/clawrouter-pc-admin-file-platform"
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  dependency_owned: true
+  dependency_module: sdkwork-drive
+  dependency_sdk_family: sdkwork-drive-backend-sdk
+  api_surface: backend
+  operation_routes:
+  - /admin/storage/reconciliation
+  evidence:
+  - apps/sdkwork-clawrouter-pc/src/App.tsx
+  - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/storage/garbage-collection
+  package: "@sdkwork/clawrouter-pc-admin-file-platform"
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  dependency_owned: true
+  dependency_module: sdkwork-drive
+  dependency_sdk_family: sdkwork-drive-backend-sdk
+  api_surface: backend
+  operation_routes:
+  - /admin/storage/garbage-collection
+  evidence:
+  - apps/sdkwork-clawrouter-pc/src/App.tsx
+  - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
   - docs/schema-registry/frontend-field-contracts.yaml
 - route: /admin/announcement
   package: "@sdkwork/clawrouter-pc-admin-announcement"

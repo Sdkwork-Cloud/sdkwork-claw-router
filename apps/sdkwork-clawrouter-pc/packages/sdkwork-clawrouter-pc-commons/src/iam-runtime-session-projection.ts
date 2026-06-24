@@ -11,6 +11,8 @@ import type { PortalSessionAppContext } from './portal-session-types.ts';
 type ClawRouterIamSessionLike = SdkworkAppbasePcAuthSessionBridgeSession & {
   user?: unknown;
   userInfo?: unknown;
+  context?: unknown;
+  sessionId?: string;
 };
 
 export function bindClawRouterIamSessionProjection(runtime: IamRuntime): void {
@@ -98,6 +100,10 @@ function augmentIamApiResultWithStoredContext(
   apiResult: ClawRouterIamSessionLike,
 ): ClawRouterIamSessionLike {
   if (readIamContextTenantId(apiResult.context)) {
+    return apiResult;
+  }
+
+  if (!apiResult.authToken || !apiResult.accessToken) {
     return apiResult;
   }
 

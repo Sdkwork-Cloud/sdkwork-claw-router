@@ -1,7 +1,7 @@
 use sqlx::{PgPool, Postgres, Row, Transaction};
 
-use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::domain::{DomainError, DomainResult};
+use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::ports::{
     AppRoutingMappingRule, AppRoutingStrategyFuture, AppRoutingStrategySnapshot,
     AppRoutingStrategyStore, AppRoutingStrategySubject, AppRoutingStrategyType,

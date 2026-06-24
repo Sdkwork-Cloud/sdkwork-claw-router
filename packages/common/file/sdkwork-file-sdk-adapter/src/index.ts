@@ -376,12 +376,7 @@ export function createFilePlatformServiceFromSdkClient({
       const profile = input.uploadProfileCode ?? inferDriveUploaderProfile(input.contentType, input.filename);
       const result = await invokeSdkOperation("drive.uploader.uploadByProfile", () => drive.uploader.uploadByProfile(profile, {
         file: input.file,
-        tenantId: requiredText(input.tenantId, "tenantId"),
-        organizationId: input.organizationId,
-        userId: input.userId,
         anonymousId: input.anonymousId,
-        operatorId: input.operatorId || input.userId || input.anonymousId || "sdkwork-clawrouter-file-uploader",
-        appId: slot?.appId || "sdkwork-clawrouter",
         appResourceType: input.target.type,
         appResourceId: input.target.id,
         scene: input.scene || normalizeUsageLabel(input.slotCode),

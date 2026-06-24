@@ -12,7 +12,7 @@
   "mode": "apply",
   "hasChanges": true,
   "hasDestructiveChanges": false,
-  "changeFingerprint": "cc979cc75d8bd2f1ad086077b9af5e1c1417c248e8cc1e878f5806142d83e0b7",
+  "changeFingerprint": "297d6239d98b8e0dfed6d2d38034392bded5ae85d40aefbff895a1c5f660f8fd",
   "changeImpact": {
     "schemaVersion": 1,
     "areas": [
@@ -53,6 +53,11 @@
           "src/types/app-api-key-list-response.ts",
           "src/types/app-channel-group-list-response.ts",
           "src/types/app-channel-group.ts",
+          "src/types/app-model-catalog-group-option.ts",
+          "src/types/app-model-catalog-item.ts",
+          "src/types/app-model-catalog-price-availability.ts",
+          "src/types/app-model-catalog-reference-price.ts",
+          "src/types/app-model-catalog-response.ts",
           "src/types/artifacts-create-result.ts",
           "src/types/artifacts-list-result.ts",
           "src/types/channel-groups-list-result.ts",
@@ -331,23 +336,15 @@
     "localVersions": []
   },
   "stats": {
-    "totalFiles": 147,
-    "models": 118,
+    "totalFiles": 151,
+    "models": 122,
     "apis": 6,
-    "types": 120
+    "types": 124
   },
   "warnings": [
     {
       "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
       "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/json-object.ts"
-    },
-    {
-      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
-      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/models-list-result.ts"
-    },
-    {
-      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
-      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/index.ts"
     },
     {
       "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
@@ -373,12 +370,12 @@
   "syncSummary": {
     "dryRun": false,
     "controlPlaneEnabled": true,
-    "writtenFiles": 146,
+    "writtenFiles": 151,
     "skippedScaffoldFiles": 0,
     "skippedUnchangedGeneratedFiles": 0,
     "deletedGeneratedFiles": 0,
     "changeSummaryPath": ".sdkwork/sdkwork-generator-changes.json",
-    "changeFingerprint": "cc979cc75d8bd2f1ad086077b9af5e1c1417c248e8cc1e878f5806142d83e0b7",
+    "changeFingerprint": "297d6239d98b8e0dfed6d2d38034392bded5ae85d40aefbff895a1c5f660f8fd",
     "changes": {
       "createdGeneratedFiles": [
         "bin/publish-core.mjs",
@@ -413,6 +410,11 @@
         "src/types/app-api-key-list-response.ts",
         "src/types/app-channel-group-list-response.ts",
         "src/types/app-channel-group.ts",
+        "src/types/app-model-catalog-group-option.ts",
+        "src/types/app-model-catalog-item.ts",
+        "src/types/app-model-catalog-price-availability.ts",
+        "src/types/app-model-catalog-reference-price.ts",
+        "src/types/app-model-catalog-response.ts",
         "src/types/artifacts-create-result.ts",
         "src/types/artifacts-list-result.ts",
         "src/types/channel-groups-list-result.ts",
@@ -576,6 +578,11 @@
             "src/types/app-api-key-list-response.ts",
             "src/types/app-channel-group-list-response.ts",
             "src/types/app-channel-group.ts",
+            "src/types/app-model-catalog-group-option.ts",
+            "src/types/app-model-catalog-item.ts",
+            "src/types/app-model-catalog-price-availability.ts",
+            "src/types/app-model-catalog-reference-price.ts",
+            "src/types/app-model-catalog-response.ts",
             "src/types/artifacts-create-result.ts",
             "src/types/artifacts-list-result.ts",
             "src/types/channel-groups-list-result.ts",

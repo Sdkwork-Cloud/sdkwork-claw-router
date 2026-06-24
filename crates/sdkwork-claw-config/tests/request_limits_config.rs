@@ -11,7 +11,6 @@ fn request_limits_config_uses_production_defaults_when_absent() {
 
     assert_eq!(128 * 1024, config.admin_app_json_body_max_bytes());
     assert_eq!(64 * 1024, config.admin_skill_json_body_max_bytes());
-    assert_eq!(256 * 1024, config.forum_json_body_max_bytes());
     assert_eq!(64 * 1024, config.payment_callback_body_max_bytes());
 }
 
@@ -19,13 +18,15 @@ fn request_limits_config_uses_production_defaults_when_absent() {
 fn request_limits_config_reads_runtime_toml_and_env_overrides() {
     let _guard = env_guard().lock().unwrap();
     clear_request_limit_env();
-    std::env::set_var(RequestLimitsConfig::ENV_FORUM_JSON_BODY_MAX_BYTES, "131072");
+    std::env::set_var(
+        RequestLimitsConfig::ENV_PAYMENT_CALLBACK_BODY_MAX_BYTES,
+        "131072",
+    );
     let runtime_toml = RuntimeTomlConfig::from_toml_str(
         r#"
 [request_limits]
 admin_app_json_body_max_bytes = 262144
 admin_skill_json_body_max_bytes = 98304
-forum_json_body_max_bytes = 262144
 payment_callback_body_max_bytes = 32768
 "#,
     )
@@ -36,8 +37,7 @@ payment_callback_body_max_bytes = 32768
     clear_request_limit_env();
     assert_eq!(262144, config.admin_app_json_body_max_bytes());
     assert_eq!(98304, config.admin_skill_json_body_max_bytes());
-    assert_eq!(131072, config.forum_json_body_max_bytes());
-    assert_eq!(32768, config.payment_callback_body_max_bytes());
+    assert_eq!(131072, config.payment_callback_body_max_bytes());
 }
 
 #[test]
@@ -61,7 +61,6 @@ fn clear_request_limit_env() {
     for name in [
         RequestLimitsConfig::ENV_ADMIN_APP_JSON_BODY_MAX_BYTES,
         RequestLimitsConfig::ENV_ADMIN_SKILL_JSON_BODY_MAX_BYTES,
-        RequestLimitsConfig::ENV_FORUM_JSON_BODY_MAX_BYTES,
         RequestLimitsConfig::ENV_PAYMENT_CALLBACK_BODY_MAX_BYTES,
     ] {
         std::env::remove_var(name);

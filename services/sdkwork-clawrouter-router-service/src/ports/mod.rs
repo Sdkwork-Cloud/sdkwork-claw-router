@@ -17,7 +17,6 @@ mod admin_messaging_store;
 mod admin_model_rate_limit_store;
 mod admin_model_store;
 mod admin_monitor_read_store;
-mod admin_prompt_store;
 mod admin_provider_secret_store;
 mod admin_record_store;
 mod admin_service_node_store;
@@ -46,9 +45,9 @@ mod chat_completion_relay;
 mod chat_completion_stream_relay;
 mod dashboard_overview_read_store;
 mod embeddings_relay;
-mod forum_store;
 mod gateway_usage_recorder;
 mod invocation_dispatcher;
+mod login_continuation_store;
 mod model_ranking_refresh_store;
 mod model_rankings_read_store;
 mod payment_callback_store;
@@ -62,6 +61,7 @@ mod settings_store;
 mod settlements_dashboard_read_store;
 mod site_settings_store;
 mod sticky_route_store;
+mod tenant_signing_key_store;
 mod usage_logs_read_store;
 mod usage_settlement_store;
 mod verification_code_sender;
@@ -182,11 +182,11 @@ pub use admin_model_rate_limit_store::{
     AdminModelRateLimitSubject, CreateAdminModelRateLimitCommand, ListAdminModelRateLimitsQuery,
 };
 pub use admin_model_store::{
-    AdminAiModelItem, AdminAiModelListPage, AdminAiModelRegionPriceCommand, AdminModelCatalogSyncItem,
-    AdminModelCommandFuture, AdminModelMappingRuleBindingDraft, AdminModelMappingRuleBindingItem,
-    AdminModelMappingRuleDraft, AdminModelMappingRuleItem, AdminModelMappingRuleItemDraft,
-    AdminModelMappingRuleMappingItem, AdminModelMappingRulePatch, AdminModelStore,
-    AdminModelSubject, AdminModelVendorItem, CreateAdminAiModelCommand,
+    AdminAiModelItem, AdminAiModelListPage, AdminAiModelRegionPriceCommand,
+    AdminModelCatalogSyncItem, AdminModelCommandFuture, AdminModelMappingRuleBindingDraft,
+    AdminModelMappingRuleBindingItem, AdminModelMappingRuleDraft, AdminModelMappingRuleItem,
+    AdminModelMappingRuleItemDraft, AdminModelMappingRuleMappingItem, AdminModelMappingRulePatch,
+    AdminModelStore, AdminModelSubject, AdminModelVendorItem, CreateAdminAiModelCommand,
     CreateAdminModelMappingCommand, CreateAdminModelVendorCommand, DeleteAdminAiModelCommand,
     DeleteAdminModelMappingCommand, ListAdminAiModelsQuery, ListAdminModelMappingsQuery,
     ListAdminModelVendorsQuery, ResolveAdminModelMappingQuery, ResolveAdminModelMappingResult,
@@ -195,13 +195,6 @@ pub use admin_model_store::{
 pub use admin_monitor_read_store::{
     AdminMonitorAlert, AdminMonitorNode, AdminMonitorPerformanceDatum, AdminMonitorQuery,
     AdminMonitorReadFuture, AdminMonitorReadStore, AdminMonitorSubject,
-};
-pub use admin_prompt_store::{
-    AdminPromptBindingItem, AdminPromptCommandFuture, AdminPromptItem, AdminPromptStore,
-    AdminPromptSubject, AdminPromptVersionItem, CreateAdminPromptBindingCommand,
-    CreateAdminPromptCommand, CreateAdminPromptVersionCommand, ListAdminPromptBindingsQuery,
-    ListAdminPromptVersionsQuery, ListAdminPromptsQuery, PublishAdminPromptVersionCommand,
-    RenderAdminPromptVersionCommand, UpdateAdminPromptBindingCommand,
 };
 pub use admin_provider_secret_store::{
     AdminProviderSecretCommandFuture, AdminProviderSecretItem, AdminProviderSecretStore,
@@ -267,7 +260,7 @@ pub use api_key_management_read_store::{
 pub use app_auth_store::{
     AppAuthFuture, AppAuthPasswordResetCodeCommand, AppAuthPasswordResetCommand,
     AppAuthRegistrationCommand, AppAuthStore, AppAuthUserCredential,
-    AppAuthVerificationCodeCommand, AppAuthVerificationCodeLookup,
+    AppAuthVerificationCodeCommand, AppAuthVerificationCodeLookup, AppOrganizationMembership,
 };
 pub use app_chat_store::{
     AppChatConversationItem, AppChatConversationList, AppChatFuture, AppChatMessageItem,
@@ -351,19 +344,16 @@ pub use dashboard_overview_read_store::{
 pub use embeddings_relay::{
     EmbeddingsRelay, EmbeddingsRelayFuture, EmbeddingsRelayRequest, EmbeddingsRelayResponse,
 };
-pub use forum_store::{
-    CreateForumCommentCommand, CreateForumFeedCommand, ForumAuthor, ForumCommandFuture,
-    ForumCommentCommandStore, ForumCommentDetail, ForumCommentItem, ForumCommentPage,
-    ForumCommentReadStore, ForumCommentStatistics, ForumCommunityLink, ForumFeedCommandStore,
-    ForumFeedItem, ForumFeedQuery, ForumFeedReadStore, ForumOverview, ForumOverviewSource,
-    ForumOverviewStats, ForumReadFuture, ForumStore, ForumSubject,
-};
 pub use gateway_usage_recorder::{
     GatewayRequestTraceCommand, GatewayUsageQuantity, GatewayUsageRecordCommand,
     GatewayUsageRecordFuture, GatewayUsageRecorder,
 };
 pub use invocation_dispatcher::{
     InvocationDispatchError, InvocationDispatcher, InvocationDispatcherFuture,
+};
+pub use login_continuation_store::{
+    LoginContinuationFuture, LoginContinuationRecord, LoginContinuationStore,
+    StoreLoginContinuationCommand, LOGIN_CONTINUATION_TTL_SECONDS,
 };
 pub use model_ranking_refresh_store::{
     ModelRankingRefreshAuditCommand, ModelRankingRefreshAuditFuture, ModelRankingRefreshCommand,
@@ -419,6 +409,9 @@ pub use site_settings_store::{
 pub use sticky_route_store::{
     StickyObjectRouteBinding, StickyObjectRouteLookup, StickyObjectRouteUpsert, StickyRouteStore,
     StickyRouteStoreFuture,
+};
+pub use tenant_signing_key_store::{
+    TenantSigningKey, TenantSigningKeyFuture, TenantSigningKeyStore,
 };
 pub use usage_logs_read_store::{
     UsageLogItem, UsageLogsPage, UsageLogsQuery, UsageLogsReadFuture, UsageLogsReadStore,

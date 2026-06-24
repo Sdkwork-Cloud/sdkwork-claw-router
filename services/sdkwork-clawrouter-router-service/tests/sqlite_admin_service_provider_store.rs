@@ -761,7 +761,6 @@ async fn create_service_provider_tables(pool: &sqlx::SqlitePool) {
             run_id INTEGER,
             usage_edge_id INTEGER,
             usage_fact_id INTEGER,
-            provider_invoice_item_id INTEGER,
             statement_item_id INTEGER,
             match_status TEXT,
             internal_amount TEXT,

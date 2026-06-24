@@ -166,7 +166,7 @@ export function Navbar({ authenticatedActionsStart, isDark, toggleTheme }: Navba
     { name: t('nav.docs'), href: '/docs' },
     { name: t('nav.api'), href: '/api-reference' },
     { name: t('nav.sdk'), href: '/sdk-reference' },
-    { name: 'Playground', href: '/playground' },
+    { name: t('nav.playground', 'Playground'), href: '/playground' },
   ];
 
   return (

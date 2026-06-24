@@ -18,7 +18,9 @@ pub use database::{
     DatabaseConfig, DatabaseEngine, RuntimeConfigInitializationAction,
     RuntimeConfigInitializationReport, RuntimeConfigLocation, RuntimeConfigProfile,
 };
-pub use deployment::DeploymentMode;
+pub use deployment::{
+    resolve_deployment_runtime, DeploymentMode, DeploymentProfile, DeploymentRuntime, RuntimeTarget,
+};
 pub use payment_webhook::PaymentWebhookConfig;
 pub use provider_adapter::{ProviderAdapterConfig, ProviderAdapterManifestDiscoveryConfig};
 pub use provider_relay::{
@@ -26,10 +28,10 @@ pub use provider_relay::{
     ProviderPassthroughHeader, ProviderRelayConfig,
 };
 pub use provider_secret_map::ProviderSecretMapConfig;
-pub use redis::RedisConfig;
+pub use redis::{ensure_server_production_redis_config, RedisConfig};
 pub use request_limits::RequestLimitsConfig;
 pub use runtime::{
-    BootstrapAdminSectionConfig, EdgeSectionConfig, ForumSectionConfig, InstallSectionConfig,
+    BootstrapAdminSectionConfig, EdgeSectionConfig, InstallSectionConfig,
     ModelRankingSectionConfig, ObservabilitySectionConfig, PathsSectionConfig,
     PortalPublicSectionConfig, PortalSectionConfig, PortalSecuritySectionConfig,
     PortalStaticSectionConfig, PortalToolsSectionConfig, ProviderAdapterSectionConfig,

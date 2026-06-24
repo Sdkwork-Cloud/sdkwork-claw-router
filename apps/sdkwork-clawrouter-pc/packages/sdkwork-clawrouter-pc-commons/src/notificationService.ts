@@ -4,6 +4,8 @@ import {
   readBoolean,
   readString,
 } from './api-result.ts';
+import { createIdempotencyParams } from './idempotency.ts';
+import { getClawRouterAppSdkClient } from './sdk-clients.ts';
 import type {
   SdkworkNotificationGeneratedClient,
   SdkworkNotificationItem,
@@ -34,7 +36,7 @@ export interface NotificationItem {
 export class NotificationService {
   static async fetchNotifications(): Promise<NotificationItem[]> {
     const items = await createPortalNotificationService().list();
-    return items.map(readNotification);
+    return items.map(readNotificationFromSdkworkItem);
   }
 
   static async acknowledge(notificationId: string): Promise<void> {
@@ -71,18 +73,33 @@ export function createPortalNotificationService(
 }
 
 export function getPortalNotificationClient(): PortalNotificationClient {
-  return createPortalNotificationStubClient() as unknown as PortalNotificationClient;
+  return createPortalNotificationSdkClient(getClawRouterAppSdkClient());
 }
 
-function createPortalNotificationStubClient(): SdkworkNotificationGeneratedClient {
+function createPortalNotificationSdkClient(
+  appSdkClient: ReturnType<typeof getClawRouterAppSdkClient>,
+): PortalNotificationClient {
   return {
     notification: {
-      listNotifications: async () => ({ items: [] }),
+      listNotifications: async (params) =>
+        appSdkClient.notification.list({
+          includeArchived: params?.includeArchived,
+          page: String(params?.page ?? DEFAULT_NOTIFICATION_PAGE),
+          pageSize: String(params?.pageSize ?? DEFAULT_NOTIFICATION_PAGE_SIZE),
+        }),
       acknowledge: {
-        create: async () => ({ data: { updated: true, state: 'acknowledged' } }),
+        create: async (notificationId: string) =>
+          appSdkClient.notification.acknowledge.create(
+            notificationId,
+            createIdempotencyParams('notification-acknowledge'),
+          ),
       },
       popupSeen: {
-        create: async () => ({ data: { updated: true, state: 'popup_seen' } }),
+        create: async (notificationId: string) =>
+          appSdkClient.notification.popupSeen.create(
+            notificationId,
+            createIdempotencyParams('notification-popup-seen'),
+          ),
       },
     },
   };
@@ -110,6 +127,23 @@ function readNotification(value: unknown): NotificationItem {
     popupSeen: readBoolean(value, 'popupSeen', false),
     archived: readBoolean(value, 'archived', false),
     actionUrl: readString(value, 'actionUrl') || null,
+  };
+}
+
+function readNotificationFromSdkworkItem(item: SdkworkNotificationItem): NotificationItem {
+  return {
+    id: item.id,
+    appId: item.appId ?? DEFAULT_NOTIFICATION_APP_ID,
+    title: item.title,
+    desc: item.desc ?? '',
+    content: item.content ?? '',
+    time: item.time ?? item.createdAt,
+    type: readNotificationType(item.type ?? item.kind),
+    read: item.read ?? (item.status === 'read' || item.status === 'archived'),
+    showAsPopup: item.showAsPopup ?? false,
+    popupSeen: item.popupSeen ?? false,
+    archived: item.archived ?? item.status === 'archived',
+    actionUrl: item.actionUrl ?? item.route ?? null,
   };
 }
 
@@ -160,6 +194,12 @@ function toSdkworkNotificationItem(item: NotificationItem): SdkworkNotificationI
 function readNotificationType(value: unknown): NotificationItem['type'] {
   if (value === 'info' || value === 'billing' || value === 'warning' || value === 'alert') {
     return value;
+  }
+  if (value === 'error') {
+    return 'alert';
+  }
+  if (value === 'success' || value === 'message' || value === 'security' || value === 'task') {
+    return 'info';
   }
   const notificationType = readString({ value }, 'value');
   throw new Error(notificationType ? `Unsupported notification type: ${notificationType}` : 'Notification type is required');

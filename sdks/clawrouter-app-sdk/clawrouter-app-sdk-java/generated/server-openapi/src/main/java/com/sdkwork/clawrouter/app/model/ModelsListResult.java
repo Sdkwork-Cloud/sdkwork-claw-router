@@ -3,7 +3,7 @@ package com.sdkwork.clawrouter.app.model;
 
 public class ModelsListResult {
     private String code;
-    private AppModelCatalogResponse data;
+    private NoData data;
     private String msg;
 
     public String getCode() {
@@ -14,11 +14,11 @@ public class ModelsListResult {
         this.code = code;
     }
 
-    public AppModelCatalogResponse getData() {
+    public NoData getData() {
         return this.data;
     }
 
-    public void setData(AppModelCatalogResponse data) {
+    public void setData(NoData data) {
         this.data = data;
     }
 

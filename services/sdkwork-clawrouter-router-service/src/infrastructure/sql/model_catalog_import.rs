@@ -1467,6 +1467,110 @@ pub(crate) fn json_array(values: &[String]) -> String {
     serde_json::to_string(values).unwrap_or_else(|_| "[]".to_owned())
 }
 
+pub(crate) struct BundledPricingDictionaryRows {
+    pub vendors: Vec<crate::infrastructure::sql::rows::ModelVendorRow>,
+    pub models: Vec<crate::infrastructure::sql::rows::AiModelRow>,
+    pub prices: Vec<crate::infrastructure::sql::rows::ModelPriceRow>,
+}
+
+pub(crate) fn bundled_pricing_dictionary_rows(
+    catalog: &ModelCatalog,
+) -> BundledPricingDictionaryRows {
+    let mut vendors = Vec::new();
+    let mut vendor_codes = BTreeSet::new();
+    for record in catalog_vendor_records(catalog) {
+        if vendor_codes.insert(record.vendor_code.clone()) {
+            vendors.push(crate::infrastructure::sql::rows::ModelVendorRow {
+                vendor_code: record.vendor_code,
+                display_name: record.display_name,
+            });
+        }
+    }
+
+    let mut models = Vec::new();
+    for (catalog_key, (_vendor, model)) in public_catalog_identity_models(catalog) {
+        models.push(crate::infrastructure::sql::rows::AiModelRow {
+            catalog_key,
+            model: model.model_id.clone(),
+            display_name: model.display_name.clone(),
+            vendor_code: model.vendor_code.clone(),
+            capabilities_json: model_capabilities_json(model),
+            description: model.description.clone(),
+            modalities_json: model_modalities_json(model),
+            input_modalities_json: json_array(&model.input_modalities),
+            output_modalities_json: json_array(&model.output_modalities),
+            api_format: Some(model.api_format.clone()),
+            capability_intro: None,
+            limitations_json: "[]".to_owned(),
+            supported_languages_json: "[]".to_owned(),
+            use_cases_json: "[]".to_owned(),
+            training_data_cutoff: None,
+            context_tokens: model.context_tokens,
+            max_output_tokens: model.max_output_tokens,
+            supports_streaming: model.supports_streaming,
+            supports_tools: model.supports_tools,
+            supports_json_schema: model.supports_json_schema,
+            release_stage: Some(release_stage_code(&model.release_stage)),
+            shelf_state: Some(shelf_state_code(&model.shelf_state)),
+            routing_state: Some(routing_state_code(&model.routing_state)),
+            replacement_model: model.replacement_model.clone(),
+        });
+    }
+
+    let public_model_keys = public_catalog_identity_models(catalog)
+        .keys()
+        .cloned()
+        .collect::<BTreeSet<_>>();
+    let mut prices = Vec::new();
+    for vendor in &catalog.vendors {
+        for pricing in &vendor.pricing {
+            let model_catalog_key = model_catalog_key(&pricing.vendor_code, &pricing.model_id);
+            if !public_model_keys.contains(&model_catalog_key) {
+                continue;
+            }
+            let pricing_catalog_key =
+                pricing_catalog_key(&pricing.vendor_code, &pricing.model_id);
+            for price in &pricing.prices {
+                prices.push(crate::infrastructure::sql::rows::ModelPriceRow {
+                    catalog_key: pricing_catalog_key.clone(),
+                    model: pricing.model_id.clone(),
+                    region_code: pricing.region_code.clone(),
+                    price_side_code: bundled_price_side_label(&price.price_side),
+                    billing_meter_code: price.meter_code.clone(),
+                    unit_price: price.unit_price.clone(),
+                    currency: price
+                        .currency
+                        .clone()
+                        .unwrap_or_else(|| pricing.currency.clone()),
+                    provider_code: price_provider_code(
+                        &pricing.vendor_code,
+                        &pricing.region_code,
+                        &price.price_side,
+                        price.pricing_scope.as_deref(),
+                    ),
+                    channel_id: None,
+                    pricing_plan_code: None,
+                });
+            }
+        }
+    }
+
+    BundledPricingDictionaryRows {
+        vendors,
+        models,
+        prices,
+    }
+}
+
+fn bundled_price_side_label(value: &str) -> String {
+    match value {
+        "upstream" => "upstream_cost".to_owned(),
+        "customer" => "customer_charge".to_owned(),
+        "internal" => "internal_transfer".to_owned(),
+        _ => "official_reference".to_owned(),
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::price_provider_code;

@@ -13,10 +13,9 @@ public class NotificationApi {
         this.client = client;
     }
 
-    /** List notifications */
-    public NotificationsListResult notificationsList(String appId, Boolean includeArchived, Integer page, Integer pageSize) throws Exception {
+    /** List portal notifications */
+    public NotificationsListResult notificationsList(Boolean includeArchived, String page, String pageSize) throws Exception {
         String query = buildQueryString(List.of(
-            new QueryParameterSpec("app_id", appId, "form", true, false, null),
             new QueryParameterSpec("include_archived", includeArchived, "form", true, false, null),
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null)
@@ -25,21 +24,23 @@ public class NotificationApi {
         return client.convertValue(raw, new TypeReference<NotificationsListResult>() {});
     }
 
-    /** Acknowledge */
-    public NotificationsAcknowledgeCreateResult notificationsAcknowledgeCreate(String notificationId, String appId) throws Exception {
-        String query = buildQueryString(List.of(
-            new QueryParameterSpec("app_id", appId, "form", true, false, null)
-        ));
-        Object raw = client.post(ApiPaths.appendQueryString(ApiPaths.appPath("/notification/notifications/" + serializePathParameter(notificationId, new PathParameterSpec("notificationId", "simple", false)) + "/acknowledge"), query), null);
+    /** Acknowledge portal notification */
+    public NotificationsAcknowledgeCreateResult notificationsAcknowledgeCreate(String notificationId, String idempotencyKey) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.post(ApiPaths.appPath("/notification/notifications/" + serializePathParameter(notificationId, new PathParameterSpec("notificationId", "simple", false)) + "/acknowledge"), null, null, requestHeaders);
         return client.convertValue(raw, new TypeReference<NotificationsAcknowledgeCreateResult>() {});
     }
 
-    /** Mark popup seen */
-    public NotificationsPopupSeenCreateResult notificationsPopupSeenCreate(String notificationId, String appId) throws Exception {
-        String query = buildQueryString(List.of(
-            new QueryParameterSpec("app_id", appId, "form", true, false, null)
-        ));
-        Object raw = client.post(ApiPaths.appendQueryString(ApiPaths.appPath("/notification/notifications/" + serializePathParameter(notificationId, new PathParameterSpec("notificationId", "simple", false)) + "/popup_seen"), query), null);
+    /** Mark portal notification popup seen */
+    public NotificationsPopupSeenCreateResult notificationsPopupSeenCreate(String notificationId, String idempotencyKey) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.post(ApiPaths.appPath("/notification/notifications/" + serializePathParameter(notificationId, new PathParameterSpec("notificationId", "simple", false)) + "/popup_seen"), null, null, requestHeaders);
         return client.convertValue(raw, new TypeReference<NotificationsPopupSeenCreateResult>() {});
     }
 
@@ -232,6 +233,74 @@ public class NotificationApi {
         return new com.fasterxml.jackson.databind.ObjectMapper();
     }
 
+    private record HeaderParameterSpec(Object value, String style, boolean explode, String contentType) {}
+
+    private static Map<String, String> buildRequestHeaders(Map<String, HeaderParameterSpec> headers, Map<String, HeaderParameterSpec> cookies) throws Exception {
+        Map<String, String> requestHeaders = new java.util.LinkedHashMap<>();
+        for (Map.Entry<String, HeaderParameterSpec> entry : headers.entrySet()) {
+            String serialized = serializeParameterValue(entry.getValue());
+            if (serialized != null) {
+                requestHeaders.put(entry.getKey(), serialized);
+            }
+        }
+
+        String cookieHeader = buildCookieHeader(cookies);
+        if (cookieHeader != null && !cookieHeader.isEmpty()) {
+            requestHeaders.merge("Cookie", cookieHeader, (left, right) -> left + "; " + right);
+        }
+
+        return requestHeaders.isEmpty() ? null : requestHeaders;
+    }
+
+    private static String buildCookieHeader(Map<String, HeaderParameterSpec> cookies) throws Exception {
+        java.util.List<String> pairs = new java.util.ArrayList<>();
+        for (Map.Entry<String, HeaderParameterSpec> entry : cookies.entrySet()) {
+            String serialized = serializeParameterValue(entry.getValue());
+            if (serialized != null) {
+                pairs.add(urlEncode(entry.getKey()) + "=" + urlEncode(serialized));
+            }
+        }
+        return String.join("; ", pairs);
+    }
+
+    private static String serializeParameterValue(HeaderParameterSpec parameter) throws Exception {
+        if (parameter == null || parameter.value() == null) {
+            return null;
+        }
+        Object value = parameter.value();
+        if (parameter.contentType() != null && !parameter.contentType().isBlank()) {
+            return headerObjectMapper().writeValueAsString(value);
+        }
+        if (value instanceof Iterable<?> iterable) {
+            java.util.List<String> values = new java.util.ArrayList<>();
+            for (Object item : iterable) {
+                if (item != null) {
+                    values.add(String.valueOf(item));
+                }
+            }
+            return String.join(",", values);
+        }
+        if (value instanceof Map<?, ?> map) {
+            java.util.List<String> values = new java.util.ArrayList<>();
+            map.forEach((key, item) -> {
+                if (item == null) {
+                    return;
+                }
+                if (parameter.explode()) {
+                    values.add(String.valueOf(key) + "=" + String.valueOf(item));
+                } else {
+                    values.add(String.valueOf(key));
+                    values.add(String.valueOf(item));
+                }
+            });
+            return String.join(",", values);
+        }
+        return String.valueOf(value);
+    }
+
+    private static com.fasterxml.jackson.databind.ObjectMapper headerObjectMapper() {
+        return new com.fasterxml.jackson.databind.ObjectMapper();
+    }
 
     private static String urlEncode(String value) {
         return java.net.URLEncoder.encode(value, java.nio.charset.StandardCharsets.UTF_8);

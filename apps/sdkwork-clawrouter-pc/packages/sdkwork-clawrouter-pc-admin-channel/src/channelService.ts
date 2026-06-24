@@ -42,8 +42,8 @@ import type {
   AdminModelMappingRuleBindingInput,
   AdminModelMappingRuleItemInput,
   AdminModelMappingUpdateRequest,
-  AiModelMappingsListParams,
-} from '@sdkwork/models-backend-sdk/api/ai';
+} from '@sdkwork/models-backend-sdk';
+import type { AiModelMappingsListParams } from '@sdkwork/models-backend-sdk/api/ai';
 
 type ChannelType = NonNullable<AdminChannelCreateRequest['channelType']>;
 export type CredentialRotationStrategy = NonNullable<AdminChannelCreateRequest['credentialRotation']>;

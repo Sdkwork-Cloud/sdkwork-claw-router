@@ -44,7 +44,7 @@ const DEFAULT_ADMIN_API_BIND = '127.0.0.1:18081';
 const DEFAULT_APP_API_BIND = '127.0.0.1:18082';
 const DEFAULT_SERVER_BIND = '0.0.0.0:3900';
 const DEFAULT_PORTAL_BIND = '127.0.0.1:3901';
-const DEFAULT_SDKWORK_API_GATEWAY_BIND = '127.0.0.1:3902';
+const DEFAULT_SDKWORK_API_CLOUD_GATEWAY_BIND = '127.0.0.1:3902';
 const DEFAULT_EXTERNAL_SCHEME = 'http';
 const DEFAULT_DEV_DATABASE_RELATIVE_PATH = path.join('target', 'dev', 'clawrouter.sqlite');
 const DEFAULT_MODELS_CATALOG_RELATIVE_PATH = path.join('data', 'sdkwork-models');
@@ -251,13 +251,14 @@ export function clawRouterRustDevPackages(settings) {
 
   const packages = ['sdkwork-claw-installer'];
   if (settings.runtimeMode === 'all-in-one') {
-    packages.push('sdkwork-clawrouter-gateway');
+    packages.push('sdkwork-clawrouter-standalone-gateway');
     return packages;
   }
 
   if (settings.runtimeMode === 'distributed') {
     packages.push(
-      'sdkwork-clawrouter-gateway',
+      'sdkwork-clawrouter-cloud-gateway',
+      'sdkwork-clawrouter-standalone-gateway',
       'sdkwork-clawrouter-admin-api-server',
       'sdkwork-clawrouter-app-api-server',
     );
@@ -293,8 +294,8 @@ function rustPrebuildStep(settings, { workspaceRoot, platform }) {
 }
 
 function sdkworkApiGatewayTargetDir(workspaceRoot) {
-  const apiGatewayWorkspaceRoot = path.resolve(workspaceRoot, '..', 'sdkwork-api-gateway');
-  return process.env.SDKWORK_API_GATEWAY_CARGO_TARGET_DIR
+  const apiGatewayWorkspaceRoot = path.resolve(workspaceRoot, '..', 'sdkwork-api-cloud-gateway');
+  return process.env.SDKWORK_API_CLOUD_GATEWAY_CARGO_TARGET_DIR
     ?? path.join(apiGatewayWorkspaceRoot, 'target', 'claw-router-dev');
 }
 
@@ -303,16 +304,16 @@ function sdkworkApiGatewayPrebuildStep(settings, { workspaceRoot, platform }) {
     return null;
   }
 
-  const apiGatewayWorkspaceRoot = path.resolve(workspaceRoot, '..', 'sdkwork-api-gateway');
+  const apiGatewayWorkspaceRoot = path.resolve(workspaceRoot, '..', 'sdkwork-api-cloud-gateway');
   return {
-    name: 'sdkwork-api-gateway-prebuild',
+    name: 'sdkwork-api-cloud-gateway-prebuild',
     command: cargoCommand(platform),
     args: [
       'build',
       '-p',
-      'sdkwork-api-gateway-service',
+      'sdkwork-api-cloud-gateway-api-server',
       '--bin',
-      'sdkwork-api-gateway',
+      'sdkwork-api-cloud-gateway',
     ],
     cwd: apiGatewayWorkspaceRoot,
     env: {
@@ -376,7 +377,7 @@ export function parseWorkspaceArgs(argv = [], {
     appApiBind: DEFAULT_APP_API_BIND,
     serverBind: DEFAULT_SERVER_BIND,
     portalBind: DEFAULT_PORTAL_BIND,
-    sdkworkApiGatewayBind: DEFAULT_SDKWORK_API_GATEWAY_BIND,
+    sdkworkApiGatewayBind: DEFAULT_SDKWORK_API_CLOUD_GATEWAY_BIND,
     externalScheme: DEFAULT_EXTERNAL_SCHEME,
     trustForwardedHeaders: false,
     gatewayForwardUrl: null,
@@ -432,7 +433,7 @@ export function parseWorkspaceArgs(argv = [], {
         settings.portalBindExplicit = true;
         index += 1;
         break;
-      case '--sdkwork-api-gateway-bind':
+      case '--sdkwork-api-cloud-gateway-bind':
         settings.sdkworkApiGatewayBind = requireValue(argv, index, arg);
         settings.sdkworkApiGatewayBindExplicit = true;
         index += 1;
@@ -508,7 +509,7 @@ export function parseWorkspaceArgs(argv = [], {
     ['--app-api-bind', settings.appApiBind],
     ['--server-bind', settings.serverBind],
     ['--portal-bind', settings.portalBind],
-    ['--sdkwork-api-gateway-bind', settings.sdkworkApiGatewayBind],
+    ['--sdkwork-api-cloud-gateway-bind', settings.sdkworkApiGatewayBind],
   ]) {
     splitBind(value, flagName);
   }
@@ -653,7 +654,7 @@ function edgeServerEnv(settings) {
     }), settings),
     SDKWORK_CLAW_EDGE_SERVER: '1',
     SDKWORK_CLAW_ALL_IN_ONE_RUNTIME: allInOne ? '1' : '0',
-    ...(allInOne ? { SDKWORK_API_GATEWAY_MODE: 'embedded' } : {}),
+    ...(allInOne ? { SDKWORK_API_CLOUD_GATEWAY_MODE: 'embedded' } : {}),
     SDKWORK_CLAW_EDGE_GATEWAY_BASE_URL: settings.gatewayForwardUrl,
     SDKWORK_CLAW_EDGE_BACKEND_API_BASE_URL: settings.backendApiForwardUrl,
     SDKWORK_CLAW_EDGE_APP_API_BASE_URL: settings.appApiForwardUrl,
@@ -672,26 +673,26 @@ function sdkworkApiGatewayStep(settings, {
   workspaceRoot,
   platform,
 }) {
-  const apiGatewayWorkspaceRoot = path.resolve(workspaceRoot, '..', 'sdkwork-api-gateway');
+  const apiGatewayWorkspaceRoot = path.resolve(workspaceRoot, '..', 'sdkwork-api-cloud-gateway');
   return {
-    name: 'sdkwork-api-gateway',
+    name: 'sdkwork-api-cloud-gateway',
     command: cargoCommand(platform),
     args: [
       'run',
       '-p',
-      'sdkwork-api-gateway-service',
+      'sdkwork-api-cloud-gateway-api-server',
       '--bin',
-      'sdkwork-api-gateway',
+      'sdkwork-api-cloud-gateway',
       '--',
       '--config',
-      'config/sdkwork-api-gateway.development.toml.example',
+      'configs/sdkwork-api-cloud-gateway.development.toml.example',
     ],
     cwd: apiGatewayWorkspaceRoot,
     env: {
       ...process.env,
       CARGO_TARGET_DIR: sdkworkApiGatewayTargetDir(workspaceRoot),
-      SDKWORK_API_GATEWAY_BIND: settings.sdkworkApiGatewayBind,
-      SDKWORK_API_GATEWAY_MODE: process.env.SDKWORK_API_GATEWAY_MODE ?? 'split',
+      SDKWORK_API_CLOUD_GATEWAY_BIND: settings.sdkworkApiGatewayBind,
+      SDKWORK_API_CLOUD_GATEWAY_MODE: process.env.SDKWORK_API_CLOUD_GATEWAY_MODE ?? 'split',
     },
     shell: false,
     windowsHide: platform === 'win32',
@@ -802,7 +803,7 @@ export function buildWorkspaceCommandPlan(settings, {
     {
       name: 'gateway',
       command: cargoCommand(platform),
-      args: cargoRunPackageArgs('sdkwork-clawrouter-gateway'),
+      args: cargoRunPackageArgs('sdkwork-clawrouter-cloud-gateway'),
       cwd: workspaceRoot,
       env: clawRouterDevCargoEnv(
         workspaceRoot,
@@ -859,7 +860,7 @@ export function buildWorkspaceCommandPlan(settings, {
     {
       name: 'server',
       command: cargoCommand(platform),
-      args: cargoRunPackageArgs('sdkwork-clawrouter-gateway'),
+      args: cargoRunPackageArgs('sdkwork-clawrouter-standalone-gateway'),
       cwd: workspaceRoot,
       env: clawRouterDevCargoEnv(workspaceRoot, edgeServerEnv(settings)),
       shell: false,
@@ -890,7 +891,7 @@ export function workspaceBindTargets(settings) {
         ];
   const managedSdkworkApiGatewayTargets = settings.runtimeMode === 'all-in-one'
     ? []
-    : [{ name: 'sdkwork-api-gateway', bind: settings.sdkworkApiGatewayBind }];
+    : [{ name: 'sdkwork-api-cloud-gateway', bind: settings.sdkworkApiGatewayBind }];
   return [
     ...serviceTargets,
     ...managedSdkworkApiGatewayTargets,
@@ -955,7 +956,7 @@ export async function assertWorkspaceBindsAvailable(
 export function workspaceAccessLines(settings) {
   if (settings.runtimeMode === 'client') {
     return [
-      '[start-workspace] Mode: client (sdkwork-api-gateway)',
+      '[start-workspace] Mode: client (sdkwork-api-cloud-gateway)',
       '[start-workspace] Gateway-backed Client Access',
       `[start-workspace]   Direct Portal Dev: ${loopbackUrl(settings.portalBind, '/')}`,
       `[start-workspace]   SDKWork API Gateway: ${sharedFoundationGatewayBaseUrl(settings)}`,
@@ -1021,7 +1022,7 @@ export function workspaceHelpText() {
   return `Usage: node scripts/dev/start-workspace.mjs [options]
 
 Starts the all-in-one Rust edge runtime with an embedded SDKWork API Gateway plus the Claw Router portal dev server.
-Use --client-only to start only the external sdkwork-api-gateway plus the portal dev server.
+Use --client-only to start only the external sdkwork-api-cloud-gateway plus the portal dev server.
 
 Options:
   --hosting <self-hosted|cloud-hosted>
@@ -1034,15 +1035,15 @@ Options:
   --app-api-bind <bind>   SDKWORK_CLAW_APP_API_BIND override (default ${DEFAULT_APP_API_BIND})
   --server-bind <bind>    Rust edge server HOST:PORT override (default ${DEFAULT_SERVER_BIND})
   --portal-bind <bind>    Direct portal dev HOST:PORT override (default ${DEFAULT_PORTAL_BIND})
-  --sdkwork-api-gateway-bind <bind>
-                         Managed sdkwork-api-gateway HOST:PORT override (default ${DEFAULT_SDKWORK_API_GATEWAY_BIND})
+  --sdkwork-api-cloud-gateway-bind <bind>
+                         Managed sdkwork-api-cloud-gateway HOST:PORT override (default ${DEFAULT_SDKWORK_API_CLOUD_GATEWAY_BIND})
   --gateway-forward-url <url>
                          Rust edge server target for /v1 and /openapi.json
   --backend-api-forward-url <url>
                          Rust edge server target for /backend/v3/api
   --app-api-forward-url <url>
                          Rust edge server target for /app/v3/api
-  --client-only          Start only sdkwork-api-gateway plus the portal dev server
+  --client-only          Start only sdkwork-api-cloud-gateway plus the portal dev server
   --external-scheme <scheme>
                          External request scheme reported upstream: http or https (default ${DEFAULT_EXTERNAL_SCHEME})
   --trust-forwarded-headers
@@ -1099,7 +1100,7 @@ export function renderWorkspaceDryRun(settings, plan) {
       '[start-workspace] client launch settings',
       '  SDKWORK_CLAW_RUNTIME_MODE=client',
       `  SDKWORK_CLAW_PORTAL_BIND=${settings.portalBind}`,
-      `  SDKWORK_API_GATEWAY_BIND=${settings.sdkworkApiGatewayBind}`,
+      `  SDKWORK_API_CLOUD_GATEWAY_BIND=${settings.sdkworkApiGatewayBind}`,
       `  VITE_CLAWROUTER_OPEN_API_BASE_URL=${portalViteRuntimeEnv.VITE_CLAWROUTER_OPEN_API_BASE_URL ?? '(not configured)'}`,
       `  VITE_CLAWROUTER_BACKEND_API_BASE_URL=${portalViteRuntimeEnv.VITE_CLAWROUTER_BACKEND_API_BASE_URL ?? '(not configured)'}`,
       `  VITE_CLAWROUTER_APP_API_BASE_URL=${portalViteRuntimeEnv.VITE_CLAWROUTER_APP_API_BASE_URL ?? '(not configured)'}`,
@@ -1127,7 +1128,7 @@ export function renderWorkspaceDryRun(settings, plan) {
     `  SDKWORK_CLAW_APP_API_BIND=${settings.appApiBind}`,
     `  SDKWORK_CLAW_SERVER_BIND=${settings.serverBind}`,
     `  SDKWORK_CLAW_PORTAL_BIND=${settings.portalBind}`,
-    `  SDKWORK_API_GATEWAY_BIND=${settings.sdkworkApiGatewayBind}`,
+    `  SDKWORK_API_CLOUD_GATEWAY_BIND=${settings.sdkworkApiGatewayBind}`,
     `  PORTAL_PUBLIC_SDK_BASE_URL=${portalRuntimeEnv.PORTAL_PUBLIC_SDK_BASE_URL ?? '(not configured)'}`,
     `  PORTAL_PUBLIC_API_BASE_URL=${portalPublicRuntimeEnvLineValue(portalRuntimeEnv, 'PORTAL_PUBLIC_API_BASE_URL')}`,
     `  PORTAL_PUBLIC_OPEN_API_BASE_URL=${portalPublicRuntimeEnvLineValue(portalRuntimeEnv, 'PORTAL_PUBLIC_OPEN_API_BASE_URL')}`,

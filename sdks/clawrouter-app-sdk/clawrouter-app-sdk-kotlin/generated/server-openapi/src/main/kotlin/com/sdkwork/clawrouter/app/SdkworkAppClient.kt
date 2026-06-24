@@ -4,9 +4,7 @@ import com.sdkwork.common.core.SdkConfig
 import com.sdkwork.clawrouter.app.http.HttpClient
 import com.sdkwork.clawrouter.app.api.AiApi
 import com.sdkwork.clawrouter.app.api.ChatApi
-import com.sdkwork.clawrouter.app.api.ContentApi
 import com.sdkwork.clawrouter.app.api.IamApi
-import com.sdkwork.clawrouter.app.api.MemoryApi
 import com.sdkwork.clawrouter.app.api.NotificationApi
 import com.sdkwork.clawrouter.app.api.RuntimeApi
 import com.sdkwork.clawrouter.app.api.SystemApi
@@ -16,9 +14,7 @@ open class SdkworkAppClient {
 
     lateinit var ai: AiApi
     lateinit var chat: ChatApi
-    lateinit var content: ContentApi
     lateinit var iam: IamApi
-    lateinit var memory: MemoryApi
     lateinit var notification: NotificationApi
     lateinit var runtime: RuntimeApi
     lateinit var system: SystemApi
@@ -27,9 +23,7 @@ open class SdkworkAppClient {
         this.httpClient = HttpClient(baseUrl)
         ai = AiApi(httpClient)
         chat = ChatApi(httpClient)
-        content = ContentApi(httpClient)
         iam = IamApi(httpClient)
-        memory = MemoryApi(httpClient)
         notification = NotificationApi(httpClient)
         runtime = RuntimeApi(httpClient)
         system = SystemApi(httpClient)
@@ -39,9 +33,7 @@ open class SdkworkAppClient {
         this.httpClient = HttpClient(config)
         ai = AiApi(httpClient)
         chat = ChatApi(httpClient)
-        content = ContentApi(httpClient)
         iam = IamApi(httpClient)
-        memory = MemoryApi(httpClient)
         notification = NotificationApi(httpClient)
         runtime = RuntimeApi(httpClient)
         system = SystemApi(httpClient)

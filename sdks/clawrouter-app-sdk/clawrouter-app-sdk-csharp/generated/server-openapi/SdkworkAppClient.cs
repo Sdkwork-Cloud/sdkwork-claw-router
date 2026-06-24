@@ -11,9 +11,7 @@ namespace Sdkwork.ClawRouter.App
 
         public AiApi Ai { get; }
         public ChatApi Chat { get; }
-        public ContentApi Content { get; }
         public IamApi Iam { get; }
-        public MemoryApi Memory { get; }
         public NotificationApi Notification { get; }
         public RuntimeApi Runtime { get; }
         public SystemApi System { get; }
@@ -23,9 +21,7 @@ namespace Sdkwork.ClawRouter.App
             _httpClient = new SdkHttpClient(baseUrl);
             Ai = new AiApi(_httpClient);
             Chat = new ChatApi(_httpClient);
-            Content = new ContentApi(_httpClient);
             Iam = new IamApi(_httpClient);
-            Memory = new MemoryApi(_httpClient);
             Notification = new NotificationApi(_httpClient);
             Runtime = new RuntimeApi(_httpClient);
             System = new SystemApi(_httpClient);
@@ -36,9 +32,7 @@ namespace Sdkwork.ClawRouter.App
             _httpClient = new SdkHttpClient(config);
             Ai = new AiApi(_httpClient);
             Chat = new ChatApi(_httpClient);
-            Content = new ContentApi(_httpClient);
             Iam = new IamApi(_httpClient);
-            Memory = new MemoryApi(_httpClient);
             Notification = new NotificationApi(_httpClient);
             Runtime = new RuntimeApi(_httpClient);
             System = new SystemApi(_httpClient);

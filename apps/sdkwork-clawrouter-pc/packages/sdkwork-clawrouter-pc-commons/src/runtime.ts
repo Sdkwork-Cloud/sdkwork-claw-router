@@ -250,6 +250,7 @@ function isRuntimeRecord(value: unknown): value is Record<string, unknown> {
   return Boolean(value && typeof value === 'object' && !Array.isArray(value));
 }
 
+export * from './auth-projection.ts';
 export * from './api-result.ts';
 export * from './api-request-url.ts';
 export * from './admin-category-types.ts';

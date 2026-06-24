@@ -7,7 +7,7 @@ SDKWork ClawRouter PC is the browser console for the Claw Router product. Defaul
 - Portal UI modules call local service boundaries.
 - App business APIs use `@sdkwork/clawrouter-app-sdk` for `/app/v3/api`.
 - Admin and backend APIs use `@sdkwork/clawrouter-backend-sdk` for `/backend/v3/api`.
-- `sdkwork-api-gateway` backs gateway-only client development (`pnpm dev:desktop`); integrated dev uses the Rust edge on `application.public-ingress` (default `http://127.0.0.1:3900`).
+- `sdkwork-api-cloud-gateway` backs gateway-only client development (`pnpm dev:desktop`); integrated dev uses the Rust edge on `application.public-ingress` (default `http://127.0.0.1:3900`).
 - The Rust edge server is the default development entrypoint (`pnpm dev`) and the production packaged entrypoint.
 - Direct product service ports remain available for split-services profiles (`pnpm dev:browser:postgres:split-services:standalone`) and explicit diagnostics.
 
@@ -45,7 +45,7 @@ See `docs/topology-standard.md` for topology profiles, URLs, and env keys.
 Useful root entrypoints:
 
 - `pnpm.cmd dev` starts the integrated Rust edge plus portal dev server (default unified-process profile on port 3900).
-- `pnpm.cmd dev:desktop` starts `sdkwork-api-gateway` and the portal dev server only (gateway-backed client).
+- `pnpm.cmd dev:desktop` starts `sdkwork-api-cloud-gateway` and the portal dev server only (gateway-backed client).
 - `pnpm.cmd test` runs launcher and tooling contract tests.
 - `pnpm.cmd build` builds production portal assets and the Rust edge server release binary.
 - `pnpm.cmd start` serves the production portal through the Rust edge server.
@@ -66,7 +66,7 @@ Default integrated development URLs:
 - Backend/Admin API: `http://127.0.0.1:3900/backend/v3/api`
 - App API: `http://127.0.0.1:3900/app/v3/api`
 
-Gateway-backed client mode (`pnpm dev:desktop`) uses `sdkwork-api-gateway` on port `3902` and portal dev server on `3901`:
+Gateway-backed client mode (`pnpm dev:desktop`) uses `sdkwork-api-cloud-gateway` on port `3902` and portal dev server on `3901`:
 
 - Portal Vite dev server: `http://127.0.0.1:3901/`
 - SDKWork API Gateway: `http://127.0.0.1:3902/`
@@ -135,7 +135,7 @@ For **local Vite development**, use `.env.development` instead:
 - `SDKWORK_CLAW_BROWSER_DEV_PROXY_*_ORIGIN` for private dev-server proxy upstreams
 - Do not put `PORTAL_PUBLIC_*` or legacy `PORTAL_DEV_PROXY_*` in `.env.development`
 
-The direct `3901` Vite dev server proxies same-origin API paths to the active topology upstream (`sdkwork-api-gateway` in client development or the integrated Rust edge in unified-process development), so generated SDK base URLs stay aligned with the gateway-backed API entrypoint.
+The direct `3901` Vite dev server proxies same-origin API paths to the active topology upstream (`sdkwork-api-cloud-gateway` in client development or the integrated Rust edge in unified-process development), so generated SDK base URLs stay aligned with the gateway-backed API entrypoint.
 Per-surface release overrides remain available through `PORTAL_PUBLIC_API_BASE_URL`, `PORTAL_PUBLIC_OPEN_API_BASE_URL`, `PORTAL_PUBLIC_APP_API_BASE_URL`, and `PORTAL_PUBLIC_BACKEND_API_BASE_URL` on the release host for split deployments.
 
 Private edge-server settings (CSP, tool API rate limits, SDK archive fallback) belong in `.env.release` as `SDKWORK_CLAW_EDGE_*` and `SDKWORK_CLAW_TOOL_API_*`. See `.env.release.example` and `specs/application-env-standard.md`.

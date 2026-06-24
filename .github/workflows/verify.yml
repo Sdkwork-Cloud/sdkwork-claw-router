@@ -37,5 +37,9 @@ jobs:
       - name: API standard extensions
         run: pnpm api:standard-extensions:check
 
-      - name: Product verification (precommit)
-        run: pnpm verify:precommit
+      - name: Install PC workspace dependencies
+        working-directory: apps/sdkwork-clawrouter-pc
+        run: pnpm install --frozen-lockfile
+
+      - name: Product verification (CI)
+        run: pnpm verify:ci --parallel --concurrency 4

@@ -1,8 +1,8 @@
 use sqlx::{Row, SqlitePool};
 
-use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::domain::DomainError;
 use crate::infrastructure::sql::sql_admin_product_center::media_resource_from_snapshot;
+use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::ports::{
     ActiveAppSession, AppSessionEventStore, AppSessionEventStoreFuture, AppSessionRecord,
     AppSessionUserRecord, LoadActiveAppSessionQuery, RecordAppSecurityEventCommand,

@@ -378,7 +378,7 @@ Linux: ~/.sdkwork/router/data/clawrouter.sqlite
 macOS: ~/.sdkwork/router/data/clawrouter.sqlite
 ```
 
-Desktop SQLite 策略独立于 `pnpm dev`、`pnpm dev:server` 和 `pnpm dev:server:postgres` 为后端服务运行时使用的显式 product server PostgreSQL 开发配置。网关客户端命令（`pnpm dev:desktop`、`pnpm dev:desktop:sqlite`）通过 `sdkwork-api-gateway` 运行，不启动 Claw Router 后端服务。
+Desktop SQLite 策略独立于 `pnpm dev`、`pnpm dev:server` 和 `pnpm dev:server:postgres` 为后端服务运行时使用的显式 product server PostgreSQL 开发配置。网关客户端命令（`pnpm dev:desktop`、`pnpm dev:desktop:sqlite`）通过 `sdkwork-api-cloud-gateway` 运行，不启动 Claw Router 后端服务。
 
 `archive`、`service`、`container` 包默认使用 PostgreSQL。请在 TOML 中配置 `host`、`port`、`database`、`username`，并使用 `password_file` 或受保护的 `password`。生产环境优先使用 `password_file`。
 

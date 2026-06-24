@@ -207,7 +207,28 @@
       "@sdkwork/clawrouter-backend-sdk",
       "@sdkwork/clawrouter-open-sdk"
     ],
-    "sdkDependencies": [],
+    "sdkDependencies": [
+      {
+        "workspace": "sdkwork-appbase-app-sdk",
+        "role": "appbase-app-capability",
+        "dependencyMode": "consumer-sdk"
+      },
+      {
+        "workspace": "sdkwork-commerce-app-sdk",
+        "role": "commerce-app-capability",
+        "dependencyMode": "consumer-sdk"
+      },
+      {
+        "workspace": "sdkwork-appbase-backend-sdk",
+        "role": "appbase-backend-management-capability",
+        "dependencyMode": "consumer-sdk"
+      },
+      {
+        "workspace": "sdkwork-commerce-backend-sdk",
+        "role": "commerce-backend-management-capability",
+        "dependencyMode": "consumer-sdk"
+      }
+    ],
     "dependencyApiExports": [],
     "events": [],
     "configKeys": [
@@ -223,7 +244,7 @@
     "sdkPolicy": "Generated SDK clients are injected through service/runtime boundaries; reusable UI must not create raw HTTP clients or manual auth headers.",
     "languagePolicy": "Language-specific packages follow their native manifest and build tools while preserving the same component contract.",
     "foundationApiGateway": {
-      "targetApplication": "sdkwork-api-gateway",
+      "targetApplication": "sdkwork-api-cloud-gateway",
       "targetMode": "shared-gateway",
       "commonSdkRootEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
       "authority": "cargo-workspace",

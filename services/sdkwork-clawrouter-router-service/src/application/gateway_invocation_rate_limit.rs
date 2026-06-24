@@ -56,10 +56,7 @@ impl GatewayInvocationRateLimiter {
 
     pub fn try_with_redis_config(redis_config: Option<&RedisConfig>) -> Self {
         let distributed = redis_config.and_then(|config| {
-            let prefix = config
-                .key_prefix()
-                .unwrap_or("clawrouter")
-                .to_owned();
+            let prefix = config.key_prefix().unwrap_or("clawrouter").to_owned();
             sdkwork_web_store_redis::shared_rate_limit_store(config.url(), prefix).ok()
         });
         Self {

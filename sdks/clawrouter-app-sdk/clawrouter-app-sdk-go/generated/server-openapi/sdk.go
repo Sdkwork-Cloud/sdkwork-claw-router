@@ -9,9 +9,7 @@ type SdkworkAppClient struct {
     http *sdkhttp.Client
     Ai *api.AiApi
     Chat *api.ChatApi
-    Content *api.ContentApi
     Iam *api.IamApi
-    Memory *api.MemoryApi
     Notification *api.NotificationApi
     Runtime *api.RuntimeApi
     System *api.SystemApi
@@ -28,9 +26,7 @@ func NewSdkworkAppClientWithConfig(config sdkhttp.Config) *SdkworkAppClient {
         http: client,
         Ai: api.NewAiApi(client),
         Chat: api.NewChatApi(client),
-        Content: api.NewContentApi(client),
         Iam: api.NewIamApi(client),
-        Memory: api.NewMemoryApi(client),
         Notification: api.NewNotificationApi(client),
         Runtime: api.NewRuntimeApi(client),
         System: api.NewSystemApi(client),

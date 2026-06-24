@@ -35,7 +35,6 @@ class SchemaCompilerTest(unittest.TestCase):
             "ai_channel",
             "ai_routing_policy",
             "iam_gateway_api_key",
-            "content_forum_post",
         ]:
             self.assertIn(f"CREATE TABLE IF NOT EXISTS {table} (", sql)
 

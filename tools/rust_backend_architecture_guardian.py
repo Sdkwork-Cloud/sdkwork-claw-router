@@ -23,13 +23,14 @@ class RustBackendArchitectureGuardian:
         "crates/sdkwork-claw-security",
         "crates/sdkwork-claw-http",
         "crates/sdkwork-claw-observability",
-        "services/sdkwork-clawrouter-gateway",
+        "crates/sdkwork-clawrouter-cloud-gateway",
+        "crates/sdkwork-clawrouter-standalone-gateway",
         "services/sdkwork-clawrouter-admin-api-server",
         "services/sdkwork-clawrouter-app-api-server",
         "services/sdkwork-clawrouter-router-service",
     )
     HTTP_BOUNDARY_SERVICES: tuple[str, ...] = (
-        "services/sdkwork-clawrouter-gateway",
+        "crates/sdkwork-clawrouter-cloud-gateway",
         "services/sdkwork-clawrouter-admin-api-server",
         "services/sdkwork-clawrouter-app-api-server",
     )
@@ -77,7 +78,7 @@ class RustBackendArchitectureGuardian:
         "crates/sdkwork-claw-security": ("headers", "redaction"),
         "crates/sdkwork-claw-http": ("auth", "contract_routes", "error", "health", "headers", "router"),
         "crates/sdkwork-claw-observability": ("tracing_setup",),
-        "services/sdkwork-clawrouter-gateway": ("runtime",),
+        "crates/sdkwork-clawrouter-cloud-gateway": ("runtime",),
         "services/sdkwork-clawrouter-router-service": (
             "api",
             "application",

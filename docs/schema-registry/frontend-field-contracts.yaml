@@ -1,6 +1,6 @@
-schema: sdkwork-clawrouter-frontend-field-contracts
-version: 0.1.0
 source: apps/sdkwork-clawrouter-pc/src/commerce/commerceViewModels.ts
+version: 0.1.0
+schema: sdkwork-clawrouter-frontend-field-contracts
 rule: every actual portal route must be backed by explicit schema tables; page-critical fields must map to generated columns or Java-owned physical columns.
 x_response_entities:
   admin_announcement_item:
@@ -2352,397 +2352,6 @@ x_response_entities:
           costAmount: { type: string, maxLength: 64 }
           currency: { type: string, maxLength: 16 }
       metadata: { type: object, additionalProperties: true }
-  forum_author:
-    name: ForumAuthor
-    type: object
-    additionalProperties: false
-    required: [id, name, isFollowing]
-    properties:
-      id: { type: integer, format: int64, minimum: 0 }
-      name: { type: string, minLength: 1, maxLength: 128 }
-      avatar:
-        $ref: '#/components/schemas/MediaResource'
-      bio: { type: string, maxLength: 512 }
-      isFollowing: { type: boolean }
-  forum_feed_item:
-    name: ForumFeedItem
-    type: object
-    additionalProperties: false
-    required: [id, title, content, summary, cover, contentType, categoryId, tags, author, viewCount, likeCount, commentCount, shareCount, isLiked, isCollected, isTop, isHot, isRecommended, createdAt, updatedAt]
-    properties:
-      id: { type: integer, format: int64, minimum: 1 }
-      title: { type: string, minLength: 1, maxLength: 255 }
-      content: { type: string, maxLength: 20000 }
-      summary: { type: string, maxLength: 1024 }
-      cover:
-        $ref: '#/components/schemas/MediaResource'
-      contentType: { type: string, enum: [feeds] }
-      categoryId: { type: integer, format: int64, minimum: 0 }
-      tags:
-        type: array
-        maxItems: 20
-        items: { type: string, minLength: 1, maxLength: 64 }
-      author:
-        name: ForumAuthor
-        type: object
-        additionalProperties: false
-        required: [id, name, isFollowing]
-        properties:
-          id: { type: integer, format: int64, minimum: 0 }
-          name: { type: string, minLength: 1, maxLength: 128 }
-          avatar:
-            $ref: '#/components/schemas/MediaResource'
-          bio: { type: string, maxLength: 512 }
-          isFollowing: { type: boolean }
-      viewCount: { type: integer, format: int64, minimum: 0 }
-      likeCount: { type: integer, format: int64, minimum: 0 }
-      commentCount: { type: integer, format: int64, minimum: 0 }
-      shareCount: { type: integer, format: int64, minimum: 0 }
-      isLiked: { type: boolean }
-      isCollected: { type: boolean }
-      isTop: { type: boolean }
-      isHot: { type: boolean }
-      isRecommended: { type: boolean }
-      createdAt: { type: string, maxLength: 64 }
-      updatedAt: { type: string, maxLength: 64 }
-  forum_feed_item_list:
-    name: ForumFeedItemList
-    type: array
-    maxItems: 100
-    items:
-      name: ForumFeedItem
-      type: object
-      additionalProperties: false
-      required: [id, title, content, summary, cover, contentType, categoryId, tags, author, viewCount, likeCount, commentCount, shareCount, isLiked, isCollected, isTop, isHot, isRecommended, createdAt, updatedAt]
-      properties:
-        id: { type: integer, format: int64, minimum: 1 }
-        title: { type: string, minLength: 1, maxLength: 255 }
-        content: { type: string, maxLength: 20000 }
-        summary: { type: string, maxLength: 1024 }
-        cover:
-          $ref: '#/components/schemas/MediaResource'
-        contentType: { type: string, enum: [feeds] }
-        categoryId: { type: integer, format: int64, minimum: 0 }
-        tags:
-          type: array
-          maxItems: 20
-          items: { type: string, minLength: 1, maxLength: 64 }
-        author:
-          name: ForumAuthor
-          type: object
-          additionalProperties: false
-          required: [id, name, isFollowing]
-          properties:
-            id: { type: integer, format: int64, minimum: 0 }
-            name: { type: string, minLength: 1, maxLength: 128 }
-            avatar:
-              $ref: '#/components/schemas/MediaResource'
-            bio: { type: string, maxLength: 512 }
-            isFollowing: { type: boolean }
-        viewCount: { type: integer, format: int64, minimum: 0 }
-        likeCount: { type: integer, format: int64, minimum: 0 }
-        commentCount: { type: integer, format: int64, minimum: 0 }
-        shareCount: { type: integer, format: int64, minimum: 0 }
-        isLiked: { type: boolean }
-        isCollected: { type: boolean }
-        isTop: { type: boolean }
-        isHot: { type: boolean }
-        isRecommended: { type: boolean }
-        createdAt: { type: string, maxLength: 64 }
-        updatedAt: { type: string, maxLength: 64 }
-  forum_comment_item:
-    name: ForumCommentItem
-    type: object
-    additionalProperties: false
-    required: [commentId, content, contentType, contentId, userId, status, likes, replyCount, isTop, author, createdAt]
-    properties:
-      commentId: { type: string, minLength: 1, maxLength: 128 }
-      content: { type: string, minLength: 1, maxLength: 20000 }
-      contentType: { type: string, enum: [FEEDS, COMMENTS] }
-      contentId: { type: integer, format: int64, minimum: 1 }
-      userId: { type: integer, format: int64, minimum: 0 }
-      status: { type: string, enum: [PUBLISHED, PENDING, DELETED] }
-      likes: { type: integer, format: int64, minimum: 0 }
-      replyCount: { type: integer, format: int64, minimum: 0 }
-      isTop: { type: boolean }
-      parentId: { type: integer, format: int64, minimum: 1 }
-      author:
-        name: ForumAuthor
-        type: object
-        additionalProperties: false
-        required: [id, name, isFollowing]
-        properties:
-          id: { type: integer, format: int64, minimum: 0 }
-          name: { type: string, minLength: 1, maxLength: 128 }
-          avatar:
-            $ref: '#/components/schemas/MediaResource'
-          bio: { type: string, maxLength: 512 }
-          isFollowing: { type: boolean }
-      createdAt: { type: string, maxLength: 64 }
-  forum_comment_detail:
-    name: ForumCommentDetail
-    type: object
-    additionalProperties: false
-    required: [commentId, content, contentType, contentId, userId, status, likes, replyCount, isTop, author, ipAddress, deviceInfo, createdAt, updatedAt, replies]
-    properties:
-      commentId: { type: string, minLength: 1, maxLength: 128 }
-      content: { type: string, minLength: 1, maxLength: 20000 }
-      contentType: { type: string, enum: [FEEDS, COMMENTS] }
-      contentId: { type: integer, format: int64, minimum: 1 }
-      userId: { type: integer, format: int64, minimum: 0 }
-      status: { type: string, enum: [PUBLISHED, PENDING, DELETED] }
-      likes: { type: integer, format: int64, minimum: 0 }
-      replyCount: { type: integer, format: int64, minimum: 0 }
-      isTop: { type: boolean }
-      parentId: { type: integer, format: int64, minimum: 1 }
-      author:
-        name: ForumAuthor
-        type: object
-        additionalProperties: false
-        required: [id, name, isFollowing]
-        properties:
-          id: { type: integer, format: int64, minimum: 0 }
-          name: { type: string, minLength: 1, maxLength: 128 }
-          avatar:
-            $ref: '#/components/schemas/MediaResource'
-          bio: { type: string, maxLength: 512 }
-          isFollowing: { type: boolean }
-      ipAddress: { type: string, maxLength: 128 }
-      deviceInfo: { type: string, maxLength: 512 }
-      createdAt: { type: string, maxLength: 64 }
-      updatedAt: { type: string, maxLength: 64 }
-      replies:
-        type: array
-        maxItems: 100
-        items:
-          name: ForumCommentItem
-          type: object
-          additionalProperties: false
-          required: [commentId, content, contentType, contentId, userId, status, likes, replyCount, isTop, author, createdAt]
-          properties:
-            commentId: { type: string, minLength: 1, maxLength: 128 }
-            content: { type: string, minLength: 1, maxLength: 20000 }
-            contentType: { type: string, enum: [FEEDS, COMMENTS] }
-            contentId: { type: integer, format: int64, minimum: 1 }
-            userId: { type: integer, format: int64, minimum: 0 }
-            status: { type: string, enum: [PUBLISHED, PENDING, DELETED] }
-            likes: { type: integer, format: int64, minimum: 0 }
-            replyCount: { type: integer, format: int64, minimum: 0 }
-            isTop: { type: boolean }
-            parentId: { type: integer, format: int64, minimum: 1 }
-            author:
-              name: ForumAuthor
-              type: object
-              additionalProperties: false
-              required: [id, name, isFollowing]
-              properties:
-                id: { type: integer, format: int64, minimum: 0 }
-                name: { type: string, minLength: 1, maxLength: 128 }
-                avatar:
-                  $ref: '#/components/schemas/MediaResource'
-                bio: { type: string, maxLength: 512 }
-                isFollowing: { type: boolean }
-            createdAt: { type: string, maxLength: 64 }
-  forum_comment_page:
-    name: ForumCommentPage
-    type: object
-    additionalProperties: false
-    required: [items, content, totalElements, page, size]
-    properties:
-      items:
-        type: array
-        maxItems: 100
-        items:
-          name: ForumCommentItem
-          type: object
-          additionalProperties: false
-          required: [commentId, content, contentType, contentId, userId, status, likes, replyCount, isTop, author, createdAt]
-          properties:
-            commentId: { type: string, minLength: 1, maxLength: 128 }
-            content: { type: string, minLength: 1, maxLength: 20000 }
-            contentType: { type: string, enum: [FEEDS, COMMENTS] }
-            contentId: { type: integer, format: int64, minimum: 1 }
-            userId: { type: integer, format: int64, minimum: 0 }
-            status: { type: string, enum: [PUBLISHED, PENDING, DELETED] }
-            likes: { type: integer, format: int64, minimum: 0 }
-            replyCount: { type: integer, format: int64, minimum: 0 }
-            isTop: { type: boolean }
-            parentId: { type: integer, format: int64, minimum: 1 }
-            author:
-              name: ForumAuthor
-              type: object
-              additionalProperties: false
-              required: [id, name, isFollowing]
-              properties:
-                id: { type: integer, format: int64, minimum: 0 }
-                name: { type: string, minLength: 1, maxLength: 128 }
-                avatar:
-                  $ref: '#/components/schemas/MediaResource'
-                bio: { type: string, maxLength: 512 }
-                isFollowing: { type: boolean }
-            createdAt: { type: string, maxLength: 64 }
-      content:
-        type: array
-        maxItems: 100
-        items:
-          name: ForumCommentItem
-          type: object
-          additionalProperties: false
-          required: [commentId, content, contentType, contentId, userId, status, likes, replyCount, isTop, author, createdAt]
-          properties:
-            commentId: { type: string, minLength: 1, maxLength: 128 }
-            content: { type: string, minLength: 1, maxLength: 20000 }
-            contentType: { type: string, enum: [FEEDS, COMMENTS] }
-            contentId: { type: integer, format: int64, minimum: 1 }
-            userId: { type: integer, format: int64, minimum: 0 }
-            status: { type: string, enum: [PUBLISHED, PENDING, DELETED] }
-            likes: { type: integer, format: int64, minimum: 0 }
-            replyCount: { type: integer, format: int64, minimum: 0 }
-            isTop: { type: boolean }
-            parentId: { type: integer, format: int64, minimum: 1 }
-            author:
-              name: ForumAuthor
-              type: object
-              additionalProperties: false
-              required: [id, name, isFollowing]
-              properties:
-                id: { type: integer, format: int64, minimum: 0 }
-                name: { type: string, minLength: 1, maxLength: 128 }
-                avatar:
-                  $ref: '#/components/schemas/MediaResource'
-                bio: { type: string, maxLength: 512 }
-                isFollowing: { type: boolean }
-            createdAt: { type: string, maxLength: 64 }
-      totalElements: { type: integer, format: int64, minimum: 0 }
-      page: { type: integer, format: int64, minimum: 1 }
-      size: { type: integer, format: int64, minimum: 1, maximum: 100 }
-  forum_boolean_response:
-    name: ForumBooleanResponse
-    type: boolean
-  forum_comment_statistics:
-    name: ForumCommentStatistics
-    type: object
-    additionalProperties: false
-    required: [totalComments]
-    properties:
-      totalComments: { type: integer, format: int64, minimum: 0 }
-  forum_overview_stats:
-    name: ForumOverviewStats
-    type: object
-    additionalProperties: false
-    required: [totalPosts, totalComments, memberCount, onlineMembers]
-    properties:
-      totalPosts: { type: integer, format: int64, minimum: 0 }
-      totalComments: { type: integer, format: int64, minimum: 0 }
-      memberCount: { type: integer, format: int64, minimum: 0 }
-      onlineMembers: { type: integer, format: int64, minimum: 0 }
-  forum_community_link:
-    name: ForumCommunityLink
-    type: object
-    additionalProperties: false
-    required: [id, label, url, tone]
-    properties:
-      id: { type: string, minLength: 1, maxLength: 64 }
-      label: { type: string, minLength: 1, maxLength: 128 }
-      url: { type: string, minLength: 1, maxLength: 2048 }
-      qrCode:
-        $ref: '#/components/schemas/MediaResource'
-      tone: { type: string, enum: [green, blue, teal, red, pink] }
-  forum_overview_source:
-    name: ForumOverviewSource
-    type: object
-    additionalProperties: false
-    required: [sourceLabel, sourceDescription, sourceTables, observedAt]
-    properties:
-      sourceLabel: { type: string, minLength: 1, maxLength: 128 }
-      sourceDescription: { type: string, minLength: 1, maxLength: 512 }
-      sourceTables:
-        type: array
-        maxItems: 8
-        items: { type: string, minLength: 1, maxLength: 128 }
-      observedAt: { type: string, minLength: 1, maxLength: 64 }
-  forum_overview_response:
-    name: ForumOverviewResponse
-    type: object
-    additionalProperties: false
-    required: [stats, communityLinks, source]
-    properties:
-      stats:
-        name: ForumOverviewStats
-        type: object
-        additionalProperties: false
-        required: [totalPosts, totalComments, memberCount, onlineMembers]
-        properties:
-          totalPosts: { type: integer, format: int64, minimum: 0 }
-          totalComments: { type: integer, format: int64, minimum: 0 }
-          memberCount: { type: integer, format: int64, minimum: 0 }
-          onlineMembers: { type: integer, format: int64, minimum: 0 }
-      communityLinks:
-        type: array
-        maxItems: 16
-        items:
-          name: ForumCommunityLink
-          type: object
-          additionalProperties: false
-          required: [id, label, url, tone]
-          properties:
-            id: { type: string, minLength: 1, maxLength: 64 }
-            label: { type: string, minLength: 1, maxLength: 128 }
-            url: { type: string, minLength: 1, maxLength: 2048 }
-            qrCode:
-              $ref: '#/components/schemas/MediaResource'
-            tone: { type: string, enum: [green, blue, teal, red, pink] }
-      source:
-        name: ForumOverviewSource
-        type: object
-        additionalProperties: false
-        required: [sourceLabel, sourceDescription, sourceTables, observedAt]
-        properties:
-          sourceLabel: { type: string, minLength: 1, maxLength: 128 }
-          sourceDescription: { type: string, minLength: 1, maxLength: 512 }
-          sourceTables:
-            type: array
-            maxItems: 8
-            items: { type: string, minLength: 1, maxLength: 128 }
-          observedAt: { type: string, minLength: 1, maxLength: 64 }
-  forum_create_feed_request:
-    name: ForumCreateFeedRequest
-    type: object
-    additionalProperties: false
-    required: [content]
-    properties:
-      title: { type: string, maxLength: 255 }
-      content: { type: string, minLength: 1, maxLength: 2000 }
-      categoryId: { type: integer, format: int64, minimum: 0 }
-      images:
-        type: array
-        maxItems: 20
-        items:
-          $ref: '#/components/schemas/MediaResource'
-      tags:
-        type: array
-        maxItems: 20
-        items: { type: string, minLength: 1, maxLength: 64 }
-      source: { type: string, maxLength: 100 }
-      sourceUrl: { type: string, maxLength: 500 }
-  forum_create_comment_request:
-    name: ForumCreateCommentRequest
-    type: object
-    additionalProperties: false
-    required: [contentType, contentId, content]
-    properties:
-      contentType: { type: string, enum: [feeds, comments, FEEDS, COMMENTS] }
-      contentId: { type: integer, format: int64, minimum: 1 }
-      content: { type: string, minLength: 1, maxLength: 20000 }
-      deviceInfo: { type: string, maxLength: 512 }
-  forum_reply_comment_request:
-    name: ForumReplyCommentRequest
-    type: object
-    additionalProperties: false
-    required: [content]
-    properties:
-      content: { type: string, minLength: 1, maxLength: 20000 }
-      deviceInfo: { type: string, maxLength: 512 }
   skill_package_item:
     name: SkillPackageItem
     type: object
@@ -3746,7 +3355,7 @@ frontend_models:
       - date
       - content
     data_sources:
-      - content_announcement
+      - ops_notification_message
   - route: /admin/announcement
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts
     interface: AnnouncementCreateInput
@@ -3757,7 +3366,7 @@ frontend_models:
       - showAsPopup
       - content
     data_sources:
-      - content_announcement
+      - ops_notification_message
   - route: /admin/announcement
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts
     interface: AnnouncementUpdateInput
@@ -3768,7 +3377,7 @@ frontend_models:
       - showAsPopup
       - content
     data_sources:
-      - content_announcement
+      - ops_notification_message
   - route: /admin/analytics
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-analytics/src/analyticsService.ts
     interface: AdminAnalyticsQuery
@@ -6497,6 +6106,65 @@ frontend_models:
       - deleted
     data_sources:
       - ops_gateway_instance
+  - route: /admin/storage/providers
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
+    interface: StorageProviderListParams
+    fields: []
+    data_sources:
+      - dr_drive_storage_provider
+  - route: /admin/storage/buckets
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
+    interface: StorageBucketListParams
+    fields:
+      - cursor
+      - limit
+      - logicalScope
+      - providerId
+      - status
+    data_sources:
+      - dr_drive_space
+  - route: /admin/storage/default-buckets
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
+    interface: StorageDefaultBucketListParams
+    fields:
+      - logicalScope
+    data_sources:
+      - dr_drive_space_app_upload_profile
+  - route: /admin/storage/quotas
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
+    interface: StorageQuotaListParams
+    fields: []
+    data_sources:
+      - dr_drive_space_version_policy
+  - route: /admin/storage/usage
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
+    interface: StorageUsageListParams
+    fields:
+      - cursor
+      - limit
+      - scopeType
+      - scopeId
+    data_sources:
+      - dr_drive_storage_object
+  - route: /admin/storage/reconciliation
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
+    interface: StorageReconciliationRunListParams
+    fields:
+      - cursor
+      - limit
+      - status
+      - runType
+    data_sources:
+      - dr_drive_maintenance_job
+  - route: /admin/storage/garbage-collection
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
+    interface: StorageGarbageCollectionJobListParams
+    fields:
+      - cursor
+      - limit
+      - status
+    data_sources:
+      - dr_drive_maintenance_job
   - route: /admin/user
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-user/src/userService.ts
     interface: ApiKeyItem
@@ -6603,6 +6271,300 @@ frontend_models:
     data_sources:
       - iam_user
       - iam_user_role
+  - route: /admin/memberships/packages
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    interface: MembershipsAdminPackageGroup
+    fields:
+      - id
+      - code
+      - name
+      - description
+      - planId
+      - billingCycle
+      - durationDays
+      - sortWeight
+      - status
+      - packageCount
+    data_sources:
+      - ops_audit_log
+  - route: /admin/memberships/packages
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    interface: MembershipsAdminPackageItem
+    fields:
+      - id
+      - packageNo
+      - groupId
+      - planId
+      - skuId
+      - name
+      - priceAmount
+      - currencyCode
+      - durationDays
+      - recurrenceCycle
+      - status
+    data_sources:
+      - ops_audit_log
+  - route: /admin/memberships/plans
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    interface: MembershipsAdminPlanItem
+    fields:
+      - id
+      - planNo
+      - levelCode
+      - name
+      - rank
+      - status
+      - benefitCount
+      - benefits
+      - updatedAt
+    derived_fields:
+      - benefits.id
+      - benefits.name
+      - benefits.benefitKey
+      - benefits.type
+      - benefits.description
+      - benefits.icon
+      - benefits.usageLimit
+      - benefits.usedCount
+      - benefits.claimed
+    data_sources:
+      - ops_audit_log
+  - route: /admin/memberships/recharge-packages
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    interface: MembershipsAdminRechargePackageItem
+    fields:
+      - id
+      - packageNo
+      - name
+      - skuId
+      - priceAmount
+      - currencyCode
+      - bonusPoints
+      - grantAmount
+      - points
+      - status
+      - updatedAt
+    data_sources:
+      - ops_audit_log
+  - route: /admin/memberships/recharge-packages
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    interface: MembershipsAdminRechargePackageMutationInput
+    fields:
+      - priceAmount
+      - currencyCode
+      - bonusPoints
+      - status
+    data_sources:
+      - ops_audit_log
+  - route: /admin/memberships/recharge-packages
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    interface: MembershipsAdminRechargeSettingsItem
+    fields:
+      - baseCurrencyCode
+      - basePointsPerCny
+      - currencyToCnyRates
+    data_sources:
+      - ops_audit_log
+  - route: /admin/memberships/recharge-packages
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    interface: MembershipsAdminRechargeSettingsUpdateInput
+    fields:
+      - baseCurrencyCode
+      - basePointsPerCny
+      - currencyToCnyRates
+    data_sources:
+      - ops_audit_log
+  - route: /admin/memberships/plans
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    interface: MembershipsAdminPlanBenefitInput
+    fields:
+      - id
+      - name
+      - benefitKey
+      - type
+      - description
+      - icon
+      - usageLimit
+      - usedCount
+      - claimed
+    data_sources:
+      - ops_audit_log
+  - route: /admin/memberships/plans
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    interface: MembershipsAdminPlanMutationInput
+    fields:
+      - code
+      - name
+      - rank
+      - status
+      - benefits
+    derived_fields:
+      - benefits.id
+      - benefits.name
+      - benefits.benefitKey
+      - benefits.type
+      - benefits.description
+      - benefits.icon
+      - benefits.usageLimit
+      - benefits.usedCount
+      - benefits.claimed
+    data_sources:
+      - ops_audit_log
+  - route: /admin/memberships/plans
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    interface: MembershipsAdminPlanCreateInput
+    fields:
+      - code
+      - name
+      - rank
+      - status
+      - benefits
+    derived_fields:
+      - benefits.id
+      - benefits.name
+      - benefits.benefitKey
+      - benefits.type
+      - benefits.description
+      - benefits.icon
+      - benefits.usageLimit
+      - benefits.usedCount
+      - benefits.claimed
+    data_sources:
+      - ops_audit_log
+  - route: /admin/memberships/packages
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    interface: MembershipsAdminPackageGroupMutationInput
+    fields:
+      - code
+      - name
+      - description
+      - billingCycle
+      - durationDays
+      - sortWeight
+      - status
+    data_sources:
+      - ops_audit_log
+  - route: /admin/memberships/packages
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    interface: MembershipsAdminPackageMutationInput
+    fields:
+      - code
+      - packageGroupId
+      - planId
+      - name
+      - priceAmount
+      - currencyCode
+      - durationDays
+      - status
+    data_sources:
+      - ops_audit_log
+  - route: /admin/memberships/members
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    interface: MembershipsAdminMembersListParams
+    fields:
+      - userId
+      - planId
+      - status
+    data_sources:
+      - ops_audit_log
+  - route: /admin/memberships/entitlements
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    interface: MembershipsAdminEntitlementsListParams
+    fields:
+      - membershipId
+      - planId
+      - status
+    data_sources:
+      - ops_audit_log
+  - route: /admin/memberships/packages
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    interface: MembershipsAdminPackagesListParams
+    fields:
+      - packageGroupId
+      - planId
+      - status
+    data_sources:
+      - ops_audit_log
+  - route: /admin/memberships/members
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    interface: MembershipsAdminMemberStatusInput
+    fields:
+      - status
+    data_sources:
+      - ops_audit_log
+  - route: /admin/memberships/packages
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    interface: MembershipsAdminPackageCatalog
+    fields:
+      - groups
+      - packages
+      - plans
+    derived_fields:
+      - groups.id
+      - groups.code
+      - groups.name
+      - groups.description
+      - groups.planId
+      - groups.billingCycle
+      - groups.durationDays
+      - groups.sortWeight
+      - groups.status
+      - groups.packageCount
+      - packages.id
+      - packages.packageNo
+      - packages.groupId
+      - packages.planId
+      - packages.skuId
+      - packages.name
+      - packages.priceAmount
+      - packages.currencyCode
+      - packages.durationDays
+      - packages.recurrenceCycle
+      - packages.status
+      - plans.id
+      - plans.planNo
+      - plans.levelCode
+      - plans.name
+      - plans.rank
+      - plans.status
+      - plans.benefitCount
+      - plans.benefits
+      - plans.benefits.id
+      - plans.benefits.name
+      - plans.benefits.benefitKey
+      - plans.benefits.type
+      - plans.benefits.description
+      - plans.benefits.icon
+      - plans.benefits.usageLimit
+      - plans.benefits.usedCount
+      - plans.benefits.claimed
+      - plans.updatedAt
+    data_sources:
+      - ops_audit_log
+  - route: /admin/marketing/referrals
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts
+    interface: ReferralStat
+    fields:
+      - id
+      - inviter
+      - total_invited
+      - total_revenue
+      - bonus_awarded
+      - link
+    data_sources:
+      - ops_referral_stat_snapshot
+  - route: /admin/oauth
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    interface: OAuthListParams
+    fields:
+      - page
+      - pageSize
+      - providerCode
+      - status
+      - resourceAccountKind
+      - q
+    data_sources:
+      - ops_audit_log
   - route: /console/notifications
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
     interface: NotificationItem
@@ -6754,7 +6716,7 @@ frontend_models:
       - timeI18nKey
       - type
     data_sources:
-      - content_announcement
+      - ops_notification_message
   - route: /console/dashboard
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-dashboard/src/dashboardService.ts
     interface: DashboardData
@@ -7360,6 +7322,7 @@ frontend_models:
       - groups
       - searchQuery
       - limit
+      - offset
     data_sources:
       - ai_model_vendor
       - ai_model
@@ -7493,7 +7456,9 @@ frontend_models:
       - resource
       - sizeBytes
     data_sources:
-      - ai_agent_memory
+      - ai_runtime_artifact
+    source_refs:
+      - sdkwork-drive:dr_drive_node
   - route: /playground
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundTypes.ts
     interface: PlaygroundReferenceAssetInput
@@ -7505,7 +7470,9 @@ frontend_models:
       - resource
       - sizeBytes
     data_sources:
-      - ai_agent_memory
+      - ai_runtime_artifact
+    source_refs:
+      - sdkwork-drive:dr_drive_node
   - route: /rankings
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-rankings/src/rankingService.ts
     interface: RankingServiceFilters
@@ -7573,6 +7540,7 @@ frontend_operations:
     api_surface: app
     api_method: GET
     api_path: /app/v3/api/ai/models
+    openapi_exposed: false
     read_sources:
       - ai_model_vendor
       - ai_model
@@ -7746,6 +7714,7 @@ frontend_operations:
     api_surface: app
     api_method: GET
     api_path: /app/v3/api/ai/model_vendors
+    openapi_exposed: false
     summary: List ranking vendor filters
     description: Lists service-backed model vendor filter options for the public rankings page.
     read_sources:
@@ -7777,6 +7746,7 @@ frontend_operations:
     api_surface: app
     api_method: GET
     api_path: /app/v3/api/ai/model_rankings
+    openapi_exposed: false
     read_sources:
       - ai_model_rank_snapshot
     query_parameters:
@@ -7890,7 +7860,7 @@ frontend_operations:
       - ai_usage_fact
       - ai_request_trace
       - ai_model_rank_snapshot
-      - content_announcement
+      - ops_notification_message
       - ops_metric_snapshot
       - ops_gateway_instance
     query_parameters:
@@ -10594,6 +10564,8 @@ frontend_operations:
         schema: { type: string }
       - name: limit
         schema: { type: integer, format: int64, minimum: 1, maximum: 1000 }
+      - name: offset
+        schema: { type: integer, format: int64, minimum: 0 }
   - route: /playground
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundService.ts
     operation: fetchModelGroups
@@ -10869,7 +10841,7 @@ frontend_operations:
     summary: List memory spaces for Playground
     description: Lists memory spaces through the sdkwork-memory app SDK without Claw Router memory tables.
     read_sources:
-      - ai_agent_memory
+      - ai_agent
     query_parameters:
       - name: page_size
         schema: { type: integer, format: int64, minimum: 1, maximum: 200 }
@@ -10887,7 +10859,7 @@ frontend_operations:
     summary: Create memory space for Playground
     description: Creates a memory space through the sdkwork-memory app SDK.
     read_sources:
-      - ai_agent_memory
+      - ai_agent
     write_tables: []
   - route: /playground
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
@@ -10903,7 +10875,7 @@ frontend_operations:
     summary: Retrieve memory space for Playground
     description: Retrieves one memory space through the sdkwork-memory app SDK.
     read_sources:
-      - ai_agent_memory
+      - ai_agent
   - route: /playground
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
     operation: listMemoryEntries
@@ -10918,7 +10890,7 @@ frontend_operations:
     summary: List memory entries for Playground
     description: Lists memory entries in a space through the sdkwork-memory app SDK.
     read_sources:
-      - ai_agent_memory
+      - ai_agent
     query_parameters:
       - name: page_size
         schema: { type: integer, format: int64, minimum: 1, maximum: 200 }
@@ -10936,7 +10908,7 @@ frontend_operations:
     summary: Create memory entry for Playground
     description: Creates a memory entry through the sdkwork-memory app SDK.
     read_sources:
-      - ai_agent_memory
+      - ai_agent
     write_tables: []
   - route: /playground
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
@@ -10952,7 +10924,7 @@ frontend_operations:
     summary: Retrieve memory entry for Playground
     description: Retrieves one memory entry through the sdkwork-memory app SDK.
     read_sources:
-      - ai_agent_memory
+      - ai_agent
   - route: /console/notifications
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-messages/src/messagesService.ts
     operation: fetchMessages
@@ -12450,6 +12422,7 @@ frontend_operations:
     api_surface: backend
     api_method: GET
     api_path: /backend/v3/api/ai/resources
+    openapi_exposed: false
     read_sources:
       - ai_resource
       - ai_resource_group_item
@@ -12506,6 +12479,7 @@ frontend_operations:
     api_surface: backend
     api_method: POST
     api_path: /backend/v3/api/ai/resources
+    openapi_exposed: false
     read_sources:
       - ai_resource
       - ai_resource_group_item
@@ -12597,6 +12571,7 @@ frontend_operations:
     api_surface: backend
     api_method: PUT
     api_path: /backend/v3/api/ai/resources/{resourceId}
+    openapi_exposed: false
     path_params:
       - resourceId
     read_sources:
@@ -12803,6 +12778,7 @@ frontend_operations:
     api_surface: backend
     api_method: GET
     api_path: /backend/v3/api/ai/resource_groups
+    openapi_exposed: false
     read_sources:
       - ai_resource_group
       - ai_resource_group_item
@@ -12892,6 +12868,7 @@ frontend_operations:
     api_surface: backend
     api_method: GET
     api_path: /backend/v3/api/ai/resource_groups/{groupIdOrCode}/resources
+    openapi_exposed: false
     path_params:
       - groupIdOrCode
     query_parameters: []
@@ -12978,6 +12955,7 @@ frontend_operations:
     api_surface: backend
     api_method: POST
     api_path: /backend/v3/api/ai/resource_groups
+    openapi_exposed: false
     read_sources:
       - ai_resource_group
       - ai_resource_group_item
@@ -13045,6 +13023,7 @@ frontend_operations:
     api_surface: backend
     api_method: PATCH
     api_path: /backend/v3/api/ai/resource_groups/{groupId}
+    openapi_exposed: false
     path_params:
       - groupId
     read_sources:
@@ -13113,6 +13092,7 @@ frontend_operations:
     api_surface: backend
     api_method: DELETE
     api_path: /backend/v3/api/ai/resource_groups/{groupId}
+    openapi_exposed: false
     path_params:
       - groupId
     read_sources:
@@ -13490,6 +13470,7 @@ frontend_operations:
     api_surface: backend
     api_method: GET
     api_path: /backend/v3/api/ai/model_mappings
+    openapi_exposed: false
     read_sources:
       - ai_model_mapping_rule
       - ai_model_mapping_rule_binding
@@ -13714,6 +13695,7 @@ frontend_operations:
     api_surface: backend
     api_method: POST
     api_path: /backend/v3/api/ai/model_mappings
+    openapi_exposed: false
     read_sources:
       - ai_model_mapping_rule
       - ai_model_mapping_rule_binding
@@ -13838,6 +13820,7 @@ frontend_operations:
     api_surface: backend
     api_method: PATCH
     api_path: /backend/v3/api/ai/model_mappings/{mappingId}
+    openapi_exposed: false
     path_params:
       - mappingId
     read_sources:
@@ -13964,6 +13947,7 @@ frontend_operations:
     api_surface: backend
     api_method: DELETE
     api_path: /backend/v3/api/ai/model_mappings/{mappingId}
+    openapi_exposed: false
     path_params:
       - mappingId
     read_sources:
@@ -13991,6 +13975,7 @@ frontend_operations:
     api_surface: backend
     api_method: POST
     api_path: /backend/v3/api/ai/model_mappings/resolve
+    openapi_exposed: false
     read_sources:
       - ai_model_mapping_rule
       - ai_model_mapping_rule_binding
@@ -14168,6 +14153,7 @@ frontend_operations:
     api_surface: backend
     api_method: GET
     api_path: /backend/v3/api/ai/model_vendors
+    openapi_exposed: false
     read_sources:
       - ai_model_vendor
     query_parameters: []
@@ -14193,20 +14179,38 @@ frontend_operations:
   - route: /admin/model
     source: data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts
     operation: fetchModels
+    operation_id: models.list
     kind: read
     api_surface: backend
     api_method: GET
     api_path: /backend/v3/api/ai/models
+    openapi_exposed: false
     read_sources:
       - ai_model_vendor
       - ai_model
       - ai_model_pricing
       - ai_model_rank_snapshot
-    query_parameters: []
+    query_parameters:
+      - name: vendor_id
+        type: string
+        required: false
+      - name: vendor_code
+        type: string
+        required: false
+      - name: q
+        type: string
+        required: false
+      - name: limit
+        type: integer
+        required: false
+      - name: offset
+        type: integer
+        required: false
     response_schema:
       name: AdminAiModelsResponse
       required: [items]
       properties:
+        totalCount: { type: integer, format: int64, minimum: 0 }
         items:
           type: array
           items:
@@ -14317,178 +14321,12 @@ frontend_operations:
           description: AI model catalog snapshots returned by the backend.
   - route: /admin/model
     source: data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts
-    operation: fetchInitializedCatalog
-    kind: action
-    api_surface: backend
-    api_method: POST
-    api_path: /backend/v3/api/ai/models/refresh
-    openapi_exposed: false
-    read_sources:
-      - ai_model_vendor
-      - ai_model
-      - ai_model_capability
-      - ai_model_pricing
-      - ai_model_rank_snapshot
-      - ai_pricing_import_snapshot
-    write_tables:
-      - ai_model_vendor
-      - ai_model
-      - ai_model_capability
-      - ai_model_pricing
-      - ai_pricing_import_snapshot
-      - ops_audit_log
-    request_schema:
-      name: AdminModelCatalogInitializationRequest
-      required: []
-      properties:
-        source:
-          type: string
-          enum: [sdkwork_models]
-          description: Frontend initialization uses the bundled sdkwork-models catalog source when persisted lists are empty.
-        mode:
-          type: string
-          enum: [official_refresh]
-          description: Empty catalog initialization performs the same official refresh used by the manual sync action.
-        force:
-          type: boolean
-          description: Refresh is forced so an empty persisted catalog is populated immediately.
-    response_schema:
-      name: InitializedModelCatalog
-      required: [initialized, vendors, models]
-      properties:
-        initialized:
-          type: boolean
-          description: True when the service had to refresh an empty persisted model catalog before returning data.
-        vendors:
-          type: array
-          items:
-            name: AdminModelVendorItem
-            type: object
-            additionalProperties: false
-            required: [id, vendorCode, name, status, color, description]
-            properties:
-              id: { type: string, minLength: 1, maxLength: 128 }
-              vendorCode: { type: string, minLength: 1, maxLength: 64 }
-              name: { type: string, minLength: 1, maxLength: 128 }
-              status: { type: string, enum: [active, inactive] }
-              color: { type: string, minLength: 1, maxLength: 64 }
-              description: { type: string, maxLength: 512 }
-          description: Model vendor snapshots after optional initialization.
-        models:
-          type: array
-          items:
-            name: AdminAiModelItem
-            type: object
-            additionalProperties: false
-            required: [id, vendorId, vendorCode, model, displayName, name, type, regionPrices, status, calls, description, modalities, inputModalities, outputModalities, apiFormat, capabilityIntro, limitations, supportedLanguages, useCases, trainingDataCutoff,
-              contextTokens, maxOutputTokens, supportsStreaming, supportsTools, supportsJsonSchema, releaseStage, shelfState, routingState, replacementModel]
-            properties:
-              id: { type: string, minLength: 1, maxLength: 128 }
-              vendorId: { type: string, minLength: 1, maxLength: 128 }
-              vendorCode: { type: string, minLength: 1, maxLength: 64 }
-              model:
-                type: string
-                minLength: 1
-                maxLength: 256
-                pattern: ^[A-Za-z0-9._:/-]+$
-                description: Runtime model identifier used for provider calls, routing, and pricing keys.
-              displayName:
-                type: string
-                minLength: 1
-                maxLength: 128
-                description: Product display name. Falls back to model when no display name is configured.
-              name:
-                type: string
-                minLength: 1
-                maxLength: 128
-                description: Compatibility display alias. Equal to displayName.
-              type: { type: string, enum: [Chat, Image, Audio, Embedding, Music, SoundEffect, Video] }
-              regionPrices:
-                type: array
-                minItems: 1
-                maxItems: 32
-                items:
-                  name: AdminAiModelRegionPrice
-                  type: object
-                  additionalProperties: false
-                  description: Regional official reference pricing returned by admin AI model payloads.
-                  required: [regionCode, currency, priceIn, priceOut]
-                  properties:
-                    regionCode:
-                      type: string
-                      minLength: 1
-                      maxLength: 64
-                      pattern: ^[a-z][a-z0-9_-]{0,63}$
-                      description: Model catalog pricing region code.
-                    currency:
-                      type: string
-                      minLength: 3
-                      maxLength: 3
-                      pattern: ^[A-Z]{3}$
-                      description: Official reference price currency code for this region.
-                    priceIn:
-                      type: string
-                      pattern: ^[0-9]+(\.[0-9]{1,12})?$
-                      description: Official reference input unit price in native official reference currency.
-                    priceOut:
-                      type: string
-                      pattern: ^[0-9]+(\.[0-9]{1,12})?$
-                      description: Official reference output unit price in native official reference currency.
-                    cacheReadPrice:
-                      type: string
-                      pattern: ^$|^[0-9]+(\.[0-9]{1,12})?$
-                      description: Optional official reference cache-read unit price in native official reference currency.
-                    cacheWritePrice:
-                      type: string
-                      pattern: ^$|^[0-9]+(\.[0-9]{1,12})?$
-                      description: Optional official reference cache-write unit price in native official reference currency.
-              status: { type: string, enum: [active, inactive] }
-              calls: { type: string, maxLength: 64 }
-              description: { type: string, nullable: true, maxLength: 2048 }
-              modalities:
-                type: array
-                maxItems: 16
-                items: { type: string, minLength: 1, maxLength: 64 }
-              inputModalities:
-                type: array
-                maxItems: 16
-                items: { type: string, minLength: 1, maxLength: 64 }
-              outputModalities:
-                type: array
-                maxItems: 16
-                items: { type: string, minLength: 1, maxLength: 64 }
-              apiFormat: { type: string, nullable: true, maxLength: 128 }
-              capabilityIntro: { type: string, nullable: true, maxLength: 4096 }
-              limitations:
-                type: array
-                maxItems: 64
-                items: { type: string, minLength: 1, maxLength: 512 }
-              supportedLanguages:
-                type: array
-                maxItems: 128
-                items: { type: string, minLength: 1, maxLength: 128 }
-              useCases:
-                type: array
-                maxItems: 64
-                items: { type: string, minLength: 1, maxLength: 256 }
-              trainingDataCutoff: { type: string, nullable: true, maxLength: 128 }
-              contextTokens: { type: integer, format: int64, nullable: true, minimum: 0 }
-              maxOutputTokens: { type: integer, format: int64, nullable: true, minimum: 0 }
-              supportsStreaming: { type: boolean }
-              supportsTools: { type: boolean }
-              supportsJsonSchema: { type: boolean }
-              releaseStage: { type: integer, format: int64, nullable: true }
-              shelfState: { type: integer, format: int64, nullable: true }
-              routingState: { type: integer, format: int64, nullable: true }
-              replacementModel: { type: string, nullable: true, maxLength: 128 }
-          description: AI model snapshots after optional initialization.
-  - route: /admin/model
-    source: data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts
     operation: fetchModelRankings
     kind: read
     api_surface: backend
     api_method: GET
     api_path: /backend/v3/api/ai/model_rankings
+    openapi_exposed: false
     read_sources:
       - ai_model_rank_snapshot
     query_parameters:
@@ -14598,6 +14436,7 @@ frontend_operations:
     api_surface: backend
     api_method: GET
     api_path: /backend/v3/api/ai/model_rankings/status
+    openapi_exposed: false
     read_sources:
       - ai_model_rank_snapshot
       - ops_job_execution
@@ -14720,6 +14559,7 @@ frontend_operations:
     api_surface: backend
     api_method: GET
     api_path: /backend/v3/api/ai/model_rankings/jobs
+    openapi_exposed: false
     read_sources:
       - ops_job_execution
     query_parameters:
@@ -14777,6 +14617,7 @@ frontend_operations:
     api_surface: backend
     api_method: POST
     api_path: /backend/v3/api/ai/model_rankings/refresh
+    openapi_exposed: false
     read_sources:
       - ai_model
       - ai_usage_fact
@@ -14848,10 +14689,12 @@ frontend_operations:
   - route: /admin/model
     source: data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts
     operation: syncVendorsAndModels
+    operation_id: models.refresh
     kind: action
     api_surface: backend
     api_method: POST
     api_path: /backend/v3/api/ai/models/refresh
+    openapi_exposed: false
     read_sources:
       - ai_model_vendor
       - ai_model
@@ -15116,6 +14959,7 @@ frontend_operations:
     api_surface: backend
     api_method: POST
     api_path: /backend/v3/api/ai/model_vendors
+    openapi_exposed: false
     read_sources:
       - ai_model_vendor
     write_tables:
@@ -15170,6 +15014,7 @@ frontend_operations:
     api_surface: backend
     api_method: POST
     api_path: /backend/v3/api/ai/models
+    openapi_exposed: false
     read_sources:
       - ai_model_vendor
       - ai_model
@@ -15406,6 +15251,7 @@ frontend_operations:
     api_surface: backend
     api_method: PATCH
     api_path: /backend/v3/api/ai/models/{modelId}
+    openapi_exposed: false
     read_sources:
       - ai_model_vendor
       - ai_model
@@ -15645,6 +15491,7 @@ frontend_operations:
     api_surface: backend
     api_method: DELETE
     api_path: /backend/v3/api/ai/models/{modelId}
+    openapi_exposed: false
     read_sources:
       - ai_model
       - ai_model_capability
@@ -15741,7 +15588,8 @@ frontend_operations:
     sdk_domain: content
     summary: List admin announcements
     read_sources:
-      - content_announcement
+      - ops_notification_message
+      - ops_notification_recipient
     query_parameters: []
     response_schema:
       name: AdminAnnouncementsResponse
@@ -15758,9 +15606,10 @@ frontend_operations:
     sdk_domain: content
     summary: Create admin announcement
     read_sources:
-      - content_announcement
+      - ops_notification_message
     write_tables:
-      - content_announcement
+      - ops_notification_message
+      - ops_notification_recipient
       - ops_audit_log
     request_schema:
       name: AdminAnnouncementCreateRequest
@@ -15783,9 +15632,11 @@ frontend_operations:
     sdk_domain: content
     summary: Update admin announcement
     read_sources:
-      - content_announcement
+      - ops_notification_message
+      - ops_notification_recipient
     write_tables:
-      - content_announcement
+      - ops_notification_message
+      - ops_notification_recipient
       - ops_audit_log
     request_schema:
       name: AdminAnnouncementUpdateRequest
@@ -15808,9 +15659,11 @@ frontend_operations:
     sdk_domain: content
     summary: Delete admin announcement
     read_sources:
-      - content_announcement
+      - ops_notification_message
+      - ops_notification_recipient
     write_tables:
-      - content_announcement
+      - ops_notification_message
+      - ops_notification_recipient
       - ops_audit_log
     response_schema:
       name: AnnouncementsDeleteResult
@@ -19040,6 +18893,518 @@ frontend_operations:
         status: { type: string, maxLength: 32 }
         channel: { type: string, maxLength: 32 }
       name: VerificationPolicyUpdateResponse
+  - route: /admin/storage/providers
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
+    operation: listStorageProviders
+    operation_id: oss.providers.list
+    kind: read
+    api_surface: backend
+    dependency_owned: true
+    dependency_module: sdkwork-drive
+    dependency_sdk_family: sdkwork-drive-backend-sdk
+    openapi_exposed: false
+    api_method: GET
+    api_path: /backend/v3/api/storage/providers
+    sdk_domain: drive
+    summary: List storage providers
+    read_sources:
+      - dr_drive_storage_provider
+    source_refs:
+      - sdkwork-drive:dr_drive_storage_provider
+    query_parameters: []
+    response_schema:
+      name: StorageProviderListResponse
+      type: object
+      additionalProperties: false
+      required: [items]
+      properties:
+        items:
+          type: array
+          items: { type: object, additionalProperties: true }
+  - route: /admin/storage/providers
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
+    operation: createStorageProvider
+    operation_id: oss.providers.create
+    kind: action
+    api_surface: backend
+    dependency_owned: true
+    dependency_module: sdkwork-drive
+    dependency_sdk_family: sdkwork-drive-backend-sdk
+    openapi_exposed: false
+    api_method: POST
+    api_path: /backend/v3/api/storage/providers
+    sdk_domain: drive
+    summary: Create storage provider
+    read_sources:
+      - dr_drive_storage_provider
+    write_tables:
+      - dr_drive_storage_provider
+    source_refs:
+      - sdkwork-drive:dr_drive_storage_provider
+    request_schema:
+      name: StorageProviderCreateRequest
+      type: object
+      additionalProperties: true
+      properties: {}
+    response_schema:
+      name: StorageProviderCreateResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/storage/providers
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
+    operation: updateStorageProvider
+    operation_id: oss.providers.update
+    kind: update
+    api_surface: backend
+    dependency_owned: true
+    dependency_module: sdkwork-drive
+    dependency_sdk_family: sdkwork-drive-backend-sdk
+    openapi_exposed: false
+    api_method: PATCH
+    api_path: /backend/v3/api/storage/providers/{providerId}
+    sdk_domain: drive
+    summary: Update storage provider
+    read_sources:
+      - dr_drive_storage_provider
+    write_tables:
+      - dr_drive_storage_provider
+    source_refs:
+      - sdkwork-drive:dr_drive_storage_provider
+    path_parameters:
+      - name: providerId
+        schema: { type: string, maxLength: 128 }
+    request_schema:
+      name: StorageProviderUpdateRequest
+      type: object
+      additionalProperties: true
+      properties: {}
+    response_schema:
+      name: StorageProviderUpdateResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/storage/providers
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
+    operation: healthCheckStorageProvider
+    operation_id: oss.providers.health_checks.create
+    kind: action
+    api_surface: backend
+    dependency_owned: true
+    dependency_module: sdkwork-drive
+    dependency_sdk_family: sdkwork-drive-backend-sdk
+    openapi_exposed: false
+    api_method: POST
+    api_path: /backend/v3/api/storage/providers/{providerId}/health_check
+    sdk_domain: drive
+    summary: Health check storage provider
+    read_sources:
+      - dr_drive_storage_provider
+    write_tables:
+      - ops_audit_log
+    source_refs:
+      - sdkwork-drive:dr_drive_storage_provider
+    path_parameters:
+      - name: providerId
+        schema: { type: string, maxLength: 128 }
+    request_body_required: false
+    response_schema:
+      name: StorageProviderHealthCheckResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/storage/buckets
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
+    operation: listStorageBuckets
+    operation_id: oss.buckets.list
+    kind: read
+    api_surface: backend
+    dependency_owned: true
+    dependency_module: sdkwork-drive
+    dependency_sdk_family: sdkwork-drive-backend-sdk
+    openapi_exposed: false
+    api_method: GET
+    api_path: /backend/v3/api/storage/buckets
+    sdk_domain: drive
+    summary: List storage buckets
+    read_sources:
+      - dr_drive_space
+    source_refs:
+      - sdkwork-drive:dr_drive_space
+    query_parameters:
+      - name: cursor
+        schema: { type: string, maxLength: 512 }
+      - name: limit
+        schema: { type: integer, format: int64, minimum: 1, maximum: 200 }
+      - name: logical_scope
+        schema: { type: string, maxLength: 64 }
+      - name: provider_id
+        schema: { type: string, maxLength: 128 }
+      - name: status
+        schema: { type: string, maxLength: 32 }
+    response_schema:
+      name: StorageBucketListResponse
+      type: object
+      additionalProperties: false
+      required: [items]
+      properties:
+        items:
+          type: array
+          items: { type: object, additionalProperties: true }
+  - route: /admin/storage/buckets
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
+    operation: createStorageBucket
+    operation_id: oss.buckets.create
+    kind: action
+    api_surface: backend
+    dependency_owned: true
+    dependency_module: sdkwork-drive
+    dependency_sdk_family: sdkwork-drive-backend-sdk
+    openapi_exposed: false
+    api_method: POST
+    api_path: /backend/v3/api/storage/buckets
+    sdk_domain: drive
+    summary: Create storage bucket
+    read_sources:
+      - dr_drive_space
+    write_tables:
+      - dr_drive_space
+    source_refs:
+      - sdkwork-drive:dr_drive_space
+    request_schema:
+      name: StorageBucketCreateRequest
+      type: object
+      additionalProperties: true
+      properties: {}
+    response_schema:
+      name: StorageBucketCreateResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/storage/buckets
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
+    operation: updateStorageBucket
+    operation_id: oss.buckets.update
+    kind: update
+    api_surface: backend
+    dependency_owned: true
+    dependency_module: sdkwork-drive
+    dependency_sdk_family: sdkwork-drive-backend-sdk
+    openapi_exposed: false
+    api_method: PATCH
+    api_path: /backend/v3/api/storage/buckets/{bucketId}
+    sdk_domain: drive
+    summary: Update storage bucket
+    read_sources:
+      - dr_drive_space
+    write_tables:
+      - dr_drive_space
+    source_refs:
+      - sdkwork-drive:dr_drive_space
+    path_parameters:
+      - name: bucketId
+        schema: { type: string, maxLength: 128 }
+    request_schema:
+      name: StorageBucketUpdateRequest
+      type: object
+      additionalProperties: true
+      properties: {}
+    response_schema:
+      name: StorageBucketUpdateResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/storage/default-buckets
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
+    operation: listStorageDefaultBuckets
+    operation_id: oss.default_buckets.list
+    kind: read
+    api_surface: backend
+    dependency_owned: true
+    dependency_module: sdkwork-drive
+    dependency_sdk_family: sdkwork-drive-backend-sdk
+    openapi_exposed: false
+    api_method: GET
+    api_path: /backend/v3/api/storage/default_buckets
+    sdk_domain: drive
+    summary: List storage default buckets
+    read_sources:
+      - dr_drive_space_app_upload_profile
+      - dr_drive_space
+    source_refs:
+      - sdkwork-drive:dr_drive_space_app_upload_profile
+      - sdkwork-drive:dr_drive_space
+    query_parameters:
+      - name: logical_scope
+        schema: { type: string, maxLength: 64 }
+    response_schema:
+      name: StorageDefaultBucketListResponse
+      type: object
+      additionalProperties: false
+      required: [items]
+      properties:
+        items:
+          type: array
+          items: { type: object, additionalProperties: true }
+  - route: /admin/storage/default-buckets
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
+    operation: updateStorageDefaultBucket
+    operation_id: oss.default_buckets.update
+    kind: update
+    api_surface: backend
+    dependency_owned: true
+    dependency_module: sdkwork-drive
+    dependency_sdk_family: sdkwork-drive-backend-sdk
+    openapi_exposed: false
+    api_method: PATCH
+    api_path: /backend/v3/api/storage/default_buckets/{logicalScope}
+    sdk_domain: drive
+    summary: Set storage default bucket
+    read_sources:
+      - dr_drive_space_app_upload_profile
+      - dr_drive_space
+    write_tables:
+      - dr_drive_space_app_upload_profile
+    source_refs:
+      - sdkwork-drive:dr_drive_space_app_upload_profile
+      - sdkwork-drive:dr_drive_space
+    path_parameters:
+      - name: logicalScope
+        schema: { type: string, maxLength: 64 }
+    request_schema:
+      name: StorageDefaultBucketUpdateRequest
+      type: object
+      additionalProperties: true
+      properties: {}
+    response_schema:
+      name: StorageDefaultBucketUpdateResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/storage/quotas
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
+    operation: listStorageQuotas
+    operation_id: oss.quotas.list
+    kind: read
+    api_surface: backend
+    dependency_owned: true
+    dependency_module: sdkwork-drive
+    dependency_sdk_family: sdkwork-drive-backend-sdk
+    openapi_exposed: false
+    api_method: GET
+    api_path: /backend/v3/api/storage/quotas
+    sdk_domain: drive
+    summary: List storage quota policies
+    read_sources:
+      - dr_drive_space_version_policy
+    source_refs:
+      - sdkwork-drive:dr_drive_space_version_policy
+    query_parameters: []
+    response_schema:
+      name: StorageQuotaListResponse
+      type: object
+      additionalProperties: false
+      required: [items]
+      properties:
+        items:
+          type: array
+          items: { type: object, additionalProperties: true }
+  - route: /admin/storage/quotas
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
+    operation: createStorageQuota
+    operation_id: oss.quotas.create
+    kind: action
+    api_surface: backend
+    dependency_owned: true
+    dependency_module: sdkwork-drive
+    dependency_sdk_family: sdkwork-drive-backend-sdk
+    openapi_exposed: false
+    api_method: POST
+    api_path: /backend/v3/api/storage/quotas
+    sdk_domain: drive
+    summary: Create storage quota policy
+    read_sources:
+      - dr_drive_space_version_policy
+    write_tables:
+      - dr_drive_space_version_policy
+    source_refs:
+      - sdkwork-drive:dr_drive_space_version_policy
+    request_schema:
+      name: StorageQuotaCreateRequest
+      type: object
+      additionalProperties: true
+      properties: {}
+    response_schema:
+      name: StorageQuotaCreateResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/storage/usage
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
+    operation: listStorageUsage
+    operation_id: oss.usage.list
+    kind: read
+    api_surface: backend
+    dependency_owned: true
+    dependency_module: sdkwork-drive
+    dependency_sdk_family: sdkwork-drive-backend-sdk
+    openapi_exposed: false
+    api_method: GET
+    api_path: /backend/v3/api/storage/usage
+    sdk_domain: drive
+    summary: List storage usage counters
+    read_sources:
+      - dr_drive_storage_object
+    source_refs:
+      - sdkwork-drive:dr_drive_storage_object
+    query_parameters:
+      - name: cursor
+        schema: { type: string, maxLength: 512 }
+      - name: limit
+        schema: { type: integer, format: int64, minimum: 1, maximum: 200 }
+      - name: scope_type
+        schema: { type: string, maxLength: 64 }
+      - name: scope_id
+        schema: { type: string, maxLength: 128 }
+    response_schema:
+      name: StorageUsageListResponse
+      type: object
+      additionalProperties: false
+      required: [items]
+      properties:
+        items:
+          type: array
+          items: { type: object, additionalProperties: true }
+  - route: /admin/storage/reconciliation
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
+    operation: listStorageReconciliationRuns
+    operation_id: oss.storageReconciliationRuns.list
+    kind: read
+    api_surface: backend
+    dependency_owned: true
+    dependency_module: sdkwork-drive
+    dependency_sdk_family: sdkwork-drive-backend-sdk
+    openapi_exposed: false
+    api_method: GET
+    api_path: /backend/v3/api/storage/reconciliation_runs
+    sdk_domain: drive
+    summary: List storage reconciliation runs
+    read_sources:
+      - dr_drive_maintenance_job
+    source_refs:
+      - sdkwork-drive:dr_drive_maintenance_job
+    query_parameters:
+      - name: cursor
+        schema: { type: string, maxLength: 512 }
+      - name: limit
+        schema: { type: integer, format: int64, minimum: 1, maximum: 200 }
+      - name: status
+        schema: { type: string, maxLength: 32 }
+      - name: run_type
+        schema: { type: string, maxLength: 64 }
+    response_schema:
+      name: StorageReconciliationRunListResponse
+      type: object
+      additionalProperties: false
+      required: [items]
+      properties:
+        items:
+          type: array
+          items: { type: object, additionalProperties: true }
+  - route: /admin/storage/reconciliation
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
+    operation: createStorageReconciliationRun
+    operation_id: oss.storageReconciliationRuns.create
+    kind: action
+    api_surface: backend
+    dependency_owned: true
+    dependency_module: sdkwork-drive
+    dependency_sdk_family: sdkwork-drive-backend-sdk
+    openapi_exposed: false
+    api_method: POST
+    api_path: /backend/v3/api/storage/reconciliation_runs
+    sdk_domain: drive
+    summary: Create storage reconciliation run
+    read_sources:
+      - dr_drive_maintenance_job
+    write_tables:
+      - dr_drive_maintenance_job
+    source_refs:
+      - sdkwork-drive:dr_drive_maintenance_job
+    request_schema:
+      name: StorageReconciliationRunCreateRequest
+      type: object
+      additionalProperties: true
+      properties: {}
+    response_schema:
+      name: StorageReconciliationRunCreateResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/storage/garbage-collection
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
+    operation: listStorageGarbageCollectionJobs
+    operation_id: oss.gc_jobs.list
+    kind: read
+    api_surface: backend
+    dependency_owned: true
+    dependency_module: sdkwork-drive
+    dependency_sdk_family: sdkwork-drive-backend-sdk
+    openapi_exposed: false
+    api_method: GET
+    api_path: /backend/v3/api/storage/gc_jobs
+    sdk_domain: drive
+    summary: List storage garbage collection jobs
+    read_sources:
+      - dr_drive_maintenance_job
+    source_refs:
+      - sdkwork-drive:dr_drive_maintenance_job
+    query_parameters:
+      - name: cursor
+        schema: { type: string, maxLength: 512 }
+      - name: limit
+        schema: { type: integer, format: int64, minimum: 1, maximum: 200 }
+      - name: status
+        schema: { type: string, maxLength: 32 }
+    response_schema:
+      name: StorageGarbageCollectionJobListResponse
+      type: object
+      additionalProperties: false
+      required: [items]
+      properties:
+        items:
+          type: array
+          items: { type: object, additionalProperties: true }
+  - route: /admin/storage/garbage-collection
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
+    operation: createStorageGarbageCollectionJob
+    operation_id: oss.gc_jobs.create
+    kind: action
+    api_surface: backend
+    dependency_owned: true
+    dependency_module: sdkwork-drive
+    dependency_sdk_family: sdkwork-drive-backend-sdk
+    openapi_exposed: false
+    api_method: POST
+    api_path: /backend/v3/api/storage/gc_jobs
+    sdk_domain: drive
+    summary: Create storage garbage collection job
+    read_sources:
+      - dr_drive_maintenance_job
+    write_tables:
+      - dr_drive_maintenance_job
+    source_refs:
+      - sdkwork-drive:dr_drive_maintenance_job
+    request_schema:
+      name: StorageGarbageCollectionJobCreateRequest
+      type: object
+      additionalProperties: true
+      properties: {}
+    response_schema:
+      name: StorageGarbageCollectionJobCreateResponse
+      type: object
+      additionalProperties: true
+      properties: {}
   - route: /admin/service-providers/dashboard
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-provider/src/serviceProviderService.ts
     operation: backendServiceProviderDashboardRetrieve
@@ -19856,8 +20221,6 @@ frontend_operations:
     read_sources:
       - commerce_usage_service_provider_reconciliation_run
       - commerce_usage_service_provider_reconciliation_item
-      - integration_provider_invoice_import
-      - integration_provider_invoice_item
     query_parameters:
       - name: page
         schema: { type: integer, format: int64, minimum: 1 }
@@ -22160,6 +22523,2051 @@ frontend_operations:
             lastUsed: { type: string, maxLength: 64 }
             createdAt: { type: string, maxLength: 64 }
           description: Persisted admin user snapshot returned by the backend.
+  - route: /admin/finance
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-finance/src/financeService.ts
+    operation: backendAuditCommerceEventsList
+    operation_id: audit.commerceEvents.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/audit/commerce_events
+    sdk_domain: commerce
+    read_sources:
+      - commerce_usage_settlement
+    query_parameters: []
+    response_schema:
+      name: backendAuditCommerceEventsListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/finance/order-revenue
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-finance/src/financeService.ts
+    operation: backendCommerceReportsOrderRevenueList
+    operation_id: commerceReports.orderRevenue.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/commerce_reports/order_revenue
+    sdk_domain: commerce
+    read_sources:
+      - commerce_usage_settlement
+    query_parameters: []
+    response_schema:
+      name: backendCommerceReportsOrderRevenueListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/finance/payment-reconciliation
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-finance/src/financeService.ts
+    operation: backendCommerceReportsPaymentReconciliationRetrieve
+    operation_id: commerceReports.paymentReconciliation.retrieve
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/commerce_reports/payment_reconciliation
+    sdk_domain: commerce
+    read_sources:
+      - commerce_usage_settlement
+    query_parameters: []
+    response_schema:
+      name: backendCommerceReportsPaymentReconciliationRetrieveResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/finance
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-finance/src/financeService.ts
+    operation: backendCommerceReportsRefundsList
+    operation_id: commerceReports.refunds.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/commerce_reports/refunds
+    sdk_domain: commerce
+    read_sources:
+      - commerce_usage_settlement
+    query_parameters: []
+    response_schema:
+      name: backendCommerceReportsRefundsListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/finance/invoices
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-finance/src/financeService.ts
+    operation: backendInvoicesList
+    operation_id: invoices.management.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/invoices
+    sdk_domain: commerce
+    read_sources:
+      - commerce_usage_settlement
+    query_parameters: []
+    response_schema:
+      name: backendInvoicesListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/finance/invoices
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-finance/src/financeService.ts
+    operation: backendInvoicesRetrieve
+    operation_id: invoices.management.retrieve
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/invoices/{invoiceId}
+    sdk_domain: commerce
+    read_sources:
+      - commerce_usage_settlement
+    query_parameters: []
+    response_schema:
+      name: backendInvoicesRetrieveResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/finance/invoices
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-finance/src/financeService.ts
+    operation: backendInvoicesTitlesList
+    operation_id: invoices.titles.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/invoices/titles
+    sdk_domain: commerce
+    read_sources:
+      - commerce_usage_settlement
+    query_parameters: []
+    response_schema:
+      name: backendInvoicesTitlesListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/inventory/reservations
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-inventory/src/inventoryService.ts
+    operation: listInventoryReservations
+    operation_id: inventory.reservations.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/inventory/reservations
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: listInventoryReservationsResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/inventory/stocks
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-inventory/src/inventoryService.ts
+    operation: listInventoryStocks
+    operation_id: inventory.stocks.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/inventory/stocks
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: listInventoryStocksResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/inventory
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-inventory/src/inventoryService.ts
+    operation: updateInventoryStock
+    operation_id: inventory.stocks.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/inventory/stocks/{stockId}
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: updateInventoryStockResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/inventory/ledger
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-inventory/src/inventoryService.ts
+    operation: listInventoryLedgerEntries
+    operation_id: inventory.movements.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/inventory/movements
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: listInventoryLedgerEntriesResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/marketing/budget-ledger
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts
+    operation: backendPromotionBudgetLedgerEntriesList
+    operation_id: promotions.budgetLedgerEntries.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/promotions/budget_ledger_entries
+    sdk_domain: commerce
+    read_sources:
+      - commerce_usage_settlement
+    query_parameters: []
+    response_schema:
+      name: backendPromotionBudgetLedgerEntriesListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/marketing/promotion-code-redemptions
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts
+    operation: backendPromotionCodeRedemptionsList
+    operation_id: promotions.codes.redemptions.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/promotions/codes/redemptions
+    sdk_domain: commerce
+    read_sources:
+      - commerce_usage_settlement
+    query_parameters: []
+    response_schema:
+      name: backendPromotionCodeRedemptionsListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/marketing/promotion-codes
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts
+    operation: backendPromotionCodesList
+    operation_id: promotions.codes.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/promotions/codes
+    sdk_domain: commerce
+    read_sources:
+      - commerce_usage_settlement
+    query_parameters: []
+    response_schema:
+      name: backendPromotionCodesListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/marketing/promotion-coupon-ledger
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts
+    operation: backendPromotionCouponLedgerEntriesList
+    operation_id: promotions.couponLedgerEntries.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/promotions/coupon_ledger_entries
+    sdk_domain: commerce
+    read_sources:
+      - commerce_usage_settlement
+    query_parameters: []
+    response_schema:
+      name: backendPromotionCouponLedgerEntriesListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/marketing/promotion-coupon-stocks
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts
+    operation: backendPromotionCouponStocksList
+    operation_id: promotions.couponStocks.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/promotions/coupon_stocks
+    sdk_domain: commerce
+    read_sources:
+      - commerce_usage_settlement
+    query_parameters: []
+    response_schema:
+      name: backendPromotionCouponStocksListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/marketing/discount-allocations
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts
+    operation: backendPromotionDiscountAllocationsList
+    operation_id: promotions.discountAllocations.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/promotions/discount_allocations
+    sdk_domain: commerce
+    read_sources:
+      - commerce_usage_settlement
+    query_parameters: []
+    response_schema:
+      name: backendPromotionDiscountAllocationsListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/marketing/discount-applications
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts
+    operation: backendPromotionDiscountApplicationsList
+    operation_id: promotions.discountApplications.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/promotions/discount_applications
+    sdk_domain: commerce
+    read_sources:
+      - commerce_usage_settlement
+    query_parameters: []
+    response_schema:
+      name: backendPromotionDiscountApplicationsListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/marketing/events
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts
+    operation: backendPromotionEventsList
+    operation_id: promotions.events.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/promotions/events
+    sdk_domain: commerce
+    read_sources:
+      - commerce_usage_settlement
+    query_parameters: []
+    response_schema:
+      name: backendPromotionEventsListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/marketing/external-bindings
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts
+    operation: backendPromotionExternalBindingsList
+    operation_id: promotions.externalBindings.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/promotions/external_bindings
+    sdk_domain: commerce
+    read_sources:
+      - commerce_usage_settlement
+    query_parameters: []
+    response_schema:
+      name: backendPromotionExternalBindingsListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/marketing/offers
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts
+    operation: backendPromotionOffersList
+    operation_id: promotions.offers.management.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/promotions/offers
+    sdk_domain: commerce
+    read_sources:
+      - commerce_usage_settlement
+    query_parameters: []
+    response_schema:
+      name: backendPromotionOffersListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/marketing/user-coupons
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts
+    operation: backendPromotionUserCouponsList
+    operation_id: promotions.userCoupons.management.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/promotions/user_coupons
+    sdk_domain: commerce
+    read_sources:
+      - commerce_usage_settlement
+    query_parameters: []
+    response_schema:
+      name: backendPromotionUserCouponsListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/memberships/entitlements
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: backendMembershipsEntitlementsList
+    operation_id: memberships.entitlements.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/memberships/entitlements
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendMembershipsEntitlementsListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/memberships/members
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: backendMembershipsMembersList
+    operation_id: memberships.members.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/memberships/members
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendMembershipsMembersListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/memberships/members
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: backendMembershipsMembersStatusUpdate
+    operation_id: memberships.members.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/memberships/members/{membershipId}
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendMembershipsMembersStatusUpdateResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/memberships/members
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: backendMembershipsPackageGroupsCreate
+    operation_id: memberships.packageGroups.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/memberships/package_groups
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendMembershipsPackageGroupsCreateResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/memberships/members
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: backendMembershipsPackageGroupsDelete
+    operation_id: memberships.packageGroups.delete
+    kind: delete
+    api_surface: backend
+    api_method: DELETE
+    api_path: /backend/v3/api/memberships/package_groups/{packageGroupId}
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendMembershipsPackageGroupsDeleteResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/memberships/members
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: backendMembershipsPackageGroupsList
+    operation_id: memberships.packageGroups.management.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/memberships/package_groups
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendMembershipsPackageGroupsListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/memberships/members
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: backendMembershipsPackageGroupsUpdate
+    operation_id: memberships.packageGroups.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/memberships/package_groups/{packageGroupId}
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendMembershipsPackageGroupsUpdateResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/memberships/members
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: backendMembershipsPackagesCreate
+    operation_id: memberships.packages.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/memberships/packages
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendMembershipsPackagesCreateResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/memberships/members
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: backendMembershipsPackagesDelete
+    operation_id: memberships.packages.delete
+    kind: delete
+    api_surface: backend
+    api_method: DELETE
+    api_path: /backend/v3/api/memberships/packages/{packageId}
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendMembershipsPackagesDeleteResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/memberships/members
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: backendMembershipsPackagesList
+    operation_id: memberships.packages.management.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/memberships/packages
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendMembershipsPackagesListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/memberships/members
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: backendMembershipsPackagesUpdate
+    operation_id: memberships.packages.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/memberships/packages/{packageId}
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendMembershipsPackagesUpdateResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/memberships/members
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: backendMembershipsPlansCreate
+    operation_id: memberships.plans.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/memberships/plans
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendMembershipsPlansCreateResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/memberships/members
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: backendMembershipsPlansList
+    operation_id: memberships.plans.management.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/memberships/plans
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendMembershipsPlansListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/memberships/members
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: backendMembershipsPlansUpdate
+    operation_id: memberships.plans.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/memberships/plans/{planId}
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendMembershipsPlansUpdateResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/memberships/members
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: backendMembershipsRechargePackagesCreate
+    operation_id: recharges.packages.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/recharges/packages
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendMembershipsRechargePackagesCreateResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/memberships/members
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: backendMembershipsRechargePackagesDelete
+    operation_id: recharges.packages.delete
+    kind: delete
+    api_surface: backend
+    api_method: DELETE
+    api_path: /backend/v3/api/recharges/packages/{packageId}
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendMembershipsRechargePackagesDeleteResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/memberships/members
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: backendMembershipsRechargePackagesList
+    operation_id: recharges.packages.management.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/recharges/packages
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendMembershipsRechargePackagesListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/memberships/members
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: backendMembershipsRechargePackagesUpdate
+    operation_id: recharges.packages.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/recharges/packages/{packageId}
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendMembershipsRechargePackagesUpdateResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/memberships/members
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: backendMembershipsRechargeSettingsRetrieve
+    operation_id: recharges.settings.management.retrieve
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/recharges/settings
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendMembershipsRechargeSettingsRetrieveResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/memberships/members
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: backendMembershipsRechargeSettingsUpdate
+    operation_id: recharges.settings.update
+    kind: update
+    api_surface: backend
+    api_method: PUT
+    api_path: /backend/v3/api/recharges/settings
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendMembershipsRechargeSettingsUpdateResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/memberships/members
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: backendMembershipsPlansDelete
+    operation_id: memberships.plans.delete
+    kind: delete
+    api_surface: backend
+    api_method: DELETE
+    api_path: /backend/v3/api/memberships/plans/{planId}
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendMembershipsPlansDeleteResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/memberships/packages
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: createMembershipAdminPackage
+    operation_id: memberships.packages.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/memberships/packages
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: createMembershipAdminPackageResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/memberships/packages
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: createMembershipAdminPackageGroup
+    operation_id: memberships.packageGroups.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/memberships/package_groups
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: createMembershipAdminPackageGroupResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/memberships/plans
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: createMembershipAdminPlan
+    operation_id: memberships.plans.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/memberships/plans
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: createMembershipAdminPlanResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/memberships/recharge-packages
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: createMembershipAdminRechargePackage
+    operation_id: recharges.packages.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/recharges/packages
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: createMembershipAdminRechargePackageResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/memberships/packages
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: deleteMembershipAdminPackage
+    operation_id: memberships.packages.delete
+    kind: delete
+    api_surface: backend
+    api_method: DELETE
+    api_path: /backend/v3/api/memberships/packages/{packageId}
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: deleteMembershipAdminPackageResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/memberships/packages
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: deleteMembershipAdminPackageGroup
+    operation_id: memberships.packageGroups.delete
+    kind: delete
+    api_surface: backend
+    api_method: DELETE
+    api_path: /backend/v3/api/memberships/package_groups/{packageGroupId}
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: deleteMembershipAdminPackageGroupResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/memberships/plans
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: deleteMembershipAdminPlan
+    operation_id: memberships.plans.delete
+    kind: delete
+    api_surface: backend
+    api_method: DELETE
+    api_path: /backend/v3/api/memberships/plans/{planId}
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: deleteMembershipAdminPlanResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/memberships/recharge-packages
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: deleteMembershipAdminRechargePackage
+    operation_id: recharges.packages.delete
+    kind: delete
+    api_surface: backend
+    api_method: DELETE
+    api_path: /backend/v3/api/recharges/packages/{packageId}
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: deleteMembershipAdminRechargePackageResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/memberships/entitlements
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: fetchMembershipAdminEntitlements
+    operation_id: memberships.entitlements.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/memberships/entitlements
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: fetchMembershipAdminEntitlementsResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/memberships/members
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: fetchMembershipAdminMembers
+    operation_id: memberships.members.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/memberships/members
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: fetchMembershipAdminMembersResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/memberships/packages
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: fetchMembershipAdminPackages
+    operation_id: memberships.packages.management.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/memberships/packages
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: fetchMembershipAdminPackagesResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/memberships/plans
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: fetchMembershipAdminPlans
+    operation_id: memberships.plans.management.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/memberships/plans
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: fetchMembershipAdminPlansResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/memberships/recharge-packages
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: fetchMembershipAdminRechargePackages
+    operation_id: recharges.packages.management.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/recharges/packages
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: fetchMembershipAdminRechargePackagesResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/memberships/recharge-packages
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: fetchMembershipAdminRechargeSettings
+    operation_id: recharges.settings.management.retrieve
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/recharges/settings
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: fetchMembershipAdminRechargeSettingsResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/memberships/members
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: updateMembershipAdminMemberStatus
+    operation_id: memberships.members.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/memberships/members/{membershipId}
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: updateMembershipAdminMemberStatusResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/memberships/packages
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: updateMembershipAdminPackage
+    operation_id: memberships.packages.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/memberships/packages/{packageId}
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: updateMembershipAdminPackageResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/memberships/packages
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: updateMembershipAdminPackageGroup
+    operation_id: memberships.packageGroups.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/memberships/package_groups/{packageGroupId}
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: updateMembershipAdminPackageGroupResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/memberships/plans
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: updateMembershipAdminPlan
+    operation_id: memberships.plans.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/memberships/plans/{planId}
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: updateMembershipAdminPlanResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/memberships/recharge-packages
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: updateMembershipAdminRechargePackage
+    operation_id: recharges.packages.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/recharges/packages/{packageId}
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: updateMembershipAdminRechargePackageResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/memberships/recharge-packages
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: updateMembershipAdminRechargeSettings
+    operation_id: recharges.settings.update
+    kind: update
+    api_surface: backend
+    api_method: PUT
+    api_path: /backend/v3/api/recharges/settings
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: updateMembershipAdminRechargeSettingsResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/memberships/packages
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: fetchMembershipAdminPackageCatalog
+    operation_id: memberships.packages.management.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/memberships/packages
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: fetchMembershipAdminPackageCatalogResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/memberships/packages
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+    operation: fetchMembershipAdminPackageGroups
+    operation_id: memberships.packageGroups.management.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/memberships/package_groups
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: fetchMembershipAdminPackageGroupsResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/orders
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+    operation: backendFulfillmentUpdate
+    operation_id: fulfillments.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/fulfillments/{fulfillmentId}
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendFulfillmentUpdateResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/orders/fulfillments
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+    operation: backendFulfillmentsList
+    operation_id: fulfillments.management.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/fulfillments
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendFulfillmentsListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/orders/orders
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+    operation: backendOrdersEventsList
+    operation_id: orders.events.management.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/orders/{orderId}/events
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendOrdersEventsListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/orders/orders
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+    operation: backendOrdersList
+    operation_id: orders.management.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/orders
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendOrdersListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/orders/orders
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+    operation: backendOrdersManagementCancel
+    operation_id: orders.management.cancel
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/orders/{orderId}/cancel
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendOrdersManagementCancelResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/orders/orders
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+    operation: backendOrdersManagementClose
+    operation_id: orders.management.close
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/orders/{orderId}/close
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendOrdersManagementCloseResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/orders/orders
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+    operation: backendOrdersRetrieve
+    operation_id: orders.management.retrieve
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/orders/{orderId}
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendOrdersRetrieveResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/orders/refunds
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+    operation: backendRefundsList
+    operation_id: refunds.management.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/refunds
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendRefundsListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/orders/refunds
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+    operation: backendRefundsRetrieve
+    operation_id: refunds.management.retrieve
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/refunds/{refundId}
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendRefundsRetrieveResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/orders/shipments
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+    operation: backendShipmentsList
+    operation_id: shipments.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/shipments
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendShipmentsListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/orders/shipments
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+    operation: backendShipmentsRetrieve
+    operation_id: shipments.management.retrieve
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/shipments/{shipmentId}
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendShipmentsRetrieveResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/orders/shipments
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+    operation: backendShipmentsTrackingEventsList
+    operation_id: shipments.trackingEvents.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/shipments/{shipmentId}/tracking_events
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendShipmentsTrackingEventsListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/orders
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+    operation: backendFulfillmentCreate
+    operation_id: fulfillments.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/fulfillments
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendFulfillmentCreateResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/orders/fulfillments
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+    operation: backendFulfillmentShipmentCreate
+    operation_id: fulfillments.shipments.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/fulfillments/{fulfillmentId}/shipments
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendFulfillmentShipmentCreateResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/orders/fulfillments
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+    operation: backendFulfillmentShipmentUpdate
+    operation_id: fulfillments.shipments.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/fulfillments/{fulfillmentId}/shipments/{shipmentId}
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendFulfillmentShipmentUpdateResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/orders
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+    operation: backendFulfillmentTrackingEventCreate
+    operation_id: fulfillments.trackingEvents.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/fulfillments/{fulfillmentId}/shipments/{shipmentId}/tracking_events
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendFulfillmentTrackingEventCreateResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/orders
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+    operation: backendRefundApprovalCreate
+    operation_id: refunds.approvals.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/refunds/{refundId}/approvals
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendRefundApprovalCreateResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/orders
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+    operation: backendRefundAttemptCreate
+    operation_id: refunds.attempts.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/refunds/{refundId}/attempts
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendRefundAttemptCreateResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/payments/attempts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts
+    operation: backendPaymentsAttemptsList
+    operation_id: payments.attempts.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/payments/attempts
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendPaymentsAttemptsListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/payments/channels
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts
+    operation: backendPaymentsChannelsList
+    operation_id: payments.channels.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/payments/channels
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendPaymentsChannelsListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/payments/intents
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts
+    operation: backendPaymentsIntentsList
+    operation_id: payments.intents.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/payments/intents
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendPaymentsIntentsListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/payments/methods
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts
+    operation: backendPaymentsMethodsList
+    operation_id: payments.methods.management.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/payments/methods
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendPaymentsMethodsListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/payments/provider-accounts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts
+    operation: backendPaymentsProviderAccountsCreate
+    operation_id: payments.providerAccounts.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/payments/provider_accounts
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendPaymentsProviderAccountsCreateResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/payments/provider-accounts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts
+    operation: backendPaymentsProviderAccountsDelete
+    operation_id: payments.providerAccounts.delete
+    kind: delete
+    api_surface: backend
+    api_method: DELETE
+    api_path: /backend/v3/api/payments/provider_accounts/{providerAccountId}
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendPaymentsProviderAccountsDeleteResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/payments/provider-accounts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts
+    operation: backendPaymentsProviderAccountsList
+    operation_id: payments.providerAccounts.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/payments/provider_accounts
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendPaymentsProviderAccountsListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/payments/provider-accounts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts
+    operation: backendPaymentsProviderAccountsStatusUpdate
+    operation_id: payments.providerAccounts.status.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/payments/provider_accounts/{providerAccountId}/status
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendPaymentsProviderAccountsStatusUpdateResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/payments/provider-accounts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts
+    operation: backendPaymentsProviderAccountsUpdate
+    operation_id: payments.providerAccounts.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/payments/provider_accounts/{providerAccountId}
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendPaymentsProviderAccountsUpdateResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/payments/providers
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts
+    operation: backendPaymentsProvidersList
+    operation_id: payments.providers.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/payments/providers
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendPaymentsProvidersListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/payments/reconciliation-runs
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts
+    operation: backendPaymentsReconciliationRunsList
+    operation_id: payments.reconciliationRuns.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/payments/reconciliation_runs
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendPaymentsReconciliationRunsListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/payments/route-rules
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts
+    operation: backendPaymentsRouteRulesList
+    operation_id: payments.routeRules.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/payments/route_rules
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendPaymentsRouteRulesListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/payments
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts
+    operation: backendPaymentsRuntimeSnapshotRetrieve
+    operation_id: payments.runtime.snapshot.retrieve
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/payments/runtime/snapshot
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendPaymentsRuntimeSnapshotRetrieveResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/payments/webhook-events
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts
+    operation: backendPaymentsWebhookEventsList
+    operation_id: payments.webhookEvents.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/payments/webhook_events
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendPaymentsWebhookEventsListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/wallet
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wallet/src/walletService.ts
+    operation: backendRechargesOrdersList
+    operation_id: recharges.orders.management.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/recharges/orders
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendRechargesOrdersListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/wallet/wallet-accounts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wallet/src/walletService.ts
+    operation: backendWalletAccountsList
+    operation_id: wallet.accounts.management.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/wallet/accounts
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendWalletAccountsListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/wallet
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wallet/src/walletService.ts
+    operation: backendWalletAdjustmentsCreate
+    operation_id: wallet.adjustments.management.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/wallet/adjustments
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendWalletAdjustmentsCreateResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/wallet/exchange-rules
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wallet/src/walletService.ts
+    operation: backendWalletExchangeRulesList
+    operation_id: wallet.exchangeRules.management.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/wallet/exchange_rules
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendWalletExchangeRulesListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/wallet/wallet-ledger
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wallet/src/walletService.ts
+    operation: backendWalletLedgerEntriesList
+    operation_id: wallet.ledgerEntries.management.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/wallet/ledger_entries
+    sdk_domain: commerce
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: backendWalletLedgerEntriesListResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/agents
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-agents/src/agentService.ts
+    operation: listManagedAgents
+    operation_id: ai.agents.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/ai/agents
+    sdk_domain: agent
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: listManagedAgentsResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/drive/nodes
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/driveService.ts
+    operation: listDriveNodes
+    operation_id: drive.nodes.list
+    kind: read
+    api_surface: app
+    api_method: GET
+    api_path: /app/v3/api/drive/spaces/{spaceId}/nodes
+    sdk_domain: drive
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: listDriveNodesResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/drive/permissions
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/driveService.ts
+    operation: listDrivePermissions
+    operation_id: drive.permissions.list
+    kind: read
+    api_surface: app
+    api_method: GET
+    api_path: /app/v3/api/drive/nodes/{nodeId}/permissions
+    sdk_domain: drive
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: listDrivePermissionsResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/drive/share-links
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/driveService.ts
+    operation: listDriveShareLinks
+    operation_id: drive.shareLinks.list
+    kind: read
+    api_surface: app
+    api_method: GET
+    api_path: /app/v3/api/drive/nodes/{nodeId}/share_links
+    sdk_domain: drive
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: listDriveShareLinksResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/drive/spaces
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/driveService.ts
+    operation: listDriveSpaces
+    operation_id: drive.spaces.list
+    kind: read
+    api_surface: app
+    api_method: GET
+    api_path: /app/v3/api/drive/spaces
+    sdk_domain: drive
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: listDriveSpacesResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/drive/audit
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/driveService.ts
+    operation: listDriveAuditEvents
+    operation_id: drive.audit.list
+    kind: read
+    api_surface: app
+    api_method: GET
+    api_path: /app/v3/api/drive/audit/events
+    sdk_domain: drive
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: listDriveAuditEventsResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/oauth
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: createOAuthResourceAccount
+    operation_id: iam.oauth.resourceAccounts.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/oauth/resource_accounts
+    sdk_domain: iam
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: createOAuthResourceAccountResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/oauth
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: listOAuthResourceAccounts
+    operation_id: iam.oauth.resourceAccounts.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/iam/oauth/resource_accounts
+    sdk_domain: iam
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: listOAuthResourceAccountsResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/oauth
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts
+    operation: updateOAuthResourceAccount
+    operation_id: iam.oauth.resourceAccounts.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/iam/oauth/resource_accounts/{resourceAccountId}
+    sdk_domain: iam
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: updateOAuthResourceAccountResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+    write_tables:
+      - ops_audit_log
+  - route: /admin/skill
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
+    operation: listAgentSkillBindings
+    operation_id: ai.agents.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/ai/agents
+    sdk_domain: agent
+    read_sources:
+      - ops_audit_log
+    query_parameters: []
+    response_schema:
+      name: listAgentSkillBindingsResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/model
+    source: data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts
+    operation: fetchAllModels
+    operation_id: models.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/ai/models
+    sdk_domain: intelligence
+    read_sources:
+      - ai_model_vendor
+    query_parameters: []
+    response_schema:
+      name: fetchAllModelsResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/model
+    source: data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts
+    operation: fetchInitializedCatalog
+    operation_id: models.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/ai/models
+    sdk_domain: intelligence
+    read_sources:
+      - ai_model_vendor
+    query_parameters: []
+    response_schema:
+      name: fetchInitializedCatalogResponse
+      type: object
+      additionalProperties: true
+      properties: {}
+  - route: /admin/model
+    source: data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts
+    operation: fetchModelsPage
+    operation_id: ai.models.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/ai/models
+    sdk_domain: intelligence
+    read_sources:
+      - ai_model_vendor
+    query_parameters: []
+    response_schema:
+      name: fetchModelsPageResponse
+      type: object
+      additionalProperties: true
+      properties: {}
 routes:
   - route: /
     required_tables:
@@ -22609,10 +25017,7 @@ routes:
       - ai_usage_fact
       - ai_provider
       - ai_agent
-      - ai_agent_version
-      - ai_agent_tool_binding
-      - ai_agent_mcp_server
-      - ai_agent_memory
+      - media_resource
       - ai_agent_run
       - ai_agent_run_step
       - ai_agent_session
@@ -22639,7 +25044,7 @@ routes:
       - ai_usage_fact
       - ai_request_trace
       - ai_model_rank_snapshot
-      - content_announcement
+      - ops_notification_message
       - ops_metric_snapshot
       - ops_gateway_instance
     required_columns:
@@ -22656,10 +25061,10 @@ routes:
         - error_type
         - provider_error_code
         - started_at
-      content_announcement:
+      ops_notification_message:
         - title
-        - content
-        - announcement_type
+        - body
+        - message_type
         - published_at
       ops_gateway_instance:
         - instance_code
@@ -22934,7 +25339,7 @@ routes:
       - ops_audit_log
   - route: /admin/organization
     dependency_owned: true
-    dependency_sdk_family: sdkwork-appbase-app-sdk
+    dependency_sdk_family: sdkwork-appbase-backend-sdk
     required_tables:
       - iam_user
       - iam_organization
@@ -23483,8 +25888,6 @@ routes:
       - ops_audit_log
   - route: /admin/service-providers/reconciliation
     required_tables:
-      - integration_provider_invoice_import
-      - integration_provider_invoice_item
       - commerce_usage_service_provider_reconciliation_run
       - commerce_usage_service_provider_reconciliation_item
       - ops_audit_log
@@ -23557,6 +25960,8 @@ routes:
     dependency_owned: true
     dependency_sdk_family: sdkwork-clawrouter-backend-sdk
     required_tables:
+      - ops_notification_message
+      - ops_notification_recipient
       - ops_audit_log
   - route: /admin/catalog
     dependency_owned: true
@@ -23741,6 +26146,7 @@ routes:
     dependency_owned: true
     dependency_sdk_family: sdkwork-clawrouter-backend-sdk
     required_tables:
+      - ops_referral_stat_snapshot
       - ops_audit_log
   - route: /admin/marketing/user-coupons
     dependency_owned: true
@@ -23773,6 +26179,11 @@ routes:
     dependency_sdk_family: sdkwork-clawrouter-backend-sdk
     required_tables:
       - ops_audit_log
+  - route: /admin/memberships/packages
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-clawrouter-backend-sdk
+    required_tables:
+      - ops_audit_log
   - route: /admin/memberships/recharge-packages
     dependency_owned: true
     dependency_sdk_family: sdkwork-clawrouter-backend-sdk
@@ -23801,6 +26212,46 @@ routes:
   - route: /admin/oauth/official-accounts
     dependency_owned: true
     dependency_sdk_family: sdkwork-appbase-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/agents
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-agent-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/skill
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-agent-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/drive
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-drive-app-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/drive/spaces
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-drive-app-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/drive/nodes
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-drive-app-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/drive/permissions
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-drive-app-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/drive/share-links
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-drive-app-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/drive/audit
+    dependency_owned: true
+    dependency_sdk_family: sdkwork-drive-app-sdk
     required_tables:
       - ops_audit_log
   - route: /admin/orders
@@ -23902,4 +26353,60 @@ routes:
     dependency_owned: true
     dependency_sdk_family: sdkwork-clawrouter-backend-sdk
     required_tables:
+      - ops_audit_log
+  - route: /admin/storage
+    dependency_owned: true
+    dependency_module: sdkwork-drive
+    dependency_sdk_family: sdkwork-drive-backend-sdk
+    required_tables:
+      - ops_audit_log
+  - route: /admin/storage/providers
+    dependency_owned: true
+    dependency_module: sdkwork-drive
+    dependency_sdk_family: sdkwork-drive-backend-sdk
+    required_tables:
+      - dr_drive_storage_provider
+      - ops_audit_log
+  - route: /admin/storage/buckets
+    dependency_owned: true
+    dependency_module: sdkwork-drive
+    dependency_sdk_family: sdkwork-drive-backend-sdk
+    required_tables:
+      - dr_drive_space
+      - ops_audit_log
+  - route: /admin/storage/default-buckets
+    dependency_owned: true
+    dependency_module: sdkwork-drive
+    dependency_sdk_family: sdkwork-drive-backend-sdk
+    required_tables:
+      - dr_drive_space_app_upload_profile
+      - dr_drive_space
+      - ops_audit_log
+  - route: /admin/storage/quotas
+    dependency_owned: true
+    dependency_module: sdkwork-drive
+    dependency_sdk_family: sdkwork-drive-backend-sdk
+    required_tables:
+      - dr_drive_space_version_policy
+      - ops_audit_log
+  - route: /admin/storage/usage
+    dependency_owned: true
+    dependency_module: sdkwork-drive
+    dependency_sdk_family: sdkwork-drive-backend-sdk
+    required_tables:
+      - dr_drive_storage_object
+      - ops_audit_log
+  - route: /admin/storage/reconciliation
+    dependency_owned: true
+    dependency_module: sdkwork-drive
+    dependency_sdk_family: sdkwork-drive-backend-sdk
+    required_tables:
+      - dr_drive_maintenance_job
+      - ops_audit_log
+  - route: /admin/storage/garbage-collection
+    dependency_owned: true
+    dependency_module: sdkwork-drive
+    dependency_sdk_family: sdkwork-drive-backend-sdk
+    required_tables:
+      - dr_drive_maintenance_job
       - ops_audit_log

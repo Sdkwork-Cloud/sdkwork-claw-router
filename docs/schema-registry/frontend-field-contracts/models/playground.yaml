@@ -60,7 +60,9 @@ frontend_models:
   - resource
   - sizeBytes
   data_sources:
-  - ai_agent_memory
+  - ai_runtime_artifact
+  source_refs:
+  - sdkwork-drive:dr_drive_node
 - route: /playground
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundTypes.ts
   interface: PlaygroundReferenceAssetInput
@@ -72,4 +74,6 @@ frontend_models:
   - resource
   - sizeBytes
   data_sources:
-  - ai_agent_memory
+  - ai_runtime_artifact
+  source_refs:
+  - sdkwork-drive:dr_drive_node

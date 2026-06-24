@@ -43,9 +43,9 @@ use sdkwork_clawrouter_router_service::infrastructure::sql::postgres::{
     PostgresAdminChannelGroupStore, PostgresAdminChannelStore, PostgresAdminDashboardReadStore,
     PostgresAdminFinanceStore, PostgresAdminFirewallRuleStore, PostgresAdminInventoryStore,
     PostgresAdminIpRateLimitStore, PostgresAdminMarketingStore, PostgresAdminMcpStore,
-    PostgresAdminModelRateLimitStore, PostgresAdminMonitorReadStore, PostgresAdminPromptStore,
+    PostgresAdminModelRateLimitStore, PostgresAdminMonitorReadStore,
     PostgresAdminProviderSecretStore, PostgresAdminRecordStore, PostgresAdminServiceNodeStore,
-    PostgresAdminServiceProviderStore, PostgresAdminSiteStore, PostgresAdminStorageStore,
+    PostgresAdminServiceProviderStore, PostgresAdminSiteStore,
     PostgresAdminTransactionCenterStore, PostgresCatalogLoadError,
     PostgresGatewayApiKeyCommandStore, PostgresPricingCatalogLoader,
     PostgresRuntimeRegionSettingsStore, PostgresSiteSettingsStore,
@@ -56,9 +56,9 @@ use sdkwork_clawrouter_router_service::infrastructure::sql::sqlite::{
     SqliteAdminChannelGroupStore, SqliteAdminChannelStore, SqliteAdminDashboardReadStore,
     SqliteAdminFinanceStore, SqliteAdminFirewallRuleStore, SqliteAdminInventoryStore,
     SqliteAdminIpRateLimitStore, SqliteAdminMarketingStore, SqliteAdminMcpStore,
-    SqliteAdminModelRateLimitStore, SqliteAdminMonitorReadStore, SqliteAdminPromptStore,
+    SqliteAdminModelRateLimitStore, SqliteAdminMonitorReadStore,
     SqliteAdminProviderSecretStore, SqliteAdminRecordStore, SqliteAdminServiceNodeStore,
-    SqliteAdminServiceProviderStore, SqliteAdminSiteStore, SqliteAdminStorageStore,
+    SqliteAdminServiceProviderStore, SqliteAdminSiteStore,
     SqliteAdminTransactionCenterStore, SqliteGatewayApiKeyCommandStore, SqlitePricingCatalogLoader,
     SqliteRuntimeRegionSettingsStore, SqliteSiteSettingsStore,
 };
@@ -68,7 +68,7 @@ use sdkwork_clawrouter_router_service::ports::{
     AdminAuthSettingsStore, AdminCatalogStore, AdminChannelGroupStore, AdminChannelStore,
     AdminDashboardReadStore, AdminFinanceStore, AdminFirewallRuleStore, AdminInventoryStore,
     AdminIpRateLimitStore, AdminMarketingStore, AdminMcpStore, AdminModelRateLimitStore,
-    AdminMonitorReadStore, AdminPromptStore, AdminProviderSecretStore, AdminRecordStore,
+    AdminMonitorReadStore, AdminProviderSecretStore, AdminRecordStore,
     AdminServiceNodeStore, AdminServiceProviderStore, AdminSiteStore, AdminStorageStore,
     AdminTransactionCenterStore, GatewayApiKeyCommandStore, ModelRankingRefreshStore,
     ModelRankingsReadModelStore, PricingCatalog, ProviderHealthProbe, RuntimeRegionSettingsStore,
@@ -119,7 +119,6 @@ type AdminModelRateLimitRuntimeStore = Arc<dyn AdminModelRateLimitStore + Send +
 type AdminModelRuntimeStore = Arc<dyn ModelCatalogAdminStore + Send + Sync>;
 type AdminFinanceRuntimeStore = Arc<dyn AdminFinanceStore + Send + Sync>;
 type AdminMarketingRuntimeStore = Arc<dyn AdminMarketingStore + Send + Sync>;
-type AdminPromptRuntimeStore = Arc<dyn AdminPromptStore + Send + Sync>;
 type AdminMcpRuntimeStore = Arc<dyn AdminMcpStore + Send + Sync>;
 type AdminServiceNodeRuntimeStore = Arc<dyn AdminServiceNodeStore + Send + Sync>;
 type AdminServiceProviderRuntimeStore = Arc<dyn AdminServiceProviderStore + Send + Sync>;
@@ -196,7 +195,6 @@ struct AdminRouterRuntime<'a> {
     model_store: Option<AdminModelRuntimeStore>,
     finance_store: Option<AdminFinanceRuntimeStore>,
     marketing_store: Option<AdminMarketingRuntimeStore>,
-    prompt_store: Option<AdminPromptRuntimeStore>,
     mcp_store: Option<AdminMcpRuntimeStore>,
     service_node_store: Option<AdminServiceNodeRuntimeStore>,
     service_provider_store: Option<AdminServiceProviderRuntimeStore>,
@@ -237,7 +235,9 @@ fn router_with_database_status(
 
 fn product_local_contract_operation(operation: &sdkwork_claw_http::ContractOperation) -> bool {
     operation.sdk_domain.as_deref() != Some("commerce")
+        && !matches!(operation.sdk_domain.as_deref(), Some("oss" | "storage"))
         && !is_commerce_dependency_contract_path(&operation.path)
+        && !is_drive_dependency_contract_path(&operation.path)
         && !is_appbase_dependency_contract_path(&operation.path)
         && !is_messaging_dependency_contract_path(&operation.path)
 }
@@ -273,6 +273,17 @@ fn is_commerce_dependency_contract_path(path: &str) -> bool {
         .any(|prefix| path == prefix.trim_end_matches('/') || path.starts_with(prefix))
 }
 
+fn is_drive_dependency_contract_path(path: &str) -> bool {
+    const DRIVE_BACKEND_PREFIXES: &[&str] = &[
+        "/backend/v3/api/drive/",
+        "/backend/v3/api/storage/",
+    ];
+
+    DRIVE_BACKEND_PREFIXES
+        .iter()
+        .any(|prefix| path == prefix.trim_end_matches('/') || path.starts_with(prefix))
+}
+
 fn is_messaging_dependency_contract_path(path: &str) -> bool {
     const MESSAGING_BACKEND_PREFIXES: &[&str] = &["/backend/v3/api/messaging/"];
 
@@ -301,7 +312,7 @@ where
         announcement_store,
         auth_settings_store,
         api_key_command_store,
-        catalog_store: _catalog_store,
+        catalog_store,
         inventory_store,
         site_settings_store,
         runtime_region_settings_store,
@@ -316,12 +327,11 @@ where
         model_store,
         finance_store,
         marketing_store,
-        prompt_store,
         mcp_store,
         service_node_store,
         service_provider_store,
         site_store,
-        storage_store,
+        storage_store: _storage_store,
         transaction_center_store,
         dashboard_read_store,
         analytics_read_store,
@@ -334,7 +344,7 @@ where
         trusted_subject_config,
         app_session_config,
         admin_access_checker,
-        request_limits_config,
+        request_limits_config: _request_limits_config,
         readiness_check,
     } = runtime;
 
@@ -442,6 +452,15 @@ where
             router,
             &admin_subject_boundary_config,
             inventory_router,
+        );
+    }
+    if let Some(store) = catalog_store {
+        let catalog_product_router =
+            sdkwork_clawrouter_router_service::api::admin_catalog_router_with_store(store);
+        router = merge_admin_router_with_subject_boundary(
+            router,
+            &admin_subject_boundary_config,
+            catalog_product_router,
         );
     }
     if let Some(admin_subject_boundary_config) = admin_subject_boundary_config {
@@ -635,15 +654,6 @@ where
                 )),
             );
         }
-        if let Some(store) = prompt_store {
-            router = router.merge(
-                sdkwork_clawrouter_router_service::api::admin_prompt_router_with_store(store)
-                    .layer(from_fn_with_state(
-                        admin_subject_boundary_config.clone(),
-                        admin_request_subject_boundary,
-                    )),
-            );
-        }
         if let Some(store) = mcp_store {
             router = router.merge(
                 sdkwork_clawrouter_router_service::api::admin_mcp_router_with_store(store).layer(
@@ -684,15 +694,6 @@ where
                     admin_subject_boundary_config.clone(),
                     admin_request_subject_boundary,
                 )),
-            );
-        }
-        if let Some(store) = storage_store {
-            router = router.merge(
-                sdkwork_clawrouter_router_service::api::admin_storage_router_with_store(store)
-                    .layer(from_fn_with_state(
-                        admin_subject_boundary_config.clone(),
-                        admin_request_subject_boundary,
-                    )),
             );
         }
         if let Some(store) = transaction_center_store {
@@ -810,6 +811,9 @@ fn ai_routing_cache_invalidating_channel_group_store(
     }
 }
 
+const SEEDED_SQLITE_TEST_TRUSTED_SUBJECT_SECRET: &str = "trusted-subject-secret-0123456789abcdef";
+const SEEDED_SQLITE_TEST_APP_SESSION_SECRET: &str = "app-session-secret-0123456789abcdef012";
+
 pub async fn router_with_sqlite_product_catalog(
     pool: SqlitePool,
 ) -> Result<Router, SqlCatalogLoadError> {
@@ -819,12 +823,21 @@ pub async fn router_with_sqlite_product_catalog(
     let catalog_store: AdminCatalogRuntimeStore =
         Arc::new(SqliteAdminCatalogStore::new(pool.clone()));
     let inventory_store: AdminInventoryRuntimeStore =
-        Arc::new(SqliteAdminInventoryStore::new(pool));
+        Arc::new(SqliteAdminInventoryStore::new(pool.clone()));
+    let trusted_subject_config =
+        TrustedSubjectConfig::from_signing_secret(SEEDED_SQLITE_TEST_TRUSTED_SUBJECT_SECRET)
+            .expect("seeded sqlite trusted subject config must be valid");
+    let app_session_config =
+        AppSessionConfig::from_signing_secret(SEEDED_SQLITE_TEST_APP_SESSION_SECRET)
+            .expect("seeded sqlite app session config must be valid");
     Ok(router_with_product_catalog_and_runtime(
         Arc::new(snapshot),
         AdminRouterRuntime {
             catalog_store: Some(catalog_store),
             inventory_store: Some(inventory_store),
+            trusted_subject_config: Some(trusted_subject_config),
+            app_session_config: Some(app_session_config),
+            admin_access_checker: Some(AdminAccessChecker::Sqlite(pool)),
             ..AdminRouterRuntime::default()
         },
     ))
@@ -908,15 +921,13 @@ pub fn router_with_sqlite_shared_runtime(
         Arc::new(SqliteAdminFinanceStore::new(pool.clone()));
     let marketing_store: AdminMarketingRuntimeStore =
         Arc::new(SqliteAdminMarketingStore::new(pool.clone()));
-    let prompt_store: AdminPromptRuntimeStore = Arc::new(SqliteAdminPromptStore::new(pool.clone()));
     let mcp_store: AdminMcpRuntimeStore = Arc::new(SqliteAdminMcpStore::new(pool.clone()));
     let service_provider_store: AdminServiceProviderRuntimeStore =
         Arc::new(SqliteAdminServiceProviderStore::new(pool.clone()));
     let site_store: AdminSiteRuntimeStore = Arc::new(SqliteAdminSiteStore::new(pool.clone()));
     let service_node_store: AdminServiceNodeRuntimeStore =
         Arc::new(SqliteAdminServiceNodeStore::new(pool.clone()));
-    let storage_store: AdminStorageRuntimeStore =
-        Arc::new(SqliteAdminStorageStore::new(pool.clone()));
+    let storage_store: Option<AdminStorageRuntimeStore> = None;
     let transaction_center_store: AdminTransactionCenterRuntimeStore =
         Arc::new(SqliteAdminTransactionCenterStore::new(pool.clone()));
     let dashboard_read_store: AdminDashboardRuntimeReadStore =
@@ -955,12 +966,11 @@ pub fn router_with_sqlite_shared_runtime(
             model_store: Some(model_store),
             finance_store: Some(finance_store),
             marketing_store: Some(marketing_store),
-            prompt_store: Some(prompt_store),
             mcp_store: Some(mcp_store),
             service_node_store: Some(service_node_store),
             service_provider_store: Some(service_provider_store),
             site_store: Some(site_store),
-            storage_store: Some(storage_store),
+            storage_store,
             transaction_center_store: Some(transaction_center_store),
             dashboard_read_store: Some(dashboard_read_store),
             analytics_read_store: Some(analytics_read_store),
@@ -1037,16 +1047,13 @@ pub fn router_with_postgres_shared_runtime(
         Arc::new(PostgresAdminFinanceStore::new(pool.clone()));
     let marketing_store: AdminMarketingRuntimeStore =
         Arc::new(PostgresAdminMarketingStore::new(pool.clone()));
-    let prompt_store: AdminPromptRuntimeStore =
-        Arc::new(PostgresAdminPromptStore::new(pool.clone()));
     let mcp_store: AdminMcpRuntimeStore = Arc::new(PostgresAdminMcpStore::new(pool.clone()));
     let service_provider_store: AdminServiceProviderRuntimeStore =
         Arc::new(PostgresAdminServiceProviderStore::new(pool.clone()));
     let site_store: AdminSiteRuntimeStore = Arc::new(PostgresAdminSiteStore::new(pool.clone()));
     let service_node_store: AdminServiceNodeRuntimeStore =
         Arc::new(PostgresAdminServiceNodeStore::new(pool.clone()));
-    let storage_store: AdminStorageRuntimeStore =
-        Arc::new(PostgresAdminStorageStore::new(pool.clone()));
+    let storage_store: Option<AdminStorageRuntimeStore> = None;
     let transaction_center_store: AdminTransactionCenterRuntimeStore =
         Arc::new(PostgresAdminTransactionCenterStore::new(pool.clone()));
     let dashboard_read_store: AdminDashboardRuntimeReadStore =
@@ -1086,12 +1093,11 @@ pub fn router_with_postgres_shared_runtime(
             model_store: Some(model_store),
             finance_store: Some(finance_store),
             marketing_store: Some(marketing_store),
-            prompt_store: Some(prompt_store),
             mcp_store: Some(mcp_store),
             service_node_store: Some(service_node_store),
             service_provider_store: Some(service_provider_store),
             site_store: Some(site_store),
-            storage_store: Some(storage_store),
+            storage_store,
             transaction_center_store: Some(transaction_center_store),
             dashboard_read_store: Some(dashboard_read_store),
             analytics_read_store: Some(analytics_read_store),
@@ -1310,8 +1316,6 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                 Arc::new(SqliteAdminFinanceStore::new(pool.clone()));
             let marketing_store: AdminMarketingRuntimeStore =
                 Arc::new(SqliteAdminMarketingStore::new(pool.clone()));
-            let prompt_store: AdminPromptRuntimeStore =
-                Arc::new(SqliteAdminPromptStore::new(pool.clone()));
             let mcp_store: AdminMcpRuntimeStore = Arc::new(SqliteAdminMcpStore::new(pool.clone()));
             let service_provider_store: AdminServiceProviderRuntimeStore =
                 Arc::new(SqliteAdminServiceProviderStore::new(pool.clone()));
@@ -1319,8 +1323,7 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                 Arc::new(SqliteAdminSiteStore::new(pool.clone()));
             let service_node_store: AdminServiceNodeRuntimeStore =
                 Arc::new(SqliteAdminServiceNodeStore::new(pool.clone()));
-            let storage_store: AdminStorageRuntimeStore =
-                Arc::new(SqliteAdminStorageStore::new(pool.clone()));
+            let storage_store: Option<AdminStorageRuntimeStore> = None;
             let transaction_center_store: AdminTransactionCenterRuntimeStore =
                 Arc::new(SqliteAdminTransactionCenterStore::new(pool.clone()));
             let dashboard_read_store: AdminDashboardRuntimeReadStore =
@@ -1359,12 +1362,11 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                     model_store: Some(model_store),
                     finance_store: Some(finance_store),
                     marketing_store: Some(marketing_store),
-                    prompt_store: Some(prompt_store),
                     mcp_store: Some(mcp_store),
                     service_node_store: Some(service_node_store),
                     service_provider_store: Some(service_provider_store),
                     site_store: Some(site_store),
-                    storage_store: Some(storage_store),
+                    storage_store,
                     transaction_center_store: Some(transaction_center_store),
                     dashboard_read_store: Some(dashboard_read_store),
                     analytics_read_store: Some(analytics_read_store),
@@ -1382,7 +1384,9 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                         sdkwork_clawrouter_router_service::infrastructure::sql::pool::sqlite_runtime_readiness_check(
                             pool.clone(),
                             runtime_toml,
-                            sdkwork_clawrouter_router_service::application::UsageSettlementWorkerConfig::disabled(),
+                            sdkwork_clawrouter_router_service::application::resolve_usage_settlement_worker_config(
+                                runtime_toml,
+                            ),
                         ),
                 },
             ))
@@ -1454,8 +1458,6 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                 Arc::new(PostgresAdminFinanceStore::new(pool.clone()));
             let marketing_store: AdminMarketingRuntimeStore =
                 Arc::new(PostgresAdminMarketingStore::new(pool.clone()));
-            let prompt_store: AdminPromptRuntimeStore =
-                Arc::new(PostgresAdminPromptStore::new(pool.clone()));
             let mcp_store: AdminMcpRuntimeStore =
                 Arc::new(PostgresAdminMcpStore::new(pool.clone()));
             let service_provider_store: AdminServiceProviderRuntimeStore =
@@ -1464,8 +1466,7 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                 Arc::new(PostgresAdminSiteStore::new(pool.clone()));
             let service_node_store: AdminServiceNodeRuntimeStore =
                 Arc::new(PostgresAdminServiceNodeStore::new(pool.clone()));
-            let storage_store: AdminStorageRuntimeStore =
-                Arc::new(PostgresAdminStorageStore::new(pool.clone()));
+            let storage_store: Option<AdminStorageRuntimeStore> = None;
             let transaction_center_store: AdminTransactionCenterRuntimeStore =
                 Arc::new(PostgresAdminTransactionCenterStore::new(pool.clone()));
             let dashboard_read_store: AdminDashboardRuntimeReadStore =
@@ -1504,12 +1505,11 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                     model_store: Some(model_store),
                     finance_store: Some(finance_store),
                     marketing_store: Some(marketing_store),
-                    prompt_store: Some(prompt_store),
                     mcp_store: Some(mcp_store),
                     service_node_store: Some(service_node_store),
                     service_provider_store: Some(service_provider_store),
                     site_store: Some(site_store),
-                    storage_store: Some(storage_store),
+                    storage_store,
                     transaction_center_store: Some(transaction_center_store),
                     dashboard_read_store: Some(dashboard_read_store),
                     analytics_read_store: Some(analytics_read_store),
@@ -1527,7 +1527,9 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                         sdkwork_clawrouter_router_service::infrastructure::sql::pool::postgres_runtime_readiness_check(
                             pool.clone(),
                             runtime_toml,
-                            sdkwork_clawrouter_router_service::application::UsageSettlementWorkerConfig::disabled(),
+                            sdkwork_clawrouter_router_service::application::resolve_usage_settlement_worker_config(
+                                runtime_toml,
+                            ),
                         ),
                 },
             ))
@@ -1560,10 +1562,15 @@ pub async fn router_from_env() -> Result<Router, ProductCatalogRouterError> {
     let provider_secret_map_config =
         ProviderSecretMapConfig::from_env_or_runtime_toml(runtime_toml.as_ref())
             .map_err(ProductCatalogRouterError::Config)?;
+    sdkwork_claw_config::ensure_server_production_redis_config(
+        DeploymentMode::from_env(),
+        runtime_toml.as_ref(),
+    )
+    .map_err(ProductCatalogRouterError::Config)?;
     let router = match config {
         Some(config) => {
-            router_with_database_api_key_trusted_subject_app_session_and_optional_provider_secret_map_config_and_startup_install_mode(
-                config,
+            let built = router_with_database_api_key_trusted_subject_app_session_and_optional_provider_secret_map_config_and_startup_install_mode(
+                config.clone(),
                 Some(require_api_key_security_config(api_key_config)?),
                 Some(require_trusted_subject_config(trusted_subject_config)?),
                 Some(require_app_session_config(app_session_config)?),
@@ -1571,7 +1578,13 @@ pub async fn router_from_env() -> Result<Router, ProductCatalogRouterError> {
                 startup_install_mode,
                 runtime_toml.as_ref(),
             )
-            .await?
+            .await?;
+            return Ok(
+                crate::web_bootstrap::maybe_wrap_router_with_web_framework_and_database_config(
+                    built, &config,
+                )
+                .await,
+            );
         }
         None => router(),
     };
@@ -1630,11 +1643,7 @@ pub fn shared_cache_manager_from_runtime_toml(
 fn deployment_mode_from_env_or_toml(
     runtime_toml: Option<&RuntimeTomlConfig>,
 ) -> Result<DeploymentMode, String> {
-    DeploymentMode::from_optional_part(
-        std::env::var(DeploymentMode::ENV_DEPLOYMENT_MODE)
-            .ok()
-            .or_else(|| runtime_toml.and_then(|config| config.runtime.deployment_mode.clone())),
-    )
+    Ok(sdkwork_claw_config::DeploymentRuntime::resolve(runtime_toml)?.mode)
 }
 
 fn configured_models_catalog_root(runtime_toml: Option<&RuntimeTomlConfig>) -> Option<String> {
@@ -1719,13 +1728,11 @@ fn merge_admin_router_with_subject_boundary(
     admin_router: Router,
 ) -> Router {
     match admin_subject_boundary_config {
-        Some(config) => router.merge(
-            admin_router.layer(from_fn_with_state(
-                config.clone(),
-                admin_request_subject_boundary,
-            )),
-        ),
-        None => router,
+        Some(config) => router.merge(admin_router.layer(from_fn_with_state(
+            config.clone(),
+            admin_request_subject_boundary,
+        ))),
+        None => router.merge(admin_router),
     }
 }
 
@@ -1734,34 +1741,12 @@ async fn admin_request_subject_boundary(
     mut request: Request<Body>,
     next: Next,
 ) -> Response {
-    let subject = if sdkwork_claw_http::claw_web_framework_enabled_from_env() {
-        match TrustedRequestSubject::from_extensions(request.extensions()) {
-            Some(subject) => subject,
-            None => {
-                return admin_unauthorized_response(
-                    "trusted request subject is required".to_owned(),
-                )
-            }
-        }
-    } else {
-        let method = request.method().as_str().to_owned();
-        let path_and_query = request
-            .uri()
-            .path_and_query()
-            .map(|value| value.as_str().to_owned())
-            .unwrap_or_else(|| request.uri().path().to_owned());
-        match sdkwork_claw_http::verified_app_request_subject(
-            request.headers_mut(),
-            &method,
-            &path_and_query,
-            &config.subject_boundary,
-            current_unix_seconds(),
-        ) {
-            Ok(subject) => subject,
+    let (subject, attach_subject) =
+        match resolve_admin_request_subject(&mut request, &config.subject_boundary) {
+            Ok(result) => result,
             Err(message) => return admin_unauthorized_response(message),
-        }
-    };
-    if !sdkwork_claw_http::claw_web_framework_enabled_from_env() {
+        };
+    if attach_subject {
         sdkwork_claw_http::attach_trusted_request_subject(&mut request, subject);
     }
 
@@ -1779,6 +1764,32 @@ async fn admin_request_subject_boundary(
             admin_internal_error_response("failed to verify admin access".to_owned())
         }
     }
+}
+
+fn resolve_admin_request_subject(
+    request: &mut Request<Body>,
+    subject_boundary: &sdkwork_claw_http::AppSubjectBoundaryConfig,
+) -> Result<(TrustedRequestSubject, bool), String> {
+    if sdkwork_claw_http::claw_web_framework_enabled_from_env() {
+        if let Some(subject) = TrustedRequestSubject::from_extensions(request.extensions()) {
+            return Ok((subject, false));
+        }
+    }
+
+    let method = request.method().as_str().to_owned();
+    let path_and_query = request
+        .uri()
+        .path_and_query()
+        .map(|value| value.as_str().to_owned())
+        .unwrap_or_else(|| request.uri().path().to_owned());
+    sdkwork_claw_http::verified_app_request_subject(
+        request.headers_mut(),
+        &method,
+        &path_and_query,
+        subject_boundary,
+        current_unix_seconds(),
+    )
+    .map(|subject| (subject, true))
 }
 
 impl AdminAccessChecker {

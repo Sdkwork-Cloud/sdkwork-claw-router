@@ -1,13 +1,14 @@
 use std::sync::Arc;
 use std::time::Duration;
 
+use crate::iam_oauth_device_runtime::{
+    merge_appbase_oauth_device_authorization_router, password_session_bridge_for_database,
+    postgres_database_pool, sqlite_database_pool, sqlite_password_session_bridge_for_engine,
+};
 use crate::local_auth_runtime::{
     build_local_auth_router, postgres_local_auth_runtime_components,
-    sqlite_local_auth_runtime_components,
-};
-use crate::iam_oauth_device_runtime::{
-    merge_appbase_oauth_device_authorization_router, postgres_database_pool,
-    sqlite_database_pool, sqlite_password_session_bridge_for_engine,
+    sqlite_local_auth_runtime_components, LoginContinuationRuntimeStore,
+    TenantSigningKeyRuntimeStore,
 };
 use crate::{manifest, paths};
 use axum::Router;
@@ -43,8 +44,8 @@ use sdkwork_clawrouter_router_service::infrastructure::sql::postgres::{
     PostgresAppChatStore, PostgresAppGatewayTracesReadStore, PostgresAppNotificationStore,
     PostgresAppProvidersReadStore, PostgresAppRoutingChannelCommandStore,
     PostgresAppRoutingReadStore, PostgresAppRoutingStrategyStore, PostgresAppRuntimeStore,
-    PostgresCatalogLoadError, PostgresDashboardOverviewReadStore, PostgresForumStore,
-    PostgresModelRankingRefreshStore, PostgresModelRankingsReadStore, PostgresPaymentCallbackStore,
+    PostgresCatalogLoadError, PostgresDashboardOverviewReadStore, PostgresModelRankingRefreshStore,
+    PostgresModelRankingsReadStore, PostgresPaymentCallbackStore,
     PostgresPaymentIntentRuntimeStore, PostgresPricingCatalogLoader, PostgresSettingsStore,
     PostgresSettlementsDashboardReadStore, PostgresSiteSettingsStore, PostgresUsageLogsReadStore,
     PostgresVerificationDeliveryConfigStore, PostgresVerificationDeliveryQueueSender,
@@ -53,10 +54,10 @@ use sdkwork_clawrouter_router_service::infrastructure::sql::sqlite::{
     SqlCatalogLoadError, SqliteAppChatStore, SqliteAppGatewayTracesReadStore,
     SqliteAppNotificationStore, SqliteAppProvidersReadStore, SqliteAppRoutingChannelCommandStore,
     SqliteAppRoutingReadStore, SqliteAppRoutingStrategyStore, SqliteAppRuntimeStore,
-    SqliteDashboardOverviewReadStore, SqliteForumStore, SqliteModelRankingRefreshStore,
-    SqliteModelRankingsReadStore, SqlitePaymentCallbackStore, SqlitePaymentIntentRuntimeStore,
-    SqlitePricingCatalogLoader, SqliteSettingsStore, SqliteSettlementsDashboardReadStore,
-    SqliteSiteSettingsStore, SqliteUsageLogsReadStore, SqliteVerificationDeliveryConfigStore,
+    SqliteDashboardOverviewReadStore, SqliteModelRankingRefreshStore, SqliteModelRankingsReadStore,
+    SqlitePaymentCallbackStore, SqlitePaymentIntentRuntimeStore, SqlitePricingCatalogLoader,
+    SqliteSettingsStore, SqliteSettlementsDashboardReadStore, SqliteSiteSettingsStore,
+    SqliteUsageLogsReadStore, SqliteVerificationDeliveryConfigStore,
     SqliteVerificationDeliveryQueueSender,
 };
 use sdkwork_clawrouter_router_service::infrastructure::{
@@ -68,12 +69,10 @@ use sdkwork_clawrouter_router_service::ports::{
     AdminAuthSettingsStore, AppAuthStore, AppChatStore, AppGatewayTracesReadStore,
     AppNotificationStore, AppProvidersReadStore, AppRoutingChannelCommandStore,
     AppRoutingReadStore, AppRoutingStrategyStore, AppRuntimeStore, AppSessionEventStore,
-    DashboardOverviewReadStore, ForumCommentCommandStore, ForumCommentReadStore,
-    ForumFeedCommandStore, ForumFeedReadStore, ModelRankingRefreshOutcome,
-    ModelRankingRefreshRunStatus, ModelRankingRefreshStore, ModelRankingsCacheInvalidation,
-    ModelRankingsReadModelStore, PaymentCallbackStore, ProviderHealthProbe, SettingsStore,
-    SettlementsDashboardReadStore, SiteSettingsStore, UnconfiguredProviderHealthProbe,
-    UsageLogsReadStore, VerificationCodeSender,
+    DashboardOverviewReadStore, ModelRankingRefreshOutcome, ModelRankingRefreshRunStatus,
+    ModelRankingRefreshStore, ModelRankingsCacheInvalidation, ModelRankingsReadModelStore,
+    PaymentCallbackStore, ProviderHealthProbe, SettingsStore, SettlementsDashboardReadStore,
+    SiteSettingsStore, UnconfiguredProviderHealthProbe, UsageLogsReadStore, VerificationCodeSender,
 };
 use sdkwork_content_documents_sdk_reference::app_sdk_reference_router;
 use sdkwork_router_catalog_app_api::{
@@ -112,10 +111,6 @@ type AppSessionAuditStore = Arc<dyn AppSessionEventStore + Send + Sync>;
 type AppVerificationCodeSender = Arc<dyn VerificationCodeSender + Send + Sync>;
 type AppPasswordHasher = Arc<dyn PasswordHasher + Send + Sync>;
 type AppSiteSettingsRuntimeStore = Arc<dyn SiteSettingsStore + Send + Sync>;
-type ForumFeedReadRuntimeStore = Arc<dyn ForumFeedReadStore + Send + Sync>;
-type ForumFeedCommandRuntimeStore = Arc<dyn ForumFeedCommandStore + Send + Sync>;
-type ForumCommentReadRuntimeStore = Arc<dyn ForumCommentReadStore + Send + Sync>;
-type ForumCommentCommandRuntimeStore = Arc<dyn ForumCommentCommandStore + Send + Sync>;
 type DashboardReadStore = Arc<dyn DashboardOverviewReadStore + Send + Sync>;
 type EntityUuidGen = Arc<dyn EntityUuidGenerator + Send + Sync>;
 type PaymentCallbackRuntimeStore = Arc<dyn PaymentCallbackStore + Send + Sync>;
@@ -163,7 +158,6 @@ pub fn router() -> Router {
         .merge(sdkwork_clawrouter_router_service::api::app_notification_router())
         .merge(sdkwork_clawrouter_router_service::api::app_chat_router())
         .merge(sdkwork_clawrouter_router_service::api::app_runtime_router())
-        .merge(sdkwork_clawrouter_router_service::api::app_forum_router())
         .merge(sdkwork_clawrouter_router_service::api::app_providers_router())
         .merge(sdkwork_clawrouter_router_service::api::app_routing_router())
         .merge(sdkwork_clawrouter_router_service::api::app_routing_strategy_router())
@@ -253,7 +247,6 @@ where
         .merge(sdkwork_clawrouter_router_service::api::app_notification_router())
         .merge(sdkwork_clawrouter_router_service::api::app_chat_router())
         .merge(sdkwork_clawrouter_router_service::api::app_runtime_router())
-        .merge(sdkwork_clawrouter_router_service::api::app_forum_router())
         .merge(sdkwork_clawrouter_router_service::api::app_providers_router())
         .merge(sdkwork_clawrouter_router_service::api::app_routing_router())
         .merge(sdkwork_clawrouter_router_service::api::app_routing_strategy_router())
@@ -331,6 +324,8 @@ fn router_with_runtime_stores_and_database_status(
     app_auth_store: Option<AppAuthRuntimeStore>,
     app_auth_settings_store: Option<AppAuthSettingsRuntimeStore>,
     app_session_event_store: AppSessionAuditStore,
+    tenant_signing_key_store: TenantSigningKeyRuntimeStore,
+    login_continuation_store: LoginContinuationRuntimeStore,
     app_site_settings_store: Option<AppSiteSettingsRuntimeStore>,
     entity_uuid_generator: EntityUuidGen,
     trusted_subject_config: TrustedSubjectConfig,
@@ -353,10 +348,6 @@ fn router_with_runtime_stores_and_database_status(
     app_runtime_chat_stream_relay: Option<AppRuntimeChatStreamRelay>,
     app_runtime_gateway_client: Option<AppRuntimeGatewayRuntimeClient>,
     app_runtime_stream_bus: Option<AppRuntimeStreamBus>,
-    forum_feed_read_store: Option<ForumFeedReadRuntimeStore>,
-    forum_feed_command_store: Option<ForumFeedCommandRuntimeStore>,
-    forum_comment_read_store: Option<ForumCommentReadRuntimeStore>,
-    forum_comment_command_store: Option<ForumCommentCommandRuntimeStore>,
     app_providers_read_store: Option<AppProvidersStore>,
     app_routing_read_store: Option<AppRoutingStore>,
     app_routing_strategy_store: Option<AppRoutingStrategyRuntimeStore>,
@@ -373,6 +364,8 @@ fn router_with_runtime_stores_and_database_status(
         app_auth_settings_store,
         app_session_event_store,
         Arc::clone(&entity_uuid_generator),
+        tenant_signing_key_store,
+        login_continuation_store,
         trusted_subject_config,
         app_session_config.clone(),
         password_hasher,
@@ -505,28 +498,6 @@ fn router_with_runtime_stores_and_database_status(
         }
         None => router.merge(sdkwork_clawrouter_router_service::api::app_runtime_router()),
     };
-    router = match (
-        forum_feed_read_store,
-        forum_feed_command_store,
-        forum_comment_read_store,
-        forum_comment_command_store,
-    ) {
-        (
-            Some(feed_read_store),
-            Some(feed_command_store),
-            Some(comment_read_store),
-            Some(comment_command_store),
-        ) => router.merge(app_forum_router_with_store_and_subject_boundary(
-            feed_read_store,
-            feed_command_store,
-            comment_read_store,
-            comment_command_store,
-            subject_boundary_config.trusted_subject().clone(),
-            subject_boundary_config.app_session().clone(),
-            request_limits_config.forum_json_body_max_bytes(),
-        )),
-        _ => router.merge(sdkwork_clawrouter_router_service::api::app_forum_router()),
-    };
     router = match app_providers_read_store {
         Some(read_store) => router.merge(sdkwork_claw_http::apply_app_subject_boundary_if_legacy(
             sdkwork_clawrouter_router_service::api::app_providers_router_with_read_store(
@@ -584,29 +555,6 @@ fn router_with_runtime_stores_and_database_status(
     merge_app_sdk_reference_router(router)
 }
 
-pub fn app_forum_router_with_store_and_subject_boundary(
-    feed_read_store: Arc<dyn ForumFeedReadStore + Send + Sync>,
-    feed_command_store: Arc<dyn ForumFeedCommandStore + Send + Sync>,
-    comment_read_store: Arc<dyn ForumCommentReadStore + Send + Sync>,
-    comment_command_store: Arc<dyn ForumCommentCommandStore + Send + Sync>,
-    trusted_subject_config: TrustedSubjectConfig,
-    app_session_config: AppSessionConfig,
-    json_body_max_bytes: usize,
-) -> Router {
-    sdkwork_claw_http::apply_optional_app_subject_boundary_if_legacy(
-        sdkwork_clawrouter_router_service::api::app_forum_router_with_store_community_links_and_json_body_limit(
-            feed_read_store,
-            feed_command_store,
-            comment_read_store,
-            comment_command_store,
-            Arc::new(OsApiKeySecretGenerator),
-            sdkwork_clawrouter_router_service::api::configured_forum_community_links(),
-            json_body_max_bytes,
-        ),
-        AppSubjectBoundaryConfig::new(trusted_subject_config, app_session_config),
-    )
-}
-
 pub async fn router_with_sqlite_product_catalog(
     pool: SqlitePool,
     api_key_security_config: ApiKeySecurityConfig,
@@ -641,7 +589,6 @@ pub async fn router_with_sqlite_product_catalog(
     let app_notification_store = Arc::new(SqliteAppNotificationStore::new(pool.clone()));
     let app_chat_store = Arc::new(SqliteAppChatStore::new(pool.clone()));
     let app_runtime_store = Arc::new(SqliteAppRuntimeStore::new(pool.clone()));
-    let forum_store = Arc::new(SqliteForumStore::new(pool.clone()));
     let app_providers_read_store = Arc::new(SqliteAppProvidersReadStore::new(pool.clone()));
     let app_routing_read_store = Arc::new(SqliteAppRoutingReadStore::with_api_key_secret_codec(
         pool.clone(),
@@ -650,15 +597,23 @@ pub async fn router_with_sqlite_product_catalog(
     let app_routing_strategy_store = Arc::new(SqliteAppRoutingStrategyStore::new(pool.clone()));
     let app_routing_channel_command_store =
         Arc::new(SqliteAppRoutingChannelCommandStore::new(pool.clone()));
-    let (app_auth_store, app_auth_settings_store, app_session_event_store) =
-        sqlite_local_auth_runtime_components(pool.clone());
+    let entity_uuid_generator: EntityUuidGen = Arc::new(OsApiKeySecretGenerator);
+    let (
+        app_auth_store,
+        app_auth_settings_store,
+        app_session_event_store,
+        tenant_signing_key_store,
+        login_continuation_store,
+    ) = sqlite_local_auth_runtime_components(pool.clone(), Arc::clone(&entity_uuid_generator));
     let app_site_settings_store = Arc::new(SqliteSiteSettingsStore::new(pool.clone()));
     Ok(router_with_runtime_stores_and_database_status(
         Some(app_auth_store),
         Some(app_auth_settings_store),
         app_session_event_store,
+        tenant_signing_key_store,
+        login_continuation_store,
         Some(app_site_settings_store),
-        Arc::new(OsApiKeySecretGenerator),
+        entity_uuid_generator,
         trusted_subject_config,
         app_session_config,
         Arc::new(Pbkdf2Sha256PasswordHasher),
@@ -679,10 +634,6 @@ pub async fn router_with_sqlite_product_catalog(
         None,
         None,
         None,
-        Some(forum_store.clone()),
-        Some(forum_store.clone()),
-        Some(forum_store.clone()),
-        Some(forum_store),
         Some(app_providers_read_store),
         Some(app_routing_read_store),
         Some(app_routing_strategy_store),
@@ -729,7 +680,6 @@ pub async fn router_with_postgres_product_catalog(
     let app_notification_store = Arc::new(PostgresAppNotificationStore::new(pool.clone()));
     let app_chat_store = Arc::new(PostgresAppChatStore::new(pool.clone()));
     let app_runtime_store = Arc::new(PostgresAppRuntimeStore::new(pool.clone()));
-    let forum_store = Arc::new(PostgresForumStore::new(pool.clone()));
     let app_providers_read_store = Arc::new(PostgresAppProvidersReadStore::new(pool.clone()));
     let app_routing_read_store = Arc::new(PostgresAppRoutingReadStore::with_api_key_secret_codec(
         pool.clone(),
@@ -738,15 +688,23 @@ pub async fn router_with_postgres_product_catalog(
     let app_routing_strategy_store = Arc::new(PostgresAppRoutingStrategyStore::new(pool.clone()));
     let app_routing_channel_command_store =
         Arc::new(PostgresAppRoutingChannelCommandStore::new(pool.clone()));
-    let (app_auth_store, app_auth_settings_store, app_session_event_store) =
-        postgres_local_auth_runtime_components(pool.clone());
+    let entity_uuid_generator: EntityUuidGen = Arc::new(OsApiKeySecretGenerator);
+    let (
+        app_auth_store,
+        app_auth_settings_store,
+        app_session_event_store,
+        tenant_signing_key_store,
+        login_continuation_store,
+    ) = postgres_local_auth_runtime_components(pool.clone(), Arc::clone(&entity_uuid_generator));
     let app_site_settings_store = Arc::new(PostgresSiteSettingsStore::new(pool.clone()));
     Ok(router_with_runtime_stores_and_database_status(
         Some(app_auth_store),
         Some(app_auth_settings_store),
         app_session_event_store,
+        tenant_signing_key_store,
+        login_continuation_store,
         Some(app_site_settings_store),
-        Arc::new(OsApiKeySecretGenerator),
+        entity_uuid_generator,
         trusted_subject_config,
         app_session_config,
         Arc::new(Pbkdf2Sha256PasswordHasher),
@@ -767,10 +725,6 @@ pub async fn router_with_postgres_product_catalog(
         None,
         None,
         None,
-        Some(forum_store.clone()),
-        Some(forum_store.clone()),
-        Some(forum_store.clone()),
-        Some(forum_store),
         Some(app_providers_read_store),
         Some(app_routing_read_store),
         Some(app_routing_strategy_store),
@@ -827,7 +781,6 @@ pub async fn router_with_sqlite_shared_runtime(
     let app_notification_store = Arc::new(SqliteAppNotificationStore::new(pool.clone()));
     let app_chat_store = Arc::new(SqliteAppChatStore::new(pool.clone()));
     let app_runtime_store = Arc::new(SqliteAppRuntimeStore::new(pool.clone()));
-    let forum_store = Arc::new(SqliteForumStore::new(pool.clone()));
     let app_providers_read_store = Arc::new(SqliteAppProvidersReadStore::new(pool.clone()));
     let app_routing_read_store = Arc::new(SqliteAppRoutingReadStore::with_api_key_secret_codec(
         pool.clone(),
@@ -846,10 +799,15 @@ pub async fn router_with_sqlite_shared_runtime(
             .map_err(|error| {
                 ProductCatalogRouterError::Sqlite(SqlCatalogLoadError::Database(error))
             })?;
-    let entity_uuid_generator = Arc::new(OsApiKeySecretGenerator);
+    let entity_uuid_generator: EntityUuidGen = Arc::new(OsApiKeySecretGenerator);
     let password_hasher = Arc::new(Pbkdf2Sha256PasswordHasher);
-    let (app_auth_store, app_auth_settings_store, app_session_event_store) =
-        sqlite_local_auth_runtime_components(pool.clone());
+    let (
+        app_auth_store,
+        app_auth_settings_store,
+        app_session_event_store,
+        tenant_signing_key_store,
+        login_continuation_store,
+    ) = sqlite_local_auth_runtime_components(pool.clone(), Arc::clone(&entity_uuid_generator));
     let password_session_bridge = sqlite_password_session_bridge_for_engine(
         &config,
         app_auth_store.clone(),
@@ -857,11 +815,14 @@ pub async fn router_with_sqlite_shared_runtime(
         app_session_config.clone(),
         app_session_event_store.clone(),
         entity_uuid_generator.clone(),
+        Some(tenant_signing_key_store.clone()),
     );
     let router = router_with_runtime_stores_and_database_status(
         Some(app_auth_store),
         Some(app_auth_settings_store),
         app_session_event_store,
+        tenant_signing_key_store,
+        login_continuation_store,
         Some(Arc::new(SqliteSiteSettingsStore::new(pool.clone()))),
         entity_uuid_generator,
         trusted_subject_config,
@@ -884,10 +845,6 @@ pub async fn router_with_sqlite_shared_runtime(
         None,
         Some(app_runtime_gateway_client),
         Some(app_runtime_stream_bus),
-        Some(forum_store.clone()),
-        Some(forum_store.clone()),
-        Some(forum_store.clone()),
-        Some(forum_store),
         Some(app_providers_read_store),
         Some(app_routing_read_store),
         Some(app_routing_strategy_store),
@@ -897,15 +854,14 @@ pub async fn router_with_sqlite_shared_runtime(
         request_limits_config,
         None,
     );
-    Ok(
-        merge_appbase_oauth_device_authorization_router(
-            router,
-            &config,
-            sqlite_database_pool(&config, pool),
-            password_session_bridge,
-        )
-        .await,
+    merge_appbase_oauth_device_authorization_router(
+        router,
+        &config,
+        sqlite_database_pool(&config, pool),
+        password_session_bridge,
     )
+    .await
+    .map_err(ProductCatalogRouterError::Config)
 }
 
 pub async fn router_with_postgres_shared_runtime(
@@ -954,7 +910,6 @@ pub async fn router_with_postgres_shared_runtime(
     let app_notification_store = Arc::new(PostgresAppNotificationStore::new(pool.clone()));
     let app_chat_store = Arc::new(PostgresAppChatStore::new(pool.clone()));
     let app_runtime_store = Arc::new(PostgresAppRuntimeStore::new(pool.clone()));
-    let forum_store = Arc::new(PostgresForumStore::new(pool.clone()));
     let app_providers_read_store = Arc::new(PostgresAppProvidersReadStore::new(pool.clone()));
     let app_routing_read_store = Arc::new(PostgresAppRoutingReadStore::with_api_key_secret_codec(
         pool.clone(),
@@ -973,17 +928,34 @@ pub async fn router_with_postgres_shared_runtime(
             .map_err(|error| {
                 ProductCatalogRouterError::Postgres(PostgresCatalogLoadError::Database(error))
             })?;
-    let (app_auth_store, app_auth_settings_store, app_session_event_store) =
-        postgres_local_auth_runtime_components(pool.clone());
+    let entity_uuid_generator: EntityUuidGen = Arc::new(OsApiKeySecretGenerator);
+    let password_hasher = Arc::new(Pbkdf2Sha256PasswordHasher);
+    let (
+        app_auth_store,
+        app_auth_settings_store,
+        app_session_event_store,
+        tenant_signing_key_store,
+        login_continuation_store,
+    ) = postgres_local_auth_runtime_components(pool.clone(), Arc::clone(&entity_uuid_generator));
+    let password_session_bridge = Some(password_session_bridge_for_database(
+        app_auth_store.clone(),
+        password_hasher.clone(),
+        app_session_config.clone(),
+        app_session_event_store.clone(),
+        entity_uuid_generator.clone(),
+        Some(tenant_signing_key_store.clone()),
+    ));
     let router = router_with_runtime_stores_and_database_status(
         Some(app_auth_store),
         Some(app_auth_settings_store),
         app_session_event_store,
+        tenant_signing_key_store,
+        login_continuation_store,
         Some(Arc::new(PostgresSiteSettingsStore::new(pool.clone()))),
-        Arc::new(OsApiKeySecretGenerator),
+        entity_uuid_generator,
         trusted_subject_config,
         app_session_config,
-        Arc::new(Pbkdf2Sha256PasswordHasher),
+        password_hasher,
         verification_code_sender,
         expose_debug_verification_code,
         Some(payment_webhook_config),
@@ -1001,10 +973,6 @@ pub async fn router_with_postgres_shared_runtime(
         None,
         Some(app_runtime_gateway_client),
         Some(app_runtime_stream_bus),
-        Some(forum_store.clone()),
-        Some(forum_store.clone()),
-        Some(forum_store.clone()),
-        Some(forum_store),
         Some(app_providers_read_store),
         Some(app_routing_read_store),
         Some(app_routing_strategy_store),
@@ -1014,15 +982,14 @@ pub async fn router_with_postgres_shared_runtime(
         request_limits_config,
         None,
     );
-    Ok(
-        merge_appbase_oauth_device_authorization_router(
-            router,
-            &config,
-            postgres_database_pool(&config, pool),
-            None,
-        )
-        .await,
+    merge_appbase_oauth_device_authorization_router(
+        router,
+        &config,
+        postgres_database_pool(&config, pool),
+        password_session_bridge,
     )
+    .await
+    .map_err(ProductCatalogRouterError::Config)
 }
 
 pub async fn router_with_database_config(
@@ -1254,7 +1221,6 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
             let app_notification_store = Arc::new(SqliteAppNotificationStore::new(pool.clone()));
             let app_chat_store = Arc::new(SqliteAppChatStore::new(pool.clone()));
             let app_runtime_store = Arc::new(SqliteAppRuntimeStore::new(pool.clone()));
-            let forum_store = Arc::new(SqliteForumStore::new(pool.clone()));
             let app_providers_read_store = Arc::new(SqliteAppProvidersReadStore::new(pool.clone()));
             let app_routing_read_store =
                 Arc::new(SqliteAppRoutingReadStore::with_api_key_secret_codec(
@@ -1275,20 +1241,35 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                     .map_err(|error| {
                         ProductCatalogRouterError::Sqlite(SqlCatalogLoadError::Database(error))
                     })?;
-            let (app_auth_store, app_auth_settings_store, app_session_event_store) =
-                sqlite_local_auth_runtime_components(pool.clone());
+            let entity_uuid_generator: EntityUuidGen = Arc::new(OsApiKeySecretGenerator);
+            let (
+                app_auth_store,
+                app_auth_settings_store,
+                app_session_event_store,
+                tenant_signing_key_store,
+                login_continuation_store,
+            ) = sqlite_local_auth_runtime_components(
+                pool.clone(),
+                Arc::clone(&entity_uuid_generator),
+            );
+            let usage_settlement_worker_config =
+                sdkwork_clawrouter_router_service::application::resolve_usage_settlement_worker_config(
+                    runtime_toml,
+                );
             let readiness_check =
                 sdkwork_clawrouter_router_service::infrastructure::sql::pool::sqlite_runtime_readiness_check(
                     pool.clone(),
                     runtime_toml,
-                    sdkwork_clawrouter_router_service::application::UsageSettlementWorkerConfig::disabled(),
+                    usage_settlement_worker_config,
                 );
             Ok(router_with_runtime_stores_and_database_status(
                 Some(app_auth_store),
                 Some(app_auth_settings_store),
                 app_session_event_store,
+                tenant_signing_key_store,
+                login_continuation_store,
                 Some(Arc::new(SqliteSiteSettingsStore::new(pool.clone()))),
-                Arc::new(OsApiKeySecretGenerator),
+                entity_uuid_generator,
                 trusted_subject_config,
                 app_session_config,
                 Arc::new(Pbkdf2Sha256PasswordHasher),
@@ -1309,10 +1290,6 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 None,
                 Some(Arc::clone(&app_runtime_gateway_client)),
                 Some(Arc::clone(&app_runtime_stream_bus)),
-                Some(forum_store.clone()),
-                Some(forum_store.clone()),
-                Some(forum_store.clone()),
-                Some(forum_store),
                 Some(app_providers_read_store),
                 Some(app_routing_read_store),
                 Some(app_routing_strategy_store),
@@ -1389,7 +1366,6 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
             let app_notification_store = Arc::new(PostgresAppNotificationStore::new(pool.clone()));
             let app_chat_store = Arc::new(PostgresAppChatStore::new(pool.clone()));
             let app_runtime_store = Arc::new(PostgresAppRuntimeStore::new(pool.clone()));
-            let forum_store = Arc::new(PostgresForumStore::new(pool.clone()));
             let app_providers_read_store =
                 Arc::new(PostgresAppProvidersReadStore::new(pool.clone()));
             let app_routing_read_store =
@@ -1413,20 +1389,35 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                             error,
                         ))
                     })?;
-            let (app_auth_store, app_auth_settings_store, app_session_event_store) =
-                postgres_local_auth_runtime_components(pool.clone());
+            let entity_uuid_generator: EntityUuidGen = Arc::new(OsApiKeySecretGenerator);
+            let (
+                app_auth_store,
+                app_auth_settings_store,
+                app_session_event_store,
+                tenant_signing_key_store,
+                login_continuation_store,
+            ) = postgres_local_auth_runtime_components(
+                pool.clone(),
+                Arc::clone(&entity_uuid_generator),
+            );
+            let usage_settlement_worker_config =
+                sdkwork_clawrouter_router_service::application::resolve_usage_settlement_worker_config(
+                    runtime_toml,
+                );
             let readiness_check =
                 sdkwork_clawrouter_router_service::infrastructure::sql::pool::postgres_runtime_readiness_check(
                     pool.clone(),
                     runtime_toml,
-                    sdkwork_clawrouter_router_service::application::UsageSettlementWorkerConfig::disabled(),
+                    usage_settlement_worker_config,
                 );
             Ok(router_with_runtime_stores_and_database_status(
                 Some(app_auth_store),
                 Some(app_auth_settings_store),
                 app_session_event_store,
+                tenant_signing_key_store,
+                login_continuation_store,
                 Some(Arc::new(PostgresSiteSettingsStore::new(pool.clone()))),
-                Arc::new(OsApiKeySecretGenerator),
+                entity_uuid_generator,
                 trusted_subject_config,
                 app_session_config,
                 Arc::new(Pbkdf2Sha256PasswordHasher),
@@ -1447,10 +1438,6 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 None,
                 Some(Arc::clone(&app_runtime_gateway_client)),
                 Some(Arc::clone(&app_runtime_stream_bus)),
-                Some(forum_store.clone()),
-                Some(forum_store.clone()),
-                Some(forum_store.clone()),
-                Some(forum_store),
                 Some(app_providers_read_store),
                 Some(app_routing_read_store),
                 Some(app_routing_strategy_store),
@@ -1500,8 +1487,13 @@ pub async fn router_from_env() -> Result<Router, ProductCatalogRouterError> {
     let deployment_mode = deployment_mode_from_env_or_toml(runtime_toml.as_ref())
         .map_err(ProductCatalogRouterError::Config)?;
     ensure_server_safe_deployment_mode(deployment_mode, runtime_toml.as_ref())?;
+    sdkwork_claw_config::ensure_server_production_redis_config(
+        deployment_mode,
+        runtime_toml.as_ref(),
+    )
+    .map_err(ProductCatalogRouterError::Config)?;
     let router = router_with_database_config_api_key_trusted_subject_app_session_and_optional_provider_secret_map_config_and_startup_install_mode(
-        config,
+        config.clone(),
         require_api_key_security_config(api_key_security_config)?,
         require_trusted_subject_config(trusted_subject_config)?,
         require_app_session_config(app_session_config)?,
@@ -1512,7 +1504,12 @@ pub async fn router_from_env() -> Result<Router, ProductCatalogRouterError> {
         runtime_toml.as_ref(),
     )
     .await?;
-    Ok(crate::web_bootstrap::maybe_wrap_router_with_web_framework(router).await)
+    Ok(
+        crate::web_bootstrap::maybe_wrap_router_with_web_framework_and_database_config(
+            router, &config,
+        )
+        .await,
+    )
 }
 
 fn ensure_server_safe_deployment_mode(
@@ -2298,11 +2295,7 @@ fn require_database_config(
 fn deployment_mode_from_env_or_toml(
     runtime_toml: Option<&RuntimeTomlConfig>,
 ) -> Result<DeploymentMode, String> {
-    DeploymentMode::from_optional_part(
-        std::env::var(DeploymentMode::ENV_DEPLOYMENT_MODE)
-            .ok()
-            .or_else(|| runtime_toml.and_then(|config| config.runtime.deployment_mode.clone())),
-    )
+    Ok(sdkwork_claw_config::DeploymentRuntime::resolve(runtime_toml)?.mode)
 }
 
 #[derive(Debug)]

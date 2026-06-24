@@ -50,9 +50,7 @@ client.set_header('X-Custom-Header', 'value')
 
 - `client.ai` - ai API
 - `client.chat` - chat API
-- `client.content` - content API
 - `client.iam` - iam API
-- `client.memory` - memory API
 - `client.notification` - notification API
 - `client.runtime` - runtime API
 - `client.system` - system API
@@ -79,14 +77,6 @@ result = client.chat.conversations.list(params)
 print(result)
 ```
 
-### content
-
-```python
-# List forum overview
-result = client.content.feeds.overview.retrieve()
-print(result)
-```
-
 ### iam
 
 ```python
@@ -95,27 +85,14 @@ result = client.iam.api_keys.list()
 print(result)
 ```
 
-### memory
-
-```python
-# List memory spaces
-params = {
-    'page': 'page',
-    'page_size': 'page_size',
-}
-result = client.memory.spaces.list(params)
-print(result)
-```
-
 ### notification
 
 ```python
-# List notifications
+# List portal notifications
 params = {
-    'app_id': 'app_id',
-    'include_archived': False,
-    'page': 3,
-    'page_size': 4,
+    'include_archived': True,
+    'page': 'page',
+    'page_size': 'page_size',
 }
 result = client.notification.list_notifications(params)
 print(result)

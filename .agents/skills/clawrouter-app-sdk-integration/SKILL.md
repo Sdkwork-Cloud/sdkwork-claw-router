@@ -10,7 +10,7 @@ description: Use when sdkwork-clawrouter app/frontend product code must call pro
 Use `@sdkwork/clawrouter-app-sdk` for frontend product-surface calls. The SDK system is selected by contract surface, not by a hard-coded URL prefix.
 The generated package lives at `sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript` and is produced from `generated/openapi/clawrouter-app-openapi.json` by `sdkwork-sdk-generator`.
 
-Do not change `apps/sdkwork-clawrouter-pc` UI visual design while doing app SDK integration. Keep app center, skill hub, forum, model, billing, and console presentation intact unless the user explicitly asks for a UI change. Course browsing is owned by `sdkwork-course` packages and SDKs, not `@sdkwork/clawrouter-app-sdk`.
+Do not change `apps/sdkwork-clawrouter-pc` UI visual design while doing app SDK integration. Keep app center, skill hub, model, billing, and console presentation intact unless the user explicitly asks for a UI change. Course browsing is owned by `sdkwork-course` packages and SDKs, not `@sdkwork/clawrouter-app-sdk`.
 
 ## Hard Rules
 
@@ -19,7 +19,7 @@ Do not change `apps/sdkwork-clawrouter-pc` UI visual design while doing app SDK 
 - Never hand-edit generated SDK output under `sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript`.
 - If an app SDK method is missing, close the contract first: update `docs/schema-registry/frontend-field-contracts.yaml`, regenerate `generated/api/api-contract-manifest.json`, regenerate `generated/openapi/clawrouter-app-openapi.json`, then regenerate the SDK.
 - App capability gaps must be closed through Rust handler, service, persistence, and OpenAPI contract before adding frontend workarounds.
-- Public read endpoints for app center, skill center, and forum browsing must not require app auth unless the product contract explicitly says the action is user-private or mutating. Course APIs are consumed through `sdkwork-course-app-sdk` when a course surface is composed into the portal.
+- Public read endpoints for app center and skill center browsing must not require app auth unless the product contract explicitly says the action is user-private or mutating. Course APIs are consumed through `sdkwork-course-app-sdk` when a course surface is composed into the portal.
 - Any table, column, index, migration, or embedded database schema change requires explicit user confirmation before editing.
 
 ## Workflow
@@ -32,7 +32,7 @@ Do not change `apps/sdkwork-clawrouter-pc` UI visual design while doing app SDK 
 import { getClawRouterAppSdkClient } from 'sdkwork-clawrouter-commons/runtime';
 ```
 
-4. Let feature modules call semantic generated methods such as `client.app.getApps`, `client.skill.getSkills`, `client.feed.fetchForumFeeds`, or `client.comment.fetchForumComments`.
+4. Let feature modules call semantic generated methods such as `client.app.getApps`, `client.skill.getSkills`, or `client.notification.list`.
 5. If the generated client lacks the required module or method, fix the OpenAPI source and rerun SDK generation instead of hand-writing a fallback.
 6. Run the relevant portal checks and the root quality gate before closing the work.
 

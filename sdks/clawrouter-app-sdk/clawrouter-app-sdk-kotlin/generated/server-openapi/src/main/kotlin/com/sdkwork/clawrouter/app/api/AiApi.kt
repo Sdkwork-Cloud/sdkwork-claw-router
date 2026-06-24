@@ -31,12 +31,6 @@ class AiApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<GatewayTracesListResult>() {})
     }
 
-    /** List generation history */
-    suspend fun generationList(): GenerationListResult? {
-        val raw = client.get(ApiPaths.appPath("/ai/generations"))
-        return client.convertValue(raw, object : TypeReference<GenerationListResult>() {})
-    }
-
     /** List model rankings */
     suspend fun modelRankingsList(rankScope: String? = null, vendorCode: String? = null, modality: String? = null, q: String? = null, limit: String? = null): ModelRankingsListResult? {
         val query = buildQueryString(listOf(
@@ -56,8 +50,8 @@ class AiApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<ModelVendorsListResult>() {})
     }
 
-    /** List models */
-    suspend fun modelsList(billingMeter: String? = null, vendorCode: String? = null, vendorCodes: List<String>? = null, modalities: List<String>? = null, capabilities: List<String>? = null, categories: List<String>? = null, groups: List<String>? = null, q: String? = null, limit: String? = null): ModelsListResult? {
+    /** List model catalog for Playground */
+    suspend fun modelsList(billingMeter: String? = null, vendorCode: String? = null, vendorCodes: List<String>? = null, modalities: List<String>? = null, capabilities: List<String>? = null, categories: List<String>? = null, groups: List<String>? = null, q: String? = null, limit: String? = null, offset: String? = null): ModelsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("billing_meter", billingMeter, "form", true, false, null),
             QueryParameterSpec("vendor_code", vendorCode, "form", true, false, null),
@@ -67,7 +61,8 @@ class AiApi(private val client: HttpClient) {
             QueryParameterSpec("categories", categories, "form", false, false, null),
             QueryParameterSpec("groups", groups, "form", false, false, null),
             QueryParameterSpec("q", q, "form", true, false, null),
-            QueryParameterSpec("limit", limit, "form", true, false, null)
+            QueryParameterSpec("limit", limit, "form", true, false, null),
+            QueryParameterSpec("offset", offset, "form", true, false, null)
         ))
         val raw = client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/ai/models"), query))
         return client.convertValue(raw, object : TypeReference<ModelsListResult>() {})

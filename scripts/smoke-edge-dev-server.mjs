@@ -577,7 +577,7 @@ async function main() {
       ...workspace,
       url: `${gatewayBaseUrl}/healthz`,
       label: 'direct gateway health',
-      validate: (result) => assertHealth(result, 'direct gateway health', 'sdkwork-clawrouter-gateway'),
+      validate: (result) => assertHealth(result, 'direct gateway health', 'sdkwork-clawrouter-cloud-gateway'),
     });
     await waitForEndpoint({
       ...workspace,

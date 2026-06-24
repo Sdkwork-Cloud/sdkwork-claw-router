@@ -179,7 +179,7 @@ describe("SDKWork file SDK adapter", () => {
     expect(binding.fileRef).not.toHaveProperty("bucket");
     expect(usage.usedLogicalBytes).toBe(1024);
     expect(events).toEqual([
-      "driveUploader.uploadByProfile:image:app-center:app:app_1:icon.png:tenant_1",
+      "driveUploader.uploadByProfile:image:app:app_1:icon.png",
       "filesList:app.icon:app_1",
       "fileBindingsList:app.icon:app_1",
       "fileBindingsCreate:app.icon:app_1",
@@ -605,7 +605,7 @@ function createRecordingDriveSdk(events: string[]): SdkworkFileDriveUploaderClie
     uploader: {
       async uploadByProfile(profile, input) {
         events.push(
-          `driveUploader.uploadByProfile:${profile}:${input.appId}:${input.appResourceType}:${input.appResourceId}:${input.originalFileName}:${input.tenantId}`,
+          `driveUploader.uploadByProfile:${profile}:${input.appResourceType}:${input.appResourceId}:${input.originalFileName}`,
         );
         return {
           parts: [
@@ -636,7 +636,7 @@ function createRecordingDriveSdk(events: string[]): SdkworkFileDriveUploaderClie
             spaceId: "space_drive_1",
             status: "completed",
             taskId: input.taskId ?? "task_1",
-            tenantId: input.tenantId,
+            tenantId: "tenant_1",
             totalParts: "1",
             uploadProfileCode: profile,
             uploadedBytes: String(input.file.size),
@@ -653,7 +653,7 @@ function createRecordingDriveSdk(events: string[]): SdkworkFileDriveUploaderClie
             state: "completed",
             storageProviderId: "provider_1",
             storageUploadId: "storage_upload_1",
-            tenantId: input.tenantId,
+            tenantId: "tenant_1",
             version: "1",
           },
         };

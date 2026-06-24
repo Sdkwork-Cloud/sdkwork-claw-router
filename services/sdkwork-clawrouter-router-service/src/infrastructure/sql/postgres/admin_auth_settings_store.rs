@@ -1,10 +1,9 @@
-use sqlx::{PgPool, Postgres, Row, Transaction};
+use sqlx::{PgPool, Postgres, Transaction};
 
+use crate::domain::{DomainError, DomainResult};
 use crate::infrastructure::sql::iam_scope_resolver::{
     resolve_postgres_iam_scope_domain, IamScopeResolveOptions,
 };
-use crate::infrastructure::sql::store_error::redacted_store_error;
-use crate::domain::{DomainError, DomainResult};
 use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
 use crate::infrastructure::sql::sql_admin_auth_settings::{
     settings_from_payload, settings_payload, settings_snapshot_payload,
@@ -12,6 +11,7 @@ use crate::infrastructure::sql::sql_admin_auth_settings::{
     CONFIG_TYPE_AUTH_SETTINGS,
 };
 use crate::infrastructure::sql::sql_hash::digest_hex;
+use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::ports::{
     AdminAuthSettings, AdminAuthSettingsFuture, AdminAuthSettingsStore, GetAdminAuthSettingsQuery,
     GetAdminAuthSettingsScopeQuery, UpdateAdminAuthSettingsCommand,

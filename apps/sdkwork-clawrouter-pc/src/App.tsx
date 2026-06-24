@@ -82,6 +82,16 @@ const MessagingAdmin = lazyRoute(
 const ServiceNodesAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-service-nodes'), 'ServiceNodesAdmin');
 const RuntimeRegionAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-runtime-region'), 'RuntimeRegionAdmin');
 const ClawRouterSiteSettingsPage = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-site'), 'ClawRouterSiteSettingsPage');
+const AgentsAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-agents'), 'AgentsAdmin');
+const SkillAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-skill'), 'SkillAdmin');
+const FilePlatformAdmin = lazyRoute<AdminSectionRouteProps>(
+  () => import('@sdkwork/clawrouter-pc-admin-file-platform'),
+  'FilePlatformAdmin',
+);
+const DriveAdmin = lazyRoute<AdminSectionRouteProps>(
+  () => import('@sdkwork/clawrouter-pc-admin-file-platform'),
+  'DriveAdmin',
+);
 
 function lazyRoute<TProps extends object = Record<string, unknown>>(
   loader: () => Promise<Record<string, unknown>>,
@@ -200,6 +210,8 @@ export default function App() {
               <Route path="model/mappings" element={<ModelMappingAdmin />} />
               <Route path="prompts" element={<PromptsAdmin />} />
               <Route path="mcp" element={<McpAdmin />} />
+              <Route path="agents" element={<AgentsAdmin />} />
+              <Route path="skill" element={<SkillAdmin />} />
               <Route path="channel" element={<ChannelAdmin />} />
               <Route path="oauth" element={<Navigate to="/admin/oauth/login-platforms" replace />} />
               <Route path="oauth/login-platforms" element={<OAuthAdmin sectionId="oauthLoginPlatforms" />} />
@@ -296,6 +308,20 @@ export default function App() {
               <Route path="messaging/verification-policies" element={<MessagingAdmin sectionId="verification-policies" />} />
               <Route path="ratelimit" element={<RateLimitAdmin />} />
               <Route path="service-nodes" element={<ServiceNodesAdmin />} />
+              <Route path="storage" element={<Navigate to="/admin/storage/providers" replace />} />
+              <Route path="storage/providers" element={<FilePlatformAdmin sectionId="providers" />} />
+              <Route path="storage/buckets" element={<FilePlatformAdmin sectionId="buckets" />} />
+              <Route path="storage/default-buckets" element={<FilePlatformAdmin sectionId="default-buckets" />} />
+              <Route path="storage/quotas" element={<FilePlatformAdmin sectionId="quotas" />} />
+              <Route path="storage/usage" element={<FilePlatformAdmin sectionId="usage" />} />
+              <Route path="storage/reconciliation" element={<FilePlatformAdmin sectionId="reconciliation" />} />
+              <Route path="storage/garbage-collection" element={<FilePlatformAdmin sectionId="garbage-collection" />} />
+              <Route path="drive" element={<Navigate to="/admin/drive/spaces" replace />} />
+              <Route path="drive/spaces" element={<DriveAdmin sectionId="spaces" />} />
+              <Route path="drive/nodes" element={<DriveAdmin sectionId="nodes" />} />
+              <Route path="drive/permissions" element={<DriveAdmin sectionId="permissions" />} />
+              <Route path="drive/share-links" element={<DriveAdmin sectionId="share-links" />} />
+              <Route path="drive/audit" element={<DriveAdmin sectionId="audit" />} />
               <Route path="settings" element={<ClawRouterAuthSettingsPage />} />
               <Route path="runtime-region" element={<RuntimeRegionAdmin />} />
               <Route path="site" element={<ClawRouterSiteSettingsPage />} />

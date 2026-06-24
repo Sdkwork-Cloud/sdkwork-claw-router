@@ -2,10 +2,10 @@ use sha2::{Digest, Sha256};
 use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
-use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::infrastructure::sql::routing_config_change::{
     record_sqlite_ai_routing_config_change, AiRoutingConfigChange,
 };
+use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::ports::{
     AdminProviderSecretCommandFuture, AdminProviderSecretItem, AdminProviderSecretStore,
     CreateAdminProviderSecretCommand, DeleteAdminProviderSecretCommand,

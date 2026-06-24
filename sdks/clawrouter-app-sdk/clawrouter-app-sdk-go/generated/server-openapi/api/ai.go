@@ -52,16 +52,6 @@ func (a *AiApi) GatewayTracesList() (sdktypes.GatewayTracesListResult, error) {
     return decodeResult[sdktypes.GatewayTracesListResult](raw)
 }
 
-// List generation history
-func (a *AiApi) GenerationList() (sdktypes.GenerationListResult, error) {
-    raw, err := a.client.Get(AppApiPath("/ai/generations"), nil, nil)
-    if err != nil {
-        var zero sdktypes.GenerationListResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.GenerationListResult](raw)
-}
-
 // List model rankings
 func (a *AiApi) ModelRankingsList(rankScope *string, vendorCode *string, modality *string, q *string, limit *string) (sdktypes.ModelRankingsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
@@ -89,8 +79,8 @@ func (a *AiApi) ModelVendorsList() (sdktypes.ModelVendorsListResult, error) {
     return decodeResult[sdktypes.ModelVendorsListResult](raw)
 }
 
-// List models
-func (a *AiApi) ModelsList(billingMeter *string, vendorCode *string, vendorCodes []string, modalities []string, capabilities []string, categories []string, groups []string, q *string, limit *string) (sdktypes.ModelsListResult, error) {
+// List model catalog for Playground
+func (a *AiApi) ModelsList(billingMeter *string, vendorCode *string, vendorCodes []string, modalities []string, capabilities []string, categories []string, groups []string, q *string, limit *string, offset *string) (sdktypes.ModelsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "billing_meter", Value: func() interface{} { if billingMeter == nil { return nil }; return *billingMeter }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "vendor_code", Value: func() interface{} { if vendorCode == nil { return nil }; return *vendorCode }(), Style: "form", Explode: true, AllowReserved: false},
@@ -101,6 +91,7 @@ func (a *AiApi) ModelsList(billingMeter *string, vendorCode *string, vendorCodes
         {Name: "groups", Value: func() interface{} { if groups == nil { return nil }; return *groups }(), Style: "form", Explode: false, AllowReserved: false},
         {Name: "q", Value: func() interface{} { if q == nil { return nil }; return *q }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "limit", Value: func() interface{} { if limit == nil { return nil }; return *limit }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "offset", Value: func() interface{} { if offset == nil { return nil }; return *offset }(), Style: "form", Explode: true, AllowReserved: false},
     })
     raw, err := a.client.Get(AppendQueryString(AppApiPath("/ai/models"), query), nil, nil)
     if err != nil {

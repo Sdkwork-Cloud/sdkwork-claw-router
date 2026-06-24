@@ -1,4 +1,5 @@
--- Router-local messaging runtime projection until sdkwork-appbase-messaging owns bootstrap DDL.
+-- Router-local messaging runtime projection aligned with appbase-messaging.tables.yaml.
+-- Ownership: sdkwork-appbase-messaging. Applied by DatabaseInstaller until appbase ships a bootstrap DDL crate.
 
 CREATE TABLE IF NOT EXISTS messaging_provider (
     id BIGINT NOT NULL PRIMARY KEY,

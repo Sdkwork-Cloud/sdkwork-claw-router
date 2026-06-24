@@ -1,20 +1,20 @@
 use sha2::Digest;
 use sqlx::{Row, SqlitePool};
 
+use crate::domain::{DomainError, DomainResult};
 use crate::infrastructure::sql::iam_scope_resolver::{
     resolve_sqlite_iam_organization_id_string, resolve_sqlite_iam_tenant_id_string,
     IamScopeResolveOptions,
 };
-use crate::infrastructure::sql::store_error::redacted_store_error;
-use crate::domain::{DomainError, DomainResult};
 use crate::infrastructure::sql::sql_admin_product_center::{
     media_resource_from_snapshot, media_resource_object_blob_id, media_resource_stable_id,
     provider_asset_media_resource,
 };
+use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::ports::{
     AppAuthFuture, AppAuthPasswordResetCodeCommand, AppAuthPasswordResetCommand,
     AppAuthRegistrationCommand, AppAuthStore, AppAuthUserCredential,
-    AppAuthVerificationCodeCommand, AppAuthVerificationCodeLookup,
+    AppAuthVerificationCodeCommand, AppAuthVerificationCodeLookup, AppOrganizationMembership,
 };
 
 const VERIFICATION_CODE_TYPE: &str = "verification_code";
@@ -85,6 +85,24 @@ impl AppAuthStore for SqliteAppAuthStore {
     ) -> AppAuthFuture<'a, bool> {
         Box::pin(async move { reset_password(&self.pool, command).await })
     }
+
+    fn list_active_organization_memberships<'a>(
+        &'a self,
+        tenant_id: i64,
+        user_id: i64,
+    ) -> AppAuthFuture<'a, Vec<AppOrganizationMembership>> {
+        Box::pin(async move {
+            list_active_organization_memberships(&self.pool, tenant_id, user_id).await
+        })
+    }
+
+    fn find_user_by_id<'a>(
+        &'a self,
+        tenant_id: i64,
+        user_id: i64,
+    ) -> AppAuthFuture<'a, Option<AppAuthUserCredential>> {
+        Box::pin(async move { find_user_by_id(&self.pool, tenant_id, user_id).await })
+    }
 }
 
 async fn find_user_for_password_login(
@@ -108,11 +126,98 @@ async fn find_user_for_code_login(
     find_user_by_account(pool, target, column).await
 }
 
+async fn find_user_by_id(
+    pool: &SqlitePool,
+    tenant_id: i64,
+    user_id: i64,
+) -> DomainResult<Option<AppAuthUserCredential>> {
+    let row = sqlx::query(
+        r#"
+        SELECT
+            u.id,
+            u.tenant_id,
+            '0' AS organization_id,
+            COALESCE(u.username, '') AS username,
+            COALESCE(u.email, '') AS email,
+            COALESCE(NULLIF(u.display_name, ''), NULLIF(u.username, ''), NULLIF(u.email, ''), 'SDKWork User') AS display_name,
+            COALESCE(CAST(u.avatar_resource_snapshot AS TEXT), '') AS avatar_resource_snapshot,
+            COALESCE(u.phone, '') AS phone,
+            'en-US' AS language,
+            CAST(u.created_at AS TEXT) AS registered_at,
+            COALESCE(CAST(MAX(c.updated_at) AS TEXT), '') AS password_last_changed,
+            0 AS mfa_enabled,
+            COUNT(DISTINCT ui.provider) AS identity_count,
+            COALESCE(c.credential_hash, '') AS password_hash,
+            COALESCE(u.status, '') AS status
+        FROM iam_user u
+        LEFT JOIN iam_credential c
+          ON c.tenant_id = u.tenant_id
+         AND c.user_id = u.id
+         AND c.credential_type = 'password'
+         AND c.status = 'active'
+        LEFT JOIN iam_user_identity ui
+          ON ui.tenant_id = u.tenant_id
+         AND ui.user_id = u.id
+        WHERE u.tenant_id = ?
+          AND u.id = ?
+        GROUP BY u.id, u.tenant_id, u.username, u.email, u.display_name,
+                 u.avatar_resource_snapshot, u.phone, u.created_at, c.credential_hash, u.status
+        LIMIT 1
+        "#,
+    )
+    .bind(tenant_id.to_string())
+    .bind(user_id.to_string())
+    .fetch_optional(pool)
+    .await
+    .map_err(|error| store_error("failed to load app auth user by id", error))?;
+
+    row.map(user_from_row).transpose()
+}
+
+async fn matching_active_tenant_count(
+    pool: &SqlitePool,
+    account: &str,
+    account_column: Option<&str>,
+) -> DomainResult<i64> {
+    let predicate = match account_column {
+        Some("email") => "LOWER(COALESCE(u.email, '')) = LOWER(?)",
+        Some("phone") => "COALESCE(u.phone, '') = ?",
+        _ => {
+            "LOWER(COALESCE(u.username, '')) = LOWER(?) OR LOWER(COALESCE(u.email, '')) = LOWER(?) OR COALESCE(u.phone, '') = ?"
+        }
+    };
+    let sql = format!(
+        r#"
+        SELECT COUNT(DISTINCT u.tenant_id)
+        FROM iam_user u
+        JOIN iam_credential c
+          ON c.tenant_id = u.tenant_id
+         AND c.user_id = u.id
+         AND c.credential_type = 'password'
+         AND c.status = 'active'
+        WHERE u.status = 'active'
+          AND ({predicate})
+        "#
+    );
+    let mut query = sqlx::query_scalar::<_, i64>(&sql);
+    query = match account_column {
+        Some(_) => query.bind(account),
+        None => query.bind(account).bind(account).bind(account),
+    };
+    query
+        .fetch_one(pool)
+        .await
+        .map_err(|error| store_error("failed to count app auth tenant matches", error))
+}
+
 async fn find_user_by_account(
     pool: &SqlitePool,
     account: &str,
     account_column: Option<&str>,
 ) -> DomainResult<Option<AppAuthUserCredential>> {
+    if matching_active_tenant_count(pool, account, account_column).await? > 1 {
+        return Ok(None);
+    }
     let predicate = match account_column {
         Some("email") => "LOWER(COALESCE(u.email, '')) = LOWER(?)",
         Some("phone") => "COALESCE(u.phone, '') = ?",
@@ -125,7 +230,7 @@ async fn find_user_by_account(
         SELECT
             u.id,
             u.tenant_id,
-            COALESCE(om.organization_id, '0') AS organization_id,
+            '0' AS organization_id,
             COALESCE(u.username, '') AS username,
             COALESCE(u.email, '') AS email,
             COALESCE(NULLIF(u.display_name, ''), NULLIF(u.username, ''), NULLIF(u.email, ''), 'SDKWork User') AS display_name,
@@ -144,17 +249,13 @@ async fn find_user_by_account(
          AND c.user_id = u.id
          AND c.credential_type = 'password'
          AND c.status = 'active'
-        LEFT JOIN iam_organization_membership om
-          ON om.tenant_id = u.tenant_id
-         AND om.user_id = u.id
-         AND om.status = 'active'
         LEFT JOIN iam_user_identity ui
           ON ui.tenant_id = u.tenant_id
          AND ui.user_id = u.id
         WHERE {predicate}
-        GROUP BY u.id, u.tenant_id, om.organization_id, u.username, u.email, u.display_name,
-                 u.avatar_resource_snapshot, u.phone, u.created_at, c.credential_hash, u.status, om.joined_at, u.updated_at
-        ORDER BY CASE u.status WHEN 'active' THEN 1 ELSE 0 END DESC, om.joined_at DESC, u.updated_at DESC, u.id DESC
+        GROUP BY u.id, u.tenant_id, u.username, u.email, u.display_name,
+                 u.avatar_resource_snapshot, u.phone, u.created_at, c.credential_hash, u.status, u.updated_at
+        ORDER BY CASE u.status WHEN 'active' THEN 1 ELSE 0 END DESC, u.updated_at DESC, u.id DESC
         LIMIT 1
         "#
     );
@@ -861,4 +962,50 @@ fn iam_organization_store_error(error: sqlx::Error) -> DomainError {
 
 fn store_error(context: &str, error: sqlx::Error) -> DomainError {
     redacted_store_error(context, error)
+}
+
+async fn list_active_organization_memberships(
+    pool: &SqlitePool,
+    tenant_id: i64,
+    user_id: i64,
+) -> DomainResult<Vec<AppOrganizationMembership>> {
+    let rows = sqlx::query(
+        r#"
+        SELECT
+            m.id,
+            m.tenant_id,
+            m.organization_id,
+            COALESCE(o.code, '') AS organization_code,
+            COALESCE(o.name, '') AS organization_name,
+            COALESCE(m.membership_kind, '') AS membership_kind,
+            COALESCE(m.is_primary, 0) AS is_primary
+        FROM iam_organization_membership m
+        LEFT JOIN iam_organization o
+          ON o.tenant_id = m.tenant_id
+         AND o.id = m.organization_id
+        WHERE m.tenant_id = ?
+          AND m.user_id = ?
+          AND m.status = 'active'
+        ORDER BY m.is_primary DESC, m.organization_id, m.id
+        "#,
+    )
+    .bind(tenant_id.to_string())
+    .bind(user_id.to_string())
+    .fetch_all(pool)
+    .await
+    .map_err(|error| store_error("failed to list organization memberships", error))?;
+
+    rows.into_iter()
+        .map(|row| {
+            Ok(AppOrganizationMembership {
+                id: string_cell(&row, "id"),
+                tenant_id: required_i64_cell(&row, "tenant_id")?,
+                organization_id: required_i64_cell(&row, "organization_id")?,
+                organization_code: string_cell(&row, "organization_code"),
+                organization_name: string_cell(&row, "organization_name"),
+                membership_kind: string_cell(&row, "membership_kind"),
+                is_primary: bool_cell(&row, "is_primary"),
+            })
+        })
+        .collect()
 }

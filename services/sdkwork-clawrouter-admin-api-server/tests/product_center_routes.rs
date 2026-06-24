@@ -2,7 +2,7 @@ use axum::body::Body;
 use axum::http::{Request, StatusCode};
 use sdkwork_claw_http::TrustedRequestSubject;
 use sdkwork_claw_test_support::{
-    default_trusted_request_subject, seeded_sqlite_catalog, trusted_subject_signature,
+    app_session_dual_token_headers, seeded_sqlite_catalog, trusted_request_subject,
 };
 use serde_json::{json, Value};
 use sqlx::SqlitePool;
@@ -124,7 +124,7 @@ async fn product_center_backend_routes_use_real_catalog_and_inventory_handlers()
         signed_request_builder(
             "POST",
             "/backend/v3/api/catalog/skus",
-            default_trusted_request_subject(),
+            bootstrap_admin_subject(),
         )
         .header("idempotency-key", "catalog-sku-create-media-test")
         .body(sku_create_body)
@@ -183,7 +183,7 @@ async fn product_center_backend_routes_use_real_catalog_and_inventory_handlers()
         signed_request_builder(
             "PATCH",
             "/backend/v3/api/inventory/stocks/stock-product-center-shirt-main",
-            default_trusted_request_subject(),
+            bootstrap_admin_subject(),
         )
         .header("idempotency-key", "inventory-stock-update-test-1")
         .body(update_body)
@@ -200,7 +200,7 @@ async fn product_center_backend_routes_use_real_catalog_and_inventory_handlers()
             signed_request_builder(
                 "PATCH",
                 "/backend/v3/api/inventory/stocks/stock-product-center-shirt-main",
-                default_trusted_request_subject(),
+                bootstrap_admin_subject(),
             )
             .header("idempotency-key", "inventory-stock-update-stale")
             .body(Body::from(
@@ -302,7 +302,7 @@ async fn product_center_product_create_route_persists_multiple_leaf_categories()
         signed_request_builder(
             "POST",
             "/backend/v3/api/catalog/products",
-            default_trusted_request_subject(),
+            bootstrap_admin_subject(),
         )
         .header("idempotency-key", "catalog-product-create-multi-category-test")
         .body(Body::from(
@@ -415,7 +415,7 @@ async fn product_center_category_routes_support_unicode_multi_level_crud_guards(
         signed_request_builder(
             "POST",
             "/backend/v3/api/catalog/categories",
-            default_trusted_request_subject(),
+            bootstrap_admin_subject(),
         )
         .header("idempotency-key", "catalog-category-unicode-root")
         .body(Body::from(
@@ -438,7 +438,7 @@ async fn product_center_category_routes_support_unicode_multi_level_crud_guards(
         signed_request_builder(
             "POST",
             "/backend/v3/api/catalog/categories",
-            default_trusted_request_subject(),
+            bootstrap_admin_subject(),
         )
         .header("idempotency-key", "catalog-category-unicode-child")
         .body(Body::from(
@@ -461,7 +461,7 @@ async fn product_center_category_routes_support_unicode_multi_level_crud_guards(
         signed_request_builder(
             "POST",
             "/backend/v3/api/catalog/categories",
-            default_trusted_request_subject(),
+            bootstrap_admin_subject(),
         )
         .header("idempotency-key", "catalog-category-unicode-grandchild")
         .body(Body::from(
@@ -502,7 +502,7 @@ async fn product_center_category_routes_support_unicode_multi_level_crud_guards(
             signed_request_builder(
                 "PATCH",
                 &format!("/backend/v3/api/catalog/categories/{root_id}"),
-                default_trusted_request_subject(),
+                bootstrap_admin_subject(),
             )
             .header("idempotency-key", "catalog-category-cycle-guard")
             .body(Body::from(
@@ -580,7 +580,7 @@ async fn product_center_category_attribute_routes_manage_binding_lifecycle() {
         signed_request_builder(
             "POST",
             "/backend/v3/api/catalog/category_attributes",
-            default_trusted_request_subject(),
+            bootstrap_admin_subject(),
         )
         .header("idempotency-key", "catalog-category-attribute-create-test")
         .body(Body::from(
@@ -645,7 +645,7 @@ async fn product_center_category_attribute_routes_manage_binding_lifecycle() {
         signed_request_builder(
             "PATCH",
             &format!("/backend/v3/api/catalog/category_attributes/{binding_id}"),
-            default_trusted_request_subject(),
+            bootstrap_admin_subject(),
         )
         .header("idempotency-key", "catalog-category-attribute-update-test")
         .body(Body::from(
@@ -708,12 +708,12 @@ async fn product_center_category_seed_initializer_imports_data_directories_idemp
         signed_request_builder(
             "POST",
             "/backend/v3/api/catalog/category_seeds/initialize",
-            default_trusted_request_subject(),
+            bootstrap_admin_subject(),
         )
         .header("idempotency-key", "category-seed-initialize-first")
         .body(Body::from(
             json!({
-                "datasets": ["product", "courses", "agents", "agent-skills", "mcp", "apps"],
+                "datasets": ["product", "agents", "agent-skills", "mcp"],
                 "mode": "admin_button"
             })
             .to_string(),
@@ -723,7 +723,7 @@ async fn product_center_category_seed_initializer_imports_data_directories_idemp
     .await;
     assert_eq!("2000", first["code"]);
     let summaries = first["data"]["items"].as_array().unwrap();
-    assert_eq!(6, summaries.len());
+    assert_eq!(4, summaries.len());
     assert!(summaries.iter().any(|item| {
         item["dataset"] == "product"
             && item["targetTable"] == "commerce_product_category"
@@ -741,7 +741,7 @@ async fn product_center_category_seed_initializer_imports_data_directories_idemp
             .await
             .unwrap();
     let plus_count_after_first: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM c_category WHERE group_name LIKE 'category-seed:%'",
+        "SELECT COUNT(1) FROM c_category WHERE category_type IN ('agent', 'skill_market', 'mcp')",
     )
     .fetch_one(&pool)
     .await
@@ -861,24 +861,17 @@ async fn product_center_category_seed_initializer_imports_data_directories_idemp
     .unwrap();
     assert_eq!("\u{98df}\u{54c1}\u{996e}\u{6599}", product_root_name);
 
-    let course_root_name: String =
-        sqlx::query_scalar("SELECT name FROM c_category WHERE code = 'courses-career'")
-            .fetch_one(&pool)
-            .await
-            .unwrap();
-    assert_eq!("\u{804c}\u{4e1a}\u{53d1}\u{5c55}", course_root_name);
-
     let second = request_json(
         router,
         signed_request_builder(
             "POST",
             "/backend/v3/api/catalog/category_seeds/initialize",
-            default_trusted_request_subject(),
+            bootstrap_admin_subject(),
         )
         .header("idempotency-key", "category-seed-initialize-second")
         .body(Body::from(
             json!({
-                "datasets": ["product", "courses", "agents", "agent-skills", "mcp", "apps"],
+                "datasets": ["product", "agents", "agent-skills", "mcp"],
                 "mode": "admin_button"
             })
             .to_string(),
@@ -894,7 +887,7 @@ async fn product_center_category_seed_initializer_imports_data_directories_idemp
             .await
             .unwrap();
     let plus_count_after_second: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM c_category WHERE group_name LIKE 'category-seed:%'",
+        "SELECT COUNT(1) FROM c_category WHERE category_type IN ('agent', 'skill_market', 'mcp')",
     )
     .fetch_one(&pool)
     .await
@@ -1064,8 +1057,7 @@ async fn create_product_center_schema(pool: &SqlitePool) {
             owner_type TEXT NOT NULL,
             owner_id TEXT NOT NULL,
             media_role TEXT NOT NULL,
-            media_resource_id TEXT NOT NULL,
-            object_blob_id INTEGER,
+            drive_uri TEXT,
             resource_snapshot TEXT,
             alt_text TEXT,
             sort_order INTEGER NOT NULL DEFAULT 0,
@@ -1137,15 +1129,12 @@ async fn create_category_seed_schema(pool: &SqlitePool) {
             tenant_id INTEGER NOT NULL DEFAULT 0,
             organization_id INTEGER NOT NULL DEFAULT 0,
             data_scope INTEGER NOT NULL DEFAULT 0,
+            category_type TEXT NOT NULL,
             name TEXT NOT NULL,
             description TEXT,
-            shop_id INTEGER,
-            type INTEGER NOT NULL,
-            group_name TEXT,
             code TEXT,
             tags TEXT NOT NULL DEFAULT '[]',
-            icon_media_resource_id TEXT,
-            icon_object_blob_id INTEGER,
+            icon_drive_uri TEXT,
             icon_resource_snapshot TEXT,
             sort_weight INTEGER NOT NULL DEFAULT 0,
             parent_id INTEGER,
@@ -1174,9 +1163,13 @@ async fn request_json(router: axum::Router, request: Request<Body>) -> Value {
 }
 
 fn signed_request(method: &str, path: &str, body: Body) -> Request<Body> {
-    signed_request_builder(method, path, default_trusted_request_subject())
+    signed_request_builder(method, path, bootstrap_admin_subject())
         .body(body)
         .unwrap()
+}
+
+fn bootstrap_admin_subject() -> TrustedRequestSubject {
+    trusted_request_subject(100_001, 0, 1)
 }
 
 fn signed_request_builder(
@@ -1184,26 +1177,16 @@ fn signed_request_builder(
     path: &str,
     subject: TrustedRequestSubject,
 ) -> axum::http::request::Builder {
-    let timestamp = current_unix_seconds();
-    let signature = trusted_subject_signature(subject, timestamp, method, path).unwrap();
+    let issued_at = current_unix_seconds();
+    let expires_at = issued_at + 3600;
+    let (authorization, access_token) =
+        app_session_dual_token_headers(subject, issued_at, expires_at).unwrap();
     Request::builder()
         .method(method)
         .uri(path)
         .header("content-type", "application/json")
-        .header("x-sdkwork-tenant-id", subject.tenant_id.to_string())
-        .header(
-            "x-sdkwork-organization-id",
-            subject.organization_id.to_string(),
-        )
-        .header("x-sdkwork-user-id", subject.user_id.to_string())
-        .header("x-sdkwork-subject-tenant-id", subject.tenant_id.to_string())
-        .header(
-            "x-sdkwork-subject-organization-id",
-            subject.organization_id.to_string(),
-        )
-        .header("x-sdkwork-subject-user-id", subject.user_id.to_string())
-        .header("x-sdkwork-subject-timestamp", timestamp.to_string())
-        .header("x-sdkwork-subject-signature", signature)
+        .header("authorization", authorization)
+        .header("Access-Token", access_token)
 }
 
 fn current_unix_seconds() -> i64 {

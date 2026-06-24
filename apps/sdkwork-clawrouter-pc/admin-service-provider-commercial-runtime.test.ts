@@ -149,8 +149,6 @@ test("service provider commercial schema, contract, OpenAPI, and SDK are registe
     "ai_usage_service_provider_edge",
     "commerce_usage_service_provider_statement",
     "commerce_usage_service_provider_adjustment",
-    "integration_provider_invoice_import",
-    "integration_provider_invoice_item",
     "commerce_usage_service_provider_reconciliation_run",
     "commerce_usage_service_provider_reconciliation_item",
     "commerce_service_provider_exposure_snapshot",
@@ -162,6 +160,8 @@ test("service provider commercial schema, contract, OpenAPI, and SDK are registe
   assert.doesNotMatch(schemaSource, /- table: ai_usage_service_provider_chain\r?\n/);
   assert.doesNotMatch(schemaSource, /\bchain_id:\s*int64\b/);
   for (const removedTable of [
+    "integration_provider_invoice_import",
+    "integration_provider_invoice_item",
     "commerce_usage_service_provider_settlement",
     "commerce_usage_service_provider_statement_item",
     "integration_service_provider_account_binding",

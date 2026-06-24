@@ -435,3 +435,33 @@ fn redact_redis_url(value: &str) -> String {
     }
     url.to_string()
 }
+
+/// Server production and staging profiles must enable Redis for distributed gateway rate limiting.
+pub fn ensure_server_production_redis_config(
+    deployment_mode: crate::DeploymentMode,
+    runtime_toml: Option<&crate::RuntimeTomlConfig>,
+) -> Result<(), String> {
+    use crate::DeploymentMode;
+
+    if deployment_mode == DeploymentMode::Desktop {
+        return Ok(());
+    }
+    let environment = runtime_toml
+        .and_then(|config| config.install.environment.as_deref())
+        .unwrap_or("development")
+        .trim()
+        .to_ascii_lowercase();
+    if environment != "production" && environment != "prod" && environment != "staging" {
+        return Ok(());
+    }
+    match RedisConfig::from_env_or_runtime_toml_with_default_enabled(runtime_toml, true) {
+        Ok(Some(config)) if config.enabled() => Ok(()),
+        Ok(None) | Ok(Some(_)) => Err(
+            "server production/staging deployment requires [redis] enabled with a valid connection profile (url or host/port)"
+                .to_owned(),
+        ),
+        Err(error) => Err(format!(
+            "server production/staging deployment requires valid [redis] configuration: {error}"
+        )),
+    }
+}

@@ -50,9 +50,7 @@ client.setHeader("X-Custom-Header", value: "value")
 
 - `client.ai` - ai API
 - `client.chat` - chat API
-- `client.content` - content API
 - `client.iam` - iam API
-- `client.memory` - memory API
 - `client.notification` - notification API
 - `client.runtime` - runtime API
 - `client.system` - system API
@@ -79,14 +77,6 @@ let result = try await client.chat.conversationsList(params: params)
 print(result)
 ```
 
-### content
-
-```swift
-// List forum overview
-let result = try await client.content.feedsOverviewRetrieve()
-print(result)
-```
-
 ### iam
 
 ```swift
@@ -95,27 +85,14 @@ let result = try await client.iam.apiKeysList()
 print(result)
 ```
 
-### memory
-
-```swift
-// List memory spaces
-let params: [String: Any] = [
-    "page": "page",
-    "page_size": "page-size"
-]
-let result = try await client.memory.spacesList(params: params)
-print(result)
-```
-
 ### notification
 
 ```swift
-// List notifications
+// List portal notifications
 let params: [String: Any] = [
-    "app_id": "1",
-    "include_archived": false,
-    "page": 3,
-    "page_size": 4
+    "include_archived": true,
+    "page": "page",
+    "page_size": "page-size"
 ]
 let result = try await client.notification.notificationsList(params: params)
 print(result)

@@ -7,8 +7,8 @@ use crate::api::{
     OpenAiInvocationPlugin, OpenAiInvocationPluginFuture, OpenAiInvocationRelayOutcome,
     OpenAiProviderRoute,
 };
-use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::domain::{DomainError, DomainResult, ProviderCircuitBreakerPolicy};
+use crate::infrastructure::sql::store_error::redacted_store_error;
 
 const HEALTHY: i64 = 1;
 const UNHEALTHY: i64 = 2;

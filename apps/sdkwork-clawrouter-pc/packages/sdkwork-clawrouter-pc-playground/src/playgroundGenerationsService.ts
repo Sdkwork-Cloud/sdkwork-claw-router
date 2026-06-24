@@ -32,8 +32,6 @@ import type {
 } from './playgroundTypes.ts';
 import type { GenerationAgentRunCreateInput } from './playgroundTypes.ts';
 
-const DEFAULT_TENANT_ID = 'current';
-
 export async function fetchPlaygroundGenerationHistoryFromService(
   service: SdkworkGenerationService,
 ): Promise<PlaygroundHistoryItem[]> {
@@ -109,7 +107,6 @@ function createGenerationCommandInput(
   targetType: PlaygroundGenerationTargetType,
 ): SdkworkGenerationCommandInput {
   return {
-    tenantId: DEFAULT_TENANT_ID,
     modality: mapGenerationTargetToCommandModality(targetType),
     operationType: resolveGenerationOperationType(input, targetType),
     prompt,

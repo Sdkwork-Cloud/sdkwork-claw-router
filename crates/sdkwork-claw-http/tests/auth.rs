@@ -279,6 +279,7 @@ fn app_session_claim_token_accepts_tenant_level_organization_zero() {
         permission_scope: vec!["clawrouter:console".to_owned()],
         issued_at: 1_800_000_000,
         expires_at: 1_800_000_300,
+        kid: None,
     };
 
     let token = sdkwork_claw_http::sign_app_session_token_with_claims(&config, &claims);
@@ -312,13 +313,11 @@ fn app_request_subject_boundary_rejects_swapped_auth_and_access_token_types() {
         environment: "dev".to_owned(),
         deployment_mode: "saas".to_owned(),
         auth_level: "password".to_owned(),
-        data_scope: vec![
-            "tenant:100001".to_owned(),
-            "user:30".to_owned(),
-        ],
+        data_scope: vec!["tenant:100001".to_owned(), "user:30".to_owned()],
         permission_scope: vec!["clawrouter:console".to_owned()],
         issued_at: 1_800_000_000,
         expires_at: 1_800_000_300,
+        kid: None,
     };
     let auth_header_token =
         sdkwork_claw_http::sign_app_session_token_with_claims(&app_session_config, &common_claims);
@@ -371,13 +370,11 @@ fn app_request_subject_boundary_rejects_access_token_from_different_session() {
         environment: "dev".to_owned(),
         deployment_mode: "saas".to_owned(),
         auth_level: "password".to_owned(),
-        data_scope: vec![
-            "tenant:100001".to_owned(),
-            "user:30".to_owned(),
-        ],
+        data_scope: vec!["tenant:100001".to_owned(), "user:30".to_owned()],
         permission_scope: vec!["clawrouter:console".to_owned()],
         issued_at: 1_800_000_000,
         expires_at: 1_800_000_300,
+        kid: None,
     };
     let mut access_claims = auth_claims.clone();
     access_claims.token_kind = AppSessionTokenKind::Access;

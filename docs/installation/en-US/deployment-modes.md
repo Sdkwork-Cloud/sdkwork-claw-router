@@ -15,7 +15,7 @@ SDKWork Claw Router release packages cover `archive`, `service`, `container`, an
 Source workspace note: `pnpm dev` (aliases `pnpm dev`, `pnpm dev:server`)
 starts the integrated product server development profile.
 `pnpm dev:desktop`  starts
-the `sdkwork-api-gateway`-backed client workspace only.
+the `sdkwork-api-cloud-gateway`-backed client workspace only.
 
 Redis is enabled and required by default for archive, service, and container
 server deployments because the server cache runtime uses shared Redis-backed

@@ -115,7 +115,6 @@ export interface UploadFileInput {
   idempotencyKey: string;
   onProgress?: (progress: FileUploadProgress) => void;
   organizationId?: string;
-  operatorId: string;
   parentNodeId?: string;
   purpose: string;
   requestId: string;

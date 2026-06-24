@@ -98,6 +98,8 @@ pub struct AppSessionTokenClaims {
     pub permission_scope: Vec<String>,
     pub issued_at: i64,
     pub expires_at: i64,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub kid: Option<String>,
 }
 
 impl AppSessionTokenClaims {
@@ -632,9 +634,16 @@ pub fn sign_app_session_token_with_claims(
     config: &AppSessionConfig,
     claims: &AppSessionTokenClaims,
 ) -> String {
+    sign_app_session_token_with_claims_and_secret(config.signing_secret().as_bytes(), claims)
+}
+
+pub fn sign_app_session_token_with_claims_and_secret(
+    signing_secret: &[u8],
+    claims: &AppSessionTokenClaims,
+) -> String {
     let payload = app_session_claim_payload(claims);
     let encoded_payload = URL_SAFE_NO_PAD.encode(payload.as_bytes());
-    let mut mac = app_session_hmac_for_config(config);
+    let mut mac = app_session_hmac_for_secret(signing_secret);
     mac.update(encoded_payload.as_bytes());
     format!(
         "{}.{}.{}",
@@ -642,6 +651,35 @@ pub fn sign_app_session_token_with_claims(
         encoded_payload,
         hex::encode(mac.finalize().into_bytes())
     )
+}
+
+pub fn decode_app_session_token_claims_unverified(
+    token: &str,
+) -> Result<AppSessionTokenClaims, AppSessionTokenError> {
+    let parts: Vec<&str> = token.trim().split('.').collect();
+    if parts.len() != 3 || parts[0] != APP_SESSION_CLAIM_TOKEN_VERSION {
+        return Err(AppSessionTokenError::InvalidTokenFormat);
+    }
+    let decoded_payload = URL_SAFE_NO_PAD
+        .decode(parts[1])
+        .map_err(|_| AppSessionTokenError::InvalidTokenFormat)?;
+    serde_json::from_slice(&decoded_payload).map_err(|_| AppSessionTokenError::InvalidTokenFormat)
+}
+
+pub fn verify_app_session_token_claims_with_signing_secret(
+    config: &AppSessionConfig,
+    signing_secret: &[u8],
+    token: &str,
+    now_unix_seconds: i64,
+) -> Result<AppSessionTokenClaims, AppSessionTokenError> {
+    let parts: Vec<&str> = token.trim().split('.').collect();
+    if parts.len() != 3 || parts[0] != APP_SESSION_CLAIM_TOKEN_VERSION {
+        return Err(AppSessionTokenError::InvalidTokenFormat);
+    }
+    verify_app_session_claim_signature_with_secret(signing_secret, parts[1], parts[2])?;
+    let claims = decode_app_session_token_claims_unverified(token)?;
+    validate_app_session_claims(config, &claims, now_unix_seconds)?;
+    Ok(claims)
 }
 
 pub fn verify_app_session_authorization_header(
@@ -1048,8 +1086,11 @@ fn hmac_for_config(config: &TrustedSubjectConfig) -> HmacSha256 {
 }
 
 fn app_session_hmac_for_config(config: &AppSessionConfig) -> HmacSha256 {
-    HmacSha256::new_from_slice(config.signing_secret().as_bytes())
-        .expect("HMAC accepts signing secrets of any length")
+    app_session_hmac_for_secret(config.signing_secret().as_bytes())
+}
+
+fn app_session_hmac_for_secret(signing_secret: &[u8]) -> HmacSha256 {
+    HmacSha256::new_from_slice(signing_secret).expect("HMAC accepts signing secrets of any length")
 }
 
 fn app_session_payload(subject: TrustedRequestSubject, issued_at: i64, expires_at: i64) -> String {
@@ -1171,9 +1212,21 @@ fn verify_app_session_claim_signature(
     encoded_payload: &str,
     signature: &str,
 ) -> Result<(), AppSessionTokenError> {
+    verify_app_session_claim_signature_with_secret(
+        config.signing_secret().as_bytes(),
+        encoded_payload,
+        signature,
+    )
+}
+
+fn verify_app_session_claim_signature_with_secret(
+    signing_secret: &[u8],
+    encoded_payload: &str,
+    signature: &str,
+) -> Result<(), AppSessionTokenError> {
     let decoded_signature =
         hex::decode(signature).map_err(|_| AppSessionTokenError::InvalidSignature)?;
-    let mut mac = app_session_hmac_for_config(config);
+    let mut mac = app_session_hmac_for_secret(signing_secret);
     mac.update(encoded_payload.as_bytes());
     mac.verify_slice(&decoded_signature)
         .map_err(|_| AppSessionTokenError::InvalidSignature)

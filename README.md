@@ -357,13 +357,13 @@ workspace-local `data/sdkwork-models` directory as
 database on every server-mode startup. Default workspace commands
 (`pnpm dev`, `pnpm dev:server`) start the topology-aware integrated
 product server workspace. Gateway-backed client commands
-(`pnpm dev:desktop`, `pnpm dev:desktop`) start `sdkwork-api-gateway` plus
+(`pnpm dev:desktop`, `pnpm dev:desktop`) start `sdkwork-api-cloud-gateway` plus
 the portal only and do not run installer or catalog refresh steps.
 
 Command intent:
 
 - `pnpm dev` (alias: `pnpm dev`, `pnpm dev:server`) starts the default
-  integrated product server workspace (`self-hosted.unified-process.development`).
+  integrated product server workspace (`standalone.unified-process.development`).
   See `docs/topology-standard.md` for the full command matrix and env keys.
 - `pnpm dev:browser:postgres:split-services:standalone` starts split-services internal validation layout.
 - `pnpm dev:desktop`  starts
@@ -399,7 +399,7 @@ Use the extensionless `pnpm` command in cross-platform examples. On Windows
 shells that block `pnpm.ps1`, call the package-manager shim through your shell
 or adjust the execution policy instead of changing committed scripts.
 
-Client development commands use `sdkwork-api-gateway` for API integration.
+Client development commands use `sdkwork-api-cloud-gateway` for API integration.
 Gateway-backed client commands (`pnpm dev:desktop`, `pnpm dev:desktop`) use
 that gateway workspace. Explicit product server development commands use PostgreSQL for integration
 testing unless an explicit SQLite server profile is selected. Desktop packages and first-run local user data use SQLite under `~/.sdkwork/router/data`.
@@ -411,7 +411,7 @@ backend service.
 
 Gateway-backed client startup (`pnpm dev:desktop`, `pnpm dev:desktop`) prints
 the browser and API access matrix before launching processes. With default
-ports, `sdkwork-api-gateway` listens on `3902` and the portal dev server
+ports, `sdkwork-api-cloud-gateway` listens on `3902` and the portal dev server
 listens on `3901`:
 
 - Direct Portal Dev: `http://127.0.0.1:3901/`
@@ -423,7 +423,7 @@ listens on `3901`:
 - SDKWork API Gateway Ready: `http://127.0.0.1:3902/readyz`
 
 The portal dev server proxies same-origin API requests to the managed
-`sdkwork-api-gateway` process:
+`sdkwork-api-cloud-gateway` process:
 
 - Direct Portal Gateway API Proxy: `http://127.0.0.1:3901/v1`
 - Direct Portal Backend/Admin API Proxy:
@@ -937,7 +937,6 @@ data_directory = "/var/lib/sdkwork/router"
 [request_limits]
 admin_app_json_body_max_bytes = 131072
 admin_skill_json_body_max_bytes = 65536
-forum_json_body_max_bytes = 262144
 payment_callback_body_max_bytes = 65536
 
 [install]
@@ -968,7 +967,7 @@ long-lived application state directory. Keep it on durable storage for service
 and container deployments.
 
 `[request_limits]` controls runtime body limits for high-risk write entrypoints:
-backend app JSON, backend skill JSON, public forum JSON, and payment provider
+backend app JSON, backend skill JSON, and payment provider
 callbacks. Keep reverse proxy, load balancer, and container ingress request-body
 limits aligned with these values so oversized requests fail before expensive
 application work.
@@ -1173,7 +1172,7 @@ DevTools Protocol and verifies:
   Chrome DevTools Protocol, so DOM text assertions are stable on CI and release
   hosts with different OS languages.
 - The public route matrix renders expected DOM content for `/models`,
-  `/models/openai%2Fgpt-4o-mini`, `/rankings`, `/forum`, `/forum/1`, `/apps`,
+  `/models/openai%2Fgpt-4o-mini`, `/rankings`, `/apps`,
   `/apps/app-1`, `/skills-hub`, `/skills-hub/skill-1`, and `/api-reference`.
 - SDK-backed `/models` routes also use route-scoped Chrome DevTools Protocol
   `Fetch` fixtures for `/app/v3/api/router/models`, proving the generated app
@@ -1182,12 +1181,6 @@ DevTools Protocol and verifies:
   catalog, encoded runtime detail routes, public reference/unavailable price
   status, performance source labels, and `Try in Playground` detail actions
   without exposing private pricing tokens in the DOM.
-- Schema-provenanced `/forum` routes also exercise catalog category filtering,
-  search filtering, empty-result fallback, top-sort ordering, post-card
-  navigation, `/forum/1` detail rendering, related-discussion navigation,
-  missing-detail fallback, accessible search controls, deterministic snapshot
-  labels, and comment copy while rejecting browser runtime drift tokens such as
-  `Math.random` and `toLocaleDateString`.
 - SDK-backed App Center and Skills Hub routes wait for their asynchronous
   route-specific DOM text before final assertions, so recoverable SDK/API
   failure states are verified in the production browser gate instead of being
@@ -1498,3 +1491,10 @@ Extension points are limited to declared public exports, runtime entrypoints, SD
 ### Owner And Status
 
 Owner and lifecycle status are tracked in `specs/component.spec.json`.
+
+## Documentation Canon
+
+- [docs/README.md](docs/README.md)
+- [docs/product/prd/PRD.md](docs/product/prd/PRD.md)
+- [docs/architecture/tech/TECH_ARCHITECTURE.md](docs/architecture/tech/TECH_ARCHITECTURE.md)
+

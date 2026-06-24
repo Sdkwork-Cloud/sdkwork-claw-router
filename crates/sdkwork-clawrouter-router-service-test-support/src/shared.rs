@@ -1,8 +1,6 @@
 #![allow(dead_code)]
 
-use sdkwork_appbase_iam_bootstrap::{
-    DEFAULT_IAM_ORGANIZATION_ID, DEFAULT_IAM_TENANT_ID,
-};
+use sdkwork_appbase_iam_bootstrap::{DEFAULT_IAM_ORGANIZATION_ID, DEFAULT_IAM_TENANT_ID};
 use sdkwork_clawrouter_router_service::infrastructure::sql::installer::{
     DatabaseInstallOptions, DatabaseInstaller, CURRENT_SCHEMA_VERSION,
 };
@@ -340,7 +338,6 @@ pub(crate) async fn sqlite_template_objects_current(pool: &SqlitePool) -> bool {
         ("table", "iam_verification_scene_policy"),
         ("table", "messaging_template"),
         ("table", "platform_app"),
-        ("table", "content_forum_post"),
     ];
     for (object_type, name) in required_schema_objects {
         let exists: i64 = match sqlx::query_scalar(

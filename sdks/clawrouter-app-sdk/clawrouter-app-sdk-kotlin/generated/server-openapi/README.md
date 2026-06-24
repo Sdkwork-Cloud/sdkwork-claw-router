@@ -55,9 +55,7 @@ val client = SdkworkAppClient(config)
 
 - `client.ai` - ai API
 - `client.chat` - chat API
-- `client.content` - content API
 - `client.iam` - iam API
-- `client.memory` - memory API
 - `client.notification` - notification API
 - `client.runtime` - runtime API
 - `client.system` - system API
@@ -84,14 +82,6 @@ val result = client.chat.conversationsList(params)
 println(result)
 ```
 
-### content
-
-```kotlin
-// List forum overview
-val result = client.content.feedsOverviewRetrieve()
-println(result)
-```
-
 ### iam
 
 ```kotlin
@@ -100,27 +90,14 @@ val result = client.iam.apiKeysList()
 println(result)
 ```
 
-### memory
-
-```kotlin
-// List memory spaces
-val params = linkedMapOf<String, Any>(
-    "page" to "page",
-    "page_size" to "page-size"
-)
-val result = client.memory.spacesList(params)
-println(result)
-```
-
 ### notification
 
 ```kotlin
-// List notifications
+// List portal notifications
 val params = linkedMapOf<String, Any>(
-    "app_id" to "1",
-    "include_archived" to false,
-    "page" to 3,
-    "page_size" to 4
+    "include_archived" to true,
+    "page" to "page",
+    "page_size" to "page-size"
 )
 val result = client.notification.notificationsList(params)
 println(result)

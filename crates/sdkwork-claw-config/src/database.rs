@@ -914,14 +914,8 @@ impl RuntimeConfigProfile {
     pub fn from_env_or_runtime_toml(
         runtime_toml: Option<&crate::RuntimeTomlConfig>,
     ) -> Result<Self, String> {
-        let Some(deployment_mode) = std::env::var(crate::DeploymentMode::ENV_DEPLOYMENT_MODE)
-            .ok()
-            .or_else(|| runtime_toml.and_then(|config| config.runtime.deployment_mode.clone()))
-        else {
-            return Ok(Self::Server);
-        };
-        let deployment_mode = crate::DeploymentMode::from_optional_part(Some(deployment_mode))?;
-        Ok(Self::from_deployment_mode(deployment_mode))
+        let deployment_runtime = crate::deployment::resolve_deployment_runtime(runtime_toml)?;
+        Ok(Self::from_deployment_mode(deployment_runtime.mode))
     }
 
     pub fn from_deployment_mode(deployment_mode: crate::DeploymentMode) -> Self {

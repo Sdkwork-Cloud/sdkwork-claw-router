@@ -1,15 +1,13 @@
 use sqlx::{PgPool, Postgres, Row, Transaction};
 
-use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::domain::{DomainError, DomainResult};
 use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
-use crate::infrastructure::sql::sql_admin_product_center::{
-    media_resource_object_blob_id, media_resource_stable_id,
-};
+use crate::infrastructure::sql::sql_admin_product_center::drive_uri_from_resource;
 use crate::infrastructure::sql::sql_admin_site::{
     default_site_service_code, health_status_label, site_environment_code, site_environment_label,
     site_status_code, site_status_label,
 };
+use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::ports::{
     AdminSiteChannelItem, AdminSiteConnectionCheckItem, AdminSiteFuture, AdminSiteItem,
     AdminSiteStore, CreateAdminSiteCommand, DeleteAdminSiteCommand, ListAdminSiteChannelsQuery,
@@ -109,8 +107,7 @@ async fn create_site(
     let status = site_status_code(&command.status);
     let environment = site_environment_code(&command.environment);
     let logo = command.logo.as_ref();
-    let logo_media_resource_id = logo.map(media_resource_stable_id);
-    let logo_object_blob_id = logo.and_then(media_resource_object_blob_id);
+    let logo_drive_uri = logo.and_then(drive_uri_from_resource);
     let logo_resource_snapshot = logo.map(serde_json::Value::to_string);
     let metadata = site_metadata_json(&command.domains, &command.vendor_codes)?;
     let site_id = next_claw_runtime_id("ai_site")?;
@@ -119,8 +116,8 @@ async fn create_site(
         r#"
         INSERT INTO ai_site (
             uuid, tenant_id, organization_id, status, site_code, site_name, display_name,
-            description, base_url, website_url, docs_url, logo_media_resource_id,
-            logo_object_blob_id, logo_resource_snapshot, metadata, site_type, owner_kind,
+            description, base_url, website_url, docs_url, logo_drive_uri,
+            logo_resource_snapshot, metadata, site_type, owner_kind,
             region_code, environment, health_status, id
         ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14::jsonb, $15::jsonb, $16, $17, $18, $19, 1, $20)
         "#,
@@ -136,8 +133,7 @@ async fn create_site(
     .bind(&command.base_url)
     .bind(&command.website_url)
     .bind(&command.docs_url)
-    .bind(&logo_media_resource_id)
-    .bind(logo_object_blob_id)
+    .bind(&logo_drive_uri)
     .bind(&logo_resource_snapshot)
     .bind(&metadata)
     .bind(&command.site_type)
@@ -243,8 +239,7 @@ async fn update_site(
     let masked_label_changed = command.masked_label.is_some();
     let masked_label = command.masked_label.flatten();
     let logo_ref = logo.as_ref();
-    let logo_media_resource_id = logo_ref.map(media_resource_stable_id);
-    let logo_object_blob_id = logo_ref.and_then(media_resource_object_blob_id);
+    let logo_drive_uri = logo_ref.and_then(drive_uri_from_resource);
     let logo_resource_snapshot = logo_ref.map(serde_json::Value::to_string);
     let metadata = site_metadata_json(&domains, &vendor_codes)?;
     let mut tx = pool
@@ -255,11 +250,11 @@ async fn update_site(
         r#"
         UPDATE ai_site
         SET site_code = $1, site_name = $2, display_name = $3, description = $4, base_url = $5,
-            website_url = $6, docs_url = $7, logo_media_resource_id = $8, logo_object_blob_id = $9,
-            logo_resource_snapshot = $10::jsonb, metadata = $11::jsonb, site_type = $12,
-            owner_kind = $13, region_code = $14, environment = $15, status = $16,
+            website_url = $6, docs_url = $7, logo_drive_uri = $8,
+            logo_resource_snapshot = $9::jsonb, metadata = $10::jsonb, site_type = $11,
+            owner_kind = $12, region_code = $13, environment = $14, status = $15,
             updated_at = CURRENT_TIMESTAMP, version = version + 1
-        WHERE tenant_id = $17 AND organization_id = $18 AND id = $19 AND deleted_at IS NULL
+        WHERE tenant_id = $16 AND organization_id = $17 AND id = $18 AND deleted_at IS NULL
         "#,
     )
     .bind(&site_code)
@@ -269,8 +264,7 @@ async fn update_site(
     .bind(&base_url)
     .bind(&website_url)
     .bind(&docs_url)
-    .bind(&logo_media_resource_id)
-    .bind(logo_object_blob_id)
+    .bind(&logo_drive_uri)
     .bind(&logo_resource_snapshot)
     .bind(&metadata)
     .bind(&site_type)

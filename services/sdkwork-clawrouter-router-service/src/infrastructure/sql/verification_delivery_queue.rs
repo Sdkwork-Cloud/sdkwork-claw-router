@@ -1,6 +1,6 @@
-use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::domain::{DomainError, DomainResult};
 use crate::infrastructure::sql::model_catalog_import::stable_uuid;
+use crate::infrastructure::sql::store_error::redacted_store_error;
 use crate::ports::{ProviderVerificationDeliveryReceipt, ProviderVerificationDeliveryRequest};
 use sha2::{Digest, Sha256};
 

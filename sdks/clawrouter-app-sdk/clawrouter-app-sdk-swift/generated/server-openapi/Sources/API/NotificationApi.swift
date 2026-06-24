@@ -7,10 +7,9 @@ public class NotificationApi {
         self.client = client
     }
 
-    /// List notifications
-    public func notificationsList(appId: String? = nil, includeArchived: Bool? = nil, page: Int? = nil, pageSize: Int? = nil) async throws -> NotificationsListResult? {
+    /// List portal notifications
+    public func notificationsList(includeArchived: Bool? = nil, page: String? = nil, pageSize: String? = nil) async throws -> NotificationsListResult? {
         let query = buildQueryString([
-            QueryParameterSpec(name: "app_id", value: appId, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "include_archived", value: includeArchived, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)
@@ -18,20 +17,26 @@ public class NotificationApi {
         return try await client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/notification/notifications"), query), responseType: NotificationsListResult.self)
     }
 
-    /// Acknowledge
-    public func notificationsAcknowledgeCreate(notificationId: String, appId: String? = nil) async throws -> NotificationsAcknowledgeCreateResult? {
-        let query = buildQueryString([
-            QueryParameterSpec(name: "app_id", value: appId, style: "form", explode: true, allowReserved: false, contentType: nil)
-        ])
-        return try await client.post(ApiPaths.appendQueryString(ApiPaths.appPath("/notification/notifications/\(serializePathParameter(notificationId, PathParameterSpec(name: "notificationId", style: "simple", explode: false)))/acknowledge"), query), body: nil, responseType: NotificationsAcknowledgeCreateResult.self)
+    /// Acknowledge portal notification
+    public func notificationsAcknowledgeCreate(notificationId: String, idempotencyKey: String) async throws -> NotificationsAcknowledgeCreateResult? {
+        let requestHeaders = buildRequestHeaders(
+            [
+                "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
+            ],
+            [:]
+        )
+        return try await client.post(ApiPaths.appPath("/notification/notifications/\(serializePathParameter(notificationId, PathParameterSpec(name: "notificationId", style: "simple", explode: false)))/acknowledge"), body: nil, params: nil, headers: requestHeaders, responseType: NotificationsAcknowledgeCreateResult.self)
     }
 
-    /// Mark popup seen
-    public func notificationsPopupSeenCreate(notificationId: String, appId: String? = nil) async throws -> NotificationsPopupSeenCreateResult? {
-        let query = buildQueryString([
-            QueryParameterSpec(name: "app_id", value: appId, style: "form", explode: true, allowReserved: false, contentType: nil)
-        ])
-        return try await client.post(ApiPaths.appendQueryString(ApiPaths.appPath("/notification/notifications/\(serializePathParameter(notificationId, PathParameterSpec(name: "notificationId", style: "simple", explode: false)))/popup_seen"), query), body: nil, responseType: NotificationsPopupSeenCreateResult.self)
+    /// Mark portal notification popup seen
+    public func notificationsPopupSeenCreate(notificationId: String, idempotencyKey: String) async throws -> NotificationsPopupSeenCreateResult? {
+        let requestHeaders = buildRequestHeaders(
+            [
+                "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
+            ],
+            [:]
+        )
+        return try await client.post(ApiPaths.appPath("/notification/notifications/\(serializePathParameter(notificationId, PathParameterSpec(name: "notificationId", style: "simple", explode: false)))/popup_seen"), body: nil, params: nil, headers: requestHeaders, responseType: NotificationsPopupSeenCreateResult.self)
     }
 
     private struct PathParameterSpec {
@@ -211,4 +216,68 @@ public class NotificationApi {
         value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? value
     }
 
+    private struct HeaderParameterSpec {
+        let value: Any?
+        let style: String
+        let explode: Bool
+        let contentType: String?
+    }
+
+    private func buildRequestHeaders(_ headers: [String: HeaderParameterSpec], _ cookies: [String: HeaderParameterSpec]) -> [String: String]? {
+        var requestHeaders: [String: String] = [:]
+        for (name, parameter) in headers {
+            if let serialized = serializeParameterValue(parameter) {
+                requestHeaders[name] = serialized
+            }
+        }
+
+        if let cookieHeader = buildCookieHeader(cookies), !cookieHeader.isEmpty {
+            requestHeaders["Cookie"] = requestHeaders["Cookie"].map { "\($0); \(cookieHeader)" } ?? cookieHeader
+        }
+
+        return requestHeaders.isEmpty ? nil : requestHeaders
+    }
+
+    private func buildCookieHeader(_ cookies: [String: HeaderParameterSpec]) -> String? {
+        let pairs = cookies.compactMap { name, parameter -> String? in
+            guard let serialized = serializeParameterValue(parameter) else { return nil }
+            return "\(urlEncode(name))=\(urlEncode(serialized))"
+        }
+        return pairs.isEmpty ? nil : pairs.joined(separator: "; ")
+    }
+
+    private func serializeParameterValue(_ parameter: HeaderParameterSpec?) -> String? {
+        guard let parameter, let value = parameter.value else { return nil }
+        if let contentType = parameter.contentType, !contentType.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            if JSONSerialization.isValidJSONObject(value),
+               let data = try? JSONSerialization.data(withJSONObject: value, options: []),
+               let json = String(data: data, encoding: .utf8) {
+                return json
+            }
+            return String(describing: value)
+        }
+        if let array = value as? [Any?] {
+            return array.compactMap { $0.map { String(describing: $0) } }.joined(separator: ",")
+        }
+        if let object = value as? [String: Any] {
+            var values: [String] = []
+            for (key, item) in object {
+                if parameter.explode {
+                    values.append("\(key)=\(item)")
+                } else {
+                    values.append(key)
+                    values.append(String(describing: item))
+                }
+            }
+            return values.joined(separator: ",")
+        }
+        if let date = value as? Date {
+            return ISO8601DateFormatter().string(from: date)
+        }
+        return String(describing: value)
+    }
+
+    private func urlEncode(_ value: String) -> String {
+        value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? value
+    }
 }

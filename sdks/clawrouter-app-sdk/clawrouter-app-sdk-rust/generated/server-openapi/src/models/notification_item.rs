@@ -18,20 +18,20 @@ pub struct NotificationItem {
     /// Content field on notification item.
     pub content: String,
 
-    /// User-facing short notification summary.
+    /// Desc field on notification item.
     pub desc: String,
 
     /// Id field on notification item.
     pub id: String,
 
-    /// Server-side per-user state indicating that the popup has already been presented for this app.
+    /// Popup seen field on notification item.
     #[serde(rename = "popupSeen")]
     pub popup_seen: bool,
 
     /// Read field on notification item.
     pub read: bool,
 
-    /// Whether this notification should be displayed as a modal popup when the frontend loads.
+    /// Show as popup field on notification item.
     #[serde(rename = "showAsPopup")]
     pub show_as_popup: bool,
 

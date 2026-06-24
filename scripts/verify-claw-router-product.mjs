@@ -11,6 +11,7 @@ Run the standard sdkwork-clawrouter verification sequence.
 Options:
   --fast                 Run the low-cost local iteration gate for Codex loops.
   --precommit            Run the staged, commit-time verification gate.
+  --ci                   Run the pull-request CI verification gate.
   --parallel             Run dependency-safe verification groups concurrently.
   --concurrency <count>  Maximum commands to run at once in a parallel group. Defaults to 4.
   --build-jobs <count>   Override Cargo build parallelism for Rust verify steps.
@@ -32,6 +33,7 @@ function parseArgs(argv) {
     buildJobs: null,
     fast: false,
     precommit: false,
+    ci: false,
     parallel: false,
     concurrency: 4,
     withEdgeDevSmoke: false,
@@ -62,6 +64,9 @@ function parseArgs(argv) {
         break;
       case '--precommit':
         settings.precommit = true;
+        break;
+      case '--ci':
+        settings.ci = true;
         break;
       case '--parallel':
         settings.parallel = true;
@@ -105,8 +110,9 @@ function parseArgs(argv) {
     }
   }
 
-  if (settings.fast && settings.precommit) {
-    throw new Error('Choose only one verification profile: --fast or --precommit');
+  const profileCount = Number(settings.fast) + Number(settings.precommit) + Number(settings.ci);
+  if (profileCount > 1) {
+    throw new Error('Choose only one verification profile: --fast, --precommit, or --ci');
   }
 
   return settings;
@@ -254,6 +260,23 @@ function buildApplicationEnvVerificationPlan(env = process.env) {
   ];
 }
 
+function buildDatabaseAndGatewayVerificationPlan(env = process.env) {
+  return [
+    {
+      label: 'gateway request identity check',
+      command: pnpmCommand(),
+      args: ['check:gateway-request-identity'],
+      env,
+    },
+    {
+      label: 'database framework standard check',
+      command: pnpmCommand(),
+      args: ['db:validate'],
+      env,
+    },
+  ];
+}
+
 function buildFastVerificationPlan(env = process.env) {
   return [
     {
@@ -296,6 +319,12 @@ function buildFastVerificationPlan(env = process.env) {
       label: 'pnpm script standard check',
       command: pnpmCommand(),
       args: ['check:pnpm-script-standard'],
+      env,
+    },
+    {
+      label: 'api contract materialization check',
+      command: pnpmCommand(),
+      args: ['api:materialize:check'],
       env,
     },
     ...buildApplicationEnvVerificationPlan(env),
@@ -366,7 +395,14 @@ function buildPrecommitVerificationPlan(env = process.env) {
       args: ['check:pnpm-script-standard'],
       env,
     },
+    {
+      label: 'api contract materialization check',
+      command: pnpmCommand(),
+      args: ['api:materialize:check'],
+      env,
+    },
     ...buildApplicationEnvVerificationPlan(env),
+    ...buildDatabaseAndGatewayVerificationPlan(env),
     ...buildTopologyVerificationPlan(env),
     {
       label: 'tooling contract tests',
@@ -382,6 +418,36 @@ function buildPrecommitVerificationPlan(env = process.env) {
       env,
     },
     {
+      label: 'admin route registry runtime tests',
+      command: 'python',
+      args: ['-B', '-m', 'unittest', 'tests.test_admin_route_registry_runtime_standard'],
+      env,
+    },
+    {
+      label: 'admin file platform storage runtime tests',
+      command: 'python',
+      args: ['-B', '-m', 'unittest', 'tests.test_admin_file_platform_storage_runtime_standard'],
+      env,
+    },
+    {
+      label: 'admin file platform drive runtime tests',
+      command: 'python',
+      args: ['-B', '-m', 'unittest', 'tests.test_admin_file_platform_drive_runtime_standard'],
+      env,
+    },
+    {
+      label: 'admin agents runtime tests',
+      command: 'python',
+      args: ['-B', '-m', 'unittest', 'tests.test_admin_agents_runtime_standard'],
+      env,
+    },
+    {
+      label: 'admin skill runtime tests',
+      command: 'python',
+      args: ['-B', '-m', 'unittest', 'tests.test_admin_skill_runtime_standard'],
+      env,
+    },
+    {
       label: 'staged Rust auto tests',
       command: 'node',
       args: ['scripts/run-claw-router-rust-tests.mjs', 'auto', '--staged'],
@@ -390,12 +456,59 @@ function buildPrecommitVerificationPlan(env = process.env) {
   ];
 }
 
+function buildCiVerificationPlan(env = process.env, settings = {}) {
+  const rustEnv = buildCargoVerificationEnv(env, settings);
+  const plan = buildPrecommitVerificationPlan(env);
+  plan.push({
+    label: 'rust format for frequently touched packages',
+    command: 'cargo',
+    args: [
+      'fmt',
+      '-p',
+      'sdkwork-claw-config',
+      '-p',
+      'sdkwork-claw-http',
+      '-p',
+      'sdkwork-claw-security',
+      '-p',
+      'sdkwork-claw-test-support',
+      '-p',
+      'sdkwork-clawrouter-router-service',
+      '-p',
+      'sdkwork-clawrouter-admin-api-server',
+      '-p',
+      'sdkwork-clawrouter-cloud-gateway',
+      '--check',
+    ],
+    env,
+  });
+  const runtimeRustArgs = [
+    'test',
+    '-p',
+    'sdkwork-clawrouter-admin-api-server',
+    '--test',
+    'sqlite_product_model_route',
+    '--test',
+    'product_center_routes',
+  ];
+  plan.push({
+    label: 'admin api sqlite integration tests',
+    command: 'cargo',
+    args: runtimeRustArgs,
+    env: rustEnv,
+  });
+  return plan;
+}
+
 function buildVerificationPlan(settings, env = process.env) {
   if (settings.fast) {
     return buildFastVerificationPlan(env);
   }
   if (settings.precommit) {
     return buildPrecommitVerificationPlan(env);
+  }
+  if (settings.ci) {
+    return buildCiVerificationPlan(env, settings);
   }
 
   const rustEnv = buildCargoVerificationEnv(env, settings);
@@ -439,7 +552,14 @@ function buildVerificationPlan(settings, env = process.env) {
       args: ['check:pnpm-script-standard'],
       env,
     },
+    {
+      label: 'api contract materialization check',
+      command: pnpmCommand(),
+      args: ['api:materialize:check'],
+      env,
+    },
     ...buildApplicationEnvVerificationPlan(env),
+    ...buildDatabaseAndGatewayVerificationPlan(env),
     ...buildTopologyVerificationPlan(env),
     {
       label: 'tooling contract tests',
@@ -494,7 +614,7 @@ function buildVerificationPlan(settings, env = process.env) {
   plan.push({
     label: 'portal production edge smoke',
     command: 'cargo',
-    args: ['test', '-p', 'sdkwork-clawrouter-gateway', '--test', 'edge_server', 'edge_server_can_serve_portal_dist_without_node_server'],
+    args: ['test', '-p', 'sdkwork-clawrouter-cloud-gateway', '--test', 'edge_server', 'edge_server_can_serve_portal_dist_without_node_server'],
     env: rustEnv,
   });
   plan.push({
@@ -543,12 +663,6 @@ function buildVerificationPlan(settings, env = process.env) {
     label: 'portal rankings runtime tests',
     command: 'node',
     args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/rankings-runtime.test.ts'],
-    env,
-  });
-  plan.push({
-    label: 'portal forum runtime tests',
-    command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/forum-runtime.test.ts'],
     env,
   });
   plan.push({
@@ -710,7 +824,6 @@ const PARALLEL_SAFE_LABELS = new Set([
   'portal auth runtime tests',
   'portal models runtime tests',
   'portal rankings runtime tests',
-  'portal forum runtime tests',
   'portal home downloads runtime tests',
   'portal api reference playground runtime tests',
   'portal api reference SSR smoke tests',
@@ -881,6 +994,7 @@ if (process.argv[1] && import.meta.url.endsWith(process.argv[1].replaceAll('\\',
 }
 
 export {
+  buildCiVerificationPlan,
   buildFastVerificationPlan,
   buildPrecommitVerificationPlan,
   buildVerificationPlan,

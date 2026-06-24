@@ -8,7 +8,6 @@ if TYPE_CHECKING:
 
 @dataclass
 class ProblemDetail:
-    """RFC 9457 problem details error response."""
     status: int
     title: str
     type: str
