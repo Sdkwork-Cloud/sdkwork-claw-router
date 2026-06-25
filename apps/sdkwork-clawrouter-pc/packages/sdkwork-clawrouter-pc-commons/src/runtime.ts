@@ -264,6 +264,7 @@ export * from './media-resource.ts';
 export * from './notificationService.ts';
 export * from './portal-auth.ts';
 export * from './portal-session.ts';
+export * from './portal-permission-scope.ts';
 export * from './recharge-math.ts';
 export * from './idempotency.ts';
 export * from './sdk-request-boundary.ts';

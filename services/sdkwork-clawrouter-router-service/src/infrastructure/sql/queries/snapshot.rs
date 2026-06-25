@@ -202,16 +202,16 @@ channel_resource_scope AS (
       AND (cr.effective_to IS NULL OR cr.effective_to > CURRENT_TIMESTAMP)
 )
 SELECT
-    m.catalog_key AS catalog_key,
-    m.model AS model,
+    COALESCE(NULLIF(scope.catalog_key, ''), NULLIF(scope.model, '')) AS catalog_key,
+    COALESCE(NULLIF(scope.model, ''), NULLIF(scope.catalog_key, '')) AS model,
     NULLIF(COALESCE(NULLIF(scope.api_code, ''), CASE
-        WHEN COALESCE(m.capability, 1) = 6 THEN 'openai.embeddings'
-        WHEN COALESCE(m.capability, 1) = 2 THEN 'openai.images'
-        WHEN COALESCE(m.capability, 1) = 3 THEN 'openai.audio'
-        WHEN COALESCE(m.capability, 1) = 4 THEN 'suno.music'
-        WHEN COALESCE(m.capability, 1) = 5 THEN 'openai.video'
-        WHEN COALESCE(m.capability, 1) = 7 THEN 'rerank'
-        WHEN COALESCE(m.api_format, '') = 'openai_responses' THEN 'openai.responses'
+        WHEN COALESCE(scope.modality_code, '') IN ('embedding', 'embeddings') THEN 'openai.embeddings'
+        WHEN COALESCE(scope.modality_code, '') IN ('image', 'images') THEN 'openai.images'
+        WHEN COALESCE(scope.modality_code, '') IN ('audio', 'speech', 'tts', 'stt') THEN 'openai.audio'
+        WHEN COALESCE(scope.modality_code, '') IN ('music', 'suno') THEN 'suno.music'
+        WHEN COALESCE(scope.modality_code, '') IN ('video', 'videos') THEN 'openai.video'
+        WHEN COALESCE(scope.modality_code, '') IN ('rerank') THEN 'rerank'
+        WHEN scope.resource_type = 'api_endpoint' THEN COALESCE(NULLIF(scope.api_code, ''), 'openai.chat_completions')
         ELSE 'openai.chat_completions'
     END), '') AS api_code,
     COALESCE(NULLIF(c.region_code, ''), 'global') AS region_code,
@@ -221,18 +221,23 @@ SELECT
     COALESCE(NULLIF(c.credential_rotation_strategy, ''), 'default') AS credential_rotation,
     COALESCE(cc.priority, 100) AS credential_priority,
     COALESCE(cc.weight, 100) AS credential_weight,
-    COALESCE(NULLIF(scope.provider_native_model, ''), NULLIF(scope.model, ''), NULLIF(m.model, ''), m.catalog_key) AS provider_model,
+    COALESCE(
+        NULLIF(scope.provider_native_model, ''),
+        NULLIF(scope.model, ''),
+        NULLIF(scope.catalog_key, '')
+    ) AS provider_model,
     COALESCE(NULLIF(cc.base_url, ''), NULLIF(c.base_url, ''), p.base_url) AS base_url,
     cc.credential_ref AS secret_ref,
     c.auth_type::text AS auth_type,
     cc.auth_config::text AS auth_config_json,
     c.timeout_ms AS timeout_ms,
     c.retry_policy::text AS retry_policy_json
-FROM ai_model m
+FROM channel_resource_scope scope
 JOIN ai_channel c
-  ON c.deleted_at IS NULL
- AND c.tenant_id = m.tenant_id
- AND c.organization_id = m.organization_id
+  ON c.id = scope.channel_id
+ AND c.tenant_id = scope.tenant_id
+ AND c.organization_id = scope.organization_id
+ AND c.deleted_at IS NULL
 JOIN ai_channel_credential cc
   ON cc.channel_id = c.id
  AND cc.tenant_id = c.tenant_id
@@ -243,35 +248,12 @@ LEFT JOIN ai_provider p
   ON p.provider_code = c.provider_code
  AND p.tenant_id = c.tenant_id
  AND p.organization_id = c.organization_id
-LEFT JOIN channel_resource_scope scope
-  ON scope.channel_id = c.id
- AND scope.tenant_id = c.tenant_id
- AND scope.organization_id = c.organization_id
- AND (
-      scope.catalog_key = m.catalog_key
-      OR (
-          NULLIF(scope.model, '') IS NOT NULL
-          AND (scope.model = m.model OR scope.model = m.catalog_key)
-      )
-      OR (
-          NULLIF(scope.vendor_code, '') IS NOT NULL
-          AND scope.vendor_code = m.vendor_code
-          AND scope.resource_type = 'vendor'
-      )
-      OR (
-          NULLIF(scope.api_code, '') IS NOT NULL
-          AND scope.resource_type = 'api_endpoint'
-          AND (NULLIF(scope.vendor_code, '') IS NULL OR scope.vendor_code = m.vendor_code)
-      )
- )
-WHERE NULLIF(m.catalog_key, '') IS NOT NULL
-  AND m.deleted_at IS NULL
+WHERE (
+      NULLIF(scope.catalog_key, '') IS NOT NULL
+      OR NULLIF(scope.model, '') IS NOT NULL
+  )
   AND c.deleted_at IS NULL
   AND (p.id IS NULL OR p.deleted_at IS NULL)
-  AND m.status = 1
-  AND COALESCE(m.release_stage, 1) IN (1, 2)
-  AND COALESCE(m.shelf_state, 1) = 1
-  AND COALESCE(m.routing_state, 1) = 1
   AND c.status = 1
   AND (
       COALESCE(c.health_status, 1) = 1
@@ -290,7 +272,6 @@ ORDER BY COALESCE(scope.priority, c.priority, 100) ASC,
          COALESCE(scope.weight, c.weight, 100) DESC,
          COALESCE(cc.priority, 100) ASC,
          COALESCE(cc.weight, 100) DESC,
-         m.id ASC,
          scope.binding_id ASC,
          cc.id ASC
 "#

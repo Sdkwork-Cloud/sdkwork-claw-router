@@ -310,7 +310,7 @@ Rules:
   `sdkwork_iam_http::backend_routes()` is contract evidence, not handler coverage.
 - Frontend/admin services that call appbase backend IAM resources such as users, roles,
   permissions, organizations, departments, role bindings, API key list, or API key revoke must use
-  `@sdkwork/appbase-backend-sdk` through `getSdkworkAppbaseBackendSdkClient()`.
+  `@sdkwork/iam-backend-sdk` through `getSdkworkAppbaseBackendSdkClient()`.
 - When a dependency backend surface is marked `external-service`, SDK bootstrap must require
   `VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL` from either a common
   `PORTAL_PUBLIC_SDK_BASE_URL` that is explicitly a gateway for appbase backend IAM or the

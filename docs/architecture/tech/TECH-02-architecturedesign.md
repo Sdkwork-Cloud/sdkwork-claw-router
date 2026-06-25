@@ -5,7 +5,7 @@
 
 ## 1. 架构目标
 
-`sdkwork-clawrouter` 是 Rust-first 高性能 AI 网关运行时。它围绕统一数据库标准、Java-compatible API 路径、生成 SDK 边界、统一 portal 产品体验建立标准化运行时。
+`sdkwork-clawrouter` 是 Rust-first 高性能 AI 网关运行时。它围绕统一数据库标准、稳定 app/backend API 路径、生成 SDK 边界、统一 portal 产品体验建立标准化运行时。
 
 架构目标：
 
@@ -18,7 +18,7 @@
 
 ## 2. 总体架构
 
-推荐架构是 **Rust-first Modular Runtime + Java-compatible API Contract + Generated SDK Boundary**。
+推荐架构是 **Rust-first Modular Runtime + Stable API Contract + Generated SDK Boundary**。
 
 ```text
 apps/sdkwork-clawrouter-pc
@@ -44,7 +44,7 @@ State
   -> object storage optional
 ```
 
-`legacy-java-plus-app-api` 和 `legacy-java-plus-backend-api` 仍然是 API 路径、OpenAPI snapshot、业务实体兼容和 SDK 生成标准的参考源。`sdkwork-clawrouter` 以同一路径实现、代理或装配能力，确保前端和外部调用方只切换 base URL 即可自由切换到 Java-compatible 或 Rust runtime。
+`sdkwork-clawrouter` 以 `/app/v3/api/**` 与 `/backend/v3/api/**` 为稳定公共面，通过 OpenAPI 契约与生成 SDK 对外暴露能力；Commerce、IAM、Models 等域由组合模块提供，前端与外部调用方只切换 base URL 即可在不同部署 profile 间迁移。
 
 ## 3. Runtime Plane
 
@@ -119,11 +119,11 @@ Gateway `/v1/**` 请求生命周期：
 | Surface | 前缀 | 标准 | 返回结构 | 调用方 |
 | --- | --- | --- | --- | --- |
 | Gateway | `/v1/**` | OpenAI-compatible / provider-compatible | 原协议结构 | OpenAI SDK、curl、第三方客户端 |
-| App | `/app/v3/api/**` | Java-compatible app API + generated SDK | `PlusApiResult<T>` compatible | console/public portal |
-| Admin | `/backend/v3/api/**` | Java-compatible backend API + generated SDK | `PlusApiResult<T>` compatible | admin portal |
+| App | `/app/v3/api/**` | Rust app-api + generated SDK | SDKWork API envelope | console/public portal |
+| Admin | `/backend/v3/api/**` | Rust backend-api + generated SDK | SDKWork API envelope | admin portal |
 | Internal | internal event/RPC | private contract | internal model | worker/runtime/sync |
 
-App/Admin 公共路径必须与 Java app/backend API 标准保持一致。新增能力先进入 API contract manifest、OpenAPI snapshot 和 generated SDK，再实现 Rust handler。
+App/Admin 公共路径保持 `/app/v3/api/**` 与 `/backend/v3/api/**` 稳定。新增能力先进入 API contract manifest、OpenAPI snapshot 和 generated SDK，再实现 Rust handler。
 
 ## 8. SDK Boundary
 
@@ -141,7 +141,7 @@ Rust 远端 app/backend business 调用链：
 ```text
 Rust application service
   -> generated Rust app/backend SDK
-  -> Java-compatible app/backend API target
+  -> composed module or local Rust API target
 ```
 
 缺失 SDK 方法时，不允许补 raw HTTP。必须修复 controller/OpenAPI/generator，再 regenerate。
@@ -166,9 +166,8 @@ python -B -m tools.schema_quality_gate
 
 复用原则：
 
-- 用户、VIP、account、优惠券、积分充值、订单、支付、退款、发票优先复用 Java-owned `plus_*` 表。
-- AppCenter 沿用 PlusApp/`plus_app` 体系。
-- SkillsHub 沿用 AgentSkills、skill package、PlusCategory 体系。
+- 用户、VIP、account、优惠券、积分充值、订单、支付、退款、发票由 `sdkwork-commerce`、`sdkwork-iam` 等组合模块提供；Claw Router 通过生成 SDK 消费，不在本地重复定义资金事实表。
+- AppCenter、SkillsHub、模型目录等通过 `sdkwork-agent`、`sdkwork-models` 等组合模块接入。
 - 新建 AI gateway、routing、pricing、provider、usage、ops 表使用 `ai_`、`integration_`、`iam_`、`commerce_`、`studio_`、`content_`、`ops_` 等业务前缀。
 
 ## 10. 部署模式
@@ -188,7 +187,7 @@ python -B -m tools.schema_quality_gate
 
 1. 任一接口都能归类到 Gateway、App、Admin、Internal 之一。
 2. 任一 App/Admin 接口都能追溯到 API contract manifest、OpenAPI path 和 generated SDK 方法。
-3. 任一表都能归类为 Java-owned 兼容表或新标准业务前缀表。
+3. 任一表都能归类为组合模块 owned 表或 Claw Router 本地业务前缀表。
 4. 任一资金变动都能追踪到订单、支付、流水、幂等键。
 5. 任一 provider secret 都只通过 secret_ref 访问。
 6. 任一路由决策都能解释候选、过滤、排序、fallback 和最终目标。

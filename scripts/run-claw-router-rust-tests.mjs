@@ -11,9 +11,11 @@ const PACKAGE_BY_SERVICE_DIR = Object.freeze({
   'sdkwork-clawrouter-admin-api-server': 'sdkwork-clawrouter-admin-api-server',
   'sdkwork-clawrouter-app-api-server': 'sdkwork-clawrouter-app-api-server',
   'sdkwork-clawrouter-cloud-gateway': 'sdkwork-clawrouter-cloud-gateway',
+  'sdkwork-clawrouter-standalone-gateway': 'sdkwork-clawrouter-standalone-gateway',
   'sdkwork-claw-installer': 'sdkwork-claw-installer',
   'sdkwork-clawrouter-router-service': 'sdkwork-clawrouter-router-service',
 });
+const PACKAGE_WORKSPACE_ROOTS = Object.freeze(['services', 'crates']);
 const PROFILE_BY_SERVICE_PACKAGE = Object.freeze({
   'sdkwork-clawrouter-admin-api-server': 'admin-api',
   'sdkwork-clawrouter-app-api-server': 'app-api',
@@ -266,11 +268,21 @@ function cargoStep(label, args, env, settings) {
 
 function servicePackageFromChangedFile(changedFile) {
   const normalized = normalizePathForMatching(changedFile);
-  const match = normalized.match(/^services\/([^/]+)\//u);
+  const match = normalized.match(/^(?:services|crates)\/([^/]+)\//u);
   if (!match) {
     return null;
   }
   return PACKAGE_BY_SERVICE_DIR[match[1]] ?? null;
+}
+
+function packageWorkspaceDirs(packageName, cwd = process.cwd()) {
+  const serviceDir = Object.entries(PACKAGE_BY_SERVICE_DIR).find(([, value]) => value === packageName)?.[0];
+  if (!serviceDir) {
+    return [];
+  }
+  return PACKAGE_WORKSPACE_ROOTS
+    .map((root) => path.join(cwd, root, serviceDir))
+    .filter((dir) => existsSync(dir));
 }
 
 function packageTestTargets(packageName, cwd = process.cwd()) {
@@ -278,47 +290,42 @@ function packageTestTargets(packageName, cwd = process.cwd()) {
 }
 
 function packageTestFiles(packageName, cwd = process.cwd()) {
-  const serviceDir = Object.entries(PACKAGE_BY_SERVICE_DIR).find(([, value]) => value === packageName)?.[0];
-  if (!serviceDir) {
-    return [];
+  const files = [];
+  for (const packageDir of packageWorkspaceDirs(packageName, cwd)) {
+    const testsDir = path.join(packageDir, 'tests');
+    if (!existsSync(testsDir)) {
+      continue;
+    }
+    for (const entry of readdirSync(testsDir, { withFileTypes: true })) {
+      if (!entry.isFile() || !entry.name.endsWith('.rs')) {
+        continue;
+      }
+      files.push({
+        testTarget: entry.name.slice(0, -3),
+        filePath: path.join(testsDir, entry.name),
+      });
+    }
   }
-  const testsDir = path.join(cwd, 'services', serviceDir, 'tests');
-  if (!existsSync(testsDir)) {
-    return [];
-  }
-  return readdirSync(testsDir, { withFileTypes: true })
-    .filter((entry) => entry.isFile() && entry.name.endsWith('.rs'))
-    .map((entry) => ({
-      testTarget: entry.name.slice(0, -3),
-      filePath: path.join(testsDir, entry.name),
-    }));
+  return files;
 }
 
 function exactAutoTargetsFromChangedTestFile(changedFile) {
   const normalized = normalizePathForMatching(changedFile);
-  const productTestMatch = normalized.match(/^services\/sdkwork-clawrouter-router-service\/tests\/([^/]+)\.rs$/u);
-  if (productTestMatch) {
-    return [{ packageName: 'sdkwork-clawrouter-router-service', testTarget: productTestMatch[1] }];
+  const testMatch = normalized.match(/^(?:services|crates)\/([^/]+)\/tests\/([^/]+)\.rs$/u);
+  if (!testMatch) {
+    return null;
   }
-  const gatewayTestMatch = normalized.match(/^services\/sdkwork-clawrouter-cloud-gateway\/tests\/([^/]+)\.rs$/u);
-  if (gatewayTestMatch) {
-    return [{ packageName: 'sdkwork-clawrouter-cloud-gateway', testTarget: gatewayTestMatch[1] }];
+  const packageName = PACKAGE_BY_SERVICE_DIR[testMatch[1]];
+  if (!packageName) {
+    return null;
   }
-  const adminApiTestMatch = normalized.match(/^services\/sdkwork-clawrouter-admin-api-server\/tests\/([^/]+)\.rs$/u);
-  if (adminApiTestMatch) {
-    return [{ packageName: 'sdkwork-clawrouter-admin-api-server', testTarget: adminApiTestMatch[1] }];
-  }
-  const appApiTestMatch = normalized.match(/^services\/sdkwork-clawrouter-app-api-server\/tests\/([^/]+)\.rs$/u);
-  if (appApiTestMatch) {
-    return [{ packageName: 'sdkwork-clawrouter-app-api-server', testTarget: appApiTestMatch[1] }];
-  }
-  return null;
+  return [{ packageName, testTarget: testMatch[2] }];
 }
 
 function inferredAutoTargetsFromSourceFile(changedFile, cwd = process.cwd()) {
   const normalized = normalizePathForMatching(changedFile);
-  const sourceMatch = normalized.match(/^services\/([^/]+)\/src\/.+\/([^/]+)\.rs$/u)
-    ?? normalized.match(/^services\/([^/]+)\/src\/([^/]+)\.rs$/u);
+  const sourceMatch = normalized.match(/^(?:services|crates)\/([^/]+)\/src\/.+\/([^/]+)\.rs$/u)
+    ?? normalized.match(/^(?:services|crates)\/([^/]+)\/src\/([^/]+)\.rs$/u);
   if (!sourceMatch) {
     return null;
   }
@@ -360,7 +367,7 @@ function inferredAutoTargetsFromSourceFile(changedFile, cwd = process.cwd()) {
 
 function inferredAutoTargetsFromSharedTestHelper(changedFile, cwd = process.cwd()) {
   const normalized = normalizePathForMatching(changedFile);
-  const helperMatch = normalized.match(/^services\/([^/]+)\/tests\/common\/([^/]+)\.rs$/u);
+  const helperMatch = normalized.match(/^(?:services|crates)\/([^/]+)\/tests\/common\/([^/]+)\.rs$/u);
   if (!helperMatch) {
     return null;
   }

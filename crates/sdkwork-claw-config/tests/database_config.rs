@@ -672,6 +672,37 @@ fn parses_startup_install_mode_from_optional_environment_part() {
     );
 }
 
+#[test]
+fn production_environment_defaults_startup_install_mode_to_skip_without_explicit_override() {
+    let _guard = EnvGuard::set(&[(
+        StartupInstallMode::ENV_ROUTER_ENVIRONMENT,
+        Some("production".to_owned()),
+    )]);
+    assert_eq!(
+        StartupInstallMode::Skip,
+        StartupInstallMode::from_env_or_runtime_toml(None).unwrap()
+    );
+}
+
+#[test]
+fn production_environment_rejects_explicit_startup_install_mode_ensure() {
+    let runtime_toml = RuntimeTomlConfig::from_toml_str(
+        r#"
+[install]
+environment = "production"
+"#,
+    )
+    .unwrap();
+    assert!(
+        sdkwork_claw_config::ensure_production_startup_install_policy(
+            Some(&runtime_toml),
+            StartupInstallMode::Ensure,
+        )
+        .unwrap_err()
+        .contains("SDKWORK_CLAW_STARTUP_INSTALL_MODE")
+    );
+}
+
 fn write_temp_config(label: &str, content: &str) -> PathBuf {
     let root = temp_root(label);
     fs::create_dir_all(&root).unwrap();

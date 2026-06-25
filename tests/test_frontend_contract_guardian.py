@@ -1867,7 +1867,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 routes:
                   - route: /admin/oauth
                     dependency_owned: true
-                    dependency_sdk_family: sdkwork-appbase-backend-sdk
+                    dependency_sdk_family: sdkwork-iam-backend-sdk
                     required_tables: [iam_oauth_provider_catalog]
                 """,
             )
@@ -1883,7 +1883,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                     route_scope: admin
                     delivery_kind: sdk_backed_business_runtime
                     dependency_owned: true
-                    dependency_sdk_family: sdkwork-appbase-backend-sdk
+                    dependency_sdk_family: sdkwork-iam-backend-sdk
                     api_surface: backend
                     evidence:
                       - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts

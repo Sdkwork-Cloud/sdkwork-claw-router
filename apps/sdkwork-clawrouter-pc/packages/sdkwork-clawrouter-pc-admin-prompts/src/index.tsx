@@ -997,7 +997,8 @@ function RenderPromptVersionDialog({ onClose, t, versionOptions }: Pick<PromptVe
     try {
       const form = new FormData(event.currentTarget);
       const result = await renderPromptVersion(requiredPromptFormText(form, 'versionId', t), renderPromptInputFromForm(form, t));
-      setRendered(result.data?.rendered ?? result.msg ?? '');
+      const payload = result.data as { rendered?: string } | undefined;
+      setRendered(payload?.rendered ?? result.msg ?? '');
     } catch (caught) {
       setError(errorMessage(caught, t('admin.prompts.errors.renderVersionFailed')));
     } finally {

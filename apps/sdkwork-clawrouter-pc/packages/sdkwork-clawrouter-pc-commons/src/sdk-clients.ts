@@ -1,4 +1,7 @@
-import { sanitizeSdkHttpRequestOptions } from './auth-projection.ts';
+import {
+  omitAuthProjectionBody,
+  omitAuthProjectionQuery,
+} from './auth-projection.ts';
 import { createTokenManager, type AuthTokenManager, type AuthTokens } from '@sdkwork/sdk-common';
 import {
   type CommerceAppSdkClient,
@@ -9,14 +12,14 @@ import {
 } from '@sdkwork/commerce-service';
 import { SdkworkAppClient, type SdkworkAppConfig } from '@sdkwork/clawrouter-app-sdk';
 import { SdkworkBackendClient, type SdkworkBackendConfig } from '@sdkwork/clawrouter-backend-sdk';
-import { SdkworkBackendClient as DriveBackendClient } from 'sdkwork-drive-backend-sdk-generated-typescript';
+import { SdkworkDriveBackendClient as DriveBackendClient } from '@sdkwork/clawrouter-pc-core/sdk';
 import { SdkworkBackendClient as ModelsBackendClient } from '@sdkwork/models-backend-sdk';
 import { SdkworkAppClient as ModelsAppClient } from '@sdkwork/models-app-sdk';
 import { SdkworkAiClient, type SdkworkAiConfig } from '@sdkwork/clawrouter-open-sdk';
 import {
-  SdkworkAppClient as SdkworkGenerationsAppClient,
-  type SdkworkAppConfig as SdkworkGenerationsAppConfig,
-} from 'sdkwork-generations-app-sdk-generated-typescript';
+  SdkworkGenerationsAppSdkClient as SdkworkGenerationsAppClient,
+  type SdkworkGenerationsAppSdkConfig as SdkworkGenerationsAppConfig,
+} from '@sdkwork/clawrouter-pc-core/sdk';
 import {
   SdkworkAppClient as SdkworkMemoryAppClient,
   type SdkworkAppConfig as SdkworkMemoryAppConfig,
@@ -30,26 +33,31 @@ import {
   type SdkworkBackendConfig as SdkworkAgentBackendConfig,
 } from '@sdkwork/agent-backend-sdk';
 import {
+  SdkworkBackendClient as SdkworkPromptsBackendClient,
+  createClient as createPromptsBackendSdkClient,
+  type SdkworkBackendConfig as SdkworkPromptsBackendConfig,
+} from '@sdkwork/prompts-backend-sdk';
+import {
   SdkworkAppClient as SdkworkAppbaseAppClient,
   type SdkworkAppConfig as SdkworkAppbaseAppConfig,
-} from '@sdkwork/appbase-app-sdk';
+} from '@sdkwork/iam-app-sdk';
 import {
   SdkworkBackendClient as SdkworkAppbaseBackendClient,
   type SdkworkBackendConfig as SdkworkAppbaseBackendConfig,
-} from '@sdkwork/appbase-backend-sdk';
+} from '@sdkwork/iam-backend-sdk';
 import {
   createDriveAppClient,
   type SdkworkAppConfig as SdkworkDriveAppConfig,
   type SdkworkDriveAppClient,
 } from '@sdkwork/drive-app-sdk';
 import {
-  SdkworkAppClient as SdkworkCommerceAppClient,
-  type SdkworkAppConfig as SdkworkCommerceAppConfig,
-} from 'sdkwork-commerce-app-sdk-generated-typescript';
+  SdkworkCommerceAppSdkClient as SdkworkCommerceAppClient,
+  type SdkworkCommerceAppSdkConfig as SdkworkCommerceAppConfig,
+} from '@sdkwork/clawrouter-pc-core/sdk';
 import {
-  SdkworkBackendClient as SdkworkCommerceGeneratedBackendClient,
-  type SdkworkBackendConfig as SdkworkCommerceBackendConfig,
-} from 'sdkwork-commerce-backend-sdk-generated-typescript';
+  SdkworkCommerceBackendSdkClient as SdkworkCommerceGeneratedBackendClient,
+  type SdkworkCommerceBackendSdkConfig as SdkworkCommerceBackendConfig,
+} from '@sdkwork/clawrouter-pc-core/sdk';
 import {
   clearStoredAppSessionToken,
   loadStoredAppSessionToken,
@@ -59,10 +67,15 @@ import { resetClawRouterIamRuntime } from './iam-runtime.ts';
 import { buildPortalAuthLoginRedirect, isProtectedPortalPath } from './portal-auth.ts';
 import { normalizeGeneratedSdkBaseUrl } from './sdk-base-url.ts';
 import { readClawRouterRuntimeEnv } from './utils/env.ts';
+import {
+  prepareCredentialEntryTokens,
+  readBootstrapAccessTokenFromProcessEnv,
+  SDKWORK_ACCESS_TOKEN_ENV_KEY,
+} from '@sdkwork/iam-credential-entry';
 
 export const APP_API_PREFIX = '/app/v3/api';
 export const BACKEND_API_PREFIX = '/backend/v3/api';
-const SDKWORK_ACCESS_TOKEN_ENV_KEY = 'SDKWORK_ACCESS_TOKEN';
+export { SDKWORK_ACCESS_TOKEN_ENV_KEY };
 export const OPEN_API_PREFIX = '/v1';
 export const DRIVE_OPEN_API_PREFIX = '/open/v3/api';
 export const MEMORY_OPEN_API_PREFIX = '/mem/v3/api';
@@ -70,6 +83,46 @@ export const AGENT_OPEN_API_PREFIX = '/agent/v3/api';
 export const CLOUD_API_PREFIX = '/cloud/v3';
 export const PAYMENT_API_PREFIX = '/payments/v3';
 export const PAAS_API_PREFIX = '/paas/v3';
+
+export function requiresClientContextSelectorSanitization(path: string): boolean {
+  const normalized = path.split('?')[0]?.toLowerCase() ?? '';
+  if (normalized.includes(BACKEND_API_PREFIX)) {
+    return false;
+  }
+  return (
+    normalized.includes(APP_API_PREFIX)
+    || normalized.startsWith(OPEN_API_PREFIX)
+    || normalized.includes(DRIVE_OPEN_API_PREFIX)
+    || normalized.includes(MEMORY_OPEN_API_PREFIX)
+    || normalized.includes(AGENT_OPEN_API_PREFIX)
+  );
+}
+
+export function sanitizeSdkHttpRequestOptions(path: string, options: unknown): unknown {
+  if (!requiresClientContextSelectorSanitization(path) || typeof options !== 'object' || options === null) {
+    return options;
+  }
+
+  const requestOptions = options as Record<string, unknown>;
+  const next: Record<string, unknown> = { ...requestOptions };
+
+  if ('params' in requestOptions) {
+    const params = omitAuthProjectionQuery(
+      requestOptions.params as Record<string, string | number | boolean | undefined> | undefined,
+    );
+    if (params) {
+      next.params = params;
+    } else {
+      delete next.params;
+    }
+  }
+
+  if ('body' in requestOptions) {
+    next.body = omitAuthProjectionBody(requestOptions.body);
+  }
+
+  return next;
+}
 
 export type ClawRouterGeneratedSdkType =
   | 'app'
@@ -332,6 +385,13 @@ export interface SdkworkAgentBackendSdkClientOptions {
   timeout?: number;
 }
 
+export interface SdkworkPromptsBackendSdkClientOptions {
+  backendBaseUrl?: string;
+  platform?: string;
+  tokenManager?: AuthTokenManager;
+  timeout?: number;
+}
+
 export interface SdkworkDriveAppSdkClientOptions {
   appBaseUrl?: string;
   platform?: string;
@@ -449,6 +509,7 @@ export type SdkworkGenerationsAppSdkClient = SdkworkGenerationsAppClient;
 export type SdkworkMemoryAppSdkClient = SdkworkMemoryAppClient;
 export type SdkworkAgentAppSdkClient = SdkworkAgentAppClient;
 export type SdkworkAgentBackendSdkClient = SdkworkAgentBackendClient;
+export type SdkworkPromptsBackendSdkClient = SdkworkPromptsBackendClient;
 export type SdkworkDriveAppSdkClient = SdkworkDriveAppClient;
 export type SdkworkCommerceAppSdkClient = SdkworkCommerceAppClient;
 export type SdkworkCommerceBackendSdkClient = SdkworkCommerceGeneratedBackendClient;
@@ -510,6 +571,7 @@ let generationsAppClient: SdkworkGenerationsAppClient | null = null;
 let memoryAppClient: SdkworkMemoryAppClient | null = null;
 let agentAppClient: SdkworkAgentAppClient | null = null;
 let agentBackendClient: SdkworkAgentBackendClient | null = null;
+let promptsBackendClient: SdkworkPromptsBackendClient | null = null;
 let driveAppClient: SdkworkDriveAppClient | null = null;
 let driveBackendClient: DriveBackendSdkClient | null = null;
 let commerceAppClient: SdkworkCommerceAppClient | null = null;
@@ -575,6 +637,12 @@ export function createSdkworkAgentBackendSdkClient(
   options: SdkworkAgentBackendSdkClientOptions = {},
 ): SdkworkAgentBackendClient {
   return attachClawRouterSdkSessionAuthBoundary(new SdkworkAgentBackendClient(buildAgentBackendConfig(options)));
+}
+
+export function createSdkworkPromptsBackendSdkClient(
+  options: SdkworkPromptsBackendSdkClientOptions = {},
+): SdkworkPromptsBackendClient {
+  return attachClawRouterSdkSessionAuthBoundary(createPromptsBackendSdkClient(buildPromptsBackendConfig(options)));
 }
 
 export function createSdkworkDriveAppSdkClient(
@@ -793,6 +861,18 @@ export function getSdkworkAgentBackendSdkClient(
   return agentBackendClient;
 }
 
+export function getSdkworkPromptsBackendSdkClient(
+  options: SdkworkPromptsBackendSdkClientOptions = {},
+): SdkworkPromptsBackendSdkClient {
+  if (hasRuntimeOverrides(options)) {
+    return createSdkworkPromptsBackendSdkClient(options);
+  }
+  if (!promptsBackendClient) {
+    promptsBackendClient = createSdkworkPromptsBackendSdkClient();
+  }
+  return promptsBackendClient;
+}
+
 export type DriveBackendSdkClient = DriveBackendClient;
 export type DriveBackendSdkClientOptions = ClawRouterBackendSdkClientOptions;
 
@@ -879,6 +959,11 @@ export function getClawRouterAiSdkClient(options: ClawRouterAiSdkClientOptions =
 }
 
 export function resetClawRouterSdkClients(): void {
+  resetClawRouterSdkClientCaches();
+  syncClawRouterGlobalTokenManagerFromStoredSession();
+}
+
+function resetClawRouterSdkClientCaches(): void {
   appClient = null;
   backendClient = null;
   modelsBackendClient = null;
@@ -888,13 +973,13 @@ export function resetClawRouterSdkClients(): void {
   memoryAppClient = null;
   agentAppClient = null;
   agentBackendClient = null;
+  promptsBackendClient = null;
   driveAppClient = null;
   driveBackendClient = null;
   commerceAppClient = null;
   commerceBackendClient = null;
   aiClient = null;
   aiClientSessionKey = undefined;
-  syncClawRouterGlobalTokenManagerFromStoredSession();
 }
 
 export function getClawRouterGlobalTokenManager(): AuthTokenManager {
@@ -1247,6 +1332,22 @@ function buildAgentBackendConfig(options: SdkworkAgentBackendSdkClientOptions): 
   };
 }
 
+function buildPromptsBackendConfig(options: SdkworkPromptsBackendSdkClientOptions): SdkworkPromptsBackendConfig {
+  return {
+    baseUrl: normalizeGeneratedSdkBaseUrl(
+      options.backendBaseUrl
+      ?? readClawRouterRuntimeEnv('VITE_SDKWORK_PROMPTS_BACKEND_API_BASE_URL')
+      ?? readClawRouterRuntimeEnv('VITE_SDKWORK_PROMPTS_API_BASE_URL')
+      ?? readClawRouterRuntimeEnv('VITE_CLAWROUTER_BACKEND_API_BASE_URL')
+      ?? BACKEND_API_PREFIX,
+      BACKEND_API_PREFIX,
+    ),
+    platform: options.platform ?? 'web-admin',
+    tokenManager: resolveClawRouterSdkTokenManager(options.tokenManager),
+    timeout: options.timeout,
+  };
+}
+
 function buildDriveAppConfig(options: SdkworkDriveAppSdkClientOptions): SdkworkDriveAppConfig {
   return {
     baseUrl: normalizeGeneratedSdkBaseUrl(
@@ -1370,25 +1471,16 @@ function syncTokenManagerFromStoredSession(tokenManager: AuthTokenManager): void
 }
 
 export function getClawRouterBootstrapAccessToken(): string | undefined {
-  return readBootstrapAccessToken();
+  return readBootstrapAccessTokenFromProcessEnv();
 }
 
 export function prepareClawRouterCredentialEntryTokens(): void {
-  const tokenManager = getClawRouterGlobalTokenManager();
-  const bootstrapAccessToken = getClawRouterBootstrapAccessToken();
-  tokenManager.clearTokens?.();
-  if (bootstrapAccessToken) {
-    tokenManager.setTokens?.({ accessToken: bootstrapAccessToken });
-  }
-  resetClawRouterSdkClients();
+  prepareCredentialEntryTokens(getClawRouterGlobalTokenManager(), readBootstrapAccessTokenFromProcessEnv);
+  resetClawRouterSdkClientCaches();
 }
 
 function readBootstrapAccessToken(): string | undefined {
-  const processEnv = (globalThis as typeof globalThis & {
-    process?: { env?: Record<string, string | undefined> };
-  }).process?.env;
-  const value = processEnv?.[SDKWORK_ACCESS_TOKEN_ENV_KEY]?.trim();
-  return value || undefined;
+  return readBootstrapAccessTokenFromProcessEnv();
 }
 
 function readStoredAuthTokens(): AuthTokens {

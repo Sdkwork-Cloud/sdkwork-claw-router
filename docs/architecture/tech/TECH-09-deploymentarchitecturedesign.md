@@ -266,7 +266,7 @@ kubernetes：
 - [ ] server 可独立运行。
 - [ ] docker Compose 一条命令启动。
 - [ ] kubernetes 有 Deployment、Service、Ingress、ConfigMap、Secret、HPA、Probe。
-- [ ] 四种部署形态只改 base URL，不改 Java-compatible resource path。
+- [ ] 四种部署形态只改 base URL，不改 `/app/v3/api`、`/backend/v3/api`、`/v1` 资源路径。
 - [ ] 数据库迁移可重复执行。
 - [ ] 发布可回滚。
 - [ ] 观测指标可见。

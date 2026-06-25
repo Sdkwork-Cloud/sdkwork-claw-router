@@ -353,10 +353,11 @@ fn gateway_openapi_vendor_paths_are_runtime_provider_routes_without_public_manif
         spec.get("x-provider-passthrough").is_none(),
         "Public OpenAPI must not expose the internal provider route manifest"
     );
-    let runtime_providers = sdkwork_clawrouter_cloud_gateway::provider_native_passthrough_providers()
-        .iter()
-        .copied()
-        .collect::<BTreeSet<_>>();
+    let runtime_providers =
+        sdkwork_clawrouter_cloud_gateway::provider_native_passthrough_providers()
+            .iter()
+            .copied()
+            .collect::<BTreeSet<_>>();
     let public_vendor_providers = spec["paths"]
         .as_object()
         .unwrap()
@@ -531,10 +532,11 @@ async fn gateway_provider_native_passthrough_keeps_official_standard_provider_di
         Some("adapter-token".to_owned()),
     )
     .unwrap();
-    let router = sdkwork_clawrouter_cloud_gateway::router_with_provider_passthrough_and_adapter_config(
-        passthrough_config,
-        Some(adapter_config),
-    );
+    let router =
+        sdkwork_clawrouter_cloud_gateway::router_with_provider_passthrough_and_adapter_config(
+            passthrough_config,
+            Some(adapter_config),
+        );
 
     let official_response = router
         .clone()
@@ -655,10 +657,11 @@ async fn gateway_provider_native_passthrough_adapts_registered_non_standard_prov
         Some("adapter-token".to_owned()),
     )
     .unwrap();
-    let router = sdkwork_clawrouter_cloud_gateway::router_with_provider_passthrough_and_adapter_config(
-        passthrough_config,
-        Some(adapter_config),
-    );
+    let router =
+        sdkwork_clawrouter_cloud_gateway::router_with_provider_passthrough_and_adapter_config(
+            passthrough_config,
+            Some(adapter_config),
+        );
 
     let adapter_response = router
         .oneshot(

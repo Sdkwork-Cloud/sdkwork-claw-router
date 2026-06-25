@@ -31,7 +31,7 @@ import {
 } from "./packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts";
 import {
   createSdkworkIamRuntimeAuthService,
-} from "../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-iam-runtime.ts";
+} from "../../../sdkwork-iam/apps/sdkwork-iam-pc/packages/sdkwork-auth-pc-react/src/auth-iam-runtime.ts";
 
 function readPortalFile(relativePath: string): string {
   return readFileSync(new URL(relativePath, import.meta.url), "utf8");
@@ -328,7 +328,7 @@ test("portal exposes appbase auth routes as standalone React routes", () => {
   assert.match(authAppearanceSource, /sdkwork-clawrouter-auth-aside-panel/);
   assert.match(authAppearanceSource, /var\(--sdkwork-clawrouter-auth-content-text\)/);
   assert.match(indexCssSource, /\.sdkwork-clawrouter-auth-shell \{/);
-  assert.match(indexCssSource, /@source "\.\.\/\.\.\/\.\.\/\.\.\/sdkwork-appbase\/packages\/pc-react\/iam\/sdkwork-auth-pc-react\/src"/);
+  assert.match(indexCssSource, /@source "\.\.\/\.\.\/\.\.\/\.\.\/sdkwork-iam\/apps\/sdkwork-iam-pc\/packages\/sdkwork-auth-pc-react\/src"/);
   assert.match(authRouteSource, /from 'react-i18next'/);
   assert.match(authRouteSource, /const \{ i18n \} = useTranslation\(\)/);
   assert.doesNotMatch(authRouteSource, /SDKWORK_AUTH_I18N_CATALOG/);
@@ -357,9 +357,10 @@ test("claw router auth controller reuses appbase runtime while preserving app SD
   assert.match(controllerSource, /createSdkworkIamRuntimeAuthController/);
   assert.match(controllerSource, /getClawRouterIamRuntime/);
   assert.match(iamRuntimeSource, /createSdkworkAppbasePcAuthRuntime/);
-  assert.match(iamRuntimeSource, /createAppbaseAppClient:\s*\(\)\s*=>\s*wrapCredentialEntryClient\(getSdkworkAppbaseAppSdkClient\(\)\)/);
-  assert.match(iamRuntimeSource, /wrapCredentialEntryMethod\(auth\.registrations, 'create'\)/);
-  assert.match(iamRuntimeSource, /prepareClawRouterCredentialEntryTokens\(\)/);
+  assert.match(iamRuntimeSource, /createAppbaseAppClient:\s*\(\)\s*=>\s*wrapCredentialEntryClient\(getSdkworkAppbaseAppSdkClient\(\)/);
+  assert.match(iamRuntimeSource, /credentialEntry:\s*\{[\s\S]*skipWrap:\s*true/u);
+  assert.match(iamRuntimeSource, /from '@sdkwork\/iam-credential-entry'/);
+  assert.match(iamRuntimeSource, /prepareTokens:\s*prepareClawRouterCredentialEntryTokens/);
   assert.match(iamRuntimeSource, /bindClawRouterIamSessionProjection/);
   assert.match(iamRuntimeSource, /patchClawRouterIamContextStore/);
   assert.match(iamRuntimeSource, /readSession:\s*\(\)\s*=>\s*toPortalIamBridgeSession\(loadStoredAppSessionToken\(\)\)/);
@@ -367,10 +368,12 @@ test("claw router auth controller reuses appbase runtime while preserving app SD
   assert.match(iamRuntimeSource, /getClawRouterAppSdkClient\(\)/);
   assert.match(iamRuntimeSource, /getSdkworkDriveAppSdkClient\(\)/);
   assert.match(iamRuntimeSource, /getSdkworkGenerationsAppSdkClient\(\)/);
+  assert.match(sdkClientsSource, /from '@sdkwork\/iam-credential-entry'/);
+  assert.match(sdkClientsSource, /prepareCredentialEntryTokens/);
   assert.match(sdkClientsSource, /from '@sdkwork\/drive-app-sdk'/);
   assert.match(sdkClientsSource, /createDriveAppClient/);
   assert.match(sdkClientsSource, /VITE_SDKWORK_DRIVE_APP_API_BASE_URL/);
-  assert.match(iamRuntimeSource, /tokenManager:\s*getClawRouterGlobalTokenManager\(\)/);
+  assert.match(iamRuntimeSource, /tokenManager,/);
   assert.equal((sdkClientsSource.match(/createTokenManager\(\)/g) ?? []).length, 1);
   assert.match(sdkClientsSource, /function buildAppConfig\(options: ClawRouterAppSdkClientOptions\): SdkworkAppConfig \{\s*return \{[\s\S]*?tokenManager:\s*resolveClawRouterSdkTokenManager\(options\.tokenManager\)/);
   assert.match(sdkClientsSource, /function buildBackendConfig\(options: ClawRouterBackendSdkClientOptions\): SdkworkBackendConfig \{\s*return \{[\s\S]*?tokenManager:\s*resolveClawRouterSdkTokenManager\(options\.tokenManager\)/);
@@ -571,7 +574,7 @@ test("claw router app auth composes the appbase IAM OAuth dependency SDK without
   const appOpenApiSource = readPortalFile("../../generated/openapi/clawrouter-app-openapi.json");
   const backendOpenApiSource = readPortalFile("../../generated/openapi/clawrouter-backend-openapi.json");
   const appSdkInputSource = readPortalFile("../../sdks/clawrouter-app-sdk/openapi/clawrouter-app-sdk.sdkgen.json");
-  const appbaseAppOpenApiSource = readPortalFile("../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/openapi/sdkwork-appbase-app-api.openapi.yaml");
+  const appbaseAppOpenApiSource = readPortalFile("../../../sdkwork-iam/sdks/sdkwork-iam-app-sdk/openapi/sdkwork-iam-app-api.openapi.yaml");
   const appSdkAssemblySource = readPortalFile("../../sdks/clawrouter-app-sdk/.sdkwork-assembly.json");
   const appSdkComponentSource = readPortalFile("../../sdks/clawrouter-app-sdk/specs/component.spec.json");
   const appSdkSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/sdk.ts");
@@ -580,9 +583,9 @@ test("claw router app auth composes the appbase IAM OAuth dependency SDK without
   const backendSdkAuthSettingsUpdateSource = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/types/admin-auth-settings-update-request.ts");
   const appSdkTypesSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/types/index.ts");
   const backendSdkTypesSource = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/types/index.ts");
-  const appbaseAuthServiceSource = readPortalFile("../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-service.ts");
-  const appbaseIamRuntimeSource = readPortalFile("../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-iam-runtime.ts");
-  const appbaseIamSdkPortsSource = readPortalFile("../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-sdk-ports/src/index.ts");
+  const appbaseAuthServiceSource = readPortalFile("../../../sdkwork-iam/apps/sdkwork-iam-pc/packages/sdkwork-auth-pc-react/src/auth-service.ts");
+  const appbaseIamRuntimeSource = readPortalFile("../../../sdkwork-iam/apps/sdkwork-iam-pc/packages/sdkwork-auth-pc-react/src/auth-iam-runtime.ts");
+  const appbaseIamSdkPortsSource = readPortalFile("../../../sdkwork-iam/apps/sdkwork-iam-common/packages/sdkwork-iam-sdk-ports/src/index.ts");
   const retiredProviderPlatformSnake = "open" + "_platform";
   const retiredProviderPlatformCamel = "open" + "Platform";
   const retiredQrNamespace = "qr" + "Auth";
@@ -693,9 +696,9 @@ test("claw router app auth composes the appbase IAM OAuth dependency SDK without
   assert.doesNotMatch(appSdkInputSource, /\/app\/v3\/api\/oauth\/sessions/);
 
   for (const dependency of [appSdkAssembly.sdkDependencies?.[0], appSdkComponent.contracts?.sdkDependencies?.[0]]) {
-    assert.equal(dependency?.workspace, "sdkwork-appbase-app-sdk");
+    assert.equal(dependency?.workspace, "sdkwork-iam-app-sdk");
     assert.equal(dependency?.generatedTransportImportPolicy, "forbidden");
-    assert.equal(dependency?.packageByLanguage?.typescript, "@sdkwork/appbase-app-sdk");
+    assert.equal(dependency?.packageByLanguage?.typescript, "@sdkwork/iam-app-sdk");
   }
 
   assert.equal(existsSync(new URL("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/auth.ts", import.meta.url)), false);
@@ -727,7 +730,7 @@ test("claw router app auth composes the appbase IAM OAuth dependency SDK without
   assert.doesNotMatch(appbaseAuthServiceSource, /loginQrCodes\?\.callback/);
   assert.doesNotMatch(appbaseIamRuntimeSource, /runtime\.service\.auth\.loginQrCodeCallbacks/);
   for (const [path, method] of appbaseOwnedAppRoutes) {
-    assert.equal(appbaseAppOpenApi.paths?.[path]?.[method]?.["x-sdkwork-owner"], "sdkwork-appbase");
+    assert.equal(appbaseAppOpenApi.paths?.[path]?.[method]?.["x-sdkwork-owner"], "sdkwork-iam");
   }
   assert.doesNotMatch(appOpenApiSource, /\/app\/v3\/api\/auth\//);
   assert.doesNotMatch(appOpenApiSource, /\/app\/v3\/api\/oauth\//);
@@ -769,8 +772,8 @@ test("claw router app auth composes the appbase IAM OAuth dependency SDK without
 });
 
 test("appbase OAuth runtime uses canonical OAuth app resources", () => {
-  const authServiceSource = readPortalFile("../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-service.ts");
-  const iamRuntimeSource = readPortalFile("../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-iam-runtime.ts");
+  const authServiceSource = readPortalFile("../../../sdkwork-iam/apps/sdkwork-iam-pc/packages/sdkwork-auth-pc-react/src/auth-service.ts");
+  const iamRuntimeSource = readPortalFile("../../../sdkwork-iam/apps/sdkwork-iam-pc/packages/sdkwork-auth-pc-react/src/auth-iam-runtime.ts");
 
   assert.match(authServiceSource, /client\.oauth\?\.authorizationUrls\?\.create/);
   assert.match(authServiceSource, /client\.oauth\?\.sessions\?\.create/);
@@ -999,14 +1002,14 @@ test("admin auth settings form preserves flexible OAuth providers and validates 
 
 test("generated appbase app SDK surface satisfies the IAM SDK port contract", () => {
   const productSdkSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/sdk.ts");
-  const sdkSource = readPortalFile("../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/sdk.ts");
-  const appSdkAuthSource = readPortalFile("../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/auth.ts");
-  const appSdkIamSource = readPortalFile("../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/iam.ts");
-  const appSdkOauthSource = readPortalFile("../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/oauth.ts");
-  const appSdkSystemSource = readPortalFile("../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/system.ts");
-  const iamSdkPortsSource = readPortalFile("../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-sdk-ports/src/index.ts");
-  const authServiceSource = readPortalFile("../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-service.ts");
-  const iamRuntimeSource = readPortalFile("../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-iam-runtime.ts");
+  const sdkSource = readPortalFile("../../../sdkwork-iam/sdks/sdkwork-iam-app-sdk/sdkwork-iam-app-sdk-typescript/generated/server-openapi/src/sdk.ts");
+  const appSdkAuthSource = readPortalFile("../../../sdkwork-iam/sdks/sdkwork-iam-app-sdk/sdkwork-iam-app-sdk-typescript/generated/server-openapi/src/api/auth.ts");
+  const appSdkIamSource = readPortalFile("../../../sdkwork-iam/sdks/sdkwork-iam-app-sdk/sdkwork-iam-app-sdk-typescript/generated/server-openapi/src/api/iam.ts");
+  const appSdkOauthSource = readPortalFile("../../../sdkwork-iam/sdks/sdkwork-iam-app-sdk/sdkwork-iam-app-sdk-typescript/generated/server-openapi/src/api/oauth.ts");
+  const appSdkSystemSource = readPortalFile("../../../sdkwork-iam/sdks/sdkwork-iam-app-sdk/sdkwork-iam-app-sdk-typescript/generated/server-openapi/src/api/system.ts");
+  const iamSdkPortsSource = readPortalFile("../../../sdkwork-iam/apps/sdkwork-iam-common/packages/sdkwork-iam-sdk-ports/src/index.ts");
+  const authServiceSource = readPortalFile("../../../sdkwork-iam/apps/sdkwork-iam-pc/packages/sdkwork-auth-pc-react/src/auth-service.ts");
+  const iamRuntimeSource = readPortalFile("../../../sdkwork-iam/apps/sdkwork-iam-pc/packages/sdkwork-auth-pc-react/src/auth-iam-runtime.ts");
   const retiredProviderPlatformCamel = "open" + "Platform";
 
   for (const portContractFragment of [
@@ -1301,7 +1304,7 @@ test("appbase IAM runtime auth service persists sessions before portal redirects
   }
 });
 
-test("claw router app session survives opening protected links in a new browser tab", async () => {
+test("claw router app session persists across module reload in the same browser tab", async () => {
   const storageHarness = createPortalSessionStorageHarness();
   const expiresAt = Math.floor(Date.now() / 1000) + 3600;
 
@@ -1318,9 +1321,8 @@ test("claw router app session survives opening protected links in a new browser 
       },
     });
 
-    storageHarness.openNewTab();
-    const newTab = await importFreshAppSessionTokenModule();
-    const restored = newTab.loadStoredAppSessionToken();
+    const reloadedTab = await importFreshAppSessionTokenModule();
+    const restored = reloadedTab.loadStoredAppSessionToken();
 
     assert.ok(restored);
     assert.deepEqual(
@@ -1340,12 +1342,63 @@ test("claw router app session survives opening protected links in a new browser 
       },
     );
     assert.equal(Number.isFinite(restored.storedAt), true);
-    assert.equal(newTab.getStoredAppSessionAuthToken(), "shared-auth-token");
-    assert.equal(newTab.getStoredAppSessionAccessToken(), "shared-access-token");
+    assert.equal(reloadedTab.getStoredAppSessionAuthToken(), "shared-auth-token");
+    assert.equal(reloadedTab.getStoredAppSessionAccessToken(), "shared-access-token");
   } finally {
     clearStoredAppSessionToken();
     storageHarness.restore();
   }
+});
+
+test("claw router app session does not leak into a new browser tab", async () => {
+  const storageHarness = createPortalSessionStorageHarness();
+  const expiresAt = Math.floor(Date.now() / 1000) + 3600;
+
+  try {
+    const firstTab = await importFreshAppSessionTokenModule();
+    firstTab.storeAppSessionFromResult({
+      code: "200",
+      data: {
+        accessToken: "tab-one-access-token",
+        authToken: "tab-one-auth-token",
+        expiresAt,
+        refreshToken: "tab-one-refresh-token",
+        sessionId: "tab-one-session-id",
+      },
+    });
+
+    storageHarness.openNewTab();
+    const newTab = await importFreshAppSessionTokenModule();
+    assert.equal(newTab.loadStoredAppSessionToken(), null);
+    assert.equal(newTab.getStoredAppSessionAuthToken(), undefined);
+    assert.equal(newTab.getStoredAppSessionAccessToken(), undefined);
+  } finally {
+    clearStoredAppSessionToken();
+    storageHarness.restore();
+  }
+});
+
+test("admin layout enforces route permission guard for protected admin pages", async () => {
+  const adminLayoutSource = readAdminLayoutSource();
+  const guardSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-shell/src/AdminRoutePermissionGuard.tsx");
+  const permissionsSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-shell/src/admin-menu-permissions.ts");
+  const { isAdminRouteAllowed } = await import("./packages/sdkwork-clawrouter-pc-admin-shell/src/admin-menu-permissions.ts");
+
+  assert.match(adminLayoutSource, /<AdminRoutePermissionGuard>/);
+  assert.match(guardSource, /isAdminRouteAllowed/);
+  assert.match(guardSource, /shared\.auth\.adminAccess\.forbiddenTitle/);
+  assert.match(permissionsSource, /resolveAdminRoutePermissionHint/);
+  assert.equal(isAdminRouteAllowed("/admin/prompts", ["clawrouter.admin.access"]), true);
+  assert.equal(isAdminRouteAllowed("/admin/prompts", ["iam.users.read"]), false);
+  assert.equal(isAdminRouteAllowed("/admin/user", ["iam.users.read"]), true);
+});
+
+test("portal i18n keeps document language aligned with active locale", () => {
+  const i18nSource = readPortalFile("./packages/sdkwork-clawrouter-pc-i18n/src/index.ts");
+  const syncSource = readPortalFile("./packages/sdkwork-clawrouter-pc-i18n/src/sync-document-language.ts");
+  assert.match(i18nSource, /syncDocumentLanguage/);
+  assert.match(syncSource, /document\.documentElement\.lang/);
+  assert.match(i18nSource, /i18n\.on\('languageChanged', syncDocumentLanguage\)/);
 });
 
 test("generated SDK auth errors clear the app session and redirect protected pages to login", () => {
@@ -1527,9 +1580,9 @@ test("portal wires console and admin routes through the protected session guard"
   const sharedAuthSource = readPortalFile("./packages/sdkwork-clawrouter-pc-commons/src/portal-auth.ts");
 
   assert.match(appSource, /RequirePortalSession/);
-  assert.match(appSource, /<Route path="\/console" element=\{<RequirePortalSession><ConsoleLayout/);
+  assert.match(appSource, /<Route path="\/console" element=\{<PortalErrorBoundary><RequirePortalSession><ConsoleLayout/);
   assert.match(appSource, /RequireAdminSession/);
-  assert.match(appSource, /<Route path="\/admin" element=\{<RequireAdminSession><AdminLayout/);
+  assert.match(appSource, /<Route path="\/admin" element=\{<PortalErrorBoundary><RequireAdminSession><AdminLayout/);
   assert.match(appSource, /<Route path="\*" element=\{<Navigate to="\/console\/dashboard" replace \/>} \/>/);
   assert.match(appSource, /<Route path="\*" element=\{<Navigate to="\/admin\/dashboard" replace \/>} \/>/);
   assert.match(guardSource, /hasPortalIamSession/);
@@ -1540,7 +1593,8 @@ test("portal wires console and admin routes through the protected session guard"
   assert.match(guardSource, /verifyCurrentPortalAdminAccess/);
   assert.match(guardSource, /RequireAdminSession/);
   assert.match(guardSource, /adminAccessState === 'forbidden'/);
-  assert.match(guardSource, /to: '\/console\/dashboard'/);
+  assert.match(guardSource, /shared\.auth\.adminAccess\.forbiddenTitle/);
+  assert.doesNotMatch(guardSource, /adminAccessState === 'forbidden'[\s\S]*to: '\/console\/dashboard'/);
   assert.match(guardSource, /@sdkwork\/clawrouter-pc-commons\/runtime/);
   assert.doesNotMatch(guardSource, /sdkwork-clawrouter-pc-commons\/runtime/);
   assert.match(sharedAuthSource, /hasPortalIamSession/);
@@ -2437,11 +2491,11 @@ test("portal aliases appbase auth and Tauri host packages for local reuse", () =
   assert.match(tsconfigSource, /sdkwork-core\/sdkwork-core-pc-react\/src\/index\.ts/);
   assert.match(viteConfigSource, /sdkwork-core-pc-react\/src\/index\.ts/);
   assert.match(workspaceSource, /sdkwork-core\/sdkwork-core-pc-react/);
-  assert.match(tsconfigSource, /packages\/pc-react\/iam\/sdkwork-auth-pc-react/);
-  assert.match(viteConfigSource, /packages\/pc-react\/iam\/sdkwork-auth-pc-react/);
-  assert.match(workspaceSource, /packages\/pc-react\/iam\/(?:\*|sdkwork-auth-pc-react)/);
+  assert.match(tsconfigSource, /sdkwork-iam\/apps\/sdkwork-iam-pc\/packages\/sdkwork-auth-pc-react/);
+  assert.match(viteConfigSource, /apps\/sdkwork-iam-pc\/packages\/sdkwork-auth-pc-react/);
+  assert.match(workspaceSource, /sdkwork-iam\/apps\/sdkwork-iam-pc\/packages\/(?:\*|sdkwork-auth-pc-react)/);
   assert.match(workspaceSource, /packages\/common\/foundation\/(?:\*|sdkwork-runtime-bootstrap)/);
-  assert.match(workspaceSource, /packages\/common\/iam\/(?:\*|sdkwork-iam-runtime)/);
+  assert.match(workspaceSource, /sdkwork-iam\/apps\/sdkwork-iam-common\/packages\/(?:\*|sdkwork-iam-runtime)/);
   assert.doesNotMatch(tsconfigSource, legacyAppbasePackageFamilyPattern);
   assert.doesNotMatch(viteConfigSource, legacyAppbasePackageFamilyPattern);
   assert.doesNotMatch(workspaceSource, legacyAppbasePackageFamilyPattern);

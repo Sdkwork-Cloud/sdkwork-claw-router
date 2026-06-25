@@ -575,20 +575,21 @@ async fn all_in_one_edge_router_serves_sqlite_gateway_admin_and_app_without_serv
     .await;
     let portal = spawn_router(portal_router()).await;
 
-    let edge_router = sdkwork_clawrouter_cloud_gateway::edge_server_router_with_in_process_upstreams(
-        sdkwork_clawrouter_cloud_gateway::EdgeServerConfig::try_new(
-            "http://127.0.0.1:1",
-            "http://127.0.0.1:1",
-            "http://127.0.0.1:1",
-            &portal.base_url,
-        )
-        .unwrap(),
-        sdkwork_clawrouter_cloud_gateway::EdgeInProcessUpstreams::new(
-            gateway_router,
-            admin_router,
-            app_router,
-        ),
-    );
+    let edge_router =
+        sdkwork_clawrouter_cloud_gateway::edge_server_router_with_in_process_upstreams(
+            sdkwork_clawrouter_cloud_gateway::EdgeServerConfig::try_new(
+                "http://127.0.0.1:1",
+                "http://127.0.0.1:1",
+                "http://127.0.0.1:1",
+                &portal.base_url,
+            )
+            .unwrap(),
+            sdkwork_clawrouter_cloud_gateway::EdgeInProcessUpstreams::new(
+                gateway_router,
+                admin_router,
+                app_router,
+            ),
+        );
 
     let readyz = json_request(edge_router.clone(), Method::GET, "/readyz", Body::empty())
         .send()

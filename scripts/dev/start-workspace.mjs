@@ -30,6 +30,7 @@ import {
   applyTopologyProfileToWorkspaceSettings,
   bridgeLegacyWorkspaceEnv,
   bridgeTopologyBindEnvToLegacyRustEnv,
+  IAM_APPLICATION_BOOTSTRAP_ENV,
   loadTopologyProfileForWorkspace,
   resolveServiceLayoutFromRuntimeMode,
   waitForWorkspaceHealthSurfaces,
@@ -240,6 +241,7 @@ export function clawRouterDevCargoTargetDir(workspaceRoot) {
 function clawRouterDevCargoEnv(workspaceRoot, baseEnv = process.env) {
   return {
     ...baseEnv,
+    ...IAM_APPLICATION_BOOTSTRAP_ENV,
     CARGO_TARGET_DIR: clawRouterDevCargoTargetDir(workspaceRoot),
   };
 }
@@ -386,7 +388,7 @@ export function parseWorkspaceArgs(argv = [], {
     runtimeMode: 'all-in-one',
     runtimeModeExplicit: false,
     explicitForwarding: false,
-    hosting: 'self-hosted',
+    deploymentProfile: 'standalone',
     serviceLayout: 'unified-process',
     profileId: undefined,
     gatewayBindExplicit: false,
@@ -462,12 +464,16 @@ export function parseWorkspaceArgs(argv = [], {
         break;
       case '--topology':
         throw new Error(
-          '--topology is retired; use --hosting (self-hosted|cloud-hosted) and --service-layout (unified-process|split-services)',
+          '--topology is retired; use --deployment-profile (standalone|cloud) and --service-layout (unified-process|split-services)',
         );
-      case '--hosting':
-        settings.hosting = requireValue(argv, index, arg);
+      case '--deployment-profile':
+        settings.deploymentProfile = requireValue(argv, index, arg);
         index += 1;
         break;
+      case '--hosting':
+        throw new Error(
+          '--hosting is retired; use --deployment-profile (standalone or cloud)',
+        );
       case '--service-layout':
         settings.serviceLayout = requireValue(argv, index, arg);
         index += 1;
@@ -532,7 +538,7 @@ export function parseWorkspaceArgs(argv = [], {
       ?? defaultPostgresDatabaseUrl();
   }
   const topologyProfile = loadTopologyProfileForWorkspace({
-    hosting: settings.hosting,
+    deploymentProfile: settings.deploymentProfile,
     serviceLayout: settings.serviceLayout,
     env: process.env,
     includeIamDatabase: false,
@@ -544,6 +550,11 @@ export function parseWorkspaceArgs(argv = [], {
   );
   for (const [key, value] of Object.entries({ ...topologyProfile.profileEnv, ...legacyBindEnv })) {
     if (value !== undefined && !key.startsWith('VITE_')) {
+      process.env[key] = value;
+    }
+  }
+  for (const [key, value] of Object.entries(IAM_APPLICATION_BOOTSTRAP_ENV)) {
+    if (value !== undefined) {
       process.env[key] = value;
     }
   }
@@ -593,6 +604,7 @@ function serviceEnv(settings, bindEnvName, bindValue, {
   }
   const env = {
     ...baseEnv,
+    ...IAM_APPLICATION_BOOTSTRAP_ENV,
     ...redisStructuredDefaults,
     SDKWORK_CLAW_DEPLOYMENT_MODE: 'server',
     [bindEnvName]: bindValue,
@@ -1025,8 +1037,8 @@ Starts the all-in-one Rust edge runtime with an embedded SDKWork API Gateway plu
 Use --client-only to start only the external sdkwork-api-cloud-gateway plus the portal dev server.
 
 Options:
-  --hosting <self-hosted|cloud-hosted>
-                         Topology hosting model (default self-hosted)
+  --deployment-profile <standalone|cloud>
+                         Deployment profile (default standalone)
   --service-layout <unified-process|split-services>
                          Topology service layout (default unified-process)
   --database-url <url>    Optional shared SDKWORK_CLAW_DATABASE_URL override (default ${defaultPostgresDatabaseUrl()})

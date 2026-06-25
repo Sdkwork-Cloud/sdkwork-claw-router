@@ -130,8 +130,16 @@ fn build_app_auth_state(
         password_hasher,
         password_login_rate_limiter: shared_password_login_rate_limiter(runtime_toml),
         auth_sensitive_rate_limiter: shared_password_login_rate_limiter(runtime_toml),
-        login_continuation_store: login_continuation_store
-            .unwrap_or_else(|| Arc::new(InMemoryLoginContinuationStore::new())),
+        login_continuation_store: match login_continuation_store {
+            Some(store) => store,
+            None if deployment_mode.is_production_like() => {
+                panic!(
+                    "SQL-backed login continuation store is required for production-like deployments ({})",
+                    deployment_mode.as_str()
+                );
+            }
+            None => Arc::new(InMemoryLoginContinuationStore::new()),
+        },
         tenant_signing_key_store,
         iam_runtime: iam_runtime
             .unwrap_or_else(|| IamRuntimeContext::from_runtime_toml(deployment_mode, runtime_toml)),
@@ -423,7 +431,7 @@ pub fn app_auth_router_with_store(
         app_session_config,
         password_hasher,
         Arc::new(DebugVerificationCodeSender),
-        true,
+        false,
     )
 }
 
@@ -1083,6 +1091,31 @@ pub async fn authenticate_password_and_issue_iam_session(
     issue_iam_session(&state, user.into(), "password", request_id).await
 }
 
+const NON_PRODUCTION_SESSION_BRIDGE_TRUSTED_SUBJECT_SECRET: &str =
+    "trusted-subject-secret-0123456789abcdef";
+
+fn resolve_session_bridge_trusted_subject_config() -> TrustedSubjectConfig {
+    TrustedSubjectConfig::from_env()
+        .ok()
+        .flatten()
+        .or_else(|| {
+            if sdkwork_claw_config::DeploymentMode::from_env().is_production_like() {
+                None
+            } else {
+                TrustedSubjectConfig::from_signing_secret(
+                    NON_PRODUCTION_SESSION_BRIDGE_TRUSTED_SUBJECT_SECRET,
+                )
+                .ok()
+            }
+        })
+        .unwrap_or_else(|| {
+            panic!(
+                "{} is required for session bridge trusted subject signing",
+                TrustedSubjectConfig::ENV_TRUSTED_SUBJECT_SECRET
+            );
+        })
+}
+
 fn session_issuer_state(
     auth_store: Arc<dyn AppAuthStore + Send + Sync>,
     password_hasher: Arc<dyn PasswordHasher + Send + Sync>,
@@ -1098,16 +1131,7 @@ fn session_issuer_state(
         event_store,
         verification_code_sender: Arc::new(DebugVerificationCodeSender),
         entity_uuid_generator,
-        trusted_subject_config: TrustedSubjectConfig::from_env()
-            .ok()
-            .flatten()
-            .or_else(|| {
-                TrustedSubjectConfig::from_signing_secret(
-                    "session-bridge-trusted-subject-secret-placeholder",
-                )
-                .ok()
-            })
-            .expect("session issuer requires trusted subject config"),
+        trusted_subject_config: resolve_session_bridge_trusted_subject_config(),
         app_session_config,
         password_hasher,
         password_login_rate_limiter: shared_password_login_rate_limiter(None),
@@ -1522,7 +1546,7 @@ async fn sign_iam_session_tokens(
         "TENANT"
     };
     let data_scope = session_data_scope(user.tenant_id, user.organization_id, user.id);
-    let permission_scope = vec!["clawrouter:console".to_owned()];
+    let permission_scope = vec!["clawrouter.console.access".to_owned()];
     let auth_claims = AppSessionTokenClaims {
         token_kind: AppSessionTokenKind::Auth,
         tenant_id: user.tenant_id,

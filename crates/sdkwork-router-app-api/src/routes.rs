@@ -75,7 +75,7 @@ use sdkwork_clawrouter_router_service::ports::{
     SiteSettingsStore, UnconfiguredProviderHealthProbe, UsageLogsReadStore, VerificationCodeSender,
 };
 use sdkwork_content_documents_sdk_reference::app_sdk_reference_router;
-use sdkwork_router_catalog_app_api::{
+use sdkwork_router_models_catalog_app_api::{
     app_model_catalog_router, app_model_rankings_router, app_model_rankings_router_with_read_store,
 };
 use sqlx::{PgPool, SqlitePool};
@@ -459,9 +459,17 @@ fn router_with_runtime_stores_and_database_status(
     };
     router = match app_runtime_store {
         Some(store) => {
-            let stream_bus = app_runtime_stream_bus
-                .clone()
-                .unwrap_or_else(|| Arc::new(InMemoryRuntimeStreamBus::default()));
+            let stream_bus = match app_runtime_stream_bus {
+                Some(bus) => bus,
+                None if DeploymentMode::from_env() == DeploymentMode::Desktop => {
+                    Arc::new(InMemoryRuntimeStreamBus::default())
+                }
+                None => {
+                    panic!(
+                        "app runtime stream bus is required when app runtime store is wired for non-desktop deployments"
+                    );
+                }
+            };
             let runtime_router = if let (Some(catalog), Some(gateway_client)) = (
                 app_runtime_execution_catalog.clone(),
                 app_runtime_gateway_client.clone(),
@@ -1470,6 +1478,11 @@ pub async fn router_from_env() -> Result<Router, ProductCatalogRouterError> {
     )?;
     let startup_install_mode = StartupInstallMode::from_env_or_runtime_toml(runtime_toml.as_ref())
         .map_err(ProductCatalogRouterError::Config)?;
+    sdkwork_claw_config::ensure_production_startup_install_policy(
+        runtime_toml.as_ref(),
+        startup_install_mode,
+    )
+    .map_err(ProductCatalogRouterError::Config)?;
     let api_key_security_config =
         ApiKeySecurityConfig::from_env_or_runtime_toml(runtime_toml.as_ref())
             .map_err(ProductCatalogRouterError::Config)?;
@@ -1652,10 +1665,7 @@ pub async fn shared_runtime_stream_bus_from_runtime_toml(
 }
 
 fn allow_in_memory_runtime_stream_bus_fallback(deployment_mode: DeploymentMode) -> bool {
-    matches!(
-        deployment_mode,
-        DeploymentMode::Desktop | DeploymentMode::Server
-    )
+    matches!(deployment_mode, DeploymentMode::Desktop)
 }
 
 fn app_runtime_gateway_base_url(runtime_toml: Option<&RuntimeTomlConfig>) -> String {

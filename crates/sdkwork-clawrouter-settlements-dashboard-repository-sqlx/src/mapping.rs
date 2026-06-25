@@ -257,7 +257,9 @@ pub(crate) fn decimal_add_strings(
         .map_err(|_| RepositoryError::new(format!("invalid settlement decimal addend: {left}")))?;
     let right = DecimalValue::parse(right)
         .map_err(|_| RepositoryError::new(format!("invalid settlement decimal addend: {right}")))?;
-    Ok((left + right).to_fixed_string(digits))
+    left.checked_add(right)
+        .map(|sum| sum.to_fixed_string(digits))
+        .map_err(|err| RepositoryError::new(err.to_string()))
 }
 
 fn whole_decimal_string(value: &str) -> String {

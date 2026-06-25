@@ -41,21 +41,21 @@ This SDK family is owner-only. Dependency-owned routes are consumed through decl
 
 | Workspace | Role | Mode | API prefix | Generated transport policy |
 | --- | --- | --- | --- | --- |
-| `sdkwork-appbase-backend-sdk` | `appbase-backend-management-capability` | `consumer-sdk` | `/backend/v3/api` | `generatedTransportImportPolicy: forbidden` |
+| `sdkwork-iam-backend-sdk` | `appbase-backend-management-capability` | `consumer-sdk` | `/backend/v3/api` | `generatedTransportImportPolicy: forbidden` |
 | `sdkwork-commerce-backend-sdk` | `commerce-backend-management-capability` | `consumer-sdk` | `/backend/v3/api` | `generatedTransportImportPolicy: forbidden` |
 
 Package names:
 
-- `sdkwork-appbase-backend-sdk`
-- `typescript`: `@sdkwork/appbase-backend-sdk`
-- `flutter`: `sdkwork_appbase_backend_sdk`
-- `rust`: `sdkwork-appbase-backend-sdk`
-- `java`: `com.sdkwork:sdkwork-appbase-backend-sdk`
+- `sdkwork-iam-backend-sdk`
+- `typescript`: `@sdkwork/iam-backend-sdk`
+- `flutter`: `sdkwork_iam_backend_sdk`
+- `rust`: `sdkwork-iam-backend-sdk`
+- `java`: `com.sdkwork:sdkwork-iam-backend-sdk`
 - `csharp`: `SDKWork.Appbase.BackendSdk`
-- `swift`: `sdkwork-appbase-backend-sdk`
-- `kotlin`: `com.sdkwork:sdkwork-appbase-backend-sdk`
-- `go`: `github.com/sdkwork/sdkwork-appbase-backend-sdk`
-- `python`: `sdkwork-appbase-backend-sdk`
+- `swift`: `sdkwork-iam-backend-sdk`
+- `kotlin`: `com.sdkwork:sdkwork-iam-backend-sdk`
+- `go`: `github.com/sdkwork/sdkwork-iam-backend-sdk`
+- `python`: `sdkwork-iam-backend-sdk`
 - `sdkwork-commerce-backend-sdk`
 - `typescript`: `sdkwork-commerce-backend-sdk-generated-typescript`
 - `flutter`: `sdkwork_commerce_backend_sdk`

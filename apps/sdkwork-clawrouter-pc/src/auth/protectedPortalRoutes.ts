@@ -124,7 +124,28 @@ export function RequireAdminSession({ children }: { children: ReactNode }) {
   }
 
   if (adminAccessState === 'forbidden') {
-    return createElement(Navigate, { replace: true, to: '/console/dashboard' });
+    return createElement(
+      'div',
+      {
+        className:
+          'min-h-screen bg-slate-50 px-6 py-24 text-center dark:bg-[#0a0a0a]',
+        role: 'alert',
+      },
+      createElement(
+        'h1',
+        {
+          className: 'text-lg font-semibold text-slate-900 dark:text-white',
+        },
+        t('shared.auth.adminAccess.forbiddenTitle'),
+      ),
+      createElement(
+        'p',
+        {
+          className: 'mt-3 text-sm text-slate-600 dark:text-slate-300',
+        },
+        t('shared.auth.adminAccess.forbiddenDescription'),
+      ),
+    );
   }
 
   if (adminAccessState === 'error') {

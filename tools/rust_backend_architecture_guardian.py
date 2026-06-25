@@ -88,7 +88,7 @@ class RustBackendArchitectureGuardian:
             "ports",
         ),
     }
-    MODULE_STANDARD_DOC = "docs/29-rust-backend-module-standard.md"
+    MODULE_STANDARD_DOC = "docs/architecture/tech/TECH-29-rust-backend-module-standard.md"
     REQUIRED_DOC_TERMS: tuple[str, ...] = (
         "Rust-first",
         "sdkwork-claw-security",

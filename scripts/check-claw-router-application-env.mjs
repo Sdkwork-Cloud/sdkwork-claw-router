@@ -236,15 +236,15 @@ function assertReleaseEnvironmentContractMatchesEdgeKeyOrder() {
 function assertGatewayReadsCanonicalEdgeEnvKeys() {
   const gatewayMainPath = path.join(
     WORKSPACE_ROOT,
-    'services',
-    'sdkwork-clawrouter-cloud-gateway',
+    'crates',
+    'sdkwork-clawrouter-standalone-gateway',
     'src',
     'main.rs',
   );
   const edgeEnvPath = path.join(
     WORKSPACE_ROOT,
-    'services',
-    'sdkwork-clawrouter-cloud-gateway',
+    'crates',
+    'sdkwork-clawrouter-standalone-gateway',
     'src',
     'edge_env.rs',
   );

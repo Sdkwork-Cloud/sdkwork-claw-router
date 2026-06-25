@@ -6,7 +6,7 @@
 
 **Architecture:** Appbase owns OAuth database tables, app-api runtime route contracts, provider ingress route contracts, and backend-api management route contracts. Claw Router consumes appbase backend SDK resources from an independent `/admin/oauth` admin module and deletes product-local open-platform ownership.
 
-**Tech Stack:** Rust route/storage crates, SQL migrations, OpenAPI/SDK materialization, TypeScript React backend-admin UI, generated `@sdkwork/appbase-backend-sdk`.
+**Tech Stack:** Rust route/storage crates, SQL migrations, OpenAPI/SDK materialization, TypeScript React backend-admin UI, generated `@sdkwork/iam-backend-sdk`.
 
 ---
 
@@ -104,7 +104,7 @@ Run the focused PC admin test. Expected: FAIL because module is absent.
 
 - [ ] **Step 3: Implement admin package**
 
-Build dense backend-admin pages and service boundary using `getSdkworkAppbaseBackendSdkClient` and `@sdkwork/appbase-backend-sdk` only. No raw HTTP, no Claw Router backend SDK for appbase-owned OAuth.
+Build dense backend-admin pages and service boundary using `getSdkworkAppbaseBackendSdkClient` and `@sdkwork/iam-backend-sdk` only. No raw HTTP, no Claw Router backend SDK for appbase-owned OAuth.
 
 - [ ] **Step 4: Run green admin test**
 

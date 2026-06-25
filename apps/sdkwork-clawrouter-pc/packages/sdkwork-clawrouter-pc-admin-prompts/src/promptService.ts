@@ -1,21 +1,23 @@
+import type {
+  AdminPromptBindingCreateRequest,
+  AdminPromptBindingUpdateRequest,
+  AdminPromptCreateRequest,
+  AdminPromptRenderRequest,
+  AdminPromptVersionCreateRequest,
+} from '@sdkwork/prompts-backend-sdk';
 import {
   createIdempotencyParams,
   ensureSdkworkApiSuccess,
-  getClawRouterBackendSdkClient,
+  getSdkworkPromptsBackendSdkClient,
   requiredSafePathSegment,
 } from '@sdkwork/clawrouter-pc-commons/runtime';
 import type {
-  AdminPromptCreateRequest,
-  AdminPromptBindingCreateRequest,
   AdminPromptBindingItem,
-  AdminPromptBindingUpdateRequest,
   AdminPromptItem,
-  AdminPromptRenderRequest,
   AdminPromptVersionItem,
-  AdminPromptVersionCreateRequest,
-} from '@sdkwork/clawrouter-backend-sdk';
+} from './prompt-types.ts';
 
-type BackendPrompts = ReturnType<typeof getClawRouterBackendSdkClient>['prompts'];
+type BackendPrompts = ReturnType<typeof getSdkworkPromptsBackendSdkClient>['prompts'];
 type ListParams<TList> = TList extends (params?: infer TParams) => unknown ? TParams : never;
 
 export type AdminPromptListParams = ListParams<BackendPrompts['definitions']['list']>;
@@ -40,11 +42,11 @@ export const EMPTY_PROMPT_ITEMS = {
 } as const;
 
 export async function listPrompts(params?: AdminPromptListParams) {
-  return getClawRouterBackendSdkClient().prompts.definitions.list(normalizePromptListParams(params));
+  return getSdkworkPromptsBackendSdkClient().prompts.definitions.list(normalizePromptListParams(params));
 }
 
 export async function createPrompt(input: AdminPromptCreateInput) {
-  const result = await getClawRouterBackendSdkClient().prompts.definitions.create(
+  const result = await getSdkworkPromptsBackendSdkClient().prompts.definitions.create(
     input,
     createIdempotencyParams('admin-prompt-create'),
   );
@@ -54,11 +56,11 @@ export async function createPrompt(input: AdminPromptCreateInput) {
 
 export async function listPromptVersions(promptId: string) {
   const safePromptId = requiredSafePathSegment(promptId, 'promptId');
-  return getClawRouterBackendSdkClient().prompts.versions.list(safePromptId);
+  return getSdkworkPromptsBackendSdkClient().prompts.versions.list(safePromptId);
 }
 
 export async function createPromptVersion(promptId: string, input: AdminPromptVersionCreateInput) {
-  const result = await getClawRouterBackendSdkClient().prompts.versions.create(
+  const result = await getSdkworkPromptsBackendSdkClient().prompts.versions.create(
     requiredSafePathSegment(promptId, 'promptId'),
     input,
     createIdempotencyParams('admin-prompt-version-create'),
@@ -68,7 +70,7 @@ export async function createPromptVersion(promptId: string, input: AdminPromptVe
 }
 
 export async function publishPromptVersion(versionId: string) {
-  const result = await getClawRouterBackendSdkClient().prompts.versions.publish(
+  const result = await getSdkworkPromptsBackendSdkClient().prompts.versions.publish(
     requiredSafePathSegment(versionId, 'versionId'),
   );
   ensureSdkworkApiSuccess(result, 'Failed to publish prompt version');
@@ -76,7 +78,7 @@ export async function publishPromptVersion(versionId: string) {
 }
 
 export async function renderPromptVersion(versionId: string, input: AdminPromptRenderInput) {
-  const result = await getClawRouterBackendSdkClient().prompts.versionRenders.create(
+  const result = await getSdkworkPromptsBackendSdkClient().prompts.versionRenders.create(
     requiredSafePathSegment(versionId, 'versionId'),
     input,
   );
@@ -86,11 +88,11 @@ export async function renderPromptVersion(versionId: string, input: AdminPromptR
 
 export async function listPromptBindings(promptId: string) {
   const safePromptId = requiredSafePathSegment(promptId, 'promptId');
-  return getClawRouterBackendSdkClient().prompts.definitionBindings.list(safePromptId);
+  return getSdkworkPromptsBackendSdkClient().prompts.definitionBindings.list(safePromptId);
 }
 
 export async function createPromptBinding(promptId: string, input: AdminPromptBindingCreateInput) {
-  const result = await getClawRouterBackendSdkClient().prompts.definitionBindings.create(
+  const result = await getSdkworkPromptsBackendSdkClient().prompts.definitionBindings.create(
     requiredSafePathSegment(promptId, 'promptId'),
     input,
     createIdempotencyParams('admin-prompt-binding-create'),
@@ -100,7 +102,7 @@ export async function createPromptBinding(promptId: string, input: AdminPromptBi
 }
 
 export async function updatePromptBinding(bindingId: string, input: AdminPromptBindingUpdateInput) {
-  const result = await getClawRouterBackendSdkClient().prompts.definitionBindings.update(
+  const result = await getSdkworkPromptsBackendSdkClient().prompts.definitionBindings.update(
     requiredSafePathSegment(bindingId, 'bindingId'),
     input,
   );

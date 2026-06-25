@@ -41,21 +41,21 @@ This SDK family is owner-only. Dependency-owned routes are consumed through decl
 
 | Workspace | Role | Mode | API prefix | Generated transport policy |
 | --- | --- | --- | --- | --- |
-| `sdkwork-appbase-app-sdk` | `appbase-app-capability` | `consumer-sdk` | `/app/v3/api` | `generatedTransportImportPolicy: forbidden` |
+| `sdkwork-iam-app-sdk` | `appbase-app-capability` | `consumer-sdk` | `/app/v3/api` | `generatedTransportImportPolicy: forbidden` |
 | `sdkwork-commerce-app-sdk` | `commerce-app-capability` | `consumer-sdk` | `/app/v3/api` | `generatedTransportImportPolicy: forbidden` |
 
 Package names:
 
-- `sdkwork-appbase-app-sdk`
-- `typescript`: `@sdkwork/appbase-app-sdk`
-- `flutter`: `sdkwork_appbase_app_sdk`
-- `rust`: `sdkwork-appbase-app-sdk`
-- `java`: `com.sdkwork:sdkwork-appbase-app-sdk`
+- `sdkwork-iam-app-sdk`
+- `typescript`: `@sdkwork/iam-app-sdk`
+- `flutter`: `sdkwork_iam_app_sdk`
+- `rust`: `sdkwork-iam-app-sdk`
+- `java`: `com.sdkwork:sdkwork-iam-app-sdk`
 - `csharp`: `SDKWork.Appbase.AppSdk`
-- `swift`: `sdkwork-appbase-app-sdk`
-- `kotlin`: `com.sdkwork:sdkwork-appbase-app-sdk`
-- `go`: `github.com/sdkwork/sdkwork-appbase-app-sdk`
-- `python`: `sdkwork-appbase-app-sdk`
+- `swift`: `sdkwork-iam-app-sdk`
+- `kotlin`: `com.sdkwork:sdkwork-iam-app-sdk`
+- `go`: `github.com/sdkwork/sdkwork-iam-app-sdk`
+- `python`: `sdkwork-iam-app-sdk`
 - `sdkwork-commerce-app-sdk`
 - `typescript`: `sdkwork-commerce-app-sdk-generated-typescript`
 - `flutter`: `sdkwork_commerce_app_sdk`

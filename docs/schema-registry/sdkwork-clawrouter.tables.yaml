@@ -42,16 +42,14 @@ schema_registry:
     - portal
   legacy_compatibility_guardrails:
     java_entity_first_required: false
-    rule: Greenfield composition model uses ai_* runtime, ops_*, integration_*, and c_*
-      tables as claw-router generated ownership. Drive-owned storage, upload, object,
-      and MediaResource lifecycle are owned by sdkwork-drive and must not be generated
-      in claw-router schema.sql. Model catalog
-      dictionary tables are owned by sdkwork-models and consumed via sdkwork-models SDK or bundled
-      catalog at runtime. Retired forum/content-feed tables are not owned by claw-router. IAM base,
-      verification, commerce, promotion, and messaging tables are owned by sibling products and must
-      not be generated or composed in claw-router schema.sql. appstore_* and dr_drive_* tables are
-      owned by sdkwork-appstore and sdkwork-drive and must not be composed into claw-router database
-      lifecycle.
+    rule: Claw-router generated ownership is limited to gateway routing, metering,
+      pricing, integration provider accounts, commerce usage projections, gateway
+      IAM extensions, ops telemetry, and system installation metadata. Agent/chat/MCP/runtime/prompt
+      tables are owned by sdkwork-kernel. Model catalog dictionary tables are owned
+      by sdkwork-models and composed at install time. Notification tables are owned
+      by sdkwork-appbase-messaging. IAM base, verification, commerce, promotion, messaging,
+      appstore, and drive tables are external sibling modules and must not be generated
+      in claw-router schema.sql.
     protected_domains:
     - platform
     - classification
@@ -67,12 +65,10 @@ schema_registry:
     - sdkwork_account
     - sdkwork_refund
     - sdkwork_invoice
-    allowed_projection_exception: Router-owned commerce_* tables may only add usage settlement,
-      statement, export, and analytics projections in generated schema.sql. Base commerce_*,
-      promotion_*, messaging_*, and iam_* capability tables are external and must not be registered
-      in claw-router schema registry or database.manifest modules. Retired forum/content-feed tables
-      are not registered in claw-router schema registry. platform_* and appstore_* DDL are owned by
-      sdkwork-appstore and must not be generated or composed in claw-router schema.sql.
+    allowed_projection_exception: Router-owned commerce_usage_* tables may only add
+      usage settlement, statement, export, and analytics projections. c_category remains
+      a transitional appstore-aligned classification projection until sdkwork-appstore
+      publishes canonical DDL.
   common_column_groups:
     tenant_entity:
     - id
@@ -501,4 +497,34 @@ table_fragments:
 - tables/025-ai.yaml
 - tables/026-commerce.yaml
 - tables/028-commerce.yaml
-registry_dependencies: []
+registry_dependencies:
+- module_id: appbase-iam
+  locator: ../sdkwork-appbase
+  registry_path: docs/schema-registry/appbase-iam.tables.yaml
+  order: 10
+  ownership: read_only
+- module_id: appbase-messaging
+  locator: ../sdkwork-appbase
+  registry_path: docs/schema-registry/appbase-messaging.tables.yaml
+  order: 12
+  ownership: read_only
+- module_id: commerce-core
+  locator: ../sdkwork-commerce
+  registry_path: docs/schema-registry/commerce-core.tables.yaml
+  order: 20
+  ownership: read_only
+- module_id: appstore
+  locator: ../sdkwork-appstore
+  registry_path: docs/schema-registry/appstore.tables.yaml
+  order: 30
+  ownership: read_only
+- module_id: sdkwork-models
+  locator: ../sdkwork-models
+  registry_path: docs/schema-registry/sdkwork-models.tables.yaml
+  order: 35
+  ownership: compose_at_install
+- module_id: sdkwork-kernel
+  locator: ../sdkwork-kernel
+  registry_path: docs/schema-registry/sdkwork-kernel.tables.yaml
+  order: 40
+  ownership: read_only

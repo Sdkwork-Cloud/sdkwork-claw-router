@@ -11,7 +11,7 @@ SPECS_ROOT = ROOT.parent / "sdkwork-specs"
 
 BACKEND_SDK_MARKERS = (
     "@sdkwork/clawrouter-backend-sdk",
-    "@sdkwork/appbase-backend-sdk",
+    "@sdkwork/iam-backend-sdk",
     "getClawRouterBackendSdkClient",
     "getSdkworkAppbaseBackendSdkClient",
     "createClawRouterBackendSdkClient",

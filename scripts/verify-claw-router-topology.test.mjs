@@ -46,7 +46,9 @@ test('declares v2 topology spec and profile env files for sdkwork-clawrouter', a
     'standalone.unified-process.development',
     'standalone.split-services.development',
     'standalone.unified-process.production',
+    'standalone.split-services.production',
     'cloud.unified-process.development',
+    'cloud.unified-process.production',
     'cloud.split-services.development',
     'cloud.split-services.production',
   ]) {
@@ -94,10 +96,11 @@ test('declares cloud gateway config bundles referenced by topology spec', async 
 test('start-workspace loads topology profile env from adapter', async () => {
   const workspaceScript = await read('scripts/dev/start-workspace.mjs');
   assert.match(workspaceScript, /loadTopologyProfileForWorkspace/);
+  assert.match(workspaceScript, /IAM_APPLICATION_BOOTSTRAP_ENV/);
   assert.match(workspaceScript, /applyTopologyProfileToWorkspaceSettings/);
   assert.match(workspaceScript, /waitForWorkspaceHealthSurfaces/);
   assert.match(workspaceScript, /bridgeTopologyBindEnvToLegacyRustEnv/);
-  assert.match(workspaceScript, /--hosting/);
+  assert.match(workspaceScript, /--deployment-profile/);
   assert.match(workspaceScript, /--service-layout/);
   assert.match(workspaceScript, /--topology is retired/);
 });
@@ -150,10 +153,13 @@ test('bridgeTopologyBindEnvToLegacyRustEnv maps topology binds to Rust service e
 });
 
 test('claw-router dev dry-run resolves surface URLs from profile env', async () => {
-  const { loadTopologyProfileForWorkspace, resolveSurfaceHttpUrl } = await import('./lib/claw-router-topology.mjs');
+  const { loadTopologyProfileForWorkspace, resolveSurfaceHttpUrl, REPO_ROOT } = await import('./lib/claw-router-topology.mjs');
   const { env } = loadTopologyProfileForWorkspace();
   assert.equal(resolveSurfaceHttpUrl(env, 'application.public-ingress'), 'http://127.0.0.1:3900');
   assert.equal(resolveSurfaceHttpUrl(env, 'platform.api-gateway'), 'http://127.0.0.1:3902');
+  assert.equal(env.SDKWORK_APP_ROOT, REPO_ROOT);
+  assert.equal(env.SDKWORK_CLAW_ROUTER_APP_ROOT, REPO_ROOT);
+  assert.equal(env.SDKWORK_IAM_APP_ROOT, path.resolve(REPO_ROOT, '..', 'sdkwork-iam'));
 });
 
 test('portal vite config uses topology client env for dev proxy fallbacks', async () => {
@@ -197,7 +203,7 @@ test('profile env files do not use retired topology vocabulary', async () => {
       );
     }
     assert.doesNotMatch(profileEnv, /^SDKWORK_CLAW_ROUTER_TOPOLOGY=/m);
-    assert.match(profileEnv, /SDKWORK_CLAW_ROUTER_HOSTING=/);
+    assert.match(profileEnv, /SDKWORK_CLAW_ROUTER_DEPLOYMENT_PROFILE=/);
     assert.match(profileEnv, /SDKWORK_CLAW_ROUTER_SERVICE_LAYOUT=/);
     assert.match(profileEnv, /SDKWORK_CLAW_ROUTER_PROFILE_ID=/);
   }
@@ -256,6 +262,16 @@ test('claw-router dev orchestrator loads topology profile and forwards workspace
   assert.match(devScript, /topology is retired/);
 });
 
+test('CI verification plan includes commercial contract guardians and portal typecheck', async () => {
+  const module = await import('./verify-claw-router-product.mjs');
+  const plan = module.buildVerificationPlan({ ci: true }, {});
+  const labels = plan.map((step) => step.label);
+
+  assert.ok(labels.includes('frontend contract guard'));
+  assert.ok(labels.includes('openapi precision audit'));
+  assert.ok(labels.includes('portal frontend typecheck'));
+});
+
 test('verification plan runs topology checks before tooling contract tests', async () => {
   const module = await import('./verify-claw-router-product.mjs');
   const plan = module.buildVerificationPlan({ fast: true }, {});
@@ -269,4 +285,20 @@ test('verification plan runs topology checks before tooling contract tests', asy
   assert.ok(toolingIndex >= 0);
   assert.ok(topologyValidateIndex < toolingIndex);
   assert.ok(topologyContractIndex < toolingIndex);
+});
+
+test('claw-router embedded IAM bootstrap standard stays aligned with sdkwork-iam framework', async () => {
+  const { spawnSync } = await import('node:child_process');
+  const { fileURLToPath } = await import('node:url');
+  const path = await import('node:path');
+  const scriptPath = path.join(
+    path.dirname(fileURLToPath(import.meta.url)),
+    'dev',
+    'sdkwork-clawrouter-iam-application-bootstrap-standard.test.mjs',
+  );
+  const result = spawnSync(process.execPath, [scriptPath], {
+    cwd: path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..'),
+    encoding: 'utf8',
+  });
+  assert.equal(result.status, 0, result.stderr || result.stdout);
 });

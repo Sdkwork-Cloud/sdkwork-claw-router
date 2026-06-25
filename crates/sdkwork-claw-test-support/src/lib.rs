@@ -21,7 +21,7 @@ use sqlx::SqlitePool;
 type HmacSha256 = Hmac<Sha256>;
 
 static SQLITE_DB_COUNTER: AtomicU64 = AtomicU64::new(0);
-const SEEDED_SQLITE_TEMPLATE_REVISION: &str = "v14";
+const SEEDED_SQLITE_TEMPLATE_REVISION: &str = "v15";
 const SQLITE_TEMPLATE_LOCK_RETRY_INITIAL_MILLIS: u64 = 10;
 const SQLITE_TEMPLATE_LOCK_RETRY_MAX_MILLIS: u64 = 100;
 
@@ -335,6 +335,9 @@ async fn sqlite_template_contains_seed_catalog(pool: &SqlitePool) -> bool {
     )
     .fetch_one(pool)
     .await;
+    let total_model_count = sqlx::query_scalar::<_, i64>("SELECT COUNT(1) FROM ai_model")
+        .fetch_one(pool)
+        .await;
     let completions_resource_count = sqlx::query_scalar::<_, i64>(
         "SELECT COUNT(1) FROM ai_resource WHERE catalog_key = 'openai/gpt-4o-mini' AND api_code = 'openai.completions' AND resource_type = 'model_api'",
     )
@@ -353,11 +356,12 @@ async fn sqlite_template_contains_seed_catalog(pool: &SqlitePool) -> bool {
     matches!(
         (
             model_count,
+            total_model_count,
             completions_resource_count,
             bundle_grant_count,
             channel_model_table_count
         ),
-        (Ok(1), Ok(1), Ok(1), Ok(0))
+        (Ok(1), Ok(2), Ok(1), Ok(1), Ok(0))
     )
 }
 

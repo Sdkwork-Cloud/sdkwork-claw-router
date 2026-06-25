@@ -31,10 +31,18 @@ async fn sqlite_product_catalog_route_serves_real_backend_model_list() {
     let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
 
     assert_eq!("2000", payload["code"]);
-    assert_eq!("gpt-4o-mini", payload["data"]["items"][0]["model"]);
+    let items = payload["data"]["items"]
+        .as_array()
+        .expect("model list items must be an array");
+    let transcribe_model = items
+        .iter()
+        .find(|item| item["model"] == "gpt-4o-mini-transcribe")
+        .unwrap_or_else(|| {
+            panic!("expected gpt-4o-mini-transcribe in bundled catalog model list, got: {items:?}")
+        });
     assert_eq!(
-        "0.198000",
-        payload["data"]["items"][0]["priceAvailability"]["customerUnitPrice"]
+        "1.320000",
+        transcribe_model["priceAvailability"]["customerUnitPrice"]
     );
 }
 

@@ -70,9 +70,9 @@ extension under the same `/admin/oauth` module.
   clients, secrets, surfaces, flows, scopes, claim mappings, policies, tenant
   bindings, authorization state, account links, grants, callback events, and
   diagnostic runs.
-- `sdkwork-appbase-app-api` OAuth runtime routes.
-- `sdkwork-appbase-backend-api` OAuth management routes.
-- generated `@sdkwork/appbase-app-sdk` and `@sdkwork/appbase-backend-sdk`
+- `sdkwork-iam-app-api` OAuth runtime routes.
+- `sdkwork-iam-backend-api` OAuth management routes.
+- generated `@sdkwork/iam-app-sdk` and `@sdkwork/iam-backend-sdk`
   resources.
 - reusable appbase auth UI/runtime provider lists and OAuth invocation behavior.
 
@@ -1547,7 +1547,7 @@ Notes:
 
 ### App API
 
-Surface: `sdkwork-appbase-app-api`
+Surface: `sdkwork-iam-app-api`
 
 Prefix: `/app/v3/api`
 
@@ -1585,7 +1585,7 @@ Canonical routes:
 
 ### Provider Ingress Open API
 
-Surface: `sdkwork-appbase-open-api`
+Surface: `sdkwork-iam-open-api`
 
 Prefix: `/iam/v3/api`
 
@@ -1617,7 +1617,7 @@ Canonical routes:
 
 ### Backend API
 
-Surface: `sdkwork-appbase-backend-api`
+Surface: `sdkwork-iam-backend-api`
 
 Prefix: `/backend/v3/api`
 
@@ -1722,7 +1722,7 @@ such as a client detail secrets tab, but the generated SDK resource remains
 Appbase SDK resources after generation:
 
 ```text
-@sdkwork/appbase-app-sdk
+@sdkwork/iam-app-sdk
   client.oauth.providers.list(...)
   client.oauth.authorizationUrls.create(...)
   client.oauth.deviceAuthorizations.create(...)
@@ -1735,7 +1735,7 @@ Appbase SDK resources after generation:
   client.oauth.grants.list(...)
   client.oauth.grants.delete(...)
 
-@sdkwork/appbase-backend-sdk
+@sdkwork/iam-backend-sdk
   client.iam.oauth.providerCatalog.*
   client.iam.oauth.integrations.*
   client.iam.oauth.clients.*
@@ -1871,7 +1871,7 @@ Claw Router frontend integration:
 - Use `getSdkworkAppbaseBackendSdkClient` from the existing commons SDK client
   boundary.
 - UI calls go through service modules backed by
-  `@sdkwork/appbase-backend-sdk`.
+  `@sdkwork/iam-backend-sdk`.
 - No raw `fetch`, axios, manual auth headers, or local SDK forks.
 - No `@sdkwork/clawrouter-backend-sdk` usage for this appbase-owned capability
   except tests proving old Claw Router `open_platform_*` resources are removed.

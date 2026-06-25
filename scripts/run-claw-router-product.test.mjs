@@ -214,7 +214,7 @@ test('root package exposes pnpm product entrypoints', () => {
   );
   assert.equal(
     rootPackage.scripts.check,
-    'pnpm check:application-env && pnpm check:gateway-request-identity && node scripts/run-claw-router-product.mjs check',
+    'pnpm check:application-env && pnpm check:gateway-request-identity && pnpm check:dependency-composition && node scripts/run-claw-router-product.mjs check',
   );
   assert.equal(
     rootPackage.scripts['check:application-env'],
@@ -457,7 +457,7 @@ test('foundation dependency APIs target the shared sdkwork api gateway without a
   });
 
   const foundationDependencies = dependencySurfaces.dependencies.filter((dependency) =>
-    /^sdkwork-(appbase|commerce)-/u.test(dependency.workspace)
+    /^sdkwork-(iam|commerce)-/u.test(dependency.workspace)
   );
   assert.equal(foundationDependencies.length, 4);
   for (const dependency of foundationDependencies) {
@@ -513,6 +513,24 @@ test('product app and admin API servers do not keep direct foundation API runtim
     'shared-gateway migration must not keep product-local legacy adapter or base-url fallback fields in dependency-api-surfaces.json',
   );
   for (const dependency of dependencySurfaces.dependencies ?? []) {
+    if (/^sdkwork-models-/u.test(dependency.workspace)) {
+      assert.equal(
+        dependency.runtimeIntegration?.mode,
+        'same-origin-mounted',
+        `${dependency.workspace} must declare compose-mounted models catalog routes on the product API surface`,
+      );
+      assert.equal(
+        dependency.runtimeIntegration?.sameOriginAllowed,
+        true,
+        `${dependency.workspace} must allow same-origin product API roots for compose-mounted models catalog routes`,
+      );
+      assert.equal(
+        dependency.runtimeIntegration?.mountCoverage?.status,
+        'verified',
+        `${dependency.workspace} must declare verified mount coverage for compose-mounted models catalog routes`,
+      );
+      continue;
+    }
     assert.equal(
       dependency.runtimeIntegration?.mode,
       'external-service',
@@ -2315,7 +2333,7 @@ test('claw router workspace launch plan defaults to all-in-one Rust edge runtime
       '-p',
       'sdkwork-claw-installer',
       '-p',
-      'sdkwork-clawrouter-cloud-gateway',
+      'sdkwork-clawrouter-standalone-gateway',
     ]);
     assert.equal(prebuildStep.blocking, true);
     assert.equal(
@@ -2388,7 +2406,7 @@ test('claw router workspace launch plan defaults to all-in-one Rust edge runtime
     assert.deepEqual(serverStep.args, [
       'run',
       '-p',
-      'sdkwork-clawrouter-cloud-gateway',
+      'sdkwork-clawrouter-standalone-gateway',
     ]);
     assert.equal(
       serverStep.env.CARGO_TARGET_DIR,
@@ -3164,6 +3182,10 @@ test('database management wrapper forwards catalog refresh options and supports 
   ]);
   assert.equal(step.env.SDKWORK_CLAW_CONFIG_FILE, path.resolve(workspaceRoot, 'etc/clawrouter.toml'));
   assert.equal(step.env.SDKWORK_CLAW_DEPLOYMENT_MODE, 'desktop');
+  assert.equal(
+    step.env.SDKWORK_IAM_APP_ROOT,
+    path.resolve(workspaceRoot, '..', 'sdkwork-iam'),
+  );
   assert.equal(step.windowsHide, true);
 });
 
@@ -6715,9 +6737,9 @@ test('ci verification plan extends precommit with rust format and admin api inte
   assert.ok(labels.indexOf('admin api sqlite integration tests') > labels.indexOf('rust format for frequently touched packages'));
   assert.equal(
     commandLines.at(-1),
-    'cargo test -p sdkwork-clawrouter-admin-api-server --test sqlite_product_model_route --test product_center_routes',
+    `${module.pnpmCommand()} --dir apps/sdkwork-clawrouter-pc typecheck`,
   );
-  assert.ok(!labels.includes('portal frontend typecheck'));
+  assert.ok(labels.includes('portal frontend typecheck'));
   assert.ok(!labels.includes('production artifact build'));
   assert.ok(!labels.includes('schema quality gate'));
 });

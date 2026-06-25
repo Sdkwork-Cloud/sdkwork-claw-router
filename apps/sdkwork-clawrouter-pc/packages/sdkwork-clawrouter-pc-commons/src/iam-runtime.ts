@@ -4,8 +4,8 @@ import {
   type SdkworkAppbasePcAuthRuntimeSdkClient,
 } from '@sdkwork/auth-runtime-pc-react';
 import {
-  type SdkworkAppClient,
-} from '@sdkwork/appbase-app-sdk';
+  wrapCredentialEntryClient,
+} from '@sdkwork/iam-credential-entry';
 import {
   type IamRuntime,
 } from '@sdkwork/iam-runtime';
@@ -36,9 +36,8 @@ import {
 import { normalizeGeneratedSdkBaseUrl } from './sdk-base-url.ts';
 import { readClawRouterRuntimeEnv } from './utils/env.ts';
 
-const CLAW_ROUTER_IAM_RUNTIME_APP_ID = 'sdkwork-clawrouter';
-
-type CredentialEntryMethod = (...args: unknown[]) => Promise<unknown>;
+const CLAW_ROUTER_IAM_RUNTIME_APP_ID =
+  readClawRouterRuntimeEnv('VITE_SDKWORK_APP_ID')?.trim() || 'sdkwork-clawrouter';
 
 let runtimeComposition: SdkworkAppbasePcAuthRuntimeComposition | null = null;
 
@@ -47,6 +46,7 @@ export function createClawRouterIamRuntime(): IamRuntime {
 }
 
 export function createClawRouterIamRuntimeComposition(): SdkworkAppbasePcAuthRuntimeComposition {
+  const tokenManager = getClawRouterGlobalTokenManager();
   const composition = createSdkworkAppbasePcAuthRuntime({
     app: {
       appId: CLAW_ROUTER_IAM_RUNTIME_APP_ID,
@@ -57,7 +57,13 @@ export function createClawRouterIamRuntimeComposition(): SdkworkAppbasePcAuthRun
     baseUrls: {
       appbaseAppApiBaseUrl: resolveAppbaseAppApiBaseUrl(),
     },
-    createAppbaseAppClient: () => wrapCredentialEntryClient(getSdkworkAppbaseAppSdkClient()),
+    createAppbaseAppClient: () => wrapCredentialEntryClient(getSdkworkAppbaseAppSdkClient(), {
+      tokenManager,
+      prepareTokens: prepareClawRouterCredentialEntryTokens,
+    }),
+    credentialEntry: {
+      skipWrap: true,
+    },
     hooks: {
       onSessionChanged: () => {
         resetClawRouterSdkClients();
@@ -77,7 +83,7 @@ export function createClawRouterIamRuntimeComposition(): SdkworkAppbasePcAuthRun
       commitSession: (session) => commitClawRouterIamRuntimeSession(session),
       readSession: () => toPortalIamBridgeSession(loadStoredAppSessionToken()),
     },
-    tokenManager: getClawRouterGlobalTokenManager(),
+    tokenManager,
   });
 
   patchClawRouterIamContextStore(composition.contextStore as import('@sdkwork/iam-runtime').IamContextStore);
@@ -97,6 +103,8 @@ export function resetClawRouterIamRuntime(): void {
   runtimeComposition = null;
 }
 
+export { wrapCredentialEntryClient } from '@sdkwork/iam-credential-entry';
+
 function clearClawRouterIamRuntimeSession(): void {
   clearStoredAppSessionToken();
   resetClawRouterSdkClients();
@@ -106,49 +114,6 @@ function commitClawRouterIamRuntimeSession(session: unknown): ReturnType<typeof 
   const stored = storeAppSessionFromResult(session);
   resetClawRouterSdkClients();
   return stored;
-}
-
-export function wrapCredentialEntryClient(client: SdkworkAppClient): SdkworkAppClient {
-  const auth = client.auth;
-  if (auth) {
-    wrapCredentialEntryMethod(auth.passwordResetRequests, 'create');
-    wrapCredentialEntryMethod(auth.passwordResets, 'create');
-    wrapCredentialEntryMethod(auth.registrations, 'create');
-    wrapCredentialEntryMethod(auth.sessions, 'create');
-    wrapCredentialEntryMethod(auth.sessions?.loginContextSelection, 'create');
-    wrapCredentialEntryMethod(auth.sessions?.organizationSelection, 'create');
-  }
-
-  const oauth = client.oauth;
-  if (oauth) {
-    wrapCredentialEntryMethod(oauth.authorizationUrls, 'create');
-    wrapCredentialEntryMethod(oauth.deviceAuthorizations, 'create');
-    wrapCredentialEntryMethod(oauth.deviceAuthorizations?.passwordCompletions, 'create');
-    wrapCredentialEntryMethod(oauth.miniProgramSessions, 'create');
-    wrapCredentialEntryMethod(oauth.sessions, 'create');
-  }
-
-  return client;
-}
-
-function wrapCredentialEntryMethod(
-  resource: object | undefined,
-  methodName: string,
-): void {
-  if (!resource) {
-    return;
-  }
-
-  const mutableResource = resource as Record<string, CredentialEntryMethod | undefined>;
-  const original = mutableResource[methodName];
-  if (typeof original !== 'function') {
-    return;
-  }
-
-  mutableResource[methodName] = async (...args: unknown[]) => {
-    prepareClawRouterCredentialEntryTokens();
-    return original.apply(resource, args);
-  };
 }
 
 function resolveAppbaseAppApiBaseUrl(): string {

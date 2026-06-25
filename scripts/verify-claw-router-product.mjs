@@ -223,6 +223,22 @@ function buildTopologyVerificationPlan(env = process.env) {
       ],
       env,
     },
+    {
+      label: 'app-topology core tests',
+      command: 'node',
+      args: [
+        '--test',
+        '--experimental-test-isolation=none',
+        '../sdkwork-app-topology/tests/topology-core.test.mjs',
+      ],
+      env,
+    },
+    {
+      label: 'IAM embedded bootstrap workspace audit',
+      command: 'node',
+      args: ['../sdkwork-specs/tools/audit-iam-embedded-bootstrap-workspace.mjs'],
+      env,
+    },
   ];
 }
 
@@ -496,6 +512,13 @@ function buildCiVerificationPlan(env = process.env, settings = {}) {
     command: 'cargo',
     args: runtimeRustArgs,
     env: rustEnv,
+  });
+  plan.push(...buildCommercialContractGuardianPlan(env));
+  plan.push({
+    label: 'portal frontend typecheck',
+    command: pnpmCommand(),
+    args: ['--dir', 'apps/sdkwork-clawrouter-pc', 'typecheck'],
+    env,
   });
   return plan;
 }

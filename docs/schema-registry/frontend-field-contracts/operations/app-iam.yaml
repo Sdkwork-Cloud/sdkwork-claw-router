@@ -7,6 +7,7 @@ frontend_operations:
   api_surface: app
   api_method: GET
   api_path: /app/v3/api/iam/api_keys
+  sdk_domain: iam
   read_sources:
   - iam_gateway_api_key
   - ai_channel_group
@@ -143,6 +144,7 @@ frontend_operations:
   api_surface: app
   api_method: POST
   api_path: /app/v3/api/iam/api_keys
+  sdk_domain: iam
   idempotency_required: true
   read_sources:
   - ai_channel_group
@@ -221,6 +223,7 @@ frontend_operations:
   api_surface: app
   api_method: PATCH
   api_path: /app/v3/api/iam/api_keys/{apiKeyId}
+  sdk_domain: iam
   read_sources:
   - iam_gateway_api_key
   - ai_channel_group
@@ -295,6 +298,7 @@ frontend_operations:
   api_surface: app
   api_method: DELETE
   api_path: /app/v3/api/iam/api_keys/{apiKeyId}
+  sdk_domain: iam
   read_sources:
   - iam_gateway_api_key
   write_tables:
@@ -319,6 +323,7 @@ frontend_operations:
   api_surface: app
   api_method: GET
   api_path: /app/v3/api/iam/users/settings
+  sdk_domain: iam
   read_sources:
   - iam_user_preference
   - integration_webhook_endpoint
@@ -365,6 +370,7 @@ frontend_operations:
   api_surface: app
   api_method: PUT
   api_path: /app/v3/api/iam/users/settings
+  sdk_domain: iam
   read_sources:
   - iam_user_preference
   - integration_webhook_endpoint

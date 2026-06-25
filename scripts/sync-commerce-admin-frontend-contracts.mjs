@@ -48,7 +48,7 @@ function resolvePackage(route) {
 }
 
 function resolveDependencyFamily(route) {
-  if (route.startsWith('/admin/oauth')) return 'sdkwork-appbase-backend-sdk';
+  if (route.startsWith('/admin/oauth')) return 'sdkwork-iam-backend-sdk';
   return 'sdkwork-clawrouter-backend-sdk';
 }
 

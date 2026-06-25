@@ -1,5 +1,8 @@
 import { createClientOperationToken } from '@sdkwork/clawrouter-pc-commons/idempotency';
-import { getClawRouterAppSdkClient } from '@sdkwork/clawrouter-pc-commons/sdk-clients';
+import {
+  getClawRouterAppSdkClient,
+  getSdkworkAppbaseAppSdkClient,
+} from '@sdkwork/clawrouter-pc-commons/sdk-clients';
 import {
   ensureSdkworkApiSuccess,
   isRecord,
@@ -11,9 +14,52 @@ import {
   readRequiredString,
   readString,
 } from '@sdkwork/clawrouter-pc-commons/api-result';
-import type { CreateApiKeyRequest, UpdateApiKeyRequest } from '@sdkwork/clawrouter-app-sdk';
-import type { AppApiKeyListResponse as SdkAppApiKeyListResponse } from '@sdkwork/clawrouter-app-sdk';
 import { DEFAULT_CHANNEL_GROUP } from './apiKeyForm.ts';
+
+type ApiKeyModality = 'audio' | 'image' | 'music' | 'text' | 'video';
+
+interface CreateApiKeyRequest {
+  channelGroup: string;
+  defaultForRuntime?: boolean;
+  expires?: string;
+  ipLimit?: string;
+  isUnlimitedQuota?: boolean;
+  modalities?: ApiKeyModality[];
+  name: string;
+  quota?: string;
+}
+
+interface UpdateApiKeyRequest {
+  channelGroup?: string;
+  defaultForRuntime?: boolean;
+  expires?: string;
+  ipLimit?: string;
+  isUnlimitedQuota?: boolean;
+  modalities?: ApiKeyModality[];
+  name?: string;
+  quota?: string;
+}
+
+interface SdkAppApiKeyListResponse {
+  groups: unknown[];
+  items: Array<{
+    channelGroup: string;
+    channelGroupName?: string | null;
+    copyableKey?: string | null;
+    created: string;
+    defaultForRuntime: boolean;
+    expires: string;
+    id: string;
+    ipLimit: string;
+    maskedKey: string;
+    modalities: ApiKeyModality[];
+    name: string;
+    quota: string;
+    rate?: string | null;
+    status: 'disabled' | 'enabled';
+    usedQuota: string;
+  }>;
+}
 
 type SdkAppApiKeyItem = SdkAppApiKeyListResponse['items'][number];
 
@@ -59,14 +105,13 @@ export interface CreatedApiKey {
   rawKey: string;
 }
 
-type ApiKeyModality = NonNullable<CreateApiKeyRequest['modalities']>[number];
 type UpdateApiKeyInput = Partial<CreateApiKeyInput>;
 const UNRESTRICTED_MODALITIES: ApiKeyModality[] = ['text', 'image', 'video', 'audio', 'music'];
 
 export class ApiKeyService {
   static async fetchKeys(): Promise<ApiKey[]> {
     try {
-      const result = await getClawRouterAppSdkClient().iam.apiKeys.list();
+      const result = await getSdkworkAppbaseAppSdkClient().iam.apiKeys.list();
       ensureSdkworkApiSuccess(result, 'console.apiKeys.errors.loadFallback');
       const items = readRequiredApiItems(result, 'console.apiKeys.errors.loadFallback');
       return items.map(normalizeApiKey);
@@ -89,8 +134,8 @@ export class ApiKeyService {
   static async createKey(input: CreateApiKeyInput): Promise<CreatedApiKey> {
     const idempotencyKey = createClientOperationToken('create-api-key');
     try {
-      const result = await getClawRouterAppSdkClient().iam.apiKeys.create(
-        toCreateApiKeyRequest(input),
+      const result = await getSdkworkAppbaseAppSdkClient().iam.apiKeys.create(
+        toCreateApiKeyRequest(input) as unknown as Record<string, unknown>,
         { idempotencyKey },
       );
 
@@ -111,9 +156,9 @@ export class ApiKeyService {
 
   static async updateKey(keyId: string, input: UpdateApiKeyInput): Promise<ApiKey> {
     try {
-      const result = await getClawRouterAppSdkClient().iam.apiKeys.update(
+      const result = await getSdkworkAppbaseAppSdkClient().iam.apiKeys.update(
         requiredText(keyId, 'apiKeyId'),
-        toUpdateApiKeyRequest(input),
+        toUpdateApiKeyRequest(input) as unknown as Record<string, unknown>,
       );
       return normalizeApiKey(readRequiredApiItem(result, 'API key update response is missing key data', ['item']));
     } catch (error) {
@@ -123,7 +168,7 @@ export class ApiKeyService {
 
   static async deleteKey(keyId: string): Promise<void> {
     try {
-      const result = await getClawRouterAppSdkClient().iam.apiKeys.delete(requiredText(keyId, 'apiKeyId'));
+      const result = await getSdkworkAppbaseAppSdkClient().iam.apiKeys.delete(requiredText(keyId, 'apiKeyId'));
       ensureSdkworkApiSuccess(result, 'console.apiKeys.errors.deleteFallback');
     } catch (error) {
       throw new Error(readSdkErrorMessage(error, 'console.apiKeys.errors.deleteFallback'));

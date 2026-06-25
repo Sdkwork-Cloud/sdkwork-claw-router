@@ -12,7 +12,7 @@
   "mode": "apply",
   "hasChanges": true,
   "hasDestructiveChanges": false,
-  "changeFingerprint": "297d6239d98b8e0dfed6d2d38034392bded5ae85d40aefbff895a1c5f660f8fd",
+  "changeFingerprint": "037cae5db5ee24955428d6c4d9f4e70db78f39e42fb7de4c862ba9182d4a3694",
   "changeImpact": {
     "schemaVersion": 1,
     "areas": [
@@ -32,7 +32,6 @@
           "src/api/ai.ts",
           "src/api/base.ts",
           "src/api/chat.ts",
-          "src/api/iam.ts",
           "src/api/index.ts",
           "src/api/notification.ts",
           "src/api/paths.ts",
@@ -45,12 +44,6 @@
       {
         "area": "models",
         "paths": [
-          "src/types/api-keys-create-result.ts",
-          "src/types/api-keys-delete-result.ts",
-          "src/types/api-keys-list-result.ts",
-          "src/types/api-keys-update-result.ts",
-          "src/types/app-api-key-item.ts",
-          "src/types/app-api-key-list-response.ts",
           "src/types/app-channel-group-list-response.ts",
           "src/types/app-channel-group.ts",
           "src/types/app-model-catalog-group-option.ts",
@@ -76,8 +69,6 @@
           "src/types/conversations-create-result.ts",
           "src/types/conversations-list-result.ts",
           "src/types/conversations-retrieve-result.ts",
-          "src/types/create-api-key-request.ts",
-          "src/types/create-api-key-response.ts",
           "src/types/dashboard-announcement.ts",
           "src/types/dashboard-chart-point.ts",
           "src/types/dashboard-configuration-domain.ts",
@@ -86,7 +77,6 @@
           "src/types/dashboard-overview-summary.ts",
           "src/types/dashboard-sparkline-point.ts",
           "src/types/dashboard-top-model.ts",
-          "src/types/delete-api-key-response.ts",
           "src/types/field-error.ts",
           "src/types/gateway-trace.ts",
           "src/types/gateway-traces-list-result.ts",
@@ -153,22 +143,14 @@
           "src/types/runtime-invocation-item.ts",
           "src/types/runtime-invocation-list-response.ts",
           "src/types/runtime-invocation-response.ts",
-          "src/types/settings-data-response.ts",
-          "src/types/settings-notifications.ts",
           "src/types/site-runtime-retrieve-result.ts",
           "src/types/site-runtime-settings-response.ts",
           "src/types/turn-responses-create-result.ts",
           "src/types/turns-create-result.ts",
-          "src/types/update-api-key-request.ts",
-          "src/types/update-api-key-response.ts",
-          "src/types/update-settings-request.ts",
-          "src/types/update-settings-response.ts",
           "src/types/usage-log-item.ts",
           "src/types/usage-logs-list-result.ts",
           "src/types/usage-logs-response.ts",
-          "src/types/usage-snapshot.ts",
-          "src/types/users-settings-retrieve-result.ts",
-          "src/types/users-settings-update-result.ts"
+          "src/types/usage-snapshot.ts"
         ]
       },
       {
@@ -246,7 +228,7 @@
         "title": "Unified package check",
         "required": true,
         "rationale": "Validate the generated package with the unified publish helper. Triggered by: api-surface, models, runtime, build-metadata, publish-workflow, documentation, custom-scaffold, unknown.",
-        "workingDirectory": "E:\\sdkwork-space\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript\\generated\\server-openapi",
+        "workingDirectory": "E:\\sdkwork-space\\sdkwork-clawrouter\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript\\generated\\server-openapi",
         "command": "node",
         "args": [
           "./bin/publish-core.mjs",
@@ -264,7 +246,7 @@
         "title": "Unified package build",
         "required": true,
         "rationale": "Run the full package build because this language uses a lighter check path than the final build. Triggered by: api-surface, models, runtime, build-metadata, publish-workflow, documentation, custom-scaffold, unknown.",
-        "workingDirectory": "E:\\sdkwork-space\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript\\generated\\server-openapi",
+        "workingDirectory": "E:\\sdkwork-space\\sdkwork-clawrouter\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript\\generated\\server-openapi",
         "command": "node",
         "args": [
           "./bin/publish-core.mjs",
@@ -289,7 +271,7 @@
         "title": "Unified package check",
         "required": true,
         "rationale": "Validate the generated package with the unified publish helper. Triggered by: api-surface, models, runtime, build-metadata, publish-workflow, documentation, custom-scaffold, unknown.",
-        "workingDirectory": "E:\\sdkwork-space\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript\\generated\\server-openapi",
+        "workingDirectory": "E:\\sdkwork-space\\sdkwork-clawrouter\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript\\generated\\server-openapi",
         "command": "node",
         "args": [
           "./bin/publish-core.mjs",
@@ -307,7 +289,7 @@
         "title": "Unified package build",
         "required": true,
         "rationale": "Run the full package build because this language uses a lighter check path than the final build. Triggered by: api-surface, models, runtime, build-metadata, publish-workflow, documentation, custom-scaffold, unknown.",
-        "workingDirectory": "E:\\sdkwork-space\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript\\generated\\server-openapi",
+        "workingDirectory": "E:\\sdkwork-space\\sdkwork-clawrouter\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript\\generated\\server-openapi",
         "command": "node",
         "args": [
           "./bin/publish-core.mjs",
@@ -328,7 +310,7 @@
     "language": "typescript",
     "sdkType": "app",
     "protocol": "http",
-    "outputPath": "E:\\sdkwork-space\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript\\generated\\server-openapi",
+    "outputPath": "E:\\sdkwork-space\\sdkwork-clawrouter\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript\\generated\\server-openapi",
     "packageName": "@sdkwork/clawrouter-app-sdk"
   },
   "versioning": {
@@ -336,10 +318,10 @@
     "localVersions": []
   },
   "stats": {
-    "totalFiles": 151,
-    "models": 122,
-    "apis": 6,
-    "types": 124
+    "totalFiles": 133,
+    "models": 105,
+    "apis": 5,
+    "types": 107
   },
   "warnings": [
     {
@@ -370,12 +352,12 @@
   "syncSummary": {
     "dryRun": false,
     "controlPlaneEnabled": true,
-    "writtenFiles": 151,
+    "writtenFiles": 133,
     "skippedScaffoldFiles": 0,
     "skippedUnchangedGeneratedFiles": 0,
     "deletedGeneratedFiles": 0,
     "changeSummaryPath": ".sdkwork/sdkwork-generator-changes.json",
-    "changeFingerprint": "297d6239d98b8e0dfed6d2d38034392bded5ae85d40aefbff895a1c5f660f8fd",
+    "changeFingerprint": "037cae5db5ee24955428d6c4d9f4e70db78f39e42fb7de4c862ba9182d4a3694",
     "changes": {
       "createdGeneratedFiles": [
         "bin/publish-core.mjs",
@@ -391,7 +373,6 @@
         "src/api/ai.ts",
         "src/api/base.ts",
         "src/api/chat.ts",
-        "src/api/iam.ts",
         "src/api/index.ts",
         "src/api/notification.ts",
         "src/api/paths.ts",
@@ -402,12 +383,6 @@
         "src/http/index.ts",
         "src/index.ts",
         "src/sdk.ts",
-        "src/types/api-keys-create-result.ts",
-        "src/types/api-keys-delete-result.ts",
-        "src/types/api-keys-list-result.ts",
-        "src/types/api-keys-update-result.ts",
-        "src/types/app-api-key-item.ts",
-        "src/types/app-api-key-list-response.ts",
         "src/types/app-channel-group-list-response.ts",
         "src/types/app-channel-group.ts",
         "src/types/app-model-catalog-group-option.ts",
@@ -433,8 +408,6 @@
         "src/types/conversations-create-result.ts",
         "src/types/conversations-list-result.ts",
         "src/types/conversations-retrieve-result.ts",
-        "src/types/create-api-key-request.ts",
-        "src/types/create-api-key-response.ts",
         "src/types/dashboard-announcement.ts",
         "src/types/dashboard-chart-point.ts",
         "src/types/dashboard-configuration-domain.ts",
@@ -443,7 +416,6 @@
         "src/types/dashboard-overview-summary.ts",
         "src/types/dashboard-sparkline-point.ts",
         "src/types/dashboard-top-model.ts",
-        "src/types/delete-api-key-response.ts",
         "src/types/field-error.ts",
         "src/types/gateway-trace.ts",
         "src/types/gateway-traces-list-result.ts",
@@ -510,22 +482,14 @@
         "src/types/runtime-invocation-item.ts",
         "src/types/runtime-invocation-list-response.ts",
         "src/types/runtime-invocation-response.ts",
-        "src/types/settings-data-response.ts",
-        "src/types/settings-notifications.ts",
         "src/types/site-runtime-retrieve-result.ts",
         "src/types/site-runtime-settings-response.ts",
         "src/types/turn-responses-create-result.ts",
         "src/types/turns-create-result.ts",
-        "src/types/update-api-key-request.ts",
-        "src/types/update-api-key-response.ts",
-        "src/types/update-settings-request.ts",
-        "src/types/update-settings-response.ts",
         "src/types/usage-log-item.ts",
         "src/types/usage-logs-list-result.ts",
         "src/types/usage-logs-response.ts",
         "src/types/usage-snapshot.ts",
-        "src/types/users-settings-retrieve-result.ts",
-        "src/types/users-settings-update-result.ts",
         "tsconfig.json"
       ],
       "updatedGeneratedFiles": [],
@@ -557,7 +521,6 @@
             "src/api/ai.ts",
             "src/api/base.ts",
             "src/api/chat.ts",
-            "src/api/iam.ts",
             "src/api/index.ts",
             "src/api/notification.ts",
             "src/api/paths.ts",
@@ -570,12 +533,6 @@
         {
           "area": "models",
           "paths": [
-            "src/types/api-keys-create-result.ts",
-            "src/types/api-keys-delete-result.ts",
-            "src/types/api-keys-list-result.ts",
-            "src/types/api-keys-update-result.ts",
-            "src/types/app-api-key-item.ts",
-            "src/types/app-api-key-list-response.ts",
             "src/types/app-channel-group-list-response.ts",
             "src/types/app-channel-group.ts",
             "src/types/app-model-catalog-group-option.ts",
@@ -601,8 +558,6 @@
             "src/types/conversations-create-result.ts",
             "src/types/conversations-list-result.ts",
             "src/types/conversations-retrieve-result.ts",
-            "src/types/create-api-key-request.ts",
-            "src/types/create-api-key-response.ts",
             "src/types/dashboard-announcement.ts",
             "src/types/dashboard-chart-point.ts",
             "src/types/dashboard-configuration-domain.ts",
@@ -611,7 +566,6 @@
             "src/types/dashboard-overview-summary.ts",
             "src/types/dashboard-sparkline-point.ts",
             "src/types/dashboard-top-model.ts",
-            "src/types/delete-api-key-response.ts",
             "src/types/field-error.ts",
             "src/types/gateway-trace.ts",
             "src/types/gateway-traces-list-result.ts",
@@ -678,22 +632,14 @@
             "src/types/runtime-invocation-item.ts",
             "src/types/runtime-invocation-list-response.ts",
             "src/types/runtime-invocation-response.ts",
-            "src/types/settings-data-response.ts",
-            "src/types/settings-notifications.ts",
             "src/types/site-runtime-retrieve-result.ts",
             "src/types/site-runtime-settings-response.ts",
             "src/types/turn-responses-create-result.ts",
             "src/types/turns-create-result.ts",
-            "src/types/update-api-key-request.ts",
-            "src/types/update-api-key-response.ts",
-            "src/types/update-settings-request.ts",
-            "src/types/update-settings-response.ts",
             "src/types/usage-log-item.ts",
             "src/types/usage-logs-list-result.ts",
             "src/types/usage-logs-response.ts",
-            "src/types/usage-snapshot.ts",
-            "src/types/users-settings-retrieve-result.ts",
-            "src/types/users-settings-update-result.ts"
+            "src/types/usage-snapshot.ts"
           ]
         },
         {
@@ -758,7 +704,7 @@
           "title": "Unified package check",
           "required": true,
           "rationale": "Validate the generated package with the unified publish helper. Triggered by: api-surface, models, runtime, build-metadata, publish-workflow, documentation, custom-scaffold, unknown.",
-          "workingDirectory": "E:\\sdkwork-space\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript\\generated\\server-openapi",
+          "workingDirectory": "E:\\sdkwork-space\\sdkwork-clawrouter\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript\\generated\\server-openapi",
           "command": "node",
           "args": [
             "./bin/publish-core.mjs",
@@ -776,7 +722,7 @@
           "title": "Unified package build",
           "required": true,
           "rationale": "Run the full package build because this language uses a lighter check path than the final build. Triggered by: api-surface, models, runtime, build-metadata, publish-workflow, documentation, custom-scaffold, unknown.",
-          "workingDirectory": "E:\\sdkwork-space\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript\\generated\\server-openapi",
+          "workingDirectory": "E:\\sdkwork-space\\sdkwork-clawrouter\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript\\generated\\server-openapi",
           "command": "node",
           "args": [
             "./bin/publish-core.mjs",

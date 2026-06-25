@@ -11,19 +11,19 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 const OAUTH_ROUTE_BLOCK = `- route: /admin/oauth/login-platforms
   dependency_owned: true
-  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  dependency_sdk_family: sdkwork-iam-backend-sdk
   required_tables:
   - iam_oauth_resource_account
   - ops_audit_log
 - route: /admin/oauth/official-accounts
   dependency_owned: true
-  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  dependency_sdk_family: sdkwork-iam-backend-sdk
   required_tables:
   - iam_oauth_resource_account
   - ops_audit_log
 - route: /admin/oauth/mini-programs
   dependency_owned: true
-  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  dependency_sdk_family: sdkwork-iam-backend-sdk
   required_tables:
   - iam_oauth_resource_account
   - ops_audit_log
@@ -35,7 +35,7 @@ const OAUTH_CLASSIFICATION_BLOCK = `- route: /admin/oauth/login-platforms
   route_scope: admin
   delivery_kind: sdk_backed_business_runtime
   dependency_owned: true
-  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  dependency_sdk_family: sdkwork-iam-backend-sdk
   api_surface: backend
   required_tables:
   - iam_oauth_resource_account
@@ -51,7 +51,7 @@ const OAUTH_CLASSIFICATION_BLOCK = `- route: /admin/oauth/login-platforms
   route_scope: admin
   delivery_kind: sdk_backed_business_runtime
   dependency_owned: true
-  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  dependency_sdk_family: sdkwork-iam-backend-sdk
   api_surface: backend
   required_tables:
   - iam_oauth_resource_account
@@ -67,7 +67,7 @@ const OAUTH_CLASSIFICATION_BLOCK = `- route: /admin/oauth/login-platforms
   route_scope: admin
   delivery_kind: sdk_backed_business_runtime
   dependency_owned: true
-  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  dependency_sdk_family: sdkwork-iam-backend-sdk
   api_surface: backend
   required_tables:
   - iam_oauth_resource_account

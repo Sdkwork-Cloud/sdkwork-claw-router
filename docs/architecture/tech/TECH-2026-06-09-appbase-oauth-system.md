@@ -7,7 +7,7 @@
 
 **Architecture:** Appbase owns OAuth database tables, app-api runtime route contracts, provider ingress route contracts, and backend-api management route contracts. Claw Router consumes appbase backend SDK resources from an independent `/admin/oauth` admin module and deletes product-local open-platform ownership.
 
-**Tech Stack:** Rust route/storage crates, SQL migrations, OpenAPI/SDK materialization, TypeScript React backend-admin UI, generated `@sdkwork/appbase-backend-sdk`.
+**Tech Stack:** Rust route/storage crates, SQL migrations, OpenAPI/SDK materialization, TypeScript React backend-admin UI, generated `@sdkwork/iam-backend-sdk`.
 
 ---
 
@@ -40,9 +40,9 @@ Run the same cargo test. Expected: PASS for storage standard tests.
 
 **Files:**
 - Modify: `../sdkwork-appbase/packages/native-rust/iam/sdkwork-iam-http-rust/tests/iam_http_standard.rs`
-- Modify: `../sdkwork-appbase/packages/native-rust/iam/sdkwork-iam-http-rust/src/sdkwork_appbase_app_api.rs`
-- Modify: `../sdkwork-appbase/packages/native-rust/iam/sdkwork-iam-http-rust/src/sdkwork_appbase_open_api.rs`
-- Modify: `../sdkwork-appbase/packages/native-rust/iam/sdkwork-iam-http-rust/src/sdkwork_appbase_backend_api.rs`
+- Modify: `../sdkwork-appbase/packages/native-rust/iam/sdkwork-iam-http-rust/src/sdkwork_iam_app_api.rs`
+- Modify: `../sdkwork-appbase/packages/native-rust/iam/sdkwork-iam-http-rust/src/sdkwork_iam_open_api.rs`
+- Modify: `../sdkwork-appbase/packages/native-rust/iam/sdkwork-iam-http-rust/src/sdkwork_iam_backend_api.rs`
 
 - [ ] **Step 1: Write failing route contract tests**
 
@@ -105,7 +105,7 @@ Run the focused PC admin test. Expected: FAIL because module is absent.
 
 - [ ] **Step 3: Implement admin package**
 
-Build dense backend-admin pages and service boundary using `getSdkworkAppbaseBackendSdkClient` and `@sdkwork/appbase-backend-sdk` only. No raw HTTP, no Claw Router backend SDK for appbase-owned OAuth.
+Build dense backend-admin pages and service boundary using `getSdkworkAppbaseBackendSdkClient` and `@sdkwork/iam-backend-sdk` only. No raw HTTP, no Claw Router backend SDK for appbase-owned OAuth.
 
 - [ ] **Step 4: Run green admin test**
 

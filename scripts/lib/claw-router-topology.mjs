@@ -16,6 +16,13 @@ const __dirname = path.dirname(__filename);
 export const REPO_ROOT = path.resolve(__dirname, '..', '..');
 export const SPEC_PATH = path.join(REPO_ROOT, 'specs/topology.spec.json');
 export const API_GATEWAY_REPO = path.resolve(REPO_ROOT, '..', 'sdkwork-api-cloud-gateway');
+export const IAM_REPO_ROOT = path.resolve(REPO_ROOT, '..', 'sdkwork-iam');
+
+export const IAM_APPLICATION_BOOTSTRAP_ENV = {
+  SDKWORK_APP_ROOT: REPO_ROOT,
+  SDKWORK_CLAW_ROUTER_APP_ROOT: REPO_ROOT,
+  SDKWORK_IAM_APP_ROOT: IAM_REPO_ROOT,
+};
 
 const spec = loadTopologySpec(SPEC_PATH);
 const runtime = createTopologyRuntime(spec, REPO_ROOT);
@@ -51,10 +58,10 @@ function appendPath(origin, pathSuffix) {
   return `${String(origin).replace(/\/+$/u, '')}${pathSuffix}`;
 }
 
-export function resolveDevProfileId(hosting, serviceLayout = 'unified-process') {
-  runtime.assertHosting(hosting);
+export function resolveDevProfileId(deploymentProfile, serviceLayout = 'unified-process') {
+  runtime.assertDeploymentProfile(deploymentProfile);
   runtime.assertServiceLayout(serviceLayout);
-  return buildProfileId(hosting, serviceLayout, 'development');
+  return buildProfileId(deploymentProfile, serviceLayout, 'development');
 }
 
 export function resolveRuntimeModeFromServiceLayout(serviceLayout) {
@@ -171,7 +178,8 @@ export function applyTopologyProfileToWorkspaceSettings(settings, profileEnv = {
   }
 
   settings.profileId = readTrimmedValue(profileEnv.SDKWORK_CLAW_ROUTER_PROFILE_ID);
-  settings.hosting = readTrimmedValue(profileEnv.SDKWORK_CLAW_ROUTER_HOSTING);
+  settings.deploymentProfile = readTrimmedValue(profileEnv.SDKWORK_CLAW_ROUTER_DEPLOYMENT_PROFILE)
+    ?? readTrimmedValue(profileEnv.SDKWORK_CLAW_DEPLOYMENT_PROFILE);
   settings.serviceLayout = serviceLayout;
   return settings;
 }
@@ -280,23 +288,22 @@ export function bridgeTopologyBindEnvToLegacyRustEnv(profileEnv = {}, settings =
 }
 
 export function loadTopologyProfileForWorkspace({
-  hosting = 'self-hosted',
+  deploymentProfile = 'standalone',
   serviceLayout = 'unified-process',
   env = process.env,
   includeIamDatabase = false,
 } = {}) {
-  const profileId = resolveDevProfileId(hosting, serviceLayout);
+  const profileId = resolveDevProfileId(deploymentProfile, serviceLayout);
   const profileEnv = loadProfile(profileId);
   const layers = [
     env,
     profileEnv,
+    ...(includeIamDatabase ? [resolveIamDevEnv(env)] : []),
     {
       SDKWORK_CLAW_ROUTER_PROFILE_ID: profileId,
+      ...IAM_APPLICATION_BOOTSTRAP_ENV,
     },
   ];
-  if (includeIamDatabase) {
-    layers.push(resolveIamDevEnv(env));
-  }
   const mergedEnv = mergeRuntimeEnv(...layers);
   return {
     profileId,

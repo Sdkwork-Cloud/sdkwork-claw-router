@@ -91,6 +91,44 @@ function inferAuth(operation) {
   return { mode: "dual-token", required: true };
 }
 
+function inferSdkworkPermission(operation, routePath) {
+  if (operation['x-sdkwork-permission']) {
+    return undefined;
+  }
+  const operationId = String(operation.operationId ?? '').trim();
+  if (!operationId) {
+    return undefined;
+  }
+
+  const explicitPermissions = {
+    'installation.status.retrieve': 'clawrouter.system.read',
+    'monitor.alerts.list': 'clawrouter.system.read',
+    'monitor.nodes.list': 'clawrouter.system.read',
+    'monitor.performance.list': 'clawrouter.system.read',
+    'rateLimits.apiKeys.list': 'clawrouter.gateway.read',
+    'rateLimits.apiKeys.create': 'clawrouter.gateway.manage',
+    'rateLimits.apiKeys.delete': 'clawrouter.gateway.manage',
+    'firewalls.rules.list': 'clawrouter.gateway.read',
+    'firewalls.rules.create': 'clawrouter.gateway.manage',
+    'firewalls.rules.delete': 'clawrouter.gateway.manage',
+  };
+  if (explicitPermissions[operationId]) {
+    return explicitPermissions[operationId];
+  }
+
+  const parts = operationId.split('.');
+  const action = parts.at(-1);
+  if (!action) {
+    return undefined;
+  }
+  const resource = parts.slice(0, -1).join('.');
+  if (!resource) {
+    return undefined;
+  }
+  const permissionAction = action === 'list' || action === 'retrieve' || action === 'tree' ? 'read' : 'manage';
+  return `clawrouter.${resource.replaceAll('.', '_')}.${permissionAction}`;
+}
+
 function stampOpenApiExtensions(document, target) {
   let changed = 0;
   const paths = document.paths ?? {};
@@ -114,6 +152,15 @@ function stampOpenApiExtensions(document, target) {
           operation[key] = value;
           changed += 1;
         }
+      }
+      const inferredPermission = inferSdkworkPermission(operation, routePath);
+      if (inferredPermission && operation['x-sdkwork-permission'] !== inferredPermission) {
+        operation['x-sdkwork-permission'] = inferredPermission;
+        changed += 1;
+      }
+      if (inferAuth(operation).required && operation['x-sdkwork-required-surface'] !== 'organizationMember') {
+        operation['x-sdkwork-required-surface'] = 'organizationMember';
+        changed += 1;
       }
       if (!operation.operationId && routePath) {
         operation.operationId = `${method}.${routePath.replace(/[{}]/g, "")}`;

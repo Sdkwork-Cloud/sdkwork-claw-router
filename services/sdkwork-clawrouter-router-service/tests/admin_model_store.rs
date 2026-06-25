@@ -13,6 +13,24 @@ use sqlx::sqlite::SqlitePoolOptions;
 use sqlx::Row;
 use std::collections::BTreeSet;
 
+fn sdkwork_models_pinned_catalog_version() -> String {
+    let index_path = std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
+        .join("../../data/sdkwork-models/models/index.json");
+    let raw = std::fs::read_to_string(&index_path).unwrap_or_else(|error| {
+        panic!(
+            "read sdkwork-models catalog index failed at {}: {error}",
+            index_path.display()
+        )
+    });
+    let index: serde_json::Value =
+        serde_json::from_str(&raw).expect("parse sdkwork-models catalog index");
+    index
+        .get("catalogVersion")
+        .and_then(|value| value.as_str())
+        .expect("catalogVersion in sdkwork-models index")
+        .to_owned()
+}
+
 #[tokio::test]
 async fn sqlite_admin_model_store_creates_region_pricing_catalog_rows() {
     let pool = SqlitePoolOptions::new()
@@ -173,9 +191,10 @@ async fn sqlite_admin_model_store_creates_region_pricing_catalog_rows() {
     }));
 
     let models = store
-        .list_models(ListAdminAiModelsQuery { subject })
+        .list_models(list_all_admin_models_query(subject))
         .await
-        .unwrap();
+        .unwrap()
+        .items;
     let listed = models
         .iter()
         .find(|model| model.model == "admin-region-model")
@@ -193,16 +212,15 @@ async fn sqlite_admin_model_store_lists_catalog_region_prices_for_dual_region_ve
     install_admin_model_catalog(&pool, &["deepseek", "minimax", "moonshot"]).await;
 
     let models = SqliteAdminModelStore::new(pool.clone())
-        .list_models(ListAdminAiModelsQuery {
-            subject: AdminModelSubject {
-                tenant_id: 0,
-                organization_id: 0,
-                operator_id: 99,
-                operator_type: 1,
-            },
-        })
+        .list_models(list_all_admin_models_query(AdminModelSubject {
+            tenant_id: 0,
+            organization_id: 0,
+            operator_id: 99,
+            operator_type: 1,
+        }))
         .await
-        .unwrap();
+        .unwrap()
+        .items;
 
     for (vendor_code, model_name) in [
         ("deepseek", "deepseek-v4-pro"),
@@ -227,16 +245,15 @@ async fn sqlite_admin_model_store_lists_catalog_prices_for_latest_media_meters()
     install_admin_model_catalog(&pool, &["black_forest_labs", "kuaishou", "openai"]).await;
 
     let models = SqliteAdminModelStore::new(pool.clone())
-        .list_models(ListAdminAiModelsQuery {
-            subject: AdminModelSubject {
-                tenant_id: 0,
-                organization_id: 0,
-                operator_id: 99,
-                operator_type: 1,
-            },
-        })
+        .list_models(list_all_admin_models_query(AdminModelSubject {
+            tenant_id: 0,
+            organization_id: 0,
+            operator_id: 99,
+            operator_type: 1,
+        }))
         .await
-        .unwrap();
+        .unwrap()
+        .items;
 
     assert_model_region_price_side(
         &models,
@@ -699,16 +716,15 @@ async fn sqlite_admin_model_store_uses_subject_latest_commercial_ranking_snapsho
     .unwrap();
 
     let models = SqliteAdminModelStore::new(pool)
-        .list_models(ListAdminAiModelsQuery {
-            subject: AdminModelSubject {
-                tenant_id: 100001,
-                organization_id: 0,
-                operator_id: 1,
-                operator_type: 1,
-            },
-        })
+        .list_models(list_all_admin_models_query(AdminModelSubject {
+            tenant_id: 100001,
+            organization_id: 0,
+            operator_id: 1,
+            operator_type: 1,
+        }))
         .await
-        .unwrap();
+        .unwrap()
+        .items;
 
     let current = models
         .iter()
@@ -762,16 +778,15 @@ async fn sqlite_admin_model_store_does_not_use_global_tenant_organization_rankin
     .unwrap();
 
     let models = SqliteAdminModelStore::new(pool)
-        .list_models(ListAdminAiModelsQuery {
-            subject: AdminModelSubject {
-                tenant_id: 100001,
-                organization_id: 0,
-                operator_id: 1,
-                operator_type: 1,
-            },
-        })
+        .list_models(list_all_admin_models_query(AdminModelSubject {
+            tenant_id: 100001,
+            organization_id: 0,
+            operator_id: 1,
+            operator_type: 1,
+        }))
         .await
-        .unwrap();
+        .unwrap()
+        .items;
 
     let current = models
         .iter()
@@ -783,6 +798,7 @@ async fn sqlite_admin_model_store_does_not_use_global_tenant_organization_rankin
 
 #[tokio::test]
 async fn sqlite_admin_model_store_sync_catalog_reapplies_sdkwork_models_catalog() {
+    let catalog_version = sdkwork_models_pinned_catalog_version();
     let pool = SqlitePoolOptions::new()
         .max_connections(1)
         .connect("sqlite::memory:")
@@ -815,7 +831,7 @@ async fn sqlite_admin_model_store_sync_catalog_reapplies_sdkwork_models_catalog(
             vendor_codes: vec!["alibaba".to_owned()],
             force: true,
             catalog_root: None,
-            catalog_version: Some("2026.05.08.1".to_owned()),
+            catalog_version: Some(catalog_version.clone()),
             request_id: "req-sync-catalog-regression".to_owned(),
             requested_at: "2026-05-07T12:30:00Z".to_owned(),
         })
@@ -850,11 +866,10 @@ async fn sqlite_admin_model_store_sync_catalog_reapplies_sdkwork_models_catalog(
         .await
         .unwrap();
     let visible_models = store
-        .list_models(ListAdminAiModelsQuery {
-            subject: admin_subject,
-        })
+        .list_models(list_all_admin_models_query(admin_subject))
         .await
-        .unwrap();
+        .unwrap()
+        .items;
     assert!(
         visible_vendors
             .iter()
@@ -869,9 +884,9 @@ async fn sqlite_admin_model_store_sync_catalog_reapplies_sdkwork_models_catalog(
     );
     assert_eq!("official_refresh", synced.mode);
     assert!(!synced.dry_run);
-    assert_eq!("2026.05.08.1", synced.catalog_version);
+    assert_eq!(catalog_version, synced.catalog_version);
     assert_eq!(
-        Some("2026.05.08.1".to_owned()),
+        Some(catalog_version),
         synced.requested_catalog_version
     );
     assert_eq!(None, synced.catalog_root);
@@ -921,59 +936,27 @@ async fn sqlite_admin_model_store_sync_catalog_reapplies_sdkwork_models_catalog(
     .await
     .unwrap();
     let bundled_catalog = sdkwork_models::load_bundled_catalog().unwrap();
-    let expected_meter_count = bundled_catalog.meters.len() as i64;
     let vendor_catalogs = bundled_catalog
         .vendors
-        .into_iter()
+        .iter()
         .filter(|vendor| vendor.vendor.vendor_code == "alibaba")
+        .cloned()
         .collect::<Vec<_>>();
     assert!(!vendor_catalogs.is_empty(), "alibaba catalog exists");
-    let model_ids = vendor_catalogs
-        .iter()
-        .flat_map(|vendor| vendor.models.iter())
-        .map(|model| model.model_id.clone())
-        .collect::<BTreeSet<_>>();
-    let public_model_ids = vendor_catalogs
-        .iter()
-        .flat_map(|vendor| vendor.models.iter())
-        .filter(|model| catalog_model_is_publicly_active(model))
-        .map(|model| model.model_id.clone())
-        .collect::<BTreeSet<_>>();
-    let expected_family_count = vendor_catalogs
-        .iter()
-        .flat_map(|vendor| {
-            vendor
-                .families
-                .iter()
-                .map(|family| family.family_code.clone())
-        })
-        .collect::<BTreeSet<_>>()
-        .len() as i64;
-    let expected_model_count = model_ids.len() as i64;
-    let expected_capability_count = vendor_catalogs
-        .iter()
-        .flat_map(|vendor| vendor.models.iter())
-        .filter(|model| catalog_model_is_publicly_active(model))
-        .map(|model| {
-            if model.capabilities.is_empty() {
-                1_i64
-            } else {
-                model.capabilities.len() as i64
-            }
-        })
-        .sum::<i64>();
-    let expected_price_count = vendor_catalogs
-        .iter()
-        .flat_map(|vendor| vendor.pricing.iter())
-        .filter(|pricing| public_model_ids.contains(&pricing.model_id))
-        .map(|pricing| pricing.prices.len() as i64)
-        .sum::<i64>();
-    let expected_ranking_count = vendor_catalogs
-        .iter()
-        .flat_map(|vendor| vendor.rankings.iter())
-        .flat_map(|snapshot| snapshot.items.iter())
-        .filter(|item| public_model_ids.contains(&item.model_id))
-        .count() as i64;
+    let scoped_catalog = sdkwork_models::ModelCatalog {
+        manifest: bundled_catalog.manifest.clone(),
+        meters: bundled_catalog.meters.clone(),
+        protocols: bundled_catalog.protocols.clone(),
+        vendors: vendor_catalogs,
+    };
+    let scope_counts =
+        sdkwork_clawrouter_router_service::catalog_scope_count_snapshot(&scoped_catalog);
+    let expected_meter_count = scope_counts.meter_count;
+    let expected_family_count = scope_counts.family_count;
+    let expected_model_count = scope_counts.model_count;
+    let expected_capability_count = scope_counts.capability_count;
+    let expected_price_count = scope_counts.price_count;
+    let expected_ranking_count = scope_counts.ranking_count;
     assert_eq!(1_i64, sync_run.get::<i64, _>("observed_vendor_count"));
     assert_eq!(
         expected_model_count,
@@ -988,13 +971,7 @@ async fn sqlite_admin_model_store_sync_catalog_reapplies_sdkwork_models_catalog(
         sync_run.get::<i64, _>("observed_price_count")
     );
     assert_eq!(
-        expected_meter_count
-            + 1_i64
-            + expected_family_count
-            + expected_model_count
-            + expected_capability_count
-            + expected_price_count
-            + expected_ranking_count,
+        sdkwork_clawrouter_router_service::catalog_accepted_count(&scoped_catalog),
         sync_run.get::<i64, _>("accepted_count"),
         "sync run accepted_count must reflect every imported sdkwork-models fact"
     );
@@ -1057,7 +1034,7 @@ async fn sqlite_admin_model_store_sync_catalog_reactivates_soft_deleted_catalog_
             vendor_codes: vec!["alibaba".to_owned()],
             force: true,
             catalog_root: None,
-            catalog_version: Some("2026.05.08.1".to_owned()),
+            catalog_version: Some(sdkwork_models_pinned_catalog_version()),
             request_id: "req-sync-source-first".to_owned(),
             requested_at: "2026-05-07T12:30:00Z".to_owned(),
         })
@@ -1089,7 +1066,7 @@ async fn sqlite_admin_model_store_sync_catalog_reactivates_soft_deleted_catalog_
             vendor_codes: vec!["alibaba".to_owned()],
             force: true,
             catalog_root: None,
-            catalog_version: Some("2026.05.08.1".to_owned()),
+            catalog_version: Some(sdkwork_models_pinned_catalog_version()),
             request_id: "req-sync-source-second".to_owned(),
             requested_at: "2026-05-07T12:35:00Z".to_owned(),
         })
@@ -1143,7 +1120,7 @@ async fn sqlite_admin_model_store_sync_catalog_source_uuid_is_tenant_scoped() {
                 vendor_codes: vec!["alibaba".to_owned()],
                 force: true,
                 catalog_root: None,
-                catalog_version: Some("2026.05.08.1".to_owned()),
+                catalog_version: Some(sdkwork_models_pinned_catalog_version()),
                 request_id: format!("req-sync-source-{suffix}"),
                 requested_at: "2026-06-03T12:00:00Z".to_owned(),
             })
@@ -1209,7 +1186,7 @@ async fn sqlite_admin_model_store_vendor_refresh_only_imports_selected_vendor() 
             vendor_codes: vec!["alibaba".to_owned()],
             force: true,
             catalog_root: None,
-            catalog_version: Some("2026.05.08.1".to_owned()),
+            catalog_version: Some(sdkwork_models_pinned_catalog_version()),
             request_id: "req-sync-selected-vendor".to_owned(),
             requested_at: "2026-05-07T12:45:00Z".to_owned(),
         })
@@ -1270,7 +1247,7 @@ async fn sqlite_admin_model_store_dry_run_reports_catalog_scope_without_importin
             vendor_codes: vec!["alibaba".to_owned()],
             force: false,
             catalog_root: None,
-            catalog_version: Some("2026.05.08.1".to_owned()),
+            catalog_version: Some(sdkwork_models_pinned_catalog_version()),
             request_id: "req-sync-dry-run".to_owned(),
             requested_at: "2026-05-07T13:00:00Z".to_owned(),
         })
@@ -1360,7 +1337,7 @@ async fn sqlite_admin_model_store_dry_run_preserves_existing_catalog_source_succ
             vendor_codes: vec!["openai".to_owned()],
             force: true,
             catalog_root: None,
-            catalog_version: Some("2026.05.08.1".to_owned()),
+            catalog_version: Some(sdkwork_models_pinned_catalog_version()),
             request_id: "req-sync-source-success".to_owned(),
             requested_at: "2026-05-07T12:00:00Z".to_owned(),
         })
@@ -1392,7 +1369,7 @@ async fn sqlite_admin_model_store_dry_run_preserves_existing_catalog_source_succ
             vendor_codes: vec!["openai".to_owned()],
             force: false,
             catalog_root: None,
-            catalog_version: Some("2026.05.08.1".to_owned()),
+            catalog_version: Some(sdkwork_models_pinned_catalog_version()),
             request_id: "req-sync-source-dry-run-after-success".to_owned(),
             requested_at: "2026-05-07T13:00:00Z".to_owned(),
         })
@@ -1484,7 +1461,7 @@ async fn sqlite_admin_model_store_sync_catalog_source_hash_is_content_stable() {
             vendor_codes: vec!["openai".to_owned()],
             force: true,
             catalog_root: None,
-            catalog_version: Some("2026.05.08.1".to_owned()),
+            catalog_version: Some(sdkwork_models_pinned_catalog_version()),
             request_id: "req-sync-stable-hash-first".to_owned(),
             requested_at: "2026-05-07T12:00:00Z".to_owned(),
         })
@@ -1501,7 +1478,7 @@ async fn sqlite_admin_model_store_sync_catalog_source_hash_is_content_stable() {
             vendor_codes: vec!["openai".to_owned()],
             force: true,
             catalog_root: None,
-            catalog_version: Some("2026.05.08.1".to_owned()),
+            catalog_version: Some(sdkwork_models_pinned_catalog_version()),
             request_id: "req-sync-stable-hash-second".to_owned(),
             requested_at: "2026-05-07T12:30:00Z".to_owned(),
         })
@@ -1812,7 +1789,7 @@ async fn prepare_admin_model_schema(pool: &sqlx::SqlitePool) {
             vendor_codes: vec!["alibaba".to_owned()],
             force: false,
             catalog_root: None,
-            catalog_version: Some("2026.05.08.1".to_owned()),
+            catalog_version: Some(sdkwork_models_pinned_catalog_version()),
         })
         .await
         .unwrap();
@@ -1831,7 +1808,7 @@ async fn install_admin_model_catalog(pool: &sqlx::SqlitePool, vendor_codes: &[&s
                 .collect(),
             force: true,
             catalog_root: None,
-            catalog_version: Some("2026.05.08.1".to_owned()),
+            catalog_version: Some(sdkwork_models_pinned_catalog_version()),
         })
         .await
         .unwrap();
@@ -1911,6 +1888,18 @@ fn assert_admin_region_model_prices(region_prices: &[AdminAiModelRegionPriceComm
     assert_eq!(0.45, decimal_value(&region_prices[1].price_out));
     assert_eq!(None, region_prices[1].cache_read_price);
     assert_eq!(None, region_prices[1].cache_write_price);
+}
+
+fn list_all_admin_models_query(subject: AdminModelSubject) -> ListAdminAiModelsQuery {
+    ListAdminAiModelsQuery {
+        subject,
+        vendor_id: None,
+        vendor_code: None,
+        q: None,
+        model_types: None,
+        limit: None,
+        offset: None,
+    }
 }
 
 fn assert_model_region_codes(

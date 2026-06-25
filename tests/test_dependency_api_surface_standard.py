@@ -55,9 +55,9 @@ APPBASE_BACKEND_OPENAPI = (
     ROOT.parent
     / "sdkwork-appbase"
     / "sdks"
-    / "sdkwork-appbase-backend-sdk"
+    / "sdkwork-iam-backend-sdk"
     / "openapi"
-    / "sdkwork-appbase-backend-api.sdkgen.yaml"
+    / "sdkwork-iam-backend-api.sdkgen.yaml"
 )
 CLAWROUTER_BACKEND_OPENAPI = (
     ROOT
@@ -253,7 +253,7 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
                 "route metadata is not handler coverage",
                 "dependencyApiSurfaces",
                 "executable router",
-                "@sdkwork/appbase-backend-sdk",
+                "@sdkwork/iam-backend-sdk",
                 "hard-coded IAM tenants/users/organizations/API keys",
             ],
             "TEST_SPEC.md": [
@@ -293,7 +293,7 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
     def test_backend_appbase_iam_dependency_targets_shared_gateway_not_product_mount(self) -> None:
         manifest = read_json(DEPENDENCY_API_SURFACES)
         backend_entry = entries_by_sdk_dependency(manifest)[
-            ("clawrouter-backend-sdk", "sdkwork-appbase-backend-sdk")
+            ("clawrouter-backend-sdk", "sdkwork-iam-backend-sdk")
         ]
         runtime = backend_entry["runtimeIntegration"]
         coverage = runtime["mountCoverage"]
@@ -326,7 +326,7 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
         self.assertNotIn("admin_appbase_backend_iam_directory_router_with_read_store", admin_api_source)
         self.assertNotIn("admin_appbase_backend_iam_oauth_router_with_read_store", admin_api_source)
         self.assertNotIn("appbase_backend_iam_sql_read_store", admin_api_source)
-        self.assertNotIn("build_sdkwork_appbase_backend_api_router", admin_api_source)
+        self.assertNotIn("build_sdkwork_iam_backend_api_router", admin_api_source)
         self.assertNotIn("appbase_backend_iam_router", admin_api_source)
 
         self.assertFalse(PRODUCT_ADMIN_APPBASE_BACKEND_IAM.exists())
@@ -352,7 +352,7 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
     def test_backend_iam_method_level_ownership_is_declared_and_consumed_by_the_right_sdk(self) -> None:
         manifest = read_json(DEPENDENCY_API_SURFACES)
         backend_entry = entries_by_sdk_dependency(manifest)[
-            ("clawrouter-backend-sdk", "sdkwork-appbase-backend-sdk")
+            ("clawrouter-backend-sdk", "sdkwork-iam-backend-sdk")
         ]
         dependency_operations = backend_entry["dependencyOwnedOperations"]
         product_overrides = backend_entry["productOwnedOperationOverrides"]
@@ -443,7 +443,7 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
     def test_backend_appbase_iam_oauth_surface_is_gateway_owned_not_product_mounted(self) -> None:
         manifest = read_json(DEPENDENCY_API_SURFACES)
         backend_entry = entries_by_sdk_dependency(manifest)[
-            ("clawrouter-backend-sdk", "sdkwork-appbase-backend-sdk")
+            ("clawrouter-backend-sdk", "sdkwork-iam-backend-sdk")
         ]
         runtime = backend_entry["runtimeIntegration"]
         coverage = runtime["mountCoverage"]
@@ -473,7 +473,7 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
         self.assertIn('"/backend/v3/api/iam/oauth/provider_catalog"', route_contract_source)
         self.assertIn('"/backend/v3/api/iam/oauth/resource_accounts"', route_contract_source)
         router_source = read_text(APPBASE_IAM_BACKEND_ROUTE_CRATE / "src" / "routes.rs")
-        self.assertIn("pub fn build_sdkwork_appbase_backend_api_router() -> Router", router_source)
+        self.assertIn("pub fn build_sdkwork_iam_backend_api_router() -> Router", router_source)
 
         admin_api_source = read_text(ADMIN_API_LIB)
         installer_source = read_text(PRODUCT_INSTALLER)
@@ -493,7 +493,7 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
     def test_backend_appbase_sdk_config_uses_shared_gateway_default(self) -> None:
         manifest = read_json(DEPENDENCY_API_SURFACES)
         backend_entry = entries_by_sdk_dependency(manifest)[
-            ("clawrouter-backend-sdk", "sdkwork-appbase-backend-sdk")
+            ("clawrouter-backend-sdk", "sdkwork-iam-backend-sdk")
         ]
         runtime = backend_entry["runtimeIntegration"]
         self.assertFalse(runtime["sameOriginAllowed"])
@@ -527,7 +527,7 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
     def test_iam_runtime_does_not_require_appbase_backend_dependency_config(self) -> None:
         manifest = read_json(DEPENDENCY_API_SURFACES)
         backend_entry = entries_by_sdk_dependency(manifest)[
-            ("clawrouter-backend-sdk", "sdkwork-appbase-backend-sdk")
+            ("clawrouter-backend-sdk", "sdkwork-iam-backend-sdk")
         ]
         runtime = backend_entry["runtimeIntegration"]
         self.assertFalse(runtime["sameOriginAllowed"])
@@ -595,8 +595,8 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
             "clawrouter-app-sdk",
             "clawrouter-backend-sdk",
             "clawrouter-open-sdk",
-            "sdkwork-appbase-app-sdk",
-            "sdkwork-appbase-backend-sdk",
+            "sdkwork-iam-app-sdk",
+            "sdkwork-iam-backend-sdk",
             "sdkwork-commerce-app-sdk",
             "sdkwork-commerce-backend-sdk",
         }
@@ -606,8 +606,8 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
             "clawrouter-app-sdk",
             "clawrouter-backend-sdk",
             "clawrouter-open-sdk",
-            "sdkwork-appbase-app-sdk",
-            "sdkwork-appbase-backend-sdk",
+            "sdkwork-iam-app-sdk",
+            "sdkwork-iam-backend-sdk",
             "sdkwork-drive-app-sdk",
             "sdkwork-generations-app-sdk",
             "sdkwork-commerce-app-sdk",
@@ -616,11 +616,11 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
             "sdkwork-models-backend-sdk",
         }
         self.assertTrue(expected_commons_client_families.issubset(commons_clients))
-        self.assertEqual("./sdk-clients", commons_clients["sdkwork-appbase-backend-sdk"]["sourceExport"])
+        self.assertEqual("./sdk-clients", commons_clients["sdkwork-iam-backend-sdk"]["sourceExport"])
 
         for key in [
-            ("clawrouter-app-sdk", "sdkwork-appbase-app-sdk"),
-            ("clawrouter-backend-sdk", "sdkwork-appbase-backend-sdk"),
+            ("clawrouter-app-sdk", "sdkwork-iam-app-sdk"),
+            ("clawrouter-backend-sdk", "sdkwork-iam-backend-sdk"),
             ("clawrouter-app-sdk", "sdkwork-commerce-app-sdk"),
             ("clawrouter-backend-sdk", "sdkwork-commerce-backend-sdk"),
         ]:
@@ -633,7 +633,7 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
                 self.assertEqual(runtime["mode"], client["runtimeIntegration"]["mode"])
                 self.assertEqual(runtime["sameOriginAllowed"], client["runtimeIntegration"]["sameOriginAllowed"])
 
-        appbase_backend_client = commons_clients["sdkwork-appbase-backend-sdk"]
+        appbase_backend_client = commons_clients["sdkwork-iam-backend-sdk"]
         self.assertEqual(
             "VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL",
             appbase_backend_client["runtimeIntegration"]["requiredBaseUrlEnv"],
@@ -648,28 +648,28 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
 
         organization_clients = sdk_clients_by_family(organization_spec)
         self.assertEqual(
-            {"sdkwork-appbase-app-sdk", "sdkwork-appbase-backend-sdk"},
+            {"sdkwork-iam-app-sdk", "sdkwork-iam-backend-sdk"},
             set(organization_clients),
         )
         self.assertEqual(
             "sdkwork-clawrouter-pc-commons/runtime",
-            organization_clients["sdkwork-appbase-backend-sdk"]["providedBy"],
+            organization_clients["sdkwork-iam-backend-sdk"]["providedBy"],
         )
         self.assertTrue(
-            not organization_clients["sdkwork-appbase-backend-sdk"]["runtimeIntegration"]["sameOriginAllowed"],
+            not organization_clients["sdkwork-iam-backend-sdk"]["runtimeIntegration"]["sameOriginAllowed"],
         )
 
         user_clients = sdk_clients_by_family(user_spec)
         self.assertEqual(
-            {"clawrouter-backend-sdk", "sdkwork-appbase-backend-sdk"},
+            {"clawrouter-backend-sdk", "sdkwork-iam-backend-sdk"},
             set(user_clients),
         )
         self.assertEqual(
             "sdkwork-clawrouter-pc-commons/runtime",
-            user_clients["sdkwork-appbase-backend-sdk"]["providedBy"],
+            user_clients["sdkwork-iam-backend-sdk"]["providedBy"],
         )
         self.assertTrue(
-            not user_clients["sdkwork-appbase-backend-sdk"]["runtimeIntegration"]["sameOriginAllowed"],
+            not user_clients["sdkwork-iam-backend-sdk"]["runtimeIntegration"]["sameOriginAllowed"],
         )
 
     def test_component_dependency_sdk_runtime_config_matches_dependency_api_surfaces(self) -> None:

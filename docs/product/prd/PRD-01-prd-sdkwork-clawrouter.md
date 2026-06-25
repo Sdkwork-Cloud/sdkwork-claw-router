@@ -3,7 +3,7 @@
 
 ## 1. 产品定位
 
-`sdkwork-clawrouter` 是 Spring AI Plus 体系下的新一代 AI API Router 产品。它围绕 Rust-first 网关、Java-compatible API 和统一 Portal 产品边界建立，不是只做 OpenAI 兼容转发。它要同时满足：
+`sdkwork-clawrouter` 是 SDKWork 体系下的 AI API Router 产品。它围绕 **Rust-first 网关**、标准 OpenAPI 契约和统一 Portal 产品边界建立，不是只做 OpenAI 兼容转发。它要同时满足：
 
 - 面向开发者的统一 AI API 网关。
 - 面向企业用户的 API Key、用量、账务、模型、路由、供应商配置自助控制台。
@@ -14,9 +14,8 @@
 核心差异：
 
 1. 前端产品统一到 `apps/sdkwork-clawrouter-pc` 一个应用，内部拆分 public、console、admin 模块。
-2. 新版数据库必须遵守 `DATABASE_SPEC.md` 的合同优先、业务前缀、L1/L2/L3 合规标准。
-3. 新版必须对齐 Spring AI Plus 既有业务实体表。用户、VIP、账户、优惠券、积分充值、订单支付等表结构保持与 `legacy-java-plus-entity` 完全一致。
-4. 新版 API 管理面和用户面必须使用已存在的 backend/app API 标准，不能重新发明一套控制面协议。
+2. 新版数据库必须遵守 `DATABASE_SPEC.md` 的合同优先、业务前缀、L1/L2/L3 合规标准；Claw Router 本地 schema 只承载网关、路由、审计与组合边界，模型目录、IAM、Commerce 等域表由对应 SDKWork 产品模块在安装时组合。
+3. 新版 API 管理面和用户面必须使用 Rust app-api / backend-api 标准路径（`/app/v3/api/**`、`/backend/v3/api/**`）与生成 SDK，不重新发明控制面协议。
 
 ## 2. 目标用户
 
@@ -33,60 +32,45 @@
 
 ### 3.1 Public 产品门户
 
-来源于当前前端 `src/App.tsx` 中公共路由：
+当前 `apps/sdkwork-clawrouter-pc` 已实现的公共路由：
 
-- 首页：产品介绍、下载入口、能力概览。
-- 模型广场：模型目录、模型详情、Provider、能力、价格和上下文窗口。
-- 排行榜：模型维度排行、供应商、开源/商业、模态筛选。
-- 应用中心：应用模板、应用详情、开发者生态。
-- 技能中心：技能包、工具能力、安装说明。
-- 产品文档：产品说明、API Reference、SDK Reference。
-- Playground：文本、图像、音频、视频、音乐、Agent 等多模态调试。
-- 论坛：帖子、评论、互动。
-- 课程：课程列表、视频详情、教程内容。
+| 能力 | 路由 | 状态 |
+| --- | --- | --- |
+| 首页 | `/` | 已实现 |
+| 模型广场 | `/models`, `/models/:id` | 已实现 |
+| 排行榜 | `/rankings` | 已实现 |
+| 产品文档 / API Reference / SDK Reference | `/docs`, `/api-reference`, `/sdk-reference` | 已实现（`@sdkwork/documents-pc-*`） |
+| Playground | `/playground`, `/c/:conversationId` | 已实现 |
+| 应用中心 | `/apps` | **P2 规划**（Admin 侧已有 app/skill 管理能力） |
+| 技能中心（Public） | `/skills` | **P2 规划**（Admin `/admin/skill` 已实现） |
+| 论坛 | `/forum` | **P2 规划** |
+| 课程 | `/courses` | **P2 规划** |
 
 ### 3.2 Console 用户控制台
 
-当前前端已有 `/console` 路由，应作为用户自助工作台：
+当前前端 `/console` 路由作为用户自助工作台（Rust app-api + `@sdkwork/clawrouter-app-sdk`）：
 
-| 路由 | 模块 | 核心能力 |
+| 路由 | 模块 | 状态 |
 | --- | --- | --- |
-| `/console/dashboard` | 仪表盘 | 用量、余额、Key 状态、Provider 健康、路由概览 |
-| `/console/usage` | 调用统计 | 请求记录、模型维度、错误率、费用、时间窗口分析 |
-| `/console/gateway` | 网关概览 | 网关地址、兼容协议、请求示例、健康状态 |
-| `/console/routing` | 本地路由 | 渠道、策略、fallback、日志、请求数据、API key 关联 |
-| `/console/api-keys` | 令牌管理 | API Key 创建、停用、轮换、权限、模型范围、限流 |
-| `/console/user` | 用户信息 | 用户资料、认证、组织、绑定账号 |
-| `/console/commerce` | 钱包与充值 | 余额、套餐、支付、充值记录 |
-| `/console/checkout` | 结账 | 订单确认、支付方式、优惠券 |
-| `/console/settlements` | 账单报表 | 账单、结算、发票、导出 |
-| `/console/account` | 账户详情 | 账户余额、流水、积分、VIP、权益 |
-| `/console/recharge` | 充值 | VIP/积分/余额充值包、充值方式 |
-| `/console/settings` | 配置中心 | 语言、主题、通知、默认路由偏好 |
-| `/console/notifications` | 通知中心 | 系统通知、账务提醒、风控提醒 |
-| `/console/providers` | 工具配置 | 用户侧 Provider、代理、凭据引用、本地工具 |
+| `/console/dashboard` | 仪表盘 | 已实现 |
+| `/console/usage` | 调用统计 | 已实现 |
+| `/console/gateway` | 网关概览 | 已实现 |
+| `/console/api-keys` | 令牌管理 | 已实现 |
+| `/console/user` | 用户信息 | 已实现 |
+| `/console/account`, `/console/checkout`, `/console/recharge` 等 | 钱包与商业化 | 已实现（`@sdkwork/commerce-pc-*` host） |
+| `/console/settlements` | 账单报表 | 已实现 |
+| `/console/settings` | 配置中心 | 已实现 |
+| `/console/notifications` | 通知中心 | 已实现 |
+| `/console/routing` | 本地路由 | **已退役**（路由/Provider 治理收敛至 Admin + Gateway） |
+| `/console/providers` | 工具配置 | **已退役** |
 
-Console 的 API 统一走 Java app-api 标准路径 `/app/v3/api/{resource-path}`，通过 `legacy-java-plus-app-api` 生成 SDK 调用。不同部署环境只切换 SDK base URL，不改变资源路径。
+Console API 统一走 Rust app-api 标准路径，通过 `@sdkwork/clawrouter-app-sdk` 调用。不同部署环境只切换 SDK base URL，不改变资源路径。
 
 ### 3.3 Admin 管理后台
 
-当前前端已有 `/admin` 路由，应作为后台控制平面：
+当前前端 `/admin` 路由作为后台控制平面（Rust backend-api + `@sdkwork/clawrouter-backend-sdk`），已覆盖 PRD 基线并扩展 commerce、agents、prompts、MCP、file-platform 等模块。
 
-| 路由 | 模块 | 核心能力 |
-| --- | --- | --- |
-| `/admin/dashboard` | 后台仪表盘 | 总请求、收入、活跃用户、故障、容量、SLO |
-| `/admin/user` | 用户管理 | 用户、租户、组织、封禁、认证、风险标签 |
-| `/admin/group` | 分组管理 | 用户组、API Key 组、权限组、策略绑定 |
-| `/admin/model` | 模型平台管理 | 模型目录、能力、价格、可用区、发布状态 |
-| `/admin/channel` | 渠道供应商账号 | Provider、Channel、Account、凭据、代理、健康 |
-| `/admin/announcement` | 公告管理 | 公告、版本通知、维护窗口 |
-| `/admin/marketing` | 营销管理 | 优惠券、活动、兑换码、充值包、权益 |
-| `/admin/finance` | 财务管理 | 订单、支付、退款、发票、对账、结算 |
-| `/admin/record` | 使用记录 | 请求明细、决策日志、计费事件、审计事件 |
-| `/admin/ratelimit` | 限流与风控 | 限流规则、熔断、黑白名单、风险策略 |
-| `/admin/monitor` | 运维监控 | 实例、心跳、缓存、队列、任务、告警 |
-
-Admin 的 API 统一走 Java backend-api 标准路径 `/backend/v3/api/{resource-path}`，通过 `legacy-java-plus-backend-api` 生成 SDK 调用。不同部署环境只切换 SDK base URL，不改变资源路径。
+Admin API 统一走 Rust backend-api 标准路径，通过 `@sdkwork/clawrouter-backend-sdk` 调用。不同部署环境只切换 SDK base URL，不改变资源路径。
 
 ### 3.4 Gateway 开发者 API
 
@@ -116,7 +100,7 @@ Gateway 面保持行业兼容：
 
 ### 4.3 账户和商业化
 
-1. 用户、VIP、账户、优惠券、积分充值、订单、支付、退款、发票必须复用 `legacy-java-plus-entity` 对应表结构。
+1. 用户、VIP、账户、优惠券、积分充值、订单、支付、退款、发票由 `sdkwork-commerce`、`sdkwork-iam` 等组合模块提供表结构与 API；Claw Router 只消费生成 SDK 与组合契约，不在本地重复定义资金事实表。
 2. 网关用量先沉淀为 AI usage/meter fact，再按规则结转到账户、积分、VIP 权益或订单支付体系。
 3. 余额变更必须同时写账户流水，不能只改余额。
 4. 支付回调、充值、退款、兑换码必须有幂等键和外部事件唯一约束。
@@ -138,8 +122,8 @@ Gateway 面保持行业兼容：
 3. 不在前端长期维护手写 HTTP wrapper 或 mock 数据作为业务真值。
 4. 不为桌面、Server、Docker、K8S 各写一套业务逻辑。
 5. 不把新表命名为 `claw_*`、`router_*`、`sdkwork_*` 这种产品前缀。
-6. 不改名或破坏 `legacy-java-plus-entity` 中用户、VIP、账户、优惠券、交易账户域的既有表结构。
-7. 不为 App/Backend API 增加 `/claw-router` 这类产品路径前缀；公共业务路径必须与 Java app-api/backend-api 一致。
+6. 不改名或破坏组合模块（Commerce、IAM 等）已发布的公共表结构与 SDK 契约。
+7. 不为 App/Backend API 增加 `/claw-router` 这类产品路径前缀；公共业务路径保持 `/app/v3/api/**` 与 `/backend/v3/api/**` 稳定面。
 8. 不因数据结构、接口契约、SDK 替换或实现问题擅自改变 `apps/sdkwork-clawrouter-pc` 的 UI 视觉设计、布局、交互风格、组件外观或品牌表达；前端视觉以用户当前设计为准。
 
 ## 6. 版本路线
@@ -147,7 +131,7 @@ Gateway 面保持行业兼容：
 | 阶段 | 目标 | 范围 |
 | --- | --- | --- |
 | P0 标准冻结 | 完成 PRD、架构、数据库、API、部署、安全、性能设计 | 本文档集 |
-| P1 标准化 MVP | Spring 控制面、Console/Admin API、基础 `/v1` 网关、数据库契约、单机部署 | API Key、Provider、Model、Routing、Usage、Account 接入 |
+| P1 标准化 MVP | Rust 控制面、Console/Admin API、基础 `/v1` 网关、数据库契约、单机部署 | API Key、Provider、Model、Routing、Usage、Account 接入 |
 | P2 产品闭环 | 商业化、账务、营销、监控、Docker/K8S、生成 SDK 替换前端 mock | 订单、充值、优惠券、VIP、用量结算、可观测 |
 | P3 高性能增强 | Gateway 热路径优化、Redis、本地缓存、异步账务、压测门禁 | 大规模流式、fallback、路由仿真、限流 |
 | P4 SaaS/多 Cell | Dedicated Cell、多租户隔离、灰度、跨 Region 灾备 | 企业级 SaaS |
@@ -155,12 +139,12 @@ Gateway 面保持行业兼容：
 ## 7. 成功标准
 
 1. 一个前端应用同时承载 public、console、admin，模块边界清晰。
-2. Admin API 与 App API 均可由标准 OpenAPI 生成 SDK，前端不再依赖手写 mock service。
+2. Admin API 与 App API 均可由标准 OpenAPI 生成 `@sdkwork/clawrouter-*` SDK，前端不再依赖手写 mock service。
 3. `/v1/*` 兼容请求可以通过标准 API Key 调用，并完成路由、计费、审计闭环。
 4. 新建表全部通过 `DATABASE_SPEC.md` 的 L2/L3 评审。
-5. 用户、VIP、账户、优惠券、积分充值、订单支付等直接使用既有 `plus_*` 表结构。
+5. 用户、VIP、账户、优惠券、积分充值、订单支付等通过组合 Commerce/IAM 模块接入，Claw Router 不维护平行资金表。
 6. 四种部署形态能用相同配置模型启动，差异只体现在 profile、数据库、缓存、实例拓扑和 SDK base URL。
-7. 同一套前端构建产物可以在本地 claw-router、私有化 Server、Docker、K8S 和中央 Java app-api/backend-api 之间自由切换，不修改 API 路径和 DTO。
+7. 同一套前端构建产物可以在本地桌面、私有化 Server、Docker、K8S 与统一 Rust app-api/backend-api 之间自由切换，不修改 API 路径和 DTO。
 8. 前端实现接入真实 API/SDK 后，视觉表现与 `apps/sdkwork-clawrouter-pc` 当前用户设计保持一致；如需调整视觉、布局、导航、色彩、字体、间距或组件形态，必须先获得用户明确确认。
 9. 发布前有单元测试、API 契约测试、数据库契约检查、基础压测和安全检查证据。
 

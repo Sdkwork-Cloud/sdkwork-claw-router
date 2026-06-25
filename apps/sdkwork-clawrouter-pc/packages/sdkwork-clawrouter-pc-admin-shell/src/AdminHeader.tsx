@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AnimatePresence, motion } from 'motion/react';
 import {
@@ -17,11 +17,13 @@ import { useTranslation } from 'react-i18next';
 import {
   buildPortalAuthLoginRedirect,
   hasStoredPortalSession,
+  readPortalPermissionScope,
   subscribePortalSessionChange,
 } from '@sdkwork/clawrouter-pc-commons/runtime';
 import { useSiteBranding } from '@sdkwork/clawrouter-pc-commons/runtime';
 import { readMediaResourceUrl } from '@sdkwork/clawrouter-pc-commons/runtime';
 import { ADMIN_MODULES, type AdminModuleDef, type AdminModuleId } from './adminModuleRegistry.ts';
+import { listVisibleAdminModuleIds } from './admin-menu-permissions.ts';
 
 export { ADMIN_MODULES, getActiveModuleFromPath, type AdminModuleDef, type AdminModuleId } from './adminModuleRegistry.ts';
 
@@ -44,7 +46,15 @@ export function AdminHeader({ isDark, toggleTheme, activeModule, onModuleChange 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
   const [isModuleMoreMenuOpen, setIsModuleMoreMenuOpen] = useState(false);
-  const [visibleModuleIds, setVisibleModuleIds] = useState<AdminModuleId[]>(() => ADMIN_MODULES.map((mod) => mod.id));
+  const [permissionScope, setPermissionScope] = useState(() => readPortalPermissionScope());
+  const allowedModules = useMemo(
+    () => {
+      const allowedIds = new Set(listVisibleAdminModuleIds(permissionScope));
+      return ADMIN_MODULES.filter((mod) => allowedIds.has(mod.id));
+    },
+    [permissionScope],
+  );
+  const [visibleModuleIds, setVisibleModuleIds] = useState<AdminModuleId[]>(() => allowedModules.map((mod) => mod.id));
   const [isPortalSessionStored, setIsPortalSessionStored] = useState(() => hasStoredPortalSession());
   const moduleNavRef = useRef<HTMLElement>(null);
   const moduleMoreMenuRef = useRef<HTMLDivElement>(null);
@@ -71,7 +81,7 @@ export function AdminHeader({ isDark, toggleTheme, activeModule, onModuleChange 
       return;
     }
 
-    const moduleWidths = ADMIN_MODULES.map((mod) => ({
+    const moduleWidths = allowedModules.map((mod) => ({
       moduleId: mod.id,
       width: moduleMeasureRefs.current.get(mod.id)?.offsetWidth ?? 0,
     }));
@@ -81,7 +91,7 @@ export function AdminHeader({ isDark, toggleTheme, activeModule, onModuleChange 
     const moduleWidthById = new Map(moduleWidths.map((item) => [item.moduleId, item.width]));
 
     const fitsModules = (moduleIds: AdminModuleId[]) => {
-      const hasOverflow = moduleIds.length < ADMIN_MODULES.length;
+      const hasOverflow = moduleIds.length < allowedModules.length;
       const visibleWidth = moduleIds.reduce((total, moduleId, index) => {
         return total + (moduleWidthById.get(moduleId) ?? 0) + (index > 0 ? MODULE_NAV_GAP_PX : 0);
       }, 0);
@@ -89,7 +99,7 @@ export function AdminHeader({ isDark, toggleTheme, activeModule, onModuleChange 
       return visibleWidth + moreWidth + MODULE_NAV_PADDING_PX <= navWidth;
     };
 
-    const nextVisibleIds = ADMIN_MODULES.map((mod) => mod.id);
+    const nextVisibleIds = allowedModules.map((mod) => mod.id);
     while (nextVisibleIds.length > MIN_VISIBLE_MODULES && !fitsModules(nextVisibleIds)) {
       const removableIndex = [...nextVisibleIds].reverse().findIndex((moduleId) => moduleId !== activeModule);
       if (removableIndex === -1) {
@@ -104,11 +114,22 @@ export function AdminHeader({ isDark, toggleTheme, activeModule, onModuleChange 
       }
       return nextVisibleIds;
     });
-  }, [activeModule]);
+  }, [activeModule, allowedModules]);
+
+  useEffect(() => {
+    setVisibleModuleIds((currentIds) => {
+      const allowedIds = new Set(allowedModules.map((mod) => mod.id));
+      const filtered = currentIds.filter((id) => allowedIds.has(id));
+      if (filtered.length > 0) {
+        return filtered;
+      }
+      return allowedModules.map((mod) => mod.id);
+    });
+  }, [allowedModules]);
 
   const visibleModuleIdSet = new Set(visibleModuleIds);
-  const visibleModules = ADMIN_MODULES.filter((mod) => visibleModuleIdSet.has(mod.id));
-  const overflowModules = ADMIN_MODULES.filter((mod) => !visibleModuleIdSet.has(mod.id));
+  const visibleModules = allowedModules.filter((mod) => visibleModuleIdSet.has(mod.id));
+  const overflowModules = allowedModules.filter((mod) => !visibleModuleIdSet.has(mod.id));
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -117,7 +138,10 @@ export function AdminHeader({ isDark, toggleTheme, activeModule, onModuleChange 
   }, []);
 
   useEffect(() => {
-    const syncPortalSessionState = () => setIsPortalSessionStored(hasStoredPortalSession());
+    const syncPortalSessionState = () => {
+      setIsPortalSessionStored(hasStoredPortalSession());
+      setPermissionScope(readPortalPermissionScope());
+    };
     syncPortalSessionState();
     return subscribePortalSessionChange(syncPortalSessionState);
   }, []);

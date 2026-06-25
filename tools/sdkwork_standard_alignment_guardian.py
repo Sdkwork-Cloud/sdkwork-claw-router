@@ -966,8 +966,15 @@ class SdkworkStandardAlignmentGuardian:
                 )
             )
 
-        standalone_profiles = self.root / "configs" / "topology" / "self-hosted.unified-process.production.env"
-        if standalone_profiles.exists():
+        standalone_profile_candidates = (
+            self.root / "configs" / "topology" / "standalone.unified-process.production.env",
+            self.root / "configs" / "topology" / "self-hosted.unified-process.production.env",
+        )
+        standalone_profiles = next(
+            (path for path in standalone_profile_candidates if path.exists()),
+            None,
+        )
+        if standalone_profiles is not None:
             checks.append(
                 AlignmentCheck(
                     id="deployment-standalone-profile",
@@ -986,7 +993,7 @@ class SdkworkStandardAlignmentGuardian:
                     severity="blocking",
                     status="fail",
                     message="missing standalone production topology profile",
-                    remediation="add configs/topology/self-hosted.unified-process.production.env per APP_RUNTIME_TOPOLOGY_SPEC.md",
+                    remediation="add configs/topology/standalone.unified-process.production.env per APP_RUNTIME_TOPOLOGY_NAMING.md",
                 )
             )
         return checks

@@ -19,6 +19,10 @@ export class PortalErrorBoundary extends Component<
     return { hasError: true };
   }
 
+  componentDidCatch(_error: unknown, _errorInfo: { componentStack: string }): void {
+    // Error state is surfaced through PortalErrorFallback; avoid browser console logging in production portal runtime.
+  }
+
   render(): ReactNode {
     if (this.state.hasError) {
       return <PortalErrorFallback onRetry={() => this.setState({ hasError: false })} />;

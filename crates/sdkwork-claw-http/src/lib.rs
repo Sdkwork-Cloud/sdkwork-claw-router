@@ -50,7 +50,7 @@ pub use router::{
     ContractOperationFilter,
 };
 pub use sdkwork_claw_contract::{ApiSurface, ContractOperation};
-pub use shutdown::wait_for_shutdown_signal;
+pub use shutdown::{subscribe_shutdown_signal, wait_for_shutdown_signal};
 pub use web_bridge::{
     inject_legacy_handler_context_from_web_context, trusted_request_subject_from_web_context,
 };

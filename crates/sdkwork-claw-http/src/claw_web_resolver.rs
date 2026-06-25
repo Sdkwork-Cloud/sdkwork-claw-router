@@ -358,7 +358,7 @@ mod tests {
             deployment_mode: "local".to_owned(),
             auth_level: "password".to_owned(),
             data_scope: vec!["tenant:100001".to_owned(), "user:30".to_owned()],
-            permission_scope: vec!["clawrouter:console".to_owned()],
+            permission_scope: vec!["clawrouter.console.access".to_owned()],
             issued_at: now + 1,
             expires_at: now + 300,
             kid: None,

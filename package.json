@@ -27,7 +27,7 @@
     "test": "pnpm topology:validate && pnpm test:topology && node scripts/run-claw-router-product.test.mjs",
     "build": "node scripts/build-claw-router-production.mjs",
     "start": "node scripts/start-claw-router-production.mjs",
-    "check": "pnpm check:application-env && pnpm check:gateway-request-identity && node scripts/run-claw-router-product.mjs check",
+    "check": "pnpm check:application-env && pnpm check:gateway-request-identity && pnpm check:dependency-composition && node scripts/run-claw-router-product.mjs check",
     "clean": "node scripts/clean-claw-router-workspace.mjs",
     "clean:fast": "node scripts/clean-claw-router-workspace.mjs",
     "typecheck": "pnpm --dir apps/sdkwork-clawrouter-pc typecheck",
@@ -101,7 +101,7 @@
     "api:standard-extensions:write": "node tools/sync-clawrouter-api-standard-extensions.mjs --apply",
     "api:http-route-manifest:check": "node tools/generate-clawrouter-http-route-manifest-rs.mjs --check",
     "api:http-route-manifest:write": "node tools/generate-clawrouter-http-route-manifest-rs.mjs --apply",
-    "models:check": "node data/sdkwork-models/tools/build-index.mjs --check && node data/sdkwork-models/tools/validate-catalog.mjs && node data/sdkwork-models/tools/freshness-report.mjs --max-age-policy catalog-freshness-policy.json --as-of-catalog-generated-at && node data/sdkwork-models/tools/catalog-audit.mjs && node data/sdkwork-models/tools/release-catalog.mjs --check",
+    "models:check": "node scripts/lib/ensure-models-catalog-deps.mjs && node data/sdkwork-models/tools/build-index.mjs --check && node data/sdkwork-models/tools/validate-catalog.mjs && node data/sdkwork-models/tools/freshness-report.mjs --max-age-policy catalog-freshness-policy.json --as-of-catalog-generated-at && node data/sdkwork-models/tools/catalog-audit.mjs && node data/sdkwork-models/tools/release-catalog.mjs --check",
     "downloads:update": "node scripts/update-claw-router-downloads.mjs",
     "downloads:check": "node scripts/update-claw-router-downloads.mjs --check",
     "skills:seed:mirror-clawhub": "node scripts/mirror-clawhub-skills-seed.mjs --fetch",
@@ -125,6 +125,7 @@
     "check:database-ownership": "node scripts/check-database-ownership.mjs",
     "check:application-env": "node --test scripts/lib/claw-router-browser-env-contract.test.mjs scripts/lib/claw-router-edge-env-contract.test.mjs scripts/dev/claw-router-application-env.test.mjs scripts/dev/ensure-claw-router-env.test.mjs scripts/write-release-env.test.mjs scripts/release-environment-validation.test.mjs && node scripts/check-claw-router-application-env.mjs",
     "check:gateway-request-identity": "node scripts/check-claw-router-gateway-request-identity.mjs",
+    "check:dependency-composition": "node ../sdkwork-specs/tools/check-dependency-composition.mjs --workspace .",
     "db:plan": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . plan",
     "db:migrate": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . migrate",
     "db:seed": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . seed",
@@ -132,6 +133,8 @@
     "db:drift:check": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . drift-check",
     "db:bootstrap": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . bootstrap",
     "test:contract:database": "node ../sdkwork-specs/tools/check-database-framework-standard.mjs --root .",
-    "topology:plan": "node ../sdkwork-app-topology/scripts/sdkwork-topology.mjs plan --root . --spec specs/topology.spec.json"
+    "topology:plan": "node ../sdkwork-app-topology/scripts/sdkwork-topology.mjs plan --root . --spec specs/topology.spec.json",
+    "gateway:package:platform-config": "node ../sdkwork-app-topology/scripts/gateway-cloud-bundle.mjs bundle --root .",
+    "gateway:validate:platform-config": "node ../sdkwork-app-topology/scripts/gateway-cloud-bundle.mjs validate --root ."
   }
 }

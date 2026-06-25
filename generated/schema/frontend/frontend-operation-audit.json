@@ -376,8 +376,7 @@
       "operation": "fetchAiResourceGroups",
       "operation_scope": null,
       "read_sources": [
-        "ai_resource_group",
-        "ai_resource_group_item"
+        "ops_audit_log"
       ],
       "route": "/admin/channel",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts",
@@ -392,8 +391,7 @@
       "operation": "fetchAiResources",
       "operation_scope": null,
       "read_sources": [
-        "ai_resource",
-        "ai_resource_group_item"
+        "ops_audit_log"
       ],
       "route": "/admin/channel",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts",
@@ -427,8 +425,7 @@
       "operation": "fetchModels",
       "operation_scope": null,
       "read_sources": [
-        "ai_model_vendor",
-        "ai_model"
+        "ops_audit_log"
       ],
       "route": "/admin/channel",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts",
@@ -568,7 +565,6 @@
       "operation": "createAdminAiCategory",
       "operation_scope": "app_shell",
       "read_sources": [
-        "ai_prompt",
         "ai_mcp_server"
       ],
       "route": "/admin/prompts",
@@ -584,7 +580,6 @@
       "operation": "deleteAdminAiCategory",
       "operation_scope": "app_shell",
       "read_sources": [
-        "ai_prompt",
         "ai_mcp_server"
       ],
       "route": "/admin/prompts",
@@ -600,7 +595,6 @@
       "operation": "listAdminAiCategoryOptions",
       "operation_scope": "app_shell",
       "read_sources": [
-        "ai_prompt",
         "ai_mcp_server"
       ],
       "route": "/admin/prompts",
@@ -616,7 +610,6 @@
       "operation": "updateAdminAiCategory",
       "operation_scope": "app_shell",
       "read_sources": [
-        "ai_prompt",
         "ai_mcp_server"
       ],
       "route": "/admin/prompts",
@@ -3988,13 +3981,11 @@
       "operation": "createPrompt",
       "operation_scope": null,
       "read_sources": [
-        "ai_prompt",
-        "c_category"
+        "ops_audit_log"
       ],
       "route": "/admin/prompts",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts",
       "write_tables": [
-        "ai_prompt",
         "ops_audit_log"
       ]
     },
@@ -4007,15 +3998,11 @@
       "operation": "createPromptBinding",
       "operation_scope": null,
       "read_sources": [
-        "ai_prompt",
-        "ai_prompt_version",
-        "ai_prompt_binding",
-        "c_category"
+        "ops_audit_log"
       ],
       "route": "/admin/prompts",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts",
       "write_tables": [
-        "ai_prompt_binding",
         "ops_audit_log"
       ]
     },
@@ -4028,15 +4015,11 @@
       "operation": "createPromptVersion",
       "operation_scope": null,
       "read_sources": [
-        "ai_prompt",
-        "ai_prompt_version",
-        "c_category"
+        "ops_audit_log"
       ],
       "route": "/admin/prompts",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts",
       "write_tables": [
-        "ai_prompt",
-        "ai_prompt_version",
         "ops_audit_log"
       ]
     },
@@ -4049,10 +4032,7 @@
       "operation": "listPromptBindings",
       "operation_scope": null,
       "read_sources": [
-        "ai_prompt",
-        "ai_prompt_version",
-        "ai_prompt_binding",
-        "c_category"
+        "ops_audit_log"
       ],
       "route": "/admin/prompts",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts",
@@ -4067,9 +4047,7 @@
       "operation": "listPromptVersions",
       "operation_scope": null,
       "read_sources": [
-        "ai_prompt",
-        "ai_prompt_version",
-        "c_category"
+        "ops_audit_log"
       ],
       "route": "/admin/prompts",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts",
@@ -4084,8 +4062,7 @@
       "operation": "listPrompts",
       "operation_scope": null,
       "read_sources": [
-        "ai_prompt",
-        "c_category"
+        "ops_audit_log"
       ],
       "route": "/admin/prompts",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts",
@@ -4100,30 +4077,24 @@
       "operation": "publishPromptVersion",
       "operation_scope": null,
       "read_sources": [
-        "ai_prompt",
-        "ai_prompt_version",
-        "c_category"
+        "ops_audit_log"
       ],
       "route": "/admin/prompts",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts",
       "write_tables": [
-        "ai_prompt",
-        "ai_prompt_version",
         "ops_audit_log"
       ]
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/prompts/versions/{versionId}/render",
+      "api_path": "/backend/v3/api/prompts/versions/{versionId}/renders",
       "api_surface": "backend",
       "file_targets": [],
       "kind": "action",
       "operation": "renderPromptVersion",
       "operation_scope": null,
       "read_sources": [
-        "ai_prompt",
-        "ai_prompt_version",
-        "c_category"
+        "ops_audit_log"
       ],
       "route": "/admin/prompts",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts",
@@ -4132,7 +4103,7 @@
       ]
     },
     {
-      "api_method": "PUT",
+      "api_method": "PATCH",
       "api_path": "/backend/v3/api/prompts/bindings/{bindingId}",
       "api_surface": "backend",
       "file_targets": [],
@@ -4140,15 +4111,11 @@
       "operation": "updatePromptBinding",
       "operation_scope": null,
       "read_sources": [
-        "ai_prompt",
-        "ai_prompt_version",
-        "ai_prompt_binding",
-        "c_category"
+        "ops_audit_log"
       ],
       "route": "/admin/prompts",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts",
       "write_tables": [
-        "ai_prompt_binding",
         "ops_audit_log"
       ]
     },

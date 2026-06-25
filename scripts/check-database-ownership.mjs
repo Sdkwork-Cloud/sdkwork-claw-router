@@ -106,6 +106,54 @@ function main() {
     }
   }
 
+  const gatewayRoutingBaselinePath = path.join(
+    args.root,
+    'database/ddl/baseline/postgres/0003_gateway_routing_dictionary.sql',
+  );
+  const gatewayRoutingBaselineSql = fs.readFileSync(gatewayRoutingBaselinePath, 'utf8');
+  if (/CREATE TABLE/i.test(gatewayRoutingBaselineSql)) {
+    failures.push(
+      '0003_gateway_routing_dictionary.sql must remain a retired stub; sdkwork-models composes catalog DDL',
+    );
+  }
+
+  const messagingBaselinePath = path.join(
+    args.root,
+    'database/ddl/baseline/postgres/0004_messaging_runtime_projection.sql',
+  );
+  const messagingBaselineSql = fs.readFileSync(messagingBaselinePath, 'utf8');
+  if (/CREATE TABLE/i.test(messagingBaselineSql)) {
+    failures.push(
+      '0004_messaging_runtime_projection.sql must remain a retired stub without CREATE TABLE',
+    );
+  }
+  for (const tableName of collectCreateTables(messagingBaselineSql)) {
+    if (tableName.startsWith('messaging_')) {
+      failures.push(`retired messaging baseline must not define ${tableName}`);
+    }
+  }
+
+  const installerPath = path.join(
+    args.root,
+    'services/sdkwork-clawrouter-router-service/src/infrastructure/sql/installer.rs',
+  );
+  const installerSource = fs.readFileSync(installerPath, 'utf8');
+  if (/compose_sibling_commerce_module\(\)/.test(installerSource) === false) {
+    failures.push('installer must expose standalone commerce compose helper');
+  }
+  if (!/const COMPOSE_SDKWORK_MODELS_CATALOG_MODULE: bool = true/.test(installerSource)) {
+    failures.push('installer must compose sdkwork-models catalog module at install time');
+  }
+  if (/const COMPOSE_SIBLING_DATABASE_MODULES: bool = true/.test(installerSource)) {
+    failures.push('installer must not compose all sibling database modules via legacy flag');
+  }
+  if (/apply_.*messaging_runtime_projection_schema/.test(installerSource)) {
+    failures.push('installer must not apply messaging runtime projection schema');
+  }
+  if (/MESSAGING_RUNTIME_PROJECTION_SQL/.test(installerSource)) {
+    failures.push('installer must not include messaging runtime projection SQL');
+  }
+
   if (failures.length > 0) {
     process.stderr.write(`${failures.join('\n')}\n`);
     process.exit(1);

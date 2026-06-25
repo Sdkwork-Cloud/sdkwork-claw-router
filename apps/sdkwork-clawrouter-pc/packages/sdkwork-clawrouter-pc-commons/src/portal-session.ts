@@ -3,6 +3,7 @@ import { readApiRecord } from './api-result.ts';
 import { clearStoredAppSessionToken, storeAppSessionFromResult } from './app-session-token.ts';
 import { resetClawRouterIamRuntime } from './iam-runtime.ts';
 import { getClawRouterBackendSdkClient, getSdkworkAppbaseAppSdkClient, resetClawRouterSdkClients } from './sdk-clients.ts';
+import { hasPortalAdminSurfaceAccess, readPortalPermissionScope } from './portal-permission-scope.ts';
 
 export type PortalAdminAccessState = 'anonymous' | 'checking' | 'allowed' | 'forbidden' | 'error';
 
@@ -68,6 +69,10 @@ export async function verifyCurrentPortalAdminAccess(
   const session = await fetchCurrentPortalSession();
   if (!session) {
     return 'anonymous';
+  }
+
+  if (!hasPortalAdminSurfaceAccess(readPortalPermissionScope())) {
+    return 'forbidden';
   }
 
   try {

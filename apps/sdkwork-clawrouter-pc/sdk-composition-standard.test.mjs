@@ -20,24 +20,24 @@ test('portal workspace declares appbase app and backend generated SDK packages',
   const typecheckSource = source('tsconfig.typecheck.json');
   const viteConfigSource = source('vite.config.ts');
 
-  assert.equal(packageJson.dependencies['@sdkwork/appbase-app-sdk'], 'workspace:*');
-  assert.equal(packageJson.dependencies['@sdkwork/appbase-backend-sdk'], 'workspace:*');
-  assert.equal(commonsPackageJson.dependencies['@sdkwork/appbase-app-sdk'], 'workspace:*');
-  assert.equal(commonsPackageJson.dependencies['@sdkwork/appbase-backend-sdk'], 'workspace:*');
+  assert.equal(packageJson.dependencies['@sdkwork/iam-app-sdk'], 'workspace:*');
+  assert.equal(packageJson.dependencies['@sdkwork/iam-backend-sdk'], 'workspace:*');
+  assert.equal(commonsPackageJson.dependencies['@sdkwork/iam-app-sdk'], 'workspace:*');
+  assert.equal(commonsPackageJson.dependencies['@sdkwork/iam-backend-sdk'], 'workspace:*');
 
   for (const workspacePattern of [
-    '../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/*-typescript/generated/server-openapi',
-    '../../../sdkwork-appbase/sdks/sdkwork-appbase-backend-sdk/*-typescript/generated/server-openapi',
+    '../../../sdkwork-iam/sdks/sdkwork-iam-app-sdk/*-typescript/generated/server-openapi',
+    '../../../sdkwork-iam/sdks/sdkwork-iam-backend-sdk/*-typescript/generated/server-openapi',
   ]) {
     assert.ok(packageJson.workspaces.includes(workspacePattern), `package workspaces must include ${workspacePattern}`);
     assert.ok(workspaceSource.includes(workspacePattern), `pnpm workspace must include ${workspacePattern}`);
   }
 
   for (const [packageName, sdkFamily] of [
-    ['@sdkwork/appbase-app-sdk', 'sdkwork-appbase-app-sdk'],
-    ['@sdkwork/appbase-backend-sdk', 'sdkwork-appbase-backend-sdk'],
+    ['@sdkwork/iam-app-sdk', 'sdkwork-iam-app-sdk'],
+    ['@sdkwork/iam-backend-sdk', 'sdkwork-iam-backend-sdk'],
   ]) {
-    const generatedPath = `../../../sdkwork-appbase/sdks/${sdkFamily}/${sdkFamily}-typescript/generated/server-openapi/src/index.ts`;
+    const generatedPath = `../../../sdkwork-iam/sdks/${sdkFamily}/${sdkFamily}-typescript/generated/server-openapi/src/index.ts`;
     assert.ok(tsconfigSource.includes(`"${packageName}"`), `${packageName} must be present in tsconfig paths`);
     assert.ok(typecheckSource.includes(`"${packageName}"`), `${packageName} must be present in typecheck paths`);
     assert.ok(tsconfigSource.includes(generatedPath), `${packageName} tsconfig path must point at generated server-openapi`);
@@ -47,7 +47,7 @@ test('portal workspace declares appbase app and backend generated SDK packages',
 
   assert.doesNotMatch(
     typecheckSource,
-    /sdkwork-appbase-backend-sdk-typescript\/src\/index\.ts/,
+    /sdkwork-iam-backend-sdk-typescript\/src\/index\.ts/,
     'typecheck must not point at the stale appbase backend SDK source root',
   );
 });
@@ -62,8 +62,8 @@ test('portal workspace declares Commerce app and backend generated SDK packages'
 
   assert.equal(packageJson.dependencies['sdkwork-commerce-app-sdk-generated-typescript'], 'workspace:*');
   assert.equal(packageJson.dependencies['sdkwork-commerce-backend-sdk-generated-typescript'], 'workspace:*');
-  assert.equal(commonsPackageJson.dependencies['sdkwork-commerce-app-sdk-generated-typescript'], 'workspace:*');
-  assert.equal(commonsPackageJson.dependencies['sdkwork-commerce-backend-sdk-generated-typescript'], 'workspace:*');
+  assert.equal(commonsPackageJson.dependencies['@sdkwork/commerce-service'], 'workspace:*');
+  assert.equal(commonsPackageJson.dependencies['@sdkwork/clawrouter-pc-core'], 'workspace:*');
 
   for (const workspacePattern of [
     '../../../sdkwork-commerce/sdks/sdkwork-commerce-app-sdk/sdkwork-commerce-app-sdk-typescript/generated/server-openapi',
@@ -141,8 +141,8 @@ test('clawrouter SDK families declare Commerce dependencies and exclude Commerce
 test('commons SDK client bootstrap composes appbase, product and open SDKs through standard credentials', () => {
   const sdkClientsSource = source('packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts');
 
-  assert.match(sdkClientsSource, /from '@sdkwork\/appbase-app-sdk'/);
-  assert.match(sdkClientsSource, /from '@sdkwork\/appbase-backend-sdk'/);
+  assert.match(sdkClientsSource, /from '@sdkwork\/iam-app-sdk'/);
+  assert.match(sdkClientsSource, /from '@sdkwork\/iam-backend-sdk'/);
   assert.match(sdkClientsSource, /from '@sdkwork\/clawrouter-app-sdk'/);
   assert.match(sdkClientsSource, /from '@sdkwork\/clawrouter-backend-sdk'/);
   assert.match(sdkClientsSource, /from '@sdkwork\/clawrouter-open-sdk'/);
@@ -165,14 +165,9 @@ test('commons SDK client bootstrap composes Commerce dependency SDKs through the
   const sdkClientsSource = source('packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts');
 
   assert.match(sdkClientsSource, /from '@sdkwork\/commerce-service'/);
-  assert.match(sdkClientsSource, /from 'sdkwork-commerce-app-sdk-generated-typescript'/);
-  assert.match(sdkClientsSource, /from 'sdkwork-commerce-backend-sdk-generated-typescript'/);
-  assert.match(sdkClientsSource, /configureSdkworkCommerceServiceProvider/);
-  assert.match(sdkClientsSource, /createSdkworkCommerceService/);
-  assert.match(sdkClientsSource, /createSdkworkCommerceAppSdkClient/);
-  assert.match(sdkClientsSource, /getSdkworkCommerceAppSdkClient/);
-  assert.match(sdkClientsSource, /createSdkworkCommerceBackendSdkClient/);
-  assert.match(sdkClientsSource, /getSdkworkCommerceBackendSdkClient/);
+  assert.match(sdkClientsSource, /from '@sdkwork\/clawrouter-pc-core\/sdk'/);
+  assert.match(sdkClientsSource, /SdkworkCommerceAppSdkClient/);
+  assert.match(sdkClientsSource, /SdkworkCommerceBackendSdkClient/);
   assert.match(sdkClientsSource, /__SDKWORK_COMMERCE_APP_SDK_CLIENT__/);
   assert.match(sdkClientsSource, /__SDKWORK_COMMERCE_BACKEND_SDK_CLIENT__/);
   assert.match(sdkClientsSource, /VITE_SDKWORK_COMMERCE_APP_API_BASE_URL/);
@@ -186,13 +181,10 @@ test('IAM runtime uses the high-level appbase auth runtime while binding app SDK
   const iamRuntimeSource = source('packages/sdkwork-clawrouter-pc-commons/src/iam-runtime.ts');
 
   assert.match(iamRuntimeSource, /createSdkworkAppbasePcAuthRuntime/);
-  assert.match(iamRuntimeSource, /createAppbaseAppClient:\s*\(\)\s*=>\s*getSdkworkAppbaseAppSdkClient\(\)/);
-  assert.match(iamRuntimeSource, /sdkClients:\s*\[/);
-  assert.match(iamRuntimeSource, /getClawRouterAppSdkClient\(\)/);
-  assert.match(iamRuntimeSource, /getSdkworkDriveAppSdkClient\(\)/);
-  assert.match(iamRuntimeSource, /getSdkworkGenerationsAppSdkClient\(\)/);
-  assert.match(iamRuntimeSource, /getSdkworkCommerceAppSdkClient\(\)/);
-  assert.match(iamRuntimeSource, /tokenManager:\s*getClawRouterGlobalTokenManager\(\)/);
+  assert.match(iamRuntimeSource, /createAppbaseAppClient:\s*\(\)\s*=>\s*wrapCredentialEntryClient\(getSdkworkAppbaseAppSdkClient\(\)/);
+  assert.match(iamRuntimeSource, /credentialEntry:\s*\{[\s\S]*skipWrap:\s*true/u);
+  assert.match(iamRuntimeSource, /from '@sdkwork\/iam-credential-entry'/);
+  assert.match(iamRuntimeSource, /tokenManager,/);
   assert.match(iamRuntimeSource, /sessionBridge:/);
   assert.doesNotMatch(iamRuntimeSource, /createAppbaseBackendClient/);
   assert.doesNotMatch(iamRuntimeSource, /appbaseBackendApiBaseUrl/);
@@ -236,6 +228,24 @@ test('appbase-owned app capabilities no longer call the product clawrouter app S
   assert.match(authSettingsSource, /\.system\.iam\.runtime\.retrieve\(\)/);
   assert.match(authSettingsSource, /\.system\.iam\.verificationPolicy\.retrieve\(\)/);
   assert.match(userServiceSource, /\.iam\.users\.current\.retrieve\(\)/);
+});
+
+test('dependency composition manifest declares SDK inventory and permission inheritance', () => {
+  const manifest = json('specs/dependency.composition.json');
+  const coreInventorySource = source('packages/sdkwork-clawrouter-pc-core/src/composition/sdk-inventory.ts');
+  const iamModuleManifest = json('specs/iam.module.manifest.json');
+
+  assert.equal(manifest.kind, 'sdkwork.dependency.composition');
+  assert.ok(manifest.permissionComposition?.moduleCatalogRefs?.length > 0);
+  assert.equal(manifest.permissionComposition?.consumerPolicy?.forbidLocalPermissionCatalogForDependencyDomains, true);
+
+  const appSurface = manifest.surfaces.find((entry) => entry.surface === 'app');
+  assert.ok(appSurface?.sdkClients?.length >= 5, 'app surface must declare dependency SDK inventory');
+  assert.ok(appSurface?.dependencyApiSurfaces?.includes('../../specs/dependency-api-surfaces.json'));
+
+  assert.match(coreInventorySource, /from '\.\.\/\.\.\/\.\.\/\.\.\/specs\/dependency\.composition\.json'/);
+  assert.equal(iamModuleManifest.moduleId, 'clawrouter');
+  assert.ok(iamModuleManifest.permissions.catalog.some((entry) => entry.code === 'clawrouter.console.access'));
 });
 
 test('commons package does not depend on low-level appbase IAM SDK adapters', () => {

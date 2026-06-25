@@ -61,7 +61,7 @@ Do not add or regenerate DDL for:
 - App center UI/APIs consume `sdkwork-appstore-*-sdk`
 - Drive uploads/previews consume `sdkwork-drive-*-sdk`
 - Admin commerce UI uses `@sdkwork/clawrouter-backend-sdk` commerce facade (no local commerce SoR tables)
-- Admin OAuth uses `sdkwork-appbase-backend-sdk`
+- Admin OAuth uses `sdkwork-iam-backend-sdk`
 - Model catalog admin/read paths use `sdkwork-models-*-sdk` or bundled catalog
 - Declarations live in `specs/dependency-api-surfaces.json`
 

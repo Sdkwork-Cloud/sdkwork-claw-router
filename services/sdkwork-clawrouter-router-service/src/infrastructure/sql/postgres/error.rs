@@ -2,10 +2,12 @@ use std::error::Error;
 use std::fmt::{Display, Formatter};
 
 use crate::domain::DomainError;
+use crate::infrastructure::sql::model_catalog_import::CatalogImportError;
 
 #[derive(Debug)]
 pub enum PostgresCatalogLoadError {
     Database(sqlx::Error),
+    Dictionary(CatalogImportError),
     Domain(DomainError),
 }
 
@@ -14,7 +16,14 @@ impl Display for PostgresCatalogLoadError {
         match self {
             Self::Database(error) => write!(f, "catalog database load failed: {error}"),
             Self::Domain(error) => write!(f, "catalog row mapping failed: {error}"),
+            Self::Dictionary(error) => write!(f, "catalog dictionary load failed: {error}"),
         }
+    }
+}
+
+impl From<CatalogImportError> for PostgresCatalogLoadError {
+    fn from(value: CatalogImportError) -> Self {
+        Self::Dictionary(value)
     }
 }
 

@@ -7,6 +7,7 @@ use crate::domain::{
     DomainError, DomainResult, DEFAULT_PROVIDER_CIRCUIT_BREAKER_RECOVERY_WINDOW_SECONDS,
 };
 use crate::infrastructure::sql::catalog::{PricingCatalogRows, SqlPricingCatalogSnapshot};
+use crate::infrastructure::sql::model_catalog_import::runtime_pricing_dictionary_rows;
 use crate::infrastructure::sql::routing_config_change::AI_ROUTING_CONFIG_SCOPE;
 use crate::infrastructure::sql::rows::GatewayApiKeyRow;
 use crate::infrastructure::sql::sqlite::error::SqlCatalogLoadError;
@@ -50,13 +51,10 @@ impl SqlitePricingCatalogLoader {
     }
 
     pub async fn load_snapshot(&self) -> Result<SqlPricingCatalogSnapshot, SqlCatalogLoadError> {
+        let dictionary = runtime_pricing_dictionary_rows()?;
         let rows = PricingCatalogRows {
-            vendors: row_mapping::load_vendors(&self.pool, queries::LOAD_VENDORS)
-                .await
-                .map_err(|source| sqlite_query_error("LOAD_VENDORS", source))?,
-            models: row_mapping::load_models(&self.pool, queries::LOAD_MODELS)
-                .await
-                .map_err(|source| sqlite_query_error("LOAD_MODELS", source))?,
+            vendors: dictionary.vendors,
+            models: dictionary.models,
             provider_routes: row_mapping::load_provider_routes(
                 &self.pool,
                 queries::LOAD_PROVIDER_ROUTES,
@@ -120,9 +118,7 @@ impl SqlitePricingCatalogLoader {
             )
             .await
             .map_err(|source| sqlite_query_error("LOAD_API_KEY_GROUP_METRIC_SNAPSHOTS", source))?,
-            prices: row_mapping::load_prices(&self.pool, queries::LOAD_PRICES)
-                .await
-                .map_err(|source| sqlite_query_error("LOAD_PRICES", source))?,
+            prices: dictionary.prices,
         };
         let managed_provider_secrets = managed_provider_secrets_from_rows(
             &rows.provider_routes,

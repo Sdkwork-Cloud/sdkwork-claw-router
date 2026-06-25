@@ -74,20 +74,20 @@ test("admin organization route and package are wired into the portal", () => {
     "workspace:*",
   );
   assert.ok(
-    packageJson.workspaces?.includes("../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/*-typescript/generated/server-openapi"),
+    packageJson.workspaces?.includes("../../../sdkwork-iam/sdks/sdkwork-iam-app-sdk/*-typescript/generated/server-openapi"),
     "portal workspace must include the materialized appbase app SDK package path",
   );
   assert.ok(
-    packageJson.workspaces?.includes("../../../sdkwork-appbase/sdks/sdkwork-appbase-backend-sdk/*-typescript/generated/server-openapi"),
+    packageJson.workspaces?.includes("../../../sdkwork-iam/sdks/sdkwork-iam-backend-sdk/*-typescript/generated/server-openapi"),
     "portal workspace must include the materialized appbase backend SDK package path",
   );
   assert.match(
     typecheckSource,
-    /"@sdkwork\/appbase-app-sdk": \[\s*"\.\/src\/typecheck-shims\.d\.ts"/,
+    /"@sdkwork\/iam-app-sdk": \[\s*"\.\/src\/typecheck-shims\.d\.ts"/,
   );
   assert.match(
     typecheckSource,
-    /"@sdkwork\/appbase-backend-sdk": \[\s*"\.\/src\/typecheck-shims\.d\.ts"/,
+    /"@sdkwork\/iam-backend-sdk": \[\s*"\.\/src\/typecheck-shims\.d\.ts"/,
   );
   assert.ok(
     existsSync(new URL("packages/sdkwork-clawrouter-pc-admin-organization/package.json", portalRoot)),
@@ -123,10 +123,10 @@ test("admin organization service uses appbase backend directory reads and mutati
   ) as { dependencies?: Record<string, string> };
   const sdkBoundary = source("packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts");
 
-  assert.equal(packageJson.dependencies?.["@sdkwork/appbase-app-sdk"], "workspace:*");
-  assert.equal(packageJson.dependencies?.["@sdkwork/appbase-backend-sdk"], "workspace:*");
-  assert.match(sdkBoundary, /@sdkwork\/appbase-app-sdk/);
-  assert.match(sdkBoundary, /@sdkwork\/appbase-backend-sdk/);
+  assert.equal(packageJson.dependencies?.["@sdkwork/iam-app-sdk"], "workspace:*");
+  assert.equal(packageJson.dependencies?.["@sdkwork/iam-backend-sdk"], "workspace:*");
+  assert.match(sdkBoundary, /@sdkwork\/iam-app-sdk/);
+  assert.match(sdkBoundary, /@sdkwork\/iam-backend-sdk/);
   assert.match(sdkBoundary, /getSdkworkAppbaseAppSdkClient/);
   assert.match(sdkBoundary, /getSdkworkAppbaseBackendSdkClient/);
   assert.match(service, /getSdkworkAppbaseBackendSdkClient/);

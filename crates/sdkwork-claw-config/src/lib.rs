@@ -41,5 +41,8 @@ pub use runtime::{
     RuntimeSectionConfig, RuntimeTomlConfig, SecuritySectionConfig, ServerSectionConfig,
     ServiceBindSectionConfig, ServicesSectionConfig, UsageSettlementSectionConfig,
 };
-pub use startup_install::StartupInstallMode;
+pub use startup_install::{
+    ensure_production_startup_install_policy, is_production_like_runtime_environment,
+    StartupInstallMode,
+};
 pub use trusted_subject::TrustedSubjectConfig;

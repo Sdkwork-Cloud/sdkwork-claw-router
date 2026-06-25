@@ -2662,97 +2662,6 @@
     },
     {
       "data_sources": [
-        "ai_prompt",
-        "c_category"
-      ],
-      "fields": [
-        "id",
-        "uuid",
-        "tenantId",
-        "organizationId",
-        "promptKey",
-        "name",
-        "description",
-        "categoryId",
-        "categoryCode",
-        "promptType",
-        "visibility",
-        "ownerUserId",
-        "latestVersionId",
-        "publishedVersionId",
-        "status",
-        "tags",
-        "createdAt",
-        "updatedAt"
-      ],
-      "file_targets": [],
-      "interface": "AdminPrompt",
-      "route": "/admin/prompts",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_prompt",
-        "ai_prompt_version",
-        "ai_prompt_binding"
-      ],
-      "fields": [
-        "id",
-        "uuid",
-        "tenantId",
-        "organizationId",
-        "promptId",
-        "promptVersionId",
-        "ownerType",
-        "ownerId",
-        "bindingRole",
-        "priority",
-        "enabled",
-        "policyJson",
-        "snapshotJson",
-        "createdAt",
-        "updatedAt"
-      ],
-      "file_targets": [],
-      "interface": "AdminPromptBinding",
-      "route": "/admin/prompts",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_prompt",
-        "ai_prompt_version"
-      ],
-      "fields": [
-        "id",
-        "uuid",
-        "tenantId",
-        "organizationId",
-        "promptId",
-        "versionNo",
-        "title",
-        "content",
-        "variableSchema",
-        "outputSchema",
-        "modelConstraints",
-        "safetyPolicy",
-        "examplesJson",
-        "checksumHash",
-        "lifecycleStatus",
-        "reviewStatus",
-        "reviewComment",
-        "createdBy",
-        "publishedAt",
-        "createdAt",
-        "updatedAt"
-      ],
-      "file_targets": [],
-      "interface": "AdminPromptVersion",
-      "route": "/admin/prompts",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts"
-    },
-    {
-      "data_sources": [
         "iam_gateway_risk_rule"
       ],
       "fields": [
@@ -5208,7 +5117,7 @@
     }
   ],
   "summary": {
-    "interface_count": 217,
-    "source_file_count": 37
+    "interface_count": 214,
+    "source_file_count": 36
   }
 }

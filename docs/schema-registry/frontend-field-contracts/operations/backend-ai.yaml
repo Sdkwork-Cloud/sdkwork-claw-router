@@ -1050,9 +1050,9 @@ frontend_operations:
   api_method: GET
   api_path: /backend/v3/api/ai/resources
   openapi_exposed: false
+  sdk_domain: ai
   read_sources:
-  - ai_resource
-  - ai_resource_group_item
+  - ops_audit_log
   query_parameters: []
   response_schema:
     name: AdminAiResourcesResponse
@@ -1475,9 +1475,9 @@ frontend_operations:
   api_surface: backend
   api_method: GET
   api_path: /backend/v3/api/ai/resource_groups
+  sdk_domain: ai
   read_sources:
-  - ai_resource_group
-  - ai_resource_group_item
+  - ops_audit_log
   query_parameters: []
   response_schema:
     name: AdminAiResourceGroupsResponse
@@ -2951,9 +2951,9 @@ frontend_operations:
   api_method: GET
   api_path: /backend/v3/api/ai/models
   openapi_exposed: false
+  sdk_domain: ai
   read_sources:
-  - ai_model_vendor
-  - ai_model
+  - ops_audit_log
   query_parameters: []
   response_schema:
     name: AdminChannelModelCatalogResponse

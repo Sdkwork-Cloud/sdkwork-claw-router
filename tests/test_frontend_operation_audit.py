@@ -1132,7 +1132,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                 routes:
                   - route: /admin/oauth
                     dependency_owned: true
-                    dependency_sdk_family: sdkwork-appbase-backend-sdk
+                    dependency_sdk_family: sdkwork-iam-backend-sdk
                     required_tables: [iam_oauth_provider_catalog]
                 frontend_operations:
                   - route: /admin/oauth
@@ -1248,7 +1248,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                 routes:
                   - route: /admin/oauth
                     dependency_owned: true
-                    dependency_sdk_family: sdkwork-appbase-backend-sdk
+                    dependency_sdk_family: sdkwork-iam-backend-sdk
                     required_tables: [iam_oauth_resource_account]
                 frontend_operations:
                   - route: /admin/oauth

@@ -7,7 +7,7 @@ const workspaceRoot = path.resolve(scriptDir, "..");
 
 const APPBASE_IAM_MANIFEST_PATH = path.resolve(
   workspaceRoot,
-  "../sdkwork-appbase/crates/sdkwork-router-iam-app-api/src/manifest.rs",
+  "../sdkwork-iam/crates/sdkwork-router-iam-app-api/src/manifest.rs",
 );
 
 const TARGETS = [

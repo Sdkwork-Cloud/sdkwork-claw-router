@@ -13,7 +13,7 @@ This package owns the Claw Router backend-admin OAuth account management page at
 
 ## Required SDK Surface
 
-- `@sdkwork/appbase-backend-sdk`
+- `@sdkwork/iam-backend-sdk`
 - Backend-admin IAM OAuth resource accounts under the generated SDK tree `iamOauth.iam.oauth.resourceAccounts.*`
 - The service boundary also accepts the legacy/direct `iam.oauth.resourceAccounts.*` tree during appbase SDK transition, but new generated SDK verification is anchored on `iamOauth.iam.oauth.resourceAccounts.*`.
 

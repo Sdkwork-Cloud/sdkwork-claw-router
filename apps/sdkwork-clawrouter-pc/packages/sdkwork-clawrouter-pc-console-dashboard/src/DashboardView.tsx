@@ -180,7 +180,7 @@ export function DashboardView() {
   const maxModelRequests = snapshot.topModels[0]?.requests ?? 0;
 
   return (
-    <div className="min-h-[calc(100vh-72px)] w-full space-y-5 bg-slate-50 p-[5px] text-slate-800 dark:bg-[#121212] dark:text-slate-100">
+    <div className="min-h-[calc(100vh-72px)] w-full space-y-5 bg-slate-50 p-[5px] pt-2 text-slate-800 dark:bg-[#121212] dark:text-slate-100 lg:pt-3">
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
         <MetricCard
           icon={<Wallet className="h-4 w-4 text-blue-500" />}

@@ -8,40 +8,158 @@ routes:
   package: "@sdkwork/clawrouter-pc-home"
   owner: public-portal
   route_scope: public
-  delivery_kind: schema_provenanced_content
-  provenance_tables:
-  - ai_model
-  - ai_model_vendor
-  static_delivery:
-    mode: curated_seed_content
-    refresh_policy: manual_content_release
-    max_staleness: release_bound
-    upgrade_triggers:
-    - user_personalization
-    - tenant_specific_data
-    - authoring_workflow
-    source_manifest_ref: static-route:/
+  delivery_kind: composed_local_mount
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-models-app-sdk
+  api_surface: app
+  operation_routes:
+  - /models
   evidence:
-  - generated/schema/manifest/schema-manifest.json
-  - docs/schema-registry/frontend-field-contracts.yaml
+  - apps/sdkwork-clawrouter-pc/src/App.tsx
   - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-home/src/pages/Home.tsx
+  - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-models/src/modelService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
 - route: /admin/prompts
   package: "@sdkwork/clawrouter-pc-admin-prompts"
   owner: admin-control-plane
   route_scope: admin
   delivery_kind: sdk_backed_business_runtime
   api_surface: backend
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-prompts-backend-sdk
   operation_routes:
   - /admin/prompts
   required_tables:
-  - ai_prompt
-  - ai_prompt_version
-  - ai_prompt_binding
-  - c_category
   - ops_audit_log
   evidence:
   - apps/sdkwork-clawrouter-pc/src/App.tsx
   - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts
+  - docs/schema-registry/frontend-field-contracts/operations/backend-prompts-admin.yaml
+- route: /admin/agents
+  package: "@sdkwork/clawrouter-pc-admin-agents"
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-agent-backend-sdk
+  api_surface: backend
+  operation_routes:
+  - /admin/agents
+  required_tables:
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-clawrouter-pc/src/App.tsx
+  - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-agents/src/agentService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/skill
+  package: "@sdkwork/clawrouter-pc-admin-skill"
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-agent-backend-sdk
+  api_surface: backend
+  operation_routes:
+  - /admin/skill
+  required_tables:
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-clawrouter-pc/src/App.tsx
+  - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/drive
+  package: "@sdkwork/clawrouter-pc-admin-file-platform"
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-drive-app-sdk
+  api_surface: app
+  operation_routes:
+  - /admin/drive/spaces
+  evidence:
+  - apps/sdkwork-clawrouter-pc/src/App.tsx
+  - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/driveService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/drive/spaces
+  package: "@sdkwork/clawrouter-pc-admin-file-platform"
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-drive-app-sdk
+  api_surface: app
+  operation_routes:
+  - /admin/drive/spaces
+  required_tables:
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-clawrouter-pc/src/App.tsx
+  - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/driveService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/drive/nodes
+  package: "@sdkwork/clawrouter-pc-admin-file-platform"
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-drive-app-sdk
+  api_surface: app
+  operation_routes:
+  - /admin/drive/nodes
+  required_tables:
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-clawrouter-pc/src/App.tsx
+  - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/driveService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/drive/permissions
+  package: "@sdkwork/clawrouter-pc-admin-file-platform"
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-drive-app-sdk
+  api_surface: app
+  operation_routes:
+  - /admin/drive/permissions
+  required_tables:
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-clawrouter-pc/src/App.tsx
+  - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/driveService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/drive/share-links
+  package: "@sdkwork/clawrouter-pc-admin-file-platform"
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-drive-app-sdk
+  api_surface: app
+  operation_routes:
+  - /admin/drive/share-links
+  required_tables:
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-clawrouter-pc/src/App.tsx
+  - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/driveService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/drive/audit
+  package: "@sdkwork/clawrouter-pc-admin-file-platform"
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-drive-app-sdk
+  api_surface: app
+  operation_routes:
+  - /admin/drive/audit
+  required_tables:
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-clawrouter-pc/src/App.tsx
+  - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/driveService.ts
   - docs/schema-registry/frontend-field-contracts.yaml
 - route: /admin/mcp
   package: "@sdkwork/clawrouter-pc-admin-mcp"
@@ -346,7 +464,7 @@ routes:
   delivery_kind: sdk_backed_business_runtime
   api_surface: backend
   dependency_owned: true
-  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  dependency_sdk_family: sdkwork-iam-backend-sdk
   evidence:
   - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/index.tsx
   - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
@@ -635,6 +753,8 @@ routes:
   owner: public-portal
   route_scope: public
   delivery_kind: sdk_backed_business_runtime
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-models-app-sdk
   api_surface: app
   required_tables:
   - ai_model_vendor
@@ -654,6 +774,8 @@ routes:
   owner: public-portal
   route_scope: public
   delivery_kind: sdk_backed_business_runtime
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-models-app-sdk
   api_surface: app
   operation_routes:
   - /models
@@ -666,6 +788,8 @@ routes:
   owner: public-portal
   route_scope: public
   delivery_kind: sdk_backed_business_runtime
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-models-app-sdk
   api_surface: app
   operation_routes:
   - /models
@@ -715,6 +839,8 @@ routes:
   owner: public-portal
   route_scope: public
   delivery_kind: sdk_backed_business_runtime
+  dependency_owned: true
+  dependency_sdk_family: sdkwork-models-app-sdk
   api_surface: app
   evidence:
   - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-rankings/src/Rankings.tsx
@@ -1690,7 +1816,7 @@ routes:
   route_scope: admin
   delivery_kind: sdk_backed_business_runtime
   dependency_owned: true
-  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  dependency_sdk_family: sdkwork-iam-backend-sdk
   api_surface: backend
   operation_routes:
   - /admin/oauth
@@ -1704,7 +1830,7 @@ routes:
   route_scope: admin
   delivery_kind: sdk_backed_business_runtime
   dependency_owned: true
-  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  dependency_sdk_family: sdkwork-iam-backend-sdk
   api_surface: backend
   operation_routes:
   - /admin/oauth/login-platforms
@@ -1718,7 +1844,7 @@ routes:
   route_scope: admin
   delivery_kind: sdk_backed_business_runtime
   dependency_owned: true
-  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  dependency_sdk_family: sdkwork-iam-backend-sdk
   api_surface: backend
   operation_routes:
   - /admin/oauth/mini-programs
@@ -1732,7 +1858,7 @@ routes:
   route_scope: admin
   delivery_kind: sdk_backed_business_runtime
   dependency_owned: true
-  dependency_sdk_family: sdkwork-appbase-backend-sdk
+  dependency_sdk_family: sdkwork-iam-backend-sdk
   api_surface: backend
   operation_routes:
   - /admin/oauth/official-accounts

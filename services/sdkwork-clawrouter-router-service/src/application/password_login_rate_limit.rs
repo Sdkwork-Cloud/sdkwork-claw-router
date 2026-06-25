@@ -37,12 +37,21 @@ impl std::fmt::Debug for PasswordLoginRateLimiter {
 pub fn shared_password_login_rate_limiter(
     runtime_toml: Option<&sdkwork_claw_config::RuntimeTomlConfig>,
 ) -> Arc<PasswordLoginRateLimiter> {
+    let deployment_mode = sdkwork_claw_config::DeploymentMode::from_env();
     let redis_config = RedisConfig::from_env_or_runtime_toml(runtime_toml)
         .ok()
         .flatten();
-    Arc::new(PasswordLoginRateLimiter::try_with_redis_config(
-        redis_config.as_ref(),
-    ))
+    let limiter = PasswordLoginRateLimiter::try_with_redis_config(redis_config.as_ref());
+    if deployment_mode != sdkwork_claw_config::DeploymentMode::Desktop
+        && sdkwork_claw_config::is_production_like_runtime_environment(runtime_toml)
+        && !limiter.uses_distributed_ha()
+    {
+        panic!(
+            "Redis-backed distributed password login rate limiting is required for production/staging server deployments ({})",
+            deployment_mode.as_str()
+        );
+    }
+    Arc::new(limiter)
 }
 
 impl PasswordLoginRateLimiter {

@@ -20,26 +20,6 @@ const __dirname = path.dirname(__filename);
 const LEGACY_MODES = new Set(['server', 'desktop', 'browser', 'plan', 'service']);
 const DEFAULT_SQLITE_DATABASE_URL = 'sqlite://target/dev/clawrouter.sqlite';
 
-function deploymentProfileToHosting(deploymentProfile) {
-  if (deploymentProfile === 'standalone') {
-    return 'self-hosted';
-  }
-  if (deploymentProfile === 'cloud') {
-    return 'cloud-hosted';
-  }
-  throw new Error('--deployment-profile must be standalone or cloud');
-}
-
-function hostingToDeploymentProfile(hosting) {
-  if (hosting === 'self-hosted') {
-    return 'standalone';
-  }
-  if (hosting === 'cloud-hosted') {
-    return 'cloud';
-  }
-  throw new Error('--hosting must be self-hosted or cloud-hosted');
-}
-
 function mapTargetToProductMode(target, legacyMode) {
   if (target === 'desktop') {
     return 'desktop';
@@ -81,7 +61,6 @@ function applyDatabaseSettings(settings) {
 function parseArgs(argv) {
   const settings = {
     deploymentProfile: 'standalone',
-    hosting: 'self-hosted',
     serviceLayout: 'unified-process',
     target: 'browser',
     database: undefined,
@@ -106,15 +85,13 @@ function parseArgs(argv) {
     }
     if (arg === '--deployment-profile') {
       settings.deploymentProfile = argv[index + 1] ?? settings.deploymentProfile;
-      settings.hosting = deploymentProfileToHosting(settings.deploymentProfile);
       index += 1;
       continue;
     }
     if (arg === '--hosting') {
-      settings.hosting = argv[index + 1] ?? settings.hosting;
-      settings.deploymentProfile = hostingToDeploymentProfile(settings.hosting);
-      index += 1;
-      continue;
+      throw new Error(
+        '--hosting is retired; use --deployment-profile (standalone or cloud)',
+      );
     }
     if (arg === '--service-layout') {
       settings.serviceLayout = argv[index + 1] ?? settings.serviceLayout;
@@ -197,9 +174,9 @@ function main() {
     return;
   }
 
-  const profileId = resolveDevProfileId(settings.hosting, settings.serviceLayout);
+  const profileId = resolveDevProfileId(settings.deploymentProfile, settings.serviceLayout);
   const { env: mergedEnv } = loadTopologyProfileForWorkspace({
-    hosting: settings.hosting,
+    deploymentProfile: settings.deploymentProfile,
     serviceLayout: settings.serviceLayout,
     env: process.env,
     includeIamDatabase: true,
@@ -210,7 +187,6 @@ function main() {
     profileId,
     defaultDevProfileId: DEFAULT_DEV_PROFILE_ID,
     deploymentProfile: settings.deploymentProfile,
-    hosting: settings.hosting,
     serviceLayout: settings.serviceLayout,
     target: settings.target,
     database: settings.database,
@@ -223,7 +199,7 @@ function main() {
       'application.backend-http',
     ),
     applicationOpenHttpUrl: resolveSurfaceHttpUrl(mergedEnv, 'application.open-http'),
-    platformApiGatewayHttpUrl: resolveGatewayBaseUrl(mergedEnv, settings.hosting),
+    platformApiGatewayHttpUrl: resolveGatewayBaseUrl(mergedEnv, settings.deploymentProfile),
     healthSurfaces: listHealthSurfaces(profileId),
     mode: settings.mode,
   };
@@ -243,8 +219,8 @@ function main() {
   Object.assign(mergedEnv, browserApplicationEnv.mergedEnv);
 
   const workspaceArgs = [
-    '--hosting',
-    settings.hosting,
+    '--deployment-profile',
+    settings.deploymentProfile,
     '--service-layout',
     settings.serviceLayout,
     ...settings.passthrough,

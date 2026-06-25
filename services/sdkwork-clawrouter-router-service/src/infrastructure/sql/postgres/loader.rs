@@ -7,6 +7,7 @@ use crate::domain::{
     DomainError, DomainResult, DEFAULT_PROVIDER_CIRCUIT_BREAKER_RECOVERY_WINDOW_SECONDS,
 };
 use crate::infrastructure::sql::catalog::{PricingCatalogRows, SqlPricingCatalogSnapshot};
+use crate::infrastructure::sql::model_catalog_import::runtime_pricing_dictionary_rows;
 use crate::infrastructure::sql::postgres::error::PostgresCatalogLoadError;
 use crate::infrastructure::sql::postgres::row_mapping;
 use crate::infrastructure::sql::routing_config_change::AI_ROUTING_CONFIG_SCOPE;
@@ -52,10 +53,10 @@ impl PostgresPricingCatalogLoader {
     pub async fn load_snapshot(
         &self,
     ) -> Result<SqlPricingCatalogSnapshot, PostgresCatalogLoadError> {
+        let dictionary = runtime_pricing_dictionary_rows()?;
         let rows = PricingCatalogRows {
-            vendors: row_mapping::load_vendors(&self.pool, PricingCatalogSql::load_vendors())
-                .await?,
-            models: row_mapping::load_models(&self.pool, PricingCatalogSql::load_models()).await?,
+            vendors: dictionary.vendors,
+            models: dictionary.models,
             provider_routes: row_mapping::load_provider_routes(
                 &self.pool,
                 PricingCatalogSql::load_provider_routes(),
@@ -114,7 +115,7 @@ impl PostgresPricingCatalogLoader {
                 PricingCatalogSql::load_channel_group_metric_snapshots(),
             )
             .await?,
-            prices: row_mapping::load_prices(&self.pool, PricingCatalogSql::load_prices()).await?,
+            prices: dictionary.prices,
         };
         let managed_provider_secrets = managed_provider_secrets_from_rows(
             &rows.provider_routes,

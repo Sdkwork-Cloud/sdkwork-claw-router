@@ -13,7 +13,7 @@ OUTPUT_PATH = ROOT / "docs" / "schema-registry" / "table-catalog.md"
 
 
 DOMAIN_LABELS = {
-    "ai": "AI 中转与模型服�?,
+    "ai": "AI 中转与模型服务",
     "commerce": "交易、计费与结算",
     "content": "内容、文档与对象存储",
     "iam": "身份、访问与安全",

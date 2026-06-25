@@ -1,4 +1,5 @@
 export { AdminLayout } from './AdminLayout.tsx';
+export { AdminRoutePermissionGuard } from './AdminRoutePermissionGuard.tsx';
 export {
   ADMIN_MODULES,
   getActiveModuleFromPath,
@@ -19,3 +20,11 @@ export {
   hasActiveSidebarGroupItem,
   isSidebarItemActive,
 } from './adminSidebarActive.ts';
+export {
+  getFilteredAdminModuleMenu,
+  filterAdminModuleMenu,
+  isAdminModuleVisible,
+  isAdminRouteAllowed,
+  listVisibleAdminModuleIds,
+} from './admin-menu-permissions.ts';
+export { ADMIN_ROUTE_PERMISSION_HINTS, resolveAdminRoutePermissionHint } from './admin-route-permission-hints.ts';

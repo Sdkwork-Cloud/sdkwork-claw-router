@@ -932,6 +932,11 @@ pub async fn router_from_env() -> Result<Router, GatewayRouterError> {
         resolve_usage_settlement_worker_config(runtime_toml.as_ref());
     let startup_install_mode = StartupInstallMode::from_env_or_runtime_toml(runtime_toml.as_ref())
         .map_err(GatewayRouterError::Config)?;
+    sdkwork_claw_config::ensure_production_startup_install_policy(
+        runtime_toml.as_ref(),
+        startup_install_mode,
+    )
+    .map_err(GatewayRouterError::Config)?;
     sdkwork_claw_config::ensure_server_production_redis_config(
         DeploymentMode::from_env(),
         runtime_toml.as_ref(),
@@ -1067,7 +1072,7 @@ async fn build_embedded_sdkwork_api_cloud_gateway_router(
             ),
             (
                 APPBASE_BACKEND_API_SERVICE_ID.to_owned(),
-                sdkwork_api_cloud_gateway::build_embedded_sdkwork_appbase_backend_api_router()
+                sdkwork_api_cloud_gateway::build_embedded_sdkwork_iam_backend_api_router()
                     .await
                     .map_err(|error| {
                         GatewayRouterError::Config(format!(
@@ -1097,7 +1102,7 @@ async fn build_claw_embedded_appbase_app_api_router() -> Result<Router, GatewayR
                 "failed to build claw router IAM web resolver for embedded appbase app-api: {error}"
             ))
         })?;
-    sdkwork_router_iam_app_api::build_sdkwork_appbase_app_api_router_with_web_resolver(resolver)
+    sdkwork_router_iam_app_api::build_sdkwork_iam_app_api_router_with_web_resolver(resolver)
         .await
         .map_err(|error| {
             GatewayRouterError::Config(format!(
@@ -1151,14 +1156,14 @@ fn claw_router_appbase_backend_dependency_surface() -> DependencyApiSurfaceConfi
     DependencyApiSurfaceConfig {
         service_id: APPBASE_BACKEND_API_SERVICE_ID.to_owned(),
         workspace: "sdkwork-appbase".to_owned(),
-        sdk_family: "sdkwork-appbase-backend-sdk".to_owned(),
-        api_authority: "sdkwork-appbase-backend-api".to_owned(),
+        sdk_family: "sdkwork-iam-backend-sdk".to_owned(),
+        api_authority: "sdkwork-iam-backend-api".to_owned(),
         surface: "backend".to_owned(),
         api_prefix: APPBASE_BACKEND_API_PREFIX.to_owned(),
         runtime_mode: DependencyRuntimeMode::Embedded,
         same_origin_allowed: true,
         executable_export: Some(
-            "sdkwork_router_iam_backend_api::build_sdkwork_appbase_backend_api_router".to_owned(),
+            "sdkwork_router_iam_backend_api::build_sdkwork_iam_backend_api_router".to_owned(),
         ),
         cargo_feature: Some("foundation-appbase".to_owned()),
         cargo_dependency: Some("sdkwork-router-iam-backend-api".to_owned()),
@@ -1216,6 +1221,11 @@ async fn all_in_one_runtime_context_from_env() -> anyhow::Result<AllInOneRuntime
             .map_err(anyhow::Error::msg)?;
     let startup_install_mode = StartupInstallMode::from_env_or_runtime_toml(runtime_toml_ref)
         .map_err(anyhow::Error::msg)?;
+    sdkwork_claw_config::ensure_production_startup_install_policy(
+        runtime_toml_ref,
+        startup_install_mode,
+    )
+    .map_err(anyhow::Error::msg)?;
     let usage_settlement_worker_config = resolve_usage_settlement_worker_config(runtime_toml_ref);
     let provider_runtime = provider_relay_runtime_config_from_env_or_toml(runtime_toml_ref)
         .map_err(anyhow::Error::msg)?;
@@ -1592,20 +1602,29 @@ fn spawn_usage_settlement_worker(
 ) -> tokio::task::JoinHandle<()> {
     let worker = UsageSettlementWorker::new(store, config);
     let interval = Duration::from_millis(worker.config().interval_millis);
+    let mut shutdown_rx = sdkwork_claw_http::subscribe_shutdown_signal();
     tokio::spawn(async move {
         loop {
             if let Err(error) = worker.run_once().await {
                 tracing::warn!(error = %error, "usage settlement worker run failed");
             }
+            if shutdown_rx.try_recv().is_ok() {
+                break;
+            }
             if let Some(usage_settlement_wakeup) = usage_settlement_wakeup.as_ref() {
                 tokio::select! {
+                    _ = shutdown_rx.recv() => break,
                     _ = usage_settlement_wakeup.notified() => {}
                     _ = sleep(interval) => {}
                 }
             } else {
-                sleep(interval).await;
+                tokio::select! {
+                    _ = shutdown_rx.recv() => break,
+                    _ = sleep(interval) => {}
+                }
             }
         }
+        tracing::info!("usage settlement worker stopped");
     })
 }
 
@@ -1618,10 +1637,14 @@ fn spawn_sqlite_catalog_refresh_worker(
     circuit_breaker_recovery_window_seconds: u64,
 ) -> tokio::task::JoinHandle<()> {
     let pool = pool.clone();
+    let mut shutdown_rx = sdkwork_claw_http::subscribe_shutdown_signal();
     tokio::spawn(async move {
         let mut refresh_state = CatalogRefreshDecisionState::default();
         loop {
-            sleep(interval).await;
+            tokio::select! {
+                _ = shutdown_rx.recv() => break,
+                _ = sleep(interval) => {}
+            }
             let loader = SqlitePricingCatalogLoader::with_api_key_secret_codec(
                 pool.clone(),
                 api_key_secret_codec.clone(),
@@ -1659,6 +1682,7 @@ fn spawn_sqlite_catalog_refresh_worker(
                 }
             }
         }
+        tracing::info!("sqlite catalog refresh worker stopped");
     })
 }
 
@@ -1671,10 +1695,14 @@ fn spawn_postgres_catalog_refresh_worker(
     circuit_breaker_recovery_window_seconds: u64,
 ) -> tokio::task::JoinHandle<()> {
     let pool = pool.clone();
+    let mut shutdown_rx = sdkwork_claw_http::subscribe_shutdown_signal();
     tokio::spawn(async move {
         let mut refresh_state = CatalogRefreshDecisionState::default();
         loop {
-            sleep(interval).await;
+            tokio::select! {
+                _ = shutdown_rx.recv() => break,
+                _ = sleep(interval) => {}
+            }
             let loader = PostgresPricingCatalogLoader::with_api_key_secret_codec(
                 pool.clone(),
                 api_key_secret_codec.clone(),
@@ -1712,6 +1740,7 @@ fn spawn_postgres_catalog_refresh_worker(
                 }
             }
         }
+        tracing::info!("postgres catalog refresh worker stopped");
     })
 }
 

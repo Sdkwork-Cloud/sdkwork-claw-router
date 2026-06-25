@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { Outlet, Link, useNavigate, useLocation } from 'react-router-dom';
 import {
   ChevronDown,
@@ -7,9 +7,15 @@ import {
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { AdminHeader, getActiveModuleFromPath, type AdminModuleId } from './AdminHeader.tsx';
-import { getAdminModuleMenu, type AdminMenuGroup, type AdminMenuItem } from './adminModuleRegistry.ts';
+import { getFilteredAdminModuleMenu } from './admin-menu-permissions.ts';
+import { AdminRoutePermissionGuard } from './AdminRoutePermissionGuard.tsx';
 import { hasActiveSidebarGroupItem, isSidebarItemActive } from './adminSidebarActive';
-import { revokeAppSession } from '@sdkwork/clawrouter-pc-commons/runtime';
+import type { AdminMenuGroup, AdminMenuItem } from './adminModuleRegistry.ts';
+import {
+  readPortalPermissionScope,
+  revokeAppSession,
+  subscribePortalSessionChange,
+} from '@sdkwork/clawrouter-pc-commons/runtime';
 
 const ADMIN_SIDEBAR_GROUPS_DEFAULT_OPEN = true;
 const ADMIN_BUSINESS_ROUTE_PREFIXES = [
@@ -117,14 +123,22 @@ export function AdminLayout({ isDark, toggleTheme }: { isDark: boolean; toggleTh
   const navigate = useNavigate();
   const location = useLocation();
 
+  const [permissionScope, setPermissionScope] = useState(() => readPortalPermissionScope());
+
+  useEffect(() => {
+    const syncPermissionScope = () => setPermissionScope(readPortalPermissionScope());
+    syncPermissionScope();
+    return subscribePortalSessionChange(syncPermissionScope);
+  }, []);
+
   const activeModule = useMemo<AdminModuleId>(
     () => getActiveModuleFromPath(location.pathname),
     [location.pathname],
   );
 
   const currentModuleMenu = useMemo(
-    () => getAdminModuleMenu(activeModule),
-    [activeModule],
+    () => getFilteredAdminModuleMenu(activeModule, permissionScope),
+    [activeModule, permissionScope],
   );
   const businessRouteActive = isAdminBusinessRoute(location.pathname);
 
@@ -171,7 +185,9 @@ export function AdminLayout({ isDark, toggleTheme }: { isDark: boolean; toggleTh
 
         <div className="flex-1 flex min-h-0 flex-col overflow-hidden bg-slate-50 dark:bg-[#0a0a0a] min-w-0 relative">
           <div className="flex min-h-0 flex-1 flex-col overflow-hidden p-[5px]">
-            <Outlet />
+            <AdminRoutePermissionGuard>
+              <Outlet />
+            </AdminRoutePermissionGuard>
           </div>
         </div>
       </div>

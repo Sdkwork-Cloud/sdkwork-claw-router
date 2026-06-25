@@ -220,6 +220,8 @@ export function buildClawRouterBrowserDevelopmentGeneratedEnv({
   portalRuntimeEnv = {},
   deploymentProfile = 'standalone',
 } = {}) {
+  const manifest = readApplicationManifest(workspaceRoot);
+  const manifestAppId = normalizeText(manifest?.app?.key) ?? 'sdkwork-clawrouter';
   const pickedPortalRuntimeEnv = pickBrowserDevelopmentPortalRuntimeEnv(portalRuntimeEnv);
   const generated = {
     SDKWORK_CLAW_CONFIG_PROFILE: 'dev',
@@ -248,6 +250,7 @@ export function buildClawRouterBrowserDevelopmentGeneratedEnv({
       DEFAULT_DEV_PROXY_GATEWAY_TARGET,
     ),
     ...CLAW_ROUTER_BROWSER_DEVELOPMENT_DEFAULT_VITE_ENV,
+    VITE_SDKWORK_APP_ID: manifestAppId,
   };
 
   for (const key of Object.keys(CLAW_ROUTER_BROWSER_DEVELOPMENT_DEFAULT_VITE_ENV)) {

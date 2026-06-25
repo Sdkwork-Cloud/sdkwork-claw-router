@@ -106,6 +106,14 @@ const CONFIGURATION_DOMAIN_KEYS = [
   'domains',
 ] as const;
 
+/** Stable i18n keys referenced by dashboard runtime standard tests and empty-state copy. */
+export const DASHBOARD_RUNTIME_I18N_KEYS = {
+  initialAnnouncement: 'console.dashboard.dashboardview.text.initialAnnouncement',
+  measurementUnavailable: 'console.dashboard.dashboardview.text.measurementUnavailable',
+  speedTimeout: 'console.dashboard.dashboardview.text.speedTimeout',
+  domainProtocolError: 'console.dashboard.dashboardview.text.domainProtocolError',
+} as const;
+
 const DEFAULT_GATEWAY_DOMAIN = 'https://api.sdkwork.com/v1';
 
 const EMPTY_SUMMARY: DashboardSummary = {
@@ -122,14 +130,6 @@ const EMPTY_SUMMARY: DashboardSummary = {
   rpm: 0,
   tpm: 0,
 };
-
-const INITIAL_TOP_MODELS: ModelUsage[] = [
-  { rank: 1, name: 'gpt-4o-mini', supplier: 'OpenAI', modality: 'text', requests: 0, cost: 0, trend: '0%', isUp: true },
-  { rank: 2, name: 'claude-3-5-sonnet', supplier: 'Anthropic', modality: 'text', requests: 0, cost: 0, trend: '0%', isUp: true },
-  { rank: 3, name: 'gemini-1.5-pro', supplier: 'Google', modality: 'text', requests: 0, cost: 0, trend: '0%', isUp: true },
-  { rank: 4, name: 'dall-e-3', supplier: 'OpenAI', modality: 'image', requests: 0, cost: 0, trend: '0%', isUp: true },
-  { rank: 5, name: 'whisper-large-v3', supplier: 'OpenAI', modality: 'audio', requests: 0, cost: 0, trend: '0%', isUp: true },
-];
 
 export class DashboardService {
   static emptyDashboardSnapshot(timeRange: DashboardTimeRange = 'daily'): DashboardSnapshot {
@@ -175,7 +175,7 @@ function createInitialDashboardSnapshot(timeRange: DashboardTimeRange): Dashboar
     multimodalSparkline: sparkline,
     performanceSparkline: sparkline,
     chartData,
-    topModels: createInitialTopModels(),
+    topModels: [],
     announcements: [],
     configurationDomains: createInitialConfigurationDomains(),
     warnings: [],
@@ -201,7 +201,7 @@ function normalizeDashboardSnapshot(record: ApiRecord, timeRange: DashboardTimeR
     multimodalSparkline: multimodalSparkline.length > 0 ? multimodalSparkline : initialSnapshot.multimodalSparkline,
     performanceSparkline: performanceSparkline.length > 0 ? performanceSparkline : initialSnapshot.performanceSparkline,
     chartData,
-    topModels: normalizedTopModels.length > 0 ? normalizedTopModels : initialSnapshot.topModels,
+    topModels: normalizedTopModels,
     announcements: normalizedAnnouncements,
     configurationDomains: normalizedConfigurationDomains.length > 0
       ? normalizedConfigurationDomains
@@ -252,10 +252,6 @@ function createInitialChartLabels(timeRange: DashboardTimeRange): string[] {
 
 function createZeroSparkline(length: number): Array<{ value: number }> {
   return Array.from({ length: Math.max(1, length) }, () => ({ value: 0 }));
-}
-
-function createInitialTopModels(): ModelUsage[] {
-  return INITIAL_TOP_MODELS.map((item) => ({ ...item }));
 }
 
 function createInitialConfigurationDomains(): ConfigurationDomain[] {

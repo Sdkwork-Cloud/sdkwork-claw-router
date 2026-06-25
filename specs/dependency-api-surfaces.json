@@ -14,7 +14,7 @@
   },
   "dependencies": [
     {
-      "workspace": "sdkwork-appbase-app-sdk",
+      "workspace": "sdkwork-iam-app-sdk",
       "consumerSdkFamily": "clawrouter-app-sdk",
       "role": "appbase-app-capability",
       "dependencyMode": "consumer-sdk",
@@ -72,7 +72,7 @@
       }
     },
     {
-      "workspace": "sdkwork-appbase-backend-sdk",
+      "workspace": "sdkwork-iam-backend-sdk",
       "consumerSdkFamily": "clawrouter-backend-sdk",
       "role": "appbase-backend-management-capability",
       "dependencyMode": "consumer-sdk",
@@ -252,8 +252,8 @@
       "surface": "app-api",
       "apiPrefix": "/app/v3/api",
       "runtimeIntegration": {
-        "mode": "external-service",
-        "sameOriginAllowed": false,
+        "mode": "same-origin-mounted",
+        "sameOriginAllowed": true,
         "targetRuntimeIntegration": {
           "mode": "shared-gateway",
           "gatewayApplication": "sdkwork-api-cloud-gateway",
@@ -262,13 +262,17 @@
         },
         "requiredBaseUrlEnv": "VITE_SDKWORK_MODELS_APP_API_BASE_URL",
         "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
+        "rustRouteContractCrate": {
+          "crate": "sdkwork-router-models-catalog-app-api",
+          "executableRouterExport": "admin_model_catalog_router"
+        },
+        "handlerAdapterExports": [],
         "mountCoverage": {
           "status": "verified",
           "evidence": [
-            "Model catalog and rankings app routes are owned by sdkwork-models route crates and mounted in sdkwork-router-app-api through sdkwork_router_catalog_app_api.",
+            "Model catalog and rankings app routes are owned by sdkwork-models route crates and mounted in sdkwork-router-app-api through sdkwork_router_models_catalog_app_api.",
             "Catalog handlers and domain types live in sdkwork-models-catalog-service; Claw Router supplies RefreshableSqlPricingCatalog as the host pricing snapshot port.",
-            "Portal bootstrap derives VITE_SDKWORK_MODELS_APP_API_BASE_URL from PORTAL_PUBLIC_SDK_BASE_URL + /app/v3/api when no Models-specific override is configured.",
-            "cargo test -p sdkwork-router-catalog-app-api --test route_manifest verifies app route manifest alignment."
+            "cargo test -p sdkwork-router-models-catalog-app-api --test route_manifest verifies app route manifest alignment."
           ]
         }
       },
@@ -307,8 +311,8 @@
       "surface": "backend-api",
       "apiPrefix": "/backend/v3/api",
       "runtimeIntegration": {
-        "mode": "external-service",
-        "sameOriginAllowed": false,
+        "mode": "same-origin-mounted",
+        "sameOriginAllowed": true,
         "targetRuntimeIntegration": {
           "mode": "shared-gateway",
           "gatewayApplication": "sdkwork-api-cloud-gateway",
@@ -317,14 +321,23 @@
         },
         "requiredBaseUrlEnv": "VITE_SDKWORK_MODELS_BACKEND_API_BASE_URL",
         "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
+        "rustRouteContractCrate": {
+          "crate": "sdkwork-router-models-catalog-backend-api",
+          "executableRouterExport": "admin_model_catalog_router"
+        },
+        "handlerAdapterExports": [
+          {
+            "export": "AiRoutingCacheInvalidatingModelCatalogAdminStore",
+            "hostCrate": "sdkwork-clawrouter-router-service",
+            "evidence": "services/sdkwork-clawrouter-router-service/src/application/ai_routing_cache_invalidation.rs wraps catalog admin mutations with routing cache invalidation."
+          }
+        ],
         "mountCoverage": {
           "status": "verified",
           "evidence": [
-            "Model catalog admin CRUD, mappings, sync, and rankings routes are owned by sdkwork-models route crates and mounted in sdkwork-router-backend-api through sdkwork_router_catalog_backend_api.",
+            "Model catalog admin CRUD, mappings, sync, and rankings routes are owned by sdkwork-models route crates and mounted in sdkwork-router-backend-api through sdkwork_router_models_catalog_backend_api.",
             "Catalog admin stores live in sdkwork-models-catalog-repository-sqlx; Claw Router wires Sqlite/Postgres stores and cache invalidation adapters at compose time.",
-            "services/sdkwork-clawrouter-router-service/src/application/ai_routing_cache_invalidation.rs wraps catalog admin mutations with routing cache invalidation.",
-            "Portal bootstrap derives VITE_SDKWORK_MODELS_BACKEND_API_BASE_URL from PORTAL_PUBLIC_SDK_BASE_URL + /backend/v3/api when no Models-specific override is configured.",
-            "cargo test -p sdkwork-router-catalog-backend-api --test route_manifest verifies backend route manifest alignment."
+            "cargo test -p sdkwork-router-models-catalog-backend-api --test route_manifest verifies backend route manifest alignment."
           ]
         }
       },

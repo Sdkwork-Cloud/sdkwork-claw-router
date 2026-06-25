@@ -300,7 +300,7 @@ table_fragments:
     appbase_dir.mkdir(parents=True, exist_ok=True)
     for table in iam_extracted:
         table["generated_by_this_project"] = True
-        table["write_owner"] = "sdkwork-appbase-iam"
+        table["write_owner"] = "sdkwork-iam"
         source_tables = table.get("source_tables")
         if isinstance(source_tables, list):
             table["source_tables"] = [
@@ -316,7 +316,7 @@ table_fragments:
   - ../database/README.md
 domains:
   iam:
-    owner: sdkwork-appbase-iam
+    owner: sdkwork-iam
     bounded_context: identity-access
 table_fragments:
 - tables/001-verification.yaml

@@ -4,7 +4,7 @@ const APP_SESSION_CLAIM_TOKEN_VERSION = 'v2';
 const SDKWORK_TOKEN_VERSION_CURRENT = 1;
 const DEFAULT_SESSION_TTL_SECONDS = 86_400;
 
-const LOCAL_DEV_CONSOLE_PERMISSION = `clawrouter${':console'}`;
+const LOCAL_DEV_CONSOLE_PERMISSION = 'clawrouter.console.access';
 
 export const DEFAULT_LOCAL_DEV_APP_SESSION_SUBJECT = Object.freeze({
   tenantId: 100_001,

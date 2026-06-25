@@ -109,7 +109,7 @@ async fn app_auth_sessions_create_issues_dual_token_context_for_active_iam_user_
         .contains("tenant:100001"));
     assert!(session
         .get::<String, _>("permission_scope_json")
-        .contains("clawrouter:console"));
+        .contains("clawrouter.console.access"));
     assert!(!session
         .get::<String, _>("auth_token_hash")
         .contains(auth_token));

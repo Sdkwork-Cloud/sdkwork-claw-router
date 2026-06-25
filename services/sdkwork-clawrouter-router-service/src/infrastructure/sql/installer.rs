@@ -7,13 +7,7 @@ use std::sync::atomic::{AtomicU64, Ordering};
 use std::sync::OnceLock;
 use std::time::{SystemTime, UNIX_EPOCH};
 
-use sdkwork_appbase_iam_bootstrap::{
-    iam_baseline_postgres_sql, iam_rbac_federation_postgres_sql, import_postgres_default_iam_seed,
-    import_sqlite_default_iam_seed, postgres_default_iam_seed_complete,
-    sqlite_default_iam_seed_complete, DEFAULT_BOOTSTRAP_ADMIN_DISPLAY_NAME,
-    DEFAULT_BOOTSTRAP_ADMIN_EMAIL, DEFAULT_BOOTSTRAP_ADMIN_USERNAME,
-    DEFAULT_BOOTSTRAP_ADMIN_USER_ID, DEFAULT_IAM_ORGANIZATION_ID, DEFAULT_IAM_TENANT_ID,
-};
+use sdkwork_claw_config::deployment::{resolve_deployment_runtime, DeploymentProfile};
 use sdkwork_commerce_bootstrap::{
     commerce_experience_seed_manifest, commerce_recharge_package_seeds,
     commerce_recharge_settings_seeds,
@@ -21,6 +15,13 @@ use sdkwork_commerce_bootstrap::{
 use sdkwork_commerce_core::CommerceServiceError;
 use sdkwork_commerce_storage_sqlx::{
     commerce_database_indexes, commerce_database_tables, commerce_initial_migration_sql,
+};
+use sdkwork_iam_bootstrap::{
+    iam_baseline_postgres_sql, iam_rbac_federation_postgres_sql, import_postgres_default_iam_seed,
+    import_sqlite_default_iam_seed, postgres_default_iam_seed_complete,
+    sqlite_default_iam_seed_complete, DEFAULT_BOOTSTRAP_ADMIN_DISPLAY_NAME,
+    DEFAULT_BOOTSTRAP_ADMIN_EMAIL, DEFAULT_BOOTSTRAP_ADMIN_USERNAME,
+    DEFAULT_BOOTSTRAP_ADMIN_USER_ID, DEFAULT_IAM_ORGANIZATION_ID, DEFAULT_IAM_TENANT_ID,
 };
 use sdkwork_iam_directory_repository_sqlx::iam_database_tables;
 use sdkwork_models::ModelCatalog;
@@ -43,7 +44,7 @@ use crate::infrastructure::sql::model_catalog_import::{
     catalog_model_api_endpoint_projections, catalog_model_modality_projections,
     catalog_scope_counts, catalog_scope_vendor_codes, catalog_vendor_api_endpoint_projections,
     catalog_vendor_modality_projections, catalog_vendor_records, catalog_with_selected_vendors,
-    load_catalog_root_with_pin, model_catalog_key, pricing_catalog_key,
+    load_catalog_root_with_pin, model_catalog_key, pricing_catalog_key, CatalogScopeCounts,
     DEFAULT_CATALOG_REFRESH_SOURCE,
 };
 use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
@@ -57,14 +58,17 @@ const GENERATED_POSTGRES_SCHEMA: &str =
 const CLAWROUTER_LEGACY_PROJECTION_SQL: &str = include_str!(
     "../../../../../database/ddl/baseline/postgres/0002_clawrouter_legacy_projection.sql"
 );
-const MESSAGING_RUNTIME_PROJECTION_SQL: &str = include_str!(
-    "../../../../../database/ddl/baseline/postgres/0004_messaging_runtime_projection.sql"
+const GATEWAY_ROUTING_DICTIONARY_SQL: &str = include_str!(
+    "../../../../../database/ddl/baseline/postgres/0003_gateway_routing_dictionary.sql"
 );
 const BUNDLED_MODELS_CATALOG_MANIFEST: &str =
     include_str!("../../../../../data/sdkwork-models/sdkwork-models.json");
 pub const CURRENT_SCHEMA_VERSION: &str = "2026.06.22.1";
-/// Claw-router owns only generated gateway schema; sibling SoR DDL is external.
-const COMPOSE_SIBLING_DATABASE_MODULES: bool = false;
+/// Claw-router owns gateway schema; sibling SoR modules compose at install time in standalone mode.
+fn compose_sibling_commerce_module() -> bool {
+    standalone_iam_bootstrap_enabled()
+}
+const COMPOSE_SDKWORK_MODELS_CATALOG_MODULE: bool = true;
 pub const DEFAULT_SEED_PROFILE: &str = "commercial";
 pub const DEFAULT_INSTALL_ENVIRONMENT: &str = "production";
 pub const ENV_INSTALL_ENVIRONMENT: &str = "SDKWORK_CLAW_INSTALL_ENVIRONMENT";
@@ -100,6 +104,12 @@ static APPBASE_COMMERCE_SCHEMA_POSTGRES_TABLE_COLUMNS: OnceLock<
     Vec<(String, Vec<SchemaColumnDefinition>)>,
 > = OnceLock::new();
 static APPBASE_IAM_OAUTH_SCHEMA_INDEX_NAMES: OnceLock<BTreeSet<String>> = OnceLock::new();
+
+fn standalone_iam_bootstrap_enabled() -> bool {
+    resolve_deployment_runtime(None)
+        .map(|runtime| runtime.profile == DeploymentProfile::Standalone)
+        .unwrap_or(true)
+}
 
 const APPBASE_COMMERCE_LEGACY_NOT_NULL_COLUMN_REPAIRS: &[(&str, &str, &str)] = &[
     (
@@ -889,18 +899,19 @@ impl DatabaseInstaller {
             InstallerBackend::Sqlite(pool) => {
                 import_sqlite_bundled_ai_routing_seed(pool).await?;
                 import_sqlite_default_iam_subject_seed(pool).await?;
-                if COMPOSE_SIBLING_DATABASE_MODULES {
+                if compose_sibling_commerce_module() {
                     import_sqlite_commerce_experience_seed(pool).await?;
                 }
             }
             InstallerBackend::Postgres(pool) => {
                 import_postgres_bundled_ai_routing_seed(pool).await?;
                 import_postgres_default_iam_subject_seed(pool).await?;
-                if COMPOSE_SIBLING_DATABASE_MODULES {
+                if compose_sibling_commerce_module() {
                     import_postgres_commerce_experience_seed(pool).await?;
                 }
             }
         }
+        self.ensure_iam_tenant_application_bootstrap().await?;
         Ok(())
     }
 
@@ -1060,7 +1071,7 @@ impl DatabaseInstaller {
             InstallerBackend::Sqlite(pool) => {
                 let mut sqlite_changed =
                     repair_sqlite_generated_schema_index_definitions(pool).await?;
-                if COMPOSE_SIBLING_DATABASE_MODULES {
+                if COMPOSE_SDKWORK_MODELS_CATALOG_MODULE {
                     sqlite_changed |=
                         repair_sqlite_sdkwork_models_catalog_module_index_definitions(pool).await?;
                 }
@@ -1073,25 +1084,23 @@ impl DatabaseInstaller {
         changed |= match &self.backend {
             InstallerBackend::Sqlite(pool) => {
                 let mut sqlite_changed = false;
-                if !sqlite_appbase_iam_foundation_schema_tables_exist(pool).await? {
-                    apply_sqlite_appbase_iam_foundation_schema(pool).await?;
-                    sqlite_changed = true;
+                if standalone_iam_bootstrap_enabled() {
+                    if !sqlite_appbase_iam_foundation_schema_tables_exist(pool).await? {
+                        apply_sqlite_appbase_iam_foundation_schema(pool).await?;
+                        sqlite_changed = true;
+                    }
+                    if !sqlite_appbase_iam_oauth_schema_tables_exist(pool).await?
+                        || !sqlite_appbase_iam_oauth_schema_indexes_exist(pool).await?
+                    {
+                        apply_sqlite_appbase_iam_oauth_schema(pool).await?;
+                        sqlite_changed = true;
+                    }
                 }
-                if !sqlite_appbase_iam_oauth_schema_tables_exist(pool).await?
-                    || !sqlite_appbase_iam_oauth_schema_indexes_exist(pool).await?
-                {
-                    apply_sqlite_appbase_iam_oauth_schema(pool).await?;
-                    sqlite_changed = true;
-                }
-                if COMPOSE_SIBLING_DATABASE_MODULES {
+                if COMPOSE_SDKWORK_MODELS_CATALOG_MODULE {
                     if !sqlite_sdkwork_models_catalog_module_schema_tables_exist(pool).await?
                         || !sqlite_sdkwork_models_catalog_module_schema_indexes_exist(pool).await?
                     {
                         apply_sqlite_sdkwork_models_catalog_module_schema(pool).await?;
-                        sqlite_changed = true;
-                    }
-                    if !sqlite_messaging_runtime_projection_schema_tables_exist(pool).await? {
-                        apply_sqlite_messaging_runtime_projection_schema(pool).await?;
                         sqlite_changed = true;
                     }
                 }
@@ -1099,11 +1108,17 @@ impl DatabaseInstaller {
                     apply_sqlite_clawrouter_legacy_projection_schema(pool).await?;
                     sqlite_changed = true;
                 }
+                if !COMPOSE_SDKWORK_MODELS_CATALOG_MODULE
+                    && !sqlite_gateway_routing_dictionary_schema_tables_exist(pool).await?
+                {
+                    apply_sqlite_gateway_routing_dictionary_schema(pool).await?;
+                    sqlite_changed = true;
+                }
                 sqlite_changed
             }
             InstallerBackend::Postgres(pool) => {
                 let mut changed = false;
-                if COMPOSE_SIBLING_DATABASE_MODULES {
+                if compose_sibling_commerce_module() {
                     if !postgres_appbase_commerce_schema_tables_exist(pool).await?
                         || !postgres_appbase_commerce_schema_columns_exist(pool).await?
                         || !postgres_appbase_commerce_schema_indexes_exist(pool).await?
@@ -1113,25 +1128,24 @@ impl DatabaseInstaller {
                     }
                     changed |= repair_postgres_appbase_commerce_legacy_constraints(pool).await?;
                 }
-                if !postgres_appbase_iam_foundation_schema_tables_exist(pool).await? {
-                    apply_postgres_appbase_iam_foundation_schema(pool).await?;
-                    changed = true;
-                }
-                if !postgres_appbase_iam_oauth_schema_tables_exist(pool).await?
-                    || !postgres_appbase_iam_oauth_schema_indexes_exist(pool).await?
-                {
-                    apply_postgres_appbase_iam_oauth_schema(pool).await?;
-                    changed = true;
-                }
-                if COMPOSE_SIBLING_DATABASE_MODULES {
-                    if !postgres_sdkwork_models_catalog_module_schema_tables_exist(pool).await?
-                        || !postgres_sdkwork_models_catalog_module_schema_indexes_exist(pool).await?
-                    {
-                        apply_postgres_sdkwork_models_catalog_module_schema(pool).await?;
+                if standalone_iam_bootstrap_enabled() {
+                    if !postgres_appbase_iam_foundation_schema_tables_exist(pool).await? {
+                        apply_postgres_appbase_iam_foundation_schema(pool).await?;
                         changed = true;
                     }
-                    if !postgres_messaging_runtime_projection_schema_tables_exist(pool).await? {
-                        apply_postgres_messaging_runtime_projection_schema(pool).await?;
+                    if !postgres_appbase_iam_oauth_schema_tables_exist(pool).await?
+                        || !postgres_appbase_iam_oauth_schema_indexes_exist(pool).await?
+                    {
+                        apply_postgres_appbase_iam_oauth_schema(pool).await?;
+                        changed = true;
+                    }
+                }
+                if COMPOSE_SDKWORK_MODELS_CATALOG_MODULE {
+                    if !postgres_sdkwork_models_catalog_module_schema_tables_exist(pool).await?
+                        || !postgres_sdkwork_models_catalog_module_schema_indexes_exist(pool)
+                            .await?
+                    {
+                        apply_postgres_sdkwork_models_catalog_module_schema(pool).await?;
                         changed = true;
                     }
                 }
@@ -1139,26 +1153,40 @@ impl DatabaseInstaller {
                     apply_postgres_clawrouter_legacy_projection_schema(pool).await?;
                     changed = true;
                 }
+                if !COMPOSE_SDKWORK_MODELS_CATALOG_MODULE
+                    && !postgres_gateway_routing_dictionary_schema_tables_exist(pool).await?
+                {
+                    apply_postgres_gateway_routing_dictionary_schema(pool).await?;
+                    changed = true;
+                }
                 changed
             }
         };
         changed |= match &self.backend {
             InstallerBackend::Sqlite(pool) => {
-                if COMPOSE_SIBLING_DATABASE_MODULES {
+                if compose_sibling_commerce_module() {
                     ensure_sqlite_bootstrap_admin_recharge_catalog(pool).await?
                 } else {
                     false
                 }
             }
             InstallerBackend::Postgres(pool) => {
-                if COMPOSE_SIBLING_DATABASE_MODULES {
+                if compose_sibling_commerce_module() {
                     ensure_postgres_bootstrap_admin_recharge_catalog(pool).await?
                 } else {
                     false
                 }
             }
         };
+        self.ensure_iam_tenant_application_bootstrap().await?;
         Ok(changed)
+    }
+
+    async fn ensure_iam_tenant_application_bootstrap(&self) -> Result<(), DatabaseInstallError> {
+        crate::infrastructure::sql::iam_application_bootstrap::ensure_clawrouter_tenant_application_bootstrap(
+            &self.options,
+        )
+        .await
     }
 }
 
@@ -1898,16 +1926,18 @@ async fn sqlite_status(
     if !sqlite_generated_schema_indexes_exist(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
-    if !sqlite_appbase_iam_foundation_schema_tables_exist(pool).await? {
-        return Ok(InstallationStatus::UpgradeRequired);
+    if standalone_iam_bootstrap_enabled() {
+        if !sqlite_appbase_iam_foundation_schema_tables_exist(pool).await? {
+            return Ok(InstallationStatus::UpgradeRequired);
+        }
+        if !sqlite_appbase_iam_oauth_schema_tables_exist(pool).await? {
+            return Ok(InstallationStatus::UpgradeRequired);
+        }
+        if !sqlite_appbase_iam_oauth_schema_indexes_exist(pool).await? {
+            return Ok(InstallationStatus::UpgradeRequired);
+        }
     }
-    if !sqlite_appbase_iam_oauth_schema_tables_exist(pool).await? {
-        return Ok(InstallationStatus::UpgradeRequired);
-    }
-    if !sqlite_appbase_iam_oauth_schema_indexes_exist(pool).await? {
-        return Ok(InstallationStatus::UpgradeRequired);
-    }
-    if COMPOSE_SIBLING_DATABASE_MODULES {
+    if compose_sibling_commerce_module() {
         if !sqlite_appbase_commerce_schema_tables_exist(pool).await? {
             return Ok(InstallationStatus::Corrupt);
         }
@@ -1924,6 +1954,11 @@ async fn sqlite_status(
     if !sqlite_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
+    if !COMPOSE_SDKWORK_MODELS_CATALOG_MODULE
+        && !sqlite_gateway_routing_dictionary_schema_tables_exist(pool).await?
+    {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
     if bootstrap_admin_options.enabled
         && !sqlite_bootstrap_admin_seed_complete(pool, bootstrap_admin_options.username.as_str())
             .await?
@@ -1938,7 +1973,7 @@ async fn sqlite_status(
         Err(error) => return Err(error),
     };
     let spec = catalog_completeness_spec(&catalog);
-    if COMPOSE_SIBLING_DATABASE_MODULES {
+    if COMPOSE_SDKWORK_MODELS_CATALOG_MODULE {
         if !sqlite_sdkwork_models_catalog_complete(pool, &spec).await? {
             return Ok(InstallationStatus::UpgradeRequired);
         }
@@ -1964,9 +1999,7 @@ async fn sqlite_status(
     if !sqlite_default_iam_subject_seed_complete(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
-    if COMPOSE_SIBLING_DATABASE_MODULES
-        && !sqlite_commerce_experience_seed_complete(pool).await?
-    {
+    if compose_sibling_commerce_module() && !sqlite_commerce_experience_seed_complete(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
     Ok(InstallationStatus::Installed)
@@ -2020,13 +2053,19 @@ async fn prepare_sqlite_schema_with_catalog_version(
     for statement in sqlite_schema_statements() {
         execute_sqlite_statement(pool, statement.as_str()).await?;
     }
-    apply_sqlite_appbase_iam_foundation_schema(pool).await?;
-    if COMPOSE_SIBLING_DATABASE_MODULES {
-        apply_sqlite_appbase_commerce_schema(pool).await?;
-        apply_sqlite_sdkwork_models_catalog_module_schema(pool).await?;
-        apply_sqlite_messaging_runtime_projection_schema(pool).await?;
+    if !COMPOSE_SDKWORK_MODELS_CATALOG_MODULE {
+        apply_sqlite_gateway_routing_dictionary_schema(pool).await?;
     }
-    apply_sqlite_appbase_iam_oauth_schema(pool).await?;
+    if compose_sibling_commerce_module() {
+        apply_sqlite_appbase_commerce_schema(pool).await?;
+    }
+    if COMPOSE_SDKWORK_MODELS_CATALOG_MODULE {
+        apply_sqlite_sdkwork_models_catalog_module_schema(pool).await?;
+    }
+    if standalone_iam_bootstrap_enabled() {
+        apply_sqlite_appbase_iam_foundation_schema(pool).await?;
+        apply_sqlite_appbase_iam_oauth_schema(pool).await?;
+    }
     apply_sqlite_clawrouter_legacy_projection_schema(pool).await?;
     record_sqlite_migration_completed(
         pool,
@@ -2093,16 +2132,18 @@ async fn postgres_status(
     if !postgres_generated_schema_indexes_exist(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
-    if !postgres_appbase_iam_foundation_schema_tables_exist(pool).await? {
-        return Ok(InstallationStatus::UpgradeRequired);
+    if standalone_iam_bootstrap_enabled() {
+        if !postgres_appbase_iam_foundation_schema_tables_exist(pool).await? {
+            return Ok(InstallationStatus::UpgradeRequired);
+        }
+        if !postgres_appbase_iam_oauth_schema_tables_exist(pool).await? {
+            return Ok(InstallationStatus::UpgradeRequired);
+        }
+        if !postgres_appbase_iam_oauth_schema_indexes_exist(pool).await? {
+            return Ok(InstallationStatus::UpgradeRequired);
+        }
     }
-    if !postgres_appbase_iam_oauth_schema_tables_exist(pool).await? {
-        return Ok(InstallationStatus::UpgradeRequired);
-    }
-    if !postgres_appbase_iam_oauth_schema_indexes_exist(pool).await? {
-        return Ok(InstallationStatus::UpgradeRequired);
-    }
-    if COMPOSE_SIBLING_DATABASE_MODULES {
+    if compose_sibling_commerce_module() {
         if !postgres_appbase_commerce_schema_tables_exist(pool).await? {
             return Ok(InstallationStatus::Corrupt);
         }
@@ -2122,6 +2163,11 @@ async fn postgres_status(
     if !postgres_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
+    if !COMPOSE_SDKWORK_MODELS_CATALOG_MODULE
+        && !postgres_gateway_routing_dictionary_schema_tables_exist(pool).await?
+    {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
     if bootstrap_admin_options.enabled
         && !postgres_bootstrap_admin_seed_complete(pool, bootstrap_admin_options.username.as_str())
             .await?
@@ -2136,7 +2182,7 @@ async fn postgres_status(
         Err(error) => return Err(error),
     };
     let spec = catalog_completeness_spec(&catalog);
-    if COMPOSE_SIBLING_DATABASE_MODULES {
+    if COMPOSE_SDKWORK_MODELS_CATALOG_MODULE {
         if !postgres_sdkwork_models_catalog_complete(pool, &spec).await? {
             return Ok(InstallationStatus::UpgradeRequired);
         }
@@ -2162,7 +2208,7 @@ async fn postgres_status(
     if !postgres_default_iam_subject_seed_complete(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
-    if COMPOSE_SIBLING_DATABASE_MODULES
+    if compose_sibling_commerce_module()
         && !postgres_commerce_experience_seed_complete(pool).await?
     {
         return Ok(InstallationStatus::UpgradeRequired);
@@ -2248,13 +2294,19 @@ async fn prepare_postgres_schema_with_catalog_version(
     for statement in postgres_schema_statements() {
         execute_postgres_statement(pool, statement.as_str()).await?;
     }
-    apply_postgres_appbase_iam_foundation_schema(pool).await?;
-    if COMPOSE_SIBLING_DATABASE_MODULES {
-        apply_postgres_appbase_commerce_schema(pool).await?;
-        apply_postgres_sdkwork_models_catalog_module_schema(pool).await?;
-        apply_postgres_messaging_runtime_projection_schema(pool).await?;
+    apply_postgres_gateway_routing_dictionary_schema(pool).await?;
+    if standalone_iam_bootstrap_enabled() {
+        apply_postgres_appbase_iam_foundation_schema(pool).await?;
     }
-    apply_postgres_appbase_iam_oauth_schema(pool).await?;
+    if compose_sibling_commerce_module() {
+        apply_postgres_appbase_commerce_schema(pool).await?;
+    }
+    if COMPOSE_SDKWORK_MODELS_CATALOG_MODULE {
+        apply_postgres_sdkwork_models_catalog_module_schema(pool).await?;
+    }
+    if standalone_iam_bootstrap_enabled() {
+        apply_postgres_appbase_iam_oauth_schema(pool).await?;
+    }
     apply_postgres_clawrouter_legacy_projection_schema(pool).await?;
     record_postgres_migration_completed(
         pool,
@@ -2281,7 +2333,7 @@ async fn install_sqlite(
     )
     .await?;
 
-    if COMPOSE_SIBLING_DATABASE_MODULES {
+    if COMPOSE_SDKWORK_MODELS_CATALOG_MODULE {
         record_sqlite_migration_started(
             pool,
             "catalog",
@@ -2303,7 +2355,7 @@ async fn install_sqlite(
     }
     import_sqlite_bundled_ai_routing_seed(pool).await?;
     import_sqlite_default_iam_subject_seed(pool).await?;
-    if COMPOSE_SIBLING_DATABASE_MODULES {
+    if compose_sibling_commerce_module() {
         import_sqlite_commerce_experience_seed(pool).await?;
         ensure_sqlite_bootstrap_admin_recharge_catalog(pool).await?;
     }
@@ -2328,7 +2380,7 @@ async fn install_postgres(
     )
     .await?;
 
-    if COMPOSE_SIBLING_DATABASE_MODULES {
+    if COMPOSE_SDKWORK_MODELS_CATALOG_MODULE {
         record_postgres_migration_started(
             pool,
             "catalog",
@@ -2350,7 +2402,12 @@ async fn install_postgres(
     }
     import_postgres_bundled_ai_routing_seed(pool).await?;
     import_postgres_default_iam_subject_seed(pool).await?;
-    if COMPOSE_SIBLING_DATABASE_MODULES {
+    crate::infrastructure::sql::iam_application_bootstrap::ensure_postgres_clawrouter_tenant_application(
+        pool,
+        options,
+    )
+    .await?;
+    if compose_sibling_commerce_module() {
         import_postgres_commerce_experience_seed(pool).await?;
         ensure_postgres_bootstrap_admin_recharge_catalog(pool).await?;
     }
@@ -2388,7 +2445,7 @@ async fn repair_sqlite_installation(
         .await?;
     }
 
-    if COMPOSE_SIBLING_DATABASE_MODULES {
+    if compose_sibling_commerce_module() {
         if !sqlite_appbase_commerce_schema_tables_exist(pool).await?
             || !sqlite_appbase_commerce_schema_indexes_exist(pool).await?
         {
@@ -2399,24 +2456,28 @@ async fn repair_sqlite_installation(
         {
             apply_sqlite_sdkwork_models_catalog_module_schema(pool).await?;
         }
-        if !sqlite_messaging_runtime_projection_schema_tables_exist(pool).await? {
-            apply_sqlite_messaging_runtime_projection_schema(pool).await?;
+    }
+    if standalone_iam_bootstrap_enabled() {
+        if !sqlite_appbase_iam_foundation_schema_tables_exist(pool).await? {
+            apply_sqlite_appbase_iam_foundation_schema(pool).await?;
         }
-    }
-    if !sqlite_appbase_iam_foundation_schema_tables_exist(pool).await? {
-        apply_sqlite_appbase_iam_foundation_schema(pool).await?;
-    }
-    if !sqlite_appbase_iam_oauth_schema_tables_exist(pool).await?
-        || !sqlite_appbase_iam_oauth_schema_indexes_exist(pool).await?
-    {
-        apply_sqlite_appbase_iam_oauth_schema(pool).await?;
+        if !sqlite_appbase_iam_oauth_schema_tables_exist(pool).await?
+            || !sqlite_appbase_iam_oauth_schema_indexes_exist(pool).await?
+        {
+            apply_sqlite_appbase_iam_oauth_schema(pool).await?;
+        }
     }
     if !sqlite_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
         apply_sqlite_clawrouter_legacy_projection_schema(pool).await?;
     }
+    if !COMPOSE_SDKWORK_MODELS_CATALOG_MODULE
+        && !sqlite_gateway_routing_dictionary_schema_tables_exist(pool).await?
+    {
+        apply_sqlite_gateway_routing_dictionary_schema(pool).await?;
+    }
 
     let catalog = load_install_model_catalog(options)?;
-    if COMPOSE_SIBLING_DATABASE_MODULES {
+    if COMPOSE_SDKWORK_MODELS_CATALOG_MODULE {
         let spec = catalog_completeness_spec(&catalog);
         let catalog_payload =
             crate::infrastructure::sql::model_catalog_import::catalog_payload(&catalog);
@@ -2459,11 +2520,13 @@ async fn repair_sqlite_installation(
     if !sqlite_default_iam_subject_seed_complete(pool).await? {
         import_sqlite_default_iam_subject_seed(pool).await?;
     }
-    if COMPOSE_SIBLING_DATABASE_MODULES {
+    if compose_sibling_commerce_module() {
         let commerce_payload = commerce_experience_seed_manifest().payload_json;
         let commerce_integrity =
-            sdkwork_commerce_membership_sqlx::sqlite_commerce_experience_seed_integrity_report(pool)
-                .await?;
+            sdkwork_commerce_membership_sqlx::sqlite_commerce_experience_seed_integrity_report(
+                pool,
+            )
+            .await?;
         let commerce_payload_current = sqlite_seed_migration_payload_current(
             pool,
             "commerce-experience",
@@ -2535,7 +2598,7 @@ async fn repair_postgres_installation(
         .await?;
     }
 
-    if COMPOSE_SIBLING_DATABASE_MODULES {
+    if compose_sibling_commerce_module() {
         if !postgres_appbase_commerce_schema_tables_exist(pool).await?
             || !postgres_appbase_commerce_schema_columns_exist(pool).await?
             || !postgres_appbase_commerce_schema_indexes_exist(pool).await?
@@ -2548,24 +2611,23 @@ async fn repair_postgres_installation(
         {
             apply_postgres_sdkwork_models_catalog_module_schema(pool).await?;
         }
-        if !postgres_messaging_runtime_projection_schema_tables_exist(pool).await? {
-            apply_postgres_messaging_runtime_projection_schema(pool).await?;
+    }
+    if standalone_iam_bootstrap_enabled() {
+        if !postgres_appbase_iam_foundation_schema_tables_exist(pool).await? {
+            apply_postgres_appbase_iam_foundation_schema(pool).await?;
         }
-    }
-    if !postgres_appbase_iam_foundation_schema_tables_exist(pool).await? {
-        apply_postgres_appbase_iam_foundation_schema(pool).await?;
-    }
-    if !postgres_appbase_iam_oauth_schema_tables_exist(pool).await?
-        || !postgres_appbase_iam_oauth_schema_indexes_exist(pool).await?
-    {
-        apply_postgres_appbase_iam_oauth_schema(pool).await?;
+        if !postgres_appbase_iam_oauth_schema_tables_exist(pool).await?
+            || !postgres_appbase_iam_oauth_schema_indexes_exist(pool).await?
+        {
+            apply_postgres_appbase_iam_oauth_schema(pool).await?;
+        }
     }
     if !postgres_clawrouter_legacy_projection_schema_tables_exist(pool).await? {
         apply_postgres_clawrouter_legacy_projection_schema(pool).await?;
     }
 
     let catalog = load_install_model_catalog(options)?;
-    if COMPOSE_SIBLING_DATABASE_MODULES {
+    if COMPOSE_SDKWORK_MODELS_CATALOG_MODULE {
         let spec = catalog_completeness_spec(&catalog);
         let catalog_payload =
             crate::infrastructure::sql::model_catalog_import::catalog_payload(&catalog);
@@ -2609,7 +2671,12 @@ async fn repair_postgres_installation(
     if !postgres_default_iam_subject_seed_complete(pool).await? {
         import_postgres_default_iam_subject_seed(pool).await?;
     }
-    if COMPOSE_SIBLING_DATABASE_MODULES {
+    crate::infrastructure::sql::iam_application_bootstrap::ensure_postgres_clawrouter_tenant_application(
+        pool,
+        options,
+    )
+    .await?;
+    if compose_sibling_commerce_module() {
         if !postgres_commerce_experience_seed_complete(pool).await? {
             import_postgres_commerce_experience_seed(pool).await?;
         }
@@ -2720,7 +2787,7 @@ async fn import_postgres_commerce_experience_seed(
 async fn ensure_sqlite_bootstrap_admin_recharge_catalog(
     pool: &SqlitePool,
 ) -> Result<bool, DatabaseInstallError> {
-    if !COMPOSE_SIBLING_DATABASE_MODULES {
+    if !compose_sibling_commerce_module() {
         return Ok(false);
     }
     let payload = bootstrap_admin_recharge_catalog_payload();
@@ -2790,7 +2857,7 @@ async fn ensure_sqlite_bootstrap_admin_recharge_catalog(
 async fn ensure_postgres_bootstrap_admin_recharge_catalog(
     pool: &PgPool,
 ) -> Result<bool, DatabaseInstallError> {
-    if !COMPOSE_SIBLING_DATABASE_MODULES {
+    if !compose_sibling_commerce_module() {
         return Ok(false);
     }
     let payload = bootstrap_admin_recharge_catalog_payload();
@@ -4579,14 +4646,16 @@ async fn postgres_refresh_schema_needs_prepare(
     if !postgres_appbase_commerce_schema_indexes_exist(pool).await? {
         return Ok(true);
     }
-    if !postgres_appbase_iam_foundation_schema_tables_exist(pool).await? {
-        return Ok(true);
-    }
-    if !postgres_appbase_iam_oauth_schema_tables_exist(pool).await? {
-        return Ok(true);
-    }
-    if !postgres_appbase_iam_oauth_schema_indexes_exist(pool).await? {
-        return Ok(true);
+    if standalone_iam_bootstrap_enabled() {
+        if !postgres_appbase_iam_foundation_schema_tables_exist(pool).await? {
+            return Ok(true);
+        }
+        if !postgres_appbase_iam_oauth_schema_tables_exist(pool).await? {
+            return Ok(true);
+        }
+        if !postgres_appbase_iam_oauth_schema_indexes_exist(pool).await? {
+            return Ok(true);
+        }
     }
     if !postgres_sdkwork_models_catalog_module_schema_tables_exist(pool).await? {
         return Ok(true);
@@ -4691,13 +4760,30 @@ async fn postgres_installation_catalog_version(
 }
 
 async fn sqlite_last_catalog_refresh_status(pool: &SqlitePool) -> Result<String, sqlx::Error> {
-    if !sqlite_table_exists(pool, "ai_model_catalog_sync_run").await? {
-        return Ok("not_run".to_owned());
+    if sqlite_table_exists(pool, "ai_model_catalog_sync_run").await? {
+        if let Some(row) = sqlx::query(
+            r#"
+            SELECT run_status, COALESCE(CAST(metadata AS TEXT), '') AS metadata
+            FROM ai_model_catalog_sync_run
+            ORDER BY started_at DESC, id DESC
+            LIMIT 1
+            "#,
+        )
+        .fetch_optional(pool)
+        .await?
+        {
+            let run_status = row.try_get::<i32, _>("run_status").unwrap_or_default();
+            let metadata = row.try_get::<String, _>("metadata").unwrap_or_default();
+            return Ok(catalog_refresh_status_code(run_status, metadata.as_str()));
+        }
     }
+
     let Some(row) = sqlx::query(
         r#"
-        SELECT run_status, COALESCE(CAST(metadata AS TEXT), '') AS metadata
-        FROM ai_model_catalog_sync_run
+        SELECT status, checksum
+        FROM system_schema_migration
+        WHERE migration_key = 'catalog'
+           OR migration_key LIKE 'catalog-refresh-%'
         ORDER BY started_at DESC, id DESC
         LIMIT 1
         "#,
@@ -4708,19 +4794,39 @@ async fn sqlite_last_catalog_refresh_status(pool: &SqlitePool) -> Result<String,
         return Ok("not_run".to_owned());
     };
 
-    let run_status = row.try_get::<i32, _>("run_status").unwrap_or_default();
-    let metadata = row.try_get::<String, _>("metadata").unwrap_or_default();
-    Ok(catalog_refresh_status_code(run_status, metadata.as_str()))
+    let status = row.try_get::<String, _>("status").unwrap_or_default();
+    let checksum = row.try_get::<String, _>("checksum").unwrap_or_default();
+    Ok(catalog_refresh_status_from_migration(
+        status.as_str(),
+        checksum.as_str(),
+    ))
 }
 
 async fn postgres_last_catalog_refresh_status(pool: &PgPool) -> Result<String, sqlx::Error> {
-    if !postgres_table_exists(pool, "ai_model_catalog_sync_run").await? {
-        return Ok("not_run".to_owned());
+    if postgres_table_exists(pool, "ai_model_catalog_sync_run").await? {
+        if let Some(row) = sqlx::query(
+            r#"
+            SELECT run_status, COALESCE(metadata::text, '') AS metadata
+            FROM ai_model_catalog_sync_run
+            ORDER BY started_at DESC, id DESC
+            LIMIT 1
+            "#,
+        )
+        .fetch_optional(pool)
+        .await?
+        {
+            let run_status = row.try_get::<i32, _>("run_status").unwrap_or_default();
+            let metadata = row.try_get::<String, _>("metadata").unwrap_or_default();
+            return Ok(catalog_refresh_status_code(run_status, metadata.as_str()));
+        }
     }
+
     let Some(row) = sqlx::query(
         r#"
-        SELECT run_status, COALESCE(metadata::text, '') AS metadata
-        FROM ai_model_catalog_sync_run
+        SELECT status, checksum
+        FROM system_schema_migration
+        WHERE migration_key = 'catalog'
+           OR migration_key LIKE 'catalog-refresh-%'
         ORDER BY started_at DESC, id DESC
         LIMIT 1
         "#,
@@ -4731,9 +4837,25 @@ async fn postgres_last_catalog_refresh_status(pool: &PgPool) -> Result<String, s
         return Ok("not_run".to_owned());
     };
 
-    let run_status = row.try_get::<i32, _>("run_status").unwrap_or_default();
-    let metadata = row.try_get::<String, _>("metadata").unwrap_or_default();
-    Ok(catalog_refresh_status_code(run_status, metadata.as_str()))
+    let status = row.try_get::<String, _>("status").unwrap_or_default();
+    let checksum = row.try_get::<String, _>("checksum").unwrap_or_default();
+    Ok(catalog_refresh_status_from_migration(
+        status.as_str(),
+        checksum.as_str(),
+    ))
+}
+
+fn catalog_refresh_status_from_migration(status: &str, checksum: &str) -> String {
+    if status == "failed" {
+        return "failed".to_owned();
+    }
+    if catalog_refresh_metadata_is_dry_run(checksum) {
+        return "dry_run".to_owned();
+    }
+    if status == "completed" {
+        return "success".to_owned();
+    }
+    "not_run".to_owned()
 }
 
 fn catalog_refresh_status_code(run_status: i32, metadata: &str) -> String {
@@ -4767,6 +4889,16 @@ async fn sqlite_record_failed_catalog_refresh(
     catalog_version: &str,
     error: &DatabaseInstallError,
 ) -> Result<(), sqlx::Error> {
+    if !sqlite_table_exists(pool, "ai_model_catalog_sync_run").await? {
+        return sqlite_record_failed_catalog_refresh_migration(
+            pool,
+            options,
+            catalog_root,
+            catalog_version,
+            error,
+        )
+        .await;
+    }
     let now = current_utc_timestamp_string();
     let failed = failed_catalog_refresh_row(options, catalog_root, catalog_version, error, &now);
     let id = next_install_runtime_id("ai_model_catalog_sync_run")?;
@@ -4804,6 +4936,16 @@ async fn postgres_record_failed_catalog_refresh(
     catalog_version: &str,
     error: &DatabaseInstallError,
 ) -> Result<(), sqlx::Error> {
+    if !postgres_table_exists(pool, "ai_model_catalog_sync_run").await? {
+        return postgres_record_failed_catalog_refresh_migration(
+            pool,
+            options,
+            catalog_root,
+            catalog_version,
+            error,
+        )
+        .await;
+    }
     let now = current_utc_timestamp_string();
     let failed = failed_catalog_refresh_row(options, catalog_root, catalog_version, error, &now);
     let id = next_install_runtime_id("ai_model_catalog_sync_run")?;
@@ -4829,6 +4971,84 @@ async fn postgres_record_failed_catalog_refresh(
     .bind(&failed.change_summary)
     .bind(&failed.error_message_masked)
     .bind(id)
+    .execute(pool)
+    .await?;
+    Ok(())
+}
+
+async fn sqlite_record_failed_catalog_refresh_migration(
+    pool: &SqlitePool,
+    options: &CatalogRefreshOptions,
+    catalog_root: Option<&str>,
+    catalog_version: &str,
+    error: &DatabaseInstallError,
+) -> Result<(), sqlx::Error> {
+    let now = current_utc_timestamp_string();
+    let failed = failed_catalog_refresh_row(options, catalog_root, catalog_version, error, &now);
+    let audit_key = format!(
+        "catalog-refresh-failed:{}",
+        catalog_refresh_id(&options.source, &options.mode, &options.vendor_codes)
+    );
+    let id = next_install_runtime_id("system schema migration")?;
+    sqlx::query(
+        r#"
+        INSERT INTO system_schema_migration
+            (id, migration_key, migration_version, checksum, status, started_at, finished_at, error_message)
+        VALUES
+            (?, ?, ?, ?, 'failed', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, ?)
+        ON CONFLICT(migration_key) DO UPDATE SET
+            migration_version = excluded.migration_version,
+            checksum = excluded.checksum,
+            status = excluded.status,
+            started_at = CURRENT_TIMESTAMP,
+            finished_at = CURRENT_TIMESTAMP,
+            error_message = excluded.error_message
+        "#,
+    )
+    .bind(id)
+    .bind(audit_key)
+    .bind(catalog_version)
+    .bind(&failed.metadata)
+    .bind(&failed.error_message_masked)
+    .execute(pool)
+    .await?;
+    Ok(())
+}
+
+async fn postgres_record_failed_catalog_refresh_migration(
+    pool: &PgPool,
+    options: &CatalogRefreshOptions,
+    catalog_root: Option<&str>,
+    catalog_version: &str,
+    error: &DatabaseInstallError,
+) -> Result<(), sqlx::Error> {
+    let now = current_utc_timestamp_string();
+    let failed = failed_catalog_refresh_row(options, catalog_root, catalog_version, error, &now);
+    let audit_key = format!(
+        "catalog-refresh-failed:{}",
+        catalog_refresh_id(&options.source, &options.mode, &options.vendor_codes)
+    );
+    let id = next_install_runtime_id("system schema migration")?;
+    sqlx::query(
+        r#"
+        INSERT INTO system_schema_migration
+            (id, migration_key, migration_version, checksum, status, started_at, finished_at, error_message)
+        VALUES
+            ($1, $2, $3, $4, 'failed', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, $5)
+        ON CONFLICT(migration_key) DO UPDATE SET
+            migration_version = excluded.migration_version,
+            checksum = excluded.checksum,
+            status = excluded.status,
+            started_at = CURRENT_TIMESTAMP,
+            finished_at = CURRENT_TIMESTAMP,
+            error_message = excluded.error_message
+        "#,
+    )
+    .bind(id)
+    .bind(audit_key)
+    .bind(catalog_version)
+    .bind(&failed.metadata)
+    .bind(&failed.error_message_masked)
     .execute(pool)
     .await?;
     Ok(())
@@ -6376,7 +6596,7 @@ async fn sqlite_appbase_iam_foundation_schema_tables_exist(
     Ok(appbase_iam_foundation_table_names().is_subset(&installed_tables))
 }
 
-async fn postgres_appbase_iam_foundation_schema_tables_exist(
+pub(crate) async fn postgres_appbase_iam_foundation_schema_tables_exist(
     pool: &PgPool,
 ) -> Result<bool, sqlx::Error> {
     let installed_tables = postgres_string_set(
@@ -6468,6 +6688,107 @@ fn clawrouter_legacy_projection_sqlite_schema_statements() -> Vec<String> {
         .collect()
 }
 
+fn gateway_routing_dictionary_table_names() -> Vec<&'static str> {
+    vec![
+        "ai_api_endpoint",
+        "ai_resource",
+        "ai_resource_group",
+        "ai_resource_group_item",
+    ]
+}
+
+fn gateway_routing_dictionary_postgres_schema_statements() -> Vec<String> {
+    strip_line_comments(GATEWAY_ROUTING_DICTIONARY_SQL)
+        .split(';')
+        .map(str::trim)
+        .filter(|statement| !statement.is_empty())
+        .map(str::to_owned)
+        .collect()
+}
+
+fn gateway_routing_dictionary_sqlite_schema_statements() -> Vec<String> {
+    gateway_routing_dictionary_postgres_schema_statements()
+        .into_iter()
+        .map(|statement| postgres_statement_to_sqlite(statement.as_str()))
+        .collect()
+}
+
+async fn sqlite_gateway_routing_dictionary_schema_tables_exist(
+    pool: &SqlitePool,
+) -> Result<bool, sqlx::Error> {
+    let installed_tables = sqlite_string_set(
+        pool,
+        r#"
+        SELECT name
+        FROM sqlite_master
+        WHERE type = 'table'
+        "#,
+    )
+    .await?;
+    Ok(string_set(gateway_routing_dictionary_table_names()).is_subset(&installed_tables))
+}
+
+async fn postgres_gateway_routing_dictionary_schema_tables_exist(
+    pool: &PgPool,
+) -> Result<bool, sqlx::Error> {
+    let installed_tables = postgres_string_set(
+        pool,
+        r#"
+        SELECT tablename
+        FROM pg_tables
+        WHERE schemaname = current_schema()
+        "#,
+    )
+    .await?;
+    Ok(string_set(gateway_routing_dictionary_table_names()).is_subset(&installed_tables))
+}
+
+async fn apply_sqlite_gateway_routing_dictionary_schema(
+    pool: &SqlitePool,
+) -> Result<(), DatabaseInstallError> {
+    record_sqlite_migration_started(
+        pool,
+        "gateway-routing-dictionary-schema",
+        CURRENT_SCHEMA_VERSION,
+        GATEWAY_ROUTING_DICTIONARY_SQL,
+    )
+    .await?;
+    for statement in gateway_routing_dictionary_sqlite_schema_statements() {
+        execute_sqlite_statement(pool, statement.as_str()).await?;
+    }
+    record_sqlite_migration_completed(
+        pool,
+        "gateway-routing-dictionary-schema",
+        CURRENT_SCHEMA_VERSION,
+        GATEWAY_ROUTING_DICTIONARY_SQL,
+    )
+    .await?;
+    Ok(())
+}
+
+async fn apply_postgres_gateway_routing_dictionary_schema(
+    pool: &PgPool,
+) -> Result<(), DatabaseInstallError> {
+    record_postgres_migration_started(
+        pool,
+        "gateway-routing-dictionary-schema",
+        CURRENT_SCHEMA_VERSION,
+        GATEWAY_ROUTING_DICTIONARY_SQL,
+    )
+    .await?;
+    for statement in gateway_routing_dictionary_postgres_schema_statements() {
+        execute_postgres_statement(pool, statement.as_str()).await?;
+    }
+    record_postgres_migration_completed(
+        pool,
+        "gateway-routing-dictionary-schema",
+        CURRENT_SCHEMA_VERSION,
+        GATEWAY_ROUTING_DICTIONARY_SQL,
+    )
+    .await?;
+    Ok(())
+}
+
 async fn sqlite_clawrouter_legacy_projection_schema_tables_exist(
     pool: &SqlitePool,
 ) -> Result<bool, sqlx::Error> {
@@ -6539,119 +6860,6 @@ async fn apply_postgres_clawrouter_legacy_projection_schema(
         "clawrouter-legacy-projection-schema",
         CURRENT_SCHEMA_VERSION,
         CLAWROUTER_LEGACY_PROJECTION_SQL,
-    )
-    .await?;
-    Ok(())
-}
-
-fn messaging_runtime_projection_table_names() -> Vec<&'static str> {
-    vec![
-        "messaging_provider",
-        "messaging_provider_account",
-        "messaging_provider_capability",
-        "messaging_sender_identity",
-        "messaging_template",
-        "messaging_template_version",
-        "messaging_template_variant",
-        "messaging_template_binding",
-        "messaging_route_rule",
-        "messaging_route_rule_target",
-        "messaging_send_request",
-        "messaging_send_attempt",
-        "messaging_delivery_event",
-        "messaging_suppression",
-        "messaging_rate_limit_bucket",
-    ]
-}
-
-fn messaging_runtime_projection_postgres_schema_statements() -> Vec<String> {
-    strip_line_comments(MESSAGING_RUNTIME_PROJECTION_SQL)
-        .split(';')
-        .map(str::trim)
-        .filter(|statement| !statement.is_empty())
-        .map(str::to_owned)
-        .collect()
-}
-
-fn messaging_runtime_projection_sqlite_schema_statements() -> Vec<String> {
-    messaging_runtime_projection_postgres_schema_statements()
-        .into_iter()
-        .map(|statement| postgres_statement_to_sqlite(statement.as_str()))
-        .collect()
-}
-
-async fn sqlite_messaging_runtime_projection_schema_tables_exist(
-    pool: &SqlitePool,
-) -> Result<bool, sqlx::Error> {
-    let installed_tables = sqlite_string_set(
-        pool,
-        r#"
-        SELECT name
-        FROM sqlite_master
-        WHERE type = 'table'
-        "#,
-    )
-    .await?;
-    Ok(string_set(messaging_runtime_projection_table_names()).is_subset(&installed_tables))
-}
-
-async fn postgres_messaging_runtime_projection_schema_tables_exist(
-    pool: &PgPool,
-) -> Result<bool, sqlx::Error> {
-    let installed_tables = postgres_string_set(
-        pool,
-        r#"
-        SELECT table_name
-        FROM information_schema.tables
-        WHERE table_schema = current_schema()
-          AND table_type = 'BASE TABLE'
-        "#,
-    )
-    .await?;
-    Ok(string_set(messaging_runtime_projection_table_names()).is_subset(&installed_tables))
-}
-
-async fn apply_sqlite_messaging_runtime_projection_schema(
-    pool: &SqlitePool,
-) -> Result<(), DatabaseInstallError> {
-    record_sqlite_migration_started(
-        pool,
-        "messaging-runtime-projection-schema",
-        CURRENT_SCHEMA_VERSION,
-        MESSAGING_RUNTIME_PROJECTION_SQL,
-    )
-    .await?;
-    for statement in messaging_runtime_projection_sqlite_schema_statements() {
-        execute_sqlite_statement(pool, statement.as_str()).await?;
-    }
-    record_sqlite_migration_completed(
-        pool,
-        "messaging-runtime-projection-schema",
-        CURRENT_SCHEMA_VERSION,
-        MESSAGING_RUNTIME_PROJECTION_SQL,
-    )
-    .await?;
-    Ok(())
-}
-
-async fn apply_postgres_messaging_runtime_projection_schema(
-    pool: &PgPool,
-) -> Result<(), DatabaseInstallError> {
-    record_postgres_migration_started(
-        pool,
-        "messaging-runtime-projection-schema",
-        CURRENT_SCHEMA_VERSION,
-        MESSAGING_RUNTIME_PROJECTION_SQL,
-    )
-    .await?;
-    for statement in messaging_runtime_projection_postgres_schema_statements() {
-        execute_postgres_statement(pool, statement.as_str()).await?;
-    }
-    record_postgres_migration_completed(
-        pool,
-        "messaging-runtime-projection-schema",
-        CURRENT_SCHEMA_VERSION,
-        MESSAGING_RUNTIME_PROJECTION_SQL,
     )
     .await?;
     Ok(())
@@ -7708,11 +7916,6 @@ mod tests {
         for statement in sdkwork_models_catalog_module_sqlite_schema_statements() {
             if let Err(error) = execute_sqlite_statement(&pool, statement.as_str()).await {
                 panic!("models catalog schema statement failed: {error}\n{statement}");
-            }
-        }
-        for statement in messaging_runtime_projection_sqlite_schema_statements() {
-            if let Err(error) = execute_sqlite_statement(&pool, statement.as_str()).await {
-                panic!("messaging projection schema statement failed: {error}\n{statement}");
             }
         }
         for statement in clawrouter_legacy_projection_sqlite_schema_statements() {

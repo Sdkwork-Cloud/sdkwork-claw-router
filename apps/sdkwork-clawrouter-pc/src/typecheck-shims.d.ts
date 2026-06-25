@@ -1,3 +1,14 @@
+declare module '@sdkwork/file-contracts' {
+  export type SdkworkStorageProviderType =
+    | 'aws_s3'
+    | 'cloudflare_r2'
+    | 'cos_s3'
+    | 'local_dev_s3'
+    | 'minio'
+    | 'oss_s3'
+    | 's3_compatible';
+}
+
 declare module '@sdkwork/iam-service' {
   export interface IamStoredSession {
     accessToken?: string;
@@ -6,7 +17,7 @@ declare module '@sdkwork/iam-service' {
   }
 }
 
-declare module '@sdkwork/appbase-app-sdk' {
+declare module '@sdkwork/iam-app-sdk' {
   export type SdkworkAppbaseSdkResponse = unknown;
 
   export interface SdkworkAppbaseListResource {
@@ -17,9 +28,23 @@ declare module '@sdkwork/appbase-app-sdk' {
     retrieve(): Promise<SdkworkAppbaseSdkResponse>;
   }
 
+  export interface SdkworkAppbaseAppCrudResource extends SdkworkAppbaseListResource {
+    create(
+      body?: Record<string, unknown>,
+      params?: Record<string, unknown>,
+    ): Promise<SdkworkAppbaseSdkResponse>;
+    delete(id: string): Promise<SdkworkAppbaseSdkResponse>;
+    update(id: string, body?: Record<string, unknown>): Promise<SdkworkAppbaseSdkResponse>;
+  }
+
   export interface SdkworkAppbaseCurrentResource {
     delete(): Promise<SdkworkAppbaseSdkResponse>;
     retrieve(): Promise<SdkworkAppbaseSdkResponse>;
+  }
+
+  export interface SdkworkAppbaseSettingsResource {
+    retrieve(): Promise<SdkworkAppbaseSdkResponse>;
+    update(body?: Record<string, unknown>): Promise<SdkworkAppbaseSdkResponse>;
   }
 
   export interface SdkworkAppConfig {
@@ -31,13 +56,27 @@ declare module '@sdkwork/appbase-app-sdk' {
 
   export class SdkworkAppClient {
     auth: {
+      passwordResetRequests?: Record<string, unknown>;
+      passwordResets?: Record<string, unknown>;
+      registrations?: Record<string, unknown>;
       sessions: {
         create(input?: Record<string, unknown>): Promise<SdkworkAppbaseSdkResponse>;
         current: SdkworkAppbaseCurrentResource;
+        loginContextSelection?: Record<string, unknown>;
+        organizationSelection?: Record<string, unknown>;
       };
+    };
+    oauth?: {
+      authorizationUrls?: Record<string, unknown>;
+      deviceAuthorizations?: Record<string, unknown> & {
+        passwordCompletions?: Record<string, unknown>;
+      };
+      miniProgramSessions?: Record<string, unknown>;
+      sessions?: Record<string, unknown>;
     };
     http: unknown;
     iam: {
+      apiKeys: SdkworkAppbaseAppCrudResource;
       departmentAssignments: SdkworkAppbaseListResource;
       departments: SdkworkAppbaseListResource & { tree: SdkworkAppbaseTreeResource };
       organizationMemberships: SdkworkAppbaseListResource;
@@ -46,7 +85,10 @@ declare module '@sdkwork/appbase-app-sdk' {
       positions: SdkworkAppbaseListResource;
       roleBindings: SdkworkAppbaseListResource;
       users: {
-        current: SdkworkAppbaseTreeResource;
+        current: SdkworkAppbaseCurrentResource & {
+          update(body?: Record<string, unknown>): Promise<SdkworkAppbaseSdkResponse>;
+        };
+        settings: SdkworkAppbaseSettingsResource;
       };
     };
     system: {
@@ -60,7 +102,7 @@ declare module '@sdkwork/appbase-app-sdk' {
   }
 }
 
-declare module '@sdkwork/appbase-backend-sdk' {
+declare module '@sdkwork/iam-backend-sdk' {
   export type SdkworkAppbaseBackendSdkResponse = unknown;
 
   export interface SdkworkAppbaseBackendListResource {
@@ -2235,6 +2277,11 @@ declare module '@sdkwork/auth-runtime-pc-react' {
     setTokenManager(manager: unknown): unknown;
   }>;
 
+  export interface SdkworkAppbasePcAuthRuntimeCredentialEntryOptions {
+    prepareTokens?: () => void;
+    skipWrap?: boolean;
+  }
+
   export function createSdkworkAppbasePcAuthRuntime(options: {
     app: {
       appId: string;
@@ -2246,6 +2293,7 @@ declare module '@sdkwork/auth-runtime-pc-react' {
       appbaseAppApiBaseUrl: string;
     };
     createAppbaseAppClient?: (config: unknown) => unknown;
+    credentialEntry?: SdkworkAppbasePcAuthRuntimeCredentialEntryOptions;
     hooks?: {
       onSessionChanged?: (session: unknown) => Promise<unknown> | unknown;
     };
@@ -2425,6 +2473,8 @@ declare module '@sdkwork/iam-contracts' {
     tenantId?: string;
     userId?: string;
   }
+
+  export function hasPermissionInScope(grantedCodes: readonly string[], required: string): boolean;
 
   const iamContracts: unknown;
   export default iamContracts;

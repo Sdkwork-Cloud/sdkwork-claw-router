@@ -308,7 +308,7 @@ fn postgres_string_cell(row: &sqlx::postgres::PgRow, column: &str) -> String {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use sdkwork_appbase_iam_bootstrap::{DEFAULT_IAM_ORGANIZATION_CODE, DEFAULT_IAM_TENANT_CODE};
+    use sdkwork_iam_bootstrap::{DEFAULT_IAM_ORGANIZATION_CODE, DEFAULT_IAM_TENANT_CODE};
 
     #[test]
     fn effective_codes_default_to_bootstrap_subject() {

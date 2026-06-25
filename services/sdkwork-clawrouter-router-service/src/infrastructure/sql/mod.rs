@@ -9,6 +9,7 @@ pub mod app_providers_repository_adapter;
 pub mod app_user_profile_repository_adapter;
 pub mod catalog;
 pub(crate) mod dashboard_overview_metrics;
+pub(crate) mod iam_application_bootstrap;
 pub mod iam_scope_resolver;
 pub(crate) mod iam_seed_defaults;
 pub mod installer;

@@ -45,10 +45,10 @@ WORKFLOW_REF_INPUTS = {
 
 NATIVE_WORKSPACE_PACKAGES = {
     "sdkwork-appbase": [
-        "../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/*-typescript/generated/server-openapi",
-        "../../../sdkwork-appbase/sdks/sdkwork-appbase-backend-sdk/*-typescript/generated/server-openapi",
+        "../../../sdkwork-iam/sdks/sdkwork-iam-app-sdk/*-typescript/generated/server-openapi",
+        "../../../sdkwork-iam/sdks/sdkwork-iam-backend-sdk/*-typescript/generated/server-openapi",
         "../../../sdkwork-appbase/packages/pc-react/foundation/sdkwork-appbase-pc-react",
-        "../../../sdkwork-appbase/packages/common/iam/*",
+        "../../../sdkwork-iam/packages/common/iam/*",
     ],
     "sdkwork-core": [
         "../../../sdkwork-core/sdkwork-core-pc-react",

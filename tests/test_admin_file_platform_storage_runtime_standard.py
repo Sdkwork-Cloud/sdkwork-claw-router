@@ -11,28 +11,20 @@ STORAGE_PACKAGE = (
     / "sdkwork-clawrouter-pc-admin-file-platform"
     / "src"
 )
-BACKEND_SDK_SRC = (
-    ROOT
-    / "sdks"
-    / "clawrouter-backend-sdk"
-    / "clawrouter-backend-sdk-typescript"
-    / "src"
-)
 
 
 class AdminFilePlatformStorageRuntimeStandardTest(unittest.TestCase):
-    def test_storage_admin_uses_canonical_oss_backend_sdk_surface(self) -> None:
+    def test_storage_admin_uses_drive_backend_sdk_boundary(self) -> None:
         service = (STORAGE_PACKAGE / "storageService.ts").read_text(encoding="utf-8")
         definitions = (STORAGE_PACKAGE / "storageSectionDefinitions.tsx").read_text(encoding="utf-8")
-        sdk_source = (BACKEND_SDK_SRC / "sdk.ts").read_text(encoding="utf-8")
-        oss_api_source = (BACKEND_SDK_SRC / "api" / "oss.ts").read_text(encoding="utf-8")
 
-        self.assertIn("return getClawRouterBackendSdkClient().oss;", service)
-        self.assertIn("public readonly oss: OssApi;", sdk_source)
-        self.assertIn("public readonly providers: OssProvidersApi;", oss_api_source)
-        self.assertIn("public readonly quotas: OssQuotasApi;", oss_api_source)
-        self.assertIn("public readonly usage: OssUsageApi;", oss_api_source)
-        self.assertIn("public readonly storageReconciliationRuns: OssStorageReconciliationRunsApi;", oss_api_source)
+        self.assertIn("getSdkworkDriveBackendSdkClient", service)
+        self.assertIn("export function getDriveStorageSdk(): DriveBackend {", service)
+        self.assertIn("return getSdkworkDriveBackendSdkClient().drive;", service)
+        self.assertIn(".storageProviders", service)
+        self.assertIn(".storageProviderBindings", service)
+        self.assertIn(".maintenance", service)
+        self.assertNotIn("getClawRouterBackendSdkClient().oss", service)
 
         for forbidden in [
             "SDK_NOT_REGISTERED",
@@ -52,8 +44,6 @@ class AdminFilePlatformStorageRuntimeStandardTest(unittest.TestCase):
         ]:
             self.assertNotIn(forbidden, service)
             self.assertNotIn(forbidden, definitions)
-            self.assertNotIn(forbidden, sdk_source)
-            self.assertNotIn(forbidden, oss_api_source)
 
 
 if __name__ == "__main__":

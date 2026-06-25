@@ -8533,917 +8533,6 @@
         ],
         "type": "object"
       },
-      "AdminPromptBindingCreateRequest": {
-        "additionalProperties": false,
-        "description": "Admin prompt binding create request schema exposed by Claw Router.",
-        "name": "AdminPromptBindingCreateRequest",
-        "properties": {
-          "bindingRole": {
-            "description": "Binding role field on admin prompt binding create request.",
-            "maxLength": 64,
-            "minLength": 1,
-            "type": "string"
-          },
-          "enabled": {
-            "description": "Enabled field on admin prompt binding create request.",
-            "type": "boolean"
-          },
-          "ownerId": {
-            "description": "Owner id field on admin prompt binding create request.",
-            "format": "int64",
-            "pattern": "^[1-9][0-9]*$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "ownerType": {
-            "description": "Owner type field on admin prompt binding create request.",
-            "maxLength": 64,
-            "minLength": 1,
-            "type": "string"
-          },
-          "policyJson": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Policy json field on admin prompt binding create request."
-            },
-            "description": "Policy json field on admin prompt binding create request.",
-            "type": "object"
-          },
-          "priority": {
-            "description": "Priority field on admin prompt binding create request.",
-            "format": "int32",
-            "type": "integer"
-          },
-          "promptVersionId": {
-            "description": "Prompt version id field on admin prompt binding create request.",
-            "format": "int64",
-            "nullable": true,
-            "pattern": "^[1-9][0-9]*$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          }
-        },
-        "required": [
-          "ownerType",
-          "ownerId",
-          "bindingRole"
-        ],
-        "type": "object"
-      },
-      "AdminPromptBindingItem": {
-        "additionalProperties": false,
-        "description": "Admin prompt binding item schema exposed by Claw Router.",
-        "properties": {
-          "bindingRole": {
-            "description": "Binding role field on admin prompt binding item.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "createdAt": {
-            "description": "Created at field on admin prompt binding item.",
-            "maxLength": 64,
-            "minLength": 1,
-            "type": "string"
-          },
-          "enabled": {
-            "description": "Enabled field on admin prompt binding item.",
-            "type": "boolean"
-          },
-          "id": {
-            "description": "Id field on admin prompt binding item.",
-            "format": "int64",
-            "pattern": "^[1-9][0-9]*$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "organizationId": {
-            "description": "Organization id field on admin prompt binding item.",
-            "format": "int64",
-            "pattern": "^[1-9][0-9]*$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "ownerId": {
-            "description": "Owner id field on admin prompt binding item.",
-            "format": "int64",
-            "pattern": "^[1-9][0-9]*$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "ownerType": {
-            "description": "Owner type field on admin prompt binding item.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "policyJson": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Policy json field on admin prompt binding item."
-            },
-            "description": "Policy json field on admin prompt binding item.",
-            "type": "object"
-          },
-          "priority": {
-            "description": "Priority field on admin prompt binding item.",
-            "format": "int32",
-            "type": "integer"
-          },
-          "promptId": {
-            "description": "Prompt id field on admin prompt binding item.",
-            "format": "int64",
-            "pattern": "^[1-9][0-9]*$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "promptVersionId": {
-            "description": "Prompt version id field on admin prompt binding item.",
-            "format": "int64",
-            "nullable": true,
-            "pattern": "^-?[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "snapshotJson": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Snapshot json field on admin prompt binding item."
-            },
-            "description": "Snapshot json field on admin prompt binding item.",
-            "type": "object"
-          },
-          "tenantId": {
-            "description": "Tenant id field on admin prompt binding item.",
-            "format": "int64",
-            "pattern": "^[1-9][0-9]*$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "updatedAt": {
-            "description": "Updated at field on admin prompt binding item.",
-            "maxLength": 64,
-            "minLength": 1,
-            "type": "string"
-          },
-          "uuid": {
-            "description": "Uuid field on admin prompt binding item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          }
-        },
-        "required": [
-          "id",
-          "uuid",
-          "tenantId",
-          "organizationId",
-          "promptId",
-          "ownerType",
-          "ownerId",
-          "bindingRole",
-          "priority",
-          "enabled",
-          "policyJson",
-          "snapshotJson",
-          "createdAt",
-          "updatedAt"
-        ],
-        "type": "object"
-      },
-      "AdminPromptBindingListResponse": {
-        "additionalProperties": false,
-        "description": "Admin prompt binding list response schema exposed by Claw Router.",
-        "name": "AdminPromptBindingListResponse",
-        "properties": {
-          "items": {
-            "description": "Items field on admin prompt binding list response.",
-            "items": {
-              "$ref": "#/components/schemas/AdminPromptBindingItem"
-            },
-            "maxItems": 200,
-            "type": "array"
-          }
-        },
-        "required": [
-          "items"
-        ],
-        "type": "object"
-      },
-      "AdminPromptBindingMutationResponse": {
-        "additionalProperties": false,
-        "description": "Admin prompt binding mutation response schema exposed by Claw Router.",
-        "name": "AdminPromptBindingMutationResponse",
-        "properties": {
-          "item": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/AdminPromptBindingItem"
-              }
-            ],
-            "description": "Item field on admin prompt binding mutation response."
-          }
-        },
-        "required": [
-          "item"
-        ],
-        "type": "object"
-      },
-      "AdminPromptBindingUpdateRequest": {
-        "additionalProperties": false,
-        "description": "Admin prompt binding update request schema exposed by Claw Router.",
-        "name": "AdminPromptBindingUpdateRequest",
-        "properties": {
-          "bindingRole": {
-            "description": "Binding role field on admin prompt binding update request.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "enabled": {
-            "description": "Enabled field on admin prompt binding update request.",
-            "type": "boolean"
-          },
-          "ownerId": {
-            "description": "Owner id field on admin prompt binding update request.",
-            "format": "int64",
-            "pattern": "^[1-9][0-9]*$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "ownerType": {
-            "description": "Owner type field on admin prompt binding update request.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "policyJson": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Policy json field on admin prompt binding update request."
-            },
-            "description": "Policy json field on admin prompt binding update request.",
-            "type": "object"
-          },
-          "priority": {
-            "description": "Priority field on admin prompt binding update request.",
-            "format": "int32",
-            "type": "integer"
-          },
-          "promptVersionId": {
-            "description": "Prompt version id field on admin prompt binding update request.",
-            "format": "int64",
-            "nullable": true,
-            "pattern": "^[1-9][0-9]*$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          }
-        },
-        "type": "object"
-      },
-      "AdminPromptCreateRequest": {
-        "additionalProperties": false,
-        "description": "Admin prompt create request schema exposed by Claw Router.",
-        "name": "AdminPromptCreateRequest",
-        "properties": {
-          "categoryId": {
-            "description": "Category id field on admin prompt create request.",
-            "maxLength": 128,
-            "type": "string"
-          },
-          "description": {
-            "description": "Description field on admin prompt create request.",
-            "maxLength": 2000,
-            "type": "string"
-          },
-          "name": {
-            "description": "Name field on admin prompt create request.",
-            "maxLength": 255,
-            "minLength": 1,
-            "type": "string"
-          },
-          "promptKey": {
-            "description": "Prompt key field on admin prompt create request.",
-            "maxLength": 128,
-            "minLength": 1,
-            "pattern": "^[A-Za-z0-9_.:-]+$",
-            "type": "string"
-          },
-          "promptType": {
-            "description": "Prompt type field on admin prompt create request.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "tags": {
-            "description": "Tags field on admin prompt create request.",
-            "items": {
-              "description": "Tags field on admin prompt create request.",
-              "maxLength": 64,
-              "type": "string"
-            },
-            "maxItems": 32,
-            "type": "array"
-          },
-          "visibility": {
-            "description": "Visibility field on admin prompt create request.",
-            "maxLength": 64,
-            "type": "string"
-          }
-        },
-        "required": [
-          "promptKey",
-          "name"
-        ],
-        "type": "object"
-      },
-      "AdminPromptItem": {
-        "additionalProperties": false,
-        "description": "Admin prompt item schema exposed by Claw Router.",
-        "properties": {
-          "categoryCode": {
-            "description": "Category code field on admin prompt item.",
-            "maxLength": 128,
-            "nullable": true,
-            "type": "string"
-          },
-          "categoryId": {
-            "description": "Category id field on admin prompt item.",
-            "maxLength": 128,
-            "nullable": true,
-            "type": "string"
-          },
-          "createdAt": {
-            "description": "Created at field on admin prompt item.",
-            "maxLength": 64,
-            "minLength": 1,
-            "type": "string"
-          },
-          "description": {
-            "description": "Description field on admin prompt item.",
-            "maxLength": 2000,
-            "nullable": true,
-            "type": "string"
-          },
-          "id": {
-            "description": "Id field on admin prompt item.",
-            "format": "int64",
-            "pattern": "^[1-9][0-9]*$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "latestVersionId": {
-            "description": "Latest version id field on admin prompt item.",
-            "format": "int64",
-            "nullable": true,
-            "pattern": "^-?[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "name": {
-            "description": "Name field on admin prompt item.",
-            "maxLength": 255,
-            "minLength": 1,
-            "type": "string"
-          },
-          "organizationId": {
-            "description": "Organization id field on admin prompt item.",
-            "format": "int64",
-            "pattern": "^[1-9][0-9]*$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "ownerUserId": {
-            "description": "Owner user id field on admin prompt item.",
-            "format": "int64",
-            "nullable": true,
-            "pattern": "^-?[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "promptKey": {
-            "description": "Prompt key field on admin prompt item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "promptType": {
-            "description": "Prompt type field on admin prompt item.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "publishedVersionId": {
-            "description": "Published version id field on admin prompt item.",
-            "format": "int64",
-            "nullable": true,
-            "pattern": "^-?[0-9]+$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "status": {
-            "description": "Status field on admin prompt item.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "tags": {
-            "description": "Tags field on admin prompt item.",
-            "items": {
-              "description": "Tags field on admin prompt item.",
-              "maxLength": 64,
-              "type": "string"
-            },
-            "maxItems": 32,
-            "type": "array"
-          },
-          "tenantId": {
-            "description": "Tenant id field on admin prompt item.",
-            "format": "int64",
-            "pattern": "^[1-9][0-9]*$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "updatedAt": {
-            "description": "Updated at field on admin prompt item.",
-            "maxLength": 64,
-            "minLength": 1,
-            "type": "string"
-          },
-          "uuid": {
-            "description": "Uuid field on admin prompt item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "visibility": {
-            "description": "Visibility field on admin prompt item.",
-            "maxLength": 64,
-            "type": "string"
-          }
-        },
-        "required": [
-          "id",
-          "uuid",
-          "tenantId",
-          "organizationId",
-          "promptKey",
-          "name",
-          "promptType",
-          "visibility",
-          "status",
-          "tags",
-          "createdAt",
-          "updatedAt"
-        ],
-        "type": "object"
-      },
-      "AdminPromptListResponse": {
-        "additionalProperties": false,
-        "description": "Admin prompt list response schema exposed by Claw Router.",
-        "name": "AdminPromptListResponse",
-        "properties": {
-          "items": {
-            "description": "Items field on admin prompt list response.",
-            "items": {
-              "$ref": "#/components/schemas/AdminPromptItem"
-            },
-            "maxItems": 200,
-            "type": "array"
-          }
-        },
-        "required": [
-          "items"
-        ],
-        "type": "object"
-      },
-      "AdminPromptMutationResponse": {
-        "additionalProperties": false,
-        "description": "Admin prompt mutation response schema exposed by Claw Router.",
-        "name": "AdminPromptMutationResponse",
-        "properties": {
-          "item": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/AdminPromptItem"
-              }
-            ],
-            "description": "Item field on admin prompt mutation response."
-          }
-        },
-        "required": [
-          "item"
-        ],
-        "type": "object"
-      },
-      "AdminPromptRenderRequest": {
-        "additionalProperties": false,
-        "description": "Admin prompt render request schema exposed by Claw Router.",
-        "name": "AdminPromptRenderRequest",
-        "properties": {
-          "variables": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Variables field on admin prompt render request."
-            },
-            "description": "Variables field on admin prompt render request.",
-            "type": "object"
-          }
-        },
-        "type": "object"
-      },
-      "AdminPromptRenderResponse": {
-        "additionalProperties": false,
-        "description": "Admin prompt render response schema exposed by Claw Router.",
-        "name": "AdminPromptRenderResponse",
-        "properties": {
-          "rendered": {
-            "description": "Rendered field on admin prompt render response.",
-            "maxLength": 50000,
-            "type": "string"
-          }
-        },
-        "required": [
-          "rendered"
-        ],
-        "type": "object"
-      },
-      "AdminPromptVersionCreateRequest": {
-        "additionalProperties": false,
-        "description": "Admin prompt version create request schema exposed by Claw Router.",
-        "name": "AdminPromptVersionCreateRequest",
-        "properties": {
-          "content": {
-            "description": "Content field on admin prompt version create request.",
-            "maxLength": 50000,
-            "minLength": 1,
-            "type": "string"
-          },
-          "examplesJson": {
-            "description": "Examples json field on admin prompt version create request.",
-            "oneOf": [
-              {
-                "description": "Array variant accepted by examples json.",
-                "items": {
-                  "additionalProperties": {
-                    "allOf": [
-                      {
-                        "$ref": "#/components/schemas/JsonValue"
-                      }
-                    ],
-                    "description": "Examples json field on admin prompt version create request."
-                  },
-                  "description": "Examples json field on admin prompt version create request.",
-                  "type": "object"
-                },
-                "type": "array"
-              },
-              {
-                "additionalProperties": {
-                  "allOf": [
-                    {
-                      "$ref": "#/components/schemas/JsonValue"
-                    }
-                  ],
-                  "description": "Examples json field on admin prompt version create request."
-                },
-                "description": "Object variant accepted by examples json.",
-                "type": "object"
-              }
-            ]
-          },
-          "modelConstraints": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Model constraints field on admin prompt version create request."
-            },
-            "description": "Model constraints field on admin prompt version create request.",
-            "type": "object"
-          },
-          "outputSchema": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Output schema field on admin prompt version create request."
-            },
-            "description": "Output schema field on admin prompt version create request.",
-            "type": "object"
-          },
-          "safetyPolicy": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Safety policy field on admin prompt version create request."
-            },
-            "description": "Safety policy field on admin prompt version create request.",
-            "type": "object"
-          },
-          "title": {
-            "description": "Title field on admin prompt version create request.",
-            "maxLength": 255,
-            "minLength": 1,
-            "type": "string"
-          },
-          "variableSchema": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Variable schema field on admin prompt version create request."
-            },
-            "description": "Variable schema field on admin prompt version create request.",
-            "type": "object"
-          },
-          "versionNo": {
-            "description": "Version no field on admin prompt version create request.",
-            "maxLength": 128,
-            "minLength": 1,
-            "pattern": "^[A-Za-z0-9_.:-]+$",
-            "type": "string"
-          }
-        },
-        "required": [
-          "versionNo",
-          "title",
-          "content"
-        ],
-        "type": "object"
-      },
-      "AdminPromptVersionItem": {
-        "additionalProperties": false,
-        "description": "Admin prompt version item schema exposed by Claw Router.",
-        "properties": {
-          "checksumHash": {
-            "description": "Checksum hash field on admin prompt version item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "content": {
-            "description": "Content field on admin prompt version item.",
-            "maxLength": 50000,
-            "minLength": 1,
-            "type": "string"
-          },
-          "createdAt": {
-            "description": "Created at field on admin prompt version item.",
-            "maxLength": 64,
-            "minLength": 1,
-            "type": "string"
-          },
-          "createdBy": {
-            "description": "Created by field on admin prompt version item.",
-            "format": "int64",
-            "pattern": "^[1-9][0-9]*$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "examplesJson": {
-            "description": "Examples json field on admin prompt version item.",
-            "items": {
-              "additionalProperties": {
-                "allOf": [
-                  {
-                    "$ref": "#/components/schemas/JsonValue"
-                  }
-                ],
-                "description": "Examples json field on admin prompt version item."
-              },
-              "description": "Examples json field on admin prompt version item.",
-              "type": "object"
-            },
-            "type": "array"
-          },
-          "id": {
-            "description": "Id field on admin prompt version item.",
-            "format": "int64",
-            "pattern": "^[1-9][0-9]*$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "lifecycleStatus": {
-            "description": "Lifecycle status field on admin prompt version item.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "modelConstraints": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Model constraints field on admin prompt version item."
-            },
-            "description": "Model constraints field on admin prompt version item.",
-            "type": "object"
-          },
-          "organizationId": {
-            "description": "Organization id field on admin prompt version item.",
-            "format": "int64",
-            "pattern": "^[1-9][0-9]*$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "outputSchema": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Output schema field on admin prompt version item."
-            },
-            "description": "Output schema field on admin prompt version item.",
-            "type": "object"
-          },
-          "promptId": {
-            "description": "Prompt id field on admin prompt version item.",
-            "format": "int64",
-            "pattern": "^[1-9][0-9]*$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "publishedAt": {
-            "description": "Published at field on admin prompt version item.",
-            "maxLength": 64,
-            "nullable": true,
-            "type": "string"
-          },
-          "reviewComment": {
-            "description": "Review comment field on admin prompt version item.",
-            "maxLength": 2000,
-            "nullable": true,
-            "type": "string"
-          },
-          "reviewStatus": {
-            "description": "Review status field on admin prompt version item.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "safetyPolicy": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Safety policy field on admin prompt version item."
-            },
-            "description": "Safety policy field on admin prompt version item.",
-            "type": "object"
-          },
-          "tenantId": {
-            "description": "Tenant id field on admin prompt version item.",
-            "format": "int64",
-            "pattern": "^[1-9][0-9]*$",
-            "type": "string",
-            "x-sdkwork-int64-string": true,
-            "x-sdkwork-rust-type": "i64"
-          },
-          "title": {
-            "description": "Title field on admin prompt version item.",
-            "maxLength": 255,
-            "minLength": 1,
-            "type": "string"
-          },
-          "updatedAt": {
-            "description": "Updated at field on admin prompt version item.",
-            "maxLength": 64,
-            "minLength": 1,
-            "type": "string"
-          },
-          "uuid": {
-            "description": "Uuid field on admin prompt version item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "variableSchema": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Variable schema field on admin prompt version item."
-            },
-            "description": "Variable schema field on admin prompt version item.",
-            "type": "object"
-          },
-          "versionNo": {
-            "description": "Version no field on admin prompt version item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          }
-        },
-        "required": [
-          "id",
-          "uuid",
-          "tenantId",
-          "organizationId",
-          "promptId",
-          "versionNo",
-          "title",
-          "content",
-          "variableSchema",
-          "outputSchema",
-          "modelConstraints",
-          "safetyPolicy",
-          "examplesJson",
-          "checksumHash",
-          "lifecycleStatus",
-          "reviewStatus",
-          "createdBy",
-          "createdAt",
-          "updatedAt"
-        ],
-        "type": "object"
-      },
-      "AdminPromptVersionListResponse": {
-        "additionalProperties": false,
-        "description": "Admin prompt version list response schema exposed by Claw Router.",
-        "name": "AdminPromptVersionListResponse",
-        "properties": {
-          "items": {
-            "description": "Items field on admin prompt version list response.",
-            "items": {
-              "$ref": "#/components/schemas/AdminPromptVersionItem"
-            },
-            "maxItems": 200,
-            "type": "array"
-          }
-        },
-        "required": [
-          "items"
-        ],
-        "type": "object"
-      },
-      "AdminPromptVersionMutationResponse": {
-        "additionalProperties": false,
-        "description": "Admin prompt version mutation response schema exposed by Claw Router.",
-        "name": "AdminPromptVersionMutationResponse",
-        "properties": {
-          "item": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/AdminPromptVersionItem"
-              }
-            ],
-            "description": "Item field on admin prompt version mutation response."
-          }
-        },
-        "required": [
-          "item"
-        ],
-        "type": "object"
-      },
       "AdminProviderSecretCreateRequest": {
         "additionalProperties": false,
         "description": "Admin provider secret create request schema exposed by Claw Router.",
@@ -13807,141 +12896,6 @@
         ],
         "type": "object",
         "x-operation-id": "defaultBuckets.update"
-      },
-      "DefinitionBindingsCreateResult": {
-        "additionalProperties": false,
-        "description": "Definition bindings create result schema exposed by Claw Router.",
-        "properties": {
-          "code": {
-            "description": "Business response code.",
-            "type": "string"
-          },
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/AdminPromptBindingMutationResponse"
-              }
-            ],
-            "description": "Data field on definition bindings create result."
-          },
-          "msg": {
-            "description": "Human-readable response message.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "code"
-        ],
-        "type": "object",
-        "x-operation-id": "definitionBindings.create"
-      },
-      "DefinitionBindingsListResult": {
-        "additionalProperties": false,
-        "description": "Definition bindings list result schema exposed by Claw Router.",
-        "properties": {
-          "code": {
-            "description": "Business response code.",
-            "type": "string"
-          },
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/AdminPromptBindingListResponse"
-              }
-            ],
-            "description": "Data field on definition bindings list result."
-          },
-          "msg": {
-            "description": "Human-readable response message.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "code"
-        ],
-        "type": "object",
-        "x-operation-id": "definitionBindings.list"
-      },
-      "DefinitionBindingsUpdateResult": {
-        "additionalProperties": false,
-        "description": "Definition bindings update result schema exposed by Claw Router.",
-        "properties": {
-          "code": {
-            "description": "Business response code.",
-            "type": "string"
-          },
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/AdminPromptBindingMutationResponse"
-              }
-            ],
-            "description": "Data field on definition bindings update result."
-          },
-          "msg": {
-            "description": "Human-readable response message.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "code"
-        ],
-        "type": "object",
-        "x-operation-id": "definitionBindings.update"
-      },
-      "DefinitionsCreateResult": {
-        "additionalProperties": false,
-        "description": "Definitions create result schema exposed by Claw Router.",
-        "properties": {
-          "code": {
-            "description": "Business response code.",
-            "type": "string"
-          },
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/AdminPromptMutationResponse"
-              }
-            ],
-            "description": "Data field on definitions create result."
-          },
-          "msg": {
-            "description": "Human-readable response message.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "code"
-        ],
-        "type": "object",
-        "x-operation-id": "definitions.create"
-      },
-      "DefinitionsListResult": {
-        "additionalProperties": false,
-        "description": "Definitions list result schema exposed by Claw Router.",
-        "properties": {
-          "code": {
-            "description": "Business response code.",
-            "type": "string"
-          },
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/AdminPromptListResponse"
-              }
-            ],
-            "description": "Data field on definitions list result."
-          },
-          "msg": {
-            "description": "Human-readable response message.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "code"
-        ],
-        "type": "object",
-        "x-operation-id": "definitions.list"
       },
       "DiagnosticsRouteSimulationCreateResult": {
         "additionalProperties": false,
@@ -24280,114 +23234,6 @@
           }
         },
         "type": "object"
-      },
-      "VersionRendersCreateResult": {
-        "additionalProperties": false,
-        "description": "Version renders create result schema exposed by Claw Router.",
-        "properties": {
-          "code": {
-            "description": "Business response code.",
-            "type": "string"
-          },
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/AdminPromptRenderResponse"
-              }
-            ],
-            "description": "Data field on version renders create result."
-          },
-          "msg": {
-            "description": "Human-readable response message.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "code"
-        ],
-        "type": "object",
-        "x-operation-id": "versionRenders.create"
-      },
-      "VersionsCreateResult": {
-        "additionalProperties": false,
-        "description": "Versions create result schema exposed by Claw Router.",
-        "properties": {
-          "code": {
-            "description": "Business response code.",
-            "type": "string"
-          },
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/AdminPromptVersionMutationResponse"
-              }
-            ],
-            "description": "Data field on versions create result."
-          },
-          "msg": {
-            "description": "Human-readable response message.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "code"
-        ],
-        "type": "object",
-        "x-operation-id": "versions.create"
-      },
-      "VersionsListResult": {
-        "additionalProperties": false,
-        "description": "Versions list result schema exposed by Claw Router.",
-        "properties": {
-          "code": {
-            "description": "Business response code.",
-            "type": "string"
-          },
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/AdminPromptVersionListResponse"
-              }
-            ],
-            "description": "Data field on versions list result."
-          },
-          "msg": {
-            "description": "Human-readable response message.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "code"
-        ],
-        "type": "object",
-        "x-operation-id": "versions.list"
-      },
-      "VersionsPublishResult": {
-        "additionalProperties": false,
-        "description": "Versions publish result schema exposed by Claw Router.",
-        "properties": {
-          "code": {
-            "description": "Business response code.",
-            "type": "string"
-          },
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/AdminPromptVersionMutationResponse"
-              }
-            ],
-            "description": "Data field on versions publish result."
-          },
-          "msg": {
-            "description": "Human-readable response message.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "code"
-        ],
-        "type": "object",
-        "x-operation-id": "versions.publish"
       }
     },
     "securitySchemes": {
@@ -25806,7 +24652,7 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-owner": "sdkwork-models",
         "x-sdkwork-resource": "modelMappingOptions",
-        "x-sdkwork-source-route-crate": "sdkwork-router-catalog-backend-api",
+        "x-sdkwork-source-route-crate": "sdkwork-router-models-catalog-backend-api",
         "x-source-file": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts",
         "x-write-tables": []
       }
@@ -25937,7 +24783,7 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-owner": "sdkwork-models",
         "x-sdkwork-resource": "modelMappings",
-        "x-sdkwork-source-route-crate": "sdkwork-router-catalog-backend-api",
+        "x-sdkwork-source-route-crate": "sdkwork-router-models-catalog-backend-api",
         "x-source-file": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts",
         "x-write-tables": []
       },
@@ -26031,7 +24877,7 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-owner": "sdkwork-models",
         "x-sdkwork-resource": "modelMappings",
-        "x-sdkwork-source-route-crate": "sdkwork-router-catalog-backend-api",
+        "x-sdkwork-source-route-crate": "sdkwork-router-models-catalog-backend-api",
         "x-source-file": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts",
         "x-write-tables": [
           "ai_model_mapping_rule",
@@ -26131,7 +24977,7 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-owner": "sdkwork-models",
         "x-sdkwork-resource": "modelMappings",
-        "x-sdkwork-source-route-crate": "sdkwork-router-catalog-backend-api",
+        "x-sdkwork-source-route-crate": "sdkwork-router-models-catalog-backend-api",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts",
         "x-write-tables": [
           "ai_model_mapping_rule",
@@ -26232,7 +25078,7 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-owner": "sdkwork-models",
         "x-sdkwork-resource": "modelMappings.resolve",
-        "x-sdkwork-source-route-crate": "sdkwork-router-catalog-backend-api",
+        "x-sdkwork-source-route-crate": "sdkwork-router-models-catalog-backend-api",
         "x-source-file": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts",
         "x-write-tables": [
           "ops_audit_log"
@@ -26329,7 +25175,7 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-owner": "sdkwork-models",
         "x-sdkwork-resource": "modelMappings",
-        "x-sdkwork-source-route-crate": "sdkwork-router-catalog-backend-api",
+        "x-sdkwork-source-route-crate": "sdkwork-router-models-catalog-backend-api",
         "x-source-file": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts",
         "x-write-tables": [
           "ai_model_mapping_rule",
@@ -26438,7 +25284,7 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-owner": "sdkwork-models",
         "x-sdkwork-resource": "modelMappings",
-        "x-sdkwork-source-route-crate": "sdkwork-router-catalog-backend-api",
+        "x-sdkwork-source-route-crate": "sdkwork-router-models-catalog-backend-api",
         "x-source-file": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts",
         "x-write-tables": [
           "ai_model_mapping_rule",
@@ -26576,7 +25422,7 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-owner": "sdkwork-models",
         "x-sdkwork-resource": "modelRankings",
-        "x-sdkwork-source-route-crate": "sdkwork-router-catalog-backend-api",
+        "x-sdkwork-source-route-crate": "sdkwork-router-models-catalog-backend-api",
         "x-source-file": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts",
         "x-write-tables": []
       }
@@ -26684,7 +25530,7 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-owner": "sdkwork-models",
         "x-sdkwork-resource": "modelRankings.jobs",
-        "x-sdkwork-source-route-crate": "sdkwork-router-catalog-backend-api",
+        "x-sdkwork-source-route-crate": "sdkwork-router-models-catalog-backend-api",
         "x-source-file": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts",
         "x-write-tables": []
       }
@@ -26780,7 +25626,7 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-owner": "sdkwork-models",
         "x-sdkwork-resource": "modelRankings",
-        "x-sdkwork-source-route-crate": "sdkwork-router-catalog-backend-api",
+        "x-sdkwork-source-route-crate": "sdkwork-router-models-catalog-backend-api",
         "x-source-file": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts",
         "x-write-tables": [
           "ai_model_rank_snapshot",
@@ -26879,7 +25725,7 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-owner": "sdkwork-models",
         "x-sdkwork-resource": "modelRankings.status",
-        "x-sdkwork-source-route-crate": "sdkwork-router-catalog-backend-api",
+        "x-sdkwork-source-route-crate": "sdkwork-router-models-catalog-backend-api",
         "x-source-file": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts",
         "x-write-tables": []
       }
@@ -26962,7 +25808,7 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-owner": "sdkwork-models",
         "x-sdkwork-resource": "modelVendors",
-        "x-sdkwork-source-route-crate": "sdkwork-router-catalog-backend-api",
+        "x-sdkwork-source-route-crate": "sdkwork-router-models-catalog-backend-api",
         "x-source-file": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts",
         "x-write-tables": []
       },
@@ -27054,7 +25900,7 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-owner": "sdkwork-models",
         "x-sdkwork-resource": "modelVendors",
-        "x-sdkwork-source-route-crate": "sdkwork-router-catalog-backend-api",
+        "x-sdkwork-source-route-crate": "sdkwork-router-models-catalog-backend-api",
         "x-source-file": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts",
         "x-write-tables": [
           "ai_model_vendor",
@@ -27189,7 +26035,7 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-owner": "sdkwork-models",
         "x-sdkwork-resource": "models",
-        "x-sdkwork-source-route-crate": "sdkwork-router-catalog-backend-api",
+        "x-sdkwork-source-route-crate": "sdkwork-router-models-catalog-backend-api",
         "x-source-file": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts",
         "x-write-tables": []
       },
@@ -27284,7 +26130,7 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-owner": "sdkwork-models",
         "x-sdkwork-resource": "models",
-        "x-sdkwork-source-route-crate": "sdkwork-router-catalog-backend-api",
+        "x-sdkwork-source-route-crate": "sdkwork-router-models-catalog-backend-api",
         "x-source-file": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts",
         "x-write-tables": [
           "ai_model",
@@ -27387,7 +26233,7 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-owner": "sdkwork-models",
         "x-sdkwork-resource": "models",
-        "x-sdkwork-source-route-crate": "sdkwork-router-catalog-backend-api",
+        "x-sdkwork-source-route-crate": "sdkwork-router-models-catalog-backend-api",
         "x-source-file": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts",
         "x-write-tables": [
           "ai_model_vendor",
@@ -27489,7 +26335,7 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-owner": "sdkwork-models",
         "x-sdkwork-resource": "models",
-        "x-sdkwork-source-route-crate": "sdkwork-router-catalog-backend-api",
+        "x-sdkwork-source-route-crate": "sdkwork-router-models-catalog-backend-api",
         "x-source-file": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts",
         "x-write-tables": [
           "ai_model",
@@ -27599,7 +26445,7 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-owner": "sdkwork-models",
         "x-sdkwork-resource": "models",
-        "x-sdkwork-source-route-crate": "sdkwork-router-catalog-backend-api",
+        "x-sdkwork-source-route-crate": "sdkwork-router-models-catalog-backend-api",
         "x-source-file": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts",
         "x-write-tables": [
           "ai_model",
@@ -27688,7 +26534,7 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-owner": "sdkwork-models",
         "x-sdkwork-resource": "aiResourceGroups",
-        "x-sdkwork-source-route-crate": "sdkwork-router-catalog-backend-api",
+        "x-sdkwork-source-route-crate": "sdkwork-router-models-catalog-backend-api",
         "x-source-file": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-resource/src/resourceGroupService.ts",
         "x-write-tables": []
       },
@@ -27781,7 +26627,7 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-owner": "sdkwork-models",
         "x-sdkwork-resource": "aiResourceGroups",
-        "x-sdkwork-source-route-crate": "sdkwork-router-catalog-backend-api",
+        "x-sdkwork-source-route-crate": "sdkwork-router-models-catalog-backend-api",
         "x-source-file": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-resource/src/resourceGroupService.ts",
         "x-write-tables": [
           "ai_resource_group",
@@ -27880,7 +26726,7 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-owner": "sdkwork-models",
         "x-sdkwork-resource": "aiResourceGroups.resources",
-        "x-sdkwork-source-route-crate": "sdkwork-router-catalog-backend-api",
+        "x-sdkwork-source-route-crate": "sdkwork-router-models-catalog-backend-api",
         "x-source-file": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-resource/src/resourceGroupService.ts",
         "x-write-tables": []
       }
@@ -27973,7 +26819,7 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-owner": "sdkwork-models",
         "x-sdkwork-resource": "aiResourceGroups",
-        "x-sdkwork-source-route-crate": "sdkwork-router-catalog-backend-api",
+        "x-sdkwork-source-route-crate": "sdkwork-router-models-catalog-backend-api",
         "x-source-file": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-resource/src/resourceGroupService.ts",
         "x-write-tables": [
           "ai_resource_group",
@@ -28080,7 +26926,7 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-owner": "sdkwork-models",
         "x-sdkwork-resource": "aiResourceGroups",
-        "x-sdkwork-source-route-crate": "sdkwork-router-catalog-backend-api",
+        "x-sdkwork-source-route-crate": "sdkwork-router-models-catalog-backend-api",
         "x-source-file": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-resource/src/resourceGroupService.ts",
         "x-write-tables": [
           "ai_resource_group",
@@ -28168,7 +27014,7 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-owner": "sdkwork-models",
         "x-sdkwork-resource": "aiResources",
-        "x-sdkwork-source-route-crate": "sdkwork-router-catalog-backend-api",
+        "x-sdkwork-source-route-crate": "sdkwork-router-models-catalog-backend-api",
         "x-source-file": "data/sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-resource/src/resourceGroupService.ts",
         "x-write-tables": []
       },
@@ -28261,7 +27107,7 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-owner": "sdkwork-models",
         "x-sdkwork-resource": "aiResources",
-        "x-sdkwork-source-route-crate": "sdkwork-router-catalog-backend-api",
+        "x-sdkwork-source-route-crate": "sdkwork-router-models-catalog-backend-api",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts",
         "x-write-tables": [
           "ai_resource",
@@ -28370,7 +27216,7 @@
         "x-sdkwork-domain": "intelligence",
         "x-sdkwork-owner": "sdkwork-models",
         "x-sdkwork-resource": "aiResources",
-        "x-sdkwork-source-route-crate": "sdkwork-router-catalog-backend-api",
+        "x-sdkwork-source-route-crate": "sdkwork-router-models-catalog-backend-api",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts",
         "x-write-tables": [
           "ai_resource",
@@ -46101,991 +44947,6 @@
         "x-sdkwork-request-context": "WebRequestContext",
         "x-sdkwork-resource": "promotions.userCoupons.management",
         "x-sdkwork-server-request-id": true
-      }
-    },
-    "/backend/v3/api/prompts": {
-      "get": {
-        "description": "Lists vertical prompt definitions with unified category references and lifecycle state. Reads ai_prompt, c_category. Writes none. File targets none.",
-        "operationId": "definitions.list",
-        "parameters": [
-          {
-            "description": "Page query parameter.",
-            "in": "query",
-            "name": "page",
-            "required": false,
-            "schema": {
-              "format": "int64",
-              "pattern": "^[1-9][0-9]*$",
-              "type": "string",
-              "x-sdkwork-int64-string": true,
-              "x-sdkwork-rust-type": "i64"
-            }
-          },
-          {
-            "description": "Page size query parameter.",
-            "in": "query",
-            "name": "page_size",
-            "required": false,
-            "schema": {
-              "format": "int64",
-              "pattern": "^[1-9][0-9]*$",
-              "type": "string",
-              "x-sdkwork-int64-string": true,
-              "x-sdkwork-rust-type": "i64"
-            }
-          },
-          {
-            "description": "Q query parameter.",
-            "in": "query",
-            "name": "q",
-            "required": false,
-            "schema": {
-              "maxLength": 128,
-              "type": "string"
-            }
-          },
-          {
-            "description": "Prompt type query parameter.",
-            "in": "query",
-            "name": "prompt_type",
-            "required": false,
-            "schema": {
-              "maxLength": 64,
-              "type": "string"
-            }
-          },
-          {
-            "description": "Visibility query parameter.",
-            "in": "query",
-            "name": "visibility",
-            "required": false,
-            "schema": {
-              "maxLength": 64,
-              "type": "string"
-            }
-          },
-          {
-            "description": "Status query parameter.",
-            "in": "query",
-            "name": "status",
-            "required": false,
-            "schema": {
-              "maxLength": 64,
-              "type": "string"
-            }
-          },
-          {
-            "description": "Category id query parameter.",
-            "in": "query",
-            "name": "category_id",
-            "required": false,
-            "schema": {
-              "maxLength": 128,
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DefinitionsListResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "List admin prompts",
-        "tags": [
-          "prompts"
-        ],
-        "x-contract-kind": "read",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "ai_prompt",
-          "c_category"
-        ],
-        "x-route-scope": "admin",
-        "x-sdk-domain": "prompts",
-        "x-sdkwork-domain": "prompts",
-        "x-sdkwork-resource": "definitions",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts",
-        "x-write-tables": []
-      },
-      "post": {
-        "description": "Creates a reusable prompt definition; classification is only by unified category references. Reads ai_prompt, c_category. Writes ai_prompt, ops_audit_log. File targets none.",
-        "operationId": "definitions.create",
-        "parameters": [
-          {
-            "description": "Required stable idempotency key for this write operation.",
-            "in": "header",
-            "name": "Idempotency-Key",
-            "required": true,
-            "schema": {
-              "maxLength": 128,
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AdminPromptCreateRequest"
-              }
-            }
-          },
-          "description": "Typed request payload for create admin prompt.",
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DefinitionsCreateResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "Create admin prompt",
-        "tags": [
-          "prompts"
-        ],
-        "x-contract-kind": "create",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "ai_prompt",
-          "c_category"
-        ],
-        "x-route-scope": "admin",
-        "x-sdk-domain": "prompts",
-        "x-sdkwork-domain": "prompts",
-        "x-sdkwork-resource": "definitions",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts",
-        "x-write-tables": [
-          "ai_prompt",
-          "ops_audit_log"
-        ]
-      }
-    },
-    "/backend/v3/api/prompts/bindings/{bindingId}": {
-      "put": {
-        "description": "Updates owner binding policy, version scope, priority, and enablement for a prompt binding. Reads ai_prompt, ai_prompt_version, ai_prompt_binding, c_category. Writes ai_prompt_binding, ops_audit_log. File targets none.",
-        "operationId": "definitionBindings.update",
-        "parameters": [
-          {
-            "description": "Binding id path parameter.",
-            "in": "path",
-            "name": "bindingId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AdminPromptBindingUpdateRequest"
-              }
-            }
-          },
-          "description": "Typed request payload for update prompt binding.",
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DefinitionBindingsUpdateResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "Update prompt binding",
-        "tags": [
-          "prompts"
-        ],
-        "x-contract-kind": "update",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "ai_prompt",
-          "ai_prompt_version",
-          "ai_prompt_binding",
-          "c_category"
-        ],
-        "x-route-scope": "admin",
-        "x-sdk-domain": "prompts",
-        "x-sdkwork-domain": "prompts",
-        "x-sdkwork-resource": "definitionBindings",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts",
-        "x-write-tables": [
-          "ai_prompt_binding",
-          "ops_audit_log"
-        ]
-      }
-    },
-    "/backend/v3/api/prompts/versions/{versionId}/publish": {
-      "post": {
-        "description": "Publishes a reviewed prompt version and makes it the prompt default runtime version. Reads ai_prompt, ai_prompt_version, c_category. Writes ai_prompt, ai_prompt_version, ops_audit_log. File targets none.",
-        "operationId": "versions.publish",
-        "parameters": [
-          {
-            "description": "Version id path parameter.",
-            "in": "path",
-            "name": "versionId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/VersionsPublishResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "Publish prompt version",
-        "tags": [
-          "prompts"
-        ],
-        "x-contract-kind": "action",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "ai_prompt",
-          "ai_prompt_version",
-          "c_category"
-        ],
-        "x-route-scope": "admin",
-        "x-sdk-domain": "prompts",
-        "x-sdkwork-domain": "prompts",
-        "x-sdkwork-resource": "versions",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts",
-        "x-write-tables": [
-          "ai_prompt",
-          "ai_prompt_version",
-          "ops_audit_log"
-        ]
-      }
-    },
-    "/backend/v3/api/prompts/versions/{versionId}/render": {
-      "post": {
-        "description": "Renders a prompt version by applying runtime variables without persisting output. Reads ai_prompt, ai_prompt_version, c_category. Writes ops_audit_log. File targets none.",
-        "operationId": "versionRenders.create",
-        "parameters": [
-          {
-            "description": "Version id path parameter.",
-            "in": "path",
-            "name": "versionId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AdminPromptRenderRequest"
-              }
-            }
-          },
-          "description": "Typed request payload for render prompt version.",
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/VersionRendersCreateResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "Render prompt version",
-        "tags": [
-          "prompts"
-        ],
-        "x-contract-kind": "action",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "ai_prompt",
-          "ai_prompt_version",
-          "c_category"
-        ],
-        "x-route-scope": "admin",
-        "x-sdk-domain": "prompts",
-        "x-sdkwork-domain": "prompts",
-        "x-sdkwork-resource": "versionRenders",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts",
-        "x-write-tables": [
-          "ops_audit_log"
-        ]
-      }
-    },
-    "/backend/v3/api/prompts/{promptId}/bindings": {
-      "get": {
-        "description": "Lists agent, skill, and runtime owner bindings for a prompt definition. Reads ai_prompt, ai_prompt_version, ai_prompt_binding, c_category. Writes none. File targets none.",
-        "operationId": "definitionBindings.list",
-        "parameters": [
-          {
-            "description": "Prompt id path parameter.",
-            "in": "path",
-            "name": "promptId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DefinitionBindingsListResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "List prompt bindings",
-        "tags": [
-          "prompts"
-        ],
-        "x-contract-kind": "read",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "ai_prompt",
-          "ai_prompt_version",
-          "ai_prompt_binding",
-          "c_category"
-        ],
-        "x-route-scope": "admin",
-        "x-sdk-domain": "prompts",
-        "x-sdkwork-domain": "prompts",
-        "x-sdkwork-resource": "definitionBindings",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts",
-        "x-write-tables": []
-      },
-      "post": {
-        "description": "Creates an owner binding for a prompt definition or a specific prompt version. Reads ai_prompt, ai_prompt_version, ai_prompt_binding, c_category. Writes ai_prompt_binding, ops_audit_log. File targets none.",
-        "operationId": "definitionBindings.create",
-        "parameters": [
-          {
-            "description": "Prompt id path parameter.",
-            "in": "path",
-            "name": "promptId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "Required stable idempotency key for this write operation.",
-            "in": "header",
-            "name": "Idempotency-Key",
-            "required": true,
-            "schema": {
-              "maxLength": 128,
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AdminPromptBindingCreateRequest"
-              }
-            }
-          },
-          "description": "Typed request payload for create prompt binding.",
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DefinitionBindingsCreateResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "Create prompt binding",
-        "tags": [
-          "prompts"
-        ],
-        "x-contract-kind": "create",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "ai_prompt",
-          "ai_prompt_version",
-          "ai_prompt_binding",
-          "c_category"
-        ],
-        "x-route-scope": "admin",
-        "x-sdk-domain": "prompts",
-        "x-sdkwork-domain": "prompts",
-        "x-sdkwork-resource": "definitionBindings",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts",
-        "x-write-tables": [
-          "ai_prompt_binding",
-          "ops_audit_log"
-        ]
-      }
-    },
-    "/backend/v3/api/prompts/{promptId}/versions": {
-      "get": {
-        "description": "Lists immutable prompt versions for one prompt definition. Reads ai_prompt, ai_prompt_version, c_category. Writes none. File targets none.",
-        "operationId": "versions.list",
-        "parameters": [
-          {
-            "description": "Prompt id path parameter.",
-            "in": "path",
-            "name": "promptId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/VersionsListResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "List prompt versions",
-        "tags": [
-          "prompts"
-        ],
-        "x-contract-kind": "read",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "ai_prompt",
-          "ai_prompt_version",
-          "c_category"
-        ],
-        "x-route-scope": "admin",
-        "x-sdk-domain": "prompts",
-        "x-sdkwork-domain": "prompts",
-        "x-sdkwork-resource": "versions",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts",
-        "x-write-tables": []
-      },
-      "post": {
-        "description": "Creates a draft prompt version with typed variables, output schema, examples, and safety policy. Reads ai_prompt, ai_prompt_version, c_category. Writes ai_prompt, ai_prompt_version, ops_audit_log. File targets none.",
-        "operationId": "versions.create",
-        "parameters": [
-          {
-            "description": "Prompt id path parameter.",
-            "in": "path",
-            "name": "promptId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "Required stable idempotency key for this write operation.",
-            "in": "header",
-            "name": "Idempotency-Key",
-            "required": true,
-            "schema": {
-              "maxLength": 128,
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AdminPromptVersionCreateRequest"
-              }
-            }
-          },
-          "description": "Typed request payload for create prompt version.",
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/VersionsCreateResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          },
-          "default": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Error response."
-          }
-        },
-        "security": [
-          {
-            "AccessToken": [],
-            "AuthToken": []
-          }
-        ],
-        "summary": "Create prompt version",
-        "tags": [
-          "prompts"
-        ],
-        "x-contract-kind": "create",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "ai_prompt",
-          "ai_prompt_version",
-          "c_category"
-        ],
-        "x-route-scope": "admin",
-        "x-sdk-domain": "prompts",
-        "x-sdkwork-domain": "prompts",
-        "x-sdkwork-resource": "versions",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts",
-        "x-write-tables": [
-          "ai_prompt",
-          "ai_prompt_version",
-          "ops_audit_log"
-        ]
       }
     },
     "/backend/v3/api/recharges/orders": {
@@ -64874,10 +62735,6 @@
     {
       "description": "messaging operations exposed by Claw Router.",
       "name": "messaging"
-    },
-    {
-      "description": "prompts operations exposed by Claw Router.",
-      "name": "prompts"
     },
     {
       "description": "serviceProviders operations exposed by Claw Router.",

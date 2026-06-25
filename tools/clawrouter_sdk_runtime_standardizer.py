@@ -136,22 +136,22 @@ SDK_GENERATED_OPENAPI_PATHS = {
 SDK_DEPENDENCIES = {
     "clawrouter-app-sdk": [
         {
-            "workspace": "sdkwork-appbase-app-sdk",
+            "workspace": "sdkwork-iam-app-sdk",
             "role": "appbase-app-capability",
             "required": True,
             "dependencyMode": "consumer-sdk",
             "apiPrefix": "/app/v3/api",
             "generatedTransportImportPolicy": "forbidden",
             "packageByLanguage": {
-                "typescript": "@sdkwork/appbase-app-sdk",
-                "flutter": "sdkwork_appbase_app_sdk",
-                "rust": "sdkwork-appbase-app-sdk",
-                "java": "com.sdkwork:sdkwork-appbase-app-sdk",
+                "typescript": "@sdkwork/iam-app-sdk",
+                "flutter": "sdkwork_iam_app_sdk",
+                "rust": "sdkwork-iam-app-sdk",
+                "java": "com.sdkwork:sdkwork-iam-app-sdk",
                 "csharp": "SDKWork.Appbase.AppSdk",
-                "swift": "sdkwork-appbase-app-sdk",
-                "kotlin": "com.sdkwork:sdkwork-appbase-app-sdk",
-                "go": "github.com/sdkwork/sdkwork-appbase-app-sdk",
-                "python": "sdkwork-appbase-app-sdk",
+                "swift": "sdkwork-iam-app-sdk",
+                "kotlin": "com.sdkwork:sdkwork-iam-app-sdk",
+                "go": "github.com/sdkwork/sdkwork-iam-app-sdk",
+                "python": "sdkwork-iam-app-sdk",
             },
         },
         {
@@ -176,22 +176,22 @@ SDK_DEPENDENCIES = {
     ],
     "clawrouter-backend-sdk": [
         {
-            "workspace": "sdkwork-appbase-backend-sdk",
+            "workspace": "sdkwork-iam-backend-sdk",
             "role": "appbase-backend-management-capability",
             "required": True,
             "dependencyMode": "consumer-sdk",
             "apiPrefix": "/backend/v3/api",
             "generatedTransportImportPolicy": "forbidden",
             "packageByLanguage": {
-                "typescript": "@sdkwork/appbase-backend-sdk",
-                "flutter": "sdkwork_appbase_backend_sdk",
-                "rust": "sdkwork-appbase-backend-sdk",
-                "java": "com.sdkwork:sdkwork-appbase-backend-sdk",
+                "typescript": "@sdkwork/iam-backend-sdk",
+                "flutter": "sdkwork_iam_backend_sdk",
+                "rust": "sdkwork-iam-backend-sdk",
+                "java": "com.sdkwork:sdkwork-iam-backend-sdk",
                 "csharp": "SDKWork.Appbase.BackendSdk",
-                "swift": "sdkwork-appbase-backend-sdk",
-                "kotlin": "com.sdkwork:sdkwork-appbase-backend-sdk",
-                "go": "github.com/sdkwork/sdkwork-appbase-backend-sdk",
-                "python": "sdkwork-appbase-backend-sdk",
+                "swift": "sdkwork-iam-backend-sdk",
+                "kotlin": "com.sdkwork:sdkwork-iam-backend-sdk",
+                "go": "github.com/sdkwork/sdkwork-iam-backend-sdk",
+                "python": "sdkwork-iam-backend-sdk",
             },
         },
         {
@@ -216,7 +216,7 @@ SDK_DEPENDENCIES = {
     ],
 }
 SDK_DEPENDENCY_OPERATION_KEY_OVERRIDES = {
-    "sdkwork-appbase-app-sdk": {
+    "sdkwork-iam-app-sdk": {
         "POST auth/verification_codes",
         "POST auth/verification_codes/verify",
     },
@@ -658,19 +658,19 @@ class SdkRuntimeStandardizer:
         return operation_keys
 
     def _dependency_authority_path(self, workspace: str) -> Path:
-        appbase_root = self._dependency_root("sdkwork-appbase")
+        iam_root = self._dependency_root("sdkwork-iam")
         commerce_root = self._dependency_root("sdkwork-commerce")
         mapping = {
-            "sdkwork-appbase-app-sdk": appbase_root
+            "sdkwork-iam-app-sdk": iam_root
             / "sdks"
-            / "sdkwork-appbase-app-sdk"
+            / "sdkwork-iam-app-sdk"
             / "openapi"
-            / "sdkwork-appbase-app-api.openapi.yaml",
-            "sdkwork-appbase-backend-sdk": appbase_root
+            / "sdkwork-iam-app-api.openapi.yaml",
+            "sdkwork-iam-backend-sdk": iam_root
             / "sdks"
-            / "sdkwork-appbase-backend-sdk"
+            / "sdkwork-iam-backend-sdk"
             / "openapi"
-            / "sdkwork-appbase-backend-api.openapi.yaml",
+            / "sdkwork-iam-backend-api.openapi.yaml",
             "sdkwork-commerce-app-sdk": commerce_root
             / "sdks"
             / "sdkwork-commerce-app-sdk"
@@ -751,6 +751,8 @@ class SdkRuntimeStandardizer:
         workspace = str(dependency.get("workspace") or "")
         if workspace.startswith("sdkwork-commerce-"):
             return "commerce"
+        if workspace.startswith("sdkwork-iam-"):
+            return "iam"
         return None
 
     def _remove_dependency_domain_operations(
@@ -782,9 +784,7 @@ class SdkRuntimeStandardizer:
                 if domain != dependency_domain:
                     continue
                 del path_item[method]
-                operation_id = str(operation.get("operationId") or "").strip()
-                suffix = f" {operation_id}" if operation_id else ""
-                removed.append(f"{normalized_method.upper()} {route}{suffix}")
+                removed.append(f"{normalized_method.upper()} {route}")
             if not any(self._is_openapi_method(str(item).lower()) for item in path_item):
                 del paths[path_key]
         return sorted(removed)

@@ -191,6 +191,7 @@ class FrontendFieldAudit:
 
         routes = contract.get("routes", [])
         route_tables: dict[str, set[str]] = {}
+        route_dependency_owned: dict[str, bool] = {}
         if isinstance(routes, list):
             for route_entry in routes:
                 if not isinstance(route_entry, dict):
@@ -201,6 +202,10 @@ class FrontendFieldAudit:
                     route_tables[route] = {
                         table for table in required_tables if isinstance(table, str)
                     }
+                    route_dependency_owned[route] = (
+                        route_entry.get("dependency_owned") is True
+                        and isinstance(route_entry.get("dependency_sdk_family"), str)
+                    )
 
         expected: dict[str, list[str]] = {}
         messages: list[str] = []
@@ -242,11 +247,12 @@ class FrontendFieldAudit:
                 else:
                     messages.append(f"frontend model {key} must declare non-empty data_sources or file_targets")
             elif valid_data_sources and data_sources and isinstance(route, str) and route in route_tables:
-                for data_source in data_sources:
-                    if data_source not in route_tables[route]:
-                        messages.append(
-                            f"frontend model {key} data_source {data_source} is not declared in route {route} required_tables"
-                        )
+                if not route_dependency_owned.get(route):
+                    for data_source in data_sources:
+                        if data_source not in route_tables[route]:
+                            messages.append(
+                                f"frontend model {key} data_source {data_source} is not declared in route {route} required_tables"
+                            )
             expected[key] = [*fields, *derived_fields]
 
         for key in sorted(actual):

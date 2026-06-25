@@ -138,6 +138,21 @@ impl From<sdkwork_models::CatalogError> for CatalogImportError {
     }
 }
 
+pub(crate) fn load_runtime_model_catalog() -> Result<ModelCatalog, CatalogImportError> {
+    let catalog_root = std::env::var("SDKWORK_MODELS_CATALOG_ROOT")
+        .ok()
+        .map(|value| value.trim().to_owned())
+        .filter(|value| !value.is_empty());
+    load_catalog_root_with_pin(catalog_root.as_deref(), None)
+}
+
+pub(crate) fn runtime_pricing_dictionary_rows(
+) -> Result<BundledPricingDictionaryRows, CatalogImportError> {
+    Ok(bundled_pricing_dictionary_rows(
+        &load_runtime_model_catalog()?,
+    ))
+}
+
 pub(crate) fn load_catalog_root_with_pin(
     catalog_root: Option<&str>,
     catalog_version: Option<&str>,
@@ -1528,8 +1543,7 @@ pub(crate) fn bundled_pricing_dictionary_rows(
             if !public_model_keys.contains(&model_catalog_key) {
                 continue;
             }
-            let pricing_catalog_key =
-                pricing_catalog_key(&pricing.vendor_code, &pricing.model_id);
+            let pricing_catalog_key = pricing_catalog_key(&pricing.vendor_code, &pricing.model_id);
             for price in &pricing.prices {
                 prices.push(crate::infrastructure::sql::rows::ModelPriceRow {
                     catalog_key: pricing_catalog_key.clone(),

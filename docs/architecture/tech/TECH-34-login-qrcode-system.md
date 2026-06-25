@@ -31,7 +31,7 @@ client.oauth.sessions.scans.create(sessionKey, body)
 client.oauth.sessions.passwords.create(sessionKey, body)
 ```
 
-Backend/admin OAuth configuration is owned by appbase backend APIs under `/backend/v3/api/iam/oauth/*`. Claw Router admin pages must call `@sdkwork/appbase-backend-sdk` through the existing appbase SDK boundary, for example `client.iam.oauth.resourceAccounts.*`, `client.iam.oauth.operationalResources.*`, and `client.iam.oauth.webhookConfigs.*`.
+Backend/admin OAuth configuration is owned by appbase backend APIs under `/backend/v3/api/iam/oauth/*`. Claw Router admin pages must call `@sdkwork/iam-backend-sdk` through the existing appbase SDK boundary, for example `client.iam.oauth.resourceAccounts.*`, `client.iam.oauth.operationalResources.*`, and `client.iam.oauth.webhookConfigs.*`.
 
 All operation ids follow `API_SPEC`: dotted lowerCamel resource-tree ids such as `oauth.sessions.create`, `oauth.sessions.scans.create`, and backend `iam.oauth.resourceAccounts.create`. URL query names use lower snake case; JSON fields use lowerCamelCase.
 
@@ -117,7 +117,7 @@ Appbase side:
 - `sdkwork-appbase` OAuth app-api routes under `/app/v3/api/oauth/*`
 - `sdkwork-appbase` provider callback ingress under `/iam/v3/api/oauth/provider_callbacks/*`
 - `sdkwork-appbase` backend-api management routes under `/backend/v3/api/iam/oauth/*`
-- generated `@sdkwork/appbase-app-sdk` and `@sdkwork/appbase-backend-sdk`
+- generated `@sdkwork/iam-app-sdk` and `@sdkwork/iam-backend-sdk`
 
 Related standards and plans:
 

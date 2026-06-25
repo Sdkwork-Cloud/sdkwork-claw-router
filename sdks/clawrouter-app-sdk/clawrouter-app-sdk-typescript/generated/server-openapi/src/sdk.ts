@@ -4,7 +4,6 @@ import type { AuthTokenManager } from '@sdkwork/sdk-common';
 
 import { AiApi, createAiApi } from './api/ai';
 import { ChatApi, createChatApi } from './api/chat';
-import { IamApi, createIamApi } from './api/iam';
 import { NotificationApi, createNotificationApi } from './api/notification';
 import { RuntimeApi, createRuntimeApi } from './api/runtime';
 import { SitesApi, createSitesApi } from './api/sites';
@@ -14,7 +13,6 @@ export class SdkworkAppClient {
 
   public readonly ai: AiApi;
   public readonly chat: ChatApi;
-  public readonly iam: IamApi;
   public readonly notification: NotificationApi;
   public readonly runtime: RuntimeApi;
   public readonly sites: SitesApi;
@@ -24,8 +22,6 @@ export class SdkworkAppClient {
     this.ai = createAiApi(this.httpClient);
 
     this.chat = createChatApi(this.httpClient);
-
-    this.iam = createIamApi(this.httpClient);
 
     this.notification = createNotificationApi(this.httpClient);
 

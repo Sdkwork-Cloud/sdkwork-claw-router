@@ -154,6 +154,8 @@ class FrontendOperationAudit:
     )
     AGENT_DEPENDENCY_DOMAINS = frozenset({"agent"})
     AGENT_BACKEND_SDK_PATTERN = re.compile(r"\bgetSdkworkAgentBackendSdkClient\s*\(")
+    PROMPTS_DEPENDENCY_DOMAINS = frozenset({"prompts"})
+    PROMPTS_BACKEND_SDK_PATTERN = re.compile(r"\bgetSdkworkPromptsBackendSdkClient\s*\(")
     DRIVE_DEPENDENCY_DOMAINS = frozenset({"drive"})
     DRIVE_APP_SDK_PATTERN = re.compile(r"\bgetSdkworkDriveAppSdkClient\s*\(")
     DRIVE_BACKEND_SDK_PATTERN = re.compile(
@@ -681,6 +683,8 @@ class FrontendOperationAudit:
             )
         if self._is_agent_dependency_operation(sdk_domain=sdk_domain, source_operation=source_operation):
             return self.AGENT_BACKEND_SDK_PATTERN.search(source_text) is not None
+        if self._is_prompts_dependency_operation(sdk_domain=sdk_domain, source_operation=source_operation):
+            return self.PROMPTS_BACKEND_SDK_PATTERN.search(source_text) is not None
         if self._is_drive_dependency_operation(sdk_domain=sdk_domain, source_operation=source_operation):
             if api_surface == "backend":
                 return self.DRIVE_BACKEND_SDK_PATTERN.search(source_text) is not None
@@ -803,6 +807,21 @@ class FrontendOperationAudit:
     def _is_agent_dependency_domain(self, sdk_domain: Any) -> bool:
         return isinstance(sdk_domain, str) and sdk_domain in self.AGENT_DEPENDENCY_DOMAINS
 
+    def _is_prompts_dependency_domain(self, sdk_domain: Any) -> bool:
+        return isinstance(sdk_domain, str) and sdk_domain in self.PROMPTS_DEPENDENCY_DOMAINS
+
+    def _is_prompts_dependency_operation(self, *, sdk_domain: Any, source_operation: dict[str, Any] | None) -> bool:
+        if not isinstance(source_operation, dict):
+            return False
+        if source_operation.get("operation_scope") == "app_shell":
+            return False
+        if self._is_prompts_dependency_domain(sdk_domain):
+            return True
+        if isinstance(sdk_domain, str) and sdk_domain:
+            return False
+        api_path = source_operation.get("api_path")
+        return isinstance(api_path, str) and api_path.startswith("/backend/v3/api/prompts")
+
     def _is_agent_dependency_operation(self, *, sdk_domain: Any, source_operation: dict[str, Any] | None) -> bool:
         if self._is_agent_dependency_domain(sdk_domain):
             return True
@@ -907,6 +926,11 @@ class FrontendOperationAudit:
             return (
                 f"frontend operation {key} must use getSdkworkAgentBackendSdkClient "
                 f"for {api_surface} api_surface"
+            )
+        if self._is_prompts_dependency_operation(sdk_domain=sdk_domain, source_operation=source_operation):
+            return (
+                f"frontend operation {key} must use getSdkworkPromptsBackendSdkClient "
+                f"for prompts dependency {api_surface} api_surface"
             )
         if self._is_drive_dependency_operation(sdk_domain=sdk_domain, source_operation=source_operation):
             if api_surface == "backend":

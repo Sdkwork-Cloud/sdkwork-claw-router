@@ -9,11 +9,11 @@
 
 ```text
 Rust-first Modular Runtime
-  + Java-compatible API Contract
+  + Stable API Contract
   + Generated SDK Boundary
 ```
 
-这意味着 Rust 是 gateway、app-api、admin-api、worker、product runtime 的主实现语言；Java app/backend 模块是路径、OpenAPI、SDK 和既有实体兼容标准，不是本应用的主运行时。
+这意味着 Rust 是 gateway、app-api、admin-api、worker、product runtime 的主实现语言；Commerce、IAM、Models 等组合模块通过生成 SDK 与安装时 schema 组合接入，不是本应用的主运行时。
 
 ## 2. 检查范围
 
@@ -42,7 +42,7 @@ docs/09-部署架构设计.md
 - `Logback`
 - `Local Spring`
 
-这些词并不是全仓库禁词；它们只在核心架构/技术选型/性能/部署文档中代表错误方向。其它文档仍可描述 Java-compatible API、Java-owned table、Spring AI Plus 既有模块和兼容边界。
+这些词并不是全仓库禁词；它们只在核心架构/技术选型/性能/部署文档中代表错误方向。其它文档仍可描述组合模块 SDK 边界与 `/app/v3/api`、`/backend/v3/api` 稳定路径。
 
 ## 4. 必须出现的 Rust-first 术语
 
@@ -115,7 +115,7 @@ python -B -m unittest tests.test_schema_quality_gate
 ## 6. 维护原则
 
 1. 如果架构方向发生真实变更，必须先修改本守卫和测试，再修改文档。
-2. 如果只是补充 Java-compatible API 或 Java-owned entity 说明，不需要修改守卫。
+2. 如果只是补充组合模块 API 或外部 entity 说明，不需要修改守卫。
 3. 不允许用更模糊的语言绕过守卫，例如把主实现写成“后端主栈”但不说明 Rust services。
 4. 文档必须与实际 Rust workspace 保持一致。
 

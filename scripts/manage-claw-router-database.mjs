@@ -5,6 +5,8 @@ import path from 'node:path';
 import process from 'node:process';
 import { fileURLToPath } from 'node:url';
 
+import { IAM_APPLICATION_BOOTSTRAP_ENV } from './lib/claw-router-topology.mjs';
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const workspaceRoot = path.resolve(__dirname, '..');
@@ -235,6 +237,7 @@ export function createDatabaseManagementPlan({
   const configFile = resolveMaybeRelativePath(settings.configFile, root);
   const stepEnv = {
     ...env,
+    ...IAM_APPLICATION_BOOTSTRAP_ENV,
     SDKWORK_CLAW_DEPLOYMENT_MODE:
       settings.deploymentMode ?? env.SDKWORK_CLAW_DEPLOYMENT_MODE ?? 'server',
     ...(configFile ? { SDKWORK_CLAW_CONFIG_FILE: configFile } : {}),

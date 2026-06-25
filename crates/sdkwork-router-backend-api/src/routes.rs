@@ -45,9 +45,8 @@ use sdkwork_clawrouter_router_service::infrastructure::sql::postgres::{
     PostgresAdminIpRateLimitStore, PostgresAdminMarketingStore, PostgresAdminMcpStore,
     PostgresAdminModelRateLimitStore, PostgresAdminMonitorReadStore,
     PostgresAdminProviderSecretStore, PostgresAdminRecordStore, PostgresAdminServiceNodeStore,
-    PostgresAdminServiceProviderStore, PostgresAdminSiteStore,
-    PostgresAdminTransactionCenterStore, PostgresCatalogLoadError,
-    PostgresGatewayApiKeyCommandStore, PostgresPricingCatalogLoader,
+    PostgresAdminServiceProviderStore, PostgresAdminSiteStore, PostgresAdminTransactionCenterStore,
+    PostgresCatalogLoadError, PostgresGatewayApiKeyCommandStore, PostgresPricingCatalogLoader,
     PostgresRuntimeRegionSettingsStore, PostgresSiteSettingsStore,
 };
 use sdkwork_clawrouter_router_service::infrastructure::sql::sqlite::{
@@ -56,11 +55,10 @@ use sdkwork_clawrouter_router_service::infrastructure::sql::sqlite::{
     SqliteAdminChannelGroupStore, SqliteAdminChannelStore, SqliteAdminDashboardReadStore,
     SqliteAdminFinanceStore, SqliteAdminFirewallRuleStore, SqliteAdminInventoryStore,
     SqliteAdminIpRateLimitStore, SqliteAdminMarketingStore, SqliteAdminMcpStore,
-    SqliteAdminModelRateLimitStore, SqliteAdminMonitorReadStore,
-    SqliteAdminProviderSecretStore, SqliteAdminRecordStore, SqliteAdminServiceNodeStore,
-    SqliteAdminServiceProviderStore, SqliteAdminSiteStore,
-    SqliteAdminTransactionCenterStore, SqliteGatewayApiKeyCommandStore, SqlitePricingCatalogLoader,
-    SqliteRuntimeRegionSettingsStore, SqliteSiteSettingsStore,
+    SqliteAdminModelRateLimitStore, SqliteAdminMonitorReadStore, SqliteAdminProviderSecretStore,
+    SqliteAdminRecordStore, SqliteAdminServiceNodeStore, SqliteAdminServiceProviderStore,
+    SqliteAdminSiteStore, SqliteAdminTransactionCenterStore, SqliteGatewayApiKeyCommandStore,
+    SqlitePricingCatalogLoader, SqliteRuntimeRegionSettingsStore, SqliteSiteSettingsStore,
 };
 use sdkwork_clawrouter_router_service::infrastructure::OsApiKeySecretGenerator;
 use sdkwork_clawrouter_router_service::ports::{
@@ -68,11 +66,11 @@ use sdkwork_clawrouter_router_service::ports::{
     AdminAuthSettingsStore, AdminCatalogStore, AdminChannelGroupStore, AdminChannelStore,
     AdminDashboardReadStore, AdminFinanceStore, AdminFirewallRuleStore, AdminInventoryStore,
     AdminIpRateLimitStore, AdminMarketingStore, AdminMcpStore, AdminModelRateLimitStore,
-    AdminMonitorReadStore, AdminProviderSecretStore, AdminRecordStore,
-    AdminServiceNodeStore, AdminServiceProviderStore, AdminSiteStore, AdminStorageStore,
-    AdminTransactionCenterStore, GatewayApiKeyCommandStore, ModelRankingRefreshStore,
-    ModelRankingsReadModelStore, PricingCatalog, ProviderHealthProbe, RuntimeRegionSettingsStore,
-    SiteSettingsStore, UnconfiguredProviderHealthProbe,
+    AdminMonitorReadStore, AdminProviderSecretStore, AdminRecordStore, AdminServiceNodeStore,
+    AdminServiceProviderStore, AdminSiteStore, AdminStorageStore, AdminTransactionCenterStore,
+    GatewayApiKeyCommandStore, ModelRankingRefreshStore, ModelRankingsReadModelStore,
+    PricingCatalog, ProviderHealthProbe, RuntimeRegionSettingsStore, SiteSettingsStore,
+    UnconfiguredProviderHealthProbe,
 };
 use sdkwork_models_catalog_repository_sqlx::{
     PostgresAdminAiResourceStore as CatalogPostgresAdminAiResourceStore,
@@ -82,7 +80,7 @@ use sdkwork_models_catalog_repository_sqlx::{
     SqliteModelRankingRefreshStore, SqliteModelRankingsReadStore,
 };
 use sdkwork_models_contract_service::{AdminAiResourceStore, ModelCatalogAdminStore};
-use sdkwork_router_catalog_backend_api::{
+use sdkwork_router_models_catalog_backend_api::{
     admin_ai_resource_router_with_store, admin_model_catalog_router,
     admin_model_catalog_router_with_api_key_hasher, admin_model_management_router_with_store,
     admin_model_rankings_router, admin_model_rankings_router_with_read_store,
@@ -274,10 +272,7 @@ fn is_commerce_dependency_contract_path(path: &str) -> bool {
 }
 
 fn is_drive_dependency_contract_path(path: &str) -> bool {
-    const DRIVE_BACKEND_PREFIXES: &[&str] = &[
-        "/backend/v3/api/drive/",
-        "/backend/v3/api/storage/",
-    ];
+    const DRIVE_BACKEND_PREFIXES: &[&str] = &["/backend/v3/api/drive/", "/backend/v3/api/storage/"];
 
     DRIVE_BACKEND_PREFIXES
         .iter()
@@ -1552,6 +1547,11 @@ pub async fn router_from_env() -> Result<Router, ProductCatalogRouterError> {
     let config = database_config_from_env_for_startup(runtime_toml.as_ref())?;
     let startup_install_mode = StartupInstallMode::from_env_or_runtime_toml(runtime_toml.as_ref())
         .map_err(ProductCatalogRouterError::Config)?;
+    sdkwork_claw_config::ensure_production_startup_install_policy(
+        runtime_toml.as_ref(),
+        startup_install_mode,
+    )
+    .map_err(ProductCatalogRouterError::Config)?;
     let api_key_config = ApiKeySecurityConfig::from_env_or_runtime_toml(runtime_toml.as_ref())
         .map_err(ProductCatalogRouterError::Config)?;
     let trusted_subject_config =

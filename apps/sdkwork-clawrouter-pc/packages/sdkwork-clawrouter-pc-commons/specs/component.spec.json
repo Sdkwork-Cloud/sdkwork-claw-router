@@ -189,14 +189,14 @@
         }
       },
       {
-        "sdkFamily": "sdkwork-appbase-app-sdk",
-        "packageName": "@sdkwork/appbase-app-sdk",
+        "sdkFamily": "sdkwork-iam-app-sdk",
+        "packageName": "@sdkwork/iam-app-sdk",
         "surface": "app-api",
         "apiPrefix": "/app/v3/api",
         "sourceExport": "./sdk-clients",
         "factory": "createSdkworkAppbaseAppSdkClient",
         "getter": "getSdkworkAppbaseAppSdkClient",
-        "dependencyApiSurface": "sdkwork-appbase-app-sdk",
+        "dependencyApiSurface": "sdkwork-iam-app-sdk",
         "runtimeIntegration": {
           "mode": "external-service",
           "sameOriginAllowed": false,
@@ -206,14 +206,14 @@
         }
       },
       {
-        "sdkFamily": "sdkwork-appbase-backend-sdk",
-        "packageName": "@sdkwork/appbase-backend-sdk",
+        "sdkFamily": "sdkwork-iam-backend-sdk",
+        "packageName": "@sdkwork/iam-backend-sdk",
         "surface": "backend-api",
         "apiPrefix": "/backend/v3/api",
         "sourceExport": "./sdk-clients",
         "factory": "createSdkworkAppbaseBackendSdkClient",
         "getter": "getSdkworkAppbaseBackendSdkClient",
-        "dependencyApiSurface": "sdkwork-appbase-backend-sdk",
+        "dependencyApiSurface": "sdkwork-iam-backend-sdk",
         "runtimeIntegration": {
           "mode": "external-service",
           "sameOriginAllowed": false,

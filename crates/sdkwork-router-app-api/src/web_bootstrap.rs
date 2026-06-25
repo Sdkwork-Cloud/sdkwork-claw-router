@@ -1,7 +1,7 @@
 use std::sync::Arc;
 
 use axum::Router;
-use sdkwork_claw_config::{AppSessionConfig, DatabaseConfig};
+use sdkwork_claw_config::{AppSessionConfig, DatabaseConfig, DeploymentMode};
 use sdkwork_claw_http::ClawRouterWebRequestContextResolver;
 use sdkwork_clawrouter_router_service::infrastructure::{
     tenant_signing_key_store_for_database_config, TenantSigningKeyStoreWebResolver,
@@ -76,9 +76,15 @@ pub async fn claw_web_resolver_from_env(
                 ));
             }
             Err(error) => {
+                if DeploymentMode::from_env().is_production_like() {
+                    panic!(
+                        "tenant signing key store is required for production-like deployments ({})",
+                        error
+                    );
+                }
                 tracing::warn!(
                     %error,
-                    "tenant signing key resolver unavailable; web framework falls back to legacy app session secret"
+                    "tenant signing key resolver unavailable in non-production deployment; web framework falls back to legacy app session secret"
                 );
             }
         }

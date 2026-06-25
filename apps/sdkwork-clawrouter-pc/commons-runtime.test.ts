@@ -364,13 +364,13 @@ test("sdk clients use a static IAM runtime reset dependency so Vite can chunk th
   assert.doesNotMatch(source, /await import\('\.\/iam-runtime\.ts'\)/);
   assert.doesNotMatch(
     iamRuntimeSource,
-    /VITE_SDKWORK_APP_ID|SDKWORK_IAM_BOOTSTRAP_|SDKWORK_APP_ID/u,
+    /SDKWORK_IAM_BOOTSTRAP_|readClawRouterRuntimeEnv\('SDKWORK_APP_ID'\)/u,
     "Claw Router IAM runtime must not read runtime identity scope from bootstrap env variables.",
   );
   assert.match(
     iamRuntimeSource,
-    /CLAW_ROUTER_IAM_RUNTIME_APP_ID\s*=\s*['"]sdkwork-clawrouter['"]/u,
-    "Claw Router IAM runtime must use the compile-time manifest app identifier.",
+    /CLAW_ROUTER_IAM_RUNTIME_APP_ID[\s\S]*?readClawRouterRuntimeEnv\('VITE_SDKWORK_APP_ID'\)[\s\S]*?\|\|\s*['"]sdkwork-clawrouter['"]/u,
+    "Claw Router IAM runtime must resolve app id from manifest-derived VITE_SDKWORK_APP_ID with manifest fallback.",
   );
 });
 
@@ -433,10 +433,11 @@ test("credential entry token preparation restores bootstrap access token over st
       expiresAt: new Date(Date.now() + 3600_000).toISOString(),
     });
 
+    const tokenManager = getClawRouterGlobalTokenManager();
     prepareClawRouterCredentialEntryTokens();
 
-    assert.equal(getClawRouterGlobalTokenManager().getAccessToken(), "bootstrap-access-token");
-    assert.equal(getClawRouterGlobalTokenManager().getAuthToken(), undefined);
+    assert.equal(tokenManager.getAccessToken(), "bootstrap-access-token");
+    assert.equal(tokenManager.getAuthToken(), undefined);
   } finally {
     if (previousAccessToken === undefined) {
       delete process.env.SDKWORK_ACCESS_TOKEN;
@@ -1199,7 +1200,7 @@ test("createAppSession stores dual IAM tokens returned as generated SDK data obj
             deploymentMode: "saas",
             environment: "dev",
             organizationId: "org-2026",
-            permissionScope: ["clawrouter:console"],
+            permissionScope: ["clawrouter.console.access"],
             sessionId: "session-2026",
             tenantId: "tenant-2026",
             userId: "user-2026",
@@ -1322,6 +1323,26 @@ test("revokeAppSession deletes the persisted server session before clearing loca
   }
 });
 
+function portalAdminSessionPayload(
+  accessToken: string,
+  authToken: string,
+  sessionId: string,
+  options: { permissionScope?: string[] } = {},
+) {
+  return {
+    accessToken,
+    authToken,
+    sessionId,
+    expiresAt: new Date(Date.now() + 3600_000).toISOString(),
+    context: {
+      tenantId: "tenant-admin",
+      userId: "user-admin",
+      sessionId,
+      permissionScope: options.permissionScope ?? ["clawrouter.admin.access", "clawrouter.system.read"],
+    },
+  };
+}
+
 test("portal admin access check denies non-admin sessions and clears expired sessions", async () => {
   for (const [adminStatus, expectedState, shouldKeepTokens] of [
     [200, "allowed", true],
@@ -1341,12 +1362,7 @@ test("portal admin access check denies non-admin sessions and clears expired ses
         return new Response(
           JSON.stringify({
             code: "2000",
-            data: {
-              accessToken: `access-${adminStatus}`,
-              authToken: `auth-${adminStatus}`,
-              sessionId: `session-${adminStatus}`,
-              expiresAt: new Date(Date.now() + 3600_000).toISOString(),
-            },
+            data: portalAdminSessionPayload(`access-${adminStatus}`, `auth-${adminStatus}`, `session-${adminStatus}`),
           }),
           {
             status: 200,
@@ -1411,12 +1427,7 @@ test("portal admin access check allows admin sessions when system status succeed
       return new Response(
         JSON.stringify({
           code: "2000",
-          data: {
-            accessToken: "access-admin",
-            authToken: "auth-admin",
-            sessionId: "session-admin",
-            expiresAt: new Date(Date.now() + 3600_000).toISOString(),
-          },
+          data: portalAdminSessionPayload("access-admin", "auth-admin", "session-admin"),
         }),
         {
           status: 200,
@@ -1475,12 +1486,11 @@ test("portal admin access check returns error when system status request stalls"
       return new Response(
         JSON.stringify({
           code: "2000",
-          data: {
-            accessToken: "access-admin-stalled-status",
-            authToken: "auth-admin-stalled-status",
-            sessionId: "session-admin-stalled-status",
-            expiresAt: new Date(Date.now() + 3600_000).toISOString(),
-          },
+          data: portalAdminSessionPayload(
+            "access-admin-stalled-status",
+            "auth-admin-stalled-status",
+            "session-admin-stalled-status",
+          ),
         }),
         {
           status: 200,
@@ -1546,6 +1556,7 @@ test("portal admin access check uses the generated backend SDK system status met
   );
 
   assert.match(source, /system\.installation\.status\.retrieve\(\)/);
+  assert.match(source, /hasPortalAdminSurfaceAccess/);
   assert.doesNotMatch(source, /system\.dashboardAdminOverviewRetrieve\(\)/);
   assert.doesNotMatch(source, /system\.dashboard\.admin\.overview\.retrieve/);
 });

@@ -573,15 +573,15 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
         "provider route snapshot query must require an active channel for callable routing"
     );
     assert!(
-        PricingCatalogSql::load_provider_routes().contains("c.tenant_id = m.tenant_id")
+        PricingCatalogSql::load_provider_routes().contains("c.tenant_id = scope.tenant_id")
             && PricingCatalogSql::load_provider_routes()
-                .contains("c.organization_id = m.organization_id"),
-        "provider route snapshot query must not combine models and channel accounts across tenant boundaries"
+                .contains("c.organization_id = scope.organization_id"),
+        "provider route snapshot query must not combine resources and channel accounts across tenant boundaries"
     );
     assert!(
-        PricingCatalogSql::load_provider_routes().contains("FROM ai_model m")
-            && PricingCatalogSql::load_provider_routes().contains("JOIN channel_resource_scope scope"),
-        "provider route snapshot query must drive model-scoped routing from catalog and account resources"
+        PricingCatalogSql::load_provider_routes().contains("FROM channel_resource_scope scope")
+            && PricingCatalogSql::load_provider_routes().contains("JOIN ai_resource r"),
+        "provider route snapshot query must drive model-scoped routing from gateway-owned resources without sdkwork-models SoR tables"
     );
     assert!(
         PricingCatalogSql::load_provider_routes().contains("secret_ref"),

@@ -16,6 +16,7 @@ import {
   type ThemePreference,
 } from './themePreference';
 import { RequireAdminSession, RequirePortalSession, PortalAuthenticatedAuthRouteGuard } from './auth/protectedPortalRoutes';
+import { PortalErrorBoundary } from '@sdkwork/clawrouter-pc-commons';
 import {
   SdkworkCommerceHostNavbarActions,
 } from '@sdkwork/commerce-pc-host';
@@ -181,7 +182,7 @@ export default function App() {
             <Route path="/auth/*" element={<PortalAuthenticatedAuthRouteGuard><ClawRouterAuthRoutes /></PortalAuthenticatedAuthRouteGuard>} />
 
             {/* Console Routes - standalone structure with global Navbar */}
-            <Route path="/console" element={<RequirePortalSession><ConsoleLayout isDark={isDark} toggleTheme={toggleTheme} theme={theme} setTheme={setTheme} themeColor={themeColor} setThemeColor={setThemeColor} navbarAuthenticatedActionsStart={<SdkworkCommerceHostNavbarActions routePrefix="/console" />} /></RequirePortalSession>}>
+            <Route path="/console" element={<PortalErrorBoundary><RequirePortalSession><ConsoleLayout isDark={isDark} toggleTheme={toggleTheme} theme={theme} setTheme={setTheme} themeColor={themeColor} setThemeColor={setThemeColor} navbarAuthenticatedActionsStart={<SdkworkCommerceHostNavbarActions routePrefix="/console" />} /></RequirePortalSession></PortalErrorBoundary>}>
               <Route index element={<Navigate to="/console/dashboard" replace />} />
               <Route path="dashboard" element={<DashboardView />} />
               <Route path="usage" element={<UsageView />} />
@@ -197,7 +198,7 @@ export default function App() {
             </Route>
 
             {/* Admin Routes */}
-            <Route path="/admin" element={<RequireAdminSession><AdminLayout isDark={isDark} toggleTheme={toggleTheme} /></RequireAdminSession>}>
+            <Route path="/admin" element={<PortalErrorBoundary><RequireAdminSession><AdminLayout isDark={isDark} toggleTheme={toggleTheme} /></RequireAdminSession></PortalErrorBoundary>}>
               <Route index element={<Navigate to="/admin/dashboard" replace />} />
               <Route path="dashboard" element={<DashboardAdmin />} />
               <Route path="analytics" element={<AnalyticsAdmin />} />

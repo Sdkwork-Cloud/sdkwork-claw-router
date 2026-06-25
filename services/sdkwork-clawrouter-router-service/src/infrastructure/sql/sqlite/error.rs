@@ -2,6 +2,7 @@ use std::error::Error;
 use std::fmt::{Display, Formatter};
 
 use crate::domain::DomainError;
+use crate::infrastructure::sql::model_catalog_import::CatalogImportError;
 
 #[derive(Debug)]
 pub enum SqlCatalogLoadError {
@@ -10,6 +11,7 @@ pub enum SqlCatalogLoadError {
         query: &'static str,
         source: sqlx::Error,
     },
+    Dictionary(CatalogImportError),
     Domain(DomainError),
 }
 
@@ -24,7 +26,14 @@ impl Display for SqlCatalogLoadError {
                 )
             }
             Self::Domain(error) => write!(f, "catalog row mapping failed: {error}"),
+            Self::Dictionary(error) => write!(f, "catalog dictionary load failed: {error}"),
         }
+    }
+}
+
+impl From<CatalogImportError> for SqlCatalogLoadError {
+    fn from(value: CatalogImportError) -> Self {
+        Self::Dictionary(value)
     }
 }
 

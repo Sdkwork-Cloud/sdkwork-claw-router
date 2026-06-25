@@ -7,7 +7,7 @@
 
 **Architecture:** Keep low-level split capability only behind tests or explicit internal validation, while changing public `dev` entrypoints, templates, and docs to single-port-first behavior. Product developers should see one entry port by default.
 
-**Tech Stack:** Node.js scripts, pnpm workspace scripts, TOML runtime config, Rust gateway runtime tests, Markdown docs.
+**Tech Stack:** Node.js scripts, package.json script surface, TOML runtime config, Rust gateway runtime tests, Markdown docs.
 
 ---
 

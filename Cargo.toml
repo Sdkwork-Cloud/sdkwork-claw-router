@@ -177,18 +177,18 @@ sdkwork_models_contract_service = { package = "sdkwork-models-contract-service",
 sdkwork_models_database_bootstrap = { package = "sdkwork-models-database-bootstrap", path = "data/sdkwork-models/crates/sdkwork-models-database-bootstrap" }
 sdkwork_models_catalog_repository_sqlx = { package = "sdkwork-models-catalog-repository-sqlx", path = "data/sdkwork-models/crates/sdkwork-models-catalog-repository-sqlx" }
 sdkwork_models_catalog_service = { package = "sdkwork-models-catalog-service", path = "data/sdkwork-models/crates/sdkwork-models-catalog-service" }
-sdkwork_router_catalog_app_api = { package = "sdkwork-router-catalog-app-api", path = "data/sdkwork-models/crates/sdkwork-router-catalog-app-api" }
-sdkwork_router_catalog_backend_api = { package = "sdkwork-router-catalog-backend-api", path = "data/sdkwork-models/crates/sdkwork-router-catalog-backend-api" }
+sdkwork_router_models_catalog_app_api = { package = "sdkwork-router-models-catalog-app-api", path = "data/sdkwork-models/crates/sdkwork-router-catalog-app-api" }
+sdkwork_router_models_catalog_backend_api = { package = "sdkwork-router-models-catalog-backend-api", path = "data/sdkwork-models/crates/sdkwork-router-catalog-backend-api" }
 sdkwork-id-core = { path = "../sdkwork-id/crates/sdkwork-id-core" }
-sdkwork_iam_context_service = { package = "sdkwork-iam-context-service", path = "../sdkwork-appbase/crates/sdkwork-iam-context-service" }
-sdkwork_iam_directory_repository_sqlx = { package = "sdkwork-iam-directory-repository-sqlx", path = "../sdkwork-appbase/crates/sdkwork-iam-directory-repository-sqlx" }
+sdkwork_iam_context_service = { package = "sdkwork-iam-context-service", path = "../sdkwork-iam/crates/sdkwork-iam-context-service" }
+sdkwork_iam_directory_repository_sqlx = { package = "sdkwork-iam-directory-repository-sqlx", path = "../sdkwork-iam/crates/sdkwork-iam-directory-repository-sqlx" }
 sdkwork_commerce_core = { package = "sdkwork-commerce-contract-service", path = "../sdkwork-commerce/crates/sdkwork-commerce-contract-service" }
 sdkwork_commerce_storage_sqlx = { package = "sdkwork-commerce-storage-repository-sqlx", path = "../sdkwork-commerce/crates/sdkwork-commerce-storage-repository-sqlx" }
 sdkwork_commerce_bootstrap = { package = "sdkwork-commerce-bootstrap-manifest", path = "../sdkwork-commerce/crates/sdkwork-commerce-bootstrap-manifest" }
-sdkwork-appbase-iam-bootstrap = { path = "../sdkwork-appbase/crates/sdkwork-appbase-iam-bootstrap" }
-sdkwork_commerce_membership_sqlx = { package = "sdkwork-commerce-membership-repository-sqlx", path = "../sdkwork-commerce/crates/sdkwork-commerce-membership-repository-sqlx" }
-sdkwork_commerce_payment = { package = "sdkwork-commerce-payment-service", path = "../sdkwork-commerce/crates/sdkwork-commerce-payment-service" }
-sdkwork_commerce_invoice = { package = "sdkwork-commerce-invoice-service", path = "../sdkwork-commerce/crates/sdkwork-commerce-invoice-service" }
+sdkwork-iam-bootstrap = { package = "sdkwork-iam-bootstrap", path = "../sdkwork-iam/crates/sdkwork-iam-bootstrap" }
+sdkwork_commerce_membership_sqlx = { package = "sdkwork-commerce-membership-repository-sqlx", path = "../sdkwork-membership/crates/sdkwork-commerce-membership-repository-sqlx" }
+sdkwork_commerce_payment = { package = "sdkwork-commerce-payment-service", path = "../sdkwork-payment/crates/sdkwork-commerce-payment-service" }
+sdkwork_commerce_invoice = { package = "sdkwork-commerce-invoice-service", path = "../sdkwork-invoice/crates/sdkwork-commerce-invoice-service" }
 sdkwork-sdk-generator-client = { path = "../sdkwork-sdk-generator/rust" }
 sdkwork_content_documents_sdk_reference = { package = "sdkwork-content-documents-sdk-reference", path = "../sdkwork-documents/crates/sdkwork-content-documents-sdk-reference" }
 
@@ -197,8 +197,9 @@ sdkwork-web-core = { path = "../sdkwork-web-framework/crates/sdkwork-web-core" }
 sdkwork-web-contract = { path = "../sdkwork-web-framework/crates/sdkwork-web-contract" }
 sdkwork-web-axum = { path = "../sdkwork-web-framework/crates/sdkwork-web-axum" }
 sdkwork-web-store-redis = { path = "../sdkwork-web-framework/crates/sdkwork-web-store-redis" }
-sdkwork-iam-web-adapter = { path = "../sdkwork-appbase/crates/sdkwork-iam-web-adapter" }
-sdkwork-router-iam-app-api = { path = "../sdkwork-appbase/crates/sdkwork-router-iam-app-api" }
+sdkwork-iam-web-adapter = { path = "../sdkwork-iam/crates/sdkwork-iam-web-adapter" }
+sdkwork-iam-embedded-application-bootstrap = { path = "../sdkwork-iam/crates/sdkwork-iam-embedded-application-bootstrap" }
+sdkwork-router-iam-app-api = { path = "../sdkwork-iam/crates/sdkwork-router-iam-app-api" }
 
 # SDKWork database dependencies
 sdkwork-database-config = { path = "../sdkwork-database/crates/sdkwork-database-config" }

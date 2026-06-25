@@ -1,8 +1,8 @@
 use std::sync::Arc;
 
 use axum::Router;
-use sdkwork_claw_config::{AppSessionConfig, DeploymentMode};
 use sdkwork_claw_config::DatabaseConfig as ClawDatabaseConfig;
+use sdkwork_claw_config::{AppSessionConfig, DeploymentMode};
 use sdkwork_clawrouter_router_service::application::{EntityUuidGenerator, PasswordHasher};
 use sdkwork_clawrouter_router_service::ports::{AppAuthStore, AppSessionEventStore};
 use sdkwork_database_config::{
@@ -21,7 +21,7 @@ pub(crate) async fn merge_appbase_oauth_device_authorization_router(
     pool: DatabasePool,
     password_session_bridge: Option<Arc<dyn PasswordSessionBridge>>,
 ) -> Result<Router, String> {
-    match sdkwork_router_iam_app_api::build_sdkwork_appbase_oauth_device_authorization_router_with_pool_and_password_session_bridge(
+    match sdkwork_router_iam_app_api::build_sdkwork_iam_oauth_device_authorization_router_with_pool_and_password_session_bridge(
         pool,
         password_session_bridge,
     )

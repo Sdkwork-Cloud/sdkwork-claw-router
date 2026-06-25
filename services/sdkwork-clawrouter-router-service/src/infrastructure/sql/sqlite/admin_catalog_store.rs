@@ -6,8 +6,8 @@ use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 use crate::application::c_category_type_scope;
 use crate::domain::{DomainError, DomainResult};
 use crate::infrastructure::sql::sql_admin_product_center::{
-    drive_uri_from_resource, is_missing_table_error, is_unique_constraint_error,
-    sql_error_message, stable_product_center_id,
+    drive_uri_from_resource, is_missing_table_error, is_unique_constraint_error, sql_error_message,
+    stable_product_center_id,
 };
 use crate::ports::{
     AdminAttributeMutationCommand, AdminCatalogCollection, AdminCatalogFuture,

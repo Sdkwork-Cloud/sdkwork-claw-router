@@ -1,6 +1,6 @@
 # sdkwork-clawrouter
 
-Commercial AI gateway and console workspace for Spring AI Plus.
+Commercial AI gateway and console workspace for SDKWork Claw Router.
 
 This workspace contains the Rust product services, the React portal, generated
 TypeScript SDKs, schema/OpenAPI generators, and delivery guardrails for the

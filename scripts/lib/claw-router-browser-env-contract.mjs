@@ -47,6 +47,7 @@ export const CLAW_ROUTER_BROWSER_DEV_PROXY_LEGACY_ALIASES = Object.freeze({
 });
 
 export const CLAW_ROUTER_BROWSER_DEVELOPMENT_DEFAULT_VITE_ENV = Object.freeze({
+  VITE_SDKWORK_APP_ID: 'sdkwork-clawrouter',
   VITE_API_BASE_URL: '/v1',
   VITE_CLAWROUTER_OPEN_API_BASE_URL: '/v1',
   VITE_CLAWROUTER_APP_API_BASE_URL: '/app/v3/api',
@@ -63,6 +64,7 @@ export const CLAW_ROUTER_BROWSER_DEVELOPMENT_ENV_KEY_ORDER = Object.freeze([
   CLAW_ROUTER_BROWSER_DEV_PROXY_ENV_KEYS.openApi,
   CLAW_ROUTER_BROWSER_DEV_PROXY_ENV_KEYS.backendApi,
   CLAW_ROUTER_BROWSER_DEV_PROXY_ENV_KEYS.appApi,
+  'VITE_SDKWORK_APP_ID',
   'VITE_API_BASE_URL',
   'VITE_CLAWROUTER_OPEN_API_BASE_URL',
   'VITE_CLAWROUTER_APP_API_BASE_URL',
@@ -90,6 +92,12 @@ export const CLAW_ROUTER_BROWSER_DEVELOPMENT_ENV_SECTIONS = Object.freeze([
     ],
   },
   {
+    beforeKey: 'VITE_SDKWORK_APP_ID',
+    lines: [
+      '# Browser-visible SDKWork application identity from sdkwork.app.config.json app.key.',
+    ],
+  },
+  {
     beforeKey: 'VITE_API_BASE_URL',
     lines: [
       '# Browser-visible SDK base URLs (Vite-inlined in development).',
@@ -111,6 +119,7 @@ export const CLAW_ROUTER_BROWSER_DEVELOPMENT_ENV_KEY_COMMENTS = Object.freeze({
     '# Upstream origin for /backend/v3/api admin SDK routes.',
   [CLAW_ROUTER_BROWSER_DEV_PROXY_ENV_KEYS.appApi]:
     '# Upstream origin for /app/v3/api product SDK routes.',
+  VITE_SDKWORK_APP_ID: '# SDKWork application key from sdkwork.app.config.json.',
   VITE_API_BASE_URL: '# Public API reference and generic SDK root path.',
   VITE_CLAWROUTER_OPEN_API_BASE_URL: '# @sdkwork/clawrouter-open-sdk base URL.',
   VITE_CLAWROUTER_APP_API_BASE_URL: '# @sdkwork/clawrouter-app-sdk base URL.',

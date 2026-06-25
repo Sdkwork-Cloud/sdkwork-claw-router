@@ -286,7 +286,13 @@ class FrontendContractGuardian:
         },
         "drive": {
             "getSdkworkDriveAppSdkClient",
+            "getSdkworkDriveBackendSdkClient",
             "@sdkwork/drive-app-sdk",
+            "@sdkwork/drive-backend-sdk",
+        },
+        "prompts": {
+            "getSdkworkPromptsBackendSdkClient",
+            "@sdkwork/prompts-backend-sdk",
         },
     }
     BUSINESS_API_PREFIXES = ("/app/v3/api", "/backend/v3/api")
@@ -390,8 +396,8 @@ class FrontendContractGuardian:
         {
             "sdkwork-commerce-app-sdk",
             "sdkwork-documents-app-sdk",
-            "sdkwork-appbase-app-sdk",
-            "sdkwork-appbase-backend-sdk",
+            "sdkwork-iam-app-sdk",
+            "sdkwork-iam-backend-sdk",
             "sdkwork-clawrouter-app-sdk",
             "sdkwork-clawrouter-backend-sdk",
         }
@@ -1401,6 +1407,16 @@ class FrontendContractGuardian:
         expected_client = "getClawRouterAppSdkClient" if api_surface == "app" else "getClawRouterBackendSdkClient"
         if dependency_sdk_family == "sdkwork-models-backend-sdk":
             expected_client = "getModelsBackendSdkClient"
+        elif dependency_sdk_family == "sdkwork-models-app-sdk":
+            expected_client = "getModelsAppSdkClient"
+        elif dependency_sdk_family == "sdkwork-drive-backend-sdk":
+            expected_client = "getSdkworkDriveBackendSdkClient"
+        elif dependency_sdk_family == "sdkwork-drive-app-sdk":
+            expected_client = "getSdkworkDriveAppSdkClient"
+        elif dependency_sdk_family == "sdkwork-prompts-backend-sdk":
+            expected_client = "getSdkworkPromptsBackendSdkClient"
+        elif dependency_sdk_family == "sdkwork-agent-backend-sdk":
+            expected_client = "getSdkworkAgentBackendSdkClient"
         if not any(
             self._operation_uses_allowed_sdk_client_boundary(operation, expected_client)
             for operation in matching_operations
@@ -1568,6 +1584,8 @@ class FrontendContractGuardian:
             return "agent"
         if normalized in {"drive"}:
             return "drive"
+        if normalized in {"prompt", "prompts"}:
+            return "prompts"
         return ""
 
     def _resolve_relative_import(self, source_path: Path, import_spec: str) -> Path | None:

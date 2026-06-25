@@ -7,7 +7,7 @@
 
 **Architecture:** Phase 1 starts with pure TypeScript common packages so the domain standard, upload client, service API, SDK generation manifest, SDK wrapper adapter, and tests are independent from any UI or storage backend. Contracts define stable file/upload/drive/storage types; ports define generated-SDK-facing backend orchestration interfaces; API contracts define OpenAPI surfaces; the SDK generation manifest defines stable app/backend SDK targets and artifacts; the SDK adapter defines approved generated-SDK wrapper boundaries for app/backend consumers; the upload client implements standard presigned HTTP transfer; service implements deterministic upload session orchestration, slot policy validation, quota reservation, completion, and binding flows through dependency-injected ports.
 
-**Tech Stack:** TypeScript 6, pnpm workspaces, Vitest, existing `sdkwork-appbase` common package conventions.
+**Tech Stack:** TypeScript 6, monorepo workspaces via PNPM, Vitest, existing `sdkwork-appbase` common package conventions.
 
 ---
 

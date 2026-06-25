@@ -80,12 +80,15 @@ const PORTAL_SOURCE_OPTIMIZE_EXCLUDE = [
   '@sdkwork/documents-app-sdk',
   '@sdkwork/documents-pc-api-reference',
   '@sdkwork/documents-pc-sdk-reference',
-  '@sdkwork/appbase-app-sdk',
-  '@sdkwork/appbase-backend-sdk',
+  '@sdkwork/iam-app-sdk',
+  '@sdkwork/iam-backend-sdk',
   '@sdkwork/drive-app-sdk',
   '@sdkwork/memory-app-sdk',
   '@sdkwork/agent-app-sdk',
   '@sdkwork/agent-backend-sdk',
+  '@sdkwork/prompts-backend-sdk',
+  '@sdkwork/models-backend-sdk',
+  '@sdkwork/models-app-sdk',
   '@sdkwork/utils',
   '@sdkwork/iam-contracts',
   '@sdkwork/iam-runtime',
@@ -507,10 +510,13 @@ export default defineConfig(({mode}) => {
   const configDir = import.meta.dirname;
   const workspaceRoot = path.resolve(configDir, '../..');
   const appbaseRoot = resolvePortalWorkspaceDependencyRoot(configDir, 'sdkwork-appbase');
+  const iamRoot = resolvePortalWorkspaceDependencyRoot(configDir, 'sdkwork-iam');
   const sdkworkDriveRoot = resolvePortalWorkspaceDependencyRoot(configDir, 'sdkwork-drive');
   const sdkworkGenerationsRoot = resolvePortalWorkspaceDependencyRoot(configDir, 'sdkwork-generations');
   const sdkworkMemoryRoot = resolvePortalWorkspaceDependencyRoot(configDir, 'sdkwork-memory');
   const sdkworkKernelRoot = resolvePortalWorkspaceDependencyRoot(configDir, 'sdkwork-kernel');
+  const sdkworkPromptsRoot = resolvePortalWorkspaceDependencyRoot(configDir, 'sdkwork-prompts');
+  const sdkworkModelsRoot = resolvePortalWorkspaceDependencyRoot(configDir, 'sdkwork-models');
   const sdkworkImageRoot = resolvePortalWorkspaceDependencyRoot(configDir, 'sdkwork-image');
   const sdkworkCoreRoot = resolvePortalWorkspaceDependencyRoot(configDir, 'sdkwork-core');
   const sdkworkUiRoot = resolvePortalWorkspaceDependencyRoot(configDir, 'sdkwork-ui');
@@ -539,10 +545,13 @@ export default defineConfig(({mode}) => {
       clawrouterPortalLocalPackageResolver(configDir),
       clawrouterPortalWorkspaceDependencyResolver(configDir, [
         appbaseRoot,
+        iamRoot,
         sdkworkDriveRoot,
         sdkworkGenerationsRoot,
         sdkworkMemoryRoot,
         sdkworkKernelRoot,
+        sdkworkPromptsRoot,
+        sdkworkModelsRoot,
         sdkworkImageRoot,
         sdkworkCoreRoot,
         sdkworkUiRoot,
@@ -569,13 +578,16 @@ export default defineConfig(({mode}) => {
         'react-router',
         'react-router/dom',
         'react-router-dom',
+        'i18next',
+        'i18next-browser-languagedetector',
+        'react-i18next',
       ],
       alias: [
         { find: '@sdkwork/appbase-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/foundation/sdkwork-appbase-pc-react/src/index.ts') },
-        { find: '@sdkwork/auth-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/iam/sdkwork-auth-pc-react/src/index.ts') },
-        { find: '@sdkwork/auth-runtime-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/iam/sdkwork-auth-runtime-pc-react/src/index.ts') },
-        { find: '@sdkwork/appbase-app-sdk', replacement: path.resolve(appbaseRoot, 'sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/index.ts') },
-        { find: '@sdkwork/appbase-backend-sdk', replacement: path.resolve(appbaseRoot, 'sdks/sdkwork-appbase-backend-sdk/sdkwork-appbase-backend-sdk-typescript/generated/server-openapi/src/index.ts') },
+        { find: '@sdkwork/auth-pc-react', replacement: path.resolve(iamRoot, 'apps/sdkwork-iam-pc/packages/sdkwork-auth-pc-react/src/index.ts') },
+        { find: '@sdkwork/auth-runtime-pc-react', replacement: path.resolve(iamRoot, 'apps/sdkwork-iam-pc/packages/sdkwork-auth-runtime-pc-react/src/index.ts') },
+        { find: '@sdkwork/iam-app-sdk', replacement: path.resolve(iamRoot, 'sdks/sdkwork-iam-app-sdk/sdkwork-iam-app-sdk-typescript/generated/server-openapi/src/index.ts') },
+        { find: '@sdkwork/iam-backend-sdk', replacement: path.resolve(iamRoot, 'sdks/sdkwork-iam-backend-sdk/sdkwork-iam-backend-sdk-typescript/generated/server-openapi/src/index.ts') },
         { find: '@sdkwork/clawrouter-app-sdk', replacement: path.resolve(configDir, '../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/index.ts') },
         { find: '@sdkwork/clawrouter-backend-sdk', replacement: path.resolve(configDir, '../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/index.ts') },
         { find: '@sdkwork/clawrouter-open-sdk', replacement: path.resolve(configDir, '../../sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript/generated/server-openapi/src/index.ts') },
@@ -631,18 +643,22 @@ export default defineConfig(({mode}) => {
         { find: '@sdkwork/memory-app-sdk', replacement: path.resolve(sdkworkMemoryRoot, 'sdks/sdkwork-memory-app-sdk/sdkwork-memory-app-sdk-typescript/generated/server-openapi/src/index.ts') },
         { find: '@sdkwork/agent-app-sdk', replacement: path.resolve(sdkworkKernelRoot, 'sdks/sdkwork-agent-app-sdk/sdkwork-agent-app-sdk-typescript/generated/server-openapi/src/index.ts') },
         { find: '@sdkwork/agent-backend-sdk', replacement: path.resolve(sdkworkKernelRoot, 'sdks/sdkwork-agent-backend-sdk/sdkwork-agent-backend-sdk-typescript/generated/server-openapi/src/index.ts') },
+        { find: '@sdkwork/prompts-backend-sdk', replacement: path.resolve(sdkworkPromptsRoot, 'sdks/sdkwork-prompts-backend-sdk/generated/server-openapi/src/index.ts') },
+        { find: '@sdkwork/models-backend-sdk/api/ai', replacement: path.resolve(sdkworkModelsRoot, 'sdks/sdkwork-models-backend-sdk/sdkwork-models-backend-sdk-typescript/generated/server-openapi/src/api/ai.ts') },
+        { find: '@sdkwork/models-backend-sdk', replacement: path.resolve(sdkworkModelsRoot, 'sdks/sdkwork-models-backend-sdk/sdkwork-models-backend-sdk-typescript/generated/server-openapi/src/index.ts') },
+        { find: '@sdkwork/models-app-sdk', replacement: path.resolve(sdkworkModelsRoot, 'sdks/sdkwork-models-app-sdk/sdkwork-models-app-sdk-typescript/generated/server-openapi/src/index.ts') },
         { find: '@sdkwork/host-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/host/sdkwork-host-pc-react/src/index.ts') },
         { find: '@sdkwork/host-tauri-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/host/sdkwork-host-tauri-pc-react/src/index.ts') },
         { find: '@sdkwork/i18n-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/foundation/sdkwork-i18n-pc-react/src/index.ts') },
         { find: '@sdkwork/notification-pc-react/service', replacement: path.resolve(appbaseRoot, 'packages/pc-react/notification/sdkwork-notification-pc-react/src/notificationService.ts') },
         { find: '@sdkwork/notification-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/notification/sdkwork-notification-pc-react/src/index.ts') },
-        { find: '@sdkwork/iam-contracts', replacement: path.resolve(appbaseRoot, 'packages/common/iam/sdkwork-iam-contracts/src/index.ts') },
-        { find: '@sdkwork/iam-core-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/iam/sdkwork-iam-core-pc-react/src/index.ts') },
-        { find: '@sdkwork/iam-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/iam/sdkwork-iam-react/src/index.tsx') },
-        { find: '@sdkwork/iam-runtime', replacement: path.resolve(appbaseRoot, 'packages/common/iam/sdkwork-iam-runtime/src/index.ts') },
-        { find: '@sdkwork/iam-sdk-adapter', replacement: path.resolve(appbaseRoot, 'packages/common/iam/sdkwork-iam-sdk-adapter/src/index.ts') },
-        { find: '@sdkwork/iam-sdk-ports', replacement: path.resolve(appbaseRoot, 'packages/common/iam/sdkwork-iam-sdk-ports/src/index.ts') },
-        { find: '@sdkwork/iam-service', replacement: path.resolve(appbaseRoot, 'packages/common/iam/sdkwork-iam-service/src/index.ts') },
+        { find: '@sdkwork/iam-contracts', replacement: path.resolve(iamRoot, 'apps/sdkwork-iam-common/packages/sdkwork-iam-contracts/src/index.ts') },
+        { find: '@sdkwork/iam-core-pc-react', replacement: path.resolve(iamRoot, 'apps/sdkwork-iam-pc/packages/sdkwork-iam-core-pc-react/src/index.ts') },
+        { find: '@sdkwork/iam-react', replacement: path.resolve(iamRoot, 'apps/sdkwork-iam-pc/packages/sdkwork-iam-react/src/index.tsx') },
+        { find: '@sdkwork/iam-runtime', replacement: path.resolve(iamRoot, 'apps/sdkwork-iam-common/packages/sdkwork-iam-runtime/src/index.ts') },
+        { find: '@sdkwork/iam-sdk-adapter', replacement: path.resolve(iamRoot, 'apps/sdkwork-iam-common/packages/sdkwork-iam-sdk-adapter/src/index.ts') },
+        { find: '@sdkwork/iam-sdk-ports', replacement: path.resolve(iamRoot, 'apps/sdkwork-iam-common/packages/sdkwork-iam-sdk-ports/src/index.ts') },
+        { find: '@sdkwork/iam-service', replacement: path.resolve(iamRoot, 'apps/sdkwork-iam-common/packages/sdkwork-iam-service/src/index.ts') },
         { find: '@sdkwork/runtime-bootstrap', replacement: path.resolve(appbaseRoot, 'packages/common/foundation/sdkwork-runtime-bootstrap/src/index.ts') },
         { find: '@sdkwork/sdk-common', replacement: path.resolve(configDir, 'node_modules/@sdkwork/sdk-common/dist/index.js') },
         { find: '@sdkwork/ui-pc-react/components/ui/button', replacement: path.resolve(sdkworkUiRoot, 'sdkwork-ui-pc-react/src/components/ui/button.tsx') },
@@ -668,11 +684,14 @@ export default defineConfig(({mode}) => {
           configDir,
           workspaceRoot,
           appbaseRoot,
+          iamRoot,
           sdkworkCoreRoot,
           sdkworkDriveRoot,
           sdkworkGenerationsRoot,
           sdkworkMemoryRoot,
         sdkworkKernelRoot,
+          sdkworkPromptsRoot,
+          sdkworkModelsRoot,
           sdkworkImageRoot,
           sdkworkUiRoot,
           sdkworkCommerceRoot,
@@ -707,6 +726,7 @@ export default defineConfig(({mode}) => {
             }
             const normalizedId = id.replaceAll('\\', '/');
             const normalizedAppbaseRoot = normalizePath(appbaseRoot);
+            const normalizedIamRoot = normalizePath(iamRoot);
             const normalizedSdkworkCoreRoot = normalizePath(sdkworkCoreRoot);
             const normalizedSdkworkUiRoot = normalizePath(sdkworkUiRoot);
             const normalizedClawRouterSdkRoot = normalizePath(path.resolve(configDir, '../../sdks'));
@@ -753,8 +773,8 @@ export default defineConfig(({mode}) => {
               return packageName;
             }
             if (
-              normalizedId.startsWith(`${normalizedAppbaseRoot}/packages/pc-react/iam/`)
-              || normalizedId.startsWith(`${normalizedAppbaseRoot}/packages/common/iam/`)
+              normalizedId.startsWith(`${normalizedIamRoot}/apps/sdkwork-iam-pc/packages/`)
+              || normalizedId.startsWith(`${normalizedIamRoot}/apps/sdkwork-iam-common/packages/`)
             ) {
               return 'vendor-auth';
             }

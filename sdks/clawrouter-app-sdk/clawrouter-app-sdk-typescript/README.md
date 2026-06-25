@@ -56,7 +56,6 @@ const client = new SdkworkAppClient({
 
 - `client.ai` - ai API
 - `client.chat` - chat API
-- `client.iam` - iam API
 - `client.notification` - notification API
 - `client.runtime` - runtime API
 - `client.sites` - sites API
@@ -79,13 +78,6 @@ const params = {
   page_size: 'page_size',
 };
 const result = await client.chat.conversations.list(params);
-```
-
-### iam
-
-```typescript
-// List keys
-const result = await client.iam.apiKeys.list();
 ```
 
 ### notification

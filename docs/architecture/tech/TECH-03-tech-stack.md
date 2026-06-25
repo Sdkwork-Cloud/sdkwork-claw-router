@@ -5,12 +5,12 @@
 
 ## 1. 选型原则
 
-`sdkwork-clawrouter` 采用 Rust-first 技术路线。Java 生态在本项目中作为 API 路径、OpenAPI snapshot、SDK 生成和既有实体模型的兼容标准，不作为 runtime 主实现。
+`sdkwork-clawrouter` 采用 Rust-first 技术路线。组合模块（Commerce、IAM、Models 等）通过生成 SDK 与安装时 schema 组合接入，不作为 Claw Router runtime 主实现语言。
 
 选型原则：
 
 1. 热路径优先选择 Rust async 生态，避免阻塞和全量缓冲。
-2. app/admin API 保持 Java-compatible path 和 generated SDK 兼容。
+2. app/admin API 保持 `/app/v3/api/**` 与 `/backend/v3/api/**` 稳定面，并通过 generated SDK 集成。
 3. 数据库契约优先，代码实现服从 Schema Registry。
 4. desktop、server、docker、kubernetes 共用同一业务核心。
 5. 只引入能被测试、压测、部署和观测的组件。
@@ -98,7 +98,7 @@ SDK source of truth：
 生成语言优先级：
 
 1. TypeScript：portal business integration。
-2. Rust：Rust runtime 调用 Java-compatible app/backend business API 时使用。
+2. Rust：Rust runtime 调用 app/backend 组合模块 API 时使用。
 3. Java/Kotlin/Python/Go/Swift/C#/Flutter：保持平台 SDK 标准能力。
 
 如果 Rust SDK package 未生成，必须补 generator 和 canonical SDK home，不能在 Rust service 中手写 app/backend business HTTP client。
@@ -180,7 +180,7 @@ credential_status
 ## 11. 选型验收标准
 
 1. 每个选型都有 desktop 和生产运行路径。
-2. 不引入与 Java-compatible app/backend API/SDK 标准冲突的协议。
+2. 不引入与 app/backend API/SDK 标准冲突的协议。
 3. 不用高性能目标绕过账户、配额、审计和安全。
 4. 不在第一阶段引入无法稳定交付的复杂基础设施。
 5. 任一业务调用都能说明是 generated SDK、native provider client 还是 internal runtime call。

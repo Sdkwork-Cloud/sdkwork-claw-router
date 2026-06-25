@@ -353,12 +353,31 @@ function notifyStoredAppSessionChange(): void {
 }
 
 function readBrowserStorage(): string | null {
-  return readLocalStorage() ?? readSessionStorage();
+  const sessionRaw = readSessionStorage();
+  if (sessionRaw) {
+    return sessionRaw;
+  }
+
+  const legacyLocalRaw = readLocalStorage();
+  if (!legacyLocalRaw) {
+    return null;
+  }
+
+  try {
+    const parsed = JSON.parse(legacyLocalRaw) as unknown;
+    if (isStoredAppSessionToken(parsed)) {
+      writeSessionStorage(parsed);
+    }
+  } catch {
+    // Legacy localStorage payloads are cleared below.
+  }
+  removeLocalStorage();
+  return readSessionStorage();
 }
 
 function writeBrowserStorage(token: StoredAppSessionToken): void {
-  writeLocalStorage(token);
   writeSessionStorage(token);
+  removeLocalStorage();
 }
 
 function removeBrowserStorage(): void {
@@ -371,14 +390,6 @@ function readLocalStorage(): string | null {
     return globalThis.localStorage?.getItem(APP_SESSION_STORAGE_KEY) ?? null;
   } catch {
     return null;
-  }
-}
-
-function writeLocalStorage(token: StoredAppSessionToken): void {
-  try {
-    globalThis.localStorage?.setItem(APP_SESSION_STORAGE_KEY, JSON.stringify(token));
-  } catch {
-    // Memory storage remains available for restrictive browser contexts.
   }
 }
 
